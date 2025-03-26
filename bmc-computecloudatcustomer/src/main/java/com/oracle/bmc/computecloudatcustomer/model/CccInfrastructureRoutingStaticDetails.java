@@ -5,23 +5,22 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Static routing information for a rack. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Static routing information for a rack.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccInfrastructureRoutingStaticDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CccInfrastructureRoutingStaticDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CccInfrastructureRoutingStaticDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"uplinkVlan", "uplinkHsrpGroup"})
     public CccInfrastructureRoutingStaticDetails(Integer uplinkVlan, Integer uplinkHsrpGroup) {
@@ -33,38 +32,40 @@ public final class CccInfrastructureRoutingStaticDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The virtual local area network (VLAN) identifier used to connect to the uplink (only
-         * access mode is supported).
-         */
+         * The virtual local area network (VLAN) identifier used to connect to the uplink
+         * (only access mode is supported).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uplinkVlan")
         private Integer uplinkVlan;
 
         /**
-         * The virtual local area network (VLAN) identifier used to connect to the uplink (only
-         * access mode is supported).
+         * The virtual local area network (VLAN) identifier used to connect to the uplink
+         * (only access mode is supported).
          *
          * @param uplinkVlan the value to set
          * @return this builder
-         */
+         **/
         public Builder uplinkVlan(Integer uplinkVlan) {
             this.uplinkVlan = uplinkVlan;
             this.__explicitlySet__.add("uplinkVlan");
             return this;
         }
         /**
-         * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute
-         * Cloud@Customer infrastructure.
-         */
+         * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the
+         * Compute Cloud@Customer infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uplinkHsrpGroup")
         private Integer uplinkHsrpGroup;
 
         /**
-         * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute
-         * Cloud@Customer infrastructure.
+         * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the
+         * Compute Cloud@Customer infrastructure.
          *
          * @param uplinkHsrpGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder uplinkHsrpGroup(Integer uplinkHsrpGroup) {
             this.uplinkHsrpGroup = uplinkHsrpGroup;
             this.__explicitlySet__.add("uplinkHsrpGroup");
@@ -96,7 +97,9 @@ public final class CccInfrastructureRoutingStaticDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,35 +109,37 @@ public final class CccInfrastructureRoutingStaticDetails
     }
 
     /**
-     * The virtual local area network (VLAN) identifier used to connect to the uplink (only access
-     * mode is supported).
-     */
+     * The virtual local area network (VLAN) identifier used to connect to the uplink
+     * (only access mode is supported).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uplinkVlan")
     private final Integer uplinkVlan;
 
     /**
-     * The virtual local area network (VLAN) identifier used to connect to the uplink (only access
-     * mode is supported).
+     * The virtual local area network (VLAN) identifier used to connect to the uplink
+     * (only access mode is supported).
      *
      * @return the value
-     */
+     **/
     public Integer getUplinkVlan() {
         return uplinkVlan;
     }
 
     /**
-     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute
-     * Cloud@Customer infrastructure.
-     */
+     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the
+     * Compute Cloud@Customer infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uplinkHsrpGroup")
     private final Integer uplinkHsrpGroup;
 
     /**
-     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the Compute
-     * Cloud@Customer infrastructure.
+     * The uplink Hot Standby Router Protocol (HSRP) group value for the switch in the
+     * Compute Cloud@Customer infrastructure.
      *
      * @return the value
-     */
+     **/
     public Integer getUplinkHsrpGroup() {
         return uplinkHsrpGroup;
     }
@@ -146,7 +151,6 @@ public final class CccInfrastructureRoutingStaticDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

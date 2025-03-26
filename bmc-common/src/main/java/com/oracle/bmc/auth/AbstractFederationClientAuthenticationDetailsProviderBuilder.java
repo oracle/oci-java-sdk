@@ -4,49 +4,45 @@
  */
 package com.oracle.bmc.auth;
 
-import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.Realm;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.internal.AuthUtils;
 import com.oracle.bmc.auth.internal.FederationClient;
 import com.oracle.bmc.auth.internal.X509FederationClient;
+
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
-import com.oracle.bmc.http.client.HttpClient;
-import com.oracle.bmc.http.client.HttpProvider;
-import com.oracle.bmc.http.client.HttpResponse;
-import com.oracle.bmc.http.client.Method;
-import com.oracle.bmc.http.client.StandardClientProperties;
-import com.oracle.bmc.http.internal.SyncFutureWaiter;
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.WaiterConfiguration;
 import org.slf4j.Logger;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.net.MalformedURLException;
-import java.net.URI;
 import java.net.URL;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.NoSuchAlgorithmException;
-import java.time.Duration;
+import java.security.interfaces.RSAPrivateKey;
+import java.security.interfaces.RSAPublicKey;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.CompletionStage;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
-import static com.oracle.bmc.http.internal.HeaderUtils.AUTHORIZATION_HEADER_NAME;
-
 /**
- * Abstract builder base class for authentication details provider extending {@link
- * AbstractRequestingAuthenticationDetailsProvider}
- *
+ * Abstract builder base class for authentication details provider extending
+ * {@link AbstractRequestingAuthenticationDetailsProvider}
  * @param <B> builder class
  * @param <P> provider class
  */
@@ -56,14 +52,18 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 P extends AbstractAuthenticationDetailsProvider>
         extends AbstractRequestingAuthenticationDetailsProvider.Builder<B> {
 
-    /** Service instance for auth. */
+    /**
+     * Service instance for auth.
+     */
     protected static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("AUTH")
                     .serviceEndpointPrefix("auth")
                     .build();
 
-    /** Default base url of metadata service. */
+    /**
+     * Default base url of metadata service.
+     */
     public static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
 
     /** Environment variable used to overwrite the default metadata base url. */
@@ -72,48 +72,95 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** Metadata URL from environment variable, to use if present. */
     public static final String METADATA_URL_OVERRIDE = System.getenv(METADATA_BASE_URL_ENV_VAR);
 
-    /** The Authorization header value to be sent for requests to the metadata service. */
+    /** Flag to ensure V2 endpoint is only checked once, if successful. */
+    private volatile boolean wasImdsV2CheckExecuted = false;
+
+    /**
+     * The Authorization header value to be sent for requests to the metadata service.
+     */
     public static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
 
     private static final String REGION_PATH_LITERAL = "region";
 
+    private static final Client CLIENT = ClientBuilder.newClient();
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(
                     AbstractFederationClientAuthenticationDetailsProviderBuilder.class);
 
-    /** Base url of metadata service. */
+    /**
+     * A facade that makes Slf4j, which the OCI Java SDK uses, look like Java Unified Logging
+     * (JUL, hence JulFacade), which is what Jersey knows how to use.
+     */
+    private static class JulFacade extends java.util.logging.Logger {
+        JulFacade() {
+            super("Jersey", null);
+        }
+
+        @Override
+        public void log(java.util.logging.Level level, String msg) {
+            LOG.info(msg);
+        }
+    }
+
+    private static final String OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME =
+            "oci.javasdk.extra.imds.logs.enabled";
+
+    static {
+        String v = System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME, "false");
+        if (Boolean.parseBoolean(v)) {
+            LOG.info(
+                    "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
+                    OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
+                    v);
+            javax.ws.rs.core.Feature feature =
+                    new org.glassfish.jersey.logging.LoggingFeature(
+                            new JulFacade(),
+                            java.util.logging.Level.INFO,
+                            org.glassfish.jersey.logging.LoggingFeature.Verbosity.PAYLOAD_TEXT,
+                            8192);
+            CLIENT.register(feature);
+        } else {
+            LOG.debug(
+                    "{} was set to {}, adding logging to AbstractFederationClientAuthenticationDetailsProviderBuilder.CLIENT",
+                    OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME,
+                    System.getProperty(OCI_JAVASDK_EXTRA_IMDS_LOGS_ENABLED_PROP_NAME));
+        }
+    }
+
+    /**
+     * Base url of metadata service.
+     */
     protected volatile String metadataBaseUrl = METADATA_SERVICE_BASE_URL;
 
-    /** The federation endpoint url. */
+    /**
+     * The federation endpoint url.
+     */
     protected String federationEndpoint;
 
-    /** The number of retries for auto-detecting endpoint. */
-    protected int detectEndpointRetries = 8;
-
-    /** The custom timeout for each retry for auto-detecting endpoint. */
-    protected int timeoutForEachRetry = 0;
-
-    /** Flag to ensure V2 endpoint is only checked once, if successful. */
-    private volatile boolean wasImdsV2CheckExecuted = false;
-
-    /** The leaf certificate, or null if detecting from instance metadata. */
+    /**
+     * The leaf certificate, or null if detecting from instance metadata.
+     */
     protected X509CertificateSupplier leafCertificateSupplier;
 
-    /** Tenancy OCI, or null if detecting from instance metadata. */
+    /**
+     * Tenancy OCI, or null if detecting from instance metadata.
+     */
     protected String tenancyId;
 
-    /** The configuration for the circuit breaker. */
-    protected CircuitBreakerConfiguration circuitBreakerConfiguration;
+    /**
+     * The configuration for the circuit breaker.
+     */
+    private CircuitBreakerConfiguration circuitBreakerConfiguration;
 
     private String purpose = null;
 
-    /** Detected region. */
+    /**
+     * Detected region.
+     */
     protected Region region = null;
 
     /**
-     * Configure the metadata endpoint to use when retrieving the instance data and principal for
-     * federation.
-     *
+     * Configure the metadata endpoint to use when retrieving the instance data and principal for federation.
      * @param metadataBaseUrl the metadata base url
      * @return this builder
      */
@@ -127,7 +174,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the custom federationEndpoint to use.
-     *
      * @param federationEndpoint the federation endpoint
      * @return this builder
      */
@@ -137,30 +183,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     }
 
     /**
-     * Configures the custom retries to use for detecting endpoint.
-     *
-     * @param detectEndpointRetries the number of retries
-     * @return this builder
-     */
-    public B detectEndpointRetries(int detectEndpointRetries) {
-        this.detectEndpointRetries = detectEndpointRetries;
-        return (B) this;
-    }
-
-    /**
-     * Configures the custom timeout for each retry to use for detecting endpoint.
-     *
-     * @param timeoutForEachRetry the custom timeout
-     * @return this builder
-     */
-    public B timeoutForEachRetry(int timeoutForEachRetry) {
-        this.timeoutForEachRetry = timeoutForEachRetry;
-        return (B) this;
-    }
-
-    /**
      * Configures the custom leafCertificateSupplier to use.
-     *
      * @param leafCertificateSupplier
      * @return this builder
      */
@@ -171,7 +194,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the tenancy id to use.
-     *
      * @param tenancyId the tenancy OCID
      * @return this builder
      */
@@ -182,7 +204,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configure the purpose to be used.
-     *
      * @param purpose the purpose string
      * @return this builder
      */
@@ -193,7 +214,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Configures the Circuit Breaker to use, if any.
-     *
      * @param circuitBreakerConfiguration the circuit breaker to use
      * @return this builder
      */
@@ -218,7 +238,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Create the federation client.
-     *
      * @param sessionKeySupplier the session key supplier
      * @return the federation client
      */
@@ -253,23 +272,37 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         }
     }
 
-    /** Auto-detect endpoint and certificate information using Instance metadata. */
+    /**
+     * Auto-detect endpoint and certificate information using Instance metadata.
+     */
     protected void autoDetectUsingMetadataUrl() {
         autoDetectEndpointUsingMetadataUrl();
         autoDetectCertificatesUsingMetadataUrl();
     }
 
     /**
-     * Auto detects the endpoint that should be used when talking to OCI Auth, if no endpoint has
-     * been configured already.
-     *
+     * Auto detects the endpoint that should be used when talking to OCI Auth, if no endpoint
+     * has been configured already.
      * @return The auto-detected, or currently set, auth endpoint.
      */
     protected String autoDetectEndpointUsingMetadataUrl() {
         if (federationEndpoint == null) {
 
             executeImdsV2EndpointCheck();
-            String regionStr = fetchRegion(resp -> resp.textBody());
+            String regionStr =
+                    simpleRetry(
+                            base -> {
+                                String region =
+                                        base.path(REGION_PATH_LITERAL)
+                                                .request(MediaType.TEXT_PLAIN)
+                                                .header(
+                                                        HttpHeaders.AUTHORIZATION,
+                                                        AUTHORIZATION_HEADER_VALUE)
+                                                .get(String.class);
+                                return region;
+                            },
+                            getMetadataBaseUrl(),
+                            REGION_PATH_LITERAL);
             LOG.info("Looking up region for {}", regionStr);
 
             try {
@@ -278,7 +311,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.fromRegionCodeOrId(regionStr);
                 LOG.info("Using region {}", region.getRegionId());
             } catch (IllegalArgumentException e) {
-                Alloy.throwUnknownAlloyRegionIfAppropriate(regionStr, e);
                 LOG.warn(
                         "Region not supported by this version of the SDK, registering region '{}' under OC1",
                         regionStr,
@@ -287,7 +319,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                 region = Region.register(regionStr, Realm.OC1);
             }
 
-            Optional<String> endpoint = region.getEndpoint(SERVICE);
+            Optional<String> endpoint = GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
 
             if (!endpoint.isPresent()) {
                 throw new IllegalArgumentException(
@@ -299,13 +331,16 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         return federationEndpoint;
     }
 
-    /** Auto detects and configures the certificates needed using Instance metadata. */
+    /**
+     * Auto detects and configures the certificates needed using Instance metadata.
+     *
+     */
     protected void autoDetectCertificatesUsingMetadataUrl() {
         try {
 
             if (!wasImdsV2CheckExecuted) {
                 LOG.info(
-                        "Executing V2 endpoint check for certificates as federation endpoint was already set to {}",
+                        "Executing IMDS V2 check for certificates as federation endpoint was already set to {}",
                         getFederationEndpoint());
                 executeImdsV2EndpointCheck();
             }
@@ -340,97 +375,36 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         }
     }
 
-    private <R> R fetchRegion(Function<HttpResponse, CompletionStage<R>> responseHandler) {
-        Throwable lastException = null;
-        try (HttpClient client =
-                HttpProvider.getDefault()
-                        .newBuilder()
-                        .property(StandardClientProperties.ASYNC_POOL_SIZE, 1)
-                        .property(
-                                StandardClientProperties.CONNECT_TIMEOUT,
-                                Duration.ofMillis(timeoutForEachRetry))
-                        .baseUri(URI.create(getMetadataBaseUrl() + "instance/"))
-                        .build()) {
-
-            ExponentialBackoffDelayStrategyWithJitter strategy =
-                    new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(30));
-            WaiterConfiguration.WaitContext context =
-                    new WaiterConfiguration.WaitContext(System.currentTimeMillis());
-
-            if (detectEndpointRetries < 0) {
-                lastException =
-                        new RuntimeException(
-                                "detectEndpointRetries is "
-                                        + detectEndpointRetries
-                                        + ". Retries cannot be negative.");
-            }
-            for (int retry = 0; retry <= detectEndpointRetries; retry++) {
-                try {
-                    SyncFutureWaiter waiter = new SyncFutureWaiter();
-                    try (HttpResponse response =
-                            waiter.listenForResult(
-                                    client.createRequest(Method.GET)
-                                            .offloadExecutor(waiter)
-                                            .appendPathPart(REGION_PATH_LITERAL)
-                                            .header("Accept", "text/plain")
-                                            .header(
-                                                    AUTHORIZATION_HEADER_NAME,
-                                                    AUTHORIZATION_HEADER_VALUE)
-                                            .execute())) {
-                        return waiter.listenForResult(responseHandler.apply(response));
-                    }
-                } catch (Throwable e) {
-                    LOG.warn(
-                            "Attempt {} - Rest call to get region from metadata service failed ",
-                            (retry + 1),
-                            e);
-                    lastException = e;
-                    try {
-                        long waitTime = strategy.nextDelay(context);
-                        Thread.sleep(waitTime);
-                        context.incrementAttempts();
-                        LOG.info(
-                                "Exiting retry {} with wait time: {} millis",
-                                (retry + 1),
-                                waitTime);
-                    } catch (InterruptedException interruptedException) {
-                        LOG.debug(
-                                "Thread interrupted while waiting to make next call to get region from instance metadata service",
-                                interruptedException);
-                        Thread.currentThread().interrupt();
-                        break;
-                    }
-                }
-            }
-        }
-
-        if (lastException instanceof RuntimeException) {
-            throw (RuntimeException) lastException;
-        } else if (lastException != null) {
-            throw new RuntimeException(lastException);
-        } else {
-            throw new RuntimeException("Failed to fetch region, lastException was null");
-        }
-    }
-
     /**
-     * Checks the V2 endpoint for both federation endpoint detection & certificates if necessary.
+     * Checks IMDS V2 endpoint for both federation endpoint detection & certificates if necessary.
      */
     private void executeImdsV2EndpointCheck() {
         try {
-            // don't care about the body, just get me the status!
-            int status = fetchRegion(resp -> CompletableFuture.completedFuture(resp.status()));
+            Response response =
+                    simpleRetry(
+                            base -> {
+                                Response v2CheckResponse =
+                                        base.path(REGION_PATH_LITERAL)
+                                                .request(MediaType.TEXT_PLAIN)
+                                                .header(
+                                                        HttpHeaders.AUTHORIZATION,
+                                                        AUTHORIZATION_HEADER_VALUE)
+                                                .get();
+                                return v2CheckResponse;
+                            },
+                            getMetadataBaseUrl(),
+                            REGION_PATH_LITERAL);
             LOG.info(
                     "REST request to verify if IMDS v2 endpoint exists, response from v2 was {}",
-                    status);
+                    response.getStatus());
 
-            // fallback to v1 if v2 endpoint throws resource not found else raise exception
-            if (status >= 300) {
+            if (!Response.Status.Family.SUCCESSFUL.equals(response.getStatusInfo().getFamily())) {
                 throw new RuntimeException(
-                        "REST request to IMDS v2 endpoint failed : HTTP error code : " + status);
+                        "REST request to IMDS v2 endpoint failed : HTTP error code : "
+                                + response.getStatus());
             }
             wasImdsV2CheckExecuted = true;
-            LOG.info("Metadata base url {}", getMetadataBaseUrl());
+            LOG.info("Metadata base url is {}", getMetadataBaseUrl());
         } catch (RuntimeException e) {
             LOG.warn(
                     "REST request to IMDS v2 endpoint failed with unexpected Runtime exception ",
@@ -442,7 +416,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     static {
         Map<String, String> temp = new HashMap<>();
-        temp.put("Authorization", AUTHORIZATION_HEADER_VALUE);
+        temp.put(HttpHeaders.AUTHORIZATION, AUTHORIZATION_HEADER_VALUE);
         AUTHORIZATION_HEADER = Collections.unmodifiableMap(temp);
     }
 
@@ -456,7 +430,6 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * Build the actual provider.
-     *
      * @param sessionKeySupplierToUse the session key supplier to use
      * @return authentication details provider
      */
@@ -494,15 +467,12 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
 
     /**
      * This is a helper class to generate in-memory temporary session keys.
-     *
-     * <p>The thread safety of this class is ensured through the Caching class above which
-     * synchronizes on all methods.
-     *
-     * <p>The class is implemented in a lazy way to avoid generating the key if it is not needed or
-     * if refresh is immediately called.
+     * <p>
+     * The thread safety of this class is ensured through the Caching class above
+     * which synchronizes on all methods.
      */
     static class SessionKeySupplierImpl implements SessionKeySupplier {
-        private static final KeyPairGenerator GENERATOR;
+        private final static KeyPairGenerator GENERATOR;
         private KeyPair keyPair = null;
 
         static {
@@ -514,19 +484,109 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             }
         }
 
-        SessionKeySupplierImpl() {}
+        SessionKeySupplierImpl() {
+            this.keyPair = GENERATOR.generateKeyPair();
+        }
 
         @Override
         public KeyPair getKeyPair() {
-            if (this.keyPair == null) {
-                this.keyPair = GENERATOR.generateKeyPair();
-            }
             return keyPair;
+        }
+
+        /**
+         * Gets the public key
+         * @return the public key, not null
+         * @deprecated use getKeyPair() instead
+         */
+        @Override
+        @Deprecated
+        public RSAPublicKey getPublicKey() {
+            return (RSAPublicKey) keyPair.getPublic();
+        }
+
+        /**
+         * Gets the private key
+         * @return the private key, not null
+         * @deprecated use getKeyPair() instead
+         */
+        @Override
+        @Deprecated
+        public RSAPrivateKey getPrivateKey() {
+            return (RSAPrivateKey) keyPair.getPrivate();
         }
 
         @Override
         public void refreshKeys() {
             this.keyPair = GENERATOR.generateKeyPair();
         }
+    }
+
+    /**
+     * @deprecated use the function without Guava parameters instead
+     * Retry logic to get endpoint from instance metadata service
+     *
+     * @param retryOperation
+     * @param metadataServiceUrl
+     * @param endpoint
+     * @return The function result
+     */
+    @Deprecated
+    public static <T> T simpleRetry(
+            com.google.common /*Guava will be removed soon*/.base.Function<WebTarget, T>
+                    retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint) {
+        return simpleRetry(GuavaUtils.adaptFromGuava(retryOperation), metadataServiceUrl, endpoint);
+    }
+
+    /**
+     * Retry logic to get endpoint from instance metadata service
+     *
+     * @param retryOperation
+     * @param metadataServiceUrl
+     * @param endpoint
+     * @return The function result
+     */
+    public static <T> T simpleRetry(
+            Function<WebTarget, T> retryOperation,
+            final String metadataServiceUrl,
+            final String endpoint) {
+
+        ExponentialBackoffDelayStrategyWithJitter strategy =
+                new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(30));
+        WaiterConfiguration.WaitContext context =
+                new WaiterConfiguration.WaitContext(System.currentTimeMillis());
+
+        final int MAX_RETRIES = 8;
+        RuntimeException lastException = null;
+        for (int retry = 0; retry < MAX_RETRIES; retry++) {
+            try {
+                WebTarget base = CLIENT.target(metadataServiceUrl + "instance/");
+                return retryOperation.apply(base);
+            } catch (RuntimeException e) {
+                LOG.warn(
+                        "Attempt {} - Rest call to get "
+                                + endpoint
+                                + " from metadata service failed ",
+                        (retry + 1),
+                        e);
+                lastException = e;
+                try {
+                    long waitTime = strategy.nextDelay(context);
+                    Thread.sleep(waitTime);
+                    context.incrementAttempts();
+                    LOG.info("Exiting retry {} with wait time: {} millis", (retry + 1), waitTime);
+                } catch (InterruptedException interruptedException) {
+                    LOG.debug(
+                            "Thread interrupted while waiting to make next call to get "
+                                    + endpoint
+                                    + " from instance metadata service",
+                            interruptedException);
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+        }
+        throw lastException;
     }
 }

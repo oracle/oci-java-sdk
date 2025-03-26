@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Requestable Group <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Requestable Group
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionRequestableGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionRequestableGroup.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionRequestableGroup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"requestable"})
     public ExtensionRequestableGroup(Boolean requestable) {
@@ -32,33 +31,42 @@ public final class ExtensionRequestableGroup
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Flag controlling whether group membership can be request by user through self service
-         * console.
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]] -
-         * multiValued: false - mutability: readWrite - required: false - returned: request - type:
-         * boolean - uniqueness: none
-         */
+         * Flag controlling whether group membership can be request by user through self service console.
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestable")
         private Boolean requestable;
 
         /**
-         * Flag controlling whether group membership can be request by user through self service
-         * console.
-         *
-         * <p>*Added In:** 17.3.4
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]] -
-         * multiValued: false - mutability: readWrite - required: false - returned: request - type:
-         * boolean - uniqueness: none
-         *
+         * Flag controlling whether group membership can be request by user through self service console.
+         * <p>
+         **Added In:** 17.3.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param requestable the value to set
          * @return this builder
-         */
+         **/
         public Builder requestable(Boolean requestable) {
             this.requestable = requestable;
             this.__explicitlySet__.add("requestable");
@@ -85,7 +93,9 @@ public final class ExtensionRequestableGroup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,32 +105,41 @@ public final class ExtensionRequestableGroup
     }
 
     /**
-     * Flag controlling whether group membership can be request by user through self service
-     * console.
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]] -
-     * multiValued: false - mutability: readWrite - required: false - returned: request - type:
-     * boolean - uniqueness: none
-     */
+     * Flag controlling whether group membership can be request by user through self service console.
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestable")
     private final Boolean requestable;
 
     /**
-     * Flag controlling whether group membership can be request by user through self service
-     * console.
-     *
-     * <p>*Added In:** 17.3.4
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]] -
-     * multiValued: false - mutability: readWrite - required: false - returned: request - type:
-     * boolean - uniqueness: none
-     *
+     * Flag controlling whether group membership can be request by user through self service console.
+     * <p>
+     **Added In:** 17.3.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Requestable, mapsTo:requestable]]
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getRequestable() {
         return requestable;
     }
@@ -132,7 +151,6 @@ public final class ExtensionRequestableGroup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible types of Exadata Fleet Update Discovery. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum DiscoveryTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of Exadata Fleet Update Discovery.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum DiscoveryTypes {
     Db("DB"),
     Gi("GI"),
 

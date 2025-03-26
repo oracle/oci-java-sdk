@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Notification information to get notified when the fleet status changes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Notification information to get notified when the fleet status changes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NotificationPreferences.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NotificationPreferences.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NotificationPreferences
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"topicId", "compartmentId", "preferences"})
     public NotificationPreferences(String topicId, String compartmentId, Preferences preferences) {
@@ -34,34 +33,36 @@ public final class NotificationPreferences
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Topic Id where the notifications will be directed. A topic is a communication channel for
-         * sending messages on chosen events to subscriptions.
-         */
+         * Topic Id where the notifications will be directed.
+         * A topic is a communication channel for sending messages on chosen events to subscriptions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * Topic Id where the notifications will be directed. A topic is a communication channel for
-         * sending messages on chosen events to subscriptions.
+         * Topic Id where the notifications will be directed.
+         * A topic is a communication channel for sending messages on chosen events to subscriptions.
          *
          * @param topicId the value to set
          * @return this builder
-         */
+         **/
         public Builder topicId(String topicId) {
             this.topicId = topicId;
             this.__explicitlySet__.add("topicId");
             return this;
         }
-        /** Compartment ID the topic belongs to. */
+        /**
+         * Compartment ID the topic belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment ID the topic belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -104,7 +105,9 @@ public final class NotificationPreferences
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,31 +117,33 @@ public final class NotificationPreferences
     }
 
     /**
-     * Topic Id where the notifications will be directed. A topic is a communication channel for
-     * sending messages on chosen events to subscriptions.
-     */
+     * Topic Id where the notifications will be directed.
+     * A topic is a communication channel for sending messages on chosen events to subscriptions.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * Topic Id where the notifications will be directed. A topic is a communication channel for
-     * sending messages on chosen events to subscriptions.
+     * Topic Id where the notifications will be directed.
+     * A topic is a communication channel for sending messages on chosen events to subscriptions.
      *
      * @return the value
-     */
+     **/
     public String getTopicId() {
         return topicId;
     }
 
-    /** Compartment ID the topic belongs to. */
+    /**
+     * Compartment ID the topic belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment ID the topic belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -157,7 +162,6 @@ public final class NotificationPreferences
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

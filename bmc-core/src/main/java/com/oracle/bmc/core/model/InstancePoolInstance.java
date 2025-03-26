@@ -5,23 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about an instance that belongs to an instance pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Information about an instance that belongs to an instance pool.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstancePoolInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InstancePoolInstance
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InstancePoolInstance.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InstancePoolInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,218 +69,221 @@ public final class InstancePoolInstance
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
         private String instancePoolId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
          * @param instancePoolId the value to set
          * @return this builder
-         */
+         **/
         public Builder instancePoolId(String instancePoolId) {
             this.instancePoolId = instancePoolId;
             this.__explicitlySet__.add("instancePoolId");
             return this;
         }
-        /** The availability domain the instance is running in. */
+        /**
+         * The availability domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain the instance is running in.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The attachment state of the instance in relation to the instance pool. */
+        /**
+         * The attachment state of the instance in relation to the instance pool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The attachment state of the instance in relation to the instance pool.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the
+         * instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the
+         * instance.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The fault domain the instance is running in. */
+        /**
+         * The fault domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The fault domain the instance is running in.
-         *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance configuration used to create the instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+         * used to create the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
         private String instanceConfigurationId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance configuration used to create the instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+         * used to create the instance.
          *
          * @param instanceConfigurationId the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceConfigurationId(String instanceConfigurationId) {
             this.instanceConfigurationId = instanceConfigurationId;
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
-        /** The region that contains the availability domain the instance is running in. */
+        /**
+         * The region that contains the availability domain the instance is running in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The region that contains the availability domain the instance is running in.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
-         */
+         * The shape of the instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
+         * The shape of the instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link
-         * Instance} resource.
-         */
+         * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance} resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
-         * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link
-         * Instance} resource.
-         *
+         * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance} resource.
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
         /**
-         * The date and time the instance pool instance was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the instance pool instance was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The load balancer backends that are configured for the instance. */
+        /**
+         * The load balancer backends that are configured for the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
         private java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
 
@@ -291,7 +292,7 @@ public final class InstancePoolInstance
          *
          * @param loadBalancerBackends the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancerBackends(
                 java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends) {
             this.loadBalancerBackends = loadBalancerBackends;
@@ -369,7 +370,9 @@ public final class InstancePoolInstance
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -379,61 +382,58 @@ public final class InstancePoolInstance
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instancePoolId")
     private final String instancePoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      * @return the value
-     */
+     **/
     public String getInstancePoolId() {
         return instancePoolId;
     }
 
-    /** The availability domain the instance is running in. */
+    /**
+     * The availability domain the instance is running in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain the instance is running in.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The attachment state of the instance in relation to the instance pool. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The attachment state of the instance in relation to the instance pool.
+     **/
+    public enum LifecycleState {
         Attaching("ATTACHING"),
         Active("ACTIVE"),
         Detaching("DETACHING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -472,148 +472,156 @@ public final class InstancePoolInstance
             return UnknownEnumValue;
         }
     };
-    /** The attachment state of the instance in relation to the instance pool. */
+    /**
+     * The attachment state of the instance in relation to the instance pool.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The attachment state of the instance in relation to the instance pool.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the
+     * instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the
+     * instance.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The fault domain the instance is running in. */
+    /**
+     * The fault domain the instance is running in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The fault domain the instance is running in.
-     *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance configuration used to create the instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+     * used to create the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceConfigurationId")
     private final String instanceConfigurationId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance configuration used to create the instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance configuration
+     * used to create the instance.
      *
      * @return the value
-     */
+     **/
     public String getInstanceConfigurationId() {
         return instanceConfigurationId;
     }
 
-    /** The region that contains the availability domain the instance is running in. */
+    /**
+     * The region that contains the availability domain the instance is running in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The region that contains the availability domain the instance is running in.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
     /**
-     * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
-     */
+     * The shape of the instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
+     * The shape of the instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
     /**
-     * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance}
-     * resource.
-     */
+     * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance} resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
-     * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance}
-     * resource.
-     *
+     * The lifecycle state of the instance. Refer to {@code lifecycleState} in the {@link Instance} resource.
      * @return the value
-     */
+     **/
     public String getState() {
         return state;
     }
 
     /**
-     * The date and time the instance pool instance was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the instance pool instance was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the instance pool instance was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The load balancer backends that are configured for the instance. */
+    /**
+     * The load balancer backends that are configured for the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerBackends")
     private final java.util.List<InstancePoolInstanceLoadBalancerBackend> loadBalancerBackends;
 
@@ -621,7 +629,7 @@ public final class InstancePoolInstance
      * The load balancer backends that are configured for the instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<InstancePoolInstanceLoadBalancerBackend> getLoadBalancerBackends() {
         return loadBalancerBackends;
     }
@@ -633,7 +641,6 @@ public final class InstancePoolInstance
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

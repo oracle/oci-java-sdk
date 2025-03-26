@@ -5,27 +5,23 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * An OpenSearch cluster resource. An OpenSearch cluster is set of instances that provide OpenSearch
- * functionality in OCI Search Service with OpenSearch. For more information, see [About Search
- * Service with
- * OpenSearch](https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * An OpenSearch cluster resource. An OpenSearch cluster is set of instances that provide OpenSearch functionality in OCI Search Service with OpenSearch.
+ * For more information, see [About Search Service with OpenSearch](https://docs.oracle.com/iaas/Content/search-opensearch/Concepts/ociopensearch.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpensearchCluster.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OpensearchCluster
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OpensearchCluster.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OpensearchCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -176,140 +172,149 @@ public final class OpensearchCluster
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the cluster.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the cluster. Avoid entering confidential information. */
+        /**
+         * The name of the cluster. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the cluster. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment where the cluster is located. */
+        /**
+         * The OCID of the compartment where the cluster is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the cluster is located.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current state of the cluster. */
+        /**
+         * The current state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the cluster.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The amount of time in milliseconds since the cluster was created. */
+        /**
+         * The amount of time in milliseconds since the cluster was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The amount of time in milliseconds since the cluster was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The amount of time in milliseconds since the cluster was updated. */
+        /**
+         * The amount of time in milliseconds since the cluster was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The amount of time in milliseconds since the cluster was updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The amount of time in milliseconds since the cluster was updated. */
+        /**
+         * The amount of time in milliseconds since the cluster was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
         private java.util.Date timeDeleted;
 
         /**
          * The amount of time in milliseconds since the cluster was updated.
-         *
          * @param timeDeleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDeleted(java.util.Date timeDeleted) {
             this.timeDeleted = timeDeleted;
             this.__explicitlySet__.add("timeDeleted");
             return this;
         }
-        /** Additional information about the current lifecycle state of the cluster. */
+        /**
+         * Additional information about the current lifecycle state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state of the cluster.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -318,7 +323,8 @@ public final class OpensearchCluster
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -328,7 +334,7 @@ public final class OpensearchCluster
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -336,458 +342,484 @@ public final class OpensearchCluster
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The software version the cluster is running. */
+        /**
+         * The software version the cluster is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private String softwareVersion;
 
         /**
          * The software version the cluster is running.
-         *
          * @param softwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareVersion(String softwareVersion) {
             this.softwareVersion = softwareVersion;
             this.__explicitlySet__.add("softwareVersion");
             return this;
         }
-        /** The size in GB of the cluster's total storage. */
+        /**
+         * The size in GB of the cluster's total storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalStorageGB")
         private Integer totalStorageGB;
 
         /**
          * The size in GB of the cluster's total storage.
-         *
          * @param totalStorageGB the value to set
          * @return this builder
-         */
+         **/
         public Builder totalStorageGB(Integer totalStorageGB) {
             this.totalStorageGB = totalStorageGB;
             this.__explicitlySet__.add("totalStorageGB");
             return this;
         }
-        /** The fully qualified domain name (FQDN) for the cluster's API endpoint. */
+        /**
+         * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opensearchFqdn")
         private String opensearchFqdn;
 
         /**
          * The fully qualified domain name (FQDN) for the cluster's API endpoint.
-         *
          * @param opensearchFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder opensearchFqdn(String opensearchFqdn) {
             this.opensearchFqdn = opensearchFqdn;
             this.__explicitlySet__.add("opensearchFqdn");
             return this;
         }
-        /** The cluster's private IP address. */
+        /**
+         * The cluster's private IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opensearchPrivateIp")
         private String opensearchPrivateIp;
 
         /**
          * The cluster's private IP address.
-         *
          * @param opensearchPrivateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder opensearchPrivateIp(String opensearchPrivateIp) {
             this.opensearchPrivateIp = opensearchPrivateIp;
             this.__explicitlySet__.add("opensearchPrivateIp");
             return this;
         }
         /**
-         * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API
-         * endpoint.
-         */
+         * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardFqdn")
         private String opendashboardFqdn;
 
         /**
-         * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API
-         * endpoint.
-         *
+         * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
          * @param opendashboardFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardFqdn(String opendashboardFqdn) {
             this.opendashboardFqdn = opendashboardFqdn;
             this.__explicitlySet__.add("opendashboardFqdn");
             return this;
         }
-        /** The private IP address for the cluster's OpenSearch Dashboard. */
+        /**
+         * The private IP address for the cluster's OpenSearch Dashboard.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardPrivateIp")
         private String opendashboardPrivateIp;
 
         /**
          * The private IP address for the cluster's OpenSearch Dashboard.
-         *
          * @param opendashboardPrivateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardPrivateIp(String opendashboardPrivateIp) {
             this.opendashboardPrivateIp = opendashboardPrivateIp;
             this.__explicitlySet__.add("opendashboardPrivateIp");
             return this;
         }
-        /** The number of master nodes configured for the cluster. */
+        /**
+         * The number of master nodes configured for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeCount")
         private Integer masterNodeCount;
 
         /**
          * The number of master nodes configured for the cluster.
-         *
          * @param masterNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeCount(Integer masterNodeCount) {
             this.masterNodeCount = masterNodeCount;
             this.__explicitlySet__.add("masterNodeCount");
             return this;
         }
-        /** The instance type for the cluster's master nodes. */
+        /**
+         * The instance type for the cluster's master nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostType")
         private MasterNodeHostType masterNodeHostType;
 
         /**
          * The instance type for the cluster's master nodes.
-         *
          * @param masterNodeHostType the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostType(MasterNodeHostType masterNodeHostType) {
             this.masterNodeHostType = masterNodeHostType;
             this.__explicitlySet__.add("masterNodeHostType");
             return this;
         }
-        /** The bare metal shape for the cluster's master nodes. */
+        /**
+         * The bare metal shape for the cluster's master nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostBareMetalShape")
         private String masterNodeHostBareMetalShape;
 
         /**
          * The bare metal shape for the cluster's master nodes.
-         *
          * @param masterNodeHostBareMetalShape the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostBareMetalShape(String masterNodeHostBareMetalShape) {
             this.masterNodeHostBareMetalShape = masterNodeHostBareMetalShape;
             this.__explicitlySet__.add("masterNodeHostBareMetalShape");
             return this;
         }
-        /** The number of OCPUs configured for cluster's master nodes. */
+        /**
+         * The number of OCPUs configured for cluster's master nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostOcpuCount")
         private Integer masterNodeHostOcpuCount;
 
         /**
          * The number of OCPUs configured for cluster's master nodes.
-         *
          * @param masterNodeHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostOcpuCount(Integer masterNodeHostOcpuCount) {
             this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             this.__explicitlySet__.add("masterNodeHostOcpuCount");
             return this;
         }
-        /** The amount of memory in GB, for the cluster's master nodes. */
+        /**
+         * The amount of memory in GB, for the cluster's master nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostMemoryGB")
         private Integer masterNodeHostMemoryGB;
 
         /**
          * The amount of memory in GB, for the cluster's master nodes.
-         *
          * @param masterNodeHostMemoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostMemoryGB(Integer masterNodeHostMemoryGB) {
             this.masterNodeHostMemoryGB = masterNodeHostMemoryGB;
             this.__explicitlySet__.add("masterNodeHostMemoryGB");
             return this;
         }
-        /** The number of data nodes configured for the cluster. */
+        /**
+         * The number of data nodes configured for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeCount")
         private Integer dataNodeCount;
 
         /**
          * The number of data nodes configured for the cluster.
-         *
          * @param dataNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeCount(Integer dataNodeCount) {
             this.dataNodeCount = dataNodeCount;
             this.__explicitlySet__.add("dataNodeCount");
             return this;
         }
-        /** The instance type for the cluster's data nodes. */
+        /**
+         * The instance type for the cluster's data nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostType")
         private DataNodeHostType dataNodeHostType;
 
         /**
          * The instance type for the cluster's data nodes.
-         *
          * @param dataNodeHostType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostType(DataNodeHostType dataNodeHostType) {
             this.dataNodeHostType = dataNodeHostType;
             this.__explicitlySet__.add("dataNodeHostType");
             return this;
         }
-        /** The bare metal shape for the cluster's data nodes. */
+        /**
+         * The bare metal shape for the cluster's data nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostBareMetalShape")
         private String dataNodeHostBareMetalShape;
 
         /**
          * The bare metal shape for the cluster's data nodes.
-         *
          * @param dataNodeHostBareMetalShape the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostBareMetalShape(String dataNodeHostBareMetalShape) {
             this.dataNodeHostBareMetalShape = dataNodeHostBareMetalShape;
             this.__explicitlySet__.add("dataNodeHostBareMetalShape");
             return this;
         }
-        /** The number of OCPUs configured for the cluster's data nodes. */
+        /**
+         * The number of OCPUs configured for the cluster's data nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
         private Integer dataNodeHostOcpuCount;
 
         /**
          * The number of OCPUs configured for the cluster's data nodes.
-         *
          * @param dataNodeHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
             this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
             this.__explicitlySet__.add("dataNodeHostOcpuCount");
             return this;
         }
-        /** The amount of memory in GB, for the cluster's data nodes. */
+        /**
+         * The amount of memory in GB, for the cluster's data nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostMemoryGB")
         private Integer dataNodeHostMemoryGB;
 
         /**
          * The amount of memory in GB, for the cluster's data nodes.
-         *
          * @param dataNodeHostMemoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostMemoryGB(Integer dataNodeHostMemoryGB) {
             this.dataNodeHostMemoryGB = dataNodeHostMemoryGB;
             this.__explicitlySet__.add("dataNodeHostMemoryGB");
             return this;
         }
-        /** The amount of storage in GB, to configure per node for the cluster's data nodes. */
+        /**
+         * The amount of storage in GB, to configure per node for the cluster's data nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeStorageGB")
         private Integer dataNodeStorageGB;
 
         /**
          * The amount of storage in GB, to configure per node for the cluster's data nodes.
-         *
          * @param dataNodeStorageGB the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeStorageGB(Integer dataNodeStorageGB) {
             this.dataNodeStorageGB = dataNodeStorageGB;
             this.__explicitlySet__.add("dataNodeStorageGB");
             return this;
         }
-        /** The number of OpenSearch Dashboard nodes configured for the cluster. */
+        /**
+         * The number of OpenSearch Dashboard nodes configured for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeCount")
         private Integer opendashboardNodeCount;
 
         /**
          * The number of OpenSearch Dashboard nodes configured for the cluster.
-         *
          * @param opendashboardNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardNodeCount(Integer opendashboardNodeCount) {
             this.opendashboardNodeCount = opendashboardNodeCount;
             this.__explicitlySet__.add("opendashboardNodeCount");
             return this;
         }
-        /** The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes. */
+        /**
+         * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostOcpuCount")
         private Integer opendashboardNodeHostOcpuCount;
 
         /**
          * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-         *
          * @param opendashboardNodeHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardNodeHostOcpuCount(Integer opendashboardNodeHostOcpuCount) {
             this.opendashboardNodeHostOcpuCount = opendashboardNodeHostOcpuCount;
             this.__explicitlySet__.add("opendashboardNodeHostOcpuCount");
             return this;
         }
-        /** The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes. */
+        /**
+         * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostMemoryGB")
         private Integer opendashboardNodeHostMemoryGB;
 
         /**
          * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-         *
          * @param opendashboardNodeHostMemoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardNodeHostMemoryGB(Integer opendashboardNodeHostMemoryGB) {
             this.opendashboardNodeHostMemoryGB = opendashboardNodeHostMemoryGB;
             this.__explicitlySet__.add("opendashboardNodeHostMemoryGB");
             return this;
         }
-        /** The OCID of the cluster's VCN. */
+        /**
+         * The OCID of the cluster's VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
          * The OCID of the cluster's VCN.
-         *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** The OCID of the cluster's subnet. */
+        /**
+         * The OCID of the cluster's subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the cluster's subnet.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The OCID for the compartment where the cluster's VCN is located. */
+        /**
+         * The OCID for the compartment where the cluster's VCN is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnCompartmentId")
         private String vcnCompartmentId;
 
         /**
          * The OCID for the compartment where the cluster's VCN is located.
-         *
          * @param vcnCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnCompartmentId(String vcnCompartmentId) {
             this.vcnCompartmentId = vcnCompartmentId;
             this.__explicitlySet__.add("vcnCompartmentId");
             return this;
         }
-        /** The OCID for the compartment where the cluster's subnet is located. */
+        /**
+         * The OCID for the compartment where the cluster's subnet is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetCompartmentId")
         private String subnetCompartmentId;
 
         /**
          * The OCID for the compartment where the cluster's subnet is located.
-         *
          * @param subnetCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetCompartmentId(String subnetCompartmentId) {
             this.subnetCompartmentId = subnetCompartmentId;
             this.__explicitlySet__.add("subnetCompartmentId");
             return this;
         }
-        /** The fully qualified domain name (FQDN) for the cluster's API endpoint. */
+        /**
+         * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
         /**
          * The fully qualified domain name (FQDN) for the cluster's API endpoint.
-         *
          * @param fqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
             return this;
         }
-        /** The availability domains to distribute the cluser nodes across. */
+        /**
+         * The availability domains to distribute the cluser nodes across.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
         private java.util.List<String> availabilityDomains;
 
         /**
          * The availability domains to distribute the cluser nodes across.
-         *
          * @param availabilityDomains the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomains(java.util.List<String> availabilityDomains) {
             this.availabilityDomains = availabilityDomains;
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
-        /** The security mode of the cluster. */
+        /**
+         * The security mode of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
         private SecurityMode securityMode;
 
         /**
          * The security mode of the cluster.
-         *
          * @param securityMode the value to set
          * @return this builder
-         */
+         **/
         public Builder securityMode(SecurityMode securityMode) {
             this.securityMode = securityMode;
             this.__explicitlySet__.add("securityMode");
             return this;
         }
-        /** The name of the master user that are used to manage security config */
+        /**
+         * The name of the master user that are used to manage security config
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
         private String securityMasterUserName;
 
         /**
          * The name of the master user that are used to manage security config
-         *
          * @param securityMasterUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder securityMasterUserName(String securityMasterUserName) {
             this.securityMasterUserName = securityMasterUserName;
             this.__explicitlySet__.add("securityMasterUserName");
             return this;
         }
-        /** The password hash of the master user that are used to manage security config */
+        /**
+         * The password hash of the master user that are used to manage security config
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
         private String securityMasterUserPasswordHash;
 
         /**
          * The password hash of the master user that are used to manage security config
-         *
          * @param securityMasterUserPasswordHash the value to set
          * @return this builder
-         */
+         **/
         public Builder securityMasterUserPasswordHash(String securityMasterUserPasswordHash) {
             this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             this.__explicitlySet__.add("securityMasterUserPasswordHash");
@@ -811,32 +843,34 @@ public final class OpensearchCluster
             this.__explicitlySet__.add("backupPolicy");
             return this;
         }
-        /** The customer IP addresses of the endpoint in customer VCN */
+        /**
+         * The customer IP addresses of the endpoint in customer VCN
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
         private java.util.List<String> reverseConnectionEndpointCustomerIps;
 
         /**
          * The customer IP addresses of the endpoint in customer VCN
-         *
          * @param reverseConnectionEndpointCustomerIps the value to set
          * @return this builder
-         */
+         **/
         public Builder reverseConnectionEndpointCustomerIps(
                 java.util.List<String> reverseConnectionEndpointCustomerIps) {
             this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
             this.__explicitlySet__.add("reverseConnectionEndpointCustomerIps");
             return this;
         }
-        /** The list of reverse connection endpoints. */
+        /**
+         * The list of reverse connection endpoints.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
         private java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints;
 
         /**
          * The list of reverse connection endpoints.
-         *
          * @param reverseConnectionEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder reverseConnectionEndpoints(
                 java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints) {
             this.reverseConnectionEndpoints = reverseConnectionEndpoints;
@@ -852,16 +886,17 @@ public final class OpensearchCluster
             this.__explicitlySet__.add("outboundClusterConfig");
             return this;
         }
-        /** List of inbound clusters for which this cluster is an outbound cluster */
+        /**
+         * List of inbound clusters for which this cluster is an outbound cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
         private java.util.List<String> inboundClusterIds;
 
         /**
          * List of inbound clusters for which this cluster is an outbound cluster
-         *
          * @param inboundClusterIds the value to set
          * @return this builder
-         */
+         **/
         public Builder inboundClusterIds(java.util.List<String> inboundClusterIds) {
             this.inboundClusterIds = inboundClusterIds;
             this.__explicitlySet__.add("inboundClusterIds");
@@ -1084,7 +1119,9 @@ public final class OpensearchCluster
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -1093,47 +1130,52 @@ public final class OpensearchCluster
         return new Builder().copy(this);
     }
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the cluster. Avoid entering confidential information. */
+    /**
+     * The name of the cluster. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the cluster. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment where the cluster is located. */
+    /**
+     * The OCID of the compartment where the cluster is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the cluster is located.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The current state of the cluster. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the cluster.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Updating("UPDATING"),
@@ -1142,8 +1184,8 @@ public final class OpensearchCluster
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1182,497 +1224,532 @@ public final class OpensearchCluster
             return UnknownEnumValue;
         }
     };
-    /** The current state of the cluster. */
+    /**
+     * The current state of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the cluster.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The amount of time in milliseconds since the cluster was created. */
+    /**
+     * The amount of time in milliseconds since the cluster was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The amount of time in milliseconds since the cluster was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The amount of time in milliseconds since the cluster was updated. */
+    /**
+     * The amount of time in milliseconds since the cluster was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The amount of time in milliseconds since the cluster was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The amount of time in milliseconds since the cluster was updated. */
+    /**
+     * The amount of time in milliseconds since the cluster was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
     private final java.util.Date timeDeleted;
 
     /**
      * The amount of time in milliseconds since the cluster was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDeleted() {
         return timeDeleted;
     }
 
-    /** Additional information about the current lifecycle state of the cluster. */
+    /**
+     * Additional information about the current lifecycle state of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state of the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** The software version the cluster is running. */
+    /**
+     * The software version the cluster is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final String softwareVersion;
 
     /**
      * The software version the cluster is running.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareVersion() {
         return softwareVersion;
     }
 
-    /** The size in GB of the cluster's total storage. */
+    /**
+     * The size in GB of the cluster's total storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalStorageGB")
     private final Integer totalStorageGB;
 
     /**
      * The size in GB of the cluster's total storage.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalStorageGB() {
         return totalStorageGB;
     }
 
-    /** The fully qualified domain name (FQDN) for the cluster's API endpoint. */
+    /**
+     * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opensearchFqdn")
     private final String opensearchFqdn;
 
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getOpensearchFqdn() {
         return opensearchFqdn;
     }
 
-    /** The cluster's private IP address. */
+    /**
+     * The cluster's private IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opensearchPrivateIp")
     private final String opensearchPrivateIp;
 
     /**
      * The cluster's private IP address.
-     *
      * @return the value
-     */
+     **/
     public String getOpensearchPrivateIp() {
         return opensearchPrivateIp;
     }
 
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardFqdn")
     private final String opendashboardFqdn;
 
     /**
      * The fully qualified domain name (FQDN) for the cluster's OpenSearch Dashboard API endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getOpendashboardFqdn() {
         return opendashboardFqdn;
     }
 
-    /** The private IP address for the cluster's OpenSearch Dashboard. */
+    /**
+     * The private IP address for the cluster's OpenSearch Dashboard.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardPrivateIp")
     private final String opendashboardPrivateIp;
 
     /**
      * The private IP address for the cluster's OpenSearch Dashboard.
-     *
      * @return the value
-     */
+     **/
     public String getOpendashboardPrivateIp() {
         return opendashboardPrivateIp;
     }
 
-    /** The number of master nodes configured for the cluster. */
+    /**
+     * The number of master nodes configured for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeCount")
     private final Integer masterNodeCount;
 
     /**
      * The number of master nodes configured for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getMasterNodeCount() {
         return masterNodeCount;
     }
 
-    /** The instance type for the cluster's master nodes. */
+    /**
+     * The instance type for the cluster's master nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostType")
     private final MasterNodeHostType masterNodeHostType;
 
     /**
      * The instance type for the cluster's master nodes.
-     *
      * @return the value
-     */
+     **/
     public MasterNodeHostType getMasterNodeHostType() {
         return masterNodeHostType;
     }
 
-    /** The bare metal shape for the cluster's master nodes. */
+    /**
+     * The bare metal shape for the cluster's master nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostBareMetalShape")
     private final String masterNodeHostBareMetalShape;
 
     /**
      * The bare metal shape for the cluster's master nodes.
-     *
      * @return the value
-     */
+     **/
     public String getMasterNodeHostBareMetalShape() {
         return masterNodeHostBareMetalShape;
     }
 
-    /** The number of OCPUs configured for cluster's master nodes. */
+    /**
+     * The number of OCPUs configured for cluster's master nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostOcpuCount")
     private final Integer masterNodeHostOcpuCount;
 
     /**
      * The number of OCPUs configured for cluster's master nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getMasterNodeHostOcpuCount() {
         return masterNodeHostOcpuCount;
     }
 
-    /** The amount of memory in GB, for the cluster's master nodes. */
+    /**
+     * The amount of memory in GB, for the cluster's master nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostMemoryGB")
     private final Integer masterNodeHostMemoryGB;
 
     /**
      * The amount of memory in GB, for the cluster's master nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getMasterNodeHostMemoryGB() {
         return masterNodeHostMemoryGB;
     }
 
-    /** The number of data nodes configured for the cluster. */
+    /**
+     * The number of data nodes configured for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeCount")
     private final Integer dataNodeCount;
 
     /**
      * The number of data nodes configured for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeCount() {
         return dataNodeCount;
     }
 
-    /** The instance type for the cluster's data nodes. */
+    /**
+     * The instance type for the cluster's data nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostType")
     private final DataNodeHostType dataNodeHostType;
 
     /**
      * The instance type for the cluster's data nodes.
-     *
      * @return the value
-     */
+     **/
     public DataNodeHostType getDataNodeHostType() {
         return dataNodeHostType;
     }
 
-    /** The bare metal shape for the cluster's data nodes. */
+    /**
+     * The bare metal shape for the cluster's data nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostBareMetalShape")
     private final String dataNodeHostBareMetalShape;
 
     /**
      * The bare metal shape for the cluster's data nodes.
-     *
      * @return the value
-     */
+     **/
     public String getDataNodeHostBareMetalShape() {
         return dataNodeHostBareMetalShape;
     }
 
-    /** The number of OCPUs configured for the cluster's data nodes. */
+    /**
+     * The number of OCPUs configured for the cluster's data nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
     private final Integer dataNodeHostOcpuCount;
 
     /**
      * The number of OCPUs configured for the cluster's data nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeHostOcpuCount() {
         return dataNodeHostOcpuCount;
     }
 
-    /** The amount of memory in GB, for the cluster's data nodes. */
+    /**
+     * The amount of memory in GB, for the cluster's data nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostMemoryGB")
     private final Integer dataNodeHostMemoryGB;
 
     /**
      * The amount of memory in GB, for the cluster's data nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeHostMemoryGB() {
         return dataNodeHostMemoryGB;
     }
 
-    /** The amount of storage in GB, to configure per node for the cluster's data nodes. */
+    /**
+     * The amount of storage in GB, to configure per node for the cluster's data nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeStorageGB")
     private final Integer dataNodeStorageGB;
 
     /**
      * The amount of storage in GB, to configure per node for the cluster's data nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeStorageGB() {
         return dataNodeStorageGB;
     }
 
-    /** The number of OpenSearch Dashboard nodes configured for the cluster. */
+    /**
+     * The number of OpenSearch Dashboard nodes configured for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeCount")
     private final Integer opendashboardNodeCount;
 
     /**
      * The number of OpenSearch Dashboard nodes configured for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getOpendashboardNodeCount() {
         return opendashboardNodeCount;
     }
 
-    /** The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes. */
+    /**
+     * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostOcpuCount")
     private final Integer opendashboardNodeHostOcpuCount;
 
     /**
      * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getOpendashboardNodeHostOcpuCount() {
         return opendashboardNodeHostOcpuCount;
     }
 
-    /** The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes. */
+    /**
+     * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardNodeHostMemoryGB")
     private final Integer opendashboardNodeHostMemoryGB;
 
     /**
      * The amount of memory in GB, for the cluster's OpenSearch Dashboard nodes.
-     *
      * @return the value
-     */
+     **/
     public Integer getOpendashboardNodeHostMemoryGB() {
         return opendashboardNodeHostMemoryGB;
     }
 
-    /** The OCID of the cluster's VCN. */
+    /**
+     * The OCID of the cluster's VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
      * The OCID of the cluster's VCN.
-     *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** The OCID of the cluster's subnet. */
+    /**
+     * The OCID of the cluster's subnet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the cluster's subnet.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The OCID for the compartment where the cluster's VCN is located. */
+    /**
+     * The OCID for the compartment where the cluster's VCN is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnCompartmentId")
     private final String vcnCompartmentId;
 
     /**
      * The OCID for the compartment where the cluster's VCN is located.
-     *
      * @return the value
-     */
+     **/
     public String getVcnCompartmentId() {
         return vcnCompartmentId;
     }
 
-    /** The OCID for the compartment where the cluster's subnet is located. */
+    /**
+     * The OCID for the compartment where the cluster's subnet is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetCompartmentId")
     private final String subnetCompartmentId;
 
     /**
      * The OCID for the compartment where the cluster's subnet is located.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetCompartmentId() {
         return subnetCompartmentId;
     }
 
-    /** The fully qualified domain name (FQDN) for the cluster's API endpoint. */
+    /**
+     * The fully qualified domain name (FQDN) for the cluster's API endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
     /**
      * The fully qualified domain name (FQDN) for the cluster's API endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getFqdn() {
         return fqdn;
     }
 
-    /** The availability domains to distribute the cluser nodes across. */
+    /**
+     * The availability domains to distribute the cluser nodes across.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
     private final java.util.List<String> availabilityDomains;
 
     /**
      * The availability domains to distribute the cluser nodes across.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAvailabilityDomains() {
         return availabilityDomains;
     }
 
-    /** The security mode of the cluster. */
+    /**
+     * The security mode of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
     private final SecurityMode securityMode;
 
     /**
      * The security mode of the cluster.
-     *
      * @return the value
-     */
+     **/
     public SecurityMode getSecurityMode() {
         return securityMode;
     }
 
-    /** The name of the master user that are used to manage security config */
+    /**
+     * The name of the master user that are used to manage security config
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserName")
     private final String securityMasterUserName;
 
     /**
      * The name of the master user that are used to manage security config
-     *
      * @return the value
-     */
+     **/
     public String getSecurityMasterUserName() {
         return securityMasterUserName;
     }
 
-    /** The password hash of the master user that are used to manage security config */
+    /**
+     * The password hash of the master user that are used to manage security config
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityMasterUserPasswordHash")
     private final String securityMasterUserPasswordHash;
 
     /**
      * The password hash of the master user that are used to manage security config
-     *
      * @return the value
-     */
+     **/
     public String getSecurityMasterUserPasswordHash() {
         return securityMasterUserPasswordHash;
     }
@@ -1691,28 +1768,30 @@ public final class OpensearchCluster
         return backupPolicy;
     }
 
-    /** The customer IP addresses of the endpoint in customer VCN */
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
     private final java.util.List<String> reverseConnectionEndpointCustomerIps;
 
     /**
      * The customer IP addresses of the endpoint in customer VCN
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getReverseConnectionEndpointCustomerIps() {
         return reverseConnectionEndpointCustomerIps;
     }
 
-    /** The list of reverse connection endpoints. */
+    /**
+     * The list of reverse connection endpoints.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
     private final java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints;
 
     /**
      * The list of reverse connection endpoints.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ReverseConnectionEndpoint> getReverseConnectionEndpoints() {
         return reverseConnectionEndpoints;
     }
@@ -1724,15 +1803,16 @@ public final class OpensearchCluster
         return outboundClusterConfig;
     }
 
-    /** List of inbound clusters for which this cluster is an outbound cluster */
+    /**
+     * List of inbound clusters for which this cluster is an outbound cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
     private final java.util.List<String> inboundClusterIds;
 
     /**
      * List of inbound clusters for which this cluster is an outbound cluster
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getInboundClusterIds() {
         return inboundClusterIds;
     }
@@ -1751,7 +1831,6 @@ public final class OpensearchCluster
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

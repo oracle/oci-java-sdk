@@ -4,48 +4,336 @@
  */
 package com.oracle.bmc.osmanagementhub;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.osmanagementhub.internal.http.*;
 import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements SoftwareSource {
-    /** Service instance for SoftwareSource. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class SoftwareSourceClient implements SoftwareSource {
+    /**
+     * Service instance for SoftwareSource.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SOFTWARESOURCE")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://osmh.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SoftwareSourceClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final SoftwareSourceWaiters waiters;
 
     private final SoftwareSourcePaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    SoftwareSourceClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        this(builder, authenticationDetailsProvider, executorService, true);
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
     }
 
-    SoftwareSourceClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService,
-            boolean isStreamWarningEnabled) {
-        super(
-                builder,
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected SoftwareSourceClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -67,16 +355,34 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
         this.waiters = new SoftwareSourceWaiters(executorService, this);
 
         this.paginators = new SoftwareSourcePaginators(this);
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
             LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
                             "SoftwareSourceClient", "getSoftwareSourceManifest"));
         }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -84,18 +390,15 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, SoftwareSourceClient> {
-        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "osmanagementhub";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -103,7 +406,6 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -113,1253 +415,1485 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
         }
 
         /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public SoftwareSourceClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new SoftwareSourceClient(
-                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public AddPackagesToSoftwareSourceResponse addPackagesToSoftwareSource(
             AddPackagesToSoftwareSourceRequest request) {
+        LOG.trace("Called addPackagesToSoftwareSource");
+        final AddPackagesToSoftwareSourceRequest interceptedRequest =
+                AddPackagesToSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddPackagesToSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-        Objects.requireNonNull(
-                request.getAddPackagesToSoftwareSourceDetails(),
-                "addPackagesToSoftwareSourceDetails is required");
-
-        return clientCall(request, AddPackagesToSoftwareSourceResponse::builder)
-                .logger(LOG, "addPackagesToSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "AddPackagesToSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/AddPackagesToSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddPackagesToSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("actions")
-                .appendPathParam("addPackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", AddPackagesToSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AddPackagesToSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/AddPackagesToSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, AddPackagesToSoftwareSourceResponse>
+                transformer =
+                        AddPackagesToSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddPackagesToSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeAvailabilityOfSoftwareSourcesResponse changeAvailabilityOfSoftwareSources(
             ChangeAvailabilityOfSoftwareSourcesRequest request) {
-        Objects.requireNonNull(
-                request.getChangeAvailabilityOfSoftwareSourcesDetails(),
-                "changeAvailabilityOfSoftwareSourcesDetails is required");
+        LOG.trace("Called changeAvailabilityOfSoftwareSources");
+        final ChangeAvailabilityOfSoftwareSourcesRequest interceptedRequest =
+                ChangeAvailabilityOfSoftwareSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAvailabilityOfSoftwareSourcesConverter.fromRequest(
+                        client, interceptedRequest);
 
-        return clientCall(request, ChangeAvailabilityOfSoftwareSourcesResponse::builder)
-                .logger(LOG, "changeAvailabilityOfSoftwareSources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ChangeAvailabilityOfSoftwareSources",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeAvailabilityOfSoftwareSources")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeAvailabilityOfSoftwareSourcesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam("actions")
-                .appendPathParam("changeAvailability")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeAvailabilityOfSoftwareSourcesResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeAvailabilityOfSoftwareSources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeAvailabilityOfSoftwareSourcesResponse>
+                transformer =
+                        ChangeAvailabilityOfSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeAvailabilityOfSoftwareSourcesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeSoftwareSourceCompartmentResponse changeSoftwareSourceCompartment(
             ChangeSoftwareSourceCompartmentRequest request) {
+        LOG.trace("Called changeSoftwareSourceCompartment");
+        final ChangeSoftwareSourceCompartmentRequest interceptedRequest =
+                ChangeSoftwareSourceCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSoftwareSourceCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeSoftwareSourceCompartmentDetails(),
-                "changeSoftwareSourceCompartmentDetails is required");
-
-        return clientCall(request, ChangeSoftwareSourceCompartmentResponse::builder)
-                .logger(LOG, "changeSoftwareSourceCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ChangeSoftwareSourceCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeSoftwareSourceCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeSoftwareSourceCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeSoftwareSourceCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ChangeSoftwareSourceCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSoftwareSourceCompartmentResponse>
+                transformer =
+                        ChangeSoftwareSourceCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeSoftwareSourceCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateEntitlementResponse createEntitlement(CreateEntitlementRequest request) {
-        Objects.requireNonNull(
-                request.getCreateEntitlementDetails(), "createEntitlementDetails is required");
+        LOG.trace("Called createEntitlement");
+        final CreateEntitlementRequest interceptedRequest =
+                CreateEntitlementConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateEntitlementConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateEntitlementResponse::builder)
-                .logger(LOG, "createEntitlement")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "CreateEntitlement",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateEntitlement")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateEntitlementRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("entitlements")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateEntitlementResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateEntitlement");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateEntitlementResponse>
+                transformer =
+                        CreateEntitlementConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateEntitlementDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateSoftwareSourceResponse createSoftwareSource(CreateSoftwareSourceRequest request) {
-        Objects.requireNonNull(
-                request.getCreateSoftwareSourceDetails(),
-                "createSoftwareSourceDetails is required");
+        LOG.trace("Called createSoftwareSource");
+        final CreateSoftwareSourceRequest interceptedRequest =
+                CreateSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateSoftwareSourceResponse::builder)
-                .logger(LOG, "createSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "CreateSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
-                        CreateSoftwareSourceResponse.Builder::softwareSource)
-                .handleResponseHeaderString("etag", CreateSoftwareSourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateSoftwareSourceResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/CreateSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSoftwareSourceResponse>
+                transformer =
+                        CreateSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteSoftwareSourceResponse deleteSoftwareSource(DeleteSoftwareSourceRequest request) {
+        LOG.trace("Called deleteSoftwareSource");
+        final DeleteSoftwareSourceRequest interceptedRequest =
+                DeleteSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, DeleteSoftwareSourceResponse::builder)
-                .logger(LOG, "deleteSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "DeleteSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/DeleteSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteSoftwareSourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/DeleteSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSoftwareSourceResponse>
+                transformer =
+                        DeleteSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetErratumResponse getErratum(GetErratumRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called getErratum");
+        final GetErratumRequest interceptedRequest = GetErratumConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetErratumConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getName(), "name must not be blank");
-
-        return clientCall(request, GetErratumResponse::builder)
-                .logger(LOG, "getErratum")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetErratum",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/GetErratum")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetErratumRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("errata")
-                .appendPathParam(request.getName())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.Erratum.class,
-                        GetErratumResponse.Builder::erratum)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetErratumResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/GetErratum");
+        java.util.function.Function<javax.ws.rs.core.Response, GetErratumResponse> transformer =
+                GetErratumConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetModuleStreamResponse getModuleStream(GetModuleStreamRequest request) {
+        LOG.trace("Called getModuleStream");
+        final GetModuleStreamRequest interceptedRequest =
+                GetModuleStreamConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModuleStreamConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        Validate.notBlank(request.getModuleName(), "moduleName must not be blank");
-        Objects.requireNonNull(request.getStreamName(), "streamName is required");
-
-        return clientCall(request, GetModuleStreamResponse::builder)
-                .logger(LOG, "getModuleStream")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetModuleStream",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStream/GetModuleStream")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetModuleStreamRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("moduleStreams")
-                .appendPathParam(request.getModuleName())
-                .appendQueryParam("streamName", request.getStreamName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleStream.class,
-                        GetModuleStreamResponse.Builder::moduleStream)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetModuleStreamResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStream/GetModuleStream");
+        java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamResponse>
+                transformer =
+                        GetModuleStreamConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetModuleStreamProfileResponse getModuleStreamProfile(
             GetModuleStreamProfileRequest request) {
+        LOG.trace("Called getModuleStreamProfile");
+        final GetModuleStreamProfileRequest interceptedRequest =
+                GetModuleStreamProfileConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetModuleStreamProfileConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        Validate.notBlank(request.getProfileName(), "profileName must not be blank");
-        Objects.requireNonNull(request.getModuleName(), "moduleName is required");
-
-        Objects.requireNonNull(request.getStreamName(), "streamName is required");
-
-        return clientCall(request, GetModuleStreamProfileResponse::builder)
-                .logger(LOG, "getModuleStreamProfile")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetModuleStreamProfile",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStreamProfile/GetModuleStreamProfile")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetModuleStreamProfileRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("moduleStreamProfiles")
-                .appendPathParam(request.getProfileName())
-                .appendQueryParam("moduleName", request.getModuleName())
-                .appendQueryParam("streamName", request.getStreamName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleStreamProfile.class,
-                        GetModuleStreamProfileResponse.Builder::moduleStreamProfile)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetModuleStreamProfileResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ModuleStreamProfile/GetModuleStreamProfile");
+        java.util.function.Function<javax.ws.rs.core.Response, GetModuleStreamProfileResponse>
+                transformer =
+                        GetModuleStreamProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetPackageGroupResponse getPackageGroup(GetPackageGroupRequest request) {
+        LOG.trace("Called getPackageGroup");
+        final GetPackageGroupRequest interceptedRequest =
+                GetPackageGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPackageGroupConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        Validate.notBlank(request.getPackageGroupId(), "packageGroupId must not be blank");
-
-        return clientCall(request, GetPackageGroupResponse::builder)
-                .logger(LOG, "getPackageGroup")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetPackageGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/PackageGroup/GetPackageGroup")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPackageGroupRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("packageGroups")
-                .appendPathParam(request.getPackageGroupId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.PackageGroup.class,
-                        GetPackageGroupResponse.Builder::packageGroup)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPackageGroupResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/PackageGroup/GetPackageGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, GetPackageGroupResponse>
+                transformer =
+                        GetPackageGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSoftwarePackageResponse getSoftwarePackage(GetSoftwarePackageRequest request) {
+        LOG.trace("Called getSoftwarePackage");
+        final GetSoftwarePackageRequest interceptedRequest =
+                GetSoftwarePackageConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwarePackageConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        Validate.notBlank(
-                request.getSoftwarePackageName(), "softwarePackageName must not be blank");
-
-        return clientCall(request, GetSoftwarePackageResponse::builder)
-                .logger(LOG, "getSoftwarePackage")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetSoftwarePackage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSoftwarePackageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("softwarePackages")
-                .appendPathParam(request.getSoftwarePackageName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwarePackage.class,
-                        GetSoftwarePackageResponse.Builder::softwarePackage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSoftwarePackageResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackage");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageResponse>
+                transformer =
+                        GetSoftwarePackageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSoftwarePackageByNameResponse getSoftwarePackageByName(
             GetSoftwarePackageByNameRequest request) {
+        LOG.trace("Called getSoftwarePackageByName");
+        final GetSoftwarePackageByNameRequest interceptedRequest =
+                GetSoftwarePackageByNameConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwarePackageByNameConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getSoftwarePackageName(), "softwarePackageName must not be blank");
-
-        return clientCall(request, GetSoftwarePackageByNameResponse::builder)
-                .logger(LOG, "getSoftwarePackageByName")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetSoftwarePackageByName",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackageByName")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSoftwarePackageByNameRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwarePackages")
-                .appendPathParam(request.getSoftwarePackageName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwarePackage.class,
-                        GetSoftwarePackageByNameResponse.Builder::softwarePackage)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSoftwarePackageByNameResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwarePackageByName");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSoftwarePackageByNameResponse>
+                transformer =
+                        GetSoftwarePackageByNameConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSoftwareSourceResponse getSoftwareSource(GetSoftwareSourceRequest request) {
+        LOG.trace("Called getSoftwareSource");
+        final GetSoftwareSourceRequest interceptedRequest =
+                GetSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, GetSoftwareSourceResponse::builder)
-                .logger(LOG, "getSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
-                        GetSoftwareSourceResponse.Builder::softwareSource)
-                .handleResponseHeaderString("etag", GetSoftwareSourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetSoftwareSourceResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSoftwareSourceResponse>
+                transformer =
+                        GetSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetSoftwareSourceManifestResponse getSoftwareSourceManifest(
             GetSoftwareSourceManifestRequest request) {
+        LOG.trace("Called getSoftwareSourceManifest");
+        final GetSoftwareSourceManifestRequest interceptedRequest =
+                GetSoftwareSourceManifestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSoftwareSourceManifestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, GetSoftwareSourceManifestResponse::builder)
-                .logger(LOG, "getSoftwareSourceManifest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "GetSoftwareSourceManifest",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSourceManifest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSoftwareSourceManifestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("manifest")
-                .accept("application/octet-stream")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetSoftwareSourceManifestResponse.Builder::inputStream)
-                .handleResponseHeaderString("etag", GetSoftwareSourceManifestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSoftwareSourceManifestResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/GetSoftwareSourceManifest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSoftwareSourceManifestResponse>
+                transformer =
+                        GetSoftwareSourceManifestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAllSoftwarePackagesResponse listAllSoftwarePackages(
             ListAllSoftwarePackagesRequest request) {
+        LOG.trace("Called listAllSoftwarePackages");
+        final ListAllSoftwarePackagesRequest interceptedRequest =
+                ListAllSoftwarePackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAllSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListAllSoftwarePackagesResponse::builder)
-                .logger(LOG, "listAllSoftwarePackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListAllSoftwarePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAllSoftwarePackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAllSoftwarePackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwarePackages")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("version", request.getVersion())
-                .appendEnumQueryParam("architecture", request.getArchitecture())
-                .appendQueryParam("isLatest", request.getIsLatest())
-                .appendEnumQueryParam("osFamily", request.getOsFamily())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection.class,
-                        ListAllSoftwarePackagesResponse.Builder::softwarePackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAllSoftwarePackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAllSoftwarePackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAllSoftwarePackages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAllSoftwarePackagesResponse>
+                transformer =
+                        ListAllSoftwarePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAvailableSoftwarePackagesResponse listAvailableSoftwarePackages(
             ListAvailableSoftwarePackagesRequest request) {
+        LOG.trace("Called listAvailableSoftwarePackages");
+        final ListAvailableSoftwarePackagesRequest interceptedRequest =
+                ListAvailableSoftwarePackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAvailableSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, ListAvailableSoftwarePackagesResponse::builder)
-                .logger(LOG, "listAvailableSoftwarePackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListAvailableSoftwarePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwarePackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAvailableSoftwarePackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("availableSoftwarePackages")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("isLatest", request.getIsLatest())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection.class,
-                        ListAvailableSoftwarePackagesResponse.Builder::softwarePackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListAvailableSoftwarePackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAvailableSoftwarePackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListAvailableSoftwarePackages");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAvailableSoftwarePackagesResponse>
+                transformer =
+                        ListAvailableSoftwarePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListEntitlementsResponse listEntitlements(ListEntitlementsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listEntitlements");
+        final ListEntitlementsRequest interceptedRequest =
+                ListEntitlementsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEntitlementsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListEntitlementsResponse::builder)
-                .logger(LOG, "listEntitlements")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListEntitlements",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListEntitlements")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEntitlementsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("entitlements")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("csi", request.getCsi())
-                .appendEnumQueryParam("vendorName", request.getVendorName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.EntitlementCollection.class,
-                        ListEntitlementsResponse.Builder::entitlementCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListEntitlementsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListEntitlementsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListEntitlements");
+        java.util.function.Function<javax.ws.rs.core.Response, ListEntitlementsResponse>
+                transformer =
+                        ListEntitlementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListErrataResponse listErrata(ListErrataRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listErrata");
+        final ListErrataRequest interceptedRequest = ListErrataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListErrataConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListErrataResponse::builder)
-                .logger(LOG, "listErrata")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListErrata",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/ListErrata")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListErrataRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("errata")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "name",
-                        request.getName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendListQueryParam(
-                        "classificationType",
-                        request.getClassificationType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "advisoryType",
-                        request.getAdvisoryType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendEnumQueryParam("osFamily", request.getOsFamily())
-                .appendListQueryParam(
-                        "advisorySeverity",
-                        request.getAdvisorySeverity(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("timeIssueDateStart", request.getTimeIssueDateStart())
-                .appendQueryParam("timeIssueDateEnd", request.getTimeIssueDateEnd())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ErratumCollection.class,
-                        ListErrataResponse.Builder::erratumCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListErrataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListErrataResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Erratum/ListErrata");
+        java.util.function.Function<javax.ws.rs.core.Response, ListErrataResponse> transformer =
+                ListErrataConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListModuleStreamProfilesResponse listModuleStreamProfiles(
             ListModuleStreamProfilesRequest request) {
+        LOG.trace("Called listModuleStreamProfiles");
+        final ListModuleStreamProfilesRequest interceptedRequest =
+                ListModuleStreamProfilesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamProfilesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, ListModuleStreamProfilesResponse::builder)
-                .logger(LOG, "listModuleStreamProfiles")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListModuleStreamProfiles",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreamProfiles")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListModuleStreamProfilesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("moduleStreamProfiles")
-                .appendQueryParam("moduleName", request.getModuleName())
-                .appendQueryParam("streamName", request.getStreamName())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleStreamProfileCollection.class,
-                        ListModuleStreamProfilesResponse.Builder::moduleStreamProfileCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListModuleStreamProfilesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListModuleStreamProfilesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreamProfiles");
+        java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamProfilesResponse>
+                transformer =
+                        ListModuleStreamProfilesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListModuleStreamsResponse listModuleStreams(ListModuleStreamsRequest request) {
+        LOG.trace("Called listModuleStreams");
+        final ListModuleStreamsRequest interceptedRequest =
+                ListModuleStreamsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListModuleStreamsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, ListModuleStreamsResponse::builder)
-                .logger(LOG, "listModuleStreams")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListModuleStreams",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreams")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListModuleStreamsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("moduleStreams")
-                .appendQueryParam("moduleName", request.getModuleName())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("isLatest", request.getIsLatest())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("moduleNameContains", request.getModuleNameContains())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection.class,
-                        ListModuleStreamsResponse.Builder::moduleStreamCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListModuleStreamsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListModuleStreamsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListModuleStreams");
+        java.util.function.Function<javax.ws.rs.core.Response, ListModuleStreamsResponse>
+                transformer =
+                        ListModuleStreamsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListPackageGroupsResponse listPackageGroups(ListPackageGroupsRequest request) {
+        LOG.trace("Called listPackageGroups");
+        final ListPackageGroupsRequest interceptedRequest =
+                ListPackageGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPackageGroupsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, ListPackageGroupsResponse::builder)
-                .logger(LOG, "listPackageGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListPackageGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListPackageGroups")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListPackageGroupsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("packageGroups")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("nameContains", request.getNameContains())
-                .appendListQueryParam(
-                        "groupType",
-                        request.getGroupType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.PackageGroupCollection.class,
-                        ListPackageGroupsResponse.Builder::packageGroupCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListPackageGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListPackageGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListPackageGroups");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPackageGroupsResponse>
+                transformer =
+                        ListPackageGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSoftwarePackageSoftwareSourcesResponse listSoftwarePackageSoftwareSources(
             ListSoftwarePackageSoftwareSourcesRequest request) {
+        LOG.trace("Called listSoftwarePackageSoftwareSources");
+        final ListSoftwarePackageSoftwareSourcesRequest interceptedRequest =
+                ListSoftwarePackageSoftwareSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwarePackageSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getSoftwarePackageName(), "softwarePackageName must not be blank");
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSoftwarePackageSoftwareSourcesResponse::builder)
-                .logger(LOG, "listSoftwarePackageSoftwareSources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListSoftwarePackageSoftwareSources",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackageSoftwareSources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSoftwarePackageSoftwareSourcesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwarePackages")
-                .appendPathParam(request.getSoftwarePackageName())
-                .appendPathParam("softwareSources")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "softwareSourceType",
-                        request.getSoftwareSourceType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "osFamily",
-                        request.getOsFamily(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "archType",
-                        request.getArchType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availability",
-                        request.getAvailability(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availabilityAtOci",
-                        request.getAvailabilityAtOci(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availabilityAnywhere",
-                        request.getAvailabilityAnywhere(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection.class,
-                        ListSoftwarePackageSoftwareSourcesResponse.Builder
-                                ::softwareSourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSoftwarePackageSoftwareSourcesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSoftwarePackageSoftwareSourcesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackageSoftwareSources");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSoftwarePackageSoftwareSourcesResponse>
+                transformer =
+                        ListSoftwarePackageSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSoftwarePackagesResponse listSoftwarePackages(ListSoftwarePackagesRequest request) {
+        LOG.trace("Called listSoftwarePackages");
+        final ListSoftwarePackagesRequest interceptedRequest =
+                ListSoftwarePackagesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwarePackagesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, ListSoftwarePackagesResponse::builder)
-                .logger(LOG, "listSoftwarePackages")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListSoftwarePackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSoftwarePackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("softwarePackages")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("isLatest", request.getIsLatest())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwarePackageCollection.class,
-                        ListSoftwarePackagesResponse.Builder::softwarePackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSoftwarePackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSoftwarePackagesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwarePackages");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSoftwarePackagesResponse>
+                transformer =
+                        ListSoftwarePackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSoftwareSourceVendorsResponse listSoftwareSourceVendors(
             ListSoftwareSourceVendorsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listSoftwareSourceVendors");
+        final ListSoftwareSourceVendorsRequest interceptedRequest =
+                ListSoftwareSourceVendorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwareSourceVendorsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListSoftwareSourceVendorsResponse::builder)
-                .logger(LOG, "listSoftwareSourceVendors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListSoftwareSourceVendors",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSourceVendors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSoftwareSourceVendorsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSourceVendors")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("name", request.getName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSourceVendorCollection.class,
-                        ListSoftwareSourceVendorsResponse.Builder::softwareSourceVendorCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSoftwareSourceVendorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSourceVendors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourceVendorsResponse>
+                transformer =
+                        ListSoftwareSourceVendorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListSoftwareSourcesResponse listSoftwareSources(ListSoftwareSourcesRequest request) {
+        LOG.trace("Called listSoftwareSources");
+        final ListSoftwareSourcesRequest interceptedRequest =
+                ListSoftwareSourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSoftwareSourcesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListSoftwareSourcesResponse::builder)
-                .logger(LOG, "listSoftwareSources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ListSoftwareSources",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSoftwareSourcesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
-                .appendListQueryParam(
-                        "softwareSourceType",
-                        request.getSoftwareSourceType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendEnumQueryParam("vendorName", request.getVendorName())
-                .appendListQueryParam(
-                        "osFamily",
-                        request.getOsFamily(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "archType",
-                        request.getArchType(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availability",
-                        request.getAvailability(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availabilityAtOci",
-                        request.getAvailabilityAtOci(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "availabilityAnywhere",
-                        request.getAvailabilityAnywhere(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam(
-                        "isMandatoryForAutonomousLinux", request.getIsMandatoryForAutonomousLinux())
-                .appendQueryParam("isMirrorSyncAllowed", request.getIsMirrorSyncAllowed())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendListQueryParam(
-                        "displayNameNotEqualTo",
-                        request.getDisplayNameNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendListQueryParam(
-                        "lifecycleState",
-                        request.getLifecycleState(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSourceCollection.class,
-                        ListSoftwareSourcesResponse.Builder::softwareSourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSoftwareSourcesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSoftwareSourcesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ListSoftwareSources");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSoftwareSourcesResponse>
+                transformer =
+                        ListSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RemovePackagesFromSoftwareSourceResponse removePackagesFromSoftwareSource(
             RemovePackagesFromSoftwareSourceRequest request) {
+        LOG.trace("Called removePackagesFromSoftwareSource");
+        final RemovePackagesFromSoftwareSourceRequest interceptedRequest =
+                RemovePackagesFromSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemovePackagesFromSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-        Objects.requireNonNull(
-                request.getRemovePackagesFromSoftwareSourceDetails(),
-                "removePackagesFromSoftwareSourceDetails is required");
-
-        return clientCall(request, RemovePackagesFromSoftwareSourceResponse::builder)
-                .logger(LOG, "removePackagesFromSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "RemovePackagesFromSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/RemovePackagesFromSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemovePackagesFromSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("actions")
-                .appendPathParam("removePackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemovePackagesFromSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RemovePackagesFromSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/RemovePackagesFromSoftwareSource");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemovePackagesFromSoftwareSourceResponse>
+                transformer =
+                        RemovePackagesFromSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemovePackagesFromSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ReplacePackagesInSoftwareSourceResponse replacePackagesInSoftwareSource(
             ReplacePackagesInSoftwareSourceRequest request) {
+        LOG.trace("Called replacePackagesInSoftwareSource");
+        final ReplacePackagesInSoftwareSourceRequest interceptedRequest =
+                ReplacePackagesInSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReplacePackagesInSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-        Objects.requireNonNull(
-                request.getReplacePackagesInSoftwareSourceDetails(),
-                "replacePackagesInSoftwareSourceDetails is required");
-
-        return clientCall(request, ReplacePackagesInSoftwareSourceResponse::builder)
-                .logger(LOG, "replacePackagesInSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "ReplacePackagesInSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ReplacePackagesInSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ReplacePackagesInSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("actions")
-                .appendPathParam("replacePackages")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ReplacePackagesInSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ReplacePackagesInSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/ReplacePackagesInSoftwareSource");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ReplacePackagesInSoftwareSourceResponse>
+                transformer =
+                        ReplacePackagesInSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getReplacePackagesInSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SearchSoftwareSourceModuleStreamsResponse searchSoftwareSourceModuleStreams(
             SearchSoftwareSourceModuleStreamsRequest request) {
-        Objects.requireNonNull(
-                request.getSearchSoftwareSourceModuleStreamsDetails(),
-                "searchSoftwareSourceModuleStreamsDetails is required");
+        LOG.trace("Called searchSoftwareSourceModuleStreams");
+        final SearchSoftwareSourceModuleStreamsRequest interceptedRequest =
+                SearchSoftwareSourceModuleStreamsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSoftwareSourceModuleStreamsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, SearchSoftwareSourceModuleStreamsResponse::builder)
-                .logger(LOG, "searchSoftwareSourceModuleStreams")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "SearchSoftwareSourceModuleStreams",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModuleStreams")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SearchSoftwareSourceModuleStreamsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSourceModuleStreams")
-                .appendPathParam("actions")
-                .appendPathParam("search")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleStreamCollection.class,
-                        SearchSoftwareSourceModuleStreamsResponse.Builder::moduleStreamCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SearchSoftwareSourceModuleStreamsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SearchSoftwareSourceModuleStreamsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModuleStreams");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchSoftwareSourceModuleStreamsResponse>
+                transformer =
+                        SearchSoftwareSourceModuleStreamsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSearchSoftwareSourceModuleStreamsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SearchSoftwareSourceModulesResponse searchSoftwareSourceModules(
             SearchSoftwareSourceModulesRequest request) {
-        Objects.requireNonNull(
-                request.getSearchSoftwareSourceModulesDetails(),
-                "searchSoftwareSourceModulesDetails is required");
+        LOG.trace("Called searchSoftwareSourceModules");
+        final SearchSoftwareSourceModulesRequest interceptedRequest =
+                SearchSoftwareSourceModulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSoftwareSourceModulesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, SearchSoftwareSourceModulesResponse::builder)
-                .logger(LOG, "searchSoftwareSourceModules")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "SearchSoftwareSourceModules",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModules")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SearchSoftwareSourceModulesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSourceModules")
-                .appendPathParam("actions")
-                .appendPathParam("search")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.ModuleCollection.class,
-                        SearchSoftwareSourceModulesResponse.Builder::moduleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", SearchSoftwareSourceModulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", SearchSoftwareSourceModulesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourceModules");
+        java.util.function.Function<javax.ws.rs.core.Response, SearchSoftwareSourceModulesResponse>
+                transformer =
+                        SearchSoftwareSourceModulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSearchSoftwareSourceModulesDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SearchSoftwareSourcePackageGroupsResponse searchSoftwareSourcePackageGroups(
             SearchSoftwareSourcePackageGroupsRequest request) {
-        Objects.requireNonNull(
-                request.getSearchSoftwareSourcePackageGroupsDetails(),
-                "searchSoftwareSourcePackageGroupsDetails is required");
+        LOG.trace("Called searchSoftwareSourcePackageGroups");
+        final SearchSoftwareSourcePackageGroupsRequest interceptedRequest =
+                SearchSoftwareSourcePackageGroupsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSoftwareSourcePackageGroupsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, SearchSoftwareSourcePackageGroupsResponse::builder)
-                .logger(LOG, "searchSoftwareSourcePackageGroups")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "SearchSoftwareSourcePackageGroups",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourcePackageGroups")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SearchSoftwareSourcePackageGroupsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSourcePackageGroups")
-                .appendPathParam("actions")
-                .appendPathParam("search")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.PackageGroupCollection.class,
-                        SearchSoftwareSourcePackageGroupsResponse.Builder::packageGroupCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SearchSoftwareSourcePackageGroupsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SearchSoftwareSourcePackageGroupsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SearchSoftwareSourcePackageGroups");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchSoftwareSourcePackageGroupsResponse>
+                transformer =
+                        SearchSoftwareSourcePackageGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSearchSoftwareSourcePackageGroupsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public SoftwareSourceGenerateMetadataResponse softwareSourceGenerateMetadata(
             SoftwareSourceGenerateMetadataRequest request) {
+        LOG.trace("Called softwareSourceGenerateMetadata");
+        final SoftwareSourceGenerateMetadataRequest interceptedRequest =
+                SoftwareSourceGenerateMetadataConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SoftwareSourceGenerateMetadataConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, SoftwareSourceGenerateMetadataResponse::builder)
-                .logger(LOG, "softwareSourceGenerateMetadata")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "SoftwareSourceGenerateMetadata",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SoftwareSourceGenerateMetadata")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(SoftwareSourceGenerateMetadataRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("actions")
-                .appendPathParam("generateMetadata")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SoftwareSourceGenerateMetadataResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/SoftwareSourceGenerateMetadata");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SoftwareSourceGenerateMetadataResponse>
+                transformer =
+                        SoftwareSourceGenerateMetadataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateSoftwareSourceResponse updateSoftwareSource(UpdateSoftwareSourceRequest request) {
+        LOG.trace("Called updateSoftwareSource");
+        final UpdateSoftwareSourceRequest interceptedRequest =
+                UpdateSoftwareSourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSoftwareSourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateSoftwareSourceDetails(),
-                "updateSoftwareSourceDetails is required");
-
-        return clientCall(request, UpdateSoftwareSourceResponse::builder)
-                .logger(LOG, "updateSoftwareSource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "SoftwareSource",
                         "UpdateSoftwareSource",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSource")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSoftwareSourceRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
-                        UpdateSoftwareSourceResponse.Builder::softwareSource)
-                .handleResponseHeaderString("etag", UpdateSoftwareSourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateSoftwareSourceResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateSoftwareSourceResponse.Builder::opcWorkRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSource");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateSoftwareSourceResponse>
+                transformer =
+                        UpdateSoftwareSourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateSoftwareSourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateSoftwareSourceManifestResponse updateSoftwareSourceManifest(
             UpdateSoftwareSourceManifestRequest request) {
-        Objects.requireNonNull(
-                request.getUpdateSoftwareSourceManifestDetails(),
-                "updateSoftwareSourceManifestDetails is required");
-
-        Validate.notBlank(request.getSoftwareSourceId(), "softwareSourceId must not be blank");
-
-        return clientCall(request, UpdateSoftwareSourceManifestResponse::builder)
-                .logger(LOG, "updateSoftwareSourceManifest")
-                .serviceDetails(
-                        "SoftwareSource",
-                        "UpdateSoftwareSourceManifest",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSourceManifest")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSoftwareSourceManifestRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("softwareSources")
-                .appendPathParam(request.getSoftwareSourceId())
-                .appendPathParam("manifest")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .operationUsesDefaultRetries()
-                .hasBinaryRequestBody()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.SoftwareSource.class,
-                        UpdateSoftwareSourceManifestResponse.Builder::softwareSource)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateSoftwareSourceManifestResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateSoftwareSourceManifestResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateSoftwareSourceManifestResponse.Builder::etag)
-                .callSync();
+        LOG.trace("Called updateSoftwareSourceManifest");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, UpdateSoftwareSourceManifestRequest.builder());
+            }
+            final UpdateSoftwareSourceManifestRequest interceptedRequest =
+                    UpdateSoftwareSourceManifestConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    UpdateSoftwareSourceManifestConverter.fromRequest(client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "SoftwareSource",
+                            "UpdateSoftwareSourceManifest",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/SoftwareSource/UpdateSoftwareSourceManifest");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, UpdateSoftwareSourceManifestResponse>
+                    transformer =
+                            UpdateSoftwareSourceManifestConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.put(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getUpdateSoftwareSourceManifestDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getUpdateSoftwareSourceManifestDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getUpdateSoftwareSourceManifestDetails());
+        }
     }
 
     @Override
@@ -1372,207 +1906,29 @@ public class SoftwareSourceClient extends com.oracle.bmc.http.internal.BaseSyncC
         return paginators;
     }
 
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public SoftwareSourceClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
+    private static boolean shouldRetryBecauseOfWaiterConfiguration(
+            com.oracle.bmc.retrier.BmcGenericRetrier retrier) {
+        boolean hasTerminationStrategy = false;
+        boolean isMaxAttemptsTerminationStrategy = false;
+        if (retrier.getWaiter() != null && retrier.getWaiter().getWaiterConfiguration() != null) {
+            hasTerminationStrategy =
+                    retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy() != null;
+            if (hasTerminationStrategy) {
+                isMaxAttemptsTerminationStrategy =
+                        retrier.getWaiter().getWaiterConfiguration().getTerminationStrategy()
+                                instanceof com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
+            }
+        }
+        final boolean shouldRetry =
+                hasTerminationStrategy
+                        && (!isMaxAttemptsTerminationStrategy
+                                || isMaxAttemptsTerminationStrategy
+                                        && ((com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy)
+                                                                retrier.getWaiter()
+                                                                        .getWaiterConfiguration()
+                                                                        .getTerminationStrategy())
+                                                        .getMaxAttempts()
+                                                > 1);
+        return shouldRetry;
     }
 }

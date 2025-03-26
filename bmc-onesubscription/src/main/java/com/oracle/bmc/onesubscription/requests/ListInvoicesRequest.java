@@ -6,46 +6,70 @@ package com.oracle.bmc.onesubscription.requests;
 
 import com.oracle.bmc.onesubscription.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListInvoicesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInvoicesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListInvoicesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInvoicesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** AR Unique identifier for an invoice . */
+    /**
+     * AR Unique identifier for an invoice .
+     */
     private String arCustomerTransactionId;
 
-    /** AR Unique identifier for an invoice . */
+    /**
+     * AR Unique identifier for an invoice .
+     */
     public String getArCustomerTransactionId() {
         return arCustomerTransactionId;
     }
-    /** Initial date to filter Invoice data in SPM. */
+    /**
+     * Initial date to filter Invoice data in SPM.
+     *
+     */
     private java.util.Date timeFrom;
 
-    /** Initial date to filter Invoice data in SPM. */
+    /**
+     * Initial date to filter Invoice data in SPM.
+     *
+     */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Invoice data in SPM. */
+    /**
+     * Final date to filter Invoice data in SPM.
+     *
+     */
     private java.util.Date timeTo;
 
-    /** Final date to filter Invoice data in SPM. */
+    /**
+     * Final date to filter Invoice data in SPM.
+     *
+     */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -78,15 +102,24 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. You can provide one sort order ('sortOrder'). */
+    /**
+     * The field to sort by. You can provide one sort order ('sortOrder').
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. You can provide one sort order ('sortOrder'). */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. You can provide one sort order ('sortOrder').
+     *
+     **/
+    public enum SortBy {
         Ordernumber("ORDERNUMBER"),
         Timeinvoicing("TIMEINVOICING"),
         ;
@@ -119,56 +152,71 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** The field to sort by. You can provide one sort order ('sortOrder'). */
+    /**
+     * The field to sort by. You can provide one sort order ('sortOrder').
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -177,15 +225,17 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInvoicesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -194,12 +244,13 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** AR Unique identifier for an invoice . */
+        /**
+         * AR Unique identifier for an invoice .
+         */
         private String arCustomerTransactionId = null;
 
         /**
          * AR Unique identifier for an invoice .
-         *
          * @param arCustomerTransactionId the value to set
          * @return this builder instance
          */
@@ -208,7 +259,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Initial date to filter Invoice data in SPM. */
+        /**
+         * Initial date to filter Invoice data in SPM.
+         *
+         */
         private java.util.Date timeFrom = null;
 
         /**
@@ -222,7 +276,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Final date to filter Invoice data in SPM. */
+        /**
+         * Final date to filter Invoice data in SPM.
+         *
+         */
         private java.util.Date timeTo = null;
 
         /**
@@ -236,7 +293,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+        /**
+         * The sort order to use, either ascending ('ASC') or descending ('DESC').
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -250,7 +310,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The field to sort by. You can provide one sort order ('sortOrder'). */
+        /**
+         * The field to sort by. You can provide one sort order ('sortOrder').
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -266,15 +329,16 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: '500'
          *
-         * <p>Example: '500'
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         *
-         * <p>Example: '500'
+         * <p>
+         * Example: '500'
          *
          * @param limit the value to set
          * @return this builder instance
@@ -284,7 +348,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The value of the 'opc-next-page' response header from the previous "List" call. */
+        /**
+         * The value of the 'opc-next-page' response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -299,16 +366,19 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
+         *
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -319,9 +389,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -331,14 +402,13 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -350,19 +420,18 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -374,7 +443,6 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListInvoicesRequest o) {
@@ -396,11 +464,10 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListInvoicesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListInvoicesRequest
          */
@@ -414,8 +481,7 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListInvoicesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInvoicesRequest
@@ -433,14 +499,12 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.fields = fields;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListInvoicesRequest(compartmentId, arCustomerTransactionId, timeFrom, timeTo,
-            // sortOrder, sortBy, limit, page, fields, opcRequestId);
+            // new ListInvoicesRequest(compartmentId, arCustomerTransactionId, timeFrom, timeTo, sortOrder, sortBy, limit, page, fields, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -459,7 +523,6 @@ public class ListInvoicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

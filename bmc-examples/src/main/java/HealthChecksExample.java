@@ -59,10 +59,8 @@ public class HealthChecksExample {
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -70,10 +68,9 @@ public class HealthChecksExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final HealthChecks client = HealthChecksClient.builder().build(provider);
+        final HealthChecks client = new HealthChecksClient(provider);
 
-        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
-        // known)
+        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
         final String compartmentId = args[0];
 
         System.out.println("--- Listing Vantage Points ---");
@@ -90,7 +87,8 @@ public class HealthChecksExample {
             System.out.println(
                     String.format(
                             "Vantage point: %s, Display name: %s",
-                            vp.getName(), vp.getDisplayName()));
+                            vp.getName(),
+                            vp.getDisplayName()));
         }
 
         HttpMonitorExamples(client, compartmentId);
@@ -117,7 +115,7 @@ public class HealthChecksExample {
                         "Found existing HTTP monitors: %s",
                         httpMonitors.hasNext() ? "true" : "false"));
 
-        // If we have at least one, grab all details for it:
+        //If we have at least one, grab all details for it:
         if (httpMonitors.hasNext()) {
             String getFirstMonitorId = httpMonitors.next().getId();
 
@@ -232,7 +230,7 @@ public class HealthChecksExample {
                         "Found existing PING monitors: %s",
                         pingMonitors.hasNext() ? "true" : "false"));
 
-        // If we have at least one, grab all details for it:
+        //If we have at least one, grab all details for it:
         if (pingMonitors.hasNext()) {
             String getFirstMonitorId = pingMonitors.next().getId();
 

@@ -5,36 +5,46 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The following are the details necessary to create a cross-tenancy disaster recovery (DR)
- * association for an existing Autonomous Database. This may be in the same region, or in another.
- * *IMPORTANT* For creating a standby databases in a cross-tenancy local DR association: - To create
- * the standby database in different tenancy, use the compartment OCID in the tenancy where the
- * standby is located. - To create the request in the standby database, the sourceId value must be
- * the OCID of the primary database. - Creating a ADG DR in the same tenancy and region is not
- * allowed. Use changeDisasterRecoveryConfiguration instead. The following parameters are required
- * for the cross-tenancy standby database - disasterRecoveryType The following parameters are
- * optional for the cross-tenancy standby database. If included in the request, these parameters
- * must contain the same values as the source Autonomous Database: - dbName - dbVersion - ecpuCount
- * - dataStorageSizeInTB - customerContacts - scheduledOperations - isAutoScalingForStorageEnabled -
- * definedTags - freeformTags - licenseModel - whitelistedIps - isMtlsConnectionRequired <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The following are the details necessary to create a cross-tenancy disaster recovery (DR) association for an existing Autonomous Database. This may be in the same region, or in another.
+ * *IMPORTANT*
+ * For creating a standby databases in a cross-tenancy local DR association:
+ *   - To create the standby database in different tenancy, use the compartment OCID in the tenancy where the standby is located.
+ *   - To create the request in the standby database, the sourceId value must be the OCID of the primary database.
+ *   - Creating a ADG DR in the same tenancy and region is not allowed. Use changeDisasterRecoveryConfiguration instead.
+ * The following parameters are required for the cross-tenancy standby database
+ *   - disasterRecoveryType
+ * The following parameters are optional for the cross-tenancy standby database. If included in the request, these parameters must contain the same values as the source Autonomous Database:
+ *   - dbName
+ *   - dbVersion
+ *   - ecpuCount
+ *   - dataStorageSizeInTB
+ *   - customerContacts
+ *   - scheduledOperations
+ *   - isAutoScalingForStorageEnabled
+ *   - definedTags
+ *   - freeformTags
+ *   - licenseModel
+ *   - whitelistedIps
+ *   - isMtlsConnectionRequired
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateCrossTenancyDisasterRecoveryDetails.Builder.class)
+    builder = CreateCrossTenancyDisasterRecoveryDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "source"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -521,44 +531,38 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
-         * association.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * source Autonomous Database that will be used to create a new peer database for the DR
-         * association.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
          * @param sourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
-         */
+         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
         /**
-         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-         * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-         * recovery time objective (RTO) during failover or switchover. Backup-based DR type
-         * provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
-         */
+         **/
         public Builder disasterRecoveryType(
                 DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType) {
             this.disasterRecoveryType = disasterRecoveryType;
@@ -566,21 +570,16 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             return this;
         }
         /**
-         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
-         * are not replicated to the Standby database.
-         */
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
         private Boolean isReplicateAutomaticBackups;
 
         /**
-         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
-         * are not replicated to the Standby database.
-         *
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
          * @param isReplicateAutomaticBackups the value to set
          * @return this builder
-         */
+         **/
         public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
             this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
             this.__explicitlySet__.add("isReplicateAutomaticBackups");
@@ -831,7 +830,9 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -958,60 +959,49 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
-     * association.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * source Autonomous Database that will be used to create a new peer database for the DR
-     * association.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source Autonomous Database that will be used to create a new peer database for the DR association.
      * @return the value
-     */
+     **/
     public String getSourceId() {
         return sourceId;
     }
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-     * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-     * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
-     * lower cost DR with a slower RTO during failover or switchover.
-     */
+     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
     private final DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType;
 
     /**
-     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless
-     * instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster
-     * recovery time objective (RTO) during failover or switchover. Backup-based DR type provides
-     * lower cost DR with a slower RTO during failover or switchover.
+     * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
      * @return the value
-     */
+     **/
     public DisasterRecoveryConfiguration.DisasterRecoveryType getDisasterRecoveryType() {
         return disasterRecoveryType;
     }
 
     /**
-     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
-     * not replicated to the Standby database.
-     */
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
     private final Boolean isReplicateAutomaticBackups;
 
     /**
-     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
-     * not replicated to the Standby database.
-     *
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      * @return the value
-     */
+     **/
     public Boolean getIsReplicateAutomaticBackups() {
         return isReplicateAutomaticBackups;
     }
@@ -1023,7 +1013,6 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

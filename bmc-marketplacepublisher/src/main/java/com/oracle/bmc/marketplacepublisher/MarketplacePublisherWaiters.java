@@ -10,11 +10,10 @@ import com.oracle.bmc.marketplacepublisher.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of MarketplacePublisher.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class MarketplacePublisherWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final MarketplacePublisher client;
@@ -29,8 +28,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetArtifactRequest, GetArtifactResponse> forArtifact(
@@ -74,8 +72,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetArtifactRequest, GetArtifactResponse> forArtifact(
@@ -130,8 +127,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCategoryRequest, GetCategoryResponse> forCategory(
@@ -175,8 +171,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetCategoryRequest, GetCategoryResponse> forCategory(
@@ -229,8 +224,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetListingRequest, GetListingResponse> forListing(
@@ -274,8 +268,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetListingRequest, GetListingResponse> forListing(
@@ -330,8 +323,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetListingRevisionRequest, GetListingRevisionResponse>
@@ -379,8 +371,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetListingRevisionRequest, GetListingRevisionResponse>
@@ -406,8 +397,8 @@ public class MarketplacePublisherWaiters {
             forListingRevision(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetListingRevisionRequest request,
-                    final com.oracle.bmc.marketplacepublisher.model.ListingRevision.LifecycleState
-                                    ...
+                    final com.oracle.bmc.marketplacepublisher.model.ListingRevision
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.marketplacepublisher.model.ListingRevision.LifecycleState>
@@ -442,8 +433,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -451,8 +441,7 @@ public class MarketplacePublisherWaiters {
             forListingRevisionAttachment(
                     GetListingRevisionAttachmentRequest request,
                     com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
@@ -496,8 +485,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -507,8 +495,7 @@ public class MarketplacePublisherWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
@@ -528,8 +515,7 @@ public class MarketplacePublisherWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetListingRevisionAttachmentRequest request,
                     final com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionAttachment
@@ -567,8 +553,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -618,8 +603,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -648,8 +632,7 @@ public class MarketplacePublisherWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetListingRevisionNoteRequest request,
                     final com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionNote
@@ -685,16 +668,15 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetListingRevisionPackageRequest, GetListingRevisionPackageResponse>
             forListingRevisionPackage(
                     GetListingRevisionPackageRequest request,
-                    com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.LifecycleState
-                                    ...
+                    com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
@@ -737,8 +719,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -747,8 +728,8 @@ public class MarketplacePublisherWaiters {
                     GetListingRevisionPackageRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage.LifecycleState
-                                    ...
+                    com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
@@ -768,8 +749,7 @@ public class MarketplacePublisherWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetListingRevisionPackageRequest request,
                     final com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
@@ -806,8 +786,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetMarketRequest, GetMarketResponse> forMarket(
@@ -851,8 +830,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetMarketRequest, GetMarketResponse> forMarket(
@@ -904,8 +882,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetProductRequest, GetProductResponse> forProduct(
@@ -949,8 +926,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetProductRequest, GetProductResponse> forProduct(
@@ -1003,8 +979,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTermRequest, GetTermResponse> forTerm(
@@ -1047,8 +1022,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTermRequest, GetTermResponse> forTerm(
@@ -1100,8 +1074,7 @@ public class MarketplacePublisherWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTermVersionRequest, GetTermVersionResponse>
@@ -1149,8 +1122,7 @@ public class MarketplacePublisherWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetTermVersionRequest, GetTermVersionResponse>

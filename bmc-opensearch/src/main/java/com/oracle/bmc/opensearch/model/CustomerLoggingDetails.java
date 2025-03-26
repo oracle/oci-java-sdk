@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Customer logging configuration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * Customer logging configuration
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomerLoggingDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CustomerLoggingDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomerLoggingDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logRetentionDays"})
     public CustomerLoggingDetails(Integer logRetentionDays) {
@@ -31,16 +30,17 @@ public final class CustomerLoggingDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the age of an index after which the index will get deleted by ISM policy */
+        /**
+         * the age of an index after which the index will get deleted by ISM policy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDays")
         private Integer logRetentionDays;
 
         /**
          * the age of an index after which the index will get deleted by ISM policy
-         *
          * @param logRetentionDays the value to set
          * @return this builder
-         */
+         **/
         public Builder logRetentionDays(Integer logRetentionDays) {
             this.logRetentionDays = logRetentionDays;
             this.__explicitlySet__.add("logRetentionDays");
@@ -67,7 +67,9 @@ public final class CustomerLoggingDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class CustomerLoggingDetails
         return new Builder().copy(this);
     }
 
-    /** the age of an index after which the index will get deleted by ISM policy */
+    /**
+     * the age of an index after which the index will get deleted by ISM policy
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logRetentionDays")
     private final Integer logRetentionDays;
 
     /**
      * the age of an index after which the index will get deleted by ISM policy
-     *
      * @return the value
-     */
+     **/
     public Integer getLogRetentionDays() {
         return logRetentionDays;
     }
@@ -96,7 +99,6 @@ public final class CustomerLoggingDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

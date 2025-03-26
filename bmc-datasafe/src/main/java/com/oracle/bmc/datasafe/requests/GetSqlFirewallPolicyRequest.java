@@ -6,25 +6,31 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSqlFirewallPolicyExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSqlFirewallPolicyRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSqlFirewallPolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSqlFirewallPolicyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetSqlFirewallPolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the SQL Firewall policy resource. */
+    /**
+     * The OCID of the SQL Firewall policy resource.
+     */
     private String sqlFirewallPolicyId;
 
-    /** The OCID of the SQL Firewall policy resource. */
+    /**
+     * The OCID of the SQL Firewall policy resource.
+     */
     public String getSqlFirewallPolicyId() {
         return sqlFirewallPolicyId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -32,15 +38,17 @@ public class GetSqlFirewallPolicyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSqlFirewallPolicyRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the SQL Firewall policy resource. */
+        /**
+         * The OCID of the SQL Firewall policy resource.
+         */
         private String sqlFirewallPolicyId = null;
 
         /**
          * The OCID of the SQL Firewall policy resource.
-         *
          * @param sqlFirewallPolicyId the value to set
          * @return this builder instance
          */
@@ -49,12 +57,13 @@ public class GetSqlFirewallPolicyRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -65,19 +74,18 @@ public class GetSqlFirewallPolicyRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -89,7 +97,6 @@ public class GetSqlFirewallPolicyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetSqlFirewallPolicyRequest o) {
@@ -103,11 +110,10 @@ public class GetSqlFirewallPolicyRequest
         /**
          * Build the instance of GetSqlFirewallPolicyRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetSqlFirewallPolicyRequest
          */
@@ -121,8 +127,7 @@ public class GetSqlFirewallPolicyRequest
         /**
          * Build the instance of GetSqlFirewallPolicyRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSqlFirewallPolicyRequest
@@ -138,7 +143,6 @@ public class GetSqlFirewallPolicyRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -147,7 +151,6 @@ public class GetSqlFirewallPolicyRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

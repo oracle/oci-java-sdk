@@ -5,82 +5,85 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Information for a logging event for a data source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Information for a logging event for a data source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LoggingEventInfo.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dataSourceFeedProvider")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dataSourceFeedProvider"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoggingEventInfo extends DataSourceEventInfo {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Observed value of DataSource for a Problem */
+        /**
+         * Observed value of DataSource for a Problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("observedValue")
         private String observedValue;
 
         /**
          * Observed value of DataSource for a Problem
-         *
          * @param observedValue the value to set
          * @return this builder
-         */
+         **/
         public Builder observedValue(String observedValue) {
             this.observedValue = observedValue;
             this.__explicitlySet__.add("observedValue");
             return this;
         }
-        /** Triggered value of DataSource for a Problem */
+        /**
+         * Triggered value of DataSource for a Problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerValue")
         private String triggerValue;
 
         /**
          * Triggered value of DataSource for a Problem
-         *
          * @param triggerValue the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerValue(String triggerValue) {
             this.triggerValue = triggerValue;
             this.__explicitlySet__.add("triggerValue");
             return this;
         }
-        /** Operator details of DataSource for a Problem */
+        /**
+         * Operator details of DataSource for a Problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private String operator;
 
         /**
          * Operator details of DataSource for a Problem
-         *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(String operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
             return this;
         }
-        /** Log result details of DataSource for a Problem */
+        /**
+         * Log result details of DataSource for a Problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logResult")
         private String logResult;
 
         /**
          * Log result details of DataSource for a Problem
-         *
          * @param logResult the value to set
          * @return this builder
-         */
+         **/
         public Builder logResult(String logResult) {
             this.logResult = logResult;
             this.__explicitlySet__.add("logResult");
@@ -118,7 +121,9 @@ public final class LoggingEventInfo extends DataSourceEventInfo {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +142,58 @@ public final class LoggingEventInfo extends DataSourceEventInfo {
         this.logResult = logResult;
     }
 
-    /** Observed value of DataSource for a Problem */
+    /**
+     * Observed value of DataSource for a Problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("observedValue")
     private final String observedValue;
 
     /**
      * Observed value of DataSource for a Problem
-     *
      * @return the value
-     */
+     **/
     public String getObservedValue() {
         return observedValue;
     }
 
-    /** Triggered value of DataSource for a Problem */
+    /**
+     * Triggered value of DataSource for a Problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerValue")
     private final String triggerValue;
 
     /**
      * Triggered value of DataSource for a Problem
-     *
      * @return the value
-     */
+     **/
     public String getTriggerValue() {
         return triggerValue;
     }
 
-    /** Operator details of DataSource for a Problem */
+    /**
+     * Operator details of DataSource for a Problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final String operator;
 
     /**
      * Operator details of DataSource for a Problem
-     *
      * @return the value
-     */
+     **/
     public String getOperator() {
         return operator;
     }
 
-    /** Log result details of DataSource for a Problem */
+    /**
+     * Log result details of DataSource for a Problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logResult")
     private final String logResult;
 
     /**
      * Log result details of DataSource for a Problem
-     *
      * @return the value
-     */
+     **/
     public String getLogResult() {
         return logResult;
     }
@@ -196,7 +205,6 @@ public final class LoggingEventInfo extends DataSourceEventInfo {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

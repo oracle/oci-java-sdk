@@ -6,58 +6,66 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListProfileSummariesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfileSummariesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListProfileSummariesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProfileSummariesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListProfileSummariesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the user assessment. */
+    /**
+     * The OCID of the user assessment.
+     */
     private String userAssessmentId;
 
-    /** The OCID of the user assessment. */
+    /**
+     * The OCID of the user assessment.
+     */
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -91,221 +99,238 @@ public class ListProfileSummariesRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only items that match the specified profile name. */
+    /**
+     * A filter to return only items that match the specified profile name.
+     */
     private String profileName;
 
-    /** A filter to return only items that match the specified profile name. */
+    /**
+     * A filter to return only items that match the specified profile name.
+     */
     public String getProfileName() {
         return profileName;
     }
-    /** An optional filter to return the user created profiles. */
+    /**
+     * An optional filter to return the user created profiles.
+     */
     private Boolean isUserCreated;
 
-    /** An optional filter to return the user created profiles. */
+    /**
+     * An optional filter to return the user created profiles.
+     */
     public Boolean getIsUserCreated() {
         return isUserCreated;
     }
-    /** An optional filter to filter the profiles based on password verification function. */
+    /**
+     * An optional filter to filter the profiles based on password verification function.
+     */
     private String passwordVerificationFunction;
 
-    /** An optional filter to filter the profiles based on password verification function. */
+    /**
+     * An optional filter to filter the profiles based on password verification function.
+     */
     public String getPasswordVerificationFunction() {
         return passwordVerificationFunction;
     }
     /**
-     * An optional filter to return the profiles having user count greater than or equal to the
-     * provided value.
+     * An optional filter to return the profiles having user count greater than or equal to the provided value.
+     *
      */
     private String userCountGreaterThanOrEqual;
 
     /**
-     * An optional filter to return the profiles having user count greater than or equal to the
-     * provided value.
+     * An optional filter to return the profiles having user count greater than or equal to the provided value.
+     *
      */
     public String getUserCountGreaterThanOrEqual() {
         return userCountGreaterThanOrEqual;
     }
-    /** An optional filter to return the profiles having user count less than the provided value. */
+    /**
+     * An optional filter to return the profiles having user count less than the provided value.
+     *
+     */
     private String userCountLessThan;
 
-    /** An optional filter to return the profiles having user count less than the provided value. */
+    /**
+     * An optional filter to return the profiles having user count less than the provided value.
+     *
+     */
     public String getUserCountLessThan() {
         return userCountLessThan;
     }
     /**
-     * An optional filter to return the profiles having allow failed login attempts number greater
-     * than or equal to the provided value. String value is used for accommodating the "UNLIMITED"
-     * and "DEFAULT" values.
+     * An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String failedLoginAttemptsGreaterThanOrEqual;
 
     /**
-     * An optional filter to return the profiles having allow failed login attempts number greater
-     * than or equal to the provided value. String value is used for accommodating the "UNLIMITED"
-     * and "DEFAULT" values.
+     * An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getFailedLoginAttemptsGreaterThanOrEqual() {
         return failedLoginAttemptsGreaterThanOrEqual;
     }
     /**
-     * An optional filter to return the profiles having failed login attempts number less than the
-     * provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles having failed login attempts number less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String failedLoginAttemptsLessThan;
 
     /**
-     * An optional filter to return the profiles having failed login attempts number less than the
-     * provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles having failed login attempts number less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getFailedLoginAttemptsLessThan() {
         return failedLoginAttemptsLessThan;
     }
     /**
-     * An optional filter to return the profiles permitting the user to spawn multiple sessions
-     * having count. greater than or equal to the provided value. String value is used for
-     * accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles permitting the user to spawn multiple sessions having count.
+     * greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String sessionsPerUserGreaterThanOrEqual;
 
     /**
-     * An optional filter to return the profiles permitting the user to spawn multiple sessions
-     * having count. greater than or equal to the provided value. String value is used for
-     * accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles permitting the user to spawn multiple sessions having count.
+     * greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getSessionsPerUserGreaterThanOrEqual() {
         return sessionsPerUserGreaterThanOrEqual;
     }
     /**
-     * An optional filter to return the profiles permitting the user to spawn multiple sessions
-     * having count less than the provided value. String value is used for accommodating the
-     * "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than
+     * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String sessionsPerUserLessThan;
 
     /**
-     * An optional filter to return the profiles permitting the user to spawn multiple sessions
-     * having count less than the provided value. String value is used for accommodating the
-     * "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than
+     * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getSessionsPerUserLessThan() {
         return sessionsPerUserLessThan;
     }
     /**
-     * An optional filter to return the profiles allowing inactive account time in days greater than
-     * or equal to the provided value. String value is used for accommodating the "UNLIMITED" and
-     * "DEFAULT" values.
+     * An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String inactiveAccountTimeGreaterThanOrEqual;
 
     /**
-     * An optional filter to return the profiles allowing inactive account time in days greater than
-     * or equal to the provided value. String value is used for accommodating the "UNLIMITED" and
-     * "DEFAULT" values.
+     * An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getInactiveAccountTimeGreaterThanOrEqual() {
         return inactiveAccountTimeGreaterThanOrEqual;
     }
     /**
-     * An optional filter to return the profiles allowing inactive account time in days less than
-     * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-     * values.
+     * An optional filter to return the profiles  allowing inactive account time in days less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String inactiveAccountTimeLessThan;
 
     /**
-     * An optional filter to return the profiles allowing inactive account time in days less than
-     * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-     * values.
+     * An optional filter to return the profiles  allowing inactive account time in days less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getInactiveAccountTimeLessThan() {
         return inactiveAccountTimeLessThan;
     }
     /**
-     * An optional filter to return the profiles having password lock number greater than or equal
-     * to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-     * values.
+     * An optional filter to return the profiles having password lock number greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String passwordLockTimeGreaterThanOrEqual;
 
     /**
-     * An optional filter to return the profiles having password lock number greater than or equal
-     * to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-     * values.
+     * An optional filter to return the profiles having password lock number greater than or equal to the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getPasswordLockTimeGreaterThanOrEqual() {
         return passwordLockTimeGreaterThanOrEqual;
     }
     /**
-     * An optional filter to return the profiles having password lock number less than the provided
-     * value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles having password lock number less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     private String passwordLockTimeLessThan;
 
     /**
-     * An optional filter to return the profiles having password lock number less than the provided
-     * value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     * An optional filter to return the profiles having password lock number less than the provided value.
+     * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+     *
      */
     public String getPasswordLockTimeLessThan() {
         return passwordLockTimeLessThan;
     }
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * targetId ASC.
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * targetId ASC.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
+     *
+     **/
+    public enum SortBy {
         ProfileName("profileName"),
         TargetId("targetId"),
         IsUserCreated("isUserCreated"),
@@ -346,17 +371,21 @@ public class ListProfileSummariesRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order (sortOrder). The default order is
-     * targetId ASC.
+     * The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -389,14 +418,20 @@ public class ListProfileSummariesRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -404,15 +439,17 @@ public class ListProfileSummariesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProfileSummariesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the user assessment. */
+        /**
+         * The OCID of the user assessment.
+         */
         private String userAssessmentId = null;
 
         /**
          * The OCID of the user assessment.
-         *
          * @param userAssessmentId the value to set
          * @return this builder instance
          */
@@ -421,12 +458,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -436,16 +474,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -456,18 +493,19 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -477,12 +515,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -492,17 +531,12 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -512,19 +546,12 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -533,12 +560,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** A filter to return only items that match the specified profile name. */
+        /**
+         * A filter to return only items that match the specified profile name.
+         */
         private String profileName = null;
 
         /**
          * A filter to return only items that match the specified profile name.
-         *
          * @param profileName the value to set
          * @return this builder instance
          */
@@ -547,12 +575,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** An optional filter to return the user created profiles. */
+        /**
+         * An optional filter to return the user created profiles.
+         */
         private Boolean isUserCreated = null;
 
         /**
          * An optional filter to return the user created profiles.
-         *
          * @param isUserCreated the value to set
          * @return this builder instance
          */
@@ -561,12 +590,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** An optional filter to filter the profiles based on password verification function. */
+        /**
+         * An optional filter to filter the profiles based on password verification function.
+         */
         private String passwordVerificationFunction = null;
 
         /**
          * An optional filter to filter the profiles based on password verification function.
-         *
          * @param passwordVerificationFunction the value to set
          * @return this builder instance
          */
@@ -576,14 +606,13 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles having user count greater than or equal to the
-         * provided value.
+         * An optional filter to return the profiles having user count greater than or equal to the provided value.
+         *
          */
         private String userCountGreaterThanOrEqual = null;
 
         /**
-         * An optional filter to return the profiles having user count greater than or equal to the
-         * provided value.
+         * An optional filter to return the profiles having user count greater than or equal to the provided value.
          *
          * @param userCountGreaterThanOrEqual the value to set
          * @return this builder instance
@@ -595,6 +624,7 @@ public class ListProfileSummariesRequest
 
         /**
          * An optional filter to return the profiles having user count less than the provided value.
+         *
          */
         private String userCountLessThan = null;
 
@@ -610,16 +640,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles having allow failed login attempts number
-         * greater than or equal to the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String failedLoginAttemptsGreaterThanOrEqual = null;
 
         /**
-         * An optional filter to return the profiles having allow failed login attempts number
-         * greater than or equal to the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles having allow failed login attempts number greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param failedLoginAttemptsGreaterThanOrEqual the value to set
          * @return this builder instance
@@ -631,16 +660,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles having failed login attempts number less than
-         * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-         * values.
+         * An optional filter to return the profiles having failed login attempts number less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String failedLoginAttemptsLessThan = null;
 
         /**
-         * An optional filter to return the profiles having failed login attempts number less than
-         * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-         * values.
+         * An optional filter to return the profiles having failed login attempts number less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param failedLoginAttemptsLessThan the value to set
          * @return this builder instance
@@ -651,16 +679,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles permitting the user to spawn multiple sessions
-         * having count. greater than or equal to the provided value. String value is used for
-         * accommodating the "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles permitting the user to spawn multiple sessions having count.
+         * greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String sessionsPerUserGreaterThanOrEqual = null;
 
         /**
-         * An optional filter to return the profiles permitting the user to spawn multiple sessions
-         * having count. greater than or equal to the provided value. String value is used for
-         * accommodating the "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles permitting the user to spawn multiple sessions having count.
+         * greater than or equal to the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param sessionsPerUserGreaterThanOrEqual the value to set
          * @return this builder instance
@@ -671,16 +698,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles permitting the user to spawn multiple sessions
-         * having count less than the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than
+         * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String sessionsPerUserLessThan = null;
 
         /**
-         * An optional filter to return the profiles permitting the user to spawn multiple sessions
-         * having count less than the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles permitting the user to spawn multiple sessions having count less than
+         * the provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param sessionsPerUserLessThan the value to set
          * @return this builder instance
@@ -691,16 +717,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles allowing inactive account time in days greater
-         * than or equal to the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String inactiveAccountTimeGreaterThanOrEqual = null;
 
         /**
-         * An optional filter to return the profiles allowing inactive account time in days greater
-         * than or equal to the provided value. String value is used for accommodating the
-         * "UNLIMITED" and "DEFAULT" values.
+         * An optional filter to return the profiles allowing inactive account time in days greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param inactiveAccountTimeGreaterThanOrEqual the value to set
          * @return this builder instance
@@ -712,16 +737,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles allowing inactive account time in days less
-         * than the provided value. String value is used for accommodating the "UNLIMITED" and
-         * "DEFAULT" values.
+         * An optional filter to return the profiles  allowing inactive account time in days less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String inactiveAccountTimeLessThan = null;
 
         /**
-         * An optional filter to return the profiles allowing inactive account time in days less
-         * than the provided value. String value is used for accommodating the "UNLIMITED" and
-         * "DEFAULT" values.
+         * An optional filter to return the profiles  allowing inactive account time in days less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param inactiveAccountTimeLessThan the value to set
          * @return this builder instance
@@ -732,16 +756,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles having password lock number greater than or
-         * equal to the provided value. String value is used for accommodating the "UNLIMITED" and
-         * "DEFAULT" values.
+         * An optional filter to return the profiles having password lock number greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String passwordLockTimeGreaterThanOrEqual = null;
 
         /**
-         * An optional filter to return the profiles having password lock number greater than or
-         * equal to the provided value. String value is used for accommodating the "UNLIMITED" and
-         * "DEFAULT" values.
+         * An optional filter to return the profiles having password lock number greater than or equal to the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param passwordLockTimeGreaterThanOrEqual the value to set
          * @return this builder instance
@@ -753,16 +776,15 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * An optional filter to return the profiles having password lock number less than the
-         * provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-         * values.
+         * An optional filter to return the profiles having password lock number less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
+         *
          */
         private String passwordLockTimeLessThan = null;
 
         /**
-         * An optional filter to return the profiles having password lock number less than the
-         * provided value. String value is used for accommodating the "UNLIMITED" and "DEFAULT"
-         * values.
+         * An optional filter to return the profiles having password lock number less than the provided value.
+         * String value is used for accommodating the "UNLIMITED" and "DEFAULT" values.
          *
          * @param passwordLockTimeLessThan the value to set
          * @return this builder instance
@@ -773,14 +795,13 @@ public class ListProfileSummariesRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * is targetId ASC.
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order (sortOrder). The default order
-         * is targetId ASC.
+         * The field to sort by. You can specify only one sort order (sortOrder). The default order is targetId ASC.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -790,12 +811,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -804,12 +826,13 @@ public class ListProfileSummariesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -820,19 +843,18 @@ public class ListProfileSummariesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -844,7 +866,6 @@ public class ListProfileSummariesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListProfileSummariesRequest o) {
@@ -879,11 +900,10 @@ public class ListProfileSummariesRequest
         /**
          * Build the instance of ListProfileSummariesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListProfileSummariesRequest
          */
@@ -897,8 +917,7 @@ public class ListProfileSummariesRequest
         /**
          * Build the instance of ListProfileSummariesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListProfileSummariesRequest
@@ -929,20 +948,12 @@ public class ListProfileSummariesRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProfileSummariesRequest(userAssessmentId, compartmentId,
-            // compartmentIdInSubtree, accessLevel, targetId, limit, page, profileName,
-            // isUserCreated, passwordVerificationFunction, userCountGreaterThanOrEqual,
-            // userCountLessThan, failedLoginAttemptsGreaterThanOrEqual,
-            // failedLoginAttemptsLessThan, sessionsPerUserGreaterThanOrEqual,
-            // sessionsPerUserLessThan, inactiveAccountTimeGreaterThanOrEqual,
-            // inactiveAccountTimeLessThan, passwordLockTimeGreaterThanOrEqual,
-            // passwordLockTimeLessThan, sortBy, sortOrder, opcRequestId);
+            // new ListProfileSummariesRequest(userAssessmentId, compartmentId, compartmentIdInSubtree, accessLevel, targetId, limit, page, profileName, isUserCreated, passwordVerificationFunction, userCountGreaterThanOrEqual, userCountLessThan, failedLoginAttemptsGreaterThanOrEqual, failedLoginAttemptsLessThan, sessionsPerUserGreaterThanOrEqual, sessionsPerUserLessThan, inactiveAccountTimeGreaterThanOrEqual, inactiveAccountTimeLessThan, passwordLockTimeGreaterThanOrEqual, passwordLockTimeLessThan, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -974,7 +985,6 @@ public class ListProfileSummariesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

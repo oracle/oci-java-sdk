@@ -5,23 +5,22 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * Object for request additional nodes for a roverCluster <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * Object for request additional nodes for a roverCluster
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestAdditionalNodesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RequestAdditionalNodesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestAdditionalNodesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"numberOfAdditionalNodes"})
     public RequestAdditionalNodesDetails(Integer numberOfAdditionalNodes) {
@@ -31,16 +30,17 @@ public final class RequestAdditionalNodesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of additional nodes to be requested for a roverCluster. */
+        /**
+         * Number of additional nodes to be requested for a roverCluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfAdditionalNodes")
         private Integer numberOfAdditionalNodes;
 
         /**
          * Number of additional nodes to be requested for a roverCluster.
-         *
          * @param numberOfAdditionalNodes the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfAdditionalNodes(Integer numberOfAdditionalNodes) {
             this.numberOfAdditionalNodes = numberOfAdditionalNodes;
             this.__explicitlySet__.add("numberOfAdditionalNodes");
@@ -68,7 +68,9 @@ public final class RequestAdditionalNodesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class RequestAdditionalNodesDetails
         return new Builder().copy(this);
     }
 
-    /** Number of additional nodes to be requested for a roverCluster. */
+    /**
+     * Number of additional nodes to be requested for a roverCluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfAdditionalNodes")
     private final Integer numberOfAdditionalNodes;
 
     /**
      * Number of additional nodes to be requested for a roverCluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfAdditionalNodes() {
         return numberOfAdditionalNodes;
     }
@@ -97,7 +100,6 @@ public final class RequestAdditionalNodesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

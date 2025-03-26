@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The resource Id on which test will be run <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The resource Id on which test will be run
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TestMetricExtensionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TestMetricExtensionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TestMetricExtensionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceIds"})
     public TestMetricExtensionDetails(java.util.List<String> resourceIds) {
@@ -31,16 +30,17 @@ public final class TestMetricExtensionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Resource IDs [OCID]. Currently supports only one resource id per request. */
+        /**
+         * List of Resource IDs [OCID]. Currently supports only one resource id per request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
         private java.util.List<String> resourceIds;
 
         /**
          * List of Resource IDs [OCID]. Currently supports only one resource id per request.
-         *
          * @param resourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceIds(java.util.List<String> resourceIds) {
             this.resourceIds = resourceIds;
             this.__explicitlySet__.add("resourceIds");
@@ -67,7 +67,9 @@ public final class TestMetricExtensionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class TestMetricExtensionDetails
         return new Builder().copy(this);
     }
 
-    /** List of Resource IDs [OCID]. Currently supports only one resource id per request. */
+    /**
+     * List of Resource IDs [OCID]. Currently supports only one resource id per request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
     private final java.util.List<String> resourceIds;
 
     /**
      * List of Resource IDs [OCID]. Currently supports only one resource id per request.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getResourceIds() {
         return resourceIds;
     }
@@ -96,7 +99,6 @@ public final class TestMetricExtensionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,22 @@ package com.oracle.bmc.apigateway.responses;
 
 import com.oracle.bmc.apigateway.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
-     * getWorkRequest} with this id to track the status of the request.
+     * The OCID of the work request. Use
+     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+     * this id to track the status
+     * of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
-     * getWorkRequest} with this id to track the status of the request.
+     * The OCID of the work request. Use
+     * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+     * this id to track the status
+     * of the request.
      *
      * @return the value
      */
@@ -25,14 +30,17 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
      *
      * @return the value
      */
@@ -48,7 +56,7 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private DeleteSdkResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
@@ -56,33 +64,35 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<DeleteSdkResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
-         * getWorkRequest} with this id to track the status of the request.
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The OCID of the work request. Use {@link #getWorkRequest(GetWorkRequestRequest)
-         * getWorkRequest} with this id to track the status of the request.
+         * The OCID of the work request. Use
+         * {@link #getWorkRequest(GetWorkRequestRequest) getWorkRequest} with
+         * this id to track the status
+         * of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -93,14 +103,17 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -112,10 +125,8 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DeleteSdkResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -127,10 +138,8 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DeleteSdkResponse build() {
             return new DeleteSdkResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
@@ -139,7 +148,6 @@ public class DeleteSdkResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,27 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * For a flexible shape, the number of VNIC attachments that are available for instances that use
- * this shape.
+ * For a flexible shape, the number of VNIC attachments that are available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed maximum number of VNIC attachments equal to {@code maxVnicAttachments}.
  *
- * <p>If this field is null, then this shape has a fixed maximum number of VNIC attachments equal to
- * {@code maxVnicAttachments}. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ShapeMaxVnicAttachmentOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ShapeMaxVnicAttachmentOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ShapeMaxVnicAttachmentOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"min", "max", "defaultPerOcpu"})
     public ShapeMaxVnicAttachmentOptions(Integer min, Float max, Float defaultPerOcpu) {
@@ -37,7 +35,10 @@ public final class ShapeMaxVnicAttachmentOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The lowest maximum value of VNIC attachments. */
+        /**
+         * The lowest maximum value of VNIC attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Integer min;
 
@@ -46,13 +47,16 @@ public final class ShapeMaxVnicAttachmentOptions
          *
          * @param min the value to set
          * @return this builder
-         */
+         **/
         public Builder min(Integer min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /** The highest maximum value of VNIC attachments. */
+        /**
+         * The highest maximum value of VNIC attachments.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Float max;
 
@@ -61,13 +65,16 @@ public final class ShapeMaxVnicAttachmentOptions
          *
          * @param max the value to set
          * @return this builder
-         */
+         **/
         public Builder max(Float max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-        /** The default number of VNIC attachments allowed per OCPU. */
+        /**
+         * The default number of VNIC attachments allowed per OCPU.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpu")
         private Float defaultPerOcpu;
 
@@ -76,7 +83,7 @@ public final class ShapeMaxVnicAttachmentOptions
          *
          * @param defaultPerOcpu the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultPerOcpu(Float defaultPerOcpu) {
             this.defaultPerOcpu = defaultPerOcpu;
             this.__explicitlySet__.add("defaultPerOcpu");
@@ -110,7 +117,9 @@ public final class ShapeMaxVnicAttachmentOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,7 +128,10 @@ public final class ShapeMaxVnicAttachmentOptions
         return new Builder().copy(this);
     }
 
-    /** The lowest maximum value of VNIC attachments. */
+    /**
+     * The lowest maximum value of VNIC attachments.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Integer min;
 
@@ -127,12 +139,15 @@ public final class ShapeMaxVnicAttachmentOptions
      * The lowest maximum value of VNIC attachments.
      *
      * @return the value
-     */
+     **/
     public Integer getMin() {
         return min;
     }
 
-    /** The highest maximum value of VNIC attachments. */
+    /**
+     * The highest maximum value of VNIC attachments.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Float max;
 
@@ -140,12 +155,15 @@ public final class ShapeMaxVnicAttachmentOptions
      * The highest maximum value of VNIC attachments.
      *
      * @return the value
-     */
+     **/
     public Float getMax() {
         return max;
     }
 
-    /** The default number of VNIC attachments allowed per OCPU. */
+    /**
+     * The default number of VNIC attachments allowed per OCPU.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpu")
     private final Float defaultPerOcpu;
 
@@ -153,7 +171,7 @@ public final class ShapeMaxVnicAttachmentOptions
      * The default number of VNIC attachments allowed per OCPU.
      *
      * @return the value
-     */
+     **/
     public Float getDefaultPerOcpu() {
         return defaultPerOcpu;
     }
@@ -165,7 +183,6 @@ public final class ShapeMaxVnicAttachmentOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

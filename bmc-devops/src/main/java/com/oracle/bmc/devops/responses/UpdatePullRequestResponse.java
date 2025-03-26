@@ -6,26 +6,28 @@ package com.oracle.bmc.devops.responses;
 
 import com.oracle.bmc.devops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Relative URL of the newly created resource. */
+    /**
+     * Relative URL of the newly created resource.
+     */
     private String contentLocation;
 
     /**
      * Relative URL of the newly created resource.
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -33,15 +35,12 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -49,27 +48,25 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code PullRequest} instance. */
+    /**
+     * The returned PullRequest instance.
+     */
     private com.oracle.bmc.devops.model.PullRequest pullRequest;
 
     /**
-     * The returned {@code PullRequest} instance.
-     *
+     * The returned PullRequest instance.
      * @return the value
      */
     public com.oracle.bmc.devops.model.PullRequest getPullRequest() {
@@ -87,7 +84,7 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private UpdatePullRequestResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String contentLocation,
             String etag,
             String opcWorkRequestId,
@@ -101,30 +98,28 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
         this.pullRequest = pullRequest;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdatePullRequestResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Relative URL of the newly created resource. */
+        /**
+         * Relative URL of the newly created resource.
+         */
         private String contentLocation;
 
         /**
          * Relative URL of the newly created resource.
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -133,12 +128,13 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -148,15 +144,12 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -166,15 +159,12 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -183,12 +173,13 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code PullRequest} instance. */
+        /**
+         * The returned PullRequest instance.
+         */
         private com.oracle.bmc.devops.model.PullRequest pullRequest;
 
         /**
-         * The returned {@code PullRequest} instance.
-         *
+         * The returned PullRequest instance.
          * @param pullRequest the value to set
          * @return this builder
          */
@@ -199,10 +190,8 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdatePullRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -217,10 +206,8 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdatePullRequestResponse build() {
             return new UpdatePullRequestResponse(
                     __httpStatusCode__,
@@ -235,7 +222,6 @@ public class UpdatePullRequestResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

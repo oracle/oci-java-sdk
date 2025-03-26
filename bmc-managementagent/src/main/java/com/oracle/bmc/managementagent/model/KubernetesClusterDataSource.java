@@ -5,25 +5,26 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * A Kubernetes cluster data source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * A Kubernetes cluster data source.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KubernetesClusterDataSource.Builder.class)
+    builder = KubernetesClusterDataSource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KubernetesClusterDataSource extends DataSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -80,31 +81,33 @@ public final class KubernetesClusterDataSource extends DataSource {
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The Kubernetes namespace */
+        /**
+         * The Kubernetes namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The Kubernetes namespace
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** If the Kubernetes cluster type is Daemon set then this will be set to true. */
+        /**
+         * If the Kubernetes cluster type is Daemon set then this will be set to true.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDaemonSet")
         private Boolean isDaemonSet;
 
         /**
          * If the Kubernetes cluster type is Daemon set then this will be set to true.
-         *
          * @param isDaemonSet the value to set
          * @return this builder
-         */
+         **/
         public Builder isDaemonSet(Boolean isDaemonSet) {
             this.isDaemonSet = isDaemonSet;
             this.__explicitlySet__.add("isDaemonSet");
@@ -161,7 +164,9 @@ public final class KubernetesClusterDataSource extends DataSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,28 +190,30 @@ public final class KubernetesClusterDataSource extends DataSource {
         this.isDaemonSet = isDaemonSet;
     }
 
-    /** The Kubernetes namespace */
+    /**
+     * The Kubernetes namespace
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The Kubernetes namespace
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** If the Kubernetes cluster type is Daemon set then this will be set to true. */
+    /**
+     * If the Kubernetes cluster type is Daemon set then this will be set to true.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDaemonSet")
     private final Boolean isDaemonSet;
 
     /**
      * If the Kubernetes cluster type is Daemon set then this will be set to true.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDaemonSet() {
         return isDaemonSet;
     }
@@ -218,7 +225,6 @@ public final class KubernetesClusterDataSource extends DataSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

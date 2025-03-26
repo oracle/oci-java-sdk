@@ -6,74 +6,84 @@ package com.oracle.bmc.databasetools.requests;
 
 import com.oracle.bmc.databasetools.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsConnectionCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeDatabaseToolsConnectionCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/ChangeDatabaseToolsConnectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeDatabaseToolsConnectionCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class ChangeDatabaseToolsConnectionCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model
                         .ChangeDatabaseToolsConnectionCompartmentDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Database Tools connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      */
     private String databaseToolsConnectionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Database Tools connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
      */
     public String getDatabaseToolsConnectionId() {
         return databaseToolsConnectionId;
     }
-    /** Request to change the compartment of the DatabaseToolsConnection. */
+    /**
+     * Request to change the compartment of the DatabaseToolsConnection.
+     */
     private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
             changeDatabaseToolsConnectionCompartmentDetails;
 
-    /** Request to change the compartment of the DatabaseToolsConnection. */
+    /**
+     * Request to change the compartment of the DatabaseToolsConnection.
+     */
     public com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
             getChangeDatabaseToolsConnectionCompartmentDetails() {
         return changeDatabaseToolsConnectionCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -88,19 +98,17 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
                     ChangeDatabaseToolsConnectionCompartmentRequest,
                     com.oracle.bmc.databasetools.model
                             .ChangeDatabaseToolsConnectionCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Database Tools connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
          */
         private String databaseToolsConnectionId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Database Tools connection.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
          * @param databaseToolsConnectionId the value to set
          * @return this builder instance
          */
@@ -109,13 +117,14 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             return this;
         }
 
-        /** Request to change the compartment of the DatabaseToolsConnection. */
+        /**
+         * Request to change the compartment of the DatabaseToolsConnection.
+         */
         private com.oracle.bmc.databasetools.model.ChangeDatabaseToolsConnectionCompartmentDetails
                 changeDatabaseToolsConnectionCompartmentDetails = null;
 
         /**
          * Request to change the compartment of the DatabaseToolsConnection.
-         *
          * @param changeDatabaseToolsConnectionCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -128,18 +137,21 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -149,12 +161,13 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -163,12 +176,13 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -179,19 +193,18 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -203,7 +216,6 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeDatabaseToolsConnectionCompartmentRequest o) {
@@ -219,14 +231,12 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeDatabaseToolsConnectionCompartmentRequest as configured by
-         * this builder
+         * Build the instance of ChangeDatabaseToolsConnectionCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeDatabaseToolsConnectionCompartmentRequest
          */
@@ -240,7 +250,6 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -253,11 +262,9 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeDatabaseToolsConnectionCompartmentRequest as configured by
-         * this builder
+         * Build the instance of ChangeDatabaseToolsConnectionCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeDatabaseToolsConnectionCompartmentRequest
@@ -272,15 +279,12 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
             request.opcRequestId = opcRequestId;
             request.isLockOverride = isLockOverride;
             return request;
-            // new ChangeDatabaseToolsConnectionCompartmentRequest(databaseToolsConnectionId,
-            // changeDatabaseToolsConnectionCompartmentDetails, ifMatch, opcRequestId,
-            // isLockOverride);
+            // new ChangeDatabaseToolsConnectionCompartmentRequest(databaseToolsConnectionId, changeDatabaseToolsConnectionCompartmentDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -295,7 +299,6 @@ public class ChangeDatabaseToolsConnectionCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

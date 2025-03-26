@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the information about overlapping recall requests <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the information about overlapping recall requests
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OverlappingRecallSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OverlappingRecallSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OverlappingRecallSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeDataStarted",
@@ -61,151 +60,161 @@ public final class OverlappingRecallSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the start of the time range of the archival data */
+        /**
+         * This is the start of the time range of the archival data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
         /**
          * This is the start of the time range of the archival data
-         *
          * @param timeDataStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-        /** This is the end of the time range of the archival data */
+        /**
+         * This is the end of the time range of the archival data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
          * This is the end of the time range of the archival data
-         *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-        /** This is the time when the recall operation was started for this recall request */
+        /**
+         * This is the time when the recall operation was started for this recall request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * This is the time when the recall operation was started for this recall request
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** This is the status of the recall */
+        /**
+         * This is the status of the recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private RecallStatus status;
 
         /**
          * This is the status of the recall
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(RecallStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** This is the purpose of the recall */
+        /**
+         * This is the purpose of the recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purpose")
         private String purpose;
 
         /**
          * This is the purpose of the recall
-         *
          * @param purpose the value to set
          * @return this builder
-         */
+         **/
         public Builder purpose(String purpose) {
             this.purpose = purpose;
             this.__explicitlySet__.add("purpose");
             return this;
         }
-        /** This is the query associated with the recall */
+        /**
+         * This is the query associated with the recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
         /**
          * This is the query associated with the recall
-         *
          * @param queryString the value to set
          * @return this builder
-         */
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-        /** This is the list of logsets associated with this recall */
+        /**
+         * This is the list of logsets associated with this recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logSets")
         private String logSets;
 
         /**
          * This is the list of logsets associated with this recall
-         *
          * @param logSets the value to set
          * @return this builder
-         */
+         **/
         public Builder logSets(String logSets) {
             this.logSets = logSets;
             this.__explicitlySet__.add("logSets");
             return this;
         }
-        /** This is the user who initiated the recall request */
+        /**
+         * This is the user who initiated the recall request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * This is the user who initiated the recall request
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** This is the id of the associated recalled data collection */
+        /**
+         * This is the id of the associated recalled data collection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
         private Long collectionId;
 
         /**
          * This is the id of the associated recalled data collection
-         *
          * @param collectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder collectionId(Long collectionId) {
             this.collectionId = collectionId;
             this.__explicitlySet__.add("collectionId");
             return this;
         }
-        /** This is the id for the recall request */
+        /**
+         * This is the id for the recall request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallId")
         private Long recallId;
 
         /**
          * This is the id for the recall request
-         *
          * @param recallId the value to set
          * @return this builder
-         */
+         **/
         public Builder recallId(Long recallId) {
             this.recallId = recallId;
             this.__explicitlySet__.add("recallId");
@@ -270,7 +279,9 @@ public final class OverlappingRecallSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,132 +290,142 @@ public final class OverlappingRecallSummary
         return new Builder().copy(this);
     }
 
-    /** This is the start of the time range of the archival data */
+    /**
+     * This is the start of the time range of the archival data
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
     /**
      * This is the start of the time range of the archival data
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
 
-    /** This is the end of the time range of the archival data */
+    /**
+     * This is the end of the time range of the archival data
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
      * This is the end of the time range of the archival data
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
 
-    /** This is the time when the recall operation was started for this recall request */
+    /**
+     * This is the time when the recall operation was started for this recall request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * This is the time when the recall operation was started for this recall request
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** This is the status of the recall */
+    /**
+     * This is the status of the recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final RecallStatus status;
 
     /**
      * This is the status of the recall
-     *
      * @return the value
-     */
+     **/
     public RecallStatus getStatus() {
         return status;
     }
 
-    /** This is the purpose of the recall */
+    /**
+     * This is the purpose of the recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purpose")
     private final String purpose;
 
     /**
      * This is the purpose of the recall
-     *
      * @return the value
-     */
+     **/
     public String getPurpose() {
         return purpose;
     }
 
-    /** This is the query associated with the recall */
+    /**
+     * This is the query associated with the recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
     /**
      * This is the query associated with the recall
-     *
      * @return the value
-     */
+     **/
     public String getQueryString() {
         return queryString;
     }
 
-    /** This is the list of logsets associated with this recall */
+    /**
+     * This is the list of logsets associated with this recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logSets")
     private final String logSets;
 
     /**
      * This is the list of logsets associated with this recall
-     *
      * @return the value
-     */
+     **/
     public String getLogSets() {
         return logSets;
     }
 
-    /** This is the user who initiated the recall request */
+    /**
+     * This is the user who initiated the recall request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * This is the user who initiated the recall request
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** This is the id of the associated recalled data collection */
+    /**
+     * This is the id of the associated recalled data collection
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
     private final Long collectionId;
 
     /**
      * This is the id of the associated recalled data collection
-     *
      * @return the value
-     */
+     **/
     public Long getCollectionId() {
         return collectionId;
     }
 
-    /** This is the id for the recall request */
+    /**
+     * This is the id for the recall request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallId")
     private final Long recallId;
 
     /**
      * This is the id for the recall request
-     *
      * @return the value
-     */
+     **/
     public Long getRecallId() {
         return recallId;
     }
@@ -416,7 +437,6 @@ public final class OverlappingRecallSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

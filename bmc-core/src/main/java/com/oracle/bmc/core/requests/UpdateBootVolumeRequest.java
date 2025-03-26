@@ -6,42 +6,48 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBootVolumeRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateBootVolumeRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateBootVolumeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.UpdateBootVolumeDetails> {
 
-    /** The OCID of the boot volume. */
+    /**
+     * The OCID of the boot volume.
+     */
     private String bootVolumeId;
 
-    /** The OCID of the boot volume. */
+    /**
+     * The OCID of the boot volume.
+     */
     public String getBootVolumeId() {
         return bootVolumeId;
     }
-    /** Update boot volume's display name. */
+    /**
+     * Update boot volume's display name.
+     */
     private com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails;
 
-    /** Update boot volume's display name. */
+    /**
+     * Update boot volume's display name.
+     */
     public com.oracle.bmc.core.model.UpdateBootVolumeDetails getUpdateBootVolumeDetails() {
         return updateBootVolumeDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -49,7 +55,6 @@ public class UpdateBootVolumeRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -61,15 +66,17 @@ public class UpdateBootVolumeRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateBootVolumeRequest, com.oracle.bmc.core.model.UpdateBootVolumeDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the boot volume. */
+        /**
+         * The OCID of the boot volume.
+         */
         private String bootVolumeId = null;
 
         /**
          * The OCID of the boot volume.
-         *
          * @param bootVolumeId the value to set
          * @return this builder instance
          */
@@ -78,12 +85,13 @@ public class UpdateBootVolumeRequest
             return this;
         }
 
-        /** Update boot volume's display name. */
+        /**
+         * Update boot volume's display name.
+         */
         private com.oracle.bmc.core.model.UpdateBootVolumeDetails updateBootVolumeDetails = null;
 
         /**
          * Update boot volume's display name.
-         *
          * @param updateBootVolumeDetails the value to set
          * @return this builder instance
          */
@@ -94,18 +102,17 @@ public class UpdateBootVolumeRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -117,19 +124,18 @@ public class UpdateBootVolumeRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -141,7 +147,6 @@ public class UpdateBootVolumeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateBootVolumeRequest o) {
@@ -156,11 +161,10 @@ public class UpdateBootVolumeRequest
         /**
          * Build the instance of UpdateBootVolumeRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateBootVolumeRequest
          */
@@ -173,7 +177,6 @@ public class UpdateBootVolumeRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -186,8 +189,7 @@ public class UpdateBootVolumeRequest
         /**
          * Build the instance of UpdateBootVolumeRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateBootVolumeRequest
@@ -204,7 +206,6 @@ public class UpdateBootVolumeRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -216,7 +217,6 @@ public class UpdateBootVolumeRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

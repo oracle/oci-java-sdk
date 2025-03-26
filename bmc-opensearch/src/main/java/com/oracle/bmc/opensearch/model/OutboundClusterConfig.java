@@ -5,24 +5,23 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * This configuration is used for passing request details to connect outbound cluster(s) to the
- * inbound cluster (coordinating cluster) <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OutboundClusterConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OutboundClusterConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OutboundClusterConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "outboundClusters"})
     public OutboundClusterConfig(
@@ -34,31 +33,33 @@ public final class OutboundClusterConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Flag to indicate whether outbound cluster configuration is enabled */
+        /**
+         * Flag to indicate whether outbound cluster configuration is enabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Flag to indicate whether outbound cluster configuration is enabled
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** List of outbound clusters to be connected to the inbound cluster */
+        /**
+         * List of outbound clusters to be connected to the inbound cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundClusters")
         private java.util.List<OutboundClusterSummary> outboundClusters;
 
         /**
          * List of outbound clusters to be connected to the inbound cluster
-         *
          * @param outboundClusters the value to set
          * @return this builder
-         */
+         **/
         public Builder outboundClusters(java.util.List<OutboundClusterSummary> outboundClusters) {
             this.outboundClusters = outboundClusters;
             this.__explicitlySet__.add("outboundClusters");
@@ -89,7 +90,9 @@ public final class OutboundClusterConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +101,30 @@ public final class OutboundClusterConfig
         return new Builder().copy(this);
     }
 
-    /** Flag to indicate whether outbound cluster configuration is enabled */
+    /**
+     * Flag to indicate whether outbound cluster configuration is enabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Flag to indicate whether outbound cluster configuration is enabled
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** List of outbound clusters to be connected to the inbound cluster */
+    /**
+     * List of outbound clusters to be connected to the inbound cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundClusters")
     private final java.util.List<OutboundClusterSummary> outboundClusters;
 
     /**
      * List of outbound clusters to be connected to the inbound cluster
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OutboundClusterSummary> getOutboundClusters() {
         return outboundClusters;
     }
@@ -131,7 +136,6 @@ public final class OutboundClusterConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

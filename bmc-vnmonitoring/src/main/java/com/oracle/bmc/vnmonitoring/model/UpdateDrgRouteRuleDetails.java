@@ -5,23 +5,23 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Details used to update a route rule in the DRG route table. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details used to update a route rule in the DRG route table.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDrgRouteRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDrgRouteRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrgRouteRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -43,7 +43,10 @@ public final class UpdateDrgRouteRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Oracle-assigned ID of each DRG route rule to update. */
+        /**
+         * The Oracle-assigned ID of each DRG route rule to update.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -52,7 +55,7 @@ public final class UpdateDrgRouteRuleDetails
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -60,62 +63,67 @@ public final class UpdateDrgRouteRuleDetails
         }
         /**
          * The range of IP addresses used for matching when routing traffic.
+         * <p>
+         * Potential values:
+         *   * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
          *
-         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR.
-         * For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destination")
         private String destination;
 
         /**
          * The range of IP addresses used for matching when routing traffic.
-         *
-         * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR.
-         * For example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+         * <p>
+         * Potential values:
+         *   * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+         *   or {@code 2001:0db8:0123:45::/56}.
          *
          * @param destination the value to set
          * @return this builder
-         */
+         **/
         public Builder destination(String destination) {
             this.destination = destination;
             this.__explicitlySet__.add("destination");
             return this;
         }
         /**
-         * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's
-         * {@code destination} is an IP address range in CIDR notation.
-         */
+         * Type of destination for the rule.
+         * Allowed values:
+         *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
         private DestinationType destinationType;
 
         /**
-         * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's
-         * {@code destination} is an IP address range in CIDR notation.
+         * Type of destination for the rule.
+         * Allowed values:
+         *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
          *
          * @param destinationType the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationType(DestinationType destinationType) {
             this.destinationType = destinationType;
             this.__explicitlySet__.add("destinationType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
-         * network destination.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+         * for reaching the network destination.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
         private String nextHopDrgAttachmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * next hop DRG attachment. The next hop DRG attachment is responsible for reaching the
-         * network destination.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+         * for reaching the network destination.
          *
          * @param nextHopDrgAttachmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder nextHopDrgAttachmentId(String nextHopDrgAttachmentId) {
             this.nextHopDrgAttachmentId = nextHopDrgAttachmentId;
             this.__explicitlySet__.add("nextHopDrgAttachmentId");
@@ -156,7 +164,9 @@ public final class UpdateDrgRouteRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,7 +175,10 @@ public final class UpdateDrgRouteRuleDetails
         return new Builder().copy(this);
     }
 
-    /** The Oracle-assigned ID of each DRG route rule to update. */
+    /**
+     * The Oracle-assigned ID of each DRG route rule to update.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -173,37 +186,42 @@ public final class UpdateDrgRouteRuleDetails
      * The Oracle-assigned ID of each DRG route rule to update.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The range of IP addresses used for matching when routing traffic.
+     * <p>
+     * Potential values:
+     *   * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}.
      *
-     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For
-     * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destination")
     private final String destination;
 
     /**
      * The range of IP addresses used for matching when routing traffic.
-     *
-     * <p>Potential values: * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For
-     * example: {@code 192.168.1.0/24} or {@code 2001:0db8:0123:45::/56}.
+     * <p>
+     * Potential values:
+     *   * IP address range in CIDR notation. Can be an IPv4 or IPv6 CIDR. For example: {@code 192.168.1.0/24}
+     *   or {@code 2001:0db8:0123:45::/56}.
      *
      * @return the value
-     */
+     **/
     public String getDestination() {
         return destination;
     }
 
     /**
-     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
-     * destination} is an IP address range in CIDR notation.
-     */
-    public enum DestinationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of destination for the rule.
+     * Allowed values:
+     *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *
+     **/
+    public enum DestinationType {
         CidrBlock("CIDR_BLOCK"),
         ;
 
@@ -235,37 +253,39 @@ public final class UpdateDrgRouteRuleDetails
         }
     };
     /**
-     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
-     * destination} is an IP address range in CIDR notation.
-     */
+     * Type of destination for the rule.
+     * Allowed values:
+     *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationType")
     private final DestinationType destinationType;
 
     /**
-     * Type of destination for the rule. Allowed values: * {@code CIDR_BLOCK}: If the rule's {@code
-     * destination} is an IP address range in CIDR notation.
+     * Type of destination for the rule.
+     * Allowed values:
+     *   * {@code CIDR_BLOCK}: If the rule's {@code destination} is an IP address range in CIDR notation.
      *
      * @return the value
-     */
+     **/
     public DestinationType getDestinationType() {
         return destinationType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
-     * hop DRG attachment. The next hop DRG attachment is responsible for reaching the network
-     * destination.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+     * for reaching the network destination.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextHopDrgAttachmentId")
     private final String nextHopDrgAttachmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next
-     * hop DRG attachment. The next hop DRG attachment is responsible for reaching the network
-     * destination.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next hop DRG attachment. The next hop DRG attachment is responsible
+     * for reaching the network destination.
      *
      * @return the value
-     */
+     **/
     public String getNextHopDrgAttachmentId() {
         return nextHopDrgAttachmentId;
     }
@@ -277,7 +297,6 @@ public final class UpdateDrgRouteRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

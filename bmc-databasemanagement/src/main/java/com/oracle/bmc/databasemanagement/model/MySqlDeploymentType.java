@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The type of MySQL Database installation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum MySqlDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of MySQL Database installation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum MySqlDeploymentType {
     Onpremise("ONPREMISE"),
     Mds("MDS"),
 

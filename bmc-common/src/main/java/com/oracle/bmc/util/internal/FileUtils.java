@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-/** Utilities for interacting with files. */
+/**
+ * Utilities for interacting with files.
+ */
 public enum FileUtils {
     ; // prevent instantiation
 
@@ -29,7 +31,6 @@ public enum FileUtils {
 
     /**
      * Attempts to expand paths that may contain unix-style home shorthand.
-     *
      * @param path The path
      * @return The path after expanding the home directory, if needed.
      */
@@ -59,7 +60,6 @@ public enum FileUtils {
     }
     /**
      * Return true if the content of both files is the same.
-     *
      * @param f1 first file
      * @param f2 second file
      * @return true if the same
@@ -74,7 +74,6 @@ public enum FileUtils {
 
     /**
      * Return true if the content of both streams is the same.
-     *
      * @param is1 first stream
      * @param is2 second stream
      * @return true if the same
@@ -106,7 +105,6 @@ public enum FileUtils {
 
     /**
      * Copy the contents of the input stream to the output stream.
-     *
      * @param source input stream
      * @param destination output stream
      * @return number of bytes read

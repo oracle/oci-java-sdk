@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Content type of script. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ContentTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Content type of script.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ContentTypes {
     Side("SIDE"),
     Js("JS"),
 

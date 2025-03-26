@@ -6,14 +6,15 @@ package com.oracle.bmc.osmanagement.responses;
 
 import com.oracle.bmc.osmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** A link to the created Managed Instance Group */
+    /**
+     * A link to the created Managed Instance Group
+     */
     private String location;
 
     /**
      * A link to the created Managed Instance Group
-     *
      * @return the value
      */
     public String getLocation() {
@@ -21,14 +22,15 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,7 +38,10 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -48,12 +53,13 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned {@code ManagedInstanceGroup} instance. */
+    /**
+     * The returned ManagedInstanceGroup instance.
+     */
     private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
     /**
-     * The returned {@code ManagedInstanceGroup} instance.
-     *
+     * The returned ManagedInstanceGroup instance.
      * @return the value
      */
     public com.oracle.bmc.osmanagement.model.ManagedInstanceGroup getManagedInstanceGroup() {
@@ -70,7 +76,7 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
     })
     private CreateManagedInstanceGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
@@ -82,31 +88,28 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
         this.managedInstanceGroup = managedInstanceGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateManagedInstanceGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** A link to the created Managed Instance Group */
+        /**
+         * A link to the created Managed Instance Group
+         */
         private String location;
 
         /**
          * A link to the created Managed Instance Group
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -116,14 +119,15 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,7 +137,10 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -147,12 +154,13 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code ManagedInstanceGroup} instance. */
+        /**
+         * The returned ManagedInstanceGroup instance.
+         */
         private com.oracle.bmc.osmanagement.model.ManagedInstanceGroup managedInstanceGroup;
 
         /**
-         * The returned {@code ManagedInstanceGroup} instance.
-         *
+         * The returned ManagedInstanceGroup instance.
          * @param managedInstanceGroup the value to set
          * @return this builder
          */
@@ -164,10 +172,8 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateManagedInstanceGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -181,10 +187,8 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateManagedInstanceGroupResponse build() {
             return new CreateManagedInstanceGroupResponse(
                     __httpStatusCode__,
@@ -198,7 +202,6 @@ public class CreateManagedInstanceGroupResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

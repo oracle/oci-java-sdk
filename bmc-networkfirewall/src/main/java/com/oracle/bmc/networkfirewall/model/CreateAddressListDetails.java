@@ -5,23 +5,23 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * The Request for creating the address List <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * The Request for creating the address List
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateAddressListDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateAddressListDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateAddressListDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "addresses"})
     public CreateAddressListDetails(
@@ -34,46 +34,49 @@ public final class CreateAddressListDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name to identify the group of addresses to be used in the policy rules. */
+        /**
+         * Unique name to identify the group of addresses to be used in the policy rules.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Unique name to identify the group of addresses to be used in the policy rules.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of address List. The accepted values are - * FQDN * IP */
+        /**
+         * Type of address List. The accepted values are - * FQDN * IP
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private AddressListType type;
 
         /**
          * Type of address List. The accepted values are - * FQDN * IP
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(AddressListType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** List of addresses. */
+        /**
+         * List of addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addresses")
         private java.util.List<String> addresses;
 
         /**
          * List of addresses.
-         *
          * @param addresses the value to set
          * @return this builder
-         */
+         **/
         public Builder addresses(java.util.List<String> addresses) {
             this.addresses = addresses;
             this.__explicitlySet__.add("addresses");
@@ -107,7 +110,9 @@ public final class CreateAddressListDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +121,44 @@ public final class CreateAddressListDetails
         return new Builder().copy(this);
     }
 
-    /** Unique name to identify the group of addresses to be used in the policy rules. */
+    /**
+     * Unique name to identify the group of addresses to be used in the policy rules.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique name to identify the group of addresses to be used in the policy rules.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of address List. The accepted values are - * FQDN * IP */
+    /**
+     * Type of address List. The accepted values are - * FQDN * IP
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final AddressListType type;
 
     /**
      * Type of address List. The accepted values are - * FQDN * IP
-     *
      * @return the value
-     */
+     **/
     public AddressListType getType() {
         return type;
     }
 
-    /** List of addresses. */
+    /**
+     * List of addresses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addresses")
     private final java.util.List<String> addresses;
 
     /**
      * List of addresses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAddresses() {
         return addresses;
     }
@@ -162,7 +170,6 @@ public final class CreateAddressListDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

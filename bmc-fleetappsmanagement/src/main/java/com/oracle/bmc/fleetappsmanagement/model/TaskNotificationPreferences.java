@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Preferences to send notifications on the task activities. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Preferences to send notifications on the task activities.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TaskNotificationPreferences.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TaskNotificationPreferences.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TaskNotificationPreferences
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "shouldNotifyOnPause",
@@ -40,46 +39,49 @@ public final class TaskNotificationPreferences
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Enables notification on pause. */
+        /**
+         * Enables notification on pause.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnPause")
         private Boolean shouldNotifyOnPause;
 
         /**
          * Enables notification on pause.
-         *
          * @param shouldNotifyOnPause the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldNotifyOnPause(Boolean shouldNotifyOnPause) {
             this.shouldNotifyOnPause = shouldNotifyOnPause;
             this.__explicitlySet__.add("shouldNotifyOnPause");
             return this;
         }
-        /** Enables or disables notification on Task Failures. */
+        /**
+         * Enables or disables notification on Task Failures.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnTaskFailure")
         private Boolean shouldNotifyOnTaskFailure;
 
         /**
          * Enables or disables notification on Task Failures.
-         *
          * @param shouldNotifyOnTaskFailure the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldNotifyOnTaskFailure(Boolean shouldNotifyOnTaskFailure) {
             this.shouldNotifyOnTaskFailure = shouldNotifyOnTaskFailure;
             this.__explicitlySet__.add("shouldNotifyOnTaskFailure");
             return this;
         }
-        /** Enables or disables notification on Task Success. */
+        /**
+         * Enables or disables notification on Task Success.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnTaskSuccess")
         private Boolean shouldNotifyOnTaskSuccess;
 
         /**
          * Enables or disables notification on Task Success.
-         *
          * @param shouldNotifyOnTaskSuccess the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldNotifyOnTaskSuccess(Boolean shouldNotifyOnTaskSuccess) {
             this.shouldNotifyOnTaskSuccess = shouldNotifyOnTaskSuccess;
             this.__explicitlySet__.add("shouldNotifyOnTaskSuccess");
@@ -116,7 +118,9 @@ public final class TaskNotificationPreferences
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,41 +129,44 @@ public final class TaskNotificationPreferences
         return new Builder().copy(this);
     }
 
-    /** Enables notification on pause. */
+    /**
+     * Enables notification on pause.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnPause")
     private final Boolean shouldNotifyOnPause;
 
     /**
      * Enables notification on pause.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldNotifyOnPause() {
         return shouldNotifyOnPause;
     }
 
-    /** Enables or disables notification on Task Failures. */
+    /**
+     * Enables or disables notification on Task Failures.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnTaskFailure")
     private final Boolean shouldNotifyOnTaskFailure;
 
     /**
      * Enables or disables notification on Task Failures.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldNotifyOnTaskFailure() {
         return shouldNotifyOnTaskFailure;
     }
 
-    /** Enables or disables notification on Task Success. */
+    /**
+     * Enables or disables notification on Task Success.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldNotifyOnTaskSuccess")
     private final Boolean shouldNotifyOnTaskSuccess;
 
     /**
      * Enables or disables notification on Task Success.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldNotifyOnTaskSuccess() {
         return shouldNotifyOnTaskSuccess;
     }
@@ -171,7 +178,6 @@ public final class TaskNotificationPreferences
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

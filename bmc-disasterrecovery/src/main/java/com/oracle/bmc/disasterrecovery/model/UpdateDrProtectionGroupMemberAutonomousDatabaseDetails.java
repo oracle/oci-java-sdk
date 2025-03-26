@@ -5,25 +5,25 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Update properties for an Autonomous Database Serverless member. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Update properties for an Autonomous Database Serverless member.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDrProtectionGroupMemberAutonomousDatabaseDetails.Builder.class)
+    builder = UpdateDrProtectionGroupMemberAutonomousDatabaseDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "memberType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "memberType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         extends UpdateDrProtectionGroupMemberDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,27 +37,22 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
             return this;
         }
         /**
-         * This specifies the mechanism used to create a temporary Autonomous Database instance for
-         * DR Drills. See
-         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
-         * for information about these clone types. See
-         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
-         * for information about snapshot standby.
-         */
+         * This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills.
+         * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types.
+         * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseStandbyTypeForDrDrills")
         private AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills;
 
         /**
-         * This specifies the mechanism used to create a temporary Autonomous Database instance for
-         * DR Drills. See
-         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
-         * for information about these clone types. See
-         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
-         * for information about snapshot standby.
+         * This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills.
+         * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types.
+         * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
          *
          * @param autonomousDatabaseStandbyTypeForDrDrills the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousDatabaseStandbyTypeForDrDrills(
                 AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills) {
             this.autonomousDatabaseStandbyTypeForDrDrills =
@@ -66,23 +61,24 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
             return this;
         }
         /**
-         * The OCID of the vault secret where the database SYSDBA password is stored. This password
-         * is required and used for performing database DR Drill operations when using full clone.
+         * The OCID of the vault secret where the database SYSDBA password is stored.
+         * This password is required and used for performing database DR Drill operations when using full clone.
+         * <p>
+         * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
         private String passwordVaultSecretId;
 
         /**
-         * The OCID of the vault secret where the database SYSDBA password is stored. This password
-         * is required and used for performing database DR Drill operations when using full clone.
-         *
-         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+         * The OCID of the vault secret where the database SYSDBA password is stored.
+         * This password is required and used for performing database DR Drill operations when using full clone.
+         * <p>
+         * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
          *
          * @param passwordVaultSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVaultSecretId(String passwordVaultSecretId) {
             this.passwordVaultSecretId = passwordVaultSecretId;
             this.__explicitlySet__.add("passwordVaultSecretId");
@@ -120,7 +116,9 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,47 +138,43 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
     }
 
     /**
-     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR
-     * Drills. See
-     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
-     * for information about these clone types. See
-     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
-     * for information about snapshot standby.
-     */
+     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills.
+     * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types.
+     * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseStandbyTypeForDrDrills")
     private final AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills;
 
     /**
-     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR
-     * Drills. See
-     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
-     * for information about these clone types. See
-     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
-     * for information about snapshot standby.
+     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR Drills.
+     * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html for information about these clone types.
+     * See https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html for information about snapshot standby.
      *
      * @return the value
-     */
+     **/
     public AutonomousDatabaseStandbyTypeForDrDrills getAutonomousDatabaseStandbyTypeForDrDrills() {
         return autonomousDatabaseStandbyTypeForDrDrills;
     }
 
     /**
-     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
-     * required and used for performing database DR Drill operations when using full clone.
+     * The OCID of the vault secret where the database SYSDBA password is stored.
+     * This password is required and used for performing database DR Drill operations when using full clone.
+     * <p>
+     * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
     private final String passwordVaultSecretId;
 
     /**
-     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
-     * required and used for performing database DR Drill operations when using full clone.
-     *
-     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+     * The OCID of the vault secret where the database SYSDBA password is stored.
+     * This password is required and used for performing database DR Drill operations when using full clone.
+     * <p>
+     * Example: {@code ocid1.vaultsecret.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPasswordVaultSecretId() {
         return passwordVaultSecretId;
     }
@@ -192,7 +186,6 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

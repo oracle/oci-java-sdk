@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The properties of a new Java installation site. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The properties of a new Java installation site.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NewInstallationSite.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NewInstallationSite
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = NewInstallationSite.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NewInstallationSite extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "managedInstanceId",
@@ -50,102 +48,98 @@ public final class NewInstallationSite
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * related managed instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * related managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
          *
          * @param managedInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-        /** The release version of the Java Runtime. */
+        /**
+         * The release version of the Java Runtime.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
         private String releaseVersion;
 
         /**
          * The release version of the Java Runtime.
-         *
          * @param releaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseVersion(String releaseVersion) {
             this.releaseVersion = releaseVersion;
             this.__explicitlySet__.add("releaseVersion");
             return this;
         }
-        /** Artifact content type for the Java version. */
+        /**
+         * Artifact content type for the Java version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
         private ArtifactContentType artifactContentType;
 
         /**
          * Artifact content type for the Java version.
-         *
          * @param artifactContentType the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactContentType(ArtifactContentType artifactContentType) {
             this.artifactContentType = artifactContentType;
             this.__explicitlySet__.add("artifactContentType");
             return this;
         }
-        /** Custom path to install new Java installation site. */
+        /**
+         * Custom path to install new Java installation site.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installationPath")
         private String installationPath;
 
         /**
          * Custom path to install new Java installation site.
-         *
          * @param installationPath the value to set
          * @return this builder
-         */
+         **/
         public Builder installationPath(String installationPath) {
             this.installationPath = installationPath;
             this.__explicitlySet__.add("installationPath");
             return this;
         }
         /**
-         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in
-         * OCI.
-         */
+         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headlessMode")
         private Boolean headlessMode;
 
         /**
-         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in
-         * OCI.
-         *
+         * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
          * @param headlessMode the value to set
          * @return this builder
-         */
+         **/
         public Builder headlessMode(Boolean headlessMode) {
             this.headlessMode = headlessMode;
             this.__explicitlySet__.add("headlessMode");
             return this;
         }
         /**
-         * Forces the installation request even if a more recent release is already present in the
-         * host.
-         */
+         * Forces the installation request even if a more recent release is already present in the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forceInstall")
         private Boolean forceInstall;
 
         /**
-         * Forces the installation request even if a more recent release is already present in the
-         * host.
-         *
+         * Forces the installation request even if a more recent release is already present in the host.
          * @param forceInstall the value to set
          * @return this builder
-         */
+         **/
         public Builder forceInstall(Boolean forceInstall) {
             this.forceInstall = forceInstall;
             this.__explicitlySet__.add("forceInstall");
@@ -194,7 +188,9 @@ public final class NewInstallationSite
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,87 +200,87 @@ public final class NewInstallationSite
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * related managed instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * related managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
      *
      * @return the value
-     */
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
 
-    /** The release version of the Java Runtime. */
+    /**
+     * The release version of the Java Runtime.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseVersion")
     private final String releaseVersion;
 
     /**
      * The release version of the Java Runtime.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseVersion() {
         return releaseVersion;
     }
 
-    /** Artifact content type for the Java version. */
+    /**
+     * Artifact content type for the Java version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
     private final ArtifactContentType artifactContentType;
 
     /**
      * Artifact content type for the Java version.
-     *
      * @return the value
-     */
+     **/
     public ArtifactContentType getArtifactContentType() {
         return artifactContentType;
     }
 
-    /** Custom path to install new Java installation site. */
+    /**
+     * Custom path to install new Java installation site.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installationPath")
     private final String installationPath;
 
     /**
      * Custom path to install new Java installation site.
-     *
      * @return the value
-     */
+     **/
     public String getInstallationPath() {
         return installationPath;
     }
 
     /**
      * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headlessMode")
     private final Boolean headlessMode;
 
     /**
      * Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
-     *
      * @return the value
-     */
+     **/
     public Boolean getHeadlessMode() {
         return headlessMode;
     }
 
     /**
      * Forces the installation request even if a more recent release is already present in the host.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("forceInstall")
     private final Boolean forceInstall;
 
     /**
      * Forces the installation request even if a more recent release is already present in the host.
-     *
      * @return the value
-     */
+     **/
     public Boolean getForceInstall() {
         return forceInstall;
     }
@@ -296,7 +292,6 @@ public final class NewInstallationSite
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

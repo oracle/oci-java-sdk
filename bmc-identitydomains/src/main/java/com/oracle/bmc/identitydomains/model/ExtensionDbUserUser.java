@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * DB User extension <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * DB User extension
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionDbUserUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionDbUserUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExtensionDbUserUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionDbUserUser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDbUser",
@@ -48,28 +46,39 @@ public final class ExtensionDbUserUser
     public static class Builder {
         /**
          * If true, indicates this is a database user.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDbUser")
         private Boolean isDbUser;
 
         /**
          * If true, indicates this is a database user.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param isDbUser the value to set
          * @return this builder
-         */
+         **/
         public Builder isDbUser(Boolean isDbUser) {
             this.isDbUser = isDbUser;
             this.__explicitlySet__.add("isDbUser");
@@ -77,28 +86,39 @@ public final class ExtensionDbUserUser
         }
         /**
          * Password Verifiers for DB User.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsSearchable: true - multiValued:
-         * true - mutability: readOnly - required: false - returned: request - type: complex -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [type]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVerifiers")
         private java.util.List<UserExtPasswordVerifiers> passwordVerifiers;
 
         /**
          * Password Verifiers for DB User.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsSearchable: true - multiValued:
-         * true - mutability: readOnly - required: false - returned: request - type: complex -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [type]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param passwordVerifiers the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVerifiers(
                 java.util.List<UserExtPasswordVerifiers> passwordVerifiers) {
             this.passwordVerifiers = passwordVerifiers;
@@ -107,28 +127,39 @@ public final class ExtensionDbUserUser
         }
         /**
          * DB domain level schema to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchema")
         private String domainLevelSchema;
 
         /**
          * DB domain level schema to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param domainLevelSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder domainLevelSchema(String domainLevelSchema) {
             this.domainLevelSchema = domainLevelSchema;
             this.__explicitlySet__.add("domainLevelSchema");
@@ -136,28 +167,39 @@ public final class ExtensionDbUserUser
         }
         /**
          * DB instance level schema to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchema")
         private String instanceLevelSchema;
 
         /**
          * DB instance level schema to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param instanceLevelSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceLevelSchema(String instanceLevelSchema) {
             this.instanceLevelSchema = instanceLevelSchema;
             this.__explicitlySet__.add("instanceLevelSchema");
@@ -165,28 +207,39 @@ public final class ExtensionDbUserUser
         }
         /**
          * DB global roles to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * true - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbGlobalRoles")
         private java.util.List<String> dbGlobalRoles;
 
         /**
          * DB global roles to which the user is granted access.
-         *
-         * <p>*Added In:** 18.2.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * true - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.2.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param dbGlobalRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder dbGlobalRoles(java.util.List<String> dbGlobalRoles) {
             this.dbGlobalRoles = dbGlobalRoles;
             this.__explicitlySet__.add("dbGlobalRoles");
@@ -231,7 +284,9 @@ public final class ExtensionDbUserUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -242,127 +297,190 @@ public final class ExtensionDbUserUser
 
     /**
      * If true, indicates this is a database user.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDbUser")
     private final Boolean isDbUser;
 
     /**
      * If true, indicates this is a database user.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getIsDbUser() {
         return isDbUser;
     }
 
     /**
      * Password Verifiers for DB User.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [type]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerifiers")
     private final java.util.List<UserExtPasswordVerifiers> passwordVerifiers;
 
     /**
      * Password Verifiers for DB User.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [type] - idcsSearchable: true - multiValued:
-     * true - mutability: readOnly - required: false - returned: request - type: complex -
-     * uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [type]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<UserExtPasswordVerifiers> getPasswordVerifiers() {
         return passwordVerifiers;
     }
 
     /**
      * DB domain level schema to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchema")
     private final String domainLevelSchema;
 
     /**
      * DB domain level schema to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainLevelSchema() {
         return domainLevelSchema;
     }
 
     /**
      * DB instance level schema to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchema")
     private final String instanceLevelSchema;
 
     /**
      * DB instance level schema to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getInstanceLevelSchema() {
         return instanceLevelSchema;
     }
 
     /**
      * DB global roles to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: true -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbGlobalRoles")
     private final java.util.List<String> dbGlobalRoles;
 
     /**
      * DB global roles to which the user is granted access.
-     *
-     * <p>*Added In:** 18.2.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: true -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.2.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getDbGlobalRoles() {
         return dbGlobalRoles;
     }
@@ -374,7 +492,6 @@ public final class ExtensionDbUserUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

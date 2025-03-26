@@ -6,49 +6,51 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableAutomaticInitialPlanCaptureExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DisableAutomaticInitialPlanCaptureRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableAutomaticInitialPlanCaptureExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DisableAutomaticInitialPlanCaptureRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class DisableAutomaticInitialPlanCaptureRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemanagement.model.DisableAutomaticInitialPlanCaptureDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** The details required to disable automatic initial plan capture. */
+    /**
+     * The details required to disable automatic initial plan capture.
+     */
     private com.oracle.bmc.databasemanagement.model.DisableAutomaticInitialPlanCaptureDetails
             disableAutomaticInitialPlanCaptureDetails;
 
-    /** The details required to disable automatic initial plan capture. */
+    /**
+     * The details required to disable automatic initial plan capture.
+     */
     public com.oracle.bmc.databasemanagement.model.DisableAutomaticInitialPlanCaptureDetails
             getDisableAutomaticInitialPlanCaptureDetails() {
         return disableAutomaticInitialPlanCaptureDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -63,19 +65,17 @@ public class DisableAutomaticInitialPlanCaptureRequest
                     DisableAutomaticInitialPlanCaptureRequest,
                     com.oracle.bmc.databasemanagement.model
                             .DisableAutomaticInitialPlanCaptureDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -84,13 +84,14 @@ public class DisableAutomaticInitialPlanCaptureRequest
             return this;
         }
 
-        /** The details required to disable automatic initial plan capture. */
+        /**
+         * The details required to disable automatic initial plan capture.
+         */
         private com.oracle.bmc.databasemanagement.model.DisableAutomaticInitialPlanCaptureDetails
                 disableAutomaticInitialPlanCaptureDetails = null;
 
         /**
          * The details required to disable automatic initial plan capture.
-         *
          * @param disableAutomaticInitialPlanCaptureDetails the value to set
          * @return this builder instance
          */
@@ -102,12 +103,13 @@ public class DisableAutomaticInitialPlanCaptureRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -118,19 +120,18 @@ public class DisableAutomaticInitialPlanCaptureRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -142,7 +143,6 @@ public class DisableAutomaticInitialPlanCaptureRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DisableAutomaticInitialPlanCaptureRequest o) {
@@ -156,14 +156,12 @@ public class DisableAutomaticInitialPlanCaptureRequest
         }
 
         /**
-         * Build the instance of DisableAutomaticInitialPlanCaptureRequest as configured by this
-         * builder
+         * Build the instance of DisableAutomaticInitialPlanCaptureRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DisableAutomaticInitialPlanCaptureRequest
          */
@@ -176,7 +174,6 @@ public class DisableAutomaticInitialPlanCaptureRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -189,11 +186,9 @@ public class DisableAutomaticInitialPlanCaptureRequest
         }
 
         /**
-         * Build the instance of DisableAutomaticInitialPlanCaptureRequest as configured by this
-         * builder
+         * Build the instance of DisableAutomaticInitialPlanCaptureRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DisableAutomaticInitialPlanCaptureRequest
@@ -206,14 +201,12 @@ public class DisableAutomaticInitialPlanCaptureRequest
                     disableAutomaticInitialPlanCaptureDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DisableAutomaticInitialPlanCaptureRequest(managedDatabaseId,
-            // disableAutomaticInitialPlanCaptureDetails, opcRequestId);
+            // new DisableAutomaticInitialPlanCaptureRequest(managedDatabaseId, disableAutomaticInitialPlanCaptureDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -226,7 +219,6 @@ public class DisableAutomaticInitialPlanCaptureRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** Container Version LifecycleState enum. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ContainerVersionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Container Version LifecycleState enum.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ContainerVersionLifecycleState {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
 

@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.mediaservices;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.mediaservices.internal.http.*;
 import com.oracle.bmc.mediaservices.requests.*;
 import com.oracle.bmc.mediaservices.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for MediaServices service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for MediaServices service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements MediaServicesAsync {
-    /** Service instance for MediaServices. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+public class MediaServicesAsyncClient implements MediaServicesAsync {
+    /**
+     * Service instance for MediaServices.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MEDIASERVICES")
@@ -40,2400 +37,112 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(MediaServicesAsyncClient.class);
 
-    MediaServicesAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, MediaServicesAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "mediaservices";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public MediaServicesAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new MediaServicesAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddMediaAssetLockResponse> addMediaAssetLock(
-            AddMediaAssetLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddMediaAssetLockRequest, AddMediaAssetLockResponse>
-                    handler) {
-        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        return clientCall(request, AddMediaAssetLockResponse::builder)
-                .logger(LOG, "addMediaAssetLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddMediaAssetLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/AddMediaAssetLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddMediaAssetLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
-                        AddMediaAssetLockResponse.Builder::mediaAsset)
-                .handleResponseHeaderString("etag", AddMediaAssetLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddMediaAssetLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddMediaWorkflowConfigurationLockResponse>
-            addMediaWorkflowConfigurationLock(
-                    AddMediaWorkflowConfigurationLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    AddMediaWorkflowConfigurationLockRequest,
-                                    AddMediaWorkflowConfigurationLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-
-        return clientCall(request, AddMediaWorkflowConfigurationLockResponse::builder)
-                .logger(LOG, "addMediaWorkflowConfigurationLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddMediaWorkflowConfigurationLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/AddMediaWorkflowConfigurationLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddMediaWorkflowConfigurationLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
-                        AddMediaWorkflowConfigurationLockResponse.Builder
-                                ::mediaWorkflowConfiguration)
-                .handleResponseHeaderString(
-                        "etag", AddMediaWorkflowConfigurationLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AddMediaWorkflowConfigurationLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddMediaWorkflowJobLockResponse> addMediaWorkflowJobLock(
-            AddMediaWorkflowJobLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>
-                    handler) {
-        Objects.requireNonNull(request.getAddLockDetails(), "addLockDetails is required");
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, AddMediaWorkflowJobLockResponse::builder)
-                .logger(LOG, "addMediaWorkflowJobLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddMediaWorkflowJobLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/AddMediaWorkflowJobLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddMediaWorkflowJobLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
-                        AddMediaWorkflowJobLockResponse.Builder::mediaWorkflowJob)
-                .handleResponseHeaderString("etag", AddMediaWorkflowJobLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddMediaWorkflowJobLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddMediaWorkflowLockResponse> addMediaWorkflowLock(
-            AddMediaWorkflowLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-
-        return clientCall(request, AddMediaWorkflowLockResponse::builder)
-                .logger(LOG, "addMediaWorkflowLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddMediaWorkflowLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/AddMediaWorkflowLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddMediaWorkflowLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
-                        AddMediaWorkflowLockResponse.Builder::mediaWorkflow)
-                .handleResponseHeaderString("etag", AddMediaWorkflowLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddMediaWorkflowLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddStreamCdnConfigLockResponse> addStreamCdnConfigLock(
-            AddStreamCdnConfigLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
-
-        return clientCall(request, AddStreamCdnConfigLockResponse::builder)
-                .logger(LOG, "addStreamCdnConfigLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddStreamCdnConfigLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/AddStreamCdnConfigLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddStreamCdnConfigLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendPathParam(request.getStreamCdnConfigId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
-                        AddStreamCdnConfigLockResponse.Builder::streamCdnConfig)
-                .handleResponseHeaderString("etag", AddStreamCdnConfigLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddStreamCdnConfigLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddStreamDistributionChannelLockResponse>
-            addStreamDistributionChannelLock(
-                    AddStreamDistributionChannelLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    AddStreamDistributionChannelLockRequest,
-                                    AddStreamDistributionChannelLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-
-        return clientCall(request, AddStreamDistributionChannelLockResponse::builder)
-                .logger(LOG, "addStreamDistributionChannelLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddStreamDistributionChannelLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/AddStreamDistributionChannelLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddStreamDistributionChannelLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
-                        AddStreamDistributionChannelLockResponse.Builder::streamDistributionChannel)
-                .handleResponseHeaderString(
-                        "etag", AddStreamDistributionChannelLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AddStreamDistributionChannelLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddStreamPackagingConfigLockResponse>
-            addStreamPackagingConfigLock(
-                    AddStreamPackagingConfigLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    AddStreamPackagingConfigLockRequest,
-                                    AddStreamPackagingConfigLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getAddResourceLockDetails(), "addResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
-
-        return clientCall(request, AddStreamPackagingConfigLockResponse::builder)
-                .logger(LOG, "addStreamPackagingConfigLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "AddStreamPackagingConfigLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/AddStreamPackagingConfigLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddStreamPackagingConfigLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendPathParam(request.getStreamPackagingConfigId())
-                .appendPathParam("actions")
-                .appendPathParam("addLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
-                        AddStreamPackagingConfigLockResponse.Builder::streamPackagingConfig)
-                .handleResponseHeaderString(
-                        "etag", AddStreamPackagingConfigLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AddStreamPackagingConfigLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeMediaAssetCompartmentResponse>
-            changeMediaAssetCompartment(
-                    ChangeMediaAssetCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeMediaAssetCompartmentRequest,
-                                    ChangeMediaAssetCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeMediaAssetCompartmentDetails(),
-                "changeMediaAssetCompartmentDetails is required");
-
-        return clientCall(request, ChangeMediaAssetCompartmentResponse::builder)
-                .logger(LOG, "changeMediaAssetCompartment")
-                .serviceDetails(
-                        "MediaServices",
-                        "ChangeMediaAssetCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeMediaAssetCompartmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeMediaAssetCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeMediaWorkflowCompartmentResponse>
-            changeMediaWorkflowCompartment(
-                    ChangeMediaWorkflowCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeMediaWorkflowCompartmentRequest,
-                                    ChangeMediaWorkflowCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeMediaWorkflowCompartmentDetails(),
-                "changeMediaWorkflowCompartmentDetails is required");
-
-        return clientCall(request, ChangeMediaWorkflowCompartmentResponse::builder)
-                .logger(LOG, "changeMediaWorkflowCompartment")
-                .serviceDetails(
-                        "MediaServices",
-                        "ChangeMediaWorkflowCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeMediaWorkflowCompartmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeMediaWorkflowCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeMediaWorkflowConfigurationCompartmentResponse>
-            changeMediaWorkflowConfigurationCompartment(
-                    ChangeMediaWorkflowConfigurationCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeMediaWorkflowConfigurationCompartmentRequest,
-                                    ChangeMediaWorkflowConfigurationCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeMediaWorkflowConfigurationCompartmentDetails(),
-                "changeMediaWorkflowConfigurationCompartmentDetails is required");
-
-        return clientCall(request, ChangeMediaWorkflowConfigurationCompartmentResponse::builder)
-                .logger(LOG, "changeMediaWorkflowConfigurationCompartment")
-                .serviceDetails(
-                        "MediaServices",
-                        "ChangeMediaWorkflowConfigurationCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeMediaWorkflowConfigurationCompartmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeMediaWorkflowConfigurationCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeMediaWorkflowJobCompartmentResponse>
-            changeMediaWorkflowJobCompartment(
-                    ChangeMediaWorkflowJobCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeMediaWorkflowJobCompartmentRequest,
-                                    ChangeMediaWorkflowJobCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeMediaWorkflowJobCompartmentDetails(),
-                "changeMediaWorkflowJobCompartmentDetails is required");
-
-        return clientCall(request, ChangeMediaWorkflowJobCompartmentResponse::builder)
-                .logger(LOG, "changeMediaWorkflowJobCompartment")
-                .serviceDetails(
-                        "MediaServices",
-                        "ChangeMediaWorkflowJobCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeMediaWorkflowJobCompartmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeMediaWorkflowJobCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeStreamDistributionChannelCompartmentResponse>
-            changeStreamDistributionChannelCompartment(
-                    ChangeStreamDistributionChannelCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeStreamDistributionChannelCompartmentRequest,
-                                    ChangeStreamDistributionChannelCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeStreamDistributionChannelCompartmentDetails(),
-                "changeStreamDistributionChannelCompartmentDetails is required");
-
-        return clientCall(request, ChangeStreamDistributionChannelCompartmentResponse::builder)
-                .logger(LOG, "changeStreamDistributionChannelCompartment")
-                .serviceDetails(
-                        "MediaServices",
-                        "ChangeStreamDistributionChannelCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeStreamDistributionChannelCompartmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeStreamDistributionChannelCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateMediaAssetResponse> createMediaAsset(
-            CreateMediaAssetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateMediaAssetRequest, CreateMediaAssetResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateMediaAssetDetails(), "createMediaAssetDetails is required");
-
-        return clientCall(request, CreateMediaAssetResponse::builder)
-                .logger(LOG, "createMediaAsset")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateMediaAsset",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateMediaAssetRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
-                        CreateMediaAssetResponse.Builder::mediaAsset)
-                .handleResponseHeaderString("etag", CreateMediaAssetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateMediaAssetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateMediaWorkflowResponse> createMediaWorkflow(
-            CreateMediaWorkflowRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateMediaWorkflowRequest, CreateMediaWorkflowResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateMediaWorkflowDetails(), "createMediaWorkflowDetails is required");
-
-        return clientCall(request, CreateMediaWorkflowResponse::builder)
-                .logger(LOG, "createMediaWorkflow")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateMediaWorkflow",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateMediaWorkflowRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
-                        CreateMediaWorkflowResponse.Builder::mediaWorkflow)
-                .handleResponseHeaderString("etag", CreateMediaWorkflowResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateMediaWorkflowResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateMediaWorkflowConfigurationResponse>
-            createMediaWorkflowConfiguration(
-                    CreateMediaWorkflowConfigurationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateMediaWorkflowConfigurationRequest,
-                                    CreateMediaWorkflowConfigurationResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateMediaWorkflowConfigurationDetails(),
-                "createMediaWorkflowConfigurationDetails is required");
-
-        return clientCall(request, CreateMediaWorkflowConfigurationResponse::builder)
-                .logger(LOG, "createMediaWorkflowConfiguration")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateMediaWorkflowConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateMediaWorkflowConfigurationRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
-                        CreateMediaWorkflowConfigurationResponse.Builder
-                                ::mediaWorkflowConfiguration)
-                .handleResponseHeaderString(
-                        "etag", CreateMediaWorkflowConfigurationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateMediaWorkflowJobResponse> createMediaWorkflowJob(
-            CreateMediaWorkflowJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateMediaWorkflowJobRequest, CreateMediaWorkflowJobResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateMediaWorkflowJobDetails(),
-                "createMediaWorkflowJobDetails is required");
-
-        return clientCall(request, CreateMediaWorkflowJobResponse::builder)
-                .logger(LOG, "createMediaWorkflowJob")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateMediaWorkflowJob",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateMediaWorkflowJobRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
-                        CreateMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
-                .handleResponseHeaderString("etag", CreateMediaWorkflowJobResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateMediaWorkflowJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateStreamCdnConfigResponse> createStreamCdnConfig(
-            CreateStreamCdnConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateStreamCdnConfigRequest, CreateStreamCdnConfigResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateStreamCdnConfigDetails(),
-                "createStreamCdnConfigDetails is required");
-
-        return clientCall(request, CreateStreamCdnConfigResponse::builder)
-                .logger(LOG, "createStreamCdnConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateStreamCdnConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateStreamCdnConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
-                        CreateStreamCdnConfigResponse.Builder::streamCdnConfig)
-                .handleResponseHeaderString("etag", CreateStreamCdnConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateStreamCdnConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateStreamDistributionChannelResponse>
-            createStreamDistributionChannel(
-                    CreateStreamDistributionChannelRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateStreamDistributionChannelRequest,
-                                    CreateStreamDistributionChannelResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateStreamDistributionChannelDetails(),
-                "createStreamDistributionChannelDetails is required");
-
-        return clientCall(request, CreateStreamDistributionChannelResponse::builder)
-                .logger(LOG, "createStreamDistributionChannel")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateStreamDistributionChannel",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateStreamDistributionChannelRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
-                        CreateStreamDistributionChannelResponse.Builder::streamDistributionChannel)
-                .handleResponseHeaderString(
-                        "etag", CreateStreamDistributionChannelResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateStreamDistributionChannelResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateStreamPackagingConfigResponse>
-            createStreamPackagingConfig(
-                    CreateStreamPackagingConfigRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateStreamPackagingConfigRequest,
-                                    CreateStreamPackagingConfigResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateStreamPackagingConfigDetails(),
-                "createStreamPackagingConfigDetails is required");
-
-        return clientCall(request, CreateStreamPackagingConfigResponse::builder)
-                .logger(LOG, "createStreamPackagingConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "CreateStreamPackagingConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateStreamPackagingConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
-                        CreateStreamPackagingConfigResponse.Builder::streamPackagingConfig)
-                .handleResponseHeaderString(
-                        "etag", CreateStreamPackagingConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateStreamPackagingConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMediaAssetResponse> deleteMediaAsset(
-            DeleteMediaAssetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteMediaAssetRequest, DeleteMediaAssetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        return clientCall(request, DeleteMediaAssetResponse::builder)
-                .logger(LOG, "deleteMediaAsset")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteMediaAsset",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMediaAssetRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .appendEnumQueryParam("deleteMode", request.getDeleteMode())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteMediaAssetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMediaAssetDistributionChannelAttachmentResponse>
-            deleteMediaAssetDistributionChannelAttachment(
-                    DeleteMediaAssetDistributionChannelAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteMediaAssetDistributionChannelAttachmentRequest,
-                                    DeleteMediaAssetDistributionChannelAttachmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        Validate.notBlank(
-                request.getDistributionChannelId(), "distributionChannelId must not be blank");
-
-        return clientCall(request, DeleteMediaAssetDistributionChannelAttachmentResponse::builder)
-                .logger(LOG, "deleteMediaAssetDistributionChannelAttachment")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteMediaAssetDistributionChannelAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMediaAssetDistributionChannelAttachmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("distributionChannelAttachments")
-                .appendPathParam(request.getDistributionChannelId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .appendQueryParam("version", request.getVersion())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMediaWorkflowResponse> deleteMediaWorkflow(
-            DeleteMediaWorkflowRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteMediaWorkflowRequest, DeleteMediaWorkflowResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-
-        return clientCall(request, DeleteMediaWorkflowResponse::builder)
-                .logger(LOG, "deleteMediaWorkflow")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteMediaWorkflow",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMediaWorkflowRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteMediaWorkflowResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMediaWorkflowConfigurationResponse>
-            deleteMediaWorkflowConfiguration(
-                    DeleteMediaWorkflowConfigurationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteMediaWorkflowConfigurationRequest,
-                                    DeleteMediaWorkflowConfigurationResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-
-        return clientCall(request, DeleteMediaWorkflowConfigurationResponse::builder)
-                .logger(LOG, "deleteMediaWorkflowConfiguration")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteMediaWorkflowConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMediaWorkflowConfigurationRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteMediaWorkflowJobResponse> deleteMediaWorkflowJob(
-            DeleteMediaWorkflowJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteMediaWorkflowJobRequest, DeleteMediaWorkflowJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, DeleteMediaWorkflowJobResponse::builder)
-                .logger(LOG, "deleteMediaWorkflowJob")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteMediaWorkflowJob",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteMediaWorkflowJobRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteMediaWorkflowJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteStreamCdnConfigResponse> deleteStreamCdnConfig(
-            DeleteStreamCdnConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteStreamCdnConfigRequest, DeleteStreamCdnConfigResponse>
-                    handler) {
-
-        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
-
-        return clientCall(request, DeleteStreamCdnConfigResponse::builder)
-                .logger(LOG, "deleteStreamCdnConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteStreamCdnConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteStreamCdnConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendPathParam(request.getStreamCdnConfigId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteStreamCdnConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteStreamDistributionChannelResponse>
-            deleteStreamDistributionChannel(
-                    DeleteStreamDistributionChannelRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteStreamDistributionChannelRequest,
-                                    DeleteStreamDistributionChannelResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-
-        return clientCall(request, DeleteStreamDistributionChannelResponse::builder)
-                .logger(LOG, "deleteStreamDistributionChannel")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteStreamDistributionChannel",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteStreamDistributionChannelRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteStreamDistributionChannelResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteStreamPackagingConfigResponse>
-            deleteStreamPackagingConfig(
-                    DeleteStreamPackagingConfigRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteStreamPackagingConfigRequest,
-                                    DeleteStreamPackagingConfigResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
-
-        return clientCall(request, DeleteStreamPackagingConfigResponse::builder)
-                .logger(LOG, "deleteStreamPackagingConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "DeleteStreamPackagingConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteStreamPackagingConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendPathParam(request.getStreamPackagingConfigId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteStreamPackagingConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaAssetResponse> getMediaAsset(
-            GetMediaAssetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetMediaAssetRequest, GetMediaAssetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        return clientCall(request, GetMediaAssetResponse::builder)
-                .logger(LOG, "getMediaAsset")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaAsset",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaAssetRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
-                        GetMediaAssetResponse.Builder::mediaAsset)
-                .handleResponseHeaderString("etag", GetMediaAssetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMediaAssetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaAssetDistributionChannelAttachmentResponse>
-            getMediaAssetDistributionChannelAttachment(
-                    GetMediaAssetDistributionChannelAttachmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetMediaAssetDistributionChannelAttachmentRequest,
-                                    GetMediaAssetDistributionChannelAttachmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        Validate.notBlank(
-                request.getDistributionChannelId(), "distributionChannelId must not be blank");
-
-        return clientCall(request, GetMediaAssetDistributionChannelAttachmentResponse::builder)
-                .logger(LOG, "getMediaAssetDistributionChannelAttachment")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaAssetDistributionChannelAttachment",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaAssetDistributionChannelAttachmentRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("distributionChannelAttachments")
-                .appendPathParam(request.getDistributionChannelId())
-                .appendQueryParam("version", request.getVersion())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachment
-                                .class,
-                        GetMediaAssetDistributionChannelAttachmentResponse.Builder
-                                ::mediaAssetDistributionChannelAttachment)
-                .handleResponseHeaderString(
-                        "etag", GetMediaAssetDistributionChannelAttachmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetMediaAssetDistributionChannelAttachmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaWorkflowResponse> getMediaWorkflow(
-            GetMediaWorkflowRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetMediaWorkflowRequest, GetMediaWorkflowResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-
-        return clientCall(request, GetMediaWorkflowResponse::builder)
-                .logger(LOG, "getMediaWorkflow")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaWorkflow",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaWorkflowRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
-                        GetMediaWorkflowResponse.Builder::mediaWorkflow)
-                .handleResponseHeaderString("etag", GetMediaWorkflowResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMediaWorkflowResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaWorkflowConfigurationResponse>
-            getMediaWorkflowConfiguration(
-                    GetMediaWorkflowConfigurationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetMediaWorkflowConfigurationRequest,
-                                    GetMediaWorkflowConfigurationResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-
-        return clientCall(request, GetMediaWorkflowConfigurationResponse::builder)
-                .logger(LOG, "getMediaWorkflowConfiguration")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaWorkflowConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaWorkflowConfigurationRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
-                        GetMediaWorkflowConfigurationResponse.Builder::mediaWorkflowConfiguration)
-                .handleResponseHeaderString(
-                        "etag", GetMediaWorkflowConfigurationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMediaWorkflowJobResponse> getMediaWorkflowJob(
-            GetMediaWorkflowJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetMediaWorkflowJobRequest, GetMediaWorkflowJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, GetMediaWorkflowJobResponse::builder)
-                .logger(LOG, "getMediaWorkflowJob")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetMediaWorkflowJob",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMediaWorkflowJobRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
-                        GetMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
-                .handleResponseHeaderString("etag", GetMediaWorkflowJobResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMediaWorkflowJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStreamCdnConfigResponse> getStreamCdnConfig(
-            GetStreamCdnConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetStreamCdnConfigRequest, GetStreamCdnConfigResponse>
-                    handler) {
-
-        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
-
-        return clientCall(request, GetStreamCdnConfigResponse::builder)
-                .logger(LOG, "getStreamCdnConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetStreamCdnConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStreamCdnConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendPathParam(request.getStreamCdnConfigId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
-                        GetStreamCdnConfigResponse.Builder::streamCdnConfig)
-                .handleResponseHeaderString("etag", GetStreamCdnConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStreamCdnConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStreamDistributionChannelResponse>
-            getStreamDistributionChannel(
-                    GetStreamDistributionChannelRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetStreamDistributionChannelRequest,
-                                    GetStreamDistributionChannelResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-
-        return clientCall(request, GetStreamDistributionChannelResponse::builder)
-                .logger(LOG, "getStreamDistributionChannel")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetStreamDistributionChannel",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStreamDistributionChannelRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
-                        GetStreamDistributionChannelResponse.Builder::streamDistributionChannel)
-                .handleResponseHeaderString(
-                        "etag", GetStreamDistributionChannelResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetStreamDistributionChannelResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStreamPackagingConfigResponse> getStreamPackagingConfig(
-            GetStreamPackagingConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetStreamPackagingConfigRequest, GetStreamPackagingConfigResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
-
-        return clientCall(request, GetStreamPackagingConfigResponse::builder)
-                .logger(LOG, "getStreamPackagingConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "GetStreamPackagingConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStreamPackagingConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendPathParam(request.getStreamPackagingConfigId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
-                        GetStreamPackagingConfigResponse.Builder::streamPackagingConfig)
-                .handleResponseHeaderString("etag", GetStreamPackagingConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStreamPackagingConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<IngestStreamDistributionChannelResponse>
-            ingestStreamDistributionChannel(
-                    IngestStreamDistributionChannelRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    IngestStreamDistributionChannelRequest,
-                                    IngestStreamDistributionChannelResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-        Objects.requireNonNull(
-                request.getIngestStreamDistributionChannelDetails(),
-                "ingestStreamDistributionChannelDetails is required");
-
-        return clientCall(request, IngestStreamDistributionChannelResponse::builder)
-                .logger(LOG, "ingestStreamDistributionChannel")
-                .serviceDetails(
-                        "MediaServices",
-                        "IngestStreamDistributionChannel",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(IngestStreamDistributionChannelRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendPathParam("actions")
-                .appendPathParam("ingest")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.IngestStreamDistributionChannelResult
-                                .class,
-                        IngestStreamDistributionChannelResponse.Builder
-                                ::ingestStreamDistributionChannelResult)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        IngestStreamDistributionChannelResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaAssetDistributionChannelAttachmentsResponse>
-            listMediaAssetDistributionChannelAttachments(
-                    ListMediaAssetDistributionChannelAttachmentsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListMediaAssetDistributionChannelAttachmentsRequest,
-                                    ListMediaAssetDistributionChannelAttachmentsResponse>
-                            handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        return clientCall(request, ListMediaAssetDistributionChannelAttachmentsResponse::builder)
-                .logger(LOG, "listMediaAssetDistributionChannelAttachments")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaAssetDistributionChannelAttachments",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaAssetDistributionChannelAttachmentsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("distributionChannelAttachments")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model
-                                .MediaAssetDistributionChannelAttachmentCollection.class,
-                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder
-                                ::mediaAssetDistributionChannelAttachmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListMediaAssetDistributionChannelAttachmentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaAssetsResponse> listMediaAssets(
-            ListMediaAssetsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListMediaAssetsRequest, ListMediaAssetsResponse>
-                    handler) {
-
-        return clientCall(request, ListMediaAssetsResponse::builder)
-                .logger(LOG, "listMediaAssets")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaAssets",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaAssetsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
-                .appendQueryParam("parentMediaAssetId", request.getParentMediaAssetId())
-                .appendQueryParam("masterMediaAssetId", request.getMasterMediaAssetId())
-                .appendEnumQueryParam("type", request.getType())
-                .appendQueryParam("bucketName", request.getBucketName())
-                .appendQueryParam("objectName", request.getObjectName())
-                .appendQueryParam("mediaWorkflowJobId", request.getMediaWorkflowJobId())
-                .appendQueryParam("sourceMediaWorkflowId", request.getSourceMediaWorkflowId())
-                .appendQueryParam(
-                        "sourceMediaWorkflowVersion", request.getSourceMediaWorkflowVersion())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAssetCollection.class,
-                        ListMediaAssetsResponse.Builder::mediaAssetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMediaAssetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMediaAssetsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaWorkflowConfigurationsResponse>
-            listMediaWorkflowConfigurations(
-                    ListMediaWorkflowConfigurationsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListMediaWorkflowConfigurationsRequest,
-                                    ListMediaWorkflowConfigurationsResponse>
-                            handler) {
-
-        return clientCall(request, ListMediaWorkflowConfigurationsResponse::builder)
-                .logger(LOG, "listMediaWorkflowConfigurations")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaWorkflowConfigurations",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaWorkflowConfigurationsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationCollection
-                                .class,
-                        ListMediaWorkflowConfigurationsResponse.Builder
-                                ::mediaWorkflowConfigurationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListMediaWorkflowConfigurationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListMediaWorkflowConfigurationsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaWorkflowJobsResponse> listMediaWorkflowJobs(
-            ListMediaWorkflowJobsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListMediaWorkflowJobsRequest, ListMediaWorkflowJobsResponse>
-                    handler) {
-
-        return clientCall(request, ListMediaWorkflowJobsResponse::builder)
-                .logger(LOG, "listMediaWorkflowJobs")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaWorkflowJobs",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaWorkflowJobsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("mediaWorkflowId", request.getMediaWorkflowId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJobCollection.class,
-                        ListMediaWorkflowJobsResponse.Builder::mediaWorkflowJobCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMediaWorkflowJobsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMediaWorkflowJobsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaWorkflowTaskDeclarationsResponse>
-            listMediaWorkflowTaskDeclarations(
-                    ListMediaWorkflowTaskDeclarationsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListMediaWorkflowTaskDeclarationsRequest,
-                                    ListMediaWorkflowTaskDeclarationsResponse>
-                            handler) {
-
-        return clientCall(request, ListMediaWorkflowTaskDeclarationsResponse::builder)
-                .logger(LOG, "listMediaWorkflowTaskDeclarations")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaWorkflowTaskDeclarations",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaWorkflowTaskDeclarationsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowTaskDeclarations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("version", request.getVersion())
-                .appendQueryParam("isCurrent", request.getIsCurrent())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclarationCollection
-                                .class,
-                        ListMediaWorkflowTaskDeclarationsResponse.Builder
-                                ::mediaWorkflowTaskDeclarationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListMediaWorkflowTaskDeclarationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListMediaWorkflowTaskDeclarationsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListMediaWorkflowsResponse> listMediaWorkflows(
-            ListMediaWorkflowsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListMediaWorkflowsRequest, ListMediaWorkflowsResponse>
-                    handler) {
-
-        return clientCall(request, ListMediaWorkflowsResponse::builder)
-                .logger(LOG, "listMediaWorkflows")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListMediaWorkflows",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListMediaWorkflowsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowCollection.class,
-                        ListMediaWorkflowsResponse.Builder::mediaWorkflowCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListMediaWorkflowsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListMediaWorkflowsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListStreamCdnConfigsResponse> listStreamCdnConfigs(
-            ListStreamCdnConfigsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListStreamCdnConfigsRequest, ListStreamCdnConfigsResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getDistributionChannelId(), "distributionChannelId is required");
-
-        return clientCall(request, ListStreamCdnConfigsResponse::builder)
-                .logger(LOG, "listStreamCdnConfigs")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListStreamCdnConfigs",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListStreamCdnConfigsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfigCollection.class,
-                        ListStreamCdnConfigsResponse.Builder::streamCdnConfigCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListStreamCdnConfigsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListStreamCdnConfigsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListStreamDistributionChannelsResponse>
-            listStreamDistributionChannels(
-                    ListStreamDistributionChannelsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListStreamDistributionChannelsRequest,
-                                    ListStreamDistributionChannelsResponse>
-                            handler) {
-
-        return clientCall(request, ListStreamDistributionChannelsResponse::builder)
-                .logger(LOG, "listStreamDistributionChannels")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListStreamDistributionChannels",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListStreamDistributionChannelsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannelCollection
-                                .class,
-                        ListStreamDistributionChannelsResponse.Builder
-                                ::streamDistributionChannelCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListStreamDistributionChannelsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListStreamDistributionChannelsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListStreamPackagingConfigsResponse>
-            listStreamPackagingConfigs(
-                    ListStreamPackagingConfigsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListStreamPackagingConfigsRequest,
-                                    ListStreamPackagingConfigsResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getDistributionChannelId(), "distributionChannelId is required");
-
-        return clientCall(request, ListStreamPackagingConfigsResponse::builder)
-                .logger(LOG, "listStreamPackagingConfigs")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListStreamPackagingConfigs",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListStreamPackagingConfigsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendQueryParam("distributionChannelId", request.getDistributionChannelId())
-                .appendQueryParam("streamPackagingConfigId", request.getStreamPackagingConfigId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfigCollection.class,
-                        ListStreamPackagingConfigsResponse.Builder::streamPackagingConfigCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListStreamPackagingConfigsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListStreamPackagingConfigsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSystemMediaWorkflowsResponse> listSystemMediaWorkflows(
-            ListSystemMediaWorkflowsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>
-                    handler) {
-
-        return clientCall(request, ListSystemMediaWorkflowsResponse::builder)
-                .logger(LOG, "listSystemMediaWorkflows")
-                .serviceDetails(
-                        "MediaServices",
-                        "ListSystemMediaWorkflows",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSystemMediaWorkflowsRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("systemMediaWorkflows")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.SystemMediaWorkflowCollection.class,
-                        ListSystemMediaWorkflowsResponse.Builder::systemMediaWorkflowCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSystemMediaWorkflowsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSystemMediaWorkflowsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveMediaAssetLockResponse> removeMediaAssetLock(
-            RemoveMediaAssetLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>
-                    handler) {
-        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-
-        return clientCall(request, RemoveMediaAssetLockResponse::builder)
-                .logger(LOG, "removeMediaAssetLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveMediaAssetLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/RemoveMediaAssetLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveMediaAssetLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
-                        RemoveMediaAssetLockResponse.Builder::mediaAsset)
-                .handleResponseHeaderString("etag", RemoveMediaAssetLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveMediaAssetLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveMediaWorkflowConfigurationLockResponse>
-            removeMediaWorkflowConfigurationLock(
-                    RemoveMediaWorkflowConfigurationLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RemoveMediaWorkflowConfigurationLockRequest,
-                                    RemoveMediaWorkflowConfigurationLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-
-        return clientCall(request, RemoveMediaWorkflowConfigurationLockResponse::builder)
-                .logger(LOG, "removeMediaWorkflowConfigurationLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveMediaWorkflowConfigurationLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/RemoveMediaWorkflowConfigurationLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveMediaWorkflowConfigurationLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
-                        RemoveMediaWorkflowConfigurationLockResponse.Builder
-                                ::mediaWorkflowConfiguration)
-                .handleResponseHeaderString(
-                        "etag", RemoveMediaWorkflowConfigurationLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveMediaWorkflowConfigurationLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveMediaWorkflowJobLockResponse>
-            removeMediaWorkflowJobLock(
-                    RemoveMediaWorkflowJobLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RemoveMediaWorkflowJobLockRequest,
-                                    RemoveMediaWorkflowJobLockResponse>
-                            handler) {
-        Objects.requireNonNull(request.getRemoveLockDetails(), "removeLockDetails is required");
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-
-        return clientCall(request, RemoveMediaWorkflowJobLockResponse::builder)
-                .logger(LOG, "removeMediaWorkflowJobLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveMediaWorkflowJobLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/RemoveMediaWorkflowJobLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveMediaWorkflowJobLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
-                        RemoveMediaWorkflowJobLockResponse.Builder::mediaWorkflowJob)
-                .handleResponseHeaderString(
-                        "etag", RemoveMediaWorkflowJobLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveMediaWorkflowJobLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveMediaWorkflowLockResponse> removeMediaWorkflowLock(
-            RemoveMediaWorkflowLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-
-        return clientCall(request, RemoveMediaWorkflowLockResponse::builder)
-                .logger(LOG, "removeMediaWorkflowLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveMediaWorkflowLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/RemoveMediaWorkflowLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveMediaWorkflowLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
-                        RemoveMediaWorkflowLockResponse.Builder::mediaWorkflow)
-                .handleResponseHeaderString("etag", RemoveMediaWorkflowLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveMediaWorkflowLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveStreamCdnConfigLockResponse> removeStreamCdnConfigLock(
-            RemoveStreamCdnConfigLockRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
-
-        return clientCall(request, RemoveStreamCdnConfigLockResponse::builder)
-                .logger(LOG, "removeStreamCdnConfigLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveStreamCdnConfigLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/RemoveStreamCdnConfigLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveStreamCdnConfigLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendPathParam(request.getStreamCdnConfigId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
-                        RemoveStreamCdnConfigLockResponse.Builder::streamCdnConfig)
-                .handleResponseHeaderString("etag", RemoveStreamCdnConfigLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RemoveStreamCdnConfigLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveStreamDistributionChannelLockResponse>
-            removeStreamDistributionChannelLock(
-                    RemoveStreamDistributionChannelLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RemoveStreamDistributionChannelLockRequest,
-                                    RemoveStreamDistributionChannelLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-
-        return clientCall(request, RemoveStreamDistributionChannelLockResponse::builder)
-                .logger(LOG, "removeStreamDistributionChannelLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveStreamDistributionChannelLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/RemoveStreamDistributionChannelLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveStreamDistributionChannelLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
-                        RemoveStreamDistributionChannelLockResponse.Builder
-                                ::streamDistributionChannel)
-                .handleResponseHeaderString(
-                        "etag", RemoveStreamDistributionChannelLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveStreamDistributionChannelLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RemoveStreamPackagingConfigLockResponse>
-            removeStreamPackagingConfigLock(
-                    RemoveStreamPackagingConfigLockRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RemoveStreamPackagingConfigLockRequest,
-                                    RemoveStreamPackagingConfigLockResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getRemoveResourceLockDetails(), "removeResourceLockDetails is required");
-
-        Validate.notBlank(
-                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
-
-        return clientCall(request, RemoveStreamPackagingConfigLockResponse::builder)
-                .logger(LOG, "removeStreamPackagingConfigLock")
-                .serviceDetails(
-                        "MediaServices",
-                        "RemoveStreamPackagingConfigLock",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/RemoveStreamPackagingConfigLock")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RemoveStreamPackagingConfigLockRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendPathParam(request.getStreamPackagingConfigId())
-                .appendPathParam("actions")
-                .appendPathParam("removeLock")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
-                        RemoveStreamPackagingConfigLockResponse.Builder::streamPackagingConfig)
-                .handleResponseHeaderString(
-                        "etag", RemoveStreamPackagingConfigLockResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RemoveStreamPackagingConfigLockResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMediaAssetResponse> updateMediaAsset(
-            UpdateMediaAssetRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateMediaAssetRequest, UpdateMediaAssetResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaAssetId(), "mediaAssetId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMediaAssetDetails(), "updateMediaAssetDetails is required");
-
-        return clientCall(request, UpdateMediaAssetResponse::builder)
-                .logger(LOG, "updateMediaAsset")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateMediaAsset",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateMediaAssetRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaAssets")
-                .appendPathParam(request.getMediaAssetId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaAsset.class,
-                        UpdateMediaAssetResponse.Builder::mediaAsset)
-                .handleResponseHeaderString("etag", UpdateMediaAssetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateMediaAssetResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMediaWorkflowResponse> updateMediaWorkflow(
-            UpdateMediaWorkflowRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateMediaWorkflowRequest, UpdateMediaWorkflowResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowId(), "mediaWorkflowId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMediaWorkflowDetails(), "updateMediaWorkflowDetails is required");
-
-        return clientCall(request, UpdateMediaWorkflowResponse::builder)
-                .logger(LOG, "updateMediaWorkflow")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateMediaWorkflow",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateMediaWorkflowRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflows")
-                .appendPathParam(request.getMediaWorkflowId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflow.class,
-                        UpdateMediaWorkflowResponse.Builder::mediaWorkflow)
-                .handleResponseHeaderString("etag", UpdateMediaWorkflowResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateMediaWorkflowResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMediaWorkflowConfigurationResponse>
-            updateMediaWorkflowConfiguration(
-                    UpdateMediaWorkflowConfigurationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateMediaWorkflowConfigurationRequest,
-                                    UpdateMediaWorkflowConfigurationResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getMediaWorkflowConfigurationId(),
-                "mediaWorkflowConfigurationId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMediaWorkflowConfigurationDetails(),
-                "updateMediaWorkflowConfigurationDetails is required");
-
-        return clientCall(request, UpdateMediaWorkflowConfigurationResponse::builder)
-                .logger(LOG, "updateMediaWorkflowConfiguration")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateMediaWorkflowConfiguration",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateMediaWorkflowConfigurationRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowConfigurations")
-                .appendPathParam(request.getMediaWorkflowConfigurationId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowConfiguration.class,
-                        UpdateMediaWorkflowConfigurationResponse.Builder
-                                ::mediaWorkflowConfiguration)
-                .handleResponseHeaderString(
-                        "etag", UpdateMediaWorkflowConfigurationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateMediaWorkflowConfigurationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateMediaWorkflowJobResponse> updateMediaWorkflowJob(
-            UpdateMediaWorkflowJobRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateMediaWorkflowJobRequest, UpdateMediaWorkflowJobResponse>
-                    handler) {
-
-        Validate.notBlank(request.getMediaWorkflowJobId(), "mediaWorkflowJobId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateMediaWorkflowJobDetails(),
-                "updateMediaWorkflowJobDetails is required");
-
-        return clientCall(request, UpdateMediaWorkflowJobResponse::builder)
-                .logger(LOG, "updateMediaWorkflowJob")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateMediaWorkflowJob",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateMediaWorkflowJobRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("mediaWorkflowJobs")
-                .appendPathParam(request.getMediaWorkflowJobId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.MediaWorkflowJob.class,
-                        UpdateMediaWorkflowJobResponse.Builder::mediaWorkflowJob)
-                .handleResponseHeaderString("etag", UpdateMediaWorkflowJobResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateMediaWorkflowJobResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateStreamCdnConfigResponse> updateStreamCdnConfig(
-            UpdateStreamCdnConfigRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateStreamCdnConfigRequest, UpdateStreamCdnConfigResponse>
-                    handler) {
-
-        Validate.notBlank(request.getStreamCdnConfigId(), "streamCdnConfigId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateStreamCdnConfigDetails(),
-                "updateStreamCdnConfigDetails is required");
-
-        return clientCall(request, UpdateStreamCdnConfigResponse::builder)
-                .logger(LOG, "updateStreamCdnConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateStreamCdnConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateStreamCdnConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamCdnConfigs")
-                .appendPathParam(request.getStreamCdnConfigId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamCdnConfig.class,
-                        UpdateStreamCdnConfigResponse.Builder::streamCdnConfig)
-                .handleResponseHeaderString("etag", UpdateStreamCdnConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateStreamCdnConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateStreamDistributionChannelResponse>
-            updateStreamDistributionChannel(
-                    UpdateStreamDistributionChannelRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateStreamDistributionChannelRequest,
-                                    UpdateStreamDistributionChannelResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamDistributionChannelId(),
-                "streamDistributionChannelId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateStreamDistributionChannelDetails(),
-                "updateStreamDistributionChannelDetails is required");
-
-        return clientCall(request, UpdateStreamDistributionChannelResponse::builder)
-                .logger(LOG, "updateStreamDistributionChannel")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateStreamDistributionChannel",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateStreamDistributionChannelRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamDistributionChannels")
-                .appendPathParam(request.getStreamDistributionChannelId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamDistributionChannel.class,
-                        UpdateStreamDistributionChannelResponse.Builder::streamDistributionChannel)
-                .handleResponseHeaderString(
-                        "etag", UpdateStreamDistributionChannelResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateStreamDistributionChannelResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateStreamPackagingConfigResponse>
-            updateStreamPackagingConfig(
-                    UpdateStreamPackagingConfigRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateStreamPackagingConfigRequest,
-                                    UpdateStreamPackagingConfigResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getStreamPackagingConfigId(), "streamPackagingConfigId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateStreamPackagingConfigDetails(),
-                "updateStreamPackagingConfigDetails is required");
-
-        return clientCall(request, UpdateStreamPackagingConfigResponse::builder)
-                .logger(LOG, "updateStreamPackagingConfig")
-                .serviceDetails(
-                        "MediaServices",
-                        "UpdateStreamPackagingConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateStreamPackagingConfigRequest::builder)
-                .basePath("/20211101")
-                .appendPathParam("streamPackagingConfigs")
-                .appendPathParam(request.getStreamPackagingConfigId())
-                .appendQueryParam("isLockOverride", request.getIsLockOverride())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mediaservices.model.StreamPackagingConfig.class,
-                        UpdateStreamPackagingConfigResponse.Builder::streamPackagingConfig)
-                .handleResponseHeaderString(
-                        "etag", UpdateStreamPackagingConfigResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateStreamPackagingConfigResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2441,26 +150,26 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2469,29 +178,29 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public MediaServicesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -2504,14 +213,3445 @@ public class MediaServicesAsyncClient extends com.oracle.bmc.http.internal.BaseA
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public MediaServicesAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, MediaServicesAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public MediaServicesAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new MediaServicesAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaAssetLockResponse> addMediaAssetLock(
+            AddMediaAssetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaAssetLockRequest, AddMediaAssetLockResponse>
+                    handler) {
+        LOG.trace("Called async addMediaAssetLock");
+        final AddMediaAssetLockRequest interceptedRequest =
+                AddMediaAssetLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMediaAssetLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddMediaAssetLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/AddMediaAssetLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddMediaAssetLockResponse>
+                transformer =
+                        AddMediaAssetLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddMediaAssetLockRequest, AddMediaAssetLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMediaAssetLockRequest, AddMediaAssetLockResponse>,
+                        java.util.concurrent.Future<AddMediaAssetLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMediaAssetLockRequest, AddMediaAssetLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowConfigurationLockResponse>
+            addMediaWorkflowConfigurationLock(
+                    AddMediaWorkflowConfigurationLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddMediaWorkflowConfigurationLockRequest,
+                                    AddMediaWorkflowConfigurationLockResponse>
+                            handler) {
+        LOG.trace("Called async addMediaWorkflowConfigurationLock");
+        final AddMediaWorkflowConfigurationLockRequest interceptedRequest =
+                AddMediaWorkflowConfigurationLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMediaWorkflowConfigurationLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowConfigurationLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/AddMediaWorkflowConfigurationLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddMediaWorkflowConfigurationLockResponse>
+                transformer =
+                        AddMediaWorkflowConfigurationLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddMediaWorkflowConfigurationLockRequest,
+                        AddMediaWorkflowConfigurationLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMediaWorkflowConfigurationLockRequest,
+                                AddMediaWorkflowConfigurationLockResponse>,
+                        java.util.concurrent.Future<AddMediaWorkflowConfigurationLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMediaWorkflowConfigurationLockRequest,
+                    AddMediaWorkflowConfigurationLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowJobLockResponse> addMediaWorkflowJobLock(
+            AddMediaWorkflowJobLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>
+                    handler) {
+        LOG.trace("Called async addMediaWorkflowJobLock");
+        final AddMediaWorkflowJobLockRequest interceptedRequest =
+                AddMediaWorkflowJobLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMediaWorkflowJobLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowJobLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/AddMediaWorkflowJobLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddMediaWorkflowJobLockResponse>
+                transformer =
+                        AddMediaWorkflowJobLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>,
+                        java.util.concurrent.Future<AddMediaWorkflowJobLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMediaWorkflowJobLockRequest, AddMediaWorkflowJobLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMediaWorkflowLockResponse> addMediaWorkflowLock(
+            AddMediaWorkflowLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>
+                    handler) {
+        LOG.trace("Called async addMediaWorkflowLock");
+        final AddMediaWorkflowLockRequest interceptedRequest =
+                AddMediaWorkflowLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMediaWorkflowLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddMediaWorkflowLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/AddMediaWorkflowLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddMediaWorkflowLockResponse>
+                transformer =
+                        AddMediaWorkflowLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>,
+                        java.util.concurrent.Future<AddMediaWorkflowLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMediaWorkflowLockRequest, AddMediaWorkflowLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamCdnConfigLockResponse> addStreamCdnConfigLock(
+            AddStreamCdnConfigLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>
+                    handler) {
+        LOG.trace("Called async addStreamCdnConfigLock");
+        final AddStreamCdnConfigLockRequest interceptedRequest =
+                AddStreamCdnConfigLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStreamCdnConfigLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddStreamCdnConfigLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/AddStreamCdnConfigLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddStreamCdnConfigLockResponse>
+                transformer =
+                        AddStreamCdnConfigLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>,
+                        java.util.concurrent.Future<AddStreamCdnConfigLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddStreamCdnConfigLockRequest, AddStreamCdnConfigLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamDistributionChannelLockResponse>
+            addStreamDistributionChannelLock(
+                    AddStreamDistributionChannelLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStreamDistributionChannelLockRequest,
+                                    AddStreamDistributionChannelLockResponse>
+                            handler) {
+        LOG.trace("Called async addStreamDistributionChannelLock");
+        final AddStreamDistributionChannelLockRequest interceptedRequest =
+                AddStreamDistributionChannelLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStreamDistributionChannelLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddStreamDistributionChannelLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/AddStreamDistributionChannelLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddStreamDistributionChannelLockResponse>
+                transformer =
+                        AddStreamDistributionChannelLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddStreamDistributionChannelLockRequest,
+                        AddStreamDistributionChannelLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddStreamDistributionChannelLockRequest,
+                                AddStreamDistributionChannelLockResponse>,
+                        java.util.concurrent.Future<AddStreamDistributionChannelLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddStreamDistributionChannelLockRequest,
+                    AddStreamDistributionChannelLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddStreamPackagingConfigLockResponse>
+            addStreamPackagingConfigLock(
+                    AddStreamPackagingConfigLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddStreamPackagingConfigLockRequest,
+                                    AddStreamPackagingConfigLockResponse>
+                            handler) {
+        LOG.trace("Called async addStreamPackagingConfigLock");
+        final AddStreamPackagingConfigLockRequest interceptedRequest =
+                AddStreamPackagingConfigLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddStreamPackagingConfigLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "AddStreamPackagingConfigLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/AddStreamPackagingConfigLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddStreamPackagingConfigLockResponse>
+                transformer =
+                        AddStreamPackagingConfigLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddStreamPackagingConfigLockRequest, AddStreamPackagingConfigLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddStreamPackagingConfigLockRequest,
+                                AddStreamPackagingConfigLockResponse>,
+                        java.util.concurrent.Future<AddStreamPackagingConfigLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddStreamPackagingConfigLockRequest, AddStreamPackagingConfigLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMediaAssetCompartmentResponse>
+            changeMediaAssetCompartment(
+                    ChangeMediaAssetCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMediaAssetCompartmentRequest,
+                                    ChangeMediaAssetCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMediaAssetCompartment");
+        final ChangeMediaAssetCompartmentRequest interceptedRequest =
+                ChangeMediaAssetCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMediaAssetCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ChangeMediaAssetCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ChangeMediaAssetCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMediaAssetCompartmentResponse>
+                transformer =
+                        ChangeMediaAssetCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMediaAssetCompartmentRequest, ChangeMediaAssetCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMediaAssetCompartmentRequest,
+                                ChangeMediaAssetCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMediaAssetCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMediaAssetCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMediaAssetCompartmentRequest, ChangeMediaAssetCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMediaWorkflowCompartmentResponse>
+            changeMediaWorkflowCompartment(
+                    ChangeMediaWorkflowCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMediaWorkflowCompartmentRequest,
+                                    ChangeMediaWorkflowCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMediaWorkflowCompartment");
+        final ChangeMediaWorkflowCompartmentRequest interceptedRequest =
+                ChangeMediaWorkflowCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMediaWorkflowCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ChangeMediaWorkflowCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ChangeMediaWorkflowCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMediaWorkflowCompartmentResponse>
+                transformer =
+                        ChangeMediaWorkflowCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMediaWorkflowCompartmentRequest,
+                        ChangeMediaWorkflowCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMediaWorkflowCompartmentRequest,
+                                ChangeMediaWorkflowCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMediaWorkflowCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMediaWorkflowCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMediaWorkflowCompartmentRequest, ChangeMediaWorkflowCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMediaWorkflowConfigurationCompartmentResponse>
+            changeMediaWorkflowConfigurationCompartment(
+                    ChangeMediaWorkflowConfigurationCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMediaWorkflowConfigurationCompartmentRequest,
+                                    ChangeMediaWorkflowConfigurationCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMediaWorkflowConfigurationCompartment");
+        final ChangeMediaWorkflowConfigurationCompartmentRequest interceptedRequest =
+                ChangeMediaWorkflowConfigurationCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMediaWorkflowConfigurationCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ChangeMediaWorkflowConfigurationCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/ChangeMediaWorkflowConfigurationCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeMediaWorkflowConfigurationCompartmentResponse>
+                transformer =
+                        ChangeMediaWorkflowConfigurationCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMediaWorkflowConfigurationCompartmentRequest,
+                        ChangeMediaWorkflowConfigurationCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMediaWorkflowConfigurationCompartmentRequest,
+                                ChangeMediaWorkflowConfigurationCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeMediaWorkflowConfigurationCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeMediaWorkflowConfigurationCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMediaWorkflowConfigurationCompartmentRequest,
+                    ChangeMediaWorkflowConfigurationCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeMediaWorkflowJobCompartmentResponse>
+            changeMediaWorkflowJobCompartment(
+                    ChangeMediaWorkflowJobCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMediaWorkflowJobCompartmentRequest,
+                                    ChangeMediaWorkflowJobCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeMediaWorkflowJobCompartment");
+        final ChangeMediaWorkflowJobCompartmentRequest interceptedRequest =
+                ChangeMediaWorkflowJobCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeMediaWorkflowJobCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ChangeMediaWorkflowJobCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ChangeMediaWorkflowJobCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeMediaWorkflowJobCompartmentResponse>
+                transformer =
+                        ChangeMediaWorkflowJobCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeMediaWorkflowJobCompartmentRequest,
+                        ChangeMediaWorkflowJobCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeMediaWorkflowJobCompartmentRequest,
+                                ChangeMediaWorkflowJobCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeMediaWorkflowJobCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeMediaWorkflowJobCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeMediaWorkflowJobCompartmentRequest,
+                    ChangeMediaWorkflowJobCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeStreamDistributionChannelCompartmentResponse>
+            changeStreamDistributionChannelCompartment(
+                    ChangeStreamDistributionChannelCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeStreamDistributionChannelCompartmentRequest,
+                                    ChangeStreamDistributionChannelCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeStreamDistributionChannelCompartment");
+        final ChangeStreamDistributionChannelCompartmentRequest interceptedRequest =
+                ChangeStreamDistributionChannelCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeStreamDistributionChannelCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ChangeStreamDistributionChannelCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ChangeStreamDistributionChannelCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeStreamDistributionChannelCompartmentResponse>
+                transformer =
+                        ChangeStreamDistributionChannelCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeStreamDistributionChannelCompartmentRequest,
+                        ChangeStreamDistributionChannelCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeStreamDistributionChannelCompartmentRequest,
+                                ChangeStreamDistributionChannelCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeStreamDistributionChannelCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeStreamDistributionChannelCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeStreamDistributionChannelCompartmentRequest,
+                    ChangeStreamDistributionChannelCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaAssetResponse> createMediaAsset(
+            CreateMediaAssetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMediaAssetRequest, CreateMediaAssetResponse>
+                    handler) {
+        LOG.trace("Called async createMediaAsset");
+        final CreateMediaAssetRequest interceptedRequest =
+                CreateMediaAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMediaAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/CreateMediaAsset");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaAssetResponse>
+                transformer =
+                        CreateMediaAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateMediaAssetRequest, CreateMediaAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMediaAssetRequest, CreateMediaAssetResponse>,
+                        java.util.concurrent.Future<CreateMediaAssetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMediaAssetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMediaAssetRequest, CreateMediaAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaWorkflowResponse> createMediaWorkflow(
+            CreateMediaWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMediaWorkflowRequest, CreateMediaWorkflowResponse>
+                    handler) {
+        LOG.trace("Called async createMediaWorkflow");
+        final CreateMediaWorkflowRequest interceptedRequest =
+                CreateMediaWorkflowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMediaWorkflowConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/CreateMediaWorkflow");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowResponse>
+                transformer =
+                        CreateMediaWorkflowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMediaWorkflowRequest, CreateMediaWorkflowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMediaWorkflowRequest, CreateMediaWorkflowResponse>,
+                        java.util.concurrent.Future<CreateMediaWorkflowResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMediaWorkflowDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMediaWorkflowRequest, CreateMediaWorkflowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaWorkflowConfigurationResponse>
+            createMediaWorkflowConfiguration(
+                    CreateMediaWorkflowConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateMediaWorkflowConfigurationRequest,
+                                    CreateMediaWorkflowConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async createMediaWorkflowConfiguration");
+        final CreateMediaWorkflowConfigurationRequest interceptedRequest =
+                CreateMediaWorkflowConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateMediaWorkflowConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/CreateMediaWorkflowConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateMediaWorkflowConfigurationResponse>
+                transformer =
+                        CreateMediaWorkflowConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMediaWorkflowConfigurationRequest,
+                        CreateMediaWorkflowConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMediaWorkflowConfigurationRequest,
+                                CreateMediaWorkflowConfigurationResponse>,
+                        java.util.concurrent.Future<CreateMediaWorkflowConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMediaWorkflowConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMediaWorkflowConfigurationRequest,
+                    CreateMediaWorkflowConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateMediaWorkflowJobResponse> createMediaWorkflowJob(
+            CreateMediaWorkflowJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateMediaWorkflowJobRequest, CreateMediaWorkflowJobResponse>
+                    handler) {
+        LOG.trace("Called async createMediaWorkflowJob");
+        final CreateMediaWorkflowJobRequest interceptedRequest =
+                CreateMediaWorkflowJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateMediaWorkflowJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/CreateMediaWorkflowJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateMediaWorkflowJobResponse>
+                transformer =
+                        CreateMediaWorkflowJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateMediaWorkflowJobRequest, CreateMediaWorkflowJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateMediaWorkflowJobRequest, CreateMediaWorkflowJobResponse>,
+                        java.util.concurrent.Future<CreateMediaWorkflowJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateMediaWorkflowJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateMediaWorkflowJobRequest, CreateMediaWorkflowJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamCdnConfigResponse> createStreamCdnConfig(
+            CreateStreamCdnConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateStreamCdnConfigRequest, CreateStreamCdnConfigResponse>
+                    handler) {
+        LOG.trace("Called async createStreamCdnConfig");
+        final CreateStreamCdnConfigRequest interceptedRequest =
+                CreateStreamCdnConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateStreamCdnConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/CreateStreamCdnConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateStreamCdnConfigResponse>
+                transformer =
+                        CreateStreamCdnConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateStreamCdnConfigRequest, CreateStreamCdnConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamCdnConfigRequest, CreateStreamCdnConfigResponse>,
+                        java.util.concurrent.Future<CreateStreamCdnConfigResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamCdnConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamCdnConfigRequest, CreateStreamCdnConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamDistributionChannelResponse>
+            createStreamDistributionChannel(
+                    CreateStreamDistributionChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateStreamDistributionChannelRequest,
+                                    CreateStreamDistributionChannelResponse>
+                            handler) {
+        LOG.trace("Called async createStreamDistributionChannel");
+        final CreateStreamDistributionChannelRequest interceptedRequest =
+                CreateStreamDistributionChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateStreamDistributionChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/CreateStreamDistributionChannel");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateStreamDistributionChannelResponse>
+                transformer =
+                        CreateStreamDistributionChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateStreamDistributionChannelRequest,
+                        CreateStreamDistributionChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamDistributionChannelRequest,
+                                CreateStreamDistributionChannelResponse>,
+                        java.util.concurrent.Future<CreateStreamDistributionChannelResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamDistributionChannelDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamDistributionChannelRequest,
+                    CreateStreamDistributionChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateStreamPackagingConfigResponse>
+            createStreamPackagingConfig(
+                    CreateStreamPackagingConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateStreamPackagingConfigRequest,
+                                    CreateStreamPackagingConfigResponse>
+                            handler) {
+        LOG.trace("Called async createStreamPackagingConfig");
+        final CreateStreamPackagingConfigRequest interceptedRequest =
+                CreateStreamPackagingConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "CreateStreamPackagingConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/CreateStreamPackagingConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateStreamPackagingConfigResponse>
+                transformer =
+                        CreateStreamPackagingConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateStreamPackagingConfigRequest, CreateStreamPackagingConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateStreamPackagingConfigRequest,
+                                CreateStreamPackagingConfigResponse>,
+                        java.util.concurrent.Future<CreateStreamPackagingConfigResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateStreamPackagingConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateStreamPackagingConfigRequest, CreateStreamPackagingConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaAssetResponse> deleteMediaAsset(
+            DeleteMediaAssetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMediaAssetRequest, DeleteMediaAssetResponse>
+                    handler) {
+        LOG.trace("Called async deleteMediaAsset");
+        final DeleteMediaAssetRequest interceptedRequest =
+                DeleteMediaAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMediaAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/DeleteMediaAsset");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaAssetResponse>
+                transformer =
+                        DeleteMediaAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteMediaAssetRequest, DeleteMediaAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMediaAssetRequest, DeleteMediaAssetResponse>,
+                        java.util.concurrent.Future<DeleteMediaAssetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMediaAssetRequest, DeleteMediaAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaAssetDistributionChannelAttachmentResponse>
+            deleteMediaAssetDistributionChannelAttachment(
+                    DeleteMediaAssetDistributionChannelAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMediaAssetDistributionChannelAttachmentRequest,
+                                    DeleteMediaAssetDistributionChannelAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async deleteMediaAssetDistributionChannelAttachment");
+        final DeleteMediaAssetDistributionChannelAttachmentRequest interceptedRequest =
+                DeleteMediaAssetDistributionChannelAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMediaAssetDistributionChannelAttachmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteMediaAssetDistributionChannelAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/DeleteMediaAssetDistributionChannelAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DeleteMediaAssetDistributionChannelAttachmentResponse>
+                transformer =
+                        DeleteMediaAssetDistributionChannelAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMediaAssetDistributionChannelAttachmentRequest,
+                        DeleteMediaAssetDistributionChannelAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMediaAssetDistributionChannelAttachmentRequest,
+                                DeleteMediaAssetDistributionChannelAttachmentResponse>,
+                        java.util.concurrent.Future<
+                                DeleteMediaAssetDistributionChannelAttachmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMediaAssetDistributionChannelAttachmentRequest,
+                    DeleteMediaAssetDistributionChannelAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaWorkflowResponse> deleteMediaWorkflow(
+            DeleteMediaWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMediaWorkflowRequest, DeleteMediaWorkflowResponse>
+                    handler) {
+        LOG.trace("Called async deleteMediaWorkflow");
+        final DeleteMediaWorkflowRequest interceptedRequest =
+                DeleteMediaWorkflowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMediaWorkflowConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/DeleteMediaWorkflow");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowResponse>
+                transformer =
+                        DeleteMediaWorkflowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMediaWorkflowRequest, DeleteMediaWorkflowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMediaWorkflowRequest, DeleteMediaWorkflowResponse>,
+                        java.util.concurrent.Future<DeleteMediaWorkflowResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMediaWorkflowRequest, DeleteMediaWorkflowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaWorkflowConfigurationResponse>
+            deleteMediaWorkflowConfiguration(
+                    DeleteMediaWorkflowConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteMediaWorkflowConfigurationRequest,
+                                    DeleteMediaWorkflowConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async deleteMediaWorkflowConfiguration");
+        final DeleteMediaWorkflowConfigurationRequest interceptedRequest =
+                DeleteMediaWorkflowConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteMediaWorkflowConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/DeleteMediaWorkflowConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteMediaWorkflowConfigurationResponse>
+                transformer =
+                        DeleteMediaWorkflowConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMediaWorkflowConfigurationRequest,
+                        DeleteMediaWorkflowConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMediaWorkflowConfigurationRequest,
+                                DeleteMediaWorkflowConfigurationResponse>,
+                        java.util.concurrent.Future<DeleteMediaWorkflowConfigurationResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMediaWorkflowConfigurationRequest,
+                    DeleteMediaWorkflowConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteMediaWorkflowJobResponse> deleteMediaWorkflowJob(
+            DeleteMediaWorkflowJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMediaWorkflowJobRequest, DeleteMediaWorkflowJobResponse>
+                    handler) {
+        LOG.trace("Called async deleteMediaWorkflowJob");
+        final DeleteMediaWorkflowJobRequest interceptedRequest =
+                DeleteMediaWorkflowJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteMediaWorkflowJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/DeleteMediaWorkflowJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteMediaWorkflowJobResponse>
+                transformer =
+                        DeleteMediaWorkflowJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteMediaWorkflowJobRequest, DeleteMediaWorkflowJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteMediaWorkflowJobRequest, DeleteMediaWorkflowJobResponse>,
+                        java.util.concurrent.Future<DeleteMediaWorkflowJobResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteMediaWorkflowJobRequest, DeleteMediaWorkflowJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamCdnConfigResponse> deleteStreamCdnConfig(
+            DeleteStreamCdnConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteStreamCdnConfigRequest, DeleteStreamCdnConfigResponse>
+                    handler) {
+        LOG.trace("Called async deleteStreamCdnConfig");
+        final DeleteStreamCdnConfigRequest interceptedRequest =
+                DeleteStreamCdnConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteStreamCdnConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/DeleteStreamCdnConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteStreamCdnConfigResponse>
+                transformer =
+                        DeleteStreamCdnConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteStreamCdnConfigRequest, DeleteStreamCdnConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamCdnConfigRequest, DeleteStreamCdnConfigResponse>,
+                        java.util.concurrent.Future<DeleteStreamCdnConfigResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamCdnConfigRequest, DeleteStreamCdnConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamDistributionChannelResponse>
+            deleteStreamDistributionChannel(
+                    DeleteStreamDistributionChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteStreamDistributionChannelRequest,
+                                    DeleteStreamDistributionChannelResponse>
+                            handler) {
+        LOG.trace("Called async deleteStreamDistributionChannel");
+        final DeleteStreamDistributionChannelRequest interceptedRequest =
+                DeleteStreamDistributionChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteStreamDistributionChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/DeleteStreamDistributionChannel");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteStreamDistributionChannelResponse>
+                transformer =
+                        DeleteStreamDistributionChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteStreamDistributionChannelRequest,
+                        DeleteStreamDistributionChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamDistributionChannelRequest,
+                                DeleteStreamDistributionChannelResponse>,
+                        java.util.concurrent.Future<DeleteStreamDistributionChannelResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamDistributionChannelRequest,
+                    DeleteStreamDistributionChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteStreamPackagingConfigResponse>
+            deleteStreamPackagingConfig(
+                    DeleteStreamPackagingConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteStreamPackagingConfigRequest,
+                                    DeleteStreamPackagingConfigResponse>
+                            handler) {
+        LOG.trace("Called async deleteStreamPackagingConfig");
+        final DeleteStreamPackagingConfigRequest interceptedRequest =
+                DeleteStreamPackagingConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "DeleteStreamPackagingConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/DeleteStreamPackagingConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteStreamPackagingConfigResponse>
+                transformer =
+                        DeleteStreamPackagingConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteStreamPackagingConfigRequest, DeleteStreamPackagingConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteStreamPackagingConfigRequest,
+                                DeleteStreamPackagingConfigResponse>,
+                        java.util.concurrent.Future<DeleteStreamPackagingConfigResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteStreamPackagingConfigRequest, DeleteStreamPackagingConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaAssetResponse> getMediaAsset(
+            GetMediaAssetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetMediaAssetRequest, GetMediaAssetResponse>
+                    handler) {
+        LOG.trace("Called async getMediaAsset");
+        final GetMediaAssetRequest interceptedRequest =
+                GetMediaAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMediaAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/GetMediaAsset");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMediaAssetResponse>
+                transformer =
+                        GetMediaAssetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMediaAssetRequest, GetMediaAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMediaAssetRequest, GetMediaAssetResponse>,
+                        java.util.concurrent.Future<GetMediaAssetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMediaAssetRequest, GetMediaAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaAssetDistributionChannelAttachmentResponse>
+            getMediaAssetDistributionChannelAttachment(
+                    GetMediaAssetDistributionChannelAttachmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMediaAssetDistributionChannelAttachmentRequest,
+                                    GetMediaAssetDistributionChannelAttachmentResponse>
+                            handler) {
+        LOG.trace("Called async getMediaAssetDistributionChannelAttachment");
+        final GetMediaAssetDistributionChannelAttachmentRequest interceptedRequest =
+                GetMediaAssetDistributionChannelAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMediaAssetDistributionChannelAttachmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetMediaAssetDistributionChannelAttachment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachment/GetMediaAssetDistributionChannelAttachment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        GetMediaAssetDistributionChannelAttachmentResponse>
+                transformer =
+                        GetMediaAssetDistributionChannelAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMediaAssetDistributionChannelAttachmentRequest,
+                        GetMediaAssetDistributionChannelAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMediaAssetDistributionChannelAttachmentRequest,
+                                GetMediaAssetDistributionChannelAttachmentResponse>,
+                        java.util.concurrent.Future<
+                                GetMediaAssetDistributionChannelAttachmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMediaAssetDistributionChannelAttachmentRequest,
+                    GetMediaAssetDistributionChannelAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaWorkflowResponse> getMediaWorkflow(
+            GetMediaWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMediaWorkflowRequest, GetMediaWorkflowResponse>
+                    handler) {
+        LOG.trace("Called async getMediaWorkflow");
+        final GetMediaWorkflowRequest interceptedRequest =
+                GetMediaWorkflowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMediaWorkflowConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/GetMediaWorkflow");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowResponse>
+                transformer =
+                        GetMediaWorkflowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetMediaWorkflowRequest, GetMediaWorkflowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMediaWorkflowRequest, GetMediaWorkflowResponse>,
+                        java.util.concurrent.Future<GetMediaWorkflowResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMediaWorkflowRequest, GetMediaWorkflowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaWorkflowConfigurationResponse>
+            getMediaWorkflowConfiguration(
+                    GetMediaWorkflowConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetMediaWorkflowConfigurationRequest,
+                                    GetMediaWorkflowConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getMediaWorkflowConfiguration");
+        final GetMediaWorkflowConfigurationRequest interceptedRequest =
+                GetMediaWorkflowConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetMediaWorkflowConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/GetMediaWorkflowConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetMediaWorkflowConfigurationResponse>
+                transformer =
+                        GetMediaWorkflowConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMediaWorkflowConfigurationRequest, GetMediaWorkflowConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMediaWorkflowConfigurationRequest,
+                                GetMediaWorkflowConfigurationResponse>,
+                        java.util.concurrent.Future<GetMediaWorkflowConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMediaWorkflowConfigurationRequest, GetMediaWorkflowConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMediaWorkflowJobResponse> getMediaWorkflowJob(
+            GetMediaWorkflowJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMediaWorkflowJobRequest, GetMediaWorkflowJobResponse>
+                    handler) {
+        LOG.trace("Called async getMediaWorkflowJob");
+        final GetMediaWorkflowJobRequest interceptedRequest =
+                GetMediaWorkflowJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetMediaWorkflowJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/GetMediaWorkflowJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMediaWorkflowJobResponse>
+                transformer =
+                        GetMediaWorkflowJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMediaWorkflowJobRequest, GetMediaWorkflowJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMediaWorkflowJobRequest, GetMediaWorkflowJobResponse>,
+                        java.util.concurrent.Future<GetMediaWorkflowJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMediaWorkflowJobRequest, GetMediaWorkflowJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamCdnConfigResponse> getStreamCdnConfig(
+            GetStreamCdnConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStreamCdnConfigRequest, GetStreamCdnConfigResponse>
+                    handler) {
+        LOG.trace("Called async getStreamCdnConfig");
+        final GetStreamCdnConfigRequest interceptedRequest =
+                GetStreamCdnConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetStreamCdnConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/GetStreamCdnConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStreamCdnConfigResponse>
+                transformer =
+                        GetStreamCdnConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetStreamCdnConfigRequest, GetStreamCdnConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamCdnConfigRequest, GetStreamCdnConfigResponse>,
+                        java.util.concurrent.Future<GetStreamCdnConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamCdnConfigRequest, GetStreamCdnConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamDistributionChannelResponse>
+            getStreamDistributionChannel(
+                    GetStreamDistributionChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetStreamDistributionChannelRequest,
+                                    GetStreamDistributionChannelResponse>
+                            handler) {
+        LOG.trace("Called async getStreamDistributionChannel");
+        final GetStreamDistributionChannelRequest interceptedRequest =
+                GetStreamDistributionChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetStreamDistributionChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/GetStreamDistributionChannel");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetStreamDistributionChannelResponse>
+                transformer =
+                        GetStreamDistributionChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetStreamDistributionChannelRequest, GetStreamDistributionChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamDistributionChannelRequest,
+                                GetStreamDistributionChannelResponse>,
+                        java.util.concurrent.Future<GetStreamDistributionChannelResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamDistributionChannelRequest, GetStreamDistributionChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStreamPackagingConfigResponse> getStreamPackagingConfig(
+            GetStreamPackagingConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStreamPackagingConfigRequest, GetStreamPackagingConfigResponse>
+                    handler) {
+        LOG.trace("Called async getStreamPackagingConfig");
+        final GetStreamPackagingConfigRequest interceptedRequest =
+                GetStreamPackagingConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "GetStreamPackagingConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/GetStreamPackagingConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetStreamPackagingConfigResponse>
+                transformer =
+                        GetStreamPackagingConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetStreamPackagingConfigRequest, GetStreamPackagingConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStreamPackagingConfigRequest, GetStreamPackagingConfigResponse>,
+                        java.util.concurrent.Future<GetStreamPackagingConfigResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStreamPackagingConfigRequest, GetStreamPackagingConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<IngestStreamDistributionChannelResponse>
+            ingestStreamDistributionChannel(
+                    IngestStreamDistributionChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    IngestStreamDistributionChannelRequest,
+                                    IngestStreamDistributionChannelResponse>
+                            handler) {
+        LOG.trace("Called async ingestStreamDistributionChannel");
+        final IngestStreamDistributionChannelRequest interceptedRequest =
+                IngestStreamDistributionChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                IngestStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "IngestStreamDistributionChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/IngestStreamDistributionChannel");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, IngestStreamDistributionChannelResponse>
+                transformer =
+                        IngestStreamDistributionChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        IngestStreamDistributionChannelRequest,
+                        IngestStreamDistributionChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                IngestStreamDistributionChannelRequest,
+                                IngestStreamDistributionChannelResponse>,
+                        java.util.concurrent.Future<IngestStreamDistributionChannelResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getIngestStreamDistributionChannelDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    IngestStreamDistributionChannelRequest,
+                    IngestStreamDistributionChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaAssetDistributionChannelAttachmentsResponse>
+            listMediaAssetDistributionChannelAttachments(
+                    ListMediaAssetDistributionChannelAttachmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMediaAssetDistributionChannelAttachmentsRequest,
+                                    ListMediaAssetDistributionChannelAttachmentsResponse>
+                            handler) {
+        LOG.trace("Called async listMediaAssetDistributionChannelAttachments");
+        final ListMediaAssetDistributionChannelAttachmentsRequest interceptedRequest =
+                ListMediaAssetDistributionChannelAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaAssetDistributionChannelAttachmentsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaAssetDistributionChannelAttachments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAssetDistributionChannelAttachmentCollection/ListMediaAssetDistributionChannelAttachments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListMediaAssetDistributionChannelAttachmentsResponse>
+                transformer =
+                        ListMediaAssetDistributionChannelAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMediaAssetDistributionChannelAttachmentsRequest,
+                        ListMediaAssetDistributionChannelAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaAssetDistributionChannelAttachmentsRequest,
+                                ListMediaAssetDistributionChannelAttachmentsResponse>,
+                        java.util.concurrent.Future<
+                                ListMediaAssetDistributionChannelAttachmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaAssetDistributionChannelAttachmentsRequest,
+                    ListMediaAssetDistributionChannelAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaAssetsResponse> listMediaAssets(
+            ListMediaAssetsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMediaAssetsRequest, ListMediaAssetsResponse>
+                    handler) {
+        LOG.trace("Called async listMediaAssets");
+        final ListMediaAssetsRequest interceptedRequest =
+                ListMediaAssetsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaAssetsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaAssets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/ListMediaAssets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMediaAssetsResponse>
+                transformer =
+                        ListMediaAssetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMediaAssetsRequest, ListMediaAssetsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaAssetsRequest, ListMediaAssetsResponse>,
+                        java.util.concurrent.Future<ListMediaAssetsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaAssetsRequest, ListMediaAssetsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaWorkflowConfigurationsResponse>
+            listMediaWorkflowConfigurations(
+                    ListMediaWorkflowConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMediaWorkflowConfigurationsRequest,
+                                    ListMediaWorkflowConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listMediaWorkflowConfigurations");
+        final ListMediaWorkflowConfigurationsRequest interceptedRequest =
+                ListMediaWorkflowConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaWorkflowConfigurationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaWorkflowConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfigurationCollection/ListMediaWorkflowConfigurations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMediaWorkflowConfigurationsResponse>
+                transformer =
+                        ListMediaWorkflowConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMediaWorkflowConfigurationsRequest,
+                        ListMediaWorkflowConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaWorkflowConfigurationsRequest,
+                                ListMediaWorkflowConfigurationsResponse>,
+                        java.util.concurrent.Future<ListMediaWorkflowConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaWorkflowConfigurationsRequest,
+                    ListMediaWorkflowConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaWorkflowJobsResponse> listMediaWorkflowJobs(
+            ListMediaWorkflowJobsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMediaWorkflowJobsRequest, ListMediaWorkflowJobsResponse>
+                    handler) {
+        LOG.trace("Called async listMediaWorkflowJobs");
+        final ListMediaWorkflowJobsRequest interceptedRequest =
+                ListMediaWorkflowJobsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaWorkflowJobsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaWorkflowJobs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/ListMediaWorkflowJobs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowJobsResponse>
+                transformer =
+                        ListMediaWorkflowJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMediaWorkflowJobsRequest, ListMediaWorkflowJobsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaWorkflowJobsRequest, ListMediaWorkflowJobsResponse>,
+                        java.util.concurrent.Future<ListMediaWorkflowJobsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaWorkflowJobsRequest, ListMediaWorkflowJobsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaWorkflowTaskDeclarationsResponse>
+            listMediaWorkflowTaskDeclarations(
+                    ListMediaWorkflowTaskDeclarationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListMediaWorkflowTaskDeclarationsRequest,
+                                    ListMediaWorkflowTaskDeclarationsResponse>
+                            handler) {
+        LOG.trace("Called async listMediaWorkflowTaskDeclarations");
+        final ListMediaWorkflowTaskDeclarationsRequest interceptedRequest =
+                ListMediaWorkflowTaskDeclarationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaWorkflowTaskDeclarationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaWorkflowTaskDeclarations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowTaskDeclarationCollection/ListMediaWorkflowTaskDeclarations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListMediaWorkflowTaskDeclarationsResponse>
+                transformer =
+                        ListMediaWorkflowTaskDeclarationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListMediaWorkflowTaskDeclarationsRequest,
+                        ListMediaWorkflowTaskDeclarationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaWorkflowTaskDeclarationsRequest,
+                                ListMediaWorkflowTaskDeclarationsResponse>,
+                        java.util.concurrent.Future<ListMediaWorkflowTaskDeclarationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaWorkflowTaskDeclarationsRequest,
+                    ListMediaWorkflowTaskDeclarationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListMediaWorkflowsResponse> listMediaWorkflows(
+            ListMediaWorkflowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMediaWorkflowsRequest, ListMediaWorkflowsResponse>
+                    handler) {
+        LOG.trace("Called async listMediaWorkflows");
+        final ListMediaWorkflowsRequest interceptedRequest =
+                ListMediaWorkflowsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMediaWorkflowsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListMediaWorkflows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListMediaWorkflows");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListMediaWorkflowsResponse>
+                transformer =
+                        ListMediaWorkflowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListMediaWorkflowsRequest, ListMediaWorkflowsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListMediaWorkflowsRequest, ListMediaWorkflowsResponse>,
+                        java.util.concurrent.Future<ListMediaWorkflowsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListMediaWorkflowsRequest, ListMediaWorkflowsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamCdnConfigsResponse> listStreamCdnConfigs(
+            ListStreamCdnConfigsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListStreamCdnConfigsRequest, ListStreamCdnConfigsResponse>
+                    handler) {
+        LOG.trace("Called async listStreamCdnConfigs");
+        final ListStreamCdnConfigsRequest interceptedRequest =
+                ListStreamCdnConfigsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamCdnConfigsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListStreamCdnConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/ListStreamCdnConfigs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListStreamCdnConfigsResponse>
+                transformer =
+                        ListStreamCdnConfigsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListStreamCdnConfigsRequest, ListStreamCdnConfigsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamCdnConfigsRequest, ListStreamCdnConfigsResponse>,
+                        java.util.concurrent.Future<ListStreamCdnConfigsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamCdnConfigsRequest, ListStreamCdnConfigsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamDistributionChannelsResponse>
+            listStreamDistributionChannels(
+                    ListStreamDistributionChannelsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListStreamDistributionChannelsRequest,
+                                    ListStreamDistributionChannelsResponse>
+                            handler) {
+        LOG.trace("Called async listStreamDistributionChannels");
+        final ListStreamDistributionChannelsRequest interceptedRequest =
+                ListStreamDistributionChannelsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamDistributionChannelsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListStreamDistributionChannels",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/ListStreamDistributionChannels");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListStreamDistributionChannelsResponse>
+                transformer =
+                        ListStreamDistributionChannelsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListStreamDistributionChannelsRequest,
+                        ListStreamDistributionChannelsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamDistributionChannelsRequest,
+                                ListStreamDistributionChannelsResponse>,
+                        java.util.concurrent.Future<ListStreamDistributionChannelsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamDistributionChannelsRequest, ListStreamDistributionChannelsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListStreamPackagingConfigsResponse>
+            listStreamPackagingConfigs(
+                    ListStreamPackagingConfigsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListStreamPackagingConfigsRequest,
+                                    ListStreamPackagingConfigsResponse>
+                            handler) {
+        LOG.trace("Called async listStreamPackagingConfigs");
+        final ListStreamPackagingConfigsRequest interceptedRequest =
+                ListStreamPackagingConfigsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListStreamPackagingConfigsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListStreamPackagingConfigs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/ListStreamPackagingConfigs");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListStreamPackagingConfigsResponse>
+                transformer =
+                        ListStreamPackagingConfigsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListStreamPackagingConfigsRequest, ListStreamPackagingConfigsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListStreamPackagingConfigsRequest,
+                                ListStreamPackagingConfigsResponse>,
+                        java.util.concurrent.Future<ListStreamPackagingConfigsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListStreamPackagingConfigsRequest, ListStreamPackagingConfigsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSystemMediaWorkflowsResponse> listSystemMediaWorkflows(
+            ListSystemMediaWorkflowsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>
+                    handler) {
+        LOG.trace("Called async listSystemMediaWorkflows");
+        final ListSystemMediaWorkflowsRequest interceptedRequest =
+                ListSystemMediaWorkflowsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSystemMediaWorkflowsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "ListSystemMediaWorkflows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/ListSystemMediaWorkflows");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSystemMediaWorkflowsResponse>
+                transformer =
+                        ListSystemMediaWorkflowsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>,
+                        java.util.concurrent.Future<ListSystemMediaWorkflowsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSystemMediaWorkflowsRequest, ListSystemMediaWorkflowsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaAssetLockResponse> removeMediaAssetLock(
+            RemoveMediaAssetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>
+                    handler) {
+        LOG.trace("Called async removeMediaAssetLock");
+        final RemoveMediaAssetLockRequest interceptedRequest =
+                RemoveMediaAssetLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMediaAssetLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveMediaAssetLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/RemoveMediaAssetLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveMediaAssetLockResponse>
+                transformer =
+                        RemoveMediaAssetLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>,
+                        java.util.concurrent.Future<RemoveMediaAssetLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMediaAssetLockRequest, RemoveMediaAssetLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowConfigurationLockResponse>
+            removeMediaWorkflowConfigurationLock(
+                    RemoveMediaWorkflowConfigurationLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveMediaWorkflowConfigurationLockRequest,
+                                    RemoveMediaWorkflowConfigurationLockResponse>
+                            handler) {
+        LOG.trace("Called async removeMediaWorkflowConfigurationLock");
+        final RemoveMediaWorkflowConfigurationLockRequest interceptedRequest =
+                RemoveMediaWorkflowConfigurationLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMediaWorkflowConfigurationLockConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowConfigurationLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/RemoveMediaWorkflowConfigurationLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveMediaWorkflowConfigurationLockResponse>
+                transformer =
+                        RemoveMediaWorkflowConfigurationLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMediaWorkflowConfigurationLockRequest,
+                        RemoveMediaWorkflowConfigurationLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMediaWorkflowConfigurationLockRequest,
+                                RemoveMediaWorkflowConfigurationLockResponse>,
+                        java.util.concurrent.Future<RemoveMediaWorkflowConfigurationLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMediaWorkflowConfigurationLockRequest,
+                    RemoveMediaWorkflowConfigurationLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowJobLockResponse>
+            removeMediaWorkflowJobLock(
+                    RemoveMediaWorkflowJobLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveMediaWorkflowJobLockRequest,
+                                    RemoveMediaWorkflowJobLockResponse>
+                            handler) {
+        LOG.trace("Called async removeMediaWorkflowJobLock");
+        final RemoveMediaWorkflowJobLockRequest interceptedRequest =
+                RemoveMediaWorkflowJobLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMediaWorkflowJobLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowJobLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/RemoveMediaWorkflowJobLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveMediaWorkflowJobLockResponse>
+                transformer =
+                        RemoveMediaWorkflowJobLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMediaWorkflowJobLockRequest, RemoveMediaWorkflowJobLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMediaWorkflowJobLockRequest,
+                                RemoveMediaWorkflowJobLockResponse>,
+                        java.util.concurrent.Future<RemoveMediaWorkflowJobLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMediaWorkflowJobLockRequest, RemoveMediaWorkflowJobLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMediaWorkflowLockResponse> removeMediaWorkflowLock(
+            RemoveMediaWorkflowLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>
+                    handler) {
+        LOG.trace("Called async removeMediaWorkflowLock");
+        final RemoveMediaWorkflowLockRequest interceptedRequest =
+                RemoveMediaWorkflowLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMediaWorkflowLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveMediaWorkflowLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/RemoveMediaWorkflowLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveMediaWorkflowLockResponse>
+                transformer =
+                        RemoveMediaWorkflowLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>,
+                        java.util.concurrent.Future<RemoveMediaWorkflowLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMediaWorkflowLockRequest, RemoveMediaWorkflowLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamCdnConfigLockResponse> removeStreamCdnConfigLock(
+            RemoveStreamCdnConfigLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>
+                    handler) {
+        LOG.trace("Called async removeStreamCdnConfigLock");
+        final RemoveStreamCdnConfigLockRequest interceptedRequest =
+                RemoveStreamCdnConfigLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveStreamCdnConfigLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveStreamCdnConfigLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/RemoveStreamCdnConfigLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveStreamCdnConfigLockResponse>
+                transformer =
+                        RemoveStreamCdnConfigLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveStreamCdnConfigLockRequest,
+                                RemoveStreamCdnConfigLockResponse>,
+                        java.util.concurrent.Future<RemoveStreamCdnConfigLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveStreamCdnConfigLockRequest, RemoveStreamCdnConfigLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamDistributionChannelLockResponse>
+            removeStreamDistributionChannelLock(
+                    RemoveStreamDistributionChannelLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamDistributionChannelLockRequest,
+                                    RemoveStreamDistributionChannelLockResponse>
+                            handler) {
+        LOG.trace("Called async removeStreamDistributionChannelLock");
+        final RemoveStreamDistributionChannelLockRequest interceptedRequest =
+                RemoveStreamDistributionChannelLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveStreamDistributionChannelLockConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveStreamDistributionChannelLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/RemoveStreamDistributionChannelLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveStreamDistributionChannelLockResponse>
+                transformer =
+                        RemoveStreamDistributionChannelLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveStreamDistributionChannelLockRequest,
+                        RemoveStreamDistributionChannelLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveStreamDistributionChannelLockRequest,
+                                RemoveStreamDistributionChannelLockResponse>,
+                        java.util.concurrent.Future<RemoveStreamDistributionChannelLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveStreamDistributionChannelLockRequest,
+                    RemoveStreamDistributionChannelLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveStreamPackagingConfigLockResponse>
+            removeStreamPackagingConfigLock(
+                    RemoveStreamPackagingConfigLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveStreamPackagingConfigLockRequest,
+                                    RemoveStreamPackagingConfigLockResponse>
+                            handler) {
+        LOG.trace("Called async removeStreamPackagingConfigLock");
+        final RemoveStreamPackagingConfigLockRequest interceptedRequest =
+                RemoveStreamPackagingConfigLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveStreamPackagingConfigLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "RemoveStreamPackagingConfigLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/RemoveStreamPackagingConfigLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveStreamPackagingConfigLockResponse>
+                transformer =
+                        RemoveStreamPackagingConfigLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveStreamPackagingConfigLockRequest,
+                        RemoveStreamPackagingConfigLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveStreamPackagingConfigLockRequest,
+                                RemoveStreamPackagingConfigLockResponse>,
+                        java.util.concurrent.Future<RemoveStreamPackagingConfigLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveStreamPackagingConfigLockRequest,
+                    RemoveStreamPackagingConfigLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaAssetResponse> updateMediaAsset(
+            UpdateMediaAssetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMediaAssetRequest, UpdateMediaAssetResponse>
+                    handler) {
+        LOG.trace("Called async updateMediaAsset");
+        final UpdateMediaAssetRequest interceptedRequest =
+                UpdateMediaAssetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMediaAssetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateMediaAsset",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaAsset/UpdateMediaAsset");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaAssetResponse>
+                transformer =
+                        UpdateMediaAssetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateMediaAssetRequest, UpdateMediaAssetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMediaAssetRequest, UpdateMediaAssetResponse>,
+                        java.util.concurrent.Future<UpdateMediaAssetResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMediaAssetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMediaAssetRequest, UpdateMediaAssetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaWorkflowResponse> updateMediaWorkflow(
+            UpdateMediaWorkflowRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMediaWorkflowRequest, UpdateMediaWorkflowResponse>
+                    handler) {
+        LOG.trace("Called async updateMediaWorkflow");
+        final UpdateMediaWorkflowRequest interceptedRequest =
+                UpdateMediaWorkflowConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMediaWorkflowConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateMediaWorkflow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflow/UpdateMediaWorkflow");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowResponse>
+                transformer =
+                        UpdateMediaWorkflowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMediaWorkflowRequest, UpdateMediaWorkflowResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMediaWorkflowRequest, UpdateMediaWorkflowResponse>,
+                        java.util.concurrent.Future<UpdateMediaWorkflowResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMediaWorkflowDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMediaWorkflowRequest, UpdateMediaWorkflowResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaWorkflowConfigurationResponse>
+            updateMediaWorkflowConfiguration(
+                    UpdateMediaWorkflowConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateMediaWorkflowConfigurationRequest,
+                                    UpdateMediaWorkflowConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateMediaWorkflowConfiguration");
+        final UpdateMediaWorkflowConfigurationRequest interceptedRequest =
+                UpdateMediaWorkflowConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMediaWorkflowConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateMediaWorkflowConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowConfiguration/UpdateMediaWorkflowConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateMediaWorkflowConfigurationResponse>
+                transformer =
+                        UpdateMediaWorkflowConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMediaWorkflowConfigurationRequest,
+                        UpdateMediaWorkflowConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMediaWorkflowConfigurationRequest,
+                                UpdateMediaWorkflowConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateMediaWorkflowConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMediaWorkflowConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMediaWorkflowConfigurationRequest,
+                    UpdateMediaWorkflowConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateMediaWorkflowJobResponse> updateMediaWorkflowJob(
+            UpdateMediaWorkflowJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMediaWorkflowJobRequest, UpdateMediaWorkflowJobResponse>
+                    handler) {
+        LOG.trace("Called async updateMediaWorkflowJob");
+        final UpdateMediaWorkflowJobRequest interceptedRequest =
+                UpdateMediaWorkflowJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMediaWorkflowJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateMediaWorkflowJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/MediaWorkflowJob/UpdateMediaWorkflowJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateMediaWorkflowJobResponse>
+                transformer =
+                        UpdateMediaWorkflowJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateMediaWorkflowJobRequest, UpdateMediaWorkflowJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateMediaWorkflowJobRequest, UpdateMediaWorkflowJobResponse>,
+                        java.util.concurrent.Future<UpdateMediaWorkflowJobResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateMediaWorkflowJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateMediaWorkflowJobRequest, UpdateMediaWorkflowJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamCdnConfigResponse> updateStreamCdnConfig(
+            UpdateStreamCdnConfigRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateStreamCdnConfigRequest, UpdateStreamCdnConfigResponse>
+                    handler) {
+        LOG.trace("Called async updateStreamCdnConfig");
+        final UpdateStreamCdnConfigRequest interceptedRequest =
+                UpdateStreamCdnConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamCdnConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateStreamCdnConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamCdnConfig/UpdateStreamCdnConfig");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateStreamCdnConfigResponse>
+                transformer =
+                        UpdateStreamCdnConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateStreamCdnConfigRequest, UpdateStreamCdnConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamCdnConfigRequest, UpdateStreamCdnConfigResponse>,
+                        java.util.concurrent.Future<UpdateStreamCdnConfigResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamCdnConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamCdnConfigRequest, UpdateStreamCdnConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamDistributionChannelResponse>
+            updateStreamDistributionChannel(
+                    UpdateStreamDistributionChannelRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateStreamDistributionChannelRequest,
+                                    UpdateStreamDistributionChannelResponse>
+                            handler) {
+        LOG.trace("Called async updateStreamDistributionChannel");
+        final UpdateStreamDistributionChannelRequest interceptedRequest =
+                UpdateStreamDistributionChannelConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamDistributionChannelConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateStreamDistributionChannel",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamDistributionChannel/UpdateStreamDistributionChannel");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateStreamDistributionChannelResponse>
+                transformer =
+                        UpdateStreamDistributionChannelConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateStreamDistributionChannelRequest,
+                        UpdateStreamDistributionChannelResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamDistributionChannelRequest,
+                                UpdateStreamDistributionChannelResponse>,
+                        java.util.concurrent.Future<UpdateStreamDistributionChannelResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamDistributionChannelDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamDistributionChannelRequest,
+                    UpdateStreamDistributionChannelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateStreamPackagingConfigResponse>
+            updateStreamPackagingConfig(
+                    UpdateStreamPackagingConfigRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateStreamPackagingConfigRequest,
+                                    UpdateStreamPackagingConfigResponse>
+                            handler) {
+        LOG.trace("Called async updateStreamPackagingConfig");
+        final UpdateStreamPackagingConfigRequest interceptedRequest =
+                UpdateStreamPackagingConfigConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateStreamPackagingConfigConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "MediaServices",
+                        "UpdateStreamPackagingConfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dms/20211101/StreamPackagingConfig/UpdateStreamPackagingConfig");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateStreamPackagingConfigResponse>
+                transformer =
+                        UpdateStreamPackagingConfigConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateStreamPackagingConfigRequest, UpdateStreamPackagingConfigResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateStreamPackagingConfigRequest,
+                                UpdateStreamPackagingConfigResponse>,
+                        java.util.concurrent.Future<UpdateStreamPackagingConfigResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateStreamPackagingConfigDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateStreamPackagingConfigRequest, UpdateStreamPackagingConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

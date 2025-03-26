@@ -9,6 +9,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
+import javax.ws.rs.client.Invocation;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
 import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
@@ -30,21 +31,21 @@ import com.oracle.bmc.objectstorage.responses.ListMultipartUploadPartsResponse;
 import com.oracle.bmc.objectstorage.responses.ListMultipartUploadsResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartManifestImpl;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartTransferManager;
-import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.util.internal.Consumer;
 
 /**
- * MultiPartObjectAssembler provides a simplified interaction with uploading large objects using
- * multi-part uploads.
- *
- * <p>An assembler can be used begin a new upload, or resume a previous one. Parts are be added to
- * the assembler in order, and the assembler will handle all transfers and part numbering. Users can
- * reference the returned manifest to watch/monitor updates to the upload as new parts are added or
- * parts complete.
- *
- * <p>Note, a new assembler instance should be used for every multi-part upload. Once initialized
- * (or resumed), an assembler cannot be reused.
+ * MultiPartObjectAssembler provides a simplified interaction with uploading large
+ * objects using multi-part uploads.
+ * <p>
+ * An assembler can be used begin a new upload, or resume a previous one.  Parts are
+ * be added to the assembler in order, and the assembler will handle all transfers and
+ * part numbering.  Users can reference the returned manifest to watch/monitor updates
+ * to the upload as new parts are added or parts complete.
+ * <p>
+ * Note, a new assembler instance should be used for every multi-part upload.  Once
+ * initialized (or resumed), an assembler cannot be reused.
  */
 public class MultipartObjectAssembler {
     private static final org.slf4j.Logger LOG =
@@ -56,7 +57,7 @@ public class MultipartObjectAssembler {
     private final String bucketName;
     private final String objectName;
     private final StorageTier storageTier;
-    private final RequestInterceptor invocationCallback;
+    private final Consumer<Invocation.Builder> invocationCallback;
     private final boolean allowOverwrite;
     private final ExecutorService executorService;
     private final String cacheControl;
@@ -69,7 +70,9 @@ public class MultipartObjectAssembler {
 
     private RetryConfiguration retryConfiguration;
 
-    /** The opcClientRequestId to send for all requests related to this multi-part upload. */
+    /**
+     * The opcClientRequestId to send for all requests related to this multi-part upload.
+     */
     private String opcClientRequestId = null;
 
     /**
@@ -116,7 +119,7 @@ public class MultipartObjectAssembler {
             boolean allowOverwrite,
             ExecutorService executorService,
             String opcClientRequestId,
-            RequestInterceptor invocationCallback,
+            Consumer<Invocation.Builder> invocationCallback,
             RetryConfiguration retryConfiguration,
             String cacheControl,
             String contentDisposition,
@@ -242,9 +245,10 @@ public class MultipartObjectAssembler {
     }
 
     /**
-     * Add the next part to the upload. Parts will be committed in the order submitted.
-     *
-     * <p>Calling this will set the ifNoneMatch value and will not allow overwriting existing parts.
+     * Add the next part to the upload.  Parts will be committed in the order
+     * submitted.
+     * <p>
+     * Calling this will set the ifNoneMatch value and will not allow overwriting existing parts.
      *
      * @param file The file to upload as the next part
      * @param md5 The MD5 checksum of the file, optional
@@ -253,21 +257,6 @@ public class MultipartObjectAssembler {
     public int addPart(File file, String md5) {
         InputStream stream = StreamUtils.toInputStream(file);
         return addPart(stream, file.length(), md5);
-    }
-
-    /**
-     * Add the next part to the upload. Parts will be committed in the order submitted.
-     *
-     * <p>We allow part overwrites to facilitate retries.
-     *
-     * @param stream The stream to upload as the next part
-     * @param contentLength The content length of the part
-     * @param md5 The MD5 checksum, optional
-     * @return The part number assigned to this part
-     */
-    public int addPart(InputStream stream, long contentLength, String md5) {
-        int nextPartNumber = manifest.nextPartNumber();
-        return doUploadPart(stream, contentLength, md5, nextPartNumber);
     }
 
     /**
@@ -290,12 +279,29 @@ public class MultipartObjectAssembler {
     }
 
     /**
-     * Adds a part to the upload. The part will be ordered based on the part number provided.
+     * Add the next part to the upload.  Parts will be committed in the order
+     * submitted.
      *
-     * <p>This is useful to retry a failed part, to explicitly control the part numbering, or
-     * overwrite an existing part.
+     * We allow part overwrites to facilitate retries.
      *
-     * <p>Calling this will not set the ifNoneMatch value and will allow overwriting existing parts.
+     * @param stream The stream to upload as the next part
+     * @param contentLength The content length of the part
+     * @param md5 The MD5 checksum, optional
+     * @return The part number assigned to this part
+     */
+    public int addPart(InputStream stream, long contentLength, String md5) {
+        int nextPartNumber = manifest.nextPartNumber();
+        return doUploadPart(stream, contentLength, md5, nextPartNumber);
+    }
+
+    /**
+     * Adds a part to the upload.  The part will be ordered based on the part
+     * number provided.
+     * <p>
+     * This is useful to retry a failed part, to explicitly control the part
+     * numbering, or overwrite an existing part.
+     * <p>
+     * Calling this will not set the ifNoneMatch value and will allow overwriting existing parts.
      *
      * @param file The file to upload
      * @param md5 The MD5 checksum, optional
@@ -307,12 +313,13 @@ public class MultipartObjectAssembler {
     }
 
     /**
-     * Adds a part to the upload. The part will be ordered based on the part number provided.
-     *
-     * <p>This is useful to retry a failed part, to explicitly control the part numbering, or
-     * overwrite an existing part.
-     *
-     * <p>Calling this will not set the ifNoneMatch value and will allow overwriting existing parts.
+     * Adds a part to the upload.  The part will be ordered based on the part
+     * number provided.
+     * <p>
+     * This is useful to retry a failed part, to explicitly control the part
+     * numbering, or overwrite an existing part.
+     * <p>
+     * Calling this will not set the ifNoneMatch value and will allow overwriting existing parts.
      *
      * @param stream The stream to upload
      * @param contentLength The content length of the part
@@ -416,8 +423,8 @@ public class MultipartObjectAssembler {
     }
 
     /**
-     * Aborts the current multi-part assembly and all uploads that are currently in progress.
-     *
+     * Aborts the current multi-part assembly and all uploads
+     * that are currently in progress.
      * @return abort response
      */
     public AbortMultipartUploadResponse abort() {
@@ -440,12 +447,11 @@ public class MultipartObjectAssembler {
     }
 
     /**
-     * Commits the multi-part upload after all in-progress uploads have completed.
-     *
-     * <p>This is a blocking call, and throws IllegalStateException if you try to commit an upload
-     * in which the Manifest reports it is not successful ({@link
-     * MultipartManifest#isUploadSuccessful}).
-     *
+     * Commits the multi-part upload after all in-progress uploads have
+     * completed.
+     * <p>
+     * This is a blocking call, and throws IllegalStateException if you try to commit an upload
+     * in which the Manifest reports it is not successful ({@link MultipartManifest#isUploadSuccessful}).
      * @return The commit response.
      */
     public CommitMultipartUploadResponse commit() {
@@ -541,7 +547,7 @@ public class MultipartObjectAssembler {
         private boolean allowOverwrite;
         private ExecutorService executorService;
         private String opcClientRequestId;
-        private RequestInterceptor invocationCallback;
+        private Consumer<Invocation.Builder> invocationCallback;
         private RetryConfiguration retryConfiguration;
         private String cacheControl;
         private String contentDisposition;
@@ -549,84 +555,108 @@ public class MultipartObjectAssembler {
 
         MultipartObjectAssemblerBuilder() {}
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder service(
                 final ObjectStorage service) {
             this.service = service;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder namespaceName(
                 final String namespaceName) {
             this.namespaceName = namespaceName;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder bucketName(
                 final String bucketName) {
             this.bucketName = bucketName;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder objectName(
                 final String objectName) {
             this.objectName = objectName;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder storageTier(
                 final StorageTier storageTier) {
             this.storageTier = storageTier;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder allowOverwrite(
                 final boolean allowOverwrite) {
             this.allowOverwrite = allowOverwrite;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder executorService(
                 final ExecutorService executorService) {
             this.executorService = executorService;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder opcClientRequestId(
                 final String opcClientRequestId) {
             this.opcClientRequestId = opcClientRequestId;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder invocationCallback(
-                final RequestInterceptor invocationCallback) {
+                final Consumer<Invocation.Builder> invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder retryConfiguration(
                 final RetryConfiguration retryConfiguration) {
             this.retryConfiguration = retryConfiguration;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder cacheControl(
                 final String cacheControl) {
             this.cacheControl = cacheControl;
             return this;
         }
 
-        /** @return {@code this}. */
+        /**
+         * @return {@code this}.
+         */
         public MultipartObjectAssembler.MultipartObjectAssemblerBuilder contentDisposition(
                 final String contentDisposition) {
             this.contentDisposition = contentDisposition;
@@ -693,7 +723,9 @@ public class MultipartObjectAssembler {
         return new MultipartObjectAssembler.MultipartObjectAssemblerBuilder();
     }
 
-    /** The opcClientRequestId to send for all requests related to this multi-part upload. */
+    /**
+     * The opcClientRequestId to send for all requests related to this multi-part upload.
+     */
     public void setOpcClientRequestId(final String opcClientRequestId) {
         this.opcClientRequestId = opcClientRequestId;
     }

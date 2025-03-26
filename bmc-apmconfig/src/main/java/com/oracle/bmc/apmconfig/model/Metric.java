@@ -5,21 +5,20 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * A metric is a quantitative measurement of an entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * A metric is a quantitative measurement of an entity.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Metric extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "valueSource", "unit", "description"})
     public Metric(String name, String valueSource, String unit, String description) {
@@ -32,61 +31,65 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the metric. This must be a known metric name. */
+        /**
+         * The name of the metric. This must be a known metric name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the metric. This must be a known metric name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** This must not be set. */
+        /**
+         * This must not be set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
         private String valueSource;
 
         /**
          * This must not be set.
-         *
          * @param valueSource the value to set
          * @return this builder
-         */
+         **/
         public Builder valueSource(String valueSource) {
             this.valueSource = valueSource;
             this.__explicitlySet__.add("valueSource");
             return this;
         }
-        /** The unit of the metric. */
+        /**
+         * The unit of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * The unit of the metric.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** A description of the metric. */
+        /**
+         * A description of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the metric.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -122,7 +125,9 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,54 +136,58 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** The name of the metric. This must be a known metric name. */
+    /**
+     * The name of the metric. This must be a known metric name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the metric. This must be a known metric name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** This must not be set. */
+    /**
+     * This must not be set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueSource")
     private final String valueSource;
 
     /**
      * This must not be set.
-     *
      * @return the value
-     */
+     **/
     public String getValueSource() {
         return valueSource;
     }
 
-    /** The unit of the metric. */
+    /**
+     * The unit of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * The unit of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
 
-    /** A description of the metric. */
+    /**
+     * A description of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -190,7 +199,6 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

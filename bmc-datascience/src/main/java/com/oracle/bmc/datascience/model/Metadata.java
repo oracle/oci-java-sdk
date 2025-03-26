@@ -5,21 +5,19 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Defines properties of each model metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Defines properties of each model metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Metadata extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -48,120 +46,140 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
-         * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testArtifactresults * fineTuningConfiguration * deploymentConfiguration
-         * * readme * license * evaluationConfiguration
-         */
+         * Key of the model Metadata. The key can either be user defined or OCI defined.
+         *    List of OCI defined keys:
+         *          * useCaseType
+         *          * libraryName
+         *          * libraryVersion
+         *          * estimatorClass
+         *          * hyperParameters
+         *          * testArtifactresults
+         *          * fineTuningConfiguration
+         *          * deploymentConfiguration
+         *          * readme
+         *          * license
+         *          * evaluationConfiguration
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
-         * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testArtifactresults * fineTuningConfiguration * deploymentConfiguration
-         * * readme * license * evaluationConfiguration
+         * Key of the model Metadata. The key can either be user defined or OCI defined.
+         *    List of OCI defined keys:
+         *          * useCaseType
+         *          * libraryName
+         *          * libraryVersion
+         *          * estimatorClass
+         *          * hyperParameters
+         *          * testArtifactresults
+         *          * fineTuningConfiguration
+         *          * deploymentConfiguration
+         *          * readme
+         *          * license
+         *          * evaluationConfiguration
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * Allowed values for useCaseType: binary_classification, regression,
-         * multinomial_classification, clustering, recommender,
-         * dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
-         * topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         * Allowed values for useCaseType:
+         *              binary_classification, regression, multinomial_classification, clustering, recommender,
+         *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+         *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         * <p>
+         * Allowed values for libraryName:
+         *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+         *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+         *              bert, gensim, flair, word2vec, ensemble, other
          *
-         * <p>Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet,
-         * keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl,
-         * h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Allowed values for useCaseType: binary_classification, regression,
-         * multinomial_classification, clustering, recommender,
-         * dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
-         * topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
-         *
-         * <p>Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet,
-         * keras, lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl,
-         * h2o, transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
+         * Allowed values for useCaseType:
+         *              binary_classification, regression, multinomial_classification, clustering, recommender,
+         *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+         *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+         * <p>
+         * Allowed values for libraryName:
+         *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+         *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+         *              bert, gensim, flair, word2vec, ensemble, other
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Description of model metadata */
+        /**
+         * Description of model metadata
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of model metadata
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Category of model metadata which should be null for defined metadata.For custom metadata
-         * is should be one of the following values "Performance,Training Profile,Training and
-         * Validation Datasets,Training Environment,Reports,Readme,other".
-         */
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
-         * Category of model metadata which should be null for defined metadata.For custom metadata
-         * is should be one of the following values "Performance,Training Profile,Training and
-         * Validation Datasets,Training Environment,Reports,Readme,other".
-         *
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** list of keywords for searching */
+        /**
+         * list of keywords for searching
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private java.util.List<String> keywords;
 
         /**
          * list of keywords for searching
-         *
          * @param keywords the value to set
          * @return this builder
-         */
+         **/
         public Builder keywords(java.util.List<String> keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
             return this;
         }
-        /** Is there any artifact present for the metadata. */
+        /**
+         * Is there any artifact present for the metadata.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasArtifact")
         private Boolean hasArtifact;
 
         /**
          * Is there any artifact present for the metadata.
-         *
          * @param hasArtifact the value to set
          * @return this builder
-         */
+         **/
         public Builder hasArtifact(Boolean hasArtifact) {
             this.hasArtifact = hasArtifact;
             this.__explicitlySet__.add("hasArtifact");
@@ -210,7 +228,9 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -220,109 +240,129 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
-     * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testArtifactresults * fineTuningConfiguration * deploymentConfiguration * readme * license
-     * * evaluationConfiguration
-     */
+     * Key of the model Metadata. The key can either be user defined or OCI defined.
+     *    List of OCI defined keys:
+     *          * useCaseType
+     *          * libraryName
+     *          * libraryVersion
+     *          * estimatorClass
+     *          * hyperParameters
+     *          * testArtifactresults
+     *          * fineTuningConfiguration
+     *          * deploymentConfiguration
+     *          * readme
+     *          * license
+     *          * evaluationConfiguration
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
-     * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testArtifactresults * fineTuningConfiguration * deploymentConfiguration * readme * license
-     * * evaluationConfiguration
+     * Key of the model Metadata. The key can either be user defined or OCI defined.
+     *    List of OCI defined keys:
+     *          * useCaseType
+     *          * libraryName
+     *          * libraryVersion
+     *          * estimatorClass
+     *          * hyperParameters
+     *          * testArtifactresults
+     *          * fineTuningConfiguration
+     *          * deploymentConfiguration
+     *          * readme
+     *          * license
+     *          * evaluationConfiguration
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * Allowed values for useCaseType: binary_classification, regression,
-     * multinomial_classification, clustering, recommender, dimensionality_reduction/representation,
-     * time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis,
-     * image_classification, object_localization, other
+     * Allowed values for useCaseType:
+     *              binary_classification, regression, multinomial_classification, clustering, recommender,
+     *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+     *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+     * <p>
+     * Allowed values for libraryName:
+     *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+     *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+     *              bert, gensim, flair, word2vec, ensemble, other
      *
-     * <p>Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras,
-     * lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o,
-     * transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Allowed values for useCaseType: binary_classification, regression,
-     * multinomial_classification, clustering, recommender, dimensionality_reduction/representation,
-     * time_series_forecasting, anomaly_detection, topic_modeling, ner, sentiment_analysis,
-     * image_classification, object_localization, other
-     *
-     * <p>Allowed values for libraryName: scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras,
-     * lightGBM, pymc3, pyOD, spacy, prophet, sktime, statsmodels, cuml, oracle_automl, h2o,
-     * transformers, nltk, emcee, pystan, bert, gensim, flair, word2vec, ensemble, other
+     * Allowed values for useCaseType:
+     *              binary_classification, regression, multinomial_classification, clustering, recommender,
+     *              dimensionality_reduction/representation, time_series_forecasting, anomaly_detection,
+     *              topic_modeling, ner, sentiment_analysis, image_classification, object_localization, other
+     * <p>
+     * Allowed values for libraryName:
+     *              scikit-learn, xgboost, tensorflow, pytorch, mxnet, keras, lightGBM, pymc3, pyOD, spacy,
+     *              prophet, sktime, statsmodels, cuml, oracle_automl, h2o, transformers, nltk, emcee, pystan,
+     *              bert, gensim, flair, word2vec, ensemble, other
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Description of model metadata */
+    /**
+     * Description of model metadata
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of model metadata
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Category of model metadata which should be null for defined metadata.For custom metadata is
-     * should be one of the following values "Performance,Training Profile,Training and Validation
-     * Datasets,Training Environment,Reports,Readme,other".
-     */
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * Category of model metadata which should be null for defined metadata.For custom metadata is
-     * should be one of the following values "Performance,Training Profile,Training and Validation
-     * Datasets,Training Environment,Reports,Readme,other".
-     *
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
      * @return the value
-     */
+     **/
     public String getCategory() {
         return category;
     }
 
-    /** list of keywords for searching */
+    /**
+     * list of keywords for searching
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final java.util.List<String> keywords;
 
     /**
      * list of keywords for searching
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getKeywords() {
         return keywords;
     }
 
-    /** Is there any artifact present for the metadata. */
+    /**
+     * Is there any artifact present for the metadata.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasArtifact")
     private final Boolean hasArtifact;
 
     /**
      * Is there any artifact present for the metadata.
-     *
      * @return the value
-     */
+     **/
     public Boolean getHasArtifact() {
         return hasArtifact;
     }
@@ -334,7 +374,6 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,21 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The result of a comparison of two lines in the two content input strings. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The result of a comparison of two lines in the two content input strings.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompareLineResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CompareLineResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CompareLineResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CompareLineResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "leftContent",
@@ -49,7 +47,8 @@ public final class CompareLineResult
         /**
          * A line from the content on the left. This may be empty if there is no matching line on
          * the left for a line in the right content.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
         private String leftContent;
 
@@ -59,7 +58,7 @@ public final class CompareLineResult
          *
          * @param leftContent the value to set
          * @return this builder
-         */
+         **/
         public Builder leftContent(String leftContent) {
             this.leftContent = leftContent;
             this.__explicitlySet__.add("leftContent");
@@ -68,7 +67,8 @@ public final class CompareLineResult
         /**
          * A line from the content on the right. This may be empty if there is no matching line on
          * the right for a line in the left content.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rightContent")
         private String rightContent;
 
@@ -78,7 +78,7 @@ public final class CompareLineResult
          *
          * @param rightContent the value to set
          * @return this builder
-         */
+         **/
         public Builder rightContent(String rightContent) {
             this.rightContent = rightContent;
             this.__explicitlySet__.add("rightContent");
@@ -86,20 +86,21 @@ public final class CompareLineResult
         }
         /**
          * The result of the line comparison. An empty string means the lines being compared are the
-         * same. A pipe, |, means the lines are different, and a caret, > or <, means the line is
-         * only found either on the right or the left.
-         */
+         * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+         * line is only found either on the right or the left.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diffType")
         private String diffType;
 
         /**
          * The result of the line comparison. An empty string means the lines being compared are the
-         * same. A pipe, |, means the lines are different, and a caret, > or <, means the line is
-         * only found either on the right or the left.
+         * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+         * line is only found either on the right or the left.
          *
          * @param diffType the value to set
          * @return this builder
-         */
+         **/
         public Builder diffType(String diffType) {
             this.diffType = diffType;
             this.__explicitlySet__.add("diffType");
@@ -108,7 +109,8 @@ public final class CompareLineResult
         /**
          * A comma delimited set of indices that identify which characters are different from those
          * in the right string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leftIndices")
         private String leftIndices;
 
@@ -118,7 +120,7 @@ public final class CompareLineResult
          *
          * @param leftIndices the value to set
          * @return this builder
-         */
+         **/
         public Builder leftIndices(String leftIndices) {
             this.leftIndices = leftIndices;
             this.__explicitlySet__.add("leftIndices");
@@ -127,7 +129,8 @@ public final class CompareLineResult
         /**
          * A comma delimited set of indices that identify which characters are different from those
          * in the left string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rightIndices")
         private String rightIndices;
 
@@ -137,7 +140,7 @@ public final class CompareLineResult
          *
          * @param rightIndices the value to set
          * @return this builder
-         */
+         **/
         public Builder rightIndices(String rightIndices) {
             this.rightIndices = rightIndices;
             this.__explicitlySet__.add("rightIndices");
@@ -182,7 +185,9 @@ public final class CompareLineResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -192,88 +197,93 @@ public final class CompareLineResult
     }
 
     /**
-     * A line from the content on the left. This may be empty if there is no matching line on the
-     * left for a line in the right content.
-     */
+     * A line from the content on the left. This may be empty if there is no matching line on
+     * the left for a line in the right content.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("leftContent")
     private final String leftContent;
 
     /**
-     * A line from the content on the left. This may be empty if there is no matching line on the
-     * left for a line in the right content.
+     * A line from the content on the left. This may be empty if there is no matching line on
+     * the left for a line in the right content.
      *
      * @return the value
-     */
+     **/
     public String getLeftContent() {
         return leftContent;
     }
 
     /**
-     * A line from the content on the right. This may be empty if there is no matching line on the
-     * right for a line in the left content.
-     */
+     * A line from the content on the right. This may be empty if there is no matching line on
+     * the right for a line in the left content.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rightContent")
     private final String rightContent;
 
     /**
-     * A line from the content on the right. This may be empty if there is no matching line on the
-     * right for a line in the left content.
+     * A line from the content on the right. This may be empty if there is no matching line on
+     * the right for a line in the left content.
      *
      * @return the value
-     */
+     **/
     public String getRightContent() {
         return rightContent;
     }
 
     /**
      * The result of the line comparison. An empty string means the lines being compared are the
-     * same. A pipe, |, means the lines are different, and a caret, > or <, means the line is only
-     * found either on the right or the left.
-     */
+     * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+     * line is only found either on the right or the left.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffType")
     private final String diffType;
 
     /**
      * The result of the line comparison. An empty string means the lines being compared are the
-     * same. A pipe, |, means the lines are different, and a caret, > or <, means the line is only
-     * found either on the right or the left.
+     * same. A pipe, |, means the lines are different, and a caret, > or <, means the
+     * line is only found either on the right or the left.
      *
      * @return the value
-     */
+     **/
     public String getDiffType() {
         return diffType;
     }
 
     /**
-     * A comma delimited set of indices that identify which characters are different from those in
-     * the right string.
-     */
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the right string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("leftIndices")
     private final String leftIndices;
 
     /**
-     * A comma delimited set of indices that identify which characters are different from those in
-     * the right string.
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the right string.
      *
      * @return the value
-     */
+     **/
     public String getLeftIndices() {
         return leftIndices;
     }
 
     /**
-     * A comma delimited set of indices that identify which characters are different from those in
-     * the left string.
-     */
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the left string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rightIndices")
     private final String rightIndices;
 
     /**
-     * A comma delimited set of indices that identify which characters are different from those in
-     * the left string.
+     * A comma delimited set of indices that identify which characters are different from those
+     * in the left string.
      *
      * @return the value
-     */
+     **/
     public String getRightIndices() {
         return rightIndices;
     }
@@ -285,7 +295,6 @@ public final class CompareLineResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

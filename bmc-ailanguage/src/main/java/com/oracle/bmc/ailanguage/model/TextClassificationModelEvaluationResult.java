@@ -5,25 +5,25 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Possible TXTC model error analysis <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Possible TXTC model error analysis
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TextClassificationModelEvaluationResult.Builder.class)
+    builder = TextClassificationModelEvaluationResult.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TextClassificationModelEvaluationResult extends EvaluationResultSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -46,38 +46,32 @@ public final class TextClassificationModelEvaluationResult extends EvaluationRes
             return this;
         }
         /**
-         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line
-         * sequence(1 is metadata)
-         */
+         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private String location;
 
         /**
-         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line
-         * sequence(1 is metadata)
-         *
+         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
          * @param location the value to set
          * @return this builder
-         */
+         **/
         public Builder location(String location) {
             this.location = location;
             this.__explicitlySet__.add("location");
             return this;
         }
         /**
-         * List of true(actual) labels in test data for multi class or multi label
-         * TextClassification
-         */
+         * List of true(actual) labels in test data for multi class or multi label TextClassification
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trueLabels")
         private java.util.List<String> trueLabels;
 
         /**
-         * List of true(actual) labels in test data for multi class or multi label
-         * TextClassification
-         *
+         * List of true(actual) labels in test data for multi class or multi label TextClassification
          * @param trueLabels the value to set
          * @return this builder
-         */
+         **/
         public Builder trueLabels(java.util.List<String> trueLabels) {
             this.trueLabels = trueLabels;
             this.__explicitlySet__.add("trueLabels");
@@ -85,16 +79,15 @@ public final class TextClassificationModelEvaluationResult extends EvaluationRes
         }
         /**
          * List of predicted labels by custom multi class or multi label TextClassification model
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("predictedLabels")
         private java.util.List<String> predictedLabels;
 
         /**
          * List of predicted labels by custom multi class or multi label TextClassification model
-         *
          * @param predictedLabels the value to set
          * @return this builder
-         */
+         **/
         public Builder predictedLabels(java.util.List<String> predictedLabels) {
             this.predictedLabels = predictedLabels;
             this.__explicitlySet__.add("predictedLabels");
@@ -139,7 +132,9 @@ public final class TextClassificationModelEvaluationResult extends EvaluationRes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -162,46 +157,43 @@ public final class TextClassificationModelEvaluationResult extends EvaluationRes
     }
 
     /**
-     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1
-     * is metadata)
-     */
+     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final String location;
 
     /**
-     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1
-     * is metadata)
-     *
+     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * @return the value
-     */
+     **/
     public String getLocation() {
         return location;
     }
 
     /**
      * List of true(actual) labels in test data for multi class or multi label TextClassification
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trueLabels")
     private final java.util.List<String> trueLabels;
 
     /**
      * List of true(actual) labels in test data for multi class or multi label TextClassification
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getTrueLabels() {
         return trueLabels;
     }
 
-    /** List of predicted labels by custom multi class or multi label TextClassification model */
+    /**
+     * List of predicted labels by custom multi class or multi label TextClassification model
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("predictedLabels")
     private final java.util.List<String> predictedLabels;
 
     /**
      * List of predicted labels by custom multi class or multi label TextClassification model
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPredictedLabels() {
         return predictedLabels;
     }
@@ -213,7 +205,6 @@ public final class TextClassificationModelEvaluationResult extends EvaluationRes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

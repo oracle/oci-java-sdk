@@ -6,96 +6,94 @@ package com.oracle.bmc.queue.requests;
 
 import com.oracle.bmc.queue.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetMessagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMessagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/GetMessagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMessagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     private String queueId;
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     public String getQueueId() {
         return queueId;
     }
     /**
-     * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code
-     * visibilityInSeconds} seconds and won't be consumable by other consumers during that time. If
-     * it isn't set it defaults to the value set at the queue level.
+     * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
+     * If it isn't set it defaults to the value set at the queue level.
+     * <p>
+     * Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
+     * Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
      *
-     * <p>Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
-     * Messages retrieved that way aren't meant to be deleted because they will most likely be
-     * delivered to another consumer as their visibility won't change, but will still increase the
-     * delivery count by one.
      */
     private Integer visibilityInSeconds;
 
     /**
-     * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code
-     * visibilityInSeconds} seconds and won't be consumable by other consumers during that time. If
-     * it isn't set it defaults to the value set at the queue level.
+     * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
+     * If it isn't set it defaults to the value set at the queue level.
+     * <p>
+     * Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
+     * Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
      *
-     * <p>Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
-     * Messages retrieved that way aren't meant to be deleted because they will most likely be
-     * delivered to another consumer as their visibility won't change, but will still increase the
-     * delivery count by one.
      */
     public Integer getVisibilityInSeconds() {
         return visibilityInSeconds;
     }
     /**
-     * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0,
-     * the request is using the long-polling mode and will only return when a message is available
-     * for consumption (it does not wait for limit messages but still only returns at-most limit
-     * messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty
-     * response), whichever comes first.
+     * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty response), whichever comes first.
+     * <p>
+     * If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
+     * In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.
      *
-     * <p>If the parameter is set to 0, the request is using the short-polling mode and immediately
-     * returns whether messages have been retrieved or not. In same rare-cases a long-polling
-     * request could be interrupted (returned with empty response) before the end of the timeout.
      */
     private Integer timeoutInSeconds;
 
     /**
-     * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0,
-     * the request is using the long-polling mode and will only return when a message is available
-     * for consumption (it does not wait for limit messages but still only returns at-most limit
-     * messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty
-     * response), whichever comes first.
+     * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty response), whichever comes first.
+     * <p>
+     * If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
+     * In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.
      *
-     * <p>If the parameter is set to 0, the request is using the short-polling mode and immediately
-     * returns whether messages have been retrieved or not. In same rare-cases a long-polling
-     * request could be interrupted (returned with empty response) before the end of the timeout.
      */
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
-    /** The limit parameter controls how many messages is returned at-most. */
+    /**
+     * The limit parameter controls how many messages is returned at-most.
+     *
+     */
     private Integer limit;
 
-    /** The limit parameter controls how many messages is returned at-most. */
+    /**
+     * The limit parameter controls how many messages is returned at-most.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Optional parameter to filter the channels. */
+    /**
+     * Optional parameter to filter the channels.
+     */
     private String channelFilter;
 
-    /** Optional parameter to filter the channels. */
+    /**
+     * Optional parameter to filter the channels.
+     */
     public String getChannelFilter() {
         return channelFilter;
     }
@@ -103,15 +101,17 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMessagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique queue identifier. */
+        /**
+         * The unique queue identifier.
+         */
         private String queueId = null;
 
         /**
          * The unique queue identifier.
-         *
          * @param queueId the value to set
          * @return this builder instance
          */
@@ -121,26 +121,21 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code
-         * visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
+         * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
          * If it isn't set it defaults to the value set at the queue level.
+         * <p>
+         * Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
+         * Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
          *
-         * <p>Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek
-         * functionality. Messages retrieved that way aren't meant to be deleted because they will
-         * most likely be delivered to another consumer as their visibility won't change, but will
-         * still increase the delivery count by one.
          */
         private Integer visibilityInSeconds = null;
 
         /**
-         * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code
-         * visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
+         * If the {@code visibilityInSeconds} parameter is set, messages will be hidden for {@code visibilityInSeconds} seconds and won't be consumable by other consumers during that time.
          * If it isn't set it defaults to the value set at the queue level.
-         *
-         * <p>Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek
-         * functionality. Messages retrieved that way aren't meant to be deleted because they will
-         * most likely be delivered to another consumer as their visibility won't change, but will
-         * still increase the delivery count by one.
+         * <p>
+         * Using a {@code visibilityInSeconds} value of 0 effectively acts as a peek functionality.
+         * Messages retrieved that way aren't meant to be deleted because they will most likely be delivered to another consumer as their visibility won't change, but will still increase the delivery count by one.
          *
          * @param visibilityInSeconds the value to set
          * @return this builder instance
@@ -151,30 +146,19 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than
-         * 0, the request is using the long-polling mode and will only return when a message is
-         * available for consumption (it does not wait for limit messages but still only returns
-         * at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will
-         * return an empty response), whichever comes first.
+         * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty response), whichever comes first.
+         * <p>
+         * If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
+         * In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.
          *
-         * <p>If the parameter is set to 0, the request is using the short-polling mode and
-         * immediately returns whether messages have been retrieved or not. In same rare-cases a
-         * long-polling request could be interrupted (returned with empty response) before the end
-         * of the timeout.
          */
         private Integer timeoutInSeconds = null;
 
         /**
-         * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than
-         * 0, the request is using the long-polling mode and will only return when a message is
-         * available for consumption (it does not wait for limit messages but still only returns
-         * at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will
-         * return an empty response), whichever comes first.
-         *
-         * <p>If the parameter is set to 0, the request is using the short-polling mode and
-         * immediately returns whether messages have been retrieved or not. In same rare-cases a
-         * long-polling request could be interrupted (returned with empty response) before the end
-         * of the timeout.
+         * If the {@code timeoutInSeconds parameter} isn't set or it is set to a value greater than 0, the request is using the long-polling mode and will only return when a message is available for consumption (it does not wait for limit messages but still only returns at-most limit messages) or after {@code timeoutInSeconds} seconds (in which case it will return an empty response), whichever comes first.
+         * <p>
+         * If the parameter is set to 0, the request is using the short-polling mode and immediately returns whether messages have been retrieved or not.
+         * In same rare-cases a long-polling request could be interrupted (returned with empty response) before the end of the timeout.
          *
          * @param timeoutInSeconds the value to set
          * @return this builder instance
@@ -184,7 +168,10 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The limit parameter controls how many messages is returned at-most. */
+        /**
+         * The limit parameter controls how many messages is returned at-most.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -199,15 +186,12 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -216,12 +200,13 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Optional parameter to filter the channels. */
+        /**
+         * Optional parameter to filter the channels.
+         */
         private String channelFilter = null;
 
         /**
          * Optional parameter to filter the channels.
-         *
          * @param channelFilter the value to set
          * @return this builder instance
          */
@@ -232,19 +217,18 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -256,7 +240,6 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetMessagesRequest o) {
@@ -274,11 +257,10 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetMessagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetMessagesRequest
          */
@@ -292,8 +274,7 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetMessagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetMessagesRequest
@@ -307,14 +288,12 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcRequestId = opcRequestId;
             request.channelFilter = channelFilter;
             return request;
-            // new GetMessagesRequest(queueId, visibilityInSeconds, timeoutInSeconds, limit,
-            // opcRequestId, channelFilter);
+            // new GetMessagesRequest(queueId, visibilityInSeconds, timeoutInSeconds, limit, opcRequestId, channelFilter);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -329,7 +308,6 @@ public class GetMessagesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

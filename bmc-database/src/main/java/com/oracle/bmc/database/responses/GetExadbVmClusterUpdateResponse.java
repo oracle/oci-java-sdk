@@ -6,17 +6,18 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned {@code ExadbVmClusterUpdate} instance. */
+    /**
+     * The returned ExadbVmClusterUpdate instance.
+     */
     private com.oracle.bmc.database.model.ExadbVmClusterUpdate exadbVmClusterUpdate;
 
     /**
-     * The returned {@code ExadbVmClusterUpdate} instance.
-     *
+     * The returned ExadbVmClusterUpdate instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.ExadbVmClusterUpdate getExadbVmClusterUpdate() {
@@ -44,7 +46,7 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
     })
     private GetExadbVmClusterUpdateResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.database.model.ExadbVmClusterUpdate exadbVmClusterUpdate) {
         super(__httpStatusCode__, headers);
@@ -52,34 +54,31 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
         this.exadbVmClusterUpdate = exadbVmClusterUpdate;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetExadbVmClusterUpdateResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -89,12 +88,13 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code ExadbVmClusterUpdate} instance. */
+        /**
+         * The returned ExadbVmClusterUpdate instance.
+         */
         private com.oracle.bmc.database.model.ExadbVmClusterUpdate exadbVmClusterUpdate;
 
         /**
-         * The returned {@code ExadbVmClusterUpdate} instance.
-         *
+         * The returned ExadbVmClusterUpdate instance.
          * @param exadbVmClusterUpdate the value to set
          * @return this builder
          */
@@ -106,10 +106,8 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetExadbVmClusterUpdateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -121,10 +119,8 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetExadbVmClusterUpdateResponse build() {
             return new GetExadbVmClusterUpdateResponse(
                     __httpStatusCode__, headers, opcRequestId, exadbVmClusterUpdate);
@@ -133,7 +129,6 @@ public class GetExadbVmClusterUpdateResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

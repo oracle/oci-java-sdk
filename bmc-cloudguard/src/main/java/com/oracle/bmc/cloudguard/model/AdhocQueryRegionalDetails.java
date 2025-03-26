@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Instance level status for each region. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Instance level status for each region.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AdhocQueryRegionalDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AdhocQueryRegionalDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AdhocQueryRegionalDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "region",
@@ -52,106 +51,113 @@ public final class AdhocQueryRegionalDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Region name */
+        /**
+         * Region name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Region name
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** adhoc query status of the region */
+        /**
+         * adhoc query status of the region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionalStatus")
         private AdhocQueryStatus regionalStatus;
 
         /**
          * adhoc query status of the region
-         *
          * @param regionalStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder regionalStatus(AdhocQueryStatus regionalStatus) {
             this.regionalStatus = regionalStatus;
             this.__explicitlySet__.add("regionalStatus");
             return this;
         }
-        /** error message to show if adhoc query fails in a region */
+        /**
+         * error message to show if adhoc query fails in a region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionalError")
         private String regionalError;
 
         /**
          * error message to show if adhoc query fails in a region
-         *
          * @param regionalError the value to set
          * @return this builder
-         */
+         **/
         public Builder regionalError(String regionalError) {
             this.regionalError = regionalError;
             this.__explicitlySet__.add("regionalError");
             return this;
         }
-        /** Expected number of instances on which query should run */
+        /**
+         * Expected number of instances on which query should run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expectedCount")
         private String expectedCount;
 
         /**
          * Expected number of instances on which query should run
-         *
          * @param expectedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder expectedCount(String expectedCount) {
             this.expectedCount = expectedCount;
             this.__explicitlySet__.add("expectedCount");
             return this;
         }
-        /** Number of instances on which query failed */
+        /**
+         * Number of instances on which query failed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedCount")
         private String failedCount;
 
         /**
          * Number of instances on which query failed
-         *
          * @param failedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder failedCount(String failedCount) {
             this.failedCount = failedCount;
             this.__explicitlySet__.add("failedCount");
             return this;
         }
-        /** Number of instances on which query succeeded */
+        /**
+         * Number of instances on which query succeeded
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("succeededCount")
         private String succeededCount;
 
         /**
          * Number of instances on which query succeeded
-         *
          * @param succeededCount the value to set
          * @return this builder
-         */
+         **/
         public Builder succeededCount(String succeededCount) {
             this.succeededCount = succeededCount;
             this.__explicitlySet__.add("succeededCount");
             return this;
         }
-        /** Number of instances on which query expired */
+        /**
+         * Number of instances on which query expired
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expiredCount")
         private String expiredCount;
 
         /**
          * Number of instances on which query expired
-         *
          * @param expiredCount the value to set
          * @return this builder
-         */
+         **/
         public Builder expiredCount(String expiredCount) {
             this.expiredCount = expiredCount;
             this.__explicitlySet__.add("expiredCount");
@@ -204,7 +210,9 @@ public final class AdhocQueryRegionalDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +221,100 @@ public final class AdhocQueryRegionalDetails
         return new Builder().copy(this);
     }
 
-    /** Region name */
+    /**
+     * Region name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Region name
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** adhoc query status of the region */
+    /**
+     * adhoc query status of the region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionalStatus")
     private final AdhocQueryStatus regionalStatus;
 
     /**
      * adhoc query status of the region
-     *
      * @return the value
-     */
+     **/
     public AdhocQueryStatus getRegionalStatus() {
         return regionalStatus;
     }
 
-    /** error message to show if adhoc query fails in a region */
+    /**
+     * error message to show if adhoc query fails in a region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionalError")
     private final String regionalError;
 
     /**
      * error message to show if adhoc query fails in a region
-     *
      * @return the value
-     */
+     **/
     public String getRegionalError() {
         return regionalError;
     }
 
-    /** Expected number of instances on which query should run */
+    /**
+     * Expected number of instances on which query should run
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expectedCount")
     private final String expectedCount;
 
     /**
      * Expected number of instances on which query should run
-     *
      * @return the value
-     */
+     **/
     public String getExpectedCount() {
         return expectedCount;
     }
 
-    /** Number of instances on which query failed */
+    /**
+     * Number of instances on which query failed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedCount")
     private final String failedCount;
 
     /**
      * Number of instances on which query failed
-     *
      * @return the value
-     */
+     **/
     public String getFailedCount() {
         return failedCount;
     }
 
-    /** Number of instances on which query succeeded */
+    /**
+     * Number of instances on which query succeeded
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("succeededCount")
     private final String succeededCount;
 
     /**
      * Number of instances on which query succeeded
-     *
      * @return the value
-     */
+     **/
     public String getSucceededCount() {
         return succeededCount;
     }
 
-    /** Number of instances on which query expired */
+    /**
+     * Number of instances on which query expired
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiredCount")
     private final String expiredCount;
 
     /**
      * Number of instances on which query expired
-     *
      * @return the value
-     */
+     **/
     public String getExpiredCount() {
         return expiredCount;
     }
@@ -311,7 +326,6 @@ public final class AdhocQueryRegionalDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

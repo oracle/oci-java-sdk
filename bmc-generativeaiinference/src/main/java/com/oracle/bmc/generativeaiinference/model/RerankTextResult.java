@@ -5,22 +5,19 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The rerank response to return to the caller. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The rerank response to return to the caller.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RerankTextResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RerankTextResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RerankTextResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "modelId", "modelVersion", "documentRanks"})
     public RerankTextResult(
@@ -37,61 +34,65 @@ public final class RerankTextResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique identifier for this {@code RerankResult}. */
+        /**
+         * A unique identifier for this {@code RerankResult}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A unique identifier for this {@code RerankResult}.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the model used in the rerank request. */
+        /**
+         * The OCID of the model used in the rerank request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
          * The OCID of the model used in the rerank request.
-         *
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
             return this;
         }
-        /** The version of the model. */
+        /**
+         * The version of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The version of the model.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
-        /** Top n documents with their index and relevance score. */
+        /**
+         * Top n documents with their index and relevance score.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentRanks")
         private java.util.List<DocumentRank> documentRanks;
 
         /**
          * Top n documents with their index and relevance score.
-         *
          * @param documentRanks the value to set
          * @return this builder
-         */
+         **/
         public Builder documentRanks(java.util.List<DocumentRank> documentRanks) {
             this.documentRanks = documentRanks;
             this.__explicitlySet__.add("documentRanks");
@@ -129,7 +130,9 @@ public final class RerankTextResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,54 +141,58 @@ public final class RerankTextResult
         return new Builder().copy(this);
     }
 
-    /** A unique identifier for this {@code RerankResult}. */
+    /**
+     * A unique identifier for this {@code RerankResult}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A unique identifier for this {@code RerankResult}.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the model used in the rerank request. */
+    /**
+     * The OCID of the model used in the rerank request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * The OCID of the model used in the rerank request.
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
-    /** The version of the model. */
+    /**
+     * The version of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The version of the model.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
 
-    /** Top n documents with their index and relevance score. */
+    /**
+     * Top n documents with their index and relevance score.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentRanks")
     private final java.util.List<DocumentRank> documentRanks;
 
     /**
      * Top n documents with their index and relevance score.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentRank> getDocumentRanks() {
         return documentRanks;
     }
@@ -197,7 +204,6 @@ public final class RerankTextResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

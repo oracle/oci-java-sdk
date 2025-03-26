@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Type of test to perform on a pipeline's assigned connection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum TestPipelineConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of test to perform on a pipeline's assigned connection.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum TestPipelineConnectionType {
     Default("DEFAULT"),
     ;
 

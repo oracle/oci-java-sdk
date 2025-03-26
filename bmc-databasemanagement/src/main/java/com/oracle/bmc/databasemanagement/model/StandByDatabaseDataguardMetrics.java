@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The standby database details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The standby database details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StandByDatabaseDataguardMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = StandByDatabaseDataguardMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StandByDatabaseDataguardMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbId",
@@ -53,121 +52,112 @@ public final class StandByDatabaseDataguardMetrics
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param dbId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where the Managed Database resides.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment where the Managed Database resides.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The database ID of the Managed Database. Every database had its own ID and that value is
-         * captured here.
-         */
+         * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The database ID of the Managed Database. Every database had its own ID and that value is
-         * captured here.
-         *
+         * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** The display name of the Managed Database. */
+        /**
+         * The display name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
         /**
          * The display name of the Managed Database.
-         *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** The database unique name of the Managed Database. */
+        /**
+         * The database unique name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * The database unique name of the Managed Database.
-         *
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /** The database role of the Managed Database. */
+        /**
+         * The database role of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
         private DbRole dbRole;
 
         /**
          * The database role of the Managed Database.
-         *
          * @param dbRole the value to set
          * @return this builder
-         */
+         **/
         public Builder dbRole(DbRole dbRole) {
             this.dbRole = dbRole;
             this.__explicitlySet__.add("dbRole");
             return this;
         }
         /**
-         * A list of standby databases with latest values for metrics such as ApplyLag,
-         * TransportLag, and RedoApplyRate.
-         */
+         * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag, and RedoApplyRate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metrics")
         private java.util.List<HaMetricDefinition> metrics;
 
         /**
-         * A list of standby databases with latest values for metrics such as ApplyLag,
-         * TransportLag, and RedoApplyRate.
-         *
+         * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag, and RedoApplyRate.
          * @param metrics the value to set
          * @return this builder
-         */
+         **/
         public Builder metrics(java.util.List<HaMetricDefinition> metrics) {
             this.metrics = metrics;
             this.__explicitlySet__.add("metrics");
@@ -220,7 +210,9 @@ public final class StandByDatabaseDataguardMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -230,108 +222,99 @@ public final class StandByDatabaseDataguardMetrics
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * @return the value
-     */
+     **/
     public String getDbId() {
         return dbId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where the Managed Database resides.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment where the Managed Database resides.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Managed Database resides.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The database ID of the Managed Database. Every database had its own ID and that value is
-     * captured here.
-     */
+     * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The database ID of the Managed Database. Every database had its own ID and that value is
-     * captured here.
-     *
+     * The database ID of the Managed Database. Every database had its own ID and that value is captured here.
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** The display name of the Managed Database. */
+    /**
+     * The display name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * The display name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** The database unique name of the Managed Database. */
+    /**
+     * The database unique name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * The database unique name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
-    /** The database role of the Managed Database. */
+    /**
+     * The database role of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
     private final DbRole dbRole;
 
     /**
      * The database role of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public DbRole getDbRole() {
         return dbRole;
     }
 
     /**
-     * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag,
-     * and RedoApplyRate.
-     */
+     * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag, and RedoApplyRate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metrics")
     private final java.util.List<HaMetricDefinition> metrics;
 
     /**
-     * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag,
-     * and RedoApplyRate.
-     *
+     * A list of standby databases with latest values for metrics such as ApplyLag, TransportLag, and RedoApplyRate.
      * @return the value
-     */
+     **/
     public java.util.List<HaMetricDefinition> getMetrics() {
         return metrics;
     }
@@ -343,7 +326,6 @@ public final class StandByDatabaseDataguardMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Levels of severities associated with a Delegated Resource Access Request */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum DelegatedResourceAccessRequestSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Levels of severities associated with a Delegated Resource Access Request
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum DelegatedResourceAccessRequestSeverity {
     S1("S1"),
     S2("S2"),
     S3("S3"),

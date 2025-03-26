@@ -5,23 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkActionResourceType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkActionResourceType.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkActionResourceType
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "metadataKeys"})
     public BulkActionResourceType(String name, java.util.List<String> metadataKeys) {
@@ -32,7 +31,10 @@ public final class BulkActionResourceType
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique name of the resource-type. */
+        /**
+         * The unique name of the resource-type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -41,30 +43,27 @@ public final class BulkActionResourceType
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * List of metadata keys required to identify a specific resource. Some resource-types
-         * require information besides an OCID to identify a specific resource. For example, the
-         * resource-type {@code buckets} requires metadataKeys {@link
-         * #deleteBucket(DeleteBucketRequest) deleteBucket}.
-         */
+         * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+         * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
         private java.util.List<String> metadataKeys;
 
         /**
-         * List of metadata keys required to identify a specific resource. Some resource-types
-         * require information besides an OCID to identify a specific resource. For example, the
-         * resource-type {@code buckets} requires metadataKeys {@link
-         * #deleteBucket(DeleteBucketRequest) deleteBucket}.
+         * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+         * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
          *
          * @param metadataKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder metadataKeys(java.util.List<String> metadataKeys) {
             this.metadataKeys = metadataKeys;
             this.__explicitlySet__.add("metadataKeys");
@@ -94,7 +93,9 @@ public final class BulkActionResourceType
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,7 +104,10 @@ public final class BulkActionResourceType
         return new Builder().copy(this);
     }
 
-    /** The unique name of the resource-type. */
+    /**
+     * The unique name of the resource-type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -111,28 +115,25 @@ public final class BulkActionResourceType
      * The unique name of the resource-type.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * List of metadata keys required to identify a specific resource. Some resource-types require
-     * information besides an OCID to identify a specific resource. For example, the resource-type
-     * {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest)
-     * deleteBucket}.
-     */
+     * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+     * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
     private final java.util.List<String> metadataKeys;
 
     /**
-     * List of metadata keys required to identify a specific resource. Some resource-types require
-     * information besides an OCID to identify a specific resource. For example, the resource-type
-     * {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest)
-     * deleteBucket}.
+     * List of metadata keys required to identify a specific resource. Some resource-types require information besides an OCID to identify
+     * a specific resource. For example, the resource-type {@code buckets} requires metadataKeys {@link #deleteBucket(DeleteBucketRequest) deleteBucket}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getMetadataKeys() {
         return metadataKeys;
     }
@@ -144,7 +145,6 @@ public final class BulkActionResourceType
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

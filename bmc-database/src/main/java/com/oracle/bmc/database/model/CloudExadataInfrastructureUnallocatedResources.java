@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of unallocated resources of the Cloud Exadata infrastructure. Applies to Cloud Exadata
- * infrastructure instances only. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of unallocated resources of the Cloud Exadata infrastructure. Applies to Cloud Exadata infrastructure instances only.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloudExadataInfrastructureUnallocatedResources.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CloudExadataInfrastructureUnallocatedResources.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CloudExadataInfrastructureUnallocatedResources
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cloudExadataInfrastructureId",
@@ -54,38 +53,32 @@ public final class CloudExadataInfrastructureUnallocatedResources
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Cloud Exadata infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Cloud Exadata infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             this.__explicitlySet__.add("cloudExadataInfrastructureId");
             return this;
         }
         /**
-         * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be
-         * unique.
-         */
+         * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureDisplayName")
         private String cloudExadataInfrastructureDisplayName;
 
         /**
-         * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be
-         * unique.
-         *
+         * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
          * @param cloudExadataInfrastructureDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudExadataInfrastructureDisplayName(
                 String cloudExadataInfrastructureDisplayName) {
             this.cloudExadataInfrastructureDisplayName = cloudExadataInfrastructureDisplayName;
@@ -93,19 +86,16 @@ public final class CloudExadataInfrastructureUnallocatedResources
             return this;
         }
         /**
-         * The minimum amount of unallocated storage available across all nodes in the
-         * infrastructure.
-         */
+         * The minimum amount of unallocated storage available across all nodes in the infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localStorageInGbs")
         private Integer localStorageInGbs;
 
         /**
-         * The minimum amount of unallocated storage available across all nodes in the
-         * infrastructure.
-         *
+         * The minimum amount of unallocated storage available across all nodes in the infrastructure.
          * @param localStorageInGbs the value to set
          * @return this builder
-         */
+         **/
         public Builder localStorageInGbs(Integer localStorageInGbs) {
             this.localStorageInGbs = localStorageInGbs;
             this.__explicitlySet__.add("localStorageInGbs");
@@ -113,69 +103,63 @@ public final class CloudExadataInfrastructureUnallocatedResources
         }
         /**
          * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Integer ocpus;
 
         /**
          * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
-         *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Integer ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
         /**
-         * The minimum amount of unallocated memory available across all nodes in the
-         * infrastructure.
-         */
+         * The minimum amount of unallocated memory available across all nodes in the infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Integer memoryInGBs;
 
         /**
-         * The minimum amount of unallocated memory available across all nodes in the
-         * infrastructure.
-         *
+         * The minimum amount of unallocated memory available across all nodes in the infrastructure.
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Integer memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /** Total unallocated exadata storage in the infrastructure in TBs. */
+        /**
+         * Total unallocated exadata storage in the infrastructure in TBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBs")
         private Double exadataStorageInTBs;
 
         /**
          * Total unallocated exadata storage in the infrastructure in TBs.
-         *
          * @param exadataStorageInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataStorageInTBs(Double exadataStorageInTBs) {
             this.exadataStorageInTBs = exadataStorageInTBs;
             this.__explicitlySet__.add("exadataStorageInTBs");
             return this;
         }
         /**
-         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
-         * unallocated resources details.
-         */
+         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusters")
         private java.util.List<CloudAutonomousVmClusterResourceDetails> cloudAutonomousVmClusters;
 
         /**
-         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
-         * unallocated resources details.
-         *
+         * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
          * @param cloudAutonomousVmClusters the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudAutonomousVmClusters(
                 java.util.List<CloudAutonomousVmClusterResourceDetails> cloudAutonomousVmClusters) {
             this.cloudAutonomousVmClusters = cloudAutonomousVmClusters;
@@ -230,7 +214,9 @@ public final class CloudExadataInfrastructureUnallocatedResources
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -240,108 +226,99 @@ public final class CloudExadataInfrastructureUnallocatedResources
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Cloud Exadata infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Cloud Exadata infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Cloud Exadata infrastructure.
      * @return the value
-     */
+     **/
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
 
     /**
-     * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be
-     * unique.
-     */
+     * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureDisplayName")
     private final String cloudExadataInfrastructureDisplayName;
 
     /**
-     * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be
-     * unique.
-     *
+     * The user-friendly name for the Cloud Exadata infrastructure. The name does not need to be unique.
      * @return the value
-     */
+     **/
     public String getCloudExadataInfrastructureDisplayName() {
         return cloudExadataInfrastructureDisplayName;
     }
 
     /**
      * The minimum amount of unallocated storage available across all nodes in the infrastructure.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localStorageInGbs")
     private final Integer localStorageInGbs;
 
     /**
      * The minimum amount of unallocated storage available across all nodes in the infrastructure.
-     *
      * @return the value
-     */
+     **/
     public Integer getLocalStorageInGbs() {
         return localStorageInGbs;
     }
 
-    /** The minimum amount of unallocated ocpus available across all nodes in the infrastructure. */
+    /**
+     * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Integer ocpus;
 
     /**
      * The minimum amount of unallocated ocpus available across all nodes in the infrastructure.
-     *
      * @return the value
-     */
+     **/
     public Integer getOcpus() {
         return ocpus;
     }
 
     /**
      * The minimum amount of unallocated memory available across all nodes in the infrastructure.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Integer memoryInGBs;
 
     /**
      * The minimum amount of unallocated memory available across all nodes in the infrastructure.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /** Total unallocated exadata storage in the infrastructure in TBs. */
+    /**
+     * Total unallocated exadata storage in the infrastructure in TBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataStorageInTBs")
     private final Double exadataStorageInTBs;
 
     /**
      * Total unallocated exadata storage in the infrastructure in TBs.
-     *
      * @return the value
-     */
+     **/
     public Double getExadataStorageInTBs() {
         return exadataStorageInTBs;
     }
 
     /**
-     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
-     * unallocated resources details.
-     */
+     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusters")
     private final java.util.List<CloudAutonomousVmClusterResourceDetails> cloudAutonomousVmClusters;
 
     /**
-     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated
-     * unallocated resources details.
-     *
+     * The list of Cloud Autonomous VM Clusters on the Infrastructure and their associated unallocated resources details.
      * @return the value
-     */
+     **/
     public java.util.List<CloudAutonomousVmClusterResourceDetails> getCloudAutonomousVmClusters() {
         return cloudAutonomousVmClusters;
     }
@@ -353,7 +330,6 @@ public final class CloudExadataInfrastructureUnallocatedResources
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

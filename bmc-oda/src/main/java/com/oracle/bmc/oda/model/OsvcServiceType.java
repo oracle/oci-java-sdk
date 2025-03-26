@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The type of OSVC service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum OsvcServiceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of OSVC service.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum OsvcServiceType {
     Osvc("OSVC"),
     Fusion("FUSION"),
 

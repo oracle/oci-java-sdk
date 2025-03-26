@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.auth;
 
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
-/** Formatter used to create the correct 'keyId' needed for signing requests. */
+/**
+ * Formatter used to create the correct 'keyId' needed for signing requests.
+ */
 public class CustomerKeyIdFormatter {
 
     private CustomerKeyIdFormatter() {}
@@ -14,9 +16,12 @@ public class CustomerKeyIdFormatter {
     /**
      * Creates a keyId from the individual components.
      *
-     * @param tenantId The tenantId
-     * @param userId The userId
-     * @param fingerprint The fingerprint
+     * @param tenantId
+     *            The tenantId
+     * @param userId
+     *            The userId
+     * @param fingerprint
+     *            The fingerprint
      * @return The keyId used to sign requests
      */
     public static String createKeyId(String tenantId, String userId, String fingerprint) {
@@ -26,7 +31,8 @@ public class CustomerKeyIdFormatter {
     /**
      * Creates a keyId from an {@link AuthenticationDetailsProvider}.
      *
-     * @param provider The provider
+     * @param provider
+     *            The provider
      * @return The keyId used to sign requests
      */
     public static String createKeyId(@Nonnull AuthenticationDetailsProvider provider) {

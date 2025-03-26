@@ -6,53 +6,64 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetOptimizerStatisticsAdvisorExecutionScriptExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetOptimizerStatisticsAdvisorExecutionScriptRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetOptimizerStatisticsAdvisorExecutionScriptExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOptimizerStatisticsAdvisorExecutionScriptRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** The name of the Optimizer Statistics Advisor execution. */
+    /**
+     * The name of the Optimizer Statistics Advisor execution.
+     */
     private String executionName;
 
-    /** The name of the Optimizer Statistics Advisor execution. */
+    /**
+     * The name of the Optimizer Statistics Advisor execution.
+     */
     public String getExecutionName() {
         return executionName;
     }
-    /** The name of the optimizer statistics collection execution task. */
+    /**
+     * The name of the optimizer statistics collection execution task.
+     */
     private String taskName;
 
-    /** The name of the optimizer statistics collection execution task. */
+    /**
+     * The name of the optimizer statistics collection execution task.
+     */
     public String getTaskName() {
         return taskName;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     private String opcNamedCredentialId;
 
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     public String getOpcNamedCredentialId() {
         return opcNamedCredentialId;
     }
@@ -60,19 +71,17 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetOptimizerStatisticsAdvisorExecutionScriptRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -81,12 +90,13 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
             return this;
         }
 
-        /** The name of the Optimizer Statistics Advisor execution. */
+        /**
+         * The name of the Optimizer Statistics Advisor execution.
+         */
         private String executionName = null;
 
         /**
          * The name of the Optimizer Statistics Advisor execution.
-         *
          * @param executionName the value to set
          * @return this builder instance
          */
@@ -95,12 +105,13 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
             return this;
         }
 
-        /** The name of the optimizer statistics collection execution task. */
+        /**
+         * The name of the optimizer statistics collection execution task.
+         */
         private String taskName = null;
 
         /**
          * The name of the optimizer statistics collection execution task.
-         *
          * @param taskName the value to set
          * @return this builder instance
          */
@@ -109,12 +120,13 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -123,12 +135,13 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
             return this;
         }
 
-        /** The OCID of the Named Credential. */
+        /**
+         * The OCID of the Named Credential.
+         */
         private String opcNamedCredentialId = null;
 
         /**
          * The OCID of the Named Credential.
-         *
          * @param opcNamedCredentialId the value to set
          * @return this builder instance
          */
@@ -139,19 +152,18 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -163,7 +175,6 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetOptimizerStatisticsAdvisorExecutionScriptRequest o) {
@@ -178,14 +189,12 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
         }
 
         /**
-         * Build the instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest as configured
-         * by this builder
+         * Build the instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest
          */
@@ -198,11 +207,9 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
         }
 
         /**
-         * Build the instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest as configured
-         * by this builder
+         * Build the instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetOptimizerStatisticsAdvisorExecutionScriptRequest
@@ -217,14 +224,12 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
             request.opcRequestId = opcRequestId;
             request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new GetOptimizerStatisticsAdvisorExecutionScriptRequest(managedDatabaseId,
-            // executionName, taskName, opcRequestId, opcNamedCredentialId);
+            // new GetOptimizerStatisticsAdvisorExecutionScriptRequest(managedDatabaseId, executionName, taskName, opcRequestId, opcNamedCredentialId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -238,7 +243,6 @@ public class GetOptimizerStatisticsAdvisorExecutionScriptRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

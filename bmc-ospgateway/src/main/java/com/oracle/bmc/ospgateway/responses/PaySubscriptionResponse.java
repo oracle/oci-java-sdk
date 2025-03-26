@@ -6,11 +6,12 @@ package com.oracle.bmc.ospgateway.responses;
 
 import com.oracle.bmc.ospgateway.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,24 +25,26 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code PaySubscriptionReceipt} instance. */
+    /**
+     * The returned PaySubscriptionReceipt instance.
+     */
     private com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt paySubscriptionReceipt;
 
     /**
-     * The returned {@code PaySubscriptionReceipt} instance.
-     *
+     * The returned PaySubscriptionReceipt instance.
      * @return the value
      */
     public com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt getPaySubscriptionReceipt() {
@@ -57,7 +60,7 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private PaySubscriptionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt paySubscriptionReceipt) {
@@ -67,20 +70,17 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
         this.paySubscriptionReceipt = paySubscriptionReceipt;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<PaySubscriptionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -88,6 +88,7 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -103,12 +104,13 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -117,12 +119,13 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code PaySubscriptionReceipt} instance. */
+        /**
+         * The returned PaySubscriptionReceipt instance.
+         */
         private com.oracle.bmc.ospgateway.model.PaySubscriptionReceipt paySubscriptionReceipt;
 
         /**
-         * The returned {@code PaySubscriptionReceipt} instance.
-         *
+         * The returned PaySubscriptionReceipt instance.
          * @param paySubscriptionReceipt the value to set
          * @return this builder
          */
@@ -134,10 +137,8 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PaySubscriptionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +151,8 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PaySubscriptionResponse build() {
             return new PaySubscriptionResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, paySubscriptionReceipt);
@@ -162,7 +161,6 @@ public class PaySubscriptionResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

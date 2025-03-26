@@ -15,10 +15,14 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class FailingInputStreamTest {
 
-    /** Used by all tests in the class. Individual tests should not modify this. */
+    /**
+     * Used by all tests in the class. Individual tests should not modify this.
+     */
     private static byte[] data;
 
-    /** New one created for each test. */
+    /**
+     * New one created for each test.
+     */
     private InputStream wrappedStream;
 
     @BeforeClass

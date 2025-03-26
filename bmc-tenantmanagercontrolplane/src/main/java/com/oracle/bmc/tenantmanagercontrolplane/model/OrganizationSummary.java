@@ -5,23 +5,21 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * An organization entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * An organization entity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OrganizationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OrganizationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OrganizationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OrganizationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -58,146 +56,149 @@ public final class OrganizationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the organization. */
+        /**
+         * OCID of the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID of the organization.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A display name for the organization. Avoid entering confidential information. */
+        /**
+         * A display name for the organization. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A display name for the organization. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** OCID of the compartment containing the organization. Always a tenancy OCID. */
+        /**
+         * OCID of the compartment containing the organization. Always a tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of the compartment containing the organization. Always a tenancy OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the tenancy that is the organization parent. */
+        /**
+         * The name of the tenancy that is the organization parent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentName")
         private String parentName;
 
         /**
          * The name of the tenancy that is the organization parent.
-         *
          * @param parentName the value to set
          * @return this builder
-         */
+         **/
         public Builder parentName(String parentName) {
             this.parentName = parentName;
             this.__explicitlySet__.add("parentName");
             return this;
         }
         /**
-         * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-         * organization will automatically get assigned this subscription, if a subscription is not
-         * explictly assigned.
-         */
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
         private String defaultUcmSubscriptionId;
 
         /**
-         * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-         * organization will automatically get assigned this subscription, if a subscription is not
-         * explictly assigned.
-         *
+         * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
          * @param defaultUcmSubscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultUcmSubscriptionId(String defaultUcmSubscriptionId) {
             this.defaultUcmSubscriptionId = defaultUcmSubscriptionId;
             this.__explicitlySet__.add("defaultUcmSubscriptionId");
             return this;
         }
-        /** Lifecycle state of the organization. */
+        /**
+         * Lifecycle state of the organization.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Organization.LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the organization.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Organization.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Date and time when the organization was created. */
+        /**
+         * Date and time when the organization was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time when the organization was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Date and time when the organization was last updated. */
+        /**
+         * Date and time when the organization was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Date and time when the organization was last updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -258,7 +259,9 @@ public final class OrganizationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -267,129 +270,132 @@ public final class OrganizationSummary
         return new Builder().copy(this);
     }
 
-    /** OCID of the organization. */
+    /**
+     * OCID of the organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of the organization.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A display name for the organization. Avoid entering confidential information. */
+    /**
+     * A display name for the organization. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A display name for the organization. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** OCID of the compartment containing the organization. Always a tenancy OCID. */
+    /**
+     * OCID of the compartment containing the organization. Always a tenancy OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of the compartment containing the organization. Always a tenancy OCID.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the tenancy that is the organization parent. */
+    /**
+     * The name of the tenancy that is the organization parent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentName")
     private final String parentName;
 
     /**
      * The name of the tenancy that is the organization parent.
-     *
      * @return the value
-     */
+     **/
     public String getParentName() {
         return parentName;
     }
 
     /**
-     * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-     * organization will automatically get assigned this subscription, if a subscription is not
-     * explictly assigned.
-     */
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUcmSubscriptionId")
     private final String defaultUcmSubscriptionId;
 
     /**
-     * OCID of the default Universal Credits Model subscription. Any tenancy joining the
-     * organization will automatically get assigned this subscription, if a subscription is not
-     * explictly assigned.
-     *
+     * OCID of the default Universal Credits Model subscription. Any tenancy joining the organization will automatically get assigned this subscription, if a subscription is not explictly assigned.
      * @return the value
-     */
+     **/
     public String getDefaultUcmSubscriptionId() {
         return defaultUcmSubscriptionId;
     }
 
-    /** Lifecycle state of the organization. */
+    /**
+     * Lifecycle state of the organization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Organization.LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the organization.
-     *
      * @return the value
-     */
+     **/
     public Organization.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Date and time when the organization was created. */
+    /**
+     * Date and time when the organization was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time when the organization was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Date and time when the organization was last updated. */
+    /**
+     * Date and time when the organization was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Date and time when the organization was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -401,7 +407,6 @@ public final class OrganizationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

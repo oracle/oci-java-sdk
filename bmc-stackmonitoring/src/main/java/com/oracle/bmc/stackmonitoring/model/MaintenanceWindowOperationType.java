@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible operation performed in Maintenance Window. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MaintenanceWindowOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation performed in Maintenance Window.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MaintenanceWindowOperationType {
     Update("UPDATE"),
     Create("CREATE"),
     Delete("DELETE"),

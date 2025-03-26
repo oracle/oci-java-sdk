@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible protocol types of HTTP collection method */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum HttpProtocolTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible protocol types of HTTP collection method
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum HttpProtocolTypes {
     Http("HTTP"),
     Https("HTTPS"),
 

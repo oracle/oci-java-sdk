@@ -6,79 +6,76 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityPolicyEntryStatesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSecurityPolicyEntryStatesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSecurityPolicyEntryStatesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSecurityPolicyEntryStatesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSecurityPolicyEntryStatesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the security policy deployment resource. */
+    /**
+     * The OCID of the security policy deployment resource.
+     */
     private String securityPolicyDeploymentId;
 
-    /** The OCID of the security policy deployment resource. */
+    /**
+     * The OCID of the security policy deployment resource.
+     */
     public String getSecurityPolicyDeploymentId() {
         return securityPolicyDeploymentId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The current state of the security policy deployment. */
+    /**
+     * The current state of the security policy deployment.
+     */
     private com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateDeploymentStatus deploymentStatus;
 
-    /** The current state of the security policy deployment. */
+    /**
+     * The current state of the security policy deployment.
+     */
     public com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateDeploymentStatus
             getDeploymentStatus() {
         return deploymentStatus;
     }
     /**
-     * An optional filter to return only resources that match the specified security policy entry
-     * OCID.
+     * An optional filter to return only resources that match the specified security policy entry OCID.
      */
     private String securityPolicyEntryId;
 
     /**
-     * An optional filter to return only resources that match the specified security policy entry
-     * OCID.
+     * An optional filter to return only resources that match the specified security policy entry OCID.
      */
     public String getSecurityPolicyEntryId() {
         return securityPolicyEntryId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -86,15 +83,17 @@ public class ListSecurityPolicyEntryStatesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSecurityPolicyEntryStatesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security policy deployment resource. */
+        /**
+         * The OCID of the security policy deployment resource.
+         */
         private String securityPolicyDeploymentId = null;
 
         /**
          * The OCID of the security policy deployment resource.
-         *
          * @param securityPolicyDeploymentId the value to set
          * @return this builder instance
          */
@@ -104,17 +103,12 @@ public class ListSecurityPolicyEntryStatesRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -124,19 +118,12 @@ public class ListSecurityPolicyEntryStatesRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -145,13 +132,14 @@ public class ListSecurityPolicyEntryStatesRequest
             return this;
         }
 
-        /** The current state of the security policy deployment. */
+        /**
+         * The current state of the security policy deployment.
+         */
         private com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateDeploymentStatus
                 deploymentStatus = null;
 
         /**
          * The current state of the security policy deployment.
-         *
          * @param deploymentStatus the value to set
          * @return this builder instance
          */
@@ -163,15 +151,12 @@ public class ListSecurityPolicyEntryStatesRequest
         }
 
         /**
-         * An optional filter to return only resources that match the specified security policy
-         * entry OCID.
+         * An optional filter to return only resources that match the specified security policy entry OCID.
          */
         private String securityPolicyEntryId = null;
 
         /**
-         * An optional filter to return only resources that match the specified security policy
-         * entry OCID.
-         *
+         * An optional filter to return only resources that match the specified security policy entry OCID.
          * @param securityPolicyEntryId the value to set
          * @return this builder instance
          */
@@ -180,12 +165,13 @@ public class ListSecurityPolicyEntryStatesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -196,19 +182,18 @@ public class ListSecurityPolicyEntryStatesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -220,7 +205,6 @@ public class ListSecurityPolicyEntryStatesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSecurityPolicyEntryStatesRequest o) {
@@ -238,11 +222,10 @@ public class ListSecurityPolicyEntryStatesRequest
         /**
          * Build the instance of ListSecurityPolicyEntryStatesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSecurityPolicyEntryStatesRequest
          */
@@ -256,8 +239,7 @@ public class ListSecurityPolicyEntryStatesRequest
         /**
          * Build the instance of ListSecurityPolicyEntryStatesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSecurityPolicyEntryStatesRequest
@@ -272,14 +254,12 @@ public class ListSecurityPolicyEntryStatesRequest
             request.securityPolicyEntryId = securityPolicyEntryId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSecurityPolicyEntryStatesRequest(securityPolicyDeploymentId, limit, page,
-            // deploymentStatus, securityPolicyEntryId, opcRequestId);
+            // new ListSecurityPolicyEntryStatesRequest(securityPolicyDeploymentId, limit, page, deploymentStatus, securityPolicyEntryId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -294,7 +274,6 @@ public class ListSecurityPolicyEntryStatesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

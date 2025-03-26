@@ -10,7 +10,7 @@ import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
 
 import com.oracle.bmc.util.internal.Validate;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 
 public final class MultipartUtils {
     private static final org.slf4j.Logger LOG =
@@ -54,7 +54,8 @@ public final class MultipartUtils {
                 contentLength <= MAX_SUPPORTED_CONTENT_LENGTH,
                 String.format(
                         "Content length [%s] exceeds max supported by ObjectStorage [%s]",
-                        contentLength, MAX_SUPPORTED_CONTENT_LENGTH));
+                        contentLength,
+                        MAX_SUPPORTED_CONTENT_LENGTH));
 
         final long configuredSizePerPart = config.getMinimumLengthPerUploadPart() * MiB;
         return isCalculatedPartsLessThanOrEqualToMaxParts(configuredSizePerPart, contentLength)
@@ -63,8 +64,8 @@ public final class MultipartUtils {
     }
 
     /**
-     * Test whether or not the MD5 value should be calculated for the given request when issuing a
-     * single upload (non-multipart) request.
+     * Test whether or not the MD5 value should be calculated for the given request when issuing a single
+     * upload (non-multipart) request.
      *
      * @param config The configuration to use.
      * @param request The request being sent.
@@ -190,13 +191,13 @@ public final class MultipartUtils {
         LOG.warn(
                 "Number of parts to upload [%s] is greater than the maximum number of parts allowed [%s] for given "
                         + "content length [%s]. Consider increasing the MinimumLengthPerUploadPart configuration option",
-                calculatedNumParts, contentLength);
+                calculatedNumParts,
+                contentLength);
         return false;
     }
 
     /**
      * Fetches the size per part based on {@link UploadConfiguration#MAXIMUM_NUM_ALLOWED_PARTS}.
-     *
      * @param contentLength the length in bytes of the object to upload
      * @param configuredSizePerPart the configured size per part in bytes
      * @return the size per part in bytes

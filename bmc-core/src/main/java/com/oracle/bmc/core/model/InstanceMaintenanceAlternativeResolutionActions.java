@@ -5,12 +5,11 @@
 package com.oracle.bmc.core.model;
 
 /**
- * These are alternative actions to the requested instanceAction that can be taken to resolve the
- * Maintenance.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum InstanceMaintenanceAlternativeResolutionActions
-        implements com.oracle.bmc.http.internal.BmcEnum {
+ * These are alternative actions to the requested instanceAction that can be taken to resolve the Maintenance.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum InstanceMaintenanceAlternativeResolutionActions {
     RebootMigration("REBOOT_MIGRATION"),
     Terminate("TERMINATE"),
 

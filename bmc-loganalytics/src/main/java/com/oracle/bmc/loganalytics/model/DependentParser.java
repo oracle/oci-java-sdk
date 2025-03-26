@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A parser used by another parser. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A parser used by another parser.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DependentParser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DependentParser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DependentParser extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parserName",
@@ -48,95 +45,101 @@ public final class DependentParser
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The parser name. */
+        /**
+         * The parser name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserName")
         private String parserName;
 
         /**
          * The parser name.
-         *
          * @param parserName the value to set
          * @return this builder
-         */
+         **/
         public Builder parserName(String parserName) {
             this.parserName = parserName;
             this.__explicitlySet__.add("parserName");
             return this;
         }
-        /** The parser display name. */
+        /**
+         * The parser display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserDisplayName")
         private String parserDisplayName;
 
         /**
          * The parser display name.
-         *
          * @param parserDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder parserDisplayName(String parserDisplayName) {
             this.parserDisplayName = parserDisplayName;
             this.__explicitlySet__.add("parserDisplayName");
             return this;
         }
-        /** The parser unique identifier. */
+        /**
+         * The parser unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserId")
         private Long parserId;
 
         /**
          * The parser unique identifier.
-         *
          * @param parserId the value to set
          * @return this builder
-         */
+         **/
         public Builder parserId(Long parserId) {
             this.parserId = parserId;
             this.__explicitlySet__.add("parserId");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
-         */
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /** The parser type */
+        /**
+         * The parser type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parserType")
         private ParserType parserType;
 
         /**
          * The parser type
-         *
          * @param parserType the value to set
          * @return this builder
-         */
+         **/
         public Builder parserType(ParserType parserType) {
             this.parserType = parserType;
             this.__explicitlySet__.add("parserType");
             return this;
         }
-        /** The list of dependencies of the parser. */
+        /**
+         * The list of dependencies of the parser.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
         private java.util.List<Dependency> dependencies;
 
         /**
          * The list of dependencies of the parser.
-         *
          * @param dependencies the value to set
          * @return this builder
-         */
+         **/
         public Builder dependencies(java.util.List<Dependency> dependencies) {
             this.dependencies = dependencies;
             this.__explicitlySet__.add("dependencies");
@@ -185,7 +188,9 @@ public final class DependentParser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,64 +199,70 @@ public final class DependentParser
         return new Builder().copy(this);
     }
 
-    /** The parser name. */
+    /**
+     * The parser name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserName")
     private final String parserName;
 
     /**
      * The parser name.
-     *
      * @return the value
-     */
+     **/
     public String getParserName() {
         return parserName;
     }
 
-    /** The parser display name. */
+    /**
+     * The parser display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserDisplayName")
     private final String parserDisplayName;
 
     /**
      * The parser display name.
-     *
      * @return the value
-     */
+     **/
     public String getParserDisplayName() {
         return parserDisplayName;
     }
 
-    /** The parser unique identifier. */
+    /**
+     * The parser unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserId")
     private final Long parserId;
 
     /**
      * The parser unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getParserId() {
         return parserId;
     }
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
-     */
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /** The parser type */
-    public enum ParserType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The parser type
+     **/
+    public enum ParserType {
         Xml("XML"),
         Json("JSON"),
         Regex("REGEX"),
@@ -259,8 +270,8 @@ public final class DependentParser
         Delimited("DELIMITED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -299,28 +310,30 @@ public final class DependentParser
             return UnknownEnumValue;
         }
     };
-    /** The parser type */
+    /**
+     * The parser type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parserType")
     private final ParserType parserType;
 
     /**
      * The parser type
-     *
      * @return the value
-     */
+     **/
     public ParserType getParserType() {
         return parserType;
     }
 
-    /** The list of dependencies of the parser. */
+    /**
+     * The list of dependencies of the parser.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
     private final java.util.List<Dependency> dependencies;
 
     /**
      * The list of dependencies of the parser.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Dependency> getDependencies() {
         return dependencies;
     }
@@ -332,7 +345,6 @@ public final class DependentParser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

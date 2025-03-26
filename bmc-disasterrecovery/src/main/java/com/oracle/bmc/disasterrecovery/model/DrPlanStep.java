@@ -5,21 +5,19 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Details of a step in a DR plan. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Details of a step in a DR plan.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrPlanStep.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrPlanStep extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -61,20 +59,21 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
     public static class Builder {
         /**
          * The unique id of the step. Must not be modified by the user.
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
-         * <p>Example: {@code sgid1.step..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique id of the step. Must not be modified by the user.
-         *
-         * <p>Example: {@code sgid1.step..uniqueID}
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -82,20 +81,21 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
-         * <p>Example: {@code sgid1.group..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
-         *
-         * <p>Example: {@code sgid1.group..uniqueID}
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
-         */
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -103,26 +103,30 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The OCID of the member associated with this step.
+         * <p>
+         * Example: {@code ocid1.database.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.database.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memberId")
         private String memberId;
 
         /**
          * The OCID of the member associated with this step.
-         *
-         * <p>Example: {@code ocid1.database.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.database.oc1..uniqueID}
          *
          * @param memberId the value to set
          * @return this builder
-         */
+         **/
         public Builder memberId(String memberId) {
             this.memberId = memberId;
             this.__explicitlySet__.add("memberId");
             return this;
         }
-        /** The plan step type. */
+        /**
+         * The plan step type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanStepType type;
 
@@ -131,7 +135,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DrPlanStepType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -139,20 +143,21 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The DR plan step refresh status.
+         * <p>
+         * Example: {@code STEP_ADDED}
          *
-         * <p>Example: {@code STEP_ADDED}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
         private DrPlanStepRefreshStatus refreshStatus;
 
         /**
          * The DR plan step refresh status.
-         *
-         * <p>Example: {@code STEP_ADDED}
+         * <p>
+         * Example: {@code STEP_ADDED}
          *
          * @param refreshStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder refreshStatus(DrPlanStepRefreshStatus refreshStatus) {
             this.refreshStatus = refreshStatus;
             this.__explicitlySet__.add("refreshStatus");
@@ -160,26 +165,30 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The display name of the group.
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the group.
-         *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The error mode for this step. */
+        /**
+         * The error mode for this step.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
         private DrPlanStepErrorMode errorMode;
 
@@ -188,7 +197,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param errorMode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMode(DrPlanStepErrorMode errorMode) {
             this.errorMode = errorMode;
             this.__explicitlySet__.add("errorMode");
@@ -196,20 +205,21 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The timeout in seconds for executing this step.
+         * <p>
+         * Example: {@code 600}
          *
-         * <p>Example: {@code 600}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeout")
         private Integer timeout;
 
         /**
          * The timeout in seconds for executing this step.
-         *
-         * <p>Example: {@code 600}
+         * <p>
+         * Example: {@code 600}
          *
          * @param timeout the value to set
          * @return this builder
-         */
+         **/
         public Builder timeout(Integer timeout) {
             this.timeout = timeout;
             this.__explicitlySet__.add("timeout");
@@ -217,20 +227,21 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * A flag indicating whether this step should be enabled for execution.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A flag indicating whether this step should be enabled for execution.
-         *
-         * <p>Example: {@code true}
+         * <p>
+         * Example: {@code true}
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -304,7 +315,9 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -315,62 +328,68 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The unique id of the step. Must not be modified by the user.
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
-     * <p>Example: {@code sgid1.step..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique id of the step. Must not be modified by the user.
-     *
-     * <p>Example: {@code sgid1.step..uniqueID}
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
-     * <p>Example: {@code sgid1.group..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
-     *
-     * <p>Example: {@code sgid1.group..uniqueID}
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getGroupId() {
         return groupId;
     }
 
     /**
      * The OCID of the member associated with this step.
+     * <p>
+     * Example: {@code ocid1.database.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.database.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
 
     /**
      * The OCID of the member associated with this step.
-     *
-     * <p>Example: {@code ocid1.database.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.database.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getMemberId() {
         return memberId;
     }
 
-    /** The plan step type. */
+    /**
+     * The plan step type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanStepType type;
 
@@ -378,50 +397,55 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
      * The plan step type.
      *
      * @return the value
-     */
+     **/
     public DrPlanStepType getType() {
         return type;
     }
 
     /**
      * The DR plan step refresh status.
+     * <p>
+     * Example: {@code STEP_ADDED}
      *
-     * <p>Example: {@code STEP_ADDED}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
     private final DrPlanStepRefreshStatus refreshStatus;
 
     /**
      * The DR plan step refresh status.
-     *
-     * <p>Example: {@code STEP_ADDED}
+     * <p>
+     * Example: {@code STEP_ADDED}
      *
      * @return the value
-     */
+     **/
     public DrPlanStepRefreshStatus getRefreshStatus() {
         return refreshStatus;
     }
 
     /**
      * The display name of the group.
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the group.
-     *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The error mode for this step. */
+    /**
+     * The error mode for this step.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
     private final DrPlanStepErrorMode errorMode;
 
@@ -429,45 +453,47 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
      * The error mode for this step.
      *
      * @return the value
-     */
+     **/
     public DrPlanStepErrorMode getErrorMode() {
         return errorMode;
     }
 
     /**
      * The timeout in seconds for executing this step.
+     * <p>
+     * Example: {@code 600}
      *
-     * <p>Example: {@code 600}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final Integer timeout;
 
     /**
      * The timeout in seconds for executing this step.
-     *
-     * <p>Example: {@code 600}
+     * <p>
+     * Example: {@code 600}
      *
      * @return the value
-     */
+     **/
     public Integer getTimeout() {
         return timeout;
     }
 
     /**
      * A flag indicating whether this step should be enabled for execution.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A flag indicating whether this step should be enabled for execution.
-     *
-     * <p>Example: {@code true}
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -486,7 +512,6 @@ public final class DrPlanStep extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

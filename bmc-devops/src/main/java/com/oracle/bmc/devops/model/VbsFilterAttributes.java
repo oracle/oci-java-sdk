@@ -5,23 +5,21 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Attributes to filter VBS events. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Attributes to filter VBS events.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VbsFilterAttributes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VbsFilterAttributes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VbsFilterAttributes.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VbsFilterAttributes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"headRef", "baseRef", "repositoryName", "fileFilter"})
     public VbsFilterAttributes(
@@ -35,46 +33,49 @@ public final class VbsFilterAttributes
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Branch for push event; source branch for pull requests. */
+        /**
+         * Branch for push event; source branch for pull requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headRef")
         private String headRef;
 
         /**
          * Branch for push event; source branch for pull requests.
-         *
          * @param headRef the value to set
          * @return this builder
-         */
+         **/
         public Builder headRef(String headRef) {
             this.headRef = headRef;
             this.__explicitlySet__.add("headRef");
             return this;
         }
-        /** The target branch for pull requests; not applicable for push requests. */
+        /**
+         * The target branch for pull requests; not applicable for push requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
         private String baseRef;
 
         /**
          * The target branch for pull requests; not applicable for push requests.
-         *
          * @param baseRef the value to set
          * @return this builder
-         */
+         **/
         public Builder baseRef(String baseRef) {
             this.baseRef = baseRef;
             this.__explicitlySet__.add("baseRef");
             return this;
         }
-        /** The repository name for trigger events. */
+        /**
+         * The repository name for trigger events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
         private String repositoryName;
 
         /**
          * The repository name for trigger events.
-         *
          * @param repositoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryName(String repositoryName) {
             this.repositoryName = repositoryName;
             this.__explicitlySet__.add("repositoryName");
@@ -121,7 +122,9 @@ public final class VbsFilterAttributes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,41 +133,44 @@ public final class VbsFilterAttributes
         return new Builder().copy(this);
     }
 
-    /** Branch for push event; source branch for pull requests. */
+    /**
+     * Branch for push event; source branch for pull requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headRef")
     private final String headRef;
 
     /**
      * Branch for push event; source branch for pull requests.
-     *
      * @return the value
-     */
+     **/
     public String getHeadRef() {
         return headRef;
     }
 
-    /** The target branch for pull requests; not applicable for push requests. */
+    /**
+     * The target branch for pull requests; not applicable for push requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseRef")
     private final String baseRef;
 
     /**
      * The target branch for pull requests; not applicable for push requests.
-     *
      * @return the value
-     */
+     **/
     public String getBaseRef() {
         return baseRef;
     }
 
-    /** The repository name for trigger events. */
+    /**
+     * The repository name for trigger events.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryName")
     private final String repositoryName;
 
     /**
      * The repository name for trigger events.
-     *
      * @return the value
-     */
+     **/
     public String getRepositoryName() {
         return repositoryName;
     }
@@ -183,7 +189,6 @@ public final class VbsFilterAttributes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

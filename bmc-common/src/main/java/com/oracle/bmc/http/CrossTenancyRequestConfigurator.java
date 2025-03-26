@@ -4,34 +4,31 @@
  */
 package com.oracle.bmc.http;
 
-import com.oracle.bmc.http.client.HttpClientBuilder;
-import com.oracle.bmc.http.internal.CrossTenancyRequestClientFilter;
 import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.http.internal.CrossTenancyRequestClientFilter;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 import java.util.Arrays;
 
-/** A configurator that causes the client to set the cross-tenancy request header. */
+/**
+ * A configurator that causes the client to set the cross-tenancy request header.
+ */
 public class CrossTenancyRequestConfigurator implements ClientConfigurator {
     private final ClientConfigurator baseConfigurator;
     private final String[] authorizedTenancyIds;
 
     /**
-     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the
-     * {@link DefaultConnectorConfigurator}.
-     *
-     * @param authorizedTenancyIds tenancy OCIDs that might be accessed by requests made by the
-     *     client configured
+     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the {@link JerseyDefaultConnectorConfigurator}.
+     * @param authorizedTenancyIds tenancy OCIDs that might be accessed by requests made by the client configured
      */
     public CrossTenancyRequestConfigurator(String[] authorizedTenancyIds) {
-        this(authorizedTenancyIds, new DefaultConnectorConfigurator());
+        this(authorizedTenancyIds, new JerseyDefaultConnectorConfigurator());
     }
 
     /**
-     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the
-     * passed in configurator.
-     *
-     * @param authorizedTenancyIds tenancy OCIDs that might be accessed by requests made by the
-     *     client configured
+     * A configurator that sets the cross-tenancy request header, but otherwise behaves like the passed in configurator.
+     * @param authorizedTenancyIds tenancy OCIDs that might be accessed by requests made by the client configured
      * @param baseConfigurator base configurator
      */
     public CrossTenancyRequestConfigurator(
@@ -51,10 +48,13 @@ public class CrossTenancyRequestConfigurator implements ClientConfigurator {
     }
 
     @Override
-    public void customizeClient(HttpClientBuilder builder) {
-        baseConfigurator.customizeClient(builder);
-        builder.registerRequestInterceptor(
-                CrossTenancyRequestClientFilter.PRIORITY,
-                new CrossTenancyRequestClientFilter(authorizedTenancyIds));
+    public void customizeBuilder(ClientBuilder builder) {
+        baseConfigurator.customizeBuilder(builder);
+    }
+
+    @Override
+    public void customizeClient(Client client) {
+        baseConfigurator.customizeClient(client);
+        client.register(new CrossTenancyRequestClientFilter(authorizedTenancyIds));
     }
 }

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The possible content types of a named credential. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum NamedCredentialContentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The possible content types of a named credential.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum NamedCredentialContentType {
     Basic("BASIC"),
 
     /**

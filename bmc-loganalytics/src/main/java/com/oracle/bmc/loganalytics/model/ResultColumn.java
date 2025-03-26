@@ -5,21 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Querylanguage result column. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Querylanguage result column.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResultColumn.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResultColumn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResultColumn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"internalName", "displayName", "valueType"})
     public ResultColumn(String internalName, String displayName, ValueType valueType) {
@@ -31,7 +30,10 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Internal identifier for the column. */
+        /**
+         * Internal identifier for the column.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalName")
         private String internalName;
 
@@ -40,13 +42,16 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param internalName the value to set
          * @return this builder
-         */
+         **/
         public Builder internalName(String internalName) {
             this.internalName = internalName;
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** Display name - will be alias if result column is renamed by queryString. */
+        /**
+         * Display name - will be alias if result column is renamed by queryString.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -55,13 +60,16 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Field denoting column data type. */
+        /**
+         * Field denoting column data type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
@@ -70,7 +78,7 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param valueType the value to set
          * @return this builder
-         */
+         **/
         public Builder valueType(ValueType valueType) {
             this.valueType = valueType;
             this.__explicitlySet__.add("valueType");
@@ -104,7 +112,9 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,7 +123,10 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Internal identifier for the column. */
+    /**
+     * Internal identifier for the column.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalName")
     private final String internalName;
 
@@ -121,12 +134,15 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
      * Internal identifier for the column.
      *
      * @return the value
-     */
+     **/
     public String getInternalName() {
         return internalName;
     }
 
-    /** Display name - will be alias if result column is renamed by queryString. */
+    /**
+     * Display name - will be alias if result column is renamed by queryString.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -134,12 +150,15 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
      * Display name - will be alias if result column is renamed by queryString.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Field denoting column data type. */
+    /**
+     * Field denoting column data type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
@@ -147,7 +166,7 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
      * Field denoting column data type.
      *
      * @return the value
-     */
+     **/
     public ValueType getValueType() {
         return valueType;
     }
@@ -159,7 +178,6 @@ public final class ResultColumn extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

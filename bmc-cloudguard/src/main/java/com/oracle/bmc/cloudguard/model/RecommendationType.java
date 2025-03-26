@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Recommendation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum RecommendationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Recommendation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum RecommendationType {
     DetectorProblems("DETECTOR_PROBLEMS"),
     ResolvedProblems("RESOLVED_PROBLEMS"),
 

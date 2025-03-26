@@ -5,24 +5,21 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * The results of an annotations search. It contains AnnotationSummary items and other information,
- * such as metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * The results of an annotations search. It contains AnnotationSummary items and other information, such as metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnnotationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AnnotationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AnnotationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AnnotationCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public AnnotationCollection(java.util.List<AnnotationSummary> items) {
@@ -32,16 +29,17 @@ public final class AnnotationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of annotations. */
+        /**
+         * The list of annotations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<AnnotationSummary> items;
 
         /**
          * The list of annotations.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<AnnotationSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -68,7 +66,9 @@ public final class AnnotationCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +77,16 @@ public final class AnnotationCollection
         return new Builder().copy(this);
     }
 
-    /** The list of annotations. */
+    /**
+     * The list of annotations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<AnnotationSummary> items;
 
     /**
      * The list of annotations.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AnnotationSummary> getItems() {
         return items;
     }
@@ -97,7 +98,6 @@ public final class AnnotationCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

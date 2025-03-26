@@ -6,12 +6,13 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Types of Inspect Action on the traffic flow.
+ * <p>
+ * INSPECT - Inspect the traffic.
+ *   * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the traffic.
  *
- * <p>INSPECT - Inspect the traffic. * INSPECT_AND_CAPTURE_LOG - Inspect and capture logs for the
- * traffic.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum InspectActionType implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum InspectActionType {
     Inspect("INSPECT"),
     InspectAndCaptureLog("INSPECT_AND_CAPTURE_LOG"),
 

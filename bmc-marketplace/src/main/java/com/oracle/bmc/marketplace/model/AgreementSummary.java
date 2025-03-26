@@ -5,22 +5,19 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for a summary of an end user license agreement. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * The model for a summary of an end user license agreement.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AgreementSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AgreementSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AgreementSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "contentUrl", "author", "prompt"})
     public AgreementSummary(String id, String contentUrl, Author author, String prompt) {
@@ -33,61 +30,65 @@ public final class AgreementSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier for the agreement. */
+        /**
+         * The unique identifier for the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier for the agreement.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The content URL of the agreement. */
+        /**
+         * The content URL of the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
         private String contentUrl;
 
         /**
          * The content URL of the agreement.
-         *
          * @param contentUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder contentUrl(String contentUrl) {
             this.contentUrl = contentUrl;
             this.__explicitlySet__.add("contentUrl");
             return this;
         }
-        /** Who authored the agreement. */
+        /**
+         * Who authored the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("author")
         private Author author;
 
         /**
          * Who authored the agreement.
-         *
          * @param author the value to set
          * @return this builder
-         */
+         **/
         public Builder author(Author author) {
             this.author = author;
             this.__explicitlySet__.add("author");
             return this;
         }
-        /** Textual prompt to read and accept the agreement. */
+        /**
+         * Textual prompt to read and accept the agreement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prompt")
         private String prompt;
 
         /**
          * Textual prompt to read and accept the agreement.
-         *
          * @param prompt the value to set
          * @return this builder
-         */
+         **/
         public Builder prompt(String prompt) {
             this.prompt = prompt;
             this.__explicitlySet__.add("prompt");
@@ -124,7 +125,9 @@ public final class AgreementSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,41 +136,45 @@ public final class AgreementSummary
         return new Builder().copy(this);
     }
 
-    /** The unique identifier for the agreement. */
+    /**
+     * The unique identifier for the agreement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier for the agreement.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The content URL of the agreement. */
+    /**
+     * The content URL of the agreement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentUrl")
     private final String contentUrl;
 
     /**
      * The content URL of the agreement.
-     *
      * @return the value
-     */
+     **/
     public String getContentUrl() {
         return contentUrl;
     }
 
-    /** Who authored the agreement. */
-    public enum Author implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Who authored the agreement.
+     **/
+    public enum Author {
         Oracle("ORACLE"),
         Partner("PARTNER"),
         Pii("PII"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -205,28 +212,30 @@ public final class AgreementSummary
             return UnknownEnumValue;
         }
     };
-    /** Who authored the agreement. */
+    /**
+     * Who authored the agreement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("author")
     private final Author author;
 
     /**
      * Who authored the agreement.
-     *
      * @return the value
-     */
+     **/
     public Author getAuthor() {
         return author;
     }
 
-    /** Textual prompt to read and accept the agreement. */
+    /**
+     * Textual prompt to read and accept the agreement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
     private final String prompt;
 
     /**
      * Textual prompt to read and accept the agreement.
-     *
      * @return the value
-     */
+     **/
     public String getPrompt() {
         return prompt;
     }
@@ -238,7 +247,6 @@ public final class AgreementSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

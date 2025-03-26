@@ -33,15 +33,12 @@ public class DeleteTagExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // TODO: Provide the tag name to be deleted and tagNamespace name in which this tag belongs
-        // to.
+        // TODO: Provide the tag name to be deleted and tagNamespace name in which this tag belongs to.
         String tagNamespaceName = "CHANGE_ME";
         String tagName = "CHANGE_ME";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -50,7 +47,7 @@ public class DeleteTagExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        final Identity identityClient = IdentityClient.builder().build(provider);
+        Identity identityClient = new IdentityClient(provider);
 
         // Get the tagnamespace of given name from tenancy
         TagNamespaceSummary tagNamespace =

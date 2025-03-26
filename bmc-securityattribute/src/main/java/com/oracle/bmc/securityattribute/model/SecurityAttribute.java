@@ -5,29 +5,27 @@
 package com.oracle.bmc.securityattribute.model;
 
 /**
- * A security attribute that belongs to a specific security attribute namespace. Security attributes
- * must be created in a tenancy before a user can apply them to resources. For more information, see
- * [Managing Security
- * Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+ * A security attribute that belongs to a specific security attribute namespace. Security attributes must be created in a tenancy before
+ * a user can apply them to resources.
+ * For more information, see [Managing Security Attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attributes.htm).
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values
+ * using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecurityAttribute.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SecurityAttribute
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SecurityAttribute.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SecurityAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -70,41 +68,42 @@ public final class SecurityAttribute
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains the security attribute definition. */
+        /**
+         * The OCID of the compartment that contains the security attribute definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the security attribute definition.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The OCID of the security attribute namespace that contains the security attribute
-         * definition.
-         */
+         * The OCID of the security attribute namespace that contains the security attribute definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributeNamespaceId")
         private String securityAttributeNamespaceId;
 
         /**
-         * The OCID of the security attribute namespace that contains the security attribute
-         * definition.
-         *
+         * The OCID of the security attribute namespace that contains the security attribute definition.
          * @param securityAttributeNamespaceId the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributeNamespaceId(String securityAttributeNamespaceId) {
             this.securityAttributeNamespaceId = securityAttributeNamespaceId;
             this.__explicitlySet__.add("securityAttributeNamespaceId");
             return this;
         }
-        /** The name of the security attribute namespace that contains the security attribute. */
+        /**
+         * The name of the security attribute namespace that contains the security attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributeNamespaceName")
         private String securityAttributeNamespaceName;
 
@@ -113,117 +112,111 @@ public final class SecurityAttribute
          *
          * @param securityAttributeNamespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributeNamespaceName(String securityAttributeNamespaceName) {
             this.securityAttributeNamespaceName = securityAttributeNamespaceName;
             this.__explicitlySet__.add("securityAttributeNamespaceName");
             return this;
         }
-        /** The OCID of the security attribute definition. */
+        /**
+         * The OCID of the security attribute definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the security attribute definition.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The name assigned to the security attribute during creation. This is the security
-         * attribute key. The name must be unique within the security attribute namespace and cannot
-         * be changed.
-         */
+         * The name assigned to the security attribute during creation. This is the security attribute key.
+         * The name must be unique within the security attribute namespace and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name assigned to the security attribute during creation. This is the security
-         * attribute key. The name must be unique within the security attribute namespace and cannot
-         * be changed.
+         * The name assigned to the security attribute during creation. This is the security attribute key.
+         * The name must be unique within the security attribute namespace and cannot be changed.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The description of the security attribute. */
+        /**
+         * The description of the security attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the security attribute.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The data type of the security attribute. */
+        /**
+         * The data type of the security attribute.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The data type of the security attribute.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Indicates whether the security attribute is retired. See [Managing Security Attribute
-         * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
-         */
+         * Indicates whether the security attribute is retired.
+         * See [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
         private Boolean isRetired;
 
         /**
-         * Indicates whether the security attribute is retired. See [Managing Security Attribute
-         * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+         * Indicates whether the security attribute is retired.
+         * See [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
          *
          * @param isRetired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRetired(Boolean isRetired) {
             this.isRetired = isRetired;
             this.__explicitlySet__.add("isRetired");
             return this;
         }
         /**
-         * The security attribute's current state. After creating a security attribute, make sure
-         * its {@code lifecycleState} is ACTIVE before using it. After retiring a security
-         * attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you
-         * delete a security attribute, you cannot delete another security attribute until the
-         * deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
-         */
+         * The security attribute's current state. After creating a security attribute, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The security attribute's current state. After creating a security attribute, make sure
-         * its {@code lifecycleState} is ACTIVE before using it. After retiring a security
-         * attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you
-         * delete a security attribute, you cannot delete another security attribute until the
-         * deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
-         *
+         * The security attribute's current state. After creating a security attribute, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -231,20 +224,21 @@ public final class SecurityAttribute
         }
         /**
          * Date and time the security attribute was created, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Date and time the security attribute was created, in the format defined by RFC3339.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -322,7 +316,9 @@ public final class SecurityAttribute
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,35 +327,38 @@ public final class SecurityAttribute
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains the security attribute definition. */
+    /**
+     * The OCID of the compartment that contains the security attribute definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the security attribute definition.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The OCID of the security attribute namespace that contains the security attribute definition.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributeNamespaceId")
     private final String securityAttributeNamespaceId;
 
     /**
      * The OCID of the security attribute namespace that contains the security attribute definition.
-     *
      * @return the value
-     */
+     **/
     public String getSecurityAttributeNamespaceId() {
         return securityAttributeNamespaceId;
     }
 
-    /** The name of the security attribute namespace that contains the security attribute. */
+    /**
+     * The name of the security attribute namespace that contains the security attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributeNamespaceName")
     private final String securityAttributeNamespaceName;
 
@@ -367,100 +366,101 @@ public final class SecurityAttribute
      * The name of the security attribute namespace that contains the security attribute.
      *
      * @return the value
-     */
+     **/
     public String getSecurityAttributeNamespaceName() {
         return securityAttributeNamespaceName;
     }
 
-    /** The OCID of the security attribute definition. */
+    /**
+     * The OCID of the security attribute definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the security attribute definition.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The name assigned to the security attribute during creation. This is the security attribute
-     * key. The name must be unique within the security attribute namespace and cannot be changed.
-     */
+     * The name assigned to the security attribute during creation. This is the security attribute key.
+     * The name must be unique within the security attribute namespace and cannot be changed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name assigned to the security attribute during creation. This is the security attribute
-     * key. The name must be unique within the security attribute namespace and cannot be changed.
+     * The name assigned to the security attribute during creation. This is the security attribute key.
+     * The name must be unique within the security attribute namespace and cannot be changed.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The description of the security attribute. */
+    /**
+     * The description of the security attribute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the security attribute.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The data type of the security attribute. */
+    /**
+     * The data type of the security attribute.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The data type of the security attribute.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * Indicates whether the security attribute is retired. See [Managing Security Attribute
-     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
-     */
+     * Indicates whether the security attribute is retired.
+     * See [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRetired")
     private final Boolean isRetired;
 
     /**
-     * Indicates whether the security attribute is retired. See [Managing Security Attribute
-     * Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
+     * Indicates whether the security attribute is retired.
+     * See [Managing Security Attribute Namespaces](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/managing-security-attribute-namespaces.htm).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRetired() {
         return isRetired;
     }
 
     /**
-     * The security attribute's current state. After creating a security attribute, make sure its
-     * {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make
-     * sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security
-     * attribute, you cannot delete another security attribute until the deleted tag's {@code
-     * lifecycleState} changes from DELETING to DELETED.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The security attribute's current state. After creating a security attribute, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -500,43 +500,35 @@ public final class SecurityAttribute
         }
     };
     /**
-     * The security attribute's current state. After creating a security attribute, make sure its
-     * {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make
-     * sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security
-     * attribute, you cannot delete another security attribute until the deleted tag's {@code
-     * lifecycleState} changes from DELETING to DELETED.
-     */
+     * The security attribute's current state. After creating a security attribute, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The security attribute's current state. After creating a security attribute, make sure its
-     * {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make
-     * sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security
-     * attribute, you cannot delete another security attribute until the deleted tag's {@code
-     * lifecycleState} changes from DELETING to DELETED.
-     *
+     * The security attribute's current state. After creating a security attribute, make sure its {@code lifecycleState} is ACTIVE before using it. After retiring a security attribute, make sure its {@code lifecycleState} is INACTIVE before using it. If you delete a security attribute, you cannot delete another security attribute until the deleted tag's {@code lifecycleState} changes from DELETING to DELETED.
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Date and time the security attribute was created, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Date and time the security attribute was created, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -555,7 +547,6 @@ public final class SecurityAttribute
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

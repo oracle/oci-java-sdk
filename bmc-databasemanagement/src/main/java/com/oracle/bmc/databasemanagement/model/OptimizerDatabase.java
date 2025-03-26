@@ -6,23 +6,20 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The subset information of the Managed Database resource, which is used by Optimizer Statistics.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OptimizerDatabase.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OptimizerDatabase
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OptimizerDatabase.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OptimizerDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -54,119 +51,116 @@ public final class OptimizerDatabase
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the Managed Database. */
+        /**
+         * The name of the Managed Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Managed Database.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of Oracle Database installation. */
+        /**
+         * The type of Oracle Database installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbType")
         private DatabaseType dbType;
 
         /**
          * The type of Oracle Database installation.
-         *
          * @param dbType the value to set
          * @return this builder
-         */
+         **/
         public Builder dbType(DatabaseType dbType) {
             this.dbType = dbType;
             this.__explicitlySet__.add("dbType");
             return this;
         }
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container
-         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
-         * Container Database.
-         */
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSubType")
         private DatabaseSubType dbSubType;
 
         /**
-         * The subtype of the Oracle Database. Indicates whether the database is a Container
-         * Database, Pluggable Database, Non-container Database, Autonomous Database, or Autonomous
-         * Container Database.
+         * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
+         * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
          *
          * @param dbSubType the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSubType(DatabaseSubType dbSubType) {
             this.dbSubType = dbSubType;
             this.__explicitlySet__.add("dbSubType");
             return this;
         }
-        /** The infrastructure used to deploy the Oracle Database. */
+        /**
+         * The infrastructure used to deploy the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbDeploymentType")
         private DeploymentType dbDeploymentType;
 
         /**
          * The infrastructure used to deploy the Oracle Database.
-         *
          * @param dbDeploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder dbDeploymentType(DeploymentType dbDeploymentType) {
             this.dbDeploymentType = dbDeploymentType;
             this.__explicitlySet__.add("dbDeploymentType");
             return this;
         }
-        /** The version of the Oracle Database. */
+        /**
+         * The version of the Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * The version of the Oracle Database.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the Managed Database resides.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the Managed Database resides.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -219,7 +213,9 @@ public final class OptimizerDatabase
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,106 +225,103 @@ public final class OptimizerDatabase
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the Managed Database. */
+    /**
+     * The name of the Managed Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Managed Database.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of Oracle Database installation. */
+    /**
+     * The type of Oracle Database installation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbType")
     private final DatabaseType dbType;
 
     /**
      * The type of Oracle Database installation.
-     *
      * @return the value
-     */
+     **/
     public DatabaseType getDbType() {
         return dbType;
     }
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
-     * Database.
-     */
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSubType")
     private final DatabaseSubType dbSubType;
 
     /**
      * The subtype of the Oracle Database. Indicates whether the database is a Container Database,
-     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container
-     * Database.
+     * Pluggable Database, Non-container Database, Autonomous Database, or Autonomous Container Database.
      *
      * @return the value
-     */
+     **/
     public DatabaseSubType getDbSubType() {
         return dbSubType;
     }
 
-    /** The infrastructure used to deploy the Oracle Database. */
+    /**
+     * The infrastructure used to deploy the Oracle Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbDeploymentType")
     private final DeploymentType dbDeploymentType;
 
     /**
      * The infrastructure used to deploy the Oracle Database.
-     *
      * @return the value
-     */
+     **/
     public DeploymentType getDbDeploymentType() {
         return dbDeploymentType;
     }
 
-    /** The version of the Oracle Database. */
+    /**
+     * The version of the Oracle Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * The version of the Oracle Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the Managed Database resides.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the Managed Database resides.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database resides.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -340,7 +333,6 @@ public final class OptimizerDatabase
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

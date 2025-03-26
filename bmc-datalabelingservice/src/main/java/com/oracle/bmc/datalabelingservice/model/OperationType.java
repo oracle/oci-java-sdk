@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datalabelingservice.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+public enum OperationType {
     CreateDataset("CREATE_DATASET"),
     DeleteDataset("DELETE_DATASET"),
     MoveDataset("MOVE_DATASET"),

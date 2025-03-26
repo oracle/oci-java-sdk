@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for audit policy provisioning. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details for audit policy provisioning.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProvisionAuditPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ProvisionAuditPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProvisionAuditPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDataSafeServiceAccountExcluded",
@@ -38,34 +37,32 @@ public final class ProvisionAuditPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Option provided to users at the target to indicate whether the Data Safe service account
-         * has to be excluded while provisioning the audit policies.
-         */
+         * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
         private Boolean isDataSafeServiceAccountExcluded;
 
         /**
-         * Option provided to users at the target to indicate whether the Data Safe service account
-         * has to be excluded while provisioning the audit policies.
-         *
+         * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
          * @param isDataSafeServiceAccountExcluded the value to set
          * @return this builder
-         */
+         **/
         public Builder isDataSafeServiceAccountExcluded(Boolean isDataSafeServiceAccountExcluded) {
             this.isDataSafeServiceAccountExcluded = isDataSafeServiceAccountExcluded;
             this.__explicitlySet__.add("isDataSafeServiceAccountExcluded");
             return this;
         }
-        /** The audit policy details for provisioning. */
+        /**
+         * The audit policy details for provisioning.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionAuditConditions")
         private java.util.List<ProvisionAuditConditions> provisionAuditConditions;
 
         /**
          * The audit policy details for provisioning.
-         *
          * @param provisionAuditConditions the value to set
          * @return this builder
-         */
+         **/
         public Builder provisionAuditConditions(
                 java.util.List<ProvisionAuditConditions> provisionAuditConditions) {
             this.provisionAuditConditions = provisionAuditConditions;
@@ -98,7 +95,9 @@ public final class ProvisionAuditPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,31 +107,29 @@ public final class ProvisionAuditPolicyDetails
     }
 
     /**
-     * Option provided to users at the target to indicate whether the Data Safe service account has
-     * to be excluded while provisioning the audit policies.
-     */
+     * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataSafeServiceAccountExcluded")
     private final Boolean isDataSafeServiceAccountExcluded;
 
     /**
-     * Option provided to users at the target to indicate whether the Data Safe service account has
-     * to be excluded while provisioning the audit policies.
-     *
+     * Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
      * @return the value
-     */
+     **/
     public Boolean getIsDataSafeServiceAccountExcluded() {
         return isDataSafeServiceAccountExcluded;
     }
 
-    /** The audit policy details for provisioning. */
+    /**
+     * The audit policy details for provisioning.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionAuditConditions")
     private final java.util.List<ProvisionAuditConditions> provisionAuditConditions;
 
     /**
      * The audit policy details for provisioning.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ProvisionAuditConditions> getProvisionAuditConditions() {
         return provisionAuditConditions;
     }
@@ -144,7 +141,6 @@ public final class ProvisionAuditPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

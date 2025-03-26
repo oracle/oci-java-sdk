@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/** The current state of an instance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum AnalyticsInstanceLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of an instance.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+public enum AnalyticsInstanceLifecycleState {
     Active("ACTIVE"),
     Creating("CREATING"),
     Deleted("DELETED"),

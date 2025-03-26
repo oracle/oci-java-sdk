@@ -5,21 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The error info of the addon. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The error info of the addon.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddonError.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AddonError extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AddonError extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"code", "message", "status"})
     public AddonError(String code, String message, String status) {
@@ -32,49 +30,48 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A short error code that defines the upstream error, meant for programmatic parsing. See
-         * [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
-         */
+         * A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * A short error code that defines the upstream error, meant for programmatic parsing. See
-         * [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
-         *
+         * A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
          * @param code the value to set
          * @return this builder
-         */
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** A human-readable error string of the upstream error. */
+        /**
+         * A human-readable error string of the upstream error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human-readable error string of the upstream error.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** The status of the HTTP response encountered in the upstream error. */
+        /**
+         * The status of the HTTP response encountered in the upstream error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The status of the HTTP response encountered in the upstream error.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -107,7 +104,9 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +116,43 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * A short error code that defines the upstream error, meant for programmatic parsing. See [API
-     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
-     */
+     * A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * A short error code that defines the upstream error, meant for programmatic parsing. See [API
-     * Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
-     *
+     * A short error code that defines the upstream error, meant for programmatic parsing. See [API Errors](https://docs.oracle.com/iaas/Content/API/References/apierrors.htm).
      * @return the value
-     */
+     **/
     public String getCode() {
         return code;
     }
 
-    /** A human-readable error string of the upstream error. */
+    /**
+     * A human-readable error string of the upstream error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human-readable error string of the upstream error.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** The status of the HTTP response encountered in the upstream error. */
+    /**
+     * The status of the HTTP response encountered in the upstream error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status of the HTTP response encountered in the upstream error.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
@@ -166,7 +164,6 @@ public final class AddonError extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

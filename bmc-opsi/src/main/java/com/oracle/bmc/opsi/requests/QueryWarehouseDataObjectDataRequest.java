@@ -6,21 +6,22 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryWarehouseDataObjectDataExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * QueryWarehouseDataObjectDataRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/QueryWarehouseDataObjectDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use QueryWarehouseDataObjectDataRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class QueryWarehouseDataObjectDataRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.QueryWarehouseDataObjectDataDetails> {
 
-    /** Type of the Warehouse. */
+    /**
+     * Type of the Warehouse.
+     */
     private WarehouseType warehouseType;
 
-    /** Type of the Warehouse. */
-    public enum WarehouseType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the Warehouse.
+     **/
+    public enum WarehouseType {
         AwrHubs("awrHubs"),
         ;
 
@@ -52,73 +53,87 @@ public class QueryWarehouseDataObjectDataRequest
         }
     };
 
-    /** Type of the Warehouse. */
+    /**
+     * Type of the Warehouse.
+     */
     public WarehouseType getWarehouseType() {
         return warehouseType;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Warehouse.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+     *
      */
     private String warehouseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Warehouse.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+     *
      */
     public String getWarehouseId() {
         return warehouseId;
     }
-    /** The information to be used for querying a Warehouse. */
+    /**
+     * The information to be used for querying a Warehouse.
+     */
     private com.oracle.bmc.opsi.model.QueryWarehouseDataObjectDataDetails
             queryWarehouseDataObjectDataDetails;
 
-    /** The information to be used for querying a Warehouse. */
+    /**
+     * The information to be used for querying a Warehouse.
+     */
     public com.oracle.bmc.opsi.model.QueryWarehouseDataObjectDataDetails
             getQueryWarehouseDataObjectDataDetails() {
         return queryWarehouseDataObjectDataDetails;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -126,7 +141,6 @@ public class QueryWarehouseDataObjectDataRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -139,15 +153,17 @@ public class QueryWarehouseDataObjectDataRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     QueryWarehouseDataObjectDataRequest,
                     com.oracle.bmc.opsi.model.QueryWarehouseDataObjectDataDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Type of the Warehouse. */
+        /**
+         * Type of the Warehouse.
+         */
         private WarehouseType warehouseType = null;
 
         /**
          * Type of the Warehouse.
-         *
          * @param warehouseType the value to set
          * @return this builder instance
          */
@@ -157,14 +173,13 @@ public class QueryWarehouseDataObjectDataRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Warehouse.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+         *
          */
         private String warehouseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Warehouse.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
          *
          * @param warehouseId the value to set
          * @return this builder instance
@@ -174,13 +189,14 @@ public class QueryWarehouseDataObjectDataRequest
             return this;
         }
 
-        /** The information to be used for querying a Warehouse. */
+        /**
+         * The information to be used for querying a Warehouse.
+         */
         private com.oracle.bmc.opsi.model.QueryWarehouseDataObjectDataDetails
                 queryWarehouseDataObjectDataDetails = null;
 
         /**
          * The information to be used for querying a Warehouse.
-         *
          * @param queryWarehouseDataObjectDataDetails the value to set
          * @return this builder instance
          */
@@ -192,17 +208,20 @@ public class QueryWarehouseDataObjectDataRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -214,16 +233,17 @@ public class QueryWarehouseDataObjectDataRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -234,14 +254,15 @@ public class QueryWarehouseDataObjectDataRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -253,19 +274,18 @@ public class QueryWarehouseDataObjectDataRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -277,7 +297,6 @@ public class QueryWarehouseDataObjectDataRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(QueryWarehouseDataObjectDataRequest o) {
@@ -295,11 +314,10 @@ public class QueryWarehouseDataObjectDataRequest
         /**
          * Build the instance of QueryWarehouseDataObjectDataRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of QueryWarehouseDataObjectDataRequest
          */
@@ -312,7 +330,6 @@ public class QueryWarehouseDataObjectDataRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -325,8 +342,7 @@ public class QueryWarehouseDataObjectDataRequest
         /**
          * Build the instance of QueryWarehouseDataObjectDataRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of QueryWarehouseDataObjectDataRequest
@@ -340,14 +356,12 @@ public class QueryWarehouseDataObjectDataRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new QueryWarehouseDataObjectDataRequest(warehouseType, warehouseId,
-            // queryWarehouseDataObjectDataDetails, limit, page, opcRequestId);
+            // new QueryWarehouseDataObjectDataRequest(warehouseType, warehouseId, queryWarehouseDataObjectDataDetails, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -362,7 +376,6 @@ public class QueryWarehouseDataObjectDataRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

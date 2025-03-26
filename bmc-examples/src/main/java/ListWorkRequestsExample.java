@@ -12,8 +12,8 @@ import com.oracle.bmc.workrequests.responses.ListWorkRequestsResponse;
 import java.io.IOException;
 
 /**
- * This class provides an example of listing Work Requests, filtering by either compartment ID or
- * both compartment ID and resource ID.
+ * This class provides an example of listing Work Requests, filtering by either compartment ID or both compartment ID
+ * and resource ID.
  */
 public class ListWorkRequestsExample {
 
@@ -24,10 +24,10 @@ public class ListWorkRequestsExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment to list all of the Work Requests
-     *       <li>The identifier of the resource to list all of the Work Requests
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment to list all of the Work Requests</li>
+     *   <li>The identifier of the resource to list all of the Work Requests</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
@@ -68,17 +68,15 @@ public class ListWorkRequestsExample {
     }
 
     private static WorkRequestClient getWorkRequestClient() throws IOException {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        WorkRequestClient client = WorkRequestClient.builder().build(provider);
+        WorkRequestClient client = new WorkRequestClient(provider);
         return client;
     }
 }

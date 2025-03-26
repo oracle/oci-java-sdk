@@ -24,7 +24,9 @@ import java.util.Set;
 
 import javax.security.auth.x500.X500Principal;
 
-/** Simple forwarding X509Cerficate class. Overrides all abstract and non-abtract methods. */
+/**
+ * Simple forwarding X509Cerficate class.  Overrides all abstract and non-abtract methods.
+ */
 public abstract class ForwardingX509Certificate extends X509Certificate {
 
     protected abstract X509Certificate delegate();

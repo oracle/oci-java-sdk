@@ -5,25 +5,25 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The interval schedule trigger. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The interval schedule trigger.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduleIntervalTrigger.Builder.class)
+    builder = ScheduleIntervalTrigger.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "triggerType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "triggerType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduleIntervalTrigger extends ScheduleTrigger {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,50 +44,53 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The type of frequency */
+        /**
+         * The type of frequency
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequency")
         private Frequency frequency;
 
         /**
          * The type of frequency
-         *
          * @param frequency the value to set
          * @return this builder
-         */
+         **/
         public Builder frequency(Frequency frequency) {
             this.frequency = frequency;
             this.__explicitlySet__.add("frequency");
             return this;
         }
-        /** The interval of frequency. */
+        /**
+         * The interval of frequency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
         /**
          * The interval of frequency.
-         *
          * @param interval the value to set
          * @return this builder
-         */
+         **/
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
             return this;
         }
         /**
-         * when true and timeStart is null, system generate a random start time between now and now
-         * + interval; isRandomStartTime can be true if timeStart is null.
-         */
+         * when true and timeStart is null, system generate a random start time between now and now + interval;
+         * isRandomStartTime can be true if timeStart is null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRandomStartTime")
         private Boolean isRandomStartTime;
 
         /**
-         * when true and timeStart is null, system generate a random start time between now and now
-         * + interval; isRandomStartTime can be true if timeStart is null.
+         * when true and timeStart is null, system generate a random start time between now and now + interval;
+         * isRandomStartTime can be true if timeStart is null.
          *
          * @param isRandomStartTime the value to set
          * @return this builder
-         */
+         **/
         public Builder isRandomStartTime(Boolean isRandomStartTime) {
             this.isRandomStartTime = isRandomStartTime;
             this.__explicitlySet__.add("isRandomStartTime");
@@ -132,7 +135,9 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -154,14 +159,16 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
         this.isRandomStartTime = isRandomStartTime;
     }
 
-    /** The type of frequency */
-    public enum Frequency implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of frequency
+     **/
+    public enum Frequency {
         Hourly("HOURLY"),
         Daily("DAILY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -200,45 +207,48 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
             return UnknownEnumValue;
         }
     };
-    /** The type of frequency */
+    /**
+     * The type of frequency
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequency")
     private final Frequency frequency;
 
     /**
      * The type of frequency
-     *
      * @return the value
-     */
+     **/
     public Frequency getFrequency() {
         return frequency;
     }
 
-    /** The interval of frequency. */
+    /**
+     * The interval of frequency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
     /**
      * The interval of frequency.
-     *
      * @return the value
-     */
+     **/
     public Integer getInterval() {
         return interval;
     }
 
     /**
-     * when true and timeStart is null, system generate a random start time between now and now +
-     * interval; isRandomStartTime can be true if timeStart is null.
-     */
+     * when true and timeStart is null, system generate a random start time between now and now + interval;
+     * isRandomStartTime can be true if timeStart is null.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRandomStartTime")
     private final Boolean isRandomStartTime;
 
     /**
-     * when true and timeStart is null, system generate a random start time between now and now +
-     * interval; isRandomStartTime can be true if timeStart is null.
+     * when true and timeStart is null, system generate a random start time between now and now + interval;
+     * isRandomStartTime can be true if timeStart is null.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRandomStartTime() {
         return isRandomStartTime;
     }
@@ -250,7 +260,6 @@ public final class ScheduleIntervalTrigger extends ScheduleTrigger {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

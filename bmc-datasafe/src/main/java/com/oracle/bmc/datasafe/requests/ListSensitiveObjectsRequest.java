@@ -6,40 +6,54 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveObjectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveObjectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveObjectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSensitiveObjectsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     private String sensitiveDataModelId;
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     private java.util.List<String> schemaName;
 
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     private java.util.List<String> objectName;
 
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
-    /** A filter to return only items related to a specific object type. */
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     private java.util.List<ObjectType> objectType;
 
-    /** A filter to return only items related to a specific object type. */
-    public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only items related to a specific object type.
+     **/
+    public enum ObjectType {
         All("ALL"),
         Table("TABLE"),
         EditioningView("EDITIONING_VIEW"),
@@ -73,47 +87,43 @@ public class ListSensitiveObjectsRequest
         }
     };
 
-    /** A filter to return only items related to a specific object type. */
+    /**
+     * A filter to return only items related to a specific object type.
+     */
     public java.util.List<ObjectType> getObjectType() {
         return objectType;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -146,21 +156,25 @@ public class ListSensitiveObjectsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder).
+     * The default order is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sorting parameter (sortOrder).
+     * The default order is ascending.
+     *
+     **/
+    public enum SortBy {
         SchemaName("schemaName"),
         ObjectName("objectName"),
         ObjectType("objectType"),
@@ -195,16 +209,21 @@ public class ListSensitiveObjectsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder).
+     * The default order is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -212,15 +231,17 @@ public class ListSensitiveObjectsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSensitiveObjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive data model. */
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
@@ -229,12 +250,13 @@ public class ListSensitiveObjectsRequest
             return this;
         }
 
-        /** A filter to return only items related to specific schema name. */
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
-         *
          * @param schemaName the value to set
          * @return this builder instance
          */
@@ -245,7 +267,6 @@ public class ListSensitiveObjectsRequest
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -253,12 +274,13 @@ public class ListSensitiveObjectsRequest
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific object name. */
+        /**
+         * A filter to return only items related to a specific object name.
+         */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
-         *
          * @param objectName the value to set
          * @return this builder instance
          */
@@ -269,7 +291,6 @@ public class ListSensitiveObjectsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -277,12 +298,13 @@ public class ListSensitiveObjectsRequest
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific object type. */
+        /**
+         * A filter to return only items related to a specific object type.
+         */
         private java.util.List<ObjectType> objectType = null;
 
         /**
          * A filter to return only items related to a specific object type.
-         *
          * @param objectType the value to set
          * @return this builder instance
          */
@@ -293,7 +315,6 @@ public class ListSensitiveObjectsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object type.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -302,17 +323,12 @@ public class ListSensitiveObjectsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -322,19 +338,12 @@ public class ListSensitiveObjectsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -343,12 +352,13 @@ public class ListSensitiveObjectsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -358,14 +368,15 @@ public class ListSensitiveObjectsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder).
+         * The default order is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder).
+         * The default order is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -375,12 +386,13 @@ public class ListSensitiveObjectsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -391,19 +403,18 @@ public class ListSensitiveObjectsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -415,7 +426,6 @@ public class ListSensitiveObjectsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSensitiveObjectsRequest o) {
@@ -436,11 +446,10 @@ public class ListSensitiveObjectsRequest
         /**
          * Build the instance of ListSensitiveObjectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSensitiveObjectsRequest
          */
@@ -454,8 +463,7 @@ public class ListSensitiveObjectsRequest
         /**
          * Build the instance of ListSensitiveObjectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSensitiveObjectsRequest
@@ -472,14 +480,12 @@ public class ListSensitiveObjectsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSensitiveObjectsRequest(sensitiveDataModelId, schemaName, objectName,
-            // objectType, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListSensitiveObjectsRequest(sensitiveDataModelId, schemaName, objectName, objectType, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -497,7 +503,6 @@ public class ListSensitiveObjectsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

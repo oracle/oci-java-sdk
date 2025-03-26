@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to update a Kafka Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information to update a Kafka Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateKafkaConnectionDetails.Builder.class)
+    builder = UpdateKafkaConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -118,48 +119,51 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stream pool being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
         private String streamPoolId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stream pool being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
          *
          * @param streamPoolId the value to set
          * @return this builder
-         */
+         **/
         public Builder streamPoolId(String streamPoolId) {
             this.streamPoolId = streamPoolId;
             this.__explicitlySet__.add("streamPoolId");
             return this;
         }
         /**
-         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-         * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-         * connection to the Kafka cluster. Example: {@code
-         * "server1.example.com:9092,server2.example.com:9092"}
-         */
+         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+         * list of KafkaBootstrapServer objects specified by host/port.
+         * Used for establishing the initial connection to the Kafka cluster.
+         * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private java.util.List<KafkaBootstrapServer> bootstrapServers;
 
         /**
-         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-         * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-         * connection to the Kafka cluster. Example: {@code
-         * "server1.example.com:9092,server2.example.com:9092"}
+         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+         * list of KafkaBootstrapServer objects specified by host/port.
+         * Used for establishing the initial connection to the Kafka cluster.
+         * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
          *
          * @param bootstrapServers the value to set
          * @return this builder
-         */
+         **/
         public Builder bootstrapServers(java.util.List<KafkaBootstrapServer> bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
         }
-        /** Security Type for Kafka. */
+        /**
+         * Security Type for Kafka.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private KafkaConnection.SecurityProtocol securityProtocol;
 
@@ -168,284 +172,288 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
          *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(KafkaConnection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The password Oracle GoldenGate uses to connect the associated system of the given
-         * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
-         */
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated system of the given
-         * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
-         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
-         */
+         * The base64 encoded content of the TrustStore file.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
         private String trustStore;
 
         /**
-         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
-         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         * The base64 encoded content of the TrustStore file.
+         * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStore the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStore(String trustStore) {
             this.trustStore = trustStore;
             this.__explicitlySet__.add("trustStore");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
          *
          * @param trustStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStoreSecretId(String trustStoreSecretId) {
             this.trustStoreSecretId = trustStoreSecretId;
             this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
         /**
-         * The TrustStore password. Deprecated: This field is deprecated and replaced by
-         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
-         */
+         * The TrustStore password.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
         private String trustStorePassword;
 
         /**
-         * The TrustStore password. Deprecated: This field is deprecated and replaced by
-         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         * The TrustStore password.
+         * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStorePassword the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStorePassword(String trustStorePassword) {
             this.trustStorePassword = trustStorePassword;
             this.__explicitlySet__.add("trustStorePassword");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          * @param trustStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
             this.trustStorePasswordSecretId = trustStorePasswordSecretId;
             this.__explicitlySet__.add("trustStorePasswordSecretId");
             return this;
         }
         /**
-         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
-         */
+         * The base64 encoded content of the KeyStore file.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
         private String keyStore;
 
         /**
-         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         * The base64 encoded content of the KeyStore file.
+         * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStore the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStore(String keyStore) {
             this.keyStore = keyStore;
             this.__explicitlySet__.add("keyStore");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
          *
          * @param keyStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreSecretId(String keyStoreSecretId) {
             this.keyStoreSecretId = keyStoreSecretId;
             this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
         /**
-         * The KeyStore password. Deprecated: This field is deprecated and replaced by
-         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
-         */
+         * The KeyStore password.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
         private String keyStorePassword;
 
         /**
-         * The KeyStore password. Deprecated: This field is deprecated and replaced by
-         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         * The KeyStore password.
+         * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStorePassword the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePassword(String keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          * @param keyStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
             this.keyStorePasswordSecretId = keyStorePasswordSecretId;
             this.__explicitlySet__.add("keyStorePasswordSecretId");
             return this;
         }
         /**
-         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided. Deprecated: This field is deprecated and replaced by
-         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
-         */
+         * The password for the cert inside of the KeyStore.
+         * In case it differs from the KeyStore password, it should be provided.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
         private String sslKeyPassword;
 
         /**
-         * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided. Deprecated: This field is deprecated and replaced by
-         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+         * The password for the cert inside of the KeyStore.
+         * In case it differs from the KeyStore password, it should be provided.
+         * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param sslKeyPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder sslKeyPassword(String sslKeyPassword) {
             this.sslKeyPassword = sslKeyPassword;
             this.__explicitlySet__.add("sslKeyPassword");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
          *
          * @param sslKeyPasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
             this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
             return this;
         }
-        /** The base64 encoded content of the consumer.properties file. */
+        /**
+         * The base64 encoded content of the consumer.properties file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerProperties")
         private String consumerProperties;
 
@@ -454,13 +462,16 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
          *
          * @param consumerProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder consumerProperties(String consumerProperties) {
             this.consumerProperties = consumerProperties;
             this.__explicitlySet__.add("consumerProperties");
             return this;
         }
-        /** The base64 encoded content of the producer.properties file. */
+        /**
+         * The base64 encoded content of the producer.properties file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("producerProperties")
         private String producerProperties;
 
@@ -469,7 +480,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
          *
          * @param producerProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder producerProperties(String producerProperties) {
             this.producerProperties = producerProperties;
             this.__explicitlySet__.add("producerProperties");
@@ -606,7 +617,9 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -677,44 +690,47 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stream pool being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
     private final String streamPoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stream pool being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      *
      * @return the value
-     */
+     **/
     public String getStreamPoolId() {
         return streamPoolId;
     }
 
     /**
-     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-     * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-     * connection to the Kafka cluster. Example: {@code
-     * "server1.example.com:9092,server2.example.com:9092"}
-     */
+     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+     * list of KafkaBootstrapServer objects specified by host/port.
+     * Used for establishing the initial connection to the Kafka cluster.
+     * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
     private final java.util.List<KafkaBootstrapServer> bootstrapServers;
 
     /**
-     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-     * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-     * connection to the Kafka cluster. Example: {@code
-     * "server1.example.com:9092,server2.example.com:9092"}
+     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+     * list of KafkaBootstrapServer objects specified by host/port.
+     * Used for establishing the initial connection to the Kafka cluster.
+     * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
      *
      * @return the value
-     */
+     **/
     public java.util.List<KafkaBootstrapServer> getBootstrapServers() {
         return bootstrapServers;
     }
 
-    /** Security Type for Kafka. */
+    /**
+     * Security Type for Kafka.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final KafkaConnection.SecurityProtocol securityProtocol;
 
@@ -722,257 +738,261 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
      * Security Type for Kafka.
      *
      * @return the value
-     */
+     **/
     public KafkaConnection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
-     * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
-     */
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
-     * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
-     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
-     */
+     * The base64 encoded content of the TrustStore file.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
     private final String trustStore;
 
     /**
-     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
-     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     * The base64 encoded content of the TrustStore file.
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getTrustStore() {
         return trustStore;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStoreSecretId() {
         return trustStoreSecretId;
     }
 
     /**
-     * The TrustStore password. Deprecated: This field is deprecated and replaced by
-     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
-     */
+     * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
     private final String trustStorePassword;
 
     /**
-     * The TrustStore password. Deprecated: This field is deprecated and replaced by
-     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     * The TrustStore password.
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getTrustStorePassword() {
         return trustStorePassword;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStorePasswordSecretId() {
         return trustStorePasswordSecretId;
     }
 
     /**
-     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
-     */
+     * The base64 encoded content of the KeyStore file.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
     private final String keyStore;
 
     /**
-     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
-     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     * The base64 encoded content of the KeyStore file.
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getKeyStore() {
         return keyStore;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStoreSecretId() {
         return keyStoreSecretId;
     }
 
     /**
-     * The KeyStore password. Deprecated: This field is deprecated and replaced by
-     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
-     */
+     * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
     private final String keyStorePassword;
 
     /**
-     * The KeyStore password. Deprecated: This field is deprecated and replaced by
-     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     * The KeyStore password.
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getKeyStorePassword() {
         return keyStorePassword;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStorePasswordSecretId() {
         return keyStorePasswordSecretId;
     }
 
     /**
-     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-     * password, it should be provided. Deprecated: This field is deprecated and replaced by
-     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
-     */
+     * The password for the cert inside of the KeyStore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
     private final String sslKeyPassword;
 
     /**
-     * The password for the cert inside of the KeyStore. In case it differs from the KeyStore
-     * password, it should be provided. Deprecated: This field is deprecated and replaced by
-     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
+     * The password for the cert inside of the KeyStore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getSslKeyPassword() {
         return sslKeyPassword;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSslKeyPasswordSecretId() {
         return sslKeyPasswordSecretId;
     }
 
-    /** The base64 encoded content of the consumer.properties file. */
+    /**
+     * The base64 encoded content of the consumer.properties file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerProperties")
     private final String consumerProperties;
 
@@ -980,12 +1000,15 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
      * The base64 encoded content of the consumer.properties file.
      *
      * @return the value
-     */
+     **/
     public String getConsumerProperties() {
         return consumerProperties;
     }
 
-    /** The base64 encoded content of the producer.properties file. */
+    /**
+     * The base64 encoded content of the producer.properties file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("producerProperties")
     private final String producerProperties;
 
@@ -993,7 +1016,7 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
      * The base64 encoded content of the producer.properties file.
      *
      * @return the value
-     */
+     **/
     public String getProducerProperties() {
         return producerProperties;
     }
@@ -1005,7 +1028,6 @@ public final class UpdateKafkaConnectionDetails extends UpdateConnectionDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

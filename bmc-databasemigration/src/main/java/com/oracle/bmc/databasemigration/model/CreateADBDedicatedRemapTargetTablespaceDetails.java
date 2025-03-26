@@ -5,43 +5,43 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Remap tablespace settings that are valid for Dedicated Autonomous Databases. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Remap tablespace settings that are valid for Dedicated Autonomous Databases.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateADBDedicatedRemapTargetTablespaceDetails.Builder.class)
+    builder = CreateADBDedicatedRemapTargetTablespaceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "targetType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "targetType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateADBDedicatedRemapTargetTablespaceDetails
         extends CreateTargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the tablespace on the target database to which the source database tablespace is
-         * to be remapped.
-         */
+         * Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
         private String remapTarget;
 
         /**
-         * Name of the tablespace on the target database to which the source database tablespace is
-         * to be remapped.
+         * Name of the tablespace on the target database to which the source database tablespace is to be remapped.
          *
          * @param remapTarget the value to set
          * @return this builder
-         */
+         **/
         public Builder remapTarget(String remapTarget) {
             this.remapTarget = remapTarget;
             this.__explicitlySet__.add("remapTarget");
@@ -69,7 +69,9 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -85,18 +87,17 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
     }
 
     /**
-     * Name of the tablespace on the target database to which the source database tablespace is to
-     * be remapped.
-     */
+     * Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remapTarget")
     private final String remapTarget;
 
     /**
-     * Name of the tablespace on the target database to which the source database tablespace is to
-     * be remapped.
+     * Name of the tablespace on the target database to which the source database tablespace is to be remapped.
      *
      * @return the value
-     */
+     **/
     public String getRemapTarget() {
         return remapTarget;
     }
@@ -108,7 +109,6 @@ public final class CreateADBDedicatedRemapTargetTablespaceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,94 +6,122 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetResourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetResourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetResourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFleetResourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Fleet identifier. */
+    /**
+     * Unique Fleet identifier.
+     */
     private String fleetId;
 
-    /** Unique Fleet identifier. */
+    /**
+     * Unique Fleet identifier.
+     */
     public String getFleetId() {
         return fleetId;
     }
-    /** Resource Tenancy Id */
+    /**
+     * Resource Tenancy Id
+     */
     private String tenancyId;
 
-    /** Resource Tenancy Id */
+    /**
+     * Resource Tenancy Id
+     */
     public String getTenancyId() {
         return tenancyId;
     }
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState lifecycleState;
 
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only resources whose identifier matches the given identifier. */
+    /**
+     * A filter to return only resources whose identifier matches the given identifier.
+     */
     private String id;
 
-    /** A filter to return only resources whose identifier matches the given identifier. */
+    /**
+     * A filter to return only resources whose identifier matches the given identifier.
+     */
     public String getId() {
         return id;
     }
-    /** A filter to return only resources whose resourceType matches the given resourceType. */
+    /**
+     * A filter to return only resources whose resourceType matches the given resourceType.
+     */
     private String fleetResourceType;
 
-    /** A filter to return only resources whose resourceType matches the given resourceType. */
+    /**
+     * A filter to return only resources whose resourceType matches the given resourceType.
+     */
     public String getFleetResourceType() {
         return fleetResourceType;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -127,16 +155,20 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -144,15 +176,17 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFleetResourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Fleet identifier. */
+        /**
+         * Unique Fleet identifier.
+         */
         private String fleetId = null;
 
         /**
          * Unique Fleet identifier.
-         *
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -161,12 +195,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Resource Tenancy Id */
+        /**
+         * Resource Tenancy Id
+         */
         private String tenancyId = null;
 
         /**
          * Resource Tenancy Id
-         *
          * @param tenancyId the value to set
          * @return this builder instance
          */
@@ -183,7 +218,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -194,12 +228,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -208,12 +243,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only resources whose identifier matches the given identifier. */
+        /**
+         * A filter to return only resources whose identifier matches the given identifier.
+         */
         private String id = null;
 
         /**
          * A filter to return only resources whose identifier matches the given identifier.
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -222,12 +258,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only resources whose resourceType matches the given resourceType. */
+        /**
+         * A filter to return only resources whose resourceType matches the given resourceType.
+         */
         private String fleetResourceType = null;
 
         /**
          * A filter to return only resources whose resourceType matches the given resourceType.
-         *
          * @param fleetResourceType the value to set
          * @return this builder instance
          */
@@ -236,12 +273,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -251,15 +289,12 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -268,12 +303,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -283,14 +319,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -300,12 +335,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -316,19 +352,18 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -340,7 +375,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFleetResourcesRequest o) {
@@ -363,11 +397,10 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListFleetResourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFleetResourcesRequest
          */
@@ -381,8 +414,7 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListFleetResourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFleetResourcesRequest
@@ -401,14 +433,12 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFleetResourcesRequest(fleetId, tenancyId, lifecycleState, displayName, id,
-            // fleetResourceType, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListFleetResourcesRequest(fleetId, tenancyId, lifecycleState, displayName, id, fleetResourceType, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -428,7 +458,6 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

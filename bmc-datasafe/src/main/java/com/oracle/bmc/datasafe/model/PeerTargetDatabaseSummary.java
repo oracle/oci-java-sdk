@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of the peer target database in Data Safe. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details of the peer target database in Data Safe.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PeerTargetDatabaseSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PeerTargetDatabaseSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PeerTargetDatabaseSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,140 +57,145 @@ public final class PeerTargetDatabaseSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The display name of the peer target database in Data Safe. */
+        /**
+         * The display name of the peer target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the peer target database in Data Safe.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the peer target database in Data Safe. */
+        /**
+         * The description of the peer target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the peer target database in Data Safe.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The secondary id assigned for the peer target database in Data Safe. */
+        /**
+         * The secondary id assigned for the peer target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private Integer key;
 
         /**
          * The secondary id assigned for the peer target database in Data Safe.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(Integer key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Role of the database associated to the peer target database. */
+        /**
+         * Role of the database associated to the peer target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private String role;
 
         /**
          * Role of the database associated to the peer target database.
-         *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(String role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-        /** Unique name of the database associated to the peer target database. */
+        /**
+         * Unique name of the database associated to the peer target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
         private String databaseUniqueName;
 
         /**
          * Unique name of the database associated to the peer target database.
-         *
          * @param databaseUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseUniqueName(String databaseUniqueName) {
             this.databaseUniqueName = databaseUniqueName;
             this.__explicitlySet__.add("databaseUniqueName");
             return this;
         }
         /**
-         * The OCID of the Data Guard Association resource in which the database associated to the
-         * peer target database is considered as peer database to the primary database.
-         */
+         * The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataguardAssociationId")
         private String dataguardAssociationId;
 
         /**
-         * The OCID of the Data Guard Association resource in which the database associated to the
-         * peer target database is considered as peer database to the primary database.
-         *
+         * The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
          * @param dataguardAssociationId the value to set
          * @return this builder
-         */
+         **/
         public Builder dataguardAssociationId(String dataguardAssociationId) {
             this.dataguardAssociationId = dataguardAssociationId;
             this.__explicitlySet__.add("dataguardAssociationId");
             return this;
         }
-        /** The date and time of the peer target database registration in Data Safe. */
+        /**
+         * The date and time of the peer target database registration in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time of the peer target database registration in Data Safe.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the peer target database in Data Safe. */
+        /**
+         * The current state of the peer target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private TargetDatabaseLifecycleState lifecycleState;
 
         /**
          * The current state of the peer target database in Data Safe.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(TargetDatabaseLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details about the current state of the peer target database in Data Safe. */
+        /**
+         * Details about the current state of the peer target database in Data Safe.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the peer target database in Data Safe.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -252,7 +256,9 @@ public final class PeerTargetDatabaseSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,123 +267,128 @@ public final class PeerTargetDatabaseSummary
         return new Builder().copy(this);
     }
 
-    /** The display name of the peer target database in Data Safe. */
+    /**
+     * The display name of the peer target database in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the peer target database in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description of the peer target database in Data Safe. */
+    /**
+     * The description of the peer target database in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the peer target database in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The secondary id assigned for the peer target database in Data Safe. */
+    /**
+     * The secondary id assigned for the peer target database in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final Integer key;
 
     /**
      * The secondary id assigned for the peer target database in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public Integer getKey() {
         return key;
     }
 
-    /** Role of the database associated to the peer target database. */
+    /**
+     * Role of the database associated to the peer target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final String role;
 
     /**
      * Role of the database associated to the peer target database.
-     *
      * @return the value
-     */
+     **/
     public String getRole() {
         return role;
     }
 
-    /** Unique name of the database associated to the peer target database. */
+    /**
+     * Unique name of the database associated to the peer target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseUniqueName")
     private final String databaseUniqueName;
 
     /**
      * Unique name of the database associated to the peer target database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseUniqueName() {
         return databaseUniqueName;
     }
 
     /**
-     * The OCID of the Data Guard Association resource in which the database associated to the peer
-     * target database is considered as peer database to the primary database.
-     */
+     * The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataguardAssociationId")
     private final String dataguardAssociationId;
 
     /**
-     * The OCID of the Data Guard Association resource in which the database associated to the peer
-     * target database is considered as peer database to the primary database.
-     *
+     * The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
      * @return the value
-     */
+     **/
     public String getDataguardAssociationId() {
         return dataguardAssociationId;
     }
 
-    /** The date and time of the peer target database registration in Data Safe. */
+    /**
+     * The date and time of the peer target database registration in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time of the peer target database registration in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state of the peer target database in Data Safe. */
+    /**
+     * The current state of the peer target database in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final TargetDatabaseLifecycleState lifecycleState;
 
     /**
      * The current state of the peer target database in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public TargetDatabaseLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details about the current state of the peer target database in Data Safe. */
+    /**
+     * Details about the current state of the peer target database in Data Safe.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the peer target database in Data Safe.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -389,7 +400,6 @@ public final class PeerTargetDatabaseSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

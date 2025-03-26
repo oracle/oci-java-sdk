@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Associations for the runbook. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Associations for the runbook.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Associations.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Associations extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Associations extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tasks",
@@ -44,22 +42,26 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A set of tasks to execute in the runbook. */
+        /**
+         * A set of tasks to execute in the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
         private java.util.List<Task> tasks;
 
         /**
          * A set of tasks to execute in the runbook.
-         *
          * @param tasks the value to set
          * @return this builder
-         */
+         **/
         public Builder tasks(java.util.List<Task> tasks) {
             this.tasks = tasks;
             this.__explicitlySet__.add("tasks");
             return this;
         }
-        /** The groups of the runbook. */
+        /**
+         * The groups of the runbook.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<Group> groups;
 
@@ -68,7 +70,7 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param groups the value to set
          * @return this builder
-         */
+         **/
         public Builder groups(java.util.List<Group> groups) {
             this.groups = groups;
             this.__explicitlySet__.add("groups");
@@ -92,16 +94,17 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("rollbackWorkflowDetails");
             return this;
         }
-        /** The version of the runbook. */
+        /**
+         * The version of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the runbook.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -146,7 +149,9 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,20 +160,24 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** A set of tasks to execute in the runbook. */
+    /**
+     * A set of tasks to execute in the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
     private final java.util.List<Task> tasks;
 
     /**
      * A set of tasks to execute in the runbook.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Task> getTasks() {
         return tasks;
     }
 
-    /** The groups of the runbook. */
+    /**
+     * The groups of the runbook.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<Group> groups;
 
@@ -176,7 +185,7 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
      * The groups of the runbook.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Group> getGroups() {
         return groups;
     }
@@ -195,15 +204,16 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         return rollbackWorkflowDetails;
     }
 
-    /** The version of the runbook. */
+    /**
+     * The version of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -215,7 +225,6 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,11 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Possible types of strategies to perform the fleet discovery for a Fleet Software Update
- * Collection.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum FleetDiscoveryStrategies implements com.oracle.bmc.http.internal.BmcEnum {
+ * Possible types of strategies to perform the fleet discovery for a Fleet Software Update Collection.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum FleetDiscoveryStrategies {
     SearchQuery("SEARCH_QUERY"),
     Filters("FILTERS"),
     TargetList("TARGET_LIST"),

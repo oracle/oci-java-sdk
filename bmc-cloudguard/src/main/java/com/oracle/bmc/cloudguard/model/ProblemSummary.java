@@ -5,22 +5,19 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Summary information for a problem. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Summary information for a problem.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProblemSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProblemSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProblemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -84,271 +81,289 @@ public final class ProblemSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that can't be changed after creation */
+        /**
+         * Unique identifier that can't be changed after creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that can't be changed after creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Compartment OCID where the resource is created */
+        /**
+         * Compartment OCID where the resource is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment OCID where the resource is created
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Unique identifier of the detector rule */
+        /**
+         * Unique identifier of the detector rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
         private String detectorRuleId;
 
         /**
          * Unique identifier of the detector rule
-         *
          * @param detectorRuleId the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRuleId(String detectorRuleId) {
             this.detectorRuleId = detectorRuleId;
             this.__explicitlySet__.add("detectorRuleId");
             return this;
         }
-        /** The risk level of the problem */
+        /**
+         * The risk level of the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
          * The risk level of the problem
-         *
          * @param riskLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
             return this;
         }
-        /** The risk score for the problem */
+        /**
+         * The risk score for the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
          * The risk score for the problem
-         *
          * @param riskScore the value to set
          * @return this builder
-         */
+         **/
         public Builder riskScore(Double riskScore) {
             this.riskScore = riskScore;
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-        /** Unique identifier of the resource that's impacted by the problem */
+        /**
+         * Unique identifier of the resource that's impacted by the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * Unique identifier of the resource that's impacted by the problem
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Display name of the resource impacted by the problem */
+        /**
+         * Display name of the resource impacted by the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Display name of the resource impacted by the problem
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Type of the resource impacted by the problem */
+        /**
+         * Type of the resource impacted by the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Type of the resource impacted by the problem
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** User-defined labels on the problem */
+        /**
+         * User-defined labels on the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
          * User-defined labels on the problem
-         *
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-        /** The date and time the problem was first detected. Format defined by RFC3339. */
+        /**
+         * The date and time the problem was first detected. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
          * The date and time the problem was first detected. Format defined by RFC3339.
-         *
          * @param timeFirstDetected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstDetected(java.util.Date timeFirstDetected) {
             this.timeFirstDetected = timeFirstDetected;
             this.__explicitlySet__.add("timeFirstDetected");
             return this;
         }
-        /** The date and time the problem was last detected. Format defined by RFC3339. */
+        /**
+         * The date and time the problem was last detected. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
          * The date and time the problem was last detected. Format defined by RFC3339.
-         *
          * @param timeLastDetected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
             return this;
         }
-        /** The current lifecycle state of the problem */
+        /**
+         * The current lifecycle state of the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ProblemLifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the problem
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ProblemLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional details on the substate of the lifecycle state */
+        /**
+         * Additional details on the substate of the lifecycle state
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
         private ProblemLifecycleDetail lifecycleDetail;
 
         /**
          * Additional details on the substate of the lifecycle state
-         *
          * @param lifecycleDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetail(ProblemLifecycleDetail lifecycleDetail) {
             this.lifecycleDetail = lifecycleDetail;
             this.__explicitlySet__.add("lifecycleDetail");
             return this;
         }
-        /** Unique identifier of the detector associated with the problem */
+        /**
+         * Unique identifier of the detector associated with the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
         private DetectorEnum detectorId;
 
         /**
          * Unique identifier of the detector associated with the problem
-         *
          * @param detectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorId(DetectorEnum detectorId) {
             this.detectorId = detectorId;
             this.__explicitlySet__.add("detectorId");
             return this;
         }
-        /** DEPRECATED */
+        /**
+         * DEPRECATED
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * DEPRECATED
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** List of regions where the problem is found */
+        /**
+         * List of regions where the problem is found
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
          * List of regions where the problem is found
-         *
          * @param regions the value to set
          * @return this builder
-         */
+         **/
         public Builder regions(java.util.List<String> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** Unique target identifier associated with the problem */
+        /**
+         * Unique target identifier associated with the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * Unique target identifier associated with the problem
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -445,7 +460,9 @@ public final class ProblemSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -454,236 +471,254 @@ public final class ProblemSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that can't be changed after creation */
+    /**
+     * Unique identifier that can't be changed after creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that can't be changed after creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Compartment OCID where the resource is created */
+    /**
+     * Compartment OCID where the resource is created
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment OCID where the resource is created
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Unique identifier of the detector rule */
+    /**
+     * Unique identifier of the detector rule
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRuleId")
     private final String detectorRuleId;
 
     /**
      * Unique identifier of the detector rule
-     *
      * @return the value
-     */
+     **/
     public String getDetectorRuleId() {
         return detectorRuleId;
     }
 
-    /** The risk level of the problem */
+    /**
+     * The risk level of the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
      * The risk level of the problem
-     *
      * @return the value
-     */
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }
 
-    /** The risk score for the problem */
+    /**
+     * The risk score for the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
      * The risk score for the problem
-     *
      * @return the value
-     */
+     **/
     public Double getRiskScore() {
         return riskScore;
     }
 
-    /** Unique identifier of the resource that's impacted by the problem */
+    /**
+     * Unique identifier of the resource that's impacted by the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * Unique identifier of the resource that's impacted by the problem
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Display name of the resource impacted by the problem */
+    /**
+     * Display name of the resource impacted by the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Display name of the resource impacted by the problem
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** Type of the resource impacted by the problem */
+    /**
+     * Type of the resource impacted by the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Type of the resource impacted by the problem
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** User-defined labels on the problem */
+    /**
+     * User-defined labels on the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
      * User-defined labels on the problem
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
 
-    /** The date and time the problem was first detected. Format defined by RFC3339. */
+    /**
+     * The date and time the problem was first detected. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
      * The date and time the problem was first detected. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstDetected() {
         return timeFirstDetected;
     }
 
-    /** The date and time the problem was last detected. Format defined by RFC3339. */
+    /**
+     * The date and time the problem was last detected. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
      * The date and time the problem was last detected. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
     }
 
-    /** The current lifecycle state of the problem */
+    /**
+     * The current lifecycle state of the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ProblemLifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the problem
-     *
      * @return the value
-     */
+     **/
     public ProblemLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional details on the substate of the lifecycle state */
+    /**
+     * Additional details on the substate of the lifecycle state
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetail")
     private final ProblemLifecycleDetail lifecycleDetail;
 
     /**
      * Additional details on the substate of the lifecycle state
-     *
      * @return the value
-     */
+     **/
     public ProblemLifecycleDetail getLifecycleDetail() {
         return lifecycleDetail;
     }
 
-    /** Unique identifier of the detector associated with the problem */
+    /**
+     * Unique identifier of the detector associated with the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorId")
     private final DetectorEnum detectorId;
 
     /**
      * Unique identifier of the detector associated with the problem
-     *
      * @return the value
-     */
+     **/
     public DetectorEnum getDetectorId() {
         return detectorId;
     }
 
-    /** DEPRECATED */
+    /**
+     * DEPRECATED
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * DEPRECATED
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** List of regions where the problem is found */
+    /**
+     * List of regions where the problem is found
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
      * List of regions where the problem is found
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRegions() {
         return regions;
     }
 
-    /** Unique target identifier associated with the problem */
+    /**
+     * Unique target identifier associated with the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * Unique target identifier associated with the problem
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -695,7 +730,6 @@ public final class ProblemSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

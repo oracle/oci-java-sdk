@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of Grant Types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum AuthenticationGrantType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of Grant Types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum AuthenticationGrantType {
     ClientCredentials("CLIENT_CREDENTIALS"),
     AuthorizationCode("AUTHORIZATION_CODE"),
 

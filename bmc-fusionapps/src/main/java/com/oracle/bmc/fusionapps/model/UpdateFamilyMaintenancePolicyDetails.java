@@ -5,24 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * The editable settings of the policy that specifies the maintenance and upgrade preferences for an
- * environment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * The editable settings of the policy that specifies the maintenance and upgrade preferences for an environment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateFamilyMaintenancePolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateFamilyMaintenancePolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateFamilyMaintenancePolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isMonthlyPatchingEnabled", "concurrentMaintenance"})
     public UpdateFamilyMaintenancePolicyDetails(
@@ -35,31 +33,33 @@ public final class UpdateFamilyMaintenancePolicyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Whether the Fusion environment receives monthly patching. */
+        /**
+         * Whether the Fusion environment receives monthly patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMonthlyPatchingEnabled")
         private Boolean isMonthlyPatchingEnabled;
 
         /**
          * Whether the Fusion environment receives monthly patching.
-         *
          * @param isMonthlyPatchingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isMonthlyPatchingEnabled(Boolean isMonthlyPatchingEnabled) {
             this.isMonthlyPatchingEnabled = isMonthlyPatchingEnabled;
             this.__explicitlySet__.add("isMonthlyPatchingEnabled");
             return this;
         }
-        /** Whether production and non-production environments are upgraded concurrently. */
+        /**
+         * Whether production and non-production environments are upgraded concurrently.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("concurrentMaintenance")
         private FamilyMaintenancePolicy.ConcurrentMaintenance concurrentMaintenance;
 
         /**
          * Whether production and non-production environments are upgraded concurrently.
-         *
          * @param concurrentMaintenance the value to set
          * @return this builder
-         */
+         **/
         public Builder concurrentMaintenance(
                 FamilyMaintenancePolicy.ConcurrentMaintenance concurrentMaintenance) {
             this.concurrentMaintenance = concurrentMaintenance;
@@ -92,7 +92,9 @@ public final class UpdateFamilyMaintenancePolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,28 +103,30 @@ public final class UpdateFamilyMaintenancePolicyDetails
         return new Builder().copy(this);
     }
 
-    /** Whether the Fusion environment receives monthly patching. */
+    /**
+     * Whether the Fusion environment receives monthly patching.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMonthlyPatchingEnabled")
     private final Boolean isMonthlyPatchingEnabled;
 
     /**
      * Whether the Fusion environment receives monthly patching.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMonthlyPatchingEnabled() {
         return isMonthlyPatchingEnabled;
     }
 
-    /** Whether production and non-production environments are upgraded concurrently. */
+    /**
+     * Whether production and non-production environments are upgraded concurrently.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("concurrentMaintenance")
     private final FamilyMaintenancePolicy.ConcurrentMaintenance concurrentMaintenance;
 
     /**
      * Whether production and non-production environments are upgraded concurrently.
-     *
      * @return the value
-     */
+     **/
     public FamilyMaintenancePolicy.ConcurrentMaintenance getConcurrentMaintenance() {
         return concurrentMaintenance;
     }
@@ -134,7 +138,6 @@ public final class UpdateFamilyMaintenancePolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

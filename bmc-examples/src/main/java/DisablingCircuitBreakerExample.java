@@ -22,7 +22,9 @@ import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-/** A sample to demonstrate how to disable circuit breaker configuration at client level. */
+/**
+ * A sample to demonstrate how to disable circuit breaker configuration at client level.
+ */
 public class DisablingCircuitBreakerExample {
 
     public static void main(String[] args) throws Exception {
@@ -30,10 +32,8 @@ public class DisablingCircuitBreakerExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -49,11 +49,8 @@ public class DisablingCircuitBreakerExample {
                         .build();
 
         // Create client using above ClientConfiguration
-        ObjectStorage objectStorageClient =
-                ObjectStorageClient.builder()
-                        .region(Region.US_PHOENIX_1)
-                        .configuration(configuration)
-                        .build(provider);
+        ObjectStorage objectStorageClient = new ObjectStorageClient(provider, configuration);
+        objectStorageClient.setRegion(Region.US_PHOENIX_1);
 
         GetNamespaceResponse namespaceResponse =
                 objectStorageClient.getNamespace(GetNamespaceRequest.builder().build());
@@ -69,8 +66,7 @@ public class DisablingCircuitBreakerExample {
                 identityClient.listRegions(ListRegionsRequest.builder().build());
         System.out.println("List of regions: " + response.getItems());
 
-        // To disable circuit breaker at environment level, set
-        // OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=false
+        // To disable circuit breaker at environment level, set OCI_SDK_DEFAULT_CIRCUITBREAKER_ENABLED=false
         Limits limitsClient = new LimitsClient(provider);
         limitsClient.setRegion(Region.US_PHOENIX_1);
         ListLimitDefinitionsRequest listLimitDefinitionsRequest =

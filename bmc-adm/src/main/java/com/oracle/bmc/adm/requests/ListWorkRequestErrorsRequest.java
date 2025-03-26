@@ -6,68 +6,67 @@ package com.oracle.bmc.adm.requests;
 
 import com.oracle.bmc.adm.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/adm/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * asynchronous request.
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the asynchronous request.
      */
     private String workRequestId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * asynchronous request.
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the asynchronous request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for
-     * _timeAccepted_ is **descending**.
+     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for _timeAccepted_ is **descending**.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for
-     * _timeAccepted_ is **descending**.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for _timeAccepted_ is **descending**.
+     *
+     **/
+    public enum SortBy {
         TimeAccepted("timeAccepted"),
         ;
 
@@ -100,16 +99,20 @@ public class ListWorkRequestErrorsRequest
     };
 
     /**
-     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for
-     * _timeAccepted_ is **descending**.
+     * The field used to sort WorkRequests. Only one sort order is allowed. Default order for _timeAccepted_ is **descending**.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.adm.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.adm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -117,21 +120,17 @@ public class ListWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * asynchronous request.
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the asynchronous request.
          */
         private String workRequestId = null;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * asynchronous request.
-         *
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the asynchronous request.
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -140,12 +139,13 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -155,15 +155,12 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -172,12 +169,13 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -187,14 +185,13 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The field used to sort WorkRequests. Only one sort order is allowed. Default order for
-         * _timeAccepted_ is **descending**.
+         * The field used to sort WorkRequests. Only one sort order is allowed. Default order for _timeAccepted_ is **descending**.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field used to sort WorkRequests. Only one sort order is allowed. Default order for
-         * _timeAccepted_ is **descending**.
+         * The field used to sort WorkRequests. Only one sort order is allowed. Default order for _timeAccepted_ is **descending**.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -204,12 +201,13 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.adm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -220,19 +218,18 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -244,7 +241,6 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestErrorsRequest o) {
@@ -262,11 +258,10 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestErrorsRequest
          */
@@ -280,8 +275,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestErrorsRequest
@@ -295,14 +289,12 @@ public class ListWorkRequestErrorsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortBy,
-            // sortOrder);
+            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -317,7 +309,6 @@ public class ListWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

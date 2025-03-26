@@ -5,22 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * All the information surrounding a query, including the query statement, limits, consistency, and
- * so forth. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * All the information surrounding a query, including the query statement,
+ * limits, consistency, and so forth.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueryDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class QueryDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class QueryDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -51,22 +50,30 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Compartment OCID, to provide context for a table name in the given statement. */
+        /**
+         * Compartment OCID, to provide context for a table name in
+         * the given statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment OCID, to provide context for a table name in the given statement.
+         * Compartment OCID, to provide context for a table name in
+         * the given statement.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** A NoSQL SQL query statement; or a Base64-encoded prepared statement. */
+        /**
+         * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
 
@@ -75,43 +82,48 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param statement the value to set
          * @return this builder
-         */
+         **/
         public Builder statement(String statement) {
             this.statement = statement;
             this.__explicitlySet__.add("statement");
             return this;
         }
-        /** If true, the statement is a prepared statement. */
+        /**
+         * If true, the statement is a prepared statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrepared")
         private Boolean isPrepared;
 
         /**
          * If true, the statement is a prepared statement.
-         *
          * @param isPrepared the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrepared(Boolean isPrepared) {
             this.isPrepared = isPrepared;
             this.__explicitlySet__.add("isPrepared");
             return this;
         }
-        /** Consistency requirement for a read operation. */
+        /**
+         * Consistency requirement for a read operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consistency")
         private Consistency consistency;
 
         /**
          * Consistency requirement for a read operation.
-         *
          * @param consistency the value to set
          * @return this builder
-         */
+         **/
         public Builder consistency(Consistency consistency) {
             this.consistency = consistency;
             this.__explicitlySet__.add("consistency");
             return this;
         }
-        /** A limit on the total amount of data read during this operation, in KB. */
+        /**
+         * A limit on the total amount of data read during this operation, in KB.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxReadInKBs")
         private Integer maxReadInKBs;
 
@@ -120,37 +132,39 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param maxReadInKBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxReadInKBs(Integer maxReadInKBs) {
             this.maxReadInKBs = maxReadInKBs;
             this.__explicitlySet__.add("maxReadInKBs");
             return this;
         }
-        /** A map of prepared statement variables to values. */
+        /**
+         * A map of prepared statement variables to values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.Map<String, Object> variables;
 
         /**
          * A map of prepared statement variables to values.
-         *
          * @param variables the value to set
          * @return this builder
-         */
+         **/
         public Builder variables(java.util.Map<String, Object> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
             return this;
         }
-        /** Timeout setting for the query. */
+        /**
+         * Timeout setting for the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
         private Integer timeoutInMs;
 
         /**
          * Timeout setting for the query.
-         *
          * @param timeoutInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder timeoutInMs(Integer timeoutInMs) {
             this.timeoutInMs = timeoutInMs;
             this.__explicitlySet__.add("timeoutInMs");
@@ -203,7 +217,9 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -212,20 +228,28 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Compartment OCID, to provide context for a table name in the given statement. */
+    /**
+     * Compartment OCID, to provide context for a table name in
+     * the given statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment OCID, to provide context for a table name in the given statement.
+     * Compartment OCID, to provide context for a table name in
+     * the given statement.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A NoSQL SQL query statement; or a Base64-encoded prepared statement. */
+    /**
+     * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
     private final String statement;
 
@@ -233,26 +257,29 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
      * A NoSQL SQL query statement; or a Base64-encoded prepared statement.
      *
      * @return the value
-     */
+     **/
     public String getStatement() {
         return statement;
     }
 
-    /** If true, the statement is a prepared statement. */
+    /**
+     * If true, the statement is a prepared statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrepared")
     private final Boolean isPrepared;
 
     /**
      * If true, the statement is a prepared statement.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPrepared() {
         return isPrepared;
     }
 
-    /** Consistency requirement for a read operation. */
-    public enum Consistency implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Consistency requirement for a read operation.
+     **/
+    public enum Consistency {
         Eventual("EVENTUAL"),
         Absolute("ABSOLUTE"),
         ;
@@ -284,20 +311,24 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
             throw new IllegalArgumentException("Invalid Consistency: " + key);
         }
     };
-    /** Consistency requirement for a read operation. */
+    /**
+     * Consistency requirement for a read operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consistency")
     private final Consistency consistency;
 
     /**
      * Consistency requirement for a read operation.
-     *
      * @return the value
-     */
+     **/
     public Consistency getConsistency() {
         return consistency;
     }
 
-    /** A limit on the total amount of data read during this operation, in KB. */
+    /**
+     * A limit on the total amount of data read during this operation, in KB.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxReadInKBs")
     private final Integer maxReadInKBs;
 
@@ -305,33 +336,35 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
      * A limit on the total amount of data read during this operation, in KB.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxReadInKBs() {
         return maxReadInKBs;
     }
 
-    /** A map of prepared statement variables to values. */
+    /**
+     * A map of prepared statement variables to values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.Map<String, Object> variables;
 
     /**
      * A map of prepared statement variables to values.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Object> getVariables() {
         return variables;
     }
 
-    /** Timeout setting for the query. */
+    /**
+     * Timeout setting for the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInMs")
     private final Integer timeoutInMs;
 
     /**
      * Timeout setting for the query.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeoutInMs() {
         return timeoutInMs;
     }
@@ -343,7 +376,6 @@ public final class QueryDetails extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

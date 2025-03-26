@@ -3,19 +3,7 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
-## 3.61.0 - 2025-03-18
-### Added 
-- Support for Managed Services for Mac service 
-- Support for scheduling customer-initiated backups in the GoldenGate service 
-- Support for GPU memory clusters and fabrics in the Compute service   
-
-### Breaking Changes 
-- Method `public java.lang.String getIpAnycastId()` has been removed from the model `com.oracle.bmc.core.model.CreateByoipRangeDetails` in the Core service 
-- Method `public java.lang.String getMonitorIp()` has been removed from the model `com.oracle.bmc.core.model.CreateByoipRangeDetails` in the Core service 
-- Method `public java.lang.String getIpAnycastId()` has been removed from the model `com.oracle.bmc.core.model.UpdateByoipRangeDetails` in the Core service 
-- Method `public java.lang.String getMonitorIp()` has been removed from the model `com.oracle.bmc.core.model.UpdateByoipRangeDetails` in the Core service
-
-## 3.60.0 - 2025-03-11
+## 2.82.0 - 2025-03-25
 ### Added 
 - Support for pipelines in the OpenSearch service 
 - Support for uploading and downloading the model metadata artifacts in the Data Science service 
@@ -25,125 +13,58 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for IPv6 addresses for dedicated infrastructure in the Database service 
 - Support for NewDev edition for the development community in the Database service 
 - Support for grouping sensitive types across the tenancies and reuse of groups in the discovery workflow in the Data Safe service 
-- Support for generating custom assessment reports in the Data Safe service   
-
-### Breaking Changes 
-- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.util.Map getSystemTags()` has been removed from the model `com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
-- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
-- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipeline` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
-- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
-- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary` in the OpenSearch service 
-- Class `com.oracle.bmc.opensearch.model.OpensearchPipelineValidationResponse` has been removed from the OpenSearch service 
-- Class `com.oracle.bmc.opensearch.model.PipelineValidationErrorDetails` has been removed from the OpenSearch service 
-- Method `public java.lang.Integer getMaxMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMaxOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMinMemoryGB()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Method `public java.lang.Integer getMinOcpuCount()` has been removed from the model `com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails` in the OpenSearch service 
-- Class `com.oracle.bmc.opensearch.model.ValidateOpensearchPipelineDetails` has been removed from the OpenSearch service
-
-## 3.59.0 - 2025-03-04
-### Added 
+- Support for generating custom assessment reports in the Data Safe service 
 - Support for user quotas on file system resources in the File Storage service 
 - Support for long term retention backups in the Autonomous Recovery service 
 - Support for Cross Region Replication(CRR) in the PostgreSQL service 
 - Support for subscriptions and cluster placement groups on exascale infrastructure in the Database service 
 - Support for multiple standby databases for autonomous dataguard associations in the Database service 
 - Support for major version upgrade of clusters in the OpenSearch service 
-- Support for Customer Service Identifier(CSI) number in list assigned subscriptions response in the Organizations service    
+- Support for Customer Service Identifier(CSI) number in list assigned subscriptions response in the Organizations service 
+- Support for Managed Services for Mac service 
+- Support for scheduling customer-initiated backups in the GoldenGate service 
+- Support for GPU memory clusters and fabrics in the Compute service 
+- Support for agent platforms and Retrieval Augmented Generation (RAG) agents in the Generative AI Agent service 
+- Support for knowledge based metadata summaries in the Generative AI Agent service 
+- Support for create and update operations on onboard configurations in the Stack Monitoring service 
+- Support for automatic activation of the management agents on compute instance launch in the Stack Monitoring service 
+- Support for importing collectd resources in the Stack Monitoring service 
+- Support for updating the handler configurations for collected resources in Stack Monitoring service 
+- Support for monitored resource types based on source type and resource category in the Stack Monitoring service 
+- Support for adding tags in maintenance windows in the Stack Monitoring service 
+- Support for host API feature in the Compute service   
+
+### Fixed 
+- Java 8 incompatibility introduced in the previous release: NoSuchMethodError for ByteBuffer.flip()   
 
 ### Breaking Changes 
-- The method public `java.lang.String getOpcRetryToken()` has been removed from `com.oracle.bmc.tenantmanagercontrolplane.responses.CreateSubscriptionMappingResponse` in the Organizations service
+- Method public java.lang.String getOpcRetryToken() has been removed from com.oracle.bmc.tenantmanagercontrolplane.responses.CreateSubscriptionMappingResponse in the Organizations service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.util.Map getSystemTags() has been removed from the model com.oracle.bmc.opensearch.model.CreateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipeline in the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.OpensearchClusterPipelineSummary in the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.OpensearchPipelineValidationResponse has been removed from the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.PipelineValidationErrorDetails has been removed from the OpenSearch service 
+- Method public java.lang.Integer getMaxMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMaxOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinMemoryGB() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Method public java.lang.Integer getMinOcpuCount() has been removed from the model com.oracle.bmc.opensearch.model.UpdateOpensearchClusterPipelineDetails in the OpenSearch service 
+- Class com.oracle.bmc.opensearch.model.ValidateOpensearchPipelineDetails has been removed from the OpenSearch service 
+- Method public java.lang.String getIpAnycastId() has been removed from the model com.oracle.bmc.core.model.CreateByoipRangeDetails in the Core service 
+- Method public java.lang.String getMonitorIp() has been removed from the model com.oracle.bmc.core.model.CreateByoipRangeDetails in the Core service 
+- Method public java.lang.String getIpAnycastId() has been removed from the model com.oracle.bmc.core.model.UpdateByoipRangeDetails in the Core service 
+- Method public java.lang.String getMonitorIp() has been removed from the model com.oracle.bmc.core.model.UpdateByoipRangeDetails in the Core service
 
-## 3.58.0 - 2025-02-25
-### Added 
-- Support for Database Lifecycle Management service 
-- Support for Valkey cluster creation and Valkey migration in the OCI Cache service 
-- Support for Dataflow Steps and Storage Mounts in Pipelines in the Data Science service 
-- Support for Bring Your Own DKIM Keys in the Email Delivery service 
-- Support for OpenId Connect Multi Authentication command in the OCI Kubernetes Engine service 
-- Support for security attributes for Load Balancer resource in the Load Balancer service 
-- Support for reservation of private IP addresses in the Networking service 
-- Support for additional configuration parameters in the HeatWave service 
-- Support for private and 3rd party software repositories, and rebooting of instances in the OS Management service    
-
-### Breaking Changes 
-- Method `public java.util.Map getZprTags()` has been removed from models `com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails`, `com.oracle.bmc.loadbalancer.model.LoadBalancer` and `com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails` in the Load Balancer service 
-- Class `com.oracle.bmc.containerinstances.model.ContainerCommandHealthCheck` has been removed from the Container Instances service 
-- Class `com.oracle.bmc.containerinstances.model.CreateContainerCommandHealthCheckDetails` has been removed from the Container Instances service 
-- Field `Command` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerHealthCheckType` in the the Container Instances service
-
-## 3.57.2 - 2025-02-18
-### Added 
-- Support for Customer Onboarding Success(COS) in the Java Management service 
-- Support for filtering performance tuning analysis results in the Java Management service 
-- Support for improved plugin filtering in the Java Management service 
-- Support for operating system distribution information in the Java Management service
-
-## 3.57.1 - 2025-02-11
-### Added 
-- Support for backups and recovery enhancements in autonomous databases in the Database service 
-- Support for IPv6 addresses on system launch in the Database service 
-- Support for enterprise edition GPU infrastructure in the Stack Monitoring service 
-- Support for monitoring templates in the Stack Monitoring service 
-- Support for IPv6 cluster creation in the Kubernetes Engine service 
-- Support for automatic and spoken punctuations in realtime in the AI Speech service 
-- Support for additional connection types for Databricks, Google PubSub and Microsoft Fabric in the GoldenGate service
-
-## 3.57.0 - 2025-02-04
-### Added 
-- Support for Cohere Embed v3 in the Generative AI Inference service 
-- Support for Llama 3.2 tools in the Generative AI Inference service 
-- Support for nginx discovery and monitoring in the Stack Monitoring service 
-- Support for Oracle JVM runtime discovery and monitoring in the Stack Monitoring service 
-- Support for JBoss discovery and monitoring in the Stack Monitoring service 
-- Support for Service Managed Container(SMC) endpoints on list service operation in the Data Science service 
-- Support for schedulers in the Data Science service 
-- Support for DB system database and access modes in the HeatWave service 
-- Support for DB system read endpoints in the HeatWave service 
-- Support for sensitive types for data discovery in the Data Safe service 
-- Support for referential relation APIs in the Data Safe service    
-
-### Breaking Changes 
-- Class `com.oracle.bmc.datasafe.model.CreateAuditPolicyDetails` has been removed from the Data Safe service 
-- Class `com.oracle.bmc.datasafe.model.CreateAuditProfileDetails` has been removed from the Data Safe service
-
-## 3.56.0 - 2025-01-28
-### Added 
-- Support for external MySQL database management in the Database Management service 
-- Support for fetching highly available metrics for managed databases in the Database Management service 
-- Support for Exadata Infrastructure on Exadata Cloud@Customer in the Database service 
-- Support for disaster recovery for cloud native applications running on OKE clusters in the Disaster Recovery service 
-- Support for subscription assignment at creation of the child tenancies in the Organizations service 
-- Support for additional actionable insights content-types for news reports in the Operations Insights service 
-- Support for MySQL Heatwave database systems in the Operations Insights service    
-
-### Breaking Changes 
-- Enum `com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionEnvironmentName` has been removed from the Organizations service
-
-## 3.55.3 - 2025-01-21
-### Added 
-- Support for Bring Your Own ASN (BYOASN) in the Networking service 
-- Support for Data Guard transaction processing in the Database service 
-- Support for permanently disconnecting peer autonomous databases from its primary database in the Database service 
-- Support for databases with external Hardware Security Module (HSM) in the Database service 
-- Support for active and standby purist modes in the Network Load Balancer service 
-- Support for configurable TCP reset in the Network Load Balancer service
-
-## 3.55.2 - 2025-01-14
-### Added 
-- Support for attaching route tables to VNICs and private IPs in the Networking service 
-- Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service 
-- Support for patch-level updates of the autonomous databases after provisioning in the Database service
-
-## 3.55.1 - 2024-12-17
+## 2.81.0 - 2025-02-25
 ### Added 
 - Support for backup retention locks on autonomous database create and update operations in the Database service 
 - Support for multi-modality flags in data source in the Generative AI service 
@@ -159,9 +80,68 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for user principal session tokens in the Big Data service 
 - Support for historical cluster versions in the Big Data service 
 - Support for new SKUs for digital assets editions in the Blockchain Platform service 
-- Support for Zero ETL pipelines in the GoldenGate service
+- Support for Zero ETL pipelines in the GoldenGate service 
+- Support for attaching route tables to VNICs and private IPs in the Networking service 
+- Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service 
+- Support for patch-level updates of the autonomous databases after provisioning in the Database service 
+- Support for Bring Your Own ASN (BYOASN) in the Networking service 
+- Support for Data Guard transaction processing in the Database service 
+- Support for permanently disconnecting peer autonomous databases from its primary database in the Database service 
+- Support for databases with external Hardware Security Module (HSM) in the Database service 
+- Support for active and standby purist modes in the Network Load Balancer service 
+- Support for configurable TCP reset in the Network Load Balancer service 
+- Support for external MySQL database management in the Database Management service 
+- Support for fetching highly available metrics for managed databases in the Database Management service 
+- Support for Exadata Infrastructure on Exadata Cloud@Customer in the Database service 
+- Support for disaster recovery for cloud native applications running on OKE clusters in the Disaster Recovery service 
+- Support for subscription assignment at creation of the child tenancies in the Organizations service 
+- Support for additional actionable insights content-types for news reports in the Operations Insights service 
+- Support for MySQL Heatwave database systems in the Operations Insights service 
+- Support for Cohere Embed v3 in the Generative AI Inference service 
+- Support for Llama 3.2 tools in the Generative AI Inference service 
+- Support for nginx discovery and monitoring in the Stack Monitoring service 
+- Support for Oracle JVM runtime discovery and monitoring in the Stack Monitoring service 
+- Support for JBoss discovery and monitoring in the Stack Monitoring service 
+- Support for Service Managed Container(SMC) endpoints on list service operation in the Data Science service 
+- Support for schedulers in the Data Science service 
+- Support for DB system database and access modes in the HeatWave service 
+- Support for DB system read endpoints in the HeatWave service 
+- Support for sensitive types for data discovery in the Data Safe service 
+- Support for referential relation APIs in the Data Safe service 
+- Support for backups and recovery enhancements in autonomous databases in the Database service 
+- Support for IPv6 addresses on system launch in the Database service 
+- Support for enterprise edition GPU infrastructure in the Stack Monitoring service 
+- Support for monitoring templates in the Stack Monitoring service 
+- Support for IPv6 cluster creation in the Kubernetes Engine service 
+- Support for automatic and spoken punctuations in realtime in the AI Speech service 
+- Support for additional connection types for Databricks, Google PubSub and Microsoft Fabric in the GoldenGate service 
+- Support for Customer Onboarding Success(COS) in the Java Management service 
+- Support for filtering performance tuning analysis results in the Java Management service 
+- Support for improved plugin filtering in the Java Management service 
+- Support for operating system distribution information in the Java Management service 
+- Support for Database Lifecycle Management service 
+- Support for Valkey cluster creation and Valkey migration in the OCI Cache service 
+- Support for Dataflow Steps and Storage Mounts in Pipelines in the Data Science service 
+- Support for Bring Your Own DKIM Keys in the Email Delivery service 
+- Support for OpenId Connect Multi Authentication command in the OCI Kubernetes Engine service 
+- Support for security attributes for Load Balancer resource in the Load Balancer service 
+- Support for reservation of private IP addresses in the Networking service 
+- Support for additional configuration parameters in the HeatWave service 
+- Support for private and 3rd party software repositories, and rebooting of instances in the OS Management service    
 
-## 3.55.0 - 2024-12-10
+### Breaking Changes 
+- Enum `com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionEnvironmentName` has been removed from the Organizations service 
+- Class `com.oracle.bmc.datasafe.model.CreateAuditPolicyDetails` has been removed from the Data Safe service 
+- Class `com.oracle.bmc.datasafe.model.CreateAuditProfileDetails` has been removed from the Data Safe service 
+- Method `public java.util.Map getZprTags()` has been removed from models `com.oracle.bmc.loadbalancer.model.CreateLoadBalancerDetails`, `com.oracle.bmc.loadbalancer.model.LoadBalancer` and `com.oracle.bmc.loadbalancer.model.UpdateLoadBalancerDetails` in the Load Balancer service 
+- Class `com.oracle.bmc.containerinstances.model.ContainerCommandHealthCheck` has been removed from the Container Instances service 
+- Class `com.oracle.bmc.containerinstances.model.CreateContainerCommandHealthCheckDetails` has been removed from the Container Instances service 
+- Field `Command` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerHealthCheckType` in the the Container Instances service
+
+### Changed
+- Bouncy Castle dependencies have been removed from OCI Java SDK. It has been replaced with standard Java JCE APIs
+
+## 2.79.0 - 2024-12-10
 ### Added 
 - Support for Bring Your Own Key (BYOK) in the Database service
 - Support for refreshing disaster recovery plans in the Disaster Recovery service
@@ -179,61 +159,63 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.visualbuilder.model.AttachmentDetails` has been removed in the the Visual Builder service 
 - Class `com.oracle.bmc.visualbuilder.model.IdcsInfoDetails` has been removed in the the Visual Builder service
 
-## 3.54.0 - 2024-11-19
-### Added 
-- Support for optional parameters for unified auditing in the Database service 
-- Support for user groups for creating technical requests in the Support Management service 
-- Support for additional checksum algorithms (SHA-256, SHA-384, CRC32C) in the Object Storage service 
-- Support for single Read Only (RO) endpoint for the read replicas in the PostgreSQL service 
-- Support for exascale database vaults in the Database service 
-- Support for virtual machine clusters with database vaults in the Database service 
-- Support for N3-Gi version in the Database service    
-
-### Breaking Changes 
-- Method `public com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus getLimitStatus()` has been removed from the model `com.oracle.bmc.cims.model.CreateLimitItemDetails` in the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus` has been removed from the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.model.ServiceCategories` removed has been removed from the Customer Incident Management Service 
+## 2.78.0 - 2024-11-19
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `me-alain-1` region
+- Support for connection refresh in the GoldenGate service
+- Support for secret compartment id in import and export operations of deployment wallet in the GoldenGate service
+- Support for creating metadata only backups in the GoldenGate service
+- Support for Llama 3.2 unit shape in Generative AI service
+- Support for Llama 3.2 vision in Generative AI Inference service
+- Support for Cohere CommandR response format in Generative AI Inference service
+- Support for optional parameters for unified auditing in the Database service
+- Support for user groups for creating technical requests in the Support Management service
+- Support for additional checksum algorithms (SHA-256, SHA-384, CRC32C) in the Object Storage service
+- Support for single Read Only (RO) endpoint for the read replicas in the PostgreSQL service
+- Support for exascale database vaults in the Database service
+- Support for virtual machine clusters with database vaults in the Database service
+- Support for N3-Gi version in the Database service
+### Breaking Changes
+- Method `public com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus getLimitStatus()` has been removed from the model `com.oracle.bmc.cims.model.CreateLimitItemDetails` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus` has been removed from the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.ServiceCategories` removed has been removed from the Customer Incident Management Service
 - Method `public java.util.List getSubComponents()` has been removed from model `com.oracle.bmc.cims.model.SubCategories` in the Customer Incident Management Service
 
-## 3.53.1 - 2024-11-12
+## 2.77.0 - 2024-11-05
 ### Added 
-- Support for calling Oracle Cloud Infrastructure services in the `me-alain-1` region 
-- Support for connection refresh in the GoldenGate service 
-- Support for secret compartment id in import and export operations of deployment wallet in the GoldenGate service 
-- Support for creating metadata only backups in the GoldenGate service 
-- Support for Llama 3.2 unit shape in Generative AI service 
-- Support for Llama 3.2 vision in Generative AI Inference service 
-- Support for Cohere CommandR response format in Generative AI Inference service
-
-## 3.53.0 - 2024-11-05
-### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `us-somerset-1` region 
+- Support for calling Oracle Cloud Infrastructure services in the `us-thames-1` region 
 - Support for calling Oracle Cloud Infrastructure services in the `ap-seoul-2` region 
 - Support for calling Oracle Cloud Infrastructure services in the `ap-suwon-1` region 
 - Support for calling Oracle Cloud Infrastructure services in the `ap-chuncheon-2` region 
-- Support for MFA Enablement v2 in the Identity Domains service 
-- Support for starting, stopping and updating min/max executor count for SQL Endpoints in the Data Flow service 
-- Support for customer message in the Customer Incident Management Service 
-- Support for REJECTED limitStatus in the Customer Incident Management Service   
-
-### Breaking Changes 
-- The retry strategy for getting the X509 token from Identity service was modified and is now protected via circuit breaker 
-- Method `public com.oracle.bmc.cims.responses.GetCsiNumberResponse getCsiNumber(com.oracle.bmc.cims.requests.GetCsiNumberRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
-- Method `public com.oracle.bmc.cims.responses.GetStatusResponse getStatus(com.oracle.bmc.cims.requests.GetStatusRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
-- Method `public java.util.List getServiceCategories()` has been removed from model `com.oracle.bmc.cims.model.IncidentResourceType` in the Customer Incident Management Service 
-- Method `public java.util.Map getIssueType()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
-- Method `public java.util.Map getServiceCategory()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.requests.GetCsiNumberRequest` has been removed from the the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.requests.GetStatusRequest` has been removed from the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.responses.GetCsiNumberResponse` has been removed from the Customer Incident Management Service 
-- Class `com.oracle.bmc.cims.responses.GetStatusResponse` has been removed from the Customer Incident Management Service
-
-## 3.52.1 - 2024-10-29
-### Added 
-- Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 
-- Support for overriding an existing add-on installation in the Kubernetes Engine service
-
-## 3.52.0 - 2024-10-22
-### Added 
+- Support for Generative AI Agent service 
+- Support for undeleting autonomous databases in the Database service 
+- Support for assigning key versions for the pluggable databases in the Database service 
+- Support for lifecycle states on list autonomous database operation in the Database service 
+- Support for data masking parameter on list refresh activity operation in the Fusion Application as a Service 
+- Support for configuring custom endpoints on an instance in the Integration Cloud service 
+- Support for updating channel schedules on instance create operation in the Analytics service 
+- Support for ExaCC via management agents in the Operations Insights service 
+- Support for appending and deleting allowed SQLs from SQL firewall policies in the Data Safe service 
+- Support for alarm suppressions with compartment targets and recurring schedules in the Monitoring service 
+- Support for Security Attribute service 
+- Support for Zero Trust Packet Routing service 
+- Support for zero trust packet routing security attributes in the Database service 
+- Support for zero trust packet routing security attributes in the Networking service 
+- Support for zero trust packet routing security attributes in the Network Load Balancer service 
+- Support for disaster recovery failover in the Integration Cloud service 
+- Support for OCI Secure Desktops service 
+- Support for window preferences on cloud automation tooling updates on ExaCC and ExaCS VM clusters in the Database service 
+- Support for maintenance windows in the Stack Monitoring service 
+- Renamed service OCI Container Engine to OCI Kubernetes Engine 
+- Support for password as an optional parameter on creating admin users in the Fusion Apps as a Service 
+- Support for IAM credentials for autonomous databases in the Operations Insights service 
+- Support for open id connect discovery in the Oracle Kubernetes Engine service 
+- Support for DNS security extensions (DNSSEC) in the DNS service 
+- Support for restoring delta between backups to a new volume in the Block Volume service 
+- Support for cross region backup copy and replication for volumes encrypted with customer keys in the Block Volume service 
+- Support for list operation on deployment environments in the GoldenGate service 
+- Support for defining environment types for deployments in the GoldenGate service 
 - Support for resource locking in the File storage service 
 - Support for customer managed keys via Azure key vault and Amazon Web Services key vault in the Database service 
 - Support for generated tokens on create secret operations in the Identity Domains service 
@@ -246,87 +228,86 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for platform configurations and metadata management in the Fleet Application Management service 
 - Support for management of compliance policy rules in the Fleet Application Management service 
 - Support for compliance report details based on compliance policy in the Fleet Application Management service 
-- Support for administrative settings like auto discovery frequency in the Fleet Application Management service    
+- Support for administrative settings like auto discovery frequency in the Fleet Application Management service 
+- Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 
+- Support for overriding an existing add-on installation in the Kubernetes Engine service 
+- Support for MFA Enablement v2 in the Identity Domains service 
+- Support for starting, stopping and updating min/max executor count for SQL Endpoints in the Data Flow service 
+- Support for customer message in the Customer Incident Management Service 
+- Support for REJECTED limitStatus in the Customer Incident Management Service   
 
 ### Breaking Changes 
+- Field `Standby` has been removed from the model `com.oracle.bmc.integration.model.IntegrationInstance$LifecycleState` in the Integration Cloud service 
+- Field `Standby` has been removed from the model `com.oracle.bmc.integration.model.IntegrationInstanceSummary$LifecycleState` in the model Integration Cloud service 
+- Field `Standby` has been removed from the request `com.oracle.bmc.integration.requests.ListIntegrationInstancesRequest$LifecycleState` in the Integration Cloud service 
+- Return type of method `public com.oracle.bmc.goldengate.model.DeploymentTypeSummary$Category getCategory()` has been changed to `com.oracle.bmc.goldengate.model.DeploymentCategory` in the model `com.oracle.bmc.goldengate.model.DeploymentTypeSummary` in the GoldenGate service 
+- Enum `com.oracle.bmc.goldengate.model.DeploymentTypeSummary$Category` has been removed in the GoldenGate service 
 - Model `com.oracle.bmc.opsi.model.HostPerformanceMetricGroup` has been removed from the list of superclasses from `com.oracle.bmc.opsi.model.HostContainers` in the Operations Insight service 
 - Field `HostContainers` has been removed from the model `com.oracle.bmc.opsi.model.HostPerformanceMetricGroup$MetricName` in the Operations Insight service 
 - Method `public com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse updatePlugin(com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest)` has been removed from `com.oracle.bmc.cloudbridge.OcbAgentSvc` in the Cloud Bridge service 
 - Class `com.oracle.bmc.cloudbridge.model.UpdatePluginDetails` has been removed from the model `com.oracle.bmc.cloudbridge.model.UpdatePluginDetails` in the Cloud Bridge service 
 - Class `com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest` has been removed from `com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest` in the Cloud Bridge service 
-- Class `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` has been removed from `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` in the Cloud Bridge service
+- Class `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` has been removed from `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` in the Cloud Bridge service 
+- The retry strategy for getting the X509 token from Identity service was modified and is now protected via circuit breaker 
+- Method `public com.oracle.bmc.cims.responses.GetCsiNumberResponse getCsiNumber(com.oracle.bmc.cims.requests.GetCsiNumberRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
+- Method `public com.oracle.bmc.cims.responses.GetStatusResponse getStatus(com.oracle.bmc.cims.requests.GetStatusRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
+- Method `public java.util.List getServiceCategories()` has been removed from model `com.oracle.bmc.cims.model.IncidentResourceType` in the Customer Incident Management Service 
+- Method `public java.util.Map getIssueType()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
+- Method `public java.util.Map getServiceCategory()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.requests.GetCsiNumberRequest` has been removed from the the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.requests.GetStatusRequest` has been removed from the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.responses.GetCsiNumberResponse` has been removed from the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.responses.GetStatusResponse` has been removed from the Customer Incident Management Service
 
-## 3.51.0 - 2024-10-15
-### Added 
-- Support for open id connect discovery in the Oracle Kubernetes Engine service 
-- Support for DNS security extensions (DNSSEC) in the DNS service 
-- Support for restoring delta between backups to a new volume in the Block Volume service 
-- Support for cross region backup copy and replication for volumes encrypted with customer keys in the Block Volume service 
-- Support for list operation on deployment environments in the GoldenGate service 
-- Support for defining environment types for deployments in the GoldenGate service    
-
-### Breaking Changes 
-- Return type of method `public com.oracle.bmc.goldengate.model.DeploymentTypeSummary$Category getCategory()` has been changed to `com.oracle.bmc.goldengate.model.DeploymentCategory` in the model `com.oracle.bmc.goldengate.model.DeploymentTypeSummary` in the GoldenGate service 
-- Enum `com.oracle.bmc.goldengate.model.DeploymentTypeSummary$Category` has been removed in the GoldenGate service
-
-## 3.50.2 - 2024-10-08
-### Added 
-- Support for OCI Secure Desktops service 
-- Support for window preferences on cloud automation tooling updates on ExaCC and ExaCS VM clusters in the Database service 
-- Support for maintenance windows in the Stack Monitoring service 
-- Renamed service OCI Container Engine to OCI Kubernetes Engine 
-- Support for password as an optional parameter on creating admin users in the Fusion Apps as a Service 
-- Support for IAM credentials for autonomous databases in the Operations Insights service
-
-## 3.50.1 - 2024-10-01
-### Added 
-- Support for calling Oracle Cloud Infrastructure services in the `us-somerset-1` region 
-- Support for calling Oracle Cloud Infrastructure services in the `us-thames-1` region 
-- Support for Security Attribute service 
-- Support for Zero Trust Packet Routing service 
-- Support for zero trust packet routing security attributes in the Database service 
-- Support for zero trust packet routing security attributes in the Networking service 
-- Support for zero trust packet routing security attributes in the Network Load Balancer service 
-- Support for disaster recovery failover in the Integration Cloud service
-
-### Changed
-- Bouncy Castle dependencies have been removed from OCI Java SDK. It has been replaced with standard Java JCE APIs.
-
-## 3.50.0 - 2024-09-24
-### Added 
-- Support for Generative AI Agent service 
-- Support for undeleting autonomous databases in the Database service 
-- Support for assigning key versions for the pluggable databases in the Database service 
-- Support for lifecycle states on list autonomous database operation in the Database service 
-- Support for data masking parameter on list refresh activity operation in the Fusion Application as a Service 
-- Support for configuring custom endpoints on an instance in the Integration Cloud service 
-- Support for updating channel schedules on instance create operation in the Analytics service 
-- Support for ExaCC via management agents in the Operations Insights service 
-- Support for appending and deleting allowed SQLs from SQL firewall policies in the Data Safe service 
-- Support for alarm suppressions with compartment targets and recurring schedules in the Monitoring service    
-
-### Breaking Changes 
-- Field `Standby` has been removed from the model `com.oracle.bmc.integration.model.IntegrationInstance$LifecycleState` in the Integration Cloud service 
-- Field `Standby` has been removed from the model `com.oracle.bmc.integration.model.IntegrationInstanceSummary$LifecycleState` in the model Integration Cloud service  
-- Field `Standby` has been removed from the request `com.oracle.bmc.integration.requests.ListIntegrationInstancesRequest$LifecycleState` in the Integration Cloud service
-
-## 3.49.0 - 2024-09-17
+## 2.76.0 - 2024-09-17
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the eu-crissier-1 region 
 - Support for dedicated AI cluster unit shapes in the Generative AI service 
 - Support for ticket numbers when creating access requests in the Managed Access service 
 - Support for 23ai database, cloud VM clusters and VM cluster patching in the Exadata Fleet Update service 
 - Support for text to speech feature in the AI Speech service 
-- Support for notifications and transfer of capacity requests in the OCI Control Center service   
-
-### Changed
-- A new value called `UnknownEnumValue` has been added to the enums of the parent class when a subclass is in the responses returned from services. If a service returns a value that cannot be recognized by the version of the SDK, then the enum will be set to this value. Previously this would throw an exception.
+- Support for notifications and transfer of capacity requests in the OCI Control Center service     
+- Support for Delegate Access Control service
+- Support for upgrade and downgrade of shapes of high performance mount targets in the File Storage service
+- Support for private endpoints in the Object Storage service
+- Support for create, update, list and delete operations on scheduling policies and scheduling windows in the Database service
+- Support for specifying domains while creating data guard associations in the Database service
+- Support for provision of developer autonomous databases in the Database service
+- Support for upgrade of developer autonomous databases to paid autonomous databases in the Database service
+- Support for scheduling plans, actions, execution windows and execution actions for maintenance scheduling in the Database service
+- Support for cross-region replication of virtual vaults in the Key Management service
+- Support for listing all active service summaries in the Announcements service
+- Support for VMware major and minor version upgrades in VMware Solution service
+- Support for updating protected database subscriptions in the Autonomous Recovery service
+- Support for health insurance id as an allowed document type in the Document Understanding service
+- Support for advanced database management features for autonomous databases in the Database Management service
+- Support for propagating request ids to load balancer servers in the Load balancer service
+- Support for automatic update orders in Fusion Application as a Service
 
 ### Breaking Changes 
 - The field `occCustomerGroupId` was made mandatory for the `ListOccAvailabilityCatalogsInternalRequest` call in the OCI Control Center service
+- Method `public java.lang.String getDocumentId()` has been removed from the model `com.oracle.bmc.aidocument.model.DetectedDocumentType` in the Document Understanding service 
+- Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentClassificationFeature` in the Document Understanding service 
+- Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentKeyValueExtractionFeature` in the Document Understanding service 
+- Field `InsuranceClaim` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentType` in the Document Understanding service
 
-## 3.48.0 - 2024-08-27
+## 2.75.1 - 2024-09-05
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `eu-crissier-1` region
+
+### Fixed
+- Fixed a bug in `com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder` that could cause `java.lang.IllegalStateException: Client instance has been closed.` if `executeInstanceFallback` failed, rendering `autoDetectEndpointUsingMetadataUrl` unable to auto-detect the authentication endpoint.
+
+## 2.75.0 - 2024-08-28
 ### Added 
+- Support for Fleet Application Management service 
+- Support for creating maintenance runs using autonomous database software images in the Database service 
+- Support for Object Storage buckets, Oracle databases, Oracle databases on exascale Infrastructure, autonomous container databases, and autonomous container databases on Cloud at Customer in the Disaster Recovery service 
+- Support for multiple sharing modes in the OCI Cache service 
+- Support for extended data retention periods for instances in the Integration Cloud service 
+- Support for SQL watch and lifecycle management in the Database management service 
+- Support for identity domains and feature sets in the Analytics Cloud service 
+- Support for automatically extending the storage space for MySQL DB systems in pre-defined increments in the MySQL Database service    
 - Support for Delegate Access Control service 
 - Support for upgrade and downgrade of shapes of high performance mount targets in the File Storage service 
 - Support for private endpoints in the Object Storage service 
@@ -345,34 +326,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for automatic update orders in Fusion Application as a Service    
 
 ### Breaking Changes 
+- Method `public com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType getDrPlanExecutionType()` has been removed from `com.oracle.bmc.disasterrecovery.requests.ListDrPlanExecutionsRequest` in the Disaster Recovery service
 - Method `public java.lang.String getDocumentId()` has been removed from the model `com.oracle.bmc.aidocument.model.DetectedDocumentType` in the Document Understanding service  
 - Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentClassificationFeature` in the Document Understanding service  
 - Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentKeyValueExtractionFeature` in the Document Understanding service  
 - Field `InsuranceClaim` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentType` in the Document Understanding service
 
-## 3.47.0 - 2024-08-20
-### Added 
-- Support for Fleet Application Management service 
-- Support for creating maintenance runs using autonomous database software images in the Database service 
-- Support for Object Storage buckets, Oracle databases, Oracle databases on exascale Infrastructure, autonomous container databases, and autonomous container databases on Cloud at Customer in the Disaster Recovery service 
-- Support for multiple sharing modes in the OCI Cache service 
-- Support for extended data retention periods for instances in the Integration Cloud service 
-- Support for SQL watch and lifecycle management in the Database management service 
-- Support for identity domains and feature sets in the Analytics Cloud service 
-- Support for automatically extending the storage space for MySQL DB systems in pre-defined increments in the MySQL Database service    
-
-### Breaking Changes 
-- Method `public com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType getDrPlanExecutionType()` has been removed from `com.oracle.bmc.disasterrecovery.requests.ListDrPlanExecutionsRequest` in the Disaster Recovery service
-
-## 3.46.1 - 2024-08-13
-### Added 
-- Support for calling Oracle Cloud Infrastructure services in the `me-abudhabi-4` region 
-- Support for viewing subscription limits in the Limits service 
-- Support for TCP idle timeout on network load balancer create and update operations in the Network Load Balancing service 
-- Support for creating integration instances of type Healthcare in the Integration Cloud service
-
-## 3.46.0 - 2024-08-06
+## 2.74.0 - 2024-08-13
 ### Added
+- Support for cluster placement groups on get operations in the Database service
+- Support for baseline metric for imported resources and metric extensions in the Stack Monitoring service
+- Support for implicit JIT and group membership provisioning during OpenID connect flow in the Identity Domains service
+- Support for realtime speech and customizations in the AI Speech service
+- Support for self-service instance maintenance API in the Compute service
+- Support for GoldenGate suspend phase in the Database Migration service
+- Support for creating custom alert policies in the Data Safe service
+- Support for tunnel inspection in the Network firewall service
+- Support for diagnostics collection preferences and custom GI images in the Exadata Fleet Update service
 - Support for calling Oracle Cloud Infrastructure services in the `me-riyadh-1` region
 - Support for vertically scaling a Database system in the PostgreSQL service
 - Support for flex shapes in the PostgreSQL service
@@ -393,26 +363,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for improved library usage summary in the Java Management service
 - Support for improved performance tuning analysis result listing in the Java Management service
 - Support for improved work request listing in the Java Management service
-
-### Breaking Changes
-- The property `credentials` was made required in the model `CreateDbSystemDetails` in the PostgreSQL service
-
-## 3.45.0 - 2024-07-30
-### Added
-- Support for cluster placement groups on get operations in the Database service
-- Support for baseline metric for imported resources and metric extensions in the Stack Monitoring service
-- Support for implicit JIT and group membership provisioning during OpenID connect flow in the Identity Domains service
-- Support for realtime speech and customizations in the AI Speech service
-- Support for self-service instance maintenance API in the Compute service
-- Support for GoldenGate suspend phase in the Database Migration service
-- Support for creating custom alert policies in the Data Safe service
-- Support for tunnel inspection in the Network firewall service
-- Support for diagnostics collection preferences and custom GI images in the Exadata Fleet Update service
+- Support for calling Oracle Cloud Infrastructure services in the `me-abudhabi-4` region 
+- Support for viewing subscription limits in the Limits service 
+- Support for TCP idle timeout on network load balancer create and update operations in the Network Load Balancing service 
+- Support for creating integration instances of type Healthcare in the Integration Cloud service
   
 ### Breaking Changes
 - Method `public java.util.List getServicePrincipals()` has been removed from the model `com.oracle.bmc.identitydomains.model.IdentityPropagationTrust` in the Identity Domains service
+- The property `credentials` was made required in the model `CreateDbSystemDetails` in the PostgreSQL service
 
-## 3.44.4 - 2024-07-23
+
+## 2.73.2 - 2024-07-23
 ### Added
 - Support for subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service
 - Support for SQL and FTP monitors on create and update operations in the Application Performance Monitoring service
@@ -421,25 +382,67 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for creating and updating sensitive data models of the tables for discovery in the Data Safe service
 - Support for additional optional parameters on autonomous database create and update operations in the Database service
 
-## 3.44.3 - 2024-07-16
+## 2.73.1 - 2024-07-16
 ### Added
-- Support for calling Oracle Cloud Infrastructure services in the `me-abudhabi-2` region
-
-## 3.44.1 - 2024-07-02
-### Added
-- Support for calling Oracle Cloud Infrastructure services in the `ap-singapore-2` region
+- Support for calling Oracle Cloud Infrastructure services in the `ap-singapore-2` and `me-abudhabi-2` regions
 - Support for additional parameters in list and delete operations in the File Storage service
 - Support for host capacity planning to analyze disabled and deleted resources in the Operations Insights service
 - Support for title and description updates in the Capacity Management service
 - Support for listing parameters for migrations in the Database Migration service
 - Support for Oracle exadata database service on exascale Infrastructure (ExaDB-XS) in the Database service
 
-## 3.44.0 - 2024-06-25
+### Fixed
+Fixed endpoint templates for multiple service parameters
+
+## 2.73.0 - 2024-06-25
 ### Added
+- Support for Demand Signal service
+- Support for external database connectors in the Database service
+- Support for monitoring standby databases in the Database Management service
+- Support for resource overviews in the Capacity Management service
+- Support for optional parameters in the download API in the Java Management Service Downloads service
+- Support for creating cross-region autonomous data guards in the Database service
+- Support for listing autonomous database peers in the Database service
+- Support for dedicated AI clusters in the Generative AI service
+- Support for Llama chat and Lora Fine-Tuning method in the Generative AI service
+- Support for adding and removing locks for connections, deployments, and deployment backups in the GoldenGate service
+- Support for additional connection types for deployments and connections in the GoldenGate service
+- Support for 23ai based databases in Globally Distributed Database service
+- Support for testing span enrichment groups in Application Performance Monitoring service
+- Support for subscription suspension and termination orders in Fusion Apps as a Service
+- Support for time first occurred and time last occurred for resource sightings in Cloud Guard service
+- Support for alarm summary, notification title, and slack duration on create and update operations in Monitoring service
+- Support for message creation timestamp in Queue service
+- Support for public connection urls and public endpoints for autonomous databases in the Database service
+- Support for insurance claim document type in the AI Document service
+- Support for Microsoft IIS discovery and monitoring in the Stack Monitoring service
 - Support for MySQL to MySQL homogeneous migrations in the Database Migration service
 - Support for manual cross-region backups in the MySQL Heatwave service
+- The SDK now uses Jackson-databind version `2.17.1`
+- The SDK has removed `nimbus-jose-jwt` from the list of dependencies
   
 ### Breaking Changes
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType` has been removed in the Capacity Management service
+- Added final modifier to class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestComputeDetails` has been removed in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+- Accessibility of method `public CohereMessage(com.oracle.bmc.generativeaiinference.model.CohereMessage$Role, java.lang.String)` has been decreased from public to protected in the model `om.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public java.lang.String getMessage()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Role getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Field `Dalle3` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Field `Openai` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Accessibility of method `public Message(java.lang.String, java.util.List)` has been decreased from public to protected in the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public java.lang.String getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
 - The models `AdvisorSettings`, `Agent`, `AgentCollection`, `AgentImageCollection`, `AgentImageSummary`, `AgentSummary`, `AwsS3DataTransferMediumDetails`, `AwsS3Details`, `ChangeAgentCompartmentDetails`, `ConnectDescriptor`, `CreateAdvisorSettings`, `CreateAwsS3Details`, `CreateConnectDescriptor`, `CreateDataPumpSettings`, `CreateDataTransferMediumDetails`, `CreateDatabaseLinkDetails`, `CreateDumpTransferDetails`, `CreateGoldenGateDetails`, `CreateGoldenGateHub`, `CreateGoldenGateServiceDetails`, `CreateGoldenGateServiceDetails`, `CreatePrivateEndpoint`, `CreateSshDetails`, `CreateVaultDetails`, `DataPumpJobMode`, `DataPumpSettings`, `DataTransferMediumDetails`, `DataTransferMediumDetailsV2`, `DatabaseConnectionTypes`, `DatabaseCredentials`, `DatabaseLinkDetails`, `DatabaseManualConnectionSubTypes`, `DatabaseObject`, `DbLinkDataTransferMediumDetails`, `DumpTransferDetails`, `GoldenGateDetails`, `GoldenGateHub`, `GoldenGateServiceDetails`, `GoldenGateSettings`, `MigrationObjectSummary`, `NfsDataTransferMediumDetails`, `ObjectStorageDataTransferMediumDetails`, `PrivateEndpointDetails`, `SshDetails`, `UpdateAdvisorSettings`, `UpdateAgentDetails`, `UpdateAwsS3Details`, `UpdateConnectDescriptor`, `UpdateDataPumpSettings`, `UpdateDataTransferMediumDetails`, `UpdateDatabaseLinkDetails`, `UpdateDumpTransferDetails`, `UpdateGoldenGateDetails`, `UpdateGoldenGateHub`, `UpdateGoldenGateServiceDetails`, `UpdateGoldenGateSettings`, `UpdatePrivateEndpoint`, `UpdateSshDetails`, `UpdateVaultDetails`, `VaultDetails`, `ChangeAgentCompartmentRequest`, `DeleteAgentRequest`, `GetAgentRequest`, `ListAgentImagesRequest`, `ListAgentsRequest`, `UpdateAgentRequest`, `ChangeAgentCompartmentResponse`, `DeleteAgentResponse`, `GetAgentResponse`, `ListAgentImagesResponse`, `ListAgentsResponse` and `UpdateAgentResponse` were removed in the Database Migration service
 - The operations `changeAgentCompartment`, `deleteAgent`, `getAgent`, `listAgentImages`, `listAgents`, and `updateAgent` were removed in the Database Migration service
 - The waiters `forAgent` were removed in the Database Migration service
@@ -459,89 +462,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The enum values `OdmsInitializeGgs` and `OdmsValidateGgService` were removed in the enum `OdmsJobPhases` in the model `OdmsJobPhases` in the Database Migration service
 - The type of property `lifecycleState` was changed from `LifecycleStates` to `Connection.LifecycleState` in the models `Connection` and `ConnectionSummary` in the Database Migration service
 
-## 3.43.2 - 2024-06-18
-### Added
-- Support for public connection urls and public endpoints for autonomous databases in the Database service
-- Support for insurance claim document type in the AI Document service
-- Support for Microsoft IIS discovery and monitoring in the Stack Monitoring service
+## 2.72.0 - 2024-05-21
+### Fixed
+- Fixed unnecessary buffering of streams when content length was set for a stream (see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/601))
 
-## 3.43.1 - 2024-06-11
-### Added
-- Support for 23ai based databases in Globally Distributed Database service
-- Support for testing span enrichment groups in Application Performance Monitoring service
-- Support for subscription suspension and termination orders in Fusion Apps as a Service
-- Support for time first occurred and time last occurred for resource sightings in Cloud Guard service
-- Support for alarm summary, notification title, and slack duration on create and update operations in Monitoring service
-- Support for message creation timestamp in Queue service
-
-## 3.43.0 - 2024-06-04
-### Added
-- Support for creating cross-region autonomous data guards in the Database service
-- Support for listing autonomous database peers in the Database service
-- Support for dedicated AI clusters in the Generative AI service
-- Support for Llama chat and Lora Fine-Tuning method in the Generative AI service
-- Support for adding and removing locks for connections, deployments, and deployment backups in the GoldenGate service
-- Support for additional connection types for deployments and connections in the GoldenGate service
-
-### Breaking Changes
-- Accessibility of method `public CohereMessage(com.oracle.bmc.generativeaiinference.model.CohereMessage$Role, java.lang.String)` has been decreased from public to protected in the model `om.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
-- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
-- Method `public java.lang.String getMessage()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
-- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Role getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
-- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
-- Field `Dalle3` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
-- Field `Openai` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
-- Accessibility of method `public Message(java.lang.String, java.util.List)` has been decreased from public to protected in the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
-- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
-- Method `public java.lang.String getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
-- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
-
-## 3.42.0 - 2024-05-28
-### Added
-- Support for Demand Signal service
-- Support for external database connectors in the Database service
-- Support for monitoring standby databases in the Database Management service
-- Support for resource overviews in the Capacity Management service
-- Support for optional parameters in the download API in the Java Management Service Downloads service
-  
-### Breaking Changes
-- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
-- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
-- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType` has been removed in the Capacity Management service
-- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType` has been removed in the Capacity Management service
-- Added final modifier to class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
-- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
-- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails$ResourceType` has been removed in the Capacity Management service
-- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestComputeDetails` has been removed in the Capacity Management service
-- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
-- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
-
-## 3.41.3 - 2024-05-21
-### Added
-- Support for the Resource Scheduler service
-- Support for Bring Your Own Container (BYOC), custom networking and graceful termination of pipelines in the Data Science service
-- Support for backup and replacement of master, utility, and edge nodes in the Big Data service
-- Support for nested resource principal in the Data Science service
-
-## 3.41.2 - 2024-05-14
-### Added
-- Support for the Marketplace Private Offer service
-- Support for resizing local file systems in the Database service
-- Support for PPv2 (Proxy Protocol version 2) in the Load Balancer service
-- Support for custom return path for sent emails in the Email Delivery service
-- Support for session resumption in the Load Balancer service
-
-## 3.41.1 - 2024-05-07
-### Added
-- Support for resizing of local file systems in the Database service
-- Support for adding user defined pause group in disaster recovery plan in the Disaster Recovery service
-- Support for OS patching configs in the Big Data service
-- Support for IP inventory and notification feature in the Networking service
-- Support for accidental delete protection for load balancers, load balancer listeners, and load balancer backends in the Load Balancer service
-- Support for backend max connections for load balancers in the Load Balancer service
-- Support for listener max connections for load balancers in the Load Balancer service
-
-## 3.41.0 - 2024-04-30
 ### Added
 - Support for enabling unified auditing for DBHome in the Database service
 - Support for listing minor Grid Infrastructure (GI) versions available for custom GI software image creation in the Database service
@@ -550,7 +474,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for workspace properties in workspace create and update operations in the Data Integration service
 - Support for monitoring ExaCC databases in the Database Management service
 - Support for validations on target and policy before the masking process in the Data Safe service
-  
+- Support for resizing of local file systems in the Database service
+- Support for adding user defined pause group in disaster recovery plan in the Disaster Recovery service
+- Support for OS patching configs in the Big Data service
+- Support for IP inventory and notification feature in the Networking service
+- Support for accidental delete protection for load balancers, load balancer listeners, and load balancer backends in the Load Balancer service
+- Support for backend max connections for load balancers in the Load Balancer service
+- Support for listener max connections for load balancers in the Load Balancer service
+- Support for the Marketplace Private Offer service
+- Support for resizing local file systems in the Database service
+- Support for PPv2 (Proxy Protocol version 2) in the Load Balancer service
+- Support for custom return path for sent emails in the Email Delivery service
+- Support for session resumption in the Load Balancer service
+- Support for Resource Scheduler service
+- Support for ML Pipelines v2 in the Data Science service
+- Support for backup and replacement of MASTER, UTILITY, and EDGE NODES in Big Data service
+- Support for Nested Resource Principal in the Data Science service
+
 ### Breaking Changes
 - Return type of method `public java.lang.String getAccepted()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Accepted` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
 - Return type of method `public java.lang.String getAdaptive()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline$Adaptive` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaseline` in the Database Management service
@@ -566,7 +506,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Return type of method `public java.lang.String getReproduced()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Reproduced` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
 - Return type of method `public java.lang.String getAllSqlStatementsFetched()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlTuningSet$AllSqlStatementsFetched` in the model `com.oracle.bmc.databasemanagement.model.SqlTuningSet` in the Database Management service
 
-## 3.40.0 - 2024-04-23
+## 2.71.0 - 2024-04-25
 ### Added
 - Support for the Cluster Placement Groups service
 - Support for new optional parameter for managing approval template in the Managed Access service
@@ -575,20 +515,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for assigning a cluster placement group to boot and block volumes in the Block Storage service
 - Support for container workload integration in the Cloud Guard service
 - Support for instances in OCI and 3rd party clouds in the OS Management service
-
-### Breaking Changes
-- The Application Migration service was decommissioned and removed
-- Support for default retries on the operations of the Managed Access service
-- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackage` in the OS Management service
-- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary` in the OS Management service
-- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceAnalyticContentRequest` in the OS Management service
-- Method `public java.util.List getAdvisoryType()` has been removed from `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest` in the OS Management service
-- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.SummarizeManagedInstanceAnalyticsRequest` in the OS Management service
-- Class `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceContentRequest$AdvisoryType` has been removed in the OS Management service
-- Class `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest$AdvisoryType` has been removed in the OS Management service
-
-## 3.39.2 - 2024-04-16
-### Added
 - Support for calling Oracle Cloud Infrastructure services in the me-abudhabi-3 region
 - Support for new Image resource for an Autonomous Database in the Database service
 - Support for creating Autonomous Container Database using Autonomous Database Software Image in the Database service
@@ -602,9 +528,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for identification and de-identification of Private Health Information (PHI) service in the AI Language service
 - Support for multilingual content for using machine learning models in the AI Language service
 - Support for usage statements in cost management in the Usage service
-
-## 3.39.1 - 2024-04-09
-### Added
 - Support for calling Oracle Cloud Infrastructure services in the ap-dcc-gazipur-1 region
 - Support for the DNS-based backend health check in the Network Load Balancer service
 - Support for Fail Open in the Network Load Balancer service
@@ -614,12 +537,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for filtering listed resources based on lifecycle status in the Stack Monitoring service
 - Support for creating tasks with new config parameters in the Stack Monitoring service
 - Support for Composite Resource Principal integration in the Data Flow service
-
-## 3.39.0 - 2024-04-02
-### Fixed
-- Fixed a thread leak in `IdleConnectionMonitor`
- 
-### Added
 - Support for assigned private IP and single stack IPV6 feature for Network Load Balancer Service
 - Support for Configuration API in Email Delivery Service
 - Support for the status field in creating data source resource for Cloud Guard Service
@@ -627,6 +544,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for sending mails via HTTPS for Email Delivery Service
   
 ### Breaking Changes
+- Removed `sun.security.x509.X509CertImpl` usage in the `X509CertReader` class
+- The Application Migration service was decommissioned and removed
+- Support for default retries on the operations of the Managed Access service
+- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackage` in the OS Management service
+- Return type of method `public java.lang.String getArchitecture()` has been changed to `com.oracle.bmc.osmanagementhub.model.SoftwarePackageArchitecture` in the model `com.oracle.bmc.osmanagementhub.model.SoftwarePackageSummary` in the OS Management service
+- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceAnalyticContentRequest` in the OS Management service
+- Method `public java.util.List getAdvisoryType()` has been removed from `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest` in the OS Management service
+- Method `public com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation getInstanceLocation()` has been removed from `com.oracle.bmc.osmanagementhub.requests.SummarizeManagedInstanceAnalyticsRequest` in the OS Management service
+- Class `com.oracle.bmc.osmanagementhub.requests.GetManagedInstanceContentRequest$AdvisoryType` has been removed in the OS Management service
+- Class `com.oracle.bmc.osmanagementhub.requests.ListManagedInstanceErrataRequest$AdvisoryType` has been removed in the OS Management service
 - Return type of method `public com.oracle.bmc.email.model.SenderSummary$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.email.model.Sender$LifecycleState` in the model `com.oracle.bmc.email.model.SenderSummary` in the Email Delivery Service
 - Return type of method `public com.oracle.bmc.email.model.Suppression$Reason getReason()` has been changed to `com.oracle.bmc.email.model.SuppressionReason` in the model `com.oracle.bmc.email.model.Suppression` in the Email Delivery Service
 - Return type of method `public com.oracle.bmc.email.model.SuppressionSummary$Reason getReason()` has been changed to `com.oracle.bmc.email.model.SuppressionReason` in the model `com.oracle.bmc.email.model.SuppressionSummary` in the Email Delivery Service
@@ -634,8 +561,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.email.model.Suppression$Reason` has been removed in the Email Delivery Service
 - Class `com.oracle.bmc.email.model.SuppressionSummary$Reason` has been removed in the Email Delivery Service
 
-## 3.38.0 - 2024-03-26
+## 2.70.0 - 2024-03-26
+### Fixed
+- Fixed a thread leak in `IdleConnectionMonitor`
 ### Added
+- Support for standalone Oracle HTTP server discovery and monitoring in the Stack Monitoring service
+- Support for attribute management for traces in the Application Performance Monitoring service
+- Support for async jobs and document translations in the AI language service
 - Support for creating and updating a refreshable clone with auto-refresh for an Autonomous Database in the Database service
 - Support for symmetric hashing in the Network Load Balancer service
 - Support for creating and deploying helm command specifications in the DevOps Service
@@ -644,25 +576,23 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for reading logs from head position after agent restart in the Logging service
 - Support for monitoring MySQL HeatWave clusters in Database Management Service
 - Support for multiple severities in an alarm in the Monitoring service
-  
 ### Breaking Changes
 - Support for default retries on the operations of the Network Load Balancer service
 - The properties `displayName` and `description` have been made required in the model `CreateUnifiedAgentConfigurationDetails` in the Logging service
 - The property `recordInput` has been made required in the model `OperationalMetricsSource` in the Logging service
 
-## 3.37.2 - 2024-03-19
-### Added
-- Support for standalone Oracle HTTP server discovery and monitoring in the Stack Monitoring service
-- Support for attribute management for traces in the Application Performance Monitoring service
-- Support for async jobs and document translations in the AI language service
-
-## 3.37.1 - 2024-03-12
+## 2.69.1 - 2024-03-12
 ### Added
 - Support for new development license type on dedicated infrastructure in the Database service
 - Support for placement parameters on Autonomous Container Database create operation in the Database service
 - Support for autoscaling on model deployment in the Data Science service
+- Support for Resource Principals version 2.1.2  
+- Support for Yubikey authentication
+ 
+### Fixed
+- Preserve DuplicatableInputStream
 
-## 3.37.0 - 2024-03-05
+## 2.69.0 - 2024-03-05
 ### Added
 - Support for Linux capabilities configuration for the containers in the Container Instances service
 - Support for service platforms in the Oracle Store Platform Gateway service
@@ -673,8 +603,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - The property `CapacityPlanningResources` has been made optional in the model `NewsContentTypes` in the Operations Insights service
 
-## 3.36.0 - 2024-02-27
+## 2.68.0 - 2024-02-27
 ### Added
+- Support for adding automatic backups during cross region operations and disaster recovery in the Autonomous Database service
+- Support for overlapping CIDR in network path analyzer in the Virtual Network Monitoring service
+- Support for additional attributes in entity and topology in the Log Analytics service
+- Support for historic collection and log type while creating object collection rules in the Log Analytics service
+- Support for position aware parsers in the Log Analytics service
+- Support for filtering log sources, detection rules and scheduled tasks based on target service in the Log Analytics service
+- Support for additional recall and release attributes in the Log Analytics service
+- Support for opc-meta-properties header while uploading log events in the Log Analytics service
+- Support for calling Oracle Cloud Infrastructure services in the me-dcc-doha-1 region
+- Support for Secure Desktops service
+- Support for enabling and disabling Simultaneous Multithreading (SMT) for virtual machines in the Compute service
+- Support for Bring Your Own Container Jobs (BYOC v2) in the Data Science service
+- Support for expanded language translation in the AI Language service
+- Support for additional flags for ignoring transliteration and text length to be considered for determining dominant language in the AI Language service
 - Support for specifying dialog version when creating skills entities in the Digital Assistant service
 - Support for bulk creation of skill entities in the Digital Assistant service
 - Support for training skill query entities in the Digital Assistant service
@@ -691,36 +635,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for asynchronous data asset export in the Data Catalog service
 - Support for launch with multiple volumes for virtual machines in the Compute Service
 - Support for tagging in Database Management service
-  
+
 ### Breaking Changes
+- Class `com.oracle.bmc.ailanguage.model.PreTrainedPhiModelDetails` has been removed in the AI Language service
 - Method `public java.lang.Integer getMaxCpuCoreCount()` has been removed from the models `com.oracle.bmc.database.model.AutonomousDatabase`, `com.oracle.bmc.database.model.AutonomousDatabaseSummary`, `com.oracle.bmc.database.model.CreateAutonomousDatabaseBase` and `com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails` in the Database service
 - Field `PeerAutonomousDatabaseLifeCycleState` has been removed from the model `com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation` in the Database service
 - Class `com.oracle.bmc.database.model.DatabaseConnectionCredentailsByName` has been removed from the Database service
 
-## 3.35.0 - 2024-02-20
-### Added
-- Support for calling Oracle Cloud Infrastructure services in the me-dcc-doha-1 region
-- Support for Secure Desktops service
-- Support for enabling and disabling Simultaneous Multithreading (SMT) for virtual machines in the Compute service
-- Support for Bring Your Own Container Jobs (BYOC v2) in the Data Science service
-- Support for expanded language translation in the AI Language service
-- Support for additional flags for ignoring transliteration and text length to be considered for determining dominant language in the AI Language service
-  
-### Breaking Changes
-- Class `com.oracle.bmc.ailanguage.model.PreTrainedPhiModelDetails` has been removed in the AI Language service
+## 2.67.2 - 2024-02-13
 
-## 3.34.1 - 2024-02-13
-### Added
-- Support for adding automatic backups during cross region operations and disaster recovery in the Autonomous Database service
-- Support for overlapping CIDR in network path analyzer in the Virtual Network Monitoring service
-- Support for additional attributes in entity and topology in the Log Analytics service
-- Support for historic collection and log type while creating object collection rules in the Log Analytics service
-- Support for position aware parsers in the Log Analytics service
-- Support for filtering log sources, detection rules and scheduled tasks based on target service in the Log Analytics service
-- Support for additional recall and release attributes in the Log Analytics service
-- Support for opc-meta-properties header while uploading log events in the Log Analytics service
+(internal changes only)
 
-## 3.34.0 - 2024-02-06
+## 2.67.1 - 2024-02-08
+### Fixed
+- The thread `IdleConnectionMonitor` is terminated when the client is closed
 ### Added
 - Support for the Globally Distributed Database service
 - Support for secret auto-rotation in the Secret Management service
@@ -728,7 +656,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for resource locking operations in the Digital Media service
 - Support for data sources, including prometheus emitter, in the Management Agent service
 - Support for Bring Your Own Certificates (BYOC) in the MySQL HeatWave Database service
-  
+
 ### Breaking Changes
 - Method `public com.oracle.bmc.mediaservices.responses.GetMediaWorkflowJobFactResponse getMediaWorkflowJobFact(com.oracle.bmc.mediaservices.requests.GetMediaWorkflowJobFactRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServices` in the Digital Media service
 - Method `public com.oracle.bmc.mediaservices.responses.ListMediaWorkflowJobFactsResponse listMediaWorkflowJobFacts(com.oracle.bmc.mediaservices.requests.ListMediaWorkflowJobFactsRequest)` has been removed from `com.oracle.bmc.mediaservices.MediaServices` in the Digital Media service
@@ -748,76 +676,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.managementagent.model.EditModes` has been removed from the Management Agent service
 - Return type of method `public com.oracle.bmc.managementagent.model.OperationTypes getType()` has been changed to `java.util.List` in `com.oracle.bmc.managementagent.requests.ListWorkRequestsRequest` in the Management Agent service
 
-## 3.33.0 - 2024-01-30
-### Added
-- Support for OCI Control Center service
-- Support for giro value set for address rules in the Oracle Store Platform service
-- Support for giro in tax information for subscriptions in the Oracle Store Platform service
-- Support for REST connectivity with Oath2 in the Data Integration service
-- Support for resolver rules limit increase in the DNS service
-- Support for named credentials in the Database Management service
-  
-### Breaking Changes
-- Default retry disabled on the operations of the DNS service
-
-## 3.32.1 - 2024-01-23
-### Added
-- Support for the Generative AI service
-- Support for additional currencies and countries for paid listings in the Marketplace service
-- Support for process sets in the Stack Monitoring service
-
-## 3.32.0 - 2024-01-16
-### Added
-- Support for resource id filter on the service work requests in the Container Instances service
-- Support for polyglot vulnerability audit in the Application Dependency Management service
-- Support for create, read, and update operations on peer databases in the Data Safe service
-- Support for dimension specific alarm suppressions in the Monitoring service
-- Support for calculating audit volume in the Data Safe service
-- Support for viewing schema accesses in data safe user assessments in the Data Safe service
-- Support for security feature usage in the Data Safe service
-- Support for viewing the top security findings in data safe security assessments in the Data Safe service
-- Support for additional filters in list findings operation in the Data Safe service
-- Support for updating risk level of the specified finding in the Data Safe service
-  
-### Breaking Changes
-- Method `public java.lang.String getOpcWorkRequestId()` has been removed from the response model `com.oracle.bmc.adm.responses.CreateVulnerabilityAuditResponse` in the Application Dependency Management service
-
-## 3.31.1 - 2024-01-09
-### Added
-- Support for calling Oracle Cloud Infrastructure services in the sa-valparaiso-1 region
-- Support for creation of up to 60 containers per container instance in the Container Instances service
-- Support for Oracle GoldenGate discovery and monitoring in the Stack Monitoring service
-- Support for GoldenGate stream analytics in the GoldenGate service
-- Support for backup work requests in MySQL Heatwave service
-- Support for create, update, delete and list operations on premise vantage points in the Application Performance Monitoring service
-- Support for create, update, delete and list operations on workers in the Application Performance Monitoring service
-- Support for host capacity planning for compute instances and host unallocated metrics in the Operations Insights service
- 
-### Fixed
-- Operations that upload streams (e.g. `PutObject`) now retry according to global or client-level retry configurations (see [#566](https://github.com/oracle/oci-java-sdk/issues/566))
-- Retry logic when fetching resource principal session tokens
-
-## 3.31.0 - 2023-12-12
-### Added
-- Support for changing compartments of configurations in the PostgreSQL service
-- Support for granular policies including compartments, resource types, and recommendations in the Optimizer service
-- Support for token exchanges in the Identity Domains service
-- Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service
-- Support for resource locking in the Data Catalog service
-- Support for concurrency throttling in the Data Integration service
-- Support for reboot migrations for VMs on dedicated hosts in the Compute service
-- Support for connection routing method settings and subnet update in the GoldenGate service
-- Support for data discovery of commonly used sensitive types in the Data Safe service
-- Support for incremental extract and updates to the workflows in the Data Integration service 
-  
-### Breaking Changes
-- Support for default retries on the operations of the Optimizer service
-- Added idle connection monitor thread to evict idle and expired Apache connections. This also restores connection reuse for the Apache connector and fixes a performance issue.  For more details, see `ApacheConnector-README`
-- Retries disabled when the circuit breaker is in Open state. To enable retries on exceptions caused due to circuit breaker, set `oci.javasdk.default.retry.on.open.circuit.breaker` to `true`. Check `RetryOnOpenCircuitBreakerExample` for more details
-- Method `public com.oracle.bmc.psql.model.Configuration getConfiguration()` has been removed from `com.oracle.bmc.psql.responses.ChangeConfigurationCompartmentResponse` in the PostgreSQL service
-- Method `public java.lang.String getEtag()` has been removed from `com.oracle.bmc.psql.responses.ChangeConfigurationCompartmentResponse` in the PostgreSQL service
-
-## 3.30.0 - 2023-12-04
+## 2.67.0 - 2024-02-01
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-zurich-1 and the sa-bogota-1 region
 - Support for managing certificates of target Servers in the Golden Gate service
@@ -831,8 +690,50 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for updating ocpu/ecpu count, local storage, ACD count and Exadata storage on Cloud Autonomous VM Cluster and Autonomous VM Cluster in the Database service
 - Support for serial console history in the Database service
 - Support for Oracle Linux 8 version database system in the Database service
- 
- 
+- Support for changing compartments of configurations in the PostgreSQL service
+- Support for granular policies including compartments, resource types, and recommendations in the Optimizer service
+- Support for token exchanges in the Identity Domains service
+- Support for Apache HTTP server discovery and monitoring in the Stack Monitoring service
+- Support for resource locking in the Data Catalog service
+- Support for concurrency throttling in the Data Integration service
+- Support for reboot migrations for VMs on dedicated hosts in the Compute service
+- Support for connection routing method settings and subnet update in the GoldenGate service
+- Support for data discovery of commonly used sensitive types in the Data Safe service
+- Support for incremental extract and updates to the workflows in the Data Integration service 
+- Support for calling Oracle Cloud Infrastructure services in the sa-valparaiso-1 region
+- Support for creation of up to 60 containers per container instance in the Container Instances service
+- Support for Oracle GoldenGate discovery and monitoring in the Stack Monitoring service
+- Support for GoldenGate stream analytics in the GoldenGate service
+- Support for backup work requests in MySQL Heatwave service
+- Support for create, update, delete and list operations on premise vantage points in the Application Performance Monitoring service
+- Support for create, update, delete and list operations on workers in the Application Performance Monitoring service
+- Support for host capacity planning for compute instances and host unallocated metrics in the Operations Insights service
+- Support for resource id filter on the service work requests in the Container Instances service
+- Support for polyglot vulnerability audit in the Application Dependency Management service
+- Support for create, read, and update operations on peer databases in the Data Safe service
+- Support for dimension specific alarm suppressions in the Monitoring service
+- Support for calculating audit volume in the Data Safe service
+- Support for viewing schema accesses in data safe user assessments in the Data Safe service
+- Support for security feature usage in the Data Safe service
+- Support for viewing the top security findings in data safe security assessments in the Data Safe service
+- Support for additional filters in list findings operation in the Data Safe service
+- Support for updating risk level of the specified finding in the Data Safe service
+- Support for the Generative AI service
+- Support for additional currencies and countries for paid listings in the Marketplace service
+- Support for process sets in the Stack Monitoring service
+- Support for OCI Control Center service
+- Support for giro value set for address rules in the Oracle Store Platform service
+- Support for giro in tax information for subscriptions in the Oracle Store Platform service
+- Support for REST connectivity with Oath2 in the Data Integration service
+- Support for resolver rules limit increase in the DNS service
+- Support for named credentials in the Database Management service
+- Support for "Bring Your Own Certificates" feature in the MySQL HeatWave service
+- Support for Data Sources, including Prometheus Emitter, in the Management Agent Cloud service
+- Support for the Globally Distributed Database service
+- Support for resource locking operations in the Digital Media service
+- Support for Dedicated KMS in Key Management service
+- Support for secret auto-rotation in secrets in the Vault service
+  
 ### Breaking Changes
 - Method `public com.oracle.bmc.ocvp.responses.ListSupportedSkusResponse listSupportedSkus(com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest)` has been removed from com.oracle.bmc.ocvp.Sddc in the VMWare Solution service
 - Method `public java.lang.Iterable listSupportedSkusRecordIterator(com.oracle.bmc.ocvp.requests.ListSupportedSkusRequest)` has been removed from com.oracle.bmc.ocvp.SddcPaginators in the VMWare Solution service
@@ -927,48 +828,40 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.ocvp.model.Sku` has been removed in the VMWare Solution service
 - Class `com.oracle.bmc.ocvp.model.SupportedSkuSummary` has been removed in the VMWare Solution service
 - Class `com.oracle.bmc.ocvp.model.SupportedSkuSummaryCollection` has been removed in the VMWare Solution service
+- Support for default retries on the operations of the Optimizer service
+- Added idle connection monitor thread to evict idle and expired Apache connections. This also restores connection reuse for the Apache connector and fixes a performance issue.  For more details, see `ApacheConnector-README`
+- Retries disabled when the circuit breaker is in Open state. To enable retries on exceptions caused due to circuit breaker, set `oci.javasdk.default.retry.on.open.circuit.breaker` to `true`. Check `RetryOnOpenCircuitBreakerExample` for more details
+- Method `public com.oracle.bmc.psql.model.Configuration getConfiguration()` has been removed from `com.oracle.bmc.psql.responses.ChangeConfigurationCompartmentResponse` in the PostgreSQL service
+- Method `public java.lang.String getEtag()` has been removed from `com.oracle.bmc.psql.responses.ChangeConfigurationCompartmentResponse` in the PostgreSQL service
+- Method `public java.lang.String getOpcWorkRequestId()` has been removed from the response model `com.oracle.bmc.adm.responses.CreateVulnerabilityAuditResponse` in the Application Dependency Management service
+- Default retry disabled on the operations of the DNS service
 
-## 3.29.0 - 2023-11-14
-### Added
-- Support for the PostgreSQL service
-- Support for new operations in the Identity Domains service
-- Support for enabling, disabling, and renewing SSL/TLS in the Big Data service
-- Support for diarization in the AI Speech service
-- Support for Capacity Topology API in the Compute service
- 
-### Breaking Changes
-- Return type of method `public java.lang.String getStatus()` has been changed to `com.oracle.bmc.identitydomains.model.MyRequest$Status` in `com.oracle.bmc.identitydomains.model.MyRequest` in the Identity Domains service
+### Fixed
+- If `restClientFactoryBuilder` is set in a client's builder, it is now actually used for creating the `RestClientFactory` and the underlying `RestClient`.
 
-## 3.28.1 - 2023-11-07
+## 2.66.2 - 2023-12-01
 ### Added
-- Support for Java Management Service Downloads
-- Support for creating autonomous dataguard associations in the Database service
-- Support for SaaS administrative user configurations for autonomous database in the Database service
-- Support for macOS in the the Java Management service
-- Support for distribution and management of deployment rule sets in the Java Management service
-- Support for new download location of Oracle Java runtime binaries in the Java Management service
-- Support for exporting data across regions in the Java Management service
-
-## 3.28.0 - 2023-10-31
-### Added
-- Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region
-- Support for disaster recovery of load balancers, network load balancers and file systems in the Disaster Recovery service
-- Support for performing disaster recovery drills in the Disaster Recovery service
-- Support for enterprise SKUs and extensibility in the Stack Monitoring service
-- Support for metric extensions in the Stack Monitoring service
-- Support for baseline and anomaly detection in the Stack Monitoring service
-- Support for integration with Database Management service in the MySQL HeatWave service
-- Support for MySQL database management in the Database Management service
-- Support for database firewalls in the Data Safe service  
- 
-### Breaking Changes
-- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
-- Method `public java.lang.String getUserAssessmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
-- `ProcessingException` is now caught and `BmcException` is thrown instead in order to fix timeout retries
-- Modules `bmc-graalvm-addon` and `bmc-graalvm-jersey3-addon` have been removed from the `bmc-addons` module. Please refer README.md for more information.
-
-## 3.27.0 - 2023-10-24
-### Added
+- Support for listing compute performances and storage performances in Database service
+- Support for private endpoints for external key managers in Key Management service
+- Support for additional parameters in vaults and keys for external key managers in Key Management service
+- Support for domains while creating integration instances in Oracle Integration Cloud service
+- Support for elastic resource pools in the Database service
+- Support for private endpoints in the Data Science service
+- Support for File System Service (FSS) as transfer medium for data export and import in the Database Migration service
+- Support for new optional parameters on replica create, update and list operations in the MySQL Heatwave service
+- Support for creating flow log type capture filters in Virtual Cloud Network service
+- Support for export and import of metadata in Data Integration service
+- Support for displaying resource usage information on autonomous vm cluster get operations in Database service
+- Support for displaying resource usage information for the list of autonomous container databases on autonomous vm cluster get operations in Database service
+- Support for pluggable database with enhanced features in Database service
+- Support for exporting container and kubernetes app listings in Marketplace service
+- Support for work request statuses for export container and kubernetes app listings in Marketplace service
+- Support for the Caching Service
+- Support for the Marketplace Publisher service
+- Support for higher limits for network firewalls in the Network Firewall service
+- Support for exporting access request reports in the Lockbox service
+- Support for storage mounts for jobs and notebooks in the Data Science service
+- Support for unified agent operational metrics for the service configurations in the Logging Management service
 - Support for optional parameters for autonomous container database create and update operations in the Database service
 - Support for maintenance runs for autonomous container database resources in the Database service
 - Support for runtime unsupported connections for Oracle Database and MySQL database types in the Database Tools service
@@ -979,22 +872,31 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for application dependency management (ADM) remediation features in the Application Dependency Management service
 - Support for additional connections types for Amazon Kinesis, Amazon Redshift, Elasticsearch, Generic, Google BigQuery, Google Cloud Storage and Redis Database resources in the Golden Gate service
 - Support for optional parameters for the list alarms status operation in the Monitoring Service
+- Support for calling Oracle Cloud Infrastructure services in the us-saltlake-2 region
+- Support for disaster recovery of load balancers, network load balancers and file systems in the Disaster Recovery service
+- Support for performing disaster recovery drills in the Disaster Recovery service
+- Support for enterprise SKUs and extensibility in the Stack Monitoring service
+- Support for metric extensions in the Stack Monitoring service
+- Support for baseline and anomaly detection in the Stack Monitoring service
+- Support for integration with Database Management service in the MySQL HeatWave service
+- Support for MySQL database management in the Database Management service
+- Support for database firewalls in the Data Safe service  
+- Support for Java Management Service Downloads
+- Support for creating autonomous dataguard associations in the Database service
+- Support for SaaS administrative user configurations for autonomous database in the Database service
+- Support for macOS in the the Java Management service
+- Support for distribution and management of deployment rule sets in the Java Management service
+- Support for new download location of Oracle Java runtime binaries in the Java Management service
+- Support for exporting data across regions in the Java Management service
+- Support for the PostgreSQL service
+- Support for new operations in the Identity Domains service
+- Support for enabling, disabling, and renewing SSL/TLS in the Big Data service
+- Support for diarization in the AI Speech service
+- Support for Capacity Topology API in the Compute service
  
 ### Breaking Changes
-- Support for retries by default on operations of the Database Tools service
-- Support for retries by default on operations of the Monitoring service
-- Method `public java.lang.String getOpcRetryToken()` has been removed from models `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsConnectionCompartmentRequest` and `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsPrivateEndpointCompartmentRequest` in the Database Tools service
-
-## 3.26.0 - 2023-10-17
-### Added
-- Support for the Caching Service
-- Support for the Marketplace Publisher service
-- Support for higher limits for network firewalls in the Network Firewall service
-- Support for exporting access request reports in the Lockbox service
-- Support for storage mounts for jobs and notebooks in the Data Science service
-- Support for unified agent operational metrics for the service configurations in the Logging Management service
-
-### Breaking Changes
+- The default behavior of retries with respect to circuit breakers was changed. Open circuit breakers are not retryable by default anymore. The previous behavior, in which open circuit breakers are retryable, can be  restored by setting the `oci.javasdk.default.retry.on.open.circuit.breaker` system property to `true` (e.g. `-Doci.javasdk.default.retry.on.open.circuit.breaker=true`)
+- Connection re-use is enabled again by default. This was safely accomplished using an `IdleConnectionMonitor`. This can be disabled by setting the `oci.javasdk.apache.idle.connection.monitor.thread.enabled` system property to `false` (e.g. `-Doci.javasdk.apache.idle.connection.monitor.thread.enabled=false`)
 - Method `public java.util.Map getApplicationLists()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
 - Method `public java.util.Map getDecryptionProfiles()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
 - Method `public java.util.List getDecryptionRules()` has been removed from model `com.oracle.bmc.networkfirewall.model.CreateNetworkFirewallPolicyDetails` in the Network Firewall service
@@ -1039,66 +941,57 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Method `public java.lang.String getServiceStage()` has been removed in the model `com.oracle.bmc.logging.requests.ListServicesRequest` in the Logging Management service
 - Removed field `EnumString` in `com.oracle.bmc.logging.model.Parameter$Type` in the Logging Management service
 - Removed field `RqsFilter` in `com.oracle.bmc.logging.model.Parameter$Type` in the Logging Management service
+- Support for retries by default on operations of the Database Tools service
+- Support for retries by default on operations of the Monitoring service
+- Method `public java.lang.String getOpcRetryToken()` has been removed from models `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsConnectionCompartmentRequest` and `com.oracle.bmc.databasetools.requests.ChangeDatabaseToolsPrivateEndpointCompartmentRequest` in the Database Tools service
+- Method `public java.lang.String getCompartmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
+- Method `public java.lang.String getUserAssessmentId()` has been removed from the model `com.oracle.bmc.datasafe.model.ProfileAggregation` in the Data Safe service
+- `ProcessingException` is now caught and `BmcException` is thrown instead in order to fix timeout retries
+- Return type of method `public java.lang.String getStatus()` has been changed to `com.oracle.bmc.identitydomains.model.MyRequest$Status` in `com.oracle.bmc.identitydomains.model.MyRequest` in the Identity Domains service
 
-## 3.25.4 - 2023-10-10
+## 2.66.1 - 2023-09-13
 ### Added
-- Support for creating flow log type capture filters in Virtual Cloud Network service
-- Support for export and import of metadata in Data Integration service
-- Support for displaying resource usage information on autonomous vm cluster get operations in Database service
-- Support for displaying resource usage information for the list of autonomous container databases on autonomous vm cluster get operations in Database service
-- Support for pluggable database with enhanced features in Database service
-- Support for exporting container and kubernetes app listings in Marketplace service
-- Support for work request statuses for export container and kubernetes app listings in Marketplace service
-
-## 3.25.3 - 2023-10-03
-### Added
-- Support for elastic resource pools in the Database service
-- Support for private endpoints in the Data Science service
-- Support for File System Service (FSS) as transfer medium for data export and import in the Database Migration service
-- Support for new optional parameters on replica create, update and list operations in the MySQL Heatwave service
-
-## 3.25.2 - 2023-09-26
-### Added
-- Support for listing compute performances and storage performances in Database service
-- Support for private endpoints for external key managers in Key Management service
-- Support for additional parameters in vaults and keys for external key managers in Key Management service
-- Support for domains while creating integration instances in Oracle Integration Cloud service
-
-## 3.25.1 - 2023-09-12
-### Added
-- Support for SQL tuning sets in Database Management service
-- Support for announcement chaining in Announcements service
-- Support for automatic promotion of hosts in Stack Monitoring service
-- Support for face detection in AI Vision service
-- Support for change parameters on list character sets operation in Database Management service
-- Support for displaying software sources attached to a managed instance group in OS Management service
-
-## 3.25.0 - 2023-09-05
-### Added
-- Support for queue channels in the Queue Service
-- Support for entity lineage retrieval and asynchronous glossary export in the Data Catalog service
-- Support for filtering and sorting while listing work requests in the Container Instances service
-- Support for the ability to create support requests for various support ticket types (TECH, LIMIT, ACCOUNT) in the Customer Incident Management Service
-- Endpoint changed from https://incidentmanagement.{region}.{domainAndTopLevelDomain} to https://incidentmanagement.{region}.oci.{domainAndTopLevelDomain} (e.g. https://incidentmanagement.us-phoenix-1.oraclecloud.com to https://incidentmanagement.us-phoenix-1.oci.oraclecloud.com) in the Customer Incident Management Service
- 
-### Breaking Changes
-- Class `com.oracle.bmc.cims.User` has been removed in the Customer Incident Management Service
-- Class `com.oracle.bmc.cims.UserClient` has been removed in the Customer Incident Management Service
-- Class `com.oracle.bmc.cims.model.AvailabilityDomain` has been removed in the Customer Incident Management Service
-- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
-- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
-- Method `public java.lang.String getCountry()` has been removed in the model `com.oracle.bmc.cims.model.CreateUserDetails` in the Customer Incident Management Service
-- Class `com.oracle.bmc.cims.model.Region` has been removed in the Customer Incident Management Service
-- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
-- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
-- Class `com.oracle.bmc.cims.requests.CreateUserRequest` has been removed in the Customer Incident Management Service
-- Method `public java.lang.String getProblemType()` has been removed in `com.oracle.bmc.cims.requests.GetIncidentRequest` in the Customer Incident Management Service
-- Method `public java.lang.String getSource()` has been removed in `com.oracle.bmc.cims.requests.GetStatusRequest` in the Customer Incident Management Service
-- Return type of method `public java.lang.String getProblemType()` has been changed to `com.oracle.bmc.cims.model.ProblemType` in `com.oracle.bmc.cims.requests.ValidateUserRequest` in the Customer Incident Management Service
-- Class `com.oracle.bmc.cims.responses.CreateUserResponse` has been removed in the Customer Incident Management Service
-
-## 3.24.0 - 2023-08-29
-### Added 
+- Support for Duration class in `com.oracle.bmc.http.Serialization`
+- Support for specifying default snapshot enablement, verified response codes, client certificate details, and request authentication schemes when creating or updating synthetic monitors in the Application Performance Monitoring service
+- Support for address rules, address verification, and requesting addresses in the OSP Gateway service
+- Support for synchronous operations in the Document Understanding service
+- Support for migration without SSH to database hosts (DMS) in the Database Migration service
+- Support for processing workload mappings in the Container Engine for Kubernetes service
+- Support for Salesforce, MySQL HeatWave, and Oracle EBS, Sieble, and PeopleSoft connectors in the Data Integration service
+- Support for updating the envelope key of a volume backup in the Block Volume service
+- Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region
+- Support for Kerberos and LDAP with NFSv3 in the File Storage service
+- Support for capacity reservation checks for movable compute instances in the Disaster Recovery service
+- Support for Oracle MFT monitoring in the Stack Monitoring service
+- Support for OS patching in the Big Data service
+- Support for master and utility nodes in the Big Data service
+- Support for connectivity testing in the GoldenGate service
+- Support for composing multiple document service custom key value models into one single model in Document Understanding Service
+- Support for custom hostname in the Compute service
+- Support for cloud subscription in the Organizations service
+- Support for automatic backup download in the GoldenGate service
+- Support for creating single use (non-recurring) budgets in the Budgets service
+- Support for the Exadata Fleet Update service
+- Support for REST-based log collection, multi-conditional labels, and collection properties in the Logging Analytics service
+- Support for Kubernetes cluster credential rotation in the Container Engine for Kubernetes service
+- Support for zero-downtime features in the Fusion Apps as a Service service
+- Support for news reports in the Operations Insights service  
+- Support for backup retention on autonomous database create operations in the Database service
+- Support for exclude tables for replication in the Database Migration service
+- Support for adding and updating auto failover maximum data loss limits for local autonomous data guards in the Database service
+- Support for limiting networking diagram ingestion in the Networking Monitoring service
+- Support for new operations for deployment upgrades in the GoldenGate service
+- Support for getting model type information and base model versions while creating language custom models in the AI Language service
+- Support for support field in class metric in the AI Language service
+- Support for Compute Cloud at Customer resource type in the Operator Access Control service
+- Support for managing account management info, account recovery settings, app roles, apps, app status changers, grants, identity propagation trusts and settings, request-able groups, requests, security questions, OAuth tokens, and user attribute settings in the Identity Domains service
+- Support for credential stores, including Single Sign-On support, for deployments in the GoldenGate service
+- Support for container security contexts in the Container Instances service
+- Support for placement constraints and cluster configurations on cluster networks in the Compute service
+- Support for Compute Cloud at Customer service
+- Support for warehouse data objects in the Operations Insights service
+- Support for standard queries on operations Insights data objects in the Operations Insights service
+- Support for database in memory on autonomous database create operations in the Database service
 - Support for creating and updating network monitors in the Application Performance Monitoring Synthetics service
 - Support for integration of GoldenGate service for replication in the Database Migration Service
 - Support for displaying resource usage information on autonomous container database and cloud autonomous vm cluster get operations in the Database service
@@ -1109,8 +1002,46 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for virtual circuit associated tunnels in the Network Monitoring service
 - Support for additional parameters on dynamic routing gateway create and update operations in the Network Monitoring service
 - Support for assigning an IPv6 address to a compute instance during instance launch or secondary VNIC attach in the Compute service      
- 
-### Breaking Changes  
+- Support for queue channels in the Queue Service
+- Support for entity lineage retrieval and asynchronous glossary export in the Data Catalog service
+- Support for filtering and sorting while listing work requests in the Container Instances service
+- Support for the ability to create support requests for various support ticket types (TECH, LIMIT, ACCOUNT) in the Customer Incident Management Service
+- Endpoint changed from https://incidentmanagement.{region}.{domainAndTopLevelDomain} to https://incidentmanagement.{region}.oci.{domainAndTopLevelDomain} (e.g. https://incidentmanagement.us-phoenix-1.oraclecloud.com to https://incidentmanagement.us-phoenix-1.oci.oraclecloud.com) in the Customer Incident Management Service
+- Support for SQL tuning sets in Database Management service
+- Support for announcement chaining in Announcements service
+- Support for automatic promotion of hosts in Stack Monitoring service
+- Support for face detection in AI Vision service
+- Support for change parameters on list character sets operation in Database Management service
+- Support for displaying software sources attached to a managed instance group in OS Management service
+
+### Breaking Changes
+- Model `com.oracle.bmc.ospgateway.model.BillingAddress` has been removed from the OSP Gateway service
+- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.Subscription` in the OSP Gateway service
+- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.SubscriptionSummary` in the OSP Gateway service
+- Support for retries by default on operations of the OSP Gateway service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackup` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackupSummary` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailFileSummary` in the GoldenGate service
+- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailSequenceSummary` in the GoldenGate service
+- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.Container` in the Container Instances service
+- Field `UnknownEnumValue` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerCapability` in the Container Instances service
+- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.CreateContainerDetails` in the Container Instances service
+- Default Retries enabled in Budgets service
+- The properties `classicSubscriptionId`, `isClassicSubscription`, `regionAssignment`, `lifecycleState`, `startDate` and `endDate` were removed from the models `AssignedSubscription`, `AssignedSubscriptionSummary`, `Subscription` and `SubscriptionSummary` in the Organizations service
+- The property `paymentModel` has been removed from `Subscription` and `SubscriptionSummary` models in the Organizations service
+- The properties `subscriptionTier`, `isGovernmentSubscription`, `promotion`, `purchaseEntitlementId`, `skus`, `csiNumber`, `cloudAmountCurrency`, `customerCountryCode, and `programType` have been removed from `AssignedSubscription` and `Subscription` models in the Organizations service
+- The property `orderIds` has been removed from `AssignedSubscription` model in the Organizations service
+- The EnumMembers `UPDATING`, `DELETING` and `DELETED` were removed from the enum `SubscriptionLifecycleState` in the Organizations service
+- The EnumMember `AccelerationMaintenance` has been removed from the model `com.oracle.bmc.loganalytics.model.TaskType` in the Logging Analytics service
+- Support for retries by default on operations in the Operator Access Control service
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model ` com.oracle.bmc.vnmonitoring.model.CreateIpv6Details` in the Networking Monitoring service
+- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model  `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Networking Monitoring service
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Ipv6` in the Networking Monitoring service
+- Method `public java.lang.String getPublicIpAddress()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Ipv6` in the Networking Monitoring service
+- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Subnet` in the  Networking Monitoring service
+- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.UpdateIpv6Details` in the  Networking Monitoring service
+- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Vcn` in the  Networking Monitoring service
+- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Vcn` in the  Networking Monitoring service
 - Method `public com.oracle.bmc.mysql.responses.AddAnalyticsClusterResponse addAnalyticsCluster(com.oracle.bmc.mysql.requests.AddAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
 - Method `public com.oracle.bmc.mysql.responses.DeleteAnalyticsClusterResponse deleteAnalyticsCluster(com.oracle.bmc.mysql.requests.DeleteAnalyticsClusterRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
 - Method `public com.oracle.bmc.mysql.responses.GenerateAnalyticsClusterMemoryEstimateResponse generateAnalyticsClusterMemoryEstimate(com.oracle.bmc.mysql.requests.GenerateAnalyticsClusterMemoryEstimateRequest)` has been removed from `com.oracle.bmc.mysql.DbSystem` in the MySQL Database service
@@ -1164,107 +1095,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.mysql.responses.StartAnalyticsClusterResponse` has been removed from the MySQL Database service
 - Class `com.oracle.bmc.mysql.responses.StopAnalyticsClusterResponse` has been removed from the MySQL Database service
 - Class `com.oracle.bmc.mysql.responses.UpdateAnalyticsClusterResponse` has been removed from the MySQL Database service
+- Class `com.oracle.bmc.cims.User` has been removed in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.UserClient` has been removed in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.AvailabilityDomain` has been removed in the Customer Incident Management Service
+- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
+- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.CreateResourceDetails` in the Customer Incident Management Service
+- Method `public java.lang.String getCountry()` has been removed in the model `com.oracle.bmc.cims.model.CreateUserDetails` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.model.Region` has been removed in the Customer Incident Management Service
+- Method `public com.oracle.bmc.cims.model.AvailabilityDomain getAvailabilityDomain()` has been removed in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
+- Return type of method `public com.oracle.bmc.cims.model.Region getRegion()` has been changed to `java.lang.String` in the model `com.oracle.bmc.cims.model.Resource` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.requests.CreateUserRequest` has been removed in the Customer Incident Management Service
+- Method `public java.lang.String getProblemType()` has been removed in `com.oracle.bmc.cims.requests.GetIncidentRequest` in the Customer Incident Management Service
+- Method `public java.lang.String getSource()` has been removed in `com.oracle.bmc.cims.requests.GetStatusRequest` in the Customer Incident Management Service
+- Return type of method `public java.lang.String getProblemType()` has been changed to `com.oracle.bmc.cims.model.ProblemType` in `com.oracle.bmc.cims.requests.ValidateUserRequest` in the Customer Incident Management Service
+- Class `com.oracle.bmc.cims.responses.CreateUserResponse` has been removed in the Customer Incident Management Service
 
-## 3.23.2 - 2023-08-22
-### Added
-- Support for Compute Cloud at Customer service
-- Support for warehouse data objects in the Operations Insights service
-- Support for standard queries on operations Insights data objects in the Operations Insights service
-- Support for database in memory on autonomous database create operations in the Database service
-
-## 3.23.1 - 2023-08-15
-### Added
-- Support for credential stores, including Single Sign-On support, for deployments in the GoldenGate service
-- Support for container security contexts in the Container Instances service
-- Support for placement constraints and cluster configurations on cluster networks in the Compute service
-
-## 3.23.0 - 2023-08-08
-### Added
-- Support for backup retention on autonomous database create operations in the Database service
-- Support for exclude tables for replication in the Database Migration service
-- Support for adding and updating auto failover maximum data loss limits for local autonomous data guards in the Database service
-- Support for limiting networking diagram ingestion in the Networking Monitoring service
-- Support for new operations for deployment upgrades in the GoldenGate service
-- Support for getting model type information and base model versions while creating language custom models in the AI Language service
-- Support for support field in class metric in the AI Language service
-- Support for Compute Cloud at Customer resource type in the Operator Access Control service
-- Support for managing account management info, account recovery settings, app roles, apps, app status changers, grants, identity propagation trusts and settings, request-able groups, requests, security questions, OAuth tokens, and user attribute settings in the Identity Domains service
-
-### Breaking Changes
-- Support for retries by default on operations in the Operator Access Control service
-- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model ` com.oracle.bmc.vnmonitoring.model.CreateIpv6Details` in the Networking Monitoring service
-- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model  `com.oracle.bmc.vnmonitoring.model.CreateVcnDetails` in the Networking Monitoring service
-- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Ipv6` in the Networking Monitoring service
-- Method `public java.lang.String getPublicIpAddress()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Ipv6` in the Networking Monitoring service
-- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Subnet` in the  Networking Monitoring service
-- Method `public java.lang.Boolean getIsInternetAccessAllowed()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.UpdateIpv6Details` in the  Networking Monitoring service
-- Method `public java.lang.String getIpv6CidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Vcn` in the  Networking Monitoring service
-- Method `public java.lang.String getIpv6PublicCidrBlock()` has been removed from the model `com.oracle.bmc.vnmonitoring.model.Vcn` in the  Networking Monitoring service
-
-## 3.22.0 - 2023-08-01
-### Added
-- Support for the Exadata Fleet Update service
-- Support for REST-based log collection, multi-conditional labels, and collection properties in the Logging Analytics service
-- Support for Kubernetes cluster credential rotation in the Container Engine for Kubernetes service
-- Support for zero-downtime features in the Fusion Apps as a Service service
-- Support for news reports in the Operations Insights service  
- 
-### Breaking Changes
-- The EnumMember `AccelerationMaintenance` has been removed from the model `com.oracle.bmc.loganalytics.model.TaskType` in the Logging Analytics service
-
-## 3.21.0 - 2023-07-25
-### Added
-- Support for composing multiple document service custom key value models into one single model in Document Understanding Service
-- Support for custom hostname in the Compute service
-- Support for cloud subscription in the Organizations service
-- Support for automatic backup download in the GoldenGate service
-- Support for creating single use (non-recurring) budgets in the Budgets service
-  
-  
-### Breaking Changes
-- Default Retries enabled in Budgets service
-- The properties `classicSubscriptionId`, `isClassicSubscription`, `regionAssignment`, `lifecycleState`, `startDate` and `endDate` were removed from the models `AssignedSubscription`, `AssignedSubscriptionSummary`, `Subscription` and `SubscriptionSummary` in the Organizations service
-- The property `paymentModel` has been removed from `Subscription` and `SubscriptionSummary` models in the Organizations service
-- The properties `subscriptionTier`, `isGovernmentSubscription`, `promotion`, `purchaseEntitlementId`, `skus`, `csiNumber`, `cloudAmountCurrency`, `customerCountryCode, and `programType` have been removed from `AssignedSubscription` and `Subscription` models in the Organizations service
-- The property `orderIds` has been removed from `AssignedSubscription` model in the Organizations service
-- The EnumMembers `UPDATING`, `DELETING` and `DELETED` were removed from the enum `SubscriptionLifecycleState` in the Organizations service
-
-## 3.20.0 - 2023-07-18
-### Added
-- Support for calling Oracle Cloud Infrastructure services in the mx-monterrey-1 region
-- Support for Kerberos and LDAP with NFSv3 in the File Storage service
-- Support for capacity reservation checks for movable compute instances in the Disaster Recovery service
-- Support for Oracle MFT monitoring in the Stack Monitoring service
-- Support for OS patching in the Big Data service
-- Support for master and utility nodes in the Big Data service
-- Support for connectivity testing in the GoldenGate service
- 
-### Breaking Changes
-- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackup` in the GoldenGate service
-- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.DeploymentBackupSummary` in the GoldenGate service
-- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailFileSummary` in the GoldenGate service
-- Return type of method `public java.math.BigDecimal getSizeInBytes()` has been changed to `java.lang.Long` in the model `com.oracle.bmc.goldengate.model.TrailSequenceSummary` in the GoldenGate service
-- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.Container` in the Container Instances service
-- Field `UnknownEnumValue` has been removed from the model `com.oracle.bmc.containerinstances.model.ContainerCapability` in the Container Instances service
-- Method `public java.util.List getAdditionalCapabilities()` has been removed from the model `com.oracle.bmc.containerinstances.model.CreateContainerDetails` in the Container Instances service
-
-## 3.19.0 - 2023-07-11
-### Added
-- Support for specifying default snapshot enablement, verified response codes, client certificate details, and request authentication schemes when creating or updating synthetic monitors in the Application Performance Monitoring service
-- Support for address rules, address verification, and requesting addresses in the OSP Gateway service
-- Support for synchronous operations in the Document Understanding service
-- Support for migration without SSH to database hosts (DMS) in the Database Migration service
-- Support for processing workload mappings in the Container Engine for Kubernetes service
-- Support for Salesforce, MySQL HeatWave, and Oracle EBS, Sieble, and PeopleSoft connectors in the Data Integration service
-- Support for updating the envelope key of a volume backup in the Block Volume service
- 
-### Breaking Changes
-- Model `com.oracle.bmc.ospgateway.model.BillingAddress` has been removed from the OSP Gateway service
-- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.Subscription` in the OSP Gateway service
-- Return type of method `public com.oracle.bmc.ospgateway.model.BillingAddress getBillingAddress()` has been changed to `com.oracle.bmc.ospgateway.model.Address` in the model `com.oracle.bmc.ospgateway.model.SubscriptionSummary` in the OSP Gateway service
-- Support for retries by default on operations of the OSP Gateway service
-
-## 3.18.0 - 2023-06-27
+## 2.66.0 - 2023-06-27
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-frankfurt-2 region
 - Support for the OS Management Hub service
@@ -1276,12 +1122,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for SQL endpoints in the Data Flow service
 - Support for setting replication delays on channels in the MySQL Database service
 - Support for setting how channels handle replicated tables with no primary key in the MySQL Database service
-- Support for SQL Plan Management (SPM) in Database Management service  
+- Support for SQL Plan Management (SPM) in Database Management service
  
 ### Breaking Changes
 - Support for retries by default on operations of the Generic Artifacts service
 
-## 3.17.1 - 2023-06-20
+## 2.65.1 - 2023-06-20
 ### Added
 - Support for serial console access in the Database service
 - Support for an increased storage size limit of up to 384 TBs in the Database service
@@ -1294,7 +1140,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for certificate management in the Roving Edge Infrastructure service
 - Support for upgrade bundle management in the Roving Edge Infrastructure service
 
-## 3.17.0 - 2023-06-13
+## 2.65.0 - 2023-06-13
 ### Added
 - Support for the OCI Control Center service
 - Support for resource quotas and limits in the Usage service
@@ -1309,7 +1155,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - Return type of method `public java.math.BigDecimal getCapacity()` has been changed to `java.lang.Double` in the `DatastoreSummary` model of the VMWare Solution service
 
-## 3.16.1 - 2023-06-06
+## 2.64.1 - 2023-06-06
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-madrid-2 region
 - Support for bulk include/exclude of migration objects in the Database Migration service
@@ -1317,7 +1163,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for MySQL HeatWave Lakehouse in the MySQL Database service
 - Support for capacity reports in the Compute service
 
-## 3.16.0 - 2023-05-30
+## 2.64.0 - 2023-05-30
 ### Added
 - Support for policy-based snapshots in the File Storage service
 - Support for creating and updating a VM cluster network with disaster recovery network support in the Database service
@@ -1326,7 +1172,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - Field `port` has been deprecated and made optional in the model `com.oracle.bmc.database.model.ScanDetails` in the Database service
 
-## 3.15.0 - 2023-05-23
+## 2.63.0 - 2023-05-23
 ### Added
 - Support for CRI-O parsing in the Logging service
 - Support for retrieving the resource availability domain when getting Exadata infrastructure or VM clusters in the Database service
@@ -1346,18 +1192,16 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
  - Class `com.oracle.bmc.logging.responses.GetLogIncludedSearchResponse` has been removed from the Logging service
  - Class `com.oracle.bmc.logging.responses.ListLogIncludedSearchesResponse` has been removed from the Logging service
 
-## 3.14.0 - 2023-05-16
+## 2.62.0 - 2023-05-16
 ### Added
 - Support for self-service integration in the Fusion Apps as a Service service
-- The serializer is now pluggable and determined by the `HttpProvider`. For the Jersey 2 and Jersey 3 HTTP clients, Jackson continues to be used as the serializer
  
 ### Breaking Changes
-- As part of the pluggable Serializer changes, when using the Jersey and Jersey 3 HTTP clients, the underlying Jackson `ObjectMapper` can now be obtained using `com.oracle.bmc.serialization.jackson.JacksonSerializer.getDefaultObjectMapper()`. The `com.oracle.bmc.http.client.Serialization.getObjectMapper()` method does not exist anymore.
 - In the Fusion Apps as a Service service, the `AttachExistingInstanceDetails`, `CreateNewInstanceDetails`, `CreateOaxServiceInstanceDetails`, `CreateOicServiceInstanceDetails`, `CreateServiceInstanceDetails`, and `FawAdminInfoDetails` model classes were removed
 - In the Fusion Apps as a Service service, the `CreateServiceAttachmentDetails` model class is now `final`, since all subclasses have been removed
 - In the Fusion Apps as a Service service, the `action` property was removed in the `CreateServiceAttachmentDetails` model class
 
-## 3.13.1 - 2023-05-09
+## 2.61.1 - 2023-05-09
 ### Added
 - Support for the Access Governance service
 - Support for creating, updating, listing and downloading one-off patches in the Database service
@@ -1366,7 +1210,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for provisioning Software-Defined Data Centers (SDDCs) using standard bare metal shapes, with Block Storage as the datastore, in the VMWare Solution service
 - Support for parity with the configuration options of the Compute service in the Compute Autoscaling service
 
-## 3.13.0 - 2023-05-02
+## 2.61.0 - 2023-05-02
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-jovanovac-1 region
 - Support for bring-your-own-license TLS and ORDS certificates in the Database service
@@ -1381,7 +1225,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for retries by default on operations of the Process Automation service
 - The model `com.oracle.bmc.containerengine.model.UpdateVirtualNodeDetails` has been removed from the Container Engine for Kubernetes service
 
-## 3.12.1 - 2023-04-25
+## 2.60.1 - 2023-04-25
 ### Added
 - Support for enabling mTLS authentication with Listener and for providing custom value for TLS port and Non-TLS Port during AVM Cluster Creation in Database service
 - Support for usedDataStorageSizeInGbs property for autonomous database in the Database service
@@ -1391,10 +1235,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for Enable Process in Integration Cloud service
 - Support for Disaster Recovery, DR enablement, switchover, and failover feature in Fusion Apps service
 - Support for discovery and monitoring of External Exadata infrastructure in Database Management Service
-### Fixed
-- Fixed ability to completely disable the Apache Connector. Before this fix, some settings were set even when `USE_APACHE_CONNECTOR` was set to `false`. For examples, see [DisableApacheConnectorExample.java (Jersey 2)](https://github.com/oracle/oci-java-sdk/blob/master/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableApacheConnectorExample.java) and [DisableApacheConnectorExample.java (Jersey 3)](https://github.com/oracle/oci-java-sdk/blob/master/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableApacheConnectorExample.java)
 
-## 3.12.0 - 2023-04-18
+## 2.60.0 - 2023-04-18
 ### Added
 - Support for private endpoints in the Digital Assistant service
 - Support for canceling backups in the Database service
@@ -1408,23 +1250,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The method `public java.lang.Integer getLifetimeLogicalClock()` has been removed from `com.oracle.bmc.datalabelingservicedataplane.model.Annotation`, `com.oracle.bmc.datalabelingservicedataplane.model.Dataset` and `com.oracle.bmc.datalabelingservicedataplane.model.Record` in the Data Labeling service
 - Support for retries by default on operations of the Digital Assistant service
 
-## 3.11.0 - 2023-04-11
+## 2.59.0 - 2023-04-11
 ### Added
 - Support for rotation of certificates on autonomous VM clusters on Exadata Cloud at Customer in the Database service
 - Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
 - Support for Exadata cloud service application virtual IPs (VIPs) in the Database service
 - Support for additional manageability features for large sensitive data models and masking policies in the Data Safe service
 - Support for getting user profile details and assignments for databases and fleets in the Data Safe service
-- Support for enabling ADDM spotlight for databases in the Operations Insights service
-- Support for Workload Identity Authentication when running on a cluster in the Container Engine for Kubernetes service  
+- Support for enabling ADDM spotlight for databases in the Operations Insights service 
  
 ### Breaking Changes
 - The method public `java.util.List getAdditionalDatabaseStatus()` has been removed from from the models `AutonomousDatabase`, `AutonomousDatabaseSummary`, `AutonomousDataWarehouse`and `AutonomousDataWarehouseSummary` in the Database service
- 
-### Fixed
-- Fixed ability to specify `httpProvider` in `KmsCryptoClientBuilder`, `KmsCryptoAsyncClientBuilder`, `KmsManagementClientBuilder`, `KmsManagementAsyncClientBuilder`, `StreamClientBuilder`, and `StreamAsyncClientBuilder` (see [#488](https://github.com/oracle/oci-java-sdk/issues/488))
 
-## 3.10.0 - 2023-04-04
+## 2.58.0 - 2023-04-04
 ### Added
 - Support for pre-emptible worker nodes in the Container Engine for Kubernetes service
 - Support for larger data storage (now up to 128TB) in the MySQL Database service
@@ -1433,7 +1271,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - The property `backendSetName` has been changed from optional to required in the model `com.oracle.bmc.loadbalancer.model.ForwardToBackendSet` in the Load Balancer service
 
-## 3.9.1 - 2023-03-28
+## 2.57.1 - 2023-03-28
 ### Added
 - Support for ACD and OKV wallet naming for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
 - Support for validating the credentials of a connection in the DevOps service
@@ -1441,7 +1279,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for connection diagnostics on registered databases in the Database Migration service
 - Support for launching bare metal instances in an RDMA network in the Compute service
 
-## 3.9.0 - 2023-03-21
+## 2.57.0 - 2023-03-21
 ### Added
 - Support for backup automation integration with the Database Recovery service in the Database service
 - Support for changing the disaster recovery configuration of an autonomous database in remote regions of its disaster recovery association in the Database service
@@ -1456,7 +1294,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Return type of method `public com.oracle.bmc.functions.model.FunctionSummary$LifecycleState getLifecycleState()` has been changed to `com.oracle.bmc.functions.model.Function$LifecycleState` in the Functions service
 - Class `com.oracle.bmc.functions.model.FunctionSummary$LifecycleState` has been removed from the Functions service
 
-## 3.8.0 - 2023-03-14
+## 2.56.0 - 2023-03-14
 ### Added
 - Support for the Identity Domains service
 - Support for long-term backups for autonomous databases on Exadata Cloud at Customer in the Database service
@@ -1465,12 +1303,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for templates and copy object requests in the Data Integration service
 - Support for maintenance features in the GoldenGate service
 - Support for AMD_MILAN_BM_GPU configuration type on instances in the Compute service
-- Support for host storage metrics and network metrics as part of host capacity planning in the Operations Insights service
+- Support for host storage metrics and network metrics as part of host capacity planning in the Operations Insights service  
  
 ### Breaking Changes
 - Field `GoldengateDeploymentPatch` has been removed from the model `com.oracle.bmc.goldengate.model.OperationType` in the GoldenGate service
 
-## 3.7.0 - 2023-03-07
+## 2.55.0 - 2023-03-07
 ### Added
 - Support for creating and updating autonomous database long-term backup schedules in the Database service
 - Support for creating, updating, and deleting autonomous database long-term backups in the Database service
@@ -1488,33 +1326,24 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for retries by default on operations of the Analytics Cloud service
 - Enum value `ACTIVE` has been removed from the model `com.oracle.bmc.oce.model.LifecycleDetails` in the Content Management service
 
-## 3.6.0 - 2023-02-28
+## 2.54.1 - 2023-02-28
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-rating-1, eu-dcc-rating-2, eu-dcc-dublin-1, eu-dcc-dublin-2, and eu-dcc-milan-2 regions
 - Support for on-demand bootstrap script execution in the Big Data Service
-   
-### Fixed
-- The log names for synchronous clients now use the correct class names (e.g. ComputeClient uses ComputeClient, not ComputeAsyncClient)
- 
-### Breaking Changes
-- The dependency on FindBugs (`com.google.code.findbugs:jsr305`) has been removed:
-  - `javax.annotation.Nonnull` has been replaced by `jakarta.annotation.Nonnull`
-  - `javax.annotation.Nullable` has been replaced by `jakarta.annotation.Nullable`
-  - `javax.annotation.Generated` has been replaced by `jakarta.annotation.Generated`
-  - `javax.annotation.concurrent.Immutable`, `javax.annotation.concurrent.NotThreadSafe`, and `javax.annotation.concurrent.ThreadSafe` have been replaced by comments
 
-## 3.5.0 - 2023-02-21
+## 2.54.0 - 2023-02-21
 ### Added
 - Support for async jobs in the AI Anomaly Detection service
 - Support for specifying algorithm hints and windows sizes during model training in the AI Anomaly Detection service
 - Support for specifying a sensitivity value during model detection in the AI Anomaly Detection service
 - Support for discovery and monitoring of external Oracle database infrastructure components in the Database Management service  
+- Support for Workload Identity Authentication when running on a cluster in the Container Engine for Kubernetes service
  
 ### Breaking Changes
 - The data type of `systemTags` field has been changed from a Map of String to another map to a Map of String to Object for the models `com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint`, `com.oracle.bmc.aianomalydetection.model.AiPrivateEndpointSummary`, `com.oracle.bmc.aianomalydetection.model.DataAsset`, `com.oracle.bmc.aianomalydetection.model.DataAssetSummary`, `com.oracle.bmc.aianomalydetection.model.Model`, `com.oracle.bmc.aianomalydetection.model.ModelSummary`, `com.oracle.bmc.aianomalydetection.model.Project` and `com.oracle.bmc.aianomalydetection.model.ProjectSummary` in the AI Anomaly Detection service
 - Support for retries by default on operations of the AI Anomaly Detection service
 
-## 3.4.0 - 2023-02-14
+## 2.53.0 - 2023-02-14
 ### Added
 - Support for the Visual Builder Studio service
 - Support for the Autonomous Recovery service
@@ -1524,7 +1353,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - Support for retries by default on operations of the Compute service
 
-## 3.3.0 - 2023-02-07
+## 2.52.0 - 2023-02-07
 ### Added
 - Support for changing Data Guard role of a database instance within the Database service
 - Support for listing autonomous container database versions in the Database service
@@ -1532,12 +1361,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for specifying an eCPU count when creating or updating autonomous shared databases in the Database service
 - Support for Helm attestation and Helm arguments on deploy operations in the DevOps service
 - Support for uploading master key wallets for deployments in the GoldenGate service
-- Support for custom configurations in the Operations Insights service  
+- Support for custom configurations in the Operations Insights service   
  
-### Breaking Changes
+### Breaking Changes  
 - Field `cpuCoreCount` has been made optional in the models `com.oracle.bmc.database.model.AutonomousDatabaseSummary` and `com.oracle.bmc.database.model.AutonomousDatabase` in the Database service
 
-## 3.2.3 - 2023-01-31
+## 2.51.3 - 2023-01-31
 ### Added
 - Support for ECPU billing for autonomous databases and dedicated autonomous databases on Exadata Cloud at Customer in the Database service
 - Support for providing a vault secret ID when creating or updating autonomous shared databases in the Database service
@@ -1547,14 +1376,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for memory encryption on confidential VMs in the Compute service
 - Support for configuration items, and reporting ownership of configuration items, in the Application Performance Monitoring service
 
-## 3.2.2 - 2023-01-24
+## 2.51.2 - 2023-01-24
 ### Added
 - Support for the Cloud Migrations service
 - Support for setting up custom private IPs while creating private endpoints in the Database service
 - Support for machine learning pipelines in the Data Science service
 - Support for personally identifiable information detection in the AI Language service
+### Fixed
+- Adding to circuit breaker history is now a thread-safe operation
 
-## 3.2.1 - 2023-01-17
+## 2.51.1 - 2023-01-17
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the us-chicago-1 region
 - Support for cross-region replication in the File Storage service
@@ -1563,12 +1396,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for target versions during infrastructure patching on Cloud Exadata infrastructure in the Database service
 - Support for creating model version sets in the model catalog in the Data Science service
 - Support for associating a model with a model version set in the Data Science service
-- Support for custom key/value annotations on documents using the Document Understanding service's optical character recognition in the Data Labeling service
+- Support for custom key/value annotations on documents in the Data Labeling service
 - Support for configurable timeouts in the Service Mesh service
 
-## 3.2.0 - 2022-12-13
-### Fixed
-- Fixed regression in Instance Principals authentication in version 3.1.0 (see [#468](https://github.com/oracle/oci-java-sdk/issues/468))
+## 2.51.0 - 2022-12-13
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Queue service
 - Support for Intel X9 shapes when launching VM database systems in the Database service
@@ -1586,7 +1419,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for Oracle Managed Access integration in the Fusion Apps as a Service service
 - Support for refresh scheduling in the Fusion Apps as a Service service
 - Support for additional connections types on database resources in the GoldenGate service
-
+ 
 ### Breaking Changes
 - Support for retries by default on operations of the Fusion Apps as a Service service
 - Support for retries by default on operations of the Database Migration service
@@ -1608,7 +1441,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualServiceRouteTable$LifecycleState` in `com.oracle.bmc.servicemesh.requests.ListVirtualServiceRouteTablesRequest` in the Service Mesh service
 - Return type of method `public java.lang.String getLifecycleState()` has been changed to `com.oracle.bmc.servicemesh.model.VirtualService$LifecycleState` in  `com.oracle.bmc.servicemesh.requests.ListVirtualServicesRequest` in the Service Mesh service
 
-## 3.1.0 - 2022-12-06
+## 2.50.0 - 2022-12-06
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Container Instances service
 - Support for the Document Understanding service
@@ -1635,11 +1470,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for plugin improvements in the Java Management service
 - Support for collecting diagnostics on deployments in the GoldenGate service
 - Support for onboarding Exadata Public Cloud (ExaCS) targets to the Operations Insights service
-
+ 
 ### Breaking Changes
 - A required property `CompartmentId` was added to the model `com.oracle.bmc.datasafe.model.PatchAlertsDetails` in the Data Safe service
 
-## 3.0.1 - 2022-11-15
+## 2.49.1 - 2022-11-15
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for mTLS authentication with listeners during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
 - Support for providing custom values for TLS and non-TLS ports during Autonomous VM Cluster creation on Exadata Cloud at Customer in the Database service
@@ -1649,7 +1486,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for listing outputs associated with a job in the Resource Manager service
 - Support for the Oracle distribution of Apache Hadoop 2.0 in the Big Data service
 
-## 3.0.0 - 2022-11-08
+## 2.49.0 - 2022-11-08
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for listing local and cross-region refreshable clones in the Database service
 - Support for adding multiple cloud VM clusters in the Database service
@@ -1661,11 +1500,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for optionally passing compartment IDs when creating Vulnerability Audit resources in the Application Dependency Management service
 
 ### Breaking Changes
-- Includes the breaking changes from [3.0.0-beta2](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta2---2022-11-01)
-- Includes the breaking changes from [3.0.0-beta1](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md#300-beta1---2022-10-25)
 - Field `certificateId` has been made mandatory in `com.oracle.bmc.resourcemanager.model.PrivateServerConfigDetails`
 
-## 3.0.0-beta2 - 2022-11-01
+## 2.48.0 - 2022-11-01
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for cloning from a backup from the last available timestamp in the Database service
 - Support for third-party scanning using Qualys in the Vulnerability Scanning service
@@ -1673,170 +1512,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for connections for database resources in the GoldenGate service
 
 ### Breaking Changes
-- Class `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration$Vendor` has been removed in the Vulnerability Scanning service
+- Enum `Vendor` has been removed from the model `com.oracle.bmc.vulnerabilityscanning.model.HostScanAgentConfiguration` in the Vulnerability Scanning service
 
-## 3.0.0-beta1 - 2022-10-25
-### Breaking Changes
-- HTTP client library is pluggable, choices offered are Jakarta EE 8/Jersey 2, or Jakarta EE 9/Jersey 3
-  - The OCI Java SDK does not choose an HTTP client library for you, and there is no default. You have to explicitly choose one, by declaring a dependency on `oci-java-sdk-common-httpclient-jersey` or `oci-java-sdk-common-httpclient-jersey3`
-  - Example:
-
-        <dependency>
-          <!-- Since this is the "application" pom.xml, we do want to
-               choose the httpclient to use. -->
-          <groupId>com.oracle.oci.sdk</groupId>
-          <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        </dependency>
-
-  - For full examples, see the [bmc-other-examples/bmc-jersey-examples/pom.xml](https://github.com/oracle/oci-java-sdk/tree/master/bmc-other-examples/bmc-jersey-examples/pom.xml) and [bmc-other-examples/bmc-jersey3-examples/pom.xml](https://github.com/oracle/oci-java-sdk/tree/master/bmc-other-examples/bmc-jersey3-examples/pom.xml)
-- Invocation callbacks: Instead of using `com.oracle.bmc.util.internal.Consumer<Invocation.Builder>` to register invocation callbacks, use `com.oracle.bmc.http.client.RequestInterceptor` instead, to decouple the implementation from the choice of the HTTP client.
-  - Examples of affected code:
-    - `com.oracle.bmc.requests.BmcRequest` and any subclass: `setInvocationCallback`/`getInvocationCallback` methods
-    - `com.oracle.bmc.objectstorage.transfer.MultipartObjectAssembler$MultipartObjectAssemblerBuilder`: `invocationCallback` method
-- Client Configuration has been simplified
-  - `com.oracle.bmc.http.ClientConfigurator` has a single `customizeClient(HttpClientBuilder builder)` method, instead of `customizeBuilder`, `customizeClient`, and `customizeRequest` methods. Example:
-
-        IdentityClient.builder()
-                      .clientConfigurator(
-                              builder -> {
-                          builder.property(
-                                  StandardClientProperties.BUFFER_REQUEST, false);
-                      })
-                      // ...
-                      .build(authenticationDetailsProvider);
-
-    - Instead of `customizeBuilder` or `customizeClient`, use methods in `HttpClientBuilder`, e.g. the `property` method or the `registerRequestInterceptor` method.
-    - Instead of `customizeRequest`, use the `registerRequestInterceptor` method in `HttpClientBuilder` and pass an `com.oracle.bmc.http.client.RequestInterceptor`. The priority controls when the interceptor is executed: lower numbers mean earlier. The request is signed with priority `1000` (`com.oracle.bmc.http.Priorities.AUTHENTICATION`).
-    - Specific examples:
-      - Setting whether to buffer a request:
-
-            builder.property(
-                    StandardClientProperties.BUFFER_REQUEST, shouldBuffer);
-
-      - Setting an Apache connection manager:
-
-            builder.property(
-                    ApacheClientProperties.CONNECTION_MANAGER,
-                    connectionManager);
-
-      - Setting a trust store:
-
-            // Server CA goes into the trust store
-            KeyStore trustStore =
-                    keystoreGenerator.createTrustStoreWithServerCa(tlsConfig.getCaBundle());
-            builder.property(StandardClientProperties.TRUST_STORE, trustStore);
-
-      - Setting a key store:
-
-            builder.property(
-                    StandardClientProperties.KEY_STORE,
-                    new KeyStoreWithPassword(keyStore, keystorePassword));
-
-      - Setting the SSL context:
-
-            builder.property(
-                    StandardClientProperties.SSL_CONTEXT, sslContext);
-
-      - Setting a proxy:
-
-            builder.property(
-                    StandardClientProperties.PROXY, proxyConfig);
-
-      - Setting a hostname verifier:
-
-            builder.property(
-                    StandardClientProperties.HOSTNAME_VERIFIER,
-                    NoopHostnameVerifier.INSTANCE);
-  - More examples:
-    - [ApacheConnectorPropertiesExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-examples/src/main/java/ApacheConnectorPropertiesExample.java)
-    - [HttpProxyExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-examples/src/main/java/HttpProxyExample.java)
-    - [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
-  - For a comprehensive list of pre-defined settable properties, see
-    - [StandardClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-common-httpclient/src/main/java/com/oracle/bmc/http/client/StandardClientProperties.java)
-    - [ApacheClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/d4b2f51c9c69bf64deb124ca921deeac333c3d03/bmc-common-httpclient-choices/bmc-common-httpclient-jersey/src/main/java/com/oracle/bmc/http/client/jersey/ApacheClientProperties.java) or [ApacheClientProperties.java](https://github.com/oracle/oci-java-sdk/blob/d4b2f51c9c69bf64deb124ca921deeac333c3d03/bmc-common-httpclient-choices/bmc-common-httpclient-jersey3/src/main/java/com/oracle/bmc/http/client/jersey3/ApacheClientProperties.java) (Jersey 3)
-    - You can also define your own properties.
-    - The actual properties that can be set depends on the HTTP client you are using.
-- Apache: There were numerous changes to decouple the implementation from the choice of the HTTP client.
-  - `com.oracle.bmc.http.ApacheConfigurator`, has been replaced by `com.oracle.bmc.http.client.jersey.ApacheClientProperties` or `com.oracle.bmc.http.client.jersey3.ApacheClientProperties` (for Jersey 3).
-    - For clients that should not buffer requests into memory:
-
-          ObjectStorageClient nonBufferingObjectStorageClient = ObjectStorageClient
-              .builder()
-              .clientConfigurator(builder -> {
-                  builder.property(StandardClientProperties.BUFFER_REQUEST, false);
-                  builder.property(ApacheClientProperties.RETRY_HANDLER, null);
-                  builder.property(ApacheClientProperties.REUSE_STRATEGY, null);
-              })
-              .region(Region.US_PHOENIX_1)
-              .build(provider);
-
-    - For clients that should buffer requests into memory:
-
-          IdentityClient bufferingIdentityClient = IdentityClient
-              .builder()
-              .clientConfigurator(builder -> {
-                  builder.property(StandardClientProperties.BUFFER_REQUEST, true);
-                  builder.property(ApacheClientProperties.RETRY_HANDLER, null);
-                  builder.property(ApacheClientProperties.REUSE_STRATEGY, null);
-              })
-              .region(Region.US_PHOENIX_1)
-              .build(provider);
-
-      - See [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
-
-      - Also consider using `com.oracle.bmc.http.client.jersey.apacheconfigurator.ApacheConfigurator from the `oci-java-sdk-addons-apache-configurator-jersey` add-on module; or `com.oracle.bmc.http.client.jersey3.apacheconfigurator.ApacheConfigurator` from the `oci-java-sdk-addons-apache-configurator-jersey3` add-on module.
-        - See [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) and [DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-other-examples/bmc-jersey3-examples/src/main/java/DisableNoConnectionReuseStrategyUsingApacheConfiguratorExample.java) (Jersey 3)
-  - `com.oracle.bmc.http.ApacheConnectionPoolConfig` has been replaced by `com.oracle.bmc.http.client.jersey.apacheconfigurator.ApacheConnectionPoolConfig` from the `oci-java-sdk-addons-apache-configurator-jersey` add-on module; or `com.oracle.bmc.http.client.jersey3.apacheconfigurator.ApacheConnectionPoolConfig` from the `oci-java-sdk-addons-apache-configurator-jersey3` add-on module.
-  - `com.oracle.bmc.http.ApacheConnectorProperties` has been replaced by `com.oracle.bmc.http.client.jersey.apacheconfigurator.ApacheConnectorProperties` from the `oci-java-sdk-addons-apache-configurator-jersey` add-on module; or `com.oracle.bmc.http.client.jersey3.apacheconfigurator.ApacheConnectorProperties` from the `oci-java-sdk-addons-apache-configurator-jersey3` add-on module.
-  - `com.oracle.bmc.http.ApacheProxyConfig` and `com.oracle.bmc.http.ApacheProxyConfigDecorator` have been replaced by `com.oracle.bmc.http.client.ProxyConfiguration`
-    - See [HttpProxyExample.java](https://github.com/oracle/oci-java-sdk/blob/v3.0.0/bmc-examples/src/main/java/HttpProxyExample.java)- `com.oracle.bmc.http.signing.RequestSigningFilter` does not implement `javax.ws.rs.client.ClientRequestFilter` anymore; instead, it has been implemented as a `com.oracle.bmc.http.client.RequestInterceptor` to decouple the implementation from the choice of the HTTP client.
-- Instead of `com.oracle.bmc.http.JerseyLoggingClientConfigurator`, use `builder.property(JerseyClientProperty.create(LOGGING_FEATURE_VERBOSITY_CLIENT), verbosity)` and `builder.property(JerseyClientProperty.create(LOGGING_FEATURE_LOGGER_LEVEL_CLIENT), loggingLevel)`
-- In `com.oracle.bmc.responses.BmcResponse`, the collection used for headers was changed from `javax.ws.rs.core.MultivaluedMap` to `Map<String, List<String>>`, to decouple the implementation from the choice of the HTTP client.
-- Circuit breakers
-  - The circuit breaker interface has been renamed from `com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker` to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
-    - Examples of affectede code:
-      - `com.oracle.bmc.circuitbreaker.CircuitBreakerFactory`: Return type of method `public com.oracle.bmc.circuitbreaker.JaxRsCircuitBreaker build(com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration)` has been changed to `com.oracle.bmc.circuitbreaker.OciCircuitBreaker`
-  - Instead of using the constructor of `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`, use the builder. The constructor is not public anymore.
-  - Some constants in `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration` have been removed, if you need them, replace them with the actual values:
-    - `INTERNAL_SERVER_ERROR_EXCEPTION_CLASS`: `javax.ws.rs.InternalServerErrorException.class`
-    - `PROCESSING_EXCEPTION_CLASS`: `javax.ws.rs.ServiceUnavailableException.class`
-    - `SERVICE_UNAVAILABLE_EXCEPTION_CLASS`: `javax.ws.rs.ProcessingException.class`
-  - The `com.oracle.bmc.util.CircuitBreakerUtils` class does not deal with actual circuit breakers anymore, just with `com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration`. As such, the `DEFAULT_CIRCUIT_BREAKER` field and the `getUserDefinedCircuitBreaker` method were removed. Construct a new circuit breaker from the default configuration if necessary using the build methods in `com.oracle.bmc.circuitbreaker.CircuitBreakerFactory`.
-  - The `getDefaultCircuitBreakerConfig` method in the `com.oracle.bmc.util.CircuitBreakerUtils` class has been renamed to `getDefaultCircuitBreakerConfiguration`.
-- Guava has been removed, which lead to some breaking changes where Guava types have been replaced with JDK types:
-  - `com.google.common.base.Optional` has been replaced with `java.util.Optional`
-  - `com.google.common.base.Function` has been replaced with `java.util.function.Function`
-  - `com.google.common.base.Predicate` has been replaced with `java.util.function.Predicate`
-  - `com.google.common.base.Supplier` has been replaced with `java.util.function.Supplier`
-- Moved classes
-  - Class `com.oracle.bmc.Options` was moved to `com.oracle.bmc.http.client.Options`
-  - Class `com.oracle.bmc.http.Serialization` was moved to `com.oracle.bmc.http.client.Serialization`
-  - Class `com.oracle.bmc.io.DuplicatableInputStream` was moved to `com.oracle.bmc.http.client.io.DuplicatableInputStream`
-- Long deprecated code was removed:
-  - The signing strategy `OBJECT_STORAGE` was removed from `com.oracle.bmc.http.signing.SigningStrategy`; it had been deprecated for years and had been replaced by `EXCLUDE_BODY`.
-  - The `getPublicKey()` and `getPrivateKey()` methods were removed from `com.oracle.bmc.auth.SessionKeySupplier` and implementing classes; they had been deprecated for years and had been replaced by the `getKeyPair()` method.
-- Removed code
-  - The `setInstanceMetadataServiceClientConfig` method in `com.oracle.bmc.Region` was removed; it never had any effect.
-  - `AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry` method has been removed without replacement, since it is not needed in the OCI Java SDK 3.0.0 and higher.
-    - You can copy and paste the [previous implementation](https://github.com/oracle/oci-java-sdk/blob/v2.47.0/bmc-common/src/main/java/com/oracle/bmc/auth/AbstractFederationClientAuthenticationDetailsProviderBuilder.java#L494-L528) if you need it.
-
-- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
-
-- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
-
-- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
-
-- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
-
-- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
-- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
-
+## 2.47.0 - 2022-10-25
+## Do not use this version
+We have identified a problem with this version. Please use version [2.51.2](https://github.com/oracle/oci-java-sdk/releases/v2.51.2) or newer. For more information, see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/491).
 ### Added
 - Support for the Disaster Recovery service
 - Support for running code interactively with session applications using statements in the Data Flow service
 - Support for language custom models and language translation in the AI Language service
+### Breaking Changes
+- Class `com.oracle.bmc.ailanguage.model.EntityDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.KeyPhraseDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.SentimentsDocument` has been removed in the AI Language service
+- Class `com.oracle.bmc.ailanguage.model.TextClassificationDocument` has been removed in the AI Language service
 
 ## 2.46.0 - 2022-10-04
 ### Added
@@ -3996,6 +3685,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Support for Auth Token management in the Identity service
 
 ## 1.2.38 - 2018-05-17
+
 ### Fixed
 - Allow deserializing multiple query params
 - Updated `GetInstancePublicIpExample` to now account for public IPs that may be associated with secondary private IP addresses

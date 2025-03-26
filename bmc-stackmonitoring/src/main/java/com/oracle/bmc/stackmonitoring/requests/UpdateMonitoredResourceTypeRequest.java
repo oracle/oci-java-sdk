@@ -6,51 +6,54 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMonitoredResourceTypeExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateMonitoredResourceTypeRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMonitoredResourceTypeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMonitoredResourceTypeRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class UpdateMonitoredResourceTypeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.stackmonitoring.model.UpdateMonitoredResourceTypeDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * monitored resource type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
      */
     private String monitoredResourceTypeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * monitored resource type.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
      */
     public String getMonitoredResourceTypeId() {
         return monitoredResourceTypeId;
     }
-    /** The information to be updated for the given resource type id. */
+    /**
+     * The information to be updated for the given resource type id.
+     */
     private com.oracle.bmc.stackmonitoring.model.UpdateMonitoredResourceTypeDetails
             updateMonitoredResourceTypeDetails;
 
-    /** The information to be updated for the given resource type id. */
+    /**
+     * The information to be updated for the given resource type id.
+     */
     public com.oracle.bmc.stackmonitoring.model.UpdateMonitoredResourceTypeDetails
             getUpdateMonitoredResourceTypeDetails() {
         return updateMonitoredResourceTypeDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -58,12 +61,14 @@ public class UpdateMonitoredResourceTypeRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -71,7 +76,6 @@ public class UpdateMonitoredResourceTypeRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -84,19 +88,17 @@ public class UpdateMonitoredResourceTypeRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateMonitoredResourceTypeRequest,
                     com.oracle.bmc.stackmonitoring.model.UpdateMonitoredResourceTypeDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * monitored resource type.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
          */
         private String monitoredResourceTypeId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * monitored resource type.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of monitored resource type.
          * @param monitoredResourceTypeId the value to set
          * @return this builder instance
          */
@@ -105,13 +107,14 @@ public class UpdateMonitoredResourceTypeRequest
             return this;
         }
 
-        /** The information to be updated for the given resource type id. */
+        /**
+         * The information to be updated for the given resource type id.
+         */
         private com.oracle.bmc.stackmonitoring.model.UpdateMonitoredResourceTypeDetails
                 updateMonitoredResourceTypeDetails = null;
 
         /**
          * The information to be updated for the given resource type id.
-         *
          * @param updateMonitoredResourceTypeDetails the value to set
          * @return this builder instance
          */
@@ -123,18 +126,21 @@ public class UpdateMonitoredResourceTypeRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -147,6 +153,7 @@ public class UpdateMonitoredResourceTypeRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -164,19 +171,18 @@ public class UpdateMonitoredResourceTypeRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -188,7 +194,6 @@ public class UpdateMonitoredResourceTypeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateMonitoredResourceTypeRequest o) {
@@ -204,11 +209,10 @@ public class UpdateMonitoredResourceTypeRequest
         /**
          * Build the instance of UpdateMonitoredResourceTypeRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateMonitoredResourceTypeRequest
          */
@@ -221,7 +225,6 @@ public class UpdateMonitoredResourceTypeRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -235,8 +238,7 @@ public class UpdateMonitoredResourceTypeRequest
         /**
          * Build the instance of UpdateMonitoredResourceTypeRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateMonitoredResourceTypeRequest
@@ -248,14 +250,12 @@ public class UpdateMonitoredResourceTypeRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMonitoredResourceTypeRequest(monitoredResourceTypeId,
-            // updateMonitoredResourceTypeDetails, ifMatch, opcRequestId);
+            // new UpdateMonitoredResourceTypeRequest(monitoredResourceTypeId, updateMonitoredResourceTypeDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -268,7 +268,6 @@ public class UpdateMonitoredResourceTypeRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

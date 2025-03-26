@@ -6,82 +6,77 @@ package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     private String workRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      */
     public String getWorkRequestId() {
         return workRequestId;
     }
     /**
-     * A filter to return only resources that exist in the compartment, identified by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String compartmentId;
 
     /**
-     * A filter to return only resources that exist in the compartment, identified by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The number of items returned in a paginated {@code List} call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * The number of items returned in a paginated {@code List} call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -115,8 +110,8 @@ public class ListWorkRequestErrorsRequest
     };
 
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -124,12 +119,14 @@ public class ListWorkRequestErrorsRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -138,19 +135,17 @@ public class ListWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          */
         private String workRequestId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -160,14 +155,13 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * A filter to return only resources that exist in the compartment, identified by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          */
         private String compartmentId = null;
 
         /**
-         * A filter to return only resources that exist in the compartment, identified by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -178,16 +172,15 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -198,16 +191,15 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List}
-         * call. For information about pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List}
-         * call. For information about pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -218,14 +210,13 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or
-         * descending ({@code DESC}).
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or
-         * descending ({@code DESC}).
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -238,6 +229,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -255,19 +247,18 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -279,7 +270,6 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestErrorsRequest o) {
@@ -297,11 +287,10 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestErrorsRequest
          */
@@ -315,8 +304,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestErrorsRequest
@@ -330,14 +318,12 @@ public class ListWorkRequestErrorsRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListWorkRequestErrorsRequest(workRequestId, compartmentId, limit, page,
-            // sortOrder, opcRequestId);
+            // new ListWorkRequestErrorsRequest(workRequestId, compartmentId, limit, page, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -352,7 +338,6 @@ public class ListWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

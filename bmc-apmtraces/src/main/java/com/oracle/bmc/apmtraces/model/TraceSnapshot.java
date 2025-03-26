@@ -5,21 +5,20 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a trace snapshot object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Definition of a trace snapshot object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TraceSnapshot.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TraceSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -45,27 +44,31 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier (traceId) for the trace that represents the span set. Note that this
-         * field is defined as traceKey in the API and it maps to the traceId in the trace data in
-         * Application Performance Monitoring.
-         */
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Unique identifier (traceId) for the trace that represents the span set. Note that this
-         * field is defined as traceKey in the API and it maps to the traceId in the trace data in
-         * Application Performance Monitoring.
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Start time of the trace. */
+        /**
+         * Start time of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -74,13 +77,16 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** End time of the trace. */
+        /**
+         * End time of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
@@ -89,13 +95,16 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** Trace snapshots properties. */
+        /**
+         * Trace snapshots properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceSnapshotDetails")
         private java.util.List<SnapshotDetail> traceSnapshotDetails;
 
@@ -104,13 +113,16 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param traceSnapshotDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder traceSnapshotDetails(java.util.List<SnapshotDetail> traceSnapshotDetails) {
             this.traceSnapshotDetails = traceSnapshotDetails;
             this.__explicitlySet__.add("traceSnapshotDetails");
             return this;
         }
-        /** List of spans. */
+        /**
+         * List of spans.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshots")
         private java.util.List<SpanSnapshot> spanSnapshots;
 
@@ -119,7 +131,7 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param spanSnapshots the value to set
          * @return this builder
-         */
+         **/
         public Builder spanSnapshots(java.util.List<SpanSnapshot> spanSnapshots) {
             this.spanSnapshots = spanSnapshots;
             this.__explicitlySet__.add("spanSnapshots");
@@ -164,7 +176,9 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -174,25 +188,29 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Unique identifier (traceId) for the trace that represents the span set. Note that this field
-     * is defined as traceKey in the API and it maps to the traceId in the trace data in Application
-     * Performance Monitoring.
-     */
+     * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Unique identifier (traceId) for the trace that represents the span set. Note that this field
-     * is defined as traceKey in the API and it maps to the traceId in the trace data in Application
-     * Performance Monitoring.
+     * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Start time of the trace. */
+    /**
+     * Start time of the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -200,12 +218,15 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
      * Start time of the trace.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** End time of the trace. */
+    /**
+     * End time of the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
@@ -213,12 +234,15 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
      * End time of the trace.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** Trace snapshots properties. */
+    /**
+     * Trace snapshots properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceSnapshotDetails")
     private final java.util.List<SnapshotDetail> traceSnapshotDetails;
 
@@ -226,12 +250,15 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
      * Trace snapshots properties.
      *
      * @return the value
-     */
+     **/
     public java.util.List<SnapshotDetail> getTraceSnapshotDetails() {
         return traceSnapshotDetails;
     }
 
-    /** List of spans. */
+    /**
+     * List of spans.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spanSnapshots")
     private final java.util.List<SpanSnapshot> spanSnapshots;
 
@@ -239,7 +266,7 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
      * List of spans.
      *
      * @return the value
-     */
+     **/
     public java.util.List<SpanSnapshot> getSpanSnapshots() {
         return spanSnapshots;
     }
@@ -251,7 +278,6 @@ public final class TraceSnapshot extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** The current lifecycle state of the alarm condition. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum AlarmConditionLifeCycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current lifecycle state of the alarm condition.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum AlarmConditionLifeCycleStates {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

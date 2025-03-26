@@ -9,20 +9,18 @@ import com.oracle.bmc.http.ClientConfigurator;
 import java.util.List;
 
 /**
- * Interface defining AuthenticationDetailsProvider that also returns PEM file path and a list of
- * ClientConfigurators
+ * Interface defining AuthenticationDetailsProvider that
+ * also returns PEM file path and a list of ClientConfigurators
  */
 public interface BasicConfigFileAuthenticationProvider extends AuthenticationDetailsProvider {
     /**
      * Get the PEM file path
-     *
      * @return The path to the PEM file
      */
     String getPemFilePath();
 
     /**
      * Get the list of ClientConfigurators
-     *
      * @return a list of ClientConfigurators
      */
     List<ClientConfigurator> getClientConfigurators();

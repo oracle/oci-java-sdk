@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible values for the logging level. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum GlobalLoggingLevel implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for the logging level.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum GlobalLoggingLevel {
     All("ALL"),
     Severe("SEVERE"),
     Warning("WARNING"),

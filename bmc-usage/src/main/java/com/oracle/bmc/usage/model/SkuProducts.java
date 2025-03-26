@@ -5,21 +5,20 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The SKU Product Id details for a resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * The SKU Product Id details for a resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SkuProducts.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SkuProducts extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SkuProducts extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"skuId", "skuType", "cloudCreditType"})
     public SkuProducts(String skuId, String skuType, String cloudCreditType) {
@@ -31,46 +30,49 @@ public final class SkuProducts extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Sku Id for the resource. */
+        /**
+         * The Sku Id for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuId")
         private String skuId;
 
         /**
          * The Sku Id for the resource.
-         *
          * @param skuId the value to set
          * @return this builder
-         */
+         **/
         public Builder skuId(String skuId) {
             this.skuId = skuId;
             this.__explicitlySet__.add("skuId");
             return this;
         }
-        /** The Sku type for the resource. */
+        /**
+         * The Sku type for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuType")
         private String skuType;
 
         /**
          * The Sku type for the resource.
-         *
          * @param skuType the value to set
          * @return this builder
-         */
+         **/
         public Builder skuType(String skuType) {
             this.skuType = skuType;
             this.__explicitlySet__.add("skuType");
             return this;
         }
-        /** The cloud credit type for the resource. */
+        /**
+         * The cloud credit type for the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudCreditType")
         private String cloudCreditType;
 
         /**
          * The cloud credit type for the resource.
-         *
          * @param cloudCreditType the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudCreditType(String cloudCreditType) {
             this.cloudCreditType = cloudCreditType;
             this.__explicitlySet__.add("cloudCreditType");
@@ -103,7 +105,9 @@ public final class SkuProducts extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,41 +116,44 @@ public final class SkuProducts extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The Sku Id for the resource. */
+    /**
+     * The Sku Id for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuId")
     private final String skuId;
 
     /**
      * The Sku Id for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getSkuId() {
         return skuId;
     }
 
-    /** The Sku type for the resource. */
+    /**
+     * The Sku type for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuType")
     private final String skuType;
 
     /**
      * The Sku type for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getSkuType() {
         return skuType;
     }
 
-    /** The cloud credit type for the resource. */
+    /**
+     * The cloud credit type for the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudCreditType")
     private final String cloudCreditType;
 
     /**
      * The cloud credit type for the resource.
-     *
      * @return the value
-     */
+     **/
     public String getCloudCreditType() {
         return cloudCreditType;
     }
@@ -158,7 +165,6 @@ public final class SkuProducts extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

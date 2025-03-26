@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The connection type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The connection type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum ConnectionType {
     Goldengate("GOLDENGATE"),
     Kafka("KAFKA"),
     KafkaSchemaRegistry("KAFKA_SCHEMA_REGISTRY"),

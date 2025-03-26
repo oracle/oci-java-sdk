@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dns.model;
 
-/** The digest algorithm used to produce a fingerprint of DNSSEC data. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-public enum DnssecDigestType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The digest algorithm used to produce a fingerprint of DNSSEC data.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+public enum DnssecDigestType {
     Sha256("SHA_256"),
 
     /**

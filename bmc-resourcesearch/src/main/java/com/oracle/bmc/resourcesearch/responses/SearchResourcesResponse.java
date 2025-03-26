@@ -6,21 +6,16 @@ package com.oracle.bmc.resourcesearch.responses;
 
 import com.oracle.bmc.resourcesearch.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the page
-     * parameter for the subsequent GET request. For information about pagination, see
-     * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the page
-     * parameter for the subsequent GET request. For information about pagination, see
-     * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -29,20 +24,13 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items in previous pages to get. Include this value as the
-     * page parameter for the subsequent GET request. The absence of this header indicates that you
-     * have reached the first page of the list. For more information, see
-     * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcPreviousPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items in previous pages to get. Include this value as the
-     * page parameter for the subsequent GET request. The absence of this header indicates that you
-     * have reached the first page of the list. For more information, see
-     * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -51,14 +39,15 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -66,12 +55,13 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** The returned {@code ResourceSummaryCollection} instance. */
+    /**
+     * The returned ResourceSummaryCollection instance.
+     */
     private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection resourceSummaryCollection;
 
     /**
-     * The returned {@code ResourceSummaryCollection} instance.
-     *
+     * The returned ResourceSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
@@ -89,7 +79,7 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private SearchResourcesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcPreviousPage,
             String opcRequestId,
@@ -102,37 +92,29 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         this.resourceSummaryCollection = resourceSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<SearchResourcesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * page parameter for the subsequent GET request. For information about pagination, see
-         * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * page parameter for the subsequent GET request. For information about pagination, see
-         * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items still to get. Include this value as the page parameter for the subsequent GET request. For information about pagination, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -143,20 +125,13 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items in previous pages to get. Include this
-         * value as the page parameter for the subsequent GET request. The absence of this header
-         * indicates that you have reached the first page of the list. For more information, see
-         * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcPreviousPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items in previous pages to get. Include this
-         * value as the page parameter for the subsequent GET request. The absence of this header
-         * indicates that you have reached the first page of the list. For more information, see
-         * [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then there are additional items in previous pages to get. Include this value as the page parameter for the subsequent GET request. The absence of this header indicates that you have reached the first page of the list. For more information, see [ListPagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPreviousPage the value to set
          * @return this builder
@@ -167,14 +142,15 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -184,13 +160,14 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code ResourceSummaryCollection} instance. */
+        /**
+         * The returned ResourceSummaryCollection instance.
+         */
         private com.oracle.bmc.resourcesearch.model.ResourceSummaryCollection
                 resourceSummaryCollection;
 
         /**
-         * The returned {@code ResourceSummaryCollection} instance.
-         *
+         * The returned ResourceSummaryCollection instance.
          * @param resourceSummaryCollection the value to set
          * @return this builder
          */
@@ -203,10 +180,8 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(SearchResourcesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -220,10 +195,8 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public SearchResourcesResponse build() {
             return new SearchResourcesResponse(
                     __httpStatusCode__,
@@ -237,7 +210,6 @@ public class SearchResourcesResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

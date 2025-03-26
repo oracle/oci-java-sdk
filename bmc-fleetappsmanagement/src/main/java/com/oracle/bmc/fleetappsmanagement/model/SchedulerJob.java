@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * A SchedulerJob resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * A SchedulerJob resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SchedulerJob.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SchedulerJob extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SchedulerJob extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -95,195 +93,207 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Tenancy OCID */
+        /**
+         * Tenancy OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Tenancy OCID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The time this resource was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The scheduled date and time for the Job. */
+        /**
+         * The scheduled date and time for the Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
          * The scheduled date and time for the Job.
-         *
          * @param timeScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
-        /** Actual start date and time for the Job. */
+        /**
+         * Actual start date and time for the Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * Actual start date and time for the Job.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** Actual end date and time for the Job. */
+        /**
+         * Actual end date and time for the Job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * Actual end date and time for the Job.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
         /**
-         * Count of Action Groups affected by the Schedule. An action group is a group of entities
-         * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group
-         * for any lifecycle activity.
-         */
+         * Count of Action Groups affected by the Schedule.
+         * An action group is a group of entities grouped for a lifecycle activity.
+         * Example - A Fleet will be considered an Action Group for any lifecycle activity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedActionGroups")
         private Integer countOfAffectedActionGroups;
 
         /**
-         * Count of Action Groups affected by the Schedule. An action group is a group of entities
-         * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group
-         * for any lifecycle activity.
+         * Count of Action Groups affected by the Schedule.
+         * An action group is a group of entities grouped for a lifecycle activity.
+         * Example - A Fleet will be considered an Action Group for any lifecycle activity.
          *
          * @param countOfAffectedActionGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder countOfAffectedActionGroups(Integer countOfAffectedActionGroups) {
             this.countOfAffectedActionGroups = countOfAffectedActionGroups;
             this.__explicitlySet__.add("countOfAffectedActionGroups");
             return this;
         }
-        /** Count of resources affected by the schedule. */
+        /**
+         * Count of resources affected by the schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedResources")
         private Integer countOfAffectedResources;
 
         /**
          * Count of resources affected by the schedule.
-         *
          * @param countOfAffectedResources the value to set
          * @return this builder
-         */
+         **/
         public Builder countOfAffectedResources(Integer countOfAffectedResources) {
             this.countOfAffectedResources = countOfAffectedResources;
             this.__explicitlySet__.add("countOfAffectedResources");
             return this;
         }
-        /** Count of targets affected by the schedule. */
+        /**
+         * Count of targets affected by the schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedTargets")
         private Integer countOfAffectedTargets;
 
         /**
          * Count of targets affected by the schedule.
-         *
          * @param countOfAffectedTargets the value to set
          * @return this builder
-         */
+         **/
         public Builder countOfAffectedTargets(Integer countOfAffectedTargets) {
             this.countOfAffectedTargets = countOfAffectedTargets;
             this.__explicitlySet__.add("countOfAffectedTargets");
             return this;
         }
-        /** All Action Group types are part of the schedule. */
+        /**
+         * All Action Group types are part of the schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
         private java.util.List<LifeCycleActionGroupType> actionGroupTypes;
 
         /**
          * All Action Group types are part of the schedule.
-         *
          * @param actionGroupTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder actionGroupTypes(java.util.List<LifeCycleActionGroupType> actionGroupTypes) {
             this.actionGroupTypes = actionGroupTypes;
             this.__explicitlySet__.add("actionGroupTypes");
@@ -291,61 +301,63 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
         private java.util.List<String> applicationTypes;
 
         /**
          * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-         *
          * @param applicationTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationTypes(java.util.List<String> applicationTypes) {
             this.applicationTypes = applicationTypes;
             this.__explicitlySet__.add("applicationTypes");
             return this;
         }
-        /** All products that are part of the schedule for a PRODUCT action group type. */
+        /**
+         * All products that are part of the schedule for a PRODUCT action group type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
          * All products that are part of the schedule for a PRODUCT action group type.
-         *
          * @param products the value to set
          * @return this builder
-         */
+         **/
         public Builder products(java.util.List<String> products) {
             this.products = products;
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** All LifeCycle Operations that are part of the schedule. */
+        /**
+         * All LifeCycle Operations that are part of the schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperations")
         private java.util.List<String> lifecycleOperations;
 
         /**
          * All LifeCycle Operations that are part of the schedule.
-         *
          * @param lifecycleOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleOperations(java.util.List<String> lifecycleOperations) {
             this.lifecycleOperations = lifecycleOperations;
             this.__explicitlySet__.add("lifecycleOperations");
             return this;
         }
-        /** Action Groups associated with the Schedule. */
+        /**
+         * Action Groups associated with the Schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionGroups")
         private java.util.List<ActionGroupDetails> actionGroups;
 
         /**
          * Action Groups associated with the Schedule.
-         *
          * @param actionGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder actionGroups(java.util.List<ActionGroupDetails> actionGroups) {
             this.actionGroups = actionGroups;
             this.__explicitlySet__.add("actionGroups");
@@ -361,54 +373,53 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("associatedScheduleDefinition");
             return this;
         }
-        /** The current state of the SchedulerJob. */
+        /**
+         * The current state of the SchedulerJob.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the SchedulerJob.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -417,7 +428,8 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -427,7 +439,7 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -435,19 +447,20 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -560,7 +573,9 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -569,224 +584,240 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Tenancy OCID */
+    /**
+     * Tenancy OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Tenancy OCID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The time this resource was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was last updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The scheduled date and time for the Job. */
+    /**
+     * The scheduled date and time for the Job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
      * The scheduled date and time for the Job.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
 
-    /** Actual start date and time for the Job. */
+    /**
+     * Actual start date and time for the Job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * Actual start date and time for the Job.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** Actual end date and time for the Job. */
+    /**
+     * Actual end date and time for the Job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * Actual end date and time for the Job.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
-     * Count of Action Groups affected by the Schedule. An action group is a group of entities
-     * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group for
-     * any lifecycle activity.
-     */
+     * Count of Action Groups affected by the Schedule.
+     * An action group is a group of entities grouped for a lifecycle activity.
+     * Example - A Fleet will be considered an Action Group for any lifecycle activity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedActionGroups")
     private final Integer countOfAffectedActionGroups;
 
     /**
-     * Count of Action Groups affected by the Schedule. An action group is a group of entities
-     * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group for
-     * any lifecycle activity.
+     * Count of Action Groups affected by the Schedule.
+     * An action group is a group of entities grouped for a lifecycle activity.
+     * Example - A Fleet will be considered an Action Group for any lifecycle activity.
      *
      * @return the value
-     */
+     **/
     public Integer getCountOfAffectedActionGroups() {
         return countOfAffectedActionGroups;
     }
 
-    /** Count of resources affected by the schedule. */
+    /**
+     * Count of resources affected by the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedResources")
     private final Integer countOfAffectedResources;
 
     /**
      * Count of resources affected by the schedule.
-     *
      * @return the value
-     */
+     **/
     public Integer getCountOfAffectedResources() {
         return countOfAffectedResources;
     }
 
-    /** Count of targets affected by the schedule. */
+    /**
+     * Count of targets affected by the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedTargets")
     private final Integer countOfAffectedTargets;
 
     /**
      * Count of targets affected by the schedule.
-     *
      * @return the value
-     */
+     **/
     public Integer getCountOfAffectedTargets() {
         return countOfAffectedTargets;
     }
 
-    /** All Action Group types are part of the schedule. */
+    /**
+     * All Action Group types are part of the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
     private final java.util.List<LifeCycleActionGroupType> actionGroupTypes;
 
     /**
      * All Action Group types are part of the schedule.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LifeCycleActionGroupType> getActionGroupTypes() {
         return actionGroupTypes;
     }
 
-    /** All application types that are part of the schedule for an ENVIRONMENT action group Type. */
+    /**
+     * All application types that are part of the schedule for an ENVIRONMENT action group Type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
     private final java.util.List<String> applicationTypes;
 
     /**
      * All application types that are part of the schedule for an ENVIRONMENT action group Type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getApplicationTypes() {
         return applicationTypes;
     }
 
-    /** All products that are part of the schedule for a PRODUCT action group type. */
+    /**
+     * All products that are part of the schedule for a PRODUCT action group type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
      * All products that are part of the schedule for a PRODUCT action group type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getProducts() {
         return products;
     }
 
-    /** All LifeCycle Operations that are part of the schedule. */
+    /**
+     * All LifeCycle Operations that are part of the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperations")
     private final java.util.List<String> lifecycleOperations;
 
     /**
      * All LifeCycle Operations that are part of the schedule.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLifecycleOperations() {
         return lifecycleOperations;
     }
 
-    /** Action Groups associated with the Schedule. */
+    /**
+     * Action Groups associated with the Schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionGroups")
     private final java.util.List<ActionGroupDetails> actionGroups;
 
     /**
      * Action Groups associated with the Schedule.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ActionGroupDetails> getActionGroups() {
         return actionGroups;
     }
@@ -798,15 +829,17 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
         return associatedScheduleDefinition;
     }
 
-    /** The current state of the SchedulerJob. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the SchedulerJob.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Deleted("DELETED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -845,83 +878,84 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The current state of the SchedulerJob. */
+    /**
+     * The current state of the SchedulerJob.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the SchedulerJob.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -933,7 +967,6 @@ public final class SchedulerJob extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

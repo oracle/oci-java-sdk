@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Mapping type for excluding or including source or target schemas or tables for replication. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum MappingType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Mapping type for excluding or including source or target schemas or tables for replication.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum MappingType {
     Include("INCLUDE"),
     Exclude("EXCLUDE"),
 

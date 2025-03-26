@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc;
 
-import com.oracle.bmc.util.internal.ClientCompatibilityChecker;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -13,49 +12,46 @@ import java.util.Properties;
 
 import com.oracle.bmc.util.internal.StringUtils;
 
-/** This class provides client info that will be sent to the servers as part of each request. */
+/**
+ * This class provides client info that will be sent to the servers as part of each request.
+ */
 public class ClientRuntime {
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(ClientRuntime.class);
-    public static final String SDK_VERSION_PROPERTY_NAME = "sdk.version";
-
     /**
-     * Sets an extra piece of information into the user-agent header passed to the server. The
-     * format is (by convention) "Application/Version", ex "MyApp/1.3.5".
-     *
-     * <p>Note, this must be called BEFORE any service calls are ever made, and once set, cannot be
-     * changed after a call has been made.
+     * Sets an extra piece of information into the user-agent header passed to the server.
+     * The format is (by convention) "Application/Version", ex "MyApp/1.3.5".
+     * <p>
+     * Note, this must be called BEFORE any service calls are ever made, and once set, cannot
+     * be changed after a call has been made.
      */
     private static String clientUserAgent;
 
-    public static void setClientUserAgent(String clientUserAgent) {
-        ClientRuntime.clientUserAgent = clientUserAgent;
-    }
-
     /**
      * The user agent to send.
-     *
-     * <p>The agent will include runtime information, ex: <code>
-     * Oracle-JavaSDK/1.0.0 (Linux/3.10.0-229.el7.x86_64; Java/1.8.0_60; Java HotSpot(TM) 64-Bit Server VM/25.60-b23)
-     * </code>
+     * <p>
+     * The agent will include runtime information, ex:
+     * <code>Oracle-JavaSDK/1.0.0 (Linux/3.10.0-229.el7.x86_64; Java/1.8.0_60; Java HotSpot(TM) 64-Bit Server VM/25.60-b23)</code>
      */
     private final String userAgent;
-    /** The SDK client info to send. */
+    /**
+     * The SDK client info to send.
+     */
     private final String clientInfo;
 
-    private final String sdkVersion;
-
-    private final ClientCompatibilityChecker clientCompatibilityChecker;
     private static final String ENV_VAR_USER_AGENT = "OCI_SDK_APPEND_USER_AGENT";
 
-    ClientRuntime() {
+    private static final String os = System.getProperty("os.name");
+    public static final boolean IS_OS_MAC = os.startsWith("Mac");
+    public static final boolean IS_OS_LINUX = os.startsWith("Linux") || os.startsWith("LINUX");
+    public static final boolean IS_OS_WINDOWS = os.startsWith("Windows");
+
+    private ClientRuntime() {
         String os = System.getProperty("os.name");
         String osVersion = System.getProperty("os.version");
         String javaVersion = System.getProperty("java.version");
         String javaVmName = System.getProperty("java.vm.name");
         String javaVmVersion = System.getProperty("java.vm.version");
-        Properties sdkProperties = getSdkProperties();
-        sdkVersion = extractSdkVersionFromProperties(sdkProperties);
-        clientCompatibilityChecker = new ClientCompatibilityChecker(sdkProperties);
+        String sdkVersion = sdkVersion();
 
         String userAgentFromEnvVar = System.getenv(ENV_VAR_USER_AGENT);
         String ociSdkAppendUserAgent =
@@ -87,18 +83,16 @@ public class ClientRuntime {
         LOG.info("User agent set to: {}", userAgent);
     }
 
-    static Properties getSdkProperties() {
+    private String sdkVersion() {
         InputStream propertyStream =
-                ClientRuntime.class
-                        .getClassLoader()
-                        .getResourceAsStream("com/oracle/bmc/sdk.properties");
+                getClass().getClassLoader().getResourceAsStream("com/oracle/bmc/sdk.properties");
 
         Properties properties = new Properties();
         try {
             properties.load(propertyStream);
         } catch (Exception e) {
             LOG.error("Failed to load sdk.properties", e);
-            return properties;
+            return "Unknown";
         } finally {
             try {
                 propertyStream.close();
@@ -106,11 +100,7 @@ public class ClientRuntime {
                 LOG.warn("Failed to close property stream correctly", e);
             }
         }
-        return properties;
-    }
-
-    public static String extractSdkVersionFromProperties(Properties sdkProperties) {
-        return sdkProperties.getProperty(SDK_VERSION_PROPERTY_NAME, "Unknown");
+        return properties.getProperty("sdk.version");
     }
 
     /**
@@ -130,12 +120,8 @@ public class ClientRuntime {
         return this.clientInfo;
     }
 
-    public String getSdkVersion() {
-        return sdkVersion;
-    }
-
-    public ClientCompatibilityChecker getClientCompatibilityChecker() {
-        return clientCompatibilityChecker;
+    public static void setClientUserAgent(String clientUserAgent) {
+        ClientRuntime.clientUserAgent = clientUserAgent;
     }
 
     // holder

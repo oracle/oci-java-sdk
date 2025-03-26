@@ -5,21 +5,20 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Job description <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Job description
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,7 +64,10 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the Migration Job. */
+        /**
+         * The OCID of the Migration Job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -74,13 +76,16 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Name of the job. */
+        /**
+         * Name of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -89,13 +94,16 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the Migration that this job belongs to. */
+        /**
+         * The OCID of the Migration that this job belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
         private String migrationId;
 
@@ -104,13 +112,16 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param migrationId the value to set
          * @return this builder
-         */
+         **/
         public Builder migrationId(String migrationId) {
             this.migrationId = migrationId;
             this.__explicitlySet__.add("migrationId");
             return this;
         }
-        /** The job type. */
+        /**
+         * The job type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private JobTypes type;
 
@@ -119,7 +130,7 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(JobTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -134,7 +145,10 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("progress");
             return this;
         }
-        /** The time the Migration Job was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the Migration Job was created. An RFC3339 formatted datetime string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -143,13 +157,16 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Migration Job was last updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the Migration Job was last updated. An RFC3339 formatted datetime string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -158,13 +175,16 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the migration Deployment. */
+        /**
+         * The current state of the migration Deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobLifecycleStates lifecycleState;
 
@@ -173,47 +193,47 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(JobLifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
+         * A message describing the current state in more detail. For example, can be used to provide actionable information
+         * for a resource in Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see Resource Tags. Example:
-         * {"Department": "Finance"}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see Resource Tags. Example: {"Department": "Finance"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see Resource Tags. Example:
-         * {"Department": "Finance"}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see Resource Tags. Example: {"Department": "Finance"}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -222,7 +242,8 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -232,7 +253,7 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -240,19 +261,20 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -325,7 +347,9 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -334,7 +358,10 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the Migration Job. */
+    /**
+     * The OCID of the Migration Job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -342,12 +369,15 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The OCID of the Migration Job.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Name of the job. */
+    /**
+     * Name of the job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -355,12 +385,15 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * Name of the job.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the Migration that this job belongs to. */
+    /**
+     * The OCID of the Migration that this job belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
     private final String migrationId;
 
@@ -368,12 +401,15 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The OCID of the Migration that this job belongs to.
      *
      * @return the value
-     */
+     **/
     public String getMigrationId() {
         return migrationId;
     }
 
-    /** The job type. */
+    /**
+     * The job type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final JobTypes type;
 
@@ -381,7 +417,7 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The job type.
      *
      * @return the value
-     */
+     **/
     public JobTypes getType() {
         return type;
     }
@@ -393,7 +429,10 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
         return progress;
     }
 
-    /** The time the Migration Job was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the Migration Job was created. An RFC3339 formatted datetime string
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -401,12 +440,15 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The time the Migration Job was created. An RFC3339 formatted datetime string
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the Migration Job was last updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the Migration Job was last updated. An RFC3339 formatted datetime string
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -414,12 +456,15 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The time the Migration Job was last updated. An RFC3339 formatted datetime string
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the migration Deployment. */
+    /**
+     * The current state of the migration Deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobLifecycleStates lifecycleState;
 
@@ -427,77 +472,79 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
      * The current state of the migration Deployment.
      *
      * @return the value
-     */
+     **/
     public JobLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -509,7 +556,6 @@ public final class JobSummary extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

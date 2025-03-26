@@ -5,23 +5,22 @@
 package com.oracle.bmc.onesubscription.model;
 
 /**
- * Invoice Line <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * Invoice Line
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InvoiceLineSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InvoiceLineSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InvoiceLineSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InvoiceLineSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -49,7 +48,10 @@ public final class InvoiceLineSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SPM Invoice Line internal identifier */
+        /**
+         * SPM Invoice Line internal identifier
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -58,7 +60,7 @@ public final class InvoiceLineSummary
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -73,7 +75,10 @@ public final class InvoiceLineSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** AR Invoice Number for Invoice Line */
+        /**
+         * AR Invoice Number for Invoice Line
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
         private String arInvoiceNumber;
 
@@ -82,13 +87,16 @@ public final class InvoiceLineSummary
          *
          * @param arInvoiceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder arInvoiceNumber(String arInvoiceNumber) {
             this.arInvoiceNumber = arInvoiceNumber;
             this.__explicitlySet__.add("arInvoiceNumber");
             return this;
         }
-        /** Data Center Attribute. */
+        /**
+         * Data Center Attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
@@ -97,13 +105,16 @@ public final class InvoiceLineSummary
          *
          * @param dataCenter the value to set
          * @return this builder
-         */
+         **/
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = dataCenter;
             this.__explicitlySet__.add("dataCenter");
             return this;
         }
-        /** Usage start time */
+        /**
+         * Usage start time
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
@@ -112,13 +123,16 @@ public final class InvoiceLineSummary
          *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Usage end time */
+        /**
+         * Usage end time
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
@@ -127,7 +141,7 @@ public final class InvoiceLineSummary
          *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
@@ -176,7 +190,9 @@ public final class InvoiceLineSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,7 +201,10 @@ public final class InvoiceLineSummary
         return new Builder().copy(this);
     }
 
-    /** SPM Invoice Line internal identifier */
+    /**
+     * SPM Invoice Line internal identifier
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -193,7 +212,7 @@ public final class InvoiceLineSummary
      * SPM Invoice Line internal identifier
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
@@ -205,7 +224,10 @@ public final class InvoiceLineSummary
         return product;
     }
 
-    /** AR Invoice Number for Invoice Line */
+    /**
+     * AR Invoice Number for Invoice Line
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arInvoiceNumber")
     private final String arInvoiceNumber;
 
@@ -213,12 +235,15 @@ public final class InvoiceLineSummary
      * AR Invoice Number for Invoice Line
      *
      * @return the value
-     */
+     **/
     public String getArInvoiceNumber() {
         return arInvoiceNumber;
     }
 
-    /** Data Center Attribute. */
+    /**
+     * Data Center Attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
@@ -226,12 +251,15 @@ public final class InvoiceLineSummary
      * Data Center Attribute.
      *
      * @return the value
-     */
+     **/
     public String getDataCenter() {
         return dataCenter;
     }
 
-    /** Usage start time */
+    /**
+     * Usage start time
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
@@ -239,12 +267,15 @@ public final class InvoiceLineSummary
      * Usage start time
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Usage end time */
+    /**
+     * Usage end time
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
@@ -252,7 +283,7 @@ public final class InvoiceLineSummary
      * Usage end time
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
@@ -264,7 +295,6 @@ public final class InvoiceLineSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

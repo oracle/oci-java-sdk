@@ -6,7 +6,7 @@ package com.oracle.bmc.generativeaiagent.responses;
 
 import com.oracle.bmc.generativeaiagent.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The URL for the created endpoint. The endpoint OCID is generated after this request is sent.
@@ -15,26 +15,29 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * The URL for the created endpoint. The endpoint OCID is generated after this request is sent.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** The location for the content. */
+    /**
+     * The location for the content.
+     */
     private String contentLocation;
 
     /**
      * The location for the content.
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -47,16 +50,15 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
      *
      * @return the value
      */
@@ -65,14 +67,15 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -80,12 +83,13 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned {@code AgentEndpoint} instance. */
+    /**
+     * The returned AgentEndpoint instance.
+     */
     private com.oracle.bmc.generativeaiagent.model.AgentEndpoint agentEndpoint;
 
     /**
-     * The returned {@code AgentEndpoint} instance.
-     *
+     * The returned AgentEndpoint instance.
      * @return the value
      */
     public com.oracle.bmc.generativeaiagent.model.AgentEndpoint getAgentEndpoint() {
@@ -104,7 +108,7 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateAgentEndpointResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String contentLocation,
             String etag,
@@ -120,34 +124,28 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
         this.agentEndpoint = agentEndpoint;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateAgentEndpointResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The URL for the created endpoint. The endpoint OCID is generated after this request is
-         * sent.
+         * The URL for the created endpoint. The endpoint OCID is generated after this request is sent.
          */
         private String location;
 
         /**
-         * The URL for the created endpoint. The endpoint OCID is generated after this request is
-         * sent.
-         *
+         * The URL for the created endpoint. The endpoint OCID is generated after this request is sent.
          * @param location the value to set
          * @return this builder
          */
@@ -156,12 +154,13 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The location for the content. */
+        /**
+         * The location for the content.
+         */
         private String contentLocation;
 
         /**
          * The location for the content.
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -170,7 +169,10 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -185,16 +187,15 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-         * request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-         * request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -205,14 +206,15 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -222,12 +224,13 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code AgentEndpoint} instance. */
+        /**
+         * The returned AgentEndpoint instance.
+         */
         private com.oracle.bmc.generativeaiagent.model.AgentEndpoint agentEndpoint;
 
         /**
-         * The returned {@code AgentEndpoint} instance.
-         *
+         * The returned AgentEndpoint instance.
          * @param agentEndpoint the value to set
          * @return this builder
          */
@@ -239,10 +242,8 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateAgentEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -258,10 +259,8 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateAgentEndpointResponse build() {
             return new CreateAgentEndpointResponse(
                     __httpStatusCode__,
@@ -277,7 +276,6 @@ public class CreateAgentEndpointResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

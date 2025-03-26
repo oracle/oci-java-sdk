@@ -5,23 +5,22 @@
 package com.oracle.bmc.servicecatalog.model;
 
 /**
- * The model to create a single association between a service catalog and a resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
+ * The model to create a single association between a service catalog and a resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210527")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateServiceCatalogAssociationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateServiceCatalogAssociationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateServiceCatalogAssociationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceCatalogId", "entityId", "entityType"})
     public CreateServiceCatalogAssociationDetails(
@@ -34,46 +33,49 @@ public final class CreateServiceCatalogAssociationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identifier of the service catalog. */
+        /**
+         * Identifier of the service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCatalogId")
         private String serviceCatalogId;
 
         /**
          * Identifier of the service catalog.
-         *
          * @param serviceCatalogId the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceCatalogId(String serviceCatalogId) {
             this.serviceCatalogId = serviceCatalogId;
             this.__explicitlySet__.add("serviceCatalogId");
             return this;
         }
-        /** Identifier of the entity being associated with service catalog. */
+        /**
+         * Identifier of the entity being associated with service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * Identifier of the entity being associated with service catalog.
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The type of the entity that is associated with the service catalog. */
+        /**
+         * The type of the entity that is associated with the service catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The type of the entity that is associated with the service catalog.
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -108,7 +110,9 @@ public final class CreateServiceCatalogAssociationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +121,44 @@ public final class CreateServiceCatalogAssociationDetails
         return new Builder().copy(this);
     }
 
-    /** Identifier of the service catalog. */
+    /**
+     * Identifier of the service catalog.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCatalogId")
     private final String serviceCatalogId;
 
     /**
      * Identifier of the service catalog.
-     *
      * @return the value
-     */
+     **/
     public String getServiceCatalogId() {
         return serviceCatalogId;
     }
 
-    /** Identifier of the entity being associated with service catalog. */
+    /**
+     * Identifier of the entity being associated with service catalog.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * Identifier of the entity being associated with service catalog.
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The type of the entity that is associated with the service catalog. */
+    /**
+     * The type of the entity that is associated with the service catalog.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The type of the entity that is associated with the service catalog.
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
@@ -163,7 +170,6 @@ public final class CreateServiceCatalogAssociationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

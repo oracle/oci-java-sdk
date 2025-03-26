@@ -5,22 +5,19 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * An annotation represents a user- or machine-generated annotation for a given record. The details
- * of the annotation are captured in the RecordAnnotationDetails. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * An annotation represents a user- or machine-generated annotation for a given record.  The details of the annotation are captured in the RecordAnnotationDetails.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Annotation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Annotation extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Annotation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -63,16 +60,17 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the annotation. */
+        /**
+         * The OCID of the annotation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the annotation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -80,16 +78,15 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The date and time the annotation was created, in the timestamp format defined by RFC3339.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the annotation was created, in the timestamp format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -97,154 +94,159 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The date and time the resource was updated, in the timestamp format defined by RFC3339.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the resource was updated, in the timestamp format defined by RFC3339.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The OCID of the principal which created the annotation. */
+        /**
+         * The OCID of the principal which created the annotation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * The OCID of the principal which created the annotation.
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** The OCID of the principal which updated the annotation. */
+        /**
+         * The OCID of the principal which updated the annotation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
         private String updatedBy;
 
         /**
          * The OCID of the principal which updated the annotation.
-         *
          * @param updatedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder updatedBy(String updatedBy) {
             this.updatedBy = updatedBy;
             this.__explicitlySet__.add("updatedBy");
             return this;
         }
-        /** The OCID of the record annotated. */
+        /**
+         * The OCID of the record annotated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recordId")
         private String recordId;
 
         /**
          * The OCID of the record annotated.
-         *
          * @param recordId the value to set
          * @return this builder
-         */
+         **/
         public Builder recordId(String recordId) {
             this.recordId = recordId;
             this.__explicitlySet__.add("recordId");
             return this;
         }
-        /** The entity types are validated against the dataset to ensure consistency. */
+        /**
+         * The entity types are validated against the dataset to ensure consistency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<Entity> entities;
 
         /**
          * The entity types are validated against the dataset to ensure consistency.
-         *
          * @param entities the value to set
          * @return this builder
-         */
+         **/
         public Builder entities(java.util.List<Entity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
             return this;
         }
         /**
-         * The OCID of the compartment for the annotation. This is tied to the dataset. It is not
-         * changeable on the record itself.
-         */
+         * The OCID of the compartment for the annotation. This is tied to the dataset. It is not changeable on the record itself.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment for the annotation. This is tied to the dataset. It is not
-         * changeable on the record itself.
-         *
+         * The OCID of the compartment for the annotation. This is tied to the dataset. It is not changeable on the record itself.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The lifecycle state of an annotation. ACTIVE - The annotation is active to be used for
-         * labeling. INACTIVE - The annotation has been marked as inactive and should not be used
-         * for labeling. DELETED - Tha annotation been deleted and no longer available for labeling.
-         */
+         * The lifecycle state of an annotation.
+         * ACTIVE - The annotation is active to be used for labeling.
+         * INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+         * DELETED - Tha annotation been deleted and no longer available for labeling.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The lifecycle state of an annotation. ACTIVE - The annotation is active to be used for
-         * labeling. INACTIVE - The annotation has been marked as inactive and should not be used
-         * for labeling. DELETED - Tha annotation been deleted and no longer available for labeling.
+         * The lifecycle state of an annotation.
+         * ACTIVE - The annotation is active to be used for labeling.
+         * INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+         * DELETED - Tha annotation been deleted and no longer available for labeling.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-         */
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope. It
-         * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+         * For example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -314,7 +316,9 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -323,127 +327,133 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the annotation. */
+    /**
+     * The OCID of the annotation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the annotation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The date and time the annotation was created, in the timestamp format defined by RFC3339. */
+    /**
+     * The date and time the annotation was created, in the timestamp format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the annotation was created, in the timestamp format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the resource was updated, in the timestamp format defined by RFC3339. */
+    /**
+     * The date and time the resource was updated, in the timestamp format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the resource was updated, in the timestamp format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The OCID of the principal which created the annotation. */
+    /**
+     * The OCID of the principal which created the annotation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * The OCID of the principal which created the annotation.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** The OCID of the principal which updated the annotation. */
+    /**
+     * The OCID of the principal which updated the annotation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedBy")
     private final String updatedBy;
 
     /**
      * The OCID of the principal which updated the annotation.
-     *
      * @return the value
-     */
+     **/
     public String getUpdatedBy() {
         return updatedBy;
     }
 
-    /** The OCID of the record annotated. */
+    /**
+     * The OCID of the record annotated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recordId")
     private final String recordId;
 
     /**
      * The OCID of the record annotated.
-     *
      * @return the value
-     */
+     **/
     public String getRecordId() {
         return recordId;
     }
 
-    /** The entity types are validated against the dataset to ensure consistency. */
+    /**
+     * The entity types are validated against the dataset to ensure consistency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<Entity> entities;
 
     /**
      * The entity types are validated against the dataset to ensure consistency.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Entity> getEntities() {
         return entities;
     }
 
     /**
-     * The OCID of the compartment for the annotation. This is tied to the dataset. It is not
-     * changeable on the record itself.
-     */
+     * The OCID of the compartment for the annotation. This is tied to the dataset. It is not changeable on the record itself.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment for the annotation. This is tied to the dataset. It is not
-     * changeable on the record itself.
-     *
+     * The OCID of the compartment for the annotation. This is tied to the dataset. It is not changeable on the record itself.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The lifecycle state of an annotation. ACTIVE - The annotation is active to be used for
-     * labeling. INACTIVE - The annotation has been marked as inactive and should not be used for
-     * labeling. DELETED - Tha annotation been deleted and no longer available for labeling.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The lifecycle state of an annotation.
+     * ACTIVE - The annotation is active to be used for labeling.
+     * INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+     * DELETED - Tha annotation been deleted and no longer available for labeling.
+     *
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -483,54 +493,59 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * The lifecycle state of an annotation. ACTIVE - The annotation is active to be used for
-     * labeling. INACTIVE - The annotation has been marked as inactive and should not be used for
-     * labeling. DELETED - Tha annotation been deleted and no longer available for labeling.
-     */
+     * The lifecycle state of an annotation.
+     * ACTIVE - The annotation is active to be used for labeling.
+     * INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+     * DELETED - Tha annotation been deleted and no longer available for labeling.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The lifecycle state of an annotation. ACTIVE - The annotation is active to be used for
-     * labeling. INACTIVE - The annotation has been marked as inactive and should not be used for
-     * labeling. DELETED - Tha annotation been deleted and no longer available for labeling.
+     * The lifecycle state of an annotation.
+     * ACTIVE - The annotation is active to be used for labeling.
+     * INACTIVE - The annotation has been marked as inactive and should not be used for labeling.
+     * DELETED - Tha annotation been deleted and no longer available for labeling.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
-     */
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * A simple key-value pair that is applied without any predefined name, type, or scope. It
-     * exists for cross-compatibility only. For example: {@code {"bar-key": "value"}}
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only.
+     * For example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * The defined tags for this resource. Each key is predefined and scoped to a namespace. For
-     * example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * The defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -542,7 +557,6 @@ public final class Annotation extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

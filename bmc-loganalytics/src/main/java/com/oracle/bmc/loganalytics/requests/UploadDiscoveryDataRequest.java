@@ -6,47 +6,71 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadDiscoveryDataExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadDiscoveryDataRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UploadDiscoveryDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UploadDiscoveryDataRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UploadDiscoveryDataRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** Discovery data */
+    /**
+     * Discovery data
+     */
     private java.io.InputStream uploadDiscoveryDataDetails;
 
-    /** Discovery data */
+    /**
+     * Discovery data
+     */
     public java.io.InputStream getUploadDiscoveryDataDetails() {
         return uploadDiscoveryDataDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+    /**
+     * Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+     *
+     */
     private String opcMetaProperties;
 
-    /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+    /**
+     * Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+     *
+     */
     public String getOpcMetaProperties() {
         return opcMetaProperties;
     }
-    /** Discovery data type */
+    /**
+     * Discovery data type
+     *
+     */
     private DiscoveryDataType discoveryDataType;
 
-    /** Discovery data type */
-    public enum DiscoveryDataType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Discovery data type
+     *
+     **/
+    public enum DiscoveryDataType {
         Entity("ENTITY"),
         K8SObjects("K8S_OBJECTS"),
         ;
@@ -79,65 +103,84 @@ public class UploadDiscoveryDataRequest
         }
     };
 
-    /** Discovery data type */
+    /**
+     * Discovery data type
+     *
+     */
     public DiscoveryDataType getDiscoveryDataType() {
         return discoveryDataType;
     }
-    /** The log group OCID that gets mapped to the logs in the discovery data. */
+    /**
+     * The log group OCID that gets mapped to the logs in the discovery data.
+     *
+     */
     private String logGroupId;
 
-    /** The log group OCID that gets mapped to the logs in the discovery data. */
+    /**
+     * The log group OCID that gets mapped to the logs in the discovery data.
+     *
+     */
     public String getLogGroupId() {
         return logGroupId;
     }
-    /** Identifies the type of request payload. */
+    /**
+     * Identifies the type of request payload.
+     *
+     */
     private com.oracle.bmc.loganalytics.model.PayloadType payloadType;
 
-    /** Identifies the type of request payload. */
+    /**
+     * Identifies the type of request payload.
+     *
+     */
     public com.oracle.bmc.loganalytics.model.PayloadType getPayloadType() {
         return payloadType;
     }
-    /** The content type of the log data. */
+    /**
+     * The content type of the log data.
+     */
     private String contentType;
 
-    /** The content type of the log data. */
+    /**
+     * The content type of the log data.
+     */
     public String getContentType() {
         return contentType;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method,
-     * path, and headers before the request body is sent. If no error results from such
-     * verification, the server will send a 100 (Continue) interim response to indicate readiness
-     * for the request body. The only allowed value for this parameter is "100-Continue"
-     * (case-insensitive).
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
      */
     private String expect;
 
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method,
-     * path, and headers before the request body is sent. If no error results from such
-     * verification, the server will send a 100 (Continue) interim response to indicate readiness
-     * for the request body. The only allowed value for this parameter is "100-Continue"
-     * (case-insensitive).
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
      */
     public String getExpect() {
         return expect;
@@ -145,7 +188,6 @@ public class UploadDiscoveryDataRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -162,10 +204,14 @@ public class UploadDiscoveryDataRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UploadDiscoveryDataRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -179,12 +225,13 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** Discovery data */
+        /**
+         * Discovery data
+         */
         private java.io.InputStream uploadDiscoveryDataDetails = null;
 
         /**
          * Discovery data
-         *
          * @param uploadDiscoveryDataDetails the value to set
          * @return this builder instance
          */
@@ -193,12 +240,13 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -207,7 +255,10 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3 */
+        /**
+         * Metadata key and value pairs separated by a semicolon. Example k1:v1;k2:v2;k3:v3
+         *
+         */
         private String opcMetaProperties = null;
 
         /**
@@ -221,7 +272,10 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** Discovery data type */
+        /**
+         * Discovery data type
+         *
+         */
         private DiscoveryDataType discoveryDataType = null;
 
         /**
@@ -235,7 +289,10 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** The log group OCID that gets mapped to the logs in the discovery data. */
+        /**
+         * The log group OCID that gets mapped to the logs in the discovery data.
+         *
+         */
         private String logGroupId = null;
 
         /**
@@ -249,7 +306,10 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** Identifies the type of request payload. */
+        /**
+         * Identifies the type of request payload.
+         *
+         */
         private com.oracle.bmc.loganalytics.model.PayloadType payloadType = null;
 
         /**
@@ -263,12 +323,13 @@ public class UploadDiscoveryDataRequest
             return this;
         }
 
-        /** The content type of the log data. */
+        /**
+         * The content type of the log data.
+         */
         private String contentType = null;
 
         /**
          * The content type of the log data.
-         *
          * @param contentType the value to set
          * @return this builder instance
          */
@@ -279,19 +340,20 @@ public class UploadDiscoveryDataRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -302,20 +364,17 @@ public class UploadDiscoveryDataRequest
         }
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method,
-         * path, and headers before the request body is sent. If no error results from such
-         * verification, the server will send a 100 (Continue) interim response to indicate
-         * readiness for the request body. The only allowed value for this parameter is
-         * "100-Continue" (case-insensitive).
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
          */
         private String expect = null;
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method,
-         * path, and headers before the request body is sent. If no error results from such
-         * verification, the server will send a 100 (Continue) interim response to indicate
-         * readiness for the request body. The only allowed value for this parameter is
-         * "100-Continue" (case-insensitive).
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
          * @param expect the value to set
          * @return this builder instance
@@ -327,19 +386,18 @@ public class UploadDiscoveryDataRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -351,7 +409,6 @@ public class UploadDiscoveryDataRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UploadDiscoveryDataRequest o) {
@@ -373,11 +430,10 @@ public class UploadDiscoveryDataRequest
         /**
          * Build the instance of UploadDiscoveryDataRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UploadDiscoveryDataRequest
          */
@@ -390,7 +446,6 @@ public class UploadDiscoveryDataRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -403,8 +458,7 @@ public class UploadDiscoveryDataRequest
         /**
          * Build the instance of UploadDiscoveryDataRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UploadDiscoveryDataRequest
@@ -422,15 +476,12 @@ public class UploadDiscoveryDataRequest
             request.opcRetryToken = opcRetryToken;
             request.expect = expect;
             return request;
-            // new UploadDiscoveryDataRequest(namespaceName, uploadDiscoveryDataDetails,
-            // opcRequestId, opcMetaProperties, discoveryDataType, logGroupId, payloadType,
-            // contentType, opcRetryToken, expect);
+            // new UploadDiscoveryDataRequest(namespaceName, uploadDiscoveryDataDetails, opcRequestId, opcMetaProperties, discoveryDataType, logGroupId, payloadType, contentType, opcRetryToken, expect);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -449,7 +500,6 @@ public class UploadDiscoveryDataRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Mapping rule for source and target schemas for the pipeline data replication. For example:
- * "{mappingType: INCLUDE, source: HR.*, target: HR.*}" for rule "Include HR.*" which will include
- * all the tables under HR schema. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Mapping rule for source and target schemas for the pipeline data replication.
+ * For example:
+ * "{mappingType: INCLUDE, source: HR.*, target: HR.*}" for rule "Include HR.*" which will include all the tables under HR schema.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MappingRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MappingRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MappingRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"mappingType", "source", "target"})
     public MappingRule(MappingType mappingType, String source, String target) {
@@ -34,27 +33,27 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Defines the exclude/include rules of source and target schemas and tables when
-         * replicating from source to target. This option applies when creating and updating a
-         * pipeline.
-         */
+         * Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mappingType")
         private MappingType mappingType;
 
         /**
-         * Defines the exclude/include rules of source and target schemas and tables when
-         * replicating from source to target. This option applies when creating and updating a
-         * pipeline.
+         * Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
          *
          * @param mappingType the value to set
          * @return this builder
-         */
+         **/
         public Builder mappingType(MappingType mappingType) {
             this.mappingType = mappingType;
             this.__explicitlySet__.add("mappingType");
             return this;
         }
-        /** The source schema/table combination for replication to target. */
+        /**
+         * The source schema/table combination for replication to target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
@@ -63,13 +62,16 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** The target schema/table combination for replication from the source. */
+        /**
+         * The target schema/table combination for replication from the source.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
@@ -78,7 +80,7 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param target the value to set
          * @return this builder
-         */
+         **/
         public Builder target(String target) {
             this.target = target;
             this.__explicitlySet__.add("target");
@@ -111,7 +113,9 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,23 +125,25 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * Defines the exclude/include rules of source and target schemas and tables when replicating
-     * from source to target. This option applies when creating and updating a pipeline.
-     */
+     * Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mappingType")
     private final MappingType mappingType;
 
     /**
-     * Defines the exclude/include rules of source and target schemas and tables when replicating
-     * from source to target. This option applies when creating and updating a pipeline.
+     * Defines the exclude/include rules of source and target schemas and tables when replicating from source to target. This option applies when creating and updating a pipeline.
      *
      * @return the value
-     */
+     **/
     public MappingType getMappingType() {
         return mappingType;
     }
 
-    /** The source schema/table combination for replication to target. */
+    /**
+     * The source schema/table combination for replication to target.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
@@ -145,12 +151,15 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
      * The source schema/table combination for replication to target.
      *
      * @return the value
-     */
+     **/
     public String getSource() {
         return source;
     }
 
-    /** The target schema/table combination for replication from the source. */
+    /**
+     * The target schema/table combination for replication from the source.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
@@ -158,7 +167,7 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
      * The target schema/table combination for replication from the source.
      *
      * @return the value
-     */
+     **/
     public String getTarget() {
         return target;
     }
@@ -170,7 +179,6 @@ public final class MappingRule extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define an addon. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define an addon.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Addon.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Addon extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Addon extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -50,106 +48,113 @@ public final class Addon extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the addon. */
+        /**
+         * The name of the addon.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the addon.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** selected addon version, or null indicates autoUpdate */
+        /**
+         * selected addon version, or null indicates autoUpdate
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * selected addon version, or null indicates autoUpdate
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** current installed version of the addon */
+        /**
+         * current installed version of the addon
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentInstalledVersion")
         private String currentInstalledVersion;
 
         /**
          * current installed version of the addon
-         *
          * @param currentInstalledVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder currentInstalledVersion(String currentInstalledVersion) {
             this.currentInstalledVersion = currentInstalledVersion;
             this.__explicitlySet__.add("currentInstalledVersion");
             return this;
         }
-        /** The time the cluster was created. */
+        /**
+         * The time the cluster was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the cluster was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The state of the addon. */
+        /**
+         * The state of the addon.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private AddonLifecycleState lifecycleState;
 
         /**
          * The state of the addon.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(AddonLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Addon configuration details. */
+        /**
+         * Addon configuration details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<AddonConfiguration> configurations;
 
         /**
          * Addon configuration details.
-         *
          * @param configurations the value to set
          * @return this builder
-         */
+         **/
         public Builder configurations(java.util.List<AddonConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
             return this;
         }
-        /** The error info of the addon. */
+        /**
+         * The error info of the addon.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addonError")
         private AddonError addonError;
 
         /**
          * The error info of the addon.
-         *
          * @param addonError the value to set
          * @return this builder
-         */
+         **/
         public Builder addonError(AddonError addonError) {
             this.addonError = addonError;
             this.__explicitlySet__.add("addonError");
@@ -202,7 +207,9 @@ public final class Addon extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,93 +218,100 @@ public final class Addon extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** The name of the addon. */
+    /**
+     * The name of the addon.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the addon.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** selected addon version, or null indicates autoUpdate */
+    /**
+     * selected addon version, or null indicates autoUpdate
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * selected addon version, or null indicates autoUpdate
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** current installed version of the addon */
+    /**
+     * current installed version of the addon
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentInstalledVersion")
     private final String currentInstalledVersion;
 
     /**
      * current installed version of the addon
-     *
      * @return the value
-     */
+     **/
     public String getCurrentInstalledVersion() {
         return currentInstalledVersion;
     }
 
-    /** The time the cluster was created. */
+    /**
+     * The time the cluster was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the cluster was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The state of the addon. */
+    /**
+     * The state of the addon.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final AddonLifecycleState lifecycleState;
 
     /**
      * The state of the addon.
-     *
      * @return the value
-     */
+     **/
     public AddonLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Addon configuration details. */
+    /**
+     * Addon configuration details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<AddonConfiguration> configurations;
 
     /**
      * Addon configuration details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AddonConfiguration> getConfigurations() {
         return configurations;
     }
 
-    /** The error info of the addon. */
+    /**
+     * The error info of the addon.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addonError")
     private final AddonError addonError;
 
     /**
      * The error info of the addon.
-     *
      * @return the value
-     */
+     **/
     public AddonError getAddonError() {
         return addonError;
     }
@@ -309,7 +323,6 @@ public final class Addon extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

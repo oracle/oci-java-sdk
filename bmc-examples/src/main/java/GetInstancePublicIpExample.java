@@ -26,12 +26,11 @@ import com.oracle.bmc.core.responses.GetPublicIpByPrivateIpIdResponse;
 import com.oracle.bmc.model.BmcException;
 
 /**
- * This class demonstrates how to retrieve the public IPs for an instance. An instance can have
- * multiple public IP addresses:
- *
+ * This class demonstrates how to retrieve the public IPs for an instance. An instance
+ * can have multiple public IP addresses:
  * <ul>
- *   <li>A public IP address directly on the VNIC
- *   <li>Public IP addresses assigned to any secondary private IP on the VNIC
+ *  <li>A public IP address directly on the VNIC</li>
+ *  <li>Public IP addresses assigned to any secondary private IP on the VNIC</li>
  * </ul>
  */
 public class GetInstancePublicIpExample {
@@ -45,10 +44,8 @@ public class GetInstancePublicIpExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -56,10 +53,11 @@ public class GetInstancePublicIpExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeClient computeClient =
-                ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        VirtualNetworkClient vcnClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        ComputeClient computeClient = new ComputeClient(provider);
+        VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
+
+        computeClient.setRegion(Region.US_PHOENIX_1);
+        vcnClient.setRegion(Region.US_PHOENIX_1);
 
         // Account for multiple VNICs being attached to the instance
         Iterable<VnicAttachment> vnicAttachmentsIterable =
@@ -112,12 +110,14 @@ public class GetInstancePublicIpExample {
                         System.out.println(
                                 String.format(
                                         "Exception when retriving public IP for private IP %s (%s)",
-                                        privateIp.getId(), privateIp.getIpAddress()));
+                                        privateIp.getId(),
+                                        privateIp.getIpAddress()));
                     } else {
                         System.out.println(
                                 String.format(
                                         "No public IP for private IP %s (%s)",
-                                        privateIp.getId(), privateIp.getIpAddress()));
+                                        privateIp.getId(),
+                                        privateIp.getIpAddress()));
                     }
                 }
             }

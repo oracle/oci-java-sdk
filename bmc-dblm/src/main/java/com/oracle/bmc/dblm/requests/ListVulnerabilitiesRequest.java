@@ -6,65 +6,77 @@ package com.oracle.bmc.dblm.requests;
 
 import com.oracle.bmc.dblm.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dblm/ListVulnerabilitiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVulnerabilitiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dblm/ListVulnerabilitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVulnerabilitiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.dblm.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.dblm.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for
-     * vulnerableResources is descending. Default order for cveId is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for vulnerableResources is descending. Default order for cveId is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for
-     * vulnerableResources is descending. Default order for cveId is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for vulnerableResources is descending. Default order for cveId is descending.
+     *
+     **/
+    public enum SortBy {
         CveId("cveId"),
         VulnerableResources("vulnerableResources"),
         ;
@@ -98,8 +110,8 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for
-     * vulnerableResources is descending. Default order for cveId is descending.
+     * The field to sort by. Only one sort order may be provided. Default order for vulnerableResources is descending. Default order for cveId is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -107,65 +119,91 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.dblm.model.DblmVulnerability.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.dblm.model.DblmVulnerability.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only database that match the given release version. */
+    /**
+     * A filter to return only database that match the given release version.
+     */
     private String databaseRelease;
 
-    /** A filter to return only database that match the given release version. */
+    /**
+     * A filter to return only database that match the given release version.
+     */
     public String getDatabaseRelease() {
         return databaseRelease;
     }
-    /** A filter to return only resources that match the given resource id. */
+    /**
+     * A filter to return only resources that match the given resource id.
+     */
     private String resourceId;
 
-    /** A filter to return only resources that match the given resource id. */
+    /**
+     * A filter to return only resources that match the given resource id.
+     */
     public String getResourceId() {
         return resourceId;
     }
     /**
-     * Filter by one or more severity types. Possible values are critical, high, medium, low, info.
+     * Filter by one or more severity types.
+     * Possible values are critical, high, medium, low, info.
+     *
      */
     private java.util.List<com.oracle.bmc.dblm.model.VulnerabilityRiskLevel> severityType;
 
     /**
-     * Filter by one or more severity types. Possible values are critical, high, medium, low, info.
+     * Filter by one or more severity types.
+     * Possible values are critical, high, medium, low, info.
+     *
      */
     public java.util.List<com.oracle.bmc.dblm.model.VulnerabilityRiskLevel> getSeverityType() {
         return severityType;
     }
-    /** The search input for filter cve id and cve description. */
+    /**
+     * The search input for filter cve id and cve description.
+     */
     private String searchBy;
 
-    /** The search input for filter cve id and cve description. */
+    /**
+     * The search input for filter cve id and cve description.
+     */
     public String getSearchBy() {
         return searchBy;
     }
@@ -173,15 +211,17 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListVulnerabilitiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -190,12 +230,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -205,15 +246,12 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -222,12 +260,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -236,12 +275,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.dblm.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -251,14 +291,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for
-         * vulnerableResources is descending. Default order for cveId is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for vulnerableResources is descending. Default order for cveId is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for
-         * vulnerableResources is descending. Default order for cveId is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for vulnerableResources is descending. Default order for cveId is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -270,19 +309,20 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -292,12 +332,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -313,7 +354,6 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -323,12 +363,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only database that match the given release version. */
+        /**
+         * A filter to return only database that match the given release version.
+         */
         private String databaseRelease = null;
 
         /**
          * A filter to return only database that match the given release version.
-         *
          * @param databaseRelease the value to set
          * @return this builder instance
          */
@@ -337,12 +378,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only resources that match the given resource id. */
+        /**
+         * A filter to return only resources that match the given resource id.
+         */
         private String resourceId = null;
 
         /**
          * A filter to return only resources that match the given resource id.
-         *
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -352,15 +394,16 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Filter by one or more severity types. Possible values are critical, high, medium, low,
-         * info.
+         * Filter by one or more severity types.
+         * Possible values are critical, high, medium, low, info.
+         *
          */
         private java.util.List<com.oracle.bmc.dblm.model.VulnerabilityRiskLevel> severityType =
                 null;
 
         /**
-         * Filter by one or more severity types. Possible values are critical, high, medium, low,
-         * info.
+         * Filter by one or more severity types.
+         * Possible values are critical, high, medium, low, info.
          *
          * @param severityType the value to set
          * @return this builder instance
@@ -372,8 +415,8 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. Filter by one or more severity types. Possible values are critical,
-         * high, medium, low, info.
+         * Singular setter. Filter by one or more severity types.
+         * Possible values are critical, high, medium, low, info.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -382,12 +425,13 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             return this.severityType(java.util.Arrays.asList(singularValue));
         }
 
-        /** The search input for filter cve id and cve description. */
+        /**
+         * The search input for filter cve id and cve description.
+         */
         private String searchBy = null;
 
         /**
          * The search input for filter cve id and cve description.
-         *
          * @param searchBy the value to set
          * @return this builder instance
          */
@@ -398,19 +442,18 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -422,7 +465,6 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListVulnerabilitiesRequest o) {
@@ -447,11 +489,10 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListVulnerabilitiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListVulnerabilitiesRequest
          */
@@ -465,8 +506,7 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListVulnerabilitiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListVulnerabilitiesRequest
@@ -487,15 +527,12 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
             request.severityType = severityType;
             request.searchBy = searchBy;
             return request;
-            // new ListVulnerabilitiesRequest(compartmentId, limit, page, displayName, sortOrder,
-            // sortBy, opcRetryToken, opcRequestId, lifecycleState, databaseRelease, resourceId,
-            // severityType, searchBy);
+            // new ListVulnerabilitiesRequest(compartmentId, limit, page, displayName, sortOrder, sortBy, opcRetryToken, opcRequestId, lifecycleState, databaseRelease, resourceId, severityType, searchBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -517,7 +554,6 @@ public class ListVulnerabilitiesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

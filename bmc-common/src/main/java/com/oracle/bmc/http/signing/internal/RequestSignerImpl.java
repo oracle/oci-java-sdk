@@ -4,66 +4,72 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-import com.oracle.bmc.http.client.Serializer;
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
-import com.oracle.bmc.http.signing.RequestSigner;
-import com.oracle.bmc.http.signing.RequestSignerException;
-import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.io.internal.KeepOpenInputStream;
-import com.oracle.bmc.retrier.Retriers;
-import com.oracle.bmc.util.StreamUtils;
-import com.oracle.bmc.util.VisibleForTesting;
-import com.oracle.bmc.util.internal.StringUtils;
-import com.oracle.bmc.util.internal.Validate;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.PrivateKey;
 import java.security.interfaces.RSAPrivateKey;
+import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Base64;
-import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Optional;
 import java.util.TimeZone;
 import java.util.function.Supplier;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import javax.annotation.concurrent.Immutable;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.oracle.bmc.util.StreamUtils;
+import com.oracle.bmc.util.VisibleForTesting;
+import com.oracle.bmc.http.signing.RequestSigner;
+import com.oracle.bmc.http.signing.RequestSignerException;
+import com.oracle.bmc.http.signing.SigningStrategy;
+import com.oracle.bmc.io.DuplicatableInputStream;
+import com.oracle.bmc.io.internal.KeepOpenInputStream;
+import com.oracle.bmc.retrier.Retriers;
+import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.util.internal.Validate;
 
 /**
  * Implementation of the {@linkplain RequestSigner} interface
- *
- * <p>This contains the main code that is used for signing a request
- *
- * <p>Class is immutable. @Immutable
+ * <p>
+ * This contains the main code that is used for signing a request
  */
+@Immutable
 public class RequestSignerImpl implements RequestSigner {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(RequestSignerImpl.class);
 
     private static final SignatureSigner SIGNER = new SignatureSigner();
+    private static KeySupplier<PrivateKey> privateKeySupplier = null;
 
     private final KeySupplier<RSAPrivateKey> keySupplier;
     private final SigningConfiguration signingConfiguration;
     private final Supplier<String> keyIdSupplier;
 
     /**
-     * Construct the RequestSigner with the specified KeySupplier. This will be used to get keys for
-     * doing the signing.
+     * Construct the RequestSigner with the specified KeySupplier. This will be
+     * used to get keys for doing the signing.
      *
-     * @param keySupplier A key supplier that will be used for signing the request
-     * @param signingStrategy The signing strategy to determine what headers to use
-     * @param keyIdSupplier A keyId supplier that will be used for signing the request
+     * @param keySupplier
+     *            A key supplier that will be used for signing the request
+     * @param signingStrategy
+     *            The signing strategy to determine what headers to use
+     * @param keyIdSupplier
+     *            A keyId supplier that will be used for signing the request
      */
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
@@ -72,13 +78,31 @@ public class RequestSignerImpl implements RequestSigner {
         this(keySupplier, toSigningConfiguration(signingStrategy), keyIdSupplier);
     }
 
+    public RequestSignerImpl(
+            @Nonnull final SigningStrategy signingStrategy,
+            @Nonnull final KeySupplier<PrivateKey> keySupplier,
+            @Nonnull final Supplier<String> keyIdSupplier) {
+        // No-op keySupplier if using privateKeySupplier
+        this(
+                keyId ->
+                        new PEMFileRSAPrivateKeySupplier(
+                                        new ByteArrayInputStream("".getBytes()), "".toCharArray())
+                                .supplyKey(""),
+                toSigningConfiguration(signingStrategy),
+                keyIdSupplier);
+        privateKeySupplier = keySupplier;
+    }
+
     /**
-     * Construct the RequestSigner with the specified KeySupplier. This will be used to get keys for
-     * doing the signing.
+     * Construct the RequestSigner with the specified KeySupplier. This will be
+     * used to get keys for doing the signing.
      *
-     * @param keySupplier A key supplier that will be used for signing the request
-     * @param signingConfiguration The signing configuration to determine what headers to use
-     * @param keyIdSupplier A keyId supplier that will be used for signing the request
+     * @param keySupplier
+     *            A key supplier that will be used for signing the request
+     * @param signingConfiguration
+     *            The signing configuration to determine what headers to use
+     * @param keyIdSupplier
+     *            A keyId supplier that will be used for signing the request
      */
     public RequestSignerImpl(
             @Nonnull final KeySupplier<RSAPrivateKey> keySupplier,
@@ -150,12 +174,10 @@ public class RequestSignerImpl implements RequestSigner {
 
         try {
             Version version = validateVersion(versionName, algorithm);
-            final RSAPrivateKey key = getPrivateKey(keyId, keySupplier);
             final String lowerHttpMethod = httpMethod.toLowerCase();
             final String path = extractPath(uri);
 
-            // 1) get the required headers that must be signed, and the ones that should be signed
-            // if present
+            // 1) get the required headers that must be signed, and the ones that should be signed if present
             final List<String> requiredHeaders =
                     getRequiredSigningHeaders(lowerHttpMethod, signingConfiguration);
             final List<String> optionalHeaders =
@@ -209,7 +231,13 @@ public class RequestSignerImpl implements RequestSigner {
                     calculateStringToSign(
                             lowerHttpMethod, path, allHeaders, requiredHeaders, headers);
 
-            final String signature = sign(key, algorithm, stringToSign);
+            final String signature;
+
+            if (privateKeySupplier == null) {
+                signature = sign(getRsaPrivateKey(keyId, keySupplier), algorithm, stringToSign);
+            } else {
+                signature = sign(getPrivateKey(), algorithm, stringToSign);
+            }
 
             // 6) calculate the auth header and add to all the missing headers that should be added
             final String authorizationHeader =
@@ -223,14 +251,12 @@ public class RequestSignerImpl implements RequestSigner {
                             optionalHeaders);
             missingHeaders.put(Constants.AUTHORIZATION_HEADER, authorizationHeader);
 
-            // 7) add any auth headers that were passed in as part of the original headers to the
-            // headers being returned
+            // 7) add any auth headers that were passed in as part of the original headers to the headers being returned
             for (String headerName : requiredHeaders) {
                 if (!missingHeaders.containsKey(headerName)
                         && existingHeaders.containsKey(headerName)
                         && !existingHeaders.get(headerName).isEmpty()) {
-                    // get the first entry; this will be the only entry, because otherwise
-                    // calculateStringToSign would
+                    // get the first entry; this will be the only entry, because otherwise calculateStringToSign would
                     // have thrown an exception
                     missingHeaders.put(headerName, existingHeaders.get(headerName).get(0));
                 }
@@ -263,7 +289,17 @@ public class RequestSignerImpl implements RequestSigner {
         return srVersion;
     }
 
-    private static RSAPrivateKey getPrivateKey(
+    private static PrivateKey getPrivateKey() {
+        Optional<PrivateKey> keyOptional = privateKeySupplier.supplyKey("");
+
+        if (!keyOptional.isPresent()) {
+            LOG.debug("Could not find private key associated with keyId '{}'", "");
+            throw new RequestSignerException("Could not find private key");
+        }
+        return keyOptional.get();
+    }
+
+    private static RSAPrivateKey getRsaPrivateKey(
             String keyId, KeySupplier<RSAPrivateKey> keySupplier) {
         Optional<RSAPrivateKey> keyOptional = keySupplier.supplyKey(keyId);
 
@@ -290,8 +326,8 @@ public class RequestSignerImpl implements RequestSigner {
 
     private static String transformHeadersToJsonString(final Map<String, List<String>> headers) {
         try {
-            return Serializer.getDefault().writeValueAsString(headers);
-        } catch (IOException ex) {
+            return com.oracle.bmc.http.Serialization.getObjectMapper().writeValueAsString(headers);
+        } catch (JsonProcessingException ex) {
             LOG.debug("Unable to serialize headers to JSON string", ex);
             return "UNABLE TO SERIALIZE";
         }
@@ -322,18 +358,13 @@ public class RequestSignerImpl implements RequestSigner {
         }
 
         if (isRequiredHeaderMissing(Constants.HOST, requiredHeaders, existingHeaders)) {
-            String host = uri.getHost();
-            int port = uri.getPort();
-            if (port != -1) {
-                host = host + ":" + port;
-            }
-            missingHeaders.put(Constants.HOST, host);
+            missingHeaders.put(Constants.HOST, uri.getHost());
         }
 
         boolean isPost = httpMethod.equals("post");
         boolean isPut = httpMethod.equals("put");
         boolean isPatch = httpMethod.equals("patch");
-        // for post, patch and put, also verify the presence of content headers
+        // for post and put, also verify the presence of content headers
         if (!(isPut || isPost || isPatch)) {
             // Asking to sign a body on GET/DELETE/HEAD is not allowed
             if (body != null) {
@@ -352,20 +383,14 @@ public class RequestSignerImpl implements RequestSigner {
             return missingHeaders;
         }
 
-        final byte[] bodyBytes = readBodyBytes(body);
-
-        // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST
-        // only)
+        // supply content-type, content-length and x-content-sha256 if missing (PUT, PATCH, and POST only)
         if (requiredHeaders.contains(Constants.CONTENT_TYPE)) {
             // While we don't always sign content-type, services always
             // expect application/json (except if we're sending an input stream)
             // NOTE: this should never happen as EntityFactory ensures all
             // requests have this header, so log a warning
             if (!existingHeaders.containsKey(Constants.CONTENT_TYPE)) {
-                if (bodyBytes.length > 0) {
-                    // The content-type header is not required if content-length is 0
-                    LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
-                }
+                LOG.warn("Missing 'content-type' header, defaulting to 'application/json'");
                 missingHeaders.put(Constants.CONTENT_TYPE, Constants.JSON_CONTENT_TYPE);
             } else {
                 List<String> contentTypes = existingHeaders.get(Constants.CONTENT_TYPE);
@@ -379,6 +404,8 @@ public class RequestSignerImpl implements RequestSigner {
                 }
             }
         }
+
+        final byte[] bodyBytes = readBodyBytes(body);
 
         if (isRequiredHeaderMissing(Constants.CONTENT_LENGTH, requiredHeaders, existingHeaders)) {
             missingHeaders.put(Constants.CONTENT_LENGTH, Integer.toString(bodyBytes.length));
@@ -465,6 +492,13 @@ public class RequestSignerImpl implements RequestSigner {
         return base64Encode(signature);
     }
 
+    private static String sign(PrivateKey key, Algorithm algorithm, String stringToSign) {
+        byte[] signature =
+                SIGNER.sign(
+                        key, stringToSign.getBytes(StandardCharsets.UTF_8), algorithm.getJvmName());
+        return base64Encode(signature);
+    }
+
     private static String calculateAuthorizationHeader(
             final String keyId,
             final String httpMethod,
@@ -523,21 +557,9 @@ public class RequestSignerImpl implements RequestSigner {
             Retriers.tryResetStreamForRetry((InputStream) body, true);
             return byteArr;
         } else if (body instanceof InputStream) {
-            // TODO: Allow input streams to be signed, but for now restrict to DIS until we can
-            // refactor
+            // TODO: Allow input streams to be signed, but for now restrict to DIS until we can refactor
             throw new IllegalArgumentException(
                     "Only DuplicatableInputStream supported for body that needs signing.");
-        }
-        // use the same object mapper as the rest client to ensure the configurations match
-        // what is sent
-        String bodyAsString = Serializer.getDefault().writeValueAsString(body);
-
-        // Annoying ObjectMapper edge case: If given a set of empty braces, it
-        // adds a set of quotes that causes auth to fail on the server-side as
-        // the message parser does not include them. Hence, the check and return
-        // of the quote-less braces.
-        if (bodyAsString.equals("\"{}\"")) {
-            return "{}".getBytes();
         }
 
         throw new IllegalArgumentException("Unexpected body type: " + body.getClass().getName());
@@ -556,11 +578,17 @@ public class RequestSignerImpl implements RequestSigner {
         return dateFormat;
     }
 
-    /** Basic configuration of what headers to sign. */
+    /**
+     * Basic configuration of what headers to sign.
+     */
     public static class SigningConfiguration {
-        /** Map of HTTP method to list of headers to sign. */
+        /**
+         * Map of HTTP method to list of headers to sign.
+         */
         private final Map<String, List<String>> headersToSign;
-        /** Map of HTTP method to list of headers to sign, if they are present. */
+        /**
+         * Map of HTTP method to list of headers to sign, if they are present.
+         */
         private final Map<String, List<String>> optionalHeadersToSign;
         /**
          * Flag indicating whether InputStreams in PUT requests are allowed to skip content headers.

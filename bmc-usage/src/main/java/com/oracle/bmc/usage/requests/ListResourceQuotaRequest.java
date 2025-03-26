@@ -6,66 +6,86 @@ package com.oracle.bmc.usage.requests;
 
 import com.oracle.bmc.usage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListResourceQuotaExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceQuotaRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usage/ListResourceQuotaExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceQuotaRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Service Name. */
+    /**
+     * Service Name.
+     */
     private String serviceName;
 
-    /** Service Name. */
+    /**
+     * Service Name.
+     */
     public String getServiceName() {
         return serviceName;
     }
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Service entitlement Id. */
+    /**
+     * Service entitlement Id.
+     */
     private String serviceEntitlement;
 
-    /** Service entitlement Id. */
+    /**
+     * Service entitlement Id.
+     */
     public String getServiceEntitlement() {
         return serviceEntitlement;
     }
-    /** The value of the 'opc-next-page' response header from the previous call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous call.
+     */
     private String page;
 
-    /** The value of the 'opc-next-page' response header from the previous call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous call.
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in the paginated response. */
+    /**
+     * The maximum number of items to return in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in the paginated response. */
+    /**
+     * The maximum number of items to return in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -98,15 +118,21 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, which can be ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. Supports one sort order. */
+    /**
+     * The field to sort by. Supports one sort order.
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Supports one sort order. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Supports one sort order.
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Timestart("TIMESTART"),
         ;
@@ -139,7 +165,9 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The field to sort by. Supports one sort order. */
+    /**
+     * The field to sort by. Supports one sort order.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -147,15 +175,17 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListResourceQuotaRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Service Name. */
+        /**
+         * Service Name.
+         */
         private String serviceName = null;
 
         /**
          * Service Name.
-         *
          * @param serviceName the value to set
          * @return this builder instance
          */
@@ -164,12 +194,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -179,15 +210,12 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique, Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -196,12 +224,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Service entitlement Id. */
+        /**
+         * Service entitlement Id.
+         */
         private String serviceEntitlement = null;
 
         /**
          * Service entitlement Id.
-         *
          * @param serviceEntitlement the value to set
          * @return this builder instance
          */
@@ -210,12 +239,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The value of the 'opc-next-page' response header from the previous call. */
+        /**
+         * The value of the 'opc-next-page' response header from the previous call.
+         */
         private String page = null;
 
         /**
          * The value of the 'opc-next-page' response header from the previous call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -224,12 +254,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The maximum number of items to return in the paginated response. */
+        /**
+         * The maximum number of items to return in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -238,12 +269,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The sort order to use, which can be ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, which can be ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, which can be ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -252,12 +284,13 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The field to sort by. Supports one sort order. */
+        /**
+         * The field to sort by. Supports one sort order.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. Supports one sort order.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -268,19 +301,18 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -292,7 +324,6 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListResourceQuotaRequest o) {
@@ -312,11 +343,10 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListResourceQuotaRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListResourceQuotaRequest
          */
@@ -330,8 +360,7 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListResourceQuotaRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListResourceQuotaRequest
@@ -347,14 +376,12 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListResourceQuotaRequest(serviceName, compartmentId, opcRequestId,
-            // serviceEntitlement, page, limit, sortOrder, sortBy);
+            // new ListResourceQuotaRequest(serviceName, compartmentId, opcRequestId, serviceEntitlement, page, limit, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -371,7 +398,6 @@ public class ListResourceQuotaRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,17 +6,18 @@ package com.oracle.bmc.lockbox.responses;
 
 import com.oracle.bmc.lockbox.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned {@code AccessMaterials} instance. */
+    /**
+     * The returned AccessMaterials instance.
+     */
     private com.oracle.bmc.lockbox.model.AccessMaterials accessMaterials;
 
     /**
-     * The returned {@code AccessMaterials} instance.
-     *
+     * The returned AccessMaterials instance.
      * @return the value
      */
     public com.oracle.bmc.lockbox.model.AccessMaterials getAccessMaterials() {
@@ -44,7 +46,7 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetAccessMaterialsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.lockbox.model.AccessMaterials accessMaterials) {
         super(__httpStatusCode__, headers);
@@ -52,33 +54,31 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
         this.accessMaterials = accessMaterials;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetAccessMaterialsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,12 +88,13 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code AccessMaterials} instance. */
+        /**
+         * The returned AccessMaterials instance.
+         */
         private com.oracle.bmc.lockbox.model.AccessMaterials accessMaterials;
 
         /**
-         * The returned {@code AccessMaterials} instance.
-         *
+         * The returned AccessMaterials instance.
          * @param accessMaterials the value to set
          * @return this builder
          */
@@ -105,10 +106,8 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetAccessMaterialsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,10 +119,8 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetAccessMaterialsResponse build() {
             return new GetAccessMaterialsResponse(
                     __httpStatusCode__, headers, opcRequestId, accessMaterials);
@@ -132,7 +129,6 @@ public class GetAccessMaterialsResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

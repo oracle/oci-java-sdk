@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the size and time range of data to be recalled <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the size and time range of data to be recalled
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EstimateRecallDataSizeResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EstimateRecallDataSizeResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EstimateRecallDataSizeResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeDataEnded",
@@ -53,115 +52,118 @@ public final class EstimateRecallDataSizeResult
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * This is the end of the time range of data to be recalled. timeDataStarted and
-         * timeDataEnded delineate the time range of the archived data to be recalled. They may not
-         * be exact the same as the parameters in the request input (EstimateRecallDataSizeDetails).
-         */
+         * This is the end of the time range of data to be recalled.  timeDataStarted and timeDataEnded delineate
+         * the time range of the archived data to be recalled.  They may not be exact the same as the
+         * parameters in the request input (EstimateRecallDataSizeDetails).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
-         * This is the end of the time range of data to be recalled. timeDataStarted and
-         * timeDataEnded delineate the time range of the archived data to be recalled. They may not
-         * be exact the same as the parameters in the request input (EstimateRecallDataSizeDetails).
+         * This is the end of the time range of data to be recalled.  timeDataStarted and timeDataEnded delineate
+         * the time range of the archived data to be recalled.  They may not be exact the same as the
+         * parameters in the request input (EstimateRecallDataSizeDetails).
          *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-        /** This is the start of the time range of data to be recalled */
+        /**
+         * This is the start of the time range of data to be recalled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
         /**
          * This is the start of the time range of data to be recalled
-         *
          * @param timeDataStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-        /** This is the size in bytes */
+        /**
+         * This is the size in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * This is the size in bytes
-         *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
         /**
-         * This indicates if the time range of data to be recalled overlaps with existing recalled
-         * data
-         */
+         * This indicates if the time range of data to be recalled overlaps with existing recalled data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverlappingWithExistingRecalls")
         private Boolean isOverlappingWithExistingRecalls;
 
         /**
-         * This indicates if the time range of data to be recalled overlaps with existing recalled
-         * data
-         *
+         * This indicates if the time range of data to be recalled overlaps with existing recalled data
          * @param isOverlappingWithExistingRecalls the value to set
          * @return this builder
-         */
+         **/
         public Builder isOverlappingWithExistingRecalls(Boolean isOverlappingWithExistingRecalls) {
             this.isOverlappingWithExistingRecalls = isOverlappingWithExistingRecalls;
             this.__explicitlySet__.add("isOverlappingWithExistingRecalls");
             return this;
         }
-        /** This is the number of core groups estimated for this recall */
+        /**
+         * This is the number of core groups estimated for this recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCount")
         private Integer coreGroupCount;
 
         /**
          * This is the number of core groups estimated for this recall
-         *
          * @param coreGroupCount the value to set
          * @return this builder
-         */
+         **/
         public Builder coreGroupCount(Integer coreGroupCount) {
             this.coreGroupCount = coreGroupCount;
             this.__explicitlySet__.add("coreGroupCount");
             return this;
         }
-        /** This is the max number of core groups that is available for any recall */
+        /**
+         * This is the max number of core groups that is available for any recall
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCountLimit")
         private Integer coreGroupCountLimit;
 
         /**
          * This is the max number of core groups that is available for any recall
-         *
          * @param coreGroupCountLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder coreGroupCountLimit(Integer coreGroupCountLimit) {
             this.coreGroupCountLimit = coreGroupCountLimit;
             this.__explicitlySet__.add("coreGroupCountLimit");
             return this;
         }
-        /** This is the size limit in bytes */
+        /**
+         * This is the size limit in bytes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeLimitInBytes")
         private Long sizeLimitInBytes;
 
         /**
          * This is the size limit in bytes
-         *
          * @param sizeLimitInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeLimitInBytes(Long sizeLimitInBytes) {
             this.sizeLimitInBytes = sizeLimitInBytes;
             this.__explicitlySet__.add("sizeLimitInBytes");
@@ -214,7 +216,9 @@ public final class EstimateRecallDataSizeResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -224,100 +228,105 @@ public final class EstimateRecallDataSizeResult
     }
 
     /**
-     * This is the end of the time range of data to be recalled. timeDataStarted and timeDataEnded
-     * delineate the time range of the archived data to be recalled. They may not be exact the same
-     * as the parameters in the request input (EstimateRecallDataSizeDetails).
-     */
+     * This is the end of the time range of data to be recalled.  timeDataStarted and timeDataEnded delineate
+     * the time range of the archived data to be recalled.  They may not be exact the same as the
+     * parameters in the request input (EstimateRecallDataSizeDetails).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
-     * This is the end of the time range of data to be recalled. timeDataStarted and timeDataEnded
-     * delineate the time range of the archived data to be recalled. They may not be exact the same
-     * as the parameters in the request input (EstimateRecallDataSizeDetails).
+     * This is the end of the time range of data to be recalled.  timeDataStarted and timeDataEnded delineate
+     * the time range of the archived data to be recalled.  They may not be exact the same as the
+     * parameters in the request input (EstimateRecallDataSizeDetails).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
 
-    /** This is the start of the time range of data to be recalled */
+    /**
+     * This is the start of the time range of data to be recalled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
     /**
      * This is the start of the time range of data to be recalled
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
 
-    /** This is the size in bytes */
+    /**
+     * This is the size in bytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * This is the size in bytes
-     *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
     /**
      * This indicates if the time range of data to be recalled overlaps with existing recalled data
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverlappingWithExistingRecalls")
     private final Boolean isOverlappingWithExistingRecalls;
 
     /**
      * This indicates if the time range of data to be recalled overlaps with existing recalled data
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOverlappingWithExistingRecalls() {
         return isOverlappingWithExistingRecalls;
     }
 
-    /** This is the number of core groups estimated for this recall */
+    /**
+     * This is the number of core groups estimated for this recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCount")
     private final Integer coreGroupCount;
 
     /**
      * This is the number of core groups estimated for this recall
-     *
      * @return the value
-     */
+     **/
     public Integer getCoreGroupCount() {
         return coreGroupCount;
     }
 
-    /** This is the max number of core groups that is available for any recall */
+    /**
+     * This is the max number of core groups that is available for any recall
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coreGroupCountLimit")
     private final Integer coreGroupCountLimit;
 
     /**
      * This is the max number of core groups that is available for any recall
-     *
      * @return the value
-     */
+     **/
     public Integer getCoreGroupCountLimit() {
         return coreGroupCountLimit;
     }
 
-    /** This is the size limit in bytes */
+    /**
+     * This is the size limit in bytes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeLimitInBytes")
     private final Long sizeLimitInBytes;
 
     /**
      * This is the size limit in bytes
-     *
      * @return the value
-     */
+     **/
     public Long getSizeLimitInBytes() {
         return sizeLimitInBytes;
     }
@@ -329,7 +338,6 @@ public final class EstimateRecallDataSizeResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

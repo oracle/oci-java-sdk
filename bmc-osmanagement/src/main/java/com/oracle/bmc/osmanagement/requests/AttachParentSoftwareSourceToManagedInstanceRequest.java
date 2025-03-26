@@ -6,55 +6,66 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachParentSoftwareSourceToManagedInstanceExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * AttachParentSoftwareSourceToManagedInstanceRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/AttachParentSoftwareSourceToManagedInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AttachParentSoftwareSourceToManagedInstanceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class AttachParentSoftwareSourceToManagedInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model
                         .AttachParentSoftwareSourceToManagedInstanceDetails> {
 
-    /** OCID for the managed instance */
+    /**
+     * OCID for the managed instance
+     */
     private String managedInstanceId;
 
-    /** OCID for the managed instance */
+    /**
+     * OCID for the managed instance
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /** Details for attaching a Software Source to a Managed Instance */
+    /**
+     * Details for attaching a Software Source to a Managed Instance
+     */
     private com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
             attachParentSoftwareSourceToManagedInstanceDetails;
 
-    /** Details for attaching a Software Source to a Managed Instance */
+    /**
+     * Details for attaching a Software Source to a Managed Instance
+     */
     public com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
             getAttachParentSoftwareSourceToManagedInstanceDetails() {
         return attachParentSoftwareSourceToManagedInstanceDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -62,7 +73,6 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -77,15 +87,17 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
                     AttachParentSoftwareSourceToManagedInstanceRequest,
                     com.oracle.bmc.osmanagement.model
                             .AttachParentSoftwareSourceToManagedInstanceDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** OCID for the managed instance */
+        /**
+         * OCID for the managed instance
+         */
         private String managedInstanceId = null;
 
         /**
          * OCID for the managed instance
-         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -94,13 +106,14 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
             return this;
         }
 
-        /** Details for attaching a Software Source to a Managed Instance */
+        /**
+         * Details for attaching a Software Source to a Managed Instance
+         */
         private com.oracle.bmc.osmanagement.model.AttachParentSoftwareSourceToManagedInstanceDetails
                 attachParentSoftwareSourceToManagedInstanceDetails = null;
 
         /**
          * Details for attaching a Software Source to a Managed Instance
-         *
          * @param attachParentSoftwareSourceToManagedInstanceDetails the value to set
          * @return this builder instance
          */
@@ -112,12 +125,13 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -128,19 +142,20 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -152,19 +167,18 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -176,7 +190,6 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AttachParentSoftwareSourceToManagedInstanceRequest o) {
@@ -191,14 +204,12 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
         }
 
         /**
-         * Build the instance of AttachParentSoftwareSourceToManagedInstanceRequest as configured by
-         * this builder
+         * Build the instance of AttachParentSoftwareSourceToManagedInstanceRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AttachParentSoftwareSourceToManagedInstanceRequest
          */
@@ -212,7 +223,6 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -225,11 +235,9 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
         }
 
         /**
-         * Build the instance of AttachParentSoftwareSourceToManagedInstanceRequest as configured by
-         * this builder
+         * Build the instance of AttachParentSoftwareSourceToManagedInstanceRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AttachParentSoftwareSourceToManagedInstanceRequest
@@ -243,14 +251,12 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new AttachParentSoftwareSourceToManagedInstanceRequest(managedInstanceId,
-            // attachParentSoftwareSourceToManagedInstanceDetails, opcRequestId, opcRetryToken);
+            // new AttachParentSoftwareSourceToManagedInstanceRequest(managedInstanceId, attachParentSoftwareSourceToManagedInstanceDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -264,7 +270,6 @@ public class AttachParentSoftwareSourceToManagedInstanceRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

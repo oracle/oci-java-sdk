@@ -5,30 +5,30 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * The value of this attribute persists any OAuth access token that the system uses to connect to
- * this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be
- * two-legged or three-legged. A two-legged flow involves only the requester and the server. A
- * three-legged flow also requires the consent of a user -- in this case the consent of an
- * administrator.
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite -
- * required: false - returned: default - type: complex <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * The value of this attribute persists any OAuth access token that the system uses to connect to this ManagedApp. The system obtains this access token using an OAuth protocol flow that could be two-legged or three-legged. A two-legged flow involves only the requester and the server. A three-legged flow also requires the consent of a user -- in this case the consent of an administrator.
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: true
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppThreeLeggedOAuthCredential.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppThreeLeggedOAuthCredential.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppThreeLeggedOAuthCredential
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"accessToken", "refreshToken", "accessTokenExpiry"})
     public AppThreeLeggedOAuthCredential(
@@ -43,24 +43,37 @@ public final class AppThreeLeggedOAuthCredential
     public static class Builder {
         /**
          * Access Token
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: false - returned:
-         * default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
         private String accessToken;
 
         /**
          * Access Token
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: false - returned:
-         * default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param accessToken the value to set
          * @return this builder
-         */
+         **/
         public Builder accessToken(String accessToken) {
             this.accessToken = accessToken;
             this.__explicitlySet__.add("accessToken");
@@ -68,24 +81,37 @@ public final class AppThreeLeggedOAuthCredential
         }
         /**
          * Refresh Token
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: false - returned:
-         * default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshToken")
         private String refreshToken;
 
         /**
          * Refresh Token
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsSensitive:
-         * encrypt - multiValued: false - mutability: readWrite - required: false - returned:
-         * default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - idcsSensitive: encrypt
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param refreshToken the value to set
          * @return this builder
-         */
+         **/
         public Builder refreshToken(String refreshToken) {
             this.refreshToken = refreshToken;
             this.__explicitlySet__.add("refreshToken");
@@ -93,24 +119,35 @@ public final class AppThreeLeggedOAuthCredential
         }
         /**
          * Access token expiry
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: dateTime -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessTokenExpiry")
         private String accessTokenExpiry;
 
         /**
          * Access token expiry
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: dateTime -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param accessTokenExpiry the value to set
          * @return this builder
-         */
+         **/
         public Builder accessTokenExpiry(String accessTokenExpiry) {
             this.accessTokenExpiry = accessTokenExpiry;
             this.__explicitlySet__.add("accessTokenExpiry");
@@ -145,7 +182,9 @@ public final class AppThreeLeggedOAuthCredential
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,69 +195,106 @@ public final class AppThreeLeggedOAuthCredential
 
     /**
      * Access Token
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessToken")
     private final String accessToken;
 
     /**
      * Access Token
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAccessToken() {
         return accessToken;
     }
 
     /**
      * Refresh Token
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshToken")
     private final String refreshToken;
 
     /**
      * Refresh Token
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - idcsSensitive: encrypt -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - idcsSensitive: encrypt
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getRefreshToken() {
         return refreshToken;
     }
 
     /**
      * Access token expiry
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: dateTime - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessTokenExpiry")
     private final String accessTokenExpiry;
 
     /**
      * Access token expiry
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: dateTime - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getAccessTokenExpiry() {
         return accessTokenExpiry;
     }
@@ -230,7 +306,6 @@ public final class AppThreeLeggedOAuthCredential
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

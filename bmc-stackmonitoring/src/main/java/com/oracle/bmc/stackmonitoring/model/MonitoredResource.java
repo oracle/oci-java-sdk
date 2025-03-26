@@ -5,25 +5,24 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The response object for create monitored resource and get monitored resource operations. This
- * contains information about the monitored resource. Credentials and credential aliases attributes
- * will be returned as null due to security reasons. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The response object for create monitored resource and get monitored resource operations.
+ * This contains information about the monitored resource. Credentials and credential aliases attributes
+ * will be returned as null due to security reasons.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MonitoredResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MonitoredResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MonitoredResource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MonitoredResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -103,55 +102,59 @@ public final class MonitoredResource
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Monitored resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Monitored resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Monitored resource name. */
+        /**
+         * Monitored resource name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Monitored resource name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Monitored resource display name. */
+        /**
+         * Monitored resource display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Monitored resource display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Monitored Resource Type. */
+        /**
+         * Monitored Resource Type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
@@ -160,212 +163,214 @@ public final class MonitoredResource
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Tenancy Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * Tenancy Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Monitored resource host name. */
+        /**
+         * Monitored resource host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Monitored resource host name.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
         /**
-         * The external resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External
-         * resource is any OCI resource which is not a Stack Monitoring service resource. Currently
-         * supports only following resource types - Container database, non-container database,
+         * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * External resource is any OCI resource which is not a Stack Monitoring service resource.
+         * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * The external resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External
-         * resource is any OCI resource which is not a Stack Monitoring service resource. Currently
-         * supports only following resource types - Container database, non-container database,
+         * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * External resource is any OCI resource which is not a Stack Monitoring service resource.
+         * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
             return this;
         }
         /**
-         * Management Agent Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * Management Agent Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param managementAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-        /** Time zone in the form of tz database canonical zone ID. */
+        /**
+         * Time zone in the form of tz database canonical zone ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
         /**
          * Time zone in the form of tz database canonical zone ID.
-         *
          * @param resourceTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
         /**
-         * The date and time when the monitored resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         * The date and time when the monitored resource was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the monitored resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time when the monitored resource was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time when the monitored resource was last updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         * The date and time when the monitored resource was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time when the monitored resource was last updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time when the monitored resource was last updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Lifecycle state of the monitored resource. */
+        /**
+         * Lifecycle state of the monitored resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ResourceLifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the monitored resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ResourceLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** License edition of the monitored resource. */
+        /**
+         * License edition of the monitored resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("license")
         private LicenseType license;
 
         /**
          * License edition of the monitored resource.
-         *
          * @param license the value to set
          * @return this builder
-         */
+         **/
         public Builder license(LicenseType license) {
             this.license = license;
             this.__explicitlySet__.add("license");
             return this;
         }
         /**
-         * Source type to indicate if the resource is stack monitoring discovered, OCI native
-         * resource, etc.
-         */
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private SourceType sourceType;
 
         /**
-         * Source type to indicate if the resource is stack monitoring discovered, OCI native
-         * resource, etc.
+         * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
          *
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-        /** Resource Category to indicate the kind of resource type. */
+        /**
+         * Resource Category to indicate the kind of resource type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
         private ResourceCategory resourceCategory;
 
@@ -374,13 +379,16 @@ public final class MonitoredResource
          *
          * @param resourceCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceCategory(ResourceCategory resourceCategory) {
             this.resourceCategory = resourceCategory;
             this.__explicitlySet__.add("resourceCategory");
             return this;
         }
-        /** List of monitored resource properties. */
+        /**
+         * List of monitored resource properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
@@ -389,7 +397,7 @@ public final class MonitoredResource
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -423,19 +431,20 @@ public final class MonitoredResource
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -444,7 +453,8 @@ public final class MonitoredResource
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -454,7 +464,7 @@ public final class MonitoredResource
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -462,19 +472,20 @@ public final class MonitoredResource
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -591,7 +602,9 @@ public final class MonitoredResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -601,49 +614,53 @@ public final class MonitoredResource
     }
 
     /**
-     * Monitored resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Monitored resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Monitored resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Monitored resource name. */
+    /**
+     * Monitored resource name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Monitored resource name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Monitored resource display name. */
+    /**
+     * Monitored resource display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Monitored resource display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Monitored Resource Type. */
+    /**
+     * Monitored Resource Type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
@@ -651,189 +668,191 @@ public final class MonitoredResource
      * Monitored Resource Type.
      *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Tenancy Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * Tenancy Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Tenancy Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** Monitored resource host name. */
+    /**
+     * Monitored resource host name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Monitored resource host name.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * The external resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External
-     * resource is any OCI resource which is not a Stack Monitoring service resource. Currently
-     * supports only following resource types - Container database, non-container database,
+     * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * External resource is any OCI resource which is not a Stack Monitoring service resource.
+     * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * The external resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). External
-     * resource is any OCI resource which is not a Stack Monitoring service resource. Currently
-     * supports only following resource types - Container database, non-container database,
+     * The external resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * External resource is any OCI resource which is not a Stack Monitoring service resource.
+     * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.
      *
      * @return the value
-     */
+     **/
     public String getExternalId() {
         return externalId;
     }
 
     /**
-     * Management Agent Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * Management Agent Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
-    /** Time zone in the form of tz database canonical zone ID. */
+    /**
+     * Time zone in the form of tz database canonical zone ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
     /**
      * Time zone in the form of tz database canonical zone ID.
-     *
      * @return the value
-     */
+     **/
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
 
     /**
-     * The date and time when the monitored resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time when the monitored resource was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the monitored resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time when the monitored resource was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time when the monitored resource was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time when the monitored resource was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time when the monitored resource was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time when the monitored resource was last updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Lifecycle state of the monitored resource. */
+    /**
+     * Lifecycle state of the monitored resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ResourceLifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the monitored resource.
-     *
      * @return the value
-     */
+     **/
     public ResourceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** License edition of the monitored resource. */
+    /**
+     * License edition of the monitored resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("license")
     private final LicenseType license;
 
     /**
      * License edition of the monitored resource.
-     *
      * @return the value
-     */
+     **/
     public LicenseType getLicense() {
         return license;
     }
 
     /**
-     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
-     * etc.
-     */
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final SourceType sourceType;
 
     /**
-     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource,
-     * etc.
+     * Source type to indicate if the resource is stack monitoring discovered, OCI native resource, etc.
      *
      * @return the value
-     */
+     **/
     public SourceType getSourceType() {
         return sourceType;
     }
 
-    /** Resource Category to indicate the kind of resource type. */
+    /**
+     * Resource Category to indicate the kind of resource type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCategory")
     private final ResourceCategory resourceCategory;
 
@@ -841,12 +860,15 @@ public final class MonitoredResource
      * Resource Category to indicate the kind of resource type.
      *
      * @return the value
-     */
+     **/
     public ResourceCategory getResourceCategory() {
         return resourceCategory;
     }
 
-    /** List of monitored resource properties. */
+    /**
+     * List of monitored resource properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
@@ -854,7 +876,7 @@ public final class MonitoredResource
      * List of monitored resource properties.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceProperty> getProperties() {
         return properties;
     }
@@ -881,52 +903,55 @@ public final class MonitoredResource
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -938,7 +963,6 @@ public final class MonitoredResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

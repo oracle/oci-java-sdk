@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Oracle PeopleSoft data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Oracle PeopleSoft data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDataAssetFromOraclePeopleSoft.Builder.class)
+    builder = CreateDataAssetFromOraclePeopleSoft.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDataAssetFromOraclePeopleSoft extends CreateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -107,76 +107,81 @@ public final class CreateDataAssetFromOraclePeopleSoft extends CreateDataAssetDe
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The Oracle PeopleSoft hostname. */
+        /**
+         * The Oracle PeopleSoft hostname.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The Oracle PeopleSoft hostname.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The Oracle PeopleSoft port. */
+        /**
+         * The Oracle PeopleSoft port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
          * The Oracle PeopleSoft port.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The service name for the data asset. */
+        /**
+         * The service name for the data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The service name for the data asset.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** The Oracle PeopleSoft driver class. */
+        /**
+         * The Oracle PeopleSoft driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
         /**
          * The Oracle PeopleSoft driver class.
-         *
          * @param driverClass the value to set
          * @return this builder
-         */
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
             return this;
         }
-        /** The Oracle PeopleSoft SID. */
+        /**
+         * The Oracle PeopleSoft SID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sid")
         private String sid;
 
         /**
          * The Oracle PeopleSoft SID.
-         *
          * @param sid the value to set
          * @return this builder
-         */
+         **/
         public Builder sid(String sid) {
             this.sid = sid;
             this.__explicitlySet__.add("sid");
@@ -296,7 +301,9 @@ public final class CreateDataAssetFromOraclePeopleSoft extends CreateDataAssetDe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,67 +351,72 @@ public final class CreateDataAssetFromOraclePeopleSoft extends CreateDataAssetDe
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Oracle PeopleSoft hostname. */
+    /**
+     * The Oracle PeopleSoft hostname.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The Oracle PeopleSoft hostname.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The Oracle PeopleSoft port. */
+    /**
+     * The Oracle PeopleSoft port.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
      * The Oracle PeopleSoft port.
-     *
      * @return the value
-     */
+     **/
     public String getPort() {
         return port;
     }
 
-    /** The service name for the data asset. */
+    /**
+     * The service name for the data asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The service name for the data asset.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** The Oracle PeopleSoft driver class. */
+    /**
+     * The Oracle PeopleSoft driver class.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
     /**
      * The Oracle PeopleSoft driver class.
-     *
      * @return the value
-     */
+     **/
     public String getDriverClass() {
         return driverClass;
     }
 
-    /** The Oracle PeopleSoft SID. */
+    /**
+     * The Oracle PeopleSoft SID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sid")
     private final String sid;
 
     /**
      * The Oracle PeopleSoft SID.
-     *
      * @return the value
-     */
+     **/
     public String getSid() {
         return sid;
     }
@@ -437,7 +449,6 @@ public final class CreateDataAssetFromOraclePeopleSoft extends CreateDataAssetDe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details specific to the SQL job request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details specific to the SQL job request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSqlJobDetails.Builder.class)
+    builder = UpdateSqlJobDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "jobType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "jobType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSqlJobDetails extends UpdateJobDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -62,16 +62,17 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
             this.__explicitlySet__.add("scheduleDetails");
             return this;
         }
-        /** The SQL text to be executed as part of the job. */
+        /**
+         * The SQL text to be executed as part of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
          * The SQL text to be executed as part of the job.
-         *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
@@ -106,138 +107,129 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         }
         /**
          * The database user name used to execute the SQL job. If the job is being executed on a
-         * Managed Database Group, then the user name should exist on all the databases in the group
-         * with the same password.
-         */
+         * Managed Database Group, then the user name should exist on all the databases in the
+         * group with the same password.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * The database user name used to execute the SQL job. If the job is being executed on a
-         * Managed Database Group, then the user name should exist on all the databases in the group
-         * with the same password.
+         * Managed Database Group, then the user name should exist on all the databases in the
+         * group with the same password.
          *
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-        /** The password for the database user name used to execute the SQL job. */
+        /**
+         * The password for the database user name used to execute the SQL job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password for the database user name used to execute the SQL job.
-         *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret containing the user password.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret containing the user password.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
          * @param secretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Named Credentials containing password secret.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credentials containing password secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
         private String namedCredentialId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Named Credentials containing password secret.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credentials containing password secret.
          * @param namedCredentialId the value to set
          * @return this builder
-         */
+         **/
         public Builder namedCredentialId(String namedCredentialId) {
             this.namedCredentialId = namedCredentialId;
             this.__explicitlySet__.add("namedCredentialId");
             return this;
         }
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or
-         * sysdba.
-         */
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private SqlJob.Role role;
 
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or
-         * sysdba.
-         *
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(SqlJob.Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -323,7 +315,9 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -363,15 +357,16 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
         this.definedTags = definedTags;
     }
 
-    /** The SQL text to be executed as part of the job. */
+    /**
+     * The SQL text to be executed as part of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
      * The SQL text to be executed as part of the job.
-     *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
@@ -398,126 +393,117 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
     }
 
     /**
-     * The database user name used to execute the SQL job. If the job is being executed on a Managed
-     * Database Group, then the user name should exist on all the databases in the group with the
-     * same password.
-     */
+     * The database user name used to execute the SQL job. If the job is being executed on a
+     * Managed Database Group, then the user name should exist on all the databases in the
+     * group with the same password.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
-     * The database user name used to execute the SQL job. If the job is being executed on a Managed
-     * Database Group, then the user name should exist on all the databases in the group with the
-     * same password.
+     * The database user name used to execute the SQL job. If the job is being executed on a
+     * Managed Database Group, then the user name should exist on all the databases in the
+     * group with the same password.
      *
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
 
-    /** The password for the database user name used to execute the SQL job. */
+    /**
+     * The password for the database user name used to execute the SQL job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password for the database user name used to execute the SQL job.
-     *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret containing the user password.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret containing the user password.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * @return the value
-     */
+     **/
     public String getSecretId() {
         return secretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Named Credentials containing password secret.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credentials containing password secret.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namedCredentialId")
     private final String namedCredentialId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Named Credentials containing password secret.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Named Credentials containing password secret.
      * @return the value
-     */
+     **/
     public String getNamedCredentialId() {
         return namedCredentialId;
     }
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or
-     * sysdba.
-     */
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final SqlJob.Role role;
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or
-     * sysdba.
-     *
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * @return the value
-     */
+     **/
     public SqlJob.Role getRole() {
         return role;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -529,7 +515,6 @@ public final class UpdateSqlJobDetails extends UpdateJobDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

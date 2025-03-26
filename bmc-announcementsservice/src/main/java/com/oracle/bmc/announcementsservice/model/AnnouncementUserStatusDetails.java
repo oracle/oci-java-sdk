@@ -5,23 +5,23 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * An announcement's status regarding whether it has been acknowledged by a user. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+ * An announcement's status regarding whether it has been acknowledged by a user.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnnouncementUserStatusDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AnnouncementUserStatusDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AnnouncementUserStatusDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userStatusAnnouncementId", "userId", "timeAcknowledged"})
     public AnnouncementUserStatusDetails(
@@ -34,52 +34,53 @@ public final class AnnouncementUserStatusDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the announcement that this status is associated with. */
+        /**
+         * The OCID of the announcement that this status is associated with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userStatusAnnouncementId")
         private String userStatusAnnouncementId;
 
         /**
          * The OCID of the announcement that this status is associated with.
-         *
          * @param userStatusAnnouncementId the value to set
          * @return this builder
-         */
+         **/
         public Builder userStatusAnnouncementId(String userStatusAnnouncementId) {
             this.userStatusAnnouncementId = userStatusAnnouncementId;
             this.__explicitlySet__.add("userStatusAnnouncementId");
             return this;
         }
-        /** The OCID of the user that this status is associated with. */
+        /**
+         * The OCID of the user that this status is associated with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * The OCID of the user that this status is associated with.
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
         /**
-         * The date and time the announcement was acknowledged, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2019-01-01T17:43:01.389+0000}
-         */
+         * The date and time the announcement was acknowledged, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-01-01T17:43:01.389+0000}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAcknowledged")
         private java.util.Date timeAcknowledged;
 
         /**
-         * The date and time the announcement was acknowledged, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2019-01-01T17:43:01.389+0000}
+         * The date and time the announcement was acknowledged, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2019-01-01T17:43:01.389+0000}
          *
          * @param timeAcknowledged the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAcknowledged(java.util.Date timeAcknowledged) {
             this.timeAcknowledged = timeAcknowledged;
             this.__explicitlySet__.add("timeAcknowledged");
@@ -114,7 +115,9 @@ public final class AnnouncementUserStatusDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,47 +126,48 @@ public final class AnnouncementUserStatusDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the announcement that this status is associated with. */
+    /**
+     * The OCID of the announcement that this status is associated with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userStatusAnnouncementId")
     private final String userStatusAnnouncementId;
 
     /**
      * The OCID of the announcement that this status is associated with.
-     *
      * @return the value
-     */
+     **/
     public String getUserStatusAnnouncementId() {
         return userStatusAnnouncementId;
     }
 
-    /** The OCID of the user that this status is associated with. */
+    /**
+     * The OCID of the user that this status is associated with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * The OCID of the user that this status is associated with.
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
     /**
-     * The date and time the announcement was acknowledged, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
-     */
+     * The date and time the announcement was acknowledged, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAcknowledged")
     private final java.util.Date timeAcknowledged;
 
     /**
-     * The date and time the announcement was acknowledged, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
+     * The date and time the announcement was acknowledged, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAcknowledged() {
         return timeAcknowledged;
     }
@@ -175,7 +179,6 @@ public final class AnnouncementUserStatusDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

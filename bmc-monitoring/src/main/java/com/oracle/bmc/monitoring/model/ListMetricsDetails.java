@@ -5,27 +5,25 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The request details for retrieving metric definitions. Specify optional properties to filter the
- * returned results. Use an asterisk (&#42;) as a wildcard character, placed anywhere in the string.
- * For example, to search for all metrics with names that begin with "disk", specify "name" as
- * "disk&#42;". If no properties are specified, then all metric definitions within the request scope
- * are returned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * The request details for retrieving metric definitions. Specify optional properties to filter the returned results.
+ * Use an asterisk (&#42;) as a wildcard character, placed anywhere in the string.
+ * For example, to search for all metrics with names that begin with "disk", specify "name" as "disk&#42;".
+ * If no properties are specified, then all metric definitions within the request scope are returned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ListMetricsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ListMetricsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ListMetricsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ListMetricsDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,20 +56,21 @@ public final class ListMetricsDetails
     public static class Builder {
         /**
          * The metric name to use when searching for metric definitions.
+         * <p>
+         * Example: {@code CpuUtilization}
          *
-         * <p>Example: {@code CpuUtilization}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The metric name to use when searching for metric definitions.
-         *
-         * <p>Example: {@code CpuUtilization}
+         * <p>
+         * Example: {@code CpuUtilization}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -79,122 +78,119 @@ public final class ListMetricsDetails
         }
         /**
          * The source service or application to use when searching for metric definitions.
+         * <p>
+         * Example: {@code oci_computeagent}
          *
-         * <p>Example: {@code oci_computeagent}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The source service or application to use when searching for metric definitions.
-         *
-         * <p>Example: {@code oci_computeagent}
+         * <p>
+         * Example: {@code oci_computeagent}
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * Resource group that you want to match. A null value returns only metric data that has no
-         * resource groups. The specified resource group must exist in the definition of the posted
-         * metric. Only one resource group can be applied per metric. A valid resourceGroup value
-         * starts with an alphabetical character and includes only alphanumeric characters, periods
-         * (.), underscores (_), hyphens (-), and dollar signs ($).
+         * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
          *
-         * <p>Example: {@code frontend-fleet}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
-         * Resource group that you want to match. A null value returns only metric data that has no
-         * resource groups. The specified resource group must exist in the definition of the posted
-         * metric. Only one resource group can be applied per metric. A valid resourceGroup value
-         * starts with an alphabetical character and includes only alphanumeric characters, periods
-         * (.), underscores (_), hyphens (-), and dollar signs ($).
-         *
-         * <p>Example: {@code frontend-fleet}
+         * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
          *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
         /**
-         * Qualifiers that you want to use when searching for metric definitions. Available
-         * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * Qualifiers that you want to use when searching for metric definitions.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
         private java.util.Map<String, String> dimensionFilters;
 
         /**
-         * Qualifiers that you want to use when searching for metric definitions. Available
-         * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
-         *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+         * Qualifiers that you want to use when searching for metric definitions.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensionFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensionFilters(java.util.Map<String, String> dimensionFilters) {
             this.dimensionFilters = dimensionFilters;
             this.__explicitlySet__.add("dimensionFilters");
             return this;
         }
         /**
-         * Group metrics by these fields in the response. For example, to list all metric namespaces
-         * available in a compartment, groupBy the "namespace" field. Supported fields: namespace,
-         * name, resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is
-         * ignored.
+         * Group metrics by these fields in the response. For example, to list all metric namespaces available
+         *           in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+         * If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
+         * <p>
+         * Example - group by namespace:
+         * {@code [ "namespace" ]}
          *
-         * <p>Example - group by namespace: {@code [ "namespace" ]}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Group metrics by these fields in the response. For example, to list all metric namespaces
-         * available in a compartment, groupBy the "namespace" field. Supported fields: namespace,
-         * name, resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is
-         * ignored.
-         *
-         * <p>Example - group by namespace: {@code [ "namespace" ]}
+         * Group metrics by these fields in the response. For example, to list all metric namespaces available
+         *           in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+         * If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
+         * <p>
+         * Example - group by namespace:
+         * {@code [ "namespace" ]}
          *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
         /**
-         * The field to use when sorting returned metric definitions. Only one sorting level is
-         * provided.
+         * The field to use when sorting returned metric definitions. Only one sorting level is provided.
+         * <p>
+         * Example: {@code NAMESPACE}
          *
-         * <p>Example: {@code NAMESPACE}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private SortBy sortBy;
 
         /**
-         * The field to use when sorting returned metric definitions. Only one sorting level is
-         * provided.
-         *
-         * <p>Example: {@code NAMESPACE}
+         * The field to use when sorting returned metric definitions. Only one sorting level is provided.
+         * <p>
+         * Example: {@code NAMESPACE}
          *
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(SortBy sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
@@ -203,21 +199,22 @@ public final class ListMetricsDetails
         /**
          * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
          * descending (DESC).
+         * <p>
+         * Example: {@code ASC}
          *
-         * <p>Example: {@code ASC}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
          * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
          * descending (DESC).
-         *
-         * <p>Example: {@code ASC}
+         * <p>
+         * Example: {@code ASC}
          *
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
@@ -270,7 +267,9 @@ public final class ListMetricsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -281,120 +280,121 @@ public final class ListMetricsDetails
 
     /**
      * The metric name to use when searching for metric definitions.
+     * <p>
+     * Example: {@code CpuUtilization}
      *
-     * <p>Example: {@code CpuUtilization}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The metric name to use when searching for metric definitions.
-     *
-     * <p>Example: {@code CpuUtilization}
+     * <p>
+     * Example: {@code CpuUtilization}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * The source service or application to use when searching for metric definitions.
+     * <p>
+     * Example: {@code oci_computeagent}
      *
-     * <p>Example: {@code oci_computeagent}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The source service or application to use when searching for metric definitions.
-     *
-     * <p>Example: {@code oci_computeagent}
+     * <p>
+     * Example: {@code oci_computeagent}
      *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * Resource group that you want to match. A null value returns only metric data that has no
-     * resource groups. The specified resource group must exist in the definition of the posted
-     * metric. Only one resource group can be applied per metric. A valid resourceGroup value starts
-     * with an alphabetical character and includes only alphanumeric characters, periods (.),
-     * underscores (_), hyphens (-), and dollar signs ($).
+     * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
      *
-     * <p>Example: {@code frontend-fleet}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
-     * Resource group that you want to match. A null value returns only metric data that has no
-     * resource groups. The specified resource group must exist in the definition of the posted
-     * metric. Only one resource group can be applied per metric. A valid resourceGroup value starts
-     * with an alphabetical character and includes only alphanumeric characters, periods (.),
-     * underscores (_), hyphens (-), and dollar signs ($).
-     *
-     * <p>Example: {@code frontend-fleet}
+     * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
      *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
 
     /**
-     * Qualifiers that you want to use when searching for metric definitions. Available dimensions
-     * vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * Qualifiers that you want to use when searching for metric definitions.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensionFilters")
     private final java.util.Map<String, String> dimensionFilters;
 
     /**
-     * Qualifiers that you want to use when searching for metric definitions. Available dimensions
-     * vary by metric namespace. Each dimension takes the form of a key-value pair.
-     *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+     * Qualifiers that you want to use when searching for metric definitions.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensionFilters() {
         return dimensionFilters;
     }
 
     /**
-     * Group metrics by these fields in the response. For example, to list all metric namespaces
-     * available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name,
-     * resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
+     * Group metrics by these fields in the response. For example, to list all metric namespaces available
+     *           in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+     * If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
+     * <p>
+     * Example - group by namespace:
+     * {@code [ "namespace" ]}
      *
-     * <p>Example - group by namespace: {@code [ "namespace" ]}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Group metrics by these fields in the response. For example, to list all metric namespaces
-     * available in a compartment, groupBy the "namespace" field. Supported fields: namespace, name,
-     * resourceGroup. If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
-     *
-     * <p>Example - group by namespace: {@code [ "namespace" ]}
+     * Group metrics by these fields in the response. For example, to list all metric namespaces available
+     *           in a compartment, groupBy the "namespace" field. Supported fields: namespace, name, resourceGroup.
+     * If {@code groupBy} is used, then {@code dimensionFilters} is ignored.
+     * <p>
+     * Example - group by namespace:
+     * {@code [ "namespace" ]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
 
     /**
-     * The field to use when sorting returned metric definitions. Only one sorting level is
-     * provided.
+     * The field to use when sorting returned metric definitions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code NAMESPACE}
      *
-     * <p>Example: {@code NAMESPACE}
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         Namespace("NAMESPACE"),
         Name("NAME"),
         Resourcegroup("RESOURCEGROUP"),
@@ -428,33 +428,33 @@ public final class ListMetricsDetails
         }
     };
     /**
-     * The field to use when sorting returned metric definitions. Only one sorting level is
-     * provided.
+     * The field to use when sorting returned metric definitions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code NAMESPACE}
      *
-     * <p>Example: {@code NAMESPACE}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final SortBy sortBy;
 
     /**
-     * The field to use when sorting returned metric definitions. Only one sorting level is
-     * provided.
-     *
-     * <p>Example: {@code NAMESPACE}
+     * The field to use when sorting returned metric definitions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code NAMESPACE}
      *
      * @return the value
-     */
+     **/
     public SortBy getSortBy() {
         return sortBy;
     }
 
     /**
-     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or descending
-     * (DESC).
+     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
+     * descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
-     * <p>Example: {@code ASC}
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -487,22 +487,23 @@ public final class ListMetricsDetails
         }
     };
     /**
-     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or descending
-     * (DESC).
+     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
+     * descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
-     * <p>Example: {@code ASC}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or descending
-     * (DESC).
-     *
-     * <p>Example: {@code ASC}
+     * The sort order to use when sorting returned metric definitions. Ascending (ASC) or
+     * descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -514,7 +515,6 @@ public final class ListMetricsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

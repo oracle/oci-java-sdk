@@ -5,25 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to manage account passwords within a Service Provider. The
- * extension is typically applied to a User resource, but MAY be applied to other resources that use
- * passwords. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes used to manage account passwords within a Service Provider. The extension is typically applied to a User resource, but MAY be applied to other resources that use passwords.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionPasswordStateUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionPasswordStateUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionPasswordStateUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "lastSuccessfulSetDate",
@@ -59,47 +56,67 @@ public final class ExtensionPasswordStateUser
     public static class Builder {
         /**
          * A DateTime that specifies the date and time when the current password was set
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulSetDate")
         private String lastSuccessfulSetDate;
 
         /**
          * A DateTime that specifies the date and time when the current password was set
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastSuccessfulSetDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSuccessfulSetDate(String lastSuccessfulSetDate) {
             this.lastSuccessfulSetDate = lastSuccessfulSetDate;
             this.__explicitlySet__.add("lastSuccessfulSetDate");
             return this;
         }
         /**
-         * Indicates that the current password MAY NOT be changed and all other password expiry
-         * settings SHALL be ignored
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         */
+         * Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cantChange")
         private Boolean cantChange;
 
         /**
-         * Indicates that the current password MAY NOT be changed and all other password expiry
-         * settings SHALL be ignored
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         *
+         * Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param cantChange the value to set
          * @return this builder
-         */
+         **/
         public Builder cantChange(Boolean cantChange) {
             this.cantChange = cantChange;
             this.__explicitlySet__.add("cantChange");
@@ -107,49 +124,67 @@ public final class ExtensionPasswordStateUser
         }
         /**
          * Indicates that the password expiry policy will not be applied for the current Resource
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cantExpire")
         private Boolean cantExpire;
 
         /**
          * Indicates that the password expiry policy will not be applied for the current Resource
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param cantExpire the value to set
          * @return this builder
-         */
+         **/
         public Builder cantExpire(Boolean cantExpire) {
             this.cantExpire = cantExpire;
             this.__explicitlySet__.add("cantExpire");
             return this;
         }
         /**
-         * Indicates that the subject password value MUST change on next login. If not changed,
-         * typically the account is locked. The value may be set indirectly when the subject's
-         * current password expires or directly set by an administrator.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         */
+         * Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mustChange")
         private Boolean mustChange;
 
         /**
-         * Indicates that the subject password value MUST change on next login. If not changed,
-         * typically the account is locked. The value may be set indirectly when the subject's
-         * current password expires or directly set by an administrator.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         *
+         * Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param mustChange the value to set
          * @return this builder
-         */
+         **/
         public Builder mustChange(Boolean mustChange) {
             this.mustChange = mustChange;
             this.__explicitlySet__.add("mustChange");
@@ -157,51 +192,71 @@ public final class ExtensionPasswordStateUser
         }
         /**
          * Indicates that the password has expired
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expired")
         private Boolean expired;
 
         /**
          * Indicates that the password has expired
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: boolean
+         *  - uniqueness: none
          * @param expired the value to set
          * @return this builder
-         */
+         **/
         public Builder expired(Boolean expired) {
             this.expired = expired;
             this.__explicitlySet__.add("expired");
             return this;
         }
         /**
-         * A DateTime that specifies the date and time when last successful password validation was
-         * set
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * A DateTime that specifies the date and time when last successful password validation was set
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulValidationDate")
         private String lastSuccessfulValidationDate;
 
         /**
-         * A DateTime that specifies the date and time when last successful password validation was
-         * set
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * A DateTime that specifies the date and time when last successful password validation was set
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastSuccessfulValidationDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSuccessfulValidationDate(String lastSuccessfulValidationDate) {
             this.lastSuccessfulValidationDate = lastSuccessfulValidationDate;
             this.__explicitlySet__.add("lastSuccessfulValidationDate");
@@ -209,26 +264,37 @@ public final class ExtensionPasswordStateUser
         }
         /**
          * A DateTime that specifies the date and time when last failed password validation was set
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastFailedValidationDate")
         private String lastFailedValidationDate;
 
         /**
          * A DateTime that specifies the date and time when last failed password validation was set
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param lastFailedValidationDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastFailedValidationDate(String lastFailedValidationDate) {
             this.lastFailedValidationDate = lastFailedValidationDate;
             this.__explicitlySet__.add("lastFailedValidationDate");
@@ -295,7 +361,9 @@ public final class ExtensionPasswordStateUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -306,161 +374,232 @@ public final class ExtensionPasswordStateUser
 
     /**
      * A DateTime that specifies the date and time when the current password was set
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulSetDate")
     private final String lastSuccessfulSetDate;
 
     /**
      * A DateTime that specifies the date and time when the current password was set
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastSuccessfulSetDate() {
         return lastSuccessfulSetDate;
     }
 
     /**
-     * Indicates that the current password MAY NOT be changed and all other password expiry settings
-     * SHALL be ignored
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cantChange")
     private final Boolean cantChange;
 
     /**
-     * Indicates that the current password MAY NOT be changed and all other password expiry settings
-     * SHALL be ignored
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * Indicates that the current password MAY NOT be changed and all other password expiry settings SHALL be ignored
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCantChange() {
         return cantChange;
     }
 
     /**
      * Indicates that the password expiry policy will not be applied for the current Resource
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cantExpire")
     private final Boolean cantExpire;
 
     /**
      * Indicates that the password expiry policy will not be applied for the current Resource
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCantExpire() {
         return cantExpire;
     }
 
     /**
-     * Indicates that the subject password value MUST change on next login. If not changed,
-     * typically the account is locked. The value may be set indirectly when the subject's current
-     * password expires or directly set by an administrator.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mustChange")
     private final Boolean mustChange;
 
     /**
-     * Indicates that the subject password value MUST change on next login. If not changed,
-     * typically the account is locked. The value may be set indirectly when the subject's current
-     * password expires or directly set by an administrator.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * Indicates that the subject password value MUST change on next login. If not changed, typically the account is locked. The value may be set indirectly when the subject's current password expires or directly set by an administrator.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getMustChange() {
         return mustChange;
     }
 
     /**
      * Indicates that the password has expired
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expired")
     private final Boolean expired;
 
     /**
      * Indicates that the password has expired
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getExpired() {
         return expired;
     }
 
     /**
      * A DateTime that specifies the date and time when last successful password validation was set
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSuccessfulValidationDate")
     private final String lastSuccessfulValidationDate;
 
     /**
      * A DateTime that specifies the date and time when last successful password validation was set
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastSuccessfulValidationDate() {
         return lastSuccessfulValidationDate;
     }
 
     /**
      * A DateTime that specifies the date and time when last failed password validation was set
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastFailedValidationDate")
     private final String lastFailedValidationDate;
 
     /**
      * A DateTime that specifies the date and time when last failed password validation was set
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readOnly -
-     * required: false - returned: request - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getLastFailedValidationDate() {
         return lastFailedValidationDate;
     }
@@ -479,7 +618,6 @@ public final class ExtensionPasswordStateUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

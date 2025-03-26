@@ -6,9 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -23,6 +26,7 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -36,12 +40,13 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned {@code ConnectionAssignment} instance. */
+    /**
+     * The returned ConnectionAssignment instance.
+     */
     private com.oracle.bmc.goldengate.model.ConnectionAssignment connectionAssignment;
 
     /**
-     * The returned {@code ConnectionAssignment} instance.
-     *
+     * The returned ConnectionAssignment instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.ConnectionAssignment getConnectionAssignment() {
@@ -57,7 +62,7 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
     })
     private GetConnectionAssignmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.ConnectionAssignment connectionAssignment) {
@@ -67,26 +72,25 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
         this.connectionAssignment = connectionAssignment;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetConnectionAssignmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -101,14 +105,15 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +123,13 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code ConnectionAssignment} instance. */
+        /**
+         * The returned ConnectionAssignment instance.
+         */
         private com.oracle.bmc.goldengate.model.ConnectionAssignment connectionAssignment;
 
         /**
-         * The returned {@code ConnectionAssignment} instance.
-         *
+         * The returned ConnectionAssignment instance.
          * @param connectionAssignment the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetConnectionAssignmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetConnectionAssignmentResponse build() {
             return new GetConnectionAssignmentResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, connectionAssignment);
@@ -163,7 +165,6 @@ public class GetConnectionAssignmentResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,25 +5,23 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * A subscription with the Announcements service to receive selected announcements in the format and
- * delivery mechanisms supported by a corresponding topic endpoint configured in the Oracle Cloud
- * Infrastructure Notifications service. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+ * A subscription with the Announcements service to receive selected announcements in the format and delivery mechanisms supported by a corresponding topic endpoint configured in the Oracle Cloud Infrastructure Notifications service.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnnouncementSubscription.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AnnouncementSubscription.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AnnouncementSubscription
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,38 +77,34 @@ public final class AnnouncementSubscription
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * announcement subscription.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * announcement subscription.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name for the announcement subscription. Does not have to be unique, and
-         * it's changeable. Avoid entering confidential information.
-         */
+         * A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the announcement subscription. Does not have to be unique, and
-         * it's changeable. Avoid entering confidential information.
+         * A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -118,204 +112,189 @@ public final class AnnouncementSubscription
         }
         /**
          * A description of the announcement subscription. Avoid entering confidential information.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the announcement subscription. Avoid entering confidential information.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the compartment that contains the announcement subscription. */
+        /**
+         * The OCID of the compartment that contains the announcement subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the announcement subscription.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The date and time that the announcement subscription was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time that the announcement subscription was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time that the announcement subscription was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-         */
+         * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time that the announcement subscription was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current lifecycle state of the announcement subscription. */
+        /**
+         * The current lifecycle state of the announcement subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the announcement subscription.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current lifecycle state in more detail. For example, details
-         * might provide required or recommended actions for a resource in a Failed state.
-         */
+         * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current lifecycle state in more detail. For example, details
-         * might provide required or recommended actions for a resource in a Failed state.
+         * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The OCID of the Notifications service topic that is the target for publishing
-         * announcements that match the configured announcement subscription.
-         */
+         * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
         private String onsTopicId;
 
         /**
-         * The OCID of the Notifications service topic that is the target for publishing
-         * announcements that match the configured announcement subscription.
+         * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
          *
          * @param onsTopicId the value to set
          * @return this builder
-         */
+         **/
         public Builder onsTopicId(String onsTopicId) {
             this.onsTopicId = onsTopicId;
             this.__explicitlySet__.add("onsTopicId");
             return this;
         }
         /**
-         * A list of filter groups for the announcement subscription. A filter group is a
-         * combination of multiple filters applied to announcements for matching purposes.
-         */
+         * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterGroups")
         private java.util.Map<String, FilterGroup> filterGroups;
 
         /**
-         * A list of filter groups for the announcement subscription. A filter group is a
-         * combination of multiple filters applied to announcements for matching purposes.
+         * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
          *
          * @param filterGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder filterGroups(java.util.Map<String, FilterGroup> filterGroups) {
             this.filterGroups = filterGroups;
             this.__explicitlySet__.add("filterGroups");
             return this;
         }
         /**
-         * (For announcement subscriptions with SaaS configured as the platform type or Oracle
-         * Fusion Applications as the service, or both, only) The language in which the user prefers
-         * to receive emailed announcements. Specify the preference with a value that uses the
-         * x-obmcs-human-language format. For example fr-FR.
-         */
+         * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
         private String preferredLanguage;
 
         /**
-         * (For announcement subscriptions with SaaS configured as the platform type or Oracle
-         * Fusion Applications as the service, or both, only) The language in which the user prefers
-         * to receive emailed announcements. Specify the preference with a value that uses the
-         * x-obmcs-human-language format. For example fr-FR.
-         *
+         * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
          * @param preferredLanguage the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredLanguage(String preferredLanguage) {
             this.preferredLanguage = preferredLanguage;
             this.__explicitlySet__.add("preferredLanguage");
             return this;
         }
         /**
-         * The time zone in which the user prefers to receive announcements. Specify the preference
-         * with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For
-         * example - America/Los_Angeles
-         */
+         * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
         private String preferredTimeZone;
 
         /**
-         * The time zone in which the user prefers to receive announcements. Specify the preference
-         * with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For
-         * example - America/Los_Angeles
-         *
+         * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
          * @param preferredTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredTimeZone(String preferredTimeZone) {
             this.preferredTimeZone = preferredTimeZone;
             this.__explicitlySet__.add("preferredTimeZone");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -324,7 +303,8 @@ public final class AnnouncementSubscription
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -334,7 +314,7 @@ public final class AnnouncementSubscription
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -342,19 +322,20 @@ public final class AnnouncementSubscription
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -439,7 +420,9 @@ public final class AnnouncementSubscription
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -449,108 +432,106 @@ public final class AnnouncementSubscription
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * announcement subscription.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * announcement subscription.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the announcement subscription.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name for the announcement subscription. Does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     */
+     * A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the announcement subscription. Does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
+     * A user-friendly name for the announcement subscription. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A description of the announcement subscription. Avoid entering confidential information. */
+    /**
+     * A description of the announcement subscription. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the announcement subscription. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the compartment that contains the announcement subscription. */
+    /**
+     * The OCID of the compartment that contains the announcement subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the announcement subscription.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The date and time that the announcement subscription was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time that the announcement subscription was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time that the announcement subscription was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time that the announcement subscription was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
-     */
+     * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time that the announcement subscription was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * The date and time that the announcement subscription was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current lifecycle state of the announcement subscription. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the announcement subscription.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Deleted("DELETED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -589,157 +570,146 @@ public final class AnnouncementSubscription
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the announcement subscription. */
+    /**
+     * The current lifecycle state of the announcement subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the announcement subscription.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current lifecycle state in more detail. For example, details might
-     * provide required or recommended actions for a resource in a Failed state.
-     */
+     * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current lifecycle state in more detail. For example, details might
-     * provide required or recommended actions for a resource in a Failed state.
+     * A message describing the current lifecycle state in more detail. For example, details might provide required or recommended actions for a resource in a Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The OCID of the Notifications service topic that is the target for publishing announcements
-     * that match the configured announcement subscription.
-     */
+     * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsTopicId")
     private final String onsTopicId;
 
     /**
-     * The OCID of the Notifications service topic that is the target for publishing announcements
-     * that match the configured announcement subscription.
+     * The OCID of the Notifications service topic that is the target for publishing announcements that match the configured announcement subscription.
      *
      * @return the value
-     */
+     **/
     public String getOnsTopicId() {
         return onsTopicId;
     }
 
     /**
-     * A list of filter groups for the announcement subscription. A filter group is a combination of
-     * multiple filters applied to announcements for matching purposes.
-     */
+     * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterGroups")
     private final java.util.Map<String, FilterGroup> filterGroups;
 
     /**
-     * A list of filter groups for the announcement subscription. A filter group is a combination of
-     * multiple filters applied to announcements for matching purposes.
+     * A list of filter groups for the announcement subscription. A filter group is a combination of multiple filters applied to announcements for matching purposes.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, FilterGroup> getFilterGroups() {
         return filterGroups;
     }
 
     /**
-     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion
-     * Applications as the service, or both, only) The language in which the user prefers to receive
-     * emailed announcements. Specify the preference with a value that uses the
-     * x-obmcs-human-language format. For example fr-FR.
-     */
+     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredLanguage")
     private final String preferredLanguage;
 
     /**
-     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion
-     * Applications as the service, or both, only) The language in which the user prefers to receive
-     * emailed announcements. Specify the preference with a value that uses the
-     * x-obmcs-human-language format. For example fr-FR.
-     *
+     * (For announcement subscriptions with SaaS configured as the platform type or Oracle Fusion Applications as the service, or both, only) The language in which the user prefers to receive emailed announcements. Specify the preference with a value that uses the x-obmcs-human-language format. For example fr-FR.
      * @return the value
-     */
+     **/
     public String getPreferredLanguage() {
         return preferredLanguage;
     }
 
     /**
-     * The time zone in which the user prefers to receive announcements. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     */
+     * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredTimeZone")
     private final String preferredTimeZone;
 
     /**
-     * The time zone in which the user prefers to receive announcements. Specify the preference with
-     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     *
+     * The time zone in which the user prefers to receive announcements. Specify the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
      * @return the value
-     */
+     **/
     public String getPreferredTimeZone() {
         return preferredTimeZone;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -751,7 +721,6 @@ public final class AnnouncementSubscription
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

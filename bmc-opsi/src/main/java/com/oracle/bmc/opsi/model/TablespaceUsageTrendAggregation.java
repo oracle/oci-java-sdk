@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Usage data per tablespace for a Pluggable database <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Usage data per tablespace for a Pluggable database
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TablespaceUsageTrendAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TablespaceUsageTrendAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TablespaceUsageTrendAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tablespaceName", "tablespaceType", "usageData"})
     public TablespaceUsageTrendAggregation(
@@ -36,46 +35,49 @@ public final class TablespaceUsageTrendAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of tablespace. */
+        /**
+         * The name of tablespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
         private String tablespaceName;
 
         /**
          * The name of tablespace.
-         *
          * @param tablespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder tablespaceName(String tablespaceName) {
             this.tablespaceName = tablespaceName;
             this.__explicitlySet__.add("tablespaceName");
             return this;
         }
-        /** Type of tablespace */
+        /**
+         * Type of tablespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceType")
         private String tablespaceType;
 
         /**
          * Type of tablespace
-         *
          * @param tablespaceType the value to set
          * @return this builder
-         */
+         **/
         public Builder tablespaceType(String tablespaceType) {
             this.tablespaceType = tablespaceType;
             this.__explicitlySet__.add("tablespaceType");
             return this;
         }
-        /** List of usage data samples for a tablespace */
+        /**
+         * List of usage data samples for a tablespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<TablespaceUsageTrend> usageData;
 
         /**
          * List of usage data samples for a tablespace
-         *
          * @param usageData the value to set
          * @return this builder
-         */
+         **/
         public Builder usageData(java.util.List<TablespaceUsageTrend> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -110,7 +112,9 @@ public final class TablespaceUsageTrendAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,41 +123,44 @@ public final class TablespaceUsageTrendAggregation
         return new Builder().copy(this);
     }
 
-    /** The name of tablespace. */
+    /**
+     * The name of tablespace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceName")
     private final String tablespaceName;
 
     /**
      * The name of tablespace.
-     *
      * @return the value
-     */
+     **/
     public String getTablespaceName() {
         return tablespaceName;
     }
 
-    /** Type of tablespace */
+    /**
+     * Type of tablespace
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceType")
     private final String tablespaceType;
 
     /**
      * Type of tablespace
-     *
      * @return the value
-     */
+     **/
     public String getTablespaceType() {
         return tablespaceType;
     }
 
-    /** List of usage data samples for a tablespace */
+    /**
+     * List of usage data samples for a tablespace
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<TablespaceUsageTrend> usageData;
 
     /**
      * List of usage data samples for a tablespace
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TablespaceUsageTrend> getUsageData() {
         return usageData;
     }
@@ -165,7 +172,6 @@ public final class TablespaceUsageTrendAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

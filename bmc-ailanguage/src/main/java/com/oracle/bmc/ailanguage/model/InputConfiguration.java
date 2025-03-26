@@ -5,24 +5,23 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * input documents configuration by default TXT files will be processed and this behaviour will not
- * change in future after adding new types <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * input documents configuration
+ * by default TXT files will be processed and this behaviour will not change in future after adding new types
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InputConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InputConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InputConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InputConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"documentTypes", "configuration"})
     public InputConfiguration(
@@ -36,42 +35,44 @@ public final class InputConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Type of documents supported for this release only TXT,CSV and one element is allowed
-         * here. for future scope this is marked as list
-         */
+         * Type of documents supported
+         * for this release only TXT,CSV  and one element is allowed here.
+         * for future scope this is marked as list
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentTypes")
         private java.util.List<String> documentTypes;
 
         /**
-         * Type of documents supported for this release only TXT,CSV and one element is allowed
-         * here. for future scope this is marked as list
+         * Type of documents supported
+         * for this release only TXT,CSV  and one element is allowed here.
+         * for future scope this is marked as list
          *
          * @param documentTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder documentTypes(java.util.List<String> documentTypes) {
             this.documentTypes = documentTypes;
             this.__explicitlySet__.add("documentTypes");
             return this;
         }
         /**
-         * meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn:
-         * "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] ,
-         * delimiter: ","} Note: In future if new file types added we will update here in
-         * documentation about input file meta data
-         */
+         * meta data about documents
+         *  For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","}
+         * Note: In future if new file types added we will update here in documentation about input file meta data
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private java.util.Map<String, DocumentsConfiguration> configuration;
 
         /**
-         * meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn:
-         * "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] ,
-         * delimiter: ","} Note: In future if new file types added we will update here in
-         * documentation about input file meta data
+         * meta data about documents
+         *  For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","}
+         * Note: In future if new file types added we will update here in documentation about input file meta data
          *
          * @param configuration the value to set
          * @return this builder
-         */
+         **/
         public Builder configuration(java.util.Map<String, DocumentsConfiguration> configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
@@ -102,7 +103,9 @@ public final class InputConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,39 +115,41 @@ public final class InputConfiguration
     }
 
     /**
-     * Type of documents supported for this release only TXT,CSV and one element is allowed here.
+     * Type of documents supported
+     * for this release only TXT,CSV  and one element is allowed here.
      * for future scope this is marked as list
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentTypes")
     private final java.util.List<String> documentTypes;
 
     /**
-     * Type of documents supported for this release only TXT,CSV and one element is allowed here.
+     * Type of documents supported
+     * for this release only TXT,CSV  and one element is allowed here.
      * for future scope this is marked as list
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDocumentTypes() {
         return documentTypes;
     }
 
     /**
-     * meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails",
-     * rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In
-     * future if new file types added we will update here in documentation about input file meta
-     * data
-     */
+     * meta data about documents
+     *  For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","}
+     * Note: In future if new file types added we will update here in documentation about input file meta data
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final java.util.Map<String, DocumentsConfiguration> configuration;
 
     /**
-     * meta data about documents For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails",
-     * rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","} Note: In
-     * future if new file types added we will update here in documentation about input file meta
-     * data
+     * meta data about documents
+     *  For CSV valid JSON format is {"CSV" :{inputColumn: "reviewDetails", rowId: "reviewId", copyColumnsToOutput: ["reviewId" "userId"] , delimiter: ","}
+     * Note: In future if new file types added we will update here in documentation about input file meta data
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, DocumentsConfiguration> getConfiguration() {
         return configuration;
     }
@@ -156,7 +161,6 @@ public final class InputConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

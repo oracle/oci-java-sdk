@@ -6,14 +6,15 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Types of Action on the Traffic flow.
+ * <p>
+ * ALLOW - Allows the traffic.
+ *   * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
+ *   * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
+ *   * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may result in rejection.
  *
- * <p>ALLOW - Allows the traffic. * DROP - Silently drops the traffic, e.g. without sending a TCP
- * reset. * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
- * * INSPECT - Inspects traffic for vulnerability as specified in {@code inspection}, which may
- * result in rejection.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum TrafficActionType implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum TrafficActionType {
     Allow("ALLOW"),
     Drop("DROP"),
     Reject("REJECT"),

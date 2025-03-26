@@ -6,17 +6,18 @@ package com.oracle.bmc.threatintelligence.responses;
 
 import com.oracle.bmc.threatintelligence.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code Indicator} instance. */
+    /**
+     * The returned Indicator instance.
+     */
     private com.oracle.bmc.threatintelligence.model.Indicator indicator;
 
     /**
-     * The returned {@code Indicator} instance.
-     *
+     * The returned Indicator instance.
      * @return the value
      */
     public com.oracle.bmc.threatintelligence.model.Indicator getIndicator() {
@@ -44,7 +46,7 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private GetIndicatorResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.threatintelligence.model.Indicator indicator) {
         super(__httpStatusCode__, headers);
@@ -52,33 +54,31 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
         this.indicator = indicator;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetIndicatorResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -88,12 +88,13 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Indicator} instance. */
+        /**
+         * The returned Indicator instance.
+         */
         private com.oracle.bmc.threatintelligence.model.Indicator indicator;
 
         /**
-         * The returned {@code Indicator} instance.
-         *
+         * The returned Indicator instance.
          * @param indicator the value to set
          * @return this builder
          */
@@ -104,10 +105,8 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetIndicatorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,10 +118,8 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetIndicatorResponse build() {
             return new GetIndicatorResponse(__httpStatusCode__, headers, opcRequestId, indicator);
         }
@@ -130,7 +127,6 @@ public class GetIndicatorResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

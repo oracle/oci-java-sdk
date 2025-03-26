@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible Job status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum JobStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Job status.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum JobStatus {
     Accepted("ACCEPTED"),
     Waiting("WAITING"),
     InProgress("IN_PROGRESS"),

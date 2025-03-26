@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A summary of a listing. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A summary of a listing.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppCatalogListingSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppCatalogListingSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppCatalogListingSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"listingId", "displayName", "summary", "publisherName"})
     public AppCatalogListingSummary(
@@ -35,65 +34,69 @@ public final class AppCatalogListingSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the region free ocid of the listing resource. */
+        /**
+         * the region free ocid of the listing resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingId")
         private String listingId;
 
         /**
          * the region free ocid of the listing resource.
-         *
          * @param listingId the value to set
          * @return this builder
-         */
+         **/
         public Builder listingId(String listingId) {
             this.listingId = listingId;
             this.__explicitlySet__.add("listingId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The short summary for the listing. */
+        /**
+         * The short summary for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
          * The short summary for the listing.
-         *
          * @param summary the value to set
          * @return this builder
-         */
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /** The name of the publisher who published this listing. */
+        /**
+         * The name of the publisher who published this listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
         private String publisherName;
 
         /**
          * The name of the publisher who published this listing.
-         *
          * @param publisherName the value to set
          * @return this builder
-         */
+         **/
         public Builder publisherName(String publisherName) {
             this.publisherName = publisherName;
             this.__explicitlySet__.add("publisherName");
@@ -131,7 +134,9 @@ public final class AppCatalogListingSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +145,62 @@ public final class AppCatalogListingSummary
         return new Builder().copy(this);
     }
 
-    /** the region free ocid of the listing resource. */
+    /**
+     * the region free ocid of the listing resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingId")
     private final String listingId;
 
     /**
      * the region free ocid of the listing resource.
-     *
      * @return the value
-     */
+     **/
     public String getListingId() {
         return listingId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The short summary for the listing. */
+    /**
+     * The short summary for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * The short summary for the listing.
-     *
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
-    /** The name of the publisher who published this listing. */
+    /**
+     * The name of the publisher who published this listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisherName")
     private final String publisherName;
 
     /**
      * The name of the publisher who published this listing.
-     *
      * @return the value
-     */
+     **/
     public String getPublisherName() {
         return publisherName;
     }
@@ -203,7 +212,6 @@ public final class AppCatalogListingSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

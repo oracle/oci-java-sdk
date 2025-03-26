@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The Connection external attribute refresh type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RefreshConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Connection external attribute refresh type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RefreshConnectionType {
     Default("DEFAULT"),
     ;
 

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The possible scopes for a named credential. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum NamedCredentialScope implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The possible scopes for a named credential.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum NamedCredentialScope {
     Resource("RESOURCE"),
     Global("GLOBAL"),
 

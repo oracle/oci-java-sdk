@@ -23,10 +23,8 @@ public class GetDatabaseExample {
             throw new Exception("This example expects 1 argument:  A Database OCID");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -36,7 +34,7 @@ public class GetDatabaseExample {
 
         String databaseId = args[0];
 
-        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
+        DatabaseClient databaseClient = new DatabaseClient(provider);
 
         GetDatabaseRequest getDatabaseRequest =
                 GetDatabaseRequest.builder().databaseId(databaseId).build();

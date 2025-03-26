@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define extra options updating a cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define extra options updating a cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateClusterOptionsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateClusterOptionsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateClusterOptionsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "admissionControllerOptions",
@@ -46,16 +45,17 @@ public final class UpdateClusterOptionsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Configurable cluster admission controllers */
+        /**
+         * Configurable cluster admission controllers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
 
         /**
          * Configurable cluster admission controllers
-         *
          * @param admissionControllerOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder admissionControllerOptions(
                 AdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
@@ -140,7 +140,9 @@ public final class UpdateClusterOptionsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,15 +151,16 @@ public final class UpdateClusterOptionsDetails
         return new Builder().copy(this);
     }
 
-    /** Configurable cluster admission controllers */
+    /**
+     * Configurable cluster admission controllers
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     private final AdmissionControllerOptions admissionControllerOptions;
 
     /**
      * Configurable cluster admission controllers
-     *
      * @return the value
-     */
+     **/
     public AdmissionControllerOptions getAdmissionControllerOptions() {
         return admissionControllerOptions;
     }
@@ -197,7 +200,6 @@ public final class UpdateClusterOptionsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

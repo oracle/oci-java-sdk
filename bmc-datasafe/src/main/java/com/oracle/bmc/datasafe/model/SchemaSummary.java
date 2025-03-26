@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of a schema fetched from the database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details of a schema fetched from the database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SchemaSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SchemaSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SchemaSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"schemaName", "isOracleMaintained"})
     public SchemaSummary(String schemaName, Boolean isOracleMaintained) {
@@ -30,31 +28,33 @@ public final class SchemaSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the schema. */
+        /**
+         * Name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
          * Name of the schema.
-         *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** Indicates if the schema is oracle supplied. */
+        /**
+         * Indicates if the schema is oracle supplied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
         private Boolean isOracleMaintained;
 
         /**
          * Indicates if the schema is oracle supplied.
-         *
          * @param isOracleMaintained the value to set
          * @return this builder
-         */
+         **/
         public Builder isOracleMaintained(Boolean isOracleMaintained) {
             this.isOracleMaintained = isOracleMaintained;
             this.__explicitlySet__.add("isOracleMaintained");
@@ -84,7 +84,9 @@ public final class SchemaSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class SchemaSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Name of the schema. */
+    /**
+     * Name of the schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
      * Name of the schema.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** Indicates if the schema is oracle supplied. */
+    /**
+     * Indicates if the schema is oracle supplied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOracleMaintained")
     private final Boolean isOracleMaintained;
 
     /**
      * Indicates if the schema is oracle supplied.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOracleMaintained() {
         return isOracleMaintained;
     }
@@ -126,7 +130,6 @@ public final class SchemaSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

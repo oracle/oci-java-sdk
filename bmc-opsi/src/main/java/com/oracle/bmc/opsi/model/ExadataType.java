@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Operations Insights internal representation of the the Exadata system type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ExadataType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Operations Insights internal representation of the the Exadata system type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ExadataType {
     Dbmachine("DBMACHINE"),
     Exacs("EXACS"),
     Exacc("EXACC"),

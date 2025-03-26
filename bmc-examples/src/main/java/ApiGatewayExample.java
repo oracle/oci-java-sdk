@@ -71,18 +71,17 @@ import com.oracle.bmc.model.BmcException;
 /**
  * This class provides a basic example of how to create a Gateway and Deployment using the Java SDK.
  * It creates a public gateway and deploys a simple endpoint with a HTTP backend.
- *
- * <p>The example has some pre-requisites. You will need to create a Compartment and add policies to
+ * <p>
+ * The example has some pre-requisites. You will need to create a Compartment and add policies to
  * allow the API Gateway service to use the Virtual Network Family, Functions Family and manage
  * Public IPs in that compartment.
- *
- * <p>This example will do the following things:
- *
+ * <p>
+ * This example will do the following things:
  * <ul>
- *   <li>Create VCN, Internet Gateway and Subnet in the provided compartment
- *   <li>Create a API Gateway and Deployment
- *   <li>Clean up, destroy the resources created
- *       <ul>
+ *   <li>Create VCN, Internet Gateway and Subnet in the provided compartment</li>
+ *   <li>Create a API Gateway and Deployment</li>
+ *   <li>Clean up, destroy the resources created</li>
+ * <ul>
  */
 public class ApiGatewayExample {
 
@@ -96,11 +95,10 @@ public class ApiGatewayExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the gateway and associated resources will be
-     *           created
-     *       <li>Optional. The regionId for the region where the resources will be created
-     *     </ul>
+     *             <ul>
+     *               <li>The OCID of the compartment where the gateway and associated resources will be created</li>
+     *               <li>Optional. The regionId for the region where the resources will be created</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length < 1) {
@@ -110,10 +108,8 @@ public class ApiGatewayExample {
         final String compartmentId = args[0];
         final Region region = args.length == 1 ? Region.US_PHOENIX_1 : Region.fromRegionId(args[2]);
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -121,11 +117,9 @@ public class ApiGatewayExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient vcnClient =
-                VirtualNetworkClient.builder().region(region).build(provider);
-        final GatewayClient gatewayClient = GatewayClient.builder().region(region).build(provider);
-        final DeploymentClient deploymentClient =
-                DeploymentClient.builder().region(region).build(provider);
+        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
+        final GatewayClient gatewayClient = new GatewayClient(provider);
+        final DeploymentClient deploymentClient = new DeploymentClient(provider);
 
         vcnClient.setRegion(region);
         gatewayClient.setRegion(region);
@@ -218,7 +212,7 @@ public class ApiGatewayExample {
     /**
      * Creates a VCN and waits for it to become available to use.
      *
-     * @param vcnClient the service client to use to create the VCN
+     * @param vcnClient     the service client to use to create the VCN
      * @param compartmentId the OCID of the compartment where the VCN will be created
      * @return the created VCN
      * @throws Exception if there is an error waiting on the VCN to become available to use
@@ -252,11 +246,10 @@ public class ApiGatewayExample {
     /**
      * Creates a Internet Gateway and waits for it to become available to use.
      *
-     * @param vcnClient the service client to use to create the InternetGateway
+     * @param vcnClient     the service client to use to create the InternetGateway
      * @param compartmentId the OCID of the compartment where the InternetGateway will be created
      * @return the created InternetGateway
-     * @throws Exception if there is an error waiting on the InternetGateway to become available to
-     *     use
+     * @throws Exception if there is an error waiting on the InternetGateway to become available to use
      */
     private static InternetGateway createInternetGateway(
             final VirtualNetworkClient vcnClient, final String compartmentId, final String vcnId)
@@ -287,15 +280,16 @@ public class ApiGatewayExample {
     }
 
     /**
-     * Configure the default RouteTable of the specified InternetGateway to ensure it contains a
-     * single outbound route for all traffic.
+     * Configure the default RouteTable of the specified InternetGateway to ensure it
+     * contains a single outbound route for all traffic.
+     * <p>
+     * NB: You should restrict these routes further if you keep this piece of
+     * OCI infrastructure.
      *
-     * <p>NB: You should restrict these routes further if you keep this piece of OCI infrastructure.
-     *
-     * @param vcnClient the service client to use to query a RouteTable.
+     * @param vcnClient     the service client to use to query a RouteTable.
      * @param compartmentId of the RouteTable.
-     * @param vcnId of the RouteTable's associated VCN.
-     * @param igId of the RouteTable's associated InternetGateway.
+     * @param vcnId         of the RouteTable's associated VCN.
+     * @param igId          of the RouteTable's associated InternetGateway.
      * @return the RouteTable
      * @throws Exception when its not able to find a uniquely named InternetGateway
      */
@@ -333,11 +327,12 @@ public class ApiGatewayExample {
     }
 
     /**
-     * Gets RouteTable info of a single uniquely named RouteTable in the specified compartment.
+     * Gets RouteTable info of a single uniquely named RouteTable in the
+     * specified compartment.
      *
-     * @param vcnClient the service client to use to query a RouteTable.
+     * @param vcnClient     the service client to use to query a RouteTable.
      * @param compartmentId of the RouteTable.
-     * @param vcnId of the RouteTable's associated VCN.
+     * @param vcnId         of the RouteTable's associated VCN.
      * @param rtDisplayName of the RouteTable.
      * @return the RouteTable.
      * @throws Exception when its not able to find a uniquely named RouteTable
@@ -372,14 +367,15 @@ public class ApiGatewayExample {
     }
 
     /**
-     * Configure the default SecurityList of the specified VCN to ensure it contains an inbound rule
-     * to allow traffic on port 443.
+     * Configure the default SecurityList of the specified VCN to ensure it
+     * contains an inbound rule to allow traffic on port 443.
+     * <p>
+     * NB: You should restrict this traffic further if you keep this piece of
+     * OCI infrastructure.
      *
-     * <p>NB: You should restrict this traffic further if you keep this piece of OCI infrastructure.
-     *
-     * @param vcnClient the service client to use to query a SecurityList.
+     * @param vcnClient     the service client to use to query a SecurityList.
      * @param compartmentId of the SecurityList.
-     * @param vcnId of the SecurityList's associated VCN.
+     * @param vcnId         of the SecurityList's associated VCN.
      * @throws Exception when its not able to find a uniquely named SecurityList
      */
     private static void configureSecurityList(
@@ -415,11 +411,12 @@ public class ApiGatewayExample {
     }
 
     /**
-     * Gets SecurityList info of a single uniquely named SecurityList in the specified compartment.
+     * Gets SecurityList info of a single uniquely named SecurityList in the
+     * specified compartment.
      *
-     * @param vcnClient the service client to use to query a SecurityList.
+     * @param vcnClient     the service client to use to query a SecurityList.
      * @param compartmentId of the SecurityList.
-     * @param vcnId of the SecurityList's associated VCN.
+     * @param vcnId         of the SecurityList's associated VCN.
      * @param slDisplayName of the SecurityList.
      * @return the SecurityList.
      * @throws Exception when its not able to find a uniquely named SecurityList
@@ -456,9 +453,9 @@ public class ApiGatewayExample {
     /**
      * Creates a subnet in a VCN and waits for the subnet to become available to use.
      *
-     * @param vcnClient the service client to use to create the subnet
+     * @param vcnClient     the service client to use to create the subnet
      * @param compartmentId the OCID of the compartment which owns the VCN
-     * @param vcnId the ID of the VCN which will own the subnet
+     * @param vcnId         the ID of the VCN which will own the subnet
      * @return the created subnet
      * @throws Exception if there is an error waiting on the subnet to become available to use
      */
@@ -496,7 +493,7 @@ public class ApiGatewayExample {
      *
      * @param gatewayClient the service client to use to create the gateway
      * @param compartmentId the OCID of the compartment which owns the subnet
-     * @param subnetId the ID of the subnet which will own the gateway
+     * @param subnetId      the ID of the subnet which will own the gateway
      * @return the created gateway
      * @throws Exception if there is an error waiting on the gateway to become available to use
      */
@@ -533,8 +530,8 @@ public class ApiGatewayExample {
      * Creates a deployment in a gateway and waits for the deployment to become available to use.
      *
      * @param deploymentClient the service client to use to create the deployment
-     * @param compartmentId the OCID of the compartment which owns the gateway
-     * @param gatewayId the ID of the gateway which will own the deployment
+     * @param compartmentId    the OCID of the compartment which owns the gateway
+     * @param gatewayId        the ID of the gateway which will own the deployment
      * @return the created deployment
      * @throws Exception if there is an error waiting on the deployment to become available to use
      */
@@ -604,7 +601,7 @@ public class ApiGatewayExample {
      * Deletes a deployment and waits for it to be deleted.
      *
      * @param deploymentClient the service client to use to delete the deployment
-     * @param deployment the deployment to delete
+     * @param deployment       the deployment to delete
      * @throws Exception if there is an error waiting on the deployment to be deleted
      */
     private static void deleteDeployment(
@@ -625,7 +622,7 @@ public class ApiGatewayExample {
      * Deletes a gateway and waits for it to be deleted.
      *
      * @param gatewayClient the service client to use to delete the gateway
-     * @param gateway the gateway to delete
+     * @param gateway       the gateway to delete
      * @throws Exception if there is an error waiting on the gateway to be deleted
      */
     private static void deleteGateway(final GatewayClient gatewayClient, final Gateway gateway)
@@ -646,7 +643,7 @@ public class ApiGatewayExample {
      * Deletes a subnet and waits for it to be deleted.
      *
      * @param vcnClient the service client to use to delete the subnet
-     * @param subnet the subnet to delete
+     * @param subnet    the subnet to delete
      * @throws Exception if there is an error waiting on the subnet to be deleted
      */
     private static void deleteSubnet(final VirtualNetworkClient vcnClient, final Subnet subnet)
@@ -686,7 +683,7 @@ public class ApiGatewayExample {
      * Prepares a DefaultRouteTable for deletion by deleting all RouteRules.
      *
      * @param vcnClient the service client to use to delete the RouteTable.
-     * @param rtId the RouteTable to delete.
+     * @param rtId      the RouteTable to delete.
      */
     private static void prepareDefaultRouteTableForDelete(
             final VirtualNetworkClient vcnClient, final String rtId) {
@@ -705,7 +702,7 @@ public class ApiGatewayExample {
      * Deletes a InternetGateway and waits for it to be deleted.
      *
      * @param vcnClient the service client to use to delete the InternetGateway.
-     * @param ig the InternetGateway to delete.
+     * @param ig        the InternetGateway to delete.
      * @throws Exception if there is an error waiting on the InternetGateway to be deleted
      */
     private static void deleteInternetGateway(
@@ -726,7 +723,7 @@ public class ApiGatewayExample {
      * Deletes a VCN and waits for it to be deleted.
      *
      * @param vcnClient the service client to use to delete the VCN.
-     * @param vcn the VCN to delete.
+     * @param vcn       the VCN to delete.
      * @throws Exception if there is an error waiting on the VCN to be deleted
      */
     private static void deleteVcn(final VirtualNetworkClient vcnClient, final Vcn vcn)

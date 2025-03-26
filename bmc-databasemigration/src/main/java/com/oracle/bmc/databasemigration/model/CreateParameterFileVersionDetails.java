@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details about a specific ParameterFileVersion <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Details about a specific ParameterFileVersion
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateParameterFileVersionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateParameterFileVersionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateParameterFileVersionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "kind", "content", "name"})
     public CreateParameterFileVersionDetails(
@@ -35,31 +35,33 @@ public final class CreateParameterFileVersionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Describes the current parameter file version */
+        /**
+         * Describes the current parameter file version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Describes the current parameter file version
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT) */
+        /**
+         * Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kind")
         private JobParameterFileVersionKind kind;
 
         /**
          * Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
-         *
          * @param kind the value to set
          * @return this builder
-         */
+         **/
         public Builder kind(JobParameterFileVersionKind kind) {
             this.kind = kind;
             this.__explicitlySet__.add("kind");
@@ -67,31 +69,31 @@ public final class CreateParameterFileVersionDetails
         }
         /**
          * The content in base64 encoded character string containing the value of the parameter file
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
          * The content in base64 encoded character string containing the value of the parameter file
-         *
          * @param content the value to set
          * @return this builder
-         */
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
             return this;
         }
-        /** Customizable name for the paramenter file version. */
+        /**
+         * Customizable name for the paramenter file version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Customizable name for the paramenter file version.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -129,7 +131,9 @@ public final class CreateParameterFileVersionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,54 +142,58 @@ public final class CreateParameterFileVersionDetails
         return new Builder().copy(this);
     }
 
-    /** Describes the current parameter file version */
+    /**
+     * Describes the current parameter file version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Describes the current parameter file version
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT) */
+    /**
+     * Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kind")
     private final JobParameterFileVersionKind kind;
 
     /**
      * Indicator of Parameter File 'kind' (for an EXTRACT or a REPLICAT)
-     *
      * @return the value
-     */
+     **/
     public JobParameterFileVersionKind getKind() {
         return kind;
     }
 
-    /** The content in base64 encoded character string containing the value of the parameter file */
+    /**
+     * The content in base64 encoded character string containing the value of the parameter file
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
      * The content in base64 encoded character string containing the value of the parameter file
-     *
      * @return the value
-     */
+     **/
     public String getContent() {
         return content;
     }
 
-    /** Customizable name for the paramenter file version. */
+    /**
+     * Customizable name for the paramenter file version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Customizable name for the paramenter file version.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -197,7 +205,6 @@ public final class CreateParameterFileVersionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

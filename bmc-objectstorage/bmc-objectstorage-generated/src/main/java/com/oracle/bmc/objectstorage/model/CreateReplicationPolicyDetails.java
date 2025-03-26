@@ -5,23 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * The details to create a replication policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The details to create a replication policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateReplicationPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateReplicationPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateReplicationPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "destinationRegionName", "destinationBucketName"})
     public CreateReplicationPolicyDetails(
@@ -34,52 +33,53 @@ public final class CreateReplicationPolicyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the policy. Avoid entering confidential information. */
+        /**
+         * The name of the policy. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the policy. Avoid entering confidential information.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The destination region to replicate to, for example "us-ashburn-1". */
+        /**
+         * The destination region to replicate to, for example "us-ashburn-1".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
         private String destinationRegionName;
 
         /**
          * The destination region to replicate to, for example "us-ashburn-1".
-         *
          * @param destinationRegionName the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationRegionName(String destinationRegionName) {
             this.destinationRegionName = destinationRegionName;
             this.__explicitlySet__.add("destinationRegionName");
             return this;
         }
         /**
-         * The bucket to replicate to in the destination region. Replication policy creation does
-         * not automatically create a destination bucket. Create the destination bucket before
-         * creating the policy.
-         */
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
         private String destinationBucketName;
 
         /**
-         * The bucket to replicate to in the destination region. Replication policy creation does
-         * not automatically create a destination bucket. Create the destination bucket before
-         * creating the policy.
+         * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+         * create a destination bucket. Create the destination bucket before creating the policy.
          *
          * @param destinationBucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBucketName(String destinationBucketName) {
             this.destinationBucketName = destinationBucketName;
             this.__explicitlySet__.add("destinationBucketName");
@@ -114,7 +114,9 @@ public final class CreateReplicationPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,47 +125,48 @@ public final class CreateReplicationPolicyDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the policy. Avoid entering confidential information. */
+    /**
+     * The name of the policy. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the policy. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The destination region to replicate to, for example "us-ashburn-1". */
+    /**
+     * The destination region to replicate to, for example "us-ashburn-1".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationRegionName")
     private final String destinationRegionName;
 
     /**
      * The destination region to replicate to, for example "us-ashburn-1".
-     *
      * @return the value
-     */
+     **/
     public String getDestinationRegionName() {
         return destinationRegionName;
     }
 
     /**
-     * The bucket to replicate to in the destination region. Replication policy creation does not
-     * automatically create a destination bucket. Create the destination bucket before creating the
-     * policy.
-     */
+     * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+     * create a destination bucket. Create the destination bucket before creating the policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
     private final String destinationBucketName;
 
     /**
-     * The bucket to replicate to in the destination region. Replication policy creation does not
-     * automatically create a destination bucket. Create the destination bucket before creating the
-     * policy.
+     * The bucket to replicate to in the destination region. Replication policy creation does not automatically
+     * create a destination bucket. Create the destination bucket before creating the policy.
      *
      * @return the value
-     */
+     **/
     public String getDestinationBucketName() {
         return destinationBucketName;
     }
@@ -175,7 +178,6 @@ public final class CreateReplicationPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

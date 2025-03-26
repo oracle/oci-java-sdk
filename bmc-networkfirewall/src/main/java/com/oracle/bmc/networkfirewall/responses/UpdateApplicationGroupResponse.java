@@ -6,19 +6,18 @@ package com.oracle.bmc.networkfirewall.responses;
 
 import com.oracle.bmc.networkfirewall.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. This is to get the page counts
-     * overall.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. This is to get the page counts overall.
+     *
      */
     private String opcPageCount;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. This is to get the page counts
-     * overall.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. This is to get the page counts overall.
      *
      * @return the value
      */
@@ -26,7 +25,10 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
         return opcPageCount;
     }
 
-    /** For pagination of a list of items. This provides the count of total items across pages. */
+    /**
+     * For pagination of a list of items. This provides the count of total items across pages.
+     *
+     */
     private Integer opcTotalItems;
 
     /**
@@ -38,7 +40,10 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
         return opcTotalItems;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -51,14 +56,15 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -66,12 +72,13 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The returned {@code ApplicationGroup} instance. */
+    /**
+     * The returned ApplicationGroup instance.
+     */
     private com.oracle.bmc.networkfirewall.model.ApplicationGroup applicationGroup;
 
     /**
-     * The returned {@code ApplicationGroup} instance.
-     *
+     * The returned ApplicationGroup instance.
      * @return the value
      */
     public com.oracle.bmc.networkfirewall.model.ApplicationGroup getApplicationGroup() {
@@ -89,7 +96,7 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
     })
     private UpdateApplicationGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcPageCount,
             Integer opcTotalItems,
             String etag,
@@ -103,36 +110,31 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
         this.applicationGroup = applicationGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateApplicationGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. This is to get the page
-         * counts overall.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. This is to get the page counts overall.
+         *
          */
         private String opcPageCount;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. This is to get the page
-         * counts overall.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. This is to get the page counts overall.
          *
          * @param opcPageCount the value to set
          * @return this builder
@@ -144,6 +146,7 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * For pagination of a list of items. This provides the count of total items across pages.
+         *
          */
         private Integer opcTotalItems;
 
@@ -158,7 +161,10 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -173,14 +179,15 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -190,12 +197,13 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code ApplicationGroup} instance. */
+        /**
+         * The returned ApplicationGroup instance.
+         */
         private com.oracle.bmc.networkfirewall.model.ApplicationGroup applicationGroup;
 
         /**
-         * The returned {@code ApplicationGroup} instance.
-         *
+         * The returned ApplicationGroup instance.
          * @param applicationGroup the value to set
          * @return this builder
          */
@@ -207,10 +215,8 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateApplicationGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -225,10 +231,8 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateApplicationGroupResponse build() {
             return new UpdateApplicationGroupResponse(
                     __httpStatusCode__,
@@ -243,7 +247,6 @@ public class UpdateApplicationGroupResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

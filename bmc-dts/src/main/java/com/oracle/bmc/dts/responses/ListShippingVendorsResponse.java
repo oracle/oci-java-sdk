@@ -6,22 +6,28 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code ShippingVendors} instance. */
+    /**
+     * The returned ShippingVendors instance.
+     */
     private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
     /**
-     * The returned {@code ShippingVendors} instance.
-     *
+     * The returned ShippingVendors instance.
      * @return the value
      */
     public com.oracle.bmc.dts.model.ShippingVendors getShippingVendors() {
@@ -36,7 +42,7 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ListShippingVendorsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.ShippingVendors shippingVendors) {
         super(__httpStatusCode__, headers);
@@ -44,28 +50,28 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
         this.shippingVendors = shippingVendors;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListShippingVendorsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -74,12 +80,13 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code ShippingVendors} instance. */
+        /**
+         * The returned ShippingVendors instance.
+         */
         private com.oracle.bmc.dts.model.ShippingVendors shippingVendors;
 
         /**
-         * The returned {@code ShippingVendors} instance.
-         *
+         * The returned ShippingVendors instance.
          * @param shippingVendors the value to set
          * @return this builder
          */
@@ -90,10 +97,8 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListShippingVendorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -105,10 +110,8 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListShippingVendorsResponse build() {
             return new ListShippingVendorsResponse(
                     __httpStatusCode__, headers, opcRequestId, shippingVendors);
@@ -117,7 +120,6 @@ public class ListShippingVendorsResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

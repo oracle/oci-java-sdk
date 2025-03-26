@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an Oracle listener discovered in an external DB system discovery run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an Oracle listener discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalListener.Builder.class)
+    builder = DiscoveredExternalListener.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalListener extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,155 +90,161 @@ public final class DiscoveredExternalListener extends DiscoveredExternalDbSystem
             this.__explicitlySet__.add("associatedComponents");
             return this;
         }
-        /** The name of the DB node. */
+        /**
+         * The name of the DB node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeName")
         private String dbNodeName;
 
         /**
          * The name of the DB node.
-         *
          * @param dbNodeName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodeName(String dbNodeName) {
             this.dbNodeName = dbNodeName;
             this.__explicitlySet__.add("dbNodeName");
             return this;
         }
-        /** The Oracle home location of the listener. */
+        /**
+         * The Oracle home location of the listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleHome")
         private String oracleHome;
 
         /**
          * The Oracle home location of the listener.
-         *
          * @param oracleHome the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleHome(String oracleHome) {
             this.oracleHome = oracleHome;
             this.__explicitlySet__.add("oracleHome");
             return this;
         }
-        /** The listener alias. */
+        /**
+         * The listener alias.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerAlias")
         private String listenerAlias;
 
         /**
          * The listener alias.
-         *
          * @param listenerAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerAlias(String listenerAlias) {
             this.listenerAlias = listenerAlias;
             this.__explicitlySet__.add("listenerAlias");
             return this;
         }
         /**
-         * The directory that stores tracing and logging incidents when Automatic Diagnostic
-         * Repository (ADR) is enabled.
-         */
+         * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
         private String adrHomeDirectory;
 
         /**
-         * The directory that stores tracing and logging incidents when Automatic Diagnostic
-         * Repository (ADR) is enabled.
-         *
+         * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
          * @param adrHomeDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder adrHomeDirectory(String adrHomeDirectory) {
             this.adrHomeDirectory = adrHomeDirectory;
             this.__explicitlySet__.add("adrHomeDirectory");
             return this;
         }
-        /** The destination directory of the listener log file. */
+        /**
+         * The destination directory of the listener log file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logDirectory")
         private String logDirectory;
 
         /**
          * The destination directory of the listener log file.
-         *
          * @param logDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder logDirectory(String logDirectory) {
             this.logDirectory = logDirectory;
             this.__explicitlySet__.add("logDirectory");
             return this;
         }
-        /** The destination directory of the listener trace file. */
+        /**
+         * The destination directory of the listener trace file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceDirectory")
         private String traceDirectory;
 
         /**
          * The destination directory of the listener trace file.
-         *
          * @param traceDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder traceDirectory(String traceDirectory) {
             this.traceDirectory = traceDirectory;
             this.__explicitlySet__.add("traceDirectory");
             return this;
         }
-        /** The listener version. */
+        /**
+         * The listener version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The listener version.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The type of listener. */
+        /**
+         * The type of listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerType")
         private ListenerType listenerType;
 
         /**
          * The type of listener.
-         *
          * @param listenerType the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerType(ListenerType listenerType) {
             this.listenerType = listenerType;
             this.__explicitlySet__.add("listenerType");
             return this;
         }
-        /** The name of the host on which the external listener is running. */
+        /**
+         * The name of the host on which the external listener is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host on which the external listener is running.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The list of protocol addresses the listener is configured to listen on. */
+        /**
+         * The list of protocol addresses the listener is configured to listen on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<ExternalListenerEndpoint> endpoints;
 
         /**
          * The list of protocol addresses the listener is configured to listen on.
-         *
          * @param endpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder endpoints(java.util.List<ExternalListenerEndpoint> endpoints) {
             this.endpoints = endpoints;
             this.__explicitlySet__.add("endpoints");
@@ -344,7 +350,9 @@ public final class DiscoveredExternalListener extends DiscoveredExternalDbSystem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -394,110 +402,115 @@ public final class DiscoveredExternalListener extends DiscoveredExternalDbSystem
         this.connector = connector;
     }
 
-    /** The name of the DB node. */
+    /**
+     * The name of the DB node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeName")
     private final String dbNodeName;
 
     /**
      * The name of the DB node.
-     *
      * @return the value
-     */
+     **/
     public String getDbNodeName() {
         return dbNodeName;
     }
 
-    /** The Oracle home location of the listener. */
+    /**
+     * The Oracle home location of the listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleHome")
     private final String oracleHome;
 
     /**
      * The Oracle home location of the listener.
-     *
      * @return the value
-     */
+     **/
     public String getOracleHome() {
         return oracleHome;
     }
 
-    /** The listener alias. */
+    /**
+     * The listener alias.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerAlias")
     private final String listenerAlias;
 
     /**
      * The listener alias.
-     *
      * @return the value
-     */
+     **/
     public String getListenerAlias() {
         return listenerAlias;
     }
 
     /**
-     * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository
-     * (ADR) is enabled.
-     */
+     * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
     private final String adrHomeDirectory;
 
     /**
-     * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository
-     * (ADR) is enabled.
-     *
+     * The directory that stores tracing and logging incidents when Automatic Diagnostic Repository (ADR) is enabled.
      * @return the value
-     */
+     **/
     public String getAdrHomeDirectory() {
         return adrHomeDirectory;
     }
 
-    /** The destination directory of the listener log file. */
+    /**
+     * The destination directory of the listener log file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logDirectory")
     private final String logDirectory;
 
     /**
      * The destination directory of the listener log file.
-     *
      * @return the value
-     */
+     **/
     public String getLogDirectory() {
         return logDirectory;
     }
 
-    /** The destination directory of the listener trace file. */
+    /**
+     * The destination directory of the listener trace file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceDirectory")
     private final String traceDirectory;
 
     /**
      * The destination directory of the listener trace file.
-     *
      * @return the value
-     */
+     **/
     public String getTraceDirectory() {
         return traceDirectory;
     }
 
-    /** The listener version. */
+    /**
+     * The listener version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The listener version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The type of listener. */
-    public enum ListenerType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of listener.
+     **/
+    public enum ListenerType {
         Asm("ASM"),
         Local("LOCAL"),
         Scan("SCAN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -536,41 +549,44 @@ public final class DiscoveredExternalListener extends DiscoveredExternalDbSystem
             return UnknownEnumValue;
         }
     };
-    /** The type of listener. */
+    /**
+     * The type of listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerType")
     private final ListenerType listenerType;
 
     /**
      * The type of listener.
-     *
      * @return the value
-     */
+     **/
     public ListenerType getListenerType() {
         return listenerType;
     }
 
-    /** The name of the host on which the external listener is running. */
+    /**
+     * The name of the host on which the external listener is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host on which the external listener is running.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The list of protocol addresses the listener is configured to listen on. */
+    /**
+     * The list of protocol addresses the listener is configured to listen on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     private final java.util.List<ExternalListenerEndpoint> endpoints;
 
     /**
      * The list of protocol addresses the listener is configured to listen on.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalListenerEndpoint> getEndpoints() {
         return endpoints;
     }
@@ -589,7 +605,6 @@ public final class DiscoveredExternalListener extends DiscoveredExternalDbSystem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

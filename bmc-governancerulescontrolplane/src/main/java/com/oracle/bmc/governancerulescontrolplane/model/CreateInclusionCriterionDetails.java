@@ -5,23 +5,22 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /**
- * Request object for Createinclusion criterion operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+ * Request object for Createinclusion criterion operation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateInclusionCriterionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateInclusionCriterionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateInclusionCriterionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"governanceRuleId", "type", "association"})
     public CreateInclusionCriterionDetails(
@@ -35,21 +34,16 @@ public final class CreateInclusionCriterionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * governance rule. Every inclusion criterion is associated with a governance rule.
-         */
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
         private String governanceRuleId;
 
         /**
-         * The Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * governance rule. Every inclusion criterion is associated with a governance rule.
-         *
+         * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
          * @param governanceRuleId the value to set
          * @return this builder
-         */
+         **/
         public Builder governanceRuleId(String governanceRuleId) {
             this.governanceRuleId = governanceRuleId;
             this.__explicitlySet__.add("governanceRuleId");
@@ -57,16 +51,15 @@ public final class CreateInclusionCriterionDetails
         }
         /**
          * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private InclusionCriterion.Type type;
 
         /**
          * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(InclusionCriterion.Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -110,7 +103,9 @@ public final class CreateInclusionCriterionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,31 +115,29 @@ public final class CreateInclusionCriterionDetails
     }
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the governance rule. Every inclusion criterion is associated with a governance rule.
-     */
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("governanceRuleId")
     private final String governanceRuleId;
 
     /**
-     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm))
-     * of the governance rule. Every inclusion criterion is associated with a governance rule.
-     *
+     * The Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the governance rule. Every inclusion criterion is associated with a governance rule.
      * @return the value
-     */
+     **/
     public String getGovernanceRuleId() {
         return governanceRuleId;
     }
 
-    /** Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now. */
+    /**
+     * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final InclusionCriterion.Type type;
 
     /**
      * Type of inclusion criterion - TENANCY, ALL or TAG. We support TENANCY and ALL for now.
-     *
      * @return the value
-     */
+     **/
     public InclusionCriterion.Type getType() {
         return type;
     }
@@ -163,7 +156,6 @@ public final class CreateInclusionCriterionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

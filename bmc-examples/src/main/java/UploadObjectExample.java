@@ -22,10 +22,10 @@ import com.oracle.bmc.objectstorage.transfer.UploadManager.UploadResponse;
 
 /**
  * Example of using the simplified UploadManager to upload objects.
- *
- * <p>UploadManager can be configured to control how/when it does multi-part uploads, and manages
- * the underlying upload method. Clients construct a PutObjectRequest similar to what they normally
- * would.
+ * <p>
+ * UploadManager can be configured to control how/when it does multi-part uploads,
+ * and manages the underlying upload method.  Clients construct a PutObjectRequest
+ * similar to what they normally would.
  */
 public class UploadObjectExample {
 
@@ -42,10 +42,8 @@ public class UploadObjectExample {
         String contentLanguage = null;
         File body = null;
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -53,8 +51,8 @@ public class UploadObjectExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider);
+        client.setRegion(Region.US_PHOENIX_1);
 
         // configure upload settings as desired
         UploadConfiguration uploadConfiguration =
@@ -80,8 +78,7 @@ public class UploadObjectExample {
                 UploadRequest.builder(body).allowOverwrite(true).build(request);
 
         // upload request and print result
-        // if multi-part is used, and any part fails, the entire upload fails and will throw
-        // BmcException
+        // if multi-part is used, and any part fails, the entire upload fails and will throw BmcException
         UploadResponse response = uploadManager.upload(uploadDetails);
         System.out.println(response);
 

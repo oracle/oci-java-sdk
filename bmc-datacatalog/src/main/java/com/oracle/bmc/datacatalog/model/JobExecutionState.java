@@ -5,16 +5,18 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Common execution states for jobs in data catalog. CREATED - Job has been created but yet to start
- * execution. It will transition to IN_PROGRESS when resources are available for execution.
- * IN_PROGRESS - Job is currently executing. INACTIVE - Job has been paused by the worker. This
- * could be due to resource contention or window management. FAILED - Job has failed due to errors
- * during execution. SUCCEEDED - Job has successfully completed execution. CANCELED - Job has been
- * aborted by the worker due to a user request. SUCCEEDED_WITH_WARNINGS - Job has successfully
- * completed execution with one or more warnings.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum JobExecutionState implements com.oracle.bmc.http.internal.BmcEnum {
+ * Common execution states for jobs in data catalog.
+ * CREATED     - Job has been created but yet to start execution. It will transition to IN_PROGRESS when resources are available for execution.
+ * IN_PROGRESS - Job is currently executing.
+ * INACTIVE    - Job has been paused by the worker. This could be due to resource contention or window management.
+ * FAILED      - Job has failed due to errors during execution.
+ * SUCCEEDED   - Job has successfully completed execution.
+ * CANCELED    - Job has been aborted by the worker due to a user request.
+ * SUCCEEDED_WITH_WARNINGS - Job has successfully completed execution with one or more warnings.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum JobExecutionState {
     Created("CREATED"),
     InProgress("IN_PROGRESS"),
     Inactive("INACTIVE"),

@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The yum or DNF package group that is associated with a software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The yum or DNF package group that is associated with a software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PackageGroupSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PackageGroupSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PackageGroupSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PackageGroupSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -55,121 +53,129 @@ public final class PackageGroupSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Package group identifier. */
+        /**
+         * Package group identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Package group identifier.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Package group name. */
+        /**
+         * Package group name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Package group name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Description of the package group. */
+        /**
+         * Description of the package group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the package group.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicates if this package group is visible to users. */
+        /**
+         * Indicates if this package group is visible to users.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
         private Boolean isUserVisible;
 
         /**
          * Indicates if this package group is visible to users.
-         *
          * @param isUserVisible the value to set
          * @return this builder
-         */
+         **/
         public Builder isUserVisible(Boolean isUserVisible) {
             this.isUserVisible = isUserVisible;
             this.__explicitlySet__.add("isUserVisible");
             return this;
         }
-        /** Indicates if this package group is the default. */
+        /**
+         * Indicates if this package group is the default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * Indicates if this package group is the default.
-         *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** The repository IDs of the package group. */
+        /**
+         * The repository IDs of the package group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositories")
         private java.util.List<String> repositories;
 
         /**
          * The repository IDs of the package group.
-         *
          * @param repositories the value to set
          * @return this builder
-         */
+         **/
         public Builder repositories(java.util.List<String> repositories) {
             this.repositories = repositories;
             this.__explicitlySet__.add("repositories");
             return this;
         }
-        /** Indicates if this is a group, category or environment. */
+        /**
+         * Indicates if this is a group, category or environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupType")
         private PackageGroup.GroupType groupType;
 
         /**
          * Indicates if this is a group, category or environment.
-         *
          * @param groupType the value to set
          * @return this builder
-         */
+         **/
         public Builder groupType(PackageGroup.GroupType groupType) {
             this.groupType = groupType;
             this.__explicitlySet__.add("groupType");
             return this;
         }
-        /** Indicates the order to display category or environment. */
+        /**
+         * Indicates the order to display category or environment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
         private Integer displayOrder;
 
         /**
          * Indicates the order to display category or environment.
-         *
          * @param displayOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder displayOrder(Integer displayOrder) {
             this.displayOrder = displayOrder;
             this.__explicitlySet__.add("displayOrder");
@@ -226,7 +232,9 @@ public final class PackageGroupSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,106 +243,114 @@ public final class PackageGroupSummary
         return new Builder().copy(this);
     }
 
-    /** Package group identifier. */
+    /**
+     * Package group identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Package group identifier.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Package group name. */
+    /**
+     * Package group name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Package group name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Description of the package group. */
+    /**
+     * Description of the package group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the package group.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Indicates if this package group is visible to users. */
+    /**
+     * Indicates if this package group is visible to users.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserVisible")
     private final Boolean isUserVisible;
 
     /**
      * Indicates if this package group is visible to users.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUserVisible() {
         return isUserVisible;
     }
 
-    /** Indicates if this package group is the default. */
+    /**
+     * Indicates if this package group is the default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * Indicates if this package group is the default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
 
-    /** The repository IDs of the package group. */
+    /**
+     * The repository IDs of the package group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositories")
     private final java.util.List<String> repositories;
 
     /**
      * The repository IDs of the package group.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRepositories() {
         return repositories;
     }
 
-    /** Indicates if this is a group, category or environment. */
+    /**
+     * Indicates if this is a group, category or environment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupType")
     private final PackageGroup.GroupType groupType;
 
     /**
      * Indicates if this is a group, category or environment.
-     *
      * @return the value
-     */
+     **/
     public PackageGroup.GroupType getGroupType() {
         return groupType;
     }
 
-    /** Indicates the order to display category or environment. */
+    /**
+     * Indicates the order to display category or environment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayOrder")
     private final Integer displayOrder;
 
     /**
      * Indicates the order to display category or environment.
-     *
      * @return the value
-     */
+     **/
     public Integer getDisplayOrder() {
         return displayOrder;
     }
@@ -346,7 +362,6 @@ public final class PackageGroupSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

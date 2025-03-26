@@ -4,7 +4,9 @@
  */
 package com.oracle.bmc.auth.internal;
 
-/** Root interface for classes providing the complete path for resource principal token. */
+/**
+ * Root interface for classes providing the complete path for resource principal token.
+ */
 public interface RptPathProvider {
 
     String getPath();

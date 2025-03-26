@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details of the count statistic summary object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details of the count statistic summary object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CountStatisticSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CountStatisticSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CountStatisticSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectType", "objectCount"})
     public CountStatisticSummary(ObjectType objectType, Long objectCount) {
@@ -32,31 +31,33 @@ public final class CountStatisticSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of object for the count statistic object. */
+        /**
+         * The type of object for the count statistic object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private ObjectType objectType;
 
         /**
          * The type of object for the count statistic object.
-         *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(ObjectType objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-        /** The value for the count statistic object. */
+        /**
+         * The value for the count statistic object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
         private Long objectCount;
 
         /**
          * The value for the count statistic object.
-         *
          * @param objectCount the value to set
          * @return this builder
-         */
+         **/
         public Builder objectCount(Long objectCount) {
             this.objectCount = objectCount;
             this.__explicitlySet__.add("objectCount");
@@ -87,7 +88,9 @@ public final class CountStatisticSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,8 +99,10 @@ public final class CountStatisticSummary
         return new Builder().copy(this);
     }
 
-    /** The type of object for the count statistic object. */
-    public enum ObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of object for the count statistic object.
+     **/
+    public enum ObjectType {
         Project("PROJECT"),
         Folder("FOLDER"),
         DataFlow("DATA_FLOW"),
@@ -109,8 +114,8 @@ public final class CountStatisticSummary
         UserDefinedFunction("USER_DEFINED_FUNCTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -149,28 +154,30 @@ public final class CountStatisticSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of object for the count statistic object. */
+    /**
+     * The type of object for the count statistic object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final ObjectType objectType;
 
     /**
      * The type of object for the count statistic object.
-     *
      * @return the value
-     */
+     **/
     public ObjectType getObjectType() {
         return objectType;
     }
 
-    /** The value for the count statistic object. */
+    /**
+     * The value for the count statistic object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectCount")
     private final Long objectCount;
 
     /**
      * The value for the count statistic object.
-     *
      * @return the value
-     */
+     **/
     public Long getObjectCount() {
         return objectCount;
     }
@@ -182,7 +189,6 @@ public final class CountStatisticSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

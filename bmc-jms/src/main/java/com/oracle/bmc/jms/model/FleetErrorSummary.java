@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The summary of a fleet error. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The summary of a fleet error.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FleetErrorSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class FleetErrorSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = FleetErrorSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class FleetErrorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fleetId",
@@ -50,76 +48,75 @@ public final class FleetErrorSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The display name of the Fleet. */
+        /**
+         * The display name of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetName")
         private String fleetName;
 
         /**
          * The display name of the Fleet.
-         *
          * @param fleetName the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetName(String fleetName) {
             this.fleetName = fleetName;
             this.__explicitlySet__.add("fleetName");
             return this;
         }
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         */
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** List of fleet error details. */
+        /**
+         * List of fleet error details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<FleetErrorDetails> errors;
 
         /**
          * List of fleet error details.
-         *
          * @param errors the value to set
          * @return this builder
-         */
+         **/
         public Builder errors(java.util.List<FleetErrorDetails> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
             return this;
         }
-        /** The timestamp of the first time an error was detected. */
+        /**
+         * The timestamp of the first time an error was detected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
@@ -128,13 +125,16 @@ public final class FleetErrorSummary
          *
          * @param timeFirstSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
             return this;
         }
-        /** The timestamp of the last time an error was detected. */
+        /**
+         * The timestamp of the last time an error was detected.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
@@ -143,7 +143,7 @@ public final class FleetErrorSummary
          *
          * @param timeLastSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -192,7 +192,9 @@ public final class FleetErrorSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -202,66 +204,67 @@ public final class FleetErrorSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The display name of the Fleet. */
+    /**
+     * The display name of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetName")
     private final String fleetName;
 
     /**
      * The display name of the Fleet.
-     *
      * @return the value
-     */
+     **/
     public String getFleetName() {
         return fleetName;
     }
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the Fleet.
-     */
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the Fleet.
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** List of fleet error details. */
+    /**
+     * List of fleet error details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<FleetErrorDetails> errors;
 
     /**
      * List of fleet error details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FleetErrorDetails> getErrors() {
         return errors;
     }
 
-    /** The timestamp of the first time an error was detected. */
+    /**
+     * The timestamp of the first time an error was detected.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
@@ -269,12 +272,15 @@ public final class FleetErrorSummary
      * The timestamp of the first time an error was detected.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
 
-    /** The timestamp of the last time an error was detected. */
+    /**
+     * The timestamp of the last time an error was detected.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
@@ -282,7 +288,7 @@ public final class FleetErrorSummary
      * The timestamp of the last time an error was detected.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
@@ -294,7 +300,6 @@ public final class FleetErrorSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

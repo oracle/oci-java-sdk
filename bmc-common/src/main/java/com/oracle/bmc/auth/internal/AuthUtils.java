@@ -4,14 +4,6 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.oracle.bmc.InternalSdk;
-import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
-import com.oracle.bmc.http.client.Serializer;
-import com.oracle.bmc.http.client.pki.Pem;
-import com.oracle.bmc.util.internal.Validate;
-
-import org.slf4j.Logger;
-
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
@@ -24,7 +16,16 @@ import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
+
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
+import com.oracle.bmc.http.signing.pki.Pem;
+import com.oracle.bmc.util.internal.Validate;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.Optional;
+
+import org.slf4j.Logger;
 
 import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
@@ -33,17 +34,20 @@ import javax.naming.ldap.LdapName;
 import javax.naming.ldap.Rdn;
 import javax.security.auth.x500.X500Principal;
 
-/** Utilities dealing with authorization. */
+/**
+ * Utilities dealing with authorization.
+ */
 public class AuthUtils {
+    private static final ObjectMapper OBJECT_MAPPER =
+            com.oracle.bmc.http.Serialization.getObjectMapper();
     private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(AuthUtils.class);
 
     private AuthUtils() {}
 
     /**
-     * Gets the fingerprint of a certificate using Sha256. This is the same value that you would get
-     * by running, <code>openssl x509 -in certificate.pem -noout -fingerprint</code>
-     *
+     * Gets the fingerprint of a certificate using Sha256. This is the same value that you would get by running,
+     * <code>openssl x509 -in certificate.pem -noout -fingerprint</code>
      * @param certificate the certificate
      * @return Fingerprint of the certificate
      * @throws Error if there is an error
@@ -80,9 +84,8 @@ public class AuthUtils {
 
     /**
      * Computes the hex representation of a byte array.
-     *
      * @param bytes
-     * @return
+     * @return Hex representation of a byte array
      */
     private static String getHex(byte bytes[]) {
         char[] hexChars = new char[bytes.length * 2];
@@ -98,7 +101,7 @@ public class AuthUtils {
     /**
      * Convert JWK JSON string into a {@link RSAPublicKey}.
      *
-     * @return
+     * @return Optional of RSAPublicKey
      */
     public static Optional<RSAPublicKey> toPublicKeyFromJson(String json) {
         Validate.notBlank(json, "JSON for public key may not be blank");
@@ -121,7 +124,7 @@ public class AuthUtils {
         Validate.notBlank(json, "JSON for JWK may not be blank");
 
         try {
-            JWK jwk = Serializer.getDefault().readValue(json, JWK.class);
+            JWK jwk = OBJECT_MAPPER.readValue(json, JWK.class);
             return Optional.of(jwk);
         } catch (IOException e) {
             LOG.debug("Exception reading or de-serializing jwk", e);
@@ -139,8 +142,7 @@ public class AuthUtils {
         Validate.notNull(jwk, "JWK may not be null");
 
         try {
-            // modulus and exponent are unsigned, negative big integer should be converted to
-            // positive
+            // modulus and exponent are unsigned, negative big integer should be converted to positive
             RSAPublicKey key =
                     (RSAPublicKey)
                             KeyFactory.getInstance("RSA")
@@ -162,7 +164,6 @@ public class AuthUtils {
 
     /**
      * Converts a private key back to a PEM formatted input stream.
-     *
      * @param key The key to convert.
      * @return A new input stream
      */
@@ -173,7 +174,6 @@ public class AuthUtils {
 
     /**
      * Base64 encodes a public key with no chunking.
-     *
      * @param publicKey The public key
      * @return Base64 representation
      */
@@ -184,7 +184,6 @@ public class AuthUtils {
 
     /**
      * Base64 encodes a X509Certificate with no chunking.
-     *
      * @param certificate The certificate
      * @return Base64 representation
      * @throws CertificateEncodingException
@@ -208,7 +207,6 @@ public class AuthUtils {
 
     /**
      * Decode the base64 string. This supports both '+' and '/' as well as '-' and '_'.
-     *
      * @param base64 base64 string
      * @return decoded bytes
      */
@@ -218,8 +216,7 @@ public class AuthUtils {
             return null;
         }
         // compatibility with Apache Commons Codec Base64:
-        // urlSafe - Instead of emitting '+' and '/' we emit '-' and '_' respectively. urlSafe is
-        // only applied to encode operations. Decoding seamlessly handles both modes.
+        // urlSafe - Instead of emitting '+' and '/' we emit '-' and '_' respectively. urlSafe is only applied to encode operations. Decoding seamlessly handles both modes.
         return Base64.getDecoder().decode(base64.replace('-', '+').replace('_', '/'));
     }
 
@@ -235,7 +232,6 @@ public class AuthUtils {
 
     /**
      * Get the tenant id from the given certificate.
-     *
      * @param certificate the given certificate.
      * @return the tenant id.
      */

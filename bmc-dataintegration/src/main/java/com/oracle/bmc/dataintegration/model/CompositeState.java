@@ -5,22 +5,19 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The composite state object provides information on the state of a task or schedule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The composite state object provides information on the state of a task or schedule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CompositeState.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CompositeState
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CompositeState extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compositeStateAggregator",
@@ -69,61 +66,65 @@ public final class CompositeState
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the Composite State Aggregator. */
+        /**
+         * The type of the Composite State Aggregator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeStateAggregator")
         private CompositeStateAggregator compositeStateAggregator;
 
         /**
          * The type of the Composite State Aggregator.
-         *
          * @param compositeStateAggregator the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeStateAggregator(CompositeStateAggregator compositeStateAggregator) {
             this.compositeStateAggregator = compositeStateAggregator;
             this.__explicitlySet__.add("compositeStateAggregator");
             return this;
         }
-        /** Generated key that can be used in API calls to identify Composite State. */
+        /**
+         * Generated key that can be used in API calls to identify Composite State.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Generated key that can be used in API calls to identify Composite State.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -139,104 +140,96 @@ public final class CompositeState
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** Detailed description for the object. */
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The version of the object that is used to track changes in the object instance. */
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
-        /** Map that stores all the States for a given Task or Schedule */
+        /**
+         * Map that stores all the States for a given Task or Schedule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allStatesMap")
         private java.util.Map<String, State> allStatesMap;
 
         /**
          * Map that stores all the States for a given Task or Schedule
-         *
          * @param allStatesMap the value to set
          * @return this builder
-         */
+         **/
         public Builder allStatesMap(java.util.Map<String, State> allStatesMap) {
             this.allStatesMap = allStatesMap;
             this.__explicitlySet__.add("allStatesMap");
@@ -331,7 +324,9 @@ public final class CompositeState
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -340,15 +335,17 @@ public final class CompositeState
         return new Builder().copy(this);
     }
 
-    /** The type of the Composite State Aggregator. */
-    public enum CompositeStateAggregator implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the Composite State Aggregator.
+     **/
+    public enum CompositeStateAggregator {
         TaskSchedule("TASK_SCHEDULE"),
         Task("TASK"),
         TaskOperator("TASK_OPERATOR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -387,54 +384,58 @@ public final class CompositeState
             return UnknownEnumValue;
         }
     };
-    /** The type of the Composite State Aggregator. */
+    /**
+     * The type of the Composite State Aggregator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeStateAggregator")
     private final CompositeStateAggregator compositeStateAggregator;
 
     /**
      * The type of the Composite State Aggregator.
-     *
      * @return the value
-     */
+     **/
     public CompositeStateAggregator getCompositeStateAggregator() {
         return compositeStateAggregator;
     }
 
-    /** Generated key that can be used in API calls to identify Composite State. */
+    /**
+     * Generated key that can be used in API calls to identify Composite State.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Generated key that can be used in API calls to identify Composite State.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -447,91 +448,85 @@ public final class CompositeState
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /** Map that stores all the States for a given Task or Schedule */
+    /**
+     * Map that stores all the States for a given Task or Schedule
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allStatesMap")
     private final java.util.Map<String, State> allStatesMap;
 
     /**
      * Map that stores all the States for a given Task or Schedule
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, State> getAllStatesMap() {
         return allStatesMap;
     }
@@ -557,7 +552,6 @@ public final class CompositeState
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

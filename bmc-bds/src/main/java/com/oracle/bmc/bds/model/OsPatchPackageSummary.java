@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Summary of a package contained in a os patch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Summary of a package contained in a os patch.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OsPatchPackageSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OsPatchPackageSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OsPatchPackageSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"packageName", "targetVersion", "updateType", "relatedCVEs"})
     public OsPatchPackageSummary(
@@ -38,61 +37,65 @@ public final class OsPatchPackageSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The package's name. */
+        /**
+         * The package's name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageName")
         private String packageName;
 
         /**
          * The package's name.
-         *
          * @param packageName the value to set
          * @return this builder
-         */
+         **/
         public Builder packageName(String packageName) {
             this.packageName = packageName;
             this.__explicitlySet__.add("packageName");
             return this;
         }
-        /** The target version of the package. */
+        /**
+         * The target version of the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetVersion")
         private String targetVersion;
 
         /**
          * The target version of the package.
-         *
          * @param targetVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetVersion(String targetVersion) {
             this.targetVersion = targetVersion;
             this.__explicitlySet__.add("targetVersion");
             return this;
         }
-        /** The action that current package will be executed on the cluster. */
+        /**
+         * The action that current package will be executed on the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateType")
         private UpdateType updateType;
 
         /**
          * The action that current package will be executed on the cluster.
-         *
          * @param updateType the value to set
          * @return this builder
-         */
+         **/
         public Builder updateType(UpdateType updateType) {
             this.updateType = updateType;
             this.__explicitlySet__.add("updateType");
             return this;
         }
-        /** Related CVEs of the package update. */
+        /**
+         * Related CVEs of the package update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCVEs")
         private java.util.List<String> relatedCVEs;
 
         /**
          * Related CVEs of the package update.
-         *
          * @param relatedCVEs the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedCVEs(java.util.List<String> relatedCVEs) {
             this.relatedCVEs = relatedCVEs;
             this.__explicitlySet__.add("relatedCVEs");
@@ -133,7 +136,9 @@ public final class OsPatchPackageSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -142,41 +147,45 @@ public final class OsPatchPackageSummary
         return new Builder().copy(this);
     }
 
-    /** The package's name. */
+    /**
+     * The package's name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageName")
     private final String packageName;
 
     /**
      * The package's name.
-     *
      * @return the value
-     */
+     **/
     public String getPackageName() {
         return packageName;
     }
 
-    /** The target version of the package. */
+    /**
+     * The target version of the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetVersion")
     private final String targetVersion;
 
     /**
      * The target version of the package.
-     *
      * @return the value
-     */
+     **/
     public String getTargetVersion() {
         return targetVersion;
     }
 
-    /** The action that current package will be executed on the cluster. */
-    public enum UpdateType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The action that current package will be executed on the cluster.
+     **/
+    public enum UpdateType {
         Install("INSTALL"),
         Remove("REMOVE"),
         Update("UPDATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -215,28 +224,30 @@ public final class OsPatchPackageSummary
             return UnknownEnumValue;
         }
     };
-    /** The action that current package will be executed on the cluster. */
+    /**
+     * The action that current package will be executed on the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateType")
     private final UpdateType updateType;
 
     /**
      * The action that current package will be executed on the cluster.
-     *
      * @return the value
-     */
+     **/
     public UpdateType getUpdateType() {
         return updateType;
     }
 
-    /** Related CVEs of the package update. */
+    /**
+     * Related CVEs of the package update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCVEs")
     private final java.util.List<String> relatedCVEs;
 
     /**
      * Related CVEs of the package update.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRelatedCVEs() {
         return relatedCVEs;
     }
@@ -248,7 +259,6 @@ public final class OsPatchPackageSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

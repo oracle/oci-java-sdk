@@ -5,23 +5,22 @@
 package com.oracle.bmc.ocicontrolcenter.model;
 
 /**
- * The recorded metric value at a specific timestamp. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
+ * The recorded metric value at a specific timestamp.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizedMetricData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SummarizedMetricData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SummarizedMetricData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SummarizedMetricData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sampleTime",
@@ -46,7 +45,10 @@ public final class SummarizedMetricData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The time at which the metric data was recorded. */
+        /**
+         * The time at which the metric data was recorded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleTime")
         private java.util.Date sampleTime;
 
@@ -55,70 +57,70 @@ public final class SummarizedMetricData
          *
          * @param sampleTime the value to set
          * @return this builder
-         */
+         **/
         public Builder sampleTime(java.util.Date sampleTime) {
             this.sampleTime = sampleTime;
             this.__explicitlySet__.add("sampleTime");
             return this;
         }
         /**
-         * The duration over which the metric data is aggregated. Supported values: {@code
-         * 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
-         */
+         * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolution")
         private String resolution;
 
         /**
-         * The duration over which the metric data is aggregated. Supported values: {@code
-         * 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+         * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
          *
          * @param resolution the value to set
          * @return this builder
-         */
+         **/
         public Builder resolution(String resolution) {
             this.resolution = resolution;
             this.__explicitlySet__.add("resolution");
             return this;
         }
         /**
-         * Qualifiers provided in the definition of the returned metric. Available dimensions vary
-         * by metric namespace.
-         */
+         * Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, DimensionValue> dimensions;
 
         /**
-         * Qualifiers provided in the definition of the returned metric. Available dimensions vary
-         * by metric namespace.
+         * Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace.
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, DimensionValue> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
         /**
-         * The aggregation method used for aggregating the metric values. The aggregation method
-         * depends on the metric itself.
-         */
+         * The aggregation method used for aggregating the metric values.  The aggregation method depends on the metric itself.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationMethod")
         private String aggregationMethod;
 
         /**
-         * The aggregation method used for aggregating the metric values. The aggregation method
-         * depends on the metric itself.
+         * The aggregation method used for aggregating the metric values.  The aggregation method depends on the metric itself.
          *
          * @param aggregationMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregationMethod(String aggregationMethod) {
             this.aggregationMethod = aggregationMethod;
             this.__explicitlySet__.add("aggregationMethod");
             return this;
         }
-        /** The aggregated metric value for the specified request. */
+        /**
+         * The aggregated metric value for the specified request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedValue")
         private Float aggregatedValue;
 
@@ -127,7 +129,7 @@ public final class SummarizedMetricData
          *
          * @param aggregatedValue the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatedValue(Float aggregatedValue) {
             this.aggregatedValue = aggregatedValue;
             this.__explicitlySet__.add("aggregatedValue");
@@ -172,7 +174,9 @@ public final class SummarizedMetricData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,7 +185,10 @@ public final class SummarizedMetricData
         return new Builder().copy(this);
     }
 
-    /** The time at which the metric data was recorded. */
+    /**
+     * The time at which the metric data was recorded.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleTime")
     private final java.util.Date sampleTime;
 
@@ -189,63 +196,63 @@ public final class SummarizedMetricData
      * The time at which the metric data was recorded.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getSampleTime() {
         return sampleTime;
     }
 
     /**
-     * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code
-     * 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
-     */
+     * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolution")
     private final String resolution;
 
     /**
-     * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code
-     * 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
+     * The duration over which the metric data is aggregated. Supported values: {@code 1m}-{@code 60m}, {@code 1h}-{@code 24h}, {@code 1d}.
      *
      * @return the value
-     */
+     **/
     public String getResolution() {
         return resolution;
     }
 
     /**
-     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by
-     * metric namespace.
-     */
+     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, DimensionValue> dimensions;
 
     /**
-     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by
-     * metric namespace.
+     * Qualifiers provided in the definition of the returned metric. Available dimensions vary by metric namespace.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, DimensionValue> getDimensions() {
         return dimensions;
     }
 
     /**
-     * The aggregation method used for aggregating the metric values. The aggregation method depends
-     * on the metric itself.
-     */
+     * The aggregation method used for aggregating the metric values.  The aggregation method depends on the metric itself.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationMethod")
     private final String aggregationMethod;
 
     /**
-     * The aggregation method used for aggregating the metric values. The aggregation method depends
-     * on the metric itself.
+     * The aggregation method used for aggregating the metric values.  The aggregation method depends on the metric itself.
      *
      * @return the value
-     */
+     **/
     public String getAggregationMethod() {
         return aggregationMethod;
     }
 
-    /** The aggregated metric value for the specified request. */
+    /**
+     * The aggregated metric value for the specified request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedValue")
     private final Float aggregatedValue;
 
@@ -253,7 +260,7 @@ public final class SummarizedMetricData
      * The aggregated metric value for the specified request.
      *
      * @return the value
-     */
+     **/
     public Float getAggregatedValue() {
         return aggregatedValue;
     }
@@ -265,7 +272,6 @@ public final class SummarizedMetricData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

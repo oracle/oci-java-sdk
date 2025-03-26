@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The fleet error reason. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum FleetErrorReason implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The fleet error reason.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum FleetErrorReason {
     NoManagedInstances("NO_MANAGED_INSTANCES"),
     InventoryLog("INVENTORY_LOG"),
 

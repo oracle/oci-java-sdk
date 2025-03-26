@@ -6,34 +6,33 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkDeleteVirtualCircuitPublicPrefixesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * BulkDeleteVirtualCircuitPublicPrefixesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/BulkDeleteVirtualCircuitPublicPrefixesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use BulkDeleteVirtualCircuitPublicPrefixesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BulkDeleteVirtualCircuitPublicPrefixesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     private String virtualCircuitId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * virtual circuit.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
      */
     public String getVirtualCircuitId() {
         return virtualCircuitId;
     }
-    /** Request with public prefixes to be deleted from the virtual circuit. */
+    /**
+     * Request with public prefixes to be deleted from the virtual circuit.
+     */
     private com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails
             bulkDeleteVirtualCircuitPublicPrefixesDetails;
 
-    /** Request with public prefixes to be deleted from the virtual circuit. */
+    /**
+     * Request with public prefixes to be deleted from the virtual circuit.
+     */
     public com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails
             getBulkDeleteVirtualCircuitPublicPrefixesDetails() {
         return bulkDeleteVirtualCircuitPublicPrefixesDetails;
@@ -41,7 +40,6 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -54,19 +52,17 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
                     com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * virtual circuit.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
          */
         private String virtualCircuitId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * virtual circuit.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual circuit.
          * @param virtualCircuitId the value to set
          * @return this builder instance
          */
@@ -75,13 +71,14 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
             return this;
         }
 
-        /** Request with public prefixes to be deleted from the virtual circuit. */
+        /**
+         * Request with public prefixes to be deleted from the virtual circuit.
+         */
         private com.oracle.bmc.core.model.BulkDeleteVirtualCircuitPublicPrefixesDetails
                 bulkDeleteVirtualCircuitPublicPrefixesDetails = null;
 
         /**
          * Request with public prefixes to be deleted from the virtual circuit.
-         *
          * @param bulkDeleteVirtualCircuitPublicPrefixesDetails the value to set
          * @return this builder instance
          */
@@ -95,19 +92,18 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -119,7 +115,6 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(BulkDeleteVirtualCircuitPublicPrefixesRequest o) {
@@ -132,14 +127,12 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
         }
 
         /**
-         * Build the instance of BulkDeleteVirtualCircuitPublicPrefixesRequest as configured by this
-         * builder
+         * Build the instance of BulkDeleteVirtualCircuitPublicPrefixesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of BulkDeleteVirtualCircuitPublicPrefixesRequest
          */
@@ -153,7 +146,6 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -165,11 +157,9 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
         }
 
         /**
-         * Build the instance of BulkDeleteVirtualCircuitPublicPrefixesRequest as configured by this
-         * builder
+         * Build the instance of BulkDeleteVirtualCircuitPublicPrefixesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of BulkDeleteVirtualCircuitPublicPrefixesRequest
@@ -181,14 +171,12 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
             request.bulkDeleteVirtualCircuitPublicPrefixesDetails =
                     bulkDeleteVirtualCircuitPublicPrefixesDetails;
             return request;
-            // new BulkDeleteVirtualCircuitPublicPrefixesRequest(virtualCircuitId,
-            // bulkDeleteVirtualCircuitPublicPrefixesDetails);
+            // new BulkDeleteVirtualCircuitPublicPrefixesRequest(virtualCircuitId, bulkDeleteVirtualCircuitPublicPrefixesDetails);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -200,7 +188,6 @@ public class BulkDeleteVirtualCircuitPublicPrefixesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

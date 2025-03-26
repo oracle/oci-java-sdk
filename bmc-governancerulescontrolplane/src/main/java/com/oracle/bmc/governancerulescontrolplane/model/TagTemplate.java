@@ -5,71 +5,71 @@
 package com.oracle.bmc.governancerulescontrolplane.model;
 
 /**
- * Template for governance rules of type tag. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+ * Template for governance rules of type tag.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TagTemplate.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TagTemplate extends Template {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy
-         * and cannot be changed.
-         */
+         * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy
-         * and cannot be changed.
+         * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Description of the tag namespace. */
+        /**
+         * Description of the tag namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the tag namespace.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Represents an array of tags for tag namespace. */
+        /**
+         * Represents an array of tags for tag namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
         /**
          * Represents an array of tags for tag namespace.
-         *
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
@@ -115,7 +115,9 @@ public final class TagTemplate extends Template {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,44 +140,45 @@ public final class TagTemplate extends Template {
     }
 
     /**
-     * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and
-     * cannot be changed.
-     */
+     * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and
-     * cannot be changed.
+     * The name of the tag namespace. It must be unique across all tag namespaces in the tenancy and cannot be changed.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Description of the tag namespace. */
+    /**
+     * Description of the tag namespace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the tag namespace.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Represents an array of tags for tag namespace. */
+    /**
+     * Represents an array of tags for tag namespace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
     /**
      * Represents an array of tags for tag namespace.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
@@ -194,7 +197,6 @@ public final class TagTemplate extends Template {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status types of a Sql Tuning Set. Refer to the following documentaion for details
- * https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/ALL_SCHEDULER_JOBS.html#GUID-D72A57AD-96EB-4FB9-A599-33CB238AFA62
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum SqlTuningSetStatusTypes implements com.oracle.bmc.http.internal.BmcEnum {
+ * The status types of a Sql Tuning Set. Refer to the following documentaion for details https://docs.oracle.com/en/database/oracle/oracle-database/19/refrn/ALL_SCHEDULER_JOBS.html#GUID-D72A57AD-96EB-4FB9-A599-33CB238AFA62
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum SqlTuningSetStatusTypes {
     Disabled("DISABLED"),
     RetryScheduled("RETRY_SCHEDULED"),
     Scheduled("SCHEDULED"),

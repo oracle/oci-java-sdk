@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Retention operation details for the model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Retention operation details for the model.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RetentionOperationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RetentionOperationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RetentionOperationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "archiveState",
@@ -49,91 +48,97 @@ public final class RetentionOperationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The archival status of model. */
+        /**
+         * The archival status of model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archiveState")
         private ModelSettingActionState archiveState;
 
         /**
          * The archival status of model.
-         *
          * @param archiveState the value to set
          * @return this builder
-         */
+         **/
         public Builder archiveState(ModelSettingActionState archiveState) {
             this.archiveState = archiveState;
             this.__explicitlySet__.add("archiveState");
             return this;
         }
-        /** The archival state details of the model. */
+        /**
+         * The archival state details of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archiveStateDetails")
         private String archiveStateDetails;
 
         /**
          * The archival state details of the model.
-         *
          * @param archiveStateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder archiveStateDetails(String archiveStateDetails) {
             this.archiveStateDetails = archiveStateDetails;
             this.__explicitlySet__.add("archiveStateDetails");
             return this;
         }
-        /** The estimated archival time of the model based on the provided retention setting. */
+        /**
+         * The estimated archival time of the model based on the provided retention setting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeArchivalScheduled")
         private java.util.Date timeArchivalScheduled;
 
         /**
          * The estimated archival time of the model based on the provided retention setting.
-         *
          * @param timeArchivalScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeArchivalScheduled(java.util.Date timeArchivalScheduled) {
             this.timeArchivalScheduled = timeArchivalScheduled;
             this.__explicitlySet__.add("timeArchivalScheduled");
             return this;
         }
-        /** The deletion status of the archived model. */
+        /**
+         * The deletion status of the archived model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteState")
         private ModelSettingActionState deleteState;
 
         /**
          * The deletion status of the archived model.
-         *
          * @param deleteState the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteState(ModelSettingActionState deleteState) {
             this.deleteState = deleteState;
             this.__explicitlySet__.add("deleteState");
             return this;
         }
-        /** The deletion status details of the archived model. */
+        /**
+         * The deletion status details of the archived model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteStateDetails")
         private String deleteStateDetails;
 
         /**
          * The deletion status details of the archived model.
-         *
          * @param deleteStateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteStateDetails(String deleteStateDetails) {
             this.deleteStateDetails = deleteStateDetails;
             this.__explicitlySet__.add("deleteStateDetails");
             return this;
         }
-        /** The estimated deletion time of the model based on the provided retention setting. */
+        /**
+         * The estimated deletion time of the model based on the provided retention setting.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionScheduled")
         private java.util.Date timeDeletionScheduled;
 
         /**
          * The estimated deletion time of the model based on the provided retention setting.
-         *
          * @param timeDeletionScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDeletionScheduled(java.util.Date timeDeletionScheduled) {
             this.timeDeletionScheduled = timeDeletionScheduled;
             this.__explicitlySet__.add("timeDeletionScheduled");
@@ -182,7 +187,9 @@ public final class RetentionOperationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class RetentionOperationDetails
         return new Builder().copy(this);
     }
 
-    /** The archival status of model. */
+    /**
+     * The archival status of model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveState")
     private final ModelSettingActionState archiveState;
 
     /**
      * The archival status of model.
-     *
      * @return the value
-     */
+     **/
     public ModelSettingActionState getArchiveState() {
         return archiveState;
     }
 
-    /** The archival state details of the model. */
+    /**
+     * The archival state details of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveStateDetails")
     private final String archiveStateDetails;
 
     /**
      * The archival state details of the model.
-     *
      * @return the value
-     */
+     **/
     public String getArchiveStateDetails() {
         return archiveStateDetails;
     }
 
-    /** The estimated archival time of the model based on the provided retention setting. */
+    /**
+     * The estimated archival time of the model based on the provided retention setting.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeArchivalScheduled")
     private final java.util.Date timeArchivalScheduled;
 
     /**
      * The estimated archival time of the model based on the provided retention setting.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeArchivalScheduled() {
         return timeArchivalScheduled;
     }
 
-    /** The deletion status of the archived model. */
+    /**
+     * The deletion status of the archived model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteState")
     private final ModelSettingActionState deleteState;
 
     /**
      * The deletion status of the archived model.
-     *
      * @return the value
-     */
+     **/
     public ModelSettingActionState getDeleteState() {
         return deleteState;
     }
 
-    /** The deletion status details of the archived model. */
+    /**
+     * The deletion status details of the archived model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteStateDetails")
     private final String deleteStateDetails;
 
     /**
      * The deletion status details of the archived model.
-     *
      * @return the value
-     */
+     **/
     public String getDeleteStateDetails() {
         return deleteStateDetails;
     }
 
-    /** The estimated deletion time of the model based on the provided retention setting. */
+    /**
+     * The estimated deletion time of the model based on the provided retention setting.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeletionScheduled")
     private final java.util.Date timeDeletionScheduled;
 
     /**
      * The estimated deletion time of the model based on the provided retention setting.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDeletionScheduled() {
         return timeDeletionScheduled;
     }
@@ -276,7 +289,6 @@ public final class RetentionOperationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

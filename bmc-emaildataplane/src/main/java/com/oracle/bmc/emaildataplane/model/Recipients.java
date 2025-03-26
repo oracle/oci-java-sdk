@@ -5,23 +5,21 @@
 package com.oracle.bmc.emaildataplane.model;
 
 /**
- * The destination for the email, composed of To, CC, and BCC fields. NOTE: At least one of To, CC,
- * and BCC must be provided. And max 50 recipients are allowed across the To:, CC: and BCC: fields.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220926")
+ * The destination for the email, composed of To, CC, and BCC fields.
+ * NOTE: At least one of To, CC, and BCC must be provided. And max 50 recipients are allowed across the To:, CC: and BCC: fields.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220926")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recipients.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Recipients extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Recipients extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"to", "cc", "bcc"})
     public Recipients(
@@ -36,46 +34,49 @@ public final class Recipients extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Array of To address. */
+        /**
+         * Array of To address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("to")
         private java.util.List<EmailAddress> to;
 
         /**
          * Array of To address.
-         *
          * @param to the value to set
          * @return this builder
-         */
+         **/
         public Builder to(java.util.List<EmailAddress> to) {
             this.to = to;
             this.__explicitlySet__.add("to");
             return this;
         }
-        /** Array of CC address. */
+        /**
+         * Array of CC address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cc")
         private java.util.List<EmailAddress> cc;
 
         /**
          * Array of CC address.
-         *
          * @param cc the value to set
          * @return this builder
-         */
+         **/
         public Builder cc(java.util.List<EmailAddress> cc) {
             this.cc = cc;
             this.__explicitlySet__.add("cc");
             return this;
         }
-        /** Array of BCC address. Bcc headers can only be viewed by non bcc recipients. */
+        /**
+         * Array of BCC address. Bcc headers can only be viewed by non bcc recipients.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bcc")
         private java.util.List<EmailAddress> bcc;
 
         /**
          * Array of BCC address. Bcc headers can only be viewed by non bcc recipients.
-         *
          * @param bcc the value to set
          * @return this builder
-         */
+         **/
         public Builder bcc(java.util.List<EmailAddress> bcc) {
             this.bcc = bcc;
             this.__explicitlySet__.add("bcc");
@@ -108,7 +109,9 @@ public final class Recipients extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +120,44 @@ public final class Recipients extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** Array of To address. */
+    /**
+     * Array of To address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("to")
     private final java.util.List<EmailAddress> to;
 
     /**
      * Array of To address.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EmailAddress> getTo() {
         return to;
     }
 
-    /** Array of CC address. */
+    /**
+     * Array of CC address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cc")
     private final java.util.List<EmailAddress> cc;
 
     /**
      * Array of CC address.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EmailAddress> getCc() {
         return cc;
     }
 
-    /** Array of BCC address. Bcc headers can only be viewed by non bcc recipients. */
+    /**
+     * Array of BCC address. Bcc headers can only be viewed by non bcc recipients.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bcc")
     private final java.util.List<EmailAddress> bcc;
 
     /**
      * Array of BCC address. Bcc headers can only be viewed by non bcc recipients.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EmailAddress> getBcc() {
         return bcc;
     }
@@ -163,7 +169,6 @@ public final class Recipients extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

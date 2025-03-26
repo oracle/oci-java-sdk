@@ -6,45 +6,46 @@ package com.oracle.bmc.streaming.requests;
 
 import com.oracle.bmc.streaming.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeStreamCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ChangeStreamCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeStreamCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class ChangeStreamCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails> {
 
-    /** The OCID of the stream. */
+    /**
+     * The OCID of the stream.
+     *
+     */
     private String streamId;
 
-    /** The OCID of the stream. */
+    /**
+     * The OCID of the stream.
+     *
+     */
     public String getStreamId() {
         return streamId;
     }
-    /** The stream will be moved into the compartment specified within this entity. */
+    /**
+     * The stream will be moved into the compartment specified within this entity.
+     */
     private com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
             changeStreamCompartmentDetails;
 
-    /** The stream will be moved into the compartment specified within this entity. */
+    /**
+     * The stream will be moved into the compartment specified within this entity.
+     */
     public com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
             getChangeStreamCompartmentDetails() {
         return changeStreamCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
@@ -52,12 +53,14 @@ public class ChangeStreamCompartmentRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -65,7 +68,6 @@ public class ChangeStreamCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -78,10 +80,14 @@ public class ChangeStreamCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeStreamCompartmentRequest,
                     com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the stream. */
+        /**
+         * The OCID of the stream.
+         *
+         */
         private String streamId = null;
 
         /**
@@ -95,13 +101,14 @@ public class ChangeStreamCompartmentRequest
             return this;
         }
 
-        /** The stream will be moved into the compartment specified within this entity. */
+        /**
+         * The stream will be moved into the compartment specified within this entity.
+         */
         private com.oracle.bmc.streaming.model.ChangeStreamCompartmentDetails
                 changeStreamCompartmentDetails = null;
 
         /**
          * The stream will be moved into the compartment specified within this entity.
-         *
          * @param changeStreamCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -113,19 +120,12 @@ public class ChangeStreamCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the if-match parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -135,14 +135,15 @@ public class ChangeStreamCompartmentRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -154,19 +155,18 @@ public class ChangeStreamCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -178,7 +178,6 @@ public class ChangeStreamCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeStreamCompartmentRequest o) {
@@ -194,11 +193,10 @@ public class ChangeStreamCompartmentRequest
         /**
          * Build the instance of ChangeStreamCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeStreamCompartmentRequest
          */
@@ -211,7 +209,6 @@ public class ChangeStreamCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -224,8 +221,7 @@ public class ChangeStreamCompartmentRequest
         /**
          * Build the instance of ChangeStreamCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeStreamCompartmentRequest
@@ -237,14 +233,12 @@ public class ChangeStreamCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ChangeStreamCompartmentRequest(streamId, changeStreamCompartmentDetails, ifMatch,
-            // opcRequestId);
+            // new ChangeStreamCompartmentRequest(streamId, changeStreamCompartmentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -257,7 +251,6 @@ public class ChangeStreamCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

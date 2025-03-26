@@ -5,23 +5,21 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * A log message from the execution of a work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * A log message from the execution of a work request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkRequestLogEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkRequestLogEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = WorkRequestLogEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequestLogEntry extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"message", "timestamp"})
     public WorkRequestLogEntry(String message, java.util.Date timestamp) {
@@ -32,35 +30,33 @@ public final class WorkRequestLogEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Human-readable log message. */
+        /**
+         * Human-readable log message.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Human-readable log message.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * The time the log message was written, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * The time the log message was written, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The time the log message was written, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         *
+         * The time the log message was written, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -90,7 +86,9 @@ public final class WorkRequestLogEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,32 +97,30 @@ public final class WorkRequestLogEntry
         return new Builder().copy(this);
     }
 
-    /** Human-readable log message. */
+    /**
+     * Human-readable log message.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Human-readable log message.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
     /**
-     * The time the log message was written, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * The time the log message was written, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The time the log message was written, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     *
+     * The time the log message was written, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -136,7 +132,6 @@ public final class WorkRequestLogEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

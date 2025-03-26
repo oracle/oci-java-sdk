@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * activity describing reviewer updates to a pull request <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * activity describing reviewer updates to a pull request
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReviewerActivitySummary.Builder.class)
+    builder = ReviewerActivitySummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "activityType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "activityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReviewerActivitySummary extends PullRequestActivitySummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -62,31 +62,33 @@ public final class ReviewerActivitySummary extends PullRequestActivitySummary {
             this.__explicitlySet__.add("timeOccurred");
             return this;
         }
-        /** list of reviewers added to a pull request */
+        /**
+         * list of reviewers added to a pull request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reviewersAdded")
         private java.util.List<PrincipalDetails> reviewersAdded;
 
         /**
          * list of reviewers added to a pull request
-         *
          * @param reviewersAdded the value to set
          * @return this builder
-         */
+         **/
         public Builder reviewersAdded(java.util.List<PrincipalDetails> reviewersAdded) {
             this.reviewersAdded = reviewersAdded;
             this.__explicitlySet__.add("reviewersAdded");
             return this;
         }
-        /** list of reviewers removed from a pull request */
+        /**
+         * list of reviewers removed from a pull request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reviewersRemoved")
         private java.util.List<PrincipalDetails> reviewersRemoved;
 
         /**
          * list of reviewers removed from a pull request
-         *
          * @param reviewersRemoved the value to set
          * @return this builder
-         */
+         **/
         public Builder reviewersRemoved(java.util.List<PrincipalDetails> reviewersRemoved) {
             this.reviewersRemoved = reviewersRemoved;
             this.__explicitlySet__.add("reviewersRemoved");
@@ -135,7 +137,9 @@ public final class ReviewerActivitySummary extends PullRequestActivitySummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,28 +161,30 @@ public final class ReviewerActivitySummary extends PullRequestActivitySummary {
         this.reviewersRemoved = reviewersRemoved;
     }
 
-    /** list of reviewers added to a pull request */
+    /**
+     * list of reviewers added to a pull request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reviewersAdded")
     private final java.util.List<PrincipalDetails> reviewersAdded;
 
     /**
      * list of reviewers added to a pull request
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PrincipalDetails> getReviewersAdded() {
         return reviewersAdded;
     }
 
-    /** list of reviewers removed from a pull request */
+    /**
+     * list of reviewers removed from a pull request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reviewersRemoved")
     private final java.util.List<PrincipalDetails> reviewersRemoved;
 
     /**
      * list of reviewers removed from a pull request
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PrincipalDetails> getReviewersRemoved() {
         return reviewersRemoved;
     }
@@ -190,7 +196,6 @@ public final class ReviewerActivitySummary extends PullRequestActivitySummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

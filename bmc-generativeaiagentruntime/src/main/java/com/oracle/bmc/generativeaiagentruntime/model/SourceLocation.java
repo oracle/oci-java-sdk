@@ -5,36 +5,39 @@
 package com.oracle.bmc.generativeaiagentruntime.model;
 
 /**
- * The location of the data files that the agent will use. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+ * The location of the data files that the agent will use.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "sourceLocationType",
-        defaultImpl = SourceLocation.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceLocationType",
+    defaultImpl = SourceLocation.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciObjectStorageSourceLocation.class,
-            name = "OCI_OBJECT_STORAGE"),
+        value = OciObjectStorageSourceLocation.class,
+        name = "OCI_OBJECT_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciOpenSearchSourceLocation.class,
-            name = "OCI_OPEN_SEARCH"),
+        value = OciOpenSearchSourceLocation.class,
+        name = "OCI_OPEN_SEARCH"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciDatabaseSourceLocation.class,
-            name = "OCI_DATABASE")
+        value = OciDatabaseSourceLocation.class,
+        name = "OCI_DATABASE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class SourceLocation extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class SourceLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected SourceLocation() {
@@ -48,7 +51,6 @@ public class SourceLocation extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -81,15 +83,17 @@ public class SourceLocation extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** The type of the data source that contains data files for the agent. */
-    public enum SourceLocationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the data source that contains data files for the agent.
+     **/
+    public enum SourceLocationType {
         OciObjectStorage("OCI_OBJECT_STORAGE"),
         OciOpenSearch("OCI_OPEN_SEARCH"),
         OciDatabase("OCI_DATABASE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -5,24 +5,24 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of an Oracle Database Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of an Oracle Database Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OracleConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -197,43 +197,48 @@ public final class OracleConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Oracle technology type. */
+        /**
+         * The Oracle technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Oracle technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+        /**
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
@@ -242,26 +247,27 @@ public final class OracleConnection extends Connection {
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
         /**
-         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
-         * Serverless connections, when a databaseId is provided. The default value is MTLS.
-         */
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+         * when a databaseId is provided. The default value is MTLS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
         private AuthenticationMode authenticationMode;
 
         /**
-         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
-         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+         * when a databaseId is provided. The default value is MTLS.
          *
          * @param authenticationMode the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationMode(AuthenticationMode authenticationMode) {
             this.authenticationMode = authenticationMode;
             this.__explicitlySet__.add("authenticationMode");
@@ -269,122 +275,121 @@ public final class OracleConnection extends Connection {
         }
         /**
          * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
-         * database involves a redirection received from the SCAN listeners to the database node to
-         * connect to. By default the mode would be DIRECT.
-         */
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
         /**
          * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
-         * database involves a redirection received from the SCAN listeners to the database node to
-         * connect to. By default the mode would be DIRECT.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          * @param sessionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionMode(SessionMode sessionMode) {
             this.sessionMode = sessionMode;
             this.__explicitlySet__.add("sessionMode");
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
-         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * Note: When provided, 'wallet' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
         private String walletSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to
-         * make connections to a database. Note: When provided, 'wallet' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * Note: When provided, 'wallet' field must not be provided.
          *
          * @param walletSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder walletSecretId(String walletSecretId) {
             this.walletSecretId = walletSecretId;
             this.__explicitlySet__.add("walletSecretId");
@@ -521,7 +526,9 @@ public final class OracleConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -591,8 +598,10 @@ public final class OracleConnection extends Connection {
         this.walletSecretId = walletSecretId;
     }
 
-    /** The Oracle technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Oracle technology type.
+     **/
+    public enum TechnologyType {
         AmazonRdsOracle("AMAZON_RDS_ORACLE"),
         OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
         OracleDatabase("ORACLE_DATABASE"),
@@ -605,8 +614,8 @@ public final class OracleConnection extends Connection {
         OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -645,39 +654,44 @@ public final class OracleConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Oracle technology type. */
+    /**
+     * The Oracle technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Oracle technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
-    /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+    /**
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
@@ -685,22 +699,23 @@ public final class OracleConnection extends Connection {
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
-     * connections, when a databaseId is provided. The default value is MTLS.
-     */
-    public enum AuthenticationMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+     * when a databaseId is provided. The default value is MTLS.
+     *
+     **/
+    public enum AuthenticationMode {
         Tls("TLS"),
         Mtls("MTLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -740,35 +755,37 @@ public final class OracleConnection extends Connection {
         }
     };
     /**
-     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
-     * connections, when a databaseId is provided. The default value is MTLS.
-     */
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+     * when a databaseId is provided. The default value is MTLS.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
     private final AuthenticationMode authenticationMode;
 
     /**
-     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
-     * connections, when a databaseId is provided. The default value is MTLS.
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+     * when a databaseId is provided. The default value is MTLS.
      *
      * @return the value
-     */
+     **/
     public AuthenticationMode getAuthenticationMode() {
         return authenticationMode;
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
-     */
-    public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    public enum SessionMode {
         Direct("DIRECT"),
         Redirect("REDIRECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -808,114 +825,113 @@ public final class OracleConnection extends Connection {
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
-     */
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      * @return the value
-     */
+     **/
     public SessionMode getSessionMode() {
         return sessionMode;
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
-     * connections to a database. Note: When provided, 'wallet' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * Note: When provided, 'wallet' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
     private final String walletSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the wallet file is stored. The wallet contents Oracle GoldenGate uses to make
-     * connections to a database. Note: When provided, 'wallet' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * Note: When provided, 'wallet' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getWalletSecretId() {
         return walletSecretId;
     }
@@ -927,7 +943,6 @@ public final class OracleConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

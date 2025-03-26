@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * ADDM recommendation <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * ADDM recommendation
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddmDbRecommendationsTimeSeriesSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddmDbRecommendationsTimeSeriesSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddmDbRecommendationsTimeSeriesSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,184 +70,192 @@ public final class AddmDbRecommendationsTimeSeriesSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Unique ADDM task id */
+        /**
+         * Unique ADDM task id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskId")
         private Integer taskId;
 
         /**
          * Unique ADDM task id
-         *
          * @param taskId the value to set
          * @return this builder
-         */
+         **/
         public Builder taskId(Integer taskId) {
             this.taskId = taskId;
             this.__explicitlySet__.add("taskId");
             return this;
         }
-        /** ADDM task name */
+        /**
+         * ADDM task name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
         /**
          * ADDM task name
-         *
          * @param taskName the value to set
          * @return this builder
-         */
+         **/
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
             return this;
         }
-        /** Timestamp when recommendation was generated */
+        /**
+         * Timestamp when recommendation was generated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * Timestamp when recommendation was generated
-         *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** Start Timestamp of snapshot */
+        /**
+         * Start Timestamp of snapshot
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAnalysisStarted")
         private java.util.Date timeAnalysisStarted;
 
         /**
          * Start Timestamp of snapshot
-         *
          * @param timeAnalysisStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAnalysisStarted(java.util.Date timeAnalysisStarted) {
             this.timeAnalysisStarted = timeAnalysisStarted;
             this.__explicitlySet__.add("timeAnalysisStarted");
             return this;
         }
-        /** End Timestamp of snapshot */
+        /**
+         * End Timestamp of snapshot
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAnalysisEnded")
         private java.util.Date timeAnalysisEnded;
 
         /**
          * End Timestamp of snapshot
-         *
          * @param timeAnalysisEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAnalysisEnded(java.util.Date timeAnalysisEnded) {
             this.timeAnalysisEnded = timeAnalysisEnded;
             this.__explicitlySet__.add("timeAnalysisEnded");
             return this;
         }
-        /** Type of recommendation */
+        /**
+         * Type of recommendation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of recommendation
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** DB time in seconds for the snapshot */
+        /**
+         * DB time in seconds for the snapshot
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("analysisDbTimeInSecs")
         private Double analysisDbTimeInSecs;
 
         /**
          * DB time in seconds for the snapshot
-         *
          * @param analysisDbTimeInSecs the value to set
          * @return this builder
-         */
+         **/
         public Builder analysisDbTimeInSecs(Double analysisDbTimeInSecs) {
             this.analysisDbTimeInSecs = analysisDbTimeInSecs;
             this.__explicitlySet__.add("analysisDbTimeInSecs");
             return this;
         }
-        /** DB avg active sessions for the snapshot */
+        /**
+         * DB avg active sessions for the snapshot
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("analysisAvgActiveSessions")
         private Double analysisAvgActiveSessions;
 
         /**
          * DB avg active sessions for the snapshot
-         *
          * @param analysisAvgActiveSessions the value to set
          * @return this builder
-         */
+         **/
         public Builder analysisAvgActiveSessions(Double analysisAvgActiveSessions) {
             this.analysisAvgActiveSessions = analysisAvgActiveSessions;
             this.__explicitlySet__.add("analysisAvgActiveSessions");
             return this;
         }
-        /** Maximum estimated benefit in terms of percentage of total activity */
+        /**
+         * Maximum estimated benefit in terms of percentage of total activity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitPercent")
         private Double maxBenefitPercent;
 
         /**
          * Maximum estimated benefit in terms of percentage of total activity
-         *
          * @param maxBenefitPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder maxBenefitPercent(Double maxBenefitPercent) {
             this.maxBenefitPercent = maxBenefitPercent;
             this.__explicitlySet__.add("maxBenefitPercent");
             return this;
         }
-        /** Maximum estimated benefit in terms of seconds */
+        /**
+         * Maximum estimated benefit in terms of seconds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitDbTimeInSecs")
         private Double maxBenefitDbTimeInSecs;
 
         /**
          * Maximum estimated benefit in terms of seconds
-         *
          * @param maxBenefitDbTimeInSecs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxBenefitDbTimeInSecs(Double maxBenefitDbTimeInSecs) {
             this.maxBenefitDbTimeInSecs = maxBenefitDbTimeInSecs;
             this.__explicitlySet__.add("maxBenefitDbTimeInSecs");
             return this;
         }
-        /** Maximum estimated benefit in terms of average active sessions */
+        /**
+         * Maximum estimated benefit in terms of average active sessions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitAvgActiveSessions")
         private Double maxBenefitAvgActiveSessions;
 
         /**
          * Maximum estimated benefit in terms of average active sessions
-         *
          * @param maxBenefitAvgActiveSessions the value to set
          * @return this builder
-         */
+         **/
         public Builder maxBenefitAvgActiveSessions(Double maxBenefitAvgActiveSessions) {
             this.maxBenefitAvgActiveSessions = maxBenefitAvgActiveSessions;
             this.__explicitlySet__.add("maxBenefitAvgActiveSessions");
@@ -334,7 +341,9 @@ public final class AddmDbRecommendationsTimeSeriesSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,161 +353,169 @@ public final class AddmDbRecommendationsTimeSeriesSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Unique ADDM task id */
+    /**
+     * Unique ADDM task id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskId")
     private final Integer taskId;
 
     /**
      * Unique ADDM task id
-     *
      * @return the value
-     */
+     **/
     public Integer getTaskId() {
         return taskId;
     }
 
-    /** ADDM task name */
+    /**
+     * ADDM task name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
     /**
      * ADDM task name
-     *
      * @return the value
-     */
+     **/
     public String getTaskName() {
         return taskName;
     }
 
-    /** Timestamp when recommendation was generated */
+    /**
+     * Timestamp when recommendation was generated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * Timestamp when recommendation was generated
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** Start Timestamp of snapshot */
+    /**
+     * Start Timestamp of snapshot
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAnalysisStarted")
     private final java.util.Date timeAnalysisStarted;
 
     /**
      * Start Timestamp of snapshot
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAnalysisStarted() {
         return timeAnalysisStarted;
     }
 
-    /** End Timestamp of snapshot */
+    /**
+     * End Timestamp of snapshot
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAnalysisEnded")
     private final java.util.Date timeAnalysisEnded;
 
     /**
      * End Timestamp of snapshot
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAnalysisEnded() {
         return timeAnalysisEnded;
     }
 
-    /** Type of recommendation */
+    /**
+     * Type of recommendation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of recommendation
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** DB time in seconds for the snapshot */
+    /**
+     * DB time in seconds for the snapshot
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("analysisDbTimeInSecs")
     private final Double analysisDbTimeInSecs;
 
     /**
      * DB time in seconds for the snapshot
-     *
      * @return the value
-     */
+     **/
     public Double getAnalysisDbTimeInSecs() {
         return analysisDbTimeInSecs;
     }
 
-    /** DB avg active sessions for the snapshot */
+    /**
+     * DB avg active sessions for the snapshot
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("analysisAvgActiveSessions")
     private final Double analysisAvgActiveSessions;
 
     /**
      * DB avg active sessions for the snapshot
-     *
      * @return the value
-     */
+     **/
     public Double getAnalysisAvgActiveSessions() {
         return analysisAvgActiveSessions;
     }
 
-    /** Maximum estimated benefit in terms of percentage of total activity */
+    /**
+     * Maximum estimated benefit in terms of percentage of total activity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitPercent")
     private final Double maxBenefitPercent;
 
     /**
      * Maximum estimated benefit in terms of percentage of total activity
-     *
      * @return the value
-     */
+     **/
     public Double getMaxBenefitPercent() {
         return maxBenefitPercent;
     }
 
-    /** Maximum estimated benefit in terms of seconds */
+    /**
+     * Maximum estimated benefit in terms of seconds
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitDbTimeInSecs")
     private final Double maxBenefitDbTimeInSecs;
 
     /**
      * Maximum estimated benefit in terms of seconds
-     *
      * @return the value
-     */
+     **/
     public Double getMaxBenefitDbTimeInSecs() {
         return maxBenefitDbTimeInSecs;
     }
 
-    /** Maximum estimated benefit in terms of average active sessions */
+    /**
+     * Maximum estimated benefit in terms of average active sessions
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitAvgActiveSessions")
     private final Double maxBenefitAvgActiveSessions;
 
     /**
      * Maximum estimated benefit in terms of average active sessions
-     *
      * @return the value
-     */
+     **/
     public Double getMaxBenefitAvgActiveSessions() {
         return maxBenefitAvgActiveSessions;
     }
@@ -517,7 +534,6 @@ public final class AddmDbRecommendationsTimeSeriesSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

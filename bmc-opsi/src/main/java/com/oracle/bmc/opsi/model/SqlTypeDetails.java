@@ -5,82 +5,85 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * SQL details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlTypeDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlTypeDetails extends RelatedObjectTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** SQL identifier */
+        /**
+         * SQL identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
         private String sqlId;
 
         /**
          * SQL identifier
-         *
          * @param sqlId the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlId(String sqlId) {
             this.sqlId = sqlId;
             this.__explicitlySet__.add("sqlId");
             return this;
         }
-        /** First 3800 characters of the SQL text */
+        /**
+         * First 3800 characters of the SQL text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
          * First 3800 characters of the SQL text
-         *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-        /** SQL identifier */
+        /**
+         * SQL identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSqlTextTruncated")
         private Boolean isSqlTextTruncated;
 
         /**
          * SQL identifier
-         *
          * @param isSqlTextTruncated the value to set
          * @return this builder
-         */
+         **/
         public Builder isSqlTextTruncated(Boolean isSqlTextTruncated) {
             this.isSqlTextTruncated = isSqlTextTruncated;
             this.__explicitlySet__.add("isSqlTextTruncated");
             return this;
         }
-        /** SQL command name (such as SELECT, INSERT) */
+        /**
+         * SQL command name (such as SELECT, INSERT)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
         private String sqlCommand;
 
         /**
          * SQL command name (such as SELECT, INSERT)
-         *
          * @param sqlCommand the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlCommand(String sqlCommand) {
             this.sqlCommand = sqlCommand;
             this.__explicitlySet__.add("sqlCommand");
@@ -118,7 +121,9 @@ public final class SqlTypeDetails extends RelatedObjectTypeDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +142,58 @@ public final class SqlTypeDetails extends RelatedObjectTypeDetails {
         this.sqlCommand = sqlCommand;
     }
 
-    /** SQL identifier */
+    /**
+     * SQL identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
     private final String sqlId;
 
     /**
      * SQL identifier
-     *
      * @return the value
-     */
+     **/
     public String getSqlId() {
         return sqlId;
     }
 
-    /** First 3800 characters of the SQL text */
+    /**
+     * First 3800 characters of the SQL text
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
      * First 3800 characters of the SQL text
-     *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
 
-    /** SQL identifier */
+    /**
+     * SQL identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSqlTextTruncated")
     private final Boolean isSqlTextTruncated;
 
     /**
      * SQL identifier
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSqlTextTruncated() {
         return isSqlTextTruncated;
     }
 
-    /** SQL command name (such as SELECT, INSERT) */
+    /**
+     * SQL command name (such as SELECT, INSERT)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
     private final String sqlCommand;
 
     /**
      * SQL command name (such as SELECT, INSERT)
-     *
      * @return the value
-     */
+     **/
     public String getSqlCommand() {
         return sqlCommand;
     }
@@ -196,7 +205,6 @@ public final class SqlTypeDetails extends RelatedObjectTypeDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

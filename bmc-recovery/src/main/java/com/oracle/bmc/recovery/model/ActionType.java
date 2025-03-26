@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.recovery.model;
 
-/** Possible types of actions. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
-public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of actions.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

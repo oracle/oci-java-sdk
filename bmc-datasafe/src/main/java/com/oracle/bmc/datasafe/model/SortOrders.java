@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** Defines the sorting order of the assessment (ascending or descending). */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Defines the sorting order of the assessment (ascending or descending).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),
     ;

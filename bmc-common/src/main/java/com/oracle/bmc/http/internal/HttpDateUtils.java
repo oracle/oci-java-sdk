@@ -7,32 +7,20 @@ package com.oracle.bmc.http.internal;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalTime;
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeFormatterBuilder;
-import java.time.format.DateTimeParseException;
-import java.time.temporal.TemporalQueries;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-import java.util.Optional;
 import java.util.TimeZone;
-
-import static java.time.temporal.ChronoField.INSTANT_SECONDS;
 
 /**
  * Date parsing utils.
- *
- * <p>Handles reusing date formatters, as well as which date formats that will be used to parse
- * various headers.
+ * <p>
+ * Handles reusing date formatters, as well as which date formats that will be
+ * used to parse various headers.
  */
-@SuppressWarnings({"deprecation"})
 public class HttpDateUtils {
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(HttpDateUtils.class);
@@ -44,6 +32,15 @@ public class HttpDateUtils {
                 @Override
                 protected synchronized List<DateFormat> initialValue() {
                     return createRfc2616DateFormats();
+                }
+            };
+
+    private static final ThreadLocal<List<DateFormat>> RFC3339_DATE_FORMATS =
+            new ThreadLocal<List<DateFormat>>() {
+                @Override
+                protected List<DateFormat> initialValue() {
+                    DateFormat format = new RFC3339DateFormat();
+                    return Collections.singletonList(format);
                 }
             };
 
@@ -82,8 +79,10 @@ public class HttpDateUtils {
     /**
      * Attempts to parse the given header into a Date instance.
      *
-     * @param headerName The header name.
-     * @param value The header value.
+     * @param headerName
+     *            The header name.
+     * @param value
+     *            The header value.
      * @return A new Date instance, or null if it could not be parsed.
      */
     static Date parse(String headerName, String value) {
@@ -101,7 +100,7 @@ public class HttpDateUtils {
         // swagger spec says datetime and date types should follow rfc3339:
         // http://swagger.io/specification/
         // https://tools.ietf.org/html/rfc3339#section-5.6
-        Date date = tryParseRfc3339(value);
+        Date date = tryParse(value, RFC3339_DATE_FORMATS.get());
         if (date == null) {
             LOG.warn("Could not create Date instance from rfc3339 format: " + value);
         }
@@ -109,30 +108,17 @@ public class HttpDateUtils {
     }
 
     /**
-     * Format the given date into Swagger RFC3339 date-time format. Milliseconds won't be included
-     * if they are zero.
+     * Format the given date into Swagger RFC3339 date-time format.
      *
-     * @param date The date to format.
+     * @param date
+     *            The date to format.
      * @return The formatted date.
      */
     public static String format(Date date) {
-        // The format will not include millis in the string if they are zero
-        // This is required for backwards compatibility
-        return DateTimeFormatter.ISO_INSTANT.format(date.toInstant());
-    }
-
-    private static DateTimeFormatter ISO_INSTANT_INCLUDE_MILLIS =
-            new DateTimeFormatterBuilder().parseCaseInsensitive().appendInstant(3).toFormatter();
-
-    /**
-     * Format the given date into Swagger RFC3339 date-time format. Milliseconds will always be
-     * included.
-     *
-     * @param date The date to format.
-     * @return Formatted date.
-     */
-    public static String formatAlwaysIncludeMillis(Date date) {
-        return ISO_INSTANT_INCLUDE_MILLIS.format(date.toInstant());
+        // for backwards compatibility, if there are no millis, do not
+        // include them in the string.
+        boolean includeMillis = date.getTime() % 1000 != 0;
+        return RFC3339DateFormat.formatRfc3339(date, includeMillis);
     }
 
     private static Date tryParse(String date, List<DateFormat> formats) {
@@ -146,43 +132,6 @@ public class HttpDateUtils {
                 // ignore
             }
         }
-        return null;
-    }
-
-    private static Date tryParseRfc3339(String date) {
-        DateTimeFormatter formatter =
-                new DateTimeFormatterBuilder()
-                        .append(DateTimeFormatter.ISO_LOCAL_DATE)
-                        .optionalStart()
-                        .appendLiteral('T')
-                        .append(DateTimeFormatter.ISO_LOCAL_TIME)
-                        .optionalEnd()
-                        .optionalStart()
-                        .appendOffsetId()
-                        .toFormatter();
-        try {
-            return formatter.parse(
-                    date,
-                    temporal -> {
-                        if (temporal.isSupported(INSTANT_SECONDS)) {
-                            return Date.from(Instant.from(temporal));
-                        }
-
-                        LocalDate localDate = LocalDate.from(temporal);
-                        LocalTime localTime =
-                                Optional.ofNullable(temporal.query(TemporalQueries.localTime()))
-                                        .orElse(LocalTime.MIDNIGHT);
-                        ZoneOffset offset =
-                                Optional.ofNullable(temporal.query(TemporalQueries.offset()))
-                                        .orElse(ZoneOffset.UTC);
-
-                        ZonedDateTime dateTime = ZonedDateTime.of(localDate, localTime, offset);
-                        return Date.from(dateTime.toInstant());
-                    });
-        } catch (DateTimeParseException ignored) {
-            // ignore
-        }
-
         return null;
     }
 }

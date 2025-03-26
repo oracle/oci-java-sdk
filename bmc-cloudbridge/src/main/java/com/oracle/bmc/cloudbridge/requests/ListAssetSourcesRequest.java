@@ -6,44 +6,44 @@ package com.oracle.bmc.cloudbridge.requests;
 
 import com.oracle.bmc.cloudbridge.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssetSourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetSourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssetSourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asset source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
      */
     private String assetSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asset source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
      */
     public String getAssetSourceId() {
         return assetSourceId;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in
-     * descending order and displayName is in ascending order.
+     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in
-     * descending order and displayName is in ascending order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -77,57 +77,75 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in
-     * descending order and displayName is in ascending order.
+     * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The current state of the asset source. */
+    /**
+     * The current state of the asset source.
+     */
     private com.oracle.bmc.cloudbridge.model.AssetSourceLifecycleState lifecycleState;
 
-    /** The current state of the asset source. */
+    /**
+     * The current state of the asset source.
+     */
     public com.oracle.bmc.cloudbridge.model.AssetSourceLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.cloudbridge.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -135,15 +153,17 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAssetSourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -153,15 +173,12 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asset source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
          */
         private String assetSourceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asset source.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asset source.
          * @param assetSourceId the value to set
          * @return this builder instance
          */
@@ -171,14 +188,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. By default, the timeCreated is
-         * in descending order and displayName is in ascending order.
+         * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. By default, the timeCreated is
-         * in descending order and displayName is in ascending order.
+         * The field to sort by. Only one sort order may be provided. By default, the timeCreated is in descending order and displayName is in ascending order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -188,12 +204,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The current state of the asset source. */
+        /**
+         * The current state of the asset source.
+         */
         private com.oracle.bmc.cloudbridge.model.AssetSourceLifecycleState lifecycleState = null;
 
         /**
          * The current state of the asset source.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -203,12 +220,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -217,12 +235,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -231,12 +250,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -246,15 +266,12 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -263,12 +280,13 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -279,19 +297,18 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -303,7 +320,6 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAssetSourcesRequest o) {
@@ -324,11 +340,10 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListAssetSourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAssetSourcesRequest
          */
@@ -342,8 +357,7 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListAssetSourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAssetSourcesRequest
@@ -360,14 +374,12 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAssetSourcesRequest(compartmentId, assetSourceId, sortBy, lifecycleState,
-            // sortOrder, displayName, limit, page, opcRequestId);
+            // new ListAssetSourcesRequest(compartmentId, assetSourceId, sortBy, lifecycleState, sortOrder, displayName, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -385,7 +397,6 @@ public class ListAssetSourcesRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

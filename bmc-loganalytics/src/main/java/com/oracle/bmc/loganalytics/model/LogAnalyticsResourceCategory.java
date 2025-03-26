@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A resource and its category. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A resource and its category.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsResourceCategory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsResourceCategory.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsResourceCategory
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceId", "resourceType", "categoryName", "isSystem"})
     public LogAnalyticsResourceCategory(
@@ -35,65 +34,69 @@ public final class LogAnalyticsResourceCategory
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of the resource, usually a name or ocid. */
+        /**
+         * The unique identifier of the resource, usually a name or ocid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The unique identifier of the resource, usually a name or ocid.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The resource type. */
+        /**
+         * The resource type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The resource type.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The category name to which this resource belongs. */
+        /**
+         * The category name to which this resource belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
         private String categoryName;
 
         /**
          * The category name to which this resource belongs.
-         *
          * @param categoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder categoryName(String categoryName) {
             this.categoryName = categoryName;
             this.__explicitlySet__.add("categoryName");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a user-created category assignment. A value of
-         * true denotes an Oracle-defined category assignment.
-         */
+         * The system flag. A value of false denotes a user-created category assignment.
+         * A value of true denotes an Oracle-defined category assignment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a user-created category assignment. A value of
-         * true denotes an Oracle-defined category assignment.
+         * The system flag. A value of false denotes a user-created category assignment.
+         * A value of true denotes an Oracle-defined category assignment.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
@@ -131,7 +134,9 @@ public final class LogAnalyticsResourceCategory
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +145,62 @@ public final class LogAnalyticsResourceCategory
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of the resource, usually a name or ocid. */
+    /**
+     * The unique identifier of the resource, usually a name or ocid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The unique identifier of the resource, usually a name or ocid.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The resource type. */
+    /**
+     * The resource type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The resource type.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The category name to which this resource belongs. */
+    /**
+     * The category name to which this resource belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
     private final String categoryName;
 
     /**
      * The category name to which this resource belongs.
-     *
      * @return the value
-     */
+     **/
     public String getCategoryName() {
         return categoryName;
     }
 
     /**
-     * The system flag. A value of false denotes a user-created category assignment. A value of true
-     * denotes an Oracle-defined category assignment.
-     */
+     * The system flag. A value of false denotes a user-created category assignment.
+     * A value of true denotes an Oracle-defined category assignment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a user-created category assignment. A value of true
-     * denotes an Oracle-defined category assignment.
+     * The system flag. A value of false denotes a user-created category assignment.
+     * A value of true denotes an Oracle-defined category assignment.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
@@ -203,7 +212,6 @@ public final class LogAnalyticsResourceCategory
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

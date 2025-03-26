@@ -5,23 +5,23 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * Get summary information about pre-authenticated requests. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Get summary information about pre-authenticated requests.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PreauthenticatedRequestSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PreauthenticatedRequestSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PreauthenticatedRequestSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -52,129 +52,128 @@ public final class PreauthenticatedRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier to use when directly addressing the pre-authenticated request. */
+        /**
+         * The unique identifier to use when directly addressing the pre-authenticated request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier to use when directly addressing the pre-authenticated request.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user-provided name of the pre-authenticated request. */
+        /**
+         * The user-provided name of the pre-authenticated request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The user-provided name of the pre-authenticated request.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The name of object that is being granted access to by the pre-authenticated request. This
-         * can be null and if it is, the pre-authenticated request grants access to the entire
-         * bucket.
-         */
+         * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+         * the pre-authenticated request grants access to the entire bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
-         * The name of object that is being granted access to by the pre-authenticated request. This
-         * can be null and if it is, the pre-authenticated request grants access to the entire
-         * bucket.
+         * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+         * the pre-authenticated request grants access to the entire bucket.
          *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or
-         * "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation.
+         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+         * Deny: Prevents the user from performing a list operation.
          * ListObjects: Authorizes the user to perform a list operation.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
         private PreauthenticatedRequest.BucketListingAction bucketListingAction;
 
         /**
-         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or
-         * "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation.
+         * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+         * Deny: Prevents the user from performing a list operation.
          * ListObjects: Authorizes the user to perform a list operation.
          *
          * @param bucketListingAction the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketListingAction(
                 PreauthenticatedRequest.BucketListingAction bucketListingAction) {
             this.bucketListingAction = bucketListingAction;
             this.__explicitlySet__.add("bucketListingAction");
             return this;
         }
-        /** The operation that can be performed on this resource. */
+        /**
+         * The operation that can be performed on this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
         /**
          * The operation that can be performed on this resource.
-         *
          * @param accessType the value to set
          * @return this builder
-         */
+         **/
         public Builder accessType(AccessType accessType) {
             this.accessType = accessType;
             this.__explicitlySet__.add("accessType");
             return this;
         }
         /**
-         * The expiration date for the pre-authenticated request as per [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request
-         * will no longer be valid.
-         */
+         * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
-         * The expiration date for the pre-authenticated request as per [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request
-         * will no longer be valid.
+         * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
          *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
         /**
-         * The date when the pre-authenticated request was created as per [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date when the pre-authenticated request was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date when the pre-authenticated request was created as per [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339).
+         * The date when the pre-authenticated request was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -227,7 +226,9 @@ public final class PreauthenticatedRequestSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -236,70 +237,76 @@ public final class PreauthenticatedRequestSummary
         return new Builder().copy(this);
     }
 
-    /** The unique identifier to use when directly addressing the pre-authenticated request. */
+    /**
+     * The unique identifier to use when directly addressing the pre-authenticated request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier to use when directly addressing the pre-authenticated request.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user-provided name of the pre-authenticated request. */
+    /**
+     * The user-provided name of the pre-authenticated request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The user-provided name of the pre-authenticated request.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The name of object that is being granted access to by the pre-authenticated request. This can
-     * be null and if it is, the pre-authenticated request grants access to the entire bucket.
-     */
+     * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+     * the pre-authenticated request grants access to the entire bucket.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
-     * The name of object that is being granted access to by the pre-authenticated request. This can
-     * be null and if it is, the pre-authenticated request grants access to the entire bucket.
+     * The name of object that is being granted access to by the pre-authenticated request. This can be null and if it is,
+     * the pre-authenticated request grants access to the entire bucket.
      *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or
-     * "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects:
-     * Authorizes the user to perform a list operation.
-     */
+     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketListingAction")
     private final PreauthenticatedRequest.BucketListingAction bucketListingAction;
 
     /**
-     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or
-     * "AnyObjectReadWrite". Deny: Prevents the user from performing a list operation. ListObjects:
-     * Authorizes the user to perform a list operation.
+     * Specifies whether a list operation is allowed on a PAR with accessType "AnyObjectRead" or "AnyObjectReadWrite".
+     * Deny: Prevents the user from performing a list operation.
+     * ListObjects: Authorizes the user to perform a list operation.
      *
      * @return the value
-     */
+     **/
     public PreauthenticatedRequest.BucketListingAction getBucketListingAction() {
         return bucketListingAction;
     }
 
-    /** The operation that can be performed on this resource. */
-    public enum AccessType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The operation that can be performed on this resource.
+     **/
+    public enum AccessType {
         ObjectRead("ObjectRead"),
         ObjectWrite("ObjectWrite"),
         ObjectReadWrite("ObjectReadWrite"),
@@ -308,8 +315,8 @@ public final class PreauthenticatedRequestSummary
         AnyObjectReadWrite("AnyObjectReadWrite"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -348,51 +355,48 @@ public final class PreauthenticatedRequestSummary
             return UnknownEnumValue;
         }
     };
-    /** The operation that can be performed on this resource. */
+    /**
+     * The operation that can be performed on this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     private final AccessType accessType;
 
     /**
      * The operation that can be performed on this resource.
-     *
      * @return the value
-     */
+     **/
     public AccessType getAccessType() {
         return accessType;
     }
 
     /**
-     * The expiration date for the pre-authenticated request as per [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request
-     * will no longer be valid.
-     */
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
-     * The expiration date for the pre-authenticated request as per [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request
-     * will no longer be valid.
+     * The expiration date for the pre-authenticated request as per [RFC 3339](https://tools.ietf.org/html/rfc3339). After this date the pre-authenticated request will no longer be valid.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
     /**
-     * The date when the pre-authenticated request was created as per [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date when the pre-authenticated request was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date when the pre-authenticated request was created as per [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339).
+     * The date when the pre-authenticated request was created as per [RFC 3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -404,7 +408,6 @@ public final class PreauthenticatedRequestSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

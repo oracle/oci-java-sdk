@@ -6,14 +6,15 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Unique Oracle-assigned identifier for the request. */
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
@@ -23,37 +24,34 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
     private ChangeFileSystemCompartmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ChangeFileSystemCompartmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Unique Oracle-assigned identifier for the request. */
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         */
         private String opcRequestId;
 
         /**
          * Unique Oracle-assigned identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -64,10 +62,8 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ChangeFileSystemCompartmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -78,10 +74,8 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ChangeFileSystemCompartmentResponse build() {
             return new ChangeFileSystemCompartmentResponse(
                     __httpStatusCode__, headers, opcRequestId);
@@ -90,7 +84,6 @@ public class ChangeFileSystemCompartmentResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

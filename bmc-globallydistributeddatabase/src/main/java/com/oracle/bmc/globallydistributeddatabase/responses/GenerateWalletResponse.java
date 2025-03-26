@@ -6,17 +6,18 @@ package com.oracle.bmc.globallydistributeddatabase.responses;
 
 import com.oracle.bmc.globallydistributeddatabase.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,36 +40,39 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
         return etag;
     }
 
-    /** Size of the file. */
+    /**
+     * Size of the file.
+     */
     private Long contentLength;
 
     /**
      * Size of the file.
-     *
      * @return the value
      */
     public Long getContentLength() {
         return contentLength;
     }
 
-    /** The date and time the wallet was created. */
+    /**
+     * The date and time the wallet was created.
+     */
     private java.util.Date lastModified;
 
     /**
      * The date and time the wallet was created.
-     *
      * @return the value
      */
     public java.util.Date getLastModified() {
         return lastModified;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -83,7 +90,7 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GenerateWalletResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             Long contentLength,
@@ -97,33 +104,31 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GenerateWalletResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,7 +138,10 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -147,12 +155,13 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** Size of the file. */
+        /**
+         * Size of the file.
+         */
         private Long contentLength;
 
         /**
          * Size of the file.
-         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -161,12 +170,13 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The date and time the wallet was created. */
+        /**
+         * The date and time the wallet was created.
+         */
         private java.util.Date lastModified;
 
         /**
          * The date and time the wallet was created.
-         *
          * @param lastModified the value to set
          * @return this builder
          */
@@ -175,12 +185,13 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -191,10 +202,8 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GenerateWalletResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -209,10 +218,8 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GenerateWalletResponse build() {
             return new GenerateWalletResponse(
                     __httpStatusCode__,
@@ -227,7 +234,6 @@ public class GenerateWalletResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

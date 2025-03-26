@@ -5,22 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The Member Reference details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The Member Reference details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MemberReference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MemberReference
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MemberReference extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "type", "compositeType"})
     public MemberReference(String id, MemberReferenceType type, String compositeType) {
@@ -32,46 +29,49 @@ public final class MemberReference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resourceInstance/resourceType/resourceGroup */
+        /**
+         * The OCID of the resourceInstance/resourceType/resourceGroup
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resourceInstance/resourceType/resourceGroup
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP */
+        /**
+         * Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MemberReferenceType type;
 
         /**
          * Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(MemberReferenceType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The OCID of the composite resource type like EBS or Peoplesoft. */
+        /**
+         * The OCID of the composite resource type like EBS or Peoplesoft.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
         private String compositeType;
 
         /**
          * The OCID of the composite resource type like EBS or Peoplesoft.
-         *
          * @param compositeType the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeType(String compositeType) {
             this.compositeType = compositeType;
             this.__explicitlySet__.add("compositeType");
@@ -104,7 +104,9 @@ public final class MemberReference
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +115,44 @@ public final class MemberReference
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resourceInstance/resourceType/resourceGroup */
+    /**
+     * The OCID of the resourceInstance/resourceType/resourceGroup
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resourceInstance/resourceType/resourceGroup
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP */
+    /**
+     * Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MemberReferenceType type;
 
     /**
      * Type of the member reference RESOURCE_INSTANCE, RESOURCE_TYPE, RESOURCE_GROUP
-     *
      * @return the value
-     */
+     **/
     public MemberReferenceType getType() {
         return type;
     }
 
-    /** The OCID of the composite resource type like EBS or Peoplesoft. */
+    /**
+     * The OCID of the composite resource type like EBS or Peoplesoft.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
     private final String compositeType;
 
     /**
      * The OCID of the composite resource type like EBS or Peoplesoft.
-     *
      * @return the value
-     */
+     **/
     public String getCompositeType() {
         return compositeType;
     }
@@ -159,7 +164,6 @@ public final class MemberReference
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

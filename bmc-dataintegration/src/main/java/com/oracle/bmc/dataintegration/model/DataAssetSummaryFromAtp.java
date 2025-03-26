@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Summary details for the Autonomous Transaction Processing data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Summary details for the Autonomous Transaction Processing data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataAssetSummaryFromAtp.Builder.class)
+    builder = DataAssetSummaryFromAtp.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DataAssetSummaryFromAtp extends DataAssetSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -134,46 +134,49 @@ public final class DataAssetSummaryFromAtp extends DataAssetSummary {
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /** The Autonomous Transaction Processing instance service name. */
+        /**
+         * The Autonomous Transaction Processing instance service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The Autonomous Transaction Processing instance service name.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** Array of service names that are available for selection in the serviceName property. */
+        /**
+         * Array of service names that are available for selection in the serviceName property.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
         private java.util.List<String> serviceNames;
 
         /**
          * Array of service names that are available for selection in the serviceName property.
-         *
          * @param serviceNames the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceNames(java.util.List<String> serviceNames) {
             this.serviceNames = serviceNames;
             this.__explicitlySet__.add("serviceNames");
             return this;
         }
-        /** The Autonomous Transaction Processing driver class. */
+        /**
+         * The Autonomous Transaction Processing driver class.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
         /**
          * The Autonomous Transaction Processing driver class.
-         *
          * @param driverClass the value to set
          * @return this builder
-         */
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
@@ -271,7 +274,9 @@ public final class DataAssetSummaryFromAtp extends DataAssetSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -317,41 +322,44 @@ public final class DataAssetSummaryFromAtp extends DataAssetSummary {
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Autonomous Transaction Processing instance service name. */
+    /**
+     * The Autonomous Transaction Processing instance service name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The Autonomous Transaction Processing instance service name.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Array of service names that are available for selection in the serviceName property. */
+    /**
+     * Array of service names that are available for selection in the serviceName property.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNames")
     private final java.util.List<String> serviceNames;
 
     /**
      * Array of service names that are available for selection in the serviceName property.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getServiceNames() {
         return serviceNames;
     }
 
-    /** The Autonomous Transaction Processing driver class. */
+    /**
+     * The Autonomous Transaction Processing driver class.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
     /**
      * The Autonomous Transaction Processing driver class.
-     *
      * @return the value
-     */
+     **/
     public String getDriverClass() {
         return driverClass;
     }
@@ -370,7 +378,6 @@ public final class DataAssetSummaryFromAtp extends DataAssetSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

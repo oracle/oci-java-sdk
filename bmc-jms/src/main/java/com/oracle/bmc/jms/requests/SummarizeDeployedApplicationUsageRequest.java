@@ -6,147 +6,190 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationUsageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeDeployedApplicationUsageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeDeployedApplicationUsageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeDeployedApplicationUsageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class SummarizeDeployedApplicationUsageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** The server key. */
+    /**
+     * The server key.
+     *
+     */
     private String serverKey;
 
-    /** The server key. */
+    /**
+     * The server key.
+     *
+     */
     public String getServerKey() {
         return serverKey;
     }
-    /** The Java Server instance key. */
+    /**
+     * The Java Server instance key.
+     *
+     */
     private String serverInstanceKey;
 
-    /** The Java Server instance key. */
+    /**
+     * The Java Server instance key.
+     *
+     */
     public String getServerInstanceKey() {
         return serverInstanceKey;
     }
-    /** The Fleet-unique identifier of the managed instance. */
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
     private String managedInstanceId;
 
-    /** The Fleet-unique identifier of the managed instance. */
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /** The library key. */
+    /**
+     * The library key.
+     *
+     */
     private String libraryKey;
 
-    /** The library key. */
+    /**
+     * The library key.
+     *
+     */
     public String getLibraryKey() {
         return libraryKey;
     }
-    /** The deployed application key. */
+    /**
+     * The deployed application key.
+     *
+     */
     private String applicationKey;
 
-    /** The deployed application key. */
+    /**
+     * The deployed application key.
+     *
+     */
     public String getApplicationKey() {
         return applicationKey;
     }
-    /** Filter the list with deployed application name contains the given value. */
+    /**
+     * Filter the list with deployed application name contains the given value.
+     *
+     */
     private String applicationNameContains;
 
-    /** Filter the list with deployed application name contains the given value. */
+    /**
+     * Filter the list with deployed application name contains the given value.
+     *
+     */
     public String getApplicationNameContains() {
         return applicationNameContains;
     }
-    /** The deployed application name. */
+    /**
+     * The deployed application name.
+     *
+     */
     private String applicationName;
 
-    /** The deployed application name. */
+    /**
+     * The deployed application name.
+     *
+     */
     public String getApplicationName() {
         return applicationName;
     }
     /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort the deployed applications. Only one sort order can be provided. If no value
-     * is specified _timeLastSeen_ is default.
+     * The field to sort the deployed applications. Only one sort order can be provided.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     private com.oracle.bmc.jms.model.DeployedApplicationSortBy sortBy;
 
     /**
-     * The field to sort the deployed applications. Only one sort order can be provided. If no value
-     * is specified _timeLastSeen_ is default.
+     * The field to sort the deployed applications. Only one sort order can be provided.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     public com.oracle.bmc.jms.model.DeployedApplicationSortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -154,19 +197,17 @@ public class SummarizeDeployedApplicationUsageRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeDeployedApplicationUsageRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -175,7 +216,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The server key. */
+        /**
+         * The server key.
+         *
+         */
         private String serverKey = null;
 
         /**
@@ -189,7 +233,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The Java Server instance key. */
+        /**
+         * The Java Server instance key.
+         *
+         */
         private String serverInstanceKey = null;
 
         /**
@@ -203,12 +250,13 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The Fleet-unique identifier of the managed instance. */
+        /**
+         * The Fleet-unique identifier of the managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the managed instance.
-         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -217,7 +265,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The library key. */
+        /**
+         * The library key.
+         *
+         */
         private String libraryKey = null;
 
         /**
@@ -231,7 +282,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The deployed application key. */
+        /**
+         * The deployed application key.
+         *
+         */
         private String applicationKey = null;
 
         /**
@@ -245,7 +299,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** Filter the list with deployed application name contains the given value. */
+        /**
+         * Filter the list with deployed application name contains the given value.
+         *
+         */
         private String applicationNameContains = null;
 
         /**
@@ -259,7 +316,10 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The deployed application name. */
+        /**
+         * The deployed application name.
+         *
+         */
         private String applicationName = null;
 
         /**
@@ -274,15 +334,12 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeStart = null;
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeStart the value to set
          * @return this builder instance
          */
@@ -292,15 +349,12 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeEnd the value to set
          * @return this builder instance
          */
@@ -309,12 +363,13 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -324,15 +379,12 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -341,12 +393,13 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -356,14 +409,15 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * The field to sort the deployed applications. Only one sort order can be provided. If no
-         * value is specified _timeLastSeen_ is default.
+         * The field to sort the deployed applications. Only one sort order can be provided.
+         * If no value is specified _timeLastSeen_ is default.
+         *
          */
         private com.oracle.bmc.jms.model.DeployedApplicationSortBy sortBy = null;
 
         /**
-         * The field to sort the deployed applications. Only one sort order can be provided. If no
-         * value is specified _timeLastSeen_ is default.
+         * The field to sort the deployed applications. Only one sort order can be provided.
+         * If no value is specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -373,12 +427,13 @@ public class SummarizeDeployedApplicationUsageRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -389,19 +444,18 @@ public class SummarizeDeployedApplicationUsageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -413,7 +467,6 @@ public class SummarizeDeployedApplicationUsageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeDeployedApplicationUsageRequest o) {
@@ -438,14 +491,12 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * Build the instance of SummarizeDeployedApplicationUsageRequest as configured by this
-         * builder
+         * Build the instance of SummarizeDeployedApplicationUsageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeDeployedApplicationUsageRequest
          */
@@ -457,11 +508,9 @@ public class SummarizeDeployedApplicationUsageRequest
         }
 
         /**
-         * Build the instance of SummarizeDeployedApplicationUsageRequest as configured by this
-         * builder
+         * Build the instance of SummarizeDeployedApplicationUsageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeDeployedApplicationUsageRequest
@@ -485,15 +534,12 @@ public class SummarizeDeployedApplicationUsageRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new SummarizeDeployedApplicationUsageRequest(fleetId, serverKey, serverInstanceKey,
-            // managedInstanceId, libraryKey, applicationKey, applicationNameContains,
-            // applicationName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
+            // new SummarizeDeployedApplicationUsageRequest(fleetId, serverKey, serverInstanceKey, managedInstanceId, libraryKey, applicationKey, applicationNameContains, applicationName, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -517,7 +563,6 @@ public class SummarizeDeployedApplicationUsageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

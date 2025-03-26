@@ -5,74 +5,71 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Patching configurations which allows patch the nodes batch by batch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Patching configurations which allows patch the nodes batch by batch.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BatchingBasedOdhPatchingConfig.Builder.class)
+    builder = BatchingBasedOdhPatchingConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "patchingConfigStrategy")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "patchingConfigStrategy"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** How many nodes to be patched in each iteration. */
+        /**
+         * How many nodes to be patched in each iteration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchSize")
         private Integer batchSize;
 
         /**
          * How many nodes to be patched in each iteration.
-         *
          * @param batchSize the value to set
          * @return this builder
-         */
+         **/
         public Builder batchSize(Integer batchSize) {
             this.batchSize = batchSize;
             this.__explicitlySet__.add("batchSize");
             return this;
         }
-        /** The wait time between batches in seconds. */
+        /**
+         * The wait time between batches in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("waitTimeBetweenBatchInSeconds")
         private Integer waitTimeBetweenBatchInSeconds;
 
         /**
          * The wait time between batches in seconds.
-         *
          * @param waitTimeBetweenBatchInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder waitTimeBetweenBatchInSeconds(Integer waitTimeBetweenBatchInSeconds) {
             this.waitTimeBetweenBatchInSeconds = waitTimeBetweenBatchInSeconds;
             this.__explicitlySet__.add("waitTimeBetweenBatchInSeconds");
             return this;
         }
         /**
-         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of
-         * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master
-         * nodes.
-         */
+         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerBatch")
         private Integer toleranceThresholdPerBatch;
 
         /**
-         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of
-         * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master
-         * nodes.
-         *
+         * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
          * @param toleranceThresholdPerBatch the value to set
          * @return this builder
-         */
+         **/
         public Builder toleranceThresholdPerBatch(Integer toleranceThresholdPerBatch) {
             this.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
             this.__explicitlySet__.add("toleranceThresholdPerBatch");
@@ -109,7 +106,9 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,45 +128,44 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
         this.toleranceThresholdPerBatch = toleranceThresholdPerBatch;
     }
 
-    /** How many nodes to be patched in each iteration. */
+    /**
+     * How many nodes to be patched in each iteration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchSize")
     private final Integer batchSize;
 
     /**
      * How many nodes to be patched in each iteration.
-     *
      * @return the value
-     */
+     **/
     public Integer getBatchSize() {
         return batchSize;
     }
 
-    /** The wait time between batches in seconds. */
+    /**
+     * The wait time between batches in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitTimeBetweenBatchInSeconds")
     private final Integer waitTimeBetweenBatchInSeconds;
 
     /**
      * The wait time between batches in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getWaitTimeBetweenBatchInSeconds() {
         return waitTimeBetweenBatchInSeconds;
     }
 
     /**
-     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of
-     * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
-     */
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerBatch")
     private final Integer toleranceThresholdPerBatch;
 
     /**
-     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of
-     * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
-     *
+     * Acceptable number of failed-to-be-patched nodes in each batch. The maximum number of failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
      * @return the value
-     */
+     **/
     public Integer getToleranceThresholdPerBatch() {
         return toleranceThresholdPerBatch;
     }
@@ -179,7 +177,6 @@ public final class BatchingBasedOdhPatchingConfig extends OdhPatchingConfig {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

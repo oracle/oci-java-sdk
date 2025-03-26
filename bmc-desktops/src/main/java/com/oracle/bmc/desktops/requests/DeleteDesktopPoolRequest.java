@@ -6,38 +6,52 @@ package com.oracle.bmc.desktops.requests;
 
 import com.oracle.bmc.desktops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopPoolExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDesktopPoolRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopPoolExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDesktopPoolRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     private String desktopPoolId;
 
-    /** The OCID of the desktop pool. */
+    /**
+     * The OCID of the desktop pool.
+     */
     public String getDesktopPoolId() {
         return desktopPoolId;
     }
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     private String ifMatch;
 
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Whether the volumes are preserved when a desktop pool is deleted. */
+    /**
+     * Whether the volumes are preserved when a desktop pool is deleted.
+     */
     private Boolean areVolumesPreserved;
 
-    /** Whether the volumes are preserved when a desktop pool is deleted. */
+    /**
+     * Whether the volumes are preserved when a desktop pool is deleted.
+     */
     public Boolean getAreVolumesPreserved() {
         return areVolumesPreserved;
     }
@@ -45,15 +59,17 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteDesktopPoolRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the desktop pool. */
+        /**
+         * The OCID of the desktop pool.
+         */
         private String desktopPoolId = null;
 
         /**
          * The OCID of the desktop pool.
-         *
          * @param desktopPoolId the value to set
          * @return this builder instance
          */
@@ -62,12 +78,13 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -76,12 +93,13 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** For optimistic concurrency control. */
+        /**
+         * For optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control.
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -90,12 +108,13 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Whether the volumes are preserved when a desktop pool is deleted. */
+        /**
+         * Whether the volumes are preserved when a desktop pool is deleted.
+         */
         private Boolean areVolumesPreserved = null;
 
         /**
          * Whether the volumes are preserved when a desktop pool is deleted.
-         *
          * @param areVolumesPreserved the value to set
          * @return this builder instance
          */
@@ -106,19 +125,18 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -130,7 +148,6 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteDesktopPoolRequest o) {
@@ -146,11 +163,10 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of DeleteDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteDesktopPoolRequest
          */
@@ -164,8 +180,7 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of DeleteDesktopPoolRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteDesktopPoolRequest
@@ -177,14 +192,12 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
             request.ifMatch = ifMatch;
             request.areVolumesPreserved = areVolumesPreserved;
             return request;
-            // new DeleteDesktopPoolRequest(desktopPoolId, opcRequestId, ifMatch,
-            // areVolumesPreserved);
+            // new DeleteDesktopPoolRequest(desktopPoolId, opcRequestId, ifMatch, areVolumesPreserved);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -197,7 +210,6 @@ public class DeleteDesktopPoolRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * A summary of properties for the specified alarm suppression history item. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * A summary of properties for the specified alarm suppression history item.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AlarmSuppressionHistoryItem.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AlarmSuppressionHistoryItem.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AlarmSuppressionHistoryItem
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "suppressionId",
@@ -59,19 +59,16 @@ public final class AlarmSuppressionHistoryItem
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * alarm suppression.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressionId")
         private String suppressionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * alarm suppression.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
          * @param suppressionId the value to set
          * @return this builder
-         */
+         **/
         public Builder suppressionId(String suppressionId) {
             this.suppressionId = suppressionId;
             this.__explicitlySet__.add("suppressionId");
@@ -87,159 +84,164 @@ public final class AlarmSuppressionHistoryItem
             return this;
         }
         /**
-         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-         * specified dimensions.
-         */
+         * The level of this alarm suppression.
+         * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+         * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("level")
         private Level level;
 
         /**
-         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-         * specified dimensions.
+         * The level of this alarm suppression.
+         * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+         * {@code DIMENSION} indicates a suppression configured for specified dimensions.
          *
          * @param level the value to set
          * @return this builder
-         */
+         **/
         public Builder level(Level level) {
             this.level = level;
             this.__explicitlySet__.add("level");
             return this;
         }
         /**
-         * A user-friendly name for the alarm suppression. It does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         */
+         * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the alarm suppression. It does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         *
+         * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Human-readable reason for this alarm suppression. It does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         *
-         * <p>Oracle recommends including tracking information for the event or associated work,
+         * Human-readable reason for this alarm suppression.
+         * It does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Oracle recommends including tracking information for the event or associated work,
          * such as a ticket number.
+         * <p>
+         * Example: {@code Planned outage due to change IT-1234.}
          *
-         * <p>Example: {@code Planned outage due to change IT-1234.}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Human-readable reason for this alarm suppression. It does not have to be unique, and it's
-         * changeable. Avoid entering confidential information.
-         *
-         * <p>Oracle recommends including tracking information for the event or associated work,
+         * Human-readable reason for this alarm suppression.
+         * It does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Oracle recommends including tracking information for the event or associated work,
          * such as a ticket number.
-         *
-         * <p>Example: {@code Planned outage due to change IT-1234.}
+         * <p>
+         * Example: {@code Planned outage due to change IT-1234.}
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Configured dimension filter for suppressing alarm state entries that include the set of
-         * specified dimension key-value pairs.
+         * Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
-         * Configured dimension filter for suppressing alarm state entries that include the set of
-         * specified dimension key-value pairs.
-         *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+         * Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
         /**
-         * The start date and time for the suppression actually starts, inclusive. Format defined by
-         * RFC3339.
+         * The start date and time for the suppression actually starts, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEffectiveFrom")
         private java.util.Date timeEffectiveFrom;
 
         /**
-         * The start date and time for the suppression actually starts, inclusive. Format defined by
-         * RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+         * The start date and time for the suppression actually starts, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeEffectiveFrom the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEffectiveFrom(java.util.Date timeEffectiveFrom) {
             this.timeEffectiveFrom = timeEffectiveFrom;
             this.__explicitlySet__.add("timeEffectiveFrom");
             return this;
         }
         /**
-         * The end date and time for the suppression actually ends, inclusive. Format defined by
-         * RFC3339.
+         * The end date and time for the suppression actually ends, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T02:02:29.600Z}
          *
-         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEffectiveUntil")
         private java.util.Date timeEffectiveUntil;
 
         /**
-         * The end date and time for the suppression actually ends, inclusive. Format defined by
-         * RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T02:02:29.600Z}
+         * The end date and time for the suppression actually ends, inclusive. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T02:02:29.600Z}
          *
          * @param timeEffectiveUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEffectiveUntil(java.util.Date timeEffectiveUntil) {
             this.timeEffectiveUntil = timeEffectiveUntil;
             this.__explicitlySet__.add("timeEffectiveUntil");
             return this;
         }
         /**
-         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
-         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * Array of all preconditions for alarm suppression.
+         * Example: {@code [{
+         *   conditionType: "RECURRENCE",
+         *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+         *   suppressionDuration: "PT1H"
          * }]}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
         private java.util.List<SuppressionCondition> suppressionConditions;
 
         /**
-         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
-         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * Array of all preconditions for alarm suppression.
+         * Example: {@code [{
+         *   conditionType: "RECURRENCE",
+         *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+         *   suppressionDuration: "PT1H"
          * }]}
          *
          * @param suppressionConditions the value to set
          * @return this builder
-         */
+         **/
         public Builder suppressionConditions(
                 java.util.List<SuppressionCondition> suppressionConditions) {
             this.suppressionConditions = suppressionConditions;
@@ -301,7 +303,9 @@ public final class AlarmSuppressionHistoryItem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -311,18 +315,15 @@ public final class AlarmSuppressionHistoryItem
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * alarm suppression.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressionId")
     private final String suppressionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * alarm suppression.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm suppression.
      * @return the value
-     */
+     **/
     public String getSuppressionId() {
         return suppressionId;
     }
@@ -335,17 +336,18 @@ public final class AlarmSuppressionHistoryItem
     }
 
     /**
-     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-     * specified dimensions.
-     */
-    public enum Level implements com.oracle.bmc.http.internal.BmcEnum {
+     * The level of this alarm suppression.
+     * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+     * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+     *
+     **/
+    public enum Level {
         Alarm("ALARM"),
         Dimension("DIMENSION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -384,144 +386,151 @@ public final class AlarmSuppressionHistoryItem
         }
     };
     /**
-     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-     * specified dimensions.
-     */
+     * The level of this alarm suppression.
+     * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+     * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("level")
     private final Level level;
 
     /**
-     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-     * specified dimensions.
+     * The level of this alarm suppression.
+     * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+     * {@code DIMENSION} indicates a suppression configured for specified dimensions.
      *
      * @return the value
-     */
+     **/
     public Level getLevel() {
         return level;
     }
 
     /**
-     * A user-friendly name for the alarm suppression. It does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     */
+     * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the alarm suppression. It does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     *
+     * A user-friendly name for the alarm suppression. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Human-readable reason for this alarm suppression. It does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
+     * Human-readable reason for this alarm suppression.
+     * It does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Oracle recommends including tracking information for the event or associated work,
+     * such as a ticket number.
+     * <p>
+     * Example: {@code Planned outage due to change IT-1234.}
      *
-     * <p>Oracle recommends including tracking information for the event or associated work, such as
-     * a ticket number.
-     *
-     * <p>Example: {@code Planned outage due to change IT-1234.}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Human-readable reason for this alarm suppression. It does not have to be unique, and it's
-     * changeable. Avoid entering confidential information.
-     *
-     * <p>Oracle recommends including tracking information for the event or associated work, such as
-     * a ticket number.
-     *
-     * <p>Example: {@code Planned outage due to change IT-1234.}
+     * Human-readable reason for this alarm suppression.
+     * It does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Oracle recommends including tracking information for the event or associated work,
+     * such as a ticket number.
+     * <p>
+     * Example: {@code Planned outage due to change IT-1234.}
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Configured dimension filter for suppressing alarm state entries that include the set of
-     * specified dimension key-value pairs.
+     * Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
-     * Configured dimension filter for suppressing alarm state entries that include the set of
-     * specified dimension key-value pairs.
-     *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+     * Configured dimension filter for suppressing alarm state entries that include the set of specified dimension key-value pairs.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
     /**
-     * The start date and time for the suppression actually starts, inclusive. Format defined by
-     * RFC3339.
+     * The start date and time for the suppression actually starts, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEffectiveFrom")
     private final java.util.Date timeEffectiveFrom;
 
     /**
-     * The start date and time for the suppression actually starts, inclusive. Format defined by
-     * RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+     * The start date and time for the suppression actually starts, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEffectiveFrom() {
         return timeEffectiveFrom;
     }
 
     /**
-     * The end date and time for the suppression actually ends, inclusive. Format defined by
-     * RFC3339.
+     * The end date and time for the suppression actually ends, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T02:02:29.600Z}
      *
-     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEffectiveUntil")
     private final java.util.Date timeEffectiveUntil;
 
     /**
-     * The end date and time for the suppression actually ends, inclusive. Format defined by
-     * RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T02:02:29.600Z}
+     * The end date and time for the suppression actually ends, inclusive. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T02:02:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEffectiveUntil() {
         return timeEffectiveUntil;
     }
 
     /**
-     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
-     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
-     */
+     * Array of all preconditions for alarm suppression.
+     * Example: {@code [{
+     *   conditionType: "RECURRENCE",
+     *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+     *   suppressionDuration: "PT1H"
+     * }]}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
     private final java.util.List<SuppressionCondition> suppressionConditions;
 
     /**
-     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
-     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
+     * Array of all preconditions for alarm suppression.
+     * Example: {@code [{
+     *   conditionType: "RECURRENCE",
+     *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+     *   suppressionDuration: "PT1H"
+     * }]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<SuppressionCondition> getSuppressionConditions() {
         return suppressionConditions;
     }
@@ -533,7 +542,6 @@ public final class AlarmSuppressionHistoryItem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

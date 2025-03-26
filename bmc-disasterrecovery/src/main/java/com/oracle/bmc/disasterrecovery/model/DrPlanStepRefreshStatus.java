@@ -5,11 +5,13 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The refresh status of a DR plan step. - STEP_ADDED - DR plan step was added to the group. -
- * STEP_DELETED - DR plan step was deleted from the group.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanStepRefreshStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * The refresh status of a DR plan step.
+ * - STEP_ADDED - DR plan step was added to the group.
+ * - STEP_DELETED - DR plan step was deleted from the group.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanStepRefreshStatus {
     StepAdded("STEP_ADDED"),
     StepDeleted("STEP_DELETED"),
 

@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * An example of the recommendation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * An example of the recommendation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RecommendationExample.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RecommendationExample.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RecommendationExample
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lines"})
     public RecommendationExample(java.util.List<RecommendationExampleLine> lines) {
@@ -31,16 +30,17 @@ public final class RecommendationExample
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of examples for the recommendation. */
+        /**
+         * The list of examples for the recommendation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lines")
         private java.util.List<RecommendationExampleLine> lines;
 
         /**
          * The list of examples for the recommendation.
-         *
          * @param lines the value to set
          * @return this builder
-         */
+         **/
         public Builder lines(java.util.List<RecommendationExampleLine> lines) {
             this.lines = lines;
             this.__explicitlySet__.add("lines");
@@ -67,7 +67,9 @@ public final class RecommendationExample
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class RecommendationExample
         return new Builder().copy(this);
     }
 
-    /** The list of examples for the recommendation. */
+    /**
+     * The list of examples for the recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lines")
     private final java.util.List<RecommendationExampleLine> lines;
 
     /**
      * The list of examples for the recommendation.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RecommendationExampleLine> getLines() {
         return lines;
     }
@@ -96,7 +99,6 @@ public final class RecommendationExample
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

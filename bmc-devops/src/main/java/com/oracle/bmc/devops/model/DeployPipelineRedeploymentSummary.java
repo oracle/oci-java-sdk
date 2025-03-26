@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Summary of a full pipeline redeployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Summary of a full pipeline redeployment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeployPipelineRedeploymentSummary.Builder.class)
+    builder = DeployPipelineRedeploymentSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deploymentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deploymentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeployPipelineRedeploymentSummary extends DeploymentSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -164,16 +164,17 @@ public final class DeployPipelineRedeploymentSummary extends DeploymentSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Specifies the OCID of the previous deployment to be redeployed. */
+        /**
+         * Specifies the OCID of the previous deployment to be redeployed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
         private String previousDeploymentId;
 
         /**
          * Specifies the OCID of the previous deployment to be redeployed.
-         *
          * @param previousDeploymentId the value to set
          * @return this builder
-         */
+         **/
         public Builder previousDeploymentId(String previousDeploymentId) {
             this.previousDeploymentId = previousDeploymentId;
             this.__explicitlySet__.add("previousDeploymentId");
@@ -262,7 +263,9 @@ public final class DeployPipelineRedeploymentSummary extends DeploymentSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -308,15 +311,16 @@ public final class DeployPipelineRedeploymentSummary extends DeploymentSummary {
         this.previousDeploymentId = previousDeploymentId;
     }
 
-    /** Specifies the OCID of the previous deployment to be redeployed. */
+    /**
+     * Specifies the OCID of the previous deployment to be redeployed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousDeploymentId")
     private final String previousDeploymentId;
 
     /**
      * Specifies the OCID of the previous deployment to be redeployed.
-     *
      * @return the value
-     */
+     **/
     public String getPreviousDeploymentId() {
         return previousDeploymentId;
     }
@@ -328,7 +332,6 @@ public final class DeployPipelineRedeploymentSummary extends DeploymentSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

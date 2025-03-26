@@ -5,24 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Represents the metadata of an Oracle Database Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Represents the metadata of an Oracle Database Connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OracleConnection.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -224,22 +223,26 @@ public final class OracleConnection extends Connection {
             this.__explicitlySet__.add("privateEndpointId");
             return this;
         }
-        /** The Oracle technology type. */
+        /**
+         * The Oracle technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Oracle technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+        /**
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
@@ -248,13 +251,16 @@ public final class OracleConnection extends Connection {
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The OCID of the database being referenced. */
+        /**
+         * The OCID of the database being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
@@ -263,13 +269,16 @@ public final class OracleConnection extends Connection {
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** Name of the host the SSH key is valid for. */
+        /**
+         * Name of the host the SSH key is valid for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshHost")
         private String sshHost;
 
@@ -278,13 +287,16 @@ public final class OracleConnection extends Connection {
          *
          * @param sshHost the value to set
          * @return this builder
-         */
+         **/
         public Builder sshHost(String sshHost) {
             this.sshHost = sshHost;
             this.__explicitlySet__.add("sshHost");
             return this;
         }
-        /** Private SSH key string. */
+        /**
+         * Private SSH key string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshKey")
         private String sshKey;
 
@@ -293,13 +305,16 @@ public final class OracleConnection extends Connection {
          *
          * @param sshKey the value to set
          * @return this builder
-         */
+         **/
         public Builder sshKey(String sshKey) {
             this.sshKey = sshKey;
             this.__explicitlySet__.add("sshKey");
             return this;
         }
-        /** The username (credential) used when creating or updating this resource. */
+        /**
+         * The username (credential) used when creating or updating this resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshUser")
         private String sshUser;
 
@@ -308,13 +323,16 @@ public final class OracleConnection extends Connection {
          *
          * @param sshUser the value to set
          * @return this builder
-         */
+         **/
         public Builder sshUser(String sshUser) {
             this.sshUser = sshUser;
             this.__explicitlySet__.add("sshUser");
             return this;
         }
-        /** Sudo location */
+        /**
+         * Sudo location
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshSudoLocation")
         private String sshSudoLocation;
 
@@ -323,7 +341,7 @@ public final class OracleConnection extends Connection {
          *
          * @param sshSudoLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder sshSudoLocation(String sshSudoLocation) {
             this.sshSudoLocation = sshSudoLocation;
             this.__explicitlySet__.add("sshSudoLocation");
@@ -464,7 +482,9 @@ public final class OracleConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -536,16 +556,18 @@ public final class OracleConnection extends Connection {
         this.sshSudoLocation = sshSudoLocation;
     }
 
-    /** The Oracle technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Oracle technology type.
+     **/
+    public enum TechnologyType {
         AmazonRdsOracle("AMAZON_RDS_ORACLE"),
         OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
         OracleDatabase("ORACLE_DATABASE"),
         OracleExadata("ORACLE_EXADATA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -584,20 +606,24 @@ public final class OracleConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Oracle technology type. */
+    /**
+     * The Oracle technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Oracle technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+    /**
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
@@ -605,12 +631,15 @@ public final class OracleConnection extends Connection {
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
-    /** The OCID of the database being referenced. */
+    /**
+     * The OCID of the database being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
@@ -618,12 +647,15 @@ public final class OracleConnection extends Connection {
      * The OCID of the database being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** Name of the host the SSH key is valid for. */
+    /**
+     * Name of the host the SSH key is valid for.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshHost")
     private final String sshHost;
 
@@ -631,12 +663,15 @@ public final class OracleConnection extends Connection {
      * Name of the host the SSH key is valid for.
      *
      * @return the value
-     */
+     **/
     public String getSshHost() {
         return sshHost;
     }
 
-    /** Private SSH key string. */
+    /**
+     * Private SSH key string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshKey")
     private final String sshKey;
 
@@ -644,12 +679,15 @@ public final class OracleConnection extends Connection {
      * Private SSH key string.
      *
      * @return the value
-     */
+     **/
     public String getSshKey() {
         return sshKey;
     }
 
-    /** The username (credential) used when creating or updating this resource. */
+    /**
+     * The username (credential) used when creating or updating this resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshUser")
     private final String sshUser;
 
@@ -657,12 +695,15 @@ public final class OracleConnection extends Connection {
      * The username (credential) used when creating or updating this resource.
      *
      * @return the value
-     */
+     **/
     public String getSshUser() {
         return sshUser;
     }
 
-    /** Sudo location */
+    /**
+     * Sudo location
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshSudoLocation")
     private final String sshSudoLocation;
 
@@ -670,7 +711,7 @@ public final class OracleConnection extends Connection {
      * Sudo location
      *
      * @return the value
-     */
+     **/
     public String getSshSudoLocation() {
         return sshSudoLocation;
     }
@@ -682,7 +723,6 @@ public final class OracleConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

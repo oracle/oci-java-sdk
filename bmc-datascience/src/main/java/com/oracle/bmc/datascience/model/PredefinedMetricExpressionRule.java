@@ -5,30 +5,33 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * An expression built using CPU or Memory metrics for triggering an autoscaling action on the model
- * deployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * An expression built using CPU or Memory metrics for triggering an autoscaling action on the model deployment.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PredefinedMetricExpressionRule.Builder.class)
+    builder = PredefinedMetricExpressionRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricExpressionRuleType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricExpressionRuleType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Metric type */
+        /**
+         * Metric type
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
@@ -37,7 +40,7 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
          *
          * @param metricType the value to set
          * @return this builder
-         */
+         **/
         public Builder metricType(MetricType metricType) {
             this.metricType = metricType;
             this.__explicitlySet__.add("metricType");
@@ -92,7 +95,9 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,14 +117,17 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
         this.scaleOutConfiguration = scaleOutConfiguration;
     }
 
-    /** Metric type */
-    public enum MetricType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Metric type
+     *
+     **/
+    public enum MetricType {
         CpuUtilization("CPU_UTILIZATION"),
         MemoryUtilization("MEMORY_UTILIZATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -158,7 +166,10 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
             return UnknownEnumValue;
         }
     };
-    /** Metric type */
+    /**
+     * Metric type
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
@@ -166,7 +177,7 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
      * Metric type
      *
      * @return the value
-     */
+     **/
     public MetricType getMetricType() {
         return metricType;
     }
@@ -192,7 +203,6 @@ public final class PredefinedMetricExpressionRule extends MetricExpressionRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

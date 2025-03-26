@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Configuration Summary of a MDS MYSQL database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Configuration Summary of a MDS MYSQL database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MdsMysqlDatabaseConfigurationSummary.Builder.class)
+    builder = MdsMysqlDatabaseConfigurationSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MdsMysqlDatabaseConfigurationSummary extends DatabaseConfigurationSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -118,70 +118,68 @@ public final class MdsMysqlDatabaseConfigurationSummary extends DatabaseConfigur
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** Specifies if MYSQL DB System has heatwave cluster attached. */
+        /**
+         * Specifies if MYSQL DB System has heatwave cluster attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
         private Boolean isHeatWaveClusterAttached;
 
         /**
          * Specifies if MYSQL DB System has heatwave cluster attached.
-         *
          * @param isHeatWaveClusterAttached the value to set
          * @return this builder
-         */
+         **/
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             this.__explicitlySet__.add("isHeatWaveClusterAttached");
             return this;
         }
-        /** Specifies if MYSQL DB System is highly available. */
+        /**
+         * Specifies if MYSQL DB System is highly available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
 
         /**
          * Specifies if MYSQL DB System is highly available.
-         *
          * @param isHighlyAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = isHighlyAvailable;
             this.__explicitlySet__.add("isHighlyAvailable");
             return this;
         }
         /**
-         * The shape of the primary instances of MYSQL DB system. The shape determines resources
-         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
-         * storage for non-VM shapes.
-         */
+         * The shape of the primary instances of MYSQL DB system. The shape determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM shapes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * The shape of the primary instances of MYSQL DB system. The shape determines resources
-         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
-         * storage for non-VM shapes.
+         * The shape of the primary instances of MYSQL DB system. The shape determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM shapes.
          *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
@@ -262,7 +260,9 @@ public final class MdsMysqlDatabaseConfigurationSummary extends DatabaseConfigur
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -305,63 +305,61 @@ public final class MdsMysqlDatabaseConfigurationSummary extends DatabaseConfigur
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** Specifies if MYSQL DB System has heatwave cluster attached. */
+    /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
     private final Boolean isHeatWaveClusterAttached;
 
     /**
      * Specifies if MYSQL DB System has heatwave cluster attached.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHeatWaveClusterAttached() {
         return isHeatWaveClusterAttached;
     }
 
-    /** Specifies if MYSQL DB System is highly available. */
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
 
     /**
      * Specifies if MYSQL DB System is highly available.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHighlyAvailable() {
         return isHighlyAvailable;
     }
 
     /**
-     * The shape of the primary instances of MYSQL DB system. The shape determines resources
-     * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage
-     * for non-VM shapes.
-     */
+     * The shape of the primary instances of MYSQL DB system. The shape determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM shapes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * The shape of the primary instances of MYSQL DB system. The shape determines resources
-     * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage
-     * for non-VM shapes.
+     * The shape of the primary instances of MYSQL DB system. The shape determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM shapes.
      *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
@@ -373,7 +371,6 @@ public final class MdsMysqlDatabaseConfigurationSummary extends DatabaseConfigur
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

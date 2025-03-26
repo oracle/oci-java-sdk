@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * General information of a Maintenance Window <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * General information of a Maintenance Window
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaintenanceWindowSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaintenanceWindowSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceWindowSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -68,59 +67,61 @@ public final class MaintenanceWindowSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * maintenance window.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * maintenance window.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Maintenance Window name. */
+        /**
+         * Maintenance Window name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Maintenance Window name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Number of resources of the Maintenance window. */
+        /**
+         * Number of resources of the Maintenance window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfResources")
         private Integer numberOfResources;
 
@@ -129,43 +130,48 @@ public final class MaintenanceWindowSummary
          *
          * @param numberOfResources the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfResources(Integer numberOfResources) {
             this.numberOfResources = numberOfResources;
             this.__explicitlySet__.add("numberOfResources");
             return this;
         }
-        /** Lifecycle state of the monitored resource. */
+        /**
+         * Lifecycle state of the monitored resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MaintenanceWindowLifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the monitored resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(MaintenanceWindowLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Lifecycle Details of the Maintenance Window. */
+        /**
+         * Lifecycle Details of the Maintenance Window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private MaintenanceWindowLifecycleDetails lifecycleDetails;
 
         /**
          * Lifecycle Details of the Maintenance Window.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(MaintenanceWindowLifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The name of the most recent operation of the Maintenance window. */
+        /**
+         * The name of the most recent operation of the Maintenance window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private MaintenanceWindowOperationType operationType;
 
@@ -174,13 +180,16 @@ public final class MaintenanceWindowSummary
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(MaintenanceWindowOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Status of the most recent operation of the Maintenance Window. */
+        /**
+         * Status of the most recent operation of the Maintenance Window.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private MaintenanceWindowOperationStatus operationStatus;
 
@@ -189,7 +198,7 @@ public final class MaintenanceWindowSummary
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(MaintenanceWindowOperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
@@ -205,19 +214,20 @@ public final class MaintenanceWindowSummary
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -226,7 +236,8 @@ public final class MaintenanceWindowSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -236,7 +247,7 @@ public final class MaintenanceWindowSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -244,19 +255,20 @@ public final class MaintenanceWindowSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -329,7 +341,9 @@ public final class MaintenanceWindowSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -339,53 +353,55 @@ public final class MaintenanceWindowSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * maintenance window.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * maintenance window.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Maintenance Window name. */
+    /**
+     * Maintenance Window name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Maintenance Window name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Number of resources of the Maintenance window. */
+    /**
+     * Number of resources of the Maintenance window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfResources")
     private final Integer numberOfResources;
 
@@ -393,38 +409,43 @@ public final class MaintenanceWindowSummary
      * Number of resources of the Maintenance window.
      *
      * @return the value
-     */
+     **/
     public Integer getNumberOfResources() {
         return numberOfResources;
     }
 
-    /** Lifecycle state of the monitored resource. */
+    /**
+     * Lifecycle state of the monitored resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MaintenanceWindowLifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the monitored resource.
-     *
      * @return the value
-     */
+     **/
     public MaintenanceWindowLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Lifecycle Details of the Maintenance Window. */
+    /**
+     * Lifecycle Details of the Maintenance Window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final MaintenanceWindowLifecycleDetails lifecycleDetails;
 
     /**
      * Lifecycle Details of the Maintenance Window.
-     *
      * @return the value
-     */
+     **/
     public MaintenanceWindowLifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The name of the most recent operation of the Maintenance window. */
+    /**
+     * The name of the most recent operation of the Maintenance window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final MaintenanceWindowOperationType operationType;
 
@@ -432,12 +453,15 @@ public final class MaintenanceWindowSummary
      * The name of the most recent operation of the Maintenance window.
      *
      * @return the value
-     */
+     **/
     public MaintenanceWindowOperationType getOperationType() {
         return operationType;
     }
 
-    /** Status of the most recent operation of the Maintenance Window. */
+    /**
+     * Status of the most recent operation of the Maintenance Window.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final MaintenanceWindowOperationStatus operationStatus;
 
@@ -445,7 +469,7 @@ public final class MaintenanceWindowSummary
      * Status of the most recent operation of the Maintenance Window.
      *
      * @return the value
-     */
+     **/
     public MaintenanceWindowOperationStatus getOperationStatus() {
         return operationStatus;
     }
@@ -458,52 +482,55 @@ public final class MaintenanceWindowSummary
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -515,7 +542,6 @@ public final class MaintenanceWindowSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

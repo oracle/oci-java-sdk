@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible maintenance window types */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum MaintenanceWindowType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible maintenance window types
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum MaintenanceWindowType {
     OpenEnded("OPEN_ENDED"),
 
     /**

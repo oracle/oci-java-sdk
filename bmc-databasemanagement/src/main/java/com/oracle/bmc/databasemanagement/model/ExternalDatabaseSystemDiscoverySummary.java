@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the DB system discovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of the DB system discovery.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalDatabaseSystemDiscoverySummary.Builder.class)
+    builder = ExternalDatabaseSystemDiscoverySummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscovered {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,37 +116,42 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
             this.__explicitlySet__.add("discoverErrorMsg");
             return this;
         }
-        /** The Oracle home path. */
+        /**
+         * The Oracle home path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleHome")
         private String oracleHome;
 
         /**
          * The Oracle home path.
-         *
          * @param oracleHome the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleHome(String oracleHome) {
             this.oracleHome = oracleHome;
             this.__explicitlySet__.add("oracleHome");
             return this;
         }
-        /** The display name of the ASM connector. */
+        /**
+         * The display name of the ASM connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asmConnectorName")
         private String asmConnectorName;
 
         /**
          * The display name of the ASM connector.
-         *
          * @param asmConnectorName the value to set
          * @return this builder
-         */
+         **/
         public Builder asmConnectorName(String asmConnectorName) {
             this.asmConnectorName = asmConnectorName;
             this.__explicitlySet__.add("asmConnectorName");
             return this;
         }
-        /** The Oracle license model that applies to the database management resources. */
+        /**
+         * The Oracle license model that applies to the database management resources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
@@ -155,26 +160,23 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -255,7 +257,9 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -297,40 +301,45 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
         this.compartmentId = compartmentId;
     }
 
-    /** The Oracle home path. */
+    /**
+     * The Oracle home path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleHome")
     private final String oracleHome;
 
     /**
      * The Oracle home path.
-     *
      * @return the value
-     */
+     **/
     public String getOracleHome() {
         return oracleHome;
     }
 
-    /** The display name of the ASM connector. */
+    /**
+     * The display name of the ASM connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("asmConnectorName")
     private final String asmConnectorName;
 
     /**
      * The display name of the ASM connector.
-     *
      * @return the value
-     */
+     **/
     public String getAsmConnectorName() {
         return asmConnectorName;
     }
 
-    /** The Oracle license model that applies to the database management resources. */
-    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Oracle license model that applies to the database management resources.
+     *
+     **/
+    public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -369,7 +378,10 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
             return UnknownEnumValue;
         }
     };
-    /** The Oracle license model that applies to the database management resources. */
+    /**
+     * The Oracle license model that applies to the database management resources.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
@@ -377,24 +389,21 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
      * The Oracle license model that applies to the database management resources.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -406,7 +415,6 @@ public final class ExternalDatabaseSystemDiscoverySummary extends EntityDiscover
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

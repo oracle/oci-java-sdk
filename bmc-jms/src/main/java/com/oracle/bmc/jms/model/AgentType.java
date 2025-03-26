@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The agent can be of two type, either Oracle Management Agent(OMA) or Oracle Cloud Agent(OCA). */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum AgentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The agent can be of two type, either Oracle Management Agent(OMA) or Oracle Cloud Agent(OCA).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum AgentType {
     Oma("OMA"),
     Oca("OCA"),
 

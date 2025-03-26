@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An available shape used to launch instances in a compute capacity reservation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * An available shape used to launch instances in a compute capacity reservation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputeCapacityReservationInstanceShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComputeCapacityReservationInstanceShapeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComputeCapacityReservationInstanceShapeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"availabilityDomain", "instanceShape"})
     public ComputeCapacityReservationInstanceShapeSummary(
@@ -33,7 +33,10 @@ public final class ComputeCapacityReservationInstanceShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The shape's availability domain. */
+        /**
+         * The shape's availability domain.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
@@ -42,26 +45,25 @@ public final class ComputeCapacityReservationInstanceShapeSummary
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The name of the available shape used to launch instances in a compute capacity
-         * reservation.
-         */
+         * The name of the available shape used to launch instances in a compute capacity reservation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
         /**
-         * The name of the available shape used to launch instances in a compute capacity
-         * reservation.
+         * The name of the available shape used to launch instances in a compute capacity reservation.
          *
          * @param instanceShape the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -93,7 +95,9 @@ public final class ComputeCapacityReservationInstanceShapeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,7 +106,10 @@ public final class ComputeCapacityReservationInstanceShapeSummary
         return new Builder().copy(this);
     }
 
-    /** The shape's availability domain. */
+    /**
+     * The shape's availability domain.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
@@ -110,14 +117,15 @@ public final class ComputeCapacityReservationInstanceShapeSummary
      * The shape's availability domain.
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
      * The name of the available shape used to launch instances in a compute capacity reservation.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
@@ -125,7 +133,7 @@ public final class ComputeCapacityReservationInstanceShapeSummary
      * The name of the available shape used to launch instances in a compute capacity reservation.
      *
      * @return the value
-     */
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -137,7 +145,6 @@ public final class ComputeCapacityReservationInstanceShapeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,24 +25,26 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code MfaTotpDevice} instance. */
+    /**
+     * The returned MfaTotpDevice instance.
+     */
     private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
     /**
-     * The returned {@code MfaTotpDevice} instance.
-     *
+     * The returned MfaTotpDevice instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.MfaTotpDevice getMfaTotpDevice() {
@@ -57,7 +60,7 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateMfaTotpDeviceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice) {
@@ -67,20 +70,17 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
         this.mfaTotpDevice = mfaTotpDevice;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateMfaTotpDeviceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -88,6 +88,7 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -103,12 +104,13 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -117,12 +119,13 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code MfaTotpDevice} instance. */
+        /**
+         * The returned MfaTotpDevice instance.
+         */
         private com.oracle.bmc.identity.model.MfaTotpDevice mfaTotpDevice;
 
         /**
-         * The returned {@code MfaTotpDevice} instance.
-         *
+         * The returned MfaTotpDevice instance.
          * @param mfaTotpDevice the value to set
          * @return this builder
          */
@@ -133,10 +136,8 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateMfaTotpDeviceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +150,8 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateMfaTotpDeviceResponse build() {
             return new CreateMfaTotpDeviceResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, mfaTotpDevice);
@@ -161,7 +160,6 @@ public class CreateMfaTotpDeviceResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,24 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Object containing current utilization, projected utilization, id and daysToReach high and low
- * utilization value. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Object containing current utilization, projected utilization, id and daysToReach high and low utilization value.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExadataInsightResourceInsightUtilizationItem.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExadataInsightResourceInsightUtilizationItem.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExadataInsightResourceInsightUtilizationItem
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
@@ -51,94 +49,96 @@ public final class ExadataInsightResourceInsightUtilizationItem
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata insight.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata insight.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
          * @param exadataInsightId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
-        /** The user-friendly name for the Exadata system. The name does not have to be unique. */
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
         private String exadataDisplayName;
 
         /**
          * The user-friendly name for the Exadata system. The name does not have to be unique.
-         *
          * @param exadataDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataDisplayName(String exadataDisplayName) {
             this.exadataDisplayName = exadataDisplayName;
             this.__explicitlySet__.add("exadataDisplayName");
             return this;
         }
-        /** Current utilization */
+        /**
+         * Current utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentUtilization")
         private Double currentUtilization;
 
         /**
          * Current utilization
-         *
          * @param currentUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder currentUtilization(Double currentUtilization) {
             this.currentUtilization = currentUtilization;
             this.__explicitlySet__.add("currentUtilization");
             return this;
         }
-        /** Projected utilization */
+        /**
+         * Projected utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectedUtilization")
         private Double projectedUtilization;
 
         /**
          * Projected utilization
-         *
          * @param projectedUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder projectedUtilization(Double projectedUtilization) {
             this.projectedUtilization = projectedUtilization;
             this.__explicitlySet__.add("projectedUtilization");
             return this;
         }
-        /** Days to reach projected high utilization */
+        /**
+         * Days to reach projected high utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachHighUtilization")
         private Integer daysToReachHighUtilization;
 
         /**
          * Days to reach projected high utilization
-         *
          * @param daysToReachHighUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder daysToReachHighUtilization(Integer daysToReachHighUtilization) {
             this.daysToReachHighUtilization = daysToReachHighUtilization;
             this.__explicitlySet__.add("daysToReachHighUtilization");
             return this;
         }
-        /** Days to reach projected low utilization */
+        /**
+         * Days to reach projected low utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("daysToReachLowUtilization")
         private Integer daysToReachLowUtilization;
 
         /**
          * Days to reach projected low utilization
-         *
          * @param daysToReachLowUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder daysToReachLowUtilization(Integer daysToReachLowUtilization) {
             this.daysToReachLowUtilization = daysToReachLowUtilization;
             this.__explicitlySet__.add("daysToReachLowUtilization");
@@ -187,7 +187,9 @@ public final class ExadataInsightResourceInsightUtilizationItem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,83 +199,85 @@ public final class ExadataInsightResourceInsightUtilizationItem
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata insight.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata insight.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * @return the value
-     */
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
 
-    /** The user-friendly name for the Exadata system. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
 
-    /** Current utilization */
+    /**
+     * Current utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentUtilization")
     private final Double currentUtilization;
 
     /**
      * Current utilization
-     *
      * @return the value
-     */
+     **/
     public Double getCurrentUtilization() {
         return currentUtilization;
     }
 
-    /** Projected utilization */
+    /**
+     * Projected utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectedUtilization")
     private final Double projectedUtilization;
 
     /**
      * Projected utilization
-     *
      * @return the value
-     */
+     **/
     public Double getProjectedUtilization() {
         return projectedUtilization;
     }
 
-    /** Days to reach projected high utilization */
+    /**
+     * Days to reach projected high utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachHighUtilization")
     private final Integer daysToReachHighUtilization;
 
     /**
      * Days to reach projected high utilization
-     *
      * @return the value
-     */
+     **/
     public Integer getDaysToReachHighUtilization() {
         return daysToReachHighUtilization;
     }
 
-    /** Days to reach projected low utilization */
+    /**
+     * Days to reach projected low utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("daysToReachLowUtilization")
     private final Integer daysToReachLowUtilization;
 
     /**
      * Days to reach projected low utilization
-     *
      * @return the value
-     */
+     **/
     public Integer getDaysToReachLowUtilization() {
         return daysToReachLowUtilization;
     }
@@ -285,7 +289,6 @@ public final class ExadataInsightResourceInsightUtilizationItem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

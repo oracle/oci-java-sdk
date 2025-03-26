@@ -5,21 +5,20 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of a trace object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Definition of a trace object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Trace.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Trace extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -87,46 +86,51 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier (traceId) for the trace that represents the span set. Note that this
-         * field is defined as traceKey in the API and it maps to the traceId in the trace data in
-         * Application Performance Monitoring.
-         */
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Unique identifier (traceId) for the trace that represents the span set. Note that this
-         * field is defined as traceKey in the API and it maps to the traceId in the trace data in
-         * Application Performance Monitoring.
+         * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+         * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+         * Monitoring.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * Root span name associated with the trace. This is the flow start operation name. Null is
-         * displayed if the root span is not yet completed.
-         */
+         * Root span name associated with the trace. This is the flow start operation name.
+         * Null is displayed if the root span is not yet completed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootSpanOperationName")
         private String rootSpanOperationName;
 
         /**
-         * Root span name associated with the trace. This is the flow start operation name. Null is
-         * displayed if the root span is not yet completed.
+         * Root span name associated with the trace. This is the flow start operation name.
+         * Null is displayed if the root span is not yet completed.
          *
          * @param rootSpanOperationName the value to set
          * @return this builder
-         */
+         **/
         public Builder rootSpanOperationName(String rootSpanOperationName) {
             this.rootSpanOperationName = rootSpanOperationName;
             this.__explicitlySet__.add("rootSpanOperationName");
             return this;
         }
-        /** Start time of the earliest span in the span collection. */
+        /**
+         * Start time of the earliest span in the span collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestSpanStarted")
         private java.util.Date timeEarliestSpanStarted;
 
@@ -135,13 +139,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param timeEarliestSpanStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEarliestSpanStarted(java.util.Date timeEarliestSpanStarted) {
             this.timeEarliestSpanStarted = timeEarliestSpanStarted;
             this.__explicitlySet__.add("timeEarliestSpanStarted");
             return this;
         }
-        /** End time of the span that most recently ended in the span collection. */
+        /**
+         * End time of the span that most recently ended in the span collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSpanEnded")
         private java.util.Date timeLatestSpanEnded;
 
@@ -150,28 +157,29 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param timeLatestSpanEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLatestSpanEnded(java.util.Date timeLatestSpanEnded) {
             this.timeLatestSpanEnded = timeLatestSpanEnded;
             this.__explicitlySet__.add("timeLatestSpanEnded");
             return this;
         }
         /**
-         * The number of spans that have been processed by the system for the trace. Note that there
-         * could be additional spans that have not been processed or reported yet if the trace is
-         * still in progress.
-         */
+         * The number of spans that have been processed by the system for the trace.  Note that there
+         * could be additional spans that have not been processed or reported yet if the trace is still
+         * in progress.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanCount")
         private Integer spanCount;
 
         /**
-         * The number of spans that have been processed by the system for the trace. Note that there
-         * could be additional spans that have not been processed or reported yet if the trace is
-         * still in progress.
+         * The number of spans that have been processed by the system for the trace.  Note that there
+         * could be additional spans that have not been processed or reported yet if the trace is still
+         * in progress.
          *
          * @param spanCount the value to set
          * @return this builder
-         */
+         **/
         public Builder spanCount(Integer spanCount) {
             this.spanCount = spanCount;
             this.__explicitlySet__.add("spanCount");
@@ -179,26 +187,28 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The number of spans with errors that have been processed by the system for the trace.
-         * Note that the number of spans with errors will be less than or equal to the total number
-         * of spans in the trace.
-         */
+         * Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorSpanCount")
         private Integer errorSpanCount;
 
         /**
          * The number of spans with errors that have been processed by the system for the trace.
-         * Note that the number of spans with errors will be less than or equal to the total number
-         * of spans in the trace.
+         * Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
          *
          * @param errorSpanCount the value to set
          * @return this builder
-         */
+         **/
         public Builder errorSpanCount(Integer errorSpanCount) {
             this.errorSpanCount = errorSpanCount;
             this.__explicitlySet__.add("errorSpanCount");
             return this;
         }
-        /** Service associated with the trace. */
+        /**
+         * Service associated with the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootSpanServiceName")
         private String rootSpanServiceName;
 
@@ -207,13 +217,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param rootSpanServiceName the value to set
          * @return this builder
-         */
+         **/
         public Builder rootSpanServiceName(String rootSpanServiceName) {
             this.rootSpanServiceName = rootSpanServiceName;
             this.__explicitlySet__.add("rootSpanServiceName");
             return this;
         }
-        /** Start time of the root span for the span collection. */
+        /**
+         * Start time of the root span for the span collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanStarted")
         private java.util.Date timeRootSpanStarted;
 
@@ -222,13 +235,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param timeRootSpanStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRootSpanStarted(java.util.Date timeRootSpanStarted) {
             this.timeRootSpanStarted = timeRootSpanStarted;
             this.__explicitlySet__.add("timeRootSpanStarted");
             return this;
         }
-        /** End time of the root span for the span collection. */
+        /**
+         * End time of the root span for the span collection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanEnded")
         private java.util.Date timeRootSpanEnded;
 
@@ -237,13 +253,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param timeRootSpanEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRootSpanEnded(java.util.Date timeRootSpanEnded) {
             this.timeRootSpanEnded = timeRootSpanEnded;
             this.__explicitlySet__.add("timeRootSpanEnded");
             return this;
         }
-        /** Time taken for the root span operation to complete in milliseconds. */
+        /**
+         * Time taken for the root span operation to complete in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rootSpanDurationInMs")
         private Integer rootSpanDurationInMs;
 
@@ -252,32 +271,34 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param rootSpanDurationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder rootSpanDurationInMs(Integer rootSpanDurationInMs) {
             this.rootSpanDurationInMs = rootSpanDurationInMs;
             this.__explicitlySet__.add("rootSpanDurationInMs");
             return this;
         }
         /**
-         * Time between the start of the earliest span and the end of the most recent span in
-         * milliseconds.
-         */
+         * Time between the start of the earliest span and the end of the most recent span in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceDurationInMs")
         private Integer traceDurationInMs;
 
         /**
-         * Time between the start of the earliest span and the end of the most recent span in
-         * milliseconds.
+         * Time between the start of the earliest span and the end of the most recent span in milliseconds.
          *
          * @param traceDurationInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder traceDurationInMs(Integer traceDurationInMs) {
             this.traceDurationInMs = traceDurationInMs;
             this.__explicitlySet__.add("traceDurationInMs");
             return this;
         }
-        /** Boolean flag that indicates whether the trace has an error. */
+        /**
+         * Boolean flag that indicates whether the trace has an error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFault")
         private Boolean isFault;
 
@@ -286,38 +307,44 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param isFault the value to set
          * @return this builder
-         */
+         **/
         public Builder isFault(Boolean isFault) {
             this.isFault = isFault;
             this.__explicitlySet__.add("isFault");
             return this;
         }
         /**
-         * The status of the trace. The trace statuses are defined as follows: complete - a root
-         * span has been recorded, but there is no information on the errors. success - a complete
-         * root span is recorded there is a successful error type and error code - HTTP 200.
-         * incomplete - the root span has not yet been received. error - the root span returned with
-         * an error. There may or may not be an associated error code or error type.
-         */
+         * The status of the trace.
+         * The trace statuses are defined as follows:
+         * complete - a root span has been recorded, but there is no information on the errors.
+         * success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
+         * incomplete - the root span has not yet been received.
+         * error - the root span returned with an error. There may or may not be an associated error code or error type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceStatus")
         private String traceStatus;
 
         /**
-         * The status of the trace. The trace statuses are defined as follows: complete - a root
-         * span has been recorded, but there is no information on the errors. success - a complete
-         * root span is recorded there is a successful error type and error code - HTTP 200.
-         * incomplete - the root span has not yet been received. error - the root span returned with
-         * an error. There may or may not be an associated error code or error type.
+         * The status of the trace.
+         * The trace statuses are defined as follows:
+         * complete - a root span has been recorded, but there is no information on the errors.
+         * success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
+         * incomplete - the root span has not yet been received.
+         * error - the root span returned with an error. There may or may not be an associated error code or error type.
          *
          * @param traceStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder traceStatus(String traceStatus) {
             this.traceStatus = traceStatus;
             this.__explicitlySet__.add("traceStatus");
             return this;
         }
-        /** Error type of the trace. */
+        /**
+         * Error type of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceErrorType")
         private String traceErrorType;
 
@@ -326,13 +353,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param traceErrorType the value to set
          * @return this builder
-         */
+         **/
         public Builder traceErrorType(String traceErrorType) {
             this.traceErrorType = traceErrorType;
             this.__explicitlySet__.add("traceErrorType");
             return this;
         }
-        /** Error code of the trace. */
+        /**
+         * Error code of the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traceErrorCode")
         private String traceErrorCode;
 
@@ -341,13 +371,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param traceErrorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder traceErrorCode(String traceErrorCode) {
             this.traceErrorCode = traceErrorCode;
             this.__explicitlySet__.add("traceErrorCode");
             return this;
         }
-        /** A summary of the spans by service. */
+        /**
+         * A summary of the spans by service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceSummaries")
         private java.util.List<TraceServiceSummary> serviceSummaries;
 
@@ -356,13 +389,16 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param serviceSummaries the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceSummaries(java.util.List<TraceServiceSummary> serviceSummaries) {
             this.serviceSummaries = serviceSummaries;
             this.__explicitlySet__.add("serviceSummaries");
             return this;
         }
-        /** Source of trace (traces, syn_traces). */
+        /**
+         * Source of trace (traces, syn_traces).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private SourceName sourceName;
 
@@ -371,7 +407,7 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param sourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceName(SourceName sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
@@ -386,7 +422,10 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("spanSummary");
             return this;
         }
-        /** An array of spans in the trace. */
+        /**
+         * An array of spans in the trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spans")
         private java.util.List<Span> spans;
 
@@ -395,7 +434,7 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param spans the value to set
          * @return this builder
-         */
+         **/
         public Builder spans(java.util.List<Span> spans) {
             this.spans = spans;
             this.__explicitlySet__.add("spans");
@@ -496,7 +535,9 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -506,42 +547,47 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * Unique identifier (traceId) for the trace that represents the span set. Note that this field
-     * is defined as traceKey in the API and it maps to the traceId in the trace data in Application
-     * Performance Monitoring.
-     */
+     * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Unique identifier (traceId) for the trace that represents the span set. Note that this field
-     * is defined as traceKey in the API and it maps to the traceId in the trace data in Application
-     * Performance Monitoring.
+     * Unique identifier (traceId) for the trace that represents the span set.  Note that this field is
+     * defined as traceKey in the API and it maps to the traceId in the trace data in Application Performance
+     * Monitoring.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * Root span name associated with the trace. This is the flow start operation name. Null is
-     * displayed if the root span is not yet completed.
-     */
+     * Root span name associated with the trace. This is the flow start operation name.
+     * Null is displayed if the root span is not yet completed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanOperationName")
     private final String rootSpanOperationName;
 
     /**
-     * Root span name associated with the trace. This is the flow start operation name. Null is
-     * displayed if the root span is not yet completed.
+     * Root span name associated with the trace. This is the flow start operation name.
+     * Null is displayed if the root span is not yet completed.
      *
      * @return the value
-     */
+     **/
     public String getRootSpanOperationName() {
         return rootSpanOperationName;
     }
 
-    /** Start time of the earliest span in the span collection. */
+    /**
+     * Start time of the earliest span in the span collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestSpanStarted")
     private final java.util.Date timeEarliestSpanStarted;
 
@@ -549,12 +595,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Start time of the earliest span in the span collection.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEarliestSpanStarted() {
         return timeEarliestSpanStarted;
     }
 
-    /** End time of the span that most recently ended in the span collection. */
+    /**
+     * End time of the span that most recently ended in the span collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSpanEnded")
     private final java.util.Date timeLatestSpanEnded;
 
@@ -562,50 +611,53 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * End time of the span that most recently ended in the span collection.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLatestSpanEnded() {
         return timeLatestSpanEnded;
     }
 
     /**
-     * The number of spans that have been processed by the system for the trace. Note that there
+     * The number of spans that have been processed by the system for the trace.  Note that there
      * could be additional spans that have not been processed or reported yet if the trace is still
      * in progress.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spanCount")
     private final Integer spanCount;
 
     /**
-     * The number of spans that have been processed by the system for the trace. Note that there
+     * The number of spans that have been processed by the system for the trace.  Note that there
      * could be additional spans that have not been processed or reported yet if the trace is still
      * in progress.
      *
      * @return the value
-     */
+     **/
     public Integer getSpanCount() {
         return spanCount;
     }
 
     /**
-     * The number of spans with errors that have been processed by the system for the trace. Note
-     * that the number of spans with errors will be less than or equal to the total number of spans
-     * in the trace.
-     */
+     * The number of spans with errors that have been processed by the system for the trace.
+     * Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorSpanCount")
     private final Integer errorSpanCount;
 
     /**
-     * The number of spans with errors that have been processed by the system for the trace. Note
-     * that the number of spans with errors will be less than or equal to the total number of spans
-     * in the trace.
+     * The number of spans with errors that have been processed by the system for the trace.
+     * Note that the number of spans with errors will be less than or equal to the total number of spans in the trace.
      *
      * @return the value
-     */
+     **/
     public Integer getErrorSpanCount() {
         return errorSpanCount;
     }
 
-    /** Service associated with the trace. */
+    /**
+     * Service associated with the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanServiceName")
     private final String rootSpanServiceName;
 
@@ -613,12 +665,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Service associated with the trace.
      *
      * @return the value
-     */
+     **/
     public String getRootSpanServiceName() {
         return rootSpanServiceName;
     }
 
-    /** Start time of the root span for the span collection. */
+    /**
+     * Start time of the root span for the span collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanStarted")
     private final java.util.Date timeRootSpanStarted;
 
@@ -626,12 +681,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Start time of the root span for the span collection.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRootSpanStarted() {
         return timeRootSpanStarted;
     }
 
-    /** End time of the root span for the span collection. */
+    /**
+     * End time of the root span for the span collection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRootSpanEnded")
     private final java.util.Date timeRootSpanEnded;
 
@@ -639,12 +697,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * End time of the root span for the span collection.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRootSpanEnded() {
         return timeRootSpanEnded;
     }
 
-    /** Time taken for the root span operation to complete in milliseconds. */
+    /**
+     * Time taken for the root span operation to complete in milliseconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rootSpanDurationInMs")
     private final Integer rootSpanDurationInMs;
 
@@ -652,29 +713,31 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Time taken for the root span operation to complete in milliseconds.
      *
      * @return the value
-     */
+     **/
     public Integer getRootSpanDurationInMs() {
         return rootSpanDurationInMs;
     }
 
     /**
-     * Time between the start of the earliest span and the end of the most recent span in
-     * milliseconds.
-     */
+     * Time between the start of the earliest span and the end of the most recent span in milliseconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceDurationInMs")
     private final Integer traceDurationInMs;
 
     /**
-     * Time between the start of the earliest span and the end of the most recent span in
-     * milliseconds.
+     * Time between the start of the earliest span and the end of the most recent span in milliseconds.
      *
      * @return the value
-     */
+     **/
     public Integer getTraceDurationInMs() {
         return traceDurationInMs;
     }
 
-    /** Boolean flag that indicates whether the trace has an error. */
+    /**
+     * Boolean flag that indicates whether the trace has an error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFault")
     private final Boolean isFault;
 
@@ -682,35 +745,41 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Boolean flag that indicates whether the trace has an error.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFault() {
         return isFault;
     }
 
     /**
-     * The status of the trace. The trace statuses are defined as follows: complete - a root span
-     * has been recorded, but there is no information on the errors. success - a complete root span
-     * is recorded there is a successful error type and error code - HTTP 200. incomplete - the root
-     * span has not yet been received. error - the root span returned with an error. There may or
-     * may not be an associated error code or error type.
-     */
+     * The status of the trace.
+     * The trace statuses are defined as follows:
+     * complete - a root span has been recorded, but there is no information on the errors.
+     * success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
+     * incomplete - the root span has not yet been received.
+     * error - the root span returned with an error. There may or may not be an associated error code or error type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceStatus")
     private final String traceStatus;
 
     /**
-     * The status of the trace. The trace statuses are defined as follows: complete - a root span
-     * has been recorded, but there is no information on the errors. success - a complete root span
-     * is recorded there is a successful error type and error code - HTTP 200. incomplete - the root
-     * span has not yet been received. error - the root span returned with an error. There may or
-     * may not be an associated error code or error type.
+     * The status of the trace.
+     * The trace statuses are defined as follows:
+     * complete - a root span has been recorded, but there is no information on the errors.
+     * success - a complete root span is recorded there is a successful error type and error code - HTTP 200.
+     * incomplete - the root span has not yet been received.
+     * error - the root span returned with an error. There may or may not be an associated error code or error type.
      *
      * @return the value
-     */
+     **/
     public String getTraceStatus() {
         return traceStatus;
     }
 
-    /** Error type of the trace. */
+    /**
+     * Error type of the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceErrorType")
     private final String traceErrorType;
 
@@ -718,12 +787,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Error type of the trace.
      *
      * @return the value
-     */
+     **/
     public String getTraceErrorType() {
         return traceErrorType;
     }
 
-    /** Error code of the trace. */
+    /**
+     * Error code of the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traceErrorCode")
     private final String traceErrorCode;
 
@@ -731,12 +803,15 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Error code of the trace.
      *
      * @return the value
-     */
+     **/
     public String getTraceErrorCode() {
         return traceErrorCode;
     }
 
-    /** A summary of the spans by service. */
+    /**
+     * A summary of the spans by service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceSummaries")
     private final java.util.List<TraceServiceSummary> serviceSummaries;
 
@@ -744,19 +819,22 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A summary of the spans by service.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TraceServiceSummary> getServiceSummaries() {
         return serviceSummaries;
     }
 
-    /** Source of trace (traces, syn_traces). */
-    public enum SourceName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Source of trace (traces, syn_traces).
+     *
+     **/
+    public enum SourceName {
         Traces("TRACES"),
         SynTraces("SYN_TRACES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -795,7 +873,10 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** Source of trace (traces, syn_traces). */
+    /**
+     * Source of trace (traces, syn_traces).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final SourceName sourceName;
 
@@ -803,7 +884,7 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Source of trace (traces, syn_traces).
      *
      * @return the value
-     */
+     **/
     public SourceName getSourceName() {
         return sourceName;
     }
@@ -815,7 +896,10 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return spanSummary;
     }
 
-    /** An array of spans in the trace. */
+    /**
+     * An array of spans in the trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spans")
     private final java.util.List<Span> spans;
 
@@ -823,7 +907,7 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * An array of spans in the trace.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Span> getSpans() {
         return spans;
     }
@@ -835,7 +919,6 @@ public final class Trace extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

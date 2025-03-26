@@ -5,53 +5,53 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The Pluggable Database creation type. Use {@code LOCAL_CLONE_PDB} for creating a new PDB using
- * Local Clone on Source Pluggable Database. This will Clone and starts a pluggable database (PDB)
- * in the same database (CDB) as the source PDB. The source PDB must be in the {@code READ_WRITE}
- * openMode to perform the clone operation. isThinClone options are supported for Exadata VM cluster
- * on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer
- * infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure Use {@code
- * REMOTE_CLONE_PDB} for creating a new PDB using Remote Clone on Source Pluggable Database. This
- * will Clone a pluggable database (PDB) to a different database from the source PDB. The cloned PDB
- * will be started upon completion of the clone operation. The source PDB must be in the {@code
- * READ_WRITE} openMode when performing the clone. For Exadata Cloud@Customer instances, the source
- * pluggable database (PDB) must be on the same Exadata Infrastructure as the target container
- * database (CDB) to create a remote clone. isThinClone options are supported for Exadata VM cluster
- * on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer
- * infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure. Use {@code
- * RELOCATE_PDB} for relocating the Pluggable Database from Source CDB and creating it in target
- * CDB. This will relocate a pluggable database (PDB) to a different database from the source PDB.
- * The source PDB must be in the {@code READ_WRITE} openMode when performing the relocate. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The Pluggable Database creation type.
+ * Use {@code LOCAL_CLONE_PDB} for creating a new PDB using Local Clone on Source Pluggable Database. This will Clone and starts a
+ * pluggable database (PDB) in the same database (CDB) as the source PDB. The source PDB must be in the {@code READ_WRITE} openMode to
+ * perform the clone operation.
+ * isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure
+ * Use {@code REMOTE_CLONE_PDB} for creating a new PDB using Remote Clone on Source Pluggable Database. This will Clone a pluggable
+ * database (PDB) to a different database from the source PDB. The cloned PDB will be started upon completion of the clone
+ * operation. The source PDB must be in the {@code READ_WRITE} openMode when performing the clone.
+ * For Exadata Cloud@Customer instances, the source pluggable database (PDB) must be on the same Exadata Infrastructure as the
+ * target container database (CDB) to create a remote clone.
+ * isThinClone options are supported for Exadata VM cluster on Exascale Infrastructure, Exadata Cloud@Customer VM Cluster on Exadata Cloud@Customer infrastructure, and Exadata Cloud VM cluster on cloud Exadata infrastructure.
+ * Use {@code RELOCATE_PDB} for relocating the Pluggable Database from Source CDB and creating it in target CDB. This will relocate a
+ * pluggable database (PDB) to a different database from the source PDB. The source PDB must be in the {@code READ_WRITE} openMode when
+ * performing the relocate.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "creationType",
-        defaultImpl = CreatePluggableDatabaseCreationTypeDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "creationType",
+    defaultImpl = CreatePluggableDatabaseCreationTypeDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreatePluggableDatabaseFromRelocateDetails.class,
-            name = "RELOCATE_PDB"),
+        value = CreatePluggableDatabaseFromRelocateDetails.class,
+        name = "RELOCATE_PDB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreatePluggableDatabaseFromRemoteCloneDetails.class,
-            name = "REMOTE_CLONE_PDB"),
+        value = CreatePluggableDatabaseFromRemoteCloneDetails.class,
+        name = "REMOTE_CLONE_PDB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreatePluggableDatabaseFromLocalCloneDetails.class,
-            name = "LOCAL_CLONE_PDB")
+        value = CreatePluggableDatabaseFromLocalCloneDetails.class,
+        name = "LOCAL_CLONE_PDB"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreatePluggableDatabaseCreationTypeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected CreatePluggableDatabaseCreationTypeDetails() {
@@ -65,7 +65,6 @@ public class CreatePluggableDatabaseCreationTypeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -99,8 +98,10 @@ public class CreatePluggableDatabaseCreationTypeDetails
         return result;
     }
 
-    /** The Pluggable Database creation type. */
-    public enum CreationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Pluggable Database creation type.
+     **/
+    public enum CreationType {
         LocalClonePdb("LOCAL_CLONE_PDB"),
         RemoteClonePdb("REMOTE_CLONE_PDB"),
         RelocatePdb("RELOCATE_PDB"),

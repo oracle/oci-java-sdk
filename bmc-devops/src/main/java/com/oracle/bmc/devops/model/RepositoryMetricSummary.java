@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The metrics details of a repository resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The metrics details of a repository resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RepositoryMetricSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RepositoryMetricSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RepositoryMetricSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metricName",
@@ -49,76 +48,81 @@ public final class RepositoryMetricSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of metric */
+        /**
+         * Type of metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private MetricName metricName;
 
         /**
          * Type of metric
-         *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(MetricName metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-        /** The duration of the returned aggregated data in seconds. */
+        /**
+         * The duration of the returned aggregated data in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
         private Long durationInSeconds;
 
         /**
          * The duration of the returned aggregated data in seconds.
-         *
          * @param durationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInSeconds(Long durationInSeconds) {
             this.durationInSeconds = durationInSeconds;
             this.__explicitlySet__.add("durationInSeconds");
             return this;
         }
-        /** The qualifiers provided in the definition of the returned metric. */
+        /**
+         * The qualifiers provided in the definition of the returned metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
          * The qualifiers provided in the definition of the returned metric.
-         *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** The start time associated with the value of the metric. */
+        /**
+         * The start time associated with the value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimestampInEpochSeconds")
         private Long startTimestampInEpochSeconds;
 
         /**
          * The start time associated with the value of the metric.
-         *
          * @param startTimestampInEpochSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder startTimestampInEpochSeconds(Long startTimestampInEpochSeconds) {
             this.startTimestampInEpochSeconds = startTimestampInEpochSeconds;
             this.__explicitlySet__.add("startTimestampInEpochSeconds");
             return this;
         }
-        /** Represents the total number of the metric being calculated. */
+        /**
+         * Represents the total number of the metric being calculated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Double count;
 
         /**
          * Represents the total number of the metric being calculated.
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Double count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -126,20 +130,19 @@ public final class RepositoryMetricSummary
         }
         /**
          * Represents the total duration in days calculated corresponding to the total no. of PRs.
-         * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and
-         * "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
-         */
+         * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sum")
         private Double sum;
 
         /**
          * Represents the total duration in days calculated corresponding to the total no. of PRs.
-         * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and
-         * "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
+         * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
          *
          * @param sum the value to set
          * @return this builder
-         */
+         **/
         public Builder sum(Double sum) {
             this.sum = sum;
             this.__explicitlySet__.add("sum");
@@ -188,7 +191,9 @@ public final class RepositoryMetricSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,86 +202,90 @@ public final class RepositoryMetricSummary
         return new Builder().copy(this);
     }
 
-    /** Type of metric */
+    /**
+     * Type of metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final MetricName metricName;
 
     /**
      * Type of metric
-     *
      * @return the value
-     */
+     **/
     public MetricName getMetricName() {
         return metricName;
     }
 
-    /** The duration of the returned aggregated data in seconds. */
+    /**
+     * The duration of the returned aggregated data in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
     private final Long durationInSeconds;
 
     /**
      * The duration of the returned aggregated data in seconds.
-     *
      * @return the value
-     */
+     **/
     public Long getDurationInSeconds() {
         return durationInSeconds;
     }
 
-    /** The qualifiers provided in the definition of the returned metric. */
+    /**
+     * The qualifiers provided in the definition of the returned metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
      * The qualifiers provided in the definition of the returned metric.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
-    /** The start time associated with the value of the metric. */
+    /**
+     * The start time associated with the value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimestampInEpochSeconds")
     private final Long startTimestampInEpochSeconds;
 
     /**
      * The start time associated with the value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Long getStartTimestampInEpochSeconds() {
         return startTimestampInEpochSeconds;
     }
 
-    /** Represents the total number of the metric being calculated. */
+    /**
+     * Represents the total number of the metric being calculated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Double count;
 
     /**
      * Represents the total number of the metric being calculated.
-     *
      * @return the value
-     */
+     **/
     public Double getCount() {
         return count;
     }
 
     /**
-     * Represents the total duration in days calculated corresponding to the total no. of PRs. This
-     * is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and
-     * "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
-     */
+     * Represents the total duration in days calculated corresponding to the total no. of PRs.
+     * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sum")
     private final Double sum;
 
     /**
-     * Represents the total duration in days calculated corresponding to the total no. of PRs. This
-     * is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and
-     * "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
+     * Represents the total duration in days calculated corresponding to the total no. of PRs.
+     * This is used only for "PULL_REQUEST_REVIEW_START_DURATION_IN_DAYS" and "PULL_REQUEST_REVIEW_DURATION_IN_DAYS" metrics.
      *
      * @return the value
-     */
+     **/
     public Double getSum() {
         return sum;
     }
@@ -288,7 +297,6 @@ public final class RepositoryMetricSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,18 @@ package com.oracle.bmc.ailanguage.responses;
 
 import com.oracle.bmc.ailanguage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT */
+    /**
+     * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+     *
+     */
     private String sunset;
 
     /**
@@ -36,13 +40,14 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
         return sunset;
     }
 
-    /** The returned {@code DetectLanguageSentimentsResult} instance. */
+    /**
+     * The returned DetectLanguageSentimentsResult instance.
+     */
     private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
             detectLanguageSentimentsResult;
 
     /**
-     * The returned {@code DetectLanguageSentimentsResult} instance.
-     *
+     * The returned DetectLanguageSentimentsResult instance.
      * @return the value
      */
     public com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
@@ -59,7 +64,7 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
     })
     private DetectLanguageSentimentsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String sunset,
             com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
@@ -70,34 +75,31 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
         this.detectLanguageSentimentsResult = detectLanguageSentimentsResult;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    DetectLanguageSentimentsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -107,7 +109,10 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT */
+        /**
+         * This API will be retired on Monday, 10 Oct 2023 00:00:00 GMT
+         *
+         */
         private String sunset;
 
         /**
@@ -121,13 +126,14 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned {@code DetectLanguageSentimentsResult} instance. */
+        /**
+         * The returned DetectLanguageSentimentsResult instance.
+         */
         private com.oracle.bmc.ailanguage.model.DetectLanguageSentimentsResult
                 detectLanguageSentimentsResult;
 
         /**
-         * The returned {@code DetectLanguageSentimentsResult} instance.
-         *
+         * The returned DetectLanguageSentimentsResult instance.
          * @param detectLanguageSentimentsResult the value to set
          * @return this builder
          */
@@ -140,10 +146,8 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DetectLanguageSentimentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -156,10 +160,8 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DetectLanguageSentimentsResponse build() {
             return new DetectLanguageSentimentsResponse(
                     __httpStatusCode__,
@@ -172,7 +174,6 @@ public class DetectLanguageSentimentsResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

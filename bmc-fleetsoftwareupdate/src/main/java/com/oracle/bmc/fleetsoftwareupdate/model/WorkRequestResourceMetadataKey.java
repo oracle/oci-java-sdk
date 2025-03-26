@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Metadata keys for WorkRequest resource metadata. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Metadata keys for WorkRequest resource metadata.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum WorkRequestResourceMetadataKey {
     DisplayName("DISPLAY_NAME"),
 
     /**

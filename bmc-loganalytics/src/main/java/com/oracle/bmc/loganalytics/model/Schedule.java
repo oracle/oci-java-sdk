@@ -5,31 +5,31 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Schedule for scheduled task. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Schedule for scheduled task.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = Schedule.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = Schedule.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CronSchedule.class, name = "CRON"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = FixedFrequencySchedule.class,
-            name = "FIXED_FREQUENCY")
+        value = FixedFrequencySchedule.class,
+        name = "FIXED_FREQUENCY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Schedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"misfirePolicy", "timeOfFirstExecution"})
     protected Schedule(MisfirePolicy misfirePolicy, java.util.Date timeOfFirstExecution) {
@@ -38,15 +38,17 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         this.timeOfFirstExecution = timeOfFirstExecution;
     }
 
-    /** Schedule misfire retry policy. */
-    public enum MisfirePolicy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Schedule misfire retry policy.
+     **/
+    public enum MisfirePolicy {
         RetryOnce("RETRY_ONCE"),
         RetryIndefinitely("RETRY_INDEFINITELY"),
         Skip("SKIP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -85,15 +87,16 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
             return UnknownEnumValue;
         }
     };
-    /** Schedule misfire retry policy. */
+    /**
+     * Schedule misfire retry policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("misfirePolicy")
     private final MisfirePolicy misfirePolicy;
 
     /**
      * Schedule misfire retry policy.
-     *
      * @return the value
-     */
+     **/
     public MisfirePolicy getMisfirePolicy() {
         return misfirePolicy;
     }
@@ -101,7 +104,8 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
     /**
      * The date and time the scheduled task should execute first time after create or update;
      * thereafter the task will execute as specified in the schedule.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfFirstExecution")
     private final java.util.Date timeOfFirstExecution;
 
@@ -110,7 +114,7 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
      * thereafter the task will execute as specified in the schedule.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfFirstExecution() {
         return timeOfFirstExecution;
     }
@@ -122,7 +126,6 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -167,14 +170,16 @@ public class Schedule extends com.oracle.bmc.http.client.internal.ExplicitlySetB
         return result;
     }
 
-    /** Schedule type discriminator. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Schedule type discriminator.
+     **/
+    public enum Type {
         FixedFrequency("FIXED_FREQUENCY"),
         Cron("CRON"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

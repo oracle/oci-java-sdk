@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.governancerulescontrolplane;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.governancerulescontrolplane.internal.http.*;
 import com.oracle.bmc.governancerulescontrolplane.requests.*;
 import com.oracle.bmc.governancerulescontrolplane.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for GovernanceRule service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for GovernanceRule service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
-public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements GovernanceRuleAsync {
-    /** Service instance for GovernanceRule. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220504")
+public class GovernanceRuleAsyncClient implements GovernanceRuleAsync {
+    /**
+     * Service instance for GovernanceRule.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("GOVERNANCERULE")
@@ -40,624 +37,112 @@ public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.Base
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(GovernanceRuleAsyncClient.class);
 
-    GovernanceRuleAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, GovernanceRuleAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "governancerulescontrolplane";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public GovernanceRuleAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new GovernanceRuleAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateGovernanceRuleResponse> createGovernanceRule(
-            CreateGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateGovernanceRuleDetails(),
-                "createGovernanceRuleDetails is required");
-
-        return clientCall(request, CreateGovernanceRuleResponse::builder)
-                .logger(LOG, "createGovernanceRule")
-                .serviceDetails("GovernanceRule", "CreateGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule.class,
-                        CreateGovernanceRuleResponse.Builder::governanceRule)
-                .handleResponseHeaderString("etag", CreateGovernanceRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateGovernanceRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateGovernanceRuleResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateGovernanceRuleResponse.Builder::location)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateInclusionCriterionResponse> createInclusionCriterion(
-            CreateInclusionCriterionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateInclusionCriterionDetails(),
-                "createInclusionCriterionDetails is required");
-
-        return clientCall(request, CreateInclusionCriterionResponse::builder)
-                .logger(LOG, "createInclusionCriterion")
-                .serviceDetails("GovernanceRule", "CreateInclusionCriterion", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateInclusionCriterionRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("inclusionCriteria")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion.class,
-                        CreateInclusionCriterionResponse.Builder::inclusionCriterion)
-                .handleResponseHeaderString("etag", CreateInclusionCriterionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateInclusionCriterionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateInclusionCriterionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "location", CreateInclusionCriterionResponse.Builder::location)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteGovernanceRuleResponse> deleteGovernanceRule(
-            DeleteGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getGovernanceRuleId(), "governanceRuleId must not be blank");
-
-        return clientCall(request, DeleteGovernanceRuleResponse::builder)
-                .logger(LOG, "deleteGovernanceRule")
-                .serviceDetails("GovernanceRule", "DeleteGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .appendPathParam(request.getGovernanceRuleId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteGovernanceRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteGovernanceRuleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteInclusionCriterionResponse> deleteInclusionCriterion(
-            DeleteInclusionCriterionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getInclusionCriterionId(), "inclusionCriterionId must not be blank");
-
-        return clientCall(request, DeleteInclusionCriterionResponse::builder)
-                .logger(LOG, "deleteInclusionCriterion")
-                .serviceDetails("GovernanceRule", "DeleteInclusionCriterion", "")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteInclusionCriterionRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("inclusionCriteria")
-                .appendPathParam(request.getInclusionCriterionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteInclusionCriterionResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteInclusionCriterionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetEnforcedGovernanceRuleResponse> getEnforcedGovernanceRule(
-            GetEnforcedGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetEnforcedGovernanceRuleRequest, GetEnforcedGovernanceRuleResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getEnforcedGovernanceRuleId(),
-                "enforcedGovernanceRuleId must not be blank");
-
-        return clientCall(request, GetEnforcedGovernanceRuleResponse::builder)
-                .logger(LOG, "getEnforcedGovernanceRule")
-                .serviceDetails("GovernanceRule", "GetEnforcedGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetEnforcedGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("enforcedGovernanceRules")
-                .appendPathParam(request.getEnforcedGovernanceRuleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.EnforcedGovernanceRule
-                                .class,
-                        GetEnforcedGovernanceRuleResponse.Builder::enforcedGovernanceRule)
-                .handleResponseHeaderString("etag", GetEnforcedGovernanceRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetEnforcedGovernanceRuleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetGovernanceRuleResponse> getGovernanceRule(
-            GetGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetGovernanceRuleRequest, GetGovernanceRuleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getGovernanceRuleId(), "governanceRuleId must not be blank");
-
-        return clientCall(request, GetGovernanceRuleResponse::builder)
-                .logger(LOG, "getGovernanceRule")
-                .serviceDetails("GovernanceRule", "GetGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .appendPathParam(request.getGovernanceRuleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.GovernanceRule.class,
-                        GetGovernanceRuleResponse.Builder::governanceRule)
-                .handleResponseHeaderString("etag", GetGovernanceRuleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetGovernanceRuleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetInclusionCriterionResponse> getInclusionCriterion(
-            GetInclusionCriterionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetInclusionCriterionRequest, GetInclusionCriterionResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getInclusionCriterionId(), "inclusionCriterionId must not be blank");
-
-        return clientCall(request, GetInclusionCriterionResponse::builder)
-                .logger(LOG, "getInclusionCriterion")
-                .serviceDetails("GovernanceRule", "GetInclusionCriterion", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetInclusionCriterionRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("inclusionCriteria")
-                .appendPathParam(request.getInclusionCriterionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.InclusionCriterion.class,
-                        GetInclusionCriterionResponse.Builder::inclusionCriterion)
-                .handleResponseHeaderString("etag", GetInclusionCriterionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetInclusionCriterionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetTenancyAttachmentResponse> getTenancyAttachment(
-            GetTenancyAttachmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getTenancyAttachmentId(), "tenancyAttachmentId must not be blank");
-
-        return clientCall(request, GetTenancyAttachmentResponse::builder)
-                .logger(LOG, "getTenancyAttachment")
-                .serviceDetails("GovernanceRule", "GetTenancyAttachment", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetTenancyAttachmentRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("tenancyAttachments")
-                .appendPathParam(request.getTenancyAttachmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachment.class,
-                        GetTenancyAttachmentResponse.Builder::tenancyAttachment)
-                .handleResponseHeaderString("etag", GetTenancyAttachmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetTenancyAttachmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListEnforcedGovernanceRulesResponse>
-            listEnforcedGovernanceRules(
-                    ListEnforcedGovernanceRulesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListEnforcedGovernanceRulesRequest,
-                                    ListEnforcedGovernanceRulesResponse>
-                            handler) {
-
-        return clientCall(request, ListEnforcedGovernanceRulesResponse::builder)
-                .logger(LOG, "listEnforcedGovernanceRules")
-                .serviceDetails("GovernanceRule", "ListEnforcedGovernanceRules", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListEnforcedGovernanceRulesRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("enforcedGovernanceRules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("enforcedGovernanceRuleId", request.getEnforcedGovernanceRuleId())
-                .appendEnumQueryParam("governanceRuleType", request.getGovernanceRuleType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model
-                                .EnforcedGovernanceRuleCollection.class,
-                        ListEnforcedGovernanceRulesResponse.Builder
-                                ::enforcedGovernanceRuleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListEnforcedGovernanceRulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListEnforcedGovernanceRulesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListGovernanceRulesResponse> listGovernanceRules(
-            ListGovernanceRulesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListGovernanceRulesRequest, ListGovernanceRulesResponse>
-                    handler) {
-
-        return clientCall(request, ListGovernanceRulesResponse::builder)
-                .logger(LOG, "listGovernanceRules")
-                .serviceDetails("GovernanceRule", "ListGovernanceRules", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListGovernanceRulesRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("governanceRuleId", request.getGovernanceRuleId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("governanceRuleType", request.getGovernanceRuleType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.GovernanceRuleCollection
-                                .class,
-                        ListGovernanceRulesResponse.Builder::governanceRuleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListGovernanceRulesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListGovernanceRulesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListInclusionCriteriaResponse> listInclusionCriteria(
-            ListInclusionCriteriaRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>
-                    handler) {
-        Objects.requireNonNull(request.getGovernanceRuleId(), "governanceRuleId is required");
-
-        return clientCall(request, ListInclusionCriteriaResponse::builder)
-                .logger(LOG, "listInclusionCriteria")
-                .serviceDetails("GovernanceRule", "ListInclusionCriteria", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListInclusionCriteriaRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("inclusionCriteria")
-                .appendQueryParam("governanceRuleId", request.getGovernanceRuleId())
-                .appendQueryParam("inclusionCriterionId", request.getInclusionCriterionId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model
-                                .InclusionCriterionCollection.class,
-                        ListInclusionCriteriaResponse.Builder::inclusionCriterionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListInclusionCriteriaResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListInclusionCriteriaResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListTenancyAttachmentsResponse> listTenancyAttachments(
-            ListTenancyAttachmentsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>
-                    handler) {
-
-        return clientCall(request, ListTenancyAttachmentsResponse::builder)
-                .logger(LOG, "listTenancyAttachments")
-                .serviceDetails("GovernanceRule", "ListTenancyAttachments", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTenancyAttachmentsRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("tenancyAttachments")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("tenancyAttachmentId", request.getTenancyAttachmentId())
-                .appendQueryParam("governanceRuleId", request.getGovernanceRuleId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("childTenancyId", request.getChildTenancyId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.governancerulescontrolplane.model.TenancyAttachmentCollection
-                                .class,
-                        ListTenancyAttachmentsResponse.Builder::tenancyAttachmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTenancyAttachmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTenancyAttachmentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RetryGovernanceRuleResponse> retryGovernanceRule(
-            RetryGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getGovernanceRuleId(), "governanceRuleId must not be blank");
-
-        return clientCall(request, RetryGovernanceRuleResponse::builder)
-                .logger(LOG, "retryGovernanceRule")
-                .serviceDetails("GovernanceRule", "RetryGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RetryGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .appendPathParam(request.getGovernanceRuleId())
-                .appendPathParam("actions")
-                .appendPathParam("retry")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RetryGovernanceRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RetryGovernanceRuleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RetryTenancyAttachmentResponse> retryTenancyAttachment(
-            RetryTenancyAttachmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getTenancyAttachmentId(), "tenancyAttachmentId must not be blank");
-
-        return clientCall(request, RetryTenancyAttachmentResponse::builder)
-                .logger(LOG, "retryTenancyAttachment")
-                .serviceDetails("GovernanceRule", "RetryTenancyAttachment", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RetryTenancyAttachmentRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("tenancyAttachments")
-                .appendPathParam(request.getTenancyAttachmentId())
-                .appendPathParam("actions")
-                .appendPathParam("retry")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RetryTenancyAttachmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RetryTenancyAttachmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateGovernanceRuleResponse> updateGovernanceRule(
-            UpdateGovernanceRuleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getGovernanceRuleId(), "governanceRuleId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateGovernanceRuleDetails(),
-                "updateGovernanceRuleDetails is required");
-
-        return clientCall(request, UpdateGovernanceRuleResponse::builder)
-                .logger(LOG, "updateGovernanceRule")
-                .serviceDetails("GovernanceRule", "UpdateGovernanceRule", "")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateGovernanceRuleRequest::builder)
-                .basePath("/20220504")
-                .appendPathParam("governanceRules")
-                .appendPathParam(request.getGovernanceRuleId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateGovernanceRuleResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateGovernanceRuleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -665,26 +150,26 @@ public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.Base
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -693,29 +178,29 @@ public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.Base
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public GovernanceRuleAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -728,14 +213,971 @@ public class GovernanceRuleAsyncClient extends com.oracle.bmc.http.internal.Base
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public GovernanceRuleAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, GovernanceRuleAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public GovernanceRuleAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new GovernanceRuleAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGovernanceRuleResponse> createGovernanceRule(
+            CreateGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async createGovernanceRule");
+        final CreateGovernanceRuleRequest interceptedRequest =
+                CreateGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "CreateGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateGovernanceRuleResponse>
+                transformer =
+                        CreateGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>,
+                        java.util.concurrent.Future<CreateGovernanceRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateGovernanceRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateGovernanceRuleRequest, CreateGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateInclusionCriterionResponse> createInclusionCriterion(
+            CreateInclusionCriterionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>
+                    handler) {
+        LOG.trace("Called async createInclusionCriterion");
+        final CreateInclusionCriterionRequest interceptedRequest =
+                CreateInclusionCriterionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "CreateInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateInclusionCriterionResponse>
+                transformer =
+                        CreateInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>,
+                        java.util.concurrent.Future<CreateInclusionCriterionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateInclusionCriterionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateInclusionCriterionRequest, CreateInclusionCriterionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGovernanceRuleResponse> deleteGovernanceRule(
+            DeleteGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async deleteGovernanceRule");
+        final DeleteGovernanceRuleRequest interceptedRequest =
+                DeleteGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "DeleteGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteGovernanceRuleResponse>
+                transformer =
+                        DeleteGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>,
+                        java.util.concurrent.Future<DeleteGovernanceRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteGovernanceRuleRequest, DeleteGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteInclusionCriterionResponse> deleteInclusionCriterion(
+            DeleteInclusionCriterionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>
+                    handler) {
+        LOG.trace("Called async deleteInclusionCriterion");
+        final DeleteInclusionCriterionRequest interceptedRequest =
+                DeleteInclusionCriterionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "DeleteInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteInclusionCriterionResponse>
+                transformer =
+                        DeleteInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>,
+                        java.util.concurrent.Future<DeleteInclusionCriterionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteInclusionCriterionRequest, DeleteInclusionCriterionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEnforcedGovernanceRuleResponse> getEnforcedGovernanceRule(
+            GetEnforcedGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetEnforcedGovernanceRuleRequest, GetEnforcedGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async getEnforcedGovernanceRule");
+        final GetEnforcedGovernanceRuleRequest interceptedRequest =
+                GetEnforcedGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetEnforcedGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetEnforcedGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetEnforcedGovernanceRuleResponse>
+                transformer =
+                        GetEnforcedGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetEnforcedGovernanceRuleRequest, GetEnforcedGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetEnforcedGovernanceRuleRequest,
+                                GetEnforcedGovernanceRuleResponse>,
+                        java.util.concurrent.Future<GetEnforcedGovernanceRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetEnforcedGovernanceRuleRequest, GetEnforcedGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGovernanceRuleResponse> getGovernanceRule(
+            GetGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetGovernanceRuleRequest, GetGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async getGovernanceRule");
+        final GetGovernanceRuleRequest interceptedRequest =
+                GetGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "GetGovernanceRule", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetGovernanceRuleResponse>
+                transformer =
+                        GetGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetGovernanceRuleRequest, GetGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetGovernanceRuleRequest, GetGovernanceRuleResponse>,
+                        java.util.concurrent.Future<GetGovernanceRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetGovernanceRuleRequest, GetGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInclusionCriterionResponse> getInclusionCriterion(
+            GetInclusionCriterionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetInclusionCriterionRequest, GetInclusionCriterionResponse>
+                    handler) {
+        LOG.trace("Called async getInclusionCriterion");
+        final GetInclusionCriterionRequest interceptedRequest =
+                GetInclusionCriterionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetInclusionCriterionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetInclusionCriterion",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetInclusionCriterionResponse>
+                transformer =
+                        GetInclusionCriterionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetInclusionCriterionRequest, GetInclusionCriterionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetInclusionCriterionRequest, GetInclusionCriterionResponse>,
+                        java.util.concurrent.Future<GetInclusionCriterionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetInclusionCriterionRequest, GetInclusionCriterionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTenancyAttachmentResponse> getTenancyAttachment(
+            GetTenancyAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async getTenancyAttachment");
+        final GetTenancyAttachmentRequest interceptedRequest =
+                GetTenancyAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTenancyAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "GetTenancyAttachment",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetTenancyAttachmentResponse>
+                transformer =
+                        GetTenancyAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>,
+                        java.util.concurrent.Future<GetTenancyAttachmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTenancyAttachmentRequest, GetTenancyAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEnforcedGovernanceRulesResponse>
+            listEnforcedGovernanceRules(
+                    ListEnforcedGovernanceRulesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListEnforcedGovernanceRulesRequest,
+                                    ListEnforcedGovernanceRulesResponse>
+                            handler) {
+        LOG.trace("Called async listEnforcedGovernanceRules");
+        final ListEnforcedGovernanceRulesRequest interceptedRequest =
+                ListEnforcedGovernanceRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListEnforcedGovernanceRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListEnforcedGovernanceRules",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListEnforcedGovernanceRulesResponse>
+                transformer =
+                        ListEnforcedGovernanceRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListEnforcedGovernanceRulesRequest, ListEnforcedGovernanceRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListEnforcedGovernanceRulesRequest,
+                                ListEnforcedGovernanceRulesResponse>,
+                        java.util.concurrent.Future<ListEnforcedGovernanceRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListEnforcedGovernanceRulesRequest, ListEnforcedGovernanceRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGovernanceRulesResponse> listGovernanceRules(
+            ListGovernanceRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListGovernanceRulesRequest, ListGovernanceRulesResponse>
+                    handler) {
+        LOG.trace("Called async listGovernanceRules");
+        final ListGovernanceRulesRequest interceptedRequest =
+                ListGovernanceRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGovernanceRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "ListGovernanceRules", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListGovernanceRulesResponse>
+                transformer =
+                        ListGovernanceRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListGovernanceRulesRequest, ListGovernanceRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGovernanceRulesRequest, ListGovernanceRulesResponse>,
+                        java.util.concurrent.Future<ListGovernanceRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGovernanceRulesRequest, ListGovernanceRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInclusionCriteriaResponse> listInclusionCriteria(
+            ListInclusionCriteriaRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>
+                    handler) {
+        LOG.trace("Called async listInclusionCriteria");
+        final ListInclusionCriteriaRequest interceptedRequest =
+                ListInclusionCriteriaConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInclusionCriteriaConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListInclusionCriteria",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListInclusionCriteriaResponse>
+                transformer =
+                        ListInclusionCriteriaConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>,
+                        java.util.concurrent.Future<ListInclusionCriteriaResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInclusionCriteriaRequest, ListInclusionCriteriaResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTenancyAttachmentsResponse> listTenancyAttachments(
+            ListTenancyAttachmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>
+                    handler) {
+        LOG.trace("Called async listTenancyAttachments");
+        final ListTenancyAttachmentsRequest interceptedRequest =
+                ListTenancyAttachmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTenancyAttachmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "ListTenancyAttachments",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListTenancyAttachmentsResponse>
+                transformer =
+                        ListTenancyAttachmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>,
+                        java.util.concurrent.Future<ListTenancyAttachmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTenancyAttachmentsRequest, ListTenancyAttachmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryGovernanceRuleResponse> retryGovernanceRule(
+            RetryGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async retryGovernanceRule");
+        final RetryGovernanceRuleRequest interceptedRequest =
+                RetryGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetryGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule", "RetryGovernanceRule", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, RetryGovernanceRuleResponse>
+                transformer =
+                        RetryGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>,
+                        java.util.concurrent.Future<RetryGovernanceRuleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetryGovernanceRuleRequest, RetryGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetryTenancyAttachmentResponse> retryTenancyAttachment(
+            RetryTenancyAttachmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>
+                    handler) {
+        LOG.trace("Called async retryTenancyAttachment");
+        final RetryTenancyAttachmentRequest interceptedRequest =
+                RetryTenancyAttachmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetryTenancyAttachmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "RetryTenancyAttachment",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, RetryTenancyAttachmentResponse>
+                transformer =
+                        RetryTenancyAttachmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>,
+                        java.util.concurrent.Future<RetryTenancyAttachmentResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetryTenancyAttachmentRequest, RetryTenancyAttachmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGovernanceRuleResponse> updateGovernanceRule(
+            UpdateGovernanceRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>
+                    handler) {
+        LOG.trace("Called async updateGovernanceRule");
+        final UpdateGovernanceRuleRequest interceptedRequest =
+                UpdateGovernanceRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateGovernanceRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GovernanceRule",
+                        "UpdateGovernanceRule",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateGovernanceRuleResponse>
+                transformer =
+                        UpdateGovernanceRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>,
+                        java.util.concurrent.Future<UpdateGovernanceRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateGovernanceRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateGovernanceRuleRequest, UpdateGovernanceRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

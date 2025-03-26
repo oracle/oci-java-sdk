@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the input used to release recalled data <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the input used to release recalled data
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ReleaseRecalledDataDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ReleaseRecalledDataDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ReleaseRecalledDataDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -46,80 +46,85 @@ public final class ReleaseRecalledDataDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the compartment OCID for permission checking */
+        /**
+         * This is the compartment OCID for permission checking
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * This is the compartment OCID for permission checking
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** This is the end of the time interval */
+        /**
+         * This is the end of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
          * This is the end of the time interval
-         *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-        /** This is the start of the time interval */
+        /**
+         * This is the start of the time interval
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
         private java.util.Date timeDataStarted;
 
         /**
          * This is the start of the time interval
-         *
          * @param timeDataStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataStarted(java.util.Date timeDataStarted) {
             this.timeDataStarted = timeDataStarted;
             this.__explicitlySet__.add("timeDataStarted");
             return this;
         }
-        /** This is the type of the recalled data to be released */
+        /**
+         * This is the type of the recalled data to be released
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
         /**
          * This is the type of the recalled data to be released
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
         /**
-         * This is the id for the recalled data collection to be released. If specified, only this
-         * collection will be released
-         */
+         * This is the id for the recalled data collection to be released.
+         * If specified, only this collection will be released
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
         private Long collectionId;
 
         /**
-         * This is the id for the recalled data collection to be released. If specified, only this
-         * collection will be released
+         * This is the id for the recalled data collection to be released.
+         * If specified, only this collection will be released
          *
          * @param collectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder collectionId(Long collectionId) {
             this.collectionId = collectionId;
             this.__explicitlySet__.add("collectionId");
@@ -164,7 +169,9 @@ public final class ReleaseRecalledDataDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,71 +180,76 @@ public final class ReleaseRecalledDataDetails
         return new Builder().copy(this);
     }
 
-    /** This is the compartment OCID for permission checking */
+    /**
+     * This is the compartment OCID for permission checking
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * This is the compartment OCID for permission checking
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** This is the end of the time interval */
+    /**
+     * This is the end of the time interval
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
      * This is the end of the time interval
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
 
-    /** This is the start of the time interval */
+    /**
+     * This is the start of the time interval
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataStarted")
     private final java.util.Date timeDataStarted;
 
     /**
      * This is the start of the time interval
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataStarted() {
         return timeDataStarted;
     }
 
-    /** This is the type of the recalled data to be released */
+    /**
+     * This is the type of the recalled data to be released
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
     /**
      * This is the type of the recalled data to be released
-     *
      * @return the value
-     */
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }
 
     /**
-     * This is the id for the recalled data collection to be released. If specified, only this
-     * collection will be released
-     */
+     * This is the id for the recalled data collection to be released.
+     * If specified, only this collection will be released
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectionId")
     private final Long collectionId;
 
     /**
-     * This is the id for the recalled data collection to be released. If specified, only this
-     * collection will be released
+     * This is the id for the recalled data collection to be released.
+     * If specified, only this collection will be released
      *
      * @return the value
-     */
+     **/
     public Long getCollectionId() {
         return collectionId;
     }
@@ -249,7 +261,6 @@ public final class ReleaseRecalledDataDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

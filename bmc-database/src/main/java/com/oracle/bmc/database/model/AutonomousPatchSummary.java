@@ -6,27 +6,26 @@ package com.oracle.bmc.database.model;
 
 /**
  * A patch for an Autonomous Exadata Infrastructure or Autonomous Container Database.
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access,
+ * see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousPatchSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousPatchSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousPatchSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,170 +69,173 @@ public final class AutonomousPatchSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * patch.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * patch.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The text describing this patch package. */
+        /**
+         * The text describing this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The text describing this patch package.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of patch. BUNDLE is one example. */
+        /**
+         * The type of patch. BUNDLE is one example.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of patch. BUNDLE is one example.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * A descriptive text associated with the lifecycleState. Typically can contain additional
-         * displayable text.
-         */
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A descriptive text associated with the lifecycleState. Typically can contain additional
-         * displayable text.
+         * A descriptive text associated with the lifecycleState.
+         * Typically can contain additional displayable text.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The current state of the patch as a result of lastAction. */
+        /**
+         * The current state of the patch as a result of lastAction.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the patch as a result of lastAction.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time that the patch was released. */
+        /**
+         * The date and time that the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * The date and time that the patch was released.
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** The version of this patch package. */
+        /**
+         * The version of this patch package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of this patch package.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
         /**
-         * Database patching model preference. See [My Oracle Support note
-         * 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the
-         * Release Update (RU) and Release Update Revision (RUR) patching models.
-         */
+         * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
         private PatchModel patchModel;
 
         /**
-         * Database patching model preference. See [My Oracle Support note
-         * 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the
-         * Release Update (RU) and Release Update Revision (RUR) patching models.
-         *
+         * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
          * @param patchModel the value to set
          * @return this builder
-         */
+         **/
         public Builder patchModel(PatchModel patchModel) {
             this.patchModel = patchModel;
             this.__explicitlySet__.add("patchModel");
             return this;
         }
-        /** First month of the quarter in which the patch was released. */
+        /**
+         * First month of the quarter in which the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quarter")
         private String quarter;
 
         /**
          * First month of the quarter in which the patch was released.
-         *
          * @param quarter the value to set
          * @return this builder
-         */
+         **/
         public Builder quarter(String quarter) {
             this.quarter = quarter;
             this.__explicitlySet__.add("quarter");
             return this;
         }
-        /** Year in which the patch was released. */
+        /**
+         * Year in which the patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("year")
         private String year;
 
         /**
          * Year in which the patch was released.
-         *
          * @param year the value to set
          * @return this builder
-         */
+         **/
         public Builder year(String year) {
             this.year = year;
             this.__explicitlySet__.add("year");
             return this;
         }
-        /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
+        /**
+         * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
         private AutonomousPatchType autonomousPatchType;
 
@@ -242,7 +244,7 @@ public final class AutonomousPatchSummary
          *
          * @param autonomousPatchType the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousPatchType(AutonomousPatchType autonomousPatchType) {
             this.autonomousPatchType = autonomousPatchType;
             this.__explicitlySet__.add("autonomousPatchType");
@@ -311,7 +313,9 @@ public final class AutonomousPatchSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,75 +325,77 @@ public final class AutonomousPatchSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * patch.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * patch.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the patch.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The text describing this patch package. */
+    /**
+     * The text describing this patch package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The text describing this patch package.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The type of patch. BUNDLE is one example. */
+    /**
+     * The type of patch. BUNDLE is one example.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of patch. BUNDLE is one example.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * A descriptive text associated with the lifecycleState. Typically can contain additional
-     * displayable text.
-     */
+     * A descriptive text associated with the lifecycleState.
+     * Typically can contain additional displayable text.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A descriptive text associated with the lifecycleState. Typically can contain additional
-     * displayable text.
+     * A descriptive text associated with the lifecycleState.
+     * Typically can contain additional displayable text.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The current state of the patch as a result of lastAction. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the patch as a result of lastAction.
+     **/
+    public enum LifecycleState {
         Available("AVAILABLE"),
         Success("SUCCESS"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -428,57 +434,58 @@ public final class AutonomousPatchSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the patch as a result of lastAction. */
+    /**
+     * The current state of the patch as a result of lastAction.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the patch as a result of lastAction.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time that the patch was released. */
+    /**
+     * The date and time that the patch was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * The date and time that the patch was released.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** The version of this patch package. */
+    /**
+     * The version of this patch package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of this patch package.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
     /**
-     * Database patching model preference. See [My Oracle Support note
-     * 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the
-     * Release Update (RU) and Release Update Revision (RUR) patching models.
-     */
-    public enum PatchModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+     **/
+    public enum PatchModel {
         ReleaseUpdates("RELEASE_UPDATES"),
         ReleaseUpdateRevisions("RELEASE_UPDATE_REVISIONS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -518,58 +525,58 @@ public final class AutonomousPatchSummary
         }
     };
     /**
-     * Database patching model preference. See [My Oracle Support note
-     * 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the
-     * Release Update (RU) and Release Update Revision (RUR) patching models.
-     */
+     * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchModel")
     private final PatchModel patchModel;
 
     /**
-     * Database patching model preference. See [My Oracle Support note
-     * 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the
-     * Release Update (RU) and Release Update Revision (RUR) patching models.
-     *
+     * Database patching model preference. See [My Oracle Support note 2285040.1](https://support.oracle.com/rs?type=doc&id=2285040.1) for information on the Release Update (RU) and Release Update Revision (RUR) patching models.
      * @return the value
-     */
+     **/
     public PatchModel getPatchModel() {
         return patchModel;
     }
 
-    /** First month of the quarter in which the patch was released. */
+    /**
+     * First month of the quarter in which the patch was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quarter")
     private final String quarter;
 
     /**
      * First month of the quarter in which the patch was released.
-     *
      * @return the value
-     */
+     **/
     public String getQuarter() {
         return quarter;
     }
 
-    /** Year in which the patch was released. */
+    /**
+     * Year in which the patch was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("year")
     private final String year;
 
     /**
      * Year in which the patch was released.
-     *
      * @return the value
-     */
+     **/
     public String getYear() {
         return year;
     }
 
-    /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
-    public enum AutonomousPatchType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     **/
+    public enum AutonomousPatchType {
         Quarterly("QUARTERLY"),
         Timezone("TIMEZONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -608,7 +615,10 @@ public final class AutonomousPatchSummary
             return UnknownEnumValue;
         }
     };
-    /** Maintenance run type, either "QUARTERLY" or "TIMEZONE". */
+    /**
+     * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousPatchType")
     private final AutonomousPatchType autonomousPatchType;
 
@@ -616,7 +626,7 @@ public final class AutonomousPatchSummary
      * Maintenance run type, either "QUARTERLY" or "TIMEZONE".
      *
      * @return the value
-     */
+     **/
     public AutonomousPatchType getAutonomousPatchType() {
         return autonomousPatchType;
     }
@@ -628,7 +638,6 @@ public final class AutonomousPatchSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

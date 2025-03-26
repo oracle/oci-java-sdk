@@ -6,14 +6,15 @@ package com.oracle.bmc.databasemanagement.responses;
 
 import com.oracle.bmc.databasemanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** A link to the newly created Managed Database Group. */
+    /**
+     * A link to the newly created Managed Database Group.
+     */
     private String location;
 
     /**
      * A link to the newly created Managed Database Group.
-     *
      * @return the value
      */
     public String getLocation() {
@@ -21,14 +22,15 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,7 +38,10 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -48,12 +53,13 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
         return etag;
     }
 
-    /** The returned {@code ManagedDatabaseGroup} instance. */
+    /**
+     * The returned ManagedDatabaseGroup instance.
+     */
     private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
     /**
-     * The returned {@code ManagedDatabaseGroup} instance.
-     *
+     * The returned ManagedDatabaseGroup instance.
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup getManagedDatabaseGroup() {
@@ -70,7 +76,7 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
     })
     private CreateManagedDatabaseGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
@@ -82,31 +88,28 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
         this.managedDatabaseGroup = managedDatabaseGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateManagedDatabaseGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** A link to the newly created Managed Database Group. */
+        /**
+         * A link to the newly created Managed Database Group.
+         */
         private String location;
 
         /**
          * A link to the newly created Managed Database Group.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -116,14 +119,15 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,7 +137,10 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -147,12 +154,13 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code ManagedDatabaseGroup} instance. */
+        /**
+         * The returned ManagedDatabaseGroup instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ManagedDatabaseGroup managedDatabaseGroup;
 
         /**
-         * The returned {@code ManagedDatabaseGroup} instance.
-         *
+         * The returned ManagedDatabaseGroup instance.
          * @param managedDatabaseGroup the value to set
          * @return this builder
          */
@@ -164,10 +172,8 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateManagedDatabaseGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -181,10 +187,8 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateManagedDatabaseGroupResponse build() {
             return new CreateManagedDatabaseGroupResponse(
                     __httpStatusCode__,
@@ -198,7 +202,6 @@ public class CreateManagedDatabaseGroupResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

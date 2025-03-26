@@ -5,61 +5,55 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the Inline public key verification source details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the Inline public key verification source details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InlinePublicKeyVerificationKeySource.Builder.class)
+    builder = InlinePublicKeyVerificationKeySource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "verificationKeySourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "verificationKeySourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InlinePublicKeyVerificationKeySource extends VerificationKeySource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Current version of Base64 encoding of the public key which is in binary GPG exported
-         * format.
-         */
+         * Current version of Base64 encoding of the public key which is in binary GPG exported format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPublicKey")
         private String currentPublicKey;
 
         /**
-         * Current version of Base64 encoding of the public key which is in binary GPG exported
-         * format.
-         *
+         * Current version of Base64 encoding of the public key which is in binary GPG exported format.
          * @param currentPublicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder currentPublicKey(String currentPublicKey) {
             this.currentPublicKey = currentPublicKey;
             this.__explicitlySet__.add("currentPublicKey");
             return this;
         }
         /**
-         * Previous version of Base64 encoding of the public key which is in binary GPG exported
-         * format. This would be used for key rotation scenarios.
-         */
+         * Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousPublicKey")
         private String previousPublicKey;
 
         /**
-         * Previous version of Base64 encoding of the public key which is in binary GPG exported
-         * format. This would be used for key rotation scenarios.
-         *
+         * Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
          * @param previousPublicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder previousPublicKey(String previousPublicKey) {
             this.previousPublicKey = previousPublicKey;
             this.__explicitlySet__.add("previousPublicKey");
@@ -91,7 +85,9 @@ public final class InlinePublicKeyVerificationKeySource extends VerificationKeyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,32 +105,28 @@ public final class InlinePublicKeyVerificationKeySource extends VerificationKeyS
 
     /**
      * Current version of Base64 encoding of the public key which is in binary GPG exported format.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPublicKey")
     private final String currentPublicKey;
 
     /**
      * Current version of Base64 encoding of the public key which is in binary GPG exported format.
-     *
      * @return the value
-     */
+     **/
     public String getCurrentPublicKey() {
         return currentPublicKey;
     }
 
     /**
-     * Previous version of Base64 encoding of the public key which is in binary GPG exported format.
-     * This would be used for key rotation scenarios.
-     */
+     * Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousPublicKey")
     private final String previousPublicKey;
 
     /**
-     * Previous version of Base64 encoding of the public key which is in binary GPG exported format.
-     * This would be used for key rotation scenarios.
-     *
+     * Previous version of Base64 encoding of the public key which is in binary GPG exported format. This would be used for key rotation scenarios.
      * @return the value
-     */
+     **/
     public String getPreviousPublicKey() {
         return previousPublicKey;
     }
@@ -146,7 +138,6 @@ public final class InlinePublicKeyVerificationKeySource extends VerificationKeyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

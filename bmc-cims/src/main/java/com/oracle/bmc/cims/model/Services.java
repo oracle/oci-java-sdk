@@ -5,21 +5,19 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * List of Service Categories of a Service for MOS Taxonomy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * List of Service Categories of a Service for MOS Taxonomy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Services.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Services extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Services extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"service", "schema", "serviceCategories"})
     public Services(
@@ -34,46 +32,49 @@ public final class Services extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Service Category list. */
+        /**
+         * Service Category list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private java.util.Map<String, String> service;
 
         /**
          * Service Category list.
-         *
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(java.util.Map<String, String> service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** Schema of a Service Category. */
+        /**
+         * Schema of a Service Category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
         /**
          * Schema of a Service Category.
-         *
          * @param schema the value to set
          * @return this builder
-         */
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
             return this;
         }
-        /** The service categories list for MOS Taxonomy. */
+        /**
+         * The service categories list for MOS Taxonomy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
         private java.util.List<SubCategories> serviceCategories;
 
         /**
          * The service categories list for MOS Taxonomy.
-         *
          * @param serviceCategories the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceCategories(java.util.List<SubCategories> serviceCategories) {
             this.serviceCategories = serviceCategories;
             this.__explicitlySet__.add("serviceCategories");
@@ -106,7 +107,9 @@ public final class Services extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class Services extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** Service Category list. */
+    /**
+     * Service Category list.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final java.util.Map<String, String> service;
 
     /**
      * Service Category list.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getService() {
         return service;
     }
 
-    /** Schema of a Service Category. */
+    /**
+     * Schema of a Service Category.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
     /**
      * Schema of a Service Category.
-     *
      * @return the value
-     */
+     **/
     public String getSchema() {
         return schema;
     }
 
-    /** The service categories list for MOS Taxonomy. */
+    /**
+     * The service categories list for MOS Taxonomy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
     private final java.util.List<SubCategories> serviceCategories;
 
     /**
      * The service categories list for MOS Taxonomy.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SubCategories> getServiceCategories() {
         return serviceCategories;
     }
@@ -161,7 +167,6 @@ public final class Services extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

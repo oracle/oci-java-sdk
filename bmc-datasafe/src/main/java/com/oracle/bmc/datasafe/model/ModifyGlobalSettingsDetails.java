@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details required to modify the global settings in Data Safe. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details required to modify the global settings in Data Safe.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModifyGlobalSettingsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ModifyGlobalSettingsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ModifyGlobalSettingsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isPaidUsage",
@@ -38,46 +37,49 @@ public final class ModifyGlobalSettingsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The paid usage option chosen by the customer admin. */
+        /**
+         * The paid usage option chosen by the customer admin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
         private Boolean isPaidUsage;
 
         /**
          * The paid usage option chosen by the customer admin.
-         *
          * @param isPaidUsage the value to set
          * @return this builder
-         */
+         **/
         public Builder isPaidUsage(Boolean isPaidUsage) {
             this.isPaidUsage = isPaidUsage;
             this.__explicitlySet__.add("isPaidUsage");
             return this;
         }
-        /** The online retention period in months. */
+        /**
+         * The online retention period in months.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onlineRetentionPeriod")
         private Integer onlineRetentionPeriod;
 
         /**
          * The online retention period in months.
-         *
          * @param onlineRetentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder onlineRetentionPeriod(Integer onlineRetentionPeriod) {
             this.onlineRetentionPeriod = onlineRetentionPeriod;
             this.__explicitlySet__.add("onlineRetentionPeriod");
             return this;
         }
-        /** The offline retention period in months. */
+        /**
+         * The offline retention period in months.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offlineRetentionPeriod")
         private Integer offlineRetentionPeriod;
 
         /**
          * The offline retention period in months.
-         *
          * @param offlineRetentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder offlineRetentionPeriod(Integer offlineRetentionPeriod) {
             this.offlineRetentionPeriod = offlineRetentionPeriod;
             this.__explicitlySet__.add("offlineRetentionPeriod");
@@ -114,7 +116,9 @@ public final class ModifyGlobalSettingsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,41 +127,44 @@ public final class ModifyGlobalSettingsDetails
         return new Builder().copy(this);
     }
 
-    /** The paid usage option chosen by the customer admin. */
+    /**
+     * The paid usage option chosen by the customer admin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPaidUsage")
     private final Boolean isPaidUsage;
 
     /**
      * The paid usage option chosen by the customer admin.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPaidUsage() {
         return isPaidUsage;
     }
 
-    /** The online retention period in months. */
+    /**
+     * The online retention period in months.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onlineRetentionPeriod")
     private final Integer onlineRetentionPeriod;
 
     /**
      * The online retention period in months.
-     *
      * @return the value
-     */
+     **/
     public Integer getOnlineRetentionPeriod() {
         return onlineRetentionPeriod;
     }
 
-    /** The offline retention period in months. */
+    /**
+     * The offline retention period in months.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offlineRetentionPeriod")
     private final Integer offlineRetentionPeriod;
 
     /**
      * The offline retention period in months.
-     *
      * @return the value
-     */
+     **/
     public Integer getOfflineRetentionPeriod() {
         return offlineRetentionPeriod;
     }
@@ -169,7 +176,6 @@ public final class ModifyGlobalSettingsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

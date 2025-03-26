@@ -5,30 +5,34 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Product Config Category Details. Defines individual products which contribute to the applications
- * hosting on the resources that are to be managed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Product Config Category Details.
+ * Defines individual products which contribute to the applications hosting on the resources that are to be managed.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProductConfigCategoryDetails.Builder.class)
+    builder = ProductConfigCategoryDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configCategory")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configCategory"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Versions associated with the PRODUCT . */
+        /**
+         * Versions associated with the PRODUCT .
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versions")
         private java.util.List<String> versions;
 
@@ -37,75 +41,79 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
          *
          * @param versions the value to set
          * @return this builder
-         */
+         **/
         public Builder versions(java.util.List<String> versions) {
             this.versions = versions;
             this.__explicitlySet__.add("versions");
             return this;
         }
         /**
-         * OCID for the Credential name to be associated with the Product. These are useful for
-         * target discovery or lifecycle management activities, for example, Oracle WebLogic admin
-         * credentials for Oracle WebLogic Application server.
-         */
+         * OCID for the Credential name to be associated with the Product.
+         * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
         private java.util.List<ConfigAssociationDetails> credentials;
 
         /**
-         * OCID for the Credential name to be associated with the Product. These are useful for
-         * target discovery or lifecycle management activities, for example, Oracle WebLogic admin
-         * credentials for Oracle WebLogic Application server.
+         * OCID for the Credential name to be associated with the Product.
+         * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
          *
          * @param credentials the value to set
          * @return this builder
-         */
+         **/
         public Builder credentials(java.util.List<ConfigAssociationDetails> credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
             return this;
         }
         /**
-         * Various components of the Product. For example:The administration server or node manager
-         * can be the components of the Oracle WebLogic Application server. Forms server or
-         * concurrent manager can be the components of the Oracle E-Business Suite.
-         */
+         * Various components of the Product.
+         * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
+         * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("components")
         private java.util.List<String> components;
 
         /**
-         * Various components of the Product. For example:The administration server or node manager
-         * can be the components of the Oracle WebLogic Application server. Forms server or
-         * concurrent manager can be the components of the Oracle E-Business Suite.
+         * Various components of the Product.
+         * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
+         * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
          *
          * @param components the value to set
          * @return this builder
-         */
+         **/
         public Builder components(java.util.List<String> components) {
             this.components = components;
             this.__explicitlySet__.add("components");
             return this;
         }
         /**
-         * Products compatible with this Product. Provide products from the list of other products
-         * you have created that are compatible with the present one
-         */
+         * Products compatible with this Product.
+         * Provide products from the list of other products you have created that are compatible with the present one
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compatibleProducts")
         private java.util.List<ConfigAssociationDetails> compatibleProducts;
 
         /**
-         * Products compatible with this Product. Provide products from the list of other products
-         * you have created that are compatible with the present one
+         * Products compatible with this Product.
+         * Provide products from the list of other products you have created that are compatible with the present one
          *
          * @param compatibleProducts the value to set
          * @return this builder
-         */
+         **/
         public Builder compatibleProducts(
                 java.util.List<ConfigAssociationDetails> compatibleProducts) {
             this.compatibleProducts = compatibleProducts;
             this.__explicitlySet__.add("compatibleProducts");
             return this;
         }
-        /** Patch Types associated with this Product. */
+        /**
+         * Patch Types associated with this Product.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchTypes")
         private java.util.List<ConfigAssociationDetails> patchTypes;
 
@@ -114,7 +122,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
          *
          * @param patchTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder patchTypes(java.util.List<ConfigAssociationDetails> patchTypes) {
             this.patchTypes = patchTypes;
             this.__explicitlySet__.add("patchTypes");
@@ -159,7 +167,9 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -183,7 +193,10 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
         this.patchTypes = patchTypes;
     }
 
-    /** Versions associated with the PRODUCT . */
+    /**
+     * Versions associated with the PRODUCT .
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("versions")
     private final java.util.List<String> versions;
 
@@ -191,67 +204,71 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
      * Versions associated with the PRODUCT .
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVersions() {
         return versions;
     }
 
     /**
-     * OCID for the Credential name to be associated with the Product. These are useful for target
-     * discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials
-     * for Oracle WebLogic Application server.
-     */
+     * OCID for the Credential name to be associated with the Product.
+     * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
     private final java.util.List<ConfigAssociationDetails> credentials;
 
     /**
-     * OCID for the Credential name to be associated with the Product. These are useful for target
-     * discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials
-     * for Oracle WebLogic Application server.
+     * OCID for the Credential name to be associated with the Product.
+     * These are useful for target discovery or lifecycle management activities, for example, Oracle WebLogic admin credentials for Oracle WebLogic Application server.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigAssociationDetails> getCredentials() {
         return credentials;
     }
 
     /**
-     * Various components of the Product. For example:The administration server or node manager can
-     * be the components of the Oracle WebLogic Application server. Forms server or concurrent
-     * manager can be the components of the Oracle E-Business Suite.
-     */
+     * Various components of the Product.
+     * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
+     * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("components")
     private final java.util.List<String> components;
 
     /**
-     * Various components of the Product. For example:The administration server or node manager can
-     * be the components of the Oracle WebLogic Application server. Forms server or concurrent
-     * manager can be the components of the Oracle E-Business Suite.
+     * Various components of the Product.
+     * For example:The administration server or node manager can be the components of the Oracle WebLogic Application server.
+     * Forms server or concurrent manager can be the components of the Oracle E-Business Suite.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getComponents() {
         return components;
     }
 
     /**
-     * Products compatible with this Product. Provide products from the list of other products you
-     * have created that are compatible with the present one
-     */
+     * Products compatible with this Product.
+     * Provide products from the list of other products you have created that are compatible with the present one
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleProducts")
     private final java.util.List<ConfigAssociationDetails> compatibleProducts;
 
     /**
-     * Products compatible with this Product. Provide products from the list of other products you
-     * have created that are compatible with the present one
+     * Products compatible with this Product.
+     * Provide products from the list of other products you have created that are compatible with the present one
      *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigAssociationDetails> getCompatibleProducts() {
         return compatibleProducts;
     }
 
-    /** Patch Types associated with this Product. */
+    /**
+     * Patch Types associated with this Product.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchTypes")
     private final java.util.List<ConfigAssociationDetails> patchTypes;
 
@@ -259,7 +276,7 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
      * Patch Types associated with this Product.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigAssociationDetails> getPatchTypes() {
         return patchTypes;
     }
@@ -271,7 +288,6 @@ public final class ProductConfigCategoryDetails extends ConfigCategoryDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

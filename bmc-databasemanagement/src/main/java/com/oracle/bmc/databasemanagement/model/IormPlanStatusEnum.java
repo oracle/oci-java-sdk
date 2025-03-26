@@ -5,11 +5,13 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status of the IORM plan of an Exadata storage server. The OTHER status is used when Exadata
- * adds a new value, and OTHER should not be used as input when to make change to IORM plan.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum IormPlanStatusEnum implements com.oracle.bmc.http.internal.BmcEnum {
+ * The status of the IORM plan of an Exadata storage server.
+ * The OTHER status is used when Exadata adds a new value, and OTHER should not be used as input
+ * when to make change to IORM plan.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum IormPlanStatusEnum {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
     Other("OTHER"),

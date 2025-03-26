@@ -5,24 +5,21 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is
- * mandatory. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NetworkConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = NetworkConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NetworkConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "numberOfHops",
@@ -47,76 +44,81 @@ public final class NetworkConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of hops. */
+        /**
+         * Number of hops.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfHops")
         private Integer numberOfHops;
 
         /**
          * Number of hops.
-         *
          * @param numberOfHops the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfHops(Integer numberOfHops) {
             this.numberOfHops = numberOfHops;
             this.__explicitlySet__.add("numberOfHops");
             return this;
         }
-        /** Number of probes per hop. */
+        /**
+         * Number of probes per hop.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("probePerHop")
         private Integer probePerHop;
 
         /**
          * Number of probes per hop.
-         *
          * @param probePerHop the value to set
          * @return this builder
-         */
+         **/
         public Builder probePerHop(Integer probePerHop) {
             this.probePerHop = probePerHop;
             this.__explicitlySet__.add("probePerHop");
             return this;
         }
-        /** Number of probe packets sent out simultaneously. */
+        /**
+         * Number of probe packets sent out simultaneously.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transmissionRate")
         private Integer transmissionRate;
 
         /**
          * Number of probe packets sent out simultaneously.
-         *
          * @param transmissionRate the value to set
          * @return this builder
-         */
+         **/
         public Builder transmissionRate(Integer transmissionRate) {
             this.transmissionRate = transmissionRate;
             this.__explicitlySet__.add("transmissionRate");
             return this;
         }
-        /** Type of protocol. */
+        /**
+         * Type of protocol.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Type of protocol.
-         *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /** Type of probe mode when TCP protocol is selected. */
+        /**
+         * Type of probe mode when TCP protocol is selected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("probeMode")
         private ProbeMode probeMode;
 
         /**
          * Type of probe mode when TCP protocol is selected.
-         *
          * @param probeMode the value to set
          * @return this builder
-         */
+         **/
         public Builder probeMode(ProbeMode probeMode) {
             this.probeMode = probeMode;
             this.__explicitlySet__.add("probeMode");
@@ -161,7 +163,9 @@ public final class NetworkConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,67 +174,72 @@ public final class NetworkConfiguration
         return new Builder().copy(this);
     }
 
-    /** Number of hops. */
+    /**
+     * Number of hops.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfHops")
     private final Integer numberOfHops;
 
     /**
      * Number of hops.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfHops() {
         return numberOfHops;
     }
 
-    /** Number of probes per hop. */
+    /**
+     * Number of probes per hop.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("probePerHop")
     private final Integer probePerHop;
 
     /**
      * Number of probes per hop.
-     *
      * @return the value
-     */
+     **/
     public Integer getProbePerHop() {
         return probePerHop;
     }
 
-    /** Number of probe packets sent out simultaneously. */
+    /**
+     * Number of probe packets sent out simultaneously.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("transmissionRate")
     private final Integer transmissionRate;
 
     /**
      * Number of probe packets sent out simultaneously.
-     *
      * @return the value
-     */
+     **/
     public Integer getTransmissionRate() {
         return transmissionRate;
     }
 
-    /** Type of protocol. */
+    /**
+     * Type of protocol.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Type of protocol.
-     *
      * @return the value
-     */
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /** Type of probe mode when TCP protocol is selected. */
+    /**
+     * Type of probe mode when TCP protocol is selected.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("probeMode")
     private final ProbeMode probeMode;
 
     /**
      * Type of probe mode when TCP protocol is selected.
-     *
      * @return the value
-     */
+     **/
     public ProbeMode getProbeMode() {
         return probeMode;
     }
@@ -242,7 +251,6 @@ public final class NetworkConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

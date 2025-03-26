@@ -9,31 +9,23 @@ import com.oracle.bmc.bds.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Bds where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Bds where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class BdsPaginators {
     private final Bds client;
 
@@ -42,20 +34,17 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAutoScalingConfigurations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAutoScalingConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAutoScalingConfigurationsResponse>
             listAutoScalingConfigurationsResponseIterator(
                     final ListAutoScalingConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAutoScalingConfigurationsRequest.Builder,
-                ListAutoScalingConfigurationsRequest,
+                ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
                 ListAutoScalingConfigurationsResponse>(
                 new java.util.function.Supplier<ListAutoScalingConfigurationsRequest.Builder>() {
                     @Override
@@ -99,22 +88,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects contained in responses from
-     * the listAutoScalingConfigurations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects
+     * contained in responses from the listAutoScalingConfigurations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.AutoScalingConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>
             listAutoScalingConfigurationsRecordIterator(
                     final ListAutoScalingConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAutoScalingConfigurationsRequest.Builder,
-                ListAutoScalingConfigurationsRequest,
+                ListAutoScalingConfigurationsRequest.Builder, ListAutoScalingConfigurationsRequest,
                 ListAutoScalingConfigurationsResponse,
                 com.oracle.bmc.bds.model.AutoScalingConfigurationSummary>(
                 new java.util.function.Supplier<ListAutoScalingConfigurationsRequest.Builder>() {
@@ -169,12 +155,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listBdsApiKeys
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listBdsApiKeys operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBdsApiKeysResponse> listBdsApiKeysResponseIterator(
             final ListBdsApiKeysRequest request) {
@@ -219,21 +204,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.BdsApiKeySummary} objects contained in responses from the
-     * listBdsApiKeys operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsApiKeySummary} objects
+     * contained in responses from the listBdsApiKeys operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.BdsApiKeySummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsApiKeySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.BdsApiKeySummary> listBdsApiKeysRecordIterator(
             final ListBdsApiKeysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBdsApiKeysRequest.Builder,
-                ListBdsApiKeysRequest,
-                ListBdsApiKeysResponse,
+                ListBdsApiKeysRequest.Builder, ListBdsApiKeysRequest, ListBdsApiKeysResponse,
                 com.oracle.bmc.bds.model.BdsApiKeySummary>(
                 new java.util.function.Supplier<ListBdsApiKeysRequest.Builder>() {
                     @Override
@@ -283,19 +265,16 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBdsClusterVersions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBdsClusterVersions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBdsClusterVersionsResponse> listBdsClusterVersionsResponseIterator(
             final ListBdsClusterVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBdsClusterVersionsRequest.Builder,
-                ListBdsClusterVersionsRequest,
+                ListBdsClusterVersionsRequest.Builder, ListBdsClusterVersionsRequest,
                 ListBdsClusterVersionsResponse>(
                 new java.util.function.Supplier<ListBdsClusterVersionsRequest.Builder>() {
                     @Override
@@ -338,23 +317,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects contained in responses from the
-     * listBdsClusterVersions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects
+     * contained in responses from the listBdsClusterVersions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsClusterVersionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.BdsClusterVersionSummary>
             listBdsClusterVersionsRecordIterator(final ListBdsClusterVersionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBdsClusterVersionsRequest.Builder,
-                ListBdsClusterVersionsRequest,
-                ListBdsClusterVersionsResponse,
-                com.oracle.bmc.bds.model.BdsClusterVersionSummary>(
+                ListBdsClusterVersionsRequest.Builder, ListBdsClusterVersionsRequest,
+                ListBdsClusterVersionsResponse, com.oracle.bmc.bds.model.BdsClusterVersionSummary>(
                 new java.util.function.Supplier<ListBdsClusterVersionsRequest.Builder>() {
                     @Override
                     public ListBdsClusterVersionsRequest.Builder get() {
@@ -405,12 +380,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBdsInstances operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listBdsInstances operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBdsInstancesResponse> listBdsInstancesResponseIterator(
             final ListBdsInstancesRequest request) {
@@ -456,21 +430,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.BdsInstanceSummary} objects contained in responses from the
-     * listBdsInstances operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsInstanceSummary} objects
+     * contained in responses from the listBdsInstances operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.BdsInstanceSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsInstanceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.BdsInstanceSummary> listBdsInstancesRecordIterator(
             final ListBdsInstancesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBdsInstancesRequest.Builder,
-                ListBdsInstancesRequest,
-                ListBdsInstancesResponse,
+                ListBdsInstancesRequest.Builder, ListBdsInstancesRequest, ListBdsInstancesResponse,
                 com.oracle.bmc.bds.model.BdsInstanceSummary>(
                 new java.util.function.Supplier<ListBdsInstancesRequest.Builder>() {
                     @Override
@@ -521,21 +492,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBdsMetastoreConfigurations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listBdsMetastoreConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBdsMetastoreConfigurationsResponse>
             listBdsMetastoreConfigurationsResponseIterator(
                     final ListBdsMetastoreConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListBdsMetastoreConfigurationsRequest.Builder,
-                ListBdsMetastoreConfigurationsRequest,
-                ListBdsMetastoreConfigurationsResponse>(
+                ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse>(
                 new java.util.function.Supplier<ListBdsMetastoreConfigurationsRequest.Builder>() {
                     @Override
                     public ListBdsMetastoreConfigurationsRequest.Builder get() {
@@ -578,23 +546,20 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects contained in responses
-     * from the listBdsMetastoreConfigurations operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects
+     * contained in responses from the listBdsMetastoreConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>
             listBdsMetastoreConfigurationsRecordIterator(
                     final ListBdsMetastoreConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListBdsMetastoreConfigurationsRequest.Builder,
-                ListBdsMetastoreConfigurationsRequest,
-                ListBdsMetastoreConfigurationsResponse,
+                ListBdsMetastoreConfigurationsRequest, ListBdsMetastoreConfigurationsResponse,
                 com.oracle.bmc.bds.model.BdsMetastoreConfigurationSummary>(
                 new java.util.function.Supplier<ListBdsMetastoreConfigurationsRequest.Builder>() {
                     @Override
@@ -648,19 +613,16 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIdentityConfigurations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIdentityConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIdentityConfigurationsResponse> listIdentityConfigurationsResponseIterator(
             final ListIdentityConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIdentityConfigurationsRequest.Builder,
-                ListIdentityConfigurationsRequest,
+                ListIdentityConfigurationsRequest.Builder, ListIdentityConfigurationsRequest,
                 ListIdentityConfigurationsResponse>(
                 new java.util.function.Supplier<ListIdentityConfigurationsRequest.Builder>() {
                     @Override
@@ -703,22 +665,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects contained in responses from
-     * the listIdentityConfigurations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects
+     * contained in responses from the listIdentityConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.IdentityConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.IdentityConfigurationSummary>
             listIdentityConfigurationsRecordIterator(
                     final ListIdentityConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIdentityConfigurationsRequest.Builder,
-                ListIdentityConfigurationsRequest,
+                ListIdentityConfigurationsRequest.Builder, ListIdentityConfigurationsRequest,
                 ListIdentityConfigurationsResponse,
                 com.oracle.bmc.bds.model.IdentityConfigurationSummary>(
                 new java.util.function.Supplier<ListIdentityConfigurationsRequest.Builder>() {
@@ -771,20 +730,17 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNodeBackupConfigurations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listNodeBackupConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNodeBackupConfigurationsResponse>
             listNodeBackupConfigurationsResponseIterator(
                     final ListNodeBackupConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNodeBackupConfigurationsRequest.Builder,
-                ListNodeBackupConfigurationsRequest,
+                ListNodeBackupConfigurationsRequest.Builder, ListNodeBackupConfigurationsRequest,
                 ListNodeBackupConfigurationsResponse>(
                 new java.util.function.Supplier<ListNodeBackupConfigurationsRequest.Builder>() {
                     @Override
@@ -828,22 +784,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects contained in responses from
-     * the listNodeBackupConfigurations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects
+     * contained in responses from the listNodeBackupConfigurations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeBackupConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>
             listNodeBackupConfigurationsRecordIterator(
                     final ListNodeBackupConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNodeBackupConfigurationsRequest.Builder,
-                ListNodeBackupConfigurationsRequest,
+                ListNodeBackupConfigurationsRequest.Builder, ListNodeBackupConfigurationsRequest,
                 ListNodeBackupConfigurationsResponse,
                 com.oracle.bmc.bds.model.NodeBackupConfigurationSummary>(
                 new java.util.function.Supplier<ListNodeBackupConfigurationsRequest.Builder>() {
@@ -897,12 +850,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNodeBackups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNodeBackups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNodeBackupsResponse> listNodeBackupsResponseIterator(
             final ListNodeBackupsRequest request) {
@@ -947,21 +899,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.NodeBackupSummary} objects contained in responses from the
-     * listNodeBackups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeBackupSummary} objects
+     * contained in responses from the listNodeBackups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.NodeBackupSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeBackupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.NodeBackupSummary> listNodeBackupsRecordIterator(
             final ListNodeBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNodeBackupsRequest.Builder,
-                ListNodeBackupsRequest,
-                ListNodeBackupsResponse,
+                ListNodeBackupsRequest.Builder, ListNodeBackupsRequest, ListNodeBackupsResponse,
                 com.oracle.bmc.bds.model.NodeBackupSummary>(
                 new java.util.function.Supplier<ListNodeBackupsRequest.Builder>() {
                     @Override
@@ -1011,20 +960,17 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNodeReplaceConfigurations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNodeReplaceConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNodeReplaceConfigurationsResponse>
             listNodeReplaceConfigurationsResponseIterator(
                     final ListNodeReplaceConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNodeReplaceConfigurationsRequest.Builder,
-                ListNodeReplaceConfigurationsRequest,
+                ListNodeReplaceConfigurationsRequest.Builder, ListNodeReplaceConfigurationsRequest,
                 ListNodeReplaceConfigurationsResponse>(
                 new java.util.function.Supplier<ListNodeReplaceConfigurationsRequest.Builder>() {
                     @Override
@@ -1068,22 +1014,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects contained in responses from
-     * the listNodeReplaceConfigurations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects
+     * contained in responses from the listNodeReplaceConfigurations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>
             listNodeReplaceConfigurationsRecordIterator(
                     final ListNodeReplaceConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNodeReplaceConfigurationsRequest.Builder,
-                ListNodeReplaceConfigurationsRequest,
+                ListNodeReplaceConfigurationsRequest.Builder, ListNodeReplaceConfigurationsRequest,
                 ListNodeReplaceConfigurationsResponse,
                 com.oracle.bmc.bds.model.NodeReplaceConfigurationSummary>(
                 new java.util.function.Supplier<ListNodeReplaceConfigurationsRequest.Builder>() {
@@ -1138,12 +1081,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listOsPatches
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOsPatches operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOsPatchesResponse> listOsPatchesResponseIterator(
             final ListOsPatchesRequest request) {
@@ -1188,21 +1130,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.OsPatchSummary} objects contained in responses from the
-     * listOsPatches operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.OsPatchSummary} objects
+     * contained in responses from the listOsPatches operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.OsPatchSummary} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.OsPatchSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.OsPatchSummary> listOsPatchesRecordIterator(
             final ListOsPatchesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOsPatchesRequest.Builder,
-                ListOsPatchesRequest,
-                ListOsPatchesResponse,
+                ListOsPatchesRequest.Builder, ListOsPatchesRequest, ListOsPatchesResponse,
                 com.oracle.bmc.bds.model.OsPatchSummary>(
                 new java.util.function.Supplier<ListOsPatchesRequest.Builder>() {
                     @Override
@@ -1252,18 +1191,16 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPatchHistories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPatchHistories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPatchHistoriesResponse> listPatchHistoriesResponseIterator(
             final ListPatchHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPatchHistoriesRequest.Builder,
-                ListPatchHistoriesRequest,
+                ListPatchHistoriesRequest.Builder, ListPatchHistoriesRequest,
                 ListPatchHistoriesResponse>(
                 new java.util.function.Supplier<ListPatchHistoriesRequest.Builder>() {
                     @Override
@@ -1305,22 +1242,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.PatchHistorySummary} objects contained in responses from the
-     * listPatchHistories operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.PatchHistorySummary} objects
+     * contained in responses from the listPatchHistories operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.PatchHistorySummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.PatchHistorySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.PatchHistorySummary> listPatchHistoriesRecordIterator(
             final ListPatchHistoriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPatchHistoriesRequest.Builder,
-                ListPatchHistoriesRequest,
-                ListPatchHistoriesResponse,
-                com.oracle.bmc.bds.model.PatchHistorySummary>(
+                ListPatchHistoriesRequest.Builder, ListPatchHistoriesRequest,
+                ListPatchHistoriesResponse, com.oracle.bmc.bds.model.PatchHistorySummary>(
                 new java.util.function.Supplier<ListPatchHistoriesRequest.Builder>() {
                     @Override
                     public ListPatchHistoriesRequest.Builder get() {
@@ -1370,12 +1304,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPatches
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPatches operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPatchesResponse> listPatchesResponseIterator(
             final ListPatchesRequest request) {
@@ -1420,21 +1353,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.PatchSummary} objects contained in responses from the listPatches
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.PatchSummary} objects
+     * contained in responses from the listPatches operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.PatchSummary} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.PatchSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.PatchSummary> listPatchesRecordIterator(
             final ListPatchesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPatchesRequest.Builder,
-                ListPatchesRequest,
-                ListPatchesResponse,
+                ListPatchesRequest.Builder, ListPatchesRequest, ListPatchesResponse,
                 com.oracle.bmc.bds.model.PatchSummary>(
                 new java.util.function.Supplier<ListPatchesRequest.Builder>() {
                     @Override
@@ -1484,13 +1414,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listResourcePrincipalConfigurations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listResourcePrincipalConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListResourcePrincipalConfigurationsResponse>
             listResourcePrincipalConfigurationsResponseIterator(
@@ -1543,15 +1471,13 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects contained in
-     * responses from the listResourcePrincipalConfigurations operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects
+     * contained in responses from the listResourcePrincipalConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>
             listResourcePrincipalConfigurationsRecordIterator(
@@ -1616,19 +1542,16 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1671,23 +1594,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.WorkRequestError} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.WorkRequestError> listWorkRequestErrorsRecordIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.bds.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.bds.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -1738,18 +1657,16 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1791,22 +1708,19 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.WorkRequestLogEntry} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.WorkRequestLogEntry> listWorkRequestLogsRecordIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.bds.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.bds.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -1856,12 +1770,11 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1907,21 +1820,18 @@ public class BdsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.bds.model.WorkRequest} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.bds.model.WorkRequest} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.bds.model.WorkRequest} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.bds.model.WorkRequest} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.bds.model.WorkRequest> listWorkRequestsRecordIterator(
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.bds.model.WorkRequest>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

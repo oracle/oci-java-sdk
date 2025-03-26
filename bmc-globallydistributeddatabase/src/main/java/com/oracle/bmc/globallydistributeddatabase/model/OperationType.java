@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.globallydistributeddatabase.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+public enum OperationType {
     CreateShardedDatabase("CREATE_SHARDED_DATABASE"),
     DeleteShardedDatabase("DELETE_SHARDED_DATABASE"),
     UpdateShardedDatabase("UPDATE_SHARDED_DATABASE"),

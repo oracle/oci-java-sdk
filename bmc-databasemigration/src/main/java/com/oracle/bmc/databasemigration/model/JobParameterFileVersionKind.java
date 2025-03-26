@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** The valid type of parameter file version */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum JobParameterFileVersionKind implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid type of parameter file version
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum JobParameterFileVersionKind {
     Extract("EXTRACT"),
     Replicat("REPLICAT"),
 

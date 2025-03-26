@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The metric definition for HA and backup metrics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The metric definition for HA and backup metrics.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HaMetricDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HaMetricDefinition
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = HaMetricDefinition.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HaMetricDefinition extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metricName",
@@ -46,90 +44,91 @@ public final class HaMetricDefinition
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the metric. */
+        /**
+         * The name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
         /**
          * The name of the metric.
-         *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
         /**
-         * The metadata qualifiers provided in the definition of the returned metric. Available
-         * metadata vary by metric.
-         */
+         * The metadata qualifiers provided in the definition of the returned metric.
+         * Available metadata vary by metric.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * The metadata qualifiers provided in the definition of the returned metric. Available
-         * metadata vary by metric.
+         * The metadata qualifiers provided in the definition of the returned metric.
+         * Available metadata vary by metric.
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
         /**
-         * The dimension qualifiers provided in the definition of the returned metric. Available
-         * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * The dimension qualifiers provided in the definition of the returned metric.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
          * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
-         * The dimension qualifiers provided in the definition of the returned metric. Available
-         * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+         * The dimension qualifiers provided in the definition of the returned metric.
+         * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
          * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
         /**
-         * The data point date and time in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         */
+         * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The data point date and time in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         *
+         * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** The target value of the metric. */
+        /**
+         * The target value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Double value;
 
         /**
          * The target value of the metric.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Double value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -174,7 +173,9 @@ public final class HaMetricDefinition
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -183,81 +184,82 @@ public final class HaMetricDefinition
         return new Builder().copy(this);
     }
 
-    /** The name of the metric. */
+    /**
+     * The name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
     /**
      * The name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getMetricName() {
         return metricName;
     }
 
     /**
-     * The metadata qualifiers provided in the definition of the returned metric. Available metadata
-     * vary by metric.
-     */
+     * The metadata qualifiers provided in the definition of the returned metric.
+     * Available metadata vary by metric.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * The metadata qualifiers provided in the definition of the returned metric. Available metadata
-     * vary by metric.
+     * The metadata qualifiers provided in the definition of the returned metric.
+     * Available metadata vary by metric.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
 
     /**
-     * The dimension qualifiers provided in the definition of the returned metric. Available
-     * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * The dimension qualifiers provided in the definition of the returned metric.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
-     * The dimension qualifiers provided in the definition of the returned metric. Available
-     * dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
+     * The dimension qualifiers provided in the definition of the returned metric.
+     * Available dimensions vary by metric namespace. Each dimension takes the form of a key-value pair.
      * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
     /**
-     * The data point date and time in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     */
+     * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The data point date and time in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     *
+     * The data point date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** The target value of the metric. */
+    /**
+     * The target value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Double value;
 
     /**
      * The target value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getValue() {
         return value;
     }
@@ -269,7 +271,6 @@ public final class HaMetricDefinition
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

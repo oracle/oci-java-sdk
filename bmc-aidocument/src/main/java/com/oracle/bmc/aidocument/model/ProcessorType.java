@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.aidocument.model;
 
-/** The type of a processor. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
-public enum ProcessorType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of a processor.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+public enum ProcessorType {
     General("GENERAL"),
 
     /**

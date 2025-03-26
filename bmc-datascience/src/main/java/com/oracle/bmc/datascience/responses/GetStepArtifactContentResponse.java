@@ -6,17 +6,16 @@ package com.oracle.bmc.datascience.responses;
 
 import com.oracle.bmc.datascience.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -40,12 +40,13 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** The content size of the body in bytes. */
+    /**
+     * The content size of the body in bytes.
+     */
     private Long contentLength;
 
     /**
      * The content size of the body in bytes.
-     *
      * @return the value
      */
     public Long getContentLength() {
@@ -53,26 +54,21 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * The base-64 encoded MD5 hash of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. Unavailable for objects uploaded
-     * using multipart upload. If the {@code content-md5} header is present, Object Storage performs
-     * an integrity check on the body of the HTTP request by computing the MD5 hash for the body and
-     * comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the
-     * object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header
-     * (HEADER_MD5)"
+     * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * Unavailable for objects uploaded using multipart upload.
+     * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+     * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+     *
      */
     private String contentMd5;
 
     /**
-     * The base-64 encoded MD5 hash of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. Unavailable for objects uploaded
-     * using multipart upload. If the {@code content-md5} header is present, Object Storage performs
-     * an integrity check on the body of the HTTP request by computing the MD5 hash for the body and
-     * comparing it to the MD5 hash supplied in the header. If the two hashes do not match, the
-     * object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
-     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header
-     * (HEADER_MD5)"
+     * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+     * Unavailable for objects uploaded using multipart upload.
+     * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+     * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+     * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
      *
      * @return the value
      */
@@ -81,15 +77,12 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * The artifact modification time, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      */
     private java.util.Date lastModified;
 
     /**
-     * The artifact modification time, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
-     *
+     * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      * @return the value
      */
     public java.util.Date getLastModified() {
@@ -97,27 +90,25 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * The content disposition of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
      */
     private String contentDisposition;
 
     /**
-     * The content disposition of the body, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
-     *
+     * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
      * @return the value
      */
     public String getContentDisposition() {
         return contentDisposition;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -137,7 +128,7 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
     })
     private GetStepArtifactContentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Long contentLength,
@@ -155,34 +146,29 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetStepArtifactContentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -193,14 +179,15 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -210,12 +197,13 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The content size of the body in bytes. */
+        /**
+         * The content size of the body in bytes.
+         */
         private Long contentLength;
 
         /**
          * The content size of the body in bytes.
-         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -225,26 +213,21 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * The base-64 encoded MD5 hash of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. Unavailable for objects
-         * uploaded using multipart upload. If the {@code content-md5} header is present, Object
-         * Storage performs an integrity check on the body of the HTTP request by computing the MD5
-         * hash for the body and comparing it to the MD5 hash supplied in the header. If the two
-         * hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
-         * is returned with the message: "The computed MD5 of the request body (ACTUAL_MD5) does not
-         * match the Content-MD5 header (HEADER_MD5)"
+         * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * Unavailable for objects uploaded using multipart upload.
+         * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+         * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
+         *
          */
         private String contentMd5;
 
         /**
-         * The base-64 encoded MD5 hash of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15. Unavailable for objects
-         * uploaded using multipart upload. If the {@code content-md5} header is present, Object
-         * Storage performs an integrity check on the body of the HTTP request by computing the MD5
-         * hash for the body and comparing it to the MD5 hash supplied in the header. If the two
-         * hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error
-         * is returned with the message: "The computed MD5 of the request body (ACTUAL_MD5) does not
-         * match the Content-MD5 header (HEADER_MD5)"
+         * The base-64 encoded MD5 hash of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.15.
+         * Unavailable for objects uploaded using multipart upload.
+         * If the {@code content-md5} header is present, Object Storage performs an integrity check on the body of the HTTP request by computing the MD5 hash for the body and comparing it to the MD5 hash supplied in the header.
+         * If the two hashes do not match, the object is rejected and an HTTP-400 Unmatched Content MD5 error is returned with the message:
+         * "The computed MD5 of the request body (ACTUAL_MD5) does not match the Content-MD5 header (HEADER_MD5)"
          *
          * @param contentMd5 the value to set
          * @return this builder
@@ -255,15 +238,12 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * The artifact modification time, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
          */
         private java.util.Date lastModified;
 
         /**
-         * The artifact modification time, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
-         *
+         * The artifact modification time, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
          * @param lastModified the value to set
          * @return this builder
          */
@@ -273,15 +253,12 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * The content disposition of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
          */
         private String contentDisposition;
 
         /**
-         * The content disposition of the body, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
-         *
+         * The content disposition of the body, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 19.5.1.
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -290,12 +267,13 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -306,10 +284,8 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetStepArtifactContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -326,10 +302,8 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetStepArtifactContentResponse build() {
             return new GetStepArtifactContentResponse(
                     __httpStatusCode__,
@@ -346,7 +320,6 @@ public class GetStepArtifactContentResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

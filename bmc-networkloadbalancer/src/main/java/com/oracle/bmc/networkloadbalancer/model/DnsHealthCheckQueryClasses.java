@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Query class values for the DNS health check probe. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum DnsHealthCheckQueryClasses implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Query class values for the DNS health check probe.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum DnsHealthCheckQueryClasses {
     In("IN"),
     Ch("CH"),
 

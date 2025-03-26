@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the GoldenGate Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the GoldenGate Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GoldenGateConnectionSummary.Builder.class)
+    builder = GoldenGateConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GoldenGateConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,41 +199,44 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The GoldenGate technology type. */
+        /**
+         * The GoldenGate technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private GoldenGateConnection.TechnologyType technologyType;
 
         /**
          * The GoldenGate technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(GoldenGateConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          * @param deploymentId the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
-        /** The name or address of a host. */
+        /**
+         * The name or address of a host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
@@ -241,13 +245,16 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
          *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The port of an endpoint usually specified for a connection. */
+        /**
+         * The port of an endpoint usually specified for a connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -256,13 +263,16 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The username credential existing in the Oracle GoldenGate used to be connected to. */
+        /**
+         * The username credential existing in the Oracle GoldenGate used to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
@@ -271,65 +281,61 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
-         * accessed trough this connection. Note: When provided, 'password' field must not be
-         * provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * which is used to connect to the Oracle GoldenGate accessed trough this connection.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
-         * accessed trough this connection. Note: When provided, 'password' field must not be
-         * provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * which is used to connect to the Oracle GoldenGate accessed trough this connection.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
@@ -458,7 +464,9 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -524,37 +532,40 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
         this.passwordSecretId = passwordSecretId;
     }
 
-    /** The GoldenGate technology type. */
+    /**
+     * The GoldenGate technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final GoldenGateConnection.TechnologyType technologyType;
 
     /**
      * The GoldenGate technology type.
-     *
      * @return the value
-     */
+     **/
     public GoldenGateConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDeploymentId() {
         return deploymentId;
     }
 
-    /** The name or address of a host. */
+    /**
+     * The name or address of a host.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
@@ -562,12 +573,15 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
      * The name or address of a host.
      *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The port of an endpoint usually specified for a connection. */
+    /**
+     * The port of an endpoint usually specified for a connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
@@ -575,12 +589,15 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
      * The port of an endpoint usually specified for a connection.
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** The username credential existing in the Oracle GoldenGate used to be connected to. */
+    /**
+     * The username credential existing in the Oracle GoldenGate used to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
@@ -588,59 +605,57 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
      * The username credential existing in the Oracle GoldenGate used to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
-     * accessed trough this connection. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * which is used to connect to the Oracle GoldenGate accessed trough this connection.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, which is used to connect to the Oracle GoldenGate
-     * accessed trough this connection. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * which is used to connect to the Oracle GoldenGate accessed trough this connection.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
@@ -652,7 +667,6 @@ public final class GoldenGateConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

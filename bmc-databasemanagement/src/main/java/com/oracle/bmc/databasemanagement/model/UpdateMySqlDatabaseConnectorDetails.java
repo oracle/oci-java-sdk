@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Update Details of external database connector. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Update Details of external database connector.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMySqlDatabaseConnectorDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMySqlDatabaseConnectorDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMySqlDatabaseConnectorDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -55,91 +54,97 @@ public final class UpdateMySqlDatabaseConnectorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** External MySQL Database Connector Name. */
+        /**
+         * External MySQL Database Connector Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * External MySQL Database Connector Name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Agent Id of the MACS agent. */
+        /**
+         * Agent Id of the MACS agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macsAgentId")
         private String macsAgentId;
 
         /**
          * Agent Id of the MACS agent.
-         *
          * @param macsAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder macsAgentId(String macsAgentId) {
             this.macsAgentId = macsAgentId;
             this.__explicitlySet__.add("macsAgentId");
             return this;
         }
-        /** Host name for Connector. */
+        /**
+         * Host name for Connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Host name for Connector.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** Port number to connect to External MySQL Database. */
+        /**
+         * Port number to connect to External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Port number to connect to External MySQL Database.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Type of the credential. */
+        /**
+         * Type of the credential.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private MySqlCredType credentialType;
 
         /**
          * Type of the credential.
-         *
          * @param credentialType the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialType(MySqlCredType credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
             return this;
         }
-        /** If using existing SSL secret to connect, OCID for the secret resource. */
+        /**
+         * If using existing SSL secret to connect, OCID for the secret resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
          * If using existing SSL secret to connect, OCID for the secret resource.
-         *
          * @param sslSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslSecretId(String sslSecretId) {
             this.sslSecretId = sslSecretId;
             this.__explicitlySet__.add("sslSecretId");
@@ -147,31 +152,31 @@ public final class UpdateMySqlDatabaseConnectorDetails
         }
         /**
          * Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkProtocol")
         private MySqlNetworkProtocolType networkProtocol;
 
         /**
          * Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
-         *
          * @param networkProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder networkProtocol(MySqlNetworkProtocolType networkProtocol) {
             this.networkProtocol = networkProtocol;
             this.__explicitlySet__.add("networkProtocol");
             return this;
         }
-        /** OCID of MySQL Database resource. */
+        /**
+         * OCID of MySQL Database resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
         private String externalDatabaseId;
 
         /**
          * OCID of MySQL Database resource.
-         *
          * @param externalDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDatabaseId(String externalDatabaseId) {
             this.externalDatabaseId = externalDatabaseId;
             this.__explicitlySet__.add("externalDatabaseId");
@@ -228,7 +233,9 @@ public final class UpdateMySqlDatabaseConnectorDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -237,106 +244,114 @@ public final class UpdateMySqlDatabaseConnectorDetails
         return new Builder().copy(this);
     }
 
-    /** External MySQL Database Connector Name. */
+    /**
+     * External MySQL Database Connector Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * External MySQL Database Connector Name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Agent Id of the MACS agent. */
+    /**
+     * Agent Id of the MACS agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macsAgentId")
     private final String macsAgentId;
 
     /**
      * Agent Id of the MACS agent.
-     *
      * @return the value
-     */
+     **/
     public String getMacsAgentId() {
         return macsAgentId;
     }
 
-    /** Host name for Connector. */
+    /**
+     * Host name for Connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Host name for Connector.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** Port number to connect to External MySQL Database. */
+    /**
+     * Port number to connect to External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Port number to connect to External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** Type of the credential. */
+    /**
+     * Type of the credential.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final MySqlCredType credentialType;
 
     /**
      * Type of the credential.
-     *
      * @return the value
-     */
+     **/
     public MySqlCredType getCredentialType() {
         return credentialType;
     }
 
-    /** If using existing SSL secret to connect, OCID for the secret resource. */
+    /**
+     * If using existing SSL secret to connect, OCID for the secret resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
      * If using existing SSL secret to connect, OCID for the secret resource.
-     *
      * @return the value
-     */
+     **/
     public String getSslSecretId() {
         return sslSecretId;
     }
 
-    /** Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket. */
+    /**
+     * Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkProtocol")
     private final MySqlNetworkProtocolType networkProtocol;
 
     /**
      * Protocol to be used to connect to External MySQL Database; TCP, TCP with SSL or Socket.
-     *
      * @return the value
-     */
+     **/
     public MySqlNetworkProtocolType getNetworkProtocol() {
         return networkProtocol;
     }
 
-    /** OCID of MySQL Database resource. */
+    /**
+     * OCID of MySQL Database resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
     private final String externalDatabaseId;
 
     /**
      * OCID of MySQL Database resource.
-     *
      * @return the value
-     */
+     **/
     public String getExternalDatabaseId() {
         return externalDatabaseId;
     }
@@ -348,7 +363,6 @@ public final class UpdateMySqlDatabaseConnectorDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

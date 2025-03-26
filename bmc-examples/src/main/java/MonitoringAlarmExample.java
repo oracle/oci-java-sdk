@@ -37,22 +37,27 @@ import java.util.concurrent.TimeUnit;
  * This class demonstrates how to use the Monitoring api in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Creating, updating, retrieving, listing and deleting alarms
- *   <li>Retrieving alarm state history
- *   <li>Listing status of alarms
+ *   <li>Creating, updating, retrieving, listing and deleting alarms</li>
+ *   <li>Retrieving alarm state history</li>
+ *   <li>Listing status of alarms</li>
  * </ul>
  *
  * This class makes the following assumptions:
- *
  * <ul>
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Resources will be created in us-phoenix-1
- *   <li>Alarms will be created in the compartment specified by the user.
- *   <li>The user has the appropriate permissions to create alarms in the compartment specified by
- *       user, read metrics in the metric compartment specified by user, and publish message in the
- *       destination specified by user.
- *       <ul>
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Resources will be created in us-phoenix-1</li>
+ *   <li>
+ *      Alarms will be created in the compartment specified by the user.
+ *   </li>
+ *   <li>
+ *      The user has the appropriate permissions to create alarms in the compartment specified by user,
+ *      read metrics in the metric compartment specified by user, and publish message in the destination
+ *      specified by user.
+ *   </li>
+ * <ul>
  */
 public class MonitoringAlarmExample {
 
@@ -72,7 +77,9 @@ public class MonitoringAlarmExample {
     private static final Date SUPPRESS_UNTIL =
             new Date(SUPPRESS_FROM.getTime() + TimeUnit.MINUTES.toMillis(24));
 
-    /** The entry point for the example. */
+    /**
+     * The entry point for the example.
+     */
     public static void main(String[] args) throws Exception {
         if (args.length < 3) {
             throw new IllegalArgumentException(
@@ -90,8 +97,8 @@ public class MonitoringAlarmExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final MonitoringClient monitoringClient =
-                MonitoringClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final MonitoringClient monitoringClient = new MonitoringClient(provider);
+        monitoringClient.setRegion(Region.US_PHOENIX_1);
 
         String alarmId = null;
         try {
@@ -156,7 +163,8 @@ public class MonitoringAlarmExample {
                             GetAlarmHistoryRequest.builder().alarmId(alarmId).build());
             System.out.printf(
                     "Alarm history for id %s: %s.%n",
-                    alarmId, getAlarmHistoryResponse.getAlarmHistoryCollection().getEntries());
+                    alarmId,
+                    getAlarmHistoryResponse.getAlarmHistoryCollection().getEntries());
 
             // List alarms.
             final ListAlarmsResponse listAlarmsResponse =

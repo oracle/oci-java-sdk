@@ -5,23 +5,23 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Collection of configuration source providers. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Collection of configuration source providers.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConfigurationSourceProviderCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConfigurationSourceProviderCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConfigurationSourceProviderCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public ConfigurationSourceProviderCollection(
@@ -32,16 +32,17 @@ public final class ConfigurationSourceProviderCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Collection of configuration source providers. */
+        /**
+         * Collection of configuration source providers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConfigurationSourceProviderSummary> items;
 
         /**
          * Collection of configuration source providers.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<ConfigurationSourceProviderSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,7 +70,9 @@ public final class ConfigurationSourceProviderCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +81,16 @@ public final class ConfigurationSourceProviderCollection
         return new Builder().copy(this);
     }
 
-    /** Collection of configuration source providers. */
+    /**
+     * Collection of configuration source providers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConfigurationSourceProviderSummary> items;
 
     /**
      * Collection of configuration source providers.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigurationSourceProviderSummary> getItems() {
         return items;
     }
@@ -98,7 +102,6 @@ public final class ConfigurationSourceProviderCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

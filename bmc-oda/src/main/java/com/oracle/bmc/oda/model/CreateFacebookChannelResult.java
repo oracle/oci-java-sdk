@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The configuration for a Facebook channel. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * The configuration for a Facebook channel.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateFacebookChannelResult.Builder.class)
+    builder = CreateFacebookChannelResult.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateFacebookChannelResult extends CreateChannelResult {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -119,55 +119,58 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
             return this;
         }
         /**
-         * The Facebook verify token. This is used by Facebook when verifying the webhook channel.
-         * This is only returned this once. If it is lost the keys will need to be rotated to
-         * generate a new verify token.
-         */
+         * The Facebook verify token.
+         * This is used by Facebook when verifying the webhook channel.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new verify token.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verifyToken")
         private String verifyToken;
 
         /**
-         * The Facebook verify token. This is used by Facebook when verifying the webhook channel.
-         * This is only returned this once. If it is lost the keys will need to be rotated to
-         * generate a new verify token.
+         * The Facebook verify token.
+         * This is used by Facebook when verifying the webhook channel.
+         * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new verify token.
          *
          * @param verifyToken the value to set
          * @return this builder
-         */
+         **/
         public Builder verifyToken(String verifyToken) {
             this.verifyToken = verifyToken;
             this.__explicitlySet__.add("verifyToken");
             return this;
         }
-        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         *
          * @param botId the value to set
          * @return this builder
-         */
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
             return this;
         }
         /**
-         * The URL to use to send messages to this channel. This will be generally be used to
-         * configure a webhook in a 3rd party messaging system to send messages to this channel.
-         */
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
         private String webhookUrl;
 
         /**
-         * The URL to use to send messages to this channel. This will be generally be used to
-         * configure a webhook in a 3rd party messaging system to send messages to this channel.
+         * The URL to use to send messages to this channel.
+         * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
          *
          * @param webhookUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder webhookUrl(String webhookUrl) {
             this.webhookUrl = webhookUrl;
             this.__explicitlySet__.add("webhookUrl");
@@ -245,7 +248,9 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -286,50 +291,53 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
     }
 
     /**
-     * The Facebook verify token. This is used by Facebook when verifying the webhook channel. This
-     * is only returned this once. If it is lost the keys will need to be rotated to generate a new
-     * verify token.
-     */
+     * The Facebook verify token.
+     * This is used by Facebook when verifying the webhook channel.
+     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new verify token.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("verifyToken")
     private final String verifyToken;
 
     /**
-     * The Facebook verify token. This is used by Facebook when verifying the webhook channel. This
-     * is only returned this once. If it is lost the keys will need to be rotated to generate a new
-     * verify token.
+     * The Facebook verify token.
+     * This is used by Facebook when verifying the webhook channel.
+     * This is only returned this once.  If it is lost the keys will need to be rotated to generate a new verify token.
      *
      * @return the value
-     */
+     **/
     public String getVerifyToken() {
         return verifyToken;
     }
 
-    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     *
      * @return the value
-     */
+     **/
     public String getBotId() {
         return botId;
     }
 
     /**
-     * The URL to use to send messages to this channel. This will be generally be used to configure
-     * a webhook in a 3rd party messaging system to send messages to this channel.
-     */
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("webhookUrl")
     private final String webhookUrl;
 
     /**
-     * The URL to use to send messages to this channel. This will be generally be used to configure
-     * a webhook in a 3rd party messaging system to send messages to this channel.
+     * The URL to use to send messages to this channel.
+     * This will be generally be used to configure a webhook in a 3rd party messaging system to send messages to this channel.
      *
      * @return the value
-     */
+     **/
     public String getWebhookUrl() {
         return webhookUrl;
     }
@@ -341,7 +349,6 @@ public final class CreateFacebookChannelResult extends CreateChannelResult {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

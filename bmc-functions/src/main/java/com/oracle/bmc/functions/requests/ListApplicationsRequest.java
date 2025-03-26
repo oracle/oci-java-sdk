@@ -6,57 +6,65 @@ package com.oracle.bmc.functions.requests;
 
 import com.oracle.bmc.functions.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListApplicationsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListApplicationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to which this resource belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to which this resource belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     private String page;
 
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -64,49 +72,61 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     /**
      * A filter to return only applications that match the lifecycle state in this parameter.
      * Example: {@code Creating}
+     *
      */
     private com.oracle.bmc.functions.model.Application.LifecycleState lifecycleState;
 
     /**
      * A filter to return only applications that match the lifecycle state in this parameter.
      * Example: {@code Creating}
+     *
      */
     public com.oracle.bmc.functions.model.Application.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only applications with display names that match the display name string.
-     * Matching is exact.
+     * A filter to return only applications with display names that match the display name string. Matching is exact.
+     *
      */
     private String displayName;
 
     /**
-     * A filter to return only applications with display names that match the display name string.
-     * Matching is exact.
+     * A filter to return only applications with display names that match the display name string. Matching is exact.
+     *
      */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only applications with the specified OCID. */
+    /**
+     * A filter to return only applications with the specified OCID.
+     *
+     */
     private String id;
 
-    /** A filter to return only applications with the specified OCID. */
+    /**
+     * A filter to return only applications with the specified OCID.
+     *
+     */
     public String getId() {
         return id;
     }
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     private SortOrder sortOrder;
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -141,31 +161,37 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code displayName}
+     * <p>
+     * **timeCreated:** Sorts by timeCreated.
+     * * **displayName:** Sorts by displayName.
+     * * **id:** Sorts by id.
      *
-     * <p>Default: {@code displayName}
-     *
-     * <p>**timeCreated:** Sorts by timeCreated. * **displayName:** Sorts by displayName. * **id:**
-     * Sorts by id.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code displayName}
+     * <p>
+     * **timeCreated:** Sorts by timeCreated.
+     * * **displayName:** Sorts by displayName.
+     * * **id:** Sorts by id.
      *
-     * <p>Default: {@code displayName}
-     *
-     * <p>**timeCreated:** Sorts by timeCreated. * **displayName:** Sorts by displayName. * **id:**
-     * Sorts by id.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         Id("id"),
         DisplayName("displayName"),
@@ -201,11 +227,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Specifies the attribute with which to sort the rules.
+     * <p>
+     * Default: {@code displayName}
+     * <p>
+     * **timeCreated:** Sorts by timeCreated.
+     * * **displayName:** Sorts by displayName.
+     * * **id:** Sorts by id.
      *
-     * <p>Default: {@code displayName}
-     *
-     * <p>**timeCreated:** Sorts by timeCreated. * **displayName:** Sorts by displayName. * **id:**
-     * Sorts by id.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -214,18 +242,18 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListApplicationsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to which this resource belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to which this resource belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this resource belongs.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -237,15 +265,16 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * <p>
+         * Default: 10
          *
-         * <p>Default: 10
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         *
-         * <p>Default: 10
+         * <p>
+         * Default: 10
          *
          * @param limit the value to set
          * @return this builder instance
@@ -255,7 +284,10 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The pagination token for a list query returned by a previous operation */
+        /**
+         * The pagination token for a list query returned by a previous operation
+         *
+         */
         private String page = null;
 
         /**
@@ -270,14 +302,15 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -290,6 +323,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * A filter to return only applications that match the lifecycle state in this parameter.
          * Example: {@code Creating}
+         *
          */
         private com.oracle.bmc.functions.model.Application.LifecycleState lifecycleState = null;
 
@@ -307,14 +341,13 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only applications with display names that match the display name
-         * string. Matching is exact.
+         * A filter to return only applications with display names that match the display name string. Matching is exact.
+         *
          */
         private String displayName = null;
 
         /**
-         * A filter to return only applications with display names that match the display name
-         * string. Matching is exact.
+         * A filter to return only applications with display names that match the display name string. Matching is exact.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -324,7 +357,10 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only applications with the specified OCID. */
+        /**
+         * A filter to return only applications with the specified OCID.
+         *
+         */
         private String id = null;
 
         /**
@@ -340,15 +376,18 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order.
-         *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -360,21 +399,24 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Specifies the attribute with which to sort the rules.
+         * <p>
+         * Default: {@code displayName}
+         * <p>
+         * **timeCreated:** Sorts by timeCreated.
+         * * **displayName:** Sorts by displayName.
+         * * **id:** Sorts by id.
          *
-         * <p>Default: {@code displayName}
-         *
-         * <p>**timeCreated:** Sorts by timeCreated. * **displayName:** Sorts by displayName. *
-         * **id:** Sorts by id.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the rules.
-         *
-         * <p>Default: {@code displayName}
-         *
-         * <p>**timeCreated:** Sorts by timeCreated. * **displayName:** Sorts by displayName. *
-         * **id:** Sorts by id.
+         * <p>
+         * Default: {@code displayName}
+         * <p>
+         * **timeCreated:** Sorts by timeCreated.
+         * * **displayName:** Sorts by displayName.
+         * * **id:** Sorts by id.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -386,19 +428,18 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -410,7 +451,6 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListApplicationsRequest o) {
@@ -431,11 +471,10 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListApplicationsRequest
          */
@@ -449,8 +488,7 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListApplicationsRequest
@@ -467,14 +505,12 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListApplicationsRequest(compartmentId, limit, page, opcRequestId, lifecycleState,
-            // displayName, id, sortOrder, sortBy);
+            // new ListApplicationsRequest(compartmentId, limit, page, opcRequestId, lifecycleState, displayName, id, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -492,7 +528,6 @@ public class ListApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

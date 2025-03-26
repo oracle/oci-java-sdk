@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A source that uses the parser, either directly or indirectly. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A source that uses the parser, either directly or indirectly.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DependentSource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DependentSource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DependentSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceName",
@@ -54,86 +51,94 @@ public final class DependentSource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source name. */
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
         private String sourceName;
 
         /**
          * The source name.
-         *
          * @param sourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceName(String sourceName) {
             this.sourceName = sourceName;
             this.__explicitlySet__.add("sourceName");
             return this;
         }
-        /** The source display name. */
+        /**
+         * The source display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
         /**
          * The source display name.
-         *
          * @param sourceDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-        /** The source unique identifier. */
+        /**
+         * The source unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private Long sourceId;
 
         /**
          * The source unique identifier.
-         *
          * @param sourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceId(Long sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /** The source type. */
+        /**
+         * The source type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private String sourceType;
 
         /**
          * The source type.
-         *
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(String sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
-         */
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /** A flag indicating whether or not the source is marked for auto association. */
+        /**
+         * A flag indicating whether or not the source is marked for auto association.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationEnabled")
         private Boolean isAutoAssociationEnabled;
 
@@ -142,37 +147,39 @@ public final class DependentSource
          *
          * @param isAutoAssociationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoAssociationEnabled(Boolean isAutoAssociationEnabled) {
             this.isAutoAssociationEnabled = isAutoAssociationEnabled;
             this.__explicitlySet__.add("isAutoAssociationEnabled");
             return this;
         }
-        /** The entity types. */
+        /**
+         * The entity types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
         private java.util.List<LogAnalyticsSourceEntityType> entityTypes;
 
         /**
          * The entity types.
-         *
          * @param entityTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder entityTypes(java.util.List<LogAnalyticsSourceEntityType> entityTypes) {
             this.entityTypes = entityTypes;
             this.__explicitlySet__.add("entityTypes");
             return this;
         }
-        /** The list of dependencies defined by the source. */
+        /**
+         * The list of dependencies defined by the source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
         private java.util.List<Dependency> dependencies;
 
         /**
          * The list of dependencies defined by the source.
-         *
          * @param dependencies the value to set
          * @return this builder
-         */
+         **/
         public Builder dependencies(java.util.List<Dependency> dependencies) {
             this.dependencies = dependencies;
             this.__explicitlySet__.add("dependencies");
@@ -229,7 +236,9 @@ public final class DependentSource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -238,76 +247,84 @@ public final class DependentSource
         return new Builder().copy(this);
     }
 
-    /** The source name. */
+    /**
+     * The source name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceName")
     private final String sourceName;
 
     /**
      * The source name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceName() {
         return sourceName;
     }
 
-    /** The source display name. */
+    /**
+     * The source display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
     /**
      * The source display name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
 
-    /** The source unique identifier. */
+    /**
+     * The source unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final Long sourceId;
 
     /**
      * The source unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getSourceId() {
         return sourceId;
     }
 
-    /** The source type. */
+    /**
+     * The source type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final String sourceType;
 
     /**
      * The source type.
-     *
      * @return the value
-     */
+     **/
     public String getSourceType() {
         return sourceType;
     }
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
-     */
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /** A flag indicating whether or not the source is marked for auto association. */
+    /**
+     * A flag indicating whether or not the source is marked for auto association.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoAssociationEnabled")
     private final Boolean isAutoAssociationEnabled;
 
@@ -315,33 +332,35 @@ public final class DependentSource
      * A flag indicating whether or not the source is marked for auto association.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoAssociationEnabled() {
         return isAutoAssociationEnabled;
     }
 
-    /** The entity types. */
+    /**
+     * The entity types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypes")
     private final java.util.List<LogAnalyticsSourceEntityType> entityTypes;
 
     /**
      * The entity types.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsSourceEntityType> getEntityTypes() {
         return entityTypes;
     }
 
-    /** The list of dependencies defined by the source. */
+    /**
+     * The list of dependencies defined by the source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependencies")
     private final java.util.List<Dependency> dependencies;
 
     /**
      * The list of dependencies defined by the source.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Dependency> getDependencies() {
         return dependencies;
     }
@@ -353,7 +372,6 @@ public final class DependentSource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

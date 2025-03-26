@@ -5,21 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Health entity object <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Health entity object
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HealthEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HealthEntity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HealthEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "offset",
@@ -59,155 +57,161 @@ public final class HealthEntity extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of Unicode code points preceding this entity in the submitted text. */
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
         /**
          * The number of Unicode code points preceding this entity in the submitted text.
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** Length of entity text */
+        /**
+         * Length of entity text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * Length of entity text
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Entity text like name of person, location, and so on. */
+        /**
+         * Entity text like name of person, location, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Entity text like name of person, location, and so on.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** Type of entity text like PER, LOC. */
+        /**
+         * Type of entity text like PER, LOC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of entity text like PER, LOC.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Sub-type of entity text like GPE for LOCATION type */
+        /**
+         * Sub-type of entity text like GPE for LOCATION type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
         /**
          * Sub-type of entity text like GPE for LOCATION type
-         *
          * @param subType the value to set
          * @return this builder
-         */
+         **/
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-        /** Score or confidence for detected entity. */
+        /**
+         * Score or confidence for detected entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * Score or confidence for detected entity.
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
             return this;
         }
-        /** Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY */
+        /**
+         * Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
          * Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY
-         *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(String category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** Unique id of the entity */
+        /**
+         * Unique id of the entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique id of the entity
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** list of all assertions associated with this entity. */
+        /**
+         * list of all assertions associated with this entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assertions")
         private java.util.List<AssertionDetails> assertions;
 
         /**
          * list of all assertions associated with this entity.
-         *
          * @param assertions the value to set
          * @return this builder
-         */
+         **/
         public Builder assertions(java.util.List<AssertionDetails> assertions) {
             this.assertions = assertions;
             this.__explicitlySet__.add("assertions");
             return this;
         }
         /**
-         * This contains the list of matched concepts which are ranked by the relevant score with
-         * the input text
-         */
+         * This contains the list of matched concepts which are ranked by the relevant score with the input text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matchedConcepts")
         private java.util.List<MelConcept> matchedConcepts;
 
         /**
-         * This contains the list of matched concepts which are ranked by the relevant score with
-         * the input text
-         *
+         * This contains the list of matched concepts which are ranked by the relevant score with the input text
          * @param matchedConcepts the value to set
          * @return this builder
-         */
+         **/
         public Builder matchedConcepts(java.util.List<MelConcept> matchedConcepts) {
             this.matchedConcepts = matchedConcepts;
             this.__explicitlySet__.add("matchedConcepts");
@@ -272,7 +276,9 @@ public final class HealthEntity extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -281,136 +287,142 @@ public final class HealthEntity extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The number of Unicode code points preceding this entity in the submitted text. */
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
     /**
      * The number of Unicode code points preceding this entity in the submitted text.
-     *
      * @return the value
-     */
+     **/
     public Integer getOffset() {
         return offset;
     }
 
-    /** Length of entity text */
+    /**
+     * Length of entity text
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * Length of entity text
-     *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Entity text like name of person, location, and so on. */
+    /**
+     * Entity text like name of person, location, and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Entity text like name of person, location, and so on.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** Type of entity text like PER, LOC. */
+    /**
+     * Type of entity text like PER, LOC.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of entity text like PER, LOC.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Sub-type of entity text like GPE for LOCATION type */
+    /**
+     * Sub-type of entity text like GPE for LOCATION type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
     /**
      * Sub-type of entity text like GPE for LOCATION type
-     *
      * @return the value
-     */
+     **/
     public String getSubType() {
         return subType;
     }
 
-    /** Score or confidence for detected entity. */
+    /**
+     * Score or confidence for detected entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * Score or confidence for detected entity.
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
 
-    /** Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY */
+    /**
+     * Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
      * Entity category e.g, MEDICAL_CONDITION, MEDICATION, GENERAL, ANATOMY
-     *
      * @return the value
-     */
+     **/
     public String getCategory() {
         return category;
     }
 
-    /** Unique id of the entity */
+    /**
+     * Unique id of the entity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique id of the entity
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** list of all assertions associated with this entity. */
+    /**
+     * list of all assertions associated with this entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assertions")
     private final java.util.List<AssertionDetails> assertions;
 
     /**
      * list of all assertions associated with this entity.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssertionDetails> getAssertions() {
         return assertions;
     }
 
     /**
-     * This contains the list of matched concepts which are ranked by the relevant score with the
-     * input text
-     */
+     * This contains the list of matched concepts which are ranked by the relevant score with the input text
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matchedConcepts")
     private final java.util.List<MelConcept> matchedConcepts;
 
     /**
-     * This contains the list of matched concepts which are ranked by the relevant score with the
-     * input text
-     *
+     * This contains the list of matched concepts which are ranked by the relevant score with the input text
      * @return the value
-     */
+     **/
     public java.util.List<MelConcept> getMatchedConcepts() {
         return matchedConcepts;
     }
@@ -422,7 +434,6 @@ public final class HealthEntity extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

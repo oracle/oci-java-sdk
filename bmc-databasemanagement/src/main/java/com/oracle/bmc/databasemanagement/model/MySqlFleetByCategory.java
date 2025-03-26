@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The number of MySQL Databases in the fleet, grouped by database type and sub type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The number of MySQL Databases in the fleet, grouped by database type and sub type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MySqlFleetByCategory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MySqlFleetByCategory
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MySqlFleetByCategory.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MySqlFleetByCategory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"databaseType", "mdsDeploymentType", "inventoryCount"})
     public MySqlFleetByCategory(
@@ -35,19 +33,16 @@ public final class MySqlFleetByCategory
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of the MySQL Database. Indicates whether the database is on premises or Oracle
-         * Cloud. Allowed values are: MDS and ONPREMISE
-         */
+         * The type of the MySQL Database. Indicates whether the database is on premises or Oracle Cloud. Allowed values are: MDS and ONPREMISE
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private String databaseType;
 
         /**
-         * The type of the MySQL Database. Indicates whether the database is on premises or Oracle
-         * Cloud. Allowed values are: MDS and ONPREMISE
-         *
+         * The type of the MySQL Database. Indicates whether the database is on premises or Oracle Cloud. Allowed values are: MDS and ONPREMISE
          * @param databaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseType(String databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
@@ -55,31 +50,31 @@ public final class MySqlFleetByCategory
         }
         /**
          * The type of MySQL Database installation. Allowed values are: STANDALONE, HEATWAVE and HA
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mdsDeploymentType")
         private String mdsDeploymentType;
 
         /**
          * The type of MySQL Database installation. Allowed values are: STANDALONE, HEATWAVE and HA
-         *
          * @param mdsDeploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder mdsDeploymentType(String mdsDeploymentType) {
             this.mdsDeploymentType = mdsDeploymentType;
             this.__explicitlySet__.add("mdsDeploymentType");
             return this;
         }
-        /** The number of MySQL Databases. */
+        /**
+         * The number of MySQL Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
         private Integer inventoryCount;
 
         /**
          * The number of MySQL Databases.
-         *
          * @param inventoryCount the value to set
          * @return this builder
-         */
+         **/
         public Builder inventoryCount(Integer inventoryCount) {
             this.inventoryCount = inventoryCount;
             this.__explicitlySet__.add("inventoryCount");
@@ -114,7 +109,9 @@ public final class MySqlFleetByCategory
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,44 +121,43 @@ public final class MySqlFleetByCategory
     }
 
     /**
-     * The type of the MySQL Database. Indicates whether the database is on premises or Oracle
-     * Cloud. Allowed values are: MDS and ONPREMISE
-     */
+     * The type of the MySQL Database. Indicates whether the database is on premises or Oracle Cloud. Allowed values are: MDS and ONPREMISE
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * The type of the MySQL Database. Indicates whether the database is on premises or Oracle
-     * Cloud. Allowed values are: MDS and ONPREMISE
-     *
+     * The type of the MySQL Database. Indicates whether the database is on premises or Oracle Cloud. Allowed values are: MDS and ONPREMISE
      * @return the value
-     */
+     **/
     public String getDatabaseType() {
         return databaseType;
     }
 
-    /** The type of MySQL Database installation. Allowed values are: STANDALONE, HEATWAVE and HA */
+    /**
+     * The type of MySQL Database installation. Allowed values are: STANDALONE, HEATWAVE and HA
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mdsDeploymentType")
     private final String mdsDeploymentType;
 
     /**
      * The type of MySQL Database installation. Allowed values are: STANDALONE, HEATWAVE and HA
-     *
      * @return the value
-     */
+     **/
     public String getMdsDeploymentType() {
         return mdsDeploymentType;
     }
 
-    /** The number of MySQL Databases. */
+    /**
+     * The number of MySQL Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inventoryCount")
     private final Integer inventoryCount;
 
     /**
      * The number of MySQL Databases.
-     *
      * @return the value
-     */
+     **/
     public Integer getInventoryCount() {
         return inventoryCount;
     }
@@ -173,7 +169,6 @@ public final class MySqlFleetByCategory
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

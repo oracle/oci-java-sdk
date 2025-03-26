@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the Managed MySQL Database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the Managed MySQL Database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagedMySqlDatabase.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ManagedMySqlDatabase
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ManagedMySqlDatabase.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -85,271 +83,293 @@ public final class ManagedMySqlDatabase
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the Managed MySQL Database. */
+        /**
+         * The OCID of the Managed MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the Managed MySQL Database.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of the MySQL Database. */
+        /**
+         * The name of the MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
         /**
          * The name of the MySQL Database.
-         *
          * @param dbName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-        /** The version of the MySQL Database. */
+        /**
+         * The version of the MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * The version of the MySQL Database.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The date and time the Managed MySQL Database was created. */
+        /**
+         * The date and time the Managed MySQL Database was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the Managed MySQL Database was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The name of the Managed MySQL Database. */
+        /**
+         * The name of the Managed MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Managed MySQL Database.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The name of the HeatWave cluster. */
+        /**
+         * The name of the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
         private String heatWaveClusterDisplayName;
 
         /**
          * The name of the HeatWave cluster.
-         *
          * @param heatWaveClusterDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveClusterDisplayName(String heatWaveClusterDisplayName) {
             this.heatWaveClusterDisplayName = heatWaveClusterDisplayName;
             this.__explicitlySet__.add("heatWaveClusterDisplayName");
             return this;
         }
-        /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
+        /**
+         * Indicates whether HeatWave is enabled for the MySQL Database System or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
         private Boolean isHeatWaveEnabled;
 
         /**
          * Indicates whether HeatWave is enabled for the MySQL Database System or not.
-         *
          * @param isHeatWaveEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isHeatWaveEnabled(Boolean isHeatWaveEnabled) {
             this.isHeatWaveEnabled = isHeatWaveEnabled;
             this.__explicitlySet__.add("isHeatWaveEnabled");
             return this;
         }
-        /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
+        /**
+         * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
         private Boolean isLakehouseEnabled;
 
         /**
          * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
-         *
          * @param isLakehouseEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isLakehouseEnabled(Boolean isLakehouseEnabled) {
             this.isLakehouseEnabled = isLakehouseEnabled;
             this.__explicitlySet__.add("isLakehouseEnabled");
             return this;
         }
-        /** The shape of the nodes in the HeatWave cluster. */
+        /**
+         * The shape of the nodes in the HeatWave cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
         private String heatWaveNodeShape;
 
         /**
          * The shape of the nodes in the HeatWave cluster.
-         *
          * @param heatWaveNodeShape the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveNodeShape(String heatWaveNodeShape) {
             this.heatWaveNodeShape = heatWaveNodeShape;
             this.__explicitlySet__.add("heatWaveNodeShape");
             return this;
         }
-        /** The total memory belonging to the HeatWave cluster in GBs. */
+        /**
+         * The total memory belonging to the HeatWave cluster in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
         private Integer heatWaveMemorySize;
 
         /**
          * The total memory belonging to the HeatWave cluster in GBs.
-         *
          * @param heatWaveMemorySize the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveMemorySize(Integer heatWaveMemorySize) {
             this.heatWaveMemorySize = heatWaveMemorySize;
             this.__explicitlySet__.add("heatWaveMemorySize");
             return this;
         }
-        /** The information about individual HeatWave nodes in the cluster. */
+        /**
+         * The information about individual HeatWave nodes in the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
         private java.util.List<HeatWaveNode> heatWaveNodes;
 
         /**
          * The information about individual HeatWave nodes in the cluster.
-         *
          * @param heatWaveNodes the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveNodes(java.util.List<HeatWaveNode> heatWaveNodes) {
             this.heatWaveNodes = heatWaveNodes;
             this.__explicitlySet__.add("heatWaveNodes");
             return this;
         }
-        /** Indicates whether the HeatWave cluster is active or not. */
+        /**
+         * Indicates whether the HeatWave cluster is active or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
         private Boolean isHeatWaveActive;
 
         /**
          * Indicates whether the HeatWave cluster is active or not.
-         *
          * @param isHeatWaveActive the value to set
          * @return this builder
-         */
+         **/
         public Builder isHeatWaveActive(Boolean isHeatWaveActive) {
             this.isHeatWaveActive = isHeatWaveActive;
             this.__explicitlySet__.add("isHeatWaveActive");
             return this;
         }
-        /** The date and time the Managed MySQL Database was created. */
+        /**
+         * The date and time the Managed MySQL Database was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
         private java.util.Date timeCreatedHeatWave;
 
         /**
          * The date and time the Managed MySQL Database was created.
-         *
          * @param timeCreatedHeatWave the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreatedHeatWave(java.util.Date timeCreatedHeatWave) {
             this.timeCreatedHeatWave = timeCreatedHeatWave;
             this.__explicitlySet__.add("timeCreatedHeatWave");
             return this;
         }
-        /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+        /**
+         * The type of the MySQL Database. Indicates whether the database
+         * is external or MDS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private MySqlType databaseType;
 
         /**
-         * The type of the MySQL Database. Indicates whether the database is external or MDS.
+         * The type of the MySQL Database. Indicates whether the database
+         * is external or MDS.
          *
          * @param databaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseType(MySqlType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-        /** Indicates database management status. */
+        /**
+         * Indicates database management status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementState")
         private ManagementState managementState;
 
         /**
          * Indicates database management status.
-         *
          * @param managementState the value to set
          * @return this builder
-         */
+         **/
         public Builder managementState(ManagementState managementState) {
             this.managementState = managementState;
             this.__explicitlySet__.add("managementState");
             return this;
         }
-        /** Indicates lifecycle state of the resource. */
+        /**
+         * Indicates lifecycle  state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
-         * Indicates lifecycle state of the resource.
-         *
+         * Indicates lifecycle  state of the resource.
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The date and time the Managed MySQL Database was updated. */
+        /**
+         * The date and time the Managed MySQL Database was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the Managed MySQL Database was updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -446,7 +466,9 @@ public final class ManagedMySqlDatabase
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -455,236 +477,258 @@ public final class ManagedMySqlDatabase
         return new Builder().copy(this);
     }
 
-    /** The OCID of the Managed MySQL Database. */
+    /**
+     * The OCID of the Managed MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the Managed MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of the MySQL Database. */
+    /**
+     * The name of the MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
      * The name of the MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbName() {
         return dbName;
     }
 
-    /** The version of the MySQL Database. */
+    /**
+     * The version of the MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * The version of the MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
-    /** The date and time the Managed MySQL Database was created. */
+    /**
+     * The date and time the Managed MySQL Database was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the Managed MySQL Database was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The name of the Managed MySQL Database. */
+    /**
+     * The name of the Managed MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Managed MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The name of the HeatWave cluster. */
+    /**
+     * The name of the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveClusterDisplayName")
     private final String heatWaveClusterDisplayName;
 
     /**
      * The name of the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getHeatWaveClusterDisplayName() {
         return heatWaveClusterDisplayName;
     }
 
-    /** Indicates whether HeatWave is enabled for the MySQL Database System or not. */
+    /**
+     * Indicates whether HeatWave is enabled for the MySQL Database System or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveEnabled")
     private final Boolean isHeatWaveEnabled;
 
     /**
      * Indicates whether HeatWave is enabled for the MySQL Database System or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHeatWaveEnabled() {
         return isHeatWaveEnabled;
     }
 
-    /** Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not. */
+    /**
+     * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLakehouseEnabled")
     private final Boolean isLakehouseEnabled;
 
     /**
      * Indicates whether HeatWave Lakehouse is enabled for the MySQL Database System or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLakehouseEnabled() {
         return isLakehouseEnabled;
     }
 
-    /** The shape of the nodes in the HeatWave cluster. */
+    /**
+     * The shape of the nodes in the HeatWave cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodeShape")
     private final String heatWaveNodeShape;
 
     /**
      * The shape of the nodes in the HeatWave cluster.
-     *
      * @return the value
-     */
+     **/
     public String getHeatWaveNodeShape() {
         return heatWaveNodeShape;
     }
 
-    /** The total memory belonging to the HeatWave cluster in GBs. */
+    /**
+     * The total memory belonging to the HeatWave cluster in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveMemorySize")
     private final Integer heatWaveMemorySize;
 
     /**
      * The total memory belonging to the HeatWave cluster in GBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getHeatWaveMemorySize() {
         return heatWaveMemorySize;
     }
 
-    /** The information about individual HeatWave nodes in the cluster. */
+    /**
+     * The information about individual HeatWave nodes in the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveNodes")
     private final java.util.List<HeatWaveNode> heatWaveNodes;
 
     /**
      * The information about individual HeatWave nodes in the cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveNode> getHeatWaveNodes() {
         return heatWaveNodes;
     }
 
-    /** Indicates whether the HeatWave cluster is active or not. */
+    /**
+     * Indicates whether the HeatWave cluster is active or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveActive")
     private final Boolean isHeatWaveActive;
 
     /**
      * Indicates whether the HeatWave cluster is active or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsHeatWaveActive() {
         return isHeatWaveActive;
     }
 
-    /** The date and time the Managed MySQL Database was created. */
+    /**
+     * The date and time the Managed MySQL Database was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedHeatWave")
     private final java.util.Date timeCreatedHeatWave;
 
     /**
      * The date and time the Managed MySQL Database was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreatedHeatWave() {
         return timeCreatedHeatWave;
     }
 
-    /** The type of the MySQL Database. Indicates whether the database is external or MDS. */
+    /**
+     * The type of the MySQL Database. Indicates whether the database
+     * is external or MDS.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final MySqlType databaseType;
 
     /**
-     * The type of the MySQL Database. Indicates whether the database is external or MDS.
+     * The type of the MySQL Database. Indicates whether the database
+     * is external or MDS.
      *
      * @return the value
-     */
+     **/
     public MySqlType getDatabaseType() {
         return databaseType;
     }
 
-    /** Indicates database management status. */
+    /**
+     * Indicates database management status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementState")
     private final ManagementState managementState;
 
     /**
      * Indicates database management status.
-     *
      * @return the value
-     */
+     **/
     public ManagementState getManagementState() {
         return managementState;
     }
 
-    /** Indicates lifecycle state of the resource. */
+    /**
+     * Indicates lifecycle  state of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
-     * Indicates lifecycle state of the resource.
-     *
+     * Indicates lifecycle  state of the resource.
      * @return the value
-     */
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The date and time the Managed MySQL Database was updated. */
+    /**
+     * The date and time the Managed MySQL Database was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the Managed MySQL Database was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -696,7 +740,6 @@ public final class ManagedMySqlDatabase
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

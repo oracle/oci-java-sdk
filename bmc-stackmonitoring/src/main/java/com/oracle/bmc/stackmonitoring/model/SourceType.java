@@ -5,14 +5,17 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Source Type of the resource. 1. SM_MGMT_AGENT_MONITORED - Management agent monitored stack
- * monitoring discovered resources. 2. SM_REPO_ONLY - Repository only stack monitoring discovered
- * resources. 3. OCI_NATIVE - OCI Native resources imported from OCI Monitoring Service. 4.
- * PROMETHEUS - Prometheus resources imported from OCI Monitoring Service. 5. TELEGRAF - Telegraf
- * based resources. 6. COLLECTD - Collectd based resources.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum SourceType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Source Type of the resource.
+ * 1. SM_MGMT_AGENT_MONITORED - Management agent monitored stack monitoring discovered resources.
+ * 2. SM_REPO_ONLY - Repository only stack monitoring discovered resources.
+ * 3. OCI_NATIVE - OCI Native resources imported from OCI Monitoring Service.
+ * 4. PROMETHEUS - Prometheus resources imported from OCI Monitoring Service.
+ * 5. TELEGRAF - Telegraf based resources.
+ * 6. COLLECTD - Collectd based resources.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum SourceType {
     SmMgmtAgentMonitored("SM_MGMT_AGENT_MONITORED"),
     SmRepoOnly("SM_REPO_ONLY"),
     OciNative("OCI_NATIVE"),

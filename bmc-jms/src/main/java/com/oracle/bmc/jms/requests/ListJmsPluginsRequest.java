@@ -6,172 +6,196 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJmsPluginsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListJmsPluginsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Flag to determine whether the info should be gathered only in the compartment or in the
-     * compartment and its subcompartments.
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Flag to determine whether the info should be gathered only in the compartment or in the
-     * compartment and its subcompartments.
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * JmsPlugin.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
      */
     public String getId() {
         return id;
     }
-    /** The ID of the Fleet. */
+    /**
+     * The ID of the Fleet.
+     */
     private String fleetId;
 
-    /** The ID of the Fleet. */
+    /**
+     * The ID of the Fleet.
+     */
     public String getFleetId() {
         return fleetId;
     }
     /**
-     * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
-     * the Agent.
+     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     private String agentId;
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA)
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies
-     * the Agent.
+     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
      */
     public String getAgentId() {
         return agentId;
     }
-    /** Filter JmsPlugin with its lifecycle state. */
+    /**
+     * Filter JmsPlugin with its lifecycle state.
+     */
     private com.oracle.bmc.jms.model.JmsPluginLifecycleState lifecycleState;
 
-    /** Filter JmsPlugin with its lifecycle state. */
+    /**
+     * Filter JmsPlugin with its lifecycle state.
+     */
     public com.oracle.bmc.jms.model.JmsPluginLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** Filter JmsPlugin with its availability status. */
+    /**
+     * Filter JmsPlugin with its availability status.
+     */
     private com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus availabilityStatus;
 
-    /** Filter JmsPlugin with its availability status. */
+    /**
+     * Filter JmsPlugin with its availability status.
+     */
     public com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
-    /** Filter JmsPlugin with agent type. */
+    /**
+     * Filter JmsPlugin with agent type.
+     */
     private com.oracle.bmc.jms.model.AgentType agentType;
 
-    /** Filter JmsPlugin with agent type. */
+    /**
+     * Filter JmsPlugin with agent type.
+     */
     public com.oracle.bmc.jms.model.AgentType getAgentType() {
         return agentType;
     }
     /**
-     * If present, only plugins with a registration time before this parameter are searched
-     * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeRegisteredLessThanOrEqualTo;
 
     /**
-     * If present, only plugins with a registration time before this parameter are searched
-     * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeRegisteredLessThanOrEqualTo() {
         return timeRegisteredLessThanOrEqualTo;
     }
     /**
-     * If present, only plugins with a last seen time before this parameter are searched (formatted
-     * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeLastSeenLessThanOrEqualTo;
 
     /**
-     * If present, only plugins with a last seen time before this parameter are searched (formatted
-     * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeLastSeenLessThanOrEqualTo() {
         return timeLastSeenLessThanOrEqualTo;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort JmsPlugin. Only one sort order may be provided. Default order is
-     * **descending**. If no value is specified _timeLastSeen_ is default.
+     * The field to sort JmsPlugin. Only one sort order may be provided.
+     * Default order is **descending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     private com.oracle.bmc.jms.model.JmsPluginSortBy sortBy;
 
     /**
-     * The field to sort JmsPlugin. Only one sort order may be provided. Default order is
-     * **descending**. If no value is specified _timeLastSeen_ is default.
+     * The field to sort JmsPlugin. Only one sort order may be provided.
+     * Default order is **descending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     public com.oracle.bmc.jms.model.JmsPluginSortBy getSortBy() {
         return sortBy;
     }
-    /** Filter the list with hostname contains the given value. */
+    /**
+     * Filter the list with hostname contains the given value.
+     *
+     */
     private String hostnameContains;
 
-    /** Filter the list with hostname contains the given value. */
+    /**
+     * Filter the list with hostname contains the given value.
+     *
+     */
     public String getHostnameContains() {
         return hostnameContains;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -179,18 +203,18 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListJmsPluginsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -201,14 +225,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Flag to determine whether the info should be gathered only in the compartment or in the
-         * compartment and its subcompartments.
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Flag to determine whether the info should be gathered only in the compartment or in the
-         * compartment and its subcompartments.
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -219,15 +242,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * JmsPlugin.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * JmsPlugin.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the JmsPlugin.
          * @param id the value to set
          * @return this builder instance
          */
@@ -236,12 +256,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The ID of the Fleet. */
+        /**
+         * The ID of the Fleet.
+         */
         private String fleetId = null;
 
         /**
          * The ID of the Fleet.
-         *
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -251,17 +272,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA)
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * identifies the Agent.
+         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
          */
         private String agentId = null;
 
         /**
-         * The ManagementAgent (OMA) or Instance (OCA)
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that
-         * identifies the Agent.
-         *
+         * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
          * @param agentId the value to set
          * @return this builder instance
          */
@@ -270,12 +286,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Filter JmsPlugin with its lifecycle state. */
+        /**
+         * Filter JmsPlugin with its lifecycle state.
+         */
         private com.oracle.bmc.jms.model.JmsPluginLifecycleState lifecycleState = null;
 
         /**
          * Filter JmsPlugin with its lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -285,12 +302,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Filter JmsPlugin with its availability status. */
+        /**
+         * Filter JmsPlugin with its availability status.
+         */
         private com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus availabilityStatus = null;
 
         /**
          * Filter JmsPlugin with its availability status.
-         *
          * @param availabilityStatus the value to set
          * @return this builder instance
          */
@@ -300,12 +318,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Filter JmsPlugin with agent type. */
+        /**
+         * Filter JmsPlugin with agent type.
+         */
         private com.oracle.bmc.jms.model.AgentType agentType = null;
 
         /**
          * Filter JmsPlugin with agent type.
-         *
          * @param agentType the value to set
          * @return this builder instance
          */
@@ -315,15 +334,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * If present, only plugins with a registration time before this parameter are searched
-         * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeRegisteredLessThanOrEqualTo = null;
 
         /**
-         * If present, only plugins with a registration time before this parameter are searched
-         * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * If present, only plugins with a registration time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeRegisteredLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -334,15 +350,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * If present, only plugins with a last seen time before this parameter are searched
-         * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeLastSeenLessThanOrEqualTo = null;
 
         /**
-         * If present, only plugins with a last seen time before this parameter are searched
-         * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * If present, only plugins with a last seen time before this parameter are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeLastSeenLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -351,12 +364,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -366,15 +380,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -383,12 +394,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -398,14 +410,17 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort JmsPlugin. Only one sort order may be provided. Default order is
-         * **descending**. If no value is specified _timeLastSeen_ is default.
+         * The field to sort JmsPlugin. Only one sort order may be provided.
+         * Default order is **descending**.
+         * If no value is specified _timeLastSeen_ is default.
+         *
          */
         private com.oracle.bmc.jms.model.JmsPluginSortBy sortBy = null;
 
         /**
-         * The field to sort JmsPlugin. Only one sort order may be provided. Default order is
-         * **descending**. If no value is specified _timeLastSeen_ is default.
+         * The field to sort JmsPlugin. Only one sort order may be provided.
+         * Default order is **descending**.
+         * If no value is specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -415,7 +430,10 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Filter the list with hostname contains the given value. */
+        /**
+         * Filter the list with hostname contains the given value.
+         *
+         */
         private String hostnameContains = null;
 
         /**
@@ -429,12 +447,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -445,19 +464,18 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -469,7 +487,6 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListJmsPluginsRequest o) {
@@ -497,11 +514,10 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListJmsPluginsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListJmsPluginsRequest
          */
@@ -515,8 +531,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListJmsPluginsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListJmsPluginsRequest
@@ -540,16 +555,12 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.hostnameContains = hostnameContains;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListJmsPluginsRequest(compartmentId, compartmentIdInSubtree, id, fleetId,
-            // agentId, lifecycleState, availabilityStatus, agentType,
-            // timeRegisteredLessThanOrEqualTo, timeLastSeenLessThanOrEqualTo, limit, page,
-            // sortOrder, sortBy, hostnameContains, opcRequestId);
+            // new ListJmsPluginsRequest(compartmentId, compartmentIdInSubtree, id, fleetId, agentId, lifecycleState, availabilityStatus, agentType, timeRegisteredLessThanOrEqualTo, timeLastSeenLessThanOrEqualTo, limit, page, sortOrder, sortBy, hostnameContains, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -574,7 +585,6 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

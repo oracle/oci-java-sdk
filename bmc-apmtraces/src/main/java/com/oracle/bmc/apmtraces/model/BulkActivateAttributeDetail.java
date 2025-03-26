@@ -5,25 +5,24 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Object that contains the details about a single attribute in the bulk request to be activated.
- * The attributeNameSpace and unit are optional parameters, and the attributeNameSpace will default
- * to TRACES if it is not passed in. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Object that contains the details about a single attribute in the bulk request to be activated.  The attributeNameSpace and
+ * unit are optional parameters, and the attributeNameSpace will default to TRACES if it is not passed in.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkActivateAttributeDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkActivateAttributeDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkActivateAttributeDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attributeName",
@@ -45,7 +44,10 @@ public final class BulkActivateAttributeDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the attribute to be activated. */
+        /**
+         * Name of the attribute to be activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -54,13 +56,16 @@ public final class BulkActivateAttributeDetail
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Type of the attribute to be activated. */
+        /**
+         * Type of the attribute to be activated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
         private AttributeType attributeType;
 
@@ -69,13 +74,16 @@ public final class BulkActivateAttributeDetail
          *
          * @param attributeType the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeType(AttributeType attributeType) {
             this.attributeType = attributeType;
             this.__explicitlySet__.add("attributeType");
             return this;
         }
-        /** Unit of the attribute to be updated. */
+        /**
+         * Unit of the attribute to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
@@ -84,26 +92,27 @@ public final class BulkActivateAttributeDetail
          *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
         /**
-         * Namespace of the attribute to be activated. The attributeNameSpace will default to TRACES
-         * if it is not passed in.
-         */
+         * Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
         /**
-         * Namespace of the attribute to be activated. The attributeNameSpace will default to TRACES
-         * if it is not passed in.
+         * Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
@@ -144,7 +153,9 @@ public final class BulkActivateAttributeDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,7 +164,10 @@ public final class BulkActivateAttributeDetail
         return new Builder().copy(this);
     }
 
-    /** Name of the attribute to be activated. */
+    /**
+     * Name of the attribute to be activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -161,13 +175,16 @@ public final class BulkActivateAttributeDetail
      * Name of the attribute to be activated.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Type of the attribute to be activated. */
-    public enum AttributeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the attribute to be activated.
+     *
+     **/
+    public enum AttributeType {
         Numeric("NUMERIC"),
         String("STRING"),
         ;
@@ -199,7 +216,10 @@ public final class BulkActivateAttributeDetail
             throw new IllegalArgumentException("Invalid AttributeType: " + key);
         }
     };
-    /** Type of the attribute to be activated. */
+    /**
+     * Type of the attribute to be activated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     private final AttributeType attributeType;
 
@@ -207,13 +227,16 @@ public final class BulkActivateAttributeDetail
      * Type of the attribute to be activated.
      *
      * @return the value
-     */
+     **/
     public AttributeType getAttributeType() {
         return attributeType;
     }
 
-    /** Unit of the attribute to be updated. */
-    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Unit of the attribute to be updated.
+     *
+     **/
+    public enum Unit {
         None("NONE"),
         EpochTimeMs("EPOCH_TIME_MS"),
         Bytes("BYTES"),
@@ -250,7 +273,10 @@ public final class BulkActivateAttributeDetail
             throw new IllegalArgumentException("Invalid Unit: " + key);
         }
     };
-    /** Unit of the attribute to be updated. */
+    /**
+     * Unit of the attribute to be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
@@ -258,16 +284,17 @@ public final class BulkActivateAttributeDetail
      * Unit of the attribute to be updated.
      *
      * @return the value
-     */
+     **/
     public Unit getUnit() {
         return unit;
     }
 
     /**
-     * Namespace of the attribute to be activated. The attributeNameSpace will default to TRACES if
-     * it is not passed in.
-     */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+     * Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
         ;
@@ -300,18 +327,19 @@ public final class BulkActivateAttributeDetail
         }
     };
     /**
-     * Namespace of the attribute to be activated. The attributeNameSpace will default to TRACES if
-     * it is not passed in.
-     */
+     * Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
     /**
-     * Namespace of the attribute to be activated. The attributeNameSpace will default to TRACES if
-     * it is not passed in.
+     * Namespace of the attribute to be activated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
@@ -323,7 +351,6 @@ public final class BulkActivateAttributeDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

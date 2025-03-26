@@ -5,13 +5,15 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Primary Key Compatibility option. IGNORE_MISSING_PKS - Make the instance, schema, or table dump
- * utility ignore any missing primary keys when the dump is carried out, CREATE_INVISIBLE_PKS - Add
- * a flag in the dump metadata to notify MySQL Shell\u2019s dump loading utility to add primary keys
- * in invisible columns, for each table that does not contain a primary key.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum PrimaryKeyCompatibility implements com.oracle.bmc.http.internal.BmcEnum {
+ * Primary Key Compatibility option.
+ * IGNORE_MISSING_PKS - Make the instance, schema, or table dump utility ignore any missing
+ *   primary keys when the dump is carried out,
+ * CREATE_INVISIBLE_PKS - Add a flag in the dump metadata to notify MySQL Shell\u2019s dump loading utility to add
+ *   primary keys in invisible columns, for each table that does not contain a primary key.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum PrimaryKeyCompatibility {
     None("NONE"),
     IgnoreMissingPks("IGNORE_MISSING_PKS"),
     CreateInvisiblePks("CREATE_INVISIBLE_PKS"),

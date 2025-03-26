@@ -4,32 +4,28 @@
  */
 package com.oracle.bmc.announcementsservice;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.announcementsservice.internal.http.*;
 import com.oracle.bmc.announcementsservice.requests.*;
 import com.oracle.bmc.announcementsservice.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for AnnouncementSubscription service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for AnnouncementSubscription service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-public class AnnouncementSubscriptionAsyncClient
-        extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements AnnouncementSubscriptionAsync {
-    /** Service instance for AnnouncementSubscription. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+public class AnnouncementSubscriptionAsyncClient implements AnnouncementSubscriptionAsync {
+    /**
+     * Service instance for AnnouncementSubscription.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ANNOUNCEMENTSUBSCRIPTION")
@@ -40,487 +36,112 @@ public class AnnouncementSubscriptionAsyncClient
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(AnnouncementSubscriptionAsyncClient.class);
 
-    AnnouncementSubscriptionAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, AnnouncementSubscriptionAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "announcementsservice";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public AnnouncementSubscriptionAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new AnnouncementSubscriptionAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeAnnouncementSubscriptionCompartmentResponse>
-            changeAnnouncementSubscriptionCompartment(
-                    ChangeAnnouncementSubscriptionCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeAnnouncementSubscriptionCompartmentRequest,
-                                    ChangeAnnouncementSubscriptionCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeAnnouncementSubscriptionCompartmentDetails(),
-                "changeAnnouncementSubscriptionCompartmentDetails is required");
-
-        return clientCall(request, ChangeAnnouncementSubscriptionCompartmentResponse::builder)
-                .logger(LOG, "changeAnnouncementSubscriptionCompartment")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "ChangeAnnouncementSubscriptionCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeAnnouncementSubscriptionCompartmentRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeAnnouncementSubscriptionCompartmentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", ChangeAnnouncementSubscriptionCompartmentResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateAnnouncementSubscriptionResponse>
-            createAnnouncementSubscription(
-                    CreateAnnouncementSubscriptionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateAnnouncementSubscriptionRequest,
-                                    CreateAnnouncementSubscriptionResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateAnnouncementSubscriptionDetails(),
-                "createAnnouncementSubscriptionDetails is required");
-
-        return clientCall(request, CreateAnnouncementSubscriptionResponse::builder)
-                .logger(LOG, "createAnnouncementSubscription")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "CreateAnnouncementSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateAnnouncementSubscriptionRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.class,
-                        CreateAnnouncementSubscriptionResponse.Builder::announcementSubscription)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateAnnouncementSubscriptionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateAnnouncementSubscriptionResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateFilterGroupResponse> createFilterGroup(
-            CreateFilterGroupRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateFilterGroupRequest, CreateFilterGroupResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-        Objects.requireNonNull(
-                request.getCreateFilterGroupDetails(), "createFilterGroupDetails is required");
-
-        return clientCall(request, CreateFilterGroupResponse::builder)
-                .logger(LOG, "createFilterGroup")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "CreateFilterGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateFilterGroupRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .appendPathParam("filterGroups")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.FilterGroup.class,
-                        CreateFilterGroupResponse.Builder::filterGroup)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateFilterGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", CreateFilterGroupResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteAnnouncementSubscriptionResponse>
-            deleteAnnouncementSubscription(
-                    DeleteAnnouncementSubscriptionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteAnnouncementSubscriptionRequest,
-                                    DeleteAnnouncementSubscriptionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-
-        return clientCall(request, DeleteAnnouncementSubscriptionResponse::builder)
-                .logger(LOG, "deleteAnnouncementSubscription")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "DeleteAnnouncementSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteAnnouncementSubscriptionRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteAnnouncementSubscriptionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteFilterGroupResponse> deleteFilterGroup(
-            DeleteFilterGroupRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteFilterGroupRequest, DeleteFilterGroupResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-
-        Validate.notBlank(request.getFilterGroupName(), "filterGroupName must not be blank");
-
-        return clientCall(request, DeleteFilterGroupResponse::builder)
-                .logger(LOG, "deleteFilterGroup")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "DeleteFilterGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFilterGroupRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .appendPathParam("filterGroups")
-                .appendPathParam(request.getFilterGroupName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFilterGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", DeleteFilterGroupResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAnnouncementSubscriptionResponse>
-            getAnnouncementSubscription(
-                    GetAnnouncementSubscriptionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetAnnouncementSubscriptionRequest,
-                                    GetAnnouncementSubscriptionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-
-        return clientCall(request, GetAnnouncementSubscriptionResponse::builder)
-                .logger(LOG, "getAnnouncementSubscription")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "GetAnnouncementSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAnnouncementSubscriptionRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.class,
-                        GetAnnouncementSubscriptionResponse.Builder::announcementSubscription)
-                .handleResponseHeaderString(
-                        "etag", GetAnnouncementSubscriptionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAnnouncementSubscriptionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAnnouncementSubscriptionsResponse>
-            listAnnouncementSubscriptions(
-                    ListAnnouncementSubscriptionsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListAnnouncementSubscriptionsRequest,
-                                    ListAnnouncementSubscriptionsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListAnnouncementSubscriptionsResponse::builder)
-                .logger(LOG, "listAnnouncementSubscriptions")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "ListAnnouncementSubscriptions",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAnnouncementSubscriptionsRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.AnnouncementSubscriptionCollection
-                                .class,
-                        ListAnnouncementSubscriptionsResponse.Builder
-                                ::announcementSubscriptionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListAnnouncementSubscriptionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAnnouncementSubscriptionsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateAnnouncementSubscriptionResponse>
-            updateAnnouncementSubscription(
-                    UpdateAnnouncementSubscriptionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateAnnouncementSubscriptionRequest,
-                                    UpdateAnnouncementSubscriptionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateAnnouncementSubscriptionDetails(),
-                "updateAnnouncementSubscriptionDetails is required");
-
-        return clientCall(request, UpdateAnnouncementSubscriptionResponse::builder)
-                .logger(LOG, "updateAnnouncementSubscription")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "UpdateAnnouncementSubscription",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateAnnouncementSubscriptionRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.AnnouncementSubscription.class,
-                        UpdateAnnouncementSubscriptionResponse.Builder::announcementSubscription)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateAnnouncementSubscriptionResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateAnnouncementSubscriptionResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateFilterGroupResponse> updateFilterGroup(
-            UpdateFilterGroupRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateFilterGroupRequest, UpdateFilterGroupResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getAnnouncementSubscriptionId(),
-                "announcementSubscriptionId must not be blank");
-
-        Validate.notBlank(request.getFilterGroupName(), "filterGroupName must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateFilterGroupDetails(), "updateFilterGroupDetails is required");
-
-        return clientCall(request, UpdateFilterGroupResponse::builder)
-                .logger(LOG, "updateFilterGroup")
-                .serviceDetails(
-                        "AnnouncementSubscription",
-                        "UpdateFilterGroup",
-                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateFilterGroupRequest::builder)
-                .basePath("/20180904")
-                .appendPathParam("announcementSubscriptions")
-                .appendPathParam(request.getAnnouncementSubscriptionId())
-                .appendPathParam("filterGroups")
-                .appendPathParam(request.getFilterGroupName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.announcementsservice.model.FilterGroup.class,
-                        UpdateFilterGroupResponse.Builder::filterGroup)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateFilterGroupResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("etag", UpdateFilterGroupResponse.Builder::etag)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -528,26 +149,26 @@ public class AnnouncementSubscriptionAsyncClient
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -556,29 +177,29 @@ public class AnnouncementSubscriptionAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AnnouncementSubscriptionAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -591,14 +212,729 @@ public class AnnouncementSubscriptionAsyncClient
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public AnnouncementSubscriptionAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, AnnouncementSubscriptionAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public AnnouncementSubscriptionAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new AnnouncementSubscriptionAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeAnnouncementSubscriptionCompartmentResponse>
+            changeAnnouncementSubscriptionCompartment(
+                    ChangeAnnouncementSubscriptionCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAnnouncementSubscriptionCompartmentRequest,
+                                    ChangeAnnouncementSubscriptionCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeAnnouncementSubscriptionCompartment");
+        final ChangeAnnouncementSubscriptionCompartmentRequest interceptedRequest =
+                ChangeAnnouncementSubscriptionCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAnnouncementSubscriptionCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "ChangeAnnouncementSubscriptionCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/ChangeAnnouncementSubscriptionCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeAnnouncementSubscriptionCompartmentResponse>
+                transformer =
+                        ChangeAnnouncementSubscriptionCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeAnnouncementSubscriptionCompartmentRequest,
+                        ChangeAnnouncementSubscriptionCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeAnnouncementSubscriptionCompartmentRequest,
+                                ChangeAnnouncementSubscriptionCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeAnnouncementSubscriptionCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeAnnouncementSubscriptionCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeAnnouncementSubscriptionCompartmentRequest,
+                    ChangeAnnouncementSubscriptionCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnnouncementSubscriptionResponse>
+            createAnnouncementSubscription(
+                    CreateAnnouncementSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateAnnouncementSubscriptionRequest,
+                                    CreateAnnouncementSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async createAnnouncementSubscription");
+        final CreateAnnouncementSubscriptionRequest interceptedRequest =
+                CreateAnnouncementSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "CreateAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateAnnouncementSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateAnnouncementSubscriptionResponse>
+                transformer =
+                        CreateAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateAnnouncementSubscriptionRequest,
+                        CreateAnnouncementSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateAnnouncementSubscriptionRequest,
+                                CreateAnnouncementSubscriptionResponse>,
+                        java.util.concurrent.Future<CreateAnnouncementSubscriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateAnnouncementSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateAnnouncementSubscriptionRequest, CreateAnnouncementSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateFilterGroupResponse> createFilterGroup(
+            CreateFilterGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateFilterGroupRequest, CreateFilterGroupResponse>
+                    handler) {
+        LOG.trace("Called async createFilterGroup");
+        final CreateFilterGroupRequest interceptedRequest =
+                CreateFilterGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFilterGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "CreateFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/CreateFilterGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateFilterGroupResponse>
+                transformer =
+                        CreateFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateFilterGroupRequest, CreateFilterGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateFilterGroupRequest, CreateFilterGroupResponse>,
+                        java.util.concurrent.Future<CreateFilterGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateFilterGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateFilterGroupRequest, CreateFilterGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnnouncementSubscriptionResponse>
+            deleteAnnouncementSubscription(
+                    DeleteAnnouncementSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteAnnouncementSubscriptionRequest,
+                                    DeleteAnnouncementSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async deleteAnnouncementSubscription");
+        final DeleteAnnouncementSubscriptionRequest interceptedRequest =
+                DeleteAnnouncementSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "DeleteAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteAnnouncementSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteAnnouncementSubscriptionResponse>
+                transformer =
+                        DeleteAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteAnnouncementSubscriptionRequest,
+                        DeleteAnnouncementSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteAnnouncementSubscriptionRequest,
+                                DeleteAnnouncementSubscriptionResponse>,
+                        java.util.concurrent.Future<DeleteAnnouncementSubscriptionResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteAnnouncementSubscriptionRequest, DeleteAnnouncementSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteFilterGroupResponse> deleteFilterGroup(
+            DeleteFilterGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFilterGroupRequest, DeleteFilterGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteFilterGroup");
+        final DeleteFilterGroupRequest interceptedRequest =
+                DeleteFilterGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFilterGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "DeleteFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/DeleteFilterGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteFilterGroupResponse>
+                transformer =
+                        DeleteFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteFilterGroupRequest, DeleteFilterGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteFilterGroupRequest, DeleteFilterGroupResponse>,
+                        java.util.concurrent.Future<DeleteFilterGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteFilterGroupRequest, DeleteFilterGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAnnouncementSubscriptionResponse>
+            getAnnouncementSubscription(
+                    GetAnnouncementSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAnnouncementSubscriptionRequest,
+                                    GetAnnouncementSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async getAnnouncementSubscription");
+        final GetAnnouncementSubscriptionRequest interceptedRequest =
+                GetAnnouncementSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "GetAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/GetAnnouncementSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAnnouncementSubscriptionResponse>
+                transformer =
+                        GetAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAnnouncementSubscriptionRequest, GetAnnouncementSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAnnouncementSubscriptionRequest,
+                                GetAnnouncementSubscriptionResponse>,
+                        java.util.concurrent.Future<GetAnnouncementSubscriptionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAnnouncementSubscriptionRequest, GetAnnouncementSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnnouncementSubscriptionsResponse>
+            listAnnouncementSubscriptions(
+                    ListAnnouncementSubscriptionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAnnouncementSubscriptionsRequest,
+                                    ListAnnouncementSubscriptionsResponse>
+                            handler) {
+        LOG.trace("Called async listAnnouncementSubscriptions");
+        final ListAnnouncementSubscriptionsRequest interceptedRequest =
+                ListAnnouncementSubscriptionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAnnouncementSubscriptionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "ListAnnouncementSubscriptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscriptionCollection/ListAnnouncementSubscriptions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAnnouncementSubscriptionsResponse>
+                transformer =
+                        ListAnnouncementSubscriptionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAnnouncementSubscriptionsRequest, ListAnnouncementSubscriptionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAnnouncementSubscriptionsRequest,
+                                ListAnnouncementSubscriptionsResponse>,
+                        java.util.concurrent.Future<ListAnnouncementSubscriptionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAnnouncementSubscriptionsRequest, ListAnnouncementSubscriptionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnnouncementSubscriptionResponse>
+            updateAnnouncementSubscription(
+                    UpdateAnnouncementSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateAnnouncementSubscriptionRequest,
+                                    UpdateAnnouncementSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async updateAnnouncementSubscription");
+        final UpdateAnnouncementSubscriptionRequest interceptedRequest =
+                UpdateAnnouncementSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateAnnouncementSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "UpdateAnnouncementSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateAnnouncementSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateAnnouncementSubscriptionResponse>
+                transformer =
+                        UpdateAnnouncementSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateAnnouncementSubscriptionRequest,
+                        UpdateAnnouncementSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateAnnouncementSubscriptionRequest,
+                                UpdateAnnouncementSubscriptionResponse>,
+                        java.util.concurrent.Future<UpdateAnnouncementSubscriptionResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateAnnouncementSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateAnnouncementSubscriptionRequest, UpdateAnnouncementSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateFilterGroupResponse> updateFilterGroup(
+            UpdateFilterGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateFilterGroupRequest, UpdateFilterGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateFilterGroup");
+        final UpdateFilterGroupRequest interceptedRequest =
+                UpdateFilterGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFilterGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AnnouncementSubscription",
+                        "UpdateFilterGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementSubscription/UpdateFilterGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateFilterGroupResponse>
+                transformer =
+                        UpdateFilterGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateFilterGroupRequest, UpdateFilterGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateFilterGroupRequest, UpdateFilterGroupResponse>,
+                        java.util.concurrent.Future<UpdateFilterGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateFilterGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateFilterGroupRequest, UpdateFilterGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -6,74 +6,84 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCustomPropertiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListCustomPropertiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCustomPropertiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ListCustomPropertiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
-    /** Unique namespace identifier. */
+    /**
+     * Unique namespace identifier.
+     */
     private String namespaceId;
 
-    /** Unique namespace identifier. */
+    /**
+     * Unique namespace identifier.
+     */
     public String getNamespaceId() {
         return namespaceId;
     }
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return only resources that match display name pattern given. The match is not
-     * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-     * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
      */
     private String displayNameContains;
 
     /**
-     * A filter to return only resources that match display name pattern given. The match is not
-     * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-     * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
      */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** Return the custom properties which has specified data types */
+    /**
+     * Return the custom properties which has specified data types
+     *
+     */
     private java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertyDataType> dataTypes;
 
-    /** Return the custom properties which has specified data types */
+    /**
+     * Return the custom properties which has specified data types
+     *
+     */
     public java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertyDataType> getDataTypes() {
         return dataTypes;
     }
     /**
-     * A filter to return only resources that match the entire type name given. The match is not
-     * case sensitive
+     * A filter to return only resources that match the entire type name given. The match is not case sensitive
      */
     private java.util.List<TypeName> typeName;
 
     /**
-     * A filter to return only resources that match the entire type name given. The match is not
-     * case sensitive
-     */
-    public enum TypeName implements com.oracle.bmc.http.internal.BmcEnum {
+     * A filter to return only resources that match the entire type name given. The match is not case sensitive
+     **/
+    public enum TypeName {
         DataAsset("DATA_ASSET"),
         AutonomousDataWarehouse("AUTONOMOUS_DATA_WAREHOUSE"),
         Hive("HIVE"),
@@ -148,70 +158,77 @@ public class ListCustomPropertiesRequest
     };
 
     /**
-     * A filter to return only resources that match the entire type name given. The match is not
-     * case sensitive
+     * A filter to return only resources that match the entire type name given. The match is not case sensitive
      */
     public java.util.List<TypeName> getTypeName() {
         return typeName;
     }
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeCreated;
 
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeUpdated;
 
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
-    /** OCID of the user who created the resource. */
+    /**
+     * OCID of the user who created the resource.
+     */
     private String createdById;
 
-    /** OCID of the user who created the resource. */
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
-    /** OCID of the user who updated the resource. */
+    /**
+     * OCID of the user who updated the resource.
+     */
     private String updatedById;
 
-    /** OCID of the user who updated the resource. */
+    /**
+     * OCID of the user who updated the resource.
+     */
     public String getUpdatedById() {
         return updatedById;
     }
-    /** Specifies the fields to return in a custom property summary response. */
+    /**
+     * Specifies the fields to return in a custom property summary response.
+     *
+     */
     private java.util.List<Fields> fields;
 
-    /** Specifies the fields to return in a custom property summary response. */
-    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the fields to return in a custom property summary response.
+     *
+     **/
+    public enum Fields {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -249,15 +266,22 @@ public class ListCustomPropertiesRequest
         }
     };
 
-    /** Specifies the fields to return in a custom property summary response. */
+    /**
+     * Specifies the fields to return in a custom property summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -290,21 +314,23 @@ public class ListCustomPropertiesRequest
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and
-     * DISPLAYNAME is Ascending
+     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and
-     * DISPLAYNAME is Ascending
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
+     *
+     **/
+    public enum SortBy {
         Displayname("DISPLAYNAME"),
         Usagecount("USAGECOUNT"),
         ;
@@ -338,36 +364,42 @@ public class ListCustomPropertiesRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and
-     * DISPLAYNAME is Ascending
+     * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -375,15 +407,17 @@ public class ListCustomPropertiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCustomPropertiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -392,12 +426,13 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** Unique namespace identifier. */
+        /**
+         * Unique namespace identifier.
+         */
         private String namespaceId = null;
 
         /**
          * Unique namespace identifier.
-         *
          * @param namespaceId the value to set
          * @return this builder instance
          */
@@ -407,15 +442,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
-         *
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -425,18 +457,17 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * A filter to return only resources that match display name pattern given. The match is not
-         * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-         * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in
-         * between.
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
          */
         private String displayNameContains = null;
 
         /**
-         * A filter to return only resources that match display name pattern given. The match is not
-         * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-         * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in
-         * between.
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
          * @param displayNameContains the value to set
          * @return this builder instance
@@ -446,7 +477,10 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** Return the custom properties which has specified data types */
+        /**
+         * Return the custom properties which has specified data types
+         *
+         */
         private java.util.List<com.oracle.bmc.datacatalog.model.CustomPropertyDataType> dataTypes =
                 null;
 
@@ -473,15 +507,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * A filter to return only resources that match the entire type name given. The match is not
-         * case sensitive
+         * A filter to return only resources that match the entire type name given. The match is not case sensitive
          */
         private java.util.List<TypeName> typeName = null;
 
         /**
-         * A filter to return only resources that match the entire type name given. The match is not
-         * case sensitive
-         *
+         * A filter to return only resources that match the entire type name given. The match is not case sensitive
          * @param typeName the value to set
          * @return this builder instance
          */
@@ -491,9 +522,7 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * Singular setter. A filter to return only resources that match the entire type name given.
-         * The match is not case sensitive
-         *
+         * Singular setter. A filter to return only resources that match the entire type name given. The match is not case sensitive
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -502,15 +531,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
-         *
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -521,15 +547,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          */
         private java.util.Date timeCreated = null;
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder instance
          */
@@ -539,15 +562,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          */
         private java.util.Date timeUpdated = null;
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder instance
          */
@@ -556,12 +576,13 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** OCID of the user who created the resource. */
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
-         *
          * @param createdById the value to set
          * @return this builder instance
          */
@@ -570,12 +591,13 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** OCID of the user who updated the resource. */
+        /**
+         * OCID of the user who updated the resource.
+         */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
-         *
          * @param updatedById the value to set
          * @return this builder instance
          */
@@ -584,7 +606,10 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** Specifies the fields to return in a custom property summary response. */
+        /**
+         * Specifies the fields to return in a custom property summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -608,12 +633,13 @@ public class ListCustomPropertiesRequest
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -623,14 +649,13 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT
-         * and DISPLAYNAME is Ascending
+         * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT
-         * and DISPLAYNAME is Ascending
+         * The field to sort by. Only one sort order may be provided. Default order for USAGECOUNT and DISPLAYNAME is Ascending
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -640,12 +665,13 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -655,15 +681,12 @@ public class ListCustomPropertiesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -672,12 +695,13 @@ public class ListCustomPropertiesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -688,19 +712,18 @@ public class ListCustomPropertiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -712,7 +735,6 @@ public class ListCustomPropertiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListCustomPropertiesRequest o) {
@@ -741,11 +763,10 @@ public class ListCustomPropertiesRequest
         /**
          * Build the instance of ListCustomPropertiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListCustomPropertiesRequest
          */
@@ -759,8 +780,7 @@ public class ListCustomPropertiesRequest
         /**
          * Build the instance of ListCustomPropertiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCustomPropertiesRequest
@@ -785,15 +805,12 @@ public class ListCustomPropertiesRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListCustomPropertiesRequest(catalogId, namespaceId, displayName,
-            // displayNameContains, dataTypes, typeName, lifecycleState, timeCreated, timeUpdated,
-            // createdById, updatedById, fields, sortOrder, sortBy, limit, page, opcRequestId);
+            // new ListCustomPropertiesRequest(catalogId, namespaceId, displayName, displayNameContains, dataTypes, typeName, lifecycleState, timeCreated, timeUpdated, createdById, updatedById, fields, sortOrder, sortBy, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -819,7 +836,6 @@ public class ListCustomPropertiesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

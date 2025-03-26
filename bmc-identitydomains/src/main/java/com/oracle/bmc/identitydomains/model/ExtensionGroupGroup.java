@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Oracle Identity Cloud Service Group <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Oracle Identity Cloud Service Group
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionGroupGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionGroupGroup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExtensionGroupGroup.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionGroupGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -54,26 +52,39 @@ public final class ExtensionGroupGroup
     public static class Builder {
         /**
          * Group description
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Description -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Description
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Group description
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Description -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]] - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Description
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -81,24 +92,37 @@ public final class ExtensionGroupGroup
         }
         /**
          * Source from which this group got created.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
         private CreationMechanism creationMechanism;
 
         /**
          * Source from which this group got created.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-         * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: false - returned: request - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param creationMechanism the value to set
          * @return this builder
-         */
+         **/
         public Builder creationMechanism(CreationMechanism creationMechanism) {
             this.creationMechanism = creationMechanism;
             this.__explicitlySet__.add("creationMechanism");
@@ -124,22 +148,33 @@ public final class ExtensionGroupGroup
         }
         /**
          * Grants assigned to group
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grants")
         private java.util.List<GroupExtGrants> grants;
 
         /**
          * Grants assigned to group
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param grants the value to set
          * @return this builder
-         */
+         **/
         public Builder grants(java.util.List<GroupExtGrants> grants) {
             this.grants = grants;
             this.__explicitlySet__.add("grants");
@@ -147,51 +182,75 @@ public final class ExtensionGroupGroup
         }
         /**
          * Group owners
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value, type] -
-         * idcsSearchable: true - multiValued: true - mutability: readWrite - required: false -
-         * returned: request - type: complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owners")
         private java.util.List<GroupExtOwners> owners;
 
         /**
          * Group owners
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value, type] -
-         * idcsSearchable: true - multiValued: true - mutability: readWrite - required: false -
-         * returned: request - type: complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value, type]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param owners the value to set
          * @return this builder
-         */
+         **/
         public Builder owners(java.util.List<GroupExtOwners> owners) {
             this.owners = owners;
             this.__explicitlySet__.add("owners");
             return this;
         }
         /**
-         * A list of appRoles that the user belongs to, either thorough direct membership, nested
-         * groups, or dynamically calculated
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex - uniqueness: none
-         */
+         * A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appRoles")
         private java.util.List<GroupExtAppRoles> appRoles;
 
         /**
-         * A list of appRoles that the user belongs to, either thorough direct membership, nested
-         * groups, or dynamically calculated
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex - uniqueness: none
-         *
+         * A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param appRoles the value to set
          * @return this builder
-         */
+         **/
         public Builder appRoles(java.util.List<GroupExtAppRoles> appRoles) {
             this.appRoles = appRoles;
             this.__explicitlySet__.add("appRoles");
@@ -244,7 +303,9 @@ public final class ExtensionGroupGroup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -255,37 +316,57 @@ public final class ExtensionGroupGroup
 
     /**
      * Group description
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Description -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Description
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Group description
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Description -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Description]] - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Description
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Description]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
      * Source from which this group got created.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
-    public enum CreationMechanism implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum CreationMechanism {
         Bulk("bulk"),
         Api("api"),
         Adsync("adsync"),
@@ -294,8 +375,8 @@ public final class ExtensionGroupGroup
         Import("import"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -336,23 +417,36 @@ public final class ExtensionGroupGroup
     };
     /**
      * Source from which this group got created.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("creationMechanism")
     private final CreationMechanism creationMechanism;
 
     /**
      * Source from which this group got created.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeNameMappings:
-     * [[defaultValue:import]] - idcsSearchable: true - multiValued: false - mutability: immutable -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeNameMappings: [[defaultValue:import]]
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public CreationMechanism getCreationMechanism() {
         return creationMechanism;
     }
@@ -373,69 +467,104 @@ public final class ExtensionGroupGroup
 
     /**
      * Grants assigned to group
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grants")
     private final java.util.List<GroupExtGrants> grants;
 
     /**
      * Grants assigned to group
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<GroupExtGrants> getGrants() {
         return grants;
     }
 
     /**
      * Group owners
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value, type] -
-     * idcsSearchable: true - multiValued: true - mutability: readWrite - required: false -
-     * returned: request - type: complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owners")
     private final java.util.List<GroupExtOwners> owners;
 
     /**
      * Group owners
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value, type] -
-     * idcsSearchable: true - multiValued: true - mutability: readWrite - required: false -
-     * returned: request - type: complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value, type]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<GroupExtOwners> getOwners() {
         return owners;
     }
 
     /**
-     * A list of appRoles that the user belongs to, either thorough direct membership, nested
-     * groups, or dynamically calculated
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * true - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex - uniqueness: none
-     */
+     * A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appRoles")
     private final java.util.List<GroupExtAppRoles> appRoles;
 
     /**
-     * A list of appRoles that the user belongs to, either thorough direct membership, nested
-     * groups, or dynamically calculated
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [value] - idcsSearchable:
-     * true - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex - uniqueness: none
-     *
+     * A list of appRoles that the user belongs to, either thorough direct membership, nested groups, or dynamically calculated
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<GroupExtAppRoles> getAppRoles() {
         return appRoles;
     }
@@ -447,7 +576,6 @@ public final class ExtensionGroupGroup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

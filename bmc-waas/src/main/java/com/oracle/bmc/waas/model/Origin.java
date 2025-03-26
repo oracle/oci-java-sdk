@@ -5,22 +5,19 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * A detailed description of your web application's origin host server. An origin must be defined to
- * set up WAF rules. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * A detailed description of your web application's origin host server. An origin must be defined to set up WAF rules.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Origin.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Origin extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Origin extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"uri", "httpPort", "httpsPort", "customHeaders"})
     public Origin(
@@ -35,74 +32,64 @@ public final class Origin extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The URI of the origin. Does not support paths. Port numbers should be specified in the
-         * {@code httpPort} and {@code httpsPort} fields.
-         */
+         * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
-         * The URI of the origin. Does not support paths. Port numbers should be specified in the
-         * {@code httpPort} and {@code httpsPort} fields.
-         *
+         * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
         /**
-         * The HTTP port on the origin that the web application listens on. If unspecified, defaults
-         * to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
-         */
+         * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpPort")
         private Integer httpPort;
 
         /**
-         * The HTTP port on the origin that the web application listens on. If unspecified, defaults
-         * to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
-         *
+         * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
          * @param httpPort the value to set
          * @return this builder
-         */
+         **/
         public Builder httpPort(Integer httpPort) {
             this.httpPort = httpPort;
             this.__explicitlySet__.add("httpPort");
             return this;
         }
         /**
-         * The HTTPS port on the origin that the web application listens on. If unspecified,
-         * defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS
-         * traffic.
-         */
+         * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpsPort")
         private Integer httpsPort;
 
         /**
-         * The HTTPS port on the origin that the web application listens on. If unspecified,
-         * defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS
-         * traffic.
-         *
+         * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
          * @param httpsPort the value to set
          * @return this builder
-         */
+         **/
         public Builder httpsPort(Integer httpsPort) {
             this.httpsPort = httpsPort;
             this.__explicitlySet__.add("httpsPort");
             return this;
         }
-        /** A list of HTTP headers to forward to your origin. */
+        /**
+         * A list of HTTP headers to forward to your origin.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customHeaders")
         private java.util.List<Header> customHeaders;
 
         /**
          * A list of HTTP headers to forward to your origin.
-         *
          * @param customHeaders the value to set
          * @return this builder
-         */
+         **/
         public Builder customHeaders(java.util.List<Header> customHeaders) {
             this.customHeaders = customHeaders;
             this.__explicitlySet__.add("customHeaders");
@@ -138,7 +125,9 @@ public final class Origin extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,65 +137,57 @@ public final class Origin extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code
-     * httpPort} and {@code httpsPort} fields.
-     */
+     * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
-     * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code
-     * httpPort} and {@code httpsPort} fields.
-     *
+     * The URI of the origin. Does not support paths. Port numbers should be specified in the {@code httpPort} and {@code httpsPort} fields.
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
 
     /**
-     * The HTTP port on the origin that the web application listens on. If unspecified, defaults to
-     * {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
-     */
+     * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpPort")
     private final Integer httpPort;
 
     /**
-     * The HTTP port on the origin that the web application listens on. If unspecified, defaults to
-     * {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
-     *
+     * The HTTP port on the origin that the web application listens on. If unspecified, defaults to {@code 80}. If {@code 0} is specified - the origin is not used for HTTP traffic.
      * @return the value
-     */
+     **/
     public Integer getHttpPort() {
         return httpPort;
     }
 
     /**
-     * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to
-     * {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
-     */
+     * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpsPort")
     private final Integer httpsPort;
 
     /**
-     * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to
-     * {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
-     *
+     * The HTTPS port on the origin that the web application listens on. If unspecified, defaults to {@code 443}. If {@code 0} is specified - the origin is not used for HTTPS traffic.
      * @return the value
-     */
+     **/
     public Integer getHttpsPort() {
         return httpsPort;
     }
 
-    /** A list of HTTP headers to forward to your origin. */
+    /**
+     * A list of HTTP headers to forward to your origin.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customHeaders")
     private final java.util.List<Header> customHeaders;
 
     /**
      * A list of HTTP headers to forward to your origin.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Header> getCustomHeaders() {
         return customHeaders;
     }
@@ -218,7 +199,6 @@ public final class Origin extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

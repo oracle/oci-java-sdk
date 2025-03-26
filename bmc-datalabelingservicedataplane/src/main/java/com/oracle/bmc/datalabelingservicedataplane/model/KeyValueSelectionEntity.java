@@ -5,54 +5,55 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * This allows the labeler to apply label the highlighted text from OCR, this includes labelled and
- * unlabelled data. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * This allows the labeler to apply label the highlighted text from OCR, this includes labelled and unlabelled data.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KeyValueSelectionEntity.Builder.class)
+    builder = KeyValueSelectionEntity.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KeyValueSelectionEntity extends Entity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Entity Name. */
+        /**
+         * Entity Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Entity Name.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** A collection of label entities. */
+        /**
+         * A collection of label entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<Label> labels;
 
         /**
          * A collection of label entities.
-         *
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<Label> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -67,46 +68,49 @@ public final class KeyValueSelectionEntity extends Entity {
             this.__explicitlySet__.add("boundingPolygon");
             return this;
         }
-        /** Integer value. */
+        /**
+         * Integer value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rotation")
         private java.math.BigDecimal rotation;
 
         /**
          * Integer value.
-         *
          * @param rotation the value to set
          * @return this builder
-         */
+         **/
         public Builder rotation(java.math.BigDecimal rotation) {
             this.rotation = rotation;
             this.__explicitlySet__.add("rotation");
             return this;
         }
-        /** float value, score from OCR. */
+        /**
+         * float value, score from OCR.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * float value, score from OCR.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** Integer value. */
+        /**
+         * Integer value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
         private java.math.BigDecimal pageNumber;
 
         /**
          * Integer value.
-         *
          * @param pageNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder pageNumber(java.math.BigDecimal pageNumber) {
             this.pageNumber = pageNumber;
             this.__explicitlySet__.add("pageNumber");
@@ -155,7 +159,9 @@ public final class KeyValueSelectionEntity extends Entity {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,28 +187,30 @@ public final class KeyValueSelectionEntity extends Entity {
         this.pageNumber = pageNumber;
     }
 
-    /** Entity Name. */
+    /**
+     * Entity Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Entity Name.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** A collection of label entities. */
+    /**
+     * A collection of label entities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<Label> labels;
 
     /**
      * A collection of label entities.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Label> getLabels() {
         return labels;
     }
@@ -214,41 +222,44 @@ public final class KeyValueSelectionEntity extends Entity {
         return boundingPolygon;
     }
 
-    /** Integer value. */
+    /**
+     * Integer value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rotation")
     private final java.math.BigDecimal rotation;
 
     /**
      * Integer value.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getRotation() {
         return rotation;
     }
 
-    /** float value, score from OCR. */
+    /**
+     * float value, score from OCR.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * float value, score from OCR.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
 
-    /** Integer value. */
+    /**
+     * Integer value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pageNumber")
     private final java.math.BigDecimal pageNumber;
 
     /**
      * Integer value.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getPageNumber() {
         return pageNumber;
     }
@@ -260,7 +271,6 @@ public final class KeyValueSelectionEntity extends Entity {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

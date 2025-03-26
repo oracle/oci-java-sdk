@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external cluster discovered in an external DB system discovery run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external cluster discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalCluster.Builder.class)
+    builder = DiscoveredExternalCluster.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalCluster extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,109 +90,116 @@ public final class DiscoveredExternalCluster extends DiscoveredExternalDbSystemC
             this.__explicitlySet__.add("associatedComponents");
             return this;
         }
-        /** The directory in which Oracle Grid Infrastructure is installed. */
+        /**
+         * The directory in which Oracle Grid Infrastructure is installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
         private String gridHome;
 
         /**
          * The directory in which Oracle Grid Infrastructure is installed.
-         *
          * @param gridHome the value to set
          * @return this builder
-         */
+         **/
         public Builder gridHome(String gridHome) {
             this.gridHome = gridHome;
             this.__explicitlySet__.add("gridHome");
             return this;
         }
-        /** The version of Oracle Clusterware running in the cluster. */
+        /**
+         * The version of Oracle Clusterware running in the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of Oracle Clusterware running in the cluster.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Indicates whether the cluster is an Oracle Flex Cluster or not. */
+        /**
+         * Indicates whether the cluster is an Oracle Flex Cluster or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexCluster")
         private Boolean isFlexCluster;
 
         /**
          * Indicates whether the cluster is an Oracle Flex Cluster or not.
-         *
          * @param isFlexCluster the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexCluster(Boolean isFlexCluster) {
             this.isFlexCluster = isFlexCluster;
             this.__explicitlySet__.add("isFlexCluster");
             return this;
         }
-        /** The list of network address configurations of the external cluster. */
+        /**
+         * The list of network address configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurations")
         private java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations;
 
         /**
          * The list of network address configurations of the external cluster.
-         *
          * @param networkConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder networkConfigurations(
                 java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations) {
             this.networkConfigurations = networkConfigurations;
             this.__explicitlySet__.add("networkConfigurations");
             return this;
         }
-        /** The list of Virtual IP (VIP) configurations of the external cluster. */
+        /**
+         * The list of Virtual IP (VIP) configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vipConfigurations")
         private java.util.List<ExternalClusterVipConfiguration> vipConfigurations;
 
         /**
          * The list of Virtual IP (VIP) configurations of the external cluster.
-         *
          * @param vipConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder vipConfigurations(
                 java.util.List<ExternalClusterVipConfiguration> vipConfigurations) {
             this.vipConfigurations = vipConfigurations;
             this.__explicitlySet__.add("vipConfigurations");
             return this;
         }
-        /** The list of Single Client Access Name (SCAN) configurations of the external cluster. */
+        /**
+         * The list of Single Client Access Name (SCAN) configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanConfigurations")
         private java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations;
 
         /**
          * The list of Single Client Access Name (SCAN) configurations of the external cluster.
-         *
          * @param scanConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder scanConfigurations(
                 java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations) {
             this.scanConfigurations = scanConfigurations;
             this.__explicitlySet__.add("scanConfigurations");
             return this;
         }
-        /** The location of the Oracle Cluster Registry (OCR) file. */
+        /**
+         * The location of the Oracle Cluster Registry (OCR) file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocrFileLocation")
         private String ocrFileLocation;
 
         /**
          * The location of the Oracle Cluster Registry (OCR) file.
-         *
          * @param ocrFileLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder ocrFileLocation(String ocrFileLocation) {
             this.ocrFileLocation = ocrFileLocation;
             this.__explicitlySet__.add("ocrFileLocation");
@@ -287,7 +294,9 @@ public final class DiscoveredExternalCluster extends DiscoveredExternalDbSystemC
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,93 +340,100 @@ public final class DiscoveredExternalCluster extends DiscoveredExternalDbSystemC
         this.clusterInstances = clusterInstances;
     }
 
-    /** The directory in which Oracle Grid Infrastructure is installed. */
+    /**
+     * The directory in which Oracle Grid Infrastructure is installed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
     private final String gridHome;
 
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
-     *
      * @return the value
-     */
+     **/
     public String getGridHome() {
         return gridHome;
     }
 
-    /** The version of Oracle Clusterware running in the cluster. */
+    /**
+     * The version of Oracle Clusterware running in the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of Oracle Clusterware running in the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Indicates whether the cluster is an Oracle Flex Cluster or not. */
+    /**
+     * Indicates whether the cluster is an Oracle Flex Cluster or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexCluster")
     private final Boolean isFlexCluster;
 
     /**
      * Indicates whether the cluster is an Oracle Flex Cluster or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexCluster() {
         return isFlexCluster;
     }
 
-    /** The list of network address configurations of the external cluster. */
+    /**
+     * The list of network address configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurations")
     private final java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations;
 
     /**
      * The list of network address configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterNetworkConfiguration> getNetworkConfigurations() {
         return networkConfigurations;
     }
 
-    /** The list of Virtual IP (VIP) configurations of the external cluster. */
+    /**
+     * The list of Virtual IP (VIP) configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipConfigurations")
     private final java.util.List<ExternalClusterVipConfiguration> vipConfigurations;
 
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterVipConfiguration> getVipConfigurations() {
         return vipConfigurations;
     }
 
-    /** The list of Single Client Access Name (SCAN) configurations of the external cluster. */
+    /**
+     * The list of Single Client Access Name (SCAN) configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanConfigurations")
     private final java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations;
 
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterScanListenerConfiguration> getScanConfigurations() {
         return scanConfigurations;
     }
 
-    /** The location of the Oracle Cluster Registry (OCR) file. */
+    /**
+     * The location of the Oracle Cluster Registry (OCR) file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocrFileLocation")
     private final String ocrFileLocation;
 
     /**
      * The location of the Oracle Cluster Registry (OCR) file.
-     *
      * @return the value
-     */
+     **/
     public String getOcrFileLocation() {
         return ocrFileLocation;
     }
@@ -436,7 +452,6 @@ public final class DiscoveredExternalCluster extends DiscoveredExternalDbSystemC
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

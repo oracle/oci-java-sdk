@@ -5,24 +5,24 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Account details for the LDAP bind account used by the outbound connector. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Account details for the LDAP bind account used by the outbound connector.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LdapBindAccount.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectorType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectorType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LdapBindAccount extends OutboundConnector {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,7 +116,10 @@ public final class LdapBindAccount extends OutboundConnector {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Array of server endpoints to use when connecting with the LDAP bind account. */
+        /**
+         * Array of server endpoints to use when connecting with the LDAP bind account.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<Endpoint> endpoints;
 
@@ -125,56 +128,55 @@ public final class LdapBindAccount extends OutboundConnector {
          *
          * @param endpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder endpoints(java.util.List<Endpoint> endpoints) {
             this.endpoints = endpoints;
             this.__explicitlySet__.add("endpoints");
             return this;
         }
-        /** The LDAP Distinguished Name of the account. */
+        /**
+         * The LDAP Distinguished Name of the account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bindDistinguishedName")
         private String bindDistinguishedName;
 
         /**
          * The LDAP Distinguished Name of the account.
-         *
          * @param bindDistinguishedName the value to set
          * @return this builder
-         */
+         **/
         public Builder bindDistinguishedName(String bindDistinguishedName) {
             this.bindDistinguishedName = bindDistinguishedName;
             this.__explicitlySet__.add("bindDistinguishedName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * password for the LDAP bind account in the Vault.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * password for the LDAP bind account in the Vault.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** Version of the password secret in the Vault to use. */
+        /**
+         * Version of the password secret in the Vault to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretVersion")
         private Integer passwordSecretVersion;
 
         /**
          * Version of the password secret in the Vault to use.
-         *
          * @param passwordSecretVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretVersion(Integer passwordSecretVersion) {
             this.passwordSecretVersion = passwordSecretVersion;
             this.__explicitlySet__.add("passwordSecretVersion");
@@ -255,7 +257,9 @@ public final class LdapBindAccount extends OutboundConnector {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -297,7 +301,10 @@ public final class LdapBindAccount extends OutboundConnector {
         this.passwordSecretVersion = passwordSecretVersion;
     }
 
-    /** Array of server endpoints to use when connecting with the LDAP bind account. */
+    /**
+     * Array of server endpoints to use when connecting with the LDAP bind account.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     private final java.util.List<Endpoint> endpoints;
 
@@ -305,50 +312,49 @@ public final class LdapBindAccount extends OutboundConnector {
      * Array of server endpoints to use when connecting with the LDAP bind account.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Endpoint> getEndpoints() {
         return endpoints;
     }
 
-    /** The LDAP Distinguished Name of the account. */
+    /**
+     * The LDAP Distinguished Name of the account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bindDistinguishedName")
     private final String bindDistinguishedName;
 
     /**
      * The LDAP Distinguished Name of the account.
-     *
      * @return the value
-     */
+     **/
     public String getBindDistinguishedName() {
         return bindDistinguishedName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * password for the LDAP bind account in the Vault.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * password for the LDAP bind account in the Vault.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the password for the LDAP bind account in the Vault.
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
-    /** Version of the password secret in the Vault to use. */
+    /**
+     * Version of the password secret in the Vault to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretVersion")
     private final Integer passwordSecretVersion;
 
     /**
      * Version of the password secret in the Vault to use.
-     *
      * @return the value
-     */
+     **/
     public Integer getPasswordSecretVersion() {
         return passwordSecretVersion;
     }
@@ -360,7 +366,6 @@ public final class LdapBindAccount extends OutboundConnector {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

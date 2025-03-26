@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.queue.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+public enum OperationType {
     CreateQueue("CREATE_QUEUE"),
     UpdateQueue("UPDATE_QUEUE"),
     DeleteQueue("DELETE_QUEUE"),

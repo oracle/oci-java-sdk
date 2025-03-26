@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * The model for an Oracle Cloud Infrastructure Marketplace Publisher listing revision package. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The model for an Oracle Cloud Infrastructure Marketplace Publisher listing revision package.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateListingRevisionPackageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateListingRevisionPackageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateListingRevisionPackageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "listingRevisionId",
@@ -61,140 +60,149 @@ public final class CreateListingRevisionPackageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID for the listing revision in Marketplace Publisher. */
+        /**
+         * The OCID for the listing revision in Marketplace Publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingRevisionId")
         private String listingRevisionId;
 
         /**
          * The OCID for the listing revision in Marketplace Publisher.
-         *
          * @param listingRevisionId the value to set
          * @return this builder
-         */
+         **/
         public Builder listingRevisionId(String listingRevisionId) {
             this.listingRevisionId = listingRevisionId;
             this.__explicitlySet__.add("listingRevisionId");
             return this;
         }
-        /** The version for the package. */
+        /**
+         * The version for the package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
         private String packageVersion;
 
         /**
          * The version for the package.
-         *
          * @param packageVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder packageVersion(String packageVersion) {
             this.packageVersion = packageVersion;
             this.__explicitlySet__.add("packageVersion");
             return this;
         }
-        /** The name for the listing revision package. */
+        /**
+         * The name for the listing revision package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name for the listing revision package.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description for this package. */
+        /**
+         * Description for this package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description for this package.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The unique identifier for the artifact. */
+        /**
+         * The unique identifier for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
         private String artifactId;
 
         /**
          * The unique identifier for the artifact.
-         *
          * @param artifactId the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactId(String artifactId) {
             this.artifactId = artifactId;
             this.__explicitlySet__.add("artifactId");
             return this;
         }
-        /** The unique identifier for the term. */
+        /**
+         * The unique identifier for the term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("termId")
         private String termId;
 
         /**
          * The unique identifier for the term.
-         *
          * @param termId the value to set
          * @return this builder
-         */
+         **/
         public Builder termId(String termId) {
             this.termId = termId;
             this.__explicitlySet__.add("termId");
             return this;
         }
-        /** Identifies that this will be default package for the listing revision. */
+        /**
+         * Identifies that this will be default package for the listing revision.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * Identifies that this will be default package for the listing revision.
-         *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Identifies whether security upgrades will be provided for this package. */
+        /**
+         * Identifies whether security upgrades will be provided for this package.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areSecurityUpgradesProvided")
         private Boolean areSecurityUpgradesProvided;
 
         /**
          * Identifies whether security upgrades will be provided for this package.
-         *
          * @param areSecurityUpgradesProvided the value to set
          * @return this builder
-         */
+         **/
         public Builder areSecurityUpgradesProvided(Boolean areSecurityUpgradesProvided) {
             this.areSecurityUpgradesProvided = areSecurityUpgradesProvided;
             this.__explicitlySet__.add("areSecurityUpgradesProvided");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -203,7 +211,8 @@ public final class CreateListingRevisionPackageDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -213,7 +222,7 @@ public final class CreateListingRevisionPackageDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -279,7 +288,9 @@ public final class CreateListingRevisionPackageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -288,140 +299,150 @@ public final class CreateListingRevisionPackageDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID for the listing revision in Marketplace Publisher. */
+    /**
+     * The OCID for the listing revision in Marketplace Publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingRevisionId")
     private final String listingRevisionId;
 
     /**
      * The OCID for the listing revision in Marketplace Publisher.
-     *
      * @return the value
-     */
+     **/
     public String getListingRevisionId() {
         return listingRevisionId;
     }
 
-    /** The version for the package. */
+    /**
+     * The version for the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageVersion")
     private final String packageVersion;
 
     /**
      * The version for the package.
-     *
      * @return the value
-     */
+     **/
     public String getPackageVersion() {
         return packageVersion;
     }
 
-    /** The name for the listing revision package. */
+    /**
+     * The name for the listing revision package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name for the listing revision package.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description for this package. */
+    /**
+     * Description for this package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description for this package.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The unique identifier for the artifact. */
+    /**
+     * The unique identifier for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
     private final String artifactId;
 
     /**
      * The unique identifier for the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getArtifactId() {
         return artifactId;
     }
 
-    /** The unique identifier for the term. */
+    /**
+     * The unique identifier for the term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("termId")
     private final String termId;
 
     /**
      * The unique identifier for the term.
-     *
      * @return the value
-     */
+     **/
     public String getTermId() {
         return termId;
     }
 
-    /** Identifies that this will be default package for the listing revision. */
+    /**
+     * Identifies that this will be default package for the listing revision.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * Identifies that this will be default package for the listing revision.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
 
-    /** Identifies whether security upgrades will be provided for this package. */
+    /**
+     * Identifies whether security upgrades will be provided for this package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areSecurityUpgradesProvided")
     private final Boolean areSecurityUpgradesProvided;
 
     /**
      * Identifies whether security upgrades will be provided for this package.
-     *
      * @return the value
-     */
+     **/
     public Boolean getAreSecurityUpgradesProvided() {
         return areSecurityUpgradesProvided;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -433,7 +454,6 @@ public final class CreateListingRevisionPackageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

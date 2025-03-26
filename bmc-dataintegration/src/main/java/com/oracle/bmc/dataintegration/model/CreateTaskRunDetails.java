@@ -5,23 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The properties used in task run create operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The properties used in task run create operations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateTaskRunDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateTaskRunDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateTaskRunDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateTaskRunDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -67,82 +65,81 @@ public final class CreateTaskRunDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key of the object. */
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the object.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Detailed description for the object. */
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -158,79 +155,80 @@ public final class CreateTaskRunDetails
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** Optional task schedule key reference. */
+        /**
+         * Optional task schedule key reference.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
         private String taskScheduleKey;
 
         /**
          * Optional task schedule key reference.
-         *
          * @param taskScheduleKey the value to set
          * @return this builder
-         */
+         **/
         public Builder taskScheduleKey(String taskScheduleKey) {
             this.taskScheduleKey = taskScheduleKey;
             this.__explicitlySet__.add("taskScheduleKey");
             return this;
         }
-        /** Reference Task Run Id to be used for re-run */
+        /**
+         * Reference Task Run Id to be used for re-run
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
         private String refTaskRunId;
 
         /**
          * Reference Task Run Id to be used for re-run
-         *
          * @param refTaskRunId the value to set
          * @return this builder
-         */
+         **/
         public Builder refTaskRunId(String refTaskRunId) {
             this.refTaskRunId = refTaskRunId;
             this.__explicitlySet__.add("refTaskRunId");
             return this;
         }
-        /** Supported re-run types */
+        /**
+         * Supported re-run types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
         private ReRunType reRunType;
 
         /**
          * Supported re-run types
-         *
          * @param reRunType the value to set
          * @return this builder
-         */
+         **/
         public Builder reRunType(ReRunType reRunType) {
             this.reRunType = reRunType;
             this.__explicitlySet__.add("reRunType");
             return this;
         }
-        /** Step Id for running from a certain step. */
+        /**
+         * Step Id for running from a certain step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
 
         /**
          * Step Id for running from a certain step.
-         *
          * @param stepId the value to set
          * @return this builder
-         */
+         **/
         public Builder stepId(String stepId) {
             this.stepId = stepId;
             this.__explicitlySet__.add("stepId");
@@ -312,7 +310,9 @@ public final class CreateTaskRunDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,71 +321,72 @@ public final class CreateTaskRunDetails
         return new Builder().copy(this);
     }
 
-    /** The key of the object. */
+    /**
+     * The key of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -398,50 +399,51 @@ public final class CreateTaskRunDetails
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** Optional task schedule key reference. */
+    /**
+     * Optional task schedule key reference.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskScheduleKey")
     private final String taskScheduleKey;
 
     /**
      * Optional task schedule key reference.
-     *
      * @return the value
-     */
+     **/
     public String getTaskScheduleKey() {
         return taskScheduleKey;
     }
 
-    /** Reference Task Run Id to be used for re-run */
+    /**
+     * Reference Task Run Id to be used for re-run
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refTaskRunId")
     private final String refTaskRunId;
 
     /**
      * Reference Task Run Id to be used for re-run
-     *
      * @return the value
-     */
+     **/
     public String getRefTaskRunId() {
         return refTaskRunId;
     }
 
-    /** Supported re-run types */
-    public enum ReRunType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Supported re-run types
+     **/
+    public enum ReRunType {
         Beginning("BEGINNING"),
         Failed("FAILED"),
         Step("STEP"),
@@ -474,28 +476,30 @@ public final class CreateTaskRunDetails
             throw new IllegalArgumentException("Invalid ReRunType: " + key);
         }
     };
-    /** Supported re-run types */
+    /**
+     * Supported re-run types
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reRunType")
     private final ReRunType reRunType;
 
     /**
      * Supported re-run types
-     *
      * @return the value
-     */
+     **/
     public ReRunType getReRunType() {
         return reRunType;
     }
 
-    /** Step Id for running from a certain step. */
+    /**
+     * Step Id for running from a certain step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
 
     /**
      * Step Id for running from a certain step.
-     *
      * @return the value
-     */
+     **/
     public String getStepId() {
         return stepId;
     }
@@ -514,7 +518,6 @@ public final class CreateTaskRunDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,12 +5,16 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Indicates the direction for lineage fetch. It is one of upstream (or source objects), downstream
- * (or target objects), both. Corresponding enums are: UPSTREAM - Source objects. DOWNSTREAM -
- * Target objects. BOTH - Both source and target objects.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum LineageDirection implements com.oracle.bmc.http.internal.BmcEnum {
+ * Indicates the direction for lineage fetch. It is one of upstream (or source objects), downstream (or target
+ * objects), both.
+ * Corresponding enums are:
+ * UPSTREAM   - Source objects.
+ * DOWNSTREAM - Target objects.
+ * BOTH       - Both source and target objects.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum LineageDirection {
     Upstream("UPSTREAM"),
     Both("BOTH"),
     Downstream("DOWNSTREAM"),

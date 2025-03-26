@@ -6,38 +6,45 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestCleanEnergyUsageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RequestCleanEnergyUsageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestCleanEnergyUsageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestCleanEnergyUsageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class RequestCleanEnergyUsageRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The region. */
+    /**
+     * The region.
+     */
     private String region;
 
-    /** The region. */
+    /**
+     * The region.
+     */
     public String getRegion() {
         return region;
     }
-    /** The availability domain. */
+    /**
+     * The availability domain.
+     */
     private String ad;
 
-    /** The availability domain. */
+    /**
+     * The availability domain.
+     */
     public String getAd() {
         return ad;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -46,15 +53,17 @@ public class RequestCleanEnergyUsageRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestCleanEnergyUsageRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The region. */
+        /**
+         * The region.
+         */
         private String region = null;
 
         /**
          * The region.
-         *
          * @param region the value to set
          * @return this builder instance
          */
@@ -63,12 +72,13 @@ public class RequestCleanEnergyUsageRequest
             return this;
         }
 
-        /** The availability domain. */
+        /**
+         * The availability domain.
+         */
         private String ad = null;
 
         /**
          * The availability domain.
-         *
          * @param ad the value to set
          * @return this builder instance
          */
@@ -80,6 +90,7 @@ public class RequestCleanEnergyUsageRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -97,19 +108,18 @@ public class RequestCleanEnergyUsageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -121,7 +131,6 @@ public class RequestCleanEnergyUsageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RequestCleanEnergyUsageRequest o) {
@@ -136,11 +145,10 @@ public class RequestCleanEnergyUsageRequest
         /**
          * Build the instance of RequestCleanEnergyUsageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RequestCleanEnergyUsageRequest
          */
@@ -154,8 +162,7 @@ public class RequestCleanEnergyUsageRequest
         /**
          * Build the instance of RequestCleanEnergyUsageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestCleanEnergyUsageRequest
@@ -172,7 +179,6 @@ public class RequestCleanEnergyUsageRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -181,7 +187,6 @@ public class RequestCleanEnergyUsageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

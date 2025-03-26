@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Vault Credential Details to connect to the database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Vault Credential Details to connect to the database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CredentialByVault.Builder.class)
+    builder = CredentialByVault.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "credentialType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "credentialType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CredentialByVault extends CredentialDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,71 +35,65 @@ public final class CredentialByVault extends CredentialDetails {
             this.__explicitlySet__.add("credentialSourceName");
             return this;
         }
-        /** database user name. */
+        /**
+         * database user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * database user name.
-         *
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
         /**
-         * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * mapping to the database credentials.
-         */
+         * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * mapping to the database credentials.
-         *
+         * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the database keystore contents are stored. This is used for TCPS support in
-         * BM/VM/ExaCS cases.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
         private String walletSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the database keystore contents are stored. This is used for TCPS support in
-         * BM/VM/ExaCS cases.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          * @param walletSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder walletSecretId(String walletSecretId) {
             this.walletSecretId = walletSecretId;
             this.__explicitlySet__.add("walletSecretId");
             return this;
         }
-        /** database user role. */
+        /**
+         * database user role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
          * database user role.
-         *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -144,7 +138,9 @@ public final class CredentialByVault extends CredentialDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,62 +163,57 @@ public final class CredentialByVault extends CredentialDetails {
         this.role = role;
     }
 
-    /** database user name. */
+    /**
+     * database user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * database user name.
-     *
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
 
     /**
-     * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * mapping to the database credentials.
-     */
+     * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * mapping to the database credentials.
-     *
+     * The secret [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the database keystore contents are stored. This is used for TCPS support in
-     * BM/VM/ExaCS cases.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
     private final String walletSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the database keystore contents are stored. This is used for TCPS support in
-     * BM/VM/ExaCS cases.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
      * @return the value
-     */
+     **/
     public String getWalletSecretId() {
         return walletSecretId;
     }
 
-    /** database user role. */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * database user role.
+     **/
+    public enum Role {
         Normal("NORMAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -259,15 +250,16 @@ public final class CredentialByVault extends CredentialDetails {
             return UnknownEnumValue;
         }
     };
-    /** database user role. */
+    /**
+     * database user role.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
      * database user role.
-     *
      * @return the value
-     */
+     **/
     public Role getRole() {
         return role;
     }
@@ -279,7 +271,6 @@ public final class CredentialByVault extends CredentialDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

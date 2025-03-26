@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -27,6 +28,7 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
     /**
      * The page token represents the page to start retrieving results. This is usually retrieved
      * from a previous list call.
+     *
      */
     private String opcNextPage;
 
@@ -40,12 +42,13 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned {@code TrailSequenceCollection} instance. */
+    /**
+     * The returned TrailSequenceCollection instance.
+     */
     private com.oracle.bmc.goldengate.model.TrailSequenceCollection trailSequenceCollection;
 
     /**
-     * The returned {@code TrailSequenceCollection} instance.
-     *
+     * The returned TrailSequenceCollection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.TrailSequenceCollection getTrailSequenceCollection() {
@@ -61,7 +64,7 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
     })
     private ListTrailSequencesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.goldengate.model.TrailSequenceCollection trailSequenceCollection) {
@@ -71,33 +74,31 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
         this.trailSequenceCollection = trailSequenceCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListTrailSequencesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,6 +111,7 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * The page token represents the page to start retrieving results. This is usually retrieved
          * from a previous list call.
+         *
          */
         private String opcNextPage;
 
@@ -125,12 +127,13 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code TrailSequenceCollection} instance. */
+        /**
+         * The returned TrailSequenceCollection instance.
+         */
         private com.oracle.bmc.goldengate.model.TrailSequenceCollection trailSequenceCollection;
 
         /**
-         * The returned {@code TrailSequenceCollection} instance.
-         *
+         * The returned TrailSequenceCollection instance.
          * @param trailSequenceCollection the value to set
          * @return this builder
          */
@@ -142,10 +145,8 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListTrailSequencesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +159,8 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListTrailSequencesResponse build() {
             return new ListTrailSequencesResponse(
                     __httpStatusCode__,
@@ -174,7 +173,6 @@ public class ListTrailSequencesResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

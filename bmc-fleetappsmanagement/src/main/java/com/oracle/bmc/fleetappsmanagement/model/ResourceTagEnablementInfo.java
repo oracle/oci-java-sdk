@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Resource tag enablement Information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Resource tag enablement Information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceTagEnablementInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceTagEnablementInfo.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceTagEnablementInfo
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceId", "isTaggingPossible"})
     public ResourceTagEnablementInfo(String resourceId, Boolean isTaggingPossible) {
@@ -32,31 +31,33 @@ public final class ResourceTagEnablementInfo
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The OCID of the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** A value that represents if the resource can be tagged with a Fleet name. */
+        /**
+         * A value that represents if the resource can be tagged with a Fleet name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTaggingPossible")
         private Boolean isTaggingPossible;
 
         /**
          * A value that represents if the resource can be tagged with a Fleet name.
-         *
          * @param isTaggingPossible the value to set
          * @return this builder
-         */
+         **/
         public Builder isTaggingPossible(Boolean isTaggingPossible) {
             this.isTaggingPossible = isTaggingPossible;
             this.__explicitlySet__.add("isTaggingPossible");
@@ -87,7 +88,9 @@ public final class ResourceTagEnablementInfo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class ResourceTagEnablementInfo
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** A value that represents if the resource can be tagged with a Fleet name. */
+    /**
+     * A value that represents if the resource can be tagged with a Fleet name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTaggingPossible")
     private final Boolean isTaggingPossible;
 
     /**
      * A value that represents if the resource can be tagged with a Fleet name.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsTaggingPossible() {
         return isTaggingPossible;
     }
@@ -129,7 +134,6 @@ public final class ResourceTagEnablementInfo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

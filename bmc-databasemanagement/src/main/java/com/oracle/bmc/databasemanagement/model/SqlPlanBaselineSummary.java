@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of a SQL plan baseline. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of a SQL plan baseline.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlPlanBaselineSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlPlanBaselineSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlPlanBaselineSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "planName",
@@ -70,91 +69,97 @@ public final class SqlPlanBaselineSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique plan identifier. */
+        /**
+         * The unique plan identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planName")
         private String planName;
 
         /**
          * The unique plan identifier.
-         *
          * @param planName the value to set
          * @return this builder
-         */
+         **/
         public Builder planName(String planName) {
             this.planName = planName;
             this.__explicitlySet__.add("planName");
             return this;
         }
-        /** The unique SQL identifier. */
+        /**
+         * The unique SQL identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
         private String sqlHandle;
 
         /**
          * The unique SQL identifier.
-         *
          * @param sqlHandle the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlHandle(String sqlHandle) {
             this.sqlHandle = sqlHandle;
             this.__explicitlySet__.add("sqlHandle");
             return this;
         }
-        /** The SQL text (truncated to the first 50 characters). */
+        /**
+         * The SQL text (truncated to the first 50 characters).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
          * The SQL text (truncated to the first 50 characters).
-         *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
-        /** The origin of the SQL plan baseline. */
+        /**
+         * The origin of the SQL plan baseline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("origin")
         private SqlPlanBaselineOrigin origin;
 
         /**
          * The origin of the SQL plan baseline.
-         *
          * @param origin the value to set
          * @return this builder
-         */
+         **/
         public Builder origin(SqlPlanBaselineOrigin origin) {
             this.origin = origin;
             this.__explicitlySet__.add("origin");
             return this;
         }
-        /** The date and time when the plan baseline was created. */
+        /**
+         * The date and time when the plan baseline was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time when the plan baseline was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time when the plan baseline was last modified. */
+        /**
+         * The date and time when the plan baseline was last modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
          * The date and time when the plan baseline was last modified.
-         *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
@@ -162,24 +167,25 @@ public final class SqlPlanBaselineSummary
         }
         /**
          * The date and time when the plan baseline was last executed.
+         * <p>
+         **Note:** For performance reasons, database does not update this value
+         * immediately after each execution of the plan baseline. Therefore, the plan
+         * baseline may have been executed more recently than this value indicates.
          *
-         * <p>*Note:** For performance reasons, database does not update this value immediately
-         * after each execution of the plan baseline. Therefore, the plan baseline may have been
-         * executed more recently than this value indicates.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
         private java.util.Date timeLastExecuted;
 
         /**
          * The date and time when the plan baseline was last executed.
-         *
-         * <p>*Note:** For performance reasons, database does not update this value immediately
-         * after each execution of the plan baseline. Therefore, the plan baseline may have been
-         * executed more recently than this value indicates.
+         * <p>
+         **Note:** For performance reasons, database does not update this value
+         * immediately after each execution of the plan baseline. Therefore, the plan
+         * baseline may have been executed more recently than this value indicates.
          *
          * @param timeLastExecuted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastExecuted(java.util.Date timeLastExecuted) {
             this.timeLastExecuted = timeLastExecuted;
             this.__explicitlySet__.add("timeLastExecuted");
@@ -187,117 +193,115 @@ public final class SqlPlanBaselineSummary
         }
         /**
          * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabled")
         private Enabled enabled;
 
         /**
          * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
-         *
          * @param enabled the value to set
          * @return this builder
-         */
+         **/
         public Builder enabled(Enabled enabled) {
             this.enabled = enabled;
             this.__explicitlySet__.add("enabled");
             return this;
         }
-        /** Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}). */
+        /**
+         * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accepted")
         private Accepted accepted;
 
         /**
          * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
-         *
          * @param accepted the value to set
          * @return this builder
-         */
+         **/
         public Builder accepted(Accepted accepted) {
             this.accepted = accepted;
             this.__explicitlySet__.add("accepted");
             return this;
         }
-        /** Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}). */
+        /**
+         * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fixed")
         private Fixed fixed;
 
         /**
          * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
-         *
          * @param fixed the value to set
          * @return this builder
-         */
+         **/
         public Builder fixed(Fixed fixed) {
             this.fixed = fixed;
             this.__explicitlySet__.add("fixed");
             return this;
         }
         /**
-         * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not
-         * ({@code NO}). The value is set to {@code YES} when a plan is initially added to the plan
-         * baseline.
-         */
+         * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+         * The value is set to {@code YES} when a plan is initially added to the plan baseline.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reproduced")
         private Reproduced reproduced;
 
         /**
-         * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not
-         * ({@code NO}). The value is set to {@code YES} when a plan is initially added to the plan
-         * baseline.
+         * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+         * The value is set to {@code YES} when a plan is initially added to the plan baseline.
          *
          * @param reproduced the value to set
          * @return this builder
-         */
+         **/
         public Builder reproduced(Reproduced reproduced) {
             this.reproduced = reproduced;
             this.__explicitlySet__.add("reproduced");
             return this;
         }
-        /** Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}). */
+        /**
+         * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoPurge")
         private AutoPurge autoPurge;
 
         /**
          * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
-         *
          * @param autoPurge the value to set
          * @return this builder
-         */
+         **/
         public Builder autoPurge(AutoPurge autoPurge) {
             this.autoPurge = autoPurge;
             this.__explicitlySet__.add("autoPurge");
             return this;
         }
         /**
-         * Indicates whether a plan that is automatically captured by SQL plan management is marked
-         * adaptive or not.
+         * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+         * <p>
+         * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+         * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+         * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+         * and the final plan determined at execution will become an accepted plan if its performance is better than
+         * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+         * is no longer adaptive, but resolved.
          *
-         * <p>When a new adaptive plan is found for a SQL statement that has an existing SQL plan
-         * baseline, that new plan will be added to the SQL plan baseline as an unaccepted plan, and
-         * the {@code ADAPTIVE} property will be marked {@code YES}. When this new plan is verified
-         * (either manually or via the auto evolve task), the plan will be test executed and the
-         * final plan determined at execution will become an accepted plan if its performance is
-         * better than the existing plan baseline. At this point, the value of the {@code ADAPTIVE}
-         * property is set to {@code NO} since the plan is no longer adaptive, but resolved.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adaptive")
         private Adaptive adaptive;
 
         /**
-         * Indicates whether a plan that is automatically captured by SQL plan management is marked
-         * adaptive or not.
-         *
-         * <p>When a new adaptive plan is found for a SQL statement that has an existing SQL plan
-         * baseline, that new plan will be added to the SQL plan baseline as an unaccepted plan, and
-         * the {@code ADAPTIVE} property will be marked {@code YES}. When this new plan is verified
-         * (either manually or via the auto evolve task), the plan will be test executed and the
-         * final plan determined at execution will become an accepted plan if its performance is
-         * better than the existing plan baseline. At this point, the value of the {@code ADAPTIVE}
-         * property is set to {@code NO} since the plan is no longer adaptive, but resolved.
+         * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+         * <p>
+         * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+         * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+         * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+         * and the final plan determined at execution will become an accepted plan if its performance is better than
+         * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+         * is no longer adaptive, but resolved.
          *
          * @param adaptive the value to set
          * @return this builder
-         */
+         **/
         public Builder adaptive(Adaptive adaptive) {
             this.adaptive = adaptive;
             this.__explicitlySet__.add("adaptive");
@@ -374,7 +378,9 @@ public final class SqlPlanBaselineSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -383,115 +389,124 @@ public final class SqlPlanBaselineSummary
         return new Builder().copy(this);
     }
 
-    /** The unique plan identifier. */
+    /**
+     * The unique plan identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planName")
     private final String planName;
 
     /**
      * The unique plan identifier.
-     *
      * @return the value
-     */
+     **/
     public String getPlanName() {
         return planName;
     }
 
-    /** The unique SQL identifier. */
+    /**
+     * The unique SQL identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
     private final String sqlHandle;
 
     /**
      * The unique SQL identifier.
-     *
      * @return the value
-     */
+     **/
     public String getSqlHandle() {
         return sqlHandle;
     }
 
-    /** The SQL text (truncated to the first 50 characters). */
+    /**
+     * The SQL text (truncated to the first 50 characters).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
      * The SQL text (truncated to the first 50 characters).
-     *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
 
-    /** The origin of the SQL plan baseline. */
+    /**
+     * The origin of the SQL plan baseline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("origin")
     private final SqlPlanBaselineOrigin origin;
 
     /**
      * The origin of the SQL plan baseline.
-     *
      * @return the value
-     */
+     **/
     public SqlPlanBaselineOrigin getOrigin() {
         return origin;
     }
 
-    /** The date and time when the plan baseline was created. */
+    /**
+     * The date and time when the plan baseline was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time when the plan baseline was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time when the plan baseline was last modified. */
+    /**
+     * The date and time when the plan baseline was last modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
      * The date and time when the plan baseline was last modified.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
 
     /**
      * The date and time when the plan baseline was last executed.
+     * <p>
+     **Note:** For performance reasons, database does not update this value
+     * immediately after each execution of the plan baseline. Therefore, the plan
+     * baseline may have been executed more recently than this value indicates.
      *
-     * <p>*Note:** For performance reasons, database does not update this value immediately after
-     * each execution of the plan baseline. Therefore, the plan baseline may have been executed more
-     * recently than this value indicates.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastExecuted")
     private final java.util.Date timeLastExecuted;
 
     /**
      * The date and time when the plan baseline was last executed.
-     *
-     * <p>*Note:** For performance reasons, database does not update this value immediately after
-     * each execution of the plan baseline. Therefore, the plan baseline may have been executed more
-     * recently than this value indicates.
+     * <p>
+     **Note:** For performance reasons, database does not update this value
+     * immediately after each execution of the plan baseline. Therefore, the plan
+     * baseline may have been executed more recently than this value indicates.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastExecuted() {
         return timeLastExecuted;
     }
 
-    /** Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}). */
-    public enum Enabled implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
+     **/
+    public enum Enabled {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -530,27 +545,30 @@ public final class SqlPlanBaselineSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}). */
+    /**
+     * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabled")
     private final Enabled enabled;
 
     /**
      * Indicates whether the plan baseline is enabled ({@code YES}) or disabled ({@code NO}).
-     *
      * @return the value
-     */
+     **/
     public Enabled getEnabled() {
         return enabled;
     }
 
-    /** Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}). */
-    public enum Accepted implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
+     **/
+    public enum Accepted {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -589,27 +607,30 @@ public final class SqlPlanBaselineSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}). */
+    /**
+     * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accepted")
     private final Accepted accepted;
 
     /**
      * Indicates whether the plan baseline is accepted ({@code YES}) or not ({@code NO}).
-     *
      * @return the value
-     */
+     **/
     public Accepted getAccepted() {
         return accepted;
     }
 
-    /** Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}). */
-    public enum Fixed implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
+     **/
+    public enum Fixed {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -647,30 +668,32 @@ public final class SqlPlanBaselineSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}). */
+    /**
+     * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fixed")
     private final Fixed fixed;
 
     /**
      * Indicates whether the plan baseline is fixed ({@code YES}) or not ({@code NO}).
-     *
      * @return the value
-     */
+     **/
     public Fixed getFixed() {
         return fixed;
     }
 
     /**
-     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code
-     * NO}). The value is set to {@code YES} when a plan is initially added to the plan baseline.
-     */
-    public enum Reproduced implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+     * The value is set to {@code YES} when a plan is initially added to the plan baseline.
+     *
+     **/
+    public enum Reproduced {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -710,30 +733,33 @@ public final class SqlPlanBaselineSummary
         }
     };
     /**
-     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code
-     * NO}). The value is set to {@code YES} when a plan is initially added to the plan baseline.
-     */
+     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+     * The value is set to {@code YES} when a plan is initially added to the plan baseline.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reproduced")
     private final Reproduced reproduced;
 
     /**
-     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code
-     * NO}). The value is set to {@code YES} when a plan is initially added to the plan baseline.
+     * Indicates whether the optimizer was able to reproduce the plan ({@code YES}) or not ({@code NO}).
+     * The value is set to {@code YES} when a plan is initially added to the plan baseline.
      *
      * @return the value
-     */
+     **/
     public Reproduced getReproduced() {
         return reproduced;
     }
 
-    /** Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}). */
-    public enum AutoPurge implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
+     **/
+    public enum AutoPurge {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -772,38 +798,38 @@ public final class SqlPlanBaselineSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}). */
+    /**
+     * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoPurge")
     private final AutoPurge autoPurge;
 
     /**
      * Indicates whether the plan baseline is auto-purged ({@code YES}) or not ({@code NO}).
-     *
      * @return the value
-     */
+     **/
     public AutoPurge getAutoPurge() {
         return autoPurge;
     }
 
     /**
-     * Indicates whether a plan that is automatically captured by SQL plan management is marked
-     * adaptive or not.
+     * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+     * <p>
+     * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+     * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+     * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+     * and the final plan determined at execution will become an accepted plan if its performance is better than
+     * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+     * is no longer adaptive, but resolved.
      *
-     * <p>When a new adaptive plan is found for a SQL statement that has an existing SQL plan
-     * baseline, that new plan will be added to the SQL plan baseline as an unaccepted plan, and the
-     * {@code ADAPTIVE} property will be marked {@code YES}. When this new plan is verified (either
-     * manually or via the auto evolve task), the plan will be test executed and the final plan
-     * determined at execution will become an accepted plan if its performance is better than the
-     * existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to
-     * {@code NO} since the plan is no longer adaptive, but resolved.
-     */
-    public enum Adaptive implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Adaptive {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -843,34 +869,31 @@ public final class SqlPlanBaselineSummary
         }
     };
     /**
-     * Indicates whether a plan that is automatically captured by SQL plan management is marked
-     * adaptive or not.
+     * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+     * <p>
+     * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+     * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+     * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+     * and the final plan determined at execution will become an accepted plan if its performance is better than
+     * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+     * is no longer adaptive, but resolved.
      *
-     * <p>When a new adaptive plan is found for a SQL statement that has an existing SQL plan
-     * baseline, that new plan will be added to the SQL plan baseline as an unaccepted plan, and the
-     * {@code ADAPTIVE} property will be marked {@code YES}. When this new plan is verified (either
-     * manually or via the auto evolve task), the plan will be test executed and the final plan
-     * determined at execution will become an accepted plan if its performance is better than the
-     * existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to
-     * {@code NO} since the plan is no longer adaptive, but resolved.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adaptive")
     private final Adaptive adaptive;
 
     /**
-     * Indicates whether a plan that is automatically captured by SQL plan management is marked
-     * adaptive or not.
-     *
-     * <p>When a new adaptive plan is found for a SQL statement that has an existing SQL plan
-     * baseline, that new plan will be added to the SQL plan baseline as an unaccepted plan, and the
-     * {@code ADAPTIVE} property will be marked {@code YES}. When this new plan is verified (either
-     * manually or via the auto evolve task), the plan will be test executed and the final plan
-     * determined at execution will become an accepted plan if its performance is better than the
-     * existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to
-     * {@code NO} since the plan is no longer adaptive, but resolved.
+     * Indicates whether a plan that is automatically captured by SQL plan management is marked adaptive or not.
+     * <p>
+     * When a new adaptive plan is found for a SQL statement that has an existing SQL plan baseline, that new plan
+     * will be added to the SQL plan baseline as an unaccepted plan, and the {@code ADAPTIVE} property will be marked {@code YES}.
+     * When this new plan is verified (either manually or via the auto evolve task), the plan will be test executed
+     * and the final plan determined at execution will become an accepted plan if its performance is better than
+     * the existing plan baseline. At this point, the value of the {@code ADAPTIVE} property is set to {@code NO} since the plan
+     * is no longer adaptive, but resolved.
      *
      * @return the value
-     */
+     **/
     public Adaptive getAdaptive() {
         return adaptive;
     }
@@ -882,7 +905,6 @@ public final class SqlPlanBaselineSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

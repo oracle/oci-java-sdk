@@ -5,23 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Summary of the ManagementAgentPlugin. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * Summary of the ManagementAgentPlugin.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagementAgentPlugin.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagementAgentPlugin.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagementAgentPlugin
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -55,92 +54,98 @@ public final class ManagementAgentPlugin
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Management Agent Plugin Id */
+        /**
+         * Management Agent Plugin Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Management Agent Plugin Id
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Management Agent Plugin Name */
+        /**
+         * Management Agent Plugin Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Management Agent Plugin Name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Management Agent Plugin Version */
+        /**
+         * Management Agent Plugin Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Integer version;
 
         /**
          * Management Agent Plugin Version
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Integer version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Supported Platform Types */
+        /**
+         * Supported Platform Types
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedPlatformTypes")
         private java.util.List<PlatformTypes> supportedPlatformTypes;
 
         /**
          * Supported Platform Types
-         *
          * @param supportedPlatformTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedPlatformTypes(
                 java.util.List<PlatformTypes> supportedPlatformTypes) {
             this.supportedPlatformTypes = supportedPlatformTypes;
             this.__explicitlySet__.add("supportedPlatformTypes");
             return this;
         }
-        /** Management Agent Plugin Display Name */
+        /**
+         * Management Agent Plugin Display Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Management Agent Plugin Display Name
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Management Agent Plugin description */
+        /**
+         * Management Agent Plugin description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Management Agent Plugin description
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -148,31 +153,31 @@ public final class ManagementAgentPlugin
         }
         /**
          * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConsoleDeployable")
         private Boolean isConsoleDeployable;
 
         /**
          * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-         *
          * @param isConsoleDeployable the value to set
          * @return this builder
-         */
+         **/
         public Builder isConsoleDeployable(Boolean isConsoleDeployable) {
             this.isConsoleDeployable = isConsoleDeployable;
             this.__explicitlySet__.add("isConsoleDeployable");
             return this;
         }
-        /** The current state of Management Agent Plugin */
+        /**
+         * The current state of Management Agent Plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * The current state of Management Agent Plugin
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -229,7 +234,9 @@ public final class ManagementAgentPlugin
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -238,106 +245,114 @@ public final class ManagementAgentPlugin
         return new Builder().copy(this);
     }
 
-    /** Management Agent Plugin Id */
+    /**
+     * Management Agent Plugin Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Management Agent Plugin Id
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Management Agent Plugin Name */
+    /**
+     * Management Agent Plugin Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Management Agent Plugin Name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Management Agent Plugin Version */
+    /**
+     * Management Agent Plugin Version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Integer version;
 
     /**
      * Management Agent Plugin Version
-     *
      * @return the value
-     */
+     **/
     public Integer getVersion() {
         return version;
     }
 
-    /** Supported Platform Types */
+    /**
+     * Supported Platform Types
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedPlatformTypes")
     private final java.util.List<PlatformTypes> supportedPlatformTypes;
 
     /**
      * Supported Platform Types
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PlatformTypes> getSupportedPlatformTypes() {
         return supportedPlatformTypes;
     }
 
-    /** Management Agent Plugin Display Name */
+    /**
+     * Management Agent Plugin Display Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Management Agent Plugin Display Name
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Management Agent Plugin description */
+    /**
+     * Management Agent Plugin description
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Management Agent Plugin description
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** A flag to indicate whether a given plugin can be deployed from Agent Console UI or not. */
+    /**
+     * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConsoleDeployable")
     private final Boolean isConsoleDeployable;
 
     /**
      * A flag to indicate whether a given plugin can be deployed from Agent Console UI or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsConsoleDeployable() {
         return isConsoleDeployable;
     }
 
-    /** The current state of Management Agent Plugin */
+    /**
+     * The current state of Management Agent Plugin
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * The current state of Management Agent Plugin
-     *
      * @return the value
-     */
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -349,7 +364,6 @@ public final class ManagementAgentPlugin
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

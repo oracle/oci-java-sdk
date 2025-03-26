@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Archival states of an Awr Hub object. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ArchivalState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Archival states of an Awr Hub object.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ArchivalState {
     Archived("ARCHIVED"),
     Restoring("RESTORING"),
     Restored("RESTORED"),

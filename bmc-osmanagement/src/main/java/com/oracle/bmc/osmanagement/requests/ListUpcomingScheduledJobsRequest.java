@@ -6,77 +6,88 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListUpcomingScheduledJobsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListUpcomingScheduledJobsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ListUpcomingScheduledJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUpcomingScheduledJobsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class ListUpcomingScheduledJobsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeEnd;
 
     /**
      * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
      */
     private String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
      */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -109,23 +120,23 @@ public class ListUpcomingScheduledJobsRequest
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -159,45 +170,64 @@ public class ListUpcomingScheduledJobsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The name of the tag. */
+    /**
+     * The name of the tag.
+     */
     private String tagName;
 
-    /** The name of the tag. */
+    /**
+     * The name of the tag.
+     */
     public String getTagName() {
         return tagName;
     }
-    /** The value for the tag. */
+    /**
+     * The value for the tag.
+     */
     private String tagValue;
 
-    /** The value for the tag. */
+    /**
+     * The value for the tag.
+     */
     public String getTagValue() {
         return tagValue;
     }
-    /** The current lifecycle state for the object. */
+    /**
+     * The current lifecycle state for the object.
+     */
     private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState;
 
-    /** The current lifecycle state for the object. */
+    /**
+     * The current lifecycle state for the object.
+     */
     public com.oracle.bmc.osmanagement.model.LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OS family for which to list resources. */
+    /**
+     * The OS family for which to list resources.
+     */
     private com.oracle.bmc.osmanagement.model.OsFamilies osFamily;
 
-    /** The OS family for which to list resources. */
+    /**
+     * The OS family for which to list resources.
+     */
     public com.oracle.bmc.osmanagement.model.OsFamilies getOsFamily() {
         return osFamily;
     }
@@ -205,15 +235,17 @@ public class ListUpcomingScheduledJobsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUpcomingScheduledJobsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -224,15 +256,16 @@ public class ListUpcomingScheduledJobsRequest
 
         /**
          * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
-         * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeEnd = null;
 
         /**
          * The cut-off time before which to list all upcoming schedules, in ISO 8601 format
-         *
-         * <p>Example: 2017-07-14T02:40:00.000Z
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
          * @param timeEnd the value to set
          * @return this builder instance
@@ -244,15 +277,16 @@ public class ListUpcomingScheduledJobsRequest
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
          */
         private String displayName = null;
 
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable.
-         *
-         * <p>Example: {@code My new resource}
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -262,12 +296,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -277,15 +312,12 @@ public class ListUpcomingScheduledJobsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -294,12 +326,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -309,16 +342,13 @@ public class ListUpcomingScheduledJobsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -328,12 +358,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The name of the tag. */
+        /**
+         * The name of the tag.
+         */
         private String tagName = null;
 
         /**
          * The name of the tag.
-         *
          * @param tagName the value to set
          * @return this builder instance
          */
@@ -342,12 +373,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The value for the tag. */
+        /**
+         * The value for the tag.
+         */
         private String tagValue = null;
 
         /**
          * The value for the tag.
-         *
          * @param tagValue the value to set
          * @return this builder instance
          */
@@ -356,12 +388,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The current lifecycle state for the object. */
+        /**
+         * The current lifecycle state for the object.
+         */
         private com.oracle.bmc.osmanagement.model.LifecycleStates lifecycleState = null;
 
         /**
          * The current lifecycle state for the object.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -371,12 +404,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -385,12 +419,13 @@ public class ListUpcomingScheduledJobsRequest
             return this;
         }
 
-        /** The OS family for which to list resources. */
+        /**
+         * The OS family for which to list resources.
+         */
         private com.oracle.bmc.osmanagement.model.OsFamilies osFamily = null;
 
         /**
          * The OS family for which to list resources.
-         *
          * @param osFamily the value to set
          * @return this builder instance
          */
@@ -401,19 +436,18 @@ public class ListUpcomingScheduledJobsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -425,7 +459,6 @@ public class ListUpcomingScheduledJobsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListUpcomingScheduledJobsRequest o) {
@@ -449,11 +482,10 @@ public class ListUpcomingScheduledJobsRequest
         /**
          * Build the instance of ListUpcomingScheduledJobsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListUpcomingScheduledJobsRequest
          */
@@ -467,8 +499,7 @@ public class ListUpcomingScheduledJobsRequest
         /**
          * Build the instance of ListUpcomingScheduledJobsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUpcomingScheduledJobsRequest
@@ -488,14 +519,12 @@ public class ListUpcomingScheduledJobsRequest
             request.opcRequestId = opcRequestId;
             request.osFamily = osFamily;
             return request;
-            // new ListUpcomingScheduledJobsRequest(compartmentId, timeEnd, displayName, limit,
-            // page, sortOrder, sortBy, tagName, tagValue, lifecycleState, opcRequestId, osFamily);
+            // new ListUpcomingScheduledJobsRequest(compartmentId, timeEnd, displayName, limit, page, sortOrder, sortBy, tagName, tagValue, lifecycleState, opcRequestId, osFamily);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -516,7 +545,6 @@ public class ListUpcomingScheduledJobsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The summary of user grants. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The summary of user grants.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrantSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class GrantSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class GrantSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -44,82 +42,87 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique key of a user grant. */
+        /**
+         * The unique key of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key of a user grant.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The name of a user grant. */
+        /**
+         * The name of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantName")
         private String grantName;
 
         /**
          * The name of a user grant.
-         *
          * @param grantName the value to set
          * @return this builder
-         */
+         **/
         public Builder grantName(String grantName) {
             this.grantName = grantName;
             this.__explicitlySet__.add("grantName");
             return this;
         }
-        /** The type of a user grant. */
+        /**
+         * The type of a user grant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
         private PrivilegeType privilegeType;
 
         /**
          * The type of a user grant.
-         *
          * @param privilegeType the value to set
          * @return this builder
-         */
+         **/
         public Builder privilegeType(PrivilegeType privilegeType) {
             this.privilegeType = privilegeType;
             this.__explicitlySet__.add("privilegeType");
             return this;
         }
-        /** The privilege category. */
+        /**
+         * The privilege category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeCategory")
         private PrivilegeCategory privilegeCategory;
 
         /**
          * The privilege category.
-         *
          * @param privilegeCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder privilegeCategory(PrivilegeCategory privilegeCategory) {
             this.privilegeCategory = privilegeCategory;
             this.__explicitlySet__.add("privilegeCategory");
             return this;
         }
         /**
-         * The grant depth level of the indirect grant. An indirectly granted role/privilege is
-         * granted to the user through another role. The depth level indicates how deep a privilege
-         * is within the grant hierarchy.
-         */
+         * The grant depth level of the indirect grant.
+         * An indirectly granted role/privilege is granted to the user through another role.
+         * The depth level indicates how deep a privilege is within the grant hierarchy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("depthLevel")
         private Integer depthLevel;
 
         /**
-         * The grant depth level of the indirect grant. An indirectly granted role/privilege is
-         * granted to the user through another role. The depth level indicates how deep a privilege
-         * is within the grant hierarchy.
+         * The grant depth level of the indirect grant.
+         * An indirectly granted role/privilege is granted to the user through another role.
+         * The depth level indicates how deep a privilege is within the grant hierarchy.
          *
          * @param depthLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder depthLevel(Integer depthLevel) {
             this.depthLevel = depthLevel;
             this.__explicitlySet__.add("depthLevel");
@@ -164,7 +167,9 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,42 +178,46 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The unique key of a user grant. */
+    /**
+     * The unique key of a user grant.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key of a user grant.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The name of a user grant. */
+    /**
+     * The name of a user grant.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantName")
     private final String grantName;
 
     /**
      * The name of a user grant.
-     *
      * @return the value
-     */
+     **/
     public String getGrantName() {
         return grantName;
     }
 
-    /** The type of a user grant. */
-    public enum PrivilegeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of a user grant.
+     **/
+    public enum PrivilegeType {
         SystemPrivilege("SYSTEM_PRIVILEGE"),
         ObjectPrivilege("OBJECT_PRIVILEGE"),
         AdminPrivilege("ADMIN_PRIVILEGE"),
         Role("ROLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -247,29 +256,32 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The type of a user grant. */
+    /**
+     * The type of a user grant.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
     private final PrivilegeType privilegeType;
 
     /**
      * The type of a user grant.
-     *
      * @return the value
-     */
+     **/
     public PrivilegeType getPrivilegeType() {
         return privilegeType;
     }
 
-    /** The privilege category. */
-    public enum PrivilegeCategory implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The privilege category.
+     **/
+    public enum PrivilegeCategory {
         Critical("CRITICAL"),
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -308,34 +320,36 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The privilege category. */
+    /**
+     * The privilege category.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeCategory")
     private final PrivilegeCategory privilegeCategory;
 
     /**
      * The privilege category.
-     *
      * @return the value
-     */
+     **/
     public PrivilegeCategory getPrivilegeCategory() {
         return privilegeCategory;
     }
 
     /**
-     * The grant depth level of the indirect grant. An indirectly granted role/privilege is granted
-     * to the user through another role. The depth level indicates how deep a privilege is within
-     * the grant hierarchy.
-     */
+     * The grant depth level of the indirect grant.
+     * An indirectly granted role/privilege is granted to the user through another role.
+     * The depth level indicates how deep a privilege is within the grant hierarchy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("depthLevel")
     private final Integer depthLevel;
 
     /**
-     * The grant depth level of the indirect grant. An indirectly granted role/privilege is granted
-     * to the user through another role. The depth level indicates how deep a privilege is within
-     * the grant hierarchy.
+     * The grant depth level of the indirect grant.
+     * An indirectly granted role/privilege is granted to the user through another role.
+     * The depth level indicates how deep a privilege is within the grant hierarchy.
      *
      * @return the value
-     */
+     **/
     public Integer getDepthLevel() {
         return depthLevel;
     }
@@ -347,7 +361,6 @@ public final class GrantSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

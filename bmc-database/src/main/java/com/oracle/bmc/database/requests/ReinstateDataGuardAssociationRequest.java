@@ -6,12 +6,9 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardAssociationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ReinstateDataGuardAssociationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ReinstateDataGuardAssociationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ReinstateDataGuardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails> {
@@ -28,40 +25,42 @@ public class ReinstateDataGuardAssociationRequest
         return databaseId;
     }
     /**
-     * The Data Guard association's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dataGuardAssociationId;
 
     /**
-     * The Data Guard association's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDataGuardAssociationId() {
         return dataGuardAssociationId;
     }
-    /** A request to reinstate a database in a standby role. */
+    /**
+     * A request to reinstate a database in a standby role.
+     */
     private com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails
             reinstateDataGuardAssociationDetails;
 
-    /** A request to reinstate a database in a standby role. */
+    /**
+     * A request to reinstate a database in a standby role.
+     */
     public com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails
             getReinstateDataGuardAssociationDetails() {
         return reinstateDataGuardAssociationDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -69,7 +68,6 @@ public class ReinstateDataGuardAssociationRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -82,19 +80,17 @@ public class ReinstateDataGuardAssociationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ReinstateDataGuardAssociationRequest,
                     com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String databaseId = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param databaseId the value to set
          * @return this builder instance
          */
@@ -104,15 +100,12 @@ public class ReinstateDataGuardAssociationRequest
         }
 
         /**
-         * The Data Guard association's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dataGuardAssociationId = null;
 
         /**
-         * The Data Guard association's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param dataGuardAssociationId the value to set
          * @return this builder instance
          */
@@ -121,13 +114,14 @@ public class ReinstateDataGuardAssociationRequest
             return this;
         }
 
-        /** A request to reinstate a database in a standby role. */
+        /**
+         * A request to reinstate a database in a standby role.
+         */
         private com.oracle.bmc.database.model.ReinstateDataGuardAssociationDetails
                 reinstateDataGuardAssociationDetails = null;
 
         /**
          * A request to reinstate a database in a standby role.
-         *
          * @param reinstateDataGuardAssociationDetails the value to set
          * @return this builder instance
          */
@@ -139,18 +133,17 @@ public class ReinstateDataGuardAssociationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -162,19 +155,18 @@ public class ReinstateDataGuardAssociationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -186,7 +178,6 @@ public class ReinstateDataGuardAssociationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ReinstateDataGuardAssociationRequest o) {
@@ -202,11 +193,10 @@ public class ReinstateDataGuardAssociationRequest
         /**
          * Build the instance of ReinstateDataGuardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ReinstateDataGuardAssociationRequest
          */
@@ -219,7 +209,6 @@ public class ReinstateDataGuardAssociationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -233,8 +222,7 @@ public class ReinstateDataGuardAssociationRequest
         /**
          * Build the instance of ReinstateDataGuardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ReinstateDataGuardAssociationRequest
@@ -247,14 +235,12 @@ public class ReinstateDataGuardAssociationRequest
             request.reinstateDataGuardAssociationDetails = reinstateDataGuardAssociationDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new ReinstateDataGuardAssociationRequest(databaseId, dataGuardAssociationId,
-            // reinstateDataGuardAssociationDetails, ifMatch);
+            // new ReinstateDataGuardAssociationRequest(databaseId, dataGuardAssociationId, reinstateDataGuardAssociationDetails, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -267,7 +253,6 @@ public class ReinstateDataGuardAssociationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

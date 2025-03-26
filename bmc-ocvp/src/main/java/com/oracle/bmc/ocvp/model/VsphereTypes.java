@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** Possible vSphere Cluster types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum VsphereTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible vSphere Cluster types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum VsphereTypes {
     Management("MANAGEMENT"),
     Workload("WORKLOAD"),
 

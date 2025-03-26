@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The configuration details of a Dataflow step. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The configuration details of a Dataflow step.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineDataflowConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PipelineDataflowConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PipelineDataflowConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "configuration",
@@ -55,31 +54,33 @@ public final class PipelineDataflowConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Spark configuration passed to the running process. */
+        /**
+         * The Spark configuration passed to the running process.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private Object configuration;
 
         /**
          * The Spark configuration passed to the running process.
-         *
          * @param configuration the value to set
          * @return this builder
-         */
+         **/
         public Builder configuration(Object configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
             return this;
         }
-        /** The VM shape for the driver. */
+        /**
+         * The VM shape for the driver.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
         private String driverShape;
 
         /**
          * The VM shape for the driver.
-         *
          * @param driverShape the value to set
          * @return this builder
-         */
+         **/
         public Builder driverShape(String driverShape) {
             this.driverShape = driverShape;
             this.__explicitlySet__.add("driverShape");
@@ -95,16 +96,17 @@ public final class PipelineDataflowConfigurationDetails
             this.__explicitlySet__.add("driverShapeConfigDetails");
             return this;
         }
-        /** The VM shape for the executors. */
+        /**
+         * The VM shape for the executors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
         private String executorShape;
 
         /**
          * The VM shape for the executors.
-         *
          * @param executorShape the value to set
          * @return this builder
-         */
+         **/
         public Builder executorShape(String executorShape) {
             this.executorShape = executorShape;
             this.__explicitlySet__.add("executorShape");
@@ -120,54 +122,49 @@ public final class PipelineDataflowConfigurationDetails
             this.__explicitlySet__.add("executorShapeConfigDetails");
             return this;
         }
-        /** The number of executor VMs requested. */
+        /**
+         * The number of executor VMs requested.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
         private Integer numExecutors;
 
         /**
          * The number of executor VMs requested.
-         *
          * @param numExecutors the value to set
          * @return this builder
-         */
+         **/
         public Builder numExecutors(Integer numExecutors) {
             this.numExecutors = numExecutors;
             this.__explicitlySet__.add("numExecutors");
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse
-         * directory for BATCH SQL runs.
-         */
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
         private String warehouseBucketUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse
-         * directory for BATCH SQL runs.
-         *
+         * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
          * @param warehouseBucketUri the value to set
          * @return this builder
-         */
+         **/
         public Builder warehouseBucketUri(String warehouseBucketUri) {
             this.warehouseBucketUri = warehouseBucketUri;
             this.__explicitlySet__.add("warehouseBucketUri");
             return this;
         }
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be
-         * uploaded.
-         */
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
         private String logsBucketUri;
 
         /**
-         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be
-         * uploaded.
-         *
+         * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
          * @param logsBucketUri the value to set
          * @return this builder
-         */
+         **/
         public Builder logsBucketUri(String logsBucketUri) {
             this.logsBucketUri = logsBucketUri;
             this.__explicitlySet__.add("logsBucketUri");
@@ -224,7 +221,9 @@ public final class PipelineDataflowConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,28 +232,30 @@ public final class PipelineDataflowConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** The Spark configuration passed to the running process. */
+    /**
+     * The Spark configuration passed to the running process.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final Object configuration;
 
     /**
      * The Spark configuration passed to the running process.
-     *
      * @return the value
-     */
+     **/
     public Object getConfiguration() {
         return configuration;
     }
 
-    /** The VM shape for the driver. */
+    /**
+     * The VM shape for the driver.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverShape")
     private final String driverShape;
 
     /**
      * The VM shape for the driver.
-     *
      * @return the value
-     */
+     **/
     public String getDriverShape() {
         return driverShape;
     }
@@ -266,15 +267,16 @@ public final class PipelineDataflowConfigurationDetails
         return driverShapeConfigDetails;
     }
 
-    /** The VM shape for the executors. */
+    /**
+     * The VM shape for the executors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executorShape")
     private final String executorShape;
 
     /**
      * The VM shape for the executors.
-     *
      * @return the value
-     */
+     **/
     public String getExecutorShape() {
         return executorShape;
     }
@@ -286,47 +288,44 @@ public final class PipelineDataflowConfigurationDetails
         return executorShapeConfigDetails;
     }
 
-    /** The number of executor VMs requested. */
+    /**
+     * The number of executor VMs requested.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numExecutors")
     private final Integer numExecutors;
 
     /**
      * The number of executor VMs requested.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumExecutors() {
         return numExecutors;
     }
 
     /**
-     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-     * for BATCH SQL runs.
-     */
+     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warehouseBucketUri")
     private final String warehouseBucketUri;
 
     /**
-     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory
-     * for BATCH SQL runs.
-     *
+     * An Oracle Cloud Infrastructure URI of the bucket to be used as default warehouse directory for BATCH SQL runs.
      * @return the value
-     */
+     **/
     public String getWarehouseBucketUri() {
         return warehouseBucketUri;
     }
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logsBucketUri")
     private final String logsBucketUri;
 
     /**
      * An Oracle Cloud Infrastructure URI of the bucket where the Spark job logs are to be uploaded.
-     *
      * @return the value
-     */
+     **/
     public String getLogsBucketUri() {
         return logsBucketUri;
     }
@@ -338,7 +337,6 @@ public final class PipelineDataflowConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

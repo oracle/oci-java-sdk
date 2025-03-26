@@ -5,21 +5,19 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * The details of each node in the cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
+ * The details of each node in the cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NodeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NodeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "privateEndpointFqdn",
@@ -44,76 +42,81 @@ public final class NodeSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The fully qualified domain name (FQDN) of the API endpoint to access a specific node. */
+        /**
+         * The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointFqdn")
         private String privateEndpointFqdn;
 
         /**
          * The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-         *
          * @param privateEndpointFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointFqdn(String privateEndpointFqdn) {
             this.privateEndpointFqdn = privateEndpointFqdn;
             this.__explicitlySet__.add("privateEndpointFqdn");
             return this;
         }
-        /** The private IP address of the API endpoint to access a specific node. */
+        /**
+         * The private IP address of the API endpoint to access a specific node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIpAddress")
         private String privateEndpointIpAddress;
 
         /**
          * The private IP address of the API endpoint to access a specific node.
-         *
          * @param privateEndpointIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointIpAddress(String privateEndpointIpAddress) {
             this.privateEndpointIpAddress = privateEndpointIpAddress;
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** A user-friendly name of a cluster node. */
+        /**
+         * A user-friendly name of a cluster node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name of a cluster node.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the cluster */
+        /**
+         * The OCID of the cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
         private String redisClusterId;
 
         /**
          * The OCID of the cluster
-         *
          * @param redisClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder redisClusterId(String redisClusterId) {
             this.redisClusterId = redisClusterId;
             this.__explicitlySet__.add("redisClusterId");
             return this;
         }
-        /** The shard number to which the node belongs to. */
+        /**
+         * The shard number to which the node belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardNumber")
         private Integer shardNumber;
 
         /**
          * The shard number to which the node belongs to.
-         *
          * @param shardNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder shardNumber(Integer shardNumber) {
             this.shardNumber = shardNumber;
             this.__explicitlySet__.add("shardNumber");
@@ -158,7 +161,9 @@ public final class NodeSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,67 +172,72 @@ public final class NodeSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The fully qualified domain name (FQDN) of the API endpoint to access a specific node. */
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointFqdn")
     private final String privateEndpointFqdn;
 
     /**
      * The fully qualified domain name (FQDN) of the API endpoint to access a specific node.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateEndpointFqdn() {
         return privateEndpointFqdn;
     }
 
-    /** The private IP address of the API endpoint to access a specific node. */
+    /**
+     * The private IP address of the API endpoint to access a specific node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIpAddress")
     private final String privateEndpointIpAddress;
 
     /**
      * The private IP address of the API endpoint to access a specific node.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateEndpointIpAddress() {
         return privateEndpointIpAddress;
     }
 
-    /** A user-friendly name of a cluster node. */
+    /**
+     * A user-friendly name of a cluster node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name of a cluster node.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the cluster */
+    /**
+     * The OCID of the cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
     private final String redisClusterId;
 
     /**
      * The OCID of the cluster
-     *
      * @return the value
-     */
+     **/
     public String getRedisClusterId() {
         return redisClusterId;
     }
 
-    /** The shard number to which the node belongs to. */
+    /**
+     * The shard number to which the node belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardNumber")
     private final Integer shardNumber;
 
     /**
      * The shard number to which the node belongs to.
-     *
      * @return the value
-     */
+     **/
     public Integer getShardNumber() {
         return shardNumber;
     }
@@ -239,7 +249,6 @@ public final class NodeSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

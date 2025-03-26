@@ -5,41 +5,52 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * A configuration item that, for example defines whether resources of a specific type should be
- * discovered automatically.
+ * A configuration item that, for example defines whether resources of a specific type
+ * should be discovered automatically.
+ * <p>
+ * In this case, the 'configType' is set to 'AUTO_PROMOTE' and additional fields like
+ * 'resourceType' and 'isEnabled' determine if such resources are to be discovered
+ * automatically (also referred to as 'Automatic Promotion').
  *
- * <p>In this case, the 'configType' is set to 'AUTO_PROMOTE' and additional fields like
- * 'resourceType' and 'isEnabled' determine if such resources are to be discovered automatically
- * (also referred to as 'Automatic Promotion'). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType",
-        defaultImpl = Config.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType",
+    defaultImpl = Config.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LicenseEnterpriseExtensibilityConfigDetails.class,
-            name = "LICENSE_ENTERPRISE_EXTENSIBILITY"),
+        value = OnboardConfigDetails.class,
+        name = "ONBOARD"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LicenseAutoAssignConfigDetails.class,
-            name = "LICENSE_AUTO_ASSIGN"),
+        value = LicenseEnterpriseExtensibilityConfigDetails.class,
+        name = "LICENSE_ENTERPRISE_EXTENSIBILITY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AutoPromoteConfigDetails.class,
-            name = "AUTO_PROMOTE")
+        value = ComputeAutoActivatePluginConfigDetails.class,
+        name = "COMPUTE_AUTO_ACTIVATE_PLUGIN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LicenseAutoAssignConfigDetails.class,
+        name = "LICENSE_AUTO_ASSIGN"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AutoPromoteConfigDetails.class,
+        name = "AUTO_PROMOTE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Config extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -74,77 +85,80 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         this.systemTags = systemTags;
     }
 
-    /** The Unique Oracle ID (OCID) that is immutable on creation. */
+    /**
+     * The Unique Oracle ID (OCID) that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The Unique Oracle ID (OCID) that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment containing the configuration. */
+    /**
+     * The OCID of the compartment containing the configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the configuration.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The time the configuration was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the configuration was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the configuration was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the Config was updated. */
+    /**
+     * The time the Config was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the Config was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the configuration. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the configuration.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -153,8 +167,8 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -193,66 +207,70 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
             return UnknownEnumValue;
         }
     };
-    /** The current state of the configuration. */
+    /**
+     * The current state of the configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the configuration.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -264,7 +282,6 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -328,15 +345,19 @@ public class Config extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         return result;
     }
 
-    /** The type of configuration. */
-    public enum ConfigType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of configuration.
+     **/
+    public enum ConfigType {
         AutoPromote("AUTO_PROMOTE"),
+        ComputeAutoActivatePlugin("COMPUTE_AUTO_ACTIVATE_PLUGIN"),
         LicenseAutoAssign("LICENSE_AUTO_ASSIGN"),
         LicenseEnterpriseExtensibility("LICENSE_ENTERPRISE_EXTENSIBILITY"),
+        Onboard("ONBOARD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

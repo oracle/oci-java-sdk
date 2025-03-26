@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Billing model. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum BillingModel implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Billing model.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum BillingModel {
     Commitment("COMMITMENT"),
     Paygo("PAYGO"),
     Promotion("PROMOTION"),

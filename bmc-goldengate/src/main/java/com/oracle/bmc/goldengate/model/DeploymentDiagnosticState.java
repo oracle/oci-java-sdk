@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The Possible DeploymentDiagnosticState that applies to a Deployment Diagnostic collection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentDiagnosticState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Possible DeploymentDiagnosticState that applies to a Deployment Diagnostic collection.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum DeploymentDiagnosticState {
     InProgress("IN_PROGRESS"),
     Succeeded("SUCCEEDED"),
     Failed("FAILED"),

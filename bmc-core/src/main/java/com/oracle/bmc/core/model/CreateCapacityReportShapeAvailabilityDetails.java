@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about the shapes in a capacity report. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Information about the shapes in a capacity report.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateCapacityReportShapeAvailabilityDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateCapacityReportShapeAvailabilityDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateCapacityReportShapeAvailabilityDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"faultDomain", "instanceShape", "instanceShapeConfig"})
     public CreateCapacityReportShapeAvailabilityDetails(
@@ -38,41 +38,41 @@ public final class CreateCapacityReportShapeAvailabilityDetails
     public static class Builder {
         /**
          * The fault domain for the capacity report.
+         * <p>
+         * If you do not specify a fault domain, the capacity report includes information about all fault domains.
          *
-         * <p>If you do not specify a fault domain, the capacity report includes information about
-         * all fault domains.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The fault domain for the capacity report.
-         *
-         * <p>If you do not specify a fault domain, the capacity report includes information about
-         * all fault domains.
+         * <p>
+         * If you do not specify a fault domain, the capacity report includes information about all fault domains.
          *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
         /**
-         * The shape that you want to request a capacity report for. You can enumerate all available
-         * shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-         */
+         * The shape that you want to request a capacity report for. You can enumerate all available shapes by calling
+         * {@link #listShapes(ListShapesRequest) listShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
         /**
-         * The shape that you want to request a capacity report for. You can enumerate all available
-         * shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+         * The shape that you want to request a capacity report for. You can enumerate all available shapes by calling
+         * {@link #listShapes(ListShapesRequest) listShapes}.
          *
          * @param instanceShape the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -116,7 +116,9 @@ public final class CreateCapacityReportShapeAvailabilityDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,38 +129,38 @@ public final class CreateCapacityReportShapeAvailabilityDetails
 
     /**
      * The fault domain for the capacity report.
+     * <p>
+     * If you do not specify a fault domain, the capacity report includes information about all fault domains.
      *
-     * <p>If you do not specify a fault domain, the capacity report includes information about all
-     * fault domains.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The fault domain for the capacity report.
-     *
-     * <p>If you do not specify a fault domain, the capacity report includes information about all
-     * fault domains.
+     * <p>
+     * If you do not specify a fault domain, the capacity report includes information about all fault domains.
      *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
     /**
-     * The shape that you want to request a capacity report for. You can enumerate all available
-     * shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
-     */
+     * The shape that you want to request a capacity report for. You can enumerate all available shapes by calling
+     * {@link #listShapes(ListShapesRequest) listShapes}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
     /**
-     * The shape that you want to request a capacity report for. You can enumerate all available
-     * shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
+     * The shape that you want to request a capacity report for. You can enumerate all available shapes by calling
+     * {@link #listShapes(ListShapesRequest) listShapes}.
      *
      * @return the value
-     */
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -177,7 +179,6 @@ public final class CreateCapacityReportShapeAvailabilityDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

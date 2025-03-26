@@ -6,17 +6,20 @@ package com.oracle.bmc.healthchecks.responses;
 
 import com.oracle.bmc.healthchecks.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
      *
      * @return the value
      */
@@ -24,24 +27,26 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The URL for fetching probe results. */
+    /**
+     * The URL for fetching probe results.
+     */
     private String location;
 
     /**
      * The URL for fetching probe results.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** The returned {@code PingProbe} instance. */
+    /**
+     * The returned PingProbe instance.
+     */
     private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
     /**
-     * The returned {@code PingProbe} instance.
-     *
+     * The returned PingProbe instance.
      * @return the value
      */
     public com.oracle.bmc.healthchecks.model.PingProbe getPingProbe() {
@@ -57,7 +62,7 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateOnDemandPingProbeResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             com.oracle.bmc.healthchecks.model.PingProbe pingProbe) {
@@ -67,34 +72,33 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
         this.pingProbe = pingProbe;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateOnDemandPingProbeResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,12 +108,13 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The URL for fetching probe results. */
+        /**
+         * The URL for fetching probe results.
+         */
         private String location;
 
         /**
          * The URL for fetching probe results.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -118,12 +123,13 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code PingProbe} instance. */
+        /**
+         * The returned PingProbe instance.
+         */
         private com.oracle.bmc.healthchecks.model.PingProbe pingProbe;
 
         /**
-         * The returned {@code PingProbe} instance.
-         *
+         * The returned PingProbe instance.
          * @param pingProbe the value to set
          * @return this builder
          */
@@ -134,10 +140,8 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateOnDemandPingProbeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +154,8 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateOnDemandPingProbeResponse build() {
             return new CreateOnDemandPingProbeResponse(
                     __httpStatusCode__, headers, opcRequestId, location, pingProbe);
@@ -162,7 +164,6 @@ public class CreateOnDemandPingProbeResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

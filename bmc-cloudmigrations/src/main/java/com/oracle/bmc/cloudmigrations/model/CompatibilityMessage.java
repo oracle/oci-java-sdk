@@ -5,23 +5,21 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Information about shape compatibility with the client's current resource configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Information about shape compatibility with the client's current resource configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompatibilityMessage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CompatibilityMessage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CompatibilityMessage.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CompatibilityMessage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"severity", "name", "message"})
     public CompatibilityMessage(Severity severity, Name name, String message) {
@@ -33,46 +31,49 @@ public final class CompatibilityMessage
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Severity level of the compatibility issue. */
+        /**
+         * Severity level of the compatibility issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * Severity level of the compatibility issue.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Name of the compatibility issue. */
+        /**
+         * Name of the compatibility issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
         /**
          * Name of the compatibility issue.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Detailed description of the compatibility issue. */
+        /**
+         * Detailed description of the compatibility issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Detailed description of the compatibility issue.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -106,7 +107,9 @@ public final class CompatibilityMessage
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,15 +118,17 @@ public final class CompatibilityMessage
         return new Builder().copy(this);
     }
 
-    /** Severity level of the compatibility issue. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Severity level of the compatibility issue.
+     **/
+    public enum Severity {
         Error("ERROR"),
         Warning("WARNING"),
         Info("INFO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -162,21 +167,24 @@ public final class CompatibilityMessage
             return UnknownEnumValue;
         }
     };
-    /** Severity level of the compatibility issue. */
+    /**
+     * Severity level of the compatibility issue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * Severity level of the compatibility issue.
-     *
      * @return the value
-     */
+     **/
     public Severity getSeverity() {
         return severity;
     }
 
-    /** Name of the compatibility issue. */
-    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Name of the compatibility issue.
+     **/
+    public enum Name {
         NotEnoughData("NOT_ENOUGH_DATA"),
         InvalidData("INVALID_DATA"),
         CpuCompatibilityWarning("CPU_COMPATIBILITY_WARNING"),
@@ -189,8 +197,8 @@ public final class CompatibilityMessage
         OsWarning("OS_WARNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -227,28 +235,30 @@ public final class CompatibilityMessage
             return UnknownEnumValue;
         }
     };
-    /** Name of the compatibility issue. */
+    /**
+     * Name of the compatibility issue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
     /**
      * Name of the compatibility issue.
-     *
      * @return the value
-     */
+     **/
     public Name getName() {
         return name;
     }
 
-    /** Detailed description of the compatibility issue. */
+    /**
+     * Detailed description of the compatibility issue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Detailed description of the compatibility issue.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
@@ -260,7 +270,6 @@ public final class CompatibilityMessage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

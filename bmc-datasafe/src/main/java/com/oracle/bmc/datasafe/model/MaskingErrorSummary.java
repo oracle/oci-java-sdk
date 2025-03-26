@@ -5,23 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of a masking error. A Masking error is an error seen during the masking run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of a masking error. A Masking error is an error seen during the masking run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaskingErrorSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MaskingErrorSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MaskingErrorSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MaskingErrorSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"stepName", "error", "failedStatement", "timeCreated"})
     public MaskingErrorSummary(
@@ -35,65 +33,67 @@ public final class MaskingErrorSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The stepName of the masking error. */
+        /**
+         * The stepName of the masking error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private StepName stepName;
 
         /**
          * The stepName of the masking error.
-         *
          * @param stepName the value to set
          * @return this builder
-         */
+         **/
         public Builder stepName(StepName stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** The text of the masking error. */
+        /**
+         * The text of the masking error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("error")
         private String error;
 
         /**
          * The text of the masking error.
-         *
          * @param error the value to set
          * @return this builder
-         */
+         **/
         public Builder error(String error) {
             this.error = error;
             this.__explicitlySet__.add("error");
             return this;
         }
-        /** The statement resulting into the error. */
+        /**
+         * The statement resulting into the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedStatement")
         private String failedStatement;
 
         /**
          * The statement resulting into the error.
-         *
          * @param failedStatement the value to set
          * @return this builder
-         */
+         **/
         public Builder failedStatement(String failedStatement) {
             this.failedStatement = failedStatement;
             this.__explicitlySet__.add("failedStatement");
             return this;
         }
         /**
-         * The date and time the error entry was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the error entry was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -131,7 +131,9 @@ public final class MaskingErrorSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,15 +142,17 @@ public final class MaskingErrorSummary
         return new Builder().copy(this);
     }
 
-    /** The stepName of the masking error. */
-    public enum StepName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The stepName of the masking error.
+     **/
+    public enum StepName {
         ExecuteMasking("EXECUTE_MASKING"),
         PreMasking("PRE_MASKING"),
         PostMasking("POST_MASKING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -187,58 +191,60 @@ public final class MaskingErrorSummary
             return UnknownEnumValue;
         }
     };
-    /** The stepName of the masking error. */
+    /**
+     * The stepName of the masking error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final StepName stepName;
 
     /**
      * The stepName of the masking error.
-     *
      * @return the value
-     */
+     **/
     public StepName getStepName() {
         return stepName;
     }
 
-    /** The text of the masking error. */
+    /**
+     * The text of the masking error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("error")
     private final String error;
 
     /**
      * The text of the masking error.
-     *
      * @return the value
-     */
+     **/
     public String getError() {
         return error;
     }
 
-    /** The statement resulting into the error. */
+    /**
+     * The statement resulting into the error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedStatement")
     private final String failedStatement;
 
     /**
      * The statement resulting into the error.
-     *
      * @return the value
-     */
+     **/
     public String getFailedStatement() {
         return failedStatement;
     }
 
     /**
-     * The date and time the error entry was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the error entry was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the error entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -250,7 +256,6 @@ public final class MaskingErrorSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

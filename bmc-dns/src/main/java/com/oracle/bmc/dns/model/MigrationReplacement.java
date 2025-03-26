@@ -5,23 +5,22 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * A record to add to a zone in replacement of contents that cannot be migrated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * A record to add to a zone in replacement of contents that cannot be migrated.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MigrationReplacement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MigrationReplacement
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MigrationReplacement.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MigrationReplacement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rtype", "substituteRtype", "ttl", "rdata"})
     public MigrationReplacement(String rtype, String substituteRtype, Integer ttl, String rdata) {
@@ -35,57 +34,50 @@ public final class MigrationReplacement
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record
-         * (RR)
-         * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-         */
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rtype")
         private String rtype;
 
         /**
-         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record
-         * (RR)
-         * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+         * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
          *
          * @param rtype the value to set
          * @return this builder
-         */
+         **/
         public Builder rtype(String rtype) {
             this.rtype = rtype;
             this.__explicitlySet__.add("rtype");
             return this;
         }
         /**
-         * The canonical name for a substitute type of the replacement record to be used if the
-         * specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and
-         * {@code rdata} will still apply with the substitute type.
-         */
+         * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
         private String substituteRtype;
 
         /**
-         * The canonical name for a substitute type of the replacement record to be used if the
-         * specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and
-         * {@code rdata} will still apply with the substitute type.
-         *
+         * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
          * @param substituteRtype the value to set
          * @return this builder
-         */
+         **/
         public Builder substituteRtype(String substituteRtype) {
             this.substituteRtype = substituteRtype;
             this.__explicitlySet__.add("substituteRtype");
             return this;
         }
-        /** The Time To Live of the replacement record, in seconds. */
+        /**
+         * The Time To Live of the replacement record, in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ttl")
         private Integer ttl;
 
         /**
          * The Time To Live of the replacement record, in seconds.
-         *
          * @param ttl the value to set
          * @return this builder
-         */
+         **/
         public Builder ttl(Integer ttl) {
             this.ttl = ttl;
             this.__explicitlySet__.add("ttl");
@@ -94,7 +86,8 @@ public final class MigrationReplacement
         /**
          * The record data of the replacement record, as whitespace-delimited tokens in
          * type-specific presentation format.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdata")
         private String rdata;
 
@@ -104,7 +97,7 @@ public final class MigrationReplacement
          *
          * @param rdata the value to set
          * @return this builder
-         */
+         **/
         public Builder rdata(String rdata) {
             this.rdata = rdata;
             this.__explicitlySet__.add("rdata");
@@ -142,7 +135,9 @@ public final class MigrationReplacement
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,67 +147,63 @@ public final class MigrationReplacement
     }
 
     /**
-     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR)
-     * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
-     */
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rtype")
     private final String rtype;
 
     /**
-     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR)
-     * TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
+     * The type of DNS record, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      *
      * @return the value
-     */
+     **/
     public String getRtype() {
         return rtype;
     }
 
     /**
-     * The canonical name for a substitute type of the replacement record to be used if the
-     * specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code
-     * rdata} will still apply with the substitute type.
-     */
+     * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("substituteRtype")
     private final String substituteRtype;
 
     /**
-     * The canonical name for a substitute type of the replacement record to be used if the
-     * specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code
-     * rdata} will still apply with the substitute type.
-     *
+     * The canonical name for a substitute type of the replacement record to be used if the specified {@code rtype} is not allowed at the domain. The specified {@code ttl} and {@code rdata} will still apply with the substitute type.
      * @return the value
-     */
+     **/
     public String getSubstituteRtype() {
         return substituteRtype;
     }
 
-    /** The Time To Live of the replacement record, in seconds. */
+    /**
+     * The Time To Live of the replacement record, in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ttl")
     private final Integer ttl;
 
     /**
      * The Time To Live of the replacement record, in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getTtl() {
         return ttl;
     }
 
     /**
-     * The record data of the replacement record, as whitespace-delimited tokens in type-specific
-     * presentation format.
-     */
+     * The record data of the replacement record, as whitespace-delimited tokens in
+     * type-specific presentation format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdata")
     private final String rdata;
 
     /**
-     * The record data of the replacement record, as whitespace-delimited tokens in type-specific
-     * presentation format.
+     * The record data of the replacement record, as whitespace-delimited tokens in
+     * type-specific presentation format.
      *
      * @return the value
-     */
+     **/
     public String getRdata() {
         return rdata;
     }
@@ -224,7 +215,6 @@ public final class MigrationReplacement
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

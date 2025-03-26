@@ -6,17 +6,16 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,18 +39,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
-     * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
-     * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -61,16 +54,17 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
      */
     private String opcPrevPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
      *
      * @return the value
      */
@@ -78,12 +72,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         return opcPrevPage;
     }
 
-    /** The returned {@code AlertPolicyCollection} instance. */
+    /**
+     * The returned AlertPolicyCollection instance.
+     */
     private com.oracle.bmc.datasafe.model.AlertPolicyCollection alertPolicyCollection;
 
     /**
-     * The returned {@code AlertPolicyCollection} instance.
-     *
+     * The returned AlertPolicyCollection instance.
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.AlertPolicyCollection getAlertPolicyCollection() {
@@ -101,7 +96,7 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private ListAlertPoliciesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcNextPage,
@@ -115,35 +110,29 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         this.alertPolicyCollection = alertPolicyCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListAlertPoliciesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -154,14 +143,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -172,18 +160,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
-         * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
-         * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -194,16 +177,17 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
          */
         private String opcPrevPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -213,12 +197,13 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code AlertPolicyCollection} instance. */
+        /**
+         * The returned AlertPolicyCollection instance.
+         */
         private com.oracle.bmc.datasafe.model.AlertPolicyCollection alertPolicyCollection;
 
         /**
-         * The returned {@code AlertPolicyCollection} instance.
-         *
+         * The returned AlertPolicyCollection instance.
          * @param alertPolicyCollection the value to set
          * @return this builder
          */
@@ -230,10 +215,8 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListAlertPoliciesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -248,10 +231,8 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListAlertPoliciesResponse build() {
             return new ListAlertPoliciesResponse(
                     __httpStatusCode__,
@@ -266,7 +247,6 @@ public class ListAlertPoliciesResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

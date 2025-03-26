@@ -6,27 +6,25 @@ package com.oracle.bmc.goldengate.model;
 
 /**
  * The meta-data specific on particular deployment type represented by deploymentType field.
+ * <p>
+ * Deprecated properties: {@code sourceTechnologies} and {@code targetTechnologies} are not populated. They will be removed after September 15 2025.
+ * The list of supported source and target technologies can be accessed using the url provided in {@code supportedTechnologiesUrl} property.
  *
- * <p>Deprecated properties: {@code sourceTechnologies} and {@code targetTechnologies} are not
- * populated. They will be removed after September 15 2025. The list of supported source and target
- * technologies can be accessed using the url provided in {@code supportedTechnologiesUrl} property.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentTypeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeploymentTypeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeploymentTypeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "category",
@@ -64,27 +62,29 @@ public final class DeploymentTypeSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
-         */
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private DeploymentCategory category;
 
         /**
-         * The deployment category defines the broad separation of the deployment type into three
-         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-         * 'DATA_TRANSFORMS'.
+         * The deployment category defines the broad separation of the deployment type into three categories.
+         * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
          *
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(DeploymentCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -93,34 +93,38 @@ public final class DeploymentTypeSummary
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
-         */
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
          *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** An array of connectionTypes. */
+        /**
+         * An array of connectionTypes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionTypes")
         private java.util.List<ConnectionType> connectionTypes;
 
@@ -129,59 +133,60 @@ public final class DeploymentTypeSummary
          *
          * @param connectionTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionTypes(java.util.List<ConnectionType> connectionTypes) {
             this.connectionTypes = connectionTypes;
             this.__explicitlySet__.add("connectionTypes");
             return this;
         }
         /**
-         * List of the supported technologies generally. The value is a freeform text string
-         * generally consisting of a description of the technology and optionally the speific
-         * version(s) support. For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI
-         * Streaming" ]
-         */
+         * List of the supported technologies generally.  The value is a freeform text string generally consisting
+         * of a description of the technology and optionally the speific version(s) support.  For example,
+         * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceTechnologies")
         private java.util.List<String> sourceTechnologies;
 
         /**
-         * List of the supported technologies generally. The value is a freeform text string
-         * generally consisting of a description of the technology and optionally the speific
-         * version(s) support. For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI
-         * Streaming" ]
+         * List of the supported technologies generally.  The value is a freeform text string generally consisting
+         * of a description of the technology and optionally the speific version(s) support.  For example,
+         * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
          *
          * @param sourceTechnologies the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceTechnologies(java.util.List<String> sourceTechnologies) {
             this.sourceTechnologies = sourceTechnologies;
             this.__explicitlySet__.add("sourceTechnologies");
             return this;
         }
         /**
-         * List of the supported technologies generally. The value is a freeform text string
-         * generally consisting of a description of the technology and optionally the speific
-         * version(s) support. For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI
-         * Streaming" ]
-         */
+         * List of the supported technologies generally.  The value is a freeform text string generally consisting
+         * of a description of the technology and optionally the speific version(s) support.  For example,
+         * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetTechnologies")
         private java.util.List<String> targetTechnologies;
 
         /**
-         * List of the supported technologies generally. The value is a freeform text string
-         * generally consisting of a description of the technology and optionally the speific
-         * version(s) support. For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI
-         * Streaming" ]
+         * List of the supported technologies generally.  The value is a freeform text string generally consisting
+         * of a description of the technology and optionally the speific version(s) support.  For example,
+         * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
          *
          * @param targetTechnologies the value to set
          * @return this builder
-         */
+         **/
         public Builder targetTechnologies(java.util.List<String> targetTechnologies) {
             this.targetTechnologies = targetTechnologies;
             this.__explicitlySet__.add("targetTechnologies");
             return this;
         }
-        /** Version of OGG */
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -190,13 +195,16 @@ public final class DeploymentTypeSummary
          *
          * @param oggVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-        /** The URL to the webpage listing the supported technologies. */
+        /**
+         * The URL to the webpage listing the supported technologies.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedTechnologiesUrl")
         private String supportedTechnologiesUrl;
 
@@ -205,13 +213,16 @@ public final class DeploymentTypeSummary
          *
          * @param supportedTechnologiesUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedTechnologiesUrl(String supportedTechnologiesUrl) {
             this.supportedTechnologiesUrl = supportedTechnologiesUrl;
             this.__explicitlySet__.add("supportedTechnologiesUrl");
             return this;
         }
-        /** The default admin username used by deployment. */
+        /**
+         * The default admin username used by deployment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultUsername")
         private String defaultUsername;
 
@@ -220,7 +231,7 @@ public final class DeploymentTypeSummary
          *
          * @param defaultUsername the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultUsername(String defaultUsername) {
             this.defaultUsername = defaultUsername;
             this.__explicitlySet__.add("defaultUsername");
@@ -281,7 +292,9 @@ public final class DeploymentTypeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -291,25 +304,27 @@ public final class DeploymentTypeSummary
     }
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
-     */
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final DeploymentCategory category;
 
     /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
+     * The deployment category defines the broad separation of the deployment type into three categories.
+     * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
      *
      * @return the value
-     */
+     **/
     public DeploymentCategory getCategory() {
         return category;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -317,31 +332,35 @@ public final class DeploymentTypeSummary
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
-     */
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
      *
      * @return the value
-     */
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
 
-    /** An array of connectionTypes. */
+    /**
+     * An array of connectionTypes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionTypes")
     private final java.util.List<ConnectionType> connectionTypes;
 
@@ -349,50 +368,55 @@ public final class DeploymentTypeSummary
      * An array of connectionTypes.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ConnectionType> getConnectionTypes() {
         return connectionTypes;
     }
 
     /**
-     * List of the supported technologies generally. The value is a freeform text string generally
-     * consisting of a description of the technology and optionally the speific version(s) support.
-     * For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-     */
+     * List of the supported technologies generally.  The value is a freeform text string generally consisting
+     * of a description of the technology and optionally the speific version(s) support.  For example,
+     * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceTechnologies")
     private final java.util.List<String> sourceTechnologies;
 
     /**
-     * List of the supported technologies generally. The value is a freeform text string generally
-     * consisting of a description of the technology and optionally the speific version(s) support.
-     * For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+     * List of the supported technologies generally.  The value is a freeform text string generally consisting
+     * of a description of the technology and optionally the speific version(s) support.  For example,
+     * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSourceTechnologies() {
         return sourceTechnologies;
     }
 
     /**
-     * List of the supported technologies generally. The value is a freeform text string generally
-     * consisting of a description of the technology and optionally the speific version(s) support.
-     * For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
-     */
+     * List of the supported technologies generally.  The value is a freeform text string generally consisting
+     * of a description of the technology and optionally the speific version(s) support.  For example,
+     * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetTechnologies")
     private final java.util.List<String> targetTechnologies;
 
     /**
-     * List of the supported technologies generally. The value is a freeform text string generally
-     * consisting of a description of the technology and optionally the speific version(s) support.
-     * For example, [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
+     * List of the supported technologies generally.  The value is a freeform text string generally consisting
+     * of a description of the technology and optionally the speific version(s) support.  For example,
+     * [ "Oracle Database 19c", "Oracle Exadata", "OCI Streaming" ]
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getTargetTechnologies() {
         return targetTechnologies;
     }
 
-    /** Version of OGG */
+    /**
+     * Version of OGG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -400,12 +424,15 @@ public final class DeploymentTypeSummary
      * Version of OGG
      *
      * @return the value
-     */
+     **/
     public String getOggVersion() {
         return oggVersion;
     }
 
-    /** The URL to the webpage listing the supported technologies. */
+    /**
+     * The URL to the webpage listing the supported technologies.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedTechnologiesUrl")
     private final String supportedTechnologiesUrl;
 
@@ -413,12 +440,15 @@ public final class DeploymentTypeSummary
      * The URL to the webpage listing the supported technologies.
      *
      * @return the value
-     */
+     **/
     public String getSupportedTechnologiesUrl() {
         return supportedTechnologiesUrl;
     }
 
-    /** The default admin username used by deployment. */
+    /**
+     * The default admin username used by deployment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultUsername")
     private final String defaultUsername;
 
@@ -426,7 +456,7 @@ public final class DeploymentTypeSummary
      * The default admin username used by deployment.
      *
      * @return the value
-     */
+     **/
     public String getDefaultUsername() {
         return defaultUsername;
     }
@@ -438,7 +468,6 @@ public final class DeploymentTypeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

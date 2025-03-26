@@ -5,21 +5,19 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Object describing an individual element of object lineage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Object describing an individual element of object lineage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LineageObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LineageObject extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LineageObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectKey",
@@ -62,190 +60,195 @@ public final class LineageObject extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key of the object, such as an entity, about which this lineage applies. */
+        /**
+         * Key of the object, such as an entity, about which this lineage applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectKey")
         private String objectKey;
 
         /**
          * Key of the object, such as an entity, about which this lineage applies.
-         *
          * @param objectKey the value to set
          * @return this builder
-         */
+         **/
         public Builder objectKey(String objectKey) {
             this.objectKey = objectKey;
             this.__explicitlySet__.add("objectKey");
             return this;
         }
-        /** Display name of the object. */
+        /**
+         * Display name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the object.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Detailed description of the object. */
+        /**
+         * Detailed description of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Indicates if intra-lineage is available for this given object. If yes, drill-down can be
-         * requested for this object.
-         */
+         * Indicates if intra-lineage is available for this given object. If yes, drill-down can be requested for
+         * this object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIntraLineageAvailable")
         private Boolean isIntraLineageAvailable;
 
         /**
-         * Indicates if intra-lineage is available for this given object. If yes, drill-down can be
-         * requested for this object.
+         * Indicates if intra-lineage is available for this given object. If yes, drill-down can be requested for
+         * this object.
          *
          * @param isIntraLineageAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder isIntraLineageAvailable(Boolean isIntraLineageAvailable) {
             this.isIntraLineageAvailable = isIntraLineageAvailable;
             this.__explicitlySet__.add("isIntraLineageAvailable");
             return this;
         }
-        /** Key of the parent object for this object. */
+        /**
+         * Key of the parent object for this object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
         private String parentKey;
 
         /**
          * Key of the parent object for this object.
-         *
          * @param parentKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentKey(String parentKey) {
             this.parentKey = parentKey;
             this.__explicitlySet__.add("parentKey");
             return this;
         }
-        /** Full path of the parent object. */
+        /**
+         * Full path of the parent object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
         private String parentPath;
 
         /**
          * Full path of the parent object.
-         *
          * @param parentPath the value to set
          * @return this builder
-         */
+         **/
         public Builder parentPath(String parentPath) {
             this.parentPath = parentPath;
             this.__explicitlySet__.add("parentPath");
             return this;
         }
         /**
-         * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         */
+         * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         */
+         * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Type name of the object. Type keys can be found via the '/types' endpoint. */
+        /**
+         * Type name of the object. Type keys can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeName")
         private String typeName;
 
         /**
          * Type name of the object. Type keys can be found via the '/types' endpoint.
-         *
          * @param typeName the value to set
          * @return this builder
-         */
+         **/
         public Builder typeName(String typeName) {
             this.typeName = typeName;
             this.__explicitlySet__.add("typeName");
             return this;
         }
-        /** Type key of the object. Type keys can be found via the '/types' endpoint. */
+        /**
+         * Type key of the object. Type keys can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
         private String typeKey;
 
         /**
          * Type key of the object. Type keys can be found via the '/types' endpoint.
-         *
          * @param typeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder typeKey(String typeKey) {
             this.typeKey = typeKey;
             this.__explicitlySet__.add("typeKey");
             return this;
         }
         /**
-         * A map of maps that contains the properties which are specific to the entity type. Each
-         * entity type definition defines it's set of required and optional properties. The map keys
-         * are category names and the values are maps of property name to property value. Every
-         * property is contained inside of a category. Most data entities have required properties
-         * within the "default" category. Example: {@code {"properties": { "default": { "key1":
-         * "value1"}}}}
-         */
+         * A map of maps that contains the properties which are specific to the entity type. Each entity type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * data entities have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
         /**
-         * A map of maps that contains the properties which are specific to the entity type. Each
-         * entity type definition defines it's set of required and optional properties. The map keys
-         * are category names and the values are maps of property name to property value. Every
-         * property is contained inside of a category. Most data entities have required properties
-         * within the "default" category. Example: {@code {"properties": { "default": { "key1":
-         * "value1"}}}}
+         * A map of maps that contains the properties which are specific to the entity type. Each entity type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * data entities have required properties within the "default" category.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -314,7 +317,9 @@ public final class LineageObject extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -323,167 +328,174 @@ public final class LineageObject extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Key of the object, such as an entity, about which this lineage applies. */
+    /**
+     * Key of the object, such as an entity, about which this lineage applies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectKey")
     private final String objectKey;
 
     /**
      * Key of the object, such as an entity, about which this lineage applies.
-     *
      * @return the value
-     */
+     **/
     public String getObjectKey() {
         return objectKey;
     }
 
-    /** Display name of the object. */
+    /**
+     * Display name of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the object.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Detailed description of the object. */
+    /**
+     * Detailed description of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Indicates if intra-lineage is available for this given object. If yes, drill-down can be
-     * requested for this object.
-     */
+     * Indicates if intra-lineage is available for this given object. If yes, drill-down can be requested for
+     * this object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntraLineageAvailable")
     private final Boolean isIntraLineageAvailable;
 
     /**
-     * Indicates if intra-lineage is available for this given object. If yes, drill-down can be
-     * requested for this object.
+     * Indicates if intra-lineage is available for this given object. If yes, drill-down can be requested for
+     * this object.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIntraLineageAvailable() {
         return isIntraLineageAvailable;
     }
 
-    /** Key of the parent object for this object. */
+    /**
+     * Key of the parent object for this object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentKey")
     private final String parentKey;
 
     /**
      * Key of the parent object for this object.
-     *
      * @return the value
-     */
+     **/
     public String getParentKey() {
         return parentKey;
     }
 
-    /** Full path of the parent object. */
+    /**
+     * Full path of the parent object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentPath")
     private final String parentPath;
 
     /**
      * Full path of the parent object.
-     *
      * @return the value
-     */
+     **/
     public String getParentPath() {
         return parentPath;
     }
 
     /**
-     * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     */
+     * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * The time that this object was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     */
+     * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * The time that this object was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Type name of the object. Type keys can be found via the '/types' endpoint. */
+    /**
+     * Type name of the object. Type keys can be found via the '/types' endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeName")
     private final String typeName;
 
     /**
      * Type name of the object. Type keys can be found via the '/types' endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getTypeName() {
         return typeName;
     }
 
-    /** Type key of the object. Type keys can be found via the '/types' endpoint. */
+    /**
+     * Type key of the object. Type keys can be found via the '/types' endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     private final String typeKey;
 
     /**
      * Type key of the object. Type keys can be found via the '/types' endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getTypeKey() {
         return typeKey;
     }
 
     /**
-     * A map of maps that contains the properties which are specific to the entity type. Each entity
-     * type definition defines it's set of required and optional properties. The map keys are
-     * category names and the values are maps of property name to property value. Every property is
-     * contained inside of a category. Most data entities have required properties within the
-     * "default" category. Example: {@code {"properties": { "default": { "key1": "value1"}}}}
-     */
+     * A map of maps that contains the properties which are specific to the entity type. Each entity type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * data entities have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
     /**
-     * A map of maps that contains the properties which are specific to the entity type. Each entity
-     * type definition defines it's set of required and optional properties. The map keys are
-     * category names and the values are maps of property name to property value. Every property is
-     * contained inside of a category. Most data entities have required properties within the
-     * "default" category. Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     * A map of maps that contains the properties which are specific to the entity type. Each entity type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * data entities have required properties within the "default" category.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }
@@ -495,7 +507,6 @@ public final class LineageObject extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

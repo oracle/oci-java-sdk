@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The documents details for health entities detect call. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The documents details for health entities detect call.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BatchDetectHealthEntityDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BatchDetectHealthEntityDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BatchDetectHealthEntityDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "alias",
@@ -53,94 +52,96 @@ public final class BatchDetectHealthEntityDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique name across user tenancy in a region to identify an endpoint to be used for
-         * inferencing.
-         */
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
-         * Unique name across user tenancy in a region to identify an endpoint to be used for
-         * inferencing.
-         *
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
          * @param alias the value to set
          * @return this builder
-         */
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-        /** The endpoint which have to be used for inferencing. */
+        /**
+         * The endpoint which have to be used for inferencing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
 
         /**
          * The endpoint which have to be used for inferencing.
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
             return this;
         }
-        /** List of Documents for detect health entities. */
+        /**
+         * List of Documents for detect health entities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<TextDocument> documents;
 
         /**
          * List of Documents for detect health entities.
-         *
          * @param documents the value to set
          * @return this builder
-         */
+         **/
         public Builder documents(java.util.List<TextDocument> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
         }
-        /** List of NLP health ontologies to be linked */
+        /**
+         * List of NLP health ontologies to be linked
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkOntologies")
         private java.util.List<String> linkOntologies;
 
         /**
          * List of NLP health ontologies to be linked
-         *
          * @param linkOntologies the value to set
          * @return this builder
-         */
+         **/
         public Builder linkOntologies(java.util.List<String> linkOntologies) {
             this.linkOntologies = linkOntologies;
             this.__explicitlySet__.add("linkOntologies");
             return this;
         }
-        /** is assertion on input text required. default value true. */
+        /**
+         * is assertion on input text required. default value true.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDetectAssertions")
         private Boolean isDetectAssertions;
 
         /**
          * is assertion on input text required. default value true.
-         *
          * @param isDetectAssertions the value to set
          * @return this builder
-         */
+         **/
         public Builder isDetectAssertions(Boolean isDetectAssertions) {
             this.isDetectAssertions = isDetectAssertions;
             this.__explicitlySet__.add("isDetectAssertions");
             return this;
         }
-        /** is relationship on input text required. default value true. */
+        /**
+         * is relationship on input text required. default value true.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDetectRelationships")
         private Boolean isDetectRelationships;
 
         /**
          * is relationship on input text required. default value true.
-         *
          * @param isDetectRelationships the value to set
          * @return this builder
-         */
+         **/
         public Builder isDetectRelationships(Boolean isDetectRelationships) {
             this.isDetectRelationships = isDetectRelationships;
             this.__explicitlySet__.add("isDetectRelationships");
@@ -202,7 +203,9 @@ public final class BatchDetectHealthEntityDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -212,83 +215,85 @@ public final class BatchDetectHealthEntityDetails
     }
 
     /**
-     * Unique name across user tenancy in a region to identify an endpoint to be used for
-     * inferencing.
-     */
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
-     * Unique name across user tenancy in a region to identify an endpoint to be used for
-     * inferencing.
-     *
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
      * @return the value
-     */
+     **/
     public String getAlias() {
         return alias;
     }
 
-    /** The endpoint which have to be used for inferencing. */
+    /**
+     * The endpoint which have to be used for inferencing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final String endpointId;
 
     /**
      * The endpoint which have to be used for inferencing.
-     *
      * @return the value
-     */
+     **/
     public String getEndpointId() {
         return endpointId;
     }
 
-    /** List of Documents for detect health entities. */
+    /**
+     * List of Documents for detect health entities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<TextDocument> documents;
 
     /**
      * List of Documents for detect health entities.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TextDocument> getDocuments() {
         return documents;
     }
 
-    /** List of NLP health ontologies to be linked */
+    /**
+     * List of NLP health ontologies to be linked
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkOntologies")
     private final java.util.List<String> linkOntologies;
 
     /**
      * List of NLP health ontologies to be linked
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLinkOntologies() {
         return linkOntologies;
     }
 
-    /** is assertion on input text required. default value true. */
+    /**
+     * is assertion on input text required. default value true.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDetectAssertions")
     private final Boolean isDetectAssertions;
 
     /**
      * is assertion on input text required. default value true.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDetectAssertions() {
         return isDetectAssertions;
     }
 
-    /** is relationship on input text required. default value true. */
+    /**
+     * is relationship on input text required. default value true.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDetectRelationships")
     private final Boolean isDetectRelationships;
 
     /**
      * is relationship on input text required. default value true.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDetectRelationships() {
         return isDetectRelationships;
     }
@@ -307,7 +312,6 @@ public final class BatchDetectHealthEntityDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to update a the Amazon Kinesis Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information to update a the Amazon Kinesis Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateAmazonKinesisConnectionDetails.Builder.class)
+    builder = UpdateAmazonKinesisConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -117,7 +118,10 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** Access key ID to access the Amazon Kinesis. */
+        /**
+         * Access key ID to access the Amazon Kinesis.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
@@ -126,47 +130,47 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
          *
          * @param accessKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder accessKeyId(String accessKeyId) {
             this.accessKeyId = accessKeyId;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
         /**
-         * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
-         * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
-         */
+         * Secret access key to access the Amazon Kinesis.
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private String secretAccessKey;
 
         /**
-         * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
-         * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+         * Secret access key to access the Amazon Kinesis.
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
          *
          * @param secretAccessKey the value to set
          * @return this builder
-         */
+         **/
         public Builder secretAccessKey(String secretAccessKey) {
             this.secretAccessKey = secretAccessKey;
             this.__explicitlySet__.add("secretAccessKey");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
         private String secretAccessKeySecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
          *
          * @param secretAccessKeySecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
             this.secretAccessKeySecretId = secretAccessKeySecretId;
             this.__explicitlySet__.add("secretAccessKeySecretId");
@@ -243,7 +247,9 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -283,7 +289,10 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
         this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
-    /** Access key ID to access the Amazon Kinesis. */
+    /**
+     * Access key ID to access the Amazon Kinesis.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
@@ -291,43 +300,43 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
      * Access key ID to access the Amazon Kinesis.
      *
      * @return the value
-     */
+     **/
     public String getAccessKeyId() {
         return accessKeyId;
     }
 
     /**
-     * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
-     * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
-     */
+     * Secret access key to access the Amazon Kinesis.
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final String secretAccessKey;
 
     /**
-     * Secret access key to access the Amazon Kinesis. Deprecated: This field is deprecated and
-     * replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
+     * Secret access key to access the Amazon Kinesis.
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getSecretAccessKey() {
         return secretAccessKey;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
     private final String secretAccessKeySecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSecretAccessKeySecretId() {
         return secretAccessKeySecretId;
     }
@@ -339,7 +348,6 @@ public final class UpdateAmazonKinesisConnectionDetails extends UpdateConnection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,12 +4,14 @@
  */
 package com.oracle.bmc.encryption;
 
-import com.oracle.bmc.encryption.internal.EncryptionHeader;
-
-import java.io.IOException;
 import java.util.Map;
 
-/** OciCryptoResult holds the encryption/decryption output. */
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.oracle.bmc.encryption.internal.EncryptionHeader;
+
+/**
+ * OciCryptoResult holds the encryption/decryption output.
+ */
 public class OciCryptoResult {
     private final EncryptionHeader header;
     private final byte[] result;
@@ -20,21 +22,20 @@ public class OciCryptoResult {
     }
 
     /**
-     * Get the encryption context. It can be used to verify the Additional Authenticated Data.
-     *
+     * Get the encryption context.
+     * It can be used to verify the Additional Authenticated Data.
      * @return Map of strings.
      */
     public Map<String, String> getContext() {
         try {
             return header.getContext();
-        } catch (IOException e) {
+        } catch (JsonProcessingException e) {
             throw new IllegalStateException(e);
         }
     }
 
     /**
      * Returns the encrypted or decrypted bytes associated with this OciCryptoResult.
-     *
      * @return bytes array
      */
     public byte[] getResult() {

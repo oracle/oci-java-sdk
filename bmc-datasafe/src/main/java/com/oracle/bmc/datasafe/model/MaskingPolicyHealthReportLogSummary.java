@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A log entry related to the pre-masking health check. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A log entry related to the pre-masking health check.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaskingPolicyHealthReportLogSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaskingPolicyHealthReportLogSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaskingPolicyHealthReportLogSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "messageType",
@@ -49,129 +48,125 @@ public final class MaskingPolicyHealthReportLogSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The log entry type. */
+        /**
+         * The log entry type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageType")
         private MessageType messageType;
 
         /**
          * The log entry type.
-         *
          * @param messageType the value to set
          * @return this builder
-         */
+         **/
         public Builder messageType(MessageType messageType) {
             this.messageType = messageType;
             this.__explicitlySet__.add("messageType");
             return this;
         }
         /**
-         * The date and time the log entry was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
-         * The date and time the log entry was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** A human-readable log entry. */
+        /**
+         * A human-readable log entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A human-readable log entry.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** A human-readable log entry to remedy any error or warnings in the masking policy. */
+        /**
+         * A human-readable log entry to remedy any error or warnings in the masking policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remediation")
         private String remediation;
 
         /**
          * A human-readable log entry to remedy any error or warnings in the masking policy.
-         *
          * @param remediation the value to set
          * @return this builder
-         */
+         **/
         public Builder remediation(String remediation) {
             this.remediation = remediation;
             this.__explicitlySet__.add("remediation");
             return this;
         }
-        /** A human-readable description for the log entry. */
+        /**
+         * A human-readable description for the log entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A human-readable description for the log entry.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * An enum type entry for each health check in the masking policy. Each enum describes a
-         * type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in
-         * the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege
-         * to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP
-         * tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
-         * triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for
-         * the undo tablespace. If it's not enabled, it further checks if the undo tablespace has
-         * any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table
-         * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK
-         * checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database
-         * (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database
-         * Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC
-         * ENCRYPTION as masking format has average column size greater than 27 or not.
-         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
-         * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
-         * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
-         * are available in the target database.
-         */
+         * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+         * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+         * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+         * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+         * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+         * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+         * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+         * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+         * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+         * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+         * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+         * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
         private HealthCheckType healthCheckType;
 
         /**
-         * An enum type entry for each health check in the masking policy. Each enum describes a
-         * type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in
-         * the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege
-         * to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP
-         * tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system
-         * triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for
-         * the undo tablespace. If it's not enabled, it further checks if the undo tablespace has
-         * any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table
-         * is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK
-         * checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database
-         * (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database
-         * Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC
-         * ENCRYPTION as masking format has average column size greater than 27 or not.
-         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target
-         * database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has
-         * deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns
-         * are available in the target database.
+         * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+         * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+         * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+         * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
+         * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+         * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+         * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+         * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+         * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+         * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+         * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+         * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+         * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
          *
          * @param healthCheckType the value to set
          * @return this builder
-         */
+         **/
         public Builder healthCheckType(HealthCheckType healthCheckType) {
             this.healthCheckType = healthCheckType;
             this.__explicitlySet__.add("healthCheckType");
@@ -220,7 +215,9 @@ public final class MaskingPolicyHealthReportLogSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,15 +226,17 @@ public final class MaskingPolicyHealthReportLogSummary
         return new Builder().copy(this);
     }
 
-    /** The log entry type. */
-    public enum MessageType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The log entry type.
+     **/
+    public enum MessageType {
         Pass("PASS"),
         Warning("WARNING"),
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -276,95 +275,95 @@ public final class MaskingPolicyHealthReportLogSummary
             return UnknownEnumValue;
         }
     };
-    /** The log entry type. */
+    /**
+     * The log entry type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageType")
     private final MessageType messageType;
 
     /**
      * The log entry type.
-     *
      * @return the value
-     */
+     **/
     public MessageType getMessageType() {
         return messageType;
     }
 
     /**
-     * The date and time the log entry was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
-     * The date and time the log entry was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the log entry was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** A human-readable log entry. */
+    /**
+     * A human-readable log entry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A human-readable log entry.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** A human-readable log entry to remedy any error or warnings in the masking policy. */
+    /**
+     * A human-readable log entry to remedy any error or warnings in the masking policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remediation")
     private final String remediation;
 
     /**
      * A human-readable log entry to remedy any error or warnings in the masking policy.
-     *
      * @return the value
-     */
+     **/
     public String getRemediation() {
         return remediation;
     }
 
-    /** A human-readable description for the log entry. */
+    /**
+     * A human-readable description for the log entry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A human-readable description for the log entry.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * An enum type entry for each health check in the masking policy. Each enum describes a type of
-     * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
-     * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
      * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
-     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
-     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
-     * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
-     * is any active masking job running on the target database.
-     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
-     * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
-     */
-    public enum HealthCheckType implements com.oracle.bmc.http.internal.BmcEnum {
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     *
+     **/
+    public enum HealthCheckType {
         InvalidObjectCheck("INVALID_OBJECT_CHECK"),
         PrivilegeCheck("PRIVILEGE_CHECK"),
         TablespaceCheck("TABLESPACE_CHECK"),
@@ -382,8 +381,8 @@ public final class MaskingPolicyHealthReportLogSummary
         ColumnExistCheck("COLUMN_EXIST_CHECK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -423,48 +422,41 @@ public final class MaskingPolicyHealthReportLogSummary
         }
     };
     /**
-     * An enum type entry for each health check in the masking policy. Each enum describes a type of
-     * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
-     * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
      * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
-     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
-     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
-     * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
-     * is any active masking job running on the target database.
-     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
-     * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
-     */
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckType")
     private final HealthCheckType healthCheckType;
 
     /**
-     * An enum type entry for each health check in the masking policy. Each enum describes a type of
-     * health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking
-     * tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
+     * An enum type entry for each health check in the masking policy. Each enum describes a type of health check.
+     * INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables.
+     * PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking.
      * TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace.
-     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers
-     * available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo
-     * tablespace. If it's not enabled, it further checks if the undo tablespace has any space
-     * remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or
-     * not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking
-     * tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction
-     * policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
-     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking
-     * format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there
-     * is any active masking job running on the target database.
-     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic
-     * encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in
-     * the target database.
+     * DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available.
+     * UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining
+     * STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not.
+     * OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled.
+     * DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled
+     * DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not.
+     * ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database.
+     * DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format.
+     * COLUMN_EXIST_CHECK checks if the masking columns are available in the target database.
      *
      * @return the value
-     */
+     **/
     public HealthCheckType getHealthCheckType() {
         return healthCheckType;
     }
@@ -476,7 +468,6 @@ public final class MaskingPolicyHealthReportLogSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -7,9 +7,14 @@ package com.oracle.bmc.waiter;
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 import java.util.concurrent.TimeUnit;
 
-/** Termination strategy that allows up to X milliseconds to have elapsed before terminating. */
+/**
+ * Termination strategy that allows up to X milliseconds to have elapsed
+ * before terminating.
+ */
 public class MaxTimeTerminationStrategy implements TerminationStrategy {
-    /** The max amount of time to wait (in millis) before returning. */
+    /**
+     * The max amount of time to wait (in millis) before returning.
+     */
     private final long maxTimeInMillis;
 
     @Override
@@ -20,9 +25,7 @@ public class MaxTimeTerminationStrategy implements TerminationStrategy {
     }
 
     /**
-     * Create a new termination strategy that allows up to the specified number of time units to
-     * have elapsed before terminating.
-     *
+     * Create a new termination strategy that allows up to the specified number of time units to have elapsed before terminating.
      * @param maxTime number of time units
      * @param timeUnit time unit
      * @return termination strategy
@@ -33,9 +36,7 @@ public class MaxTimeTerminationStrategy implements TerminationStrategy {
     }
 
     /**
-     * Create a new termination strategy that allows up to the specified number of milliseconds to
-     * have elapsed before terminating.
-     *
+     * Create a new termination strategy that allows up to the specified number of milliseconds to have elapsed before terminating.
      * @param maxTimeInMillis number of milliseconds
      * @return termination strategy
      */
@@ -44,9 +45,7 @@ public class MaxTimeTerminationStrategy implements TerminationStrategy {
     }
 
     /**
-     * Create a new termination strategy that allows up to the specified number of seconds to have
-     * elapsed before terminating.
-     *
+     * Create a new termination strategy that allows up to the specified number of seconds to have elapsed before terminating.
      * @param maxTimeInSeconds number of seconds
      * @return termination strategy
      */
@@ -55,9 +54,7 @@ public class MaxTimeTerminationStrategy implements TerminationStrategy {
     }
 
     /**
-     * Create a new termination strategy that allows up to the specified number of minutes to have
-     * elapsed before terminating.
-     *
+     * Create a new termination strategy that allows up to the specified number of minutes to have elapsed before terminating.
      * @param maxTimeInMinutes number of minutes
      * @return termination strategy
      */

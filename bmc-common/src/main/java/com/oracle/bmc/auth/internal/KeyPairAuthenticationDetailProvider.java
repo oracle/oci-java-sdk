@@ -14,18 +14,18 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Resource Principals V2 using public/private key to sign the request. This class provides the
- * authentication based on public/private key.
+ * Resource Principals V2 using public/private key to sign the request. This class provides the authentication based on
+ * public/private key.
  */
 public class KeyPairAuthenticationDetailProvider
         implements BasicAuthenticationDetailsProvider,
                 RefreshableOnNotAuthenticatedProvider<String> {
 
-    private final String resourceId;
-    private final InputStream privateKeyStream;
-    private final char[] passphrase;
-    private final String tenancyId;
-    private final String ociResourcePrincipalVersion;
+    final private String resourceId;
+    final private InputStream privateKeyStream;
+    final private char[] passphrase;
+    final private String tenancyId;
+    final private String ociResourcePrincipalVersion;
 
     /**
      * Constructor of KeyPairAuthenticationDetailProvider
@@ -98,8 +98,9 @@ public class KeyPairAuthenticationDetailProvider
     }
 
     /**
-     * Returns a new InputStream to the private key. This stream should be closed by the caller,
-     * implementations should return new streams each time.
+     * Returns a new InputStream to the private key. This stream should be
+     * closed by the caller, implementations should return new streams each
+     * time.
      *
      * @return A new InputStream.
      */
@@ -116,7 +117,7 @@ public class KeyPairAuthenticationDetailProvider
      * Returns the optional pass phrase for the (encrypted) private key.
      *
      * @return The pass phrase, or null if not applicable
-     * @deprecated Use getPassphraseCharacters instead
+     * deprecated Use getPassphraseCharacters instead
      */
     @Override
     public String getPassPhrase() {

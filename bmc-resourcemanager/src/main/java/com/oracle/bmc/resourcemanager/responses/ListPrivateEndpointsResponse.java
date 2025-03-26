@@ -6,9 +6,12 @@ package com.oracle.bmc.resourcemanager.responses;
 
 import com.oracle.bmc.resourcemanager.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Unique Oracle-assigned identifier for the request. */
+    /**
+     * Unique Oracle-assigned identifier for the request.
+     *
+     */
     private String opcRequestId;
 
     /**
@@ -21,22 +24,23 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Retrieves the next page of paginated list items. If the {@code opc-next-page} header appears
-     * in the response, additional pages of results remain. To receive the next page, include the
-     * header value in the {@code page} param. If the {@code opc-next-page} header does not appear
-     * in the response, there are no more list items to get. For more information about list
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+     * header appears in the response, additional pages of results remain.
+     * To receive the next page, include the header value in the {@code page} param.
+     * If the {@code opc-next-page} header does not appear in the response, there
+     * are no more list items to get. For more information about list pagination,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * Retrieves the next page of paginated list items. If the {@code opc-next-page} header appears
-     * in the response, additional pages of results remain. To receive the next page, include the
-     * header value in the {@code page} param. If the {@code opc-next-page} header does not appear
-     * in the response, there are no more list items to get. For more information about list
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+     * header appears in the response, additional pages of results remain.
+     * To receive the next page, include the header value in the {@code page} param.
+     * If the {@code opc-next-page} header does not appear in the response, there
+     * are no more list items to get. For more information about list pagination,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -44,13 +48,14 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned {@code PrivateEndpointCollection} instance. */
+    /**
+     * The returned PrivateEndpointCollection instance.
+     */
     private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
             privateEndpointCollection;
 
     /**
-     * The returned {@code PrivateEndpointCollection} instance.
-     *
+     * The returned PrivateEndpointCollection instance.
      * @return the value
      */
     public com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
@@ -67,7 +72,7 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListPrivateEndpointsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
@@ -78,25 +83,25 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         this.privateEndpointCollection = privateEndpointCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListPrivateEndpointsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Unique Oracle-assigned identifier for the request. */
+        /**
+         * Unique Oracle-assigned identifier for the request.
+         *
+         */
         private String opcRequestId;
 
         /**
@@ -111,22 +116,23 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Retrieves the next page of paginated list items. If the {@code opc-next-page} header
-         * appears in the response, additional pages of results remain. To receive the next page,
-         * include the header value in the {@code page} param. If the {@code opc-next-page} header
-         * does not appear in the response, there are no more list items to get. For more
-         * information about list pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+         * header appears in the response, additional pages of results remain.
+         * To receive the next page, include the header value in the {@code page} param.
+         * If the {@code opc-next-page} header does not appear in the response, there
+         * are no more list items to get. For more information about list pagination,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * Retrieves the next page of paginated list items. If the {@code opc-next-page} header
-         * appears in the response, additional pages of results remain. To receive the next page,
-         * include the header value in the {@code page} param. If the {@code opc-next-page} header
-         * does not appear in the response, there are no more list items to get. For more
-         * information about list pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Retrieves the next page of paginated list items. If the {@code opc-next-page}
+         * header appears in the response, additional pages of results remain.
+         * To receive the next page, include the header value in the {@code page} param.
+         * If the {@code opc-next-page} header does not appear in the response, there
+         * are no more list items to get. For more information about list pagination,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -136,13 +142,14 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code PrivateEndpointCollection} instance. */
+        /**
+         * The returned PrivateEndpointCollection instance.
+         */
         private com.oracle.bmc.resourcemanager.model.PrivateEndpointCollection
                 privateEndpointCollection;
 
         /**
-         * The returned {@code PrivateEndpointCollection} instance.
-         *
+         * The returned PrivateEndpointCollection instance.
          * @param privateEndpointCollection the value to set
          * @return this builder
          */
@@ -155,10 +162,8 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListPrivateEndpointsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -171,10 +176,8 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListPrivateEndpointsResponse build() {
             return new ListPrivateEndpointsResponse(
                     __httpStatusCode__,
@@ -187,7 +190,6 @@ public class ListPrivateEndpointsResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

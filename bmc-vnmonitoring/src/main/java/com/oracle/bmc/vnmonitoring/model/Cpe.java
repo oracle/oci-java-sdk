@@ -5,30 +5,28 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * An object you create when setting up a Site-to-Site VPN between your on-premises network and VCN.
- * The {@code Cpe} is a virtual representation of your customer-premises equipment, which is the
- * actual router on-premises at your site at your end of the Site-to-Site VPN IPSec connection. For
- * more information, see [Overview of the Networking
- * Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * An object you create when setting up a Site-to-Site VPN between your on-premises network
+ * and VCN. The {@code Cpe} is a virtual representation of your customer-premises equipment,
+ * which is the actual router on-premises at your site at your end of the Site-to-Site VPN IPSec connection.
+ * For more information,
+ * see [Overview of the Networking Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Cpe.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Cpe extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -66,19 +64,16 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the CPE.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the CPE.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -87,7 +82,8 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -97,7 +93,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -105,148 +101,147 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** The CPE's Oracle ID (OCID). */
+        /**
+         * The CPE's Oracle ID (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The CPE's Oracle ID (OCID).
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The public IP address of the on-premises router. */
+        /**
+         * The public IP address of the on-premises router.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The public IP address of the on-premises router.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * CPE's device type. The Networking service maintains a general list of CPE device types
-         * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that
-         * can help a network engineer configure the CPE. The
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
-         * identifies the type of device. To get the OCIDs for the device types on the list, see
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+         * The Networking service maintains a general list of CPE device types (for example,
+         * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
+         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+         * device. To get the OCIDs for the device types on the list, see
          * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+         * <p>
+         * For information about how to generate CPE configuration content for a
+         * CPE device type, see:
+         * <p>
+         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
          *
-         * <p>For information about how to generate CPE configuration content for a CPE device type,
-         * see:
-         *
-         * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
-         * getCpeDeviceConfigContent} * {@link
-         * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
-         * getIpsecCpeDeviceConfigContent} * {@link
-         * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
-         * getTunnelCpeDeviceConfigContent} * {@link
-         * #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
         private String cpeDeviceShapeId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * CPE's device type. The Networking service maintains a general list of CPE device types
-         * (for example, Cisco ASA). For each type, Oracle provides CPE configuration content that
-         * can help a network engineer configure the CPE. The
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
-         * identifies the type of device. To get the OCIDs for the device types on the list, see
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+         * The Networking service maintains a general list of CPE device types (for example,
+         * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
+         * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+         * device. To get the OCIDs for the device types on the list, see
          * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-         *
-         * <p>For information about how to generate CPE configuration content for a CPE device type,
-         * see:
-         *
-         * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
-         * getCpeDeviceConfigContent} * {@link
-         * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
-         * getIpsecCpeDeviceConfigContent} * {@link
-         * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
-         * getTunnelCpeDeviceConfigContent} * {@link
-         * #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
+         * <p>
+         * For information about how to generate CPE configuration content for a
+         * CPE device type, see:
+         * <p>
+         * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+         *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+         *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+         *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
          *
          * @param cpeDeviceShapeId the value to set
          * @return this builder
-         */
+         **/
         public Builder cpeDeviceShapeId(String cpeDeviceShapeId) {
             this.cpeDeviceShapeId = cpeDeviceShapeId;
             this.__explicitlySet__.add("cpeDeviceShapeId");
             return this;
         }
         /**
-         * The date and time the CPE was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the CPE was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Indicates whether this CPE is of type {@code private} or not. */
+        /**
+         * Indicates whether this CPE is of type {@code private} or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
         private Boolean isPrivate;
 
@@ -255,7 +250,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param isPrivate the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrivate(Boolean isPrivate) {
             this.isPrivate = isPrivate;
             this.__explicitlySet__.add("isPrivate");
@@ -316,7 +311,9 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -326,170 +323,167 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the CPE.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the CPE.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the CPE.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** The CPE's Oracle ID (OCID). */
+    /**
+     * The CPE's Oracle ID (OCID).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The CPE's Oracle ID (OCID).
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The public IP address of the on-premises router. */
+    /**
+     * The public IP address of the on-premises router.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The public IP address of the on-premises router.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * CPE's device type. The Networking service maintains a general list of CPE device types (for
-     * example, Cisco ASA). For each type, Oracle provides CPE configuration content that can help a
-     * network engineer configure the CPE. The
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
-     * identifies the type of device. To get the OCIDs for the device types on the list, see {@link
-     * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+     * The Networking service maintains a general list of CPE device types (for example,
+     * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
+     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+     * device. To get the OCIDs for the device types on the list, see
+     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+     * <p>
+     * For information about how to generate CPE configuration content for a
+     * CPE device type, see:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
      *
-     * <p>For information about how to generate CPE configuration content for a CPE device type,
-     * see:
-     *
-     * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
-     * getCpeDeviceConfigContent} * {@link
-     * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
-     * getIpsecCpeDeviceConfigContent} * {@link
-     * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
-     * getTunnelCpeDeviceConfigContent} * {@link
-     * #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeDeviceShapeId")
     private final String cpeDeviceShapeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * CPE's device type. The Networking service maintains a general list of CPE device types (for
-     * example, Cisco ASA). For each type, Oracle provides CPE configuration content that can help a
-     * network engineer configure the CPE. The
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely
-     * identifies the type of device. To get the OCIDs for the device types on the list, see {@link
-     * #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
-     *
-     * <p>For information about how to generate CPE configuration content for a CPE device type,
-     * see:
-     *
-     * <p>{@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest)
-     * getCpeDeviceConfigContent} * {@link
-     * #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest)
-     * getIpsecCpeDeviceConfigContent} * {@link
-     * #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest)
-     * getTunnelCpeDeviceConfigContent} * {@link
-     * #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the CPE's device type.
+     * The Networking service maintains a general list of CPE device types (for example,
+     * Cisco ASA). For each type, Oracle provides CPE configuration content that can help
+     * a network engineer configure the CPE. The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) uniquely identifies the type of
+     * device. To get the OCIDs for the device types on the list, see
+     * {@link #listCpeDeviceShapes(ListCpeDeviceShapesRequest) listCpeDeviceShapes}.
+     * <p>
+     * For information about how to generate CPE configuration content for a
+     * CPE device type, see:
+     * <p>
+     * {@link #getCpeDeviceConfigContent(GetCpeDeviceConfigContentRequest) getCpeDeviceConfigContent}
+     *   * {@link #getIpsecCpeDeviceConfigContent(GetIpsecCpeDeviceConfigContentRequest) getIpsecCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfigContent(GetTunnelCpeDeviceConfigContentRequest) getTunnelCpeDeviceConfigContent}
+     *   * {@link #getTunnelCpeDeviceConfig(GetTunnelCpeDeviceConfigRequest) getTunnelCpeDeviceConfig}
      *
      * @return the value
-     */
+     **/
     public String getCpeDeviceShapeId() {
         return cpeDeviceShapeId;
     }
 
     /**
-     * The date and time the CPE was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the CPE was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the CPE was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Indicates whether this CPE is of type {@code private} or not. */
+    /**
+     * Indicates whether this CPE is of type {@code private} or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivate")
     private final Boolean isPrivate;
 
@@ -497,7 +491,7 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * Indicates whether this CPE is of type {@code private} or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPrivate() {
         return isPrivate;
     }
@@ -509,7 +503,6 @@ public final class Cpe extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

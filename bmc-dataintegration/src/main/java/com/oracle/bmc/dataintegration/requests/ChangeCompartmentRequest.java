@@ -6,73 +6,79 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ChangeCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ChangeCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails> {
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     private String workspaceId;
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /** The information needed to move a workspace to a specified compartment. */
+    /**
+     * The information needed to move a workspace to a specified compartment.
+     */
     private com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails changeCompartmentDetails;
 
-    /** The information needed to move a workspace to a specified compartment. */
+    /**
+     * The information needed to move a workspace to a specified compartment.
+     */
     public com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails
             getChangeCompartmentDetails() {
         return changeCompartmentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
-     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
-     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
-     * does not exactly match the 'etag' of the resource on the server, the request fails with the
-     * 412 response code.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the {@code etag} from a previous GET or POST response for
-     * that resource. The resource will be updated or deleted only if the {@code etag} you provide
-     * matches the resource's current {@code etag} value. When 'if-match' is provided and its value
-     * does not exactly match the 'etag' of the resource on the server, the request fails with the
-     * 412 response code.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+     * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -80,7 +86,6 @@ public class ChangeCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -93,15 +98,17 @@ public class ChangeCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeCompartmentRequest,
                     com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The workspace ID. */
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
-         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -110,13 +117,14 @@ public class ChangeCompartmentRequest
             return this;
         }
 
-        /** The information needed to move a workspace to a specified compartment. */
+        /**
+         * The information needed to move a workspace to a specified compartment.
+         */
         private com.oracle.bmc.dataintegration.model.ChangeCompartmentDetails
                 changeCompartmentDetails = null;
 
         /**
          * The information needed to move a workspace to a specified compartment.
-         *
          * @param changeCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -128,22 +136,17 @@ public class ChangeCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
-         * response for that resource. The resource will be updated or deleted only if the {@code
-         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
-         * provided and its value does not exactly match the 'etag' of the resource on the server,
-         * the request fails with the 412 response code.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST
-         * response for that resource. The resource will be updated or deleted only if the {@code
-         * etag} you provide matches the resource's current {@code etag} value. When 'if-match' is
-         * provided and its value does not exactly match the 'etag' of the resource on the server,
-         * the request fails with the 412 response code.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the {@code etag} from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the {@code etag} you provide matches the resource's current {@code etag} value.
+         * When 'if-match' is provided and its value does not exactly match the 'etag' of the resource on the server, the request fails with the 412 response code.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -154,14 +157,17 @@ public class ChangeCompartmentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -172,14 +178,13 @@ public class ChangeCompartmentRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -191,19 +196,18 @@ public class ChangeCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -215,7 +219,6 @@ public class ChangeCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeCompartmentRequest o) {
@@ -232,11 +235,10 @@ public class ChangeCompartmentRequest
         /**
          * Build the instance of ChangeCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeCompartmentRequest
          */
@@ -249,7 +251,6 @@ public class ChangeCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -262,8 +263,7 @@ public class ChangeCompartmentRequest
         /**
          * Build the instance of ChangeCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeCompartmentRequest
@@ -276,14 +276,12 @@ public class ChangeCompartmentRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeCompartmentRequest(workspaceId, changeCompartmentDetails, ifMatch,
-            // opcRequestId, opcRetryToken);
+            // new ChangeCompartmentRequest(workspaceId, changeCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -297,7 +295,6 @@ public class ChangeCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

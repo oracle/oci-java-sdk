@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details required to fetch the Sql tuning set details. It takes either credentialDetails or
- * databaseCredential. It's recommended to provide databaseCredential <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details required to fetch the Sql tuning set details.
+ * It takes either credentialDetails or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FetchSqlTuningSetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FetchSqlTuningSetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FetchSqlTuningSetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "credentialDetails",
@@ -83,160 +83,161 @@ public final class FetchSqlTuningSetDetails
             this.__explicitlySet__.add("databaseCredential");
             return this;
         }
-        /** The owner of the Sql tuning set. */
+        /**
+         * The owner of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the Sql tuning set.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The name of the Sql tuning set. */
+        /**
+         * The name of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Sql tuning set.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
-         * attributes of the SQLSET_ROW. User could use any combination of the following columns
-         * with appropriate values as Sql predicate Refer to the documentation
-         * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
-         */
+         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+         * User could use any combination of the following columns with appropriate values as Sql predicate
+         * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("basicFilter")
         private String basicFilter;
 
         /**
-         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on
-         * attributes of the SQLSET_ROW. User could use any combination of the following columns
-         * with appropriate values as Sql predicate Refer to the documentation
-         * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+         * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+         * User could use any combination of the following columns with appropriate values as Sql predicate
+         * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
          *
          * @param basicFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder basicFilter(String basicFilter) {
             this.basicFilter = basicFilter;
             this.__explicitlySet__.add("basicFilter");
             return this;
         }
-        /** Specifies that the filter must include recursive Sql in the Sql tuning set. */
+        /**
+         * Specifies that the filter must include recursive Sql in the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recursiveSql")
         private RecursiveSql recursiveSql;
 
         /**
          * Specifies that the filter must include recursive Sql in the Sql tuning set.
-         *
          * @param recursiveSql the value to set
          * @return this builder
-         */
+         **/
         public Builder recursiveSql(RecursiveSql recursiveSql) {
             this.recursiveSql = recursiveSql;
             this.__explicitlySet__.add("recursiveSql");
             return this;
         }
         /**
-         * Specifies a filter that picks the top n% according to the supplied ranking measure. Note
-         * that this parameter applies only if one ranking measure is supplied.
-         */
+         * Specifies a filter that picks the top n% according to the supplied ranking measure.
+         * Note that this parameter applies only if one ranking measure is supplied.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultPercentage")
         private Double resultPercentage;
 
         /**
-         * Specifies a filter that picks the top n% according to the supplied ranking measure. Note
-         * that this parameter applies only if one ranking measure is supplied.
+         * Specifies a filter that picks the top n% according to the supplied ranking measure.
+         * Note that this parameter applies only if one ranking measure is supplied.
          *
          * @param resultPercentage the value to set
          * @return this builder
-         */
+         **/
         public Builder resultPercentage(Double resultPercentage) {
             this.resultPercentage = resultPercentage;
             this.__explicitlySet__.add("resultPercentage");
             return this;
         }
-        /** The top limit Sql from the filtered source, ranked by the ranking measure. */
+        /**
+         * The top limit Sql from the filtered source, ranked by the ranking measure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultLimit")
         private Integer resultLimit;
 
         /**
          * The top limit Sql from the filtered source, ranked by the ranking measure.
-         *
          * @param resultLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder resultLimit(Integer resultLimit) {
             this.resultLimit = resultLimit;
             this.__explicitlySet__.add("resultLimit");
             return this;
         }
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
-         */
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure1")
         private RankingMeasure rankingMeasure1;
 
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
          *
          * @param rankingMeasure1 the value to set
          * @return this builder
-         */
+         **/
         public Builder rankingMeasure1(RankingMeasure rankingMeasure1) {
             this.rankingMeasure1 = rankingMeasure1;
             this.__explicitlySet__.add("rankingMeasure1");
             return this;
         }
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
-         */
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure2")
         private RankingMeasure rankingMeasure2;
 
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
          *
          * @param rankingMeasure2 the value to set
          * @return this builder
-         */
+         **/
         public Builder rankingMeasure2(RankingMeasure rankingMeasure2) {
             this.rankingMeasure2 = rankingMeasure2;
             this.__explicitlySet__.add("rankingMeasure2");
             return this;
         }
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
-         */
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure3")
         private RankingMeasure rankingMeasure3;
 
         /**
-         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-         * measures.
+         * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
          *
          * @param rankingMeasure3 the value to set
          * @return this builder
-         */
+         **/
         public Builder rankingMeasure3(RankingMeasure rankingMeasure3) {
             this.rankingMeasure3 = rankingMeasure3;
             this.__explicitlySet__.add("rankingMeasure3");
@@ -305,7 +306,9 @@ public final class FetchSqlTuningSetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -328,55 +331,58 @@ public final class FetchSqlTuningSetDetails
         return databaseCredential;
     }
 
-    /** The owner of the Sql tuning set. */
+    /**
+     * The owner of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The name of the Sql tuning set. */
+    /**
+     * The name of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes
-     * of the SQLSET_ROW. User could use any combination of the following columns with appropriate
-     * values as Sql predicate Refer to the documentation
-     * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
-     */
+     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+     * User could use any combination of the following columns with appropriate values as Sql predicate
+     * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("basicFilter")
     private final String basicFilter;
 
     /**
-     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes
-     * of the SQLSET_ROW. User could use any combination of the following columns with appropriate
-     * values as Sql predicate Refer to the documentation
-     * https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
+     * Specifies the Sql predicate to filter the Sql from the Sql tuning set defined on attributes of the SQLSET_ROW.
+     * User could use any combination of the following columns with appropriate values as Sql predicate
+     * Refer to the documentation https://docs.oracle.com/en/database/oracle/oracle-database/18/arpls/DBMS_SQLTUNE.html#GUID-1F4AFB03-7B29-46FC-B3F2-CB01EC36326C
      *
      * @return the value
-     */
+     **/
     public String getBasicFilter() {
         return basicFilter;
     }
 
-    /** Specifies that the filter must include recursive Sql in the Sql tuning set. */
-    public enum RecursiveSql implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies that the filter must include recursive Sql in the Sql tuning set.
+     **/
+    public enum RecursiveSql {
         HasRecursiveSql("HAS_RECURSIVE_SQL"),
         NoRecursiveSql("NO_RECURSIVE_SQL"),
         ;
@@ -408,96 +414,96 @@ public final class FetchSqlTuningSetDetails
             throw new IllegalArgumentException("Invalid RecursiveSql: " + key);
         }
     };
-    /** Specifies that the filter must include recursive Sql in the Sql tuning set. */
+    /**
+     * Specifies that the filter must include recursive Sql in the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recursiveSql")
     private final RecursiveSql recursiveSql;
 
     /**
      * Specifies that the filter must include recursive Sql in the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public RecursiveSql getRecursiveSql() {
         return recursiveSql;
     }
 
     /**
-     * Specifies a filter that picks the top n% according to the supplied ranking measure. Note that
-     * this parameter applies only if one ranking measure is supplied.
-     */
+     * Specifies a filter that picks the top n% according to the supplied ranking measure.
+     * Note that this parameter applies only if one ranking measure is supplied.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultPercentage")
     private final Double resultPercentage;
 
     /**
-     * Specifies a filter that picks the top n% according to the supplied ranking measure. Note that
-     * this parameter applies only if one ranking measure is supplied.
+     * Specifies a filter that picks the top n% according to the supplied ranking measure.
+     * Note that this parameter applies only if one ranking measure is supplied.
      *
      * @return the value
-     */
+     **/
     public Double getResultPercentage() {
         return resultPercentage;
     }
 
-    /** The top limit Sql from the filtered source, ranked by the ranking measure. */
+    /**
+     * The top limit Sql from the filtered source, ranked by the ranking measure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultLimit")
     private final Integer resultLimit;
 
     /**
      * The top limit Sql from the filtered source, ranked by the ranking measure.
-     *
      * @return the value
-     */
+     **/
     public Integer getResultLimit() {
         return resultLimit;
     }
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
-     */
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure1")
     private final RankingMeasure rankingMeasure1;
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
      *
      * @return the value
-     */
+     **/
     public RankingMeasure getRankingMeasure1() {
         return rankingMeasure1;
     }
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
-     */
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure2")
     private final RankingMeasure rankingMeasure2;
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
      *
      * @return the value
-     */
+     **/
     public RankingMeasure getRankingMeasure2() {
         return rankingMeasure2;
     }
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
-     */
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rankingMeasure3")
     private final RankingMeasure rankingMeasure3;
 
     /**
-     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking
-     * measures.
+     * Specifies an ORDER BY clause on the selected Sql. User can specify upto three ranking measures.
      *
      * @return the value
-     */
+     **/
     public RankingMeasure getRankingMeasure3() {
         return rankingMeasure3;
     }
@@ -509,7 +515,6 @@ public final class FetchSqlTuningSetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

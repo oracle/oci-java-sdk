@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The Data Guard performance metric details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The Data Guard performance metric details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PerformanceMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PerformanceMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PerformanceMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PerformanceMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "dimensions", "metadata", "datapoints"})
     public PerformanceMetrics(
@@ -38,65 +36,65 @@ public final class PerformanceMetrics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the metric. */
+        /**
+         * The name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the metric.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The dimensions of the Data Guard performance metrics, such as primary database ID,
-         * primary database unique name.
-         */
+         * The dimensions of the Data Guard performance metrics, such as primary database ID, primary database unique name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private Object dimensions;
 
         /**
-         * The dimensions of the Data Guard performance metrics, such as primary database ID,
-         * primary database unique name.
-         *
+         * The dimensions of the Data Guard performance metrics, such as primary database ID, primary database unique name.
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(Object dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** The metadata of the metric, such as Unit. */
+        /**
+         * The metadata of the metric, such as Unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private Object metadata;
 
         /**
          * The metadata of the metric, such as Unit.
-         *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(Object metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /** The aggregated datapoints of the metric. */
+        /**
+         * The aggregated datapoints of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
         private java.util.List<DataPoints> datapoints;
 
         /**
          * The aggregated datapoints of the metric.
-         *
          * @param datapoints the value to set
          * @return this builder
-         */
+         **/
         public Builder datapoints(java.util.List<DataPoints> datapoints) {
             this.datapoints = datapoints;
             this.__explicitlySet__.add("datapoints");
@@ -134,7 +132,9 @@ public final class PerformanceMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,58 +143,58 @@ public final class PerformanceMetrics
         return new Builder().copy(this);
     }
 
-    /** The name of the metric. */
+    /**
+     * The name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The dimensions of the Data Guard performance metrics, such as primary database ID, primary
-     * database unique name.
-     */
+     * The dimensions of the Data Guard performance metrics, such as primary database ID, primary database unique name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final Object dimensions;
 
     /**
-     * The dimensions of the Data Guard performance metrics, such as primary database ID, primary
-     * database unique name.
-     *
+     * The dimensions of the Data Guard performance metrics, such as primary database ID, primary database unique name.
      * @return the value
-     */
+     **/
     public Object getDimensions() {
         return dimensions;
     }
 
-    /** The metadata of the metric, such as Unit. */
+    /**
+     * The metadata of the metric, such as Unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final Object metadata;
 
     /**
      * The metadata of the metric, such as Unit.
-     *
      * @return the value
-     */
+     **/
     public Object getMetadata() {
         return metadata;
     }
 
-    /** The aggregated datapoints of the metric. */
+    /**
+     * The aggregated datapoints of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("datapoints")
     private final java.util.List<DataPoints> datapoints;
 
     /**
      * The aggregated datapoints of the metric.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DataPoints> getDatapoints() {
         return datapoints;
     }
@@ -206,7 +206,6 @@ public final class PerformanceMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

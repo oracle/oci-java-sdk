@@ -43,32 +43,69 @@ import java.util.List;
 /**
  * Use Case: Bare Metal, VM or Exadata with Private IP
  *
- * <p>This example creates a Database Tools Connection to a VM DB System accessible by private IP.
- * Note, since this connection will be against a private IP address, a Database Tools Private
- * Endpoint Reverse Connection is required. This example serves as an academic exercise of the SDK.
+ * This example creates a Database Tools Connection to a VM DB System
+ * accessible by private IP. Note, since this connection will be against a
+ * private IP address, a Database Tools Private Endpoint Reverse Connection
+ * is required. This example serves as an academic exercise of the SDK.
  *
- * <p>Note: this example also uses custom "wait" functions that wait for asynchronous state changes
- * to complete. This serves as an example in cases where you might want to do something besides
- * block for a waiter to return control.
+ * Note: this example also uses custom "wait" functions that wait for
+ * asynchronous state changes to complete. This serves as an example in
+ * cases where you might want to do something besides block for a waiter
+ * to return control.
  *
- * <p>Prerequisites: - An existing VM DB System in a VCN and associated subnet - Available capacity
- * (limits apply) to create a new Private Endpoint - An existing Vault for storage of secrets - A
- * previously configured .oci/config file with a [DEFAULT] section
+ * Prerequisites:
+ *  - An existing VM DB System in a VCN and associated subnet
+ *  - Available capacity (limits apply) to create a new Private Endpoint
+ *  - An existing Vault for storage of secrets
+ *  - A previously configured .oci/config file with a [DEFAULT] section
  *
- * <p>High-level Steps: 1- Create required secrets 2- Create a Database Tools Private Endpoint for A
- * Reverse Connection to the VM DB System 3- Create a Database Tools connection 4- Validate the
- * connection
+ * High-level Steps:
+ *  1- Create required secrets
+ *  2- Create a Database Tools Private Endpoint for A Reverse Connection to the VM DB System
+ *  3- Create a Database Tools connection
+ *  4- Validate the connection
  *
- * <p>... cleanup when done (delete the temporary secret, connection, and PE)
+ *  ... cleanup when done (delete the temporary secret, connection, and PE)
  *
- * <p>Client | | +----------------------+----------+ | V | | +----------------+ | | | Database Tools
- * | | | | Service | | | +----------------+ | | | | | Database | | | Tools | | | VCN | |
- * +----------------------+----------+ | | +----------------------+----------+ | | | | V | |
- * +-----------+ | | | Database | | | | Tools | | | | Private | | | | Endpoint | | | | Reverse | | |
- * | Connection| | | +-----------+ | | | | | V | | --------- | | / DB \ | | \ System / | | ---------
- * | | | | Customer | | VCN | +---------------------------------+
+ *                       Client
+ *                         |
+ *                         |
+ *  +----------------------+----------+
+ *  |                      V          |
+ *  |              +----------------+ |
+ *  |              | Database Tools | |
+ *  |              |    Service     | |
+ *  |              +----------------+ |
+ *  |                      |          |
+ *  | Database             |          |
+ *  | Tools                |          |
+ *  | VCN                  |          |
+ *  +----------------------+----------+
+ *                         |
+ *                         |
+ *  +----------------------+----------+
+ *  |                      |          |
+ *  |                      V          |
+ *  |                +-----------+    |
+ *  |                | Database  |    |
+ *  |                |  Tools    |    |
+ *  |                | Private   |    |
+ *  |                | Endpoint  |    |
+ *  |                |  Reverse  |    |
+ *  |                | Connection|    |
+ *  |                +-----------+    |
+ *  |                      |          |
+ *  |                      V          |
+ *  |                  ---------      |
+ *  |                 /    DB   \     |
+ *  |                 \  System /     |
+ *  |                  ---------      |
+ *  |                                 |
+ *  | Customer                        |
+ *  | VCN                             |
+ *  +---------------------------------+
  *
- * <p>Note: We recommend that you activate the java assertion (-ea) when running this example.
+ *  Note: We recommend that you activate the java assertion (-ea) when running this example.
  */
 public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
@@ -99,17 +136,14 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the vcn, DB System, vault, private endpoint and
-     *           connection will reside
-     *       <li>The OCID of the DB System created following the instructions from:
-     *           https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm with
-     *           NSG for port 1521
-     *       <li>The OCID of a Vault created in KMS with at least one master key
-     *       <li>The Name of the User in the DB System, like system
-     *       <li>The Password of the User in the DB System
-     *       <li>The OCID of the Subnet of the DB System. Best practice is to use a private subnet.
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the compartment where the vcn, DB System, vault, private endpoint and connection will reside</li>
+     *   <li>The OCID of the DB System created following the instructions from: https://docs.oracle.com/en-us/iaas/Content/Database/Tasks/creatingDBsystem.htm with NSG for port 1521</li>
+     *   <li>The OCID of a Vault created in KMS with at least one master key</li>
+     *   <li>The Name of the User in the DB System, like system</li>
+     *   <li>The Password of the User in the DB System</li>
+     *   <li>The OCID of the Subnet of the DB System. Best practice is to use a private subnet.</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 6) {
@@ -130,10 +164,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
         dbPassword = args[4];
         subnetId = args[5];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
         provider = new ConfigFileAuthenticationDetailsProvider(ConfigFileReader.parseDefault());
 
@@ -152,8 +184,7 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
             // 1- Create secrets (database password) in the Vault
             createSecrets();
 
-            // 2- Create a Database Tools Private Endpoint for a Reverse Connection to the VM DB
-            // System
+            // 2- Create a Database Tools Private Endpoint for a Reverse Connection to the VM DB System
             createPrivateEndpoint();
 
             // 3- Create a Database Tools connection
@@ -181,7 +212,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Create a secret in a Vault
-     *
      * @param name Name of the Secret
      * @param base64Secret The content of the secret as a base 64 string
      * @return the OCID of the generated secret
@@ -200,7 +230,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
             System.out.println(
                     String.format(
                             "Vault %s management endpoint is %s",
-                            vaultId, vault.getManagementEndpoint()));
+                            vaultId,
+                            vault.getManagementEndpoint()));
             KmsManagementClient kmsManagementClient =
                     KmsManagementClient.builder().vault(vault).build(provider);
             // This will only work if the key is in the same compartment as the vault
@@ -244,7 +275,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Create secrets (database wallet and database password) in the Vault
-     *
      * @throws Exception
      */
     private static void createSecrets() throws Exception {
@@ -259,9 +289,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Create a Private Endpoint for a Reverse Connection. The Database Tools Private Endpoint will
-     * be created in the same compartment and subnet as the Autonomous Database. A best practice
-     * would be to use separate subnets with properly configured security lists.
-     *
+     * be created in the same compartment and subnet as the Autonomous Database.
+     * A best practice would be to use separate subnets with properly configured security lists.
      * @throws Exception
      */
     public static void createPrivateEndpoint() throws Exception {
@@ -297,7 +326,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
         System.out.println(
                 String.format(
                         "===Creating Private Endpoint %s using Work request: %s",
-                        displayName, createPrivateEndpointResponse.getOpcWorkRequestId()));
+                        displayName,
+                        createPrivateEndpointResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsPrivateEndpoint(peId, LifecycleState.Active);
@@ -319,11 +349,14 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
     }
 
     /**
-     * Create a Database Tools connection with: - Compartment Id - Private Endpoint for a Reverse
-     * Connection - Connection String extracted from the DB System - Database User - Database
-     * Password Stored in a Vault - Time generated display name - Related Resource with a reference
-     * to the DBSystem OCID
-     *
+     * Create a Database Tools connection with:
+     * - Compartment Id
+     * - Private Endpoint for a Reverse Connection
+     * - Connection String extracted from the DB System
+     * - Database User
+     * - Database Password Stored in a Vault
+     * - Time generated display name
+     * - Related Resource with a reference to the DBSystem OCID
      * @throws Exception
      */
     private static void createConnection() throws Exception {
@@ -378,8 +411,7 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
         assert connectionString != null : "connectionString should not be null";
 
-        // Related Resource is optional, but will help provide additional information when querying
-        // the
+        // Related Resource is optional, but will help provide additional information when querying the
         // connection using the OCI Console, the SDKs and the CLI.
         CreateDatabaseToolsRelatedResourceDetails relatedResource =
                 CreateDatabaseToolsRelatedResourceDetails.builder()
@@ -414,7 +446,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
         System.out.println(
                 String.format(
                         "===Creating Connection %s using Work request: %s",
-                        displayName, createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
+                        displayName,
+                        createDatabaseToolsConnectionResponse.getOpcWorkRequestId()));
 
         // We wait for the response.
         waitForDatabaseToolsConnection(connectionId, LifecycleState.Active);
@@ -435,9 +468,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
     }
 
     /**
-     * Validate a Database Tools Connection. The Validation is similar to the "Test Connection" in
-     * SQL Developer.
-     *
+     * Validate a Database Tools Connection.
+     * The Validation is similar to the "Test Connection" in SQL Developer.
      * @return true if the Connection is Valid
      */
     private static boolean validateConnection() {
@@ -463,7 +495,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Delete The database Tools Connection for the specified connectionId
-     *
      * @param connectionId
      * @throws Exception
      */
@@ -494,7 +525,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Delete the Database Tools Private Endpoint for the specified privateEndpointId
-     *
      * @param privateEndpointId
      * @throws Exception
      */
@@ -522,9 +552,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
     }
 
     /**
-     * Delete a Secret in a Vault. Note that the secret is not actually deleted immediately, it is
-     * scheduled for deletion on a later date.
-     *
+     * Delete a Secret in a Vault.
+     * Note that the secret is not actually deleted immediately, it is scheduled for deletion on a later date.
      * @param secretId The OCID of the Secret to delete
      * @throws Exception
      */
@@ -558,7 +587,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Delete secrets in a Vault.
-     *
      * @param secretIds the list of Secret OCID to delete
      * @throws Exception
      */
@@ -572,7 +600,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Wait for a specific Connection to get a specific state. Required for asynchronous operation.
-     *
      * @param connectionId The OCID of the database Tools Connection
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -588,7 +615,9 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
                 System.out.println(
                         String.format(
                                 "Waiting for connection %s to be in state %s. Current state %s",
-                                connectionId, targetState, currentState));
+                                connectionId,
+                                targetState,
+                                currentState));
                 Thread.sleep(10000);
             }
             getConnectionResponse =
@@ -601,7 +630,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
                 throw new RuntimeException(
                         String.format(
                                 "Could not set connection %s in state %s",
-                                dbtoolsConnectionId, targetState));
+                                dbtoolsConnectionId,
+                                targetState));
             }
 
         } while (getConnectionResponse.getDatabaseToolsConnection().getLifecycleState()
@@ -609,9 +639,7 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
     }
 
     /**
-     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous
-     * operation.
-     *
+     * Wait for a specific Private Endpoint to get a specific state. Required for asynchronous operation.
      * @param privateEndpointId The OCID of the database Tools Private Endpoint
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -629,7 +657,9 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
                 System.out.println(
                         String.format(
                                 "Waiting for private endpoint %s to be in state %s. Current state %s",
-                                privateEndpointId, targetState, currentState));
+                                privateEndpointId,
+                                targetState,
+                                currentState));
                 Thread.sleep(10000);
             }
             getPrivateEndpointResponse =
@@ -642,7 +672,8 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
                 throw new RuntimeException(
                         String.format(
                                 "Could not delete private endpoint %s %s",
-                                privateEndpointId, targetState));
+                                privateEndpointId,
+                                targetState));
             }
         } while (getPrivateEndpointResponse.getDatabaseToolsPrivateEndpoint().getLifecycleState()
                 != targetState);
@@ -650,7 +681,6 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
 
     /**
      * Wait for a specific Secret to get a specific state. Required for asynchronous operation.
-     *
      * @param secretId The OCID of the Secret in a Vault
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -666,7 +696,9 @@ public class DatabaseToolsDbSystemConnectionPrivateSubnetExample {
                 System.out.println(
                         String.format(
                                 "Waiting for secret %s to be in state %s. Current state %s",
-                                secretId, targetState, currentState));
+                                secretId,
+                                targetState,
+                                currentState));
                 Thread.sleep(2000);
             }
             getSecretResponse =

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Type of operating system. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum OsFamily implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of operating system.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum OsFamily {
     OracleLinux9("ORACLE_LINUX_9"),
     OracleLinux8("ORACLE_LINUX_8"),
     OracleLinux7("ORACLE_LINUX_7"),

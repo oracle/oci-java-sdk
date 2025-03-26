@@ -5,21 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * The assets disk. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * The assets disk.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Disk.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Disk extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,121 +51,129 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Disk name. */
+        /**
+         * Disk name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Disk name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Order of boot volumes. */
+        /**
+         * Order of boot volumes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootOrder")
         private Integer bootOrder;
 
         /**
          * Order of boot volumes.
-         *
          * @param bootOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder bootOrder(Integer bootOrder) {
             this.bootOrder = bootOrder;
             this.__explicitlySet__.add("bootOrder");
             return this;
         }
-        /** Disk UUID for the virtual disk, if available. */
+        /**
+         * Disk UUID for the virtual disk, if available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uuid")
         private String uuid;
 
         /**
          * Disk UUID for the virtual disk, if available.
-         *
          * @param uuid the value to set
          * @return this builder
-         */
+         **/
         public Builder uuid(String uuid) {
             this.uuid = uuid;
             this.__explicitlySet__.add("uuid");
             return this;
         }
-        /** Disk UUID LUN for the virtual disk, if available. */
+        /**
+         * Disk UUID LUN for the virtual disk, if available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uuidLun")
         private String uuidLun;
 
         /**
          * Disk UUID LUN for the virtual disk, if available.
-         *
          * @param uuidLun the value to set
          * @return this builder
-         */
+         **/
         public Builder uuidLun(String uuidLun) {
             this.uuidLun = uuidLun;
             this.__explicitlySet__.add("uuidLun");
             return this;
         }
-        /** The size of the volume in MBs. */
+        /**
+         * The size of the volume in MBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
         private Long sizeInMBs;
 
         /**
          * The size of the volume in MBs.
-         *
          * @param sizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInMBs(Long sizeInMBs) {
             this.sizeInMBs = sizeInMBs;
             this.__explicitlySet__.add("sizeInMBs");
             return this;
         }
-        /** Location of the boot/data volume. */
+        /**
+         * Location of the boot/data volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("location")
         private String location;
 
         /**
          * Location of the boot/data volume.
-         *
          * @param location the value to set
          * @return this builder
-         */
+         **/
         public Builder location(String location) {
             this.location = location;
             this.__explicitlySet__.add("location");
             return this;
         }
-        /** The disk persistent mode. */
+        /**
+         * The disk persistent mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("persistentMode")
         private String persistentMode;
 
         /**
          * The disk persistent mode.
-         *
          * @param persistentMode the value to set
          * @return this builder
-         */
+         **/
         public Builder persistentMode(String persistentMode) {
             this.persistentMode = persistentMode;
             this.__explicitlySet__.add("persistentMode");
             return this;
         }
-        /** Indicates that CBT (change disk tracking) is enabled for this virtual disk. */
+        /**
+         * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCbtEnabled")
         private Boolean isCbtEnabled;
 
         /**
          * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
-         *
          * @param isCbtEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCbtEnabled(Boolean isCbtEnabled) {
             this.isCbtEnabled = isCbtEnabled;
             this.__explicitlySet__.add("isCbtEnabled");
@@ -224,7 +230,9 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,106 +241,114 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** Disk name. */
+    /**
+     * Disk name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Disk name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Order of boot volumes. */
+    /**
+     * Order of boot volumes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootOrder")
     private final Integer bootOrder;
 
     /**
      * Order of boot volumes.
-     *
      * @return the value
-     */
+     **/
     public Integer getBootOrder() {
         return bootOrder;
     }
 
-    /** Disk UUID for the virtual disk, if available. */
+    /**
+     * Disk UUID for the virtual disk, if available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uuid")
     private final String uuid;
 
     /**
      * Disk UUID for the virtual disk, if available.
-     *
      * @return the value
-     */
+     **/
     public String getUuid() {
         return uuid;
     }
 
-    /** Disk UUID LUN for the virtual disk, if available. */
+    /**
+     * Disk UUID LUN for the virtual disk, if available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uuidLun")
     private final String uuidLun;
 
     /**
      * Disk UUID LUN for the virtual disk, if available.
-     *
      * @return the value
-     */
+     **/
     public String getUuidLun() {
         return uuidLun;
     }
 
-    /** The size of the volume in MBs. */
+    /**
+     * The size of the volume in MBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInMBs")
     private final Long sizeInMBs;
 
     /**
      * The size of the volume in MBs.
-     *
      * @return the value
-     */
+     **/
     public Long getSizeInMBs() {
         return sizeInMBs;
     }
 
-    /** Location of the boot/data volume. */
+    /**
+     * Location of the boot/data volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("location")
     private final String location;
 
     /**
      * Location of the boot/data volume.
-     *
      * @return the value
-     */
+     **/
     public String getLocation() {
         return location;
     }
 
-    /** The disk persistent mode. */
+    /**
+     * The disk persistent mode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("persistentMode")
     private final String persistentMode;
 
     /**
      * The disk persistent mode.
-     *
      * @return the value
-     */
+     **/
     public String getPersistentMode() {
         return persistentMode;
     }
 
-    /** Indicates that CBT (change disk tracking) is enabled for this virtual disk. */
+    /**
+     * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCbtEnabled")
     private final Boolean isCbtEnabled;
 
     /**
      * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCbtEnabled() {
         return isCbtEnabled;
     }
@@ -344,7 +360,6 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

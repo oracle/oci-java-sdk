@@ -24,12 +24,13 @@ import com.oracle.bmc.identity.IdentityClient;
 import com.oracle.bmc.identity.model.AvailabilityDomain;
 
 /**
- * This class provides an example of creating an attachment using device attribute. Device is an
- * optional field that user can provide to make sure that attachments don't change names in case of
- * reboots, thereby providing consistent volume naming. In this particular example, we are attaching
- * a volume to an instance using the device attribute and making sure that the API succeeds. After
- * attaching the volume to an instance, we are calling the API to list instance devices
- * corresponding to the instance which are available.
+ * This class provides an example of creating an attachment using device attribute. Device is an optional field
+ * that user can provide to make sure that attachments don't change names in case of reboots, thereby providing
+ * consistent volume naming.
+ * In this particular example, we are attaching a volume to an instance using the device attribute and making sure
+ * that the API succeeds.
+ * After attaching the volume to an instance, we are calling the API to list instance devices corresponding to the
+ * instance which are available.
  */
 public class VolumeAttachmentWithDeviceExample extends VolumeAttachmentExample {
     private static final String VOL_DEVICE_DISPLAY_NAME = "VolumeAttachWithDeviceExample";
@@ -41,24 +42,23 @@ public class VolumeAttachmentWithDeviceExample extends VolumeAttachmentExample {
         }
 
         final String compartmentId = args[0];
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final BlockstorageClient blockStorageClient =
-                BlockstorageClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final ComputeClient computeClient =
-                ComputeClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final VirtualNetworkClient vcnClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(provider);
-        final IdentityClient identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final BlockstorageClient blockStorageClient = new BlockstorageClient(provider);
+        final ComputeClient computeClient = new ComputeClient(provider);
+        final VirtualNetworkClient vcnClient = new VirtualNetworkClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+
+        blockStorageClient.setRegion(Region.US_PHOENIX_1);
+        computeClient.setRegion(Region.US_PHOENIX_1);
+        vcnClient.setRegion(Region.US_PHOENIX_1);
+        identityClient.setRegion(Region.US_PHOENIX_1);
 
         Vcn vcn = null;
         Subnet subnet = null;
@@ -91,8 +91,7 @@ public class VolumeAttachmentWithDeviceExample extends VolumeAttachmentExample {
                     attachIscsiVolumeAttachment(
                             computeClient, volume, instance, "/dev/oracleoci/oraclevdd");
 
-            // Note here that in the returned results, each record is actually a subtype of
-            // VolumeAttachment corresponding to what type was specified when attaching
+            // Note here that in the returned results, each record is actually a subtype of VolumeAttachment corresponding to what type was specified when attaching
             listVolumeAttachmentsOnInstance(computeClient, instance);
 
             System.out.println(

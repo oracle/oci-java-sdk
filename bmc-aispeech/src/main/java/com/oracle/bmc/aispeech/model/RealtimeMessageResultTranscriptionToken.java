@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Individual transcription tokens. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Individual transcription tokens.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RealtimeMessageResultTranscriptionToken.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RealtimeMessageResultTranscriptionToken.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RealtimeMessageResultTranscriptionToken
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "token",
@@ -42,76 +41,81 @@ public final class RealtimeMessageResultTranscriptionToken
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Transcription token. */
+        /**
+         * Transcription token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("token")
         private String token;
 
         /**
          * Transcription token.
-         *
          * @param token the value to set
          * @return this builder
-         */
+         **/
         public Builder token(String token) {
             this.token = token;
             this.__explicitlySet__.add("token");
             return this;
         }
-        /** Start time in milliseconds for the transcription token. */
+        /**
+         * Start time in milliseconds for the transcription token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMs")
         private Integer startTimeInMs;
 
         /**
          * Start time in milliseconds for the transcription token.
-         *
          * @param startTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder startTimeInMs(Integer startTimeInMs) {
             this.startTimeInMs = startTimeInMs;
             this.__explicitlySet__.add("startTimeInMs");
             return this;
         }
-        /** End time in milliseconds for the transcription token. */
+        /**
+         * End time in milliseconds for the transcription token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMs")
         private Integer endTimeInMs;
 
         /**
          * End time in milliseconds for the transcription token.
-         *
          * @param endTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimeInMs(Integer endTimeInMs) {
             this.endTimeInMs = endTimeInMs;
             this.__explicitlySet__.add("endTimeInMs");
             return this;
         }
-        /** Confidence score for the transcription token. */
+        /**
+         * Confidence score for the transcription token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * Confidence score for the transcription token.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
             return this;
         }
-        /** Type of the transcription token. */
+        /**
+         * Type of the transcription token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the transcription token.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -156,7 +160,9 @@ public final class RealtimeMessageResultTranscriptionToken
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,60 +171,66 @@ public final class RealtimeMessageResultTranscriptionToken
         return new Builder().copy(this);
     }
 
-    /** Transcription token. */
+    /**
+     * Transcription token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("token")
     private final String token;
 
     /**
      * Transcription token.
-     *
      * @return the value
-     */
+     **/
     public String getToken() {
         return token;
     }
 
-    /** Start time in milliseconds for the transcription token. */
+    /**
+     * Start time in milliseconds for the transcription token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimeInMs")
     private final Integer startTimeInMs;
 
     /**
      * Start time in milliseconds for the transcription token.
-     *
      * @return the value
-     */
+     **/
     public Integer getStartTimeInMs() {
         return startTimeInMs;
     }
 
-    /** End time in milliseconds for the transcription token. */
+    /**
+     * End time in milliseconds for the transcription token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimeInMs")
     private final Integer endTimeInMs;
 
     /**
      * End time in milliseconds for the transcription token.
-     *
      * @return the value
-     */
+     **/
     public Integer getEndTimeInMs() {
         return endTimeInMs;
     }
 
-    /** Confidence score for the transcription token. */
+    /**
+     * Confidence score for the transcription token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * Confidence score for the transcription token.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
 
-    /** Type of the transcription token. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the transcription token.
+     **/
+    public enum Type {
         Word("WORD"),
         Punctuation("PUNCTUATION"),
         ;
@@ -250,15 +262,16 @@ public final class RealtimeMessageResultTranscriptionToken
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /** Type of the transcription token. */
+    /**
+     * Type of the transcription token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the transcription token.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
@@ -270,7 +283,6 @@ public final class RealtimeMessageResultTranscriptionToken
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

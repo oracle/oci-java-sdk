@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Transport protocol for the DNS health check probe. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum DnsHealthCheckTransportProtocols implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Transport protocol for the DNS health check probe.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum DnsHealthCheckTransportProtocols {
     Udp("UDP"),
     Tcp("TCP"),
 

@@ -5,22 +5,19 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Configuration overrides for a PostgreSQL instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Configuration overrides for a PostgreSQL instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ConfigOverrides.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ConfigOverrides
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ConfigOverrides extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"configKey", "overridenConfigValue"})
     public ConfigOverrides(String configKey, String overridenConfigValue) {
@@ -31,31 +28,33 @@ public final class ConfigOverrides
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Configuration variable name. */
+        /**
+         * Configuration variable name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
          * Configuration variable name.
-         *
          * @param configKey the value to set
          * @return this builder
-         */
+         **/
         public Builder configKey(String configKey) {
             this.configKey = configKey;
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /** User-selected variable value. */
+        /**
+         * User-selected variable value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
         private String overridenConfigValue;
 
         /**
          * User-selected variable value.
-         *
          * @param overridenConfigValue the value to set
          * @return this builder
-         */
+         **/
         public Builder overridenConfigValue(String overridenConfigValue) {
             this.overridenConfigValue = overridenConfigValue;
             this.__explicitlySet__.add("overridenConfigValue");
@@ -85,7 +84,9 @@ public final class ConfigOverrides
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class ConfigOverrides
         return new Builder().copy(this);
     }
 
-    /** Configuration variable name. */
+    /**
+     * Configuration variable name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
      * Configuration variable name.
-     *
      * @return the value
-     */
+     **/
     public String getConfigKey() {
         return configKey;
     }
 
-    /** User-selected variable value. */
+    /**
+     * User-selected variable value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overridenConfigValue")
     private final String overridenConfigValue;
 
     /**
      * User-selected variable value.
-     *
      * @return the value
-     */
+     **/
     public String getOverridenConfigValue() {
         return overridenConfigValue;
     }
@@ -127,7 +130,6 @@ public final class ConfigOverrides
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

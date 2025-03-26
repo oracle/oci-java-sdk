@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/** Type of the resource associated with a work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum WorkRequestResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of the resource associated with a work request.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+public enum WorkRequestResourceType {
     AnalyticsInstance("ANALYTICS_INSTANCE"),
 
     /**

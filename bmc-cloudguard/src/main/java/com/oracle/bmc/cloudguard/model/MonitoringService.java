@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Services integrated with Cloud Guard. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum MonitoringService implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Services integrated with Cloud Guard.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum MonitoringService {
     InstanceSecurity("INSTANCE_SECURITY"),
 
     /**

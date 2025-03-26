@@ -6,105 +6,115 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVolumesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVolumesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     private String availabilityDomain;
 
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -139,28 +149,31 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -194,39 +207,48 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The OCID of the volume group. */
+    /**
+     * The OCID of the volume group.
+     */
     private String volumeGroupId;
 
-    /** The OCID of the volume group. */
+    /**
+     * The OCID of the volume group.
+     */
     public String getVolumeGroupId() {
         return volumeGroupId;
     }
     /**
      * A filter to return only resources that match the given cluster placement group Id exactly.
+     *
      */
     private String clusterPlacementGroupId;
 
     /**
      * A filter to return only resources that match the given cluster placement group Id exactly.
+     *
      */
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
     }
     /**
-     * A filter to only return resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state
+     * value is case-insensitive.
+     *
      */
     private com.oracle.bmc.core.model.Volume.LifecycleState lifecycleState;
 
     /**
-     * A filter to only return resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state
+     * value is case-insensitive.
+     *
      */
     public com.oracle.bmc.core.model.Volume.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -235,20 +257,22 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListVolumesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
          */
         private String availabilityDomain = null;
 
         /**
          * The name of the availability domain.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder instance
@@ -259,15 +283,12 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -277,20 +298,21 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -301,16 +323,17 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -320,7 +343,10 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the given display name exactly. */
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -335,28 +361,27 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
          *
-         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
-         * you optionally filter by availability domain if the scope of the resource type is within
-         * a single availability domain. If you call one of these "List" operations without
-         * specifying an availability domain, the resources are grouped by availability domain, then
-         * sorted.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
-         *
-         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
-         * you optionally filter by availability domain if the scope of the resource type is within
-         * a single availability domain. If you call one of these "List" operations without
-         * specifying an availability domain, the resources are grouped by availability domain, then
-         * sorted.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -367,14 +392,15 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -384,12 +410,13 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The OCID of the volume group. */
+        /**
+         * The OCID of the volume group.
+         */
         private String volumeGroupId = null;
 
         /**
          * The OCID of the volume group.
-         *
          * @param volumeGroupId the value to set
          * @return this builder instance
          */
@@ -399,14 +426,13 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter to return only resources that match the given cluster placement group Id
-         * exactly.
+         * A filter to return only resources that match the given cluster placement group Id exactly.
+         *
          */
         private String clusterPlacementGroupId = null;
 
         /**
-         * A filter to return only resources that match the given cluster placement group Id
-         * exactly.
+         * A filter to return only resources that match the given cluster placement group Id exactly.
          *
          * @param clusterPlacementGroupId the value to set
          * @return this builder instance
@@ -417,14 +443,15 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter to only return resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to only return resources that match the given lifecycle state. The state
+         * value is case-insensitive.
+         *
          */
         private com.oracle.bmc.core.model.Volume.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to only return resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to only return resources that match the given lifecycle state. The state
+         * value is case-insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -437,19 +464,18 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -461,7 +487,6 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListVolumesRequest o) {
@@ -483,11 +508,10 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListVolumesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListVolumesRequest
          */
@@ -501,8 +525,7 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListVolumesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListVolumesRequest
@@ -520,14 +543,12 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.clusterPlacementGroupId = clusterPlacementGroupId;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListVolumesRequest(availabilityDomain, compartmentId, limit, page, displayName,
-            // sortBy, sortOrder, volumeGroupId, clusterPlacementGroupId, lifecycleState);
+            // new ListVolumesRequest(availabilityDomain, compartmentId, limit, page, displayName, sortBy, sortOrder, volumeGroupId, clusterPlacementGroupId, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -546,7 +567,6 @@ public class ListVolumesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

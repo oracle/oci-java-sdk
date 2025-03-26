@@ -5,85 +5,103 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details about the execution progress of a stage in a deployment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Details about the execution progress of a stage in a deployment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployStageType",
-        defaultImpl = DeployStageExecutionProgress.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployStageType",
+    defaultImpl = DeployStageExecutionProgress.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"),
+        value = ComputeInstanceGroupBlueGreenTrafficShiftDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupCanaryDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"),
+        value = ComputeInstanceGroupCanaryDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeBlueGreenDeployStageExecutionProgress.class,
-            name = "OKE_BLUE_GREEN_DEPLOYMENT"),
+        value = OkeBlueGreenDeployStageExecutionProgress.class,
+        name = "OKE_BLUE_GREEN_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"),
+        value = ComputeInstanceGroupDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_ROLLING_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ShellDeployStageExecutionProgress.class,
-            name = "SHELL"),
+        value = ShellDeployStageExecutionProgress.class,
+        name = "SHELL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeCanaryDeployStageExecutionProgress.class,
-            name = "OKE_CANARY_DEPLOYMENT"),
+        value = OkeCanaryDeployStageExecutionProgress.class,
+        name = "OKE_CANARY_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LoadBalancerTrafficShiftDeployStageExecutionProgress.class,
-            name = "LOAD_BALANCER_TRAFFIC_SHIFT"),
+        value = LoadBalancerTrafficShiftDeployStageExecutionProgress.class,
+        name = "LOAD_BALANCER_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = WaitDeployStageExecutionProgress.class,
-            name = "WAIT"),
+        value = WaitDeployStageExecutionProgress.class,
+        name = "WAIT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"),
+        value = ComputeInstanceGroupCanaryTrafficShiftDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeCanaryApprovalDeployStageExecutionProgress.class,
-            name = "OKE_CANARY_APPROVAL"),
+        value = OkeCanaryApprovalDeployStageExecutionProgress.class,
+        name = "OKE_CANARY_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ManualApprovalDeployStageExecutionProgress.class,
-            name = "MANUAL_APPROVAL"),
+        value = ManualApprovalDeployStageExecutionProgress.class,
+        name = "MANUAL_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeDeployStageExecutionProgress.class,
-            name = "OKE_DEPLOYMENT"),
+        value = OkeDeployStageExecutionProgress.class,
+        name = "OKE_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = FunctionDeployStageExecutionProgress.class,
-            name = "DEPLOY_FUNCTION"),
+        value = FunctionDeployStageExecutionProgress.class,
+        name = "DEPLOY_FUNCTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeBlueGreenTrafficShiftDeployStageExecutionProgress.class,
-            name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"),
+        value = OkeBlueGreenTrafficShiftDeployStageExecutionProgress.class,
+        name = "OKE_BLUE_GREEN_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeHelmChartDeploymentStageExecutionProgress.class,
-            name = "OKE_HELM_CHART_DEPLOYMENT"),
+        value = OkeHelmChartDeploymentStageExecutionProgress.class,
+        name = "OKE_HELM_CHART_DEPLOYMENT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InvokeFunctionDeployStageExecutionProgress.class,
-            name = "INVOKE_FUNCTION"),
+        value = InvokeFunctionDeployStageExecutionProgress.class,
+        name = "INVOKE_FUNCTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OkeCanaryTrafficShiftDeployStageExecutionProgress.class,
-            name = "OKE_CANARY_TRAFFIC_SHIFT"),
+        value = OkeCanaryTrafficShiftDeployStageExecutionProgress.class,
+        name = "OKE_CANARY_TRAFFIC_SHIFT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"),
+        value = ComputeInstanceGroupCanaryApprovalDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_CANARY_APPROVAL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.class,
-            name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT")
+        value = ComputeInstanceGroupBlueGreenDeployStageExecutionProgress.class,
+        name = "COMPUTE_INSTANCE_GROUP_BLUE_GREEN_DEPLOYMENT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DeployStageExecutionProgress
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deployStageDisplayName",
@@ -113,68 +131,66 @@ public class DeployStageExecutionProgress
         this.deployStageExecutionProgressDetails = deployStageExecutionProgressDetails;
     }
 
-    /** Stage display name. Avoid entering confidential information. */
+    /**
+     * Stage display name. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageDisplayName")
     private final String deployStageDisplayName;
 
     /**
      * Stage display name. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDeployStageDisplayName() {
         return deployStageDisplayName;
     }
 
-    /** The OCID of the stage. */
+    /**
+     * The OCID of the stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageId")
     private final String deployStageId;
 
     /**
      * The OCID of the stage.
-     *
      * @return the value
-     */
+     **/
     public String getDeployStageId() {
         return deployStageId;
     }
 
     /**
-     * Time the stage started executing. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * Time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Time the stage started executing. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * Time the stage started executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * Time the stage finished executing. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * Time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * Time the stage finished executing. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * Time the stage finished executing. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The current state of the stage. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the stage.
+     **/
+    public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -186,8 +202,8 @@ public class DeployStageExecutionProgress
         RollbackFailed("ROLLBACK_FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -225,15 +241,16 @@ public class DeployStageExecutionProgress
             return UnknownEnumValue;
         }
     };
-    /** The current state of the stage. */
+    /**
+     * The current state of the stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The current state of the stage.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
@@ -245,16 +262,17 @@ public class DeployStageExecutionProgress
         return deployStagePredecessors;
     }
 
-    /** Details about stage execution for all the target environments. */
+    /**
+     * Details about stage execution for all the target environments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployStageExecutionProgressDetails")
     private final java.util.List<DeployStageExecutionProgressDetails>
             deployStageExecutionProgressDetails;
 
     /**
      * Details about stage execution for all the target environments.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DeployStageExecutionProgressDetails>
             getDeployStageExecutionProgressDetails() {
         return deployStageExecutionProgressDetails;
@@ -267,7 +285,6 @@ public class DeployStageExecutionProgress
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

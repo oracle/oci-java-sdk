@@ -6,17 +6,18 @@ package com.oracle.bmc.resourcescheduler.responses;
 
 import com.oracle.bmc.resourcescheduler.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * This is a unique Oracle-assigned identifier for the request. If you need to contact Oracle
-     * about a particular request, please provide the request ID.
+     * This is a unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * This is a unique Oracle-assigned identifier for the request. If you need to contact Oracle
-     * about a particular request, please provide the request ID.
+     * This is a unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned {@code Schedule} instance. */
+    /**
+     * The returned Schedule instance.
+     */
     private com.oracle.bmc.resourcescheduler.model.Schedule schedule;
 
     /**
-     * The returned {@code Schedule} instance.
-     *
+     * The returned Schedule instance.
      * @return the value
      */
     public com.oracle.bmc.resourcescheduler.model.Schedule getSchedule() {
@@ -57,7 +62,7 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
     })
     private DeactivateScheduleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.resourcescheduler.model.Schedule schedule) {
@@ -67,20 +72,17 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
         this.schedule = schedule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<DeactivateScheduleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -88,6 +90,7 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * This is a unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -103,7 +106,10 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code Schedule} instance. */
+        /**
+         * The returned Schedule instance.
+         */
         private com.oracle.bmc.resourcescheduler.model.Schedule schedule;
 
         /**
-         * The returned {@code Schedule} instance.
-         *
+         * The returned Schedule instance.
          * @param schedule the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DeactivateScheduleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DeactivateScheduleResponse build() {
             return new DeactivateScheduleResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, schedule);
@@ -161,7 +164,6 @@ public class DeactivateScheduleResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

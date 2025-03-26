@@ -6,66 +6,85 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateCertificateExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateCertificateRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreateCertificateExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateCertificateRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class CreateCertificateRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.CreateCertificateDetails> {
 
-    /** Specifications to create the certificate to truststore. */
+    /**
+     * Specifications to create the certificate to truststore.
+     *
+     */
     private com.oracle.bmc.goldengate.model.CreateCertificateDetails createCertificateDetails;
 
-    /** Specifications to create the certificate to truststore. */
+    /**
+     * Specifications to create the certificate to truststore.
+     *
+     */
     public com.oracle.bmc.goldengate.model.CreateCertificateDetails getCreateCertificateDetails() {
         return createCertificateDetails;
     }
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     private String deploymentId;
 
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -78,10 +97,14 @@ public class CreateCertificateRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateCertificateRequest,
                     com.oracle.bmc.goldengate.model.CreateCertificateDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Specifications to create the certificate to truststore. */
+        /**
+         * Specifications to create the certificate to truststore.
+         *
+         */
         private com.oracle.bmc.goldengate.model.CreateCertificateDetails createCertificateDetails =
                 null;
 
@@ -97,7 +120,10 @@ public class CreateCertificateRequest
             return this;
         }
 
-        /** A unique Deployment identifier. */
+        /**
+         * A unique Deployment identifier.
+         *
+         */
         private String deploymentId = null;
 
         /**
@@ -112,20 +138,19 @@ public class CreateCertificateRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -135,7 +160,10 @@ public class CreateCertificateRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -149,12 +177,13 @@ public class CreateCertificateRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -165,19 +194,18 @@ public class CreateCertificateRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,7 +217,6 @@ public class CreateCertificateRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateCertificateRequest o) {
@@ -206,11 +233,10 @@ public class CreateCertificateRequest
         /**
          * Build the instance of CreateCertificateRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateCertificateRequest
          */
@@ -223,7 +249,6 @@ public class CreateCertificateRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -236,8 +261,7 @@ public class CreateCertificateRequest
         /**
          * Build the instance of CreateCertificateRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateCertificateRequest
@@ -250,14 +274,12 @@ public class CreateCertificateRequest
             request.opcRequestId = opcRequestId;
             request.isLockOverride = isLockOverride;
             return request;
-            // new CreateCertificateRequest(createCertificateDetails, deploymentId, opcRetryToken,
-            // opcRequestId, isLockOverride);
+            // new CreateCertificateRequest(createCertificateDetails, deploymentId, opcRetryToken, opcRequestId, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -271,7 +293,6 @@ public class CreateCertificateRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

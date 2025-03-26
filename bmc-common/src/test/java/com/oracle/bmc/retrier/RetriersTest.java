@@ -16,7 +16,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-/** Tests for {@link Retriers}. */
+/**
+ * Tests for {@link Retriers}.
+ */
 public class RetriersTest {
     @Mock private InputStream is;
 

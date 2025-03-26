@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompartmentMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CompartmentMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CompartmentMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CompartmentMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "accessLevel"})
     public CompartmentMetadata(String compartmentId, AccessLevel accessLevel) {
@@ -32,31 +30,33 @@ public final class CompartmentMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The compartment id. */
+        /**
+         * The compartment id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment id.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The access level. */
+        /**
+         * The access level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessLevel")
         private AccessLevel accessLevel;
 
         /**
          * The access level.
-         *
          * @param accessLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder accessLevel(AccessLevel accessLevel) {
             this.accessLevel = accessLevel;
             this.__explicitlySet__.add("accessLevel");
@@ -87,7 +87,9 @@ public final class CompartmentMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,21 +98,24 @@ public final class CompartmentMetadata
         return new Builder().copy(this);
     }
 
-    /** The compartment id. */
+    /**
+     * The compartment id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment id.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The access level. */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The access level.
+     **/
+    public enum AccessLevel {
         Accessible("accessible"),
         Visible("visible"),
         Inaccessible("inaccessible"),
@@ -143,15 +148,16 @@ public final class CompartmentMetadata
             throw new IllegalArgumentException("Invalid AccessLevel: " + key);
         }
     };
-    /** The access level. */
+    /**
+     * The access level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessLevel")
     private final AccessLevel accessLevel;
 
     /**
      * The access level.
-     *
      * @return the value
-     */
+     **/
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
@@ -163,7 +169,6 @@ public final class CompartmentMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

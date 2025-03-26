@@ -5,21 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * MetaInfo of entity detected. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * MetaInfo of entity detected.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetaInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MetaInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MetaInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"offset", "length", "text", "subType", "score"})
     public MetaInfo(Integer offset, Integer length, String text, String subType, Double score) {
@@ -33,76 +31,81 @@ public final class MetaInfo extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of Unicode code points preceding this entity in the submitted text. */
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
         /**
          * The number of Unicode code points preceding this entity in the submitted text.
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** Length of entity text. */
+        /**
+         * Length of entity text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * Length of entity text.
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Entity text like name of person, location, and so on. */
+        /**
+         * Entity text like name of person, location, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Entity text like name of person, location, and so on.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** Sub-type of entity text like GPE for LOCATION type. */
+        /**
+         * Sub-type of entity text like GPE for LOCATION type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subType")
         private String subType;
 
         /**
          * Sub-type of entity text like GPE for LOCATION type.
-         *
          * @param subType the value to set
          * @return this builder
-         */
+         **/
         public Builder subType(String subType) {
             this.subType = subType;
             this.__explicitlySet__.add("subType");
             return this;
         }
-        /** Score or confidence for detected entity. */
+        /**
+         * Score or confidence for detected entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * Score or confidence for detected entity.
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -142,7 +145,9 @@ public final class MetaInfo extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,67 +156,72 @@ public final class MetaInfo extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The number of Unicode code points preceding this entity in the submitted text. */
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
     /**
      * The number of Unicode code points preceding this entity in the submitted text.
-     *
      * @return the value
-     */
+     **/
     public Integer getOffset() {
         return offset;
     }
 
-    /** Length of entity text. */
+    /**
+     * Length of entity text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * Length of entity text.
-     *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Entity text like name of person, location, and so on. */
+    /**
+     * Entity text like name of person, location, and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Entity text like name of person, location, and so on.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** Sub-type of entity text like GPE for LOCATION type. */
+    /**
+     * Sub-type of entity text like GPE for LOCATION type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subType")
     private final String subType;
 
     /**
      * Sub-type of entity text like GPE for LOCATION type.
-     *
      * @return the value
-     */
+     **/
     public String getSubType() {
         return subType;
     }
 
-    /** Score or confidence for detected entity. */
+    /**
+     * Score or confidence for detected entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * Score or confidence for detected entity.
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -223,7 +233,6 @@ public final class MetaInfo extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

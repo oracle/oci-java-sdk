@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** The database combination. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum DatabaseCombination implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The database combination.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum DatabaseCombination {
     Mysql("MYSQL"),
     Oracle("ORACLE"),
 

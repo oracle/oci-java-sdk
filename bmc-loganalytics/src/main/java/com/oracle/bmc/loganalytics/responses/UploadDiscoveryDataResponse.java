@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,24 +23,26 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** Unique Oracle-assigned identifier for log data. */
+    /**
+     * Unique Oracle-assigned identifier for log data.
+     */
     private String opcObjectId;
 
     /**
      * Unique Oracle-assigned identifier for log data.
-     *
      * @return the value
      */
     public String getOpcObjectId() {
         return opcObjectId;
     }
 
-    /** The time the upload was created, in the format defined by RFC3339 */
+    /**
+     * The time the upload was created, in the format defined by RFC3339
+     */
     private java.util.Date timeCreated;
 
     /**
      * The time the upload was created, in the format defined by RFC3339
-     *
      * @return the value
      */
     public java.util.Date getTimeCreated() {
@@ -57,7 +58,7 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
     })
     private UploadDiscoveryDataResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcObjectId,
             java.util.Date timeCreated) {
@@ -67,33 +68,29 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
         this.timeCreated = timeCreated;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UploadDiscoveryDataResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,12 +100,13 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** Unique Oracle-assigned identifier for log data. */
+        /**
+         * Unique Oracle-assigned identifier for log data.
+         */
         private String opcObjectId;
 
         /**
          * Unique Oracle-assigned identifier for log data.
-         *
          * @param opcObjectId the value to set
          * @return this builder
          */
@@ -117,12 +115,13 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The time the upload was created, in the format defined by RFC3339 */
+        /**
+         * The time the upload was created, in the format defined by RFC3339
+         */
         private java.util.Date timeCreated;
 
         /**
          * The time the upload was created, in the format defined by RFC3339
-         *
          * @param timeCreated the value to set
          * @return this builder
          */
@@ -133,10 +132,8 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UploadDiscoveryDataResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +146,8 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UploadDiscoveryDataResponse build() {
             return new UploadDiscoveryDataResponse(
                     __httpStatusCode__, headers, opcRequestId, opcObjectId, timeCreated);
@@ -161,7 +156,6 @@ public class UploadDiscoveryDataResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

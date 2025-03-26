@@ -6,9 +6,12 @@ package com.oracle.bmc.fleetappsmanagement.responses;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class CreatePlatformConfigurationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned {@code PlatformConfiguration} instance. */
+    /**
+     * The returned PlatformConfiguration instance.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration platformConfiguration;
 
     /**
-     * The returned {@code PlatformConfiguration} instance.
-     *
+     * The returned PlatformConfiguration instance.
      * @return the value
      */
     public com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration
@@ -58,7 +63,7 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
     })
     private CreatePlatformConfigurationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration platformConfiguration) {
@@ -68,26 +73,25 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         this.platformConfiguration = platformConfiguration;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreatePlatformConfigurationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -102,14 +106,15 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,13 +124,14 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code PlatformConfiguration} instance. */
+        /**
+         * The returned PlatformConfiguration instance.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration
                 platformConfiguration;
 
         /**
-         * The returned {@code PlatformConfiguration} instance.
-         *
+         * The returned PlatformConfiguration instance.
          * @param platformConfiguration the value to set
          * @return this builder
          */
@@ -138,10 +144,8 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreatePlatformConfigurationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -154,10 +158,8 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreatePlatformConfigurationResponse build() {
             return new CreatePlatformConfigurationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, platformConfiguration);
@@ -166,7 +168,6 @@ public class CreatePlatformConfigurationResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

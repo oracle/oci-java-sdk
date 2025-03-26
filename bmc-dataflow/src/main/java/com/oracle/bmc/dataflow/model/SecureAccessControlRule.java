@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * The access control rule for SECURE_ACCESS network type selection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * The access control rule for SECURE_ACCESS network type selection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecureAccessControlRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SecureAccessControlRule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SecureAccessControlRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipNotation", "value", "vcnIps"})
     public SecureAccessControlRule(IpNotationType ipNotation, String value, String vcnIps) {
@@ -33,46 +32,49 @@ public final class SecureAccessControlRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of IP notation. */
+        /**
+         * The type of IP notation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipNotation")
         private IpNotationType ipNotation;
 
         /**
          * The type of IP notation.
-         *
          * @param ipNotation the value to set
          * @return this builder
-         */
+         **/
         public Builder ipNotation(IpNotationType ipNotation) {
             this.ipNotation = ipNotation;
             this.__explicitlySet__.add("ipNotation");
             return this;
         }
-        /** The associated value of the selected IP notation. */
+        /**
+         * The associated value of the selected IP notation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The associated value of the selected IP notation.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** A comma-separated IP or CIDR address for VCN OCID IP notation selection. */
+        /**
+         * A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnIps")
         private String vcnIps;
 
         /**
          * A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-         *
          * @param vcnIps the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnIps(String vcnIps) {
             this.vcnIps = vcnIps;
             this.__explicitlySet__.add("vcnIps");
@@ -106,7 +108,9 @@ public final class SecureAccessControlRule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class SecureAccessControlRule
         return new Builder().copy(this);
     }
 
-    /** The type of IP notation. */
+    /**
+     * The type of IP notation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipNotation")
     private final IpNotationType ipNotation;
 
     /**
      * The type of IP notation.
-     *
      * @return the value
-     */
+     **/
     public IpNotationType getIpNotation() {
         return ipNotation;
     }
 
-    /** The associated value of the selected IP notation. */
+    /**
+     * The associated value of the selected IP notation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The associated value of the selected IP notation.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** A comma-separated IP or CIDR address for VCN OCID IP notation selection. */
+    /**
+     * A comma-separated IP or CIDR address for VCN OCID IP notation selection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnIps")
     private final String vcnIps;
 
     /**
      * A comma-separated IP or CIDR address for VCN OCID IP notation selection.
-     *
      * @return the value
-     */
+     **/
     public String getVcnIps() {
         return vcnIps;
     }
@@ -161,7 +168,6 @@ public final class SecureAccessControlRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

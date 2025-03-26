@@ -6,17 +6,18 @@ package com.oracle.bmc.oda.responses;
 
 import com.oracle.bmc.oda.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * When you are paging through a list, if this header appears in the response, then there might
-     * be additional items still to get. Include this value as the {@code page} query parameter for
-     * the subsequent GET request.
+     * When you are paging through a list, if this header appears in the response,
+     * then there might be additional items still to get. Include this value as the
+     * {@code page} query parameter for the subsequent GET request.
+     *
      */
     private String opcNextPage;
 
     /**
-     * When you are paging through a list, if this header appears in the response, then there might
-     * be additional items still to get. Include this value as the {@code page} query parameter for
-     * the subsequent GET request.
+     * When you are paging through a list, if this header appears in the response,
+     * then there might be additional items still to get. Include this value as the
+     * {@code page} query parameter for the subsequent GET request.
      *
      * @return the value
      */
@@ -42,7 +44,10 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The total number of results that match the query. */
+    /**
+     * The total number of results that match the query.
+     *
+     */
     private Integer opcTotalItems;
 
     /**
@@ -54,13 +59,14 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
         return opcTotalItems;
     }
 
-    /** The returned {@code DigitalAssistantParameterCollection} instance. */
+    /**
+     * The returned DigitalAssistantParameterCollection instance.
+     */
     private com.oracle.bmc.oda.model.DigitalAssistantParameterCollection
             digitalAssistantParameterCollection;
 
     /**
-     * The returned {@code DigitalAssistantParameterCollection} instance.
-     *
+     * The returned DigitalAssistantParameterCollection instance.
      * @return the value
      */
     public com.oracle.bmc.oda.model.DigitalAssistantParameterCollection
@@ -78,7 +84,7 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
     })
     private ListDigitalAssistantParametersResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             Integer opcTotalItems,
@@ -91,34 +97,31 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
         this.digitalAssistantParameterCollection = digitalAssistantParameterCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListDigitalAssistantParametersResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,16 +132,17 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * When you are paging through a list, if this header appears in the response, then there
-         * might be additional items still to get. Include this value as the {@code page} query
-         * parameter for the subsequent GET request.
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
+         *
          */
         private String opcNextPage;
 
         /**
-         * When you are paging through a list, if this header appears in the response, then there
-         * might be additional items still to get. Include this value as the {@code page} query
-         * parameter for the subsequent GET request.
+         * When you are paging through a list, if this header appears in the response,
+         * then there might be additional items still to get. Include this value as the
+         * {@code page} query parameter for the subsequent GET request.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -148,7 +152,10 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The total number of results that match the query. */
+        /**
+         * The total number of results that match the query.
+         *
+         */
         private Integer opcTotalItems;
 
         /**
@@ -162,13 +169,14 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned {@code DigitalAssistantParameterCollection} instance. */
+        /**
+         * The returned DigitalAssistantParameterCollection instance.
+         */
         private com.oracle.bmc.oda.model.DigitalAssistantParameterCollection
                 digitalAssistantParameterCollection;
 
         /**
-         * The returned {@code DigitalAssistantParameterCollection} instance.
-         *
+         * The returned DigitalAssistantParameterCollection instance.
          * @param digitalAssistantParameterCollection the value to set
          * @return this builder
          */
@@ -181,10 +189,8 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListDigitalAssistantParametersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -198,10 +204,8 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListDigitalAssistantParametersResponse build() {
             return new ListDigitalAssistantParametersResponse(
                     __httpStatusCode__,
@@ -215,7 +219,6 @@ public class ListDigitalAssistantParametersResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

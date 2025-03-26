@@ -5,22 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Details of an os patch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Details of an os patch.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OsPatchDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OsPatchDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OsPatchDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "osPatchVersion",
@@ -48,102 +45,108 @@ public final class OsPatchDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Version of the os patch. */
+        /**
+         * Version of the os patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osPatchVersion")
         private String osPatchVersion;
 
         /**
          * Version of the os patch.
-         *
          * @param osPatchVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osPatchVersion(String osPatchVersion) {
             this.osPatchVersion = osPatchVersion;
             this.__explicitlySet__.add("osPatchVersion");
             return this;
         }
-        /** Minimum BDS version required to install current OS patch. */
+        /**
+         * Minimum BDS version required to install current OS patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minBdsVersion")
         private String minBdsVersion;
 
         /**
          * Minimum BDS version required to install current OS patch.
-         *
          * @param minBdsVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder minBdsVersion(String minBdsVersion) {
             this.minBdsVersion = minBdsVersion;
             this.__explicitlySet__.add("minBdsVersion");
             return this;
         }
         /**
-         * Map of major ODH version to minimum ODH version required to install current OS patch.
-         * e.g. {ODH0.9: 0.9.1}
-         */
+         * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minCompatibleOdhVersionMap")
         private java.util.Map<String, String> minCompatibleOdhVersionMap;
 
         /**
-         * Map of major ODH version to minimum ODH version required to install current OS patch.
-         * e.g. {ODH0.9: 0.9.1}
+         * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
          *
          * @param minCompatibleOdhVersionMap the value to set
          * @return this builder
-         */
+         **/
         public Builder minCompatibleOdhVersionMap(
                 java.util.Map<String, String> minCompatibleOdhVersionMap) {
             this.minCompatibleOdhVersionMap = minCompatibleOdhVersionMap;
             this.__explicitlySet__.add("minCompatibleOdhVersionMap");
             return this;
         }
-        /** List of summaries of individual target packages. */
+        /**
+         * List of summaries of individual target packages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetPackages")
         private java.util.List<OsPatchPackageSummary> targetPackages;
 
         /**
          * List of summaries of individual target packages.
-         *
          * @param targetPackages the value to set
          * @return this builder
-         */
+         **/
         public Builder targetPackages(java.util.List<OsPatchPackageSummary> targetPackages) {
             this.targetPackages = targetPackages;
             this.__explicitlySet__.add("targetPackages");
             return this;
         }
-        /** Released date of the OS patch. */
+        /**
+         * Released date of the OS patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private java.util.Date releaseDate;
 
         /**
          * Released date of the OS patch.
-         *
          * @param releaseDate the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseDate(java.util.Date releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
         /**
-         * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os
-         * patches with some customizations. EMERGENT means os patches with some emergency fixes
-         * that should be prioritized.
-         */
+         * Type of a specific os patch.
+         * REGULAR means standard released os patches.
+         * CUSTOM means os patches with some customizations.
+         * EMERGENT means os patches with some emergency fixes that should be prioritized.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private PatchType patchType;
 
         /**
-         * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os
-         * patches with some customizations. EMERGENT means os patches with some emergency fixes
-         * that should be prioritized.
+         * Type of a specific os patch.
+         * REGULAR means standard released os patches.
+         * CUSTOM means os patches with some customizations.
+         * EMERGENT means os patches with some emergency fixes that should be prioritized.
          *
          * @param patchType the value to set
          * @return this builder
-         */
+         **/
         public Builder patchType(PatchType patchType) {
             this.patchType = patchType;
             this.__explicitlySet__.add("patchType");
@@ -192,7 +195,9 @@ public final class OsPatchDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -201,88 +206,93 @@ public final class OsPatchDetails
         return new Builder().copy(this);
     }
 
-    /** Version of the os patch. */
+    /**
+     * Version of the os patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osPatchVersion")
     private final String osPatchVersion;
 
     /**
      * Version of the os patch.
-     *
      * @return the value
-     */
+     **/
     public String getOsPatchVersion() {
         return osPatchVersion;
     }
 
-    /** Minimum BDS version required to install current OS patch. */
+    /**
+     * Minimum BDS version required to install current OS patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minBdsVersion")
     private final String minBdsVersion;
 
     /**
      * Minimum BDS version required to install current OS patch.
-     *
      * @return the value
-     */
+     **/
     public String getMinBdsVersion() {
         return minBdsVersion;
     }
 
     /**
-     * Map of major ODH version to minimum ODH version required to install current OS patch. e.g.
-     * {ODH0.9: 0.9.1}
-     */
+     * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minCompatibleOdhVersionMap")
     private final java.util.Map<String, String> minCompatibleOdhVersionMap;
 
     /**
-     * Map of major ODH version to minimum ODH version required to install current OS patch. e.g.
-     * {ODH0.9: 0.9.1}
+     * Map of major ODH version to minimum ODH version required to install current OS patch. e.g. {ODH0.9: 0.9.1}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMinCompatibleOdhVersionMap() {
         return minCompatibleOdhVersionMap;
     }
 
-    /** List of summaries of individual target packages. */
+    /**
+     * List of summaries of individual target packages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetPackages")
     private final java.util.List<OsPatchPackageSummary> targetPackages;
 
     /**
      * List of summaries of individual target packages.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OsPatchPackageSummary> getTargetPackages() {
         return targetPackages;
     }
 
-    /** Released date of the OS patch. */
+    /**
+     * Released date of the OS patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final java.util.Date releaseDate;
 
     /**
      * Released date of the OS patch.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getReleaseDate() {
         return releaseDate;
     }
 
     /**
-     * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os
-     * patches with some customizations. EMERGENT means os patches with some emergency fixes that
-     * should be prioritized.
-     */
-    public enum PatchType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of a specific os patch.
+     * REGULAR means standard released os patches.
+     * CUSTOM means os patches with some customizations.
+     * EMERGENT means os patches with some emergency fixes that should be prioritized.
+     *
+     **/
+    public enum PatchType {
         Regular("REGULAR"),
         Custom("CUSTOM"),
         Emergent("EMERGENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -322,20 +332,23 @@ public final class OsPatchDetails
         }
     };
     /**
-     * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os
-     * patches with some customizations. EMERGENT means os patches with some emergency fixes that
-     * should be prioritized.
-     */
+     * Type of a specific os patch.
+     * REGULAR means standard released os patches.
+     * CUSTOM means os patches with some customizations.
+     * EMERGENT means os patches with some emergency fixes that should be prioritized.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final PatchType patchType;
 
     /**
-     * Type of a specific os patch. REGULAR means standard released os patches. CUSTOM means os
-     * patches with some customizations. EMERGENT means os patches with some emergency fixes that
-     * should be prioritized.
+     * Type of a specific os patch.
+     * REGULAR means standard released os patches.
+     * CUSTOM means os patches with some customizations.
+     * EMERGENT means os patches with some emergency fixes that should be prioritized.
      *
      * @return the value
-     */
+     **/
     public PatchType getPatchType() {
         return patchType;
     }
@@ -347,7 +360,6 @@ public final class OsPatchDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

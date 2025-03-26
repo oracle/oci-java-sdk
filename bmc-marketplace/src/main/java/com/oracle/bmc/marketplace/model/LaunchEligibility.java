@@ -5,23 +5,21 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Tenant eligibility and other information for launching a PIC image <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * Tenant eligibility and other information for launching a PIC image
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LaunchEligibility.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LaunchEligibility
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = LaunchEligibility.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LaunchEligibility extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "imageId",
@@ -43,61 +41,65 @@ public final class LaunchEligibility
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** PIC Image ID */
+        /**
+         * PIC Image ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * PIC Image ID
-         *
          * @param imageId the value to set
          * @return this builder
-         */
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-        /** Is the tenant permitted to launch the PIC image */
+        /**
+         * Is the tenant permitted to launch the PIC image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLaunchAllowed")
         private Boolean isLaunchAllowed;
 
         /**
          * Is the tenant permitted to launch the PIC image
-         *
          * @param isLaunchAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isLaunchAllowed(Boolean isLaunchAllowed) {
             this.isLaunchAllowed = isLaunchAllowed;
             this.__explicitlySet__.add("isLaunchAllowed");
             return this;
         }
-        /** related meters for the PIC image */
+        /**
+         * related meters for the PIC image
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meters")
         private String meters;
 
         /**
          * related meters for the PIC image
-         *
          * @param meters the value to set
          * @return this builder
-         */
+         **/
         public Builder meters(String meters) {
             this.meters = meters;
             this.__explicitlySet__.add("meters");
             return this;
         }
-        /** Reason the account is ineligible to launch paid listings */
+        /**
+         * Reason the account is ineligible to launch paid listings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
         private IneligibilityReasonEnum ineligibilityReason;
 
         /**
          * Reason the account is ineligible to launch paid listings
-         *
          * @param ineligibilityReason the value to set
          * @return this builder
-         */
+         **/
         public Builder ineligibilityReason(IneligibilityReasonEnum ineligibilityReason) {
             this.ineligibilityReason = ineligibilityReason;
             this.__explicitlySet__.add("ineligibilityReason");
@@ -138,7 +140,9 @@ public final class LaunchEligibility
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +151,58 @@ public final class LaunchEligibility
         return new Builder().copy(this);
     }
 
-    /** PIC Image ID */
+    /**
+     * PIC Image ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * PIC Image ID
-     *
      * @return the value
-     */
+     **/
     public String getImageId() {
         return imageId;
     }
 
-    /** Is the tenant permitted to launch the PIC image */
+    /**
+     * Is the tenant permitted to launch the PIC image
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLaunchAllowed")
     private final Boolean isLaunchAllowed;
 
     /**
      * Is the tenant permitted to launch the PIC image
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLaunchAllowed() {
         return isLaunchAllowed;
     }
 
-    /** related meters for the PIC image */
+    /**
+     * related meters for the PIC image
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("meters")
     private final String meters;
 
     /**
      * related meters for the PIC image
-     *
      * @return the value
-     */
+     **/
     public String getMeters() {
         return meters;
     }
 
-    /** Reason the account is ineligible to launch paid listings */
+    /**
+     * Reason the account is ineligible to launch paid listings
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ineligibilityReason")
     private final IneligibilityReasonEnum ineligibilityReason;
 
     /**
      * Reason the account is ineligible to launch paid listings
-     *
      * @return the value
-     */
+     **/
     public IneligibilityReasonEnum getIneligibilityReason() {
         return ineligibilityReason;
     }
@@ -206,7 +214,6 @@ public final class LaunchEligibility
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

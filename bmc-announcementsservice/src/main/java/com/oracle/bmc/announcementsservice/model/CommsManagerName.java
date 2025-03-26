@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.announcementsservice.model;
 
-/** Name of the comms manager team that manages Notifications to this service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-public enum CommsManagerName implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Name of the comms manager team that manages Notifications to this service.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+public enum CommsManagerName {
     Cn("CN"),
     Fusion("FUSION"),
     As("AS"),

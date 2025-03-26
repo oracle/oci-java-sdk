@@ -6,68 +6,75 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselineJobsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSqlPlanBaselineJobsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselineJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlPlanBaselineJobsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListSqlPlanBaselineJobsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** A filter to return the SQL plan baseline jobs that match the name. */
+    /**
+     * A filter to return the SQL plan baseline jobs that match the name.
+     */
     private String name;
 
-    /** A filter to return the SQL plan baseline jobs that match the name. */
+    /**
+     * A filter to return the SQL plan baseline jobs that match the name.
+     */
     public String getName() {
         return name;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Name("NAME"),
         ;
@@ -101,37 +108,44 @@ public class ListSqlPlanBaselineJobsRequest
     };
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     private String opcNamedCredentialId;
 
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     public String getOpcNamedCredentialId() {
         return opcNamedCredentialId;
     }
@@ -139,19 +153,17 @@ public class ListSqlPlanBaselineJobsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlPlanBaselineJobsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -160,12 +172,13 @@ public class ListSqlPlanBaselineJobsRequest
             return this;
         }
 
-        /** A filter to return the SQL plan baseline jobs that match the name. */
+        /**
+         * A filter to return the SQL plan baseline jobs that match the name.
+         */
         private String name = null;
 
         /**
          * A filter to return the SQL plan baseline jobs that match the name.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -175,14 +188,15 @@ public class ListSqlPlanBaselineJobsRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -192,12 +206,13 @@ public class ListSqlPlanBaselineJobsRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -208,15 +223,16 @@ public class ListSqlPlanBaselineJobsRequest
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -227,15 +243,12 @@ public class ListSqlPlanBaselineJobsRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
-         *
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -244,12 +257,13 @@ public class ListSqlPlanBaselineJobsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -258,12 +272,13 @@ public class ListSqlPlanBaselineJobsRequest
             return this;
         }
 
-        /** The OCID of the Named Credential. */
+        /**
+         * The OCID of the Named Credential.
+         */
         private String opcNamedCredentialId = null;
 
         /**
          * The OCID of the Named Credential.
-         *
          * @param opcNamedCredentialId the value to set
          * @return this builder instance
          */
@@ -274,19 +289,18 @@ public class ListSqlPlanBaselineJobsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -298,7 +312,6 @@ public class ListSqlPlanBaselineJobsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSqlPlanBaselineJobsRequest o) {
@@ -318,11 +331,10 @@ public class ListSqlPlanBaselineJobsRequest
         /**
          * Build the instance of ListSqlPlanBaselineJobsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSqlPlanBaselineJobsRequest
          */
@@ -336,8 +348,7 @@ public class ListSqlPlanBaselineJobsRequest
         /**
          * Build the instance of ListSqlPlanBaselineJobsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSqlPlanBaselineJobsRequest
@@ -353,14 +364,12 @@ public class ListSqlPlanBaselineJobsRequest
             request.opcRequestId = opcRequestId;
             request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new ListSqlPlanBaselineJobsRequest(managedDatabaseId, name, page, limit, sortBy,
-            // sortOrder, opcRequestId, opcNamedCredentialId);
+            // new ListSqlPlanBaselineJobsRequest(managedDatabaseId, name, page, limit, sortBy, sortOrder, opcRequestId, opcNamedCredentialId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -377,7 +386,6 @@ public class ListSqlPlanBaselineJobsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

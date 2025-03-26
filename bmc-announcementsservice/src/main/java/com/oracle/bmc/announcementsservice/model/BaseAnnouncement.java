@@ -5,34 +5,34 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Incident information that forms the basis of an announcement. Avoid entering confidential
- * information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+ * Incident information that forms the basis of an announcement. Avoid entering confidential information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = BaseAnnouncement.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = BaseAnnouncement.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AnnouncementSummary.class,
-            name = "AnnouncementSummary"),
+        value = AnnouncementSummary.class,
+        name = "AnnouncementSummary"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = Announcement.class,
-            name = "Announcement")
+        value = Announcement.class,
+        name = "Announcement"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class BaseAnnouncement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -97,83 +97,83 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         this.chainId = chainId;
     }
 
-    /** The OCID of the announcement. */
+    /**
+     * The OCID of the announcement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the announcement.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The reference Jira ticket number. */
+    /**
+     * The reference Jira ticket number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceTicketNumber")
     private final String referenceTicketNumber;
 
     /**
      * The reference Jira ticket number.
-     *
      * @return the value
-     */
+     **/
     public String getReferenceTicketNumber() {
         return referenceTicketNumber;
     }
 
     /**
-     * A summary of the issue. A summary might appear in the console banner view of the announcement
-     * or in an email subject line. Avoid entering confidential information.
-     */
+     * A summary of the issue. A summary might appear in the console banner view of the announcement or in
+     * an email subject line. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
-     * A summary of the issue. A summary might appear in the console banner view of the announcement
-     * or in an email subject line. Avoid entering confidential information.
+     * A summary of the issue. A summary might appear in the console banner view of the announcement or in
+     * an email subject line. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
-    /** The label associated with an initial time value. Example: {@code Time Started} */
+    /**
+     * The label associated with an initial time value.
+     * Example: {@code Time Started}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneTitle")
     private final String timeOneTitle;
 
     /**
-     * The label associated with an initial time value. Example: {@code Time Started}
+     * The label associated with an initial time value.
+     * Example: {@code Time Started}
      *
      * @return the value
-     */
+     **/
     public String getTimeOneTitle() {
         return timeOneTitle;
     }
 
     /**
-     * The type of a time associated with an initial time value. If the {@code timeOneTitle}
-     * attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code
-     * timeOneType} in English. Example: {@code START_TIME}
-     */
-    public enum TimeOneType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of a time associated with an initial time value. If the {@code timeOneTitle} attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code timeOneType} in English.
+     * Example: {@code START_TIME}
+     *
+     **/
+    public enum TimeOneType {
         ActionRequiredBy("ACTION_REQUIRED_BY"),
         NewStartTime("NEW_START_TIME"),
         OriginalEndTime("ORIGINAL_END_TIME"),
         ReportDate("REPORT_DATE"),
         StartTime("START_TIME"),
         TimeDetected("TIME_DETECTED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(TimeOneType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, TimeOneType> map;
@@ -181,9 +181,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (TimeOneType v : TimeOneType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -201,81 +199,73 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'TimeOneType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid TimeOneType: " + key);
         }
     };
     /**
-     * The type of a time associated with an initial time value. If the {@code timeOneTitle}
-     * attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code
-     * timeOneType} in English. Example: {@code START_TIME}
-     */
+     * The type of a time associated with an initial time value. If the {@code timeOneTitle} attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code timeOneType} in English.
+     * Example: {@code START_TIME}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneType")
     private final TimeOneType timeOneType;
 
     /**
-     * The type of a time associated with an initial time value. If the {@code timeOneTitle}
-     * attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code
-     * timeOneType} in English. Example: {@code START_TIME}
+     * The type of a time associated with an initial time value. If the {@code timeOneTitle} attribute is present, then the {@code timeOneTitle} attribute contains a label of {@code timeOneType} in English.
+     * Example: {@code START_TIME}
      *
      * @return the value
-     */
+     **/
     public TimeOneType getTimeOneType() {
         return timeOneType;
     }
 
     /**
-     * The actual value of the first time value for the event. Typically, this denotes the time an
-     * event started, but the meaning can vary, depending on the announcement type. The {@code
-     * timeOneType} attribute describes the meaning.
-     */
+     * The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+     * can vary, depending on the announcement type. The {@code timeOneType} attribute describes the meaning.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOneValue")
     private final java.util.Date timeOneValue;
 
     /**
-     * The actual value of the first time value for the event. Typically, this denotes the time an
-     * event started, but the meaning can vary, depending on the announcement type. The {@code
-     * timeOneType} attribute describes the meaning.
+     * The actual value of the first time value for the event. Typically, this denotes the time an event started, but the meaning
+     * can vary, depending on the announcement type. The {@code timeOneType} attribute describes the meaning.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOneValue() {
         return timeOneValue;
     }
 
-    /** The label associated with a second time value. Example: {@code Time Ended} */
+    /**
+     * The label associated with a second time value.
+     * Example: {@code Time Ended}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoTitle")
     private final String timeTwoTitle;
 
     /**
-     * The label associated with a second time value. Example: {@code Time Ended}
+     * The label associated with a second time value.
+     * Example: {@code Time Ended}
      *
      * @return the value
-     */
+     **/
     public String getTimeTwoTitle() {
         return timeTwoTitle;
     }
 
     /**
-     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute
-     * is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType}
-     * in English. Example: {@code END_TIME}
-     */
-    public enum TimeTwoType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType} in English.
+     * Example: {@code END_TIME}
+     *
+     **/
+    public enum TimeTwoType {
         EndTime("END_TIME"),
         NewEndTime("NEW_END_TIME"),
         EstimatedEndTime("ESTIMATED_END_TIME"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(TimeTwoType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, TimeTwoType> map;
@@ -283,9 +273,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (TimeTwoType v : TimeTwoType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -303,78 +291,77 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'TimeTwoType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid TimeTwoType: " + key);
         }
     };
     /**
-     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute
-     * is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType}
-     * in English. Example: {@code END_TIME}
-     */
+     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType} in English.
+     * Example: {@code END_TIME}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoType")
     private final TimeTwoType timeTwoType;
 
     /**
-     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute
-     * is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType}
-     * in English. Example: {@code END_TIME}
+     * The type of a time associated with second time value. If the {@code timeTwoTitle} attribute is present, then the {@code timeTwoTitle} attribute contains a label of {@code timeTwoType} in English.
+     * Example: {@code END_TIME}
      *
      * @return the value
-     */
+     **/
     public TimeTwoType getTimeTwoType() {
         return timeTwoType;
     }
 
     /**
-     * The actual value of the second time value. Typically, this denotes the time an event ended,
-     * but the meaning can vary, depending on the announcement type. The {@code timeTwoType}
-     * attribute describes the meaning.
-     */
+     * The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+     * can vary, depending on the announcement type. The {@code timeTwoType} attribute describes the meaning.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTwoValue")
     private final java.util.Date timeTwoValue;
 
     /**
-     * The actual value of the second time value. Typically, this denotes the time an event ended,
-     * but the meaning can vary, depending on the announcement type. The {@code timeTwoType}
-     * attribute describes the meaning.
+     * The actual value of the second time value. Typically, this denotes the time an event ended, but the meaning
+     * can vary, depending on the announcement type. The {@code timeTwoType} attribute describes the meaning.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeTwoValue() {
         return timeTwoValue;
     }
 
-    /** Impacted Oracle Cloud Infrastructure services. */
+    /**
+     * Impacted Oracle Cloud Infrastructure services.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<String> services;
 
     /**
      * Impacted Oracle Cloud Infrastructure services.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getServices() {
         return services;
     }
 
-    /** Impacted regions. */
+    /**
+     * Impacted regions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("affectedRegions")
     private final java.util.List<String> affectedRegions;
 
     /**
      * Impacted regions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAffectedRegions() {
         return affectedRegions;
     }
 
-    /** The type of announcement. An announcement's type signals its severity. */
-    public enum AnnouncementType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of announcement. An announcement's type signals its severity.
+     **/
+    public enum AnnouncementType {
         ActionRecommended("ACTION_RECOMMENDED"),
         ActionRequired("ACTION_REQUIRED"),
         EmergencyChange("EMERGENCY_CHANGE"),
@@ -389,15 +376,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         PlannedChangeRescheduled("PLANNED_CHANGE_RESCHEDULED"),
         ProductionEventNotification("PRODUCTION_EVENT_NOTIFICATION"),
         ScheduledMaintenance("SCHEDULED_MAINTENANCE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(AnnouncementType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, AnnouncementType> map;
@@ -405,9 +384,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (AnnouncementType v : AnnouncementType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -425,38 +402,30 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'AnnouncementType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid AnnouncementType: " + key);
         }
     };
-    /** The type of announcement. An announcement's type signals its severity. */
+    /**
+     * The type of announcement. An announcement's type signals its severity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("announcementType")
     private final AnnouncementType announcementType;
 
     /**
      * The type of announcement. An announcement's type signals its severity.
-     *
      * @return the value
-     */
+     **/
     public AnnouncementType getAnnouncementType() {
         return announcementType;
     }
 
-    /** The current lifecycle state of the announcement. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the announcement.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -464,9 +433,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -484,77 +451,77 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /** The current lifecycle state of the announcement. */
+    /**
+     * The current lifecycle state of the announcement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the announcement.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Whether the announcement is displayed as a banner in the console. */
+    /**
+     * Whether the announcement is displayed as a banner in the console.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBanner")
     private final Boolean isBanner;
 
     /**
      * Whether the announcement is displayed as a banner in the console.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsBanner() {
         return isBanner;
     }
 
     /**
-     * The date and time the announcement was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
-     */
+     * The date and time the announcement was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the announcement was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
+     * The date and time the announcement was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the announcement was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
-     */
+     * The date and time the announcement was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the announcement was last updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2019-01-01T17:43:01.389+0000}
+     * The date and time the announcement was last updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2019-01-01T17:43:01.389+0000}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The name of the environment that this announcement pertains to. */
+    /**
+     * The name of the environment that this announcement pertains to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentName")
     private final String environmentName;
 
@@ -562,25 +529,20 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
      * The name of the environment that this announcement pertains to.
      *
      * @return the value
-     */
+     **/
     public String getEnvironmentName() {
         return environmentName;
     }
 
-    /** The platform type that this announcement pertains to. */
-    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The platform type that this announcement pertains to.
+     *
+     **/
+    public enum PlatformType {
         Iaas("IAAS"),
         Saas("SAAS"),
         Paas("PAAS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(PlatformType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, PlatformType> map;
@@ -588,9 +550,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (PlatformType v : PlatformType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -608,13 +568,13 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'PlatformType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid PlatformType: " + key);
         }
     };
-    /** The platform type that this announcement pertains to. */
+    /**
+     * The platform type that this announcement pertains to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
@@ -622,24 +582,21 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
      * The platform type that this announcement pertains to.
      *
      * @return the value
-     */
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
 
     /**
-     * The sequence of connected announcements, or announcement chain, that this announcement
-     * belongs to. Related announcements share the same chain ID.
-     */
+     * The sequence of connected announcements, or announcement chain, that this announcement belongs to. Related announcements share the same chain ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chainId")
     private final String chainId;
 
     /**
-     * The sequence of connected announcements, or announcement chain, that this announcement
-     * belongs to. Related announcements share the same chain ID.
-     *
+     * The sequence of connected announcements, or announcement chain, that this announcement belongs to. Related announcements share the same chain ID.
      * @return the value
-     */
+     **/
     public String getChainId() {
         return chainId;
     }
@@ -651,7 +608,6 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

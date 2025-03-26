@@ -5,21 +5,19 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * The Resource Info. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * The Resource Info.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ResourceInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResourceInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResourceInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceCompartmentId",
@@ -62,166 +60,177 @@ public final class ResourceInfo extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The compartmentId of the resource. */
+        /**
+         * The compartmentId of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
         /**
          * The compartmentId of the resource.
-         *
          * @param resourceCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceCompartmentId(String resourceCompartmentId) {
             this.resourceCompartmentId = resourceCompartmentId;
             this.__explicitlySet__.add("resourceCompartmentId");
             return this;
         }
-        /** The name of the resource. */
+        /**
+         * The name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The name of the resource.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The Id of the resource. */
+        /**
+         * The Id of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The Id of the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The type of the resource. */
+        /**
+         * The type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The type of the resource.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The deployment type of the resource. */
+        /**
+         * The deployment type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private String deploymentType;
 
         /**
          * The deployment type of the resource.
-         *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(String deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** The connector Id of the resource. */
+        /**
+         * The connector Id of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
          * The connector Id of the resource.
-         *
          * @param connectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /** True if it is a cluster db. */
+        /**
+         * True if it is a cluster db.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isClusterDb")
         private Boolean isClusterDb;
 
         /**
          * True if it is a cluster db.
-         *
          * @param isClusterDb the value to set
          * @return this builder
-         */
+         **/
         public Builder isClusterDb(Boolean isClusterDb) {
             this.isClusterDb = isClusterDb;
             this.__explicitlySet__.add("isClusterDb");
             return this;
         }
-        /** host info objects */
+        /**
+         * host info objects
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostInfo")
         private java.util.List<HostInfo> hostInfo;
 
         /**
          * host info objects
-         *
          * @param hostInfo the value to set
          * @return this builder
-         */
+         **/
         public Builder hostInfo(java.util.List<HostInfo> hostInfo) {
             this.hostInfo = hostInfo;
             this.__explicitlySet__.add("hostInfo");
             return this;
         }
-        /** The version of the resource. */
+        /**
+         * The version of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * The version of the resource.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The platform type of the resource. */
+        /**
+         * The platform type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPlatformType")
         private String dbPlatformType;
 
         /**
          * The platform type of the resource.
-         *
          * @param dbPlatformType the value to set
          * @return this builder
-         */
+         **/
         public Builder dbPlatformType(String dbPlatformType) {
             this.dbPlatformType = dbPlatformType;
             this.__explicitlySet__.add("dbPlatformType");
             return this;
         }
-        /** The License Type of the resource. */
+        /**
+         * The License Type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private String licenseType;
 
         /**
          * The License Type of the resource.
-         *
          * @param licenseType the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseType(String licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
@@ -290,7 +299,9 @@ public final class ResourceInfo extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -299,145 +310,156 @@ public final class ResourceInfo extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The compartmentId of the resource. */
+    /**
+     * The compartmentId of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
     /**
      * The compartmentId of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceCompartmentId() {
         return resourceCompartmentId;
     }
 
-    /** The name of the resource. */
+    /**
+     * The name of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The name of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The Id of the resource. */
+    /**
+     * The Id of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The Id of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The type of the resource. */
+    /**
+     * The type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The type of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The deployment type of the resource. */
+    /**
+     * The deployment type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final String deploymentType;
 
     /**
      * The deployment type of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDeploymentType() {
         return deploymentType;
     }
 
-    /** The connector Id of the resource. */
+    /**
+     * The connector Id of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
      * The connector Id of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** True if it is a cluster db. */
+    /**
+     * True if it is a cluster db.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isClusterDb")
     private final Boolean isClusterDb;
 
     /**
      * True if it is a cluster db.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsClusterDb() {
         return isClusterDb;
     }
 
-    /** host info objects */
+    /**
+     * host info objects
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostInfo")
     private final java.util.List<HostInfo> hostInfo;
 
     /**
      * host info objects
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HostInfo> getHostInfo() {
         return hostInfo;
     }
 
-    /** The version of the resource. */
+    /**
+     * The version of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * The version of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
-    /** The platform type of the resource. */
+    /**
+     * The platform type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPlatformType")
     private final String dbPlatformType;
 
     /**
      * The platform type of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getDbPlatformType() {
         return dbPlatformType;
     }
 
-    /** The License Type of the resource. */
+    /**
+     * The License Type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final String licenseType;
 
     /**
      * The License Type of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getLicenseType() {
         return licenseType;
     }
@@ -449,7 +471,6 @@ public final class ResourceInfo extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The Oracle license model that applies to a Deployment. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Oracle license model that applies to a Deployment.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum LicenseModel {
     LicenseIncluded("LICENSE_INCLUDED"),
     BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
 

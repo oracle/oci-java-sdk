@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a Elasticsearch Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a Elasticsearch Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ElasticsearchConnection.Builder.class)
+    builder = ElasticsearchConnection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ElasticsearchConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,115 +199,121 @@ public final class ElasticsearchConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Elasticsearch technology type. */
+        /**
+         * The Elasticsearch technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Elasticsearch technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * Comma separated list of Elasticsearch server addresses, specified as host:port entries,
-         * where :port is optional. If port is not specified, it defaults to 9200. Used for
-         * establishing the initial connection to the Elasticsearch cluster. Example: {@code
-         * "server1.example.com:4000,server2.example.com:4000"}
-         */
+         * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.
+         * If port is not specified, it defaults to 9200.
+         * Used for establishing the initial connection to the Elasticsearch cluster.
+         * Example: {@code "server1.example.com:4000,server2.example.com:4000"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servers")
         private String servers;
 
         /**
-         * Comma separated list of Elasticsearch server addresses, specified as host:port entries,
-         * where :port is optional. If port is not specified, it defaults to 9200. Used for
-         * establishing the initial connection to the Elasticsearch cluster. Example: {@code
-         * "server1.example.com:4000,server2.example.com:4000"}
+         * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.
+         * If port is not specified, it defaults to 9200.
+         * Used for establishing the initial connection to the Elasticsearch cluster.
+         * Example: {@code "server1.example.com:4000,server2.example.com:4000"}
          *
          * @param servers the value to set
          * @return this builder
-         */
+         **/
         public Builder servers(String servers) {
             this.servers = servers;
             this.__explicitlySet__.add("servers");
             return this;
         }
-        /** Security protocol for Elasticsearch */
+        /**
+         * Security protocol for Elasticsearch
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private SecurityProtocol securityProtocol;
 
         /**
          * Security protocol for Elasticsearch
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
-        /** Authentication type for Elasticsearch. */
+        /**
+         * Authentication type for Elasticsearch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
         /**
          * Authentication type for Elasticsearch.
-         *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
@@ -431,7 +438,9 @@ public final class ElasticsearchConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -495,13 +504,15 @@ public final class ElasticsearchConnection extends Connection {
         this.passwordSecretId = passwordSecretId;
     }
 
-    /** The Elasticsearch technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Elasticsearch technology type.
+     **/
+    public enum TechnologyType {
         Elasticsearch("ELASTICSEARCH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -540,48 +551,52 @@ public final class ElasticsearchConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Elasticsearch technology type. */
+    /**
+     * The Elasticsearch technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Elasticsearch technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where
-     * :port is optional. If port is not specified, it defaults to 9200. Used for establishing the
-     * initial connection to the Elasticsearch cluster. Example: {@code
-     * "server1.example.com:4000,server2.example.com:4000"}
-     */
+     * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.
+     * If port is not specified, it defaults to 9200.
+     * Used for establishing the initial connection to the Elasticsearch cluster.
+     * Example: {@code "server1.example.com:4000,server2.example.com:4000"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("servers")
     private final String servers;
 
     /**
-     * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where
-     * :port is optional. If port is not specified, it defaults to 9200. Used for establishing the
-     * initial connection to the Elasticsearch cluster. Example: {@code
-     * "server1.example.com:4000,server2.example.com:4000"}
+     * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.
+     * If port is not specified, it defaults to 9200.
+     * Used for establishing the initial connection to the Elasticsearch cluster.
+     * Example: {@code "server1.example.com:4000,server2.example.com:4000"}
      *
      * @return the value
-     */
+     **/
     public String getServers() {
         return servers;
     }
 
-    /** Security protocol for Elasticsearch */
-    public enum SecurityProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Security protocol for Elasticsearch
+     **/
+    public enum SecurityProtocol {
         Plain("PLAIN"),
         Tls("TLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -620,27 +635,30 @@ public final class ElasticsearchConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Security protocol for Elasticsearch */
+    /**
+     * Security protocol for Elasticsearch
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final SecurityProtocol securityProtocol;
 
     /**
      * Security protocol for Elasticsearch
-     *
      * @return the value
-     */
+     **/
     public SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
-    /** Authentication type for Elasticsearch. */
-    public enum AuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Authentication type for Elasticsearch.
+     **/
+    public enum AuthenticationType {
         None("NONE"),
         Basic("BASIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -679,57 +697,60 @@ public final class ElasticsearchConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Authentication type for Elasticsearch. */
+    /**
+     * Authentication type for Elasticsearch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
     /**
      * Authentication type for Elasticsearch.
-     *
      * @return the value
-     */
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
@@ -741,7 +762,6 @@ public final class ElasticsearchConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

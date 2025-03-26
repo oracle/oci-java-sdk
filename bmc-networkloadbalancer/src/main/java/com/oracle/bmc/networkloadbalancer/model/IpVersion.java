@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Mode specifying the version of IP. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum IpVersion implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Mode specifying the version of IP.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum IpVersion {
     Ipv4("IPV4"),
     Ipv6("IPV6"),
 

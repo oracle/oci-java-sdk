@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The status of a schedule. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ScheduleLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of a schedule.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ScheduleLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

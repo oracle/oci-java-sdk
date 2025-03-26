@@ -4,7 +4,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.61.0</version>
+        <version>2.82.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -38,33 +38,7 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common</artifactId>
-            <version>3.61.0</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.oci.sdk</groupId>
-            <artifactId>oci-java-sdk-core</artifactId>
-            <version>3.61.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.oci.sdk</groupId>
-            <artifactId>oci-java-sdk-identity</artifactId>
-            <version>3.61.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.oracle.oci.sdk</groupId>
-            <artifactId>oci-java-sdk-keymanagement</artifactId>
-            <version>3.61.0</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.specto</groupId>
-            <artifactId>hoverfly-java</artifactId>
-            <version>0.11.1</version>
-            <scope>test</scope>
+            <version>2.82.0</version>
         </dependency>
     </dependencies>
-
 </project>

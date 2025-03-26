@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Lists the compartment to find VCN overlap. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Lists the compartment to find VCN overlap.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GetIpInventoryVcnOverlapDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GetIpInventoryVcnOverlapDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GetIpInventoryVcnOverlapDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"regionList", "compartmentList"})
     public GetIpInventoryVcnOverlapDetails(
@@ -33,35 +32,33 @@ public final class GetIpInventoryVcnOverlapDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Lists the selected regions. */
+        /**
+         * Lists the selected regions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionList")
         private java.util.List<String> regionList;
 
         /**
          * Lists the selected regions.
-         *
          * @param regionList the value to set
          * @return this builder
-         */
+         **/
         public Builder regionList(java.util.List<String> regionList) {
             this.regionList = regionList;
             this.__explicitlySet__.add("regionList");
             return this;
         }
         /**
-         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartments.
-         */
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
         private java.util.List<String> compartmentList;
 
         /**
-         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartments.
-         *
+         * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
          * @param compartmentList the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentList(java.util.List<String> compartmentList) {
             this.compartmentList = compartmentList;
             this.__explicitlySet__.add("compartmentList");
@@ -92,7 +89,9 @@ public final class GetIpInventoryVcnOverlapDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,32 +100,30 @@ public final class GetIpInventoryVcnOverlapDetails
         return new Builder().copy(this);
     }
 
-    /** Lists the selected regions. */
+    /**
+     * Lists the selected regions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionList")
     private final java.util.List<String> regionList;
 
     /**
      * Lists the selected regions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRegionList() {
         return regionList;
     }
 
     /**
-     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartments.
-     */
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentList")
     private final java.util.List<String> compartmentList;
 
     /**
-     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartments.
-     *
+     * The list of [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartments.
      * @return the value
-     */
+     **/
     public java.util.List<String> getCompartmentList() {
         return compartmentList;
     }
@@ -138,7 +135,6 @@ public final class GetIpInventoryVcnOverlapDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,60 +6,78 @@ package com.oracle.bmc.apmsynthetics.requests;
 
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteWorkerExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteWorkerRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/DeleteWorkerExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteWorkerRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     private String apmDomainId;
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /** The OCID of the On-premise vantage point. */
+    /**
+     * The OCID of the On-premise vantage point.
+     */
     private String onPremiseVantagePointId;
 
-    /** The OCID of the On-premise vantage point. */
+    /**
+     * The OCID of the On-premise vantage point.
+     */
     public String getOnPremiseVantagePointId() {
         return onPremiseVantagePointId;
     }
-    /** The OCID of the On-premise vantage point worker. */
+    /**
+     * The OCID of the On-premise vantage point worker.
+     */
     private String workerId;
 
-    /** The OCID of the On-premise vantage point worker. */
+    /**
+     * The OCID of the On-premise vantage point worker.
+     */
     public String getWorkerId() {
         return workerId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -68,10 +86,14 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteWorkerRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM domain ID the request is intended for. */
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
@@ -85,12 +107,13 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of the On-premise vantage point. */
+        /**
+         * The OCID of the On-premise vantage point.
+         */
         private String onPremiseVantagePointId = null;
 
         /**
          * The OCID of the On-premise vantage point.
-         *
          * @param onPremiseVantagePointId the value to set
          * @return this builder instance
          */
@@ -99,12 +122,13 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of the On-premise vantage point worker. */
+        /**
+         * The OCID of the On-premise vantage point worker.
+         */
         private String workerId = null;
 
         /**
          * The OCID of the On-premise vantage point worker.
-         *
          * @param workerId the value to set
          * @return this builder instance
          */
@@ -114,18 +138,21 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -136,14 +163,15 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -155,19 +183,18 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -179,7 +206,6 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteWorkerRequest o) {
@@ -196,11 +222,10 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of DeleteWorkerRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteWorkerRequest
          */
@@ -214,8 +239,7 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of DeleteWorkerRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteWorkerRequest
@@ -228,14 +252,12 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteWorkerRequest(apmDomainId, onPremiseVantagePointId, workerId, ifMatch,
-            // opcRequestId);
+            // new DeleteWorkerRequest(apmDomainId, onPremiseVantagePointId, workerId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +271,6 @@ public class DeleteWorkerRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

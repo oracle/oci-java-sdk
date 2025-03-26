@@ -6,9 +6,12 @@ package com.oracle.bmc.apigateway.responses;
 
 import com.oracle.bmc.apigateway.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,17 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
      *
      * @return the value
      */
@@ -36,12 +42,13 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned {@code ApiSpecification} instance. */
+    /**
+     * The returned ApiSpecification instance.
+     */
     private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
     /**
-     * The returned {@code ApiSpecification} instance.
-     *
+     * The returned ApiSpecification instance.
      * @return the value
      */
     public com.oracle.bmc.apigateway.model.ApiSpecification getApiSpecification() {
@@ -57,7 +64,7 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
     })
     private GetApiDeploymentSpecificationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification) {
@@ -67,26 +74,25 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
         this.apiSpecification = apiSpecification;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetApiDeploymentSpecificationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -101,14 +107,17 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +127,13 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code ApiSpecification} instance. */
+        /**
+         * The returned ApiSpecification instance.
+         */
         private com.oracle.bmc.apigateway.model.ApiSpecification apiSpecification;
 
         /**
-         * The returned {@code ApiSpecification} instance.
-         *
+         * The returned ApiSpecification instance.
          * @param apiSpecification the value to set
          * @return this builder
          */
@@ -135,10 +145,8 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetApiDeploymentSpecificationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +159,8 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetApiDeploymentSpecificationResponse build() {
             return new GetApiDeploymentSpecificationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, apiSpecification);
@@ -163,7 +169,6 @@ public class GetApiDeploymentSpecificationResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

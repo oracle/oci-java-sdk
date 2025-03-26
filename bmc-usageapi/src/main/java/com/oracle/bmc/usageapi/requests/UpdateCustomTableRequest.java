@@ -6,55 +6,67 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCustomTableRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateCustomTableRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class UpdateCustomTableRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.usageapi.model.UpdateCustomTableDetails> {
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.usageapi.model.UpdateCustomTableDetails getUpdateCustomTableDetails() {
         return updateCustomTableDetails;
     }
-    /** The custom table unique OCID. */
+    /**
+     * The custom table unique OCID.
+     */
     private String customTableId;
 
-    /** The custom table unique OCID. */
+    /**
+     * The custom table unique OCID.
+     */
     public String getCustomTableId() {
         return customTableId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted, only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted, only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted, only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted, only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -62,7 +74,6 @@ public class UpdateCustomTableRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -75,16 +86,18 @@ public class UpdateCustomTableRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateCustomTableRequest,
                     com.oracle.bmc.usageapi.model.UpdateCustomTableDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.usageapi.model.UpdateCustomTableDetails updateCustomTableDetails =
                 null;
 
         /**
          * The information to be updated.
-         *
          * @param updateCustomTableDetails the value to set
          * @return this builder instance
          */
@@ -94,12 +107,13 @@ public class UpdateCustomTableRequest
             return this;
         }
 
-        /** The custom table unique OCID. */
+        /**
+         * The custom table unique OCID.
+         */
         private String customTableId = null;
 
         /**
          * The custom table unique OCID.
-         *
          * @param customTableId the value to set
          * @return this builder instance
          */
@@ -111,6 +125,7 @@ public class UpdateCustomTableRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -127,18 +142,21 @@ public class UpdateCustomTableRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted, only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted, only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted, only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -150,19 +168,18 @@ public class UpdateCustomTableRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -174,7 +191,6 @@ public class UpdateCustomTableRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateCustomTableRequest o) {
@@ -190,11 +206,10 @@ public class UpdateCustomTableRequest
         /**
          * Build the instance of UpdateCustomTableRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateCustomTableRequest
          */
@@ -207,7 +222,6 @@ public class UpdateCustomTableRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -220,8 +234,7 @@ public class UpdateCustomTableRequest
         /**
          * Build the instance of UpdateCustomTableRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateCustomTableRequest
@@ -233,14 +246,12 @@ public class UpdateCustomTableRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateCustomTableRequest(updateCustomTableDetails, customTableId, opcRequestId,
-            // ifMatch);
+            // new UpdateCustomTableRequest(updateCustomTableDetails, customTableId, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -253,7 +264,6 @@ public class UpdateCustomTableRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

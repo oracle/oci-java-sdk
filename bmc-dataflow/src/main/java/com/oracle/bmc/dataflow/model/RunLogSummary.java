@@ -5,21 +5,20 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A summary of a log associated with a particular run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * A summary of a log associated with a particular run.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunLogSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RunLogSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RunLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -47,22 +46,30 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the log. Example: spark_driver_stderr_20190917T114000Z.log.gz */
+        /**
+         * The name of the log.
+         * Example: spark_driver_stderr_20190917T114000Z.log.gz
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the log. Example: spark_driver_stderr_20190917T114000Z.log.gz
+         * The name of the log.
+         * Example: spark_driver_stderr_20190917T114000Z.log.gz
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The runId associated with the log. */
+        /**
+         * The runId associated with the log.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runId")
         private String runId;
 
@@ -71,13 +78,16 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param runId the value to set
          * @return this builder
-         */
+         **/
         public Builder runId(String runId) {
             this.runId = runId;
             this.__explicitlySet__.add("runId");
             return this;
         }
-        /** The size of the object in bytes. */
+        /**
+         * The size of the object in bytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
@@ -86,13 +96,16 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-        /** The source of the log such as driver and executor. */
+        /**
+         * The source of the log such as driver and executor.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
@@ -101,32 +114,34 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
         /**
-         * The date and time the object was created, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
-         */
+         * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the object was created, as described in [RFC
-         * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+         * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The type of log such as stdout and stderr. */
+        /**
+         * The type of log such as stdout and stderr.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -135,7 +150,7 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -184,7 +199,9 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -193,20 +210,28 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The name of the log. Example: spark_driver_stderr_20190917T114000Z.log.gz */
+    /**
+     * The name of the log.
+     * Example: spark_driver_stderr_20190917T114000Z.log.gz
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the log. Example: spark_driver_stderr_20190917T114000Z.log.gz
+     * The name of the log.
+     * Example: spark_driver_stderr_20190917T114000Z.log.gz
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The runId associated with the log. */
+    /**
+     * The runId associated with the log.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runId")
     private final String runId;
 
@@ -214,12 +239,15 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
      * The runId associated with the log.
      *
      * @return the value
-     */
+     **/
     public String getRunId() {
         return runId;
     }
 
-    /** The size of the object in bytes. */
+    /**
+     * The size of the object in bytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
@@ -227,20 +255,23 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
      * The size of the object in bytes.
      *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /** The source of the log such as driver and executor. */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The source of the log such as driver and executor.
+     *
+     **/
+    public enum Source {
         Application("APPLICATION"),
         Driver("DRIVER"),
         Executor("EXECUTOR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -278,7 +309,10 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The source of the log such as driver and executor. */
+    /**
+     * The source of the log such as driver and executor.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
@@ -286,36 +320,38 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
      * The source of the log such as driver and executor.
      *
      * @return the value
-     */
+     **/
     public Source getSource() {
         return source;
     }
 
     /**
-     * The date and time the object was created, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
-     */
+     * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the object was created, as described in [RFC
-     * 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
+     * The date and time the object was created, as described in [RFC 2616](https://tools.ietf.org/rfc/rfc2616), section 14.29.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The type of log such as stdout and stderr. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of log such as stdout and stderr.
+     *
+     **/
+    public enum Type {
         Stderr("STDERR"),
         Stdout("STDOUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -352,7 +388,10 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The type of log such as stdout and stderr. */
+    /**
+     * The type of log such as stdout and stderr.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -360,7 +399,7 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
      * The type of log such as stdout and stderr.
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
@@ -372,7 +411,6 @@ public final class RunLogSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details for generating Compliance Report <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details for generating Compliance Report
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExportComplianceReportDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExportComplianceReportDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExportComplianceReportDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -49,91 +48,97 @@ public final class ExportComplianceReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the entity for which the compliance is calculated.Ex.FleetId */
+        /**
+         * The OCID of the entity for which the compliance is calculated.Ex.FleetId
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The OCID of the entity for which the compliance is calculated.Ex.FleetId
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The OCID to identify the resource. */
+        /**
+         * The OCID to identify the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The OCID to identify the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Product Stack. */
+        /**
+         * Product Stack.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productStack")
         private String productStack;
 
         /**
          * Product Stack.
-         *
          * @param productStack the value to set
          * @return this builder
-         */
+         **/
         public Builder productStack(String productStack) {
             this.productStack = productStack;
             this.__explicitlySet__.add("productStack");
             return this;
         }
-        /** Product Name. */
+        /**
+         * Product Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
          * Product Name.
-         *
          * @param productName the value to set
          * @return this builder
-         */
+         **/
         public Builder productName(String productName) {
             this.productName = productName;
             this.__explicitlySet__.add("productName");
             return this;
         }
-        /** Last known compliance state of target. */
+        /**
+         * Last known compliance state of target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
          * Last known compliance state of target.
-         *
          * @param complianceState the value to set
          * @return this builder
-         */
+         **/
         public Builder complianceState(ComplianceState complianceState) {
             this.complianceState = complianceState;
             this.__explicitlySet__.add("complianceState");
@@ -182,7 +187,9 @@ public final class ExportComplianceReportDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class ExportComplianceReportDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the entity for which the compliance is calculated.Ex.FleetId */
+    /**
+     * The OCID of the entity for which the compliance is calculated.Ex.FleetId
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The OCID of the entity for which the compliance is calculated.Ex.FleetId
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The OCID to identify the resource. */
+    /**
+     * The OCID to identify the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The OCID to identify the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Product Stack. */
+    /**
+     * Product Stack.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productStack")
     private final String productStack;
 
     /**
      * Product Stack.
-     *
      * @return the value
-     */
+     **/
     public String getProductStack() {
         return productStack;
     }
 
-    /** Product Name. */
+    /**
+     * Product Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
      * Product Name.
-     *
      * @return the value
-     */
+     **/
     public String getProductName() {
         return productName;
     }
 
-    /** Last known compliance state of target. */
+    /**
+     * Last known compliance state of target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
      * Last known compliance state of target.
-     *
      * @return the value
-     */
+     **/
     public ComplianceState getComplianceState() {
         return complianceState;
     }
@@ -276,7 +289,6 @@ public final class ExportComplianceReportDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

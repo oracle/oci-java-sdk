@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.certificatesmanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.certificatesmanagement.internal.http.*;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for CertificatesManagement service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for CertificatesManagement service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements CertificatesManagementAsync {
-    /** Service instance for CertificatesManagement. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public class CertificatesManagementAsyncClient implements CertificatesManagementAsync {
+    /**
+     * Service instance for CertificatesManagement.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("CERTIFICATESMANAGEMENT")
@@ -40,1314 +37,112 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CertificatesManagementAsyncClient.class);
 
-    CertificatesManagementAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, CertificatesManagementAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "certificatesmanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public CertificatesManagementAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new CertificatesManagementAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelCertificateAuthorityDeletionResponse>
-            cancelCertificateAuthorityDeletion(
-                    CancelCertificateAuthorityDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CancelCertificateAuthorityDeletionRequest,
-                                    CancelCertificateAuthorityDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, CancelCertificateAuthorityDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateAuthorityDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CancelCertificateAuthorityDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateAuthorityDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateAuthorityDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateAuthorityDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelCertificateAuthorityVersionDeletionResponse>
-            cancelCertificateAuthorityVersionDeletion(
-                    CancelCertificateAuthorityVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CancelCertificateAuthorityVersionDeletionRequest,
-                                    CancelCertificateAuthorityVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, CancelCertificateAuthorityVersionDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateAuthorityVersionDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CancelCertificateAuthorityVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateAuthorityVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateAuthorityVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateAuthorityVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelCertificateDeletionResponse> cancelCertificateDeletion(
-            CancelCertificateDeletionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelCertificateDeletionRequest, CancelCertificateDeletionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, CancelCertificateDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CancelCertificateDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString("etag", CancelCertificateDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelCertificateDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelCertificateVersionDeletionResponse>
-            cancelCertificateVersionDeletion(
-                    CancelCertificateVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CancelCertificateVersionDeletionRequest,
-                                    CancelCertificateVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, CancelCertificateVersionDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateVersionDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CancelCertificateVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeCaBundleCompartmentResponse> changeCaBundleCompartment(
-            ChangeCaBundleCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeCaBundleCompartmentRequest, ChangeCaBundleCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCaBundleCompartmentDetails(),
-                "changeCaBundleCompartmentDetails is required");
-
-        return clientCall(request, ChangeCaBundleCompartmentResponse::builder)
-                .logger(LOG, "changeCaBundleCompartment")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ChangeCaBundleCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCaBundleCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeCaBundleCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeCertificateAuthorityCompartmentResponse>
-            changeCertificateAuthorityCompartment(
-                    ChangeCertificateAuthorityCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeCertificateAuthorityCompartmentRequest,
-                                    ChangeCertificateAuthorityCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCertificateAuthorityCompartmentDetails(),
-                "changeCertificateAuthorityCompartmentDetails is required");
-
-        return clientCall(request, ChangeCertificateAuthorityCompartmentResponse::builder)
-                .logger(LOG, "changeCertificateAuthorityCompartment")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ChangeCertificateAuthorityCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCertificateAuthorityCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCertificateAuthorityCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeCertificateCompartmentResponse>
-            changeCertificateCompartment(
-                    ChangeCertificateCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeCertificateCompartmentRequest,
-                                    ChangeCertificateCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCertificateCompartmentDetails(),
-                "changeCertificateCompartmentDetails is required");
-
-        return clientCall(request, ChangeCertificateCompartmentResponse::builder)
-                .logger(LOG, "changeCertificateCompartment")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ChangeCertificateCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCertificateCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCertificateCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateCaBundleResponse> createCaBundle(
-            CreateCaBundleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateCaBundleRequest, CreateCaBundleResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateCaBundleDetails(), "createCaBundleDetails is required");
-
-        return clientCall(request, CreateCaBundleResponse::builder)
-                .logger(LOG, "createCaBundle")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CreateCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        CreateCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", CreateCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCaBundleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
-            CreateCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateCertificateRequest, CreateCertificateResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateCertificateDetails(), "createCertificateDetails is required");
-
-        return clientCall(request, CreateCertificateResponse::builder)
-                .logger(LOG, "createCertificate")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CreateCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        CreateCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", CreateCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateCertificateAuthorityResponse>
-            createCertificateAuthority(
-                    CreateCertificateAuthorityRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateCertificateAuthorityRequest,
-                                    CreateCertificateAuthorityResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateCertificateAuthorityDetails(),
-                "createCertificateAuthorityDetails is required");
-
-        return clientCall(request, CreateCertificateAuthorityResponse::builder)
-                .logger(LOG, "createCertificateAuthority")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "CreateCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        CreateCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString(
-                        "etag", CreateCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCertificateAuthorityResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteCaBundleResponse> deleteCaBundle(
-            DeleteCaBundleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteCaBundleRequest, DeleteCaBundleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-
-        return clientCall(request, DeleteCaBundleResponse::builder)
-                .logger(LOG, "deleteCaBundle")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "DeleteCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteCaBundleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetAssociationResponse> getAssociation(
-            GetAssociationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetAssociationRequest, GetAssociationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getAssociationId(), "associationId must not be blank");
-
-        return clientCall(request, GetAssociationResponse::builder)
-                .logger(LOG, "getAssociation")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetAssociation",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAssociationRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("associations")
-                .appendPathParam(request.getAssociationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Association.class,
-                        GetAssociationResponse.Builder::association)
-                .handleResponseHeaderString("etag", GetAssociationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAssociationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCaBundleResponse> getCaBundle(
-            GetCaBundleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetCaBundleRequest, GetCaBundleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-
-        return clientCall(request, GetCaBundleResponse::builder)
-                .logger(LOG, "getCaBundle")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        GetCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", GetCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCaBundleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCertificateResponse> getCertificate(
-            GetCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetCertificateRequest, GetCertificateResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, GetCertificateResponse::builder)
-                .logger(LOG, "getCertificate")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        GetCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCertificateAuthorityResponse> getCertificateAuthority(
-            GetCertificateAuthorityRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, GetCertificateAuthorityResponse::builder)
-                .logger(LOG, "getCertificateAuthority")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        GetCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString("etag", GetCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateAuthorityResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCertificateAuthorityVersionResponse>
-            getCertificateAuthorityVersion(
-                    GetCertificateAuthorityVersionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetCertificateAuthorityVersionRequest,
-                                    GetCertificateAuthorityVersionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, GetCertificateAuthorityVersionResponse::builder)
-                .logger(LOG, "getCertificateAuthorityVersion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetCertificateAuthorityVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateAuthorityVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersion
-                                .class,
-                        GetCertificateAuthorityVersionResponse.Builder::certificateAuthorityVersion)
-                .handleResponseHeaderString(
-                        "etag", GetCertificateAuthorityVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetCertificateAuthorityVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCertificateVersionResponse> getCertificateVersion(
-            GetCertificateVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetCertificateVersionRequest, GetCertificateVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, GetCertificateVersionResponse::builder)
-                .logger(LOG, "getCertificateVersion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "GetCertificateVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateVersion.class,
-                        GetCertificateVersionResponse.Builder::certificateVersion)
-                .handleResponseHeaderString("etag", GetCertificateVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListAssociationsResponse> listAssociations(
-            ListAssociationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListAssociationsRequest, ListAssociationsResponse>
-                    handler) {
-
-        return clientCall(request, ListAssociationsResponse::builder)
-                .logger(LOG, "listAssociations")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAssociationsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("associations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("certificatesResourceId", request.getCertificatesResourceId())
-                .appendQueryParam("associatedResourceId", request.getAssociatedResourceId())
-                .appendQueryParam("associationId", request.getAssociationId())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("associationType", request.getAssociationType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.AssociationCollection.class,
-                        ListAssociationsResponse.Builder::associationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAssociationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAssociationsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCaBundlesResponse> listCaBundles(
-            ListCaBundlesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListCaBundlesRequest, ListCaBundlesResponse>
-                    handler) {
-
-        return clientCall(request, ListCaBundlesResponse::builder)
-                .logger(LOG, "listCaBundles")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListCaBundles",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCaBundlesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("caBundleId", request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundleCollection.class,
-                        ListCaBundlesResponse.Builder::caBundleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCaBundlesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCaBundlesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCertificateAuthoritiesResponse>
-            listCertificateAuthorities(
-                    ListCertificateAuthoritiesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListCertificateAuthoritiesRequest,
-                                    ListCertificateAuthoritiesResponse>
-                            handler) {
-
-        return clientCall(request, ListCertificateAuthoritiesResponse::builder)
-                .logger(LOG, "listCertificateAuthorities")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListCertificateAuthorities",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateAuthoritiesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam(
-                        "issuerCertificateAuthorityId", request.getIssuerCertificateAuthorityId())
-                .appendQueryParam("certificateAuthorityId", request.getCertificateAuthorityId())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
-                                .class,
-                        ListCertificateAuthoritiesResponse.Builder::certificateAuthorityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificateAuthoritiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificateAuthoritiesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCertificateAuthorityVersionsResponse>
-            listCertificateAuthorityVersions(
-                    ListCertificateAuthorityVersionsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListCertificateAuthorityVersionsRequest,
-                                    ListCertificateAuthorityVersionsResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, ListCertificateAuthorityVersionsResponse::builder)
-                .logger(LOG, "listCertificateAuthorityVersions")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListCertificateAuthorityVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateAuthorityVersionsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("versions")
-                .appendQueryParam("versionNumber", request.getVersionNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model
-                                .CertificateAuthorityVersionCollection.class,
-                        ListCertificateAuthorityVersionsResponse.Builder
-                                ::certificateAuthorityVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListCertificateAuthorityVersionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListCertificateAuthorityVersionsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCertificateVersionsResponse> listCertificateVersions(
-            ListCertificateVersionsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListCertificateVersionsRequest, ListCertificateVersionsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, ListCertificateVersionsResponse::builder)
-                .logger(LOG, "listCertificateVersions")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListCertificateVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateVersionsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("versions")
-                .appendQueryParam("versionNumber", request.getVersionNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateVersionCollection
-                                .class,
-                        ListCertificateVersionsResponse.Builder::certificateVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificateVersionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificateVersionsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
-            ListCertificatesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListCertificatesRequest, ListCertificatesResponse>
-                    handler) {
-
-        return clientCall(request, ListCertificatesResponse::builder)
-                .logger(LOG, "listCertificates")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ListCertificates",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificatesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam(
-                        "issuerCertificateAuthorityId", request.getIssuerCertificateAuthorityId())
-                .appendQueryParam("certificateId", request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateCollection.class,
-                        ListCertificatesResponse.Builder::certificateCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RevokeCertificateAuthorityVersionResponse>
-            revokeCertificateAuthorityVersion(
-                    RevokeCertificateAuthorityVersionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RevokeCertificateAuthorityVersionRequest,
-                                    RevokeCertificateAuthorityVersionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        Objects.requireNonNull(
-                request.getRevokeCertificateAuthorityVersionDetails(),
-                "revokeCertificateAuthorityVersionDetails is required");
-
-        return clientCall(request, RevokeCertificateAuthorityVersionResponse::builder)
-                .logger(LOG, "revokeCertificateAuthorityVersion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "RevokeCertificateAuthorityVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RevokeCertificateAuthorityVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("revoke")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", RevokeCertificateAuthorityVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RevokeCertificateAuthorityVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RevokeCertificateVersionResponse> revokeCertificateVersion(
-            RevokeCertificateVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RevokeCertificateVersionRequest, RevokeCertificateVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        Objects.requireNonNull(
-                request.getRevokeCertificateVersionDetails(),
-                "revokeCertificateVersionDetails is required");
-
-        return clientCall(request, RevokeCertificateVersionResponse::builder)
-                .logger(LOG, "revokeCertificateVersion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "RevokeCertificateVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RevokeCertificateVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("revoke")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString("etag", RevokeCertificateVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RevokeCertificateVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleCertificateAuthorityDeletionResponse>
-            scheduleCertificateAuthorityDeletion(
-                    ScheduleCertificateAuthorityDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleCertificateAuthorityDeletionRequest,
-                                    ScheduleCertificateAuthorityDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleCertificateAuthorityDeletionDetails(),
-                "scheduleCertificateAuthorityDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateAuthorityDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateAuthorityDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ScheduleCertificateAuthorityDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateAuthorityDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateAuthorityDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateAuthorityDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleCertificateAuthorityVersionDeletionResponse>
-            scheduleCertificateAuthorityVersionDeletion(
-                    ScheduleCertificateAuthorityVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleCertificateAuthorityVersionDeletionRequest,
-                                    ScheduleCertificateAuthorityVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        Objects.requireNonNull(
-                request.getScheduleCertificateAuthorityVersionDeletionDetails(),
-                "scheduleCertificateAuthorityVersionDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateAuthorityVersionDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateAuthorityVersionDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ScheduleCertificateAuthorityVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateAuthorityVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateAuthorityVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateAuthorityVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleCertificateDeletionResponse>
-            scheduleCertificateDeletion(
-                    ScheduleCertificateDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleCertificateDeletionRequest,
-                                    ScheduleCertificateDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleCertificateDeletionDetails(),
-                "scheduleCertificateDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ScheduleCertificateDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ScheduleCertificateDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleCertificateVersionDeletionResponse>
-            scheduleCertificateVersionDeletion(
-                    ScheduleCertificateVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleCertificateVersionDeletionRequest,
-                                    ScheduleCertificateVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        Objects.requireNonNull(
-                request.getScheduleCertificateVersionDeletionDetails(),
-                "scheduleCertificateVersionDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateVersionDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateVersionDeletion")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "ScheduleCertificateVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateCaBundleResponse> updateCaBundle(
-            UpdateCaBundleRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateCaBundleRequest, UpdateCaBundleResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCaBundleDetails(), "updateCaBundleDetails is required");
-
-        return clientCall(request, UpdateCaBundleResponse::builder)
-                .logger(LOG, "updateCaBundle")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "UpdateCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        UpdateCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", UpdateCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCaBundleResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateCertificateResponse> updateCertificate(
-            UpdateCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateCertificateRequest, UpdateCertificateResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCertificateDetails(), "updateCertificateDetails is required");
-
-        return clientCall(request, UpdateCertificateResponse::builder)
-                .logger(LOG, "updateCertificate")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "UpdateCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        UpdateCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", UpdateCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateCertificateAuthorityResponse>
-            updateCertificateAuthority(
-                    UpdateCertificateAuthorityRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateCertificateAuthorityRequest,
-                                    UpdateCertificateAuthorityResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCertificateAuthorityDetails(),
-                "updateCertificateAuthorityDetails is required");
-
-        return clientCall(request, UpdateCertificateAuthorityResponse::builder)
-                .logger(LOG, "updateCertificateAuthority")
-                .serviceDetails(
-                        "CertificatesManagement",
-                        "UpdateCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        UpdateCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString(
-                        "etag", UpdateCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCertificateAuthorityResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1355,26 +150,26 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1383,29 +178,29 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public CertificatesManagementAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1418,14 +213,1912 @@ public class CertificatesManagementAsyncClient extends com.oracle.bmc.http.inter
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public CertificatesManagementAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, CertificatesManagementAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public CertificatesManagementAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new CertificatesManagementAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCertificateAuthorityDeletionResponse>
+            cancelCertificateAuthorityDeletion(
+                    CancelCertificateAuthorityDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelCertificateAuthorityDeletionRequest,
+                                    CancelCertificateAuthorityDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelCertificateAuthorityDeletion");
+        final CancelCertificateAuthorityDeletionRequest interceptedRequest =
+                CancelCertificateAuthorityDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateAuthorityDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CancelCertificateAuthorityDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelCertificateAuthorityDeletionResponse>
+                transformer =
+                        CancelCertificateAuthorityDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelCertificateAuthorityDeletionRequest,
+                        CancelCertificateAuthorityDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelCertificateAuthorityDeletionRequest,
+                                CancelCertificateAuthorityDeletionResponse>,
+                        java.util.concurrent.Future<CancelCertificateAuthorityDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelCertificateAuthorityDeletionRequest,
+                    CancelCertificateAuthorityDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCertificateAuthorityVersionDeletionResponse>
+            cancelCertificateAuthorityVersionDeletion(
+                    CancelCertificateAuthorityVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelCertificateAuthorityVersionDeletionRequest,
+                                    CancelCertificateAuthorityVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelCertificateAuthorityVersionDeletion");
+        final CancelCertificateAuthorityVersionDeletionRequest interceptedRequest =
+                CancelCertificateAuthorityVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateAuthorityVersionDeletionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CancelCertificateAuthorityVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CancelCertificateAuthorityVersionDeletionResponse>
+                transformer =
+                        CancelCertificateAuthorityVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelCertificateAuthorityVersionDeletionRequest,
+                        CancelCertificateAuthorityVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelCertificateAuthorityVersionDeletionRequest,
+                                CancelCertificateAuthorityVersionDeletionResponse>,
+                        java.util.concurrent.Future<
+                                CancelCertificateAuthorityVersionDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelCertificateAuthorityVersionDeletionRequest,
+                    CancelCertificateAuthorityVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCertificateDeletionResponse> cancelCertificateDeletion(
+            CancelCertificateDeletionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelCertificateDeletionRequest, CancelCertificateDeletionResponse>
+                    handler) {
+        LOG.trace("Called async cancelCertificateDeletion");
+        final CancelCertificateDeletionRequest interceptedRequest =
+                CancelCertificateDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CancelCertificateDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelCertificateDeletionResponse>
+                transformer =
+                        CancelCertificateDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelCertificateDeletionRequest, CancelCertificateDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelCertificateDeletionRequest,
+                                CancelCertificateDeletionResponse>,
+                        java.util.concurrent.Future<CancelCertificateDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelCertificateDeletionRequest, CancelCertificateDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelCertificateVersionDeletionResponse>
+            cancelCertificateVersionDeletion(
+                    CancelCertificateVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelCertificateVersionDeletionRequest,
+                                    CancelCertificateVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelCertificateVersionDeletion");
+        final CancelCertificateVersionDeletionRequest interceptedRequest =
+                CancelCertificateVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CancelCertificateVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelCertificateVersionDeletionResponse>
+                transformer =
+                        CancelCertificateVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelCertificateVersionDeletionRequest,
+                        CancelCertificateVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelCertificateVersionDeletionRequest,
+                                CancelCertificateVersionDeletionResponse>,
+                        java.util.concurrent.Future<CancelCertificateVersionDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelCertificateVersionDeletionRequest,
+                    CancelCertificateVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCaBundleCompartmentResponse> changeCaBundleCompartment(
+            ChangeCaBundleCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeCaBundleCompartmentRequest, ChangeCaBundleCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeCaBundleCompartment");
+        final ChangeCaBundleCompartmentRequest interceptedRequest =
+                ChangeCaBundleCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCaBundleCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ChangeCaBundleCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCaBundleCompartmentResponse>
+                transformer =
+                        ChangeCaBundleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCaBundleCompartmentRequest, ChangeCaBundleCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCaBundleCompartmentRequest,
+                                ChangeCaBundleCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCaBundleCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCaBundleCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCaBundleCompartmentRequest, ChangeCaBundleCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCertificateAuthorityCompartmentResponse>
+            changeCertificateAuthorityCompartment(
+                    ChangeCertificateAuthorityCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCertificateAuthorityCompartmentRequest,
+                                    ChangeCertificateAuthorityCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCertificateAuthorityCompartment");
+        final ChangeCertificateAuthorityCompartmentRequest interceptedRequest =
+                ChangeCertificateAuthorityCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCertificateAuthorityCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ChangeCertificateAuthorityCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCertificateAuthorityCompartmentResponse>
+                transformer =
+                        ChangeCertificateAuthorityCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCertificateAuthorityCompartmentRequest,
+                        ChangeCertificateAuthorityCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCertificateAuthorityCompartmentRequest,
+                                ChangeCertificateAuthorityCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCertificateAuthorityCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCertificateAuthorityCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCertificateAuthorityCompartmentRequest,
+                    ChangeCertificateAuthorityCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCertificateCompartmentResponse>
+            changeCertificateCompartment(
+                    ChangeCertificateCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCertificateCompartmentRequest,
+                                    ChangeCertificateCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCertificateCompartment");
+        final ChangeCertificateCompartmentRequest interceptedRequest =
+                ChangeCertificateCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCertificateCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ChangeCertificateCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+                transformer =
+                        ChangeCertificateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCertificateCompartmentRequest,
+                                ChangeCertificateCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCertificateCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCertificateCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCaBundleResponse> createCaBundle(
+            CreateCaBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCaBundleRequest, CreateCaBundleResponse>
+                    handler) {
+        LOG.trace("Called async createCaBundle");
+        final CreateCaBundleRequest interceptedRequest =
+                CreateCaBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCaBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CreateCaBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCaBundleResponse>
+                transformer =
+                        CreateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateCaBundleRequest, CreateCaBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCaBundleRequest, CreateCaBundleResponse>,
+                        java.util.concurrent.Future<CreateCaBundleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCaBundleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCaBundleRequest, CreateCaBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
+            CreateCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCertificateRequest, CreateCertificateResponse>
+                    handler) {
+        LOG.trace("Called async createCertificate");
+        final CreateCertificateRequest interceptedRequest =
+                CreateCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CreateCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+                transformer =
+                        CreateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateCertificateRequest, CreateCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCertificateRequest, CreateCertificateResponse>,
+                        java.util.concurrent.Future<CreateCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCertificateRequest, CreateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateAuthorityResponse>
+            createCertificateAuthority(
+                    CreateCertificateAuthorityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateCertificateAuthorityRequest,
+                                    CreateCertificateAuthorityResponse>
+                            handler) {
+        LOG.trace("Called async createCertificateAuthority");
+        final CreateCertificateAuthorityRequest interceptedRequest =
+                CreateCertificateAuthorityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "CreateCertificateAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateCertificateAuthorityResponse>
+                transformer =
+                        CreateCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCertificateAuthorityRequest,
+                                CreateCertificateAuthorityResponse>,
+                        java.util.concurrent.Future<CreateCertificateAuthorityResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateAuthorityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCertificateAuthorityRequest, CreateCertificateAuthorityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCaBundleResponse> deleteCaBundle(
+            DeleteCaBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCaBundleRequest, DeleteCaBundleResponse>
+                    handler) {
+        LOG.trace("Called async deleteCaBundle");
+        final DeleteCaBundleRequest interceptedRequest =
+                DeleteCaBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCaBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "DeleteCaBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse>
+                transformer =
+                        DeleteCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteCaBundleRequest, DeleteCaBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCaBundleRequest, DeleteCaBundleResponse>,
+                        java.util.concurrent.Future<DeleteCaBundleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCaBundleRequest, DeleteCaBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAssociationResponse> getAssociation(
+            GetAssociationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAssociationRequest, GetAssociationResponse>
+                    handler) {
+        LOG.trace("Called async getAssociation");
+        final GetAssociationRequest interceptedRequest =
+                GetAssociationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssociationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetAssociation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetAssociationResponse>
+                transformer =
+                        GetAssociationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetAssociationRequest, GetAssociationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAssociationRequest, GetAssociationResponse>,
+                        java.util.concurrent.Future<GetAssociationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAssociationRequest, GetAssociationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCaBundleResponse> getCaBundle(
+            GetCaBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetCaBundleRequest, GetCaBundleResponse>
+                    handler) {
+        LOG.trace("Called async getCaBundle");
+        final GetCaBundleRequest interceptedRequest =
+                GetCaBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCaBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetCaBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCaBundleResponse>
+                transformer =
+                        GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCaBundleRequest, GetCaBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCaBundleRequest, GetCaBundleResponse>,
+                        java.util.concurrent.Future<GetCaBundleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCaBundleRequest, GetCaBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificateResponse> getCertificate(
+            GetCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCertificateRequest, GetCertificateResponse>
+                    handler) {
+        LOG.trace("Called async getCertificate");
+        final GetCertificateRequest interceptedRequest =
+                GetCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+                transformer =
+                        GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCertificateRequest, GetCertificateResponse>,
+                        java.util.concurrent.Future<GetCertificateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCertificateRequest, GetCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificateAuthorityResponse> getCertificateAuthority(
+            GetCertificateAuthorityRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>
+                    handler) {
+        LOG.trace("Called async getCertificateAuthority");
+        final GetCertificateAuthorityRequest interceptedRequest =
+                GetCertificateAuthorityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetCertificateAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCertificateAuthorityResponse>
+                transformer =
+                        GetCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>,
+                        java.util.concurrent.Future<GetCertificateAuthorityResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCertificateAuthorityRequest, GetCertificateAuthorityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificateAuthorityVersionResponse>
+            getCertificateAuthorityVersion(
+                    GetCertificateAuthorityVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetCertificateAuthorityVersionRequest,
+                                    GetCertificateAuthorityVersionResponse>
+                            handler) {
+        LOG.trace("Called async getCertificateAuthorityVersion");
+        final GetCertificateAuthorityVersionRequest interceptedRequest =
+                GetCertificateAuthorityVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateAuthorityVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetCertificateAuthorityVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCertificateAuthorityVersionResponse>
+                transformer =
+                        GetCertificateAuthorityVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCertificateAuthorityVersionRequest,
+                        GetCertificateAuthorityVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCertificateAuthorityVersionRequest,
+                                GetCertificateAuthorityVersionResponse>,
+                        java.util.concurrent.Future<GetCertificateAuthorityVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCertificateAuthorityVersionRequest, GetCertificateAuthorityVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificateVersionResponse> getCertificateVersion(
+            GetCertificateVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCertificateVersionRequest, GetCertificateVersionResponse>
+                    handler) {
+        LOG.trace("Called async getCertificateVersion");
+        final GetCertificateVersionRequest interceptedRequest =
+                GetCertificateVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "GetCertificateVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateVersionResponse>
+                transformer =
+                        GetCertificateVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetCertificateVersionRequest, GetCertificateVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCertificateVersionRequest, GetCertificateVersionResponse>,
+                        java.util.concurrent.Future<GetCertificateVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCertificateVersionRequest, GetCertificateVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssociationsResponse> listAssociations(
+            ListAssociationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListAssociationsRequest, ListAssociationsResponse>
+                    handler) {
+        LOG.trace("Called async listAssociations");
+        final ListAssociationsRequest interceptedRequest =
+                ListAssociationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssociationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListAssociations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
+                transformer =
+                        ListAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListAssociationsRequest, ListAssociationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAssociationsRequest, ListAssociationsResponse>,
+                        java.util.concurrent.Future<ListAssociationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAssociationsRequest, ListAssociationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCaBundlesResponse> listCaBundles(
+            ListCaBundlesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListCaBundlesRequest, ListCaBundlesResponse>
+                    handler) {
+        LOG.trace("Called async listCaBundles");
+        final ListCaBundlesRequest interceptedRequest =
+                ListCaBundlesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCaBundlesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListCaBundles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCaBundlesResponse>
+                transformer =
+                        ListCaBundlesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCaBundlesRequest, ListCaBundlesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCaBundlesRequest, ListCaBundlesResponse>,
+                        java.util.concurrent.Future<ListCaBundlesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCaBundlesRequest, ListCaBundlesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateAuthoritiesResponse>
+            listCertificateAuthorities(
+                    ListCertificateAuthoritiesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCertificateAuthoritiesRequest,
+                                    ListCertificateAuthoritiesResponse>
+                            handler) {
+        LOG.trace("Called async listCertificateAuthorities");
+        final ListCertificateAuthoritiesRequest interceptedRequest =
+                ListCertificateAuthoritiesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateAuthoritiesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListCertificateAuthorities",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCertificateAuthoritiesResponse>
+                transformer =
+                        ListCertificateAuthoritiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCertificateAuthoritiesRequest,
+                                ListCertificateAuthoritiesResponse>,
+                        java.util.concurrent.Future<ListCertificateAuthoritiesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCertificateAuthoritiesRequest, ListCertificateAuthoritiesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateAuthorityVersionsResponse>
+            listCertificateAuthorityVersions(
+                    ListCertificateAuthorityVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListCertificateAuthorityVersionsRequest,
+                                    ListCertificateAuthorityVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listCertificateAuthorityVersions");
+        final ListCertificateAuthorityVersionsRequest interceptedRequest =
+                ListCertificateAuthorityVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateAuthorityVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListCertificateAuthorityVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCertificateAuthorityVersionsResponse>
+                transformer =
+                        ListCertificateAuthorityVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCertificateAuthorityVersionsRequest,
+                        ListCertificateAuthorityVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCertificateAuthorityVersionsRequest,
+                                ListCertificateAuthorityVersionsResponse>,
+                        java.util.concurrent.Future<ListCertificateAuthorityVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCertificateAuthorityVersionsRequest,
+                    ListCertificateAuthorityVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificateVersionsResponse> listCertificateVersions(
+            ListCertificateVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCertificateVersionsRequest, ListCertificateVersionsResponse>
+                    handler) {
+        LOG.trace("Called async listCertificateVersions");
+        final ListCertificateVersionsRequest interceptedRequest =
+                ListCertificateVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListCertificateVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCertificateVersionsResponse>
+                transformer =
+                        ListCertificateVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListCertificateVersionsRequest, ListCertificateVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCertificateVersionsRequest, ListCertificateVersionsResponse>,
+                        java.util.concurrent.Future<ListCertificateVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCertificateVersionsRequest, ListCertificateVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
+            ListCertificatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCertificatesRequest, ListCertificatesResponse>
+                    handler) {
+        LOG.trace("Called async listCertificates");
+        final ListCertificatesRequest interceptedRequest =
+                ListCertificatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ListCertificates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+                transformer =
+                        ListCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCertificatesRequest, ListCertificatesResponse>,
+                        java.util.concurrent.Future<ListCertificatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCertificatesRequest, ListCertificatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeCertificateAuthorityVersionResponse>
+            revokeCertificateAuthorityVersion(
+                    RevokeCertificateAuthorityVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RevokeCertificateAuthorityVersionRequest,
+                                    RevokeCertificateAuthorityVersionResponse>
+                            handler) {
+        LOG.trace("Called async revokeCertificateAuthorityVersion");
+        final RevokeCertificateAuthorityVersionRequest interceptedRequest =
+                RevokeCertificateAuthorityVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RevokeCertificateAuthorityVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "RevokeCertificateAuthorityVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RevokeCertificateAuthorityVersionResponse>
+                transformer =
+                        RevokeCertificateAuthorityVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RevokeCertificateAuthorityVersionRequest,
+                        RevokeCertificateAuthorityVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RevokeCertificateAuthorityVersionRequest,
+                                RevokeCertificateAuthorityVersionResponse>,
+                        java.util.concurrent.Future<RevokeCertificateAuthorityVersionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRevokeCertificateAuthorityVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RevokeCertificateAuthorityVersionRequest,
+                    RevokeCertificateAuthorityVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RevokeCertificateVersionResponse> revokeCertificateVersion(
+            RevokeCertificateVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RevokeCertificateVersionRequest, RevokeCertificateVersionResponse>
+                    handler) {
+        LOG.trace("Called async revokeCertificateVersion");
+        final RevokeCertificateVersionRequest interceptedRequest =
+                RevokeCertificateVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RevokeCertificateVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "RevokeCertificateVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RevokeCertificateVersionResponse>
+                transformer =
+                        RevokeCertificateVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RevokeCertificateVersionRequest, RevokeCertificateVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RevokeCertificateVersionRequest, RevokeCertificateVersionResponse>,
+                        java.util.concurrent.Future<RevokeCertificateVersionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRevokeCertificateVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RevokeCertificateVersionRequest, RevokeCertificateVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCertificateAuthorityDeletionResponse>
+            scheduleCertificateAuthorityDeletion(
+                    ScheduleCertificateAuthorityDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCertificateAuthorityDeletionRequest,
+                                    ScheduleCertificateAuthorityDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleCertificateAuthorityDeletion");
+        final ScheduleCertificateAuthorityDeletionRequest interceptedRequest =
+                ScheduleCertificateAuthorityDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateAuthorityDeletionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ScheduleCertificateAuthorityDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCertificateAuthorityDeletionResponse>
+                transformer =
+                        ScheduleCertificateAuthorityDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleCertificateAuthorityDeletionRequest,
+                        ScheduleCertificateAuthorityDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleCertificateAuthorityDeletionRequest,
+                                ScheduleCertificateAuthorityDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleCertificateAuthorityDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleCertificateAuthorityDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleCertificateAuthorityDeletionRequest,
+                    ScheduleCertificateAuthorityDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCertificateAuthorityVersionDeletionResponse>
+            scheduleCertificateAuthorityVersionDeletion(
+                    ScheduleCertificateAuthorityVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCertificateAuthorityVersionDeletionRequest,
+                                    ScheduleCertificateAuthorityVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleCertificateAuthorityVersionDeletion");
+        final ScheduleCertificateAuthorityVersionDeletionRequest interceptedRequest =
+                ScheduleCertificateAuthorityVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateAuthorityVersionDeletionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ScheduleCertificateAuthorityVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ScheduleCertificateAuthorityVersionDeletionResponse>
+                transformer =
+                        ScheduleCertificateAuthorityVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleCertificateAuthorityVersionDeletionRequest,
+                        ScheduleCertificateAuthorityVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleCertificateAuthorityVersionDeletionRequest,
+                                ScheduleCertificateAuthorityVersionDeletionResponse>,
+                        java.util.concurrent.Future<
+                                ScheduleCertificateAuthorityVersionDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getScheduleCertificateAuthorityVersionDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleCertificateAuthorityVersionDeletionRequest,
+                    ScheduleCertificateAuthorityVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCertificateDeletionResponse>
+            scheduleCertificateDeletion(
+                    ScheduleCertificateDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCertificateDeletionRequest,
+                                    ScheduleCertificateDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleCertificateDeletion");
+        final ScheduleCertificateDeletionRequest interceptedRequest =
+                ScheduleCertificateDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ScheduleCertificateDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCertificateDeletionResponse>
+                transformer =
+                        ScheduleCertificateDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleCertificateDeletionRequest, ScheduleCertificateDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleCertificateDeletionRequest,
+                                ScheduleCertificateDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleCertificateDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleCertificateDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleCertificateDeletionRequest, ScheduleCertificateDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleCertificateVersionDeletionResponse>
+            scheduleCertificateVersionDeletion(
+                    ScheduleCertificateVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleCertificateVersionDeletionRequest,
+                                    ScheduleCertificateVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleCertificateVersionDeletion");
+        final ScheduleCertificateVersionDeletionRequest interceptedRequest =
+                ScheduleCertificateVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "ScheduleCertificateVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCertificateVersionDeletionResponse>
+                transformer =
+                        ScheduleCertificateVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleCertificateVersionDeletionRequest,
+                        ScheduleCertificateVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleCertificateVersionDeletionRequest,
+                                ScheduleCertificateVersionDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleCertificateVersionDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleCertificateVersionDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleCertificateVersionDeletionRequest,
+                    ScheduleCertificateVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCaBundleResponse> updateCaBundle(
+            UpdateCaBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCaBundleRequest, UpdateCaBundleResponse>
+                    handler) {
+        LOG.trace("Called async updateCaBundle");
+        final UpdateCaBundleRequest interceptedRequest =
+                UpdateCaBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCaBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "UpdateCaBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse>
+                transformer =
+                        UpdateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCaBundleRequest, UpdateCaBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCaBundleRequest, UpdateCaBundleResponse>,
+                        java.util.concurrent.Future<UpdateCaBundleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCaBundleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCaBundleRequest, UpdateCaBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateResponse> updateCertificate(
+            UpdateCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCertificateRequest, UpdateCertificateResponse>
+                    handler) {
+        LOG.trace("Called async updateCertificate");
+        final UpdateCertificateRequest interceptedRequest =
+                UpdateCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "UpdateCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+                transformer =
+                        UpdateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCertificateRequest, UpdateCertificateResponse>,
+                        java.util.concurrent.Future<UpdateCertificateResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCertificateRequest, UpdateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateAuthorityResponse>
+            updateCertificateAuthority(
+                    UpdateCertificateAuthorityRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateCertificateAuthorityRequest,
+                                    UpdateCertificateAuthorityResponse>
+                            handler) {
+        LOG.trace("Called async updateCertificateAuthority");
+        final UpdateCertificateAuthorityRequest interceptedRequest =
+                UpdateCertificateAuthorityConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CertificatesManagement",
+                        "UpdateCertificateAuthority",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateCertificateAuthorityResponse>
+                transformer =
+                        UpdateCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateCertificateAuthorityRequest, UpdateCertificateAuthorityResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCertificateAuthorityRequest,
+                                UpdateCertificateAuthorityResponse>,
+                        java.util.concurrent.Future<UpdateCertificateAuthorityResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCertificateAuthorityDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCertificateAuthorityRequest, UpdateCertificateAuthorityResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

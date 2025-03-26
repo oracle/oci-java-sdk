@@ -5,23 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * A reference to key version on external key manager. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * A reference to key version on external key manager.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalKeyVersionReference.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalKeyVersionReference.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalKeyVersionReference
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"externalKeyVersionId"})
     public ExternalKeyVersionReference(String externalKeyVersionId) {
@@ -31,16 +30,17 @@ public final class ExternalKeyVersionReference
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Key version ID associated with the external key. */
+        /**
+         * Key version ID associated with the external key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKeyVersionId")
         private String externalKeyVersionId;
 
         /**
          * Key version ID associated with the external key.
-         *
          * @param externalKeyVersionId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalKeyVersionId(String externalKeyVersionId) {
             this.externalKeyVersionId = externalKeyVersionId;
             this.__explicitlySet__.add("externalKeyVersionId");
@@ -68,7 +68,9 @@ public final class ExternalKeyVersionReference
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class ExternalKeyVersionReference
         return new Builder().copy(this);
     }
 
-    /** Key version ID associated with the external key. */
+    /**
+     * Key version ID associated with the external key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKeyVersionId")
     private final String externalKeyVersionId;
 
     /**
      * Key version ID associated with the external key.
-     *
      * @return the value
-     */
+     **/
     public String getExternalKeyVersionId() {
         return externalKeyVersionId;
     }
@@ -97,7 +100,6 @@ public final class ExternalKeyVersionReference
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

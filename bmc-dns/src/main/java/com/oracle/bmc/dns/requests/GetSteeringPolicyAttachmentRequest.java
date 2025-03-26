@@ -6,73 +6,88 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetSteeringPolicyAttachmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetSteeringPolicyAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetSteeringPolicyAttachmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class GetSteeringPolicyAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the target steering policy attachment. */
+    /**
+     * The OCID of the target steering policy attachment.
+     */
     private String steeringPolicyAttachmentId;
 
-    /** The OCID of the target steering policy attachment. */
+    /**
+     * The OCID of the target steering policy attachment.
+     */
     public String getSteeringPolicyAttachmentId() {
         return steeringPolicyAttachmentId;
     }
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
     /**
-     * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional on
-     * the selected representation's modification date being more recent than the date provided in
-     * the field-value. Transfer of the selected representation's data is avoided if that data has
-     * not changed.
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
      */
     private String ifModifiedSince;
 
     /**
-     * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional on
-     * the selected representation's modification date being more recent than the date provided in
-     * the field-value. Transfer of the selected representation's data is avoided if that data has
-     * not changed.
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
      */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
@@ -80,15 +95,17 @@ public class GetSteeringPolicyAttachmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetSteeringPolicyAttachmentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the target steering policy attachment. */
+        /**
+         * The OCID of the target steering policy attachment.
+         */
         private String steeringPolicyAttachmentId = null;
 
         /**
          * The OCID of the target steering policy attachment.
-         *
          * @param steeringPolicyAttachmentId the value to set
          * @return this builder instance
          */
@@ -98,18 +115,19 @@ public class GetSteeringPolicyAttachmentRequest
         }
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -120,18 +138,19 @@ public class GetSteeringPolicyAttachmentRequest
         }
 
         /**
-         * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional
-         * on the selected representation's modification date being more recent than the date
-         * provided in the field-value. Transfer of the selected representation's data is avoided if
-         * that data has not changed.
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
          */
         private String ifModifiedSince = null;
 
         /**
-         * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional
-         * on the selected representation's modification date being more recent than the date
-         * provided in the field-value. Transfer of the selected representation's data is avoided if
-         * that data has not changed.
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
          *
          * @param ifModifiedSince the value to set
          * @return this builder instance
@@ -142,14 +161,17 @@ public class GetSteeringPolicyAttachmentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -159,7 +181,10 @@ public class GetSteeringPolicyAttachmentRequest
             return this;
         }
 
-        /** Specifies to operate only on resources that have a matching DNS scope. */
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -175,19 +200,18 @@ public class GetSteeringPolicyAttachmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -199,7 +223,6 @@ public class GetSteeringPolicyAttachmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetSteeringPolicyAttachmentRequest o) {
@@ -216,11 +239,10 @@ public class GetSteeringPolicyAttachmentRequest
         /**
          * Build the instance of GetSteeringPolicyAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetSteeringPolicyAttachmentRequest
          */
@@ -234,8 +256,7 @@ public class GetSteeringPolicyAttachmentRequest
         /**
          * Build the instance of GetSteeringPolicyAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetSteeringPolicyAttachmentRequest
@@ -248,14 +269,12 @@ public class GetSteeringPolicyAttachmentRequest
             request.opcRequestId = opcRequestId;
             request.scope = scope;
             return request;
-            // new GetSteeringPolicyAttachmentRequest(steeringPolicyAttachmentId, ifNoneMatch,
-            // ifModifiedSince, opcRequestId, scope);
+            // new GetSteeringPolicyAttachmentRequest(steeringPolicyAttachmentId, ifNoneMatch, ifModifiedSince, opcRequestId, scope);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -269,7 +288,6 @@ public class GetSteeringPolicyAttachmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

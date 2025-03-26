@@ -5,23 +5,21 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The properties of the component. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The properties of the component.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComponentProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ComponentProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ComponentProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ComponentProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "runOn",
@@ -47,29 +45,33 @@ public final class ComponentProperties
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The runOn condition for the task/group/container. Build task execution conditions if
-         * applicable to product and product-specific components. This condition is relevant when
-         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
-         * OR target.product.name = Oracle HTTP Server
-         */
+         * The runOn condition for the task/group/container.
+         * Build task execution conditions if applicable to product and product-specific components.
+         * This condition is relevant when handling product stack workflows.
+         * Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runOn")
         private String runOn;
 
         /**
-         * The runOn condition for the task/group/container. Build task execution conditions if
-         * applicable to product and product-specific components. This condition is relevant when
-         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
-         * OR target.product.name = Oracle HTTP Server
+         * The runOn condition for the task/group/container.
+         * Build task execution conditions if applicable to product and product-specific components.
+         * This condition is relevant when handling product stack workflows.
+         * Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
          *
          * @param runOn the value to set
          * @return this builder
-         */
+         **/
         public Builder runOn(String runOn) {
             this.runOn = runOn;
             this.__explicitlySet__.add("runOn");
             return this;
         }
-        /** Build control flow conditions that determine the relevance of the task execution. */
+        /**
+         * Build control flow conditions that determine the relevance of the task execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
@@ -78,22 +80,23 @@ public final class ComponentProperties
          *
          * @param condition the value to set
          * @return this builder
-         */
+         **/
         public Builder condition(String condition) {
             this.condition = condition;
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** The action to be taken in case of a failure. */
+        /**
+         * The action to be taken in case of a failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionOnFailure")
         private ActionOnFailure actionOnFailure;
 
         /**
          * The action to be taken in case of a failure.
-         *
          * @param actionOnFailure the value to set
          * @return this builder
-         */
+         **/
         public Builder actionOnFailure(ActionOnFailure actionOnFailure) {
             this.actionOnFailure = actionOnFailure;
             this.__explicitlySet__.add("actionOnFailure");
@@ -157,7 +160,9 @@ public final class ComponentProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,27 +172,31 @@ public final class ComponentProperties
     }
 
     /**
-     * The runOn condition for the task/group/container. Build task execution conditions if
-     * applicable to product and product-specific components. This condition is relevant when
-     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
-     * target.product.name = Oracle HTTP Server
-     */
+     * The runOn condition for the task/group/container.
+     * Build task execution conditions if applicable to product and product-specific components.
+     * This condition is relevant when handling product stack workflows.
+     * Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runOn")
     private final String runOn;
 
     /**
-     * The runOn condition for the task/group/container. Build task execution conditions if
-     * applicable to product and product-specific components. This condition is relevant when
-     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
-     * target.product.name = Oracle HTTP Server
+     * The runOn condition for the task/group/container.
+     * Build task execution conditions if applicable to product and product-specific components.
+     * This condition is relevant when handling product stack workflows.
+     * Example: target.product.name = Oracle WebLogic Server OR target.product.name = Oracle HTTP Server
      *
      * @return the value
-     */
+     **/
     public String getRunOn() {
         return runOn;
     }
 
-    /** Build control flow conditions that determine the relevance of the task execution. */
+    /**
+     * Build control flow conditions that determine the relevance of the task execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
@@ -195,20 +204,22 @@ public final class ComponentProperties
      * Build control flow conditions that determine the relevance of the task execution.
      *
      * @return the value
-     */
+     **/
     public String getCondition() {
         return condition;
     }
 
-    /** The action to be taken in case of a failure. */
-    public enum ActionOnFailure implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The action to be taken in case of a failure.
+     **/
+    public enum ActionOnFailure {
         Abort("ABORT"),
         Continue("CONTINUE"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -247,15 +258,16 @@ public final class ComponentProperties
             return UnknownEnumValue;
         }
     };
-    /** The action to be taken in case of a failure. */
+    /**
+     * The action to be taken in case of a failure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionOnFailure")
     private final ActionOnFailure actionOnFailure;
 
     /**
      * The action to be taken in case of a failure.
-     *
      * @return the value
-     */
+     **/
     public ActionOnFailure getActionOnFailure() {
         return actionOnFailure;
     }
@@ -281,7 +293,6 @@ public final class ComponentProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

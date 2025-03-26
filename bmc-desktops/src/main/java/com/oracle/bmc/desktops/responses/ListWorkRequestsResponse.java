@@ -6,38 +6,41 @@ package com.oracle.bmc.desktops.responses;
 
 import com.oracle.bmc.desktops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
     /**
      * The unique identifier of the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** For pagination. */
+    /**
+     * For pagination.
+     */
     private String opcNextPage;
 
     /**
      * For pagination.
-     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /** The returned {@code WorkRequestSummaryCollection} instance. */
+    /**
+     * The returned WorkRequestSummaryCollection instance.
+     */
     private com.oracle.bmc.desktops.model.WorkRequestSummaryCollection workRequestSummaryCollection;
 
     /**
-     * The returned {@code WorkRequestSummaryCollection} instance.
-     *
+     * The returned WorkRequestSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.desktops.model.WorkRequestSummaryCollection
@@ -54,7 +57,7 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListWorkRequestsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.desktops.model.WorkRequestSummaryCollection
@@ -65,30 +68,28 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
         this.workRequestSummaryCollection = workRequestSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -97,12 +98,13 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** For pagination. */
+        /**
+         * For pagination.
+         */
         private String opcNextPage;
 
         /**
          * For pagination.
-         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -111,13 +113,14 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code WorkRequestSummaryCollection} instance. */
+        /**
+         * The returned WorkRequestSummaryCollection instance.
+         */
         private com.oracle.bmc.desktops.model.WorkRequestSummaryCollection
                 workRequestSummaryCollection;
 
         /**
-         * The returned {@code WorkRequestSummaryCollection} instance.
-         *
+         * The returned WorkRequestSummaryCollection instance.
          * @param workRequestSummaryCollection the value to set
          * @return this builder
          */
@@ -130,10 +133,8 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListWorkRequestsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -146,10 +147,8 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListWorkRequestsResponse build() {
             return new ListWorkRequestsResponse(
                     __httpStatusCode__,
@@ -162,7 +161,6 @@ public class ListWorkRequestsResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

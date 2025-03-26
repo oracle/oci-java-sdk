@@ -6,25 +6,33 @@ package com.oracle.bmc.announcementsservice.requests;
 
 import com.oracle.bmc.announcementsservice.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListServicesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListServicesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListServicesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     *
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only announcements affecting a specific platform. */
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     */
     private PlatformType platformType;
 
-    /** A filter to return only announcements affecting a specific platform. */
-    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     **/
+    public enum PlatformType {
         Iaas("IAAS"),
         Saas("SAAS"),
         Paas("PAAS"),
@@ -58,36 +66,54 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** A filter to return only announcements affecting a specific platform. */
+    /**
+     * A filter to return only announcements affecting a specific platform.
+     */
     public PlatformType getPlatformType() {
         return platformType;
     }
-    /** Filter by comms manager name */
+    /**
+     * Filter by comms manager name
+     */
     private com.oracle.bmc.announcementsservice.model.CommsManagerName commsManagerName;
 
-    /** Filter by comms manager name */
+    /**
+     * Filter by comms manager name
+     */
     public com.oracle.bmc.announcementsservice.model.CommsManagerName getCommsManagerName() {
         return commsManagerName;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
-    /** Sort by service name parameter */
+    /**
+     * Sort by service name parameter
+     */
     private SortBy sortBy;
 
-    /** Sort by service name parameter */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sort by service name parameter
+     **/
+    public enum SortBy {
         ServiceName("serviceName"),
         ;
 
@@ -119,26 +145,34 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
     };
 
-    /** Sort by service name parameter */
+    /**
+     * Sort by service name parameter
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, whether ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+     */
     private com.oracle.bmc.announcementsservice.model.SortOrder sortOrder;
 
-    /** The sort order to use, whether ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+     */
     public com.oracle.bmc.announcementsservice.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -147,10 +181,14 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListServicesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -164,12 +202,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A filter to return only announcements affecting a specific platform. */
+        /**
+         * A filter to return only announcements affecting a specific platform.
+         */
         private PlatformType platformType = null;
 
         /**
          * A filter to return only announcements affecting a specific platform.
-         *
          * @param platformType the value to set
          * @return this builder instance
          */
@@ -178,12 +217,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Filter by comms manager name */
+        /**
+         * Filter by comms manager name
+         */
         private com.oracle.bmc.announcementsservice.model.CommsManagerName commsManagerName = null;
 
         /**
          * Filter by comms manager name
-         *
          * @param commsManagerName the value to set
          * @return this builder instance
          */
@@ -193,12 +233,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -207,12 +248,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -221,12 +263,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** Sort by service name parameter */
+        /**
+         * Sort by service name parameter
+         */
         private SortBy sortBy = null;
 
         /**
          * Sort by service name parameter
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -235,12 +278,13 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The sort order to use, whether ascending ('ASC') or descending ('DESC'). */
+        /**
+         * The sort order to use, whether ascending ('ASC') or descending ('DESC').
+         */
         private com.oracle.bmc.announcementsservice.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether ascending ('ASC') or descending ('DESC').
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -250,14 +294,15 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -269,19 +314,18 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -293,7 +337,6 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListServicesRequest o) {
@@ -313,11 +356,10 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListServicesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListServicesRequest
          */
@@ -331,8 +373,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListServicesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListServicesRequest
@@ -348,14 +389,12 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListServicesRequest(compartmentId, platformType, commsManagerName, limit, page,
-            // sortBy, sortOrder, opcRequestId);
+            // new ListServicesRequest(compartmentId, platformType, commsManagerName, limit, page, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -372,7 +411,6 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

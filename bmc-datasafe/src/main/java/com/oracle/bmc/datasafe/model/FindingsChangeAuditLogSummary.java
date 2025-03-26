@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of audit log of risk updates of findings of specified security assessment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of audit log of risk updates of findings of specified security assessment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FindingsChangeAuditLogSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FindingsChangeAuditLogSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FindingsChangeAuditLogSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -70,95 +69,99 @@ public final class FindingsChangeAuditLogSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique key that identifies the finding risk change. */
+        /**
+         * The unique key that identifies the finding risk change.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The unique key that identifies the finding risk change.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The unique key that identifies the finding. */
+        /**
+         * The unique key that identifies the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("findingKey")
         private String findingKey;
 
         /**
          * The unique key that identifies the finding.
-         *
          * @param findingKey the value to set
          * @return this builder
-         */
+         **/
         public Builder findingKey(String findingKey) {
             this.findingKey = findingKey;
             this.__explicitlySet__.add("findingKey");
             return this;
         }
-        /** The short title for the finding whose risk is being modified. */
+        /**
+         * The short title for the finding whose risk is being modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("findingTitle")
         private String findingTitle;
 
         /**
          * The short title for the finding whose risk is being modified.
-         *
          * @param findingTitle the value to set
          * @return this builder
-         */
+         **/
         public Builder findingTitle(String findingTitle) {
             this.findingTitle = findingTitle;
             this.__explicitlySet__.add("findingTitle");
             return this;
         }
-        /** The OCID of the latest security assessment. */
+        /**
+         * The OCID of the latest security assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
         private String assessmentId;
 
         /**
          * The OCID of the latest security assessment.
-         *
          * @param assessmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = assessmentId;
             this.__explicitlySet__.add("assessmentId");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * The date and time the risk level of finding was last updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the risk level of finding was last updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -166,31 +169,31 @@ public final class FindingsChangeAuditLogSummary
         }
         /**
          * The original severity / risk level of the finding as determined by security assessment.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Finding.Severity severity;
 
         /**
          * The original severity / risk level of the finding as determined by security assessment.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Finding.Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** The severity of the finding as determined by security assessment by Oracle. */
+        /**
+         * The severity of the finding as determined by security assessment by Oracle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
         private Finding.Severity oracleDefinedSeverity;
 
         /**
          * The severity of the finding as determined by security assessment by Oracle.
-         *
          * @param oracleDefinedSeverity the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleDefinedSeverity(Finding.Severity oracleDefinedSeverity) {
             this.oracleDefinedSeverity = oracleDefinedSeverity;
             this.__explicitlySet__.add("oracleDefinedSeverity");
@@ -199,7 +202,8 @@ public final class FindingsChangeAuditLogSummary
         /**
          * Determines if the user has deferred the risk level of this finding when he is ok with it
          * and does not plan to do anything about it.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRiskDeferred")
         private Boolean isRiskDeferred;
 
@@ -209,75 +213,77 @@ public final class FindingsChangeAuditLogSummary
          *
          * @param isRiskDeferred the value to set
          * @return this builder
-         */
+         **/
         public Builder isRiskDeferred(Boolean isRiskDeferred) {
             this.isRiskDeferred = isRiskDeferred;
             this.__explicitlySet__.add("isRiskDeferred");
             return this;
         }
-        /** If the risk level is changed more than once, the previous modified value. */
+        /**
+         * If the risk level is changed more than once, the previous modified value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("previousSeverity")
         private Finding.Severity previousSeverity;
 
         /**
          * If the risk level is changed more than once, the previous modified value.
-         *
          * @param previousSeverity the value to set
          * @return this builder
-         */
+         **/
         public Builder previousSeverity(Finding.Severity previousSeverity) {
             this.previousSeverity = previousSeverity;
             this.__explicitlySet__.add("previousSeverity");
             return this;
         }
-        /** The justification given by the user for accepting or modifying the risk level. */
+        /**
+         * The justification given by the user for accepting or modifying the risk level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("justification")
         private String justification;
 
         /**
          * The justification given by the user for accepting or modifying the risk level.
-         *
          * @param justification the value to set
          * @return this builder
-         */
+         **/
         public Builder justification(String justification) {
             this.justification = justification;
             this.__explicitlySet__.add("justification");
             return this;
         }
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user
-         * is valid until. After this date passes, the risk level will be that of what is determined
-         * by the latest security assessment.
-         */
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the risk level change as updated by user is valid until. After this date passes, the risk level
+         * will be that of what is determined by the latest security assessment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
         private java.util.Date timeValidUntil;
 
         /**
-         * The date and time, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339), the risk level change as updated by user
-         * is valid until. After this date passes, the risk level will be that of what is determined
-         * by the latest security assessment.
+         * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
+         * the risk level change as updated by user is valid until. After this date passes, the risk level
+         * will be that of what is determined by the latest security assessment.
          *
          * @param timeValidUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidUntil(java.util.Date timeValidUntil) {
             this.timeValidUntil = timeValidUntil;
             this.__explicitlySet__.add("timeValidUntil");
             return this;
         }
-        /** The user who initiated change of risk level of the finding */
+        /**
+         * The user who initiated change of risk level of the finding
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
         private String modifiedBy;
 
         /**
          * The user who initiated change of risk level of the finding
-         *
          * @param modifiedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder modifiedBy(String modifiedBy) {
             this.modifiedBy = modifiedBy;
             this.__explicitlySet__.add("modifiedBy");
@@ -354,7 +360,9 @@ public final class FindingsChangeAuditLogSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -363,185 +371,196 @@ public final class FindingsChangeAuditLogSummary
         return new Builder().copy(this);
     }
 
-    /** The unique key that identifies the finding risk change. */
+    /**
+     * The unique key that identifies the finding risk change.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The unique key that identifies the finding risk change.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The unique key that identifies the finding. */
+    /**
+     * The unique key that identifies the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("findingKey")
     private final String findingKey;
 
     /**
      * The unique key that identifies the finding.
-     *
      * @return the value
-     */
+     **/
     public String getFindingKey() {
         return findingKey;
     }
 
-    /** The short title for the finding whose risk is being modified. */
+    /**
+     * The short title for the finding whose risk is being modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("findingTitle")
     private final String findingTitle;
 
     /**
      * The short title for the finding whose risk is being modified.
-     *
      * @return the value
-     */
+     **/
     public String getFindingTitle() {
         return findingTitle;
     }
 
-    /** The OCID of the latest security assessment. */
+    /**
+     * The OCID of the latest security assessment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
     private final String assessmentId;
 
     /**
      * The OCID of the latest security assessment.
-     *
      * @return the value
-     */
+     **/
     public String getAssessmentId() {
         return assessmentId;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * The date and time the risk level of finding was last updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the risk level of finding was last updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The original severity / risk level of the finding as determined by security assessment. */
+    /**
+     * The original severity / risk level of the finding as determined by security assessment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Finding.Severity severity;
 
     /**
      * The original severity / risk level of the finding as determined by security assessment.
-     *
      * @return the value
-     */
+     **/
     public Finding.Severity getSeverity() {
         return severity;
     }
 
-    /** The severity of the finding as determined by security assessment by Oracle. */
+    /**
+     * The severity of the finding as determined by security assessment by Oracle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
     private final Finding.Severity oracleDefinedSeverity;
 
     /**
      * The severity of the finding as determined by security assessment by Oracle.
-     *
      * @return the value
-     */
+     **/
     public Finding.Severity getOracleDefinedSeverity() {
         return oracleDefinedSeverity;
     }
 
     /**
-     * Determines if the user has deferred the risk level of this finding when he is ok with it and
-     * does not plan to do anything about it.
-     */
+     * Determines if the user has deferred the risk level of this finding when he is ok with it
+     * and does not plan to do anything about it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRiskDeferred")
     private final Boolean isRiskDeferred;
 
     /**
-     * Determines if the user has deferred the risk level of this finding when he is ok with it and
-     * does not plan to do anything about it.
+     * Determines if the user has deferred the risk level of this finding when he is ok with it
+     * and does not plan to do anything about it.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRiskDeferred() {
         return isRiskDeferred;
     }
 
-    /** If the risk level is changed more than once, the previous modified value. */
+    /**
+     * If the risk level is changed more than once, the previous modified value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousSeverity")
     private final Finding.Severity previousSeverity;
 
     /**
      * If the risk level is changed more than once, the previous modified value.
-     *
      * @return the value
-     */
+     **/
     public Finding.Severity getPreviousSeverity() {
         return previousSeverity;
     }
 
-    /** The justification given by the user for accepting or modifying the risk level. */
+    /**
+     * The justification given by the user for accepting or modifying the risk level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("justification")
     private final String justification;
 
     /**
      * The justification given by the user for accepting or modifying the risk level.
-     *
      * @return the value
-     */
+     **/
     public String getJustification() {
         return justification;
     }
 
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * the risk level change as updated by user is valid until. After this date passes, the risk
-     * level will be that of what is determined by the latest security assessment.
-     */
+     * the risk level change as updated by user is valid until. After this date passes, the risk level
+     * will be that of what is determined by the latest security assessment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
     private final java.util.Date timeValidUntil;
 
     /**
      * The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * the risk level change as updated by user is valid until. After this date passes, the risk
-     * level will be that of what is determined by the latest security assessment.
+     * the risk level change as updated by user is valid until. After this date passes, the risk level
+     * will be that of what is determined by the latest security assessment.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidUntil() {
         return timeValidUntil;
     }
 
-    /** The user who initiated change of risk level of the finding */
+    /**
+     * The user who initiated change of risk level of the finding
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
     private final String modifiedBy;
 
     /**
      * The user who initiated change of risk level of the finding
-     *
      * @return the value
-     */
+     **/
     public String getModifiedBy() {
         return modifiedBy;
     }
@@ -553,7 +572,6 @@ public final class FindingsChangeAuditLogSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

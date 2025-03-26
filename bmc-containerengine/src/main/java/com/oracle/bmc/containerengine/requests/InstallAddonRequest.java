@@ -6,68 +6,78 @@ package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/InstallAddonExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use InstallAddonRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/InstallAddonExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use InstallAddonRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class InstallAddonRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.InstallAddonDetails> {
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     private String clusterId;
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     public String getClusterId() {
         return clusterId;
     }
-    /** The details of the addon to be installed. */
+    /**
+     * The details of the addon to be installed.
+     */
     private com.oracle.bmc.containerengine.model.InstallAddonDetails installAddonDetails;
 
-    /** The details of the addon to be installed. */
+    /**
+     * The details of the addon to be installed.
+     */
     public com.oracle.bmc.containerengine.model.InstallAddonDetails getInstallAddonDetails() {
         return installAddonDetails;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -75,7 +85,6 @@ public class InstallAddonRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -87,15 +96,17 @@ public class InstallAddonRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     InstallAddonRequest, com.oracle.bmc.containerengine.model.InstallAddonDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         */
         private String clusterId = null;
 
         /**
          * The OCID of the cluster.
-         *
          * @param clusterId the value to set
          * @return this builder instance
          */
@@ -104,12 +115,13 @@ public class InstallAddonRequest
             return this;
         }
 
-        /** The details of the addon to be installed. */
+        /**
+         * The details of the addon to be installed.
+         */
         private com.oracle.bmc.containerengine.model.InstallAddonDetails installAddonDetails = null;
 
         /**
          * The details of the addon to be installed.
-         *
          * @param installAddonDetails the value to set
          * @return this builder instance
          */
@@ -120,14 +132,15 @@ public class InstallAddonRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -138,14 +151,15 @@ public class InstallAddonRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -156,18 +170,17 @@ public class InstallAddonRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -179,19 +192,18 @@ public class InstallAddonRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -203,7 +215,6 @@ public class InstallAddonRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(InstallAddonRequest o) {
@@ -220,11 +231,10 @@ public class InstallAddonRequest
         /**
          * Build the instance of InstallAddonRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of InstallAddonRequest
          */
@@ -237,7 +247,6 @@ public class InstallAddonRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -250,8 +259,7 @@ public class InstallAddonRequest
         /**
          * Build the instance of InstallAddonRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of InstallAddonRequest
@@ -264,14 +272,12 @@ public class InstallAddonRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new InstallAddonRequest(clusterId, installAddonDetails, opcRetryToken, opcRequestId,
-            // ifMatch);
+            // new InstallAddonRequest(clusterId, installAddonDetails, opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -285,7 +291,6 @@ public class InstallAddonRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Defines the maintenance configuration for create operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Defines the maintenance configuration for create operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMaintenanceConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMaintenanceConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMaintenanceConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isInterimReleaseAutoUpgradeEnabled",
@@ -47,19 +47,20 @@ public final class CreateMaintenanceConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled
-         * for interim release, you have to specify interimReleaseUpgradePeriodInDays too.
-         */
+         * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,
+         * you have to specify interimReleaseUpgradePeriodInDays too.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInterimReleaseAutoUpgradeEnabled")
         private Boolean isInterimReleaseAutoUpgradeEnabled;
 
         /**
-         * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled
-         * for interim release, you have to specify interimReleaseUpgradePeriodInDays too.
+         * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,
+         * you have to specify interimReleaseUpgradePeriodInDays too.
          *
          * @param isInterimReleaseAutoUpgradeEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isInterimReleaseAutoUpgradeEnabled(
                 Boolean isInterimReleaseAutoUpgradeEnabled) {
             this.isInterimReleaseAutoUpgradeEnabled = isInterimReleaseAutoUpgradeEnabled;
@@ -67,19 +68,18 @@ public final class CreateMaintenanceConfigurationDetails
             return this;
         }
         /**
-         * Defines auto upgrade period for interim releases. This period must be shorter or equal to
-         * bundle release upgrade period.
-         */
+         * Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interimReleaseUpgradePeriodInDays")
         private Integer interimReleaseUpgradePeriodInDays;
 
         /**
-         * Defines auto upgrade period for interim releases. This period must be shorter or equal to
-         * bundle release upgrade period.
+         * Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
          *
          * @param interimReleaseUpgradePeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder interimReleaseUpgradePeriodInDays(
                 Integer interimReleaseUpgradePeriodInDays) {
             this.interimReleaseUpgradePeriodInDays = interimReleaseUpgradePeriodInDays;
@@ -87,65 +87,60 @@ public final class CreateMaintenanceConfigurationDetails
             return this;
         }
         /**
-         * Defines auto upgrade period for bundle releases. Manually configured period cannot be
-         * longer than service defined period for bundle releases. This period must be shorter or
-         * equal to major release upgrade period. Not passing this field during create will equate
-         * to using the service default.
-         */
+         * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases.
+         * This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleReleaseUpgradePeriodInDays")
         private Integer bundleReleaseUpgradePeriodInDays;
 
         /**
-         * Defines auto upgrade period for bundle releases. Manually configured period cannot be
-         * longer than service defined period for bundle releases. This period must be shorter or
-         * equal to major release upgrade period. Not passing this field during create will equate
-         * to using the service default.
+         * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases.
+         * This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
          *
          * @param bundleReleaseUpgradePeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleReleaseUpgradePeriodInDays(Integer bundleReleaseUpgradePeriodInDays) {
             this.bundleReleaseUpgradePeriodInDays = bundleReleaseUpgradePeriodInDays;
             this.__explicitlySet__.add("bundleReleaseUpgradePeriodInDays");
             return this;
         }
         /**
-         * Defines auto upgrade period for major releases. Manually configured period cannot be
-         * longer than service defined period for major releases. Not passing this field during
-         * create will equate to using the service default.
-         */
+         * Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases.
+         * Not passing this field during create will equate to using the service default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("majorReleaseUpgradePeriodInDays")
         private Integer majorReleaseUpgradePeriodInDays;
 
         /**
-         * Defines auto upgrade period for major releases. Manually configured period cannot be
-         * longer than service defined period for major releases. Not passing this field during
-         * create will equate to using the service default.
+         * Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases.
+         * Not passing this field during create will equate to using the service default.
          *
          * @param majorReleaseUpgradePeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder majorReleaseUpgradePeriodInDays(Integer majorReleaseUpgradePeriodInDays) {
             this.majorReleaseUpgradePeriodInDays = majorReleaseUpgradePeriodInDays;
             this.__explicitlySet__.add("majorReleaseUpgradePeriodInDays");
             return this;
         }
         /**
-         * Defines auto upgrade period for releases with security fix. Manually configured period
-         * cannot be longer than service defined period for security releases. Not passing this
-         * field during create will equate to using the service default.
-         */
+         * Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases.
+         * Not passing this field during create will equate to using the service default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityPatchUpgradePeriodInDays")
         private Integer securityPatchUpgradePeriodInDays;
 
         /**
-         * Defines auto upgrade period for releases with security fix. Manually configured period
-         * cannot be longer than service defined period for security releases. Not passing this
-         * field during create will equate to using the service default.
+         * Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases.
+         * Not passing this field during create will equate to using the service default.
          *
          * @param securityPatchUpgradePeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder securityPatchUpgradePeriodInDays(Integer securityPatchUpgradePeriodInDays) {
             this.securityPatchUpgradePeriodInDays = securityPatchUpgradePeriodInDays;
             this.__explicitlySet__.add("securityPatchUpgradePeriodInDays");
@@ -192,7 +187,9 @@ public final class CreateMaintenanceConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -202,94 +199,89 @@ public final class CreateMaintenanceConfigurationDetails
     }
 
     /**
-     * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for
-     * interim release, you have to specify interimReleaseUpgradePeriodInDays too.
-     */
+     * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,
+     * you have to specify interimReleaseUpgradePeriodInDays too.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInterimReleaseAutoUpgradeEnabled")
     private final Boolean isInterimReleaseAutoUpgradeEnabled;
 
     /**
-     * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for
-     * interim release, you have to specify interimReleaseUpgradePeriodInDays too.
+     * By default auto upgrade for interim releases are not enabled. If auto-upgrade is enabled for interim release,
+     * you have to specify interimReleaseUpgradePeriodInDays too.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsInterimReleaseAutoUpgradeEnabled() {
         return isInterimReleaseAutoUpgradeEnabled;
     }
 
     /**
-     * Defines auto upgrade period for interim releases. This period must be shorter or equal to
-     * bundle release upgrade period.
-     */
+     * Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("interimReleaseUpgradePeriodInDays")
     private final Integer interimReleaseUpgradePeriodInDays;
 
     /**
-     * Defines auto upgrade period for interim releases. This period must be shorter or equal to
-     * bundle release upgrade period.
+     * Defines auto upgrade period for interim releases. This period must be shorter or equal to bundle release upgrade period.
      *
      * @return the value
-     */
+     **/
     public Integer getInterimReleaseUpgradePeriodInDays() {
         return interimReleaseUpgradePeriodInDays;
     }
 
     /**
-     * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer
-     * than service defined period for bundle releases. This period must be shorter or equal to
-     * major release upgrade period. Not passing this field during create will equate to using the
-     * service default.
-     */
+     * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases.
+     * This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleReleaseUpgradePeriodInDays")
     private final Integer bundleReleaseUpgradePeriodInDays;
 
     /**
-     * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer
-     * than service defined period for bundle releases. This period must be shorter or equal to
-     * major release upgrade period. Not passing this field during create will equate to using the
-     * service default.
+     * Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases.
+     * This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
      *
      * @return the value
-     */
+     **/
     public Integer getBundleReleaseUpgradePeriodInDays() {
         return bundleReleaseUpgradePeriodInDays;
     }
 
     /**
-     * Defines auto upgrade period for major releases. Manually configured period cannot be longer
-     * than service defined period for major releases. Not passing this field during create will
-     * equate to using the service default.
-     */
+     * Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases.
+     * Not passing this field during create will equate to using the service default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("majorReleaseUpgradePeriodInDays")
     private final Integer majorReleaseUpgradePeriodInDays;
 
     /**
-     * Defines auto upgrade period for major releases. Manually configured period cannot be longer
-     * than service defined period for major releases. Not passing this field during create will
-     * equate to using the service default.
+     * Defines auto upgrade period for major releases. Manually configured period cannot be longer than service defined period for major releases.
+     * Not passing this field during create will equate to using the service default.
      *
      * @return the value
-     */
+     **/
     public Integer getMajorReleaseUpgradePeriodInDays() {
         return majorReleaseUpgradePeriodInDays;
     }
 
     /**
-     * Defines auto upgrade period for releases with security fix. Manually configured period cannot
-     * be longer than service defined period for security releases. Not passing this field during
-     * create will equate to using the service default.
-     */
+     * Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases.
+     * Not passing this field during create will equate to using the service default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityPatchUpgradePeriodInDays")
     private final Integer securityPatchUpgradePeriodInDays;
 
     /**
-     * Defines auto upgrade period for releases with security fix. Manually configured period cannot
-     * be longer than service defined period for security releases. Not passing this field during
-     * create will equate to using the service default.
+     * Defines auto upgrade period for releases with security fix. Manually configured period cannot be longer than service defined period for security releases.
+     * Not passing this field during create will equate to using the service default.
      *
      * @return the value
-     */
+     **/
     public Integer getSecurityPatchUpgradePeriodInDays() {
         return securityPatchUpgradePeriodInDays;
     }
@@ -301,7 +293,6 @@ public final class CreateMaintenanceConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmconfig.model;
 
-/** Configuration Type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
-public enum ConfigTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Configuration Type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+public enum ConfigTypes {
     SpanFilter("SPAN_FILTER"),
     MetricGroup("METRIC_GROUP"),
     Apdex("APDEX"),

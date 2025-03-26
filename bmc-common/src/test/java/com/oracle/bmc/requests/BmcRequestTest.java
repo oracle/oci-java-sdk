@@ -4,14 +4,14 @@
  */
 package com.oracle.bmc.requests;
 
-import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.util.internal.Consumer;
 import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
+import javax.ws.rs.client.Invocation;
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 public class BmcRequestTest {
@@ -20,8 +20,10 @@ public class BmcRequestTest {
     BmcRequest<?> obj3 = new BmcRequest();
     BmcRequest<?> obj4 = new BmcRequest();
 
-    RequestInterceptor invocationCallback1 = builder -> builder.header("Cookie", "Cookie1=Value1");
-    RequestInterceptor invocationCallback2 = builder -> builder.header("Cookie", "Cookie2=Value2");
+    Consumer<Invocation.Builder> invocationCallback1 =
+            builder -> builder.cookie("Cookie1", "Value1");
+    Consumer<Invocation.Builder> invocationCallback2 =
+            builder -> builder.cookie("Cookie2", "Value2");
 
     RetryConfiguration retryConfiguration1 =
             RetryConfiguration.builder().delayStrategy(new FixedTimeDelayStrategy(5L)).build();

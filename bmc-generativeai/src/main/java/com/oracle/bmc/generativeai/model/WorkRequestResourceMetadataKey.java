@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.generativeai.model;
 
-/** Possible metadata keys for work request resource metadata. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
-public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible metadata keys for work request resource metadata.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+public enum WorkRequestResourceMetadataKey {
     IsDryRun("IS_DRY_RUN"),
 
     /**

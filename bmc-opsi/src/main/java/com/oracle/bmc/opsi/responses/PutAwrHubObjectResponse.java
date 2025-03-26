@@ -6,18 +6,15 @@ package com.oracle.bmc.opsi.responses;
 
 import com.oracle.bmc.opsi.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
-     *
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -25,14 +22,15 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,36 +38,39 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         return opcRequestId;
     }
 
-    /** Content-MD5 header. */
+    /**
+     * Content-MD5 header.
+     */
     private String opcContentMd5;
 
     /**
      * Content-MD5 header.
-     *
      * @return the value
      */
     public String getOpcContentMd5() {
         return opcContentMd5;
     }
 
-    /** The Awr Hub object modification time. */
+    /**
+     * The Awr Hub object modification time.
+     */
     private java.util.Date lastModified;
 
     /**
      * The Awr Hub object modification time.
-     *
      * @return the value
      */
     public java.util.Date getLastModified() {
         return lastModified;
     }
 
-    /** VersionId of the requested Awr Hub object. */
+    /**
+     * VersionId of the requested Awr Hub object.
+     */
     private String versionId;
 
     /**
      * VersionId of the requested Awr Hub object.
-     *
      * @return the value
      */
     public String getVersionId() {
@@ -87,7 +88,7 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private PutAwrHubObjectResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String opcContentMd5,
@@ -101,34 +102,28 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         this.versionId = versionId;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<PutAwrHubObjectResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
-         *
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -138,14 +133,15 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -155,12 +151,13 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** Content-MD5 header. */
+        /**
+         * Content-MD5 header.
+         */
         private String opcContentMd5;
 
         /**
          * Content-MD5 header.
-         *
          * @param opcContentMd5 the value to set
          * @return this builder
          */
@@ -169,12 +166,13 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The Awr Hub object modification time. */
+        /**
+         * The Awr Hub object modification time.
+         */
         private java.util.Date lastModified;
 
         /**
          * The Awr Hub object modification time.
-         *
          * @param lastModified the value to set
          * @return this builder
          */
@@ -183,12 +181,13 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** VersionId of the requested Awr Hub object. */
+        /**
+         * VersionId of the requested Awr Hub object.
+         */
         private String versionId;
 
         /**
          * VersionId of the requested Awr Hub object.
-         *
          * @param versionId the value to set
          * @return this builder
          */
@@ -199,10 +198,8 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PutAwrHubObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -217,10 +214,8 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PutAwrHubObjectResponse build() {
             return new PutAwrHubObjectResponse(
                     __httpStatusCode__,
@@ -235,7 +230,6 @@ public class PutAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

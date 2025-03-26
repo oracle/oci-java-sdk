@@ -23,17 +23,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This document demonstrates the creation of a backend set with various configurations. A backend
- * set is a collection of backend servers which receive traffic from a load balancer. Each backend
- * set must define a list of backend servers, a policy for distribution of traffic, and establish a
- * method for periodically determining the health state of each of the backend servers. At least one
- * properly configured backend set is a requirement for a functioning load balancer. Please refer to
- * https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/CreateBackendSet for
- * information about using the API to create a backend set. This example requires an existing load
- * balancer and will do the following 1) Create a new backend set with one backend, the "round
- * robin" distribution policy, a health check on port 80 of the backend at the location
- * "/healthcheck", and LB cookie session persistence enabled. 2) Update this backend set by removing
- * the LB cookie session persistence configuration 3) Remove the backend set from the load balancer.
+ * This document demonstrates the creation of a backend set with various configurations. A backend set is a collection
+ * of backend servers which receive traffic from a load balancer. Each backend set must define a list of backend
+ * servers, a policy for distribution of traffic, and establish a method for periodically determining the health state
+ * of each of the backend servers. At least one properly configured backend set is a requirement for a functioning
+ * load balancer.
+ * Please refer to https://docs.oracle.com/iaas/api/#/en/loadbalancer/20170115/BackendSet/CreateBackendSet
+ * for information about using the API to create a backend set.
+ * This example requires an existing load balancer and will do the following
+ * 1) Create a new backend set with one backend, the "round robin" distribution policy, a health check on port 80 of the
+ * backend at the location "/healthcheck", and LB cookie session persistence enabled.
+ * 2) Update this backend set by removing the LB cookie session persistence configuration
+ * 3) Remove the backend set from the load balancer.
  *
  * @throws Exception
  */
@@ -50,10 +51,8 @@ public class CreateLoadBalancerBackendSetExample {
         String backendSetName = "BackendSetExample";
         String policy = "ROUND_ROBIN";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -61,7 +60,7 @@ public class CreateLoadBalancerBackendSetExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        LoadBalancerClient loadBalancerClient = LoadBalancerClient.builder().build(provider);
+        LoadBalancerClient loadBalancerClient = new LoadBalancerClient(provider);
 
         System.out.println("Creating new backend set " + backendSetName + "...");
 
@@ -105,14 +104,12 @@ public class CreateLoadBalancerBackendSetExample {
      * Creates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer we're adding the backend set to
+     * @param loadBalancerId  the OCID of the load balancer we're adding the backend set to
      * @param backendSetName a string display name for the backend set
-     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN,
-     *     LEAST_CONNECTIONS, etc)
-     * @param healthChecker a healthCheckerDetails object describing the health check parameters for
-     *     the backends
-     * @param lbcspDetails a LBCookieSessionPersistenceConfigurationDetails object describing the
-     *     parameters for LB cookie-based session persistence
+     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN, LEAST_CONNECTIONS, etc)
+     * @param healthChecker a healthCheckerDetails object describing the health check parameters for the backends
+     * @param lbcspDetails a LBCookieSessionPersistenceConfigurationDetails object describing the parameters for
+     *                     LB cookie-based session persistence
      */
     private static void createBackendSet(
             LoadBalancerClient loadBalancerClient,
@@ -149,12 +146,10 @@ public class CreateLoadBalancerBackendSetExample {
      * Updates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer that contains the backend set to update
+     * @param loadBalancerId  the OCID of the load balancer that contains the backend set to update
      * @param backendSetName the name of the backend set to be updated
-     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN,
-     *     LEAST_CONNECTIONS, etc)
-     * @param healthChecker a healthCheckerDetails object describing the health check parameters for
-     *     the backend.
+     * @param policy The load balancing policy for the backends (such as ROUND_ROBIN, LEAST_CONNECTIONS, etc)
+     * @param healthChecker a healthCheckerDetails object describing the health check parameters for the backend.
      */
     private static void updateBackendSet(
             LoadBalancerClient loadBalancerClient,
@@ -194,7 +189,7 @@ public class CreateLoadBalancerBackendSetExample {
      * Updates a backend set in a given load balancer.
      *
      * @param loadBalancerClient the client used to communicate with the service
-     * @param loadBalancerId the OCID of the load balancer that contains the backend set to delete
+     * @param loadBalancerId  the OCID of the load balancer that contains the backend set to delete
      * @param backendSetName the name of the backend set to delete
      */
     private static void deleteBackendSet(

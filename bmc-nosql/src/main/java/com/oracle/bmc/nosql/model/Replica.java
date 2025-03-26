@@ -5,21 +5,19 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Information about a MR table replica <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * Information about a MR table replica
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Replica.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Replica extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Replica extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "region",
@@ -47,37 +45,42 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A customer-facing region identifier */
+        /**
+         * A customer-facing region identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * A customer-facing region identifier
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** The OCID of the replica table */
+        /**
+         * The OCID of the replica table
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableId")
         private String tableId;
 
         /**
          * The OCID of the replica table
-         *
          * @param tableId the value to set
          * @return this builder
-         */
+         **/
         public Builder tableId(String tableId) {
             this.tableId = tableId;
             this.__explicitlySet__.add("tableId");
             return this;
         }
-        /** Maximum sustained write throughput limit of the replica table. */
+        /**
+         * Maximum sustained write throughput limit of the replica table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxWriteUnits")
         private Integer maxWriteUnits;
 
@@ -86,13 +89,16 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param maxWriteUnits the value to set
          * @return this builder
-         */
+         **/
         public Builder maxWriteUnits(Integer maxWriteUnits) {
             this.maxWriteUnits = maxWriteUnits;
             this.__explicitlySet__.add("maxWriteUnits");
             return this;
         }
-        /** The capacity mode of the replica. */
+        /**
+         * The capacity mode of the replica.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
         private CapacityMode capacityMode;
 
@@ -101,28 +107,32 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param capacityMode the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityMode(CapacityMode capacityMode) {
             this.capacityMode = capacityMode;
             this.__explicitlySet__.add("capacityMode");
             return this;
         }
-        /** The state of the replica. */
+        /**
+         * The state of the replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the replica.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the current state in more detail. */
+        /**
+         * A message describing the current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -131,7 +141,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -180,7 +190,9 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,33 +201,38 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** A customer-facing region identifier */
+    /**
+     * A customer-facing region identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * A customer-facing region identifier
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** The OCID of the replica table */
+    /**
+     * The OCID of the replica table
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableId")
     private final String tableId;
 
     /**
      * The OCID of the replica table
-     *
      * @return the value
-     */
+     **/
     public String getTableId() {
         return tableId;
     }
 
-    /** Maximum sustained write throughput limit of the replica table. */
+    /**
+     * Maximum sustained write throughput limit of the replica table.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxWriteUnits")
     private final Integer maxWriteUnits;
 
@@ -223,19 +240,22 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
      * Maximum sustained write throughput limit of the replica table.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxWriteUnits() {
         return maxWriteUnits;
     }
 
-    /** The capacity mode of the replica. */
-    public enum CapacityMode implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The capacity mode of the replica.
+     *
+     **/
+    public enum CapacityMode {
         Provisioned("PROVISIONED"),
         OnDemand("ON_DEMAND"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -274,7 +294,10 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The capacity mode of the replica. */
+    /**
+     * The capacity mode of the replica.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityMode")
     private final CapacityMode capacityMode;
 
@@ -282,21 +305,23 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
      * The capacity mode of the replica.
      *
      * @return the value
-     */
+     **/
     public CapacityMode getCapacityMode() {
         return capacityMode;
     }
 
-    /** The state of the replica. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the replica.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -335,20 +360,24 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The state of the replica. */
+    /**
+     * The state of the replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the replica.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the current state in more detail. */
+    /**
+     * A message describing the current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -356,7 +385,7 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
      * A message describing the current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -368,7 +397,6 @@ public final class Replica extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

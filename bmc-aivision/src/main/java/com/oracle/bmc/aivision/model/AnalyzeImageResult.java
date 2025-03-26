@@ -5,23 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The image analysis results. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The image analysis results.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnalyzeImageResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AnalyzeImageResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AnalyzeImageResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AnalyzeImageResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "imageObjects",
@@ -61,46 +59,49 @@ public final class AnalyzeImageResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The detected objects. */
+        /**
+         * The detected objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageObjects")
         private java.util.List<ImageObject> imageObjects;
 
         /**
          * The detected objects.
-         *
          * @param imageObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder imageObjects(java.util.List<ImageObject> imageObjects) {
             this.imageObjects = imageObjects;
             this.__explicitlySet__.add("imageObjects");
             return this;
         }
-        /** The image classification labels. */
+        /**
+         * The image classification labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<Label> labels;
 
         /**
          * The image classification labels.
-         *
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<Label> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
             return this;
         }
-        /** The ontologyClasses of image labels. */
+        /**
+         * The ontologyClasses of image labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
         private java.util.List<OntologyClass> ontologyClasses;
 
         /**
          * The ontologyClasses of image labels.
-         *
          * @param ontologyClasses the value to set
          * @return this builder
-         */
+         **/
         public Builder ontologyClasses(java.util.List<OntologyClass> ontologyClasses) {
             this.ontologyClasses = ontologyClasses;
             this.__explicitlySet__.add("ontologyClasses");
@@ -115,91 +116,97 @@ public final class AnalyzeImageResult
             this.__explicitlySet__.add("imageText");
             return this;
         }
-        /** The detected faces. */
+        /**
+         * The detected faces.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectedFaces")
         private java.util.List<Face> detectedFaces;
 
         /**
          * The detected faces.
-         *
          * @param detectedFaces the value to set
          * @return this builder
-         */
+         **/
         public Builder detectedFaces(java.util.List<Face> detectedFaces) {
             this.detectedFaces = detectedFaces;
             this.__explicitlySet__.add("detectedFaces");
             return this;
         }
-        /** The image classification model version. */
+        /**
+         * The image classification model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
         private String imageClassificationModelVersion;
 
         /**
          * The image classification model version.
-         *
          * @param imageClassificationModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder imageClassificationModelVersion(String imageClassificationModelVersion) {
             this.imageClassificationModelVersion = imageClassificationModelVersion;
             this.__explicitlySet__.add("imageClassificationModelVersion");
             return this;
         }
-        /** The object detection model version. */
+        /**
+         * The object detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
         private String objectDetectionModelVersion;
 
         /**
          * The object detection model version.
-         *
          * @param objectDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectDetectionModelVersion(String objectDetectionModelVersion) {
             this.objectDetectionModelVersion = objectDetectionModelVersion;
             this.__explicitlySet__.add("objectDetectionModelVersion");
             return this;
         }
-        /** The text detection model version. */
+        /**
+         * The text detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
         private String textDetectionModelVersion;
 
         /**
          * The text detection model version.
-         *
          * @param textDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder textDetectionModelVersion(String textDetectionModelVersion) {
             this.textDetectionModelVersion = textDetectionModelVersion;
             this.__explicitlySet__.add("textDetectionModelVersion");
             return this;
         }
-        /** The face detection model version. */
+        /**
+         * The face detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
         private String faceDetectionModelVersion;
 
         /**
          * The face detection model version.
-         *
          * @param faceDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder faceDetectionModelVersion(String faceDetectionModelVersion) {
             this.faceDetectionModelVersion = faceDetectionModelVersion;
             this.__explicitlySet__.add("faceDetectionModelVersion");
             return this;
         }
-        /** The errors encountered during image analysis. */
+        /**
+         * The errors encountered during image analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<ProcessingError> errors;
 
         /**
          * The errors encountered during image analysis.
-         *
          * @param errors the value to set
          * @return this builder
-         */
+         **/
         public Builder errors(java.util.List<ProcessingError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
@@ -264,7 +271,9 @@ public final class AnalyzeImageResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -273,41 +282,44 @@ public final class AnalyzeImageResult
         return new Builder().copy(this);
     }
 
-    /** The detected objects. */
+    /**
+     * The detected objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageObjects")
     private final java.util.List<ImageObject> imageObjects;
 
     /**
      * The detected objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ImageObject> getImageObjects() {
         return imageObjects;
     }
 
-    /** The image classification labels. */
+    /**
+     * The image classification labels.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<Label> labels;
 
     /**
      * The image classification labels.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Label> getLabels() {
         return labels;
     }
 
-    /** The ontologyClasses of image labels. */
+    /**
+     * The ontologyClasses of image labels.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
     private final java.util.List<OntologyClass> ontologyClasses;
 
     /**
      * The ontologyClasses of image labels.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OntologyClass> getOntologyClasses() {
         return ontologyClasses;
     }
@@ -319,80 +331,86 @@ public final class AnalyzeImageResult
         return imageText;
     }
 
-    /** The detected faces. */
+    /**
+     * The detected faces.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectedFaces")
     private final java.util.List<Face> detectedFaces;
 
     /**
      * The detected faces.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Face> getDetectedFaces() {
         return detectedFaces;
     }
 
-    /** The image classification model version. */
+    /**
+     * The image classification model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageClassificationModelVersion")
     private final String imageClassificationModelVersion;
 
     /**
      * The image classification model version.
-     *
      * @return the value
-     */
+     **/
     public String getImageClassificationModelVersion() {
         return imageClassificationModelVersion;
     }
 
-    /** The object detection model version. */
+    /**
+     * The object detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
     private final String objectDetectionModelVersion;
 
     /**
      * The object detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getObjectDetectionModelVersion() {
         return objectDetectionModelVersion;
     }
 
-    /** The text detection model version. */
+    /**
+     * The text detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
     private final String textDetectionModelVersion;
 
     /**
      * The text detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getTextDetectionModelVersion() {
         return textDetectionModelVersion;
     }
 
-    /** The face detection model version. */
+    /**
+     * The face detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
     private final String faceDetectionModelVersion;
 
     /**
      * The face detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getFaceDetectionModelVersion() {
         return faceDetectionModelVersion;
     }
 
-    /** The errors encountered during image analysis. */
+    /**
+     * The errors encountered during image analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<ProcessingError> errors;
 
     /**
      * The errors encountered during image analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ProcessingError> getErrors() {
         return errors;
     }
@@ -404,7 +422,6 @@ public final class AnalyzeImageResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

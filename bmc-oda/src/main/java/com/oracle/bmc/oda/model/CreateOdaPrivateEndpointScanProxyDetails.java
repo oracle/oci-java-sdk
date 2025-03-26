@@ -5,23 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that are required to create an ODA Private Endpoint Scan Proxy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Properties that are required to create an ODA Private Endpoint Scan Proxy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOdaPrivateEndpointScanProxyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOdaPrivateEndpointScanProxyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOdaPrivateEndpointScanProxyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scanListenerType", "protocol", "scanListenerInfos"})
     public CreateOdaPrivateEndpointScanProxyDetails(
@@ -36,7 +35,10 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type indicating whether Scan listener is specified by its FQDN or list of IPs */
+        /**
+         * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerType")
         private OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType;
 
@@ -45,7 +47,7 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
          *
          * @param scanListenerType the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerType(
                 OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType) {
             this.scanListenerType = scanListenerType;
@@ -54,7 +56,8 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
         }
         /**
          * The protocol used for communication between client, scanProxy and RAC's scan listeners
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private OdaPrivateEndpointScanProxy.Protocol protocol;
 
@@ -63,26 +66,25 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
          *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(OdaPrivateEndpointScanProxy.Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
         /**
-         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-         * listeners.
-         */
+         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerInfos")
         private java.util.List<ScanListenerInfo> scanListenerInfos;
 
         /**
-         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-         * listeners.
+         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
          *
          * @param scanListenerInfos the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerInfos(java.util.List<ScanListenerInfo> scanListenerInfos) {
             this.scanListenerInfos = scanListenerInfos;
             this.__explicitlySet__.add("scanListenerInfos");
@@ -117,7 +119,9 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,7 +130,10 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
         return new Builder().copy(this);
     }
 
-    /** Type indicating whether Scan listener is specified by its FQDN or list of IPs */
+    /**
+     * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerType")
     private final OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType;
 
@@ -134,12 +141,15 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs
      *
      * @return the value
-     */
+     **/
     public OdaPrivateEndpointScanProxy.ScanListenerType getScanListenerType() {
         return scanListenerType;
     }
 
-    /** The protocol used for communication between client, scanProxy and RAC's scan listeners */
+    /**
+     * The protocol used for communication between client, scanProxy and RAC's scan listeners
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final OdaPrivateEndpointScanProxy.Protocol protocol;
 
@@ -147,24 +157,23 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
      * The protocol used for communication between client, scanProxy and RAC's scan listeners
      *
      * @return the value
-     */
+     **/
     public OdaPrivateEndpointScanProxy.Protocol getProtocol() {
         return protocol;
     }
 
     /**
-     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-     * listeners.
-     */
+     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerInfos")
     private final java.util.List<ScanListenerInfo> scanListenerInfos;
 
     /**
-     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-     * listeners.
+     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ScanListenerInfo> getScanListenerInfos() {
         return scanListenerInfos;
     }
@@ -176,7 +185,6 @@ public final class CreateOdaPrivateEndpointScanProxyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

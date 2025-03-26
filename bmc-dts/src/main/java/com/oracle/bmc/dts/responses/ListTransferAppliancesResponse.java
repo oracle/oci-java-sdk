@@ -6,22 +6,28 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code MultipleTransferAppliances} instance. */
+    /**
+     * The returned MultipleTransferAppliances instance.
+     */
     private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
     /**
-     * The returned {@code MultipleTransferAppliances} instance.
-     *
+     * The returned MultipleTransferAppliances instance.
      * @return the value
      */
     public com.oracle.bmc.dts.model.MultipleTransferAppliances getMultipleTransferAppliances() {
@@ -36,7 +42,7 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListTransferAppliancesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances) {
         super(__httpStatusCode__, headers);
@@ -44,29 +50,28 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
         this.multipleTransferAppliances = multipleTransferAppliances;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListTransferAppliancesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -75,12 +80,13 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code MultipleTransferAppliances} instance. */
+        /**
+         * The returned MultipleTransferAppliances instance.
+         */
         private com.oracle.bmc.dts.model.MultipleTransferAppliances multipleTransferAppliances;
 
         /**
-         * The returned {@code MultipleTransferAppliances} instance.
-         *
+         * The returned MultipleTransferAppliances instance.
          * @param multipleTransferAppliances the value to set
          * @return this builder
          */
@@ -92,10 +98,8 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListTransferAppliancesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -107,10 +111,8 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListTransferAppliancesResponse build() {
             return new ListTransferAppliancesResponse(
                     __httpStatusCode__, headers, opcRequestId, multipleTransferAppliances);
@@ -119,7 +121,6 @@ public class ListTransferAppliancesResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

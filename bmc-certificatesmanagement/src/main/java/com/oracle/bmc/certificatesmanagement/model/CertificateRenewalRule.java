@@ -5,63 +5,63 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * A rule that imposes constraints on certificate renewal. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * A rule that imposes constraints on certificate renewal.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateRenewalRule.Builder.class)
+    builder = CertificateRenewalRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "ruleType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "ruleType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CertificateRenewalRule extends CertificateRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A property specifying how often, in days, a certificate should be renewed. Expressed in
-         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-         */
+         * A property specifying how often, in days, a certificate should be renewed.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
         private String renewalInterval;
 
         /**
-         * A property specifying how often, in days, a certificate should be renewed. Expressed in
-         * [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         * A property specifying how often, in days, a certificate should be renewed.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
          *
          * @param renewalInterval the value to set
          * @return this builder
-         */
+         **/
         public Builder renewalInterval(String renewalInterval) {
             this.renewalInterval = renewalInterval;
             this.__explicitlySet__.add("renewalInterval");
             return this;
         }
         /**
-         * A property specifying the period of time, in days, before the certificate's targeted
-         * renewal that the process should occur. Expressed in [ISO
-         * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-         */
+         * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advanceRenewalPeriod")
         private String advanceRenewalPeriod;
 
         /**
-         * A property specifying the period of time, in days, before the certificate's targeted
-         * renewal that the process should occur. Expressed in [ISO
-         * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+         * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+         * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
          *
          * @param advanceRenewalPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder advanceRenewalPeriod(String advanceRenewalPeriod) {
             this.advanceRenewalPeriod = advanceRenewalPeriod;
             this.__explicitlySet__.add("advanceRenewalPeriod");
@@ -92,7 +92,9 @@ public final class CertificateRenewalRule extends CertificateRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,37 +111,37 @@ public final class CertificateRenewalRule extends CertificateRule {
     }
 
     /**
-     * A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO
-     * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-     */
+     * A property specifying how often, in days, a certificate should be renewed.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("renewalInterval")
     private final String renewalInterval;
 
     /**
-     * A property specifying how often, in days, a certificate should be renewed. Expressed in [ISO
-     * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     * A property specifying how often, in days, a certificate should be renewed.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      *
      * @return the value
-     */
+     **/
     public String getRenewalInterval() {
         return renewalInterval;
     }
 
     /**
-     * A property specifying the period of time, in days, before the certificate's targeted renewal
-     * that the process should occur. Expressed in [ISO
-     * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
-     */
+     * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advanceRenewalPeriod")
     private final String advanceRenewalPeriod;
 
     /**
-     * A property specifying the period of time, in days, before the certificate's targeted renewal
-     * that the process should occur. Expressed in [ISO
-     * 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
+     * A property specifying the period of time, in days, before the certificate's targeted renewal that the process should occur.
+     * Expressed in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Time_intervals) format.
      *
      * @return the value
-     */
+     **/
     public String getAdvanceRenewalPeriod() {
         return advanceRenewalPeriod;
     }
@@ -151,7 +153,6 @@ public final class CertificateRenewalRule extends CertificateRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

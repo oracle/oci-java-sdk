@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of the report. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum ReportLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of the report.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum ReportLifecycleState {
     Updating("UPDATING"),
     Active("ACTIVE"),
     Creating("CREATING"),

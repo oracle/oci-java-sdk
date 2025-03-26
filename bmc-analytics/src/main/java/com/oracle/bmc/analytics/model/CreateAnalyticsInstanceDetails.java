@@ -5,23 +5,23 @@
 package com.oracle.bmc.analytics.model;
 
 /**
- * Input payload to create an Anaytics instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+ * Input payload to create an Anaytics instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateAnalyticsInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateAnalyticsInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateAnalyticsInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -80,25 +80,27 @@ public final class CreateAnalyticsInstanceDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-         * changed.
-         */
+         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-         * changed.
+         * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Optional description. */
+        /**
+         * Optional description.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -107,13 +109,16 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -122,13 +127,16 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Analytics feature set. */
+        /**
+         * Analytics feature set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
         private FeatureSet featureSet;
 
@@ -137,7 +145,7 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param featureSet the value to set
          * @return this builder
-         */
+         **/
         public Builder featureSet(FeatureSet featureSet) {
             this.featureSet = featureSet;
             this.__explicitlySet__.add("featureSet");
@@ -152,7 +160,10 @@ public final class CreateAnalyticsInstanceDetails
             this.__explicitlySet__.add("capacity");
             return this;
         }
-        /** The license used for the service. */
+        /**
+         * The license used for the service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
         private LicenseType licenseType;
 
@@ -161,13 +172,16 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param licenseType the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseType(LicenseType licenseType) {
             this.licenseType = licenseType;
             this.__explicitlySet__.add("licenseType");
             return this;
         }
-        /** Email address receiving notifications. */
+        /**
+         * Email address receiving notifications.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
         private String emailNotification;
 
@@ -176,7 +190,7 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param emailNotification the value to set
          * @return this builder
-         */
+         **/
         public Builder emailNotification(String emailNotification) {
             this.emailNotification = emailNotification;
             this.__explicitlySet__.add("emailNotification");
@@ -191,7 +205,10 @@ public final class CreateAnalyticsInstanceDetails
             this.__explicitlySet__.add("networkEndpointDetails");
             return this;
         }
-        /** IDCS access token identifying a stripe and service administrator user. */
+        /**
+         * IDCS access token identifying a stripe and service administrator user.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
         private String idcsAccessToken;
 
@@ -200,32 +217,31 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param idcsAccessToken the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsAccessToken(String idcsAccessToken) {
             this.idcsAccessToken = idcsAccessToken;
             this.__explicitlySet__.add("idcsAccessToken");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -233,31 +249,33 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
-        /** Analytics instance update channel. */
+        /**
+         * Analytics instance update channel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
         private UpdateChannel updateChannel;
 
@@ -266,32 +284,34 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param updateChannel the value to set
          * @return this builder
-         */
+         **/
         public Builder updateChannel(UpdateChannel updateChannel) {
             this.updateChannel = updateChannel;
             this.__explicitlySet__.add("updateChannel");
             return this;
         }
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance.
-         * A null value indicates Oracle managed default encryption.
-         */
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance.
-         * A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
          *
          * @param kmsKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
             return this;
         }
-        /** domain id for which the user is authorized. */
+        /**
+         * domain id for which the user is authorized.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
@@ -300,13 +320,16 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param domainId the value to set
          * @return this builder
-         */
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
             return this;
         }
-        /** user name of the authorized user. */
+        /**
+         * user name of the authorized user.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
         private String adminUser;
 
@@ -315,13 +338,16 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param adminUser the value to set
          * @return this builder
-         */
+         **/
         public Builder adminUser(String adminUser) {
             this.adminUser = adminUser;
             this.__explicitlySet__.add("adminUser");
             return this;
         }
-        /** The feature set of an Analytics instance. */
+        /**
+         * The feature set of an Analytics instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
         private FeatureBundle featureBundle;
 
@@ -330,7 +356,7 @@ public final class CreateAnalyticsInstanceDetails
          *
          * @param featureBundle the value to set
          * @return this builder
-         */
+         **/
         public Builder featureBundle(FeatureBundle featureBundle) {
             this.featureBundle = featureBundle;
             this.__explicitlySet__.add("featureBundle");
@@ -419,7 +445,9 @@ public final class CreateAnalyticsInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -429,23 +457,25 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-     * changed.
-     */
+     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be
-     * changed.
+     * The name of the Analytics instance. This name must be unique in the tenancy and cannot be changed.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Optional description. */
+    /**
+     * Optional description.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -453,12 +483,15 @@ public final class CreateAnalyticsInstanceDetails
      * Optional description.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -466,12 +499,15 @@ public final class CreateAnalyticsInstanceDetails
      * The OCID of the compartment.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Analytics feature set. */
+    /**
+     * Analytics feature set.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureSet")
     private final FeatureSet featureSet;
 
@@ -479,7 +515,7 @@ public final class CreateAnalyticsInstanceDetails
      * Analytics feature set.
      *
      * @return the value
-     */
+     **/
     public FeatureSet getFeatureSet() {
         return featureSet;
     }
@@ -491,7 +527,10 @@ public final class CreateAnalyticsInstanceDetails
         return capacity;
     }
 
-    /** The license used for the service. */
+    /**
+     * The license used for the service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
@@ -499,12 +538,15 @@ public final class CreateAnalyticsInstanceDetails
      * The license used for the service.
      *
      * @return the value
-     */
+     **/
     public LicenseType getLicenseType() {
         return licenseType;
     }
 
-    /** Email address receiving notifications. */
+    /**
+     * Email address receiving notifications.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailNotification")
     private final String emailNotification;
 
@@ -512,7 +554,7 @@ public final class CreateAnalyticsInstanceDetails
      * Email address receiving notifications.
      *
      * @return the value
-     */
+     **/
     public String getEmailNotification() {
         return emailNotification;
     }
@@ -524,7 +566,10 @@ public final class CreateAnalyticsInstanceDetails
         return networkEndpointDetails;
     }
 
-    /** IDCS access token identifying a stripe and service administrator user. */
+    /**
+     * IDCS access token identifying a stripe and service administrator user.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsAccessToken")
     private final String idcsAccessToken;
 
@@ -532,58 +577,59 @@ public final class CreateAnalyticsInstanceDetails
      * IDCS access token identifying a stripe and service administrator user.
      *
      * @return the value
-     */
+     **/
     public String getIdcsAccessToken() {
         return idcsAccessToken;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
-    /** Analytics instance update channel. */
+    /**
+     * Analytics instance update channel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
     private final UpdateChannel updateChannel;
 
@@ -591,29 +637,31 @@ public final class CreateAnalyticsInstanceDetails
      * Analytics instance update channel.
      *
      * @return the value
-     */
+     **/
     public UpdateChannel getUpdateChannel() {
         return updateChannel;
     }
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A
-     * null value indicates Oracle managed default encryption.
-     */
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A
-     * null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      *
      * @return the value
-     */
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
-    /** domain id for which the user is authorized. */
+    /**
+     * domain id for which the user is authorized.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
@@ -621,12 +669,15 @@ public final class CreateAnalyticsInstanceDetails
      * domain id for which the user is authorized.
      *
      * @return the value
-     */
+     **/
     public String getDomainId() {
         return domainId;
     }
 
-    /** user name of the authorized user. */
+    /**
+     * user name of the authorized user.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
     private final String adminUser;
 
@@ -634,12 +685,15 @@ public final class CreateAnalyticsInstanceDetails
      * user name of the authorized user.
      *
      * @return the value
-     */
+     **/
     public String getAdminUser() {
         return adminUser;
     }
 
-    /** The feature set of an Analytics instance. */
+    /**
+     * The feature set of an Analytics instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
     private final FeatureBundle featureBundle;
 
@@ -647,7 +701,7 @@ public final class CreateAnalyticsInstanceDetails
      * The feature set of an Analytics instance.
      *
      * @return the value
-     */
+     **/
     public FeatureBundle getFeatureBundle() {
         return featureBundle;
     }
@@ -659,7 +713,6 @@ public final class CreateAnalyticsInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

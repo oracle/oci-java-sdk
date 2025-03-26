@@ -5,21 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Details of Sql content which needs to execute to collect Metric Extension data <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Details of Sql content which needs to execute to collect Metric Extension data
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scriptFileName", "content"})
     public SqlDetails(String scriptFileName, String content) {
@@ -30,31 +28,33 @@ public final class SqlDetails extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** If a script needs to be executed, then provide file name of the script */
+        /**
+         * If a script needs to be executed, then provide file name of the script
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptFileName")
         private String scriptFileName;
 
         /**
          * If a script needs to be executed, then provide file name of the script
-         *
          * @param scriptFileName the value to set
          * @return this builder
-         */
+         **/
         public Builder scriptFileName(String scriptFileName) {
             this.scriptFileName = scriptFileName;
             this.__explicitlySet__.add("scriptFileName");
             return this;
         }
-        /** Sql statement or script file content as base64 encoded string */
+        /**
+         * Sql statement or script file content as base64 encoded string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
          * Sql statement or script file content as base64 encoded string
-         *
          * @param content the value to set
          * @return this builder
-         */
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -84,7 +84,9 @@ public final class SqlDetails extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class SqlDetails extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** If a script needs to be executed, then provide file name of the script */
+    /**
+     * If a script needs to be executed, then provide file name of the script
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptFileName")
     private final String scriptFileName;
 
     /**
      * If a script needs to be executed, then provide file name of the script
-     *
      * @return the value
-     */
+     **/
     public String getScriptFileName() {
         return scriptFileName;
     }
 
-    /** Sql statement or script file content as base64 encoded string */
+    /**
+     * Sql statement or script file content as base64 encoded string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
      * Sql statement or script file content as base64 encoded string
-     *
      * @return the value
-     */
+     **/
     public String getContent() {
         return content;
     }
@@ -126,7 +130,6 @@ public final class SqlDetails extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

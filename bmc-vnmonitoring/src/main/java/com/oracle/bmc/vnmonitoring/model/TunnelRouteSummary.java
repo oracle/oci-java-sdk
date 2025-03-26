@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * A summary of the routes advertised to and received from the on-premises network. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A summary of the routes advertised to and received from the on-premises network.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TunnelRouteSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TunnelRouteSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = TunnelRouteSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TunnelRouteSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"prefix", "age", "isBestPath", "asPath", "advertiser"})
     public TunnelRouteSummary(
@@ -40,76 +39,81 @@ public final class TunnelRouteSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The BGP network layer reachability information. */
+        /**
+         * The BGP network layer reachability information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
          * The BGP network layer reachability information.
-         *
          * @param prefix the value to set
          * @return this builder
-         */
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-        /** The age of the route. */
+        /**
+         * The age of the route.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("age")
         private Long age;
 
         /**
          * The age of the route.
-         *
          * @param age the value to set
          * @return this builder
-         */
+         **/
         public Builder age(Long age) {
             this.age = age;
             this.__explicitlySet__.add("age");
             return this;
         }
-        /** Indicates this is the best route. */
+        /**
+         * Indicates this is the best route.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
         private Boolean isBestPath;
 
         /**
          * Indicates this is the best route.
-         *
          * @param isBestPath the value to set
          * @return this builder
-         */
+         **/
         public Builder isBestPath(Boolean isBestPath) {
             this.isBestPath = isBestPath;
             this.__explicitlySet__.add("isBestPath");
             return this;
         }
-        /** A list of ASNs in AS_Path. */
+        /**
+         * A list of ASNs in AS_Path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asPath")
         private java.util.List<Integer> asPath;
 
         /**
          * A list of ASNs in AS_Path.
-         *
          * @param asPath the value to set
          * @return this builder
-         */
+         **/
         public Builder asPath(java.util.List<Integer> asPath) {
             this.asPath = asPath;
             this.__explicitlySet__.add("asPath");
             return this;
         }
-        /** The source of the route advertisement. */
+        /**
+         * The source of the route advertisement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
         private Advertiser advertiser;
 
         /**
          * The source of the route advertisement.
-         *
          * @param advertiser the value to set
          * @return this builder
-         */
+         **/
         public Builder advertiser(Advertiser advertiser) {
             this.advertiser = advertiser;
             this.__explicitlySet__.add("advertiser");
@@ -150,7 +154,9 @@ public final class TunnelRouteSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -159,60 +165,66 @@ public final class TunnelRouteSummary
         return new Builder().copy(this);
     }
 
-    /** The BGP network layer reachability information. */
+    /**
+     * The BGP network layer reachability information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
      * The BGP network layer reachability information.
-     *
      * @return the value
-     */
+     **/
     public String getPrefix() {
         return prefix;
     }
 
-    /** The age of the route. */
+    /**
+     * The age of the route.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("age")
     private final Long age;
 
     /**
      * The age of the route.
-     *
      * @return the value
-     */
+     **/
     public Long getAge() {
         return age;
     }
 
-    /** Indicates this is the best route. */
+    /**
+     * Indicates this is the best route.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBestPath")
     private final Boolean isBestPath;
 
     /**
      * Indicates this is the best route.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsBestPath() {
         return isBestPath;
     }
 
-    /** A list of ASNs in AS_Path. */
+    /**
+     * A list of ASNs in AS_Path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("asPath")
     private final java.util.List<Integer> asPath;
 
     /**
      * A list of ASNs in AS_Path.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getAsPath() {
         return asPath;
     }
 
-    /** The source of the route advertisement. */
-    public enum Advertiser implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The source of the route advertisement.
+     **/
+    public enum Advertiser {
         Customer("CUSTOMER"),
         Oracle("ORACLE"),
         ;
@@ -244,15 +256,16 @@ public final class TunnelRouteSummary
             throw new IllegalArgumentException("Invalid Advertiser: " + key);
         }
     };
-    /** The source of the route advertisement. */
+    /**
+     * The source of the route advertisement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advertiser")
     private final Advertiser advertiser;
 
     /**
      * The source of the route advertisement.
-     *
      * @return the value
-     */
+     **/
     public Advertiser getAdvertiser() {
         return advertiser;
     }
@@ -264,7 +277,6 @@ public final class TunnelRouteSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

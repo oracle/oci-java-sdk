@@ -5,23 +5,21 @@
 package com.oracle.bmc.blockchain.model;
 
 /**
- * Availability Domains <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+ * Availability Domains
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailabilityDomain.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AvailabilityDomain
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AvailabilityDomain.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AvailabilityDomain extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ads"})
     public AvailabilityDomain(Ads ads) {
@@ -31,16 +29,17 @@ public final class AvailabilityDomain
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Availability Domain Identifiers */
+        /**
+         * Availability Domain Identifiers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ads")
         private Ads ads;
 
         /**
          * Availability Domain Identifiers
-         *
          * @param ads the value to set
          * @return this builder
-         */
+         **/
         public Builder ads(Ads ads) {
             this.ads = ads;
             this.__explicitlySet__.add("ads");
@@ -67,7 +66,9 @@ public final class AvailabilityDomain
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,19 +77,14 @@ public final class AvailabilityDomain
         return new Builder().copy(this);
     }
 
-    /** Availability Domain Identifiers */
-    public enum Ads implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Availability Domain Identifiers
+     **/
+    public enum Ads {
         Ad1("AD1"),
         Ad2("AD2"),
         Ad3("AD3"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Ads.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Ads> map;
@@ -96,9 +92,7 @@ public final class AvailabilityDomain
         static {
             map = new java.util.HashMap<>();
             for (Ads v : Ads.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -116,19 +110,19 @@ public final class AvailabilityDomain
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn("Received unknown value '{}' for enum 'Ads', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Ads: " + key);
         }
     };
-    /** Availability Domain Identifiers */
+    /**
+     * Availability Domain Identifiers
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ads")
     private final Ads ads;
 
     /**
      * Availability Domain Identifiers
-     *
      * @return the value
-     */
+     **/
     public Ads getAds() {
         return ads;
     }
@@ -140,7 +134,6 @@ public final class AvailabilityDomain
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

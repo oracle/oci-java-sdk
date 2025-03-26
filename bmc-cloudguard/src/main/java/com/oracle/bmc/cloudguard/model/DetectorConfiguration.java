@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Configuration details for a detector. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Configuration details for a detector.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DetectorConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DetectorConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DetectorConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "configKey",
@@ -52,106 +51,113 @@ public final class DetectorConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier of the configuration */
+        /**
+         * Unique identifier of the configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configKey")
         private String configKey;
 
         /**
          * Unique identifier of the configuration
-         *
          * @param configKey the value to set
          * @return this builder
-         */
+         **/
         public Builder configKey(String configKey) {
             this.configKey = configKey;
             this.__explicitlySet__.add("configKey");
             return this;
         }
-        /** Configuration name */
+        /**
+         * Configuration name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Configuration name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Configuration value */
+        /**
+         * Configuration value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Configuration value
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Configuration data type */
+        /**
+         * Configuration data type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * Configuration data type
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** List of configuration values */
+        /**
+         * List of configuration values
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<ConfigValue> values;
 
         /**
          * List of configuration values
-         *
          * @param values the value to set
          * @return this builder
-         */
+         **/
         public Builder values(java.util.List<ConfigValue> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
             return this;
         }
-        /** Map property Value data type */
+        /**
+         * Map property Value data type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValuesDataType")
         private String allowedValuesDataType;
 
         /**
          * Map property Value data type
-         *
          * @param allowedValuesDataType the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedValuesDataType(String allowedValuesDataType) {
             this.allowedValuesDataType = allowedValuesDataType;
             this.__explicitlySet__.add("allowedValuesDataType");
             return this;
         }
-        /** Map of possible values for configuration */
+        /**
+         * Map of possible values for configuration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<PropertyTuple> allowedValues;
 
         /**
          * Map of possible values for configuration
-         *
          * @param allowedValues the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedValues(java.util.List<PropertyTuple> allowedValues) {
             this.allowedValues = allowedValues;
             this.__explicitlySet__.add("allowedValues");
@@ -204,7 +210,9 @@ public final class DetectorConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +221,100 @@ public final class DetectorConfiguration
         return new Builder().copy(this);
     }
 
-    /** Unique identifier of the configuration */
+    /**
+     * Unique identifier of the configuration
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configKey")
     private final String configKey;
 
     /**
      * Unique identifier of the configuration
-     *
      * @return the value
-     */
+     **/
     public String getConfigKey() {
         return configKey;
     }
 
-    /** Configuration name */
+    /**
+     * Configuration name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Configuration name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Configuration value */
+    /**
+     * Configuration value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Configuration value
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Configuration data type */
+    /**
+     * Configuration data type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * Configuration data type
-     *
      * @return the value
-     */
+     **/
     public String getDataType() {
         return dataType;
     }
 
-    /** List of configuration values */
+    /**
+     * List of configuration values
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<ConfigValue> values;
 
     /**
      * List of configuration values
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ConfigValue> getValues() {
         return values;
     }
 
-    /** Map property Value data type */
+    /**
+     * Map property Value data type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValuesDataType")
     private final String allowedValuesDataType;
 
     /**
      * Map property Value data type
-     *
      * @return the value
-     */
+     **/
     public String getAllowedValuesDataType() {
         return allowedValuesDataType;
     }
 
-    /** Map of possible values for configuration */
+    /**
+     * Map of possible values for configuration
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<PropertyTuple> allowedValues;
 
     /**
      * Map of possible values for configuration
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PropertyTuple> getAllowedValues() {
         return allowedValues;
     }
@@ -311,7 +326,6 @@ public final class DetectorConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,99 +6,105 @@ package com.oracle.bmc.resourcemanager.requests;
 
 import com.oracle.bmc.resourcemanager.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplatesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTemplatesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcemanager/ListTemplatesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTemplatesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A filter to return only resources that exist in the compartment, identified by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private String compartmentId;
 
     /**
-     * A filter to return only resources that exist in the compartment, identified by
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
-     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
-     * labels are displayed in the Console page listing templates. Quickstarts, Service, and
-     * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
-     * private template (category 3) is available in the compartment where it was created.
+     * Unique identifier for the template category.
+     * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Template category labels are displayed in the Console page listing templates.
+     * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+     * Each private template (category 3) is available in the compartment where it was created.
+     *
      */
     private String templateCategoryId;
 
     /**
-     * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
-     * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
-     * labels are displayed in the Console page listing templates. Quickstarts, Service, and
-     * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
-     * private template (category 3) is available in the compartment where it was created.
+     * Unique identifier for the template category.
+     * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+     * Template category labels are displayed in the Console page listing templates.
+     * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+     * Each private template (category 3) is available in the compartment where it was created.
+     *
      */
     public String getTemplateCategoryId() {
         return templateCategoryId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * template.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
      */
     private String templateId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * template.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
      */
     public String getTemplateId() {
         return templateId;
     }
     /**
-     * A filter to return only resources that match the given display name exactly. Use this filter
-     * to list a resource by name. Requires {@code sortBy} set to {@code DISPLAYNAME}.
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list a resource by name.
+     * Requires {@code sortBy} set to {@code DISPLAYNAME}.
      * Alternatively, when you know the resource OCID, use the related Get operation.
+     *
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the given display name exactly. Use this filter
-     * to list a resource by name. Requires {@code sortBy} set to {@code DISPLAYNAME}.
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list a resource by name.
+     * Requires {@code sortBy} set to {@code DISPLAYNAME}.
      * Alternatively, when you know the resource OCID, use the related Get operation.
+     *
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * The field to use when sorting returned resources. By default, {@code TIMECREATED} is ordered
-     * descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only
-     * on one field.
+     * The field to use when sorting returned resources.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to use when sorting returned resources. By default, {@code TIMECREATED} is ordered
-     * descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only
-     * on one field.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to use when sorting returned resources.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -132,24 +138,25 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * The field to use when sorting returned resources. By default, {@code TIMECREATED} is ordered
-     * descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only
-     * on one field.
+     * The field to use when sorting returned resources.
+     * By default, {@code TIMECREATED} is ordered descending.
+     * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -183,38 +190,38 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending
-     * ({@code DESC}).
+     * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The number of items returned in a paginated {@code List} call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * The number of items returned in a paginated {@code List} call. For information about
-     * pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * The number of items returned in a paginated {@code List} call. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
      * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
-     * For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
@@ -223,12 +230,14 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTemplatesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -245,14 +254,13 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A filter to return only resources that exist in the compartment, identified by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          */
         private String compartmentId = null;
 
         /**
-         * A filter to return only resources that exist in the compartment, identified by
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * A filter to return only resources that exist in the compartment, identified by [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -263,20 +271,21 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
-         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
-         * labels are displayed in the Console page listing templates. Quickstarts, Service, and
-         * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
-         * private template (category 3) is available in the compartment where it was created.
+         * Unique identifier for the template category.
+         * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Template category labels are displayed in the Console page listing templates.
+         * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+         * Each private template (category 3) is available in the compartment where it was created.
+         *
          */
         private String templateCategoryId = null;
 
         /**
-         * Unique identifier for the template category. Possible values are {@code 0} (Quickstarts),
-         * {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private). Template category
-         * labels are displayed in the Console page listing templates. Quickstarts, Service, and
-         * Architecture templates (categories 0, 1, and 2) are available in all compartments. Each
-         * private template (category 3) is available in the compartment where it was created.
+         * Unique identifier for the template category.
+         * Possible values are {@code 0} (Quickstarts), {@code 1} (Service), {@code 2} (Architecture), and {@code 3} (Private).
+         * Template category labels are displayed in the Console page listing templates.
+         * Quickstarts, Service, and Architecture templates (categories 0, 1, and 2) are available in all compartments.
+         * Each private template (category 3) is available in the compartment where it was created.
          *
          * @param templateCategoryId the value to set
          * @return this builder instance
@@ -287,15 +296,12 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * template.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
          */
         private String templateId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * template.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the template.
          * @param templateId the value to set
          * @return this builder instance
          */
@@ -305,15 +311,18 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * A filter to return only resources that match the given display name exactly. Use this
-         * filter to list a resource by name. Requires {@code sortBy} set to {@code DISPLAYNAME}.
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list a resource by name.
+         * Requires {@code sortBy} set to {@code DISPLAYNAME}.
          * Alternatively, when you know the resource OCID, use the related Get operation.
+         *
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the given display name exactly. Use this
-         * filter to list a resource by name. Requires {@code sortBy} set to {@code DISPLAYNAME}.
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list a resource by name.
+         * Requires {@code sortBy} set to {@code DISPLAYNAME}.
          * Alternatively, when you know the resource OCID, use the related Get operation.
          *
          * @param displayName the value to set
@@ -325,16 +334,17 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The field to use when sorting returned resources. By default, {@code TIMECREATED} is
-         * ordered descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you
-         * can sort only on one field.
+         * The field to use when sorting returned resources.
+         * By default, {@code TIMECREATED} is ordered descending.
+         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to use when sorting returned resources. By default, {@code TIMECREATED} is
-         * ordered descending. By default, {@code DISPLAYNAME} is ordered ascending. Note that you
-         * can sort only on one field.
+         * The field to use when sorting returned resources.
+         * By default, {@code TIMECREATED} is ordered descending.
+         * By default, {@code DISPLAYNAME} is ordered ascending. Note that you can sort only on one field.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -345,14 +355,13 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or
-         * descending ({@code DESC}).
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or
-         * descending ({@code DESC}).
+         * The sort order to use when sorting returned resources. Ascending ({@code ASC}) or descending ({@code DESC}).
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -363,16 +372,15 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * The number of items returned in a paginated {@code List} call. For information about
-         * pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The number of items returned in a paginated {@code List} call. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -383,16 +391,15 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List}
-         * call. For information about pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the preceding {@code List}
-         * call. For information about pagination, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * The value of the {@code opc-next-page} response header from the preceding {@code List} call.
+         * For information about pagination, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -404,19 +411,18 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -428,7 +434,6 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTemplatesRequest o) {
@@ -449,11 +454,10 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListTemplatesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTemplatesRequest
          */
@@ -467,8 +471,7 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListTemplatesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTemplatesRequest
@@ -485,14 +488,12 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListTemplatesRequest(opcRequestId, compartmentId, templateCategoryId, templateId,
-            // displayName, sortBy, sortOrder, limit, page);
+            // new ListTemplatesRequest(opcRequestId, compartmentId, templateCategoryId, templateId, displayName, sortBy, sortOrder, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -510,7 +511,6 @@ public class ListTemplatesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

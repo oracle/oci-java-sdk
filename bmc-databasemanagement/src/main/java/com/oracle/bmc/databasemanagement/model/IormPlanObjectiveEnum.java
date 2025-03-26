@@ -5,25 +5,26 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The objective of the IORM plan of an Exadata storage server. The following is an excerpt from
- * Exadata documentation: auto - Use this setting for IORM to determine the best mode based on
- * active workloads and resource plans. IORM continuously and dynamically determines the
- * optimization objective, based on the observed workloads and enabled resource plans. This is the
- * recommended value for most use cases, and starting with Oracle Exadata System Software release
- * 21.2.0, this is the default setting. high_throughput - Use this setting to optimize critical DSS
- * workloads that require high throughput. This setting improves throughput at the cost of I/O
- * latency. low_latency - Use this setting to optimize critical OLTP workloads that require
- * extremely good disk latency. This setting provides the lowest possible latency at the cost of
- * throughput by limiting disk utilization. balanced - Use this setting for a mixture of critical
- * OLTP and DSS workloads. This setting balances low disk latency and high throughput. This setting
- * limits disk utilization of large I/Os to a lesser extent than low_latency to achieve a balance
- * between latency and throughput. basic - Use this setting to limit the maximum small I/O latency
- * and otherwise disable I/O prioritization. This is the default setting in Oracle Exadata System
- * Software release 20.1.0 and earlier. other - Temporarily handle the case when Exadata side adds
- * new value, should not be used as input when to make change to IORM plan.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum IormPlanObjectiveEnum implements com.oracle.bmc.http.internal.BmcEnum {
+ * The objective of the IORM plan of an Exadata storage server. The following is an excerpt from Exadata documentation:
+ * auto - Use this setting for IORM to determine the best mode based on active workloads and resource plans.
+ *        IORM continuously and dynamically determines the optimization objective, based on the observed workloads
+ *        and enabled resource plans. This is the recommended value for most use cases, and starting with
+ *        Oracle Exadata System Software release 21.2.0, this is the default setting.
+ * high_throughput - Use this setting to optimize critical DSS workloads that require high throughput.
+ *       This setting improves throughput at the cost of I/O latency.
+ * low_latency - Use this setting to optimize critical OLTP workloads that require extremely good disk latency.
+ *       This setting provides the lowest possible latency at the cost of throughput by limiting disk utilization.
+ * balanced - Use this setting for a mixture of critical OLTP and DSS workloads. This setting balances low disk
+ *       latency and high throughput. This setting limits disk utilization of large I/Os to a lesser extent than
+ *       low_latency to achieve a balance between latency and throughput.
+ * basic - Use this setting to limit the maximum small I/O latency and otherwise disable I/O prioritization.
+ *       This is the default setting in Oracle Exadata System Software release 20.1.0 and earlier.
+ * other - Temporarily handle the case when Exadata side adds new value, should not be used as input
+ *       when to make change to IORM plan.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum IormPlanObjectiveEnum {
     Auto("AUTO"),
     HighThroughput("HIGH_THROUGHPUT"),
     LowLatency("LOW_LATENCY"),

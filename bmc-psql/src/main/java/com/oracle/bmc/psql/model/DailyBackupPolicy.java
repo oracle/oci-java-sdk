@@ -5,25 +5,25 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Daily backup policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Daily backup policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DailyBackupPolicy.Builder.class)
+    builder = DailyBackupPolicy.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DailyBackupPolicy extends BackupPolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,16 +44,17 @@ public final class DailyBackupPolicy extends BackupPolicy {
             this.__explicitlySet__.add("copyPolicy");
             return this;
         }
-        /** Hour of the day when the backup starts. */
+        /**
+         * Hour of the day when the backup starts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
         private String backupStart;
 
         /**
          * Hour of the day when the backup starts.
-         *
          * @param backupStart the value to set
          * @return this builder
-         */
+         **/
         public Builder backupStart(String backupStart) {
             this.backupStart = backupStart;
             this.__explicitlySet__.add("backupStart");
@@ -87,7 +88,9 @@ public final class DailyBackupPolicy extends BackupPolicy {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,15 +106,16 @@ public final class DailyBackupPolicy extends BackupPolicy {
         this.backupStart = backupStart;
     }
 
-    /** Hour of the day when the backup starts. */
+    /**
+     * Hour of the day when the backup starts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupStart")
     private final String backupStart;
 
     /**
      * Hour of the day when the backup starts.
-     *
      * @return the value
-     */
+     **/
     public String getBackupStart() {
         return backupStart;
     }
@@ -123,7 +127,6 @@ public final class DailyBackupPolicy extends BackupPolicy {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

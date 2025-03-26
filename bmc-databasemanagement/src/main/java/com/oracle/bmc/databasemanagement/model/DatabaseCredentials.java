@@ -5,25 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The database credentials used to perform management activity. Provide one of the following
- * attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The database credentials used to perform management activity.
+ * Provide one of the following attribute set.
+ * (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseCredentials.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DatabaseCredentials
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DatabaseCredentials.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DatabaseCredentials extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"userName", "password", "secretId", "role"})
     public DatabaseCredentials(String userName, String password, String secretId, Role role) {
@@ -36,7 +35,10 @@ public final class DatabaseCredentials
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The database user name used to perform management activity. */
+        /**
+         * The database user name used to perform management activity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
@@ -45,13 +47,16 @@ public final class DatabaseCredentials
          *
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
             return this;
         }
-        /** The password for the database user name. */
+        /**
+         * The password for the database user name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
@@ -60,45 +65,39 @@ public final class DatabaseCredentials
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret containing the user password.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * secret containing the user password.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
          * @param secretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or
-         * sysdba.
-         */
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
-         * The role of the database user. Indicates whether the database user is a normal user or
-         * sysdba.
-         *
+         * The role of the database user. Indicates whether the database user is a normal user or sysdba.
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -135,7 +134,9 @@ public final class DatabaseCredentials
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,7 +145,10 @@ public final class DatabaseCredentials
         return new Builder().copy(this);
     }
 
-    /** The database user name used to perform management activity. */
+    /**
+     * The database user name used to perform management activity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
@@ -152,12 +156,15 @@ public final class DatabaseCredentials
      * The database user name used to perform management activity.
      *
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
 
-    /** The password for the database user name. */
+    /**
+     * The password for the database user name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
@@ -165,33 +172,29 @@ public final class DatabaseCredentials
      * The password for the database user name.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret containing the user password.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * secret containing the user password.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
      * @return the value
-     */
+     **/
     public String getSecretId() {
         return secretId;
     }
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or
-     * sysdba.
-     */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     **/
+    public enum Role {
         Normal("NORMAL"),
         Sysdba("SYSDBA"),
         ;
@@ -224,18 +227,15 @@ public final class DatabaseCredentials
         }
     };
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or
-     * sysdba.
-     */
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
-     * The role of the database user. Indicates whether the database user is a normal user or
-     * sysdba.
-     *
+     * The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * @return the value
-     */
+     **/
     public Role getRole() {
         return role;
     }
@@ -247,7 +247,6 @@ public final class DatabaseCredentials
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

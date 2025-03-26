@@ -5,23 +5,22 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details for updating a DR plan step. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details for updating a DR plan step.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDrPlanStepDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDrPlanStepDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDrPlanStepDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -51,20 +50,21 @@ public final class UpdateDrPlanStepDetails
     public static class Builder {
         /**
          * The unique id of the step.
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
-         * <p>Example: {@code sgid1.step..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique id of the step.
-         *
-         * <p>Example: {@code sgid1.step..uniqueID}
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -72,85 +72,89 @@ public final class UpdateDrPlanStepDetails
         }
         /**
          * The display name of the step in a group.
+         * <p>
+         * Example: {@code My_STEP_3A - EBS Start - STAGE A}
          *
-         * <p>Example: {@code My_STEP_3A - EBS Start - STAGE A}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the step in a group.
-         *
-         * <p>Example: {@code My_STEP_3A - EBS Start - STAGE A}
+         * <p>
+         * Example: {@code My_STEP_3A - EBS Start - STAGE A}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The error mode for this step. The default error mode for the step is {@code
-         * STOP_ON_ERROR}.
-         */
+         * The error mode for this step.
+         * The default error mode for the step is {@code STOP_ON_ERROR}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
         private DrPlanStepErrorMode errorMode;
 
         /**
-         * The error mode for this step. The default error mode for the step is {@code
-         * STOP_ON_ERROR}.
+         * The error mode for this step.
+         * The default error mode for the step is {@code STOP_ON_ERROR}.
          *
          * @param errorMode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMode(DrPlanStepErrorMode errorMode) {
             this.errorMode = errorMode;
             this.__explicitlySet__.add("errorMode");
             return this;
         }
         /**
-         * The timeout in seconds for executing this step. When creating a new step, if no timeout
-         * is specified, the default timeout is set to {@code 3600} seconds.
+         * The timeout in seconds for executing this step.
+         * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
+         * <p>
+         * Example: {@code 600}
          *
-         * <p>Example: {@code 600}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeout")
         private Integer timeout;
 
         /**
-         * The timeout in seconds for executing this step. When creating a new step, if no timeout
-         * is specified, the default timeout is set to {@code 3600} seconds.
-         *
-         * <p>Example: {@code 600}
+         * The timeout in seconds for executing this step.
+         * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
+         * <p>
+         * Example: {@code 600}
          *
          * @param timeout the value to set
          * @return this builder
-         */
+         **/
         public Builder timeout(Integer timeout) {
             this.timeout = timeout;
             this.__explicitlySet__.add("timeout");
             return this;
         }
         /**
-         * A flag indicating whether this step should be enabled for execution. The default value
-         * for the isEnabled flag is {@code true}.
+         * A flag indicating whether this step should be enabled for execution.
+         * The default value for the isEnabled flag is {@code true}.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * A flag indicating whether this step should be enabled for execution. The default value
-         * for the isEnabled flag is {@code true}.
-         *
-         * <p>Example: {@code true}
+         * A flag indicating whether this step should be enabled for execution.
+         * The default value for the isEnabled flag is {@code true}.
+         * <p>
+         * Example: {@code true}
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -208,7 +212,9 @@ public final class UpdateDrPlanStepDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,95 +225,102 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * The unique id of the step.
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
-     * <p>Example: {@code sgid1.step..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique id of the step.
-     *
-     * <p>Example: {@code sgid1.step..uniqueID}
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The display name of the step in a group.
+     * <p>
+     * Example: {@code My_STEP_3A - EBS Start - STAGE A}
      *
-     * <p>Example: {@code My_STEP_3A - EBS Start - STAGE A}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the step in a group.
-     *
-     * <p>Example: {@code My_STEP_3A - EBS Start - STAGE A}
+     * <p>
+     * Example: {@code My_STEP_3A - EBS Start - STAGE A}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The error mode for this step. The default error mode for the step is {@code STOP_ON_ERROR}.
-     */
+     * The error mode for this step.
+     * The default error mode for the step is {@code STOP_ON_ERROR}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMode")
     private final DrPlanStepErrorMode errorMode;
 
     /**
-     * The error mode for this step. The default error mode for the step is {@code STOP_ON_ERROR}.
+     * The error mode for this step.
+     * The default error mode for the step is {@code STOP_ON_ERROR}.
      *
      * @return the value
-     */
+     **/
     public DrPlanStepErrorMode getErrorMode() {
         return errorMode;
     }
 
     /**
-     * The timeout in seconds for executing this step. When creating a new step, if no timeout is
-     * specified, the default timeout is set to {@code 3600} seconds.
+     * The timeout in seconds for executing this step.
+     * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
+     * <p>
+     * Example: {@code 600}
      *
-     * <p>Example: {@code 600}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final Integer timeout;
 
     /**
-     * The timeout in seconds for executing this step. When creating a new step, if no timeout is
-     * specified, the default timeout is set to {@code 3600} seconds.
-     *
-     * <p>Example: {@code 600}
+     * The timeout in seconds for executing this step.
+     * When creating a new step, if no timeout is specified, the default timeout is set to {@code 3600} seconds.
+     * <p>
+     * Example: {@code 600}
      *
      * @return the value
-     */
+     **/
     public Integer getTimeout() {
         return timeout;
     }
 
     /**
-     * A flag indicating whether this step should be enabled for execution. The default value for
-     * the isEnabled flag is {@code true}.
+     * A flag indicating whether this step should be enabled for execution.
+     * The default value for the isEnabled flag is {@code true}.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * A flag indicating whether this step should be enabled for execution. The default value for
-     * the isEnabled flag is {@code true}.
-     *
-     * <p>Example: {@code true}
+     * A flag indicating whether this step should be enabled for execution.
+     * The default value for the isEnabled flag is {@code true}.
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -326,7 +339,6 @@ public final class UpdateDrPlanStepDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

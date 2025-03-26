@@ -5,27 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A virtual cloud network (VCN). For more information, see [Overview of the Networking
- * Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * A virtual cloud network (VCN). For more information, see
+ * [Overview of the Networking Service](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Vcn.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Vcn extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "byoipv6CidrBlocks",
@@ -89,7 +87,10 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges. */
+        /**
+         * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
         private java.util.List<String> byoipv6CidrBlocks;
 
@@ -98,26 +99,25 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param byoipv6CidrBlocks the value to set
          * @return this builder
-         */
+         **/
         public Builder byoipv6CidrBlocks(java.util.List<String> byoipv6CidrBlocks) {
             this.byoipv6CidrBlocks = byoipv6CidrBlocks;
             this.__explicitlySet__.add("byoipv6CidrBlocks");
             return this;
         }
         /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP
-         * address space.
-         */
+         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
         private java.util.List<String> ipv6PrivateCidrBlocks;
 
         /**
-         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP
-         * address space.
+         * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
          *
          * @param ipv6PrivateCidrBlocks the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6PrivateCidrBlocks(java.util.List<String> ipv6PrivateCidrBlocks) {
             this.ipv6PrivateCidrBlocks = ipv6PrivateCidrBlocks;
             this.__explicitlySet__.add("ipv6PrivateCidrBlocks");
@@ -125,26 +125,30 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Deprecated. The first CIDR IP address from cidrBlocks.
+         * <p>
+         * Example: {@code 172.16.0.0/16}
          *
-         * <p>Example: {@code 172.16.0.0/16}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
         private String cidrBlock;
 
         /**
          * Deprecated. The first CIDR IP address from cidrBlocks.
-         *
-         * <p>Example: {@code 172.16.0.0/16}
+         * <p>
+         * Example: {@code 172.16.0.0/16}
          *
          * @param cidrBlock the value to set
          * @return this builder
-         */
+         **/
         public Builder cidrBlock(String cidrBlock) {
             this.cidrBlock = cidrBlock;
             this.__explicitlySet__.add("cidrBlock");
             return this;
         }
-        /** The list of IPv4 CIDR blocks the VCN will use. */
+        /**
+         * The list of IPv4 CIDR blocks the VCN will use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
         private java.util.List<String> cidrBlocks;
 
@@ -153,108 +157,97 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param cidrBlocks the value to set
          * @return this builder
-         */
+         **/
         public Builder cidrBlocks(java.util.List<String> cidrBlocks) {
             this.cidrBlocks = cidrBlocks;
             this.__explicitlySet__.add("cidrBlocks");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the VCN.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the VCN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default set of DHCP options.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
         private String defaultDhcpOptionsId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default set of DHCP options.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
          *
          * @param defaultDhcpOptionsId the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultDhcpOptionsId(String defaultDhcpOptionsId) {
             this.defaultDhcpOptionsId = defaultDhcpOptionsId;
             this.__explicitlySet__.add("defaultDhcpOptionsId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default route table.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
         private String defaultRouteTableId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default route table.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
          * @param defaultRouteTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultRouteTableId(String defaultRouteTableId) {
             this.defaultRouteTableId = defaultRouteTableId;
             this.__explicitlySet__.add("defaultRouteTableId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default security list.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
         private String defaultSecurityListId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * VCN's default security list.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
          * @param defaultSecurityListId the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultSecurityListId(String defaultSecurityListId) {
             this.defaultSecurityListId = defaultSecurityListId;
             this.__explicitlySet__.add("defaultSecurityListId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -262,114 +255,112 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
-         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
-         * string that begins with a letter. The value cannot be changed.
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+         * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
+         * Must be an alphanumeric string that begins with a letter.
+         * The value cannot be changed.
+         * <p>
+         * The absence of this parameter means the Internet and VCN Resolver will
+         * not work for this VCN.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1}
          *
-         * <p>The absence of this parameter means the Internet and VCN Resolver will not work for
-         * this VCN.
-         *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         *
-         * <p>Example: {@code vcn1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
         private String dnsLabel;
 
         /**
-         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS
-         * label to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for
-         * example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric
-         * string that begins with a letter. The value cannot be changed.
-         *
-         * <p>The absence of this parameter means the Internet and VCN Resolver will not work for
-         * this VCN.
-         *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         *
-         * <p>Example: {@code vcn1}
+         * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+         * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+         * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
+         * Must be an alphanumeric string that begins with a letter.
+         * The value cannot be changed.
+         * <p>
+         * The absence of this parameter means the Internet and VCN Resolver will
+         * not work for this VCN.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1}
          *
          * @param dnsLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsLabel(String dnsLabel) {
             this.dnsLabel = dnsLabel;
             this.__explicitlySet__.add("dnsLabel");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * [Security
-         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-         * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
-         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-         * {"value":"42","mode":"audit"}}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * [Security
-         * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-         * are labels for a resource that can be referenced in a [Zero Trust Packet
-         * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+         * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
          * (ZPR) policy to control access to ZPR-supported resources.
-         *
-         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-         * {"value":"42","mode":"audit"}}}}
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -377,105 +368,104 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * The VCN's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         */
+         * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The VCN's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         *
+         * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address
-         * space. The prefixes are provided by Oracle and the sizes are always /56.
-         */
+         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+         * The prefixes are provided by Oracle and the sizes are always /56.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
         private java.util.List<String> ipv6CidrBlocks;
 
         /**
-         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address
-         * space. The prefixes are provided by Oracle and the sizes are always /56.
+         * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
+         * The prefixes are provided by Oracle and the sizes are always /56.
          *
          * @param ipv6CidrBlocks the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6CidrBlocks(java.util.List<String> ipv6CidrBlocks) {
             this.ipv6CidrBlocks = ipv6CidrBlocks;
             this.__explicitlySet__.add("ipv6CidrBlocks");
             return this;
         }
-        /** The VCN's current state. */
+        /**
+         * The VCN's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The VCN's current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the VCN was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the VCN was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The VCN's domain name, which consists of the VCN's DNS label, and the {@code
-         * oraclevcn.com} domain.
+         * The VCN's domain name, which consists of the VCN's DNS label, and the
+         * {@code oraclevcn.com} domain.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1.oraclevcn.com}
          *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         *
-         * <p>Example: {@code vcn1.oraclevcn.com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")
         private String vcnDomainName;
 
         /**
-         * The VCN's domain name, which consists of the VCN's DNS label, and the {@code
-         * oraclevcn.com} domain.
-         *
-         * <p>For more information, see [DNS in Your Virtual Cloud
-         * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-         *
-         * <p>Example: {@code vcn1.oraclevcn.com}
+         * The VCN's domain name, which consists of the VCN's DNS label, and the
+         * {@code oraclevcn.com} domain.
+         * <p>
+         * For more information, see
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * <p>
+         * Example: {@code vcn1.oraclevcn.com}
          *
          * @param vcnDomainName the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnDomainName(String vcnDomainName) {
             this.vcnDomainName = vcnDomainName;
             this.__explicitlySet__.add("vcnDomainName");
@@ -572,7 +562,9 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -581,7 +573,10 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges. */
+    /**
+     * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("byoipv6CidrBlocks")
     private final java.util.List<String> byoipv6CidrBlocks;
 
@@ -589,48 +584,51 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * The list of BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 ranges.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getByoipv6CidrBlocks() {
         return byoipv6CidrBlocks;
     }
 
     /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address
-     * space.
-     */
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6PrivateCidrBlocks")
     private final java.util.List<String> ipv6PrivateCidrBlocks;
 
     /**
-     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address
-     * space.
+     * For an IPv6-enabled VCN, this is the list of Private IPv6 prefixes for the VCN's IP address space.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIpv6PrivateCidrBlocks() {
         return ipv6PrivateCidrBlocks;
     }
 
     /**
      * Deprecated. The first CIDR IP address from cidrBlocks.
+     * <p>
+     * Example: {@code 172.16.0.0/16}
      *
-     * <p>Example: {@code 172.16.0.0/16}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlock")
     private final String cidrBlock;
 
     /**
      * Deprecated. The first CIDR IP address from cidrBlocks.
-     *
-     * <p>Example: {@code 172.16.0.0/16}
+     * <p>
+     * Example: {@code 172.16.0.0/16}
      *
      * @return the value
-     */
+     **/
     public String getCidrBlock() {
         return cidrBlock;
     }
 
-    /** The list of IPv4 CIDR blocks the VCN will use. */
+    /**
+     * The list of IPv4 CIDR blocks the VCN will use.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidrBlocks")
     private final java.util.List<String> cidrBlocks;
 
@@ -638,221 +636,205 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * The list of IPv4 CIDR blocks the VCN will use.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCidrBlocks() {
         return cidrBlocks;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the VCN.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the VCN.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VCN.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default set of DHCP options.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultDhcpOptionsId")
     private final String defaultDhcpOptionsId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default set of DHCP options.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default set of DHCP options.
      *
      * @return the value
-     */
+     **/
     public String getDefaultDhcpOptionsId() {
         return defaultDhcpOptionsId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default route table.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultRouteTableId")
     private final String defaultRouteTableId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default route table.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default route table.
      * @return the value
-     */
+     **/
     public String getDefaultRouteTableId() {
         return defaultRouteTableId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default security list.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultSecurityListId")
     private final String defaultSecurityListId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-     * VCN's default security list.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the VCN's default security list.
      * @return the value
-     */
+     **/
     public String getDefaultSecurityListId() {
         return defaultSecurityListId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
-     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
-     * with a letter. The value cannot be changed.
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+     * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
+     * Must be an alphanumeric string that begins with a letter.
+     * The value cannot be changed.
+     * <p>
+     * The absence of this parameter means the Internet and VCN Resolver will
+     * not work for this VCN.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code vcn1}
      *
-     * <p>The absence of this parameter means the Internet and VCN Resolver will not work for this
-     * VCN.
-     *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     *
-     * <p>Example: {@code vcn1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsLabel")
     private final String dnsLabel;
 
     /**
-     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and subnet's DNS label
-     * to form a fully qualified domain name (FQDN) for each VNIC within this subnet (for example,
-     * {@code bminstance1.subnet123.vcn1.oraclevcn.com}). Must be an alphanumeric string that begins
-     * with a letter. The value cannot be changed.
-     *
-     * <p>The absence of this parameter means the Internet and VCN Resolver will not work for this
-     * VCN.
-     *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     *
-     * <p>Example: {@code vcn1}
+     * A DNS label for the VCN, used in conjunction with the VNIC's hostname and
+     * subnet's DNS label to form a fully qualified domain name (FQDN) for each VNIC
+     * within this subnet (for example, {@code bminstance1.subnet123.vcn1.oraclevcn.com}).
+     * Must be an alphanumeric string that begins with a letter.
+     * The value cannot be changed.
+     * <p>
+     * The absence of this parameter means the Internet and VCN Resolver will
+     * not work for this VCN.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code vcn1}
      *
      * @return the value
-     */
+     **/
     public String getDnsLabel() {
         return dnsLabel;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * [Security
-     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-     * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
-     * policy to control access to ZPR-supported resources.
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
-     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-     * {"value":"42","mode":"audit"}}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * [Security
-     * attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
-     * are labels for a resource that can be referenced in a [Zero Trust Packet
-     * Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm) (ZPR)
-     * policy to control access to ZPR-supported resources.
-     *
-     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
-     * {"value":"42","mode":"audit"}}}}
+     * [Security attributes](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes) are labels
+     * for a resource that can be referenced in a [Zero Trust Packet Routing](https://docs.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
 
     /**
-     * The VCN's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     */
+     * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The VCN's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     *
+     * The VCN's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
@@ -860,7 +842,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     /**
      * For an IPv6-enabled VCN, this is the list of IPv6 prefixes for the VCN's IP address space.
      * The prefixes are provided by Oracle and the sizes are always /56.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6CidrBlocks")
     private final java.util.List<String> ipv6CidrBlocks;
 
@@ -869,13 +852,15 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * The prefixes are provided by Oracle and the sizes are always /56.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIpv6CidrBlocks() {
         return ipv6CidrBlocks;
     }
 
-    /** The VCN's current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The VCN's current state.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
@@ -883,8 +868,8 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         Updating("UPDATING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -923,63 +908,64 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /** The VCN's current state. */
+    /**
+     * The VCN's current state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The VCN's current state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the VCN was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the VCN was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the VCN was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The VCN's domain name, which consists of the VCN's DNS label, and the {@code oraclevcn.com}
-     * domain.
+     * The VCN's domain name, which consists of the VCN's DNS label, and the
+     * {@code oraclevcn.com} domain.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code vcn1.oraclevcn.com}
      *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     *
-     * <p>Example: {@code vcn1.oraclevcn.com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnDomainName")
     private final String vcnDomainName;
 
     /**
-     * The VCN's domain name, which consists of the VCN's DNS label, and the {@code oraclevcn.com}
-     * domain.
-     *
-     * <p>For more information, see [DNS in Your Virtual Cloud
-     * Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
-     *
-     * <p>Example: {@code vcn1.oraclevcn.com}
+     * The VCN's domain name, which consists of the VCN's DNS label, and the
+     * {@code oraclevcn.com} domain.
+     * <p>
+     * For more information, see
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * <p>
+     * Example: {@code vcn1.oraclevcn.com}
      *
      * @return the value
-     */
+     **/
     public String getVcnDomainName() {
         return vcnDomainName;
     }
@@ -991,7 +977,6 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

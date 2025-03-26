@@ -4,14 +4,18 @@
  */
 package com.oracle.bmc.model;
 
-/** Class representing RegionSchema blob that can be used for parsing out region info details. */
+/**
+ * Class representing RegionSchema blob that can be used for parsing out region info details.
+ */
 public final class RegionSchema {
     private final String realmKey;
     private final String realmDomainComponent;
     private final String regionKey;
     private final String regionIdentifier;
 
-    /** check if region schema is valid * */
+    /**
+     * check if region schema is valid *
+     */
     public static boolean isValid(final RegionSchema regionSchema) {
 
         if (regionSchema.getRealmKey() == null

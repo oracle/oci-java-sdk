@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * A file associated with a package. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * A file associated with a package.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SoftwarePackageFile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SoftwarePackageFile
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SoftwarePackageFile.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SoftwarePackageFile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "path",
@@ -49,95 +47,99 @@ public final class SoftwarePackageFile
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** File path. */
+        /**
+         * File path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * File path.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** Type of the file. */
+        /**
+         * Type of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of the file.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The date and time the file was last modified (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The date and time the file was last modified (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-        /** Checksum of the file. */
+        /**
+         * Checksum of the file.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
         /**
          * Checksum of the file.
-         *
          * @param checksum the value to set
          * @return this builder
-         */
+         **/
         public Builder checksum(String checksum) {
             this.checksum = checksum;
             this.__explicitlySet__.add("checksum");
             return this;
         }
-        /** Type of the checksum. */
+        /**
+         * Type of the checksum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private String checksumType;
 
         /**
          * Type of the checksum.
-         *
          * @param checksumType the value to set
          * @return this builder
-         */
+         **/
         public Builder checksumType(String checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-        /** Size of the file in bytes. */
+        /**
+         * Size of the file in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * Size of the file in bytes.
-         *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
@@ -186,7 +188,9 @@ public final class SoftwarePackageFile
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,84 +199,88 @@ public final class SoftwarePackageFile
         return new Builder().copy(this);
     }
 
-    /** File path. */
+    /**
+     * File path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * File path.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** Type of the file. */
+    /**
+     * Type of the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of the file.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * The date and time the file was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The date and time the file was last modified (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the file was last modified (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
 
-    /** Checksum of the file. */
+    /**
+     * Checksum of the file.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
     /**
      * Checksum of the file.
-     *
      * @return the value
-     */
+     **/
     public String getChecksum() {
         return checksum;
     }
 
-    /** Type of the checksum. */
+    /**
+     * Type of the checksum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final String checksumType;
 
     /**
      * Type of the checksum.
-     *
      * @return the value
-     */
+     **/
     public String getChecksumType() {
         return checksumType;
     }
 
-    /** Size of the file in bytes. */
+    /**
+     * Size of the file in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * Size of the file in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
@@ -284,7 +292,6 @@ public final class SoftwarePackageFile
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

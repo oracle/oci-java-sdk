@@ -5,23 +5,21 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Defines a schedule for preferred upgrade times. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Defines a schedule for preferred upgrade times.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccUpgradeSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CccUpgradeSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CccUpgradeSchedule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CccUpgradeSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -71,78 +69,80 @@ public final class CccUpgradeSchedule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Upgrade schedule
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-         * cannot be changed once created.
-         */
+         * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This cannot be changed once created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Upgrade schedule
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-         * cannot be changed once created.
+         * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This cannot be changed once created.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential
-         * information.
-         */
+         * Compute Cloud@Customer upgrade schedule display name.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential
-         * information.
+         * Compute Cloud@Customer upgrade schedule display name.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering
-         * confidential information.
-         */
+         * An optional description of the Compute Cloud@Customer upgrade schedule.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering
-         * confidential information.
+         * An optional description of the Compute Cloud@Customer upgrade schedule.
+         * Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Compute Cloud@Customer upgrade schedule.
-         */
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Compute Cloud@Customer upgrade schedule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the Compute Cloud@Customer upgrade schedule.
+         * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+         * Compute Cloud@Customer upgrade schedule.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -150,7 +150,8 @@ public final class CccUpgradeSchedule
         }
         /**
          * The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -159,7 +160,7 @@ public final class CccUpgradeSchedule
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -167,7 +168,8 @@ public final class CccUpgradeSchedule
         }
         /**
          * The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -176,41 +178,45 @@ public final class CccUpgradeSchedule
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Lifecycle state of the resource. */
+        /**
+         * Lifecycle state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle state of the resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, the message can be
-         * used to provide actionable information for a resource in a Failed state.
-         */
+         * A message describing the current state in more detail.
+         * For example, the message can be used to provide actionable information for a resource in
+         * a Failed state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, the message can be
-         * used to provide actionable information for a resource in a Failed state.
+         * A message describing the current state in more detail.
+         * For example, the message can be used to provide actionable information for a resource in
+         * a Failed state.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -219,7 +225,8 @@ public final class CccUpgradeSchedule
         /**
          * List of preferred times for Compute Cloud@Customer infrastructures associated with this
          * schedule to be upgraded.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("events")
         private java.util.List<CccScheduleEvent> events;
 
@@ -229,7 +236,7 @@ public final class CccUpgradeSchedule
          *
          * @param events the value to set
          * @return this builder
-         */
+         **/
         public Builder events(java.util.List<CccScheduleEvent> events) {
             this.events = events;
             this.__explicitlySet__.add("events");
@@ -237,39 +244,41 @@ public final class CccUpgradeSchedule
         }
         /**
          * List of Compute Cloud@Customer infrastructure
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are
-         * using this upgrade schedule.
-         */
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+         * schedule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructureIds")
         private java.util.List<String> infrastructureIds;
 
         /**
          * List of Compute Cloud@Customer infrastructure
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are
-         * using this upgrade schedule.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+         * schedule.
          *
          * @param infrastructureIds the value to set
          * @return this builder
-         */
+         **/
         public Builder infrastructureIds(java.util.List<String> infrastructureIds) {
             this.infrastructureIds = infrastructureIds;
             this.__explicitlySet__.add("infrastructureIds");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -278,7 +287,8 @@ public final class CccUpgradeSchedule
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -288,7 +298,7 @@ public final class CccUpgradeSchedule
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -296,19 +306,20 @@ public final class CccUpgradeSchedule
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -385,7 +396,9 @@ public final class CccUpgradeSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -395,76 +408,81 @@ public final class CccUpgradeSchedule
     }
 
     /**
-     * Upgrade schedule
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be
-     * changed once created.
-     */
+     * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * This cannot be changed once created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Upgrade schedule
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This cannot be
-     * changed once created.
+     * Upgrade schedule [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * This cannot be changed once created.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential
-     * information.
-     */
+     * Compute Cloud@Customer upgrade schedule display name.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Compute Cloud@Customer upgrade schedule display name. Avoid entering confidential
-     * information.
+     * Compute Cloud@Customer upgrade schedule display name.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering
-     * confidential information.
-     */
+     * An optional description of the Compute Cloud@Customer upgrade schedule.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering
-     * confidential information.
+     * An optional description of the Compute Cloud@Customer upgrade schedule.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Compute Cloud@Customer upgrade schedule.
-     */
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Compute Cloud@Customer upgrade schedule.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the Compute Cloud@Customer upgrade schedule.
+     * Compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
+     * Compute Cloud@Customer upgrade schedule.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The time the upgrade schedule was created, using an RFC3339 formatted datetime string. */
+    /**
+     * The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -472,12 +490,15 @@ public final class CccUpgradeSchedule
      * The time the upgrade schedule was created, using an RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the upgrade schedule was updated, using an RFC3339 formatted datetime string. */
+    /**
+     * The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -485,21 +506,23 @@ public final class CccUpgradeSchedule
      * The time the upgrade schedule was updated, using an RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Lifecycle state of the resource. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle state of the resource.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         NeedsAttention("NEEDS_ATTENTION"),
         Deleted("DELETED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -538,32 +561,36 @@ public final class CccUpgradeSchedule
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle state of the resource. */
+    /**
+     * Lifecycle state of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle state of the resource.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, the message can be used
-     * to provide actionable information for a resource in a Failed state.
-     */
+     * A message describing the current state in more detail.
+     * For example, the message can be used to provide actionable information for a resource in
+     * a Failed state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, the message can be used
-     * to provide actionable information for a resource in a Failed state.
+     * A message describing the current state in more detail.
+     * For example, the message can be used to provide actionable information for a resource in
+     * a Failed state.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -571,7 +598,8 @@ public final class CccUpgradeSchedule
     /**
      * List of preferred times for Compute Cloud@Customer infrastructures associated with this
      * schedule to be upgraded.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("events")
     private final java.util.List<CccScheduleEvent> events;
 
@@ -580,77 +608,81 @@ public final class CccUpgradeSchedule
      * schedule to be upgraded.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CccScheduleEvent> getEvents() {
         return events;
     }
 
     /**
      * List of Compute Cloud@Customer infrastructure
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using
-     * this upgrade schedule.
-     */
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+     * schedule.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureIds")
     private final java.util.List<String> infrastructureIds;
 
     /**
      * List of Compute Cloud@Customer infrastructure
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using
-     * this upgrade schedule.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that are using this upgrade
+     * schedule.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getInfrastructureIds() {
         return infrastructureIds;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -662,7 +694,6 @@ public final class CccUpgradeSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

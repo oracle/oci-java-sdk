@@ -6,59 +6,72 @@ package com.oracle.bmc.aianomalydetection.requests;
 
 import com.oracle.bmc.aianomalydetection.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aianomalydetection/CreateDetectAnomalyJobExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateDetectAnomalyJobRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aianomalydetection/CreateDetectAnomalyJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDetectAnomalyJobRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class CreateDetectAnomalyJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aianomalydetection.model.CreateDetectAnomalyJobDetails> {
 
     /**
-     * The input is either: - JSON object in the request. This object is defined, and the SDK
-     * generates the object for it. - Data embedded as Base64 string in format of either: - CSV -
-     * JSON If this option is used, then you must provide the content of specified CSV or JSON in
-     * Base64 encoded string. The Embedded JSON has to be in the same format as the inline request
-     * JSON.
+     * The input is either:
+     *   - JSON object in the request. This object is defined, and the SDK generates the
+     *     object for it.
+     *   - Data embedded as Base64 string in format of either:
+     *     - CSV
+     *     - JSON
+     *     If this option is used, then you must provide the content of specified
+     *     CSV or JSON in Base64 encoded string. The Embedded JSON has to be
+     *     in the same format as the inline request JSON.
+     *
      */
     private com.oracle.bmc.aianomalydetection.model.CreateDetectAnomalyJobDetails
             createDetectAnomalyJobDetails;
 
     /**
-     * The input is either: - JSON object in the request. This object is defined, and the SDK
-     * generates the object for it. - Data embedded as Base64 string in format of either: - CSV -
-     * JSON If this option is used, then you must provide the content of specified CSV or JSON in
-     * Base64 encoded string. The Embedded JSON has to be in the same format as the inline request
-     * JSON.
+     * The input is either:
+     *   - JSON object in the request. This object is defined, and the SDK generates the
+     *     object for it.
+     *   - Data embedded as Base64 string in format of either:
+     *     - CSV
+     *     - JSON
+     *     If this option is used, then you must provide the content of specified
+     *     CSV or JSON in Base64 encoded string. The Embedded JSON has to be
+     *     in the same format as the inline request JSON.
+     *
      */
     public com.oracle.bmc.aianomalydetection.model.CreateDetectAnomalyJobDetails
             getCreateDetectAnomalyJobDetails() {
         return createDetectAnomalyJobDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -66,7 +79,6 @@ public class CreateDetectAnomalyJobRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -79,25 +91,35 @@ public class CreateDetectAnomalyJobRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDetectAnomalyJobRequest,
                     com.oracle.bmc.aianomalydetection.model.CreateDetectAnomalyJobDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The input is either: - JSON object in the request. This object is defined, and the SDK
-         * generates the object for it. - Data embedded as Base64 string in format of either: - CSV
-         * - JSON If this option is used, then you must provide the content of specified CSV or JSON
-         * in Base64 encoded string. The Embedded JSON has to be in the same format as the inline
-         * request JSON.
+         * The input is either:
+         *   - JSON object in the request. This object is defined, and the SDK generates the
+         *     object for it.
+         *   - Data embedded as Base64 string in format of either:
+         *     - CSV
+         *     - JSON
+         *     If this option is used, then you must provide the content of specified
+         *     CSV or JSON in Base64 encoded string. The Embedded JSON has to be
+         *     in the same format as the inline request JSON.
+         *
          */
         private com.oracle.bmc.aianomalydetection.model.CreateDetectAnomalyJobDetails
                 createDetectAnomalyJobDetails = null;
 
         /**
-         * The input is either: - JSON object in the request. This object is defined, and the SDK
-         * generates the object for it. - Data embedded as Base64 string in format of either: - CSV
-         * - JSON If this option is used, then you must provide the content of specified CSV or JSON
-         * in Base64 encoded string. The Embedded JSON has to be in the same format as the inline
-         * request JSON.
+         * The input is either:
+         *   - JSON object in the request. This object is defined, and the SDK generates the
+         *     object for it.
+         *   - Data embedded as Base64 string in format of either:
+         *     - CSV
+         *     - JSON
+         *     If this option is used, then you must provide the content of specified
+         *     CSV or JSON in Base64 encoded string. The Embedded JSON has to be
+         *     in the same format as the inline request JSON.
          *
          * @param createDetectAnomalyJobDetails the value to set
          * @return this builder instance
@@ -109,12 +131,13 @@ public class CreateDetectAnomalyJobRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -125,19 +148,20 @@ public class CreateDetectAnomalyJobRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -149,19 +173,18 @@ public class CreateDetectAnomalyJobRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -173,7 +196,6 @@ public class CreateDetectAnomalyJobRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateDetectAnomalyJobRequest o) {
@@ -188,11 +210,10 @@ public class CreateDetectAnomalyJobRequest
         /**
          * Build the instance of CreateDetectAnomalyJobRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateDetectAnomalyJobRequest
          */
@@ -205,7 +226,6 @@ public class CreateDetectAnomalyJobRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -219,8 +239,7 @@ public class CreateDetectAnomalyJobRequest
         /**
          * Build the instance of CreateDetectAnomalyJobRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDetectAnomalyJobRequest
@@ -231,14 +250,12 @@ public class CreateDetectAnomalyJobRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateDetectAnomalyJobRequest(createDetectAnomalyJobDetails, opcRequestId,
-            // opcRetryToken);
+            // new CreateDetectAnomalyJobRequest(createDetectAnomalyJobDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -250,7 +267,6 @@ public class CreateDetectAnomalyJobRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

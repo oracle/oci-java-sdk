@@ -5,23 +5,21 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The MEL concepts details for health ner. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The MEL concepts details for health ner.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MelConceptDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MelConceptDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = MelConceptDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MelConceptDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "name", "score", "attributes"})
     public MelConceptDetails(
@@ -35,65 +33,65 @@ public final class MelConceptDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** id of the relation */
+        /**
+         * id of the relation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * id of the relation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The matched concept name/description on the ontology */
+        /**
+         * The matched concept name/description on the ontology
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The matched concept name/description on the ontology
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The relevant score between the concept and the input text */
+        /**
+         * The relevant score between the concept and the input text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * The relevant score between the concept and the input text
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
             return this;
         }
         /**
-         * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for
-         * for ICD-10 default_charge_code etc.
-         */
+         * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for ICD-10 default_charge_code etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.Map<String, String> attributes;
 
         /**
-         * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for
-         * for ICD-10 default_charge_code etc.
-         *
+         * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for ICD-10 default_charge_code etc.
          * @param attributes the value to set
          * @return this builder
-         */
+         **/
         public Builder attributes(java.util.Map<String, String> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
@@ -130,7 +128,9 @@ public final class MelConceptDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,58 +139,58 @@ public final class MelConceptDetails
         return new Builder().copy(this);
     }
 
-    /** id of the relation */
+    /**
+     * id of the relation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * id of the relation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The matched concept name/description on the ontology */
+    /**
+     * The matched concept name/description on the ontology
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The matched concept name/description on the ontology
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The relevant score between the concept and the input text */
+    /**
+     * The relevant score between the concept and the input text
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * The relevant score between the concept and the input text
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
 
     /**
-     * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for
-     * ICD-10 default_charge_code etc.
-     */
+     * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for ICD-10 default_charge_code etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.Map<String, String> attributes;
 
     /**
-     * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for
-     * ICD-10 default_charge_code etc.
-     *
+     * additional attribute values specific to ontology for ex. for SNOMED semantic_type and for for ICD-10 default_charge_code etc.
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAttributes() {
         return attributes;
     }
@@ -202,7 +202,6 @@ public final class MelConceptDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,81 +6,99 @@ package com.oracle.bmc.vbsinst.requests;
 
 import com.oracle.bmc.vbsinst.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/ListVbsInstancesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVbsInstancesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/vbsinst/ListVbsInstancesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListVbsInstancesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.vbsinst.model.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.vbsinst.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** unique VbsInstance identifier */
+    /**
+     * unique VbsInstance identifier
+     */
     private String id;
 
-    /** unique VbsInstance identifier */
+    /**
+     * unique VbsInstance identifier
+     */
     public String getId() {
         return id;
     }
-    /** A filter to return only resources that match the entire name given. */
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     private String name;
 
-    /** A filter to return only resources that match the entire name given. */
+    /**
+     * A filter to return only resources that match the entire name given.
+     */
     public String getName() {
         return name;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.vbsinst.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.vbsinst.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -114,17 +132,20 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -132,15 +153,17 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListVbsInstancesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -156,7 +179,6 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -165,12 +187,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** unique VbsInstance identifier */
+        /**
+         * unique VbsInstance identifier
+         */
         private String id = null;
 
         /**
          * unique VbsInstance identifier
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -179,12 +202,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return only resources that match the entire name given. */
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the entire name given.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -193,12 +217,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -208,15 +233,12 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -225,12 +247,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.vbsinst.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -240,16 +263,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -259,12 +279,13 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -275,19 +296,18 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -299,7 +319,6 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListVbsInstancesRequest o) {
@@ -320,11 +339,10 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListVbsInstancesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListVbsInstancesRequest
          */
@@ -338,8 +356,7 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListVbsInstancesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListVbsInstancesRequest
@@ -356,14 +373,12 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListVbsInstancesRequest(compartmentId, lifecycleState, id, name, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListVbsInstancesRequest(compartmentId, lifecycleState, id, name, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -381,7 +396,6 @@ public class ListVbsInstancesRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,19 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Parameters for entities mapping to data source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Parameters for entities mapping to data source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntitiesMapping.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntitiesMapping
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntitiesMapping extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "queryField", "entityType"})
     public EntitiesMapping(String displayName, String queryField, EntityType entityType) {
@@ -32,46 +29,49 @@ public final class EntitiesMapping
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Display name of the entity */
+        /**
+         * Display name of the entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the entity
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The entity value mapped to a data source query */
+        /**
+         * The entity value mapped to a data source query
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryField")
         private String queryField;
 
         /**
          * The entity value mapped to a data source query
-         *
          * @param queryField the value to set
          * @return this builder
-         */
+         **/
         public Builder queryField(String queryField) {
             this.queryField = queryField;
             this.__explicitlySet__.add("queryField");
             return this;
         }
-        /** Type of entity */
+        /**
+         * Type of entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private EntityType entityType;
 
         /**
          * Type of entity
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(EntityType entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
@@ -105,7 +105,9 @@ public final class EntitiesMapping
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,41 +116,44 @@ public final class EntitiesMapping
         return new Builder().copy(this);
     }
 
-    /** Display name of the entity */
+    /**
+     * Display name of the entity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the entity
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The entity value mapped to a data source query */
+    /**
+     * The entity value mapped to a data source query
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryField")
     private final String queryField;
 
     /**
      * The entity value mapped to a data source query
-     *
      * @return the value
-     */
+     **/
     public String getQueryField() {
         return queryField;
     }
 
-    /** Type of entity */
+    /**
+     * Type of entity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final EntityType entityType;
 
     /**
      * Type of entity
-     *
      * @return the value
-     */
+     **/
     public EntityType getEntityType() {
         return entityType;
     }
@@ -160,7 +165,6 @@ public final class EntitiesMapping
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

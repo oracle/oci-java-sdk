@@ -5,22 +5,19 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of a DR plan execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of a DR plan execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrPlanExecution.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrPlanExecution
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrPlanExecution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -95,20 +92,21 @@ public final class DrPlanExecution
     public static class Builder {
         /**
          * The OCID of the DR plan execution.
+         * <p>
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the DR plan execution.
-         *
-         * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -116,20 +114,21 @@ public final class DrPlanExecution
         }
         /**
          * The OCID of the compartment containing this DR plan execution.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing this DR plan execution.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -137,20 +136,21 @@ public final class DrPlanExecution
         }
         /**
          * The display name of the DR plan execution.
+         * <p>
+         * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
-         * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the DR plan execution.
-         *
-         * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
+         * <p>
+         * Example: {@code Execution - EBS Switchover PHX to IAD}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -158,26 +158,30 @@ public final class DrPlanExecution
         }
         /**
          * The OCID of the DR plan.
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planId")
         private String planId;
 
         /**
          * The OCID of the DR plan.
-         *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param planId the value to set
          * @return this builder
-         */
+         **/
         public Builder planId(String planId) {
             this.planId = planId;
             this.__explicitlySet__.add("planId");
             return this;
         }
-        /** The type of the DR plan executed. */
+        /**
+         * The type of the DR plan executed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planExecutionType")
         private DrPlanExecutionType planExecutionType;
 
@@ -186,7 +190,7 @@ public final class DrPlanExecution
          *
          * @param planExecutionType the value to set
          * @return this builder
-         */
+         **/
         public Builder planExecutionType(DrPlanExecutionType planExecutionType) {
             this.planExecutionType = planExecutionType;
             this.__explicitlySet__.add("planExecutionType");
@@ -203,64 +207,69 @@ public final class DrPlanExecution
         }
         /**
          * The OCID of the DR protection group to which this DR plan execution belongs.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
         private String drProtectionGroupId;
 
         /**
          * The OCID of the DR protection group to which this DR plan execution belongs.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder drProtectionGroupId(String drProtectionGroupId) {
             this.drProtectionGroupId = drProtectionGroupId;
             this.__explicitlySet__.add("drProtectionGroupId");
             return this;
         }
         /**
-         * The OCID of peer DR protection group associated with this plan's DR protection group.
+         * The OCID of peer DR protection group associated with this plan's
+         * DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerDrProtectionGroupId")
         private String peerDrProtectionGroupId;
 
         /**
-         * The OCID of peer DR protection group associated with this plan's DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * The OCID of peer DR protection group associated with this plan's
+         * DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param peerDrProtectionGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerDrProtectionGroupId(String peerDrProtectionGroupId) {
             this.peerDrProtectionGroupId = peerDrProtectionGroupId;
             this.__explicitlySet__.add("peerDrProtectionGroupId");
             return this;
         }
         /**
-         * The region of the peer DR protection group associated with this plan's DR protection
-         * group.
+         * The region of the peer DR protection group associated with this plan's
+         * DR protection group.
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
-         * <p>Example: {@code us-ashburn-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
         private String peerRegion;
 
         /**
-         * The region of the peer DR protection group associated with this plan's DR protection
-         * group.
-         *
-         * <p>Example: {@code us-ashburn-1}
+         * The region of the peer DR protection group associated with this plan's
+         * DR protection group.
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
          * @param peerRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder peerRegion(String peerRegion) {
             this.peerRegion = peerRegion;
             this.__explicitlySet__.add("peerRegion");
@@ -276,23 +285,22 @@ public final class DrPlanExecution
             return this;
         }
         /**
-         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime
-         * string.
+         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime
-         * string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -300,20 +308,21 @@ public final class DrPlanExecution
         }
         /**
          * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -321,43 +330,45 @@ public final class DrPlanExecution
         }
         /**
          * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The date and time at which DR plan execution succeeded, failed, was paused, or was
-         * canceled. An RFC3339 formatted datetime string.
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
+         * An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * The date and time at which DR plan execution succeeded, failed, was paused, or was
-         * canceled. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
+         * An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -365,26 +376,30 @@ public final class DrPlanExecution
         }
         /**
          * The total duration in seconds taken to complete the DR plan execution.
+         * <p>
+         * Example: {@code 750}
          *
-         * <p>Example: {@code 750}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
         private Integer executionDurationInSec;
 
         /**
          * The total duration in seconds taken to complete the DR plan execution.
-         *
-         * <p>Example: {@code 750}
+         * <p>
+         * Example: {@code 750}
          *
          * @param executionDurationInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder executionDurationInSec(Integer executionDurationInSec) {
             this.executionDurationInSec = executionDurationInSec;
             this.__explicitlySet__.add("executionDurationInSec");
             return this;
         }
-        /** A list of groups executed in this DR plan execution. */
+        /**
+         * A list of groups executed in this DR plan execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupExecutions")
         private java.util.List<DrPlanGroupExecution> groupExecutions;
 
@@ -393,13 +408,16 @@ public final class DrPlanExecution
          *
          * @param groupExecutions the value to set
          * @return this builder
-         */
+         **/
         public Builder groupExecutions(java.util.List<DrPlanGroupExecution> groupExecutions) {
             this.groupExecutions = groupExecutions;
             this.__explicitlySet__.add("groupExecutions");
             return this;
         }
-        /** The current state of the DR plan execution. */
+        /**
+         * The current state of the DR plan execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DrPlanExecutionLifecycleState lifecycleState;
 
@@ -408,13 +426,16 @@ public final class DrPlanExecution
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(DrPlanExecutionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the DR plan execution's current state in more detail. */
+        /**
+         * A message describing the DR plan execution's current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
         private String lifeCycleDetails;
 
@@ -423,30 +444,29 @@ public final class DrPlanExecution
          *
          * @param lifeCycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifeCycleDetails(String lifeCycleDetails) {
             this.lifeCycleDetails = lifeCycleDetails;
             this.__explicitlySet__.add("lifeCycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -454,20 +474,21 @@ public final class DrPlanExecution
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -476,20 +497,21 @@ public final class DrPlanExecution
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -598,7 +620,9 @@ public final class DrPlanExecution
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -609,81 +633,88 @@ public final class DrPlanExecution
 
     /**
      * The OCID of the DR plan execution.
+     * <p>
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the DR plan execution.
-     *
-     * <p>Example: {@code ocid1.drplanexecution.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drplanexecution.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The OCID of the compartment containing this DR plan execution.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing this DR plan execution.
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The display name of the DR plan execution.
+     * <p>
+     * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
-     * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the DR plan execution.
-     *
-     * <p>Example: {@code Execution - EBS Switchover PHX to IAD}
+     * <p>
+     * Example: {@code Execution - EBS Switchover PHX to IAD}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The OCID of the DR plan.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planId")
     private final String planId;
 
     /**
      * The OCID of the DR plan.
-     *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPlanId() {
         return planId;
     }
 
-    /** The type of the DR plan executed. */
+    /**
+     * The type of the DR plan executed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planExecutionType")
     private final DrPlanExecutionType planExecutionType;
 
@@ -691,7 +722,7 @@ public final class DrPlanExecution
      * The type of the DR plan executed.
      *
      * @return the value
-     */
+     **/
     public DrPlanExecutionType getPlanExecutionType() {
         return planExecutionType;
     }
@@ -705,57 +736,64 @@ public final class DrPlanExecution
 
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drProtectionGroupId")
     private final String drProtectionGroupId;
 
     /**
      * The OCID of the DR protection group to which this DR plan execution belongs.
-     *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
 
     /**
-     * The OCID of peer DR protection group associated with this plan's DR protection group.
+     * The OCID of peer DR protection group associated with this plan's
+     * DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerDrProtectionGroupId")
     private final String peerDrProtectionGroupId;
 
     /**
-     * The OCID of peer DR protection group associated with this plan's DR protection group.
-     *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+     * The OCID of peer DR protection group associated with this plan's
+     * DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPeerDrProtectionGroupId() {
         return peerDrProtectionGroupId;
     }
 
     /**
-     * The region of the peer DR protection group associated with this plan's DR protection group.
+     * The region of the peer DR protection group associated with this plan's
+     * DR protection group.
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
-     * <p>Example: {@code us-ashburn-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
     private final String peerRegion;
 
     /**
-     * The region of the peer DR protection group associated with this plan's DR protection group.
-     *
-     * <p>Example: {@code us-ashburn-1}
+     * The region of the peer DR protection group associated with this plan's
+     * DR protection group.
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
      * @return the value
-     */
+     **/
     public String getPeerRegion() {
         return peerRegion;
     }
@@ -768,60 +806,61 @@ public final class DrPlanExecution
     }
 
     /**
-     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime
-     * string.
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime
-     * string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * The date and time at which DR plan execution was created. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time at which DR plan execution began. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when DR plan execution was last updated. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -829,44 +868,49 @@ public final class DrPlanExecution
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
      * An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The date and time at which DR plan execution succeeded, failed, was paused, or was canceled.
      * An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
      * The total duration in seconds taken to complete the DR plan execution.
+     * <p>
+     * Example: {@code 750}
      *
-     * <p>Example: {@code 750}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
     private final Integer executionDurationInSec;
 
     /**
      * The total duration in seconds taken to complete the DR plan execution.
-     *
-     * <p>Example: {@code 750}
+     * <p>
+     * Example: {@code 750}
      *
      * @return the value
-     */
+     **/
     public Integer getExecutionDurationInSec() {
         return executionDurationInSec;
     }
 
-    /** A list of groups executed in this DR plan execution. */
+    /**
+     * A list of groups executed in this DR plan execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupExecutions")
     private final java.util.List<DrPlanGroupExecution> groupExecutions;
 
@@ -874,12 +918,15 @@ public final class DrPlanExecution
      * A list of groups executed in this DR plan execution.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DrPlanGroupExecution> getGroupExecutions() {
         return groupExecutions;
     }
 
-    /** The current state of the DR plan execution. */
+    /**
+     * The current state of the DR plan execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DrPlanExecutionLifecycleState lifecycleState;
 
@@ -887,12 +934,15 @@ public final class DrPlanExecution
      * The current state of the DR plan execution.
      *
      * @return the value
-     */
+     **/
     public DrPlanExecutionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the DR plan execution's current state in more detail. */
+    /**
+     * A message describing the DR plan execution's current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
     private final String lifeCycleDetails;
 
@@ -900,66 +950,67 @@ public final class DrPlanExecution
      * A message describing the DR plan execution's current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifeCycleDetails() {
         return lifeCycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -971,7 +1022,6 @@ public final class DrPlanExecution
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

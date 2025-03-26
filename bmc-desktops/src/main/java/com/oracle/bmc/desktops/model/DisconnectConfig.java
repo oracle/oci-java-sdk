@@ -5,22 +5,19 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * Action and grace period for disconnect <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * Action and grace period for disconnect
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DisconnectConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DisconnectConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DisconnectConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action", "gracePeriodInMinutes"})
     public DisconnectConfig(Action action, Integer gracePeriodInMinutes) {
@@ -31,35 +28,37 @@ public final class DisconnectConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** a disconnect action to be triggered */
+        /**
+         * a disconnect action to be triggered
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * a disconnect action to be triggered
-         *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
         /**
-         * The period of time (in minutes) after disconnect before any action occurs. If the value
-         * is not provided, a default value is used.
-         */
+         * The period of time (in minutes) after disconnect before any action occurs.
+         * If the value is not provided, a default value is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodInMinutes")
         private Integer gracePeriodInMinutes;
 
         /**
-         * The period of time (in minutes) after disconnect before any action occurs. If the value
-         * is not provided, a default value is used.
+         * The period of time (in minutes) after disconnect before any action occurs.
+         * If the value is not provided, a default value is used.
          *
          * @param gracePeriodInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder gracePeriodInMinutes(Integer gracePeriodInMinutes) {
             this.gracePeriodInMinutes = gracePeriodInMinutes;
             this.__explicitlySet__.add("gracePeriodInMinutes");
@@ -89,7 +88,9 @@ public final class DisconnectConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,14 +99,16 @@ public final class DisconnectConfig
         return new Builder().copy(this);
     }
 
-    /** a disconnect action to be triggered */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * a disconnect action to be triggered
+     **/
+    public enum Action {
         None("NONE"),
         Stop("STOP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -143,32 +146,34 @@ public final class DisconnectConfig
             return UnknownEnumValue;
         }
     };
-    /** a disconnect action to be triggered */
+    /**
+     * a disconnect action to be triggered
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * a disconnect action to be triggered
-     *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
 
     /**
-     * The period of time (in minutes) after disconnect before any action occurs. If the value is
-     * not provided, a default value is used.
-     */
+     * The period of time (in minutes) after disconnect before any action occurs.
+     * If the value is not provided, a default value is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriodInMinutes")
     private final Integer gracePeriodInMinutes;
 
     /**
-     * The period of time (in minutes) after disconnect before any action occurs. If the value is
-     * not provided, a default value is used.
+     * The period of time (in minutes) after disconnect before any action occurs.
+     * If the value is not provided, a default value is used.
      *
      * @return the value
-     */
+     **/
     public Integer getGracePeriodInMinutes() {
         return gracePeriodInMinutes;
     }
@@ -180,7 +185,6 @@ public final class DisconnectConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

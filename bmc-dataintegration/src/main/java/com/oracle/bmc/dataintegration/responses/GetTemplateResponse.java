@@ -6,17 +6,18 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code Template} instance. */
+    /**
+     * The returned Template instance.
+     */
     private com.oracle.bmc.dataintegration.model.Template template;
 
     /**
-     * The returned {@code Template} instance.
-     *
+     * The returned Template instance.
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.Template getTemplate() {
@@ -39,7 +41,7 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
     @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "template"})
     private GetTemplateResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.dataintegration.model.Template template) {
         super(__httpStatusCode__, headers);
@@ -47,33 +49,31 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
         this.template = template;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetTemplateResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -83,12 +83,13 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Template} instance. */
+        /**
+         * The returned Template instance.
+         */
         private com.oracle.bmc.dataintegration.model.Template template;
 
         /**
-         * The returned {@code Template} instance.
-         *
+         * The returned Template instance.
          * @param template the value to set
          * @return this builder
          */
@@ -99,10 +100,8 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetTemplateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -114,10 +113,8 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetTemplateResponse build() {
             return new GetTemplateResponse(__httpStatusCode__, headers, opcRequestId, template);
         }
@@ -125,7 +122,6 @@ public class GetTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

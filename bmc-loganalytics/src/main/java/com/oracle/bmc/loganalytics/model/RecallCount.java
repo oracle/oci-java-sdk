@@ -5,21 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the recall count statistics for a given tenant <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the recall count statistics for a given tenant
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RecallCount.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RecallCount extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RecallCount extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "recallCount",
@@ -44,61 +43,65 @@ public final class RecallCount extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the total number of recalls made so far */
+        /**
+         * This is the total number of recalls made so far
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallCount")
         private Integer recallCount;
 
         /**
          * This is the total number of recalls made so far
-         *
          * @param recallCount the value to set
          * @return this builder
-         */
+         **/
         public Builder recallCount(Integer recallCount) {
             this.recallCount = recallCount;
             this.__explicitlySet__.add("recallCount");
             return this;
         }
-        /** This is the number of recalls that succeeded */
+        /**
+         * This is the number of recalls that succeeded
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallSucceeded")
         private Integer recallSucceeded;
 
         /**
          * This is the number of recalls that succeeded
-         *
          * @param recallSucceeded the value to set
          * @return this builder
-         */
+         **/
         public Builder recallSucceeded(Integer recallSucceeded) {
             this.recallSucceeded = recallSucceeded;
             this.__explicitlySet__.add("recallSucceeded");
             return this;
         }
-        /** This is the number of recalls that failed */
+        /**
+         * This is the number of recalls that failed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallFailed")
         private Integer recallFailed;
 
         /**
          * This is the number of recalls that failed
-         *
          * @param recallFailed the value to set
          * @return this builder
-         */
+         **/
         public Builder recallFailed(Integer recallFailed) {
             this.recallFailed = recallFailed;
             this.__explicitlySet__.add("recallFailed");
             return this;
         }
-        /** This is the number of recalls in pending state */
+        /**
+         * This is the number of recalls in pending state
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallPending")
         private Integer recallPending;
 
         /**
          * This is the number of recalls in pending state
-         *
          * @param recallPending the value to set
          * @return this builder
-         */
+         **/
         public Builder recallPending(Integer recallPending) {
             this.recallPending = recallPending;
             this.__explicitlySet__.add("recallPending");
@@ -106,16 +109,15 @@ public final class RecallCount extends com.oracle.bmc.http.client.internal.Expli
         }
         /**
          * This is the maximum number of recalls (including successful and pending recalls) allowed
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recallLimit")
         private Integer recallLimit;
 
         /**
          * This is the maximum number of recalls (including successful and pending recalls) allowed
-         *
          * @param recallLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder recallLimit(Integer recallLimit) {
             this.recallLimit = recallLimit;
             this.__explicitlySet__.add("recallLimit");
@@ -160,7 +162,9 @@ public final class RecallCount extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +173,72 @@ public final class RecallCount extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** This is the total number of recalls made so far */
+    /**
+     * This is the total number of recalls made so far
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallCount")
     private final Integer recallCount;
 
     /**
      * This is the total number of recalls made so far
-     *
      * @return the value
-     */
+     **/
     public Integer getRecallCount() {
         return recallCount;
     }
 
-    /** This is the number of recalls that succeeded */
+    /**
+     * This is the number of recalls that succeeded
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallSucceeded")
     private final Integer recallSucceeded;
 
     /**
      * This is the number of recalls that succeeded
-     *
      * @return the value
-     */
+     **/
     public Integer getRecallSucceeded() {
         return recallSucceeded;
     }
 
-    /** This is the number of recalls that failed */
+    /**
+     * This is the number of recalls that failed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallFailed")
     private final Integer recallFailed;
 
     /**
      * This is the number of recalls that failed
-     *
      * @return the value
-     */
+     **/
     public Integer getRecallFailed() {
         return recallFailed;
     }
 
-    /** This is the number of recalls in pending state */
+    /**
+     * This is the number of recalls in pending state
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallPending")
     private final Integer recallPending;
 
     /**
      * This is the number of recalls in pending state
-     *
      * @return the value
-     */
+     **/
     public Integer getRecallPending() {
         return recallPending;
     }
 
-    /** This is the maximum number of recalls (including successful and pending recalls) allowed */
+    /**
+     * This is the maximum number of recalls (including successful and pending recalls) allowed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recallLimit")
     private final Integer recallLimit;
 
     /**
      * This is the maximum number of recalls (including successful and pending recalls) allowed
-     *
      * @return the value
-     */
+     **/
     public Integer getRecallLimit() {
         return recallLimit;
     }
@@ -241,7 +250,6 @@ public final class RecallCount extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

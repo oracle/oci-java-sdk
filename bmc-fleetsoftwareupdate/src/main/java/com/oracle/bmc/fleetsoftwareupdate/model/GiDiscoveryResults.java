@@ -5,29 +5,33 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Collection built from the results of a Succeeded Fleet Software Update Discovery resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Collection built from the results of a Succeeded Fleet Software Update Discovery resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GiDiscoveryResults.Builder.class)
+    builder = GiDiscoveryResults.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "strategy")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "strategy"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCIDs of Fleet Software Update Discovery. */
+        /**
+         * OCIDs of Fleet Software Update Discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fsuDiscoveryId")
         private String fsuDiscoveryId;
 
@@ -36,7 +40,7 @@ public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
          *
          * @param fsuDiscoveryId the value to set
          * @return this builder
-         */
+         **/
         public Builder fsuDiscoveryId(String fsuDiscoveryId) {
             this.fsuDiscoveryId = fsuDiscoveryId;
             this.__explicitlySet__.add("fsuDiscoveryId");
@@ -63,7 +67,9 @@ public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,7 +84,10 @@ public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
         this.fsuDiscoveryId = fsuDiscoveryId;
     }
 
-    /** OCIDs of Fleet Software Update Discovery. */
+    /**
+     * OCIDs of Fleet Software Update Discovery.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuDiscoveryId")
     private final String fsuDiscoveryId;
 
@@ -86,7 +95,7 @@ public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
      * OCIDs of Fleet Software Update Discovery.
      *
      * @return the value
-     */
+     **/
     public String getFsuDiscoveryId() {
         return fsuDiscoveryId;
     }
@@ -98,7 +107,6 @@ public final class GiDiscoveryResults extends GiFleetDiscoveryDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

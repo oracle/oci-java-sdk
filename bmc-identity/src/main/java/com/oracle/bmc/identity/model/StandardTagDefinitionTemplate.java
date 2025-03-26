@@ -5,24 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The template of the tag definition. This object includes necessary details to create the provided
- * standard tag definition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The template of the tag definition. This object includes necessary details to create the provided standard tag definition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StandardTagDefinitionTemplate.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = StandardTagDefinitionTemplate.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StandardTagDefinitionTemplate
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "description",
@@ -51,106 +49,96 @@ public final class StandardTagDefinitionTemplate
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The default description of the tag namespace that users can use to create the tag
-         * definition
-         */
+         * The default description of the tag namespace that users can use to create the tag definition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * The default description of the tag namespace that users can use to create the tag
-         * definition
-         *
+         * The default description of the tag namespace that users can use to create the tag definition
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The name of this standard tag definition */
+        /**
+         * The name of this standard tag definition
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
         private String tagDefinitionName;
 
         /**
          * The name of this standard tag definition
-         *
          * @param tagDefinitionName the value to set
          * @return this builder
-         */
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
             return this;
         }
-        /** The type of tag definition. Enum or string. */
+        /**
+         * The type of tag definition. Enum or string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of tag definition. Enum or string.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * List of possible values. An optional parameter that will be present if the type of
-         * definition is enum.
-         */
+         * List of possible values. An optional parameter that will be present if the type of definition is enum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
         private java.util.List<String> possibleValues;
 
         /**
-         * List of possible values. An optional parameter that will be present if the type of
-         * definition is enum.
-         *
+         * List of possible values. An optional parameter that will be present if the type of definition is enum.
          * @param possibleValues the value to set
          * @return this builder
-         */
+         **/
         public Builder possibleValues(java.util.List<String> possibleValues) {
             this.possibleValues = possibleValues;
             this.__explicitlySet__.add("possibleValues");
             return this;
         }
         /**
-         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been
-         * deprecated
-         */
+         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
         private Boolean isCostTracking;
 
         /**
-         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been
-         * deprecated
-         *
+         * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
          * @param isCostTracking the value to set
          * @return this builder
-         */
+         **/
         public Builder isCostTracking(Boolean isCostTracking) {
             this.isCostTracking = isCostTracking;
             this.__explicitlySet__.add("isCostTracking");
             return this;
         }
         /**
-         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE
-         * for string value tags
-         */
+         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enumMutability")
         private EnumMutability enumMutability;
 
         /**
-         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE
-         * for string value tags
-         *
+         * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
          * @param enumMutability the value to set
          * @return this builder
-         */
+         **/
         public Builder enumMutability(EnumMutability enumMutability) {
             this.enumMutability = enumMutability;
             this.__explicitlySet__.add("enumMutability");
@@ -199,7 +187,9 @@ public final class StandardTagDefinitionTemplate
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -210,40 +200,42 @@ public final class StandardTagDefinitionTemplate
 
     /**
      * The default description of the tag namespace that users can use to create the tag definition
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The default description of the tag namespace that users can use to create the tag definition
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The name of this standard tag definition */
+    /**
+     * The name of this standard tag definition
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagDefinitionName")
     private final String tagDefinitionName;
 
     /**
      * The name of this standard tag definition
-     *
      * @return the value
-     */
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }
 
-    /** The type of tag definition. Enum or string. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of tag definition. Enum or string.
+     **/
+    public enum Type {
         Enum("ENUM"),
         String("STRING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -280,65 +272,59 @@ public final class StandardTagDefinitionTemplate
             return UnknownEnumValue;
         }
     };
-    /** The type of tag definition. Enum or string. */
+    /**
+     * The type of tag definition. Enum or string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of tag definition. Enum or string.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
-     * List of possible values. An optional parameter that will be present if the type of definition
-     * is enum.
-     */
+     * List of possible values. An optional parameter that will be present if the type of definition is enum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("possibleValues")
     private final java.util.List<String> possibleValues;
 
     /**
-     * List of possible values. An optional parameter that will be present if the type of definition
-     * is enum.
-     *
+     * List of possible values. An optional parameter that will be present if the type of definition is enum.
      * @return the value
-     */
+     **/
     public java.util.List<String> getPossibleValues() {
         return possibleValues;
     }
 
     /**
-     * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been
-     * deprecated
-     */
+     * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTracking")
     private final Boolean isCostTracking;
 
     /**
-     * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been
-     * deprecated
-     *
+     * Is the tag a cost tracking tag. Default will be false as cost tracking tags have been deprecated
      * @return the value
-     */
+     **/
     public Boolean getIsCostTracking() {
         return isCostTracking;
     }
 
     /**
-     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for
-     * string value tags
-     */
-    public enum EnumMutability implements com.oracle.bmc.http.internal.BmcEnum {
+     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+     **/
+    public enum EnumMutability {
         Immutable("IMMUTABLE"),
         Mutable("MUTABLE"),
         Appendable("APPENDABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -378,18 +364,15 @@ public final class StandardTagDefinitionTemplate
         }
     };
     /**
-     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for
-     * string value tags
-     */
+     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enumMutability")
     private final EnumMutability enumMutability;
 
     /**
-     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for
-     * string value tags
-     *
+     * The mutability of the possible values list for enum tags. This will default to IMMUTABLE for string value tags
      * @return the value
-     */
+     **/
     public EnumMutability getEnumMutability() {
         return enumMutability;
     }
@@ -401,7 +384,6 @@ public final class StandardTagDefinitionTemplate
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

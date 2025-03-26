@@ -24,15 +24,15 @@ import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 
 /**
- * Download manager, which automatically breaks a larger download into parallel downloads, based on
- * object size. It also handles possible retries.
+ * Download manager, which automatically breaks a larger download into parallel downloads, based on object size.
+ * It also handles possible retries.
  *
- * <p>The retries in the download manager are smarter than the retries built into the client: The
- * download manager modifies the request to only retry the parts that haven't been read yet. The
- * client would retry the entire request, and re-download parts that have already been downloaded.
+ * The retries in the download manager are smarter than the retries built into the client: The download
+ * manager modifies the request to only retry the parts that haven't been read yet. The client would retry
+ * the entire request, and re-download parts that have already been downloaded.
  *
- * <p>Since these retries have been implemented independent of the regular client retries, client
- * retries set using {@link com.oracle.bmc.retrier.RetryConfiguration} are ignored.
+ * Since these retries have been implemented independent of the regular client retries, client retries
+ * set using {@link com.oracle.bmc.retrier.RetryConfiguration} are ignored.
  */
 public class DownloadManager {
     private static final org.slf4j.Logger LOG =
@@ -46,23 +46,23 @@ public class DownloadManager {
     private final DownloadConfiguration config;
 
     /**
-     * This calls acts just like {@link ObjectStorage#getObject(GetObjectRequest)} except that the
-     * {@link InputStream} returned {@link GetObjectResponse#getInputStream()} will automatically
-     * retry the get operation if there is failure.
+     * This calls acts just like {@link ObjectStorage#getObject(GetObjectRequest)}
+     * except that the {@link InputStream} returned {@link GetObjectResponse#getInputStream()}
+     * will automatically retry the get operation if there is failure.
      *
-     * <p>These retries introduce a new set of possible failures. If the object is modified during a
-     * get operation a retry can fail with a 412 or 404 status code.
+     * These retries introduce a new set of possible failures. If the object is
+     * modified during a get operation a retry can fail with a 412 or 404
+     * status code.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws com.oracle.bmc.model.BmcException when an error occurs.
      */
     public GetObjectResponse getObject(GetObjectRequest request) {
-        // The retries in the download manager are smarter than the retries built into the client:
-        // The download manager modifies the request to only retry the parts that haven't been
-        // read yet. The client would retry the entire request, and re-download parts that have
-        // already been downloaded. We need to make sure we don't get (download manager) retries
-        // on top of (client) retries, though.
+        // The retries in the download manager are smarter than the retries built into the client: The download
+        // manager modifies the request to only retry the parts that haven't been read yet. The client would retry
+        // the entire request, and re-download parts that have already been downloaded.
+        // We need to make sure we don't get (download manager) retries on top of (client) retries, though.
         request =
                 GetObjectRequest.builder()
                         .copy(request)
@@ -148,12 +148,10 @@ public class DownloadManager {
             final int numThreads = Math.min(this.config.getParallelDownloads(), numParts - 1);
             assert numThreads > 0;
 
-            // In cache, some requests set if-none-match to get an unchanged response back if the
-            // object hasn't changed. For parallel downloads, the download manager adds the
-            // if-match header to ensure all parts are from the same object version. But it is
-            // illegal to have both if-match and if-none-match in the same request. Therefore,
-            // we need to set if-none-match to null for the following parts to allow downloads using
-            // download manager.
+            // In cache, some requests set if-none-match to get an unchanged response back if the object hasn't changed.
+            // For parallel downloads, the download manager adds the if-match header to ensure all parts are from the same
+            // object version. But it is illegal to have both if-match and if-none-match in the same request. Therefore,
+            // we need to set if-none-match to null for the following parts to allow downloads using download manager.
             if (request.getIfNoneMatch() != null) {
                 requestWithEtagBuilder.ifNoneMatch(null);
             }
@@ -202,21 +200,21 @@ public class DownloadManager {
     /**
      * Download the object and save it to a file.
      *
-     * <p>This calls acts just like {@link ObjectStorage#getObject(GetObjectRequest)} except that
-     * the {@link InputStream} returned {@link GetObjectResponse#getInputStream()} will
-     * automatically retry the get operation if there is failure.
+     * This calls acts just like {@link ObjectStorage#getObject(GetObjectRequest)}
+     * except that the {@link InputStream} returned {@link GetObjectResponse#getInputStream()}
+     * will automatically retry the get operation if there is failure.
      *
-     * <p>These retries introduce a new set of possible failures. If the object is modified during a
-     * get operation a retry can fail with a 412 or 404 status code.
+     * These retries introduce a new set of possible failures. If the object is
+     * modified during a get operation a retry can fail with a 412 or 404
+     * status code.
      *
-     * <p>The downloaded object will be saved in the specified file.
+     * The downloaded object will be saved in the specified file.
      *
-     * <p>The response will be returned, but note that the stream has already been consumed.
+     * The response will be returned, but note that the stream has already been consumed.
      *
      * @param request The request object containing the details to send
      * @param target The file where the object should be saved
-     * @return A response object containing details about the completed operation, but with already
-     *     consumed stream
+     * @return A response object containing details about the completed operation, but with already consumed stream
      * @throws com.oracle.bmc.model.BmcException when an error occurs.
      */
     public GetObjectResponse downloadObjectToFile(GetObjectRequest request, File target)
@@ -237,7 +235,9 @@ public class DownloadManager {
         return response;
     }
 
-    /** Used by {@link MultithreadStream}. This does NOT multithread the download. */
+    /**
+     * Used by {@link MultithreadStream}. This does NOT multithread the download.
+     */
     public GetObjectResponse getObject_singleThreaded(GetObjectRequest request) {
         final DownloadExecution execution = DownloadExecution.fromConfig(this.config);
 

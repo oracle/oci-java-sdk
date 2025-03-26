@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * Details of the new Database Tools connection for a Generic JDBC database system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+ * Details of the new Database Tools connection for a Generic JDBC database system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDatabaseToolsConnectionGenericJdbcDetails.Builder.class)
+    builder = CreateDatabaseToolsConnectionGenericJdbcDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDatabaseToolsConnectionGenericJdbcDetails
         extends CreateDatabaseToolsConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -82,31 +82,33 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
             this.__explicitlySet__.add("runtimeSupport");
             return this;
         }
-        /** The JDBC URL used to connect to the Generic JDBC database system. */
+        /**
+         * The JDBC URL used to connect to the Generic JDBC database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The JDBC URL used to connect to the Generic JDBC database system.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The user name. */
+        /**
+         * The user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * The user name.
-         *
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
@@ -121,35 +123,37 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
             this.__explicitlySet__.add("userPassword");
             return this;
         }
-        /** The advanced connection properties key-value pair. */
+        /**
+         * The advanced connection properties key-value pair.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
         private java.util.Map<String, String> advancedProperties;
 
         /**
          * The advanced connection properties key-value pair.
-         *
          * @param advancedProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedProperties(java.util.Map<String, String> advancedProperties) {
             this.advancedProperties = advancedProperties;
             this.__explicitlySet__.add("advancedProperties");
             return this;
         }
         /**
-         * The CA certificate to verify the server's certificate and the client private key and
-         * associated certificate required for client authentication.
-         */
+         * The CA certificate to verify the server's certificate and
+         * the client private key and associated certificate required for client authentication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
         private java.util.List<DatabaseToolsKeyStoreGenericJdbcDetails> keyStores;
 
         /**
-         * The CA certificate to verify the server's certificate and the client private key and
-         * associated certificate required for client authentication.
+         * The CA certificate to verify the server's certificate and
+         * the client private key and associated certificate required for client authentication.
          *
          * @param keyStores the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStores(
                 java.util.List<DatabaseToolsKeyStoreGenericJdbcDetails> keyStores) {
             this.keyStores = keyStores;
@@ -219,7 +223,9 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,28 +255,30 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
         this.keyStores = keyStores;
     }
 
-    /** The JDBC URL used to connect to the Generic JDBC database system. */
+    /**
+     * The JDBC URL used to connect to the Generic JDBC database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The JDBC URL used to connect to the Generic JDBC database system.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The user name. */
+    /**
+     * The user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * The user name.
-     *
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
@@ -282,32 +290,34 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
         return userPassword;
     }
 
-    /** The advanced connection properties key-value pair. */
+    /**
+     * The advanced connection properties key-value pair.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
     private final java.util.Map<String, String> advancedProperties;
 
     /**
      * The advanced connection properties key-value pair.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdvancedProperties() {
         return advancedProperties;
     }
 
     /**
-     * The CA certificate to verify the server's certificate and the client private key and
-     * associated certificate required for client authentication.
-     */
+     * The CA certificate to verify the server's certificate and
+     * the client private key and associated certificate required for client authentication.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
     private final java.util.List<DatabaseToolsKeyStoreGenericJdbcDetails> keyStores;
 
     /**
-     * The CA certificate to verify the server's certificate and the client private key and
-     * associated certificate required for client authentication.
+     * The CA certificate to verify the server's certificate and
+     * the client private key and associated certificate required for client authentication.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DatabaseToolsKeyStoreGenericJdbcDetails> getKeyStores() {
         return keyStores;
     }
@@ -319,7 +329,6 @@ public final class CreateDatabaseToolsConnectionGenericJdbcDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

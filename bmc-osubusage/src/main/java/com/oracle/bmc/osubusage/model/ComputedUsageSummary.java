@@ -5,23 +5,22 @@
 package com.oracle.bmc.osubusage.model;
 
 /**
- * Computed Usage Summary object <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+ * Computed Usage Summary object
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputedUsageSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ComputedUsageSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ComputedUsageSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ComputedUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeCreated",
@@ -106,7 +105,10 @@ public final class ComputedUsageSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Computed Usage created time, expressed in RFC 3339 timestamp format. */
+        /**
+         * Computed Usage created time, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -115,13 +117,16 @@ public final class ComputedUsageSummary
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Computed Usage updated time, expressed in RFC 3339 timestamp format. */
+        /**
+         * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -130,13 +135,16 @@ public final class ComputedUsageSummary
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Subscribed service line parent id */
+        /**
+         * Subscribed service line parent id
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
         private String parentSubscribedServiceId;
 
@@ -145,7 +153,7 @@ public final class ComputedUsageSummary
          *
          * @param parentSubscribedServiceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentSubscribedServiceId(String parentSubscribedServiceId) {
             this.parentSubscribedServiceId = parentSubscribedServiceId;
             this.__explicitlySet__.add("parentSubscribedServiceId");
@@ -160,7 +168,10 @@ public final class ComputedUsageSummary
             this.__explicitlySet__.add("parentProduct");
             return this;
         }
-        /** Subscription plan number */
+        /**
+         * Subscription plan number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
         private String planNumber;
 
@@ -169,13 +180,16 @@ public final class ComputedUsageSummary
          *
          * @param planNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder planNumber(String planNumber) {
             this.planNumber = planNumber;
             this.__explicitlySet__.add("planNumber");
             return this;
         }
-        /** Currency code */
+        /**
+         * Currency code
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
@@ -184,34 +198,34 @@ public final class ComputedUsageSummary
          *
          * @param currencyCode the value to set
          * @return this builder
-         */
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
         /**
-         * References the tier in the ratecard for that usage (OCI will be using the same reference
-         * to cross-reference for correctness on the usage csv report), comes from Entity
-         * OBSCNTR_IPT_PRODUCTTIER.
-         */
+         * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
         private String rateCardTierdId;
 
         /**
-         * References the tier in the ratecard for that usage (OCI will be using the same reference
-         * to cross-reference for correctness on the usage csv report), comes from Entity
-         * OBSCNTR_IPT_PRODUCTTIER.
+         * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
          *
          * @param rateCardTierdId the value to set
          * @return this builder
-         */
+         **/
         public Builder rateCardTierdId(String rateCardTierdId) {
             this.rateCardTierdId = rateCardTierdId;
             this.__explicitlySet__.add("rateCardTierdId");
             return this;
         }
-        /** Ratecard Id at subscribed service level */
+        /**
+         * Ratecard Id at subscribed service level
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
         private String rateCardId;
 
@@ -220,13 +234,16 @@ public final class ComputedUsageSummary
          *
          * @param rateCardId the value to set
          * @return this builder
-         */
+         **/
         public Builder rateCardId(String rateCardId) {
             this.rateCardId = rateCardId;
             this.__explicitlySet__.add("rateCardId");
             return this;
         }
-        /** SPM Internal compute records source . */
+        /**
+         * SPM Internal compute records source .
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
         private String computeSource;
 
@@ -235,13 +252,16 @@ public final class ComputedUsageSummary
          *
          * @param computeSource the value to set
          * @return this builder
-         */
+         **/
         public Builder computeSource(String computeSource) {
             this.computeSource = computeSource;
             this.__explicitlySet__.add("computeSource");
             return this;
         }
-        /** Data Center Attribute as sent by MQS to SPM. */
+        /**
+         * Data Center Attribute as sent by MQS to SPM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
@@ -250,7 +270,7 @@ public final class ComputedUsageSummary
          *
          * @param dataCenter the value to set
          * @return this builder
-         */
+         **/
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = dataCenter;
             this.__explicitlySet__.add("dataCenter");
@@ -258,7 +278,8 @@ public final class ComputedUsageSummary
         }
         /**
          * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
         private String mqsMessageId;
 
@@ -267,13 +288,16 @@ public final class ComputedUsageSummary
          *
          * @param mqsMessageId the value to set
          * @return this builder
-         */
+         **/
         public Builder mqsMessageId(String mqsMessageId) {
             this.mqsMessageId = mqsMessageId;
             this.__explicitlySet__.add("mqsMessageId");
             return this;
         }
-        /** SPM Internal computed usage Id , 32 character string */
+        /**
+         * SPM Internal computed usage Id , 32 character string
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computedUsageId")
         private String computedUsageId;
 
@@ -282,13 +306,16 @@ public final class ComputedUsageSummary
          *
          * @param computedUsageId the value to set
          * @return this builder
-         */
+         **/
         public Builder computedUsageId(String computedUsageId) {
             this.computedUsageId = computedUsageId;
             this.__explicitlySet__.add("computedUsageId");
             return this;
         }
-        /** Total Quantity that was used for computation */
+        /**
+         * Total Quantity that was used for computation
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private String quantity;
 
@@ -297,13 +324,16 @@ public final class ComputedUsageSummary
          *
          * @param quantity the value to set
          * @return this builder
-         */
+         **/
         public Builder quantity(String quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** SPM Internal usage Line number identifier in SPM coming from Metered Services entity. */
+        /**
+         * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
         private String usageNumber;
 
@@ -312,32 +342,34 @@ public final class ComputedUsageSummary
          *
          * @param usageNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder usageNumber(String usageNumber) {
             this.usageNumber = usageNumber;
             this.__explicitlySet__.add("usageNumber");
             return this;
         }
         /**
-         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-         * entity.
-         */
+         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
         private String originalUsageNumber;
 
         /**
-         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-         * entity.
+         * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
          *
          * @param originalUsageNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder originalUsageNumber(String originalUsageNumber) {
             this.originalUsageNumber = originalUsageNumber;
             this.__explicitlySet__.add("originalUsageNumber");
             return this;
         }
-        /** Subscribed service commitmentId. */
+        /**
+         * Subscribed service commitmentId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
         private String commitmentServiceId;
 
@@ -346,13 +378,16 @@ public final class ComputedUsageSummary
          *
          * @param commitmentServiceId the value to set
          * @return this builder
-         */
+         **/
         public Builder commitmentServiceId(String commitmentServiceId) {
             this.commitmentServiceId = commitmentServiceId;
             this.__explicitlySet__.add("commitmentServiceId");
             return this;
         }
-        /** Invoicing status for the aggregated compute usage */
+        /**
+         * Invoicing status for the aggregated compute usage
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
         private Boolean isInvoiced;
 
@@ -361,13 +396,16 @@ public final class ComputedUsageSummary
          *
          * @param isInvoiced the value to set
          * @return this builder
-         */
+         **/
         public Builder isInvoiced(Boolean isInvoiced) {
             this.isInvoiced = isInvoiced;
             this.__explicitlySet__.add("isInvoiced");
             return this;
         }
-        /** Usage compute type in SPM. */
+        /**
+         * Usage compute type in SPM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
@@ -376,13 +414,16 @@ public final class ComputedUsageSummary
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Usae computation date, expressed in RFC 3339 timestamp format. */
+        /**
+         * Usae computation date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
         private java.util.Date timeOfArrival;
 
@@ -391,13 +432,16 @@ public final class ComputedUsageSummary
          *
          * @param timeOfArrival the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfArrival(java.util.Date timeOfArrival) {
             this.timeOfArrival = timeOfArrival;
             this.__explicitlySet__.add("timeOfArrival");
             return this;
         }
-        /** Metered Service date, expressed in RFC 3339 timestamp format. */
+        /**
+         * Metered Service date, expressed in RFC 3339 timestamp format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
         private java.util.Date timeMeteredOn;
 
@@ -406,13 +450,16 @@ public final class ComputedUsageSummary
          *
          * @param timeMeteredOn the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMeteredOn(java.util.Date timeMeteredOn) {
             this.timeMeteredOn = timeMeteredOn;
             this.__explicitlySet__.add("timeMeteredOn");
             return this;
         }
-        /** Net Unit Price for the product in consideration, price actual. */
+        /**
+         * Net Unit Price for the product in consideration, price actual.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
         private String netUnitPrice;
 
@@ -421,13 +468,16 @@ public final class ComputedUsageSummary
          *
          * @param netUnitPrice the value to set
          * @return this builder
-         */
+         **/
         public Builder netUnitPrice(String netUnitPrice) {
             this.netUnitPrice = netUnitPrice;
             this.__explicitlySet__.add("netUnitPrice");
             return this;
         }
-        /** Computed Line Amount rounded. */
+        /**
+         * Computed Line Amount rounded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
         private String costRounded;
 
@@ -436,13 +486,16 @@ public final class ComputedUsageSummary
          *
          * @param costRounded the value to set
          * @return this builder
-         */
+         **/
         public Builder costRounded(String costRounded) {
             this.costRounded = costRounded;
             this.__explicitlySet__.add("costRounded");
             return this;
         }
-        /** Computed Line Amount not rounded */
+        /**
+         * Computed Line Amount not rounded
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private String cost;
 
@@ -451,7 +504,7 @@ public final class ComputedUsageSummary
          *
          * @param cost the value to set
          * @return this builder
-         */
+         **/
         public Builder cost(String cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
@@ -466,7 +519,10 @@ public final class ComputedUsageSummary
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Unit of Messure */
+        /**
+         * Unit of Messure
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
@@ -475,7 +531,7 @@ public final class ComputedUsageSummary
          *
          * @param unitOfMeasure the value to set
          * @return this builder
-         */
+         **/
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
@@ -600,7 +656,9 @@ public final class ComputedUsageSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -609,7 +667,10 @@ public final class ComputedUsageSummary
         return new Builder().copy(this);
     }
 
-    /** Computed Usage created time, expressed in RFC 3339 timestamp format. */
+    /**
+     * Computed Usage created time, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -617,12 +678,15 @@ public final class ComputedUsageSummary
      * Computed Usage created time, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Computed Usage updated time, expressed in RFC 3339 timestamp format. */
+    /**
+     * Computed Usage updated time, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -630,12 +694,15 @@ public final class ComputedUsageSummary
      * Computed Usage updated time, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Subscribed service line parent id */
+    /**
+     * Subscribed service line parent id
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSubscribedServiceId")
     private final String parentSubscribedServiceId;
 
@@ -643,7 +710,7 @@ public final class ComputedUsageSummary
      * Subscribed service line parent id
      *
      * @return the value
-     */
+     **/
     public String getParentSubscribedServiceId() {
         return parentSubscribedServiceId;
     }
@@ -655,7 +722,10 @@ public final class ComputedUsageSummary
         return parentProduct;
     }
 
-    /** Subscription plan number */
+    /**
+     * Subscription plan number
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planNumber")
     private final String planNumber;
 
@@ -663,12 +733,15 @@ public final class ComputedUsageSummary
      * Subscription plan number
      *
      * @return the value
-     */
+     **/
     public String getPlanNumber() {
         return planNumber;
     }
 
-    /** Currency code */
+    /**
+     * Currency code
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
@@ -676,31 +749,31 @@ public final class ComputedUsageSummary
      * Currency code
      *
      * @return the value
-     */
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
 
     /**
-     * References the tier in the ratecard for that usage (OCI will be using the same reference to
-     * cross-reference for correctness on the usage csv report), comes from Entity
-     * OBSCNTR_IPT_PRODUCTTIER.
-     */
+     * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardTierdId")
     private final String rateCardTierdId;
 
     /**
-     * References the tier in the ratecard for that usage (OCI will be using the same reference to
-     * cross-reference for correctness on the usage csv report), comes from Entity
-     * OBSCNTR_IPT_PRODUCTTIER.
+     * References the tier in the ratecard for that usage (OCI will be using the same reference to cross-reference for correctness on the usage csv report), comes from Entity OBSCNTR_IPT_PRODUCTTIER.
      *
      * @return the value
-     */
+     **/
     public String getRateCardTierdId() {
         return rateCardTierdId;
     }
 
-    /** Ratecard Id at subscribed service level */
+    /**
+     * Ratecard Id at subscribed service level
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rateCardId")
     private final String rateCardId;
 
@@ -708,12 +781,15 @@ public final class ComputedUsageSummary
      * Ratecard Id at subscribed service level
      *
      * @return the value
-     */
+     **/
     public String getRateCardId() {
         return rateCardId;
     }
 
-    /** SPM Internal compute records source . */
+    /**
+     * SPM Internal compute records source .
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeSource")
     private final String computeSource;
 
@@ -721,12 +797,15 @@ public final class ComputedUsageSummary
      * SPM Internal compute records source .
      *
      * @return the value
-     */
+     **/
     public String getComputeSource() {
         return computeSource;
     }
 
-    /** Data Center Attribute as sent by MQS to SPM. */
+    /**
+     * Data Center Attribute as sent by MQS to SPM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
@@ -734,12 +813,15 @@ public final class ComputedUsageSummary
      * Data Center Attribute as sent by MQS to SPM.
      *
      * @return the value
-     */
+     **/
     public String getDataCenter() {
         return dataCenter;
     }
 
-    /** MQS Identfier send to SPM , SPM does not transform this attribute and is received as is. */
+    /**
+     * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mqsMessageId")
     private final String mqsMessageId;
 
@@ -747,12 +829,15 @@ public final class ComputedUsageSummary
      * MQS Identfier send to SPM , SPM does not transform this attribute and is received as is.
      *
      * @return the value
-     */
+     **/
     public String getMqsMessageId() {
         return mqsMessageId;
     }
 
-    /** SPM Internal computed usage Id , 32 character string */
+    /**
+     * SPM Internal computed usage Id , 32 character string
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedUsageId")
     private final String computedUsageId;
 
@@ -760,12 +845,15 @@ public final class ComputedUsageSummary
      * SPM Internal computed usage Id , 32 character string
      *
      * @return the value
-     */
+     **/
     public String getComputedUsageId() {
         return computedUsageId;
     }
 
-    /** Total Quantity that was used for computation */
+    /**
+     * Total Quantity that was used for computation
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final String quantity;
 
@@ -773,12 +861,15 @@ public final class ComputedUsageSummary
      * Total Quantity that was used for computation
      *
      * @return the value
-     */
+     **/
     public String getQuantity() {
         return quantity;
     }
 
-    /** SPM Internal usage Line number identifier in SPM coming from Metered Services entity. */
+    /**
+     * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageNumber")
     private final String usageNumber;
 
@@ -786,29 +877,31 @@ public final class ComputedUsageSummary
      * SPM Internal usage Line number identifier in SPM coming from Metered Services entity.
      *
      * @return the value
-     */
+     **/
     public String getUsageNumber() {
         return usageNumber;
     }
 
     /**
-     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-     * entity.
-     */
+     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originalUsageNumber")
     private final String originalUsageNumber;
 
     /**
-     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services
-     * entity.
+     * SPM Internal Original usage Line number identifier in SPM coming from Metered Services entity.
      *
      * @return the value
-     */
+     **/
     public String getOriginalUsageNumber() {
         return originalUsageNumber;
     }
 
-    /** Subscribed service commitmentId. */
+    /**
+     * Subscribed service commitmentId.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentServiceId")
     private final String commitmentServiceId;
 
@@ -816,12 +909,15 @@ public final class ComputedUsageSummary
      * Subscribed service commitmentId.
      *
      * @return the value
-     */
+     **/
     public String getCommitmentServiceId() {
         return commitmentServiceId;
     }
 
-    /** Invoicing status for the aggregated compute usage */
+    /**
+     * Invoicing status for the aggregated compute usage
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInvoiced")
     private final Boolean isInvoiced;
 
@@ -829,13 +925,16 @@ public final class ComputedUsageSummary
      * Invoicing status for the aggregated compute usage
      *
      * @return the value
-     */
+     **/
     public Boolean getIsInvoiced() {
         return isInvoiced;
     }
 
-    /** Usage compute type in SPM. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Usage compute type in SPM.
+     *
+     **/
+    public enum Type {
         Promotion("PROMOTION"),
         DoNotBill("DO_NOT_BILL"),
         Usage("USAGE"),
@@ -853,8 +952,8 @@ public final class ComputedUsageSummary
         DelayedUsagePostTermination("DELAYED_USAGE_POST_TERMINATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -891,7 +990,10 @@ public final class ComputedUsageSummary
             return UnknownEnumValue;
         }
     };
-    /** Usage compute type in SPM. */
+    /**
+     * Usage compute type in SPM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
@@ -899,12 +1001,15 @@ public final class ComputedUsageSummary
      * Usage compute type in SPM.
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
-    /** Usae computation date, expressed in RFC 3339 timestamp format. */
+    /**
+     * Usae computation date, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfArrival")
     private final java.util.Date timeOfArrival;
 
@@ -912,12 +1017,15 @@ public final class ComputedUsageSummary
      * Usae computation date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfArrival() {
         return timeOfArrival;
     }
 
-    /** Metered Service date, expressed in RFC 3339 timestamp format. */
+    /**
+     * Metered Service date, expressed in RFC 3339 timestamp format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMeteredOn")
     private final java.util.Date timeMeteredOn;
 
@@ -925,12 +1033,15 @@ public final class ComputedUsageSummary
      * Metered Service date, expressed in RFC 3339 timestamp format.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMeteredOn() {
         return timeMeteredOn;
     }
 
-    /** Net Unit Price for the product in consideration, price actual. */
+    /**
+     * Net Unit Price for the product in consideration, price actual.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("netUnitPrice")
     private final String netUnitPrice;
 
@@ -938,12 +1049,15 @@ public final class ComputedUsageSummary
      * Net Unit Price for the product in consideration, price actual.
      *
      * @return the value
-     */
+     **/
     public String getNetUnitPrice() {
         return netUnitPrice;
     }
 
-    /** Computed Line Amount rounded. */
+    /**
+     * Computed Line Amount rounded.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("costRounded")
     private final String costRounded;
 
@@ -951,12 +1065,15 @@ public final class ComputedUsageSummary
      * Computed Line Amount rounded.
      *
      * @return the value
-     */
+     **/
     public String getCostRounded() {
         return costRounded;
     }
 
-    /** Computed Line Amount not rounded */
+    /**
+     * Computed Line Amount not rounded
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final String cost;
 
@@ -964,7 +1081,7 @@ public final class ComputedUsageSummary
      * Computed Line Amount not rounded
      *
      * @return the value
-     */
+     **/
     public String getCost() {
         return cost;
     }
@@ -976,7 +1093,10 @@ public final class ComputedUsageSummary
         return product;
     }
 
-    /** Unit of Messure */
+    /**
+     * Unit of Messure
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
@@ -984,7 +1104,7 @@ public final class ComputedUsageSummary
      * Unit of Messure
      *
      * @return the value
-     */
+     **/
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }
@@ -996,7 +1116,6 @@ public final class ComputedUsageSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

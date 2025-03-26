@@ -5,23 +5,23 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Progress details of a Migration Job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Progress details of a Migration Job.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MigrationJobProgressResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MigrationJobProgressResource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MigrationJobProgressResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"currentStatus", "currentPhase", "phases"})
     public MigrationJobProgressResource(
@@ -36,7 +36,10 @@ public final class MigrationJobProgressResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Current status of the job. */
+        /**
+         * Current status of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
         private JobPhaseStatus currentStatus;
 
@@ -45,13 +48,16 @@ public final class MigrationJobProgressResource
          *
          * @param currentStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder currentStatus(JobPhaseStatus currentStatus) {
             this.currentStatus = currentStatus;
             this.__explicitlySet__.add("currentStatus");
             return this;
         }
-        /** Current phase of the job. */
+        /**
+         * Current phase of the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
         private OdmsJobPhases currentPhase;
 
@@ -60,13 +66,16 @@ public final class MigrationJobProgressResource
          *
          * @param currentPhase the value to set
          * @return this builder
-         */
+         **/
         public Builder currentPhase(OdmsJobPhases currentPhase) {
             this.currentPhase = currentPhase;
             this.__explicitlySet__.add("currentPhase");
             return this;
         }
-        /** List of phase status for the job. */
+        /**
+         * List of phase status for the job.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phases")
         private java.util.List<PhaseStatus> phases;
 
@@ -75,7 +84,7 @@ public final class MigrationJobProgressResource
          *
          * @param phases the value to set
          * @return this builder
-         */
+         **/
         public Builder phases(java.util.List<PhaseStatus> phases) {
             this.phases = phases;
             this.__explicitlySet__.add("phases");
@@ -110,7 +119,9 @@ public final class MigrationJobProgressResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,7 +130,10 @@ public final class MigrationJobProgressResource
         return new Builder().copy(this);
     }
 
-    /** Current status of the job. */
+    /**
+     * Current status of the job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentStatus")
     private final JobPhaseStatus currentStatus;
 
@@ -127,12 +141,15 @@ public final class MigrationJobProgressResource
      * Current status of the job.
      *
      * @return the value
-     */
+     **/
     public JobPhaseStatus getCurrentStatus() {
         return currentStatus;
     }
 
-    /** Current phase of the job. */
+    /**
+     * Current phase of the job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentPhase")
     private final OdmsJobPhases currentPhase;
 
@@ -140,12 +157,15 @@ public final class MigrationJobProgressResource
      * Current phase of the job.
      *
      * @return the value
-     */
+     **/
     public OdmsJobPhases getCurrentPhase() {
         return currentPhase;
     }
 
-    /** List of phase status for the job. */
+    /**
+     * List of phase status for the job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phases")
     private final java.util.List<PhaseStatus> phases;
 
@@ -153,7 +173,7 @@ public final class MigrationJobProgressResource
      * List of phase status for the job.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PhaseStatus> getPhases() {
         return phases;
     }
@@ -165,7 +185,6 @@ public final class MigrationJobProgressResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

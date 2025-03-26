@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dataflow.model;
 
-/** The day of the week. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
-public enum DayOfWeek implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The day of the week.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+public enum DayOfWeek {
     Sunday("SUNDAY"),
     Monday("MONDAY"),
     Tuesday("TUESDAY"),

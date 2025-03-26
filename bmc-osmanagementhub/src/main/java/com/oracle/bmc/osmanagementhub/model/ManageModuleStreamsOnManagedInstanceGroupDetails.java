@@ -5,24 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The set of changes to make to the state of the modules, streams, and profiles on a managed
- * instance group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The set of changes to make to the state of the modules, streams, and profiles on a managed instance group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManageModuleStreamsOnManagedInstanceGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManageModuleStreamsOnManagedInstanceGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManageModuleStreamsOnManagedInstanceGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDryRun",
@@ -51,81 +49,90 @@ public final class ManageModuleStreamsOnManagedInstanceGroupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates if this operation is a dry run or if the operation should be committed. If set
-         * to true, the result of the operation will be evaluated but not committed. If set to
-         * false, the operation is committed to the managed instance(s). The default is false.
-         */
+         * Indicates if this operation is a dry run or if the operation
+         * should be committed.  If set to true, the result of the operation
+         * will be evaluated but not committed.  If set to false, the
+         * operation is committed to the managed instance(s).  The default is
+         * false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
         private Boolean isDryRun;
 
         /**
-         * Indicates if this operation is a dry run or if the operation should be committed. If set
-         * to true, the result of the operation will be evaluated but not committed. If set to
-         * false, the operation is committed to the managed instance(s). The default is false.
+         * Indicates if this operation is a dry run or if the operation
+         * should be committed.  If set to true, the result of the operation
+         * will be evaluated but not committed.  If set to false, the
+         * operation is committed to the managed instance(s).  The default is
+         * false.
          *
          * @param isDryRun the value to set
          * @return this builder
-         */
+         **/
         public Builder isDryRun(Boolean isDryRun) {
             this.isDryRun = isDryRun;
             this.__explicitlySet__.add("isDryRun");
             return this;
         }
-        /** The set of module streams to enable. */
+        /**
+         * The set of module streams to enable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enable")
         private java.util.List<ModuleStreamDetails> enable;
 
         /**
          * The set of module streams to enable.
-         *
          * @param enable the value to set
          * @return this builder
-         */
+         **/
         public Builder enable(java.util.List<ModuleStreamDetails> enable) {
             this.enable = enable;
             this.__explicitlySet__.add("enable");
             return this;
         }
-        /** The set of module streams to disable. */
+        /**
+         * The set of module streams to disable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disable")
         private java.util.List<ModuleStreamDetails> disable;
 
         /**
          * The set of module streams to disable.
-         *
          * @param disable the value to set
          * @return this builder
-         */
+         **/
         public Builder disable(java.util.List<ModuleStreamDetails> disable) {
             this.disable = disable;
             this.__explicitlySet__.add("disable");
             return this;
         }
-        /** The set of module stream profiles to install. */
+        /**
+         * The set of module stream profiles to install.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("install")
         private java.util.List<ModuleStreamProfileDetails> install;
 
         /**
          * The set of module stream profiles to install.
-         *
          * @param install the value to set
          * @return this builder
-         */
+         **/
         public Builder install(java.util.List<ModuleStreamProfileDetails> install) {
             this.install = install;
             this.__explicitlySet__.add("install");
             return this;
         }
-        /** The set of module stream profiles to remove. */
+        /**
+         * The set of module stream profiles to remove.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remove")
         private java.util.List<ModuleStreamProfileDetails> remove;
 
         /**
          * The set of module stream profiles to remove.
-         *
          * @param remove the value to set
          * @return this builder
-         */
+         **/
         public Builder remove(java.util.List<ModuleStreamProfileDetails> remove) {
             this.remove = remove;
             this.__explicitlySet__.add("remove");
@@ -183,7 +190,9 @@ public final class ManageModuleStreamsOnManagedInstanceGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -193,72 +202,81 @@ public final class ManageModuleStreamsOnManagedInstanceGroupDetails
     }
 
     /**
-     * Indicates if this operation is a dry run or if the operation should be committed. If set to
-     * true, the result of the operation will be evaluated but not committed. If set to false, the
-     * operation is committed to the managed instance(s). The default is false.
-     */
+     * Indicates if this operation is a dry run or if the operation
+     * should be committed.  If set to true, the result of the operation
+     * will be evaluated but not committed.  If set to false, the
+     * operation is committed to the managed instance(s).  The default is
+     * false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDryRun")
     private final Boolean isDryRun;
 
     /**
-     * Indicates if this operation is a dry run or if the operation should be committed. If set to
-     * true, the result of the operation will be evaluated but not committed. If set to false, the
-     * operation is committed to the managed instance(s). The default is false.
+     * Indicates if this operation is a dry run or if the operation
+     * should be committed.  If set to true, the result of the operation
+     * will be evaluated but not committed.  If set to false, the
+     * operation is committed to the managed instance(s).  The default is
+     * false.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDryRun() {
         return isDryRun;
     }
 
-    /** The set of module streams to enable. */
+    /**
+     * The set of module streams to enable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enable")
     private final java.util.List<ModuleStreamDetails> enable;
 
     /**
      * The set of module streams to enable.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleStreamDetails> getEnable() {
         return enable;
     }
 
-    /** The set of module streams to disable. */
+    /**
+     * The set of module streams to disable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disable")
     private final java.util.List<ModuleStreamDetails> disable;
 
     /**
      * The set of module streams to disable.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleStreamDetails> getDisable() {
         return disable;
     }
 
-    /** The set of module stream profiles to install. */
+    /**
+     * The set of module stream profiles to install.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("install")
     private final java.util.List<ModuleStreamProfileDetails> install;
 
     /**
      * The set of module stream profiles to install.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleStreamProfileDetails> getInstall() {
         return install;
     }
 
-    /** The set of module stream profiles to remove. */
+    /**
+     * The set of module stream profiles to remove.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remove")
     private final java.util.List<ModuleStreamProfileDetails> remove;
 
     /**
      * The set of module stream profiles to remove.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleStreamProfileDetails> getRemove() {
         return remove;
     }
@@ -277,7 +295,6 @@ public final class ManageModuleStreamsOnManagedInstanceGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -64,17 +64,18 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Sample to demonstrate setting up Vpn IPSecConnection
+ * <p>
  *
- * <p>Oracle Cloud Infrastructure Vpn provides an easy way to create a dedicated, private connection
- * between your data center and Oracle Cloud Infrastructure.
  *
- * <p>Vpn provides higher-bandwidth options, and a more reliable and consistent networking
- * experience compared to internet-based connections.
+ *  Oracle Cloud Infrastructure Vpn provides an easy way to create a dedicated,
+ *  private connection between your data center and Oracle Cloud Infrastructure.
  *
- * <p>Details information on Vpn: https://docs.oracle.com/iaas/Content/Network/Concepts/Vpn.htm
+ *  Vpn provides higher-bandwidth options, and a more reliable and consistent
+ *  networking experience compared to internet-based connections.
  *
- * <p>Details IPSecConnection API:
- * https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection
+ *  Details information on Vpn: https://docs.oracle.com/iaas/Content/Network/Concepts/Vpn.htm
+ *
+ *  Details IPSecConnection API: https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnection
  */
 public class VpnIPSecConnectionExample {
     // Set this with your own compartment ID
@@ -97,10 +98,8 @@ public class VpnIPSecConnectionExample {
             throw new IllegalStateException("A compartment ID must be defined");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -108,12 +107,11 @@ public class VpnIPSecConnectionExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient phxVirtualNetworkClient =
-                VirtualNetworkClient.builder().region(Region.US_PHOENIX_1).build(authProvider);
+        final VirtualNetworkClient phxVirtualNetworkClient = new VirtualNetworkClient(authProvider);
         phxVirtualNetworkClient.setRegion(Region.US_PHOENIX_1);
         final VpnIPSecConnectionExample example =
                 new VpnIPSecConnectionExample(phxVirtualNetworkClient, Region.US_PHOENIX_1);
-        final IdentityClient identityClient = IdentityClient.builder().build(authProvider);
+        final IdentityClient identityClient = new IdentityClient(authProvider);
 
         example.run(identityClient);
     }
@@ -212,7 +210,8 @@ public class VpnIPSecConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(),
+                                                        TIMESTAMP_SUFFIX))
                                         .ipAddress("192.168.0.2")
                                         .build())
                         .build();
@@ -248,7 +247,8 @@ public class VpnIPSecConnectionExample {
                                         .displayName(
                                                 String.format(
                                                         "Drg-%s-%s",
-                                                        region.getRegionId(), TIMESTAMP_SUFFIX))
+                                                        region.getRegionId(),
+                                                        TIMESTAMP_SUFFIX))
                                         .build())
                         .build();
 

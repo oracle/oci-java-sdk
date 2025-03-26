@@ -9,31 +9,23 @@ import com.oracle.bmc.datasafe.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of DataSafe where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of DataSafe where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DataSafePaginators {
     private final DataSafe client;
 
@@ -42,18 +34,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAlertAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAlertAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAlertAnalyticsResponse> listAlertAnalyticsResponseIterator(
             final ListAlertAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAlertAnalyticsRequest.Builder,
-                ListAlertAnalyticsRequest,
+                ListAlertAnalyticsRequest.Builder, ListAlertAnalyticsRequest,
                 ListAlertAnalyticsResponse>(
                 new java.util.function.Supplier<ListAlertAnalyticsRequest.Builder>() {
                     @Override
@@ -95,22 +85,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AlertAggregationItems} objects contained in responses from the
-     * listAlertAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AlertAggregationItems} objects
+     * contained in responses from the listAlertAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AlertAggregationItems} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AlertAggregationItems} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AlertAggregationItems>
             listAlertAnalyticsRecordIterator(final ListAlertAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAlertAnalyticsRequest.Builder,
-                ListAlertAnalyticsRequest,
-                ListAlertAnalyticsResponse,
-                com.oracle.bmc.datasafe.model.AlertAggregationItems>(
+                ListAlertAnalyticsRequest.Builder, ListAlertAnalyticsRequest,
+                ListAlertAnalyticsResponse, com.oracle.bmc.datasafe.model.AlertAggregationItems>(
                 new java.util.function.Supplier<ListAlertAnalyticsRequest.Builder>() {
                     @Override
                     public ListAlertAnalyticsRequest.Builder get() {
@@ -160,18 +147,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAlertPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAlertPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAlertPoliciesResponse> listAlertPoliciesResponseIterator(
             final ListAlertPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAlertPoliciesRequest.Builder,
-                ListAlertPoliciesRequest,
+                ListAlertPoliciesRequest.Builder, ListAlertPoliciesRequest,
                 ListAlertPoliciesResponse>(
                 new java.util.function.Supplier<ListAlertPoliciesRequest.Builder>() {
                     @Override
@@ -213,22 +198,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AlertPolicySummary} objects contained in responses from the
-     * listAlertPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AlertPolicySummary} objects
+     * contained in responses from the listAlertPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AlertPolicySummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AlertPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AlertPolicySummary>
             listAlertPoliciesRecordIterator(final ListAlertPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAlertPoliciesRequest.Builder,
-                ListAlertPoliciesRequest,
-                ListAlertPoliciesResponse,
-                com.oracle.bmc.datasafe.model.AlertPolicySummary>(
+                ListAlertPoliciesRequest.Builder, ListAlertPoliciesRequest,
+                ListAlertPoliciesResponse, com.oracle.bmc.datasafe.model.AlertPolicySummary>(
                 new java.util.function.Supplier<ListAlertPoliciesRequest.Builder>() {
                     @Override
                     public ListAlertPoliciesRequest.Builder get() {
@@ -278,18 +260,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAlertPolicyRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAlertPolicyRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAlertPolicyRulesResponse> listAlertPolicyRulesResponseIterator(
             final ListAlertPolicyRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAlertPolicyRulesRequest.Builder,
-                ListAlertPolicyRulesRequest,
+                ListAlertPolicyRulesRequest.Builder, ListAlertPolicyRulesRequest,
                 ListAlertPolicyRulesResponse>(
                 new java.util.function.Supplier<ListAlertPolicyRulesRequest.Builder>() {
                     @Override
@@ -331,22 +311,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary} objects contained in responses from the
-     * listAlertPolicyRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary} objects
+     * contained in responses from the listAlertPolicyRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary>
             listAlertPolicyRulesRecordIterator(final ListAlertPolicyRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAlertPolicyRulesRequest.Builder,
-                ListAlertPolicyRulesRequest,
-                ListAlertPolicyRulesResponse,
-                com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary>(
+                ListAlertPolicyRulesRequest.Builder, ListAlertPolicyRulesRequest,
+                ListAlertPolicyRulesResponse, com.oracle.bmc.datasafe.model.AlertPolicyRuleSummary>(
                 new java.util.function.Supplier<ListAlertPolicyRulesRequest.Builder>() {
                     @Override
                     public ListAlertPolicyRulesRequest.Builder get() {
@@ -396,12 +373,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listAlerts
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAlerts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAlertsResponse> listAlertsResponseIterator(
             final ListAlertsRequest request) {
@@ -446,21 +422,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AlertSummary} objects contained in responses from the
-     * listAlerts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AlertSummary} objects
+     * contained in responses from the listAlerts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AlertSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AlertSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AlertSummary> listAlertsRecordIterator(
             final ListAlertsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAlertsRequest.Builder,
-                ListAlertsRequest,
-                ListAlertsResponse,
+                ListAlertsRequest.Builder, ListAlertsRequest, ListAlertsResponse,
                 com.oracle.bmc.datasafe.model.AlertSummary>(
                 new java.util.function.Supplier<ListAlertsRequest.Builder>() {
                     @Override
@@ -510,19 +483,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditArchiveRetrievals operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditArchiveRetrievals operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditArchiveRetrievalsResponse> listAuditArchiveRetrievalsResponseIterator(
             final ListAuditArchiveRetrievalsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditArchiveRetrievalsRequest.Builder,
-                ListAuditArchiveRetrievalsRequest,
+                ListAuditArchiveRetrievalsRequest.Builder, ListAuditArchiveRetrievalsRequest,
                 ListAuditArchiveRetrievalsResponse>(
                 new java.util.function.Supplier<ListAuditArchiveRetrievalsRequest.Builder>() {
                     @Override
@@ -565,22 +535,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary} objects contained in responses
-     * from the listAuditArchiveRetrievals operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary} objects
+     * contained in responses from the listAuditArchiveRetrievals operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary>
             listAuditArchiveRetrievalsRecordIterator(
                     final ListAuditArchiveRetrievalsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditArchiveRetrievalsRequest.Builder,
-                ListAuditArchiveRetrievalsRequest,
+                ListAuditArchiveRetrievalsRequest.Builder, ListAuditArchiveRetrievalsRequest,
                 ListAuditArchiveRetrievalsResponse,
                 com.oracle.bmc.datasafe.model.AuditArchiveRetrievalSummary>(
                 new java.util.function.Supplier<ListAuditArchiveRetrievalsRequest.Builder>() {
@@ -635,19 +602,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditEventAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditEventAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditEventAnalyticsResponse> listAuditEventAnalyticsResponseIterator(
             final ListAuditEventAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditEventAnalyticsRequest.Builder,
-                ListAuditEventAnalyticsRequest,
+                ListAuditEventAnalyticsRequest.Builder, ListAuditEventAnalyticsRequest,
                 ListAuditEventAnalyticsResponse>(
                 new java.util.function.Supplier<ListAuditEventAnalyticsRequest.Builder>() {
                     @Override
@@ -690,21 +654,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditEventAggregationItems} objects contained in responses from
-     * the listAuditEventAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditEventAggregationItems} objects
+     * contained in responses from the listAuditEventAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditEventAggregationItems} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditEventAggregationItems} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditEventAggregationItems>
             listAuditEventAnalyticsRecordIterator(final ListAuditEventAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditEventAnalyticsRequest.Builder,
-                ListAuditEventAnalyticsRequest,
+                ListAuditEventAnalyticsRequest.Builder, ListAuditEventAnalyticsRequest,
                 ListAuditEventAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.AuditEventAggregationItems>(
                 new java.util.function.Supplier<ListAuditEventAnalyticsRequest.Builder>() {
@@ -758,12 +719,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditEvents operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditEvents operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditEventsResponse> listAuditEventsResponseIterator(
             final ListAuditEventsRequest request) {
@@ -808,21 +768,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditEventSummary} objects contained in responses from the
-     * listAuditEvents operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditEventSummary} objects
+     * contained in responses from the listAuditEvents operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditEventSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditEventSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditEventSummary> listAuditEventsRecordIterator(
             final ListAuditEventsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditEventsRequest.Builder,
-                ListAuditEventsRequest,
-                ListAuditEventsResponse,
+                ListAuditEventsRequest.Builder, ListAuditEventsRequest, ListAuditEventsResponse,
                 com.oracle.bmc.datasafe.model.AuditEventSummary>(
                 new java.util.function.Supplier<ListAuditEventsRequest.Builder>() {
                     @Override
@@ -872,18 +829,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditPoliciesResponse> listAuditPoliciesResponseIterator(
             final ListAuditPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditPoliciesRequest.Builder,
-                ListAuditPoliciesRequest,
+                ListAuditPoliciesRequest.Builder, ListAuditPoliciesRequest,
                 ListAuditPoliciesResponse>(
                 new java.util.function.Supplier<ListAuditPoliciesRequest.Builder>() {
                     @Override
@@ -925,22 +880,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditPolicySummary} objects contained in responses from the
-     * listAuditPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicySummary} objects
+     * contained in responses from the listAuditPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditPolicySummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditPolicySummary>
             listAuditPoliciesRecordIterator(final ListAuditPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditPoliciesRequest.Builder,
-                ListAuditPoliciesRequest,
-                ListAuditPoliciesResponse,
-                com.oracle.bmc.datasafe.model.AuditPolicySummary>(
+                ListAuditPoliciesRequest.Builder, ListAuditPoliciesRequest,
+                ListAuditPoliciesResponse, com.oracle.bmc.datasafe.model.AuditPolicySummary>(
                 new java.util.function.Supplier<ListAuditPoliciesRequest.Builder>() {
                     @Override
                     public ListAuditPoliciesRequest.Builder get() {
@@ -990,19 +942,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditPolicyAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditPolicyAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditPolicyAnalyticsResponse> listAuditPolicyAnalyticsResponseIterator(
             final ListAuditPolicyAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditPolicyAnalyticsRequest.Builder,
-                ListAuditPolicyAnalyticsRequest,
+                ListAuditPolicyAnalyticsRequest.Builder, ListAuditPolicyAnalyticsRequest,
                 ListAuditPolicyAnalyticsResponse>(
                 new java.util.function.Supplier<ListAuditPolicyAnalyticsRequest.Builder>() {
                     @Override
@@ -1045,21 +994,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects contained in responses
-     * from the listAuditPolicyAnalytics operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects
+     * contained in responses from the listAuditPolicyAnalytics operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>
             listAuditPolicyAnalyticsRecordIterator(final ListAuditPolicyAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditPolicyAnalyticsRequest.Builder,
-                ListAuditPolicyAnalyticsRequest,
+                ListAuditPolicyAnalyticsRequest.Builder, ListAuditPolicyAnalyticsRequest,
                 ListAuditPolicyAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.AuditPolicyAggregationItems>(
                 new java.util.function.Supplier<ListAuditPolicyAnalyticsRequest.Builder>() {
@@ -1113,19 +1059,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditProfileAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditProfileAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditProfileAnalyticsResponse> listAuditProfileAnalyticsResponseIterator(
             final ListAuditProfileAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditProfileAnalyticsRequest.Builder,
-                ListAuditProfileAnalyticsRequest,
+                ListAuditProfileAnalyticsRequest.Builder, ListAuditProfileAnalyticsRequest,
                 ListAuditProfileAnalyticsResponse>(
                 new java.util.function.Supplier<ListAuditProfileAnalyticsRequest.Builder>() {
                     @Override
@@ -1168,22 +1111,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditProfileAggregationItems} objects contained in responses
-     * from the listAuditProfileAnalytics operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditProfileAggregationItems} objects
+     * contained in responses from the listAuditProfileAnalytics operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditProfileAggregationItems} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditProfileAggregationItems} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditProfileAggregationItems>
             listAuditProfileAnalyticsRecordIterator(
                     final ListAuditProfileAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditProfileAnalyticsRequest.Builder,
-                ListAuditProfileAnalyticsRequest,
+                ListAuditProfileAnalyticsRequest.Builder, ListAuditProfileAnalyticsRequest,
                 ListAuditProfileAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.AuditProfileAggregationItems>(
                 new java.util.function.Supplier<ListAuditProfileAnalyticsRequest.Builder>() {
@@ -1238,18 +1178,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditProfiles operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditProfiles operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditProfilesResponse> listAuditProfilesResponseIterator(
             final ListAuditProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditProfilesRequest.Builder,
-                ListAuditProfilesRequest,
+                ListAuditProfilesRequest.Builder, ListAuditProfilesRequest,
                 ListAuditProfilesResponse>(
                 new java.util.function.Supplier<ListAuditProfilesRequest.Builder>() {
                     @Override
@@ -1291,22 +1229,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditProfileSummary} objects contained in responses from the
-     * listAuditProfiles operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditProfileSummary} objects
+     * contained in responses from the listAuditProfiles operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditProfileSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditProfileSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditProfileSummary>
             listAuditProfilesRecordIterator(final ListAuditProfilesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditProfilesRequest.Builder,
-                ListAuditProfilesRequest,
-                ListAuditProfilesResponse,
-                com.oracle.bmc.datasafe.model.AuditProfileSummary>(
+                ListAuditProfilesRequest.Builder, ListAuditProfilesRequest,
+                ListAuditProfilesResponse, com.oracle.bmc.datasafe.model.AuditProfileSummary>(
                 new java.util.function.Supplier<ListAuditProfilesRequest.Builder>() {
                     @Override
                     public ListAuditProfilesRequest.Builder get() {
@@ -1356,19 +1291,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditTrailAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditTrailAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditTrailAnalyticsResponse> listAuditTrailAnalyticsResponseIterator(
             final ListAuditTrailAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAuditTrailAnalyticsRequest.Builder,
-                ListAuditTrailAnalyticsRequest,
+                ListAuditTrailAnalyticsRequest.Builder, ListAuditTrailAnalyticsRequest,
                 ListAuditTrailAnalyticsResponse>(
                 new java.util.function.Supplier<ListAuditTrailAnalyticsRequest.Builder>() {
                     @Override
@@ -1411,21 +1343,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditTrailAggregationItems} objects contained in responses from
-     * the listAuditTrailAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditTrailAggregationItems} objects
+     * contained in responses from the listAuditTrailAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditTrailAggregationItems} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditTrailAggregationItems} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditTrailAggregationItems>
             listAuditTrailAnalyticsRecordIterator(final ListAuditTrailAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditTrailAnalyticsRequest.Builder,
-                ListAuditTrailAnalyticsRequest,
+                ListAuditTrailAnalyticsRequest.Builder, ListAuditTrailAnalyticsRequest,
                 ListAuditTrailAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.AuditTrailAggregationItems>(
                 new java.util.function.Supplier<ListAuditTrailAnalyticsRequest.Builder>() {
@@ -1479,12 +1408,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAuditTrails operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAuditTrails operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAuditTrailsResponse> listAuditTrailsResponseIterator(
             final ListAuditTrailsRequest request) {
@@ -1529,21 +1457,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AuditTrailSummary} objects contained in responses from the
-     * listAuditTrails operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AuditTrailSummary} objects
+     * contained in responses from the listAuditTrails operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AuditTrailSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AuditTrailSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AuditTrailSummary> listAuditTrailsRecordIterator(
             final ListAuditTrailsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAuditTrailsRequest.Builder,
-                ListAuditTrailsRequest,
-                ListAuditTrailsResponse,
+                ListAuditTrailsRequest.Builder, ListAuditTrailsRequest, ListAuditTrailsResponse,
                 com.oracle.bmc.datasafe.model.AuditTrailSummary>(
                 new java.util.function.Supplier<ListAuditTrailsRequest.Builder>() {
                     @Override
@@ -1593,19 +1518,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAvailableAuditVolumes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listAvailableAuditVolumes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAvailableAuditVolumesResponse> listAvailableAuditVolumesResponseIterator(
             final ListAvailableAuditVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAvailableAuditVolumesRequest.Builder,
-                ListAvailableAuditVolumesRequest,
+                ListAvailableAuditVolumesRequest.Builder, ListAvailableAuditVolumesRequest,
                 ListAvailableAuditVolumesResponse>(
                 new java.util.function.Supplier<ListAvailableAuditVolumesRequest.Builder>() {
                     @Override
@@ -1648,22 +1570,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary} objects contained in responses
-     * from the listAvailableAuditVolumes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary} objects
+     * contained in responses from the listAvailableAuditVolumes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary>
             listAvailableAuditVolumesRecordIterator(
                     final ListAvailableAuditVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAvailableAuditVolumesRequest.Builder,
-                ListAvailableAuditVolumesRequest,
+                ListAvailableAuditVolumesRequest.Builder, ListAvailableAuditVolumesRequest,
                 ListAvailableAuditVolumesResponse,
                 com.oracle.bmc.datasafe.model.AvailableAuditVolumeSummary>(
                 new java.util.function.Supplier<ListAvailableAuditVolumesRequest.Builder>() {
@@ -1717,19 +1636,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCollectedAuditVolumes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listCollectedAuditVolumes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCollectedAuditVolumesResponse> listCollectedAuditVolumesResponseIterator(
             final ListCollectedAuditVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCollectedAuditVolumesRequest.Builder,
-                ListCollectedAuditVolumesRequest,
+                ListCollectedAuditVolumesRequest.Builder, ListCollectedAuditVolumesRequest,
                 ListCollectedAuditVolumesResponse>(
                 new java.util.function.Supplier<ListCollectedAuditVolumesRequest.Builder>() {
                     @Override
@@ -1772,22 +1688,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary} objects contained in responses
-     * from the listCollectedAuditVolumes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary} objects
+     * contained in responses from the listCollectedAuditVolumes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary>
             listCollectedAuditVolumesRecordIterator(
                     final ListCollectedAuditVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCollectedAuditVolumesRequest.Builder,
-                ListCollectedAuditVolumesRequest,
+                ListCollectedAuditVolumesRequest.Builder, ListCollectedAuditVolumesRequest,
                 ListCollectedAuditVolumesResponse,
                 com.oracle.bmc.datasafe.model.CollectedAuditVolumeSummary>(
                 new java.util.function.Supplier<ListCollectedAuditVolumesRequest.Builder>() {
@@ -1841,12 +1754,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listColumns
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listColumns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListColumnsResponse> listColumnsResponseIterator(
             final ListColumnsRequest request) {
@@ -1891,21 +1803,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ColumnSummary} objects contained in responses from the
-     * listColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ColumnSummary} objects
+     * contained in responses from the listColumns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ColumnSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ColumnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ColumnSummary> listColumnsRecordIterator(
             final ListColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListColumnsRequest.Builder,
-                ListColumnsRequest,
-                ListColumnsResponse,
+                ListColumnsRequest.Builder, ListColumnsRequest, ListColumnsResponse,
                 com.oracle.bmc.datasafe.model.ColumnSummary>(
                 new java.util.function.Supplier<ListColumnsRequest.Builder>() {
                     @Override
@@ -1955,20 +1864,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDataSafePrivateEndpoints operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDataSafePrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDataSafePrivateEndpointsResponse>
             listDataSafePrivateEndpointsResponseIterator(
                     final ListDataSafePrivateEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDataSafePrivateEndpointsRequest.Builder,
-                ListDataSafePrivateEndpointsRequest,
+                ListDataSafePrivateEndpointsRequest.Builder, ListDataSafePrivateEndpointsRequest,
                 ListDataSafePrivateEndpointsResponse>(
                 new java.util.function.Supplier<ListDataSafePrivateEndpointsRequest.Builder>() {
                     @Override
@@ -2012,22 +1918,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} objects contained in responses
-     * from the listDataSafePrivateEndpoints operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} objects
+     * contained in responses from the listDataSafePrivateEndpoints operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary>
             listDataSafePrivateEndpointsRecordIterator(
                     final ListDataSafePrivateEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataSafePrivateEndpointsRequest.Builder,
-                ListDataSafePrivateEndpointsRequest,
+                ListDataSafePrivateEndpointsRequest.Builder, ListDataSafePrivateEndpointsRequest,
                 ListDataSafePrivateEndpointsResponse,
                 com.oracle.bmc.datasafe.model.DataSafePrivateEndpointSummary>(
                 new java.util.function.Supplier<ListDataSafePrivateEndpointsRequest.Builder>() {
@@ -2083,20 +1986,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDatabaseSecurityConfigs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseSecurityConfigs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDatabaseSecurityConfigsResponse>
             listDatabaseSecurityConfigsResponseIterator(
                     final ListDatabaseSecurityConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDatabaseSecurityConfigsRequest.Builder,
-                ListDatabaseSecurityConfigsRequest,
+                ListDatabaseSecurityConfigsRequest.Builder, ListDatabaseSecurityConfigsRequest,
                 ListDatabaseSecurityConfigsResponse>(
                 new java.util.function.Supplier<ListDatabaseSecurityConfigsRequest.Builder>() {
                     @Override
@@ -2139,22 +2039,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary} objects contained in responses
-     * from the listDatabaseSecurityConfigs operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary} objects
+     * contained in responses from the listDatabaseSecurityConfigs operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary>
             listDatabaseSecurityConfigsRecordIterator(
                     final ListDatabaseSecurityConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDatabaseSecurityConfigsRequest.Builder,
-                ListDatabaseSecurityConfigsRequest,
+                ListDatabaseSecurityConfigsRequest.Builder, ListDatabaseSecurityConfigsRequest,
                 ListDatabaseSecurityConfigsResponse,
                 com.oracle.bmc.datasafe.model.DatabaseSecurityConfigSummary>(
                 new java.util.function.Supplier<ListDatabaseSecurityConfigsRequest.Builder>() {
@@ -2209,21 +2106,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDatabaseTableAccessEntries operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseTableAccessEntries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDatabaseTableAccessEntriesResponse>
             listDatabaseTableAccessEntriesResponseIterator(
                     final ListDatabaseTableAccessEntriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDatabaseTableAccessEntriesRequest.Builder,
-                ListDatabaseTableAccessEntriesRequest,
-                ListDatabaseTableAccessEntriesResponse>(
+                ListDatabaseTableAccessEntriesRequest, ListDatabaseTableAccessEntriesResponse>(
                 new java.util.function.Supplier<ListDatabaseTableAccessEntriesRequest.Builder>() {
                     @Override
                     public ListDatabaseTableAccessEntriesRequest.Builder get() {
@@ -2266,23 +2160,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary} objects contained in responses
-     * from the listDatabaseTableAccessEntries operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary} objects
+     * contained in responses from the listDatabaseTableAccessEntries operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary>
             listDatabaseTableAccessEntriesRecordIterator(
                     final ListDatabaseTableAccessEntriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDatabaseTableAccessEntriesRequest.Builder,
-                ListDatabaseTableAccessEntriesRequest,
-                ListDatabaseTableAccessEntriesResponse,
+                ListDatabaseTableAccessEntriesRequest, ListDatabaseTableAccessEntriesResponse,
                 com.oracle.bmc.datasafe.model.DatabaseTableAccessEntrySummary>(
                 new java.util.function.Supplier<ListDatabaseTableAccessEntriesRequest.Builder>() {
                     @Override
@@ -2337,20 +2228,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDatabaseViewAccessEntries operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDatabaseViewAccessEntries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDatabaseViewAccessEntriesResponse>
             listDatabaseViewAccessEntriesResponseIterator(
                     final ListDatabaseViewAccessEntriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDatabaseViewAccessEntriesRequest.Builder,
-                ListDatabaseViewAccessEntriesRequest,
+                ListDatabaseViewAccessEntriesRequest.Builder, ListDatabaseViewAccessEntriesRequest,
                 ListDatabaseViewAccessEntriesResponse>(
                 new java.util.function.Supplier<ListDatabaseViewAccessEntriesRequest.Builder>() {
                     @Override
@@ -2394,22 +2282,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary} objects contained in responses
-     * from the listDatabaseViewAccessEntries operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary} objects
+     * contained in responses from the listDatabaseViewAccessEntries operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary>
             listDatabaseViewAccessEntriesRecordIterator(
                     final ListDatabaseViewAccessEntriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDatabaseViewAccessEntriesRequest.Builder,
-                ListDatabaseViewAccessEntriesRequest,
+                ListDatabaseViewAccessEntriesRequest.Builder, ListDatabaseViewAccessEntriesRequest,
                 ListDatabaseViewAccessEntriesResponse,
                 com.oracle.bmc.datasafe.model.DatabaseViewAccessEntrySummary>(
                 new java.util.function.Supplier<ListDatabaseViewAccessEntriesRequest.Builder>() {
@@ -2465,19 +2350,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDifferenceColumns operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDifferenceColumns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDifferenceColumnsResponse> listDifferenceColumnsResponseIterator(
             final ListDifferenceColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDifferenceColumnsRequest.Builder,
-                ListDifferenceColumnsRequest,
+                ListDifferenceColumnsRequest.Builder, ListDifferenceColumnsRequest,
                 ListDifferenceColumnsResponse>(
                 new java.util.function.Supplier<ListDifferenceColumnsRequest.Builder>() {
                     @Override
@@ -2520,21 +2402,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects contained in responses from
-     * the listDifferenceColumns operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects
+     * contained in responses from the listDifferenceColumns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DifferenceColumnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DifferenceColumnSummary>
             listDifferenceColumnsRecordIterator(final ListDifferenceColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDifferenceColumnsRequest.Builder,
-                ListDifferenceColumnsRequest,
+                ListDifferenceColumnsRequest.Builder, ListDifferenceColumnsRequest,
                 ListDifferenceColumnsResponse,
                 com.oracle.bmc.datasafe.model.DifferenceColumnSummary>(
                 new java.util.function.Supplier<ListDifferenceColumnsRequest.Builder>() {
@@ -2587,19 +2466,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoveryAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoveryAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoveryAnalyticsResponse> listDiscoveryAnalyticsResponseIterator(
             final ListDiscoveryAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoveryAnalyticsRequest.Builder,
-                ListDiscoveryAnalyticsRequest,
+                ListDiscoveryAnalyticsRequest.Builder, ListDiscoveryAnalyticsRequest,
                 ListDiscoveryAnalyticsResponse>(
                 new java.util.function.Supplier<ListDiscoveryAnalyticsRequest.Builder>() {
                     @Override
@@ -2642,21 +2518,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary} objects contained in responses from
-     * the listDiscoveryAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary} objects
+     * contained in responses from the listDiscoveryAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary>
             listDiscoveryAnalyticsRecordIterator(final ListDiscoveryAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoveryAnalyticsRequest.Builder,
-                ListDiscoveryAnalyticsRequest,
+                ListDiscoveryAnalyticsRequest.Builder, ListDiscoveryAnalyticsRequest,
                 ListDiscoveryAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.DiscoveryAnalyticsSummary>(
                 new java.util.function.Supplier<ListDiscoveryAnalyticsRequest.Builder>() {
@@ -2709,19 +2582,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoveryJobResults operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoveryJobResults operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoveryJobResultsResponse> listDiscoveryJobResultsResponseIterator(
             final ListDiscoveryJobResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoveryJobResultsRequest.Builder,
-                ListDiscoveryJobResultsRequest,
+                ListDiscoveryJobResultsRequest.Builder, ListDiscoveryJobResultsRequest,
                 ListDiscoveryJobResultsResponse>(
                 new java.util.function.Supplier<ListDiscoveryJobResultsRequest.Builder>() {
                     @Override
@@ -2764,21 +2634,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary} objects contained in responses from
-     * the listDiscoveryJobResults operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary} objects
+     * contained in responses from the listDiscoveryJobResults operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary>
             listDiscoveryJobResultsRecordIterator(final ListDiscoveryJobResultsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoveryJobResultsRequest.Builder,
-                ListDiscoveryJobResultsRequest,
+                ListDiscoveryJobResultsRequest.Builder, ListDiscoveryJobResultsRequest,
                 ListDiscoveryJobResultsResponse,
                 com.oracle.bmc.datasafe.model.DiscoveryJobResultSummary>(
                 new java.util.function.Supplier<ListDiscoveryJobResultsRequest.Builder>() {
@@ -2831,18 +2698,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDiscoveryJobs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDiscoveryJobs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDiscoveryJobsResponse> listDiscoveryJobsResponseIterator(
             final ListDiscoveryJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDiscoveryJobsRequest.Builder,
-                ListDiscoveryJobsRequest,
+                ListDiscoveryJobsRequest.Builder, ListDiscoveryJobsRequest,
                 ListDiscoveryJobsResponse>(
                 new java.util.function.Supplier<ListDiscoveryJobsRequest.Builder>() {
                     @Override
@@ -2884,22 +2749,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.DiscoveryJobSummary} objects contained in responses from the
-     * listDiscoveryJobs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryJobSummary} objects
+     * contained in responses from the listDiscoveryJobs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.DiscoveryJobSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.DiscoveryJobSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.DiscoveryJobSummary>
             listDiscoveryJobsRecordIterator(final ListDiscoveryJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDiscoveryJobsRequest.Builder,
-                ListDiscoveryJobsRequest,
-                ListDiscoveryJobsResponse,
-                com.oracle.bmc.datasafe.model.DiscoveryJobSummary>(
+                ListDiscoveryJobsRequest.Builder, ListDiscoveryJobsRequest,
+                ListDiscoveryJobsResponse, com.oracle.bmc.datasafe.model.DiscoveryJobSummary>(
                 new java.util.function.Supplier<ListDiscoveryJobsRequest.Builder>() {
                     @Override
                     public ListDiscoveryJobsRequest.Builder get() {
@@ -2949,18 +2811,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFindingAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFindingAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFindingAnalyticsResponse> listFindingAnalyticsResponseIterator(
             final ListFindingAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFindingAnalyticsRequest.Builder,
-                ListFindingAnalyticsRequest,
+                ListFindingAnalyticsRequest.Builder, ListFindingAnalyticsRequest,
                 ListFindingAnalyticsResponse>(
                 new java.util.function.Supplier<ListFindingAnalyticsRequest.Builder>() {
                     @Override
@@ -3002,21 +2862,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.FindingAnalyticsSummary} objects contained in responses from
-     * the listFindingAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.FindingAnalyticsSummary} objects
+     * contained in responses from the listFindingAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.FindingAnalyticsSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.FindingAnalyticsSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.FindingAnalyticsSummary>
             listFindingAnalyticsRecordIterator(final ListFindingAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFindingAnalyticsRequest.Builder,
-                ListFindingAnalyticsRequest,
+                ListFindingAnalyticsRequest.Builder, ListFindingAnalyticsRequest,
                 ListFindingAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.FindingAnalyticsSummary>(
                 new java.util.function.Supplier<ListFindingAnalyticsRequest.Builder>() {
@@ -3068,12 +2925,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listFindings
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFindings operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFindingsResponse> listFindingsResponseIterator(
             final ListFindingsRequest request) {
@@ -3118,21 +2974,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.FindingSummary} objects contained in responses from the
-     * listFindings operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.FindingSummary} objects
+     * contained in responses from the listFindings operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.FindingSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.FindingSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.FindingSummary> listFindingsRecordIterator(
             final ListFindingsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFindingsRequest.Builder,
-                ListFindingsRequest,
-                ListFindingsResponse,
+                ListFindingsRequest.Builder, ListFindingsRequest, ListFindingsResponse,
                 com.oracle.bmc.datasafe.model.FindingSummary>(
                 new java.util.function.Supplier<ListFindingsRequest.Builder>() {
                     @Override
@@ -3182,20 +3035,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFindingsChangeAuditLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listFindingsChangeAuditLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFindingsChangeAuditLogsResponse>
             listFindingsChangeAuditLogsResponseIterator(
                     final ListFindingsChangeAuditLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFindingsChangeAuditLogsRequest.Builder,
-                ListFindingsChangeAuditLogsRequest,
+                ListFindingsChangeAuditLogsRequest.Builder, ListFindingsChangeAuditLogsRequest,
                 ListFindingsChangeAuditLogsResponse>(
                 new java.util.function.Supplier<ListFindingsChangeAuditLogsRequest.Builder>() {
                     @Override
@@ -3238,22 +3088,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary} objects contained in responses
-     * from the listFindingsChangeAuditLogs operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary} objects
+     * contained in responses from the listFindingsChangeAuditLogs operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary>
             listFindingsChangeAuditLogsRecordIterator(
                     final ListFindingsChangeAuditLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFindingsChangeAuditLogsRequest.Builder,
-                ListFindingsChangeAuditLogsRequest,
+                ListFindingsChangeAuditLogsRequest.Builder, ListFindingsChangeAuditLogsRequest,
                 ListFindingsChangeAuditLogsResponse,
                 com.oracle.bmc.datasafe.model.FindingsChangeAuditLogSummary>(
                 new java.util.function.Supplier<ListFindingsChangeAuditLogsRequest.Builder>() {
@@ -3308,12 +3155,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listGrants
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listGrants operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListGrantsResponse> listGrantsResponseIterator(
             final ListGrantsRequest request) {
@@ -3358,21 +3204,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.GrantSummary} objects contained in responses from the
-     * listGrants operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.GrantSummary} objects
+     * contained in responses from the listGrants operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.GrantSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.GrantSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.GrantSummary> listGrantsRecordIterator(
             final ListGrantsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListGrantsRequest.Builder,
-                ListGrantsRequest,
-                ListGrantsResponse,
+                ListGrantsRequest.Builder, ListGrantsRequest, ListGrantsResponse,
                 com.oracle.bmc.datasafe.model.GrantSummary>(
                 new java.util.function.Supplier<ListGrantsRequest.Builder>() {
                     @Override
@@ -3422,19 +3265,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listGroupedSensitiveTypes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listGroupedSensitiveTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListGroupedSensitiveTypesResponse> listGroupedSensitiveTypesResponseIterator(
             final ListGroupedSensitiveTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListGroupedSensitiveTypesRequest.Builder,
-                ListGroupedSensitiveTypesRequest,
+                ListGroupedSensitiveTypesRequest.Builder, ListGroupedSensitiveTypesRequest,
                 ListGroupedSensitiveTypesResponse>(
                 new java.util.function.Supplier<ListGroupedSensitiveTypesRequest.Builder>() {
                     @Override
@@ -3477,22 +3317,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects contained in responses
-     * from the listGroupedSensitiveTypes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects
+     * contained in responses from the listGroupedSensitiveTypes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>
             listGroupedSensitiveTypesRecordIterator(
                     final ListGroupedSensitiveTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListGroupedSensitiveTypesRequest.Builder,
-                ListGroupedSensitiveTypesRequest,
+                ListGroupedSensitiveTypesRequest.Builder, ListGroupedSensitiveTypesRequest,
                 ListGroupedSensitiveTypesResponse,
                 com.oracle.bmc.datasafe.model.GroupedSensitiveTypeSummary>(
                 new java.util.function.Supplier<ListGroupedSensitiveTypesRequest.Builder>() {
@@ -3546,19 +3383,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLibraryMaskingFormats operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listLibraryMaskingFormats operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLibraryMaskingFormatsResponse> listLibraryMaskingFormatsResponseIterator(
             final ListLibraryMaskingFormatsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLibraryMaskingFormatsRequest.Builder,
-                ListLibraryMaskingFormatsRequest,
+                ListLibraryMaskingFormatsRequest.Builder, ListLibraryMaskingFormatsRequest,
                 ListLibraryMaskingFormatsResponse>(
                 new java.util.function.Supplier<ListLibraryMaskingFormatsRequest.Builder>() {
                     @Override
@@ -3601,22 +3435,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary} objects contained in responses
-     * from the listLibraryMaskingFormats operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary} objects
+     * contained in responses from the listLibraryMaskingFormats operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary>
             listLibraryMaskingFormatsRecordIterator(
                     final ListLibraryMaskingFormatsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLibraryMaskingFormatsRequest.Builder,
-                ListLibraryMaskingFormatsRequest,
+                ListLibraryMaskingFormatsRequest.Builder, ListLibraryMaskingFormatsRequest,
                 ListLibraryMaskingFormatsResponse,
                 com.oracle.bmc.datasafe.model.LibraryMaskingFormatSummary>(
                 new java.util.function.Supplier<ListLibraryMaskingFormatsRequest.Builder>() {
@@ -3670,18 +3501,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskedColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskedColumns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskedColumnsResponse> listMaskedColumnsResponseIterator(
             final ListMaskedColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskedColumnsRequest.Builder,
-                ListMaskedColumnsRequest,
+                ListMaskedColumnsRequest.Builder, ListMaskedColumnsRequest,
                 ListMaskedColumnsResponse>(
                 new java.util.function.Supplier<ListMaskedColumnsRequest.Builder>() {
                     @Override
@@ -3723,22 +3552,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskedColumnSummary} objects contained in responses from the
-     * listMaskedColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskedColumnSummary} objects
+     * contained in responses from the listMaskedColumns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskedColumnSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskedColumnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskedColumnSummary>
             listMaskedColumnsRecordIterator(final ListMaskedColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskedColumnsRequest.Builder,
-                ListMaskedColumnsRequest,
-                ListMaskedColumnsResponse,
-                com.oracle.bmc.datasafe.model.MaskedColumnSummary>(
+                ListMaskedColumnsRequest.Builder, ListMaskedColumnsRequest,
+                ListMaskedColumnsResponse, com.oracle.bmc.datasafe.model.MaskedColumnSummary>(
                 new java.util.function.Supplier<ListMaskedColumnsRequest.Builder>() {
                     @Override
                     public ListMaskedColumnsRequest.Builder get() {
@@ -3788,18 +3614,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingAnalyticsResponse> listMaskingAnalyticsResponseIterator(
             final ListMaskingAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingAnalyticsRequest.Builder,
-                ListMaskingAnalyticsRequest,
+                ListMaskingAnalyticsRequest.Builder, ListMaskingAnalyticsRequest,
                 ListMaskingAnalyticsResponse>(
                 new java.util.function.Supplier<ListMaskingAnalyticsRequest.Builder>() {
                     @Override
@@ -3841,21 +3665,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary} objects contained in responses from
-     * the listMaskingAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary} objects
+     * contained in responses from the listMaskingAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary>
             listMaskingAnalyticsRecordIterator(final ListMaskingAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingAnalyticsRequest.Builder,
-                ListMaskingAnalyticsRequest,
+                ListMaskingAnalyticsRequest.Builder, ListMaskingAnalyticsRequest,
                 ListMaskingAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.MaskingAnalyticsSummary>(
                 new java.util.function.Supplier<ListMaskingAnalyticsRequest.Builder>() {
@@ -3907,18 +3728,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingColumns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingColumnsResponse> listMaskingColumnsResponseIterator(
             final ListMaskingColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingColumnsRequest.Builder,
-                ListMaskingColumnsRequest,
+                ListMaskingColumnsRequest.Builder, ListMaskingColumnsRequest,
                 ListMaskingColumnsResponse>(
                 new java.util.function.Supplier<ListMaskingColumnsRequest.Builder>() {
                     @Override
@@ -3960,22 +3779,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingColumnSummary} objects contained in responses from the
-     * listMaskingColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingColumnSummary} objects
+     * contained in responses from the listMaskingColumns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingColumnSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingColumnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingColumnSummary>
             listMaskingColumnsRecordIterator(final ListMaskingColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingColumnsRequest.Builder,
-                ListMaskingColumnsRequest,
-                ListMaskingColumnsResponse,
-                com.oracle.bmc.datasafe.model.MaskingColumnSummary>(
+                ListMaskingColumnsRequest.Builder, ListMaskingColumnsRequest,
+                ListMaskingColumnsResponse, com.oracle.bmc.datasafe.model.MaskingColumnSummary>(
                 new java.util.function.Supplier<ListMaskingColumnsRequest.Builder>() {
                     @Override
                     public ListMaskingColumnsRequest.Builder get() {
@@ -4025,18 +3841,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingErrors operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingErrorsResponse> listMaskingErrorsResponseIterator(
             final ListMaskingErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingErrorsRequest.Builder,
-                ListMaskingErrorsRequest,
+                ListMaskingErrorsRequest.Builder, ListMaskingErrorsRequest,
                 ListMaskingErrorsResponse>(
                 new java.util.function.Supplier<ListMaskingErrorsRequest.Builder>() {
                     @Override
@@ -4078,22 +3892,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects contained in responses from the
-     * listMaskingErrors operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects
+     * contained in responses from the listMaskingErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingErrorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingErrorSummary>
             listMaskingErrorsRecordIterator(final ListMaskingErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingErrorsRequest.Builder,
-                ListMaskingErrorsRequest,
-                ListMaskingErrorsResponse,
-                com.oracle.bmc.datasafe.model.MaskingErrorSummary>(
+                ListMaskingErrorsRequest.Builder, ListMaskingErrorsRequest,
+                ListMaskingErrorsResponse, com.oracle.bmc.datasafe.model.MaskingErrorSummary>(
                 new java.util.function.Supplier<ListMaskingErrorsRequest.Builder>() {
                     @Override
                     public ListMaskingErrorsRequest.Builder get() {
@@ -4143,18 +3954,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingObjects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingObjects operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingObjectsResponse> listMaskingObjectsResponseIterator(
             final ListMaskingObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingObjectsRequest.Builder,
-                ListMaskingObjectsRequest,
+                ListMaskingObjectsRequest.Builder, ListMaskingObjectsRequest,
                 ListMaskingObjectsResponse>(
                 new java.util.function.Supplier<ListMaskingObjectsRequest.Builder>() {
                     @Override
@@ -4196,22 +4005,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects contained in responses from the
-     * listMaskingObjects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects
+     * contained in responses from the listMaskingObjects operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingObjectSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingObjectSummary>
             listMaskingObjectsRecordIterator(final ListMaskingObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingObjectsRequest.Builder,
-                ListMaskingObjectsRequest,
-                ListMaskingObjectsResponse,
-                com.oracle.bmc.datasafe.model.MaskingObjectSummary>(
+                ListMaskingObjectsRequest.Builder, ListMaskingObjectsRequest,
+                ListMaskingObjectsResponse, com.oracle.bmc.datasafe.model.MaskingObjectSummary>(
                 new java.util.function.Supplier<ListMaskingObjectsRequest.Builder>() {
                     @Override
                     public ListMaskingObjectsRequest.Builder get() {
@@ -4261,18 +4067,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingPoliciesResponse> listMaskingPoliciesResponseIterator(
             final ListMaskingPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingPoliciesRequest.Builder,
-                ListMaskingPoliciesRequest,
+                ListMaskingPoliciesRequest.Builder, ListMaskingPoliciesRequest,
                 ListMaskingPoliciesResponse>(
                 new java.util.function.Supplier<ListMaskingPoliciesRequest.Builder>() {
                     @Override
@@ -4314,22 +4118,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingPolicySummary} objects contained in responses from the
-     * listMaskingPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicySummary} objects
+     * contained in responses from the listMaskingPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingPolicySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicySummary>
             listMaskingPoliciesRecordIterator(final ListMaskingPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingPoliciesRequest.Builder,
-                ListMaskingPoliciesRequest,
-                ListMaskingPoliciesResponse,
-                com.oracle.bmc.datasafe.model.MaskingPolicySummary>(
+                ListMaskingPoliciesRequest.Builder, ListMaskingPoliciesRequest,
+                ListMaskingPoliciesResponse, com.oracle.bmc.datasafe.model.MaskingPolicySummary>(
                 new java.util.function.Supplier<ListMaskingPoliciesRequest.Builder>() {
                     @Override
                     public ListMaskingPoliciesRequest.Builder get() {
@@ -4379,13 +4180,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingPolicyHealthReportLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingPolicyHealthReportLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingPolicyHealthReportLogsResponse>
             listMaskingPolicyHealthReportLogsResponseIterator(
@@ -4438,23 +4237,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects contained in
-     * responses from the listMaskingPolicyHealthReportLogs operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects
+     * contained in responses from the listMaskingPolicyHealthReportLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary>
             listMaskingPolicyHealthReportLogsRecordIterator(
                     final ListMaskingPolicyHealthReportLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMaskingPolicyHealthReportLogsRequest.Builder,
-                ListMaskingPolicyHealthReportLogsRequest,
-                ListMaskingPolicyHealthReportLogsResponse,
+                ListMaskingPolicyHealthReportLogsRequest, ListMaskingPolicyHealthReportLogsResponse,
                 com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportLogSummary>(
                 new java.util.function.Supplier<
                         ListMaskingPolicyHealthReportLogsRequest.Builder>() {
@@ -4513,21 +4309,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingPolicyHealthReports operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingPolicyHealthReports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingPolicyHealthReportsResponse>
             listMaskingPolicyHealthReportsResponseIterator(
                     final ListMaskingPolicyHealthReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMaskingPolicyHealthReportsRequest.Builder,
-                ListMaskingPolicyHealthReportsRequest,
-                ListMaskingPolicyHealthReportsResponse>(
+                ListMaskingPolicyHealthReportsRequest, ListMaskingPolicyHealthReportsResponse>(
                 new java.util.function.Supplier<ListMaskingPolicyHealthReportsRequest.Builder>() {
                     @Override
                     public ListMaskingPolicyHealthReportsRequest.Builder get() {
@@ -4570,23 +4363,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects contained in
-     * responses from the listMaskingPolicyHealthReports operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects
+     * contained in responses from the listMaskingPolicyHealthReports operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>
             listMaskingPolicyHealthReportsRecordIterator(
                     final ListMaskingPolicyHealthReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMaskingPolicyHealthReportsRequest.Builder,
-                ListMaskingPolicyHealthReportsRequest,
-                ListMaskingPolicyHealthReportsResponse,
+                ListMaskingPolicyHealthReportsRequest, ListMaskingPolicyHealthReportsResponse,
                 com.oracle.bmc.datasafe.model.MaskingPolicyHealthReportSummary>(
                 new java.util.function.Supplier<ListMaskingPolicyHealthReportsRequest.Builder>() {
                     @Override
@@ -4641,13 +4431,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingPolicyReferentialRelations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingPolicyReferentialRelations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingPolicyReferentialRelationsResponse>
             listMaskingPolicyReferentialRelationsResponseIterator(
@@ -4700,15 +4488,13 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationSummary} objects contained in
-     * responses from the listMaskingPolicyReferentialRelations operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationSummary} objects
+     * contained in responses from the listMaskingPolicyReferentialRelations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationSummary>
             listMaskingPolicyReferentialRelationsRecordIterator(
@@ -4775,18 +4561,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingReports operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingReports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingReportsResponse> listMaskingReportsResponseIterator(
             final ListMaskingReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingReportsRequest.Builder,
-                ListMaskingReportsRequest,
+                ListMaskingReportsRequest.Builder, ListMaskingReportsRequest,
                 ListMaskingReportsResponse>(
                 new java.util.function.Supplier<ListMaskingReportsRequest.Builder>() {
                     @Override
@@ -4828,22 +4612,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingReportSummary} objects contained in responses from the
-     * listMaskingReports operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingReportSummary} objects
+     * contained in responses from the listMaskingReports operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingReportSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingReportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingReportSummary>
             listMaskingReportsRecordIterator(final ListMaskingReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingReportsRequest.Builder,
-                ListMaskingReportsRequest,
-                ListMaskingReportsResponse,
-                com.oracle.bmc.datasafe.model.MaskingReportSummary>(
+                ListMaskingReportsRequest.Builder, ListMaskingReportsRequest,
+                ListMaskingReportsResponse, com.oracle.bmc.datasafe.model.MaskingReportSummary>(
                 new java.util.function.Supplier<ListMaskingReportsRequest.Builder>() {
                     @Override
                     public ListMaskingReportsRequest.Builder get() {
@@ -4893,18 +4674,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMaskingSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMaskingSchemas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMaskingSchemasResponse> listMaskingSchemasResponseIterator(
             final ListMaskingSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMaskingSchemasRequest.Builder,
-                ListMaskingSchemasRequest,
+                ListMaskingSchemasRequest.Builder, ListMaskingSchemasRequest,
                 ListMaskingSchemasResponse>(
                 new java.util.function.Supplier<ListMaskingSchemasRequest.Builder>() {
                     @Override
@@ -4946,22 +4725,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects contained in responses from the
-     * listMaskingSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects
+     * contained in responses from the listMaskingSchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.MaskingSchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.MaskingSchemaSummary>
             listMaskingSchemasRecordIterator(final ListMaskingSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMaskingSchemasRequest.Builder,
-                ListMaskingSchemasRequest,
-                ListMaskingSchemasResponse,
-                com.oracle.bmc.datasafe.model.MaskingSchemaSummary>(
+                ListMaskingSchemasRequest.Builder, ListMaskingSchemasRequest,
+                ListMaskingSchemasResponse, com.oracle.bmc.datasafe.model.MaskingSchemaSummary>(
                 new java.util.function.Supplier<ListMaskingSchemasRequest.Builder>() {
                     @Override
                     public ListMaskingSchemasRequest.Builder get() {
@@ -5011,18 +4787,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOnPremConnectors operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOnPremConnectors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOnPremConnectorsResponse> listOnPremConnectorsResponseIterator(
             final ListOnPremConnectorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOnPremConnectorsRequest.Builder,
-                ListOnPremConnectorsRequest,
+                ListOnPremConnectorsRequest.Builder, ListOnPremConnectorsRequest,
                 ListOnPremConnectorsResponse>(
                 new java.util.function.Supplier<ListOnPremConnectorsRequest.Builder>() {
                     @Override
@@ -5064,22 +4838,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.OnPremConnectorSummary} objects contained in responses from the
-     * listOnPremConnectors operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.OnPremConnectorSummary} objects
+     * contained in responses from the listOnPremConnectors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.OnPremConnectorSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.OnPremConnectorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.OnPremConnectorSummary>
             listOnPremConnectorsRecordIterator(final ListOnPremConnectorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOnPremConnectorsRequest.Builder,
-                ListOnPremConnectorsRequest,
-                ListOnPremConnectorsResponse,
-                com.oracle.bmc.datasafe.model.OnPremConnectorSummary>(
+                ListOnPremConnectorsRequest.Builder, ListOnPremConnectorsRequest,
+                ListOnPremConnectorsResponse, com.oracle.bmc.datasafe.model.OnPremConnectorSummary>(
                 new java.util.function.Supplier<ListOnPremConnectorsRequest.Builder>() {
                     @Override
                     public ListOnPremConnectorsRequest.Builder get() {
@@ -5129,19 +4900,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPeerTargetDatabases operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listPeerTargetDatabases operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPeerTargetDatabasesResponse> listPeerTargetDatabasesResponseIterator(
             final ListPeerTargetDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPeerTargetDatabasesRequest.Builder,
-                ListPeerTargetDatabasesRequest,
+                ListPeerTargetDatabasesRequest.Builder, ListPeerTargetDatabasesRequest,
                 ListPeerTargetDatabasesResponse>(
                 new java.util.function.Supplier<ListPeerTargetDatabasesRequest.Builder>() {
                     @Override
@@ -5184,21 +4952,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary} objects contained in responses from
-     * the listPeerTargetDatabases operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary} objects
+     * contained in responses from the listPeerTargetDatabases operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary>
             listPeerTargetDatabasesRecordIterator(final ListPeerTargetDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPeerTargetDatabasesRequest.Builder,
-                ListPeerTargetDatabasesRequest,
+                ListPeerTargetDatabasesRequest.Builder, ListPeerTargetDatabasesRequest,
                 ListPeerTargetDatabasesResponse,
                 com.oracle.bmc.datasafe.model.PeerTargetDatabaseSummary>(
                 new java.util.function.Supplier<ListPeerTargetDatabasesRequest.Builder>() {
@@ -5251,18 +5016,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProfileAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProfileAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProfileAnalyticsResponse> listProfileAnalyticsResponseIterator(
             final ListProfileAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProfileAnalyticsRequest.Builder,
-                ListProfileAnalyticsRequest,
+                ListProfileAnalyticsRequest.Builder, ListProfileAnalyticsRequest,
                 ListProfileAnalyticsResponse>(
                 new java.util.function.Supplier<ListProfileAnalyticsRequest.Builder>() {
                     @Override
@@ -5304,22 +5067,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ProfileAggregation} objects contained in responses from the
-     * listProfileAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ProfileAggregation} objects
+     * contained in responses from the listProfileAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ProfileAggregation} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ProfileAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ProfileAggregation>
             listProfileAnalyticsRecordIterator(final ListProfileAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProfileAnalyticsRequest.Builder,
-                ListProfileAnalyticsRequest,
-                ListProfileAnalyticsResponse,
-                com.oracle.bmc.datasafe.model.ProfileAggregation>(
+                ListProfileAnalyticsRequest.Builder, ListProfileAnalyticsRequest,
+                ListProfileAnalyticsResponse, com.oracle.bmc.datasafe.model.ProfileAggregation>(
                 new java.util.function.Supplier<ListProfileAnalyticsRequest.Builder>() {
                     @Override
                     public ListProfileAnalyticsRequest.Builder get() {
@@ -5369,18 +5129,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProfileSummaries operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProfileSummaries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProfileSummariesResponse> listProfileSummariesResponseIterator(
             final ListProfileSummariesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProfileSummariesRequest.Builder,
-                ListProfileSummariesRequest,
+                ListProfileSummariesRequest.Builder, ListProfileSummariesRequest,
                 ListProfileSummariesResponse>(
                 new java.util.function.Supplier<ListProfileSummariesRequest.Builder>() {
                     @Override
@@ -5422,22 +5180,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ProfileSummary} objects contained in responses from the
-     * listProfileSummaries operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ProfileSummary} objects
+     * contained in responses from the listProfileSummaries operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ProfileSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ProfileSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ProfileSummary>
             listProfileSummariesRecordIterator(final ListProfileSummariesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProfileSummariesRequest.Builder,
-                ListProfileSummariesRequest,
-                ListProfileSummariesResponse,
-                com.oracle.bmc.datasafe.model.ProfileSummary>(
+                ListProfileSummariesRequest.Builder, ListProfileSummariesRequest,
+                ListProfileSummariesResponse, com.oracle.bmc.datasafe.model.ProfileSummary>(
                 new java.util.function.Supplier<ListProfileSummariesRequest.Builder>() {
                     @Override
                     public ListProfileSummariesRequest.Builder get() {
@@ -5487,19 +5242,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listReferentialRelations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listReferentialRelations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListReferentialRelationsResponse> listReferentialRelationsResponseIterator(
             final ListReferentialRelationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListReferentialRelationsRequest.Builder,
-                ListReferentialRelationsRequest,
+                ListReferentialRelationsRequest.Builder, ListReferentialRelationsRequest,
                 ListReferentialRelationsResponse>(
                 new java.util.function.Supplier<ListReferentialRelationsRequest.Builder>() {
                     @Override
@@ -5542,21 +5294,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ReferentialRelationSummary} objects contained in responses from
-     * the listReferentialRelations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ReferentialRelationSummary} objects
+     * contained in responses from the listReferentialRelations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ReferentialRelationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ReferentialRelationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ReferentialRelationSummary>
             listReferentialRelationsRecordIterator(final ListReferentialRelationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReferentialRelationsRequest.Builder,
-                ListReferentialRelationsRequest,
+                ListReferentialRelationsRequest.Builder, ListReferentialRelationsRequest,
                 ListReferentialRelationsResponse,
                 com.oracle.bmc.datasafe.model.ReferentialRelationSummary>(
                 new java.util.function.Supplier<ListReferentialRelationsRequest.Builder>() {
@@ -5610,19 +5359,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listReportDefinitions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listReportDefinitions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListReportDefinitionsResponse> listReportDefinitionsResponseIterator(
             final ListReportDefinitionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListReportDefinitionsRequest.Builder,
-                ListReportDefinitionsRequest,
+                ListReportDefinitionsRequest.Builder, ListReportDefinitionsRequest,
                 ListReportDefinitionsResponse>(
                 new java.util.function.Supplier<ListReportDefinitionsRequest.Builder>() {
                     @Override
@@ -5665,21 +5411,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ReportDefinitionSummary} objects contained in responses from
-     * the listReportDefinitions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ReportDefinitionSummary} objects
+     * contained in responses from the listReportDefinitions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ReportDefinitionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ReportDefinitionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ReportDefinitionSummary>
             listReportDefinitionsRecordIterator(final ListReportDefinitionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReportDefinitionsRequest.Builder,
-                ListReportDefinitionsRequest,
+                ListReportDefinitionsRequest.Builder, ListReportDefinitionsRequest,
                 ListReportDefinitionsResponse,
                 com.oracle.bmc.datasafe.model.ReportDefinitionSummary>(
                 new java.util.function.Supplier<ListReportDefinitionsRequest.Builder>() {
@@ -5732,12 +5475,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listReports
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listReports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListReportsResponse> listReportsResponseIterator(
             final ListReportsRequest request) {
@@ -5782,21 +5524,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.ReportSummary} objects contained in responses from the
-     * listReports operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.ReportSummary} objects
+     * contained in responses from the listReports operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.ReportSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.ReportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.ReportSummary> listReportsRecordIterator(
             final ListReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReportsRequest.Builder,
-                ListReportsRequest,
-                ListReportsResponse,
+                ListReportsRequest.Builder, ListReportsRequest, ListReportsResponse,
                 com.oracle.bmc.datasafe.model.ReportSummary>(
                 new java.util.function.Supplier<ListReportsRequest.Builder>() {
                     @Override
@@ -5846,18 +5585,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRoleGrantPaths operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRoleGrantPaths operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRoleGrantPathsResponse> listRoleGrantPathsResponseIterator(
             final ListRoleGrantPathsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListRoleGrantPathsRequest.Builder,
-                ListRoleGrantPathsRequest,
+                ListRoleGrantPathsRequest.Builder, ListRoleGrantPathsRequest,
                 ListRoleGrantPathsResponse>(
                 new java.util.function.Supplier<ListRoleGrantPathsRequest.Builder>() {
                     @Override
@@ -5899,22 +5636,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.RoleGrantPathSummary} objects contained in responses from the
-     * listRoleGrantPaths operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.RoleGrantPathSummary} objects
+     * contained in responses from the listRoleGrantPaths operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.RoleGrantPathSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.RoleGrantPathSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.RoleGrantPathSummary>
             listRoleGrantPathsRecordIterator(final ListRoleGrantPathsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRoleGrantPathsRequest.Builder,
-                ListRoleGrantPathsRequest,
-                ListRoleGrantPathsResponse,
-                com.oracle.bmc.datasafe.model.RoleGrantPathSummary>(
+                ListRoleGrantPathsRequest.Builder, ListRoleGrantPathsRequest,
+                ListRoleGrantPathsResponse, com.oracle.bmc.datasafe.model.RoleGrantPathSummary>(
                 new java.util.function.Supplier<ListRoleGrantPathsRequest.Builder>() {
                     @Override
                     public ListRoleGrantPathsRequest.Builder get() {
@@ -5964,12 +5698,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listRoles
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRoles operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRolesResponse> listRolesResponseIterator(final ListRolesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -6013,21 +5746,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.RoleSummary} objects contained in responses from the listRoles
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.RoleSummary} objects
+     * contained in responses from the listRoles operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.RoleSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.RoleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.RoleSummary> listRolesRecordIterator(
             final ListRolesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRolesRequest.Builder,
-                ListRolesRequest,
-                ListRolesResponse,
+                ListRolesRequest.Builder, ListRolesRequest, ListRolesResponse,
                 com.oracle.bmc.datasafe.model.RoleSummary>(
                 new java.util.function.Supplier<ListRolesRequest.Builder>() {
                     @Override
@@ -6077,12 +5807,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSchemas
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSchemas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSchemasResponse> listSchemasResponseIterator(
             final ListSchemasRequest request) {
@@ -6127,21 +5856,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SchemaSummary} objects contained in responses from the
-     * listSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SchemaSummary} objects
+     * contained in responses from the listSchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SchemaSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SchemaSummary> listSchemasRecordIterator(
             final ListSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSchemasRequest.Builder,
-                ListSchemasRequest,
-                ListSchemasResponse,
+                ListSchemasRequest.Builder, ListSchemasRequest, ListSchemasResponse,
                 com.oracle.bmc.datasafe.model.SchemaSummary>(
                 new java.util.function.Supplier<ListSchemasRequest.Builder>() {
                     @Override
@@ -6191,21 +5917,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSdmMaskingPolicyDifferences operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSdmMaskingPolicyDifferences operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSdmMaskingPolicyDifferencesResponse>
             listSdmMaskingPolicyDifferencesResponseIterator(
                     final ListSdmMaskingPolicyDifferencesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSdmMaskingPolicyDifferencesRequest.Builder,
-                ListSdmMaskingPolicyDifferencesRequest,
-                ListSdmMaskingPolicyDifferencesResponse>(
+                ListSdmMaskingPolicyDifferencesRequest, ListSdmMaskingPolicyDifferencesResponse>(
                 new java.util.function.Supplier<ListSdmMaskingPolicyDifferencesRequest.Builder>() {
                     @Override
                     public ListSdmMaskingPolicyDifferencesRequest.Builder get() {
@@ -6248,23 +5971,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects contained in
-     * responses from the listSdmMaskingPolicyDifferences operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects
+     * contained in responses from the listSdmMaskingPolicyDifferences operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary>
             listSdmMaskingPolicyDifferencesRecordIterator(
                     final ListSdmMaskingPolicyDifferencesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSdmMaskingPolicyDifferencesRequest.Builder,
-                ListSdmMaskingPolicyDifferencesRequest,
-                ListSdmMaskingPolicyDifferencesResponse,
+                ListSdmMaskingPolicyDifferencesRequest, ListSdmMaskingPolicyDifferencesResponse,
                 com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifferenceSummary>(
                 new java.util.function.Supplier<ListSdmMaskingPolicyDifferencesRequest.Builder>() {
                     @Override
@@ -6320,19 +6040,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAssessments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAssessments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAssessmentsResponse> listSecurityAssessmentsResponseIterator(
             final ListSecurityAssessmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityAssessmentsRequest.Builder,
-                ListSecurityAssessmentsRequest,
+                ListSecurityAssessmentsRequest.Builder, ListSecurityAssessmentsRequest,
                 ListSecurityAssessmentsResponse>(
                 new java.util.function.Supplier<ListSecurityAssessmentsRequest.Builder>() {
                     @Override
@@ -6375,21 +6092,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} objects contained in responses from
-     * the listSecurityAssessments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} objects
+     * contained in responses from the listSecurityAssessments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityAssessmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityAssessmentSummary>
             listSecurityAssessmentsRecordIterator(final ListSecurityAssessmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityAssessmentsRequest.Builder,
-                ListSecurityAssessmentsRequest,
+                ListSecurityAssessmentsRequest.Builder, ListSecurityAssessmentsRequest,
                 ListSecurityAssessmentsResponse,
                 com.oracle.bmc.datasafe.model.SecurityAssessmentSummary>(
                 new java.util.function.Supplier<ListSecurityAssessmentsRequest.Builder>() {
@@ -6442,18 +6156,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityFeatures operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityFeatures operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityFeaturesResponse> listSecurityFeaturesResponseIterator(
             final ListSecurityFeaturesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityFeaturesRequest.Builder,
-                ListSecurityFeaturesRequest,
+                ListSecurityFeaturesRequest.Builder, ListSecurityFeaturesRequest,
                 ListSecurityFeaturesResponse>(
                 new java.util.function.Supplier<ListSecurityFeaturesRequest.Builder>() {
                     @Override
@@ -6495,22 +6207,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityFeatureSummary} objects contained in responses from the
-     * listSecurityFeatures operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityFeatureSummary} objects
+     * contained in responses from the listSecurityFeatures operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityFeatureSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityFeatureSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityFeatureSummary>
             listSecurityFeaturesRecordIterator(final ListSecurityFeaturesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityFeaturesRequest.Builder,
-                ListSecurityFeaturesRequest,
-                ListSecurityFeaturesResponse,
-                com.oracle.bmc.datasafe.model.SecurityFeatureSummary>(
+                ListSecurityFeaturesRequest.Builder, ListSecurityFeaturesRequest,
+                ListSecurityFeaturesResponse, com.oracle.bmc.datasafe.model.SecurityFeatureSummary>(
                 new java.util.function.Supplier<ListSecurityFeaturesRequest.Builder>() {
                     @Override
                     public ListSecurityFeaturesRequest.Builder get() {
@@ -6560,18 +6269,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityPoliciesResponse> listSecurityPoliciesResponseIterator(
             final ListSecurityPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityPoliciesRequest.Builder,
-                ListSecurityPoliciesRequest,
+                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
                 ListSecurityPoliciesResponse>(
                 new java.util.function.Supplier<ListSecurityPoliciesRequest.Builder>() {
                     @Override
@@ -6613,22 +6320,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityPolicySummary} objects contained in responses from the
-     * listSecurityPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicySummary} objects
+     * contained in responses from the listSecurityPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityPolicySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityPolicySummary>
             listSecurityPoliciesRecordIterator(final ListSecurityPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityPoliciesRequest.Builder,
-                ListSecurityPoliciesRequest,
-                ListSecurityPoliciesResponse,
-                com.oracle.bmc.datasafe.model.SecurityPolicySummary>(
+                ListSecurityPoliciesRequest.Builder, ListSecurityPoliciesRequest,
+                ListSecurityPoliciesResponse, com.oracle.bmc.datasafe.model.SecurityPolicySummary>(
                 new java.util.function.Supplier<ListSecurityPoliciesRequest.Builder>() {
                     @Override
                     public ListSecurityPoliciesRequest.Builder get() {
@@ -6678,20 +6382,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityPolicyDeployments operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicyDeployments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityPolicyDeploymentsResponse>
             listSecurityPolicyDeploymentsResponseIterator(
                     final ListSecurityPolicyDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityPolicyDeploymentsRequest.Builder,
-                ListSecurityPolicyDeploymentsRequest,
+                ListSecurityPolicyDeploymentsRequest.Builder, ListSecurityPolicyDeploymentsRequest,
                 ListSecurityPolicyDeploymentsResponse>(
                 new java.util.function.Supplier<ListSecurityPolicyDeploymentsRequest.Builder>() {
                     @Override
@@ -6735,22 +6436,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary} objects contained in responses
-     * from the listSecurityPolicyDeployments operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary} objects
+     * contained in responses from the listSecurityPolicyDeployments operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary>
             listSecurityPolicyDeploymentsRecordIterator(
                     final ListSecurityPolicyDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityPolicyDeploymentsRequest.Builder,
-                ListSecurityPolicyDeploymentsRequest,
+                ListSecurityPolicyDeploymentsRequest.Builder, ListSecurityPolicyDeploymentsRequest,
                 ListSecurityPolicyDeploymentsResponse,
                 com.oracle.bmc.datasafe.model.SecurityPolicyDeploymentSummary>(
                 new java.util.function.Supplier<ListSecurityPolicyDeploymentsRequest.Builder>() {
@@ -6806,20 +6504,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityPolicyEntryStates operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicyEntryStates operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityPolicyEntryStatesResponse>
             listSecurityPolicyEntryStatesResponseIterator(
                     final ListSecurityPolicyEntryStatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityPolicyEntryStatesRequest.Builder,
-                ListSecurityPolicyEntryStatesRequest,
+                ListSecurityPolicyEntryStatesRequest.Builder, ListSecurityPolicyEntryStatesRequest,
                 ListSecurityPolicyEntryStatesResponse>(
                 new java.util.function.Supplier<ListSecurityPolicyEntryStatesRequest.Builder>() {
                     @Override
@@ -6863,22 +6558,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary} objects contained in responses
-     * from the listSecurityPolicyEntryStates operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary} objects
+     * contained in responses from the listSecurityPolicyEntryStates operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary>
             listSecurityPolicyEntryStatesRecordIterator(
                     final ListSecurityPolicyEntryStatesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityPolicyEntryStatesRequest.Builder,
-                ListSecurityPolicyEntryStatesRequest,
+                ListSecurityPolicyEntryStatesRequest.Builder, ListSecurityPolicyEntryStatesRequest,
                 ListSecurityPolicyEntryStatesResponse,
                 com.oracle.bmc.datasafe.model.SecurityPolicyEntryStateSummary>(
                 new java.util.function.Supplier<ListSecurityPolicyEntryStatesRequest.Builder>() {
@@ -6934,19 +6626,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityPolicyReports operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityPolicyReports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityPolicyReportsResponse> listSecurityPolicyReportsResponseIterator(
             final ListSecurityPolicyReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityPolicyReportsRequest.Builder,
-                ListSecurityPolicyReportsRequest,
+                ListSecurityPolicyReportsRequest.Builder, ListSecurityPolicyReportsRequest,
                 ListSecurityPolicyReportsResponse>(
                 new java.util.function.Supplier<ListSecurityPolicyReportsRequest.Builder>() {
                     @Override
@@ -6989,22 +6678,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary} objects contained in responses
-     * from the listSecurityPolicyReports operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary} objects
+     * contained in responses from the listSecurityPolicyReports operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary>
             listSecurityPolicyReportsRecordIterator(
                     final ListSecurityPolicyReportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityPolicyReportsRequest.Builder,
-                ListSecurityPolicyReportsRequest,
+                ListSecurityPolicyReportsRequest.Builder, ListSecurityPolicyReportsRequest,
                 ListSecurityPolicyReportsResponse,
                 com.oracle.bmc.datasafe.model.SecurityPolicyReportSummary>(
                 new java.util.function.Supplier<ListSecurityPolicyReportsRequest.Builder>() {
@@ -7058,20 +6744,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveColumnAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveColumnAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveColumnAnalyticsResponse>
             listSensitiveColumnAnalyticsResponseIterator(
                     final ListSensitiveColumnAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveColumnAnalyticsRequest.Builder,
-                ListSensitiveColumnAnalyticsRequest,
+                ListSensitiveColumnAnalyticsRequest.Builder, ListSensitiveColumnAnalyticsRequest,
                 ListSensitiveColumnAnalyticsResponse>(
                 new java.util.function.Supplier<ListSensitiveColumnAnalyticsRequest.Builder>() {
                     @Override
@@ -7115,22 +6798,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects contained in responses
-     * from the listSensitiveColumnAnalytics operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects
+     * contained in responses from the listSensitiveColumnAnalytics operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>
             listSensitiveColumnAnalyticsRecordIterator(
                     final ListSensitiveColumnAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveColumnAnalyticsRequest.Builder,
-                ListSensitiveColumnAnalyticsRequest,
+                ListSensitiveColumnAnalyticsRequest.Builder, ListSensitiveColumnAnalyticsRequest,
                 ListSensitiveColumnAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.SensitiveColumnAnalyticsSummary>(
                 new java.util.function.Supplier<ListSensitiveColumnAnalyticsRequest.Builder>() {
@@ -7186,18 +6866,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveColumns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveColumnsResponse> listSensitiveColumnsResponseIterator(
             final ListSensitiveColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveColumnsRequest.Builder,
-                ListSensitiveColumnsRequest,
+                ListSensitiveColumnsRequest.Builder, ListSensitiveColumnsRequest,
                 ListSensitiveColumnsResponse>(
                 new java.util.function.Supplier<ListSensitiveColumnsRequest.Builder>() {
                     @Override
@@ -7239,22 +6917,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveColumnSummary} objects contained in responses from the
-     * listSensitiveColumns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveColumnSummary} objects
+     * contained in responses from the listSensitiveColumns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveColumnSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveColumnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveColumnSummary>
             listSensitiveColumnsRecordIterator(final ListSensitiveColumnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveColumnsRequest.Builder,
-                ListSensitiveColumnsRequest,
-                ListSensitiveColumnsResponse,
-                com.oracle.bmc.datasafe.model.SensitiveColumnSummary>(
+                ListSensitiveColumnsRequest.Builder, ListSensitiveColumnsRequest,
+                ListSensitiveColumnsResponse, com.oracle.bmc.datasafe.model.SensitiveColumnSummary>(
                 new java.util.function.Supplier<ListSensitiveColumnsRequest.Builder>() {
                     @Override
                     public ListSensitiveColumnsRequest.Builder get() {
@@ -7304,13 +6979,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveDataModelSensitiveTypes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveDataModelSensitiveTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveDataModelSensitiveTypesResponse>
             listSensitiveDataModelSensitiveTypesResponseIterator(
@@ -7363,15 +7036,13 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects contained in
-     * responses from the listSensitiveDataModelSensitiveTypes operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects
+     * contained in responses from the listSensitiveDataModelSensitiveTypes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary>
             listSensitiveDataModelSensitiveTypesRecordIterator(
@@ -7438,19 +7109,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveDataModels operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveDataModels operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveDataModelsResponse> listSensitiveDataModelsResponseIterator(
             final ListSensitiveDataModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveDataModelsRequest.Builder,
-                ListSensitiveDataModelsRequest,
+                ListSensitiveDataModelsRequest.Builder, ListSensitiveDataModelsRequest,
                 ListSensitiveDataModelsResponse>(
                 new java.util.function.Supplier<ListSensitiveDataModelsRequest.Builder>() {
                     @Override
@@ -7493,21 +7161,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveDataModelSummary} objects contained in responses from
-     * the listSensitiveDataModels operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSummary} objects
+     * contained in responses from the listSensitiveDataModels operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveDataModelSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveDataModelSummary>
             listSensitiveDataModelsRecordIterator(final ListSensitiveDataModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveDataModelsRequest.Builder,
-                ListSensitiveDataModelsRequest,
+                ListSensitiveDataModelsRequest.Builder, ListSensitiveDataModelsRequest,
                 ListSensitiveDataModelsResponse,
                 com.oracle.bmc.datasafe.model.SensitiveDataModelSummary>(
                 new java.util.function.Supplier<ListSensitiveDataModelsRequest.Builder>() {
@@ -7560,18 +7225,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveObjects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveObjects operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveObjectsResponse> listSensitiveObjectsResponseIterator(
             final ListSensitiveObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveObjectsRequest.Builder,
-                ListSensitiveObjectsRequest,
+                ListSensitiveObjectsRequest.Builder, ListSensitiveObjectsRequest,
                 ListSensitiveObjectsResponse>(
                 new java.util.function.Supplier<ListSensitiveObjectsRequest.Builder>() {
                     @Override
@@ -7613,22 +7276,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects contained in responses from the
-     * listSensitiveObjects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects
+     * contained in responses from the listSensitiveObjects operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveObjectSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveObjectSummary>
             listSensitiveObjectsRecordIterator(final ListSensitiveObjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveObjectsRequest.Builder,
-                ListSensitiveObjectsRequest,
-                ListSensitiveObjectsResponse,
-                com.oracle.bmc.datasafe.model.SensitiveObjectSummary>(
+                ListSensitiveObjectsRequest.Builder, ListSensitiveObjectsRequest,
+                ListSensitiveObjectsResponse, com.oracle.bmc.datasafe.model.SensitiveObjectSummary>(
                 new java.util.function.Supplier<ListSensitiveObjectsRequest.Builder>() {
                     @Override
                     public ListSensitiveObjectsRequest.Builder get() {
@@ -7678,18 +7338,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveSchemas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveSchemasResponse> listSensitiveSchemasResponseIterator(
             final ListSensitiveSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveSchemasRequest.Builder,
-                ListSensitiveSchemasRequest,
+                ListSensitiveSchemasRequest.Builder, ListSensitiveSchemasRequest,
                 ListSensitiveSchemasResponse>(
                 new java.util.function.Supplier<ListSensitiveSchemasRequest.Builder>() {
                     @Override
@@ -7731,22 +7389,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects contained in responses from the
-     * listSensitiveSchemas operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects
+     * contained in responses from the listSensitiveSchemas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveSchemaSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>
             listSensitiveSchemasRecordIterator(final ListSensitiveSchemasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveSchemasRequest.Builder,
-                ListSensitiveSchemasRequest,
-                ListSensitiveSchemasResponse,
-                com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>(
+                ListSensitiveSchemasRequest.Builder, ListSensitiveSchemasRequest,
+                ListSensitiveSchemasResponse, com.oracle.bmc.datasafe.model.SensitiveSchemaSummary>(
                 new java.util.function.Supplier<ListSensitiveSchemasRequest.Builder>() {
                     @Override
                     public ListSensitiveSchemasRequest.Builder get() {
@@ -7796,19 +7451,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveTypeGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveTypeGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveTypeGroupsResponse> listSensitiveTypeGroupsResponseIterator(
             final ListSensitiveTypeGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveTypeGroupsRequest.Builder,
-                ListSensitiveTypeGroupsRequest,
+                ListSensitiveTypeGroupsRequest.Builder, ListSensitiveTypeGroupsRequest,
                 ListSensitiveTypeGroupsResponse>(
                 new java.util.function.Supplier<ListSensitiveTypeGroupsRequest.Builder>() {
                     @Override
@@ -7851,21 +7503,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects contained in responses from
-     * the listSensitiveTypeGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects
+     * contained in responses from the listSensitiveTypeGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>
             listSensitiveTypeGroupsRecordIterator(final ListSensitiveTypeGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveTypeGroupsRequest.Builder,
-                ListSensitiveTypeGroupsRequest,
+                ListSensitiveTypeGroupsRequest.Builder, ListSensitiveTypeGroupsRequest,
                 ListSensitiveTypeGroupsResponse,
                 com.oracle.bmc.datasafe.model.SensitiveTypeGroupSummary>(
                 new java.util.function.Supplier<ListSensitiveTypeGroupsRequest.Builder>() {
@@ -7918,18 +7567,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveTypes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveTypes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveTypesResponse> listSensitiveTypesResponseIterator(
             final ListSensitiveTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveTypesRequest.Builder,
-                ListSensitiveTypesRequest,
+                ListSensitiveTypesRequest.Builder, ListSensitiveTypesRequest,
                 ListSensitiveTypesResponse>(
                 new java.util.function.Supplier<ListSensitiveTypesRequest.Builder>() {
                     @Override
@@ -7971,22 +7618,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveTypeSummary} objects contained in responses from the
-     * listSensitiveTypes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypeSummary} objects
+     * contained in responses from the listSensitiveTypes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveTypeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveTypeSummary>
             listSensitiveTypesRecordIterator(final ListSensitiveTypesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveTypesRequest.Builder,
-                ListSensitiveTypesRequest,
-                ListSensitiveTypesResponse,
-                com.oracle.bmc.datasafe.model.SensitiveTypeSummary>(
+                ListSensitiveTypesRequest.Builder, ListSensitiveTypesRequest,
+                ListSensitiveTypesResponse, com.oracle.bmc.datasafe.model.SensitiveTypeSummary>(
                 new java.util.function.Supplier<ListSensitiveTypesRequest.Builder>() {
                     @Override
                     public ListSensitiveTypesRequest.Builder get() {
@@ -8036,19 +7680,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSensitiveTypesExports operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveTypesExports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSensitiveTypesExportsResponse> listSensitiveTypesExportsResponseIterator(
             final ListSensitiveTypesExportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSensitiveTypesExportsRequest.Builder,
-                ListSensitiveTypesExportsRequest,
+                ListSensitiveTypesExportsRequest.Builder, ListSensitiveTypesExportsRequest,
                 ListSensitiveTypesExportsResponse>(
                 new java.util.function.Supplier<ListSensitiveTypesExportsRequest.Builder>() {
                     @Override
@@ -8091,22 +7732,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary} objects contained in responses
-     * from the listSensitiveTypesExports operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary} objects
+     * contained in responses from the listSensitiveTypesExports operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary>
             listSensitiveTypesExportsRecordIterator(
                     final ListSensitiveTypesExportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSensitiveTypesExportsRequest.Builder,
-                ListSensitiveTypesExportsRequest,
+                ListSensitiveTypesExportsRequest.Builder, ListSensitiveTypesExportsRequest,
                 ListSensitiveTypesExportsResponse,
                 com.oracle.bmc.datasafe.model.SensitiveTypesExportSummary>(
                 new java.util.function.Supplier<ListSensitiveTypesExportsRequest.Builder>() {
@@ -8160,19 +7798,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlCollectionAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlCollectionAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlCollectionAnalyticsResponse> listSqlCollectionAnalyticsResponseIterator(
             final ListSqlCollectionAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlCollectionAnalyticsRequest.Builder,
-                ListSqlCollectionAnalyticsRequest,
+                ListSqlCollectionAnalyticsRequest.Builder, ListSqlCollectionAnalyticsRequest,
                 ListSqlCollectionAnalyticsResponse>(
                 new java.util.function.Supplier<ListSqlCollectionAnalyticsRequest.Builder>() {
                     @Override
@@ -8215,22 +7850,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlCollectionAggregation} objects contained in responses from
-     * the listSqlCollectionAnalytics operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionAggregation} objects
+     * contained in responses from the listSqlCollectionAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlCollectionAggregation} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlCollectionAggregation>
             listSqlCollectionAnalyticsRecordIterator(
                     final ListSqlCollectionAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlCollectionAnalyticsRequest.Builder,
-                ListSqlCollectionAnalyticsRequest,
+                ListSqlCollectionAnalyticsRequest.Builder, ListSqlCollectionAnalyticsRequest,
                 ListSqlCollectionAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.SqlCollectionAggregation>(
                 new java.util.function.Supplier<ListSqlCollectionAnalyticsRequest.Builder>() {
@@ -8283,20 +7915,17 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlCollectionLogInsights operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlCollectionLogInsights operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlCollectionLogInsightsResponse>
             listSqlCollectionLogInsightsResponseIterator(
                     final ListSqlCollectionLogInsightsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlCollectionLogInsightsRequest.Builder,
-                ListSqlCollectionLogInsightsRequest,
+                ListSqlCollectionLogInsightsRequest.Builder, ListSqlCollectionLogInsightsRequest,
                 ListSqlCollectionLogInsightsResponse>(
                 new java.util.function.Supplier<ListSqlCollectionLogInsightsRequest.Builder>() {
                     @Override
@@ -8340,22 +7969,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation} objects contained in responses
-     * from the listSqlCollectionLogInsights operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation} objects
+     * contained in responses from the listSqlCollectionLogInsights operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation>
             listSqlCollectionLogInsightsRecordIterator(
                     final ListSqlCollectionLogInsightsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlCollectionLogInsightsRequest.Builder,
-                ListSqlCollectionLogInsightsRequest,
+                ListSqlCollectionLogInsightsRequest.Builder, ListSqlCollectionLogInsightsRequest,
                 ListSqlCollectionLogInsightsResponse,
                 com.oracle.bmc.datasafe.model.SqlCollectionLogAggregation>(
                 new java.util.function.Supplier<ListSqlCollectionLogInsightsRequest.Builder>() {
@@ -8410,18 +8036,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlCollections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlCollections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlCollectionsResponse> listSqlCollectionsResponseIterator(
             final ListSqlCollectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlCollectionsRequest.Builder,
-                ListSqlCollectionsRequest,
+                ListSqlCollectionsRequest.Builder, ListSqlCollectionsRequest,
                 ListSqlCollectionsResponse>(
                 new java.util.function.Supplier<ListSqlCollectionsRequest.Builder>() {
                     @Override
@@ -8463,22 +8087,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlCollectionSummary} objects contained in responses from the
-     * listSqlCollections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionSummary} objects
+     * contained in responses from the listSqlCollections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlCollectionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlCollectionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlCollectionSummary>
             listSqlCollectionsRecordIterator(final ListSqlCollectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlCollectionsRequest.Builder,
-                ListSqlCollectionsRequest,
-                ListSqlCollectionsResponse,
-                com.oracle.bmc.datasafe.model.SqlCollectionSummary>(
+                ListSqlCollectionsRequest.Builder, ListSqlCollectionsRequest,
+                ListSqlCollectionsResponse, com.oracle.bmc.datasafe.model.SqlCollectionSummary>(
                 new java.util.function.Supplier<ListSqlCollectionsRequest.Builder>() {
                     @Override
                     public ListSqlCollectionsRequest.Builder get() {
@@ -8528,13 +8149,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallAllowedSqlAnalytics operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallAllowedSqlAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallAllowedSqlAnalyticsResponse>
             listSqlFirewallAllowedSqlAnalyticsResponseIterator(
@@ -8587,15 +8206,13 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAggregation} objects contained in
-     * responses from the listSqlFirewallAllowedSqlAnalytics operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAggregation} objects
+     * contained in responses from the listSqlFirewallAllowedSqlAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAggregation} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlAggregation>
             listSqlFirewallAllowedSqlAnalyticsRecordIterator(
@@ -8660,19 +8277,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallAllowedSqls operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallAllowedSqls operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallAllowedSqlsResponse> listSqlFirewallAllowedSqlsResponseIterator(
             final ListSqlFirewallAllowedSqlsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlFirewallAllowedSqlsRequest.Builder,
-                ListSqlFirewallAllowedSqlsRequest,
+                ListSqlFirewallAllowedSqlsRequest.Builder, ListSqlFirewallAllowedSqlsRequest,
                 ListSqlFirewallAllowedSqlsResponse>(
                 new java.util.function.Supplier<ListSqlFirewallAllowedSqlsRequest.Builder>() {
                     @Override
@@ -8715,22 +8329,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary} objects contained in responses
-     * from the listSqlFirewallAllowedSqls operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary} objects
+     * contained in responses from the listSqlFirewallAllowedSqls operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary>
             listSqlFirewallAllowedSqlsRecordIterator(
                     final ListSqlFirewallAllowedSqlsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlFirewallAllowedSqlsRequest.Builder,
-                ListSqlFirewallAllowedSqlsRequest,
+                ListSqlFirewallAllowedSqlsRequest.Builder, ListSqlFirewallAllowedSqlsRequest,
                 ListSqlFirewallAllowedSqlsResponse,
                 com.oracle.bmc.datasafe.model.SqlFirewallAllowedSqlSummary>(
                 new java.util.function.Supplier<ListSqlFirewallAllowedSqlsRequest.Builder>() {
@@ -8785,19 +8396,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallPoliciesResponse> listSqlFirewallPoliciesResponseIterator(
             final ListSqlFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlFirewallPoliciesRequest.Builder,
-                ListSqlFirewallPoliciesRequest,
+                ListSqlFirewallPoliciesRequest.Builder, ListSqlFirewallPoliciesRequest,
                 ListSqlFirewallPoliciesResponse>(
                 new java.util.function.Supplier<ListSqlFirewallPoliciesRequest.Builder>() {
                     @Override
@@ -8840,21 +8448,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary} objects contained in responses from
-     * the listSqlFirewallPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary} objects
+     * contained in responses from the listSqlFirewallPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary>
             listSqlFirewallPoliciesRecordIterator(final ListSqlFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlFirewallPoliciesRequest.Builder,
-                ListSqlFirewallPoliciesRequest,
+                ListSqlFirewallPoliciesRequest.Builder, ListSqlFirewallPoliciesRequest,
                 ListSqlFirewallPoliciesResponse,
                 com.oracle.bmc.datasafe.model.SqlFirewallPolicySummary>(
                 new java.util.function.Supplier<ListSqlFirewallPoliciesRequest.Builder>() {
@@ -8907,21 +8512,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallPolicyAnalytics operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallPolicyAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallPolicyAnalyticsResponse>
             listSqlFirewallPolicyAnalyticsResponseIterator(
                     final ListSqlFirewallPolicyAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSqlFirewallPolicyAnalyticsRequest.Builder,
-                ListSqlFirewallPolicyAnalyticsRequest,
-                ListSqlFirewallPolicyAnalyticsResponse>(
+                ListSqlFirewallPolicyAnalyticsRequest, ListSqlFirewallPolicyAnalyticsResponse>(
                 new java.util.function.Supplier<ListSqlFirewallPolicyAnalyticsRequest.Builder>() {
                     @Override
                     public ListSqlFirewallPolicyAnalyticsRequest.Builder get() {
@@ -8964,23 +8566,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation} objects contained in responses
-     * from the listSqlFirewallPolicyAnalytics operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation} objects
+     * contained in responses from the listSqlFirewallPolicyAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation>
             listSqlFirewallPolicyAnalyticsRecordIterator(
                     final ListSqlFirewallPolicyAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSqlFirewallPolicyAnalyticsRequest.Builder,
-                ListSqlFirewallPolicyAnalyticsRequest,
-                ListSqlFirewallPolicyAnalyticsResponse,
+                ListSqlFirewallPolicyAnalyticsRequest, ListSqlFirewallPolicyAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.SqlFirewallPolicyAggregation>(
                 new java.util.function.Supplier<ListSqlFirewallPolicyAnalyticsRequest.Builder>() {
                     @Override
@@ -9035,13 +8634,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallViolationAnalytics operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallViolationAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallViolationAnalyticsResponse>
             listSqlFirewallViolationAnalyticsResponseIterator(
@@ -9094,23 +8691,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation} objects contained in responses
-     * from the listSqlFirewallViolationAnalytics operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation} objects
+     * contained in responses from the listSqlFirewallViolationAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation>
             listSqlFirewallViolationAnalyticsRecordIterator(
                     final ListSqlFirewallViolationAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSqlFirewallViolationAnalyticsRequest.Builder,
-                ListSqlFirewallViolationAnalyticsRequest,
-                ListSqlFirewallViolationAnalyticsResponse,
+                ListSqlFirewallViolationAnalyticsRequest, ListSqlFirewallViolationAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.SqlFirewallViolationAggregation>(
                 new java.util.function.Supplier<
                         ListSqlFirewallViolationAnalyticsRequest.Builder>() {
@@ -9167,19 +8761,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSqlFirewallViolations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSqlFirewallViolations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSqlFirewallViolationsResponse> listSqlFirewallViolationsResponseIterator(
             final ListSqlFirewallViolationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSqlFirewallViolationsRequest.Builder,
-                ListSqlFirewallViolationsRequest,
+                ListSqlFirewallViolationsRequest.Builder, ListSqlFirewallViolationsRequest,
                 ListSqlFirewallViolationsResponse>(
                 new java.util.function.Supplier<ListSqlFirewallViolationsRequest.Builder>() {
                     @Override
@@ -9222,22 +8813,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary} objects contained in responses
-     * from the listSqlFirewallViolations operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary} objects
+     * contained in responses from the listSqlFirewallViolations operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary>
             listSqlFirewallViolationsRecordIterator(
                     final ListSqlFirewallViolationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSqlFirewallViolationsRequest.Builder,
-                ListSqlFirewallViolationsRequest,
+                ListSqlFirewallViolationsRequest.Builder, ListSqlFirewallViolationsRequest,
                 ListSqlFirewallViolationsResponse,
                 com.oracle.bmc.datasafe.model.SqlFirewallViolationSummary>(
                 new java.util.function.Supplier<ListSqlFirewallViolationsRequest.Builder>() {
@@ -9291,12 +8879,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTables
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTablesResponse> listTablesResponseIterator(
             final ListTablesRequest request) {
@@ -9341,21 +8928,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.TableSummary} objects contained in responses from the
-     * listTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.TableSummary} objects
+     * contained in responses from the listTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.TableSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.TableSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.TableSummary> listTablesRecordIterator(
             final ListTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTablesRequest.Builder,
-                ListTablesRequest,
-                ListTablesResponse,
+                ListTablesRequest.Builder, ListTablesRequest, ListTablesResponse,
                 com.oracle.bmc.datasafe.model.TableSummary>(
                 new java.util.function.Supplier<ListTablesRequest.Builder>() {
                     @Override
@@ -9405,13 +8989,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTargetAlertPolicyAssociations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTargetAlertPolicyAssociations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTargetAlertPolicyAssociationsResponse>
             listTargetAlertPolicyAssociationsResponseIterator(
@@ -9464,23 +9046,20 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary} objects contained in
-     * responses from the listTargetAlertPolicyAssociations operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary} objects
+     * contained in responses from the listTargetAlertPolicyAssociations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary>
             listTargetAlertPolicyAssociationsRecordIterator(
                     final ListTargetAlertPolicyAssociationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListTargetAlertPolicyAssociationsRequest.Builder,
-                ListTargetAlertPolicyAssociationsRequest,
-                ListTargetAlertPolicyAssociationsResponse,
+                ListTargetAlertPolicyAssociationsRequest, ListTargetAlertPolicyAssociationsResponse,
                 com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociationSummary>(
                 new java.util.function.Supplier<
                         ListTargetAlertPolicyAssociationsRequest.Builder>() {
@@ -9539,18 +9118,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTargetDatabases operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTargetDatabases operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTargetDatabasesResponse> listTargetDatabasesResponseIterator(
             final ListTargetDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTargetDatabasesRequest.Builder,
-                ListTargetDatabasesRequest,
+                ListTargetDatabasesRequest.Builder, ListTargetDatabasesRequest,
                 ListTargetDatabasesResponse>(
                 new java.util.function.Supplier<ListTargetDatabasesRequest.Builder>() {
                     @Override
@@ -9592,22 +9169,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.TargetDatabaseSummary} objects contained in responses from the
-     * listTargetDatabases operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.TargetDatabaseSummary} objects
+     * contained in responses from the listTargetDatabases operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.TargetDatabaseSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.TargetDatabaseSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.TargetDatabaseSummary>
             listTargetDatabasesRecordIterator(final ListTargetDatabasesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTargetDatabasesRequest.Builder,
-                ListTargetDatabasesRequest,
-                ListTargetDatabasesResponse,
-                com.oracle.bmc.datasafe.model.TargetDatabaseSummary>(
+                ListTargetDatabasesRequest.Builder, ListTargetDatabasesRequest,
+                ListTargetDatabasesResponse, com.oracle.bmc.datasafe.model.TargetDatabaseSummary>(
                 new java.util.function.Supplier<ListTargetDatabasesRequest.Builder>() {
                     @Override
                     public ListTargetDatabasesRequest.Builder get() {
@@ -9657,19 +9231,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listUserAccessAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listUserAccessAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUserAccessAnalyticsResponse> listUserAccessAnalyticsResponseIterator(
             final ListUserAccessAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListUserAccessAnalyticsRequest.Builder,
-                ListUserAccessAnalyticsRequest,
+                ListUserAccessAnalyticsRequest.Builder, ListUserAccessAnalyticsRequest,
                 ListUserAccessAnalyticsResponse>(
                 new java.util.function.Supplier<ListUserAccessAnalyticsRequest.Builder>() {
                     @Override
@@ -9712,21 +9283,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary} objects contained in responses from
-     * the listUserAccessAnalytics operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary} objects
+     * contained in responses from the listUserAccessAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary>
             listUserAccessAnalyticsRecordIterator(final ListUserAccessAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUserAccessAnalyticsRequest.Builder,
-                ListUserAccessAnalyticsRequest,
+                ListUserAccessAnalyticsRequest.Builder, ListUserAccessAnalyticsRequest,
                 ListUserAccessAnalyticsResponse,
                 com.oracle.bmc.datasafe.model.UserAccessAnalyticsSummary>(
                 new java.util.function.Supplier<ListUserAccessAnalyticsRequest.Builder>() {
@@ -9780,18 +9348,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listUserAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUserAnalytics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUserAnalyticsResponse> listUserAnalyticsResponseIterator(
             final ListUserAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListUserAnalyticsRequest.Builder,
-                ListUserAnalyticsRequest,
+                ListUserAnalyticsRequest.Builder, ListUserAnalyticsRequest,
                 ListUserAnalyticsResponse>(
                 new java.util.function.Supplier<ListUserAnalyticsRequest.Builder>() {
                     @Override
@@ -9833,22 +9399,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.UserAggregation} objects contained in responses from the
-     * listUserAnalytics operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.UserAggregation} objects
+     * contained in responses from the listUserAnalytics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.UserAggregation} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.UserAggregation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.UserAggregation> listUserAnalyticsRecordIterator(
             final ListUserAnalyticsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUserAnalyticsRequest.Builder,
-                ListUserAnalyticsRequest,
-                ListUserAnalyticsResponse,
-                com.oracle.bmc.datasafe.model.UserAggregation>(
+                ListUserAnalyticsRequest.Builder, ListUserAnalyticsRequest,
+                ListUserAnalyticsResponse, com.oracle.bmc.datasafe.model.UserAggregation>(
                 new java.util.function.Supplier<ListUserAnalyticsRequest.Builder>() {
                     @Override
                     public ListUserAnalyticsRequest.Builder get() {
@@ -9898,18 +9461,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listUserAssessments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUserAssessments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUserAssessmentsResponse> listUserAssessmentsResponseIterator(
             final ListUserAssessmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListUserAssessmentsRequest.Builder,
-                ListUserAssessmentsRequest,
+                ListUserAssessmentsRequest.Builder, ListUserAssessmentsRequest,
                 ListUserAssessmentsResponse>(
                 new java.util.function.Supplier<ListUserAssessmentsRequest.Builder>() {
                     @Override
@@ -9951,22 +9512,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.UserAssessmentSummary} objects contained in responses from the
-     * listUserAssessments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.UserAssessmentSummary} objects
+     * contained in responses from the listUserAssessments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.UserAssessmentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.UserAssessmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.UserAssessmentSummary>
             listUserAssessmentsRecordIterator(final ListUserAssessmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUserAssessmentsRequest.Builder,
-                ListUserAssessmentsRequest,
-                ListUserAssessmentsResponse,
-                com.oracle.bmc.datasafe.model.UserAssessmentSummary>(
+                ListUserAssessmentsRequest.Builder, ListUserAssessmentsRequest,
+                ListUserAssessmentsResponse, com.oracle.bmc.datasafe.model.UserAssessmentSummary>(
                 new java.util.function.Supplier<ListUserAssessmentsRequest.Builder>() {
                     @Override
                     public ListUserAssessmentsRequest.Builder get() {
@@ -10016,12 +9574,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listUsers
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUsers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUsersResponse> listUsersResponseIterator(final ListUsersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -10065,21 +9622,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.UserSummary} objects contained in responses from the listUsers
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.UserSummary} objects
+     * contained in responses from the listUsers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.UserSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.UserSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.UserSummary> listUsersRecordIterator(
             final ListUsersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListUsersRequest.Builder,
-                ListUsersRequest,
-                ListUsersResponse,
+                ListUsersRequest.Builder, ListUsersRequest, ListUsersResponse,
                 com.oracle.bmc.datasafe.model.UserSummary>(
                 new java.util.function.Supplier<ListUsersRequest.Builder>() {
                     @Override
@@ -10129,19 +9683,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -10184,23 +9735,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.WorkRequestError} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.datasafe.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.datasafe.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -10251,18 +9798,16 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -10304,22 +9849,19 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.datasafe.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.datasafe.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -10369,12 +9911,11 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -10420,21 +9961,18 @@ public class DataSafePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datasafe.model.WorkRequestSummary} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datasafe.model.WorkRequestSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datasafe.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.datasafe.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

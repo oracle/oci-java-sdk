@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.objectstorage.model;
 
-/** Archival state of an object which is in Archive tier. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum ArchivalState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Archival state of an object which is in Archive tier.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum ArchivalState {
     Archived("Archived"),
     Restoring("Restoring"),
     Restored("Restored"),

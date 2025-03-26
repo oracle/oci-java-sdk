@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Describes the input parameters to launch a new Autonomous Exadata Infrastructure. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Describes the input parameters to launch a new Autonomous Exadata Infrastructure.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LaunchAutonomousExadataInfrastructureDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LaunchAutonomousExadataInfrastructureDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LaunchAutonomousExadataInfrastructureDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -65,178 +65,158 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment the Autonomous Exadata Infrastructure belongs in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment the Autonomous Exadata Infrastructure belongs in.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be
-         * unique.
-         */
+         * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be
-         * unique.
-         *
+         * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The availability domain where the Autonomous Exadata Infrastructure is located. */
+        /**
+         * The availability domain where the Autonomous Exadata Infrastructure is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain where the Autonomous Exadata Infrastructure is located.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet the Autonomous Exadata Infrastructure is associated with.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+         * <p>
+         **Subnet Restrictions:**
+         * - For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
          *
-         * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet
-         * that overlaps with 192.168.128.0/20
-         *
-         * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
-         * instance. Specifying an overlapping subnet will cause the private interconnect to
-         * malfunction. This restriction applies to both the client subnet and backup subnet.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet the Autonomous Exadata Infrastructure is associated with.
-         *
-         * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet
-         * that overlaps with 192.168.128.0/20
-         *
-         * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
-         * instance. Specifying an overlapping subnet will cause the private interconnect to
-         * malfunction. This restriction applies to both the client subnet and backup subnet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+         * <p>
+         **Subnet Restrictions:**
+         * - For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+         * <p>
+         * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+         * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+         * This restriction applies to both the client subnet and backup subnet.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network security groups (NSGs) to which this resource belongs. Setting this to an empty
-         * list removes all resources from all NSGs. For more information about NSGs, see [Security
-         * Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds
-         * restrictions:** - A network security group (NSG) is optional for Autonomous Databases
-         * with private access. The nsgIds list can be empty.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+         * **NsgIds restrictions:**
+         * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources
-         * allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To
-         * get a list of shapes, use the ListDbSystemShapes operation.
-         */
+         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources
-         * allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To
-         * get a list of shapes, use the ListDbSystemShapes operation.
-         *
+         * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided
-         * Internet and VCN Resolver is enabled for the specified subnet, the domain name for the
-         * subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens
-         * (-) are not permitted.
-         */
+         * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN
+         * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+         * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
         /**
-         * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided
-         * Internet and VCN Resolver is enabled for the specified subnet, the domain name for the
-         * subnet is used (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens
-         * (-) are not permitted.
+         * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN
+         * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+         * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
          *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * The Oracle license model that applies to all the databases in the Autonomous Exadata
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-         */
+         * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private LicenseModel licenseModel;
 
         /**
-         * The Oracle license model that applies to all the databases in the Autonomous Exadata
-         * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+         * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
          *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
@@ -252,46 +232,44 @@ public final class LaunchAutonomousExadataInfrastructureDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -361,7 +339,9 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -371,153 +351,136 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment the Autonomous Exadata Infrastructure belongs in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment the Autonomous Exadata Infrastructure belongs in.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the Autonomous Exadata Infrastructure belongs in.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be
-     * unique.
-     */
+     * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be
-     * unique.
-     *
+     * The user-friendly name for the Autonomous Exadata Infrastructure. It does not have to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The availability domain where the Autonomous Exadata Infrastructure is located. */
+    /**
+     * The availability domain where the Autonomous Exadata Infrastructure is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain where the Autonomous Exadata Infrastructure is located.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet the Autonomous Exadata Infrastructure is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and backup subnet.
      *
-     * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet that
-     * overlaps with 192.168.128.0/20
-     *
-     * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
-     * instance. Specifying an overlapping subnet will cause the private interconnect to
-     * malfunction. This restriction applies to both the client subnet and backup subnet.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet the Autonomous Exadata Infrastructure is associated with.
-     *
-     * <p>*Subnet Restrictions:** - For Autonomous Exadata Infrastructures, do not use a subnet that
-     * overlaps with 192.168.128.0/20
-     *
-     * <p>These subnets are used by the Oracle Clusterware private interconnect on the database
-     * instance. Specifying an overlapping subnet will cause the private interconnect to
-     * malfunction. This restriction applies to both the client subnet and backup subnet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the Autonomous Exadata Infrastructure is associated with.
+     * <p>
+     **Subnet Restrictions:**
+     * - For Autonomous Exadata Infrastructures, do not use a subnet that overlaps with 192.168.128.0/20
+     * <p>
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance.
+     * Specifying an overlapping subnet will cause the private interconnect to malfunction.
+     * This restriction applies to both the client subnet and backup subnet.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the network security groups (NSGs) to which this resource belongs. Setting this to an
-     * empty list removes all resources from all NSGs. For more information about NSGs, see
-     * [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
-     * **NsgIds restrictions:** - A network security group (NSG) is optional for Autonomous
-     * Databases with private access. The nsgIds list can be empty.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
+     * **NsgIds restrictions:**
+     * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated
-     * to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of
-     * shapes, use the ListDbSystemShapes operation.
-     */
+     * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated
-     * to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of
-     * shapes, use the ListDbSystemShapes operation.
-     *
+     * The shape of the Autonomous Exadata Infrastructure. The shape determines resources allocated to the Autonomous Exadata Infrastructure (CPU cores, memory and storage). To get a list of shapes, use the ListDbSystemShapes operation.
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
     /**
-     * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet
-     * and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used
-     * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not
-     * permitted.
-     */
+     * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN
+     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+     * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
     /**
-     * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet
-     * and VCN Resolver is enabled for the specified subnet, the domain name for the subnet is used
-     * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not
-     * permitted.
+     * A domain name used for the Autonomous Exadata Infrastructure. If the Oracle-provided Internet and VCN
+     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+     * (don't provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
      *
      * @return the value
-     */
+     **/
     public String getDomain() {
         return domain;
     }
 
     /**
-     * The Oracle license model that applies to all the databases in the Autonomous Exadata
-     * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-     */
-    public enum LicenseModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
+    public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -550,18 +513,17 @@ public final class LaunchAutonomousExadataInfrastructureDetails
         }
     };
     /**
-     * The Oracle license model that applies to all the databases in the Autonomous Exadata
-     * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
-     */
+     * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final LicenseModel licenseModel;
 
     /**
-     * The Oracle license model that applies to all the databases in the Autonomous Exadata
-     * Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+     * The Oracle license model that applies to all the databases in the Autonomous Exadata Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
      *
      * @return the value
-     */
+     **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
     }
@@ -574,43 +536,41 @@ public final class LaunchAutonomousExadataInfrastructureDetails
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -622,7 +582,6 @@ public final class LaunchAutonomousExadataInfrastructureDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

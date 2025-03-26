@@ -5,24 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary for all the statistic findings of an object in a SQL Tuning Advisor task. Includes the
- * object's hash, name, type, schema, problem type and the object reference count. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary for all the statistic findings of an object in a SQL Tuning Advisor task. Includes the object's hash, name, type, schema, problem type and the object reference count.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectHashValue",
@@ -50,95 +48,97 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Numerical representation of the object. */
+        /**
+         * Numerical representation of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
         private Long objectHashValue;
 
         /**
          * Numerical representation of the object.
-         *
          * @param objectHashValue the value to set
          * @return this builder
-         */
+         **/
         public Builder objectHashValue(Long objectHashValue) {
             this.objectHashValue = objectHashValue;
             this.__explicitlySet__.add("objectHashValue");
             return this;
         }
-        /** Name of the object. */
+        /**
+         * Name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * Name of the object.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** Type of the object. */
+        /**
+         * Type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
          * Type of the object.
-         *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(String objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-        /** Schema of the object. */
+        /**
+         * Schema of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
         /**
          * Schema of the object.
-         *
          * @param schema the value to set
          * @return this builder
-         */
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
             return this;
         }
-        /** Type of statistics problem related to the object. */
+        /**
+         * Type of statistics problem related to the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
          * Type of statistics problem related to the object.
-         *
          * @param problemType the value to set
          * @return this builder
-         */
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
             return this;
         }
         /**
-         * The number of the times the object is referenced within the SQL Tuning advisor task
-         * findings.
-         */
+         * The number of the times the object is referenced within the SQL Tuning advisor task findings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
         private Integer referenceCount;
 
         /**
-         * The number of the times the object is referenced within the SQL Tuning advisor task
-         * findings.
-         *
+         * The number of the times the object is referenced within the SQL Tuning advisor task findings.
          * @param referenceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder referenceCount(Integer referenceCount) {
             this.referenceCount = referenceCount;
             this.__explicitlySet__.add("referenceCount");
@@ -187,7 +187,9 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,66 +198,72 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
         return new Builder().copy(this);
     }
 
-    /** Numerical representation of the object. */
+    /**
+     * Numerical representation of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectHashValue")
     private final Long objectHashValue;
 
     /**
      * Numerical representation of the object.
-     *
      * @return the value
-     */
+     **/
     public Long getObjectHashValue() {
         return objectHashValue;
     }
 
-    /** Name of the object. */
+    /**
+     * Name of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * Name of the object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** Type of the object. */
+    /**
+     * Type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
      * Type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectType() {
         return objectType;
     }
 
-    /** Schema of the object. */
+    /**
+     * Schema of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
     /**
      * Schema of the object.
-     *
      * @return the value
-     */
+     **/
     public String getSchema() {
         return schema;
     }
 
-    /** Type of statistics problem related to the object. */
-    public enum ProblemType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of statistics problem related to the object.
+     **/
+    public enum ProblemType {
         Missing("MISSING"),
         Stale("STALE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -294,30 +302,30 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
             return UnknownEnumValue;
         }
     };
-    /** Type of statistics problem related to the object. */
+    /**
+     * Type of statistics problem related to the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
      * Type of statistics problem related to the object.
-     *
      * @return the value
-     */
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }
 
     /**
      * The number of the times the object is referenced within the SQL Tuning advisor task findings.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referenceCount")
     private final Integer referenceCount;
 
     /**
      * The number of the times the object is referenced within the SQL Tuning advisor task findings.
-     *
      * @return the value
-     */
+     **/
     public Integer getReferenceCount() {
         return referenceCount;
     }
@@ -329,7 +337,6 @@ public final class SqlTuningAdvisorTaskSummaryReportObjectStatFindingSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

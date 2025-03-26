@@ -26,13 +26,14 @@ public class EncryptionStream extends OciCryptoInputStream {
     }
 
     /**
-     * Reads up to len bytes of data from the input stream into an array of bytes. An attempt is
-     * made to read as many as len bytes, but a smaller number may be read. The number of bytes
-     * actually read is returned as an integer.
+     * Reads up to len bytes of data from the input stream into
+     * an array of bytes.  An attempt is made to read as many as
+     * len bytes, but a smaller number may be read.
+     * The number of bytes actually read is returned as an integer.
      *
      * @param b The buffer into which the data is read.
-     * @return The total number of bytes read into the buffer, or -1 if there is no more data
-     *     because the end of the stream has been reached.
+     * @return The total number of bytes read into the buffer, or -1
+     * if there is no more data because the end of the stream has been reached.
      */
     public int read(byte[] b) throws IOException {
         // Read the header first unencrypted
@@ -46,7 +47,6 @@ public class EncryptionStream extends OciCryptoInputStream {
 
     /**
      * Close the CipherInputStream and InputStream
-     *
      * @throws IOException
      */
     public void close() throws IOException {

@@ -5,17 +5,20 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Common lifecycle states for resources in data catalog: CREATING - The resource is being created
- * and may not be usable until the entire metadata is defined. UPDATING - The resource is being
- * updated and may not be usable until all changes are commited. DELETING - The resource is being
- * deleted and might require deep cleanup of children. ACTIVE - The resource is valid and available
- * for access. INACTIVE - The resource might be incomplete in its definition or might have been made
- * unavailable for administrative reasons. DELETED - The resource has been deleted and isn't
- * available. FAILED - The resource is in a failed state due to validation or other errors. MOVING -
- * The resource is being moved to another compartment (action changeCompartment)
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+ * Common lifecycle states for resources in data catalog:
+ * CREATING - The resource is being created and may not be usable until the entire metadata is defined.
+ * UPDATING - The resource is being updated and may not be usable until all changes are commited.
+ * DELETING - The resource is being deleted and might require deep cleanup of children.
+ * ACTIVE   - The resource is valid and available for access.
+ * INACTIVE - The resource might be incomplete in its definition or might have been made unavailable for
+ *            administrative reasons.
+ * DELETED  - The resource has been deleted and isn't available.
+ * FAILED   - The resource is in a failed state due to validation or other errors.
+ * MOVING   - The resource is being moved to another compartment (action changeCompartment)
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum LifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

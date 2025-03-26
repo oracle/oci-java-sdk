@@ -6,43 +6,56 @@ package com.oracle.bmc.ailanguage.requests;
 
 import com.oracle.bmc.ailanguage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * BatchDetectLanguageSentimentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/BatchDetectLanguageSentimentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use BatchDetectLanguageSentimentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class BatchDetectLanguageSentimentsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails> {
 
-    /** The details to make sentiment detect call. */
+    /**
+     * The details to make sentiment detect call.
+     *
+     */
     private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
             batchDetectLanguageSentimentsDetails;
 
-    /** The details to make sentiment detect call. */
+    /**
+     * The details to make sentiment detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
             getBatchDetectLanguageSentimentsDetails() {
         return batchDetectLanguageSentimentsDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Set this parameter for sentence and aspect level sentiment analysis. Allowed values are: -
-     * ASPECT - SENTENCE
+     * Set this parameter for sentence and aspect level sentiment analysis.
+     * Allowed values are:
+     *    - ASPECT
+     *    - SENTENCE
+     *
      */
     private java.util.List<Level> level;
 
     /**
-     * Set this parameter for sentence and aspect level sentiment analysis. Allowed values are: -
-     * ASPECT - SENTENCE
-     */
-    public enum Level implements com.oracle.bmc.http.internal.BmcEnum {
+     * Set this parameter for sentence and aspect level sentiment analysis.
+     * Allowed values are:
+     * - ASPECT
+     * - SENTENCE
+     *
+     **/
+    public enum Level {
         Aspect("ASPECT"),
         Sentence("SENTENCE"),
         ;
@@ -76,8 +89,11 @@ public class BatchDetectLanguageSentimentsRequest
     };
 
     /**
-     * Set this parameter for sentence and aspect level sentiment analysis. Allowed values are: -
-     * ASPECT - SENTENCE
+     * Set this parameter for sentence and aspect level sentiment analysis.
+     * Allowed values are:
+     *    - ASPECT
+     *    - SENTENCE
+     *
      */
     public java.util.List<Level> getLevel() {
         return level;
@@ -85,7 +101,6 @@ public class BatchDetectLanguageSentimentsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -98,10 +113,14 @@ public class BatchDetectLanguageSentimentsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     BatchDetectLanguageSentimentsRequest,
                     com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details to make sentiment detect call. */
+        /**
+         * The details to make sentiment detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.BatchDetectLanguageSentimentsDetails
                 batchDetectLanguageSentimentsDetails = null;
 
@@ -118,12 +137,13 @@ public class BatchDetectLanguageSentimentsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -133,14 +153,19 @@ public class BatchDetectLanguageSentimentsRequest
         }
 
         /**
-         * Set this parameter for sentence and aspect level sentiment analysis. Allowed values are:
-         * - ASPECT - SENTENCE
+         * Set this parameter for sentence and aspect level sentiment analysis.
+         * Allowed values are:
+         *    - ASPECT
+         *    - SENTENCE
+         *
          */
         private java.util.List<Level> level = null;
 
         /**
-         * Set this parameter for sentence and aspect level sentiment analysis. Allowed values are:
-         * - ASPECT - SENTENCE
+         * Set this parameter for sentence and aspect level sentiment analysis.
+         * Allowed values are:
+         *    - ASPECT
+         *    - SENTENCE
          *
          * @param level the value to set
          * @return this builder instance
@@ -152,7 +177,9 @@ public class BatchDetectLanguageSentimentsRequest
 
         /**
          * Singular setter. Set this parameter for sentence and aspect level sentiment analysis.
-         * Allowed values are: - ASPECT - SENTENCE
+         * Allowed values are:
+         *    - ASPECT
+         *    - SENTENCE
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -163,19 +190,18 @@ public class BatchDetectLanguageSentimentsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -187,7 +213,6 @@ public class BatchDetectLanguageSentimentsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(BatchDetectLanguageSentimentsRequest o) {
@@ -202,11 +227,10 @@ public class BatchDetectLanguageSentimentsRequest
         /**
          * Build the instance of BatchDetectLanguageSentimentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of BatchDetectLanguageSentimentsRequest
          */
@@ -219,7 +243,6 @@ public class BatchDetectLanguageSentimentsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -233,8 +256,7 @@ public class BatchDetectLanguageSentimentsRequest
         /**
          * Build the instance of BatchDetectLanguageSentimentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of BatchDetectLanguageSentimentsRequest
@@ -246,14 +268,12 @@ public class BatchDetectLanguageSentimentsRequest
             request.opcRequestId = opcRequestId;
             request.level = level;
             return request;
-            // new BatchDetectLanguageSentimentsRequest(batchDetectLanguageSentimentsDetails,
-            // opcRequestId, level);
+            // new BatchDetectLanguageSentimentsRequest(batchDetectLanguageSentimentsDetails, opcRequestId, level);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -265,7 +285,6 @@ public class BatchDetectLanguageSentimentsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,80 +6,95 @@ package com.oracle.bmc.ospgateway.requests;
 
 import com.oracle.bmc.ospgateway.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/AuthorizeSubscriptionPaymentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * AuthorizeSubscriptionPaymentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/AuthorizeSubscriptionPaymentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AuthorizeSubscriptionPaymentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class AuthorizeSubscriptionPaymentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails> {
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     private String ospHomeRegion;
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
-    /** Subscription id(OCID). */
+    /**
+     * Subscription id(OCID).
+     */
     private String subscriptionId;
 
-    /** Subscription id(OCID). */
+    /**
+     * Subscription id(OCID).
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** subscription payment request. */
+    /**
+     * subscription payment request.
+     */
     private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
             authorizeSubscriptionPaymentDetails;
 
-    /** subscription payment request. */
+    /**
+     * subscription payment request.
+     */
     public com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
             getAuthorizeSubscriptionPaymentDetails() {
         return authorizeSubscriptionPaymentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * For requests that are not idempotent (creates being the main place of interest), THE APIs
-     * should take a header called opc-retry-token to identify the customer desire across requests,
-     * to introduce some level of idempotency.
+     * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+     * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * For requests that are not idempotent (creates being the main place of interest), THE APIs
-     * should take a header called opc-retry-token to identify the customer desire across requests,
-     * to introduce some level of idempotency.
+     * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+     * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -87,12 +102,14 @@ public class AuthorizeSubscriptionPaymentRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -100,7 +117,6 @@ public class AuthorizeSubscriptionPaymentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -113,10 +129,14 @@ public class AuthorizeSubscriptionPaymentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AuthorizeSubscriptionPaymentRequest,
                     com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The home region's public name of the logged in user. */
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
@@ -130,12 +150,13 @@ public class AuthorizeSubscriptionPaymentRequest
             return this;
         }
 
-        /** Subscription id(OCID). */
+        /**
+         * Subscription id(OCID).
+         */
         private String subscriptionId = null;
 
         /**
          * Subscription id(OCID).
-         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -145,14 +166,13 @@ public class AuthorizeSubscriptionPaymentRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -162,13 +182,14 @@ public class AuthorizeSubscriptionPaymentRequest
             return this;
         }
 
-        /** subscription payment request. */
+        /**
+         * subscription payment request.
+         */
         private com.oracle.bmc.ospgateway.model.AuthorizeSubscriptionPaymentDetails
                 authorizeSubscriptionPaymentDetails = null;
 
         /**
          * subscription payment request.
-         *
          * @param authorizeSubscriptionPaymentDetails the value to set
          * @return this builder instance
          */
@@ -180,18 +201,21 @@ public class AuthorizeSubscriptionPaymentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -202,16 +226,15 @@ public class AuthorizeSubscriptionPaymentRequest
         }
 
         /**
-         * For requests that are not idempotent (creates being the main place of interest), THE APIs
-         * should take a header called opc-retry-token to identify the customer desire across
-         * requests, to introduce some level of idempotency.
+         * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+         * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * For requests that are not idempotent (creates being the main place of interest), THE APIs
-         * should take a header called opc-retry-token to identify the customer desire across
-         * requests, to introduce some level of idempotency.
+         * For requests that are not idempotent (creates being the main place of interest), THE APIs should take a header
+         * called opc-retry-token to identify the customer desire across requests, to introduce some level of idempotency.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -222,14 +245,15 @@ public class AuthorizeSubscriptionPaymentRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -241,19 +265,18 @@ public class AuthorizeSubscriptionPaymentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -265,7 +288,6 @@ public class AuthorizeSubscriptionPaymentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AuthorizeSubscriptionPaymentRequest o) {
@@ -284,11 +306,10 @@ public class AuthorizeSubscriptionPaymentRequest
         /**
          * Build the instance of AuthorizeSubscriptionPaymentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AuthorizeSubscriptionPaymentRequest
          */
@@ -301,7 +322,6 @@ public class AuthorizeSubscriptionPaymentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -315,8 +335,7 @@ public class AuthorizeSubscriptionPaymentRequest
         /**
          * Build the instance of AuthorizeSubscriptionPaymentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AuthorizeSubscriptionPaymentRequest
@@ -331,14 +350,12 @@ public class AuthorizeSubscriptionPaymentRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new AuthorizeSubscriptionPaymentRequest(ospHomeRegion, subscriptionId, compartmentId,
-            // authorizeSubscriptionPaymentDetails, ifMatch, opcRetryToken, opcRequestId);
+            // new AuthorizeSubscriptionPaymentRequest(ospHomeRegion, subscriptionId, compartmentId, authorizeSubscriptionPaymentDetails, ifMatch, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -354,7 +371,6 @@ public class AuthorizeSubscriptionPaymentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

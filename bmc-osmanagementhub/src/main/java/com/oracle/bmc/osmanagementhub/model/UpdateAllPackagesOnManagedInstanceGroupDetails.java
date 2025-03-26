@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the details for updating the packages on the managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the details for updating the packages on the managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateAllPackagesOnManagedInstanceGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateAllPackagesOnManagedInstanceGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAllPackagesOnManagedInstanceGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"updateTypes", "workRequestDetails"})
     public UpdateAllPackagesOnManagedInstanceGroupDetails(
@@ -33,16 +32,17 @@ public final class UpdateAllPackagesOnManagedInstanceGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of updates to be applied. */
+        /**
+         * The type of updates to be applied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
         private java.util.List<UpdateTypes> updateTypes;
 
         /**
          * The type of updates to be applied.
-         *
          * @param updateTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder updateTypes(java.util.List<UpdateTypes> updateTypes) {
             this.updateTypes = updateTypes;
             this.__explicitlySet__.add("updateTypes");
@@ -83,7 +83,9 @@ public final class UpdateAllPackagesOnManagedInstanceGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -92,15 +94,16 @@ public final class UpdateAllPackagesOnManagedInstanceGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The type of updates to be applied. */
+    /**
+     * The type of updates to be applied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateTypes")
     private final java.util.List<UpdateTypes> updateTypes;
 
     /**
      * The type of updates to be applied.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateTypes> getUpdateTypes() {
         return updateTypes;
     }
@@ -119,7 +122,6 @@ public final class UpdateAllPackagesOnManagedInstanceGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

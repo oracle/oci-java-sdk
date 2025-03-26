@@ -6,11 +6,12 @@ package com.oracle.bmc.resourcemanager.responses;
 
 import com.oracle.bmc.resourcemanager.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,13 +25,14 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
         return opcRequestId;
     }
 
-    /** The returned {@code ResourceDiscoveryServiceCollection} instance. */
+    /**
+     * The returned ResourceDiscoveryServiceCollection instance.
+     */
     private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
             resourceDiscoveryServiceCollection;
 
     /**
-     * The returned {@code ResourceDiscoveryServiceCollection} instance.
-     *
+     * The returned ResourceDiscoveryServiceCollection instance.
      * @return the value
      */
     public com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
@@ -46,7 +48,7 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
     })
     private ListResourceDiscoveryServicesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
                     resourceDiscoveryServiceCollection) {
@@ -55,21 +57,17 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
         this.resourceDiscoveryServiceCollection = resourceDiscoveryServiceCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListResourceDiscoveryServicesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -77,6 +75,7 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -92,13 +91,14 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code ResourceDiscoveryServiceCollection} instance. */
+        /**
+         * The returned ResourceDiscoveryServiceCollection instance.
+         */
         private com.oracle.bmc.resourcemanager.model.ResourceDiscoveryServiceCollection
                 resourceDiscoveryServiceCollection;
 
         /**
-         * The returned {@code ResourceDiscoveryServiceCollection} instance.
-         *
+         * The returned ResourceDiscoveryServiceCollection instance.
          * @param resourceDiscoveryServiceCollection the value to set
          * @return this builder
          */
@@ -111,10 +111,8 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListResourceDiscoveryServicesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +124,8 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListResourceDiscoveryServicesResponse build() {
             return new ListResourceDiscoveryServicesResponse(
                     __httpStatusCode__, headers, opcRequestId, resourceDiscoveryServiceCollection);
@@ -138,7 +134,6 @@ public class ListResourceDiscoveryServicesResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

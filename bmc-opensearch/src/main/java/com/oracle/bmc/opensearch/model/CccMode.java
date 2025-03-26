@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/** Mode for the cross cluster connection */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum CccMode implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Mode for the cross cluster connection
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+public enum CccMode {
     SearchOnly("SEARCH_ONLY"),
     ReplicationOnly("REPLICATION_ONLY"),
     SearchAndReplication("SEARCH_AND_REPLICATION"),

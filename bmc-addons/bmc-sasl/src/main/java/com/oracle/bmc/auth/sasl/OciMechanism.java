@@ -10,7 +10,9 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-/** Defines all the supports OCI SASL mechanisms. */
+/**
+ * Defines all the supports OCI SASL mechanisms.
+ */
 public enum OciMechanism {
     OCI_RSA_SHA256(Algorithm.RSAPSS256);
 

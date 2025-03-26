@@ -5,24 +5,24 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * The list of search result items matching the criteria returned from the search operation. Search
- * errors and messages, if any , will be part of the standard error response. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * The list of search result items matching the criteria returned from the search operation. Search errors and
+ * messages, if any , will be part of the standard error response.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SearchResultCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SearchResultCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SearchResultCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "count",
@@ -47,77 +47,82 @@ public final class SearchResultCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of items returned. */
+        /**
+         * Total number of items returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * Total number of items returned.
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
             return this;
         }
-        /** Search result set. */
+        /**
+         * Search result set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SearchResult> items;
 
         /**
          * Search result set.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<SearchResult> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-        /** String that data objects are to be searched with. */
+        /**
+         * String that data objects are to be searched with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
          * String that data objects are to be searched with.
-         *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
             return this;
         }
-        /** Aggregations/facets on properties of data objects. */
+        /**
+         * Aggregations/facets on properties of data objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
         private java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
 
         /**
          * Aggregations/facets on properties of data objects.
-         *
          * @param facetedSearchAggregation the value to set
          * @return this builder
-         */
+         **/
         public Builder facetedSearchAggregation(
                 java.util.List<FacetedSearchAggregation> facetedSearchAggregation) {
             this.facetedSearchAggregation = facetedSearchAggregation;
             this.__explicitlySet__.add("facetedSearchAggregation");
             return this;
         }
-        /** A list of fields or properties used in the sorting of a search result. */
+        /**
+         * A list of fields or properties used in the sorting of a search result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortableFields")
         private java.util.List<String> sortableFields;
 
         /**
          * A list of fields or properties used in the sorting of a search result.
-         *
          * @param sortableFields the value to set
          * @return this builder
-         */
+         **/
         public Builder sortableFields(java.util.List<String> sortableFields) {
             this.sortableFields = sortableFields;
             this.__explicitlySet__.add("sortableFields");
@@ -162,7 +167,9 @@ public final class SearchResultCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,67 +178,72 @@ public final class SearchResultCollection
         return new Builder().copy(this);
     }
 
-    /** Total number of items returned. */
+    /**
+     * Total number of items returned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * Total number of items returned.
-     *
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
 
-    /** Search result set. */
+    /**
+     * Search result set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SearchResult> items;
 
     /**
      * Search result set.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SearchResult> getItems() {
         return items;
     }
 
-    /** String that data objects are to be searched with. */
+    /**
+     * String that data objects are to be searched with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
      * String that data objects are to be searched with.
-     *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
 
-    /** Aggregations/facets on properties of data objects. */
+    /**
+     * Aggregations/facets on properties of data objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetedSearchAggregation")
     private final java.util.List<FacetedSearchAggregation> facetedSearchAggregation;
 
     /**
      * Aggregations/facets on properties of data objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FacetedSearchAggregation> getFacetedSearchAggregation() {
         return facetedSearchAggregation;
     }
 
-    /** A list of fields or properties used in the sorting of a search result. */
+    /**
+     * A list of fields or properties used in the sorting of a search result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortableFields")
     private final java.util.List<String> sortableFields;
 
     /**
      * A list of fields or properties used in the sorting of a search result.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSortableFields() {
         return sortableFields;
     }
@@ -243,7 +255,6 @@ public final class SearchResultCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

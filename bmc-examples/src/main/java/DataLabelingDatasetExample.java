@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.oracle.bmc.ConfigFileReader;
-import com.oracle.bmc.http.client.Options;
+import com.oracle.bmc.Options;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.AuthenticationDetailsProvider;
 import com.oracle.bmc.auth.ConfigFileAuthenticationDetailsProvider;
@@ -46,27 +46,30 @@ import com.oracle.bmc.datalabelingservice.responses.CreateDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.DeleteDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.GetDatasetResponse;
 import com.oracle.bmc.datalabelingservice.responses.UpdateDatasetResponse;
+import com.oracle.bmc.http.JerseyDefaultConnectorConfigurator;
 import com.oracle.bmc.identity.IdentityClient;
 
 /**
- * This class provides an example of how to use Data Labeling Service to create, get, update and
- * delete dataset.
- *
- * <p>The Data Labeling service queried by this example will be assigned:
- *
+ * This class provides an example of how to use Data Labeling Service to create,
+ * get, update and delete dataset.
+ * <p>
+ * The Data Labeling service queried by this example will be assigned:
  * <ul>
- *   <li>an endpoint url defined by constant ENDPOINT
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used.
+ * <li>an endpoint url defined by constant ENDPOINT</li>
+ * <li>The configuration file used by service clients will be sourced from the
+ * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
  * </ul>
+ * </p>
  *
- * @param args Arguments to provide to the example. The following arguments are expected:
- *     <ul>
- *       <li>The first argument is the OCID of the compartment.
- *     </ul>
+ * @param args Arguments to provide to the example. The following arguments are
+ *             expected:
+ *             <ul>
+ *             <li>The first argument is the OCID of the compartment.</li>
+ *             </ul>
  */
 public class DataLabelingDatasetExample {
 
+    private static final String ENDPOINT = "https://dlstest-cp.ap-mumbai-1.oci.oraclecloud.com";
     private static DataLabelingManagement client;
     private static ScheduledExecutorService executor;
     private static final ObjectMapper objectMapper;
@@ -115,7 +118,9 @@ public class DataLabelingDatasetExample {
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        client = DataLabelingManagementClient.builder().region(Region.AP_MUMBAI_1).build(provider);
+        client = new DataLabelingManagementClient(provider);
+        client.setEndpoint(ENDPOINT);
+        client.setRegion(Region.AP_MUMBAI_1);
         return client;
     }
 

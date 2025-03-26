@@ -6,17 +6,18 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,12 +25,13 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -37,18 +39,19 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the {@code
-     * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then there are additional items still to get. Include this value as the {@code
-     * page} parameter for the subsequent GET request. For information about pagination, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then there are additional items still to get. Include this value as the {@code page} parameter for the
+     * subsequent GET request. For information about pagination, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -56,12 +59,13 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
         return opcNextPage;
     }
 
-    /** The returned {@code ResourcePoolShapeCollection} instance. */
+    /**
+     * The returned ResourcePoolShapeCollection instance.
+     */
     private com.oracle.bmc.database.model.ResourcePoolShapeCollection resourcePoolShapeCollection;
 
     /**
-     * The returned {@code ResourcePoolShapeCollection} instance.
-     *
+     * The returned ResourcePoolShapeCollection instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.ResourcePoolShapeCollection
@@ -79,7 +83,7 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
     })
     private ResourcePoolShapesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             String opcNextPage,
@@ -91,33 +95,31 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
         this.resourcePoolShapeCollection = resourcePoolShapeCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ResourcePoolShapesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,12 +129,13 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -142,20 +145,19 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * {@code page} parameter for the subsequent GET request. For information about pagination,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then there are additional items still to get. Include this value as the
-         * {@code page} parameter for the subsequent GET request. For information about pagination,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then there are additional items still to get. Include this value as the {@code page} parameter for the
+         * subsequent GET request. For information about pagination, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -165,13 +167,14 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code ResourcePoolShapeCollection} instance. */
+        /**
+         * The returned ResourcePoolShapeCollection instance.
+         */
         private com.oracle.bmc.database.model.ResourcePoolShapeCollection
                 resourcePoolShapeCollection;
 
         /**
-         * The returned {@code ResourcePoolShapeCollection} instance.
-         *
+         * The returned ResourcePoolShapeCollection instance.
          * @param resourcePoolShapeCollection the value to set
          * @return this builder
          */
@@ -184,10 +187,8 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ResourcePoolShapesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -201,10 +202,8 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ResourcePoolShapesResponse build() {
             return new ResourcePoolShapesResponse(
                     __httpStatusCode__,
@@ -218,7 +217,6 @@ public class ResourcePoolShapesResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

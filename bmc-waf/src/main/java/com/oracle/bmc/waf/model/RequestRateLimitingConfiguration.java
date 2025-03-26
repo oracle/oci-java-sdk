@@ -5,23 +5,22 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Rate limiting configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * Rate limiting configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestRateLimitingConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RequestRateLimitingConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RequestRateLimitingConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "periodInSeconds",
@@ -38,50 +37,49 @@ public final class RequestRateLimitingConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Evaluation period in seconds. */
+        /**
+         * Evaluation period in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
         private Integer periodInSeconds;
 
         /**
          * Evaluation period in seconds.
-         *
          * @param periodInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder periodInSeconds(Integer periodInSeconds) {
             this.periodInSeconds = periodInSeconds;
             this.__explicitlySet__.add("periodInSeconds");
             return this;
         }
-        /** Requests allowed per evaluation period. */
+        /**
+         * Requests allowed per evaluation period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestsLimit")
         private Integer requestsLimit;
 
         /**
          * Requests allowed per evaluation period.
-         *
          * @param requestsLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder requestsLimit(Integer requestsLimit) {
             this.requestsLimit = requestsLimit;
             this.__explicitlySet__.add("requestsLimit");
             return this;
         }
         /**
-         * Duration of block action application in seconds when {@code requestsLimit} is reached.
-         * Optional and can be 0 (no block duration).
-         */
+         * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionDurationInSeconds")
         private Integer actionDurationInSeconds;
 
         /**
-         * Duration of block action application in seconds when {@code requestsLimit} is reached.
-         * Optional and can be 0 (no block duration).
-         *
+         * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
          * @param actionDurationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder actionDurationInSeconds(Integer actionDurationInSeconds) {
             this.actionDurationInSeconds = actionDurationInSeconds;
             this.__explicitlySet__.add("actionDurationInSeconds");
@@ -116,7 +114,9 @@ public final class RequestRateLimitingConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,45 +125,44 @@ public final class RequestRateLimitingConfiguration
         return new Builder().copy(this);
     }
 
-    /** Evaluation period in seconds. */
+    /**
+     * Evaluation period in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("periodInSeconds")
     private final Integer periodInSeconds;
 
     /**
      * Evaluation period in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getPeriodInSeconds() {
         return periodInSeconds;
     }
 
-    /** Requests allowed per evaluation period. */
+    /**
+     * Requests allowed per evaluation period.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestsLimit")
     private final Integer requestsLimit;
 
     /**
      * Requests allowed per evaluation period.
-     *
      * @return the value
-     */
+     **/
     public Integer getRequestsLimit() {
         return requestsLimit;
     }
 
     /**
-     * Duration of block action application in seconds when {@code requestsLimit} is reached.
-     * Optional and can be 0 (no block duration).
-     */
+     * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionDurationInSeconds")
     private final Integer actionDurationInSeconds;
 
     /**
-     * Duration of block action application in seconds when {@code requestsLimit} is reached.
-     * Optional and can be 0 (no block duration).
-     *
+     * Duration of block action application in seconds when {@code requestsLimit} is reached. Optional and can be 0 (no block duration).
      * @return the value
-     */
+     **/
     public Integer getActionDurationInSeconds() {
         return actionDurationInSeconds;
     }
@@ -175,7 +174,6 @@ public final class RequestRateLimitingConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

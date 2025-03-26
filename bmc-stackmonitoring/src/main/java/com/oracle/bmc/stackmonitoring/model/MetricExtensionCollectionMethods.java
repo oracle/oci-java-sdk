@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible collection methods. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MetricExtensionCollectionMethods implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible collection methods.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MetricExtensionCollectionMethods {
     OsCommand("OS_COMMAND"),
     Sql("SQL"),
     Jmx("JMX"),

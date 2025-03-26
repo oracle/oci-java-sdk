@@ -5,97 +5,101 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for OKV encryption key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for OKV encryption key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OkvKeyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "provider")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "provider"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OkvKeyDetails extends AutonomousDatabaseEncryptionKeyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** URI of OKV server */
+        /**
+         * URI of OKV server
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okvUri")
         private String okvUri;
 
         /**
          * URI of OKV server
-         *
          * @param okvUri the value to set
          * @return this builder
-         */
+         **/
         public Builder okvUri(String okvUri) {
             this.okvUri = okvUri;
             this.__explicitlySet__.add("okvUri");
             return this;
         }
-        /** UUID of OKV KMS Key */
+        /**
+         * UUID of OKV KMS Key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okvKmsKey")
         private String okvKmsKey;
 
         /**
          * UUID of OKV KMS Key
-         *
          * @param okvKmsKey the value to set
          * @return this builder
-         */
+         **/
         public Builder okvKmsKey(String okvKmsKey) {
             this.okvKmsKey = okvKmsKey;
             this.__explicitlySet__.add("okvKmsKey");
             return this;
         }
-        /** OKV wallet directory name */
+        /**
+         * OKV wallet directory name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("directoryName")
         private String directoryName;
 
         /**
          * OKV wallet directory name
-         *
          * @param directoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder directoryName(String directoryName) {
             this.directoryName = directoryName;
             this.__explicitlySet__.add("directoryName");
             return this;
         }
-        /** OKV certificate directory name */
+        /**
+         * OKV certificate directory name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateDirectoryName")
         private String certificateDirectoryName;
 
         /**
          * OKV certificate directory name
-         *
          * @param certificateDirectoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateDirectoryName(String certificateDirectoryName) {
             this.certificateDirectoryName = certificateDirectoryName;
             this.__explicitlySet__.add("certificateDirectoryName");
             return this;
         }
-        /** OKV certificate id */
+        /**
+         * OKV certificate id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
         private String certificateId;
 
         /**
          * OKV certificate id
-         *
          * @param certificateId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateId(String certificateId) {
             this.certificateId = certificateId;
             this.__explicitlySet__.add("certificateId");
@@ -140,7 +144,9 @@ public final class OkvKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -164,67 +170,72 @@ public final class OkvKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
         this.certificateId = certificateId;
     }
 
-    /** URI of OKV server */
+    /**
+     * URI of OKV server
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("okvUri")
     private final String okvUri;
 
     /**
      * URI of OKV server
-     *
      * @return the value
-     */
+     **/
     public String getOkvUri() {
         return okvUri;
     }
 
-    /** UUID of OKV KMS Key */
+    /**
+     * UUID of OKV KMS Key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("okvKmsKey")
     private final String okvKmsKey;
 
     /**
      * UUID of OKV KMS Key
-     *
      * @return the value
-     */
+     **/
     public String getOkvKmsKey() {
         return okvKmsKey;
     }
 
-    /** OKV wallet directory name */
+    /**
+     * OKV wallet directory name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("directoryName")
     private final String directoryName;
 
     /**
      * OKV wallet directory name
-     *
      * @return the value
-     */
+     **/
     public String getDirectoryName() {
         return directoryName;
     }
 
-    /** OKV certificate directory name */
+    /**
+     * OKV certificate directory name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateDirectoryName")
     private final String certificateDirectoryName;
 
     /**
      * OKV certificate directory name
-     *
      * @return the value
-     */
+     **/
     public String getCertificateDirectoryName() {
         return certificateDirectoryName;
     }
 
-    /** OKV certificate id */
+    /**
+     * OKV certificate id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateId")
     private final String certificateId;
 
     /**
      * OKV certificate id
-     *
      * @return the value
-     */
+     **/
     public String getCertificateId() {
         return certificateId;
     }
@@ -236,7 +247,6 @@ public final class OkvKeyDetails extends AutonomousDatabaseEncryptionKeyDetails 
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

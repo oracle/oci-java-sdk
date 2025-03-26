@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The relation entities details for health ner. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The relation entities details for health ner.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RelationEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RelationEntity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RelationEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "subjectId", "objectId", "type", "score"})
     public RelationEntity(String id, String subjectId, String objectId, String type, Double score) {
@@ -34,80 +31,81 @@ public final class RelationEntity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** id of the relation */
+        /**
+         * id of the relation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * id of the relation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION */
+        /**
+         * Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
 
         /**
          * Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION
-         *
          * @param subjectId the value to set
          * @return this builder
-         */
+         **/
         public Builder subjectId(String subjectId) {
             this.subjectId = subjectId;
             this.__explicitlySet__.add("subjectId");
             return this;
         }
-        /** Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT */
+        /**
+         * Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectId")
         private String objectId;
 
         /**
          * Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT
-         *
          * @param objectId the value to set
          * @return this builder
-         */
+         **/
         public Builder objectId(String objectId) {
             this.objectId = objectId;
             this.__explicitlySet__.add("objectId");
             return this;
         }
         /**
-         * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT,
-         * FREQUENCY, DOSAGE
-         */
+         * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT, FREQUENCY, DOSAGE
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT,
-         * FREQUENCY, DOSAGE
-         *
+         * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT, FREQUENCY, DOSAGE
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Score or confidence for detected entity. */
+        /**
+         * Score or confidence for detected entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * Score or confidence for detected entity.
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -148,7 +146,9 @@ public final class RelationEntity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,71 +157,72 @@ public final class RelationEntity
         return new Builder().copy(this);
     }
 
-    /** id of the relation */
+    /**
+     * id of the relation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * id of the relation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION */
+    /**
+     * Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
     private final String subjectId;
 
     /**
      * Subject entity of the relation. eg,MEDICINE_NAME, EXAMINATION
-     *
      * @return the value
-     */
+     **/
     public String getSubjectId() {
         return subjectId;
     }
 
-    /** Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT */
+    /**
+     * Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectId")
     private final String objectId;
 
     /**
      * Object entity of the relation. eg, MEDICINE_DOSAGE, MEDICINE_DURATION, MEASUREMENT
-     *
      * @return the value
-     */
+     **/
     public String getObjectId() {
         return objectId;
     }
 
     /**
-     * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT,
-     * FREQUENCY, DOSAGE
-     */
+     * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT, FREQUENCY, DOSAGE
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT,
-     * FREQUENCY, DOSAGE
-     *
+     * Type of relation between subject entity and object entity. eg,EXAMINATION_MEASUREMENT, FREQUENCY, DOSAGE
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Score or confidence for detected entity. */
+    /**
+     * Score or confidence for detected entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * Score or confidence for detected entity.
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -233,7 +234,6 @@ public final class RelationEntity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

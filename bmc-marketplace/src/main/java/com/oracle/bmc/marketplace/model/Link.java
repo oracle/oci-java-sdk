@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for links. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * The model for links.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Link.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Link extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rel", "href"})
     public Link(LinkEnum rel, String href) {
@@ -30,31 +28,33 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Reference links to the previous page, next page, and other pages. */
+        /**
+         * Reference links to the previous page, next page, and other pages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rel")
         private LinkEnum rel;
 
         /**
          * Reference links to the previous page, next page, and other pages.
-         *
          * @param rel the value to set
          * @return this builder
-         */
+         **/
         public Builder rel(LinkEnum rel) {
             this.rel = rel;
             this.__explicitlySet__.add("rel");
             return this;
         }
-        /** The anchor tag. */
+        /**
+         * The anchor tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("href")
         private String href;
 
         /**
          * The anchor tag.
-         *
          * @param href the value to set
          * @return this builder
-         */
+         **/
         public Builder href(String href) {
             this.href = href;
             this.__explicitlySet__.add("href");
@@ -84,7 +84,9 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,30 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** Reference links to the previous page, next page, and other pages. */
+    /**
+     * Reference links to the previous page, next page, and other pages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rel")
     private final LinkEnum rel;
 
     /**
      * Reference links to the previous page, next page, and other pages.
-     *
      * @return the value
-     */
+     **/
     public LinkEnum getRel() {
         return rel;
     }
 
-    /** The anchor tag. */
+    /**
+     * The anchor tag.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("href")
     private final String href;
 
     /**
      * The anchor tag.
-     *
      * @return the value
-     */
+     **/
     public String getHref() {
         return href;
     }
@@ -126,7 +130,6 @@ public final class Link extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,25 +5,25 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The work item details for deployed application related information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The work item details for deployed application related information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeployedApplicationWorkItemDetails.Builder.class)
+    builder = DeployedApplicationWorkItemDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeployedApplicationWorkItemDetails extends WorkItemDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,62 +35,66 @@ public final class DeployedApplicationWorkItemDetails extends WorkItemDetails {
             this.__explicitlySet__.add("workItemType");
             return this;
         }
-        /** The unique key of the deployed application. */
+        /**
+         * The unique key of the deployed application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationKey")
         private String deployedApplicationKey;
 
         /**
          * The unique key of the deployed application.
-         *
          * @param deployedApplicationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder deployedApplicationKey(String deployedApplicationKey) {
             this.deployedApplicationKey = deployedApplicationKey;
             this.__explicitlySet__.add("deployedApplicationKey");
             return this;
         }
-        /** The unique key of the deployed application installation. */
+        /**
+         * The unique key of the deployed application installation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationKey")
         private String deployedApplicationInstallationKey;
 
         /**
          * The unique key of the deployed application installation.
-         *
          * @param deployedApplicationInstallationKey the value to set
          * @return this builder
-         */
+         **/
         public Builder deployedApplicationInstallationKey(
                 String deployedApplicationInstallationKey) {
             this.deployedApplicationInstallationKey = deployedApplicationInstallationKey;
             this.__explicitlySet__.add("deployedApplicationInstallationKey");
             return this;
         }
-        /** The deployed application name. */
+        /**
+         * The deployed application name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationName")
         private String deployedApplicationName;
 
         /**
          * The deployed application name.
-         *
          * @param deployedApplicationName the value to set
          * @return this builder
-         */
+         **/
         public Builder deployedApplicationName(String deployedApplicationName) {
             this.deployedApplicationName = deployedApplicationName;
             this.__explicitlySet__.add("deployedApplicationName");
             return this;
         }
-        /** The full path on which deployed application installation was detected. */
+        /**
+         * The full path on which deployed application installation was detected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationPath")
         private String deployedApplicationInstallationPath;
 
         /**
          * The full path on which deployed application installation was detected.
-         *
          * @param deployedApplicationInstallationPath the value to set
          * @return this builder
-         */
+         **/
         public Builder deployedApplicationInstallationPath(
                 String deployedApplicationInstallationPath) {
             this.deployedApplicationInstallationPath = deployedApplicationInstallationPath;
@@ -138,7 +142,9 @@ public final class DeployedApplicationWorkItemDetails extends WorkItemDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -161,54 +167,58 @@ public final class DeployedApplicationWorkItemDetails extends WorkItemDetails {
         this.deployedApplicationInstallationPath = deployedApplicationInstallationPath;
     }
 
-    /** The unique key of the deployed application. */
+    /**
+     * The unique key of the deployed application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationKey")
     private final String deployedApplicationKey;
 
     /**
      * The unique key of the deployed application.
-     *
      * @return the value
-     */
+     **/
     public String getDeployedApplicationKey() {
         return deployedApplicationKey;
     }
 
-    /** The unique key of the deployed application installation. */
+    /**
+     * The unique key of the deployed application installation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationKey")
     private final String deployedApplicationInstallationKey;
 
     /**
      * The unique key of the deployed application installation.
-     *
      * @return the value
-     */
+     **/
     public String getDeployedApplicationInstallationKey() {
         return deployedApplicationInstallationKey;
     }
 
-    /** The deployed application name. */
+    /**
+     * The deployed application name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationName")
     private final String deployedApplicationName;
 
     /**
      * The deployed application name.
-     *
      * @return the value
-     */
+     **/
     public String getDeployedApplicationName() {
         return deployedApplicationName;
     }
 
-    /** The full path on which deployed application installation was detected. */
+    /**
+     * The full path on which deployed application installation was detected.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deployedApplicationInstallationPath")
     private final String deployedApplicationInstallationPath;
 
     /**
      * The full path on which deployed application installation was detected.
-     *
      * @return the value
-     */
+     **/
     public String getDeployedApplicationInstallationPath() {
         return deployedApplicationInstallationPath;
     }
@@ -220,7 +230,6 @@ public final class DeployedApplicationWorkItemDetails extends WorkItemDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

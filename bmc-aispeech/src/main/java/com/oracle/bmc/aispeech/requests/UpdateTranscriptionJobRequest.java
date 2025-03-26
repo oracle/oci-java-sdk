@@ -6,60 +6,72 @@ package com.oracle.bmc.aispeech.requests;
 
 import com.oracle.bmc.aispeech.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateTranscriptionJobExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateTranscriptionJobRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTranscriptionJobRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 public class UpdateTranscriptionJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aispeech.model.UpdateTranscriptionJobDetails> {
 
-    /** Unique Transcription Job identifier. */
+    /**
+     * Unique Transcription Job identifier.
+     */
     private String transcriptionJobId;
 
-    /** Unique Transcription Job identifier. */
+    /**
+     * Unique Transcription Job identifier.
+     */
     public String getTranscriptionJobId() {
         return transcriptionJobId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.aispeech.model.UpdateTranscriptionJobDetails
             updateTranscriptionJobDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.aispeech.model.UpdateTranscriptionJobDetails
             getUpdateTranscriptionJobDetails() {
         return updateTranscriptionJobDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateTranscriptionJobRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTranscriptionJobRequest,
                     com.oracle.bmc.aispeech.model.UpdateTranscriptionJobDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Transcription Job identifier. */
+        /**
+         * Unique Transcription Job identifier.
+         */
         private String transcriptionJobId = null;
 
         /**
          * Unique Transcription Job identifier.
-         *
          * @param transcriptionJobId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateTranscriptionJobRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.aispeech.model.UpdateTranscriptionJobDetails
                 updateTranscriptionJobDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param updateTranscriptionJobDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +122,21 @@ public class UpdateTranscriptionJobRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +146,13 @@ public class UpdateTranscriptionJobRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +163,18 @@ public class UpdateTranscriptionJobRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateTranscriptionJobRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateTranscriptionJobRequest o) {
@@ -184,11 +201,10 @@ public class UpdateTranscriptionJobRequest
         /**
          * Build the instance of UpdateTranscriptionJobRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateTranscriptionJobRequest
          */
@@ -201,7 +217,6 @@ public class UpdateTranscriptionJobRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,8 +229,7 @@ public class UpdateTranscriptionJobRequest
         /**
          * Build the instance of UpdateTranscriptionJobRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTranscriptionJobRequest
@@ -227,14 +241,12 @@ public class UpdateTranscriptionJobRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateTranscriptionJobRequest(transcriptionJobId, updateTranscriptionJobDetails,
-            // ifMatch, opcRequestId);
+            // new UpdateTranscriptionJobRequest(transcriptionJobId, updateTranscriptionJobDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,7 +259,6 @@ public class UpdateTranscriptionJobRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

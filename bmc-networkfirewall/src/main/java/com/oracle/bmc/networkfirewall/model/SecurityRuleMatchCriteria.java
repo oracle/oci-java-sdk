@@ -5,24 +5,24 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Criteria to evaluate against network traffic. A match occurs when at least one item in the array
- * associated with each specified property corresponds with the relevant aspect of the traffic. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Criteria to evaluate against network traffic.
+ * A match occurs when at least one item in the array associated with each specified property corresponds with the relevant aspect of the traffic.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecurityRuleMatchCriteria.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SecurityRuleMatchCriteria.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SecurityRuleMatchCriteria
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceAddress",
@@ -47,73 +47,65 @@ public final class SecurityRuleMatchCriteria
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of IP address list names to be evaluated against the traffic source address. */
+        /**
+         * An array of IP address list names to be evaluated against the traffic source address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
         private java.util.List<String> sourceAddress;
 
         /**
          * An array of IP address list names to be evaluated against the traffic source address.
-         *
          * @param sourceAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceAddress(java.util.List<String> sourceAddress) {
             this.sourceAddress = sourceAddress;
             this.__explicitlySet__.add("sourceAddress");
             return this;
         }
         /**
-         * An array of IP address list names to be evaluated against the traffic destination
-         * address.
-         */
+         * An array of IP address list names to be evaluated against the traffic destination address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
         private java.util.List<String> destinationAddress;
 
         /**
-         * An array of IP address list names to be evaluated against the traffic destination
-         * address.
-         *
+         * An array of IP address list names to be evaluated against the traffic destination address.
          * @param destinationAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationAddress(java.util.List<String> destinationAddress) {
             this.destinationAddress = destinationAddress;
             this.__explicitlySet__.add("destinationAddress");
             return this;
         }
         /**
-         * An array of application list names to be evaluated against the traffic protocol and
-         * protocol-specific parameters.
-         */
+         * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("application")
         private java.util.List<String> application;
 
         /**
-         * An array of application list names to be evaluated against the traffic protocol and
-         * protocol-specific parameters.
-         *
+         * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
          * @param application the value to set
          * @return this builder
-         */
+         **/
         public Builder application(java.util.List<String> application) {
             this.application = application;
             this.__explicitlySet__.add("application");
             return this;
         }
         /**
-         * An array of service list names to be evaluated against the traffic protocol and
-         * protocol-specific parameters.
-         */
+         * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private java.util.List<String> service;
 
         /**
-         * An array of service list names to be evaluated against the traffic protocol and
-         * protocol-specific parameters.
-         *
+         * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(java.util.List<String> service) {
             this.service = service;
             this.__explicitlySet__.add("service");
@@ -121,16 +113,15 @@ public final class SecurityRuleMatchCriteria
         }
         /**
          * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private java.util.List<String> url;
 
         /**
          * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(java.util.List<String> url) {
             this.url = url;
             this.__explicitlySet__.add("url");
@@ -175,7 +166,9 @@ public final class SecurityRuleMatchCriteria
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,77 +177,72 @@ public final class SecurityRuleMatchCriteria
         return new Builder().copy(this);
     }
 
-    /** An array of IP address list names to be evaluated against the traffic source address. */
+    /**
+     * An array of IP address list names to be evaluated against the traffic source address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceAddress")
     private final java.util.List<String> sourceAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic source address.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSourceAddress() {
         return sourceAddress;
     }
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddress")
     private final java.util.List<String> destinationAddress;
 
     /**
      * An array of IP address list names to be evaluated against the traffic destination address.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDestinationAddress() {
         return destinationAddress;
     }
 
     /**
-     * An array of application list names to be evaluated against the traffic protocol and
-     * protocol-specific parameters.
-     */
+     * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("application")
     private final java.util.List<String> application;
 
     /**
-     * An array of application list names to be evaluated against the traffic protocol and
-     * protocol-specific parameters.
-     *
+     * An array of application list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * @return the value
-     */
+     **/
     public java.util.List<String> getApplication() {
         return application;
     }
 
     /**
-     * An array of service list names to be evaluated against the traffic protocol and
-     * protocol-specific parameters.
-     */
+     * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final java.util.List<String> service;
 
     /**
-     * An array of service list names to be evaluated against the traffic protocol and
-     * protocol-specific parameters.
-     *
+     * An array of service list names to be evaluated against the traffic protocol and protocol-specific parameters.
      * @return the value
-     */
+     **/
     public java.util.List<String> getService() {
         return service;
     }
 
-    /** An array of URL pattern list names to be evaluated against the HTTP(S) request target. */
+    /**
+     * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final java.util.List<String> url;
 
     /**
      * An array of URL pattern list names to be evaluated against the HTTP(S) request target.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getUrl() {
         return url;
     }
@@ -266,7 +254,6 @@ public final class SecurityRuleMatchCriteria
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

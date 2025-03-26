@@ -6,48 +6,59 @@ package com.oracle.bmc.announcementsservice.requests;
 
 import com.oracle.bmc.announcementsservice.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementSubscriptionExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateAnnouncementSubscriptionRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/UpdateAnnouncementSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateAnnouncementSubscriptionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 public class UpdateAnnouncementSubscriptionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.announcementsservice.model.UpdateAnnouncementSubscriptionDetails> {
 
-    /** The OCID of the announcement subscription. */
+    /**
+     * The OCID of the announcement subscription.
+     */
     private String announcementSubscriptionId;
 
-    /** The OCID of the announcement subscription. */
+    /**
+     * The OCID of the announcement subscription.
+     */
     public String getAnnouncementSubscriptionId() {
         return announcementSubscriptionId;
     }
-    /** The subscription information to update. */
+    /**
+     * The subscription information to update.
+     */
     private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementSubscriptionDetails
             updateAnnouncementSubscriptionDetails;
 
-    /** The subscription information to update. */
+    /**
+     * The subscription information to update.
+     */
     public com.oracle.bmc.announcementsservice.model.UpdateAnnouncementSubscriptionDetails
             getUpdateAnnouncementSubscriptionDetails() {
         return updateAnnouncementSubscriptionDetails;
     }
-    /** The locking version, used for optimistic concurrency control. */
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     private String ifMatch;
 
-    /** The locking version, used for optimistic concurrency control. */
+    /**
+     * The locking version, used for optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -55,7 +66,6 @@ public class UpdateAnnouncementSubscriptionRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -70,15 +80,17 @@ public class UpdateAnnouncementSubscriptionRequest
                     UpdateAnnouncementSubscriptionRequest,
                     com.oracle.bmc.announcementsservice.model
                             .UpdateAnnouncementSubscriptionDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the announcement subscription. */
+        /**
+         * The OCID of the announcement subscription.
+         */
         private String announcementSubscriptionId = null;
 
         /**
          * The OCID of the announcement subscription.
-         *
          * @param announcementSubscriptionId the value to set
          * @return this builder instance
          */
@@ -87,13 +99,14 @@ public class UpdateAnnouncementSubscriptionRequest
             return this;
         }
 
-        /** The subscription information to update. */
+        /**
+         * The subscription information to update.
+         */
         private com.oracle.bmc.announcementsservice.model.UpdateAnnouncementSubscriptionDetails
                 updateAnnouncementSubscriptionDetails = null;
 
         /**
          * The subscription information to update.
-         *
          * @param updateAnnouncementSubscriptionDetails the value to set
          * @return this builder instance
          */
@@ -104,12 +117,13 @@ public class UpdateAnnouncementSubscriptionRequest
             return this;
         }
 
-        /** The locking version, used for optimistic concurrency control. */
+        /**
+         * The locking version, used for optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * The locking version, used for optimistic concurrency control.
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -119,14 +133,15 @@ public class UpdateAnnouncementSubscriptionRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -138,19 +153,18 @@ public class UpdateAnnouncementSubscriptionRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -162,7 +176,6 @@ public class UpdateAnnouncementSubscriptionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateAnnouncementSubscriptionRequest o) {
@@ -178,11 +191,10 @@ public class UpdateAnnouncementSubscriptionRequest
         /**
          * Build the instance of UpdateAnnouncementSubscriptionRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateAnnouncementSubscriptionRequest
          */
@@ -195,7 +207,6 @@ public class UpdateAnnouncementSubscriptionRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -210,8 +221,7 @@ public class UpdateAnnouncementSubscriptionRequest
         /**
          * Build the instance of UpdateAnnouncementSubscriptionRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateAnnouncementSubscriptionRequest
@@ -224,14 +234,12 @@ public class UpdateAnnouncementSubscriptionRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateAnnouncementSubscriptionRequest(announcementSubscriptionId,
-            // updateAnnouncementSubscriptionDetails, ifMatch, opcRequestId);
+            // new UpdateAnnouncementSubscriptionRequest(announcementSubscriptionId, updateAnnouncementSubscriptionDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,7 +252,6 @@ public class UpdateAnnouncementSubscriptionRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

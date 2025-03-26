@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A summary of object privileges. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A summary of object privileges.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectPrivilegeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ObjectPrivilegeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectPrivilegeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,61 +57,65 @@ public final class ObjectPrivilegeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the privilege on the object. */
+        /**
+         * The name of the privilege on the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the privilege on the object.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of object. */
+        /**
+         * The type of object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
         private String schemaType;
 
         /**
          * The type of object.
-         *
          * @param schemaType the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaType(String schemaType) {
             this.schemaType = schemaType;
             this.__explicitlySet__.add("schemaType");
             return this;
         }
-        /** The owner of the object. */
+        /**
+         * The owner of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the object.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The name of the user who granted the object privilege. */
+        /**
+         * The name of the user who granted the object privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantor")
         private String grantor;
 
         /**
          * The name of the user who granted the object privilege.
-         *
          * @param grantor the value to set
          * @return this builder
-         */
+         **/
         public Builder grantor(String grantor) {
             this.grantor = grantor;
             this.__explicitlySet__.add("grantor");
@@ -120,90 +123,85 @@ public final class ObjectPrivilegeSummary
         }
         /**
          * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hierarchy")
         private Hierarchy hierarchy;
 
         /**
          * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
-         *
          * @param hierarchy the value to set
          * @return this builder
-         */
+         **/
         public Builder hierarchy(Hierarchy hierarchy) {
             this.hierarchy = hierarchy;
             this.__explicitlySet__.add("hierarchy");
             return this;
         }
         /**
-         * The name of the object. The object can be any object, including tables, packages,
-         * indexes, sequences, and so on.
-         */
+         * The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("object")
         private String object;
 
         /**
-         * The name of the object. The object can be any object, including tables, packages,
-         * indexes, sequences, and so on.
-         *
+         * The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
          * @param object the value to set
          * @return this builder
-         */
+         **/
         public Builder object(String object) {
             this.object = object;
             this.__explicitlySet__.add("object");
             return this;
         }
-        /** Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO). */
+        /**
+         * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
         private GrantOption grantOption;
 
         /**
          * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
-         *
          * @param grantOption the value to set
          * @return this builder
-         */
+         **/
         public Builder grantOption(GrantOption grantOption) {
             this.grantOption = grantOption;
             this.__explicitlySet__.add("grantOption");
             return this;
         }
         /**
-         * Indicates how the object privilege was granted. Possible values: YES if the role is
-         * granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL
-         * is not used)
-         */
+         * Indicates how the object privilege was granted. Possible values:
+         * YES if the role is granted commonly (CONTAINER=ALL is used)
+         * NO if the role is granted locally (CONTAINER=ALL is not used)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("common")
         private Common common;
 
         /**
-         * Indicates how the object privilege was granted. Possible values: YES if the role is
-         * granted commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL
-         * is not used)
+         * Indicates how the object privilege was granted. Possible values:
+         * YES if the role is granted commonly (CONTAINER=ALL is used)
+         * NO if the role is granted locally (CONTAINER=ALL is not used)
          *
          * @param common the value to set
          * @return this builder
-         */
+         **/
         public Builder common(Common common) {
             this.common = common;
             this.__explicitlySet__.add("common");
             return this;
         }
         /**
-         * Indicates whether the granted privilege is inherited from another container (YES) or not
-         * (NO).
-         */
+         * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inherited")
         private Inherited inherited;
 
         /**
-         * Indicates whether the granted privilege is inherited from another container (YES) or not
-         * (NO).
-         *
+         * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
          * @param inherited the value to set
          * @return this builder
-         */
+         **/
         public Builder inherited(Inherited inherited) {
             this.inherited = inherited;
             this.__explicitlySet__.add("inherited");
@@ -264,7 +262,9 @@ public final class ObjectPrivilegeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -273,66 +273,72 @@ public final class ObjectPrivilegeSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the privilege on the object. */
+    /**
+     * The name of the privilege on the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the privilege on the object.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of object. */
+    /**
+     * The type of object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
     private final String schemaType;
 
     /**
      * The type of object.
-     *
      * @return the value
-     */
+     **/
     public String getSchemaType() {
         return schemaType;
     }
 
-    /** The owner of the object. */
+    /**
+     * The owner of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the object.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The name of the user who granted the object privilege. */
+    /**
+     * The name of the user who granted the object privilege.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantor")
     private final String grantor;
 
     /**
      * The name of the user who granted the object privilege.
-     *
      * @return the value
-     */
+     **/
     public String getGrantor() {
         return grantor;
     }
 
-    /** Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO). */
-    public enum Hierarchy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
+     **/
+    public enum Hierarchy {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -371,44 +377,44 @@ public final class ObjectPrivilegeSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO). */
+    /**
+     * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hierarchy")
     private final Hierarchy hierarchy;
 
     /**
      * Indicates whether the privilege is granted with the HIERARCHY OPTION (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public Hierarchy getHierarchy() {
         return hierarchy;
     }
 
     /**
-     * The name of the object. The object can be any object, including tables, packages, indexes,
-     * sequences, and so on.
-     */
+     * The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("object")
     private final String object;
 
     /**
-     * The name of the object. The object can be any object, including tables, packages, indexes,
-     * sequences, and so on.
-     *
+     * The name of the object. The object can be any object, including tables, packages, indexes, sequences, and so on.
      * @return the value
-     */
+     **/
     public String getObject() {
         return object;
     }
 
-    /** Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO). */
-    public enum GrantOption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
+     **/
+    public enum GrantOption {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -447,31 +453,33 @@ public final class ObjectPrivilegeSummary
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO). */
+    /**
+     * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantOption")
     private final GrantOption grantOption;
 
     /**
      * Indicates whether the privilege is granted with the GRANT OPTION (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public GrantOption getGrantOption() {
         return grantOption;
     }
 
     /**
-     * Indicates how the object privilege was granted. Possible values: YES if the role is granted
-     * commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not
-     * used)
-     */
-    public enum Common implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates how the object privilege was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
+     *
+     **/
+    public enum Common {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -510,35 +518,35 @@ public final class ObjectPrivilegeSummary
         }
     };
     /**
-     * Indicates how the object privilege was granted. Possible values: YES if the role is granted
-     * commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not
-     * used)
-     */
+     * Indicates how the object privilege was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     private final Common common;
 
     /**
-     * Indicates how the object privilege was granted. Possible values: YES if the role is granted
-     * commonly (CONTAINER=ALL is used) NO if the role is granted locally (CONTAINER=ALL is not
-     * used)
+     * Indicates how the object privilege was granted. Possible values:
+     * YES if the role is granted commonly (CONTAINER=ALL is used)
+     * NO if the role is granted locally (CONTAINER=ALL is not used)
      *
      * @return the value
-     */
+     **/
     public Common getCommon() {
         return common;
     }
 
     /**
-     * Indicates whether the granted privilege is inherited from another container (YES) or not
-     * (NO).
-     */
-    public enum Inherited implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
+     **/
+    public enum Inherited {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -578,18 +586,15 @@ public final class ObjectPrivilegeSummary
         }
     };
     /**
-     * Indicates whether the granted privilege is inherited from another container (YES) or not
-     * (NO).
-     */
+     * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     private final Inherited inherited;
 
     /**
-     * Indicates whether the granted privilege is inherited from another container (YES) or not
-     * (NO).
-     *
+     * Indicates whether the granted privilege is inherited from another container (YES) or not (NO).
      * @return the value
-     */
+     **/
     public Inherited getInherited() {
         return inherited;
     }
@@ -601,7 +606,6 @@ public final class ObjectPrivilegeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

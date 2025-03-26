@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsExtendedField <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsExtendedField
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsExtendedField.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsExtendedField.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsExtendedField
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "field",
@@ -71,76 +70,81 @@ public final class LogAnalyticsExtendedField
             this.__explicitlySet__.add("extendedFieldDefinition");
             return this;
         }
-        /** The extended field unique identifier. */
+        /**
+         * The extended field unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
         private Long extendedFieldDefinitionId;
 
         /**
          * The extended field unique identifier.
-         *
          * @param extendedFieldDefinitionId the value to set
          * @return this builder
-         */
+         **/
         public Builder extendedFieldDefinitionId(Long extendedFieldDefinitionId) {
             this.extendedFieldDefinitionId = extendedFieldDefinitionId;
             this.__explicitlySet__.add("extendedFieldDefinitionId");
             return this;
         }
-        /** The field internal name */
+        /**
+         * The field internal name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
         private String fieldName;
 
         /**
          * The field internal name
-         *
          * @param fieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldName(String fieldName) {
             this.fieldName = fieldName;
             this.__explicitlySet__.add("fieldName");
             return this;
         }
-        /** The field internal display name. */
+        /**
+         * The field internal display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
         private String fieldDisplayName;
 
         /**
          * The field internal display name.
-         *
          * @param fieldDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldDisplayName(String fieldDisplayName) {
             this.fieldDisplayName = fieldDisplayName;
             this.__explicitlySet__.add("fieldDisplayName");
             return this;
         }
-        /** The saved regular expression name. */
+        /**
+         * The saved regular expression name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
         private String savedRegularExpressionName;
 
         /**
          * The saved regular expression name.
-         *
          * @param savedRegularExpressionName the value to set
          * @return this builder
-         */
+         **/
         public Builder savedRegularExpressionName(String savedRegularExpressionName) {
             this.savedRegularExpressionName = savedRegularExpressionName;
             this.__explicitlySet__.add("savedRegularExpressionName");
             return this;
         }
-        /** The extended field unique identifier. */
+        /**
+         * The extended field unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
         private Long extendedFieldId;
 
         /**
          * The extended field unique identifier.
-         *
          * @param extendedFieldId the value to set
          * @return this builder
-         */
+         **/
         public Builder extendedFieldId(Long extendedFieldId) {
             this.extendedFieldId = extendedFieldId;
             this.__explicitlySet__.add("extendedFieldId");
@@ -193,7 +197,9 @@ public final class LogAnalyticsExtendedField
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -216,67 +222,72 @@ public final class LogAnalyticsExtendedField
         return extendedFieldDefinition;
     }
 
-    /** The extended field unique identifier. */
+    /**
+     * The extended field unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldDefinitionId")
     private final Long extendedFieldDefinitionId;
 
     /**
      * The extended field unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getExtendedFieldDefinitionId() {
         return extendedFieldDefinitionId;
     }
 
-    /** The field internal name */
+    /**
+     * The field internal name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldName")
     private final String fieldName;
 
     /**
      * The field internal name
-     *
      * @return the value
-     */
+     **/
     public String getFieldName() {
         return fieldName;
     }
 
-    /** The field internal display name. */
+    /**
+     * The field internal display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldDisplayName")
     private final String fieldDisplayName;
 
     /**
      * The field internal display name.
-     *
      * @return the value
-     */
+     **/
     public String getFieldDisplayName() {
         return fieldDisplayName;
     }
 
-    /** The saved regular expression name. */
+    /**
+     * The saved regular expression name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("savedRegularExpressionName")
     private final String savedRegularExpressionName;
 
     /**
      * The saved regular expression name.
-     *
      * @return the value
-     */
+     **/
     public String getSavedRegularExpressionName() {
         return savedRegularExpressionName;
     }
 
-    /** The extended field unique identifier. */
+    /**
+     * The extended field unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendedFieldId")
     private final Long extendedFieldId;
 
     /**
      * The extended field unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getExtendedFieldId() {
         return extendedFieldId;
     }
@@ -288,7 +299,6 @@ public final class LogAnalyticsExtendedField
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

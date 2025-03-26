@@ -5,22 +5,19 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * Shipping address for rover devices. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * Shipping address for rover devices.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShippingAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShippingAddress
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShippingAddress extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "addressee",
@@ -66,181 +63,193 @@ public final class ShippingAddress
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Addressee in shipping address. */
+        /**
+         * Addressee in shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addressee")
         private String addressee;
 
         /**
          * Addressee in shipping address.
-         *
          * @param addressee the value to set
          * @return this builder
-         */
+         **/
         public Builder addressee(String addressee) {
             this.addressee = addressee;
             this.__explicitlySet__.add("addressee");
             return this;
         }
-        /** CareOf for shipping address. */
+        /**
+         * CareOf for shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("careOf")
         private String careOf;
 
         /**
          * CareOf for shipping address.
-         *
          * @param careOf the value to set
          * @return this builder
-         */
+         **/
         public Builder careOf(String careOf) {
             this.careOf = careOf;
             this.__explicitlySet__.add("careOf");
             return this;
         }
-        /** Address line 1. */
+        /**
+         * Address line 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address1")
         private String address1;
 
         /**
          * Address line 1.
-         *
          * @param address1 the value to set
          * @return this builder
-         */
+         **/
         public Builder address1(String address1) {
             this.address1 = address1;
             this.__explicitlySet__.add("address1");
             return this;
         }
-        /** Address line 2. */
+        /**
+         * Address line 2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address2")
         private String address2;
 
         /**
          * Address line 2.
-         *
          * @param address2 the value to set
          * @return this builder
-         */
+         **/
         public Builder address2(String address2) {
             this.address2 = address2;
             this.__explicitlySet__.add("address2");
             return this;
         }
-        /** Address line 3. */
+        /**
+         * Address line 3.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address3")
         private String address3;
 
         /**
          * Address line 3.
-         *
          * @param address3 the value to set
          * @return this builder
-         */
+         **/
         public Builder address3(String address3) {
             this.address3 = address3;
             this.__explicitlySet__.add("address3");
             return this;
         }
-        /** Address line 4. */
+        /**
+         * Address line 4.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address4")
         private String address4;
 
         /**
          * Address line 4.
-         *
          * @param address4 the value to set
          * @return this builder
-         */
+         **/
         public Builder address4(String address4) {
             this.address4 = address4;
             this.__explicitlySet__.add("address4");
             return this;
         }
-        /** city or locality for shipping address. */
+        /**
+         * city or locality for shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cityOrLocality")
         private String cityOrLocality;
 
         /**
          * city or locality for shipping address.
-         *
          * @param cityOrLocality the value to set
          * @return this builder
-         */
+         **/
         public Builder cityOrLocality(String cityOrLocality) {
             this.cityOrLocality = cityOrLocality;
             this.__explicitlySet__.add("cityOrLocality");
             return this;
         }
-        /** state or region for shipping address. */
+        /**
+         * state or region for shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateOrRegion")
         private String stateOrRegion;
 
         /**
          * state or region for shipping address.
-         *
          * @param stateOrRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder stateOrRegion(String stateOrRegion) {
             this.stateOrRegion = stateOrRegion;
             this.__explicitlySet__.add("stateOrRegion");
             return this;
         }
-        /** zipcode for shipping address. */
+        /**
+         * zipcode for shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zipcode")
         private String zipcode;
 
         /**
          * zipcode for shipping address.
-         *
          * @param zipcode the value to set
          * @return this builder
-         */
+         **/
         public Builder zipcode(String zipcode) {
             this.zipcode = zipcode;
             this.__explicitlySet__.add("zipcode");
             return this;
         }
-        /** country for shipping address. */
+        /**
+         * country for shipping address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("country")
         private String country;
 
         /**
          * country for shipping address.
-         *
          * @param country the value to set
          * @return this builder
-         */
+         **/
         public Builder country(String country) {
             this.country = country;
             this.__explicitlySet__.add("country");
             return this;
         }
-        /** recipient phone number. */
+        /**
+         * recipient phone number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
         private String phoneNumber;
 
         /**
          * recipient phone number.
-         *
          * @param phoneNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder phoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             this.__explicitlySet__.add("phoneNumber");
             return this;
         }
-        /** recipient email address. */
+        /**
+         * recipient email address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
          * recipient email address.
-         *
          * @param email the value to set
          * @return this builder
-         */
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
@@ -313,7 +322,9 @@ public final class ShippingAddress
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -322,158 +333,170 @@ public final class ShippingAddress
         return new Builder().copy(this);
     }
 
-    /** Addressee in shipping address. */
+    /**
+     * Addressee in shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addressee")
     private final String addressee;
 
     /**
      * Addressee in shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getAddressee() {
         return addressee;
     }
 
-    /** CareOf for shipping address. */
+    /**
+     * CareOf for shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("careOf")
     private final String careOf;
 
     /**
      * CareOf for shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getCareOf() {
         return careOf;
     }
 
-    /** Address line 1. */
+    /**
+     * Address line 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address1")
     private final String address1;
 
     /**
      * Address line 1.
-     *
      * @return the value
-     */
+     **/
     public String getAddress1() {
         return address1;
     }
 
-    /** Address line 2. */
+    /**
+     * Address line 2.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address2")
     private final String address2;
 
     /**
      * Address line 2.
-     *
      * @return the value
-     */
+     **/
     public String getAddress2() {
         return address2;
     }
 
-    /** Address line 3. */
+    /**
+     * Address line 3.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address3")
     private final String address3;
 
     /**
      * Address line 3.
-     *
      * @return the value
-     */
+     **/
     public String getAddress3() {
         return address3;
     }
 
-    /** Address line 4. */
+    /**
+     * Address line 4.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address4")
     private final String address4;
 
     /**
      * Address line 4.
-     *
      * @return the value
-     */
+     **/
     public String getAddress4() {
         return address4;
     }
 
-    /** city or locality for shipping address. */
+    /**
+     * city or locality for shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cityOrLocality")
     private final String cityOrLocality;
 
     /**
      * city or locality for shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getCityOrLocality() {
         return cityOrLocality;
     }
 
-    /** state or region for shipping address. */
+    /**
+     * state or region for shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateOrRegion")
     private final String stateOrRegion;
 
     /**
      * state or region for shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getStateOrRegion() {
         return stateOrRegion;
     }
 
-    /** zipcode for shipping address. */
+    /**
+     * zipcode for shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("zipcode")
     private final String zipcode;
 
     /**
      * zipcode for shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getZipcode() {
         return zipcode;
     }
 
-    /** country for shipping address. */
+    /**
+     * country for shipping address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("country")
     private final String country;
 
     /**
      * country for shipping address.
-     *
      * @return the value
-     */
+     **/
     public String getCountry() {
         return country;
     }
 
-    /** recipient phone number. */
+    /**
+     * recipient phone number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phoneNumber")
     private final String phoneNumber;
 
     /**
      * recipient phone number.
-     *
      * @return the value
-     */
+     **/
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    /** recipient email address. */
+    /**
+     * recipient email address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
      * recipient email address.
-     *
      * @return the value
-     */
+     **/
     public String getEmail() {
         return email;
     }
@@ -485,7 +508,6 @@ public final class ShippingAddress
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

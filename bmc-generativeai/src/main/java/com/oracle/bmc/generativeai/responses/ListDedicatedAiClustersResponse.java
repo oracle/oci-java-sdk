@@ -6,17 +6,18 @@ package com.oracle.bmc.generativeai.responses;
 
 import com.oracle.bmc.generativeai.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,15 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For
+     * important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For
+     * important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -42,13 +42,14 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
         return opcNextPage;
     }
 
-    /** The returned {@code DedicatedAiClusterCollection} instance. */
+    /**
+     * The returned DedicatedAiClusterCollection instance.
+     */
     private com.oracle.bmc.generativeai.model.DedicatedAiClusterCollection
             dedicatedAiClusterCollection;
 
     /**
-     * The returned {@code DedicatedAiClusterCollection} instance.
-     *
+     * The returned DedicatedAiClusterCollection instance.
      * @return the value
      */
     public com.oracle.bmc.generativeai.model.DedicatedAiClusterCollection
@@ -65,7 +66,7 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
     })
     private ListDedicatedAiClustersResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.generativeai.model.DedicatedAiClusterCollection
@@ -76,34 +77,31 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
         this.dedicatedAiClusterCollection = dedicatedAiClusterCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListDedicatedAiClustersResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -114,16 +112,15 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For
+         * important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For
+         * important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -133,13 +130,14 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code DedicatedAiClusterCollection} instance. */
+        /**
+         * The returned DedicatedAiClusterCollection instance.
+         */
         private com.oracle.bmc.generativeai.model.DedicatedAiClusterCollection
                 dedicatedAiClusterCollection;
 
         /**
-         * The returned {@code DedicatedAiClusterCollection} instance.
-         *
+         * The returned DedicatedAiClusterCollection instance.
          * @param dedicatedAiClusterCollection the value to set
          * @return this builder
          */
@@ -152,10 +150,8 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListDedicatedAiClustersResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,10 +164,8 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListDedicatedAiClustersResponse build() {
             return new ListDedicatedAiClustersResponse(
                     __httpStatusCode__,
@@ -184,7 +178,6 @@ public class ListDedicatedAiClustersResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

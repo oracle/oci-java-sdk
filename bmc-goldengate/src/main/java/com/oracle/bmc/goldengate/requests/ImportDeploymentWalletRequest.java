@@ -6,92 +6,106 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ImportDeploymentWalletExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ImportDeploymentWalletRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ImportDeploymentWalletExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ImportDeploymentWalletRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ImportDeploymentWalletRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails> {
 
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     private String deploymentId;
 
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
     /**
-     * Metadata to import wallet to deployment. This also includes the OCI Vault information where
-     * the wallet will be imported from
+     * Metadata to import wallet to deployment. This also includes the OCI Vault information where the wallet will be imported from
+     *
      */
     private com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails
             importDeploymentWalletDetails;
 
     /**
-     * Metadata to import wallet to deployment. This also includes the OCI Vault information where
-     * the wallet will be imported from
+     * Metadata to import wallet to deployment. This also includes the OCI Vault information where the wallet will be imported from
+     *
      */
     public com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails
             getImportDeploymentWalletDetails() {
         return importDeploymentWalletDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -104,10 +118,14 @@ public class ImportDeploymentWalletRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ImportDeploymentWalletRequest,
                     com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique Deployment identifier. */
+        /**
+         * A unique Deployment identifier.
+         *
+         */
         private String deploymentId = null;
 
         /**
@@ -122,15 +140,14 @@ public class ImportDeploymentWalletRequest
         }
 
         /**
-         * Metadata to import wallet to deployment. This also includes the OCI Vault information
-         * where the wallet will be imported from
+         * Metadata to import wallet to deployment. This also includes the OCI Vault information where the wallet will be imported from
+         *
          */
         private com.oracle.bmc.goldengate.model.ImportDeploymentWalletDetails
                 importDeploymentWalletDetails = null;
 
         /**
-         * Metadata to import wallet to deployment. This also includes the OCI Vault information
-         * where the wallet will be imported from
+         * Metadata to import wallet to deployment. This also includes the OCI Vault information where the wallet will be imported from
          *
          * @param importDeploymentWalletDetails the value to set
          * @return this builder instance
@@ -144,17 +161,18 @@ public class ImportDeploymentWalletRequest
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -164,7 +182,10 @@ public class ImportDeploymentWalletRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -179,20 +200,19 @@ public class ImportDeploymentWalletRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -202,12 +222,13 @@ public class ImportDeploymentWalletRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -218,19 +239,18 @@ public class ImportDeploymentWalletRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -242,7 +262,6 @@ public class ImportDeploymentWalletRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ImportDeploymentWalletRequest o) {
@@ -260,11 +279,10 @@ public class ImportDeploymentWalletRequest
         /**
          * Build the instance of ImportDeploymentWalletRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ImportDeploymentWalletRequest
          */
@@ -277,7 +295,6 @@ public class ImportDeploymentWalletRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -290,8 +307,7 @@ public class ImportDeploymentWalletRequest
         /**
          * Build the instance of ImportDeploymentWalletRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ImportDeploymentWalletRequest
@@ -305,14 +321,12 @@ public class ImportDeploymentWalletRequest
             request.opcRetryToken = opcRetryToken;
             request.isLockOverride = isLockOverride;
             return request;
-            // new ImportDeploymentWalletRequest(deploymentId, importDeploymentWalletDetails,
-            // ifMatch, opcRequestId, opcRetryToken, isLockOverride);
+            // new ImportDeploymentWalletRequest(deploymentId, importDeploymentWalletDetails, ifMatch, opcRequestId, opcRetryToken, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -327,7 +341,6 @@ public class ImportDeploymentWalletRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

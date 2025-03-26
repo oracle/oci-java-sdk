@@ -48,21 +48,22 @@ import com.oracle.bmc.datalabelingservice.responses.RemoveDatasetLabelsResponse;
 import com.oracle.bmc.datalabelingservice.responses.RenameDatasetLabelsResponse;
 
 /**
- * This class provides an example of how to use Data Labeling Service to add, rename and remove
- * labels.
- *
- * <p>The Data Labeling service queried by this example will be assigned:
- *
+ * This class provides an example of how to use Data Labeling Service to add,
+ * rename and remove labels.
+ * <p>
+ * The Data Labeling service queried by this example will be assigned:
  * <ul>
- *   <li>an endpoint url defined by constant ENDPOINT
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used.
+ * <li>an endpoint url defined by constant ENDPOINT</li>
+ * <li>The configuration file used by service clients will be sourced from the
+ * default location (~/.oci/config) and the DEFAULT profile will be used.</li>
  * </ul>
+ * </p>
  *
- * @param args Arguments to provide to the example. The following arguments are expected:
- *     <ul>
- *       <li>The first argument is the OCID of the compartment.
- *     </ul>
+ * @param args Arguments to provide to the example. The following arguments are
+ *             expected:
+ *             <ul>
+ *             <li>The first argument is the OCID of the compartment.</li>
+ *             </ul>
  */
 public class DataLabelingLabelExample {
 

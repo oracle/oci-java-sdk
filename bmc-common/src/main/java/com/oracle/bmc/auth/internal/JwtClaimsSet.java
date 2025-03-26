@@ -11,12 +11,15 @@ import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-import com.oracle.bmc.http.client.Serializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.util.internal.Validate;
 
-/** JSON Web Token Claim Set. */
+/**
+ * JSON Web Token Claim Set.
+ */
 public class JwtClaimsSet {
-    private static final Serializer OBJECT_MAPPER = Serializer.getDefault();
+    private static final ObjectMapper OBJECT_MAPPER =
+            com.oracle.bmc.http.Serialization.getObjectMapper();
     private final Map<String, Object> header;
     private final Map<String, Object> payload;
     private final String signature;
@@ -79,15 +82,6 @@ public class JwtClaimsSet {
     }
 
     /**
-     * Return the JWT issued time
-     *
-     * @return issued time
-     */
-    public Date getIssueTime() {
-        return (Date) getClaim("iat");
-    }
-
-    /**
      * Return the string claim for the key.
      *
      * @param name key for the claim
@@ -110,6 +104,14 @@ public class JwtClaimsSet {
                             + "'",
                     0);
         }
+    }
+
+    /**
+     * Return the JWT issued time
+     * @return issued time
+     */
+    public Date getIssueTime() {
+        return (Date) getClaim("iat");
     }
 
     /**

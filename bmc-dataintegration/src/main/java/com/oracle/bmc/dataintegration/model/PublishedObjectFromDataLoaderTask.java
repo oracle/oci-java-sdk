@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The data loader task published object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The data loader task published object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PublishedObjectFromDataLoaderTask.Builder.class)
+    builder = PublishedObjectFromDataLoaderTask.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -98,46 +98,49 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** An array of input ports. */
+        /**
+         * An array of input ports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
         private java.util.List<InputPort> inputPorts;
 
         /**
          * An array of input ports.
-         *
          * @param inputPorts the value to set
          * @return this builder
-         */
+         **/
         public Builder inputPorts(java.util.List<InputPort> inputPorts) {
             this.inputPorts = inputPorts;
             this.__explicitlySet__.add("inputPorts");
             return this;
         }
-        /** An array of output ports. */
+        /**
+         * An array of output ports.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
         private java.util.List<OutputPort> outputPorts;
 
         /**
          * An array of output ports.
-         *
          * @param outputPorts the value to set
          * @return this builder
-         */
+         **/
         public Builder outputPorts(java.util.List<OutputPort> outputPorts) {
             this.outputPorts = outputPorts;
             this.__explicitlySet__.add("outputPorts");
             return this;
         }
-        /** An array of parameters. */
+        /**
+         * An array of parameters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<Parameter> parameters;
 
         /**
          * An array of parameters.
-         *
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(java.util.List<Parameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -180,35 +183,33 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
             this.__explicitlySet__.add("conditionalCompositeFieldMap");
             return this;
         }
-        /** If true, defines a singular load. */
+        /**
+         * If true, defines a singular load.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
         private Boolean isSingleLoad;
 
         /**
          * If true, defines a singular load.
-         *
          * @param isSingleLoad the value to set
          * @return this builder
-         */
+         **/
         public Builder isSingleLoad(Boolean isSingleLoad) {
             this.isSingleLoad = isSingleLoad;
             this.__explicitlySet__.add("isSingleLoad");
             return this;
         }
         /**
-         * If not a singular load, this defines the number of entities being loaded in parallel at a
-         * time for a Data Loader task.
-         */
+         * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
         private Integer parallelLoadLimit;
 
         /**
-         * If not a singular load, this defines the number of entities being loaded in parallel at a
-         * time for a Data Loader task.
-         *
+         * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
          * @param parallelLoadLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder parallelLoadLimit(Integer parallelLoadLimit) {
             this.parallelLoadLimit = parallelLoadLimit;
             this.__explicitlySet__.add("parallelLoadLimit");
@@ -301,7 +302,9 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -349,41 +352,44 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
         this.parallelLoadLimit = parallelLoadLimit;
     }
 
-    /** An array of input ports. */
+    /**
+     * An array of input ports.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputPorts")
     private final java.util.List<InputPort> inputPorts;
 
     /**
      * An array of input ports.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<InputPort> getInputPorts() {
         return inputPorts;
     }
 
-    /** An array of output ports. */
+    /**
+     * An array of output ports.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputPorts")
     private final java.util.List<OutputPort> outputPorts;
 
     /**
      * An array of output ports.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OutputPort> getOutputPorts() {
         return outputPorts;
     }
 
-    /** An array of parameters. */
+    /**
+     * An array of parameters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
     /**
      * An array of parameters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -416,32 +422,30 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
         return conditionalCompositeFieldMap;
     }
 
-    /** If true, defines a singular load. */
+    /**
+     * If true, defines a singular load.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleLoad")
     private final Boolean isSingleLoad;
 
     /**
      * If true, defines a singular load.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSingleLoad() {
         return isSingleLoad;
     }
 
     /**
-     * If not a singular load, this defines the number of entities being loaded in parallel at a
-     * time for a Data Loader task.
-     */
+     * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parallelLoadLimit")
     private final Integer parallelLoadLimit;
 
     /**
-     * If not a singular load, this defines the number of entities being loaded in parallel at a
-     * time for a Data Loader task.
-     *
+     * If not a singular load, this defines the number of entities being loaded in parallel at a time for a Data Loader task.
      * @return the value
-     */
+     **/
     public Integer getParallelLoadLimit() {
         return parallelLoadLimit;
     }
@@ -453,7 +457,6 @@ public final class PublishedObjectFromDataLoaderTask extends PublishedObject {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

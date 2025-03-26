@@ -6,21 +6,18 @@ package com.oracle.bmc.devops.model;
 
 /**
  * A rule which must be satisfied for matching pull requests before the pull request can be merged
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApprovalRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ApprovalRule extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ApprovalRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -42,73 +39,65 @@ public final class ApprovalRule extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name which is used to uniquely identify an approval rule. */
+        /**
+         * Name which is used to uniquely identify an approval rule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name which is used to uniquely identify an approval rule.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Branch name where pull requests targeting the branch must satisfy the approval rule. This
-         * value being null means the rule applies to all pull requests
-         */
+         * Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
         private String destinationBranch;
 
         /**
-         * Branch name where pull requests targeting the branch must satisfy the approval rule. This
-         * value being null means the rule applies to all pull requests
-         *
+         * Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
          * @param destinationBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBranch(String destinationBranch) {
             this.destinationBranch = destinationBranch;
             this.__explicitlySet__.add("destinationBranch");
             return this;
         }
         /**
-         * List of users who must provide approvals up to the minApprovalsCount specified in the
-         * rule. An empty list means the approvals can come from any user.
-         */
+         * List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
         private java.util.List<PrincipalDetails> reviewers;
 
         /**
-         * List of users who must provide approvals up to the minApprovalsCount specified in the
-         * rule. An empty list means the approvals can come from any user.
-         *
+         * List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
          * @param reviewers the value to set
          * @return this builder
-         */
+         **/
         public Builder reviewers(java.util.List<PrincipalDetails> reviewers) {
             this.reviewers = reviewers;
             this.__explicitlySet__.add("reviewers");
             return this;
         }
         /**
-         * Minimum number of approvals which must be provided by the reviewers specified in the list
-         * before the rule can be satisfied
-         */
+         * Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minApprovalsCount")
         private Integer minApprovalsCount;
 
         /**
-         * Minimum number of approvals which must be provided by the reviewers specified in the list
-         * before the rule can be satisfied
-         *
+         * Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
          * @param minApprovalsCount the value to set
          * @return this builder
-         */
+         **/
         public Builder minApprovalsCount(Integer minApprovalsCount) {
             this.minApprovalsCount = minApprovalsCount;
             this.__explicitlySet__.add("minApprovalsCount");
@@ -149,7 +138,9 @@ public final class ApprovalRule extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,66 +149,58 @@ public final class ApprovalRule extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Name which is used to uniquely identify an approval rule. */
+    /**
+     * Name which is used to uniquely identify an approval rule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name which is used to uniquely identify an approval rule.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Branch name where pull requests targeting the branch must satisfy the approval rule. This
-     * value being null means the rule applies to all pull requests
-     */
+     * Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
     private final String destinationBranch;
 
     /**
-     * Branch name where pull requests targeting the branch must satisfy the approval rule. This
-     * value being null means the rule applies to all pull requests
-     *
+     * Branch name where pull requests targeting the branch must satisfy the approval rule. This value being null means the rule applies to all pull requests
      * @return the value
-     */
+     **/
     public String getDestinationBranch() {
         return destinationBranch;
     }
 
     /**
-     * List of users who must provide approvals up to the minApprovalsCount specified in the rule.
-     * An empty list means the approvals can come from any user.
-     */
+     * List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
     private final java.util.List<PrincipalDetails> reviewers;
 
     /**
-     * List of users who must provide approvals up to the minApprovalsCount specified in the rule.
-     * An empty list means the approvals can come from any user.
-     *
+     * List of users who must provide approvals up to the minApprovalsCount specified in the rule. An empty list means the approvals can come from any user.
      * @return the value
-     */
+     **/
     public java.util.List<PrincipalDetails> getReviewers() {
         return reviewers;
     }
 
     /**
-     * Minimum number of approvals which must be provided by the reviewers specified in the list
-     * before the rule can be satisfied
-     */
+     * Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minApprovalsCount")
     private final Integer minApprovalsCount;
 
     /**
-     * Minimum number of approvals which must be provided by the reviewers specified in the list
-     * before the rule can be satisfied
-     *
+     * Minimum number of approvals which must be provided by the reviewers specified in the list before the rule can be satisfied
      * @return the value
-     */
+     **/
     public Integer getMinApprovalsCount() {
         return minApprovalsCount;
     }
@@ -229,7 +212,6 @@ public final class ApprovalRule extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

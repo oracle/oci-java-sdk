@@ -5,23 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Metadata required for accessing External Key manager <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * Metadata required for accessing External Key manager
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalKeyManagerMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalKeyManagerMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalKeyManagerMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "oauthMetadata",
@@ -49,31 +48,33 @@ public final class ExternalKeyManagerMetadata
             this.__explicitlySet__.add("oauthMetadata");
             return this;
         }
-        /** URI of the vault on external key manager. */
+        /**
+         * URI of the vault on external key manager.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalVaultEndpointUrl")
         private String externalVaultEndpointUrl;
 
         /**
          * URI of the vault on external key manager.
-         *
          * @param externalVaultEndpointUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder externalVaultEndpointUrl(String externalVaultEndpointUrl) {
             this.externalVaultEndpointUrl = externalVaultEndpointUrl;
             this.__explicitlySet__.add("externalVaultEndpointUrl");
             return this;
         }
-        /** OCID of private endpoint created by customer. */
+        /**
+         * OCID of private endpoint created by customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
          * OCID of private endpoint created by customer.
-         *
          * @param privateEndpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
@@ -110,7 +111,9 @@ public final class ExternalKeyManagerMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,28 +129,30 @@ public final class ExternalKeyManagerMetadata
         return oauthMetadata;
     }
 
-    /** URI of the vault on external key manager. */
+    /**
+     * URI of the vault on external key manager.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalVaultEndpointUrl")
     private final String externalVaultEndpointUrl;
 
     /**
      * URI of the vault on external key manager.
-     *
      * @return the value
-     */
+     **/
     public String getExternalVaultEndpointUrl() {
         return externalVaultEndpointUrl;
     }
 
-    /** OCID of private endpoint created by customer. */
+    /**
+     * OCID of private endpoint created by customer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
      * OCID of private endpoint created by customer.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -159,7 +164,6 @@ public final class ExternalKeyManagerMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

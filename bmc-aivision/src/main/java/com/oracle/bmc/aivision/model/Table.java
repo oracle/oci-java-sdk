@@ -5,21 +5,19 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The table extracted from a document. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The table extracted from a document.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Table.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Table extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rowCount",
@@ -50,91 +48,97 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of rows. */
+        /**
+         * The number of rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
         private Integer rowCount;
 
         /**
          * The number of rows.
-         *
          * @param rowCount the value to set
          * @return this builder
-         */
+         **/
         public Builder rowCount(Integer rowCount) {
             this.rowCount = rowCount;
             this.__explicitlySet__.add("rowCount");
             return this;
         }
-        /** The number of columns. */
+        /**
+         * The number of columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
         private Integer columnCount;
 
         /**
          * The number of columns.
-         *
          * @param columnCount the value to set
          * @return this builder
-         */
+         **/
         public Builder columnCount(Integer columnCount) {
             this.columnCount = columnCount;
             this.__explicitlySet__.add("columnCount");
             return this;
         }
-        /** The header rows. */
+        /**
+         * The header rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
         private java.util.List<TableRow> headerRows;
 
         /**
          * The header rows.
-         *
          * @param headerRows the value to set
          * @return this builder
-         */
+         **/
         public Builder headerRows(java.util.List<TableRow> headerRows) {
             this.headerRows = headerRows;
             this.__explicitlySet__.add("headerRows");
             return this;
         }
-        /** The body rows. */
+        /**
+         * The body rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
         private java.util.List<TableRow> bodyRows;
 
         /**
          * The body rows.
-         *
          * @param bodyRows the value to set
          * @return this builder
-         */
+         **/
         public Builder bodyRows(java.util.List<TableRow> bodyRows) {
             this.bodyRows = bodyRows;
             this.__explicitlySet__.add("bodyRows");
             return this;
         }
-        /** the footer rows. */
+        /**
+         * the footer rows.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
         private java.util.List<TableRow> footerRows;
 
         /**
          * the footer rows.
-         *
          * @param footerRows the value to set
          * @return this builder
-         */
+         **/
         public Builder footerRows(java.util.List<TableRow> footerRows) {
             this.footerRows = footerRows;
             this.__explicitlySet__.add("footerRows");
             return this;
         }
-        /** The confidence score between 0 and 1. */
+        /**
+         * The confidence score between 0 and 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidence")
         private Float confidence;
 
         /**
          * The confidence score between 0 and 1.
-         *
          * @param confidence the value to set
          * @return this builder
-         */
+         **/
         public Builder confidence(Float confidence) {
             this.confidence = confidence;
             this.__explicitlySet__.add("confidence");
@@ -196,7 +200,9 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,80 +211,86 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** The number of rows. */
+    /**
+     * The number of rows.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowCount")
     private final Integer rowCount;
 
     /**
      * The number of rows.
-     *
      * @return the value
-     */
+     **/
     public Integer getRowCount() {
         return rowCount;
     }
 
-    /** The number of columns. */
+    /**
+     * The number of columns.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnCount")
     private final Integer columnCount;
 
     /**
      * The number of columns.
-     *
      * @return the value
-     */
+     **/
     public Integer getColumnCount() {
         return columnCount;
     }
 
-    /** The header rows. */
+    /**
+     * The header rows.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("headerRows")
     private final java.util.List<TableRow> headerRows;
 
     /**
      * The header rows.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TableRow> getHeaderRows() {
         return headerRows;
     }
 
-    /** The body rows. */
+    /**
+     * The body rows.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bodyRows")
     private final java.util.List<TableRow> bodyRows;
 
     /**
      * The body rows.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TableRow> getBodyRows() {
         return bodyRows;
     }
 
-    /** the footer rows. */
+    /**
+     * the footer rows.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("footerRows")
     private final java.util.List<TableRow> footerRows;
 
     /**
      * the footer rows.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TableRow> getFooterRows() {
         return footerRows;
     }
 
-    /** The confidence score between 0 and 1. */
+    /**
+     * The confidence score between 0 and 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidence")
     private final Float confidence;
 
     /**
      * The confidence score between 0 and 1.
-     *
      * @return the value
-     */
+     **/
     public Float getConfidence() {
         return confidence;
     }
@@ -297,7 +309,6 @@ public final class Table extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

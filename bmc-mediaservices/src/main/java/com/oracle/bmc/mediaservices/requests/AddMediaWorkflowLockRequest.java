@@ -6,68 +6,84 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowLockExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use AddMediaWorkflowLockRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddMediaWorkflowLockExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddMediaWorkflowLockRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class AddMediaWorkflowLockRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mediaservices.model.AddLockDetails> {
 
-    /** AddResourceLockDetails body parameter */
+    /**
+     * AddResourceLockDetails body parameter
+     */
     private com.oracle.bmc.mediaservices.model.AddLockDetails addResourceLockDetails;
 
-    /** AddResourceLockDetails body parameter */
+    /**
+     * AddResourceLockDetails body parameter
+     */
     public com.oracle.bmc.mediaservices.model.AddLockDetails getAddResourceLockDetails() {
         return addResourceLockDetails;
     }
-    /** Unique MediaWorkflow identifier. */
+    /**
+     * Unique MediaWorkflow identifier.
+     */
     private String mediaWorkflowId;
 
-    /** Unique MediaWorkflow identifier. */
+    /**
+     * Unique MediaWorkflow identifier.
+     */
     public String getMediaWorkflowId() {
         return mediaWorkflowId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -75,7 +91,6 @@ public class AddMediaWorkflowLockRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -88,15 +103,17 @@ public class AddMediaWorkflowLockRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddMediaWorkflowLockRequest,
                     com.oracle.bmc.mediaservices.model.AddLockDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** AddResourceLockDetails body parameter */
+        /**
+         * AddResourceLockDetails body parameter
+         */
         private com.oracle.bmc.mediaservices.model.AddLockDetails addResourceLockDetails = null;
 
         /**
          * AddResourceLockDetails body parameter
-         *
          * @param addResourceLockDetails the value to set
          * @return this builder instance
          */
@@ -106,12 +123,13 @@ public class AddMediaWorkflowLockRequest
             return this;
         }
 
-        /** Unique MediaWorkflow identifier. */
+        /**
+         * Unique MediaWorkflow identifier.
+         */
         private String mediaWorkflowId = null;
 
         /**
          * Unique MediaWorkflow identifier.
-         *
          * @param mediaWorkflowId the value to set
          * @return this builder instance
          */
@@ -122,19 +140,20 @@ public class AddMediaWorkflowLockRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -144,12 +163,13 @@ public class AddMediaWorkflowLockRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -159,18 +179,21 @@ public class AddMediaWorkflowLockRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -182,19 +205,18 @@ public class AddMediaWorkflowLockRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -206,7 +228,6 @@ public class AddMediaWorkflowLockRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AddMediaWorkflowLockRequest o) {
@@ -223,11 +244,10 @@ public class AddMediaWorkflowLockRequest
         /**
          * Build the instance of AddMediaWorkflowLockRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AddMediaWorkflowLockRequest
          */
@@ -240,7 +260,6 @@ public class AddMediaWorkflowLockRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -253,8 +272,7 @@ public class AddMediaWorkflowLockRequest
         /**
          * Build the instance of AddMediaWorkflowLockRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AddMediaWorkflowLockRequest
@@ -267,14 +285,12 @@ public class AddMediaWorkflowLockRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new AddMediaWorkflowLockRequest(addResourceLockDetails, mediaWorkflowId,
-            // opcRetryToken, opcRequestId, ifMatch);
+            // new AddMediaWorkflowLockRequest(addResourceLockDetails, mediaWorkflowId, opcRetryToken, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -288,7 +304,6 @@ public class AddMediaWorkflowLockRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

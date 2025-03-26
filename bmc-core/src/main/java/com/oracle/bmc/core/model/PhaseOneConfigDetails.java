@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Configuration details for IKE phase one (ISAKMP) configuration parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Configuration details for IKE phase one (ISAKMP) configuration parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PhaseOneConfigDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PhaseOneConfigDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PhaseOneConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCustomPhaseOneConfig",
@@ -46,22 +45,26 @@ public final class PhaseOneConfigDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates whether custom configuration is enabled for phase one options. */
+        /**
+         * Indicates whether custom configuration is enabled for phase one options.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
         private Boolean isCustomPhaseOneConfig;
 
         /**
          * Indicates whether custom configuration is enabled for phase one options.
-         *
          * @param isCustomPhaseOneConfig the value to set
          * @return this builder
-         */
+         **/
         public Builder isCustomPhaseOneConfig(Boolean isCustomPhaseOneConfig) {
             this.isCustomPhaseOneConfig = isCustomPhaseOneConfig;
             this.__explicitlySet__.add("isCustomPhaseOneConfig");
             return this;
         }
-        /** The custom authentication algorithm proposed during phase one tunnel negotiation. */
+        /**
+         * The custom authentication algorithm proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
         private AuthenticationAlgorithm authenticationAlgorithm;
 
@@ -70,13 +73,16 @@ public final class PhaseOneConfigDetails
          *
          * @param authenticationAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationAlgorithm(AuthenticationAlgorithm authenticationAlgorithm) {
             this.authenticationAlgorithm = authenticationAlgorithm;
             this.__explicitlySet__.add("authenticationAlgorithm");
             return this;
         }
-        /** The custom encryption algorithm proposed during phase one tunnel negotiation. */
+        /**
+         * The custom encryption algorithm proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
         private EncryptionAlgorithm encryptionAlgorithm;
 
@@ -85,13 +91,16 @@ public final class PhaseOneConfigDetails
          *
          * @param encryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder encryptionAlgorithm(EncryptionAlgorithm encryptionAlgorithm) {
             this.encryptionAlgorithm = encryptionAlgorithm;
             this.__explicitlySet__.add("encryptionAlgorithm");
             return this;
         }
-        /** The custom Diffie-Hellman group proposed during phase one tunnel negotiation. */
+        /**
+         * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
         private DiffieHelmanGroup diffieHelmanGroup;
 
@@ -100,26 +109,25 @@ public final class PhaseOneConfigDetails
          *
          * @param diffieHelmanGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder diffieHelmanGroup(DiffieHelmanGroup diffieHelmanGroup) {
             this.diffieHelmanGroup = diffieHelmanGroup;
             this.__explicitlySet__.add("diffieHelmanGroup");
             return this;
         }
         /**
-         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The
-         * default is 28800 which is equivalent to 8 hours.
-         */
+         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
         private Integer lifetimeInSeconds;
 
         /**
-         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The
-         * default is 28800 which is equivalent to 8 hours.
+         * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
          *
          * @param lifetimeInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder lifetimeInSeconds(Integer lifetimeInSeconds) {
             this.lifetimeInSeconds = lifetimeInSeconds;
             this.__explicitlySet__.add("lifetimeInSeconds");
@@ -164,7 +172,9 @@ public final class PhaseOneConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,21 +183,25 @@ public final class PhaseOneConfigDetails
         return new Builder().copy(this);
     }
 
-    /** Indicates whether custom configuration is enabled for phase one options. */
+    /**
+     * Indicates whether custom configuration is enabled for phase one options.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseOneConfig")
     private final Boolean isCustomPhaseOneConfig;
 
     /**
      * Indicates whether custom configuration is enabled for phase one options.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCustomPhaseOneConfig() {
         return isCustomPhaseOneConfig;
     }
 
-    /** The custom authentication algorithm proposed during phase one tunnel negotiation. */
-    public enum AuthenticationAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
+     *
+     **/
+    public enum AuthenticationAlgorithm {
         Sha2384("SHA2_384"),
         Sha2256("SHA2_256"),
         Sha196("SHA1_96"),
@@ -220,7 +234,10 @@ public final class PhaseOneConfigDetails
             throw new IllegalArgumentException("Invalid AuthenticationAlgorithm: " + key);
         }
     };
-    /** The custom authentication algorithm proposed during phase one tunnel negotiation. */
+    /**
+     * The custom authentication algorithm proposed during phase one tunnel negotiation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationAlgorithm")
     private final AuthenticationAlgorithm authenticationAlgorithm;
 
@@ -228,13 +245,16 @@ public final class PhaseOneConfigDetails
      * The custom authentication algorithm proposed during phase one tunnel negotiation.
      *
      * @return the value
-     */
+     **/
     public AuthenticationAlgorithm getAuthenticationAlgorithm() {
         return authenticationAlgorithm;
     }
 
-    /** The custom encryption algorithm proposed during phase one tunnel negotiation. */
-    public enum EncryptionAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
+     *
+     **/
+    public enum EncryptionAlgorithm {
         Aes256Cbc("AES_256_CBC"),
         Aes192Cbc("AES_192_CBC"),
         Aes128Cbc("AES_128_CBC"),
@@ -267,7 +287,10 @@ public final class PhaseOneConfigDetails
             throw new IllegalArgumentException("Invalid EncryptionAlgorithm: " + key);
         }
     };
-    /** The custom encryption algorithm proposed during phase one tunnel negotiation. */
+    /**
+     * The custom encryption algorithm proposed during phase one tunnel negotiation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("encryptionAlgorithm")
     private final EncryptionAlgorithm encryptionAlgorithm;
 
@@ -275,13 +298,16 @@ public final class PhaseOneConfigDetails
      * The custom encryption algorithm proposed during phase one tunnel negotiation.
      *
      * @return the value
-     */
+     **/
     public EncryptionAlgorithm getEncryptionAlgorithm() {
         return encryptionAlgorithm;
     }
 
-    /** The custom Diffie-Hellman group proposed during phase one tunnel negotiation. */
-    public enum DiffieHelmanGroup implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+     *
+     **/
+    public enum DiffieHelmanGroup {
         Group2("GROUP2"),
         Group5("GROUP5"),
         Group14("GROUP14"),
@@ -317,7 +343,10 @@ public final class PhaseOneConfigDetails
             throw new IllegalArgumentException("Invalid DiffieHelmanGroup: " + key);
         }
     };
-    /** The custom Diffie-Hellman group proposed during phase one tunnel negotiation. */
+    /**
+     * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diffieHelmanGroup")
     private final DiffieHelmanGroup diffieHelmanGroup;
 
@@ -325,24 +354,23 @@ public final class PhaseOneConfigDetails
      * The custom Diffie-Hellman group proposed during phase one tunnel negotiation.
      *
      * @return the value
-     */
+     **/
     public DiffieHelmanGroup getDiffieHelmanGroup() {
         return diffieHelmanGroup;
     }
 
     /**
-     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The
-     * default is 28800 which is equivalent to 8 hours.
-     */
+     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetimeInSeconds")
     private final Integer lifetimeInSeconds;
 
     /**
-     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The
-     * default is 28800 which is equivalent to 8 hours.
+     * Internet key association (IKE) session key lifetime in seconds for IPSec phase one. The default is 28800 which is equivalent to 8 hours.
      *
      * @return the value
-     */
+     **/
     public Integer getLifetimeInSeconds() {
         return lifetimeInSeconds;
     }
@@ -354,7 +382,6 @@ public final class PhaseOneConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

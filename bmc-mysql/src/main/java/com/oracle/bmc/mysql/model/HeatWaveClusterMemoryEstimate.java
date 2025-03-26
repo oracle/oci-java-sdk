@@ -5,25 +5,25 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * HeatWave cluster memory estimate that can be used to determine a suitable HeatWave cluster size.
- * For each MySQL user table the estimated memory footprint when the table is loaded to the HeatWave
- * cluster memory is returned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * HeatWave cluster memory estimate
+ * that can be used to determine a suitable HeatWave cluster size. For each MySQL user table the estimated memory
+ * footprint when the table is loaded to the HeatWave cluster memory is returned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HeatWaveClusterMemoryEstimate.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HeatWaveClusterMemoryEstimate.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HeatWaveClusterMemoryEstimate
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dbSystemId",
@@ -48,7 +48,10 @@ public final class HeatWaveClusterMemoryEstimate
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the DB System the HeatWave cluster memory estimate is associated with. */
+        /**
+         * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
@@ -57,79 +60,75 @@ public final class HeatWaveClusterMemoryEstimate
          *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /** Current status of the Work Request generating the HeatWave cluster memory estimate. */
+        /**
+         * Current status of the Work Request generating the HeatWave cluster memory estimate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private HeatWaveClusterMemoryEstimateStatus status;
 
         /**
          * Current status of the Work Request generating the HeatWave cluster memory estimate.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(HeatWaveClusterMemoryEstimateStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The date and time that the Work Request to generate the HeatWave cluster memory estimate
-         * was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-         */
+         * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time that the Work Request to generate the HeatWave cluster memory estimate
-         * was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-         *
+         * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time that the HeatWave cluster memory estimate was generated, as described
-         * by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-         */
+         * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time that the HeatWave cluster memory estimate was generated, as described
-         * by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-         *
+         * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Collection of schemas with estimated memory footprints for MySQL user tables of each
-         * schema when loaded to HeatWave cluster memory.
-         */
+         * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
+         * when loaded to HeatWave cluster memory.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableSchemas")
         private java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
 
         /**
-         * Collection of schemas with estimated memory footprints for MySQL user tables of each
-         * schema when loaded to HeatWave cluster memory.
+         * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
+         * when loaded to HeatWave cluster memory.
          *
          * @param tableSchemas the value to set
          * @return this builder
-         */
+         **/
         public Builder tableSchemas(
                 java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas) {
             this.tableSchemas = tableSchemas;
@@ -175,7 +174,9 @@ public final class HeatWaveClusterMemoryEstimate
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -184,7 +185,10 @@ public final class HeatWaveClusterMemoryEstimate
         return new Builder().copy(this);
     }
 
-    /** The OCID of the DB System the HeatWave cluster memory estimate is associated with. */
+    /**
+     * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
@@ -192,54 +196,49 @@ public final class HeatWaveClusterMemoryEstimate
      * The OCID of the DB System the HeatWave cluster memory estimate is associated with.
      *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
-    /** Current status of the Work Request generating the HeatWave cluster memory estimate. */
+    /**
+     * Current status of the Work Request generating the HeatWave cluster memory estimate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final HeatWaveClusterMemoryEstimateStatus status;
 
     /**
      * Current status of the Work Request generating the HeatWave cluster memory estimate.
-     *
      * @return the value
-     */
+     **/
     public HeatWaveClusterMemoryEstimateStatus getStatus() {
         return status;
     }
 
     /**
-     * The date and time that the Work Request to generate the HeatWave cluster memory estimate was
-     * issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-     */
+     * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time that the Work Request to generate the HeatWave cluster memory estimate was
-     * issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-     *
+     * The date and time that the Work Request to generate the HeatWave cluster memory estimate was issued, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time that the HeatWave cluster memory estimate was generated, as described by
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-     */
+     * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time that the HeatWave cluster memory estimate was generated, as described by
-     * [RFC 3339](https://tools.ietf.org/rfc/rfc333).
-     *
+     * The date and time that the HeatWave cluster memory estimate was generated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc333).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -247,7 +246,8 @@ public final class HeatWaveClusterMemoryEstimate
     /**
      * Collection of schemas with estimated memory footprints for MySQL user tables of each schema
      * when loaded to HeatWave cluster memory.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableSchemas")
     private final java.util.List<HeatWaveClusterSchemaMemoryEstimate> tableSchemas;
 
@@ -256,7 +256,7 @@ public final class HeatWaveClusterMemoryEstimate
      * when loaded to HeatWave cluster memory.
      *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveClusterSchemaMemoryEstimate> getTableSchemas() {
         return tableSchemas;
     }
@@ -268,7 +268,6 @@ public final class HeatWaveClusterMemoryEstimate
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

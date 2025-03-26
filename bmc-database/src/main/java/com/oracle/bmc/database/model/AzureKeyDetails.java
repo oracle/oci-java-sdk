@@ -5,52 +5,53 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details for Azure encryption key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details for Azure encryption key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AzureKeyDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "provider")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "provider"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AzureKeyDetails extends AutonomousDatabaseEncryptionKeyDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Azure vault URI */
+        /**
+         * Azure vault URI
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultUri")
         private String vaultUri;
 
         /**
          * Azure vault URI
-         *
          * @param vaultUri the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultUri(String vaultUri) {
             this.vaultUri = vaultUri;
             this.__explicitlySet__.add("vaultUri");
             return this;
         }
-        /** Azure key name */
+        /**
+         * Azure key name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyName")
         private String keyName;
 
         /**
          * Azure key name
-         *
          * @param keyName the value to set
          * @return this builder
-         */
+         **/
         public Builder keyName(String keyName) {
             this.keyName = keyName;
             this.__explicitlySet__.add("keyName");
@@ -80,7 +81,9 @@ public final class AzureKeyDetails extends AutonomousDatabaseEncryptionKeyDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class AzureKeyDetails extends AutonomousDatabaseEncryptionKeyDetail
         this.keyName = keyName;
     }
 
-    /** Azure vault URI */
+    /**
+     * Azure vault URI
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultUri")
     private final String vaultUri;
 
     /**
      * Azure vault URI
-     *
      * @return the value
-     */
+     **/
     public String getVaultUri() {
         return vaultUri;
     }
 
-    /** Azure key name */
+    /**
+     * Azure key name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyName")
     private final String keyName;
 
     /**
      * Azure key name
-     *
      * @return the value
-     */
+     **/
     public String getKeyName() {
         return keyName;
     }
@@ -129,7 +134,6 @@ public final class AzureKeyDetails extends AutonomousDatabaseEncryptionKeyDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

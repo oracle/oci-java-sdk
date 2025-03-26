@@ -5,12 +5,14 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * The action taken in the event of errors related to GRANT or REVOKE errors. ABORT - (default)
- * stops the load process and displays an error. DROP_ACCOUNT - deletes the account and continues
- * the load process. IGNORE - ignores the error and continues the load process.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum HandleGrantErrors implements com.oracle.bmc.http.internal.BmcEnum {
+ * The action taken in the event of errors related to GRANT or REVOKE errors.
+ * ABORT - (default) stops the load process and displays an error.
+ * DROP_ACCOUNT - deletes the account and continues the load process.
+ * IGNORE - ignores the error and continues the load process.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum HandleGrantErrors {
     Abort("ABORT"),
     DropAccount("DROP_ACCOUNT"),
     Ignore("IGNORE"),

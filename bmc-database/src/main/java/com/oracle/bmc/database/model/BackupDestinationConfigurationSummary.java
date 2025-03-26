@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Information about the Autonomous Container Database's secondary backup destination(s). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Information about the Autonomous Container Database's secondary backup destination(s).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupDestinationConfigurationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BackupDestinationConfigurationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupDestinationConfigurationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "recoveryWindowInDays",
@@ -62,38 +61,32 @@ public final class BackupDestinationConfigurationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Number of days between the current and earliest point of recoverability covered by
-         * automatic backups and manual backups, but not long term backups.
-         */
+         * Number of days between the current and earliest point of recoverability covered by automatic backups and manual backups, but not long term backups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
         private Integer recoveryWindowInDays;
 
         /**
-         * Number of days between the current and earliest point of recoverability covered by
-         * automatic backups and manual backups, but not long term backups.
-         *
+         * Number of days between the current and earliest point of recoverability covered by automatic backups and manual backups, but not long term backups.
          * @param recoveryWindowInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryWindowInDays(Integer recoveryWindowInDays) {
             this.recoveryWindowInDays = recoveryWindowInDays;
             this.__explicitlySet__.add("recoveryWindowInDays");
             return this;
         }
         /**
-         * The timestamps at which this backup destination is used as the preferred destination to
-         * host the Autonomous Container Database backups.
-         */
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationAttachHistory")
         private java.util.List<java.util.Date> backupDestinationAttachHistory;
 
         /**
-         * The timestamps at which this backup destination is used as the preferred destination to
-         * host the Autonomous Container Database backups.
-         *
+         * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
          * @param backupDestinationAttachHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder backupDestinationAttachHistory(
                 java.util.List<java.util.Date> backupDestinationAttachHistory) {
             this.backupDestinationAttachHistory = backupDestinationAttachHistory;
@@ -101,145 +94,129 @@ public final class BackupDestinationConfigurationSummary
             return this;
         }
         /**
-         * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-         * destination, rounded to the nearest integer.
-         */
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spaceUtilizedInGBs")
         private Integer spaceUtilizedInGBs;
 
         /**
-         * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-         * destination, rounded to the nearest integer.
-         *
+         * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
          * @param spaceUtilizedInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder spaceUtilizedInGBs(Integer spaceUtilizedInGBs) {
             this.spaceUtilizedInGBs = spaceUtilizedInGBs;
             this.__explicitlySet__.add("spaceUtilizedInGBs");
             return this;
         }
         /**
-         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-         * updated.
-         */
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
         private java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
         /**
-         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-         * updated.
-         *
+         * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
          * @param timeAtWhichStorageDetailsAreUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAtWhichStorageDetailsAreUpdated(
                 java.util.Date timeAtWhichStorageDetailsAreUpdated) {
             this.timeAtWhichStorageDetailsAreUpdated = timeAtWhichStorageDetailsAreUpdated;
             this.__explicitlySet__.add("timeAtWhichStorageDetailsAreUpdated");
             return this;
         }
-        /** Type of the database backup destination. */
+        /**
+         * Type of the database backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the database backup destination.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
         private String vpcUser;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          * @param vpcUser the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcUser(String vpcUser) {
             this.vpcUser = vpcUser;
             this.__explicitlySet__.add("vpcUser");
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
         private String vpcPassword;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
          * @param vpcPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcPassword(String vpcPassword) {
             this.vpcPassword = vpcPassword;
             this.__explicitlySet__.add("vpcPassword");
             return this;
         }
-        /** Proxy URL to connect to object store. */
+        /**
+         * Proxy URL to connect to object store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
         private String internetProxy;
 
         /**
          * Proxy URL to connect to object store.
-         *
          * @param internetProxy the value to set
          * @return this builder
-         */
+         **/
         public Builder internetProxy(String internetProxy) {
             this.internetProxy = internetProxy;
             this.__explicitlySet__.add("internetProxy");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
         private String dbrsPolicyId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          * @param dbrsPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             this.dbrsPolicyId = dbrsPolicyId;
             this.__explicitlySet__.add("dbrsPolicyId");
@@ -305,7 +282,9 @@ public final class BackupDestinationConfigurationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -315,88 +294,71 @@ public final class BackupDestinationConfigurationSummary
     }
 
     /**
-     * Number of days between the current and earliest point of recoverability covered by automatic
-     * backups and manual backups, but not long term backups.
-     */
+     * Number of days between the current and earliest point of recoverability covered by automatic backups and manual backups, but not long term backups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryWindowInDays")
     private final Integer recoveryWindowInDays;
 
     /**
-     * Number of days between the current and earliest point of recoverability covered by automatic
-     * backups and manual backups, but not long term backups.
-     *
+     * Number of days between the current and earliest point of recoverability covered by automatic backups and manual backups, but not long term backups.
      * @return the value
-     */
+     **/
     public Integer getRecoveryWindowInDays() {
         return recoveryWindowInDays;
     }
 
     /**
-     * The timestamps at which this backup destination is used as the preferred destination to host
-     * the Autonomous Container Database backups.
-     */
+     * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationAttachHistory")
     private final java.util.List<java.util.Date> backupDestinationAttachHistory;
 
     /**
-     * The timestamps at which this backup destination is used as the preferred destination to host
-     * the Autonomous Container Database backups.
-     *
+     * The timestamps at which this backup destination is used as the preferred destination to host the Autonomous Container Database backups.
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Date> getBackupDestinationAttachHistory() {
         return backupDestinationAttachHistory;
     }
 
     /**
-     * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-     * destination, rounded to the nearest integer.
-     */
+     * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spaceUtilizedInGBs")
     private final Integer spaceUtilizedInGBs;
 
     /**
-     * The total space utilized (in GBs) by this Autonomous Container Database on this backup
-     * destination, rounded to the nearest integer.
-     *
+     * The total space utilized (in GBs) by this Autonomous Container Database on this backup destination, rounded to the nearest integer.
      * @return the value
-     */
+     **/
     public Integer getSpaceUtilizedInGBs() {
         return spaceUtilizedInGBs;
     }
 
     /**
-     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-     * updated.
-     */
+     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAtWhichStorageDetailsAreUpdated")
     private final java.util.Date timeAtWhichStorageDetailsAreUpdated;
 
     /**
-     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are
-     * updated.
-     *
+     * The latest timestamp when the backup destination details, such as 'spaceUtilized,' are updated.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAtWhichStorageDetailsAreUpdated() {
         return timeAtWhichStorageDetailsAreUpdated;
     }
 
-    /** Type of the database backup destination. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the database backup destination.
+     **/
+    public enum Type {
         Nfs("NFS"),
         RecoveryAppliance("RECOVERY_APPLIANCE"),
         ObjectStore("OBJECT_STORE"),
         Local("LOCAL"),
         Dbrs("DBRS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -404,9 +366,7 @@ public final class BackupDestinationConfigurationSummary
         static {
             map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -424,101 +384,89 @@ public final class BackupDestinationConfigurationSummary
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /** Type of the database backup destination. */
+    /**
+     * Type of the database backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the database backup destination.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
     private final String vpcUser;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * @return the value
-     */
+     **/
     public String getVpcUser() {
         return vpcUser;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
     private final String vpcPassword;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * @return the value
-     */
+     **/
     public String getVpcPassword() {
         return vpcPassword;
     }
 
-    /** Proxy URL to connect to object store. */
+    /**
+     * Proxy URL to connect to object store.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
     private final String internetProxy;
 
     /**
      * Proxy URL to connect to object store.
-     *
      * @return the value
-     */
+     **/
     public String getInternetProxy() {
         return internetProxy;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
     private final String dbrsPolicyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * @return the value
-     */
+     **/
     public String getDbrsPolicyId() {
         return dbrsPolicyId;
     }
@@ -530,7 +478,6 @@ public final class BackupDestinationConfigurationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of backup performed on OKE Cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of backup performed on OKE Cluster.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OkeClusterBackupConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OkeClusterBackupConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OkeClusterBackupConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespaces",
@@ -47,109 +47,112 @@ public final class OkeClusterBackupConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A list of namespaces that need to be backed up. The default value is null. If a list of
-         * namespaces is not provided, all namespaces will be backed up. This property applies to
-         * the OKE cluster member in primary region.
+         * A list of namespaces that need to be backed up.
+         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * This property applies to the OKE cluster member in primary region.
+         * <p>
+         * Example: ["default", "pv-nginx"]
          *
-         * <p>Example: ["default", "pv-nginx"]
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaces")
         private java.util.List<String> namespaces;
 
         /**
-         * A list of namespaces that need to be backed up. The default value is null. If a list of
-         * namespaces is not provided, all namespaces will be backed up. This property applies to
-         * the OKE cluster member in primary region.
-         *
-         * <p>Example: ["default", "pv-nginx"]
+         * A list of namespaces that need to be backed up.
+         * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+         * This property applies to the OKE cluster member in primary region.
+         * <p>
+         * Example: ["default", "pv-nginx"]
          *
          * @param namespaces the value to set
          * @return this builder
-         */
+         **/
         public Builder namespaces(java.util.List<String> namespaces) {
             this.namespaces = namespaces;
             this.__explicitlySet__.add("namespaces");
             return this;
         }
         /**
-         * The schedule for backing up namespaces to the destination region. If a backup schedule is
-         * not specified, only a single backup will be created. This format of the string specifying
-         * the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone.
+         * The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545.
+         * This schedule will use the UTC timezone.
          * This property applies to the OKE cluster member in primary region.
+         * <p>
+         * Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
          *
-         * <p>Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
         private String backupSchedule;
 
         /**
-         * The schedule for backing up namespaces to the destination region. If a backup schedule is
-         * not specified, only a single backup will be created. This format of the string specifying
-         * the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone.
+         * The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545.
+         * This schedule will use the UTC timezone.
          * This property applies to the OKE cluster member in primary region.
-         *
-         * <p>Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+         * <p>
+         * Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
          *
          * @param backupSchedule the value to set
          * @return this builder
-         */
+         **/
         public Builder backupSchedule(String backupSchedule) {
             this.backupSchedule = backupSchedule;
             this.__explicitlySet__.add("backupSchedule");
             return this;
         }
         /**
-         * Controls the behaviour of image replication across regions. This property applies to the
-         * OKE cluster member in primary region.
-         */
+         * Controls the behaviour of image replication across regions.
+         * This property applies to the OKE cluster member in primary region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicateImages")
         private OkeClusterImageReplication replicateImages;
 
         /**
-         * Controls the behaviour of image replication across regions. This property applies to the
-         * OKE cluster member in primary region.
+         * Controls the behaviour of image replication across regions.
+         * This property applies to the OKE cluster member in primary region.
          *
          * @param replicateImages the value to set
          * @return this builder
-         */
+         **/
         public Builder replicateImages(OkeClusterImageReplication replicateImages) {
             this.replicateImages = replicateImages;
             this.__explicitlySet__.add("replicateImages");
             return this;
         }
         /**
-         * The maximum number of backups that should be retained. This property applies to the OKE
-         * cluster member in primary region.
-         */
+         * The maximum number of backups that should be retained.
+         * This property applies to the OKE cluster member in primary region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfBackupsRetained")
         private Integer maxNumberOfBackupsRetained;
 
         /**
-         * The maximum number of backups that should be retained. This property applies to the OKE
-         * cluster member in primary region.
+         * The maximum number of backups that should be retained.
+         * This property applies to the OKE cluster member in primary region.
          *
          * @param maxNumberOfBackupsRetained the value to set
          * @return this builder
-         */
+         **/
         public Builder maxNumberOfBackupsRetained(Integer maxNumberOfBackupsRetained) {
             this.maxNumberOfBackupsRetained = maxNumberOfBackupsRetained;
             this.__explicitlySet__.add("maxNumberOfBackupsRetained");
             return this;
         }
         /**
-         * The OCID of the vault secret that stores the image credential. This property applies to
-         * the OKE cluster member in both the primary and standby region.
-         */
+         * The OCID of the vault secret that stores the image credential.
+         * This property applies to the OKE cluster member in both the primary and standby region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageReplicationVaultSecretId")
         private String imageReplicationVaultSecretId;
 
         /**
-         * The OCID of the vault secret that stores the image credential. This property applies to
-         * the OKE cluster member in both the primary and standby region.
+         * The OCID of the vault secret that stores the image credential.
+         * This property applies to the OKE cluster member in both the primary and standby region.
          *
          * @param imageReplicationVaultSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder imageReplicationVaultSecretId(String imageReplicationVaultSecretId) {
             this.imageReplicationVaultSecretId = imageReplicationVaultSecretId;
             this.__explicitlySet__.add("imageReplicationVaultSecretId");
@@ -194,7 +197,9 @@ public final class OkeClusterBackupConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -204,100 +209,103 @@ public final class OkeClusterBackupConfig
     }
 
     /**
-     * A list of namespaces that need to be backed up. The default value is null. If a list of
-     * namespaces is not provided, all namespaces will be backed up. This property applies to the
-     * OKE cluster member in primary region.
+     * A list of namespaces that need to be backed up.
+     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * This property applies to the OKE cluster member in primary region.
+     * <p>
+     * Example: ["default", "pv-nginx"]
      *
-     * <p>Example: ["default", "pv-nginx"]
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaces")
     private final java.util.List<String> namespaces;
 
     /**
-     * A list of namespaces that need to be backed up. The default value is null. If a list of
-     * namespaces is not provided, all namespaces will be backed up. This property applies to the
-     * OKE cluster member in primary region.
-     *
-     * <p>Example: ["default", "pv-nginx"]
+     * A list of namespaces that need to be backed up.
+     * The default value is null. If a list of namespaces is not provided, all namespaces will be backed up.
+     * This property applies to the OKE cluster member in primary region.
+     * <p>
+     * Example: ["default", "pv-nginx"]
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNamespaces() {
         return namespaces;
     }
 
     /**
-     * The schedule for backing up namespaces to the destination region. If a backup schedule is not
-     * specified, only a single backup will be created. This format of the string specifying the
-     * backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This
-     * property applies to the OKE cluster member in primary region.
+     * The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545.
+     * This schedule will use the UTC timezone.
+     * This property applies to the OKE cluster member in primary region.
+     * <p>
+     * Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
      *
-     * <p>Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSchedule")
     private final String backupSchedule;
 
     /**
-     * The schedule for backing up namespaces to the destination region. If a backup schedule is not
-     * specified, only a single backup will be created. This format of the string specifying the
-     * backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This
-     * property applies to the OKE cluster member in primary region.
-     *
-     * <p>Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
+     * The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545.
+     * This schedule will use the UTC timezone.
+     * This property applies to the OKE cluster member in primary region.
+     * <p>
+     * Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
      *
      * @return the value
-     */
+     **/
     public String getBackupSchedule() {
         return backupSchedule;
     }
 
     /**
-     * Controls the behaviour of image replication across regions. This property applies to the OKE
-     * cluster member in primary region.
-     */
+     * Controls the behaviour of image replication across regions.
+     * This property applies to the OKE cluster member in primary region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicateImages")
     private final OkeClusterImageReplication replicateImages;
 
     /**
-     * Controls the behaviour of image replication across regions. This property applies to the OKE
-     * cluster member in primary region.
+     * Controls the behaviour of image replication across regions.
+     * This property applies to the OKE cluster member in primary region.
      *
      * @return the value
-     */
+     **/
     public OkeClusterImageReplication getReplicateImages() {
         return replicateImages;
     }
 
     /**
-     * The maximum number of backups that should be retained. This property applies to the OKE
-     * cluster member in primary region.
-     */
+     * The maximum number of backups that should be retained.
+     * This property applies to the OKE cluster member in primary region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxNumberOfBackupsRetained")
     private final Integer maxNumberOfBackupsRetained;
 
     /**
-     * The maximum number of backups that should be retained. This property applies to the OKE
-     * cluster member in primary region.
+     * The maximum number of backups that should be retained.
+     * This property applies to the OKE cluster member in primary region.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxNumberOfBackupsRetained() {
         return maxNumberOfBackupsRetained;
     }
 
     /**
-     * The OCID of the vault secret that stores the image credential. This property applies to the
-     * OKE cluster member in both the primary and standby region.
-     */
+     * The OCID of the vault secret that stores the image credential.
+     * This property applies to the OKE cluster member in both the primary and standby region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageReplicationVaultSecretId")
     private final String imageReplicationVaultSecretId;
 
     /**
-     * The OCID of the vault secret that stores the image credential. This property applies to the
-     * OKE cluster member in both the primary and standby region.
+     * The OCID of the vault secret that stores the image credential.
+     * This property applies to the OKE cluster member in both the primary and standby region.
      *
      * @return the value
-     */
+     **/
     public String getImageReplicationVaultSecretId() {
         return imageReplicationVaultSecretId;
     }
@@ -309,7 +317,6 @@ public final class OkeClusterBackupConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

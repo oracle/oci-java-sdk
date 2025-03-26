@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Possible governance statuses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum GovernanceStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible governance statuses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum GovernanceStatus {
     OptedIn("OPTED_IN"),
     OptedOut("OPTED_OUT"),
 

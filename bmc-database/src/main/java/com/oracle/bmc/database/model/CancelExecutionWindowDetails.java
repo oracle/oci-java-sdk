@@ -6,23 +6,22 @@ package com.oracle.bmc.database.model;
 
 /**
  * Describe the parameters to create a new execution window after this execution window is canceled.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CancelExecutionWindowDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CancelExecutionWindowDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CancelExecutionWindowDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeScheduledOfNewWindow",
@@ -41,54 +40,51 @@ public final class CancelExecutionWindowDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** New scheduled date and time of the execution window. */
+        /**
+         * New scheduled date and time of the execution window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledOfNewWindow")
         private java.util.Date timeScheduledOfNewWindow;
 
         /**
          * New scheduled date and time of the execution window.
-         *
          * @param timeScheduledOfNewWindow the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduledOfNewWindow(java.util.Date timeScheduledOfNewWindow) {
             this.timeScheduledOfNewWindow = timeScheduledOfNewWindow;
             this.__explicitlySet__.add("timeScheduledOfNewWindow");
             return this;
         }
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
-         */
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowDurationInMinsOfNewWindow")
         private Integer windowDurationInMinsOfNewWindow;
 
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
          *
          * @param windowDurationInMinsOfNewWindow the value to set
          * @return this builder
-         */
+         **/
         public Builder windowDurationInMinsOfNewWindow(Integer windowDurationInMinsOfNewWindow) {
             this.windowDurationInMinsOfNewWindow = windowDurationInMinsOfNewWindow;
             this.__explicitlySet__.add("windowDurationInMinsOfNewWindow");
             return this;
         }
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         */
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDurationOfNewWindow")
         private Boolean isEnforcedDurationOfNewWindow;
 
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         *
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
          * @param isEnforcedDurationOfNewWindow the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnforcedDurationOfNewWindow(Boolean isEnforcedDurationOfNewWindow) {
             this.isEnforcedDurationOfNewWindow = isEnforcedDurationOfNewWindow;
             this.__explicitlySet__.add("isEnforcedDurationOfNewWindow");
@@ -125,7 +121,9 @@ public final class CancelExecutionWindowDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -134,49 +132,46 @@ public final class CancelExecutionWindowDetails
         return new Builder().copy(this);
     }
 
-    /** New scheduled date and time of the execution window. */
+    /**
+     * New scheduled date and time of the execution window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledOfNewWindow")
     private final java.util.Date timeScheduledOfNewWindow;
 
     /**
      * New scheduled date and time of the execution window.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduledOfNewWindow() {
         return timeScheduledOfNewWindow;
     }
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
-     */
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowDurationInMinsOfNewWindow")
     private final Integer windowDurationInMinsOfNewWindow;
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * @return the value
-     */
+     **/
     public Integer getWindowDurationInMinsOfNewWindow() {
         return windowDurationInMinsOfNewWindow;
     }
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     */
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDurationOfNewWindow")
     private final Boolean isEnforcedDurationOfNewWindow;
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     *
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
      * @return the value
-     */
+     **/
     public Boolean getIsEnforcedDurationOfNewWindow() {
         return isEnforcedDurationOfNewWindow;
     }
@@ -188,7 +183,6 @@ public final class CancelExecutionWindowDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

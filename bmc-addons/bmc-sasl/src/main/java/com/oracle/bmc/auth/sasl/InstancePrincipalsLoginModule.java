@@ -6,16 +6,13 @@ package com.oracle.bmc.auth.sasl;
 
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
-import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider.InstancePrincipalsAuthenticationDetailsProviderBuilder;
 import java.util.Map;
+import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider.InstancePrincipalsAuthenticationDetailsProviderBuilder;
 
 /**
- * A {@link javax.security.auth.spi.LoginModule} that will use Instance Principals to fill the
- * {@link javax.security.auth.Subject} credentials. An <i>intent</i> parameter has to be specified -
- * this service specific and is documented on a per-service basis.
- *
- * <pre>{@code com.oracle.bmc.auth.sasl.InstancePrincipalsLoginModule required intent="<intent>";}
- * </pre>
+ * A {@link javax.security.auth.spi.LoginModule} that will use Instance Principals to fill the {@link javax.security.auth.Subject} credentials.
+ * An <i>intent</i> parameter has to be specified - this service specific and is documented on a per-service basis.
+ * <pre>{@code com.oracle.bmc.auth.sasl.InstancePrincipalsLoginModule required intent="<intent>";}</pre>
  */
 public class InstancePrincipalsLoginModule extends OciLoginModule {
 
@@ -31,7 +28,6 @@ public class InstancePrincipalsLoginModule extends OciLoginModule {
         if (options.containsKey(METADATA_URL)) {
             builder.metadataBaseUrl((String) options.get(METADATA_URL));
         }
-
         return builder.build();
     }
 }

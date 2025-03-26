@@ -6,47 +6,64 @@ package com.oracle.bmc.healthchecks.requests;
 
 import com.oracle.bmc.healthchecks.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHealthChecksVantagePointsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListHealthChecksVantagePointsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/ListHealthChecksVantagePointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListHealthChecksVantagePointsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class ListHealthChecksVantagePointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The field to sort by when listing vantage points. */
+    /**
+     * The field to sort by when listing vantage points.
+     */
     private SortBy sortBy;
 
-    /** The field to sort by when listing vantage points. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by when listing vantage points.
+     **/
+    public enum SortBy {
         Name("name"),
         DisplayName("displayName"),
         ;
@@ -79,15 +96,21 @@ public class ListHealthChecksVantagePointsRequest
         }
     };
 
-    /** The field to sort by when listing vantage points. */
+    /**
+     * The field to sort by when listing vantage points.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Controls the sort order of results. */
+    /**
+     * Controls the sort order of results.
+     */
     private SortOrder sortOrder;
 
-    /** Controls the sort order of results. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Controls the sort order of results.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -120,21 +143,31 @@ public class ListHealthChecksVantagePointsRequest
         }
     };
 
-    /** Controls the sort order of results. */
+    /**
+     * Controls the sort order of results.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Filters results that exactly match the {@code name} field. */
+    /**
+     * Filters results that exactly match the {@code name} field.
+     */
     private String name;
 
-    /** Filters results that exactly match the {@code name} field. */
+    /**
+     * Filters results that exactly match the {@code name} field.
+     */
     public String getName() {
         return name;
     }
-    /** Filters results that exactly match the {@code displayName} field. */
+    /**
+     * Filters results that exactly match the {@code displayName} field.
+     */
     private String displayName;
 
-    /** Filters results that exactly match the {@code displayName} field. */
+    /**
+     * Filters results that exactly match the {@code displayName} field.
+     */
     public String getDisplayName() {
         return displayName;
     }
@@ -142,12 +175,14 @@ public class ListHealthChecksVantagePointsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListHealthChecksVantagePointsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -163,7 +198,10 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -177,11 +215,16 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -191,12 +234,13 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** The field to sort by when listing vantage points. */
+        /**
+         * The field to sort by when listing vantage points.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by when listing vantage points.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -205,12 +249,13 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** Controls the sort order of results. */
+        /**
+         * Controls the sort order of results.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * Controls the sort order of results.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -219,12 +264,13 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** Filters results that exactly match the {@code name} field. */
+        /**
+         * Filters results that exactly match the {@code name} field.
+         */
         private String name = null;
 
         /**
          * Filters results that exactly match the {@code name} field.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -233,12 +279,13 @@ public class ListHealthChecksVantagePointsRequest
             return this;
         }
 
-        /** Filters results that exactly match the {@code displayName} field. */
+        /**
+         * Filters results that exactly match the {@code displayName} field.
+         */
         private String displayName = null;
 
         /**
          * Filters results that exactly match the {@code displayName} field.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -249,19 +296,18 @@ public class ListHealthChecksVantagePointsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -273,7 +319,6 @@ public class ListHealthChecksVantagePointsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListHealthChecksVantagePointsRequest o) {
@@ -292,11 +337,10 @@ public class ListHealthChecksVantagePointsRequest
         /**
          * Build the instance of ListHealthChecksVantagePointsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListHealthChecksVantagePointsRequest
          */
@@ -310,8 +354,7 @@ public class ListHealthChecksVantagePointsRequest
         /**
          * Build the instance of ListHealthChecksVantagePointsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListHealthChecksVantagePointsRequest
@@ -327,14 +370,12 @@ public class ListHealthChecksVantagePointsRequest
             request.name = name;
             request.displayName = displayName;
             return request;
-            // new ListHealthChecksVantagePointsRequest(opcRequestId, limit, page, sortBy,
-            // sortOrder, name, displayName);
+            // new ListHealthChecksVantagePointsRequest(opcRequestId, limit, page, sortBy, sortOrder, name, displayName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -350,7 +391,6 @@ public class ListHealthChecksVantagePointsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

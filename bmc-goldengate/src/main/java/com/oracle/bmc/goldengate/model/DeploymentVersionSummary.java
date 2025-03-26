@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The summary data of a specific deployment version. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The summary data of a specific deployment version.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeploymentVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeploymentVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "oggVersion",
@@ -49,7 +49,10 @@ public final class DeploymentVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Version of OGG */
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -58,28 +61,29 @@ public final class DeploymentVersionSummary
          *
          * @param oggVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
-         */
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private DeploymentType deploymentType;
 
         /**
-         * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the
-         * value 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in
-         * favor of 'DATABASE_ORACLE'.
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
          *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(DeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
@@ -88,7 +92,8 @@ public final class DeploymentVersionSummary
         /**
          * The time the resource was released. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
@@ -98,13 +103,16 @@ public final class DeploymentVersionSummary
          *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** The type of release. */
+        /**
+         * The type of release.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
         private ReleaseType releaseType;
 
@@ -113,13 +121,16 @@ public final class DeploymentVersionSummary
          *
          * @param releaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseType(ReleaseType releaseType) {
             this.releaseType = releaseType;
             this.__explicitlySet__.add("releaseType");
             return this;
         }
-        /** Indicates if OGG release contains security fix. */
+        /**
+         * Indicates if OGG release contains security fix.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
         private Boolean isSecurityFix;
 
@@ -128,28 +139,27 @@ public final class DeploymentVersionSummary
          *
          * @param isSecurityFix the value to set
          * @return this builder
-         */
+         **/
         public Builder isSecurityFix(Boolean isSecurityFix) {
             this.isSecurityFix = isSecurityFix;
             this.__explicitlySet__.add("isSecurityFix");
             return this;
         }
         /**
-         * The time until OGG version is supported. After this date has passed OGG version will not
-         * be available anymore. The format is defined by
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSupportedUntil")
         private java.util.Date timeSupportedUntil;
 
         /**
-         * The time until OGG version is supported. After this date has passed OGG version will not
-         * be available anymore. The format is defined by
+         * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
          *
          * @param timeSupportedUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSupportedUntil(java.util.Date timeSupportedUntil) {
             this.timeSupportedUntil = timeSupportedUntil;
             this.__explicitlySet__.add("timeSupportedUntil");
@@ -198,7 +208,9 @@ public final class DeploymentVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,7 +219,10 @@ public final class DeploymentVersionSummary
         return new Builder().copy(this);
     }
 
-    /** Version of OGG */
+    /**
+     * Version of OGG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -215,26 +230,27 @@ public final class DeploymentVersionSummary
      * Version of OGG
      *
      * @return the value
-     */
+     **/
     public String getOggVersion() {
         return oggVersion;
     }
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
-     */
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final DeploymentType deploymentType;
 
     /**
-     * The type of deployment, which can be any one of the Allowed values. NOTE: Use of the value
-     * 'OGG' is maintained for backward compatibility purposes. Its use is discouraged in favor of
-     * 'DATABASE_ORACLE'.
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
      *
      * @return the value
-     */
+     **/
     public DeploymentType getDeploymentType() {
         return deploymentType;
     }
@@ -242,7 +258,8 @@ public final class DeploymentVersionSummary
     /**
      * The time the resource was released. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
@@ -251,12 +268,15 @@ public final class DeploymentVersionSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** The type of release. */
+    /**
+     * The type of release.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseType")
     private final ReleaseType releaseType;
 
@@ -264,12 +284,15 @@ public final class DeploymentVersionSummary
      * The type of release.
      *
      * @return the value
-     */
+     **/
     public ReleaseType getReleaseType() {
         return releaseType;
     }
 
-    /** Indicates if OGG release contains security fix. */
+    /**
+     * Indicates if OGG release contains security fix.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecurityFix")
     private final Boolean isSecurityFix;
 
@@ -277,26 +300,25 @@ public final class DeploymentVersionSummary
      * Indicates if OGG release contains security fix.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSecurityFix() {
         return isSecurityFix;
     }
 
     /**
-     * The time until OGG version is supported. After this date has passed OGG version will not be
-     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSupportedUntil")
     private final java.util.Date timeSupportedUntil;
 
     /**
-     * The time until OGG version is supported. After this date has passed OGG version will not be
-     * available anymore. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339),
-     * such as {@code 2016-08-25T21:10:29.600Z}.
+     * The time until OGG version is supported. After this date has passed OGG version will not be available anymore. The format is defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSupportedUntil() {
         return timeSupportedUntil;
     }
@@ -308,7 +330,6 @@ public final class DeploymentVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

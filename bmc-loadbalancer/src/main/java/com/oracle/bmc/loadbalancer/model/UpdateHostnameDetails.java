@@ -5,25 +5,25 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The configuration details for updating a virtual hostname. For more information on virtual
- * hostnames, see [Managing Request
- * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * The configuration details for updating a virtual hostname.
+ * For more information on virtual hostnames, see
+ * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateHostnameDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateHostnameDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateHostnameDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname"})
     public UpdateHostnameDetails(String hostname) {
@@ -34,25 +34,24 @@ public final class UpdateHostnameDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The virtual hostname to update. For more information about virtual hostname string
-         * construction, see [Managing Request
-         * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+         * The virtual hostname to update. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
          *
-         * <p>Example: {@code app.example.com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
-         * The virtual hostname to update. For more information about virtual hostname string
-         * construction, see [Managing Request
-         * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
-         *
-         * <p>Example: {@code app.example.com}
+         * The virtual hostname to update. For more information about virtual hostname string construction, see
+         * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+         * <p>
+         * Example: {@code app.example.com}
          *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -79,7 +78,9 @@ public final class UpdateHostnameDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -89,24 +90,23 @@ public final class UpdateHostnameDetails
     }
 
     /**
-     * The virtual hostname to update. For more information about virtual hostname string
-     * construction, see [Managing Request
-     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+     * The virtual hostname to update. For more information about virtual hostname string construction, see
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+     * <p>
+     * Example: {@code app.example.com}
      *
-     * <p>Example: {@code app.example.com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
-     * The virtual hostname to update. For more information about virtual hostname string
-     * construction, see [Managing Request
-     * Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
-     *
-     * <p>Example: {@code app.example.com}
+     * The virtual hostname to update. For more information about virtual hostname string construction, see
+     * [Managing Request Routing](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).
+     * <p>
+     * Example: {@code app.example.com}
      *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -118,7 +118,6 @@ public final class UpdateHostnameDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

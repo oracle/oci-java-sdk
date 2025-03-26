@@ -5,38 +5,38 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Detailed configurations for defining the behavior when installing os patches. If not provided,
- * nodes will be patched and rebooted AD/FD by AD/FD for regular patches or will be patched with
- * down time if the patch is an emergent patch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Detailed configurations for defining the behavior when installing os patches. If not provided, nodes will be patched and rebooted AD/FD by AD/FD for regular patches or will be patched with down time if the patch is an emergent patch.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "patchingConfigStrategy",
-        defaultImpl = PatchingConfigs.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "patchingConfigStrategy",
+    defaultImpl = PatchingConfigs.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BatchingBasedPatchingConfigs.class,
-            name = "BATCHING_BASED"),
+        value = BatchingBasedPatchingConfigs.class,
+        name = "BATCHING_BASED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DowntimeBasedPatchingConfigs.class,
-            name = "DOWNTIME_BASED"),
+        value = DowntimeBasedPatchingConfigs.class,
+        name = "DOWNTIME_BASED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DomainBasedPatchingConfigs.class,
-            name = "DOMAIN_BASED")
+        value = DomainBasedPatchingConfigs.class,
+        name = "DOMAIN_BASED"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PatchingConfigs extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PatchingConfigs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected PatchingConfigs() {
@@ -50,7 +50,6 @@ public class PatchingConfigs extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -83,8 +82,10 @@ public class PatchingConfigs extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** Type of strategy used for detailed patching configuration */
-    public enum PatchingConfigStrategy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of strategy used for detailed patching configuration
+     **/
+    public enum PatchingConfigStrategy {
         DowntimeBased("DOWNTIME_BASED"),
         BatchingBased("BATCHING_BASED"),
         DomainBased("DOMAIN_BASED"),

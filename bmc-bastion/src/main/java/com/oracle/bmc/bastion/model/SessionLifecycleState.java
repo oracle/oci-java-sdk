@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.bastion.model;
 
-/** Possible session lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-public enum SessionLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible session lifecycle states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+public enum SessionLifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Deleting("DELETING"),

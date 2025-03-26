@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The deployment start type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum StartDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The deployment start type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum StartDeploymentType {
     Default("DEFAULT"),
     ;
 

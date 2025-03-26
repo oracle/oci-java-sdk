@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of the finding. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum FindingLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of the finding.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum FindingLifecycleState {
     Active("ACTIVE"),
     Updating("UPDATING"),
     NeedsAttention("NEEDS_ATTENTION"),

@@ -5,24 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The summary of information about the user profiles. It includes details such as profile name,
- * failed login attempts, sessions per user, inactive account time, password lock time, user
- * created, target id, and the compartment id. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The summary of information about the user profiles. It includes details such as profile name, failed login attempts,
+ * sessions per user, inactive account time, password lock time, user created, target id, and the compartment id.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProfileSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProfileSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProfileSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "userAssessmentId",
@@ -72,126 +69,132 @@ public final class ProfileSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the latest user assessment corresponding to the target under consideration. A
-         * compartment type assessment can also be passed to profiles from all the targets from the
-         * corresponding compartment.
-         */
+         * The OCID of the latest user assessment corresponding to the target under consideration. A compartment
+         * type assessment can also be passed to profiles from all the targets from the corresponding compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userAssessmentId")
         private String userAssessmentId;
 
         /**
-         * The OCID of the latest user assessment corresponding to the target under consideration. A
-         * compartment type assessment can also be passed to profiles from all the targets from the
-         * corresponding compartment.
+         * The OCID of the latest user assessment corresponding to the target under consideration. A compartment
+         * type assessment can also be passed to profiles from all the targets from the corresponding compartment.
          *
          * @param userAssessmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = userAssessmentId;
             this.__explicitlySet__.add("userAssessmentId");
             return this;
         }
-        /** The OCID of the compartment that contains the user assessment. */
+        /**
+         * The OCID of the compartment that contains the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the user assessment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The name of the profile. */
+        /**
+         * The name of the profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
         /**
          * The name of the profile.
-         *
          * @param profileName the value to set
          * @return this builder
-         */
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
             return this;
         }
-        /** The number of users having a given profile. */
+        /**
+         * The number of users having a given profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCount")
         private Integer userCount;
 
         /**
          * The number of users having a given profile.
-         *
          * @param userCount the value to set
          * @return this builder
-         */
+         **/
         public Builder userCount(Integer userCount) {
             this.userCount = userCount;
             this.__explicitlySet__.add("userCount");
             return this;
         }
-        /** Maximum times the user is allowed to fail login before the user account is locked. */
+        /**
+         * Maximum times the user is allowed to fail login before the user account is locked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
         private String failedLoginAttempts;
 
         /**
          * Maximum times the user is allowed to fail login before the user account is locked.
-         *
          * @param failedLoginAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder failedLoginAttempts(String failedLoginAttempts) {
             this.failedLoginAttempts = failedLoginAttempts;
             this.__explicitlySet__.add("failedLoginAttempts");
             return this;
         }
-        /** PL/SQL that can be used for password verification. */
+        /**
+         * PL/SQL that can be used for password verification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunction")
         private String passwordVerificationFunction;
 
         /**
          * PL/SQL that can be used for password verification.
-         *
          * @param passwordVerificationFunction the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVerificationFunction(String passwordVerificationFunction) {
             this.passwordVerificationFunction = passwordVerificationFunction;
             this.__explicitlySet__.add("passwordVerificationFunction");
             return this;
         }
-        /** The maximum number of sessions a user is allowed to create. */
+        /**
+         * The maximum number of sessions a user is allowed to create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionsPerUser")
         private String sessionsPerUser;
 
         /**
          * The maximum number of sessions a user is allowed to create.
-         *
          * @param sessionsPerUser the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionsPerUser(String sessionsPerUser) {
             this.sessionsPerUser = sessionsPerUser;
             this.__explicitlySet__.add("sessionsPerUser");
@@ -200,7 +203,8 @@ public final class ProfileSummary
         /**
          * The permitted periods of continuous inactive time during a session, expressed in minutes.
          * Long-running queries and other operations are not subjected to this limit.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
         private String inactiveAccountTime;
 
@@ -210,85 +214,81 @@ public final class ProfileSummary
          *
          * @param inactiveAccountTime the value to set
          * @return this builder
-         */
+         **/
         public Builder inactiveAccountTime(String inactiveAccountTime) {
             this.inactiveAccountTime = inactiveAccountTime;
             this.__explicitlySet__.add("inactiveAccountTime");
             return this;
         }
-        /** Number of days the user account remains locked after failed login */
+        /**
+         * Number of days the user account remains locked after failed login
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
         private String passwordLockTime;
 
         /**
          * Number of days the user account remains locked after failed login
-         *
          * @param passwordLockTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordLockTime(String passwordLockTime) {
             this.passwordLockTime = passwordLockTime;
             this.__explicitlySet__.add("passwordLockTime");
             return this;
         }
-        /** Represents if the profile is created by user. */
+        /**
+         * Represents if the profile is created by user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserCreated")
         private Boolean isUserCreated;
 
         /**
          * Represents if the profile is created by user.
-         *
          * @param isUserCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder isUserCreated(Boolean isUserCreated) {
             this.isUserCreated = isUserCreated;
             this.__explicitlySet__.add("isUserCreated");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -366,7 +366,9 @@ public final class ProfileSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -376,111 +378,117 @@ public final class ProfileSummary
     }
 
     /**
-     * The OCID of the latest user assessment corresponding to the target under consideration. A
-     * compartment type assessment can also be passed to profiles from all the targets from the
-     * corresponding compartment.
-     */
+     * The OCID of the latest user assessment corresponding to the target under consideration. A compartment
+     * type assessment can also be passed to profiles from all the targets from the corresponding compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAssessmentId")
     private final String userAssessmentId;
 
     /**
-     * The OCID of the latest user assessment corresponding to the target under consideration. A
-     * compartment type assessment can also be passed to profiles from all the targets from the
-     * corresponding compartment.
+     * The OCID of the latest user assessment corresponding to the target under consideration. A compartment
+     * type assessment can also be passed to profiles from all the targets from the corresponding compartment.
      *
      * @return the value
-     */
+     **/
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
 
-    /** The OCID of the compartment that contains the user assessment. */
+    /**
+     * The OCID of the compartment that contains the user assessment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the user assessment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The name of the profile. */
+    /**
+     * The name of the profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
     /**
      * The name of the profile.
-     *
      * @return the value
-     */
+     **/
     public String getProfileName() {
         return profileName;
     }
 
-    /** The number of users having a given profile. */
+    /**
+     * The number of users having a given profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userCount")
     private final Integer userCount;
 
     /**
      * The number of users having a given profile.
-     *
      * @return the value
-     */
+     **/
     public Integer getUserCount() {
         return userCount;
     }
 
-    /** Maximum times the user is allowed to fail login before the user account is locked. */
+    /**
+     * Maximum times the user is allowed to fail login before the user account is locked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
     private final String failedLoginAttempts;
 
     /**
      * Maximum times the user is allowed to fail login before the user account is locked.
-     *
      * @return the value
-     */
+     **/
     public String getFailedLoginAttempts() {
         return failedLoginAttempts;
     }
 
-    /** PL/SQL that can be used for password verification. */
+    /**
+     * PL/SQL that can be used for password verification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunction")
     private final String passwordVerificationFunction;
 
     /**
      * PL/SQL that can be used for password verification.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordVerificationFunction() {
         return passwordVerificationFunction;
     }
 
-    /** The maximum number of sessions a user is allowed to create. */
+    /**
+     * The maximum number of sessions a user is allowed to create.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionsPerUser")
     private final String sessionsPerUser;
 
     /**
      * The maximum number of sessions a user is allowed to create.
-     *
      * @return the value
-     */
+     **/
     public String getSessionsPerUser() {
         return sessionsPerUser;
     }
@@ -488,7 +496,8 @@ public final class ProfileSummary
     /**
      * The permitted periods of continuous inactive time during a session, expressed in minutes.
      * Long-running queries and other operations are not subjected to this limit.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
     private final String inactiveAccountTime;
 
@@ -497,77 +506,73 @@ public final class ProfileSummary
      * Long-running queries and other operations are not subjected to this limit.
      *
      * @return the value
-     */
+     **/
     public String getInactiveAccountTime() {
         return inactiveAccountTime;
     }
 
-    /** Number of days the user account remains locked after failed login */
+    /**
+     * Number of days the user account remains locked after failed login
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
     private final String passwordLockTime;
 
     /**
      * Number of days the user account remains locked after failed login
-     *
      * @return the value
-     */
+     **/
     public String getPasswordLockTime() {
         return passwordLockTime;
     }
 
-    /** Represents if the profile is created by user. */
+    /**
+     * Represents if the profile is created by user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserCreated")
     private final Boolean isUserCreated;
 
     /**
      * Represents if the profile is created by user.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUserCreated() {
         return isUserCreated;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -579,7 +584,6 @@ public final class ProfileSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

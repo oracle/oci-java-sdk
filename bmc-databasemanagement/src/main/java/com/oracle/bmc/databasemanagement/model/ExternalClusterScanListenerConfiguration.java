@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a SCAN listener in an external cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of a SCAN listener in an external cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalClusterScanListenerConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalClusterScanListenerConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalClusterScanListenerConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"scanName", "networkNumber", "scanPort", "scanProtocol"})
     public ExternalClusterScanListenerConfiguration(
@@ -35,61 +34,65 @@ public final class ExternalClusterScanListenerConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the SCAN listener. */
+        /**
+         * The name of the SCAN listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanName")
         private String scanName;
 
         /**
          * The name of the SCAN listener.
-         *
          * @param scanName the value to set
          * @return this builder
-         */
+         **/
         public Builder scanName(String scanName) {
             this.scanName = scanName;
             this.__explicitlySet__.add("scanName");
             return this;
         }
-        /** The network number from which SCAN VIPs are obtained. */
+        /**
+         * The network number from which SCAN VIPs are obtained.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
         private Integer networkNumber;
 
         /**
          * The network number from which SCAN VIPs are obtained.
-         *
          * @param networkNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder networkNumber(Integer networkNumber) {
             this.networkNumber = networkNumber;
             this.__explicitlySet__.add("networkNumber");
             return this;
         }
-        /** The port number of the SCAN listener. */
+        /**
+         * The port number of the SCAN listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanPort")
         private Integer scanPort;
 
         /**
          * The port number of the SCAN listener.
-         *
          * @param scanPort the value to set
          * @return this builder
-         */
+         **/
         public Builder scanPort(Integer scanPort) {
             this.scanPort = scanPort;
             this.__explicitlySet__.add("scanPort");
             return this;
         }
-        /** The protocol of the SCAN listener. */
+        /**
+         * The protocol of the SCAN listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanProtocol")
         private ScanProtocol scanProtocol;
 
         /**
          * The protocol of the SCAN listener.
-         *
          * @param scanProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder scanProtocol(ScanProtocol scanProtocol) {
             this.scanProtocol = scanProtocol;
             this.__explicitlySet__.add("scanProtocol");
@@ -127,7 +130,9 @@ public final class ExternalClusterScanListenerConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,53 +141,58 @@ public final class ExternalClusterScanListenerConfiguration
         return new Builder().copy(this);
     }
 
-    /** The name of the SCAN listener. */
+    /**
+     * The name of the SCAN listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanName")
     private final String scanName;
 
     /**
      * The name of the SCAN listener.
-     *
      * @return the value
-     */
+     **/
     public String getScanName() {
         return scanName;
     }
 
-    /** The network number from which SCAN VIPs are obtained. */
+    /**
+     * The network number from which SCAN VIPs are obtained.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
     private final Integer networkNumber;
 
     /**
      * The network number from which SCAN VIPs are obtained.
-     *
      * @return the value
-     */
+     **/
     public Integer getNetworkNumber() {
         return networkNumber;
     }
 
-    /** The port number of the SCAN listener. */
+    /**
+     * The port number of the SCAN listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanPort")
     private final Integer scanPort;
 
     /**
      * The port number of the SCAN listener.
-     *
      * @return the value
-     */
+     **/
     public Integer getScanPort() {
         return scanPort;
     }
 
-    /** The protocol of the SCAN listener. */
-    public enum ScanProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The protocol of the SCAN listener.
+     **/
+    public enum ScanProtocol {
         Tcp("TCP"),
         Tcps("TCPS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -221,15 +231,16 @@ public final class ExternalClusterScanListenerConfiguration
             return UnknownEnumValue;
         }
     };
-    /** The protocol of the SCAN listener. */
+    /**
+     * The protocol of the SCAN listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanProtocol")
     private final ScanProtocol scanProtocol;
 
     /**
      * The protocol of the SCAN listener.
-     *
      * @return the value
-     */
+     **/
     public ScanProtocol getScanProtocol() {
         return scanProtocol;
     }
@@ -241,7 +252,6 @@ public final class ExternalClusterScanListenerConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

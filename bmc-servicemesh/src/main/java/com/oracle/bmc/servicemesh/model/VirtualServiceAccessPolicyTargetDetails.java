@@ -5,38 +5,39 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Virtual service target which communicates with other virtual services in a mesh. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Virtual service target which communicates with other virtual services in a mesh.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualServiceAccessPolicyTargetDetails.Builder.class)
+    builder = VirtualServiceAccessPolicyTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualServiceAccessPolicyTargetDetails extends AccessPolicyTargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the virtual service resource. */
+        /**
+         * The OCID of the virtual service resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
         private String virtualServiceId;
 
         /**
          * The OCID of the virtual service resource.
-         *
          * @param virtualServiceId the value to set
          * @return this builder
-         */
+         **/
         public Builder virtualServiceId(String virtualServiceId) {
             this.virtualServiceId = virtualServiceId;
             this.__explicitlySet__.add("virtualServiceId");
@@ -64,7 +65,9 @@ public final class VirtualServiceAccessPolicyTargetDetails extends AccessPolicyT
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,15 +82,16 @@ public final class VirtualServiceAccessPolicyTargetDetails extends AccessPolicyT
         this.virtualServiceId = virtualServiceId;
     }
 
-    /** The OCID of the virtual service resource. */
+    /**
+     * The OCID of the virtual service resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualServiceId")
     private final String virtualServiceId;
 
     /**
      * The OCID of the virtual service resource.
-     *
      * @return the value
-     */
+     **/
     public String getVirtualServiceId() {
         return virtualServiceId;
     }
@@ -99,7 +103,6 @@ public final class VirtualServiceAccessPolicyTargetDetails extends AccessPolicyT
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

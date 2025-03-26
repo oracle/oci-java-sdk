@@ -5,22 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Metadata associated with a specific Java release family. A Java release family is typically a
- * major version in the Java version identifier. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Metadata associated with a specific Java release family.
+ * A Java release family is typically a major version in the Java version identifier.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaFamily.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JavaFamily extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JavaFamily extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "latestReleaseArtifacts",
@@ -58,155 +57,156 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of artifacts for the latest Java release version in this family. The script URLs in
-         * the response can be used from a command line, or in scripts and dockerfiles to always get
-         * the artifacts corresponding to the latest update release version.
-         */
+         * List of artifacts for the latest Java release version in this family.
+         * The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseArtifacts")
         private java.util.List<JavaArtifact> latestReleaseArtifacts;
 
         /**
-         * List of artifacts for the latest Java release version in this family. The script URLs in
-         * the response can be used from a command line, or in scripts and dockerfiles to always get
-         * the artifacts corresponding to the latest update release version.
+         * List of artifacts for the latest Java release version in this family.
+         * The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
          *
          * @param latestReleaseArtifacts the value to set
          * @return this builder
-         */
+         **/
         public Builder latestReleaseArtifacts(java.util.List<JavaArtifact> latestReleaseArtifacts) {
             this.latestReleaseArtifacts = latestReleaseArtifacts;
             this.__explicitlySet__.add("latestReleaseArtifacts");
             return this;
         }
-        /** The Java release family identifier. */
+        /**
+         * The Java release family identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
         private String familyVersion;
 
         /**
          * The Java release family identifier.
-         *
          * @param familyVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder familyVersion(String familyVersion) {
             this.familyVersion = familyVersion;
             this.__explicitlySet__.add("familyVersion");
             return this;
         }
-        /** The display name of the release family. */
+        /**
+         * The display name of the release family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the release family.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** This indicates the support category for the Java release family. */
+        /**
+         * This indicates the support category for the Java release family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportType")
         private SupportType supportType;
 
         /**
          * This indicates the support category for the Java release family.
-         *
          * @param supportType the value to set
          * @return this builder
-         */
+         **/
         public Builder supportType(SupportType supportType) {
             this.supportType = supportType;
             this.__explicitlySet__.add("supportType");
             return this;
         }
         /**
-         * The End of Support Life (EOSL) date of the Java release family (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
         private java.util.Date endOfSupportLifeDate;
 
         /**
-         * The End of Support Life (EOSL) date of the Java release family (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param endOfSupportLifeDate the value to set
          * @return this builder
-         */
+         **/
         public Builder endOfSupportLifeDate(java.util.Date endOfSupportLifeDate) {
             this.endOfSupportLifeDate = endOfSupportLifeDate;
             this.__explicitlySet__.add("endOfSupportLifeDate");
             return this;
         }
-        /** Link to access the documentation for the release. */
+        /**
+         * Link to access the documentation for the release.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("docUrl")
         private String docUrl;
 
         /**
          * Link to access the documentation for the release.
-         *
          * @param docUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder docUrl(String docUrl) {
             this.docUrl = docUrl;
             this.__explicitlySet__.add("docUrl");
             return this;
         }
-        /** Latest Java release version in the family. */
+        /**
+         * Latest Java release version in the family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseVersion")
         private String latestReleaseVersion;
 
         /**
          * Latest Java release version in the family.
-         *
          * @param latestReleaseVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder latestReleaseVersion(String latestReleaseVersion) {
             this.latestReleaseVersion = latestReleaseVersion;
             this.__explicitlySet__.add("latestReleaseVersion");
             return this;
         }
         /**
-         * Whether or not this Java release family is under active support. Refer [Java Support
-         * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
-         * details.
-         */
+         * Whether or not this Java release family is under active support.
+         * Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportedVersion")
         private Boolean isSupportedVersion;
 
         /**
-         * Whether or not this Java release family is under active support. Refer [Java Support
-         * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
-         * details.
+         * Whether or not this Java release family is under active support.
+         * Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
          *
          * @param isSupportedVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder isSupportedVersion(Boolean isSupportedVersion) {
             this.isSupportedVersion = isSupportedVersion;
             this.__explicitlySet__.add("isSupportedVersion");
             return this;
         }
         /**
-         * The date on which the Java release family was first made available (formatted according
-         * to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private java.util.Date releaseDate;
 
         /**
-         * The date on which the Java release family was first made available (formatted according
-         * to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param releaseDate the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseDate(java.util.Date releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
@@ -267,7 +267,9 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -277,138 +279,139 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * List of artifacts for the latest Java release version in this family. The script URLs in the
-     * response can be used from a command line, or in scripts and dockerfiles to always get the
-     * artifacts corresponding to the latest update release version.
-     */
+     * List of artifacts for the latest Java release version in this family.
+     * The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseArtifacts")
     private final java.util.List<JavaArtifact> latestReleaseArtifacts;
 
     /**
-     * List of artifacts for the latest Java release version in this family. The script URLs in the
-     * response can be used from a command line, or in scripts and dockerfiles to always get the
-     * artifacts corresponding to the latest update release version.
+     * List of artifacts for the latest Java release version in this family.
+     * The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
      *
      * @return the value
-     */
+     **/
     public java.util.List<JavaArtifact> getLatestReleaseArtifacts() {
         return latestReleaseArtifacts;
     }
 
-    /** The Java release family identifier. */
+    /**
+     * The Java release family identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyVersion")
     private final String familyVersion;
 
     /**
      * The Java release family identifier.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyVersion() {
         return familyVersion;
     }
 
-    /** The display name of the release family. */
+    /**
+     * The display name of the release family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the release family.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** This indicates the support category for the Java release family. */
+    /**
+     * This indicates the support category for the Java release family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportType")
     private final SupportType supportType;
 
     /**
      * This indicates the support category for the Java release family.
-     *
      * @return the value
-     */
+     **/
     public SupportType getSupportType() {
         return supportType;
     }
 
     /**
-     * The End of Support Life (EOSL) date of the Java release family (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endOfSupportLifeDate")
     private final java.util.Date endOfSupportLifeDate;
 
     /**
-     * The End of Support Life (EOSL) date of the Java release family (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The End of Support Life (EOSL) date of the Java release family (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getEndOfSupportLifeDate() {
         return endOfSupportLifeDate;
     }
 
-    /** Link to access the documentation for the release. */
+    /**
+     * Link to access the documentation for the release.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("docUrl")
     private final String docUrl;
 
     /**
      * Link to access the documentation for the release.
-     *
      * @return the value
-     */
+     **/
     public String getDocUrl() {
         return docUrl;
     }
 
-    /** Latest Java release version in the family. */
+    /**
+     * Latest Java release version in the family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latestReleaseVersion")
     private final String latestReleaseVersion;
 
     /**
      * Latest Java release version in the family.
-     *
      * @return the value
-     */
+     **/
     public String getLatestReleaseVersion() {
         return latestReleaseVersion;
     }
 
     /**
-     * Whether or not this Java release family is under active support. Refer [Java Support
-     * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
-     * details.
-     */
+     * Whether or not this Java release family is under active support.
+     * Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportedVersion")
     private final Boolean isSupportedVersion;
 
     /**
-     * Whether or not this Java release family is under active support. Refer [Java Support
-     * Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more
-     * details.
+     * Whether or not this Java release family is under active support.
+     * Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSupportedVersion() {
         return isSupportedVersion;
     }
 
     /**
-     * The date on which the Java release family was first made available (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final java.util.Date releaseDate;
 
     /**
-     * The date on which the Java release family was first made available (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getReleaseDate() {
         return releaseDate;
     }
@@ -420,7 +423,6 @@ public final class JavaFamily extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

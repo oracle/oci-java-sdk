@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Risk score of a resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Risk score of a resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceRiskScoreAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceRiskScoreAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceRiskScoreAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tactics", "scoreTimestamp", "riskScore", "riskLevel"})
     public ResourceRiskScoreAggregation(
@@ -38,61 +37,65 @@ public final class ResourceRiskScoreAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of tactics used for evaluating the risk score */
+        /**
+         * List of tactics used for evaluating the risk score
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tactics")
         private java.util.List<String> tactics;
 
         /**
          * List of tactics used for evaluating the risk score
-         *
          * @param tactics the value to set
          * @return this builder
-         */
+         **/
         public Builder tactics(java.util.List<String> tactics) {
             this.tactics = tactics;
             this.__explicitlySet__.add("tactics");
             return this;
         }
-        /** The date and time for which the score is calculated. Format defined by RFC3339. */
+        /**
+         * The date and time for which the score is calculated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scoreTimestamp")
         private java.math.BigDecimal scoreTimestamp;
 
         /**
          * The date and time for which the score is calculated. Format defined by RFC3339.
-         *
          * @param scoreTimestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder scoreTimestamp(java.math.BigDecimal scoreTimestamp) {
             this.scoreTimestamp = scoreTimestamp;
             this.__explicitlySet__.add("scoreTimestamp");
             return this;
         }
-        /** The risk score */
+        /**
+         * The risk score
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
         private Double riskScore;
 
         /**
          * The risk score
-         *
          * @param riskScore the value to set
          * @return this builder
-         */
+         **/
         public Builder riskScore(Double riskScore) {
             this.riskScore = riskScore;
             this.__explicitlySet__.add("riskScore");
             return this;
         }
-        /** The risk level */
+        /**
+         * The risk level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
         private RiskLevel riskLevel;
 
         /**
          * The risk level
-         *
          * @param riskLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder riskLevel(RiskLevel riskLevel) {
             this.riskLevel = riskLevel;
             this.__explicitlySet__.add("riskLevel");
@@ -130,7 +133,9 @@ public final class ResourceRiskScoreAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,54 +144,58 @@ public final class ResourceRiskScoreAggregation
         return new Builder().copy(this);
     }
 
-    /** List of tactics used for evaluating the risk score */
+    /**
+     * List of tactics used for evaluating the risk score
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tactics")
     private final java.util.List<String> tactics;
 
     /**
      * List of tactics used for evaluating the risk score
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getTactics() {
         return tactics;
     }
 
-    /** The date and time for which the score is calculated. Format defined by RFC3339. */
+    /**
+     * The date and time for which the score is calculated. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scoreTimestamp")
     private final java.math.BigDecimal scoreTimestamp;
 
     /**
      * The date and time for which the score is calculated. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getScoreTimestamp() {
         return scoreTimestamp;
     }
 
-    /** The risk score */
+    /**
+     * The risk score
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskScore")
     private final Double riskScore;
 
     /**
      * The risk score
-     *
      * @return the value
-     */
+     **/
     public Double getRiskScore() {
         return riskScore;
     }
 
-    /** The risk level */
+    /**
+     * The risk level
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskLevel")
     private final RiskLevel riskLevel;
 
     /**
      * The risk level
-     *
      * @return the value
-     */
+     **/
     public RiskLevel getRiskLevel() {
         return riskLevel;
     }
@@ -198,7 +207,6 @@ public final class ResourceRiskScoreAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

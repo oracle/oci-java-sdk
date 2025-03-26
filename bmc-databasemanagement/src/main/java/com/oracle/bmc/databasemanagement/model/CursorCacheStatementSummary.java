@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of a SQL statement in the cursor cache. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of a SQL statement in the cursor cache.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CursorCacheStatementSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CursorCacheStatementSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CursorCacheStatementSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sqlId", "schema", "sqlText"})
     public CursorCacheStatementSummary(String sqlId, String schema, String sqlText) {
@@ -33,46 +32,49 @@ public final class CursorCacheStatementSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The SQL statement identifier. Identifies a SQL statement in the cursor cache. */
+        /**
+         * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
         private String sqlId;
 
         /**
          * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
-         *
          * @param sqlId the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlId(String sqlId) {
             this.sqlId = sqlId;
             this.__explicitlySet__.add("sqlId");
             return this;
         }
-        /** The name of the parsing schema. */
+        /**
+         * The name of the parsing schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schema")
         private String schema;
 
         /**
          * The name of the parsing schema.
-         *
          * @param schema the value to set
          * @return this builder
-         */
+         **/
         public Builder schema(String schema) {
             this.schema = schema;
             this.__explicitlySet__.add("schema");
             return this;
         }
-        /** The first thousand characters of the SQL text. */
+        /**
+         * The first thousand characters of the SQL text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
          * The first thousand characters of the SQL text.
-         *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
@@ -106,7 +108,9 @@ public final class CursorCacheStatementSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class CursorCacheStatementSummary
         return new Builder().copy(this);
     }
 
-    /** The SQL statement identifier. Identifies a SQL statement in the cursor cache. */
+    /**
+     * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
     private final String sqlId;
 
     /**
      * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
-     *
      * @return the value
-     */
+     **/
     public String getSqlId() {
         return sqlId;
     }
 
-    /** The name of the parsing schema. */
+    /**
+     * The name of the parsing schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schema")
     private final String schema;
 
     /**
      * The name of the parsing schema.
-     *
      * @return the value
-     */
+     **/
     public String getSchema() {
         return schema;
     }
 
-    /** The first thousand characters of the SQL text. */
+    /**
+     * The first thousand characters of the SQL text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
      * The first thousand characters of the SQL text.
-     *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
@@ -161,7 +168,6 @@ public final class CursorCacheStatementSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

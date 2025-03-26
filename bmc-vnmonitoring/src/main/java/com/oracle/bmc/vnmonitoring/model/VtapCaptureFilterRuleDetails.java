@@ -5,23 +5,23 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * This resource contains the rules governing what traffic a VTAP mirrors. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * This resource contains the rules governing what traffic a VTAP mirrors.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VtapCaptureFilterRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VtapCaptureFilterRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VtapCaptureFilterRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "trafficDirection",
@@ -55,7 +55,10 @@ public final class VtapCaptureFilterRuleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The traffic direction the VTAP is configured to mirror. */
+        /**
+         * The traffic direction the VTAP is configured to mirror.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
         private TrafficDirection trafficDirection;
 
@@ -64,13 +67,16 @@ public final class VtapCaptureFilterRuleDetails
          *
          * @param trafficDirection the value to set
          * @return this builder
-         */
+         **/
         public Builder trafficDirection(TrafficDirection trafficDirection) {
             this.trafficDirection = trafficDirection;
             this.__explicitlySet__.add("trafficDirection");
             return this;
         }
-        /** Include or exclude packets meeting this definition from mirrored traffic. */
+        /**
+         * Include or exclude packets meeting this definition from mirrored traffic.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
         private RuleAction ruleAction;
 
@@ -79,13 +85,16 @@ public final class VtapCaptureFilterRuleDetails
          *
          * @param ruleAction the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleAction(RuleAction ruleAction) {
             this.ruleAction = ruleAction;
             this.__explicitlySet__.add("ruleAction");
             return this;
         }
-        /** Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target. */
+        /**
+         * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
         private String sourceCidr;
 
@@ -94,45 +103,51 @@ public final class VtapCaptureFilterRuleDetails
          *
          * @param sourceCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceCidr(String sourceCidr) {
             this.sourceCidr = sourceCidr;
             this.__explicitlySet__.add("sourceCidr");
             return this;
         }
         /**
-         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP
-         * target.
-         */
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
         private String destinationCidr;
 
         /**
-         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP
-         * target.
+         * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
          *
          * @param destinationCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationCidr(String destinationCidr) {
             this.destinationCidr = destinationCidr;
             this.__explicitlySet__.add("destinationCidr");
             return this;
         }
         /**
-         * The transport protocol used in the filter. If do not choose a protocol, all protocols
-         * will be used in the filter. Supported options are: * 1 = ICMP * 6 = TCP * 17 = UDP
-         */
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+         * Supported options are:
+         *   * 1 = ICMP
+         *   * 6 = TCP
+         *   * 17 = UDP
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private String protocol;
 
         /**
-         * The transport protocol used in the filter. If do not choose a protocol, all protocols
-         * will be used in the filter. Supported options are: * 1 = ICMP * 6 = TCP * 17 = UDP
+         * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+         * Supported options are:
+         *   * 1 = ICMP
+         *   * 6 = TCP
+         *   * 17 = UDP
          *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(String protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
@@ -216,7 +231,9 @@ public final class VtapCaptureFilterRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,8 +242,11 @@ public final class VtapCaptureFilterRuleDetails
         return new Builder().copy(this);
     }
 
-    /** The traffic direction the VTAP is configured to mirror. */
-    public enum TrafficDirection implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The traffic direction the VTAP is configured to mirror.
+     *
+     **/
+    public enum TrafficDirection {
         Ingress("INGRESS"),
         Egress("EGRESS"),
         ;
@@ -258,7 +278,10 @@ public final class VtapCaptureFilterRuleDetails
             throw new IllegalArgumentException("Invalid TrafficDirection: " + key);
         }
     };
-    /** The traffic direction the VTAP is configured to mirror. */
+    /**
+     * The traffic direction the VTAP is configured to mirror.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trafficDirection")
     private final TrafficDirection trafficDirection;
 
@@ -266,13 +289,16 @@ public final class VtapCaptureFilterRuleDetails
      * The traffic direction the VTAP is configured to mirror.
      *
      * @return the value
-     */
+     **/
     public TrafficDirection getTrafficDirection() {
         return trafficDirection;
     }
 
-    /** Include or exclude packets meeting this definition from mirrored traffic. */
-    public enum RuleAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Include or exclude packets meeting this definition from mirrored traffic.
+     *
+     **/
+    public enum RuleAction {
         Include("INCLUDE"),
         Exclude("EXCLUDE"),
         ;
@@ -304,7 +330,10 @@ public final class VtapCaptureFilterRuleDetails
             throw new IllegalArgumentException("Invalid RuleAction: " + key);
         }
     };
-    /** Include or exclude packets meeting this definition from mirrored traffic. */
+    /**
+     * Include or exclude packets meeting this definition from mirrored traffic.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleAction")
     private final RuleAction ruleAction;
 
@@ -312,12 +341,15 @@ public final class VtapCaptureFilterRuleDetails
      * Include or exclude packets meeting this definition from mirrored traffic.
      *
      * @return the value
-     */
+     **/
     public RuleAction getRuleAction() {
         return ruleAction;
     }
 
-    /** Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target. */
+    /**
+     * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceCidr")
     private final String sourceCidr;
 
@@ -325,14 +357,15 @@ public final class VtapCaptureFilterRuleDetails
      * Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
      *
      * @return the value
-     */
+     **/
     public String getSourceCidr() {
         return sourceCidr;
     }
 
     /**
      * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCidr")
     private final String destinationCidr;
 
@@ -340,24 +373,31 @@ public final class VtapCaptureFilterRuleDetails
      * Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
      *
      * @return the value
-     */
+     **/
     public String getDestinationCidr() {
         return destinationCidr;
     }
 
     /**
-     * The transport protocol used in the filter. If do not choose a protocol, all protocols will be
-     * used in the filter. Supported options are: * 1 = ICMP * 6 = TCP * 17 = UDP
-     */
+     * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+     * Supported options are:
+     *   * 1 = ICMP
+     *   * 6 = TCP
+     *   * 17 = UDP
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final String protocol;
 
     /**
-     * The transport protocol used in the filter. If do not choose a protocol, all protocols will be
-     * used in the filter. Supported options are: * 1 = ICMP * 6 = TCP * 17 = UDP
+     * The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter.
+     * Supported options are:
+     *   * 1 = ICMP
+     *   * 6 = TCP
+     *   * 17 = UDP
      *
      * @return the value
-     */
+     **/
     public String getProtocol() {
         return protocol;
     }
@@ -390,7 +430,6 @@ public final class VtapCaptureFilterRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

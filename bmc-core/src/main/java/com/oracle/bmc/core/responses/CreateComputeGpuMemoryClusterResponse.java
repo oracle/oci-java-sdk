@@ -6,9 +6,12 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,17 +41,16 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -56,12 +59,13 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
         return opcWorkRequestId;
     }
 
-    /** The returned {@code ComputeGpuMemoryCluster} instance. */
+    /**
+     * The returned ComputeGpuMemoryCluster instance.
+     */
     private com.oracle.bmc.core.model.ComputeGpuMemoryCluster computeGpuMemoryCluster;
 
     /**
-     * The returned {@code ComputeGpuMemoryCluster} instance.
-     *
+     * The returned ComputeGpuMemoryCluster instance.
      * @return the value
      */
     public com.oracle.bmc.core.model.ComputeGpuMemoryCluster getComputeGpuMemoryCluster() {
@@ -78,7 +82,7 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
     })
     private CreateComputeGpuMemoryClusterResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -90,26 +94,25 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
         this.computeGpuMemoryCluster = computeGpuMemoryCluster;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateComputeGpuMemoryClusterResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -124,14 +127,15 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -142,17 +146,16 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -163,12 +166,13 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code ComputeGpuMemoryCluster} instance. */
+        /**
+         * The returned ComputeGpuMemoryCluster instance.
+         */
         private com.oracle.bmc.core.model.ComputeGpuMemoryCluster computeGpuMemoryCluster;
 
         /**
-         * The returned {@code ComputeGpuMemoryCluster} instance.
-         *
+         * The returned ComputeGpuMemoryCluster instance.
          * @param computeGpuMemoryCluster the value to set
          * @return this builder
          */
@@ -180,10 +184,8 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateComputeGpuMemoryClusterResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -197,10 +199,8 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateComputeGpuMemoryClusterResponse build() {
             return new CreateComputeGpuMemoryClusterResponse(
                     __httpStatusCode__,
@@ -214,7 +214,6 @@ public class CreateComputeGpuMemoryClusterResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

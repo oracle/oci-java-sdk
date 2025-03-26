@@ -5,12 +5,13 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Protection level to be added on the branch. READ_ONLY: Makes the branch read-only. All changes to
- * the branch will be rejected. PULL_REQUEST_MERGE_ONLY: Changes to a branch are only accepted via a
- * pull request.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
-public enum ProtectionLevel implements com.oracle.bmc.http.internal.BmcEnum {
+ * Protection level to be added on the branch.
+ * READ_ONLY: Makes the branch read-only. All changes to the branch will be rejected.
+ * PULL_REQUEST_MERGE_ONLY: Changes to a branch are only accepted via a pull request.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+public enum ProtectionLevel {
     ReadOnly("READ_ONLY"),
     PullRequestMergeOnly("PULL_REQUEST_MERGE_ONLY"),
 

@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of a network address configuration in an external cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of a network address configuration in an external cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalClusterNetworkConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalClusterNetworkConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalClusterNetworkConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkNumber", "networkType", "subnet"})
     public ExternalClusterNetworkConfiguration(
@@ -34,46 +33,49 @@ public final class ExternalClusterNetworkConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The network number. */
+        /**
+         * The network number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
         private Integer networkNumber;
 
         /**
          * The network number.
-         *
          * @param networkNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder networkNumber(Integer networkNumber) {
             this.networkNumber = networkNumber;
             this.__explicitlySet__.add("networkNumber");
             return this;
         }
-        /** The network type. */
+        /**
+         * The network type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkType")
         private NetworkType networkType;
 
         /**
          * The network type.
-         *
          * @param networkType the value to set
          * @return this builder
-         */
+         **/
         public Builder networkType(NetworkType networkType) {
             this.networkType = networkType;
             this.__explicitlySet__.add("networkType");
             return this;
         }
-        /** The subnet for the network. */
+        /**
+         * The subnet for the network.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnet")
         private String subnet;
 
         /**
          * The subnet for the network.
-         *
          * @param subnet the value to set
          * @return this builder
-         */
+         **/
         public Builder subnet(String subnet) {
             this.subnet = subnet;
             this.__explicitlySet__.add("subnet");
@@ -108,7 +110,9 @@ public final class ExternalClusterNetworkConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,29 +121,32 @@ public final class ExternalClusterNetworkConfiguration
         return new Builder().copy(this);
     }
 
-    /** The network number. */
+    /**
+     * The network number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
     private final Integer networkNumber;
 
     /**
      * The network number.
-     *
      * @return the value
-     */
+     **/
     public Integer getNetworkNumber() {
         return networkNumber;
     }
 
-    /** The network type. */
-    public enum NetworkType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The network type.
+     **/
+    public enum NetworkType {
         Autoconfig("AUTOCONFIG"),
         Dhcp("DHCP"),
         Static("STATIC"),
         Mixed("MIXED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -178,28 +185,30 @@ public final class ExternalClusterNetworkConfiguration
             return UnknownEnumValue;
         }
     };
-    /** The network type. */
+    /**
+     * The network type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkType")
     private final NetworkType networkType;
 
     /**
      * The network type.
-     *
      * @return the value
-     */
+     **/
     public NetworkType getNetworkType() {
         return networkType;
     }
 
-    /** The subnet for the network. */
+    /**
+     * The subnet for the network.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnet")
     private final String subnet;
 
     /**
      * The subnet for the network.
-     *
      * @return the value
-     */
+     **/
     public String getSubnet() {
         return subnet;
     }
@@ -211,7 +220,6 @@ public final class ExternalClusterNetworkConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

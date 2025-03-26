@@ -5,23 +5,22 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * A health status summary for the specified network load balancer <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+ * A health status summary for the specified network load balancer
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NetworkLoadBalancerHealthSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NetworkLoadBalancerHealthSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NetworkLoadBalancerHealthSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkLoadBalancerId", "status"})
     public NetworkLoadBalancerHealthSummary(String networkLoadBalancerId, Status status) {
@@ -33,19 +32,18 @@ public final class NetworkLoadBalancerHealthSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer with which the health status is associated.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer with which the health status is associated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
         private String networkLoadBalancerId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer with which the health status is associated.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer with which the health status is associated.
          *
          * @param networkLoadBalancerId the value to set
          * @return this builder
-         */
+         **/
         public Builder networkLoadBalancerId(String networkLoadBalancerId) {
             this.networkLoadBalancerId = networkLoadBalancerId;
             this.__explicitlySet__.add("networkLoadBalancerId");
@@ -53,60 +51,53 @@ public final class NetworkLoadBalancerHealthSummary
         }
         /**
          * The overall health status of the network load balancer.
+         * <p>
+         *  **OK:** All backend sets associated with the network load balancer return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of {@code WARNING},
+         * no backend sets return a status of {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  **CRITICAL:** One or more of the backend sets associated with the network load balancer returns a status of {@code CRITICAL}.
+         * <p>
+         *  **UNKNOWN:** If any one of the following conditions is true:
+         * <p>
+         *  The network load balancer life cycle state is not {@code ACTIVE}.
+         * <p>
+         *  No backend sets are defined for the network load balancer.
+         * <p>
+         *  More than half of the backend sets associated with the network load balancer return a status of {@code UNKNOWN}, none of the backend
+         *        sets returns a status of {@code WARNING} or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  The system could not retrieve metrics for any reason.
          *
-         * <p>**OK:** All backend sets associated with the network load balancer return a status of
-         * {@code OK}.
-         *
-         * <p>**WARNING:** At least one of the backend sets associated with the network load
-         * balancer returns a status of {@code WARNING}, no backend sets return a status of {@code
-         * CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-         *
-         * <p>**CRITICAL:** One or more of the backend sets associated with the network load
-         * balancer returns a status of {@code CRITICAL}.
-         *
-         * <p>**UNKNOWN:** If any one of the following conditions is true:
-         *
-         * <p>The network load balancer life cycle state is not {@code ACTIVE}.
-         *
-         * <p>No backend sets are defined for the network load balancer.
-         *
-         * <p>More than half of the backend sets associated with the network load balancer return a
-         * status of {@code UNKNOWN}, none of the backend sets returns a status of {@code WARNING}
-         * or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-         *
-         * <p>The system could not retrieve metrics for any reason.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The overall health status of the network load balancer.
-         *
-         * <p>**OK:** All backend sets associated with the network load balancer return a status of
-         * {@code OK}.
-         *
-         * <p>**WARNING:** At least one of the backend sets associated with the network load
-         * balancer returns a status of {@code WARNING}, no backend sets return a status of {@code
-         * CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-         *
-         * <p>**CRITICAL:** One or more of the backend sets associated with the network load
-         * balancer returns a status of {@code CRITICAL}.
-         *
-         * <p>**UNKNOWN:** If any one of the following conditions is true:
-         *
-         * <p>The network load balancer life cycle state is not {@code ACTIVE}.
-         *
-         * <p>No backend sets are defined for the network load balancer.
-         *
-         * <p>More than half of the backend sets associated with the network load balancer return a
-         * status of {@code UNKNOWN}, none of the backend sets returns a status of {@code WARNING}
-         * or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-         *
-         * <p>The system could not retrieve metrics for any reason.
+         * <p>
+         *  **OK:** All backend sets associated with the network load balancer return a status of {@code OK}.
+         * <p>
+         *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of {@code WARNING},
+         * no backend sets return a status of {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  **CRITICAL:** One or more of the backend sets associated with the network load balancer returns a status of {@code CRITICAL}.
+         * <p>
+         *  **UNKNOWN:** If any one of the following conditions is true:
+         * <p>
+         *  The network load balancer life cycle state is not {@code ACTIVE}.
+         * <p>
+         *  No backend sets are defined for the network load balancer.
+         * <p>
+         *  More than half of the backend sets associated with the network load balancer return a status of {@code UNKNOWN}, none of the backend
+         *        sets returns a status of {@code WARNING} or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+         * <p>
+         *  The system could not retrieve metrics for any reason.
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -137,7 +128,9 @@ public final class NetworkLoadBalancerHealthSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,56 +140,52 @@ public final class NetworkLoadBalancerHealthSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer with which the health status is associated.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer with which the health status is associated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerId")
     private final String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer with which the health status is associated.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer with which the health status is associated.
      *
      * @return the value
-     */
+     **/
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
 
     /**
      * The overall health status of the network load balancer.
+     * <p>
+     *  **OK:** All backend sets associated with the network load balancer return a status of {@code OK}.
+     * <p>
+     *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  **CRITICAL:** One or more of the backend sets associated with the network load balancer returns a status of {@code CRITICAL}.
+     * <p>
+     *  **UNKNOWN:** If any one of the following conditions is true:
+     * <p>
+     *  The network load balancer life cycle state is not {@code ACTIVE}.
+     * <p>
+     *  No backend sets are defined for the network load balancer.
+     * <p>
+     *  More than half of the backend sets associated with the network load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets returns a status of {@code WARNING} or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  The system could not retrieve metrics for any reason.
      *
-     * <p>**OK:** All backend sets associated with the network load balancer return a status of
-     * {@code OK}.
-     *
-     * <p>**WARNING:** At least one of the backend sets associated with the network load balancer
-     * returns a status of {@code WARNING}, no backend sets return a status of {@code CRITICAL}, and
-     * the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>**CRITICAL:** One or more of the backend sets associated with the network load balancer
-     * returns a status of {@code CRITICAL}.
-     *
-     * <p>**UNKNOWN:** If any one of the following conditions is true:
-     *
-     * <p>The network load balancer life cycle state is not {@code ACTIVE}.
-     *
-     * <p>No backend sets are defined for the network load balancer.
-     *
-     * <p>More than half of the backend sets associated with the network load balancer return a
-     * status of {@code UNKNOWN}, none of the backend sets returns a status of {@code WARNING} or
-     * {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>The system could not retrieve metrics for any reason.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Status {
         Ok("OK"),
         Warning("WARNING"),
         Critical("CRITICAL"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -236,59 +225,52 @@ public final class NetworkLoadBalancerHealthSummary
     };
     /**
      * The overall health status of the network load balancer.
+     * <p>
+     *  **OK:** All backend sets associated with the network load balancer return a status of {@code OK}.
+     * <p>
+     *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  **CRITICAL:** One or more of the backend sets associated with the network load balancer returns a status of {@code CRITICAL}.
+     * <p>
+     *  **UNKNOWN:** If any one of the following conditions is true:
+     * <p>
+     *  The network load balancer life cycle state is not {@code ACTIVE}.
+     * <p>
+     *  No backend sets are defined for the network load balancer.
+     * <p>
+     *  More than half of the backend sets associated with the network load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets returns a status of {@code WARNING} or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  The system could not retrieve metrics for any reason.
      *
-     * <p>**OK:** All backend sets associated with the network load balancer return a status of
-     * {@code OK}.
-     *
-     * <p>**WARNING:** At least one of the backend sets associated with the network load balancer
-     * returns a status of {@code WARNING}, no backend sets return a status of {@code CRITICAL}, and
-     * the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>**CRITICAL:** One or more of the backend sets associated with the network load balancer
-     * returns a status of {@code CRITICAL}.
-     *
-     * <p>**UNKNOWN:** If any one of the following conditions is true:
-     *
-     * <p>The network load balancer life cycle state is not {@code ACTIVE}.
-     *
-     * <p>No backend sets are defined for the network load balancer.
-     *
-     * <p>More than half of the backend sets associated with the network load balancer return a
-     * status of {@code UNKNOWN}, none of the backend sets returns a status of {@code WARNING} or
-     * {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>The system could not retrieve metrics for any reason.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The overall health status of the network load balancer.
-     *
-     * <p>**OK:** All backend sets associated with the network load balancer return a status of
-     * {@code OK}.
-     *
-     * <p>**WARNING:** At least one of the backend sets associated with the network load balancer
-     * returns a status of {@code WARNING}, no backend sets return a status of {@code CRITICAL}, and
-     * the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>**CRITICAL:** One or more of the backend sets associated with the network load balancer
-     * returns a status of {@code CRITICAL}.
-     *
-     * <p>**UNKNOWN:** If any one of the following conditions is true:
-     *
-     * <p>The network load balancer life cycle state is not {@code ACTIVE}.
-     *
-     * <p>No backend sets are defined for the network load balancer.
-     *
-     * <p>More than half of the backend sets associated with the network load balancer return a
-     * status of {@code UNKNOWN}, none of the backend sets returns a status of {@code WARNING} or
-     * {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
-     *
-     * <p>The system could not retrieve metrics for any reason.
+     * <p>
+     *  **OK:** All backend sets associated with the network load balancer return a status of {@code OK}.
+     * <p>
+     *  **WARNING:** At least one of the backend sets associated with the network load balancer returns a status of {@code WARNING},
+     * no backend sets return a status of {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  **CRITICAL:** One or more of the backend sets associated with the network load balancer returns a status of {@code CRITICAL}.
+     * <p>
+     *  **UNKNOWN:** If any one of the following conditions is true:
+     * <p>
+     *  The network load balancer life cycle state is not {@code ACTIVE}.
+     * <p>
+     *  No backend sets are defined for the network load balancer.
+     * <p>
+     *  More than half of the backend sets associated with the network load balancer return a status of {@code UNKNOWN}, none of the backend
+     *        sets returns a status of {@code WARNING} or {@code CRITICAL}, and the network load balancer life cycle state is {@code ACTIVE}.
+     * <p>
+     *  The system could not retrieve metrics for any reason.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
@@ -300,7 +282,6 @@ public final class NetworkLoadBalancerHealthSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

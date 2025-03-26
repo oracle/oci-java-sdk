@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Status of query job work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Status of query job work request.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum WorkRequestStatus {
     Accepted("ACCEPTED"),
     Canceled("CANCELED"),
     Failed("FAILED"),

@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Action Group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Action Group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ActionGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ActionGroup extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ActionGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -53,121 +51,137 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Provide the ID of the resource. Example fleet ID. */
+        /**
+         * Provide the ID of the resource. Example fleet ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * Provide the ID of the resource. Example fleet ID.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** ActionGroup Type associated. */
+        /**
+         * ActionGroup Type associated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private LifeCycleActionGroupType type;
 
         /**
          * ActionGroup Type associated.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(LifeCycleActionGroupType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Application Type associated. Only applicable if type is ENVIRONMENT. */
+        /**
+         * Application Type associated.
+         * Only applicable if type is ENVIRONMENT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Application Type associated. Only applicable if type is ENVIRONMENT.
+         * Application Type associated.
+         * Only applicable if type is ENVIRONMENT.
          *
          * @param applicationType the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationType(String applicationType) {
             this.applicationType = applicationType;
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-        /** Product associated. Only applicable if type is PRODUCT. */
+        /**
+         * Product associated.
+         * Only applicable if type is PRODUCT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
 
         /**
-         * Product associated. Only applicable if type is PRODUCT.
+         * Product associated.
+         * Only applicable if type is PRODUCT.
          *
          * @param product the value to set
          * @return this builder
-         */
+         **/
         public Builder product(String product) {
             this.product = product;
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** LifeCycle Operation */
+        /**
+         * LifeCycle Operation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
         private String lifecycleOperation;
 
         /**
          * LifeCycle Operation
-         *
          * @param lifecycleOperation the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleOperation(String lifecycleOperation) {
             this.lifecycleOperation = lifecycleOperation;
             this.__explicitlySet__.add("lifecycleOperation");
             return this;
         }
-        /** ID of the runbook */
+        /**
+         * ID of the runbook
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
         private String runbookId;
 
         /**
          * ID of the runbook
-         *
          * @param runbookId the value to set
          * @return this builder
-         */
+         **/
         public Builder runbookId(String runbookId) {
             this.runbookId = runbookId;
             this.__explicitlySet__.add("runbookId");
             return this;
         }
-        /** Provide the target if schedule is created against the target */
+        /**
+         * Provide the target if schedule is created against the target
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * Provide the target if schedule is created against the target
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** Provide subjects that need to be considered for the schedule. */
+        /**
+         * Provide subjects that need to be considered for the schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjects")
         private java.util.List<String> subjects;
 
         /**
          * Provide subjects that need to be considered for the schedule.
-         *
          * @param subjects the value to set
          * @return this builder
-         */
+         **/
         public Builder subjects(java.util.List<String> subjects) {
             this.subjects = subjects;
             this.__explicitlySet__.add("subjects");
@@ -224,7 +238,9 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,106 +249,122 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Provide the ID of the resource. Example fleet ID. */
+    /**
+     * Provide the ID of the resource. Example fleet ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * Provide the ID of the resource. Example fleet ID.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** ActionGroup Type associated. */
+    /**
+     * ActionGroup Type associated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final LifeCycleActionGroupType type;
 
     /**
      * ActionGroup Type associated.
-     *
      * @return the value
-     */
+     **/
     public LifeCycleActionGroupType getType() {
         return type;
     }
 
-    /** Application Type associated. Only applicable if type is ENVIRONMENT. */
+    /**
+     * Application Type associated.
+     * Only applicable if type is ENVIRONMENT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Application Type associated. Only applicable if type is ENVIRONMENT.
+     * Application Type associated.
+     * Only applicable if type is ENVIRONMENT.
      *
      * @return the value
-     */
+     **/
     public String getApplicationType() {
         return applicationType;
     }
 
-    /** Product associated. Only applicable if type is PRODUCT. */
+    /**
+     * Product associated.
+     * Only applicable if type is PRODUCT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("product")
     private final String product;
 
     /**
-     * Product associated. Only applicable if type is PRODUCT.
+     * Product associated.
+     * Only applicable if type is PRODUCT.
      *
      * @return the value
-     */
+     **/
     public String getProduct() {
         return product;
     }
 
-    /** LifeCycle Operation */
+    /**
+     * LifeCycle Operation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
     private final String lifecycleOperation;
 
     /**
      * LifeCycle Operation
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleOperation() {
         return lifecycleOperation;
     }
 
-    /** ID of the runbook */
+    /**
+     * ID of the runbook
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
     private final String runbookId;
 
     /**
      * ID of the runbook
-     *
      * @return the value
-     */
+     **/
     public String getRunbookId() {
         return runbookId;
     }
 
-    /** Provide the target if schedule is created against the target */
+    /**
+     * Provide the target if schedule is created against the target
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * Provide the target if schedule is created against the target
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** Provide subjects that need to be considered for the schedule. */
+    /**
+     * Provide subjects that need to be considered for the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjects")
     private final java.util.List<String> subjects;
 
     /**
      * Provide subjects that need to be considered for the schedule.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSubjects() {
         return subjects;
     }
@@ -344,7 +376,6 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

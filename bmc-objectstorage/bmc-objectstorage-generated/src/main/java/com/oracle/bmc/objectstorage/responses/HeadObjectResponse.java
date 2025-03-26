@@ -6,18 +6,15 @@ package com.oracle.bmc.objectstorage.responses;
 
 import com.oracle.bmc.objectstorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
-     *
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -25,14 +22,15 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide this request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, provide this request ID.
      *
      * @return the value
      */
@@ -40,36 +38,39 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The entity tag (ETag) for the object. */
+    /**
+     * The entity tag (ETag) for the object.
+     */
     private String eTag;
 
     /**
      * The entity tag (ETag) for the object.
-     *
      * @return the value
      */
     public String getETag() {
         return eTag;
     }
 
-    /** The user-defined metadata for the object. */
+    /**
+     * The user-defined metadata for the object.
+     */
     private java.util.Map<String, String> opcMeta;
 
     /**
      * The user-defined metadata for the object.
-     *
      * @return the value
      */
     public java.util.Map<String, String> getOpcMeta() {
         return opcMeta;
     }
 
-    /** The object size in bytes. */
+    /**
+     * The object size in bytes.
+     */
     private Long contentLength;
 
     /**
      * The object size in bytes.
-     *
      * @return the value
      */
     public Long getContentLength() {
@@ -77,16 +78,15 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Content-MD5 header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.15). Unavailable for objects uploaded
-     * using multipart upload.
+     * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.15).
+     * Unavailable for objects uploaded using multipart upload.
+     *
      */
     private String contentMd5;
 
     /**
-     * Content-MD5 header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.15). Unavailable for objects uploaded
-     * using multipart upload.
+     * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.15).
+     * Unavailable for objects uploaded using multipart upload.
      *
      * @return the value
      */
@@ -95,18 +95,21 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Base-64 representation of the
-     * multipart object hash. The multipart object hash is calculated by taking the MD5 hashes of
-     * the parts, concatenating the binary representation of those hashes in order of their part
-     * numbers, and then calculating the MD5 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Base-64 representation of the multipart object hash.
+     * The multipart object hash is calculated by taking the MD5 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the MD5 hash of the concatenated values.
+     *
      */
     private String opcMultipartMd5;
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Base-64 representation of the
-     * multipart object hash. The multipart object hash is calculated by taking the MD5 hashes of
-     * the parts, concatenating the binary representation of those hashes in order of their part
-     * numbers, and then calculating the MD5 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Base-64 representation of the multipart object hash.
+     * The multipart object hash is calculated by taking the MD5 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the MD5 hash of the concatenated values.
      *
      * @return the value
      */
@@ -115,16 +118,17 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
-     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
-     * complete reconstructed object.
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object.
+     * Even for objects uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum
+     * of the complete reconstructed object.
+     *
      */
     private String opcContentCrc32c;
 
     /**
-     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
-     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
-     * complete reconstructed object.
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object.
+     * Even for objects uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum
+     * of the complete reconstructed object.
      *
      * @return the value
      */
@@ -133,16 +137,17 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during
-     * upload. The base64-encoded SHA256 hash of the object as computed during upload. Unavailable
-     * for objects uploaded using multipart upload.
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA256 hash of the object as computed during upload.
+     * Unavailable for objects uploaded using multipart upload.
+     *
      */
     private String opcContentSha256;
 
     /**
-     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during
-     * upload. The base64-encoded SHA256 hash of the object as computed during upload. Unavailable
-     * for objects uploaded using multipart upload.
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA256 hash of the object as computed during upload.
+     * Unavailable for objects uploaded using multipart upload.
      *
      * @return the value
      */
@@ -151,20 +156,23 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
-     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
-     * of the multipart object SHA256 hash. The multipart object hash is calculated by taking the
-     * SHA256 hashes of the parts, concatenating the binary representation of those hashes in order
-     * of their part numbers, and then calculating the SHA256 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+     * Base-64 representation of the multipart object SHA256 hash.
+     * The multipart object hash is calculated by taking the SHA256 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the SHA256 hash of the concatenated values.
+     *
      */
     private String opcMultipartSha256;
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
-     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
-     * of the multipart object SHA256 hash. The multipart object hash is calculated by taking the
-     * SHA256 hashes of the parts, concatenating the binary representation of those hashes in order
-     * of their part numbers, and then calculating the SHA256 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+     * Base-64 representation of the multipart object SHA256 hash.
+     * The multipart object hash is calculated by taking the SHA256 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the SHA256 hash of the concatenated values.
      *
      * @return the value
      */
@@ -173,16 +181,17 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during
-     * upload. The base64-encoded SHA384 hash of the object as computed during upload. Unavailable
-     * for objects uploaded using multipart upload.
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA384 hash of the object as computed during upload.
+     * Unavailable for objects uploaded using multipart upload.
+     *
      */
     private String opcContentSha384;
 
     /**
-     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during
-     * upload. The base64-encoded SHA384 hash of the object as computed during upload. Unavailable
-     * for objects uploaded using multipart upload.
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+     * The base64-encoded SHA384 hash of the object as computed during upload.
+     * Unavailable for objects uploaded using multipart upload.
      *
      * @return the value
      */
@@ -191,20 +200,23 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
-     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
-     * of the multipart object SHA384 hash. The multipart object hash is calculated by taking the
-     * SHA384 hashes of the parts, concatenating the binary representation of those hashes in order
-     * of their part numbers, and then calculating the SHA384 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+     * Base-64 representation of the multipart object SHA384 hash.
+     * The multipart object hash is calculated by taking the SHA384 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the SHA384 hash of the concatenated values.
+     *
      */
     private String opcMultipartSha384;
 
     /**
-     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
-     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
-     * of the multipart object SHA384 hash. The multipart object hash is calculated by taking the
-     * SHA384 hashes of the parts, concatenating the binary representation of those hashes in order
-     * of their part numbers, and then calculating the SHA384 hash of the concatenated values.
+     * Only applicable to objects uploaded using multipart upload.
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+     * Base-64 representation of the multipart object SHA384 hash.
+     * The multipart object hash is calculated by taking the SHA384 hashes of the parts,
+     * concatenating the binary representation of those hashes in order of their part numbers,
+     * and then calculating the SHA384 hash of the concatenated values.
      *
      * @return the value
      */
@@ -213,15 +225,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Content-Type header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
+     * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
      */
     private String contentType;
 
     /**
-     * Content-Type header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
-     *
+     * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
      * @return the value
      */
     public String getContentType() {
@@ -229,15 +238,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Content-Language header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
+     * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
      */
     private String contentLanguage;
 
     /**
-     * Content-Language header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
-     *
+     * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
      * @return the value
      */
     public String getContentLanguage() {
@@ -245,15 +251,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Content-Encoding header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
+     * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
      */
     private String contentEncoding;
 
     /**
-     * Content-Encoding header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
-     *
+     * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
      * @return the value
      */
     public String getContentEncoding() {
@@ -261,15 +264,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Cache-Control header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
+     * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
      */
     private String cacheControl;
 
     /**
-     * Cache-Control header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
-     *
+     * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
      * @return the value
      */
     public String getCacheControl() {
@@ -277,15 +277,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Content-Disposition header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
+     * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
      */
     private String contentDisposition;
 
     /**
-     * Content-Disposition header, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
-     *
+     * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
      * @return the value
      */
     public String getContentDisposition() {
@@ -293,39 +290,38 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * The object modification time, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+     * The object modification time, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      */
     private java.util.Date lastModified;
 
     /**
-     * The object modification time, as described in [RFC
-     * 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-     *
+     * The object modification time, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
      * @return the value
      */
     public java.util.Date getLastModified() {
         return lastModified;
     }
 
-    /** The storage tier that the object is stored in. */
+    /**
+     * The storage tier that the object is stored in.
+     */
     private StorageTier storageTier;
 
     /**
      * The storage tier that the object is stored in.
-     *
      * @return the value
      */
     public StorageTier getStorageTier() {
         return storageTier;
     }
 
-    /** Archival state of an object. This field is set only for objects in Archive tier. */
+    /**
+     * Archival state of an object. This field is set only for objects in Archive tier.
+     */
     private ArchivalState archivalState;
 
     /**
      * Archival state of an object. This field is set only for objects in Archive tier.
-     *
      * @return the value
      */
     public ArchivalState getArchivalState() {
@@ -333,27 +329,25 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Time that the object is returned to the archived state. This field is only present for
-     * restored objects.
+     * Time that the object is returned to the archived state. This field is only present for restored objects.
      */
     private java.util.Date timeOfArchival;
 
     /**
-     * Time that the object is returned to the archived state. This field is only present for
-     * restored objects.
-     *
+     * Time that the object is returned to the archived state. This field is only present for restored objects.
      * @return the value
      */
     public java.util.Date getTimeOfArchival() {
         return timeOfArchival;
     }
 
-    /** VersionId of the object requested */
+    /**
+     * VersionId of the object requested
+     */
     private String versionId;
 
     /**
      * VersionId of the object requested
-     *
      * @return the value
      */
     public String getVersionId() {
@@ -361,17 +355,18 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
-     *
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      * @param true if the object was not modified
      */
     public boolean isNotModified() {
@@ -407,7 +402,7 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private HeadObjectResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String eTag,
@@ -457,34 +452,28 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         this.isNotModified = isNotModified;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<HeadObjectResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
-         *
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -494,14 +483,15 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide this request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, provide this request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -511,12 +501,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The entity tag (ETag) for the object. */
+        /**
+         * The entity tag (ETag) for the object.
+         */
         private String eTag;
 
         /**
          * The entity tag (ETag) for the object.
-         *
          * @param eTag the value to set
          * @return this builder
          */
@@ -525,12 +516,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The user-defined metadata for the object. */
+        /**
+         * The user-defined metadata for the object.
+         */
         private java.util.Map<String, String> opcMeta;
 
         /**
          * The user-defined metadata for the object.
-         *
          * @param opcMeta the value to set
          * @return this builder
          */
@@ -539,12 +531,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The object size in bytes. */
+        /**
+         * The object size in bytes.
+         */
         private Long contentLength;
 
         /**
          * The object size in bytes.
-         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -554,16 +547,15 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Content-MD5 header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.15). Unavailable for objects
-         * uploaded using multipart upload.
+         * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.15).
+         * Unavailable for objects uploaded using multipart upload.
+         *
          */
         private String contentMd5;
 
         /**
-         * Content-MD5 header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.15). Unavailable for objects
-         * uploaded using multipart upload.
+         * Content-MD5 header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.15).
+         * Unavailable for objects uploaded using multipart upload.
          *
          * @param contentMd5 the value to set
          * @return this builder
@@ -574,18 +566,21 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Base-64 representation of the
-         * multipart object hash. The multipart object hash is calculated by taking the MD5 hashes
-         * of the parts, concatenating the binary representation of those hashes in order of their
-         * part numbers, and then calculating the MD5 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Base-64 representation of the multipart object hash.
+         * The multipart object hash is calculated by taking the MD5 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the MD5 hash of the concatenated values.
+         *
          */
         private String opcMultipartMd5;
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Base-64 representation of the
-         * multipart object hash. The multipart object hash is calculated by taking the MD5 hashes
-         * of the parts, concatenating the binary representation of those hashes in order of their
-         * part numbers, and then calculating the MD5 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Base-64 representation of the multipart object hash.
+         * The multipart object hash is calculated by taking the MD5 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the MD5 hash of the concatenated values.
          *
          * @param opcMultipartMd5 the value to set
          * @return this builder
@@ -596,16 +591,17 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
-         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
-         * the complete reconstructed object.
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object.
+         * Even for objects uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum
+         * of the complete reconstructed object.
+         *
          */
         private String opcContentCrc32c;
 
         /**
-         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
-         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
-         * the complete reconstructed object.
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object.
+         * Even for objects uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum
+         * of the complete reconstructed object.
          *
          * @param opcContentCrc32c the value to set
          * @return this builder
@@ -616,15 +612,16 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header
-         * during upload. The base64-encoded SHA256 hash of the object as computed during upload.
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA256 hash of the object as computed during upload.
          * Unavailable for objects uploaded using multipart upload.
+         *
          */
         private String opcContentSha256;
 
         /**
-         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header
-         * during upload. The base64-encoded SHA256 hash of the object as computed during upload.
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA256 hash of the object as computed during upload.
          * Unavailable for objects uploaded using multipart upload.
          *
          * @param opcContentSha256 the value to set
@@ -636,22 +633,23 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
-         * specified in the opc-checksum-algorithm request header during upload. Base-64
-         * representation of the multipart object SHA256 hash. The multipart object hash is
-         * calculated by taking the SHA256 hashes of the parts, concatenating the binary
-         * representation of those hashes in order of their part numbers, and then calculating the
-         * SHA256 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+         * Base-64 representation of the multipart object SHA256 hash.
+         * The multipart object hash is calculated by taking the SHA256 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the SHA256 hash of the concatenated values.
+         *
          */
         private String opcMultipartSha256;
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
-         * specified in the opc-checksum-algorithm request header during upload. Base-64
-         * representation of the multipart object SHA256 hash. The multipart object hash is
-         * calculated by taking the SHA256 hashes of the parts, concatenating the binary
-         * representation of those hashes in order of their part numbers, and then calculating the
-         * SHA256 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during upload.
+         * Base-64 representation of the multipart object SHA256 hash.
+         * The multipart object hash is calculated by taking the SHA256 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the SHA256 hash of the concatenated values.
          *
          * @param opcMultipartSha256 the value to set
          * @return this builder
@@ -662,15 +660,16 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header
-         * during upload. The base64-encoded SHA384 hash of the object as computed during upload.
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA384 hash of the object as computed during upload.
          * Unavailable for objects uploaded using multipart upload.
+         *
          */
         private String opcContentSha384;
 
         /**
-         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header
-         * during upload. The base64-encoded SHA384 hash of the object as computed during upload.
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+         * The base64-encoded SHA384 hash of the object as computed during upload.
          * Unavailable for objects uploaded using multipart upload.
          *
          * @param opcContentSha384 the value to set
@@ -682,22 +681,23 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
-         * specified in the opc-checksum-algorithm request header during upload. Base-64
-         * representation of the multipart object SHA384 hash. The multipart object hash is
-         * calculated by taking the SHA384 hashes of the parts, concatenating the binary
-         * representation of those hashes in order of their part numbers, and then calculating the
-         * SHA384 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+         * Base-64 representation of the multipart object SHA384 hash.
+         * The multipart object hash is calculated by taking the SHA384 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the SHA384 hash of the concatenated values.
+         *
          */
         private String opcMultipartSha384;
 
         /**
-         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
-         * specified in the opc-checksum-algorithm request header during upload. Base-64
-         * representation of the multipart object SHA384 hash. The multipart object hash is
-         * calculated by taking the SHA384 hashes of the parts, concatenating the binary
-         * representation of those hashes in order of their part numbers, and then calculating the
-         * SHA384 hash of the concatenated values.
+         * Only applicable to objects uploaded using multipart upload.
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during upload.
+         * Base-64 representation of the multipart object SHA384 hash.
+         * The multipart object hash is calculated by taking the SHA384 hashes of the parts,
+         * concatenating the binary representation of those hashes in order of their part numbers,
+         * and then calculating the SHA384 hash of the concatenated values.
          *
          * @param opcMultipartSha384 the value to set
          * @return this builder
@@ -708,15 +708,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Content-Type header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
+         * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
          */
         private String contentType;
 
         /**
-         * Content-Type header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
-         *
+         * Content-Type header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
          * @param contentType the value to set
          * @return this builder
          */
@@ -726,15 +723,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Content-Language header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
+         * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
          */
         private String contentLanguage;
 
         /**
-         * Content-Language header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
-         *
+         * Content-Language header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.12).
          * @param contentLanguage the value to set
          * @return this builder
          */
@@ -744,15 +738,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Content-Encoding header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
+         * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
          */
         private String contentEncoding;
 
         /**
-         * Content-Encoding header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
-         *
+         * Content-Encoding header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.11).
          * @param contentEncoding the value to set
          * @return this builder
          */
@@ -762,15 +753,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Cache-Control header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
+         * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
          */
         private String cacheControl;
 
         /**
-         * Cache-Control header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
-         *
+         * Cache-Control header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.9).
          * @param cacheControl the value to set
          * @return this builder
          */
@@ -780,15 +768,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Content-Disposition header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
+         * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
          */
         private String contentDisposition;
 
         /**
-         * Content-Disposition header, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
-         *
+         * Content-Disposition header, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-19.5.1).
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -798,15 +783,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The object modification time, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
+         * The object modification time, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
          */
         private java.util.Date lastModified;
 
         /**
-         * The object modification time, as described in [RFC
-         * 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
-         *
+         * The object modification time, as described in [RFC 2616](https://tools.ietf.org/html/rfc2616#section-14.29).
          * @param lastModified the value to set
          * @return this builder
          */
@@ -815,12 +797,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The storage tier that the object is stored in. */
+        /**
+         * The storage tier that the object is stored in.
+         */
         private StorageTier storageTier;
 
         /**
          * The storage tier that the object is stored in.
-         *
          * @param storageTier the value to set
          * @return this builder
          */
@@ -829,12 +812,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** Archival state of an object. This field is set only for objects in Archive tier. */
+        /**
+         * Archival state of an object. This field is set only for objects in Archive tier.
+         */
         private ArchivalState archivalState;
 
         /**
          * Archival state of an object. This field is set only for objects in Archive tier.
-         *
          * @param archivalState the value to set
          * @return this builder
          */
@@ -844,15 +828,12 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Time that the object is returned to the archived state. This field is only present for
-         * restored objects.
+         * Time that the object is returned to the archived state. This field is only present for restored objects.
          */
         private java.util.Date timeOfArchival;
 
         /**
-         * Time that the object is returned to the archived state. This field is only present for
-         * restored objects.
-         *
+         * Time that the object is returned to the archived state. This field is only present for restored objects.
          * @param timeOfArchival the value to set
          * @return this builder
          */
@@ -861,12 +842,13 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** VersionId of the object requested */
+        /**
+         * VersionId of the object requested
+         */
         private String versionId;
 
         /**
          * VersionId of the object requested
-         *
          * @param versionId the value to set
          * @return this builder
          */
@@ -876,19 +858,18 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          */
         private boolean isNotModified;
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
-         *
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          * @param true if the object was not modified
          */
         public Builder isNotModified(boolean isNotModified) {
@@ -898,10 +879,8 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(HeadObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -934,10 +913,8 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public HeadObjectResponse build() {
             return new HeadObjectResponse(
                     __httpStatusCode__,
@@ -970,7 +947,6 @@ public class HeadObjectResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,27 +6,34 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeGroupBackupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CopyVolumeGroupBackupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CopyVolumeGroupBackupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CopyVolumeGroupBackupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CopyVolumeGroupBackupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails> {
 
-    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup. */
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+     *
+     */
     private String volumeGroupBackupId;
 
-    /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup. */
+    /**
+     * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+     *
+     */
     public String getVolumeGroupBackupId() {
         return volumeGroupBackupId;
     }
-    /** Request to create a cross-region copy of given volume group backup. */
+    /**
+     * Request to create a cross-region copy of given volume group backup.
+     */
     private com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails copyVolumeGroupBackupDetails;
 
-    /** Request to create a cross-region copy of given volume group backup. */
+    /**
+     * Request to create a cross-region copy of given volume group backup.
+     */
     public com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails
             getCopyVolumeGroupBackupDetails() {
         return copyVolumeGroupBackupDetails;
@@ -34,31 +41,35 @@ public class CopyVolumeGroupBackupRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -66,7 +77,6 @@ public class CopyVolumeGroupBackupRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -79,10 +89,14 @@ public class CopyVolumeGroupBackupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CopyVolumeGroupBackupRequest,
                     com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup. */
+        /**
+         * The Oracle Cloud ID (OCID) that uniquely identifies the volume group backup.
+         *
+         */
         private String volumeGroupBackupId = null;
 
         /**
@@ -96,13 +110,14 @@ public class CopyVolumeGroupBackupRequest
             return this;
         }
 
-        /** Request to create a cross-region copy of given volume group backup. */
+        /**
+         * Request to create a cross-region copy of given volume group backup.
+         */
         private com.oracle.bmc.core.model.CopyVolumeGroupBackupDetails
                 copyVolumeGroupBackupDetails = null;
 
         /**
          * Request to create a cross-region copy of given volume group backup.
-         *
          * @param copyVolumeGroupBackupDetails the value to set
          * @return this builder instance
          */
@@ -115,19 +130,20 @@ public class CopyVolumeGroupBackupRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -138,14 +154,15 @@ public class CopyVolumeGroupBackupRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -157,19 +174,18 @@ public class CopyVolumeGroupBackupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -181,7 +197,6 @@ public class CopyVolumeGroupBackupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CopyVolumeGroupBackupRequest o) {
@@ -197,11 +212,10 @@ public class CopyVolumeGroupBackupRequest
         /**
          * Build the instance of CopyVolumeGroupBackupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CopyVolumeGroupBackupRequest
          */
@@ -214,7 +228,6 @@ public class CopyVolumeGroupBackupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -227,8 +240,7 @@ public class CopyVolumeGroupBackupRequest
         /**
          * Build the instance of CopyVolumeGroupBackupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CopyVolumeGroupBackupRequest
@@ -240,14 +252,12 @@ public class CopyVolumeGroupBackupRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CopyVolumeGroupBackupRequest(volumeGroupBackupId, copyVolumeGroupBackupDetails,
-            // opcRetryToken, opcRequestId);
+            // new CopyVolumeGroupBackupRequest(volumeGroupBackupId, copyVolumeGroupBackupDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -260,7 +270,6 @@ public class CopyVolumeGroupBackupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

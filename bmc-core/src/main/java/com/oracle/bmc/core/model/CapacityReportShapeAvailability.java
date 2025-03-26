@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about the available capacity for a shape. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Information about the available capacity for a shape.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CapacityReportShapeAvailability.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CapacityReportShapeAvailability.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CapacityReportShapeAvailability
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "faultDomain",
@@ -48,28 +48,30 @@ public final class CapacityReportShapeAvailability
     public static class Builder {
         /**
          * The fault domain for the capacity report.
+         * <p>
+         * If you do not specify the fault domain, the capacity report includes information about all fault domains.
          *
-         * <p>If you do not specify the fault domain, the capacity report includes information about
-         * all fault domains.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The fault domain for the capacity report.
-         *
-         * <p>If you do not specify the fault domain, the capacity report includes information about
-         * all fault domains.
+         * <p>
+         * If you do not specify the fault domain, the capacity report includes information about all fault domains.
          *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The shape that the capacity report was requested for. */
+        /**
+         * The shape that the capacity report was requested for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
         private String instanceShape;
 
@@ -78,7 +80,7 @@ public final class CapacityReportShapeAvailability
          *
          * @param instanceShape the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceShape(String instanceShape) {
             this.instanceShape = instanceShape;
             this.__explicitlySet__.add("instanceShape");
@@ -94,34 +96,32 @@ public final class CapacityReportShapeAvailability
             return this;
         }
         /**
-         * The total number of new instances that can be created with the specified shape
-         * configuration.
-         */
+         * The total number of new instances that can be created with the specified shape configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCount")
         private Long availableCount;
 
         /**
-         * The total number of new instances that can be created with the specified shape
-         * configuration.
-         *
+         * The total number of new instances that can be created with the specified shape configuration.
          * @param availableCount the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCount(Long availableCount) {
             this.availableCount = availableCount;
             this.__explicitlySet__.add("availableCount");
             return this;
         }
-        /** A flag denoting whether capacity is available. */
+        /**
+         * A flag denoting whether capacity is available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
         /**
          * A flag denoting whether capacity is available.
-         *
          * @param availabilityStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
@@ -166,7 +166,9 @@ public final class CapacityReportShapeAvailability
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -177,26 +179,28 @@ public final class CapacityReportShapeAvailability
 
     /**
      * The fault domain for the capacity report.
+     * <p>
+     * If you do not specify the fault domain, the capacity report includes information about all fault domains.
      *
-     * <p>If you do not specify the fault domain, the capacity report includes information about all
-     * fault domains.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The fault domain for the capacity report.
-     *
-     * <p>If you do not specify the fault domain, the capacity report includes information about all
-     * fault domains.
+     * <p>
+     * If you do not specify the fault domain, the capacity report includes information about all fault domains.
      *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The shape that the capacity report was requested for. */
+    /**
+     * The shape that the capacity report was requested for.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceShape")
     private final String instanceShape;
 
@@ -204,7 +208,7 @@ public final class CapacityReportShapeAvailability
      * The shape that the capacity report was requested for.
      *
      * @return the value
-     */
+     **/
     public String getInstanceShape() {
         return instanceShape;
     }
@@ -218,28 +222,29 @@ public final class CapacityReportShapeAvailability
 
     /**
      * The total number of new instances that can be created with the specified shape configuration.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCount")
     private final Long availableCount;
 
     /**
      * The total number of new instances that can be created with the specified shape configuration.
-     *
      * @return the value
-     */
+     **/
     public Long getAvailableCount() {
         return availableCount;
     }
 
-    /** A flag denoting whether capacity is available. */
-    public enum AvailabilityStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A flag denoting whether capacity is available.
+     **/
+    public enum AvailabilityStatus {
         OutOfHostCapacity("OUT_OF_HOST_CAPACITY"),
         HardwareNotSupported("HARDWARE_NOT_SUPPORTED"),
         Available("AVAILABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -278,15 +283,16 @@ public final class CapacityReportShapeAvailability
             return UnknownEnumValue;
         }
     };
-    /** A flag denoting whether capacity is available. */
+    /**
+     * A flag denoting whether capacity is available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
     /**
      * A flag denoting whether capacity is available.
-     *
      * @return the value
-     */
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
@@ -298,7 +304,6 @@ public final class CapacityReportShapeAvailability
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

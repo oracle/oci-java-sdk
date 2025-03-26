@@ -10,11 +10,10 @@ import com.oracle.bmc.opensearch.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of OpensearchClusterPipeline.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 public class OpensearchClusterPipelineWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final OpensearchClusterPipeline client;
@@ -30,8 +29,7 @@ public class OpensearchClusterPipelineWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -81,8 +79,7 @@ public class OpensearchClusterPipelineWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -110,8 +107,8 @@ public class OpensearchClusterPipelineWaiters {
             forOpensearchClusterPipeline(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetOpensearchClusterPipelineRequest request,
-                    final com.oracle.bmc.opensearch.model.OpensearchClusterPipeline.LifecycleState
-                                    ...
+                    final com.oracle.bmc.opensearch.model.OpensearchClusterPipeline
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.opensearch.model.OpensearchClusterPipeline.LifecycleState>

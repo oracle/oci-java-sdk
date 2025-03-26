@@ -5,23 +5,22 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Summary of the Integration Instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Summary of the Integration Instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IntegrationInstanceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IntegrationInstanceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IntegrationInstanceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -109,65 +108,71 @@ public final class IntegrationInstanceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation. */
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Integration Instance Identifier, can be renamed. */
+        /**
+         * Integration Instance Identifier, can be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Integration Instance Identifier, can be renamed.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-         */
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
         private IntegrationInstanceType integrationInstanceType;
 
         /**
-         * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and
-         * STANDARD, Oracle Integration 3 uses ENTERPRISEX and STANDARDX
+         * Standard or Enterprise type,
+         * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+         * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
          *
          * @param integrationInstanceType the value to set
          * @return this builder
-         */
+         **/
         public Builder integrationInstanceType(IntegrationInstanceType integrationInstanceType) {
             this.integrationInstanceType = integrationInstanceType;
             this.__explicitlySet__.add("integrationInstanceType");
@@ -175,170 +180,175 @@ public final class IntegrationInstanceSummary
         }
         /**
          * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the IntegrationInstance was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Integration Instance. */
+        /**
+         * The current state of the Integration Instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Integration Instance.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional details of lifecycleState or substates */
+        /**
+         * Additional details of lifecycleState or substates
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional details of lifecycleState or substates
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * An message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
         private String stateMessage;
 
         /**
-         * An message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param stateMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder stateMessage(String stateMessage) {
             this.stateMessage = stateMessage;
             this.__explicitlySet__.add("stateMessage");
             return this;
         }
-        /** Bring your own license. */
+        /**
+         * Bring your own license.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
         private Boolean isByol;
 
         /**
          * Bring your own license.
-         *
          * @param isByol the value to set
          * @return this builder
-         */
+         **/
         public Builder isByol(Boolean isByol) {
             this.isByol = isByol;
             this.__explicitlySet__.add("isByol");
             return this;
         }
-        /** The Integration Instance URL. */
+        /**
+         * The Integration Instance URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
         private String instanceUrl;
 
         /**
          * The Integration Instance URL.
-         *
          * @param instanceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
             return this;
         }
-        /** The Integration Instance Design Time URL */
+        /**
+         * The Integration Instance Design Time URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
         private String instanceDesignTimeUrl;
 
         /**
          * The Integration Instance Design Time URL
-         *
          * @param instanceDesignTimeUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
             this.instanceDesignTimeUrl = instanceDesignTimeUrl;
             this.__explicitlySet__.add("instanceDesignTimeUrl");
             return this;
         }
-        /** The number of configured message packs (if any) */
+        /**
+         * The number of configured message packs (if any)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
         private Integer messagePacks;
 
         /**
          * The number of configured message packs (if any)
-         *
          * @param messagePacks the value to set
          * @return this builder
-         */
+         **/
         public Builder messagePacks(Integer messagePacks) {
             this.messagePacks = messagePacks;
             this.__explicitlySet__.add("messagePacks");
             return this;
         }
-        /** The file server is enabled or not. */
+        /**
+         * The file server is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
         private Boolean isFileServerEnabled;
 
         /**
          * The file server is enabled or not.
-         *
          * @param isFileServerEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFileServerEnabled(Boolean isFileServerEnabled) {
             this.isFileServerEnabled = isFileServerEnabled;
             this.__explicitlySet__.add("isFileServerEnabled");
             return this;
         }
-        /** Visual Builder is enabled or not. */
+        /**
+         * Visual Builder is enabled or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
         private Boolean isVisualBuilderEnabled;
 
         /**
          * Visual Builder is enabled or not.
-         *
          * @param isVisualBuilderEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isVisualBuilderEnabled(Boolean isVisualBuilderEnabled) {
             this.isVisualBuilderEnabled = isVisualBuilderEnabled;
             this.__explicitlySet__.add("isVisualBuilderEnabled");
@@ -353,7 +363,10 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("customEndpoint");
             return this;
         }
-        /** A list of alternate custom endpoints used for the integration instance URL. */
+        /**
+         * A list of alternate custom endpoints used for the integration instance URL.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
         private java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
 
@@ -362,23 +375,24 @@ public final class IntegrationInstanceSummary
          *
          * @param alternateCustomEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder alternateCustomEndpoints(
                 java.util.List<CustomEndpointDetails> alternateCustomEndpoints) {
             this.alternateCustomEndpoints = alternateCustomEndpoints;
             this.__explicitlySet__.add("alternateCustomEndpoints");
             return this;
         }
-        /** The entitlement used for billing purposes. */
+        /**
+         * The entitlement used for billing purposes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private ConsumptionModel consumptionModel;
 
         /**
          * The entitlement used for billing purposes.
-         *
          * @param consumptionModel the value to set
          * @return this builder
-         */
+         **/
         public Builder consumptionModel(ConsumptionModel consumptionModel) {
             this.consumptionModel = consumptionModel;
             this.__explicitlySet__.add("consumptionModel");
@@ -394,38 +408,44 @@ public final class IntegrationInstanceSummary
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name,
+         * type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to
+         * namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -433,34 +453,36 @@ public final class IntegrationInstanceSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Shape */
+        /**
+         * Shape
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
 
         /**
          * Shape
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -476,31 +498,33 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("privateEndpointOutboundConnection");
             return this;
         }
-        /** Is Disaster Recovery enabled for the integrationInstance */
+        /**
+         * Is Disaster Recovery enabled for the integrationInstance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
         private Boolean isDisasterRecoveryEnabled;
 
         /**
          * Is Disaster Recovery enabled for the integrationInstance
-         *
          * @param isDisasterRecoveryEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
             this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
             this.__explicitlySet__.add("isDisasterRecoveryEnabled");
             return this;
         }
-        /** Data retention period set for given integration instance */
+        /**
+         * Data retention period set for given integration instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
         private DataRetentionPeriod dataRetentionPeriod;
 
         /**
          * Data retention period set for given integration instance
-         *
          * @param dataRetentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder dataRetentionPeriod(DataRetentionPeriod dataRetentionPeriod) {
             this.dataRetentionPeriod = dataRetentionPeriod;
             this.__explicitlySet__.add("dataRetentionPeriod");
@@ -630,7 +654,9 @@ public final class IntegrationInstanceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -639,50 +665,55 @@ public final class IntegrationInstanceSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation. */
+    /**
+     * Unique identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Integration Instance Identifier, can be renamed. */
+    /**
+     * Integration Instance Identifier, can be renamed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Integration Instance Identifier, can be renamed.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-     */
-    public enum IntegrationInstanceType implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum IntegrationInstanceType {
         Standard("STANDARD"),
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
@@ -690,8 +721,8 @@ public final class IntegrationInstanceSummary
         Healthcare("HEALTHCARE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -731,50 +762,57 @@ public final class IntegrationInstanceSummary
         }
     };
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("integrationInstanceType")
     private final IntegrationInstanceType integrationInstanceType;
 
     /**
-     * Standard or Enterprise type, Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
+     * Standard or Enterprise type,
+     * Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,
      * Oracle Integration 3 uses ENTERPRISEX and STANDARDX
      *
      * @return the value
-     */
+     **/
     public IntegrationInstanceType getIntegrationInstanceType() {
         return integrationInstanceType;
     }
 
-    /** The time the the Integration Instance was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the Integration Instance was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the IntegrationInstance was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the IntegrationInstance was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the Integration Instance. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Integration Instance.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -784,8 +822,8 @@ public final class IntegrationInstanceSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -824,123 +862,128 @@ public final class IntegrationInstanceSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Integration Instance. */
+    /**
+     * The current state of the Integration Instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Integration Instance.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional details of lifecycleState or substates */
+    /**
+     * Additional details of lifecycleState or substates
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional details of lifecycleState or substates
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * An message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
     private final String stateMessage;
 
     /**
-     * An message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getStateMessage() {
         return stateMessage;
     }
 
-    /** Bring your own license. */
+    /**
+     * Bring your own license.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
     private final Boolean isByol;
 
     /**
      * Bring your own license.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsByol() {
         return isByol;
     }
 
-    /** The Integration Instance URL. */
+    /**
+     * The Integration Instance URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
     private final String instanceUrl;
 
     /**
      * The Integration Instance URL.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceUrl() {
         return instanceUrl;
     }
 
-    /** The Integration Instance Design Time URL */
+    /**
+     * The Integration Instance Design Time URL
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
     private final String instanceDesignTimeUrl;
 
     /**
      * The Integration Instance Design Time URL
-     *
      * @return the value
-     */
+     **/
     public String getInstanceDesignTimeUrl() {
         return instanceDesignTimeUrl;
     }
 
-    /** The number of configured message packs (if any) */
+    /**
+     * The number of configured message packs (if any)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
     private final Integer messagePacks;
 
     /**
      * The number of configured message packs (if any)
-     *
      * @return the value
-     */
+     **/
     public Integer getMessagePacks() {
         return messagePacks;
     }
 
-    /** The file server is enabled or not. */
+    /**
+     * The file server is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFileServerEnabled")
     private final Boolean isFileServerEnabled;
 
     /**
      * The file server is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFileServerEnabled() {
         return isFileServerEnabled;
     }
 
-    /** Visual Builder is enabled or not. */
+    /**
+     * Visual Builder is enabled or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isVisualBuilderEnabled")
     private final Boolean isVisualBuilderEnabled;
 
     /**
      * Visual Builder is enabled or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsVisualBuilderEnabled() {
         return isVisualBuilderEnabled;
     }
@@ -952,7 +995,10 @@ public final class IntegrationInstanceSummary
         return customEndpoint;
     }
 
-    /** A list of alternate custom endpoints used for the integration instance URL. */
+    /**
+     * A list of alternate custom endpoints used for the integration instance URL.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternateCustomEndpoints")
     private final java.util.List<CustomEndpointDetails> alternateCustomEndpoints;
 
@@ -960,20 +1006,22 @@ public final class IntegrationInstanceSummary
      * A list of alternate custom endpoints used for the integration instance URL.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CustomEndpointDetails> getAlternateCustomEndpoints() {
         return alternateCustomEndpoints;
     }
 
-    /** The entitlement used for billing purposes. */
-    public enum ConsumptionModel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The entitlement used for billing purposes.
+     **/
+    public enum ConsumptionModel {
         Ucm("UCM"),
         Gov("GOV"),
         Oic4Saas("OIC4SAAS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1012,15 +1060,16 @@ public final class IntegrationInstanceSummary
             return UnknownEnumValue;
         }
     };
-    /** The entitlement used for billing purposes. */
+    /**
+     * The entitlement used for billing purposes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     private final ConsumptionModel consumptionModel;
 
     /**
      * The entitlement used for billing purposes.
-     *
      * @return the value
-     */
+     **/
     public ConsumptionModel getConsumptionModel() {
         return consumptionModel;
     }
@@ -1033,64 +1082,73 @@ public final class IntegrationInstanceSummary
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name,
+     * type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name,
+     * type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Usage of predefined tag keys. These predefined keys are scoped to
+     * namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to
+     * namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Shape */
-    public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Shape
+     **/
+    public enum Shape {
         Development("DEVELOPMENT"),
         Production("PRODUCTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1128,15 +1186,16 @@ public final class IntegrationInstanceSummary
             return UnknownEnumValue;
         }
     };
-    /** Shape */
+    /**
+     * Shape
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final Shape shape;
 
     /**
      * Shape
-     *
      * @return the value
-     */
+     **/
     public Shape getShape() {
         return shape;
     }
@@ -1148,28 +1207,31 @@ public final class IntegrationInstanceSummary
         return privateEndpointOutboundConnection;
     }
 
-    /** Is Disaster Recovery enabled for the integrationInstance */
+    /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
     private final Boolean isDisasterRecoveryEnabled;
 
     /**
      * Is Disaster Recovery enabled for the integrationInstance
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDisasterRecoveryEnabled() {
         return isDisasterRecoveryEnabled;
     }
 
-    /** Data retention period set for given integration instance */
-    public enum DataRetentionPeriod implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Data retention period set for given integration instance
+     **/
+    public enum DataRetentionPeriod {
         Months1("MONTHS_1"),
         Months3("MONTHS_3"),
         Months6("MONTHS_6"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1208,15 +1270,16 @@ public final class IntegrationInstanceSummary
             return UnknownEnumValue;
         }
     };
-    /** Data retention period set for given integration instance */
+    /**
+     * Data retention period set for given integration instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
     private final DataRetentionPeriod dataRetentionPeriod;
 
     /**
      * Data retention period set for given integration instance
-     *
      * @return the value
-     */
+     **/
     public DataRetentionPeriod getDataRetentionPeriod() {
         return dataRetentionPeriod;
     }
@@ -1228,7 +1291,6 @@ public final class IntegrationInstanceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

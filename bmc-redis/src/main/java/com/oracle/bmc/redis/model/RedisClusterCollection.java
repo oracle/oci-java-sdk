@@ -5,25 +5,22 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * A list of clusters that match filter criteria, if any. A cluster is a memory-based storage
- * solution. For more information, see [OCI
- * Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
+ * A list of clusters that match filter criteria, if any. A cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.oracle.com/iaas/Content/ocicache/home.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RedisClusterCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RedisClusterCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RedisClusterCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public RedisClusterCollection(java.util.List<RedisClusterSummary> items) {
@@ -33,16 +30,17 @@ public final class RedisClusterCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of clusters. */
+        /**
+         * The list of clusters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<RedisClusterSummary> items;
 
         /**
          * The list of clusters.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<RedisClusterSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -69,7 +67,9 @@ public final class RedisClusterCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -78,15 +78,16 @@ public final class RedisClusterCollection
         return new Builder().copy(this);
     }
 
-    /** The list of clusters. */
+    /**
+     * The list of clusters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<RedisClusterSummary> items;
 
     /**
      * The list of clusters.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RedisClusterSummary> getItems() {
         return items;
     }
@@ -98,7 +99,6 @@ public final class RedisClusterCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,9 +6,12 @@ package com.oracle.bmc.cloudmigrations.responses;
 
 import com.oracle.bmc.cloudmigrations.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control, see {@code if-match.} */
+    /**
+     * For optimistic concurrency control, see {@code if-match.}
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,14 +41,13 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -52,7 +55,10 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         return opcWorkRequestId;
     }
 
-    /** The full URI of the resource related to the request */
+    /**
+     * The full URI of the resource related to the request
+     *
+     */
     private String location;
 
     /**
@@ -64,7 +70,10 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The full URI of the resource related to the request */
+    /**
+     * The full URI of the resource related to the request
+     *
+     */
     private String contentLocation;
 
     /**
@@ -76,12 +85,13 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         return contentLocation;
     }
 
-    /** The returned {@code MigrationPlan} instance. */
+    /**
+     * The returned MigrationPlan instance.
+     */
     private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
     /**
-     * The returned {@code MigrationPlan} instance.
-     *
+     * The returned MigrationPlan instance.
      * @return the value
      */
     public com.oracle.bmc.cloudmigrations.model.MigrationPlan getMigrationPlan() {
@@ -100,7 +110,7 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateMigrationPlanResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String opcWorkRequestId,
@@ -116,25 +126,25 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         this.migrationPlan = migrationPlan;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateMigrationPlanResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control, see {@code if-match.} */
+        /**
+         * For optimistic concurrency control, see {@code if-match.}
+         *
+         */
         private String etag;
 
         /**
@@ -149,14 +159,15 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -167,14 +178,13 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -184,7 +194,10 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The full URI of the resource related to the request */
+        /**
+         * The full URI of the resource related to the request
+         *
+         */
         private String location;
 
         /**
@@ -198,7 +211,10 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The full URI of the resource related to the request */
+        /**
+         * The full URI of the resource related to the request
+         *
+         */
         private String contentLocation;
 
         /**
@@ -212,12 +228,13 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code MigrationPlan} instance. */
+        /**
+         * The returned MigrationPlan instance.
+         */
         private com.oracle.bmc.cloudmigrations.model.MigrationPlan migrationPlan;
 
         /**
-         * The returned {@code MigrationPlan} instance.
-         *
+         * The returned MigrationPlan instance.
          * @param migrationPlan the value to set
          * @return this builder
          */
@@ -229,10 +246,8 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateMigrationPlanResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -248,10 +263,8 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateMigrationPlanResponse build() {
             return new CreateMigrationPlanResponse(
                     __httpStatusCode__,
@@ -267,7 +280,6 @@ public class CreateMigrationPlanResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,11 +5,10 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Execution type of the application, for application type war & ear is deployed and for other
- * installed.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ApplicationExecutionType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Execution type of the application, for application type war & ear is deployed and for other installed.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ApplicationExecutionType {
     Installed("INSTALLED"),
     Deployed("DEPLOYED"),
 

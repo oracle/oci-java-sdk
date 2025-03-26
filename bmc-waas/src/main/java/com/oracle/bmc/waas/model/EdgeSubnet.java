@@ -5,21 +5,19 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * The details about an edge node subnet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * The details about an edge node subnet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EdgeSubnet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EdgeSubnet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EdgeSubnet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"cidr", "timeModified", "region"})
     public EdgeSubnet(String cidr, java.util.Date timeModified, String region) {
@@ -31,50 +29,49 @@ public final class EdgeSubnet extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An edge node subnet. This can include /24 or /8 addresses. */
+        /**
+         * An edge node subnet. This can include /24 or /8 addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidr")
         private String cidr;
 
         /**
          * An edge node subnet. This can include /24 or /8 addresses.
-         *
          * @param cidr the value to set
          * @return this builder
-         */
+         **/
         public Builder cidr(String cidr) {
             this.cidr = cidr;
             this.__explicitlySet__.add("cidr");
             return this;
         }
         /**
-         * The date and time the last change was made to the indicated edge node subnet, expressed
-         * in RFC 3339 timestamp format.
-         */
+         * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
-         * The date and time the last change was made to the indicated edge node subnet, expressed
-         * in RFC 3339 timestamp format.
-         *
+         * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
          * @param timeModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-        /** The name of the region containing the indicated subnet. */
+        /**
+         * The name of the region containing the indicated subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The name of the region containing the indicated subnet.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
@@ -107,7 +104,9 @@ public final class EdgeSubnet extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,45 +115,44 @@ public final class EdgeSubnet extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** An edge node subnet. This can include /24 or /8 addresses. */
+    /**
+     * An edge node subnet. This can include /24 or /8 addresses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidr")
     private final String cidr;
 
     /**
      * An edge node subnet. This can include /24 or /8 addresses.
-     *
      * @return the value
-     */
+     **/
     public String getCidr() {
         return cidr;
     }
 
     /**
-     * The date and time the last change was made to the indicated edge node subnet, expressed in
-     * RFC 3339 timestamp format.
-     */
+     * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
-     * The date and time the last change was made to the indicated edge node subnet, expressed in
-     * RFC 3339 timestamp format.
-     *
+     * The date and time the last change was made to the indicated edge node subnet, expressed in RFC 3339 timestamp format.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
 
-    /** The name of the region containing the indicated subnet. */
+    /**
+     * The name of the region containing the indicated subnet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The name of the region containing the indicated subnet.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
@@ -166,7 +164,6 @@ public final class EdgeSubnet extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,21 +6,22 @@ package com.oracle.bmc.recovery.requests;
 
 import com.oracle.bmc.recovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateRecoveryServiceSubnetExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateRecoveryServiceSubnetRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRecoveryServiceSubnetRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class CreateRecoveryServiceSubnetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.recovery.model.CreateRecoveryServiceSubnetDetails> {
 
-    /** Describes the parameters required to create a recovery service subnet. */
+    /**
+     * Describes the parameters required to create a recovery service subnet.
+     */
     private com.oracle.bmc.recovery.model.CreateRecoveryServiceSubnetDetails
             createRecoveryServiceSubnetDetails;
 
-    /** Describes the parameters required to create a recovery service subnet. */
+    /**
+     * Describes the parameters required to create a recovery service subnet.
+     */
     public com.oracle.bmc.recovery.model.CreateRecoveryServiceSubnetDetails
             getCreateRecoveryServiceSubnetDetails() {
         return createRecoveryServiceSubnetDetails;
@@ -28,33 +29,38 @@ public class CreateRecoveryServiceSubnetRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -67,16 +73,18 @@ public class CreateRecoveryServiceSubnetRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateRecoveryServiceSubnetRequest,
                     com.oracle.bmc.recovery.model.CreateRecoveryServiceSubnetDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Describes the parameters required to create a recovery service subnet. */
+        /**
+         * Describes the parameters required to create a recovery service subnet.
+         */
         private com.oracle.bmc.recovery.model.CreateRecoveryServiceSubnetDetails
                 createRecoveryServiceSubnetDetails = null;
 
         /**
          * Describes the parameters required to create a recovery service subnet.
-         *
          * @param createRecoveryServiceSubnetDetails the value to set
          * @return this builder instance
          */
@@ -89,19 +97,20 @@ public class CreateRecoveryServiceSubnetRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -111,12 +120,13 @@ public class CreateRecoveryServiceSubnetRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -127,19 +137,18 @@ public class CreateRecoveryServiceSubnetRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -151,7 +160,6 @@ public class CreateRecoveryServiceSubnetRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateRecoveryServiceSubnetRequest o) {
@@ -166,11 +174,10 @@ public class CreateRecoveryServiceSubnetRequest
         /**
          * Build the instance of CreateRecoveryServiceSubnetRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateRecoveryServiceSubnetRequest
          */
@@ -183,7 +190,6 @@ public class CreateRecoveryServiceSubnetRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -197,8 +203,7 @@ public class CreateRecoveryServiceSubnetRequest
         /**
          * Build the instance of CreateRecoveryServiceSubnetRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateRecoveryServiceSubnetRequest
@@ -209,14 +214,12 @@ public class CreateRecoveryServiceSubnetRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateRecoveryServiceSubnetRequest(createRecoveryServiceSubnetDetails,
-            // opcRetryToken, opcRequestId);
+            // new CreateRecoveryServiceSubnetRequest(createRecoveryServiceSubnetDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -228,7 +231,6 @@ public class CreateRecoveryServiceSubnetRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

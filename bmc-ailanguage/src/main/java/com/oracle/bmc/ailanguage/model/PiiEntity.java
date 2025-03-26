@@ -5,21 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * PII entity object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * PII entity object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PiiEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PiiEntity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PiiEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "offset", "length", "text", "type", "score"})
     public PiiEntity(
@@ -35,107 +33,179 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique id of the entity. */
+        /**
+         * Unique id of the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique id of the entity.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The number of Unicode code points preceding this entity in the submitted text. */
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
         /**
          * The number of Unicode code points preceding this entity in the submitted text.
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** Length of PII entity text. */
+        /**
+         * Length of PII entity text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * Length of PII entity text.
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Entity text like name of person, Organization and so on. */
+        /**
+         * Entity text like name of person, Organization and so on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Entity text like name of person, Organization and so on.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
         /**
-         * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL
-         * PASSPORT_NUMBER_US TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT
-         * BANK_ROUTING CREDIT_DEBIT_NUMBER IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC
-         * AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY
-         * OCI_SMTP_USERNAME OCI_OCID_REFERENCE OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST
-         * OCI_STORAGE_SIGNED_URL OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER
-         * HEALTH_PLAN_ID URL CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US
+         * Entity type supported
+         * PERSON
+         * ADDRESS
+         * AGE
+         * DATE_TIME
+         * SSN_OR_TAXPAYER
+         * EMAIL
+         * PASSPORT_NUMBER_US
+         * TELEPHONE_NUMBER
+         * DRIVER_ID_US
+         * BANK_ACCOUNT_NUMBER
+         * BANK_SWIFT
+         * BANK_ROUTING
+         * CREDIT_DEBIT_NUMBER
+         * IP_ADDRESS
+         * MAC_ADDRESS
+         * COOKIE
+         * XSRF_TOKEN
+         * AUTH_BASIC
+         * AUTH_BEARER
+         * JSON_WEB_TOKEN
+         * PRIVATE_KEY
+         * PUBLIC_KEY
+         * OCI_OCID_USER
+         * OCI_OCID_TENANCY
+         * OCI_SMTP_USERNAME
+         * OCI_OCID_REFERENCE
+         * OCI_FINGERPRINT
+         * OCI_CREDENTIAL
+         * OCI_PRE_AUTH_REQUEST
+         * OCI_STORAGE_SIGNED_URL
+         * OCI_CUSTOMER_SECRET_KEY
+         * OCI_ACCESS_KEy
+         * MEDICAL_RECORD_NUMBER
+         * HEALTH_PLAN_ID
+         * URL
+         * CERTIFICATE_NUMBER
+         * FIN
+         * GUIDs
+         * VEHICLE_LICENSE_PLATE_US
          * VEHICLE_IDENTIFIER_US
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL
-         * PASSPORT_NUMBER_US TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT
-         * BANK_ROUTING CREDIT_DEBIT_NUMBER IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC
-         * AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY
-         * OCI_SMTP_USERNAME OCI_OCID_REFERENCE OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST
-         * OCI_STORAGE_SIGNED_URL OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER
-         * HEALTH_PLAN_ID URL CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US
+         * Entity type supported
+         * PERSON
+         * ADDRESS
+         * AGE
+         * DATE_TIME
+         * SSN_OR_TAXPAYER
+         * EMAIL
+         * PASSPORT_NUMBER_US
+         * TELEPHONE_NUMBER
+         * DRIVER_ID_US
+         * BANK_ACCOUNT_NUMBER
+         * BANK_SWIFT
+         * BANK_ROUTING
+         * CREDIT_DEBIT_NUMBER
+         * IP_ADDRESS
+         * MAC_ADDRESS
+         * COOKIE
+         * XSRF_TOKEN
+         * AUTH_BASIC
+         * AUTH_BEARER
+         * JSON_WEB_TOKEN
+         * PRIVATE_KEY
+         * PUBLIC_KEY
+         * OCI_OCID_USER
+         * OCI_OCID_TENANCY
+         * OCI_SMTP_USERNAME
+         * OCI_OCID_REFERENCE
+         * OCI_FINGERPRINT
+         * OCI_CREDENTIAL
+         * OCI_PRE_AUTH_REQUEST
+         * OCI_STORAGE_SIGNED_URL
+         * OCI_CUSTOMER_SECRET_KEY
+         * OCI_ACCESS_KEy
+         * MEDICAL_RECORD_NUMBER
+         * HEALTH_PLAN_ID
+         * URL
+         * CERTIFICATE_NUMBER
+         * FIN
+         * GUIDs
+         * VEHICLE_LICENSE_PLATE_US
          * VEHICLE_IDENTIFIER_US
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Score or confidence for detected PII entity. */
+        /**
+         * Score or confidence for detected PII entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("score")
         private Double score;
 
         /**
          * Score or confidence for detected PII entity.
-         *
          * @param score the value to set
          * @return this builder
-         */
+         **/
         public Builder score(Double score) {
             this.score = score;
             this.__explicitlySet__.add("score");
@@ -179,7 +249,9 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -188,94 +260,168 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Unique id of the entity. */
+    /**
+     * Unique id of the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique id of the entity.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The number of Unicode code points preceding this entity in the submitted text. */
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
     /**
      * The number of Unicode code points preceding this entity in the submitted text.
-     *
      * @return the value
-     */
+     **/
     public Integer getOffset() {
         return offset;
     }
 
-    /** Length of PII entity text. */
+    /**
+     * Length of PII entity text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * Length of PII entity text.
-     *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Entity text like name of person, Organization and so on. */
+    /**
+     * Entity text like name of person, Organization and so on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Entity text like name of person, Organization and so on.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
     /**
-     * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL PASSPORT_NUMBER_US
-     * TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT BANK_ROUTING CREDIT_DEBIT_NUMBER
-     * IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY
-     * PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY OCI_SMTP_USERNAME OCI_OCID_REFERENCE
-     * OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST OCI_STORAGE_SIGNED_URL
-     * OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER HEALTH_PLAN_ID URL
-     * CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US VEHICLE_IDENTIFIER_US
-     */
+     * Entity type supported
+     * PERSON
+     * ADDRESS
+     * AGE
+     * DATE_TIME
+     * SSN_OR_TAXPAYER
+     * EMAIL
+     * PASSPORT_NUMBER_US
+     * TELEPHONE_NUMBER
+     * DRIVER_ID_US
+     * BANK_ACCOUNT_NUMBER
+     * BANK_SWIFT
+     * BANK_ROUTING
+     * CREDIT_DEBIT_NUMBER
+     * IP_ADDRESS
+     * MAC_ADDRESS
+     * COOKIE
+     * XSRF_TOKEN
+     * AUTH_BASIC
+     * AUTH_BEARER
+     * JSON_WEB_TOKEN
+     * PRIVATE_KEY
+     * PUBLIC_KEY
+     * OCI_OCID_USER
+     * OCI_OCID_TENANCY
+     * OCI_SMTP_USERNAME
+     * OCI_OCID_REFERENCE
+     * OCI_FINGERPRINT
+     * OCI_CREDENTIAL
+     * OCI_PRE_AUTH_REQUEST
+     * OCI_STORAGE_SIGNED_URL
+     * OCI_CUSTOMER_SECRET_KEY
+     * OCI_ACCESS_KEy
+     * MEDICAL_RECORD_NUMBER
+     * HEALTH_PLAN_ID
+     * URL
+     * CERTIFICATE_NUMBER
+     * FIN
+     * GUIDs
+     * VEHICLE_LICENSE_PLATE_US
+     * VEHICLE_IDENTIFIER_US
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Entity type supported PERSON ADDRESS AGE DATE_TIME SSN_OR_TAXPAYER EMAIL PASSPORT_NUMBER_US
-     * TELEPHONE_NUMBER DRIVER_ID_US BANK_ACCOUNT_NUMBER BANK_SWIFT BANK_ROUTING CREDIT_DEBIT_NUMBER
-     * IP_ADDRESS MAC_ADDRESS COOKIE XSRF_TOKEN AUTH_BASIC AUTH_BEARER JSON_WEB_TOKEN PRIVATE_KEY
-     * PUBLIC_KEY OCI_OCID_USER OCI_OCID_TENANCY OCI_SMTP_USERNAME OCI_OCID_REFERENCE
-     * OCI_FINGERPRINT OCI_CREDENTIAL OCI_PRE_AUTH_REQUEST OCI_STORAGE_SIGNED_URL
-     * OCI_CUSTOMER_SECRET_KEY OCI_ACCESS_KEy MEDICAL_RECORD_NUMBER HEALTH_PLAN_ID URL
-     * CERTIFICATE_NUMBER FIN GUIDs VEHICLE_LICENSE_PLATE_US VEHICLE_IDENTIFIER_US
+     * Entity type supported
+     * PERSON
+     * ADDRESS
+     * AGE
+     * DATE_TIME
+     * SSN_OR_TAXPAYER
+     * EMAIL
+     * PASSPORT_NUMBER_US
+     * TELEPHONE_NUMBER
+     * DRIVER_ID_US
+     * BANK_ACCOUNT_NUMBER
+     * BANK_SWIFT
+     * BANK_ROUTING
+     * CREDIT_DEBIT_NUMBER
+     * IP_ADDRESS
+     * MAC_ADDRESS
+     * COOKIE
+     * XSRF_TOKEN
+     * AUTH_BASIC
+     * AUTH_BEARER
+     * JSON_WEB_TOKEN
+     * PRIVATE_KEY
+     * PUBLIC_KEY
+     * OCI_OCID_USER
+     * OCI_OCID_TENANCY
+     * OCI_SMTP_USERNAME
+     * OCI_OCID_REFERENCE
+     * OCI_FINGERPRINT
+     * OCI_CREDENTIAL
+     * OCI_PRE_AUTH_REQUEST
+     * OCI_STORAGE_SIGNED_URL
+     * OCI_CUSTOMER_SECRET_KEY
+     * OCI_ACCESS_KEy
+     * MEDICAL_RECORD_NUMBER
+     * HEALTH_PLAN_ID
+     * URL
+     * CERTIFICATE_NUMBER
+     * FIN
+     * GUIDs
+     * VEHICLE_LICENSE_PLATE_US
+     * VEHICLE_IDENTIFIER_US
      *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Score or confidence for detected PII entity. */
+    /**
+     * Score or confidence for detected PII entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("score")
     private final Double score;
 
     /**
      * Score or confidence for detected PII entity.
-     *
      * @return the value
-     */
+     **/
     public Double getScore() {
         return score;
     }
@@ -287,7 +433,6 @@ public final class PiiEntity extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

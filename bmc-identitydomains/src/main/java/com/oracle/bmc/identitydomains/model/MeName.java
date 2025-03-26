@@ -6,28 +6,28 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * A complex attribute that contains attributes representing the name
- *
- * <p>*SCIM++ Properties:** - idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name,
- * mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix],
- * [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name,
- * mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName],
- * [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]] - idcsPii: true - multiValued:
- * false - mutability: readWrite - required: false - returned: default - type: complex - uniqueness:
- * none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+ *  - idcsPii: true
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MeName.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MeName extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MeName extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "formatted",
@@ -57,24 +57,35 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
     public static class Builder {
         /**
          * Full name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formatted")
         private String formatted;
 
         /**
          * Full name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param formatted the value to set
          * @return this builder
-         */
+         **/
         public Builder formatted(String formatted) {
             this.formatted = formatted;
             this.__explicitlySet__.add("formatted");
@@ -82,24 +93,37 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Last name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Last Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyName")
         private String familyName;
 
         /**
          * Last name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Last Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param familyName the value to set
          * @return this builder
-         */
+         **/
         public Builder familyName(String familyName) {
             this.familyName = familyName;
             this.__explicitlySet__.add("familyName");
@@ -107,24 +131,37 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * First name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: First Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: First Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("givenName")
         private String givenName;
 
         /**
          * First name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: First Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: First Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param givenName the value to set
          * @return this builder
-         */
+         **/
         public Builder givenName(String givenName) {
             this.givenName = givenName;
             this.__explicitlySet__.add("givenName");
@@ -132,24 +169,37 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Middle name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Middle Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Middle Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("middleName")
         private String middleName;
 
         /**
          * Middle name
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Middle Name -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Middle Name
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param middleName the value to set
          * @return this builder
-         */
+         **/
         public Builder middleName(String middleName) {
             this.middleName = middleName;
             this.__explicitlySet__.add("middleName");
@@ -157,24 +207,35 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Prefix
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Prefix - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Honorific Prefix
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("honorificPrefix")
         private String honorificPrefix;
 
         /**
          * Prefix
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Prefix - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Honorific Prefix
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param honorificPrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder honorificPrefix(String honorificPrefix) {
             this.honorificPrefix = honorificPrefix;
             this.__explicitlySet__.add("honorificPrefix");
@@ -182,24 +243,35 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Suffix
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Suffix - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Honorific Suffix
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("honorificSuffix")
         private String honorificSuffix;
 
         /**
          * Suffix
-         *
-         * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Suffix - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: false - returned: default -
-         * type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCsvAttributeName: Honorific Suffix
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param honorificSuffix the value to set
          * @return this builder
-         */
+         **/
         public Builder honorificSuffix(String honorificSuffix) {
             this.honorificSuffix = honorificSuffix;
             this.__explicitlySet__.add("honorificSuffix");
@@ -248,7 +320,9 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,136 +333,210 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Full name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formatted")
     private final String formatted;
 
     /**
      * Full name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFormatted() {
         return formatted;
     }
 
     /**
      * Last name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Last Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyName")
     private final String familyName;
 
     /**
      * Last name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Last Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Last Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFamilyName() {
         return familyName;
     }
 
     /**
      * First name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: First Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: First Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("givenName")
     private final String givenName;
 
     /**
      * First name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: First Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: First Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getGivenName() {
         return givenName;
     }
 
     /**
      * Middle name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Middle Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Middle Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("middleName")
     private final String middleName;
 
     /**
      * Middle name
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Middle Name -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Middle Name
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMiddleName() {
         return middleName;
     }
 
     /**
      * Prefix
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Prefix - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Honorific Prefix
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("honorificPrefix")
     private final String honorificPrefix;
 
     /**
      * Prefix
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Prefix - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Honorific Prefix
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHonorificPrefix() {
         return honorificPrefix;
     }
 
     /**
      * Suffix
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Suffix - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Honorific Suffix
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("honorificSuffix")
     private final String honorificSuffix;
 
     /**
      * Suffix
-     *
-     * <p>*SCIM++ Properties:** - idcsCsvAttributeName: Honorific Suffix - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCsvAttributeName: Honorific Suffix
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHonorificSuffix() {
         return honorificSuffix;
     }
@@ -400,7 +548,6 @@ public final class MeName extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

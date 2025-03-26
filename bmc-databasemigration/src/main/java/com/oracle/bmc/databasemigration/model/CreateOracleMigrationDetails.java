@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Create Migration resource parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Create Migration resource parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOracleMigrationDetails.Builder.class)
+    builder = CreateOracleMigrationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "databaseCombination")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "databaseCombination"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -145,32 +145,34 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             this.__explicitlySet__.add("ggsDetails");
             return this;
         }
-        /** List of Migration Parameter objects. */
+        /**
+         * List of Migration Parameter objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
         private java.util.List<MigrationParameterDetails> advancedParameters;
 
         /**
          * List of Migration Parameter objects.
-         *
          * @param advancedParameters the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedParameters(
                 java.util.List<MigrationParameterDetails> advancedParameters) {
             this.advancedParameters = advancedParameters;
             this.__explicitlySet__.add("advancedParameters");
             return this;
         }
-        /** The OCID of the resource being referenced. */
+        /**
+         * The OCID of the resource being referenced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
         private String sourceContainerDatabaseConnectionId;
 
         /**
          * The OCID of the resource being referenced.
-         *
          * @param sourceContainerDatabaseConnectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceContainerDatabaseConnectionId(
                 String sourceContainerDatabaseConnectionId) {
             this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
@@ -178,59 +180,56 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             return this;
         }
         /**
-         * Database objects to exclude from migration, cannot be specified alongside
-         * 'includeObjects'
-         */
+         * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
         private java.util.List<OracleDatabaseObject> excludeObjects;
 
         /**
-         * Database objects to exclude from migration, cannot be specified alongside
-         * 'includeObjects'
+         * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
          *
          * @param excludeObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder excludeObjects(java.util.List<OracleDatabaseObject> excludeObjects) {
             this.excludeObjects = excludeObjects;
             this.__explicitlySet__.add("excludeObjects");
             return this;
         }
         /**
-         * Database objects to include from migration, cannot be specified alongside
-         * 'excludeObjects'
-         */
+         * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
         private java.util.List<OracleDatabaseObject> includeObjects;
 
         /**
-         * Database objects to include from migration, cannot be specified alongside
-         * 'excludeObjects'
-         *
+         * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
          * @param includeObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder includeObjects(java.util.List<OracleDatabaseObject> includeObjects) {
             this.includeObjects = includeObjects;
             this.__explicitlySet__.add("includeObjects");
             return this;
         }
         /**
-         * Specifies the database objects to be excluded from the migration in bulk. The definition
-         * accepts input in a CSV format, newline separated for each entry. More details can be
-         * found in the documentation.
-         */
+         * Specifies the database objects to be excluded from the migration in bulk.
+         * The definition accepts input in a CSV format, newline separated for each entry.
+         * More details can be found in the documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkIncludeExcludeData")
         private String bulkIncludeExcludeData;
 
         /**
-         * Specifies the database objects to be excluded from the migration in bulk. The definition
-         * accepts input in a CSV format, newline separated for each entry. More details can be
-         * found in the documentation.
+         * Specifies the database objects to be excluded from the migration in bulk.
+         * The definition accepts input in a CSV format, newline separated for each entry.
+         * More details can be found in the documentation.
          *
          * @param bulkIncludeExcludeData the value to set
          * @return this builder
-         */
+         **/
         public Builder bulkIncludeExcludeData(String bulkIncludeExcludeData) {
             this.bulkIncludeExcludeData = bulkIncludeExcludeData;
             this.__explicitlySet__.add("bulkIncludeExcludeData");
@@ -328,7 +327,9 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -413,35 +414,38 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         return ggsDetails;
     }
 
-    /** List of Migration Parameter objects. */
+    /**
+     * List of Migration Parameter objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
     private final java.util.List<MigrationParameterDetails> advancedParameters;
 
     /**
      * List of Migration Parameter objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MigrationParameterDetails> getAdvancedParameters() {
         return advancedParameters;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
     private final String sourceContainerDatabaseConnectionId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getSourceContainerDatabaseConnectionId() {
         return sourceContainerDatabaseConnectionId;
     }
 
     /**
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeObjects")
     private final java.util.List<OracleDatabaseObject> excludeObjects;
 
@@ -449,41 +453,41 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
      * Database objects to exclude from migration, cannot be specified alongside 'includeObjects'
      *
      * @return the value
-     */
+     **/
     public java.util.List<OracleDatabaseObject> getExcludeObjects() {
         return excludeObjects;
     }
 
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("includeObjects")
     private final java.util.List<OracleDatabaseObject> includeObjects;
 
     /**
      * Database objects to include from migration, cannot be specified alongside 'excludeObjects'
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OracleDatabaseObject> getIncludeObjects() {
         return includeObjects;
     }
 
     /**
-     * Specifies the database objects to be excluded from the migration in bulk. The definition
-     * accepts input in a CSV format, newline separated for each entry. More details can be found in
-     * the documentation.
-     */
+     * Specifies the database objects to be excluded from the migration in bulk.
+     * The definition accepts input in a CSV format, newline separated for each entry.
+     * More details can be found in the documentation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkIncludeExcludeData")
     private final String bulkIncludeExcludeData;
 
     /**
-     * Specifies the database objects to be excluded from the migration in bulk. The definition
-     * accepts input in a CSV format, newline separated for each entry. More details can be found in
-     * the documentation.
+     * Specifies the database objects to be excluded from the migration in bulk.
+     * The definition accepts input in a CSV format, newline separated for each entry.
+     * More details can be found in the documentation.
      *
      * @return the value
-     */
+     **/
     public String getBulkIncludeExcludeData() {
         return bulkIncludeExcludeData;
     }
@@ -495,7 +499,6 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

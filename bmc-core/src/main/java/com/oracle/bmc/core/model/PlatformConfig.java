@@ -5,54 +5,63 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The platform configuration for the instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The platform configuration for the instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = PlatformConfig.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = PlatformConfig.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmdMilanBmPlatformConfig.class,
-            name = "AMD_MILAN_BM"),
+        value = AmdMilanBmPlatformConfig.class,
+        name = "AMD_MILAN_BM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmdRomeBmPlatformConfig.class,
-            name = "AMD_ROME_BM"),
+        value = AmdRomeBmPlatformConfig.class,
+        name = "AMD_ROME_BM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IntelSkylakeBmPlatformConfig.class,
-            name = "INTEL_SKYLAKE_BM"),
+        value = IntelSkylakeBmPlatformConfig.class,
+        name = "INTEL_SKYLAKE_BM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmdRomeBmGpuPlatformConfig.class,
-            name = "AMD_ROME_BM_GPU"),
+        value = AmdRomeBmGpuPlatformConfig.class,
+        name = "AMD_ROME_BM_GPU"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IntelIcelakeBmPlatformConfig.class,
-            name = "INTEL_ICELAKE_BM"),
+        value = IntelIcelakeBmPlatformConfig.class,
+        name = "INTEL_ICELAKE_BM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmdVmPlatformConfig.class,
-            name = "AMD_VM"),
+        value = AmdVmPlatformConfig.class,
+        name = "AMD_VM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = IntelVmPlatformConfig.class,
-            name = "INTEL_VM"),
+        value = IntelVmPlatformConfig.class,
+        name = "INTEL_VM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GenericBmPlatformConfig.class,
-            name = "GENERIC_BM"),
+        value = GenericBmPlatformConfig.class,
+        name = "GENERIC_BM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmdMilanBmGpuPlatformConfig.class,
-            name = "AMD_MILAN_BM_GPU")
+        value = AmdMilanBmGpuPlatformConfig.class,
+        name = "AMD_MILAN_BM_GPU"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PlatformConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PlatformConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isSecureBootEnabled",
@@ -72,7 +81,10 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
         this.isMemoryEncryptionEnabled = isMemoryEncryptionEnabled;
     }
 
-    /** Whether Secure Boot is enabled on the instance. */
+    /**
+     * Whether Secure Boot is enabled on the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSecureBootEnabled")
     private final Boolean isSecureBootEnabled;
 
@@ -80,12 +92,15 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
      * Whether Secure Boot is enabled on the instance.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSecureBootEnabled() {
         return isSecureBootEnabled;
     }
 
-    /** Whether the Trusted Platform Module (TPM) is enabled on the instance. */
+    /**
+     * Whether the Trusted Platform Module (TPM) is enabled on the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTrustedPlatformModuleEnabled")
     private final Boolean isTrustedPlatformModuleEnabled;
 
@@ -93,12 +108,15 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
      * Whether the Trusted Platform Module (TPM) is enabled on the instance.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsTrustedPlatformModuleEnabled() {
         return isTrustedPlatformModuleEnabled;
     }
 
-    /** Whether the Measured Boot feature is enabled on the instance. */
+    /**
+     * Whether the Measured Boot feature is enabled on the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMeasuredBootEnabled")
     private final Boolean isMeasuredBootEnabled;
 
@@ -106,24 +124,23 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
      * Whether the Measured Boot feature is enabled on the instance.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMeasuredBootEnabled() {
         return isMeasuredBootEnabled;
     }
 
     /**
-     * Whether the instance is a confidential instance. If this value is {@code true}, the instance
-     * is a confidential instance. The default value is {@code false}.
-     */
+     * Whether the instance is a confidential instance. If this value is {@code true}, the instance is a confidential instance. The default value is {@code false}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMemoryEncryptionEnabled")
     private final Boolean isMemoryEncryptionEnabled;
 
     /**
-     * Whether the instance is a confidential instance. If this value is {@code true}, the instance
-     * is a confidential instance. The default value is {@code false}.
+     * Whether the instance is a confidential instance. If this value is {@code true}, the instance is a confidential instance. The default value is {@code false}.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMemoryEncryptionEnabled() {
         return isMemoryEncryptionEnabled;
     }
@@ -135,7 +152,6 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -200,8 +216,11 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** The type of platform being configured. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of platform being configured.
+     *
+     **/
+    public enum Type {
         AmdMilanBm("AMD_MILAN_BM"),
         AmdMilanBmGpu("AMD_MILAN_BM_GPU"),
         AmdRomeBm("AMD_ROME_BM"),
@@ -213,8 +232,8 @@ public class PlatformConfig extends com.oracle.bmc.http.client.internal.Explicit
         IntelVm("INTEL_VM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

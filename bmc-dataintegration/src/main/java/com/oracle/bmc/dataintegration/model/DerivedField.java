@@ -5,25 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The type representing the derived field concept. Derived fields have an expression to define how
- * to derive the field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The type representing the derived field concept. Derived fields have an expression to define how to derive the field.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DerivedField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DerivedField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -98,54 +96,49 @@ public final class DerivedField extends TypedObject {
             this.__explicitlySet__.add("expr");
             return this;
         }
-        /** The type of the field. */
+        /**
+         * The type of the field.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * The type of the field.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Specifies whether to use inferred expression output type as output type of the derived
-         * field. Default value of this flag is false.
-         */
+         * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
         private Boolean isUseInferredType;
 
         /**
-         * Specifies whether to use inferred expression output type as output type of the derived
-         * field. Default value of this flag is false.
-         *
+         * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
          * @param isUseInferredType the value to set
          * @return this builder
-         */
+         **/
         public Builder isUseInferredType(Boolean isUseInferredType) {
             this.isUseInferredType = isUseInferredType;
             this.__explicitlySet__.add("isUseInferredType");
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You
-         * can define your own labels and use them to categorize content.
-         */
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You
-         * can define your own labels and use them to categorize content.
-         *
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -214,7 +207,9 @@ public final class DerivedField extends TypedObject {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -250,49 +245,44 @@ public final class DerivedField extends TypedObject {
         return expr;
     }
 
-    /** The type of the field. */
+    /**
+     * The type of the field.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the field.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * Specifies whether to use inferred expression output type as output type of the derived field.
-     * Default value of this flag is false.
-     */
+     * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUseInferredType")
     private final Boolean isUseInferredType;
 
     /**
-     * Specifies whether to use inferred expression output type as output type of the derived field.
-     * Default value of this flag is false.
-     *
+     * Specifies whether to use inferred expression output type as output type of the derived field. Default value of this flag is false.
      * @return the value
-     */
+     **/
     public Boolean getIsUseInferredType() {
         return isUseInferredType;
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can
-     * define your own labels and use them to categorize content.
-     */
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can
-     * define your own labels and use them to categorize content.
-     *
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -304,7 +294,6 @@ public final class DerivedField extends TypedObject {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

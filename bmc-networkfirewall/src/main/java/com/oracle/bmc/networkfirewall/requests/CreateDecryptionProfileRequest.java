@@ -6,28 +6,33 @@ package com.oracle.bmc.networkfirewall.requests;
 
 import com.oracle.bmc.networkfirewall.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/CreateDecryptionProfileExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateDecryptionProfileRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/CreateDecryptionProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDecryptionProfileRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class CreateDecryptionProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.networkfirewall.model.CreateDecryptionProfileDetails> {
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     private String networkFirewallPolicyId;
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     public String getNetworkFirewallPolicyId() {
         return networkFirewallPolicyId;
     }
-    /** Request Details to create the Network Firewall Policy Resource. */
+    /**
+     * Request Details to create the Network Firewall Policy Resource.
+     */
     private com.oracle.bmc.networkfirewall.model.CreateDecryptionProfileDetails
             createDecryptionProfileDetails;
 
-    /** Request Details to create the Network Firewall Policy Resource. */
+    /**
+     * Request Details to create the Network Firewall Policy Resource.
+     */
     public com.oracle.bmc.networkfirewall.model.CreateDecryptionProfileDetails
             getCreateDecryptionProfileDetails() {
         return createDecryptionProfileDetails;
@@ -35,33 +40,38 @@ public class CreateDecryptionProfileRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -74,15 +84,17 @@ public class CreateDecryptionProfileRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDecryptionProfileRequest,
                     com.oracle.bmc.networkfirewall.model.CreateDecryptionProfileDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Network Firewall Policy identifier */
+        /**
+         * Unique Network Firewall Policy identifier
+         */
         private String networkFirewallPolicyId = null;
 
         /**
          * Unique Network Firewall Policy identifier
-         *
          * @param networkFirewallPolicyId the value to set
          * @return this builder instance
          */
@@ -91,13 +103,14 @@ public class CreateDecryptionProfileRequest
             return this;
         }
 
-        /** Request Details to create the Network Firewall Policy Resource. */
+        /**
+         * Request Details to create the Network Firewall Policy Resource.
+         */
         private com.oracle.bmc.networkfirewall.model.CreateDecryptionProfileDetails
                 createDecryptionProfileDetails = null;
 
         /**
          * Request Details to create the Network Firewall Policy Resource.
-         *
          * @param createDecryptionProfileDetails the value to set
          * @return this builder instance
          */
@@ -110,19 +123,20 @@ public class CreateDecryptionProfileRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -132,12 +146,13 @@ public class CreateDecryptionProfileRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -148,19 +163,18 @@ public class CreateDecryptionProfileRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +186,6 @@ public class CreateDecryptionProfileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateDecryptionProfileRequest o) {
@@ -188,11 +201,10 @@ public class CreateDecryptionProfileRequest
         /**
          * Build the instance of CreateDecryptionProfileRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateDecryptionProfileRequest
          */
@@ -205,7 +217,6 @@ public class CreateDecryptionProfileRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -219,8 +230,7 @@ public class CreateDecryptionProfileRequest
         /**
          * Build the instance of CreateDecryptionProfileRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDecryptionProfileRequest
@@ -232,14 +242,12 @@ public class CreateDecryptionProfileRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateDecryptionProfileRequest(networkFirewallPolicyId,
-            // createDecryptionProfileDetails, opcRetryToken, opcRequestId);
+            // new CreateDecryptionProfileRequest(networkFirewallPolicyId, createDecryptionProfileDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -252,7 +260,6 @@ public class CreateDecryptionProfileRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

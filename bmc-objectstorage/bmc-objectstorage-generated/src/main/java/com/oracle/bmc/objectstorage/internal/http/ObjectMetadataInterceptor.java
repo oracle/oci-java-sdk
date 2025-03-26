@@ -16,8 +16,8 @@ import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import com.oracle.bmc.objectstorage.responses.HeadObjectResponse;
 
 /**
- * Custom interceptor for all requests that deal with user metadata. This interceptor injects the
- * prefix during PUT/POST calls, and strips the prefix during GET/HEAD.
+ * Custom interceptor for all requests that deal with user metadata.  This interceptor
+ * injects the prefix during PUT/POST calls, and strips the prefix during GET/HEAD.
  */
 public class ObjectMetadataInterceptor {
     private static final String USER_METADATA_PREFIX = "opc-meta-";

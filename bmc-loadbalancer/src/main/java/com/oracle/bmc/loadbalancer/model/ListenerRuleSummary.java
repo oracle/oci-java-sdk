@@ -5,24 +5,23 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The attributes of a rule associated with the specified listener, and the name of the rule set
- * that the rule belongs to. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * The attributes of a rule associated with the specified listener, and the name of the rule set that the rule
+ * belongs to.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ListenerRuleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ListenerRuleSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ListenerRuleSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ListenerRuleSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rule", "ruleSetName"})
     public ListenerRuleSummary(Rule rule, String ruleSetName) {
@@ -33,22 +32,26 @@ public final class ListenerRuleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A rule object that applies to the listener. */
+        /**
+         * A rule object that applies to the listener.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rule")
         private Rule rule;
 
         /**
          * A rule object that applies to the listener.
-         *
          * @param rule the value to set
          * @return this builder
-         */
+         **/
         public Builder rule(Rule rule) {
             this.rule = rule;
             this.__explicitlySet__.add("rule");
             return this;
         }
-        /** The name of the rule set that the rule belongs to. */
+        /**
+         * The name of the rule set that the rule belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")
         private String ruleSetName;
 
@@ -57,7 +60,7 @@ public final class ListenerRuleSummary
          *
          * @param ruleSetName the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleSetName(String ruleSetName) {
             this.ruleSetName = ruleSetName;
             this.__explicitlySet__.add("ruleSetName");
@@ -87,7 +90,9 @@ public final class ListenerRuleSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,20 +101,24 @@ public final class ListenerRuleSummary
         return new Builder().copy(this);
     }
 
-    /** A rule object that applies to the listener. */
+    /**
+     * A rule object that applies to the listener.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rule")
     private final Rule rule;
 
     /**
      * A rule object that applies to the listener.
-     *
      * @return the value
-     */
+     **/
     public Rule getRule() {
         return rule;
     }
 
-    /** The name of the rule set that the rule belongs to. */
+    /**
+     * The name of the rule set that the rule belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSetName")
     private final String ruleSetName;
 
@@ -117,7 +126,7 @@ public final class ListenerRuleSummary
      * The name of the rule set that the rule belongs to.
      *
      * @return the value
-     */
+     **/
     public String getRuleSetName() {
         return ruleSetName;
     }
@@ -129,7 +138,6 @@ public final class ListenerRuleSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

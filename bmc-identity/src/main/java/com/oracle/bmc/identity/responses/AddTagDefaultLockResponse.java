@@ -6,30 +6,41 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** */
+    /**
+     *
+     */
     private String etag;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code TagDefault} instance. */
+    /**
+     * The returned TagDefault instance.
+     */
     private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
     /**
-     * The returned {@code TagDefault} instance.
-     *
+     * The returned TagDefault instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.TagDefault getTagDefault() {
@@ -45,7 +56,7 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private AddTagDefaultLockResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.TagDefault tagDefault) {
@@ -55,28 +66,28 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
         this.tagDefault = tagDefault;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<AddTagDefaultLockResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -85,10 +96,13 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String etag;
 
         /**
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -97,12 +111,13 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code TagDefault} instance. */
+        /**
+         * The returned TagDefault instance.
+         */
         private com.oracle.bmc.identity.model.TagDefault tagDefault;
 
         /**
-         * The returned {@code TagDefault} instance.
-         *
+         * The returned TagDefault instance.
          * @param tagDefault the value to set
          * @return this builder
          */
@@ -113,10 +128,8 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(AddTagDefaultLockResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -129,10 +142,8 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public AddTagDefaultLockResponse build() {
             return new AddTagDefaultLockResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, tagDefault);
@@ -141,7 +152,6 @@ public class AddTagDefaultLockResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

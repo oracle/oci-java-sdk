@@ -4,15 +4,10 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
-import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
-import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
-import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 

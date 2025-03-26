@@ -5,22 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of the Runbook. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Summary of the Runbook.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RunbookSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RunbookSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RunbookSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -87,280 +84,293 @@ public final class RunbookSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of the runbook. */
+        /**
+         * The type of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Runbook.Type type;
 
         /**
          * The type of the runbook.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Runbook.Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Type of runbook structure. */
+        /**
+         * Type of runbook structure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
         private Runbook.RunbookRelevance runbookRelevance;
 
         /**
          * Type of runbook structure.
-         *
          * @param runbookRelevance the value to set
          * @return this builder
-         */
+         **/
         public Builder runbookRelevance(Runbook.RunbookRelevance runbookRelevance) {
             this.runbookRelevance = runbookRelevance;
             this.__explicitlySet__.add("runbookRelevance");
             return this;
         }
-        /** The lifecycle operation performed by the runbook. */
+        /**
+         * The lifecycle operation performed by the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
          * The lifecycle operation performed by the runbook.
-         *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(String operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** The OS type for the runbook. */
+        /**
+         * The OS type for the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osType")
         private OsType osType;
 
         /**
          * The OS type for the runbook.
-         *
          * @param osType the value to set
          * @return this builder
-         */
+         **/
         public Builder osType(OsType osType) {
             this.osType = osType;
             this.__explicitlySet__.add("osType");
             return this;
         }
-        /** The platform of the runbook. */
+        /**
+         * The platform of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private String platform;
 
         /**
          * The platform of the runbook.
-         *
          * @param platform the value to set
          * @return this builder
-         */
+         **/
         public Builder platform(String platform) {
             this.platform = platform;
             this.__explicitlySet__.add("platform");
             return this;
         }
         /**
-         * Is the runbook default? Sets this runbook as the default for the chosen product/product
-         * stack for the specified lifecycle operation.
-         */
+         * Is the runbook default?
+         * Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * Is the runbook default? Sets this runbook as the default for the chosen product/product
-         * stack for the specified lifecycle operation.
+         * Is the runbook default?
+         * Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
          *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Estimated time to successfully complete the runbook execution. */
+        /**
+         * Estimated time to successfully complete the runbook execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
         private String estimatedTime;
 
         /**
          * Estimated time to successfully complete the runbook execution.
-         *
          * @param estimatedTime the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedTime(String estimatedTime) {
             this.estimatedTime = estimatedTime;
             this.__explicitlySet__.add("estimatedTime");
             return this;
         }
-        /** The current state of the Runbook. */
+        /**
+         * The current state of the Runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Runbook.LifecycleState lifecycleState;
 
         /**
          * The current state of the Runbook.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Runbook.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The time this resource was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** OCID of the compartment to which the resource belongs to. */
+        /**
+         * OCID of the compartment to which the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of the compartment to which the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Associated region */
+        /**
+         * Associated region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
         private String resourceRegion;
 
         /**
          * Associated region
-         *
          * @param resourceRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceRegion(String resourceRegion) {
             this.resourceRegion = resourceRegion;
             this.__explicitlySet__.add("resourceRegion");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -369,7 +379,8 @@ public final class RunbookSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -379,7 +390,7 @@ public final class RunbookSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -387,19 +398,20 @@ public final class RunbookSummary
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -500,7 +512,9 @@ public final class RunbookSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -509,281 +523,296 @@ public final class RunbookSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The type of the runbook. */
+    /**
+     * The type of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Runbook.Type type;
 
     /**
      * The type of the runbook.
-     *
      * @return the value
-     */
+     **/
     public Runbook.Type getType() {
         return type;
     }
 
-    /** Type of runbook structure. */
+    /**
+     * Type of runbook structure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
     private final Runbook.RunbookRelevance runbookRelevance;
 
     /**
      * Type of runbook structure.
-     *
      * @return the value
-     */
+     **/
     public Runbook.RunbookRelevance getRunbookRelevance() {
         return runbookRelevance;
     }
 
-    /** The lifecycle operation performed by the runbook. */
+    /**
+     * The lifecycle operation performed by the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
      * The lifecycle operation performed by the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getOperation() {
         return operation;
     }
 
-    /** The OS type for the runbook. */
+    /**
+     * The OS type for the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osType")
     private final OsType osType;
 
     /**
      * The OS type for the runbook.
-     *
      * @return the value
-     */
+     **/
     public OsType getOsType() {
         return osType;
     }
 
-    /** The platform of the runbook. */
+    /**
+     * The platform of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final String platform;
 
     /**
      * The platform of the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getPlatform() {
         return platform;
     }
 
     /**
-     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
-     * for the specified lifecycle operation.
-     */
+     * Is the runbook default?
+     * Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
-     * for the specified lifecycle operation.
+     * Is the runbook default?
+     * Sets this runbook as the default for the chosen product/product stack for the specified lifecycle operation.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
 
-    /** Estimated time to successfully complete the runbook execution. */
+    /**
+     * Estimated time to successfully complete the runbook execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
     private final String estimatedTime;
 
     /**
      * Estimated time to successfully complete the runbook execution.
-     *
      * @return the value
-     */
+     **/
     public String getEstimatedTime() {
         return estimatedTime;
     }
 
-    /** The current state of the Runbook. */
+    /**
+     * The current state of the Runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Runbook.LifecycleState lifecycleState;
 
     /**
      * The current state of the Runbook.
-     *
      * @return the value
-     */
+     **/
     public Runbook.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The time this resource was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was last updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** OCID of the compartment to which the resource belongs to. */
+    /**
+     * OCID of the compartment to which the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of the compartment to which the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Associated region */
+    /**
+     * Associated region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
     private final String resourceRegion;
 
     /**
      * Associated region
-     *
      * @return the value
-     */
+     **/
     public String getResourceRegion() {
         return resourceRegion;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -795,7 +824,6 @@ public final class RunbookSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

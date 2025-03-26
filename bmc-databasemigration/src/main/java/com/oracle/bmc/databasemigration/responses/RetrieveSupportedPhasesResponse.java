@@ -6,17 +6,18 @@ package com.oracle.bmc.databasemigration.responses;
 
 import com.oracle.bmc.databasemigration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,14 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** The returned {@code MigrationPhaseCollection} instance. */
+    /**
+     * The returned MigrationPhaseCollection instance.
+     */
     private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
             migrationPhaseCollection;
 
     /**
-     * The returned {@code MigrationPhaseCollection} instance.
-     *
+     * The returned MigrationPhaseCollection instance.
      * @return the value
      */
     public com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
@@ -46,7 +48,7 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
     })
     private RetrieveSupportedPhasesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                     migrationPhaseCollection) {
@@ -55,34 +57,31 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
         this.migrationPhaseCollection = migrationPhaseCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    RetrieveSupportedPhasesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,13 +91,14 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code MigrationPhaseCollection} instance. */
+        /**
+         * The returned MigrationPhaseCollection instance.
+         */
         private com.oracle.bmc.databasemigration.model.MigrationPhaseCollection
                 migrationPhaseCollection;
 
         /**
-         * The returned {@code MigrationPhaseCollection} instance.
-         *
+         * The returned MigrationPhaseCollection instance.
          * @param migrationPhaseCollection the value to set
          * @return this builder
          */
@@ -111,10 +111,8 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RetrieveSupportedPhasesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +124,8 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RetrieveSupportedPhasesResponse build() {
             return new RetrieveSupportedPhasesResponse(
                     __httpStatusCode__, headers, opcRequestId, migrationPhaseCollection);
@@ -138,7 +134,6 @@ public class RetrieveSupportedPhasesResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

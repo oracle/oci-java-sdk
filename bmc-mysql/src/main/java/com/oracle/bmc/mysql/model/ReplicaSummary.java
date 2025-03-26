@@ -5,22 +5,19 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Summary of the read replica. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Summary of the read replica.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplicaSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ReplicaSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ReplicaSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -93,195 +90,206 @@ public final class ReplicaSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the read replica. */
+        /**
+         * The OCID of the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the read replica.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the DB System the read replica is associated with. */
+        /**
+         * The OCID of the DB System the read replica is associated with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
          * The OCID of the DB System the read replica is associated with.
-         *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /** The OCID of the compartment that contains the read replica. */
+        /**
+         * The OCID of the compartment that contains the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the read replica.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The user-friendly name for the read replica. It does not have to be unique. */
+        /**
+         * The user-friendly name for the read replica. It does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the read replica. It does not have to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** User provided description of the read replica. */
+        /**
+         * User provided description of the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User provided description of the read replica.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The state of the read replica. */
+        /**
+         * The state of the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the read replica.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the state of the read replica. */
+        /**
+         * A message describing the state of the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * A message describing the state of the read replica.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * The date and time the read replica was created, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the read replica was created, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the read replica was last updated, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the read replica was last updated, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The MySQL version currently in use by the read replica. */
+        /**
+         * The MySQL version currently in use by the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
         private String mysqlVersion;
 
         /**
          * The MySQL version currently in use by the read replica.
-         *
          * @param mysqlVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
             return this;
         }
-        /** The name of the Availability Domain the read replica is located in. */
+        /**
+         * The name of the Availability Domain the read replica is located in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The name of the Availability Domain the read replica is located in.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The name of the Fault Domain the read replica is located in. */
+        /**
+         * The name of the Fault Domain the read replica is located in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The name of the Fault Domain the read replica is located in.
-         *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The IP address the read replica is configured to listen on. */
+        /**
+         * The IP address the read replica is configured to listen on.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
@@ -290,60 +298,61 @@ public final class ReplicaSummary
          *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The port the read replica is configured to listen on. */
+        /**
+         * The port the read replica is configured to listen on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port the read replica is configured to listen on.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The TCP network port on which X Plugin listens for connections. This is the X Plugin
-         * equivalent of port.
-         */
+         * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("portX")
         private Integer portX;
 
         /**
-         * The TCP network port on which X Plugin listens for connections. This is the X Plugin
-         * equivalent of port.
+         * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
          *
          * @param portX the value to set
          * @return this builder
-         */
+         **/
         public Builder portX(Integer portX) {
             this.portX = portX;
             this.__explicitlySet__.add("portX");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -352,7 +361,8 @@ public final class ReplicaSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -362,7 +372,7 @@ public final class ReplicaSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -370,61 +380,62 @@ public final class ReplicaSummary
             return this;
         }
         /**
-         * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false
-         * (default) to allow. Note that if a read replica is delete protected it also prevents the
-         * entire DB System from being deleted. If the DB System is delete protected, read replicas
-         * can still be deleted individually if they are not delete protected themselves.
-         */
+         * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow.
+         * Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If
+         * the DB System is delete protected, read replicas can still be deleted individually if they are not delete
+         * protected themselves.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
         private Boolean isDeleteProtected;
 
         /**
-         * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false
-         * (default) to allow. Note that if a read replica is delete protected it also prevents the
-         * entire DB System from being deleted. If the DB System is delete protected, read replicas
-         * can still be deleted individually if they are not delete protected themselves.
+         * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow.
+         * Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If
+         * the DB System is delete protected, read replicas can still be deleted individually if they are not delete
+         * protected themselves.
          *
          * @param isDeleteProtected the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeleteProtected(Boolean isDeleteProtected) {
             this.isDeleteProtected = isDeleteProtected;
             this.__explicitlySet__.add("isDeleteProtected");
             return this;
         }
         /**
-         * The shape currently in use by the read replica. The shape determines the resources
-         * allocated: CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM
-         * (bare metal) shapes. To get a list of shapes, use the {@link
-         * #listShapes(ListShapesRequest) listShapes} operation.
-         */
+         * The shape currently in use by the read replica. The shape determines the resources allocated:
+         * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+         * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * The shape currently in use by the read replica. The shape determines the resources
-         * allocated: CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM
-         * (bare metal) shapes. To get a list of shapes, use the {@link
-         * #listShapes(ListShapesRequest) listShapes} operation.
+         * The shape currently in use by the read replica. The shape determines the resources allocated:
+         * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+         * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
          *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /** The OCID of the Configuration currently in use by the read replica. */
+        /**
+         * The OCID of the Configuration currently in use by the read replica.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
         private String configurationId;
 
         /**
          * The OCID of the Configuration currently in use by the read replica.
-         *
          * @param configurationId the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationId(String configurationId) {
             this.configurationId = configurationId;
             this.__explicitlySet__.add("configurationId");
@@ -542,7 +553,9 @@ public final class ReplicaSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -551,73 +564,80 @@ public final class ReplicaSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the read replica. */
+    /**
+     * The OCID of the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the DB System the read replica is associated with. */
+    /**
+     * The OCID of the DB System the read replica is associated with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
      * The OCID of the DB System the read replica is associated with.
-     *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
-    /** The OCID of the compartment that contains the read replica. */
+    /**
+     * The OCID of the compartment that contains the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The user-friendly name for the read replica. It does not have to be unique. */
+    /**
+     * The user-friendly name for the read replica. It does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the read replica. It does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** User provided description of the read replica. */
+    /**
+     * User provided description of the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User provided description of the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The state of the read replica. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the read replica.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Inactive("INACTIVE"),
@@ -628,8 +648,8 @@ public final class ReplicaSummary
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -668,106 +688,112 @@ public final class ReplicaSummary
             return UnknownEnumValue;
         }
     };
-    /** The state of the read replica. */
+    /**
+     * The state of the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the read replica.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the state of the read replica. */
+    /**
+     * A message describing the state of the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * A message describing the state of the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * The date and time the read replica was created, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the read replica was created, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the read replica was last updated, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the read replica was last updated, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     * The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The MySQL version currently in use by the read replica. */
+    /**
+     * The MySQL version currently in use by the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
     private final String mysqlVersion;
 
     /**
      * The MySQL version currently in use by the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getMysqlVersion() {
         return mysqlVersion;
     }
 
-    /** The name of the Availability Domain the read replica is located in. */
+    /**
+     * The name of the Availability Domain the read replica is located in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The name of the Availability Domain the read replica is located in.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The name of the Fault Domain the read replica is located in. */
+    /**
+     * The name of the Fault Domain the read replica is located in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The name of the Fault Domain the read replica is located in.
-     *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The IP address the read replica is configured to listen on. */
+    /**
+     * The IP address the read replica is configured to listen on.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
@@ -775,126 +801,129 @@ public final class ReplicaSummary
      * The IP address the read replica is configured to listen on.
      *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The port the read replica is configured to listen on. */
+    /**
+     * The port the read replica is configured to listen on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port the read replica is configured to listen on.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The TCP network port on which X Plugin listens for connections. This is the X Plugin
-     * equivalent of port.
-     */
+     * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("portX")
     private final Integer portX;
 
     /**
-     * The TCP network port on which X Plugin listens for connections. This is the X Plugin
-     * equivalent of port.
+     * The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
      *
      * @return the value
-     */
+     **/
     public Integer getPortX() {
         return portX;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false
-     * (default) to allow. Note that if a read replica is delete protected it also prevents the
-     * entire DB System from being deleted. If the DB System is delete protected, read replicas can
-     * still be deleted individually if they are not delete protected themselves.
-     */
+     * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow.
+     * Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If
+     * the DB System is delete protected, read replicas can still be deleted individually if they are not delete
+     * protected themselves.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteProtected")
     private final Boolean isDeleteProtected;
 
     /**
-     * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false
-     * (default) to allow. Note that if a read replica is delete protected it also prevents the
-     * entire DB System from being deleted. If the DB System is delete protected, read replicas can
-     * still be deleted individually if they are not delete protected themselves.
+     * Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow.
+     * Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If
+     * the DB System is delete protected, read replicas can still be deleted individually if they are not delete
+     * protected themselves.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDeleteProtected() {
         return isDeleteProtected;
     }
 
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:
-     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal)
-     * shapes. To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
-     * operation.
-     */
+     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+     * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
      * The shape currently in use by the read replica. The shape determines the resources allocated:
-     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal)
-     * shapes. To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes}
-     * operation.
+     * CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.
+     * To get a list of shapes, use the {@link #listShapes(ListShapesRequest) listShapes} operation.
      *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
 
-    /** The OCID of the Configuration currently in use by the read replica. */
+    /**
+     * The OCID of the Configuration currently in use by the read replica.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationId")
     private final String configurationId;
 
     /**
      * The OCID of the Configuration currently in use by the read replica.
-     *
      * @return the value
-     */
+     **/
     public String getConfigurationId() {
         return configurationId;
     }
@@ -913,7 +942,6 @@ public final class ReplicaSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,27 +5,31 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Settings that describe the set of restrictions that the system should apply to devices and
- * trusted endpoints of a user
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite -
- * required: true - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Settings that describe the set of restrictions that the system should apply to devices and trusted endpoints of a user
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: true
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticationFactorSettingsEndpointRestrictions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticationFactorSettingsEndpointRestrictions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationFactorSettingsEndpointRestrictions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "maxEnrolledDevices",
@@ -52,24 +56,37 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
     public static class Builder {
         /**
          * Maximum number of enrolled devices per user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxEnrolledDevices")
         private Integer maxEnrolledDevices;
 
         /**
          * Maximum number of enrolled devices per user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxEnrolledDevices the value to set
          * @return this builder
-         */
+         **/
         public Builder maxEnrolledDevices(Integer maxEnrolledDevices) {
             this.maxEnrolledDevices = maxEnrolledDevices;
             this.__explicitlySet__.add("maxEnrolledDevices");
@@ -77,24 +94,37 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
         }
         /**
          * Max number of trusted endpoints per user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTrustedEndpoints")
         private Integer maxTrustedEndpoints;
 
         /**
          * Max number of trusted endpoints per user
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxTrustedEndpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTrustedEndpoints(Integer maxTrustedEndpoints) {
             this.maxTrustedEndpoints = maxTrustedEndpoints;
             this.__explicitlySet__.add("maxTrustedEndpoints");
@@ -102,24 +132,37 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
         }
         /**
          * Maximum number of days until an endpoint can be trusted
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 180 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 180
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxEndpointTrustDurationInDays")
         private Integer maxEndpointTrustDurationInDays;
 
         /**
          * Maximum number of days until an endpoint can be trusted
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 180 - idcsMinValue: 1 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 180
+         *  - idcsMinValue: 1
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxEndpointTrustDurationInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder maxEndpointTrustDurationInDays(Integer maxEndpointTrustDurationInDays) {
             this.maxEndpointTrustDurationInDays = maxEndpointTrustDurationInDays;
             this.__explicitlySet__.add("maxEndpointTrustDurationInDays");
@@ -127,49 +170,71 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
         }
         /**
          * Specify if trusted endpoints are enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustedEndpointsEnabled")
         private Boolean trustedEndpointsEnabled;
 
         /**
          * Specify if trusted endpoints are enabled
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param trustedEndpointsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder trustedEndpointsEnabled(Boolean trustedEndpointsEnabled) {
             this.trustedEndpointsEnabled = trustedEndpointsEnabled;
             this.__explicitlySet__.add("trustedEndpointsEnabled");
             return this;
         }
         /**
-         * An integer that represents the maximum number of failed MFA logins before an account is
-         * locked
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 5 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * An integer that represents the maximum number of failed MFA logins before an account is locked
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 5
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxIncorrectAttempts")
         private Integer maxIncorrectAttempts;
 
         /**
-         * An integer that represents the maximum number of failed MFA logins before an account is
-         * locked
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 5 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * An integer that represents the maximum number of failed MFA logins before an account is locked
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 20
+         *  - idcsMinValue: 5
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param maxIncorrectAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder maxIncorrectAttempts(Integer maxIncorrectAttempts) {
             this.maxIncorrectAttempts = maxIncorrectAttempts;
             this.__explicitlySet__.add("maxIncorrectAttempts");
@@ -214,7 +279,9 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,115 +292,176 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
 
     /**
      * Maximum number of enrolled devices per user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxEnrolledDevices")
     private final Integer maxEnrolledDevices;
 
     /**
      * Maximum number of enrolled devices per user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxEnrolledDevices() {
         return maxEnrolledDevices;
     }
 
     /**
      * Max number of trusted endpoints per user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTrustedEndpoints")
     private final Integer maxTrustedEndpoints;
 
     /**
      * Max number of trusted endpoints per user
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxTrustedEndpoints() {
         return maxTrustedEndpoints;
     }
 
     /**
      * Maximum number of days until an endpoint can be trusted
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 180 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 180
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxEndpointTrustDurationInDays")
     private final Integer maxEndpointTrustDurationInDays;
 
     /**
      * Maximum number of days until an endpoint can be trusted
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 180 - idcsMinValue: 1 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 180
+     *  - idcsMinValue: 1
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxEndpointTrustDurationInDays() {
         return maxEndpointTrustDurationInDays;
     }
 
     /**
      * Specify if trusted endpoints are enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustedEndpointsEnabled")
     private final Boolean trustedEndpointsEnabled;
 
     /**
      * Specify if trusted endpoints are enabled
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getTrustedEndpointsEnabled() {
         return trustedEndpointsEnabled;
     }
 
     /**
-     * An integer that represents the maximum number of failed MFA logins before an account is
-     * locked
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 5 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * An integer that represents the maximum number of failed MFA logins before an account is locked
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 5
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxIncorrectAttempts")
     private final Integer maxIncorrectAttempts;
 
     /**
-     * An integer that represents the maximum number of failed MFA logins before an account is
-     * locked
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 20 - idcsMinValue: 5 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * An integer that represents the maximum number of failed MFA logins before an account is locked
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 20
+     *  - idcsMinValue: 5
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getMaxIncorrectAttempts() {
         return maxIncorrectAttempts;
     }
@@ -345,7 +473,6 @@ public final class AuthenticationFactorSettingsEndpointRestrictions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

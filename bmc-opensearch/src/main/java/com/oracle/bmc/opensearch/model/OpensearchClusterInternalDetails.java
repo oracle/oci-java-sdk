@@ -5,24 +5,23 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * This is the ClusterLoadBalancer which can store the State of the cluster,
- * opensearchLoadbalancerIps, remoteLoadbalancerIps <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * This is the ClusterLoadBalancer which can store the State of the cluster, opensearchLoadbalancerIps, remoteLoadbalancerIps
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpensearchClusterInternalDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OpensearchClusterInternalDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OpensearchClusterInternalDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "state",
@@ -50,65 +49,69 @@ public final class OpensearchClusterInternalDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The state of the cluster. */
+        /**
+         * The state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("state")
         private String state;
 
         /**
          * The state of the cluster.
-         *
          * @param state the value to set
          * @return this builder
-         */
+         **/
         public Builder state(String state) {
             this.state = state;
             this.__explicitlySet__.add("state");
             return this;
         }
-        /** List of OpenSearch elastic LoadbalancerIps */
+        /**
+         * List of OpenSearch elastic LoadbalancerIps
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elasticLoadBalancerIps")
         private java.util.List<String> elasticLoadBalancerIps;
 
         /**
          * List of OpenSearch elastic LoadbalancerIps
-         *
          * @param elasticLoadBalancerIps the value to set
          * @return this builder
-         */
+         **/
         public Builder elasticLoadBalancerIps(java.util.List<String> elasticLoadBalancerIps) {
             this.elasticLoadBalancerIps = elasticLoadBalancerIps;
             this.__explicitlySet__.add("elasticLoadBalancerIps");
             return this;
         }
-        /** List of OpenSearch remote LoadbalancerIps */
+        /**
+         * List of OpenSearch remote LoadbalancerIps
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remoteLoadBalancerIps")
         private java.util.List<String> remoteLoadBalancerIps;
 
         /**
          * List of OpenSearch remote LoadbalancerIps
-         *
          * @param remoteLoadBalancerIps the value to set
          * @return this builder
-         */
+         **/
         public Builder remoteLoadBalancerIps(java.util.List<String> remoteLoadBalancerIps) {
             this.remoteLoadBalancerIps = remoteLoadBalancerIps;
             this.__explicitlySet__.add("remoteLoadBalancerIps");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -117,7 +120,8 @@ public final class OpensearchClusterInternalDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -127,7 +131,7 @@ public final class OpensearchClusterInternalDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -135,19 +139,20 @@ public final class OpensearchClusterInternalDetails
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -196,7 +201,9 @@ public final class OpensearchClusterInternalDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,92 +212,98 @@ public final class OpensearchClusterInternalDetails
         return new Builder().copy(this);
     }
 
-    /** The state of the cluster. */
+    /**
+     * The state of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("state")
     private final String state;
 
     /**
      * The state of the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getState() {
         return state;
     }
 
-    /** List of OpenSearch elastic LoadbalancerIps */
+    /**
+     * List of OpenSearch elastic LoadbalancerIps
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("elasticLoadBalancerIps")
     private final java.util.List<String> elasticLoadBalancerIps;
 
     /**
      * List of OpenSearch elastic LoadbalancerIps
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getElasticLoadBalancerIps() {
         return elasticLoadBalancerIps;
     }
 
-    /** List of OpenSearch remote LoadbalancerIps */
+    /**
+     * List of OpenSearch remote LoadbalancerIps
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remoteLoadBalancerIps")
     private final java.util.List<String> remoteLoadBalancerIps;
 
     /**
      * List of OpenSearch remote LoadbalancerIps
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRemoteLoadBalancerIps() {
         return remoteLoadBalancerIps;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -302,7 +315,6 @@ public final class OpensearchClusterInternalDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

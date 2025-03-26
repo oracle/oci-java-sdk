@@ -5,23 +5,21 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define extra options for a cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define extra options for a cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ClusterCreateOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ClusterCreateOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ClusterCreateOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "serviceLbSubnetIds",
@@ -58,76 +56,81 @@ public final class ClusterCreateOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCIDs of the subnets used for Kubernetes services load balancers. */
+        /**
+         * The OCIDs of the subnets used for Kubernetes services load balancers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
         private java.util.List<String> serviceLbSubnetIds;
 
         /**
          * The OCIDs of the subnets used for Kubernetes services load balancers.
-         *
          * @param serviceLbSubnetIds the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceLbSubnetIds(java.util.List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             this.__explicitlySet__.add("serviceLbSubnetIds");
             return this;
         }
-        /** IP family to use for single stack or define the order of IP families for dual-stack */
+        /**
+         * IP family to use for single stack or define the order of IP families for dual-stack
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
         private java.util.List<IpFamilies> ipFamilies;
 
         /**
          * IP family to use for single stack or define the order of IP families for dual-stack
-         *
          * @param ipFamilies the value to set
          * @return this builder
-         */
+         **/
         public Builder ipFamilies(java.util.List<IpFamilies> ipFamilies) {
             this.ipFamilies = ipFamilies;
             this.__explicitlySet__.add("ipFamilies");
             return this;
         }
-        /** Network configuration for Kubernetes. */
+        /**
+         * Network configuration for Kubernetes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
         private KubernetesNetworkConfig kubernetesNetworkConfig;
 
         /**
          * Network configuration for Kubernetes.
-         *
          * @param kubernetesNetworkConfig the value to set
          * @return this builder
-         */
+         **/
         public Builder kubernetesNetworkConfig(KubernetesNetworkConfig kubernetesNetworkConfig) {
             this.kubernetesNetworkConfig = kubernetesNetworkConfig;
             this.__explicitlySet__.add("kubernetesNetworkConfig");
             return this;
         }
-        /** Configurable cluster add-ons */
+        /**
+         * Configurable cluster add-ons
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addOns")
         private AddOnOptions addOns;
 
         /**
          * Configurable cluster add-ons
-         *
          * @param addOns the value to set
          * @return this builder
-         */
+         **/
         public Builder addOns(AddOnOptions addOns) {
             this.addOns = addOns;
             this.__explicitlySet__.add("addOns");
             return this;
         }
-        /** Configurable cluster admission controllers */
+        /**
+         * Configurable cluster admission controllers
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
         private AdmissionControllerOptions admissionControllerOptions;
 
         /**
          * Configurable cluster admission controllers
-         *
          * @param admissionControllerOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder admissionControllerOptions(
                 AdmissionControllerOptions admissionControllerOptions) {
             this.admissionControllerOptions = admissionControllerOptions;
@@ -228,7 +231,9 @@ public final class ClusterCreateOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -237,27 +242,29 @@ public final class ClusterCreateOptions
         return new Builder().copy(this);
     }
 
-    /** The OCIDs of the subnets used for Kubernetes services load balancers. */
+    /**
+     * The OCIDs of the subnets used for Kubernetes services load balancers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceLbSubnetIds")
     private final java.util.List<String> serviceLbSubnetIds;
 
     /**
      * The OCIDs of the subnets used for Kubernetes services load balancers.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getServiceLbSubnetIds() {
         return serviceLbSubnetIds;
     }
 
-    /** */
-    public enum IpFamilies implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum IpFamilies {
         IPv4("IPv4"),
         IPv6("IPv6"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -296,54 +303,58 @@ public final class ClusterCreateOptions
             return UnknownEnumValue;
         }
     };
-    /** IP family to use for single stack or define the order of IP families for dual-stack */
+    /**
+     * IP family to use for single stack or define the order of IP families for dual-stack
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
     private final java.util.List<IpFamilies> ipFamilies;
 
     /**
      * IP family to use for single stack or define the order of IP families for dual-stack
-     *
      * @return the value
-     */
+     **/
     public java.util.List<IpFamilies> getIpFamilies() {
         return ipFamilies;
     }
 
-    /** Network configuration for Kubernetes. */
+    /**
+     * Network configuration for Kubernetes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kubernetesNetworkConfig")
     private final KubernetesNetworkConfig kubernetesNetworkConfig;
 
     /**
      * Network configuration for Kubernetes.
-     *
      * @return the value
-     */
+     **/
     public KubernetesNetworkConfig getKubernetesNetworkConfig() {
         return kubernetesNetworkConfig;
     }
 
-    /** Configurable cluster add-ons */
+    /**
+     * Configurable cluster add-ons
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addOns")
     private final AddOnOptions addOns;
 
     /**
      * Configurable cluster add-ons
-     *
      * @return the value
-     */
+     **/
     public AddOnOptions getAddOns() {
         return addOns;
     }
 
-    /** Configurable cluster admission controllers */
+    /**
+     * Configurable cluster admission controllers
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("admissionControllerOptions")
     private final AdmissionControllerOptions admissionControllerOptions;
 
     /**
      * Configurable cluster admission controllers
-     *
      * @return the value
-     */
+     **/
     public AdmissionControllerOptions getAdmissionControllerOptions() {
         return admissionControllerOptions;
     }
@@ -383,7 +394,6 @@ public final class ClusterCreateOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

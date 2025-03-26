@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Last execution status of a scheduled task */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum LastExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Last execution status of a scheduled task
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum LastExecutionStatus {
     Failed("FAILED"),
     Succeeded("SUCCEEDED"),
     ;

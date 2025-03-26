@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The possible resource types for a named credential. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The possible resource types for a named credential.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum ResourceType {
     OracleDb("ORACLE_DB"),
 
     /**

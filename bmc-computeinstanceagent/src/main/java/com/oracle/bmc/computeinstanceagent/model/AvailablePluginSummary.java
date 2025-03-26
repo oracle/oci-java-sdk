@@ -5,23 +5,22 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * Describes where the plugin is supported <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+ * Describes where the plugin is supported
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailablePluginSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AvailablePluginSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AvailablePluginSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "summary", "isSupported", "isEnabledByDefault"})
     public AvailablePluginSummary(
@@ -35,61 +34,65 @@ public final class AvailablePluginSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The plugin name */
+        /**
+         * The plugin name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The plugin name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A brief description of the plugin functionality */
+        /**
+         * A brief description of the plugin functionality
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
          * A brief description of the plugin functionality
-         *
          * @param summary the value to set
          * @return this builder
-         */
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /** Is the plugin supported or not */
+        /**
+         * Is the plugin supported or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
         private Boolean isSupported;
 
         /**
          * Is the plugin supported or not
-         *
          * @param isSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isSupported(Boolean isSupported) {
             this.isSupported = isSupported;
             this.__explicitlySet__.add("isSupported");
             return this;
         }
-        /** Is the plugin enabled or disabled by default */
+        /**
+         * Is the plugin enabled or disabled by default
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
         private Boolean isEnabledByDefault;
 
         /**
          * Is the plugin enabled or disabled by default
-         *
          * @param isEnabledByDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabledByDefault(Boolean isEnabledByDefault) {
             this.isEnabledByDefault = isEnabledByDefault;
             this.__explicitlySet__.add("isEnabledByDefault");
@@ -127,7 +130,9 @@ public final class AvailablePluginSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,54 +141,58 @@ public final class AvailablePluginSummary
         return new Builder().copy(this);
     }
 
-    /** The plugin name */
+    /**
+     * The plugin name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The plugin name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A brief description of the plugin functionality */
+    /**
+     * A brief description of the plugin functionality
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
      * A brief description of the plugin functionality
-     *
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
-    /** Is the plugin supported or not */
+    /**
+     * Is the plugin supported or not
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupported")
     private final Boolean isSupported;
 
     /**
      * Is the plugin supported or not
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSupported() {
         return isSupported;
     }
 
-    /** Is the plugin enabled or disabled by default */
+    /**
+     * Is the plugin enabled or disabled by default
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabledByDefault")
     private final Boolean isEnabledByDefault;
 
     /**
      * Is the plugin enabled or disabled by default
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabledByDefault() {
         return isEnabledByDefault;
     }
@@ -195,7 +204,6 @@ public final class AvailablePluginSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

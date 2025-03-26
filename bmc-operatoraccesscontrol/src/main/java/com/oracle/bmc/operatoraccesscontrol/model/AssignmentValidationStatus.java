@@ -5,23 +5,22 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Summary of assignment Validation status. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of assignment Validation status.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssignmentValidationStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssignmentValidationStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssignmentValidationStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "executionId",
@@ -55,133 +54,133 @@ public final class AssignmentValidationStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Id of the unique execution. */
+        /**
+         * Id of the unique execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionId")
         private String executionId;
 
         /**
          * Id of the unique execution.
-         *
          * @param executionId the value to set
          * @return this builder
-         */
+         **/
         public Builder executionId(String executionId) {
             this.executionId = executionId;
             this.__explicitlySet__.add("executionId");
             return this;
         }
-        /** Id of the user who triggered the Assignment Validation. */
+        /**
+         * Id of the user who triggered the Assignment Validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
          * Id of the user who triggered the Assignment Validation.
-         *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
-        /** Id of the accessRequest which got created as part of Assignment Validation. */
+        /**
+         * Id of the accessRequest which got created as part of Assignment Validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessRequestId")
         private String accessRequestId;
 
         /**
          * Id of the accessRequest which got created as part of Assignment Validation.
-         *
          * @param accessRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder accessRequestId(String accessRequestId) {
             this.accessRequestId = accessRequestId;
             this.__explicitlySet__.add("accessRequestId");
             return this;
         }
-        /** any errorMessage during validation. */
+        /**
+         * any errorMessage during validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * any errorMessage during validation.
-         *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /** Status of the execution Success or Failure. */
+        /**
+         * Status of the execution Success or Failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
         private AssignmentValidationLifecycleStates executionStatus;
 
         /**
          * Status of the execution Success or Failure.
-         *
          * @param executionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder executionStatus(AssignmentValidationLifecycleStates executionStatus) {
             this.executionStatus = executionStatus;
             this.__explicitlySet__.add("executionStatus");
             return this;
         }
-        /** List of execution detail for the validate assignment. */
+        /**
+         * List of execution detail for the validate assignment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetail")
         private java.util.List<StatusDetail> statusDetail;
 
         /**
          * List of execution detail for the validate assignment.
-         *
          * @param statusDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDetail(java.util.List<StatusDetail> statusDetail) {
             this.statusDetail = statusDetail;
             this.__explicitlySet__.add("statusDetail");
             return this;
         }
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
-         */
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidationStart")
         private java.util.Date timeOfValidationStart;
 
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
          *
          * @param timeOfValidationStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfValidationStart(java.util.Date timeOfValidationStart) {
             this.timeOfValidationStart = timeOfValidationStart;
             this.__explicitlySet__.add("timeOfValidationStart");
             return this;
         }
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
-         */
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidationFinish")
         private java.util.Date timeOfValidationFinish;
 
         /**
-         * Time when the respective action happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
+         * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
          *
          * @param timeOfValidationFinish the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfValidationFinish(java.util.Date timeOfValidationFinish) {
             this.timeOfValidationFinish = timeOfValidationFinish;
             this.__explicitlySet__.add("timeOfValidationFinish");
@@ -238,7 +237,9 @@ public final class AssignmentValidationStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -247,118 +248,118 @@ public final class AssignmentValidationStatus
         return new Builder().copy(this);
     }
 
-    /** Id of the unique execution. */
+    /**
+     * Id of the unique execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionId")
     private final String executionId;
 
     /**
      * Id of the unique execution.
-     *
      * @return the value
-     */
+     **/
     public String getExecutionId() {
         return executionId;
     }
 
-    /** Id of the user who triggered the Assignment Validation. */
+    /**
+     * Id of the user who triggered the Assignment Validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
      * Id of the user who triggered the Assignment Validation.
-     *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
-    /** Id of the accessRequest which got created as part of Assignment Validation. */
+    /**
+     * Id of the accessRequest which got created as part of Assignment Validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessRequestId")
     private final String accessRequestId;
 
     /**
      * Id of the accessRequest which got created as part of Assignment Validation.
-     *
      * @return the value
-     */
+     **/
     public String getAccessRequestId() {
         return accessRequestId;
     }
 
-    /** any errorMessage during validation. */
+    /**
+     * any errorMessage during validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * any errorMessage during validation.
-     *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /** Status of the execution Success or Failure. */
+    /**
+     * Status of the execution Success or Failure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionStatus")
     private final AssignmentValidationLifecycleStates executionStatus;
 
     /**
      * Status of the execution Success or Failure.
-     *
      * @return the value
-     */
+     **/
     public AssignmentValidationLifecycleStates getExecutionStatus() {
         return executionStatus;
     }
 
-    /** List of execution detail for the validate assignment. */
+    /**
+     * List of execution detail for the validate assignment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetail")
     private final java.util.List<StatusDetail> statusDetail;
 
     /**
      * List of execution detail for the validate assignment.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<StatusDetail> getStatusDetail() {
         return statusDetail;
     }
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'.
-     */
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidationStart")
     private final java.util.Date timeOfValidationStart;
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'.
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfValidationStart() {
         return timeOfValidationStart;
     }
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'.
-     */
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidationFinish")
     private final java.util.Date timeOfValidationFinish;
 
     /**
-     * Time when the respective action happened in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-     * '2020-05-22T21:10:29.600Z'.
+     * Time when the respective action happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfValidationFinish() {
         return timeOfValidationFinish;
     }
@@ -370,7 +371,6 @@ public final class AssignmentValidationStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

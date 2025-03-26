@@ -5,23 +5,23 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Progress details of the executing job for a Database target. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Progress details of the executing job for a Database target.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TargetProgressSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TargetProgressSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TargetProgressSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationType", "progressOfOperation"})
     public TargetProgressSummary(OperationType operationType, Integer progressOfOperation) {
@@ -32,7 +32,10 @@ public final class TargetProgressSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of operations being executed. */
+        /**
+         * Type of operations being executed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -41,13 +44,16 @@ public final class TargetProgressSummary
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Percentage of progress of the operation in execution. */
+        /**
+         * Percentage of progress of the operation in execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("progressOfOperation")
         private Integer progressOfOperation;
 
@@ -56,7 +62,7 @@ public final class TargetProgressSummary
          *
          * @param progressOfOperation the value to set
          * @return this builder
-         */
+         **/
         public Builder progressOfOperation(Integer progressOfOperation) {
             this.progressOfOperation = progressOfOperation;
             this.__explicitlySet__.add("progressOfOperation");
@@ -87,7 +93,9 @@ public final class TargetProgressSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,16 +104,19 @@ public final class TargetProgressSummary
         return new Builder().copy(this);
     }
 
-    /** Type of operations being executed. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operations being executed.
+     *
+     **/
+    public enum OperationType {
         Stage("STAGE"),
         Precheck("PRECHECK"),
         Apply("APPLY"),
         Rollback("ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -144,7 +155,10 @@ public final class TargetProgressSummary
             return UnknownEnumValue;
         }
     };
-    /** Type of operations being executed. */
+    /**
+     * Type of operations being executed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -152,12 +166,15 @@ public final class TargetProgressSummary
      * Type of operations being executed.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** Percentage of progress of the operation in execution. */
+    /**
+     * Percentage of progress of the operation in execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("progressOfOperation")
     private final Integer progressOfOperation;
 
@@ -165,7 +182,7 @@ public final class TargetProgressSummary
      * Percentage of progress of the operation in execution.
      *
      * @return the value
-     */
+     **/
     public Integer getProgressOfOperation() {
         return progressOfOperation;
     }
@@ -177,7 +194,6 @@ public final class TargetProgressSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

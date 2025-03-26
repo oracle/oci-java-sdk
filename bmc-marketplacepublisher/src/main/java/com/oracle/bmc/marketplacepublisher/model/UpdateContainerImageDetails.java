@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Container image details required to update a container artifact. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Container image details required to update a container artifact.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateContainerImageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateContainerImageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateContainerImageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceRegistryId", "sourceRegistryUrl"})
     public UpdateContainerImageDetails(String sourceRegistryId, String sourceRegistryUrl) {
@@ -32,31 +31,33 @@ public final class UpdateContainerImageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source registry OCID of the container image. */
+        /**
+         * The source registry OCID of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
         private String sourceRegistryId;
 
         /**
          * The source registry OCID of the container image.
-         *
          * @param sourceRegistryId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryId(String sourceRegistryId) {
             this.sourceRegistryId = sourceRegistryId;
             this.__explicitlySet__.add("sourceRegistryId");
             return this;
         }
-        /** The source registry url of the container image. */
+        /**
+         * The source registry url of the container image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
         private String sourceRegistryUrl;
 
         /**
          * The source registry url of the container image.
-         *
          * @param sourceRegistryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryUrl(String sourceRegistryUrl) {
             this.sourceRegistryUrl = sourceRegistryUrl;
             this.__explicitlySet__.add("sourceRegistryUrl");
@@ -87,7 +88,9 @@ public final class UpdateContainerImageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class UpdateContainerImageDetails
         return new Builder().copy(this);
     }
 
-    /** The source registry OCID of the container image. */
+    /**
+     * The source registry OCID of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
     private final String sourceRegistryId;
 
     /**
      * The source registry OCID of the container image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryId() {
         return sourceRegistryId;
     }
 
-    /** The source registry url of the container image. */
+    /**
+     * The source registry url of the container image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
     private final String sourceRegistryUrl;
 
     /**
      * The source registry url of the container image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryUrl() {
         return sourceRegistryUrl;
     }
@@ -129,7 +134,6 @@ public final class UpdateContainerImageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

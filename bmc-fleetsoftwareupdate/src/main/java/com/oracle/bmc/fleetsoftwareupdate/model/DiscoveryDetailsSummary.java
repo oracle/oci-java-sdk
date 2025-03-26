@@ -5,23 +5,23 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Summarized Discovery details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Summarized Discovery details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveryDetailsSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DiscoveryDetailsSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveryDetailsSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "serviceType", "criteria"})
     public DiscoveryDetailsSummary(
@@ -34,7 +34,10 @@ public final class DiscoveryDetailsSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Exadata Fleet Update Discovery type. */
+        /**
+         * Exadata Fleet Update Discovery type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DiscoveryTypes type;
 
@@ -43,13 +46,16 @@ public final class DiscoveryDetailsSummary
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DiscoveryTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Exadata service type for the target resource members. */
+        /**
+         * Exadata service type for the target resource members.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
         private DiscoveryServiceTypes serviceType;
 
@@ -58,13 +64,16 @@ public final class DiscoveryDetailsSummary
          *
          * @param serviceType the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceType(DiscoveryServiceTypes serviceType) {
             this.serviceType = serviceType;
             this.__explicitlySet__.add("serviceType");
             return this;
         }
-        /** Criteria used for Exadata Fleet Update Discovery. */
+        /**
+         * Criteria used for Exadata Fleet Update Discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("criteria")
         private DiscoveryCriteria criteria;
 
@@ -73,7 +82,7 @@ public final class DiscoveryDetailsSummary
          *
          * @param criteria the value to set
          * @return this builder
-         */
+         **/
         public Builder criteria(DiscoveryCriteria criteria) {
             this.criteria = criteria;
             this.__explicitlySet__.add("criteria");
@@ -107,7 +116,9 @@ public final class DiscoveryDetailsSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,7 +127,10 @@ public final class DiscoveryDetailsSummary
         return new Builder().copy(this);
     }
 
-    /** Exadata Fleet Update Discovery type. */
+    /**
+     * Exadata Fleet Update Discovery type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DiscoveryTypes type;
 
@@ -124,12 +138,15 @@ public final class DiscoveryDetailsSummary
      * Exadata Fleet Update Discovery type.
      *
      * @return the value
-     */
+     **/
     public DiscoveryTypes getType() {
         return type;
     }
 
-    /** Exadata service type for the target resource members. */
+    /**
+     * Exadata service type for the target resource members.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceType")
     private final DiscoveryServiceTypes serviceType;
 
@@ -137,12 +154,15 @@ public final class DiscoveryDetailsSummary
      * Exadata service type for the target resource members.
      *
      * @return the value
-     */
+     **/
     public DiscoveryServiceTypes getServiceType() {
         return serviceType;
     }
 
-    /** Criteria used for Exadata Fleet Update Discovery. */
+    /**
+     * Criteria used for Exadata Fleet Update Discovery.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("criteria")
     private final DiscoveryCriteria criteria;
 
@@ -150,7 +170,7 @@ public final class DiscoveryDetailsSummary
      * Criteria used for Exadata Fleet Update Discovery.
      *
      * @return the value
-     */
+     **/
     public DiscoveryCriteria getCriteria() {
         return criteria;
     }
@@ -162,7 +182,6 @@ public final class DiscoveryDetailsSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

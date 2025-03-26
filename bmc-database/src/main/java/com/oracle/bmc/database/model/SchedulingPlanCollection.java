@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Results of Scheduling Plan resources lists. Contains ScheduledActionSummary items. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Results of Scheduling Plan resources lists. Contains ScheduledActionSummary items.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SchedulingPlanCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SchedulingPlanCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SchedulingPlanCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public SchedulingPlanCollection(java.util.List<SchedulingPlanSummary> items) {
@@ -31,16 +30,17 @@ public final class SchedulingPlanCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Scheduling Plan resources. */
+        /**
+         * List of Scheduling Plan resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<SchedulingPlanSummary> items;
 
         /**
          * List of Scheduling Plan resources.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<SchedulingPlanSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -67,7 +67,9 @@ public final class SchedulingPlanCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class SchedulingPlanCollection
         return new Builder().copy(this);
     }
 
-    /** List of Scheduling Plan resources. */
+    /**
+     * List of Scheduling Plan resources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<SchedulingPlanSummary> items;
 
     /**
      * List of Scheduling Plan resources.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SchedulingPlanSummary> getItems() {
         return items;
     }
@@ -96,7 +99,6 @@ public final class SchedulingPlanCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

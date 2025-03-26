@@ -5,21 +5,19 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Provide a base64 encoded image. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Provide a base64 encoded image.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ImageUrl.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ImageUrl extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"url", "detail"})
     public ImageUrl(String url, Detail detail) {
@@ -32,41 +30,49 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
     public static class Builder {
         /**
          * The base64 encoded image data.
+         * <p>
+         * Example for a png image:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;base64,<base64 encoded image content>"
+         *     }
+         *   }}
          *
-         * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
-         * "data:image/png;base64,<base64 encoded image content>" } }}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The base64 encoded image data.
-         *
-         * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
-         * "data:image/png;base64,<base64 encoded image content>" } }}
+         * <p>
+         * Example for a png image:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;base64,<base64 encoded image content>"
+         *     }
+         *   }}
          *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
         /**
-         * The default value is AUTO and only AUTO is supported. This option controls how to convert
-         * the base64 encoded image to tokens.
-         */
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detail")
         private Detail detail;
 
         /**
-         * The default value is AUTO and only AUTO is supported. This option controls how to convert
-         * the base64 encoded image to tokens.
-         *
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
          * @param detail the value to set
          * @return this builder
-         */
+         **/
         public Builder detail(Detail detail) {
             this.detail = detail;
             this.__explicitlySet__.add("detail");
@@ -96,7 +102,9 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,37 +115,47 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * The base64 encoded image data.
+     * <p>
+     * Example for a png image:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;base64,<base64 encoded image content>"
+     *     }
+     *   }}
      *
-     * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
-     * "data:image/png;base64,<base64 encoded image content>" } }}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The base64 encoded image data.
-     *
-     * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
-     * "data:image/png;base64,<base64 encoded image content>" } }}
+     * <p>
+     * Example for a png image:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;base64,<base64 encoded image content>"
+     *     }
+     *   }}
      *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
     /**
-     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
-     * base64 encoded image to tokens.
-     */
-    public enum Detail implements com.oracle.bmc.http.internal.BmcEnum {
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
+     **/
+    public enum Detail {
         Auto("AUTO"),
         High("HIGH"),
         Low("LOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -176,18 +194,15 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
-     * base64 encoded image to tokens.
-     */
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detail")
     private final Detail detail;
 
     /**
-     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
-     * base64 encoded image to tokens.
-     *
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
      * @return the value
-     */
+     **/
     public Detail getDetail() {
         return detail;
     }
@@ -199,7 +214,6 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

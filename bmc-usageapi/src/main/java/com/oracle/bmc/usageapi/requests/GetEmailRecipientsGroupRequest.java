@@ -6,45 +6,56 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetEmailRecipientsGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetEmailRecipientsGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class GetEmailRecipientsGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The email recipient group OCID. */
+    /**
+     * The email recipient group OCID.
+     */
     private String emailRecipientsGroupId;
 
-    /** The email recipient group OCID. */
+    /**
+     * The email recipient group OCID.
+     */
     public String getEmailRecipientsGroupId() {
         return emailRecipientsGroupId;
     }
-    /** The UsageStatement Subscription unique OCID. */
+    /**
+     * The UsageStatement Subscription unique OCID.
+     */
     private String subscriptionId;
 
-    /** The UsageStatement Subscription unique OCID. */
+    /**
+     * The UsageStatement Subscription unique OCID.
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** The compartment ID in which to list resources. */
+    /**
+     * The compartment ID in which to list resources.
+     */
     private String compartmentId;
 
-    /** The compartment ID in which to list resources. */
+    /**
+     * The compartment ID in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -53,15 +64,17 @@ public class GetEmailRecipientsGroupRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetEmailRecipientsGroupRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The email recipient group OCID. */
+        /**
+         * The email recipient group OCID.
+         */
         private String emailRecipientsGroupId = null;
 
         /**
          * The email recipient group OCID.
-         *
          * @param emailRecipientsGroupId the value to set
          * @return this builder instance
          */
@@ -70,12 +83,13 @@ public class GetEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The UsageStatement Subscription unique OCID. */
+        /**
+         * The UsageStatement Subscription unique OCID.
+         */
         private String subscriptionId = null;
 
         /**
          * The UsageStatement Subscription unique OCID.
-         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -84,12 +98,13 @@ public class GetEmailRecipientsGroupRequest
             return this;
         }
 
-        /** The compartment ID in which to list resources. */
+        /**
+         * The compartment ID in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The compartment ID in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -101,6 +116,7 @@ public class GetEmailRecipientsGroupRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -118,19 +134,18 @@ public class GetEmailRecipientsGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -142,7 +157,6 @@ public class GetEmailRecipientsGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetEmailRecipientsGroupRequest o) {
@@ -158,11 +172,10 @@ public class GetEmailRecipientsGroupRequest
         /**
          * Build the instance of GetEmailRecipientsGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetEmailRecipientsGroupRequest
          */
@@ -176,8 +189,7 @@ public class GetEmailRecipientsGroupRequest
         /**
          * Build the instance of GetEmailRecipientsGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetEmailRecipientsGroupRequest
@@ -189,14 +201,12 @@ public class GetEmailRecipientsGroupRequest
             request.compartmentId = compartmentId;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetEmailRecipientsGroupRequest(emailRecipientsGroupId, subscriptionId,
-            // compartmentId, opcRequestId);
+            // new GetEmailRecipientsGroupRequest(emailRecipientsGroupId, subscriptionId, compartmentId, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -209,7 +219,6 @@ public class GetEmailRecipientsGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

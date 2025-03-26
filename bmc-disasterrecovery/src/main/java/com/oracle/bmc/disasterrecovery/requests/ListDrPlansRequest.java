@@ -6,138 +6,164 @@ package com.oracle.bmc.disasterrecovery.requests;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlansExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDrPlansRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/ListDrPlansExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDrPlansRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * The OCID of the DR protection group. Mandatory query param.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     private String drProtectionGroupId;
 
     /**
      * The OCID of the DR protection group. Mandatory query param.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      */
     public String getDrProtectionGroupId() {
         return drProtectionGroupId;
     }
-    /** A filter to return only DR plans that match the given lifecycle state. */
+    /**
+     * A filter to return only DR plans that match the given lifecycle state.
+     *
+     */
     private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleState lifecycleState;
 
-    /** A filter to return only DR plans that match the given lifecycle state. */
+    /**
+     * A filter to return only DR plans that match the given lifecycle state.
+     *
+     */
     public com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * The OCID of the DR plan.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     private String drPlanId;
 
     /**
      * The OCID of the DR plan.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     public String getDrPlanId() {
         return drPlanId;
     }
-    /** The DR plan type. */
+    /**
+     * The DR plan type.
+     */
     private com.oracle.bmc.disasterrecovery.model.DrPlanType drPlanType;
 
-    /** The DR plan type. */
+    /**
+     * The DR plan type.
+     */
     public com.oracle.bmc.disasterrecovery.model.DrPlanType getDrPlanType() {
         return drPlanType;
     }
     /**
      * A filter to return only resources that match the given display name.
+     * <p>
+     * Example: {@code MyResourceDisplayName}
      *
-     * <p>Example: {@code MyResourceDisplayName}
      */
     private String displayName;
 
     /**
      * A filter to return only resources that match the given display name.
+     * <p>
+     * Example: {@code MyResourceDisplayName}
      *
-     * <p>Example: {@code MyResourceDisplayName}
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 1000 is the maximum.
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 1000 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 100}
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
-     * <p>Example: {@code 100}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 1000 is the maximum.
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 1000 is the maximum.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 100}
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-     *
-     * <p>Example: {@code 100}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.disasterrecovery.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.disasterrecovery.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * <p>
+     * Example: {@code MyResourceDisplayName}
      *
-     * <p>Example: {@code MyResourceDisplayName}
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * <p>
+     * Example: {@code MyResourceDisplayName}
      *
-     * <p>Example: {@code MyResourceDisplayName}
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -171,26 +197,38 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     * Default order for displayName is ascending. If no value is specified timeCreated is default.
+     * <p>
+     * Example: {@code MyResourceDisplayName}
      *
-     * <p>Example: {@code MyResourceDisplayName}
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only DR plans that match the given lifecycle sub-state. */
+    /**
+     * A filter to return only DR plans that match the given lifecycle sub-state.
+     *
+     */
     private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState lifecycleSubState;
 
-    /** A filter to return only DR plans that match the given lifecycle sub-state. */
+    /**
+     * A filter to return only DR plans that match the given lifecycle sub-state.
+     *
+     */
     public com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
@@ -198,20 +236,22 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDrPlansRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * The OCID of the DR protection group. Mandatory query param.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          */
         private String drProtectionGroupId = null;
 
         /**
          * The OCID of the DR protection group. Mandatory query param.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param drProtectionGroupId the value to set
          * @return this builder instance
@@ -221,7 +261,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only DR plans that match the given lifecycle state. */
+        /**
+         * A filter to return only DR plans that match the given lifecycle state.
+         *
+         */
         private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleState lifecycleState = null;
 
         /**
@@ -238,15 +281,16 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The OCID of the DR plan.
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          */
         private String drPlanId = null;
 
         /**
          * The OCID of the DR plan.
-         *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param drPlanId the value to set
          * @return this builder instance
@@ -256,12 +300,13 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The DR plan type. */
+        /**
+         * The DR plan type.
+         */
         private com.oracle.bmc.disasterrecovery.model.DrPlanType drPlanType = null;
 
         /**
          * The DR plan type.
-         *
          * @param drPlanType the value to set
          * @return this builder instance
          */
@@ -272,15 +317,16 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * A filter to return only resources that match the given display name.
+         * <p>
+         * Example: {@code MyResourceDisplayName}
          *
-         * <p>Example: {@code MyResourceDisplayName}
          */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the given display name.
-         *
-         * <p>Example: {@code MyResourceDisplayName}
+         * <p>
+         * Example: {@code MyResourceDisplayName}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -291,24 +337,27 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 1000 is the maximum.
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 1000 is the maximum.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 100}
          *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 100}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 1000 is the maximum.
-         *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 100}
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 1000 is the maximum.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 100}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -319,20 +368,21 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
-         *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -342,7 +392,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.disasterrecovery.model.SortOrder sortOrder = null;
 
         /**
@@ -357,20 +410,19 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
+         * <p>
+         * Example: {@code MyResourceDisplayName}
          *
-         * <p>Example: {@code MyResourceDisplayName}
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
-         *
-         * <p>Example: {@code MyResourceDisplayName}
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         * Default order for displayName is ascending. If no value is specified timeCreated is default.
+         * <p>
+         * Example: {@code MyResourceDisplayName}
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -380,7 +432,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -394,7 +449,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only DR plans that match the given lifecycle sub-state. */
+        /**
+         * A filter to return only DR plans that match the given lifecycle sub-state.
+         *
+         */
         private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState lifecycleSubState =
                 null;
 
@@ -412,19 +470,18 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -436,7 +493,6 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDrPlansRequest o) {
@@ -459,11 +515,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDrPlansRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDrPlansRequest
          */
@@ -477,8 +532,7 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDrPlansRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDrPlansRequest
@@ -497,14 +551,12 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcRequestId = opcRequestId;
             request.lifecycleSubState = lifecycleSubState;
             return request;
-            // new ListDrPlansRequest(drProtectionGroupId, lifecycleState, drPlanId, drPlanType,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleSubState);
+            // new ListDrPlansRequest(drProtectionGroupId, lifecycleState, drPlanId, drPlanType, displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleSubState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -524,7 +576,6 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

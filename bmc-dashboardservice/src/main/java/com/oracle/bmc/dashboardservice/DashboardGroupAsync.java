@@ -9,76 +9,72 @@ import com.oracle.bmc.dashboardservice.responses.*;
 
 /**
  * Use the Oracle Cloud Infrastructure Dashboards service API to manage dashboards in the Console.
- * Dashboards provide an organized and customizable view of resources and their metrics in the
- * Console. For more information, see
- * [Dashboards](https://docs.oracle.com/iaas/Content/Dashboards/home.htm).
+ * Dashboards provide an organized and customizable view of resources and their metrics in the Console.
+ * For more information, see [Dashboards](https://docs.oracle.com/iaas/Content/Dashboards/home.htm).
  *
- * <p>*Important:** Resources for the Dashboards service are created in the tenacy's home region.
- * Although it is possible to create dashboard and dashboard group resources in regions other than
- * the home region, you won't be able to view those resources in the Console. Therefore, creating
- * resources outside of the home region is not recommended.
+ **Important:** Resources for the Dashboards service are created in the tenacy's home region.
+ * Although it is possible to create dashboard and dashboard group resources in regions other than the home region,
+ * you won't be able to view those resources in the Console.
+ * Therefore, creating resources outside of the home region is not recommended.
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210731")
 public interface DashboardGroupAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves a DashboardGroup resource from one compartment identifier to another. When provided,
-     * If-Match is checked against ETag values of the resource.
+     * Moves a DashboardGroup resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeDashboardGroupCompartmentResponse>
             changeDashboardGroupCompartment(
@@ -90,18 +86,19 @@ public interface DashboardGroupAsync extends AutoCloseable {
 
     /**
      * Creates a new dashboard group using the details provided in request body.
+     * <p>
+     **Caution:** Resources for the Dashboard service are created in the tenacy's home region.
+     * Although it is possible to create dashboard group resource in regions other than the home region,
+     * you won't be able to view those resources in the Console.
+     * Therefore, creating resources outside of the home region is not recommended.
      *
-     * <p>*Caution:** Resources for the Dashboard service are created in the tenacy's home region.
-     * Although it is possible to create dashboard group resource in regions other than the home
-     * region, you won't be able to view those resources in the Console. Therefore, creating
-     * resources outside of the home region is not recommended.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateDashboardGroupResponse> createDashboardGroup(
             CreateDashboardGroupRequest request,
@@ -110,15 +107,14 @@ public interface DashboardGroupAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified dashboard group. Uses the dashboard group's OCID to determine which
-     * dashboard group to delete.
+     * Deletes the specified dashboard group. Uses the dashboard group's OCID to determine which dashboard group to delete.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteDashboardGroupResponse> deleteDashboardGroup(
             DeleteDashboardGroupRequest request,
@@ -127,15 +123,14 @@ public interface DashboardGroupAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified dashboard group's information. Uses the dashboard group's OCID to
-     * determine which dashboard to retrieve.
+     * Gets the specified dashboard group's information. Uses the dashboard group's OCID to determine which dashboard to retrieve.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetDashboardGroupResponse> getDashboardGroup(
             GetDashboardGroupRequest request,
@@ -146,12 +141,13 @@ public interface DashboardGroupAsync extends AutoCloseable {
     /**
      * Returns a list of dashboard groups with a specific compartment ID.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListDashboardGroupsResponse> listDashboardGroups(
             ListDashboardGroupsRequest request,
@@ -160,15 +156,14 @@ public interface DashboardGroupAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified dashboard group. Uses the dashboard group's OCID to determine which
-     * dashboard group to update.
+     * Updates the specified dashboard group. Uses the dashboard group's OCID to determine which dashboard group to update.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateDashboardGroupResponse> updateDashboardGroup(
             UpdateDashboardGroupRequest request,

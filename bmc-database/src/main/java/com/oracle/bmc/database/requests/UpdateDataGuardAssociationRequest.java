@@ -6,12 +6,9 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardAssociationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateDataGuardAssociationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardAssociationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateDataGuardAssociationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateDataGuardAssociationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails> {
@@ -28,55 +25,62 @@ public class UpdateDataGuardAssociationRequest
         return databaseId;
     }
     /**
-     * The Data Guard association's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String dataGuardAssociationId;
 
     /**
-     * The Data Guard association's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getDataGuardAssociationId() {
         return dataGuardAssociationId;
     }
-    /** A request to update Data Guard association of a database. */
+    /**
+     * A request to update Data Guard association of a database.
+     */
     private com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
             updateDataGuardAssociationDetails;
 
-    /** A request to update Data Guard association of a database. */
+    /**
+     * A request to update Data Guard association of a database.
+     */
     public com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
             getUpdateDataGuardAssociationDetails() {
         return updateDataGuardAssociationDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -89,19 +93,17 @@ public class UpdateDataGuardAssociationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateDataGuardAssociationRequest,
                     com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String databaseId = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param databaseId the value to set
          * @return this builder instance
          */
@@ -111,15 +113,12 @@ public class UpdateDataGuardAssociationRequest
         }
 
         /**
-         * The Data Guard association's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String dataGuardAssociationId = null;
 
         /**
-         * The Data Guard association's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The Data Guard association's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param dataGuardAssociationId the value to set
          * @return this builder instance
          */
@@ -128,13 +127,14 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
-        /** A request to update Data Guard association of a database. */
+        /**
+         * A request to update Data Guard association of a database.
+         */
         private com.oracle.bmc.database.model.UpdateDataGuardAssociationDetails
                 updateDataGuardAssociationDetails = null;
 
         /**
          * A request to update Data Guard association of a database.
-         *
          * @param updateDataGuardAssociationDetails the value to set
          * @return this builder instance
          */
@@ -146,18 +146,17 @@ public class UpdateDataGuardAssociationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -167,7 +166,10 @@ public class UpdateDataGuardAssociationRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -183,19 +185,18 @@ public class UpdateDataGuardAssociationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -207,7 +208,6 @@ public class UpdateDataGuardAssociationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateDataGuardAssociationRequest o) {
@@ -224,11 +224,10 @@ public class UpdateDataGuardAssociationRequest
         /**
          * Build the instance of UpdateDataGuardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateDataGuardAssociationRequest
          */
@@ -241,7 +240,6 @@ public class UpdateDataGuardAssociationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -254,8 +252,7 @@ public class UpdateDataGuardAssociationRequest
         /**
          * Build the instance of UpdateDataGuardAssociationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateDataGuardAssociationRequest
@@ -268,14 +265,12 @@ public class UpdateDataGuardAssociationRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateDataGuardAssociationRequest(databaseId, dataGuardAssociationId,
-            // updateDataGuardAssociationDetails, ifMatch, opcRequestId);
+            // new UpdateDataGuardAssociationRequest(databaseId, dataGuardAssociationId, updateDataGuardAssociationDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -289,7 +284,6 @@ public class UpdateDataGuardAssociationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

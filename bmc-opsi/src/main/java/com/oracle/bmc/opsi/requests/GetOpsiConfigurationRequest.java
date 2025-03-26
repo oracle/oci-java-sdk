@@ -6,38 +6,36 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOpsiConfigurationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOpsiConfigurationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/GetOpsiConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetOpsiConfigurationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetOpsiConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
-     * configuration resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+     *
      */
     private String opsiConfigurationId;
 
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
-     * configuration resource.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+     *
      */
     public String getOpsiConfigurationId() {
         return opsiConfigurationId;
     }
     /**
-     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields
-     * will not be returned by default.
+     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+     *
      */
     private java.util.List<OpsiConfigField> opsiConfigField;
 
     /**
-     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields
-     * will not be returned by default.
-     */
-    public enum OpsiConfigField implements com.oracle.bmc.http.internal.BmcEnum {
+     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+     *
+     **/
+    public enum OpsiConfigField {
         ConfigItems("configItems"),
         ;
 
@@ -70,25 +68,25 @@ public class GetOpsiConfigurationRequest
     };
 
     /**
-     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields
-     * will not be returned by default.
+     * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+     *
      */
     public java.util.List<OpsiConfigField> getOpsiConfigField() {
         return opsiConfigField;
     }
     /**
-     * Specifies whether only customized configuration items or only non-customized configuration
-     * items or both have to be returned. By default only customized configuration items are
-     * returned.
+     * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * By default only customized configuration items are returned.
+     *
      */
     private java.util.List<ConfigItemCustomStatus> configItemCustomStatus;
 
     /**
-     * Specifies whether only customized configuration items or only non-customized configuration
-     * items or both have to be returned. By default only customized configuration items are
-     * returned.
-     */
-    public enum ConfigItemCustomStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * By default only customized configuration items are returned.
+     *
+     **/
+    public enum ConfigItemCustomStatus {
         Customized("customized"),
         NonCustomized("nonCustomized"),
         ;
@@ -122,31 +120,35 @@ public class GetOpsiConfigurationRequest
     };
 
     /**
-     * Specifies whether only customized configuration items or only non-customized configuration
-     * items or both have to be returned. By default only customized configuration items are
-     * returned.
+     * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+     * By default only customized configuration items are returned.
+     *
      */
     public java.util.List<ConfigItemCustomStatus> getConfigItemCustomStatus() {
         return configItemCustomStatus;
     }
     /**
-     * Returns the configuration items filtered by applicable contexts sent in this param. By
-     * default configuration items of all applicable contexts are returned.
+     * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+     *
      */
     private java.util.List<String> configItemsApplicableContext;
 
     /**
-     * Returns the configuration items filtered by applicable contexts sent in this param. By
-     * default configuration items of all applicable contexts are returned.
+     * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+     *
      */
     public java.util.List<String> getConfigItemsApplicableContext() {
         return configItemsApplicableContext;
     }
-    /** Specifies the fields to return in a config item summary. */
+    /**
+     * Specifies the fields to return in a config item summary.
+     */
     private java.util.List<ConfigItemField> configItemField;
 
-    /** Specifies the fields to return in a config item summary. */
-    public enum ConfigItemField implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the fields to return in a config item summary.
+     **/
+    public enum ConfigItemField {
         Name("name"),
         Value("value"),
         DefaultValue("defaultValue"),
@@ -182,19 +184,23 @@ public class GetOpsiConfigurationRequest
         }
     };
 
-    /** Specifies the fields to return in a config item summary. */
+    /**
+     * Specifies the fields to return in a config item summary.
+     */
     public java.util.List<ConfigItemField> getConfigItemField() {
         return configItemField;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -203,18 +209,18 @@ public class GetOpsiConfigurationRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetOpsiConfigurationRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
-         * configuration resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
+         *
          */
         private String opsiConfigurationId = null;
 
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI
-         * configuration resource.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of OPSI configuration resource.
          *
          * @param opsiConfigurationId the value to set
          * @return this builder instance
@@ -225,14 +231,13 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Optional fields to return as part of OpsiConfiguration object. Unless requested, these
-         * fields will not be returned by default.
+         * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
+         *
          */
         private java.util.List<OpsiConfigField> opsiConfigField = null;
 
         /**
-         * Optional fields to return as part of OpsiConfiguration object. Unless requested, these
-         * fields will not be returned by default.
+         * Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
          *
          * @param opsiConfigField the value to set
          * @return this builder instance
@@ -243,8 +248,7 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Singular setter. Optional fields to return as part of OpsiConfiguration object. Unless
-         * requested, these fields will not be returned by default.
+         * Singular setter. Optional fields to return as part of OpsiConfiguration object. Unless requested, these fields will not be returned by default.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -254,16 +258,15 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Specifies whether only customized configuration items or only non-customized
-         * configuration items or both have to be returned. By default only customized configuration
-         * items are returned.
+         * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+         * By default only customized configuration items are returned.
+         *
          */
         private java.util.List<ConfigItemCustomStatus> configItemCustomStatus = null;
 
         /**
-         * Specifies whether only customized configuration items or only non-customized
-         * configuration items or both have to be returned. By default only customized configuration
-         * items are returned.
+         * Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+         * By default only customized configuration items are returned.
          *
          * @param configItemCustomStatus the value to set
          * @return this builder instance
@@ -275,9 +278,8 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Singular setter. Specifies whether only customized configuration items or only
-         * non-customized configuration items or both have to be returned. By default only
-         * customized configuration items are returned.
+         * Singular setter. Specifies whether only customized configuration items or only non-customized configuration items or both have to be returned.
+         * By default only customized configuration items are returned.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -287,14 +289,13 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Returns the configuration items filtered by applicable contexts sent in this param. By
-         * default configuration items of all applicable contexts are returned.
+         * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
+         *
          */
         private java.util.List<String> configItemsApplicableContext = null;
 
         /**
-         * Returns the configuration items filtered by applicable contexts sent in this param. By
-         * default configuration items of all applicable contexts are returned.
+         * Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
          *
          * @param configItemsApplicableContext the value to set
          * @return this builder instance
@@ -306,8 +307,7 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Singular setter. Returns the configuration items filtered by applicable contexts sent in
-         * this param. By default configuration items of all applicable contexts are returned.
+         * Singular setter. Returns the configuration items filtered by applicable contexts sent in this param. By default configuration items of all applicable contexts are returned.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -316,12 +316,13 @@ public class GetOpsiConfigurationRequest
             return this.configItemsApplicableContext(java.util.Arrays.asList(singularValue));
         }
 
-        /** Specifies the fields to return in a config item summary. */
+        /**
+         * Specifies the fields to return in a config item summary.
+         */
         private java.util.List<ConfigItemField> configItemField = null;
 
         /**
          * Specifies the fields to return in a config item summary.
-         *
          * @param configItemField the value to set
          * @return this builder instance
          */
@@ -332,7 +333,6 @@ public class GetOpsiConfigurationRequest
 
         /**
          * Singular setter. Specifies the fields to return in a config item summary.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -341,14 +341,15 @@ public class GetOpsiConfigurationRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -360,19 +361,18 @@ public class GetOpsiConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -384,7 +384,6 @@ public class GetOpsiConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetOpsiConfigurationRequest o) {
@@ -402,11 +401,10 @@ public class GetOpsiConfigurationRequest
         /**
          * Build the instance of GetOpsiConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetOpsiConfigurationRequest
          */
@@ -420,8 +418,7 @@ public class GetOpsiConfigurationRequest
         /**
          * Build the instance of GetOpsiConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetOpsiConfigurationRequest
@@ -435,14 +432,12 @@ public class GetOpsiConfigurationRequest
             request.configItemField = configItemField;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetOpsiConfigurationRequest(opsiConfigurationId, opsiConfigField,
-            // configItemCustomStatus, configItemsApplicableContext, configItemField, opcRequestId);
+            // new GetOpsiConfigurationRequest(opsiConfigurationId, opsiConfigField, configItemCustomStatus, configItemsApplicableContext, configItemField, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -457,7 +452,6 @@ public class GetOpsiConfigurationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

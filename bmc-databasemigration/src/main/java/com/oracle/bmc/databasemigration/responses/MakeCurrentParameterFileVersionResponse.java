@@ -6,17 +6,18 @@ package com.oracle.bmc.databasemigration.responses;
 
 import com.oracle.bmc.databasemigration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
         return etag;
     }
 
-    /** The returned {@code Job} instance. */
+    /**
+     * The returned Job instance.
+     */
     private com.oracle.bmc.databasemigration.model.Job job;
 
     /**
-     * The returned {@code Job} instance.
-     *
+     * The returned Job instance.
      * @return the value
      */
     public com.oracle.bmc.databasemigration.model.Job getJob() {
@@ -57,7 +62,7 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
     })
     private MakeCurrentParameterFileVersionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.databasemigration.model.Job job) {
@@ -67,34 +72,31 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
         this.job = job;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    MakeCurrentParameterFileVersionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -104,7 +106,10 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -118,12 +123,13 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code Job} instance. */
+        /**
+         * The returned Job instance.
+         */
         private com.oracle.bmc.databasemigration.model.Job job;
 
         /**
-         * The returned {@code Job} instance.
-         *
+         * The returned Job instance.
          * @param job the value to set
          * @return this builder
          */
@@ -134,10 +140,8 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(MakeCurrentParameterFileVersionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +154,8 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public MakeCurrentParameterFileVersionResponse build() {
             return new MakeCurrentParameterFileVersionResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, job);
@@ -162,7 +164,6 @@ public class MakeCurrentParameterFileVersionResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,9 +6,12 @@ package com.oracle.bmc.capacitymanagement.responses;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,27 +41,25 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code OccAvailabilityCatalog} instance. */
+    /**
+     * The returned OccAvailabilityCatalog instance.
+     */
     private com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog occAvailabilityCatalog;
 
     /**
-     * The returned {@code OccAvailabilityCatalog} instance.
-     *
+     * The returned OccAvailabilityCatalog instance.
      * @return the value
      */
     public com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog
@@ -75,7 +77,7 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
     })
     private UpdateOccAvailabilityCatalogResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Integer retryAfter,
@@ -87,26 +89,25 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
         this.occAvailabilityCatalog = occAvailabilityCatalog;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateOccAvailabilityCatalogResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -121,14 +122,15 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -139,15 +141,12 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -156,13 +155,14 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code OccAvailabilityCatalog} instance. */
+        /**
+         * The returned OccAvailabilityCatalog instance.
+         */
         private com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog
                 occAvailabilityCatalog;
 
         /**
-         * The returned {@code OccAvailabilityCatalog} instance.
-         *
+         * The returned OccAvailabilityCatalog instance.
          * @param occAvailabilityCatalog the value to set
          * @return this builder
          */
@@ -175,10 +175,8 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateOccAvailabilityCatalogResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -192,10 +190,8 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateOccAvailabilityCatalogResponse build() {
             return new UpdateOccAvailabilityCatalogResponse(
                     __httpStatusCode__,
@@ -209,7 +205,6 @@ public class UpdateOccAvailabilityCatalogResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A masking report contains information about a completed masking request. It includes details such
- * as the target database masked, masking policy used, masking start and finish time, total number
- * of schemas, tables, columns and values masked, masked columns, and the masking formats used. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A masking report contains information about a completed masking request. It includes details such as the target database masked,
+ * masking policy used, masking start and finish time, total number of schemas, tables, columns and values masked, masked columns, and the masking formats used.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MaskingReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MaskingReport extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MaskingReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -97,252 +95,254 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the masking report. */
+        /**
+         * The OCID of the masking report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the masking report.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the compartment that contains the masking report. */
+        /**
+         * The OCID of the compartment that contains the masking report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the masking report.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the masking work request that resulted in this masking report. */
+        /**
+         * The OCID of the masking work request that resulted in this masking report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
         private String maskingWorkRequestId;
 
         /**
          * The OCID of the masking work request that resulted in this masking report.
-         *
          * @param maskingWorkRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingWorkRequestId(String maskingWorkRequestId) {
             this.maskingWorkRequestId = maskingWorkRequestId;
             this.__explicitlySet__.add("maskingWorkRequestId");
             return this;
         }
-        /** The OCID of the masking policy used. */
+        /**
+         * The OCID of the masking policy used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
         private String maskingPolicyId;
 
         /**
          * The OCID of the masking policy used.
-         *
          * @param maskingPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingPolicyId(String maskingPolicyId) {
             this.maskingPolicyId = maskingPolicyId;
             this.__explicitlySet__.add("maskingPolicyId");
             return this;
         }
-        /** The OCID of the target database masked. */
+        /**
+         * The OCID of the target database masked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database masked.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The total number of unique sensitive types associated with the masked columns. */
+        /**
+         * The total number of unique sensitive types associated with the masked columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSensitiveTypes")
         private Long totalMaskedSensitiveTypes;
 
         /**
          * The total number of unique sensitive types associated with the masked columns.
-         *
          * @param totalMaskedSensitiveTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMaskedSensitiveTypes(Long totalMaskedSensitiveTypes) {
             this.totalMaskedSensitiveTypes = totalMaskedSensitiveTypes;
             this.__explicitlySet__.add("totalMaskedSensitiveTypes");
             return this;
         }
-        /** The total number of unique schemas that contain the masked columns. */
+        /**
+         * The total number of unique schemas that contain the masked columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSchemas")
         private Long totalMaskedSchemas;
 
         /**
          * The total number of unique schemas that contain the masked columns.
-         *
          * @param totalMaskedSchemas the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMaskedSchemas(Long totalMaskedSchemas) {
             this.totalMaskedSchemas = totalMaskedSchemas;
             this.__explicitlySet__.add("totalMaskedSchemas");
             return this;
         }
         /**
-         * The total number of unique objects (tables and editioning views) that contain the masked
-         * columns.
-         */
+         * The total number of unique objects (tables and editioning views) that contain the masked columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedObjects")
         private Long totalMaskedObjects;
 
         /**
-         * The total number of unique objects (tables and editioning views) that contain the masked
-         * columns.
-         *
+         * The total number of unique objects (tables and editioning views) that contain the masked columns.
          * @param totalMaskedObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMaskedObjects(Long totalMaskedObjects) {
             this.totalMaskedObjects = totalMaskedObjects;
             this.__explicitlySet__.add("totalMaskedObjects");
             return this;
         }
-        /** The total number of masked columns. */
+        /**
+         * The total number of masked columns.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedColumns")
         private Long totalMaskedColumns;
 
         /**
          * The total number of masked columns.
-         *
          * @param totalMaskedColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMaskedColumns(Long totalMaskedColumns) {
             this.totalMaskedColumns = totalMaskedColumns;
             this.__explicitlySet__.add("totalMaskedColumns");
             return this;
         }
-        /** The total number of masked values. */
+        /**
+         * The total number of masked values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
         private Long totalMaskedValues;
 
         /**
          * The total number of masked values.
-         *
          * @param totalMaskedValues the value to set
          * @return this builder
-         */
+         **/
         public Builder totalMaskedValues(Long totalMaskedValues) {
             this.totalMaskedValues = totalMaskedValues;
             this.__explicitlySet__.add("totalMaskedValues");
             return this;
         }
         /**
-         * The date and time data masking started, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339)
-         */
+         * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStarted")
         private java.util.Date timeMaskingStarted;
 
         /**
-         * The date and time data masking started, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339)
-         *
+         * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
          * @param timeMaskingStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaskingStarted(java.util.Date timeMaskingStarted) {
             this.timeMaskingStarted = timeMaskingStarted;
             this.__explicitlySet__.add("timeMaskingStarted");
             return this;
         }
         /**
-         * The date and time data masking finished, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339)
-         */
+         * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinished")
         private java.util.Date timeMaskingFinished;
 
         /**
-         * The date and time data masking finished, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339)
-         *
+         * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
          * @param timeMaskingFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeMaskingFinished(java.util.Date timeMaskingFinished) {
             this.timeMaskingFinished = timeMaskingFinished;
             this.__explicitlySet__.add("timeMaskingFinished");
             return this;
         }
-        /** The current state of the masking report. */
+        /**
+         * The current state of the masking report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private MaskingLifecycleState lifecycleState;
 
         /**
          * The current state of the masking report.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(MaskingLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the masking report was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the masking report was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Indicates if the temporary tables created during the masking operation were dropped after
-         * masking.
-         */
+         * Indicates if the temporary tables created during the masking operation were dropped after masking.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
         private Boolean isDropTempTablesEnabled;
 
         /**
-         * Indicates if the temporary tables created during the masking operation were dropped after
-         * masking.
+         * Indicates if the temporary tables created during the masking operation were dropped after masking.
          *
          * @param isDropTempTablesEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDropTempTablesEnabled(Boolean isDropTempTablesEnabled) {
             this.isDropTempTablesEnabled = isDropTempTablesEnabled;
             this.__explicitlySet__.add("isDropTempTablesEnabled");
             return this;
         }
-        /** Indicates if redo logging was enabled during the masking operation. */
+        /**
+         * Indicates if redo logging was enabled during the masking operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
         private Boolean isRedoLoggingEnabled;
 
@@ -351,13 +351,16 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param isRedoLoggingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isRedoLoggingEnabled(Boolean isRedoLoggingEnabled) {
             this.isRedoLoggingEnabled = isRedoLoggingEnabled;
             this.__explicitlySet__.add("isRedoLoggingEnabled");
             return this;
         }
-        /** Indicates if statistics gathering was enabled during the masking operation. */
+        /**
+         * Indicates if statistics gathering was enabled during the masking operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
         private Boolean isRefreshStatsEnabled;
 
@@ -366,13 +369,16 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param isRefreshStatsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isRefreshStatsEnabled(Boolean isRefreshStatsEnabled) {
             this.isRefreshStatsEnabled = isRefreshStatsEnabled;
             this.__explicitlySet__.add("isRefreshStatsEnabled");
             return this;
         }
-        /** Indicates if parallel execution was enabled during the masking operation. */
+        /**
+         * Indicates if parallel execution was enabled during the masking operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
         private String parallelDegree;
 
@@ -381,13 +387,16 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param parallelDegree the value to set
          * @return this builder
-         */
+         **/
         public Builder parallelDegree(String parallelDegree) {
             this.parallelDegree = parallelDegree;
             this.__explicitlySet__.add("parallelDegree");
             return this;
         }
-        /** Indicates how invalid objects were recompiled post the masking operation. */
+        /**
+         * Indicates how invalid objects were recompiled post the masking operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recompile")
         private String recompile;
 
@@ -396,52 +405,55 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param recompile the value to set
          * @return this builder
-         */
+         **/
         public Builder recompile(String recompile) {
             this.recompile = recompile;
             this.__explicitlySet__.add("recompile");
             return this;
         }
-        /** The status of the masking job. */
+        /**
+         * The status of the masking job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingStatus")
         private MaskingStatus maskingStatus;
 
         /**
          * The status of the masking job.
-         *
          * @param maskingStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingStatus(MaskingStatus maskingStatus) {
             this.maskingStatus = maskingStatus;
             this.__explicitlySet__.add("maskingStatus");
             return this;
         }
-        /** The total number of errors in pre-masking script. */
+        /**
+         * The total number of errors in pre-masking script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalPreMaskingScriptErrors")
         private Long totalPreMaskingScriptErrors;
 
         /**
          * The total number of errors in pre-masking script.
-         *
          * @param totalPreMaskingScriptErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder totalPreMaskingScriptErrors(Long totalPreMaskingScriptErrors) {
             this.totalPreMaskingScriptErrors = totalPreMaskingScriptErrors;
             this.__explicitlySet__.add("totalPreMaskingScriptErrors");
             return this;
         }
-        /** The total number of errors in post-masking script. */
+        /**
+         * The total number of errors in post-masking script.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalPostMaskingScriptErrors")
         private Long totalPostMaskingScriptErrors;
 
         /**
          * The total number of errors in post-masking script.
-         *
          * @param totalPostMaskingScriptErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder totalPostMaskingScriptErrors(Long totalPostMaskingScriptErrors) {
             this.totalPostMaskingScriptErrors = totalPostMaskingScriptErrors;
             this.__explicitlySet__.add("totalPostMaskingScriptErrors");
@@ -554,7 +566,9 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -563,222 +577,224 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The OCID of the masking report. */
+    /**
+     * The OCID of the masking report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the masking report.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the compartment that contains the masking report. */
+    /**
+     * The OCID of the compartment that contains the masking report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the masking report.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the masking work request that resulted in this masking report. */
+    /**
+     * The OCID of the masking work request that resulted in this masking report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingWorkRequestId")
     private final String maskingWorkRequestId;
 
     /**
      * The OCID of the masking work request that resulted in this masking report.
-     *
      * @return the value
-     */
+     **/
     public String getMaskingWorkRequestId() {
         return maskingWorkRequestId;
     }
 
-    /** The OCID of the masking policy used. */
+    /**
+     * The OCID of the masking policy used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingPolicyId")
     private final String maskingPolicyId;
 
     /**
      * The OCID of the masking policy used.
-     *
      * @return the value
-     */
+     **/
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
 
-    /** The OCID of the target database masked. */
+    /**
+     * The OCID of the target database masked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database masked.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The total number of unique sensitive types associated with the masked columns. */
+    /**
+     * The total number of unique sensitive types associated with the masked columns.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSensitiveTypes")
     private final Long totalMaskedSensitiveTypes;
 
     /**
      * The total number of unique sensitive types associated with the masked columns.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalMaskedSensitiveTypes() {
         return totalMaskedSensitiveTypes;
     }
 
-    /** The total number of unique schemas that contain the masked columns. */
+    /**
+     * The total number of unique schemas that contain the masked columns.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedSchemas")
     private final Long totalMaskedSchemas;
 
     /**
      * The total number of unique schemas that contain the masked columns.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalMaskedSchemas() {
         return totalMaskedSchemas;
     }
 
     /**
-     * The total number of unique objects (tables and editioning views) that contain the masked
-     * columns.
-     */
+     * The total number of unique objects (tables and editioning views) that contain the masked columns.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedObjects")
     private final Long totalMaskedObjects;
 
     /**
-     * The total number of unique objects (tables and editioning views) that contain the masked
-     * columns.
-     *
+     * The total number of unique objects (tables and editioning views) that contain the masked columns.
      * @return the value
-     */
+     **/
     public Long getTotalMaskedObjects() {
         return totalMaskedObjects;
     }
 
-    /** The total number of masked columns. */
+    /**
+     * The total number of masked columns.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedColumns")
     private final Long totalMaskedColumns;
 
     /**
      * The total number of masked columns.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalMaskedColumns() {
         return totalMaskedColumns;
     }
 
-    /** The total number of masked values. */
+    /**
+     * The total number of masked values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMaskedValues")
     private final Long totalMaskedValues;
 
     /**
      * The total number of masked values.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalMaskedValues() {
         return totalMaskedValues;
     }
 
     /**
-     * The date and time data masking started, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339)
-     */
+     * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingStarted")
     private final java.util.Date timeMaskingStarted;
 
     /**
-     * The date and time data masking started, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339)
-     *
+     * The date and time data masking started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaskingStarted() {
         return timeMaskingStarted;
     }
 
     /**
-     * The date and time data masking finished, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339)
-     */
+     * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeMaskingFinished")
     private final java.util.Date timeMaskingFinished;
 
     /**
-     * The date and time data masking finished, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339)
-     *
+     * The date and time data masking finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)
      * @return the value
-     */
+     **/
     public java.util.Date getTimeMaskingFinished() {
         return timeMaskingFinished;
     }
 
-    /** The current state of the masking report. */
+    /**
+     * The current state of the masking report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MaskingLifecycleState lifecycleState;
 
     /**
      * The current state of the masking report.
-     *
      * @return the value
-     */
+     **/
     public MaskingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the masking report was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the masking report was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the masking report was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Indicates if the temporary tables created during the masking operation were dropped after
-     * masking.
-     */
+     * Indicates if the temporary tables created during the masking operation were dropped after masking.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDropTempTablesEnabled")
     private final Boolean isDropTempTablesEnabled;
 
     /**
-     * Indicates if the temporary tables created during the masking operation were dropped after
-     * masking.
+     * Indicates if the temporary tables created during the masking operation were dropped after masking.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDropTempTablesEnabled() {
         return isDropTempTablesEnabled;
     }
 
-    /** Indicates if redo logging was enabled during the masking operation. */
+    /**
+     * Indicates if redo logging was enabled during the masking operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRedoLoggingEnabled")
     private final Boolean isRedoLoggingEnabled;
 
@@ -786,12 +802,15 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
      * Indicates if redo logging was enabled during the masking operation.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRedoLoggingEnabled() {
         return isRedoLoggingEnabled;
     }
 
-    /** Indicates if statistics gathering was enabled during the masking operation. */
+    /**
+     * Indicates if statistics gathering was enabled during the masking operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRefreshStatsEnabled")
     private final Boolean isRefreshStatsEnabled;
 
@@ -799,12 +818,15 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
      * Indicates if statistics gathering was enabled during the masking operation.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRefreshStatsEnabled() {
         return isRefreshStatsEnabled;
     }
 
-    /** Indicates if parallel execution was enabled during the masking operation. */
+    /**
+     * Indicates if parallel execution was enabled during the masking operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parallelDegree")
     private final String parallelDegree;
 
@@ -812,12 +834,15 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
      * Indicates if parallel execution was enabled during the masking operation.
      *
      * @return the value
-     */
+     **/
     public String getParallelDegree() {
         return parallelDegree;
     }
 
-    /** Indicates how invalid objects were recompiled post the masking operation. */
+    /**
+     * Indicates how invalid objects were recompiled post the masking operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recompile")
     private final String recompile;
 
@@ -825,19 +850,21 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
      * Indicates how invalid objects were recompiled post the masking operation.
      *
      * @return the value
-     */
+     **/
     public String getRecompile() {
         return recompile;
     }
 
-    /** The status of the masking job. */
-    public enum MaskingStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the masking job.
+     **/
+    public enum MaskingStatus {
         Failed("FAILED"),
         Success("SUCCESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -876,41 +903,44 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The status of the masking job. */
+    /**
+     * The status of the masking job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingStatus")
     private final MaskingStatus maskingStatus;
 
     /**
      * The status of the masking job.
-     *
      * @return the value
-     */
+     **/
     public MaskingStatus getMaskingStatus() {
         return maskingStatus;
     }
 
-    /** The total number of errors in pre-masking script. */
+    /**
+     * The total number of errors in pre-masking script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalPreMaskingScriptErrors")
     private final Long totalPreMaskingScriptErrors;
 
     /**
      * The total number of errors in pre-masking script.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalPreMaskingScriptErrors() {
         return totalPreMaskingScriptErrors;
     }
 
-    /** The total number of errors in post-masking script. */
+    /**
+     * The total number of errors in post-masking script.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalPostMaskingScriptErrors")
     private final Long totalPostMaskingScriptErrors;
 
     /**
      * The total number of errors in post-masking script.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalPostMaskingScriptErrors() {
         return totalPostMaskingScriptErrors;
     }
@@ -922,7 +952,6 @@ public final class MaskingReport extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.marketplacepublisher.model;
 
-/** Validation status for the artifact. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ValidationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Validation status for the artifact.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ValidationStatus {
     ValidationInProgress("VALIDATION_IN_PROGRESS"),
     ValidationFailed("VALIDATION_FAILED"),
     ValidationCompleted("VALIDATION_COMPLETED"),

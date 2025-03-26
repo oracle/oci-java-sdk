@@ -6,58 +6,70 @@ package com.oracle.bmc.marketplace.requests;
 
 import com.oracle.bmc.marketplace.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the work request. */
+    /**
+     * The OCID of the work request.
+     */
     private String workRequestId;
 
-    /** The OCID of the work request. */
+    /**
+     * The OCID of the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     private Integer limit;
 
     /**
-     * How many records to return. Specify a value greater than zero and less than or equal to 1000.
-     * The default is 30.
+     * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -90,21 +102,23 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
-    /** The sort order to use, either {@code ASC} or {@code DESC}. */
+    /**
+     * The sort order to use, either {@code ASC} or {@code DESC}.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         ;
 
@@ -137,8 +151,8 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -147,15 +161,17 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the work request. */
+        /**
+         * The OCID of the work request.
+         */
         private String workRequestId = null;
 
         /**
          * The OCID of the work request.
-         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -164,12 +180,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous "List" call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -179,14 +196,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
+         *
          */
         private Integer limit = null;
 
         /**
-         * How many records to return. Specify a value greater than zero and less than or equal to
-         * 1000. The default is 30.
+         * How many records to return. Specify a value greater than zero and less than or equal to 1000. The default is 30.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -197,14 +213,15 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -214,12 +231,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either {@code ASC} or {@code DESC}. */
+        /**
+         * The sort order to use, either {@code ASC} or {@code DESC}.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either {@code ASC} or {@code DESC}.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -229,14 +247,13 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -248,19 +265,18 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -272,7 +288,6 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestLogsRequest o) {
@@ -290,11 +305,10 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListWorkRequestLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestLogsRequest
          */
@@ -308,8 +322,7 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListWorkRequestLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestLogsRequest
@@ -323,14 +336,12 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListWorkRequestLogsRequest(workRequestId, page, limit, opcRequestId, sortOrder,
-            // sortBy);
+            // new ListWorkRequestLogsRequest(workRequestId, page, limit, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -345,7 +356,6 @@ public class ListWorkRequestLogsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to create an application virtual IP (VIP) address on a cloud VM cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details to create an application virtual IP (VIP) address on a cloud VM cluster.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateApplicationVipDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateApplicationVipDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateApplicationVipDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostnameLabel",
@@ -49,103 +49,97 @@ public final class CreateApplicationVipDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The hostname of the application virtual IP (VIP) address. */
+        /**
+         * The hostname of the application virtual IP (VIP) address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
          * The hostname of the application virtual IP (VIP) address.
-         *
          * @param hostnameLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB node associated with the application virtual IP (VIP) address.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
         private String dbNodeId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DB node associated with the application virtual IP (VIP) address.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
          * @param dbNodeId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodeId(String dbNodeId) {
             this.dbNodeId = dbNodeId;
             this.__explicitlySet__.add("dbNodeId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloud VM cluster associated with the application virtual IP (VIP) address.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
         private String cloudVmClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloud VM cluster associated with the application virtual IP (VIP) address.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
          * @param cloudVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudVmClusterId(String cloudVmClusterId) {
             this.cloudVmClusterId = cloudVmClusterId;
             this.__explicitlySet__.add("cloudVmClusterId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet associated with the application virtual IP (VIP) address.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet associated with the application virtual IP (VIP) address.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The application virtual IP (VIP) IPv4 address. */
+        /**
+         * The application virtual IP (VIP) IPv4 address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The application virtual IP (VIP) IPv4 address.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The application virtual IP (VIP) IPv6 address. */
+        /**
+         * The application virtual IP (VIP) IPv6 address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
         private String ipv6Address;
 
         /**
          * The application virtual IP (VIP) IPv6 address.
-         *
          * @param ipv6Address the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6Address(String ipv6Address) {
             this.ipv6Address = ipv6Address;
             this.__explicitlySet__.add("ipv6Address");
@@ -194,7 +188,9 @@ public final class CreateApplicationVipDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,92 +199,86 @@ public final class CreateApplicationVipDetails
         return new Builder().copy(this);
     }
 
-    /** The hostname of the application virtual IP (VIP) address. */
+    /**
+     * The hostname of the application virtual IP (VIP) address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
      * The hostname of the application virtual IP (VIP) address.
-     *
      * @return the value
-     */
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * node associated with the application virtual IP (VIP) address.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeId")
     private final String dbNodeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB
-     * node associated with the application virtual IP (VIP) address.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB node associated with the application virtual IP (VIP) address.
      * @return the value
-     */
+     **/
     public String getDbNodeId() {
         return dbNodeId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloud VM cluster associated with the application virtual IP (VIP) address.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudVmClusterId")
     private final String cloudVmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloud VM cluster associated with the application virtual IP (VIP) address.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
      * @return the value
-     */
+     **/
     public String getCloudVmClusterId() {
         return cloudVmClusterId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet associated with the application virtual IP (VIP) address.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet associated with the application virtual IP (VIP) address.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the application virtual IP (VIP) address.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The application virtual IP (VIP) IPv4 address. */
+    /**
+     * The application virtual IP (VIP) IPv4 address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The application virtual IP (VIP) IPv4 address.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The application virtual IP (VIP) IPv6 address. */
+    /**
+     * The application virtual IP (VIP) IPv6 address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6Address")
     private final String ipv6Address;
 
     /**
      * The application virtual IP (VIP) IPv6 address.
-     *
      * @return the value
-     */
+     **/
     public String getIpv6Address() {
         return ipv6Address;
     }
@@ -300,7 +290,6 @@ public final class CreateApplicationVipDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

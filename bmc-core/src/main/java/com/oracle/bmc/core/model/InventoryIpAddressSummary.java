@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Provides the IP address and its corresponding VNIC ID, VNIC name, and DNS hostname. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Provides the IP address and its corresponding VNIC ID, VNIC name, and DNS hostname.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InventoryIpAddressSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InventoryIpAddressSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InventoryIpAddressSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipAddress", "vnicId", "vnicName", "dnsHostName"})
     public InventoryIpAddressSummary(
@@ -35,65 +35,65 @@ public final class InventoryIpAddressSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The IP address assigned from a subnet. */
+        /**
+         * The IP address assigned from a subnet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The IP address assigned from a subnet.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VNIC.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VNIC.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
          * @param vnicId the value to set
          * @return this builder
-         */
+         **/
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
             return this;
         }
-        /** The name of the VNIC. */
+        /**
+         * The name of the VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnicName")
         private String vnicName;
 
         /**
          * The name of the VNIC.
-         *
          * @param vnicName the value to set
          * @return this builder
-         */
+         **/
         public Builder vnicName(String vnicName) {
             this.vnicName = vnicName;
             this.__explicitlySet__.add("vnicName");
             return this;
         }
-        /** The DNS hostname of the resource assigned with the IP address. */
+        /**
+         * The DNS hostname of the resource assigned with the IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsHostName")
         private String dnsHostName;
 
         /**
          * The DNS hostname of the resource assigned with the IP address.
-         *
          * @param dnsHostName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsHostName(String dnsHostName) {
             this.dnsHostName = dnsHostName;
             this.__explicitlySet__.add("dnsHostName");
@@ -131,7 +131,9 @@ public final class InventoryIpAddressSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +142,58 @@ public final class InventoryIpAddressSummary
         return new Builder().copy(this);
     }
 
-    /** The IP address assigned from a subnet. */
+    /**
+     * The IP address assigned from a subnet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The IP address assigned from a subnet.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VNIC.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicId")
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * VNIC.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
      * @return the value
-     */
+     **/
     public String getVnicId() {
         return vnicId;
     }
 
-    /** The name of the VNIC. */
+    /**
+     * The name of the VNIC.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnicName")
     private final String vnicName;
 
     /**
      * The name of the VNIC.
-     *
      * @return the value
-     */
+     **/
     public String getVnicName() {
         return vnicName;
     }
 
-    /** The DNS hostname of the resource assigned with the IP address. */
+    /**
+     * The DNS hostname of the resource assigned with the IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsHostName")
     private final String dnsHostName;
 
     /**
      * The DNS hostname of the resource assigned with the IP address.
-     *
      * @return the value
-     */
+     **/
     public String getDnsHostName() {
         return dnsHostName;
     }
@@ -203,7 +205,6 @@ public final class InventoryIpAddressSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

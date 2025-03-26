@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Enterprise User <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Enterprise User
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionEnterprise20User.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionEnterprise20User.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionEnterprise20User
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "employeeNumber",
@@ -50,29 +49,42 @@ public final class ExtensionEnterprise20User
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Numeric or alphanumeric identifier assigned to a person, typically based on order of hire
-         * or association with an organization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Employee Number -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Employee Number
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("employeeNumber")
         private String employeeNumber;
 
         /**
-         * Numeric or alphanumeric identifier assigned to a person, typically based on order of hire
-         * or association with an organization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Employee Number -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Employee Number
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param employeeNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder employeeNumber(String employeeNumber) {
             this.employeeNumber = employeeNumber;
             this.__explicitlySet__.add("employeeNumber");
@@ -80,26 +92,41 @@ public final class ExtensionEnterprise20User
         }
         /**
          * Identifies the name of a cost center.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Cost Center -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Cost Center
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("costCenter")
         private String costCenter;
 
         /**
          * Identifies the name of a cost center.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Cost Center -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Cost Center
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param costCenter the value to set
          * @return this builder
-         */
+         **/
         public Builder costCenter(String costCenter) {
             this.costCenter = costCenter;
             this.__explicitlySet__.add("costCenter");
@@ -107,28 +134,41 @@ public final class ExtensionEnterprise20User
         }
         /**
          * Identifies the name of an organization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Organization -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name,
-         * deprecatedColumnHeaderName:Organization]] - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Organization
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organization")
         private String organization;
 
         /**
          * Identifies the name of an organization.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Organization -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name,
-         * deprecatedColumnHeaderName:Organization]] - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Organization
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param organization the value to set
          * @return this builder
-         */
+         **/
         public Builder organization(String organization) {
             this.organization = organization;
             this.__explicitlySet__.add("organization");
@@ -136,26 +176,41 @@ public final class ExtensionEnterprise20User
         }
         /**
          * Identifies the name of a division.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Division -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Division
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("division")
         private String division;
 
         /**
          * Identifies the name of a division.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Division -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Division
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param division the value to set
          * @return this builder
-         */
+         **/
         public Builder division(String division) {
             this.division = division;
             this.__explicitlySet__.add("division");
@@ -163,26 +218,41 @@ public final class ExtensionEnterprise20User
         }
         /**
          * Identifies the name of a department.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Department -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Department
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("department")
         private String department;
 
         /**
          * Identifies the name of a department.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Department -
-         * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]] - idcsPii: true -
-         * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsCsvAttributeName: Department
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param department the value to set
          * @return this builder
-         */
+         **/
         public Builder department(String department) {
             this.department = department;
             this.__explicitlySet__.add("department");
@@ -240,7 +310,9 @@ public final class ExtensionEnterprise20User
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -250,130 +322,201 @@ public final class ExtensionEnterprise20User
     }
 
     /**
-     * Numeric or alphanumeric identifier assigned to a person, typically based on order of hire or
-     * association with an organization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Employee Number -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Employee Number
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("employeeNumber")
     private final String employeeNumber;
 
     /**
-     * Numeric or alphanumeric identifier assigned to a person, typically based on order of hire or
-     * association with an organization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Employee Number -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * Numeric or alphanumeric identifier assigned to  a person, typically based on order of hire or association with an organization.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Employee Number
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Employee Number]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getEmployeeNumber() {
         return employeeNumber;
     }
 
     /**
      * Identifies the name of a cost center.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Cost Center -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Cost Center
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("costCenter")
     private final String costCenter;
 
     /**
      * Identifies the name of a cost center.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Cost Center -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Cost Center
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Cost Center]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCostCenter() {
         return costCenter;
     }
 
     /**
      * Identifies the name of an organization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Organization -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name,
-     * deprecatedColumnHeaderName:Organization]] - idcsPii: true - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Organization
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organization")
     private final String organization;
 
     /**
      * Identifies the name of an organization.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Organization -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name,
-     * deprecatedColumnHeaderName:Organization]] - idcsPii: true - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Organization
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Organization Name, deprecatedColumnHeaderName:Organization]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOrganization() {
         return organization;
     }
 
     /**
      * Identifies the name of a division.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Division -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]] - idcsPii: true - idcsSearchable:
-     * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-     * type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Division
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("division")
     private final String division;
 
     /**
      * Identifies the name of a division.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Division -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Division]] - idcsPii: true - idcsSearchable:
-     * true - multiValued: false - mutability: readWrite - required: false - returned: default -
-     * type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Division
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Division]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDivision() {
         return division;
     }
 
     /**
      * Identifies the name of a department.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Department -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Department
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("department")
     private final String department;
 
     /**
      * Identifies the name of a department.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsCsvAttributeName: Department -
-     * idcsCsvAttributeNameMappings: [[columnHeaderName:Department]] - idcsPii: true -
-     * idcsSearchable: true - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsCsvAttributeName: Department
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Department]]
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDepartment() {
         return department;
     }
@@ -392,7 +535,6 @@ public final class ExtensionEnterprise20User
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

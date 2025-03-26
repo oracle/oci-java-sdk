@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Associated autonomous container databases usages. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Associated autonomous container databases usages.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousContainerDatabaseResourceUsage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousContainerDatabaseResourceUsage.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousContainerDatabaseResourceUsage
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -69,92 +68,81 @@ public final class AutonomousContainerDatabaseResourceUsage
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Container Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Container Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The user-friendly name for the Autonomous Container Database. The name does not need to
-         * be unique.
-         */
+         * The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly name for the Autonomous Container Database. The name does not need to
-         * be unique.
-         *
+         * The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container
-         * Database restart.
-         */
+         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container
-         * Database restart.
-         *
+         * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
          * @param reclaimableCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder reclaimableCpus(Float reclaimableCpus) {
             this.reclaimableCpus = reclaimableCpus;
             this.__explicitlySet__.add("reclaimableCpus");
             return this;
         }
         /**
-         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
-         * Container Database.
-         */
+         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
-         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous
-         * Container Database.
-         *
+         * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
          * @param availableCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCpus(Float availableCpus) {
             this.availableCpus = availableCpus;
             this.__explicitlySet__.add("availableCpus");
             return this;
         }
-        /** Largest provisionable ADB in the Autonomous Container Database. */
+        /**
+         * Largest provisionable ADB in the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "largestProvisionableAutonomousDatabaseInCpus")
         private Float largestProvisionableAutonomousDatabaseInCpus;
 
         /**
          * Largest provisionable ADB in the Autonomous Container Database.
-         *
          * @param largestProvisionableAutonomousDatabaseInCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder largestProvisionableAutonomousDatabaseInCpus(
                 Float largestProvisionableAutonomousDatabaseInCpus) {
             this.largestProvisionableAutonomousDatabaseInCpus =
@@ -162,84 +150,89 @@ public final class AutonomousContainerDatabaseResourceUsage
             this.__explicitlySet__.add("largestProvisionableAutonomousDatabaseInCpus");
             return this;
         }
-        /** CPUs / cores assigned to ADBs in the Autonomous Container Database. */
+        /**
+         * CPUs / cores assigned to ADBs in the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
         private Float provisionedCpus;
 
         /**
          * CPUs / cores assigned to ADBs in the Autonomous Container Database.
-         *
          * @param provisionedCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder provisionedCpus(Float provisionedCpus) {
             this.provisionedCpus = provisionedCpus;
             this.__explicitlySet__.add("provisionedCpus");
             return this;
         }
         /**
-         * CPUs / cores reserved for scalability, resilliency and other overheads. This includes
-         * failover, autoscaling and idle instance overhead.
-         */
+         * CPUs / cores reserved for scalability, resilliency and other overheads.
+         * This includes failover, autoscaling and idle instance overhead.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
         private Float reservedCpus;
 
         /**
-         * CPUs / cores reserved for scalability, resilliency and other overheads. This includes
-         * failover, autoscaling and idle instance overhead.
+         * CPUs / cores reserved for scalability, resilliency and other overheads.
+         * This includes failover, autoscaling and idle instance overhead.
          *
          * @param reservedCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder reservedCpus(Float reservedCpus) {
             this.reservedCpus = reservedCpus;
             this.__explicitlySet__.add("reservedCpus");
             return this;
         }
         /**
-         * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved
-         * and reclaimable CPUs/ cores.
-         */
+         * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned,
+         * reserved and reclaimable CPUs/ cores.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedCpus")
         private Float usedCpus;
 
         /**
-         * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved
-         * and reclaimable CPUs/ cores.
+         * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned,
+         * reserved and reclaimable CPUs/ cores.
          *
          * @param usedCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder usedCpus(Float usedCpus) {
             this.usedCpus = usedCpus;
             this.__explicitlySet__.add("usedCpus");
             return this;
         }
-        /** Valid list of provisionable CPUs for Autonomous Database. */
+        /**
+         * Valid list of provisionable CPUs for Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
         private java.util.List<Float> provisionableCpus;
 
         /**
          * Valid list of provisionable CPUs for Autonomous Database.
-         *
          * @param provisionableCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder provisionableCpus(java.util.List<Float> provisionableCpus) {
             this.provisionableCpus = provisionableCpus;
             this.__explicitlySet__.add("provisionableCpus");
             return this;
         }
-        /** List of autonomous container database resource usage per autonomous virtual machine. */
+        /**
+         * List of autonomous container database resource usage per autonomous virtual machine.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseVmUsage")
         private java.util.List<AcdAvmResourceStats> autonomousContainerDatabaseVmUsage;
 
         /**
          * List of autonomous container database resource usage per autonomous virtual machine.
-         *
          * @param autonomousContainerDatabaseVmUsage the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousContainerDatabaseVmUsage(
                 java.util.List<AcdAvmResourceStats> autonomousContainerDatabaseVmUsage) {
             this.autonomousContainerDatabaseVmUsage = autonomousContainerDatabaseVmUsage;
@@ -247,46 +240,44 @@ public final class AutonomousContainerDatabaseResourceUsage
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -362,7 +353,9 @@ public final class AutonomousContainerDatabaseResourceUsage
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -372,197 +365,189 @@ public final class AutonomousContainerDatabaseResourceUsage
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Container Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Autonomous Container Database.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Container Database.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The user-friendly name for the Autonomous Container Database. The name does not need to be
-     * unique.
-     */
+     * The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the Autonomous Container Database. The name does not need to be
-     * unique.
-     *
+     * The user-friendly name for the Autonomous Container Database. The name does not need to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database
-     * restart.
-     */
+     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database
-     * restart.
-     *
+     * Number of CPUs that are reclaimable or released to the AVMC on Autonomous Container Database restart.
      * @return the value
-     */
+     **/
     public Float getReclaimableCpus() {
         return reclaimableCpus;
     }
 
     /**
-     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
-     * Database.
-     */
+     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
-     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container
-     * Database.
-     *
+     * CPUs available for provisioning or scaling an Autonomous Database in the Autonomous Container Database.
      * @return the value
-     */
+     **/
     public Float getAvailableCpus() {
         return availableCpus;
     }
 
-    /** Largest provisionable ADB in the Autonomous Container Database. */
+    /**
+     * Largest provisionable ADB in the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("largestProvisionableAutonomousDatabaseInCpus")
     private final Float largestProvisionableAutonomousDatabaseInCpus;
 
     /**
      * Largest provisionable ADB in the Autonomous Container Database.
-     *
      * @return the value
-     */
+     **/
     public Float getLargestProvisionableAutonomousDatabaseInCpus() {
         return largestProvisionableAutonomousDatabaseInCpus;
     }
 
-    /** CPUs / cores assigned to ADBs in the Autonomous Container Database. */
+    /**
+     * CPUs / cores assigned to ADBs in the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionedCpus")
     private final Float provisionedCpus;
 
     /**
      * CPUs / cores assigned to ADBs in the Autonomous Container Database.
-     *
      * @return the value
-     */
+     **/
     public Float getProvisionedCpus() {
         return provisionedCpus;
     }
 
     /**
-     * CPUs / cores reserved for scalability, resilliency and other overheads. This includes
-     * failover, autoscaling and idle instance overhead.
-     */
+     * CPUs / cores reserved for scalability, resilliency and other overheads.
+     * This includes failover, autoscaling and idle instance overhead.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedCpus")
     private final Float reservedCpus;
 
     /**
-     * CPUs / cores reserved for scalability, resilliency and other overheads. This includes
-     * failover, autoscaling and idle instance overhead.
+     * CPUs / cores reserved for scalability, resilliency and other overheads.
+     * This includes failover, autoscaling and idle instance overhead.
      *
      * @return the value
-     */
+     **/
     public Float getReservedCpus() {
         return reservedCpus;
     }
 
     /**
-     * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and
-     * reclaimable CPUs/ cores.
-     */
+     * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned,
+     * reserved and reclaimable CPUs/ cores.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedCpus")
     private final Float usedCpus;
 
     /**
-     * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned, reserved and
-     * reclaimable CPUs/ cores.
+     * CPUs / cores assigned to the Autonomous Container Database. Sum of provisioned,
+     * reserved and reclaimable CPUs/ cores.
      *
      * @return the value
-     */
+     **/
     public Float getUsedCpus() {
         return usedCpus;
     }
 
-    /** Valid list of provisionable CPUs for Autonomous Database. */
+    /**
+     * Valid list of provisionable CPUs for Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableCpus")
     private final java.util.List<Float> provisionableCpus;
 
     /**
      * Valid list of provisionable CPUs for Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Float> getProvisionableCpus() {
         return provisionableCpus;
     }
 
-    /** List of autonomous container database resource usage per autonomous virtual machine. */
+    /**
+     * List of autonomous container database resource usage per autonomous virtual machine.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseVmUsage")
     private final java.util.List<AcdAvmResourceStats> autonomousContainerDatabaseVmUsage;
 
     /**
      * List of autonomous container database resource usage per autonomous virtual machine.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AcdAvmResourceStats> getAutonomousContainerDatabaseVmUsage() {
         return autonomousContainerDatabaseVmUsage;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -574,7 +559,6 @@ public final class AutonomousContainerDatabaseResourceUsage
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

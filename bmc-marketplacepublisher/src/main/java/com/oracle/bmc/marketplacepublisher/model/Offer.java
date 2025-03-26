@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Description of Offer. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Description of Offer.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Offer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Offer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -95,246 +93,241 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Offer Identifier, can be renamed */
+        /**
+         * Offer Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Offer Identifier, can be renamed
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** OCID of the seller's tenancy (root compartment). */
+        /**
+         * OCID of the seller's tenancy (root compartment).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sellerCompartmentId")
         private String sellerCompartmentId;
 
         /**
          * OCID of the seller's tenancy (root compartment).
-         *
          * @param sellerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder sellerCompartmentId(String sellerCompartmentId) {
             this.sellerCompartmentId = sellerCompartmentId;
             this.__explicitlySet__.add("sellerCompartmentId");
             return this;
         }
-        /** OCID of the buyer's tenancy (root compartment). */
+        /**
+         * OCID of the buyer's tenancy (root compartment).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("buyerCompartmentId")
         private String buyerCompartmentId;
 
         /**
          * OCID of the buyer's tenancy (root compartment).
-         *
          * @param buyerCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder buyerCompartmentId(String buyerCompartmentId) {
             this.buyerCompartmentId = buyerCompartmentId;
             this.__explicitlySet__.add("buyerCompartmentId");
             return this;
         }
-        /** The description of the offer */
+        /**
+         * The description of the offer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the offer
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339
-         * formatted datetime string
-         */
+         * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStartDate")
         private java.util.Date timeStartDate;
 
         /**
-         * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339
-         * formatted datetime string
-         *
+         * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339 formatted datetime string
          * @param timeStartDate the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStartDate(java.util.Date timeStartDate) {
             this.timeStartDate = timeStartDate;
             this.__explicitlySet__.add("timeStartDate");
             return this;
         }
         /**
-         * Duration the Offer will be active after its start date. An ISO8601 extended formatted
-         * string.
-         */
+         * Duration the Offer will be active after its start date. An ISO8601 extended formatted string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private String duration;
 
         /**
-         * Duration the Offer will be active after its start date. An ISO8601 extended formatted
-         * string.
-         *
+         * Duration the Offer will be active after its start date. An ISO8601 extended formatted string.
          * @param duration the value to set
          * @return this builder
-         */
+         **/
         public Builder duration(String duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /** The time the the Offer was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the the Offer was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the the Offer was created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the Offer was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the Offer was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the Offer was updated. An RFC3339 formatted datetime string
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An
-         * RFC3339 formatted datetime string
-         */
+         * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAcceptBy")
         private java.util.Date timeAcceptBy;
 
         /**
-         * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An
-         * RFC3339 formatted datetime string
-         *
+         * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339 formatted datetime string
          * @param timeAcceptBy the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAcceptBy(java.util.Date timeAcceptBy) {
             this.timeAcceptBy = timeAcceptBy;
             this.__explicitlySet__.add("timeAcceptBy");
             return this;
         }
         /**
-         * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime
-         * string
-         */
+         * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime
-         * string
-         *
+         * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime string
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** The time the accepted Offer will end. An RFC3339 formatted datetime string */
+        /**
+         * The time the accepted Offer will end. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfferEnd")
         private java.util.Date timeOfferEnd;
 
         /**
          * The time the accepted Offer will end. An RFC3339 formatted datetime string
-         *
          * @param timeOfferEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfferEnd(java.util.Date timeOfferEnd) {
             this.timeOfferEnd = timeOfferEnd;
             this.__explicitlySet__.add("timeOfferEnd");
             return this;
         }
-        /** The current state of the Offer. */
+        /**
+         * The current state of the Offer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Offer.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** A substate for lifeCycleStatus to give a more human readable version of the offer */
+        /**
+         * A substate for lifeCycleStatus to give a more human readable version of the offer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offerStatus")
         private OfferStatus offerStatus;
 
         /**
          * A substate for lifeCycleStatus to give a more human readable version of the offer
-         *
          * @param offerStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder offerStatus(OfferStatus offerStatus) {
             this.offerStatus = offerStatus;
             this.__explicitlySet__.add("offerStatus");
@@ -376,35 +369,37 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("sellerInformation");
             return this;
         }
-        /** A list of Resource Bundles associated with an Offer. */
+        /**
+         * A list of Resource Bundles associated with an Offer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceBundles")
         private java.util.List<ResourceBundle> resourceBundles;
 
         /**
          * A list of Resource Bundles associated with an Offer.
-         *
          * @param resourceBundles the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceBundles(java.util.List<ResourceBundle> resourceBundles) {
             this.resourceBundles = resourceBundles;
             this.__explicitlySet__.add("resourceBundles");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -413,7 +408,8 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -423,7 +419,7 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -537,7 +533,9 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -546,178 +544,178 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Offer Identifier, can be renamed */
+    /**
+     * Offer Identifier, can be renamed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Offer Identifier, can be renamed
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** OCID of the seller's tenancy (root compartment). */
+    /**
+     * OCID of the seller's tenancy (root compartment).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sellerCompartmentId")
     private final String sellerCompartmentId;
 
     /**
      * OCID of the seller's tenancy (root compartment).
-     *
      * @return the value
-     */
+     **/
     public String getSellerCompartmentId() {
         return sellerCompartmentId;
     }
 
-    /** OCID of the buyer's tenancy (root compartment). */
+    /**
+     * OCID of the buyer's tenancy (root compartment).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("buyerCompartmentId")
     private final String buyerCompartmentId;
 
     /**
      * OCID of the buyer's tenancy (root compartment).
-     *
      * @return the value
-     */
+     **/
     public String getBuyerCompartmentId() {
         return buyerCompartmentId;
     }
 
-    /** The description of the offer */
+    /**
+     * The description of the offer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the offer
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339
-     * formatted datetime string
-     */
+     * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStartDate")
     private final java.util.Date timeStartDate;
 
     /**
-     * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339
-     * formatted datetime string
-     *
+     * The time the Offer will become active after it has been accepted by the Buyer. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStartDate() {
         return timeStartDate;
     }
 
     /**
      * Duration the Offer will be active after its start date. An ISO8601 extended formatted string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final String duration;
 
     /**
      * Duration the Offer will be active after its start date. An ISO8601 extended formatted string.
-     *
      * @return the value
-     */
+     **/
     public String getDuration() {
         return duration;
     }
 
-    /** The time the the Offer was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the the Offer was created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the Offer was created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the Offer was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the Offer was updated. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the Offer was updated. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339
-     * formatted datetime string
-     */
+     * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAcceptBy")
     private final java.util.Date timeAcceptBy;
 
     /**
-     * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339
-     * formatted datetime string
-     *
+     * The time the Offer must be accepted by the Buyer before the Offer becomes invalid. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAcceptBy() {
         return timeAcceptBy;
     }
 
     /**
-     * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime
-     * string
-     */
+     * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime
-     * string
-     *
+     * The time the Offer was accepted by the Buyer of the Offer. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** The time the accepted Offer will end. An RFC3339 formatted datetime string */
+    /**
+     * The time the accepted Offer will end. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfferEnd")
     private final java.util.Date timeOfferEnd;
 
     /**
      * The time the accepted Offer will end. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfferEnd() {
         return timeOfferEnd;
     }
 
-    /** The current state of the Offer. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Offer.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -726,8 +724,8 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -766,38 +764,38 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Offer. */
+    /**
+     * The current state of the Offer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Offer.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** A substate for lifeCycleStatus to give a more human readable version of the offer */
-    public enum OfferStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A substate for lifeCycleStatus to give a more human readable version of the offer
+     **/
+    public enum OfferStatus {
         Draft("DRAFT"),
         PendingMarketplace("PENDING_MARKETPLACE"),
         PendingBuyer("PENDING_BUYER"),
@@ -809,8 +807,8 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         FailedAccept("FAILED_ACCEPT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -849,15 +847,16 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** A substate for lifeCycleStatus to give a more human readable version of the offer */
+    /**
+     * A substate for lifeCycleStatus to give a more human readable version of the offer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offerStatus")
     private final OfferStatus offerStatus;
 
     /**
      * A substate for lifeCycleStatus to give a more human readable version of the offer
-     *
      * @return the value
-     */
+     **/
     public OfferStatus getOfferStatus() {
         return offerStatus;
     }
@@ -890,49 +889,52 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return sellerInformation;
     }
 
-    /** A list of Resource Bundles associated with an Offer. */
+    /**
+     * A list of Resource Bundles associated with an Offer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceBundles")
     private final java.util.List<ResourceBundle> resourceBundles;
 
     /**
      * A list of Resource Bundles associated with an Offer.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceBundle> getResourceBundles() {
         return resourceBundles;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -944,7 +946,6 @@ public final class Offer extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

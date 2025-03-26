@@ -5,59 +5,61 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database objects to migrate. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Database objects to migrate.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleMigrationObjectCollection.Builder.class)
+    builder = OracleMigrationObjectCollection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "databaseCombination")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "databaseCombination"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleMigrationObjectCollection extends MigrationObjectCollection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Database objects to exclude/include from migration */
+        /**
+         * Database objects to exclude/include from migration
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<OracleDatabaseObjectSummary> items;
 
         /**
          * Database objects to exclude/include from migration
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<OracleDatabaseObjectSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
         /**
-         * Specifies the database objects to be excluded from the migration in bulk. The definition
-         * accepts input in a CSV format, newline separated for each entry. More details can be
-         * found in the documentation.
-         */
+         * Specifies the database objects to be excluded from the migration in bulk.
+         * The definition accepts input in a CSV format, newline separated for each entry.
+         * More details can be found in the documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bulkIncludeExcludeData")
         private String bulkIncludeExcludeData;
 
         /**
-         * Specifies the database objects to be excluded from the migration in bulk. The definition
-         * accepts input in a CSV format, newline separated for each entry. More details can be
-         * found in the documentation.
+         * Specifies the database objects to be excluded from the migration in bulk.
+         * The definition accepts input in a CSV format, newline separated for each entry.
+         * More details can be found in the documentation.
          *
          * @param bulkIncludeExcludeData the value to set
          * @return this builder
-         */
+         **/
         public Builder bulkIncludeExcludeData(String bulkIncludeExcludeData) {
             this.bulkIncludeExcludeData = bulkIncludeExcludeData;
             this.__explicitlySet__.add("bulkIncludeExcludeData");
@@ -88,7 +90,9 @@ public final class OracleMigrationObjectCollection extends MigrationObjectCollec
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,34 +109,36 @@ public final class OracleMigrationObjectCollection extends MigrationObjectCollec
         this.bulkIncludeExcludeData = bulkIncludeExcludeData;
     }
 
-    /** Database objects to exclude/include from migration */
+    /**
+     * Database objects to exclude/include from migration
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<OracleDatabaseObjectSummary> items;
 
     /**
      * Database objects to exclude/include from migration
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OracleDatabaseObjectSummary> getItems() {
         return items;
     }
 
     /**
-     * Specifies the database objects to be excluded from the migration in bulk. The definition
-     * accepts input in a CSV format, newline separated for each entry. More details can be found in
-     * the documentation.
-     */
+     * Specifies the database objects to be excluded from the migration in bulk.
+     * The definition accepts input in a CSV format, newline separated for each entry.
+     * More details can be found in the documentation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bulkIncludeExcludeData")
     private final String bulkIncludeExcludeData;
 
     /**
-     * Specifies the database objects to be excluded from the migration in bulk. The definition
-     * accepts input in a CSV format, newline separated for each entry. More details can be found in
-     * the documentation.
+     * Specifies the database objects to be excluded from the migration in bulk.
+     * The definition accepts input in a CSV format, newline separated for each entry.
+     * More details can be found in the documentation.
      *
      * @return the value
-     */
+     **/
     public String getBulkIncludeExcludeData() {
         return bulkIncludeExcludeData;
     }
@@ -144,7 +150,6 @@ public final class OracleMigrationObjectCollection extends MigrationObjectCollec
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

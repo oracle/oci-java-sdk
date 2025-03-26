@@ -5,21 +5,20 @@
 package com.oracle.bmc.resourcescheduler.model;
 
 /**
- * This is the schedule resource entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+ * This is the schedule resource entity.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Resource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Resource extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Resource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "metadata"})
     public Resource(String id, java.util.Map<String, String> metadata) {
@@ -30,16 +29,17 @@ public final class Resource extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the resource OCID. */
+        /**
+         * This is the resource OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * This is the resource OCID.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -47,22 +47,35 @@ public final class Resource extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * This is additional information that helps to identity the resource for the schedule.
+         * <p>
+         * {
+         *       "id": "<OCID_of_bucket>"
+         *       "metadata":
+         *       {
+         *         "namespaceName": "sampleNamespace",
+         *         "bucketName": "sampleBucket"
+         *       }
+         *     }
          *
-         * <p>{ "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace",
-         * "bucketName": "sampleBucket" } }
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
          * This is additional information that helps to identity the resource for the schedule.
-         *
-         * <p>{ "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace",
-         * "bucketName": "sampleBucket" } }
+         * <p>
+         * {
+         *       "id": "<OCID_of_bucket>"
+         *       "metadata":
+         *       {
+         *         "namespaceName": "sampleNamespace",
+         *         "bucketName": "sampleBucket"
+         *       }
+         *     }
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -92,7 +105,9 @@ public final class Resource extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,36 +116,50 @@ public final class Resource extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** This is the resource OCID. */
+    /**
+     * This is the resource OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * This is the resource OCID.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * This is additional information that helps to identity the resource for the schedule.
+     * <p>
+     * {
+     *       "id": "<OCID_of_bucket>"
+     *       "metadata":
+     *       {
+     *         "namespaceName": "sampleNamespace",
+     *         "bucketName": "sampleBucket"
+     *       }
+     *     }
      *
-     * <p>{ "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName":
-     * "sampleBucket" } }
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
      * This is additional information that helps to identity the resource for the schedule.
-     *
-     * <p>{ "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName":
-     * "sampleBucket" } }
+     * <p>
+     * {
+     *       "id": "<OCID_of_bucket>"
+     *       "metadata":
+     *       {
+     *         "namespaceName": "sampleNamespace",
+     *         "bucketName": "sampleBucket"
+     *       }
+     *     }
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -142,7 +171,6 @@ public final class Resource extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

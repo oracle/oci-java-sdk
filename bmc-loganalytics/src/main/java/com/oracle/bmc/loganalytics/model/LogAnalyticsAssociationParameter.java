@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsAssociationParameter <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsAssociationParameter
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsAssociationParameter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsAssociationParameter.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsAssociationParameter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "agentId",
@@ -64,167 +63,178 @@ public final class LogAnalyticsAssociationParameter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The agent unique identifier. */
+        /**
+         * The agent unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentId")
         private String agentId;
 
         /**
          * The agent unique identifier.
-         *
          * @param agentId the value to set
          * @return this builder
-         */
+         **/
         public Builder agentId(String agentId) {
             this.agentId = agentId;
             this.__explicitlySet__.add("agentId");
             return this;
         }
-        /** The entity type. */
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The entity type.
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /** The entity unique identifier. */
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The entity unique identifier.
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The source name. */
+        /**
+         * The source name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
         private String sourceId;
 
         /**
          * The source name.
-         *
          * @param sourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceId(String sourceId) {
             this.sourceId = sourceId;
             this.__explicitlySet__.add("sourceId");
             return this;
         }
-        /** The source display name. */
+        /**
+         * The source display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
         private String sourceDisplayName;
 
         /**
          * The source display name.
-         *
          * @param sourceDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDisplayName(String sourceDisplayName) {
             this.sourceDisplayName = sourceDisplayName;
             this.__explicitlySet__.add("sourceDisplayName");
             return this;
         }
-        /** The source type. */
+        /**
+         * The source type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private String sourceType;
 
         /**
          * The source type.
-         *
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(String sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
-        /** The status. Either FAILED or SUCCEEDED. */
+        /**
+         * The status.  Either FAILED or SUCCEEDED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * The status. Either FAILED or SUCCEEDED.
-         *
+         * The status.  Either FAILED or SUCCEEDED.
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The status description. */
+        /**
+         * The status description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
         private String statusDescription;
 
         /**
          * The status description.
-         *
          * @param statusDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDescription(String statusDescription) {
             this.statusDescription = statusDescription;
             this.__explicitlySet__.add("statusDescription");
             return this;
         }
-        /** A list of association properties. */
+        /**
+         * A list of association properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
         private java.util.List<AssociationProperty> associationProperties;
 
         /**
          * A list of association properties.
-         *
          * @param associationProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder associationProperties(
                 java.util.List<AssociationProperty> associationProperties) {
             this.associationProperties = associationProperties;
             this.__explicitlySet__.add("associationProperties");
             return this;
         }
-        /** A list of missing properties. */
+        /**
+         * A list of missing properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
         private java.util.List<String> missingProperties;
 
         /**
          * A list of missing properties.
-         *
          * @param missingProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder missingProperties(java.util.List<String> missingProperties) {
             this.missingProperties = missingProperties;
             this.__explicitlySet__.add("missingProperties");
             return this;
         }
-        /** A list of requried properties. */
+        /**
+         * A list of requried properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
         private java.util.List<String> requiredProperties;
 
         /**
          * A list of requried properties.
-         *
          * @param requiredProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder requiredProperties(java.util.List<String> requiredProperties) {
             this.requiredProperties = requiredProperties;
             this.__explicitlySet__.add("requiredProperties");
@@ -293,7 +303,9 @@ public final class LogAnalyticsAssociationParameter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -302,92 +314,100 @@ public final class LogAnalyticsAssociationParameter
         return new Builder().copy(this);
     }
 
-    /** The agent unique identifier. */
+    /**
+     * The agent unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
      * The agent unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
-    /** The entity type. */
+    /**
+     * The entity type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The entity type.
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
 
-    /** The entity unique identifier. */
+    /**
+     * The entity unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The entity unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The source name. */
+    /**
+     * The source name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceId")
     private final String sourceId;
 
     /**
      * The source name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceId() {
         return sourceId;
     }
 
-    /** The source display name. */
+    /**
+     * The source display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDisplayName")
     private final String sourceDisplayName;
 
     /**
      * The source display name.
-     *
      * @return the value
-     */
+     **/
     public String getSourceDisplayName() {
         return sourceDisplayName;
     }
 
-    /** The source type. */
+    /**
+     * The source type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final String sourceType;
 
     /**
      * The source type.
-     *
      * @return the value
-     */
+     **/
     public String getSourceType() {
         return sourceType;
     }
 
-    /** The status. Either FAILED or SUCCEEDED. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status.  Either FAILED or SUCCEEDED.
+     **/
+    public enum Status {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -425,67 +445,72 @@ public final class LogAnalyticsAssociationParameter
             return UnknownEnumValue;
         }
     };
-    /** The status. Either FAILED or SUCCEEDED. */
+    /**
+     * The status.  Either FAILED or SUCCEEDED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * The status. Either FAILED or SUCCEEDED.
-     *
+     * The status.  Either FAILED or SUCCEEDED.
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The status description. */
+    /**
+     * The status description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
     private final String statusDescription;
 
     /**
      * The status description.
-     *
      * @return the value
-     */
+     **/
     public String getStatusDescription() {
         return statusDescription;
     }
 
-    /** A list of association properties. */
+    /**
+     * A list of association properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationProperties")
     private final java.util.List<AssociationProperty> associationProperties;
 
     /**
      * A list of association properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociationProperty> getAssociationProperties() {
         return associationProperties;
     }
 
-    /** A list of missing properties. */
+    /**
+     * A list of missing properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("missingProperties")
     private final java.util.List<String> missingProperties;
 
     /**
      * A list of missing properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getMissingProperties() {
         return missingProperties;
     }
 
-    /** A list of requried properties. */
+    /**
+     * A list of requried properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiredProperties")
     private final java.util.List<String> requiredProperties;
 
     /**
      * A list of requried properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRequiredProperties() {
         return requiredProperties;
     }
@@ -497,7 +522,6 @@ public final class LogAnalyticsAssociationParameter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

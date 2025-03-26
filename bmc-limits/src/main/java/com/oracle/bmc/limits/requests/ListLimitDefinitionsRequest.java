@@ -6,53 +6,71 @@ package com.oracle.bmc.limits.requests;
 
 import com.oracle.bmc.limits.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitDefinitionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLimitDefinitionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/limits/ListLimitDefinitionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLimitDefinitionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 public class ListLimitDefinitionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root
-     * compartment).
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
      */
     private String compartmentId;
 
     /**
-     * The OCID of the parent compartment (remember that the tenancy is simply the root
-     * compartment).
+     * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The OCID of the subscription assigned to tenant */
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
     private String subscriptionId;
 
-    /** The OCID of the subscription assigned to tenant */
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** The target service name. */
+    /**
+     * The target service name.
+     */
     private String serviceName;
 
-    /** The target service name. */
+    /**
+     * The target service name.
+     */
     public String getServiceName() {
         return serviceName;
     }
-    /** Optional field, filter for a specific resource limit. */
+    /**
+     * Optional field, filter for a specific resource limit.
+     */
     private String name;
 
-    /** Optional field, filter for a specific resource limit. */
+    /**
+     * Optional field, filter for a specific resource limit.
+     */
     public String getName() {
         return name;
     }
-    /** The field to sort by. */
+    /**
+     * The field to sort by.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by.
+     *
+     **/
+    public enum SortBy {
         Name("name"),
         Description("description"),
         ;
@@ -85,15 +103,24 @@ public class ListLimitDefinitionsRequest
         }
     };
 
-    /** The field to sort by. */
+    /**
+     * The field to sort by.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -126,33 +153,50 @@ public class ListLimitDefinitionsRequest
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -161,18 +205,18 @@ public class ListLimitDefinitionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListLimitDefinitionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the parent compartment (remember that the tenancy is simply the root
-         * compartment).
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the parent compartment (remember that the tenancy is simply the root
-         * compartment).
+         * The OCID of the parent compartment (remember that the tenancy is simply the root compartment).
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -182,7 +226,10 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The OCID of the subscription assigned to tenant */
+        /**
+         * The OCID of the subscription assigned to tenant
+         *
+         */
         private String subscriptionId = null;
 
         /**
@@ -196,12 +243,13 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The target service name. */
+        /**
+         * The target service name.
+         */
         private String serviceName = null;
 
         /**
          * The target service name.
-         *
          * @param serviceName the value to set
          * @return this builder instance
          */
@@ -210,12 +258,13 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** Optional field, filter for a specific resource limit. */
+        /**
+         * Optional field, filter for a specific resource limit.
+         */
         private String name = null;
 
         /**
          * Optional field, filter for a specific resource limit.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -224,7 +273,10 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The field to sort by. */
+        /**
+         * The field to sort by.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -238,7 +290,10 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. By default, it is ascending. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'. By default, it is ascending.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -252,7 +307,10 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -266,7 +324,10 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -283,6 +344,7 @@ public class ListLimitDefinitionsRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -300,19 +362,18 @@ public class ListLimitDefinitionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -324,7 +385,6 @@ public class ListLimitDefinitionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListLimitDefinitionsRequest o) {
@@ -345,11 +405,10 @@ public class ListLimitDefinitionsRequest
         /**
          * Build the instance of ListLimitDefinitionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListLimitDefinitionsRequest
          */
@@ -363,8 +422,7 @@ public class ListLimitDefinitionsRequest
         /**
          * Build the instance of ListLimitDefinitionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListLimitDefinitionsRequest
@@ -381,14 +439,12 @@ public class ListLimitDefinitionsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListLimitDefinitionsRequest(compartmentId, subscriptionId, serviceName, name,
-            // sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListLimitDefinitionsRequest(compartmentId, subscriptionId, serviceName, name, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -406,7 +462,6 @@ public class ListLimitDefinitionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

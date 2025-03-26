@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Details for cloning an existing Exadata Fleet Update Cycle resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Details for cloning an existing Exadata Fleet Update Cycle resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloneFsuCycleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CloneFsuCycleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CloneFsuCycleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CloneFsuCycleDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -52,7 +51,10 @@ public final class CloneFsuCycleDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Exadata Fleet Update Cycle display name. */
+        /**
+         * Exadata Fleet Update Cycle display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -61,13 +63,16 @@ public final class CloneFsuCycleDetails
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -76,7 +81,7 @@ public final class CloneFsuCycleDetails
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -84,20 +89,19 @@ public final class CloneFsuCycleDetails
         }
         /**
          * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet
-         * Update Cycle.
-         */
+         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
         private String fsuCollectionId;
 
         /**
          * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
-         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet
-         * Update Cycle.
+         * If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
          *
          * @param fsuCollectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder fsuCollectionId(String fsuCollectionId) {
             this.fsuCollectionId = fsuCollectionId;
             this.__explicitlySet__.add("fsuCollectionId");
@@ -186,7 +190,9 @@ public final class CloneFsuCycleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,7 +201,10 @@ public final class CloneFsuCycleDetails
         return new Builder().copy(this);
     }
 
-    /** Exadata Fleet Update Cycle display name. */
+    /**
+     * Exadata Fleet Update Cycle display name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -203,12 +212,15 @@ public final class CloneFsuCycleDetails
      * Exadata Fleet Update Cycle display name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -216,26 +228,25 @@ public final class CloneFsuCycleDetails
      * Compartment Identifier.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to. If
-     * not specified, it will be assigned to the same Collection as the source Exadata Fleet Update
-     * Cycle.
-     */
+     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
     /**
-     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to. If
-     * not specified, it will be assigned to the same Collection as the source Exadata Fleet Update
-     * Cycle.
+     * OCID identifier for the Collection ID the Exadata Fleet Update Cycle will be assigned to.
+     * If not specified, it will be assigned to the same Collection as the source Exadata Fleet Update Cycle.
      *
      * @return the value
-     */
+     **/
     public String getFsuCollectionId() {
         return fsuCollectionId;
     }
@@ -275,7 +286,6 @@ public final class CloneFsuCycleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

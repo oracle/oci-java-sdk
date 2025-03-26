@@ -6,17 +6,18 @@ package com.oracle.bmc.waa.responses;
 
 import com.oracle.bmc.waa.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211230")
 public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -42,13 +44,14 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
         return opcNextPage;
     }
 
-    /** The returned {@code WebAppAccelerationPolicyCollection} instance. */
+    /**
+     * The returned WebAppAccelerationPolicyCollection instance.
+     */
     private com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
             webAppAccelerationPolicyCollection;
 
     /**
-     * The returned {@code WebAppAccelerationPolicyCollection} instance.
-     *
+     * The returned WebAppAccelerationPolicyCollection instance.
      * @return the value
      */
     public com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
@@ -65,7 +68,7 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
     })
     private ListWebAppAccelerationPoliciesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
@@ -76,34 +79,31 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
         this.webAppAccelerationPolicyCollection = webAppAccelerationPolicyCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListWebAppAccelerationPoliciesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -114,16 +114,17 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -133,13 +134,14 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
             return this;
         }
 
-        /** The returned {@code WebAppAccelerationPolicyCollection} instance. */
+        /**
+         * The returned WebAppAccelerationPolicyCollection instance.
+         */
         private com.oracle.bmc.waa.model.WebAppAccelerationPolicyCollection
                 webAppAccelerationPolicyCollection;
 
         /**
-         * The returned {@code WebAppAccelerationPolicyCollection} instance.
-         *
+         * The returned WebAppAccelerationPolicyCollection instance.
          * @param webAppAccelerationPolicyCollection the value to set
          * @return this builder
          */
@@ -152,10 +154,8 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListWebAppAccelerationPoliciesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,10 +168,8 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListWebAppAccelerationPoliciesResponse build() {
             return new ListWebAppAccelerationPoliciesResponse(
                     __httpStatusCode__,
@@ -184,7 +182,6 @@ public class ListWebAppAccelerationPoliciesResponse extends com.oracle.bmc.respo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

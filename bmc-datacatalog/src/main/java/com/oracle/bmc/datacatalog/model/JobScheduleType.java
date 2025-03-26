@@ -5,11 +5,13 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Type of job schedule. SCHEDULED - The job will execute at a later time based on a schedule.
+ * Type of job schedule.
+ * SCHEDULED - The job will execute at a later time based on a schedule.
  * IMMEDIATE - The job will execute as soon as possible.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum JobScheduleType implements com.oracle.bmc.http.internal.BmcEnum {
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum JobScheduleType {
     Scheduled("SCHEDULED"),
     Immediate("IMMEDIATE"),
 

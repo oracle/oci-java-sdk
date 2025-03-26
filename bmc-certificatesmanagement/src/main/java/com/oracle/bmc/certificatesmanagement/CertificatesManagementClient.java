@@ -4,18 +4,17 @@
  */
 package com.oracle.bmc.certificatesmanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.certificatesmanagement.internal.http.*;
 import com.oracle.bmc.certificatesmanagement.requests.*;
 import com.oracle.bmc.certificatesmanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public class CertificatesManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements CertificatesManagement {
-    /** Service instance for CertificatesManagement. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public class CertificatesManagementClient implements CertificatesManagement {
+    /**
+     * Service instance for CertificatesManagement.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("CERTIFICATESMANAGEMENT")
@@ -23,22 +22,319 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
                     .serviceEndpointTemplate(
                             "https://certificatesmanagement.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(CertificatesManagementClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final CertificatesManagementWaiters waiters;
 
     private final CertificatesManagementPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    CertificatesManagementClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected CertificatesManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -60,11 +356,29 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
         this.waiters = new CertificatesManagementWaiters(executorService, this);
 
         this.paginators = new CertificatesManagementPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -72,8 +386,8 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -82,8 +396,6 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "certificatesmanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -91,7 +403,6 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -102,1068 +413,1432 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public CertificatesManagementClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new CertificatesManagementClient(
-                    this, authenticationDetailsProvider, executorService);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public CancelCertificateAuthorityDeletionResponse cancelCertificateAuthorityDeletion(
             CancelCertificateAuthorityDeletionRequest request) {
+        LOG.trace("Called cancelCertificateAuthorityDeletion");
+        final CancelCertificateAuthorityDeletionRequest interceptedRequest =
+                CancelCertificateAuthorityDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateAuthorityDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, CancelCertificateAuthorityDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateAuthorityDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CancelCertificateAuthorityDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateAuthorityDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateAuthorityDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateAuthorityDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CancelCertificateAuthorityDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelCertificateAuthorityDeletionResponse>
+                transformer =
+                        CancelCertificateAuthorityDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelCertificateAuthorityVersionDeletionResponse
             cancelCertificateAuthorityVersionDeletion(
                     CancelCertificateAuthorityVersionDeletionRequest request) {
+        LOG.trace("Called cancelCertificateAuthorityVersionDeletion");
+        final CancelCertificateAuthorityVersionDeletionRequest interceptedRequest =
+                CancelCertificateAuthorityVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateAuthorityVersionDeletionConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, CancelCertificateAuthorityVersionDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateAuthorityVersionDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CancelCertificateAuthorityVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateAuthorityVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateAuthorityVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateAuthorityVersionDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/CancelCertificateAuthorityVersionDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        CancelCertificateAuthorityVersionDeletionResponse>
+                transformer =
+                        CancelCertificateAuthorityVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelCertificateDeletionResponse cancelCertificateDeletion(
             CancelCertificateDeletionRequest request) {
+        LOG.trace("Called cancelCertificateDeletion");
+        final CancelCertificateDeletionRequest interceptedRequest =
+                CancelCertificateDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, CancelCertificateDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CancelCertificateDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString("etag", CancelCertificateDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelCertificateDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CancelCertificateDeletion");
+        java.util.function.Function<javax.ws.rs.core.Response, CancelCertificateDeletionResponse>
+                transformer =
+                        CancelCertificateDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CancelCertificateVersionDeletionResponse cancelCertificateVersionDeletion(
             CancelCertificateVersionDeletionRequest request) {
+        LOG.trace("Called cancelCertificateVersionDeletion");
+        final CancelCertificateVersionDeletionRequest interceptedRequest =
+                CancelCertificateVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelCertificateVersionDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, CancelCertificateVersionDeletionResponse::builder)
-                .logger(LOG, "cancelCertificateVersionDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CancelCertificateVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelCertificateVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "etag", CancelCertificateVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CancelCertificateVersionDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/CancelCertificateVersionDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelCertificateVersionDeletionResponse>
+                transformer =
+                        CancelCertificateVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeCaBundleCompartmentResponse changeCaBundleCompartment(
             ChangeCaBundleCompartmentRequest request) {
+        LOG.trace("Called changeCaBundleCompartment");
+        final ChangeCaBundleCompartmentRequest interceptedRequest =
+                ChangeCaBundleCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCaBundleCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCaBundleCompartmentDetails(),
-                "changeCaBundleCompartmentDetails is required");
-
-        return clientCall(request, ChangeCaBundleCompartmentResponse::builder)
-                .logger(LOG, "changeCaBundleCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ChangeCaBundleCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCaBundleCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeCaBundleCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/ChangeCaBundleCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCaBundleCompartmentResponse>
+                transformer =
+                        ChangeCaBundleCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCaBundleCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeCertificateAuthorityCompartmentResponse changeCertificateAuthorityCompartment(
             ChangeCertificateAuthorityCompartmentRequest request) {
+        LOG.trace("Called changeCertificateAuthorityCompartment");
+        final ChangeCertificateAuthorityCompartmentRequest interceptedRequest =
+                ChangeCertificateAuthorityCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCertificateAuthorityCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCertificateAuthorityCompartmentDetails(),
-                "changeCertificateAuthorityCompartmentDetails is required");
-
-        return clientCall(request, ChangeCertificateAuthorityCompartmentResponse::builder)
-                .logger(LOG, "changeCertificateAuthorityCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ChangeCertificateAuthorityCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCertificateAuthorityCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCertificateAuthorityCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ChangeCertificateAuthorityCompartment");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCertificateAuthorityCompartmentResponse>
+                transformer =
+                        ChangeCertificateAuthorityCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCertificateAuthorityCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ChangeCertificateCompartmentResponse changeCertificateCompartment(
             ChangeCertificateCompartmentRequest request) {
+        LOG.trace("Called changeCertificateCompartment");
+        final ChangeCertificateCompartmentRequest interceptedRequest =
+                ChangeCertificateCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCertificateCompartmentConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCertificateCompartmentDetails(),
-                "changeCertificateCompartmentDetails is required");
-
-        return clientCall(request, ChangeCertificateCompartmentResponse::builder)
-                .logger(LOG, "changeCertificateCompartment")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ChangeCertificateCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCertificateCompartmentRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCertificateCompartmentResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ChangeCertificateCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+                transformer =
+                        ChangeCertificateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeCertificateCompartmentDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateCaBundleResponse createCaBundle(CreateCaBundleRequest request) {
-        Objects.requireNonNull(
-                request.getCreateCaBundleDetails(), "createCaBundleDetails is required");
+        LOG.trace("Called createCaBundle");
+        final CreateCaBundleRequest interceptedRequest =
+                CreateCaBundleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCaBundleConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateCaBundleResponse::builder)
-                .logger(LOG, "createCaBundle")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CreateCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        CreateCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", CreateCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCaBundleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/CreateCaBundle");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCaBundleResponse> transformer =
+                CreateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateCaBundleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateCertificateResponse createCertificate(CreateCertificateRequest request) {
-        Objects.requireNonNull(
-                request.getCreateCertificateDetails(), "createCertificateDetails is required");
+        LOG.trace("Called createCertificate");
+        final CreateCertificateRequest interceptedRequest =
+                CreateCertificateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCertificateConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateCertificateResponse::builder)
-                .logger(LOG, "createCertificate")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CreateCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        CreateCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", CreateCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/CreateCertificate");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+                transformer =
+                        CreateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateCertificateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateCertificateAuthorityResponse createCertificateAuthority(
             CreateCertificateAuthorityRequest request) {
-        Objects.requireNonNull(
-                request.getCreateCertificateAuthorityDetails(),
-                "createCertificateAuthorityDetails is required");
+        LOG.trace("Called createCertificateAuthority");
+        final CreateCertificateAuthorityRequest interceptedRequest =
+                CreateCertificateAuthorityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateCertificateAuthorityResponse::builder)
-                .logger(LOG, "createCertificateAuthority")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "CreateCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        CreateCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString(
-                        "etag", CreateCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCertificateAuthorityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/CreateCertificateAuthority");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateAuthorityResponse>
+                transformer =
+                        CreateCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateCertificateAuthorityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteCaBundleResponse deleteCaBundle(DeleteCaBundleRequest request) {
+        LOG.trace("Called deleteCaBundle");
+        final DeleteCaBundleRequest interceptedRequest =
+                DeleteCaBundleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCaBundleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-
-        return clientCall(request, DeleteCaBundleResponse::builder)
-                .logger(LOG, "deleteCaBundle")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "DeleteCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteCaBundleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/DeleteCaBundle");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteCaBundleResponse> transformer =
+                DeleteCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetAssociationResponse getAssociation(GetAssociationRequest request) {
+        LOG.trace("Called getAssociation");
+        final GetAssociationRequest interceptedRequest =
+                GetAssociationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAssociationConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getAssociationId(), "associationId must not be blank");
-
-        return clientCall(request, GetAssociationResponse::builder)
-                .logger(LOG, "getAssociation")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetAssociation",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetAssociationRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("associations")
-                .appendPathParam(request.getAssociationId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Association.class,
-                        GetAssociationResponse.Builder::association)
-                .handleResponseHeaderString("etag", GetAssociationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetAssociationResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Association/GetAssociation");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAssociationResponse> transformer =
+                GetAssociationConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCaBundleResponse getCaBundle(GetCaBundleRequest request) {
+        LOG.trace("Called getCaBundle");
+        final GetCaBundleRequest interceptedRequest =
+                GetCaBundleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCaBundleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-
-        return clientCall(request, GetCaBundleResponse::builder)
-                .logger(LOG, "getCaBundle")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        GetCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", GetCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCaBundleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/GetCaBundle");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCaBundleResponse> transformer =
+                GetCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCertificateResponse getCertificate(GetCertificateRequest request) {
+        LOG.trace("Called getCertificate");
+        final GetCertificateRequest interceptedRequest =
+                GetCertificateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, GetCertificateResponse::builder)
-                .logger(LOG, "getCertificate")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        GetCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/GetCertificate");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse> transformer =
+                GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCertificateAuthorityResponse getCertificateAuthority(
             GetCertificateAuthorityRequest request) {
+        LOG.trace("Called getCertificateAuthority");
+        final GetCertificateAuthorityRequest interceptedRequest =
+                GetCertificateAuthorityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, GetCertificateAuthorityResponse::builder)
-                .logger(LOG, "getCertificateAuthority")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        GetCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString("etag", GetCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateAuthorityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/GetCertificateAuthority");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateAuthorityResponse>
+                transformer =
+                        GetCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCertificateAuthorityVersionResponse getCertificateAuthorityVersion(
             GetCertificateAuthorityVersionRequest request) {
+        LOG.trace("Called getCertificateAuthorityVersion");
+        final GetCertificateAuthorityVersionRequest interceptedRequest =
+                GetCertificateAuthorityVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateAuthorityVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, GetCertificateAuthorityVersionResponse::builder)
-                .logger(LOG, "getCertificateAuthorityVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetCertificateAuthorityVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateAuthorityVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityVersion
-                                .class,
-                        GetCertificateAuthorityVersionResponse.Builder::certificateAuthorityVersion)
-                .handleResponseHeaderString(
-                        "etag", GetCertificateAuthorityVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetCertificateAuthorityVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/GetCertificateAuthorityVersion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetCertificateAuthorityVersionResponse>
+                transformer =
+                        GetCertificateAuthorityVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetCertificateVersionResponse getCertificateVersion(
             GetCertificateVersionRequest request) {
+        LOG.trace("Called getCertificateVersion");
+        final GetCertificateVersionRequest interceptedRequest =
+                GetCertificateVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, GetCertificateVersionResponse::builder)
-                .logger(LOG, "getCertificateVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "GetCertificateVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateVersion.class,
-                        GetCertificateVersionResponse.Builder::certificateVersion)
-                .handleResponseHeaderString("etag", GetCertificateVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/GetCertificateVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, GetCertificateVersionResponse>
+                transformer =
+                        GetCertificateVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAssociationsResponse listAssociations(ListAssociationsRequest request) {
+        LOG.trace("Called listAssociations");
+        final ListAssociationsRequest interceptedRequest =
+                ListAssociationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAssociationsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListAssociationsResponse::builder)
-                .logger(LOG, "listAssociations")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListAssociations",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAssociationsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("associations")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("certificatesResourceId", request.getCertificatesResourceId())
-                .appendQueryParam("associatedResourceId", request.getAssociatedResourceId())
-                .appendQueryParam("associationId", request.getAssociationId())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("associationType", request.getAssociationType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.AssociationCollection.class,
-                        ListAssociationsResponse.Builder::associationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAssociationsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAssociationsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/AssociationSummary/ListAssociations");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAssociationsResponse>
+                transformer =
+                        ListAssociationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCaBundlesResponse listCaBundles(ListCaBundlesRequest request) {
+        LOG.trace("Called listCaBundles");
+        final ListCaBundlesRequest interceptedRequest =
+                ListCaBundlesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCaBundlesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListCaBundlesResponse::builder)
-                .logger(LOG, "listCaBundles")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListCaBundles",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCaBundlesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("caBundleId", request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundleCollection.class,
-                        ListCaBundlesResponse.Builder::caBundleCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCaBundlesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCaBundlesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundleSummary/ListCaBundles");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCaBundlesResponse> transformer =
+                ListCaBundlesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCertificateAuthoritiesResponse listCertificateAuthorities(
             ListCertificateAuthoritiesRequest request) {
+        LOG.trace("Called listCertificateAuthorities");
+        final ListCertificateAuthoritiesRequest interceptedRequest =
+                ListCertificateAuthoritiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateAuthoritiesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListCertificateAuthoritiesResponse::builder)
-                .logger(LOG, "listCertificateAuthorities")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListCertificateAuthorities",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateAuthoritiesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam(
-                        "issuerCertificateAuthorityId", request.getIssuerCertificateAuthorityId())
-                .appendQueryParam("certificateAuthorityId", request.getCertificateAuthorityId())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthorityCollection
-                                .class,
-                        ListCertificateAuthoritiesResponse.Builder::certificateAuthorityCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificateAuthoritiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificateAuthoritiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthoritySummary/ListCertificateAuthorities");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificateAuthoritiesResponse>
+                transformer =
+                        ListCertificateAuthoritiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCertificateAuthorityVersionsResponse listCertificateAuthorityVersions(
             ListCertificateAuthorityVersionsRequest request) {
+        LOG.trace("Called listCertificateAuthorityVersions");
+        final ListCertificateAuthorityVersionsRequest interceptedRequest =
+                ListCertificateAuthorityVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateAuthorityVersionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        return clientCall(request, ListCertificateAuthorityVersionsResponse::builder)
-                .logger(LOG, "listCertificateAuthorityVersions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListCertificateAuthorityVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateAuthorityVersionsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("versions")
-                .appendQueryParam("versionNumber", request.getVersionNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model
-                                .CertificateAuthorityVersionCollection.class,
-                        ListCertificateAuthorityVersionsResponse.Builder
-                                ::certificateAuthorityVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListCertificateAuthorityVersionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListCertificateAuthorityVersionsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersionSummary/ListCertificateAuthorityVersions");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListCertificateAuthorityVersionsResponse>
+                transformer =
+                        ListCertificateAuthorityVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCertificateVersionsResponse listCertificateVersions(
             ListCertificateVersionsRequest request) {
+        LOG.trace("Called listCertificateVersions");
+        final ListCertificateVersionsRequest interceptedRequest =
+                ListCertificateVersionsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificateVersionsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, ListCertificateVersionsResponse::builder)
-                .logger(LOG, "listCertificateVersions")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListCertificateVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificateVersionsRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("versions")
-                .appendQueryParam("versionNumber", request.getVersionNumber())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateVersionCollection
-                                .class,
-                        ListCertificateVersionsResponse.Builder::certificateVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificateVersionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificateVersionsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersionSummary/ListCertificateVersions");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificateVersionsResponse>
+                transformer =
+                        ListCertificateVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListCertificatesResponse listCertificates(ListCertificatesRequest request) {
+        LOG.trace("Called listCertificates");
+        final ListCertificatesRequest interceptedRequest =
+                ListCertificatesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificatesConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListCertificatesResponse::builder)
-                .logger(LOG, "listCertificates")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ListCertificates",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificatesRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("name", request.getName())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam(
-                        "issuerCertificateAuthorityId", request.getIssuerCertificateAuthorityId())
-                .appendQueryParam("certificateId", request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateCollection.class,
-                        ListCertificatesResponse.Builder::certificateCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateSummary/ListCertificates");
+        java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+                transformer =
+                        ListCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RevokeCertificateAuthorityVersionResponse revokeCertificateAuthorityVersion(
             RevokeCertificateAuthorityVersionRequest request) {
+        LOG.trace("Called revokeCertificateAuthorityVersion");
+        final RevokeCertificateAuthorityVersionRequest interceptedRequest =
+                RevokeCertificateAuthorityVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RevokeCertificateAuthorityVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        Objects.requireNonNull(
-                request.getRevokeCertificateAuthorityVersionDetails(),
-                "revokeCertificateAuthorityVersionDetails is required");
-
-        return clientCall(request, RevokeCertificateAuthorityVersionResponse::builder)
-                .logger(LOG, "revokeCertificateAuthorityVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "RevokeCertificateAuthorityVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RevokeCertificateAuthorityVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("revoke")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", RevokeCertificateAuthorityVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RevokeCertificateAuthorityVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/RevokeCertificateAuthorityVersion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RevokeCertificateAuthorityVersionResponse>
+                transformer =
+                        RevokeCertificateAuthorityVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRevokeCertificateAuthorityVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RevokeCertificateVersionResponse revokeCertificateVersion(
             RevokeCertificateVersionRequest request) {
+        LOG.trace("Called revokeCertificateVersion");
+        final RevokeCertificateVersionRequest interceptedRequest =
+                RevokeCertificateVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RevokeCertificateVersionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        Objects.requireNonNull(
-                request.getRevokeCertificateVersionDetails(),
-                "revokeCertificateVersionDetails is required");
-
-        return clientCall(request, RevokeCertificateVersionResponse::builder)
-                .logger(LOG, "revokeCertificateVersion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "RevokeCertificateVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RevokeCertificateVersionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("revoke")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString("etag", RevokeCertificateVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RevokeCertificateVersionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/RevokeCertificateVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, RevokeCertificateVersionResponse>
+                transformer =
+                        RevokeCertificateVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRevokeCertificateVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ScheduleCertificateAuthorityDeletionResponse scheduleCertificateAuthorityDeletion(
             ScheduleCertificateAuthorityDeletionRequest request) {
+        LOG.trace("Called scheduleCertificateAuthorityDeletion");
+        final ScheduleCertificateAuthorityDeletionRequest interceptedRequest =
+                ScheduleCertificateAuthorityDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateAuthorityDeletionConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleCertificateAuthorityDeletionDetails(),
-                "scheduleCertificateAuthorityDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateAuthorityDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateAuthorityDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ScheduleCertificateAuthorityDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateAuthorityDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateAuthorityDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateAuthorityDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/ScheduleCertificateAuthorityDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCertificateAuthorityDeletionResponse>
+                transformer =
+                        ScheduleCertificateAuthorityDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScheduleCertificateAuthorityDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ScheduleCertificateAuthorityVersionDeletionResponse
             scheduleCertificateAuthorityVersionDeletion(
                     ScheduleCertificateAuthorityVersionDeletionRequest request) {
+        LOG.trace("Called scheduleCertificateAuthorityVersionDeletion");
+        final ScheduleCertificateAuthorityVersionDeletionRequest interceptedRequest =
+                ScheduleCertificateAuthorityVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateAuthorityVersionDeletionConverter.fromRequest(
+                        client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-
-        Objects.requireNonNull(
-                request.getScheduleCertificateAuthorityVersionDeletionDetails(),
-                "scheduleCertificateAuthorityVersionDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateAuthorityVersionDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateAuthorityVersionDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ScheduleCertificateAuthorityVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateAuthorityVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateAuthorityVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateAuthorityVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateAuthorityVersionDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthorityVersion/ScheduleCertificateAuthorityVersionDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ScheduleCertificateAuthorityVersionDeletionResponse>
+                transformer =
+                        ScheduleCertificateAuthorityVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScheduleCertificateAuthorityVersionDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ScheduleCertificateDeletionResponse scheduleCertificateDeletion(
             ScheduleCertificateDeletionRequest request) {
+        LOG.trace("Called scheduleCertificateDeletion");
+        final ScheduleCertificateDeletionRequest interceptedRequest =
+                ScheduleCertificateDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleCertificateDeletionDetails(),
-                "scheduleCertificateDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ScheduleCertificateDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ScheduleCertificateDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/ScheduleCertificateDeletion");
+        java.util.function.Function<javax.ws.rs.core.Response, ScheduleCertificateDeletionResponse>
+                transformer =
+                        ScheduleCertificateDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScheduleCertificateDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ScheduleCertificateVersionDeletionResponse scheduleCertificateVersionDeletion(
             ScheduleCertificateVersionDeletionRequest request) {
+        LOG.trace("Called scheduleCertificateVersionDeletion");
+        final ScheduleCertificateVersionDeletionRequest interceptedRequest =
+                ScheduleCertificateVersionDeletionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleCertificateVersionDeletionConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        Objects.requireNonNull(
-                request.getScheduleCertificateVersionDeletionDetails(),
-                "scheduleCertificateVersionDeletionDetails is required");
-
-        return clientCall(request, ScheduleCertificateVersionDeletionResponse::builder)
-                .logger(LOG, "scheduleCertificateVersionDeletion")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "ScheduleCertificateVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleCertificateVersionDeletionRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("version")
-                .appendPathParam(request.getCertificateVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleCertificateVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleCertificateVersionDeletionResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateVersion/ScheduleCertificateVersionDeletion");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleCertificateVersionDeletionResponse>
+                transformer =
+                        ScheduleCertificateVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getScheduleCertificateVersionDeletionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateCaBundleResponse updateCaBundle(UpdateCaBundleRequest request) {
+        LOG.trace("Called updateCaBundle");
+        final UpdateCaBundleRequest interceptedRequest =
+                UpdateCaBundleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCaBundleConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCaBundleId(), "caBundleId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCaBundleDetails(), "updateCaBundleDetails is required");
-
-        return clientCall(request, UpdateCaBundleResponse::builder)
-                .logger(LOG, "updateCaBundle")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "UpdateCaBundle",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCaBundleRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("caBundles")
-                .appendPathParam(request.getCaBundleId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CaBundle.class,
-                        UpdateCaBundleResponse.Builder::caBundle)
-                .handleResponseHeaderString("etag", UpdateCaBundleResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCaBundleResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CaBundle/UpdateCaBundle");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCaBundleResponse> transformer =
+                UpdateCaBundleConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateCaBundleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateCertificateResponse updateCertificate(UpdateCertificateRequest request) {
+        LOG.trace("Called updateCertificate");
+        final UpdateCertificateRequest interceptedRequest =
+                UpdateCertificateConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCertificateConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCertificateDetails(), "updateCertificateDetails is required");
-
-        return clientCall(request, UpdateCertificateResponse::builder)
-                .logger(LOG, "updateCertificate")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "UpdateCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCertificateRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.Certificate.class,
-                        UpdateCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", UpdateCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCertificateResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/Certificate/UpdateCertificate");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+                transformer =
+                        UpdateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateCertificateDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateCertificateAuthorityResponse updateCertificateAuthority(
             UpdateCertificateAuthorityRequest request) {
+        LOG.trace("Called updateCertificateAuthority");
+        final UpdateCertificateAuthorityRequest interceptedRequest =
+                UpdateCertificateAuthorityConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCertificateAuthorityConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(
-                request.getCertificateAuthorityId(), "certificateAuthorityId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCertificateAuthorityDetails(),
-                "updateCertificateAuthorityDetails is required");
-
-        return clientCall(request, UpdateCertificateAuthorityResponse::builder)
-                .logger(LOG, "updateCertificateAuthority")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "CertificatesManagement",
                         "UpdateCertificateAuthority",
-                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCertificateAuthorityRequest::builder)
-                .basePath("/20210224")
-                .appendPathParam("certificateAuthorities")
-                .appendPathParam(request.getCertificateAuthorityId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.certificatesmanagement.model.CertificateAuthority.class,
-                        UpdateCertificateAuthorityResponse.Builder::certificateAuthority)
-                .handleResponseHeaderString(
-                        "etag", UpdateCertificateAuthorityResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCertificateAuthorityResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/certificatesmgmt/20210224/CertificateAuthority/UpdateCertificateAuthority");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateAuthorityResponse>
+                transformer =
+                        UpdateCertificateAuthorityConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateCertificateAuthorityDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1174,209 +1849,5 @@ public class CertificatesManagementClient extends com.oracle.bmc.http.internal.B
     @Override
     public CertificatesManagementPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public CertificatesManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

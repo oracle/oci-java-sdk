@@ -6,86 +6,97 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetHealthMetricsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetDatabaseFleetHealthMetricsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetHealthMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDatabaseFleetHealthMetricsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetDatabaseFleetHealthMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The baseline time for metrics comparison. */
+    /**
+     * The baseline time for metrics comparison.
+     */
     private String compareBaselineTime;
 
-    /** The baseline time for metrics comparison. */
+    /**
+     * The baseline time for metrics comparison.
+     */
     public String getCompareBaselineTime() {
         return compareBaselineTime;
     }
-    /** The target time for metrics comparison. */
+    /**
+     * The target time for metrics comparison.
+     */
     private String compareTargetTime;
 
-    /** The target time for metrics comparison. */
+    /**
+     * The target time for metrics comparison.
+     */
     public String getCompareTargetTime() {
         return compareTargetTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
     private String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
      */
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The time window used for metrics comparison. */
+    /**
+     * The time window used for metrics comparison.
+     */
     private com.oracle.bmc.databasemanagement.model.CompareType compareType;
 
-    /** The time window used for metrics comparison. */
+    /**
+     * The time window used for metrics comparison.
+     */
     public com.oracle.bmc.databasemanagement.model.CompareType getCompareType() {
         return compareType;
     }
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     private String filterByMetricNames;
 
     /**
-     * The filter used to retrieve a specific set of metrics by passing the desired metric names
-     * with a comma separator. Note that, by default, the service returns all supported metrics.
+     * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
      */
     public String getFilterByMetricNames() {
         return filterByMetricNames;
     }
-    /** The filter used to filter the databases in the fleet by a specific Oracle Database type. */
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+     */
     private String filterByDatabaseType;
 
-    /** The filter used to filter the databases in the fleet by a specific Oracle Database type. */
+    /**
+     * The filter used to filter the databases in the fleet by a specific Oracle Database type.
+     */
     public String getFilterByDatabaseType() {
         return filterByDatabaseType;
     }
@@ -101,38 +112,46 @@ public class GetDatabaseFleetHealthMetricsRequest
         return filterByDatabaseSubType;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Name("NAME"),
         ;
@@ -166,35 +185,32 @@ public class GetDatabaseFleetHealthMetricsRequest
     };
 
     /**
-     * The field to sort information by. Only one sortOrder can be used. The default sort order for
-     * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
-     * ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+     * The field to sort information by. Only one sortOrder can be used. The default sort order
+     * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+     * The \u2018NAME\u2019 sort order is case-sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Ascending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment
-     * type.
+     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
      */
     private String filterByDatabaseDeploymentType;
 
     /**
-     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment
-     * type.
+     * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
      */
     public String getFilterByDatabaseDeploymentType() {
         return filterByDatabaseDeploymentType;
@@ -211,79 +227,79 @@ public class GetDatabaseFleetHealthMetricsRequest
         return filterByDatabaseVersion;
     }
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
@@ -292,15 +308,17 @@ public class GetDatabaseFleetHealthMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDatabaseFleetHealthMetricsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The baseline time for metrics comparison. */
+        /**
+         * The baseline time for metrics comparison.
+         */
         private String compareBaselineTime = null;
 
         /**
          * The baseline time for metrics comparison.
-         *
          * @param compareBaselineTime the value to set
          * @return this builder instance
          */
@@ -309,12 +327,13 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
-        /** The target time for metrics comparison. */
+        /**
+         * The target time for metrics comparison.
+         */
         private String compareTargetTime = null;
 
         /**
          * The target time for metrics comparison.
-         *
          * @param compareTargetTime the value to set
          * @return this builder instance
          */
@@ -323,12 +342,13 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -338,15 +358,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database Group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
          */
         private String managedDatabaseGroupId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database Group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group.
          * @param managedDatabaseGroupId the value to set
          * @return this builder instance
          */
@@ -356,15 +373,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -373,12 +387,13 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
-        /** The time window used for metrics comparison. */
+        /**
+         * The time window used for metrics comparison.
+         */
         private com.oracle.bmc.databasemanagement.model.CompareType compareType = null;
 
         /**
          * The time window used for metrics comparison.
-         *
          * @param compareType the value to set
          * @return this builder instance
          */
@@ -389,15 +404,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          */
         private String filterByMetricNames = null;
 
         /**
-         * The filter used to retrieve a specific set of metrics by passing the desired metric names
-         * with a comma separator. Note that, by default, the service returns all supported metrics.
-         *
+         * The filter used to retrieve a specific set of metrics by passing the desired metric names with a comma separator. Note that, by default, the service returns all supported metrics.
          * @param filterByMetricNames the value to set
          * @return this builder instance
          */
@@ -413,7 +425,6 @@ public class GetDatabaseFleetHealthMetricsRequest
 
         /**
          * The filter used to filter the databases in the fleet by a specific Oracle Database type.
-         *
          * @param filterByDatabaseType the value to set
          * @return this builder instance
          */
@@ -423,15 +434,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * subtype.
+         * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
          */
         private String filterByDatabaseSubType = null;
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * subtype.
-         *
+         * The filter used to filter the databases in the fleet by a specific Oracle Database subtype.
          * @param filterByDatabaseSubType the value to set
          * @return this builder instance
          */
@@ -441,14 +449,15 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -458,12 +467,13 @@ public class GetDatabaseFleetHealthMetricsRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -474,15 +484,16 @@ public class GetDatabaseFleetHealthMetricsRequest
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
-         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
-         * is ascending. The \u2018NAME\u2019 sort order is case-sensitive.
+         * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is ascending.
+         * The \u2018NAME\u2019 sort order is case-sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -493,15 +504,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Ascending order is the default order.
-         *
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Ascending order is the default order.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -511,15 +519,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * deployment type.
+         * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
          */
         private String filterByDatabaseDeploymentType = null;
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * deployment type.
-         *
+         * The filter used to filter the databases in the fleet by a specific Oracle Database deployment type.
          * @param filterByDatabaseDeploymentType the value to set
          * @return this builder instance
          */
@@ -529,15 +534,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * version.
+         * The filter used to filter the databases in the fleet by a specific Oracle Database version.
          */
         private String filterByDatabaseVersion = null;
 
         /**
-         * The filter used to filter the databases in the fleet by a specific Oracle Database
-         * version.
-         *
+         * The filter used to filter the databases in the fleet by a specific Oracle Database version.
          * @param filterByDatabaseVersion the value to set
          * @return this builder instance
          */
@@ -547,20 +549,19 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -571,11 +572,10 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a defined tag
-         * matching the value will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
-         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
-         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -585,18 +585,17 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param freeformTagEquals the value to set
          * @return this builder instance
@@ -607,10 +606,9 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a freeform tag
-         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
-         * "OR". Values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -620,26 +618,23 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagExists the value to set
          * @return this builder instance
@@ -650,14 +645,12 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified defined tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -667,20 +660,19 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param freeformTagExists the value to set
          * @return this builder instance
@@ -691,11 +683,10 @@ public class GetDatabaseFleetHealthMetricsRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified freeform tags exist the value will be returned. The key for each tag is
-         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * different tag names are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -706,19 +697,18 @@ public class GetDatabaseFleetHealthMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -730,7 +720,6 @@ public class GetDatabaseFleetHealthMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetDatabaseFleetHealthMetricsRequest o) {
@@ -761,11 +750,10 @@ public class GetDatabaseFleetHealthMetricsRequest
         /**
          * Build the instance of GetDatabaseFleetHealthMetricsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetDatabaseFleetHealthMetricsRequest
          */
@@ -779,8 +767,7 @@ public class GetDatabaseFleetHealthMetricsRequest
         /**
          * Build the instance of GetDatabaseFleetHealthMetricsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDatabaseFleetHealthMetricsRequest
@@ -808,17 +795,12 @@ public class GetDatabaseFleetHealthMetricsRequest
             request.definedTagExists = definedTagExists;
             request.freeformTagExists = freeformTagExists;
             return request;
-            // new GetDatabaseFleetHealthMetricsRequest(compareBaselineTime, compareTargetTime,
-            // opcRequestId, managedDatabaseGroupId, compartmentId, compareType,
-            // filterByMetricNames, filterByDatabaseType, filterByDatabaseSubType, page, limit,
-            // sortBy, sortOrder, filterByDatabaseDeploymentType, filterByDatabaseVersion,
-            // definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists);
+            // new GetDatabaseFleetHealthMetricsRequest(compareBaselineTime, compareTargetTime, opcRequestId, managedDatabaseGroupId, compartmentId, compareType, filterByMetricNames, filterByDatabaseType, filterByDatabaseSubType, page, limit, sortBy, sortOrder, filterByDatabaseDeploymentType, filterByDatabaseVersion, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -846,7 +828,6 @@ public class GetDatabaseFleetHealthMetricsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

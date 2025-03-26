@@ -5,12 +5,12 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The deployment category defines the broad separation of the deployment type into three
- * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
- * 'DATA_TRANSFORMS'.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum DeploymentCategory implements com.oracle.bmc.http.internal.BmcEnum {
+ * The deployment category defines the broad separation of the deployment type into three categories.
+ * Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum DeploymentCategory {
     DataReplication("DATA_REPLICATION"),
     StreamAnalytics("STREAM_ANALYTICS"),
     DataTransforms("DATA_TRANSFORMS"),

@@ -5,22 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The SQL performance data record for a specific SQL query. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The SQL performance data record for a specific SQL query.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MySqlDataSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MySqlDataSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MySqlDataSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schemaName",
@@ -142,615 +139,592 @@ public final class MySqlDataSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the default schema when executing the query. If a schema is not set as the
-         * default, then the value is NULL.
-         */
+         * The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
-         * The name of the default schema when executing the query. If a schema is not set as the
-         * default, then the value is NULL.
-         *
+         * The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The digest information of the normalized query. */
+        /**
+         * The digest information of the normalized query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
         /**
          * The digest information of the normalized query.
-         *
          * @param digest the value to set
          * @return this builder
-         */
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
-        /** The normalized query. */
+        /**
+         * The normalized query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digestText")
         private String digestText;
 
         /**
          * The normalized query.
-         *
          * @param digestText the value to set
          * @return this builder
-         */
+         **/
         public Builder digestText(String digestText) {
             this.digestText = digestText;
             this.__explicitlySet__.add("digestText");
             return this;
         }
-        /** The number Of times the query has been executed. */
+        /**
+         * The number Of times the query has been executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countStar")
         private java.math.BigDecimal countStar;
 
         /**
          * The number Of times the query has been executed.
-         *
          * @param countStar the value to set
          * @return this builder
-         */
+         **/
         public Builder countStar(java.math.BigDecimal countStar) {
             this.countStar = countStar;
             this.__explicitlySet__.add("countStar");
             return this;
         }
-        /** The total amount of time that has been spent executing the query. */
+        /**
+         * The total amount of time that has been spent executing the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumTimerWait")
         private java.math.BigDecimal sumTimerWait;
 
         /**
          * The total amount of time that has been spent executing the query.
-         *
          * @param sumTimerWait the value to set
          * @return this builder
-         */
+         **/
         public Builder sumTimerWait(java.math.BigDecimal sumTimerWait) {
             this.sumTimerWait = sumTimerWait;
             this.__explicitlySet__.add("sumTimerWait");
             return this;
         }
-        /** The fastest the query has been executed. */
+        /**
+         * The fastest the query has been executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minTimerWait")
         private java.math.BigDecimal minTimerWait;
 
         /**
          * The fastest the query has been executed.
-         *
          * @param minTimerWait the value to set
          * @return this builder
-         */
+         **/
         public Builder minTimerWait(java.math.BigDecimal minTimerWait) {
             this.minTimerWait = minTimerWait;
             this.__explicitlySet__.add("minTimerWait");
             return this;
         }
-        /** The average execution time. */
+        /**
+         * The average execution time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("avgTimerWait")
         private java.math.BigDecimal avgTimerWait;
 
         /**
          * The average execution time.
-         *
          * @param avgTimerWait the value to set
          * @return this builder
-         */
+         **/
         public Builder avgTimerWait(java.math.BigDecimal avgTimerWait) {
             this.avgTimerWait = avgTimerWait;
             this.__explicitlySet__.add("avgTimerWait");
             return this;
         }
-        /** The slowest the query has been executed. */
+        /**
+         * The slowest the query has been executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTimerWait")
         private java.math.BigDecimal maxTimerWait;
 
         /**
          * The slowest the query has been executed.
-         *
          * @param maxTimerWait the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTimerWait(java.math.BigDecimal maxTimerWait) {
             this.maxTimerWait = maxTimerWait;
             this.__explicitlySet__.add("maxTimerWait");
             return this;
         }
-        /** The maximum amount of controlled memory used by a statement during execution. */
+        /**
+         * The maximum amount of controlled memory used by a statement during execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
         private Long maxControlledMemory;
 
         /**
          * The maximum amount of controlled memory used by a statement during execution.
-         *
          * @param maxControlledMemory the value to set
          * @return this builder
-         */
+         **/
         public Builder maxControlledMemory(Long maxControlledMemory) {
             this.maxControlledMemory = maxControlledMemory;
             this.__explicitlySet__.add("maxControlledMemory");
             return this;
         }
-        /** The maximum amount of memory used by a statement during execution. */
+        /**
+         * The maximum amount of memory used by a statement during execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
         private Long maxTotalMemory;
 
         /**
          * The maximum amount of memory used by a statement during execution.
-         *
          * @param maxTotalMemory the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTotalMemory(Long maxTotalMemory) {
             this.maxTotalMemory = maxTotalMemory;
             this.__explicitlySet__.add("maxTotalMemory");
             return this;
         }
-        /** The total amount of time spent on CPU for this statement. */
+        /**
+         * The total amount of time spent on CPU for this statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
         private Long sumCpuTime;
 
         /**
          * The total amount of time spent on CPU for this statement.
-         *
          * @param sumCpuTime the value to set
          * @return this builder
-         */
+         **/
         public Builder sumCpuTime(Long sumCpuTime) {
             this.sumCpuTime = sumCpuTime;
             this.__explicitlySet__.add("sumCpuTime");
             return this;
         }
-        /** The total amount of time that has been spent waiting for table locks. */
+        /**
+         * The total amount of time that has been spent waiting for table locks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumLockTime")
         private java.math.BigDecimal sumLockTime;
 
         /**
          * The total amount of time that has been spent waiting for table locks.
-         *
          * @param sumLockTime the value to set
          * @return this builder
-         */
+         **/
         public Builder sumLockTime(java.math.BigDecimal sumLockTime) {
             this.sumLockTime = sumLockTime;
             this.__explicitlySet__.add("sumLockTime");
             return this;
         }
-        /** The total number of errors that have been encountered executing the query. */
+        /**
+         * The total number of errors that have been encountered executing the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumErrors")
         private java.math.BigDecimal sumErrors;
 
         /**
          * The total number of errors that have been encountered executing the query.
-         *
          * @param sumErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder sumErrors(java.math.BigDecimal sumErrors) {
             this.sumErrors = sumErrors;
             this.__explicitlySet__.add("sumErrors");
             return this;
         }
-        /** The total number of warnings that have been encountered executing the query. */
+        /**
+         * The total number of warnings that have been encountered executing the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumWarnings")
         private java.math.BigDecimal sumWarnings;
 
         /**
          * The total number of warnings that have been encountered executing the query.
-         *
          * @param sumWarnings the value to set
          * @return this builder
-         */
+         **/
         public Builder sumWarnings(java.math.BigDecimal sumWarnings) {
             this.sumWarnings = sumWarnings;
             this.__explicitlySet__.add("sumWarnings");
             return this;
         }
-        /** The total number of rows that have been modified by the query. */
+        /**
+         * The total number of rows that have been modified by the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumRowsAffected")
         private java.math.BigDecimal sumRowsAffected;
 
         /**
          * The total number of rows that have been modified by the query.
-         *
          * @param sumRowsAffected the value to set
          * @return this builder
-         */
+         **/
         public Builder sumRowsAffected(java.math.BigDecimal sumRowsAffected) {
             this.sumRowsAffected = sumRowsAffected;
             this.__explicitlySet__.add("sumRowsAffected");
             return this;
         }
-        /** The total number of rows that have been returned (sent) to the client. */
+        /**
+         * The total number of rows that have been returned (sent) to the client.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumRowsSent")
         private java.math.BigDecimal sumRowsSent;
 
         /**
          * The total number of rows that have been returned (sent) to the client.
-         *
          * @param sumRowsSent the value to set
          * @return this builder
-         */
+         **/
         public Builder sumRowsSent(java.math.BigDecimal sumRowsSent) {
             this.sumRowsSent = sumRowsSent;
             this.__explicitlySet__.add("sumRowsSent");
             return this;
         }
-        /** The total number of rows that have been examined by the query. */
+        /**
+         * The total number of rows that have been examined by the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumRowsExamined")
         private java.math.BigDecimal sumRowsExamined;
 
         /**
          * The total number of rows that have been examined by the query.
-         *
          * @param sumRowsExamined the value to set
          * @return this builder
-         */
+         **/
         public Builder sumRowsExamined(java.math.BigDecimal sumRowsExamined) {
             this.sumRowsExamined = sumRowsExamined;
             this.__explicitlySet__.add("sumRowsExamined");
             return this;
         }
         /**
-         * The total number of On-Disk internal temporary tables that have been created by the
-         * query.
-         */
+         * The total number of On-Disk internal temporary tables that have been created by the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumCreatedTempDiskTables")
         private java.math.BigDecimal sumCreatedTempDiskTables;
 
         /**
-         * The total number of On-Disk internal temporary tables that have been created by the
-         * query.
-         *
+         * The total number of On-Disk internal temporary tables that have been created by the query.
          * @param sumCreatedTempDiskTables the value to set
          * @return this builder
-         */
+         **/
         public Builder sumCreatedTempDiskTables(java.math.BigDecimal sumCreatedTempDiskTables) {
             this.sumCreatedTempDiskTables = sumCreatedTempDiskTables;
             this.__explicitlySet__.add("sumCreatedTempDiskTables");
             return this;
         }
         /**
-         * The total number of internal temporary tables (in memory or on disk), which have been
-         * created by the query.
-         */
+         * The total number of internal temporary tables (in memory or on disk), which have been created by the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumCreatedTempTables")
         private java.math.BigDecimal sumCreatedTempTables;
 
         /**
-         * The total number of internal temporary tables (in memory or on disk), which have been
-         * created by the query.
-         *
+         * The total number of internal temporary tables (in memory or on disk), which have been created by the query.
          * @param sumCreatedTempTables the value to set
          * @return this builder
-         */
+         **/
         public Builder sumCreatedTempTables(java.math.BigDecimal sumCreatedTempTables) {
             this.sumCreatedTempTables = sumCreatedTempTables;
             this.__explicitlySet__.add("sumCreatedTempTables");
             return this;
         }
         /**
-         * The total number of joins that have performed full table scans as there was no join
-         * condition or no index for the join condition. This is the same as the select_full_join
-         * status variable.
-         */
+         * The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSelectFullJoin")
         private java.math.BigDecimal sumSelectFullJoin;
 
         /**
-         * The total number of joins that have performed full table scans as there was no join
-         * condition or no index for the join condition. This is the same as the select_full_join
-         * status variable.
-         *
+         * The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
          * @param sumSelectFullJoin the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSelectFullJoin(java.math.BigDecimal sumSelectFullJoin) {
             this.sumSelectFullJoin = sumSelectFullJoin;
             this.__explicitlySet__.add("sumSelectFullJoin");
             return this;
         }
         /**
-         * The total number of joins that use a full range search. This is the same as the
-         * select_full_range_join status variable.
-         */
+         * The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSelectFullRangeJoin")
         private java.math.BigDecimal sumSelectFullRangeJoin;
 
         /**
-         * The total number of joins that use a full range search. This is the same as the
-         * select_full_range_join status variable.
-         *
+         * The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
          * @param sumSelectFullRangeJoin the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSelectFullRangeJoin(java.math.BigDecimal sumSelectFullRangeJoin) {
             this.sumSelectFullRangeJoin = sumSelectFullRangeJoin;
             this.__explicitlySet__.add("sumSelectFullRangeJoin");
             return this;
         }
         /**
-         * The total number of times the query has used a range search. This is the same as the
-         * select_range status variable.
-         */
+         * The total number of times the query has used a range search. This is the same as the select_range status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSelectRange")
         private java.math.BigDecimal sumSelectRange;
 
         /**
-         * The total number of times the query has used a range search. This is the same as the
-         * select_range status variable.
-         *
+         * The total number of times the query has used a range search. This is the same as the select_range status variable.
          * @param sumSelectRange the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSelectRange(java.math.BigDecimal sumSelectRange) {
             this.sumSelectRange = sumSelectRange;
             this.__explicitlySet__.add("sumSelectRange");
             return this;
         }
         /**
-         * The total number of joins by the query where the join does not have an index that checks
-         * for the index usage after each row. This is the same as the select_range_check status
-         * variable.
-         */
+         * The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSelectRangeCheck")
         private java.math.BigDecimal sumSelectRangeCheck;
 
         /**
-         * The total number of joins by the query where the join does not have an index that checks
-         * for the index usage after each row. This is the same as the select_range_check status
-         * variable.
-         *
+         * The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
          * @param sumSelectRangeCheck the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSelectRangeCheck(java.math.BigDecimal sumSelectRangeCheck) {
             this.sumSelectRangeCheck = sumSelectRangeCheck;
             this.__explicitlySet__.add("sumSelectRangeCheck");
             return this;
         }
         /**
-         * The total number of times the query has performed a full table scan on the first table in
-         * the join. This is the same as the select_scan status variable.
-         */
+         * The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSelectScan")
         private java.math.BigDecimal sumSelectScan;
 
         /**
-         * The total number of times the query has performed a full table scan on the first table in
-         * the join. This is the same as the select_scan status variable.
-         *
+         * The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
          * @param sumSelectScan the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSelectScan(java.math.BigDecimal sumSelectScan) {
             this.sumSelectScan = sumSelectScan;
             this.__explicitlySet__.add("sumSelectScan");
             return this;
         }
         /**
-         * The total number of sort merge passes that have been done to sort the result of the
-         * query. This is the same as the sort_merge_passes status variable.
-         */
+         * The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSortMergePasses")
         private java.math.BigDecimal sumSortMergePasses;
 
         /**
-         * The total number of sort merge passes that have been done to sort the result of the
-         * query. This is the same as the sort_merge_passes status variable.
-         *
+         * The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
          * @param sumSortMergePasses the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSortMergePasses(java.math.BigDecimal sumSortMergePasses) {
             this.sumSortMergePasses = sumSortMergePasses;
             this.__explicitlySet__.add("sumSortMergePasses");
             return this;
         }
         /**
-         * The total number of times a sort was done using ranges. This is the same as the
-         * sort_range status variable.
-         */
+         * The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSortRange")
         private java.math.BigDecimal sumSortRange;
 
         /**
-         * The total number of times a sort was done using ranges. This is the same as the
-         * sort_range status variable.
-         *
+         * The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
          * @param sumSortRange the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSortRange(java.math.BigDecimal sumSortRange) {
             this.sumSortRange = sumSortRange;
             this.__explicitlySet__.add("sumSortRange");
             return this;
         }
-        /** The total number of rows sorted. This is the same as the sort_rowsStatus variable. */
+        /**
+         * The total number of rows sorted. This is the same as the sort_rowsStatus variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSortRows")
         private java.math.BigDecimal sumSortRows;
 
         /**
          * The total number of rows sorted. This is the same as the sort_rowsStatus variable.
-         *
          * @param sumSortRows the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSortRows(java.math.BigDecimal sumSortRows) {
             this.sumSortRows = sumSortRows;
             this.__explicitlySet__.add("sumSortRows");
             return this;
         }
         /**
-         * The total number of times a sort was done by scanning the table. This is the same as the
-         * sort_scan status variable.
-         */
+         * The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumSortScan")
         private java.math.BigDecimal sumSortScan;
 
         /**
-         * The total number of times a sort was done by scanning the table. This is the same as the
-         * sort_scan status variable.
-         *
+         * The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
          * @param sumSortScan the value to set
          * @return this builder
-         */
+         **/
         public Builder sumSortScan(java.math.BigDecimal sumSortScan) {
             this.sumSortScan = sumSortScan;
             this.__explicitlySet__.add("sumSortScan");
             return this;
         }
-        /** The total number of times no index was used to execute the query. */
+        /**
+         * The total number of times no index was used to execute the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumNoIndexUsed")
         private java.math.BigDecimal sumNoIndexUsed;
 
         /**
          * The total number of times no index was used to execute the query.
-         *
          * @param sumNoIndexUsed the value to set
          * @return this builder
-         */
+         **/
         public Builder sumNoIndexUsed(java.math.BigDecimal sumNoIndexUsed) {
             this.sumNoIndexUsed = sumNoIndexUsed;
             this.__explicitlySet__.add("sumNoIndexUsed");
             return this;
         }
         /**
-         * The total number of times no good index was used. This means that the extra column in The
-         * EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
-         */
+         * The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sumNoGoodIndexUsed")
         private java.math.BigDecimal sumNoGoodIndexUsed;
 
         /**
-         * The total number of times no good index was used. This means that the extra column in The
-         * EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
-         *
+         * The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
          * @param sumNoGoodIndexUsed the value to set
          * @return this builder
-         */
+         **/
         public Builder sumNoGoodIndexUsed(java.math.BigDecimal sumNoGoodIndexUsed) {
             this.sumNoGoodIndexUsed = sumNoGoodIndexUsed;
             this.__explicitlySet__.add("sumNoGoodIndexUsed");
             return this;
         }
         /**
-         * The date and time the query was first seen. If the table is truncated, the first seen
-         * value is reset.
-         */
+         * The date and time the query was first seen. If the table is truncated, the first seen value is reset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firstSeen")
         private java.util.Date firstSeen;
 
         /**
-         * The date and time the query was first seen. If the table is truncated, the first seen
-         * value is reset.
-         *
+         * The date and time the query was first seen. If the table is truncated, the first seen value is reset.
          * @param firstSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder firstSeen(java.util.Date firstSeen) {
             this.firstSeen = firstSeen;
             this.__explicitlySet__.add("firstSeen");
             return this;
         }
-        /** The date and time the query was last seen. */
+        /**
+         * The date and time the query was last seen.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastSeen")
         private java.util.Date lastSeen;
 
         /**
          * The date and time the query was last seen.
-         *
          * @param lastSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder lastSeen(java.util.Date lastSeen) {
             this.lastSeen = lastSeen;
             this.__explicitlySet__.add("lastSeen");
             return this;
         }
         /**
-         * The 95th percentile of the query latency. That is, 95% of the queries complete in the
-         * time given or in less time.
-         */
+         * The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantile95")
         private java.math.BigDecimal quantile95;
 
         /**
-         * The 95th percentile of the query latency. That is, 95% of the queries complete in the
-         * time given or in less time.
-         *
+         * The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
          * @param quantile95 the value to set
          * @return this builder
-         */
+         **/
         public Builder quantile95(java.math.BigDecimal quantile95) {
             this.quantile95 = quantile95;
             this.__explicitlySet__.add("quantile95");
             return this;
         }
-        /** The 99th percentile of the query latency. */
+        /**
+         * The 99th percentile of the query latency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantile99")
         private java.math.BigDecimal quantile99;
 
         /**
          * The 99th percentile of the query latency.
-         *
          * @param quantile99 the value to set
          * @return this builder
-         */
+         **/
         public Builder quantile99(java.math.BigDecimal quantile99) {
             this.quantile99 = quantile99;
             this.__explicitlySet__.add("quantile99");
             return this;
         }
-        /** The 99.9th percentile of the query latency. */
+        /**
+         * The 99.9th percentile of the query latency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantile999")
         private java.math.BigDecimal quantile999;
 
         /**
          * The 99.9th percentile of the query latency.
-         *
          * @param quantile999 the value to set
          * @return this builder
-         */
+         **/
         public Builder quantile999(java.math.BigDecimal quantile999) {
             this.quantile999 = quantile999;
             this.__explicitlySet__.add("quantile999");
             return this;
         }
-        /** The number of query executions offloaded to HeatWave. */
+        /**
+         * The number of query executions offloaded to HeatWave.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
         private java.math.BigDecimal heatWaveOffloaded;
 
         /**
          * The number of query executions offloaded to HeatWave.
-         *
          * @param heatWaveOffloaded the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveOffloaded(java.math.BigDecimal heatWaveOffloaded) {
             this.heatWaveOffloaded = heatWaveOffloaded;
             this.__explicitlySet__.add("heatWaveOffloaded");
             return this;
         }
-        /** The number of query executions with HeatWave out-of-memory errors. */
+        /**
+         * The number of query executions with HeatWave out-of-memory errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
         private java.math.BigDecimal heatWaveOutOfMemory;
 
         /**
          * The number of query executions with HeatWave out-of-memory errors.
-         *
          * @param heatWaveOutOfMemory the value to set
          * @return this builder
-         */
+         **/
         public Builder heatWaveOutOfMemory(java.math.BigDecimal heatWaveOutOfMemory) {
             this.heatWaveOutOfMemory = heatWaveOutOfMemory;
             this.__explicitlySet__.add("heatWaveOutOfMemory");
@@ -923,7 +897,9 @@ public final class MySqlDataSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -933,536 +909,519 @@ public final class MySqlDataSummary
     }
 
     /**
-     * The name of the default schema when executing the query. If a schema is not set as the
-     * default, then the value is NULL.
-     */
+     * The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
-     * The name of the default schema when executing the query. If a schema is not set as the
-     * default, then the value is NULL.
-     *
+     * The name of the default schema when executing the query. If a schema is not set as the default, then the value is NULL.
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The digest information of the normalized query. */
+    /**
+     * The digest information of the normalized query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
     /**
      * The digest information of the normalized query.
-     *
      * @return the value
-     */
+     **/
     public String getDigest() {
         return digest;
     }
 
-    /** The normalized query. */
+    /**
+     * The normalized query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digestText")
     private final String digestText;
 
     /**
      * The normalized query.
-     *
      * @return the value
-     */
+     **/
     public String getDigestText() {
         return digestText;
     }
 
-    /** The number Of times the query has been executed. */
+    /**
+     * The number Of times the query has been executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countStar")
     private final java.math.BigDecimal countStar;
 
     /**
      * The number Of times the query has been executed.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCountStar() {
         return countStar;
     }
 
-    /** The total amount of time that has been spent executing the query. */
+    /**
+     * The total amount of time that has been spent executing the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumTimerWait")
     private final java.math.BigDecimal sumTimerWait;
 
     /**
      * The total amount of time that has been spent executing the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumTimerWait() {
         return sumTimerWait;
     }
 
-    /** The fastest the query has been executed. */
+    /**
+     * The fastest the query has been executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minTimerWait")
     private final java.math.BigDecimal minTimerWait;
 
     /**
      * The fastest the query has been executed.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMinTimerWait() {
         return minTimerWait;
     }
 
-    /** The average execution time. */
+    /**
+     * The average execution time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("avgTimerWait")
     private final java.math.BigDecimal avgTimerWait;
 
     /**
      * The average execution time.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getAvgTimerWait() {
         return avgTimerWait;
     }
 
-    /** The slowest the query has been executed. */
+    /**
+     * The slowest the query has been executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTimerWait")
     private final java.math.BigDecimal maxTimerWait;
 
     /**
      * The slowest the query has been executed.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMaxTimerWait() {
         return maxTimerWait;
     }
 
-    /** The maximum amount of controlled memory used by a statement during execution. */
+    /**
+     * The maximum amount of controlled memory used by a statement during execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
     private final Long maxControlledMemory;
 
     /**
      * The maximum amount of controlled memory used by a statement during execution.
-     *
      * @return the value
-     */
+     **/
     public Long getMaxControlledMemory() {
         return maxControlledMemory;
     }
 
-    /** The maximum amount of memory used by a statement during execution. */
+    /**
+     * The maximum amount of memory used by a statement during execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
     private final Long maxTotalMemory;
 
     /**
      * The maximum amount of memory used by a statement during execution.
-     *
      * @return the value
-     */
+     **/
     public Long getMaxTotalMemory() {
         return maxTotalMemory;
     }
 
-    /** The total amount of time spent on CPU for this statement. */
+    /**
+     * The total amount of time spent on CPU for this statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
     private final Long sumCpuTime;
 
     /**
      * The total amount of time spent on CPU for this statement.
-     *
      * @return the value
-     */
+     **/
     public Long getSumCpuTime() {
         return sumCpuTime;
     }
 
-    /** The total amount of time that has been spent waiting for table locks. */
+    /**
+     * The total amount of time that has been spent waiting for table locks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumLockTime")
     private final java.math.BigDecimal sumLockTime;
 
     /**
      * The total amount of time that has been spent waiting for table locks.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumLockTime() {
         return sumLockTime;
     }
 
-    /** The total number of errors that have been encountered executing the query. */
+    /**
+     * The total number of errors that have been encountered executing the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumErrors")
     private final java.math.BigDecimal sumErrors;
 
     /**
      * The total number of errors that have been encountered executing the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumErrors() {
         return sumErrors;
     }
 
-    /** The total number of warnings that have been encountered executing the query. */
+    /**
+     * The total number of warnings that have been encountered executing the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumWarnings")
     private final java.math.BigDecimal sumWarnings;
 
     /**
      * The total number of warnings that have been encountered executing the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumWarnings() {
         return sumWarnings;
     }
 
-    /** The total number of rows that have been modified by the query. */
+    /**
+     * The total number of rows that have been modified by the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumRowsAffected")
     private final java.math.BigDecimal sumRowsAffected;
 
     /**
      * The total number of rows that have been modified by the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumRowsAffected() {
         return sumRowsAffected;
     }
 
-    /** The total number of rows that have been returned (sent) to the client. */
+    /**
+     * The total number of rows that have been returned (sent) to the client.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumRowsSent")
     private final java.math.BigDecimal sumRowsSent;
 
     /**
      * The total number of rows that have been returned (sent) to the client.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumRowsSent() {
         return sumRowsSent;
     }
 
-    /** The total number of rows that have been examined by the query. */
+    /**
+     * The total number of rows that have been examined by the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumRowsExamined")
     private final java.math.BigDecimal sumRowsExamined;
 
     /**
      * The total number of rows that have been examined by the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumRowsExamined() {
         return sumRowsExamined;
     }
 
     /**
      * The total number of On-Disk internal temporary tables that have been created by the query.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumCreatedTempDiskTables")
     private final java.math.BigDecimal sumCreatedTempDiskTables;
 
     /**
      * The total number of On-Disk internal temporary tables that have been created by the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumCreatedTempDiskTables() {
         return sumCreatedTempDiskTables;
     }
 
     /**
-     * The total number of internal temporary tables (in memory or on disk), which have been created
-     * by the query.
-     */
+     * The total number of internal temporary tables (in memory or on disk), which have been created by the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumCreatedTempTables")
     private final java.math.BigDecimal sumCreatedTempTables;
 
     /**
-     * The total number of internal temporary tables (in memory or on disk), which have been created
-     * by the query.
-     *
+     * The total number of internal temporary tables (in memory or on disk), which have been created by the query.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumCreatedTempTables() {
         return sumCreatedTempTables;
     }
 
     /**
-     * The total number of joins that have performed full table scans as there was no join condition
-     * or no index for the join condition. This is the same as the select_full_join status variable.
-     */
+     * The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSelectFullJoin")
     private final java.math.BigDecimal sumSelectFullJoin;
 
     /**
-     * The total number of joins that have performed full table scans as there was no join condition
-     * or no index for the join condition. This is the same as the select_full_join status variable.
-     *
+     * The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSelectFullJoin() {
         return sumSelectFullJoin;
     }
 
     /**
-     * The total number of joins that use a full range search. This is the same as the
-     * select_full_range_join status variable.
-     */
+     * The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSelectFullRangeJoin")
     private final java.math.BigDecimal sumSelectFullRangeJoin;
 
     /**
-     * The total number of joins that use a full range search. This is the same as the
-     * select_full_range_join status variable.
-     *
+     * The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSelectFullRangeJoin() {
         return sumSelectFullRangeJoin;
     }
 
     /**
-     * The total number of times the query has used a range search. This is the same as the
-     * select_range status variable.
-     */
+     * The total number of times the query has used a range search. This is the same as the select_range status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSelectRange")
     private final java.math.BigDecimal sumSelectRange;
 
     /**
-     * The total number of times the query has used a range search. This is the same as the
-     * select_range status variable.
-     *
+     * The total number of times the query has used a range search. This is the same as the select_range status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSelectRange() {
         return sumSelectRange;
     }
 
     /**
-     * The total number of joins by the query where the join does not have an index that checks for
-     * the index usage after each row. This is the same as the select_range_check status variable.
-     */
+     * The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSelectRangeCheck")
     private final java.math.BigDecimal sumSelectRangeCheck;
 
     /**
-     * The total number of joins by the query where the join does not have an index that checks for
-     * the index usage after each row. This is the same as the select_range_check status variable.
-     *
+     * The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSelectRangeCheck() {
         return sumSelectRangeCheck;
     }
 
     /**
-     * The total number of times the query has performed a full table scan on the first table in the
-     * join. This is the same as the select_scan status variable.
-     */
+     * The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSelectScan")
     private final java.math.BigDecimal sumSelectScan;
 
     /**
-     * The total number of times the query has performed a full table scan on the first table in the
-     * join. This is the same as the select_scan status variable.
-     *
+     * The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSelectScan() {
         return sumSelectScan;
     }
 
     /**
-     * The total number of sort merge passes that have been done to sort the result of the query.
-     * This is the same as the sort_merge_passes status variable.
-     */
+     * The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSortMergePasses")
     private final java.math.BigDecimal sumSortMergePasses;
 
     /**
-     * The total number of sort merge passes that have been done to sort the result of the query.
-     * This is the same as the sort_merge_passes status variable.
-     *
+     * The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSortMergePasses() {
         return sumSortMergePasses;
     }
 
     /**
-     * The total number of times a sort was done using ranges. This is the same as the sort_range
-     * status variable.
-     */
+     * The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSortRange")
     private final java.math.BigDecimal sumSortRange;
 
     /**
-     * The total number of times a sort was done using ranges. This is the same as the sort_range
-     * status variable.
-     *
+     * The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSortRange() {
         return sumSortRange;
     }
 
-    /** The total number of rows sorted. This is the same as the sort_rowsStatus variable. */
+    /**
+     * The total number of rows sorted. This is the same as the sort_rowsStatus variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSortRows")
     private final java.math.BigDecimal sumSortRows;
 
     /**
      * The total number of rows sorted. This is the same as the sort_rowsStatus variable.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSortRows() {
         return sumSortRows;
     }
 
     /**
-     * The total number of times a sort was done by scanning the table. This is the same as the
-     * sort_scan status variable.
-     */
+     * The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumSortScan")
     private final java.math.BigDecimal sumSortScan;
 
     /**
-     * The total number of times a sort was done by scanning the table. This is the same as the
-     * sort_scan status variable.
-     *
+     * The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumSortScan() {
         return sumSortScan;
     }
 
-    /** The total number of times no index was used to execute the query. */
+    /**
+     * The total number of times no index was used to execute the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumNoIndexUsed")
     private final java.math.BigDecimal sumNoIndexUsed;
 
     /**
      * The total number of times no index was used to execute the query.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumNoIndexUsed() {
         return sumNoIndexUsed;
     }
 
     /**
-     * The total number of times no good index was used. This means that the extra column in The
-     * EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
-     */
+     * The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sumNoGoodIndexUsed")
     private final java.math.BigDecimal sumNoGoodIndexUsed;
 
     /**
-     * The total number of times no good index was used. This means that the extra column in The
-     * EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
-     *
+     * The total number of times no good index was used. This means that the extra column in The EXPLAIN output includes \u201CRange Checked For Each Record.\u201D
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getSumNoGoodIndexUsed() {
         return sumNoGoodIndexUsed;
     }
 
     /**
-     * The date and time the query was first seen. If the table is truncated, the first seen value
-     * is reset.
-     */
+     * The date and time the query was first seen. If the table is truncated, the first seen value is reset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("firstSeen")
     private final java.util.Date firstSeen;
 
     /**
-     * The date and time the query was first seen. If the table is truncated, the first seen value
-     * is reset.
-     *
+     * The date and time the query was first seen. If the table is truncated, the first seen value is reset.
      * @return the value
-     */
+     **/
     public java.util.Date getFirstSeen() {
         return firstSeen;
     }
 
-    /** The date and time the query was last seen. */
+    /**
+     * The date and time the query was last seen.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastSeen")
     private final java.util.Date lastSeen;
 
     /**
      * The date and time the query was last seen.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getLastSeen() {
         return lastSeen;
     }
 
     /**
-     * The 95th percentile of the query latency. That is, 95% of the queries complete in the time
-     * given or in less time.
-     */
+     * The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantile95")
     private final java.math.BigDecimal quantile95;
 
     /**
-     * The 95th percentile of the query latency. That is, 95% of the queries complete in the time
-     * given or in less time.
-     *
+     * The 95th percentile of the query latency. That is, 95% of the queries complete in the time given or in less time.
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getQuantile95() {
         return quantile95;
     }
 
-    /** The 99th percentile of the query latency. */
+    /**
+     * The 99th percentile of the query latency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantile99")
     private final java.math.BigDecimal quantile99;
 
     /**
      * The 99th percentile of the query latency.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getQuantile99() {
         return quantile99;
     }
 
-    /** The 99.9th percentile of the query latency. */
+    /**
+     * The 99.9th percentile of the query latency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantile999")
     private final java.math.BigDecimal quantile999;
 
     /**
      * The 99.9th percentile of the query latency.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getQuantile999() {
         return quantile999;
     }
 
-    /** The number of query executions offloaded to HeatWave. */
+    /**
+     * The number of query executions offloaded to HeatWave.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOffloaded")
     private final java.math.BigDecimal heatWaveOffloaded;
 
     /**
      * The number of query executions offloaded to HeatWave.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getHeatWaveOffloaded() {
         return heatWaveOffloaded;
     }
 
-    /** The number of query executions with HeatWave out-of-memory errors. */
+    /**
+     * The number of query executions with HeatWave out-of-memory errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("heatWaveOutOfMemory")
     private final java.math.BigDecimal heatWaveOutOfMemory;
 
     /**
      * The number of query executions with HeatWave out-of-memory errors.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getHeatWaveOutOfMemory() {
         return heatWaveOutOfMemory;
     }
@@ -1474,7 +1433,6 @@ public final class MySqlDataSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

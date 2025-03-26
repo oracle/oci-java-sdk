@@ -5,28 +5,27 @@
 package com.oracle.bmc.vault.model;
 
 /**
- * Generates Passphrase type secrets. By default, passphrase type secrets have no structure. The
- * generated content is stored in Base64 format. The SecretTemplate must have the
- * %GENERATED_PASSPHRASE% keyword, which is later replaced with the generated content, if provided.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+ * Generates Passphrase type secrets. By default, passphrase type secrets have no structure. The generated content is stored in Base64 format.
+ * The SecretTemplate must have the %GENERATED_PASSPHRASE% keyword, which is later replaced with the generated content, if provided.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PassphraseGenerationContext.Builder.class)
+    builder = PassphraseGenerationContext.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "generationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "generationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PassphraseGenerationContext extends SecretGenerationContext {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -38,31 +37,33 @@ public final class PassphraseGenerationContext extends SecretGenerationContext {
             this.__explicitlySet__.add("secretTemplate");
             return this;
         }
-        /** Name of passphrase generation template to generate passphrase type secret. */
+        /**
+         * Name of passphrase generation template to generate passphrase type secret.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("generationTemplate")
         private GenerationTemplate generationTemplate;
 
         /**
          * Name of passphrase generation template to generate passphrase type secret.
-         *
          * @param generationTemplate the value to set
          * @return this builder
-         */
+         **/
         public Builder generationTemplate(GenerationTemplate generationTemplate) {
             this.generationTemplate = generationTemplate;
             this.__explicitlySet__.add("generationTemplate");
             return this;
         }
-        /** Length of the passphrase to be generated */
+        /**
+         * Length of the passphrase to be generated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passphraseLength")
         private Integer passphraseLength;
 
         /**
          * Length of the passphrase to be generated
-         *
          * @param passphraseLength the value to set
          * @return this builder
-         */
+         **/
         public Builder passphraseLength(Integer passphraseLength) {
             this.passphraseLength = passphraseLength;
             this.__explicitlySet__.add("passphraseLength");
@@ -97,7 +98,9 @@ public final class PassphraseGenerationContext extends SecretGenerationContext {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,14 +119,16 @@ public final class PassphraseGenerationContext extends SecretGenerationContext {
         this.passphraseLength = passphraseLength;
     }
 
-    /** Name of passphrase generation template to generate passphrase type secret. */
-    public enum GenerationTemplate implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Name of passphrase generation template to generate passphrase type secret.
+     **/
+    public enum GenerationTemplate {
         SecretsDefaultPassword("SECRETS_DEFAULT_PASSWORD"),
         DbaasDefaultPassword("DBAAS_DEFAULT_PASSWORD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -162,28 +167,30 @@ public final class PassphraseGenerationContext extends SecretGenerationContext {
             return UnknownEnumValue;
         }
     };
-    /** Name of passphrase generation template to generate passphrase type secret. */
+    /**
+     * Name of passphrase generation template to generate passphrase type secret.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("generationTemplate")
     private final GenerationTemplate generationTemplate;
 
     /**
      * Name of passphrase generation template to generate passphrase type secret.
-     *
      * @return the value
-     */
+     **/
     public GenerationTemplate getGenerationTemplate() {
         return generationTemplate;
     }
 
-    /** Length of the passphrase to be generated */
+    /**
+     * Length of the passphrase to be generated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passphraseLength")
     private final Integer passphraseLength;
 
     /**
      * Length of the passphrase to be generated
-     *
      * @return the value
-     */
+     **/
     public Integer getPassphraseLength() {
         return passphraseLength;
     }
@@ -195,7 +202,6 @@ public final class PassphraseGenerationContext extends SecretGenerationContext {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

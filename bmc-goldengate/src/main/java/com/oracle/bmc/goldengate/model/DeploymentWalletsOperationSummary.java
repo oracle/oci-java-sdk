@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the deployment wallets operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the deployment wallets operations.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DeploymentWalletsOperationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DeploymentWalletsOperationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DeploymentWalletsOperationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "walletOperationId",
@@ -50,48 +50,51 @@ public final class DeploymentWalletsOperationSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The UUID of the wallet operation performed by the customer. If provided, this will
-         * reference a key which the customer can use to query or search a particular wallet
-         * operation
-         */
+         * The UUID of the wallet operation performed by the customer.
+         * If provided, this will reference a key which the customer can use to query or search a particular wallet operation
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletOperationId")
         private String walletOperationId;
 
         /**
-         * The UUID of the wallet operation performed by the customer. If provided, this will
-         * reference a key which the customer can use to query or search a particular wallet
-         * operation
+         * The UUID of the wallet operation performed by the customer.
+         * If provided, this will reference a key which the customer can use to query or search a particular wallet operation
          *
          * @param walletOperationId the value to set
          * @return this builder
-         */
+         **/
         public Builder walletOperationId(String walletOperationId) {
             this.walletOperationId = walletOperationId;
             this.__explicitlySet__.add("walletOperationId");
             return this;
         }
         /**
-         * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key
-         * that customers will be required to ensure the policies are established to permit
-         * GoldenGate to use this Secret.
-         */
+         * The OCID of the customer's GoldenGate Service Secret.
+         * If provided, it references a key that customers will be required to ensure the policies are established
+         * to permit GoldenGate to use this Secret.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
         private String walletSecretId;
 
         /**
-         * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key
-         * that customers will be required to ensure the policies are established to permit
-         * GoldenGate to use this Secret.
+         * The OCID of the customer's GoldenGate Service Secret.
+         * If provided, it references a key that customers will be required to ensure the policies are established
+         * to permit GoldenGate to use this Secret.
          *
          * @param walletSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder walletSecretId(String walletSecretId) {
             this.walletSecretId = walletSecretId;
             this.__explicitlySet__.add("walletSecretId");
             return this;
         }
-        /** The operation type of the deployment wallet. */
+        /**
+         * The operation type of the deployment wallet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentWalletOperationType")
         private DeploymentWalletOperationType deploymentWalletOperationType;
 
@@ -100,14 +103,17 @@ public final class DeploymentWalletsOperationSummary
          *
          * @param deploymentWalletOperationType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentWalletOperationType(
                 DeploymentWalletOperationType deploymentWalletOperationType) {
             this.deploymentWalletOperationType = deploymentWalletOperationType;
             this.__explicitlySet__.add("deploymentWalletOperationType");
             return this;
         }
-        /** The status of the deployment wallet. */
+        /**
+         * The status of the deployment wallet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentWalletOperationStatus")
         private DeploymentWalletStatus deploymentWalletOperationStatus;
 
@@ -116,7 +122,7 @@ public final class DeploymentWalletsOperationSummary
          *
          * @param deploymentWalletOperationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentWalletOperationStatus(
                 DeploymentWalletStatus deploymentWalletOperationStatus) {
             this.deploymentWalletOperationStatus = deploymentWalletOperationStatus;
@@ -126,7 +132,8 @@ public final class DeploymentWalletsOperationSummary
         /**
          * The date and time the request was started. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
@@ -136,7 +143,7 @@ public final class DeploymentWalletsOperationSummary
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -145,7 +152,8 @@ public final class DeploymentWalletsOperationSummary
         /**
          * The date and time the request was finished. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
@@ -155,7 +163,7 @@ public final class DeploymentWalletsOperationSummary
          *
          * @param timeCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
@@ -204,7 +212,9 @@ public final class DeploymentWalletsOperationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -214,42 +224,47 @@ public final class DeploymentWalletsOperationSummary
     }
 
     /**
-     * The UUID of the wallet operation performed by the customer. If provided, this will reference
-     * a key which the customer can use to query or search a particular wallet operation
-     */
+     * The UUID of the wallet operation performed by the customer.
+     * If provided, this will reference a key which the customer can use to query or search a particular wallet operation
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletOperationId")
     private final String walletOperationId;
 
     /**
-     * The UUID of the wallet operation performed by the customer. If provided, this will reference
-     * a key which the customer can use to query or search a particular wallet operation
+     * The UUID of the wallet operation performed by the customer.
+     * If provided, this will reference a key which the customer can use to query or search a particular wallet operation
      *
      * @return the value
-     */
+     **/
     public String getWalletOperationId() {
         return walletOperationId;
     }
 
     /**
-     * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key that
-     * customers will be required to ensure the policies are established to permit GoldenGate to use
-     * this Secret.
-     */
+     * The OCID of the customer's GoldenGate Service Secret.
+     * If provided, it references a key that customers will be required to ensure the policies are established
+     * to permit GoldenGate to use this Secret.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("walletSecretId")
     private final String walletSecretId;
 
     /**
-     * The OCID of the customer's GoldenGate Service Secret. If provided, it references a key that
-     * customers will be required to ensure the policies are established to permit GoldenGate to use
-     * this Secret.
+     * The OCID of the customer's GoldenGate Service Secret.
+     * If provided, it references a key that customers will be required to ensure the policies are established
+     * to permit GoldenGate to use this Secret.
      *
      * @return the value
-     */
+     **/
     public String getWalletSecretId() {
         return walletSecretId;
     }
 
-    /** The operation type of the deployment wallet. */
+    /**
+     * The operation type of the deployment wallet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentWalletOperationType")
     private final DeploymentWalletOperationType deploymentWalletOperationType;
 
@@ -257,12 +272,15 @@ public final class DeploymentWalletsOperationSummary
      * The operation type of the deployment wallet.
      *
      * @return the value
-     */
+     **/
     public DeploymentWalletOperationType getDeploymentWalletOperationType() {
         return deploymentWalletOperationType;
     }
 
-    /** The status of the deployment wallet. */
+    /**
+     * The status of the deployment wallet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentWalletOperationStatus")
     private final DeploymentWalletStatus deploymentWalletOperationStatus;
 
@@ -270,7 +288,7 @@ public final class DeploymentWalletsOperationSummary
      * The status of the deployment wallet.
      *
      * @return the value
-     */
+     **/
     public DeploymentWalletStatus getDeploymentWalletOperationStatus() {
         return deploymentWalletOperationStatus;
     }
@@ -278,7 +296,8 @@ public final class DeploymentWalletsOperationSummary
     /**
      * The date and time the request was started. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
@@ -287,7 +306,7 @@ public final class DeploymentWalletsOperationSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
@@ -295,7 +314,8 @@ public final class DeploymentWalletsOperationSummary
     /**
      * The date and time the request was finished. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
@@ -304,7 +324,7 @@ public final class DeploymentWalletsOperationSummary
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
@@ -316,7 +336,6 @@ public final class DeploymentWalletsOperationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

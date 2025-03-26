@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The family that the compute shape belongs to. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ModelDeploymentShapeSeries implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The family that the compute shape belongs to.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ModelDeploymentShapeSeries {
     AmdRome("AMD_ROME"),
     IntelSkylake("INTEL_SKYLAKE"),
     NvidiaGpu("NVIDIA_GPU"),

@@ -5,21 +5,19 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Information about a binary artifact of Java. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Information about a binary artifact of Java.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JavaArtifact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JavaArtifact extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "artifactId",
@@ -68,155 +66,161 @@ public final class JavaArtifact extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for the artifact. */
+        /**
+         * Unique identifier for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
         private Long artifactId;
 
         /**
          * Unique identifier for the artifact.
-         *
          * @param artifactId the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactId(Long artifactId) {
             this.artifactId = artifactId;
             this.__explicitlySet__.add("artifactId");
             return this;
         }
         /**
-         * Description of the binary artifact. Typically includes the OS, architecture, and
-         * installer type.
-         */
+         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactDescription")
         private String artifactDescription;
 
         /**
-         * Description of the binary artifact. Typically includes the OS, architecture, and
-         * installer type.
-         *
+         * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
          * @param artifactDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactDescription(String artifactDescription) {
             this.artifactDescription = artifactDescription;
             this.__explicitlySet__.add("artifactDescription");
             return this;
         }
-        /** Product content type of this artifact. */
+        /**
+         * Product content type of this artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
         private ArtifactContentType artifactContentType;
 
         /**
          * Product content type of this artifact.
-         *
          * @param artifactContentType the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactContentType(ArtifactContentType artifactContentType) {
             this.artifactContentType = artifactContentType;
             this.__explicitlySet__.add("artifactContentType");
             return this;
         }
-        /** Approximate compressed file size in bytes. */
+        /**
+         * Approximate compressed file size in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateFileSizeInBytes")
         private Long approximateFileSizeInBytes;
 
         /**
          * Approximate compressed file size in bytes.
-         *
          * @param approximateFileSizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateFileSizeInBytes(Long approximateFileSizeInBytes) {
             this.approximateFileSizeInBytes = approximateFileSizeInBytes;
             this.__explicitlySet__.add("approximateFileSizeInBytes");
             return this;
         }
-        /** SHA256 checksum of the artifact. */
+        /**
+         * SHA256 checksum of the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha256")
         private String sha256;
 
         /**
          * SHA256 checksum of the artifact.
-         *
          * @param sha256 the value to set
          * @return this builder
-         */
+         **/
         public Builder sha256(String sha256) {
             this.sha256 = sha256;
             this.__explicitlySet__.add("sha256");
             return this;
         }
-        /** The file name of the artifact. */
+        /**
+         * The file name of the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifactFileName")
         private String artifactFileName;
 
         /**
          * The file name of the artifact.
-         *
          * @param artifactFileName the value to set
          * @return this builder
-         */
+         **/
         public Builder artifactFileName(String artifactFileName) {
             this.artifactFileName = artifactFileName;
             this.__explicitlySet__.add("artifactFileName");
             return this;
         }
-        /** The target Operating System family for the artifact. */
+        /**
+         * The target Operating System family for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private String osFamily;
 
         /**
          * The target Operating System family for the artifact.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(String osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The target Operating System architecture for the artifact. */
+        /**
+         * The target Operating System architecture for the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private String architecture;
 
         /**
          * The target Operating System architecture for the artifact.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(String architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /** The package type(typically the file extension) of the artifact. */
+        /**
+         * The package type(typically the file extension) of the artifact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private String packageType;
 
         /**
          * The package type(typically the file extension) of the artifact.
-         *
          * @param packageType the value to set
          * @return this builder
-         */
+         **/
         public Builder packageType(String packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
-        /** Additional information about the package type. */
+        /**
+         * Additional information about the package type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
         private String packageTypeDetail;
 
         /**
          * Additional information about the package type.
-         *
          * @param packageTypeDetail the value to set
          * @return this builder
-         */
+         **/
         public Builder packageTypeDetail(String packageTypeDetail) {
             this.packageTypeDetail = packageTypeDetail;
             this.__explicitlySet__.add("packageTypeDetail");
@@ -224,62 +228,61 @@ public final class JavaArtifact extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The endpoint that returns a short-lived artifact download URL in the response payload.
-         * This download url can then be used for downloading the artifact. See this
-         * [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl)
-         * for more details.
-         */
+         * This download url can then be used for downloading the artifact.
+         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
         private String downloadUrl;
 
         /**
          * The endpoint that returns a short-lived artifact download URL in the response payload.
-         * This download url can then be used for downloading the artifact. See this
-         * [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl)
-         * for more details.
+         * This download url can then be used for downloading the artifact.
+         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
          *
          * @param downloadUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder downloadUrl(String downloadUrl) {
             this.downloadUrl = downloadUrl;
             this.__explicitlySet__.add("downloadUrl");
             return this;
         }
         /**
-         * The endpoint for downloading this artifact from command line, automatically in scripts
-         * and dockerfiles. Depending on the context, this can point to the archive or latest update
-         * release version artifact in the specified family.
-         */
+         * The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+         * Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptDownloadUrl")
         private String scriptDownloadUrl;
 
         /**
-         * The endpoint for downloading this artifact from command line, automatically in scripts
-         * and dockerfiles. Depending on the context, this can point to the archive or latest update
-         * release version artifact in the specified family.
+         * The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+         * Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
          *
          * @param scriptDownloadUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder scriptDownloadUrl(String scriptDownloadUrl) {
             this.scriptDownloadUrl = scriptDownloadUrl;
             this.__explicitlySet__.add("scriptDownloadUrl");
             return this;
         }
         /**
-         * The URL for retrieving the checksum for the artifact. Depending on the context, this can
-         * point to the checksum of the archive or latest update release version artifact.
-         */
+         * The URL for retrieving the checksum for the artifact.
+         * Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scriptChecksumUrl")
         private String scriptChecksumUrl;
 
         /**
-         * The URL for retrieving the checksum for the artifact. Depending on the context, this can
-         * point to the checksum of the archive or latest update release version artifact.
+         * The URL for retrieving the checksum for the artifact.
+         * Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
          *
          * @param scriptChecksumUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder scriptChecksumUrl(String scriptChecksumUrl) {
             this.scriptChecksumUrl = scriptChecksumUrl;
             this.__explicitlySet__.add("scriptChecksumUrl");
@@ -356,7 +359,9 @@ public final class JavaArtifact extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -365,193 +370,198 @@ public final class JavaArtifact extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for the artifact. */
+    /**
+     * Unique identifier for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactId")
     private final Long artifactId;
 
     /**
      * Unique identifier for the artifact.
-     *
      * @return the value
-     */
+     **/
     public Long getArtifactId() {
         return artifactId;
     }
 
     /**
-     * Description of the binary artifact. Typically includes the OS, architecture, and installer
-     * type.
-     */
+     * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactDescription")
     private final String artifactDescription;
 
     /**
-     * Description of the binary artifact. Typically includes the OS, architecture, and installer
-     * type.
-     *
+     * Description of the binary artifact. Typically includes the OS, architecture, and installer type.
      * @return the value
-     */
+     **/
     public String getArtifactDescription() {
         return artifactDescription;
     }
 
-    /** Product content type of this artifact. */
+    /**
+     * Product content type of this artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactContentType")
     private final ArtifactContentType artifactContentType;
 
     /**
      * Product content type of this artifact.
-     *
      * @return the value
-     */
+     **/
     public ArtifactContentType getArtifactContentType() {
         return artifactContentType;
     }
 
-    /** Approximate compressed file size in bytes. */
+    /**
+     * Approximate compressed file size in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateFileSizeInBytes")
     private final Long approximateFileSizeInBytes;
 
     /**
      * Approximate compressed file size in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getApproximateFileSizeInBytes() {
         return approximateFileSizeInBytes;
     }
 
-    /** SHA256 checksum of the artifact. */
+    /**
+     * SHA256 checksum of the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha256")
     private final String sha256;
 
     /**
      * SHA256 checksum of the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getSha256() {
         return sha256;
     }
 
-    /** The file name of the artifact. */
+    /**
+     * The file name of the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifactFileName")
     private final String artifactFileName;
 
     /**
      * The file name of the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getArtifactFileName() {
         return artifactFileName;
     }
 
-    /** The target Operating System family for the artifact. */
+    /**
+     * The target Operating System family for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final String osFamily;
 
     /**
      * The target Operating System family for the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getOsFamily() {
         return osFamily;
     }
 
-    /** The target Operating System architecture for the artifact. */
+    /**
+     * The target Operating System architecture for the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final String architecture;
 
     /**
      * The target Operating System architecture for the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getArchitecture() {
         return architecture;
     }
 
-    /** The package type(typically the file extension) of the artifact. */
+    /**
+     * The package type(typically the file extension) of the artifact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final String packageType;
 
     /**
      * The package type(typically the file extension) of the artifact.
-     *
      * @return the value
-     */
+     **/
     public String getPackageType() {
         return packageType;
     }
 
-    /** Additional information about the package type. */
+    /**
+     * Additional information about the package type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageTypeDetail")
     private final String packageTypeDetail;
 
     /**
      * Additional information about the package type.
-     *
      * @return the value
-     */
+     **/
     public String getPackageTypeDetail() {
         return packageTypeDetail;
     }
 
     /**
-     * The endpoint that returns a short-lived artifact download URL in the response payload. This
-     * download url can then be used for downloading the artifact. See this
-     * [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl)
-     * for more details.
-     */
+     * The endpoint that returns a short-lived artifact download URL in the response payload.
+     * This download url can then be used for downloading the artifact.
+     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
     private final String downloadUrl;
 
     /**
-     * The endpoint that returns a short-lived artifact download URL in the response payload. This
-     * download url can then be used for downloading the artifact. See this
-     * [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl)
-     * for more details.
+     * The endpoint that returns a short-lived artifact download URL in the response payload.
+     * This download url can then be used for downloading the artifact.
+     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
      *
      * @return the value
-     */
+     **/
     public String getDownloadUrl() {
         return downloadUrl;
     }
 
     /**
-     * The endpoint for downloading this artifact from command line, automatically in scripts and
-     * dockerfiles. Depending on the context, this can point to the archive or latest update release
-     * version artifact in the specified family.
-     */
+     * The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+     * Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptDownloadUrl")
     private final String scriptDownloadUrl;
 
     /**
-     * The endpoint for downloading this artifact from command line, automatically in scripts and
-     * dockerfiles. Depending on the context, this can point to the archive or latest update release
-     * version artifact in the specified family.
+     * The endpoint for downloading this artifact from command line, automatically in scripts and dockerfiles.
+     * Depending on the context, this can point to the archive or latest update release version artifact in the specified family.
      *
      * @return the value
-     */
+     **/
     public String getScriptDownloadUrl() {
         return scriptDownloadUrl;
     }
 
     /**
-     * The URL for retrieving the checksum for the artifact. Depending on the context, this can
-     * point to the checksum of the archive or latest update release version artifact.
-     */
+     * The URL for retrieving the checksum for the artifact.
+     * Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scriptChecksumUrl")
     private final String scriptChecksumUrl;
 
     /**
-     * The URL for retrieving the checksum for the artifact. Depending on the context, this can
-     * point to the checksum of the archive or latest update release version artifact.
+     * The URL for retrieving the checksum for the artifact.
+     * Depending on the context, this can point to the checksum of the archive or latest update release version artifact.
      *
      * @return the value
-     */
+     **/
     public String getScriptChecksumUrl() {
         return scriptChecksumUrl;
     }
@@ -563,7 +573,6 @@ public final class JavaArtifact extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

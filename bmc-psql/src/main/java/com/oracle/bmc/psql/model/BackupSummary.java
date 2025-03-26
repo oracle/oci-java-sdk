@@ -5,21 +5,19 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Summary information for a backup. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Summary information for a backup.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackupSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackupSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -77,257 +75,255 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique identifier for the backup. Immutable on creation. */
+        /**
+         * A unique identifier for the backup. Immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * A unique identifier for the backup. Immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A user-friendly display name for the backup. Avoid entering confidential information. */
+        /**
+         * A user-friendly display name for the backup. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly display name for the backup. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the backup.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the backup.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The date and time the backup was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the backup was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the backup was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the backup was created, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the backup was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the backup was updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the backup was updated, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the backup was updated, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the backup. */
+        /**
+         * The current state of the backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Backup.LifecycleState lifecycleState;
 
         /**
          * The current state of the backup.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Backup.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Specifies whether the backup was created manually, taken on schedule defined in the a
-         * backup policy, or copied from the remote location.
-         */
+         * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private Backup.SourceType sourceType;
 
         /**
-         * Specifies whether the backup was created manually, taken on schedule defined in the a
-         * backup policy, or copied from the remote location.
-         *
+         * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
          * @param sourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceType(Backup.SourceType sourceType) {
             this.sourceType = sourceType;
             this.__explicitlySet__.add("sourceType");
             return this;
         }
         /**
-         * The date and time the backup was created. This is the time the actual point-in-time data
-         * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
-         * format.
+         * The date and time the backup was created.
+         * This is the time the actual point-in-time data snapshot was taken,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
         private java.util.Date timeCreatedPrecise;
 
         /**
-         * The date and time the backup was created. This is the time the actual point-in-time data
-         * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
-         * format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the backup was created.
+         * This is the time the actual point-in-time data snapshot was taken,
+         * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreatedPrecise the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreatedPrecise(java.util.Date timeCreatedPrecise) {
             this.timeCreatedPrecise = timeCreatedPrecise;
             this.__explicitlySet__.add("timeCreatedPrecise");
             return this;
         }
-        /** The size of the backup, in gigabytes. */
+        /**
+         * The size of the backup, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
         private Integer backupSize;
 
         /**
          * The size of the backup, in gigabytes.
-         *
          * @param backupSize the value to set
          * @return this builder
-         */
+         **/
         public Builder backupSize(Integer backupSize) {
             this.backupSize = backupSize;
             this.__explicitlySet__.add("backupSize");
             return this;
         }
         /**
-         * The backup's source database system's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The backup's source database system's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
         /**
-         * The backup's source database system's
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The backup's source database system's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
-        /** Backup retention period in days. */
+        /**
+         * Backup retention period in days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
         private Integer retentionPeriod;
 
         /**
          * Backup retention period in days.
-         *
          * @param retentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriod(Integer retentionPeriod) {
             this.retentionPeriod = retentionPeriod;
             this.__explicitlySet__.add("retentionPeriod");
             return this;
         }
-        /** List of status for Backup Copy */
+        /**
+         * List of status for Backup Copy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
         private java.util.List<BackupCopyStatusDetails> copyStatus;
 
         /**
          * List of status for Backup Copy
-         *
          * @param copyStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder copyStatus(java.util.List<BackupCopyStatusDetails> copyStatus) {
             this.copyStatus = copyStatus;
             this.__explicitlySet__.add("copyStatus");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -336,7 +332,8 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -346,7 +343,7 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -354,19 +351,20 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -455,7 +453,9 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -464,264 +464,264 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** A unique identifier for the backup. Immutable on creation. */
+    /**
+     * A unique identifier for the backup. Immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * A unique identifier for the backup. Immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A user-friendly display name for the backup. Avoid entering confidential information. */
+    /**
+     * A user-friendly display name for the backup. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly display name for the backup. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the backup.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the backup.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The date and time the backup was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the backup was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the backup was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the backup was created, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the backup was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the backup was updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the backup was updated, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the backup was updated, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the backup. */
+    /**
+     * The current state of the backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Backup.LifecycleState lifecycleState;
 
     /**
      * The current state of the backup.
-     *
      * @return the value
-     */
+     **/
     public Backup.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
-     * policy, or copied from the remote location.
-     */
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final Backup.SourceType sourceType;
 
     /**
-     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
-     * policy, or copied from the remote location.
-     *
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup policy, or copied from the remote location.
      * @return the value
-     */
+     **/
     public Backup.SourceType getSourceType() {
         return sourceType;
     }
 
     /**
-     * The date and time the backup was created. This is the time the actual point-in-time data
-     * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
-     * format.
+     * The date and time the backup was created.
+     * This is the time the actual point-in-time data snapshot was taken,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreatedPrecise")
     private final java.util.Date timeCreatedPrecise;
 
     /**
-     * The date and time the backup was created. This is the time the actual point-in-time data
-     * snapshot was taken, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp
-     * format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the backup was created.
+     * This is the time the actual point-in-time data snapshot was taken,
+     * expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreatedPrecise() {
         return timeCreatedPrecise;
     }
 
-    /** The size of the backup, in gigabytes. */
+    /**
+     * The size of the backup, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSize")
     private final Integer backupSize;
 
     /**
      * The size of the backup, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getBackupSize() {
         return backupSize;
     }
 
     /**
-     * The backup's source database system's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The backup's source database system's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
     /**
-     * The backup's source database system's
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * The backup's source database system's [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
 
-    /** Backup retention period in days. */
+    /**
+     * Backup retention period in days.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
     private final Integer retentionPeriod;
 
     /**
      * Backup retention period in days.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriod() {
         return retentionPeriod;
     }
 
-    /** List of status for Backup Copy */
+    /**
+     * List of status for Backup Copy
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("copyStatus")
     private final java.util.List<BackupCopyStatusDetails> copyStatus;
 
     /**
      * List of status for Backup Copy
-     *
      * @return the value
-     */
+     **/
     public java.util.List<BackupCopyStatusDetails> getCopyStatus() {
         return copyStatus;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -733,7 +733,6 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

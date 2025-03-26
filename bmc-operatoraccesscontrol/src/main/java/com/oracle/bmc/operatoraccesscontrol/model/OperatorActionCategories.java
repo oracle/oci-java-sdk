@@ -5,15 +5,16 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Operator action categories - "Service Diagnostics: Allows non-privileged read-only access to the
- * layer of the system. No privileged commands are available under this operator action." - "Service
- * Management: Allows non-root services to be restarted and maintained." - "System Management:
- * Allows root services pertinent to the layer to be restarted, all processes to be restarted." -
- * "Full Administration: Allows full root access without any constraints." - "Cell Management: Only
- * applicable to cell server layer of Exadata. Allows cell management actions."
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperatorActionCategories implements com.oracle.bmc.http.internal.BmcEnum {
+ * Operator action categories
+ * - "Service Diagnostics: Allows non-privileged read-only access to the layer of the system.  No privileged commands are available under this operator action."
+ * - "Service Management: Allows non-root services to be restarted and maintained."
+ * - "System Management: Allows root services pertinent to the layer to be restarted, all processes to be restarted."
+ * - "Full Administration: Allows full root access without any constraints."
+ * - "Cell Management: Only applicable to cell server layer of Exadata. Allows cell management actions."
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OperatorActionCategories {
     Servicediagnostics("SERVICEDIAGNOSTICS"),
     Servicemanagement("SERVICEMANAGEMENT"),
     Systemmanagement("SYSTEMMANAGEMENT"),

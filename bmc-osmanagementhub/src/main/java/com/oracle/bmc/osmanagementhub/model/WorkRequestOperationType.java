@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum WorkRequestOperationType {
     InstallPackages("INSTALL_PACKAGES"),
     RemovePackages("REMOVE_PACKAGES"),
     UpdatePackages("UPDATE_PACKAGES"),

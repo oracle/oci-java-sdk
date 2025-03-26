@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of an Oracle NoSQL Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of an Oracle NoSQL Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleNosqlConnection.Builder.class)
+    builder = OracleNosqlConnection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleNosqlConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,123 +199,119 @@ public final class OracleNosqlConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Oracle NoSQL technology type. */
+        /**
+         * The Oracle NoSQL technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Oracle NoSQL technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * related OCI tenancy.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * related OCI tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
          *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
         /**
-         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-         * default to the default region.
-         */
+         * The name of the region. e.g.: us-ashburn-1
+         * If the region is not provided, backend will default to the default region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-         * default to the default region.
+         * The name of the region. e.g.: us-ashburn-1
+         * If the region is not provided, backend will default to the default region.
          *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OCI user who will access the Oracle NoSQL database. The user must have write access to
-         * the table they want to connect to. If the user is not provided, backend will default to
-         * the user who is calling the API endpoint.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Oracle NoSQL database.
+         * The user must have write access to the table they want to connect to.
+         * If the user is not provided, backend will default to the user who is calling the API endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OCI user who will access the Oracle NoSQL database. The user must have write access to
-         * the table they want to connect to. If the user is not provided, backend will default to
-         * the user who is calling the API endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Oracle NoSQL database.
+         * The user must have write access to the table they want to connect to.
+         * If the user is not provided, backend will default to the user who is calling the API endpoint.
          *
          * @param userId the value to set
          * @return this builder
-         */
+         **/
         public Builder userId(String userId) {
             this.userId = userId;
             this.__explicitlySet__.add("userId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the private key file (PEM file) corresponding to the
-         * API key of the fingerprint. See documentation:
-         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
-         * When provided, 'privateKeyFile' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
         private String privateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the content of the private key file (PEM file) corresponding to the
-         * API key of the fingerprint. See documentation:
-         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
-         * When provided, 'privateKeyFile' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
          *
          * @param privateKeyFileSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
             this.privateKeyFileSecretId = privateKeyFileSecretId;
             this.__explicitlySet__.add("privateKeyFileSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the passphrase of the private key. Note: When provided,
-         * 'privateKeyPassphrase' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
         private String privateKeyPassphraseSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the passphrase of the private key. Note: When provided,
-         * 'privateKeyPassphrase' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
          *
          * @param privateKeyPassphraseSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
             this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             this.__explicitlySet__.add("privateKeyPassphraseSecretId");
@@ -322,7 +319,8 @@ public final class OracleNosqlConnection extends Connection {
         }
         /**
          * Indicates that the user intents to connect to the instance through resource principal.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
         private Boolean shouldUseResourcePrincipal;
 
@@ -331,7 +329,7 @@ public final class OracleNosqlConnection extends Connection {
          *
          * @param shouldUseResourcePrincipal the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
             this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
             this.__explicitlySet__.add("shouldUseResourcePrincipal");
@@ -460,7 +458,9 @@ public final class OracleNosqlConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -526,13 +526,15 @@ public final class OracleNosqlConnection extends Connection {
         this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
-    /** The Oracle NoSQL technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Oracle NoSQL technology type.
+     **/
+    public enum TechnologyType {
         OracleNosql("ORACLE_NOSQL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -571,117 +573,116 @@ public final class OracleNosqlConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Oracle NoSQL technology type. */
+    /**
+     * The Oracle NoSQL technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Oracle NoSQL technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * related OCI tenancy.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * related OCI tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related OCI tenancy.
      *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
     /**
-     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-     * default to the default region.
-     */
+     * The name of the region. e.g.: us-ashburn-1
+     * If the region is not provided, backend will default to the default region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
-     * default to the default region.
+     * The name of the region. e.g.: us-ashburn-1
+     * If the region is not provided, backend will default to the default region.
      *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
-     * user who will access the Oracle NoSQL database. The user must have write access to the table
-     * they want to connect to. If the user is not provided, backend will default to the user who is
-     * calling the API endpoint.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Oracle NoSQL database.
+     * The user must have write access to the table they want to connect to.
+     * If the user is not provided, backend will default to the user who is calling the API endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
-     * user who will access the Oracle NoSQL database. The user must have write access to the table
-     * they want to connect to. If the user is not provided, backend will default to the user who is
-     * calling the API endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI user who will access the Oracle NoSQL database.
+     * The user must have write access to the table they want to connect to.
+     * If the user is not provided, backend will default to the user who is calling the API endpoint.
      *
      * @return the value
-     */
+     **/
     public String getUserId() {
         return userId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the private key file (PEM file) corresponding to the API
-     * key of the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
-     * provided, 'privateKeyFile' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
     private final String privateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the content of the private key file (PEM file) corresponding to the API
-     * key of the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
-     * provided, 'privateKeyFile' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPrivateKeyFileSecretId() {
         return privateKeyFileSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the passphrase of the private key. Note: When provided,
-     * 'privateKeyPassphrase' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
     private final String privateKeyPassphraseSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the passphrase of the private key. Note: When provided,
-     * 'privateKeyPassphrase' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPassphraseSecretId() {
         return privateKeyPassphraseSecretId;
     }
 
-    /** Indicates that the user intents to connect to the instance through resource principal. */
+    /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
     private final Boolean shouldUseResourcePrincipal;
 
@@ -689,7 +690,7 @@ public final class OracleNosqlConnection extends Connection {
      * Indicates that the user intents to connect to the instance through resource principal.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldUseResourcePrincipal() {
         return shouldUseResourcePrincipal;
     }
@@ -701,7 +702,6 @@ public final class OracleNosqlConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

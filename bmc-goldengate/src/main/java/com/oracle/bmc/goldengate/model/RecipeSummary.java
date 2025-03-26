@@ -5,21 +5,20 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The list of recipe details to create pipelines. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The list of recipe details to create pipelines.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RecipeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RecipeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RecipeSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "recipeType",
@@ -47,7 +46,10 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the recipe */
+        /**
+         * The type of the recipe
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recipeType")
         private RecipeType recipeType;
 
@@ -56,13 +58,16 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param recipeType the value to set
          * @return this builder
-         */
+         **/
         public Builder recipeType(RecipeType recipeType) {
             this.recipeType = recipeType;
             this.__explicitlySet__.add("recipeType");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -71,13 +76,16 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -86,13 +94,16 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Metadata about this specific object. */
+        /**
+         * Metadata about this specific object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -101,13 +112,16 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Array of supported technology types for this recipe. */
+        /**
+         * Array of supported technology types for this recipe.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedSourceTechnologyTypes")
         private java.util.List<TechnologyType> supportedSourceTechnologyTypes;
 
@@ -116,14 +130,17 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param supportedSourceTechnologyTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedSourceTechnologyTypes(
                 java.util.List<TechnologyType> supportedSourceTechnologyTypes) {
             this.supportedSourceTechnologyTypes = supportedSourceTechnologyTypes;
             this.__explicitlySet__.add("supportedSourceTechnologyTypes");
             return this;
         }
-        /** Array of supported technology types for this recipe. */
+        /**
+         * Array of supported technology types for this recipe.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedTargetTechnologyTypes")
         private java.util.List<TechnologyType> supportedTargetTechnologyTypes;
 
@@ -132,7 +149,7 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param supportedTargetTechnologyTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedTargetTechnologyTypes(
                 java.util.List<TechnologyType> supportedTargetTechnologyTypes) {
             this.supportedTargetTechnologyTypes = supportedTargetTechnologyTypes;
@@ -182,7 +199,9 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,7 +210,10 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The type of the recipe */
+    /**
+     * The type of the recipe
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recipeType")
     private final RecipeType recipeType;
 
@@ -199,12 +221,15 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * The type of the recipe
      *
      * @return the value
-     */
+     **/
     public RecipeType getRecipeType() {
         return recipeType;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -212,12 +237,15 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -225,12 +253,15 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -238,12 +269,15 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Array of supported technology types for this recipe. */
+    /**
+     * Array of supported technology types for this recipe.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSourceTechnologyTypes")
     private final java.util.List<TechnologyType> supportedSourceTechnologyTypes;
 
@@ -251,12 +285,15 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * Array of supported technology types for this recipe.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TechnologyType> getSupportedSourceTechnologyTypes() {
         return supportedSourceTechnologyTypes;
     }
 
-    /** Array of supported technology types for this recipe. */
+    /**
+     * Array of supported technology types for this recipe.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedTargetTechnologyTypes")
     private final java.util.List<TechnologyType> supportedTargetTechnologyTypes;
 
@@ -264,7 +301,7 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
      * Array of supported technology types for this recipe.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TechnologyType> getSupportedTargetTechnologyTypes() {
         return supportedTargetTechnologyTypes;
     }
@@ -276,7 +313,6 @@ public final class RecipeSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

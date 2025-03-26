@@ -6,19 +6,18 @@ package com.oracle.bmc.delegateaccesscontrol.responses;
 
 import com.oracle.bmc.delegateaccesscontrol.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class CreateDelegationControlResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-     * request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+     * Use GetWorkRequest with this ID to track the status of the request.
      *
      * @return the value
      */
@@ -27,14 +26,15 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,31 +42,36 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** URI of the resource */
+    /**
+     * URI of the resource
+     */
     private String location;
 
     /**
      * URI of the resource
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** URI of the resource */
+    /**
+     * URI of the resource
+     */
     private String contentLocation;
 
     /**
      * URI of the resource
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -78,12 +83,13 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
         return etag;
     }
 
-    /** The returned {@code DelegationControl} instance. */
+    /**
+     * The returned DelegationControl instance.
+     */
     private com.oracle.bmc.delegateaccesscontrol.model.DelegationControl delegationControl;
 
     /**
-     * The returned {@code DelegationControl} instance.
-     *
+     * The returned DelegationControl instance.
      * @return the value
      */
     public com.oracle.bmc.delegateaccesscontrol.model.DelegationControl getDelegationControl() {
@@ -102,7 +108,7 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
     })
     private CreateDelegationControlResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String location,
@@ -118,36 +124,31 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
         this.delegationControl = delegationControl;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateDelegationControlResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-         * request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * asynchronous work request. Use GetWorkRequest with this ID to track the status of the
-         * request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the asynchronous work request.
+         * Use GetWorkRequest with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -158,14 +159,15 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -175,12 +177,13 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** URI of the resource */
+        /**
+         * URI of the resource
+         */
         private String location;
 
         /**
          * URI of the resource
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -189,12 +192,13 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** URI of the resource */
+        /**
+         * URI of the resource
+         */
         private String contentLocation;
 
         /**
          * URI of the resource
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -203,7 +207,10 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -217,12 +224,13 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code DelegationControl} instance. */
+        /**
+         * The returned DelegationControl instance.
+         */
         private com.oracle.bmc.delegateaccesscontrol.model.DelegationControl delegationControl;
 
         /**
-         * The returned {@code DelegationControl} instance.
-         *
+         * The returned DelegationControl instance.
          * @param delegationControl the value to set
          * @return this builder
          */
@@ -234,10 +242,8 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateDelegationControlResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -253,10 +259,8 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateDelegationControlResponse build() {
             return new CreateDelegationControlResponse(
                     __httpStatusCode__,
@@ -272,7 +276,6 @@ public class CreateDelegationControlResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

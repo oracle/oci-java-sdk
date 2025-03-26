@@ -6,64 +6,64 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBackupsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListBackupsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBackupsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
     private String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      */
     public String getDatabaseId() {
         return databaseId;
     }
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     private ShapeFamily shapeFamily;
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
-     */
-    public enum ShapeFamily implements com.oracle.bmc.http.internal.BmcEnum {
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
+     **/
+    public enum ShapeFamily {
         Singlenode("SINGLENODE"),
         Yoda("YODA"),
         Virtualmachine("VIRTUALMACHINE"),
@@ -101,51 +101,74 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     public ShapeFamily getShapeFamily() {
         return shapeFamily;
     }
-    /** A filter to return only resources that match the given database version. */
+    /**
+     * A filter to return only resources that match the given database version.
+     */
     private String version;
 
-    /** A filter to return only resources that match the given database version. */
+    /**
+     * A filter to return only resources that match the given database version.
+     */
     public String getVersion() {
         return version;
     }
-    /** A filter to return only backups that matches with the given type of Backup. */
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
     private String type;
 
-    /** A filter to return only backups that matches with the given type of Backup. */
+    /**
+     * A filter to return only backups that matches with the given type of Backup.
+     */
     public String getType() {
         return type;
     }
-    /** A filter to return only resources that match the given lifecycle state exactly. */
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     private com.oracle.bmc.database.model.BackupSummary.LifecycleState lifecycleState;
 
-    /** A filter to return only resources that match the given lifecycle state exactly. */
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.BackupSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The start of date-time range of expiration for the long term backups to be fetched. */
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
     private java.util.Date timeExpiryScheduledGreaterThanOrEqualTo;
 
-    /** The start of date-time range of expiration for the long term backups to be fetched. */
+    /**
+     * The start of date-time range of expiration for the long term backups to be fetched.
+     */
     public java.util.Date getTimeExpiryScheduledGreaterThanOrEqualTo() {
         return timeExpiryScheduledGreaterThanOrEqualTo;
     }
-    /** The end of date-time range of expiration for the long term backups to be fetched. */
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
     private java.util.Date timeExpiryScheduledLessThan;
 
-    /** The end of date-time range of expiration for the long term backups to be fetched. */
+    /**
+     * The end of date-time range of expiration for the long term backups to be fetched.
+     */
     public java.util.Date getTimeExpiryScheduledLessThan() {
         return timeExpiryScheduledLessThan;
     }
-    /** A filter to return only resources that match the given backup destination type. */
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
     private String backupDestinationType;
 
-    /** A filter to return only resources that match the given backup destination type. */
+    /**
+     * A filter to return only resources that match the given backup destination type.
+     */
     public String getBackupDestinationType() {
         return backupDestinationType;
     }
@@ -153,19 +176,17 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBackupsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          */
         private String databaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
          * @param databaseId the value to set
          * @return this builder instance
          */
@@ -175,15 +196,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -192,12 +210,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,12 +225,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -221,15 +241,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for
-         * the given shape family.
+         * If provided, filters the results to the set of database versions which are supported for the given shape family.
          */
         private ShapeFamily shapeFamily = null;
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for
-         * the given shape family.
-         *
+         * If provided, filters the results to the set of database versions which are supported for the given shape family.
          * @param shapeFamily the value to set
          * @return this builder instance
          */
@@ -238,12 +255,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the given database version. */
+        /**
+         * A filter to return only resources that match the given database version.
+         */
         private String version = null;
 
         /**
          * A filter to return only resources that match the given database version.
-         *
          * @param version the value to set
          * @return this builder instance
          */
@@ -252,12 +270,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only backups that matches with the given type of Backup. */
+        /**
+         * A filter to return only backups that matches with the given type of Backup.
+         */
         private String type = null;
 
         /**
          * A filter to return only backups that matches with the given type of Backup.
-         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -266,12 +285,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the given lifecycle state exactly. */
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.BackupSummary.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -281,12 +301,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The start of date-time range of expiration for the long term backups to be fetched. */
+        /**
+         * The start of date-time range of expiration for the long term backups to be fetched.
+         */
         private java.util.Date timeExpiryScheduledGreaterThanOrEqualTo = null;
 
         /**
          * The start of date-time range of expiration for the long term backups to be fetched.
-         *
          * @param timeExpiryScheduledGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -296,12 +317,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The end of date-time range of expiration for the long term backups to be fetched. */
+        /**
+         * The end of date-time range of expiration for the long term backups to be fetched.
+         */
         private java.util.Date timeExpiryScheduledLessThan = null;
 
         /**
          * The end of date-time range of expiration for the long term backups to be fetched.
-         *
          * @param timeExpiryScheduledLessThan the value to set
          * @return this builder instance
          */
@@ -310,12 +332,13 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the given backup destination type. */
+        /**
+         * A filter to return only resources that match the given backup destination type.
+         */
         private String backupDestinationType = null;
 
         /**
          * A filter to return only resources that match the given backup destination type.
-         *
          * @param backupDestinationType the value to set
          * @return this builder instance
          */
@@ -326,19 +349,18 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -350,7 +372,6 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListBackupsRequest o) {
@@ -373,11 +394,10 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBackupsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListBackupsRequest
          */
@@ -391,8 +411,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListBackupsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBackupsRequest
@@ -412,15 +431,12 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.timeExpiryScheduledLessThan = timeExpiryScheduledLessThan;
             request.backupDestinationType = backupDestinationType;
             return request;
-            // new ListBackupsRequest(databaseId, compartmentId, limit, page, shapeFamily, version,
-            // type, lifecycleState, timeExpiryScheduledGreaterThanOrEqualTo,
-            // timeExpiryScheduledLessThan, backupDestinationType);
+            // new ListBackupsRequest(databaseId, compartmentId, limit, page, shapeFamily, version, type, lifecycleState, timeExpiryScheduledGreaterThanOrEqualTo, timeExpiryScheduledLessThan, backupDestinationType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -440,7 +456,6 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

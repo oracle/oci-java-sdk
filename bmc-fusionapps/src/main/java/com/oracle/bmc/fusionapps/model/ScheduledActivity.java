@@ -5,23 +5,21 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Details of scheduled activity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Details of scheduled activity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduledActivity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ScheduledActivity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ScheduledActivity.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ScheduledActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,178 +77,177 @@ public final class ScheduledActivity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation. */
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** scheduled activity display name, can be renamed. */
+        /**
+         * scheduled activity display name, can be renamed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * scheduled activity display name, can be renamed.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** run cadence. */
+        /**
+         * run cadence.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runCycle")
         private RunCycle runCycle;
 
         /**
          * run cadence.
-         *
          * @param runCycle the value to set
          * @return this builder
-         */
+         **/
         public Builder runCycle(RunCycle runCycle) {
             this.runCycle = runCycle;
             this.__explicitlySet__.add("runCycle");
             return this;
         }
-        /** FAaaS Environment Identifier. */
+        /**
+         * FAaaS Environment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentId")
         private String fusionEnvironmentId;
 
         /**
          * FAaaS Environment Identifier.
-         *
          * @param fusionEnvironmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder fusionEnvironmentId(String fusionEnvironmentId) {
             this.fusionEnvironmentId = fusionEnvironmentId;
             this.__explicitlySet__.add("fusionEnvironmentId");
             return this;
         }
-        /** The current state of the scheduledActivity. */
+        /**
+         * The current state of the scheduledActivity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the scheduledActivity.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** List of actions */
+        /**
+         * List of actions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<Action> actions;
 
         /**
          * List of actions
-         *
          * @param actions the value to set
          * @return this builder
-         */
+         **/
         public Builder actions(java.util.List<Action> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
             return this;
         }
-        /** Service availability / impact during scheduled activity execution up down */
+        /**
+         * Service availability / impact during scheduled activity execution up down
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAvailability")
         private ServiceAvailability serviceAvailability;
 
         /**
          * Service availability / impact during scheduled activity execution up down
-         *
          * @param serviceAvailability the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceAvailability(ServiceAvailability serviceAvailability) {
             this.serviceAvailability = serviceAvailability;
             this.__explicitlySet__.add("serviceAvailability");
             return this;
         }
         /**
-         * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime
-         * string.
-         */
+         * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
         private java.util.Date timeScheduledStart;
 
         /**
-         * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime
-         * string.
-         *
+         * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
          * @param timeScheduledStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduledStart(java.util.Date timeScheduledStart) {
             this.timeScheduledStart = timeScheduledStart;
             this.__explicitlySet__.add("timeScheduledStart");
             return this;
         }
         /**
-         * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime
-         * string.
-         */
+         * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpectedFinish")
         private java.util.Date timeExpectedFinish;
 
         /**
-         * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime
-         * string.
-         *
+         * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
          * @param timeExpectedFinish the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpectedFinish(java.util.Date timeExpectedFinish) {
             this.timeExpectedFinish = timeExpectedFinish;
             this.__explicitlySet__.add("timeExpectedFinish");
             return this;
         }
         /**
-         * The time the scheduled activity actually completed / cancelled / failed. An RFC3339
-         * formatted datetime string.
-         */
+         * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The time the scheduled activity actually completed / cancelled / failed. An RFC3339
-         * formatted datetime string.
-         *
+         * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** Cumulative delay hours */
+        /**
+         * Cumulative delay hours
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("delayInHours")
         private Integer delayInHours;
 
         /**
          * Cumulative delay hours
-         *
          * @param delayInHours the value to set
          * @return this builder
-         */
+         **/
         public Builder delayInHours(Integer delayInHours) {
             this.delayInHours = delayInHours;
             this.__explicitlySet__.add("delayInHours");
@@ -258,16 +255,15 @@ public final class ScheduledActivity
         }
         /**
          * The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -275,73 +271,63 @@ public final class ScheduledActivity
         }
         /**
          * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** A property describing the phase of the scheduled activity. */
+        /**
+         * A property describing the phase of the scheduled activity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
         private ScheduledActivityPhase scheduledActivityPhase;
 
         /**
          * A property describing the phase of the scheduled activity.
-         *
          * @param scheduledActivityPhase the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledActivityPhase(ScheduledActivityPhase scheduledActivityPhase) {
             this.scheduledActivityPhase = scheduledActivityPhase;
             this.__explicitlySet__.add("scheduledActivityPhase");
             return this;
         }
         /**
-         * The unique identifier that associates a scheduled activity with others in one complete
-         * maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled
-         * activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them
-         * share the same unique identifier - scheduledActivityAssociationId.
-         */
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
         private String scheduledActivityAssociationId;
 
         /**
-         * The unique identifier that associates a scheduled activity with others in one complete
-         * maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled
-         * activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them
-         * share the same unique identifier - scheduledActivityAssociationId.
-         *
+         * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
          * @param scheduledActivityAssociationId the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledActivityAssociationId(String scheduledActivityAssociationId) {
             this.scheduledActivityAssociationId = scheduledActivityAssociationId;
             this.__explicitlySet__.add("scheduledActivityAssociationId");
@@ -430,7 +416,9 @@ public final class ScheduledActivity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -439,42 +427,46 @@ public final class ScheduledActivity
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation. */
+    /**
+     * Unique identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** scheduled activity display name, can be renamed. */
+    /**
+     * scheduled activity display name, can be renamed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * scheduled activity display name, can be renamed.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** run cadence. */
-    public enum RunCycle implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * run cadence.
+     **/
+    public enum RunCycle {
         Quarterly("QUARTERLY"),
         Monthly("MONTHLY"),
         Oneoff("ONEOFF"),
         Vertex("VERTEX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -513,34 +505,38 @@ public final class ScheduledActivity
             return UnknownEnumValue;
         }
     };
-    /** run cadence. */
+    /**
+     * run cadence.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runCycle")
     private final RunCycle runCycle;
 
     /**
      * run cadence.
-     *
      * @return the value
-     */
+     **/
     public RunCycle getRunCycle() {
         return runCycle;
     }
 
-    /** FAaaS Environment Identifier. */
+    /**
+     * FAaaS Environment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fusionEnvironmentId")
     private final String fusionEnvironmentId;
 
     /**
      * FAaaS Environment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getFusionEnvironmentId() {
         return fusionEnvironmentId;
     }
 
-    /** The current state of the scheduledActivity. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the scheduledActivity.
+     **/
+    public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -548,8 +544,8 @@ public final class ScheduledActivity
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -588,40 +584,44 @@ public final class ScheduledActivity
             return UnknownEnumValue;
         }
     };
-    /** The current state of the scheduledActivity. */
+    /**
+     * The current state of the scheduledActivity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the scheduledActivity.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** List of actions */
+    /**
+     * List of actions
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<Action> actions;
 
     /**
      * List of actions
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Action> getActions() {
         return actions;
     }
 
-    /** Service availability / impact during scheduled activity execution up down */
-    public enum ServiceAvailability implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Service availability / impact during scheduled activity execution up down
+     **/
+    public enum ServiceAvailability {
         Available("AVAILABLE"),
         Unavailable("UNAVAILABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -660,114 +660,108 @@ public final class ScheduledActivity
             return UnknownEnumValue;
         }
     };
-    /** Service availability / impact during scheduled activity execution up down */
+    /**
+     * Service availability / impact during scheduled activity execution up down
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAvailability")
     private final ServiceAvailability serviceAvailability;
 
     /**
      * Service availability / impact during scheduled activity execution up down
-     *
      * @return the value
-     */
+     **/
     public ServiceAvailability getServiceAvailability() {
         return serviceAvailability;
     }
 
     /**
-     * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime
-     * string.
-     */
+     * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
     private final java.util.Date timeScheduledStart;
 
     /**
-     * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime
-     * string.
-     *
+     * Current time the scheduled activity is scheduled to start. An RFC3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduledStart() {
         return timeScheduledStart;
     }
 
     /**
-     * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime
-     * string.
-     */
+     * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpectedFinish")
     private final java.util.Date timeExpectedFinish;
 
     /**
-     * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime
-     * string.
-     *
+     * Current time the scheduled activity is scheduled to end. An RFC3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpectedFinish() {
         return timeExpectedFinish;
     }
 
     /**
-     * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted
-     * datetime string.
-     */
+     * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted
-     * datetime string.
-     *
+     * The time the scheduled activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** Cumulative delay hours */
+    /**
+     * Cumulative delay hours
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("delayInHours")
     private final Integer delayInHours;
 
     /**
      * Cumulative delay hours
-     *
      * @return the value
-     */
+     **/
     public Integer getDelayInHours() {
         return delayInHours;
     }
 
-    /** The time the scheduled activity record was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the scheduled activity record was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the scheduled activity record was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the scheduled activity record was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the scheduled activity record was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
+    public enum LifecycleDetails {
         None("NONE"),
         Rollbackaccepted("ROLLBACKACCEPTED"),
         Rollbackinprogress("ROLLBACKINPROGRESS"),
@@ -775,8 +769,8 @@ public final class ScheduledActivity
         Rollbackfailed("ROLLBACKFAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -816,31 +810,30 @@ public final class ScheduledActivity
         }
     };
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** A property describing the phase of the scheduled activity. */
-    public enum ScheduledActivityPhase implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A property describing the phase of the scheduled activity.
+     **/
+    public enum ScheduledActivityPhase {
         PreMaintenance("PRE_MAINTENANCE"),
         Maintenance("MAINTENANCE"),
         PostMaintenance("POST_MAINTENANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -879,36 +872,30 @@ public final class ScheduledActivity
             return UnknownEnumValue;
         }
     };
-    /** A property describing the phase of the scheduled activity. */
+    /**
+     * A property describing the phase of the scheduled activity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityPhase")
     private final ScheduledActivityPhase scheduledActivityPhase;
 
     /**
      * A property describing the phase of the scheduled activity.
-     *
      * @return the value
-     */
+     **/
     public ScheduledActivityPhase getScheduledActivityPhase() {
         return scheduledActivityPhase;
     }
 
     /**
-     * The unique identifier that associates a scheduled activity with others in one complete
-     * maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled
-     * activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share
-     * the same unique identifier - scheduledActivityAssociationId.
-     */
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledActivityAssociationId")
     private final String scheduledActivityAssociationId;
 
     /**
-     * The unique identifier that associates a scheduled activity with others in one complete
-     * maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled
-     * activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share
-     * the same unique identifier - scheduledActivityAssociationId.
-     *
+     * The unique identifier that associates a scheduled activity with others in one complete maintenance. For example, with ZDT, a complete upgrade maintenance includes 5 scheduled activities - PREPARE, EXECUTE, POST, PRE_MAINTENANCE, and POST_MAINTENANCE. All of them share the same unique identifier - scheduledActivityAssociationId.
      * @return the value
-     */
+     **/
     public String getScheduledActivityAssociationId() {
         return scheduledActivityAssociationId;
     }
@@ -920,7 +907,6 @@ public final class ScheduledActivity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

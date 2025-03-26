@@ -6,105 +6,73 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetCloudGateExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCloudGateRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetCloudGateExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetCloudGateRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     private String cloudGateId;
 
-    /** ID of the resource */
+    /**
+     * ID of the resource
+     */
     public String getCloudGateId() {
         return cloudGateId;
     }
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
     /**
-     * A comma-delimited string that specifies the names of resource attributes that should be
-     * returned in the response. By default, a response that contains resource attributes contains
-     * only attributes that are defined in the schema for that resource type as returned=always or
-     * returned=default. An attribute that is defined as returned=request is returned in a response
-     * only if the request specifies its name in the value of this query parameter. If a request
-     * specifies this query parameter, the response contains the attributes that this query
-     * parameter specifies, as well as any attribute that is defined as returned=always.
+     * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
     private String attributes;
 
     /**
-     * A comma-delimited string that specifies the names of resource attributes that should be
-     * returned in the response. By default, a response that contains resource attributes contains
-     * only attributes that are defined in the schema for that resource type as returned=always or
-     * returned=default. An attribute that is defined as returned=request is returned in a response
-     * only if the request specifies its name in the value of this query parameter. If a request
-     * specifies this query parameter, the response contains the attributes that this query
-     * parameter specifies, as well as any attribute that is defined as returned=always.
+     * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
      */
     public String getAttributes() {
         return attributes;
     }
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If 'attributes'
-     * query parameter is also available, union of the two is fetched. Valid values - all, always,
-     * never, request, default. Values are case-insensitive.
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
     private java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> attributeSets;
 
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If 'attributes'
-     * query parameter is also available, union of the two is fetched. Valid values - all, always,
-     * never, request, default. Values are case-insensitive.
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
      */
     public java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> getAttributeSets() {
         return attributeSets;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -113,15 +81,17 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetCloudGateRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the resource */
+        /**
+         * ID of the resource
+         */
         private String cloudGateId = null;
 
         /**
          * ID of the resource
-         *
          * @param cloudGateId the value to set
          * @return this builder instance
          */
@@ -131,15 +101,12 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -149,23 +116,12 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -175,27 +131,12 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A comma-delimited string that specifies the names of resource attributes that should be
-         * returned in the response. By default, a response that contains resource attributes
-         * contains only attributes that are defined in the schema for that resource type as
-         * returned=always or returned=default. An attribute that is defined as returned=request is
-         * returned in a response only if the request specifies its name in the value of this query
-         * parameter. If a request specifies this query parameter, the response contains the
-         * attributes that this query parameter specifies, as well as any attribute that is defined
-         * as returned=always.
+         * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
          */
         private String attributes = null;
 
         /**
-         * A comma-delimited string that specifies the names of resource attributes that should be
-         * returned in the response. By default, a response that contains resource attributes
-         * contains only attributes that are defined in the schema for that resource type as
-         * returned=always or returned=default. An attribute that is defined as returned=request is
-         * returned in a response only if the request specifies its name in the value of this query
-         * parameter. If a request specifies this query parameter, the response contains the
-         * attributes that this query parameter specifies, as well as any attribute that is defined
-         * as returned=always.
-         *
+         * A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
          * @param attributes the value to set
          * @return this builder instance
          */
@@ -205,22 +146,13 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * 'attributes' query parameter is also available, union of the two is fetched. Valid values
-         * - all, always, never, request, default. Values are case-insensitive.
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          */
         private java.util.List<com.oracle.bmc.identitydomains.model.AttributeSets> attributeSets =
                 null;
 
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * 'attributes' query parameter is also available, union of the two is fetched. Valid values
-         * - all, always, never, request, default. Values are case-insensitive.
-         *
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          * @param attributeSets the value to set
          * @return this builder instance
          */
@@ -231,13 +163,7 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * Singular setter. A multi-valued list of strings indicating the return type of attribute
-         * definition. The specified set of attributes can be fetched by the return type of the
-         * attribute. One or more values can be given together to fetch more than one group of
-         * attributes. If 'attributes' query parameter is also available, union of the two is
-         * fetched. Valid values - all, always, never, request, default. Values are
-         * case-insensitive.
-         *
+         * Singular setter. A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -246,15 +172,12 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -265,19 +188,18 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -289,7 +211,6 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetCloudGateRequest o) {
@@ -307,11 +228,10 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetCloudGateRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetCloudGateRequest
          */
@@ -325,8 +245,7 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of GetCloudGateRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetCloudGateRequest
@@ -340,14 +259,12 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.attributeSets = attributeSets;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new GetCloudGateRequest(cloudGateId, authorization, resourceTypeSchemaVersion,
-            // attributes, attributeSets, opcRetryToken);
+            // new GetCloudGateRequest(cloudGateId, authorization, resourceTypeSchemaVersion, attributes, attributeSets, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -362,7 +279,6 @@ public class GetCloudGateRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

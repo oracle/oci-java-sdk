@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Aggregated summary information for ComplianceRecord <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Aggregated summary information for ComplianceRecord
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceRecordDimension.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceRecordDimension.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceRecordDimension
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"complianceState", "complianceLevel"})
     public ComplianceRecordDimension(
@@ -33,31 +32,33 @@ public final class ComplianceRecordDimension
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Last known compliance state. */
+        /**
+         * Last known compliance state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
          * Last known compliance state.
-         *
          * @param complianceState the value to set
          * @return this builder
-         */
+         **/
         public Builder complianceState(ComplianceState complianceState) {
             this.complianceState = complianceState;
             this.__explicitlySet__.add("complianceState");
             return this;
         }
-        /** Level at which the compliance is calculated. */
+        /**
+         * Level at which the compliance is calculated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceLevel")
         private ComplianceLevel complianceLevel;
 
         /**
          * Level at which the compliance is calculated.
-         *
          * @param complianceLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder complianceLevel(ComplianceLevel complianceLevel) {
             this.complianceLevel = complianceLevel;
             this.__explicitlySet__.add("complianceLevel");
@@ -88,7 +89,9 @@ public final class ComplianceRecordDimension
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class ComplianceRecordDimension
         return new Builder().copy(this);
     }
 
-    /** Last known compliance state. */
+    /**
+     * Last known compliance state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
      * Last known compliance state.
-     *
      * @return the value
-     */
+     **/
     public ComplianceState getComplianceState() {
         return complianceState;
     }
 
-    /** Level at which the compliance is calculated. */
+    /**
+     * Level at which the compliance is calculated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceLevel")
     private final ComplianceLevel complianceLevel;
 
     /**
      * Level at which the compliance is calculated.
-     *
      * @return the value
-     */
+     **/
     public ComplianceLevel getComplianceLevel() {
         return complianceLevel;
     }
@@ -130,7 +135,6 @@ public final class ComplianceRecordDimension
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

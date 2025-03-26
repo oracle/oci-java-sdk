@@ -9,31 +9,23 @@ import com.oracle.bmc.datascience.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of DataScience where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of DataScience where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class DataSciencePaginators {
     private final DataScience client;
 
@@ -42,12 +34,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listContainers
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listContainers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListContainersResponse> listContainersResponseIterator(
             final ListContainersRequest request) {
@@ -92,21 +83,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ContainerSummary} objects contained in responses from the
-     * listContainers operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ContainerSummary} objects
+     * contained in responses from the listContainers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ContainerSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ContainerSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ContainerSummary> listContainersRecordIterator(
             final ListContainersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListContainersRequest.Builder,
-                ListContainersRequest,
-                ListContainersResponse,
+                ListContainersRequest.Builder, ListContainersRequest, ListContainersResponse,
                 com.oracle.bmc.datascience.model.ContainerSummary>(
                 new java.util.function.Supplier<ListContainersRequest.Builder>() {
                     @Override
@@ -156,21 +144,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDataSciencePrivateEndpoints operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDataSciencePrivateEndpoints operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDataSciencePrivateEndpointsResponse>
             listDataSciencePrivateEndpointsResponseIterator(
                     final ListDataSciencePrivateEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDataSciencePrivateEndpointsRequest.Builder,
-                ListDataSciencePrivateEndpointsRequest,
-                ListDataSciencePrivateEndpointsResponse>(
+                ListDataSciencePrivateEndpointsRequest, ListDataSciencePrivateEndpointsResponse>(
                 new java.util.function.Supplier<ListDataSciencePrivateEndpointsRequest.Builder>() {
                     @Override
                     public ListDataSciencePrivateEndpointsRequest.Builder get() {
@@ -213,23 +198,20 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects contained in
-     * responses from the listDataSciencePrivateEndpoints operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects
+     * contained in responses from the listDataSciencePrivateEndpoints operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary>
             listDataSciencePrivateEndpointsRecordIterator(
                     final ListDataSciencePrivateEndpointsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDataSciencePrivateEndpointsRequest.Builder,
-                ListDataSciencePrivateEndpointsRequest,
-                ListDataSciencePrivateEndpointsResponse,
+                ListDataSciencePrivateEndpointsRequest, ListDataSciencePrivateEndpointsResponse,
                 com.oracle.bmc.datascience.model.DataSciencePrivateEndpointSummary>(
                 new java.util.function.Supplier<ListDataSciencePrivateEndpointsRequest.Builder>() {
                     @Override
@@ -286,19 +268,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFastLaunchJobConfigs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listFastLaunchJobConfigs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFastLaunchJobConfigsResponse> listFastLaunchJobConfigsResponseIterator(
             final ListFastLaunchJobConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFastLaunchJobConfigsRequest.Builder,
-                ListFastLaunchJobConfigsRequest,
+                ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
                 ListFastLaunchJobConfigsResponse>(
                 new java.util.function.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
                     @Override
@@ -341,21 +320,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects contained in responses
-     * from the listFastLaunchJobConfigs operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects
+     * contained in responses from the listFastLaunchJobConfigs operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>
             listFastLaunchJobConfigsRecordIterator(final ListFastLaunchJobConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFastLaunchJobConfigsRequest.Builder,
-                ListFastLaunchJobConfigsRequest,
+                ListFastLaunchJobConfigsRequest.Builder, ListFastLaunchJobConfigsRequest,
                 ListFastLaunchJobConfigsResponse,
                 com.oracle.bmc.datascience.model.FastLaunchJobConfigSummary>(
                 new java.util.function.Supplier<ListFastLaunchJobConfigsRequest.Builder>() {
@@ -410,12 +386,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listJobRuns
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listJobRuns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListJobRunsResponse> listJobRunsResponseIterator(
             final ListJobRunsRequest request) {
@@ -460,21 +435,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.JobRunSummary} objects contained in responses from the
-     * listJobRuns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobRunSummary} objects
+     * contained in responses from the listJobRuns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.JobRunSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobRunSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.JobRunSummary> listJobRunsRecordIterator(
             final ListJobRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListJobRunsRequest.Builder,
-                ListJobRunsRequest,
-                ListJobRunsResponse,
+                ListJobRunsRequest.Builder, ListJobRunsRequest, ListJobRunsResponse,
                 com.oracle.bmc.datascience.model.JobRunSummary>(
                 new java.util.function.Supplier<ListJobRunsRequest.Builder>() {
                     @Override
@@ -524,12 +496,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listJobShapes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listJobShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListJobShapesResponse> listJobShapesResponseIterator(
             final ListJobShapesRequest request) {
@@ -574,21 +545,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.JobShapeSummary} objects contained in responses from the
-     * listJobShapes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobShapeSummary} objects
+     * contained in responses from the listJobShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.JobShapeSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.JobShapeSummary> listJobShapesRecordIterator(
             final ListJobShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListJobShapesRequest.Builder,
-                ListJobShapesRequest,
-                ListJobShapesResponse,
+                ListJobShapesRequest.Builder, ListJobShapesRequest, ListJobShapesResponse,
                 com.oracle.bmc.datascience.model.JobShapeSummary>(
                 new java.util.function.Supplier<ListJobShapesRequest.Builder>() {
                     @Override
@@ -638,12 +606,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listJobs
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listJobs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListJobsResponse> listJobsResponseIterator(final ListJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -687,21 +654,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.JobSummary} objects contained in responses from the listJobs
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.JobSummary} objects
+     * contained in responses from the listJobs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.JobSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.JobSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.JobSummary> listJobsRecordIterator(
             final ListJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListJobsRequest.Builder,
-                ListJobsRequest,
-                ListJobsResponse,
+                ListJobsRequest.Builder, ListJobsRequest, ListJobsResponse,
                 com.oracle.bmc.datascience.model.JobSummary>(
                 new java.util.function.Supplier<ListJobsRequest.Builder>() {
                     @Override
@@ -751,19 +715,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listModelDeploymentShapes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listModelDeploymentShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListModelDeploymentShapesResponse> listModelDeploymentShapesResponseIterator(
             final ListModelDeploymentShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListModelDeploymentShapesRequest.Builder,
-                ListModelDeploymentShapesRequest,
+                ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
                 ListModelDeploymentShapesResponse>(
                 new java.util.function.Supplier<ListModelDeploymentShapesRequest.Builder>() {
                     @Override
@@ -806,22 +767,19 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects contained in responses
-     * from the listModelDeploymentShapes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects
+     * contained in responses from the listModelDeploymentShapes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>
             listModelDeploymentShapesRecordIterator(
                     final ListModelDeploymentShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModelDeploymentShapesRequest.Builder,
-                ListModelDeploymentShapesRequest,
+                ListModelDeploymentShapesRequest.Builder, ListModelDeploymentShapesRequest,
                 ListModelDeploymentShapesResponse,
                 com.oracle.bmc.datascience.model.ModelDeploymentShapeSummary>(
                 new java.util.function.Supplier<ListModelDeploymentShapesRequest.Builder>() {
@@ -876,18 +834,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listModelDeployments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listModelDeployments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListModelDeploymentsResponse> listModelDeploymentsResponseIterator(
             final ListModelDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListModelDeploymentsRequest.Builder,
-                ListModelDeploymentsRequest,
+                ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
                 ListModelDeploymentsResponse>(
                 new java.util.function.Supplier<ListModelDeploymentsRequest.Builder>() {
                     @Override
@@ -929,21 +885,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects contained in responses from
-     * the listModelDeployments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects
+     * contained in responses from the listModelDeployments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelDeploymentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ModelDeploymentSummary>
             listModelDeploymentsRecordIterator(final ListModelDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModelDeploymentsRequest.Builder,
-                ListModelDeploymentsRequest,
+                ListModelDeploymentsRequest.Builder, ListModelDeploymentsRequest,
                 ListModelDeploymentsResponse,
                 com.oracle.bmc.datascience.model.ModelDeploymentSummary>(
                 new java.util.function.Supplier<ListModelDeploymentsRequest.Builder>() {
@@ -995,18 +948,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listModelVersionSets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listModelVersionSets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListModelVersionSetsResponse> listModelVersionSetsResponseIterator(
             final ListModelVersionSetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListModelVersionSetsRequest.Builder,
-                ListModelVersionSetsRequest,
+                ListModelVersionSetsRequest.Builder, ListModelVersionSetsRequest,
                 ListModelVersionSetsResponse>(
                 new java.util.function.Supplier<ListModelVersionSetsRequest.Builder>() {
                     @Override
@@ -1048,21 +999,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ModelVersionSetSummary} objects contained in responses from
-     * the listModelVersionSets operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelVersionSetSummary} objects
+     * contained in responses from the listModelVersionSets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ModelVersionSetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelVersionSetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ModelVersionSetSummary>
             listModelVersionSetsRecordIterator(final ListModelVersionSetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModelVersionSetsRequest.Builder,
-                ListModelVersionSetsRequest,
+                ListModelVersionSetsRequest.Builder, ListModelVersionSetsRequest,
                 ListModelVersionSetsResponse,
                 com.oracle.bmc.datascience.model.ModelVersionSetSummary>(
                 new java.util.function.Supplier<ListModelVersionSetsRequest.Builder>() {
@@ -1114,12 +1062,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listModels
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listModels operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListModelsResponse> listModelsResponseIterator(
             final ListModelsRequest request) {
@@ -1164,21 +1111,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ModelSummary} objects contained in responses from the
-     * listModels operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ModelSummary} objects
+     * contained in responses from the listModels operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ModelSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ModelSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ModelSummary> listModelsRecordIterator(
             final ListModelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListModelsRequest.Builder,
-                ListModelsRequest,
-                ListModelsResponse,
+                ListModelsRequest.Builder, ListModelsRequest, ListModelsResponse,
                 com.oracle.bmc.datascience.model.ModelSummary>(
                 new java.util.function.Supplier<ListModelsRequest.Builder>() {
                     @Override
@@ -1228,19 +1172,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNotebookSessionShapes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listNotebookSessionShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNotebookSessionShapesResponse> listNotebookSessionShapesResponseIterator(
             final ListNotebookSessionShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNotebookSessionShapesRequest.Builder,
-                ListNotebookSessionShapesRequest,
+                ListNotebookSessionShapesRequest.Builder, ListNotebookSessionShapesRequest,
                 ListNotebookSessionShapesResponse>(
                 new java.util.function.Supplier<ListNotebookSessionShapesRequest.Builder>() {
                     @Override
@@ -1283,22 +1224,19 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} objects contained in responses
-     * from the listNotebookSessionShapes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} objects
+     * contained in responses from the listNotebookSessionShapes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.NotebookSessionShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.NotebookSessionShapeSummary>
             listNotebookSessionShapesRecordIterator(
                     final ListNotebookSessionShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNotebookSessionShapesRequest.Builder,
-                ListNotebookSessionShapesRequest,
+                ListNotebookSessionShapesRequest.Builder, ListNotebookSessionShapesRequest,
                 ListNotebookSessionShapesResponse,
                 com.oracle.bmc.datascience.model.NotebookSessionShapeSummary>(
                 new java.util.function.Supplier<ListNotebookSessionShapesRequest.Builder>() {
@@ -1353,18 +1291,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNotebookSessions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNotebookSessions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNotebookSessionsResponse> listNotebookSessionsResponseIterator(
             final ListNotebookSessionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNotebookSessionsRequest.Builder,
-                ListNotebookSessionsRequest,
+                ListNotebookSessionsRequest.Builder, ListNotebookSessionsRequest,
                 ListNotebookSessionsResponse>(
                 new java.util.function.Supplier<ListNotebookSessionsRequest.Builder>() {
                     @Override
@@ -1406,21 +1342,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.NotebookSessionSummary} objects contained in responses from
-     * the listNotebookSessions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.NotebookSessionSummary} objects
+     * contained in responses from the listNotebookSessions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.NotebookSessionSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.NotebookSessionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.NotebookSessionSummary>
             listNotebookSessionsRecordIterator(final ListNotebookSessionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNotebookSessionsRequest.Builder,
-                ListNotebookSessionsRequest,
+                ListNotebookSessionsRequest.Builder, ListNotebookSessionsRequest,
                 ListNotebookSessionsResponse,
                 com.oracle.bmc.datascience.model.NotebookSessionSummary>(
                 new java.util.function.Supplier<ListNotebookSessionsRequest.Builder>() {
@@ -1472,12 +1405,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPipelineRuns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelineRuns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelineRunsResponse> listPipelineRunsResponseIterator(
             final ListPipelineRunsRequest request) {
@@ -1523,21 +1455,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.PipelineRunSummary} objects contained in responses from the
-     * listPipelineRuns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.PipelineRunSummary} objects
+     * contained in responses from the listPipelineRuns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.PipelineRunSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.PipelineRunSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.PipelineRunSummary>
             listPipelineRunsRecordIterator(final ListPipelineRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelineRunsRequest.Builder,
-                ListPipelineRunsRequest,
-                ListPipelineRunsResponse,
+                ListPipelineRunsRequest.Builder, ListPipelineRunsRequest, ListPipelineRunsResponse,
                 com.oracle.bmc.datascience.model.PipelineRunSummary>(
                 new java.util.function.Supplier<ListPipelineRunsRequest.Builder>() {
                     @Override
@@ -1588,12 +1517,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPipelines
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPipelines operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPipelinesResponse> listPipelinesResponseIterator(
             final ListPipelinesRequest request) {
@@ -1638,21 +1566,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.PipelineSummary} objects contained in responses from the
-     * listPipelines operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.PipelineSummary} objects
+     * contained in responses from the listPipelines operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.PipelineSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.PipelineSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.PipelineSummary> listPipelinesRecordIterator(
             final ListPipelinesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPipelinesRequest.Builder,
-                ListPipelinesRequest,
-                ListPipelinesResponse,
+                ListPipelinesRequest.Builder, ListPipelinesRequest, ListPipelinesResponse,
                 com.oracle.bmc.datascience.model.PipelineSummary>(
                 new java.util.function.Supplier<ListPipelinesRequest.Builder>() {
                     @Override
@@ -1702,12 +1627,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProjects
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProjects operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProjectsResponse> listProjectsResponseIterator(
             final ListProjectsRequest request) {
@@ -1752,21 +1676,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ProjectSummary} objects contained in responses from the
-     * listProjects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ProjectSummary} objects
+     * contained in responses from the listProjects operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ProjectSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ProjectSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ProjectSummary> listProjectsRecordIterator(
             final ListProjectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProjectsRequest.Builder,
-                ListProjectsRequest,
-                ListProjectsResponse,
+                ListProjectsRequest.Builder, ListProjectsRequest, ListProjectsResponse,
                 com.oracle.bmc.datascience.model.ProjectSummary>(
                 new java.util.function.Supplier<ListProjectsRequest.Builder>() {
                     @Override
@@ -1816,12 +1737,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSchedules
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSchedules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSchedulesResponse> listSchedulesResponseIterator(
             final ListSchedulesRequest request) {
@@ -1866,21 +1786,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.ScheduleSummary} objects contained in responses from the
-     * listSchedules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.ScheduleSummary} objects
+     * contained in responses from the listSchedules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.ScheduleSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.ScheduleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.ScheduleSummary> listSchedulesRecordIterator(
             final ListSchedulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSchedulesRequest.Builder,
-                ListSchedulesRequest,
-                ListSchedulesResponse,
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse,
                 com.oracle.bmc.datascience.model.ScheduleSummary>(
                 new java.util.function.Supplier<ListSchedulesRequest.Builder>() {
                     @Override
@@ -1930,19 +1847,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1985,23 +1899,19 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.WorkRequestError} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.datascience.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.datascience.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -2052,18 +1962,16 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -2105,22 +2013,19 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.datascience.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.datascience.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -2170,12 +2075,11 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -2221,21 +2125,18 @@ public class DataSciencePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.datascience.model.WorkRequestSummary} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.datascience.model.WorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datascience.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.datascience.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.datascience.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

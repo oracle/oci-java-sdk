@@ -5,22 +5,19 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * Metric associated with a namespace. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * Metric associated with a namespace.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NamespaceMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NamespaceMetric
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NamespaceMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "type", "unit"})
     public NamespaceMetric(String name, MetricTypes type, String unit) {
@@ -32,46 +29,49 @@ public final class NamespaceMetric
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the metric. */
+        /**
+         * Name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the metric.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of metric. */
+        /**
+         * Type of metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private MetricTypes type;
 
         /**
          * Type of metric.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(MetricTypes type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Unit of the metric. */
+        /**
+         * Unit of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * Unit of the metric.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -104,7 +104,9 @@ public final class NamespaceMetric
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +115,44 @@ public final class NamespaceMetric
         return new Builder().copy(this);
     }
 
-    /** Name of the metric. */
+    /**
+     * Name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of metric. */
+    /**
+     * Type of metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MetricTypes type;
 
     /**
      * Type of metric.
-     *
      * @return the value
-     */
+     **/
     public MetricTypes getType() {
         return type;
     }
 
-    /** Unit of the metric. */
+    /**
+     * Unit of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * Unit of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
@@ -159,7 +164,6 @@ public final class NamespaceMetric
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

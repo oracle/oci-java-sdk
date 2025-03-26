@@ -6,29 +6,33 @@ package com.oracle.bmc.ospgateway.requests;
 
 import com.oracle.bmc.ospgateway.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListSubscriptionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ospgateway/ListSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSubscriptionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     private String ospHomeRegion;
 
-    /** The home region's public name of the logged in user. */
+    /**
+     * The home region's public name of the logged in user.
+     *
+     */
     public String getOspHomeRegion() {
         return ospHomeRegion;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -36,47 +40,55 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call.
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call.
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The field to sort by. Only one field can be selected for sorting. */
+    /**
+     * The field to sort by. Only one field can be selected for sorting.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Only one field can be selected for sorting. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Only one field can be selected for sorting.
+     *
+     **/
+    public enum SortBy {
         InvoiceNo("INVOICE_NO"),
         RefNo("REF_NO"),
         Status("STATUS"),
@@ -116,15 +128,24 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The field to sort by. Only one field can be selected for sorting. */
+    /**
+     * The field to sort by. Only one field can be selected for sorting.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use (ascending or descending). */
+    /**
+     * The sort order to use (ascending or descending).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use (ascending or descending). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use (ascending or descending).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -157,7 +178,10 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The sort order to use (ascending or descending). */
+    /**
+     * The sort order to use (ascending or descending).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -165,10 +189,14 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSubscriptionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The home region's public name of the logged in user. */
+        /**
+         * The home region's public name of the logged in user.
+         *
+         */
         private String ospHomeRegion = null;
 
         /**
@@ -183,14 +211,13 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -201,14 +228,15 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -219,14 +247,13 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call.
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call.
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -237,14 +264,13 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -254,7 +280,10 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The field to sort by. Only one field can be selected for sorting. */
+        /**
+         * The field to sort by. Only one field can be selected for sorting.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -268,7 +297,10 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The sort order to use (ascending or descending). */
+        /**
+         * The sort order to use (ascending or descending).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -284,19 +316,18 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -308,7 +339,6 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSubscriptionsRequest o) {
@@ -327,11 +357,10 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListSubscriptionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSubscriptionsRequest
          */
@@ -345,8 +374,7 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListSubscriptionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSubscriptionsRequest
@@ -361,14 +389,12 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListSubscriptionsRequest(ospHomeRegion, compartmentId, opcRequestId, page, limit,
-            // sortBy, sortOrder);
+            // new ListSubscriptionsRequest(ospHomeRegion, compartmentId, opcRequestId, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -384,7 +410,6 @@ public class ListSubscriptionsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Backup destination details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Backup destination details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BackupDestinationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BackupDestinationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BackupDestinationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "type",
@@ -49,107 +48,97 @@ public final class BackupDestinationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the database backup destination. */
+        /**
+         * Type of the database backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the database backup destination.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * backup destination.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
         private String vpcUser;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that
-         * is used to access the Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          * @param vpcUser the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcUser(String vpcUser) {
             this.vpcUser = vpcUser;
             this.__explicitlySet__.add("vpcUser");
             return this;
         }
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
-         */
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
         private String vpcPassword;
 
         /**
-         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used
-         * to access the Recovery Appliance.
-         *
+         * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
          * @param vpcPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcPassword(String vpcPassword) {
             this.vpcPassword = vpcPassword;
             this.__explicitlySet__.add("vpcPassword");
             return this;
         }
-        /** Proxy URL to connect to object store. */
+        /**
+         * Proxy URL to connect to object store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
         private String internetProxy;
 
         /**
          * Proxy URL to connect to object store.
-         *
          * @param internetProxy the value to set
          * @return this builder
-         */
+         **/
         public Builder internetProxy(String internetProxy) {
             this.internetProxy = internetProxy;
             this.__explicitlySet__.add("internetProxy");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
         private String dbrsPolicyId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DBRS policy used for backup.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
          * @param dbrsPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbrsPolicyId(String dbrsPolicyId) {
             this.dbrsPolicyId = dbrsPolicyId;
             this.__explicitlySet__.add("dbrsPolicyId");
@@ -198,7 +187,9 @@ public final class BackupDestinationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,8 +198,10 @@ public final class BackupDestinationDetails
         return new Builder().copy(this);
     }
 
-    /** Type of the database backup destination. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the database backup destination.
+     **/
+    public enum Type {
         Nfs("NFS"),
         RecoveryAppliance("RECOVERY_APPLIANCE"),
         ObjectStore("OBJECT_STORE"),
@@ -216,8 +209,8 @@ public final class BackupDestinationDetails
         Dbrs("DBRS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -254,96 +247,86 @@ public final class BackupDestinationDetails
             return UnknownEnumValue;
         }
     };
-    /** Type of the database backup destination. */
+    /**
+     * Type of the database backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the database backup destination.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * backup destination.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUser")
     private final String vpcUser;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is
-     * used to access the Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * @return the value
-     */
+     **/
     public String getVpcUser() {
         return vpcUser;
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
-     */
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcPassword")
     private final String vpcPassword;
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to
-     * access the Recovery Appliance.
-     *
+     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * @return the value
-     */
+     **/
     public String getVpcPassword() {
         return vpcPassword;
     }
 
-    /** Proxy URL to connect to object store. */
+    /**
+     * Proxy URL to connect to object store.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internetProxy")
     private final String internetProxy;
 
     /**
      * Proxy URL to connect to object store.
-     *
      * @return the value
-     */
+     **/
     public String getInternetProxy() {
         return internetProxy;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbrsPolicyId")
     private final String dbrsPolicyId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS
-     * policy used for backup.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
      * @return the value
-     */
+     **/
     public String getDbrsPolicyId() {
         return dbrsPolicyId;
     }
@@ -355,7 +338,6 @@ public final class BackupDestinationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

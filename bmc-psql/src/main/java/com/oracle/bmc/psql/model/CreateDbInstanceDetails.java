@@ -5,23 +5,22 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Information about the new database instance node. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Information about the new database instance node.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDbInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDbInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDbInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "description", "privateIp"})
     public CreateDbInstanceDetails(String displayName, String description, String privateIp) {
@@ -33,52 +32,53 @@ public final class CreateDbInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Display name of the database instance node. Avoid entering confidential information. */
+        /**
+         * Display name of the database instance node. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the database instance node. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A user-provided description of the database instance node. */
+        /**
+         * A user-provided description of the database instance node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user-provided description of the database instance node.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Private IP in customer subnet that will be assigned to the database instance node. This
-         * value is optional. If the IP is not provided, the IP will be chosen from the available IP
-         * addresses in the specified subnet.
-         */
+         * Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+         * If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Private IP in customer subnet that will be assigned to the database instance node. This
-         * value is optional. If the IP is not provided, the IP will be chosen from the available IP
-         * addresses in the specified subnet.
+         * Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+         * If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
@@ -112,7 +112,9 @@ public final class CreateDbInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,47 +123,48 @@ public final class CreateDbInstanceDetails
         return new Builder().copy(this);
     }
 
-    /** Display name of the database instance node. Avoid entering confidential information. */
+    /**
+     * Display name of the database instance node. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the database instance node. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A user-provided description of the database instance node. */
+    /**
+     * A user-provided description of the database instance node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user-provided description of the database instance node.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Private IP in customer subnet that will be assigned to the database instance node. This value
-     * is optional. If the IP is not provided, the IP will be chosen from the available IP addresses
-     * in the specified subnet.
-     */
+     * Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+     * If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Private IP in customer subnet that will be assigned to the database instance node. This value
-     * is optional. If the IP is not provided, the IP will be chosen from the available IP addresses
-     * in the specified subnet.
+     * Private IP in customer subnet that will be assigned to the database instance node. This value is optional.
+     * If the IP is not provided, the IP will be chosen from the available IP addresses in the specified subnet.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -173,7 +176,6 @@ public final class CreateDbInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

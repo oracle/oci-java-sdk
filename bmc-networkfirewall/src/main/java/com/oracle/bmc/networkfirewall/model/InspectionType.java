@@ -6,12 +6,13 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Type of the secrets mapped based on the policy.
+ * <p>
+ * {@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic.
+ *   * {@code SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
  *
- * <p>{@code SSL_INBOUND_INSPECTION}: For Inbound inspection of SSL traffic. * {@code
- * SSL_FORWARD_PROXY}: For forward proxy certificates for SSL inspection.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum InspectionType implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum InspectionType {
     SslInboundInspection("SSL_INBOUND_INSPECTION"),
     SslForwardProxy("SSL_FORWARD_PROXY"),
 

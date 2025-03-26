@@ -6,17 +6,18 @@ package com.oracle.bmc.adm.responses;
 
 import com.oracle.bmc.adm.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned {@code RemediationRun} instance. */
+    /**
+     * The returned RemediationRun instance.
+     */
     private com.oracle.bmc.adm.model.RemediationRun remediationRun;
 
     /**
-     * The returned {@code RemediationRun} instance.
-     *
+     * The returned RemediationRun instance.
      * @return the value
      */
     public com.oracle.bmc.adm.model.RemediationRun getRemediationRun() {
@@ -57,7 +62,7 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
     })
     private CancelRemediationRunResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.adm.model.RemediationRun remediationRun) {
@@ -67,33 +72,31 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
         this.remediationRun = remediationRun;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CancelRemediationRunResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code RemediationRun} instance. */
+        /**
+         * The returned RemediationRun instance.
+         */
         private com.oracle.bmc.adm.model.RemediationRun remediationRun;
 
         /**
-         * The returned {@code RemediationRun} instance.
-         *
+         * The returned RemediationRun instance.
          * @param remediationRun the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CancelRemediationRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CancelRemediationRunResponse build() {
             return new CancelRemediationRunResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, remediationRun);
@@ -161,7 +164,6 @@ public class CancelRemediationRunResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

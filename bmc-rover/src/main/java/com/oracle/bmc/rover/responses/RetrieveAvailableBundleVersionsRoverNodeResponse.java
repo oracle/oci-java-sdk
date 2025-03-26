@@ -6,10 +6,13 @@ package com.oracle.bmc.rover.responses;
 
 import com.oracle.bmc.rover.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 public class RetrieveAvailableBundleVersionsRoverNodeResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -22,14 +25,15 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,12 +41,13 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
         return opcRequestId;
     }
 
-    /** The returned {@code RoverBundleVersion} instance. */
+    /**
+     * The returned RoverBundleVersion instance.
+     */
     private com.oracle.bmc.rover.model.RoverBundleVersion roverBundleVersion;
 
     /**
-     * The returned {@code RoverBundleVersion} instance.
-     *
+     * The returned RoverBundleVersion instance.
      * @return the value
      */
     public com.oracle.bmc.rover.model.RoverBundleVersion getRoverBundleVersion() {
@@ -58,7 +63,7 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
     })
     private RetrieveAvailableBundleVersionsRoverNodeResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.rover.model.RoverBundleVersion roverBundleVersion) {
@@ -68,26 +73,25 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
         this.roverBundleVersion = roverBundleVersion;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    RetrieveAvailableBundleVersionsRoverNodeResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -102,14 +106,15 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,12 +124,13 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
             return this;
         }
 
-        /** The returned {@code RoverBundleVersion} instance. */
+        /**
+         * The returned RoverBundleVersion instance.
+         */
         private com.oracle.bmc.rover.model.RoverBundleVersion roverBundleVersion;
 
         /**
-         * The returned {@code RoverBundleVersion} instance.
-         *
+         * The returned RoverBundleVersion instance.
          * @param roverBundleVersion the value to set
          * @return this builder
          */
@@ -136,10 +142,8 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RetrieveAvailableBundleVersionsRoverNodeResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -152,10 +156,8 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RetrieveAvailableBundleVersionsRoverNodeResponse build() {
             return new RetrieveAvailableBundleVersionsRoverNodeResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, roverBundleVersion);
@@ -164,7 +166,6 @@ public class RetrieveAvailableBundleVersionsRoverNodeResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,71 +6,92 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTermRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/UpdateTermExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTermRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class UpdateTermRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datacatalog.model.UpdateTermDetails> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
-    /** Unique glossary key. */
+    /**
+     * Unique glossary key.
+     */
     private String glossaryKey;
 
-    /** Unique glossary key. */
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
-    /** Unique glossary term key. */
+    /**
+     * Unique glossary term key.
+     */
     private String termKey;
 
-    /** Unique glossary term key. */
+    /**
+     * Unique glossary term key.
+     */
     public String getTermKey() {
         return termKey;
     }
-    /** The information to be updated in the term. */
+    /**
+     * The information to be updated in the term.
+     */
     private com.oracle.bmc.datacatalog.model.UpdateTermDetails updateTermDetails;
 
-    /** The information to be updated in the term. */
+    /**
+     * The information to be updated in the term.
+     */
     public com.oracle.bmc.datacatalog.model.UpdateTermDetails getUpdateTermDetails() {
         return updateTermDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -82,15 +103,17 @@ public class UpdateTermRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTermRequest, com.oracle.bmc.datacatalog.model.UpdateTermDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -99,12 +122,13 @@ public class UpdateTermRequest
             return this;
         }
 
-        /** Unique glossary key. */
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
-         *
          * @param glossaryKey the value to set
          * @return this builder instance
          */
@@ -113,12 +137,13 @@ public class UpdateTermRequest
             return this;
         }
 
-        /** Unique glossary term key. */
+        /**
+         * Unique glossary term key.
+         */
         private String termKey = null;
 
         /**
          * Unique glossary term key.
-         *
          * @param termKey the value to set
          * @return this builder instance
          */
@@ -127,12 +152,13 @@ public class UpdateTermRequest
             return this;
         }
 
-        /** The information to be updated in the term. */
+        /**
+         * The information to be updated in the term.
+         */
         private com.oracle.bmc.datacatalog.model.UpdateTermDetails updateTermDetails = null;
 
         /**
          * The information to be updated in the term.
-         *
          * @param updateTermDetails the value to set
          * @return this builder instance
          */
@@ -143,18 +169,21 @@ public class UpdateTermRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -164,12 +193,13 @@ public class UpdateTermRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -180,19 +210,18 @@ public class UpdateTermRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -204,7 +233,6 @@ public class UpdateTermRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateTermRequest o) {
@@ -222,11 +250,10 @@ public class UpdateTermRequest
         /**
          * Build the instance of UpdateTermRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateTermRequest
          */
@@ -239,7 +266,6 @@ public class UpdateTermRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -252,8 +278,7 @@ public class UpdateTermRequest
         /**
          * Build the instance of UpdateTermRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTermRequest
@@ -267,14 +292,12 @@ public class UpdateTermRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateTermRequest(catalogId, glossaryKey, termKey, updateTermDetails, ifMatch,
-            // opcRequestId);
+            // new UpdateTermRequest(catalogId, glossaryKey, termKey, updateTermDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -289,7 +312,6 @@ public class UpdateTermRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

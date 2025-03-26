@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the scheduled action that is used in getRecommendedScheduledActions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of the scheduled action that is used in getRecommendedScheduledActions.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RecommendedScheduledActionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RecommendedScheduledActionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RecommendedScheduledActionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "actionOrder",
@@ -52,114 +52,117 @@ public final class RecommendedScheduledActionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The order of the scheduled action. */
+        /**
+         * The order of the scheduled action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionOrder")
         private Integer actionOrder;
 
         /**
          * The order of the scheduled action.
-         *
          * @param actionOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder actionOrder(Integer actionOrder) {
             this.actionOrder = actionOrder;
             this.__explicitlySet__.add("actionOrder");
             return this;
         }
-        /** The type of the scheduled action being performed */
+        /**
+         * The type of the scheduled action being performed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionType")
         private ActionType actionType;
 
         /**
          * The type of the scheduled action being performed
-         *
          * @param actionType the value to set
          * @return this builder
-         */
+         **/
         public Builder actionType(ActionType actionType) {
             this.actionType = actionType;
             this.__explicitlySet__.add("actionType");
             return this;
         }
         /**
-         * Description of the scheduled action being performed, i.e. apply full update to DB Servers
-         * 1,2,3,4.
-         */
+         * Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Description of the scheduled action being performed, i.e. apply full update to DB Servers
-         * 1,2,3,4.
-         *
+         * Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The id of the scheduling window this scheduled action belongs to. */
+        /**
+         * The id of the scheduling window this scheduled action belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
         private String schedulingWindowId;
 
         /**
          * The id of the scheduling window this scheduled action belongs to.
-         *
          * @param schedulingWindowId the value to set
          * @return this builder
-         */
+         **/
         public Builder schedulingWindowId(String schedulingWindowId) {
             this.schedulingWindowId = schedulingWindowId;
             this.__explicitlySet__.add("schedulingWindowId");
             return this;
         }
-        /** The estimated patching time in minutes for the entire scheduled action. */
+        /**
+         * The estimated patching time in minutes for the entire scheduled action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
         private Integer estimatedTimeInMins;
 
         /**
          * The estimated patching time in minutes for the entire scheduled action.
-         *
          * @param estimatedTimeInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedTimeInMins(Integer estimatedTimeInMins) {
             this.estimatedTimeInMins = estimatedTimeInMins;
             this.__explicitlySet__.add("estimatedTimeInMins");
             return this;
         }
-        /** The list of action members in a scheduled action. */
+        /**
+         * The list of action members in a scheduled action.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionMembers")
         private java.util.List<ActionMember> actionMembers;
 
         /**
          * The list of action members in a scheduled action.
-         *
          * @param actionMembers the value to set
          * @return this builder
-         */
+         **/
         public Builder actionMembers(java.util.List<ActionMember> actionMembers) {
             this.actionMembers = actionMembers;
             this.__explicitlySet__.add("actionMembers");
             return this;
         }
         /**
-         * Map<ParamName, ParamValue> where a key value pair describes the specific action
-         * parameter. Example: {@code {"count": "3"}}
-         */
+         * Map<ParamName, ParamValue> where a key value pair describes the specific action parameter.
+         * Example: {@code {"count": "3"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionParams")
         private java.util.Map<String, String> actionParams;
 
         /**
-         * Map<ParamName, ParamValue> where a key value pair describes the specific action
-         * parameter. Example: {@code {"count": "3"}}
+         * Map<ParamName, ParamValue> where a key value pair describes the specific action parameter.
+         * Example: {@code {"count": "3"}}
          *
          * @param actionParams the value to set
          * @return this builder
-         */
+         **/
         public Builder actionParams(java.util.Map<String, String> actionParams) {
             this.actionParams = actionParams;
             this.__explicitlySet__.add("actionParams");
@@ -212,7 +215,9 @@ public final class RecommendedScheduledActionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,28 +226,31 @@ public final class RecommendedScheduledActionSummary
         return new Builder().copy(this);
     }
 
-    /** The order of the scheduled action. */
+    /**
+     * The order of the scheduled action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionOrder")
     private final Integer actionOrder;
 
     /**
      * The order of the scheduled action.
-     *
      * @return the value
-     */
+     **/
     public Integer getActionOrder() {
         return actionOrder;
     }
 
-    /** The type of the scheduled action being performed */
-    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the scheduled action being performed
+     **/
+    public enum ActionType {
         DbServerFullSoftwareUpdate("DB_SERVER_FULL_SOFTWARE_UPDATE"),
         StorageServerFullSoftwareUpdate("STORAGE_SERVER_FULL_SOFTWARE_UPDATE"),
         NetworkSwitchFullSoftwareUpdate("NETWORK_SWITCH_FULL_SOFTWARE_UPDATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -281,71 +289,72 @@ public final class RecommendedScheduledActionSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of the scheduled action being performed */
+    /**
+     * The type of the scheduled action being performed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionType")
     private final ActionType actionType;
 
     /**
      * The type of the scheduled action being performed
-     *
      * @return the value
-     */
+     **/
     public ActionType getActionType() {
         return actionType;
     }
 
     /**
-     * Description of the scheduled action being performed, i.e. apply full update to DB Servers
-     * 1,2,3,4.
-     */
+     * Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Description of the scheduled action being performed, i.e. apply full update to DB Servers
-     * 1,2,3,4.
-     *
+     * Description of the scheduled action being performed, i.e. apply full update to DB Servers 1,2,3,4.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The id of the scheduling window this scheduled action belongs to. */
+    /**
+     * The id of the scheduling window this scheduled action belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedulingWindowId")
     private final String schedulingWindowId;
 
     /**
      * The id of the scheduling window this scheduled action belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getSchedulingWindowId() {
         return schedulingWindowId;
     }
 
-    /** The estimated patching time in minutes for the entire scheduled action. */
+    /**
+     * The estimated patching time in minutes for the entire scheduled action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
     private final Integer estimatedTimeInMins;
 
     /**
      * The estimated patching time in minutes for the entire scheduled action.
-     *
      * @return the value
-     */
+     **/
     public Integer getEstimatedTimeInMins() {
         return estimatedTimeInMins;
     }
 
-    /** The list of action members in a scheduled action. */
+    /**
+     * The list of action members in a scheduled action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionMembers")
     private final java.util.List<ActionMember> actionMembers;
 
     /**
      * The list of action members in a scheduled action.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ActionMember> getActionMembers() {
         return actionMembers;
     }
@@ -353,7 +362,8 @@ public final class RecommendedScheduledActionSummary
     /**
      * Map<ParamName, ParamValue> where a key value pair describes the specific action parameter.
      * Example: {@code {"count": "3"}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionParams")
     private final java.util.Map<String, String> actionParams;
 
@@ -362,7 +372,7 @@ public final class RecommendedScheduledActionSummary
      * Example: {@code {"count": "3"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getActionParams() {
         return actionParams;
     }
@@ -374,7 +384,6 @@ public final class RecommendedScheduledActionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

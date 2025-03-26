@@ -6,17 +6,18 @@ package com.oracle.bmc.networkfirewall.responses;
 
 import com.oracle.bmc.networkfirewall.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,13 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -43,16 +41,13 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results
-     * exist. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages of results exist. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcPrevPage;
 
     /**
-     * For list pagination. When this header appears in the response, previous pages of results
-     * exist. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, previous pages of results exist. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -61,16 +56,15 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. This is to get the page counts
-     * overall.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. This is to get the page counts overall.
+     *
      */
     private String opcPageCount;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. This is to get the page counts
-     * overall.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. This is to get the page counts overall.
      *
      * @return the value
      */
@@ -78,7 +72,10 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcPageCount;
     }
 
-    /** For pagination of a list of items. This provides the count of total items across pages. */
+    /**
+     * For pagination of a list of items. This provides the count of total items across pages.
+     *
+     */
     private Integer opcTotalItems;
 
     /**
@@ -90,12 +87,13 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcTotalItems;
     }
 
-    /** The returned {@code UrlListSummaryCollection} instance. */
+    /**
+     * The returned UrlListSummaryCollection instance.
+     */
     private com.oracle.bmc.networkfirewall.model.UrlListSummaryCollection urlListSummaryCollection;
 
     /**
-     * The returned {@code UrlListSummaryCollection} instance.
-     *
+     * The returned UrlListSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.networkfirewall.model.UrlListSummaryCollection
@@ -115,7 +113,7 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private ListUrlListsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -132,33 +130,31 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         this.urlListSummaryCollection = urlListSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListUrlListsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -169,16 +165,13 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -189,16 +182,13 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * exist. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages of results exist. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcPrevPage;
 
         /**
-         * For list pagination. When this header appears in the response, previous pages of results
-         * exist. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, previous pages of results exist. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -209,16 +199,15 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. This is to get the page
-         * counts overall.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. This is to get the page counts overall.
+         *
          */
         private String opcPageCount;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. This is to get the page
-         * counts overall.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. This is to get the page counts overall.
          *
          * @param opcPageCount the value to set
          * @return this builder
@@ -230,6 +219,7 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * For pagination of a list of items. This provides the count of total items across pages.
+         *
          */
         private Integer opcTotalItems;
 
@@ -244,13 +234,14 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code UrlListSummaryCollection} instance. */
+        /**
+         * The returned UrlListSummaryCollection instance.
+         */
         private com.oracle.bmc.networkfirewall.model.UrlListSummaryCollection
                 urlListSummaryCollection;
 
         /**
-         * The returned {@code UrlListSummaryCollection} instance.
-         *
+         * The returned UrlListSummaryCollection instance.
          * @param urlListSummaryCollection the value to set
          * @return this builder
          */
@@ -263,10 +254,8 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListUrlListsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -282,10 +271,8 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListUrlListsResponse build() {
             return new ListUrlListsResponse(
                     __httpStatusCode__,
@@ -301,7 +288,6 @@ public class ListUrlListsResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

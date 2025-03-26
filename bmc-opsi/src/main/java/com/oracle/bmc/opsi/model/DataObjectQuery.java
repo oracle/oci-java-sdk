@@ -5,33 +5,34 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Information required to form and execute query on a data object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Information required to form and execute query on a data object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "queryType",
-        defaultImpl = DataObjectQuery.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "queryType",
+    defaultImpl = DataObjectQuery.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DataObjectStandardQuery.class,
-            name = "STANDARD_QUERY"),
+        value = DataObjectStandardQuery.class,
+        name = "STANDARD_QUERY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DataObjectTemplatizedQuery.class,
-            name = "TEMPLATIZED_QUERY")
+        value = DataObjectTemplatizedQuery.class,
+        name = "TEMPLATIZED_QUERY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DataObjectQuery extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DataObjectQuery extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bindParams", "queryExecutionTimeoutInSeconds"})
     protected DataObjectQuery(
@@ -42,28 +43,30 @@ public class DataObjectQuery extends com.oracle.bmc.http.client.internal.Explici
         this.queryExecutionTimeoutInSeconds = queryExecutionTimeoutInSeconds;
     }
 
-    /** List of bind parameters to be applied in the query. */
+    /**
+     * List of bind parameters to be applied in the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bindParams")
     private final java.util.List<DataObjectBindParameter> bindParams;
 
     /**
      * List of bind parameters to be applied in the query.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DataObjectBindParameter> getBindParams() {
         return bindParams;
     }
 
-    /** Timeout (in seconds) to be set for the data object query execution. */
+    /**
+     * Timeout (in seconds) to be set for the data object query execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryExecutionTimeoutInSeconds")
     private final Double queryExecutionTimeoutInSeconds;
 
     /**
      * Timeout (in seconds) to be set for the data object query execution.
-     *
      * @return the value
-     */
+     **/
     public Double getQueryExecutionTimeoutInSeconds() {
         return queryExecutionTimeoutInSeconds;
     }
@@ -75,7 +78,6 @@ public class DataObjectQuery extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -120,8 +122,10 @@ public class DataObjectQuery extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** Type of Query */
-    public enum QueryType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of Query
+     **/
+    public enum QueryType {
         TemplatizedQuery("TEMPLATIZED_QUERY"),
         StandardQuery("STANDARD_QUERY"),
         ;

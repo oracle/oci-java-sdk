@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Detail information for an OCI Compute instance that is being managed <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * Detail information for an OCI Compute instance that is being managed
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ManagedInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ManagedInstance
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ManagedInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -108,395 +105,421 @@ public final class ManagedInstance
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Managed Instance identifier */
+        /**
+         * Managed Instance identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Managed Instance identifier
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** OCID for the managed instance */
+        /**
+         * OCID for the managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID for the managed instance
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Information specified by the user about the managed instance */
+        /**
+         * Information specified by the user about the managed instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Information specified by the user about the managed instance
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Time at which the instance last checked in */
+        /**
+         * Time at which the instance last checked in
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
         private String lastCheckin;
 
         /**
          * Time at which the instance last checked in
-         *
          * @param lastCheckin the value to set
          * @return this builder
-         */
+         **/
         public Builder lastCheckin(String lastCheckin) {
             this.lastCheckin = lastCheckin;
             this.__explicitlySet__.add("lastCheckin");
             return this;
         }
-        /** Time at which the instance last booted */
+        /**
+         * Time at which the instance last booted
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
         private String lastBoot;
 
         /**
          * Time at which the instance last booted
-         *
          * @param lastBoot the value to set
          * @return this builder
-         */
+         **/
         public Builder lastBoot(String lastBoot) {
             this.lastBoot = lastBoot;
             this.__explicitlySet__.add("lastBoot");
             return this;
         }
-        /** Number of updates available to be installed */
+        /**
+         * Number of updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
         private Integer updatesAvailable;
 
         /**
          * Number of updates available to be installed
-         *
          * @param updatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder updatesAvailable(Integer updatesAvailable) {
             this.updatesAvailable = updatesAvailable;
             this.__explicitlySet__.add("updatesAvailable");
             return this;
         }
-        /** Operating System Name */
+        /**
+         * Operating System Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osName")
         private String osName;
 
         /**
          * Operating System Name
-         *
          * @param osName the value to set
          * @return this builder
-         */
+         **/
         public Builder osName(String osName) {
             this.osName = osName;
             this.__explicitlySet__.add("osName");
             return this;
         }
-        /** Operating System Version */
+        /**
+         * Operating System Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
         private String osVersion;
 
         /**
          * Operating System Version
-         *
          * @param osVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osVersion(String osVersion) {
             this.osVersion = osVersion;
             this.__explicitlySet__.add("osVersion");
             return this;
         }
-        /** Operating System Kernel Version */
+        /**
+         * Operating System Kernel Version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
         private String osKernelVersion;
 
         /**
          * Operating System Kernel Version
-         *
          * @param osKernelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osKernelVersion(String osKernelVersion) {
             this.osKernelVersion = osKernelVersion;
             this.__explicitlySet__.add("osKernelVersion");
             return this;
         }
-        /** OCID for the Compartment */
+        /**
+         * OCID for the Compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID for the Compartment
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** status of the managed instance. */
+        /**
+         * status of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * status of the managed instance.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** the parent (base) Software Source attached to the Managed Instance */
+        /**
+         * the parent (base) Software Source attached to the Managed Instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentSoftwareSource")
         private SoftwareSourceId parentSoftwareSource;
 
         /**
          * the parent (base) Software Source attached to the Managed Instance
-         *
          * @param parentSoftwareSource the value to set
          * @return this builder
-         */
+         **/
         public Builder parentSoftwareSource(SoftwareSourceId parentSoftwareSource) {
             this.parentSoftwareSource = parentSoftwareSource;
             this.__explicitlySet__.add("parentSoftwareSource");
             return this;
         }
-        /** list of child Software Sources attached to the Managed Instance */
+        /**
+         * list of child Software Sources attached to the Managed Instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childSoftwareSources")
         private java.util.List<SoftwareSourceId> childSoftwareSources;
 
         /**
          * list of child Software Sources attached to the Managed Instance
-         *
          * @param childSoftwareSources the value to set
          * @return this builder
-         */
+         **/
         public Builder childSoftwareSources(java.util.List<SoftwareSourceId> childSoftwareSources) {
             this.childSoftwareSources = childSoftwareSources;
             this.__explicitlySet__.add("childSoftwareSources");
             return this;
         }
-        /** The ids of the managed instance groups of which this instance is a member. */
+        /**
+         * The ids of the managed instance groups of which this instance is a
+         * member.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
         private java.util.List<Id> managedInstanceGroups;
 
         /**
-         * The ids of the managed instance groups of which this instance is a member.
+         * The ids of the managed instance groups of which this instance is a
+         * member.
          *
          * @param managedInstanceGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceGroups(java.util.List<Id> managedInstanceGroups) {
             this.managedInstanceGroups = managedInstanceGroups;
             this.__explicitlySet__.add("managedInstanceGroups");
             return this;
         }
-        /** The Operating System type of the managed instance. */
+        /**
+         * The Operating System type of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamilies osFamily;
 
         /**
          * The Operating System type of the managed instance.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamilies osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** Indicates whether a reboot is required to complete installation of updates. */
+        /**
+         * Indicates whether a reboot is required to complete installation of updates.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
         private Boolean isRebootRequired;
 
         /**
          * Indicates whether a reboot is required to complete installation of updates.
-         *
          * @param isRebootRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRebootRequired(Boolean isRebootRequired) {
             this.isRebootRequired = isRebootRequired;
             this.__explicitlySet__.add("isRebootRequired");
             return this;
         }
-        /** OCID of the ONS topic used to send notification to users */
+        /**
+         * OCID of the ONS topic used to send notification to users
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
         private String notificationTopicId;
 
         /**
          * OCID of the ONS topic used to send notification to users
-         *
          * @param notificationTopicId the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationTopicId(String notificationTopicId) {
             this.notificationTopicId = notificationTopicId;
             this.__explicitlySet__.add("notificationTopicId");
             return this;
         }
-        /** The ksplice effective kernel version */
+        /**
+         * The ksplice effective kernel version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
         private String kspliceEffectiveKernelVersion;
 
         /**
          * The ksplice effective kernel version
-         *
          * @param kspliceEffectiveKernelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
             this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
             this.__explicitlySet__.add("kspliceEffectiveKernelVersion");
             return this;
         }
-        /** True if user allow data collection for this instance */
+        /**
+         * True if user allow data collection for this instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
         private Boolean isDataCollectionAuthorized;
 
         /**
          * True if user allow data collection for this instance
-         *
          * @param isDataCollectionAuthorized the value to set
          * @return this builder
-         */
+         **/
         public Builder isDataCollectionAuthorized(Boolean isDataCollectionAuthorized) {
             this.isDataCollectionAuthorized = isDataCollectionAuthorized;
             this.__explicitlySet__.add("isDataCollectionAuthorized");
             return this;
         }
         /**
-         * if present, indicates the Managed Instance is an autonomous instance. Holds all the
-         * Autonomous specific information
-         */
+         * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomous")
         private AutonomousSettings autonomous;
 
         /**
-         * if present, indicates the Managed Instance is an autonomous instance. Holds all the
-         * Autonomous specific information
-         *
+         * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
          * @param autonomous the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomous(AutonomousSettings autonomous) {
             this.autonomous = autonomous;
             this.__explicitlySet__.add("autonomous");
             return this;
         }
-        /** Number of security type updates available to be installed */
+        /**
+         * Number of security type updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
         private Integer securityUpdatesAvailable;
 
         /**
          * Number of security type updates available to be installed
-         *
          * @param securityUpdatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder securityUpdatesAvailable(Integer securityUpdatesAvailable) {
             this.securityUpdatesAvailable = securityUpdatesAvailable;
             this.__explicitlySet__.add("securityUpdatesAvailable");
             return this;
         }
-        /** Number of bug fix type updates available to be installed */
+        /**
+         * Number of bug fix type updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
         private Integer bugUpdatesAvailable;
 
         /**
          * Number of bug fix type updates available to be installed
-         *
          * @param bugUpdatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder bugUpdatesAvailable(Integer bugUpdatesAvailable) {
             this.bugUpdatesAvailable = bugUpdatesAvailable;
             this.__explicitlySet__.add("bugUpdatesAvailable");
             return this;
         }
-        /** Number of enhancement type updates available to be installed */
+        /**
+         * Number of enhancement type updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
         private Integer enhancementUpdatesAvailable;
 
         /**
          * Number of enhancement type updates available to be installed
-         *
          * @param enhancementUpdatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder enhancementUpdatesAvailable(Integer enhancementUpdatesAvailable) {
             this.enhancementUpdatesAvailable = enhancementUpdatesAvailable;
             this.__explicitlySet__.add("enhancementUpdatesAvailable");
             return this;
         }
-        /** Number of non-classified updates available to be installed */
+        /**
+         * Number of non-classified updates available to be installed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
         private Integer otherUpdatesAvailable;
 
         /**
          * Number of non-classified updates available to be installed
-         *
          * @param otherUpdatesAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder otherUpdatesAvailable(Integer otherUpdatesAvailable) {
             this.otherUpdatesAvailable = otherUpdatesAvailable;
             this.__explicitlySet__.add("otherUpdatesAvailable");
             return this;
         }
-        /** Number of scheduled jobs associated with this instance */
+        /**
+         * Number of scheduled jobs associated with this instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobCount")
         private Integer scheduledJobCount;
 
         /**
          * Number of scheduled jobs associated with this instance
-         *
          * @param scheduledJobCount the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledJobCount(Integer scheduledJobCount) {
             this.scheduledJobCount = scheduledJobCount;
             this.__explicitlySet__.add("scheduledJobCount");
             return this;
         }
-        /** Number of work requests associated with this instance */
+        /**
+         * Number of work requests associated with this instance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestCount")
         private Integer workRequestCount;
 
         /**
          * Number of work requests associated with this instance
-         *
          * @param workRequestCount the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestCount(Integer workRequestCount) {
             this.workRequestCount = workRequestCount;
             this.__explicitlySet__.add("workRequestCount");
@@ -625,7 +648,9 @@ public final class ManagedInstance
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -634,146 +659,158 @@ public final class ManagedInstance
         return new Builder().copy(this);
     }
 
-    /** Managed Instance identifier */
+    /**
+     * Managed Instance identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Managed Instance identifier
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** OCID for the managed instance */
+    /**
+     * OCID for the managed instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID for the managed instance
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Information specified by the user about the managed instance */
+    /**
+     * Information specified by the user about the managed instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Information specified by the user about the managed instance
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Time at which the instance last checked in */
+    /**
+     * Time at which the instance last checked in
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastCheckin")
     private final String lastCheckin;
 
     /**
      * Time at which the instance last checked in
-     *
      * @return the value
-     */
+     **/
     public String getLastCheckin() {
         return lastCheckin;
     }
 
-    /** Time at which the instance last booted */
+    /**
+     * Time at which the instance last booted
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastBoot")
     private final String lastBoot;
 
     /**
      * Time at which the instance last booted
-     *
      * @return the value
-     */
+     **/
     public String getLastBoot() {
         return lastBoot;
     }
 
-    /** Number of updates available to be installed */
+    /**
+     * Number of updates available to be installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatesAvailable")
     private final Integer updatesAvailable;
 
     /**
      * Number of updates available to be installed
-     *
      * @return the value
-     */
+     **/
     public Integer getUpdatesAvailable() {
         return updatesAvailable;
     }
 
-    /** Operating System Name */
+    /**
+     * Operating System Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osName")
     private final String osName;
 
     /**
      * Operating System Name
-     *
      * @return the value
-     */
+     **/
     public String getOsName() {
         return osName;
     }
 
-    /** Operating System Version */
+    /**
+     * Operating System Version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osVersion")
     private final String osVersion;
 
     /**
      * Operating System Version
-     *
      * @return the value
-     */
+     **/
     public String getOsVersion() {
         return osVersion;
     }
 
-    /** Operating System Kernel Version */
+    /**
+     * Operating System Kernel Version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
     private final String osKernelVersion;
 
     /**
      * Operating System Kernel Version
-     *
      * @return the value
-     */
+     **/
     public String getOsKernelVersion() {
         return osKernelVersion;
     }
 
-    /** OCID for the Compartment */
+    /**
+     * OCID for the Compartment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID for the Compartment
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** status of the managed instance. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * status of the managed instance.
+     **/
+    public enum Status {
         Normal("NORMAL"),
         Unreachable("UNREACHABLE"),
         Error("ERROR"),
         Warning("WARNING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -811,214 +848,230 @@ public final class ManagedInstance
             return UnknownEnumValue;
         }
     };
-    /** status of the managed instance. */
+    /**
+     * status of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * status of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** the parent (base) Software Source attached to the Managed Instance */
+    /**
+     * the parent (base) Software Source attached to the Managed Instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentSoftwareSource")
     private final SoftwareSourceId parentSoftwareSource;
 
     /**
      * the parent (base) Software Source attached to the Managed Instance
-     *
      * @return the value
-     */
+     **/
     public SoftwareSourceId getParentSoftwareSource() {
         return parentSoftwareSource;
     }
 
-    /** list of child Software Sources attached to the Managed Instance */
+    /**
+     * list of child Software Sources attached to the Managed Instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("childSoftwareSources")
     private final java.util.List<SoftwareSourceId> childSoftwareSources;
 
     /**
      * list of child Software Sources attached to the Managed Instance
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SoftwareSourceId> getChildSoftwareSources() {
         return childSoftwareSources;
     }
 
-    /** The ids of the managed instance groups of which this instance is a member. */
+    /**
+     * The ids of the managed instance groups of which this instance is a
+     * member.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceGroups")
     private final java.util.List<Id> managedInstanceGroups;
 
     /**
-     * The ids of the managed instance groups of which this instance is a member.
+     * The ids of the managed instance groups of which this instance is a
+     * member.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Id> getManagedInstanceGroups() {
         return managedInstanceGroups;
     }
 
-    /** The Operating System type of the managed instance. */
+    /**
+     * The Operating System type of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamilies osFamily;
 
     /**
      * The Operating System type of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public OsFamilies getOsFamily() {
         return osFamily;
     }
 
-    /** Indicates whether a reboot is required to complete installation of updates. */
+    /**
+     * Indicates whether a reboot is required to complete installation of updates.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRebootRequired")
     private final Boolean isRebootRequired;
 
     /**
      * Indicates whether a reboot is required to complete installation of updates.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRebootRequired() {
         return isRebootRequired;
     }
 
-    /** OCID of the ONS topic used to send notification to users */
+    /**
+     * OCID of the ONS topic used to send notification to users
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationTopicId")
     private final String notificationTopicId;
 
     /**
      * OCID of the ONS topic used to send notification to users
-     *
      * @return the value
-     */
+     **/
     public String getNotificationTopicId() {
         return notificationTopicId;
     }
 
-    /** The ksplice effective kernel version */
+    /**
+     * The ksplice effective kernel version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
     private final String kspliceEffectiveKernelVersion;
 
     /**
      * The ksplice effective kernel version
-     *
      * @return the value
-     */
+     **/
     public String getKspliceEffectiveKernelVersion() {
         return kspliceEffectiveKernelVersion;
     }
 
-    /** True if user allow data collection for this instance */
+    /**
+     * True if user allow data collection for this instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataCollectionAuthorized")
     private final Boolean isDataCollectionAuthorized;
 
     /**
      * True if user allow data collection for this instance
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDataCollectionAuthorized() {
         return isDataCollectionAuthorized;
     }
 
     /**
-     * if present, indicates the Managed Instance is an autonomous instance. Holds all the
-     * Autonomous specific information
-     */
+     * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomous")
     private final AutonomousSettings autonomous;
 
     /**
-     * if present, indicates the Managed Instance is an autonomous instance. Holds all the
-     * Autonomous specific information
-     *
+     * if present, indicates the Managed Instance is an autonomous instance. Holds all the Autonomous specific information
      * @return the value
-     */
+     **/
     public AutonomousSettings getAutonomous() {
         return autonomous;
     }
 
-    /** Number of security type updates available to be installed */
+    /**
+     * Number of security type updates available to be installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityUpdatesAvailable")
     private final Integer securityUpdatesAvailable;
 
     /**
      * Number of security type updates available to be installed
-     *
      * @return the value
-     */
+     **/
     public Integer getSecurityUpdatesAvailable() {
         return securityUpdatesAvailable;
     }
 
-    /** Number of bug fix type updates available to be installed */
+    /**
+     * Number of bug fix type updates available to be installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bugUpdatesAvailable")
     private final Integer bugUpdatesAvailable;
 
     /**
      * Number of bug fix type updates available to be installed
-     *
      * @return the value
-     */
+     **/
     public Integer getBugUpdatesAvailable() {
         return bugUpdatesAvailable;
     }
 
-    /** Number of enhancement type updates available to be installed */
+    /**
+     * Number of enhancement type updates available to be installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enhancementUpdatesAvailable")
     private final Integer enhancementUpdatesAvailable;
 
     /**
      * Number of enhancement type updates available to be installed
-     *
      * @return the value
-     */
+     **/
     public Integer getEnhancementUpdatesAvailable() {
         return enhancementUpdatesAvailable;
     }
 
-    /** Number of non-classified updates available to be installed */
+    /**
+     * Number of non-classified updates available to be installed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherUpdatesAvailable")
     private final Integer otherUpdatesAvailable;
 
     /**
      * Number of non-classified updates available to be installed
-     *
      * @return the value
-     */
+     **/
     public Integer getOtherUpdatesAvailable() {
         return otherUpdatesAvailable;
     }
 
-    /** Number of scheduled jobs associated with this instance */
+    /**
+     * Number of scheduled jobs associated with this instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobCount")
     private final Integer scheduledJobCount;
 
     /**
      * Number of scheduled jobs associated with this instance
-     *
      * @return the value
-     */
+     **/
     public Integer getScheduledJobCount() {
         return scheduledJobCount;
     }
 
-    /** Number of work requests associated with this instance */
+    /**
+     * Number of work requests associated with this instance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestCount")
     private final Integer workRequestCount;
 
     /**
      * Number of work requests associated with this instance
-     *
      * @return the value
-     */
+     **/
     public Integer getWorkRequestCount() {
         return workRequestCount;
     }
@@ -1030,7 +1083,6 @@ public final class ManagedInstance
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

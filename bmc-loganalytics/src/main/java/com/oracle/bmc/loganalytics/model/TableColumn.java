@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Result column that contains a table within each row. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Result column that contains a table within each row.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TableColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TableColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,7 +133,10 @@ public final class TableColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** Column descriptors for the table result. */
+        /**
+         * Column descriptors for the table result.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columns")
         private java.util.List<AbstractColumn> columns;
 
@@ -142,13 +145,16 @@ public final class TableColumn extends AbstractColumn {
          *
          * @param columns the value to set
          * @return this builder
-         */
+         **/
         public Builder columns(java.util.List<AbstractColumn> columns) {
             this.columns = columns;
             this.__explicitlySet__.add("columns");
             return this;
         }
-        /** Results data of the table. */
+        /**
+         * Results data of the table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private java.util.List<java.util.Map<String, Object>> result;
 
@@ -157,13 +163,16 @@ public final class TableColumn extends AbstractColumn {
          *
          * @param result the value to set
          * @return this builder
-         */
+         **/
         public Builder result(java.util.List<java.util.Map<String, Object>> result) {
             this.result = result;
             this.__explicitlySet__.add("result");
             return this;
         }
-        /** True if query did not complete processing all data. */
+        /**
+         * True if query did not complete processing all data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
         private Boolean arePartialResults;
 
@@ -172,7 +181,7 @@ public final class TableColumn extends AbstractColumn {
          *
          * @param arePartialResults the value to set
          * @return this builder
-         */
+         **/
         public Builder arePartialResults(Boolean arePartialResults) {
             this.arePartialResults = arePartialResults;
             this.__explicitlySet__.add("arePartialResults");
@@ -257,7 +266,9 @@ public final class TableColumn extends AbstractColumn {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,7 +312,10 @@ public final class TableColumn extends AbstractColumn {
         this.arePartialResults = arePartialResults;
     }
 
-    /** Column descriptors for the table result. */
+    /**
+     * Column descriptors for the table result.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columns")
     private final java.util.List<AbstractColumn> columns;
 
@@ -309,12 +323,15 @@ public final class TableColumn extends AbstractColumn {
      * Column descriptors for the table result.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AbstractColumn> getColumns() {
         return columns;
     }
 
-    /** Results data of the table. */
+    /**
+     * Results data of the table.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final java.util.List<java.util.Map<String, Object>> result;
 
@@ -322,12 +339,15 @@ public final class TableColumn extends AbstractColumn {
      * Results data of the table.
      *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Map<String, Object>> getResult() {
         return result;
     }
 
-    /** True if query did not complete processing all data. */
+    /**
+     * True if query did not complete processing all data.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePartialResults")
     private final Boolean arePartialResults;
 
@@ -335,7 +355,7 @@ public final class TableColumn extends AbstractColumn {
      * True if query did not complete processing all data.
      *
      * @return the value
-     */
+     **/
     public Boolean getArePartialResults() {
         return arePartialResults;
     }
@@ -347,7 +367,6 @@ public final class TableColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

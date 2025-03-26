@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The information to be updated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EnableLatestPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EnableLatestPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EnableLatestPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"canLatestFamsPoliciesBeEnabled"})
     public EnableLatestPolicyDetails(Boolean canLatestFamsPoliciesBeEnabled) {
@@ -31,16 +30,17 @@ public final class EnableLatestPolicyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A value determining if latest Fleet Application Management policies should be enabled */
+        /**
+         * A value determining if latest Fleet Application Management policies should be enabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canLatestFamsPoliciesBeEnabled")
         private Boolean canLatestFamsPoliciesBeEnabled;
 
         /**
          * A value determining if latest Fleet Application Management policies should be enabled
-         *
          * @param canLatestFamsPoliciesBeEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder canLatestFamsPoliciesBeEnabled(Boolean canLatestFamsPoliciesBeEnabled) {
             this.canLatestFamsPoliciesBeEnabled = canLatestFamsPoliciesBeEnabled;
             this.__explicitlySet__.add("canLatestFamsPoliciesBeEnabled");
@@ -68,7 +68,9 @@ public final class EnableLatestPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class EnableLatestPolicyDetails
         return new Builder().copy(this);
     }
 
-    /** A value determining if latest Fleet Application Management policies should be enabled */
+    /**
+     * A value determining if latest Fleet Application Management policies should be enabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canLatestFamsPoliciesBeEnabled")
     private final Boolean canLatestFamsPoliciesBeEnabled;
 
     /**
      * A value determining if latest Fleet Application Management policies should be enabled
-     *
      * @return the value
-     */
+     **/
     public Boolean getCanLatestFamsPoliciesBeEnabled() {
         return canLatestFamsPoliciesBeEnabled;
     }
@@ -97,7 +100,6 @@ public final class EnableLatestPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

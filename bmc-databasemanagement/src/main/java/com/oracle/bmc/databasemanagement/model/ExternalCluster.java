@@ -5,22 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExternalCluster.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExternalCluster
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExternalCluster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -94,339 +91,339 @@ public final class ExternalCluster
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user-friendly name for the external cluster. The name does not have to be unique. */
+        /**
+         * The user-friendly name for the external cluster. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the external cluster. The name does not have to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The name of the external cluster. */
+        /**
+         * The name of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("componentName")
         private String componentName;
 
         /**
          * The name of the external cluster.
-         *
          * @param componentName the value to set
          * @return this builder
-         */
+         **/
         public Builder componentName(String componentName) {
             this.componentName = componentName;
             this.__explicitlySet__.add("componentName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that the cluster is a part of.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDbSystemId")
         private String externalDbSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system that the cluster is a part of.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
          * @param externalDbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDbSystemId(String externalDbSystemId) {
             this.externalDbSystemId = externalDbSystemId;
             this.__explicitlySet__.add("externalDbSystemId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external connector.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalConnectorId")
         private String externalConnectorId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external connector.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
          * @param externalConnectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalConnectorId(String externalConnectorId) {
             this.externalConnectorId = externalConnectorId;
             this.__explicitlySet__.add("externalConnectorId");
             return this;
         }
-        /** The directory in which Oracle Grid Infrastructure is installed. */
+        /**
+         * The directory in which Oracle Grid Infrastructure is installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
         private String gridHome;
 
         /**
          * The directory in which Oracle Grid Infrastructure is installed.
-         *
          * @param gridHome the value to set
          * @return this builder
-         */
+         **/
         public Builder gridHome(String gridHome) {
             this.gridHome = gridHome;
             this.__explicitlySet__.add("gridHome");
             return this;
         }
-        /** Indicates whether the cluster is Oracle Flex Cluster or not. */
+        /**
+         * Indicates whether the cluster is Oracle Flex Cluster or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexCluster")
         private Boolean isFlexCluster;
 
         /**
          * Indicates whether the cluster is Oracle Flex Cluster or not.
-         *
          * @param isFlexCluster the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexCluster(Boolean isFlexCluster) {
             this.isFlexCluster = isFlexCluster;
             this.__explicitlySet__.add("isFlexCluster");
             return this;
         }
         /**
-         * The additional details of the external cluster defined in {@code {"key": "value"}}
-         * format. Example: {@code {"bar-key": "value"}}
-         */
+         * The additional details of the external cluster defined in {@code {"key": "value"}} format.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
         private java.util.Map<String, String> additionalDetails;
 
         /**
-         * The additional details of the external cluster defined in {@code {"key": "value"}}
-         * format. Example: {@code {"bar-key": "value"}}
+         * The additional details of the external cluster defined in {@code {"key": "value"}} format.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param additionalDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalDetails(java.util.Map<String, String> additionalDetails) {
             this.additionalDetails = additionalDetails;
             this.__explicitlySet__.add("additionalDetails");
             return this;
         }
-        /** The current lifecycle state of the external cluster. */
+        /**
+         * The current lifecycle state of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current lifecycle state of the external cluster.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The list of network address configurations of the external cluster. */
+        /**
+         * The list of network address configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurations")
         private java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations;
 
         /**
          * The list of network address configurations of the external cluster.
-         *
          * @param networkConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder networkConfigurations(
                 java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations) {
             this.networkConfigurations = networkConfigurations;
             this.__explicitlySet__.add("networkConfigurations");
             return this;
         }
-        /** The list of Virtual IP (VIP) configurations of the external cluster. */
+        /**
+         * The list of Virtual IP (VIP) configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vipConfigurations")
         private java.util.List<ExternalClusterVipConfiguration> vipConfigurations;
 
         /**
          * The list of Virtual IP (VIP) configurations of the external cluster.
-         *
          * @param vipConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder vipConfigurations(
                 java.util.List<ExternalClusterVipConfiguration> vipConfigurations) {
             this.vipConfigurations = vipConfigurations;
             this.__explicitlySet__.add("vipConfigurations");
             return this;
         }
-        /** The list of Single Client Access Name (SCAN) configurations of the external cluster. */
+        /**
+         * The list of Single Client Access Name (SCAN) configurations of the external cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanConfigurations")
         private java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations;
 
         /**
          * The list of Single Client Access Name (SCAN) configurations of the external cluster.
-         *
          * @param scanConfigurations the value to set
          * @return this builder
-         */
+         **/
         public Builder scanConfigurations(
                 java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations) {
             this.scanConfigurations = scanConfigurations;
             this.__explicitlySet__.add("scanConfigurations");
             return this;
         }
-        /** The location of the Oracle Cluster Registry (OCR). */
+        /**
+         * The location of the Oracle Cluster Registry (OCR).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocrFileLocation")
         private String ocrFileLocation;
 
         /**
          * The location of the Oracle Cluster Registry (OCR).
-         *
          * @param ocrFileLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder ocrFileLocation(String ocrFileLocation) {
             this.ocrFileLocation = ocrFileLocation;
             this.__explicitlySet__.add("ocrFileLocation");
             return this;
         }
-        /** The date and time the external cluster was created. */
+        /**
+         * The date and time the external cluster was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the external cluster was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the external cluster was last updated. */
+        /**
+         * The date and time the external cluster was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the external cluster was last updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The cluster version. */
+        /**
+         * The cluster version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The cluster version.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -434,27 +431,26 @@ public final class ExternalCluster
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -563,7 +559,9 @@ public final class ExternalCluster
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -573,121 +571,113 @@ public final class ExternalCluster
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external cluster.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user-friendly name for the external cluster. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the external cluster. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the external cluster. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The name of the external cluster. */
+    /**
+     * The name of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("componentName")
     private final String componentName;
 
     /**
      * The name of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public String getComponentName() {
         return componentName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that the cluster is a part of.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDbSystemId")
     private final String externalDbSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system that the cluster is a part of.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system that the cluster is a part of.
      * @return the value
-     */
+     **/
     public String getExternalDbSystemId() {
         return externalDbSystemId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external connector.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalConnectorId")
     private final String externalConnectorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external connector.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external connector.
      * @return the value
-     */
+     **/
     public String getExternalConnectorId() {
         return externalConnectorId;
     }
 
-    /** The directory in which Oracle Grid Infrastructure is installed. */
+    /**
+     * The directory in which Oracle Grid Infrastructure is installed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gridHome")
     private final String gridHome;
 
     /**
      * The directory in which Oracle Grid Infrastructure is installed.
-     *
      * @return the value
-     */
+     **/
     public String getGridHome() {
         return gridHome;
     }
 
-    /** Indicates whether the cluster is Oracle Flex Cluster or not. */
+    /**
+     * Indicates whether the cluster is Oracle Flex Cluster or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexCluster")
     private final Boolean isFlexCluster;
 
     /**
      * Indicates whether the cluster is Oracle Flex Cluster or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexCluster() {
         return isFlexCluster;
     }
@@ -695,7 +685,8 @@ public final class ExternalCluster
     /**
      * The additional details of the external cluster defined in {@code {"key": "value"}} format.
      * Example: {@code {"bar-key": "value"}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDetails")
     private final java.util.Map<String, String> additionalDetails;
 
@@ -704,13 +695,15 @@ public final class ExternalCluster
      * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdditionalDetails() {
         return additionalDetails;
     }
 
-    /** The current lifecycle state of the external cluster. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current lifecycle state of the external cluster.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         NotConnected("NOT_CONNECTED"),
         Active("ACTIVE"),
@@ -721,8 +714,8 @@ public final class ExternalCluster
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -761,186 +754,192 @@ public final class ExternalCluster
             return UnknownEnumValue;
         }
     };
-    /** The current lifecycle state of the external cluster. */
+    /**
+     * The current lifecycle state of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current lifecycle state of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The list of network address configurations of the external cluster. */
+    /**
+     * The list of network address configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkConfigurations")
     private final java.util.List<ExternalClusterNetworkConfiguration> networkConfigurations;
 
     /**
      * The list of network address configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterNetworkConfiguration> getNetworkConfigurations() {
         return networkConfigurations;
     }
 
-    /** The list of Virtual IP (VIP) configurations of the external cluster. */
+    /**
+     * The list of Virtual IP (VIP) configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vipConfigurations")
     private final java.util.List<ExternalClusterVipConfiguration> vipConfigurations;
 
     /**
      * The list of Virtual IP (VIP) configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterVipConfiguration> getVipConfigurations() {
         return vipConfigurations;
     }
 
-    /** The list of Single Client Access Name (SCAN) configurations of the external cluster. */
+    /**
+     * The list of Single Client Access Name (SCAN) configurations of the external cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanConfigurations")
     private final java.util.List<ExternalClusterScanListenerConfiguration> scanConfigurations;
 
     /**
      * The list of Single Client Access Name (SCAN) configurations of the external cluster.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalClusterScanListenerConfiguration> getScanConfigurations() {
         return scanConfigurations;
     }
 
-    /** The location of the Oracle Cluster Registry (OCR). */
+    /**
+     * The location of the Oracle Cluster Registry (OCR).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocrFileLocation")
     private final String ocrFileLocation;
 
     /**
      * The location of the Oracle Cluster Registry (OCR).
-     *
      * @return the value
-     */
+     **/
     public String getOcrFileLocation() {
         return ocrFileLocation;
     }
 
-    /** The date and time the external cluster was created. */
+    /**
+     * The date and time the external cluster was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the external cluster was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the external cluster was last updated. */
+    /**
+     * The date and time the external cluster was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the external cluster was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The cluster version. */
+    /**
+     * The cluster version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The cluster version.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -952,7 +951,6 @@ public final class ExternalCluster
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

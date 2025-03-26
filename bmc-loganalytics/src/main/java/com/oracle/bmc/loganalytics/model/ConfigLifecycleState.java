@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Lifecycle state. Supported states are ACTIVE, DELETED. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum ConfigLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state. Supported states are ACTIVE, DELETED.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum ConfigLifecycleState {
     Active("ACTIVE"),
     Deleted("DELETED"),
 

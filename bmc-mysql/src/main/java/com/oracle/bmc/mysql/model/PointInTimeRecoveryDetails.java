@@ -6,23 +6,22 @@ package com.oracle.bmc.mysql.model;
 
 /**
  * Point-in-time Recovery details like earliest and latest recovery time point for the DB System.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PointInTimeRecoveryDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PointInTimeRecoveryDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PointInTimeRecoveryDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeEarliestRecoveryPoint", "timeLatestRecoveryPoint"})
     public PointInTimeRecoveryDetails(
@@ -35,38 +34,36 @@ public final class PointInTimeRecoveryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Earliest recovery time point for the DB System, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestRecoveryPoint")
         private java.util.Date timeEarliestRecoveryPoint;
 
         /**
-         * Earliest recovery time point for the DB System, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeEarliestRecoveryPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEarliestRecoveryPoint(java.util.Date timeEarliestRecoveryPoint) {
             this.timeEarliestRecoveryPoint = timeEarliestRecoveryPoint;
             this.__explicitlySet__.add("timeEarliestRecoveryPoint");
             return this;
         }
         /**
-         * Latest recovery time point for the DB System, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestRecoveryPoint")
         private java.util.Date timeLatestRecoveryPoint;
 
         /**
-         * Latest recovery time point for the DB System, as described by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
+         * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          *
          * @param timeLatestRecoveryPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLatestRecoveryPoint(java.util.Date timeLatestRecoveryPoint) {
             this.timeLatestRecoveryPoint = timeLatestRecoveryPoint;
             this.__explicitlySet__.add("timeLatestRecoveryPoint");
@@ -98,7 +95,9 @@ public final class PointInTimeRecoveryDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,35 +107,33 @@ public final class PointInTimeRecoveryDetails
     }
 
     /**
-     * Earliest recovery time point for the DB System, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEarliestRecoveryPoint")
     private final java.util.Date timeEarliestRecoveryPoint;
 
     /**
-     * Earliest recovery time point for the DB System, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     * Earliest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEarliestRecoveryPoint() {
         return timeEarliestRecoveryPoint;
     }
 
     /**
-     * Latest recovery time point for the DB System, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestRecoveryPoint")
     private final java.util.Date timeLatestRecoveryPoint;
 
     /**
-     * Latest recovery time point for the DB System, as described by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
+     * Latest recovery time point for the DB System, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLatestRecoveryPoint() {
         return timeLatestRecoveryPoint;
     }
@@ -148,7 +145,6 @@ public final class PointInTimeRecoveryDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

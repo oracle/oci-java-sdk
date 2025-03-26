@@ -5,23 +5,23 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Kerberos details needed to create configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Kerberos details needed to create configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateKerberosDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateKerberosDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateKerberosDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "kerberosRealm",
@@ -46,80 +46,81 @@ public final class CreateKerberosDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Kerberos realm that the mount target will join. */
+        /**
+         * The Kerberos realm that the mount target will join.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealm")
         private String kerberosRealm;
 
         /**
          * The Kerberos realm that the mount target will join.
-         *
          * @param kerberosRealm the value to set
          * @return this builder
-         */
+         **/
         public Builder kerberosRealm(String kerberosRealm) {
             this.kerberosRealm = kerberosRealm;
             this.__explicitlySet__.add("kerberosRealm");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * keytab Secret in the Vault.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyTabSecretId")
         private String keyTabSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * keytab Secret in the Vault.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
          * @param keyTabSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyTabSecretId(String keyTabSecretId) {
             this.keyTabSecretId = keyTabSecretId;
             this.__explicitlySet__.add("keyTabSecretId");
             return this;
         }
-        /** Version of the keytab Secret in the Vault to use. */
+        /**
+         * Version of the keytab Secret in the Vault to use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentKeyTabSecretVersion")
         private Integer currentKeyTabSecretVersion;
 
         /**
          * Version of the keytab Secret in the Vault to use.
-         *
          * @param currentKeyTabSecretVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder currentKeyTabSecretVersion(Integer currentKeyTabSecretVersion) {
             this.currentKeyTabSecretVersion = currentKeyTabSecretVersion;
             this.__explicitlySet__.add("currentKeyTabSecretVersion");
             return this;
         }
-        /** Version of the keytab Secret in the Vault to use as a backup. */
+        /**
+         * Version of the keytab Secret in the Vault to use as a backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupKeyTabSecretVersion")
         private Integer backupKeyTabSecretVersion;
 
         /**
          * Version of the keytab Secret in the Vault to use as a backup.
-         *
          * @param backupKeyTabSecretVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder backupKeyTabSecretVersion(Integer backupKeyTabSecretVersion) {
             this.backupKeyTabSecretVersion = backupKeyTabSecretVersion;
             this.__explicitlySet__.add("backupKeyTabSecretVersion");
             return this;
         }
-        /** Specifies whether to enable or disable Kerberos. */
+        /**
+         * Specifies whether to enable or disable Kerberos.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKerberosEnabled")
         private Boolean isKerberosEnabled;
 
         /**
          * Specifies whether to enable or disable Kerberos.
-         *
          * @param isKerberosEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isKerberosEnabled(Boolean isKerberosEnabled) {
             this.isKerberosEnabled = isKerberosEnabled;
             this.__explicitlySet__.add("isKerberosEnabled");
@@ -164,7 +165,9 @@ public final class CreateKerberosDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -173,71 +176,72 @@ public final class CreateKerberosDetails
         return new Builder().copy(this);
     }
 
-    /** The Kerberos realm that the mount target will join. */
+    /**
+     * The Kerberos realm that the mount target will join.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kerberosRealm")
     private final String kerberosRealm;
 
     /**
      * The Kerberos realm that the mount target will join.
-     *
      * @return the value
-     */
+     **/
     public String getKerberosRealm() {
         return kerberosRealm;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * keytab Secret in the Vault.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyTabSecretId")
     private final String keyTabSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * keytab Secret in the Vault.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the keytab Secret in the Vault.
      * @return the value
-     */
+     **/
     public String getKeyTabSecretId() {
         return keyTabSecretId;
     }
 
-    /** Version of the keytab Secret in the Vault to use. */
+    /**
+     * Version of the keytab Secret in the Vault to use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyTabSecretVersion")
     private final Integer currentKeyTabSecretVersion;
 
     /**
      * Version of the keytab Secret in the Vault to use.
-     *
      * @return the value
-     */
+     **/
     public Integer getCurrentKeyTabSecretVersion() {
         return currentKeyTabSecretVersion;
     }
 
-    /** Version of the keytab Secret in the Vault to use as a backup. */
+    /**
+     * Version of the keytab Secret in the Vault to use as a backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupKeyTabSecretVersion")
     private final Integer backupKeyTabSecretVersion;
 
     /**
      * Version of the keytab Secret in the Vault to use as a backup.
-     *
      * @return the value
-     */
+     **/
     public Integer getBackupKeyTabSecretVersion() {
         return backupKeyTabSecretVersion;
     }
 
-    /** Specifies whether to enable or disable Kerberos. */
+    /**
+     * Specifies whether to enable or disable Kerberos.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKerberosEnabled")
     private final Boolean isKerberosEnabled;
 
     /**
      * Specifies whether to enable or disable Kerberos.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsKerberosEnabled() {
         return isKerberosEnabled;
     }
@@ -249,7 +253,6 @@ public final class CreateKerberosDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

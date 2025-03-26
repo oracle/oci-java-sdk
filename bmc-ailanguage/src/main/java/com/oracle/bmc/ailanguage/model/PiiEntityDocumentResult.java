@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The document response for batch detect personal identification. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The document response for batch detect personal identification.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PiiEntityDocumentResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PiiEntityDocumentResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PiiEntityDocumentResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "entities", "maskedText", "languageCode"})
     public PiiEntityDocumentResult(
@@ -38,73 +37,115 @@ public final class PiiEntityDocumentResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Document unique identifier defined by the user. */
+        /**
+         * Document unique identifier defined by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Document unique identifier defined by the user.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** List of batch detect personal identification. */
+        /**
+         * List of batch detect personal identification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entities")
         private java.util.List<PiiEntity> entities;
 
         /**
          * List of batch detect personal identification.
-         *
          * @param entities the value to set
          * @return this builder
-         */
+         **/
         public Builder entities(java.util.List<PiiEntity> entities) {
             this.entities = entities;
             this.__explicitlySet__.add("entities");
             return this;
         }
-        /** Masked text per given mask mode. */
+        /**
+         * Masked text per given mask mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskedText")
         private String maskedText;
 
         /**
          * Masked text per given mask mode.
-         *
          * @param maskedText the value to set
          * @return this builder
-         */
+         **/
         public Builder maskedText(String maskedText) {
             this.maskedText = maskedText;
             this.__explicitlySet__.add("maskedText");
             return this;
         }
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
-         */
+         * Language code supported
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-         * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi :
-         * Finnish - fr : French - fr-CA : Canadian French - de : German - it : Italian - ja :
-         * Japanese - ko : Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN :
-         * Simplified Chinese - es : Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr :
-         * Turkish - el : Greek - he : Hebrew
+         * Language code supported
+         * - auto : Automatically detect language
+         * - ar : Arabic
+         * - pt-BR : Brazilian Portuguese
+         * - cs : Czech
+         * - da : Danish
+         * - nl : Dutch
+         * - en : English
+         * - fi : Finnish
+         * - fr : French
+         * - fr-CA : Canadian French
+         * - de : German
+         * - it : Italian
+         * - ja : Japanese
+         * - ko : Korean
+         * - no : Norwegian
+         * - pl : Polish
+         * - ro : Romanian
+         * - zh-CN : Simplified Chinese
+         * - es : Spanish
+         * - sv : Swedish
+         * - zh-TW : Traditional Chinese
+         * - tr : Turkish
+         * - el : Greek
+         * - he : Hebrew
          *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -142,7 +183,9 @@ public final class PiiEntityDocumentResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,66 +194,108 @@ public final class PiiEntityDocumentResult
         return new Builder().copy(this);
     }
 
-    /** Document unique identifier defined by the user. */
+    /**
+     * Document unique identifier defined by the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Document unique identifier defined by the user.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** List of batch detect personal identification. */
+    /**
+     * List of batch detect personal identification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entities")
     private final java.util.List<PiiEntity> entities;
 
     /**
      * List of batch detect personal identification.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PiiEntity> getEntities() {
         return entities;
     }
 
-    /** Masked text per given mask mode. */
+    /**
+     * Masked text per given mask mode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskedText")
     private final String maskedText;
 
     /**
      * Masked text per given mask mode.
-     *
      * @return the value
-     */
+     **/
     public String getMaskedText() {
         return maskedText;
     }
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
-     */
+     * Language code supported
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Language code supported - auto : Automatically detect language - ar : Arabic - pt-BR :
-     * Brazilian Portuguese - cs : Czech - da : Danish - nl : Dutch - en : English - fi : Finnish -
-     * fr : French - fr-CA : Canadian French - de : German - it : Italian - ja : Japanese - ko :
-     * Korean - no : Norwegian - pl : Polish - ro : Romanian - zh-CN : Simplified Chinese - es :
-     * Spanish - sv : Swedish - zh-TW : Traditional Chinese - tr : Turkish - el : Greek - he :
-     * Hebrew
+     * Language code supported
+     * - auto : Automatically detect language
+     * - ar : Arabic
+     * - pt-BR : Brazilian Portuguese
+     * - cs : Czech
+     * - da : Danish
+     * - nl : Dutch
+     * - en : English
+     * - fi : Finnish
+     * - fr : French
+     * - fr-CA : Canadian French
+     * - de : German
+     * - it : Italian
+     * - ja : Japanese
+     * - ko : Korean
+     * - no : Norwegian
+     * - pl : Polish
+     * - ro : Romanian
+     * - zh-CN : Simplified Chinese
+     * - es : Spanish
+     * - sv : Swedish
+     * - zh-TW : Traditional Chinese
+     * - tr : Turkish
+     * - el : Greek
+     * - he : Hebrew
      *
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -222,7 +307,6 @@ public final class PiiEntityDocumentResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

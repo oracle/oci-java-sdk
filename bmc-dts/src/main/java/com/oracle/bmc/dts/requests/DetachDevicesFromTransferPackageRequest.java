@@ -6,33 +6,42 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DetachDevicesFromTransferPackageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/DetachDevicesFromTransferPackageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetachDevicesFromTransferPackageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class DetachDevicesFromTransferPackageRequest
         extends com.oracle.bmc.requests.BmcRequest<com.oracle.bmc.dts.model.DetachDevicesDetails> {
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     private String id;
 
-    /** ID of the Transfer Job */
+    /**
+     * ID of the Transfer Job
+     */
     public String getId() {
         return id;
     }
-    /** Label of the Transfer Package */
+    /**
+     * Label of the Transfer Package
+     */
     private String transferPackageLabel;
 
-    /** Label of the Transfer Package */
+    /**
+     * Label of the Transfer Package
+     */
     public String getTransferPackageLabel() {
         return transferPackageLabel;
     }
-    /** Labels of Transfer Devices to detach */
+    /**
+     * Labels of Transfer Devices to detach
+     */
     private com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails;
 
-    /** Labels of Transfer Devices to detach */
+    /**
+     * Labels of Transfer Devices to detach
+     */
     public com.oracle.bmc.dts.model.DetachDevicesDetails getDetachDevicesDetails() {
         return detachDevicesDetails;
     }
@@ -42,6 +51,7 @@ public class DetachDevicesFromTransferPackageRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -51,6 +61,7 @@ public class DetachDevicesFromTransferPackageRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -58,7 +69,6 @@ public class DetachDevicesFromTransferPackageRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -71,15 +81,17 @@ public class DetachDevicesFromTransferPackageRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DetachDevicesFromTransferPackageRequest,
                     com.oracle.bmc.dts.model.DetachDevicesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the Transfer Job */
+        /**
+         * ID of the Transfer Job
+         */
         private String id = null;
 
         /**
          * ID of the Transfer Job
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -88,12 +100,13 @@ public class DetachDevicesFromTransferPackageRequest
             return this;
         }
 
-        /** Label of the Transfer Package */
+        /**
+         * Label of the Transfer Package
+         */
         private String transferPackageLabel = null;
 
         /**
          * Label of the Transfer Package
-         *
          * @param transferPackageLabel the value to set
          * @return this builder instance
          */
@@ -102,12 +115,13 @@ public class DetachDevicesFromTransferPackageRequest
             return this;
         }
 
-        /** Labels of Transfer Devices to detach */
+        /**
+         * Labels of Transfer Devices to detach
+         */
         private com.oracle.bmc.dts.model.DetachDevicesDetails detachDevicesDetails = null;
 
         /**
          * Labels of Transfer Devices to detach
-         *
          * @param detachDevicesDetails the value to set
          * @return this builder instance
          */
@@ -119,19 +133,20 @@ public class DetachDevicesFromTransferPackageRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -143,19 +158,18 @@ public class DetachDevicesFromTransferPackageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -167,7 +181,6 @@ public class DetachDevicesFromTransferPackageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DetachDevicesFromTransferPackageRequest o) {
@@ -181,14 +194,12 @@ public class DetachDevicesFromTransferPackageRequest
         }
 
         /**
-         * Build the instance of DetachDevicesFromTransferPackageRequest as configured by this
-         * builder
+         * Build the instance of DetachDevicesFromTransferPackageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DetachDevicesFromTransferPackageRequest
          */
@@ -201,7 +212,6 @@ public class DetachDevicesFromTransferPackageRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -212,11 +222,9 @@ public class DetachDevicesFromTransferPackageRequest
         }
 
         /**
-         * Build the instance of DetachDevicesFromTransferPackageRequest as configured by this
-         * builder
+         * Build the instance of DetachDevicesFromTransferPackageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DetachDevicesFromTransferPackageRequest
@@ -229,14 +237,12 @@ public class DetachDevicesFromTransferPackageRequest
             request.detachDevicesDetails = detachDevicesDetails;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new DetachDevicesFromTransferPackageRequest(id, transferPackageLabel,
-            // detachDevicesDetails, opcRetryToken);
+            // new DetachDevicesFromTransferPackageRequest(id, transferPackageLabel, detachDevicesDetails, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +255,6 @@ public class DetachDevicesFromTransferPackageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

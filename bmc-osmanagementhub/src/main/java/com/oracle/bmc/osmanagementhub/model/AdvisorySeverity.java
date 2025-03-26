@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Severity of the security advisory. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum AdvisorySeverity implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Severity of the security advisory.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum AdvisorySeverity {
     Low("LOW"),
     Moderate("MODERATE"),
     Important("IMPORTANT"),

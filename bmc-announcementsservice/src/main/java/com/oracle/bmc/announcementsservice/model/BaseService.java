@@ -5,34 +5,35 @@
 package com.oracle.bmc.announcementsservice.model;
 
 /**
- * Object representing a single service. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+ * Object representing a single service.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = BaseService.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = BaseService.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Service.class, name = "Service"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ServiceSummary.class,
-            name = "ServiceSummary"),
+        value = ServiceSummary.class,
+        name = "ServiceSummary"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = NotificationsSummary.class,
-            name = "NotificationsSummary")
+        value = NotificationsSummary.class,
+        name = "NotificationsSummary"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class BaseService extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class BaseService extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -73,149 +74,153 @@ public class BaseService extends com.oracle.bmc.http.client.internal.ExplicitlyS
         this.lifecycleState = lifecycleState;
     }
 
-    /** ID of the service object. */
+    /**
+     * ID of the service object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * ID of the service object.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Name of the service represented by this object. */
+    /**
+     * Name of the service represented by this object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * Name of the service represented by this object.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Short name of the team to whom this service object is related. */
+    /**
+     * Short name of the team to whom this service object is related.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortName")
     private final String shortName;
 
     /**
      * Short name of the team to whom this service object is related.
-     *
      * @return the value
-     */
+     **/
     public String getShortName() {
         return shortName;
     }
 
-    /** Team name to which this service object is related. */
+    /**
+     * Team name to which this service object is related.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("teamName")
     private final String teamName;
 
     /**
      * Team name to which this service object is related.
-     *
      * @return the value
-     */
+     **/
     public String getTeamName() {
         return teamName;
     }
 
-    /** The platform type this service object is related to. */
+    /**
+     * The platform type this service object is related to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
      * The platform type this service object is related to.
-     *
      * @return the value
-     */
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
 
-    /** Name of the comms manager team that manages Notifications to this service. */
+    /**
+     * Name of the comms manager team that manages Notifications to this service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commsManagerName")
     private final CommsManagerName commsManagerName;
 
     /**
      * Name of the comms manager team that manages Notifications to this service.
-     *
      * @return the value
-     */
+     **/
     public CommsManagerName getCommsManagerName() {
         return commsManagerName;
     }
 
-    /** The list of realms where this service is not available to be used. */
+    /**
+     * The list of realms where this service is not available to be used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludedRealms")
     private final java.util.List<String> excludedRealms;
 
     /**
      * The list of realms where this service is not available to be used.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExcludedRealms() {
         return excludedRealms;
     }
 
-    /** The list of previously used names for this service object. */
+    /**
+     * The list of previously used names for this service object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("previousServiceNames")
     private final java.util.List<String> previousServiceNames;
 
     /**
      * The list of previously used names for this service object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPreviousServiceNames() {
         return previousServiceNames;
     }
 
-    /** The date and time when the service object was created. */
+    /**
+     * The date and time when the service object was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time when the service object was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time when the service object was updated. */
+    /**
+     * The date and time when the service object was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time when the service object was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Current state of the service object. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Current state of the service object.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Deleted("DELETED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -223,9 +228,7 @@ public class BaseService extends com.oracle.bmc.http.client.internal.ExplicitlyS
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -243,21 +246,19 @@ public class BaseService extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
-    /** Current state of the service object. */
+    /**
+     * Current state of the service object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Current state of the service object.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -269,7 +270,6 @@ public class BaseService extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,10 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Possible lifecycle states for an operator action. Operator action lifecycles are controlled by
- * Oracle.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperatorActionLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+ * Possible lifecycle states for an operator action. Operator action lifecycles are controlled by Oracle.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OperatorActionLifecycleStates {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
 

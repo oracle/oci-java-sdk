@@ -48,10 +48,8 @@ public class AutonomousTransactionProcessingSharedExample {
 
         String compartmentId = args[0];
         String password = args[1];
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -59,8 +57,8 @@ public class AutonomousTransactionProcessingSharedExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DatabaseClient dbClient =
-                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        DatabaseClient dbClient = new DatabaseClient(provider);
+        dbClient.setRegion(Region.US_PHOENIX_1);
 
         // Create
         CreateAutonomousDatabaseDetails createRequest = createAtpRequest(compartmentId);
@@ -85,7 +83,7 @@ public class AutonomousTransactionProcessingSharedExample {
         System.out.println("Instance is provisioned:" + atpShared);
         System.out.println("Free Instance is provisioned:" + freeAtpShared);
 
-        // Clone
+        //Clone
         CreateAutonomousDatabaseCloneDetails createAutonomousDatabaseCloneDetails =
                 createAtpCloneRequest(compartmentId, atpShared.getId());
         System.out.println(

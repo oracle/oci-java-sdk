@@ -5,21 +5,19 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * An object for representing a recurrence time interval <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * An object for representing a recurrence time interval
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recurrence.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Recurrence extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Recurrence extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"intervalType", "intervalValue"})
     public Recurrence(IntervalType intervalType, String intervalValue) {
@@ -30,31 +28,33 @@ public final class Recurrence extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the interval period for the recurrence */
+        /**
+         * the interval period for the recurrence
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
         private IntervalType intervalType;
 
         /**
          * the interval period for the recurrence
-         *
          * @param intervalType the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalType(IntervalType intervalType) {
             this.intervalType = intervalType;
             this.__explicitlySet__.add("intervalType");
             return this;
         }
-        /** the value for the interval period for the recurrence */
+        /**
+         * the value for the interval period for the recurrence
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
         private String intervalValue;
 
         /**
          * the value for the interval period for the recurrence
-         *
          * @param intervalValue the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalValue(String intervalValue) {
             this.intervalValue = intervalValue;
             this.__explicitlySet__.add("intervalValue");
@@ -84,7 +84,9 @@ public final class Recurrence extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,8 +95,10 @@ public final class Recurrence extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** the interval period for the recurrence */
-    public enum IntervalType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * the interval period for the recurrence
+     **/
+    public enum IntervalType {
         Minutes("MINUTES"),
         Hours("HOURS"),
         Days("DAYS"),
@@ -128,28 +132,30 @@ public final class Recurrence extends com.oracle.bmc.http.client.internal.Explic
             throw new IllegalArgumentException("Invalid IntervalType: " + key);
         }
     };
-    /** the interval period for the recurrence */
+    /**
+     * the interval period for the recurrence
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalType")
     private final IntervalType intervalType;
 
     /**
      * the interval period for the recurrence
-     *
      * @return the value
-     */
+     **/
     public IntervalType getIntervalType() {
         return intervalType;
     }
 
-    /** the value for the interval period for the recurrence */
+    /**
+     * the value for the interval period for the recurrence
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalValue")
     private final String intervalValue;
 
     /**
      * the value for the interval period for the recurrence
-     *
      * @return the value
-     */
+     **/
     public String getIntervalValue() {
         return intervalValue;
     }
@@ -161,7 +167,6 @@ public final class Recurrence extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

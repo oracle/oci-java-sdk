@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Trusted 2FA Factors <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Trusted 2FA Factors
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MyTrustedUserAgentTrustedFactors.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MyTrustedUserAgentTrustedFactors.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MyTrustedUserAgentTrustedFactors
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "category", "creationTime"})
     public MyTrustedUserAgentTrustedFactors(String type, Category category, String creationTime) {
@@ -35,28 +34,41 @@ public final class MyTrustedUserAgentTrustedFactors
     public static class Builder {
         /**
          * Trusted Factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Trusted Factor
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -64,28 +76,41 @@ public final class MyTrustedUserAgentTrustedFactors
         }
         /**
          * Trusted Factor Type. Local, X509, SAML SOCIAL
-         *
-         * <p>*Added In:** 2111190457
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2111190457
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private Category category;
 
         /**
          * Trusted Factor Type. Local, X509, SAML SOCIAL
-         *
-         * <p>*Added In:** 2111190457
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2111190457
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param category the value to set
          * @return this builder
-         */
+         **/
         public Builder category(Category category) {
             this.category = category;
             this.__explicitlySet__.add("category");
@@ -93,28 +118,41 @@ public final class MyTrustedUserAgentTrustedFactors
         }
         /**
          * trust factor creation time
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-         * default - type: dateTime - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: true
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
         private String creationTime;
 
         /**
          * trust factor creation time
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-         * default - type: dateTime - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - idcsRequiresWriteForAccessFlows: true
+         *  - required: true
+         *  - returned: default
+         *  - type: dateTime
+         *  - uniqueness: none
          * @param creationTime the value to set
          * @return this builder
-         */
+         **/
         public Builder creationTime(String creationTime) {
             this.creationTime = creationTime;
             this.__explicitlySet__.add("creationTime");
@@ -149,7 +187,9 @@ public final class MyTrustedUserAgentTrustedFactors
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -160,41 +200,61 @@ public final class MyTrustedUserAgentTrustedFactors
 
     /**
      * Trusted Factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-     * default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Trusted Factor
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-     * default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
      * Trusted Factor Type. Local, X509, SAML SOCIAL
-     *
-     * <p>*Added In:** 2111190457
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
-    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
+     * <p>
+     **Added In:** 2111190457
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum Category {
         Saml("SAML"),
         Local("LOCAL"),
         Social("SOCIAL"),
@@ -202,8 +262,8 @@ public final class MyTrustedUserAgentTrustedFactors
         Thirdparty("THIRDPARTY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -244,54 +304,80 @@ public final class MyTrustedUserAgentTrustedFactors
     };
     /**
      * Trusted Factor Type. Local, X509, SAML SOCIAL
-     *
-     * <p>*Added In:** 2111190457
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2111190457
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final Category category;
 
     /**
      * Trusted Factor Type. Local, X509, SAML SOCIAL
-     *
-     * <p>*Added In:** 2111190457
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - idcsRequiresWriteForAccessFlows: true - required: false - returned:
-     * default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2111190457
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Category getCategory() {
         return category;
     }
 
     /**
      * trust factor creation time
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-     * default - type: dateTime - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: true
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("creationTime")
     private final String creationTime;
 
     /**
      * trust factor creation time
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - idcsRequiresWriteForAccessFlows: true - required: true - returned:
-     * default - type: dateTime - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - idcsRequiresWriteForAccessFlows: true
+     *  - required: true
+     *  - returned: default
+     *  - type: dateTime
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCreationTime() {
         return creationTime;
     }
@@ -303,7 +389,6 @@ public final class MyTrustedUserAgentTrustedFactors
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

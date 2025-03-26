@@ -33,8 +33,9 @@ public class StreamUtilsTest {
         File file = File.createTempFile("StreamUtilsTest", null);
         file.deleteOnExit();
 
-        InputStream stream = StreamUtils.toInputStream(file);
-        assertNotNull(stream);
+        try (InputStream stream = StreamUtils.toInputStream(file)) {
+            assertNotNull(stream);
+        }
 
         file.delete();
     }

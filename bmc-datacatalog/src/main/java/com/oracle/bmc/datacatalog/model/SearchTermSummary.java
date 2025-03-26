@@ -5,24 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Summary of a term associated with an object. This is a brief summary returned as part of the
- * search result. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Summary of a term associated with an object. This is a brief summary returned as part of the search result.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SearchTermSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SearchTermSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SearchTermSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SearchTermSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,95 +48,101 @@ public final class SearchTermSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique term key that is immutable. */
+        /**
+         * Unique term key that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique term key that is immutable.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Unique id of the parent glossary. */
+        /**
+         * Unique id of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
         /**
          * Unique id of the parent glossary.
-         *
          * @param glossaryKey the value to set
          * @return this builder
-         */
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
-        /** Name of the parent glossary. */
+        /**
+         * Name of the parent glossary.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
         private String glossaryName;
 
         /**
          * Name of the parent glossary.
-         *
          * @param glossaryName the value to set
          * @return this builder
-         */
+         **/
         public Builder glossaryName(String glossaryName) {
             this.glossaryName = glossaryName;
             this.__explicitlySet__.add("glossaryName");
             return this;
         }
-        /** This terms parent term key. Will be null if the term has no parent term. */
+        /**
+         * This terms parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
         private String parentTermKey;
 
         /**
          * This terms parent term key. Will be null if the term has no parent term.
-         *
          * @param parentTermKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermKey(String parentTermKey) {
             this.parentTermKey = parentTermKey;
             this.__explicitlySet__.add("parentTermKey");
             return this;
         }
-        /** Name of the parent term key. Will be null if the term has no parent term. */
+        /**
+         * Name of the parent term key. Will be null if the term has no parent term.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
         private String parentTermName;
 
         /**
          * Name of the parent term key. Will be null if the term has no parent term.
-         *
          * @param parentTermName the value to set
          * @return this builder
-         */
+         **/
         public Builder parentTermName(String parentTermName) {
             this.parentTermName = parentTermName;
             this.__explicitlySet__.add("parentTermName");
@@ -187,7 +191,9 @@ public final class SearchTermSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,84 +202,90 @@ public final class SearchTermSummary
         return new Builder().copy(this);
     }
 
-    /** Unique term key that is immutable. */
+    /**
+     * Unique term key that is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique term key that is immutable.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Unique id of the parent glossary. */
+    /**
+     * Unique id of the parent glossary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
     /**
      * Unique id of the parent glossary.
-     *
      * @return the value
-     */
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
 
-    /** Name of the parent glossary. */
+    /**
+     * Name of the parent glossary.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryName")
     private final String glossaryName;
 
     /**
      * Name of the parent glossary.
-     *
      * @return the value
-     */
+     **/
     public String getGlossaryName() {
         return glossaryName;
     }
 
-    /** This terms parent term key. Will be null if the term has no parent term. */
+    /**
+     * This terms parent term key. Will be null if the term has no parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermKey")
     private final String parentTermKey;
 
     /**
      * This terms parent term key. Will be null if the term has no parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermKey() {
         return parentTermKey;
     }
 
-    /** Name of the parent term key. Will be null if the term has no parent term. */
+    /**
+     * Name of the parent term key. Will be null if the term has no parent term.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentTermName")
     private final String parentTermName;
 
     /**
      * Name of the parent term key. Will be null if the term has no parent term.
-     *
      * @return the value
-     */
+     **/
     public String getParentTermName() {
         return parentTermName;
     }
@@ -285,7 +297,6 @@ public final class SearchTermSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,12 +5,15 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The types of DR plan that can be created, updated, or deleted by the user. - SWITCHOVER -
- * Switchover from primary to standby. - FAILOVER - Failover to standby. - START_DRILL - Start DR
- * Drill. - STOP_DRILL - Stop DR Drill.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The types of DR plan that can be created, updated, or deleted by the user.
+ * - SWITCHOVER - Switchover from primary to standby.
+ * - FAILOVER - Failover to standby.
+ * - START_DRILL - Start DR Drill.
+ * - STOP_DRILL - Stop DR Drill.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanType {
     Switchover("SWITCHOVER"),
     Failover("FAILOVER"),
     StartDrill("START_DRILL"),

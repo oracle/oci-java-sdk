@@ -6,91 +6,125 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelinesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelinesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPipelinesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request concerns
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
+     *
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the work request. Work requests should be scoped to
-     * the same compartment as the resource the work request affects. If the work request concerns
-     * multiple resources, and those resources are not in the same compartment, it is up to the
-     * service team to pick the primary resource whose compartment should be used.
+     * The OCID of the compartment that contains the work request. Work requests should be scoped
+     * to the same compartment as the resource the work request affects. If the work request concerns
+     * multiple resources, and those resources are not in the same compartment, it is up to the service team
+     * to pick the primary resource whose compartment should be used.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filtered list of pipelines to return for a given lifecycleState. */
+    /**
+     * A filtered list of pipelines to return for a given lifecycleState.
+     *
+     */
     private com.oracle.bmc.goldengate.model.Pipeline.LifecycleState lifecycleState;
 
-    /** A filtered list of pipelines to return for a given lifecycleState. */
+    /**
+     * A filtered list of pipelines to return for a given lifecycleState.
+     *
+     */
     public com.oracle.bmc.goldengate.model.Pipeline.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filtered list of pipelines to return for a given lifecycleSubState. */
+    /**
+     * A filtered list of pipelines to return for a given lifecycleSubState.
+     *
+     */
     private com.oracle.bmc.goldengate.model.PipelineLifecycleSubState lifecycleSubState;
 
-    /** A filtered list of pipelines to return for a given lifecycleSubState. */
+    /**
+     * A filtered list of pipelines to return for a given lifecycleSubState.
+     *
+     */
     public com.oracle.bmc.goldengate.model.PipelineLifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
-    /** A filter to return only the resources that match the entire 'displayName' given. */
+    /**
+     * A filter to return only the resources that match the entire 'displayName' given.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only the resources that match the entire 'displayName' given. */
+    /**
+     * A filter to return only the resources that match the entire 'displayName' given.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.goldengate.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.goldengate.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -125,16 +159,23 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
-     * descending. Default order for 'displayName' is ascending. If no value is specified
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
      * timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -142,24 +183,24 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPipelinesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request concerns multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the work request. Work requests should be
-         * scoped to the same compartment as the resource the work request affects. If the work
-         * request concerns multiple resources, and those resources are not in the same compartment,
-         * it is up to the service team to pick the primary resource whose compartment should be
-         * used.
+         * The OCID of the compartment that contains the work request. Work requests should be scoped
+         * to the same compartment as the resource the work request affects. If the work request concerns
+         * multiple resources, and those resources are not in the same compartment, it is up to the service team
+         * to pick the primary resource whose compartment should be used.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -169,7 +210,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** A filtered list of pipelines to return for a given lifecycleState. */
+        /**
+         * A filtered list of pipelines to return for a given lifecycleState.
+         *
+         */
         private com.oracle.bmc.goldengate.model.Pipeline.LifecycleState lifecycleState = null;
 
         /**
@@ -184,7 +228,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** A filtered list of pipelines to return for a given lifecycleSubState. */
+        /**
+         * A filtered list of pipelines to return for a given lifecycleSubState.
+         *
+         */
         private com.oracle.bmc.goldengate.model.PipelineLifecycleSubState lifecycleSubState = null;
 
         /**
@@ -199,7 +246,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** A filter to return only the resources that match the entire 'displayName' given. */
+        /**
+         * A filter to return only the resources that match the entire 'displayName' given.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -213,7 +263,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -228,14 +281,15 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -245,7 +299,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.goldengate.model.SortOrder sortOrder = null;
 
         /**
@@ -260,16 +317,17 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
-         * specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeCreated' is descending. Default order for 'displayName' is ascending. If no value is
-         * specified timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeCreated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -279,7 +337,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -295,19 +356,18 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -319,7 +379,6 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPipelinesRequest o) {
@@ -340,11 +399,10 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListPipelinesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPipelinesRequest
          */
@@ -358,8 +416,7 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListPipelinesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPipelinesRequest
@@ -376,14 +433,12 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPipelinesRequest(compartmentId, lifecycleState, lifecycleSubState,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPipelinesRequest(compartmentId, lifecycleState, lifecycleSubState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -401,7 +456,6 @@ public class ListPipelinesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.apmtraces;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.apmtraces.internal.http.*;
 import com.oracle.bmc.apmtraces.requests.*;
 import com.oracle.bmc.apmtraces.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Attributes service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Attributes service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public class AttributesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements AttributesAsync {
-    /** Service instance for Attributes. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public class AttributesAsyncClient implements AttributesAsync {
+    /**
+     * Service instance for Attributes.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ATTRIBUTES")
@@ -39,422 +36,112 @@ public class AttributesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(AttributesAsyncClient.class);
 
-    AttributesAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, AttributesAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "apmtraces";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public AttributesAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new AttributesAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkActivateAttributeResponse> bulkActivateAttribute(
-            BulkActivateAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkActivateAttributeRequest, BulkActivateAttributeResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkActivateAttributeDetails(),
-                "bulkActivateAttributeDetails is required");
-
-        return clientCall(request, BulkActivateAttributeResponse::builder)
-                .logger(LOG, "bulkActivateAttribute")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkActivateAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkActivationStatus/BulkActivateAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkActivateAttributeRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("activateAttributes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkActivationStatus.class,
-                        BulkActivateAttributeResponse.Builder::bulkActivationStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkActivateAttributeResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkDeActivateAttributeResponse> bulkDeActivateAttribute(
-            BulkDeActivateAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkDeActivateAttributeRequest, BulkDeActivateAttributeResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkDeActivateAttributeDetails(),
-                "bulkDeActivateAttributeDetails is required");
-
-        return clientCall(request, BulkDeActivateAttributeResponse::builder)
-                .logger(LOG, "bulkDeActivateAttribute")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkDeActivateAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkDeActivationStatus/BulkDeActivateAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkDeActivateAttributeRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("deActivateAttributes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkDeActivationStatus.class,
-                        BulkDeActivateAttributeResponse.Builder::bulkDeActivationStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkDeActivateAttributeResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkPinAttributeResponse> bulkPinAttribute(
-            BulkPinAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkPinAttributeRequest, BulkPinAttributeResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkPinAttributeDetails(), "bulkPinAttributeDetails is required");
-
-        return clientCall(request, BulkPinAttributeResponse::builder)
-                .logger(LOG, "bulkPinAttribute")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkPinAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkPinStatus/BulkPinAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkPinAttributeRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("pinAttributes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkPinStatus.class,
-                        BulkPinAttributeResponse.Builder::bulkPinStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkPinAttributeResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkUnpinAttributeResponse> bulkUnpinAttribute(
-            BulkUnpinAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkUnpinAttributeRequest, BulkUnpinAttributeResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkUnpinAttributeDetails(), "bulkUnpinAttributeDetails is required");
-
-        return clientCall(request, BulkUnpinAttributeResponse::builder)
-                .logger(LOG, "bulkUnpinAttribute")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkUnpinAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUnpinStatus/BulkUnpinAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkUnpinAttributeRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("unPinAttributes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkUnpinStatus.class,
-                        BulkUnpinAttributeResponse.Builder::bulkUnpinStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkUnpinAttributeResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkUpdateAttributeResponse> bulkUpdateAttribute(
-            BulkUpdateAttributeRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkUpdateAttributeRequest, BulkUpdateAttributeResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkUpdateAttributeDetails(), "bulkUpdateAttributeDetails is required");
-
-        return clientCall(request, BulkUpdateAttributeResponse::builder)
-                .logger(LOG, "bulkUpdateAttribute")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkUpdateAttribute",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUpdateAttributeStatus/BulkUpdateAttribute")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkUpdateAttributeRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("updateAttributes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkUpdateAttributeStatus.class,
-                        BulkUpdateAttributeResponse.Builder::bulkUpdateAttributeStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkUpdateAttributeResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<BulkUpdateAttributeNotesResponse> bulkUpdateAttributeNotes(
-            BulkUpdateAttributeNotesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            BulkUpdateAttributeNotesRequest, BulkUpdateAttributeNotesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(
-                request.getBulkUpdateAttributeNotesDetails(),
-                "bulkUpdateAttributeNotesDetails is required");
-
-        return clientCall(request, BulkUpdateAttributeNotesResponse::builder)
-                .logger(LOG, "bulkUpdateAttributeNotes")
-                .serviceDetails(
-                        "Attributes",
-                        "BulkUpdateAttributeNotes",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUpdateNotesStatus/BulkUpdateAttributeNotes")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(BulkUpdateAttributeNotesRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("updateNotes")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.BulkUpdateNotesStatus.class,
-                        BulkUpdateAttributeNotesResponse.Builder::bulkUpdateNotesStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", BulkUpdateAttributeNotesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStatusAutoActivateResponse> getStatusAutoActivate(
-            GetStatusAutoActivateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetStatusAutoActivateRequest, GetStatusAutoActivateResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(request.getDataKeyType(), "dataKeyType is required");
-
-        return clientCall(request, GetStatusAutoActivateResponse::builder)
-                .logger(LOG, "getStatusAutoActivate")
-                .serviceDetails(
-                        "Attributes",
-                        "GetStatusAutoActivate",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AutoActivateStatus/GetStatusAutoActivate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStatusAutoActivateRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("autoActivateStatus")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .appendEnumQueryParam("dataKeyType", request.getDataKeyType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.AutoActivateStatus.class,
-                        GetStatusAutoActivateResponse.Builder::autoActivateStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStatusAutoActivateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PutToggleAutoActivateResponse> putToggleAutoActivate(
-            PutToggleAutoActivateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            PutToggleAutoActivateRequest, PutToggleAutoActivateResponse>
-                    handler) {
-        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
-
-        Objects.requireNonNull(request.getIsAutoActivateOn(), "isAutoActivateOn is required");
-
-        Objects.requireNonNull(request.getDataKeyType(), "dataKeyType is required");
-
-        return clientCall(request, PutToggleAutoActivateResponse::builder)
-                .logger(LOG, "putToggleAutoActivate")
-                .serviceDetails(
-                        "Attributes",
-                        "PutToggleAutoActivate",
-                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AutoActivateToggleStatus/PutToggleAutoActivate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PutToggleAutoActivateRequest::builder)
-                .basePath("/20200630")
-                .appendPathParam("attributes")
-                .appendPathParam("actions")
-                .appendPathParam("autoActivate")
-                .appendQueryParam("apmDomainId", request.getApmDomainId())
-                .appendQueryParam("isAutoActivateOn", request.getIsAutoActivateOn())
-                .appendEnumQueryParam("dataKeyType", request.getDataKeyType())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apmtraces.model.AutoActivateToggleStatus.class,
-                        PutToggleAutoActivateResponse.Builder::autoActivateToggleStatus)
-                .handleResponseHeaderString(
-                        "opc-request-id", PutToggleAutoActivateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public AttributesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -462,26 +149,26 @@ public class AttributesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -490,29 +177,29 @@ public class AttributesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public AttributesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -525,14 +212,654 @@ public class AttributesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public AttributesAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, AttributesAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public AttributesAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new AttributesAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkActivateAttributeResponse> bulkActivateAttribute(
+            BulkActivateAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkActivateAttributeRequest, BulkActivateAttributeResponse>
+                    handler) {
+        LOG.trace("Called async bulkActivateAttribute");
+        final BulkActivateAttributeRequest interceptedRequest =
+                BulkActivateAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkActivateAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkActivateAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkActivationStatus/BulkActivateAttribute");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkActivateAttributeResponse>
+                transformer =
+                        BulkActivateAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkActivateAttributeRequest, BulkActivateAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkActivateAttributeRequest, BulkActivateAttributeResponse>,
+                        java.util.concurrent.Future<BulkActivateAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkActivateAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkActivateAttributeRequest, BulkActivateAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkDeActivateAttributeResponse> bulkDeActivateAttribute(
+            BulkDeActivateAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkDeActivateAttributeRequest, BulkDeActivateAttributeResponse>
+                    handler) {
+        LOG.trace("Called async bulkDeActivateAttribute");
+        final BulkDeActivateAttributeRequest interceptedRequest =
+                BulkDeActivateAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkDeActivateAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkDeActivateAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkDeActivationStatus/BulkDeActivateAttribute");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkDeActivateAttributeResponse>
+                transformer =
+                        BulkDeActivateAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkDeActivateAttributeRequest, BulkDeActivateAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkDeActivateAttributeRequest, BulkDeActivateAttributeResponse>,
+                        java.util.concurrent.Future<BulkDeActivateAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkDeActivateAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkDeActivateAttributeRequest, BulkDeActivateAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkPinAttributeResponse> bulkPinAttribute(
+            BulkPinAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkPinAttributeRequest, BulkPinAttributeResponse>
+                    handler) {
+        LOG.trace("Called async bulkPinAttribute");
+        final BulkPinAttributeRequest interceptedRequest =
+                BulkPinAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkPinAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkPinAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkPinStatus/BulkPinAttribute");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkPinAttributeResponse>
+                transformer =
+                        BulkPinAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkPinAttributeRequest, BulkPinAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkPinAttributeRequest, BulkPinAttributeResponse>,
+                        java.util.concurrent.Future<BulkPinAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkPinAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkPinAttributeRequest, BulkPinAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUnpinAttributeResponse> bulkUnpinAttribute(
+            BulkUnpinAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUnpinAttributeRequest, BulkUnpinAttributeResponse>
+                    handler) {
+        LOG.trace("Called async bulkUnpinAttribute");
+        final BulkUnpinAttributeRequest interceptedRequest =
+                BulkUnpinAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUnpinAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkUnpinAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUnpinStatus/BulkUnpinAttribute");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUnpinAttributeResponse>
+                transformer =
+                        BulkUnpinAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<BulkUnpinAttributeRequest, BulkUnpinAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUnpinAttributeRequest, BulkUnpinAttributeResponse>,
+                        java.util.concurrent.Future<BulkUnpinAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUnpinAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUnpinAttributeRequest, BulkUnpinAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUpdateAttributeResponse> bulkUpdateAttribute(
+            BulkUpdateAttributeRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUpdateAttributeRequest, BulkUpdateAttributeResponse>
+                    handler) {
+        LOG.trace("Called async bulkUpdateAttribute");
+        final BulkUpdateAttributeRequest interceptedRequest =
+                BulkUpdateAttributeConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUpdateAttributeConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkUpdateAttribute",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUpdateAttributeStatus/BulkUpdateAttribute");
+        final java.util.function.Function<javax.ws.rs.core.Response, BulkUpdateAttributeResponse>
+                transformer =
+                        BulkUpdateAttributeConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUpdateAttributeRequest, BulkUpdateAttributeResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUpdateAttributeRequest, BulkUpdateAttributeResponse>,
+                        java.util.concurrent.Future<BulkUpdateAttributeResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUpdateAttributeDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUpdateAttributeRequest, BulkUpdateAttributeResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<BulkUpdateAttributeNotesResponse> bulkUpdateAttributeNotes(
+            BulkUpdateAttributeNotesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            BulkUpdateAttributeNotesRequest, BulkUpdateAttributeNotesResponse>
+                    handler) {
+        LOG.trace("Called async bulkUpdateAttributeNotes");
+        final BulkUpdateAttributeNotesRequest interceptedRequest =
+                BulkUpdateAttributeNotesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUpdateAttributeNotesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "BulkUpdateAttributeNotes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/BulkUpdateNotesStatus/BulkUpdateAttributeNotes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUpdateAttributeNotesResponse>
+                transformer =
+                        BulkUpdateAttributeNotesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUpdateAttributeNotesRequest, BulkUpdateAttributeNotesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUpdateAttributeNotesRequest, BulkUpdateAttributeNotesResponse>,
+                        java.util.concurrent.Future<BulkUpdateAttributeNotesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUpdateAttributeNotesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUpdateAttributeNotesRequest, BulkUpdateAttributeNotesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetStatusAutoActivateResponse> getStatusAutoActivate(
+            GetStatusAutoActivateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetStatusAutoActivateRequest, GetStatusAutoActivateResponse>
+                    handler) {
+        LOG.trace("Called async getStatusAutoActivate");
+        final GetStatusAutoActivateRequest interceptedRequest =
+                GetStatusAutoActivateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetStatusAutoActivateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "GetStatusAutoActivate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AutoActivateStatus/GetStatusAutoActivate");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetStatusAutoActivateResponse>
+                transformer =
+                        GetStatusAutoActivateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetStatusAutoActivateRequest, GetStatusAutoActivateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetStatusAutoActivateRequest, GetStatusAutoActivateResponse>,
+                        java.util.concurrent.Future<GetStatusAutoActivateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetStatusAutoActivateRequest, GetStatusAutoActivateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutToggleAutoActivateResponse> putToggleAutoActivate(
+            PutToggleAutoActivateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutToggleAutoActivateRequest, PutToggleAutoActivateResponse>
+                    handler) {
+        LOG.trace("Called async putToggleAutoActivate");
+        final PutToggleAutoActivateRequest interceptedRequest =
+                PutToggleAutoActivateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutToggleAutoActivateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Attributes",
+                        "PutToggleAutoActivate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-trace-explorer/20200630/AutoActivateToggleStatus/PutToggleAutoActivate");
+        final java.util.function.Function<javax.ws.rs.core.Response, PutToggleAutoActivateResponse>
+                transformer =
+                        PutToggleAutoActivateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PutToggleAutoActivateRequest, PutToggleAutoActivateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutToggleAutoActivateRequest, PutToggleAutoActivateResponse>,
+                        java.util.concurrent.Future<PutToggleAutoActivateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutToggleAutoActivateRequest, PutToggleAutoActivateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

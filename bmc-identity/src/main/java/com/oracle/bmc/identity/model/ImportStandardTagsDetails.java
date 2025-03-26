@@ -5,23 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ImportStandardTagsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ImportStandardTagsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ImportStandardTagsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "standardTagNamespaceName"})
     public ImportStandardTagsDetails(String compartmentId, String standardTagNamespaceName) {
@@ -33,25 +32,27 @@ public final class ImportStandardTagsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment where the bulk create request is submitted and where the tag
-         * namespaces will be created.
-         */
+         * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment where the bulk create request is submitted and where the tag
-         * namespaces will be created.
+         * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The name of standard tag namespace that will be imported in bulk */
+        /**
+         * The name of standard tag namespace that will be imported in bulk
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
         private String standardTagNamespaceName;
 
@@ -60,7 +61,7 @@ public final class ImportStandardTagsDetails
          *
          * @param standardTagNamespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder standardTagNamespaceName(String standardTagNamespaceName) {
             this.standardTagNamespaceName = standardTagNamespaceName;
             this.__explicitlySet__.add("standardTagNamespaceName");
@@ -92,7 +93,9 @@ public final class ImportStandardTagsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,23 +105,25 @@ public final class ImportStandardTagsDetails
     }
 
     /**
-     * The OCID of the compartment where the bulk create request is submitted and where the tag
-     * namespaces will be created.
-     */
+     * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment where the bulk create request is submitted and where the tag
-     * namespaces will be created.
+     * The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The name of standard tag namespace that will be imported in bulk */
+    /**
+     * The name of standard tag namespace that will be imported in bulk
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("standardTagNamespaceName")
     private final String standardTagNamespaceName;
 
@@ -126,7 +131,7 @@ public final class ImportStandardTagsDetails
      * The name of standard tag namespace that will be imported in bulk
      *
      * @return the value
-     */
+     **/
     public String getStandardTagNamespaceName() {
         return standardTagNamespaceName;
     }
@@ -138,7 +143,6 @@ public final class ImportStandardTagsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

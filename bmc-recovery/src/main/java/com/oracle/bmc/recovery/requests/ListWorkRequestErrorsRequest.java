@@ -6,60 +6,67 @@ package com.oracle.bmc.recovery.requests;
 
 import com.oracle.bmc.recovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class ListWorkRequestErrorsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the work request. */
+    /**
+     * The OCID of the work request.
+     */
     private String workRequestId;
 
-    /** The OCID of the work request. */
+    /**
+     * The OCID of the work request.
+     */
     public String getWorkRequestId() {
         return workRequestId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         ;
 
@@ -92,21 +99,25 @@ public class ListWorkRequestErrorsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: - ASC
-     * - DESC
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * Allowed values are:
+     *   - ASC
+     *   - DESC
      */
     private com.oracle.bmc.recovery.model.SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: - ASC
-     * - DESC
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * Allowed values are:
+     *   - ASC
+     *   - DESC
      */
     public com.oracle.bmc.recovery.model.SortOrder getSortOrder() {
         return sortOrder;
@@ -115,15 +126,17 @@ public class ListWorkRequestErrorsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWorkRequestErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the work request. */
+        /**
+         * The OCID of the work request.
+         */
         private String workRequestId = null;
 
         /**
          * The OCID of the work request.
-         *
          * @param workRequestId the value to set
          * @return this builder instance
          */
@@ -132,12 +145,13 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -147,15 +161,12 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -164,12 +175,13 @@ public class ListWorkRequestErrorsRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -179,14 +191,13 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -197,15 +208,18 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: -
-         * ASC - DESC
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * Allowed values are:
+         *   - ASC
+         *   - DESC
          */
         private com.oracle.bmc.recovery.model.SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: -
-         * ASC - DESC
-         *
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * Allowed values are:
+         *   - ASC
+         *   - DESC
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -216,19 +230,18 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -240,7 +253,6 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWorkRequestErrorsRequest o) {
@@ -258,11 +270,10 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWorkRequestErrorsRequest
          */
@@ -276,8 +287,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * Build the instance of ListWorkRequestErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWorkRequestErrorsRequest
@@ -291,14 +301,12 @@ public class ListWorkRequestErrorsRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortBy,
-            // sortOrder);
+            // new ListWorkRequestErrorsRequest(workRequestId, opcRequestId, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -313,7 +321,6 @@ public class ListWorkRequestErrorsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Kubernetes destination object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Kubernetes destination object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentMonitoringDestination.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UnifiedAgentMonitoringDestination.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentMonitoringDestination
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "metricsNamespace"})
     public UnifiedAgentMonitoringDestination(String compartmentId, String metricsNamespace) {
@@ -32,31 +31,33 @@ public final class UnifiedAgentMonitoringDestination
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that the resource belongs to. */
+        /**
+         * The OCID of the compartment that the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Namespace to which metrics will be emitted. */
+        /**
+         * Namespace to which metrics will be emitted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricsNamespace")
         private String metricsNamespace;
 
         /**
          * Namespace to which metrics will be emitted.
-         *
          * @param metricsNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder metricsNamespace(String metricsNamespace) {
             this.metricsNamespace = metricsNamespace;
             this.__explicitlySet__.add("metricsNamespace");
@@ -88,7 +89,9 @@ public final class UnifiedAgentMonitoringDestination
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class UnifiedAgentMonitoringDestination
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that the resource belongs to. */
+    /**
+     * The OCID of the compartment that the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Namespace to which metrics will be emitted. */
+    /**
+     * Namespace to which metrics will be emitted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricsNamespace")
     private final String metricsNamespace;
 
     /**
      * Namespace to which metrics will be emitted.
-     *
      * @return the value
-     */
+     **/
     public String getMetricsNamespace() {
         return metricsNamespace;
     }
@@ -130,7 +135,6 @@ public final class UnifiedAgentMonitoringDestination
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

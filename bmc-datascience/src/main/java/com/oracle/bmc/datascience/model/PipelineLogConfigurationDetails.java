@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The pipeline log configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The pipeline log configuration details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineLogConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PipelineLogConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PipelineLogConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "enableLogging",
@@ -40,69 +39,65 @@ public final class PipelineLogConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** If customer logging is enabled for pipeline. */
+        /**
+         * If customer logging is enabled for pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableLogging")
         private Boolean enableLogging;
 
         /**
          * If customer logging is enabled for pipeline.
-         *
          * @param enableLogging the value to set
          * @return this builder
-         */
+         **/
         public Builder enableLogging(Boolean enableLogging) {
             this.enableLogging = enableLogging;
             this.__explicitlySet__.add("enableLogging");
             return this;
         }
-        /** If automatic on-behalf-of log object creation is enabled for pipeline runs. */
+        /**
+         * If automatic on-behalf-of log object creation is enabled for pipeline runs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enableAutoLogCreation")
         private Boolean enableAutoLogCreation;
 
         /**
          * If automatic on-behalf-of log object creation is enabled for pipeline runs.
-         *
          * @param enableAutoLogCreation the value to set
          * @return this builder
-         */
+         **/
         public Builder enableAutoLogCreation(Boolean enableAutoLogCreation) {
             this.enableAutoLogCreation = enableAutoLogCreation;
             this.__explicitlySet__.add("enableAutoLogCreation");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log group.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
         private String logGroupId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
          * @param logGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder logGroupId(String logGroupId) {
             this.logGroupId = logGroupId;
             this.__explicitlySet__.add("logGroupId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logId")
         private String logId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * log.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
          * @param logId the value to set
          * @return this builder
-         */
+         **/
         public Builder logId(String logId) {
             this.logId = logId;
             this.__explicitlySet__.add("logId");
@@ -143,7 +138,9 @@ public final class PipelineLogConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,60 +149,58 @@ public final class PipelineLogConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** If customer logging is enabled for pipeline. */
+    /**
+     * If customer logging is enabled for pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableLogging")
     private final Boolean enableLogging;
 
     /**
      * If customer logging is enabled for pipeline.
-     *
      * @return the value
-     */
+     **/
     public Boolean getEnableLogging() {
         return enableLogging;
     }
 
-    /** If automatic on-behalf-of log object creation is enabled for pipeline runs. */
+    /**
+     * If automatic on-behalf-of log object creation is enabled for pipeline runs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enableAutoLogCreation")
     private final Boolean enableAutoLogCreation;
 
     /**
      * If automatic on-behalf-of log object creation is enabled for pipeline runs.
-     *
      * @return the value
-     */
+     **/
     public Boolean getEnableAutoLogCreation() {
         return enableAutoLogCreation;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
-     * group.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logGroupId")
     private final String logGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log
-     * group.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
      * @return the value
-     */
+     **/
     public String getLogGroupId() {
         return logGroupId;
     }
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logId")
     private final String logId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
-     *
      * @return the value
-     */
+     **/
     public String getLogId() {
         return logId;
     }
@@ -217,7 +212,6 @@ public final class PipelineLogConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

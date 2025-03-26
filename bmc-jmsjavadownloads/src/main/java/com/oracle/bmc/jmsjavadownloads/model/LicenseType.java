@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Type of license associated with the Java version. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of license associated with the Java version.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum LicenseType {
     Otn("OTN"),
     Nftc("NFTC"),
     Restricted("RESTRICTED"),

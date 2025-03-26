@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Activity Resource Target. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Activity Resource Target.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ActivityResourceTarget.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ActivityResourceTarget.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ActivityResourceTarget
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetName", "status", "description"})
     public ActivityResourceTarget(String targetName, JobStatus status, String description) {
@@ -33,50 +32,53 @@ public final class ActivityResourceTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Target Name. */
+        /**
+         * Target Name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetName")
         private String targetName;
 
         /**
          * Target Name.
-         *
          * @param targetName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetName(String targetName) {
             this.targetName = targetName;
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /** Status of the Job at target Level. */
+        /**
+         * Status of the Job at target Level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
          * Status of the Job at target Level.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(JobStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Description of the Execution status. If there are any errors, this can also include a
-         * short error message.
-         */
+         * Description of the Execution status.
+         * If there are any errors, this can also include a short error message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the Execution status. If there are any errors, this can also include a
-         * short error message.
+         * Description of the Execution status.
+         * If there are any errors, this can also include a short error message.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -110,7 +112,9 @@ public final class ActivityResourceTarget
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,45 +123,48 @@ public final class ActivityResourceTarget
         return new Builder().copy(this);
     }
 
-    /** Target Name. */
+    /**
+     * Target Name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetName")
     private final String targetName;
 
     /**
      * Target Name.
-     *
      * @return the value
-     */
+     **/
     public String getTargetName() {
         return targetName;
     }
 
-    /** Status of the Job at target Level. */
+    /**
+     * Status of the Job at target Level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
      * Status of the Job at target Level.
-     *
      * @return the value
-     */
+     **/
     public JobStatus getStatus() {
         return status;
     }
 
     /**
-     * Description of the Execution status. If there are any errors, this can also include a short
-     * error message.
-     */
+     * Description of the Execution status.
+     * If there are any errors, this can also include a short error message.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the Execution status. If there are any errors, this can also include a short
-     * error message.
+     * Description of the Execution status.
+     * If there are any errors, this can also include a short error message.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -169,7 +176,6 @@ public final class ActivityResourceTarget
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

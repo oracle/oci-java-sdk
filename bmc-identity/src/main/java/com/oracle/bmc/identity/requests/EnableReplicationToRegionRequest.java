@@ -6,28 +6,33 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/EnableReplicationToRegionExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * EnableReplicationToRegionRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/EnableReplicationToRegionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use EnableReplicationToRegionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class EnableReplicationToRegionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.EnableReplicationToRegionDetails> {
 
-    /** The OCID of the identity domain. */
+    /**
+     * The OCID of the identity domain.
+     */
     private String domainId;
 
-    /** The OCID of the identity domain. */
+    /**
+     * The OCID of the identity domain.
+     */
     public String getDomainId() {
         return domainId;
     }
-    /** The request object for replicating the identity domain to another region. */
+    /**
+     * The request object for replicating the identity domain to another region.
+     */
     private com.oracle.bmc.identity.model.EnableReplicationToRegionDetails
             enableReplicationToRegionDetails;
 
-    /** The request object for replicating the identity domain to another region. */
+    /**
+     * The request object for replicating the identity domain to another region.
+     */
     public com.oracle.bmc.identity.model.EnableReplicationToRegionDetails
             getEnableReplicationToRegionDetails() {
         return enableReplicationToRegionDetails;
@@ -35,12 +40,14 @@ public class EnableReplicationToRegionRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -51,6 +58,7 @@ public class EnableReplicationToRegionRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -60,23 +68,24 @@ public class EnableReplicationToRegionRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -84,7 +93,6 @@ public class EnableReplicationToRegionRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -97,15 +105,17 @@ public class EnableReplicationToRegionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     EnableReplicationToRegionRequest,
                     com.oracle.bmc.identity.model.EnableReplicationToRegionDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the identity domain. */
+        /**
+         * The OCID of the identity domain.
+         */
         private String domainId = null;
 
         /**
          * The OCID of the identity domain.
-         *
          * @param domainId the value to set
          * @return this builder instance
          */
@@ -114,13 +124,14 @@ public class EnableReplicationToRegionRequest
             return this;
         }
 
-        /** The request object for replicating the identity domain to another region. */
+        /**
+         * The request object for replicating the identity domain to another region.
+         */
         private com.oracle.bmc.identity.model.EnableReplicationToRegionDetails
                 enableReplicationToRegionDetails = null;
 
         /**
          * The request object for replicating the identity domain to another region.
-         *
          * @param enableReplicationToRegionDetails the value to set
          * @return this builder instance
          */
@@ -134,6 +145,7 @@ public class EnableReplicationToRegionRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -151,19 +163,20 @@ public class EnableReplicationToRegionRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -174,18 +187,17 @@ public class EnableReplicationToRegionRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -197,19 +209,18 @@ public class EnableReplicationToRegionRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -221,7 +232,6 @@ public class EnableReplicationToRegionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(EnableReplicationToRegionRequest o) {
@@ -238,11 +248,10 @@ public class EnableReplicationToRegionRequest
         /**
          * Build the instance of EnableReplicationToRegionRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of EnableReplicationToRegionRequest
          */
@@ -255,7 +264,6 @@ public class EnableReplicationToRegionRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -268,8 +276,7 @@ public class EnableReplicationToRegionRequest
         /**
          * Build the instance of EnableReplicationToRegionRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of EnableReplicationToRegionRequest
@@ -282,14 +289,12 @@ public class EnableReplicationToRegionRequest
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new EnableReplicationToRegionRequest(domainId, enableReplicationToRegionDetails,
-            // opcRequestId, opcRetryToken, ifMatch);
+            // new EnableReplicationToRegionRequest(domainId, enableReplicationToRegionDetails, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -303,7 +308,6 @@ public class EnableReplicationToRegionRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

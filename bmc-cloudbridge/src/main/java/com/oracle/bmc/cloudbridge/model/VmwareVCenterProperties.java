@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * VMware vCenter related properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * VMware vCenter related properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VmwareVCenterProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VmwareVCenterProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VmwareVCenterProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vcenterKey", "vcenterVersion", "dataCenter"})
     public VmwareVCenterProperties(String vcenterKey, String vcenterVersion, String dataCenter) {
@@ -33,46 +32,49 @@ public final class VmwareVCenterProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** vCenter unique key. */
+        /**
+         * vCenter unique key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcenterKey")
         private String vcenterKey;
 
         /**
          * vCenter unique key.
-         *
          * @param vcenterKey the value to set
          * @return this builder
-         */
+         **/
         public Builder vcenterKey(String vcenterKey) {
             this.vcenterKey = vcenterKey;
             this.__explicitlySet__.add("vcenterKey");
             return this;
         }
-        /** Dot-separated version string. */
+        /**
+         * Dot-separated version string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcenterVersion")
         private String vcenterVersion;
 
         /**
          * Dot-separated version string.
-         *
          * @param vcenterVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder vcenterVersion(String vcenterVersion) {
             this.vcenterVersion = vcenterVersion;
             this.__explicitlySet__.add("vcenterVersion");
             return this;
         }
-        /** Data center name. */
+        /**
+         * Data center name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
         private String dataCenter;
 
         /**
          * Data center name.
-         *
          * @param dataCenter the value to set
          * @return this builder
-         */
+         **/
         public Builder dataCenter(String dataCenter) {
             this.dataCenter = dataCenter;
             this.__explicitlySet__.add("dataCenter");
@@ -107,7 +109,9 @@ public final class VmwareVCenterProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class VmwareVCenterProperties
         return new Builder().copy(this);
     }
 
-    /** vCenter unique key. */
+    /**
+     * vCenter unique key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterKey")
     private final String vcenterKey;
 
     /**
      * vCenter unique key.
-     *
      * @return the value
-     */
+     **/
     public String getVcenterKey() {
         return vcenterKey;
     }
 
-    /** Dot-separated version string. */
+    /**
+     * Dot-separated version string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcenterVersion")
     private final String vcenterVersion;
 
     /**
      * Dot-separated version string.
-     *
      * @return the value
-     */
+     **/
     public String getVcenterVersion() {
         return vcenterVersion;
     }
 
-    /** Data center name. */
+    /**
+     * Data center name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataCenter")
     private final String dataCenter;
 
     /**
      * Data center name.
-     *
      * @return the value
-     */
+     **/
     public String getDataCenter() {
         return dataCenter;
     }
@@ -162,7 +169,6 @@ public final class VmwareVCenterProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

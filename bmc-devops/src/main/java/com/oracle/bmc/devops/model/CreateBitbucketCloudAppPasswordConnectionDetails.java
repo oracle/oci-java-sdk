@@ -5,27 +5,27 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The details for creating a connection of the type {@code BITBUCKET_CLOUD_APP_PASSWORD}. This type
- * corresponds to a connection in Bitbucket Cloud that is authenticated with username and app
- * password. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The details for creating a connection of the type {@code BITBUCKET_CLOUD_APP_PASSWORD}.
+ * This type corresponds to a connection in Bitbucket Cloud that is authenticated with username and app password.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateBitbucketCloudAppPasswordConnectionDetails.Builder.class)
+    builder = CreateBitbucketCloudAppPasswordConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateBitbucketCloudAppPasswordConnectionDetails
         extends CreateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -75,31 +75,33 @@ public final class CreateBitbucketCloudAppPasswordConnectionDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Public Bitbucket Cloud Username in plain text(not more than 30 characters) */
+        /**
+         * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
-         *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** OCID of personal Bitbucket Cloud AppPassword saved in secret store */
+        /**
+         * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
         private String appPassword;
 
         /**
          * OCID of personal Bitbucket Cloud AppPassword saved in secret store
-         *
          * @param appPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder appPassword(String appPassword) {
             this.appPassword = appPassword;
             this.__explicitlySet__.add("appPassword");
@@ -152,7 +154,9 @@ public final class CreateBitbucketCloudAppPasswordConnectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,28 +179,30 @@ public final class CreateBitbucketCloudAppPasswordConnectionDetails
         this.appPassword = appPassword;
     }
 
-    /** Public Bitbucket Cloud Username in plain text(not more than 30 characters) */
+    /**
+     * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * Public Bitbucket Cloud Username in plain text(not more than 30 characters)
-     *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
-    /** OCID of personal Bitbucket Cloud AppPassword saved in secret store */
+    /**
+     * OCID of personal Bitbucket Cloud AppPassword saved in secret store
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appPassword")
     private final String appPassword;
 
     /**
      * OCID of personal Bitbucket Cloud AppPassword saved in secret store
-     *
      * @return the value
-     */
+     **/
     public String getAppPassword() {
         return appPassword;
     }
@@ -208,7 +214,6 @@ public final class CreateBitbucketCloudAppPasswordConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

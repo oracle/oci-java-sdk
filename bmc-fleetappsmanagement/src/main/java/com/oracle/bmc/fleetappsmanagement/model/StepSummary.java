@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Task associated with the Job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Task associated with the Job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StepSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class StepSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class StepSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "taskRecordId",
@@ -56,140 +54,149 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of taskRecord assocaited with the step */
+        /**
+         * The OCID of taskRecord assocaited with the step
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
         private String taskRecordId;
 
         /**
          * The OCID of taskRecord assocaited with the step
-         *
          * @param taskRecordId the value to set
          * @return this builder
-         */
+         **/
         public Builder taskRecordId(String taskRecordId) {
             this.taskRecordId = taskRecordId;
             this.__explicitlySet__.add("taskRecordId");
             return this;
         }
-        /** Name of the Step */
+        /**
+         * Name of the Step
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
          * Name of the Step
-         *
          * @param stepName the value to set
          * @return this builder
-         */
+         **/
         public Builder stepName(String stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** The sequence of the step */
+        /**
+         * The sequence of the step
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sequence")
         private String sequence;
 
         /**
          * The sequence of the step
-         *
          * @param sequence the value to set
          * @return this builder
-         */
+         **/
         public Builder sequence(String sequence) {
             this.sequence = sequence;
             this.__explicitlySet__.add("sequence");
             return this;
         }
-        /** Status of the Task */
+        /**
+         * Status of the Task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
          * Status of the Task
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(JobStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The time the task started. An RFC3339 formatted datetime string */
+        /**
+         * The time the task started. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time the task started. An RFC3339 formatted datetime string
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the task ended. An RFC3339 formatted datetime string */
+        /**
+         * The time the task ended. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time the task ended. An RFC3339 formatted datetime string
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** Is this a rollback task? */
+        /**
+         * Is this a rollback task?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRollbackTask")
         private Boolean isRollbackTask;
 
         /**
          * Is this a rollback task?
-         *
          * @param isRollbackTask the value to set
          * @return this builder
-         */
+         **/
         public Builder isRollbackTask(Boolean isRollbackTask) {
             this.isRollbackTask = isRollbackTask;
             this.__explicitlySet__.add("isRollbackTask");
             return this;
         }
-        /** Description of the step Execution */
+        /**
+         * Description of the step Execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the step Execution
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -250,7 +257,9 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,123 +268,132 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The OCID of taskRecord assocaited with the step */
+    /**
+     * The OCID of taskRecord assocaited with the step
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
     private final String taskRecordId;
 
     /**
      * The OCID of taskRecord assocaited with the step
-     *
      * @return the value
-     */
+     **/
     public String getTaskRecordId() {
         return taskRecordId;
     }
 
-    /** Name of the Step */
+    /**
+     * Name of the Step
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
      * Name of the Step
-     *
      * @return the value
-     */
+     **/
     public String getStepName() {
         return stepName;
     }
 
-    /** The sequence of the step */
+    /**
+     * The sequence of the step
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sequence")
     private final String sequence;
 
     /**
      * The sequence of the step
-     *
      * @return the value
-     */
+     **/
     public String getSequence() {
         return sequence;
     }
 
-    /** Status of the Task */
+    /**
+     * Status of the Task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
      * Status of the Task
-     *
      * @return the value
-     */
+     **/
     public JobStatus getStatus() {
         return status;
     }
 
-    /** The time the task started. An RFC3339 formatted datetime string */
+    /**
+     * The time the task started. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time the task started. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the task ended. An RFC3339 formatted datetime string */
+    /**
+     * The time the task ended. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time the task ended. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** Is this a rollback task? */
+    /**
+     * Is this a rollback task?
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRollbackTask")
     private final Boolean isRollbackTask;
 
     /**
      * Is this a rollback task?
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRollbackTask() {
         return isRollbackTask;
     }
 
-    /** Description of the step Execution */
+    /**
+     * Description of the step Execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the step Execution
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -387,7 +405,6 @@ public final class StepSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

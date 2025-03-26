@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Information required to form and execute query on an OPSI data object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Information required to form and execute query on an OPSI data object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = QueryOpsiDataObjectDataDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = QueryOpsiDataObjectDataDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class QueryOpsiDataObjectDataDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dataObjectIdentifier",
@@ -43,31 +42,33 @@ public final class QueryOpsiDataObjectDataDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique OPSI data object identifier. */
+        /**
+         * Unique OPSI data object identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataObjectIdentifier")
         private String dataObjectIdentifier;
 
         /**
          * Unique OPSI data object identifier.
-         *
          * @param dataObjectIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder dataObjectIdentifier(String dataObjectIdentifier) {
             this.dataObjectIdentifier = dataObjectIdentifier;
             this.__explicitlySet__.add("dataObjectIdentifier");
             return this;
         }
-        /** Details of OPSI data objects used in the query. */
+        /**
+         * Details of OPSI data objects used in the query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataObjects")
         private java.util.List<OpsiDataObjectDetailsInQuery> dataObjects;
 
         /**
          * Details of OPSI data objects used in the query.
-         *
          * @param dataObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder dataObjects(java.util.List<OpsiDataObjectDetailsInQuery> dataObjects) {
             this.dataObjects = dataObjects;
             this.__explicitlySet__.add("dataObjects");
@@ -126,7 +127,9 @@ public final class QueryOpsiDataObjectDataDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,28 +138,30 @@ public final class QueryOpsiDataObjectDataDetails
         return new Builder().copy(this);
     }
 
-    /** Unique OPSI data object identifier. */
+    /**
+     * Unique OPSI data object identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataObjectIdentifier")
     private final String dataObjectIdentifier;
 
     /**
      * Unique OPSI data object identifier.
-     *
      * @return the value
-     */
+     **/
     public String getDataObjectIdentifier() {
         return dataObjectIdentifier;
     }
 
-    /** Details of OPSI data objects used in the query. */
+    /**
+     * Details of OPSI data objects used in the query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataObjects")
     private final java.util.List<OpsiDataObjectDetailsInQuery> dataObjects;
 
     /**
      * Details of OPSI data objects used in the query.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OpsiDataObjectDetailsInQuery> getDataObjects() {
         return dataObjects;
     }
@@ -182,7 +187,6 @@ public final class QueryOpsiDataObjectDataDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

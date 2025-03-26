@@ -6,54 +6,65 @@ package com.oracle.bmc.bds.requests;
 
 import com.oracle.bmc.bds.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeBackupConfigurationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateNodeBackupConfigurationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateNodeBackupConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateNodeBackupConfigurationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 public class CreateNodeBackupConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.bds.model.CreateNodeBackupConfigurationDetails> {
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     private String bdsInstanceId;
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
-    /** Details for adding nodeBackupConfiguration to the BDS cluster. */
+    /**
+     * Details for adding nodeBackupConfiguration to the BDS cluster.
+     */
     private com.oracle.bmc.bds.model.CreateNodeBackupConfigurationDetails
             createNodeBackupConfigurationDetails;
 
-    /** Details for adding nodeBackupConfiguration to the BDS cluster. */
+    /**
+     * Details for adding nodeBackupConfiguration to the BDS cluster.
+     */
     public com.oracle.bmc.bds.model.CreateNodeBackupConfigurationDetails
             getCreateNodeBackupConfigurationDetails() {
         return createNodeBackupConfigurationDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error, without risk of executing that same action again. Retry tokens expire after 24
-     * hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -61,7 +72,6 @@ public class CreateNodeBackupConfigurationRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -74,15 +84,17 @@ public class CreateNodeBackupConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateNodeBackupConfigurationRequest,
                     com.oracle.bmc.bds.model.CreateNodeBackupConfigurationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         */
         private String bdsInstanceId = null;
 
         /**
          * The OCID of the cluster.
-         *
          * @param bdsInstanceId the value to set
          * @return this builder instance
          */
@@ -91,13 +103,14 @@ public class CreateNodeBackupConfigurationRequest
             return this;
         }
 
-        /** Details for adding nodeBackupConfiguration to the BDS cluster. */
+        /**
+         * Details for adding nodeBackupConfiguration to the BDS cluster.
+         */
         private com.oracle.bmc.bds.model.CreateNodeBackupConfigurationDetails
                 createNodeBackupConfigurationDetails = null;
 
         /**
          * Details for adding nodeBackupConfiguration to the BDS cluster.
-         *
          * @param createNodeBackupConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -108,12 +121,13 @@ public class CreateNodeBackupConfigurationRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -124,19 +138,20 @@ public class CreateNodeBackupConfigurationRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error, without risk of executing that same action again. Retry tokens expire after
-         * 24 hours but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error, without risk of executing that same action again. Retry tokens expire after 24
+         * hours but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -148,19 +163,18 @@ public class CreateNodeBackupConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +186,6 @@ public class CreateNodeBackupConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateNodeBackupConfigurationRequest o) {
@@ -188,11 +201,10 @@ public class CreateNodeBackupConfigurationRequest
         /**
          * Build the instance of CreateNodeBackupConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateNodeBackupConfigurationRequest
          */
@@ -205,7 +217,6 @@ public class CreateNodeBackupConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -218,8 +229,7 @@ public class CreateNodeBackupConfigurationRequest
         /**
          * Build the instance of CreateNodeBackupConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateNodeBackupConfigurationRequest
@@ -232,14 +242,12 @@ public class CreateNodeBackupConfigurationRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new CreateNodeBackupConfigurationRequest(bdsInstanceId,
-            // createNodeBackupConfigurationDetails, opcRequestId, opcRetryToken);
+            // new CreateNodeBackupConfigurationRequest(bdsInstanceId, createNodeBackupConfigurationDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -252,7 +260,6 @@ public class CreateNodeBackupConfigurationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

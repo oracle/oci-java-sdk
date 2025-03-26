@@ -5,299 +5,245 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Details for the text generation request for Llama models. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Details for the text generation request for Llama models.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LlamaLlmInferenceRequest.Builder.class)
+    builder = LlamaLlmInferenceRequest.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "runtimeType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "runtimeType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Represents the prompt to be completed. The trailing white spaces are trimmed before
-         * completion.
-         */
+         * Represents the prompt to be completed. The trailing white spaces are trimmed before completion.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prompt")
         private String prompt;
 
         /**
-         * Represents the prompt to be completed. The trailing white spaces are trimmed before
-         * completion.
-         *
+         * Represents the prompt to be completed. The trailing white spaces are trimmed before completion.
          * @param prompt the value to set
          * @return this builder
-         */
+         **/
         public Builder prompt(String prompt) {
             this.prompt = prompt;
             this.__explicitlySet__.add("prompt");
             return this;
         }
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
-         */
+         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStream")
         private Boolean isStream;
 
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
-         *
+         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
          * @param isStream the value to set
          * @return this builder
-         */
+         **/
         public Builder isStream(Boolean isStream) {
             this.isStream = isStream;
             this.__explicitlySet__.add("isStream");
             return this;
         }
-        /** The number of of generated texts that will be returned. */
+        /**
+         * The number of of generated texts that will be returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numGenerations")
         private Integer numGenerations;
 
         /**
          * The number of of generated texts that will be returned.
-         *
          * @param numGenerations the value to set
          * @return this builder
-         */
+         **/
         public Builder numGenerations(Integer numGenerations) {
             this.numGenerations = numGenerations;
             this.__explicitlySet__.add("numGenerations");
             return this;
         }
         /**
-         * Whether or not to return the user prompt in the response. Applies only to non-stream
-         * results.
-         */
+         * Whether or not to return the user prompt in the response. Applies only to non-stream results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
         private Boolean isEcho;
 
         /**
-         * Whether or not to return the user prompt in the response. Applies only to non-stream
-         * results.
-         *
+         * Whether or not to return the user prompt in the response. Applies only to non-stream results.
          * @param isEcho the value to set
          * @return this builder
-         */
+         **/
         public Builder isEcho(Boolean isEcho) {
             this.isEcho = isEcho;
             this.__explicitlySet__.add("isEcho");
             return this;
         }
         /**
-         * An integer that sets up the model to use only the top k most likely tokens in the
-         * generated output. A higher k introduces more randomness into the output making the output
-         * text sound more natural. Default value is -1 which means to consider all tokens. Setting
-         * to 0 disables this method and considers all tokens.
+         * An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables this method and considers all tokens.
+         * <p>
+         * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
          *
-         * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but
-         * the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topK")
         private Integer topK;
 
         /**
-         * An integer that sets up the model to use only the top k most likely tokens in the
-         * generated output. A higher k introduces more randomness into the output making the output
-         * text sound more natural. Default value is -1 which means to consider all tokens. Setting
-         * to 0 disables this method and considers all tokens.
-         *
-         * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but
-         * the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+         * An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables this method and considers all tokens.
+         * <p>
+         * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
          *
          * @param topK the value to set
          * @return this builder
-         */
+         **/
         public Builder topK(Integer topK) {
             this.topK = topK;
             this.__explicitlySet__.add("topK");
             return this;
         }
         /**
-         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-         * total probability mass of p, are considered for generation at each step.
+         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+         * <p>
+         * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
          *
-         * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-         * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom
-         * 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable.
-         * If both k and p are enabled, p acts after k.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topP")
         private Double topP;
 
         /**
-         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-         * total probability mass of p, are considered for generation at each step.
-         *
-         * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-         * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom
-         * 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable.
-         * If both k and p are enabled, p acts after k.
+         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+         * <p>
+         * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
          *
          * @param topP the value to set
          * @return this builder
-         */
+         **/
         public Builder topP(Double topP) {
             this.topP = topP;
             this.__explicitlySet__.add("topP");
             return this;
         }
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means a
-         * less random generations.
+         * A number that sets the randomness of the generated output. A lower temperature means a less random generations.
+         * <p>
+         * Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
          *
-         * <p>Use lower numbers for tasks with a correct answer such as question answering or
-         * summarizing. High temperatures can generate hallucinations or factually incorrect
-         * information. Start with temperatures lower than 1.0 and increase the temperature for more
-         * creative outputs, as you regenerate the prompts to refine the outputs.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("temperature")
         private Double temperature;
 
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means a
-         * less random generations.
-         *
-         * <p>Use lower numbers for tasks with a correct answer such as question answering or
-         * summarizing. High temperatures can generate hallucinations or factually incorrect
-         * information. Start with temperatures lower than 1.0 and increase the temperature for more
-         * creative outputs, as you regenerate the prompts to refine the outputs.
+         * A number that sets the randomness of the generated output. A lower temperature means a less random generations.
+         * <p>
+         * Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
          *
          * @param temperature the value to set
          * @return this builder
-         */
+         **/
         public Builder temperature(Double temperature) {
             this.temperature = temperature;
             this.__explicitlySet__.add("temperature");
             return this;
         }
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * their frequency in the generated text so far. Values > 0 encourage the model to use new
-         * tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
-         */
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequencyPenalty")
         private Double frequencyPenalty;
 
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * their frequency in the generated text so far. Values > 0 encourage the model to use new
-         * tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
-         *
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
          * @param frequencyPenalty the value to set
          * @return this builder
-         */
+         **/
         public Builder frequencyPenalty(Double frequencyPenalty) {
             this.frequencyPenalty = frequencyPenalty;
             this.__explicitlySet__.add("frequencyPenalty");
             return this;
         }
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * whether they've appeared in the generated text so far. Values > 0 encourage the model to
-         * use new tokens and values < 0 encourage the model to repeat tokens.
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens.
+         * <p>
+         * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
          *
-         * <p>Similar to frequency penalty, a penalty is applied to previously present tokens,
-         * except that this penalty is applied equally to all tokens that have already appeared,
-         * regardless of how many times they've appeared. Set to 0 to disable.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("presencePenalty")
         private Double presencePenalty;
 
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * whether they've appeared in the generated text so far. Values > 0 encourage the model to
-         * use new tokens and values < 0 encourage the model to repeat tokens.
-         *
-         * <p>Similar to frequency penalty, a penalty is applied to previously present tokens,
-         * except that this penalty is applied equally to all tokens that have already appeared,
-         * regardless of how many times they've appeared. Set to 0 to disable.
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens.
+         * <p>
+         * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
          *
          * @param presencePenalty the value to set
          * @return this builder
-         */
+         **/
         public Builder presencePenalty(Double presencePenalty) {
             this.presencePenalty = presencePenalty;
             this.__explicitlySet__.add("presencePenalty");
             return this;
         }
         /**
-         * List of strings that stop the generation if they are generated for the response text. The
-         * returned output will not contain the stop strings.
-         */
+         * List of strings that stop the generation if they are generated for the response text. The returned output will not contain the stop strings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stop")
         private java.util.List<String> stop;
 
         /**
-         * List of strings that stop the generation if they are generated for the response text. The
-         * returned output will not contain the stop strings.
-         *
+         * List of strings that stop the generation if they are generated for the response text. The returned output will not contain the stop strings.
          * @param stop the value to set
          * @return this builder
-         */
+         **/
         public Builder stop(java.util.List<String> stop) {
             this.stop = stop;
             this.__explicitlySet__.add("stop");
             return this;
         }
         /**
-         * Includes the logarithmic probabilities for the most likely output tokens and the chosen
-         * tokens.
+         * Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+         * <p>
+         * For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
          *
-         * <p>For example, if the log probability is 5, the API returns a list of the 5 most likely
-         * tokens. The API returns the log probability of the sampled token, so there might be up to
-         * logprobs+1 elements in the response.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logProbs")
         private Integer logProbs;
 
         /**
-         * Includes the logarithmic probabilities for the most likely output tokens and the chosen
-         * tokens.
-         *
-         * <p>For example, if the log probability is 5, the API returns a list of the 5 most likely
-         * tokens. The API returns the log probability of the sampled token, so there might be up to
-         * logprobs+1 elements in the response.
+         * Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+         * <p>
+         * For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
          *
          * @param logProbs the value to set
          * @return this builder
-         */
+         **/
         public Builder logProbs(Integer logProbs) {
             this.logProbs = logProbs;
             this.__explicitlySet__.add("logProbs");
             return this;
         }
         /**
-         * The maximum number of tokens that can be generated per output sequence. The token count
-         * of the prompt plus {@code maxTokens} cannot exceed the model's context length.
-         */
+         * The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus {@code maxTokens} cannot exceed the model's context length.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
-         * The maximum number of tokens that can be generated per output sequence. The token count
-         * of the prompt plus {@code maxTokens} cannot exceed the model's context length.
-         *
+         * The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus {@code maxTokens} cannot exceed the model's context length.
          * @param maxTokens the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTokens(Integer maxTokens) {
             this.maxTokens = maxTokens;
             this.__explicitlySet__.add("maxTokens");
@@ -370,7 +316,9 @@ public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -409,251 +357,199 @@ public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
     }
 
     /**
-     * Represents the prompt to be completed. The trailing white spaces are trimmed before
-     * completion.
-     */
+     * Represents the prompt to be completed. The trailing white spaces are trimmed before completion.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
     private final String prompt;
 
     /**
-     * Represents the prompt to be completed. The trailing white spaces are trimmed before
-     * completion.
-     *
+     * Represents the prompt to be completed. The trailing white spaces are trimmed before completion.
      * @return the value
-     */
+     **/
     public String getPrompt() {
         return prompt;
     }
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
-     */
+     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStream")
     private final Boolean isStream;
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
-     *
+     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent events as they become available.
      * @return the value
-     */
+     **/
     public Boolean getIsStream() {
         return isStream;
     }
 
-    /** The number of of generated texts that will be returned. */
+    /**
+     * The number of of generated texts that will be returned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numGenerations")
     private final Integer numGenerations;
 
     /**
      * The number of of generated texts that will be returned.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumGenerations() {
         return numGenerations;
     }
 
     /**
      * Whether or not to return the user prompt in the response. Applies only to non-stream results.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
     private final Boolean isEcho;
 
     /**
      * Whether or not to return the user prompt in the response. Applies only to non-stream results.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEcho() {
         return isEcho;
     }
 
     /**
-     * An integer that sets up the model to use only the top k most likely tokens in the generated
-     * output. A higher k introduces more randomness into the output making the output text sound
-     * more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables
-     * this method and considers all tokens.
+     * An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables this method and considers all tokens.
+     * <p>
+     * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
      *
-     * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the
-     * probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topK")
     private final Integer topK;
 
     /**
-     * An integer that sets up the model to use only the top k most likely tokens in the generated
-     * output. A higher k introduces more randomness into the output making the output text sound
-     * more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables
-     * this method and considers all tokens.
-     *
-     * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the
-     * probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+     * An integer that sets up the model to use only the top k most likely tokens in the generated output. A higher k introduces more randomness into the output making the output text sound more natural. Default value is -1 which means to consider all tokens. Setting to 0 disables this method and considers all tokens.
+     * <p>
+     * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
      *
      * @return the value
-     */
+     **/
     public Integer getTopK() {
         return topK;
     }
 
     /**
-     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-     * total probability mass of p, are considered for generation at each step.
+     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+     * <p>
+     * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
      *
-     * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-     * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25
-     * percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both
-     * k and p are enabled, p acts after k.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topP")
     private final Double topP;
 
     /**
-     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-     * total probability mass of p, are considered for generation at each step.
-     *
-     * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-     * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25
-     * percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both
-     * k and p are enabled, p acts after k.
+     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+     * <p>
+     * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
      *
      * @return the value
-     */
+     **/
     public Double getTopP() {
         return topP;
     }
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means a less
-     * random generations.
+     * A number that sets the randomness of the generated output. A lower temperature means a less random generations.
+     * <p>
+     * Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
      *
-     * <p>Use lower numbers for tasks with a correct answer such as question answering or
-     * summarizing. High temperatures can generate hallucinations or factually incorrect
-     * information. Start with temperatures lower than 1.0 and increase the temperature for more
-     * creative outputs, as you regenerate the prompts to refine the outputs.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("temperature")
     private final Double temperature;
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means a less
-     * random generations.
-     *
-     * <p>Use lower numbers for tasks with a correct answer such as question answering or
-     * summarizing. High temperatures can generate hallucinations or factually incorrect
-     * information. Start with temperatures lower than 1.0 and increase the temperature for more
-     * creative outputs, as you regenerate the prompts to refine the outputs.
+     * A number that sets the randomness of the generated output. A lower temperature means a less random generations.
+     * <p>
+     * Use lower numbers for tasks with a correct answer such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
      *
      * @return the value
-     */
+     **/
     public Double getTemperature() {
         return temperature;
     }
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their
-     * frequency in the generated text so far. Values > 0 encourage the model to use new tokens and
-     * values < 0 encourage the model to repeat tokens. Set to 0 to disable.
-     */
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyPenalty")
     private final Double frequencyPenalty;
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their
-     * frequency in the generated text so far. Values > 0 encourage the model to use new tokens and
-     * values < 0 encourage the model to repeat tokens. Set to 0 to disable.
-     *
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens. Set to 0 to disable.
      * @return the value
-     */
+     **/
     public Double getFrequencyPenalty() {
         return frequencyPenalty;
     }
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-     * whether they've appeared in the generated text so far. Values > 0 encourage the model to use
-     * new tokens and values < 0 encourage the model to repeat tokens.
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens.
+     * <p>
+     * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
      *
-     * <p>Similar to frequency penalty, a penalty is applied to previously present tokens, except
-     * that this penalty is applied equally to all tokens that have already appeared, regardless of
-     * how many times they've appeared. Set to 0 to disable.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("presencePenalty")
     private final Double presencePenalty;
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-     * whether they've appeared in the generated text so far. Values > 0 encourage the model to use
-     * new tokens and values < 0 encourage the model to repeat tokens.
-     *
-     * <p>Similar to frequency penalty, a penalty is applied to previously present tokens, except
-     * that this penalty is applied equally to all tokens that have already appeared, regardless of
-     * how many times they've appeared. Set to 0 to disable.
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Values > 0 encourage the model to use new tokens and values < 0 encourage the model to repeat tokens.
+     * <p>
+     * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
      *
      * @return the value
-     */
+     **/
     public Double getPresencePenalty() {
         return presencePenalty;
     }
 
     /**
-     * List of strings that stop the generation if they are generated for the response text. The
-     * returned output will not contain the stop strings.
-     */
+     * List of strings that stop the generation if they are generated for the response text. The returned output will not contain the stop strings.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stop")
     private final java.util.List<String> stop;
 
     /**
-     * List of strings that stop the generation if they are generated for the response text. The
-     * returned output will not contain the stop strings.
-     *
+     * List of strings that stop the generation if they are generated for the response text. The returned output will not contain the stop strings.
      * @return the value
-     */
+     **/
     public java.util.List<String> getStop() {
         return stop;
     }
 
     /**
-     * Includes the logarithmic probabilities for the most likely output tokens and the chosen
-     * tokens.
+     * Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+     * <p>
+     * For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
      *
-     * <p>For example, if the log probability is 5, the API returns a list of the 5 most likely
-     * tokens. The API returns the log probability of the sampled token, so there might be up to
-     * logprobs+1 elements in the response.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logProbs")
     private final Integer logProbs;
 
     /**
-     * Includes the logarithmic probabilities for the most likely output tokens and the chosen
-     * tokens.
-     *
-     * <p>For example, if the log probability is 5, the API returns a list of the 5 most likely
-     * tokens. The API returns the log probability of the sampled token, so there might be up to
-     * logprobs+1 elements in the response.
+     * Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+     * <p>
+     * For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
      *
      * @return the value
-     */
+     **/
     public Integer getLogProbs() {
         return logProbs;
     }
 
     /**
-     * The maximum number of tokens that can be generated per output sequence. The token count of
-     * the prompt plus {@code maxTokens} cannot exceed the model's context length.
-     */
+     * The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus {@code maxTokens} cannot exceed the model's context length.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
-     * The maximum number of tokens that can be generated per output sequence. The token count of
-     * the prompt plus {@code maxTokens} cannot exceed the model's context length.
-     *
+     * The maximum number of tokens that can be generated per output sequence. The token count of the prompt plus {@code maxTokens} cannot exceed the model's context length.
      * @return the value
-     */
+     **/
     public Integer getMaxTokens() {
         return maxTokens;
     }
@@ -665,7 +561,6 @@ public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

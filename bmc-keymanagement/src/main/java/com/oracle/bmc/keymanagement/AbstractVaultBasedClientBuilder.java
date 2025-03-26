@@ -11,7 +11,6 @@ import com.oracle.bmc.keymanagement.model.VaultSummary;
 
 /**
  * A builder for a client that requires a vault.
- *
  * @param <B> actual class of the builder
  * @param <C> client class
  */
@@ -22,7 +21,6 @@ public abstract class AbstractVaultBasedClientBuilder<B extends AbstractVaultBas
 
     /**
      * Set the vault. May be null
-     *
      * @param vault the vault to use. May be null.
      * @return this builder
      */
@@ -33,7 +31,6 @@ public abstract class AbstractVaultBasedClientBuilder<B extends AbstractVaultBas
 
     /**
      * Set the vault summary. May be null
-     *
      * @param vaultSummary the vault summary to use. May be null
      * @return this builder
      */
@@ -44,16 +41,5 @@ public abstract class AbstractVaultBasedClientBuilder<B extends AbstractVaultBas
 
     public AbstractVaultBasedClientBuilder(Service service) {
         super(service);
-    }
-
-    /**
-     * Set the values in this builder to be the same as in the provided other builder.
-     *
-     * @param fromBuilder other builder
-     * @return this builder, with updated values
-     */
-    @Override
-    public B copyFrom(B fromBuilder) {
-        return (B) super.copyFrom(fromBuilder).vault(this.vault).vaultSummary(this.vaultSummary);
     }
 }

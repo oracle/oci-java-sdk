@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.licensemanager.model;
 
-/** The resource unit. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
-public enum ResourceUnit implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The resource unit.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220430")
+public enum ResourceUnit {
     Ocpu("OCPU"),
     Ecpu("ECPU"),
 

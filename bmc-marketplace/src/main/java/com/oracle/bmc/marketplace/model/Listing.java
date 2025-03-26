@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * The model for an Oracle Cloud Infrastructure Marketplace listing. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * The model for an Oracle Cloud Infrastructure Marketplace listing.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Listing.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Listing extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Listing extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -119,196 +117,209 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier for the listing in Marketplace. */
+        /**
+         * The unique identifier for the listing in Marketplace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier for the listing in Marketplace.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the listing. */
+        /**
+         * The name of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the listing.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The version of the listing. */
+        /**
+         * The version of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of the listing.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The tagline of the listing. */
+        /**
+         * The tagline of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagline")
         private String tagline;
 
         /**
          * The tagline of the listing.
-         *
          * @param tagline the value to set
          * @return this builder
-         */
+         **/
         public Builder tagline(String tagline) {
             this.tagline = tagline;
             this.__explicitlySet__.add("tagline");
             return this;
         }
-        /** Keywords associated with the listing. */
+        /**
+         * Keywords associated with the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keywords")
         private String keywords;
 
         /**
          * Keywords associated with the listing.
-         *
          * @param keywords the value to set
          * @return this builder
-         */
+         **/
         public Builder keywords(String keywords) {
             this.keywords = keywords;
             this.__explicitlySet__.add("keywords");
             return this;
         }
-        /** A short description of the listing. */
+        /**
+         * A short description of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
         private String shortDescription;
 
         /**
          * A short description of the listing.
-         *
          * @param shortDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder shortDescription(String shortDescription) {
             this.shortDescription = shortDescription;
             this.__explicitlySet__.add("shortDescription");
             return this;
         }
-        /** Usage information for the listing. */
+        /**
+         * Usage information for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageInformation")
         private String usageInformation;
 
         /**
          * Usage information for the listing.
-         *
          * @param usageInformation the value to set
          * @return this builder
-         */
+         **/
         public Builder usageInformation(String usageInformation) {
             this.usageInformation = usageInformation;
             this.__explicitlySet__.add("usageInformation");
             return this;
         }
-        /** A long description of the listing. */
+        /**
+         * A long description of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
         private String longDescription;
 
         /**
          * A long description of the listing.
-         *
          * @param longDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder longDescription(String longDescription) {
             this.longDescription = longDescription;
             this.__explicitlySet__.add("longDescription");
             return this;
         }
-        /** A description of the publisher's licensing model for the listing. */
+        /**
+         * A description of the publisher's licensing model for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModelDescription")
         private String licenseModelDescription;
 
         /**
          * A description of the publisher's licensing model for the listing.
-         *
          * @param licenseModelDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModelDescription(String licenseModelDescription) {
             this.licenseModelDescription = licenseModelDescription;
             this.__explicitlySet__.add("licenseModelDescription");
             return this;
         }
-        /** System requirements for the listing. */
+        /**
+         * System requirements for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemRequirements")
         private String systemRequirements;
 
         /**
          * System requirements for the listing.
-         *
          * @param systemRequirements the value to set
          * @return this builder
-         */
+         **/
         public Builder systemRequirements(String systemRequirements) {
             this.systemRequirements = systemRequirements;
             this.__explicitlySet__.add("systemRequirements");
             return this;
         }
-        /** The release date of the listing. */
+        /**
+         * The release date of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * The release date of the listing.
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** Release notes for the listing. */
+        /**
+         * Release notes for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseNotes")
         private String releaseNotes;
 
         /**
          * Release notes for the listing.
-         *
          * @param releaseNotes the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseNotes(String releaseNotes) {
             this.releaseNotes = releaseNotes;
             this.__explicitlySet__.add("releaseNotes");
             return this;
         }
-        /** Categories that the listing belongs to. */
+        /**
+         * Categories that the listing belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<String> categories;
 
         /**
          * Categories that the listing belongs to.
-         *
          * @param categories the value to set
          * @return this builder
-         */
+         **/
         public Builder categories(java.util.List<String> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
@@ -323,76 +334,81 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("publisher");
             return this;
         }
-        /** Languages supported by the listing. */
+        /**
+         * Languages supported by the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languages")
         private java.util.List<Item> languages;
 
         /**
          * Languages supported by the listing.
-         *
          * @param languages the value to set
          * @return this builder
-         */
+         **/
         public Builder languages(java.util.List<Item> languages) {
             this.languages = languages;
             this.__explicitlySet__.add("languages");
             return this;
         }
-        /** Screenshots of the listing. */
+        /**
+         * Screenshots of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("screenshots")
         private java.util.List<Screenshot> screenshots;
 
         /**
          * Screenshots of the listing.
-         *
          * @param screenshots the value to set
          * @return this builder
-         */
+         **/
         public Builder screenshots(java.util.List<Screenshot> screenshots) {
             this.screenshots = screenshots;
             this.__explicitlySet__.add("screenshots");
             return this;
         }
-        /** Videos of the listing. */
+        /**
+         * Videos of the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videos")
         private java.util.List<NamedLink> videos;
 
         /**
          * Videos of the listing.
-         *
          * @param videos the value to set
          * @return this builder
-         */
+         **/
         public Builder videos(java.util.List<NamedLink> videos) {
             this.videos = videos;
             this.__explicitlySet__.add("videos");
             return this;
         }
-        /** Contact information to use to get support from the publisher for the listing. */
+        /**
+         * Contact information to use to get support from the publisher for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
         private java.util.List<SupportContact> supportContacts;
 
         /**
          * Contact information to use to get support from the publisher for the listing.
-         *
          * @param supportContacts the value to set
          * @return this builder
-         */
+         **/
         public Builder supportContacts(java.util.List<SupportContact> supportContacts) {
             this.supportContacts = supportContacts;
             this.__explicitlySet__.add("supportContacts");
             return this;
         }
-        /** Links to support resources for the listing. */
+        /**
+         * Links to support resources for the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportLinks")
         private java.util.List<NamedLink> supportLinks;
 
         /**
          * Links to support resources for the listing.
-         *
          * @param supportLinks the value to set
          * @return this builder
-         */
+         **/
         public Builder supportLinks(java.util.List<NamedLink> supportLinks) {
             this.supportLinks = supportLinks;
             this.__explicitlySet__.add("supportLinks");
@@ -400,16 +416,15 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
         }
         /**
          * Links to additional documentation provided by the publisher specifically for the listing.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentationLinks")
         private java.util.List<DocumentationLink> documentationLinks;
 
         /**
          * Links to additional documentation provided by the publisher specifically for the listing.
-         *
          * @param documentationLinks the value to set
          * @return this builder
-         */
+         **/
         public Builder documentationLinks(java.util.List<DocumentationLink> documentationLinks) {
             this.documentationLinks = documentationLinks;
             this.__explicitlySet__.add("documentationLinks");
@@ -433,16 +448,17 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("banner");
             return this;
         }
-        /** The list of compatible architectures supported by the listing */
+        /**
+         * The list of compatible architectures supported by the listing
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
         private java.util.List<CompatibleArchitectures> compatibleArchitectures;
 
         /**
          * The list of compatible architectures supported by the listing
-         *
          * @param compatibleArchitectures the value to set
          * @return this builder
-         */
+         **/
         public Builder compatibleArchitectures(
                 java.util.List<CompatibleArchitectures> compatibleArchitectures) {
             this.compatibleArchitectures = compatibleArchitectures;
@@ -450,113 +466,114 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
             return this;
         }
         /**
-         * The regions where you can deploy the listing. (Some listings have restrictions that limit
-         * their deployment to United States regions only.)
-         */
+         * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<Region> regions;
 
         /**
-         * The regions where you can deploy the listing. (Some listings have restrictions that limit
-         * their deployment to United States regions only.)
+         * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
          *
          * @param regions the value to set
          * @return this builder
-         */
+         **/
         public Builder regions(java.util.List<Region> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** The listing's package type. */
+        /**
+         * The listing's package type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private PackageTypeEnum packageType;
 
         /**
          * The listing's package type.
-         *
          * @param packageType the value to set
          * @return this builder
-         */
+         **/
         public Builder packageType(PackageTypeEnum packageType) {
             this.packageType = packageType;
             this.__explicitlySet__.add("packageType");
             return this;
         }
-        /** The default package version. */
+        /**
+         * The default package version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPackageVersion")
         private String defaultPackageVersion;
 
         /**
          * The default package version.
-         *
          * @param defaultPackageVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultPackageVersion(String defaultPackageVersion) {
             this.defaultPackageVersion = defaultPackageVersion;
             this.__explicitlySet__.add("defaultPackageVersion");
             return this;
         }
-        /** Links to reference material. */
+        /**
+         * Links to reference material.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("links")
         private java.util.List<Link> links;
 
         /**
          * Links to reference material.
-         *
          * @param links the value to set
          * @return this builder
-         */
+         **/
         public Builder links(java.util.List<Link> links) {
             this.links = links;
             this.__explicitlySet__.add("links");
             return this;
         }
-        /** Indicates whether the listing is included in Featured Listings. */
+        /**
+         * Indicates whether the listing is included in Featured Listings.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
         private Boolean isFeatured;
 
         /**
          * Indicates whether the listing is included in Featured Listings.
-         *
          * @param isFeatured the value to set
          * @return this builder
-         */
+         **/
         public Builder isFeatured(Boolean isFeatured) {
             this.isFeatured = isFeatured;
             this.__explicitlySet__.add("isFeatured");
             return this;
         }
         /**
-         * The publisher category to which the listing belongs. The publisher category informs where
-         * the listing appears for use.
-         */
+         * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listingType")
         private ListingType listingType;
 
         /**
-         * The publisher category to which the listing belongs. The publisher category informs where
-         * the listing appears for use.
-         *
+         * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
          * @param listingType the value to set
          * @return this builder
-         */
+         **/
         public Builder listingType(ListingType listingType) {
             this.listingType = listingType;
             this.__explicitlySet__.add("listingType");
             return this;
         }
-        /** List of operating systems supported by the listing. */
+        /**
+         * List of operating systems supported by the listing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
         private java.util.List<OperatingSystem> supportedOperatingSystems;
 
         /**
          * List of operating systems supported by the listing.
-         *
          * @param supportedOperatingSystems the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedOperatingSystems(
                 java.util.List<OperatingSystem> supportedOperatingSystems) {
             this.supportedOperatingSystems = supportedOperatingSystems;
@@ -702,7 +719,9 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -711,171 +730,184 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The unique identifier for the listing in Marketplace. */
+    /**
+     * The unique identifier for the listing in Marketplace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier for the listing in Marketplace.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the listing. */
+    /**
+     * The name of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the listing.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The version of the listing. */
+    /**
+     * The version of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the listing.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The tagline of the listing. */
+    /**
+     * The tagline of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagline")
     private final String tagline;
 
     /**
      * The tagline of the listing.
-     *
      * @return the value
-     */
+     **/
     public String getTagline() {
         return tagline;
     }
 
-    /** Keywords associated with the listing. */
+    /**
+     * Keywords associated with the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keywords")
     private final String keywords;
 
     /**
      * Keywords associated with the listing.
-     *
      * @return the value
-     */
+     **/
     public String getKeywords() {
         return keywords;
     }
 
-    /** A short description of the listing. */
+    /**
+     * A short description of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shortDescription")
     private final String shortDescription;
 
     /**
      * A short description of the listing.
-     *
      * @return the value
-     */
+     **/
     public String getShortDescription() {
         return shortDescription;
     }
 
-    /** Usage information for the listing. */
+    /**
+     * Usage information for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageInformation")
     private final String usageInformation;
 
     /**
      * Usage information for the listing.
-     *
      * @return the value
-     */
+     **/
     public String getUsageInformation() {
         return usageInformation;
     }
 
-    /** A long description of the listing. */
+    /**
+     * A long description of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("longDescription")
     private final String longDescription;
 
     /**
      * A long description of the listing.
-     *
      * @return the value
-     */
+     **/
     public String getLongDescription() {
         return longDescription;
     }
 
-    /** A description of the publisher's licensing model for the listing. */
+    /**
+     * A description of the publisher's licensing model for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModelDescription")
     private final String licenseModelDescription;
 
     /**
      * A description of the publisher's licensing model for the listing.
-     *
      * @return the value
-     */
+     **/
     public String getLicenseModelDescription() {
         return licenseModelDescription;
     }
 
-    /** System requirements for the listing. */
+    /**
+     * System requirements for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemRequirements")
     private final String systemRequirements;
 
     /**
      * System requirements for the listing.
-     *
      * @return the value
-     */
+     **/
     public String getSystemRequirements() {
         return systemRequirements;
     }
 
-    /** The release date of the listing. */
+    /**
+     * The release date of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * The release date of the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** Release notes for the listing. */
+    /**
+     * Release notes for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseNotes")
     private final String releaseNotes;
 
     /**
      * Release notes for the listing.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseNotes() {
         return releaseNotes;
     }
 
-    /** Categories that the listing belongs to. */
+    /**
+     * Categories that the listing belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<String> categories;
 
     /**
      * Categories that the listing belongs to.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCategories() {
         return categories;
     }
@@ -887,80 +919,86 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
         return publisher;
     }
 
-    /** Languages supported by the listing. */
+    /**
+     * Languages supported by the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languages")
     private final java.util.List<Item> languages;
 
     /**
      * Languages supported by the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Item> getLanguages() {
         return languages;
     }
 
-    /** Screenshots of the listing. */
+    /**
+     * Screenshots of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("screenshots")
     private final java.util.List<Screenshot> screenshots;
 
     /**
      * Screenshots of the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Screenshot> getScreenshots() {
         return screenshots;
     }
 
-    /** Videos of the listing. */
+    /**
+     * Videos of the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videos")
     private final java.util.List<NamedLink> videos;
 
     /**
      * Videos of the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NamedLink> getVideos() {
         return videos;
     }
 
-    /** Contact information to use to get support from the publisher for the listing. */
+    /**
+     * Contact information to use to get support from the publisher for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportContacts")
     private final java.util.List<SupportContact> supportContacts;
 
     /**
      * Contact information to use to get support from the publisher for the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SupportContact> getSupportContacts() {
         return supportContacts;
     }
 
-    /** Links to support resources for the listing. */
+    /**
+     * Links to support resources for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportLinks")
     private final java.util.List<NamedLink> supportLinks;
 
     /**
      * Links to support resources for the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NamedLink> getSupportLinks() {
         return supportLinks;
     }
 
-    /** Links to additional documentation provided by the publisher specifically for the listing. */
+    /**
+     * Links to additional documentation provided by the publisher specifically for the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentationLinks")
     private final java.util.List<DocumentationLink> documentationLinks;
 
     /**
      * Links to additional documentation provided by the publisher specifically for the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentationLink> getDocumentationLinks() {
         return documentationLinks;
     }
@@ -979,14 +1017,15 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
         return banner;
     }
 
-    /** */
-    public enum CompatibleArchitectures implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum CompatibleArchitectures {
         X86("X86"),
         Arm("ARM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1025,114 +1064,116 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The list of compatible architectures supported by the listing */
+    /**
+     * The list of compatible architectures supported by the listing
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibleArchitectures")
     private final java.util.List<CompatibleArchitectures> compatibleArchitectures;
 
     /**
      * The list of compatible architectures supported by the listing
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CompatibleArchitectures> getCompatibleArchitectures() {
         return compatibleArchitectures;
     }
 
     /**
-     * The regions where you can deploy the listing. (Some listings have restrictions that limit
-     * their deployment to United States regions only.)
-     */
+     * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<Region> regions;
 
     /**
-     * The regions where you can deploy the listing. (Some listings have restrictions that limit
-     * their deployment to United States regions only.)
+     * The regions where you can deploy the listing. (Some listings have restrictions that limit their deployment to United States regions only.)
      *
      * @return the value
-     */
+     **/
     public java.util.List<Region> getRegions() {
         return regions;
     }
 
-    /** The listing's package type. */
+    /**
+     * The listing's package type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final PackageTypeEnum packageType;
 
     /**
      * The listing's package type.
-     *
      * @return the value
-     */
+     **/
     public PackageTypeEnum getPackageType() {
         return packageType;
     }
 
-    /** The default package version. */
+    /**
+     * The default package version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPackageVersion")
     private final String defaultPackageVersion;
 
     /**
      * The default package version.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultPackageVersion() {
         return defaultPackageVersion;
     }
 
-    /** Links to reference material. */
+    /**
+     * Links to reference material.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("links")
     private final java.util.List<Link> links;
 
     /**
      * Links to reference material.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Link> getLinks() {
         return links;
     }
 
-    /** Indicates whether the listing is included in Featured Listings. */
+    /**
+     * Indicates whether the listing is included in Featured Listings.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFeatured")
     private final Boolean isFeatured;
 
     /**
      * Indicates whether the listing is included in Featured Listings.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFeatured() {
         return isFeatured;
     }
 
     /**
-     * The publisher category to which the listing belongs. The publisher category informs where the
-     * listing appears for use.
-     */
+     * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listingType")
     private final ListingType listingType;
 
     /**
-     * The publisher category to which the listing belongs. The publisher category informs where the
-     * listing appears for use.
-     *
+     * The publisher category to which the listing belongs. The publisher category informs where the listing appears for use.
      * @return the value
-     */
+     **/
     public ListingType getListingType() {
         return listingType;
     }
 
-    /** List of operating systems supported by the listing. */
+    /**
+     * List of operating systems supported by the listing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperatingSystems")
     private final java.util.List<OperatingSystem> supportedOperatingSystems;
 
     /**
      * List of operating systems supported by the listing.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OperatingSystem> getSupportedOperatingSystems() {
         return supportedOperatingSystems;
     }
@@ -1144,7 +1185,6 @@ public final class Listing extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

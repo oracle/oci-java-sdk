@@ -6,103 +6,107 @@ package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledJobsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListScheduledJobsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the compartment that contains the resources to list. This filter returns only
-     * resources contained within the specified compartment.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment that contains the resources to list. This filter returns only
-     * resources contained within the specified compartment.
+     * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return resources that match the given user-friendly name. */
+    /**
+     * A filter to return resources that match the given user-friendly name.
+     */
     private String displayName;
 
-    /** A filter to return resources that match the given user-friendly name. */
+    /**
+     * A filter to return resources that match the given user-friendly name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return resources that may partially match the given display name. */
+    /**
+     * A filter to return resources that may partially match the given display name.
+     */
     private String displayNameContains;
 
-    /** A filter to return resources that may partially match the given display name. */
+    /**
+     * A filter to return resources that may partially match the given display name.
+     */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
-    /** A filter to return only scheduled jobs currently in the given state. */
+    /**
+     * A filter to return only scheduled jobs currently in the given state.
+     */
     private com.oracle.bmc.osmanagementhub.model.ScheduledJob.LifecycleState lifecycleState;
 
-    /** A filter to return only scheduled jobs currently in the given state. */
+    /**
+     * A filter to return only scheduled jobs currently in the given state.
+     */
     public com.oracle.bmc.osmanagementhub.model.ScheduledJob.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     private String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance. This filter returns resources associated with this managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
      */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance group. This filter returns resources associated with this group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      */
     private String managedInstanceGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance group. This filter returns resources associated with this group.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
      */
     public String getManagedInstanceGroupId() {
         return managedInstanceGroupId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed compartment. This filter returns resources associated with this compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.
      */
     private String managedCompartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed compartment. This filter returns resources associated with this compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.
      */
     public String getManagedCompartmentId() {
         return managedCompartmentId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
      */
     private String lifecycleStageId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
      */
     public String getLifecycleStageId() {
         return lifecycleStageId;
     }
-    /** A filter to return only scheduled jobs with the given operation type. */
+    /**
+     * A filter to return only scheduled jobs with the given operation type.
+     */
     private com.oracle.bmc.osmanagementhub.model.OperationTypes operationType;
 
-    /** A filter to return only scheduled jobs with the given operation type. */
+    /**
+     * A filter to return only scheduled jobs with the given operation type.
+     */
     public com.oracle.bmc.osmanagementhub.model.OperationTypes getOperationType() {
         return operationType;
     }
@@ -118,95 +122,99 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         return scheduleType;
     }
     /**
-     * A filter to return only resources with a date on or after the given value, in ISO 8601
-     * format.
+     * A filter to return only resources with a date on or after the given value, in ISO 8601 format.
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeStart;
 
     /**
-     * A filter to return only resources with a date on or after the given value, in ISO 8601
-     * format.
+     * A filter to return only resources with a date on or after the given value, in ISO 8601 format.
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * A filter to return only resources with a date on or before the given value, in ISO 8601
-     * format.
+     * A filter to return only resources with a date on or before the given value, in ISO 8601 format.
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     private java.util.Date timeEnd;
 
     /**
-     * A filter to return only resources with a date on or before the given value, in ISO 8601
-     * format.
+     * A filter to return only resources with a date on or before the given value, in ISO 8601 format.
+     * <p>
+     * Example: 2017-07-14T02:40:00.000Z
      *
-     * <p>Example: 2017-07-14T02:40:00.000Z
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 3}
      *
-     * <p>Example: {@code 3}
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 3}
      *
-     * <p>Example: {@code 3}
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.osmanagementhub.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.osmanagementhub.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -240,73 +248,91 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only restricted scheduled jobs. */
+    /**
+     * A filter to return only restricted scheduled jobs.
+     */
     private Boolean isRestricted;
 
-    /** A filter to return only restricted scheduled jobs. */
+    /**
+     * A filter to return only restricted scheduled jobs.
+     */
     public Boolean getIsRestricted() {
         return isRestricted;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * scheduled job. A filter to return the specified job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
      */
     private String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * scheduled job. A filter to return the specified job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
      */
     public String getId() {
         return id;
     }
-    /** Indicates whether to include subcompartments in the returned results. Default is false. */
+    /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
     private Boolean compartmentIdInSubtree;
 
-    /** Indicates whether to include subcompartments in the returned results. Default is false. */
+    /**
+     * Indicates whether to include subcompartments in the returned results. Default is false.
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /** A filter to return only resources whose location matches the given value. */
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation> location;
 
-    /** A filter to return only resources whose location matches the given value. */
+    /**
+     * A filter to return only resources whose location matches the given value.
+     */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
             getLocation() {
         return location;
     }
-    /** A filter to return only resources whose location does not match the given value. */
+    /**
+     * A filter to return only resources whose location does not match the given value.
+     */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
             locationNotEqualTo;
 
-    /** A filter to return only resources whose location does not match the given value. */
+    /**
+     * A filter to return only resources whose location does not match the given value.
+     */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
             getLocationNotEqualTo() {
         return locationNotEqualTo;
     }
-    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    /**
+     * Indicates whether to list only resources managed by the Autonomous Linux service.
+     *
+     */
     private Boolean isManagedByAutonomousLinux;
 
-    /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+    /**
+     * Indicates whether to list only resources managed by the Autonomous Linux service.
+     *
+     */
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
     }
@@ -314,19 +340,17 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListScheduledJobsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This filter returns only
-         * resources contained within the specified compartment.
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment that contains the resources to list. This filter returns only
-         * resources contained within the specified compartment.
-         *
+         * The OCID of the compartment that contains the resources to list. This filter returns only resources contained within the specified compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -335,12 +359,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return resources that match the given user-friendly name. */
+        /**
+         * A filter to return resources that match the given user-friendly name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return resources that match the given user-friendly name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -349,12 +374,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return resources that may partially match the given display name. */
+        /**
+         * A filter to return resources that may partially match the given display name.
+         */
         private String displayNameContains = null;
 
         /**
          * A filter to return resources that may partially match the given display name.
-         *
          * @param displayNameContains the value to set
          * @return this builder instance
          */
@@ -363,13 +389,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return only scheduled jobs currently in the given state. */
+        /**
+         * A filter to return only scheduled jobs currently in the given state.
+         */
         private com.oracle.bmc.osmanagementhub.model.ScheduledJob.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to return only scheduled jobs currently in the given state.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -380,15 +407,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance. This filter returns resources associated with this managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
          */
         private String managedInstanceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance. This filter returns resources associated with this managed instance.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance. This filter returns resources associated with this managed instance.
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -398,15 +422,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance group. This filter returns resources associated with this group.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
          */
         private String managedInstanceGroupId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance group. This filter returns resources associated with this group.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group. This filter returns resources associated with this group.
          * @param managedInstanceGroupId the value to set
          * @return this builder instance
          */
@@ -416,15 +437,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed compartment. This filter returns resources associated with this compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.
          */
         private String managedCompartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed compartment. This filter returns resources associated with this compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed compartment. This filter returns resources associated with this compartment.
          * @param managedCompartmentId the value to set
          * @return this builder instance
          */
@@ -434,15 +452,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * lifecycle stage. This resource returns resources associated with this lifecycle stage.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
          */
         private String lifecycleStageId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * lifecycle stage. This resource returns resources associated with this lifecycle stage.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage. This resource returns resources associated with this lifecycle stage.
          * @param lifecycleStageId the value to set
          * @return this builder instance
          */
@@ -451,12 +466,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return only scheduled jobs with the given operation type. */
+        /**
+         * A filter to return only scheduled jobs with the given operation type.
+         */
         private com.oracle.bmc.osmanagementhub.model.OperationTypes operationType = null;
 
         /**
          * A filter to return only scheduled jobs with the given operation type.
-         *
          * @param operationType the value to set
          * @return this builder instance
          */
@@ -467,15 +483,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A filter to return only scheduled jobs of the given scheduling type (one-time or
-         * recurring).
+         * A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).
          */
         private com.oracle.bmc.osmanagementhub.model.ScheduleTypes scheduleType = null;
 
         /**
-         * A filter to return only scheduled jobs of the given scheduling type (one-time or
-         * recurring).
-         *
+         * A filter to return only scheduled jobs of the given scheduling type (one-time or recurring).
          * @param scheduleType the value to set
          * @return this builder instance
          */
@@ -486,18 +499,17 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A filter to return only resources with a date on or after the given value, in ISO 8601
-         * format.
+         * A filter to return only resources with a date on or after the given value, in ISO 8601 format.
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
-         * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeStart = null;
 
         /**
-         * A filter to return only resources with a date on or after the given value, in ISO 8601
-         * format.
-         *
-         * <p>Example: 2017-07-14T02:40:00.000Z
+         * A filter to return only resources with a date on or after the given value, in ISO 8601 format.
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
          * @param timeStart the value to set
          * @return this builder instance
@@ -508,18 +520,17 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A filter to return only resources with a date on or before the given value, in ISO 8601
-         * format.
+         * A filter to return only resources with a date on or before the given value, in ISO 8601 format.
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
-         * <p>Example: 2017-07-14T02:40:00.000Z
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * A filter to return only resources with a date on or before the given value, in ISO 8601
-         * format.
-         *
-         * <p>Example: 2017-07-14T02:40:00.000Z
+         * A filter to return only resources with a date on or before the given value, in ISO 8601 format.
+         * <p>
+         * Example: 2017-07-14T02:40:00.000Z
          *
          * @param timeEnd the value to set
          * @return this builder instance
@@ -530,20 +541,19 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -554,20 +564,19 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 3}
          *
-         * <p>Example: {@code 3}
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 3}
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 3}
          *
          * @param page the value to set
          * @return this builder instance
@@ -577,12 +586,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.osmanagementhub.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -592,14 +602,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -610,15 +619,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -627,12 +633,13 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return only restricted scheduled jobs. */
+        /**
+         * A filter to return only restricted scheduled jobs.
+         */
         private Boolean isRestricted = null;
 
         /**
          * A filter to return only restricted scheduled jobs.
-         *
          * @param isRestricted the value to set
          * @return this builder instance
          */
@@ -642,15 +649,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * scheduled job. A filter to return the specified job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
          */
         private String id = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * scheduled job. A filter to return the specified job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the scheduled job. A filter to return the specified job.
          * @param id the value to set
          * @return this builder instance
          */
@@ -666,7 +670,6 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Indicates whether to include subcompartments in the returned results. Default is false.
-         *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
          */
@@ -675,13 +678,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return only resources whose location matches the given value. */
+        /**
+         * A filter to return only resources whose location matches the given value.
+         */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
                 location = null;
 
         /**
          * A filter to return only resources whose location matches the given value.
-         *
          * @param location the value to set
          * @return this builder instance
          */
@@ -693,9 +697,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Singular setter. A filter to return only resources whose location matches the given
-         * value.
-         *
+         * Singular setter. A filter to return only resources whose location matches the given value.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -703,13 +705,14 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.location(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only resources whose location does not match the given value. */
+        /**
+         * A filter to return only resources whose location does not match the given value.
+         */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.ManagedInstanceLocation>
                 locationNotEqualTo = null;
 
         /**
          * A filter to return only resources whose location does not match the given value.
-         *
          * @param locationNotEqualTo the value to set
          * @return this builder instance
          */
@@ -721,9 +724,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * Singular setter. A filter to return only resources whose location does not match the
-         * given value.
-         *
+         * Singular setter. A filter to return only resources whose location does not match the given value.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -731,7 +732,10 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return this.locationNotEqualTo(java.util.Arrays.asList(singularValue));
         }
 
-        /** Indicates whether to list only resources managed by the Autonomous Linux service. */
+        /**
+         * Indicates whether to list only resources managed by the Autonomous Linux service.
+         *
+         */
         private Boolean isManagedByAutonomousLinux = null;
 
         /**
@@ -747,19 +751,18 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -771,7 +774,6 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListScheduledJobsRequest o) {
@@ -806,11 +808,10 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListScheduledJobsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListScheduledJobsRequest
          */
@@ -824,8 +825,7 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListScheduledJobsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListScheduledJobsRequest
@@ -856,17 +856,12 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
             request.locationNotEqualTo = locationNotEqualTo;
             request.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             return request;
-            // new ListScheduledJobsRequest(compartmentId, displayName, displayNameContains,
-            // lifecycleState, managedInstanceId, managedInstanceGroupId, managedCompartmentId,
-            // lifecycleStageId, operationType, scheduleType, timeStart, timeEnd, limit, page,
-            // sortOrder, sortBy, opcRequestId, isRestricted, id, compartmentIdInSubtree, location,
-            // locationNotEqualTo, isManagedByAutonomousLinux);
+            // new ListScheduledJobsRequest(compartmentId, displayName, displayNameContains, lifecycleState, managedInstanceId, managedInstanceGroupId, managedCompartmentId, lifecycleStageId, operationType, scheduleType, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId, isRestricted, id, compartmentIdInSubtree, location, locationNotEqualTo, isManagedByAutonomousLinux);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -898,7 +893,6 @@ public class ListScheduledJobsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

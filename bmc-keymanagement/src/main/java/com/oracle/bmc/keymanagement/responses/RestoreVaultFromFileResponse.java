@@ -6,25 +6,31 @@ package com.oracle.bmc.keymanagement.responses;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The base64-encoded MD5 hash value of the request body, as computed by the server. */
+    /**
+     * The base64-encoded MD5 hash value of the request body, as computed
+     * by the server.
+     *
+     */
     private String opcContentMd5;
 
     /**
-     * The base64-encoded MD5 hash value of the request body, as computed by the server.
+     * The base64-encoded MD5 hash value of the request body, as computed
+     * by the server.
      *
      * @return the value
      */
@@ -33,14 +39,15 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -51,6 +58,7 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
     /**
      * Unique Oracle-assigned identifier for the work request, used to track the progress of the
      * restore operation.
+     *
      */
     private String opcWorkRequestId;
 
@@ -64,12 +72,13 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
         return opcWorkRequestId;
     }
 
-    /** The returned {@code Vault} instance. */
+    /**
+     * The returned Vault instance.
+     */
     private com.oracle.bmc.keymanagement.model.Vault vault;
 
     /**
-     * The returned {@code Vault} instance.
-     *
+     * The returned Vault instance.
      * @return the value
      */
     public com.oracle.bmc.keymanagement.model.Vault getVault() {
@@ -87,7 +96,7 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
     })
     private RestoreVaultFromFileResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcContentMd5,
             String opcRequestId,
@@ -101,30 +110,28 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
         this.vault = vault;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<RestoreVaultFromFileResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -133,11 +140,16 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The base64-encoded MD5 hash value of the request body, as computed by the server. */
+        /**
+         * The base64-encoded MD5 hash value of the request body, as computed
+         * by the server.
+         *
+         */
         private String opcContentMd5;
 
         /**
-         * The base64-encoded MD5 hash value of the request body, as computed by the server.
+         * The base64-encoded MD5 hash value of the request body, as computed
+         * by the server.
          *
          * @param opcContentMd5 the value to set
          * @return this builder
@@ -148,14 +160,15 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -168,6 +181,7 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
         /**
          * Unique Oracle-assigned identifier for the work request, used to track the progress of the
          * restore operation.
+         *
          */
         private String opcWorkRequestId;
 
@@ -183,12 +197,13 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code Vault} instance. */
+        /**
+         * The returned Vault instance.
+         */
         private com.oracle.bmc.keymanagement.model.Vault vault;
 
         /**
-         * The returned {@code Vault} instance.
-         *
+         * The returned Vault instance.
          * @param vault the value to set
          * @return this builder
          */
@@ -199,10 +214,8 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(RestoreVaultFromFileResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -217,10 +230,8 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public RestoreVaultFromFileResponse build() {
             return new RestoreVaultFromFileResponse(
                     __httpStatusCode__,
@@ -235,7 +246,6 @@ public class RestoreVaultFromFileResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

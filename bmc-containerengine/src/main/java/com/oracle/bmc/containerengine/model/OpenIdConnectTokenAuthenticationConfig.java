@@ -5,26 +5,24 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that configure OIDC token authentication in kube-apiserver. For more information,
- * see [Configuring the API
- * Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that configure OIDC token authentication in kube-apiserver.
+ * For more information, see [Configuring the API Server](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-flags).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpenIdConnectTokenAuthenticationConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OpenIdConnectTokenAuthenticationConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OpenIdConnectTokenAuthenticationConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "issuerUrl",
@@ -68,27 +66,31 @@ public final class OpenIdConnectTokenAuthenticationConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * URL of the provider that allows the API server to discover public signing keys. Only URLs
-         * that use the https:// scheme are accepted. This is typically the provider's discovery
-         * URL, changed to have an empty path.
-         */
+         * URL of the provider that allows the API server to discover public signing keys.
+         * Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,
+         * changed to have an empty path.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuerUrl")
         private String issuerUrl;
 
         /**
-         * URL of the provider that allows the API server to discover public signing keys. Only URLs
-         * that use the https:// scheme are accepted. This is typically the provider's discovery
-         * URL, changed to have an empty path.
+         * URL of the provider that allows the API server to discover public signing keys.
+         * Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,
+         * changed to have an empty path.
          *
          * @param issuerUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder issuerUrl(String issuerUrl) {
             this.issuerUrl = issuerUrl;
             this.__explicitlySet__.add("issuerUrl");
             return this;
         }
-        /** A client id that all tokens must be issued for. */
+        /**
+         * A client id that all tokens must be issued for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
@@ -97,139 +99,136 @@ public final class OpenIdConnectTokenAuthenticationConfig
          *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
         /**
-         * JWT claim to use as the user name. By default sub, which is expected to be a unique
-         * identifier of the end user. Admins can choose other claims, such as email or name,
-         * depending on their provider. However, claims other than email will be prefixed with the
-         * issuer URL to prevent naming clashes with other plugins.
-         */
+         * JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end
+         * user. Admins can choose other claims, such as email or name, depending on their provider. However, claims
+         * other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usernameClaim")
         private String usernameClaim;
 
         /**
-         * JWT claim to use as the user name. By default sub, which is expected to be a unique
-         * identifier of the end user. Admins can choose other claims, such as email or name,
-         * depending on their provider. However, claims other than email will be prefixed with the
-         * issuer URL to prevent naming clashes with other plugins.
+         * JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end
+         * user. Admins can choose other claims, such as email or name, depending on their provider. However, claims
+         * other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
          *
          * @param usernameClaim the value to set
          * @return this builder
-         */
+         **/
         public Builder usernameClaim(String usernameClaim) {
             this.usernameClaim = usernameClaim;
             this.__explicitlySet__.add("usernameClaim");
             return this;
         }
         /**
-         * Prefix prepended to username claims to prevent clashes with existing names (such as
-         * system:users). For example, the value oidc: will create usernames like oidc:jane.doe. If
-         * this flag isn't provided and --oidc-username-claim is a value other than email the prefix
-         * defaults to ( Issuer URL )# where ( Issuer URL ) is the value of --oidc-issuer-url. The
-         * value - can be used to disable all prefixing.
-         */
+         * Prefix prepended to username claims to prevent clashes with existing names (such as system:users).
+         * For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and
+         * --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where
+         * ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usernamePrefix")
         private String usernamePrefix;
 
         /**
-         * Prefix prepended to username claims to prevent clashes with existing names (such as
-         * system:users). For example, the value oidc: will create usernames like oidc:jane.doe. If
-         * this flag isn't provided and --oidc-username-claim is a value other than email the prefix
-         * defaults to ( Issuer URL )# where ( Issuer URL ) is the value of --oidc-issuer-url. The
-         * value - can be used to disable all prefixing.
+         * Prefix prepended to username claims to prevent clashes with existing names (such as system:users).
+         * For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and
+         * --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where
+         * ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
          *
          * @param usernamePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder usernamePrefix(String usernamePrefix) {
             this.usernamePrefix = usernamePrefix;
             this.__explicitlySet__.add("usernamePrefix");
             return this;
         }
         /**
-         * JWT claim to use as the user's group. If the claim is present it must be an array of
-         * strings.
-         */
+         * JWT claim to use as the user's group. If the claim is present it must be an array of strings.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupsClaim")
         private String groupsClaim;
 
         /**
-         * JWT claim to use as the user's group. If the claim is present it must be an array of
-         * strings.
+         * JWT claim to use as the user's group. If the claim is present it must be an array of strings.
          *
          * @param groupsClaim the value to set
          * @return this builder
-         */
+         **/
         public Builder groupsClaim(String groupsClaim) {
             this.groupsClaim = groupsClaim;
             this.__explicitlySet__.add("groupsClaim");
             return this;
         }
         /**
-         * Prefix prepended to group claims to prevent clashes with existing names (such as
-         * system:groups).
-         */
+         * Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupsPrefix")
         private String groupsPrefix;
 
         /**
-         * Prefix prepended to group claims to prevent clashes with existing names (such as
-         * system:groups).
+         * Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
          *
          * @param groupsPrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder groupsPrefix(String groupsPrefix) {
             this.groupsPrefix = groupsPrefix;
             this.__explicitlySet__.add("groupsPrefix");
             return this;
         }
         /**
-         * A key=value pair that describes a required claim in the ID Token. If set, the claim is
-         * verified to be present in the ID Token with a matching value. Repeat this flag to specify
-         * multiple claims.
-         */
+         * A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present
+         * in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requiredClaims")
         private java.util.List<KeyValue> requiredClaims;
 
         /**
-         * A key=value pair that describes a required claim in the ID Token. If set, the claim is
-         * verified to be present in the ID Token with a matching value. Repeat this flag to specify
-         * multiple claims.
+         * A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present
+         * in the ID Token with a matching value. Repeat this flag to specify multiple claims.
          *
          * @param requiredClaims the value to set
          * @return this builder
-         */
+         **/
         public Builder requiredClaims(java.util.List<KeyValue> requiredClaims) {
             this.requiredClaims = requiredClaims;
             this.__explicitlySet__.add("requiredClaims");
             return this;
         }
         /**
-         * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's
-         * web certificate.
-         */
+         * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
         private String caCertificate;
 
         /**
-         * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's
-         * web certificate.
+         * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
          *
          * @param caCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder caCertificate(String caCertificate) {
             this.caCertificate = caCertificate;
             this.__explicitlySet__.add("caCertificate");
             return this;
         }
-        /** The signing algorithms accepted. Default is ["RS256"]. */
+        /**
+         * The signing algorithms accepted. Default is ["RS256"].
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithms")
         private java.util.List<String> signingAlgorithms;
 
@@ -238,13 +237,16 @@ public final class OpenIdConnectTokenAuthenticationConfig
          *
          * @param signingAlgorithms the value to set
          * @return this builder
-         */
+         **/
         public Builder signingAlgorithms(java.util.List<String> signingAlgorithms) {
             this.signingAlgorithms = signingAlgorithms;
             this.__explicitlySet__.add("signingAlgorithms");
             return this;
         }
-        /** Whether the cluster has OIDC Auth Config enabled. Defaults to false. */
+        /**
+         * Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOpenIdConnectAuthEnabled")
         private Boolean isOpenIdConnectAuthEnabled;
 
@@ -253,26 +255,25 @@ public final class OpenIdConnectTokenAuthenticationConfig
          *
          * @param isOpenIdConnectAuthEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isOpenIdConnectAuthEnabled(Boolean isOpenIdConnectAuthEnabled) {
             this.isOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;
             this.__explicitlySet__.add("isOpenIdConnectAuthEnabled");
             return this;
         }
         /**
-         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
-         * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
-         */
+         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationFile")
         private String configurationFile;
 
         /**
-         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
-         * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
          *
          * @param configurationFile the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationFile(String configurationFile) {
             this.configurationFile = configurationFile;
             this.__explicitlySet__.add("configurationFile");
@@ -341,7 +342,9 @@ public final class OpenIdConnectTokenAuthenticationConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -351,25 +354,29 @@ public final class OpenIdConnectTokenAuthenticationConfig
     }
 
     /**
-     * URL of the provider that allows the API server to discover public signing keys. Only URLs
-     * that use the https:// scheme are accepted. This is typically the provider's discovery URL,
+     * URL of the provider that allows the API server to discover public signing keys.
+     * Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,
      * changed to have an empty path.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuerUrl")
     private final String issuerUrl;
 
     /**
-     * URL of the provider that allows the API server to discover public signing keys. Only URLs
-     * that use the https:// scheme are accepted. This is typically the provider's discovery URL,
+     * URL of the provider that allows the API server to discover public signing keys.
+     * Only URLs that use the https:// scheme are accepted. This is typically the provider's discovery URL,
      * changed to have an empty path.
      *
      * @return the value
-     */
+     **/
     public String getIssuerUrl() {
         return issuerUrl;
     }
 
-    /** A client id that all tokens must be issued for. */
+    /**
+     * A client id that all tokens must be issued for.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
@@ -377,58 +384,57 @@ public final class OpenIdConnectTokenAuthenticationConfig
      * A client id that all tokens must be issued for.
      *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
     /**
-     * JWT claim to use as the user name. By default sub, which is expected to be a unique
-     * identifier of the end user. Admins can choose other claims, such as email or name, depending
-     * on their provider. However, claims other than email will be prefixed with the issuer URL to
-     * prevent naming clashes with other plugins.
-     */
+     * JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end
+     * user. Admins can choose other claims, such as email or name, depending on their provider. However, claims
+     * other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usernameClaim")
     private final String usernameClaim;
 
     /**
-     * JWT claim to use as the user name. By default sub, which is expected to be a unique
-     * identifier of the end user. Admins can choose other claims, such as email or name, depending
-     * on their provider. However, claims other than email will be prefixed with the issuer URL to
-     * prevent naming clashes with other plugins.
+     * JWT claim to use as the user name. By default sub, which is expected to be a unique identifier of the end
+     * user. Admins can choose other claims, such as email or name, depending on their provider. However, claims
+     * other than email will be prefixed with the issuer URL to prevent naming clashes with other plugins.
      *
      * @return the value
-     */
+     **/
     public String getUsernameClaim() {
         return usernameClaim;
     }
 
     /**
-     * Prefix prepended to username claims to prevent clashes with existing names (such as
-     * system:users). For example, the value oidc: will create usernames like oidc:jane.doe. If this
-     * flag isn't provided and --oidc-username-claim is a value other than email the prefix defaults
-     * to ( Issuer URL )# where ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be
-     * used to disable all prefixing.
-     */
+     * Prefix prepended to username claims to prevent clashes with existing names (such as system:users).
+     * For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and
+     * --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where
+     * ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usernamePrefix")
     private final String usernamePrefix;
 
     /**
-     * Prefix prepended to username claims to prevent clashes with existing names (such as
-     * system:users). For example, the value oidc: will create usernames like oidc:jane.doe. If this
-     * flag isn't provided and --oidc-username-claim is a value other than email the prefix defaults
-     * to ( Issuer URL )# where ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be
-     * used to disable all prefixing.
+     * Prefix prepended to username claims to prevent clashes with existing names (such as system:users).
+     * For example, the value oidc: will create usernames like oidc:jane.doe. If this flag isn't provided and
+     * --oidc-username-claim is a value other than email the prefix defaults to ( Issuer URL )# where
+     * ( Issuer URL ) is the value of --oidc-issuer-url. The value - can be used to disable all prefixing.
      *
      * @return the value
-     */
+     **/
     public String getUsernamePrefix() {
         return usernamePrefix;
     }
 
     /**
      * JWT claim to use as the user's group. If the claim is present it must be an array of strings.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupsClaim")
     private final String groupsClaim;
 
@@ -436,65 +442,65 @@ public final class OpenIdConnectTokenAuthenticationConfig
      * JWT claim to use as the user's group. If the claim is present it must be an array of strings.
      *
      * @return the value
-     */
+     **/
     public String getGroupsClaim() {
         return groupsClaim;
     }
 
     /**
-     * Prefix prepended to group claims to prevent clashes with existing names (such as
-     * system:groups).
-     */
+     * Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupsPrefix")
     private final String groupsPrefix;
 
     /**
-     * Prefix prepended to group claims to prevent clashes with existing names (such as
-     * system:groups).
+     * Prefix prepended to group claims to prevent clashes with existing names (such as system:groups).
      *
      * @return the value
-     */
+     **/
     public String getGroupsPrefix() {
         return groupsPrefix;
     }
 
     /**
-     * A key=value pair that describes a required claim in the ID Token. If set, the claim is
-     * verified to be present in the ID Token with a matching value. Repeat this flag to specify
-     * multiple claims.
-     */
+     * A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present
+     * in the ID Token with a matching value. Repeat this flag to specify multiple claims.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiredClaims")
     private final java.util.List<KeyValue> requiredClaims;
 
     /**
-     * A key=value pair that describes a required claim in the ID Token. If set, the claim is
-     * verified to be present in the ID Token with a matching value. Repeat this flag to specify
-     * multiple claims.
+     * A key=value pair that describes a required claim in the ID Token. If set, the claim is verified to be present
+     * in the ID Token with a matching value. Repeat this flag to specify multiple claims.
      *
      * @return the value
-     */
+     **/
     public java.util.List<KeyValue> getRequiredClaims() {
         return requiredClaims;
     }
 
     /**
-     * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web
-     * certificate.
-     */
+     * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caCertificate")
     private final String caCertificate;
 
     /**
-     * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web
-     * certificate.
+     * A Base64 encoded public RSA or ECDSA certificates used to signed your identity provider's web certificate.
      *
      * @return the value
-     */
+     **/
     public String getCaCertificate() {
         return caCertificate;
     }
 
-    /** The signing algorithms accepted. Default is ["RS256"]. */
+    /**
+     * The signing algorithms accepted. Default is ["RS256"].
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingAlgorithms")
     private final java.util.List<String> signingAlgorithms;
 
@@ -502,12 +508,15 @@ public final class OpenIdConnectTokenAuthenticationConfig
      * The signing algorithms accepted. Default is ["RS256"].
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSigningAlgorithms() {
         return signingAlgorithms;
     }
 
-    /** Whether the cluster has OIDC Auth Config enabled. Defaults to false. */
+    /**
+     * Whether the cluster has OIDC Auth Config enabled. Defaults to false.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOpenIdConnectAuthEnabled")
     private final Boolean isOpenIdConnectAuthEnabled;
 
@@ -515,24 +524,23 @@ public final class OpenIdConnectTokenAuthenticationConfig
      * Whether the cluster has OIDC Auth Config enabled. Defaults to false.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsOpenIdConnectAuthEnabled() {
         return isOpenIdConnectAuthEnabled;
     }
 
     /**
-     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
-     * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
-     */
+     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationFile")
     private final String configurationFile;
 
     /**
-     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
-     * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
      *
      * @return the value
-     */
+     **/
     public String getConfigurationFile() {
         return configurationFile;
     }
@@ -544,7 +552,6 @@ public final class OpenIdConnectTokenAuthenticationConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

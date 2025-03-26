@@ -5,27 +5,25 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An object representing an updated list of network security groups (NSGs) that overwrites the
- * existing list of NSGs. * If the load balancer has no NSGs configured, it uses the NSGs in this
- * list. * If the load balancer has a list of NSGs configured, this list replaces the existing list.
- * * If the load balancer has a list of NSGs configured and this list is empty, the operation
- * removes all of the load balancer's NSG associations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * An object representing an updated list of network security groups (NSGs) that overwrites the existing list of NSGs.
+ * *  If the load balancer has no NSGs configured, it uses the NSGs in this list.
+ * *  If the load balancer has a list of NSGs configured, this list replaces the existing list.
+ * *  If the load balancer has a list of NSGs configured and this list is empty, the operation removes all of the load balancer's NSG associations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateNetworkSecurityGroupsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateNetworkSecurityGroupsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateNetworkSecurityGroupsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"networkSecurityGroupIds"})
     public UpdateNetworkSecurityGroupsDetails(java.util.List<String> networkSecurityGroupIds) {
@@ -36,43 +34,38 @@ public final class UpdateNetworkSecurityGroupsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of NSG
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the load balancer.
-         *
-         * <p>During the load balancer's creation, the service adds the new load balancer to the
-         * specified NSGs.
-         *
-         * <p>The benefits of associating the load balancer with NSGs include:
-         *
-         * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
          * balancer.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
          *
-         * <p>The network security rules of other resources can reference the NSGs associated with
-         * the load balancer to ensure access.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
         private java.util.List<String> networkSecurityGroupIds;
 
         /**
-         * An array of NSG
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the load balancer.
-         *
-         * <p>During the load balancer's creation, the service adds the new load balancer to the
-         * specified NSGs.
-         *
-         * <p>The benefits of associating the load balancer with NSGs include:
-         *
-         * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+         * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
          * balancer.
-         *
-         * <p>The network security rules of other resources can reference the NSGs associated with
-         * the load balancer to ensure access.
+         * <p>
+         * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+         * <p>
+         * The benefits of associating the load balancer with NSGs include:
+         * <p>
+         *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+         * <p>
+         *  The network security rules of other resources can reference the NSGs associated with the load balancer
+         *    to ensure access.
          *
          * @param networkSecurityGroupIds the value to set
          * @return this builder
-         */
+         **/
         public Builder networkSecurityGroupIds(java.util.List<String> networkSecurityGroupIds) {
             this.networkSecurityGroupIds = networkSecurityGroupIds;
             this.__explicitlySet__.add("networkSecurityGroupIds");
@@ -100,7 +93,9 @@ public final class UpdateNetworkSecurityGroupsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,42 +105,37 @@ public final class UpdateNetworkSecurityGroupsDetails
     }
 
     /**
-     * An array of NSG
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the load balancer.
-     *
-     * <p>During the load balancer's creation, the service adds the new load balancer to the
-     * specified NSGs.
-     *
-     * <p>The benefits of associating the load balancer with NSGs include:
-     *
-     * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
      * balancer.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
      *
-     * <p>The network security rules of other resources can reference the NSGs associated with the
-     * load balancer to ensure access.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkSecurityGroupIds")
     private final java.util.List<String> networkSecurityGroupIds;
 
     /**
-     * An array of NSG
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the load balancer.
-     *
-     * <p>During the load balancer's creation, the service adds the new load balancer to the
-     * specified NSGs.
-     *
-     * <p>The benefits of associating the load balancer with NSGs include:
-     *
-     * <p>NSGs define network security rules to govern ingress and egress traffic for the load
+     * An array of NSG [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the load
      * balancer.
-     *
-     * <p>The network security rules of other resources can reference the NSGs associated with the
-     * load balancer to ensure access.
+     * <p>
+     * During the load balancer's creation, the service adds the new load balancer to the specified NSGs.
+     * <p>
+     * The benefits of associating the load balancer with NSGs include:
+     * <p>
+     *  NSGs define network security rules to govern ingress and egress traffic for the load balancer.
+     * <p>
+     *  The network security rules of other resources can reference the NSGs associated with the load balancer
+     *    to ensure access.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNetworkSecurityGroupIds() {
         return networkSecurityGroupIds;
     }
@@ -157,7 +147,6 @@ public final class UpdateNetworkSecurityGroupsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

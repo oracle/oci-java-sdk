@@ -5,23 +5,22 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Details of ATP-D based catalog. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Details of ATP-D based catalog.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DedicatedCatalogDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DedicatedCatalogDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DedicatedCatalogDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "encryptionKeyDetails",
@@ -89,135 +88,138 @@ public final class DedicatedCatalogDetails
             this.__explicitlySet__.add("encryptionKeyDetails");
             return this;
         }
-        /** Catalog name */
+        /**
+         * Catalog name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Catalog name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The compute amount available to the underlying autonomous database associated with shard
-         * or catalog.
-         */
+         * The compute amount available to the underlying autonomous database associated with shard or catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
 
         /**
-         * The compute amount available to the underlying autonomous database associated with shard
-         * or catalog.
-         *
+         * The compute amount available to the underlying autonomous database associated with shard or catalog.
          * @param computeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder computeCount(Float computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-        /** The data disk group size to be allocated in GBs. */
+        /**
+         * The data disk group size to be allocated in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGbs")
         private Double dataStorageSizeInGbs;
 
         /**
          * The data disk group size to be allocated in GBs.
-         *
          * @param dataStorageSizeInGbs the value to set
          * @return this builder
-         */
+         **/
         public Builder dataStorageSizeInGbs(Double dataStorageSizeInGbs) {
             this.dataStorageSizeInGbs = dataStorageSizeInGbs;
             this.__explicitlySet__.add("dataStorageSizeInGbs");
             return this;
         }
-        /** Name of the shard-group to which the catalog belongs. */
+        /**
+         * Name of the shard-group to which the catalog belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardGroup")
         private String shardGroup;
 
         /**
          * Name of the shard-group to which the catalog belongs.
-         *
          * @param shardGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder shardGroup(String shardGroup) {
             this.shardGroup = shardGroup;
             this.__explicitlySet__.add("shardGroup");
             return this;
         }
-        /** The time the catalog was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the catalog was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the catalog was created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the catalog was last created. An RFC3339 formatted datetime string */
+        /**
+         * The time the catalog was last created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the catalog was last created. An RFC3339 formatted datetime string
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The time the ssl certificate associated with catalog expires. An RFC3339 formatted
-         * datetime string
-         */
+         * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSslCertificateExpires")
         private java.util.Date timeSslCertificateExpires;
 
         /**
-         * The time the ssl certificate associated with catalog expires. An RFC3339 formatted
-         * datetime string
-         *
+         * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime string
          * @param timeSslCertificateExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSslCertificateExpires(java.util.Date timeSslCertificateExpires) {
             this.timeSslCertificateExpires = timeSslCertificateExpires;
             this.__explicitlySet__.add("timeSslCertificateExpires");
             return this;
         }
-        /** Status of shard or catalog or gsm for the sharded database. */
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Status of shard or catalog or gsm for the sharded database.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Identifier of the underlying supporting resource. */
+        /**
+         * Identifier of the underlying supporting resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportingResourceId")
         private String supportingResourceId;
 
@@ -226,13 +228,16 @@ public final class DedicatedCatalogDetails
          *
          * @param supportingResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder supportingResourceId(String supportingResourceId) {
             this.supportingResourceId = supportingResourceId;
             this.__explicitlySet__.add("supportingResourceId");
             return this;
         }
-        /** Identifier of the underlying container database. */
+        /**
+         * Identifier of the underlying container database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
         private String containerDatabaseId;
 
@@ -241,13 +246,16 @@ public final class DedicatedCatalogDetails
          *
          * @param containerDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder containerDatabaseId(String containerDatabaseId) {
             this.containerDatabaseId = containerDatabaseId;
             this.__explicitlySet__.add("containerDatabaseId");
             return this;
         }
-        /** Identifier of the underlying container database parent. */
+        /**
+         * Identifier of the underlying container database parent.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseParentId")
         private String containerDatabaseParentId;
 
@@ -256,28 +264,32 @@ public final class DedicatedCatalogDetails
          *
          * @param containerDatabaseParentId the value to set
          * @return this builder
-         */
+         **/
         public Builder containerDatabaseParentId(String containerDatabaseParentId) {
             this.containerDatabaseParentId = containerDatabaseParentId;
             this.__explicitlySet__.add("containerDatabaseParentId");
             return this;
         }
-        /** Determines the auto-scaling mode. */
+        /**
+         * Determines the auto-scaling mode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
          * Determines the auto-scaling mode.
-         *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
-        /** Identifier of the primary cloudAutonomousVmCluster for the catalog. */
+        /**
+         * Identifier of the primary cloudAutonomousVmCluster for the catalog.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
@@ -286,13 +298,16 @@ public final class DedicatedCatalogDetails
          *
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             this.__explicitlySet__.add("cloudAutonomousVmClusterId");
             return this;
         }
-        /** Identifier of the peer cloudAutonomousVmCluster for the catalog. */
+        /**
+         * Identifier of the peer cloudAutonomousVmCluster for the catalog.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
@@ -301,22 +316,23 @@ public final class DedicatedCatalogDetails
          *
          * @param peerCloudAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
             return this;
         }
-        /** Additional metadata related to catalog's underlying supporting resource. */
+        /**
+         * Additional metadata related to catalog's underlying supporting resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, Object> metadata;
 
         /**
          * Additional metadata related to catalog's underlying supporting resource.
-         *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, Object> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -405,7 +421,9 @@ public final class DedicatedCatalogDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -421,107 +439,108 @@ public final class DedicatedCatalogDetails
         return encryptionKeyDetails;
     }
 
-    /** Catalog name */
+    /**
+     * Catalog name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Catalog name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The compute amount available to the underlying autonomous database associated with shard or
-     * catalog.
-     */
+     * The compute amount available to the underlying autonomous database associated with shard or catalog.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
 
     /**
-     * The compute amount available to the underlying autonomous database associated with shard or
-     * catalog.
-     *
+     * The compute amount available to the underlying autonomous database associated with shard or catalog.
      * @return the value
-     */
+     **/
     public Float getComputeCount() {
         return computeCount;
     }
 
-    /** The data disk group size to be allocated in GBs. */
+    /**
+     * The data disk group size to be allocated in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGbs")
     private final Double dataStorageSizeInGbs;
 
     /**
      * The data disk group size to be allocated in GBs.
-     *
      * @return the value
-     */
+     **/
     public Double getDataStorageSizeInGbs() {
         return dataStorageSizeInGbs;
     }
 
-    /** Name of the shard-group to which the catalog belongs. */
+    /**
+     * Name of the shard-group to which the catalog belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardGroup")
     private final String shardGroup;
 
     /**
      * Name of the shard-group to which the catalog belongs.
-     *
      * @return the value
-     */
+     **/
     public String getShardGroup() {
         return shardGroup;
     }
 
-    /** The time the catalog was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the catalog was created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the catalog was created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the catalog was last created. An RFC3339 formatted datetime string */
+    /**
+     * The time the catalog was last created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the catalog was last created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime
-     * string
-     */
+     * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSslCertificateExpires")
     private final java.util.Date timeSslCertificateExpires;
 
     /**
-     * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime
-     * string
-     *
+     * The time the ssl certificate associated with catalog expires. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSslCertificateExpires() {
         return timeSslCertificateExpires;
     }
 
-    /** Status of shard or catalog or gsm for the sharded database. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Status of shard or catalog or gsm for the sharded database.
+     **/
+    public enum Status {
         Failed("FAILED"),
         Deleting("DELETING"),
         Deleted("DELETED"),
@@ -533,8 +552,8 @@ public final class DedicatedCatalogDetails
         NeedsAttention("NEEDS_ATTENTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -572,20 +591,24 @@ public final class DedicatedCatalogDetails
             return UnknownEnumValue;
         }
     };
-    /** Status of shard or catalog or gsm for the sharded database. */
+    /**
+     * Status of shard or catalog or gsm for the sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Status of shard or catalog or gsm for the sharded database.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** Identifier of the underlying supporting resource. */
+    /**
+     * Identifier of the underlying supporting resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportingResourceId")
     private final String supportingResourceId;
 
@@ -593,12 +616,15 @@ public final class DedicatedCatalogDetails
      * Identifier of the underlying supporting resource.
      *
      * @return the value
-     */
+     **/
     public String getSupportingResourceId() {
         return supportingResourceId;
     }
 
-    /** Identifier of the underlying container database. */
+    /**
+     * Identifier of the underlying container database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseId")
     private final String containerDatabaseId;
 
@@ -606,12 +632,15 @@ public final class DedicatedCatalogDetails
      * Identifier of the underlying container database.
      *
      * @return the value
-     */
+     **/
     public String getContainerDatabaseId() {
         return containerDatabaseId;
     }
 
-    /** Identifier of the underlying container database parent. */
+    /**
+     * Identifier of the underlying container database parent.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerDatabaseParentId")
     private final String containerDatabaseParentId;
 
@@ -619,25 +648,29 @@ public final class DedicatedCatalogDetails
      * Identifier of the underlying container database parent.
      *
      * @return the value
-     */
+     **/
     public String getContainerDatabaseParentId() {
         return containerDatabaseParentId;
     }
 
-    /** Determines the auto-scaling mode. */
+    /**
+     * Determines the auto-scaling mode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
      * Determines the auto-scaling mode.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
 
-    /** Identifier of the primary cloudAutonomousVmCluster for the catalog. */
+    /**
+     * Identifier of the primary cloudAutonomousVmCluster for the catalog.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
@@ -645,12 +678,15 @@ public final class DedicatedCatalogDetails
      * Identifier of the primary cloudAutonomousVmCluster for the catalog.
      *
      * @return the value
-     */
+     **/
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
     }
 
-    /** Identifier of the peer cloudAutonomousVmCluster for the catalog. */
+    /**
+     * Identifier of the peer cloudAutonomousVmCluster for the catalog.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
@@ -658,20 +694,21 @@ public final class DedicatedCatalogDetails
      * Identifier of the peer cloudAutonomousVmCluster for the catalog.
      *
      * @return the value
-     */
+     **/
     public String getPeerCloudAutonomousVmClusterId() {
         return peerCloudAutonomousVmClusterId;
     }
 
-    /** Additional metadata related to catalog's underlying supporting resource. */
+    /**
+     * Additional metadata related to catalog's underlying supporting resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, Object> metadata;
 
     /**
      * Additional metadata related to catalog's underlying supporting resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Object> getMetadata() {
         return metadata;
     }
@@ -683,7 +720,6 @@ public final class DedicatedCatalogDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

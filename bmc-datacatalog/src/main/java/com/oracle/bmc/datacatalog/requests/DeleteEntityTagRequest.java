@@ -6,62 +6,84 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityTagExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteEntityTagRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/DeleteEntityTagExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteEntityTagRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
-    /** Unique data asset key. */
+    /**
+     * Unique data asset key.
+     */
     private String dataAssetKey;
 
-    /** Unique data asset key. */
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
-    /** Unique entity key. */
+    /**
+     * Unique entity key.
+     */
     private String entityKey;
 
-    /** Unique entity key. */
+    /**
+     * Unique entity key.
+     */
     public String getEntityKey() {
         return entityKey;
     }
-    /** Unique tag key. */
+    /**
+     * Unique tag key.
+     */
     private String tagKey;
 
-    /** Unique tag key. */
+    /**
+     * Unique tag key.
+     */
     public String getTagKey() {
         return tagKey;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -69,15 +91,17 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteEntityTagRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -86,12 +110,13 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique data asset key. */
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
-         *
          * @param dataAssetKey the value to set
          * @return this builder instance
          */
@@ -100,12 +125,13 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique entity key. */
+        /**
+         * Unique entity key.
+         */
         private String entityKey = null;
 
         /**
          * Unique entity key.
-         *
          * @param entityKey the value to set
          * @return this builder instance
          */
@@ -114,12 +140,13 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** Unique tag key. */
+        /**
+         * Unique tag key.
+         */
         private String tagKey = null;
 
         /**
          * Unique tag key.
-         *
          * @param tagKey the value to set
          * @return this builder instance
          */
@@ -129,18 +156,21 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -150,12 +180,13 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -166,19 +197,18 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -190,7 +220,6 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteEntityTagRequest o) {
@@ -208,11 +237,10 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of DeleteEntityTagRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteEntityTagRequest
          */
@@ -226,8 +254,7 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of DeleteEntityTagRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteEntityTagRequest
@@ -241,14 +268,12 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteEntityTagRequest(catalogId, dataAssetKey, entityKey, tagKey, ifMatch,
-            // opcRequestId);
+            // new DeleteEntityTagRequest(catalogId, dataAssetKey, entityKey, tagKey, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -263,7 +288,6 @@ public class DeleteEntityTagRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

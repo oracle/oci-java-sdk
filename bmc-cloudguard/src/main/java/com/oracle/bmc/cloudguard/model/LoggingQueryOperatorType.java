@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible operators */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum LoggingQueryOperatorType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operators
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum LoggingQueryOperatorType {
     Equal("EQUAL"),
     Greater("GREATER"),
     Greaterthanequalto("GREATERTHANEQUALTO"),

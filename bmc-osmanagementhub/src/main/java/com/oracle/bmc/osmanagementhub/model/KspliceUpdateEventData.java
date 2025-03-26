@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides additional information for a Ksplice update event. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides additional information for a Ksplice update event.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KspliceUpdateEventData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = KspliceUpdateEventData.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KspliceUpdateEventData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operationType", "status", "additionalDetails"})
     public KspliceUpdateEventData(
@@ -36,31 +35,33 @@ public final class KspliceUpdateEventData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of Ksplice update. */
+        /**
+         * The type of Ksplice update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
          * The type of Ksplice update.
-         *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Status of the Ksplice update. */
+        /**
+         * Status of the Ksplice update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private EventStatus status;
 
         /**
          * Status of the Ksplice update.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(EventStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -104,7 +105,9 @@ public final class KspliceUpdateEventData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,14 +116,16 @@ public final class KspliceUpdateEventData
         return new Builder().copy(this);
     }
 
-    /** The type of Ksplice update. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of Ksplice update.
+     **/
+    public enum OperationType {
         UpdateKspliceKernel("UPDATE_KSPLICE_KERNEL"),
         UpdateKspliceUserspace("UPDATE_KSPLICE_USERSPACE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -159,28 +164,30 @@ public final class KspliceUpdateEventData
             return UnknownEnumValue;
         }
     };
-    /** The type of Ksplice update. */
+    /**
+     * The type of Ksplice update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
      * The type of Ksplice update.
-     *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** Status of the Ksplice update. */
+    /**
+     * Status of the Ksplice update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final EventStatus status;
 
     /**
      * Status of the Ksplice update.
-     *
      * @return the value
-     */
+     **/
     public EventStatus getStatus() {
         return status;
     }
@@ -199,7 +206,6 @@ public final class KspliceUpdateEventData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

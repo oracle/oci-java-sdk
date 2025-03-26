@@ -6,25 +6,24 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details of an external cluster instance discovered in an external DB system discovery run.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalClusterInstance.Builder.class)
+    builder = DiscoveredExternalClusterInstance.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalClusterInstance extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -91,76 +90,81 @@ public final class DiscoveredExternalClusterInstance extends DiscoveredExternalD
             this.__explicitlySet__.add("associatedComponents");
             return this;
         }
-        /** The name of the host on which the cluster instance is running. */
+        /**
+         * The name of the host on which the cluster instance is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host on which the cluster instance is running.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The unique identifier of the Oracle cluster. */
+        /**
+         * The unique identifier of the Oracle cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
          * The unique identifier of the Oracle cluster.
-         *
          * @param clusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
             return this;
         }
-        /** The role of the cluster node. */
+        /**
+         * The role of the cluster node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeRole")
         private NodeRole nodeRole;
 
         /**
          * The role of the cluster node.
-         *
          * @param nodeRole the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeRole(NodeRole nodeRole) {
             this.nodeRole = nodeRole;
             this.__explicitlySet__.add("nodeRole");
             return this;
         }
-        /** The Oracle base location of Cluster Ready Services (CRS). */
+        /**
+         * The Oracle base location of Cluster Ready Services (CRS).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crsBaseDirectory")
         private String crsBaseDirectory;
 
         /**
          * The Oracle base location of Cluster Ready Services (CRS).
-         *
          * @param crsBaseDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder crsBaseDirectory(String crsBaseDirectory) {
             this.crsBaseDirectory = crsBaseDirectory;
             this.__explicitlySet__.add("crsBaseDirectory");
             return this;
         }
-        /** The Automatic Diagnostic Repository (ADR) home directory for the cluster instance. */
+        /**
+         * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
         private String adrHomeDirectory;
 
         /**
          * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-         *
          * @param adrHomeDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder adrHomeDirectory(String adrHomeDirectory) {
             this.adrHomeDirectory = adrHomeDirectory;
             this.__explicitlySet__.add("adrHomeDirectory");
@@ -246,7 +250,9 @@ public final class DiscoveredExternalClusterInstance extends DiscoveredExternalD
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -286,40 +292,44 @@ public final class DiscoveredExternalClusterInstance extends DiscoveredExternalD
         this.connector = connector;
     }
 
-    /** The name of the host on which the cluster instance is running. */
+    /**
+     * The name of the host on which the cluster instance is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host on which the cluster instance is running.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The unique identifier of the Oracle cluster. */
+    /**
+     * The unique identifier of the Oracle cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
      * The unique identifier of the Oracle cluster.
-     *
      * @return the value
-     */
+     **/
     public String getClusterId() {
         return clusterId;
     }
 
-    /** The role of the cluster node. */
-    public enum NodeRole implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The role of the cluster node.
+     **/
+    public enum NodeRole {
         Hub("HUB"),
         Leaf("LEAF"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -358,41 +368,44 @@ public final class DiscoveredExternalClusterInstance extends DiscoveredExternalD
             return UnknownEnumValue;
         }
     };
-    /** The role of the cluster node. */
+    /**
+     * The role of the cluster node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeRole")
     private final NodeRole nodeRole;
 
     /**
      * The role of the cluster node.
-     *
      * @return the value
-     */
+     **/
     public NodeRole getNodeRole() {
         return nodeRole;
     }
 
-    /** The Oracle base location of Cluster Ready Services (CRS). */
+    /**
+     * The Oracle base location of Cluster Ready Services (CRS).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crsBaseDirectory")
     private final String crsBaseDirectory;
 
     /**
      * The Oracle base location of Cluster Ready Services (CRS).
-     *
      * @return the value
-     */
+     **/
     public String getCrsBaseDirectory() {
         return crsBaseDirectory;
     }
 
-    /** The Automatic Diagnostic Repository (ADR) home directory for the cluster instance. */
+    /**
+     * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
     private final String adrHomeDirectory;
 
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the cluster instance.
-     *
      * @return the value
-     */
+     **/
     public String getAdrHomeDirectory() {
         return adrHomeDirectory;
     }
@@ -411,7 +424,6 @@ public final class DiscoveredExternalClusterInstance extends DiscoveredExternalD
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

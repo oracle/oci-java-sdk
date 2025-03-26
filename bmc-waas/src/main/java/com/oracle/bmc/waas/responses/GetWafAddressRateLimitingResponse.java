@@ -6,14 +6,15 @@ package com.oracle.bmc.waas.responses;
 
 import com.oracle.bmc.waas.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -21,27 +22,25 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code AddressRateLimiting} instance. */
+    /**
+     * The returned AddressRateLimiting instance.
+     */
     private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
     /**
-     * The returned {@code AddressRateLimiting} instance.
-     *
+     * The returned AddressRateLimiting instance.
      * @return the value
      */
     public com.oracle.bmc.waas.model.AddressRateLimiting getAddressRateLimiting() {
@@ -57,7 +56,7 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
     })
     private GetWafAddressRateLimitingResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting) {
@@ -67,31 +66,28 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
         this.addressRateLimiting = addressRateLimiting;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetWafAddressRateLimitingResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -101,15 +97,12 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please provide the request ID.
-         *
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -118,12 +111,13 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned {@code AddressRateLimiting} instance. */
+        /**
+         * The returned AddressRateLimiting instance.
+         */
         private com.oracle.bmc.waas.model.AddressRateLimiting addressRateLimiting;
 
         /**
-         * The returned {@code AddressRateLimiting} instance.
-         *
+         * The returned AddressRateLimiting instance.
          * @param addressRateLimiting the value to set
          * @return this builder
          */
@@ -135,10 +129,8 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetWafAddressRateLimitingResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +143,8 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetWafAddressRateLimitingResponse build() {
             return new GetWafAddressRateLimitingResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, addressRateLimiting);
@@ -163,7 +153,6 @@ public class GetWafAddressRateLimitingResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

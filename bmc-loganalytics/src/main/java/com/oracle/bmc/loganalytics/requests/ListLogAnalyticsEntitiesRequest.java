@@ -6,38 +6,47 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntitiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListLogAnalyticsEntitiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListLogAnalyticsEntitiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListLogAnalyticsEntitiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListLogAnalyticsEntitiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return only log analytics entities whose name matches the entire name given. The
-     * match is case-insensitive.
+     * A filter to return only log analytics entities whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
      */
     private String name;
 
     /**
-     * A filter to return only log analytics entities whose name matches the entire name given. The
-     * match is case-insensitive.
+     * A filter to return only log analytics entities whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
      */
     public String getName() {
         return name;
@@ -45,81 +54,85 @@ public class ListLogAnalyticsEntitiesRequest
     /**
      * A filter to return only log analytics entities whose name contains the name given. The match
      * is case-insensitive.
+     *
      */
     private String nameContains;
 
     /**
      * A filter to return only log analytics entities whose name contains the name given. The match
      * is case-insensitive.
+     *
      */
     public String getNameContains() {
         return nameContains;
     }
     /**
-     * A filter to return only log analytics entities whose entityTypeName matches the entire log
-     * analytics entity type name of one of the entityTypeNames given in the list. The match is
-     * case-insensitive.
+     * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+     * one of the entityTypeNames given in the list. The match is case-insensitive.
+     *
      */
     private java.util.List<String> entityTypeName;
 
     /**
-     * A filter to return only log analytics entities whose entityTypeName matches the entire log
-     * analytics entity type name of one of the entityTypeNames given in the list. The match is
-     * case-insensitive.
+     * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+     * one of the entityTypeNames given in the list. The match is case-insensitive.
+     *
      */
     public java.util.List<String> getEntityTypeName() {
         return entityTypeName;
     }
     /**
-     * A filter to return only log analytics entities whose cloudResourceId matches the
-     * cloudResourceId given.
+     * A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
+     *
      */
     private String cloudResourceId;
 
     /**
-     * A filter to return only log analytics entities whose cloudResourceId matches the
-     * cloudResourceId given.
+     * A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
+     *
      */
     public String getCloudResourceId() {
         return cloudResourceId;
     }
     /**
-     * A filter to return only those log analytics entities with the specified lifecycle state. The
-     * state value is case-insensitive.
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state
+     * value is case-insensitive.
+     *
      */
     private com.oracle.bmc.loganalytics.model.EntityLifecycleStates lifecycleState;
 
     /**
-     * A filter to return only those log analytics entities with the specified lifecycle state. The
-     * state value is case-insensitive.
+     * A filter to return only those log analytics entities with the specified lifecycle state. The state
+     * value is case-insensitive.
+     *
      */
     public com.oracle.bmc.loganalytics.model.EntityLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only log analytics entities whose lifecycleDetails contains the specified
-     * string.
+     * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
+     *
      */
     private String lifecycleDetailsContains;
 
     /**
-     * A filter to return only log analytics entities whose lifecycleDetails contains the specified
-     * string.
+     * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
+     *
      */
     public String getLifecycleDetailsContains() {
         return lifecycleDetailsContains;
     }
     /**
-     * A filter to return only those log analytics entities whose managementAgentId is null or is
-     * not null.
+     * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+     *
      */
     private IsManagementAgentIdNull isManagementAgentIdNull;
 
     /**
-     * A filter to return only those log analytics entities whose managementAgentId is null or is
-     * not null.
-     */
-    public enum IsManagementAgentIdNull implements com.oracle.bmc.http.internal.BmcEnum {
+     * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+     *
+     **/
+    public enum IsManagementAgentIdNull {
         True("true"),
         False("false"),
         ;
@@ -153,21 +166,21 @@ public class ListLogAnalyticsEntitiesRequest
     };
 
     /**
-     * A filter to return only those log analytics entities whose managementAgentId is null or is
-     * not null.
+     * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+     *
      */
     public IsManagementAgentIdNull getIsManagementAgentIdNull() {
         return isManagementAgentIdNull;
     }
     /**
-     * A filter to return only log analytics entities whose hostname matches the entire hostname
-     * given.
+     * A filter to return only log analytics entities whose hostname matches the entire hostname given.
+     *
      */
     private String hostname;
 
     /**
-     * A filter to return only log analytics entities whose hostname matches the entire hostname
-     * given.
+     * A filter to return only log analytics entities whose hostname matches the entire hostname given.
+     *
      */
     public String getHostname() {
         return hostname;
@@ -175,73 +188,91 @@ public class ListLogAnalyticsEntitiesRequest
     /**
      * A filter to return only log analytics entities whose hostname contains the substring given.
      * The match is case-insensitive.
+     *
      */
     private String hostnameContains;
 
     /**
      * A filter to return only log analytics entities whose hostname contains the substring given.
      * The match is case-insensitive.
+     *
      */
     public String getHostnameContains() {
         return hostnameContains;
     }
-    /** A filter to return only log analytics entities whose sourceId matches the sourceId given. */
+    /**
+     * A filter to return only log analytics entities whose sourceId matches the sourceId given.
+     *
+     */
     private String sourceId;
 
-    /** A filter to return only log analytics entities whose sourceId matches the sourceId given. */
+    /**
+     * A filter to return only log analytics entities whose sourceId matches the sourceId given.
+     *
+     */
     public String getSourceId() {
         return sourceId;
     }
     /**
      * A filter to return only those log analytics entities with the specified auto-creation source.
+     *
      */
     private java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType> creationSourceType;
 
     /**
      * A filter to return only those log analytics entities with the specified auto-creation source.
+     *
      */
     public java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType>
             getCreationSourceType() {
         return creationSourceType;
     }
     /**
-     * A filter to return only log analytics entities whose auto-creation source details contains
-     * the specified string.
+     * A filter to return only log analytics entities whose auto-creation source details contains the specified string.
+     *
      */
     private String creationSourceDetails;
 
     /**
-     * A filter to return only log analytics entities whose auto-creation source details contains
-     * the specified string.
+     * A filter to return only log analytics entities whose auto-creation source details contains the specified string.
+     *
      */
     public String getCreationSourceDetails() {
         return creationSourceDetails;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -274,23 +305,26 @@ public class ListLogAnalyticsEntitiesRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort entities by. Only one sort order may be provided. Default order for
-     * timeCreated and timeUpdated is descending. Default order for entity name is ascending. If no
-     * value is specified timeCreated is default.
+     * The field to sort entities by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+     * is descending. Default order for entity name is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort entities by. Only one sort order may be provided. Default order for
-     * timeCreated and timeUpdated is descending. Default order for entity name is ascending. If no
-     * value is specified timeCreated is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort entities by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+     * is descending. Default order for entity name is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         TimeUpdated("timeUpdated"),
         Name("name"),
@@ -325,31 +359,35 @@ public class ListLogAnalyticsEntitiesRequest
     };
 
     /**
-     * The field to sort entities by. Only one sort order may be provided. Default order for
-     * timeCreated and timeUpdated is descending. Default order for entity name is ascending. If no
-     * value is specified timeCreated is default.
+     * The field to sort entities by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+     * is descending. Default order for entity name is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A filter to return only log analytics entities whose metadata name, value and type matches
-     * the specified string. Each item in the array has the format "{name}:{value}:{type}". All
-     * inputs are case-insensitive.
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+     * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     *
      */
     private java.util.List<String> metadataEquals;
 
     /**
-     * A filter to return only log analytics entities whose metadata name, value and type matches
-     * the specified string. Each item in the array has the format "{name}:{value}:{type}". All
-     * inputs are case-insensitive.
+     * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+     * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+     *
      */
     public java.util.List<String> getMetadataEquals() {
         return metadataEquals;
@@ -358,10 +396,14 @@ public class ListLogAnalyticsEntitiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListLogAnalyticsEntitiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -375,12 +417,13 @@ public class ListLogAnalyticsEntitiesRequest
             return this;
         }
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -390,14 +433,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose name matches the entire name given.
-         * The match is case-insensitive.
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
+         *
          */
         private String name = null;
 
         /**
-         * A filter to return only log analytics entities whose name matches the entire name given.
-         * The match is case-insensitive.
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
          *
          * @param name the value to set
          * @return this builder instance
@@ -408,14 +452,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose name contains the name given. The
-         * match is case-insensitive.
+         * A filter to return only log analytics entities whose name contains the name given. The match
+         * is case-insensitive.
+         *
          */
         private String nameContains = null;
 
         /**
-         * A filter to return only log analytics entities whose name contains the name given. The
-         * match is case-insensitive.
+         * A filter to return only log analytics entities whose name contains the name given. The match
+         * is case-insensitive.
          *
          * @param nameContains the value to set
          * @return this builder instance
@@ -426,16 +471,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose entityTypeName matches the entire
-         * log analytics entity type name of one of the entityTypeNames given in the list. The match
-         * is case-insensitive.
+         * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+         * one of the entityTypeNames given in the list. The match is case-insensitive.
+         *
          */
         private java.util.List<String> entityTypeName = null;
 
         /**
-         * A filter to return only log analytics entities whose entityTypeName matches the entire
-         * log analytics entity type name of one of the entityTypeNames given in the list. The match
-         * is case-insensitive.
+         * A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+         * one of the entityTypeNames given in the list. The match is case-insensitive.
          *
          * @param entityTypeName the value to set
          * @return this builder instance
@@ -446,9 +490,8 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * Singular setter. A filter to return only log analytics entities whose entityTypeName
-         * matches the entire log analytics entity type name of one of the entityTypeNames given in
-         * the list. The match is case-insensitive.
+         * Singular setter. A filter to return only log analytics entities whose entityTypeName matches the entire log analytics entity type name of
+         * one of the entityTypeNames given in the list. The match is case-insensitive.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -458,14 +501,13 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose cloudResourceId matches the
-         * cloudResourceId given.
+         * A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
+         *
          */
         private String cloudResourceId = null;
 
         /**
-         * A filter to return only log analytics entities whose cloudResourceId matches the
-         * cloudResourceId given.
+         * A filter to return only log analytics entities whose cloudResourceId matches the cloudResourceId given.
          *
          * @param cloudResourceId the value to set
          * @return this builder instance
@@ -476,14 +518,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only those log analytics entities with the specified lifecycle state.
-         * The state value is case-insensitive.
+         * A filter to return only those log analytics entities with the specified lifecycle state. The state
+         * value is case-insensitive.
+         *
          */
         private com.oracle.bmc.loganalytics.model.EntityLifecycleStates lifecycleState = null;
 
         /**
-         * A filter to return only those log analytics entities with the specified lifecycle state.
-         * The state value is case-insensitive.
+         * A filter to return only those log analytics entities with the specified lifecycle state. The state
+         * value is case-insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -495,14 +538,13 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose lifecycleDetails contains the
-         * specified string.
+         * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
+         *
          */
         private String lifecycleDetailsContains = null;
 
         /**
-         * A filter to return only log analytics entities whose lifecycleDetails contains the
-         * specified string.
+         * A filter to return only log analytics entities whose lifecycleDetails contains the specified string.
          *
          * @param lifecycleDetailsContains the value to set
          * @return this builder instance
@@ -513,14 +555,13 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only those log analytics entities whose managementAgentId is null or
-         * is not null.
+         * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
+         *
          */
         private IsManagementAgentIdNull isManagementAgentIdNull = null;
 
         /**
-         * A filter to return only those log analytics entities whose managementAgentId is null or
-         * is not null.
+         * A filter to return only those log analytics entities whose managementAgentId is null or is not null.
          *
          * @param isManagementAgentIdNull the value to set
          * @return this builder instance
@@ -531,14 +572,13 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose hostname matches the entire hostname
-         * given.
+         * A filter to return only log analytics entities whose hostname matches the entire hostname given.
+         *
          */
         private String hostname = null;
 
         /**
-         * A filter to return only log analytics entities whose hostname matches the entire hostname
-         * given.
+         * A filter to return only log analytics entities whose hostname matches the entire hostname given.
          *
          * @param hostname the value to set
          * @return this builder instance
@@ -549,14 +589,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose hostname contains the substring
-         * given. The match is case-insensitive.
+         * A filter to return only log analytics entities whose hostname contains the substring given.
+         * The match is case-insensitive.
+         *
          */
         private String hostnameContains = null;
 
         /**
-         * A filter to return only log analytics entities whose hostname contains the substring
-         * given. The match is case-insensitive.
+         * A filter to return only log analytics entities whose hostname contains the substring given.
+         * The match is case-insensitive.
          *
          * @param hostnameContains the value to set
          * @return this builder instance
@@ -568,6 +609,7 @@ public class ListLogAnalyticsEntitiesRequest
 
         /**
          * A filter to return only log analytics entities whose sourceId matches the sourceId given.
+         *
          */
         private String sourceId = null;
 
@@ -583,15 +625,14 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only those log analytics entities with the specified auto-creation
-         * source.
+         * A filter to return only those log analytics entities with the specified auto-creation source.
+         *
          */
         private java.util.List<com.oracle.bmc.loganalytics.model.CreationSourceType>
                 creationSourceType = null;
 
         /**
-         * A filter to return only those log analytics entities with the specified auto-creation
-         * source.
+         * A filter to return only those log analytics entities with the specified auto-creation source.
          *
          * @param creationSourceType the value to set
          * @return this builder instance
@@ -604,8 +645,7 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * Singular setter. A filter to return only those log analytics entities with the specified
-         * auto-creation source.
+         * Singular setter. A filter to return only those log analytics entities with the specified auto-creation source.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -615,14 +655,13 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose auto-creation source details
-         * contains the specified string.
+         * A filter to return only log analytics entities whose auto-creation source details contains the specified string.
+         *
          */
         private String creationSourceDetails = null;
 
         /**
-         * A filter to return only log analytics entities whose auto-creation source details
-         * contains the specified string.
+         * A filter to return only log analytics entities whose auto-creation source details contains the specified string.
          *
          * @param creationSourceDetails the value to set
          * @return this builder instance
@@ -632,12 +671,13 @@ public class ListLogAnalyticsEntitiesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -647,15 +687,12 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -664,7 +701,10 @@ public class ListLogAnalyticsEntitiesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -679,16 +719,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * The field to sort entities by. Only one sort order may be provided. Default order for
-         * timeCreated and timeUpdated is descending. Default order for entity name is ascending. If
-         * no value is specified timeCreated is default.
+         * The field to sort entities by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+         * is descending. Default order for entity name is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort entities by. Only one sort order may be provided. Default order for
-         * timeCreated and timeUpdated is descending. Default order for entity name is ascending. If
-         * no value is specified timeCreated is default.
+         * The field to sort entities by. Only one sort order may be provided. Default order for timeCreated and timeUpdated
+         * is descending. Default order for entity name is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -698,12 +737,13 @@ public class ListLogAnalyticsEntitiesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -713,16 +753,15 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * A filter to return only log analytics entities whose metadata name, value and type
-         * matches the specified string. Each item in the array has the format
-         * "{name}:{value}:{type}". All inputs are case-insensitive.
+         * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
+         *
          */
         private java.util.List<String> metadataEquals = null;
 
         /**
-         * A filter to return only log analytics entities whose metadata name, value and type
-         * matches the specified string. Each item in the array has the format
-         * "{name}:{value}:{type}". All inputs are case-insensitive.
+         * A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
          *
          * @param metadataEquals the value to set
          * @return this builder instance
@@ -733,9 +772,8 @@ public class ListLogAnalyticsEntitiesRequest
         }
 
         /**
-         * Singular setter. A filter to return only log analytics entities whose metadata name,
-         * value and type matches the specified string. Each item in the array has the format
-         * "{name}:{value}:{type}". All inputs are case-insensitive.
+         * Singular setter. A filter to return only log analytics entities whose metadata name, value and type matches the specified string.
+         * Each item in the array has the format "{name}:{value}:{type}".  All inputs are case-insensitive.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -746,19 +784,18 @@ public class ListLogAnalyticsEntitiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -770,7 +807,6 @@ public class ListLogAnalyticsEntitiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListLogAnalyticsEntitiesRequest o) {
@@ -802,11 +838,10 @@ public class ListLogAnalyticsEntitiesRequest
         /**
          * Build the instance of ListLogAnalyticsEntitiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListLogAnalyticsEntitiesRequest
          */
@@ -820,8 +855,7 @@ public class ListLogAnalyticsEntitiesRequest
         /**
          * Build the instance of ListLogAnalyticsEntitiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListLogAnalyticsEntitiesRequest
@@ -849,16 +883,12 @@ public class ListLogAnalyticsEntitiesRequest
             request.opcRequestId = opcRequestId;
             request.metadataEquals = metadataEquals;
             return request;
-            // new ListLogAnalyticsEntitiesRequest(namespaceName, compartmentId, name, nameContains,
-            // entityTypeName, cloudResourceId, lifecycleState, lifecycleDetailsContains,
-            // isManagementAgentIdNull, hostname, hostnameContains, sourceId, creationSourceType,
-            // creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
+            // new ListLogAnalyticsEntitiesRequest(namespaceName, compartmentId, name, nameContains, entityTypeName, cloudResourceId, lifecycleState, lifecycleDetailsContains, isManagementAgentIdNull, hostname, hostnameContains, sourceId, creationSourceType, creationSourceDetails, limit, page, sortOrder, sortBy, opcRequestId, metadataEquals);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -887,7 +917,6 @@ public class ListLogAnalyticsEntitiesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

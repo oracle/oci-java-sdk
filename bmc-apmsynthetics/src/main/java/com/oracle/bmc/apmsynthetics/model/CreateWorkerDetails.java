@@ -5,23 +5,21 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Details of the request body used to create a new worker for an On-premise vantage point. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of the request body used to create a new worker for an On-premise vantage point.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateWorkerDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateWorkerDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateWorkerDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateWorkerDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -59,128 +57,132 @@ public final class CreateWorkerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-         * confidential information.
-         */
+         * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-         * confidential information.
-         *
+         * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Image version of the On-premise VP worker. */
+        /**
+         * Image version of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Image version of the On-premise VP worker.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** public key for resource Principal Token based validation to be used in further calls. */
+        /**
+         * public key for resource Principal Token based validation to be used in further calls.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalTokenPublicKey")
         private String resourcePrincipalTokenPublicKey;
 
         /**
          * public key for resource Principal Token based validation to be used in further calls.
-         *
          * @param resourcePrincipalTokenPublicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder resourcePrincipalTokenPublicKey(String resourcePrincipalTokenPublicKey) {
             this.resourcePrincipalTokenPublicKey = resourcePrincipalTokenPublicKey;
             this.__explicitlySet__.add("resourcePrincipalTokenPublicKey");
             return this;
         }
-        /** Configuration details of the On-premise VP worker. */
+        /**
+         * Configuration details of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
         private Object configurationDetails;
 
         /**
          * Configuration details of the On-premise VP worker.
-         *
          * @param configurationDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationDetails(Object configurationDetails) {
             this.configurationDetails = configurationDetails;
             this.__explicitlySet__.add("configurationDetails");
             return this;
         }
-        /** Type of the On-premise VP worker. */
+        /**
+         * Type of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workerType")
         private OnPremiseVantagePointWorkerType workerType;
 
         /**
          * Type of the On-premise VP worker.
-         *
          * @param workerType the value to set
          * @return this builder
-         */
+         **/
         public Builder workerType(OnPremiseVantagePointWorkerType workerType) {
             this.workerType = workerType;
             this.__explicitlySet__.add("workerType");
             return this;
         }
-        /** Enables or disables the On-premise VP worker. */
+        /**
+         * Enables or disables the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OnPremiseVantagePointWorkerStatus status;
 
         /**
          * Enables or disables the On-premise VP worker.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(OnPremiseVantagePointWorkerStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Priority of the On-premise VP worker to schedule monitors. */
+        /**
+         * Priority of the On-premise VP worker to schedule monitors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("priority")
         private Integer priority;
 
         /**
          * Priority of the On-premise VP worker to schedule monitors.
-         *
          * @param priority the value to set
          * @return this builder
-         */
+         **/
         public Builder priority(Integer priority) {
             this.priority = priority;
             this.__explicitlySet__.add("priority");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -189,7 +191,8 @@ public final class CreateWorkerDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -199,7 +202,7 @@ public final class CreateWorkerDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -261,7 +264,9 @@ public final class CreateWorkerDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -271,130 +276,135 @@ public final class CreateWorkerDetails
     }
 
     /**
-     * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-     * confidential information.
-     */
+     * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Unique On-premise VP worker name that cannot be edited. The name should not contain any
-     * confidential information.
-     *
+     * Unique On-premise VP worker name that cannot be edited. The name should not contain any confidential information.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Image version of the On-premise VP worker. */
+    /**
+     * Image version of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Image version of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** public key for resource Principal Token based validation to be used in further calls. */
+    /**
+     * public key for resource Principal Token based validation to be used in further calls.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalTokenPublicKey")
     private final String resourcePrincipalTokenPublicKey;
 
     /**
      * public key for resource Principal Token based validation to be used in further calls.
-     *
      * @return the value
-     */
+     **/
     public String getResourcePrincipalTokenPublicKey() {
         return resourcePrincipalTokenPublicKey;
     }
 
-    /** Configuration details of the On-premise VP worker. */
+    /**
+     * Configuration details of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationDetails")
     private final Object configurationDetails;
 
     /**
      * Configuration details of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public Object getConfigurationDetails() {
         return configurationDetails;
     }
 
-    /** Type of the On-premise VP worker. */
+    /**
+     * Type of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workerType")
     private final OnPremiseVantagePointWorkerType workerType;
 
     /**
      * Type of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public OnPremiseVantagePointWorkerType getWorkerType() {
         return workerType;
     }
 
-    /** Enables or disables the On-premise VP worker. */
+    /**
+     * Enables or disables the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OnPremiseVantagePointWorkerStatus status;
 
     /**
      * Enables or disables the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public OnPremiseVantagePointWorkerStatus getStatus() {
         return status;
     }
 
-    /** Priority of the On-premise VP worker to schedule monitors. */
+    /**
+     * Priority of the On-premise VP worker to schedule monitors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("priority")
     private final Integer priority;
 
     /**
      * Priority of the On-premise VP worker to schedule monitors.
-     *
      * @return the value
-     */
+     **/
     public Integer getPriority() {
         return priority;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -406,7 +416,6 @@ public final class CreateWorkerDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

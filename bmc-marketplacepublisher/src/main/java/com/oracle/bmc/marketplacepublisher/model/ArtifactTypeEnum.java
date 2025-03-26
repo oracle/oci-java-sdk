@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplacepublisher.model;
 
-/** Artifact type for the artifact. Artifact type identifies the type of the provided image. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ArtifactTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Artifact type for the artifact. Artifact type identifies the type of the provided image.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ArtifactTypeEnum {
     ContainerImage("CONTAINER_IMAGE"),
     HelmChart("HELM_CHART"),
 

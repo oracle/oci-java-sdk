@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Task type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum TaskType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Task type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum TaskType {
     SavedSearch("SAVED_SEARCH"),
     Acceleration("ACCELERATION"),
     Purge("PURGE"),

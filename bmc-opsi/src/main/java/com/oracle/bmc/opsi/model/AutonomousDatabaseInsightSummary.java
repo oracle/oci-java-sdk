@@ -5,25 +5,25 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a database insight resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a database insight resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDatabaseInsightSummary.Builder.class)
+    builder = AutonomousDatabaseInsightSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -189,31 +189,33 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
             this.__explicitlySet__.add("databaseConnectionStatusDetails");
             return this;
         }
-        /** OCI database resource type */
+        /**
+         * OCI database resource type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
         private String databaseResourceType;
 
         /**
          * OCI database resource type
-         *
          * @param databaseResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseResourceType(String databaseResourceType) {
             this.databaseResourceType = databaseResourceType;
             this.__explicitlySet__.add("databaseResourceType");
             return this;
         }
-        /** Flag is to identify if advanced features for autonomous database is enabled or not */
+        /**
+         * Flag is to identify if advanced features for autonomous database is enabled or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
          * Flag is to identify if advanced features for autonomous database is enabled or not
-         *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
             this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
@@ -318,7 +320,9 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -372,28 +376,30 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
         this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
     }
 
-    /** OCI database resource type */
+    /**
+     * OCI database resource type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseResourceType")
     private final String databaseResourceType;
 
     /**
      * OCI database resource type
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseResourceType() {
         return databaseResourceType;
     }
 
-    /** Flag is to identify if advanced features for autonomous database is enabled or not */
+    /**
+     * Flag is to identify if advanced features for autonomous database is enabled or not
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
      * Flag is to identify if advanced features for autonomous database is enabled or not
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAdvancedFeaturesEnabled() {
         return isAdvancedFeaturesEnabled;
     }
@@ -405,7 +411,6 @@ public final class AutonomousDatabaseInsightSummary extends DatabaseInsightSumma
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

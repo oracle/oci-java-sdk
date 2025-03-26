@@ -6,29 +6,30 @@ package com.oracle.bmc.core.model;
 
 /**
  * The shape configuration requested for the instance.
+ * <p>
+ * If the parameter is provided, the instance is created
+ * with the resources that you specify. If some properties are missing or
+ * the entire parameter is not provided, the instance is created with the default
+ * configuration values for the {@code shape} that you specify.
+ * <p>
+ * Each shape only supports certain configurable values. If the values that you provide are not valid for the
+ * specified {@code shape}, an error is returned.
  *
- * <p>If the parameter is provided, the instance is created with the resources that you specify. If
- * some properties are missing or the entire parameter is not provided, the instance is created with
- * the default configuration values for the {@code shape} that you specify.
- *
- * <p>Each shape only supports certain configurable values. If the values that you provide are not
- * valid for the specified {@code shape}, an error is returned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceConfigurationLaunchInstanceShapeConfigDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceConfigurationLaunchInstanceShapeConfigDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ocpus",
@@ -53,7 +54,10 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The total number of OCPUs available to the instance. */
+        /**
+         * The total number of OCPUs available to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
@@ -62,7 +66,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
          *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
@@ -70,26 +74,30 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         }
         /**
          * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
-         * in which case the actual number of OCPUs will be calculated based on this value and the
-         * actual hardware. This must be a multiple of 2.
-         */
+         * in which case the actual number of OCPUs will be calculated based on this value
+         * and the actual hardware. This must be a multiple of 2.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
         private Integer vcpus;
 
         /**
          * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
-         * in which case the actual number of OCPUs will be calculated based on this value and the
-         * actual hardware. This must be a multiple of 2.
+         * in which case the actual number of OCPUs will be calculated based on this value
+         * and the actual hardware. This must be a multiple of 2.
          *
          * @param vcpus the value to set
          * @return this builder
-         */
+         **/
         public Builder vcpus(Integer vcpus) {
             this.vcpus = vcpus;
             this.__explicitlySet__.add("vcpus");
             return this;
         }
-        /** The total amount of memory available to the instance, in gigabytes. */
+        /**
+         * The total amount of memory available to the instance, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
@@ -98,38 +106,37 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute
-         * blank for a non-burstable instance, or explicitly specify non-burstable with {@code
-         * BASELINE_1_1}.
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
          *
-         * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of
-         * an OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code
-         * BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable
-         * instance.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
         private BaselineOcpuUtilization baselineOcpuUtilization;
 
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute
-         * blank for a non-burstable instance, or explicitly specify non-burstable with {@code
-         * BASELINE_1_1}.
-         *
-         * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of
-         * an OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code
-         * BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable
-         * instance.
+         * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+         * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * <p>
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
          *
          * @param baselineOcpuUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             this.__explicitlySet__.add("baselineOcpuUtilization");
@@ -137,7 +144,8 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         }
         /**
          * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
         private Integer nvmes;
 
@@ -146,7 +154,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
          *
          * @param nvmes the value to set
          * @return this builder
-         */
+         **/
         public Builder nvmes(Integer nvmes) {
             this.nvmes = nvmes;
             this.__explicitlySet__.add("nvmes");
@@ -191,7 +199,9 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -200,7 +210,10 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         return new Builder().copy(this);
     }
 
-    /** The total number of OCPUs available to the instance. */
+    /**
+     * The total number of OCPUs available to the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
@@ -208,31 +221,35 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
      * The total number of OCPUs available to the instance.
      *
      * @return the value
-     */
+     **/
     public Float getOcpus() {
         return ocpus;
     }
 
     /**
-     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
-     * which case the actual number of OCPUs will be calculated based on this value and the actual
-     * hardware. This must be a multiple of 2.
-     */
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+     * in which case the actual number of OCPUs will be calculated based on this value
+     * and the actual hardware. This must be a multiple of 2.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcpus")
     private final Integer vcpus;
 
     /**
-     * The total number of VCPUs available to the instance. This can be used instead of OCPUs, in
-     * which case the actual number of OCPUs will be calculated based on this value and the actual
-     * hardware. This must be a multiple of 2.
+     * The total number of VCPUs available to the instance. This can be used instead of OCPUs,
+     * in which case the actual number of OCPUs will be calculated based on this value
+     * and the actual hardware. This must be a multiple of 2.
      *
      * @return the value
-     */
+     **/
     public Integer getVcpus() {
         return vcpus;
     }
 
-    /** The total amount of memory available to the instance, in gigabytes. */
+    /**
+     * The total amount of memory available to the instance, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
@@ -240,27 +257,29 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
      * The total amount of memory available to the instance, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
 
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank
-     * for a non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is an entire OCPU. This represents a non-burstable instance.
-     */
-    public enum BaselineOcpuUtilization implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum BaselineOcpuUtilization {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
         Baseline11("BASELINE_1_1"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -300,31 +319,37 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
         }
     };
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank
-     * for a non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is an entire OCPU. This represents a non-burstable instance.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
     private final BaselineOcpuUtilization baselineOcpuUtilization;
 
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank
-     * for a non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
-     *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is an entire OCPU. This represents a non-burstable instance.
+     * The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a
+     * non-burstable instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * <p>
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is an entire OCPU. This represents a non-burstable instance.
      *
      * @return the value
-     */
+     **/
     public BaselineOcpuUtilization getBaselineOcpuUtilization() {
         return baselineOcpuUtilization;
     }
 
-    /** The number of NVMe drives to be used for storage. A single drive has 6.8 TB available. */
+    /**
+     * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nvmes")
     private final Integer nvmes;
 
@@ -332,7 +357,7 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
      * The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
      *
      * @return the value
-     */
+     **/
     public Integer getNvmes() {
         return nvmes;
     }
@@ -344,7 +369,6 @@ public final class InstanceConfigurationLaunchInstanceShapeConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

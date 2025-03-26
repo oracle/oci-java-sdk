@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.keymanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.keymanagement.internal.http.*;
 import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for KmsHsmCluster service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for KmsHsmCluster service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
-public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements KmsHsmClusterAsync {
-    /** Service instance for KmsHsmCluster. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+public class KmsHsmClusterAsyncClient implements KmsHsmClusterAsync {
+    /**
+     * Service instance for KmsHsmCluster.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("KMSHSMCLUSTER")
@@ -39,582 +36,112 @@ public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseA
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(KmsHsmClusterAsyncClient.class);
 
-    KmsHsmClusterAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, KmsHsmClusterAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "keymanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public KmsHsmClusterAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new KmsHsmClusterAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelHsmClusterDeletionResponse> cancelHsmClusterDeletion(
-            CancelHsmClusterDeletionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelHsmClusterDeletionRequest, CancelHsmClusterDeletionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        return clientCall(request, CancelHsmClusterDeletionResponse::builder)
-                .logger(LOG, "cancelHsmClusterDeletion")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "CancelHsmClusterDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/CancelHsmClusterDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelHsmClusterDeletionRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmCluster.class,
-                        CancelHsmClusterDeletionResponse.Builder::hsmCluster)
-                .handleResponseHeaderString("etag", CancelHsmClusterDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelHsmClusterDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeHsmClusterCompartmentResponse>
-            changeHsmClusterCompartment(
-                    ChangeHsmClusterCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeHsmClusterCompartmentRequest,
-                                    ChangeHsmClusterCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeHsmClusterCompartmentDetails(),
-                "changeHsmClusterCompartmentDetails is required");
-
-        return clientCall(request, ChangeHsmClusterCompartmentResponse::builder)
-                .logger(LOG, "changeHsmClusterCompartment")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "ChangeHsmClusterCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ChangeHsmClusterCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeHsmClusterCompartmentRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ChangeHsmClusterCompartmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeHsmClusterCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateHsmClusterResponse> createHsmCluster(
-            CreateHsmClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateHsmClusterRequest, CreateHsmClusterResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateHsmClusterDetails(), "createHsmClusterDetails is required");
-
-        return clientCall(request, CreateHsmClusterResponse::builder)
-                .logger(LOG, "createHsmCluster")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "CreateHsmCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/CreateHsmCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateHsmClusterRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmCluster.class,
-                        CreateHsmClusterResponse.Builder::hsmCluster)
-                .handleResponseHeaderString("etag", CreateHsmClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateHsmClusterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DownloadCertificateSigningRequestResponse>
-            downloadCertificateSigningRequest(
-                    DownloadCertificateSigningRequestRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DownloadCertificateSigningRequestRequest,
-                                    DownloadCertificateSigningRequestResponse>
-                            handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        return clientCall(request, DownloadCertificateSigningRequestResponse::builder)
-                .logger(LOG, "downloadCertificateSigningRequest")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "DownloadCertificateSigningRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/DownloadCertificateSigningRequest")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DownloadCertificateSigningRequestRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("actions")
-                .appendPathParam("downloadCertificateSigningRequest")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleBody(String.class, DownloadCertificateSigningRequestResponse.Builder::value)
-                .handleResponseHeaderString(
-                        "etag", DownloadCertificateSigningRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DownloadCertificateSigningRequestResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetHsmClusterResponse> getHsmCluster(
-            GetHsmClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetHsmClusterRequest, GetHsmClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        return clientCall(request, GetHsmClusterResponse::builder)
-                .logger(LOG, "getHsmCluster")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "GetHsmCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/GetHsmCluster")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetHsmClusterRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmCluster.class,
-                        GetHsmClusterResponse.Builder::hsmCluster)
-                .handleResponseHeaderString("etag", GetHsmClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetHsmClusterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetHsmPartitionResponse> getHsmPartition(
-            GetHsmPartitionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetHsmPartitionRequest, GetHsmPartitionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        Validate.notBlank(request.getHsmPartitionId(), "hsmPartitionId must not be blank");
-
-        return clientCall(request, GetHsmPartitionResponse::builder)
-                .logger(LOG, "getHsmPartition")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "GetHsmPartition",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmPartition/GetHsmPartition")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetHsmPartitionRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("hsmPartitions")
-                .appendPathParam(request.getHsmPartitionId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmPartition.class,
-                        GetHsmPartitionResponse.Builder::hsmPartition)
-                .handleResponseHeaderString("etag", GetHsmPartitionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetHsmPartitionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetPreCoUserCredentialsResponse> getPreCoUserCredentials(
-            GetPreCoUserCredentialsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        return clientCall(request, GetPreCoUserCredentialsResponse::builder)
-                .logger(LOG, "getPreCoUserCredentials")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "GetPreCoUserCredentials",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/GetPreCoUserCredentials")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetPreCoUserCredentialsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("preCoUserCredentials")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.PreCoUserCredentials.class,
-                        GetPreCoUserCredentialsResponse.Builder::preCoUserCredentials)
-                .handleResponseHeaderString("etag", GetPreCoUserCredentialsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetPreCoUserCredentialsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListHsmClustersResponse> listHsmClusters(
-            ListHsmClustersRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListHsmClustersRequest, ListHsmClustersResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListHsmClustersResponse::builder)
-                .logger(LOG, "listHsmClusters")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "ListHsmClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ListHsmClusters")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListHsmClustersRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmClusterCollection.class,
-                        ListHsmClustersResponse.Builder::hsmClusterCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListHsmClustersResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListHsmClustersResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListHsmPartitionsResponse> listHsmPartitions(
-            ListHsmPartitionsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListHsmPartitionsRequest, ListHsmPartitionsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-
-        return clientCall(request, ListHsmPartitionsResponse::builder)
-                .logger(LOG, "listHsmPartitions")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "ListHsmPartitions",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmPartition/ListHsmPartitions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListHsmPartitionsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("hsmPartitions")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmPartitionCollection.class,
-                        ListHsmPartitionsResponse.Builder::hsmPartitionCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListHsmPartitionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListHsmPartitionsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleHsmClusterDeletionResponse>
-            scheduleHsmClusterDeletion(
-                    ScheduleHsmClusterDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleHsmClusterDeletionRequest,
-                                    ScheduleHsmClusterDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleHsmClusterDeletionDetails(),
-                "scheduleHsmClusterDeletionDetails is required");
-
-        return clientCall(request, ScheduleHsmClusterDeletionResponse::builder)
-                .logger(LOG, "scheduleHsmClusterDeletion")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "ScheduleHsmClusterDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ScheduleHsmClusterDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleHsmClusterDeletionRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmCluster.class,
-                        ScheduleHsmClusterDeletionResponse.Builder::hsmCluster)
-                .handleResponseHeaderString(
-                        "etag", ScheduleHsmClusterDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ScheduleHsmClusterDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateHsmClusterResponse> updateHsmCluster(
-            UpdateHsmClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateHsmClusterRequest, UpdateHsmClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateHsmClusterDetails(), "updateHsmClusterDetails is required");
-
-        return clientCall(request, UpdateHsmClusterResponse::builder)
-                .logger(LOG, "updateHsmCluster")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "UpdateHsmCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UpdateHsmCluster")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateHsmClusterRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.keymanagement.model.HsmCluster.class,
-                        UpdateHsmClusterResponse.Builder::hsmCluster)
-                .handleResponseHeaderString("etag", UpdateHsmClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateHsmClusterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UploadPartitionCertificatesResponse>
-            uploadPartitionCertificates(
-                    UploadPartitionCertificatesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UploadPartitionCertificatesRequest,
-                                    UploadPartitionCertificatesResponse>
-                            handler) {
-
-        Validate.notBlank(request.getHsmClusterId(), "hsmClusterId must not be blank");
-        Objects.requireNonNull(
-                request.getUploadPartitionCertificatesDetails(),
-                "uploadPartitionCertificatesDetails is required");
-
-        return clientCall(request, UploadPartitionCertificatesResponse::builder)
-                .logger(LOG, "uploadPartitionCertificates")
-                .serviceDetails(
-                        "KmsHsmCluster",
-                        "UploadPartitionCertificates",
-                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UploadPartitionCertificates")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UploadPartitionCertificatesRequest::builder)
-                .basePath("/")
-                .appendPathParam("20180608")
-                .appendPathParam("hsmClusters")
-                .appendPathParam(request.getHsmClusterId())
-                .appendPathParam("actions")
-                .appendPathParam("uploadPartitionCertificates")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", UploadPartitionCertificatesResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UploadPartitionCertificatesResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -622,26 +149,26 @@ public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseA
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -650,29 +177,29 @@ public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseA
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public KmsHsmClusterAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -685,14 +212,857 @@ public class KmsHsmClusterAsyncClient extends com.oracle.bmc.http.internal.BaseA
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public KmsHsmClusterAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, KmsHsmClusterAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public KmsHsmClusterAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new KmsHsmClusterAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelHsmClusterDeletionResponse> cancelHsmClusterDeletion(
+            CancelHsmClusterDeletionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelHsmClusterDeletionRequest, CancelHsmClusterDeletionResponse>
+                    handler) {
+        LOG.trace("Called async cancelHsmClusterDeletion");
+        final CancelHsmClusterDeletionRequest interceptedRequest =
+                CancelHsmClusterDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelHsmClusterDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "CancelHsmClusterDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/CancelHsmClusterDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelHsmClusterDeletionResponse>
+                transformer =
+                        CancelHsmClusterDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelHsmClusterDeletionRequest, CancelHsmClusterDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelHsmClusterDeletionRequest, CancelHsmClusterDeletionResponse>,
+                        java.util.concurrent.Future<CancelHsmClusterDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelHsmClusterDeletionRequest, CancelHsmClusterDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeHsmClusterCompartmentResponse>
+            changeHsmClusterCompartment(
+                    ChangeHsmClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeHsmClusterCompartmentRequest,
+                                    ChangeHsmClusterCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeHsmClusterCompartment");
+        final ChangeHsmClusterCompartmentRequest interceptedRequest =
+                ChangeHsmClusterCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeHsmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "ChangeHsmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ChangeHsmClusterCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeHsmClusterCompartmentResponse>
+                transformer =
+                        ChangeHsmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeHsmClusterCompartmentRequest, ChangeHsmClusterCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeHsmClusterCompartmentRequest,
+                                ChangeHsmClusterCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeHsmClusterCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeHsmClusterCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeHsmClusterCompartmentRequest, ChangeHsmClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHsmClusterResponse> createHsmCluster(
+            CreateHsmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateHsmClusterRequest, CreateHsmClusterResponse>
+                    handler) {
+        LOG.trace("Called async createHsmCluster");
+        final CreateHsmClusterRequest interceptedRequest =
+                CreateHsmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateHsmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "CreateHsmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/CreateHsmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateHsmClusterResponse>
+                transformer =
+                        CreateHsmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateHsmClusterRequest, CreateHsmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateHsmClusterRequest, CreateHsmClusterResponse>,
+                        java.util.concurrent.Future<CreateHsmClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateHsmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateHsmClusterRequest, CreateHsmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DownloadCertificateSigningRequestResponse>
+            downloadCertificateSigningRequest(
+                    DownloadCertificateSigningRequestRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DownloadCertificateSigningRequestRequest,
+                                    DownloadCertificateSigningRequestResponse>
+                            handler) {
+        LOG.trace("Called async downloadCertificateSigningRequest");
+        final DownloadCertificateSigningRequestRequest interceptedRequest =
+                DownloadCertificateSigningRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DownloadCertificateSigningRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "DownloadCertificateSigningRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/DownloadCertificateSigningRequest");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DownloadCertificateSigningRequestResponse>
+                transformer =
+                        DownloadCertificateSigningRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DownloadCertificateSigningRequestRequest,
+                        DownloadCertificateSigningRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DownloadCertificateSigningRequestRequest,
+                                DownloadCertificateSigningRequestResponse>,
+                        java.util.concurrent.Future<DownloadCertificateSigningRequestResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DownloadCertificateSigningRequestRequest,
+                    DownloadCertificateSigningRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHsmClusterResponse> getHsmCluster(
+            GetHsmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetHsmClusterRequest, GetHsmClusterResponse>
+                    handler) {
+        LOG.trace("Called async getHsmCluster");
+        final GetHsmClusterRequest interceptedRequest =
+                GetHsmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHsmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "GetHsmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/GetHsmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetHsmClusterResponse>
+                transformer =
+                        GetHsmClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetHsmClusterRequest, GetHsmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHsmClusterRequest, GetHsmClusterResponse>,
+                        java.util.concurrent.Future<GetHsmClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHsmClusterRequest, GetHsmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHsmPartitionResponse> getHsmPartition(
+            GetHsmPartitionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHsmPartitionRequest, GetHsmPartitionResponse>
+                    handler) {
+        LOG.trace("Called async getHsmPartition");
+        final GetHsmPartitionRequest interceptedRequest =
+                GetHsmPartitionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHsmPartitionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "GetHsmPartition",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmPartition/GetHsmPartition");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetHsmPartitionResponse>
+                transformer =
+                        GetHsmPartitionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetHsmPartitionRequest, GetHsmPartitionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHsmPartitionRequest, GetHsmPartitionResponse>,
+                        java.util.concurrent.Future<GetHsmPartitionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHsmPartitionRequest, GetHsmPartitionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPreCoUserCredentialsResponse> getPreCoUserCredentials(
+            GetPreCoUserCredentialsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>
+                    handler) {
+        LOG.trace("Called async getPreCoUserCredentials");
+        final GetPreCoUserCredentialsRequest interceptedRequest =
+                GetPreCoUserCredentialsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPreCoUserCredentialsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "GetPreCoUserCredentials",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/GetPreCoUserCredentials");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetPreCoUserCredentialsResponse>
+                transformer =
+                        GetPreCoUserCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>,
+                        java.util.concurrent.Future<GetPreCoUserCredentialsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPreCoUserCredentialsRequest, GetPreCoUserCredentialsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHsmClustersResponse> listHsmClusters(
+            ListHsmClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListHsmClustersRequest, ListHsmClustersResponse>
+                    handler) {
+        LOG.trace("Called async listHsmClusters");
+        final ListHsmClustersRequest interceptedRequest =
+                ListHsmClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHsmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "ListHsmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ListHsmClusters");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListHsmClustersResponse>
+                transformer =
+                        ListHsmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListHsmClustersRequest, ListHsmClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListHsmClustersRequest, ListHsmClustersResponse>,
+                        java.util.concurrent.Future<ListHsmClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListHsmClustersRequest, ListHsmClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHsmPartitionsResponse> listHsmPartitions(
+            ListHsmPartitionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListHsmPartitionsRequest, ListHsmPartitionsResponse>
+                    handler) {
+        LOG.trace("Called async listHsmPartitions");
+        final ListHsmPartitionsRequest interceptedRequest =
+                ListHsmPartitionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListHsmPartitionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "ListHsmPartitions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmPartition/ListHsmPartitions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListHsmPartitionsResponse>
+                transformer =
+                        ListHsmPartitionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListHsmPartitionsRequest, ListHsmPartitionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListHsmPartitionsRequest, ListHsmPartitionsResponse>,
+                        java.util.concurrent.Future<ListHsmPartitionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListHsmPartitionsRequest, ListHsmPartitionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleHsmClusterDeletionResponse>
+            scheduleHsmClusterDeletion(
+                    ScheduleHsmClusterDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleHsmClusterDeletionRequest,
+                                    ScheduleHsmClusterDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleHsmClusterDeletion");
+        final ScheduleHsmClusterDeletionRequest interceptedRequest =
+                ScheduleHsmClusterDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleHsmClusterDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "ScheduleHsmClusterDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/ScheduleHsmClusterDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleHsmClusterDeletionResponse>
+                transformer =
+                        ScheduleHsmClusterDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleHsmClusterDeletionRequest, ScheduleHsmClusterDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleHsmClusterDeletionRequest,
+                                ScheduleHsmClusterDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleHsmClusterDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleHsmClusterDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleHsmClusterDeletionRequest, ScheduleHsmClusterDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHsmClusterResponse> updateHsmCluster(
+            UpdateHsmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHsmClusterRequest, UpdateHsmClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateHsmCluster");
+        final UpdateHsmClusterRequest interceptedRequest =
+                UpdateHsmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHsmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "UpdateHsmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UpdateHsmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateHsmClusterResponse>
+                transformer =
+                        UpdateHsmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateHsmClusterRequest, UpdateHsmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateHsmClusterRequest, UpdateHsmClusterResponse>,
+                        java.util.concurrent.Future<UpdateHsmClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHsmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateHsmClusterRequest, UpdateHsmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UploadPartitionCertificatesResponse>
+            uploadPartitionCertificates(
+                    UploadPartitionCertificatesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UploadPartitionCertificatesRequest,
+                                    UploadPartitionCertificatesResponse>
+                            handler) {
+        LOG.trace("Called async uploadPartitionCertificates");
+        final UploadPartitionCertificatesRequest interceptedRequest =
+                UploadPartitionCertificatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UploadPartitionCertificatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "KmsHsmCluster",
+                        "UploadPartitionCertificates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/key/release/HsmCluster/UploadPartitionCertificates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UploadPartitionCertificatesResponse>
+                transformer =
+                        UploadPartitionCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UploadPartitionCertificatesRequest, UploadPartitionCertificatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UploadPartitionCertificatesRequest,
+                                UploadPartitionCertificatesResponse>,
+                        java.util.concurrent.Future<UploadPartitionCertificatesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUploadPartitionCertificatesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UploadPartitionCertificatesRequest, UploadPartitionCertificatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

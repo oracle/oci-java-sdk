@@ -6,44 +6,48 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details for creating a Database Home.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "source",
-        defaultImpl = CreateDbHomeBase.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "source",
+    defaultImpl = CreateDbHomeBase.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDbHomeWithDbSystemIdFromDatabaseDetails.class,
-            name = "DATABASE"),
+        value = CreateDbHomeWithDbSystemIdFromDatabaseDetails.class,
+        name = "DATABASE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDbHomeWithDbSystemIdFromBackupDetails.class,
-            name = "DB_BACKUP"),
+        value = CreateDbHomeWithDbSystemIdFromBackupDetails.class,
+        name = "DB_BACKUP"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDbHomeWithVmClusterIdFromBackupDetails.class,
-            name = "VM_CLUSTER_BACKUP"),
+        value = CreateDbHomeWithVmClusterIdFromBackupDetails.class,
+        name = "VM_CLUSTER_BACKUP"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDbHomeWithDbSystemIdDetails.class,
-            name = "NONE"),
+        value = CreateDbHomeWithDbSystemIdDetails.class,
+        name = "NONE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDbHomeWithVmClusterIdDetails.class,
-            name = "VM_CLUSTER_NEW")
+        value = CreateDbHomeWithVmClusterIdDetails.class,
+        name = "VM_CLUSTER_NEW"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class CreateDbHomeBase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -75,148 +79,128 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
         this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
-    /** The user-provided name of the Database Home. */
+    /**
+     * The user-provided name of the Database Home.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-provided name of the Database Home.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
-     */
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The OCID of the key container that is used as the master encryption key in database
-     * transparent data encryption (TDE) operations.
-     *
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * @return the value
-     */
+     **/
     public String getKmsKeyId() {
         return kmsKeyId;
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
-     */
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
     private final String kmsKeyVersionId;
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption
-     * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
-     * key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless
-     * does not use key versions, hence is not applicable for Autonomous Database Serverless
-     * instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
      *
      * @return the value
-     */
+     **/
     public String getKmsKeyVersionId() {
         return kmsKeyVersionId;
     }
 
     /**
-     * The database software image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     */
+     * The database software image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
     private final String databaseSoftwareImageId;
 
     /**
-     * The database software image
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     *
+     * The database software image [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * @return the value
-     */
+     **/
     public String getDatabaseSoftwareImageId() {
         return databaseSoftwareImageId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * If true, the customer acknowledges that the specified Oracle Database software is an older
-     * release that is not currently supported by OCI.
-     */
+     * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDesupportedVersion")
     private final Boolean isDesupportedVersion;
 
     /**
-     * If true, the customer acknowledges that the specified Oracle Database software is an older
-     * release that is not currently supported by OCI.
-     *
+     * If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
      * @return the value
-     */
+     **/
     public Boolean getIsDesupportedVersion() {
         return isDesupportedVersion;
     }
 
     /**
-     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
-     * on respective DBHome.
-     */
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
     private final Boolean isUnifiedAuditingEnabled;
 
     /**
-     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing
-     * on respective DBHome.
-     *
+     * Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
      * @return the value
-     */
+     **/
     public Boolean getIsUnifiedAuditingEnabled() {
         return isUnifiedAuditingEnabled;
     }
@@ -228,7 +212,6 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -304,10 +287,10 @@ public class CreateDbHomeBase extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The source of database: NONE for creating a new database. DB_BACKUP for creating a new
-     * database by restoring from a database backup.
-     */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+     * The source of database: NONE for creating a new database. DB_BACKUP for creating a new database by restoring from a database backup.
+     *
+     **/
+    public enum Source {
         None("NONE"),
         DbBackup("DB_BACKUP"),
         Database("DATABASE"),

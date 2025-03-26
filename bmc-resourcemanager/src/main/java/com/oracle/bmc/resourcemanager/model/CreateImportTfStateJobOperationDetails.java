@@ -5,25 +5,26 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Job details that are specific to import Terraform state operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Job details that are specific to import Terraform state operations.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateImportTfStateJobOperationDetails.Builder.class)
+    builder = CreateImportTfStateJobOperationDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateImportTfStateJobOperationDetails extends CreateJobOperationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,7 +36,10 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
             this.__explicitlySet__.add("isProviderUpgradeRequired");
             return this;
         }
-        /** Base64-encoded state file */
+        /**
+         * Base64-encoded state file
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
         private byte[] tfStateBase64Encoded;
 
@@ -44,7 +48,7 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
          *
          * @param tfStateBase64Encoded the value to set
          * @return this builder
-         */
+         **/
         public Builder tfStateBase64Encoded(byte[] tfStateBase64Encoded) {
             this.tfStateBase64Encoded = tfStateBase64Encoded;
             this.__explicitlySet__.add("tfStateBase64Encoded");
@@ -76,7 +80,9 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -92,7 +98,10 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
         this.tfStateBase64Encoded = tfStateBase64Encoded;
     }
 
-    /** Base64-encoded state file */
+    /**
+     * Base64-encoded state file
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tfStateBase64Encoded")
     private final byte[] tfStateBase64Encoded;
 
@@ -100,7 +109,7 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
      * Base64-encoded state file
      *
      * @return the value
-     */
+     **/
     public byte[] getTfStateBase64Encoded() {
         return tfStateBase64Encoded;
     }
@@ -112,7 +121,6 @@ public final class CreateImportTfStateJobOperationDetails extends CreateJobOpera
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

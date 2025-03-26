@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.databasemanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.databasemanagement.internal.http.*;
 import com.oracle.bmc.databasemanagement.requests.*;
 import com.oracle.bmc.databasemanagement.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for ManagedMySqlDatabases service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for ManagedMySqlDatabases service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements ManagedMySqlDatabasesAsync {
-    /** Service instance for ManagedMySqlDatabases. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public class ManagedMySqlDatabasesAsyncClient implements ManagedMySqlDatabasesAsync {
+    /**
+     * Service instance for ManagedMySqlDatabases.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("MANAGEDMYSQLDATABASES")
@@ -39,520 +36,112 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ManagedMySqlDatabasesAsyncClient.class);
 
-    ManagedMySqlDatabasesAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, ManagedMySqlDatabasesAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "databasemanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public ManagedMySqlDatabasesAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new ManagedMySqlDatabasesAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
-            disableExternalMysqlAssociatedService(
-                    DisableExternalMysqlAssociatedServiceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DisableExternalMysqlAssociatedServiceRequest,
-                                    DisableExternalMysqlAssociatedServiceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getDisableExternalMysqlAssociatedServiceDetails(),
-                "disableExternalMysqlAssociatedServiceDetails is required");
-
-        return clientCall(request, DisableExternalMysqlAssociatedServiceResponse::builder)
-                .logger(LOG, "disableExternalMysqlAssociatedService")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "DisableExternalMysqlAssociatedService",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DisableExternalMysqlAssociatedServiceRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("internal")
-                .appendPathParam("externalMySqlDatabases")
-                .appendPathParam(request.getExternalMySqlDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("disableAssociatedService")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DisableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
-            enableExternalMysqlAssociatedService(
-                    EnableExternalMysqlAssociatedServiceRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    EnableExternalMysqlAssociatedServiceRequest,
-                                    EnableExternalMysqlAssociatedServiceResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
-        Objects.requireNonNull(
-                request.getEnableExternalMysqlAssociatedServiceDetails(),
-                "enableExternalMysqlAssociatedServiceDetails is required");
-
-        return clientCall(request, EnableExternalMysqlAssociatedServiceResponse::builder)
-                .logger(LOG, "enableExternalMysqlAssociatedService")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "EnableExternalMysqlAssociatedService",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(EnableExternalMysqlAssociatedServiceRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("internal")
-                .appendPathParam("externalMySqlDatabases")
-                .appendPathParam(request.getExternalMySqlDatabaseId())
-                .appendPathParam("actions")
-                .appendPathParam("enableAssociatedService")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        EnableExternalMysqlAssociatedServiceResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetHeatWaveFleetMetricResponse> getHeatWaveFleetMetric(
-            GetHeatWaveFleetMetricRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getStartTime(), "startTime is required");
-
-        Objects.requireNonNull(request.getEndTime(), "endTime is required");
-
-        return clientCall(request, GetHeatWaveFleetMetricResponse::builder)
-                .logger(LOG, "getHeatWaveFleetMetric")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "GetHeatWaveFleetMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetHeatWaveFleetMetricRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("heatWaveFleetMetrics")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
-                .appendQueryParam("startTime", request.getStartTime())
-                .appendQueryParam("endTime", request.getEndTime())
-                .appendEnumQueryParam("filterByHeatWaveStatus", request.getFilterByHeatWaveStatus())
-                .appendQueryParam("filterByHeatWaveShape", request.getFilterByHeatWaveShape())
-                .appendQueryParam(
-                        "isHeatWaveLakehouseEnabled", request.getIsHeatWaveLakehouseEnabled())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.HeatWaveFleetMetrics.class,
-                        GetHeatWaveFleetMetricResponse.Builder::heatWaveFleetMetrics)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetHeatWaveFleetMetricResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetManagedMySqlDatabaseResponse> getManagedMySqlDatabase(
-            GetManagedMySqlDatabaseRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetManagedMySqlDatabaseRequest, GetManagedMySqlDatabaseResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
-
-        return clientCall(request, GetManagedMySqlDatabaseResponse::builder)
-                .logger(LOG, "getManagedMySqlDatabase")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "GetManagedMySqlDatabase",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetManagedMySqlDatabase")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetManagedMySqlDatabaseRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedMySqlDatabases")
-                .appendPathParam(request.getManagedMySqlDatabaseId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabase.class,
-                        GetManagedMySqlDatabaseResponse.Builder::managedMySqlDatabase)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetManagedMySqlDatabaseResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetMySqlFleetMetricResponse> getMySqlFleetMetric(
-            GetMySqlFleetMetricRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        Objects.requireNonNull(request.getStartTime(), "startTime is required");
-
-        Objects.requireNonNull(request.getEndTime(), "endTime is required");
-
-        return clientCall(request, GetMySqlFleetMetricResponse::builder)
-                .logger(LOG, "getMySqlFleetMetric")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "GetMySqlFleetMetric",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlFleetMetrics/GetMySqlFleetMetric")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetMySqlFleetMetricRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("mysqlFleetMetrics")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
-                .appendQueryParam("startTime", request.getStartTime())
-                .appendQueryParam("endTime", request.getEndTime())
-                .appendEnumQueryParam(
-                        "filterByMySqlDeploymentTypeParam",
-                        request.getFilterByMySqlDeploymentTypeParam())
-                .appendEnumQueryParam(
-                        "filterByMdsDeploymentType", request.getFilterByMdsDeploymentType())
-                .appendEnumQueryParam(
-                        "filterByMySqlDatabaseTypeParam",
-                        request.getFilterByMySqlDatabaseTypeParam())
-                .appendEnumQueryParam("filterByMySqlStatus", request.getFilterByMySqlStatus())
-                .appendQueryParam(
-                        "filterByMySqlDatabaseVersion", request.getFilterByMySqlDatabaseVersion())
-                .appendQueryParam("isHeatWaveEnabled", request.getIsHeatWaveEnabled())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.MySqlFleetMetrics.class,
-                        GetMySqlFleetMetricResponse.Builder::mySqlFleetMetrics)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetMySqlFleetMetricResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagedMySqlDatabaseConfigurationDataResponse>
-            listManagedMySqlDatabaseConfigurationData(
-                    ListManagedMySqlDatabaseConfigurationDataRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListManagedMySqlDatabaseConfigurationDataRequest,
-                                    ListManagedMySqlDatabaseConfigurationDataResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
-
-        return clientCall(request, ListManagedMySqlDatabaseConfigurationDataResponse::builder)
-                .logger(LOG, "listManagedMySqlDatabaseConfigurationData")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "ListManagedMySqlDatabaseConfigurationData",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListManagedMySqlDatabaseConfigurationData")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedMySqlDatabaseConfigurationDataRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedMySqlDatabases")
-                .appendPathParam(request.getManagedMySqlDatabaseId())
-                .appendPathParam("configurationData")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.MySqlConfigurationDataCollection
-                                .class,
-                        ListManagedMySqlDatabaseConfigurationDataResponse.Builder
-                                ::mySqlConfigurationDataCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedMySqlDatabaseConfigurationDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedMySqlDatabaseConfigurationDataResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagedMySqlDatabaseSqlDataResponse>
-            listManagedMySqlDatabaseSqlData(
-                    ListManagedMySqlDatabaseSqlDataRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListManagedMySqlDatabaseSqlDataRequest,
-                                    ListManagedMySqlDatabaseSqlDataResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
-        Objects.requireNonNull(request.getStartTime(), "startTime is required");
-
-        Objects.requireNonNull(request.getEndTime(), "endTime is required");
-
-        return clientCall(request, ListManagedMySqlDatabaseSqlDataResponse::builder)
-                .logger(LOG, "listManagedMySqlDatabaseSqlData")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "ListManagedMySqlDatabaseSqlData",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListManagedMySqlDatabaseSqlData")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedMySqlDatabaseSqlDataRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedMySqlDatabases")
-                .appendPathParam(request.getManagedMySqlDatabaseId())
-                .appendPathParam("sqlData")
-                .appendQueryParam("filterColumn", request.getFilterColumn())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("startTime", request.getStartTime())
-                .appendQueryParam("endTime", request.getEndTime())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.MySqlDataCollection.class,
-                        ListManagedMySqlDatabaseSqlDataResponse.Builder::mySqlDataCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListManagedMySqlDatabaseSqlDataResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListManagedMySqlDatabaseSqlDataResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListManagedMySqlDatabasesResponse> listManagedMySqlDatabases(
-            ListManagedMySqlDatabasesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListManagedMySqlDatabasesRequest, ListManagedMySqlDatabasesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListManagedMySqlDatabasesResponse::builder)
-                .logger(LOG, "listManagedMySqlDatabases")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "ListManagedMySqlDatabases",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabaseCollection/ListManagedMySqlDatabases")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListManagedMySqlDatabasesRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedMySqlDatabases")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam(
-                        "filterByMySqlDatabaseTypeParam",
-                        request.getFilterByMySqlDatabaseTypeParam())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.ManagedMySqlDatabaseCollection
-                                .class,
-                        ListManagedMySqlDatabasesResponse.Builder::managedMySqlDatabaseCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListManagedMySqlDatabasesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListManagedMySqlDatabasesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
-            summarizeManagedMySqlDatabaseAvailabilityMetrics(
-                    SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest,
-                                    SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getManagedMySqlDatabaseId(), "managedMySqlDatabaseId must not be blank");
-        Objects.requireNonNull(request.getStartTime(), "startTime is required");
-
-        Objects.requireNonNull(request.getEndTime(), "endTime is required");
-
-        return clientCall(
-                        request, SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse::builder)
-                .logger(LOG, "summarizeManagedMySqlDatabaseAvailabilityMetrics")
-                .serviceDetails(
-                        "ManagedMySqlDatabases",
-                        "SummarizeManagedMySqlDatabaseAvailabilityMetrics",
-                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/SummarizeManagedMySqlDatabaseAvailabilityMetrics")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest::builder)
-                .basePath("/20201101")
-                .appendPathParam("managedMySqlDatabases")
-                .appendPathParam(request.getManagedMySqlDatabaseId())
-                .appendPathParam("availabilityMetrics")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("startTime", request.getStartTime())
-                .appendQueryParam("endTime", request.getEndTime())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.databasemanagement.model.MetricsAggregationRangeCollection
-                                .class,
-                        SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse.Builder
-                                ::metricsAggregationRangeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse.Builder
-                                ::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse.Builder
-                                ::opcNextPage)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -560,26 +149,26 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -588,29 +177,29 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ManagedMySqlDatabasesAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -623,14 +212,726 @@ public class ManagedMySqlDatabasesAsyncClient extends com.oracle.bmc.http.intern
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public ManagedMySqlDatabasesAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, ManagedMySqlDatabasesAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public ManagedMySqlDatabasesAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new ManagedMySqlDatabasesAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
+            disableExternalMysqlAssociatedService(
+                    DisableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMysqlAssociatedServiceRequest,
+                                    DisableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalMysqlAssociatedService");
+        final DisableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                DisableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "DisableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        DisableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalMysqlAssociatedServiceRequest,
+                        DisableExternalMysqlAssociatedServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalMysqlAssociatedServiceRequest,
+                                DisableExternalMysqlAssociatedServiceResponse>,
+                        java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDisableExternalMysqlAssociatedServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalMysqlAssociatedServiceRequest,
+                    DisableExternalMysqlAssociatedServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
+            enableExternalMysqlAssociatedService(
+                    EnableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMysqlAssociatedServiceRequest,
+                                    EnableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalMysqlAssociatedService");
+        final EnableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                EnableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "EnableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        EnableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalMysqlAssociatedServiceRequest,
+                        EnableExternalMysqlAssociatedServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalMysqlAssociatedServiceRequest,
+                                EnableExternalMysqlAssociatedServiceResponse>,
+                        java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableExternalMysqlAssociatedServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalMysqlAssociatedServiceRequest,
+                    EnableExternalMysqlAssociatedServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHeatWaveFleetMetricResponse> getHeatWaveFleetMetric(
+            GetHeatWaveFleetMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>
+                    handler) {
+        LOG.trace("Called async getHeatWaveFleetMetric");
+        final GetHeatWaveFleetMetricRequest interceptedRequest =
+                GetHeatWaveFleetMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveFleetMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetHeatWaveFleetMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/HeatWaveFleetMetrics/GetHeatWaveFleetMetric");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetHeatWaveFleetMetricResponse>
+                transformer =
+                        GetHeatWaveFleetMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>,
+                        java.util.concurrent.Future<GetHeatWaveFleetMetricResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHeatWaveFleetMetricRequest, GetHeatWaveFleetMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetManagedMySqlDatabaseResponse> getManagedMySqlDatabase(
+            GetManagedMySqlDatabaseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetManagedMySqlDatabaseRequest, GetManagedMySqlDatabaseResponse>
+                    handler) {
+        LOG.trace("Called async getManagedMySqlDatabase");
+        final GetManagedMySqlDatabaseRequest interceptedRequest =
+                GetManagedMySqlDatabaseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetManagedMySqlDatabaseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetManagedMySqlDatabase",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/GetManagedMySqlDatabase");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetManagedMySqlDatabaseResponse>
+                transformer =
+                        GetManagedMySqlDatabaseConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetManagedMySqlDatabaseRequest, GetManagedMySqlDatabaseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetManagedMySqlDatabaseRequest, GetManagedMySqlDatabaseResponse>,
+                        java.util.concurrent.Future<GetManagedMySqlDatabaseResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetManagedMySqlDatabaseRequest, GetManagedMySqlDatabaseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetMySqlFleetMetricResponse> getMySqlFleetMetric(
+            GetMySqlFleetMetricRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>
+                    handler) {
+        LOG.trace("Called async getMySqlFleetMetric");
+        final GetMySqlFleetMetricRequest interceptedRequest =
+                GetMySqlFleetMetricConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMySqlFleetMetricConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "GetMySqlFleetMetric",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlFleetMetrics/GetMySqlFleetMetric");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetMySqlFleetMetricResponse>
+                transformer =
+                        GetMySqlFleetMetricConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>,
+                        java.util.concurrent.Future<GetMySqlFleetMetricResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetMySqlFleetMetricRequest, GetMySqlFleetMetricResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedMySqlDatabaseConfigurationDataResponse>
+            listManagedMySqlDatabaseConfigurationData(
+                    ListManagedMySqlDatabaseConfigurationDataRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedMySqlDatabaseConfigurationDataRequest,
+                                    ListManagedMySqlDatabaseConfigurationDataResponse>
+                            handler) {
+        LOG.trace("Called async listManagedMySqlDatabaseConfigurationData");
+        final ListManagedMySqlDatabaseConfigurationDataRequest interceptedRequest =
+                ListManagedMySqlDatabaseConfigurationDataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedMySqlDatabaseConfigurationDataConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListManagedMySqlDatabaseConfigurationData",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListManagedMySqlDatabaseConfigurationData");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListManagedMySqlDatabaseConfigurationDataResponse>
+                transformer =
+                        ListManagedMySqlDatabaseConfigurationDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedMySqlDatabaseConfigurationDataRequest,
+                        ListManagedMySqlDatabaseConfigurationDataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedMySqlDatabaseConfigurationDataRequest,
+                                ListManagedMySqlDatabaseConfigurationDataResponse>,
+                        java.util.concurrent.Future<
+                                ListManagedMySqlDatabaseConfigurationDataResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedMySqlDatabaseConfigurationDataRequest,
+                    ListManagedMySqlDatabaseConfigurationDataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedMySqlDatabaseSqlDataResponse>
+            listManagedMySqlDatabaseSqlData(
+                    ListManagedMySqlDatabaseSqlDataRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListManagedMySqlDatabaseSqlDataRequest,
+                                    ListManagedMySqlDatabaseSqlDataResponse>
+                            handler) {
+        LOG.trace("Called async listManagedMySqlDatabaseSqlData");
+        final ListManagedMySqlDatabaseSqlDataRequest interceptedRequest =
+                ListManagedMySqlDatabaseSqlDataConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedMySqlDatabaseSqlDataConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListManagedMySqlDatabaseSqlData",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/ListManagedMySqlDatabaseSqlData");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedMySqlDatabaseSqlDataResponse>
+                transformer =
+                        ListManagedMySqlDatabaseSqlDataConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedMySqlDatabaseSqlDataRequest,
+                        ListManagedMySqlDatabaseSqlDataResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedMySqlDatabaseSqlDataRequest,
+                                ListManagedMySqlDatabaseSqlDataResponse>,
+                        java.util.concurrent.Future<ListManagedMySqlDatabaseSqlDataResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedMySqlDatabaseSqlDataRequest,
+                    ListManagedMySqlDatabaseSqlDataResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListManagedMySqlDatabasesResponse> listManagedMySqlDatabases(
+            ListManagedMySqlDatabasesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListManagedMySqlDatabasesRequest, ListManagedMySqlDatabasesResponse>
+                    handler) {
+        LOG.trace("Called async listManagedMySqlDatabases");
+        final ListManagedMySqlDatabasesRequest interceptedRequest =
+                ListManagedMySqlDatabasesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListManagedMySqlDatabasesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "ListManagedMySqlDatabases",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabaseCollection/ListManagedMySqlDatabases");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListManagedMySqlDatabasesResponse>
+                transformer =
+                        ListManagedMySqlDatabasesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListManagedMySqlDatabasesRequest, ListManagedMySqlDatabasesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListManagedMySqlDatabasesRequest,
+                                ListManagedMySqlDatabasesResponse>,
+                        java.util.concurrent.Future<ListManagedMySqlDatabasesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListManagedMySqlDatabasesRequest, ListManagedMySqlDatabasesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
+            summarizeManagedMySqlDatabaseAvailabilityMetrics(
+                    SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest,
+                                    SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
+                            handler) {
+        LOG.trace("Called async summarizeManagedMySqlDatabaseAvailabilityMetrics");
+        final SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest interceptedRequest =
+                SummarizeManagedMySqlDatabaseAvailabilityMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeManagedMySqlDatabaseAvailabilityMetricsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "SummarizeManagedMySqlDatabaseAvailabilityMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedMySqlDatabase/SummarizeManagedMySqlDatabaseAvailabilityMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
+                transformer =
+                        SummarizeManagedMySqlDatabaseAvailabilityMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest,
+                        SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest,
+                                SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>,
+                        java.util.concurrent.Future<
+                                SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest,
+                    SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -6,66 +6,79 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListSystemMediaWorkflowsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSystemMediaWorkflowsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/ListSystemMediaWorkflowsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSystemMediaWorkflowsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class ListSystemMediaWorkflowsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return only the resources with their system defined, unique name matching the
-     * given name.
+     * A filter to return only the resources with their system defined, unique name matching the given name.
      */
     private String name;
 
     /**
-     * A filter to return only the resources with their system defined, unique name matching the
-     * given name.
+     * A filter to return only the resources with their system defined, unique name matching the given name.
      */
     public String getName() {
         return name;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.mediaservices.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.mediaservices.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the
+     * {@code opc-next-page} header field of a previous response.
+     *
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the
+     * {@code opc-next-page} header field of a previous response.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -73,15 +86,17 @@ public class ListSystemMediaWorkflowsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSystemMediaWorkflowsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -91,15 +106,12 @@ public class ListSystemMediaWorkflowsRequest
         }
 
         /**
-         * A filter to return only the resources with their system defined, unique name matching the
-         * given name.
+         * A filter to return only the resources with their system defined, unique name matching the given name.
          */
         private String name = null;
 
         /**
-         * A filter to return only the resources with their system defined, unique name matching the
-         * given name.
-         *
+         * A filter to return only the resources with their system defined, unique name matching the given name.
          * @param name the value to set
          * @return this builder instance
          */
@@ -108,12 +120,13 @@ public class ListSystemMediaWorkflowsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.mediaservices.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -123,14 +136,15 @@ public class ListSystemMediaWorkflowsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the
+         * {@code opc-next-page} header field of a previous response.
+         *
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the
+         * {@code opc-next-page} header field of a previous response.
          *
          * @param page the value to set
          * @return this builder instance
@@ -140,12 +154,13 @@ public class ListSystemMediaWorkflowsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -154,12 +169,13 @@ public class ListSystemMediaWorkflowsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -170,19 +186,18 @@ public class ListSystemMediaWorkflowsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -194,7 +209,6 @@ public class ListSystemMediaWorkflowsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSystemMediaWorkflowsRequest o) {
@@ -212,11 +226,10 @@ public class ListSystemMediaWorkflowsRequest
         /**
          * Build the instance of ListSystemMediaWorkflowsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSystemMediaWorkflowsRequest
          */
@@ -230,8 +243,7 @@ public class ListSystemMediaWorkflowsRequest
         /**
          * Build the instance of ListSystemMediaWorkflowsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSystemMediaWorkflowsRequest
@@ -245,14 +257,12 @@ public class ListSystemMediaWorkflowsRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSystemMediaWorkflowsRequest(compartmentId, name, sortOrder, page, limit,
-            // opcRequestId);
+            // new ListSystemMediaWorkflowsRequest(compartmentId, name, sortOrder, page, limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -267,7 +277,6 @@ public class ListSystemMediaWorkflowsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Copy metadata object request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Copy metadata object request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CopyObjectRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CopyObjectRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CopyObjectRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CopyObjectRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -73,46 +71,49 @@ public final class CopyObjectRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Copy object request key. */
+        /**
+         * Copy object request key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Copy object request key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The workspace id of the source from where we need to copy object. */
+        /**
+         * The workspace id of the source from where we need to copy object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkspaceId")
         private String sourceWorkspaceId;
 
         /**
          * The workspace id of the source from where we need to copy object.
-         *
          * @param sourceWorkspaceId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceWorkspaceId(String sourceWorkspaceId) {
             this.sourceWorkspaceId = sourceWorkspaceId;
             this.__explicitlySet__.add("sourceWorkspaceId");
             return this;
         }
-        /** The list of the objects to be copied. */
+        /**
+         * The list of the objects to be copied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
         private java.util.List<String> objectKeys;
 
         /**
          * The list of the objects to be copied.
-         *
          * @param objectKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder objectKeys(java.util.List<String> objectKeys) {
             this.objectKeys = objectKeys;
             this.__explicitlySet__.add("objectKeys");
@@ -127,152 +128,162 @@ public final class CopyObjectRequest
             this.__explicitlySet__.add("copyConflictResolution");
             return this;
         }
-        /** Copy Object request status. */
+        /**
+         * Copy Object request status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("copyMetadataObjectRequestStatus")
         private CopyMetadataObjectRequestStatus copyMetadataObjectRequestStatus;
 
         /**
          * Copy Object request status.
-         *
          * @param copyMetadataObjectRequestStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder copyMetadataObjectRequestStatus(
                 CopyMetadataObjectRequestStatus copyMetadataObjectRequestStatus) {
             this.copyMetadataObjectRequestStatus = copyMetadataObjectRequestStatus;
             this.__explicitlySet__.add("copyMetadataObjectRequestStatus");
             return this;
         }
-        /** OCID of the user who initiated copy request. */
+        /**
+         * OCID of the user who initiated copy request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * OCID of the user who initiated copy request.
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** Name of the user who created the copy object request. */
+        /**
+         * Name of the user who created the copy object request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByName")
         private String createdByName;
 
         /**
          * Name of the user who created the copy object request.
-         *
          * @param createdByName the value to set
          * @return this builder
-         */
+         **/
         public Builder createdByName(String createdByName) {
             this.createdByName = createdByName;
             this.__explicitlySet__.add("createdByName");
             return this;
         }
-        /** Number of source objects to be copied. */
+        /**
+         * Number of source objects to be copied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalSourceObjectCount")
         private Integer totalSourceObjectCount;
 
         /**
          * Number of source objects to be copied.
-         *
          * @param totalSourceObjectCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalSourceObjectCount(Integer totalSourceObjectCount) {
             this.totalSourceObjectCount = totalSourceObjectCount;
             this.__explicitlySet__.add("totalSourceObjectCount");
             return this;
         }
-        /** Number of objects copied into the target. */
+        /**
+         * Number of objects copied into the target.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsCopiedIntoTarget")
         private Integer totalObjectsCopiedIntoTarget;
 
         /**
          * Number of objects copied into the target.
-         *
          * @param totalObjectsCopiedIntoTarget the value to set
          * @return this builder
-         */
+         **/
         public Builder totalObjectsCopiedIntoTarget(Integer totalObjectsCopiedIntoTarget) {
             this.totalObjectsCopiedIntoTarget = totalObjectsCopiedIntoTarget;
             this.__explicitlySet__.add("totalObjectsCopiedIntoTarget");
             return this;
         }
-        /** Time at which the request started getting processed. */
+        /**
+         * Time at which the request started getting processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStartedInMillis")
         private Long timeStartedInMillis;
 
         /**
          * Time at which the request started getting processed.
-         *
          * @param timeStartedInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStartedInMillis(Long timeStartedInMillis) {
             this.timeStartedInMillis = timeStartedInMillis;
             this.__explicitlySet__.add("timeStartedInMillis");
             return this;
         }
-        /** Time at which the request was completely processed. */
+        /**
+         * Time at which the request was completely processed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEndedInMillis")
         private Long timeEndedInMillis;
 
         /**
          * Time at which the request was completely processed.
-         *
          * @param timeEndedInMillis the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEndedInMillis(Long timeEndedInMillis) {
             this.timeEndedInMillis = timeEndedInMillis;
             this.__explicitlySet__.add("timeEndedInMillis");
             return this;
         }
-        /** The array of copy object details. */
+        /**
+         * The array of copy object details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("copiedItems")
         private java.util.List<CopyObjectMetadataSummary> copiedItems;
 
         /**
          * The array of copy object details.
-         *
          * @param copiedItems the value to set
          * @return this builder
-         */
+         **/
         public Builder copiedItems(java.util.List<CopyObjectMetadataSummary> copiedItems) {
             this.copiedItems = copiedItems;
             this.__explicitlySet__.add("copiedItems");
             return this;
         }
-        /** The array of copied referenced objects. */
+        /**
+         * The array of copied referenced objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("referencedItems")
         private java.util.List<CopyObjectMetadataSummary> referencedItems;
 
         /**
          * The array of copied referenced objects.
-         *
          * @param referencedItems the value to set
          * @return this builder
-         */
+         **/
         public Builder referencedItems(java.util.List<CopyObjectMetadataSummary> referencedItems) {
             this.referencedItems = referencedItems;
             this.__explicitlySet__.add("referencedItems");
             return this;
         }
-        /** Name of the copy object request. */
+        /**
+         * Name of the copy object request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the copy object request.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -353,7 +364,9 @@ public final class CopyObjectRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -362,41 +375,44 @@ public final class CopyObjectRequest
         return new Builder().copy(this);
     }
 
-    /** Copy object request key. */
+    /**
+     * Copy object request key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Copy object request key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The workspace id of the source from where we need to copy object. */
+    /**
+     * The workspace id of the source from where we need to copy object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceWorkspaceId")
     private final String sourceWorkspaceId;
 
     /**
      * The workspace id of the source from where we need to copy object.
-     *
      * @return the value
-     */
+     **/
     public String getSourceWorkspaceId() {
         return sourceWorkspaceId;
     }
 
-    /** The list of the objects to be copied. */
+    /**
+     * The list of the objects to be copied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectKeys")
     private final java.util.List<String> objectKeys;
 
     /**
      * The list of the objects to be copied.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getObjectKeys() {
         return objectKeys;
     }
@@ -408,8 +424,10 @@ public final class CopyObjectRequest
         return copyConflictResolution;
     }
 
-    /** Copy Object request status. */
-    public enum CopyMetadataObjectRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Copy Object request status.
+     **/
+    public enum CopyMetadataObjectRequestStatus {
         Successful("SUCCESSFUL"),
         Failed("FAILED"),
         InProgress("IN_PROGRESS"),
@@ -418,8 +436,8 @@ public final class CopyObjectRequest
         Terminated("TERMINATED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -458,132 +476,142 @@ public final class CopyObjectRequest
             return UnknownEnumValue;
         }
     };
-    /** Copy Object request status. */
+    /**
+     * Copy Object request status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("copyMetadataObjectRequestStatus")
     private final CopyMetadataObjectRequestStatus copyMetadataObjectRequestStatus;
 
     /**
      * Copy Object request status.
-     *
      * @return the value
-     */
+     **/
     public CopyMetadataObjectRequestStatus getCopyMetadataObjectRequestStatus() {
         return copyMetadataObjectRequestStatus;
     }
 
-    /** OCID of the user who initiated copy request. */
+    /**
+     * OCID of the user who initiated copy request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * OCID of the user who initiated copy request.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** Name of the user who created the copy object request. */
+    /**
+     * Name of the user who created the copy object request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByName")
     private final String createdByName;
 
     /**
      * Name of the user who created the copy object request.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedByName() {
         return createdByName;
     }
 
-    /** Number of source objects to be copied. */
+    /**
+     * Number of source objects to be copied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSourceObjectCount")
     private final Integer totalSourceObjectCount;
 
     /**
      * Number of source objects to be copied.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalSourceObjectCount() {
         return totalSourceObjectCount;
     }
 
-    /** Number of objects copied into the target. */
+    /**
+     * Number of objects copied into the target.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalObjectsCopiedIntoTarget")
     private final Integer totalObjectsCopiedIntoTarget;
 
     /**
      * Number of objects copied into the target.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalObjectsCopiedIntoTarget() {
         return totalObjectsCopiedIntoTarget;
     }
 
-    /** Time at which the request started getting processed. */
+    /**
+     * Time at which the request started getting processed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStartedInMillis")
     private final Long timeStartedInMillis;
 
     /**
      * Time at which the request started getting processed.
-     *
      * @return the value
-     */
+     **/
     public Long getTimeStartedInMillis() {
         return timeStartedInMillis;
     }
 
-    /** Time at which the request was completely processed. */
+    /**
+     * Time at which the request was completely processed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEndedInMillis")
     private final Long timeEndedInMillis;
 
     /**
      * Time at which the request was completely processed.
-     *
      * @return the value
-     */
+     **/
     public Long getTimeEndedInMillis() {
         return timeEndedInMillis;
     }
 
-    /** The array of copy object details. */
+    /**
+     * The array of copy object details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("copiedItems")
     private final java.util.List<CopyObjectMetadataSummary> copiedItems;
 
     /**
      * The array of copy object details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CopyObjectMetadataSummary> getCopiedItems() {
         return copiedItems;
     }
 
-    /** The array of copied referenced objects. */
+    /**
+     * The array of copied referenced objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("referencedItems")
     private final java.util.List<CopyObjectMetadataSummary> referencedItems;
 
     /**
      * The array of copied referenced objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CopyObjectMetadataSummary> getReferencedItems() {
         return referencedItems;
     }
 
-    /** Name of the copy object request. */
+    /**
+     * Name of the copy object request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the copy object request.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -595,7 +623,6 @@ public final class CopyObjectRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

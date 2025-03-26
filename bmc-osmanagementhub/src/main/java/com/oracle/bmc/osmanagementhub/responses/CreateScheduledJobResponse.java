@@ -6,14 +6,15 @@ package com.oracle.bmc.osmanagementhub.responses;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** A link to the created scheduled job. */
+    /**
+     * A link to the created scheduled job.
+     */
     private String location;
 
     /**
      * A link to the created scheduled job.
-     *
      * @return the value
      */
     public String getLocation() {
@@ -21,14 +22,15 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,7 +38,10 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -48,12 +53,13 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned {@code ScheduledJob} instance. */
+    /**
+     * The returned ScheduledJob instance.
+     */
     private com.oracle.bmc.osmanagementhub.model.ScheduledJob scheduledJob;
 
     /**
-     * The returned {@code ScheduledJob} instance.
-     *
+     * The returned ScheduledJob instance.
      * @return the value
      */
     public com.oracle.bmc.osmanagementhub.model.ScheduledJob getScheduledJob() {
@@ -70,7 +76,7 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
     })
     private CreateScheduledJobResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String opcRequestId,
             String etag,
@@ -82,30 +88,28 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
         this.scheduledJob = scheduledJob;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateScheduledJobResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** A link to the created scheduled job. */
+        /**
+         * A link to the created scheduled job.
+         */
         private String location;
 
         /**
          * A link to the created scheduled job.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -115,14 +119,15 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,7 +137,10 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -146,12 +154,13 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code ScheduledJob} instance. */
+        /**
+         * The returned ScheduledJob instance.
+         */
         private com.oracle.bmc.osmanagementhub.model.ScheduledJob scheduledJob;
 
         /**
-         * The returned {@code ScheduledJob} instance.
-         *
+         * The returned ScheduledJob instance.
          * @param scheduledJob the value to set
          * @return this builder
          */
@@ -163,10 +172,8 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateScheduledJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -180,10 +187,8 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateScheduledJobResponse build() {
             return new CreateScheduledJobResponse(
                     __httpStatusCode__, headers, location, opcRequestId, etag, scheduledJob);
@@ -192,7 +197,6 @@ public class CreateScheduledJobResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

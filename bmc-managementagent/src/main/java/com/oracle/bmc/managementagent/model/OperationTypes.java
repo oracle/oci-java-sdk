@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.managementagent.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
-public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+public enum OperationTypes {
     DeployPlugin("DEPLOY_PLUGIN"),
     UpgradePlugin("UPGRADE_PLUGIN"),
     CreateUpgradePlugins("CREATE_UPGRADE_PLUGINS"),

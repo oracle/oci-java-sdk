@@ -26,13 +26,15 @@ class ArtifactUtils {
         return Optional.ofNullable(patterns)
                 .map(
                         collection ->
-                                collection.stream()
+                                collection
+                                        .stream()
                                         .map(p -> p.split(":"))
                                         .map(ArtifactUtils::stripAll)
                                         .map(arr -> String.join(":", arr))
                                         .flatMap(
                                                 pattern ->
-                                                        dependencies.stream()
+                                                        dependencies
+                                                                .stream()
                                                                 .filter(
                                                                         artifact ->
                                                                                 compareDependency(

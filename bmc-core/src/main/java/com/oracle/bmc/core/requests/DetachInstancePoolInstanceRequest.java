@@ -6,34 +6,33 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachInstancePoolInstanceExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DetachInstancePoolInstanceRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachInstancePoolInstanceExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetachInstancePoolInstanceRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class DetachInstancePoolInstanceRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     private String instancePoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     public String getInstancePoolId() {
         return instancePoolId;
     }
-    /** Instance being detached */
+    /**
+     * Instance being detached
+     */
     private com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
             detachInstancePoolInstanceDetails;
 
-    /** Instance being detached */
+    /**
+     * Instance being detached
+     */
     public com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
             getDetachInstancePoolInstanceDetails() {
         return detachInstancePoolInstanceDetails;
@@ -41,18 +40,20 @@ public class DetachInstancePoolInstanceRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -60,7 +61,6 @@ public class DetachInstancePoolInstanceRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -73,19 +73,17 @@ public class DetachInstancePoolInstanceRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DetachInstancePoolInstanceRequest,
                     com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
          */
         private String instancePoolId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
          * @param instancePoolId the value to set
          * @return this builder instance
          */
@@ -94,13 +92,14 @@ public class DetachInstancePoolInstanceRequest
             return this;
         }
 
-        /** Instance being detached */
+        /**
+         * Instance being detached
+         */
         private com.oracle.bmc.core.model.DetachInstancePoolInstanceDetails
                 detachInstancePoolInstanceDetails = null;
 
         /**
          * Instance being detached
-         *
          * @param detachInstancePoolInstanceDetails the value to set
          * @return this builder instance
          */
@@ -113,19 +112,20 @@ public class DetachInstancePoolInstanceRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -137,19 +137,18 @@ public class DetachInstancePoolInstanceRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -161,7 +160,6 @@ public class DetachInstancePoolInstanceRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DetachInstancePoolInstanceRequest o) {
@@ -176,11 +174,10 @@ public class DetachInstancePoolInstanceRequest
         /**
          * Build the instance of DetachInstancePoolInstanceRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DetachInstancePoolInstanceRequest
          */
@@ -193,7 +190,6 @@ public class DetachInstancePoolInstanceRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -206,8 +202,7 @@ public class DetachInstancePoolInstanceRequest
         /**
          * Build the instance of DetachInstancePoolInstanceRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DetachInstancePoolInstanceRequest
@@ -218,14 +213,12 @@ public class DetachInstancePoolInstanceRequest
             request.detachInstancePoolInstanceDetails = detachInstancePoolInstanceDetails;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new DetachInstancePoolInstanceRequest(instancePoolId,
-            // detachInstancePoolInstanceDetails, opcRetryToken);
+            // new DetachInstancePoolInstanceRequest(instancePoolId, detachInstancePoolInstanceDetails, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -237,7 +230,6 @@ public class DetachInstancePoolInstanceRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * URL pattern lists of the policy. The value of an entry is a list of URL patterns. The associated
- * key/name is the identifier by which the URL pattern list is referenced. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * URL pattern lists of the policy.
+ * The value of an entry is a list of URL patterns.
+ * The associated key/name is the identifier by which the URL pattern list is referenced.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UrlList.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UrlList extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UrlList extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "urls", "totalUrls", "parentResourceId"})
     public UrlList(
@@ -37,61 +37,65 @@ public final class UrlList extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique name identifier for the URL list. */
+        /**
+         * Unique name identifier for the URL list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Unique name identifier for the URL list.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** List of urls. */
+        /**
+         * List of urls.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("urls")
         private java.util.List<UrlPattern> urls;
 
         /**
          * List of urls.
-         *
          * @param urls the value to set
          * @return this builder
-         */
+         **/
         public Builder urls(java.util.List<UrlPattern> urls) {
             this.urls = urls;
             this.__explicitlySet__.add("urls");
             return this;
         }
-        /** Total count of URLs in the URL List */
+        /**
+         * Total count of URLs in the URL List
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalUrls")
         private Integer totalUrls;
 
         /**
          * Total count of URLs in the URL List
-         *
          * @param totalUrls the value to set
          * @return this builder
-         */
+         **/
         public Builder totalUrls(Integer totalUrls) {
             this.totalUrls = totalUrls;
             this.__explicitlySet__.add("totalUrls");
             return this;
         }
-        /** OCID of the Network Firewall Policy this URL List belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this URL List belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this URL List belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -128,7 +132,9 @@ public final class UrlList extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,54 +143,58 @@ public final class UrlList extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Unique name identifier for the URL list. */
+    /**
+     * Unique name identifier for the URL list.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique name identifier for the URL list.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** List of urls. */
+    /**
+     * List of urls.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("urls")
     private final java.util.List<UrlPattern> urls;
 
     /**
      * List of urls.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UrlPattern> getUrls() {
         return urls;
     }
 
-    /** Total count of URLs in the URL List */
+    /**
+     * Total count of URLs in the URL List
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalUrls")
     private final Integer totalUrls;
 
     /**
      * Total count of URLs in the URL List
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalUrls() {
         return totalUrls;
     }
 
-    /** OCID of the Network Firewall Policy this URL List belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this URL List belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this URL List belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -196,7 +206,6 @@ public final class UrlList extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

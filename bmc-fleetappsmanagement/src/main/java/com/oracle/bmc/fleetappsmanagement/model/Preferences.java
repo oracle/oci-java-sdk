@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Preferences to send notifications on the fleet activities. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Preferences to send notifications on the fleet activities.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Preferences.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Preferences extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Preferences extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "onUpcomingSchedule",
@@ -36,46 +34,49 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Enables notification on upcoming schedule. */
+        /**
+         * Enables notification on upcoming schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onUpcomingSchedule")
         private Boolean onUpcomingSchedule;
 
         /**
          * Enables notification on upcoming schedule.
-         *
          * @param onUpcomingSchedule the value to set
          * @return this builder
-         */
+         **/
         public Builder onUpcomingSchedule(Boolean onUpcomingSchedule) {
             this.onUpcomingSchedule = onUpcomingSchedule;
             this.__explicitlySet__.add("onUpcomingSchedule");
             return this;
         }
-        /** Enables or disables notification on Job Failures. */
+        /**
+         * Enables or disables notification on Job Failures.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onJobFailure")
         private Boolean onJobFailure;
 
         /**
          * Enables or disables notification on Job Failures.
-         *
          * @param onJobFailure the value to set
          * @return this builder
-         */
+         **/
         public Builder onJobFailure(Boolean onJobFailure) {
             this.onJobFailure = onJobFailure;
             this.__explicitlySet__.add("onJobFailure");
             return this;
         }
-        /** Enables or disables notification on Environment Fleet Topology Modification. */
+        /**
+         * Enables or disables notification on Environment Fleet Topology Modification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onTopologyModification")
         private Boolean onTopologyModification;
 
         /**
          * Enables or disables notification on Environment Fleet Topology Modification.
-         *
          * @param onTopologyModification the value to set
          * @return this builder
-         */
+         **/
         public Builder onTopologyModification(Boolean onTopologyModification) {
             this.onTopologyModification = onTopologyModification;
             this.__explicitlySet__.add("onTopologyModification");
@@ -112,7 +113,9 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,41 +124,44 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Enables notification on upcoming schedule. */
+    /**
+     * Enables notification on upcoming schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onUpcomingSchedule")
     private final Boolean onUpcomingSchedule;
 
     /**
      * Enables notification on upcoming schedule.
-     *
      * @return the value
-     */
+     **/
     public Boolean getOnUpcomingSchedule() {
         return onUpcomingSchedule;
     }
 
-    /** Enables or disables notification on Job Failures. */
+    /**
+     * Enables or disables notification on Job Failures.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onJobFailure")
     private final Boolean onJobFailure;
 
     /**
      * Enables or disables notification on Job Failures.
-     *
      * @return the value
-     */
+     **/
     public Boolean getOnJobFailure() {
         return onJobFailure;
     }
 
-    /** Enables or disables notification on Environment Fleet Topology Modification. */
+    /**
+     * Enables or disables notification on Environment Fleet Topology Modification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onTopologyModification")
     private final Boolean onTopologyModification;
 
     /**
      * Enables or disables notification on Environment Fleet Topology Modification.
-     *
      * @return the value
-     */
+     **/
     public Boolean getOnTopologyModification() {
         return onTopologyModification;
     }
@@ -167,7 +173,6 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,64 +6,61 @@ package com.oracle.bmc.ocicontrolcenter.requests;
 
 import com.oracle.bmc.ocicontrolcenter.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/RequestSummarizedMetricDataExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RequestSummarizedMetricDataRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/RequestSummarizedMetricDataExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestSummarizedMetricDataRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 public class RequestSummarizedMetricDataRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ocicontrolcenter.model.RequestSummarizedMetricDataDetails> {
 
-    /** Filters to apply to the metric data query */
+    /**
+     * Filters to apply to the metric data query
+     */
     private com.oracle.bmc.ocicontrolcenter.model.RequestSummarizedMetricDataDetails
             requestSummarizedMetricDataDetails;
 
-    /** Filters to apply to the metric data query */
+    /**
+     * Filters to apply to the metric data query
+     */
     public com.oracle.bmc.ocicontrolcenter.model.RequestSummarizedMetricDataDetails
             getRequestSummarizedMetricDataDetails() {
         return requestSummarizedMetricDataDetails;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see <a
-     * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-     * Pagination</a>.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see <a
-     * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-     * Pagination</a>.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -71,7 +68,6 @@ public class RequestSummarizedMetricDataRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -84,16 +80,18 @@ public class RequestSummarizedMetricDataRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestSummarizedMetricDataRequest,
                     com.oracle.bmc.ocicontrolcenter.model.RequestSummarizedMetricDataDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Filters to apply to the metric data query */
+        /**
+         * Filters to apply to the metric data query
+         */
         private com.oracle.bmc.ocicontrolcenter.model.RequestSummarizedMetricDataDetails
                 requestSummarizedMetricDataDetails = null;
 
         /**
          * Filters to apply to the metric data query
-         *
          * @param requestSummarizedMetricDataDetails the value to set
          * @return this builder instance
          */
@@ -105,18 +103,15 @@ public class RequestSummarizedMetricDataRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see <a
-         * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-         * Pagination</a>.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see <a
-         * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-         * Pagination</a>.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
          *
          * @param page the value to set
          * @return this builder instance
@@ -127,14 +122,13 @@ public class RequestSummarizedMetricDataRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -145,15 +139,12 @@ public class RequestSummarizedMetricDataRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
-         *
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -164,19 +155,18 @@ public class RequestSummarizedMetricDataRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -188,7 +178,6 @@ public class RequestSummarizedMetricDataRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RequestSummarizedMetricDataRequest o) {
@@ -204,11 +193,10 @@ public class RequestSummarizedMetricDataRequest
         /**
          * Build the instance of RequestSummarizedMetricDataRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RequestSummarizedMetricDataRequest
          */
@@ -221,7 +209,6 @@ public class RequestSummarizedMetricDataRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -235,8 +222,7 @@ public class RequestSummarizedMetricDataRequest
         /**
          * Build the instance of RequestSummarizedMetricDataRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestSummarizedMetricDataRequest
@@ -248,14 +234,12 @@ public class RequestSummarizedMetricDataRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RequestSummarizedMetricDataRequest(requestSummarizedMetricDataDetails, page,
-            // limit, opcRequestId);
+            // new RequestSummarizedMetricDataRequest(requestSummarizedMetricDataDetails, page, limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -268,7 +252,6 @@ public class RequestSummarizedMetricDataRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

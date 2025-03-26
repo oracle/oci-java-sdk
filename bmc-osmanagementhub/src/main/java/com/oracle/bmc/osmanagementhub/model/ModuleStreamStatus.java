@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** The status of a module stream. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ModuleStreamStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of a module stream.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ModuleStreamStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
     Active("ACTIVE"),

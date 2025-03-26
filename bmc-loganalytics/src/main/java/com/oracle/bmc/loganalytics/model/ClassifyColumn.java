@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Column containing query results produced by the query language classify command. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Column containing query results produced by the query language classify command.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClassifyColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ClassifyColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,7 +133,10 @@ public final class ClassifyColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** A list of fields specified in the classify command in the query string. */
+        /**
+         * A list of fields specified in the classify command in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNames")
         private java.util.List<String> classifyFieldNames;
 
@@ -142,32 +145,34 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyFieldNames the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyFieldNames(java.util.List<String> classifyFieldNames) {
             this.classifyFieldNames = classifyFieldNames;
             this.__explicitlySet__.add("classifyFieldNames");
             return this;
         }
         /**
-         * Count of nulls found in each of the fields specified in the classify command in the query
-         * string.
-         */
+         * Count of nulls found in each of the fields specified in the classify command in the query string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNullCount")
         private java.util.List<Long> classifyFieldNullCount;
 
         /**
-         * Count of nulls found in each of the fields specified in the classify command in the query
-         * string.
+         * Count of nulls found in each of the fields specified in the classify command in the query string.
          *
          * @param classifyFieldNullCount the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyFieldNullCount(java.util.List<Long> classifyFieldNullCount) {
             this.classifyFieldNullCount = classifyFieldNullCount;
             this.__explicitlySet__.add("classifyFieldNullCount");
             return this;
         }
-        /** Count of anomalies for each timeseries datapoint. */
+        /**
+         * Count of anomalies for each timeseries datapoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyAnomalyIntervalCounts")
         private java.util.List<Long> classifyAnomalyIntervalCounts;
 
@@ -176,14 +181,17 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyAnomalyIntervalCounts the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyAnomalyIntervalCounts(
                 java.util.List<Long> classifyAnomalyIntervalCounts) {
             this.classifyAnomalyIntervalCounts = classifyAnomalyIntervalCounts;
             this.__explicitlySet__.add("classifyAnomalyIntervalCounts");
             return this;
         }
-        /** Column descriptors for the classify result. */
+        /**
+         * Column descriptors for the classify result.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyColumns")
         private java.util.List<AbstractColumn> classifyColumns;
 
@@ -192,13 +200,16 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyColumns(java.util.List<AbstractColumn> classifyColumns) {
             this.classifyColumns = classifyColumns;
             this.__explicitlySet__.add("classifyColumns");
             return this;
         }
-        /** Results of the classify command. */
+        /**
+         * Results of the classify command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyResult")
         private java.util.List<java.util.Map<String, Object>> classifyResult;
 
@@ -207,14 +218,17 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyResult the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyResult(
                 java.util.List<java.util.Map<String, Object>> classifyResult) {
             this.classifyResult = classifyResult;
             this.__explicitlySet__.add("classifyResult");
             return this;
         }
-        /** Column descriptors of fields with strong correlation with the classify fields. */
+        /**
+         * Column descriptors of fields with strong correlation with the classify fields.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateColumns")
         private java.util.List<AbstractColumn> classifyCorrelateColumns;
 
@@ -223,14 +237,17 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyCorrelateColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyCorrelateColumns(
                 java.util.List<AbstractColumn> classifyCorrelateColumns) {
             this.classifyCorrelateColumns = classifyCorrelateColumns;
             this.__explicitlySet__.add("classifyCorrelateColumns");
             return this;
         }
-        /** Correlation results of the classify command. */
+        /**
+         * Correlation results of the classify command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateResult")
         private java.util.List<java.util.Map<String, Object>> classifyCorrelateResult;
 
@@ -239,7 +256,7 @@ public final class ClassifyColumn extends AbstractColumn {
          *
          * @param classifyCorrelateResult the value to set
          * @return this builder
-         */
+         **/
         public Builder classifyCorrelateResult(
                 java.util.List<java.util.Map<String, Object>> classifyCorrelateResult) {
             this.classifyCorrelateResult = classifyCorrelateResult;
@@ -341,7 +358,9 @@ public final class ClassifyColumn extends AbstractColumn {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -393,7 +412,10 @@ public final class ClassifyColumn extends AbstractColumn {
         this.classifyCorrelateResult = classifyCorrelateResult;
     }
 
-    /** A list of fields specified in the classify command in the query string. */
+    /**
+     * A list of fields specified in the classify command in the query string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNames")
     private final java.util.List<String> classifyFieldNames;
 
@@ -401,29 +423,31 @@ public final class ClassifyColumn extends AbstractColumn {
      * A list of fields specified in the classify command in the query string.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getClassifyFieldNames() {
         return classifyFieldNames;
     }
 
     /**
-     * Count of nulls found in each of the fields specified in the classify command in the query
-     * string.
-     */
+     * Count of nulls found in each of the fields specified in the classify command in the query string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyFieldNullCount")
     private final java.util.List<Long> classifyFieldNullCount;
 
     /**
-     * Count of nulls found in each of the fields specified in the classify command in the query
-     * string.
+     * Count of nulls found in each of the fields specified in the classify command in the query string.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Long> getClassifyFieldNullCount() {
         return classifyFieldNullCount;
     }
 
-    /** Count of anomalies for each timeseries datapoint. */
+    /**
+     * Count of anomalies for each timeseries datapoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyAnomalyIntervalCounts")
     private final java.util.List<Long> classifyAnomalyIntervalCounts;
 
@@ -431,12 +455,15 @@ public final class ClassifyColumn extends AbstractColumn {
      * Count of anomalies for each timeseries datapoint.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Long> getClassifyAnomalyIntervalCounts() {
         return classifyAnomalyIntervalCounts;
     }
 
-    /** Column descriptors for the classify result. */
+    /**
+     * Column descriptors for the classify result.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyColumns")
     private final java.util.List<AbstractColumn> classifyColumns;
 
@@ -444,12 +471,15 @@ public final class ClassifyColumn extends AbstractColumn {
      * Column descriptors for the classify result.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AbstractColumn> getClassifyColumns() {
         return classifyColumns;
     }
 
-    /** Results of the classify command. */
+    /**
+     * Results of the classify command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyResult")
     private final java.util.List<java.util.Map<String, Object>> classifyResult;
 
@@ -457,12 +487,15 @@ public final class ClassifyColumn extends AbstractColumn {
      * Results of the classify command.
      *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Map<String, Object>> getClassifyResult() {
         return classifyResult;
     }
 
-    /** Column descriptors of fields with strong correlation with the classify fields. */
+    /**
+     * Column descriptors of fields with strong correlation with the classify fields.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateColumns")
     private final java.util.List<AbstractColumn> classifyCorrelateColumns;
 
@@ -470,12 +503,15 @@ public final class ClassifyColumn extends AbstractColumn {
      * Column descriptors of fields with strong correlation with the classify fields.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AbstractColumn> getClassifyCorrelateColumns() {
         return classifyCorrelateColumns;
     }
 
-    /** Correlation results of the classify command. */
+    /**
+     * Correlation results of the classify command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classifyCorrelateResult")
     private final java.util.List<java.util.Map<String, Object>> classifyCorrelateResult;
 
@@ -483,7 +519,7 @@ public final class ClassifyColumn extends AbstractColumn {
      * Correlation results of the classify command.
      *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.Map<String, Object>> getClassifyCorrelateResult() {
         return classifyCorrelateResult;
     }
@@ -495,7 +531,6 @@ public final class ClassifyColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

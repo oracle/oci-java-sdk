@@ -6,60 +6,72 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSecurityPolicyDeploymentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateSecurityPolicyDeploymentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSecurityPolicyDeploymentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSecurityPolicyDeploymentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateSecurityPolicyDeploymentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateSecurityPolicyDeploymentDetails> {
 
-    /** The OCID of the security policy deployment resource. */
+    /**
+     * The OCID of the security policy deployment resource.
+     */
     private String securityPolicyDeploymentId;
 
-    /** The OCID of the security policy deployment resource. */
+    /**
+     * The OCID of the security policy deployment resource.
+     */
     public String getSecurityPolicyDeploymentId() {
         return securityPolicyDeploymentId;
     }
-    /** Details to update the security policy deployment. */
+    /**
+     * Details to update the security policy deployment.
+     */
     private com.oracle.bmc.datasafe.model.UpdateSecurityPolicyDeploymentDetails
             updateSecurityPolicyDeploymentDetails;
 
-    /** Details to update the security policy deployment. */
+    /**
+     * Details to update the security policy deployment.
+     */
     public com.oracle.bmc.datasafe.model.UpdateSecurityPolicyDeploymentDetails
             getUpdateSecurityPolicyDeploymentDetails() {
         return updateSecurityPolicyDeploymentDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateSecurityPolicyDeploymentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateSecurityPolicyDeploymentRequest,
                     com.oracle.bmc.datasafe.model.UpdateSecurityPolicyDeploymentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security policy deployment resource. */
+        /**
+         * The OCID of the security policy deployment resource.
+         */
         private String securityPolicyDeploymentId = null;
 
         /**
          * The OCID of the security policy deployment resource.
-         *
          * @param securityPolicyDeploymentId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateSecurityPolicyDeploymentRequest
             return this;
         }
 
-        /** Details to update the security policy deployment. */
+        /**
+         * Details to update the security policy deployment.
+         */
         private com.oracle.bmc.datasafe.model.UpdateSecurityPolicyDeploymentDetails
                 updateSecurityPolicyDeploymentDetails = null;
 
         /**
          * Details to update the security policy deployment.
-         *
          * @param updateSecurityPolicyDeploymentDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +122,21 @@ public class UpdateSecurityPolicyDeploymentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +146,13 @@ public class UpdateSecurityPolicyDeploymentRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +163,18 @@ public class UpdateSecurityPolicyDeploymentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateSecurityPolicyDeploymentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateSecurityPolicyDeploymentRequest o) {
@@ -184,11 +201,10 @@ public class UpdateSecurityPolicyDeploymentRequest
         /**
          * Build the instance of UpdateSecurityPolicyDeploymentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateSecurityPolicyDeploymentRequest
          */
@@ -201,7 +217,6 @@ public class UpdateSecurityPolicyDeploymentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -215,8 +230,7 @@ public class UpdateSecurityPolicyDeploymentRequest
         /**
          * Build the instance of UpdateSecurityPolicyDeploymentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateSecurityPolicyDeploymentRequest
@@ -229,14 +243,12 @@ public class UpdateSecurityPolicyDeploymentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateSecurityPolicyDeploymentRequest(securityPolicyDeploymentId,
-            // updateSecurityPolicyDeploymentDetails, ifMatch, opcRequestId);
+            // new UpdateSecurityPolicyDeploymentRequest(securityPolicyDeploymentId, updateSecurityPolicyDeploymentDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +261,6 @@ public class UpdateSecurityPolicyDeploymentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

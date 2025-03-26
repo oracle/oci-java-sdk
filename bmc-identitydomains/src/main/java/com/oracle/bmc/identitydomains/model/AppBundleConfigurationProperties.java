@@ -6,26 +6,31 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * ConnectorBundle configuration properties
- *
- * <p>*SCIM++ Properties:** - idcsCompositeKey: [name] - idcsSearchable: true - multiValued: true -
- * mutability: readWrite - required: false - returned: default - type: complex - uniqueness: none
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsCompositeKey: [name]
+ *  - idcsSearchable: true
+ *  - multiValued: true
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppBundleConfigurationProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppBundleConfigurationProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppBundleConfigurationProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -60,108 +65,146 @@ public final class AppBundleConfigurationProperties
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in
-         * \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in
-         * \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Display name of the bundle configuration property. This attribute maps to
-         * \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * Display name of the bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Display name of the bundle configuration property. This attribute maps to
-         * \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * Display name of the bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * ICF data type of the bundle configuration property. This attribute maps to \\"type\\"
-         * attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * ICF data type of the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("icfType")
         private IcfType icfType;
 
         /**
-         * ICF data type of the bundle configuration property. This attribute maps to \\"type\\"
-         * attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-         * mutability: immutable - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * ICF data type of the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param icfType the value to set
          * @return this builder
-         */
+         **/
         public Builder icfType(IcfType icfType) {
             this.icfType = icfType;
             this.__explicitlySet__.add("icfType");
             return this;
         }
         /**
-         * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute
-         * in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: true - mutability: readWrite - required: false - returned: default
-         * - type: string - uniqueness: none
-         */
+         * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private java.util.List<String> value;
 
         /**
-         * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute
-         * in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive:
-         * encrypt - multiValued: true - mutability: readWrite - required: false - returned: default
-         * - type: string - uniqueness: none
-         *
+         * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsSensitive: encrypt
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(java.util.List<String> value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -169,105 +212,139 @@ public final class AppBundleConfigurationProperties
         }
         /**
          * Display sequence of the bundle configuration property.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: integer -
-         * uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("order")
         private Integer order;
 
         /**
          * Display sequence of the bundle configuration property.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: integer -
-         * uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param order the value to set
          * @return this builder
-         */
+         **/
         public Builder order(Integer order) {
             this.order = order;
             this.__explicitlySet__.add("order");
             return this;
         }
         /**
-         * Help message of the bundle configuration property. This attribute maps to
-         * \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         */
+         * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helpMessage")
         private String helpMessage;
 
         /**
-         * Help message of the bundle configuration property. This attribute maps to
-         * \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readWrite - required: false - returned: default - type: string -
-         * uniqueness: none
-         *
+         * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param helpMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder helpMessage(String helpMessage) {
             this.helpMessage = helpMessage;
             this.__explicitlySet__.add("helpMessage");
             return this;
         }
         /**
-         * If true, this bundle configuration property is required to connect to the target
-         * connected managed app. This attribute maps to \\"isRequired\\" attribute in
-         * \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("required")
         private Boolean required;
 
         /**
-         * If true, this bundle configuration property is required to connect to the target
-         * connected managed app. This attribute maps to \\"isRequired\\" attribute in
-         * \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * immutable - required: true - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: true
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param required the value to set
          * @return this builder
-         */
+         **/
         public Builder required(Boolean required) {
             this.required = required;
             this.__explicitlySet__.add("required");
             return this;
         }
         /**
-         * If true, this bundle configuration property value is confidential and will be encrypted
-         * in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute
-         * in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, this bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidential")
         private Boolean confidential;
 
         /**
-         * If true, this bundle configuration property value is confidential and will be encrypted
-         * in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute
-         * in \\"ConfigurationProperty\\" in ICF.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * immutable - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, this bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param confidential the value to set
          * @return this builder
-         */
+         **/
         public Builder confidential(Boolean confidential) {
             this.confidential = confidential;
             this.__explicitlySet__.add("confidential");
@@ -324,7 +401,9 @@ public final class AppBundleConfigurationProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -334,59 +413,87 @@ public final class AppBundleConfigurationProperties
     }
 
     /**
-     * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     */
+     * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     *
+     * Name of the bundle configuration property. This attribute maps to \\"name\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Display name of the bundle configuration property. This attribute maps to \\"displayName\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Display name of the bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Display name of the bundle configuration property. This attribute maps to \\"displayName\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Display name of the bundle configuration property. This attribute maps to \\"displayName\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     */
-    public enum IcfType implements com.oracle.bmc.http.internal.BmcEnum {
+     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum IcfType {
         Long("Long"),
         String("String"),
         Character("Character"),
@@ -411,8 +518,8 @@ public final class AppBundleConfigurationProperties
         ArrayOfGuardedString("ArrayOfGuardedString"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -452,145 +559,203 @@ public final class AppBundleConfigurationProperties
         }
     };
     /**
-     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     */
+     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("icfType")
     private final IcfType icfType;
 
     /**
-     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false - multiValued: false -
-     * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
-     *
+     * ICF data type of the bundle configuration property. This attribute maps to \\"type\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public IcfType getIcfType() {
         return icfType;
     }
 
     /**
-     * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: encrypt
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final java.util.List<String> value;
 
     /**
-     * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - idcsSensitive: encrypt
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * Value of the bundle configuration property. This attribute maps to \\"value\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsSensitive: encrypt
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getValue() {
         return value;
     }
 
     /**
      * Display sequence of the bundle configuration property.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-     * none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("order")
     private final Integer order;
 
     /**
      * Display sequence of the bundle configuration property.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-     * none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getOrder() {
         return order;
     }
 
     /**
-     * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helpMessage")
     private final String helpMessage;
 
     /**
-     * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\"
-     * attribute in \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Help message of the bundle configuration property. This attribute maps to \\"helpMessage\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getHelpMessage() {
         return helpMessage;
     }
 
     /**
-     * If true, this bundle configuration property is required to connect to the target connected
-     * managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\"
-     * in ICF.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("required")
     private final Boolean required;
 
     /**
-     * If true, this bundle configuration property is required to connect to the target connected
-     * managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\"
-     * in ICF.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: immutable
-     * - required: true - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this bundle configuration property is required to connect to the target connected managed app. This attribute maps to \\"isRequired\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: true
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getRequired() {
         return required;
     }
 
     /**
-     * If true, this bundle configuration property value is confidential and will be encrypted in
-     * Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, this bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidential")
     private final Boolean confidential;
 
     /**
-     * If true, this bundle configuration property value is confidential and will be encrypted in
-     * Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in
-     * \\"ConfigurationProperty\\" in ICF.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: immutable
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, this bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \\"isConfidential\\" attribute in \\"ConfigurationProperty\\" in ICF.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getConfidential() {
         return confidential;
     }
@@ -602,7 +767,6 @@ public final class AppBundleConfigurationProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

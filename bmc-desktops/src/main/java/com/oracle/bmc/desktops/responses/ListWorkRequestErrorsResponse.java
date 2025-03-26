@@ -6,38 +6,41 @@ package com.oracle.bmc.desktops.responses;
 
 import com.oracle.bmc.desktops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For pagination. */
+    /**
+     * For pagination.
+     */
     private String opcNextPage;
 
     /**
      * For pagination.
-     *
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
     /**
      * The unique identifier of the request.
-     *
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code WorkRequestErrorCollection} instance. */
+    /**
+     * The returned WorkRequestErrorCollection instance.
+     */
     private com.oracle.bmc.desktops.model.WorkRequestErrorCollection workRequestErrorCollection;
 
     /**
-     * The returned {@code WorkRequestErrorCollection} instance.
-     *
+     * The returned WorkRequestErrorCollection instance.
      * @return the value
      */
     public com.oracle.bmc.desktops.model.WorkRequestErrorCollection
@@ -54,7 +57,7 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
     })
     private ListWorkRequestErrorsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.desktops.model.WorkRequestErrorCollection workRequestErrorCollection) {
@@ -64,30 +67,28 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
         this.workRequestErrorCollection = workRequestErrorCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListWorkRequestErrorsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For pagination. */
+        /**
+         * For pagination.
+         */
         private String opcNextPage;
 
         /**
          * For pagination.
-         *
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -96,12 +97,13 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -110,12 +112,13 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code WorkRequestErrorCollection} instance. */
+        /**
+         * The returned WorkRequestErrorCollection instance.
+         */
         private com.oracle.bmc.desktops.model.WorkRequestErrorCollection workRequestErrorCollection;
 
         /**
-         * The returned {@code WorkRequestErrorCollection} instance.
-         *
+         * The returned WorkRequestErrorCollection instance.
          * @param workRequestErrorCollection the value to set
          * @return this builder
          */
@@ -128,10 +131,8 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListWorkRequestErrorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -144,10 +145,8 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListWorkRequestErrorsResponse build() {
             return new ListWorkRequestErrorsResponse(
                     __httpStatusCode__,
@@ -160,7 +159,6 @@ public class ListWorkRequestErrorsResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

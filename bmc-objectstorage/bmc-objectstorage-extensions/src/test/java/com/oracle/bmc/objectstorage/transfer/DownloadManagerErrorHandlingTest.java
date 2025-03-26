@@ -27,7 +27,9 @@ import java.util.concurrent.TimeUnit;
 @Ignore
 public class DownloadManagerErrorHandlingTest {
 
-    /** Test the case where the very first getObject fails. */
+    /**
+     * Test the case where the very first getObject fails.
+     */
     @Test
     public void completeFailure() throws Exception {
         // No operation will ever work
@@ -58,7 +60,9 @@ public class DownloadManagerErrorHandlingTest {
         }
     }
 
-    /** Test the case where there are too many failures for success */
+    /**
+     * Test the case where there are too many failures for success
+     */
     @Test
     public void tooManyFailures() throws Exception {
         // 50% chance of failure
@@ -117,7 +121,9 @@ public class DownloadManagerErrorHandlingTest {
         }
     }
 
-    /** Have a small chance of failure, but read byte-by-byte */
+    /**
+     * Have a small chance of failure, but read byte-by-byte
+     */
     @Test
     public void tooManyFailuresRead() throws Exception {
         // 1% chance of failure
@@ -273,7 +279,9 @@ public class DownloadManagerErrorHandlingTest {
         }
     }
 
-    /** Choose a random range that will retrieve the entire object. */
+    /**
+     * Choose a random range that will retrieve the entire object.
+     */
     private Range fullObjectRange(int contentLength) {
         switch (ThreadLocalRandom.current().nextInt(0, 6)) {
             case 0:

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Match rule used for tag filters. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum MatchRule implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Match rule used for tag filters.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum MatchRule {
     MatchAny("MATCH_ANY"),
     MatchAll("MATCH_ALL"),
     MatchNone("MATCH_NONE"),

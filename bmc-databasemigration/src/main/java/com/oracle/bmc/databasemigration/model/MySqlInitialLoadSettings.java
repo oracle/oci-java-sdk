@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional dump settings <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Optional dump settings
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MySqlInitialLoadSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MySqlInitialLoadSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MySqlInitialLoadSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isConsistent",
@@ -53,25 +52,27 @@ public final class MySqlInitialLoadSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Enable (true) or disable (false) consistent data dumps by locking the instance for backup
-         * during the dump.
-         */
+         * Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isConsistent")
         private Boolean isConsistent;
 
         /**
-         * Enable (true) or disable (false) consistent data dumps by locking the instance for backup
-         * during the dump.
+         * Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
          *
          * @param isConsistent the value to set
          * @return this builder
-         */
+         **/
         public Builder isConsistent(Boolean isConsistent) {
             this.isConsistent = isConsistent;
             this.__explicitlySet__.add("isConsistent");
             return this;
         }
-        /** Include a statement at the start of the dump to set the time zone to UTC. */
+        /**
+         * Include a statement at the start of the dump to set the time zone to UTC.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTzUtc")
         private Boolean isTzUtc;
 
@@ -80,90 +81,93 @@ public final class MySqlInitialLoadSettings
          *
          * @param isTzUtc the value to set
          * @return this builder
-         */
+         **/
         public Builder isTzUtc(Boolean isTzUtc) {
             this.isTzUtc = isTzUtc;
             this.__explicitlySet__.add("isTzUtc");
             return this;
         }
         /**
-         * Apply the specified requirements for compatibility with MySQL Database Service for all
-         * tables in the dump output, altering the dump files as necessary.
-         */
+         * Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump
+         * output, altering the dump files as necessary.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compatibility")
         private java.util.List<CompatibilityOption> compatibility;
 
         /**
-         * Apply the specified requirements for compatibility with MySQL Database Service for all
-         * tables in the dump output, altering the dump files as necessary.
+         * Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump
+         * output, altering the dump files as necessary.
          *
          * @param compatibility the value to set
          * @return this builder
-         */
+         **/
         public Builder compatibility(java.util.List<CompatibilityOption> compatibility) {
             this.compatibility = compatibility;
             this.__explicitlySet__.add("compatibility");
             return this;
         }
-        /** Primary key compatibility option */
+        /**
+         * Primary key compatibility option
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryKeyCompatibility")
         private PrimaryKeyCompatibility primaryKeyCompatibility;
 
         /**
          * Primary key compatibility option
-         *
          * @param primaryKeyCompatibility the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryKeyCompatibility(PrimaryKeyCompatibility primaryKeyCompatibility) {
             this.primaryKeyCompatibility = primaryKeyCompatibility;
             this.__explicitlySet__.add("primaryKeyCompatibility");
             return this;
         }
         /**
-         * Import the dump even if it contains objects that already exist in the target schema in
-         * the MySQL instance.
-         */
+         * Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreExistingObjects")
         private Boolean isIgnoreExistingObjects;
 
         /**
-         * Import the dump even if it contains objects that already exist in the target schema in
-         * the MySQL instance.
+         * Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
          *
          * @param isIgnoreExistingObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder isIgnoreExistingObjects(Boolean isIgnoreExistingObjects) {
             this.isIgnoreExistingObjects = isIgnoreExistingObjects;
             this.__explicitlySet__.add("isIgnoreExistingObjects");
             return this;
         }
-        /** The action taken in the event of errors related to GRANT or REVOKE errors. */
+        /**
+         * The action taken in the event of errors related to GRANT or REVOKE errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("handleGrantErrors")
         private HandleGrantErrors handleGrantErrors;
 
         /**
          * The action taken in the event of errors related to GRANT or REVOKE errors.
-         *
          * @param handleGrantErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder handleGrantErrors(HandleGrantErrors handleGrantErrors) {
             this.handleGrantErrors = handleGrantErrors;
             this.__explicitlySet__.add("handleGrantErrors");
             return this;
         }
-        /** MySql Job Mode */
+        /**
+         * MySql Job Mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
         private JobModeMySql jobMode;
 
         /**
          * MySql Job Mode
-         *
          * @param jobMode the value to set
          * @return this builder
-         */
+         **/
         public Builder jobMode(JobModeMySql jobMode) {
             this.jobMode = jobMode;
             this.__explicitlySet__.add("jobMode");
@@ -216,7 +220,9 @@ public final class MySqlInitialLoadSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -226,23 +232,25 @@ public final class MySqlInitialLoadSettings
     }
 
     /**
-     * Enable (true) or disable (false) consistent data dumps by locking the instance for backup
-     * during the dump.
-     */
+     * Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isConsistent")
     private final Boolean isConsistent;
 
     /**
-     * Enable (true) or disable (false) consistent data dumps by locking the instance for backup
-     * during the dump.
+     * Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsConsistent() {
         return isConsistent;
     }
 
-    /** Include a statement at the start of the dump to set the time zone to UTC. */
+    /**
+     * Include a statement at the start of the dump to set the time zone to UTC.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTzUtc")
     private final Boolean isTzUtc;
 
@@ -250,80 +258,83 @@ public final class MySqlInitialLoadSettings
      * Include a statement at the start of the dump to set the time zone to UTC.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsTzUtc() {
         return isTzUtc;
     }
 
     /**
-     * Apply the specified requirements for compatibility with MySQL Database Service for all tables
-     * in the dump output, altering the dump files as necessary.
-     */
+     * Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump
+     * output, altering the dump files as necessary.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compatibility")
     private final java.util.List<CompatibilityOption> compatibility;
 
     /**
-     * Apply the specified requirements for compatibility with MySQL Database Service for all tables
-     * in the dump output, altering the dump files as necessary.
+     * Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump
+     * output, altering the dump files as necessary.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CompatibilityOption> getCompatibility() {
         return compatibility;
     }
 
-    /** Primary key compatibility option */
+    /**
+     * Primary key compatibility option
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryKeyCompatibility")
     private final PrimaryKeyCompatibility primaryKeyCompatibility;
 
     /**
      * Primary key compatibility option
-     *
      * @return the value
-     */
+     **/
     public PrimaryKeyCompatibility getPrimaryKeyCompatibility() {
         return primaryKeyCompatibility;
     }
 
     /**
-     * Import the dump even if it contains objects that already exist in the target schema in the
-     * MySQL instance.
-     */
+     * Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIgnoreExistingObjects")
     private final Boolean isIgnoreExistingObjects;
 
     /**
-     * Import the dump even if it contains objects that already exist in the target schema in the
-     * MySQL instance.
+     * Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsIgnoreExistingObjects() {
         return isIgnoreExistingObjects;
     }
 
-    /** The action taken in the event of errors related to GRANT or REVOKE errors. */
+    /**
+     * The action taken in the event of errors related to GRANT or REVOKE errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("handleGrantErrors")
     private final HandleGrantErrors handleGrantErrors;
 
     /**
      * The action taken in the event of errors related to GRANT or REVOKE errors.
-     *
      * @return the value
-     */
+     **/
     public HandleGrantErrors getHandleGrantErrors() {
         return handleGrantErrors;
     }
 
-    /** MySql Job Mode */
+    /**
+     * MySql Job Mode
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobMode")
     private final JobModeMySql jobMode;
 
     /**
      * MySql Job Mode
-     *
      * @return the value
-     */
+     **/
     public JobModeMySql getJobMode() {
         return jobMode;
     }
@@ -335,7 +346,6 @@ public final class MySqlInitialLoadSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

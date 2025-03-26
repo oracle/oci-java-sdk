@@ -8,9 +8,10 @@ import com.oracle.bmc.Region;
 
 /**
  * A region provider has the API to return the region.
- *
- * <p>An {@link AbstractAuthenticationDetailsProvider} can also implements this interface as a way
- * to bootstrap a client during initialization using the Region returned by this interface.
+ * <p>
+ * An {@link AbstractAuthenticationDetailsProvider} can also implements this interface
+ * as a way to bootstrap a client during initialization using the Region returned
+ * by this interface.
  */
 public interface RegionProvider {
     /**

@@ -31,25 +31,25 @@ import java.util.List;
 
 /**
  * This class provides an example of how to create an IPv6 VNIC attachment from scratch.
- *
- * <p>In order to demonstrate functionality, this script will create a VCN, subnet and an instance.
+ * <p>
+ * In order to demonstrate functionality, this script will create a VCN, subnet and an instance.
  * These will be deleted at the end of the script. . This script also makes some assumptions about
  * the resources it will create:
  *
  * <ul>
- *   <li>The VCN created by this example will have a display name defined by constant
- *       VCN_DISPLAY_NAME
- *   <li>The subnet created by this example will have a display name defined by constant
- *       SUBNET_DISPLAY_NAME
- *   <li>The VCN will have a IPv4 CIDR block defined by constant VCN_V4_CIDR
- *   <li>The VCN will have a IPv6 CIDR block defined by constant VCN_V6_CIDR
- *   <li>The Subnet will have a IPv4 CIDR block defined by constant SUBNET_V4_CIDR
- *   <li>The Subnet will have a IPv6 CIDR block defined by constant SUBNET_V6_CIDR
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Resources will be created in us-phoenix-1
- *   <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call
- *       <ul>
+ * <li>The VCN created by this example will have a display name defined by constant VCN_DISPLAY_NAME</li>
+ * <li>The subnet created by this example will have a display name defined by constant SUBNET_DISPLAY_NAME</li>
+ * <li>The VCN will have a IPv4 CIDR block defined by constant VCN_V4_CIDR</li>
+ * <li>The VCN will have a IPv6 CIDR block defined by constant VCN_V6_CIDR</li>
+ * <li>The Subnet will have a IPv4 CIDR block defined by constant SUBNET_V4_CIDR</li>
+ * <li>The Subnet will have a IPv6 CIDR block defined by constant SUBNET_V6_CIDR</li>
+ * <li>
+ * The configuration file used by service clients will be sourced from the default
+ * location (~/.oci/config) and the DEFAULT profile will be used
+ * </li>
+ * <li>Resources will be created in us-phoenix-1</li>
+ * <li>Resources will be created in the first AD returned from the ListAvailabilityDomains call</li>
+ * <ul>
  */
 public class CreateIpv6Example {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -70,9 +70,9 @@ public class CreateIpv6Example {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where a VCN will be created for tagging.
-     *     </ul>
+     *             <ul>
+     *             <li>The OCID of the compartment where a VCN will be created for tagging.</li>
+     *             </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -81,10 +81,8 @@ public class CreateIpv6Example {
         }
         final String compartmentId = args[0];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -92,10 +90,9 @@ public class CreateIpv6Example {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().build(provider);
-        final IdentityClient identityClient = IdentityClient.builder().build(provider);
-        final ComputeClient computeClient = ComputeClient.builder().build(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
+        final ComputeClient computeClient = new ComputeClient(provider);
 
         final Vcn vcn =
                 ExampleVcnHelper.createVcn(
@@ -175,7 +172,7 @@ public class CreateIpv6Example {
      * Returns the first availability domain in a compartment.
      *
      * @param identityClient the client used to communicate with the service
-     * @param compartmentId the OCID of the compartment whose availability domains we're listing
+     * @param compartmentId  the OCID of the compartment whose availability domains we're listing
      * @return a list of all availability domains in a compartment
      */
     protected static String getFirstAvailabilityDomain(
@@ -195,7 +192,7 @@ public class CreateIpv6Example {
     /**
      * Assigns an Ipv6 address to a provided VNIC.
      *
-     * @param vcnClient the client used to communicate with the service
+     * @param vcnClient         the client used to communicate with the service
      * @param createIpv6Details CreateIpv6Details to be used for creating the Ipv6
      * @return the Ipv6 object that has been created
      */

@@ -5,36 +5,38 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details about the link between two data flow operators. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details about the link between two data flow operators.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType",
-        defaultImpl = FlowPortLink.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType",
+    defaultImpl = FlowPortLink.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InputLink.class,
-            name = "INPUT_LINK"),
+        value = InputLink.class,
+        name = "INPUT_LINK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OutputLink.class,
-            name = "OUTPUT_LINK"),
+        value = OutputLink.class,
+        name = "OUTPUT_LINK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConditionalInputLink.class,
-            name = "CONDITIONAL_INPUT_LINK")
+        value = ConditionalInputLink.class,
+        name = "CONDITIONAL_INPUT_LINK"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class FlowPortLink extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class FlowPortLink extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -60,28 +62,30 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
         this.port = port;
     }
 
-    /** The key of the object. */
+    /**
+     * The key of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -94,44 +98,43 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Key of FlowPort reference */
+    /**
+     * Key of FlowPort reference
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
      * Key of FlowPort reference
-     *
      * @return the value
-     */
+     **/
     public String getPort() {
         return port;
     }
@@ -143,7 +146,6 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -194,20 +196,14 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
         return result;
     }
 
-    /** The model type of the object. */
-    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The model type of the object.
+     **/
+    public enum ModelType {
         ConditionalInputLink("CONDITIONAL_INPUT_LINK"),
         OutputLink("OUTPUT_LINK"),
         InputLink("INPUT_LINK"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ModelType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, ModelType> map;
@@ -215,9 +211,7 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
         static {
             map = new java.util.HashMap<>();
             for (ModelType v : ModelType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -235,10 +229,7 @@ public class FlowPortLink extends com.oracle.bmc.http.client.internal.Explicitly
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ModelType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid ModelType: " + key);
         }
     };
 }

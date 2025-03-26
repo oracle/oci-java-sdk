@@ -6,48 +6,65 @@ package com.oracle.bmc.recovery.requests;
 
 import com.oracle.bmc.recovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectionPoliciesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListProtectionPoliciesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectionPoliciesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListProtectionPoliciesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 public class ListProtectionPoliciesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The compartment OCID. */
+    /**
+     * The compartment OCID.
+     */
     private String compartmentId;
 
-    /** The compartment OCID. */
+    /**
+     * The compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.recovery.model.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.recovery.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire 'displayname' given. */
+    /**
+     * A filter to return only resources that match the entire 'displayname' given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire 'displayname' given. */
+    /**
+     * A filter to return only resources that match the entire 'displayname' given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The protection policy OCID. */
+    /**
+     * The protection policy OCID.
+     */
     private String protectionPolicyId;
 
-    /** The protection policy OCID. */
+    /**
+     * The protection policy OCID.
+     */
     public String getProtectionPolicyId() {
         return protectionPolicyId;
     }
-    /** A filter to return only the policies that match the owner as 'Customer' or 'Oracle'. */
+    /**
+     * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
+     */
     private Owner owner;
 
-    /** A filter to return only the policies that match the owner as 'Customer' or 'Oracle'. */
-    public enum Owner implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
+     **/
+    public enum Owner {
         Oracle("oracle"),
         Customer("customer"),
         ;
@@ -80,58 +97,68 @@ public class ListProtectionPoliciesRequest
         }
     };
 
-    /** A filter to return only the policies that match the owner as 'Customer' or 'Oracle'. */
+    /**
+     * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
+     */
     public Owner getOwner() {
         return owner;
     }
-    /** The maximum number of items to return. Specify a value greater than 4. */
+    /**
+     * The maximum number of items to return. Specify a value greater than 4.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. Specify a value greater than 4. */
+    /**
+     * The maximum number of items to return. Specify a value greater than 4.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: - ASC
-     * - DESC
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * Allowed values are:
+     *   - ASC
+     *   - DESC
      */
     private com.oracle.bmc.recovery.model.SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: - ASC
-     * - DESC
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     * Allowed values are:
+     *   - ASC
+     *   - DESC
      */
     public com.oracle.bmc.recovery.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order (sortOrder). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify
-     * a value, then TIMECREATED is used as the default sort order. Allowed values are: -
-     * TIMECREATED - DISPLAYNAME
+     * The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+     * Allowed values are:
+     *   - TIMECREATED
+     *   - DISPLAYNAME
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order (sortOrder). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify
-     * a value, then TIMECREATED is used as the default sort order. Allowed values are: -
-     * TIMECREATED - DISPLAYNAME
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+     * Allowed values are:
+     *   - TIMECREATED
+     *   - DISPLAYNAME
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -165,18 +192,23 @@ public class ListProtectionPoliciesRequest
     };
 
     /**
-     * The field to sort by. You can provide one sort order (sortOrder). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify
-     * a value, then TIMECREATED is used as the default sort order. Allowed values are: -
-     * TIMECREATED - DISPLAYNAME
+     * The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+     * Allowed values are:
+     *   - TIMECREATED
+     *   - DISPLAYNAME
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -184,15 +216,17 @@ public class ListProtectionPoliciesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListProtectionPoliciesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The compartment OCID. */
+        /**
+         * The compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * The compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -208,7 +242,6 @@ public class ListProtectionPoliciesRequest
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -217,12 +250,13 @@ public class ListProtectionPoliciesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire 'displayname' given. */
+        /**
+         * A filter to return only resources that match the entire 'displayname' given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire 'displayname' given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -231,12 +265,13 @@ public class ListProtectionPoliciesRequest
             return this;
         }
 
-        /** The protection policy OCID. */
+        /**
+         * The protection policy OCID.
+         */
         private String protectionPolicyId = null;
 
         /**
          * The protection policy OCID.
-         *
          * @param protectionPolicyId the value to set
          * @return this builder instance
          */
@@ -245,12 +280,13 @@ public class ListProtectionPoliciesRequest
             return this;
         }
 
-        /** A filter to return only the policies that match the owner as 'Customer' or 'Oracle'. */
+        /**
+         * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
+         */
         private Owner owner = null;
 
         /**
          * A filter to return only the policies that match the owner as 'Customer' or 'Oracle'.
-         *
          * @param owner the value to set
          * @return this builder instance
          */
@@ -259,12 +295,13 @@ public class ListProtectionPoliciesRequest
             return this;
         }
 
-        /** The maximum number of items to return. Specify a value greater than 4. */
+        /**
+         * The maximum number of items to return. Specify a value greater than 4.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. Specify a value greater than 4.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -274,15 +311,12 @@ public class ListProtectionPoliciesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -292,15 +326,18 @@ public class ListProtectionPoliciesRequest
         }
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: -
-         * ASC - DESC
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * Allowed values are:
+         *   - ASC
+         *   - DESC
          */
         private com.oracle.bmc.recovery.model.SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending (ASC) or descending (DESC). Allowed values are: -
-         * ASC - DESC
-         *
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         * Allowed values are:
+         *   - ASC
+         *   - DESC
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -310,18 +347,19 @@ public class ListProtectionPoliciesRequest
         }
 
         /**
-         * The field to sort by. You can provide one sort order (sortOrder). Default order for
-         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not
-         * specify a value, then TIMECREATED is used as the default sort order. Allowed values are:
-         * - TIMECREATED - DISPLAYNAME
+         * The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+         * Allowed values are:
+         *   - TIMECREATED
+         *   - DISPLAYNAME
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order (sortOrder). Default order for
-         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not
-         * specify a value, then TIMECREATED is used as the default sort order. Allowed values are:
-         * - TIMECREATED - DISPLAYNAME
+         * The field to sort by. You can provide one sort order (sortOrder). Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If you do not specify a value, then TIMECREATED is used as the default sort order.
+         * Allowed values are:
+         *   - TIMECREATED
+         *   - DISPLAYNAME
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -331,12 +369,13 @@ public class ListProtectionPoliciesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -347,19 +386,18 @@ public class ListProtectionPoliciesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -371,7 +409,6 @@ public class ListProtectionPoliciesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListProtectionPoliciesRequest o) {
@@ -393,11 +430,10 @@ public class ListProtectionPoliciesRequest
         /**
          * Build the instance of ListProtectionPoliciesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListProtectionPoliciesRequest
          */
@@ -411,8 +447,7 @@ public class ListProtectionPoliciesRequest
         /**
          * Build the instance of ListProtectionPoliciesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListProtectionPoliciesRequest
@@ -430,14 +465,12 @@ public class ListProtectionPoliciesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListProtectionPoliciesRequest(compartmentId, lifecycleState, displayName,
-            // protectionPolicyId, owner, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListProtectionPoliciesRequest(compartmentId, lifecycleState, displayName, protectionPolicyId, owner, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -456,7 +489,6 @@ public class ListProtectionPoliciesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

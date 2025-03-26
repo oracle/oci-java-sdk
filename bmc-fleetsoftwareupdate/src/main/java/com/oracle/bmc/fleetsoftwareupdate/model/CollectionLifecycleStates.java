@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible lifecycle states for the Exadata Fleet Update Collection resource. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum CollectionLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible lifecycle states for the Exadata Fleet Update Collection resource.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum CollectionLifecycleStates {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

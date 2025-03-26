@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Metadata of a column in a data object query result set. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata of a column in a data object query result set.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = QueryDataObjectResultSetColumnMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = QueryDataObjectResultSetColumnMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class QueryDataObjectResultSetColumnMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "dataType", "dataTypeName"})
     public QueryDataObjectResultSetColumnMetadata(
@@ -34,46 +33,49 @@ public final class QueryDataObjectResultSetColumnMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the column in a data object query result set. */
+        /**
+         * Name of the column in a data object query result set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the column in a data object query result set.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of the column in a data object query result. */
+        /**
+         * Type of the column in a data object query result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * Type of the column in a data object query result.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** Type name of the column in a data object query result set. */
+        /**
+         * Type name of the column in a data object query result set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
         private DataTypeName dataTypeName;
 
         /**
          * Type name of the column in a data object query result set.
-         *
          * @param dataTypeName the value to set
          * @return this builder
-         */
+         **/
         public Builder dataTypeName(DataTypeName dataTypeName) {
             this.dataTypeName = dataTypeName;
             this.__explicitlySet__.add("dataTypeName");
@@ -108,7 +110,9 @@ public final class QueryDataObjectResultSetColumnMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,42 +121,46 @@ public final class QueryDataObjectResultSetColumnMetadata
         return new Builder().copy(this);
     }
 
-    /** Name of the column in a data object query result set. */
+    /**
+     * Name of the column in a data object query result set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the column in a data object query result set.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of the column in a data object query result. */
+    /**
+     * Type of the column in a data object query result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * Type of the column in a data object query result.
-     *
      * @return the value
-     */
+     **/
     public String getDataType() {
         return dataType;
     }
 
-    /** Type name of the column in a data object query result set. */
-    public enum DataTypeName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type name of the column in a data object query result set.
+     **/
+    public enum DataTypeName {
         Number("NUMBER"),
         Timestamp("TIMESTAMP"),
         Varchar2("VARCHAR2"),
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -191,15 +199,16 @@ public final class QueryDataObjectResultSetColumnMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type name of the column in a data object query result set. */
+    /**
+     * Type name of the column in a data object query result set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataTypeName")
     private final DataTypeName dataTypeName;
 
     /**
      * Type name of the column in a data object query result set.
-     *
      * @return the value
-     */
+     **/
     public DataTypeName getDataTypeName() {
         return dataTypeName;
     }
@@ -211,7 +220,6 @@ public final class QueryDataObjectResultSetColumnMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

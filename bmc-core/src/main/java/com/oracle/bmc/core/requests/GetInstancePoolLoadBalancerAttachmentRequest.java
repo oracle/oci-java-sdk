@@ -6,32 +6,31 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetInstancePoolLoadBalancerAttachmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstancePoolLoadBalancerAttachmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetInstancePoolLoadBalancerAttachmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetInstancePoolLoadBalancerAttachmentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     private String instancePoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * instance pool.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
      */
     public String getInstancePoolId() {
         return instancePoolId;
     }
-    /** The OCID of the load balancer attachment. */
+    /**
+     * The OCID of the load balancer attachment.
+     */
     private String instancePoolLoadBalancerAttachmentId;
 
-    /** The OCID of the load balancer attachment. */
+    /**
+     * The OCID of the load balancer attachment.
+     */
     public String getInstancePoolLoadBalancerAttachmentId() {
         return instancePoolLoadBalancerAttachmentId;
     }
@@ -39,19 +38,17 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetInstancePoolLoadBalancerAttachmentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
          */
         private String instancePoolId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * instance pool.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the instance pool.
          * @param instancePoolId the value to set
          * @return this builder instance
          */
@@ -60,12 +57,13 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
             return this;
         }
 
-        /** The OCID of the load balancer attachment. */
+        /**
+         * The OCID of the load balancer attachment.
+         */
         private String instancePoolLoadBalancerAttachmentId = null;
 
         /**
          * The OCID of the load balancer attachment.
-         *
          * @param instancePoolLoadBalancerAttachmentId the value to set
          * @return this builder instance
          */
@@ -77,19 +75,18 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -101,7 +98,6 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetInstancePoolLoadBalancerAttachmentRequest o) {
@@ -113,14 +109,12 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
         }
 
         /**
-         * Build the instance of GetInstancePoolLoadBalancerAttachmentRequest as configured by this
-         * builder
+         * Build the instance of GetInstancePoolLoadBalancerAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetInstancePoolLoadBalancerAttachmentRequest
          */
@@ -132,11 +126,9 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
         }
 
         /**
-         * Build the instance of GetInstancePoolLoadBalancerAttachmentRequest as configured by this
-         * builder
+         * Build the instance of GetInstancePoolLoadBalancerAttachmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetInstancePoolLoadBalancerAttachmentRequest
@@ -147,14 +139,12 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
             request.instancePoolId = instancePoolId;
             request.instancePoolLoadBalancerAttachmentId = instancePoolLoadBalancerAttachmentId;
             return request;
-            // new GetInstancePoolLoadBalancerAttachmentRequest(instancePoolId,
-            // instancePoolLoadBalancerAttachmentId);
+            // new GetInstancePoolLoadBalancerAttachmentRequest(instancePoolId, instancePoolLoadBalancerAttachmentId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -165,7 +155,6 @@ public class GetInstancePoolLoadBalancerAttachmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

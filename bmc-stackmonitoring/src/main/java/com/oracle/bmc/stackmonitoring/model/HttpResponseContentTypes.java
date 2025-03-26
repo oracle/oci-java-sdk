@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible response content types of HTTP collection method */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum HttpResponseContentTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible response content types of HTTP collection method
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum HttpResponseContentTypes {
     TextPlain("TEXT_PLAIN"),
     TextHtml("TEXT_HTML"),
     ApplicationJson("APPLICATION_JSON"),

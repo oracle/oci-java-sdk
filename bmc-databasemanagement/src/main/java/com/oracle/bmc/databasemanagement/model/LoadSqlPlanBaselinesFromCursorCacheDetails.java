@@ -5,27 +5,27 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of SQL statements and plans to be loaded from cursor cache. You can specify the plans
- * to load using SQL ID, plan identifier, or filterName and filterValue pair. You can also control
- * the SQL plan baseline into which the plans are loaded using either SQL text or SQL handle. It
- * takes either credentials or databaseCredential. It's recommended to provide databaseCredential
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of SQL statements and plans to be loaded from cursor cache. You can specify
+ * the plans to load using SQL ID, plan identifier, or filterName and filterValue pair.
+ * You can also control the SQL plan baseline into which the plans are loaded using either
+ * SQL text or SQL handle.
+ * It takes either credentials or databaseCredential. It's recommended to provide databaseCredential
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LoadSqlPlanBaselinesFromCursorCacheDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LoadSqlPlanBaselinesFromCursorCacheDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LoadSqlPlanBaselinesFromCursorCacheDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jobName",
@@ -71,103 +71,109 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the database job used for loading SQL plan baselines. */
+        /**
+         * The name of the database job used for loading SQL plan baselines.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobName")
         private String jobName;
 
         /**
          * The name of the database job used for loading SQL plan baselines.
-         *
          * @param jobName the value to set
          * @return this builder
-         */
+         **/
         public Builder jobName(String jobName) {
             this.jobName = jobName;
             this.__explicitlySet__.add("jobName");
             return this;
         }
-        /** The description of the job. */
+        /**
+         * The description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDescription")
         private String jobDescription;
 
         /**
          * The description of the job.
-         *
          * @param jobDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDescription(String jobDescription) {
             this.jobDescription = jobDescription;
             this.__explicitlySet__.add("jobDescription");
             return this;
         }
-        /** The SQL statement identifier. Identifies a SQL statement in the cursor cache. */
+        /**
+         * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
         private String sqlId;
 
         /**
          * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
-         *
          * @param sqlId the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlId(String sqlId) {
             this.sqlId = sqlId;
             this.__explicitlySet__.add("sqlId");
             return this;
         }
         /**
-         * The plan identifier. By default, all plans present in the cursor cache for the SQL
-         * statement identified by {@code sqlId} are captured.
-         */
+         * The plan identifier. By default, all plans present in the cursor cache
+         * for the SQL statement identified by {@code sqlId} are captured.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private java.math.BigDecimal planHash;
 
         /**
-         * The plan identifier. By default, all plans present in the cursor cache for the SQL
-         * statement identified by {@code sqlId} are captured.
+         * The plan identifier. By default, all plans present in the cursor cache
+         * for the SQL statement identified by {@code sqlId} are captured.
          *
          * @param planHash the value to set
          * @return this builder
-         */
+         **/
         public Builder planHash(java.math.BigDecimal planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
         /**
-         * The SQL text to use in identifying the SQL plan baseline into which the plans are loaded.
-         * If the SQL plan baseline does not exist, it is created.
-         */
+         * The SQL text to use in identifying the SQL plan baseline into which the plans
+         * are loaded. If the SQL plan baseline does not exist, it is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
         private String sqlText;
 
         /**
-         * The SQL text to use in identifying the SQL plan baseline into which the plans are loaded.
-         * If the SQL plan baseline does not exist, it is created.
+         * The SQL text to use in identifying the SQL plan baseline into which the plans
+         * are loaded. If the SQL plan baseline does not exist, it is created.
          *
          * @param sqlText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlText(String sqlText) {
             this.sqlText = sqlText;
             this.__explicitlySet__.add("sqlText");
             return this;
         }
         /**
-         * The SQL handle to use in identifying the SQL plan baseline into which the plans are
-         * loaded.
-         */
+         * The SQL handle to use in identifying the SQL plan baseline into which
+         * the plans are loaded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
         private String sqlHandle;
 
         /**
-         * The SQL handle to use in identifying the SQL plan baseline into which the plans are
-         * loaded.
+         * The SQL handle to use in identifying the SQL plan baseline into which
+         * the plans are loaded.
          *
          * @param sqlHandle the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlHandle(String sqlHandle) {
             this.sqlHandle = sqlHandle;
             this.__explicitlySet__.add("sqlHandle");
@@ -175,79 +181,87 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         }
         /**
          * The name of the filter.
+         * <p>
+         * - SQL_TEXT: Search pattern to apply to SQL text.
+         * - PARSING_SCHEMA_NAME: Name of the parsing schema.
+         * - MODULE: Name of the module.
+         * - ACTION: Name of the action.
          *
-         * <p>- SQL_TEXT: Search pattern to apply to SQL text. - PARSING_SCHEMA_NAME: Name of the
-         * parsing schema. - MODULE: Name of the module. - ACTION: Name of the action.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterName")
         private FilterName filterName;
 
         /**
          * The name of the filter.
-         *
-         * <p>- SQL_TEXT: Search pattern to apply to SQL text. - PARSING_SCHEMA_NAME: Name of the
-         * parsing schema. - MODULE: Name of the module. - ACTION: Name of the action.
+         * <p>
+         * - SQL_TEXT: Search pattern to apply to SQL text.
+         * - PARSING_SCHEMA_NAME: Name of the parsing schema.
+         * - MODULE: Name of the module.
+         * - ACTION: Name of the action.
          *
          * @param filterName the value to set
          * @return this builder
-         */
+         **/
         public Builder filterName(FilterName filterName) {
             this.filterName = filterName;
             this.__explicitlySet__.add("filterName");
             return this;
         }
         /**
-         * The filter value. It is upper-cased except when it is enclosed in double quotes or filter
-         * name is {@code SQL_TEXT}.
-         */
+         * The filter value. It is upper-cased except when it is enclosed in
+         * double quotes or filter name is {@code SQL_TEXT}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterValue")
         private String filterValue;
 
         /**
-         * The filter value. It is upper-cased except when it is enclosed in double quotes or filter
-         * name is {@code SQL_TEXT}.
+         * The filter value. It is upper-cased except when it is enclosed in
+         * double quotes or filter name is {@code SQL_TEXT}.
          *
          * @param filterValue the value to set
          * @return this builder
-         */
+         **/
         public Builder filterValue(String filterValue) {
             this.filterValue = filterValue;
             this.__explicitlySet__.add("filterValue");
             return this;
         }
         /**
-         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-         * ({@code false}). By default, they are loaded as non-fixed plans.
-         */
+         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+         * By default, they are loaded as non-fixed plans.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFixed")
         private Boolean isFixed;
 
         /**
-         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-         * ({@code false}). By default, they are loaded as non-fixed plans.
+         * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+         * By default, they are loaded as non-fixed plans.
          *
          * @param isFixed the value to set
          * @return this builder
-         */
+         **/
         public Builder isFixed(Boolean isFixed) {
             this.isFixed = isFixed;
             this.__explicitlySet__.add("isFixed");
             return this;
         }
         /**
-         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-         * default, they are enabled.
-         */
+         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+         * By default, they are enabled.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
-         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-         * default, they are enabled.
+         * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+         * By default, they are enabled.
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -338,7 +352,9 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -347,101 +363,112 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the database job used for loading SQL plan baselines. */
+    /**
+     * The name of the database job used for loading SQL plan baselines.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobName")
     private final String jobName;
 
     /**
      * The name of the database job used for loading SQL plan baselines.
-     *
      * @return the value
-     */
+     **/
     public String getJobName() {
         return jobName;
     }
 
-    /** The description of the job. */
+    /**
+     * The description of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDescription")
     private final String jobDescription;
 
     /**
      * The description of the job.
-     *
      * @return the value
-     */
+     **/
     public String getJobDescription() {
         return jobDescription;
     }
 
-    /** The SQL statement identifier. Identifies a SQL statement in the cursor cache. */
+    /**
+     * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlId")
     private final String sqlId;
 
     /**
      * The SQL statement identifier. Identifies a SQL statement in the cursor cache.
-     *
      * @return the value
-     */
+     **/
     public String getSqlId() {
         return sqlId;
     }
 
     /**
-     * The plan identifier. By default, all plans present in the cursor cache for the SQL statement
-     * identified by {@code sqlId} are captured.
-     */
+     * The plan identifier. By default, all plans present in the cursor cache
+     * for the SQL statement identified by {@code sqlId} are captured.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final java.math.BigDecimal planHash;
 
     /**
-     * The plan identifier. By default, all plans present in the cursor cache for the SQL statement
-     * identified by {@code sqlId} are captured.
+     * The plan identifier. By default, all plans present in the cursor cache
+     * for the SQL statement identified by {@code sqlId} are captured.
      *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getPlanHash() {
         return planHash;
     }
 
     /**
-     * The SQL text to use in identifying the SQL plan baseline into which the plans are loaded. If
-     * the SQL plan baseline does not exist, it is created.
-     */
+     * The SQL text to use in identifying the SQL plan baseline into which the plans
+     * are loaded. If the SQL plan baseline does not exist, it is created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlText")
     private final String sqlText;
 
     /**
-     * The SQL text to use in identifying the SQL plan baseline into which the plans are loaded. If
-     * the SQL plan baseline does not exist, it is created.
+     * The SQL text to use in identifying the SQL plan baseline into which the plans
+     * are loaded. If the SQL plan baseline does not exist, it is created.
      *
      * @return the value
-     */
+     **/
     public String getSqlText() {
         return sqlText;
     }
 
     /**
-     * The SQL handle to use in identifying the SQL plan baseline into which the plans are loaded.
-     */
+     * The SQL handle to use in identifying the SQL plan baseline into which
+     * the plans are loaded.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlHandle")
     private final String sqlHandle;
 
     /**
-     * The SQL handle to use in identifying the SQL plan baseline into which the plans are loaded.
+     * The SQL handle to use in identifying the SQL plan baseline into which
+     * the plans are loaded.
      *
      * @return the value
-     */
+     **/
     public String getSqlHandle() {
         return sqlHandle;
     }
 
     /**
      * The name of the filter.
+     * <p>
+     * - SQL_TEXT: Search pattern to apply to SQL text.
+     * - PARSING_SCHEMA_NAME: Name of the parsing schema.
+     * - MODULE: Name of the module.
+     * - ACTION: Name of the action.
      *
-     * <p>- SQL_TEXT: Search pattern to apply to SQL text. - PARSING_SCHEMA_NAME: Name of the
-     * parsing schema. - MODULE: Name of the module. - ACTION: Name of the action.
-     */
-    public enum FilterName implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum FilterName {
         SqlText("SQL_TEXT"),
         ParsingSchemaName("PARSING_SCHEMA_NAME"),
         Module("MODULE"),
@@ -477,72 +504,80 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
     };
     /**
      * The name of the filter.
+     * <p>
+     * - SQL_TEXT: Search pattern to apply to SQL text.
+     * - PARSING_SCHEMA_NAME: Name of the parsing schema.
+     * - MODULE: Name of the module.
+     * - ACTION: Name of the action.
      *
-     * <p>- SQL_TEXT: Search pattern to apply to SQL text. - PARSING_SCHEMA_NAME: Name of the
-     * parsing schema. - MODULE: Name of the module. - ACTION: Name of the action.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterName")
     private final FilterName filterName;
 
     /**
      * The name of the filter.
-     *
-     * <p>- SQL_TEXT: Search pattern to apply to SQL text. - PARSING_SCHEMA_NAME: Name of the
-     * parsing schema. - MODULE: Name of the module. - ACTION: Name of the action.
+     * <p>
+     * - SQL_TEXT: Search pattern to apply to SQL text.
+     * - PARSING_SCHEMA_NAME: Name of the parsing schema.
+     * - MODULE: Name of the module.
+     * - ACTION: Name of the action.
      *
      * @return the value
-     */
+     **/
     public FilterName getFilterName() {
         return filterName;
     }
 
     /**
-     * The filter value. It is upper-cased except when it is enclosed in double quotes or filter
-     * name is {@code SQL_TEXT}.
-     */
+     * The filter value. It is upper-cased except when it is enclosed in
+     * double quotes or filter name is {@code SQL_TEXT}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterValue")
     private final String filterValue;
 
     /**
-     * The filter value. It is upper-cased except when it is enclosed in double quotes or filter
-     * name is {@code SQL_TEXT}.
+     * The filter value. It is upper-cased except when it is enclosed in
+     * double quotes or filter name is {@code SQL_TEXT}.
      *
      * @return the value
-     */
+     **/
     public String getFilterValue() {
         return filterValue;
     }
 
     /**
-     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-     * ({@code false}). By default, they are loaded as non-fixed plans.
-     */
+     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+     * By default, they are loaded as non-fixed plans.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFixed")
     private final Boolean isFixed;
 
     /**
-     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans
-     * ({@code false}). By default, they are loaded as non-fixed plans.
+     * Indicates whether the plans are loaded as fixed plans ({@code true}) or non-fixed plans ({@code false}).
+     * By default, they are loaded as non-fixed plans.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFixed() {
         return isFixed;
     }
 
     /**
-     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-     * default, they are enabled.
-     */
+     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+     * By default, they are enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
-     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}). By
-     * default, they are enabled.
+     * Indicates whether the loaded plans are enabled ({@code true}) or not ({@code false}).
+     * By default, they are enabled.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
@@ -568,7 +603,6 @@ public final class LoadSqlPlanBaselinesFromCursorCacheDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * Binary object needed for vSphere upgrade <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+ * Binary object needed for vSphere upgrade
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VsphereUpgradeObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VsphereUpgradeObject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VsphereUpgradeObject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VsphereUpgradeObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"downloadLink", "linkDescription"})
     public VsphereUpgradeObject(String downloadLink, String linkDescription) {
@@ -32,31 +31,33 @@ public final class VsphereUpgradeObject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Binary object download link. */
+        /**
+         * Binary object download link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadLink")
         private String downloadLink;
 
         /**
          * Binary object download link.
-         *
          * @param downloadLink the value to set
          * @return this builder
-         */
+         **/
         public Builder downloadLink(String downloadLink) {
             this.downloadLink = downloadLink;
             this.__explicitlySet__.add("downloadLink");
             return this;
         }
-        /** Binary object description. */
+        /**
+         * Binary object description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkDescription")
         private String linkDescription;
 
         /**
          * Binary object description.
-         *
          * @param linkDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder linkDescription(String linkDescription) {
             this.linkDescription = linkDescription;
             this.__explicitlySet__.add("linkDescription");
@@ -87,7 +88,9 @@ public final class VsphereUpgradeObject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class VsphereUpgradeObject
         return new Builder().copy(this);
     }
 
-    /** Binary object download link. */
+    /**
+     * Binary object download link.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadLink")
     private final String downloadLink;
 
     /**
      * Binary object download link.
-     *
      * @return the value
-     */
+     **/
     public String getDownloadLink() {
         return downloadLink;
     }
 
-    /** Binary object description. */
+    /**
+     * Binary object description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkDescription")
     private final String linkDescription;
 
     /**
      * Binary object description.
-     *
      * @return the value
-     */
+     **/
     public String getLinkDescription() {
         return linkDescription;
     }
@@ -129,7 +134,6 @@ public final class VsphereUpgradeObject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

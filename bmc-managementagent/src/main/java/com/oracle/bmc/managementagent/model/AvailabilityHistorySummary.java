@@ -5,23 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * Availability history of Management Agent. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * Availability history of Management Agent.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AvailabilityHistorySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AvailabilityHistorySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AvailabilityHistorySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "managementAgentId",
@@ -43,69 +42,65 @@ public final class AvailabilityHistorySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** agent identifier */
+        /**
+         * agent identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
          * agent identifier
-         *
          * @param managementAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
-        /** The availability status of managementAgent */
+        /**
+         * The availability status of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
         /**
          * The availability status of managementAgent
-         *
          * @param availabilityStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
         /**
-         * The time at which the Management Agent moved to the availability status. An RFC3339
-         * formatted datetime string
-         */
+         * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusStarted")
         private java.util.Date timeAvailabilityStatusStarted;
 
         /**
-         * The time at which the Management Agent moved to the availability status. An RFC3339
-         * formatted datetime string
-         *
+         * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
          * @param timeAvailabilityStatusStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAvailabilityStatusStarted(java.util.Date timeAvailabilityStatusStarted) {
             this.timeAvailabilityStatusStarted = timeAvailabilityStatusStarted;
             this.__explicitlySet__.add("timeAvailabilityStatusStarted");
             return this;
         }
         /**
-         * The time till which the Management Agent was known to be in the availability status. An
-         * RFC3339 formatted datetime string
-         */
+         * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusEnded")
         private java.util.Date timeAvailabilityStatusEnded;
 
         /**
-         * The time till which the Management Agent was known to be in the availability status. An
-         * RFC3339 formatted datetime string
-         *
+         * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
          * @param timeAvailabilityStatusEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAvailabilityStatusEnded(java.util.Date timeAvailabilityStatusEnded) {
             this.timeAvailabilityStatusEnded = timeAvailabilityStatusEnded;
             this.__explicitlySet__.add("timeAvailabilityStatusEnded");
@@ -146,7 +141,9 @@ public final class AvailabilityHistorySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,62 +152,58 @@ public final class AvailabilityHistorySummary
         return new Builder().copy(this);
     }
 
-    /** agent identifier */
+    /**
+     * agent identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
      * agent identifier
-     *
      * @return the value
-     */
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
-    /** The availability status of managementAgent */
+    /**
+     * The availability status of managementAgent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
     /**
      * The availability status of managementAgent
-     *
      * @return the value
-     */
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
 
     /**
-     * The time at which the Management Agent moved to the availability status. An RFC3339 formatted
-     * datetime string
-     */
+     * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusStarted")
     private final java.util.Date timeAvailabilityStatusStarted;
 
     /**
-     * The time at which the Management Agent moved to the availability status. An RFC3339 formatted
-     * datetime string
-     *
+     * The time at which the Management Agent moved to the availability status. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAvailabilityStatusStarted() {
         return timeAvailabilityStatusStarted;
     }
 
     /**
-     * The time till which the Management Agent was known to be in the availability status. An
-     * RFC3339 formatted datetime string
-     */
+     * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAvailabilityStatusEnded")
     private final java.util.Date timeAvailabilityStatusEnded;
 
     /**
-     * The time till which the Management Agent was known to be in the availability status. An
-     * RFC3339 formatted datetime string
-     *
+     * The time till which the Management Agent was known to be in the availability status. An RFC3339 formatted datetime string
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAvailabilityStatusEnded() {
         return timeAvailabilityStatusEnded;
     }
@@ -222,7 +215,6 @@ public final class AvailabilityHistorySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

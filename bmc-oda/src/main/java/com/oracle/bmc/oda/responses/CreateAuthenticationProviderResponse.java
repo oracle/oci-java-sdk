@@ -6,14 +6,15 @@ package com.oracle.bmc.oda.responses;
 
 import com.oracle.bmc.oda.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class CreateAuthenticationProviderResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Fully qualified URL for the newly created resource. */
+    /**
+     * Fully qualified URL for the newly created resource.
+     */
     private String location;
 
     /**
      * Fully qualified URL for the newly created resource.
-     *
      * @return the value
      */
     public String getLocation() {
@@ -21,15 +22,12 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-     * control.
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      */
     private String etag;
 
     /**
-     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-     * control.
-     *
+     * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
      * @return the value
      */
     public String getEtag() {
@@ -37,14 +35,15 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -52,12 +51,13 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned {@code AuthenticationProvider} instance. */
+    /**
+     * The returned AuthenticationProvider instance.
+     */
     private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
     /**
-     * The returned {@code AuthenticationProvider} instance.
-     *
+     * The returned AuthenticationProvider instance.
      * @return the value
      */
     public com.oracle.bmc.oda.model.AuthenticationProvider getAuthenticationProvider() {
@@ -74,7 +74,7 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
     })
     private CreateAuthenticationProviderResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcRequestId,
@@ -86,31 +86,28 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
         this.authenticationProvider = authenticationProvider;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateAuthenticationProviderResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Fully qualified URL for the newly created resource. */
+        /**
+         * Fully qualified URL for the newly created resource.
+         */
         private String location;
 
         /**
          * Fully qualified URL for the newly created resource.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -120,15 +117,12 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-         * control.
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
          */
         private String etag;
 
         /**
-         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency
-         * control.
-         *
+         * For use in a PUT or DELETE {@code if-match} query parameter for optimistic concurrency control.
          * @param etag the value to set
          * @return this builder
          */
@@ -138,14 +132,15 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -155,12 +150,13 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code AuthenticationProvider} instance. */
+        /**
+         * The returned AuthenticationProvider instance.
+         */
         private com.oracle.bmc.oda.model.AuthenticationProvider authenticationProvider;
 
         /**
-         * The returned {@code AuthenticationProvider} instance.
-         *
+         * The returned AuthenticationProvider instance.
          * @param authenticationProvider the value to set
          * @return this builder
          */
@@ -172,10 +168,8 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateAuthenticationProviderResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -189,10 +183,8 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateAuthenticationProviderResponse build() {
             return new CreateAuthenticationProviderResponse(
                     __httpStatusCode__,
@@ -206,7 +198,6 @@ public class CreateAuthenticationProviderResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

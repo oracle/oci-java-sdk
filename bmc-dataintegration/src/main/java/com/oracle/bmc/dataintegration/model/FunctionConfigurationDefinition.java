@@ -5,24 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The configuration details of a configurable object. This contains one or more config param
- * definitions. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The configuration details of a configurable object. This contains one or more config param definitions.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FunctionConfigurationDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FunctionConfigurationDefinition.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FunctionConfigurationDefinition
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,46 +48,49 @@ public final class FunctionConfigurationDefinition
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The key of the object. */
+        /**
+         * The key of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The key of the object.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private ModelType modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(ModelType modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The model version of an object. */
+        /**
+         * The model version of an object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The model version of an object.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -104,31 +105,33 @@ public final class FunctionConfigurationDefinition
             this.__explicitlySet__.add("parentRef");
             return this;
         }
-        /** Specifies whether the configuration is contained or not. */
+        /**
+         * Specifies whether the configuration is contained or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isContained")
         private Boolean isContained;
 
         /**
          * Specifies whether the configuration is contained or not.
-         *
          * @param isContained the value to set
          * @return this builder
-         */
+         **/
         public Builder isContained(Boolean isContained) {
             this.isContained = isContained;
             this.__explicitlySet__.add("isContained");
             return this;
         }
-        /** The parameter configuration details. */
+        /**
+         * The parameter configuration details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configParamDefs")
         private java.util.Map<String, ConfigParameterDefinition> configParamDefs;
 
         /**
          * The parameter configuration details.
-         *
          * @param configParamDefs the value to set
          * @return this builder
-         */
+         **/
         public Builder configParamDefs(
                 java.util.Map<String, ConfigParameterDefinition> configParamDefs) {
             this.configParamDefs = configParamDefs;
@@ -178,7 +181,9 @@ public final class FunctionConfigurationDefinition
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -187,26 +192,29 @@ public final class FunctionConfigurationDefinition
         return new Builder().copy(this);
     }
 
-    /** The key of the object. */
+    /**
+     * The key of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The key of the object.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The type of the object. */
-    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the object.
+     **/
+    public enum ModelType {
         ConfigDefinition("CONFIG_DEFINITION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -245,28 +253,30 @@ public final class FunctionConfigurationDefinition
             return UnknownEnumValue;
         }
     };
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final ModelType modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public ModelType getModelType() {
         return modelType;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -278,28 +288,30 @@ public final class FunctionConfigurationDefinition
         return parentRef;
     }
 
-    /** Specifies whether the configuration is contained or not. */
+    /**
+     * Specifies whether the configuration is contained or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isContained")
     private final Boolean isContained;
 
     /**
      * Specifies whether the configuration is contained or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsContained() {
         return isContained;
     }
 
-    /** The parameter configuration details. */
+    /**
+     * The parameter configuration details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configParamDefs")
     private final java.util.Map<String, ConfigParameterDefinition> configParamDefs;
 
     /**
      * The parameter configuration details.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, ConfigParameterDefinition> getConfigParamDefs() {
         return configParamDefs;
     }
@@ -311,7 +323,6 @@ public final class FunctionConfigurationDefinition
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

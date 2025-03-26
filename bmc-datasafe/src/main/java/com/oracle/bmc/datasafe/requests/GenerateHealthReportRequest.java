@@ -6,52 +6,62 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateHealthReportExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateHealthReportRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GenerateHealthReportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GenerateHealthReportRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GenerateHealthReportRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.GenerateHealthReportDetails> {
 
-    /** The OCID of the masking policy. */
+    /**
+     * The OCID of the masking policy.
+     */
     private String maskingPolicyId;
 
-    /** The OCID of the masking policy. */
+    /**
+     * The OCID of the masking policy.
+     */
     public String getMaskingPolicyId() {
         return maskingPolicyId;
     }
-    /** Details to perform an health check. */
+    /**
+     * Details to perform an health check.
+     */
     private com.oracle.bmc.datasafe.model.GenerateHealthReportDetails generateHealthReportDetails;
 
-    /** Details to perform an health check. */
+    /**
+     * Details to perform an health check.
+     */
     public com.oracle.bmc.datasafe.model.GenerateHealthReportDetails
             getGenerateHealthReportDetails() {
         return generateHealthReportDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -59,7 +69,6 @@ public class GenerateHealthReportRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +81,17 @@ public class GenerateHealthReportRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GenerateHealthReportRequest,
                     com.oracle.bmc.datasafe.model.GenerateHealthReportDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the masking policy. */
+        /**
+         * The OCID of the masking policy.
+         */
         private String maskingPolicyId = null;
 
         /**
          * The OCID of the masking policy.
-         *
          * @param maskingPolicyId the value to set
          * @return this builder instance
          */
@@ -89,13 +100,14 @@ public class GenerateHealthReportRequest
             return this;
         }
 
-        /** Details to perform an health check. */
+        /**
+         * Details to perform an health check.
+         */
         private com.oracle.bmc.datasafe.model.GenerateHealthReportDetails
                 generateHealthReportDetails = null;
 
         /**
          * Details to perform an health check.
-         *
          * @param generateHealthReportDetails the value to set
          * @return this builder instance
          */
@@ -106,12 +118,13 @@ public class GenerateHealthReportRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -122,19 +135,18 @@ public class GenerateHealthReportRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -146,19 +158,18 @@ public class GenerateHealthReportRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -170,7 +181,6 @@ public class GenerateHealthReportRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GenerateHealthReportRequest o) {
@@ -186,11 +196,10 @@ public class GenerateHealthReportRequest
         /**
          * Build the instance of GenerateHealthReportRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GenerateHealthReportRequest
          */
@@ -203,7 +212,6 @@ public class GenerateHealthReportRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -216,8 +224,7 @@ public class GenerateHealthReportRequest
         /**
          * Build the instance of GenerateHealthReportRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GenerateHealthReportRequest
@@ -229,14 +236,12 @@ public class GenerateHealthReportRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new GenerateHealthReportRequest(maskingPolicyId, generateHealthReportDetails,
-            // opcRequestId, opcRetryToken);
+            // new GenerateHealthReportRequest(maskingPolicyId, generateHealthReportDetails, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -249,7 +254,6 @@ public class GenerateHealthReportRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

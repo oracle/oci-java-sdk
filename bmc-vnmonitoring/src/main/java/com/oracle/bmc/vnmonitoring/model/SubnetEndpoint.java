@@ -5,60 +5,60 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the details required for a SUBNET-type {@code Endpoint}. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the details required for a SUBNET-type {@code Endpoint}.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SubnetEndpoint.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SubnetEndpoint extends Endpoint {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The IPv4 address of the {@code Endpoint}. */
+        /**
+         * The IPv4 address of the {@code Endpoint}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
         /**
          * The IPv4 address of the {@code Endpoint}.
-         *
          * @param address the value to set
          * @return this builder
-         */
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet containing the IP address. This can be used to disambiguate which subnet is
-         * intended, in case the IP address is used in more than one subnet (when there are subnets
-         * with overlapping IP ranges).
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address.
+         * This can be used to disambiguate which subnet is intended, in case the IP address
+         * is used in more than one subnet (when there are subnets with overlapping IP ranges).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet containing the IP address. This can be used to disambiguate which subnet is
-         * intended, in case the IP address is used in more than one subnet (when there are subnets
-         * with overlapping IP ranges).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address.
+         * This can be used to disambiguate which subnet is intended, in case the IP address
+         * is used in more than one subnet (when there are subnets with overlapping IP ranges).
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -88,7 +88,9 @@ public final class SubnetEndpoint extends Endpoint {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,36 +106,36 @@ public final class SubnetEndpoint extends Endpoint {
         this.subnetId = subnetId;
     }
 
-    /** The IPv4 address of the {@code Endpoint}. */
+    /**
+     * The IPv4 address of the {@code Endpoint}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
     /**
      * The IPv4 address of the {@code Endpoint}.
-     *
      * @return the value
-     */
+     **/
     public String getAddress() {
         return address;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet containing the IP address. This can be used to disambiguate which subnet is intended,
-     * in case the IP address is used in more than one subnet (when there are subnets with
-     * overlapping IP ranges).
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address.
+     * This can be used to disambiguate which subnet is intended, in case the IP address
+     * is used in more than one subnet (when there are subnets with overlapping IP ranges).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet containing the IP address. This can be used to disambiguate which subnet is intended,
-     * in case the IP address is used in more than one subnet (when there are subnets with
-     * overlapping IP ranges).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet containing the IP address.
+     * This can be used to disambiguate which subnet is intended, in case the IP address
+     * is used in more than one subnet (when there are subnets with overlapping IP ranges).
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -145,7 +147,6 @@ public final class SubnetEndpoint extends Endpoint {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

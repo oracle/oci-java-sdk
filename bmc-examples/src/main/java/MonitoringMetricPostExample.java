@@ -24,17 +24,20 @@ import java.util.Map;
  * This class demonstrates how to use the Monitoring api in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Posting metric data
+ *   <li>Posting metric data</li>
  * </ul>
  *
  * This class makes the following assumptions:
- *
  * <ul>
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Region where the example will be run is: us-phoenix-1
- *   <li>The user has the appropriate permissions to post metrics in the compartment specified.
- *       <ul>
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Region where the example will be run is: us-phoenix-1</li>
+ *   <li>
+ *      The user has the appropriate permissions to post metrics in the compartment specified.
+ *   </li>
+ * <ul>
  */
 public class MonitoringMetricPostExample {
 
@@ -48,7 +51,9 @@ public class MonitoringMetricPostExample {
                         + "MonitoringMetricPostExample <compartment> <namespace> <metricName> [oci-profile-name]\n");
     }
 
-    /** The entry point for the example. */
+    /**
+     * The entry point for the example.
+     */
     public static void main(String[] args) throws Exception {
         if (args.length < 3) {
             printUsageAndThrowException("Insufficient args\n");
@@ -125,14 +130,14 @@ public class MonitoringMetricPostExample {
 
     private static MonitoringClient getMonitoringClient(String profile) throws IOException {
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
         // "~/.oci/config", use ConfigFileReader.parse(configurationFilePath, profileName)
         final ConfigFile configFile = ConfigFileReader.parseDefault(profile);
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final MonitoringClient monitoringClient = MonitoringClient.builder().build(provider);
+        final MonitoringClient monitoringClient = new MonitoringClient(provider);
+        monitoringClient.setEndpoint("https://telemetry-ingestion.us-phoenix-1.oraclecloud.com/");
         return monitoringClient;
     }
 }

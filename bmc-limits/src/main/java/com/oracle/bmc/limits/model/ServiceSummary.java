@@ -5,22 +5,19 @@
 package com.oracle.bmc.limits.model;
 
 /**
- * A specific OCI service supported by resource limits. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
+ * A specific OCI service supported by resource limits.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181025")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ServiceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ServiceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ServiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "description", "supportedSubscriptions"})
     public ServiceSummary(
@@ -33,50 +30,51 @@ public final class ServiceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The service name. Use this when calling other APIs. */
+        /**
+         * The service name. Use this when calling other APIs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The service name. Use this when calling other APIs.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The friendly service name. */
+        /**
+         * The friendly service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The friendly service name.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * An array of subscription types supported by the service. e,g The type of subscription,
-         * such as 'SAAS', 'ERP', 'CRM'.
-         */
+         * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
         private java.util.List<String> supportedSubscriptions;
 
         /**
-         * An array of subscription types supported by the service. e,g The type of subscription,
-         * such as 'SAAS', 'ERP', 'CRM'.
+         * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
          *
          * @param supportedSubscriptions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedSubscriptions(java.util.List<String> supportedSubscriptions) {
             this.supportedSubscriptions = supportedSubscriptions;
             this.__explicitlySet__.add("supportedSubscriptions");
@@ -110,7 +108,9 @@ public final class ServiceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,45 +119,46 @@ public final class ServiceSummary
         return new Builder().copy(this);
     }
 
-    /** The service name. Use this when calling other APIs. */
+    /**
+     * The service name. Use this when calling other APIs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The service name. Use this when calling other APIs.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The friendly service name. */
+    /**
+     * The friendly service name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The friendly service name.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * An array of subscription types supported by the service. e,g The type of subscription, such
-     * as 'SAAS', 'ERP', 'CRM'.
-     */
+     * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
     private final java.util.List<String> supportedSubscriptions;
 
     /**
-     * An array of subscription types supported by the service. e,g The type of subscription, such
-     * as 'SAAS', 'ERP', 'CRM'.
+     * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedSubscriptions() {
         return supportedSubscriptions;
     }
@@ -169,7 +170,6 @@ public final class ServiceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Monitoring scrape object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Monitoring scrape object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UnifiedAgentKubernetesScrapeTarget.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UnifiedAgentKubernetesScrapeTarget.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UnifiedAgentKubernetesScrapeTarget
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceType",
@@ -43,61 +42,65 @@ public final class UnifiedAgentKubernetesScrapeTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of resource to scrape metrics. */
+        /**
+         * Type of resource to scrape metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private ResourceType resourceType;
 
         /**
          * Type of resource to scrape metrics.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(ResourceType resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** K8s namespace of the resource. */
+        /**
+         * K8s namespace of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("k8sNamespace")
         private String k8sNamespace;
 
         /**
          * K8s namespace of the resource.
-         *
          * @param k8sNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder k8sNamespace(String k8sNamespace) {
             this.k8sNamespace = k8sNamespace;
             this.__explicitlySet__.add("k8sNamespace");
             return this;
         }
-        /** Name of the service prepended to the endpoints. */
+        /**
+         * Name of the service prepended to the endpoints.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * Name of the service prepended to the endpoints.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** Resource group in OCI monitoring. */
+        /**
+         * Resource group in OCI monitoring.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
          * Resource group in OCI monitoring.
-         *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
@@ -138,7 +141,9 @@ public final class UnifiedAgentKubernetesScrapeTarget
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,16 +152,18 @@ public final class UnifiedAgentKubernetesScrapeTarget
         return new Builder().copy(this);
     }
 
-    /** Type of resource to scrape metrics. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of resource to scrape metrics.
+     **/
+    public enum ResourceType {
         Pods("PODS"),
         Endpoints("ENDPOINTS"),
         Nodes("NODES"),
         Services("SERVICES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -195,54 +202,58 @@ public final class UnifiedAgentKubernetesScrapeTarget
             return UnknownEnumValue;
         }
     };
-    /** Type of resource to scrape metrics. */
+    /**
+     * Type of resource to scrape metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
     /**
      * Type of resource to scrape metrics.
-     *
      * @return the value
-     */
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
 
-    /** K8s namespace of the resource. */
+    /**
+     * K8s namespace of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("k8sNamespace")
     private final String k8sNamespace;
 
     /**
      * K8s namespace of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getK8sNamespace() {
         return k8sNamespace;
     }
 
-    /** Name of the service prepended to the endpoints. */
+    /**
+     * Name of the service prepended to the endpoints.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * Name of the service prepended to the endpoints.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** Resource group in OCI monitoring. */
+    /**
+     * Resource group in OCI monitoring.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
      * Resource group in OCI monitoring.
-     *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
@@ -254,7 +265,6 @@ public final class UnifiedAgentKubernetesScrapeTarget
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

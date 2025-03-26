@@ -5,23 +5,22 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Information about a single backend server health check result reported by a load balancer. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * Information about a single backend server health check result reported by a load balancer.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HealthCheckResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HealthCheckResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = HealthCheckResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HealthCheckResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subnetId",
@@ -44,42 +43,42 @@ public final class HealthCheckResult
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet hosting the load balancer that reported this health check status.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet hosting the load balancer that reported this health check status.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The IP address of the health check status report provider. This identifier helps you
-         * differentiate same-subnet load balancers that report health check status.
+         * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+         * load balancers that report health check status.
+         * <p>
+         * Example: {@code 10.0.0.7}
          *
-         * <p>Example: {@code 10.0.0.7}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
         private String sourceIpAddress;
 
         /**
-         * The IP address of the health check status report provider. This identifier helps you
-         * differentiate same-subnet load balancers that report health check status.
-         *
-         * <p>Example: {@code 10.0.0.7}
+         * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+         * load balancers that report health check status.
+         * <p>
+         * Example: {@code 10.0.0.7}
          *
          * @param sourceIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceIpAddress(String sourceIpAddress) {
             this.sourceIpAddress = sourceIpAddress;
             this.__explicitlySet__.add("sourceIpAddress");
@@ -87,26 +86,30 @@ public final class HealthCheckResult
         }
         /**
          * The date and time the data was retrieved, in the format defined by RFC3339.
+         * <p>
+         * Example: {@code 2017-06-02T18:28:11+00:00}
          *
-         * <p>Example: {@code 2017-06-02T18:28:11+00:00}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * The date and time the data was retrieved, in the format defined by RFC3339.
-         *
-         * <p>Example: {@code 2017-06-02T18:28:11+00:00}
+         * <p>
+         * Example: {@code 2017-06-02T18:28:11+00:00}
          *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** The result of the most recent health check. */
+        /**
+         * The result of the most recent health check.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
         private HealthCheckStatus healthCheckStatus;
 
@@ -115,7 +118,7 @@ public final class HealthCheckResult
          *
          * @param healthCheckStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder healthCheckStatus(HealthCheckStatus healthCheckStatus) {
             this.healthCheckStatus = healthCheckStatus;
             this.__explicitlySet__.add("healthCheckStatus");
@@ -156,7 +159,9 @@ public final class HealthCheckResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,64 +171,68 @@ public final class HealthCheckResult
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet hosting the load balancer that reported this health check status.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet hosting the load balancer that reported this health check status.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet hosting the load balancer that reported this health check status.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The IP address of the health check status report provider. This identifier helps you
-     * differentiate same-subnet load balancers that report health check status.
+     * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+     * load balancers that report health check status.
+     * <p>
+     * Example: {@code 10.0.0.7}
      *
-     * <p>Example: {@code 10.0.0.7}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceIpAddress")
     private final String sourceIpAddress;
 
     /**
-     * The IP address of the health check status report provider. This identifier helps you
-     * differentiate same-subnet load balancers that report health check status.
-     *
-     * <p>Example: {@code 10.0.0.7}
+     * The IP address of the health check status report provider. This identifier helps you differentiate same-subnet
+     * load balancers that report health check status.
+     * <p>
+     * Example: {@code 10.0.0.7}
      *
      * @return the value
-     */
+     **/
     public String getSourceIpAddress() {
         return sourceIpAddress;
     }
 
     /**
      * The date and time the data was retrieved, in the format defined by RFC3339.
+     * <p>
+     * Example: {@code 2017-06-02T18:28:11+00:00}
      *
-     * <p>Example: {@code 2017-06-02T18:28:11+00:00}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * The date and time the data was retrieved, in the format defined by RFC3339.
-     *
-     * <p>Example: {@code 2017-06-02T18:28:11+00:00}
+     * <p>
+     * Example: {@code 2017-06-02T18:28:11+00:00}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** The result of the most recent health check. */
-    public enum HealthCheckStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The result of the most recent health check.
+     *
+     **/
+    public enum HealthCheckStatus {
         Ok("OK"),
         InvalidStatusCode("INVALID_STATUS_CODE"),
         TimedOut("TIMED_OUT"),
@@ -234,8 +243,8 @@ public final class HealthCheckResult
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -274,7 +283,10 @@ public final class HealthCheckResult
             return UnknownEnumValue;
         }
     };
-    /** The result of the most recent health check. */
+    /**
+     * The result of the most recent health check.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthCheckStatus")
     private final HealthCheckStatus healthCheckStatus;
 
@@ -282,7 +294,7 @@ public final class HealthCheckResult
      * The result of the most recent health check.
      *
      * @return the value
-     */
+     **/
     public HealthCheckStatus getHealthCheckStatus() {
         return healthCheckStatus;
     }
@@ -294,7 +306,6 @@ public final class HealthCheckResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

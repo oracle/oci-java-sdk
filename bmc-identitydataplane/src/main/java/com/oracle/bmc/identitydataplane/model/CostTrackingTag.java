@@ -5,22 +5,19 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CostTrackingTag.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CostTrackingTag
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CostTrackingTag extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tagNamespaceId",
@@ -42,61 +39,65 @@ public final class CostTrackingTag
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The tag namespace id. */
+        /**
+         * The tag namespace id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
         private String tagNamespaceId;
 
         /**
          * The tag namespace id.
-         *
          * @param tagNamespaceId the value to set
          * @return this builder
-         */
+         **/
         public Builder tagNamespaceId(String tagNamespaceId) {
             this.tagNamespaceId = tagNamespaceId;
             this.__explicitlySet__.add("tagNamespaceId");
             return this;
         }
-        /** The tag namespace name. */
+        /**
+         * The tag namespace name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Name")
         private String tagNamespaceName;
 
         /**
          * The tag namespace name.
-         *
          * @param tagNamespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder tagNamespaceName(String tagNamespaceName) {
             this.tagNamespaceName = tagNamespaceName;
             this.__explicitlySet__.add("tagNamespaceName");
             return this;
         }
-        /** The tag definition id. */
+        /**
+         * The tag definition id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Id")
         private String tagDefinitionId;
 
         /**
          * The tag definition id.
-         *
          * @param tagDefinitionId the value to set
          * @return this builder
-         */
+         **/
         public Builder tagDefinitionId(String tagDefinitionId) {
             this.tagDefinitionId = tagDefinitionId;
             this.__explicitlySet__.add("tagDefinitionId");
             return this;
         }
-        /** The tag definition name. */
+        /**
+         * The tag definition name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Name")
         private String tagDefinitionName;
 
         /**
          * The tag definition name.
-         *
          * @param tagDefinitionName the value to set
          * @return this builder
-         */
+         **/
         public Builder tagDefinitionName(String tagDefinitionName) {
             this.tagDefinitionName = tagDefinitionName;
             this.__explicitlySet__.add("tagDefinitionName");
@@ -137,7 +138,9 @@ public final class CostTrackingTag
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,54 +149,58 @@ public final class CostTrackingTag
         return new Builder().copy(this);
     }
 
-    /** The tag namespace id. */
+    /**
+     * The tag namespace id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Id")
     private final String tagNamespaceId;
 
     /**
      * The tag namespace id.
-     *
      * @return the value
-     */
+     **/
     public String getTagNamespaceId() {
         return tagNamespaceId;
     }
 
-    /** The tag namespace name. */
+    /**
+     * The tag namespace name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Namespace_Name")
     private final String tagNamespaceName;
 
     /**
      * The tag namespace name.
-     *
      * @return the value
-     */
+     **/
     public String getTagNamespaceName() {
         return tagNamespaceName;
     }
 
-    /** The tag definition id. */
+    /**
+     * The tag definition id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Id")
     private final String tagDefinitionId;
 
     /**
      * The tag definition id.
-     *
      * @return the value
-     */
+     **/
     public String getTagDefinitionId() {
         return tagDefinitionId;
     }
 
-    /** The tag definition name. */
+    /**
+     * The tag definition name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("Tag_Definition_Name")
     private final String tagDefinitionName;
 
     /**
      * The tag definition name.
-     *
      * @return the value
-     */
+     **/
     public String getTagDefinitionName() {
         return tagDefinitionName;
     }
@@ -205,7 +212,6 @@ public final class CostTrackingTag
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

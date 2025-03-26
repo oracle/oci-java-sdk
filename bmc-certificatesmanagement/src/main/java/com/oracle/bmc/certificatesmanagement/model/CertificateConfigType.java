@@ -5,13 +5,11 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The manner in which the certificate was created. You can have a CA that was generated internally
- * by the service issue a certificate. You can subsequently manage that certificate internally or
- * externally. Alternatively, you can import a certificate that was issued by an external,
- * third-party public or private CA, and then manage it internally.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
-public enum CertificateConfigType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The manner in which the certificate was created. You can have a CA that was generated internally by the service issue a certificate. You can subsequently manage that certificate internally or externally. Alternatively, you can import a certificate that was issued by an external, third-party public or private CA, and then manage it internally.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+public enum CertificateConfigType {
     IssuedByInternalCa("ISSUED_BY_INTERNAL_CA"),
     ManagedExternallyIssuedByInternalCa("MANAGED_EXTERNALLY_ISSUED_BY_INTERNAL_CA"),
     Imported("IMPORTED"),

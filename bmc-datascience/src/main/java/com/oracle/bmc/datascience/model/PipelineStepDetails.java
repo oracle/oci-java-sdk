@@ -5,39 +5,42 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * A step in the pipeline. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * A step in the pipeline.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "stepType",
-        defaultImpl = PipelineStepDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "stepType",
+    defaultImpl = PipelineStepDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineContainerStepDetails.class,
-            name = "CONTAINER"),
+        value = PipelineContainerStepDetails.class,
+        name = "CONTAINER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineMLJobStepDetails.class,
-            name = "ML_JOB"),
+        value = PipelineMLJobStepDetails.class,
+        name = "ML_JOB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineDataflowStepDetails.class,
-            name = "DATAFLOW"),
+        value = PipelineDataflowStepDetails.class,
+        name = "DATAFLOW"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PipelineCustomScriptStepDetails.class,
-            name = "CUSTOM_SCRIPT")
+        value = PipelineCustomScriptStepDetails.class,
+        name = "CUSTOM_SCRIPT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PipelineStepDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PipelineStepDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stepName",
@@ -58,44 +61,43 @@ public class PipelineStepDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The name of the step. It must be unique within the pipeline. This is used to create the
-     * pipeline DAG.
-     */
+     * The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
-     * The name of the step. It must be unique within the pipeline. This is used to create the
-     * pipeline DAG.
-     *
+     * The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * @return the value
-     */
+     **/
     public String getStepName() {
         return stepName;
     }
 
-    /** A short description of the step. */
+    /**
+     * A short description of the step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the step.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The list of step names this current step depends on for execution. */
+    /**
+     * The list of step names this current step depends on for execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dependsOn")
     private final java.util.List<String> dependsOn;
 
     /**
      * The list of step names this current step depends on for execution.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDependsOn() {
         return dependsOn;
     }
@@ -114,7 +116,6 @@ public class PipelineStepDetails extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -165,16 +166,18 @@ public class PipelineStepDetails extends com.oracle.bmc.http.client.internal.Exp
         return result;
     }
 
-    /** The type of step. */
-    public enum StepType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of step.
+     **/
+    public enum StepType {
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
         Container("CONTAINER"),
         Dataflow("DATAFLOW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

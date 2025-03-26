@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Scheduling policy to decide the distribution of monitor executions on vantage points. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum SchedulingPolicy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Scheduling policy to decide the distribution of monitor executions on vantage points.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum SchedulingPolicy {
     All("ALL"),
     RoundRobin("ROUND_ROBIN"),
     BatchedRoundRobin("BATCHED_ROUND_ROBIN"),

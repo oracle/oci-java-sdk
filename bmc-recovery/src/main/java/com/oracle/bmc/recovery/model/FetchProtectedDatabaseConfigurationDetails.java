@@ -5,23 +5,22 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * Provides which configuration details to get. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+ * Provides which configuration details to get.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FetchProtectedDatabaseConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FetchProtectedDatabaseConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FetchProtectedDatabaseConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"configurationType"})
     public FetchProtectedDatabaseConfigurationDetails(ConfigurationType configurationType) {
@@ -32,19 +31,16 @@ public final class FetchProtectedDatabaseConfigurationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a
-         * zipped folder containing the contents of both tnsnames and the certificateChainPem.
-         */
+         * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurationType")
         private ConfigurationType configurationType;
 
         /**
-         * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a
-         * zipped folder containing the contents of both tnsnames and the certificateChainPem.
-         *
+         * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
          * @param configurationType the value to set
          * @return this builder
-         */
+         **/
         public Builder configurationType(ConfigurationType configurationType) {
             this.configurationType = configurationType;
             this.__explicitlySet__.add("configurationType");
@@ -72,7 +68,9 @@ public final class FetchProtectedDatabaseConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -82,10 +80,9 @@ public final class FetchProtectedDatabaseConfigurationDetails
     }
 
     /**
-     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped
-     * folder containing the contents of both tnsnames and the certificateChainPem.
-     */
-    public enum ConfigurationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
+     **/
+    public enum ConfigurationType {
         Cabundle("CABUNDLE"),
         Tnsnames("TNSNAMES"),
         Hosts("HOSTS"),
@@ -121,18 +118,15 @@ public final class FetchProtectedDatabaseConfigurationDetails
         }
     };
     /**
-     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped
-     * folder containing the contents of both tnsnames and the certificateChainPem.
-     */
+     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurationType")
     private final ConfigurationType configurationType;
 
     /**
-     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped
-     * folder containing the contents of both tnsnames and the certificateChainPem.
-     *
+     * Currently has four config options ALL, TNSNAMES, HOSTS and CABUNDLE. All will return a zipped folder containing the contents of both tnsnames and the certificateChainPem.
      * @return the value
-     */
+     **/
     public ConfigurationType getConfigurationType() {
         return configurationType;
     }
@@ -144,7 +138,6 @@ public final class FetchProtectedDatabaseConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

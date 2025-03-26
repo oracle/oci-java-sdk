@@ -4,9 +4,8 @@
  */
 package com.oracle.bmc.http.internal;
 
-import java.util.function.Consumer;
-
 import com.oracle.bmc.responses.AsyncHandler;
+import com.oracle.bmc.util.internal.Consumer;
 
 /**
  * Basic Consumer type to handle failed calls.

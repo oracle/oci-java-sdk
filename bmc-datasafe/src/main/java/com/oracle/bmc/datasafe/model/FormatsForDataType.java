@@ -5,23 +5,21 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * A list of basic masking formats compatible with a supported data type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * A list of basic masking formats compatible with a supported data type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FormatsForDataType.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class FormatsForDataType
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = FormatsForDataType.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class FormatsForDataType extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataType", "maskingFormats"})
     public FormatsForDataType(String dataType, java.util.List<FormatSummary> maskingFormats) {
@@ -33,38 +31,44 @@ public final class FormatsForDataType
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The data type category, which can be one of the following - Character - Includes CHAR,
-         * NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and
-         * BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All
-         * - Includes all the supported data types
-         */
+         * The data type category, which can be one of the following -
+         *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+         *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+         *   Date - Includes DATE and TIMESTAMP
+         *   LOB - Includes BLOB, CLOB, and NCLOB
+         *   All - Includes all the supported data types
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
-         * The data type category, which can be one of the following - Character - Includes CHAR,
-         * NCHAR, VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and
-         * BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All
-         * - Includes all the supported data types
+         * The data type category, which can be one of the following -
+         *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+         *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+         *   Date - Includes DATE and TIMESTAMP
+         *   LOB - Includes BLOB, CLOB, and NCLOB
+         *   All - Includes all the supported data types
          *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** An array of the basic masking formats compatible with the data type category. */
+        /**
+         * An array of the basic masking formats compatible with the data type category.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
         private java.util.List<FormatSummary> maskingFormats;
 
         /**
          * An array of the basic masking formats compatible with the data type category.
-         *
          * @param maskingFormats the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingFormats(java.util.List<FormatSummary> maskingFormats) {
             this.maskingFormats = maskingFormats;
             this.__explicitlySet__.add("maskingFormats");
@@ -94,7 +98,9 @@ public final class FormatsForDataType
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,35 +110,41 @@ public final class FormatsForDataType
     }
 
     /**
-     * The data type category, which can be one of the following - Character - Includes CHAR, NCHAR,
-     * VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and
-     * BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All -
-     * Includes all the supported data types
-     */
+     * The data type category, which can be one of the following -
+     *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+     *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+     *   Date - Includes DATE and TIMESTAMP
+     *   LOB - Includes BLOB, CLOB, and NCLOB
+     *   All - Includes all the supported data types
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
-     * The data type category, which can be one of the following - Character - Includes CHAR, NCHAR,
-     * VARCHAR2, and NVARCHAR2 Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and
-     * BINARY_DOUBLE Date - Includes DATE and TIMESTAMP LOB - Includes BLOB, CLOB, and NCLOB All -
-     * Includes all the supported data types
+     * The data type category, which can be one of the following -
+     *   Character - Includes CHAR, NCHAR, VARCHAR2, and NVARCHAR2
+     *   Numeric - Includes NUMBER, FLOAT, RAW, BINARY_FLOAT, and BINARY_DOUBLE
+     *   Date - Includes DATE and TIMESTAMP
+     *   LOB - Includes BLOB, CLOB, and NCLOB
+     *   All - Includes all the supported data types
      *
      * @return the value
-     */
+     **/
     public String getDataType() {
         return dataType;
     }
 
-    /** An array of the basic masking formats compatible with the data type category. */
+    /**
+     * An array of the basic masking formats compatible with the data type category.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingFormats")
     private final java.util.List<FormatSummary> maskingFormats;
 
     /**
      * An array of the basic masking formats compatible with the data type category.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FormatSummary> getMaskingFormats() {
         return maskingFormats;
     }
@@ -144,7 +156,6 @@ public final class FormatsForDataType
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

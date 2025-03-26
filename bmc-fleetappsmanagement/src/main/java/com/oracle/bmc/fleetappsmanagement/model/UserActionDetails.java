@@ -5,33 +5,36 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * User action details. This can be performed on a failed/paused task or action group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * User action details.
+ * This can be performed on a failed/paused task or action group.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "level",
-        defaultImpl = UserActionDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "level",
+    defaultImpl = UserActionDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = StepBasedUserActionDetails.class,
-            name = "STEP_NAME"),
+        value = StepBasedUserActionDetails.class,
+        name = "STEP_NAME"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ActionGroupBasedUserActionDetails.class,
-            name = "ACTION_GROUP")
+        value = ActionGroupBasedUserActionDetails.class,
+        name = "ACTION_GROUP"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class UserActionDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class UserActionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"action"})
     protected UserActionDetails(Action action) {
@@ -39,8 +42,11 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
         this.action = action;
     }
 
-    /** Action to be Performed. */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Action to be Performed.
+     *
+     **/
+    public enum Action {
         Retry("RETRY"),
         Resume("RESUME"),
         ;
@@ -72,7 +78,10 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
             throw new IllegalArgumentException("Invalid Action: " + key);
         }
     };
-    /** Action to be Performed. */
+    /**
+     * Action to be Performed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
@@ -80,7 +89,7 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
      * Action to be Performed.
      *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
@@ -92,7 +101,6 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -127,8 +135,11 @@ public class UserActionDetails extends com.oracle.bmc.http.client.internal.Expli
         return result;
     }
 
-    /** User action based On. */
-    public enum Level implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * User action based On.
+     *
+     **/
+    public enum Level {
         ActionGroup("ACTION_GROUP"),
         StepName("STEP_NAME"),
         ;

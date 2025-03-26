@@ -6,165 +6,190 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbParameterChangesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeAddmDbParameterChangesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/SummarizeAddmDbParameterChangesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeAddmDbParameterChangesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class SummarizeAddmDbParameterChangesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Required filter to return only changes for the specified parameter. The match is case
-     * sensitive.
+     * Required filter to return only changes for the specified parameter. The
+     * match is case sensitive.
+     *
      */
     private String name;
 
     /**
-     * Required filter to return only changes for the specified parameter. The match is case
-     * sensitive.
+     * Required filter to return only changes for the specified parameter. The
+     * match is case sensitive.
+     *
      */
     public String getName() {
         return name;
     }
     /**
-     * Optional list of database
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     private java.util.List<String> databaseId;
 
     /**
-     * Optional list of database
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated DBaaS entity.
+     * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+     *
      */
     public java.util.List<String> getDatabaseId() {
         return databaseId;
     }
     /**
-     * Optional list of database insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     private java.util.List<String> id;
 
     /**
-     * Optional list of database insight resource
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
      */
     public java.util.List<String> getId() {
         return id;
     }
-    /** The optional single value query parameter to filter by database instance number. */
+    /**
+     * The optional single value query parameter to filter by database instance number.
+     */
     private String instanceNumber;
 
-    /** The optional single value query parameter to filter by database instance number. */
+    /**
+     * The optional single value query parameter to filter by database instance number.
+     */
     public String getInstanceNumber() {
         return instanceNumber;
     }
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
-     * is specified, this parameter is ignored.
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
      */
     private java.util.Date timeIntervalStart;
 
     /**
-     * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-     * timeIntervalStart and timeIntervalEnd parameters are used together. If analysisTimeInterval
-     * is specified, this parameter is ignored.
+     * Analysis start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * The minimum allowed value is 2 years prior to the current day.
+     * timeIntervalStart and timeIntervalEnd parameters are used together.
+     * If analysisTimeInterval is specified, this parameter is ignored.
+     *
      */
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
      */
     private java.util.Date timeIntervalEnd;
 
     /**
-     * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-     * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     * Analysis end time in UTC in ISO 8601 format(exclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd are used together.
+     * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+     *
      */
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
     /**
-     * Optional filter to return only resources whose value contains the substring given. The match
-     * is not case sensitive.
+     * Optional filter to return only resources whose value contains the substring given. The
+     * match is not case sensitive.
+     *
      */
     private String valueContains;
 
     /**
-     * Optional filter to return only resources whose value contains the substring given. The match
-     * is not case sensitive.
+     * Optional filter to return only resources whose value contains the substring given. The
+     * match is not case sensitive.
+     *
      */
     public String getValueContains() {
         return valueContains;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Field name for sorting the database parameter change data */
+    /**
+     * Field name for sorting the database parameter change data
+     */
     private SortBy sortBy;
 
-    /** Field name for sorting the database parameter change data */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Field name for sorting the database parameter change data
+     **/
+    public enum SortBy {
         IsChanged("isChanged"),
         BeginSnapId("beginSnapId"),
         ;
@@ -197,105 +222,115 @@ public class SummarizeAddmDbParameterChangesRequest
         }
     };
 
-    /** Field name for sorting the database parameter change data */
+    /**
+     * Field name for sorting the database parameter change data
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a defined tag matching the value will be
-     * returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All inputs
-     * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
-     * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
     }
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagEquals;
 
     /**
-     * A list of tag filters to apply. Only resources with a freeform tag matching the value will be
-     * returned. The key for each tag is "{tagName}.{value}". All inputs are case-insensitive.
-     * Multiple values for the same tag name are interpreted as "OR". Values for different tag names
-     * are interpreted as "AND".
+     * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+     * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+     * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagEquals() {
         return freeformTagEquals;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     private java.util.List<String> definedTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified defined tags
-     * exist will be returned. Each item in the list has the format "{namespace}.{tagName}.true"
-     * (for checking existence of a defined tag) or "{namespace}.true". All inputs are
-     * case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for the same key (i.e. same namespace
-     * and tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-     * different tag names, or both) are interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+     * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+     * or "{namespace}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+     * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+     *
      */
     public java.util.List<String> getDefinedTagExists() {
         return definedTagExists;
     }
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     private java.util.List<String> freeformTagExists;
 
     /**
-     * A list of tag existence filters to apply. Only resources for which the specified freeform
-     * tags exist the value will be returned. The key for each tag is "{tagName}.true". All inputs
-     * are case-insensitive. Currently, only existence ("true" at the end) is supported. Absence
-     * ("false" at the end) is not supported. Multiple values for different tag names are
-     * interpreted as "AND".
+     * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+     * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+     * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+     * Multiple values for different tag names are interpreted as "AND".
+     *
      */
     public java.util.List<String> getFreeformTagExists() {
         return freeformTagExists;
     }
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     private Boolean compartmentIdInSubtree;
 
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
@@ -303,19 +338,17 @@ public class SummarizeAddmDbParameterChangesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeAddmDbParameterChangesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -325,14 +358,15 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Required filter to return only changes for the specified parameter. The match is case
-         * sensitive.
+         * Required filter to return only changes for the specified parameter. The
+         * match is case sensitive.
+         *
          */
         private String name = null;
 
         /**
-         * Required filter to return only changes for the specified parameter. The match is case
-         * sensitive.
+         * Required filter to return only changes for the specified parameter. The
+         * match is case sensitive.
          *
          * @param name the value to set
          * @return this builder instance
@@ -343,16 +377,13 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
+         *
          */
         private java.util.List<String> databaseId = null;
 
         /**
-         * Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
          * @param databaseId the value to set
          * @return this builder instance
@@ -363,9 +394,7 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. Optional list of database
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * associated DBaaS entity.
+         * Singular setter. Optional list of database [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -375,14 +404,13 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
          */
         private java.util.List<String> id = null;
 
         /**
-         * Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder instance
@@ -393,8 +421,7 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. Optional list of database insight resource
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Singular setter. Optional list of database insight resource [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -403,12 +430,13 @@ public class SummarizeAddmDbParameterChangesRequest
             return this.id(java.util.Arrays.asList(singularValue));
         }
 
-        /** The optional single value query parameter to filter by database instance number. */
+        /**
+         * The optional single value query parameter to filter by database instance number.
+         */
         private String instanceNumber = null;
 
         /**
          * The optional single value query parameter to filter by database instance number.
-         *
          * @param instanceNumber the value to set
          * @return this builder instance
          */
@@ -418,18 +446,21 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together. If
-         * analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
+         *
          */
         private java.util.Date timeIntervalStart = null;
 
         /**
-         * Analysis start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). The minimum allowed value is 2 years prior to the current day.
-         * timeIntervalStart and timeIntervalEnd parameters are used together. If
-         * analysisTimeInterval is specified, this parameter is ignored.
+         * Analysis start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * The minimum allowed value is 2 years prior to the current day.
+         * timeIntervalStart and timeIntervalEnd parameters are used together.
+         * If analysisTimeInterval is specified, this parameter is ignored.
          *
          * @param timeIntervalStart the value to set
          * @return this builder instance
@@ -440,16 +471,19 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         *
          */
         private java.util.Date timeIntervalEnd = null;
 
         /**
-         * Analysis end time in UTC in ISO 8601 format(exclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd are used together. If
-         * timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
+         * Analysis end time in UTC in ISO 8601 format(exclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd are used together.
+         * If timeIntervalEnd is not specified, current time is used as timeIntervalEnd.
          *
          * @param timeIntervalEnd the value to set
          * @return this builder instance
@@ -462,6 +496,7 @@ public class SummarizeAddmDbParameterChangesRequest
         /**
          * Optional filter to return only resources whose value contains the substring given. The
          * match is not case sensitive.
+         *
          */
         private String valueContains = null;
 
@@ -478,17 +513,20 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -500,16 +538,17 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -519,7 +558,10 @@ public class SummarizeAddmDbParameterChangesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -533,12 +575,13 @@ public class SummarizeAddmDbParameterChangesRequest
             return this;
         }
 
-        /** Field name for sorting the database parameter change data */
+        /**
+         * Field name for sorting the database parameter change data
+         */
         private SortBy sortBy = null;
 
         /**
          * Field name for sorting the database parameter change data
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -548,14 +591,15 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -566,20 +610,19 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a defined tag matching the value will
-         * be returned. Each item in the list has the format "{namespace}.{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
-         * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -590,11 +633,10 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a defined tag
-         * matching the value will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.{value}". All inputs are case-insensitive. Multiple values for the
-         * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
-         * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a defined tag matching the value will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -604,18 +646,17 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagEquals = null;
 
         /**
-         * A list of tag filters to apply. Only resources with a freeform tag matching the value
-         * will be returned. The key for each tag is "{tagName}.{value}". All inputs are
-         * case-insensitive. Multiple values for the same tag name are interpreted as "OR". Values
-         * for different tag names are interpreted as "AND".
+         * A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param freeformTagEquals the value to set
          * @return this builder instance
@@ -626,10 +667,9 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. A list of tag filters to apply. Only resources with a freeform tag
-         * matching the value will be returned. The key for each tag is "{tagName}.{value}". All
-         * inputs are case-insensitive. Multiple values for the same tag name are interpreted as
-         * "OR". Values for different tag names are interpreted as "AND".
+         * Singular setter. A list of tag filters to apply.  Only resources with a freeform tag matching the value will be returned.
+         * The key for each tag is "{tagName}.{value}".  All inputs are case-insensitive.
+         * Multiple values for the same tag name are interpreted as "OR".  Values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -639,26 +679,23 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         *
          */
         private java.util.List<String> definedTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified defined
-         * tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param definedTagExists the value to set
          * @return this builder instance
@@ -669,14 +706,12 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified defined tags exist will be returned. Each item in the list has the format
-         * "{namespace}.{tagName}.true" (for checking existence of a defined tag) or
-         * "{namespace}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * the same key (i.e. same namespace and tag name) are interpreted as "OR". Values for
-         * different keys (i.e. different namespaces, different tag names, or both) are interpreted
-         * as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified defined tags exist will be returned.
+         * Each item in the list has the format "{namespace}.{tagName}.true" (for checking existence of a defined tag)
+         * or "{namespace}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for the same key (i.e. same namespace and tag name) are interpreted as "OR".
+         * Values for different keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -686,20 +721,19 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
+         *
          */
         private java.util.List<String> freeformTagExists = null;
 
         /**
-         * A list of tag existence filters to apply. Only resources for which the specified freeform
-         * tags exist the value will be returned. The key for each tag is "{tagName}.true". All
-         * inputs are case-insensitive. Currently, only existence ("true" at the end) is supported.
-         * Absence ("false" at the end) is not supported. Multiple values for different tag names
-         * are interpreted as "AND".
+         * A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param freeformTagExists the value to set
          * @return this builder instance
@@ -710,11 +744,10 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Singular setter. A list of tag existence filters to apply. Only resources for which the
-         * specified freeform tags exist the value will be returned. The key for each tag is
-         * "{tagName}.true". All inputs are case-insensitive. Currently, only existence ("true" at
-         * the end) is supported. Absence ("false" at the end) is not supported. Multiple values for
-         * different tag names are interpreted as "AND".
+         * Singular setter. A list of tag existence filters to apply.  Only resources for which the specified freeform tags exist the value will be returned.
+         * The key for each tag is "{tagName}.true".  All inputs are case-insensitive.
+         * Currently, only existence ("true" at the end) is supported. Absence ("false" at the end) is not supported.
+         * Multiple values for different tag names are interpreted as "AND".
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -723,7 +756,10 @@ public class SummarizeAddmDbParameterChangesRequest
             return this.freeformTagExists(java.util.Arrays.asList(singularValue));
         }
 
-        /** A flag to search all resources within a given compartment and all sub-compartments. */
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -739,19 +775,18 @@ public class SummarizeAddmDbParameterChangesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -763,7 +798,6 @@ public class SummarizeAddmDbParameterChangesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeAddmDbParameterChangesRequest o) {
@@ -791,14 +825,12 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Build the instance of SummarizeAddmDbParameterChangesRequest as configured by this
-         * builder
+         * Build the instance of SummarizeAddmDbParameterChangesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeAddmDbParameterChangesRequest
          */
@@ -810,11 +842,9 @@ public class SummarizeAddmDbParameterChangesRequest
         }
 
         /**
-         * Build the instance of SummarizeAddmDbParameterChangesRequest as configured by this
-         * builder
+         * Build the instance of SummarizeAddmDbParameterChangesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeAddmDbParameterChangesRequest
@@ -841,16 +871,12 @@ public class SummarizeAddmDbParameterChangesRequest
             request.freeformTagExists = freeformTagExists;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             return request;
-            // new SummarizeAddmDbParameterChangesRequest(compartmentId, name, databaseId, id,
-            // instanceNumber, timeIntervalStart, timeIntervalEnd, valueContains, limit, page,
-            // sortOrder, sortBy, opcRequestId, definedTagEquals, freeformTagEquals,
-            // definedTagExists, freeformTagExists, compartmentIdInSubtree);
+            // new SummarizeAddmDbParameterChangesRequest(compartmentId, name, databaseId, id, instanceNumber, timeIntervalStart, timeIntervalEnd, valueContains, limit, page, sortOrder, sortBy, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -877,7 +903,6 @@ public class SummarizeAddmDbParameterChangesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

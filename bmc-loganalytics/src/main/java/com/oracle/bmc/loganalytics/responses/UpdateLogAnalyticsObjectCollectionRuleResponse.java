@@ -6,10 +6,13 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UpdateLogAnalyticsObjectCollectionRuleResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -22,14 +25,13 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -37,13 +39,14 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
         return opcRequestId;
     }
 
-    /** The returned {@code LogAnalyticsObjectCollectionRule} instance. */
+    /**
+     * The returned LogAnalyticsObjectCollectionRule instance.
+     */
     private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
             logAnalyticsObjectCollectionRule;
 
     /**
-     * The returned {@code LogAnalyticsObjectCollectionRule} instance.
-     *
+     * The returned LogAnalyticsObjectCollectionRule instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
@@ -60,7 +63,7 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
     })
     private UpdateLogAnalyticsObjectCollectionRuleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
@@ -71,26 +74,25 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
         this.logAnalyticsObjectCollectionRule = logAnalyticsObjectCollectionRule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateLogAnalyticsObjectCollectionRuleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -105,14 +107,13 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -122,13 +123,14 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
             return this;
         }
 
-        /** The returned {@code LogAnalyticsObjectCollectionRule} instance. */
+        /**
+         * The returned LogAnalyticsObjectCollectionRule instance.
+         */
         private com.oracle.bmc.loganalytics.model.LogAnalyticsObjectCollectionRule
                 logAnalyticsObjectCollectionRule;
 
         /**
-         * The returned {@code LogAnalyticsObjectCollectionRule} instance.
-         *
+         * The returned LogAnalyticsObjectCollectionRule instance.
          * @param logAnalyticsObjectCollectionRule the value to set
          * @return this builder
          */
@@ -141,10 +143,8 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateLogAnalyticsObjectCollectionRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -157,10 +157,8 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateLogAnalyticsObjectCollectionRuleResponse build() {
             return new UpdateLogAnalyticsObjectCollectionRuleResponse(
                     __httpStatusCode__,
@@ -173,7 +171,6 @@ public class UpdateLogAnalyticsObjectCollectionRuleResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

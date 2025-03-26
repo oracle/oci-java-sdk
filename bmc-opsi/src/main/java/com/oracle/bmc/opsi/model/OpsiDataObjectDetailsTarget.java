@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** OPSI data objects targetted by details provided in OpsiDataObjectDetailsInQuery. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OpsiDataObjectDetailsTarget implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * OPSI data objects targetted by details provided in OpsiDataObjectDetailsInQuery.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OpsiDataObjectDetailsTarget {
     IndividualOpsidataobject("INDIVIDUAL_OPSIDATAOBJECT"),
     OpsidataobjecttypeOpsidataobjects("OPSIDATAOBJECTTYPE_OPSIDATAOBJECTS"),
     ;

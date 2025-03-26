@@ -7,12 +7,14 @@ package com.oracle.bmc.encryption;
 import com.oracle.bmc.encryption.internal.CryptoAlgorithm;
 import com.oracle.bmc.encryption.internal.DataKey;
 
-/** Represents a MasterKey used to encrypt/decrypt Data Key. */
+/**
+ * Represents a MasterKey used to encrypt/decrypt Data Key.
+ */
 public interface MasterKey {
     /**
-     * Generates a data encryption key (DEK) based on the algorithm provided using this MasterKey.
-     * The returned DataKey includes a copy of the DEK encrypted under this MasterKey.
-     *
+     * Generates a data encryption key (DEK) based on the algorithm provided using
+     *         this MasterKey.  The returned DataKey includes a copy of the
+     *         DEK encrypted under this MasterKey.
      * @param cryptoAlgorithm
      * @return DataKey
      */
@@ -20,7 +22,6 @@ public interface MasterKey {
 
     /**
      * Decrypts and returns data key that was encrypted under this master key.
-     *
      * @param encryptedDataKey
      * @param masterKeyId
      * @return Decrypted data key

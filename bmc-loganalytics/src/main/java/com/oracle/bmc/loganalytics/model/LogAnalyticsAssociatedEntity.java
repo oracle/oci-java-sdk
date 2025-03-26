@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * LogAnalyticsAssociatedEntity <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * LogAnalyticsAssociatedEntity
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsAssociatedEntity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsAssociatedEntity.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsAssociatedEntity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "entityId",
@@ -49,91 +48,97 @@ public final class LogAnalyticsAssociatedEntity
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The entity unique identifier. */
+        /**
+         * The entity unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
          * The entity unique identifier.
-         *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
-        /** The entity name. */
+        /**
+         * The entity name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * The entity name.
-         *
          * @param entityName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
             return this;
         }
-        /** The entity type. */
+        /**
+         * The entity type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityType")
         private String entityType;
 
         /**
          * The entity type.
-         *
          * @param entityType the value to set
          * @return this builder
-         */
+         **/
         public Builder entityType(String entityType) {
             this.entityType = entityType;
             this.__explicitlySet__.add("entityType");
             return this;
         }
-        /** The entity type display name. */
+        /**
+         * The entity type display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
         private String entityTypeDisplayName;
 
         /**
          * The entity type display name.
-         *
          * @param entityTypeDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityTypeDisplayName(String entityTypeDisplayName) {
             this.entityTypeDisplayName = entityTypeDisplayName;
             this.__explicitlySet__.add("entityTypeDisplayName");
             return this;
         }
-        /** The host associated with the entity. */
+        /**
+         * The host associated with the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onHost")
         private String onHost;
 
         /**
          * The host associated with the entity.
-         *
          * @param onHost the value to set
          * @return this builder
-         */
+         **/
         public Builder onHost(String onHost) {
             this.onHost = onHost;
             this.__explicitlySet__.add("onHost");
             return this;
         }
-        /** The association count for the entity. */
+        /**
+         * The association count for the entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
         private Long associationCount;
 
         /**
          * The association count for the entity.
-         *
          * @param associationCount the value to set
          * @return this builder
-         */
+         **/
         public Builder associationCount(Long associationCount) {
             this.associationCount = associationCount;
             this.__explicitlySet__.add("associationCount");
@@ -182,7 +187,9 @@ public final class LogAnalyticsAssociatedEntity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class LogAnalyticsAssociatedEntity
         return new Builder().copy(this);
     }
 
-    /** The entity unique identifier. */
+    /**
+     * The entity unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
      * The entity unique identifier.
-     *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
-    /** The entity name. */
+    /**
+     * The entity name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * The entity name.
-     *
      * @return the value
-     */
+     **/
     public String getEntityName() {
         return entityName;
     }
 
-    /** The entity type. */
+    /**
+     * The entity type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityType")
     private final String entityType;
 
     /**
      * The entity type.
-     *
      * @return the value
-     */
+     **/
     public String getEntityType() {
         return entityType;
     }
 
-    /** The entity type display name. */
+    /**
+     * The entity type display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityTypeDisplayName")
     private final String entityTypeDisplayName;
 
     /**
      * The entity type display name.
-     *
      * @return the value
-     */
+     **/
     public String getEntityTypeDisplayName() {
         return entityTypeDisplayName;
     }
 
-    /** The host associated with the entity. */
+    /**
+     * The host associated with the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onHost")
     private final String onHost;
 
     /**
      * The host associated with the entity.
-     *
      * @return the value
-     */
+     **/
     public String getOnHost() {
         return onHost;
     }
 
-    /** The association count for the entity. */
+    /**
+     * The association count for the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationCount")
     private final Long associationCount;
 
     /**
      * The association count for the entity.
-     *
      * @return the value
-     */
+     **/
     public Long getAssociationCount() {
         return associationCount;
     }
@@ -276,7 +289,6 @@ public final class LogAnalyticsAssociatedEntity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

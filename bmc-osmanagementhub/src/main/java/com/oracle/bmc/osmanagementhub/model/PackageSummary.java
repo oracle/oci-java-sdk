@@ -5,36 +5,38 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a software package. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a software package.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageClassification",
-        defaultImpl = PackageSummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageClassification",
+    defaultImpl = PackageSummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AvailablePackageSummary.class,
-            name = "AVAILABLE"),
+        value = AvailablePackageSummary.class,
+        name = "AVAILABLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = InstalledPackageSummary.class,
-            name = "INSTALLED"),
+        value = InstalledPackageSummary.class,
+        name = "INSTALLED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdatablePackageSummary.class,
-            name = "UPDATABLE")
+        value = UpdatablePackageSummary.class,
+        name = "UPDATABLE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PackageSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PackageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -60,80 +62,86 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
         this.softwareSources = softwareSources;
     }
 
-    /** Package name. */
+    /**
+     * Package name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Package name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Unique identifier for the package. */
+    /**
+     * Unique identifier for the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Unique identifier for the package.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of the package. */
+    /**
+     * Type of the package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of the package.
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Version of the installed package. */
+    /**
+     * Version of the installed package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Version of the installed package.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The architecture for which this package was built. */
+    /**
+     * The architecture for which this package was built.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
      * The architecture for which this package was built.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchitecture() {
         return architecture;
     }
 
-    /** List of software sources that provide the software package. */
+    /**
+     * List of software sources that provide the software package.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSources")
     private final java.util.List<SoftwareSourceDetails> softwareSources;
 
     /**
      * List of software sources that provide the software package.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SoftwareSourceDetails> getSoftwareSources() {
         return softwareSources;
     }
@@ -145,7 +153,6 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -198,20 +205,14 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** Status of the software package. */
-    public enum PackageClassification implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Status of the software package.
+     **/
+    public enum PackageClassification {
         Installed("INSTALLED"),
         Available("AVAILABLE"),
         Updatable("UPDATABLE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(PackageClassification.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, PackageClassification> map;
@@ -219,9 +220,7 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
         static {
             map = new java.util.HashMap<>();
             for (PackageClassification v : PackageClassification.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -239,10 +238,7 @@ public class PackageSummary extends com.oracle.bmc.http.client.internal.Explicit
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'PackageClassification', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid PackageClassification: " + key);
         }
     };
 }

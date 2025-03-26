@@ -5,24 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Information for a responder rule that can be used to remediate a problem triggered by specific
- * detector rule. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Information for a responder rule that can be used to remediate a problem triggered by specific detector rule.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CandidateResponderRule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CandidateResponderRule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CandidateResponderRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "displayName", "isPreferred"})
     public CandidateResponderRule(String id, String displayName, Boolean isPreferred) {
@@ -34,46 +32,49 @@ public final class CandidateResponderRule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of the responder rule */
+        /**
+         * The unique identifier of the responder rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of the responder rule
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The display name of the responder rule */
+        /**
+         * The display name of the responder rule
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the responder rule
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Is this the preferred state? */
+        /**
+         * Is this the preferred state?
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
         private Boolean isPreferred;
 
         /**
          * Is this the preferred state?
-         *
          * @param isPreferred the value to set
          * @return this builder
-         */
+         **/
         public Builder isPreferred(Boolean isPreferred) {
             this.isPreferred = isPreferred;
             this.__explicitlySet__.add("isPreferred");
@@ -107,7 +108,9 @@ public final class CandidateResponderRule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +119,44 @@ public final class CandidateResponderRule
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of the responder rule */
+    /**
+     * The unique identifier of the responder rule
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of the responder rule
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The display name of the responder rule */
+    /**
+     * The display name of the responder rule
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the responder rule
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Is this the preferred state? */
+    /**
+     * Is this the preferred state?
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreferred")
     private final Boolean isPreferred;
 
     /**
      * Is this the preferred state?
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPreferred() {
         return isPreferred;
     }
@@ -162,7 +168,6 @@ public final class CandidateResponderRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

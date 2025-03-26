@@ -5,22 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define meta data for a cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define meta data for a cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ClusterMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ClusterMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ClusterMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeCreated",
@@ -60,151 +57,161 @@ public final class ClusterMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The time the cluster was created. */
+        /**
+         * The time the cluster was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the cluster was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The user who created the cluster. */
+        /**
+         * The user who created the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
         private String createdByUserId;
 
         /**
          * The user who created the cluster.
-         *
          * @param createdByUserId the value to set
          * @return this builder
-         */
+         **/
         public Builder createdByUserId(String createdByUserId) {
             this.createdByUserId = createdByUserId;
             this.__explicitlySet__.add("createdByUserId");
             return this;
         }
-        /** The OCID of the work request which created the cluster. */
+        /**
+         * The OCID of the work request which created the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByWorkRequestId")
         private String createdByWorkRequestId;
 
         /**
          * The OCID of the work request which created the cluster.
-         *
          * @param createdByWorkRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder createdByWorkRequestId(String createdByWorkRequestId) {
             this.createdByWorkRequestId = createdByWorkRequestId;
             this.__explicitlySet__.add("createdByWorkRequestId");
             return this;
         }
-        /** The time the cluster was deleted. */
+        /**
+         * The time the cluster was deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
         private java.util.Date timeDeleted;
 
         /**
          * The time the cluster was deleted.
-         *
          * @param timeDeleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDeleted(java.util.Date timeDeleted) {
             this.timeDeleted = timeDeleted;
             this.__explicitlySet__.add("timeDeleted");
             return this;
         }
-        /** The user who deleted the cluster. */
+        /**
+         * The user who deleted the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedByUserId")
         private String deletedByUserId;
 
         /**
          * The user who deleted the cluster.
-         *
          * @param deletedByUserId the value to set
          * @return this builder
-         */
+         **/
         public Builder deletedByUserId(String deletedByUserId) {
             this.deletedByUserId = deletedByUserId;
             this.__explicitlySet__.add("deletedByUserId");
             return this;
         }
-        /** The OCID of the work request which deleted the cluster. */
+        /**
+         * The OCID of the work request which deleted the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deletedByWorkRequestId")
         private String deletedByWorkRequestId;
 
         /**
          * The OCID of the work request which deleted the cluster.
-         *
          * @param deletedByWorkRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder deletedByWorkRequestId(String deletedByWorkRequestId) {
             this.deletedByWorkRequestId = deletedByWorkRequestId;
             this.__explicitlySet__.add("deletedByWorkRequestId");
             return this;
         }
-        /** The time the cluster was updated. */
+        /**
+         * The time the cluster was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the cluster was updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The user who updated the cluster. */
+        /**
+         * The user who updated the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
         private String updatedByUserId;
 
         /**
          * The user who updated the cluster.
-         *
          * @param updatedByUserId the value to set
          * @return this builder
-         */
+         **/
         public Builder updatedByUserId(String updatedByUserId) {
             this.updatedByUserId = updatedByUserId;
             this.__explicitlySet__.add("updatedByUserId");
             return this;
         }
-        /** The OCID of the work request which updated the cluster. */
+        /**
+         * The OCID of the work request which updated the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedByWorkRequestId")
         private String updatedByWorkRequestId;
 
         /**
          * The OCID of the work request which updated the cluster.
-         *
          * @param updatedByWorkRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder updatedByWorkRequestId(String updatedByWorkRequestId) {
             this.updatedByWorkRequestId = updatedByWorkRequestId;
             this.__explicitlySet__.add("updatedByWorkRequestId");
             return this;
         }
-        /** The time until which the cluster credential is valid. */
+        /**
+         * The time until which the cluster credential is valid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
         private java.util.Date timeCredentialExpiration;
 
         /**
          * The time until which the cluster credential is valid.
-         *
          * @param timeCredentialExpiration the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCredentialExpiration(java.util.Date timeCredentialExpiration) {
             this.timeCredentialExpiration = timeCredentialExpiration;
             this.__explicitlySet__.add("timeCredentialExpiration");
@@ -269,7 +276,9 @@ public final class ClusterMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -278,132 +287,142 @@ public final class ClusterMetadata
         return new Builder().copy(this);
     }
 
-    /** The time the cluster was created. */
+    /**
+     * The time the cluster was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the cluster was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The user who created the cluster. */
+    /**
+     * The user who created the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByUserId")
     private final String createdByUserId;
 
     /**
      * The user who created the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedByUserId() {
         return createdByUserId;
     }
 
-    /** The OCID of the work request which created the cluster. */
+    /**
+     * The OCID of the work request which created the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByWorkRequestId")
     private final String createdByWorkRequestId;
 
     /**
      * The OCID of the work request which created the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedByWorkRequestId() {
         return createdByWorkRequestId;
     }
 
-    /** The time the cluster was deleted. */
+    /**
+     * The time the cluster was deleted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDeleted")
     private final java.util.Date timeDeleted;
 
     /**
      * The time the cluster was deleted.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDeleted() {
         return timeDeleted;
     }
 
-    /** The user who deleted the cluster. */
+    /**
+     * The user who deleted the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByUserId")
     private final String deletedByUserId;
 
     /**
      * The user who deleted the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getDeletedByUserId() {
         return deletedByUserId;
     }
 
-    /** The OCID of the work request which deleted the cluster. */
+    /**
+     * The OCID of the work request which deleted the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deletedByWorkRequestId")
     private final String deletedByWorkRequestId;
 
     /**
      * The OCID of the work request which deleted the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getDeletedByWorkRequestId() {
         return deletedByWorkRequestId;
     }
 
-    /** The time the cluster was updated. */
+    /**
+     * The time the cluster was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the cluster was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The user who updated the cluster. */
+    /**
+     * The user who updated the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByUserId")
     private final String updatedByUserId;
 
     /**
      * The user who updated the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getUpdatedByUserId() {
         return updatedByUserId;
     }
 
-    /** The OCID of the work request which updated the cluster. */
+    /**
+     * The OCID of the work request which updated the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedByWorkRequestId")
     private final String updatedByWorkRequestId;
 
     /**
      * The OCID of the work request which updated the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getUpdatedByWorkRequestId() {
         return updatedByWorkRequestId;
     }
 
-    /** The time until which the cluster credential is valid. */
+    /**
+     * The time until which the cluster credential is valid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCredentialExpiration")
     private final java.util.Date timeCredentialExpiration;
 
     /**
      * The time until which the cluster credential is valid.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCredentialExpiration() {
         return timeCredentialExpiration;
     }
@@ -415,7 +434,6 @@ public final class ClusterMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

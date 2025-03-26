@@ -5,21 +5,19 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * The details about the customer. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * The details about the customer.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OccCustomer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OccCustomer extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OccCustomer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "occCustomerGroupId",
@@ -44,76 +42,81 @@ public final class OccCustomer extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the customer group. */
+        /**
+         * The OCID of the customer group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("occCustomerGroupId")
         private String occCustomerGroupId;
 
         /**
          * The OCID of the customer group.
-         *
          * @param occCustomerGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder occCustomerGroupId(String occCustomerGroupId) {
             this.occCustomerGroupId = occCustomerGroupId;
             this.__explicitlySet__.add("occCustomerGroupId");
             return this;
         }
-        /** The OCID of the tenancy belonging to the customer. */
+        /**
+         * The OCID of the tenancy belonging to the customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The OCID of the tenancy belonging to the customer.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** The display name for the customer */
+        /**
+         * The display name for the customer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name for the customer
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description about the customer group. */
+        /**
+         * The description about the customer group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description about the customer group.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** To determine whether the customer is enabled/disabled. */
+        /**
+         * To determine whether the customer is enabled/disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * To determine whether the customer is enabled/disabled.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -158,7 +161,9 @@ public final class OccCustomer extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,66 +172,72 @@ public final class OccCustomer extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The OCID of the customer group. */
+    /**
+     * The OCID of the customer group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("occCustomerGroupId")
     private final String occCustomerGroupId;
 
     /**
      * The OCID of the customer group.
-     *
      * @return the value
-     */
+     **/
     public String getOccCustomerGroupId() {
         return occCustomerGroupId;
     }
 
-    /** The OCID of the tenancy belonging to the customer. */
+    /**
+     * The OCID of the tenancy belonging to the customer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The OCID of the tenancy belonging to the customer.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** The display name for the customer */
+    /**
+     * The display name for the customer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name for the customer
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The description about the customer group. */
+    /**
+     * The description about the customer group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description about the customer group.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** To determine whether the customer is enabled/disabled. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * To determine whether the customer is enabled/disabled.
+     **/
+    public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -264,15 +275,16 @@ public final class OccCustomer extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** To determine whether the customer is enabled/disabled. */
+    /**
+     * To determine whether the customer is enabled/disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * To determine whether the customer is enabled/disabled.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
@@ -284,7 +296,6 @@ public final class OccCustomer extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

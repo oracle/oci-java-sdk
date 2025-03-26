@@ -5,23 +5,21 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of a step execution in a DR plan execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of a step execution in a DR plan execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DrPlanStepExecution.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrPlanStepExecution
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DrPlanStepExecution.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrPlanStepExecution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stepId",
@@ -63,26 +61,30 @@ public final class DrPlanStepExecution
     public static class Builder {
         /**
          * The unique id of the step. Must not be modified by user.
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
-         * <p>Example: {@code sgid1.step..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private String stepId;
 
         /**
          * The unique id of the step. Must not be modified by user.
-         *
-         * <p>Example: {@code sgid1.step..uniqueID}
+         * <p>
+         * Example: {@code sgid1.step..uniqueID}
          *
          * @param stepId the value to set
          * @return this builder
-         */
+         **/
         public Builder stepId(String stepId) {
             this.stepId = stepId;
             this.__explicitlySet__.add("stepId");
             return this;
         }
-        /** The step type. */
+        /**
+         * The step type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private DrPlanStepType type;
 
@@ -91,7 +93,7 @@ public final class DrPlanStepExecution
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(DrPlanStepType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -99,20 +101,21 @@ public final class DrPlanStepExecution
         }
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
-         * <p>Example: {@code sgid1.group..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupId")
         private String groupId;
 
         /**
          * The unique id of the group to which this step belongs. Must not be modified by user.
-         *
-         * <p>Example: {@code sgid1.group..uniqueID}
+         * <p>
+         * Example: {@code sgid1.group..uniqueID}
          *
          * @param groupId the value to set
          * @return this builder
-         */
+         **/
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             this.__explicitlySet__.add("groupId");
@@ -120,20 +123,21 @@ public final class DrPlanStepExecution
         }
         /**
          * The display name of the step execution.
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the step execution.
-         *
-         * <p>Example: {@code DATABASE_SWITCHOVER}
+         * <p>
+         * Example: {@code DATABASE_SWITCHOVER}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -148,7 +152,10 @@ public final class DrPlanStepExecution
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-        /** The status of the step execution. */
+        /**
+         * The status of the step execution.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private DrPlanStepExecutionStatus status;
 
@@ -157,7 +164,7 @@ public final class DrPlanStepExecution
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(DrPlanStepExecutionStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
@@ -165,20 +172,21 @@ public final class DrPlanStepExecution
         }
         /**
          * Additional details on the step execution status.
+         * <p>
+         * Example: {@code This step failed to complete due to a timeout}
          *
-         * <p>Example: {@code This step failed to complete due to a timeout}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private String statusDetails;
 
         /**
          * Additional details on the step execution status.
-         *
-         * <p>Example: {@code This step failed to complete due to a timeout}
+         * <p>
+         * Example: {@code This step failed to complete due to a timeout}
          *
          * @param statusDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDetails(String statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
@@ -186,20 +194,21 @@ public final class DrPlanStepExecution
         }
         /**
          * The time when step execution began. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time when step execution began. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
@@ -207,20 +216,21 @@ public final class DrPlanStepExecution
         }
         /**
          * The time when execution ended. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time when execution ended. An RFC3339 formatted datetime string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
@@ -228,20 +238,21 @@ public final class DrPlanStepExecution
         }
         /**
          * The total duration in seconds taken to complete the step execution.
+         * <p>
+         * Example: {@code 35}
          *
-         * <p>Example: {@code 35}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
         private Integer executionDurationInSec;
 
         /**
          * The total duration in seconds taken to complete the step execution.
-         *
-         * <p>Example: {@code 35}
+         * <p>
+         * Example: {@code 35}
          *
          * @param executionDurationInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder executionDurationInSec(Integer executionDurationInSec) {
             this.executionDurationInSec = executionDurationInSec;
             this.__explicitlySet__.add("executionDurationInSec");
@@ -306,7 +317,9 @@ public final class DrPlanStepExecution
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -317,24 +330,28 @@ public final class DrPlanStepExecution
 
     /**
      * The unique id of the step. Must not be modified by user.
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
-     * <p>Example: {@code sgid1.step..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final String stepId;
 
     /**
      * The unique id of the step. Must not be modified by user.
-     *
-     * <p>Example: {@code sgid1.step..uniqueID}
+     * <p>
+     * Example: {@code sgid1.step..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getStepId() {
         return stepId;
     }
 
-    /** The step type. */
+    /**
+     * The step type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final DrPlanStepType type;
 
@@ -342,45 +359,47 @@ public final class DrPlanStepExecution
      * The step type.
      *
      * @return the value
-     */
+     **/
     public DrPlanStepType getType() {
         return type;
     }
 
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
-     * <p>Example: {@code sgid1.group..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupId")
     private final String groupId;
 
     /**
      * The unique id of the group to which this step belongs. Must not be modified by user.
-     *
-     * <p>Example: {@code sgid1.group..uniqueID}
+     * <p>
+     * Example: {@code sgid1.group..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getGroupId() {
         return groupId;
     }
 
     /**
      * The display name of the step execution.
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the step execution.
-     *
-     * <p>Example: {@code DATABASE_SWITCHOVER}
+     * <p>
+     * Example: {@code DATABASE_SWITCHOVER}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -392,7 +411,10 @@ public final class DrPlanStepExecution
         return logLocation;
     }
 
-    /** The status of the step execution. */
+    /**
+     * The status of the step execution.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final DrPlanStepExecutionStatus status;
 
@@ -400,83 +422,87 @@ public final class DrPlanStepExecution
      * The status of the step execution.
      *
      * @return the value
-     */
+     **/
     public DrPlanStepExecutionStatus getStatus() {
         return status;
     }
 
     /**
      * Additional details on the step execution status.
+     * <p>
+     * Example: {@code This step failed to complete due to a timeout}
      *
-     * <p>Example: {@code This step failed to complete due to a timeout}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final String statusDetails;
 
     /**
      * Additional details on the step execution status.
-     *
-     * <p>Example: {@code This step failed to complete due to a timeout}
+     * <p>
+     * Example: {@code This step failed to complete due to a timeout}
      *
      * @return the value
-     */
+     **/
     public String getStatusDetails() {
         return statusDetails;
     }
 
     /**
      * The time when step execution began. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time when step execution began. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
      * The time when execution ended. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time when execution ended. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
      * The total duration in seconds taken to complete the step execution.
+     * <p>
+     * Example: {@code 35}
      *
-     * <p>Example: {@code 35}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionDurationInSec")
     private final Integer executionDurationInSec;
 
     /**
      * The total duration in seconds taken to complete the step execution.
-     *
-     * <p>Example: {@code 35}
+     * <p>
+     * Example: {@code 35}
      *
      * @return the value
-     */
+     **/
     public Integer getExecutionDurationInSec() {
         return executionDurationInSec;
     }
@@ -488,7 +514,6 @@ public final class DrPlanStepExecution
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,22 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Sentiment aspect object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Sentiment aspect object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SentimentAspect.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SentimentAspect
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SentimentAspect extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"offset", "length", "text", "sentiment", "scores"})
     public SentimentAspect(
@@ -39,80 +36,85 @@ public final class SentimentAspect
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of Unicode code points preceding this entity in the submitted text. */
+        /**
+         * The number of Unicode code points preceding this entity in the submitted text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private Integer offset;
 
         /**
          * The number of Unicode code points preceding this entity in the submitted text.
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(Integer offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** Length of aspect text. */
+        /**
+         * Length of aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private Integer length;
 
         /**
          * Length of aspect text.
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(Integer length) {
             this.length = length;
             this.__explicitlySet__.add("length");
             return this;
         }
-        /** Aspect text. */
+        /**
+         * Aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Aspect text.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** The highest-score sentiment for the aspect text. */
+        /**
+         * The highest-score sentiment for the aspect text.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sentiment")
         private String sentiment;
 
         /**
          * The highest-score sentiment for the aspect text.
-         *
          * @param sentiment the value to set
          * @return this builder
-         */
+         **/
         public Builder sentiment(String sentiment) {
             this.sentiment = sentiment;
             this.__explicitlySet__.add("sentiment");
             return this;
         }
         /**
-         * Scores or confidences for each sentiment. Example: {@code {"positive": 1.0, "negative":
-         * 0.0}}
-         */
+         * Scores or confidences for each sentiment.
+         * Example: {@code {"positive": 1.0, "negative": 0.0}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scores")
         private java.util.Map<String, Double> scores;
 
         /**
-         * Scores or confidences for each sentiment. Example: {@code {"positive": 1.0, "negative":
-         * 0.0}}
+         * Scores or confidences for each sentiment.
+         * Example: {@code {"positive": 1.0, "negative": 0.0}}
          *
          * @param scores the value to set
          * @return this builder
-         */
+         **/
         public Builder scores(java.util.Map<String, Double> scores) {
             this.scores = scores;
             this.__explicitlySet__.add("scores");
@@ -153,7 +155,9 @@ public final class SentimentAspect
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -162,69 +166,76 @@ public final class SentimentAspect
         return new Builder().copy(this);
     }
 
-    /** The number of Unicode code points preceding this entity in the submitted text. */
+    /**
+     * The number of Unicode code points preceding this entity in the submitted text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final Integer offset;
 
     /**
      * The number of Unicode code points preceding this entity in the submitted text.
-     *
      * @return the value
-     */
+     **/
     public Integer getOffset() {
         return offset;
     }
 
-    /** Length of aspect text. */
+    /**
+     * Length of aspect text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final Integer length;
 
     /**
      * Length of aspect text.
-     *
      * @return the value
-     */
+     **/
     public Integer getLength() {
         return length;
     }
 
-    /** Aspect text. */
+    /**
+     * Aspect text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Aspect text.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
-    /** The highest-score sentiment for the aspect text. */
+    /**
+     * The highest-score sentiment for the aspect text.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sentiment")
     private final String sentiment;
 
     /**
      * The highest-score sentiment for the aspect text.
-     *
      * @return the value
-     */
+     **/
     public String getSentiment() {
         return sentiment;
     }
 
     /**
-     * Scores or confidences for each sentiment. Example: {@code {"positive": 1.0, "negative": 0.0}}
-     */
+     * Scores or confidences for each sentiment.
+     * Example: {@code {"positive": 1.0, "negative": 0.0}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scores")
     private final java.util.Map<String, Double> scores;
 
     /**
-     * Scores or confidences for each sentiment. Example: {@code {"positive": 1.0, "negative": 0.0}}
+     * Scores or confidences for each sentiment.
+     * Example: {@code {"positive": 1.0, "negative": 0.0}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Double> getScores() {
         return scores;
     }
@@ -236,7 +247,6 @@ public final class SentimentAspect
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

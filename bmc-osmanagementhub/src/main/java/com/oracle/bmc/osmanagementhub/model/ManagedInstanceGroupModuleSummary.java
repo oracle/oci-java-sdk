@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the summary information about a module on a managed instance group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the summary information about a module on a managed instance group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagedInstanceGroupModuleSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagedInstanceGroupModuleSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagedInstanceGroupModuleSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -43,65 +42,65 @@ public final class ManagedInstanceGroupModuleSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the module. */
+        /**
+         * The name of the module.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the module.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The name of the module stream that is enabled for the group. */
+        /**
+         * The name of the module stream that is enabled for the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("enabledStream")
         private String enabledStream;
 
         /**
          * The name of the module stream that is enabled for the group.
-         *
          * @param enabledStream the value to set
          * @return this builder
-         */
+         **/
         public Builder enabledStream(String enabledStream) {
             this.enabledStream = enabledStream;
             this.__explicitlySet__.add("enabledStream");
             return this;
         }
-        /** The list of installed profiles under the currently enabled module stream. */
+        /**
+         * The list of installed profiles under the currently enabled module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installedProfiles")
         private java.util.List<String> installedProfiles;
 
         /**
          * The list of installed profiles under the currently enabled module stream.
-         *
          * @param installedProfiles the value to set
          * @return this builder
-         */
+         **/
         public Builder installedProfiles(java.util.List<String> installedProfiles) {
             this.installedProfiles = installedProfiles;
             this.__explicitlySet__.add("installedProfiles");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that provides this module stream.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that provides this module stream.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
          * @param softwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -142,7 +141,9 @@ public final class ManagedInstanceGroupModuleSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,58 +152,58 @@ public final class ManagedInstanceGroupModuleSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the module. */
+    /**
+     * The name of the module.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the module.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The name of the module stream that is enabled for the group. */
+    /**
+     * The name of the module stream that is enabled for the group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("enabledStream")
     private final String enabledStream;
 
     /**
      * The name of the module stream that is enabled for the group.
-     *
      * @return the value
-     */
+     **/
     public String getEnabledStream() {
         return enabledStream;
     }
 
-    /** The list of installed profiles under the currently enabled module stream. */
+    /**
+     * The list of installed profiles under the currently enabled module stream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installedProfiles")
     private final java.util.List<String> installedProfiles;
 
     /**
      * The list of installed profiles under the currently enabled module stream.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getInstalledProfiles() {
         return installedProfiles;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that provides this module stream.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that provides this module stream.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides this module stream.
      * @return the value
-     */
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -214,7 +215,6 @@ public final class ManagedInstanceGroupModuleSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

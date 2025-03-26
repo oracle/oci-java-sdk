@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.announcementsservice.model;
 
-/** Platform type this announcement is related to */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
-public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Platform type this announcement is related to
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 0.0.1")
+public enum PlatformType {
     Iaas("IAAS"),
     Saas("SAAS"),
     Paas("PAAS"),

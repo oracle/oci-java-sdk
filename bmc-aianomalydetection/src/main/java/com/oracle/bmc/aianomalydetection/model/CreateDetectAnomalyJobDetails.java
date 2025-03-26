@@ -5,24 +5,24 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Base class for the DetectAnomalies async call. It contains the identifier that is used for
- * deciding what type of request this is. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * Base class for the DetectAnomalies async call. It contains the identifier that is
+ * used for deciding what type of request this is.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDetectAnomalyJobDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDetectAnomalyJobDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDetectAnomalyJobDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -56,95 +56,97 @@ public final class CreateDetectAnomalyJobDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that starts the job. */
+        /**
+         * The OCID of the compartment that starts the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that starts the job.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** A short description of the detect anomaly job. */
+        /**
+         * A short description of the detect anomaly job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description of the detect anomaly job.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Detect anomaly job display name. */
+        /**
+         * Detect anomaly job display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Detect anomaly job display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the trained model. */
+        /**
+         * The OCID of the trained model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
          * The OCID of the trained model.
-         *
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
             return this;
         }
-        /** The value that customer can adjust to control the sensitivity of anomaly detection */
+        /**
+         * The value that customer can adjust to control the sensitivity of anomaly detection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
         private Float sensitivity;
 
         /**
          * The value that customer can adjust to control the sensitivity of anomaly detection
-         *
          * @param sensitivity the value to set
          * @return this builder
-         */
+         **/
         public Builder sensitivity(Float sensitivity) {
             this.sensitivity = sensitivity;
             this.__explicitlySet__.add("sensitivity");
             return this;
         }
         /**
-         * Flag to enable the service to return estimates for all data points rather than just the
-         * anomalous data points.
-         */
+         * Flag to enable the service to return estimates for all data points rather than just the anomalous data points.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areAllEstimatesRequired")
         private Boolean areAllEstimatesRequired;
 
         /**
-         * Flag to enable the service to return estimates for all data points rather than just the
-         * anomalous data points.
-         *
+         * Flag to enable the service to return estimates for all data points rather than just the anomalous data points.
          * @param areAllEstimatesRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder areAllEstimatesRequired(Boolean areAllEstimatesRequired) {
             this.areAllEstimatesRequired = areAllEstimatesRequired;
             this.__explicitlySet__.add("areAllEstimatesRequired");
@@ -219,7 +221,9 @@ public final class CreateDetectAnomalyJobDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -228,84 +232,86 @@ public final class CreateDetectAnomalyJobDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that starts the job. */
+    /**
+     * The OCID of the compartment that starts the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that starts the job.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** A short description of the detect anomaly job. */
+    /**
+     * A short description of the detect anomaly job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the detect anomaly job.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Detect anomaly job display name. */
+    /**
+     * Detect anomaly job display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Detect anomaly job display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the trained model. */
+    /**
+     * The OCID of the trained model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
      * The OCID of the trained model.
-     *
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
-    /** The value that customer can adjust to control the sensitivity of anomaly detection */
+    /**
+     * The value that customer can adjust to control the sensitivity of anomaly detection
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sensitivity")
     private final Float sensitivity;
 
     /**
      * The value that customer can adjust to control the sensitivity of anomaly detection
-     *
      * @return the value
-     */
+     **/
     public Float getSensitivity() {
         return sensitivity;
     }
 
     /**
-     * Flag to enable the service to return estimates for all data points rather than just the
-     * anomalous data points.
-     */
+     * Flag to enable the service to return estimates for all data points rather than just the anomalous data points.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areAllEstimatesRequired")
     private final Boolean areAllEstimatesRequired;
 
     /**
-     * Flag to enable the service to return estimates for all data points rather than just the
-     * anomalous data points.
-     *
+     * Flag to enable the service to return estimates for all data points rather than just the anomalous data points.
      * @return the value
-     */
+     **/
     public Boolean getAreAllEstimatesRequired() {
         return areAllEstimatesRequired;
     }
@@ -331,7 +337,6 @@ public final class CreateDetectAnomalyJobDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * This is the input used to estimate the size of data that might be purged <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * This is the input used to estimate the size of data that might be purged
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EstimatePurgeDataSizeDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EstimatePurgeDataSizeDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EstimatePurgeDataSizeDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -46,76 +46,81 @@ public final class EstimatePurgeDataSizeDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the compartment OCID under which the data will be purged */
+        /**
+         * This is the compartment OCID under which the data will be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * This is the compartment OCID under which the data will be purged
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** If true, purge child compartments data */
+        /**
+         * If true, purge child compartments data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
         /**
          * If true, purge child compartments data
-         *
          * @param compartmentIdInSubtree the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-        /** This is the time before which data will be purged */
+        /**
+         * This is the time before which data will be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
         private java.util.Date timeDataEnded;
 
         /**
          * This is the time before which data will be purged
-         *
          * @param timeDataEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeDataEnded(java.util.Date timeDataEnded) {
             this.timeDataEnded = timeDataEnded;
             this.__explicitlySet__.add("timeDataEnded");
             return this;
         }
-        /** This is the solr data filter query, '*' means all */
+        /**
+         * This is the solr data filter query, '*' means all
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
         private String purgeQueryString;
 
         /**
          * This is the solr data filter query, '*' means all
-         *
          * @param purgeQueryString the value to set
          * @return this builder
-         */
+         **/
         public Builder purgeQueryString(String purgeQueryString) {
             this.purgeQueryString = purgeQueryString;
             this.__explicitlySet__.add("purgeQueryString");
             return this;
         }
-        /** This is the type of the log data to be purged */
+        /**
+         * This is the type of the log data to be purged
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private StorageDataType dataType;
 
         /**
          * This is the type of the log data to be purged
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(StorageDataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -160,7 +165,9 @@ public final class EstimatePurgeDataSizeDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +176,72 @@ public final class EstimatePurgeDataSizeDetails
         return new Builder().copy(this);
     }
 
-    /** This is the compartment OCID under which the data will be purged */
+    /**
+     * This is the compartment OCID under which the data will be purged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * This is the compartment OCID under which the data will be purged
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** If true, purge child compartments data */
+    /**
+     * If true, purge child compartments data
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
     /**
      * If true, purge child compartments data
-     *
      * @return the value
-     */
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
 
-    /** This is the time before which data will be purged */
+    /**
+     * This is the time before which data will be purged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeDataEnded")
     private final java.util.Date timeDataEnded;
 
     /**
      * This is the time before which data will be purged
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeDataEnded() {
         return timeDataEnded;
     }
 
-    /** This is the solr data filter query, '*' means all */
+    /**
+     * This is the solr data filter query, '*' means all
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purgeQueryString")
     private final String purgeQueryString;
 
     /**
      * This is the solr data filter query, '*' means all
-     *
      * @return the value
-     */
+     **/
     public String getPurgeQueryString() {
         return purgeQueryString;
     }
 
-    /** This is the type of the log data to be purged */
+    /**
+     * This is the type of the log data to be purged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final StorageDataType dataType;
 
     /**
      * This is the type of the log data to be purged
-     *
      * @return the value
-     */
+     **/
     public StorageDataType getDataType() {
         return dataType;
     }
@@ -241,7 +253,6 @@ public final class EstimatePurgeDataSizeDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

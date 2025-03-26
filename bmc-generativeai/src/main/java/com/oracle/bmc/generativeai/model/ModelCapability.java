@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.generativeai.model;
 
-/** Describes what this model can be used for. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
-public enum ModelCapability implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Describes what this model can be used for.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+public enum ModelCapability {
     TextGeneration("TEXT_GENERATION"),
     TextSummarization("TEXT_SUMMARIZATION"),
     TextEmbeddings("TEXT_EMBEDDINGS"),

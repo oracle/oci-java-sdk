@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Parameters to update a detector recipe attached to a target. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Parameters to update a detector recipe attached to a target.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateTargetDetectorRecipe.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateTargetDetectorRecipe.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateTargetDetectorRecipe
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"targetDetectorRecipeId", "detectorRules"})
     public UpdateTargetDetectorRecipe(
@@ -34,31 +33,33 @@ public final class UpdateTargetDetectorRecipe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier for target detector recipe */
+        /**
+         * Unique identifier for target detector recipe
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
         private String targetDetectorRecipeId;
 
         /**
          * Unique identifier for target detector recipe
-         *
          * @param targetDetectorRecipeId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetDetectorRecipeId(String targetDetectorRecipeId) {
             this.targetDetectorRecipeId = targetDetectorRecipeId;
             this.__explicitlySet__.add("targetDetectorRecipeId");
             return this;
         }
-        /** Updates to be applied to detector rules in target detector recipe */
+        /**
+         * Updates to be applied to detector rules in target detector recipe
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
         private java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
         /**
          * Updates to be applied to detector rules in target detector recipe
-         *
          * @param detectorRules the value to set
          * @return this builder
-         */
+         **/
         public Builder detectorRules(
                 java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules) {
             this.detectorRules = detectorRules;
@@ -90,7 +91,9 @@ public final class UpdateTargetDetectorRecipe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,28 +102,30 @@ public final class UpdateTargetDetectorRecipe
         return new Builder().copy(this);
     }
 
-    /** Unique identifier for target detector recipe */
+    /**
+     * Unique identifier for target detector recipe
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDetectorRecipeId")
     private final String targetDetectorRecipeId;
 
     /**
      * Unique identifier for target detector recipe
-     *
      * @return the value
-     */
+     **/
     public String getTargetDetectorRecipeId() {
         return targetDetectorRecipeId;
     }
 
-    /** Updates to be applied to detector rules in target detector recipe */
+    /**
+     * Updates to be applied to detector rules in target detector recipe
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("detectorRules")
     private final java.util.List<UpdateTargetRecipeDetectorRuleDetails> detectorRules;
 
     /**
      * Updates to be applied to detector rules in target detector recipe
-     *
      * @return the value
-     */
+     **/
     public java.util.List<UpdateTargetRecipeDetectorRuleDetails> getDetectorRules() {
         return detectorRules;
     }
@@ -132,7 +137,6 @@ public final class UpdateTargetDetectorRecipe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

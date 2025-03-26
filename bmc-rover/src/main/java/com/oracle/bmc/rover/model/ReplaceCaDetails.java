@@ -5,22 +5,19 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * Information about the detailed CA bundle replacement of the rover node. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * Information about the detailed CA bundle replacement of the rover node.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReplaceCaDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ReplaceCaDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ReplaceCaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "caBundlePem",
@@ -43,68 +40,64 @@ public final class ReplaceCaDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Plain text certificate chain in PEM format for the subordinate CA associated with given
-         * roverNode.
-         */
+         * Plain text certificate chain in PEM format for the subordinate CA associated with given roverNode.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundlePem")
         private String caBundlePem;
 
         /**
-         * Plain text certificate chain in PEM format for the subordinate CA associated with given
-         * roverNode.
-         *
+         * Plain text certificate chain in PEM format for the subordinate CA associated with given roverNode.
          * @param caBundlePem the value to set
          * @return this builder
-         */
+         **/
         public Builder caBundlePem(String caBundlePem) {
             this.caBundlePem = caBundlePem;
             this.__explicitlySet__.add("caBundlePem");
             return this;
         }
         /**
-         * Max validity of leaf certificates issued by the CA associated with given node, in days,
-         * in ISO 8601 format, example "P365D".
-         */
+         * Max validity of leaf certificates issued by the CA associated with given node, in days, in ISO 8601 format, example "P365D".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateMaxValidityDuration")
         private String certificateMaxValidityDuration;
 
         /**
-         * Max validity of leaf certificates issued by the CA associated with given node, in days,
-         * in ISO 8601 format, example "P365D".
-         *
+         * Max validity of leaf certificates issued by the CA associated with given node, in days, in ISO 8601 format, example "P365D".
          * @param certificateMaxValidityDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateMaxValidityDuration(String certificateMaxValidityDuration) {
             this.certificateMaxValidityDuration = certificateMaxValidityDuration;
             this.__explicitlySet__.add("certificateMaxValidityDuration");
             return this;
         }
-        /** key algorithm for issuing leaf certificate. */
+        /**
+         * key algorithm for issuing leaf certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
         private CertKeyAlgorithm certKeyAlgorithm;
 
         /**
          * key algorithm for issuing leaf certificate.
-         *
          * @param certKeyAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder certKeyAlgorithm(CertKeyAlgorithm certKeyAlgorithm) {
             this.certKeyAlgorithm = certKeyAlgorithm;
             this.__explicitlySet__.add("certKeyAlgorithm");
             return this;
         }
-        /** signature algorithm for issuing leaf certificate. */
+        /**
+         * signature algorithm for issuing leaf certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
         private CertSignatureAlgorithm certSignatureAlgorithm;
 
         /**
          * signature algorithm for issuing leaf certificate.
-         *
          * @param certSignatureAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder certSignatureAlgorithm(CertSignatureAlgorithm certSignatureAlgorithm) {
             this.certSignatureAlgorithm = certSignatureAlgorithm;
             this.__explicitlySet__.add("certSignatureAlgorithm");
@@ -145,7 +138,9 @@ public final class ReplaceCaDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,61 +150,57 @@ public final class ReplaceCaDetails
     }
 
     /**
-     * Plain text certificate chain in PEM format for the subordinate CA associated with given
-     * roverNode.
-     */
+     * Plain text certificate chain in PEM format for the subordinate CA associated with given roverNode.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundlePem")
     private final String caBundlePem;
 
     /**
-     * Plain text certificate chain in PEM format for the subordinate CA associated with given
-     * roverNode.
-     *
+     * Plain text certificate chain in PEM format for the subordinate CA associated with given roverNode.
      * @return the value
-     */
+     **/
     public String getCaBundlePem() {
         return caBundlePem;
     }
 
     /**
-     * Max validity of leaf certificates issued by the CA associated with given node, in days, in
-     * ISO 8601 format, example "P365D".
-     */
+     * Max validity of leaf certificates issued by the CA associated with given node, in days, in ISO 8601 format, example "P365D".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateMaxValidityDuration")
     private final String certificateMaxValidityDuration;
 
     /**
-     * Max validity of leaf certificates issued by the CA associated with given node, in days, in
-     * ISO 8601 format, example "P365D".
-     *
+     * Max validity of leaf certificates issued by the CA associated with given node, in days, in ISO 8601 format, example "P365D".
      * @return the value
-     */
+     **/
     public String getCertificateMaxValidityDuration() {
         return certificateMaxValidityDuration;
     }
 
-    /** key algorithm for issuing leaf certificate. */
+    /**
+     * key algorithm for issuing leaf certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
     private final CertKeyAlgorithm certKeyAlgorithm;
 
     /**
      * key algorithm for issuing leaf certificate.
-     *
      * @return the value
-     */
+     **/
     public CertKeyAlgorithm getCertKeyAlgorithm() {
         return certKeyAlgorithm;
     }
 
-    /** signature algorithm for issuing leaf certificate. */
+    /**
+     * signature algorithm for issuing leaf certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
     private final CertSignatureAlgorithm certSignatureAlgorithm;
 
     /**
      * signature algorithm for issuing leaf certificate.
-     *
      * @return the value
-     */
+     **/
     public CertSignatureAlgorithm getCertSignatureAlgorithm() {
         return certSignatureAlgorithm;
     }
@@ -221,7 +212,6 @@ public final class ReplaceCaDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,118 +6,156 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEmailReturnPathsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/ListEmailReturnPathsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEmailReturnPathsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class ListEmailReturnPathsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     private String opcRequestId;
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID for the compartment. */
+    /**
+     * The OCID for the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Email Domain to which this Email Return Path belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+     *
      */
     private String parentResourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Email Domain to which this Email Return Path belongs.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+     *
      */
     public String getParentResourceId() {
         return parentResourceId;
     }
-    /** A filter to only return resources that match the given id exactly. */
+    /**
+     * A filter to only return resources that match the given id exactly.
+     *
+     */
     private String id;
 
-    /** A filter to only return resources that match the given id exactly. */
+    /**
+     * A filter to only return resources that match the given id exactly.
+     *
+     */
     public String getId() {
         return id;
     }
-    /** A filter to only return resources that match the given name exactly. */
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
     private String name;
 
-    /** A filter to only return resources that match the given name exactly. */
+    /**
+     * A filter to only return resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important
-     * details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+     * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     private com.oracle.bmc.email.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending or descending order. */
+    /**
+     * The sort order to use, either ascending or descending order.
+     *
+     */
     public com.oracle.bmc.email.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Filter returned list by specified lifecycle state. This parameter is case-insensitive. */
+    /**
+     * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+     *
+     */
     private com.oracle.bmc.email.model.EmailReturnPath.LifecycleState lifecycleState;
 
-    /** Filter returned list by specified lifecycle state. This parameter is case-insensitive. */
+    /**
+     * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+     *
+     */
     public com.oracle.bmc.email.model.EmailReturnPath.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * Specifies the attribute with which to sort the return paths.
+     * <p>
+     * Default: {@code TIMECREATED}
+     * <p>
+     * **TIMECREATED:** Sorts by timeCreated.
+     * * **NAME:** Sorts by name.
+     * * **ID:** Sorts by id.
      *
-     * <p>Default: {@code TIMECREATED}
-     *
-     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
      */
     private SortBy sortBy;
 
     /**
      * Specifies the attribute with which to sort the return paths.
+     * <p>
+     * Default: {@code TIMECREATED}
+     * <p>
+     * **TIMECREATED:** Sorts by timeCreated.
+     * * **NAME:** Sorts by name.
+     * * **ID:** Sorts by id.
      *
-     * <p>Default: {@code TIMECREATED}
-     *
-     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Id("ID"),
         Name("NAME"),
@@ -153,10 +191,13 @@ public class ListEmailReturnPathsRequest
 
     /**
      * Specifies the attribute with which to sort the return paths.
+     * <p>
+     * Default: {@code TIMECREATED}
+     * <p>
+     * **TIMECREATED:** Sorts by timeCreated.
+     * * **NAME:** Sorts by name.
+     * * **ID:** Sorts by id.
      *
-     * <p>Default: {@code TIMECREATED}
-     *
-     * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by id.
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -165,15 +206,17 @@ public class ListEmailReturnPathsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEmailReturnPathsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The request ID for tracing from the system */
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -182,12 +225,13 @@ public class ListEmailReturnPathsRequest
             return this;
         }
 
-        /** The OCID for the compartment. */
+        /**
+         * The OCID for the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID for the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -197,14 +241,13 @@ public class ListEmailReturnPathsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Email Domain to which this Email Return Path belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
+         *
          */
         private String parentResourceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Email Domain to which this Email Return Path belongs.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
          *
          * @param parentResourceId the value to set
          * @return this builder instance
@@ -214,7 +257,10 @@ public class ListEmailReturnPathsRequest
             return this;
         }
 
-        /** A filter to only return resources that match the given id exactly. */
+        /**
+         * A filter to only return resources that match the given id exactly.
+         *
+         */
         private String id = null;
 
         /**
@@ -228,7 +274,10 @@ public class ListEmailReturnPathsRequest
             return this;
         }
 
-        /** A filter to only return resources that match the given name exactly. */
+        /**
+         * A filter to only return resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
@@ -244,17 +293,16 @@ public class ListEmailReturnPathsRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For
-         * important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. {@code 1} is the minimum, {@code 1000} is the maximum. For important details about
+         * how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -265,16 +313,17 @@ public class ListEmailReturnPathsRequest
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call.
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -284,7 +333,10 @@ public class ListEmailReturnPathsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending or descending order. */
+        /**
+         * The sort order to use, either ascending or descending order.
+         *
+         */
         private com.oracle.bmc.email.model.SortOrder sortOrder = null;
 
         /**
@@ -300,6 +352,7 @@ public class ListEmailReturnPathsRequest
 
         /**
          * Filter returned list by specified lifecycle state. This parameter is case-insensitive.
+         *
          */
         private com.oracle.bmc.email.model.EmailReturnPath.LifecycleState lifecycleState = null;
 
@@ -317,21 +370,24 @@ public class ListEmailReturnPathsRequest
 
         /**
          * Specifies the attribute with which to sort the return paths.
+         * <p>
+         * Default: {@code TIMECREATED}
+         * <p>
+         * **TIMECREATED:** Sorts by timeCreated.
+         * * **NAME:** Sorts by name.
+         * * **ID:** Sorts by id.
          *
-         * <p>Default: {@code TIMECREATED}
-         *
-         * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by
-         * id.
          */
         private SortBy sortBy = null;
 
         /**
          * Specifies the attribute with which to sort the return paths.
-         *
-         * <p>Default: {@code TIMECREATED}
-         *
-         * <p>**TIMECREATED:** Sorts by timeCreated. * **NAME:** Sorts by name. * **ID:** Sorts by
-         * id.
+         * <p>
+         * Default: {@code TIMECREATED}
+         * <p>
+         * **TIMECREATED:** Sorts by timeCreated.
+         * * **NAME:** Sorts by name.
+         * * **ID:** Sorts by id.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -343,19 +399,18 @@ public class ListEmailReturnPathsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -367,7 +422,6 @@ public class ListEmailReturnPathsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListEmailReturnPathsRequest o) {
@@ -389,11 +443,10 @@ public class ListEmailReturnPathsRequest
         /**
          * Build the instance of ListEmailReturnPathsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListEmailReturnPathsRequest
          */
@@ -407,8 +460,7 @@ public class ListEmailReturnPathsRequest
         /**
          * Build the instance of ListEmailReturnPathsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListEmailReturnPathsRequest
@@ -426,14 +478,12 @@ public class ListEmailReturnPathsRequest
             request.lifecycleState = lifecycleState;
             request.sortBy = sortBy;
             return request;
-            // new ListEmailReturnPathsRequest(opcRequestId, compartmentId, parentResourceId, id,
-            // name, limit, page, sortOrder, lifecycleState, sortBy);
+            // new ListEmailReturnPathsRequest(opcRequestId, compartmentId, parentResourceId, id, name, limit, page, sortOrder, lifecycleState, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -452,7 +502,6 @@ public class ListEmailReturnPathsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

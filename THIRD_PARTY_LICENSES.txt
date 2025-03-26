@@ -4,7 +4,6 @@
 ------------------------------- Licenses -------------------------------
 - Apache License 2.0
 - BSD 3-Clause
-- BSD 2-Clause
 - Common Development and Distribution License (CDDL)
 - Eclipse Distribution License 1.0
 - Eclipse Public License 2.0
@@ -35,6 +34,12 @@ commons-lang3
 * License: Apache License 2.0
 * Source code: https://github.com/apache/commons-lang
 * Project home: https://commons.apache.org/proper/commons-lang
+
+guava
+* Copyright © 2021 Guava
+* License: Apache License 2.0
+* Source code: https://github.com/google/guava
+* Project home: https://guava.dev
 
 jackson-annotations
 * Copyright © 2009-2011 FasterXML, LLC
@@ -127,11 +132,7 @@ vavr
 * Source code: https://github.com/vavr-io/vavr
 * Project home: https://www.vavr.io
 
-websocket-server
-* Copyright © 1995 Mort Bay Consulting Pty Ltd and others.
-* License: Apache License 2.0
-* Source code: https://github.com/jetty/jetty.project
-* Project home: https://jetty.org/
+
 ======================= Fourth Party Components ========================
 
 com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider
@@ -142,10 +143,22 @@ com.fasterxml.jackson.module:jackson-module-jaxb-annotations
 * Copyright © 2009-2011 FasterXML, LLC
 * License: Apache License 2.0
 
-com.github.stephenc.jcip:jcip-annotations
-* Copyright © 2013 Stephen Connolly
+com.google.errorprone:error_prone_annotations
+* Copyright © 2015 The Error Prone Authors
 * License: Apache License 2.0
-* Source code: https://github.com/stephenc/jcip-annotations
+
+com.google.guava:failureaccess
+* Copyright © 2013 The Guava Authors
+* License: Apache License 2.0
+* Source code: https://github.com/google/guava/
+
+com.google.guava:listenablefuture
+* License: Apache License 2.0
+
+com.google.j2objc:j2objc-annotations
+* Copyright © 2012 Google Inc
+* License: Apache License 2.0
+* Source code: https://github.com/google/j2objc/
 
 com.sun.activation:jakarta.activation
 * Copyright © 2018 Oracle and/or its affiliates. All rights reserved.
@@ -154,13 +167,6 @@ com.sun.activation:jakarta.activation
 commons-logging:commons-logging
 * Copyright © 2001-2014 The Apache Software Foundation. All rights reserved.
 * License: Apache License 2.0
-
-FastDoubleParser
-* Copyright © 2022 Daniel Lemire. BSL License.
-* Copyright © 2023 Werner Randelshofer, Switzerland.
-* Licenses: BSL License
-            MIT License
-* Source code: https://github.com/wrandelshofer/FastDoubleParser
 
 io.vavr:vavr-match
 * Copyright © 2014-2021 Vavr
@@ -201,6 +207,10 @@ net.minidev:json-smart
 org.apache.httpcomponents:httpclient
 * Copyright © 2005–2021 The Apache Software Foundation. All rights reserved.
 * License: Apache License 2.0
+
+org.checkerframework:checker-qual
+* Copyright © 2004-present by the Checker Framework developers
+* License: MIT License
 
 org.glassfish.hk2:hk2-api
 * Copyright © 2012, 2018 Oracle and/or its affiliates. All rights reserved.
@@ -537,35 +547,6 @@ met:
   3. Neither the name of the copyright holder nor the names of its
      contributors may be used to endorse or promote products derived from
      this software without specific prior written permission.
-
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
-IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
-THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
-PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
-CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
-EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, 
-PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
-PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
-LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
-NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
-
-------------------------------------------------------------------------
-
------------------------------ BSD 2-Clause -----------------------------
-
-Redistribution and use in source and binary forms, with or without 
-modification,are permitted provided that the following conditions are 
-met:
-
-  1. Redistributions of source code must retain the above copyright 
-     notice, this list of conditions and the following disclaimer.
-
-  2. Redistributions in binary form must reproduce the above copyright 
-     notice, this list of conditions and the following disclaimer in the
-     documentation and/or other materials provided with the distribution.
 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
@@ -2228,6 +2209,10 @@ Bootstrap v3.3.7
 * Project: http://getbootstrap.com
 * Copyright: 2011-2016 Twitter, Inc
 
+Google Guava Version 18.0
+* License: Apache License, 2.0
+* Copyright (C) 2009 The Guava Authors
+
 javax.inject Version: 1
 * License: Apache License, 2.0
 * Copyright (C) 2009 The JSR-330 Expert Group
@@ -2288,90 +2273,7 @@ http://www.w3.org/Consortium/Legal/
 
 ========================= Fourth Party Notices =========================
 
-------------------------------------------------------------------------
-
--- FastDoubleParser
-
-This is a Java port of Daniel Lemire's fast_float project.
-This project provides parsers for double, float, BigDecimal and BigInteger values.
-
-## Copyright
-
-Copyright © 2023 Werner Randelshofer, Switzerland.
-
-## Licensing
-
-This code is licensed under MIT License.
-
-Some portions of the code have been derived from other projects.
-All these projects require that we include a copyright notice, and 
-some require that we also include some text of their license file.
-
-fast_double_parser, Copyright (c) 2022 Daniel Lemire. BSL License.
-
-fast_float, Copyright (c) 2021 The fast_float authors. MIT License.
-
-bigint, Copyright 2020 Tim Buktu. 2-clause BSD License.
-
-https://github.com/lemire/fast_double_parser
-
-Copyright (c) Daniel Lemire
-
-Copyright 2022 Tim Buktu
-
---- 
-Boost Software License - Version 1.0 - August 17th, 2003
-
-Permission is hereby granted, free of charge, to any person or organization
-obtaining a copy of the software and accompanying documentation covered by
-this license (the "Software") to use, reproduce, display, distribute,
-execute, and transmit the Software, and to prepare derivative works of the
-Software, and to permit third-parties to whom the Software is furnished to
-do so, all subject to the following:
-
-The copyright notices in the Software and this entire statement, including
-the above license grant, this restriction and the following disclaimer,
-must be included in all copies of the Software, in whole or in part, and
-all derivative works of the Software, unless such copies or derivative
-works are solely in the form of machine-executable object code generated by
-a source language processor.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE, TITLE AND NON-INFRINGEMENT. IN NO EVENT
-SHALL THE COPYRIGHT HOLDERS OR ANYONE DISTRIBUTING THE SOFTWARE BE LIABLE
-FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-DEALINGS IN THE SOFTWARE.
----
-
-https://github.com/tbuktu/bigint/tree/floatfft
-
-The following files are licensed under a 2-clause BSD license:
-
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/BigInteger.java.diff
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/MutableBigInteger.java.diff
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/BigDecimal.java.diff
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/MultBenchmark.java
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/DivBenchmark.java
-  https://github.com/tbuktu/bigint/tree/floatfft/src/test/java/BigIntegerTest.java.diff
-  https://github.com/tbuktu/bigint/tree/floatfft/src/test/java/BigIntegerTestOld.java
-
-The following files are licensed under the General Public License 2.0 (GPL v2):
-
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/BigInteger.java
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/BigDecimal.java
-  https://github.com/tbuktu/bigint/tree/floatfft/src/main/java/java/math/MutableBigInteger.java
-  https://github.com/tbuktu/bigint/tree/floatfft/src/test/java/BigIntegerTest.java
-
-(We only use those portions of the bigint project that can be licensed
-under 2-clause BSD License.) (The file 'thirdparty-LICENSE' is 
-included in the sources and classes Jar files that are released by
-this project - as is required by that license.)
-
-------------------------------------------------------------------------
-
--- commons-logging
+commons-logging
 
 Apache Commons Logging
 Copyright 2003-2016 The Apache Software Foundation
@@ -2381,7 +2283,7 @@ The Apache Software Foundation (http://www.apache.org/).
 
 ------------------------------------------------------------------------
 
--- jakarta.validation-api
+jakarta.validation-api
 
 Notices for Eclipse Jakarta Bean Validation
 

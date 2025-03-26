@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details to update an Autonomous Database wallet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details to update an Autonomous Database wallet.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateAutonomousDatabaseWalletDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateAutonomousDatabaseWalletDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateAutonomousDatabaseWalletDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"shouldRotate", "gracePeriod"})
     public UpdateAutonomousDatabaseWalletDetails(Boolean shouldRotate, Integer gracePeriod) {
@@ -33,42 +33,32 @@ public final class UpdateAutonomousDatabaseWalletDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be
-         * rotated. The default is {@code false}.
-         */
+         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldRotate")
         private Boolean shouldRotate;
 
         /**
-         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be
-         * rotated. The default is {@code false}.
-         *
+         * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
          * @param shouldRotate the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldRotate(Boolean shouldRotate) {
             this.shouldRotate = shouldRotate;
             this.__explicitlySet__.add("shouldRotate");
             return this;
         }
         /**
-         * The number of hours that the old wallet can be used after it has been rotated. The old
-         * wallet will no longer be valid after the number of hours in the wallet rotation grace
-         * period has passed. During the grace period, both the old wallet and the current wallet
-         * can be used.
-         */
+         * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
         private Integer gracePeriod;
 
         /**
-         * The number of hours that the old wallet can be used after it has been rotated. The old
-         * wallet will no longer be valid after the number of hours in the wallet rotation grace
-         * period has passed. During the grace period, both the old wallet and the current wallet
-         * can be used.
-         *
+         * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
          * @param gracePeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder gracePeriod(Integer gracePeriod) {
             this.gracePeriod = gracePeriod;
             this.__explicitlySet__.add("gracePeriod");
@@ -99,7 +89,9 @@ public final class UpdateAutonomousDatabaseWalletDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,37 +101,29 @@ public final class UpdateAutonomousDatabaseWalletDetails
     }
 
     /**
-     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be
-     * rotated. The default is {@code false}.
-     */
+     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldRotate")
     private final Boolean shouldRotate;
 
     /**
-     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be
-     * rotated. The default is {@code false}.
-     *
+     * Indicates whether to rotate the wallet or not. If {@code false}, the wallet will not be rotated. The default is {@code false}.
      * @return the value
-     */
+     **/
     public Boolean getShouldRotate() {
         return shouldRotate;
     }
 
     /**
-     * The number of hours that the old wallet can be used after it has been rotated. The old wallet
-     * will no longer be valid after the number of hours in the wallet rotation grace period has
-     * passed. During the grace period, both the old wallet and the current wallet can be used.
-     */
+     * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracePeriod")
     private final Integer gracePeriod;
 
     /**
-     * The number of hours that the old wallet can be used after it has been rotated. The old wallet
-     * will no longer be valid after the number of hours in the wallet rotation grace period has
-     * passed. During the grace period, both the old wallet and the current wallet can be used.
-     *
+     * The number of hours that the old wallet can be used after it has been rotated. The old wallet will no longer be valid after the number of hours in the wallet rotation grace period has passed. During the grace period, both the old wallet and the current wallet can be used.
      * @return the value
-     */
+     **/
     public Integer getGracePeriod() {
         return gracePeriod;
     }
@@ -151,7 +135,6 @@ public final class UpdateAutonomousDatabaseWalletDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

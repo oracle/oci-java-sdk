@@ -6,52 +6,65 @@ package com.oracle.bmc.osmanagement.requests;
 
 import com.oracle.bmc.osmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ChangeSoftwareSourceCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeSoftwareSourceCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagement/ChangeSoftwareSourceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeSoftwareSourceCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class ChangeSoftwareSourceCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails> {
 
-    /** The OCID of the software source. */
+    /**
+     * The OCID of the software source.
+     */
     private String softwareSourceId;
 
-    /** The OCID of the software source. */
+    /**
+     * The OCID of the software source.
+     */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /** OCID for the compartment to which the resource will be moved. */
+    /**
+     * OCID for the compartment to which the resource will be moved.
+     */
     private com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails
             changeSoftwareSourceCompartmentDetails;
 
-    /** OCID for the compartment to which the resource will be moved. */
+    /**
+     * OCID for the compartment to which the resource will be moved.
+     */
     public com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails
             getChangeSoftwareSourceCompartmentDetails() {
         return changeSoftwareSourceCompartmentDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -59,18 +72,20 @@ public class ChangeSoftwareSourceCompartmentRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -78,7 +93,6 @@ public class ChangeSoftwareSourceCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -91,15 +105,17 @@ public class ChangeSoftwareSourceCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeSoftwareSourceCompartmentRequest,
                     com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the software source. */
+        /**
+         * The OCID of the software source.
+         */
         private String softwareSourceId = null;
 
         /**
          * The OCID of the software source.
-         *
          * @param softwareSourceId the value to set
          * @return this builder instance
          */
@@ -108,13 +124,14 @@ public class ChangeSoftwareSourceCompartmentRequest
             return this;
         }
 
-        /** OCID for the compartment to which the resource will be moved. */
+        /**
+         * OCID for the compartment to which the resource will be moved.
+         */
         private com.oracle.bmc.osmanagement.model.ChangeSoftwareSourceCompartmentDetails
                 changeSoftwareSourceCompartmentDetails = null;
 
         /**
          * OCID for the compartment to which the resource will be moved.
-         *
          * @param changeSoftwareSourceCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -125,12 +142,13 @@ public class ChangeSoftwareSourceCompartmentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -140,18 +158,21 @@ public class ChangeSoftwareSourceCompartmentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -163,19 +184,20 @@ public class ChangeSoftwareSourceCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -187,19 +209,18 @@ public class ChangeSoftwareSourceCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -211,7 +232,6 @@ public class ChangeSoftwareSourceCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeSoftwareSourceCompartmentRequest o) {
@@ -226,14 +246,12 @@ public class ChangeSoftwareSourceCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeSoftwareSourceCompartmentRequest as configured by this
-         * builder
+         * Build the instance of ChangeSoftwareSourceCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeSoftwareSourceCompartmentRequest
          */
@@ -246,7 +264,6 @@ public class ChangeSoftwareSourceCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -258,11 +275,9 @@ public class ChangeSoftwareSourceCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeSoftwareSourceCompartmentRequest as configured by this
-         * builder
+         * Build the instance of ChangeSoftwareSourceCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeSoftwareSourceCompartmentRequest
@@ -276,14 +291,12 @@ public class ChangeSoftwareSourceCompartmentRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeSoftwareSourceCompartmentRequest(softwareSourceId,
-            // changeSoftwareSourceCompartmentDetails, opcRequestId, ifMatch, opcRetryToken);
+            // new ChangeSoftwareSourceCompartmentRequest(softwareSourceId, changeSoftwareSourceCompartmentDetails, opcRequestId, ifMatch, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -297,7 +310,6 @@ public class ChangeSoftwareSourceCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

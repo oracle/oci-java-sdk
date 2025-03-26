@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.mediaservices.model;
 
-/** Sort By. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
-public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort By.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+public enum SortBy {
     TimeCreated("timeCreated"),
     DisplayName("displayName"),
     ;

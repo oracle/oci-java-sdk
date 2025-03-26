@@ -6,27 +6,27 @@ package com.oracle.bmc.dns.model;
 
 /**
  * The body for defining a new zone.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateZoneDetails.Builder.class)
+    builder = CreateZoneDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "migrationSource")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "migrationSource"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateZoneDetails extends CreateZoneBaseDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -67,25 +67,29 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
             return this;
         }
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
-         * SECONDARY} is only supported for GLOBAL zones.
-         */
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+         * zones.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
         private ZoneType zoneType;
 
         /**
-         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code
-         * SECONDARY} is only supported for GLOBAL zones.
+         * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+         * zones.
          *
          * @param zoneType the value to set
          * @return this builder
-         */
+         **/
         public Builder zoneType(ZoneType zoneType) {
             this.zoneType = zoneType;
             this.__explicitlySet__.add("zoneType");
             return this;
         }
-        /** This value will be null for zones in the global DNS. */
+        /**
+         * This value will be null for zones in the global DNS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewId")
         private String viewId;
 
@@ -94,60 +98,63 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
          *
          * @param viewId the value to set
          * @return this builder
-         */
+         **/
         public Builder viewId(String viewId) {
             this.viewId = viewId;
             this.__explicitlySet__.add("viewId");
             return this;
         }
-        /** The scope of the zone. */
+        /**
+         * The scope of the zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
          * The scope of the zone.
-         *
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * External master servers for the zone. {@code externalMasters} becomes a required
-         * parameter when the {@code zoneType} value is {@code SECONDARY}.
-         */
+         * External master servers for the zone. {@code externalMasters} becomes a
+         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
         private java.util.List<ExternalMaster> externalMasters;
 
         /**
-         * External master servers for the zone. {@code externalMasters} becomes a required
-         * parameter when the {@code zoneType} value is {@code SECONDARY}.
+         * External master servers for the zone. {@code externalMasters} becomes a
+         * required parameter when the {@code zoneType} value is {@code SECONDARY}.
          *
          * @param externalMasters the value to set
          * @return this builder
-         */
+         **/
         public Builder externalMasters(java.util.List<ExternalMaster> externalMasters) {
             this.externalMasters = externalMasters;
             this.__explicitlySet__.add("externalMasters");
             return this;
         }
         /**
-         * External secondary servers for the zone. This field is currently not supported when
-         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
-         */
+         * External secondary servers for the zone.
+         * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
         private java.util.List<ExternalDownstream> externalDownstreams;
 
         /**
-         * External secondary servers for the zone. This field is currently not supported when
-         * {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+         * External secondary servers for the zone.
+         * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
          *
          * @param externalDownstreams the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDownstreams(java.util.List<ExternalDownstream> externalDownstreams) {
             this.externalDownstreams = externalDownstreams;
             this.__explicitlySet__.add("externalDownstreams");
@@ -155,74 +162,65 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         }
         /**
          * The state of DNSSEC on the zone.
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          *
-         * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain
-         * (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling
-         * DNSSEC, you must add a DS record to the zone's parent zone containing the {@code
-         * KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of
-         * the {@code KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion}
-         * operation to promote the {@code KskDnssecKeyVersion}.
-         *
-         * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing
-         * {@code KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you
-         * must replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion}
-         * data with the data from the new {@code KskDnssecKeyVersion}.
-         *
-         * <p>To remove the old DS record without causing service disruption, wait until the old DS
-         * record's TTL has expired, and the new DS record has propagated. After the DS replacement
-         * has been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be
-         * called.
-         *
-         * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-         * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend
-         * that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
-         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion}
-         * operation can be called.
-         *
-         * <p>Enabling DNSSEC results in additional records in DNS responses which increases their
-         * size and can cause higher response latency.
-         *
-         * <p>For more information, see
-         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
         private ZoneDnssecState dnssecState;
 
         /**
          * The state of DNSSEC on the zone.
-         *
-         * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain
-         * (or an independent trust anchor) must also have DNSSEC correctly set up. After enabling
-         * DNSSEC, you must add a DS record to the zone's parent zone containing the {@code
-         * KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of
-         * the {@code KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion}
-         * operation to promote the {@code KskDnssecKeyVersion}.
-         *
-         * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing
-         * {@code KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you
-         * must replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion}
-         * data with the data from the new {@code KskDnssecKeyVersion}.
-         *
-         * <p>To remove the old DS record without causing service disruption, wait until the old DS
-         * record's TTL has expired, and the new DS record has propagated. After the DS replacement
-         * has been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be
-         * called.
-         *
-         * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-         * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend
-         * that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
-         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion}
-         * operation can be called.
-         *
-         * <p>Enabling DNSSEC results in additional records in DNS responses which increases their
-         * size and can cause higher response latency.
-         *
-         * <p>For more information, see
-         * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
          *
          * @param dnssecState the value to set
          * @return this builder
-         */
+         **/
         public Builder dnssecState(ZoneDnssecState dnssecState) {
             this.dnssecState = dnssecState;
             this.__explicitlySet__.add("dnssecState");
@@ -287,7 +285,9 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -318,10 +318,11 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
     }
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
-     */
-    public enum ZoneType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+     * zones.
+     *
+     **/
+    public enum ZoneType {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
         ;
@@ -354,23 +355,27 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
         }
     };
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
-     */
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+     * zones.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("zoneType")
     private final ZoneType zoneType;
 
     /**
-     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY}
-     * is only supported for GLOBAL zones.
+     * The type of the zone. Must be either {@code PRIMARY} or {@code SECONDARY}. {@code SECONDARY} is only supported for GLOBAL
+     * zones.
      *
      * @return the value
-     */
+     **/
     public ZoneType getZoneType() {
         return zoneType;
     }
 
-    /** This value will be null for zones in the global DNS. */
+    /**
+     * This value will be null for zones in the global DNS.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewId")
     private final String viewId;
 
@@ -378,125 +383,121 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
      * This value will be null for zones in the global DNS.
      *
      * @return the value
-     */
+     **/
     public String getViewId() {
         return viewId;
     }
 
-    /** The scope of the zone. */
+    /**
+     * The scope of the zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
      * The scope of the zone.
-     *
      * @return the value
-     */
+     **/
     public Scope getScope() {
         return scope;
     }
 
     /**
-     * External master servers for the zone. {@code externalMasters} becomes a required parameter
-     * when the {@code zoneType} value is {@code SECONDARY}.
-     */
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalMasters")
     private final java.util.List<ExternalMaster> externalMasters;
 
     /**
-     * External master servers for the zone. {@code externalMasters} becomes a required parameter
-     * when the {@code zoneType} value is {@code SECONDARY}.
+     * External master servers for the zone. {@code externalMasters} becomes a
+     * required parameter when the {@code zoneType} value is {@code SECONDARY}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalMaster> getExternalMasters() {
         return externalMasters;
     }
 
     /**
-     * External secondary servers for the zone. This field is currently not supported when {@code
-     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
-     */
+     * External secondary servers for the zone.
+     * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDownstreams")
     private final java.util.List<ExternalDownstream> externalDownstreams;
 
     /**
-     * External secondary servers for the zone. This field is currently not supported when {@code
-     * zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
+     * External secondary servers for the zone.
+     * This field is currently not supported when {@code zoneType} is {@code SECONDARY} or {@code scope} is {@code PRIVATE}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ExternalDownstream> getExternalDownstreams() {
         return externalDownstreams;
     }
 
     /**
      * The state of DNSSEC on the zone.
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
-     * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or
-     * an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC,
-     * you must add a DS record to the zone's parent zone containing the {@code KskDnssecKeyVersion}
-     * data. You can find the DS data in the {@code dsData} attribute of the {@code
-     * KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote
-     * the {@code KskDnssecKeyVersion}.
-     *
-     * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code
-     * KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you must
-     * replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion} data with
-     * the data from the new {@code KskDnssecKeyVersion}.
-     *
-     * <p>To remove the old DS record without causing service disruption, wait until the old DS
-     * record's TTL has expired, and the new DS record has propagated. After the DS replacement has
-     * been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be called.
-     *
-     * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-     * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend that
-     * you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary
-     * parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be
-     * called.
-     *
-     * <p>Enabling DNSSEC results in additional records in DNS responses which increases their size
-     * and can cause higher response latency.
-     *
-     * <p>For more information, see
-     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
     private final ZoneDnssecState dnssecState;
 
     /**
      * The state of DNSSEC on the zone.
-     *
-     * <p>For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or
-     * an independent trust anchor) must also have DNSSEC correctly set up. After enabling DNSSEC,
-     * you must add a DS record to the zone's parent zone containing the {@code KskDnssecKeyVersion}
-     * data. You can find the DS data in the {@code dsData} attribute of the {@code
-     * KskDnssecKeyVersion}. Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote
-     * the {@code KskDnssecKeyVersion}.
-     *
-     * <p>New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code
-     * KskDnssecKeyVersion}'s expiration. To rollover a {@code KskDnssecKeyVersion}, you must
-     * replace the parent zone's DS record containing the old {@code KskDnssecKeyVersion} data with
-     * the data from the new {@code KskDnssecKeyVersion}.
-     *
-     * <p>To remove the old DS record without causing service disruption, wait until the old DS
-     * record's TTL has expired, and the new DS record has propagated. After the DS replacement has
-     * been completed, then the {@code PromoteZoneDnssecKeyVersion} operation must be called.
-     *
-     * <p>Metrics are emitted in the {@code oci_dns} namespace daily for each {@code
-     * KskDnssecKeyVersion} indicating how many days are left until expiration. We recommend that
-     * you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary
-     * parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be
-     * called.
-     *
-     * <p>Enabling DNSSEC results in additional records in DNS responses which increases their size
-     * and can cause higher response latency.
-     *
-     * <p>For more information, see
-     * [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
      *
      * @return the value
-     */
+     **/
     public ZoneDnssecState getDnssecState() {
         return dnssecState;
     }
@@ -508,7 +509,6 @@ public final class CreateZoneDetails extends CreateZoneBaseDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -1,0 +1,68 @@
+<!-- Ignored differences of internal code that nonetheless shouldn't have breaking changes -->
+<differences>
+  <difference>
+    <justification>Changed return type to remove Guava dependency</justification>
+    <className>com/oracle/bmc/auth/internal/AuthUtils</className>
+    <method>com.google.common.base.Optional toJwk(java.lang.String)</method>
+    <to>java.util.Optional</to>
+    <differenceType>7006</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed return type to remove Guava dependency</justification>
+    <className>com/oracle/bmc/auth/internal/AuthUtils</className>
+    <method>com.google.common.base.Optional toPublicKeyFromJwk(com.oracle.bmc.auth.internal.JWK)</method>
+    <to>java.util.Optional</to>
+    <differenceType>7006</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed return type to remove Guava dependency</justification>
+    <className>com/oracle/bmc/auth/internal/AuthUtils</className>
+    <method>com.google.common.base.Optional toPublicKeyFromJson(java.lang.String)</method>
+    <to>java.util.Optional</to>
+    <differenceType>7006</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed type to remove Guava dependency</justification>
+    <className>com/oracle/bmc/http/signing/internal/Constants</className>
+    <field>OPTIONAL_HEADERS_NAMES</field>
+    <from>com.google.common.collect.ImmutableList</from>
+    <to>java.util.List</to>
+    <differenceType>6004</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed HttpUtils to enum to prevent instantiation</justification>
+    <className>com/oracle/bmc/util/internal/HttpUtils</className>
+    <differenceType>3003</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed HttpUtils to enum to prevent instantiation</justification>
+    <className>com/oracle/bmc/util/internal/HttpUtils</className>
+    <method>HttpUtils()</method>
+    <differenceType>7004</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed HttpUtils to enum to prevent instantiation</justification>
+    <className>com/oracle/bmc/util/internal/HttpUtils</className>
+    <method>HttpUtils()</method>
+    <differenceType>7009</differenceType>
+  </difference>
+  <difference>
+    <!-- This could still be a problem if someone were to implement this interface -->
+    <justification>Added supplyKey method to remove Guava dependency</justification>
+    <className>com/oracle/bmc/http/signing/internal/KeySupplier</className>
+    <method>java.util.Optional supplyKey(java.lang.String)</method>
+    <differenceType>7012</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed class from final to methods being final</justification>
+    <className>com/oracle/bmc/io/internal/KeepOpenInputStream</className>
+    <method>void close()</method>
+    <differenceType>7014</differenceType>
+  </difference>
+  <difference>
+    <justification>Changed class from final to methods being final</justification>
+    <className>com/oracle/bmc/io/internal/KeepOpenInputStream</className>
+    <method>void doClose()</method>
+    <differenceType>7014</differenceType>
+  </difference>
+</differences>

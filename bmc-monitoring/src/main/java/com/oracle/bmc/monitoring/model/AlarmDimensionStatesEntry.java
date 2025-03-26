@@ -5,23 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * A timestamped alarm state entry for a metric stream. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * A timestamped alarm state entry for a metric stream.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AlarmDimensionStatesEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AlarmDimensionStatesEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AlarmDimensionStatesEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "alarmSummary",
@@ -47,50 +47,46 @@ public final class AlarmDimensionStatesEntry
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-         * Optionally include [dynamic
-         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-         * The alarm summary appears within the body of the alarm message and in responses to {@link
-         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
-         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
-         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         */
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
         private String alarmSummary;
 
         /**
-         * Customizable alarm summary ({@code alarmSummary} [alarm message
-         * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-         * Optionally include [dynamic
-         * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-         * The alarm summary appears within the body of the alarm message and in responses to {@link
-         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
-         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
-         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
          *
          * @param alarmSummary the value to set
          * @return this builder
-         */
+         **/
         public Builder alarmSummary(String alarmSummary) {
             this.alarmSummary = alarmSummary;
             this.__explicitlySet__.add("alarmSummary");
             return this;
         }
         /**
-         * Indicator of the metric stream associated with the alarm state entry. Includes one or
-         * more dimension key-value pairs.
-         */
+         * Indicator of the metric stream associated with the alarm state entry. Includes one or more dimension key-value pairs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
-         * Indicator of the metric stream associated with the alarm state entry. Includes one or
-         * more dimension key-value pairs.
+         * Indicator of the metric stream associated with the alarm state entry. Includes one or more dimension key-value pairs.
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -98,41 +94,41 @@ public final class AlarmDimensionStatesEntry
         }
         /**
          * Transition state (status value) associated with the alarm state entry.
+         * <p>
+         * Example: {@code FIRING}
          *
-         * <p>Example: {@code FIRING}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Transition state (status value) associated with the alarm state entry.
-         *
-         * <p>Example: {@code FIRING}
+         * <p>
+         * Example: {@code FIRING}
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
-         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
-         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
-         */
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
         private String ruleName;
 
         /**
-         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
-         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
-         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          * @param ruleName the value to set
          * @return this builder
-         */
+         **/
         public Builder ruleName(String ruleName) {
             this.ruleName = ruleName;
             this.__explicitlySet__.add("ruleName");
@@ -140,20 +136,21 @@ public final class AlarmDimensionStatesEntry
         }
         /**
          * Transition time associated with the alarm state entry. Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2022-02-01T01:02:29.600Z}
          *
-         * <p>Example: {@code 2022-02-01T01:02:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
         /**
          * Transition time associated with the alarm state entry. Format defined by RFC3339.
-         *
-         * <p>Example: {@code 2022-02-01T01:02:29.600Z}
+         * <p>
+         * Example: {@code 2022-02-01T01:02:29.600Z}
          *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
@@ -198,7 +195,9 @@ public final class AlarmDimensionStatesEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -208,63 +207,60 @@ public final class AlarmDimensionStatesEntry
     }
 
     /**
-     * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-     * Optionally include [dynamic
-     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-     * The alarm summary appears within the body of the alarm message and in responses to {@link
-     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
-     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-     */
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
     private final String alarmSummary;
 
     /**
-     * Customizable alarm summary ({@code alarmSummary} [alarm message
-     * parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
-     * Optionally include [dynamic
-     * variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
-     * The alarm summary appears within the body of the alarm message and in responses to {@link
-     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
-     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
      *
      * @return the value
-     */
+     **/
     public String getAlarmSummary() {
         return alarmSummary;
     }
 
     /**
-     * Indicator of the metric stream associated with the alarm state entry. Includes one or more
-     * dimension key-value pairs.
-     */
+     * Indicator of the metric stream associated with the alarm state entry. Includes one or more dimension key-value pairs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
-     * Indicator of the metric stream associated with the alarm state entry. Includes one or more
-     * dimension key-value pairs.
+     * Indicator of the metric stream associated with the alarm state entry. Includes one or more dimension key-value pairs.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
     /**
      * Transition state (status value) associated with the alarm state entry.
+     * <p>
+     * Example: {@code FIRING}
      *
-     * <p>Example: {@code FIRING}
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Status {
         Firing("FIRING"),
         Ok("OK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -304,57 +300,58 @@ public final class AlarmDimensionStatesEntry
     };
     /**
      * Transition state (status value) associated with the alarm state entry.
+     * <p>
+     * Example: {@code FIRING}
      *
-     * <p>Example: {@code FIRING}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Transition state (status value) associated with the alarm state entry.
-     *
-     * <p>Example: {@code FIRING}
+     * <p>
+     * Example: {@code FIRING}
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
-     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
-     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
-     */
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
     private final String ruleName;
 
     /**
-     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
-     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
-     * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      * @return the value
-     */
+     **/
     public String getRuleName() {
         return ruleName;
     }
 
     /**
      * Transition time associated with the alarm state entry. Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2022-02-01T01:02:29.600Z}
      *
-     * <p>Example: {@code 2022-02-01T01:02:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
     /**
      * Transition time associated with the alarm state entry. Format defined by RFC3339.
-     *
-     * <p>Example: {@code 2022-02-01T01:02:29.600Z}
+     * <p>
+     * Example: {@code 2022-02-01T01:02:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
@@ -366,7 +363,6 @@ public final class AlarmDimensionStatesEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

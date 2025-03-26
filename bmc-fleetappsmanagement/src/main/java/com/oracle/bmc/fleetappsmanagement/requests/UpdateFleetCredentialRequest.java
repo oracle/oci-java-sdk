@@ -6,67 +6,83 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetCredentialExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateFleetCredentialRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFleetCredentialRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class UpdateFleetCredentialRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails> {
 
-    /** unique FleetCredential identifier */
+    /**
+     * unique FleetCredential identifier
+     */
     private String fleetCredentialId;
 
-    /** unique FleetCredential identifier */
+    /**
+     * unique FleetCredential identifier
+     */
     public String getFleetCredentialId() {
         return fleetCredentialId;
     }
-    /** Unique Fleet identifier. */
+    /**
+     * Unique Fleet identifier.
+     */
     private String fleetId;
 
-    /** Unique Fleet identifier. */
+    /**
+     * Unique Fleet identifier.
+     */
     public String getFleetId() {
         return fleetId;
     }
-    /** The credential information to be updated. */
+    /**
+     * The credential information to be updated.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
             updateFleetCredentialDetails;
 
-    /** The credential information to be updated. */
+    /**
+     * The credential information to be updated.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
             getUpdateFleetCredentialDetails() {
         return updateFleetCredentialDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -79,15 +95,17 @@ public class UpdateFleetCredentialRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateFleetCredentialRequest,
                     com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique FleetCredential identifier */
+        /**
+         * unique FleetCredential identifier
+         */
         private String fleetCredentialId = null;
 
         /**
          * unique FleetCredential identifier
-         *
          * @param fleetCredentialId the value to set
          * @return this builder instance
          */
@@ -96,12 +114,13 @@ public class UpdateFleetCredentialRequest
             return this;
         }
 
-        /** Unique Fleet identifier. */
+        /**
+         * Unique Fleet identifier.
+         */
         private String fleetId = null;
 
         /**
          * Unique Fleet identifier.
-         *
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -110,13 +129,14 @@ public class UpdateFleetCredentialRequest
             return this;
         }
 
-        /** The credential information to be updated. */
+        /**
+         * The credential information to be updated.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
                 updateFleetCredentialDetails = null;
 
         /**
          * The credential information to be updated.
-         *
          * @param updateFleetCredentialDetails the value to set
          * @return this builder instance
          */
@@ -128,18 +148,21 @@ public class UpdateFleetCredentialRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -149,12 +172,13 @@ public class UpdateFleetCredentialRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -165,19 +189,18 @@ public class UpdateFleetCredentialRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -189,7 +212,6 @@ public class UpdateFleetCredentialRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateFleetCredentialRequest o) {
@@ -206,11 +228,10 @@ public class UpdateFleetCredentialRequest
         /**
          * Build the instance of UpdateFleetCredentialRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateFleetCredentialRequest
          */
@@ -223,7 +244,6 @@ public class UpdateFleetCredentialRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -237,8 +257,7 @@ public class UpdateFleetCredentialRequest
         /**
          * Build the instance of UpdateFleetCredentialRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateFleetCredentialRequest
@@ -251,14 +270,12 @@ public class UpdateFleetCredentialRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateFleetCredentialRequest(fleetCredentialId, fleetId,
-            // updateFleetCredentialDetails, ifMatch, opcRequestId);
+            // new UpdateFleetCredentialRequest(fleetCredentialId, fleetId, updateFleetCredentialDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -272,7 +289,6 @@ public class UpdateFleetCredentialRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

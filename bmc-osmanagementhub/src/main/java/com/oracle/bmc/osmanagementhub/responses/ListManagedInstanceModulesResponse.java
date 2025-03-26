@@ -6,17 +6,16 @@ package com.oracle.bmc.osmanagementhub.responses;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -41,16 +41,13 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -58,13 +55,14 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
         return opcNextPage;
     }
 
-    /** The returned {@code ManagedInstanceModuleCollection} instance. */
+    /**
+     * The returned ManagedInstanceModuleCollection instance.
+     */
     private com.oracle.bmc.osmanagementhub.model.ManagedInstanceModuleCollection
             managedInstanceModuleCollection;
 
     /**
-     * The returned {@code ManagedInstanceModuleCollection} instance.
-     *
+     * The returned ManagedInstanceModuleCollection instance.
      * @return the value
      */
     public com.oracle.bmc.osmanagementhub.model.ManagedInstanceModuleCollection
@@ -82,7 +80,7 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
     })
     private ListManagedInstanceModulesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String opcNextPage,
@@ -95,34 +93,29 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
         this.managedInstanceModuleCollection = managedInstanceModuleCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListManagedInstanceModulesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -133,14 +126,15 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -151,16 +145,13 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -170,13 +161,14 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
             return this;
         }
 
-        /** The returned {@code ManagedInstanceModuleCollection} instance. */
+        /**
+         * The returned ManagedInstanceModuleCollection instance.
+         */
         private com.oracle.bmc.osmanagementhub.model.ManagedInstanceModuleCollection
                 managedInstanceModuleCollection;
 
         /**
-         * The returned {@code ManagedInstanceModuleCollection} instance.
-         *
+         * The returned ManagedInstanceModuleCollection instance.
          * @param managedInstanceModuleCollection the value to set
          * @return this builder
          */
@@ -189,10 +181,8 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListManagedInstanceModulesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -206,10 +196,8 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListManagedInstanceModulesResponse build() {
             return new ListManagedInstanceModulesResponse(
                     __httpStatusCode__,
@@ -223,7 +211,6 @@ public class ListManagedInstanceModulesResponse extends com.oracle.bmc.responses
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

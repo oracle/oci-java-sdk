@@ -5,23 +5,23 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Patch artifact metadata Details which is platform specific. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Patch artifact metadata Details which is platform specific.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PlatformSpecificArtifact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PlatformSpecificArtifact.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PlatformSpecificArtifact
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content", "osType", "architecture"})
     public PlatformSpecificArtifact(
@@ -43,31 +43,33 @@ public final class PlatformSpecificArtifact
             this.__explicitlySet__.add("content");
             return this;
         }
-        /** The OS type the patch is applicable for. */
+        /**
+         * The OS type the patch is applicable for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osType")
         private OsType osType;
 
         /**
          * The OS type the patch is applicable for.
-         *
          * @param osType the value to set
          * @return this builder
-         */
+         **/
         public Builder osType(OsType osType) {
             this.osType = osType;
             this.__explicitlySet__.add("osType");
             return this;
         }
-        /** System architecture. */
+        /**
+         * System architecture.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private Architecture architecture;
 
         /**
          * System architecture.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(Architecture architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
@@ -101,7 +103,9 @@ public final class PlatformSpecificArtifact
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,14 +121,16 @@ public final class PlatformSpecificArtifact
         return content;
     }
 
-    /** The OS type the patch is applicable for. */
-    public enum OsType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The OS type the patch is applicable for.
+     **/
+    public enum OsType {
         Windows("WINDOWS"),
         Linux("LINUX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -162,27 +168,30 @@ public final class PlatformSpecificArtifact
             return UnknownEnumValue;
         }
     };
-    /** The OS type the patch is applicable for. */
+    /**
+     * The OS type the patch is applicable for.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osType")
     private final OsType osType;
 
     /**
      * The OS type the patch is applicable for.
-     *
      * @return the value
-     */
+     **/
     public OsType getOsType() {
         return osType;
     }
 
-    /** System architecture. */
-    public enum Architecture implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * System architecture.
+     **/
+    public enum Architecture {
         Arm64("ARM_64"),
         X64("X64"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -221,15 +230,16 @@ public final class PlatformSpecificArtifact
             return UnknownEnumValue;
         }
     };
-    /** System architecture. */
+    /**
+     * System architecture.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final Architecture architecture;
 
     /**
      * System architecture.
-     *
      * @return the value
-     */
+     **/
     public Architecture getArchitecture() {
         return architecture;
     }
@@ -241,7 +251,6 @@ public final class PlatformSpecificArtifact
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

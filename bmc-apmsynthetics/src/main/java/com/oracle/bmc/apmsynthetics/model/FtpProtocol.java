@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of FTP protocol. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum FtpProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of FTP protocol.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum FtpProtocol {
     Ftp("FTP"),
     Ftps("FTPS"),
     Sftp("SFTP"),

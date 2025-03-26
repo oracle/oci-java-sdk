@@ -5,23 +5,22 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Details for a custom endpoint for the integration instance (update). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Details for a custom endpoint for the integration instance (update).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateCustomEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateCustomEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateCustomEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostname", "certificateSecretId"})
     public CreateCustomEndpointDetails(String hostname, String certificateSecretId) {
@@ -32,37 +31,39 @@ public final class CreateCustomEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A custom hostname to be used for the integration instance URL, in FQDN format. */
+        /**
+         * A custom hostname to be used for the integration instance URL, in FQDN format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * A custom hostname to be used for the integration instance URL, in FQDN format.
-         *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
-         * for the custom hostname. All certificates should be stored in a single base64 encoded
-         * secret Note the update will fail if this is not a valid certificate.
-         */
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         * All certificates should be stored in a single base64 encoded secret
+         * Note the update will fail if this is not a valid certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
         private String certificateSecretId;
 
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
-         * for the custom hostname. All certificates should be stored in a single base64 encoded
-         * secret Note the update will fail if this is not a valid certificate.
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         * All certificates should be stored in a single base64 encoded secret
+         * Note the update will fail if this is not a valid certificate.
          *
          * @param certificateSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             this.__explicitlySet__.add("certificateSecretId");
@@ -93,7 +94,9 @@ public final class CreateCustomEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,34 +105,36 @@ public final class CreateCustomEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** A custom hostname to be used for the integration instance URL, in FQDN format. */
+    /**
+     * A custom hostname to be used for the integration instance URL, in FQDN format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * A custom hostname to be used for the integration instance URL, in FQDN format.
-     *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
-     * the custom hostname. All certificates should be stored in a single base64 encoded secret Note
-     * the update will fail if this is not a valid certificate.
-     */
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     * All certificates should be stored in a single base64 encoded secret
+     * Note the update will fail if this is not a valid certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
     private final String certificateSecretId;
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
-     * the custom hostname. All certificates should be stored in a single base64 encoded secret Note
-     * the update will fail if this is not a valid certificate.
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     * All certificates should be stored in a single base64 encoded secret
+     * Note the update will fail if this is not a valid certificate.
      *
      * @return the value
-     */
+     **/
     public String getCertificateSecretId() {
         return certificateSecretId;
     }
@@ -141,7 +146,6 @@ public final class CreateCustomEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

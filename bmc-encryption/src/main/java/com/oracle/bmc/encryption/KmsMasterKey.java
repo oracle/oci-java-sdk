@@ -24,7 +24,9 @@ import com.oracle.bmc.keymanagement.responses.GetKeyResponse;
 import com.oracle.bmc.keymanagement.responses.GetVaultResponse;
 import com.oracle.bmc.model.BmcException;
 
-/** Represents a MasterKey contained in the OCI Key Management Service. */
+/**
+ * Represents a MasterKey contained in the OCI Key Management Service.
+ */
 public class KmsMasterKey implements MasterKey {
     private final KmsCryptoClient kmsCryptoClient;
     private final KmsManagementClient kmsManagementClient;
@@ -39,9 +41,8 @@ public class KmsMasterKey implements MasterKey {
     private final String region;
 
     /**
-     * Initialize KmsMasterKey for encryption. It creates the clients needed to get Keys from OCI
-     * KMS service.
-     *
+     * Initialize KmsMasterKey for encryption.
+     * It creates the clients needed to get Keys from OCI KMS service.
      * @param authenticationDetailsProvider Authentication Provider for OCI.
      * @param region OCI Region
      * @param vaultId The OCID of the vault.
@@ -95,7 +96,6 @@ public class KmsMasterKey implements MasterKey {
 
     /**
      * Generate Data encryption key.
-     *
      * @param cryptoAlgorithm Crypto Algorithm.
      * @return Data Key
      */
@@ -144,7 +144,6 @@ public class KmsMasterKey implements MasterKey {
 
     /**
      * Decrypt Data key.
-     *
      * @param encryptedDataKey encryptedDataKey.
      * @param kmsMasterKeyId masterKeyId.
      * @return Decrypted Data Key
@@ -197,7 +196,9 @@ public class KmsMasterKey implements MasterKey {
         return errorMsg.toString();
     }
 
-    /** Close the OCI clients. */
+    /**
+     * Close the OCI clients.
+     */
     public void close() {
         if (kmsVaultClient != null) kmsVaultClient.close();
         if (kmsManagementClient != null) kmsManagementClient.close();

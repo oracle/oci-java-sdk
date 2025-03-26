@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Type of Windows software update. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum WindowsUpdateTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of Windows software update.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum WindowsUpdateTypes {
     Security("SECURITY"),
     Bugfix("BUGFIX"),
     Enhancement("ENHANCEMENT"),

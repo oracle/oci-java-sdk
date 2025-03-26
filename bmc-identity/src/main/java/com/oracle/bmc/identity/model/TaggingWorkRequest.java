@@ -5,25 +5,23 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * The asynchronous API request does not take effect immediately. This request spawns an
- * asynchronous workflow to fulfill the request. WorkRequest objects provide visibility for
- * in-progress workflows. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The asynchronous API request does not take effect immediately. This request spawns an asynchronous
+ * workflow to fulfill the request. WorkRequest objects provide visibility for in-progress workflows.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TaggingWorkRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TaggingWorkRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = TaggingWorkRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TaggingWorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -60,67 +58,74 @@ public final class TaggingWorkRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the work request. */
+        /**
+         * The OCID of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the work request.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** An enum-like description of the type of work the work request is doing. */
+        /**
+         * An enum-like description of the type of work the work request is doing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
         /**
          * An enum-like description of the type of work the work request is doing.
-         *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** The OCID of the compartment that contains the work request. */
+        /**
+         * The OCID of the compartment that contains the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the work request.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current status of the work request. */
+        /**
+         * The current status of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The current status of the work request.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The resources this work request affects. */
+        /**
+         * The resources this work request affects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
@@ -129,70 +134,76 @@ public final class TaggingWorkRequest
          *
          * @param resources the value to set
          * @return this builder
-         */
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
         /**
-         * Date and time the work was accepted, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
-         */
+         * Date and time the work was accepted, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
-         * Date and time the work was accepted, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
+         * Date and time the work was accepted, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
         /**
-         * Date and time the work started, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
-         */
+         * Date and time the work started, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * Date and time the work started, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
+         * Date and time the work started, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * Date and time the work completed, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
-         */
+         * Date and time the work completed, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * Date and time the work completed, in the format defined by RFC3339. Example: {@code
-         * 2016-08-25T21:10:29.600Z}
+         * Date and time the work completed, in the format defined by RFC3339.
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** How much progress the operation has made. */
+        /**
+         * How much progress the operation has made.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
@@ -201,7 +212,7 @@ public final class TaggingWorkRequest
          *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
@@ -262,7 +273,9 @@ public final class TaggingWorkRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -271,21 +284,24 @@ public final class TaggingWorkRequest
         return new Builder().copy(this);
     }
 
-    /** The OCID of the work request. */
+    /**
+     * The OCID of the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the work request.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** An enum-like description of the type of work the work request is doing. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * An enum-like description of the type of work the work request is doing.
+     **/
+    public enum OperationType {
         DeleteTagDefinition("DELETE_TAG_DEFINITION"),
         DeleteNonEmptyTagNamespace("DELETE_NON_EMPTY_TAG_NAMESPACE"),
         BulkDeleteTagDefinition("BULK_DELETE_TAG_DEFINITION"),
@@ -293,8 +309,8 @@ public final class TaggingWorkRequest
         ImportStandardTags("IMPORT_STANDARD_TAGS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -333,34 +349,38 @@ public final class TaggingWorkRequest
             return UnknownEnumValue;
         }
     };
-    /** An enum-like description of the type of work the work request is doing. */
+    /**
+     * An enum-like description of the type of work the work request is doing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
     /**
      * An enum-like description of the type of work the work request is doing.
-     *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** The OCID of the compartment that contains the work request. */
+    /**
+     * The OCID of the compartment that contains the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the work request.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The current status of the work request. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current status of the work request.
+     **/
+    public enum Status {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -370,8 +390,8 @@ public final class TaggingWorkRequest
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -409,20 +429,24 @@ public final class TaggingWorkRequest
             return UnknownEnumValue;
         }
     };
-    /** The current status of the work request. */
+    /**
+     * The current status of the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The current status of the work request.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The resources this work request affects. */
+    /**
+     * The resources this work request affects.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
@@ -430,63 +454,69 @@ public final class TaggingWorkRequest
      * The resources this work request affects.
      *
      * @return the value
-     */
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
 
     /**
-     * Date and time the work was accepted, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
-     */
+     * Date and time the work was accepted, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
-     * Date and time the work was accepted, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
+     * Date and time the work was accepted, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
     /**
-     * Date and time the work started, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
-     */
+     * Date and time the work started, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * Date and time the work started, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
+     * Date and time the work started, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * Date and time the work completed, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
-     */
+     * Date and time the work completed, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * Date and time the work completed, in the format defined by RFC3339. Example: {@code
-     * 2016-08-25T21:10:29.600Z}
+     * Date and time the work completed, in the format defined by RFC3339.
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** How much progress the operation has made. */
+    /**
+     * How much progress the operation has made.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
@@ -494,7 +524,7 @@ public final class TaggingWorkRequest
      * How much progress the operation has made.
      *
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
@@ -506,7 +536,6 @@ public final class TaggingWorkRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

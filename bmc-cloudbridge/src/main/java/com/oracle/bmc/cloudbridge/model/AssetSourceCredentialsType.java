@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudbridge.model;
 
-/** The type of credentials for an asset source. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public enum AssetSourceCredentialsType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of credentials for an asset source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+public enum AssetSourceCredentialsType {
     Basic("BASIC"),
     ApiKey("API_KEY"),
 

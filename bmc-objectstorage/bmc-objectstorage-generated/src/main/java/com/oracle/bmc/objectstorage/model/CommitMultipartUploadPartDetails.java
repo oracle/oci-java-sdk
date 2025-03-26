@@ -5,26 +5,25 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not
- * authorized, talk to an administrator. If you are an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CommitMultipartUploadPartDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CommitMultipartUploadPartDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CommitMultipartUploadPartDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"partNum", "etag"})
     public CommitMultipartUploadPartDetails(Integer partNum, String etag) {
@@ -35,31 +34,33 @@ public final class CommitMultipartUploadPartDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The part number for this part. */
+        /**
+         * The part number for this part.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNum")
         private Integer partNum;
 
         /**
          * The part number for this part.
-         *
          * @param partNum the value to set
          * @return this builder
-         */
+         **/
         public Builder partNum(Integer partNum) {
             this.partNum = partNum;
             this.__explicitlySet__.add("partNum");
             return this;
         }
-        /** The entity tag (ETag) returned when this part was uploaded. */
+        /**
+         * The entity tag (ETag) returned when this part was uploaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("etag")
         private String etag;
 
         /**
          * The entity tag (ETag) returned when this part was uploaded.
-         *
          * @param etag the value to set
          * @return this builder
-         */
+         **/
         public Builder etag(String etag) {
             this.etag = etag;
             this.__explicitlySet__.add("etag");
@@ -90,7 +91,9 @@ public final class CommitMultipartUploadPartDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,28 +102,30 @@ public final class CommitMultipartUploadPartDetails
         return new Builder().copy(this);
     }
 
-    /** The part number for this part. */
+    /**
+     * The part number for this part.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNum")
     private final Integer partNum;
 
     /**
      * The part number for this part.
-     *
      * @return the value
-     */
+     **/
     public Integer getPartNum() {
         return partNum;
     }
 
-    /** The entity tag (ETag) returned when this part was uploaded. */
+    /**
+     * The entity tag (ETag) returned when this part was uploaded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("etag")
     private final String etag;
 
     /**
      * The entity tag (ETag) returned when this part was uploaded.
-     *
      * @return the value
-     */
+     **/
     public String getEtag() {
         return etag;
     }
@@ -132,7 +137,6 @@ public final class CommitMultipartUploadPartDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

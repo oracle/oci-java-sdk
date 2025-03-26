@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A step in the SQL execution plan. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A step in the SQL execution plan.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlTuningTaskSqlExecutionPlanStep.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlTuningTaskSqlExecutionPlanStep.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlTuningTaskSqlExecutionPlanStep
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "planHashValue",
@@ -118,478 +117,493 @@ public final class SqlTuningTaskSqlExecutionPlanStep
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The numerical representation of the SQL execution plan. */
+        /**
+         * The numerical representation of the SQL execution plan.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHashValue")
         private Long planHashValue;
 
         /**
          * The numerical representation of the SQL execution plan.
-         *
          * @param planHashValue the value to set
          * @return this builder
-         */
+         **/
         public Builder planHashValue(Long planHashValue) {
             this.planHashValue = planHashValue;
             this.__explicitlySet__.add("planHashValue");
             return this;
         }
         /**
-         * The identification number of a step in the SQL execution plan. This is unique within the
-         * SQL execution plan. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+         * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepId")
         private Integer stepId;
 
         /**
-         * The identification number of a step in the SQL execution plan. This is unique within the
-         * SQL execution plan. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+         * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param stepId the value to set
          * @return this builder
-         */
+         **/
         public Builder stepId(Integer stepId) {
             this.stepId = stepId;
             this.__explicitlySet__.add("stepId");
             return this;
         }
         /**
-         * The ID of the next step that operates on the results of this step. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * The ID of the next step that operates on the results of this step.
+         * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
         private Integer parentStepId;
 
         /**
-         * The ID of the next step that operates on the results of this step. This is not the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The ID of the next step that operates on the results of this step.
+         * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param parentStepId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentStepId(Integer parentStepId) {
             this.parentStepId = parentStepId;
             this.__explicitlySet__.add("parentStepId");
             return this;
         }
-        /** The order of processing for steps with the same parent ID. */
+        /**
+         * The order of processing for steps with the same parent ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
         /**
          * The order of processing for steps with the same parent ID.
-         *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-        /** The name of the operation performed at this step. */
+        /**
+         * The name of the operation performed at this step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
          * The name of the operation performed at this step.
-         *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(String operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** The options used for the operation performed at this step. */
+        /**
+         * The options used for the operation performed at this step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
         /**
          * The options used for the operation performed at this step.
-         *
          * @param options the value to set
          * @return this builder
-         */
+         **/
         public Builder options(String options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
         /**
-         * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100,
-         * 1000, and so on).
-         */
+         * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("optimizerMode")
         private String optimizerMode;
 
         /**
-         * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100,
-         * 1000, and so on).
-         *
+         * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
          * @param optimizerMode the value to set
          * @return this builder
-         */
+         **/
         public Builder optimizerMode(String optimizerMode) {
             this.optimizerMode = optimizerMode;
             this.__explicitlySet__.add("optimizerMode");
             return this;
         }
-        /** The cost of the current operation estimated by the cost-based optimizer (CBO). */
+        /**
+         * The cost of the current operation estimated by the cost-based optimizer (CBO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private Double cost;
 
         /**
          * The cost of the current operation estimated by the cost-based optimizer (CBO).
-         *
          * @param cost the value to set
          * @return this builder
-         */
+         **/
         public Builder cost(Double cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
             return this;
         }
-        /** The number of rows returned by the current operation (estimated by the CBO). */
+        /**
+         * The number of rows returned by the current operation (estimated by the CBO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
         private Long cardinality;
 
         /**
          * The number of rows returned by the current operation (estimated by the CBO).
-         *
          * @param cardinality the value to set
          * @return this builder
-         */
+         **/
         public Builder cardinality(Long cardinality) {
             this.cardinality = cardinality;
             this.__explicitlySet__.add("cardinality");
             return this;
         }
-        /** The number of bytes returned by the current operation. */
+        /**
+         * The number of bytes returned by the current operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bytes")
         private Long bytes;
 
         /**
          * The number of bytes returned by the current operation.
-         *
          * @param bytes the value to set
          * @return this builder
-         */
+         **/
         public Builder bytes(Long bytes) {
             this.bytes = bytes;
             this.__explicitlySet__.add("bytes");
             return this;
         }
-        /** The CPU cost of the current operation. */
+        /**
+         * The CPU cost of the current operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
         private Double cpuCost;
 
         /**
          * The CPU cost of the current operation.
-         *
          * @param cpuCost the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCost(Double cpuCost) {
             this.cpuCost = cpuCost;
             this.__explicitlySet__.add("cpuCost");
             return this;
         }
-        /** The I/O cost of the current operation. */
+        /**
+         * The I/O cost of the current operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
         private Double ioCost;
 
         /**
          * The I/O cost of the current operation.
-         *
          * @param ioCost the value to set
          * @return this builder
-         */
+         **/
         public Builder ioCost(Double ioCost) {
             this.ioCost = ioCost;
             this.__explicitlySet__.add("ioCost");
             return this;
         }
         /**
-         * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by
-         * the CBO.
-         */
+         * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
         private Long tempSpace;
 
         /**
-         * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by
-         * the CBO.
-         *
+         * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
          * @param tempSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder tempSpace(Long tempSpace) {
             this.tempSpace = tempSpace;
             this.__explicitlySet__.add("tempSpace");
             return this;
         }
-        /** The elapsed time (in seconds) of the operation as estimated by the CBO. */
+        /**
+         * The elapsed time (in seconds) of the operation as estimated by the CBO.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("time")
         private Long time;
 
         /**
          * The elapsed time (in seconds) of the operation as estimated by the CBO.
-         *
          * @param time the value to set
          * @return this builder
-         */
+         **/
         public Builder time(Long time) {
             this.time = time;
             this.__explicitlySet__.add("time");
             return this;
         }
-        /** The name of the database link used to reference the object. */
+        /**
+         * The name of the database link used to reference the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
         private String objectNode;
 
         /**
          * The name of the database link used to reference the object.
-         *
          * @param objectNode the value to set
          * @return this builder
-         */
+         **/
         public Builder objectNode(String objectNode) {
             this.objectNode = objectNode;
             this.__explicitlySet__.add("objectNode");
             return this;
         }
-        /** The owner of the object. */
+        /**
+         * The owner of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
         private String objectOwner;
 
         /**
          * The owner of the object.
-         *
          * @param objectOwner the value to set
          * @return this builder
-         */
+         **/
         public Builder objectOwner(String objectOwner) {
             this.objectOwner = objectOwner;
             this.__explicitlySet__.add("objectOwner");
             return this;
         }
-        /** The name of the object. */
+        /**
+         * The name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The name of the object.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** The numbered position of the object name in the original SQL statement. */
+        /**
+         * The numbered position of the object name in the original SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectPosition")
         private Integer objectPosition;
 
         /**
          * The numbered position of the object name in the original SQL statement.
-         *
          * @param objectPosition the value to set
          * @return this builder
-         */
+         **/
         public Builder objectPosition(Integer objectPosition) {
             this.objectPosition = objectPosition;
             this.__explicitlySet__.add("objectPosition");
             return this;
         }
-        /** The descriptive modifier that further describes the type of object. */
+        /**
+         * The descriptive modifier that further describes the type of object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
          * The descriptive modifier that further describes the type of object.
-         *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(String objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
         /**
-         * A step may get data from a range of partitions of a partitioned object, such as table or
-         * index, based on predicates and sorting order. The partionStart is the starting partition
-         * of the range. The partitionStop is the ending partition of the range.
-         */
+         * A step may get data from a range of partitions of a partitioned object, such as table or index,
+         * based on predicates and sorting order. The partionStart is the starting partition of the range.
+         * The partitionStop is the ending partition of the range.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
         private String partitionStart;
 
         /**
-         * A step may get data from a range of partitions of a partitioned object, such as table or
-         * index, based on predicates and sorting order. The partionStart is the starting partition
-         * of the range. The partitionStop is the ending partition of the range.
+         * A step may get data from a range of partitions of a partitioned object, such as table or index,
+         * based on predicates and sorting order. The partionStart is the starting partition of the range.
+         * The partitionStop is the ending partition of the range.
          *
          * @param partitionStart the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionStart(String partitionStart) {
             this.partitionStart = partitionStart;
             this.__explicitlySet__.add("partitionStart");
             return this;
         }
         /**
-         * A step may get data from a range of partitions of a partitioned object, such as table or
-         * index, based on predicates and sorting order. The partionStart is the starting partition
-         * of the range. The partitionStop is the ending partition of the range.
-         */
+         * A step may get data from a range of partitions of a partitioned object, such as table or index,
+         * based on predicates and sorting order. The partionStart is the starting partition of the range.
+         * The partitionStop is the ending partition of the range.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
         private String partitionStop;
 
         /**
-         * A step may get data from a range of partitions of a partitioned object, such as table or
-         * index, based on predicates and sorting order. The partionStart is the starting partition
-         * of the range. The partitionStop is the ending partition of the range.
+         * A step may get data from a range of partitions of a partitioned object, such as table or index,
+         * based on predicates and sorting order. The partionStart is the starting partition of the range.
+         * The partitionStop is the ending partition of the range.
          *
          * @param partitionStop the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionStop(String partitionStop) {
             this.partitionStop = partitionStop;
             this.__explicitlySet__.add("partitionStop");
             return this;
         }
         /**
-         * The ID of the step in the execution plan that has computed the pair of values of
-         * partitionStart and partitionStop.
-         */
+         * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionId")
         private Integer partitionId;
 
         /**
-         * The ID of the step in the execution plan that has computed the pair of values of
-         * partitionStart and partitionStop.
+         * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
          *
          * @param partitionId the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionId(Integer partitionId) {
             this.partitionId = partitionId;
             this.__explicitlySet__.add("partitionId");
             return this;
         }
-        /** The place for comments that can be added to the steps of the execution plan. */
+        /**
+         * The place for comments that can be added to the steps of the execution plan.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remarks")
         private String remarks;
 
         /**
          * The place for comments that can be added to the steps of the execution plan.
-         *
          * @param remarks the value to set
          * @return this builder
-         */
+         **/
         public Builder remarks(String remarks) {
             this.remarks = remarks;
             this.__explicitlySet__.add("remarks");
             return this;
         }
         /**
-         * Number of index columns with start and stop keys (that is, the number of columns with
-         * matching predicates).
-         */
+         * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfSearchColumn")
         private Integer numberOfSearchColumn;
 
         /**
-         * Number of index columns with start and stop keys (that is, the number of columns with
-         * matching predicates).
+         * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
          *
          * @param numberOfSearchColumn the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfSearchColumn(Integer numberOfSearchColumn) {
             this.numberOfSearchColumn = numberOfSearchColumn;
             this.__explicitlySet__.add("numberOfSearchColumn");
             return this;
         }
-        /** Information about parallel execution servers and parallel queries */
+        /**
+         * Information about parallel execution servers and parallel queries
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("other")
         private String other;
 
         /**
          * Information about parallel execution servers and parallel queries
-         *
          * @param other the value to set
          * @return this builder
-         */
+         **/
         public Builder other(String other) {
             this.other = other;
             this.__explicitlySet__.add("other");
             return this;
         }
-        /** Describes the function of the SQL text in the OTHER column. */
+        /**
+         * Describes the function of the SQL text in the OTHER column.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
         private String otherTag;
 
         /**
          * Describes the function of the SQL text in the OTHER column.
-         *
          * @param otherTag the value to set
          * @return this builder
-         */
+         **/
         public Builder otherTag(String otherTag) {
             this.otherTag = otherTag;
             this.__explicitlySet__.add("otherTag");
             return this;
         }
-        /** The text string identifying the type of execution plan. */
+        /**
+         * The text string identifying the type of execution plan.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attribute")
         private String attribute;
 
         /**
          * The text string identifying the type of execution plan.
-         *
          * @param attribute the value to set
          * @return this builder
-         */
+         **/
         public Builder attribute(String attribute) {
             this.attribute = attribute;
             this.__explicitlySet__.add("attribute");
             return this;
         }
         /**
-         * The predicates used to locate rows in an access structure. For example, start or stop
-         * predicates for an index range scan.
-         */
+         * The predicates used to locate rows in an access structure. For example,
+         * start or stop predicates for an index range scan.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
         private String accessPredicates;
 
         /**
-         * The predicates used to locate rows in an access structure. For example, start or stop
-         * predicates for an index range scan.
+         * The predicates used to locate rows in an access structure. For example,
+         * start or stop predicates for an index range scan.
          *
          * @param accessPredicates the value to set
          * @return this builder
-         */
+         **/
         public Builder accessPredicates(String accessPredicates) {
             this.accessPredicates = accessPredicates;
             this.__explicitlySet__.add("accessPredicates");
             return this;
         }
-        /** The predicates used to filter rows before producing them. */
+        /**
+         * The predicates used to filter rows before producing them.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
         private String filterPredicates;
 
         /**
          * The predicates used to filter rows before producing them.
-         *
          * @param filterPredicates the value to set
          * @return this builder
-         */
+         **/
         public Builder filterPredicates(String filterPredicates) {
             this.filterPredicates = filterPredicates;
             this.__explicitlySet__.add("filterPredicates");
@@ -730,7 +744,9 @@ public final class SqlTuningTaskSqlExecutionPlanStep
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -739,421 +755,436 @@ public final class SqlTuningTaskSqlExecutionPlanStep
         return new Builder().copy(this);
     }
 
-    /** The numerical representation of the SQL execution plan. */
+    /**
+     * The numerical representation of the SQL execution plan.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHashValue")
     private final Long planHashValue;
 
     /**
      * The numerical representation of the SQL execution plan.
-     *
      * @return the value
-     */
+     **/
     public Long getPlanHashValue() {
         return planHashValue;
     }
 
     /**
-     * The identification number of a step in the SQL execution plan. This is unique within the SQL
-     * execution plan. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+     * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepId")
     private final Integer stepId;
 
     /**
-     * The identification number of a step in the SQL execution plan. This is unique within the SQL
-     * execution plan. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The identification number of a step in the SQL execution plan. This is unique within the SQL execution plan.
+     * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public Integer getStepId() {
         return stepId;
     }
 
     /**
-     * The ID of the next step that operates on the results of this step. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * The ID of the next step that operates on the results of this step.
+     * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentStepId")
     private final Integer parentStepId;
 
     /**
-     * The ID of the next step that operates on the results of this step. This is not the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The ID of the next step that operates on the results of this step.
+     * This is not the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public Integer getParentStepId() {
         return parentStepId;
     }
 
-    /** The order of processing for steps with the same parent ID. */
+    /**
+     * The order of processing for steps with the same parent ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
     /**
      * The order of processing for steps with the same parent ID.
-     *
      * @return the value
-     */
+     **/
     public Integer getPosition() {
         return position;
     }
 
-    /** The name of the operation performed at this step. */
+    /**
+     * The name of the operation performed at this step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
      * The name of the operation performed at this step.
-     *
      * @return the value
-     */
+     **/
     public String getOperation() {
         return operation;
     }
 
-    /** The options used for the operation performed at this step. */
+    /**
+     * The options used for the operation performed at this step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final String options;
 
     /**
      * The options used for the operation performed at this step.
-     *
      * @return the value
-     */
+     **/
     public String getOptions() {
         return options;
     }
 
     /**
-     * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100,
-     * 1000, and so on).
-     */
+     * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizerMode")
     private final String optimizerMode;
 
     /**
-     * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100,
-     * 1000, and so on).
-     *
+     * The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
      * @return the value
-     */
+     **/
     public String getOptimizerMode() {
         return optimizerMode;
     }
 
-    /** The cost of the current operation estimated by the cost-based optimizer (CBO). */
+    /**
+     * The cost of the current operation estimated by the cost-based optimizer (CBO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final Double cost;
 
     /**
      * The cost of the current operation estimated by the cost-based optimizer (CBO).
-     *
      * @return the value
-     */
+     **/
     public Double getCost() {
         return cost;
     }
 
-    /** The number of rows returned by the current operation (estimated by the CBO). */
+    /**
+     * The number of rows returned by the current operation (estimated by the CBO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
     private final Long cardinality;
 
     /**
      * The number of rows returned by the current operation (estimated by the CBO).
-     *
      * @return the value
-     */
+     **/
     public Long getCardinality() {
         return cardinality;
     }
 
-    /** The number of bytes returned by the current operation. */
+    /**
+     * The number of bytes returned by the current operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
     private final Long bytes;
 
     /**
      * The number of bytes returned by the current operation.
-     *
      * @return the value
-     */
+     **/
     public Long getBytes() {
         return bytes;
     }
 
-    /** The CPU cost of the current operation. */
+    /**
+     * The CPU cost of the current operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
     private final Double cpuCost;
 
     /**
      * The CPU cost of the current operation.
-     *
      * @return the value
-     */
+     **/
     public Double getCpuCost() {
         return cpuCost;
     }
 
-    /** The I/O cost of the current operation. */
+    /**
+     * The I/O cost of the current operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
     private final Double ioCost;
 
     /**
      * The I/O cost of the current operation.
-     *
      * @return the value
-     */
+     **/
     public Double getIoCost() {
         return ioCost;
     }
 
     /**
-     * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the
-     * CBO.
-     */
+     * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
     private final Long tempSpace;
 
     /**
-     * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the
-     * CBO.
-     *
+     * The temporary space usage (in bytes) of the operation (sort or hash-join) as estimated by the CBO.
      * @return the value
-     */
+     **/
     public Long getTempSpace() {
         return tempSpace;
     }
 
-    /** The elapsed time (in seconds) of the operation as estimated by the CBO. */
+    /**
+     * The elapsed time (in seconds) of the operation as estimated by the CBO.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("time")
     private final Long time;
 
     /**
      * The elapsed time (in seconds) of the operation as estimated by the CBO.
-     *
      * @return the value
-     */
+     **/
     public Long getTime() {
         return time;
     }
 
-    /** The name of the database link used to reference the object. */
+    /**
+     * The name of the database link used to reference the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
     private final String objectNode;
 
     /**
      * The name of the database link used to reference the object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectNode() {
         return objectNode;
     }
 
-    /** The owner of the object. */
+    /**
+     * The owner of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
     private final String objectOwner;
 
     /**
      * The owner of the object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectOwner() {
         return objectOwner;
     }
 
-    /** The name of the object. */
+    /**
+     * The name of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The name of the object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** The numbered position of the object name in the original SQL statement. */
+    /**
+     * The numbered position of the object name in the original SQL statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectPosition")
     private final Integer objectPosition;
 
     /**
      * The numbered position of the object name in the original SQL statement.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectPosition() {
         return objectPosition;
     }
 
-    /** The descriptive modifier that further describes the type of object. */
+    /**
+     * The descriptive modifier that further describes the type of object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
      * The descriptive modifier that further describes the type of object.
-     *
      * @return the value
-     */
+     **/
     public String getObjectType() {
         return objectType;
     }
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such as table or
-     * index, based on predicates and sorting order. The partionStart is the starting partition of
-     * the range. The partitionStop is the ending partition of the range.
-     */
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
+     * based on predicates and sorting order. The partionStart is the starting partition of the range.
+     * The partitionStop is the ending partition of the range.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
     private final String partitionStart;
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such as table or
-     * index, based on predicates and sorting order. The partionStart is the starting partition of
-     * the range. The partitionStop is the ending partition of the range.
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
+     * based on predicates and sorting order. The partionStart is the starting partition of the range.
+     * The partitionStop is the ending partition of the range.
      *
      * @return the value
-     */
+     **/
     public String getPartitionStart() {
         return partitionStart;
     }
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such as table or
-     * index, based on predicates and sorting order. The partionStart is the starting partition of
-     * the range. The partitionStop is the ending partition of the range.
-     */
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
+     * based on predicates and sorting order. The partionStart is the starting partition of the range.
+     * The partitionStop is the ending partition of the range.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
     private final String partitionStop;
 
     /**
-     * A step may get data from a range of partitions of a partitioned object, such as table or
-     * index, based on predicates and sorting order. The partionStart is the starting partition of
-     * the range. The partitionStop is the ending partition of the range.
+     * A step may get data from a range of partitions of a partitioned object, such as table or index,
+     * based on predicates and sorting order. The partionStart is the starting partition of the range.
+     * The partitionStop is the ending partition of the range.
      *
      * @return the value
-     */
+     **/
     public String getPartitionStop() {
         return partitionStop;
     }
 
     /**
-     * The ID of the step in the execution plan that has computed the pair of values of
-     * partitionStart and partitionStop.
-     */
+     * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionId")
     private final Integer partitionId;
 
     /**
-     * The ID of the step in the execution plan that has computed the pair of values of
-     * partitionStart and partitionStop.
+     * The ID of the step in the execution plan that has computed the pair of values of partitionStart and partitionStop.
      *
      * @return the value
-     */
+     **/
     public Integer getPartitionId() {
         return partitionId;
     }
 
-    /** The place for comments that can be added to the steps of the execution plan. */
+    /**
+     * The place for comments that can be added to the steps of the execution plan.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remarks")
     private final String remarks;
 
     /**
      * The place for comments that can be added to the steps of the execution plan.
-     *
      * @return the value
-     */
+     **/
     public String getRemarks() {
         return remarks;
     }
 
     /**
-     * Number of index columns with start and stop keys (that is, the number of columns with
-     * matching predicates).
-     */
+     * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfSearchColumn")
     private final Integer numberOfSearchColumn;
 
     /**
-     * Number of index columns with start and stop keys (that is, the number of columns with
-     * matching predicates).
+     * Number of index columns with start and stop keys (that is, the number of columns with matching predicates).
      *
      * @return the value
-     */
+     **/
     public Integer getNumberOfSearchColumn() {
         return numberOfSearchColumn;
     }
 
-    /** Information about parallel execution servers and parallel queries */
+    /**
+     * Information about parallel execution servers and parallel queries
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("other")
     private final String other;
 
     /**
      * Information about parallel execution servers and parallel queries
-     *
      * @return the value
-     */
+     **/
     public String getOther() {
         return other;
     }
 
-    /** Describes the function of the SQL text in the OTHER column. */
+    /**
+     * Describes the function of the SQL text in the OTHER column.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
     private final String otherTag;
 
     /**
      * Describes the function of the SQL text in the OTHER column.
-     *
      * @return the value
-     */
+     **/
     public String getOtherTag() {
         return otherTag;
     }
 
-    /** The text string identifying the type of execution plan. */
+    /**
+     * The text string identifying the type of execution plan.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attribute")
     private final String attribute;
 
     /**
      * The text string identifying the type of execution plan.
-     *
      * @return the value
-     */
+     **/
     public String getAttribute() {
         return attribute;
     }
 
     /**
-     * The predicates used to locate rows in an access structure. For example, start or stop
-     * predicates for an index range scan.
-     */
+     * The predicates used to locate rows in an access structure. For example,
+     * start or stop predicates for an index range scan.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
     private final String accessPredicates;
 
     /**
-     * The predicates used to locate rows in an access structure. For example, start or stop
-     * predicates for an index range scan.
+     * The predicates used to locate rows in an access structure. For example,
+     * start or stop predicates for an index range scan.
      *
      * @return the value
-     */
+     **/
     public String getAccessPredicates() {
         return accessPredicates;
     }
 
-    /** The predicates used to filter rows before producing them. */
+    /**
+     * The predicates used to filter rows before producing them.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
     private final String filterPredicates;
 
     /**
      * The predicates used to filter rows before producing them.
-     *
      * @return the value
-     */
+     **/
     public String getFilterPredicates() {
         return filterPredicates;
     }
@@ -1165,7 +1196,6 @@ public final class SqlTuningTaskSqlExecutionPlanStep
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

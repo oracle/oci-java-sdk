@@ -5,21 +5,20 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * An object containing FQDNs <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * An object containing FQDNs
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PrefixFqdns.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PrefixFqdns extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "objectStorageApiFqdn",
@@ -36,7 +35,10 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ObjectStorage API FQDN */
+        /**
+         * ObjectStorage API FQDN
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStorageApiFqdn")
         private String objectStorageApiFqdn;
 
@@ -45,13 +47,16 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param objectStorageApiFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStorageApiFqdn(String objectStorageApiFqdn) {
             this.objectStorageApiFqdn = objectStorageApiFqdn;
             this.__explicitlySet__.add("objectStorageApiFqdn");
             return this;
         }
-        /** S3 Compatibility API FQDN */
+        /**
+         * S3 Compatibility API FQDN
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("s3CompatibilityApiFqdn")
         private String s3CompatibilityApiFqdn;
 
@@ -60,13 +65,16 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param s3CompatibilityApiFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder s3CompatibilityApiFqdn(String s3CompatibilityApiFqdn) {
             this.s3CompatibilityApiFqdn = s3CompatibilityApiFqdn;
             this.__explicitlySet__.add("s3CompatibilityApiFqdn");
             return this;
         }
-        /** Swift API FQDN */
+        /**
+         * Swift API FQDN
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("swiftApiFqdn")
         private String swiftApiFqdn;
 
@@ -75,7 +83,7 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param swiftApiFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder swiftApiFqdn(String swiftApiFqdn) {
             this.swiftApiFqdn = swiftApiFqdn;
             this.__explicitlySet__.add("swiftApiFqdn");
@@ -112,7 +120,9 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,7 +131,10 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** ObjectStorage API FQDN */
+    /**
+     * ObjectStorage API FQDN
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStorageApiFqdn")
     private final String objectStorageApiFqdn;
 
@@ -129,12 +142,15 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
      * ObjectStorage API FQDN
      *
      * @return the value
-     */
+     **/
     public String getObjectStorageApiFqdn() {
         return objectStorageApiFqdn;
     }
 
-    /** S3 Compatibility API FQDN */
+    /**
+     * S3 Compatibility API FQDN
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("s3CompatibilityApiFqdn")
     private final String s3CompatibilityApiFqdn;
 
@@ -142,12 +158,15 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
      * S3 Compatibility API FQDN
      *
      * @return the value
-     */
+     **/
     public String getS3CompatibilityApiFqdn() {
         return s3CompatibilityApiFqdn;
     }
 
-    /** Swift API FQDN */
+    /**
+     * Swift API FQDN
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("swiftApiFqdn")
     private final String swiftApiFqdn;
 
@@ -155,7 +174,7 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
      * Swift API FQDN
      *
      * @return the value
-     */
+     **/
     public String getSwiftApiFqdn() {
         return swiftApiFqdn;
     }
@@ -167,7 +186,6 @@ public final class PrefixFqdns extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

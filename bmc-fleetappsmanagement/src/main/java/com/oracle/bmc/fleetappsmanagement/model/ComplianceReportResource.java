@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceReportResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceReportResource.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceReportResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -58,140 +57,149 @@ public final class ComplianceReportResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID to identify the resource. */
+        /**
+         * The OCID to identify the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The OCID to identify the resource.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Display name of the resource. */
+        /**
+         * Display name of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Display name of the resource.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** Type of the resource. */
+        /**
+         * Type of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Type of the resource.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** TenancyId of the resource. */
+        /**
+         * TenancyId of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * TenancyId of the resource.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** Tenancy the resource belongs to. */
+        /**
+         * Tenancy the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
 
         /**
          * Tenancy the resource belongs to.
-         *
          * @param tenancyName the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyName(String tenancyName) {
             this.tenancyName = tenancyName;
             this.__explicitlySet__.add("tenancyName");
             return this;
         }
-        /** Compartment the resource belongs to. */
+        /**
+         * Compartment the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartment")
         private String compartment;
 
         /**
          * Compartment the resource belongs to.
-         *
          * @param compartment the value to set
          * @return this builder
-         */
+         **/
         public Builder compartment(String compartment) {
             this.compartment = compartment;
             this.__explicitlySet__.add("compartment");
             return this;
         }
-        /** The region the resource belongs to. */
+        /**
+         * The region the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
         private String resourceRegion;
 
         /**
          * The region the resource belongs to.
-         *
          * @param resourceRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceRegion(String resourceRegion) {
             this.resourceRegion = resourceRegion;
             this.__explicitlySet__.add("resourceRegion");
             return this;
         }
-        /** The last known compliance state of the fleet. */
+        /**
+         * The last known compliance state of the fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
          * The last known compliance state of the fleet.
-         *
          * @param complianceState the value to set
          * @return this builder
-         */
+         **/
         public Builder complianceState(ComplianceState complianceState) {
             this.complianceState = complianceState;
             this.__explicitlySet__.add("complianceState");
             return this;
         }
         /**
-         * Products associated with the Fleet. Only the products belonging to managed targets will
-         * be shown.
-         */
+         * Products associated with the Fleet.
+         * Only the products belonging to managed targets will be shown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<ComplianceReportProduct> products;
 
         /**
-         * Products associated with the Fleet. Only the products belonging to managed targets will
-         * be shown.
+         * Products associated with the Fleet.
+         * Only the products belonging to managed targets will be shown.
          *
          * @param products the value to set
          * @return this builder
-         */
+         **/
         public Builder products(java.util.List<ComplianceReportProduct> products) {
             this.products = products;
             this.__explicitlySet__.add("products");
@@ -252,7 +260,9 @@ public final class ComplianceReportResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,123 +271,132 @@ public final class ComplianceReportResource
         return new Builder().copy(this);
     }
 
-    /** The OCID to identify the resource. */
+    /**
+     * The OCID to identify the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The OCID to identify the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Display name of the resource. */
+    /**
+     * Display name of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Display name of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** Type of the resource. */
+    /**
+     * Type of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Type of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** TenancyId of the resource. */
+    /**
+     * TenancyId of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * TenancyId of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** Tenancy the resource belongs to. */
+    /**
+     * Tenancy the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
 
     /**
      * Tenancy the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyName() {
         return tenancyName;
     }
 
-    /** Compartment the resource belongs to. */
+    /**
+     * Compartment the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartment")
     private final String compartment;
 
     /**
      * Compartment the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartment() {
         return compartment;
     }
 
-    /** The region the resource belongs to. */
+    /**
+     * The region the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
     private final String resourceRegion;
 
     /**
      * The region the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getResourceRegion() {
         return resourceRegion;
     }
 
-    /** The last known compliance state of the fleet. */
+    /**
+     * The last known compliance state of the fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
      * The last known compliance state of the fleet.
-     *
      * @return the value
-     */
+     **/
     public ComplianceState getComplianceState() {
         return complianceState;
     }
 
     /**
-     * Products associated with the Fleet. Only the products belonging to managed targets will be
-     * shown.
-     */
+     * Products associated with the Fleet.
+     * Only the products belonging to managed targets will be shown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<ComplianceReportProduct> products;
 
     /**
-     * Products associated with the Fleet. Only the products belonging to managed targets will be
-     * shown.
+     * Products associated with the Fleet.
+     * Only the products belonging to managed targets will be shown.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ComplianceReportProduct> getProducts() {
         return products;
     }
@@ -389,7 +408,6 @@ public final class ComplianceReportResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

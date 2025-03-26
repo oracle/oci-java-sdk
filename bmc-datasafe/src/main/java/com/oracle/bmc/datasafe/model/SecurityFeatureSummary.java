@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The details of database security feature usage available on a given compartment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The details of database security feature usage available on a given compartment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecurityFeatureSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SecurityFeatureSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SecurityFeatureSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -79,259 +78,267 @@ public final class SecurityFeatureSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The OCID of the assessment that generates this security feature usage result. */
+        /**
+         * The OCID of the assessment that generates this security feature usage result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
         private String assessmentId;
 
         /**
          * The OCID of the assessment that generates this security feature usage result.
-         *
          * @param assessmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = assessmentId;
             this.__explicitlySet__.add("assessmentId");
             return this;
         }
-        /** The usage of security feature - Unified Audit. */
+        /**
+         * The usage of security feature - Unified Audit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unifiedAudit")
         private UnifiedAudit unifiedAudit;
 
         /**
          * The usage of security feature - Unified Audit.
-         *
          * @param unifiedAudit the value to set
          * @return this builder
-         */
+         **/
         public Builder unifiedAudit(UnifiedAudit unifiedAudit) {
             this.unifiedAudit = unifiedAudit;
             this.__explicitlySet__.add("unifiedAudit");
             return this;
         }
-        /** The usage of security feature - Fine Grained Audit. */
+        /**
+         * The usage of security feature - Fine Grained Audit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAudit")
         private FineGrainedAudit fineGrainedAudit;
 
         /**
          * The usage of security feature - Fine Grained Audit.
-         *
          * @param fineGrainedAudit the value to set
          * @return this builder
-         */
+         **/
         public Builder fineGrainedAudit(FineGrainedAudit fineGrainedAudit) {
             this.fineGrainedAudit = fineGrainedAudit;
             this.__explicitlySet__.add("fineGrainedAudit");
             return this;
         }
-        /** The usage of security feature - Traditional Audit. */
+        /**
+         * The usage of security feature - Traditional Audit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("traditionalAudit")
         private TraditionalAudit traditionalAudit;
 
         /**
          * The usage of security feature - Traditional Audit.
-         *
          * @param traditionalAudit the value to set
          * @return this builder
-         */
+         **/
         public Builder traditionalAudit(TraditionalAudit traditionalAudit) {
             this.traditionalAudit = traditionalAudit;
             this.__explicitlySet__.add("traditionalAudit");
             return this;
         }
-        /** The usage of security feature - Database Vault. */
+        /**
+         * The usage of security feature - Database Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseVault")
         private DatabaseVault databaseVault;
 
         /**
          * The usage of security feature - Database Vault.
-         *
          * @param databaseVault the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseVault(DatabaseVault databaseVault) {
             this.databaseVault = databaseVault;
             this.__explicitlySet__.add("databaseVault");
             return this;
         }
-        /** The usage of security feature - Privilege Analysis. */
+        /**
+         * The usage of security feature - Privilege Analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeAnalysis")
         private PrivilegeAnalysis privilegeAnalysis;
 
         /**
          * The usage of security feature - Privilege Analysis.
-         *
          * @param privilegeAnalysis the value to set
          * @return this builder
-         */
+         **/
         public Builder privilegeAnalysis(PrivilegeAnalysis privilegeAnalysis) {
             this.privilegeAnalysis = privilegeAnalysis;
             this.__explicitlySet__.add("privilegeAnalysis");
             return this;
         }
-        /** The usage of security feature - Tablespace Encryption. */
+        /**
+         * The usage of security feature - Tablespace Encryption.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespaceEncryption")
         private TablespaceEncryption tablespaceEncryption;
 
         /**
          * The usage of security feature - Tablespace Encryption.
-         *
          * @param tablespaceEncryption the value to set
          * @return this builder
-         */
+         **/
         public Builder tablespaceEncryption(TablespaceEncryption tablespaceEncryption) {
             this.tablespaceEncryption = tablespaceEncryption;
             this.__explicitlySet__.add("tablespaceEncryption");
             return this;
         }
-        /** The usage of security feature - Column Encryption. */
+        /**
+         * The usage of security feature - Column Encryption.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnEncryption")
         private ColumnEncryption columnEncryption;
 
         /**
          * The usage of security feature - Column Encryption.
-         *
          * @param columnEncryption the value to set
          * @return this builder
-         */
+         **/
         public Builder columnEncryption(ColumnEncryption columnEncryption) {
             this.columnEncryption = columnEncryption;
             this.__explicitlySet__.add("columnEncryption");
             return this;
         }
-        /** The usage of security feature - Network Encryption. */
+        /**
+         * The usage of security feature - Network Encryption.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkEncryption")
         private NetworkEncryption networkEncryption;
 
         /**
          * The usage of security feature - Network Encryption.
-         *
          * @param networkEncryption the value to set
          * @return this builder
-         */
+         **/
         public Builder networkEncryption(NetworkEncryption networkEncryption) {
             this.networkEncryption = networkEncryption;
             this.__explicitlySet__.add("networkEncryption");
             return this;
         }
-        /** The usage of security feature - Password Authentication. */
+        /**
+         * The usage of security feature - Password Authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordAuthentication")
         private PasswordAuthentication passwordAuthentication;
 
         /**
          * The usage of security feature - Password Authentication.
-         *
          * @param passwordAuthentication the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordAuthentication(PasswordAuthentication passwordAuthentication) {
             this.passwordAuthentication = passwordAuthentication;
             this.__explicitlySet__.add("passwordAuthentication");
             return this;
         }
-        /** The usage of security feature - Global Authentication. */
+        /**
+         * The usage of security feature - Global Authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("globalAuthentication")
         private GlobalAuthentication globalAuthentication;
 
         /**
          * The usage of security feature - Global Authentication.
-         *
          * @param globalAuthentication the value to set
          * @return this builder
-         */
+         **/
         public Builder globalAuthentication(GlobalAuthentication globalAuthentication) {
             this.globalAuthentication = globalAuthentication;
             this.__explicitlySet__.add("globalAuthentication");
             return this;
         }
-        /** The usage of security feature - External Authentication. */
+        /**
+         * The usage of security feature - External Authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalAuthentication")
         private ExternalAuthentication externalAuthentication;
 
         /**
          * The usage of security feature - External Authentication.
-         *
          * @param externalAuthentication the value to set
          * @return this builder
-         */
+         **/
         public Builder externalAuthentication(ExternalAuthentication externalAuthentication) {
             this.externalAuthentication = externalAuthentication;
             this.__explicitlySet__.add("externalAuthentication");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -421,7 +428,9 @@ public final class SecurityFeatureSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -430,54 +439,59 @@ public final class SecurityFeatureSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The OCID of the assessment that generates this security feature usage result. */
+    /**
+     * The OCID of the assessment that generates this security feature usage result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
     private final String assessmentId;
 
     /**
      * The OCID of the assessment that generates this security feature usage result.
-     *
      * @return the value
-     */
+     **/
     public String getAssessmentId() {
         return assessmentId;
     }
 
-    /** The usage of security feature - Unified Audit. */
-    public enum UnifiedAudit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Unified Audit.
+     **/
+    public enum UnifiedAudit {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -516,28 +530,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Unified Audit. */
+    /**
+     * The usage of security feature - Unified Audit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unifiedAudit")
     private final UnifiedAudit unifiedAudit;
 
     /**
      * The usage of security feature - Unified Audit.
-     *
      * @return the value
-     */
+     **/
     public UnifiedAudit getUnifiedAudit() {
         return unifiedAudit;
     }
 
-    /** The usage of security feature - Fine Grained Audit. */
-    public enum FineGrainedAudit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Fine Grained Audit.
+     **/
+    public enum FineGrainedAudit {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -576,28 +593,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Fine Grained Audit. */
+    /**
+     * The usage of security feature - Fine Grained Audit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fineGrainedAudit")
     private final FineGrainedAudit fineGrainedAudit;
 
     /**
      * The usage of security feature - Fine Grained Audit.
-     *
      * @return the value
-     */
+     **/
     public FineGrainedAudit getFineGrainedAudit() {
         return fineGrainedAudit;
     }
 
-    /** The usage of security feature - Traditional Audit. */
-    public enum TraditionalAudit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Traditional Audit.
+     **/
+    public enum TraditionalAudit {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -636,28 +656,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Traditional Audit. */
+    /**
+     * The usage of security feature - Traditional Audit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("traditionalAudit")
     private final TraditionalAudit traditionalAudit;
 
     /**
      * The usage of security feature - Traditional Audit.
-     *
      * @return the value
-     */
+     **/
     public TraditionalAudit getTraditionalAudit() {
         return traditionalAudit;
     }
 
-    /** The usage of security feature - Database Vault. */
-    public enum DatabaseVault implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Database Vault.
+     **/
+    public enum DatabaseVault {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -696,28 +719,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Database Vault. */
+    /**
+     * The usage of security feature - Database Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseVault")
     private final DatabaseVault databaseVault;
 
     /**
      * The usage of security feature - Database Vault.
-     *
      * @return the value
-     */
+     **/
     public DatabaseVault getDatabaseVault() {
         return databaseVault;
     }
 
-    /** The usage of security feature - Privilege Analysis. */
-    public enum PrivilegeAnalysis implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Privilege Analysis.
+     **/
+    public enum PrivilegeAnalysis {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -756,28 +782,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Privilege Analysis. */
+    /**
+     * The usage of security feature - Privilege Analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeAnalysis")
     private final PrivilegeAnalysis privilegeAnalysis;
 
     /**
      * The usage of security feature - Privilege Analysis.
-     *
      * @return the value
-     */
+     **/
     public PrivilegeAnalysis getPrivilegeAnalysis() {
         return privilegeAnalysis;
     }
 
-    /** The usage of security feature - Tablespace Encryption. */
-    public enum TablespaceEncryption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Tablespace Encryption.
+     **/
+    public enum TablespaceEncryption {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -816,28 +845,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Tablespace Encryption. */
+    /**
+     * The usage of security feature - Tablespace Encryption.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespaceEncryption")
     private final TablespaceEncryption tablespaceEncryption;
 
     /**
      * The usage of security feature - Tablespace Encryption.
-     *
      * @return the value
-     */
+     **/
     public TablespaceEncryption getTablespaceEncryption() {
         return tablespaceEncryption;
     }
 
-    /** The usage of security feature - Column Encryption. */
-    public enum ColumnEncryption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Column Encryption.
+     **/
+    public enum ColumnEncryption {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -876,28 +908,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Column Encryption. */
+    /**
+     * The usage of security feature - Column Encryption.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnEncryption")
     private final ColumnEncryption columnEncryption;
 
     /**
      * The usage of security feature - Column Encryption.
-     *
      * @return the value
-     */
+     **/
     public ColumnEncryption getColumnEncryption() {
         return columnEncryption;
     }
 
-    /** The usage of security feature - Network Encryption. */
-    public enum NetworkEncryption implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Network Encryption.
+     **/
+    public enum NetworkEncryption {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -936,28 +971,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Network Encryption. */
+    /**
+     * The usage of security feature - Network Encryption.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkEncryption")
     private final NetworkEncryption networkEncryption;
 
     /**
      * The usage of security feature - Network Encryption.
-     *
      * @return the value
-     */
+     **/
     public NetworkEncryption getNetworkEncryption() {
         return networkEncryption;
     }
 
-    /** The usage of security feature - Password Authentication. */
-    public enum PasswordAuthentication implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Password Authentication.
+     **/
+    public enum PasswordAuthentication {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -996,28 +1034,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Password Authentication. */
+    /**
+     * The usage of security feature - Password Authentication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordAuthentication")
     private final PasswordAuthentication passwordAuthentication;
 
     /**
      * The usage of security feature - Password Authentication.
-     *
      * @return the value
-     */
+     **/
     public PasswordAuthentication getPasswordAuthentication() {
         return passwordAuthentication;
     }
 
-    /** The usage of security feature - Global Authentication. */
-    public enum GlobalAuthentication implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - Global Authentication.
+     **/
+    public enum GlobalAuthentication {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1056,28 +1097,31 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - Global Authentication. */
+    /**
+     * The usage of security feature - Global Authentication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("globalAuthentication")
     private final GlobalAuthentication globalAuthentication;
 
     /**
      * The usage of security feature - Global Authentication.
-     *
      * @return the value
-     */
+     **/
     public GlobalAuthentication getGlobalAuthentication() {
         return globalAuthentication;
     }
 
-    /** The usage of security feature - External Authentication. */
-    public enum ExternalAuthentication implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage of security feature - External Authentication.
+     **/
+    public enum ExternalAuthentication {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         None("NONE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1116,59 +1160,54 @@ public final class SecurityFeatureSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage of security feature - External Authentication. */
+    /**
+     * The usage of security feature - External Authentication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalAuthentication")
     private final ExternalAuthentication externalAuthentication;
 
     /**
      * The usage of security feature - External Authentication.
-     *
      * @return the value
-     */
+     **/
     public ExternalAuthentication getExternalAuthentication() {
         return externalAuthentication;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1180,7 +1219,6 @@ public final class SecurityFeatureSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

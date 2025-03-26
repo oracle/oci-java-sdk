@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.vault;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.vault.internal.http.*;
 import com.oracle.bmc.vault.requests.*;
 import com.oracle.bmc.vault.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Vaults service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Vaults service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
-public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements VaultsAsync {
-    /** Service instance for Vaults. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180608")
+public class VaultsAsyncClient implements VaultsAsync {
+    /**
+     * Service instance for Vaults.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("VAULTS")
@@ -39,580 +36,112 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(VaultsAsyncClient.class);
 
-    VaultsAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, VaultsAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "vault";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public VaultsAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new VaultsAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelSecretDeletionResponse> cancelSecretDeletion(
-            CancelSecretDeletionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelSecretDeletionRequest, CancelSecretDeletionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, CancelSecretDeletionResponse::builder)
-                .logger(LOG, "cancelSecretDeletion")
-                .serviceDetails(
-                        "Vaults",
-                        "CancelSecretDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelSecretDeletionRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString("etag", CancelSecretDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelSecretDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelSecretRotationResponse> cancelSecretRotation(
-            CancelSecretRotationRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelSecretRotationRequest, CancelSecretRotationResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, CancelSecretRotationResponse::builder)
-                .logger(LOG, "cancelSecretRotation")
-                .serviceDetails(
-                        "Vaults",
-                        "CancelSecretRotation",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelSecretRotationRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelRotation")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelSecretRotationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelSecretVersionDeletionResponse>
-            cancelSecretVersionDeletion(
-                    CancelSecretVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CancelSecretVersionDeletionRequest,
-                                    CancelSecretVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, CancelSecretVersionDeletionResponse::builder)
-                .logger(LOG, "cancelSecretVersionDeletion")
-                .serviceDetails(
-                        "Vaults",
-                        "CancelSecretVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelSecretVersionDeletionRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("version")
-                .appendPathParam(request.getSecretVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "etag", CancelSecretVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelSecretVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeSecretCompartmentResponse> changeSecretCompartment(
-            ChangeSecretCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeSecretCompartmentDetails(),
-                "changeSecretCompartmentDetails is required");
-
-        return clientCall(request, ChangeSecretCompartmentResponse::builder)
-                .logger(LOG, "changeSecretCompartment")
-                .serviceDetails(
-                        "Vaults",
-                        "ChangeSecretCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeSecretCompartmentRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString("etag", ChangeSecretCompartmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeSecretCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSecretResponse> createSecret(
-            CreateSecretRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCreateSecretDetails(), "createSecretDetails is required");
-
-        return clientCall(request, CreateSecretResponse::builder)
-                .logger(LOG, "createSecret")
-                .serviceDetails(
-                        "Vaults",
-                        "CreateSecret",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSecretRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.vault.model.Secret.class,
-                        CreateSecretResponse.Builder::secret)
-                .handleResponseHeaderString("etag", CreateSecretResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSecretResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSecretResponse> getSecret(
-            GetSecretRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, GetSecretResponse::builder)
-                .logger(LOG, "getSecret")
-                .serviceDetails(
-                        "Vaults",
-                        "GetSecret",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSecretRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.vault.model.Secret.class, GetSecretResponse.Builder::secret)
-                .handleResponseHeaderString("etag", GetSecretResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSecretResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSecretVersionResponse> getSecretVersion(
-            GetSecretVersionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetSecretVersionRequest, GetSecretVersionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, GetSecretVersionResponse::builder)
-                .logger(LOG, "getSecretVersion")
-                .serviceDetails(
-                        "Vaults",
-                        "GetSecretVersion",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSecretVersionRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("version")
-                .appendPathParam(request.getSecretVersionNumber())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.vault.model.SecretVersion.class,
-                        GetSecretVersionResponse.Builder::secretVersion)
-                .handleResponseHeaderString("etag", GetSecretVersionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetSecretVersionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecretVersionsResponse> listSecretVersions(
-            ListSecretVersionsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSecretVersionsRequest, ListSecretVersionsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, ListSecretVersionsResponse::builder)
-                .logger(LOG, "listSecretVersions")
-                .serviceDetails(
-                        "Vaults",
-                        "ListSecretVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecretVersionsRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("versions")
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.vault.model.SecretVersionSummary.class,
-                        ListSecretVersionsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSecretVersionsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSecretVersionsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSecretsResponse> listSecrets(
-            ListSecretsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSecretsResponse::builder)
-                .logger(LOG, "listSecrets")
-                .serviceDetails(
-                        "Vaults",
-                        "ListSecrets",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSecretsRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("vaultId", request.getVaultId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.vault.model.SecretSummary.class,
-                        ListSecretsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSecretsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSecretsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RotateSecretResponse> rotateSecret(
-            RotateSecretRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        return clientCall(request, RotateSecretResponse::builder)
-                .logger(LOG, "rotateSecret")
-                .serviceDetails(
-                        "Vaults",
-                        "RotateSecret",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RotateSecretRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("actions")
-                .appendPathParam("rotate")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", RotateSecretResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", RotateSecretResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleSecretDeletionResponse> scheduleSecretDeletion(
-            ScheduleSecretDeletionRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-        Objects.requireNonNull(
-                request.getScheduleSecretDeletionDetails(),
-                "scheduleSecretDeletionDetails is required");
-
-        return clientCall(request, ScheduleSecretDeletionResponse::builder)
-                .logger(LOG, "scheduleSecretDeletion")
-                .serviceDetails(
-                        "Vaults",
-                        "ScheduleSecretDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleSecretDeletionRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString("etag", ScheduleSecretDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", ScheduleSecretDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ScheduleSecretVersionDeletionResponse>
-            scheduleSecretVersionDeletion(
-                    ScheduleSecretVersionDeletionRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ScheduleSecretVersionDeletionRequest,
-                                    ScheduleSecretVersionDeletionResponse>
-                            handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-
-        Objects.requireNonNull(
-                request.getScheduleSecretVersionDeletionDetails(),
-                "scheduleSecretVersionDeletionDetails is required");
-
-        return clientCall(request, ScheduleSecretVersionDeletionResponse::builder)
-                .logger(LOG, "scheduleSecretVersionDeletion")
-                .serviceDetails(
-                        "Vaults",
-                        "ScheduleSecretVersionDeletion",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ScheduleSecretVersionDeletionRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .appendPathParam("version")
-                .appendPathParam(request.getSecretVersionNumber())
-                .appendPathParam("actions")
-                .appendPathParam("scheduleDeletion")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "etag", ScheduleSecretVersionDeletionResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ScheduleSecretVersionDeletionResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateSecretResponse> updateSecret(
-            UpdateSecretRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSecretId(), "secretId must not be blank");
-        Objects.requireNonNull(request.getUpdateSecretDetails(), "updateSecretDetails is required");
-
-        return clientCall(request, UpdateSecretResponse::builder)
-                .logger(LOG, "updateSecret")
-                .serviceDetails(
-                        "Vaults",
-                        "UpdateSecret",
-                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSecretRequest::builder)
-                .basePath("/20180608")
-                .appendPathParam("secrets")
-                .appendPathParam(request.getSecretId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.vault.model.Secret.class,
-                        UpdateSecretResponse.Builder::secret)
-                .handleResponseHeaderString("etag", UpdateSecretResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateSecretResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public VaultsAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -620,26 +149,26 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -648,29 +177,29 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public VaultsAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -683,14 +212,877 @@ public class VaultsAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncCli
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public VaultsAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, VaultsAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public VaultsAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new VaultsAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSecretDeletionResponse> cancelSecretDeletion(
+            CancelSecretDeletionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelSecretDeletionRequest, CancelSecretDeletionResponse>
+                    handler) {
+        LOG.trace("Called async cancelSecretDeletion");
+        final CancelSecretDeletionRequest interceptedRequest =
+                CancelSecretDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSecretDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretDeletion");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelSecretDeletionResponse>
+                transformer =
+                        CancelSecretDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelSecretDeletionRequest, CancelSecretDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelSecretDeletionRequest, CancelSecretDeletionResponse>,
+                        java.util.concurrent.Future<CancelSecretDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelSecretDeletionRequest, CancelSecretDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSecretRotationResponse> cancelSecretRotation(
+            CancelSecretRotationRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelSecretRotationRequest, CancelSecretRotationResponse>
+                    handler) {
+        LOG.trace("Called async cancelSecretRotation");
+        final CancelSecretRotationRequest interceptedRequest =
+                CancelSecretRotationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSecretRotationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretRotation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CancelSecretRotation");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelSecretRotationResponse>
+                transformer =
+                        CancelSecretRotationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelSecretRotationRequest, CancelSecretRotationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelSecretRotationRequest, CancelSecretRotationResponse>,
+                        java.util.concurrent.Future<CancelSecretRotationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelSecretRotationRequest, CancelSecretRotationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelSecretVersionDeletionResponse>
+            cancelSecretVersionDeletion(
+                    CancelSecretVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelSecretVersionDeletionRequest,
+                                    CancelSecretVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async cancelSecretVersionDeletion");
+        final CancelSecretVersionDeletionRequest interceptedRequest =
+                CancelSecretVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelSecretVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CancelSecretVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/CancelSecretVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelSecretVersionDeletionResponse>
+                transformer =
+                        CancelSecretVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelSecretVersionDeletionRequest, CancelSecretVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelSecretVersionDeletionRequest,
+                                CancelSecretVersionDeletionResponse>,
+                        java.util.concurrent.Future<CancelSecretVersionDeletionResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelSecretVersionDeletionRequest, CancelSecretVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSecretCompartmentResponse> changeSecretCompartment(
+            ChangeSecretCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeSecretCompartment");
+        final ChangeSecretCompartmentRequest interceptedRequest =
+                ChangeSecretCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSecretCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ChangeSecretCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ChangeSecretCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeSecretCompartmentResponse>
+                transformer =
+                        ChangeSecretCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSecretCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSecretCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSecretCompartmentRequest, ChangeSecretCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSecretResponse> createSecret(
+            CreateSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
+                    handler) {
+        LOG.trace("Called async createSecret");
+        final CreateSecretRequest interceptedRequest =
+                CreateSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "CreateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/CreateSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSecretResponse>
+                transformer =
+                        CreateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSecretRequest, CreateSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSecretRequest, CreateSecretResponse>,
+                        java.util.concurrent.Future<CreateSecretResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSecretDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSecretRequest, CreateSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecretResponse> getSecret(
+            GetSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse>
+                    handler) {
+        LOG.trace("Called async getSecret");
+        final GetSecretRequest interceptedRequest = GetSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "GetSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/GetSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecretResponse>
+                transformer =
+                        GetSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetSecretRequest, GetSecretResponse>,
+                        java.util.concurrent.Future<GetSecretResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecretRequest, GetSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSecretVersionResponse> getSecretVersion(
+            GetSecretVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSecretVersionRequest, GetSecretVersionResponse>
+                    handler) {
+        LOG.trace("Called async getSecretVersion");
+        final GetSecretVersionRequest interceptedRequest =
+                GetSecretVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSecretVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "GetSecretVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/GetSecretVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSecretVersionResponse>
+                transformer =
+                        GetSecretVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSecretVersionRequest, GetSecretVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSecretVersionRequest, GetSecretVersionResponse>,
+                        java.util.concurrent.Future<GetSecretVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSecretVersionRequest, GetSecretVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecretVersionsResponse> listSecretVersions(
+            ListSecretVersionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSecretVersionsRequest, ListSecretVersionsResponse>
+                    handler) {
+        LOG.trace("Called async listSecretVersions");
+        final ListSecretVersionsRequest interceptedRequest =
+                ListSecretVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecretVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ListSecretVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersionSummary/ListSecretVersions");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecretVersionsResponse>
+                transformer =
+                        ListSecretVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSecretVersionsRequest, ListSecretVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecretVersionsRequest, ListSecretVersionsResponse>,
+                        java.util.concurrent.Future<ListSecretVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecretVersionsRequest, ListSecretVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSecretsResponse> listSecrets(
+            ListSecretsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
+                    handler) {
+        LOG.trace("Called async listSecrets");
+        final ListSecretsRequest interceptedRequest =
+                ListSecretsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSecretsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ListSecrets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretSummary/ListSecrets");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSecretsResponse>
+                transformer =
+                        ListSecretsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSecretsRequest, ListSecretsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSecretsRequest, ListSecretsResponse>,
+                        java.util.concurrent.Future<ListSecretsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSecretsRequest, ListSecretsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RotateSecretResponse> rotateSecret(
+            RotateSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                    handler) {
+        LOG.trace("Called async rotateSecret");
+        final RotateSecretRequest interceptedRequest =
+                RotateSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RotateSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "RotateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/RotateSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, RotateSecretResponse>
+                transformer =
+                        RotateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RotateSecretRequest, RotateSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RotateSecretRequest, RotateSecretResponse>,
+                        java.util.concurrent.Future<RotateSecretResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RotateSecretRequest, RotateSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleSecretDeletionResponse> scheduleSecretDeletion(
+            ScheduleSecretDeletionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
+                    handler) {
+        LOG.trace("Called async scheduleSecretDeletion");
+        final ScheduleSecretDeletionRequest interceptedRequest =
+                ScheduleSecretDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleSecretDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ScheduleSecretDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/ScheduleSecretDeletion");
+        final java.util.function.Function<javax.ws.rs.core.Response, ScheduleSecretDeletionResponse>
+                transformer =
+                        ScheduleSecretDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleSecretDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleSecretDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleSecretDeletionRequest, ScheduleSecretDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleSecretVersionDeletionResponse>
+            scheduleSecretVersionDeletion(
+                    ScheduleSecretVersionDeletionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleSecretVersionDeletionRequest,
+                                    ScheduleSecretVersionDeletionResponse>
+                            handler) {
+        LOG.trace("Called async scheduleSecretVersionDeletion");
+        final ScheduleSecretVersionDeletionRequest interceptedRequest =
+                ScheduleSecretVersionDeletionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleSecretVersionDeletionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "ScheduleSecretVersionDeletion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/SecretVersion/ScheduleSecretVersionDeletion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleSecretVersionDeletionResponse>
+                transformer =
+                        ScheduleSecretVersionDeletionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleSecretVersionDeletionRequest,
+                                ScheduleSecretVersionDeletionResponse>,
+                        java.util.concurrent.Future<ScheduleSecretVersionDeletionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleSecretVersionDeletionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleSecretVersionDeletionRequest, ScheduleSecretVersionDeletionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSecretResponse> updateSecret(
+            UpdateSecretRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
+                    handler) {
+        LOG.trace("Called async updateSecret");
+        final UpdateSecretRequest interceptedRequest =
+                UpdateSecretConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSecretConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Vaults",
+                        "UpdateSecret",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/secretmgmt/20180608/Secret/UpdateSecret");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSecretResponse>
+                transformer =
+                        UpdateSecretConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateSecretRequest, UpdateSecretResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSecretRequest, UpdateSecretResponse>,
+                        java.util.concurrent.Future<UpdateSecretResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSecretDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSecretRequest, UpdateSecretResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

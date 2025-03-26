@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The metric details of a Database Management resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The metric details of a Database Management resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DbManagementAnalyticsMetric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DbManagementAnalyticsMetric.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DbManagementAnalyticsMetric
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "metricName",
@@ -49,31 +48,33 @@ public final class DbManagementAnalyticsMetric
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the metric. */
+        /**
+         * The name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
         /**
          * The name of the metric.
-         *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-        /** The duration of the returned aggregated data in seconds. */
+        /**
+         * The duration of the returned aggregated data in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
         private Long durationInSeconds;
 
         /**
          * The duration of the returned aggregated data in seconds.
-         *
          * @param durationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInSeconds(Long durationInSeconds) {
             this.durationInSeconds = durationInSeconds;
             this.__explicitlySet__.add("durationInSeconds");
@@ -81,65 +82,69 @@ public final class DbManagementAnalyticsMetric
         }
         /**
          * The additional information about the metric.
+         * <p>
+         * Example: {@code "unit": "bytes"}
          *
-         * <p>Example: {@code "unit": "bytes"}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
          * The additional information about the metric.
-         *
-         * <p>Example: {@code "unit": "bytes"}
+         * <p>
+         * Example: {@code "unit": "bytes"}
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
             return this;
         }
-        /** The qualifiers provided in the definition of the returned metric. */
+        /**
+         * The qualifiers provided in the definition of the returned metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
          * The qualifiers provided in the definition of the returned metric.
-         *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** The start time associated with the value of the metric. */
+        /**
+         * The start time associated with the value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTimestampInEpochSeconds")
         private Long startTimestampInEpochSeconds;
 
         /**
          * The start time associated with the value of the metric.
-         *
          * @param startTimestampInEpochSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder startTimestampInEpochSeconds(Long startTimestampInEpochSeconds) {
             this.startTimestampInEpochSeconds = startTimestampInEpochSeconds;
             this.__explicitlySet__.add("startTimestampInEpochSeconds");
             return this;
         }
-        /** The mean value of the metric. */
+        /**
+         * The mean value of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mean")
         private Double mean;
 
         /**
          * The mean value of the metric.
-         *
          * @param mean the value to set
          * @return this builder
-         */
+         **/
         public Builder mean(Double mean) {
             this.mean = mean;
             this.__explicitlySet__.add("mean");
@@ -188,7 +193,9 @@ public final class DbManagementAnalyticsMetric
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,86 +204,92 @@ public final class DbManagementAnalyticsMetric
         return new Builder().copy(this);
     }
 
-    /** The name of the metric. */
+    /**
+     * The name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
     /**
      * The name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getMetricName() {
         return metricName;
     }
 
-    /** The duration of the returned aggregated data in seconds. */
+    /**
+     * The duration of the returned aggregated data in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInSeconds")
     private final Long durationInSeconds;
 
     /**
      * The duration of the returned aggregated data in seconds.
-     *
      * @return the value
-     */
+     **/
     public Long getDurationInSeconds() {
         return durationInSeconds;
     }
 
     /**
      * The additional information about the metric.
+     * <p>
+     * Example: {@code "unit": "bytes"}
      *
-     * <p>Example: {@code "unit": "bytes"}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
      * The additional information about the metric.
-     *
-     * <p>Example: {@code "unit": "bytes"}
+     * <p>
+     * Example: {@code "unit": "bytes"}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
 
-    /** The qualifiers provided in the definition of the returned metric. */
+    /**
+     * The qualifiers provided in the definition of the returned metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
      * The qualifiers provided in the definition of the returned metric.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
-    /** The start time associated with the value of the metric. */
+    /**
+     * The start time associated with the value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTimestampInEpochSeconds")
     private final Long startTimestampInEpochSeconds;
 
     /**
      * The start time associated with the value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Long getStartTimestampInEpochSeconds() {
         return startTimestampInEpochSeconds;
     }
 
-    /** The mean value of the metric. */
+    /**
+     * The mean value of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mean")
     private final Double mean;
 
     /**
      * The mean value of the metric.
-     *
      * @return the value
-     */
+     **/
     public Double getMean() {
         return mean;
     }
@@ -288,7 +301,6 @@ public final class DbManagementAnalyticsMetric
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

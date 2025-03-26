@@ -6,133 +6,175 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetRRSetExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRRSetRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/GetRRSetExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetRRSetRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The name or OCID of the target zone. */
+    /**
+     * The name or OCID of the target zone.
+     */
     private String zoneNameOrId;
 
-    /** The name or OCID of the target zone. */
+    /**
+     * The name or OCID of the target zone.
+     */
     public String getZoneNameOrId() {
         return zoneNameOrId;
     }
-    /** The target fully-qualified domain name (FQDN) within the target zone. */
+    /**
+     * The target fully-qualified domain name (FQDN) within the target zone.
+     */
     private String domain;
 
-    /** The target fully-qualified domain name (FQDN) within the target zone. */
+    /**
+     * The target fully-qualified domain name (FQDN) within the target zone.
+     */
     public String getDomain() {
         return domain;
     }
-    /** The type of the target RRSet within the target zone. */
+    /**
+     * The type of the target RRSet within the target zone.
+     */
     private String rtype;
 
-    /** The type of the target RRSet within the target zone. */
+    /**
+     * The type of the target RRSet within the target zone.
+     */
     public String getRtype() {
         return rtype;
     }
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
     /**
-     * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional on
-     * the selected representation's modification date being more recent than the date provided in
-     * the field-value. Transfer of the selected representation's data is avoided if that data has
-     * not changed.
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
      */
     private String ifModifiedSince;
 
     /**
-     * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional on
-     * the selected representation's modification date being more recent than the date provided in
-     * the field-value. Transfer of the selected representation's data is avoided if that data has
-     * not changed.
+     * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+     * conditional on the selected representation's modification date being more
+     * recent than the date provided in the field-value.  Transfer of the
+     * selected representation's data is avoided if that data has not changed.
+     *
      */
     public String getIfModifiedSince() {
         return ifModifiedSince;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return in a page of the collection. */
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     private Long limit;
 
-    /** The maximum number of items to return in a page of the collection. */
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The version of the zone for which data is requested. */
+    /**
+     * The version of the zone for which data is requested.
+     *
+     */
     private String zoneVersion;
 
-    /** The version of the zone for which data is requested. */
+    /**
+     * The version of the zone for which data is requested.
+     *
+     */
     public String getZoneVersion() {
         return zoneVersion;
     }
     /**
      * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
      *
-     * <p>This parameter is deprecated and should be omitted.
      */
     private String compartmentId;
 
     /**
      * The OCID of the compartment the zone belongs to.
+     * <p>
+     * This parameter is deprecated and should be omitted.
      *
-     * <p>This parameter is deprecated and should be omitted.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
     /**
-     * The OCID of the view the zone is associated with. Required when accessing a private zone by
-     * name.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     private String viewId;
 
     /**
-     * The OCID of the view the zone is associated with. Required when accessing a private zone by
-     * name.
+     * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
      */
     public String getViewId() {
         return viewId;
@@ -140,15 +182,17 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetRRSetRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The name or OCID of the target zone. */
+        /**
+         * The name or OCID of the target zone.
+         */
         private String zoneNameOrId = null;
 
         /**
          * The name or OCID of the target zone.
-         *
          * @param zoneNameOrId the value to set
          * @return this builder instance
          */
@@ -157,12 +201,13 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The target fully-qualified domain name (FQDN) within the target zone. */
+        /**
+         * The target fully-qualified domain name (FQDN) within the target zone.
+         */
         private String domain = null;
 
         /**
          * The target fully-qualified domain name (FQDN) within the target zone.
-         *
          * @param domain the value to set
          * @return this builder instance
          */
@@ -171,12 +216,13 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The type of the target RRSet within the target zone. */
+        /**
+         * The type of the target RRSet within the target zone.
+         */
         private String rtype = null;
 
         /**
          * The type of the target RRSet within the target zone.
-         *
          * @param rtype the value to set
          * @return this builder instance
          */
@@ -186,18 +232,19 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -208,18 +255,19 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional
-         * on the selected representation's modification date being more recent than the date
-         * provided in the field-value. Transfer of the selected representation's data is avoided if
-         * that data has not changed.
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
+         *
          */
         private String ifModifiedSince = null;
 
         /**
-         * The {@code If-Modified-Since} header field makes a GET or HEAD request method conditional
-         * on the selected representation's modification date being more recent than the date
-         * provided in the field-value. Transfer of the selected representation's data is avoided if
-         * that data has not changed.
+         * The {@code If-Modified-Since} header field makes a GET or HEAD request method
+         * conditional on the selected representation's modification date being more
+         * recent than the date provided in the field-value.  Transfer of the
+         * selected representation's data is avoided if that data has not changed.
          *
          * @param ifModifiedSince the value to set
          * @return this builder instance
@@ -230,14 +278,17 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -247,7 +298,10 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The maximum number of items to return in a page of the collection. */
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
@@ -261,7 +315,10 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -275,7 +332,10 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The version of the zone for which data is requested. */
+        /**
+         * The version of the zone for which data is requested.
+         *
+         */
         private String zoneVersion = null;
 
         /**
@@ -291,15 +351,16 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * The OCID of the compartment the zone belongs to.
+         * <p>
+         * This parameter is deprecated and should be omitted.
          *
-         * <p>This parameter is deprecated and should be omitted.
          */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the zone belongs to.
-         *
-         * <p>This parameter is deprecated and should be omitted.
+         * <p>
+         * This parameter is deprecated and should be omitted.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -309,7 +370,10 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Specifies to operate only on resources that have a matching DNS scope. */
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -324,15 +388,12 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The OCID of the view the zone is associated with. Required when accessing a private zone
-         * by name.
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          */
         private String viewId = null;
 
         /**
-         * The OCID of the view the zone is associated with. Required when accessing a private zone
-         * by name.
-         *
+         * The OCID of the view the zone is associated with. Required when accessing a private zone by name.
          * @param viewId the value to set
          * @return this builder instance
          */
@@ -343,19 +404,18 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -367,7 +427,6 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetRRSetRequest o) {
@@ -391,11 +450,10 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetRRSetRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetRRSetRequest
          */
@@ -409,8 +467,7 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of GetRRSetRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetRRSetRequest
@@ -430,14 +487,12 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.scope = scope;
             request.viewId = viewId;
             return request;
-            // new GetRRSetRequest(zoneNameOrId, domain, rtype, ifNoneMatch, ifModifiedSince,
-            // opcRequestId, limit, page, zoneVersion, compartmentId, scope, viewId);
+            // new GetRRSetRequest(zoneNameOrId, domain, rtype, ifNoneMatch, ifModifiedSince, opcRequestId, limit, page, zoneVersion, compartmentId, scope, viewId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -458,7 +513,6 @@ public class GetRRSetRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

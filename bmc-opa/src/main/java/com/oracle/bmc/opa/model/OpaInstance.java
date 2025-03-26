@@ -5,21 +5,19 @@
 package com.oracle.bmc.opa.model;
 
 /**
- * Description of OpaInstance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
+ * Description of OpaInstance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210621")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OpaInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OpaInstance extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OpaInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,292 +87,277 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation */
+        /**
+         * Unique identifier that is immutable on creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OpaInstance Identifier, can be renamed */
+        /**
+         * OpaInstance Identifier, can be renamed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * OpaInstance Identifier, can be renamed
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the Process Automation instance. */
+        /**
+         * Description of the Process Automation instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the Process Automation instance.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OPA Instance URL */
+        /**
+         * OPA Instance URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
         private String instanceUrl;
 
         /**
          * OPA Instance URL
-         *
          * @param instanceUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
             return this;
         }
-        /** The entitlement used for billing purposes */
+        /**
+         * The entitlement used for billing purposes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
         private ConsumptionModel consumptionModel;
 
         /**
          * The entitlement used for billing purposes
-         *
          * @param consumptionModel the value to set
          * @return this builder
-         */
+         **/
         public Builder consumptionModel(ConsumptionModel consumptionModel) {
             this.consumptionModel = consumptionModel;
             this.__explicitlySet__.add("consumptionModel");
             return this;
         }
-        /** Shape of the instance. */
+        /**
+         * Shape of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private ShapeName shapeName;
 
         /**
          * Shape of the instance.
-         *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(ShapeName shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /** MeteringType Identifier */
+        /**
+         * MeteringType Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meteringType")
         private MeteringType meteringType;
 
         /**
          * MeteringType Identifier
-         *
          * @param meteringType the value to set
          * @return this builder
-         */
+         **/
         public Builder meteringType(MeteringType meteringType) {
             this.meteringType = meteringType;
             this.__explicitlySet__.add("meteringType");
             return this;
         }
-        /** The time when OpaInstance was created. An RFC3339 formatted datetime string */
+        /**
+         * The time when OpaInstance was created. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time when OpaInstance was created. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the OpaInstance was updated. An RFC3339 formatted datetime string */
+        /**
+         * The time the OpaInstance was updated. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the OpaInstance was updated. An RFC3339 formatted datetime string
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the OpaInstance. */
+        /**
+         * The current state of the OpaInstance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the OpaInstance.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * This property specifies the GUID of the Identity Application instance OPA has created
-         * inside the user-specified identity domain. This identity application instance may be used
-         * to host user role mappings to grant access to this OPA instance for users within the
-         * identity domain.
-         */
+         * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
         private String identityAppGuid;
 
         /**
-         * This property specifies the GUID of the Identity Application instance OPA has created
-         * inside the user-specified identity domain. This identity application instance may be used
-         * to host user role mappings to grant access to this OPA instance for users within the
-         * identity domain.
-         *
+         * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
          * @param identityAppGuid the value to set
          * @return this builder
-         */
+         **/
         public Builder identityAppGuid(String identityAppGuid) {
             this.identityAppGuid = identityAppGuid;
             this.__explicitlySet__.add("identityAppGuid");
             return this;
         }
         /**
-         * This property specifies the name of the Identity Application instance OPA has created
-         * inside the user-specified identity domain. This identity application instance may be used
-         * to host user roll mappings to grant access to this OPA instance for users within the
-         * identity domain.
-         */
+         * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityAppDisplayName")
         private String identityAppDisplayName;
 
         /**
-         * This property specifies the name of the Identity Application instance OPA has created
-         * inside the user-specified identity domain. This identity application instance may be used
-         * to host user roll mappings to grant access to this OPA instance for users within the
-         * identity domain.
-         *
+         * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
          * @param identityAppDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder identityAppDisplayName(String identityAppDisplayName) {
             this.identityAppDisplayName = identityAppDisplayName;
             this.__explicitlySet__.add("identityAppDisplayName");
             return this;
         }
         /**
-         * This property specifies the domain url of the Identity Application instance OPA has
-         * created inside the user-specified identity domain. This identity application instance may
-         * be used to host user roll mappings to grant access to this OPA instance for users within
-         * the identity domain.
-         */
+         * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainUrl")
         private String identityDomainUrl;
 
         /**
-         * This property specifies the domain url of the Identity Application instance OPA has
-         * created inside the user-specified identity domain. This identity application instance may
-         * be used to host user roll mappings to grant access to this OPA instance for users within
-         * the identity domain.
-         *
+         * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
          * @param identityDomainUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder identityDomainUrl(String identityDomainUrl) {
             this.identityDomainUrl = identityDomainUrl;
             this.__explicitlySet__.add("identityDomainUrl");
             return this;
         }
         /**
-         * This property specifies the OPC Service Instance GUID of the Identity Application
-         * instance OPA has created inside the user-specified identity domain. This identity
-         * application instance may be used to host user roll mappings to grant access to this OPA
-         * instance for users within the identity domain.
-         */
+         * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityAppOpcServiceInstanceGuid")
         private String identityAppOpcServiceInstanceGuid;
 
         /**
-         * This property specifies the OPC Service Instance GUID of the Identity Application
-         * instance OPA has created inside the user-specified identity domain. This identity
-         * application instance may be used to host user roll mappings to grant access to this OPA
-         * instance for users within the identity domain.
-         *
+         * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
          * @param identityAppOpcServiceInstanceGuid the value to set
          * @return this builder
-         */
+         **/
         public Builder identityAppOpcServiceInstanceGuid(String identityAppOpcServiceInstanceGuid) {
             this.identityAppOpcServiceInstanceGuid = identityAppOpcServiceInstanceGuid;
             this.__explicitlySet__.add("identityAppOpcServiceInstanceGuid");
             return this;
         }
-        /** indicates if breakGlass is enabled for the opa instance. */
+        /**
+         * indicates if breakGlass is enabled for the opa instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBreakglassEnabled")
         private Boolean isBreakglassEnabled;
 
         /**
          * indicates if breakGlass is enabled for the opa instance.
-         *
          * @param isBreakglassEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isBreakglassEnabled(Boolean isBreakglassEnabled) {
             this.isBreakglassEnabled = isBreakglassEnabled;
             this.__explicitlySet__.add("isBreakglassEnabled");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -383,7 +366,8 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -393,7 +377,7 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -401,25 +385,29 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** A list of associated attachments to other services */
+        /**
+         * A list of associated attachments to other services
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachments")
         private java.util.List<AttachmentDetails> attachments;
 
@@ -428,7 +416,7 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param attachments the value to set
          * @return this builder
-         */
+         **/
         public Builder attachments(java.util.List<AttachmentDetails> attachments) {
             this.attachments = attachments;
             this.__explicitlySet__.add("attachments");
@@ -534,7 +522,9 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -543,80 +533,87 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation */
+    /**
+     * Unique identifier that is immutable on creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OpaInstance Identifier, can be renamed */
+    /**
+     * OpaInstance Identifier, can be renamed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * OpaInstance Identifier, can be renamed
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of the Process Automation instance. */
+    /**
+     * Description of the Process Automation instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the Process Automation instance.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OPA Instance URL */
+    /**
+     * OPA Instance URL
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUrl")
     private final String instanceUrl;
 
     /**
      * OPA Instance URL
-     *
      * @return the value
-     */
+     **/
     public String getInstanceUrl() {
         return instanceUrl;
     }
 
-    /** The entitlement used for billing purposes */
-    public enum ConsumptionModel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The entitlement used for billing purposes
+     **/
+    public enum ConsumptionModel {
         Ucm("UCM"),
         Gov("GOV"),
         Saas("SAAS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -655,27 +652,30 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The entitlement used for billing purposes */
+    /**
+     * The entitlement used for billing purposes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumptionModel")
     private final ConsumptionModel consumptionModel;
 
     /**
      * The entitlement used for billing purposes
-     *
      * @return the value
-     */
+     **/
     public ConsumptionModel getConsumptionModel() {
         return consumptionModel;
     }
 
-    /** Shape of the instance. */
-    public enum ShapeName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Shape of the instance.
+     **/
+    public enum ShapeName {
         Development("DEVELOPMENT"),
         Production("PRODUCTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -714,29 +714,32 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** Shape of the instance. */
+    /**
+     * Shape of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final ShapeName shapeName;
 
     /**
      * Shape of the instance.
-     *
      * @return the value
-     */
+     **/
     public ShapeName getShapeName() {
         return shapeName;
     }
 
-    /** MeteringType Identifier */
-    public enum MeteringType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * MeteringType Identifier
+     **/
+    public enum MeteringType {
         ExecutionPack("EXECUTION_PACK"),
         Users("USERS"),
         Employee("EMPLOYEE"),
         NamedUser("NAMED_USER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -775,47 +778,52 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** MeteringType Identifier */
+    /**
+     * MeteringType Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("meteringType")
     private final MeteringType meteringType;
 
     /**
      * MeteringType Identifier
-     *
      * @return the value
-     */
+     **/
     public MeteringType getMeteringType() {
         return meteringType;
     }
 
-    /** The time when OpaInstance was created. An RFC3339 formatted datetime string */
+    /**
+     * The time when OpaInstance was created. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when OpaInstance was created. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the OpaInstance was updated. An RFC3339 formatted datetime string */
+    /**
+     * The time the OpaInstance was updated. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the OpaInstance was updated. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the OpaInstance. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the OpaInstance.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -825,8 +833,8 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -865,164 +873,148 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The current state of the OpaInstance. */
+    /**
+     * The current state of the OpaInstance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the OpaInstance.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * This property specifies the GUID of the Identity Application instance OPA has created inside
-     * the user-specified identity domain. This identity application instance may be used to host
-     * user role mappings to grant access to this OPA instance for users within the identity domain.
-     */
+     * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppGuid")
     private final String identityAppGuid;
 
     /**
-     * This property specifies the GUID of the Identity Application instance OPA has created inside
-     * the user-specified identity domain. This identity application instance may be used to host
-     * user role mappings to grant access to this OPA instance for users within the identity domain.
-     *
+     * This property specifies the GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user role mappings to grant access to this OPA instance for users within the identity domain.
      * @return the value
-     */
+     **/
     public String getIdentityAppGuid() {
         return identityAppGuid;
     }
 
     /**
-     * This property specifies the name of the Identity Application instance OPA has created inside
-     * the user-specified identity domain. This identity application instance may be used to host
-     * user roll mappings to grant access to this OPA instance for users within the identity domain.
-     */
+     * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppDisplayName")
     private final String identityAppDisplayName;
 
     /**
-     * This property specifies the name of the Identity Application instance OPA has created inside
-     * the user-specified identity domain. This identity application instance may be used to host
-     * user roll mappings to grant access to this OPA instance for users within the identity domain.
-     *
+     * This property specifies the name of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * @return the value
-     */
+     **/
     public String getIdentityAppDisplayName() {
         return identityAppDisplayName;
     }
 
     /**
-     * This property specifies the domain url of the Identity Application instance OPA has created
-     * inside the user-specified identity domain. This identity application instance may be used to
-     * host user roll mappings to grant access to this OPA instance for users within the identity
-     * domain.
-     */
+     * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainUrl")
     private final String identityDomainUrl;
 
     /**
-     * This property specifies the domain url of the Identity Application instance OPA has created
-     * inside the user-specified identity domain. This identity application instance may be used to
-     * host user roll mappings to grant access to this OPA instance for users within the identity
-     * domain.
-     *
+     * This property specifies the domain url of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * @return the value
-     */
+     **/
     public String getIdentityDomainUrl() {
         return identityDomainUrl;
     }
 
     /**
-     * This property specifies the OPC Service Instance GUID of the Identity Application instance
-     * OPA has created inside the user-specified identity domain. This identity application instance
-     * may be used to host user roll mappings to grant access to this OPA instance for users within
-     * the identity domain.
-     */
+     * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityAppOpcServiceInstanceGuid")
     private final String identityAppOpcServiceInstanceGuid;
 
     /**
-     * This property specifies the OPC Service Instance GUID of the Identity Application instance
-     * OPA has created inside the user-specified identity domain. This identity application instance
-     * may be used to host user roll mappings to grant access to this OPA instance for users within
-     * the identity domain.
-     *
+     * This property specifies the OPC Service Instance GUID of the Identity Application instance OPA has created inside the user-specified identity domain. This identity application instance may be used to host user roll mappings to grant access to this OPA instance for users within the identity domain.
      * @return the value
-     */
+     **/
     public String getIdentityAppOpcServiceInstanceGuid() {
         return identityAppOpcServiceInstanceGuid;
     }
 
-    /** indicates if breakGlass is enabled for the opa instance. */
+    /**
+     * indicates if breakGlass is enabled for the opa instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBreakglassEnabled")
     private final Boolean isBreakglassEnabled;
 
     /**
      * indicates if breakGlass is enabled for the opa instance.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsBreakglassEnabled() {
         return isBreakglassEnabled;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** A list of associated attachments to other services */
+    /**
+     * A list of associated attachments to other services
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachments")
     private final java.util.List<AttachmentDetails> attachments;
 
@@ -1030,7 +1022,7 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
      * A list of associated attachments to other services
      *
      * @return the value
-     */
+     **/
     public java.util.List<AttachmentDetails> getAttachments() {
         return attachments;
     }
@@ -1042,7 +1034,6 @@ public final class OpaInstance extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

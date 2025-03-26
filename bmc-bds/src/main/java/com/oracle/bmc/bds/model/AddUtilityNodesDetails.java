@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about added utility nodes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about added utility nodes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddUtilityNodesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddUtilityNodesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddUtilityNodesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterAdminPassword",
@@ -46,65 +45,67 @@ public final class AddUtilityNodesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Base-64 encoded Cluster Admin Password for cluster admin user. */
+        /**
+         * Base-64 encoded Cluster Admin Password for cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded Cluster Admin Password for cluster admin user.
-         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-        /** Number of additional utility nodes for the cluster. */
+        /**
+         * Number of additional utility nodes for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfUtilityNodes")
         private Integer numberOfUtilityNodes;
 
         /**
          * Number of additional utility nodes for the cluster.
-         *
          * @param numberOfUtilityNodes the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfUtilityNodes(Integer numberOfUtilityNodes) {
             this.numberOfUtilityNodes = numberOfUtilityNodes;
             this.__explicitlySet__.add("numberOfUtilityNodes");
             return this;
         }
-        /** Shape of the node. It's a read-only property derived from existing Utility node. */
+        /**
+         * Shape of the node. It's a read-only property derived from existing Utility node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Shape of the node. It's a read-only property derived from existing Utility node.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
         /**
-         * The size of block volume in GB to be attached to the given node. It's a read-only
-         * property.
-         */
+         * The size of block volume in GB to be attached to the given node. It's a read-only property.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
-         * The size of block volume in GB to be attached to the given node. It's a read-only
-         * property.
+         * The size of block volume in GB to be attached to the given node. It's a read-only property.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
@@ -158,7 +159,9 @@ public final class AddUtilityNodesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,48 +170,52 @@ public final class AddUtilityNodesDetails
         return new Builder().copy(this);
     }
 
-    /** Base-64 encoded Cluster Admin Password for cluster admin user. */
+    /**
+     * Base-64 encoded Cluster Admin Password for cluster admin user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded Cluster Admin Password for cluster admin user.
-     *
      * @return the value
-     */
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
 
-    /** Number of additional utility nodes for the cluster. */
+    /**
+     * Number of additional utility nodes for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfUtilityNodes")
     private final Integer numberOfUtilityNodes;
 
     /**
      * Number of additional utility nodes for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfUtilityNodes() {
         return numberOfUtilityNodes;
     }
 
-    /** Shape of the node. It's a read-only property derived from existing Utility node. */
+    /**
+     * Shape of the node. It's a read-only property derived from existing Utility node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Shape of the node. It's a read-only property derived from existing Utility node.
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
     /**
      * The size of block volume in GB to be attached to the given node. It's a read-only property.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
@@ -216,7 +223,7 @@ public final class AddUtilityNodesDetails
      * The size of block volume in GB to be attached to the given node. It's a read-only property.
      *
      * @return the value
-     */
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
@@ -235,7 +242,6 @@ public final class AddUtilityNodesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

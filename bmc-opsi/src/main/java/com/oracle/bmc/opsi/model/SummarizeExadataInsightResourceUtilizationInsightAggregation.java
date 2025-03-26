@@ -5,23 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Insights response containing utilization values for exadata systems. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Insights response containing utilization values for exadata systems.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizeExadataInsightResourceUtilizationInsightAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SummarizeExadataInsightResourceUtilizationInsightAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -52,67 +52,74 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /** Percent value in which a resource metric is considered highly utilized. */
+        /**
+         * Percent value in which a resource metric is considered highly utilized.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
         private Integer highUtilizationThreshold;
 
         /**
          * Percent value in which a resource metric is considered highly utilized.
-         *
          * @param highUtilizationThreshold the value to set
          * @return this builder
-         */
+         **/
         public Builder highUtilizationThreshold(Integer highUtilizationThreshold) {
             this.highUtilizationThreshold = highUtilizationThreshold;
             this.__explicitlySet__.add("highUtilizationThreshold");
             return this;
         }
-        /** Percent value in which a resource metric is considered lowly utilized. */
+        /**
+         * Percent value in which a resource metric is considered lowly utilized.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
         private Integer lowUtilizationThreshold;
 
         /**
          * Percent value in which a resource metric is considered lowly utilized.
-         *
          * @param lowUtilizationThreshold the value to set
          * @return this builder
-         */
+         **/
         public Builder lowUtilizationThreshold(Integer lowUtilizationThreshold) {
             this.lowUtilizationThreshold = lowUtilizationThreshold;
             this.__explicitlySet__.add("lowUtilizationThreshold");
             return this;
         }
-        /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
+        /**
+         * Defines the type of exadata resource metric (example: CPU, STORAGE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
         private ExadataResourceMetric exadataResourceMetric;
 
@@ -121,41 +128,41 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
          *
          * @param exadataResourceMetric the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataResourceMetric(ExadataResourceMetric exadataResourceMetric) {
             this.exadataResourceMetric = exadataResourceMetric;
             this.__explicitlySet__.add("exadataResourceMetric");
             return this;
         }
         /**
-         * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST,
-         * DISKGROUP)
-         */
+         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
         private ExadataResourceType exadataResourceType;
 
         /**
-         * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST,
-         * DISKGROUP)
+         * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
          *
          * @param exadataResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataResourceType(ExadataResourceType exadataResourceType) {
             this.exadataResourceType = exadataResourceType;
             this.__explicitlySet__.add("exadataResourceType");
             return this;
         }
-        /** Collection of Exadata system utilization */
+        /**
+         * Collection of Exadata system utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilization")
         private java.util.List<ExadataInsightResourceInsightUtilizationItem> utilization;
 
         /**
          * Collection of Exadata system utilization
-         *
          * @param utilization the value to set
          * @return this builder
-         */
+         **/
         public Builder utilization(
                 java.util.List<ExadataInsightResourceInsightUtilizationItem> utilization) {
             this.utilization = utilization;
@@ -209,7 +216,9 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,60 +227,67 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         return new Builder().copy(this);
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /** Percent value in which a resource metric is considered highly utilized. */
+    /**
+     * Percent value in which a resource metric is considered highly utilized.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("highUtilizationThreshold")
     private final Integer highUtilizationThreshold;
 
     /**
      * Percent value in which a resource metric is considered highly utilized.
-     *
      * @return the value
-     */
+     **/
     public Integer getHighUtilizationThreshold() {
         return highUtilizationThreshold;
     }
 
-    /** Percent value in which a resource metric is considered lowly utilized. */
+    /**
+     * Percent value in which a resource metric is considered lowly utilized.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lowUtilizationThreshold")
     private final Integer lowUtilizationThreshold;
 
     /**
      * Percent value in which a resource metric is considered lowly utilized.
-     *
      * @return the value
-     */
+     **/
     public Integer getLowUtilizationThreshold() {
         return lowUtilizationThreshold;
     }
 
-    /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
-    public enum ExadataResourceMetric implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Defines the type of exadata resource metric (example: CPU, STORAGE)
+     *
+     **/
+    public enum ExadataResourceMetric {
         Cpu("CPU"),
         Storage("STORAGE"),
         Io("IO"),
@@ -280,8 +296,8 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         Throughput("THROUGHPUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -320,7 +336,10 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
             return UnknownEnumValue;
         }
     };
-    /** Defines the type of exadata resource metric (example: CPU, STORAGE) */
+    /**
+     * Defines the type of exadata resource metric (example: CPU, STORAGE)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceMetric")
     private final ExadataResourceMetric exadataResourceMetric;
 
@@ -328,23 +347,24 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
      * Defines the type of exadata resource metric (example: CPU, STORAGE)
      *
      * @return the value
-     */
+     **/
     public ExadataResourceMetric getExadataResourceMetric() {
         return exadataResourceMetric;
     }
 
     /**
-     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
-     */
-    public enum ExadataResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     *
+     **/
+    public enum ExadataResourceType {
         Database("DATABASE"),
         Host("HOST"),
         StorageServer("STORAGE_SERVER"),
         Diskgroup("DISKGROUP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -384,29 +404,31 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
         }
     };
     /**
-     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
-     */
+     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataResourceType")
     private final ExadataResourceType exadataResourceType;
 
     /**
-     * Defines the resource type for an exadata (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
+     * Defines the resource type for an exadata  (example: DATABASE, STORAGE_SERVER, HOST, DISKGROUP)
      *
      * @return the value
-     */
+     **/
     public ExadataResourceType getExadataResourceType() {
         return exadataResourceType;
     }
 
-    /** Collection of Exadata system utilization */
+    /**
+     * Collection of Exadata system utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilization")
     private final java.util.List<ExadataInsightResourceInsightUtilizationItem> utilization;
 
     /**
      * Collection of Exadata system utilization
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ExadataInsightResourceInsightUtilizationItem> getUtilization() {
         return utilization;
     }
@@ -418,7 +440,6 @@ public final class SummarizeExadataInsightResourceUtilizationInsightAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

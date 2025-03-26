@@ -6,24 +6,25 @@ package com.oracle.bmc.vnmonitoring.model;
 
 /**
  * Deprecated. For tunnel information, instead see:
+ * <p>
+ * {@link IPSecConnectionTunnel}
+ *   * {@link IPSecConnectionTunnelSharedSecret}
  *
- * <p>{@link IPSecConnectionTunnel} * {@link IPSecConnectionTunnelSharedSecret} <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IPSecConnectionDeviceConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IPSecConnectionDeviceConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IPSecConnectionDeviceConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "id", "timeCreated", "tunnels"})
     public IPSecConnectionDeviceConfig(
@@ -41,68 +42,64 @@ public final class IPSecConnectionDeviceConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the IPSec connection.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the IPSec connection.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         */
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         *
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The date and time the IPSec connection was created. */
+        /**
+         * The date and time the IPSec connection was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the IPSec connection was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Two {@link TunnelConfig} objects. */
+        /**
+         * Two {@link TunnelConfig} objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
         private java.util.List<TunnelConfig> tunnels;
 
         /**
          * Two {@link TunnelConfig} objects.
-         *
          * @param tunnels the value to set
          * @return this builder
-         */
+         **/
         public Builder tunnels(java.util.List<TunnelConfig> tunnels) {
             this.tunnels = tunnels;
             this.__explicitlySet__.add("tunnels");
@@ -140,7 +137,9 @@ public final class IPSecConnectionDeviceConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -150,61 +149,57 @@ public final class IPSecConnectionDeviceConfig
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the IPSec connection.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the IPSec connection.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     */
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     *
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The date and time the IPSec connection was created. */
+    /**
+     * The date and time the IPSec connection was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the IPSec connection was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Two {@link TunnelConfig} objects. */
+    /**
+     * Two {@link TunnelConfig} objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnels")
     private final java.util.List<TunnelConfig> tunnels;
 
     /**
      * Two {@link TunnelConfig} objects.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TunnelConfig> getTunnels() {
         return tunnels;
     }
@@ -216,7 +211,6 @@ public final class IPSecConnectionDeviceConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

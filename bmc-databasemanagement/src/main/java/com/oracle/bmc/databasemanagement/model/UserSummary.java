@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of a specific User. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of a specific User.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UserSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UserSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,125 +51,129 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the User. */
+        /**
+         * The name of the User.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the User.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The status of the user account. */
+        /**
+         * The status of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the user account.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The date and time of the expiration of the user account. */
+        /**
+         * The date and time of the expiration of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
         private java.util.Date timeExpiring;
 
         /**
          * The date and time of the expiration of the user account.
-         *
          * @param timeExpiring the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpiring(java.util.Date timeExpiring) {
             this.timeExpiring = timeExpiring;
             this.__explicitlySet__.add("timeExpiring");
             return this;
         }
-        /** The default tablespace for data. */
+        /**
+         * The default tablespace for data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
         private String defaultTablespace;
 
         /**
          * The default tablespace for data.
-         *
          * @param defaultTablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultTablespace(String defaultTablespace) {
             this.defaultTablespace = defaultTablespace;
             this.__explicitlySet__.add("defaultTablespace");
             return this;
         }
         /**
-         * The name of the default tablespace for temporary tables or the name of a tablespace
-         * group.
-         */
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
         private String tempTablespace;
 
         /**
-         * The name of the default tablespace for temporary tables or the name of a tablespace
-         * group.
-         *
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
          * @param tempTablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder tempTablespace(String tempTablespace) {
             this.tempTablespace = tempTablespace;
             this.__explicitlySet__.add("tempTablespace");
             return this;
         }
-        /** The date and time the user was created. */
+        /**
+         * The date and time the user was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the user was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date the account was locked, if the status of the account is LOCKED. */
+        /**
+         * The date the account was locked, if the status of the account is LOCKED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
         private java.util.Date timeLocked;
 
         /**
          * The date the account was locked, if the status of the account is LOCKED.
-         *
          * @param timeLocked the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLocked(java.util.Date timeLocked) {
             this.timeLocked = timeLocked;
             this.__explicitlySet__.add("timeLocked");
             return this;
         }
-        /** The profile name of the user. */
+        /**
+         * The profile name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
         /**
          * The profile name of the user.
-         *
          * @param profile the value to set
          * @return this builder
-         */
+         **/
         public Builder profile(String profile) {
             this.profile = profile;
             this.__explicitlySet__.add("profile");
@@ -228,7 +230,9 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -237,21 +241,24 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The name of the User. */
+    /**
+     * The name of the User.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the User.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The status of the user account. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the user account.
+     **/
+    public enum Status {
         Open("OPEN"),
         Expired("EXPIRED"),
         ExpiredGrace("EXPIRED_GRACE"),
@@ -269,8 +276,8 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
         ExpiredAndLockedTimedAndInRol("EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -308,95 +315,100 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
             return UnknownEnumValue;
         }
     };
-    /** The status of the user account. */
+    /**
+     * The status of the user account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the user account.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The date and time of the expiration of the user account. */
+    /**
+     * The date and time of the expiration of the user account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
     private final java.util.Date timeExpiring;
 
     /**
      * The date and time of the expiration of the user account.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpiring() {
         return timeExpiring;
     }
 
-    /** The default tablespace for data. */
+    /**
+     * The default tablespace for data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
     private final String defaultTablespace;
 
     /**
      * The default tablespace for data.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultTablespace() {
         return defaultTablespace;
     }
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
     private final String tempTablespace;
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
-     *
      * @return the value
-     */
+     **/
     public String getTempTablespace() {
         return tempTablespace;
     }
 
-    /** The date and time the user was created. */
+    /**
+     * The date and time the user was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the user was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date the account was locked, if the status of the account is LOCKED. */
+    /**
+     * The date the account was locked, if the status of the account is LOCKED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
     private final java.util.Date timeLocked;
 
     /**
      * The date the account was locked, if the status of the account is LOCKED.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLocked() {
         return timeLocked;
     }
 
-    /** The profile name of the user. */
+    /**
+     * The profile name of the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
     /**
      * The profile name of the user.
-     *
      * @return the value
-     */
+     **/
     public String getProfile() {
         return profile;
     }
@@ -408,7 +420,6 @@ public final class UserSummary extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

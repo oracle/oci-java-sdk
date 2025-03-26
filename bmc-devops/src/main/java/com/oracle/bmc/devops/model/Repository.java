@@ -5,21 +5,19 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Repositories containing the source code to build and deploy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Repositories containing the source code to build and deploy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Repository.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Repository extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Repository extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -101,187 +99,201 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the repository. This value is unique and immutable. */
+        /**
+         * The OCID of the repository. This value is unique and immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the repository. This value is unique and immutable.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Name of the repository. Should be unique within the project. This value is mutable. */
+        /**
+         * Name of the repository. Should be unique within the project. This value is mutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the repository. Should be unique within the project. This value is mutable.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The OCID of the repository's compartment. */
+        /**
+         * The OCID of the repository's compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the repository's compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Tenancy unique namespace. */
+        /**
+         * Tenancy unique namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * Tenancy unique namespace.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The OCID of the DevOps project containing the repository. */
+        /**
+         * The OCID of the DevOps project containing the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
          * The OCID of the DevOps project containing the repository.
-         *
          * @param projectId the value to set
          * @return this builder
-         */
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
             return this;
         }
-        /** The OCID of the parent repository. */
+        /**
+         * The OCID of the parent repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
         private String parentRepositoryId;
 
         /**
          * The OCID of the parent repository.
-         *
          * @param parentRepositoryId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentRepositoryId(String parentRepositoryId) {
             this.parentRepositoryId = parentRepositoryId;
             this.__explicitlySet__.add("parentRepositoryId");
             return this;
         }
-        /** Unique project name in a namespace. */
+        /**
+         * Unique project name in a namespace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectName")
         private String projectName;
 
         /**
          * Unique project name in a namespace.
-         *
          * @param projectName the value to set
          * @return this builder
-         */
+         **/
         public Builder projectName(String projectName) {
             this.projectName = projectName;
             this.__explicitlySet__.add("projectName");
             return this;
         }
-        /** SSH URL that you use to git clone, pull and push. */
+        /**
+         * SSH URL that you use to git clone, pull and push.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sshUrl")
         private String sshUrl;
 
         /**
          * SSH URL that you use to git clone, pull and push.
-         *
          * @param sshUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sshUrl(String sshUrl) {
             this.sshUrl = sshUrl;
             this.__explicitlySet__.add("sshUrl");
             return this;
         }
-        /** HTTP URL that you use to git clone, pull and push. */
+        /**
+         * HTTP URL that you use to git clone, pull and push.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpUrl")
         private String httpUrl;
 
         /**
          * HTTP URL that you use to git clone, pull and push.
-         *
          * @param httpUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder httpUrl(String httpUrl) {
             this.httpUrl = httpUrl;
             this.__explicitlySet__.add("httpUrl");
             return this;
         }
-        /** Details of the repository. Avoid entering confidential information. */
+        /**
+         * Details of the repository. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Details of the repository. Avoid entering confidential information.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The default branch of the repository. */
+        /**
+         * The default branch of the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
         private String defaultBranch;
 
         /**
          * The default branch of the repository.
-         *
          * @param defaultBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultBranch(String defaultBranch) {
             this.defaultBranch = defaultBranch;
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
         /**
-         * Type of repository: MIRRORED - Repository created by mirroring an existing repository.
-         * HOSTED - Repository created and hosted using OCI DevOps code repository. FORKED -
-         * Repository created by forking an existing repository.
-         */
+         * Type of repository:
+         * MIRRORED - Repository created by mirroring an existing repository.
+         * HOSTED - Repository created and hosted using OCI DevOps code repository.
+         * FORKED - Repository created by forking an existing repository.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private RepositoryType repositoryType;
 
         /**
-         * Type of repository: MIRRORED - Repository created by mirroring an existing repository.
-         * HOSTED - Repository created and hosted using OCI DevOps code repository. FORKED -
-         * Repository created by forking an existing repository.
+         * Type of repository:
+         * MIRRORED - Repository created by mirroring an existing repository.
+         * HOSTED - Repository created and hosted using OCI DevOps code repository.
+         * FORKED - Repository created by forking an existing repository.
          *
          * @param repositoryType the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryType(RepositoryType repositoryType) {
             this.repositoryType = repositoryType;
             this.__explicitlySet__.add("repositoryType");
@@ -297,186 +309,170 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * The time the repository was created. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the repository was created. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the repository was updated. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the repository was updated. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the repository. */
+        /**
+         * The current state of the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the repository.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecyleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
             return this;
         }
-        /** The count of the branches present in the repository. */
+        /**
+         * The count of the branches present in the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("branchCount")
         private Integer branchCount;
 
         /**
          * The count of the branches present in the repository.
-         *
          * @param branchCount the value to set
          * @return this builder
-         */
+         **/
         public Builder branchCount(Integer branchCount) {
             this.branchCount = branchCount;
             this.__explicitlySet__.add("branchCount");
             return this;
         }
-        /** The count of the commits present in the repository. */
+        /**
+         * The count of the commits present in the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitCount")
         private Integer commitCount;
 
         /**
          * The count of the commits present in the repository.
-         *
          * @param commitCount the value to set
          * @return this builder
-         */
+         **/
         public Builder commitCount(Integer commitCount) {
             this.commitCount = commitCount;
             this.__explicitlySet__.add("commitCount");
             return this;
         }
-        /** The size of the repository in bytes. */
+        /**
+         * The size of the repository in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * The size of the repository in bytes.
-         *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
         /**
-         * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-         * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in
-         * the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch
-         * with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are
-         * mirrored into a repository.
-         */
+         * Trigger build events supported for this repository:
+         * PUSH - Build is triggered when a push event occurs.
+         * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+         * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
+         * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("triggerBuildEvents")
         private java.util.List<TriggerBuildEvents> triggerBuildEvents;
 
         /**
-         * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-         * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in
-         * the repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch
-         * with an open pull request. COMMIT_UPDATES - Build is triggered when new commits are
-         * mirrored into a repository.
+         * Trigger build events supported for this repository:
+         * PUSH - Build is triggered when a push event occurs.
+         * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+         * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
+         * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
          *
          * @param triggerBuildEvents the value to set
          * @return this builder
-         */
+         **/
         public Builder triggerBuildEvents(java.util.List<TriggerBuildEvents> triggerBuildEvents) {
             this.triggerBuildEvents = triggerBuildEvents;
             this.__explicitlySet__.add("triggerBuildEvents");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         *
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -484,21 +480,16 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -619,7 +610,9 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -628,162 +621,175 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the repository. This value is unique and immutable. */
+    /**
+     * The OCID of the repository. This value is unique and immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the repository. This value is unique and immutable.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Name of the repository. Should be unique within the project. This value is mutable. */
+    /**
+     * Name of the repository. Should be unique within the project. This value is mutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the repository. Should be unique within the project. This value is mutable.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The OCID of the repository's compartment. */
+    /**
+     * The OCID of the repository's compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the repository's compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Tenancy unique namespace. */
+    /**
+     * Tenancy unique namespace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Tenancy unique namespace.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The OCID of the DevOps project containing the repository. */
+    /**
+     * The OCID of the DevOps project containing the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
      * The OCID of the DevOps project containing the repository.
-     *
      * @return the value
-     */
+     **/
     public String getProjectId() {
         return projectId;
     }
 
-    /** The OCID of the parent repository. */
+    /**
+     * The OCID of the parent repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
     private final String parentRepositoryId;
 
     /**
      * The OCID of the parent repository.
-     *
      * @return the value
-     */
+     **/
     public String getParentRepositoryId() {
         return parentRepositoryId;
     }
 
-    /** Unique project name in a namespace. */
+    /**
+     * Unique project name in a namespace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectName")
     private final String projectName;
 
     /**
      * Unique project name in a namespace.
-     *
      * @return the value
-     */
+     **/
     public String getProjectName() {
         return projectName;
     }
 
-    /** SSH URL that you use to git clone, pull and push. */
+    /**
+     * SSH URL that you use to git clone, pull and push.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sshUrl")
     private final String sshUrl;
 
     /**
      * SSH URL that you use to git clone, pull and push.
-     *
      * @return the value
-     */
+     **/
     public String getSshUrl() {
         return sshUrl;
     }
 
-    /** HTTP URL that you use to git clone, pull and push. */
+    /**
+     * HTTP URL that you use to git clone, pull and push.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpUrl")
     private final String httpUrl;
 
     /**
      * HTTP URL that you use to git clone, pull and push.
-     *
      * @return the value
-     */
+     **/
     public String getHttpUrl() {
         return httpUrl;
     }
 
-    /** Details of the repository. Avoid entering confidential information. */
+    /**
+     * Details of the repository. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Details of the repository. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The default branch of the repository. */
+    /**
+     * The default branch of the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultBranch")
     private final String defaultBranch;
 
     /**
      * The default branch of the repository.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultBranch() {
         return defaultBranch;
     }
 
     /**
-     * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
-     * by forking an existing repository.
-     */
-    public enum RepositoryType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of repository:
+     * MIRRORED - Repository created by mirroring an existing repository.
+     * HOSTED - Repository created and hosted using OCI DevOps code repository.
+     * FORKED - Repository created by forking an existing repository.
+     *
+     **/
+    public enum RepositoryType {
         Mirrored("MIRRORED"),
         Hosted("HOSTED"),
         Forked("FORKED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -823,20 +829,23 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
-     * by forking an existing repository.
-     */
+     * Type of repository:
+     * MIRRORED - Repository created by mirroring an existing repository.
+     * HOSTED - Repository created and hosted using OCI DevOps code repository.
+     * FORKED - Repository created by forking an existing repository.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final RepositoryType repositoryType;
 
     /**
-     * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
-     * by forking an existing repository.
+     * Type of repository:
+     * MIRRORED - Repository created by mirroring an existing repository.
+     * HOSTED - Repository created and hosted using OCI DevOps code repository.
+     * FORKED - Repository created by forking an existing repository.
      *
      * @return the value
-     */
+     **/
     public RepositoryType getRepositoryType() {
         return repositoryType;
     }
@@ -849,41 +858,37 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The time the repository was created. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the repository was created. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * The time the repository was created. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the repository was updated. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the repository was updated. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * The time the repository was updated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the repository. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the repository.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
@@ -891,8 +896,8 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         Deleting("DELETING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -931,85 +936,87 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The current state of the repository. */
+    /**
+     * The current state of the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the repository.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
     }
 
-    /** The count of the branches present in the repository. */
+    /**
+     * The count of the branches present in the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("branchCount")
     private final Integer branchCount;
 
     /**
      * The count of the branches present in the repository.
-     *
      * @return the value
-     */
+     **/
     public Integer getBranchCount() {
         return branchCount;
     }
 
-    /** The count of the commits present in the repository. */
+    /**
+     * The count of the commits present in the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitCount")
     private final Integer commitCount;
 
     /**
      * The count of the commits present in the repository.
-     *
      * @return the value
-     */
+     **/
     public Integer getCommitCount() {
         return commitCount;
     }
 
-    /** The size of the repository in bytes. */
+    /**
+     * The size of the repository in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * The size of the repository in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /** */
-    public enum TriggerBuildEvents implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum TriggerBuildEvents {
         Push("PUSH"),
         PullRequestCreated("PULL_REQUEST_CREATED"),
         PullRequestUpdated("PULL_REQUEST_UPDATED"),
         CommitUpdates("COMMIT_UPDATES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1049,83 +1056,67 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-     * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the
-     * repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an
-     * open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
-     * repository.
-     */
+     * Trigger build events supported for this repository:
+     * PUSH - Build is triggered when a push event occurs.
+     * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+     * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
+     * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("triggerBuildEvents")
     private final java.util.List<TriggerBuildEvents> triggerBuildEvents;
 
     /**
-     * Trigger build events supported for this repository: PUSH - Build is triggered when a push
-     * event occurs. PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the
-     * repository. PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an
-     * open pull request. COMMIT_UPDATES - Build is triggered when new commits are mirrored into a
-     * repository.
+     * Trigger build events supported for this repository:
+     * PUSH - Build is triggered when a push event occurs.
+     * PULL_REQUEST_CREATED - Build is triggered when a pull request is created in the repository.
+     * PULL_REQUEST_UPDATED - Build is triggered when a push is made to a branch with an open pull request.
+     * COMMIT_UPDATES - Build is triggered when new commits are mirrored into a repository.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TriggerBuildEvents> getTriggerBuildEvents() {
         return triggerBuildEvents;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     *
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     *
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -1137,7 +1128,6 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

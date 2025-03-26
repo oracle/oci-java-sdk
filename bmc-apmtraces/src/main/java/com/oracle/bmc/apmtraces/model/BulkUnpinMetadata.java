@@ -5,25 +5,23 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Metadata about the bulk unpin operation. The bulk unpin operation is atomic and binary. If the
- * processing of any of the attributes in the bulk unpin request results in a processing or
- * validation error, then none of the attributes in the request are unpinned. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Metadata about the bulk unpin operation.  The bulk unpin operation is atomic and binary.  If the processing of any of the attributes
+ * in the bulk unpin request results in a processing or validation error, then none of the attributes in the request are unpinned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkUnpinMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BulkUnpinMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = BulkUnpinMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BulkUnpinMetadata extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationStatus",
@@ -46,35 +44,37 @@ public final class BulkUnpinMetadata
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operation status of the bulk unpin operation. SUCCESS - The bulk unpin operation has
-         * succeeded and all the attributes in the bulk unpin request have been unpinned by this
-         * operation. The following are error statuses for the bulk unpin operation.
-         * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any
-         * attributes to be unpinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
-         */
+         * Operation status of the bulk unpin operation.
+         * SUCCESS - The bulk unpin operation has succeeded and all the attributes in the bulk unpin request have been unpinned by this operation.
+         * The following are error statuses for the bulk unpin operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any attributes to be unpinned.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
         private OperationStatus operationStatus;
 
         /**
-         * Operation status of the bulk unpin operation. SUCCESS - The bulk unpin operation has
-         * succeeded and all the attributes in the bulk unpin request have been unpinned by this
-         * operation. The following are error statuses for the bulk unpin operation.
-         * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any
-         * attributes to be unpinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-         * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-         * resulted in a processing error.
+         * Operation status of the bulk unpin operation.
+         * SUCCESS - The bulk unpin operation has succeeded and all the attributes in the bulk unpin request have been unpinned by this operation.
+         * The following are error statuses for the bulk unpin operation.
+         * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any attributes to be unpinned.
+         * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+         * in a processing error.
          *
          * @param operationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder operationStatus(OperationStatus operationStatus) {
             this.operationStatus = operationStatus;
             this.__explicitlySet__.add("operationStatus");
             return this;
         }
-        /** Type of operation. */
+        /**
+         * Type of operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -83,7 +83,7 @@ public final class BulkUnpinMetadata
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
@@ -91,7 +91,8 @@ public final class BulkUnpinMetadata
         }
         /**
          * Total number attributes (both string and numeric) in TRACES namespace that were unpinned.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributesUnpinned")
         private Integer attributesUnpinned;
 
@@ -100,26 +101,25 @@ public final class BulkUnpinMetadata
          *
          * @param attributesUnpinned the value to set
          * @return this builder
-         */
+         **/
         public Builder attributesUnpinned(Integer attributesUnpinned) {
             this.attributesUnpinned = attributesUnpinned;
             this.__explicitlySet__.add("attributesUnpinned");
             return this;
         }
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * unpinned.
-         */
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were unpinned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesUnpinned")
         private Integer syntheticAttributesUnpinned;
 
         /**
-         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were
-         * unpinned.
+         * Total number attributes (both string and numeric) in SYNTHETIC namespace that were unpinned.
          *
          * @param syntheticAttributesUnpinned the value to set
          * @return this builder
-         */
+         **/
         public Builder syntheticAttributesUnpinned(Integer syntheticAttributesUnpinned) {
             this.syntheticAttributesUnpinned = syntheticAttributesUnpinned;
             this.__explicitlySet__.add("syntheticAttributesUnpinned");
@@ -160,7 +160,9 @@ public final class BulkUnpinMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,22 +172,22 @@ public final class BulkUnpinMetadata
     }
 
     /**
-     * Operation status of the bulk unpin operation. SUCCESS - The bulk unpin operation has
-     * succeeded and all the attributes in the bulk unpin request have been unpinned by this
-     * operation. The following are error statuses for the bulk unpin operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any
-     * attributes to be unpinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-     * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-     * resulted in a processing error.
-     */
-    public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * Operation status of the bulk unpin operation.
+     * SUCCESS - The bulk unpin operation has succeeded and all the attributes in the bulk unpin request have been unpinned by this operation.
+     * The following are error statuses for the bulk unpin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any attributes to be unpinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
+    public enum OperationStatus {
         Success("SUCCESS"),
         EmptyAttributeList("EMPTY_ATTRIBUTE_LIST"),
         InvalidBulkRequest("INVALID_BULK_REQUEST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -225,39 +227,41 @@ public final class BulkUnpinMetadata
         }
     };
     /**
-     * Operation status of the bulk unpin operation. SUCCESS - The bulk unpin operation has
-     * succeeded and all the attributes in the bulk unpin request have been unpinned by this
-     * operation. The following are error statuses for the bulk unpin operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any
-     * attributes to be unpinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-     * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-     * resulted in a processing error.
-     */
+     * Operation status of the bulk unpin operation.
+     * SUCCESS - The bulk unpin operation has succeeded and all the attributes in the bulk unpin request have been unpinned by this operation.
+     * The following are error statuses for the bulk unpin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any attributes to be unpinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationStatus")
     private final OperationStatus operationStatus;
 
     /**
-     * Operation status of the bulk unpin operation. SUCCESS - The bulk unpin operation has
-     * succeeded and all the attributes in the bulk unpin request have been unpinned by this
-     * operation. The following are error statuses for the bulk unpin operation.
-     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any
-     * attributes to be unpinned. INVALID_BULK_REQUEST - The bulk request contains invalid
-     * attribute(s), or attribute(s) that resulted in a validation error, or an attribute that
-     * resulted in a processing error.
+     * Operation status of the bulk unpin operation.
+     * SUCCESS - The bulk unpin operation has succeeded and all the attributes in the bulk unpin request have been unpinned by this operation.
+     * The following are error statuses for the bulk unpin operation.
+     * EMPTY_ATTRIBUTE_LIST - The bulk unpin request object was empty and did not contain any attributes to be unpinned.
+     * INVALID_BULK_REQUEST - The bulk request contains invalid attribute(s), or attribute(s) that resulted in a validation error, or an attribute that resulted
+     * in a processing error.
      *
      * @return the value
-     */
+     **/
     public OperationStatus getOperationStatus() {
         return operationStatus;
     }
 
-    /** Type of operation. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation.
+     *
+     **/
+    public enum OperationType {
         Unpin("UNPIN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -296,7 +300,10 @@ public final class BulkUnpinMetadata
             return UnknownEnumValue;
         }
     };
-    /** Type of operation. */
+    /**
+     * Type of operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -304,12 +311,15 @@ public final class BulkUnpinMetadata
      * Type of operation.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
-    /** Total number attributes (both string and numeric) in TRACES namespace that were unpinned. */
+    /**
+     * Total number attributes (both string and numeric) in TRACES namespace that were unpinned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributesUnpinned")
     private final Integer attributesUnpinned;
 
@@ -317,14 +327,15 @@ public final class BulkUnpinMetadata
      * Total number attributes (both string and numeric) in TRACES namespace that were unpinned.
      *
      * @return the value
-     */
+     **/
     public Integer getAttributesUnpinned() {
         return attributesUnpinned;
     }
 
     /**
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were unpinned.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntheticAttributesUnpinned")
     private final Integer syntheticAttributesUnpinned;
 
@@ -332,7 +343,7 @@ public final class BulkUnpinMetadata
      * Total number attributes (both string and numeric) in SYNTHETIC namespace that were unpinned.
      *
      * @return the value
-     */
+     **/
     public Integer getSyntheticAttributesUnpinned() {
         return syntheticAttributesUnpinned;
     }
@@ -344,7 +355,6 @@ public final class BulkUnpinMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

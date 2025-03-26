@@ -5,25 +5,25 @@
 package com.oracle.bmc.certificates.model;
 
 /**
- * A certificate bundle, including the private key. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * A certificate bundle, including the private key.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CertificateBundleWithPrivateKey.Builder.class)
+    builder = CertificateBundleWithPrivateKey.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "certificateBundleType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "certificateBundleType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CertificateBundleWithPrivateKey extends CertificateBundle {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -125,31 +125,33 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
             this.__explicitlySet__.add("revocationStatus");
             return this;
         }
-        /** The private key (in PEM format) for the certificate. */
+        /**
+         * The private key (in PEM format) for the certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
         private String privateKeyPem;
 
         /**
          * The private key (in PEM format) for the certificate.
-         *
          * @param privateKeyPem the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPem(String privateKeyPem) {
             this.privateKeyPem = privateKeyPem;
             this.__explicitlySet__.add("privateKeyPem");
             return this;
         }
-        /** An optional passphrase for the private key. */
+        /**
+         * An optional passphrase for the private key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
         private String privateKeyPemPassphrase;
 
         /**
          * An optional passphrase for the private key.
-         *
          * @param privateKeyPemPassphrase the value to set
          * @return this builder
-         */
+         **/
         public Builder privateKeyPemPassphrase(String privateKeyPemPassphrase) {
             this.privateKeyPemPassphrase = privateKeyPemPassphrase;
             this.__explicitlySet__.add("privateKeyPemPassphrase");
@@ -226,7 +228,9 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -266,28 +270,30 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
         this.privateKeyPemPassphrase = privateKeyPemPassphrase;
     }
 
-    /** The private key (in PEM format) for the certificate. */
+    /**
+     * The private key (in PEM format) for the certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPem")
     private final String privateKeyPem;
 
     /**
      * The private key (in PEM format) for the certificate.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPem() {
         return privateKeyPem;
     }
 
-    /** An optional passphrase for the private key. */
+    /**
+     * An optional passphrase for the private key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPemPassphrase")
     private final String privateKeyPemPassphrase;
 
     /**
      * An optional passphrase for the private key.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateKeyPemPassphrase() {
         return privateKeyPemPassphrase;
     }
@@ -299,7 +305,6 @@ public final class CertificateBundleWithPrivateKey extends CertificateBundle {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

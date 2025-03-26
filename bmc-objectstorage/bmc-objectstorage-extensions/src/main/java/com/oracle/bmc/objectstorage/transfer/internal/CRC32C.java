@@ -131,8 +131,7 @@ public final class CRC32C implements Checksum {
             }
         }
         // cast is necessary to avoid NoSuchMethodError in Java 8
-        // see
-        // https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
+        // see https://stackoverflow.com/questions/48693695/java-nio-buffer-not-loading-clear-method-on-runtime
         ((Buffer) buffer).position(limit);
     }
 

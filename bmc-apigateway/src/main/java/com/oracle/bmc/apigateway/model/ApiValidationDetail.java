@@ -5,23 +5,21 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Detail of a single error or warning. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Detail of a single error or warning.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApiValidationDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ApiValidationDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ApiValidationDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ApiValidationDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"msg", "severity", "src"})
     public ApiValidationDetail(
@@ -36,46 +34,49 @@ public final class ApiValidationDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Description of the warning/error. */
+        /**
+         * Description of the warning/error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msg")
         private String msg;
 
         /**
          * Description of the warning/error.
-         *
          * @param msg the value to set
          * @return this builder
-         */
+         **/
         public Builder msg(String msg) {
             this.msg = msg;
             this.__explicitlySet__.add("msg");
             return this;
         }
-        /** Severity of the issue. */
+        /**
+         * Severity of the issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * Severity of the issue.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Position of the issue in the specification file (line, column). */
+        /**
+         * Position of the issue in the specification file (line, column).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("src")
         private java.util.List<java.util.List<java.math.BigDecimal>> src;
 
         /**
          * Position of the issue in the specification file (line, column).
-         *
          * @param src the value to set
          * @return this builder
-         */
+         **/
         public Builder src(java.util.List<java.util.List<java.math.BigDecimal>> src) {
             this.src = src;
             this.__explicitlySet__.add("src");
@@ -108,7 +109,9 @@ public final class ApiValidationDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,28 +120,31 @@ public final class ApiValidationDetail
         return new Builder().copy(this);
     }
 
-    /** Description of the warning/error. */
+    /**
+     * Description of the warning/error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("msg")
     private final String msg;
 
     /**
      * Description of the warning/error.
-     *
      * @return the value
-     */
+     **/
     public String getMsg() {
         return msg;
     }
 
-    /** Severity of the issue. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Severity of the issue.
+     **/
+    public enum Severity {
         Info("INFO"),
         Warning("WARNING"),
         Error("ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -177,28 +183,30 @@ public final class ApiValidationDetail
             return UnknownEnumValue;
         }
     };
-    /** Severity of the issue. */
+    /**
+     * Severity of the issue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * Severity of the issue.
-     *
      * @return the value
-     */
+     **/
     public Severity getSeverity() {
         return severity;
     }
 
-    /** Position of the issue in the specification file (line, column). */
+    /**
+     * Position of the issue in the specification file (line, column).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("src")
     private final java.util.List<java.util.List<java.math.BigDecimal>> src;
 
     /**
      * Position of the issue in the specification file (line, column).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<java.util.List<java.math.BigDecimal>> getSrc() {
         return src;
     }
@@ -210,7 +218,6 @@ public final class ApiValidationDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

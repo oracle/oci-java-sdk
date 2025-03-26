@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration parameter details object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Migration parameter details object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MigrationParameterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MigrationParameterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MigrationParameterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"value", "name", "dataType"})
     public MigrationParameterDetails(
@@ -35,51 +34,56 @@ public final class MigrationParameterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * If a STRING data type then the value should be an array of characters, if a INTEGER data
-         * type then the value should be an integer value, if a FLOAT data type then the value
-         * should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
-         */
+         * If a STRING data type then the value should be an array of characters,
+         * if a INTEGER data type then the value should be an integer value,
+         * if a FLOAT data type then the value should be an float value,
+         * if a BOOLEAN data type then the value should be TRUE or FALSE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * If a STRING data type then the value should be an array of characters, if a INTEGER data
-         * type then the value should be an integer value, if a FLOAT data type then the value
-         * should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+         * If a STRING data type then the value should be an array of characters,
+         * if a INTEGER data type then the value should be an integer value,
+         * if a FLOAT data type then the value should be an float value,
+         * if a BOOLEAN data type then the value should be TRUE or FALSE.
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Parameter name. */
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Parameter name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Parameter data type. */
+        /**
+         * Parameter data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private AdvancedParameterDataTypes dataType;
 
         /**
          * Parameter data type.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(AdvancedParameterDataTypes dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -113,7 +117,9 @@ public final class MigrationParameterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,46 +129,51 @@ public final class MigrationParameterDetails
     }
 
     /**
-     * If a STRING data type then the value should be an array of characters, if a INTEGER data type
-     * then the value should be an integer value, if a FLOAT data type then the value should be an
-     * float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
-     */
+     * If a STRING data type then the value should be an array of characters,
+     * if a INTEGER data type then the value should be an integer value,
+     * if a FLOAT data type then the value should be an float value,
+     * if a BOOLEAN data type then the value should be TRUE or FALSE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * If a STRING data type then the value should be an array of characters, if a INTEGER data type
-     * then the value should be an integer value, if a FLOAT data type then the value should be an
-     * float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+     * If a STRING data type then the value should be an array of characters,
+     * if a INTEGER data type then the value should be an integer value,
+     * if a FLOAT data type then the value should be an float value,
+     * if a BOOLEAN data type then the value should be TRUE or FALSE.
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Parameter name. */
+    /**
+     * Parameter name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Parameter name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Parameter data type. */
+    /**
+     * Parameter data type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final AdvancedParameterDataTypes dataType;
 
     /**
      * Parameter data type.
-     *
      * @return the value
-     */
+     **/
     public AdvancedParameterDataTypes getDataType() {
         return dataType;
     }
@@ -174,7 +185,6 @@ public final class MigrationParameterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

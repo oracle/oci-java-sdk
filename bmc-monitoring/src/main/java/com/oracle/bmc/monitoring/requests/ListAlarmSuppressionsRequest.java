@@ -6,141 +6,146 @@ package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmSuppressionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAlarmSuppressionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/ListAlarmSuppressionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAlarmSuppressionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class ListAlarmSuppressionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      */
     private String alarmId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * alarm that is the target of the alarm suppression.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
      */
     public String getAlarmId() {
         return alarmId;
     }
     /**
-     * A filter to return only resources that match the given display name exactly. Use this filter
-     * to list an alarm suppression by name. Alternatively, when you know the alarm suppression
-     * OCID, use the GetAlarmSuppression operation.
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list an alarm suppression by name.
+     * Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+     *
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the given display name exactly. Use this filter
-     * to list an alarm suppression by name. Alternatively, when you know the alarm suppression
-     * OCID, use the GetAlarmSuppression operation.
+     * A filter to return only resources that match the given display name exactly.
+     * Use this filter to list an alarm suppression by name.
+     * Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+     *
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return only resources that match the given lifecycle state exactly. When not
-     * specified, only resources in the ACTIVE lifecycle state are listed.
+     * A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
+     *
      */
     private com.oracle.bmc.monitoring.model.AlarmSuppression.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only resources that match the given lifecycle state exactly. When not
-     * specified, only resources in the ACTIVE lifecycle state are listed.
+     * A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
+     *
      */
     public com.oracle.bmc.monitoring.model.AlarmSuppression.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-     * specified dimensions.
+     * The level of this alarm suppression.
+     * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+     * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+     *
      */
     private com.oracle.bmc.monitoring.model.AlarmSuppression.Level level;
 
     /**
-     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-     * specified dimensions.
+     * The level of this alarm suppression.
+     * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+     * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+     *
      */
     public com.oracle.bmc.monitoring.model.AlarmSuppression.Level getLevel() {
         return level;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment for searching. Use the tenancy OCID to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.
+     * Use the tenancy OCID to search in the root compartment.
+     * <p>
+     * If targetType is not specified, searches all suppressions defined under the compartment.
+     * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment only.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
-     * <p>If targetType is not specified, searches all suppressions defined under the compartment.
-     * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment
-     * only.
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment for searching. Use the tenancy OCID to search in the root compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.
+     * Use the tenancy OCID to search in the root compartment.
+     * <p>
+     * If targetType is not specified, searches all suppressions defined under the compartment.
+     * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment only.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      *
-     * <p>If targetType is not specified, searches all suppressions defined under the compartment.
-     * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment
-     * only.
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-     * compartment). A true value requires the user to have tenancy-level permissions. If this
-     * requirement is not met, then the call is rejected. When false, returns resources from only
-     * the compartment specified in compartmentId. Default is false.
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+     * then the call is rejected. When false, returns resources from only the compartment specified in
+     * compartmentId. Default is false.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
      * When true, returns resources from all compartments and subcompartments. The parameter can
-     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-     * compartment). A true value requires the user to have tenancy-level permissions. If this
-     * requirement is not met, then the call is rejected. When false, returns resources from only
-     * the compartment specified in compartmentId. Default is false.
+     * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+     * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+     * then the call is rejected. When false, returns resources from only the compartment specified in
+     * compartmentId. Default is false.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * The target type to use when listing alarm suppressions. {@code ALARM} lists all suppression
-     * records for the specified alarm. {@code COMPARTMENT} lists all suppression records for the
-     * specified compartment or tenancy.
+     * The target type to use when listing alarm suppressions.
+     * {@code ALARM} lists all suppression records for the specified alarm.
+     * {@code COMPARTMENT} lists all suppression records for the specified compartment or tenancy.
+     *
      */
     private TargetType targetType;
 
     /**
-     * The target type to use when listing alarm suppressions. {@code ALARM} lists all suppression
-     * records for the specified alarm. {@code COMPARTMENT} lists all suppression records for the
-     * specified compartment or tenancy.
-     */
-    public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The target type to use when listing alarm suppressions.
+     * {@code ALARM} lists all suppression records for the specified alarm.
+     * {@code COMPARTMENT} lists all suppression records for the specified compartment or tenancy.
+     *
+     **/
+    public enum TargetType {
         Alarm("ALARM"),
         Compartment("COMPARTMENT"),
         ;
@@ -174,51 +179,54 @@ public class ListAlarmSuppressionsRequest
     };
 
     /**
-     * The target type to use when listing alarm suppressions. {@code ALARM} lists all suppression
-     * records for the specified alarm. {@code COMPARTMENT} lists all suppression records for the
-     * specified compartment or tenancy.
+     * The target type to use when listing alarm suppressions.
+     * {@code ALARM} lists all suppression records for the specified alarm.
+     * {@code COMPARTMENT} lists all suppression records for the specified compartment or tenancy.
+     *
      */
     public TargetType getTargetType() {
         return targetType;
     }
     /**
      * Setting this parameter to true requires the query to specify the alarm ({@code alarmId}).
+     * <p>
+     * When true, lists all alarm suppressions that affect the specified alarm,
+     * including suppressions that target the corresponding compartment or tenancy.
+     * When false, lists only the alarm suppressions that target the specified alarm.
+     * <p>
+     * Default is false.
      *
-     * <p>When true, lists all alarm suppressions that affect the specified alarm, including
-     * suppressions that target the corresponding compartment or tenancy. When false, lists only the
-     * alarm suppressions that target the specified alarm.
-     *
-     * <p>Default is false.
      */
     private Boolean isAllSuppressions;
 
     /**
      * Setting this parameter to true requires the query to specify the alarm ({@code alarmId}).
+     * <p>
+     * When true, lists all alarm suppressions that affect the specified alarm,
+     * including suppressions that target the corresponding compartment or tenancy.
+     * When false, lists only the alarm suppressions that target the specified alarm.
+     * <p>
+     * Default is false.
      *
-     * <p>When true, lists all alarm suppressions that affect the specified alarm, including
-     * suppressions that target the corresponding compartment or tenancy. When false, lists only the
-     * alarm suppressions that target the specified alarm.
-     *
-     * <p>Default is false.
      */
     public Boolean getIsAllSuppressions() {
         return isAllSuppressions;
     }
     /**
-     * The field to use when sorting returned alarm suppressions. Only one sorting level is
-     * provided.
+     * The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code timeCreated}
      *
-     * <p>Example: {@code timeCreated}
      */
     private SortBy sortBy;
 
     /**
-     * The field to use when sorting returned alarm suppressions. Only one sorting level is
-     * provided.
+     * The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code timeCreated}
      *
-     * <p>Example: {@code timeCreated}
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         TimeSuppressFrom("timeSuppressFrom"),
@@ -253,29 +261,29 @@ public class ListAlarmSuppressionsRequest
     };
 
     /**
-     * The field to use when sorting returned alarm suppressions. Only one sorting level is
-     * provided.
+     * The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
+     * <p>
+     * Example: {@code timeCreated}
      *
-     * <p>Example: {@code timeCreated}
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending
-     * (DESC).
+     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
-     * <p>Example: {@code ASC}
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending
-     * (DESC).
+     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
-     * <p>Example: {@code ASC}
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -309,48 +317,52 @@ public class ListAlarmSuppressionsRequest
     };
 
     /**
-     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending
-     * (DESC).
+     * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending (DESC).
+     * <p>
+     * Example: {@code ASC}
      *
-     * <p>Example: {@code ASC}
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Default: 1000
+     * <p>
+     * Example: 500
      *
-     * <p>Default: 1000
-     *
-     * <p>Example: 500
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Default: 1000
+     * <p>
+     * Example: 500
      *
-     * <p>Default: 1000
-     *
-     * <p>Example: 500
      */
     public Integer getLimit() {
         return limit;
@@ -359,18 +371,20 @@ public class ListAlarmSuppressionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAlarmSuppressionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -381,15 +395,12 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * alarm that is the target of the alarm suppression.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
          */
         private String alarmId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * alarm that is the target of the alarm suppression.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the alarm that is the target of the alarm suppression.
          * @param alarmId the value to set
          * @return this builder instance
          */
@@ -399,16 +410,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * A filter to return only resources that match the given display name exactly. Use this
-         * filter to list an alarm suppression by name. Alternatively, when you know the alarm
-         * suppression OCID, use the GetAlarmSuppression operation.
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list an alarm suppression by name.
+         * Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
+         *
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the given display name exactly. Use this
-         * filter to list an alarm suppression by name. Alternatively, when you know the alarm
-         * suppression OCID, use the GetAlarmSuppression operation.
+         * A filter to return only resources that match the given display name exactly.
+         * Use this filter to list an alarm suppression by name.
+         * Alternatively, when you know the alarm suppression OCID, use the GetAlarmSuppression operation.
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -419,15 +431,14 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * A filter to return only resources that match the given lifecycle state exactly. When not
-         * specified, only resources in the ACTIVE lifecycle state are listed.
+         * A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
+         *
          */
         private com.oracle.bmc.monitoring.model.AlarmSuppression.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only resources that match the given lifecycle state exactly. When not
-         * specified, only resources in the ACTIVE lifecycle state are listed.
+         * A filter to return only resources that match the given lifecycle state exactly. When not specified, only resources in the ACTIVE lifecycle state are listed.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -439,16 +450,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-         * specified dimensions.
+         * The level of this alarm suppression.
+         * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+         * {@code DIMENSION} indicates a suppression configured for specified dimensions.
+         *
          */
         private com.oracle.bmc.monitoring.model.AlarmSuppression.Level level = null;
 
         /**
-         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
-         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
-         * specified dimensions.
+         * The level of this alarm suppression.
+         * {@code ALARM} indicates a suppression of the entire alarm, regardless of dimension.
+         * {@code DIMENSION} indicates a suppression configured for specified dimensions.
          *
          * @param level the value to set
          * @return this builder instance
@@ -459,26 +471,25 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment for searching. Use the tenancy OCID to search in the root compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.
+         * Use the tenancy OCID to search in the root compartment.
+         * <p>
+         * If targetType is not specified, searches all suppressions defined under the compartment.
+         * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment only.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
-         * <p>If targetType is not specified, searches all suppressions defined under the
-         * compartment. If targetType is {@code COMPARTMENT}, searches suppressions in the specified
-         * compartment only.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment for searching. Use the tenancy OCID to search in the root compartment.
-         *
-         * <p>If targetType is not specified, searches all suppressions defined under the
-         * compartment. If targetType is {@code COMPARTMENT}, searches suppressions in the specified
-         * compartment only.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..exampleuniqueID}
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for searching.
+         * Use the tenancy OCID to search in the root compartment.
+         * <p>
+         * If targetType is not specified, searches all suppressions defined under the compartment.
+         * If targetType is {@code COMPARTMENT}, searches suppressions in the specified compartment only.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..exampleuniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -490,19 +501,20 @@ public class ListAlarmSuppressionsRequest
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-         * compartment). A true value requires the user to have tenancy-level permissions. If this
-         * requirement is not met, then the call is rejected. When false, returns resources from
-         * only the compartment specified in compartmentId. Default is false.
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+         * then the call is rejected. When false, returns resources from only the compartment specified in
+         * compartmentId. Default is false.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
          * When true, returns resources from all compartments and subcompartments. The parameter can
-         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root
-         * compartment). A true value requires the user to have tenancy-level permissions. If this
-         * requirement is not met, then the call is rejected. When false, returns resources from
-         * only the compartment specified in compartmentId. Default is false.
+         * only be set to true when compartmentId is the tenancy OCID (the tenancy is the root compartment).
+         * A true value requires the user to have tenancy-level permissions. If this requirement is not met,
+         * then the call is rejected. When false, returns resources from only the compartment specified in
+         * compartmentId. Default is false.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -513,16 +525,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The target type to use when listing alarm suppressions. {@code ALARM} lists all
-         * suppression records for the specified alarm. {@code COMPARTMENT} lists all suppression
-         * records for the specified compartment or tenancy.
+         * The target type to use when listing alarm suppressions.
+         * {@code ALARM} lists all suppression records for the specified alarm.
+         * {@code COMPARTMENT} lists all suppression records for the specified compartment or tenancy.
+         *
          */
         private TargetType targetType = null;
 
         /**
-         * The target type to use when listing alarm suppressions. {@code ALARM} lists all
-         * suppression records for the specified alarm. {@code COMPARTMENT} lists all suppression
-         * records for the specified compartment or tenancy.
+         * The target type to use when listing alarm suppressions.
+         * {@code ALARM} lists all suppression records for the specified alarm.
+         * {@code COMPARTMENT} lists all suppression records for the specified compartment or tenancy.
          *
          * @param targetType the value to set
          * @return this builder instance
@@ -534,23 +547,24 @@ public class ListAlarmSuppressionsRequest
 
         /**
          * Setting this parameter to true requires the query to specify the alarm ({@code alarmId}).
+         * <p>
+         * When true, lists all alarm suppressions that affect the specified alarm,
+         * including suppressions that target the corresponding compartment or tenancy.
+         * When false, lists only the alarm suppressions that target the specified alarm.
+         * <p>
+         * Default is false.
          *
-         * <p>When true, lists all alarm suppressions that affect the specified alarm, including
-         * suppressions that target the corresponding compartment or tenancy. When false, lists only
-         * the alarm suppressions that target the specified alarm.
-         *
-         * <p>Default is false.
          */
         private Boolean isAllSuppressions = null;
 
         /**
          * Setting this parameter to true requires the query to specify the alarm ({@code alarmId}).
-         *
-         * <p>When true, lists all alarm suppressions that affect the specified alarm, including
-         * suppressions that target the corresponding compartment or tenancy. When false, lists only
-         * the alarm suppressions that target the specified alarm.
-         *
-         * <p>Default is false.
+         * <p>
+         * When true, lists all alarm suppressions that affect the specified alarm,
+         * including suppressions that target the corresponding compartment or tenancy.
+         * When false, lists only the alarm suppressions that target the specified alarm.
+         * <p>
+         * Default is false.
          *
          * @param isAllSuppressions the value to set
          * @return this builder instance
@@ -561,18 +575,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The field to use when sorting returned alarm suppressions. Only one sorting level is
-         * provided.
+         * The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
+         * <p>
+         * Example: {@code timeCreated}
          *
-         * <p>Example: {@code timeCreated}
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to use when sorting returned alarm suppressions. Only one sorting level is
-         * provided.
-         *
-         * <p>Example: {@code timeCreated}
+         * The field to use when sorting returned alarm suppressions. Only one sorting level is provided.
+         * <p>
+         * Example: {@code timeCreated}
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -583,18 +596,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or
-         * descending (DESC).
+         * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending (DESC).
+         * <p>
+         * Example: {@code ASC}
          *
-         * <p>Example: {@code ASC}
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or
-         * descending (DESC).
-         *
-         * <p>Example: {@code ASC}
+         * The sort order to use when sorting returned alarm suppressions. Ascending (ASC) or descending (DESC).
+         * <p>
+         * Example: {@code ASC}
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -605,16 +617,17 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -625,24 +638,25 @@ public class ListAlarmSuppressionsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Default: 1000
+         * <p>
+         * Example: 500
          *
-         * <p>Default: 1000
-         *
-         * <p>Example: 500
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Default: 1000
-         *
-         * <p>Example: 500
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Default: 1000
+         * <p>
+         * Example: 500
          *
          * @param limit the value to set
          * @return this builder instance
@@ -654,19 +668,18 @@ public class ListAlarmSuppressionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -678,7 +691,6 @@ public class ListAlarmSuppressionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAlarmSuppressionsRequest o) {
@@ -703,11 +715,10 @@ public class ListAlarmSuppressionsRequest
         /**
          * Build the instance of ListAlarmSuppressionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAlarmSuppressionsRequest
          */
@@ -721,8 +732,7 @@ public class ListAlarmSuppressionsRequest
         /**
          * Build the instance of ListAlarmSuppressionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAlarmSuppressionsRequest
@@ -743,15 +753,12 @@ public class ListAlarmSuppressionsRequest
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListAlarmSuppressionsRequest(opcRequestId, alarmId, displayName, lifecycleState,
-            // level, compartmentId, compartmentIdInSubtree, targetType, isAllSuppressions, sortBy,
-            // sortOrder, page, limit);
+            // new ListAlarmSuppressionsRequest(opcRequestId, alarmId, displayName, lifecycleState, level, compartmentId, compartmentIdInSubtree, targetType, isAllSuppressions, sortBy, sortOrder, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -773,7 +780,6 @@ public class ListAlarmSuppressionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

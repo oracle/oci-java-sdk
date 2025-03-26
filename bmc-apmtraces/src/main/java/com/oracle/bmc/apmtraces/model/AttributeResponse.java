@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Response of an individual attribute item in the bulk activate or deactivate operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Response of an individual attribute item in the bulk activate or deactivate operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AttributeResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AttributeResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AttributeResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AttributeResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attributeName",
@@ -55,7 +54,10 @@ public final class AttributeResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Attribute that was activated or deactivated by this bulk operation. */
+        /**
+         * Attribute that was activated or deactivated by this bulk operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -64,13 +66,16 @@ public final class AttributeResponse
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Type of the attribute. */
+        /**
+         * Type of the attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
         private AttributeType attributeType;
 
@@ -79,13 +84,16 @@ public final class AttributeResponse
          *
          * @param attributeType the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeType(AttributeType attributeType) {
             this.attributeType = attributeType;
             this.__explicitlySet__.add("attributeType");
             return this;
         }
-        /** Unit of the attribute. */
+        /**
+         * Unit of the attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
@@ -94,13 +102,16 @@ public final class AttributeResponse
          *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** Notes for the activated attribute. */
+        /**
+         * Notes for the activated attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notes")
         private String notes;
 
@@ -109,13 +120,16 @@ public final class AttributeResponse
          *
          * @param notes the value to set
          * @return this builder
-         */
+         **/
         public Builder notes(String notes) {
             this.notes = notes;
             this.__explicitlySet__.add("notes");
             return this;
         }
-        /** Type of operation - activate or deactivate. */
+        /**
+         * Type of operation - activate or deactivate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -124,120 +138,101 @@ public final class AttributeResponse
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * Namespace of the attribute whose properties were updated. The attributeNamespace will
-         * default to TRACES if it is not passed in.
-         */
+         * Namespace of the attribute whose properties were updated.  The attributeNamespace will default to TRACES if it is
+         * not passed in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
         /**
-         * Namespace of the attribute whose properties were updated. The attributeNamespace will
-         * default to TRACES if it is not passed in.
+         * Namespace of the attribute whose properties were updated.  The attributeNamespace will default to TRACES if it is
+         * not passed in.
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
             return this;
         }
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the activate or deactivate operation. The attribute can have either a
-         * success status or an error status. The status of the attribute must be correlated with
-         * the operation status property in the bulk operation metadata object. The bulk operation
-         * will be successful only when all attributes in the bulk request are processed successful
-         * and they get a success status back. The following are successful status values of
-         * individual attribute items in a bulk attribute activation operation. ATTRIBUTE_ACTIVATED
-         * - The attribute is activated and is available to be queried. Note that ingest might still
-         * have not picked up the changes, and the associated caches would not have refreshed yet to
-         * pick up the changes. ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an
-         * attribute that is already active or in the process of getting activated.
-         * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.
-         * Ingest might not have picked up the new changes and the associated caches might not have
-         * refreshed yet. ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an
-         * attribute that has already been deactivated or in the process of deactivation.
-         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in
-         * this bulk request. Note that we deduplicate the attribute collection, process only unique
-         * attributes, and call out duplicates. A duplicate attribute in a bulk request will not
-         * prevent the processing of further attributes in the bulk operation. The following values
-         * are error statuses and the bulk processing is stopped when the first error is
-         * encountered. None of the attributes in the bulk request would have been activated or
-         * deactivated by this bulk operation. DEACTIVATION_NOT_ALLOWED - The caller has asked for
-         * the deactivation of an out of box tag which is not permitted. ATTRIBUTE_DOES_NOT_EXIST -
-         * The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
-         * INVALID_ATTRIBUTE - The attribute is invalid. INVALID_ATTRIBUTE_TYPE_CONFLICT - The
-         * attribute is invalid. There were two attributes with same name but different type in the
-         * bulk request. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was
-         * another attribute in this bulk request collection that resulted in a processing error.
-         * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an
-         * in-built system attribute.
-         */
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the activate or deactivate operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successful and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk attribute activation operation.
+         * ATTRIBUTE_ACTIVATED - The attribute is activated and is available to be queried.  Note that ingest might still have not picked up the changes, and the
+         * associated caches would not have refreshed yet to pick up the changes.
+         * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already active or in the process of getting activated.
+         * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.  Ingest might not have picked up the new changes and the associated caches
+         * might not have refreshed yet.
+         * ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an attribute that has already been deactivated or in the process of deactivation.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.  None of the attributes in the bulk request would have been activated or
+         * deactivated by this bulk operation.
+         * DEACTIVATION_NOT_ALLOWED - The caller has asked for the deactivation of an out of box tag which is not permitted.
+         * ATTRIBUTE_DOES_NOT_EXIST - The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
+         * INVALID_ATTRIBUTE - The attribute is invalid.
+         * INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute is invalid.  There were two attributes with same name but different type in the bulk request.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+         * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an in-built system attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
         private AttributeStatus attributeStatus;
 
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the activate or deactivate operation. The attribute can have either a
-         * success status or an error status. The status of the attribute must be correlated with
-         * the operation status property in the bulk operation metadata object. The bulk operation
-         * will be successful only when all attributes in the bulk request are processed successful
-         * and they get a success status back. The following are successful status values of
-         * individual attribute items in a bulk attribute activation operation. ATTRIBUTE_ACTIVATED
-         * - The attribute is activated and is available to be queried. Note that ingest might still
-         * have not picked up the changes, and the associated caches would not have refreshed yet to
-         * pick up the changes. ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an
-         * attribute that is already active or in the process of getting activated.
-         * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.
-         * Ingest might not have picked up the new changes and the associated caches might not have
-         * refreshed yet. ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an
-         * attribute that has already been deactivated or in the process of deactivation.
-         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in
-         * this bulk request. Note that we deduplicate the attribute collection, process only unique
-         * attributes, and call out duplicates. A duplicate attribute in a bulk request will not
-         * prevent the processing of further attributes in the bulk operation. The following values
-         * are error statuses and the bulk processing is stopped when the first error is
-         * encountered. None of the attributes in the bulk request would have been activated or
-         * deactivated by this bulk operation. DEACTIVATION_NOT_ALLOWED - The caller has asked for
-         * the deactivation of an out of box tag which is not permitted. ATTRIBUTE_DOES_NOT_EXIST -
-         * The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
-         * INVALID_ATTRIBUTE - The attribute is invalid. INVALID_ATTRIBUTE_TYPE_CONFLICT - The
-         * attribute is invalid. There were two attributes with same name but different type in the
-         * bulk request. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was
-         * another attribute in this bulk request collection that resulted in a processing error.
-         * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an
-         * in-built system attribute.
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the activate or deactivate operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successful and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk attribute activation operation.
+         * ATTRIBUTE_ACTIVATED - The attribute is activated and is available to be queried.  Note that ingest might still have not picked up the changes, and the
+         * associated caches would not have refreshed yet to pick up the changes.
+         * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already active or in the process of getting activated.
+         * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.  Ingest might not have picked up the new changes and the associated caches
+         * might not have refreshed yet.
+         * ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an attribute that has already been deactivated or in the process of deactivation.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.  None of the attributes in the bulk request would have been activated or
+         * deactivated by this bulk operation.
+         * DEACTIVATION_NOT_ALLOWED - The caller has asked for the deactivation of an out of box tag which is not permitted.
+         * ATTRIBUTE_DOES_NOT_EXIST - The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
+         * INVALID_ATTRIBUTE - The attribute is invalid.
+         * INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute is invalid.  There were two attributes with same name but different type in the bulk request.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+         * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an in-built system attribute.
          *
          * @param attributeStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeStatus(AttributeStatus attributeStatus) {
             this.attributeStatus = attributeStatus;
             this.__explicitlySet__.add("attributeStatus");
             return this;
         }
         /**
-         * Time when the attribute was activated or deactivated. Note that ingest might not have
-         * picked up the changes even if this time has elapsed.
-         */
+         * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Time when the attribute was activated or deactivated. Note that ingest might not have
-         * picked up the changes even if this time has elapsed.
+         * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -294,7 +289,9 @@ public final class AttributeResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -303,7 +300,10 @@ public final class AttributeResponse
         return new Builder().copy(this);
     }
 
-    /** Attribute that was activated or deactivated by this bulk operation. */
+    /**
+     * Attribute that was activated or deactivated by this bulk operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -311,19 +311,22 @@ public final class AttributeResponse
      * Attribute that was activated or deactivated by this bulk operation.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Type of the attribute. */
-    public enum AttributeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the attribute.
+     *
+     **/
+    public enum AttributeType {
         Numeric("NUMERIC"),
         String("STRING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -362,7 +365,10 @@ public final class AttributeResponse
             return UnknownEnumValue;
         }
     };
-    /** Type of the attribute. */
+    /**
+     * Type of the attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeType")
     private final AttributeType attributeType;
 
@@ -370,13 +376,16 @@ public final class AttributeResponse
      * Type of the attribute.
      *
      * @return the value
-     */
+     **/
     public AttributeType getAttributeType() {
         return attributeType;
     }
 
-    /** Unit of the attribute. */
-    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Unit of the attribute.
+     *
+     **/
+    public enum Unit {
         None("NONE"),
         EpochTimeMs("EPOCH_TIME_MS"),
         Bytes("BYTES"),
@@ -386,8 +395,8 @@ public final class AttributeResponse
         Percentage("PERCENTAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -424,7 +433,10 @@ public final class AttributeResponse
             return UnknownEnumValue;
         }
     };
-    /** Unit of the attribute. */
+    /**
+     * Unit of the attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
@@ -432,12 +444,15 @@ public final class AttributeResponse
      * Unit of the attribute.
      *
      * @return the value
-     */
+     **/
     public Unit getUnit() {
         return unit;
     }
 
-    /** Notes for the activated attribute. */
+    /**
+     * Notes for the activated attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notes")
     private final String notes;
 
@@ -445,19 +460,22 @@ public final class AttributeResponse
      * Notes for the activated attribute.
      *
      * @return the value
-     */
+     **/
     public String getNotes() {
         return notes;
     }
 
-    /** Type of operation - activate or deactivate. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation - activate or deactivate.
+     *
+     **/
+    public enum OperationType {
         Activate("ACTIVATE"),
         Deactivate("DEACTIVATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -496,7 +514,10 @@ public final class AttributeResponse
             return UnknownEnumValue;
         }
     };
-    /** Type of operation - activate or deactivate. */
+    /**
+     * Type of operation - activate or deactivate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -504,22 +525,23 @@ public final class AttributeResponse
      * Type of operation - activate or deactivate.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNamespace will default
-     * to TRACES if it is not passed in.
-     */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+     * Namespace of the attribute whose properties were updated.  The attributeNamespace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -559,54 +581,47 @@ public final class AttributeResponse
         }
     };
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNamespace will default
-     * to TRACES if it is not passed in.
-     */
+     * Namespace of the attribute whose properties were updated.  The attributeNamespace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
     /**
-     * Namespace of the attribute whose properties were updated. The attributeNamespace will default
-     * to TRACES if it is not passed in.
+     * Namespace of the attribute whose properties were updated.  The attributeNamespace will default to TRACES if it is
+     * not passed in.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the activate or deactivate operation. The attribute can have either a success
-     * status or an error status. The status of the attribute must be correlated with the operation
-     * status property in the bulk operation metadata object. The bulk operation will be successful
-     * only when all attributes in the bulk request are processed successful and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk attribute activation operation. ATTRIBUTE_ACTIVATED - The attribute is activated and is
-     * available to be queried. Note that ingest might still have not picked up the changes, and the
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the activate or deactivate operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successful and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute activation operation.
+     * ATTRIBUTE_ACTIVATED - The attribute is activated and is available to be queried.  Note that ingest might still have not picked up the changes, and the
      * associated caches would not have refreshed yet to pick up the changes.
-     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already
-     * active or in the process of getting activated. ATTRIBUTE_DEACTIVATED - The attribute is
-     * deactivated and will not appear in searches. Ingest might not have picked up the new changes
-     * and the associated caches might not have refreshed yet. ATTRIBUTE_ALREADY_DEACTIVATED - The
-     * caller is trying to deactivate an attribute that has already been deactivated or in the
-     * process of deactivation. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute
-     * that was present in this bulk request. Note that we deduplicate the attribute collection,
-     * process only unique attributes, and call out duplicates. A duplicate attribute in a bulk
-     * request will not prevent the processing of further attributes in the bulk operation. The
-     * following values are error statuses and the bulk processing is stopped when the first error
-     * is encountered. None of the attributes in the bulk request would have been activated or
-     * deactivated by this bulk operation. DEACTIVATION_NOT_ALLOWED - The caller has asked for the
-     * deactivation of an out of box tag which is not permitted. ATTRIBUTE_DOES_NOT_EXIST - The
-     * caller tries to deactivate an attribute that doesn't exist in the APM Domain.
-     * INVALID_ATTRIBUTE - The attribute is invalid. INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute
-     * is invalid. There were two attributes with same name but different type in the bulk request.
-     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in
-     * this bulk request collection that resulted in a processing error.
-     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an
-     * in-built system attribute.
-     */
-    public enum AttributeStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already active or in the process of getting activated.
+     * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.  Ingest might not have picked up the new changes and the associated caches
+     * might not have refreshed yet.
+     * ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an attribute that has already been deactivated or in the process of deactivation.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.  None of the attributes in the bulk request would have been activated or
+     * deactivated by this bulk operation.
+     * DEACTIVATION_NOT_ALLOWED - The caller has asked for the deactivation of an out of box tag which is not permitted.
+     * ATTRIBUTE_DOES_NOT_EXIST - The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute is invalid.  There were two attributes with same name but different type in the bulk request.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an in-built system attribute.
+     *
+     **/
+    public enum AttributeStatus {
         AttributeAlreadyActive("ATTRIBUTE_ALREADY_ACTIVE"),
         AttributeActivated("ATTRIBUTE_ACTIVATED"),
         AttributeDeactivated("ATTRIBUTE_DEACTIVATED"),
@@ -620,8 +635,8 @@ public final class AttributeResponse
         AttributeUpdateNotAllowed("ATTRIBUTE_UPDATE_NOT_ALLOWED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -661,89 +676,71 @@ public final class AttributeResponse
         }
     };
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the activate or deactivate operation. The attribute can have either a success
-     * status or an error status. The status of the attribute must be correlated with the operation
-     * status property in the bulk operation metadata object. The bulk operation will be successful
-     * only when all attributes in the bulk request are processed successful and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk attribute activation operation. ATTRIBUTE_ACTIVATED - The attribute is activated and is
-     * available to be queried. Note that ingest might still have not picked up the changes, and the
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the activate or deactivate operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successful and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute activation operation.
+     * ATTRIBUTE_ACTIVATED - The attribute is activated and is available to be queried.  Note that ingest might still have not picked up the changes, and the
      * associated caches would not have refreshed yet to pick up the changes.
-     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already
-     * active or in the process of getting activated. ATTRIBUTE_DEACTIVATED - The attribute is
-     * deactivated and will not appear in searches. Ingest might not have picked up the new changes
-     * and the associated caches might not have refreshed yet. ATTRIBUTE_ALREADY_DEACTIVATED - The
-     * caller is trying to deactivate an attribute that has already been deactivated or in the
-     * process of deactivation. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute
-     * that was present in this bulk request. Note that we deduplicate the attribute collection,
-     * process only unique attributes, and call out duplicates. A duplicate attribute in a bulk
-     * request will not prevent the processing of further attributes in the bulk operation. The
-     * following values are error statuses and the bulk processing is stopped when the first error
-     * is encountered. None of the attributes in the bulk request would have been activated or
-     * deactivated by this bulk operation. DEACTIVATION_NOT_ALLOWED - The caller has asked for the
-     * deactivation of an out of box tag which is not permitted. ATTRIBUTE_DOES_NOT_EXIST - The
-     * caller tries to deactivate an attribute that doesn't exist in the APM Domain.
-     * INVALID_ATTRIBUTE - The attribute is invalid. INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute
-     * is invalid. There were two attributes with same name but different type in the bulk request.
-     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in
-     * this bulk request collection that resulted in a processing error.
-     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an
-     * in-built system attribute.
-     */
+     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already active or in the process of getting activated.
+     * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.  Ingest might not have picked up the new changes and the associated caches
+     * might not have refreshed yet.
+     * ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an attribute that has already been deactivated or in the process of deactivation.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.  None of the attributes in the bulk request would have been activated or
+     * deactivated by this bulk operation.
+     * DEACTIVATION_NOT_ALLOWED - The caller has asked for the deactivation of an out of box tag which is not permitted.
+     * ATTRIBUTE_DOES_NOT_EXIST - The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute is invalid.  There were two attributes with same name but different type in the bulk request.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an in-built system attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
     private final AttributeStatus attributeStatus;
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the activate or deactivate operation. The attribute can have either a success
-     * status or an error status. The status of the attribute must be correlated with the operation
-     * status property in the bulk operation metadata object. The bulk operation will be successful
-     * only when all attributes in the bulk request are processed successful and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk attribute activation operation. ATTRIBUTE_ACTIVATED - The attribute is activated and is
-     * available to be queried. Note that ingest might still have not picked up the changes, and the
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the activate or deactivate operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successful and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk attribute activation operation.
+     * ATTRIBUTE_ACTIVATED - The attribute is activated and is available to be queried.  Note that ingest might still have not picked up the changes, and the
      * associated caches would not have refreshed yet to pick up the changes.
-     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already
-     * active or in the process of getting activated. ATTRIBUTE_DEACTIVATED - The attribute is
-     * deactivated and will not appear in searches. Ingest might not have picked up the new changes
-     * and the associated caches might not have refreshed yet. ATTRIBUTE_ALREADY_DEACTIVATED - The
-     * caller is trying to deactivate an attribute that has already been deactivated or in the
-     * process of deactivation. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute
-     * that was present in this bulk request. Note that we deduplicate the attribute collection,
-     * process only unique attributes, and call out duplicates. A duplicate attribute in a bulk
-     * request will not prevent the processing of further attributes in the bulk operation. The
-     * following values are error statuses and the bulk processing is stopped when the first error
-     * is encountered. None of the attributes in the bulk request would have been activated or
-     * deactivated by this bulk operation. DEACTIVATION_NOT_ALLOWED - The caller has asked for the
-     * deactivation of an out of box tag which is not permitted. ATTRIBUTE_DOES_NOT_EXIST - The
-     * caller tries to deactivate an attribute that doesn't exist in the APM Domain.
-     * INVALID_ATTRIBUTE - The attribute is invalid. INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute
-     * is invalid. There were two attributes with same name but different type in the bulk request.
-     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in
-     * this bulk request collection that resulted in a processing error.
-     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an
-     * in-built system attribute.
+     * ATTRIBUTE_ALREADY_ACTIVE - The caller is trying to activate an attribute that is already active or in the process of getting activated.
+     * ATTRIBUTE_DEACTIVATED - The attribute is deactivated and will not appear in searches.  Ingest might not have picked up the new changes and the associated caches
+     * might not have refreshed yet.
+     * ATTRIBUTE_ALREADY_DEACTIVATED - The caller is trying to deactivate an attribute that has already been deactivated or in the process of deactivation.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.  None of the attributes in the bulk request would have been activated or
+     * deactivated by this bulk operation.
+     * DEACTIVATION_NOT_ALLOWED - The caller has asked for the deactivation of an out of box tag which is not permitted.
+     * ATTRIBUTE_DOES_NOT_EXIST - The caller tries to deactivate an attribute that doesn't exist in the APM Domain.
+     * INVALID_ATTRIBUTE - The attribute is invalid.
+     * INVALID_ATTRIBUTE_TYPE_CONFLICT - The attribute is invalid.  There were two attributes with same name but different type in the bulk request.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_UPDATE_NOT_ALLOWED - The unit of the attribute cannot be updated as it is an in-built system attribute.
      *
      * @return the value
-     */
+     **/
     public AttributeStatus getAttributeStatus() {
         return attributeStatus;
     }
 
     /**
-     * Time when the attribute was activated or deactivated. Note that ingest might not have picked
-     * up the changes even if this time has elapsed.
-     */
+     * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time when the attribute was activated or deactivated. Note that ingest might not have picked
-     * up the changes even if this time has elapsed.
+     * Time when the attribute was activated or deactivated.  Note that ingest might not have picked up the changes even if this time has elapsed.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -755,7 +752,6 @@ public final class AttributeResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

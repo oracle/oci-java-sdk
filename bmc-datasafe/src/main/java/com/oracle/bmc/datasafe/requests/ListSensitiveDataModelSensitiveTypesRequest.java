@@ -6,40 +6,47 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveDataModelSensitiveTypesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSensitiveDataModelSensitiveTypesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveDataModelSensitiveTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSensitiveDataModelSensitiveTypesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSensitiveDataModelSensitiveTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     private String sensitiveDataModelId;
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     private String sensitiveTypeId;
 
-    /** A filter to return only items related to a specific sensitive type OCID. */
+    /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     */
     public String getSensitiveTypeId() {
         return sensitiveTypeId;
     }
     /**
-     * - The field to sort by. You can specify only one sorting parameter (sortorder). The default
-     * order is descending.
+     * - The field to sort by. You can specify only one sorting parameter (sortorder).
+     * The default order is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * - The field to sort by. You can specify only one sorting parameter (sortorder). The default
-     * order is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * - The field to sort by. You can specify only one sorting parameter (sortorder).
+     * The default order is descending.
+     *
+     **/
+    public enum SortBy {
         Count("count"),
         ;
 
@@ -72,17 +79,22 @@ public class ListSensitiveDataModelSensitiveTypesRequest
     };
 
     /**
-     * - The field to sort by. You can specify only one sorting parameter (sortorder). The default
-     * order is descending.
+     * - The field to sort by. You can specify only one sorting parameter (sortorder).
+     * The default order is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -115,46 +127,42 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -162,15 +170,17 @@ public class ListSensitiveDataModelSensitiveTypesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSensitiveDataModelSensitiveTypesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive data model. */
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
@@ -179,12 +189,13 @@ public class ListSensitiveDataModelSensitiveTypesRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific sensitive type OCID. */
+        /**
+         * A filter to return only items related to a specific sensitive type OCID.
+         */
         private String sensitiveTypeId = null;
 
         /**
          * A filter to return only items related to a specific sensitive type OCID.
-         *
          * @param sensitiveTypeId the value to set
          * @return this builder instance
          */
@@ -194,14 +205,15 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
 
         /**
-         * - The field to sort by. You can specify only one sorting parameter (sortorder). The
-         * default order is descending.
+         * - The field to sort by. You can specify only one sorting parameter (sortorder).
+         * The default order is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * - The field to sort by. You can specify only one sorting parameter (sortorder). The
-         * default order is descending.
+         * - The field to sort by. You can specify only one sorting parameter (sortorder).
+         * The default order is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -211,12 +223,13 @@ public class ListSensitiveDataModelSensitiveTypesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -226,17 +239,12 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -246,19 +254,12 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -267,12 +268,13 @@ public class ListSensitiveDataModelSensitiveTypesRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -283,19 +285,18 @@ public class ListSensitiveDataModelSensitiveTypesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -307,7 +308,6 @@ public class ListSensitiveDataModelSensitiveTypesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSensitiveDataModelSensitiveTypesRequest o) {
@@ -324,14 +324,12 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
 
         /**
-         * Build the instance of ListSensitiveDataModelSensitiveTypesRequest as configured by this
-         * builder
+         * Build the instance of ListSensitiveDataModelSensitiveTypesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSensitiveDataModelSensitiveTypesRequest
          */
@@ -343,11 +341,9 @@ public class ListSensitiveDataModelSensitiveTypesRequest
         }
 
         /**
-         * Build the instance of ListSensitiveDataModelSensitiveTypesRequest as configured by this
-         * builder
+         * Build the instance of ListSensitiveDataModelSensitiveTypesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSensitiveDataModelSensitiveTypesRequest
@@ -363,14 +359,12 @@ public class ListSensitiveDataModelSensitiveTypesRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSensitiveDataModelSensitiveTypesRequest(sensitiveDataModelId,
-            // sensitiveTypeId, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListSensitiveDataModelSensitiveTypesRequest(sensitiveDataModelId, sensitiveTypeId, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -386,7 +380,6 @@ public class ListSensitiveDataModelSensitiveTypesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

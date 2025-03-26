@@ -37,13 +37,16 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * This class provides an example of how you can create an InstanceConfiguration and use that
- * configuration with a InstancePool. It will show how to setup a placement record for the instances
- * for that pool and how to wait for the pool to become available (with instances launched). It then
- * shows how to perform an update and clean up. It will: - Create the InstanceConfiguration - Create
- * a pool based off that configuration, placing that instance on 1 AD. - Wait for the pool to come
- * online (which means an instance has been launched). - Update the pool to a size of 2. - Wait for
- * the InstancePool to scale up. (There are now two instances). - Clean everything up.
+ * This class provides an example of how you can create an InstanceConfiguration and use that configuration with a
+ * InstancePool.  It will show how to setup a placement record for the instances for that pool and how to wait
+ * for the pool to become available (with instances launched).  It then shows how to perform an update and clean up.
+ * It will:
+ *  - Create the InstanceConfiguration
+ *  - Create a pool based off that configuration, placing that instance on 1 AD.
+ *  - Wait for the pool to come online (which means an instance has been launched).
+ *  - Update the pool to a size of 2.
+ *  - Wait for the InstancePool to scale up. (There are now two instances).
+ *  - Clean everything up.
  */
 public class InstancePoolsExample {
 
@@ -127,15 +130,14 @@ public class InstancePoolsExample {
 
     /**
      * @param args Parameters to use for the instancePool as follows:
-     *     <ul>
-     *       <li>The first argument is the ocid of the compartment for the config/pool.
-     *       <li>The second is the availability domain to launch the instance.
-     *       <li>Third parameter is the subnet for the launched instances.
-     *       <li>The fourth parameter is the ocid for the image source for the instance.
-     *       <li>The fifth parameter is the Load Balancer ocid.
-     *       <li>The sixth parameter is the load balancer backend set name.
-     *     </ul>
-     *
+     * <ul>
+     *   <li>The first argument is the ocid of the compartment for the config/pool.</li>
+     *   <li>The second is the availability domain to launch the instance.</li>
+     *   <li>Third parameter is the subnet for the launched instances.</li>
+     *   <li>The fourth parameter is the ocid for the image source for the instance.</li>
+     *   <li>The fifth parameter is the Load Balancer ocid.</li>
+     *   <li>The sixth parameter is the load balancer backend set name.</li>
+     * </ul>
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
@@ -155,10 +157,8 @@ public class InstancePoolsExample {
         final String loadBalancerId = args[4];
         final String loadBalancerBackendSetName = args[5];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -166,7 +166,7 @@ public class InstancePoolsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeManagementClient client = ComputeManagementClient.builder().build(provider);
+        ComputeManagementClient client = new ComputeManagementClient(provider);
 
         InstanceConfiguration instanceConfiguration =
                 createInstanceConfiguration(client, imageId, compartmentId);
@@ -174,8 +174,7 @@ public class InstancePoolsExample {
                 createAndStartInstancePool(
                         client, instanceConfiguration, subnetId, availabilityDomain, compartmentId);
 
-        // Wait for the pool to scale out and enter a running state.  (This will leave one instance
-        // running)
+        // Wait for the pool to scale out and enter a running state.  (This will leave one instance running)
         ComputeManagementWaiters waiter = client.getWaiters();
         GetInstancePoolRequest getInstancePoolRequest =
                 GetInstancePoolRequest.builder().instancePoolId(instancePool.getId()).build();

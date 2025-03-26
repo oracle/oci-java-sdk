@@ -5,27 +5,22 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Aggregation entities are required by the API consistency guidelines for API Consistency
- * Guidelines#AnalyticsAPIs. These are used to summarize record information for a given dataset and
- * are used to populate UI elements. Aggregations need to have the fields that identify the exact
- * scope that they're summarizing. Any filters applied to the list API, have to show up in the
- * aggregation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * Aggregation entities are required by the API consistency guidelines for API Consistency Guidelines#AnalyticsAPIs.  These are used to summarize record information for a given dataset and are used to populate UI elements.  Aggregations need to have the fields that identify the exact scope that they're summarizing.  Any filters applied to the list API, have to show up in the aggregation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RecordAnalyticsAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RecordAnalyticsAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RecordAnalyticsAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "count",
@@ -50,16 +45,17 @@ public final class RecordAnalyticsAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** the count of the matching results */
+        /**
+         * the count of the matching results
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private java.math.BigDecimal count;
 
         /**
          * the count of the matching results
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(java.math.BigDecimal count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -74,46 +70,49 @@ public final class RecordAnalyticsAggregation
             this.__explicitlySet__.add("dimensions");
             return this;
         }
-        /** ocid of the dataset the annotation belongs to */
+        /**
+         * ocid of the dataset the annotation belongs to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
         private String datasetId;
 
         /**
          * ocid of the dataset the annotation belongs to
-         *
          * @param datasetId the value to set
          * @return this builder
-         */
+         **/
         public Builder datasetId(String datasetId) {
             this.datasetId = datasetId;
             this.__explicitlySet__.add("datasetId");
             return this;
         }
-        /** ocid of the compartment the records */
+        /**
+         * ocid of the compartment the records
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * ocid of the compartment the records
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Describes the lifecycle state. */
+        /**
+         * Describes the lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Record.LifecycleState lifecycleState;
 
         /**
          * Describes the lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(Record.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -158,7 +157,9 @@ public final class RecordAnalyticsAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,15 +168,16 @@ public final class RecordAnalyticsAggregation
         return new Builder().copy(this);
     }
 
-    /** the count of the matching results */
+    /**
+     * the count of the matching results
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final java.math.BigDecimal count;
 
     /**
      * the count of the matching results
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCount() {
         return count;
     }
@@ -187,41 +189,44 @@ public final class RecordAnalyticsAggregation
         return dimensions;
     }
 
-    /** ocid of the dataset the annotation belongs to */
+    /**
+     * ocid of the dataset the annotation belongs to
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("datasetId")
     private final String datasetId;
 
     /**
      * ocid of the dataset the annotation belongs to
-     *
      * @return the value
-     */
+     **/
     public String getDatasetId() {
         return datasetId;
     }
 
-    /** ocid of the compartment the records */
+    /**
+     * ocid of the compartment the records
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * ocid of the compartment the records
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Describes the lifecycle state. */
+    /**
+     * Describes the lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Record.LifecycleState lifecycleState;
 
     /**
      * Describes the lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public Record.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -233,7 +238,6 @@ public final class RecordAnalyticsAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

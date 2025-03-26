@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Type of software package update. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum UpdateTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of software package update.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum UpdateTypes {
     Security("SECURITY"),
     Bugfix("BUGFIX"),
     Enhancement("ENHANCEMENT"),

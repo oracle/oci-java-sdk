@@ -5,24 +5,23 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * The customer IP and the corresponding fully qualified domain name that the pipeline will connect
- * to. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * The customer IP and the corresponding fully qualified domain name that the pipeline will connect to.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpensearchPipelineReverseConnectionEndpoint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OpensearchPipelineReverseConnectionEndpoint.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OpensearchPipelineReverseConnectionEndpoint
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"customerFqdn", "customerIp"})
     public OpensearchPipelineReverseConnectionEndpoint(String customerFqdn, String customerIp) {
@@ -33,31 +32,33 @@ public final class OpensearchPipelineReverseConnectionEndpoint
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The fully qualified domain name of the customerIp in the customer VCN */
+        /**
+         * The fully qualified domain name of the customerIp in the customer VCN
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerFqdn")
         private String customerFqdn;
 
         /**
          * The fully qualified domain name of the customerIp in the customer VCN
-         *
          * @param customerFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder customerFqdn(String customerFqdn) {
             this.customerFqdn = customerFqdn;
             this.__explicitlySet__.add("customerFqdn");
             return this;
         }
-        /** The IPv4 address in the customer VCN */
+        /**
+         * The IPv4 address in the customer VCN
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerIp")
         private String customerIp;
 
         /**
          * The IPv4 address in the customer VCN
-         *
          * @param customerIp the value to set
          * @return this builder
-         */
+         **/
         public Builder customerIp(String customerIp) {
             this.customerIp = customerIp;
             this.__explicitlySet__.add("customerIp");
@@ -89,7 +90,9 @@ public final class OpensearchPipelineReverseConnectionEndpoint
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +101,30 @@ public final class OpensearchPipelineReverseConnectionEndpoint
         return new Builder().copy(this);
     }
 
-    /** The fully qualified domain name of the customerIp in the customer VCN */
+    /**
+     * The fully qualified domain name of the customerIp in the customer VCN
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerFqdn")
     private final String customerFqdn;
 
     /**
      * The fully qualified domain name of the customerIp in the customer VCN
-     *
      * @return the value
-     */
+     **/
     public String getCustomerFqdn() {
         return customerFqdn;
     }
 
-    /** The IPv4 address in the customer VCN */
+    /**
+     * The IPv4 address in the customer VCN
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerIp")
     private final String customerIp;
 
     /**
      * The IPv4 address in the customer VCN
-     *
      * @return the value
-     */
+     **/
     public String getCustomerIp() {
         return customerIp;
     }
@@ -131,7 +136,6 @@ public final class OpensearchPipelineReverseConnectionEndpoint
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

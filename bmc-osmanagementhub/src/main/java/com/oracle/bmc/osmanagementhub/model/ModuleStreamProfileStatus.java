@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** The status of a module stream profile. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ModuleStreamProfileStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of a module stream profile.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ModuleStreamProfileStatus {
     Installed("INSTALLED"),
     Available("AVAILABLE"),
     ;

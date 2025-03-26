@@ -5,23 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The response object returned from a PostMetricData operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * The response object returned from a PostMetricData operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PostMetricDataResponseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PostMetricDataResponseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PostMetricDataResponseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"failedMetricsCount", "failedMetrics"})
     public PostMetricDataResponseDetails(
@@ -33,35 +33,37 @@ public final class PostMetricDataResponseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of metric objects that failed input validation. */
+        /**
+         * The number of metric objects that failed input validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedMetricsCount")
         private Integer failedMetricsCount;
 
         /**
          * The number of metric objects that failed input validation.
-         *
          * @param failedMetricsCount the value to set
          * @return this builder
-         */
+         **/
         public Builder failedMetricsCount(Integer failedMetricsCount) {
             this.failedMetricsCount = failedMetricsCount;
             this.__explicitlySet__.add("failedMetricsCount");
             return this;
         }
         /**
-         * A list of records identifying metric objects that failed input validation and the reasons
-         * for the failures.
-         */
+         * A list of records identifying metric objects that failed input validation
+         * and the reasons for the failures.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedMetrics")
         private java.util.List<FailedMetricRecord> failedMetrics;
 
         /**
-         * A list of records identifying metric objects that failed input validation and the reasons
-         * for the failures.
+         * A list of records identifying metric objects that failed input validation
+         * and the reasons for the failures.
          *
          * @param failedMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder failedMetrics(java.util.List<FailedMetricRecord> failedMetrics) {
             this.failedMetrics = failedMetrics;
             this.__explicitlySet__.add("failedMetrics");
@@ -92,7 +94,9 @@ public final class PostMetricDataResponseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,32 +105,34 @@ public final class PostMetricDataResponseDetails
         return new Builder().copy(this);
     }
 
-    /** The number of metric objects that failed input validation. */
+    /**
+     * The number of metric objects that failed input validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedMetricsCount")
     private final Integer failedMetricsCount;
 
     /**
      * The number of metric objects that failed input validation.
-     *
      * @return the value
-     */
+     **/
     public Integer getFailedMetricsCount() {
         return failedMetricsCount;
     }
 
     /**
-     * A list of records identifying metric objects that failed input validation and the reasons for
-     * the failures.
-     */
+     * A list of records identifying metric objects that failed input validation
+     * and the reasons for the failures.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedMetrics")
     private final java.util.List<FailedMetricRecord> failedMetrics;
 
     /**
-     * A list of records identifying metric objects that failed input validation and the reasons for
-     * the failures.
+     * A list of records identifying metric objects that failed input validation
+     * and the reasons for the failures.
      *
      * @return the value
-     */
+     **/
     public java.util.List<FailedMetricRecord> getFailedMetrics() {
         return failedMetrics;
     }
@@ -138,7 +144,6 @@ public final class PostMetricDataResponseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

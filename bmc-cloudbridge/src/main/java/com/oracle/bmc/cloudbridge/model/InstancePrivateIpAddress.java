@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Describes a private IPv4 address. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Describes a private IPv4 address.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstancePrivateIpAddress.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstancePrivateIpAddress.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstancePrivateIpAddress
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "association",
@@ -53,49 +52,48 @@ public final class InstancePrivateIpAddress
             return this;
         }
         /**
-         * Indicates whether this IPv4 address is the primary private IP address of the network
-         * interface.
-         */
+         * Indicates whether this IPv4 address is the primary private IP address of the network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
         /**
-         * Indicates whether this IPv4 address is the primary private IP address of the network
-         * interface.
-         *
+         * Indicates whether this IPv4 address is the primary private IP address of the network interface.
          * @param isPrimary the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
-        /** The private IPv4 DNS name. */
+        /**
+         * The private IPv4 DNS name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateDnsName")
         private String privateDnsName;
 
         /**
          * The private IPv4 DNS name.
-         *
          * @param privateDnsName the value to set
          * @return this builder
-         */
+         **/
         public Builder privateDnsName(String privateDnsName) {
             this.privateDnsName = privateDnsName;
             this.__explicitlySet__.add("privateDnsName");
             return this;
         }
-        /** The private IPv4 address of the network interface. */
+        /**
+         * The private IPv4 address of the network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
         private String privateIpAddress;
 
         /**
          * The private IPv4 address of the network interface.
-         *
          * @param privateIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIpAddress(String privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             this.__explicitlySet__.add("privateIpAddress");
@@ -136,7 +134,9 @@ public final class InstancePrivateIpAddress
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,44 +153,43 @@ public final class InstancePrivateIpAddress
     }
 
     /**
-     * Indicates whether this IPv4 address is the primary private IP address of the network
-     * interface.
-     */
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
     /**
-     * Indicates whether this IPv4 address is the primary private IP address of the network
-     * interface.
-     *
+     * Indicates whether this IPv4 address is the primary private IP address of the network interface.
      * @return the value
-     */
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
 
-    /** The private IPv4 DNS name. */
+    /**
+     * The private IPv4 DNS name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateDnsName")
     private final String privateDnsName;
 
     /**
      * The private IPv4 DNS name.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateDnsName() {
         return privateDnsName;
     }
 
-    /** The private IPv4 address of the network interface. */
+    /**
+     * The private IPv4 address of the network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpAddress")
     private final String privateIpAddress;
 
     /**
      * The private IPv4 address of the network interface.
-     *
      * @return the value
-     */
+     **/
     public String getPrivateIpAddress() {
         return privateIpAddress;
     }
@@ -202,7 +201,6 @@ public final class InstancePrivateIpAddress
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

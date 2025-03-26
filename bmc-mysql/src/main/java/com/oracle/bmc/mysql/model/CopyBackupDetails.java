@@ -5,23 +5,21 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Details required to copy a DB system backup from its source region to a destination region. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Details required to copy a DB system backup from its source region to a destination region.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CopyBackupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CopyBackupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CopyBackupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CopyBackupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -51,60 +49,61 @@ public final class CopyBackupDetails
     public static class Builder {
         /**
          * The OCID of the compartment the DB system backup is to be copied to.
+         * <p>
+         **Note:** The compartment must be the same as the compartment of the DB system backup in the source region.
          *
-         * <p>*Note:** The compartment must be the same as the compartment of the DB system backup
-         * in the source region.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment the DB system backup is to be copied to.
-         *
-         * <p>*Note:** The compartment must be the same as the compartment of the DB system backup
-         * in the source region.
+         * <p>
+         **Note:** The compartment must be the same as the compartment of the DB system backup in the source region.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-supplied description for the DB system backup. By default, the source backup
-         * description will be used.
-         */
+         * A user-supplied description for the DB system backup.
+         * By default, the source backup description will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-supplied description for the DB system backup. By default, the source backup
-         * description will be used.
+         * A user-supplied description for the DB system backup.
+         * By default, the source backup description will be used.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A user-supplied display name for the DB system backup. By default, the source backup
-         * display name will be used.
-         */
+         * A user-supplied display name for the DB system backup.
+         * By default, the source backup display name will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-supplied display name for the DB system backup. By default, the source backup
-         * display name will be used.
+         * A user-supplied display name for the DB system backup.
+         * By default, the source backup display name will be used.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -112,28 +111,30 @@ public final class CopyBackupDetails
         }
         /**
          * Number of days to retain the copied DB system backup.
+         * <p>
+         **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
          *
-         * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
-         * manual backup is 365.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupCopyRetentionInDays")
         private Integer backupCopyRetentionInDays;
 
         /**
          * Number of days to retain the copied DB system backup.
-         *
-         * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
-         * manual backup is 365.
+         * <p>
+         **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
          *
          * @param backupCopyRetentionInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder backupCopyRetentionInDays(Integer backupCopyRetentionInDays) {
             this.backupCopyRetentionInDays = backupCopyRetentionInDays;
             this.__explicitlySet__.add("backupCopyRetentionInDays");
             return this;
         }
-        /** The OCID of DB system backup to be copied. */
+        /**
+         * The OCID of DB system backup to be copied.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupId")
         private String sourceBackupId;
 
@@ -142,28 +143,27 @@ public final class CopyBackupDetails
          *
          * @param sourceBackupId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceBackupId(String sourceBackupId) {
             this.sourceBackupId = sourceBackupId;
             this.__explicitlySet__.add("sourceBackupId");
             return this;
         }
         /**
-         * The region identifier of the source region where the DB system backup exists. For more
-         * information, please see [Regions and Availability
-         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-         */
+         * The region identifier of the source region where the DB system backup exists.
+         * For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegion")
         private String sourceRegion;
 
         /**
-         * The region identifier of the source region where the DB system backup exists. For more
-         * information, please see [Regions and Availability
-         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         * The region identifier of the source region where the DB system backup exists.
+         * For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
          *
          * @param sourceRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegion(String sourceRegion) {
             this.sourceRegion = sourceRegion;
             this.__explicitlySet__.add("sourceRegion");
@@ -212,7 +212,9 @@ public final class CopyBackupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,81 +225,84 @@ public final class CopyBackupDetails
 
     /**
      * The OCID of the compartment the DB system backup is to be copied to.
+     * <p>
+     **Note:** The compartment must be the same as the compartment of the DB system backup in the source region.
      *
-     * <p>*Note:** The compartment must be the same as the compartment of the DB system backup in
-     * the source region.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment the DB system backup is to be copied to.
-     *
-     * <p>*Note:** The compartment must be the same as the compartment of the DB system backup in
-     * the source region.
+     * <p>
+     **Note:** The compartment must be the same as the compartment of the DB system backup in the source region.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-supplied description for the DB system backup. By default, the source backup
-     * description will be used.
-     */
+     * A user-supplied description for the DB system backup.
+     * By default, the source backup description will be used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-supplied description for the DB system backup. By default, the source backup
-     * description will be used.
+     * A user-supplied description for the DB system backup.
+     * By default, the source backup description will be used.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A user-supplied display name for the DB system backup. By default, the source backup display
-     * name will be used.
-     */
+     * A user-supplied display name for the DB system backup.
+     * By default, the source backup display name will be used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-supplied display name for the DB system backup. By default, the source backup display
-     * name will be used.
+     * A user-supplied display name for the DB system backup.
+     * By default, the source backup display name will be used.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * Number of days to retain the copied DB system backup.
+     * <p>
+     **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
      *
-     * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
-     * manual backup is 365.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupCopyRetentionInDays")
     private final Integer backupCopyRetentionInDays;
 
     /**
      * Number of days to retain the copied DB system backup.
-     *
-     * <p>*Note:** The maximum value for an automatic backup is 35, and the maximum value for a
-     * manual backup is 365.
+     * <p>
+     **Note:** The maximum value for an automatic backup is 35, and the maximum value for a manual backup is 365.
      *
      * @return the value
-     */
+     **/
     public Integer getBackupCopyRetentionInDays() {
         return backupCopyRetentionInDays;
     }
 
-    /** The OCID of DB system backup to be copied. */
+    /**
+     * The OCID of DB system backup to be copied.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBackupId")
     private final String sourceBackupId;
 
@@ -305,26 +310,25 @@ public final class CopyBackupDetails
      * The OCID of DB system backup to be copied.
      *
      * @return the value
-     */
+     **/
     public String getSourceBackupId() {
         return sourceBackupId;
     }
 
     /**
-     * The region identifier of the source region where the DB system backup exists. For more
-     * information, please see [Regions and Availability
-     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-     */
+     * The region identifier of the source region where the DB system backup exists.
+     * For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegion")
     private final String sourceRegion;
 
     /**
-     * The region identifier of the source region where the DB system backup exists. For more
-     * information, please see [Regions and Availability
-     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * The region identifier of the source region where the DB system backup exists.
+     * For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
      *
      * @return the value
-     */
+     **/
     public String getSourceRegion() {
         return sourceRegion;
     }
@@ -336,7 +340,6 @@ public final class CopyBackupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

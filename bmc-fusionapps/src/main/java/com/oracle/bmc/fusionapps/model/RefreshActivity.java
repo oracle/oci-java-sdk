@@ -5,26 +5,19 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * An environment refresh copies data from a source environment to a target environment, making a
- * copy of the source environment onto the target environment. For more information, see [Refreshing
- * an
- * Environment](https://docs.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * An environment refresh copies data from a source environment to a target environment, making a copy of the source environment onto the target environment. For more information, see [Refreshing an Environment](https://docs.oracle.com/iaas/Content/fusion-applications/refresh-environment.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RefreshActivity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RefreshActivity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RefreshActivity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -78,114 +71,111 @@ public final class RefreshActivity
     public static class Builder {
         /**
          * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A friendly name for the refresh activity. Can be changed later. */
+        /**
+         * A friendly name for the refresh activity. Can be changed later.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A friendly name for the refresh activity. Can be changed later.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the Fusion environment that is the source environment for the refresh. */
+        /**
+         * The OCID of the Fusion environment that is the source environment for the refresh.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
         private String sourceFusionEnvironmentId;
 
         /**
          * The OCID of the Fusion environment that is the source environment for the refresh.
-         *
          * @param sourceFusionEnvironmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceFusionEnvironmentId(String sourceFusionEnvironmentId) {
             this.sourceFusionEnvironmentId = sourceFusionEnvironmentId;
             this.__explicitlySet__.add("sourceFusionEnvironmentId");
             return this;
         }
         /**
-         * The date and time of the most recent source environment backup used for the environment
-         * refresh.
-         */
+         * The date and time of the most recent source environment backup used for the environment refresh.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfRestorationPoint")
         private java.util.Date timeOfRestorationPoint;
 
         /**
-         * The date and time of the most recent source environment backup used for the environment
-         * refresh.
-         *
+         * The date and time of the most recent source environment backup used for the environment refresh.
          * @param timeOfRestorationPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfRestorationPoint(java.util.Date timeOfRestorationPoint) {
             this.timeOfRestorationPoint = timeOfRestorationPoint;
             this.__explicitlySet__.add("timeOfRestorationPoint");
             return this;
         }
-        /** The current state of the refreshActivity. */
+        /**
+         * The current state of the refreshActivity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the refreshActivity.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Service availability / impact during refresh activity execution up down */
+        /**
+         * Service availability / impact during refresh activity execution up down
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAvailability")
         private ServiceAvailability serviceAvailability;
 
         /**
          * Service availability / impact during refresh activity execution up down
-         *
          * @param serviceAvailability the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceAvailability(ServiceAvailability serviceAvailability) {
             this.serviceAvailability = serviceAvailability;
             this.__explicitlySet__.add("serviceAvailability");
             return this;
         }
         /**
-         * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime
-         * string.
-         */
+         * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
         private java.util.Date timeScheduledStart;
 
         /**
-         * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime
-         * string.
-         *
+         * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
          * @param timeScheduledStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduledStart(java.util.Date timeScheduledStart) {
             this.timeScheduledStart = timeScheduledStart;
             this.__explicitlySet__.add("timeScheduledStart");
@@ -193,35 +183,31 @@ public final class RefreshActivity
         }
         /**
          * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpectedFinish")
         private java.util.Date timeExpectedFinish;
 
         /**
          * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-         *
          * @param timeExpectedFinish the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpectedFinish(java.util.Date timeExpectedFinish) {
             this.timeExpectedFinish = timeExpectedFinish;
             this.__explicitlySet__.add("timeExpectedFinish");
             return this;
         }
         /**
-         * The time the refresh activity actually completed / cancelled / failed. An RFC3339
-         * formatted datetime string.
-         */
+         * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The time the refresh activity actually completed / cancelled / failed. An RFC3339
-         * formatted datetime string.
-         *
+         * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
@@ -229,16 +215,15 @@ public final class RefreshActivity
         }
         /**
          * The time the refresh activity record was created. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
         /**
          * The time the refresh activity record was created. An RFC3339 formatted datetime string.
-         *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
@@ -246,46 +231,47 @@ public final class RefreshActivity
         }
         /**
          * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+        /**
+         * Represents if the customer opted for Data Masking or not during refreshActivity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
         private Boolean isDataMaskingOpted;
 
         /**
          * Represents if the customer opted for Data Masking or not during refreshActivity.
-         *
          * @param isDataMaskingOpted the value to set
          * @return this builder
-         */
+         **/
         public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
             this.isDataMaskingOpted = isDataMaskingOpted;
             this.__explicitlySet__.add("isDataMaskingOpted");
             return this;
         }
-        /** Details of refresh investigation information, each item represents a different issue. */
+        /**
+         * Details of refresh investigation information, each item represents a different issue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
         private java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
 
         /**
          * Details of refresh investigation information, each item represents a different issue.
-         *
          * @param refreshIssueDetailsList the value to set
          * @return this builder
-         */
+         **/
         public Builder refreshIssueDetailsList(
                 java.util.List<RefreshIssueDetails> refreshIssueDetailsList) {
             this.refreshIssueDetailsList = refreshIssueDetailsList;
@@ -293,19 +279,16 @@ public final class RefreshActivity
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private LifecycleDetails lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(LifecycleDetails lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -386,7 +369,9 @@ public final class RefreshActivity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -395,64 +380,66 @@ public final class RefreshActivity
         return new Builder().copy(this);
     }
 
-    /** The unique identifier (OCID) of the refresh activity. Can't be changed after creation. */
+    /**
+     * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier (OCID) of the refresh activity. Can't be changed after creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A friendly name for the refresh activity. Can be changed later. */
+    /**
+     * A friendly name for the refresh activity. Can be changed later.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A friendly name for the refresh activity. Can be changed later.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the Fusion environment that is the source environment for the refresh. */
+    /**
+     * The OCID of the Fusion environment that is the source environment for the refresh.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceFusionEnvironmentId")
     private final String sourceFusionEnvironmentId;
 
     /**
      * The OCID of the Fusion environment that is the source environment for the refresh.
-     *
      * @return the value
-     */
+     **/
     public String getSourceFusionEnvironmentId() {
         return sourceFusionEnvironmentId;
     }
 
     /**
-     * The date and time of the most recent source environment backup used for the environment
-     * refresh.
-     */
+     * The date and time of the most recent source environment backup used for the environment refresh.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfRestorationPoint")
     private final java.util.Date timeOfRestorationPoint;
 
     /**
-     * The date and time of the most recent source environment backup used for the environment
-     * refresh.
-     *
+     * The date and time of the most recent source environment backup used for the environment refresh.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfRestorationPoint() {
         return timeOfRestorationPoint;
     }
 
-    /** The current state of the refreshActivity. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the refreshActivity.
+     **/
+    public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         NeedsAttention("NEEDS_ATTENTION"),
@@ -461,8 +448,8 @@ public final class RefreshActivity
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -501,27 +488,30 @@ public final class RefreshActivity
             return UnknownEnumValue;
         }
     };
-    /** The current state of the refreshActivity. */
+    /**
+     * The current state of the refreshActivity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the refreshActivity.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Service availability / impact during refresh activity execution up down */
-    public enum ServiceAvailability implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Service availability / impact during refresh activity execution up down
+     **/
+    public enum ServiceAvailability {
         Available("AVAILABLE"),
         Unavailable("UNAVAILABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -560,121 +550,122 @@ public final class RefreshActivity
             return UnknownEnumValue;
         }
     };
-    /** Service availability / impact during refresh activity execution up down */
+    /**
+     * Service availability / impact during refresh activity execution up down
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAvailability")
     private final ServiceAvailability serviceAvailability;
 
     /**
      * Service availability / impact during refresh activity execution up down
-     *
      * @return the value
-     */
+     **/
     public ServiceAvailability getServiceAvailability() {
         return serviceAvailability;
     }
 
     /**
      * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduledStart")
     private final java.util.Date timeScheduledStart;
 
     /**
      * The time the refresh activity is scheduled to start. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduledStart() {
         return timeScheduledStart;
     }
 
-    /** The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string. */
+    /**
+     * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpectedFinish")
     private final java.util.Date timeExpectedFinish;
 
     /**
      * The time the refresh activity is scheduled to end. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpectedFinish() {
         return timeExpectedFinish;
     }
 
     /**
-     * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted
-     * datetime string.
-     */
+     * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted
-     * datetime string.
-     *
+     * The time the refresh activity actually completed / cancelled / failed. An RFC3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The time the refresh activity record was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the refresh activity record was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
     /**
      * The time the refresh activity record was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** The time the refresh activity record was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the refresh activity record was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Represents if the customer opted for Data Masking or not during refreshActivity. */
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
     private final Boolean isDataMaskingOpted;
 
     /**
      * Represents if the customer opted for Data Masking or not during refreshActivity.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDataMaskingOpted() {
         return isDataMaskingOpted;
     }
 
-    /** Details of refresh investigation information, each item represents a different issue. */
+    /**
+     * Details of refresh investigation information, each item represents a different issue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("refreshIssueDetailsList")
     private final java.util.List<RefreshIssueDetails> refreshIssueDetailsList;
 
     /**
      * Details of refresh investigation information, each item represents a different issue.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RefreshIssueDetails> getRefreshIssueDetailsList() {
         return refreshIssueDetailsList;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
-    public enum LifecycleDetails implements com.oracle.bmc.http.internal.BmcEnum {
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
+    public enum LifecycleDetails {
         None("NONE"),
         Rollbackaccepted("ROLLBACKACCEPTED"),
         Rollbackinprogress("ROLLBACKINPROGRESS"),
@@ -682,8 +673,8 @@ public final class RefreshActivity
         Rollbackfailed("ROLLBACKFAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -723,18 +714,15 @@ public final class RefreshActivity
         }
     };
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final LifecycleDetails lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public LifecycleDetails getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -746,7 +734,6 @@ public final class RefreshActivity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

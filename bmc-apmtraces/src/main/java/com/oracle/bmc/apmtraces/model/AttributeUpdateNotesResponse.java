@@ -5,23 +5,23 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Response of an individual attribute item in the bulk update notes operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Response of an individual attribute item in the bulk update notes operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AttributeUpdateNotesResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AttributeUpdateNotesResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AttributeUpdateNotesResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "attributeName",
@@ -49,7 +49,10 @@ public final class AttributeUpdateNotesResponse
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Attribute for which notes were added to or edited in this bulk operation. */
+        /**
+         * Attribute for which notes were added to or edited in this bulk operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -58,13 +61,16 @@ public final class AttributeUpdateNotesResponse
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Notes added to or edited for this attribute. */
+        /**
+         * Notes added to or edited for this attribute.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notes")
         private String notes;
 
@@ -73,13 +79,16 @@ public final class AttributeUpdateNotesResponse
          *
          * @param notes the value to set
          * @return this builder
-         */
+         **/
         public Builder notes(String notes) {
             this.notes = notes;
             this.__explicitlySet__.add("notes");
             return this;
         }
-        /** Type of operation - UPDATE_NOTES. */
+        /**
+         * Type of operation - UPDATE_NOTES.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationType operationType;
 
@@ -88,83 +97,76 @@ public final class AttributeUpdateNotesResponse
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * Namespace of the attribute whose notes were updated. The attributeNameSpace will default
-         * to TRACES if it is not passed in.
-         */
+         * Namespace of the attribute whose notes were updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
         /**
-         * Namespace of the attribute whose notes were updated. The attributeNameSpace will default
-         * to TRACES if it is not passed in.
+         * Namespace of the attribute whose notes were updated.  The attributeNameSpace will default to TRACES if it is
+         * not passed in.
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
             return this;
         }
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the update notes operation. The attribute can have either a success status
-         * or an error status. The status of the attribute must be correlated with the operation
-         * status property in the bulk operation metadata object. The bulk operation will be
-         * successful only when all attributes in the bulk request are processed successfully and
-         * they get a success status back. The following are successful status values of individual
-         * attribute items in a bulk update notes operation. ATTRIBUTE_NOTES_UPDATED - The
-         * attribute's notes have been updated with the given notes. DUPLICATE_ATTRIBUTE - The
-         * attribute is a duplicate of an attribute that was present in this bulk request. Note that
-         * we deduplicate the attribute collection, process only unique attributes, and call out
-         * duplicates. A duplicate attribute in a bulk request will not prevent the processing of
-         * further attributes in the bulk operation. The following values are error statuses and the
-         * bulk processing is stopped when the first error is encountered. INVALID_ATTRIBUTE - The
-         * attribute is invalid. The length of the notes is more than a 1000 characters.
-         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute
-         * in this bulk request collection that resulted in a processing error.
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the update notes operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk update notes operation.
+         * ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been updated with the given notes.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+         * INVALID_ATTRIBUTE - The attribute is invalid.  The length of the notes is more than a 1000 characters.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
          * ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
          * NOTES_TOO_LONG - Attribute notes were too long (more than 1000 chars).
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
         private AttributeStatus attributeStatus;
 
         /**
-         * Status of the attribute after this operation. The attribute can have one of the following
-         * statuses after the update notes operation. The attribute can have either a success status
-         * or an error status. The status of the attribute must be correlated with the operation
-         * status property in the bulk operation metadata object. The bulk operation will be
-         * successful only when all attributes in the bulk request are processed successfully and
-         * they get a success status back. The following are successful status values of individual
-         * attribute items in a bulk update notes operation. ATTRIBUTE_NOTES_UPDATED - The
-         * attribute's notes have been updated with the given notes. DUPLICATE_ATTRIBUTE - The
-         * attribute is a duplicate of an attribute that was present in this bulk request. Note that
-         * we deduplicate the attribute collection, process only unique attributes, and call out
-         * duplicates. A duplicate attribute in a bulk request will not prevent the processing of
-         * further attributes in the bulk operation. The following values are error statuses and the
-         * bulk processing is stopped when the first error is encountered. INVALID_ATTRIBUTE - The
-         * attribute is invalid. The length of the notes is more than a 1000 characters.
-         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute
-         * in this bulk request collection that resulted in a processing error.
+         * Status of the attribute after this operation.  The attribute can have one of the following statuses after the update notes operation.  The attribute
+         * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+         * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+         * The following are successful status values of individual attribute items in a bulk update notes operation.
+         * ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been updated with the given notes.
+         * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+         * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+         * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+         * INVALID_ATTRIBUTE - The attribute is invalid.  The length of the notes is more than a 1000 characters.
+         * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
          * ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
          * NOTES_TOO_LONG - Attribute notes were too long (more than 1000 chars).
          *
          * @param attributeStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeStatus(AttributeStatus attributeStatus) {
             this.attributeStatus = attributeStatus;
             this.__explicitlySet__.add("attributeStatus");
             return this;
         }
-        /** Time when the attribute's notes were updated. */
+        /**
+         * Time when the attribute's notes were updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -173,7 +175,7 @@ public final class AttributeUpdateNotesResponse
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -222,7 +224,9 @@ public final class AttributeUpdateNotesResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -231,7 +235,10 @@ public final class AttributeUpdateNotesResponse
         return new Builder().copy(this);
     }
 
-    /** Attribute for which notes were added to or edited in this bulk operation. */
+    /**
+     * Attribute for which notes were added to or edited in this bulk operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -239,12 +246,15 @@ public final class AttributeUpdateNotesResponse
      * Attribute for which notes were added to or edited in this bulk operation.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Notes added to or edited for this attribute. */
+    /**
+     * Notes added to or edited for this attribute.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notes")
     private final String notes;
 
@@ -252,18 +262,21 @@ public final class AttributeUpdateNotesResponse
      * Notes added to or edited for this attribute.
      *
      * @return the value
-     */
+     **/
     public String getNotes() {
         return notes;
     }
 
-    /** Type of operation - UPDATE_NOTES. */
-    public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of operation - UPDATE_NOTES.
+     *
+     **/
+    public enum OperationType {
         UpdateNotes("UPDATE_NOTES"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -302,7 +315,10 @@ public final class AttributeUpdateNotesResponse
             return UnknownEnumValue;
         }
     };
-    /** Type of operation - UPDATE_NOTES. */
+    /**
+     * Type of operation - UPDATE_NOTES.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationType operationType;
 
@@ -310,22 +326,23 @@ public final class AttributeUpdateNotesResponse
      * Type of operation - UPDATE_NOTES.
      *
      * @return the value
-     */
+     **/
     public OperationType getOperationType() {
         return operationType;
     }
 
     /**
-     * Namespace of the attribute whose notes were updated. The attributeNameSpace will default to
-     * TRACES if it is not passed in.
-     */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+     * Namespace of the attribute whose notes were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -365,42 +382,39 @@ public final class AttributeUpdateNotesResponse
         }
     };
     /**
-     * Namespace of the attribute whose notes were updated. The attributeNameSpace will default to
-     * TRACES if it is not passed in.
-     */
+     * Namespace of the attribute whose notes were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
     /**
-     * Namespace of the attribute whose notes were updated. The attributeNameSpace will default to
-     * TRACES if it is not passed in.
+     * Namespace of the attribute whose notes were updated.  The attributeNameSpace will default to TRACES if it is
+     * not passed in.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the update notes operation. The attribute can have either a success status or
-     * an error status. The status of the attribute must be correlated with the operation status
-     * property in the bulk operation metadata object. The bulk operation will be successful only
-     * when all attributes in the bulk request are processed successfully and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk update notes operation. ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been
-     * updated with the given notes. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an
-     * attribute that was present in this bulk request. Note that we deduplicate the attribute
-     * collection, process only unique attributes, and call out duplicates. A duplicate attribute in
-     * a bulk request will not prevent the processing of further attributes in the bulk operation.
-     * The following values are error statuses and the bulk processing is stopped when the first
-     * error is encountered. INVALID_ATTRIBUTE - The attribute is invalid. The length of the notes
-     * is more than a 1000 characters. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as
-     * there was another attribute in this bulk request collection that resulted in a processing
-     * error. ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the update notes operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk update notes operation.
+     * ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been updated with the given notes.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+     * INVALID_ATTRIBUTE - The attribute is invalid.  The length of the notes is more than a 1000 characters.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
      * NOTES_TOO_LONG - Attribute notes were too long (more than 1000 chars).
-     */
-    public enum AttributeStatus implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum AttributeStatus {
         AttributeNotesUpdated("ATTRIBUTE_NOTES_UPDATED"),
         DuplicateAttribute("DUPLICATE_ATTRIBUTE"),
         InvalidAttribute("INVALID_ATTRIBUTE"),
@@ -409,8 +423,8 @@ public final class AttributeUpdateNotesResponse
         NotesTooLong("NOTES_TOO_LONG"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -450,53 +464,47 @@ public final class AttributeUpdateNotesResponse
         }
     };
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the update notes operation. The attribute can have either a success status or
-     * an error status. The status of the attribute must be correlated with the operation status
-     * property in the bulk operation metadata object. The bulk operation will be successful only
-     * when all attributes in the bulk request are processed successfully and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk update notes operation. ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been
-     * updated with the given notes. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an
-     * attribute that was present in this bulk request. Note that we deduplicate the attribute
-     * collection, process only unique attributes, and call out duplicates. A duplicate attribute in
-     * a bulk request will not prevent the processing of further attributes in the bulk operation.
-     * The following values are error statuses and the bulk processing is stopped when the first
-     * error is encountered. INVALID_ATTRIBUTE - The attribute is invalid. The length of the notes
-     * is more than a 1000 characters. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as
-     * there was another attribute in this bulk request collection that resulted in a processing
-     * error. ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the update notes operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk update notes operation.
+     * ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been updated with the given notes.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+     * INVALID_ATTRIBUTE - The attribute is invalid.  The length of the notes is more than a 1000 characters.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
      * NOTES_TOO_LONG - Attribute notes were too long (more than 1000 chars).
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeStatus")
     private final AttributeStatus attributeStatus;
 
     /**
-     * Status of the attribute after this operation. The attribute can have one of the following
-     * statuses after the update notes operation. The attribute can have either a success status or
-     * an error status. The status of the attribute must be correlated with the operation status
-     * property in the bulk operation metadata object. The bulk operation will be successful only
-     * when all attributes in the bulk request are processed successfully and they get a success
-     * status back. The following are successful status values of individual attribute items in a
-     * bulk update notes operation. ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been
-     * updated with the given notes. DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an
-     * attribute that was present in this bulk request. Note that we deduplicate the attribute
-     * collection, process only unique attributes, and call out duplicates. A duplicate attribute in
-     * a bulk request will not prevent the processing of further attributes in the bulk operation.
-     * The following values are error statuses and the bulk processing is stopped when the first
-     * error is encountered. INVALID_ATTRIBUTE - The attribute is invalid. The length of the notes
-     * is more than a 1000 characters. ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as
-     * there was another attribute in this bulk request collection that resulted in a processing
-     * error. ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
+     * Status of the attribute after this operation.  The attribute can have one of the following statuses after the update notes operation.  The attribute
+     * can have either a success status or an error status.  The status of the attribute must be correlated with the operation status property in the bulk operation metadata
+     * object.  The bulk operation will be successful only when all attributes in the bulk request are processed successfully and they get a success status back.
+     * The following are successful status values of individual attribute items in a bulk update notes operation.
+     * ATTRIBUTE_NOTES_UPDATED - The attribute's notes have been updated with the given notes.
+     * DUPLICATE_ATTRIBUTE - The attribute is a duplicate of an attribute that was present in this bulk request.  Note that we deduplicate the attribute collection, process only unique attributes,
+     * and call out duplicates.  A duplicate attribute in a bulk request will not prevent the processing of further attributes in the bulk operation.
+     * The following values are error statuses and the bulk processing is stopped when the first error is encountered.
+     * INVALID_ATTRIBUTE - The attribute is invalid.  The length of the notes is more than a 1000 characters.
+     * ATTRIBUTE_NOT_PROCESSED - The attribute was not processed, as there was another attribute in this bulk request collection that resulted in a processing error.
+     * ATTRIBUTE_DOES_NOT_EXIST - Attribute was neither active nor pinned inactive.
      * NOTES_TOO_LONG - Attribute notes were too long (more than 1000 chars).
      *
      * @return the value
-     */
+     **/
     public AttributeStatus getAttributeStatus() {
         return attributeStatus;
     }
 
-    /** Time when the attribute's notes were updated. */
+    /**
+     * Time when the attribute's notes were updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -504,7 +512,7 @@ public final class AttributeUpdateNotesResponse
      * Time when the attribute's notes were updated.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -516,7 +524,6 @@ public final class AttributeUpdateNotesResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

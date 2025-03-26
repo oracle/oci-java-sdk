@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.capacitymanagement.model;
 
-/** The name of the OCI service in consideration. For example, Compute, Exadata, and so on. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
-public enum Namespace implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+public enum Namespace {
     Compute("COMPUTE"),
 
     /**

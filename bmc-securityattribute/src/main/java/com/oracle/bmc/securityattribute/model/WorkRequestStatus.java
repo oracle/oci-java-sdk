@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.securityattribute.model;
 
-/** The current status of the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
-public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current status of the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+public enum WorkRequestStatus {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

@@ -6,25 +6,33 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RegisterLookupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use RegisterLookupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/RegisterLookupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RegisterLookupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
+    /**
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
+     */
     private Type type;
 
-    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
+     **/
+    public enum Type {
         Lookup("Lookup"),
         Dictionary("Dictionary"),
         Module("Module"),
@@ -58,92 +66,120 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /** The lookup type. Valid values are Lookup, Dictionary or Module. */
+    /**
+     * The lookup type.  Valid values are Lookup, Dictionary or Module.
+     */
     public Type getType() {
         return type;
     }
-    /** file containing data for lookup creation */
+    /**
+     * file containing data for lookup creation
+     */
     private java.io.InputStream registerLookupContentFileBody;
 
-    /** file containing data for lookup creation */
+    /**
+     * file containing data for lookup creation
+     */
     public java.io.InputStream getRegisterLookupContentFileBody() {
         return registerLookupContentFileBody;
     }
     /**
-     * A filter to return only log analytics entities whose name matches the entire name given. The
-     * match is case-insensitive.
+     * A filter to return only log analytics entities whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
      */
     private String name;
 
     /**
-     * A filter to return only log analytics entities whose name matches the entire name given. The
-     * match is case-insensitive.
+     * A filter to return only log analytics entities whose name matches the entire name given. The match
+     * is case-insensitive.
+     *
      */
     public String getName() {
         return name;
     }
-    /** The description for a created lookup. */
+    /**
+     * The description for a created lookup.
+     *
+     */
     private String description;
 
-    /** The description for a created lookup. */
+    /**
+     * The description for a created lookup.
+     *
+     */
     public String getDescription() {
         return description;
     }
-    /** The character encoding of the uploaded file. */
+    /**
+     * The character encoding of the uploaded file.
+     */
     private String charEncoding;
 
-    /** The character encoding of the uploaded file. */
+    /**
+     * The character encoding of the uploaded file.
+     */
     public String getCharEncoding() {
         return charEncoding;
     }
-    /** A flag indicating whether or not the new lookup should be hidden. */
+    /**
+     * A flag indicating whether or not the new lookup should be hidden.
+     *
+     */
     private Boolean isHidden;
 
-    /** A flag indicating whether or not the new lookup should be hidden. */
+    /**
+     * A flag indicating whether or not the new lookup should be hidden.
+     *
+     */
     public Boolean getIsHidden() {
         return isHidden;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method,
-     * path, and headers before the request body is sent. If no error results from such
-     * verification, the server will send a 100 (Continue) interim response to indicate readiness
-     * for the request body. The only allowed value for this parameter is "100-Continue"
-     * (case-insensitive).
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
      */
     private String expect;
 
     /**
-     * A value of {@code 100-continue} requests preliminary verification of the request method,
-     * path, and headers before the request body is sent. If no error results from such
-     * verification, the server will send a 100 (Continue) interim response to indicate readiness
-     * for the request body. The only allowed value for this parameter is "100-Continue"
-     * (case-insensitive).
+     * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+     * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+     * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+     *
      */
     public String getExpect() {
         return expect;
@@ -151,7 +187,6 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -168,10 +203,14 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RegisterLookupRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -185,12 +224,13 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The lookup type. Valid values are Lookup, Dictionary or Module. */
+        /**
+         * The lookup type.  Valid values are Lookup, Dictionary or Module.
+         */
         private Type type = null;
 
         /**
-         * The lookup type. Valid values are Lookup, Dictionary or Module.
-         *
+         * The lookup type.  Valid values are Lookup, Dictionary or Module.
          * @param type the value to set
          * @return this builder instance
          */
@@ -199,12 +239,13 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** file containing data for lookup creation */
+        /**
+         * file containing data for lookup creation
+         */
         private java.io.InputStream registerLookupContentFileBody = null;
 
         /**
          * file containing data for lookup creation
-         *
          * @param registerLookupContentFileBody the value to set
          * @return this builder instance
          */
@@ -215,14 +256,15 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only log analytics entities whose name matches the entire name given.
-         * The match is case-insensitive.
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
+         *
          */
         private String name = null;
 
         /**
-         * A filter to return only log analytics entities whose name matches the entire name given.
-         * The match is case-insensitive.
+         * A filter to return only log analytics entities whose name matches the entire name given. The match
+         * is case-insensitive.
          *
          * @param name the value to set
          * @return this builder instance
@@ -232,7 +274,10 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The description for a created lookup. */
+        /**
+         * The description for a created lookup.
+         *
+         */
         private String description = null;
 
         /**
@@ -246,12 +291,13 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The character encoding of the uploaded file. */
+        /**
+         * The character encoding of the uploaded file.
+         */
         private String charEncoding = null;
 
         /**
          * The character encoding of the uploaded file.
-         *
          * @param charEncoding the value to set
          * @return this builder instance
          */
@@ -260,7 +306,10 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A flag indicating whether or not the new lookup should be hidden. */
+        /**
+         * A flag indicating whether or not the new lookup should be hidden.
+         *
+         */
         private Boolean isHidden = null;
 
         /**
@@ -276,19 +325,20 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -298,12 +348,13 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -313,20 +364,17 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method,
-         * path, and headers before the request body is sent. If no error results from such
-         * verification, the server will send a 100 (Continue) interim response to indicate
-         * readiness for the request body. The only allowed value for this parameter is
-         * "100-Continue" (case-insensitive).
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
+         *
          */
         private String expect = null;
 
         /**
-         * A value of {@code 100-continue} requests preliminary verification of the request method,
-         * path, and headers before the request body is sent. If no error results from such
-         * verification, the server will send a 100 (Continue) interim response to indicate
-         * readiness for the request body. The only allowed value for this parameter is
-         * "100-Continue" (case-insensitive).
+         * A value of {@code 100-continue} requests preliminary verification of the request method, path, and headers before the request body is sent.
+         * If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body.
+         * The only allowed value for this parameter is "100-Continue" (case-insensitive).
          *
          * @param expect the value to set
          * @return this builder instance
@@ -338,19 +386,18 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -362,7 +409,6 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RegisterLookupRequest o) {
@@ -384,11 +430,10 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of RegisterLookupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RegisterLookupRequest
          */
@@ -401,7 +446,6 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -414,8 +458,7 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of RegisterLookupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RegisterLookupRequest
@@ -433,14 +476,12 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.opcRequestId = opcRequestId;
             request.expect = expect;
             return request;
-            // new RegisterLookupRequest(namespaceName, type, registerLookupContentFileBody, name,
-            // description, charEncoding, isHidden, opcRetryToken, opcRequestId, expect);
+            // new RegisterLookupRequest(namespaceName, type, registerLookupContentFileBody, name, description, charEncoding, isHidden, opcRetryToken, opcRequestId, expect);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -459,7 +500,6 @@ public class RegisterLookupRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

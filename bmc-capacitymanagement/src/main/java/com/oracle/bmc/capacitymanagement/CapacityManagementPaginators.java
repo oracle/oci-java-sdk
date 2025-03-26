@@ -9,31 +9,23 @@ import com.oracle.bmc.capacitymanagement.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of CapacityManagement where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of CapacityManagement where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class CapacityManagementPaginators {
     private final CapacityManagement client;
 
@@ -42,13 +34,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInternalNamespaceOccOverviews operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInternalNamespaceOccOverviews operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInternalNamespaceOccOverviewsResponse>
             listInternalNamespaceOccOverviewsResponseIterator(
@@ -101,23 +91,20 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects contained in responses
-     * from the listInternalNamespaceOccOverviews operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses from the listInternalNamespaceOccOverviews operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
             listInternalNamespaceOccOverviewsRecordIterator(
                     final ListInternalNamespaceOccOverviewsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListInternalNamespaceOccOverviewsRequest.Builder,
-                ListInternalNamespaceOccOverviewsRequest,
-                ListInternalNamespaceOccOverviewsResponse,
+                ListInternalNamespaceOccOverviewsRequest, ListInternalNamespaceOccOverviewsResponse,
                 com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>(
                 new java.util.function.Supplier<
                         ListInternalNamespaceOccOverviewsRequest.Builder>() {
@@ -174,13 +161,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInternalOccHandoverResourceBlockDetails operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInternalOccHandoverResourceBlockDetails operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInternalOccHandoverResourceBlockDetailsResponse>
             listInternalOccHandoverResourceBlockDetailsResponseIterator(
@@ -236,15 +221,13 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
-     * contained in responses from the listInternalOccHandoverResourceBlockDetails operation. This
-     * iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
+     * contained in responses from the listInternalOccHandoverResourceBlockDetails operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary>
             listInternalOccHandoverResourceBlockDetailsRecordIterator(
@@ -314,13 +297,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInternalOccHandoverResourceBlocks operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInternalOccHandoverResourceBlocks operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInternalOccHandoverResourceBlocksResponse>
             listInternalOccHandoverResourceBlocksResponseIterator(
@@ -373,15 +354,13 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects contained in
-     * responses from the listInternalOccHandoverResourceBlocks operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
+     * contained in responses from the listInternalOccHandoverResourceBlocks operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary>
             listInternalOccHandoverResourceBlocksRecordIterator(
@@ -448,19 +427,16 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccAvailabilities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccAvailabilities operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccAvailabilitiesResponse> listOccAvailabilitiesResponseIterator(
             final ListOccAvailabilitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOccAvailabilitiesRequest.Builder,
-                ListOccAvailabilitiesRequest,
+                ListOccAvailabilitiesRequest.Builder, ListOccAvailabilitiesRequest,
                 ListOccAvailabilitiesResponse>(
                 new java.util.function.Supplier<ListOccAvailabilitiesRequest.Builder>() {
                     @Override
@@ -503,21 +479,18 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary} objects contained in
-     * responses from the listOccAvailabilities operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary} objects
+     * contained in responses from the listOccAvailabilities operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary>
             listOccAvailabilitiesRecordIterator(final ListOccAvailabilitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccAvailabilitiesRequest.Builder,
-                ListOccAvailabilitiesRequest,
+                ListOccAvailabilitiesRequest.Builder, ListOccAvailabilitiesRequest,
                 ListOccAvailabilitiesResponse,
                 com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary>(
                 new java.util.function.Supplier<ListOccAvailabilitiesRequest.Builder>() {
@@ -572,20 +545,17 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccAvailabilityCatalogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccAvailabilityCatalogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccAvailabilityCatalogsResponse>
             listOccAvailabilityCatalogsResponseIterator(
                     final ListOccAvailabilityCatalogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOccAvailabilityCatalogsRequest.Builder,
-                ListOccAvailabilityCatalogsRequest,
+                ListOccAvailabilityCatalogsRequest.Builder, ListOccAvailabilityCatalogsRequest,
                 ListOccAvailabilityCatalogsResponse>(
                 new java.util.function.Supplier<ListOccAvailabilityCatalogsRequest.Builder>() {
                     @Override
@@ -628,22 +598,19 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects contained in
-     * responses from the listOccAvailabilityCatalogs operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects
+     * contained in responses from the listOccAvailabilityCatalogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary>
             listOccAvailabilityCatalogsRecordIterator(
                     final ListOccAvailabilityCatalogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccAvailabilityCatalogsRequest.Builder,
-                ListOccAvailabilityCatalogsRequest,
+                ListOccAvailabilityCatalogsRequest.Builder, ListOccAvailabilityCatalogsRequest,
                 ListOccAvailabilityCatalogsResponse,
                 com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary>(
                 new java.util.function.Supplier<ListOccAvailabilityCatalogsRequest.Builder>() {
@@ -700,13 +667,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccAvailabilityCatalogsInternal operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccAvailabilityCatalogsInternal operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccAvailabilityCatalogsInternalResponse>
             listOccAvailabilityCatalogsInternalResponseIterator(
@@ -759,15 +724,13 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects contained in
-     * responses from the listOccAvailabilityCatalogsInternal operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects
+     * contained in responses from the listOccAvailabilityCatalogsInternal operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalogSummary>
             listOccAvailabilityCatalogsInternalRecordIterator(
@@ -834,19 +797,16 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccCapacityRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccCapacityRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccCapacityRequestsResponse> listOccCapacityRequestsResponseIterator(
             final ListOccCapacityRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOccCapacityRequestsRequest.Builder,
-                ListOccCapacityRequestsRequest,
+                ListOccCapacityRequestsRequest.Builder, ListOccCapacityRequestsRequest,
                 ListOccCapacityRequestsResponse>(
                 new java.util.function.Supplier<ListOccCapacityRequestsRequest.Builder>() {
                     @Override
@@ -889,21 +849,18 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects contained in
-     * responses from the listOccCapacityRequests operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects
+     * contained in responses from the listOccCapacityRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary>
             listOccCapacityRequestsRecordIterator(final ListOccCapacityRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccCapacityRequestsRequest.Builder,
-                ListOccCapacityRequestsRequest,
+                ListOccCapacityRequestsRequest.Builder, ListOccCapacityRequestsRequest,
                 ListOccCapacityRequestsResponse,
                 com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary>(
                 new java.util.function.Supplier<ListOccCapacityRequestsRequest.Builder>() {
@@ -960,21 +917,18 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccCapacityRequestsInternal operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccCapacityRequestsInternal operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccCapacityRequestsInternalResponse>
             listOccCapacityRequestsInternalResponseIterator(
                     final ListOccCapacityRequestsInternalRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListOccCapacityRequestsInternalRequest.Builder,
-                ListOccCapacityRequestsInternalRequest,
-                ListOccCapacityRequestsInternalResponse>(
+                ListOccCapacityRequestsInternalRequest, ListOccCapacityRequestsInternalResponse>(
                 new java.util.function.Supplier<ListOccCapacityRequestsInternalRequest.Builder>() {
                     @Override
                     public ListOccCapacityRequestsInternalRequest.Builder get() {
@@ -1017,23 +971,20 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects contained in
-     * responses from the listOccCapacityRequestsInternal operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects
+     * contained in responses from the listOccCapacityRequestsInternal operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary>
             listOccCapacityRequestsInternalRecordIterator(
                     final ListOccCapacityRequestsInternalRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListOccCapacityRequestsInternalRequest.Builder,
-                ListOccCapacityRequestsInternalRequest,
-                ListOccCapacityRequestsInternalResponse,
+                ListOccCapacityRequestsInternalRequest, ListOccCapacityRequestsInternalResponse,
                 com.oracle.bmc.capacitymanagement.model.OccCapacityRequestSummary>(
                 new java.util.function.Supplier<ListOccCapacityRequestsInternalRequest.Builder>() {
                     @Override
@@ -1090,19 +1041,16 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccCustomerGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccCustomerGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccCustomerGroupsResponse> listOccCustomerGroupsResponseIterator(
             final ListOccCustomerGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOccCustomerGroupsRequest.Builder,
-                ListOccCustomerGroupsRequest,
+                ListOccCustomerGroupsRequest.Builder, ListOccCustomerGroupsRequest,
                 ListOccCustomerGroupsResponse>(
                 new java.util.function.Supplier<ListOccCustomerGroupsRequest.Builder>() {
                     @Override
@@ -1145,21 +1093,18 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary} objects contained in
-     * responses from the listOccCustomerGroups operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary} objects
+     * contained in responses from the listOccCustomerGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary>
             listOccCustomerGroupsRecordIterator(final ListOccCustomerGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccCustomerGroupsRequest.Builder,
-                ListOccCustomerGroupsRequest,
+                ListOccCustomerGroupsRequest.Builder, ListOccCustomerGroupsRequest,
                 ListOccCustomerGroupsResponse,
                 com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary>(
                 new java.util.function.Supplier<ListOccCustomerGroupsRequest.Builder>() {
@@ -1215,13 +1160,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccHandoverResourceBlockDetails operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccHandoverResourceBlockDetails operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccHandoverResourceBlockDetailsResponse>
             listOccHandoverResourceBlockDetailsResponseIterator(
@@ -1274,15 +1217,13 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
-     * contained in responses from the listOccHandoverResourceBlockDetails operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
+     * contained in responses from the listOccHandoverResourceBlockDetails operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockDetailSummary>
             listOccHandoverResourceBlockDetailsRecordIterator(
@@ -1349,20 +1290,17 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccHandoverResourceBlocks operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccHandoverResourceBlocks operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccHandoverResourceBlocksResponse>
             listOccHandoverResourceBlocksResponseIterator(
                     final ListOccHandoverResourceBlocksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOccHandoverResourceBlocksRequest.Builder,
-                ListOccHandoverResourceBlocksRequest,
+                ListOccHandoverResourceBlocksRequest.Builder, ListOccHandoverResourceBlocksRequest,
                 ListOccHandoverResourceBlocksResponse>(
                 new java.util.function.Supplier<ListOccHandoverResourceBlocksRequest.Builder>() {
                     @Override
@@ -1406,22 +1344,19 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects contained in
-     * responses from the listOccHandoverResourceBlocks operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
+     * contained in responses from the listOccHandoverResourceBlocks operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary>
             listOccHandoverResourceBlocksRecordIterator(
                     final ListOccHandoverResourceBlocksRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccHandoverResourceBlocksRequest.Builder,
-                ListOccHandoverResourceBlocksRequest,
+                ListOccHandoverResourceBlocksRequest.Builder, ListOccHandoverResourceBlocksRequest,
                 ListOccHandoverResourceBlocksResponse,
                 com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockSummary>(
                 new java.util.function.Supplier<ListOccHandoverResourceBlocksRequest.Builder>() {
@@ -1479,12 +1414,11 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOccOverviews operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listOccOverviews operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOccOverviewsResponse> listOccOverviewsResponseIterator(
             final ListOccOverviewsRequest request) {
@@ -1530,22 +1464,18 @@ public class CapacityManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects contained in responses
-     * from the listOccOverviews operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses from the listOccOverviews operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
             listOccOverviewsRecordIterator(final ListOccOverviewsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOccOverviewsRequest.Builder,
-                ListOccOverviewsRequest,
-                ListOccOverviewsResponse,
+                ListOccOverviewsRequest.Builder, ListOccOverviewsRequest, ListOccOverviewsResponse,
                 com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>(
                 new java.util.function.Supplier<ListOccOverviewsRequest.Builder>() {
                     @Override

@@ -6,19 +6,20 @@ package com.oracle.bmc.loadbalancer.responses;
 
 import com.oracle.bmc.loadbalancer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -27,14 +28,15 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} instances. */
+    /**
+     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol instances.
+     */
     private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> items;
 
     /**
-     * A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} instances.
-     *
+     * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> getItems() {
@@ -63,7 +66,7 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private ListProtocolsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> items) {
@@ -73,35 +76,33 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListProtocolsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -112,14 +113,15 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,12 +131,13 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} instances. */
+        /**
+         * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol instances.
+         */
         private java.util.List<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol> items;
 
         /**
-         * A list of {@code com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} instances.
-         *
+         * A list of com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol instances.
          * @param items the value to set
          * @return this builder
          */
@@ -146,10 +149,8 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListProtocolsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +163,8 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListProtocolsResponse build() {
             return new ListProtocolsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -174,7 +173,6 @@ public class ListProtocolsResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

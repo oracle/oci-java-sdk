@@ -6,9 +6,13 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-/** Delay strategy that waits a constant amount of time between poll attempts. */
+/**
+ * Delay strategy that waits a constant amount of time between poll attempts.
+ */
 public class FixedTimeDelayStrategy implements DelayStrategy {
-    /** The amount of time to wait (in millis) between each condition check. */
+    /**
+     * The amount of time to wait (in millis) between each condition check.
+     */
     private final long timeBetweenAttempsInMillis;
 
     @Override

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.aianomalydetection.model;
 
-/** Possible data sources */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
-public enum InfluxVersion implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible data sources
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+public enum InfluxVersion {
     V18("V_1_8"),
     V20("V_2_0"),
 

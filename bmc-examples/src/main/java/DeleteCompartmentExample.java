@@ -30,7 +30,7 @@ import java.util.concurrent.TimeUnit;
 import shared.ExampleCompartmentHelper;
 
 public class DeleteCompartmentExample {
-    static final RetryPolicy RETRY_POLICY =
+    final static RetryPolicy RETRY_POLICY =
             new RetryPolicy()
                     .retryOn(new RetryPredicate())
                     .withDelay(1, TimeUnit.SECONDS)
@@ -41,10 +41,8 @@ public class DeleteCompartmentExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -53,7 +51,7 @@ public class DeleteCompartmentExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        final Identity identityClient = IdentityClient.builder().build(provider);
+        final Identity identityClient = new IdentityClient(provider);
         identityClient.setRegion(Region.US_ASHBURN_1);
 
         // Create a compartment.
@@ -67,8 +65,7 @@ public class DeleteCompartmentExample {
         final DeleteCompartmentRequest deleteCompartmentRequest =
                 DeleteCompartmentRequest.builder().compartmentId(compartment.getId()).build();
 
-        // If we create/update and then try to use compartments straight away, sometimes we can get
-        // a 404.
+        // If we create/update and then try to use compartments straight away, sometimes we can get a 404.
         // To try and avoid this, this example uses retries with a short delay.
         DeleteCompartmentResponse deleteCompartmentResponse =
                 Failsafe.with(RETRY_POLICY)

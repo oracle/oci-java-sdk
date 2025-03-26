@@ -5,23 +5,21 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Contains resource usage summary <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Contains resource usage summary
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceUsageSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResourceUsageSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ResourceUsageSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResourceUsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exadataInsightId",
@@ -53,40 +51,41 @@ public final class ResourceUsageSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata insight.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
         private String exadataInsightId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata insight.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
          * @param exadataInsightId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInsightId(String exadataInsightId) {
             this.exadataInsightId = exadataInsightId;
             this.__explicitlySet__.add("exadataInsightId");
             return this;
         }
-        /** The user-friendly name for the Exadata system. The name does not have to be unique. */
+        /**
+         * The user-friendly name for the Exadata system. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
         private String exadataDisplayName;
 
         /**
          * The user-friendly name for the Exadata system. The name does not have to be unique.
-         *
          * @param exadataDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataDisplayName(String exadataDisplayName) {
             this.exadataDisplayName = exadataDisplayName;
             this.__explicitlySet__.add("exadataDisplayName");
             return this;
         }
-        /** Total amount used of the resource metric type (CPU, STORAGE). */
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
@@ -95,75 +94,75 @@ public final class ResourceUsageSummary
          *
          * @param usage the value to set
          * @return this builder
-         */
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
         /**
-         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
-         * databases.
-         */
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacity")
         private Double capacity;
 
         /**
-         * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
-         * databases.
+         * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
          *
          * @param capacity the value to set
          * @return this builder
-         */
+         **/
         public Builder capacity(Double capacity) {
             this.capacity = capacity;
             this.__explicitlySet__.add("capacity");
             return this;
         }
-        /** Resource utilization in percentage */
+        /**
+         * Resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
         private Double utilizationPercent;
 
         /**
          * Resource utilization in percentage
-         *
          * @param utilizationPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder utilizationPercent(Double utilizationPercent) {
             this.utilizationPercent = utilizationPercent;
             this.__explicitlySet__.add("utilizationPercent");
             return this;
         }
-        /** Change in resource utilization in percentage */
+        /**
+         * Change in resource utilization in percentage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
         private Double usageChangePercent;
 
         /**
          * Change in resource utilization in percentage
-         *
          * @param usageChangePercent the value to set
          * @return this builder
-         */
+         **/
         public Builder usageChangePercent(Double usageChangePercent) {
             this.usageChangePercent = usageChangePercent;
             this.__explicitlySet__.add("usageChangePercent");
             return this;
         }
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
-         * applies to CPU and does not not apply for Autonomous Databases.
-         */
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
         private Double totalHostCapacity;
 
         /**
-         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
-         * applies to CPU and does not not apply for Autonomous Databases.
+         * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
          *
          * @param totalHostCapacity the value to set
          * @return this builder
-         */
+         **/
         public Builder totalHostCapacity(Double totalHostCapacity) {
             this.totalHostCapacity = totalHostCapacity;
             this.__explicitlySet__.add("totalHostCapacity");
@@ -216,7 +215,9 @@ public final class ResourceUsageSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -226,36 +227,37 @@ public final class ResourceUsageSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata insight.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInsightId")
     private final String exadataInsightId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata insight.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
      * @return the value
-     */
+     **/
     public String getExadataInsightId() {
         return exadataInsightId;
     }
 
-    /** The user-friendly name for the Exadata system. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the Exadata system. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataDisplayName")
     private final String exadataDisplayName;
 
     /**
      * The user-friendly name for the Exadata system. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getExadataDisplayName() {
         return exadataDisplayName;
     }
 
-    /** Total amount used of the resource metric type (CPU, STORAGE). */
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
@@ -263,67 +265,67 @@ public final class ResourceUsageSummary
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      * @return the value
-     */
+     **/
     public Double getUsage() {
         return usage;
     }
 
     /**
-     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
-     * databases.
-     */
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacity")
     private final Double capacity;
 
     /**
-     * The maximum allocated amount of the resource metric type (CPU, STORAGE) for a set of
-     * databases.
+     * The maximum allocated amount of the resource metric type  (CPU, STORAGE) for a set of databases.
      *
      * @return the value
-     */
+     **/
     public Double getCapacity() {
         return capacity;
     }
 
-    /** Resource utilization in percentage */
+    /**
+     * Resource utilization in percentage
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilizationPercent")
     private final Double utilizationPercent;
 
     /**
      * Resource utilization in percentage
-     *
      * @return the value
-     */
+     **/
     public Double getUtilizationPercent() {
         return utilizationPercent;
     }
 
-    /** Change in resource utilization in percentage */
+    /**
+     * Change in resource utilization in percentage
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageChangePercent")
     private final Double usageChangePercent;
 
     /**
      * Change in resource utilization in percentage
-     *
      * @return the value
-     */
+     **/
     public Double getUsageChangePercent() {
         return usageChangePercent;
     }
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
-     * applies to CPU and does not not apply for Autonomous Databases.
-     */
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalHostCapacity")
     private final Double totalHostCapacity;
 
     /**
-     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only
-     * applies to CPU and does not not apply for Autonomous Databases.
+     * The maximum host CPUs (cores x threads/core) on the underlying infrastructure. This only applies to CPU and does not not apply for Autonomous Databases.
      *
      * @return the value
-     */
+     **/
     public Double getTotalHostCapacity() {
         return totalHostCapacity;
     }
@@ -335,7 +337,6 @@ public final class ResourceUsageSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

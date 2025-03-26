@@ -5,21 +5,19 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The usage store result. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * The usage store result.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = UsageSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UsageSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UsageSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
@@ -122,331 +120,353 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The tenancy OCID. */
+        /**
+         * The tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * The tenancy OCID.
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** The tenancy name. */
+        /**
+         * The tenancy name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
         private String tenantName;
 
         /**
          * The tenancy name.
-         *
          * @param tenantName the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantName(String tenantName) {
             this.tenantName = tenantName;
             this.__explicitlySet__.add("tenantName");
             return this;
         }
-        /** The compartment OCID. */
+        /**
+         * The compartment OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The compartment path, starting from root. */
+        /**
+         * The compartment path, starting from root.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentPath")
         private String compartmentPath;
 
         /**
          * The compartment path, starting from root.
-         *
          * @param compartmentPath the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentPath(String compartmentPath) {
             this.compartmentPath = compartmentPath;
             this.__explicitlySet__.add("compartmentPath");
             return this;
         }
-        /** The compartment name. */
+        /**
+         * The compartment name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
         private String compartmentName;
 
         /**
          * The compartment name.
-         *
          * @param compartmentName the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentName(String compartmentName) {
             this.compartmentName = compartmentName;
             this.__explicitlySet__.add("compartmentName");
             return this;
         }
-        /** The service name that is incurring the cost. */
+        /**
+         * The service name that is incurring the cost.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("service")
         private String service;
 
         /**
          * The service name that is incurring the cost.
-         *
          * @param service the value to set
          * @return this builder
-         */
+         **/
         public Builder service(String service) {
             this.service = service;
             this.__explicitlySet__.add("service");
             return this;
         }
-        /** The resource name that is incurring the cost. */
+        /**
+         * The resource name that is incurring the cost.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The resource name that is incurring the cost.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The resource OCID that is incurring the cost. */
+        /**
+         * The resource OCID that is incurring the cost.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
          * The resource OCID that is incurring the cost.
-         *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** The region of the usage. */
+        /**
+         * The region of the usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * The region of the usage.
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** The availability domain of the usage. */
+        /**
+         * The availability domain of the usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ad")
         private String ad;
 
         /**
          * The availability domain of the usage.
-         *
          * @param ad the value to set
          * @return this builder
-         */
+         **/
         public Builder ad(String ad) {
             this.ad = ad;
             this.__explicitlySet__.add("ad");
             return this;
         }
-        /** The resource size being metered. */
+        /**
+         * The resource size being metered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private java.math.BigDecimal weight;
 
         /**
          * The resource size being metered.
-         *
          * @param weight the value to set
          * @return this builder
-         */
+         **/
         public Builder weight(java.math.BigDecimal weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
             return this;
         }
-        /** The resource shape. */
+        /**
+         * The resource shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * The resource shape.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The SKU part number. */
+        /**
+         * The SKU part number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
         private String skuPartNumber;
 
         /**
          * The SKU part number.
-         *
          * @param skuPartNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder skuPartNumber(String skuPartNumber) {
             this.skuPartNumber = skuPartNumber;
             this.__explicitlySet__.add("skuPartNumber");
             return this;
         }
-        /** The SKU friendly name. */
+        /**
+         * The SKU friendly name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuName")
         private String skuName;
 
         /**
          * The SKU friendly name.
-         *
          * @param skuName the value to set
          * @return this builder
-         */
+         **/
         public Builder skuName(String skuName) {
             this.skuName = skuName;
             this.__explicitlySet__.add("skuName");
             return this;
         }
-        /** The usage unit. */
+        /**
+         * The usage unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * The usage unit.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** The discretionary discount applied to the SKU. */
+        /**
+         * The discretionary discount applied to the SKU.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discount")
         private java.math.BigDecimal discount;
 
         /**
          * The discretionary discount applied to the SKU.
-         *
          * @param discount the value to set
          * @return this builder
-         */
+         **/
         public Builder discount(java.math.BigDecimal discount) {
             this.discount = discount;
             this.__explicitlySet__.add("discount");
             return this;
         }
-        /** The SKU list rate (not discount). */
+        /**
+         * The SKU list rate (not discount).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listRate")
         private java.math.BigDecimal listRate;
 
         /**
          * The SKU list rate (not discount).
-         *
          * @param listRate the value to set
          * @return this builder
-         */
+         **/
         public Builder listRate(java.math.BigDecimal listRate) {
             this.listRate = listRate;
             this.__explicitlySet__.add("listRate");
             return this;
         }
-        /** Platform for the cost. */
+        /**
+         * Platform for the cost.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platform")
         private String platform;
 
         /**
          * Platform for the cost.
-         *
          * @param platform the value to set
          * @return this builder
-         */
+         **/
         public Builder platform(String platform) {
             this.platform = platform;
             this.__explicitlySet__.add("platform");
             return this;
         }
-        /** The usage start time. */
+        /**
+         * The usage start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
         /**
          * The usage start time.
-         *
          * @param timeUsageStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-        /** The usage end time. */
+        /**
+         * The usage end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
         /**
          * The usage end time.
-         *
          * @param timeUsageEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
             return this;
         }
-        /** The computed cost. */
+        /**
+         * The computed cost.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computedAmount")
         private java.math.BigDecimal computedAmount;
 
         /**
          * The computed cost.
-         *
          * @param computedAmount the value to set
          * @return this builder
-         */
+         **/
         public Builder computedAmount(java.math.BigDecimal computedAmount) {
             this.computedAmount = computedAmount;
             this.__explicitlySet__.add("computedAmount");
             return this;
         }
-        /** The usage number. */
+        /**
+         * The usage number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computedQuantity")
         private java.math.BigDecimal computedQuantity;
 
         /**
          * The usage number.
-         *
          * @param computedQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder computedQuantity(java.math.BigDecimal computedQuantity) {
             this.computedQuantity = computedQuantity;
             this.__explicitlySet__.add("computedQuantity");
@@ -454,140 +474,143 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributedCost")
         private String attributedCost;
 
         /**
          * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
-         *
          * @param attributedCost the value to set
          * @return this builder
-         */
+         **/
         public Builder attributedCost(String attributedCost) {
             this.attributedCost = attributedCost;
             this.__explicitlySet__.add("attributedCost");
             return this;
         }
         /**
-         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of
-         * 0.
-         */
+         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributedUsage")
         private String attributedUsage;
 
         /**
-         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of
-         * 0.
-         *
+         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
          * @param attributedUsage the value to set
          * @return this builder
-         */
+         **/
         public Builder attributedUsage(String attributedUsage) {
             this.attributedUsage = attributedUsage;
             this.__explicitlySet__.add("attributedUsage");
             return this;
         }
-        /** The SPM OverageFlag. */
+        /**
+         * The SPM OverageFlag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overagesFlag")
         private String overagesFlag;
 
         /**
          * The SPM OverageFlag.
-         *
          * @param overagesFlag the value to set
          * @return this builder
-         */
+         **/
         public Builder overagesFlag(String overagesFlag) {
             this.overagesFlag = overagesFlag;
             this.__explicitlySet__.add("overagesFlag");
             return this;
         }
-        /** The price per unit. */
+        /**
+         * The price per unit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitPrice")
         private java.math.BigDecimal unitPrice;
 
         /**
          * The price per unit.
-         *
          * @param unitPrice the value to set
          * @return this builder
-         */
+         **/
         public Builder unitPrice(java.math.BigDecimal unitPrice) {
             this.unitPrice = unitPrice;
             this.__explicitlySet__.add("unitPrice");
             return this;
         }
-        /** The price currency. */
+        /**
+         * The price currency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currency")
         private String currency;
 
         /**
          * The price currency.
-         *
          * @param currency the value to set
          * @return this builder
-         */
+         **/
         public Builder currency(String currency) {
             this.currency = currency;
             this.__explicitlySet__.add("currency");
             return this;
         }
-        /** The subscription ID. */
+        /**
+         * The subscription ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
          * The subscription ID.
-         *
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
-        /** The overage usage. */
+        /**
+         * The overage usage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overage")
         private String overage;
 
         /**
          * The overage usage.
-         *
          * @param overage the value to set
          * @return this builder
-         */
+         **/
         public Builder overage(String overage) {
             this.overage = overage;
             this.__explicitlySet__.add("overage");
             return this;
         }
-        /** The forecasted data. */
+        /**
+         * The forecasted data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
         private Boolean isForecast;
 
         /**
          * The forecasted data.
-         *
          * @param isForecast the value to set
          * @return this builder
-         */
+         **/
         public Builder isForecast(Boolean isForecast) {
             this.isForecast = isForecast;
             this.__explicitlySet__.add("isForecast");
             return this;
         }
-        /** For grouping, a tag definition. For filtering, a definition and key. */
+        /**
+         * For grouping, a tag definition. For filtering, a definition and key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tag> tags;
 
         /**
          * For grouping, a tag definition. For filtering, a definition and key.
-         *
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tag> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
@@ -736,7 +759,9 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -745,407 +770,436 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The tenancy OCID. */
+    /**
+     * The tenancy OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * The tenancy OCID.
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** The tenancy name. */
+    /**
+     * The tenancy name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantName")
     private final String tenantName;
 
     /**
      * The tenancy name.
-     *
      * @return the value
-     */
+     **/
     public String getTenantName() {
         return tenantName;
     }
 
-    /** The compartment OCID. */
+    /**
+     * The compartment OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The compartment OCID.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The compartment path, starting from root. */
+    /**
+     * The compartment path, starting from root.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentPath")
     private final String compartmentPath;
 
     /**
      * The compartment path, starting from root.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentPath() {
         return compartmentPath;
     }
 
-    /** The compartment name. */
+    /**
+     * The compartment name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentName")
     private final String compartmentName;
 
     /**
      * The compartment name.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentName() {
         return compartmentName;
     }
 
-    /** The service name that is incurring the cost. */
+    /**
+     * The service name that is incurring the cost.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("service")
     private final String service;
 
     /**
      * The service name that is incurring the cost.
-     *
      * @return the value
-     */
+     **/
     public String getService() {
         return service;
     }
 
-    /** The resource name that is incurring the cost. */
+    /**
+     * The resource name that is incurring the cost.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource name that is incurring the cost.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The resource OCID that is incurring the cost. */
+    /**
+     * The resource OCID that is incurring the cost.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
      * The resource OCID that is incurring the cost.
-     *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** The region of the usage. */
+    /**
+     * The region of the usage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * The region of the usage.
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** The availability domain of the usage. */
+    /**
+     * The availability domain of the usage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ad")
     private final String ad;
 
     /**
      * The availability domain of the usage.
-     *
      * @return the value
-     */
+     **/
     public String getAd() {
         return ad;
     }
 
-    /** The resource size being metered. */
+    /**
+     * The resource size being metered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final java.math.BigDecimal weight;
 
     /**
      * The resource size being metered.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getWeight() {
         return weight;
     }
 
-    /** The resource shape. */
+    /**
+     * The resource shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * The resource shape.
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** The SKU part number. */
+    /**
+     * The SKU part number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuPartNumber")
     private final String skuPartNumber;
 
     /**
      * The SKU part number.
-     *
      * @return the value
-     */
+     **/
     public String getSkuPartNumber() {
         return skuPartNumber;
     }
 
-    /** The SKU friendly name. */
+    /**
+     * The SKU friendly name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuName")
     private final String skuName;
 
     /**
      * The SKU friendly name.
-     *
      * @return the value
-     */
+     **/
     public String getSkuName() {
         return skuName;
     }
 
-    /** The usage unit. */
+    /**
+     * The usage unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * The usage unit.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
 
-    /** The discretionary discount applied to the SKU. */
+    /**
+     * The discretionary discount applied to the SKU.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discount")
     private final java.math.BigDecimal discount;
 
     /**
      * The discretionary discount applied to the SKU.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getDiscount() {
         return discount;
     }
 
-    /** The SKU list rate (not discount). */
+    /**
+     * The SKU list rate (not discount).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listRate")
     private final java.math.BigDecimal listRate;
 
     /**
      * The SKU list rate (not discount).
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getListRate() {
         return listRate;
     }
 
-    /** Platform for the cost. */
+    /**
+     * Platform for the cost.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platform")
     private final String platform;
 
     /**
      * Platform for the cost.
-     *
      * @return the value
-     */
+     **/
     public String getPlatform() {
         return platform;
     }
 
-    /** The usage start time. */
+    /**
+     * The usage start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
     /**
      * The usage start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
 
-    /** The usage end time. */
+    /**
+     * The usage end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
     /**
      * The usage end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }
 
-    /** The computed cost. */
+    /**
+     * The computed cost.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedAmount")
     private final java.math.BigDecimal computedAmount;
 
     /**
      * The computed cost.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getComputedAmount() {
         return computedAmount;
     }
 
-    /** The usage number. */
+    /**
+     * The usage number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computedQuantity")
     private final java.math.BigDecimal computedQuantity;
 
     /**
      * The usage number.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getComputedQuantity() {
         return computedQuantity;
     }
 
-    /** The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0. */
+    /**
+     * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributedCost")
     private final String attributedCost;
 
     /**
      * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
-     *
      * @return the value
-     */
+     **/
     public String getAttributedCost() {
         return attributedCost;
     }
 
     /**
      * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributedUsage")
     private final String attributedUsage;
 
     /**
      * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
-     *
      * @return the value
-     */
+     **/
     public String getAttributedUsage() {
         return attributedUsage;
     }
 
-    /** The SPM OverageFlag. */
+    /**
+     * The SPM OverageFlag.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overagesFlag")
     private final String overagesFlag;
 
     /**
      * The SPM OverageFlag.
-     *
      * @return the value
-     */
+     **/
     public String getOveragesFlag() {
         return overagesFlag;
     }
 
-    /** The price per unit. */
+    /**
+     * The price per unit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitPrice")
     private final java.math.BigDecimal unitPrice;
 
     /**
      * The price per unit.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getUnitPrice() {
         return unitPrice;
     }
 
-    /** The price currency. */
+    /**
+     * The price currency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currency")
     private final String currency;
 
     /**
      * The price currency.
-     *
      * @return the value
-     */
+     **/
     public String getCurrency() {
         return currency;
     }
 
-    /** The subscription ID. */
+    /**
+     * The subscription ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
      * The subscription ID.
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
 
-    /** The overage usage. */
+    /**
+     * The overage usage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overage")
     private final String overage;
 
     /**
      * The overage usage.
-     *
      * @return the value
-     */
+     **/
     public String getOverage() {
         return overage;
     }
 
-    /** The forecasted data. */
+    /**
+     * The forecasted data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForecast")
     private final Boolean isForecast;
 
     /**
      * The forecasted data.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsForecast() {
         return isForecast;
     }
 
-    /** For grouping, a tag definition. For filtering, a definition and key. */
+    /**
+     * For grouping, a tag definition. For filtering, a definition and key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tag> tags;
 
     /**
      * For grouping, a tag definition. For filtering, a definition and key.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Tag> getTags() {
         return tags;
     }
@@ -1157,7 +1211,6 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

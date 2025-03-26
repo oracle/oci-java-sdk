@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Audit Report status */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum AuditReportStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Audit Report status
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum AuditReportStatus {
     Notavailable("NOTAVAILABLE"),
     Available("AVAILABLE"),
     Expired("EXPIRED"),

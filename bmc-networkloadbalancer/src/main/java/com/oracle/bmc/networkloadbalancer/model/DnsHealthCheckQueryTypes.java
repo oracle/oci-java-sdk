@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Query type values for the DNS health check probe. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum DnsHealthCheckQueryTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Query type values for the DNS health check probe.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum DnsHealthCheckQueryTypes {
     A("A"),
     Txt("TXT"),
     Aaaa("AAAA"),

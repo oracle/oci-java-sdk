@@ -13,7 +13,6 @@ import com.oracle.bmc.objectstorage.model.CreateBucketDetails;
 import com.oracle.bmc.objectstorage.requests.CreateBucketRequest;
 import com.oracle.bmc.objectstorage.requests.GetNamespaceRequest;
 import com.oracle.bmc.objectstorage.requests.ListBucketsRequest;
-import com.oracle.bmc.objectstorage.requests.ListBucketsRequest.Builder;
 import com.oracle.bmc.objectstorage.responses.CreateBucketResponse;
 import com.oracle.bmc.objectstorage.responses.GetNamespaceResponse;
 import com.oracle.bmc.objectstorage.responses.ListBucketsResponse;
@@ -29,21 +28,18 @@ public class UseRealmSpecificEndpointsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ObjectStorage client =
-                ObjectStorageClient.builder().region(Region.ME_DUBAI_1).build(provider);
+        ObjectStorage client = new ObjectStorageClient(provider);
+        client.setRegion(Region.ME_DUBAI_1);
 
-        // Set useRealmSpecificEndpointTemplate to true to use an endpoint template defined for a
-        // specific realm
+        // Set useRealmSpecificEndpointTemplate to true to use an endpoint template defined for a specific realm
         client.useRealmSpecificEndpointTemplate(true);
 
         GetNamespaceResponse namespaceResponse =
@@ -65,7 +61,7 @@ public class UseRealmSpecificEndpointsExample {
         System.out.println(
                 "Created bucket with name " + createBucketResponse.getBucket().getName());
 
-        Builder listBucketsBuilder =
+        ListBucketsRequest.Builder listBucketsBuilder =
                 ListBucketsRequest.builder()
                         .namespaceName(namespaceName)
                         .compartmentId(provider.getTenantId());

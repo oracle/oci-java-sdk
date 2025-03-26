@@ -5,21 +5,19 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Pod shape. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * Pod shape.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PodShape.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PodShape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PodShape extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -44,76 +42,81 @@ public final class PodShape extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the identifying shape. */
+        /**
+         * The name of the identifying shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the identifying shape.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A short description of the VM's processor (CPU). */
+        /**
+         * A short description of the VM's processor (CPU).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
         /**
          * A short description of the VM's processor (CPU).
-         *
          * @param processorDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = processorDescription;
             this.__explicitlySet__.add("processorDescription");
             return this;
         }
-        /** Options for OCPU shape. */
+        /**
+         * Options for OCPU shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuOptions")
         private java.util.List<ShapeOcpuOptions> ocpuOptions;
 
         /**
          * Options for OCPU shape.
-         *
          * @param ocpuOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpuOptions(java.util.List<ShapeOcpuOptions> ocpuOptions) {
             this.ocpuOptions = ocpuOptions;
             this.__explicitlySet__.add("ocpuOptions");
             return this;
         }
-        /** ShapeMemoryOptions. */
+        /**
+         * ShapeMemoryOptions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryOptions")
         private java.util.List<ShapeMemoryOptions> memoryOptions;
 
         /**
          * ShapeMemoryOptions.
-         *
          * @param memoryOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryOptions(java.util.List<ShapeMemoryOptions> memoryOptions) {
             this.memoryOptions = memoryOptions;
             this.__explicitlySet__.add("memoryOptions");
             return this;
         }
-        /** ShapeNetworkBandwidthOptions. */
+        /**
+         * ShapeNetworkBandwidthOptions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthOptions")
         private java.util.List<ShapeNetworkBandwidthOptions> networkBandwidthOptions;
 
         /**
          * ShapeNetworkBandwidthOptions.
-         *
          * @param networkBandwidthOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder networkBandwidthOptions(
                 java.util.List<ShapeNetworkBandwidthOptions> networkBandwidthOptions) {
             this.networkBandwidthOptions = networkBandwidthOptions;
@@ -159,7 +162,9 @@ public final class PodShape extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,67 +173,72 @@ public final class PodShape extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The name of the identifying shape. */
+    /**
+     * The name of the identifying shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the identifying shape.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A short description of the VM's processor (CPU). */
+    /**
+     * A short description of the VM's processor (CPU).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
     /**
      * A short description of the VM's processor (CPU).
-     *
      * @return the value
-     */
+     **/
     public String getProcessorDescription() {
         return processorDescription;
     }
 
-    /** Options for OCPU shape. */
+    /**
+     * Options for OCPU shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuOptions")
     private final java.util.List<ShapeOcpuOptions> ocpuOptions;
 
     /**
      * Options for OCPU shape.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ShapeOcpuOptions> getOcpuOptions() {
         return ocpuOptions;
     }
 
-    /** ShapeMemoryOptions. */
+    /**
+     * ShapeMemoryOptions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryOptions")
     private final java.util.List<ShapeMemoryOptions> memoryOptions;
 
     /**
      * ShapeMemoryOptions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ShapeMemoryOptions> getMemoryOptions() {
         return memoryOptions;
     }
 
-    /** ShapeNetworkBandwidthOptions. */
+    /**
+     * ShapeNetworkBandwidthOptions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkBandwidthOptions")
     private final java.util.List<ShapeNetworkBandwidthOptions> networkBandwidthOptions;
 
     /**
      * ShapeNetworkBandwidthOptions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ShapeNetworkBandwidthOptions> getNetworkBandwidthOptions() {
         return networkBandwidthOptions;
     }
@@ -240,7 +250,6 @@ public final class PodShape extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

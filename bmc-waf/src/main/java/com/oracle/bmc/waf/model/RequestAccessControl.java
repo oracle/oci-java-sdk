@@ -6,24 +6,22 @@ package com.oracle.bmc.waf.model;
 
 /**
  * Module that allows inspection of HTTP request properties and to return a defined HTTP response.
- * In this module, rules with the name 'Default Action' are not allowed, since this name is reserved
- * for default action logs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * In this module, rules with the name 'Default Action' are not allowed, since this name is reserved for default action logs.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RequestAccessControl.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RequestAccessControl
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = RequestAccessControl.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RequestAccessControl extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"defaultActionName", "rules"})
     public RequestAccessControl(String defaultActionName, java.util.List<AccessControlRule> rules) {
@@ -35,48 +33,42 @@ public final class RequestAccessControl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * References an default Action to take if no AccessControlRule was matched. Allowed action
-         * types:
+         * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+         * <p>
+         * **ALLOW** continues execution of other modules and their rules.
+         * <p>
+         * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
          *
-         * <p>**ALLOW** continues execution of other modules and their rules.
-         *
-         * <p>**RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns
-         * defined HTTP response.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
         private String defaultActionName;
 
         /**
-         * References an default Action to take if no AccessControlRule was matched. Allowed action
-         * types:
-         *
-         * <p>**ALLOW** continues execution of other modules and their rules.
-         *
-         * <p>**RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns
-         * defined HTTP response.
+         * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+         * <p>
+         * **ALLOW** continues execution of other modules and their rules.
+         * <p>
+         * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
          *
          * @param defaultActionName the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultActionName(String defaultActionName) {
             this.defaultActionName = defaultActionName;
             this.__explicitlySet__.add("defaultActionName");
             return this;
         }
         /**
-         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this
-         * array.
-         */
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rules")
         private java.util.List<AccessControlRule> rules;
 
         /**
-         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this
-         * array.
-         *
+         * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
          * @param rules the value to set
          * @return this builder
-         */
+         **/
         public Builder rules(java.util.List<AccessControlRule> rules) {
             this.rules = rules;
             this.__explicitlySet__.add("rules");
@@ -107,7 +99,9 @@ public final class RequestAccessControl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,43 +111,39 @@ public final class RequestAccessControl
     }
 
     /**
-     * References an default Action to take if no AccessControlRule was matched. Allowed action
-     * types:
+     * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+     * <p>
+     * **ALLOW** continues execution of other modules and their rules.
+     * <p>
+     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
      *
-     * <p>**ALLOW** continues execution of other modules and their rules.
-     *
-     * <p>**RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns
-     * defined HTTP response.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultActionName")
     private final String defaultActionName;
 
     /**
-     * References an default Action to take if no AccessControlRule was matched. Allowed action
-     * types:
-     *
-     * <p>**ALLOW** continues execution of other modules and their rules.
-     *
-     * <p>**RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns
-     * defined HTTP response.
+     * References an default Action to take if no AccessControlRule was matched. Allowed action types:
+     * <p>
+     * **ALLOW** continues execution of other modules and their rules.
+     * <p>
+     * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
      *
      * @return the value
-     */
+     **/
     public String getDefaultActionName() {
         return defaultActionName;
     }
 
     /**
      * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rules")
     private final java.util.List<AccessControlRule> rules;
 
     /**
      * Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AccessControlRule> getRules() {
         return rules;
     }
@@ -165,7 +155,6 @@ public final class RequestAccessControl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

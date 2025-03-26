@@ -6,142 +6,150 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPluginErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPluginErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPluginErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPluginErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Flag to determine whether the info should be gathered only in the compartment or in the
-     * compartment and its subcompartments.
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Flag to determine whether the info should be gathered only in the compartment or in the
-     * compartment and its subcompartments.
+     * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /** The Fleet-unique identifier of the managed instance. */
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
     private String managedInstanceId;
 
-    /** The Fleet-unique identifier of the managed instance. */
+    /**
+     * The Fleet-unique identifier of the managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
     /**
-     * If specified, only errors with a first seen time earlier than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
     private java.util.Date timeFirstSeenLessThanOrEqualTo;
 
     /**
-     * If specified, only errors with a first seen time earlier than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
     public java.util.Date getTimeFirstSeenLessThanOrEqualTo() {
         return timeFirstSeenLessThanOrEqualTo;
     }
     /**
-     * If specified, only errors with a first seen time later than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
     private java.util.Date timeFirstSeenGreaterThanOrEqualTo;
 
     /**
-     * If specified, only errors with a first seen time later than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
     public java.util.Date getTimeFirstSeenGreaterThanOrEqualTo() {
         return timeFirstSeenGreaterThanOrEqualTo;
     }
     /**
-     * If specified, only errors with a last seen time earlier than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
     private java.util.Date timeLastSeenLessThanOrEqualTo;
 
     /**
-     * If specified, only errors with a last seen time earlier than this parameter will be included
-     * in the search (formatted according to RFC3339).
+     * If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
      */
     public java.util.Date getTimeLastSeenLessThanOrEqualTo() {
         return timeLastSeenLessThanOrEqualTo;
     }
     /**
-     * If specified, only errors with a last seen time later than this parameter will be included in
-     * the search (formatted according to RFC3339).
+     * If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
     private java.util.Date timeLastSeenGreaterThanOrEqualTo;
 
     /**
-     * If specified, only errors with a last seen time later than this parameter will be included in
-     * the search (formatted according to RFC3339).
+     * If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).
      */
     public java.util.Date getTimeLastSeenGreaterThanOrEqualTo() {
         return timeLastSeenGreaterThanOrEqualTo;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort PluginError. Only one sort order may be provided. Default order is
-     * **descending**. If no value is specified _timeLastSeen_ is default.
+     * The field to sort PluginError. Only one sort order may be provided.
+     * Default order is **descending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     private com.oracle.bmc.jms.model.PluginErrorSortBy sortBy;
 
     /**
-     * The field to sort PluginError. Only one sort order may be provided. Default order is
-     * **descending**. If no value is specified _timeLastSeen_ is default.
+     * The field to sort PluginError. Only one sort order may be provided.
+     * Default order is **descending**.
+     * If no value is specified _timeLastSeen_ is default.
+     *
      */
     public com.oracle.bmc.jms.model.PluginErrorSortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -149,18 +157,18 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPluginErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -171,14 +179,13 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Flag to determine whether the info should be gathered only in the compartment or in the
-         * compartment and its subcompartments.
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Flag to determine whether the info should be gathered only in the compartment or in the
-         * compartment and its subcompartments.
+         * Flag to determine whether the info should be gathered only in the compartment or in the compartment and its subcompartments.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -188,12 +195,13 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The Fleet-unique identifier of the managed instance. */
+        /**
+         * The Fleet-unique identifier of the managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the managed instance.
-         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -203,15 +211,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * If specified, only errors with a first seen time earlier than this parameter will be
-         * included in the search (formatted according to RFC3339).
+         * If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
          */
         private java.util.Date timeFirstSeenLessThanOrEqualTo = null;
 
         /**
-         * If specified, only errors with a first seen time earlier than this parameter will be
-         * included in the search (formatted according to RFC3339).
-         *
+         * If specified, only errors with a first seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
          * @param timeFirstSeenLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -222,15 +227,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * If specified, only errors with a first seen time later than this parameter will be
-         * included in the search (formatted according to RFC3339).
+         * If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).
          */
         private java.util.Date timeFirstSeenGreaterThanOrEqualTo = null;
 
         /**
-         * If specified, only errors with a first seen time later than this parameter will be
-         * included in the search (formatted according to RFC3339).
-         *
+         * If specified, only errors with a first seen time later than this parameter will be included in the search (formatted according to RFC3339).
          * @param timeFirstSeenGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -241,15 +243,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * If specified, only errors with a last seen time earlier than this parameter will be
-         * included in the search (formatted according to RFC3339).
+         * If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
          */
         private java.util.Date timeLastSeenLessThanOrEqualTo = null;
 
         /**
-         * If specified, only errors with a last seen time earlier than this parameter will be
-         * included in the search (formatted according to RFC3339).
-         *
+         * If specified, only errors with a last seen time earlier than this parameter will be included in the search (formatted according to RFC3339).
          * @param timeLastSeenLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -259,15 +258,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * If specified, only errors with a last seen time later than this parameter will be
-         * included in the search (formatted according to RFC3339).
+         * If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).
          */
         private java.util.Date timeLastSeenGreaterThanOrEqualTo = null;
 
         /**
-         * If specified, only errors with a last seen time later than this parameter will be
-         * included in the search (formatted according to RFC3339).
-         *
+         * If specified, only errors with a last seen time later than this parameter will be included in the search (formatted according to RFC3339).
          * @param timeLastSeenGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -277,12 +273,13 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -292,15 +289,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -310,14 +304,17 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort PluginError. Only one sort order may be provided. Default order is
-         * **descending**. If no value is specified _timeLastSeen_ is default.
+         * The field to sort PluginError. Only one sort order may be provided.
+         * Default order is **descending**.
+         * If no value is specified _timeLastSeen_ is default.
+         *
          */
         private com.oracle.bmc.jms.model.PluginErrorSortBy sortBy = null;
 
         /**
-         * The field to sort PluginError. Only one sort order may be provided. Default order is
-         * **descending**. If no value is specified _timeLastSeen_ is default.
+         * The field to sort PluginError. Only one sort order may be provided.
+         * Default order is **descending**.
+         * If no value is specified _timeLastSeen_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -327,12 +324,13 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -341,12 +339,13 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -357,19 +356,18 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -381,7 +379,6 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPluginErrorsRequest o) {
@@ -405,11 +402,10 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListPluginErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPluginErrorsRequest
          */
@@ -423,8 +419,7 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListPluginErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPluginErrorsRequest
@@ -444,16 +439,12 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPluginErrorsRequest(compartmentId, compartmentIdInSubtree, managedInstanceId,
-            // timeFirstSeenLessThanOrEqualTo, timeFirstSeenGreaterThanOrEqualTo,
-            // timeLastSeenLessThanOrEqualTo, timeLastSeenGreaterThanOrEqualTo, limit, page, sortBy,
-            // sortOrder, opcRequestId);
+            // new ListPluginErrorsRequest(compartmentId, compartmentIdInSubtree, managedInstanceId, timeFirstSeenLessThanOrEqualTo, timeFirstSeenGreaterThanOrEqualTo, timeLastSeenLessThanOrEqualTo, timeLastSeenGreaterThanOrEqualTo, limit, page, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -474,7 +465,6 @@ public class ListPluginErrorsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

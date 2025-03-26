@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** The field used to sort the JavaLicenses. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum LicenseSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort the JavaLicenses.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum LicenseSortBy {
     LicenseType("licenseType"),
     DisplayName("displayName"),
     ;

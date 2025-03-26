@@ -6,27 +6,32 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * Certificate Validation Config
- *
- * <p>*Added In:** 2010242156
- *
- * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
- * required: false - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <p>
+ **Added In:** 2010242156
+ * <p>
+ **SCIM++ Properties:**
+ *  - caseExact: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SettingsCertificateValidation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SettingsCertificateValidation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SettingsCertificateValidation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "crlEnabled",
@@ -68,26 +73,35 @@ public final class SettingsCertificateValidation
     public static class Builder {
         /**
          * CRL is enabled Configuration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlEnabled")
         private Boolean crlEnabled;
 
         /**
          * CRL is enabled Configuration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param crlEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder crlEnabled(Boolean crlEnabled) {
             this.crlEnabled = crlEnabled;
             this.__explicitlySet__.add("crlEnabled");
@@ -95,26 +109,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * Use CRL as Fallback.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlCheckOnOCSPFailureEnabled")
         private Boolean crlCheckOnOCSPFailureEnabled;
 
         /**
          * Use CRL as Fallback.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param crlCheckOnOCSPFailureEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder crlCheckOnOCSPFailureEnabled(Boolean crlCheckOnOCSPFailureEnabled) {
             this.crlCheckOnOCSPFailureEnabled = crlCheckOnOCSPFailureEnabled;
             this.__explicitlySet__.add("crlCheckOnOCSPFailureEnabled");
@@ -122,26 +145,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * CRL Location.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlLocation")
         private String crlLocation;
 
         /**
          * CRL Location.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param crlLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder crlLocation(String crlLocation) {
             this.crlLocation = crlLocation;
             this.__explicitlySet__.add("crlLocation");
@@ -149,26 +181,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * The CRL refresh interval in minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crlRefreshInterval")
         private Integer crlRefreshInterval;
 
         /**
          * The CRL refresh interval in minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param crlRefreshInterval the value to set
          * @return this builder
-         */
+         **/
         public Builder crlRefreshInterval(Integer crlRefreshInterval) {
             this.crlRefreshInterval = crlRefreshInterval;
             this.__explicitlySet__.add("crlRefreshInterval");
@@ -176,26 +217,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * OCSP is enabled Configuration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspEnabled")
         private Boolean ocspEnabled;
 
         /**
          * OCSP is enabled Configuration
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspEnabled(Boolean ocspEnabled) {
             this.ocspEnabled = ocspEnabled;
             this.__explicitlySet__.add("ocspEnabled");
@@ -203,26 +253,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * OCSP Accept unknown response status from ocsp responder.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspUnknownResponseStatusAllowed")
         private Boolean ocspUnknownResponseStatusAllowed;
 
         /**
          * OCSP Accept unknown response status from ocsp responder.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspUnknownResponseStatusAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspUnknownResponseStatusAllowed(Boolean ocspUnknownResponseStatusAllowed) {
             this.ocspUnknownResponseStatusAllowed = ocspUnknownResponseStatusAllowed;
             this.__explicitlySet__.add("ocspUnknownResponseStatusAllowed");
@@ -230,55 +289,71 @@ public final class SettingsCertificateValidation
         }
         /**
          * OCSP Responder URL
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspResponderURL")
         private String ocspResponderURL;
 
         /**
          * OCSP Responder URL
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ocspResponderURL the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspResponderURL(String ocspResponderURL) {
             this.ocspResponderURL = ocspResponderURL;
             this.__explicitlySet__.add("ocspResponderURL");
             return this;
         }
         /**
-         * This setting says, OCSP Responder URL present in the issued certificate must be used.
-         * Otherwise, OCSP Responder URL from IDP or Settings.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         */
+         * This setting says, OCSP Responder URL present in the issued certificate must be used. Otherwise, OCSP Responder URL from IDP or Settings.
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspSettingsResponderURLPreferred")
         private Boolean ocspSettingsResponderURLPreferred;
 
         /**
-         * This setting says, OCSP Responder URL present in the issued certificate must be used.
-         * Otherwise, OCSP Responder URL from IDP or Settings.
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: boolean - uniqueness: none
-         *
+         * This setting says, OCSP Responder URL present in the issued certificate must be used. Otherwise, OCSP Responder URL from IDP or Settings.
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param ocspSettingsResponderURLPreferred the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspSettingsResponderURLPreferred(
                 Boolean ocspSettingsResponderURLPreferred) {
             this.ocspSettingsResponderURLPreferred = ocspSettingsResponderURLPreferred;
@@ -287,28 +362,39 @@ public final class SettingsCertificateValidation
         }
         /**
          * The OCSP Timeout duration in minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 1 - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-         * none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 1
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspTimeoutDuration")
         private Integer ocspTimeoutDuration;
 
         /**
          * The OCSP Timeout duration in minutes
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 1 - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-         * none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 1
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param ocspTimeoutDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspTimeoutDuration(Integer ocspTimeoutDuration) {
             this.ocspTimeoutDuration = ocspTimeoutDuration;
             this.__explicitlySet__.add("ocspTimeoutDuration");
@@ -316,26 +402,35 @@ public final class SettingsCertificateValidation
         }
         /**
          * OCSP Signing Certificate Alias
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocspSigningCertificateAlias")
         private String ocspSigningCertificateAlias;
 
         /**
          * OCSP Signing Certificate Alias
-         *
-         * <p>*Added In:** 2010242156
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2010242156
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param ocspSigningCertificateAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder ocspSigningCertificateAlias(String ocspSigningCertificateAlias) {
             this.ocspSigningCertificateAlias = ocspSigningCertificateAlias;
             this.__explicitlySet__.add("ocspSigningCertificateAlias");
@@ -401,7 +496,9 @@ public final class SettingsCertificateValidation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -412,254 +509,344 @@ public final class SettingsCertificateValidation
 
     /**
      * CRL is enabled Configuration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlEnabled")
     private final Boolean crlEnabled;
 
     /**
      * CRL is enabled Configuration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCrlEnabled() {
         return crlEnabled;
     }
 
     /**
      * Use CRL as Fallback.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlCheckOnOCSPFailureEnabled")
     private final Boolean crlCheckOnOCSPFailureEnabled;
 
     /**
      * Use CRL as Fallback.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getCrlCheckOnOCSPFailureEnabled() {
         return crlCheckOnOCSPFailureEnabled;
     }
 
     /**
      * CRL Location.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlLocation")
     private final String crlLocation;
 
     /**
      * CRL Location.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCrlLocation() {
         return crlLocation;
     }
 
     /**
      * The CRL refresh interval in minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crlRefreshInterval")
     private final Integer crlRefreshInterval;
 
     /**
      * The CRL refresh interval in minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getCrlRefreshInterval() {
         return crlRefreshInterval;
     }
 
     /**
      * OCSP is enabled Configuration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspEnabled")
     private final Boolean ocspEnabled;
 
     /**
      * OCSP is enabled Configuration
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspEnabled() {
         return ocspEnabled;
     }
 
     /**
      * OCSP Accept unknown response status from ocsp responder.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspUnknownResponseStatusAllowed")
     private final Boolean ocspUnknownResponseStatusAllowed;
 
     /**
      * OCSP Accept unknown response status from ocsp responder.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspUnknownResponseStatusAllowed() {
         return ocspUnknownResponseStatusAllowed;
     }
 
     /**
      * OCSP Responder URL
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspResponderURL")
     private final String ocspResponderURL;
 
     /**
      * OCSP Responder URL
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOcspResponderURL() {
         return ocspResponderURL;
     }
 
     /**
-     * This setting says, OCSP Responder URL present in the issued certificate must be used.
-     * Otherwise, OCSP Responder URL from IDP or Settings.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     */
+     * This setting says, OCSP Responder URL present in the issued certificate must be used. Otherwise, OCSP Responder URL from IDP or Settings.
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspSettingsResponderURLPreferred")
     private final Boolean ocspSettingsResponderURLPreferred;
 
     /**
-     * This setting says, OCSP Responder URL present in the issued certificate must be used.
-     * Otherwise, OCSP Responder URL from IDP or Settings.
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: boolean - uniqueness: none
-     *
+     * This setting says, OCSP Responder URL present in the issued certificate must be used. Otherwise, OCSP Responder URL from IDP or Settings.
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getOcspSettingsResponderURLPreferred() {
         return ocspSettingsResponderURLPreferred;
     }
 
     /**
      * The OCSP Timeout duration in minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 1 - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-     * none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 1
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspTimeoutDuration")
     private final Integer ocspTimeoutDuration;
 
     /**
      * The OCSP Timeout duration in minutes
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 1 - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: integer - uniqueness:
-     * none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 1
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getOcspTimeoutDuration() {
         return ocspTimeoutDuration;
     }
 
     /**
      * OCSP Signing Certificate Alias
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocspSigningCertificateAlias")
     private final String ocspSigningCertificateAlias;
 
     /**
      * OCSP Signing Certificate Alias
-     *
-     * <p>*Added In:** 2010242156
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2010242156
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getOcspSigningCertificateAlias() {
         return ocspSigningCertificateAlias;
     }
@@ -671,7 +858,6 @@ public final class SettingsCertificateValidation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

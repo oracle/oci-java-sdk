@@ -6,21 +6,22 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateAutonomousDatabaseRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateAutonomousDatabaseExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateAutonomousDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateAutonomousDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.CreateAutonomousDatabaseBase> {
 
-    /** Request to create a new Autonomous Database. */
+    /**
+     * Request to create a new Autonomous Database.
+     */
     private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             createAutonomousDatabaseDetails;
 
-    /** Request to create a new Autonomous Database. */
+    /**
+     * Request to create a new Autonomous Database.
+     */
     public com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
             getCreateAutonomousDatabaseDetails() {
         return createAutonomousDatabaseDetails;
@@ -28,33 +29,40 @@ public class CreateAutonomousDatabaseRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations (for example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request may be rejected).
+     * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -67,16 +75,18 @@ public class CreateAutonomousDatabaseRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateAutonomousDatabaseRequest,
                     com.oracle.bmc.database.model.CreateAutonomousDatabaseBase> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request to create a new Autonomous Database. */
+        /**
+         * Request to create a new Autonomous Database.
+         */
         private com.oracle.bmc.database.model.CreateAutonomousDatabaseBase
                 createAutonomousDatabaseDetails = null;
 
         /**
          * Request to create a new Autonomous Database.
-         *
          * @param createAutonomousDatabaseDetails the value to set
          * @return this builder instance
          */
@@ -89,19 +99,20 @@ public class CreateAutonomousDatabaseRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (for example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (for example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -111,7 +122,10 @@ public class CreateAutonomousDatabaseRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -127,19 +141,18 @@ public class CreateAutonomousDatabaseRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -151,7 +164,6 @@ public class CreateAutonomousDatabaseRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateAutonomousDatabaseRequest o) {
@@ -166,11 +178,10 @@ public class CreateAutonomousDatabaseRequest
         /**
          * Build the instance of CreateAutonomousDatabaseRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateAutonomousDatabaseRequest
          */
@@ -183,7 +194,6 @@ public class CreateAutonomousDatabaseRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -196,8 +206,7 @@ public class CreateAutonomousDatabaseRequest
         /**
          * Build the instance of CreateAutonomousDatabaseRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateAutonomousDatabaseRequest
@@ -208,14 +217,12 @@ public class CreateAutonomousDatabaseRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateAutonomousDatabaseRequest(createAutonomousDatabaseDetails, opcRetryToken,
-            // opcRequestId);
+            // new CreateAutonomousDatabaseRequest(createAutonomousDatabaseDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -227,7 +234,6 @@ public class CreateAutonomousDatabaseRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

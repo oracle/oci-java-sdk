@@ -5,23 +5,22 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * Summary of the line item in an assigned subscription. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+ * Summary of the line item in an assigned subscription.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssignedSubscriptionLineItemSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssignedSubscriptionLineItemSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssignedSubscriptionLineItemSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -52,118 +51,117 @@ public final class AssignedSubscriptionLineItemSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Subscription line item identifier. */
+        /**
+         * Subscription line item identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Subscription line item identifier.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Product code. */
+        /**
+         * Product code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productCode")
         private String productCode;
 
         /**
          * Product code.
-         *
          * @param productCode the value to set
          * @return this builder
-         */
+         **/
         public Builder productCode(String productCode) {
             this.productCode = productCode;
             this.__explicitlySet__.add("productCode");
             return this;
         }
-        /** Product number. */
+        /**
+         * Product number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quantity")
         private Float quantity;
 
         /**
          * Product number.
-         *
          * @param quantity the value to set
          * @return this builder
-         */
+         **/
         public Builder quantity(Float quantity) {
             this.quantity = quantity;
             this.__explicitlySet__.add("quantity");
             return this;
         }
-        /** Billing model supported by the associated line item. */
+        /**
+         * Billing model supported by the associated line item.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
         private BillingModel billingModel;
 
         /**
          * Billing model supported by the associated line item.
-         *
          * @param billingModel the value to set
          * @return this builder
-         */
+         **/
         public Builder billingModel(BillingModel billingModel) {
             this.billingModel = billingModel;
             this.__explicitlySet__.add("billingModel");
             return this;
         }
         /**
-         * The time the subscription item and associated products should start. An RFC 3339
-         * formatted date and time string.
-         */
+         * The time the subscription item and associated products should start. An RFC 3339 formatted date and time string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the subscription item and associated products should start. An RFC 3339
-         * formatted date and time string.
-         *
+         * The time the subscription item and associated products should start. An RFC 3339 formatted date and time string.
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * The time the subscription item and associated products should end. An RFC 3339 formatted
-         * date and time string.
-         */
+         * The time the subscription item and associated products should end. An RFC 3339 formatted date and time string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * The time the subscription item and associated products should end. An RFC 3339 formatted
-         * date and time string.
-         *
+         * The time the subscription item and associated products should end. An RFC 3339 formatted date and time string.
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -216,7 +214,9 @@ public final class AssignedSubscriptionLineItemSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,105 +225,104 @@ public final class AssignedSubscriptionLineItemSummary
         return new Builder().copy(this);
     }
 
-    /** Subscription line item identifier. */
+    /**
+     * Subscription line item identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Subscription line item identifier.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Product code. */
+    /**
+     * Product code.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productCode")
     private final String productCode;
 
     /**
      * Product code.
-     *
      * @return the value
-     */
+     **/
     public String getProductCode() {
         return productCode;
     }
 
-    /** Product number. */
+    /**
+     * Product number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quantity")
     private final Float quantity;
 
     /**
      * Product number.
-     *
      * @return the value
-     */
+     **/
     public Float getQuantity() {
         return quantity;
     }
 
-    /** Billing model supported by the associated line item. */
+    /**
+     * Billing model supported by the associated line item.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingModel")
     private final BillingModel billingModel;
 
     /**
      * Billing model supported by the associated line item.
-     *
      * @return the value
-     */
+     **/
     public BillingModel getBillingModel() {
         return billingModel;
     }
 
     /**
-     * The time the subscription item and associated products should start. An RFC 3339 formatted
-     * date and time string.
-     */
+     * The time the subscription item and associated products should start. An RFC 3339 formatted date and time string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the subscription item and associated products should start. An RFC 3339 formatted
-     * date and time string.
-     *
+     * The time the subscription item and associated products should start. An RFC 3339 formatted date and time string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The time the subscription item and associated products should end. An RFC 3339 formatted date
-     * and time string.
-     */
+     * The time the subscription item and associated products should end. An RFC 3339 formatted date and time string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * The time the subscription item and associated products should end. An RFC 3339 formatted date
-     * and time string.
-     *
+     * The time the subscription item and associated products should end. An RFC 3339 formatted date and time string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -335,7 +334,6 @@ public final class AssignedSubscriptionLineItemSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

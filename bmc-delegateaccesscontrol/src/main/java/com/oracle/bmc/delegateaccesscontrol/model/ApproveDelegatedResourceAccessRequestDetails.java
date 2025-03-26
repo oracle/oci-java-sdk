@@ -5,23 +5,22 @@
 package com.oracle.bmc.delegateaccesscontrol.model;
 
 /**
- * Details of the Delegated Resource Access Request approval. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+ * Details of the Delegated Resource Access Request approval.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApproveDelegatedResourceAccessRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ApproveDelegatedResourceAccessRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApproveDelegatedResourceAccessRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "approverComment",
@@ -40,52 +39,51 @@ public final class ApproveDelegatedResourceAccessRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Comment by the approver during approval. */
+        /**
+         * Comment by the approver during approval.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
         private String approverComment;
 
         /**
          * Comment by the approver during approval.
-         *
          * @param approverComment the value to set
          * @return this builder
-         */
+         **/
         public Builder approverComment(String approverComment) {
             this.approverComment = approverComment;
             this.__explicitlySet__.add("approverComment");
             return this;
         }
-        /** Message that needs to be displayed to the operator. */
+        /**
+         * Message that needs to be displayed to the operator.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
         private String additionalMessage;
 
         /**
          * Message that needs to be displayed to the operator.
-         *
          * @param additionalMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalMessage(String additionalMessage) {
             this.additionalMessage = additionalMessage;
             this.__explicitlySet__.add("additionalMessage");
             return this;
         }
         /**
-         * Access start time that is actually approved by the customer in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g.
-         * '2020-05-22T21:10:29.600Z'.
-         */
+         * Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeApprovedForAccess")
         private java.util.Date timeApprovedForAccess;
 
         /**
-         * Access start time that is actually approved by the customer in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g.
-         * '2020-05-22T21:10:29.600Z'.
+         * Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
          *
          * @param timeApprovedForAccess the value to set
          * @return this builder
-         */
+         **/
         public Builder timeApprovedForAccess(java.util.Date timeApprovedForAccess) {
             this.timeApprovedForAccess = timeApprovedForAccess;
             this.__explicitlySet__.add("timeApprovedForAccess");
@@ -122,7 +120,9 @@ public final class ApproveDelegatedResourceAccessRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -131,45 +131,46 @@ public final class ApproveDelegatedResourceAccessRequestDetails
         return new Builder().copy(this);
     }
 
-    /** Comment by the approver during approval. */
+    /**
+     * Comment by the approver during approval.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverComment")
     private final String approverComment;
 
     /**
      * Comment by the approver during approval.
-     *
      * @return the value
-     */
+     **/
     public String getApproverComment() {
         return approverComment;
     }
 
-    /** Message that needs to be displayed to the operator. */
+    /**
+     * Message that needs to be displayed to the operator.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalMessage")
     private final String additionalMessage;
 
     /**
      * Message that needs to be displayed to the operator.
-     *
      * @return the value
-     */
+     **/
     public String getAdditionalMessage() {
         return additionalMessage;
     }
 
     /**
-     * Access start time that is actually approved by the customer in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
-     */
+     * Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeApprovedForAccess")
     private final java.util.Date timeApprovedForAccess;
 
     /**
-     * Access start time that is actually approved by the customer in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
+     * Access start time that is actually approved by the customer in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeApprovedForAccess() {
         return timeApprovedForAccess;
     }
@@ -181,7 +182,6 @@ public final class ApproveDelegatedResourceAccessRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

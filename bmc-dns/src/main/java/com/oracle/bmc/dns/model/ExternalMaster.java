@@ -5,22 +5,20 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * An external master name server used as the source of zone data. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ * An external master name server used as the source of zone data.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExternalMaster.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExternalMaster
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExternalMaster extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"address", "port", "tsigKeyId"})
     public ExternalMaster(String address, Integer port, String tsigKeyId) {
@@ -32,46 +30,53 @@ public final class ExternalMaster
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The server's IP address (IPv4 or IPv6). */
+        /**
+         * The server's IP address (IPv4 or IPv6).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
         /**
          * The server's IP address (IPv4 or IPv6).
-         *
          * @param address the value to set
          * @return this builder
-         */
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-        /** The server's port. Port value must be a value of 53, otherwise omit the port value. */
+        /**
+         * The server's port. Port value must be a value of 53, otherwise omit
+         * the port value.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
-         * The server's port. Port value must be a value of 53, otherwise omit the port value.
+         * The server's port. Port value must be a value of 53, otherwise omit
+         * the port value.
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The OCID of the TSIG key. */
+        /**
+         * The OCID of the TSIG key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
         private String tsigKeyId;
 
         /**
          * The OCID of the TSIG key.
-         *
          * @param tsigKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tsigKeyId(String tsigKeyId) {
             this.tsigKeyId = tsigKeyId;
             this.__explicitlySet__.add("tsigKeyId");
@@ -104,7 +109,9 @@ public final class ExternalMaster
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +120,48 @@ public final class ExternalMaster
         return new Builder().copy(this);
     }
 
-    /** The server's IP address (IPv4 or IPv6). */
+    /**
+     * The server's IP address (IPv4 or IPv6).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
     /**
      * The server's IP address (IPv4 or IPv6).
-     *
      * @return the value
-     */
+     **/
     public String getAddress() {
         return address;
     }
 
-    /** The server's port. Port value must be a value of 53, otherwise omit the port value. */
+    /**
+     * The server's port. Port value must be a value of 53, otherwise omit
+     * the port value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
-     * The server's port. Port value must be a value of 53, otherwise omit the port value.
+     * The server's port. Port value must be a value of 53, otherwise omit
+     * the port value.
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** The OCID of the TSIG key. */
+    /**
+     * The OCID of the TSIG key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tsigKeyId")
     private final String tsigKeyId;
 
     /**
      * The OCID of the TSIG key.
-     *
      * @return the value
-     */
+     **/
     public String getTsigKeyId() {
         return tsigKeyId;
     }
@@ -159,7 +173,6 @@ public final class ExternalMaster
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

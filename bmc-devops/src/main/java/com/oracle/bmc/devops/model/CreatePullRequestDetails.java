@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about new Pull Request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The information about new Pull Request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePullRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreatePullRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreatePullRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,158 +57,145 @@ public final class CreatePullRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Pull Request title */
+        /**
+         * Pull Request title
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Pull Request title
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The source branch of the pull request. */
+        /**
+         * The source branch of the pull request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBranch")
         private String sourceBranch;
 
         /**
          * The source branch of the pull request.
-         *
          * @param sourceBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceBranch(String sourceBranch) {
             this.sourceBranch = sourceBranch;
             this.__explicitlySet__.add("sourceBranch");
             return this;
         }
         /**
-         * The destination branch of the pull request. If not provided, default branch will be used
-         * as the destination branch.
-         */
+         * The destination branch of the pull request. If not provided, default branch will be used as the destination branch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
         private String destinationBranch;
 
         /**
-         * The destination branch of the pull request. If not provided, default branch will be used
-         * as the destination branch.
-         *
+         * The destination branch of the pull request. If not provided, default branch will be used as the destination branch.
          * @param destinationBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBranch(String destinationBranch) {
             this.destinationBranch = destinationBranch;
             this.__explicitlySet__.add("destinationBranch");
             return this;
         }
-        /** The OCID of the repository. */
+        /**
+         * The OCID of the repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
         private String repositoryId;
 
         /**
          * The OCID of the repository.
-         *
          * @param repositoryId the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryId(String repositoryId) {
             this.repositoryId = repositoryId;
             this.__explicitlySet__.add("repositoryId");
             return this;
         }
         /**
-         * The OCID of the forked repository that will act as the source of the changes to be
-         * included in the pull request against the parent repository.
-         */
+         * The OCID of the forked repository that will act as the source of the changes to be included in the pull request against the parent repository.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRepositoryId")
         private String sourceRepositoryId;
 
         /**
-         * The OCID of the forked repository that will act as the source of the changes to be
-         * included in the pull request against the parent repository.
-         *
+         * The OCID of the forked repository that will act as the source of the changes to be included in the pull request against the parent repository.
          * @param sourceRepositoryId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRepositoryId(String sourceRepositoryId) {
             this.sourceRepositoryId = sourceRepositoryId;
             this.__explicitlySet__.add("sourceRepositoryId");
             return this;
         }
-        /** Details of the pull request. Avoid entering confidential information. */
+        /**
+         * Details of the pull request. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Details of the pull request. Avoid entering confidential information.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Reviewers for this pull request. */
+        /**
+         * Reviewers for this pull request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
         private java.util.List<CreateReviewerDetails> reviewers;
 
         /**
          * Reviewers for this pull request.
-         *
          * @param reviewers the value to set
          * @return this builder
-         */
+         **/
         public Builder reviewers(java.util.List<CreateReviewerDetails> reviewers) {
             this.reviewers = reviewers;
             this.__explicitlySet__.add("reviewers");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"bar-key": "value"}}
-         *
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -271,7 +257,9 @@ public final class CreatePullRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -280,141 +268,128 @@ public final class CreatePullRequestDetails
         return new Builder().copy(this);
     }
 
-    /** Pull Request title */
+    /**
+     * Pull Request title
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Pull Request title
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The source branch of the pull request. */
+    /**
+     * The source branch of the pull request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBranch")
     private final String sourceBranch;
 
     /**
      * The source branch of the pull request.
-     *
      * @return the value
-     */
+     **/
     public String getSourceBranch() {
         return sourceBranch;
     }
 
     /**
-     * The destination branch of the pull request. If not provided, default branch will be used as
-     * the destination branch.
-     */
+     * The destination branch of the pull request. If not provided, default branch will be used as the destination branch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
     private final String destinationBranch;
 
     /**
-     * The destination branch of the pull request. If not provided, default branch will be used as
-     * the destination branch.
-     *
+     * The destination branch of the pull request. If not provided, default branch will be used as the destination branch.
      * @return the value
-     */
+     **/
     public String getDestinationBranch() {
         return destinationBranch;
     }
 
-    /** The OCID of the repository. */
+    /**
+     * The OCID of the repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryId")
     private final String repositoryId;
 
     /**
      * The OCID of the repository.
-     *
      * @return the value
-     */
+     **/
     public String getRepositoryId() {
         return repositoryId;
     }
 
     /**
-     * The OCID of the forked repository that will act as the source of the changes to be included
-     * in the pull request against the parent repository.
-     */
+     * The OCID of the forked repository that will act as the source of the changes to be included in the pull request against the parent repository.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRepositoryId")
     private final String sourceRepositoryId;
 
     /**
-     * The OCID of the forked repository that will act as the source of the changes to be included
-     * in the pull request against the parent repository.
-     *
+     * The OCID of the forked repository that will act as the source of the changes to be included in the pull request against the parent repository.
      * @return the value
-     */
+     **/
     public String getSourceRepositoryId() {
         return sourceRepositoryId;
     }
 
-    /** Details of the pull request. Avoid entering confidential information. */
+    /**
+     * Details of the pull request. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Details of the pull request. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Reviewers for this pull request. */
+    /**
+     * Reviewers for this pull request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reviewers")
     private final java.util.List<CreateReviewerDetails> reviewers;
 
     /**
      * Reviewers for this pull request.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CreateReviewerDetails> getReviewers() {
         return reviewers;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"bar-key": "value"}}
-     *
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.  See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"bar-key": "value"}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     *
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -426,7 +401,6 @@ public final class CreatePullRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

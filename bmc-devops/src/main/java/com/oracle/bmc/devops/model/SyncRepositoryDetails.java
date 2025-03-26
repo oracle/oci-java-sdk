@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Details required for syncing a repository with its upstream. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Details required for syncing a repository with its upstream.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SyncRepositoryDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SyncRepositoryDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SyncRepositoryDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceBranch", "destinationBranch"})
     public SyncRepositoryDetails(String sourceBranch, String destinationBranch) {
@@ -32,31 +31,33 @@ public final class SyncRepositoryDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The branch in the upstream repository we want to sync from. */
+        /**
+         * The branch in the upstream repository we want to sync from.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceBranch")
         private String sourceBranch;
 
         /**
          * The branch in the upstream repository we want to sync from.
-         *
          * @param sourceBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceBranch(String sourceBranch) {
             this.sourceBranch = sourceBranch;
             this.__explicitlySet__.add("sourceBranch");
             return this;
         }
-        /** The branch in the repository we want to be updated with changes from the upstream. */
+        /**
+         * The branch in the repository we want to be updated with changes from the upstream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
         private String destinationBranch;
 
         /**
          * The branch in the repository we want to be updated with changes from the upstream.
-         *
          * @param destinationBranch the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBranch(String destinationBranch) {
             this.destinationBranch = destinationBranch;
             this.__explicitlySet__.add("destinationBranch");
@@ -87,7 +88,9 @@ public final class SyncRepositoryDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class SyncRepositoryDetails
         return new Builder().copy(this);
     }
 
-    /** The branch in the upstream repository we want to sync from. */
+    /**
+     * The branch in the upstream repository we want to sync from.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceBranch")
     private final String sourceBranch;
 
     /**
      * The branch in the upstream repository we want to sync from.
-     *
      * @return the value
-     */
+     **/
     public String getSourceBranch() {
         return sourceBranch;
     }
 
-    /** The branch in the repository we want to be updated with changes from the upstream. */
+    /**
+     * The branch in the repository we want to be updated with changes from the upstream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBranch")
     private final String destinationBranch;
 
     /**
      * The branch in the repository we want to be updated with changes from the upstream.
-     *
      * @return the value
-     */
+     **/
     public String getDestinationBranch() {
         return destinationBranch;
     }
@@ -129,7 +134,6 @@ public final class SyncRepositoryDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

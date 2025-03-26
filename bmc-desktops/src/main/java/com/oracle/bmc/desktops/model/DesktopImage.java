@@ -5,21 +5,19 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * Provides information about the desktop image. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * Provides information about the desktop image.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DesktopImage.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DesktopImage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DesktopImage extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"imageId", "imageName", "operatingSystem"})
     public DesktopImage(String imageId, String imageName, String operatingSystem) {
@@ -31,46 +29,49 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the desktop image. */
+        /**
+         * The OCID of the desktop image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageId")
         private String imageId;
 
         /**
          * The OCID of the desktop image.
-         *
          * @param imageId the value to set
          * @return this builder
-         */
+         **/
         public Builder imageId(String imageId) {
             this.imageId = imageId;
             this.__explicitlySet__.add("imageId");
             return this;
         }
-        /** The name of the desktop image. */
+        /**
+         * The name of the desktop image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imageName")
         private String imageName;
 
         /**
          * The name of the desktop image.
-         *
          * @param imageName the value to set
          * @return this builder
-         */
+         **/
         public Builder imageName(String imageName) {
             this.imageName = imageName;
             this.__explicitlySet__.add("imageName");
             return this;
         }
-        /** The operating system of the desktop image, e.g. "Oracle Linux", "Windows". */
+        /**
+         * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
         /**
          * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
-         *
          * @param operatingSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
@@ -104,7 +105,9 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +116,44 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the desktop image. */
+    /**
+     * The OCID of the desktop image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageId")
     private final String imageId;
 
     /**
      * The OCID of the desktop image.
-     *
      * @return the value
-     */
+     **/
     public String getImageId() {
         return imageId;
     }
 
-    /** The name of the desktop image. */
+    /**
+     * The name of the desktop image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imageName")
     private final String imageName;
 
     /**
      * The name of the desktop image.
-     *
      * @return the value
-     */
+     **/
     public String getImageName() {
         return imageName;
     }
 
-    /** The operating system of the desktop image, e.g. "Oracle Linux", "Windows". */
+    /**
+     * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final String operatingSystem;
 
     /**
      * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
-     *
      * @return the value
-     */
+     **/
     public String getOperatingSystem() {
         return operatingSystem;
     }
@@ -159,7 +165,6 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

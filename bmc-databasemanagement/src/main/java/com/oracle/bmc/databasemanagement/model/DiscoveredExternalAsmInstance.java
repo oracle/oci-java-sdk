@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an ASM instance discovered in an external DB system discovery run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an ASM instance discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalAsmInstance.Builder.class)
+    builder = DiscoveredExternalAsmInstance.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalAsmInstance extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,46 +90,49 @@ public final class DiscoveredExternalAsmInstance extends DiscoveredExternalDbSys
             this.__explicitlySet__.add("associatedComponents");
             return this;
         }
-        /** The name of the host on which the ASM instance is running. */
+        /**
+         * The name of the host on which the ASM instance is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host on which the ASM instance is running.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The name of the ASM instance. */
+        /**
+         * The name of the ASM instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
         /**
          * The name of the ASM instance.
-         *
          * @param instanceName the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
-        /** The Automatic Diagnostic Repository (ADR) home directory for the ASM instance. */
+        /**
+         * The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
         private String adrHomeDirectory;
 
         /**
          * The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
-         *
          * @param adrHomeDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder adrHomeDirectory(String adrHomeDirectory) {
             this.adrHomeDirectory = adrHomeDirectory;
             this.__explicitlySet__.add("adrHomeDirectory");
@@ -194,7 +197,9 @@ public final class DiscoveredExternalAsmInstance extends DiscoveredExternalDbSys
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -228,41 +233,44 @@ public final class DiscoveredExternalAsmInstance extends DiscoveredExternalDbSys
         this.adrHomeDirectory = adrHomeDirectory;
     }
 
-    /** The name of the host on which the ASM instance is running. */
+    /**
+     * The name of the host on which the ASM instance is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host on which the ASM instance is running.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The name of the ASM instance. */
+    /**
+     * The name of the ASM instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
     /**
      * The name of the ASM instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceName() {
         return instanceName;
     }
 
-    /** The Automatic Diagnostic Repository (ADR) home directory for the ASM instance. */
+    /**
+     * The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adrHomeDirectory")
     private final String adrHomeDirectory;
 
     /**
      * The Automatic Diagnostic Repository (ADR) home directory for the ASM instance.
-     *
      * @return the value
-     */
+     **/
     public String getAdrHomeDirectory() {
         return adrHomeDirectory;
     }
@@ -274,7 +282,6 @@ public final class DiscoveredExternalAsmInstance extends DiscoveredExternalDbSys
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

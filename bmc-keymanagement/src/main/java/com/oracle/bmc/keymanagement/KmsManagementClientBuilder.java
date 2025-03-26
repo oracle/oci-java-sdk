@@ -6,22 +6,13 @@ package com.oracle.bmc.keymanagement;
 
 import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
-import jakarta.annotation.Nonnull;
-
-import java.util.concurrent.ExecutorService;
+import javax.annotation.Nonnull;
 
 public class KmsManagementClientBuilder
         extends AbstractKmsManagementClientBuilder<
                 KmsManagementClientBuilder, KmsManagementClient> {
-    protected java.util.concurrent.ExecutorService executorService = null;
-
     public KmsManagementClientBuilder(Service service) {
         super(service);
-    }
-
-    public KmsManagementClientBuilder executorService(ExecutorService executorService) {
-        this.executorService = executorService;
-        return this;
     }
 
     @Override
@@ -32,15 +23,14 @@ public class KmsManagementClientBuilder
                     "authenticationDetailsProvider is marked non-null but is null");
         }
 
-        String cryptoEndpoint = getEndpoint();
+        String managementEndpoint = getEndpoint();
 
-        // We create a copy of the builder and set the endpoint there, this way we don't modify this
-        // builder
-        // Otherwise, we might have both endpoint and vault or vaultSummary set, which would cause
-        // an exception to be thrown in getEndpoint(), if this builder were used a second time.
-        KmsManagementClientBuilder copy =
-                KmsManagementClient.builder().copyFrom(this).endpoint(cryptoEndpoint);
-
-        return new KmsManagementClient(copy, authenticationDetailsProvider, executorService);
+        return new KmsManagementClient(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                requestSignerFactory,
+                additionalClientConfigurators,
+                managementEndpoint);
     }
 }

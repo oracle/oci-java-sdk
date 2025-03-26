@@ -10,15 +10,15 @@ import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterConfiguration;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 import java.util.concurrent.TimeUnit;
 
 /**
  * Configuration used for retrying.
  *
- * <p>The default termination strategy is a single attempt (i.e. no retry). The default delay
- * strategy is an exponential backoff strategy to a max wait of 30 seconds. The default retry
- * condition is {@link DefaultRetryCondition}.
+ * The default termination strategy is a single attempt (i.e. no retry).
+ * The default delay strategy is an exponential backoff strategy to a max wait of 30 seconds.
+ * The default retry condition is {@link DefaultRetryCondition}.
  */
 public class RetryConfiguration extends WaiterConfiguration {
     public static final RetryConfiguration NO_RETRY_CONFIGURATION =
@@ -29,7 +29,7 @@ public class RetryConfiguration extends WaiterConfiguration {
     private final RetryCondition retryCondition;
     private final RetryOptions retryOptions;
 
-    // Default retry configuration
+    //Default retry configuration
     public static final RetryConfiguration
             SDK_FAIL_FAST_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION =
                     RetryConfiguration.builder()
@@ -43,7 +43,7 @@ public class RetryConfiguration extends WaiterConfiguration {
                                             new DefaultRetryCondition().shouldBeRetried(exception))
                             .build();
 
-    // Retry on open CircuitBreaker configuration
+    //Retry configuration with retry enabled even when CircuitBreaker is OPEN
     public static final RetryConfiguration
             SDK_RETRY_ON_OPEN_CIRCUIT_BREAKER_DEFAULT_RETRY_CONFIGURATION =
                     RetryConfiguration.builder()
@@ -105,14 +105,15 @@ public class RetryConfiguration extends WaiterConfiguration {
 
     /**
      * Create a builder for retry configuration
-     *
      * @return builder
      */
     public static Builder builder() {
         return new Builder();
     }
 
-    /** Builder class for retry configuration. */
+    /**
+     * Builder class for retry configuration.
+     */
     public static class Builder {
         private static final TerminationStrategy NO_RETRY_TERMINATION_STRATEGY =
                 new MaxAttemptsTerminationStrategy(1);
@@ -164,7 +165,6 @@ public class RetryConfiguration extends WaiterConfiguration {
 
         /**
          * Build the retry configuration
-         *
          * @return the retry configuration
          */
         public RetryConfiguration build() {

@@ -9,31 +9,23 @@ import com.oracle.bmc.loadbalancer.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of LoadBalancer where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of LoadBalancer where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 public class LoadBalancerPaginators {
     private final LoadBalancer client;
 
@@ -42,19 +34,16 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLoadBalancerHealths operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listLoadBalancerHealths operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLoadBalancerHealthsResponse> listLoadBalancerHealthsResponseIterator(
             final ListLoadBalancerHealthsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLoadBalancerHealthsRequest.Builder,
-                ListLoadBalancerHealthsRequest,
+                ListLoadBalancerHealthsRequest.Builder, ListLoadBalancerHealthsRequest,
                 ListLoadBalancerHealthsResponse>(
                 new java.util.function.Supplier<ListLoadBalancerHealthsRequest.Builder>() {
                     @Override
@@ -97,21 +86,18 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary} objects contained in responses
-     * from the listLoadBalancerHealths operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary} objects
+     * contained in responses from the listLoadBalancerHealths operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary>
             listLoadBalancerHealthsRecordIterator(final ListLoadBalancerHealthsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLoadBalancerHealthsRequest.Builder,
-                ListLoadBalancerHealthsRequest,
+                ListLoadBalancerHealthsRequest.Builder, ListLoadBalancerHealthsRequest,
                 ListLoadBalancerHealthsResponse,
                 com.oracle.bmc.loadbalancer.model.LoadBalancerHealthSummary>(
                 new java.util.function.Supplier<ListLoadBalancerHealthsRequest.Builder>() {
@@ -166,18 +152,16 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLoadBalancers operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listLoadBalancers operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLoadBalancersResponse> listLoadBalancersResponseIterator(
             final ListLoadBalancersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLoadBalancersRequest.Builder,
-                ListLoadBalancersRequest,
+                ListLoadBalancersRequest.Builder, ListLoadBalancersRequest,
                 ListLoadBalancersResponse>(
                 new java.util.function.Supplier<ListLoadBalancersRequest.Builder>() {
                     @Override
@@ -219,22 +203,19 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.LoadBalancer} objects contained in responses from the
-     * listLoadBalancers operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancer} objects
+     * contained in responses from the listLoadBalancers operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.LoadBalancer} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancer} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.LoadBalancer> listLoadBalancersRecordIterator(
             final ListLoadBalancersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLoadBalancersRequest.Builder,
-                ListLoadBalancersRequest,
-                ListLoadBalancersResponse,
-                com.oracle.bmc.loadbalancer.model.LoadBalancer>(
+                ListLoadBalancersRequest.Builder, ListLoadBalancersRequest,
+                ListLoadBalancersResponse, com.oracle.bmc.loadbalancer.model.LoadBalancer>(
                 new java.util.function.Supplier<ListLoadBalancersRequest.Builder>() {
                     @Override
                     public ListLoadBalancersRequest.Builder get() {
@@ -284,12 +265,11 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPolicies
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPoliciesResponse> listPoliciesResponseIterator(
             final ListPoliciesRequest request) {
@@ -334,21 +314,18 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy} objects contained in responses from the
-     * listPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy} objects
+     * contained in responses from the listPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy>
             listPoliciesRecordIterator(final ListPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPoliciesRequest.Builder,
-                ListPoliciesRequest,
-                ListPoliciesResponse,
+                ListPoliciesRequest.Builder, ListPoliciesRequest, ListPoliciesResponse,
                 com.oracle.bmc.loadbalancer.model.LoadBalancerPolicy>(
                 new java.util.function.Supplier<ListPoliciesRequest.Builder>() {
                     @Override
@@ -398,12 +375,11 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listProtocols
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProtocols operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProtocolsResponse> listProtocolsResponseIterator(
             final ListProtocolsRequest request) {
@@ -448,21 +424,18 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} objects contained in responses from
-     * the listProtocols operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} objects
+     * contained in responses from the listProtocols operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol>
             listProtocolsRecordIterator(final ListProtocolsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProtocolsRequest.Builder,
-                ListProtocolsRequest,
-                ListProtocolsResponse,
+                ListProtocolsRequest.Builder, ListProtocolsRequest, ListProtocolsResponse,
                 com.oracle.bmc.loadbalancer.model.LoadBalancerProtocol>(
                 new java.util.function.Supplier<ListProtocolsRequest.Builder>() {
                     @Override
@@ -512,18 +485,16 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRoutingPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRoutingPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRoutingPoliciesResponse> listRoutingPoliciesResponseIterator(
             final ListRoutingPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListRoutingPoliciesRequest.Builder,
-                ListRoutingPoliciesRequest,
+                ListRoutingPoliciesRequest.Builder, ListRoutingPoliciesRequest,
                 ListRoutingPoliciesResponse>(
                 new java.util.function.Supplier<ListRoutingPoliciesRequest.Builder>() {
                     @Override
@@ -565,22 +536,19 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects contained in responses from the
-     * listRoutingPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects
+     * contained in responses from the listRoutingPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.RoutingPolicy} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.RoutingPolicy>
             listRoutingPoliciesRecordIterator(final ListRoutingPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRoutingPoliciesRequest.Builder,
-                ListRoutingPoliciesRequest,
-                ListRoutingPoliciesResponse,
-                com.oracle.bmc.loadbalancer.model.RoutingPolicy>(
+                ListRoutingPoliciesRequest.Builder, ListRoutingPoliciesRequest,
+                ListRoutingPoliciesResponse, com.oracle.bmc.loadbalancer.model.RoutingPolicy>(
                 new java.util.function.Supplier<ListRoutingPoliciesRequest.Builder>() {
                     @Override
                     public ListRoutingPoliciesRequest.Builder get() {
@@ -630,12 +598,11 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listShapes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListShapesResponse> listShapesResponseIterator(
             final ListShapesRequest request) {
@@ -680,21 +647,18 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.LoadBalancerShape} objects contained in responses from the
-     * listShapes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerShape} objects
+     * contained in responses from the listShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.LoadBalancerShape} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.LoadBalancerShape} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.LoadBalancerShape> listShapesRecordIterator(
             final ListShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListShapesRequest.Builder,
-                ListShapesRequest,
-                ListShapesResponse,
+                ListShapesRequest.Builder, ListShapesRequest, ListShapesResponse,
                 com.oracle.bmc.loadbalancer.model.LoadBalancerShape>(
                 new java.util.function.Supplier<ListShapesRequest.Builder>() {
                     @Override
@@ -744,12 +708,11 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -795,21 +758,18 @@ public class LoadBalancerPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.loadbalancer.model.WorkRequest} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.loadbalancer.model.WorkRequest} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.loadbalancer.model.WorkRequest} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.loadbalancer.model.WorkRequest} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.loadbalancer.model.WorkRequest> listWorkRequestsRecordIterator(
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.loadbalancer.model.WorkRequest>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

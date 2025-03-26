@@ -6,25 +6,23 @@ package com.oracle.bmc.waas.model;
 
 /**
  * The required data to create a WAAS policy.
- *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateWaasPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateWaasPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateWaasPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -65,112 +63,98 @@ public final class CreateWaasPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to create the WAAS policy.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to create the WAAS policy.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name for the WAAS policy. The name can be changed and does not need to be
-         * unique.
-         */
+         * A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the WAAS policy. The name can be changed and does not need to be
-         * unique.
-         *
+         * A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The web application domain that the WAAS policy protects. */
+        /**
+         * The web application domain that the WAAS policy protects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
         /**
          * The web application domain that the WAAS policy protects.
-         *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-        /** An array of additional domains for the specified web application. */
+        /**
+         * An array of additional domains for the specified web application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalDomains")
         private java.util.List<String> additionalDomains;
 
         /**
          * An array of additional domains for the specified web application.
-         *
          * @param additionalDomains the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalDomains(java.util.List<String> additionalDomains) {
             this.additionalDomains = additionalDomains;
             this.__explicitlySet__.add("additionalDomains");
             return this;
         }
         /**
-         * A map of host to origin for the web application. The key should be a customer friendly
-         * name for the host, ex. primary, secondary, etc.
-         */
+         * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("origins")
         private java.util.Map<String, Origin> origins;
 
         /**
-         * A map of host to origin for the web application. The key should be a customer friendly
-         * name for the host, ex. primary, secondary, etc.
-         *
+         * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
          * @param origins the value to set
          * @return this builder
-         */
+         **/
         public Builder origins(java.util.Map<String, Origin> origins) {
             this.origins = origins;
             this.__explicitlySet__.add("origins");
             return this;
         }
         /**
-         * The map of origin groups and their keys used to associate origins to the {@code
-         * wafConfig}. Origin groups allow you to apply weights to groups of origins for load
-         * balancing purposes. Origins with higher weights will receive larger proportions of client
-         * requests. To add additional origins to your WAAS policy, update the {@code origins} field
-         * of a {@code UpdateWaasPolicy} request.
-         */
+         * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+         * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
         private java.util.Map<String, OriginGroup> originGroups;
 
         /**
-         * The map of origin groups and their keys used to associate origins to the {@code
-         * wafConfig}. Origin groups allow you to apply weights to groups of origins for load
-         * balancing purposes. Origins with higher weights will receive larger proportions of client
-         * requests. To add additional origins to your WAAS policy, update the {@code origins} field
-         * of a {@code UpdateWaasPolicy} request.
-         *
+         * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+         * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
          * @param originGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder originGroups(java.util.Map<String, OriginGroup> originGroups) {
             this.originGroups = originGroups;
             this.__explicitlySet__.add("originGroups");
@@ -195,50 +179,48 @@ public final class CreateWaasPolicyDetails
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -304,7 +286,9 @@ public final class CreateWaasPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,101 +298,87 @@ public final class CreateWaasPolicyDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to create the WAAS policy.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to create the WAAS policy.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the WAAS policy.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name for the WAAS policy. The name can be changed and does not need to be
-     * unique.
-     */
+     * A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the WAAS policy. The name can be changed and does not need to be
-     * unique.
-     *
+     * A user-friendly name for the WAAS policy. The name can be changed and does not need to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The web application domain that the WAAS policy protects. */
+    /**
+     * The web application domain that the WAAS policy protects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
     /**
      * The web application domain that the WAAS policy protects.
-     *
      * @return the value
-     */
+     **/
     public String getDomain() {
         return domain;
     }
 
-    /** An array of additional domains for the specified web application. */
+    /**
+     * An array of additional domains for the specified web application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalDomains")
     private final java.util.List<String> additionalDomains;
 
     /**
      * An array of additional domains for the specified web application.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAdditionalDomains() {
         return additionalDomains;
     }
 
     /**
-     * A map of host to origin for the web application. The key should be a customer friendly name
-     * for the host, ex. primary, secondary, etc.
-     */
+     * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("origins")
     private final java.util.Map<String, Origin> origins;
 
     /**
-     * A map of host to origin for the web application. The key should be a customer friendly name
-     * for the host, ex. primary, secondary, etc.
-     *
+     * A map of host to origin for the web application. The key should be a customer friendly name for the host, ex. primary, secondary, etc.
      * @return the value
-     */
+     **/
     public java.util.Map<String, Origin> getOrigins() {
         return origins;
     }
 
     /**
-     * The map of origin groups and their keys used to associate origins to the {@code wafConfig}.
-     * Origin groups allow you to apply weights to groups of origins for load balancing purposes.
-     * Origins with higher weights will receive larger proportions of client requests. To add
-     * additional origins to your WAAS policy, update the {@code origins} field of a {@code
-     * UpdateWaasPolicy} request.
-     */
+     * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+     * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originGroups")
     private final java.util.Map<String, OriginGroup> originGroups;
 
     /**
-     * The map of origin groups and their keys used to associate origins to the {@code wafConfig}.
-     * Origin groups allow you to apply weights to groups of origins for load balancing purposes.
-     * Origins with higher weights will receive larger proportions of client requests. To add
-     * additional origins to your WAAS policy, update the {@code origins} field of a {@code
-     * UpdateWaasPolicy} request.
-     *
+     * The map of origin groups and their keys used to associate origins to the {@code wafConfig}. Origin groups allow you to apply weights to groups of origins for load balancing purposes. Origins with higher weights will receive larger proportions of client requests.
+     * To add additional origins to your WAAS policy, update the {@code origins} field of a {@code UpdateWaasPolicy} request.
      * @return the value
-     */
+     **/
     public java.util.Map<String, OriginGroup> getOriginGroups() {
         return originGroups;
     }
@@ -428,47 +398,45 @@ public final class CreateWaasPolicyDetails
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -480,7 +448,6 @@ public final class CreateWaasPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

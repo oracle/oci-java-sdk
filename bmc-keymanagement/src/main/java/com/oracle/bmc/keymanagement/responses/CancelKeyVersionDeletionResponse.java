@@ -6,14 +6,15 @@ package com.oracle.bmc.keymanagement.responses;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -21,14 +22,15 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +38,13 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned {@code KeyVersion} instance. */
+    /**
+     * The returned KeyVersion instance.
+     */
     private com.oracle.bmc.keymanagement.model.KeyVersion keyVersion;
 
     /**
-     * The returned {@code KeyVersion} instance.
-     *
+     * The returned KeyVersion instance.
      * @return the value
      */
     public com.oracle.bmc.keymanagement.model.KeyVersion getKeyVersion() {
@@ -57,7 +60,7 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
     })
     private CancelKeyVersionDeletionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.keymanagement.model.KeyVersion keyVersion) {
@@ -67,31 +70,28 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
         this.keyVersion = keyVersion;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CancelKeyVersionDeletionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -101,14 +101,15 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +119,13 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned {@code KeyVersion} instance. */
+        /**
+         * The returned KeyVersion instance.
+         */
         private com.oracle.bmc.keymanagement.model.KeyVersion keyVersion;
 
         /**
-         * The returned {@code KeyVersion} instance.
-         *
+         * The returned KeyVersion instance.
          * @param keyVersion the value to set
          * @return this builder
          */
@@ -134,10 +136,8 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CancelKeyVersionDeletionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +150,8 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CancelKeyVersionDeletionResponse build() {
             return new CancelKeyVersionDeletionResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, keyVersion);
@@ -162,7 +160,6 @@ public class CancelKeyVersionDeletionResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

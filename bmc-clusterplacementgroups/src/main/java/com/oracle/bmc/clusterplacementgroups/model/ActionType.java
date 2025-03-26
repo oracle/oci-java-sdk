@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.clusterplacementgroups.model;
 
-/** The way in which the resource is affected by the work tracked in the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The way in which the resource is affected by the work tracked in the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum ActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

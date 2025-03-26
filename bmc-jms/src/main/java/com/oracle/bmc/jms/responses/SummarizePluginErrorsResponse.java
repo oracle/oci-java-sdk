@@ -6,17 +6,18 @@ package com.oracle.bmc.jms.responses;
 
 import com.oracle.bmc.jms.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, provide the request ID.
      *
      * @return the value
      */
@@ -25,18 +26,17 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * For list pagination, when this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination, when this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination, when this header appears in the response, additional pages of results
-     * remain. Include this value as the {@code page} parameter for the subsequent GET request to
-     * get the next batch of items. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination, when this header appears in the response, additional pages of results remain.
+     * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -44,13 +44,14 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
         return opcNextPage;
     }
 
-    /** The returned {@code PluginErrorAggregationCollection} instance. */
+    /**
+     * The returned PluginErrorAggregationCollection instance.
+     */
     private com.oracle.bmc.jms.model.PluginErrorAggregationCollection
             pluginErrorAggregationCollection;
 
     /**
-     * The returned {@code PluginErrorAggregationCollection} instance.
-     *
+     * The returned PluginErrorAggregationCollection instance.
      * @return the value
      */
     public com.oracle.bmc.jms.model.PluginErrorAggregationCollection
@@ -67,7 +68,7 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
     })
     private SummarizePluginErrorsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.jms.model.PluginErrorAggregationCollection
@@ -78,33 +79,31 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
         this.pluginErrorAggregationCollection = pluginErrorAggregationCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<SummarizePluginErrorsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -115,20 +114,17 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * For list pagination, when this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination, when this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination, when this header appears in the response, additional pages of
-         * results remain. Include this value as the {@code page} parameter for the subsequent GET
-         * request to get the next batch of items. For important details about how pagination works,
-         * see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination, when this header appears in the response, additional pages of results remain.
+         * Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -138,13 +134,14 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code PluginErrorAggregationCollection} instance. */
+        /**
+         * The returned PluginErrorAggregationCollection instance.
+         */
         private com.oracle.bmc.jms.model.PluginErrorAggregationCollection
                 pluginErrorAggregationCollection;
 
         /**
-         * The returned {@code PluginErrorAggregationCollection} instance.
-         *
+         * The returned PluginErrorAggregationCollection instance.
          * @param pluginErrorAggregationCollection the value to set
          * @return this builder
          */
@@ -157,10 +154,8 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(SummarizePluginErrorsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -173,10 +168,8 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public SummarizePluginErrorsResponse build() {
             return new SummarizePluginErrorsResponse(
                     __httpStatusCode__,
@@ -189,7 +182,6 @@ public class SummarizePluginErrorsResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Options for the the shape memory <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Options for the the shape memory
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ShapeMemoryOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShapeMemoryOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ShapeMemoryOptions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShapeMemoryOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "defaultPerOcpuInGBs",
@@ -46,76 +44,81 @@ public final class ShapeMemoryOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Default per OCPU configuration in GBs */
+        /**
+         * Default per OCPU configuration in GBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
         private Integer defaultPerOcpuInGBs;
 
         /**
          * Default per OCPU configuration in GBs
-         *
          * @param defaultPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultPerOcpuInGBs(Integer defaultPerOcpuInGBs) {
             this.defaultPerOcpuInGBs = defaultPerOcpuInGBs;
             this.__explicitlySet__.add("defaultPerOcpuInGBs");
             return this;
         }
-        /** Minimum Memory configuration in GBs */
+        /**
+         * Minimum Memory configuration in GBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
         private Integer minInGBs;
 
         /**
          * Minimum Memory configuration in GBs
-         *
          * @param minInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minInGBs(Integer minInGBs) {
             this.minInGBs = minInGBs;
             this.__explicitlySet__.add("minInGBs");
             return this;
         }
-        /** Minimum Memory configuration per OCPU in GBs */
+        /**
+         * Minimum Memory configuration per OCPU in GBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
         private Integer minPerOcpuInGBs;
 
         /**
          * Minimum Memory configuration per OCPU in GBs
-         *
          * @param minPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder minPerOcpuInGBs(Integer minPerOcpuInGBs) {
             this.minPerOcpuInGBs = minPerOcpuInGBs;
             this.__explicitlySet__.add("minPerOcpuInGBs");
             return this;
         }
-        /** Maximum Memory configuration in GBs */
+        /**
+         * Maximum Memory configuration in GBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
         private Integer maxInGBs;
 
         /**
          * Maximum Memory configuration in GBs
-         *
          * @param maxInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxInGBs(Integer maxInGBs) {
             this.maxInGBs = maxInGBs;
             this.__explicitlySet__.add("maxInGBs");
             return this;
         }
-        /** Maximum Memory configuration per OCPU in GBs */
+        /**
+         * Maximum Memory configuration per OCPU in GBs
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
         private Integer maxPerOcpuInGBs;
 
         /**
          * Maximum Memory configuration per OCPU in GBs
-         *
          * @param maxPerOcpuInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPerOcpuInGBs(Integer maxPerOcpuInGBs) {
             this.maxPerOcpuInGBs = maxPerOcpuInGBs;
             this.__explicitlySet__.add("maxPerOcpuInGBs");
@@ -160,7 +163,9 @@ public final class ShapeMemoryOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +174,72 @@ public final class ShapeMemoryOptions
         return new Builder().copy(this);
     }
 
-    /** Default per OCPU configuration in GBs */
+    /**
+     * Default per OCPU configuration in GBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultPerOcpuInGBs")
     private final Integer defaultPerOcpuInGBs;
 
     /**
      * Default per OCPU configuration in GBs
-     *
      * @return the value
-     */
+     **/
     public Integer getDefaultPerOcpuInGBs() {
         return defaultPerOcpuInGBs;
     }
 
-    /** Minimum Memory configuration in GBs */
+    /**
+     * Minimum Memory configuration in GBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minInGBs")
     private final Integer minInGBs;
 
     /**
      * Minimum Memory configuration in GBs
-     *
      * @return the value
-     */
+     **/
     public Integer getMinInGBs() {
         return minInGBs;
     }
 
-    /** Minimum Memory configuration per OCPU in GBs */
+    /**
+     * Minimum Memory configuration per OCPU in GBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minPerOcpuInGBs")
     private final Integer minPerOcpuInGBs;
 
     /**
      * Minimum Memory configuration per OCPU in GBs
-     *
      * @return the value
-     */
+     **/
     public Integer getMinPerOcpuInGBs() {
         return minPerOcpuInGBs;
     }
 
-    /** Maximum Memory configuration in GBs */
+    /**
+     * Maximum Memory configuration in GBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInGBs")
     private final Integer maxInGBs;
 
     /**
      * Maximum Memory configuration in GBs
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxInGBs() {
         return maxInGBs;
     }
 
-    /** Maximum Memory configuration per OCPU in GBs */
+    /**
+     * Maximum Memory configuration per OCPU in GBs
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerOcpuInGBs")
     private final Integer maxPerOcpuInGBs;
 
     /**
      * Maximum Memory configuration per OCPU in GBs
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxPerOcpuInGBs() {
         return maxPerOcpuInGBs;
     }
@@ -241,7 +251,6 @@ public final class ShapeMemoryOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

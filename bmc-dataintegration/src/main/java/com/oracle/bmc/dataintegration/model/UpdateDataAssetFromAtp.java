@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Autonomous Transaction Processing data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Autonomous Transaction Processing data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataAssetFromAtp.Builder.class)
+    builder = UpdateDataAssetFromAtp.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,46 +116,49 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The Autonomous Transaction Processing instance service name. */
+        /**
+         * The Autonomous Transaction Processing instance service name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The Autonomous Transaction Processing instance service name.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** The Autonomous Transaction Processing driver class */
+        /**
+         * The Autonomous Transaction Processing driver class
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
         private String driverClass;
 
         /**
          * The Autonomous Transaction Processing driver class
-         *
          * @param driverClass the value to set
          * @return this builder
-         */
+         **/
         public Builder driverClass(String driverClass) {
             this.driverClass = driverClass;
             this.__explicitlySet__.add("driverClass");
             return this;
         }
-        /** The credential file content from an Autonomous Transaction Processing wallet. */
+        /**
+         * The credential file content from an Autonomous Transaction Processing wallet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
         private String credentialFileContent;
 
         /**
          * The credential file content from an Autonomous Transaction Processing wallet.
-         *
          * @param credentialFileContent the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialFileContent(String credentialFileContent) {
             this.credentialFileContent = credentialFileContent;
             this.__explicitlySet__.add("credentialFileContent");
@@ -179,61 +182,65 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("walletPasswordSecret");
             return this;
         }
-        /** The Autonomous Data Warehouse instance region Id. */
+        /**
+         * The Autonomous Data Warehouse instance region Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionId")
         private String regionId;
 
         /**
          * The Autonomous Data Warehouse instance region Id.
-         *
          * @param regionId the value to set
          * @return this builder
-         */
+         **/
         public Builder regionId(String regionId) {
             this.regionId = regionId;
             this.__explicitlySet__.add("regionId");
             return this;
         }
-        /** The Autonomous Data Warehouse instance tenancy Id. */
+        /**
+         * The Autonomous Data Warehouse instance tenancy Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The Autonomous Data Warehouse instance tenancy Id.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** The Autonomous Data Warehouse instance compartment Id. */
+        /**
+         * The Autonomous Data Warehouse instance compartment Id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The Autonomous Data Warehouse instance compartment Id.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Tha Autonomous Database Id */
+        /**
+         * Tha Autonomous Database Id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
         private String autonomousDbId;
 
         /**
          * Tha Autonomous Database Id
-         *
          * @param autonomousDbId the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousDbId(String autonomousDbId) {
             this.autonomousDbId = autonomousDbId;
             this.__explicitlySet__.add("autonomousDbId");
@@ -347,7 +354,9 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -401,41 +410,44 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Autonomous Transaction Processing instance service name. */
+    /**
+     * The Autonomous Transaction Processing instance service name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The Autonomous Transaction Processing instance service name.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** The Autonomous Transaction Processing driver class */
+    /**
+     * The Autonomous Transaction Processing driver class
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("driverClass")
     private final String driverClass;
 
     /**
      * The Autonomous Transaction Processing driver class
-     *
      * @return the value
-     */
+     **/
     public String getDriverClass() {
         return driverClass;
     }
 
-    /** The credential file content from an Autonomous Transaction Processing wallet. */
+    /**
+     * The credential file content from an Autonomous Transaction Processing wallet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialFileContent")
     private final String credentialFileContent;
 
     /**
      * The credential file content from an Autonomous Transaction Processing wallet.
-     *
      * @return the value
-     */
+     **/
     public String getCredentialFileContent() {
         return credentialFileContent;
     }
@@ -454,54 +466,58 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
         return walletPasswordSecret;
     }
 
-    /** The Autonomous Data Warehouse instance region Id. */
+    /**
+     * The Autonomous Data Warehouse instance region Id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionId")
     private final String regionId;
 
     /**
      * The Autonomous Data Warehouse instance region Id.
-     *
      * @return the value
-     */
+     **/
     public String getRegionId() {
         return regionId;
     }
 
-    /** The Autonomous Data Warehouse instance tenancy Id. */
+    /**
+     * The Autonomous Data Warehouse instance tenancy Id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The Autonomous Data Warehouse instance tenancy Id.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
-    /** The Autonomous Data Warehouse instance compartment Id. */
+    /**
+     * The Autonomous Data Warehouse instance compartment Id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The Autonomous Data Warehouse instance compartment Id.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Tha Autonomous Database Id */
+    /**
+     * Tha Autonomous Database Id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDbId")
     private final String autonomousDbId;
 
     /**
      * Tha Autonomous Database Id
-     *
      * @return the value
-     */
+     **/
     public String getAutonomousDbId() {
         return autonomousDbId;
     }
@@ -520,7 +536,6 @@ public final class UpdateDataAssetFromAtp extends UpdateDataAssetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

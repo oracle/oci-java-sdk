@@ -5,37 +5,40 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Monitored Resource Credential Details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Monitored Resource Credential Details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "credentialType",
-        defaultImpl = MonitoredResourceCredential.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "credentialType",
+    defaultImpl = MonitoredResourceCredential.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PreExistingCredentials.class,
-            name = "EXISTING"),
+        value = PreExistingCredentials.class,
+        name = "EXISTING"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = EncryptedCredentials.class,
-            name = "ENCRYPTED"),
+        value = EncryptedCredentials.class,
+        name = "ENCRYPTED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PlainTextCredentials.class,
-            name = "PLAINTEXT")
+        value = PlainTextCredentials.class,
+        name = "PLAINTEXT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class MonitoredResourceCredential
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"source", "name", "type", "description"})
     protected MonitoredResourceCredential(
@@ -48,57 +51,61 @@ public class MonitoredResourceCredential
     }
 
     /**
-     * The source type and source name combination, delimited with (.) separator. {source
-     * type}.{source name} and source type max char limit is 63.
-     */
+     * The source type and source name combination, delimited with (.) separator.
+     * {source type}.{source name} and source type max char limit is 63.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
-     * The source type and source name combination, delimited with (.) separator. {source
-     * type}.{source name} and source type max char limit is 63.
+     * The source type and source name combination, delimited with (.) separator.
+     * {source type}.{source name} and source type max char limit is 63.
      *
      * @return the value
-     */
+     **/
     public String getSource() {
         return source;
     }
 
-    /** The name of the credential, within the context of the source. */
+    /**
+     * The name of the credential, within the context of the source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the credential, within the context of the source.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of the credential ( ex. JMXCreds,DBCreds). */
+    /**
+     * The type of the credential ( ex. JMXCreds,DBCreds).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * The type of the credential ( ex. JMXCreds,DBCreds).
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** The user-specified textual description of the credential. */
+    /**
+     * The user-specified textual description of the credential.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The user-specified textual description of the credential.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -110,7 +117,6 @@ public class MonitoredResourceCredential
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -156,22 +162,25 @@ public class MonitoredResourceCredential
     }
 
     /**
-     * Type of credentials specified in the credentials element. Three possible values - EXISTING,
-     * PLAINTEXT and ENCRYPTED. * EXISTING - Credential is already stored in agent and only
-     * credential name need to be passed for existing credential. * PLAINTEXT - The credential
-     * properties will have credentials in plain text format. * ENCRYPTED - The credential
-     * properties will have credentials stored in vault in encrypted format using KMS client which
-     * uses master key for encryption. The same master key will be used to decrypt the credentials
-     * before passing on to the management agent.
-     */
-    public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of credentials specified in the credentials element.
+     * Three possible values - EXISTING, PLAINTEXT and ENCRYPTED.
+     * * EXISTING  - Credential is already stored in agent and only credential name need
+     *         to be passed for existing credential.
+     * * PLAINTEXT - The credential properties will have credentials in plain text format.
+     * * ENCRYPTED - The credential properties will have credentials stored in vault in
+     *         encrypted format using KMS client which uses master key for encryption.
+     *         The same master key will be used to decrypt the credentials before passing
+     *         on to the management agent.
+     *
+     **/
+    public enum CredentialType {
         Existing("EXISTING"),
         Plaintext("PLAINTEXT"),
         Encrypted("ENCRYPTED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

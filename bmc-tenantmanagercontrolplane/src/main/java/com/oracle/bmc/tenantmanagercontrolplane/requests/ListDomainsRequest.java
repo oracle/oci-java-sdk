@@ -6,88 +6,116 @@ package com.oracle.bmc.tenantmanagercontrolplane.requests;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListDomainsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDomainsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListDomainsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDomainsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The domain OCID. */
+    /**
+     * The domain OCID.
+     */
     private String domainId;
 
-    /** The domain OCID. */
+    /**
+     * The domain OCID.
+     */
     public String getDomainId() {
         return domainId;
     }
-    /** The lifecycle state of the resource. */
+    /**
+     * The lifecycle state of the resource.
+     */
     private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState;
 
-    /** The lifecycle state of the resource. */
+    /**
+     * The lifecycle state of the resource.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The status of the domain. */
+    /**
+     * The status of the domain.
+     */
     private com.oracle.bmc.tenantmanagercontrolplane.model.Domain.Status status;
 
-    /** The status of the domain. */
+    /**
+     * The status of the domain.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.Domain.Status getStatus() {
         return status;
     }
-    /** A filter to return only resources that exactly match the name given. */
+    /**
+     * A filter to return only resources that exactly match the name given.
+     */
     private String name;
 
-    /** A filter to return only resources that exactly match the name given. */
+    /**
+     * A filter to return only resources that exactly match the name given.
+     */
     public String getName() {
         return name;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -121,17 +149,23 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -139,15 +173,17 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDomainsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -156,12 +192,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The domain OCID. */
+        /**
+         * The domain OCID.
+         */
         private String domainId = null;
 
         /**
          * The domain OCID.
-         *
          * @param domainId the value to set
          * @return this builder instance
          */
@@ -170,12 +207,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The lifecycle state of the resource. */
+        /**
+         * The lifecycle state of the resource.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.LifecycleState lifecycleState = null;
 
         /**
          * The lifecycle state of the resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -185,12 +223,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The status of the domain. */
+        /**
+         * The status of the domain.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.Domain.Status status = null;
 
         /**
          * The status of the domain.
-         *
          * @param status the value to set
          * @return this builder instance
          */
@@ -199,12 +238,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that exactly match the name given. */
+        /**
+         * A filter to return only resources that exactly match the name given.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that exactly match the name given.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -213,12 +253,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -228,15 +269,12 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -245,12 +283,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -260,16 +299,19 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. * The default order for
-         * timeCreated is descending. * The default order for displayName is ascending. * If no
-         * value is specified, timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. * The default order for
-         * timeCreated is descending. * The default order for displayName is ascending. * If no
-         * value is specified, timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -279,12 +321,13 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use, whether 'asc' or 'desc'. */
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -296,19 +339,18 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -320,7 +362,6 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDomainsRequest o) {
@@ -342,11 +383,10 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDomainsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDomainsRequest
          */
@@ -360,8 +400,7 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDomainsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDomainsRequest
@@ -379,14 +418,12 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListDomainsRequest(compartmentId, domainId, lifecycleState, status, name,
-            // opcRequestId, page, limit, sortBy, sortOrder);
+            // new ListDomainsRequest(compartmentId, domainId, lifecycleState, status, name, opcRequestId, page, limit, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -405,7 +442,6 @@ public class ListDomainsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

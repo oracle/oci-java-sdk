@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Lifecycle state of the JmsPlugin. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JmsPluginLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state of the JmsPlugin.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum JmsPluginLifecycleState {
     Active("ACTIVE"),
     Inactive("INACTIVE"),
     NeedsAttention("NEEDS_ATTENTION"),

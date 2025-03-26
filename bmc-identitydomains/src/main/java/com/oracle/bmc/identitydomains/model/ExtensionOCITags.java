@@ -5,22 +5,19 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * OCI Tags. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * OCI Tags.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExtensionOCITags.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionOCITags
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionOCITags extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"freeformTags", "definedTags", "tagSlug"})
     public ExtensionOCITags(
@@ -37,26 +34,37 @@ public final class ExtensionOCITags
     public static class Builder {
         /**
          * OCI Freeform Tags
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true - type:
-         * complex - required: false - mutability: readWrite - returned: default - multiValued: true
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - type: complex
+         *  - required: false
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - multiValued: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.List<FreeformTags> freeformTags;
 
         /**
          * OCI Freeform Tags
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true - type:
-         * complex - required: false - mutability: readWrite - returned: default - multiValued: true
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - type: complex
+         *  - required: false
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - multiValued: true
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.List<FreeformTags> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -64,28 +72,37 @@ public final class ExtensionOCITags
         }
         /**
          * OCI Defined Tags
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [namespace, key, value] - type: complex -
-         * idcsSearchable: true - required: false - mutability: readWrite - multiValued: true -
-         * returned: default
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [namespace, key, value]
+         *  - type: complex
+         *  - idcsSearchable: true
+         *  - required: false
+         *  - mutability: readWrite
+         *  - multiValued: true
+         *  - returned: default
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.List<DefinedTags> definedTags;
 
         /**
          * OCI Defined Tags
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [namespace, key, value] - type: complex -
-         * idcsSearchable: true - required: false - mutability: readWrite - multiValued: true -
-         * returned: default
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [namespace, key, value]
+         *  - type: complex
+         *  - idcsSearchable: true
+         *  - required: false
+         *  - mutability: readWrite
+         *  - multiValued: true
+         *  - returned: default
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(java.util.List<DefinedTags> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
@@ -93,24 +110,29 @@ public final class ExtensionOCITags
         }
         /**
          * OCI Tag slug
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - type: binary - mutability: readOnly - returned: request
-         */
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: binary
+         *  - mutability: readOnly
+         *  - returned: request
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
         private Object tagSlug;
 
         /**
          * OCI Tag slug
-         *
-         * <p>*Added In:** 2011192329
-         *
-         * <p>*SCIM++ Properties:** - type: binary - mutability: readOnly - returned: request
-         *
+         * <p>
+         **Added In:** 2011192329
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: binary
+         *  - mutability: readOnly
+         *  - returned: request
          * @param tagSlug the value to set
          * @return this builder
-         */
+         **/
         public Builder tagSlug(Object tagSlug) {
             this.tagSlug = tagSlug;
             this.__explicitlySet__.add("tagSlug");
@@ -144,7 +166,9 @@ public final class ExtensionOCITags
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,75 +179,100 @@ public final class ExtensionOCITags
 
     /**
      * OCI Freeform Tags
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true - type:
-     * complex - required: false - mutability: readWrite - returned: default - multiValued: true
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - type: complex
+     *  - required: false
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - multiValued: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.List<FreeformTags> freeformTags;
 
     /**
      * OCI Freeform Tags
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true - type:
-     * complex - required: false - mutability: readWrite - returned: default - multiValued: true
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - type: complex
+     *  - required: false
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - multiValued: true
      * @return the value
-     */
+     **/
     public java.util.List<FreeformTags> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * OCI Defined Tags
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [namespace, key, value] - type: complex -
-     * idcsSearchable: true - required: false - mutability: readWrite - multiValued: true -
-     * returned: default
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [namespace, key, value]
+     *  - type: complex
+     *  - idcsSearchable: true
+     *  - required: false
+     *  - mutability: readWrite
+     *  - multiValued: true
+     *  - returned: default
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.List<DefinedTags> definedTags;
 
     /**
      * OCI Defined Tags
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [namespace, key, value] - type: complex -
-     * idcsSearchable: true - required: false - mutability: readWrite - multiValued: true -
-     * returned: default
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [namespace, key, value]
+     *  - type: complex
+     *  - idcsSearchable: true
+     *  - required: false
+     *  - mutability: readWrite
+     *  - multiValued: true
+     *  - returned: default
      * @return the value
-     */
+     **/
     public java.util.List<DefinedTags> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * OCI Tag slug
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - type: binary - mutability: readOnly - returned: request
-     */
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: binary
+     *  - mutability: readOnly
+     *  - returned: request
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagSlug")
     private final Object tagSlug;
 
     /**
      * OCI Tag slug
-     *
-     * <p>*Added In:** 2011192329
-     *
-     * <p>*SCIM++ Properties:** - type: binary - mutability: readOnly - returned: request
-     *
+     * <p>
+     **Added In:** 2011192329
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: binary
+     *  - mutability: readOnly
+     *  - returned: request
      * @return the value
-     */
+     **/
     public Object getTagSlug() {
         return tagSlug;
     }
@@ -235,7 +284,6 @@ public final class ExtensionOCITags
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

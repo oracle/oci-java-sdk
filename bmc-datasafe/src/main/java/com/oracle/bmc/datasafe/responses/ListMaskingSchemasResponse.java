@@ -6,17 +6,16 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,18 +24,13 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
-     * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. Include opc-next-page value as the page parameter for the subsequent GET request to
-     * get the next batch of items. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -45,16 +39,17 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
      */
     private String opcPrevPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
      *
      * @return the value
      */
@@ -62,12 +57,13 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
         return opcPrevPage;
     }
 
-    /** The returned {@code MaskingSchemaCollection} instance. */
+    /**
+     * The returned MaskingSchemaCollection instance.
+     */
     private com.oracle.bmc.datasafe.model.MaskingSchemaCollection maskingSchemaCollection;
 
     /**
-     * The returned {@code MaskingSchemaCollection} instance.
-     *
+     * The returned MaskingSchemaCollection instance.
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.MaskingSchemaCollection getMaskingSchemaCollection() {
@@ -84,7 +80,7 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
     })
     private ListMaskingSchemasResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -96,33 +92,29 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
         this.maskingSchemaCollection = maskingSchemaCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListMaskingSchemasResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,18 +125,13 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
-         * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. Include opc-next-page value as the page parameter for the subsequent GET
-         * request to get the next batch of items. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages of results remain. Include opc-next-page value as the page parameter for the subsequent GET request to get the next batch of items. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -155,16 +142,17 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
          */
         private String opcPrevPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -174,12 +162,13 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code MaskingSchemaCollection} instance. */
+        /**
+         * The returned MaskingSchemaCollection instance.
+         */
         private com.oracle.bmc.datasafe.model.MaskingSchemaCollection maskingSchemaCollection;
 
         /**
-         * The returned {@code MaskingSchemaCollection} instance.
-         *
+         * The returned MaskingSchemaCollection instance.
          * @param maskingSchemaCollection the value to set
          * @return this builder
          */
@@ -191,10 +180,8 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListMaskingSchemasResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -208,10 +195,8 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListMaskingSchemasResponse build() {
             return new ListMaskingSchemasResponse(
                     __httpStatusCode__,
@@ -225,7 +210,6 @@ public class ListMaskingSchemasResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

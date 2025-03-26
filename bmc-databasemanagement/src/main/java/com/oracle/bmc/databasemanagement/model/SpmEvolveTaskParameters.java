@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The set of parameters used in an SPM evolve task. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The set of parameters used in an SPM evolve task.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SpmEvolveTaskParameters.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SpmEvolveTaskParameters.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SpmEvolveTaskParameters
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "alternatePlanSources",
@@ -46,32 +45,34 @@ public final class SpmEvolveTaskParameters
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Determines which sources to search for additional plans. */
+        /**
+         * Determines which sources to search for additional plans.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanSources")
         private java.util.List<AlternatePlanSources> alternatePlanSources;
 
         /**
          * Determines which sources to search for additional plans.
-         *
          * @param alternatePlanSources the value to set
          * @return this builder
-         */
+         **/
         public Builder alternatePlanSources(
                 java.util.List<AlternatePlanSources> alternatePlanSources) {
             this.alternatePlanSources = alternatePlanSources;
             this.__explicitlySet__.add("alternatePlanSources");
             return this;
         }
-        /** Determines which alternative plans should be loaded. */
+        /**
+         * Determines which alternative plans should be loaded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanBaselines")
         private java.util.List<AlternatePlanBaselines> alternatePlanBaselines;
 
         /**
          * Determines which alternative plans should be loaded.
-         *
          * @param alternatePlanBaselines the value to set
          * @return this builder
-         */
+         **/
         public Builder alternatePlanBaselines(
                 java.util.List<AlternatePlanBaselines> alternatePlanBaselines) {
             this.alternatePlanBaselines = alternatePlanBaselines;
@@ -79,49 +80,54 @@ public final class SpmEvolveTaskParameters
             return this;
         }
         /**
-         * Specifies the maximum number of plans to load in total (that is, not the limit for each
-         * SQL statement). A value of zero indicates {@code UNLIMITED} number of plans.
-         */
+         * Specifies the maximum number of plans to load in total (that is, not
+         * the limit for each SQL statement). A value of zero indicates {@code UNLIMITED}
+         * number of plans.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanLimit")
         private Integer alternatePlanLimit;
 
         /**
-         * Specifies the maximum number of plans to load in total (that is, not the limit for each
-         * SQL statement). A value of zero indicates {@code UNLIMITED} number of plans.
+         * Specifies the maximum number of plans to load in total (that is, not
+         * the limit for each SQL statement). A value of zero indicates {@code UNLIMITED}
+         * number of plans.
          *
          * @param alternatePlanLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder alternatePlanLimit(Integer alternatePlanLimit) {
             this.alternatePlanLimit = alternatePlanLimit;
             this.__explicitlySet__.add("alternatePlanLimit");
             return this;
         }
-        /** Specifies whether to accept recommended plans automatically. */
+        /**
+         * Specifies whether to accept recommended plans automatically.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arePlansAutoAccepted")
         private Boolean arePlansAutoAccepted;
 
         /**
          * Specifies whether to accept recommended plans automatically.
-         *
          * @param arePlansAutoAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder arePlansAutoAccepted(Boolean arePlansAutoAccepted) {
             this.arePlansAutoAccepted = arePlansAutoAccepted;
             this.__explicitlySet__.add("arePlansAutoAccepted");
             return this;
         }
-        /** The global time limit in seconds. This is the total time allowed for the task. */
+        /**
+         * The global time limit in seconds. This is the total time allowed for the task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedTimeLimit")
         private Integer allowedTimeLimit;
 
         /**
          * The global time limit in seconds. This is the total time allowed for the task.
-         *
          * @param allowedTimeLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedTimeLimit(Integer allowedTimeLimit) {
             this.allowedTimeLimit = allowedTimeLimit;
             this.__explicitlySet__.add("allowedTimeLimit");
@@ -166,7 +172,9 @@ public final class SpmEvolveTaskParameters
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,16 +183,17 @@ public final class SpmEvolveTaskParameters
         return new Builder().copy(this);
     }
 
-    /** */
-    public enum AlternatePlanSources implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum AlternatePlanSources {
         Auto("AUTO"),
         AutomaticWorkloadRepository("AUTOMATIC_WORKLOAD_REPOSITORY"),
         CursorCache("CURSOR_CACHE"),
         SqlTuningSet("SQL_TUNING_SET"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -223,28 +232,30 @@ public final class SpmEvolveTaskParameters
             return UnknownEnumValue;
         }
     };
-    /** Determines which sources to search for additional plans. */
+    /**
+     * Determines which sources to search for additional plans.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanSources")
     private final java.util.List<AlternatePlanSources> alternatePlanSources;
 
     /**
      * Determines which sources to search for additional plans.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AlternatePlanSources> getAlternatePlanSources() {
         return alternatePlanSources;
     }
 
-    /** */
-    public enum AlternatePlanBaselines implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum AlternatePlanBaselines {
         Auto("AUTO"),
         Existing("EXISTING"),
         New("NEW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -283,58 +294,64 @@ public final class SpmEvolveTaskParameters
             return UnknownEnumValue;
         }
     };
-    /** Determines which alternative plans should be loaded. */
+    /**
+     * Determines which alternative plans should be loaded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanBaselines")
     private final java.util.List<AlternatePlanBaselines> alternatePlanBaselines;
 
     /**
      * Determines which alternative plans should be loaded.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AlternatePlanBaselines> getAlternatePlanBaselines() {
         return alternatePlanBaselines;
     }
 
     /**
-     * Specifies the maximum number of plans to load in total (that is, not the limit for each SQL
-     * statement). A value of zero indicates {@code UNLIMITED} number of plans.
-     */
+     * Specifies the maximum number of plans to load in total (that is, not
+     * the limit for each SQL statement). A value of zero indicates {@code UNLIMITED}
+     * number of plans.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alternatePlanLimit")
     private final Integer alternatePlanLimit;
 
     /**
-     * Specifies the maximum number of plans to load in total (that is, not the limit for each SQL
-     * statement). A value of zero indicates {@code UNLIMITED} number of plans.
+     * Specifies the maximum number of plans to load in total (that is, not
+     * the limit for each SQL statement). A value of zero indicates {@code UNLIMITED}
+     * number of plans.
      *
      * @return the value
-     */
+     **/
     public Integer getAlternatePlanLimit() {
         return alternatePlanLimit;
     }
 
-    /** Specifies whether to accept recommended plans automatically. */
+    /**
+     * Specifies whether to accept recommended plans automatically.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arePlansAutoAccepted")
     private final Boolean arePlansAutoAccepted;
 
     /**
      * Specifies whether to accept recommended plans automatically.
-     *
      * @return the value
-     */
+     **/
     public Boolean getArePlansAutoAccepted() {
         return arePlansAutoAccepted;
     }
 
-    /** The global time limit in seconds. This is the total time allowed for the task. */
+    /**
+     * The global time limit in seconds. This is the total time allowed for the task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedTimeLimit")
     private final Integer allowedTimeLimit;
 
     /**
      * The global time limit in seconds. This is the total time allowed for the task.
-     *
      * @return the value
-     */
+     **/
     public Integer getAllowedTimeLimit() {
         return allowedTimeLimit;
     }
@@ -346,7 +363,6 @@ public final class SpmEvolveTaskParameters
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

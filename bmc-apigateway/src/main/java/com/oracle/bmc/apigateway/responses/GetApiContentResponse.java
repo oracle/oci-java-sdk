@@ -6,9 +6,12 @@ package com.oracle.bmc.apigateway.responses;
 
 import com.oracle.bmc.apigateway.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,17 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request id.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide the request
+     * id.
      *
      * @return the value
      */
@@ -36,24 +42,26 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** Base64 encoded Sha256 of the body. */
+    /**
+     * Base64 encoded Sha256 of the body.
+     */
     private String xContentSha256;
 
     /**
      * Base64 encoded Sha256 of the body.
-     *
      * @return the value
      */
     public String getXContentSha256() {
         return xContentSha256;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -70,7 +78,7 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private GetApiContentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String xContentSha256,
@@ -82,25 +90,25 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetApiContentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -115,14 +123,17 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request id.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide the request
+         * id.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -132,12 +143,13 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** Base64 encoded Sha256 of the body. */
+        /**
+         * Base64 encoded Sha256 of the body.
+         */
         private String xContentSha256;
 
         /**
          * Base64 encoded Sha256 of the body.
-         *
          * @param xContentSha256 the value to set
          * @return this builder
          */
@@ -146,12 +158,13 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -162,10 +175,8 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetApiContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -179,10 +190,8 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetApiContentResponse build() {
             return new GetApiContentResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, xContentSha256, inputStream);
@@ -191,7 +200,6 @@ public class GetApiContentResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** Supported types for the download URL. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum DownloadUrlType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported types for the download URL.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum DownloadUrlType {
     Oss("OSS"),
     Cdn("CDN"),
 

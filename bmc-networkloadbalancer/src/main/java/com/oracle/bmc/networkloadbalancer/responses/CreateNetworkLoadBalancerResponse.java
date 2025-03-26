@@ -6,17 +6,16 @@ package com.oracle.bmc.networkloadbalancer.responses;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request identifier.
+     * Unique Oracle-assigned identifier for the request. If you must contact
+     * Oracle about a particular request, then provide the request identifier.
      *
      * @return the value
      */
@@ -40,7 +40,10 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -52,12 +55,13 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
         return etag;
     }
 
-    /** The returned {@code NetworkLoadBalancer} instance. */
+    /**
+     * The returned NetworkLoadBalancer instance.
+     */
     private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
     /**
-     * The returned {@code NetworkLoadBalancer} instance.
-     *
+     * The returned NetworkLoadBalancer instance.
      * @return the value
      */
     public com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer getNetworkLoadBalancer() {
@@ -74,7 +78,7 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
     })
     private CreateNetworkLoadBalancerResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
@@ -86,34 +90,29 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
         this.networkLoadBalancer = networkLoadBalancer;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateNetworkLoadBalancerResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -124,14 +123,15 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request identifier.
+         * Unique Oracle-assigned identifier for the request. If you must contact
+         * Oracle about a particular request, then provide the request identifier.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -141,7 +141,10 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -155,12 +158,13 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned {@code NetworkLoadBalancer} instance. */
+        /**
+         * The returned NetworkLoadBalancer instance.
+         */
         private com.oracle.bmc.networkloadbalancer.model.NetworkLoadBalancer networkLoadBalancer;
 
         /**
-         * The returned {@code NetworkLoadBalancer} instance.
-         *
+         * The returned NetworkLoadBalancer instance.
          * @param networkLoadBalancer the value to set
          * @return this builder
          */
@@ -172,10 +176,8 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateNetworkLoadBalancerResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -189,10 +191,8 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateNetworkLoadBalancerResponse build() {
             return new CreateNetworkLoadBalancerResponse(
                     __httpStatusCode__,
@@ -206,7 +206,6 @@ public class CreateNetworkLoadBalancerResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

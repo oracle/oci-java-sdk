@@ -5,21 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The document details for language service call. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The document details for language service call.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TextDocument.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class TextDocument extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class TextDocument extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"key", "text", "languageCode"})
     public TextDocument(String key, String text, String languageCode) {
@@ -31,52 +29,49 @@ public final class TextDocument extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Document unique identifier defined by the user. */
+        /**
+         * Document unique identifier defined by the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Document unique identifier defined by the user.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Document text for language service call. */
+        /**
+         * Document text for language service call.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Document text for language service call.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
-         * languages.
-         */
+         * Language code of the document. Please refer to respective model [API documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported languages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Language code of the document. Please refer to respective model [API
-         * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
-         * languages.
-         *
+         * Language code of the document. Please refer to respective model [API documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported languages.
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -109,7 +104,9 @@ public final class TextDocument extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,47 +115,44 @@ public final class TextDocument extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Document unique identifier defined by the user. */
+    /**
+     * Document unique identifier defined by the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Document unique identifier defined by the user.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Document text for language service call. */
+    /**
+     * Document text for language service call.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Document text for language service call.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
-     */
+     * Language code of the document. Please refer to respective model [API documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported languages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Language code of the document. Please refer to respective model [API
-     * documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported
-     * languages.
-     *
+     * Language code of the document. Please refer to respective model [API documentation](https://docs.oracle.com/iaas/language/using/overview.htm) for supported languages.
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -170,7 +164,6 @@ public final class TextDocument extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

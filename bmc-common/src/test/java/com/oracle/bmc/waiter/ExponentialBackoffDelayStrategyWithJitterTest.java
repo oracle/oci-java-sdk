@@ -53,10 +53,8 @@ public class ExponentialBackoffDelayStrategyWithJitterTest {
     }
 
     /**
-     * Assert that the actual value is in the bounds (both are inclusive, since {@link
-     * ExponentialBackoffDelayStrategyWithJitter} uses {@link Math#round(double)}, which can give us
-     * 1000 ms of jitter.
-     *
+     * Assert that the actual value is in the bounds (both are inclusive, since {@link ExponentialBackoffDelayStrategyWithJitter}
+     * uses {@link Math#round(double)}, which can give us 1000 ms of jitter.
      * @param minInclusive inclusive minimum
      * @param maxInclusive inclusive maximum
      * @param actual actual value

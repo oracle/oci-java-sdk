@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The names of the packages to be installed on the managed instance group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The names of the packages to be installed on the managed instance group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstallPackagesOnManagedInstanceGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstallPackagesOnManagedInstanceGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstallPackagesOnManagedInstanceGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"packageNames", "workRequestDetails", "isLatest"})
     public InstallPackagesOnManagedInstanceGroupDetails(
@@ -36,16 +35,17 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of package names. */
+        /**
+         * The list of package names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<String> packageNames;
 
         /**
          * The list of package names.
-         *
          * @param packageNames the value to set
          * @return this builder
-         */
+         **/
         public Builder packageNames(java.util.List<String> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
@@ -60,16 +60,17 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
             this.__explicitlySet__.add("workRequestDetails");
             return this;
         }
-        /** Indicates whether this is the latest package version. */
+        /**
+         * Indicates whether this is the latest package version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
         private Boolean isLatest;
 
         /**
          * Indicates whether this is the latest package version.
-         *
          * @param isLatest the value to set
          * @return this builder
-         */
+         **/
         public Builder isLatest(Boolean isLatest) {
             this.isLatest = isLatest;
             this.__explicitlySet__.add("isLatest");
@@ -104,7 +105,9 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,15 +116,16 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The list of package names. */
+    /**
+     * The list of package names.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<String> packageNames;
 
     /**
      * The list of package names.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPackageNames() {
         return packageNames;
     }
@@ -133,15 +137,16 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
         return workRequestDetails;
     }
 
-    /** Indicates whether this is the latest package version. */
+    /**
+     * Indicates whether this is the latest package version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
     private final Boolean isLatest;
 
     /**
      * Indicates whether this is the latest package version.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLatest() {
         return isLatest;
     }
@@ -153,7 +158,6 @@ public final class InstallPackagesOnManagedInstanceGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

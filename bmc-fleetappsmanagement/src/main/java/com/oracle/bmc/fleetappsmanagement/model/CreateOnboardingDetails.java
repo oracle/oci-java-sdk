@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about enabling onboarding. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The information about enabling onboarding.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOnboardingDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOnboardingDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOnboardingDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -38,58 +37,57 @@ public final class CreateOnboardingDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Tenancy OCID */
+        /**
+         * Tenancy OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Tenancy OCID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A value determining if the Fleet Application Management tagging is enabled or not. Allow
-         * Fleet Application Management to tag resources with fleet name using
-         * "Oracle$FAMS-Tags.FleetName" tag.
-         */
+         * A value determining if the Fleet Application Management tagging is enabled or not.
+         * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
         private Boolean isFamsTagEnabled;
 
         /**
-         * A value determining if the Fleet Application Management tagging is enabled or not. Allow
-         * Fleet Application Management to tag resources with fleet name using
-         * "Oracle$FAMS-Tags.FleetName" tag.
+         * A value determining if the Fleet Application Management tagging is enabled or not.
+         * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
          *
          * @param isFamsTagEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isFamsTagEnabled(Boolean isFamsTagEnabled) {
             this.isFamsTagEnabled = isFamsTagEnabled;
             this.__explicitlySet__.add("isFamsTagEnabled");
             return this;
         }
         /**
-         * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
-         * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged"
-         * tag.
-         */
+         * A value determining if the cost tracking tag is enabled or not.
+         * Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
         private Boolean isCostTrackingTagEnabled;
 
         /**
-         * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
-         * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged"
-         * tag.
+         * A value determining if the cost tracking tag is enabled or not.
+         * Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
          *
          * @param isCostTrackingTagEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCostTrackingTagEnabled(Boolean isCostTrackingTagEnabled) {
             this.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
             this.__explicitlySet__.add("isCostTrackingTagEnabled");
@@ -126,7 +124,9 @@ public final class CreateOnboardingDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,51 +135,52 @@ public final class CreateOnboardingDetails
         return new Builder().copy(this);
     }
 
-    /** Tenancy OCID */
+    /**
+     * Tenancy OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Tenancy OCID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A value determining if the Fleet Application Management tagging is enabled or not. Allow
-     * Fleet Application Management to tag resources with fleet name using
-     * "Oracle$FAMS-Tags.FleetName" tag.
-     */
+     * A value determining if the Fleet Application Management tagging is enabled or not.
+     * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
     private final Boolean isFamsTagEnabled;
 
     /**
-     * A value determining if the Fleet Application Management tagging is enabled or not. Allow
-     * Fleet Application Management to tag resources with fleet name using
-     * "Oracle$FAMS-Tags.FleetName" tag.
+     * A value determining if the Fleet Application Management tagging is enabled or not.
+     * Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFamsTagEnabled() {
         return isFamsTagEnabled;
     }
 
     /**
-     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
-     * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
-     */
+     * A value determining if the cost tracking tag is enabled or not.
+     * Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
     private final Boolean isCostTrackingTagEnabled;
 
     /**
-     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
-     * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+     * A value determining if the cost tracking tag is enabled or not.
+     * Allow Fleet Application Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCostTrackingTagEnabled() {
         return isCostTrackingTagEnabled;
     }
@@ -191,7 +192,6 @@ public final class CreateOnboardingDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

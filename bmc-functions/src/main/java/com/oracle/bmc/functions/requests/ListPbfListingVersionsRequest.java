@@ -6,99 +6,122 @@ package com.oracle.bmc.functions.requests;
 
 import com.oracle.bmc.functions.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingVersionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListPbfListingVersionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPbfListingVersionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListPbfListingVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique PbfListing identifier */
+    /**
+     * unique PbfListing identifier
+     */
     private String pbfListingId;
 
-    /** unique PbfListing identifier */
+    /**
+     * unique PbfListing identifier
+     */
     public String getPbfListingId() {
         return pbfListingId;
     }
-    /** unique PbfListingVersion identifier */
+    /**
+     * unique PbfListingVersion identifier
+     */
     private String pbfListingVersionId;
 
-    /** unique PbfListingVersion identifier */
+    /**
+     * unique PbfListingVersion identifier
+     */
     public String getPbfListingVersionId() {
         return pbfListingVersionId;
     }
     /**
-     * Matches a PbfListingVersion based on a provided semantic version name for a
-     * PbfListingVersion. Each PbfListingVersion name is unique with respect to its associated
-     * PbfListing.
+     * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.
+     * Each PbfListingVersion name is unique with respect to its associated PbfListing.
+     *
      */
     private String name;
 
     /**
-     * Matches a PbfListingVersion based on a provided semantic version name for a
-     * PbfListingVersion. Each PbfListingVersion name is unique with respect to its associated
-     * PbfListing.
+     * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.
+     * Each PbfListingVersion name is unique with respect to its associated PbfListing.
+     *
      */
     public String getName() {
         return name;
     }
     /**
-     * Matches the current version (the most recently added version with an Active lifecycleState)
-     * associated with a PbfListing.
+     * Matches the current version (the most recently added version with an Active
+     * lifecycleState) associated with a PbfListing.
+     *
      */
     private Boolean isCurrentVersion;
 
     /**
-     * Matches the current version (the most recently added version with an Active lifecycleState)
-     * associated with a PbfListing.
+     * Matches the current version (the most recently added version with an Active
+     * lifecycleState) associated with a PbfListing.
+     *
      */
     public Boolean getIsCurrentVersion() {
         return isCurrentVersion;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     private com.oracle.bmc.functions.model.PbfListingVersion.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     */
     public com.oracle.bmc.functions.model.PbfListingVersion.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     private String page;
 
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     private SortOrder sortOrder;
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -133,23 +156,25 @@ public class ListPbfListingVersionsRequest
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         Name("name"),
         ;
@@ -183,8 +208,8 @@ public class ListPbfListingVersionsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for name is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -192,12 +217,14 @@ public class ListPbfListingVersionsRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -206,15 +233,17 @@ public class ListPbfListingVersionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPbfListingVersionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique PbfListing identifier */
+        /**
+         * unique PbfListing identifier
+         */
         private String pbfListingId = null;
 
         /**
          * unique PbfListing identifier
-         *
          * @param pbfListingId the value to set
          * @return this builder instance
          */
@@ -223,12 +252,13 @@ public class ListPbfListingVersionsRequest
             return this;
         }
 
-        /** unique PbfListingVersion identifier */
+        /**
+         * unique PbfListingVersion identifier
+         */
         private String pbfListingVersionId = null;
 
         /**
          * unique PbfListingVersion identifier
-         *
          * @param pbfListingVersionId the value to set
          * @return this builder instance
          */
@@ -238,16 +268,15 @@ public class ListPbfListingVersionsRequest
         }
 
         /**
-         * Matches a PbfListingVersion based on a provided semantic version name for a
-         * PbfListingVersion. Each PbfListingVersion name is unique with respect to its associated
-         * PbfListing.
+         * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.
+         * Each PbfListingVersion name is unique with respect to its associated PbfListing.
+         *
          */
         private String name = null;
 
         /**
-         * Matches a PbfListingVersion based on a provided semantic version name for a
-         * PbfListingVersion. Each PbfListingVersion name is unique with respect to its associated
-         * PbfListing.
+         * Matches a PbfListingVersion based on a provided semantic version name for a PbfListingVersion.
+         * Each PbfListingVersion name is unique with respect to its associated PbfListing.
          *
          * @param name the value to set
          * @return this builder instance
@@ -260,6 +289,7 @@ public class ListPbfListingVersionsRequest
         /**
          * Matches the current version (the most recently added version with an Active
          * lifecycleState) associated with a PbfListing.
+         *
          */
         private Boolean isCurrentVersion = null;
 
@@ -283,7 +313,6 @@ public class ListPbfListingVersionsRequest
 
         /**
          * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -295,15 +324,16 @@ public class ListPbfListingVersionsRequest
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * <p>
+         * Default: 10
          *
-         * <p>Default: 10
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         *
-         * <p>Default: 10
+         * <p>
+         * Default: 10
          *
          * @param limit the value to set
          * @return this builder instance
@@ -313,7 +343,10 @@ public class ListPbfListingVersionsRequest
             return this;
         }
 
-        /** The pagination token for a list query returned by a previous operation */
+        /**
+         * The pagination token for a list query returned by a previous operation
+         *
+         */
         private String page = null;
 
         /**
@@ -329,15 +362,18 @@ public class ListPbfListingVersionsRequest
 
         /**
          * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order.
-         *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -348,14 +384,13 @@ public class ListPbfListingVersionsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for name is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for name is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for name is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -366,14 +401,15 @@ public class ListPbfListingVersionsRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -385,19 +421,18 @@ public class ListPbfListingVersionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -409,7 +444,6 @@ public class ListPbfListingVersionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPbfListingVersionsRequest o) {
@@ -431,11 +465,10 @@ public class ListPbfListingVersionsRequest
         /**
          * Build the instance of ListPbfListingVersionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPbfListingVersionsRequest
          */
@@ -449,8 +482,7 @@ public class ListPbfListingVersionsRequest
         /**
          * Build the instance of ListPbfListingVersionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPbfListingVersionsRequest
@@ -468,14 +500,12 @@ public class ListPbfListingVersionsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListPbfListingVersionsRequest(pbfListingId, pbfListingVersionId, name,
-            // isCurrentVersion, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListPbfListingVersionsRequest(pbfListingId, pbfListingVersionId, name, isCurrentVersion, lifecycleState, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -494,7 +524,6 @@ public class ListPbfListingVersionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

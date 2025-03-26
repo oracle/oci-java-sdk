@@ -4,20 +4,23 @@
  */
 package com.oracle.bmc.encryption.internal;
 
-import com.oracle.bmc.encryption.KmsMasterKey;
-import com.oracle.bmc.encryption.MasterKeyProvider;
-import com.oracle.bmc.http.client.Serializer;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Base64;
 import java.util.Map;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.oracle.bmc.encryption.KmsMasterKey;
+import com.oracle.bmc.encryption.MasterKeyProvider;
+
 public class SerializeHeader {
     private final MasterKeyProvider provider;
-    private static final int INITIAL_OFFSET = 6; // version(short) + header_size(int)
+    private static final int INITIAL_OFFSET = 6; //version(short) + header_size(int)
     private static final short VERSION = 1;
+    private static final ObjectMapper OBJECT_MAPPER =
+            com.oracle.bmc.http.Serialization.getObjectMapper();
 
     public SerializeHeader(MasterKeyProvider provider) {
         this.provider = provider;
@@ -59,8 +62,8 @@ public class SerializeHeader {
         String contextString = "";
         if (context != null) {
             try {
-                contextString = Serializer.getDefault().writeValueAsString(context);
-            } catch (IOException e) {
+                contextString = OBJECT_MAPPER.writeValueAsString(context);
+            } catch (JsonProcessingException e) {
                 throw new RuntimeException("Failed to parse encryption header. ", e);
             }
         }
@@ -69,9 +72,10 @@ public class SerializeHeader {
 
     private String serializeJsonHeader(EncryptionHeader encryptionHeader) {
         String jsonOutput = null;
+        ObjectMapper objectMapper = com.oracle.bmc.http.Serialization.getObjectMapper();
         try {
-            jsonOutput = Serializer.getDefault().writeValueAsString(encryptionHeader);
-        } catch (IOException e) {
+            jsonOutput = objectMapper.writeValueAsString(encryptionHeader);
+        } catch (JsonProcessingException e) {
             throw new RuntimeException("Failed to parse encryption header. ", e);
         }
         return jsonOutput;
@@ -83,8 +87,9 @@ public class SerializeHeader {
 
     public EncryptionHeader deserializeJsonHeader(byte[] header) {
         EncryptionHeader encryptionHeader;
+        ObjectMapper objectMapper = com.oracle.bmc.http.Serialization.getObjectMapper();
         try {
-            encryptionHeader = Serializer.getDefault().readValue(header, EncryptionHeader.class);
+            encryptionHeader = objectMapper.readValue(header, EncryptionHeader.class);
         } catch (IOException e) {
             throw new RuntimeException("Failed to parse encryption header.", e);
         }

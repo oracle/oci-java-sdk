@@ -5,22 +5,19 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Summary object for service element in the network firewall policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Summary object for service element in the network firewall policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ServiceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ServiceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ServiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "name", "parentResourceId"})
     public ServiceSummary(ServiceType type, String name, String parentResourceId) {
@@ -32,46 +29,49 @@ public final class ServiceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Describes the type of Service. */
+        /**
+         * Describes the type of Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ServiceType type;
 
         /**
          * Describes the type of Service.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(ServiceType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Name of the service. */
+        /**
+         * Name of the service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the service.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** OCID of the Network Firewall Policy this Service belongs to. */
+        /**
+         * OCID of the Network Firewall Policy this Service belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
         private String parentResourceId;
 
         /**
          * OCID of the Network Firewall Policy this Service belongs to.
-         *
          * @param parentResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentResourceId(String parentResourceId) {
             this.parentResourceId = parentResourceId;
             this.__explicitlySet__.add("parentResourceId");
@@ -104,7 +104,9 @@ public final class ServiceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +115,44 @@ public final class ServiceSummary
         return new Builder().copy(this);
     }
 
-    /** Describes the type of Service. */
+    /**
+     * Describes the type of Service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ServiceType type;
 
     /**
      * Describes the type of Service.
-     *
      * @return the value
-     */
+     **/
     public ServiceType getType() {
         return type;
     }
 
-    /** Name of the service. */
+    /**
+     * Name of the service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the service.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** OCID of the Network Firewall Policy this Service belongs to. */
+    /**
+     * OCID of the Network Firewall Policy this Service belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentResourceId")
     private final String parentResourceId;
 
     /**
      * OCID of the Network Firewall Policy this Service belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getParentResourceId() {
         return parentResourceId;
     }
@@ -159,7 +164,6 @@ public final class ServiceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Model details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Model details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TranscriptionModelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TranscriptionModelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TranscriptionModelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "modelType",
@@ -44,81 +43,198 @@ public final class TranscriptionModelDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Select a model to use for generating transcriptions. Currently supported models are: -
-         * ORACLE - WHISPER_MEDIUM - WHISPER_LARGE_V2 (upon service request)
-         */
+         * Select a model to use for generating transcriptions. Currently supported models are:
+         * - ORACLE
+         * - WHISPER_MEDIUM
+         * - WHISPER_LARGE_V2 (upon service request)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
-         * Select a model to use for generating transcriptions. Currently supported models are: -
-         * ORACLE - WHISPER_MEDIUM - WHISPER_LARGE_V2 (upon service request)
+         * Select a model to use for generating transcriptions. Currently supported models are:
+         * - ORACLE
+         * - WHISPER_MEDIUM
+         * - WHISPER_LARGE_V2 (upon service request)
          *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** Domain for input files. */
+        /**
+         * Domain for input files.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private Domain domain;
 
         /**
          * Domain for input files.
-         *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(Domain domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * Oracle supported language codes are (Oracle models are locale specific). - en-US: English
-         * - United States (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
          *
-         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af:
-         * Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian -
-         * ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
-         * (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl:
-         * Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id:
-         * Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko:
-         * Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
-         * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro:
-         * Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw:
-         * Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu -
-         * vi: Vietnamese - zh: Chinese
-         */
+         * Oracle supported language codes are (Oracle models are locale specific).
+         * - en-US: English - United States (default)
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         * <p>
+         * Whisper supported language codes are (Whisper models are locale agnostic).
+         * - af: Afrikaans
+         * - ar: Arabic
+         * - az: Azerbaijani
+         * - be: Belarusian
+         * - bg: Bulgarian
+         * - bs: Bosnian
+         * - ca: Catalan
+         * - cs: Czech
+         * - cy: Welsh
+         * - da: Danish
+         * - de: German
+         * - el: Greek
+         * - en: English (default)
+         * - es: Spanish
+         * - et: Estonian
+         * - fa: Persian
+         * - fi: Finnish
+         * - fr: French
+         * - gl: Galician
+         * - he: Hebrew
+         * - hi: Hindi
+         * - hr: Croatian
+         * - hu: Hungarian
+         * - hy: Armenian
+         * - id: Indonesian
+         * - is: Icelandic
+         * - it: Italian
+         * - ja: Japanese
+         * - kk: Kazakh
+         * - kn: Kannada
+         * - ko: Korean
+         * - lt: Lithuanian
+         * - lv: Latvian
+         * - mi: Maori
+         * - mk: Macedonian
+         * - mr: Marathi
+         * - ms: Malay
+         * - ne: Nepali
+         * - nl: Dutch
+         * - no: Norwegian
+         * - pl: Polish
+         * - pt: Portuguese
+         * - ro: Romanian
+         * - ru: Russian
+         * - sk: Slovak
+         * - sl: Slovenian
+         * - sr: Serbian
+         * - sv: Swedish
+         * - sw: Swahili
+         * - ta: Tamil
+         * - th: Thai
+         * - tl: Tagalog
+         * - tr: Turkish
+         * - uk: Ukrainian
+         * - ur: Urdu
+         * - vi: Vietnamese
+         * - zh: Chinese
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private LanguageCode languageCode;
 
         /**
-         * Oracle supported language codes are (Oracle models are locale specific). - en-US: English
-         * - United States (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
          *
-         * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af:
-         * Afrikaans - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian -
-         * ca: Catalan - cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English
-         * (default) - es: Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl:
-         * Galician - he: Hebrew - hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id:
-         * Indonesian - is: Icelandic - it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko:
-         * Korean - lt: Lithuanian - lv: Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms:
-         * Malay - ne: Nepali - nl: Dutch - no: Norwegian - pl: Polish - pt: Portuguese - ro:
-         * Romanian - ru: Russian - sk: Slovak - sl: Slovenian - sr: Serbian - sv: Swedish - sw:
-         * Swahili - ta: Tamil - th: Thai - tl: Tagalog - tr: Turkish - uk: Ukrainian - ur: Urdu -
-         * vi: Vietnamese - zh: Chinese
+         * Oracle supported language codes are (Oracle models are locale specific).
+         * - en-US: English - United States (default)
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         * <p>
+         * Whisper supported language codes are (Whisper models are locale agnostic).
+         * - af: Afrikaans
+         * - ar: Arabic
+         * - az: Azerbaijani
+         * - be: Belarusian
+         * - bg: Bulgarian
+         * - bs: Bosnian
+         * - ca: Catalan
+         * - cs: Czech
+         * - cy: Welsh
+         * - da: Danish
+         * - de: German
+         * - el: Greek
+         * - en: English (default)
+         * - es: Spanish
+         * - et: Estonian
+         * - fa: Persian
+         * - fi: Finnish
+         * - fr: French
+         * - gl: Galician
+         * - he: Hebrew
+         * - hi: Hindi
+         * - hr: Croatian
+         * - hu: Hungarian
+         * - hy: Armenian
+         * - id: Indonesian
+         * - is: Icelandic
+         * - it: Italian
+         * - ja: Japanese
+         * - kk: Kazakh
+         * - kn: Kannada
+         * - ko: Korean
+         * - lt: Lithuanian
+         * - lv: Latvian
+         * - mi: Maori
+         * - mk: Macedonian
+         * - mr: Marathi
+         * - ms: Malay
+         * - ne: Nepali
+         * - nl: Dutch
+         * - no: Norwegian
+         * - pl: Polish
+         * - pt: Portuguese
+         * - ro: Romanian
+         * - ru: Russian
+         * - sk: Slovak
+         * - sl: Slovenian
+         * - sr: Serbian
+         * - sv: Swedish
+         * - sw: Swahili
+         * - ta: Tamil
+         * - th: Thai
+         * - tl: Tagalog
+         * - tr: Turkish
+         * - uk: Ukrainian
+         * - ur: Urdu
+         * - vi: Vietnamese
+         * - zh: Chinese
          *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(LanguageCode languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -168,7 +284,9 @@ public final class TranscriptionModelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -178,29 +296,36 @@ public final class TranscriptionModelDetails
     }
 
     /**
-     * Select a model to use for generating transcriptions. Currently supported models are: - ORACLE
-     * - WHISPER_MEDIUM - WHISPER_LARGE_V2 (upon service request)
-     */
+     * Select a model to use for generating transcriptions. Currently supported models are:
+     * - ORACLE
+     * - WHISPER_MEDIUM
+     * - WHISPER_LARGE_V2 (upon service request)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
-     * Select a model to use for generating transcriptions. Currently supported models are: - ORACLE
-     * - WHISPER_MEDIUM - WHISPER_LARGE_V2 (upon service request)
+     * Select a model to use for generating transcriptions. Currently supported models are:
+     * - ORACLE
+     * - WHISPER_MEDIUM
+     * - WHISPER_LARGE_V2 (upon service request)
      *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** Domain for input files. */
-    public enum Domain implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Domain for input files.
+     **/
+    public enum Domain {
         Generic("GENERIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -238,37 +363,95 @@ public final class TranscriptionModelDetails
             return UnknownEnumValue;
         }
     };
-    /** Domain for input files. */
+    /**
+     * Domain for input files.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final Domain domain;
 
     /**
      * Domain for input files.
-     *
      * @return the value
-     */
+     **/
     public Domain getDomain() {
         return domain;
     }
 
     /**
-     * Oracle supported language codes are (Oracle models are locale specific). - en-US: English -
-     * United States (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
-     */
-    public enum LanguageCode implements com.oracle.bmc.http.internal.BmcEnum {
+     * Oracle supported language codes are (Oracle models are locale specific).
+     * - en-US: English - United States (default)
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     * <p>
+     * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - af: Afrikaans
+     * - ar: Arabic
+     * - az: Azerbaijani
+     * - be: Belarusian
+     * - bg: Bulgarian
+     * - bs: Bosnian
+     * - ca: Catalan
+     * - cs: Czech
+     * - cy: Welsh
+     * - da: Danish
+     * - de: German
+     * - el: Greek
+     * - en: English (default)
+     * - es: Spanish
+     * - et: Estonian
+     * - fa: Persian
+     * - fi: Finnish
+     * - fr: French
+     * - gl: Galician
+     * - he: Hebrew
+     * - hi: Hindi
+     * - hr: Croatian
+     * - hu: Hungarian
+     * - hy: Armenian
+     * - id: Indonesian
+     * - is: Icelandic
+     * - it: Italian
+     * - ja: Japanese
+     * - kk: Kazakh
+     * - kn: Kannada
+     * - ko: Korean
+     * - lt: Lithuanian
+     * - lv: Latvian
+     * - mi: Maori
+     * - mk: Macedonian
+     * - mr: Marathi
+     * - ms: Malay
+     * - ne: Nepali
+     * - nl: Dutch
+     * - no: Norwegian
+     * - pl: Polish
+     * - pt: Portuguese
+     * - ro: Romanian
+     * - ru: Russian
+     * - sk: Slovak
+     * - sl: Slovenian
+     * - sr: Serbian
+     * - sv: Swedish
+     * - sw: Swahili
+     * - ta: Tamil
+     * - th: Thai
+     * - tl: Tagalog
+     * - tr: Turkish
+     * - uk: Ukrainian
+     * - ur: Urdu
+     * - vi: Vietnamese
+     * - zh: Chinese
+     *
+     **/
+    public enum LanguageCode {
         EnUs("en-US"),
         EsEs("es-ES"),
         PtBr("pt-BR"),
@@ -338,8 +521,8 @@ public final class TranscriptionModelDetails
         Zh("zh"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -379,44 +562,157 @@ public final class TranscriptionModelDetails
         }
     };
     /**
-     * Oracle supported language codes are (Oracle models are locale specific). - en-US: English -
-     * United States (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
-     */
+     * Oracle supported language codes are (Oracle models are locale specific).
+     * - en-US: English - United States (default)
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     * <p>
+     * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - af: Afrikaans
+     * - ar: Arabic
+     * - az: Azerbaijani
+     * - be: Belarusian
+     * - bg: Bulgarian
+     * - bs: Bosnian
+     * - ca: Catalan
+     * - cs: Czech
+     * - cy: Welsh
+     * - da: Danish
+     * - de: German
+     * - el: Greek
+     * - en: English (default)
+     * - es: Spanish
+     * - et: Estonian
+     * - fa: Persian
+     * - fi: Finnish
+     * - fr: French
+     * - gl: Galician
+     * - he: Hebrew
+     * - hi: Hindi
+     * - hr: Croatian
+     * - hu: Hungarian
+     * - hy: Armenian
+     * - id: Indonesian
+     * - is: Icelandic
+     * - it: Italian
+     * - ja: Japanese
+     * - kk: Kazakh
+     * - kn: Kannada
+     * - ko: Korean
+     * - lt: Lithuanian
+     * - lv: Latvian
+     * - mi: Maori
+     * - mk: Macedonian
+     * - mr: Marathi
+     * - ms: Malay
+     * - ne: Nepali
+     * - nl: Dutch
+     * - no: Norwegian
+     * - pl: Polish
+     * - pt: Portuguese
+     * - ro: Romanian
+     * - ru: Russian
+     * - sk: Slovak
+     * - sl: Slovenian
+     * - sr: Serbian
+     * - sv: Swedish
+     * - sw: Swahili
+     * - ta: Tamil
+     * - th: Thai
+     * - tl: Tagalog
+     * - tr: Turkish
+     * - uk: Ukrainian
+     * - ur: Urdu
+     * - vi: Vietnamese
+     * - zh: Chinese
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final LanguageCode languageCode;
 
     /**
-     * Oracle supported language codes are (Oracle models are locale specific). - en-US: English -
-     * United States (default) - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
      *
-     * <p>Whisper supported language codes are (Whisper models are locale agnostic). - af: Afrikaans
-     * - ar: Arabic - az: Azerbaijani - be: Belarusian - bg: Bulgarian - bs: Bosnian - ca: Catalan -
-     * cs: Czech - cy: Welsh - da: Danish - de: German - el: Greek - en: English (default) - es:
-     * Spanish - et: Estonian - fa: Persian - fi: Finnish - fr: French - gl: Galician - he: Hebrew -
-     * hi: Hindi - hr: Croatian - hu: Hungarian - hy: Armenian - id: Indonesian - is: Icelandic -
-     * it: Italian - ja: Japanese - kk: Kazakh - kn: Kannada - ko: Korean - lt: Lithuanian - lv:
-     * Latvian - mi: Maori - mk: Macedonian - mr: Marathi - ms: Malay - ne: Nepali - nl: Dutch - no:
-     * Norwegian - pl: Polish - pt: Portuguese - ro: Romanian - ru: Russian - sk: Slovak - sl:
-     * Slovenian - sr: Serbian - sv: Swedish - sw: Swahili - ta: Tamil - th: Thai - tl: Tagalog -
-     * tr: Turkish - uk: Ukrainian - ur: Urdu - vi: Vietnamese - zh: Chinese
+     * Oracle supported language codes are (Oracle models are locale specific).
+     * - en-US: English - United States (default)
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     * <p>
+     * Whisper supported language codes are (Whisper models are locale agnostic).
+     * - af: Afrikaans
+     * - ar: Arabic
+     * - az: Azerbaijani
+     * - be: Belarusian
+     * - bg: Bulgarian
+     * - bs: Bosnian
+     * - ca: Catalan
+     * - cs: Czech
+     * - cy: Welsh
+     * - da: Danish
+     * - de: German
+     * - el: Greek
+     * - en: English (default)
+     * - es: Spanish
+     * - et: Estonian
+     * - fa: Persian
+     * - fi: Finnish
+     * - fr: French
+     * - gl: Galician
+     * - he: Hebrew
+     * - hi: Hindi
+     * - hr: Croatian
+     * - hu: Hungarian
+     * - hy: Armenian
+     * - id: Indonesian
+     * - is: Icelandic
+     * - it: Italian
+     * - ja: Japanese
+     * - kk: Kazakh
+     * - kn: Kannada
+     * - ko: Korean
+     * - lt: Lithuanian
+     * - lv: Latvian
+     * - mi: Maori
+     * - mk: Macedonian
+     * - mr: Marathi
+     * - ms: Malay
+     * - ne: Nepali
+     * - nl: Dutch
+     * - no: Norwegian
+     * - pl: Polish
+     * - pt: Portuguese
+     * - ro: Romanian
+     * - ru: Russian
+     * - sk: Slovak
+     * - sl: Slovenian
+     * - sr: Serbian
+     * - sv: Swedish
+     * - sw: Swahili
+     * - ta: Tamil
+     * - th: Thai
+     * - tl: Tagalog
+     * - tr: Turkish
+     * - uk: Ukrainian
+     * - ur: Urdu
+     * - vi: Vietnamese
+     * - zh: Chinese
      *
      * @return the value
-     */
+     **/
     public LanguageCode getLanguageCode() {
         return languageCode;
     }
@@ -435,7 +731,6 @@ public final class TranscriptionModelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

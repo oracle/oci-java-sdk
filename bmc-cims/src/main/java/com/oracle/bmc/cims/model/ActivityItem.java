@@ -5,24 +5,23 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the ActivityItem object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * Details about the ActivityItem object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ActivityItem.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ActivityItem extends Item {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -70,61 +69,65 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("issueType");
             return this;
         }
-        /** Comments added with the activity on the support ticket. */
+        /**
+         * Comments added with the activity on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comments")
         private String comments;
 
         /**
          * Comments added with the activity on the support ticket.
-         *
          * @param comments the value to set
          * @return this builder
-         */
+         **/
         public Builder comments(String comments) {
             this.comments = comments;
             this.__explicitlySet__.add("comments");
             return this;
         }
-        /** The time when the activity was created, in seconds since epoch time. */
+        /**
+         * The time when the activity was created, in seconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
         /**
          * The time when the activity was created, in seconds since epoch time.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(Integer timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time when the activity was updated, in seconds since epoch time. */
+        /**
+         * The time when the activity was updated, in seconds since epoch time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
         /**
          * The time when the activity was updated, in seconds since epoch time.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(Integer timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The type of activity occuring on the support ticket. */
+        /**
+         * The type of activity occuring on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityType")
         private ActivityType activityType;
 
         /**
          * The type of activity occuring on the support ticket.
-         *
          * @param activityType the value to set
          * @return this builder
-         */
+         **/
         public Builder activityType(ActivityType activityType) {
             this.activityType = activityType;
             this.__explicitlySet__.add("activityType");
@@ -148,31 +151,33 @@ public final class ActivityItem extends Item {
             this.__explicitlySet__.add("itemType");
             return this;
         }
-        /** Who updates the activity on the support ticket. */
+        /**
+         * Who updates the activity on the support ticket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
         private ItemStatus itemStatus;
 
         /**
          * Who updates the activity on the support ticket.
-         *
          * @param itemStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder itemStatus(ItemStatus itemStatus) {
             this.itemStatus = itemStatus;
             this.__explicitlySet__.add("itemStatus");
             return this;
         }
-        /** attachmentID for the ItemType Attachments only for Alloy realm. */
+        /**
+         * attachmentID for the ItemType Attachments only for Alloy realm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attachmentID")
         private String attachmentID;
 
         /**
          * attachmentID for the ItemType Attachments only for Alloy realm.
-         *
          * @param attachmentID the value to set
          * @return this builder
-         */
+         **/
         public Builder attachmentID(String attachmentID) {
             this.attachmentID = attachmentID;
             this.__explicitlySet__.add("attachmentID");
@@ -249,7 +254,9 @@ public final class ActivityItem extends Item {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,47 +291,52 @@ public final class ActivityItem extends Item {
         this.attachmentID = attachmentID;
     }
 
-    /** Comments added with the activity on the support ticket. */
+    /**
+     * Comments added with the activity on the support ticket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     private final String comments;
 
     /**
      * Comments added with the activity on the support ticket.
-     *
      * @return the value
-     */
+     **/
     public String getComments() {
         return comments;
     }
 
-    /** The time when the activity was created, in seconds since epoch time. */
+    /**
+     * The time when the activity was created, in seconds since epoch time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
     /**
      * The time when the activity was created, in seconds since epoch time.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time when the activity was updated, in seconds since epoch time. */
+    /**
+     * The time when the activity was updated, in seconds since epoch time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
     /**
      * The time when the activity was updated, in seconds since epoch time.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The type of activity occuring on the support ticket. */
-    public enum ActivityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of activity occuring on the support ticket.
+     **/
+    public enum ActivityType {
         Notes("NOTES"),
         ProblemDescription("PROBLEM_DESCRIPTION"),
         Update("UPDATE"),
@@ -332,8 +344,8 @@ public final class ActivityItem extends Item {
         Reopen("REOPEN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -372,27 +384,29 @@ public final class ActivityItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /** The type of activity occuring on the support ticket. */
+    /**
+     * The type of activity occuring on the support ticket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityType")
     private final ActivityType activityType;
 
     /**
      * The type of activity occuring on the support ticket.
-     *
      * @return the value
-     */
+     **/
     public ActivityType getActivityType() {
         return activityType;
     }
 
-    /** */
-    public enum ActivityAuthor implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum ActivityAuthor {
         Customer("CUSTOMER"),
         Oracle("ORACLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -439,14 +453,15 @@ public final class ActivityItem extends Item {
         return activityAuthor;
     }
 
-    /** */
-    public enum ItemType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum ItemType {
         Attachments("ATTACHMENTS"),
         Comments("COMMENTS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -493,16 +508,18 @@ public final class ActivityItem extends Item {
         return itemType;
     }
 
-    /** Who updates the activity on the support ticket. */
-    public enum ItemStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Who updates the activity on the support ticket.
+     **/
+    public enum ItemStatus {
         Processing("PROCESSING"),
         Attached("ATTACHED"),
         Removed("REMOVED"),
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -541,28 +558,30 @@ public final class ActivityItem extends Item {
             return UnknownEnumValue;
         }
     };
-    /** Who updates the activity on the support ticket. */
+    /**
+     * Who updates the activity on the support ticket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("itemStatus")
     private final ItemStatus itemStatus;
 
     /**
      * Who updates the activity on the support ticket.
-     *
      * @return the value
-     */
+     **/
     public ItemStatus getItemStatus() {
         return itemStatus;
     }
 
-    /** attachmentID for the ItemType Attachments only for Alloy realm. */
+    /**
+     * attachmentID for the ItemType Attachments only for Alloy realm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attachmentID")
     private final String attachmentID;
 
     /**
      * attachmentID for the ItemType Attachments only for Alloy realm.
-     *
      * @return the value
-     */
+     **/
     public String getAttachmentID() {
         return attachmentID;
     }
@@ -574,7 +593,6 @@ public final class ActivityItem extends Item {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

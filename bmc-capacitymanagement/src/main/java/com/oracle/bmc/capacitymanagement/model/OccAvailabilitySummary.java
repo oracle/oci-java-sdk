@@ -5,24 +5,22 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * The details about the available capacity and constraints for different resource types present in
- * the availability catalog. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * The details about the available capacity and constraints for different resource types present in the availability catalog.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OccAvailabilitySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OccAvailabilitySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OccAvailabilitySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "catalogId",
@@ -68,16 +66,17 @@ public final class OccAvailabilitySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the availability catalog. */
+        /**
+         * The OCID of the availability catalog.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
         /**
          * The OCID of the availability catalog.
-         *
          * @param catalogId the value to set
          * @return this builder
-         */
+         **/
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
@@ -85,7 +84,8 @@ public final class OccAvailabilitySummary
         }
         /**
          * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private Namespace namespace;
 
@@ -94,169 +94,171 @@ public final class OccAvailabilitySummary
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(Namespace namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The date by which the customer must place the order to have their capacity requirements
-         * met by the customer handover date.
-         */
+         * The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateFinalCustomerOrder")
         private java.util.Date dateFinalCustomerOrder;
 
         /**
-         * The date by which the customer must place the order to have their capacity requirements
-         * met by the customer handover date.
-         *
+         * The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
          * @param dateFinalCustomerOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder dateFinalCustomerOrder(java.util.Date dateFinalCustomerOrder) {
             this.dateFinalCustomerOrder = dateFinalCustomerOrder;
             this.__explicitlySet__.add("dateFinalCustomerOrder");
             return this;
         }
         /**
-         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs
-         * to be fulfilled.
-         */
+         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedCapacityHandover")
         private java.util.Date dateExpectedCapacityHandover;
 
         /**
-         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs
-         * to be fulfilled.
-         *
+         * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
          * @param dateExpectedCapacityHandover the value to set
          * @return this builder
-         */
+         **/
         public Builder dateExpectedCapacityHandover(java.util.Date dateExpectedCapacityHandover) {
             this.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
             this.__explicitlySet__.add("dateExpectedCapacityHandover");
             return this;
         }
-        /** The different types of resources against which customers can place capacity requests. */
+        /**
+         * The different types of resources against which customers can place capacity requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The different types of resources against which customers can place capacity requests.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The type of workload (Generic/ROW). */
+        /**
+         * The type of workload (Generic/ROW).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
         private String workloadType;
 
         /**
          * The type of workload (Generic/ROW).
-         *
          * @param workloadType the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadType(String workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
         }
-        /** The name of the resource that the customer can request. */
+        /**
+         * The name of the resource that the customer can request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The name of the resource that the customer can request.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The quantity of resource currently available that the customer can request. */
+        /**
+         * The quantity of resource currently available that the customer can request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableQuantity")
         private Long availableQuantity;
 
         /**
          * The quantity of resource currently available that the customer can request.
-         *
          * @param availableQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder availableQuantity(Long availableQuantity) {
             this.availableQuantity = availableQuantity;
             this.__explicitlySet__.add("availableQuantity");
             return this;
         }
-        /** The total quantity of resource that the customer can request. */
+        /**
+         * The total quantity of resource that the customer can request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalAvailableQuantity")
         private Long totalAvailableQuantity;
 
         /**
          * The total quantity of resource that the customer can request.
-         *
          * @param totalAvailableQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder totalAvailableQuantity(Long totalAvailableQuantity) {
             this.totalAvailableQuantity = totalAvailableQuantity;
             this.__explicitlySet__.add("totalAvailableQuantity");
             return this;
         }
-        /** The quantity of resource currently demanded by the customer. */
+        /**
+         * The quantity of resource currently demanded by the customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("demandedQuantity")
         private Long demandedQuantity;
 
         /**
          * The quantity of resource currently demanded by the customer.
-         *
          * @param demandedQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder demandedQuantity(Long demandedQuantity) {
             this.demandedQuantity = demandedQuantity;
             this.__explicitlySet__.add("demandedQuantity");
             return this;
         }
-        /** The unit in which the resource available is measured. */
+        /**
+         * The unit in which the resource available is measured.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * The unit in which the resource available is measured.
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -329,7 +331,9 @@ public final class OccAvailabilitySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -338,20 +342,24 @@ public final class OccAvailabilitySummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the availability catalog. */
+    /**
+     * The OCID of the availability catalog.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
     /**
      * The OCID of the availability catalog.
-     *
      * @return the value
-     */
+     **/
     public String getCatalogId() {
         return catalogId;
     }
 
-    /** The name of the OCI service in consideration. For example, Compute, Exadata, and so on. */
+    /**
+     * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final Namespace namespace;
 
@@ -359,149 +367,151 @@ public final class OccAvailabilitySummary
      * The name of the OCI service in consideration. For example, Compute, Exadata, and so on.
      *
      * @return the value
-     */
+     **/
     public Namespace getNamespace() {
         return namespace;
     }
 
     /**
-     * The date by which the customer must place the order to have their capacity requirements met
-     * by the customer handover date.
-     */
+     * The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateFinalCustomerOrder")
     private final java.util.Date dateFinalCustomerOrder;
 
     /**
-     * The date by which the customer must place the order to have their capacity requirements met
-     * by the customer handover date.
-     *
+     * The date by which the customer must place the order to have their capacity requirements met by the customer handover date.
      * @return the value
-     */
+     **/
     public java.util.Date getDateFinalCustomerOrder() {
         return dateFinalCustomerOrder;
     }
 
     /**
-     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to
-     * be fulfilled.
-     */
+     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateExpectedCapacityHandover")
     private final java.util.Date dateExpectedCapacityHandover;
 
     /**
-     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to
-     * be fulfilled.
-     *
+     * The date by which the capacity requested by customers before dateFinalCustomerOrder needs to be fulfilled.
      * @return the value
-     */
+     **/
     public java.util.Date getDateExpectedCapacityHandover() {
         return dateExpectedCapacityHandover;
     }
 
-    /** The different types of resources against which customers can place capacity requests. */
+    /**
+     * The different types of resources against which customers can place capacity requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The different types of resources against which customers can place capacity requests.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The type of workload (Generic/ROW). */
+    /**
+     * The type of workload (Generic/ROW).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
     private final String workloadType;
 
     /**
      * The type of workload (Generic/ROW).
-     *
      * @return the value
-     */
+     **/
     public String getWorkloadType() {
         return workloadType;
     }
 
-    /** The name of the resource that the customer can request. */
+    /**
+     * The name of the resource that the customer can request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The name of the resource that the customer can request.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The quantity of resource currently available that the customer can request. */
+    /**
+     * The quantity of resource currently available that the customer can request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableQuantity")
     private final Long availableQuantity;
 
     /**
      * The quantity of resource currently available that the customer can request.
-     *
      * @return the value
-     */
+     **/
     public Long getAvailableQuantity() {
         return availableQuantity;
     }
 
-    /** The total quantity of resource that the customer can request. */
+    /**
+     * The total quantity of resource that the customer can request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalAvailableQuantity")
     private final Long totalAvailableQuantity;
 
     /**
      * The total quantity of resource that the customer can request.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalAvailableQuantity() {
         return totalAvailableQuantity;
     }
 
-    /** The quantity of resource currently demanded by the customer. */
+    /**
+     * The quantity of resource currently demanded by the customer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("demandedQuantity")
     private final Long demandedQuantity;
 
     /**
      * The quantity of resource currently demanded by the customer.
-     *
      * @return the value
-     */
+     **/
     public Long getDemandedQuantity() {
         return demandedQuantity;
     }
 
-    /** The unit in which the resource available is measured. */
+    /**
+     * The unit in which the resource available is measured.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * The unit in which the resource available is measured.
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -513,7 +523,6 @@ public final class OccAvailabilitySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

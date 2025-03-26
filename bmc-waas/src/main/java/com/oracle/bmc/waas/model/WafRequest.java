@@ -5,22 +5,19 @@
 package com.oracle.bmc.waas.model;
 
 /**
- * A time series of request counts handled by the Web Application Firewall, including blocked
- * requests. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+ * A time series of request counts handled by the Web Application Firewall, including blocked requests.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WafRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WafRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WafRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeObserved", "timeRangeInSeconds", "count"})
     public WafRequest(java.util.Date timeObserved, Integer timeRangeInSeconds, Integer count) {
@@ -33,49 +30,48 @@ public final class WafRequest extends com.oracle.bmc.http.client.internal.Explic
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The date and time the traffic was observed, rounded down to the start of a range, and
-         * expressed in RFC 3339 timestamp format.
-         */
+         * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
         private java.util.Date timeObserved;
 
         /**
-         * The date and time the traffic was observed, rounded down to the start of a range, and
-         * expressed in RFC 3339 timestamp format.
-         *
+         * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
          * @param timeObserved the value to set
          * @return this builder
-         */
+         **/
         public Builder timeObserved(java.util.Date timeObserved) {
             this.timeObserved = timeObserved;
             this.__explicitlySet__.add("timeObserved");
             return this;
         }
-        /** The number of seconds this data covers. */
+        /**
+         * The number of seconds this data covers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
         private Integer timeRangeInSeconds;
 
         /**
          * The number of seconds this data covers.
-         *
          * @param timeRangeInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRangeInSeconds(Integer timeRangeInSeconds) {
             this.timeRangeInSeconds = timeRangeInSeconds;
             this.__explicitlySet__.add("timeRangeInSeconds");
             return this;
         }
-        /** The total number of requests received in this time period. */
+        /**
+         * The total number of requests received in this time period.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
          * The total number of requests received in this time period.
-         *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -109,7 +105,9 @@ public final class WafRequest extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,44 +117,43 @@ public final class WafRequest extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The date and time the traffic was observed, rounded down to the start of a range, and
-     * expressed in RFC 3339 timestamp format.
-     */
+     * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeObserved")
     private final java.util.Date timeObserved;
 
     /**
-     * The date and time the traffic was observed, rounded down to the start of a range, and
-     * expressed in RFC 3339 timestamp format.
-     *
+     * The date and time the traffic was observed, rounded down to the start of a range, and expressed in RFC 3339 timestamp format.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeObserved() {
         return timeObserved;
     }
 
-    /** The number of seconds this data covers. */
+    /**
+     * The number of seconds this data covers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRangeInSeconds")
     private final Integer timeRangeInSeconds;
 
     /**
      * The number of seconds this data covers.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeRangeInSeconds() {
         return timeRangeInSeconds;
     }
 
-    /** The total number of requests received in this time period. */
+    /**
+     * The total number of requests received in this time period.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
      * The total number of requests received in this time period.
-     *
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
@@ -168,7 +165,6 @@ public final class WafRequest extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

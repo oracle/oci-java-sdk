@@ -5,45 +5,55 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * A set of public keys that is retrieved at run-time from a remote location to verify the JWT
- * signature. The set should only contain JWK-formatted keys. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * A set of public keys that is retrieved at run-time from a remote location
+ * to verify the JWT signature. The set should only contain JWK-formatted
+ * keys.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RemoteJsonWebKeySet.Builder.class)
+    builder = RemoteJsonWebKeySet.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RemoteJsonWebKeySet extends PublicKeySet {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The uri from which to retrieve the key. It must be accessible without authentication. */
+        /**
+         * The uri from which to retrieve the key. It must be accessible
+         * without authentication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
-         * The uri from which to retrieve the key. It must be accessible without authentication.
+         * The uri from which to retrieve the key. It must be accessible
+         * without authentication.
          *
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
-        /** Defines whether or not to uphold SSL verification. */
+        /**
+         * Defines whether or not to uphold SSL verification.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
         private Boolean isSslVerifyDisabled;
 
@@ -52,22 +62,27 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
          *
          * @param isSslVerifyDisabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSslVerifyDisabled(Boolean isSslVerifyDisabled) {
             this.isSslVerifyDisabled = isSslVerifyDisabled;
             this.__explicitlySet__.add("isSslVerifyDisabled");
             return this;
         }
-        /** The duration for which the JWKS should be cached before it is fetched again. */
+        /**
+         * The duration for which the JWKS should be cached before it is
+         * fetched again.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxCacheDurationInHours")
         private Integer maxCacheDurationInHours;
 
         /**
-         * The duration for which the JWKS should be cached before it is fetched again.
+         * The duration for which the JWKS should be cached before it is
+         * fetched again.
          *
          * @param maxCacheDurationInHours the value to set
          * @return this builder
-         */
+         **/
         public Builder maxCacheDurationInHours(Integer maxCacheDurationInHours) {
             this.maxCacheDurationInHours = maxCacheDurationInHours;
             this.__explicitlySet__.add("maxCacheDurationInHours");
@@ -102,7 +117,9 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,20 +137,28 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
         this.maxCacheDurationInHours = maxCacheDurationInHours;
     }
 
-    /** The uri from which to retrieve the key. It must be accessible without authentication. */
+    /**
+     * The uri from which to retrieve the key. It must be accessible
+     * without authentication.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
-     * The uri from which to retrieve the key. It must be accessible without authentication.
+     * The uri from which to retrieve the key. It must be accessible
+     * without authentication.
      *
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
 
-    /** Defines whether or not to uphold SSL verification. */
+    /**
+     * Defines whether or not to uphold SSL verification.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyDisabled")
     private final Boolean isSslVerifyDisabled;
 
@@ -141,20 +166,25 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
      * Defines whether or not to uphold SSL verification.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSslVerifyDisabled() {
         return isSslVerifyDisabled;
     }
 
-    /** The duration for which the JWKS should be cached before it is fetched again. */
+    /**
+     * The duration for which the JWKS should be cached before it is
+     * fetched again.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCacheDurationInHours")
     private final Integer maxCacheDurationInHours;
 
     /**
-     * The duration for which the JWKS should be cached before it is fetched again.
+     * The duration for which the JWKS should be cached before it is
+     * fetched again.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxCacheDurationInHours() {
         return maxCacheDurationInHours;
     }
@@ -166,7 +196,6 @@ public final class RemoteJsonWebKeySet extends PublicKeySet {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

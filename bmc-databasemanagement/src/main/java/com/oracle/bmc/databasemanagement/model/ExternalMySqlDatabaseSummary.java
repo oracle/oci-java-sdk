@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * External database summary record. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * External database summary record.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalMySqlDatabaseSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalMySqlDatabaseSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalMySqlDatabaseSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -55,133 +54,139 @@ public final class ExternalMySqlDatabaseSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of compartment for the External MySQL Database. */
+        /**
+         * OCID of compartment for the External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of compartment for the External MySQL Database.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of External MySQL Database. */
+        /**
+         * OCID of External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
         private String externalDatabaseId;
 
         /**
          * OCID of External MySQL Database.
-         *
          * @param externalDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDatabaseId(String externalDatabaseId) {
             this.externalDatabaseId = externalDatabaseId;
             this.__explicitlySet__.add("externalDatabaseId");
             return this;
         }
-        /** The OCID of the enabled MySQL Database Connector. */
+        /**
+         * The OCID of the enabled MySQL Database Connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
          * The OCID of the enabled MySQL Database Connector.
-         *
          * @param connectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /** Display name of the External MySQL Database. */
+        /**
+         * Display name of the External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
         /**
          * Display name of the External MySQL Database.
-         *
          * @param dbName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-        /** The deployment type of the Mysql Database. */
+        /**
+         * The deployment type of the Mysql Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
         private MySqlDeploymentType deploymentType;
 
         /**
          * The deployment type of the Mysql Database.
-         *
          * @param deploymentType the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentType(MySqlDeploymentType deploymentType) {
             this.deploymentType = deploymentType;
             this.__explicitlySet__.add("deploymentType");
             return this;
         }
-        /** Indicates database management state. */
+        /**
+         * Indicates database management state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementState")
         private ManagementState managementState;
 
         /**
          * Indicates database management state.
-         *
          * @param managementState the value to set
          * @return this builder
-         */
+         **/
         public Builder managementState(ManagementState managementState) {
             this.managementState = managementState;
             this.__explicitlySet__.add("managementState");
             return this;
         }
-        /** Indicates lifecycle state of the resource. */
+        /**
+         * Indicates lifecycle  state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
-         * Indicates lifecycle state of the resource.
-         *
+         * Indicates lifecycle  state of the resource.
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -238,7 +243,9 @@ public final class ExternalMySqlDatabaseSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -247,118 +254,124 @@ public final class ExternalMySqlDatabaseSummary
         return new Builder().copy(this);
     }
 
-    /** OCID of compartment for the External MySQL Database. */
+    /**
+     * OCID of compartment for the External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of compartment for the External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OCID of External MySQL Database. */
+    /**
+     * OCID of External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
     private final String externalDatabaseId;
 
     /**
      * OCID of External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getExternalDatabaseId() {
         return externalDatabaseId;
     }
 
-    /** The OCID of the enabled MySQL Database Connector. */
+    /**
+     * The OCID of the enabled MySQL Database Connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
      * The OCID of the enabled MySQL Database Connector.
-     *
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** Display name of the External MySQL Database. */
+    /**
+     * Display name of the External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
      * Display name of the External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbName() {
         return dbName;
     }
 
-    /** The deployment type of the Mysql Database. */
+    /**
+     * The deployment type of the Mysql Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
     private final MySqlDeploymentType deploymentType;
 
     /**
      * The deployment type of the Mysql Database.
-     *
      * @return the value
-     */
+     **/
     public MySqlDeploymentType getDeploymentType() {
         return deploymentType;
     }
 
-    /** Indicates database management state. */
+    /**
+     * Indicates database management state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementState")
     private final ManagementState managementState;
 
     /**
      * Indicates database management state.
-     *
      * @return the value
-     */
+     **/
     public ManagementState getManagementState() {
         return managementState;
     }
 
-    /** Indicates lifecycle state of the resource. */
+    /**
+     * Indicates lifecycle  state of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
-     * Indicates lifecycle state of the resource.
-     *
+     * Indicates lifecycle  state of the resource.
      * @return the value
-     */
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -370,7 +383,6 @@ public final class ExternalMySqlDatabaseSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

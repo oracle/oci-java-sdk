@@ -5,43 +5,46 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a host configuration for a resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a host configuration for a resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entitySource",
-        defaultImpl = HostConfigurationSummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entitySource",
+    defaultImpl = HostConfigurationSummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MacsManagedExternalHostConfigurationSummary.class,
-            name = "MACS_MANAGED_EXTERNAL_HOST"),
+        value = MacsManagedExternalHostConfigurationSummary.class,
+        name = "MACS_MANAGED_EXTERNAL_HOST"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PeComanagedHostConfigurationSummary.class,
-            name = "PE_COMANAGED_HOST"),
+        value = PeComanagedHostConfigurationSummary.class,
+        name = "PE_COMANAGED_HOST"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MacsManagedCloudDbHostConfigurationSummary.class,
-            name = "MACS_MANAGED_CLOUD_DB_HOST"),
+        value = MacsManagedCloudDbHostConfigurationSummary.class,
+        name = "MACS_MANAGED_CLOUD_DB_HOST"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = EmManagedExternalHostConfigurationSummary.class,
-            name = "EM_MANAGED_EXTERNAL_HOST"),
+        value = EmManagedExternalHostConfigurationSummary.class,
+        name = "EM_MANAGED_EXTERNAL_HOST"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MacsManagedCloudHostConfigurationSummary.class,
-            name = "MACS_MANAGED_CLOUD_HOST")
+        value = MacsManagedCloudHostConfigurationSummary.class,
+        name = "MACS_MANAGED_CLOUD_HOST"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class HostConfigurationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class HostConfigurationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostInsightId",
@@ -107,63 +110,55 @@ public class HostConfigurationSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
-     * insight resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostInsightId")
     private final String hostInsightId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host
-     * insight resource.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
      * @return the value
-     */
+     **/
     public String getHostInsightId() {
         return hostInsightId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management
-     * agent.
-     */
+     * The host name. The host name is unique amongst the hosts managed by the same management agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
-     * The host name. The host name is unique amongst the hosts managed by the same management
-     * agent.
-     *
+     * The host name. The host name is unique amongst the hosts managed by the same management agent.
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
-     */
-    public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+     *
+     **/
+    public enum PlatformType {
         Linux("LINUX"),
         Solaris("SOLARIS"),
         Sunos("SUNOS"),
@@ -173,8 +168,8 @@ public class HostConfigurationSummary
         HpUx("HP_UX"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -214,53 +209,59 @@ public class HostConfigurationSummary
         }
     };
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
-     */
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformType platformType;
 
     /**
-     * Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX,
-     * SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
-     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS,
-     * ZLINUX, WINDOWS, AIX, HP-UX].
+     * Platform type.
+     * Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS].
+     * Supported platformType(s) for MACS-managed cloud host insight: [LINUX].
+     * Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX, HP-UX].
      *
      * @return the value
-     */
+     **/
     public PlatformType getPlatformType() {
         return platformType;
     }
 
-    /** Platform version. */
+    /**
+     * Platform version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVersion")
     private final String platformVersion;
 
     /**
      * Platform version.
-     *
      * @return the value
-     */
+     **/
     public String getPlatformVersion() {
         return platformVersion;
     }
 
-    /** Platform vendor. */
+    /**
+     * Platform vendor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformVendor")
     private final String platformVendor;
 
     /**
      * Platform vendor.
-     *
      * @return the value
-     */
+     **/
     public String getPlatformVendor() {
         return platformVendor;
     }
 
-    /** Total CPU on this host. */
+    /**
+     * Total CPU on this host.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpus")
     private final Integer totalCpus;
 
@@ -268,12 +269,15 @@ public class HostConfigurationSummary
      * Total CPU on this host.
      *
      * @return the value
-     */
+     **/
     public Integer getTotalCpus() {
         return totalCpus;
     }
 
-    /** Total amount of usable physical memory in gibabytes */
+    /**
+     * Total amount of usable physical memory in gibabytes
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalMemoryInGBs")
     private final Double totalMemoryInGBs;
 
@@ -281,25 +285,29 @@ public class HostConfigurationSummary
      * Total amount of usable physical memory in gibabytes
      *
      * @return the value
-     */
+     **/
     public Double getTotalMemoryInGBs() {
         return totalMemoryInGBs;
     }
 
-    /** CPU architechure */
+    /**
+     * CPU architechure
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuArchitecture")
     private final String cpuArchitecture;
 
     /**
      * CPU architechure
-     *
      * @return the value
-     */
+     **/
     public String getCpuArchitecture() {
         return cpuArchitecture;
     }
 
-    /** Size of cache memory in megabytes. */
+    /**
+     * Size of cache memory in megabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCacheInMBs")
     private final Double cpuCacheInMBs;
 
@@ -307,25 +315,29 @@ public class HostConfigurationSummary
      * Size of cache memory in megabytes.
      *
      * @return the value
-     */
+     **/
     public Double getCpuCacheInMBs() {
         return cpuCacheInMBs;
     }
 
-    /** Name of the CPU vendor. */
+    /**
+     * Name of the CPU vendor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuVendor")
     private final String cpuVendor;
 
     /**
      * Name of the CPU vendor.
-     *
      * @return the value
-     */
+     **/
     public String getCpuVendor() {
         return cpuVendor;
     }
 
-    /** Clock frequency of the processor in megahertz. */
+    /**
+     * Clock frequency of the processor in megahertz.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuFrequencyInMhz")
     private final Double cpuFrequencyInMhz;
 
@@ -333,25 +345,29 @@ public class HostConfigurationSummary
      * Clock frequency of the processor in megahertz.
      *
      * @return the value
-     */
+     **/
     public Double getCpuFrequencyInMhz() {
         return cpuFrequencyInMhz;
     }
 
-    /** Model name of processor. */
+    /**
+     * Model name of processor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuImplementation")
     private final String cpuImplementation;
 
     /**
      * Model name of processor.
-     *
      * @return the value
-     */
+     **/
     public String getCpuImplementation() {
         return cpuImplementation;
     }
 
-    /** Number of cores per socket. */
+    /**
+     * Number of cores per socket.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coresPerSocket")
     private final Integer coresPerSocket;
 
@@ -359,38 +375,43 @@ public class HostConfigurationSummary
      * Number of cores per socket.
      *
      * @return the value
-     */
+     **/
     public Integer getCoresPerSocket() {
         return coresPerSocket;
     }
 
-    /** Number of total sockets. */
+    /**
+     * Number of total sockets.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalSockets")
     private final Integer totalSockets;
 
     /**
      * Number of total sockets.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalSockets() {
         return totalSockets;
     }
 
-    /** Number of threads per socket. */
+    /**
+     * Number of threads per socket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("threadsPerSocket")
     private final Integer threadsPerSocket;
 
     /**
      * Number of threads per socket.
-     *
      * @return the value
-     */
+     **/
     public Integer getThreadsPerSocket() {
         return threadsPerSocket;
     }
 
-    /** Indicates if hyper-threading is enabled or not */
+    /**
+     * Indicates if hyper-threading is enabled or not
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHyperThreadingEnabled")
     private final Boolean isHyperThreadingEnabled;
 
@@ -398,41 +419,43 @@ public class HostConfigurationSummary
      * Indicates if hyper-threading is enabled or not
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHyperThreadingEnabled() {
         return isHyperThreadingEnabled;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
@@ -444,7 +467,6 @@ public class HostConfigurationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

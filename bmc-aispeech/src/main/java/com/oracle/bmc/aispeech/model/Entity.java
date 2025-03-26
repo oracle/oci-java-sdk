@@ -5,21 +5,19 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Entity Object Reference <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Entity Object Reference
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Entity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Entity extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Entity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"entityValue", "pronunciations", "weight"})
     public Entity(String entityValue, java.util.List<Pronunciation> pronunciations, Float weight) {
@@ -31,46 +29,49 @@ public final class Entity extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Entity value */
+        /**
+         * Entity value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityValue")
         private String entityValue;
 
         /**
          * Entity value
-         *
          * @param entityValue the value to set
          * @return this builder
-         */
+         **/
         public Builder entityValue(String entityValue) {
             this.entityValue = entityValue;
             this.__explicitlySet__.add("entityValue");
             return this;
         }
-        /** List of pronunciations (minimum 1, maximum 255) */
+        /**
+         * List of pronunciations (minimum 1, maximum 255)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pronunciations")
         private java.util.List<Pronunciation> pronunciations;
 
         /**
          * List of pronunciations (minimum 1, maximum 255)
-         *
          * @param pronunciations the value to set
          * @return this builder
-         */
+         **/
         public Builder pronunciations(java.util.List<Pronunciation> pronunciations) {
             this.pronunciations = pronunciations;
             this.__explicitlySet__.add("pronunciations");
             return this;
         }
-        /** Entity weight */
+        /**
+         * Entity weight
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("weight")
         private Float weight;
 
         /**
          * Entity weight
-         *
          * @param weight the value to set
          * @return this builder
-         */
+         **/
         public Builder weight(Float weight) {
             this.weight = weight;
             this.__explicitlySet__.add("weight");
@@ -103,7 +104,9 @@ public final class Entity extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,41 +115,44 @@ public final class Entity extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** Entity value */
+    /**
+     * Entity value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityValue")
     private final String entityValue;
 
     /**
      * Entity value
-     *
      * @return the value
-     */
+     **/
     public String getEntityValue() {
         return entityValue;
     }
 
-    /** List of pronunciations (minimum 1, maximum 255) */
+    /**
+     * List of pronunciations (minimum 1, maximum 255)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pronunciations")
     private final java.util.List<Pronunciation> pronunciations;
 
     /**
      * List of pronunciations (minimum 1, maximum 255)
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Pronunciation> getPronunciations() {
         return pronunciations;
     }
 
-    /** Entity weight */
+    /**
+     * Entity weight
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("weight")
     private final Float weight;
 
     /**
      * Entity weight
-     *
      * @return the value
-     */
+     **/
     public Float getWeight() {
         return weight;
     }
@@ -158,7 +164,6 @@ public final class Entity extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * The details of the desktop's private access network connectivity that were used to create the
- * pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * The details of the desktop's private access network connectivity that were used to create the pool.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DesktopPoolPrivateAccessDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DesktopPoolPrivateAccessDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DesktopPoolPrivateAccessDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vcnId", "endpointFqdn", "subnetId", "nsgIds", "privateIp"})
     public DesktopPoolPrivateAccessDetails(
@@ -42,19 +41,18 @@ public final class DesktopPoolPrivateAccessDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * customer VCN.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * customer VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
          *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
@@ -62,75 +60,77 @@ public final class DesktopPoolPrivateAccessDetails
         }
         /**
          * The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are
-         * updated with this FQDN. This enables the customer to use the FQDN instead of the private
-         * endpoint's private IP address to access the service (for
-         * example,\u00A0xyz.oraclecloud.com).
-         */
+         * updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's
+         * private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
         private String endpointFqdn;
 
         /**
          * The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are
-         * updated with this FQDN. This enables the customer to use the FQDN instead of the private
-         * endpoint's private IP address to access the service (for
-         * example,\u00A0xyz.oraclecloud.com).
+         * updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's
+         * private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
          *
          * @param endpointFqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointFqdn(String endpointFqdn) {
             this.endpointFqdn = endpointFqdn;
             this.__explicitlySet__.add("endpointFqdn");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet in the customer VCN where the connectivity will be established.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the
+         * connectivity will be established.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * subnet in the customer VCN where the connectivity will be established.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the
+         * connectivity will be established.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** A list of network security groups for the private access. */
+        /**
+         * A list of network security groups for the private access.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
          * A list of network security groups for the private access.
-         *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If
-         * not provided, it will be auto-assigned with an available IPv4 address from the subnet.
-         */
+         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+         * be auto-assigned with an available IPv4 address from the subnet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If
-         * not provided, it will be auto-assigned with an available IPv4 address from the subnet.
+         * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+         * be auto-assigned with an available IPv4 address from the subnet.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
@@ -175,7 +175,9 @@ public final class DesktopPoolPrivateAccessDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -185,84 +187,87 @@ public final class DesktopPoolPrivateAccessDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * customer VCN.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * customer VCN.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer VCN.
      *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
     /**
      * The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are
-     * updated with this FQDN. This enables the customer to use the FQDN instead of the private
-     * endpoint's private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
-     */
+     * updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's
+     * private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointFqdn")
     private final String endpointFqdn;
 
     /**
      * The three-label FQDN to use for the private endpoint. The customer VCN's DNS records are
-     * updated with this FQDN. This enables the customer to use the FQDN instead of the private
-     * endpoint's private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
+     * updated with this FQDN. This enables the customer to use the FQDN instead of the private endpoint's
+     * private IP address to access the service (for example,\u00A0xyz.oraclecloud.com).
      *
      * @return the value
-     */
+     **/
     public String getEndpointFqdn() {
         return endpointFqdn;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet in the customer VCN where the connectivity will be established.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the
+     * connectivity will be established.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * subnet in the customer VCN where the connectivity will be established.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet in the customer VCN where the
+     * connectivity will be established.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** A list of network security groups for the private access. */
+    /**
+     * A list of network security groups for the private access.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
      * A list of network security groups for the private access.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not
-     * provided, it will be auto-assigned with an available IPv4 address from the subnet.
-     */
+     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+     * be auto-assigned with an available IPv4 address from the subnet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not
-     * provided, it will be auto-assigned with an available IPv4 address from the subnet.
+     * The IPv4 address from the provided OCI subnet which needs to be assigned to the VNIC. If not provided, it will
+     * be auto-assigned with an available IPv4 address from the subnet.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -274,7 +279,6 @@ public final class DesktopPoolPrivateAccessDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

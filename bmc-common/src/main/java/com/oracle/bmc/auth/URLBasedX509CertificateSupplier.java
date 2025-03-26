@@ -4,11 +4,9 @@
  */
 package com.oracle.bmc.auth;
 
-import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
@@ -20,8 +18,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicReference;
-import java.util.stream.Collectors;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 import javax.security.auth.Refreshable;
 
 import org.slf4j.Logger;
@@ -29,36 +26,22 @@ import org.slf4j.Logger;
 import com.oracle.bmc.auth.internal.X509CertificateWithOriginalPem;
 import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
 import com.oracle.bmc.util.StreamUtils;
+import org.slf4j.Logger;
 
 /**
- * {@link X509CertificateSupplier} implementation that reads both certificate and private key off of
- * URL. This class also provides a way to manually refresh the certificate and private key at any
- * point.
+ * {@link X509CertificateSupplier} implementation that reads both certificate and private key
+ * off of URL.  This class also provides a way to manually refresh the certificate and
+ * private key at any point.
  */
 public class URLBasedX509CertificateSupplier implements X509CertificateSupplier, Refreshable {
-    private static final String CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS_VAR_NAME =
-            "OCI_JAVASDK_CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS";
-    private static final String CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS_VAR_NAME =
-            "OCI_JAVASDK_CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS";
 
     /**
-     * Set the environment variables to configure read timeout and connection timeout (in
-     * milliseconds) for URL Connection
-     */
-    protected static final String CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS =
-            System.getenv(CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS_VAR_NAME);
-
-    protected static final String CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS =
-            System.getenv(CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS_VAR_NAME);
-
-    /**
-     * Provide a way for the application environment to disable the X509 workaround by setting a
-     * system property to "true". On the command line, this can be done using
+     * Provide a way for the application environment to disable the X509 workaround by setting
+     * a system property to "true". On the command line, this can be done using
      * `-Doci.sdk.experimental.suppressX509Workaround=true`
      */
     private static final boolean EXPERIMENTAL_SUPPRESS_X509_WORKAROUND =
             Boolean.getBoolean("oci.sdk.experimental.suppressX509Workaround");
-
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(URLBasedX509CertificateSupplier.class);
 
@@ -67,10 +50,14 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     }
 
     public static class ResourceDetails {
-        /** The url of the resource */
+        /**
+         * The url of the resource
+         */
         private final URL url;
 
-        /** Headers to be sent along with the resource fetch request */
+        /**
+         * Headers to be sent along with the resource fetch request
+         */
         private final Map<String, String> headers;
 
         @java.beans.ConstructorProperties({"url", "headers"})
@@ -158,27 +145,33 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         }
     }
 
-    /** The certificate and the private key of certificate. */
+    /**
+     * The certificate and the private key of certificate.
+     */
     private final AtomicReference<CertificateAndPrivateKeyPair> certificateAndKeyPair =
             new AtomicReference<>(null);
 
-    /** The resource details of certificate. */
+    /**
+     * The resource details of certificate.
+     */
     private final ResourceDetails certificateDetails;
 
-    /** The resource details of private key. */
+    /**
+     * The resource details of private key.
+     */
     private final ResourceDetails privateKeyDetails;
 
-    /** The passphrase of private key. */
+    /**
+     * The passphrase of private key.
+     */
     private final char[] privateKeyPassphraseCharacters;
 
     /**
      * Constructor.
      *
-     * @param certificateResourceDetails The certificate resource details
-     * @param privateKeyResourceDetails The private key resource details, may be null for
-     *     intermediate certificates
-     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted
-     *     private keys
+     * @param certificateResourceDetails     The certificate resource details
+     * @param privateKeyResourceDetails      The private key resource details, may be null for intermediate certificates
+     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
      */
     public URLBasedX509CertificateSupplier(
             ResourceDetails certificateResourceDetails,
@@ -194,10 +187,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     /**
      * Constructor.
      *
-     * @param certificateUrl The certificate url
-     * @param privateKeyUrl The private key url, may be null for intermediate certificates
-     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted
-     *     private keys
+     * @param certificateUrl                 The certificate url
+     * @param privateKeyUrl                  The private key url, may be null for intermediate certificates
+     * @param privateKeyPassphraseCharacters The private key passphrase, may be null for unencrypted private keys
      */
     public URLBasedX509CertificateSupplier(
             URL certificateUrl, URL privateKeyUrl, char[] privateKeyPassphraseCharacters) {
@@ -210,12 +202,10 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     /**
      * Constructor.
      *
-     * @param certificateUrl The certificate url
-     * @param privateKeyUrl The private key url, may be null for intermediate certificates
-     * @param privateKeyPassphrase The private key passphrase, may be null for unencrypted private
-     *     keys
-     * @deprecated use {@link URLBasedX509CertificateSupplier#URLBasedX509CertificateSupplier(URL,
-     *     URL, char[])} instead
+     * @param certificateUrl       The certificate url
+     * @param privateKeyUrl        The private key url, may be null for intermediate certificates
+     * @param privateKeyPassphrase The private key passphrase, may be null for unencrypted private keys
+     * @deprecated use {@link URLBasedX509CertificateSupplier#URLBasedX509CertificateSupplier(URL, URL, char[])} instead
      */
     @Deprecated
     public URLBasedX509CertificateSupplier(
@@ -238,7 +228,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         return certificateAndKeyPair.get().getCertificate();
     }
 
-    /** A method to refresh the X509 certificate. */
+    /**
+     * A method to refresh the X509 certificate.
+     */
     @Override
     public void refresh() {
         String rawCertificate = readRawCertificate(certificateDetails);
@@ -314,14 +306,6 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
         }
         Objects.requireNonNull(resourceDetails.getUrl(), "Resource url cannot be null.");
         final URLConnection urlConnection = resourceDetails.getUrl().openConnection();
-        if (CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS != null) {
-            urlConnection.setReadTimeout(
-                    Integer.parseInt(CERTIFICATE_URL_CONNECTION_READ_TIMEOUT_IN_MILLIS));
-        }
-        if (CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS != null) {
-            urlConnection.setConnectTimeout(
-                    Integer.parseInt(CERTIFICATE_URL_CONNECTION_TIMEOUT_IN_MILLIS));
-        }
         if (resourceDetails.getHeaders() != null) {
             resourceDetails.getHeaders().forEach(urlConnection::setRequestProperty);
         }
@@ -332,7 +316,7 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
      * Read the private key from url.
      *
      * @param privateKeyResourceDetails the private key resource details.
-     * @param privateKeyPassphrase the private key passhprase
+     * @param privateKeyPassphrase      the private key passhprase
      * @return the private key
      */
     private static RSAPrivateKey readPrivateKey(
@@ -368,9 +352,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     }
 
     /**
-     * Corresponding private key of the certificate. You must implement this method for leaf
-     * certificates (to sign the request made to the auth service to get a security token). For
-     * intermediate certificates, you can return null.
+     * Corresponding private key of the certificate. You must implement this
+     * method for leaf certificates (to sign the request made to the auth service
+     * to get a security token). For intermediate certificates, you can return null.
      *
      * @return The private key
      * @deprecated use {@link X509CertificateSupplier#getCertificateAndKeyPair()} instead
@@ -382,9 +366,9 @@ public class URLBasedX509CertificateSupplier implements X509CertificateSupplier,
     }
 
     /**
-     * Returns the X509 certificate and private key. The X509 certificate will always be valid. The
-     * private key may be null for intermediate certificates. For leaf certificates, the private key
-     * will always be valid.
+     * Returns the X509 certificate and private key.  The X509 certificate will always
+     * be valid.  The private key may be null for intermediate certificates.  For leaf
+     * certificates, the private key will always be valid.
      *
      * @return The certificate and private key pair.
      */

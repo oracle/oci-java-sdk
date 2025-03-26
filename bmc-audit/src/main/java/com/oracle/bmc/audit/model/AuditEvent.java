@@ -5,22 +5,20 @@
 package com.oracle.bmc.audit.model;
 
 /**
- * All the attributes of an audit event. For more information, see [Viewing Audit Log
- * Events](https://docs.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
+ * All the attributes of an audit event. For more information, see [Viewing Audit Log Events](https://docs.oracle.com/iaas/Content/Audit/Tasks/viewinglogevents.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AuditEvent.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AuditEvent extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AuditEvent extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "eventType",
@@ -56,28 +54,29 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
     public static class Builder {
         /**
          * The type of event that happened.
+         * <p>
+         * The service that produces the event can also add, remove, or change the meaning of a field.
+         * A service implementing these type changes would publish a new version of an {@code eventType} and
+         * revise the {@code eventTypeVersion} field.
+         * <p>
+         * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
          *
-         * <p>The service that produces the event can also add, remove, or change the meaning of a
-         * field. A service implementing these type changes would publish a new version of an {@code
-         * eventType} and revise the {@code eventTypeVersion} field.
-         *
-         * <p>Example: {@code com.oraclecloud.ComputeApi.GetInstance}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventType")
         private String eventType;
 
         /**
          * The type of event that happened.
-         *
-         * <p>The service that produces the event can also add, remove, or change the meaning of a
-         * field. A service implementing these type changes would publish a new version of an {@code
-         * eventType} and revise the {@code eventTypeVersion} field.
-         *
-         * <p>Example: {@code com.oraclecloud.ComputeApi.GetInstance}
+         * <p>
+         * The service that produces the event can also add, remove, or change the meaning of a field.
+         * A service implementing these type changes would publish a new version of an {@code eventType} and
+         * revise the {@code eventTypeVersion} field.
+         * <p>
+         * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
          *
          * @param eventType the value to set
          * @return this builder
-         */
+         **/
         public Builder eventType(String eventType) {
             this.eventType = eventType;
             this.__explicitlySet__.add("eventType");
@@ -87,11 +86,12 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
          * The version of the CloudEvents specification. The structure of the envelope follows the
          * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
          * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+         * <p>
+         * Audit uses version 0.1 specification of the CloudEvents event envelope.
+         * <p>
+         * Example: {@code 0.1}
          *
-         * <p>Audit uses version 0.1 specification of the CloudEvents event envelope.
-         *
-         * <p>Example: {@code 0.1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
         private String cloudEventsVersion;
 
@@ -99,37 +99,38 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
          * The version of the CloudEvents specification. The structure of the envelope follows the
          * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
          * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
-         *
-         * <p>Audit uses version 0.1 specification of the CloudEvents event envelope.
-         *
-         * <p>Example: {@code 0.1}
+         * <p>
+         * Audit uses version 0.1 specification of the CloudEvents event envelope.
+         * <p>
+         * Example: {@code 0.1}
          *
          * @param cloudEventsVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudEventsVersion(String cloudEventsVersion) {
             this.cloudEventsVersion = cloudEventsVersion;
             this.__explicitlySet__.add("cloudEventsVersion");
             return this;
         }
         /**
-         * The version of the event type. This version applies to the payload of the event, not the
-         * envelope. Use {@code cloudEventsVersion} to determine the version of the envelope.
+         * The version of the event type. This version applies to the payload of the event, not the envelope.
+         * Use {@code cloudEventsVersion} to determine the version of the envelope.
+         * <p>
+         * Example: {@code 2.0}
          *
-         * <p>Example: {@code 2.0}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
         private String eventTypeVersion;
 
         /**
-         * The version of the event type. This version applies to the payload of the event, not the
-         * envelope. Use {@code cloudEventsVersion} to determine the version of the envelope.
-         *
-         * <p>Example: {@code 2.0}
+         * The version of the event type. This version applies to the payload of the event, not the envelope.
+         * Use {@code cloudEventsVersion} to determine the version of the envelope.
+         * <p>
+         * Example: {@code 2.0}
          *
          * @param eventTypeVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder eventTypeVersion(String eventTypeVersion) {
             this.eventTypeVersion = eventTypeVersion;
             this.__explicitlySet__.add("eventTypeVersion");
@@ -137,26 +138,30 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The source of the event.
+         * <p>
+         * Example: {@code ComputeApi}
          *
-         * <p>Example: {@code ComputeApi}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private String source;
 
         /**
          * The source of the event.
-         *
-         * <p>Example: {@code ComputeApi}
+         * <p>
+         * Example: {@code ComputeApi}
          *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(String source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** The GUID of the event. */
+        /**
+         * The GUID of the event.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventId")
         private String eventId;
 
@@ -165,30 +170,29 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
          *
          * @param eventId the value to set
          * @return this builder
-         */
+         **/
         public Builder eventId(String eventId) {
             this.eventId = eventId;
             this.__explicitlySet__.add("eventId");
             return this;
         }
         /**
-         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * timestamp format.
+         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2019-09-18T00:10:59.252Z}
          *
-         * <p>Example: {@code 2019-09-18T00:10:59.252Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
         private java.util.Date eventTime;
 
         /**
-         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-         * timestamp format.
-         *
-         * <p>Example: {@code 2019-09-18T00:10:59.252Z}
+         * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2019-09-18T00:10:59.252Z}
          *
          * @param eventTime the value to set
          * @return this builder
-         */
+         **/
         public Builder eventTime(java.util.Date eventTime) {
             this.eventTime = eventTime;
             this.__explicitlySet__.add("eventTime");
@@ -196,20 +200,21 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The content type of the data contained in {@code data}.
+         * <p>
+         * Example: {@code application/json}
          *
-         * <p>Example: {@code application/json}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentType")
         private String contentType;
 
         /**
          * The content type of the data contained in {@code data}.
-         *
-         * <p>Example: {@code application/json}
+         * <p>
+         * Example: {@code application/json}
          *
          * @param contentType the value to set
          * @return this builder
-         */
+         **/
         public Builder contentType(String contentType) {
             this.contentType = contentType;
             this.__explicitlySet__.add("contentType");
@@ -275,7 +280,9 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -286,27 +293,28 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The type of event that happened.
+     * <p>
+     * The service that produces the event can also add, remove, or change the meaning of a field.
+     * A service implementing these type changes would publish a new version of an {@code eventType} and
+     * revise the {@code eventTypeVersion} field.
+     * <p>
+     * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
      *
-     * <p>The service that produces the event can also add, remove, or change the meaning of a
-     * field. A service implementing these type changes would publish a new version of an {@code
-     * eventType} and revise the {@code eventTypeVersion} field.
-     *
-     * <p>Example: {@code com.oraclecloud.ComputeApi.GetInstance}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventType")
     private final String eventType;
 
     /**
      * The type of event that happened.
-     *
-     * <p>The service that produces the event can also add, remove, or change the meaning of a
-     * field. A service implementing these type changes would publish a new version of an {@code
-     * eventType} and revise the {@code eventTypeVersion} field.
-     *
-     * <p>Example: {@code com.oraclecloud.ComputeApi.GetInstance}
+     * <p>
+     * The service that produces the event can also add, remove, or change the meaning of a field.
+     * A service implementing these type changes would publish a new version of an {@code eventType} and
+     * revise the {@code eventTypeVersion} field.
+     * <p>
+     * Example: {@code com.oraclecloud.ComputeApi.GetInstance}
      *
      * @return the value
-     */
+     **/
     public String getEventType() {
         return eventType;
     }
@@ -315,11 +323,12 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
      * The version of the CloudEvents specification. The structure of the envelope follows the
      * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
      * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
+     * <p>
+     * Audit uses version 0.1 specification of the CloudEvents event envelope.
+     * <p>
+     * Example: {@code 0.1}
      *
-     * <p>Audit uses version 0.1 specification of the CloudEvents event envelope.
-     *
-     * <p>Example: {@code 0.1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudEventsVersion")
     private final String cloudEventsVersion;
 
@@ -327,58 +336,63 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
      * The version of the CloudEvents specification. The structure of the envelope follows the
      * [CloudEvents](https://github.com/cloudevents/spec) industry standard format hosted by the
      * [Cloud Native Computing Foundation ( CNCF)](https://www.cncf.io/).
-     *
-     * <p>Audit uses version 0.1 specification of the CloudEvents event envelope.
-     *
-     * <p>Example: {@code 0.1}
+     * <p>
+     * Audit uses version 0.1 specification of the CloudEvents event envelope.
+     * <p>
+     * Example: {@code 0.1}
      *
      * @return the value
-     */
+     **/
     public String getCloudEventsVersion() {
         return cloudEventsVersion;
     }
 
     /**
-     * The version of the event type. This version applies to the payload of the event, not the
-     * envelope. Use {@code cloudEventsVersion} to determine the version of the envelope.
+     * The version of the event type. This version applies to the payload of the event, not the envelope.
+     * Use {@code cloudEventsVersion} to determine the version of the envelope.
+     * <p>
+     * Example: {@code 2.0}
      *
-     * <p>Example: {@code 2.0}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTypeVersion")
     private final String eventTypeVersion;
 
     /**
-     * The version of the event type. This version applies to the payload of the event, not the
-     * envelope. Use {@code cloudEventsVersion} to determine the version of the envelope.
-     *
-     * <p>Example: {@code 2.0}
+     * The version of the event type. This version applies to the payload of the event, not the envelope.
+     * Use {@code cloudEventsVersion} to determine the version of the envelope.
+     * <p>
+     * Example: {@code 2.0}
      *
      * @return the value
-     */
+     **/
     public String getEventTypeVersion() {
         return eventTypeVersion;
     }
 
     /**
      * The source of the event.
+     * <p>
+     * Example: {@code ComputeApi}
      *
-     * <p>Example: {@code ComputeApi}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final String source;
 
     /**
      * The source of the event.
-     *
-     * <p>Example: {@code ComputeApi}
+     * <p>
+     * Example: {@code ComputeApi}
      *
      * @return the value
-     */
+     **/
     public String getSource() {
         return source;
     }
 
-    /** The GUID of the event. */
+    /**
+     * The GUID of the event.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventId")
     private final String eventId;
 
@@ -386,47 +400,47 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
      * The GUID of the event.
      *
      * @return the value
-     */
+     **/
     public String getEventId() {
         return eventId;
     }
 
     /**
-     * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format.
+     * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2019-09-18T00:10:59.252Z}
      *
-     * <p>Example: {@code 2019-09-18T00:10:59.252Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventTime")
     private final java.util.Date eventTime;
 
     /**
-     * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339)
-     * timestamp format.
-     *
-     * <p>Example: {@code 2019-09-18T00:10:59.252Z}
+     * The time the event occurred, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2019-09-18T00:10:59.252Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getEventTime() {
         return eventTime;
     }
 
     /**
      * The content type of the data contained in {@code data}.
+     * <p>
+     * Example: {@code application/json}
      *
-     * <p>Example: {@code application/json}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentType")
     private final String contentType;
 
     /**
      * The content type of the data contained in {@code data}.
-     *
-     * <p>Example: {@code application/json}
+     * <p>
+     * Example: {@code application/json}
      *
      * @return the value
-     */
+     **/
     public String getContentType() {
         return contentType;
     }
@@ -445,7 +459,6 @@ public final class AuditEvent extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

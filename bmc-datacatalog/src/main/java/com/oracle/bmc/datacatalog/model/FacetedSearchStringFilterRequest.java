@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Object with string filter criteria <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Object with string filter criteria
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FacetedSearchStringFilterRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FacetedSearchStringFilterRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FacetedSearchStringFilterRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"field", "values"})
     public FacetedSearchStringFilterRequest(String field, java.util.List<String> values) {
@@ -33,44 +32,42 @@ public final class FacetedSearchStringFilterRequest
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
-         * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
-         * DataAssetName, LifeCycleState.
-         */
+         * String/boolean/numerical field name that needs to be filtered by.
+         * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("field")
         private String field;
 
         /**
-         * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
-         * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
-         * DataAssetName, LifeCycleState.
+         * String/boolean/numerical field name that needs to be filtered by.
+         * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
          *
          * @param field the value to set
          * @return this builder
-         */
+         **/
         public Builder field(String field) {
             this.field = field;
             this.__explicitlySet__.add("field");
             return this;
         }
         /**
-         * Array of values that the search results needs to be filtered by. Acceptable values for
-         * field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary,
-         * Pattern, Job, Schedule, CustomProperty. For other fields, acceptable values can be
-         * derived by inspecting the data object.
-         */
+         * Array of values that the search results needs to be filtered by.
+         * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+         * For other fields, acceptable values can be derived by inspecting the data object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * Array of values that the search results needs to be filtered by. Acceptable values for
-         * field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary,
-         * Pattern, Job, Schedule, CustomProperty. For other fields, acceptable values can be
-         * derived by inspecting the data object.
+         * Array of values that the search results needs to be filtered by.
+         * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+         * For other fields, acceptable values can be derived by inspecting the data object.
          *
          * @param values the value to set
          * @return this builder
-         */
+         **/
         public Builder values(java.util.List<String> values) {
             this.values = values;
             this.__explicitlySet__.add("values");
@@ -101,7 +98,9 @@ public final class FacetedSearchStringFilterRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -111,41 +110,39 @@ public final class FacetedSearchStringFilterRequest
     }
 
     /**
-     * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
-     * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
-     * DataAssetName, LifeCycleState.
-     */
+     * String/boolean/numerical field name that needs to be filtered by.
+     * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("field")
     private final String field;
 
     /**
-     * String/boolean/numerical field name that needs to be filtered by. Acceptable field names:
-     * CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag,
-     * DataAssetName, LifeCycleState.
+     * String/boolean/numerical field name that needs to be filtered by.
+     * Acceptable field names: CatalogType, AttributeType, FolderType, DataAssetType, CreatedBy, UpdatedBy, Term, Tag, DataAssetName, LifeCycleState.
      *
      * @return the value
-     */
+     **/
     public String getField() {
         return field;
     }
 
     /**
-     * Array of values that the search results needs to be filtered by. Acceptable values for field
-     * 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern,
-     * Job, Schedule, CustomProperty. For other fields, acceptable values can be derived by
-     * inspecting the data object.
-     */
+     * Array of values that the search results needs to be filtered by.
+     * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+     * For other fields, acceptable values can be derived by inspecting the data object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * Array of values that the search results needs to be filtered by. Acceptable values for field
-     * 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern,
-     * Job, Schedule, CustomProperty. For other fields, acceptable values can be derived by
-     * inspecting the data object.
+     * Array of values that the search results needs to be filtered by.
+     * Acceptable values for field 'CatalogType': DataAsset, Folder, DataEntity, Attribute, Term, Category, Glossary, Pattern, Job, Schedule, CustomProperty.
+     * For other fields, acceptable values can be derived by inspecting the data object.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getValues() {
         return values;
     }
@@ -157,7 +154,6 @@ public final class FacetedSearchStringFilterRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

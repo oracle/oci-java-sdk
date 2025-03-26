@@ -6,17 +6,18 @@ package com.oracle.bmc.computecloudatcustomer.responses;
 
 import com.oracle.bmc.computecloudatcustomer.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +26,17 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -43,16 +45,17 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
+     *
      */
     private String opcPrevPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the previous batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response,
+     * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+     * subsequent GET request to get the previous batch of items.
      *
      * @return the value
      */
@@ -60,13 +63,14 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
         return opcPrevPage;
     }
 
-    /** The returned {@code CccInfrastructureCollection} instance. */
+    /**
+     * The returned CccInfrastructureCollection instance.
+     */
     private com.oracle.bmc.computecloudatcustomer.model.CccInfrastructureCollection
             cccInfrastructureCollection;
 
     /**
-     * The returned {@code CccInfrastructureCollection} instance.
-     *
+     * The returned CccInfrastructureCollection instance.
      * @return the value
      */
     public com.oracle.bmc.computecloudatcustomer.model.CccInfrastructureCollection
@@ -84,7 +88,7 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListCccInfrastructuresResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String opcPrevPage,
@@ -97,34 +101,31 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
         this.cccInfrastructureCollection = cccInfrastructureCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListCccInfrastructuresResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -135,16 +136,17 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -155,16 +157,17 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
+         *
          */
         private String opcPrevPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the previous batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response,
+         * then a partial list might have been returned. Include this value as the {@code page} parameter for the
+         * subsequent GET request to get the previous batch of items.
          *
          * @param opcPrevPage the value to set
          * @return this builder
@@ -174,13 +177,14 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code CccInfrastructureCollection} instance. */
+        /**
+         * The returned CccInfrastructureCollection instance.
+         */
         private com.oracle.bmc.computecloudatcustomer.model.CccInfrastructureCollection
                 cccInfrastructureCollection;
 
         /**
-         * The returned {@code CccInfrastructureCollection} instance.
-         *
+         * The returned CccInfrastructureCollection instance.
          * @param cccInfrastructureCollection the value to set
          * @return this builder
          */
@@ -193,10 +197,8 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListCccInfrastructuresResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -210,10 +212,8 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListCccInfrastructuresResponse build() {
             return new ListCccInfrastructuresResponse(
                     __httpStatusCode__,
@@ -227,7 +227,6 @@ public class ListCccInfrastructuresResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

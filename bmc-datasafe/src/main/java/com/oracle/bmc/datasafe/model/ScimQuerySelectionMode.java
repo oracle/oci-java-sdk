@@ -5,54 +5,54 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Indicates that the selection is a scimQuery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Indicates that the selection is a scimQuery.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScimQuerySelectionMode.Builder.class)
+    builder = ScimQuerySelectionMode.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "selectionMode")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "selectionMode"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScimQuerySelectionMode extends SelectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(dbUserName eq "PAY_APP")
          *
-         * <p>*Example:** query=(dbUserName eq "PAY_APP")
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scimQuery")
         private String scimQuery;
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
-         *
-         * <p>*Example:** query=(dbUserName eq "PAY_APP")
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(dbUserName eq "PAY_APP")
          *
          * @param scimQuery the value to set
          * @return this builder
-         */
+         **/
         public Builder scimQuery(String scimQuery) {
             this.scimQuery = scimQuery;
             this.__explicitlySet__.add("scimQuery");
@@ -79,7 +79,9 @@ public final class ScimQuerySelectionMode extends SelectionDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,30 +97,29 @@ public final class ScimQuerySelectionMode extends SelectionDetails {
     }
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(dbUserName eq "PAY_APP")
      *
-     * <p>*Example:** query=(dbUserName eq "PAY_APP")
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scimQuery")
     private final String scimQuery;
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
-     *
-     * <p>*Example:** query=(dbUserName eq "PAY_APP")
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(dbUserName eq "PAY_APP")
      *
      * @return the value
-     */
+     **/
     public String getScimQuery() {
         return scimQuery;
     }
@@ -130,7 +131,6 @@ public final class ScimQuerySelectionMode extends SelectionDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

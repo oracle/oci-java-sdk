@@ -4,22 +4,24 @@
  */
 package com.oracle.bmc.http;
 
-import com.oracle.bmc.http.client.HttpClientBuilder;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import com.oracle.bmc.requests.BmcRequest;
 
+import javax.ws.rs.client.Client;
+import javax.ws.rs.client.ClientBuilder;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * A client configurator composed of other client configurators. All of the client configurators
- * contained in this composite object will be used in the order they are added.
+ * A client configurator composed of other client configurators. All of the client configurators contained
+ * in this composite object will be used in the order they are added.
  */
 public class CompositeClientConfigurator implements ClientConfigurator {
     private final List<ClientConfigurator> configurators;
 
     /**
      * Create a new composite client configurator.
-     *
      * @param configurators the other configurators contained in this composite
      */
     public CompositeClientConfigurator(List<ClientConfigurator> configurators) {
@@ -28,7 +30,6 @@ public class CompositeClientConfigurator implements ClientConfigurator {
 
     /**
      * Create a new composite client configurator.
-     *
      * @param configurators the other configurators contained in this composite
      */
     public static CompositeClientConfigurator of(ClientConfigurator... configurators) {
@@ -36,9 +37,23 @@ public class CompositeClientConfigurator implements ClientConfigurator {
     }
 
     @Override
-    public void customizeClient(HttpClientBuilder builder) {
+    public void customizeBuilder(ClientBuilder builder) {
         for (ClientConfigurator configurator : configurators) {
-            configurator.customizeClient(builder);
+            configurator.customizeBuilder(builder);
+        }
+    }
+
+    @Override
+    public void customizeClient(Client client) {
+        for (ClientConfigurator configurator : configurators) {
+            configurator.customizeClient(client);
+        }
+    }
+
+    @Override
+    public void customizeRequest(BmcRequest<?> request, WrappedInvocationBuilder ib) {
+        for (ClientConfigurator configurator : configurators) {
+            configurator.customizeRequest(request, ib);
         }
     }
 

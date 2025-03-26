@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Abstract of Pull Request Comment likes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Abstract of Pull Request Comment likes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PullRequestCommentLikeCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PullRequestCommentLikeCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PullRequestCommentLikeCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"users", "totalLikes"})
     public PullRequestCommentLikeCollection(
@@ -33,31 +32,33 @@ public final class PullRequestCommentLikeCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of liked users of whom liked the pull request comment (max size is 50). */
+        /**
+         * List of liked users of whom liked the pull request comment (max size is 50).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("users")
         private java.util.List<PrincipalDetails> users;
 
         /**
          * List of liked users of whom liked the pull request comment (max size is 50).
-         *
          * @param users the value to set
          * @return this builder
-         */
+         **/
         public Builder users(java.util.List<PrincipalDetails> users) {
             this.users = users;
             this.__explicitlySet__.add("users");
             return this;
         }
-        /** Total like counter */
+        /**
+         * Total like counter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalLikes")
         private Integer totalLikes;
 
         /**
          * Total like counter
-         *
          * @param totalLikes the value to set
          * @return this builder
-         */
+         **/
         public Builder totalLikes(Integer totalLikes) {
             this.totalLikes = totalLikes;
             this.__explicitlySet__.add("totalLikes");
@@ -88,7 +89,9 @@ public final class PullRequestCommentLikeCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class PullRequestCommentLikeCollection
         return new Builder().copy(this);
     }
 
-    /** List of liked users of whom liked the pull request comment (max size is 50). */
+    /**
+     * List of liked users of whom liked the pull request comment (max size is 50).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("users")
     private final java.util.List<PrincipalDetails> users;
 
     /**
      * List of liked users of whom liked the pull request comment (max size is 50).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PrincipalDetails> getUsers() {
         return users;
     }
 
-    /** Total like counter */
+    /**
+     * Total like counter
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalLikes")
     private final Integer totalLikes;
 
     /**
      * Total like counter
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalLikes() {
         return totalLikes;
     }
@@ -130,7 +135,6 @@ public final class PullRequestCommentLikeCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

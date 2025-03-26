@@ -5,25 +5,25 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the configuration of a traffic node that is visible to the user. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the configuration of a traffic node that is visible to the user.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VisibleTrafficNode.Builder.class)
+    builder = VisibleTrafficNode.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VisibleTrafficNode extends TrafficNode {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -63,38 +63,40 @@ public final class VisibleTrafficNode extends TrafficNode {
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OCI entity that represents the traffic node (Instance, GW, LB, etc.).
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI entity that
+         * represents the traffic node (Instance, GW, LB, etc.).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityId")
         private String entityId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * OCI entity that represents the traffic node (Instance, GW, LB, etc.).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI entity that
+         * represents the traffic node (Instance, GW, LB, etc.).
          *
          * @param entityId the value to set
          * @return this builder
-         */
+         **/
         public Builder entityId(String entityId) {
             this.entityId = entityId;
             this.__explicitlySet__.add("entityId");
             return this;
         }
         /**
-         * Describes how the traffic was transformed. For example, if an address is translated by a
-         * NAT GW, the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
-         */
+         * Describes how the traffic was transformed. For example, if an address is translated by a NAT GW,
+         * the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transformationDescription")
         private String transformationDescription;
 
         /**
-         * Describes how the traffic was transformed. For example, if an address is translated by a
-         * NAT GW, the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
+         * Describes how the traffic was transformed. For example, if an address is translated by a NAT GW,
+         * the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
          *
          * @param transformationDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder transformationDescription(String transformationDescription) {
             this.transformationDescription = transformationDescription;
             this.__explicitlySet__.add("transformationDescription");
@@ -143,7 +145,9 @@ public final class VisibleTrafficNode extends TrafficNode {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,35 +170,37 @@ public final class VisibleTrafficNode extends TrafficNode {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
-     * entity that represents the traffic node (Instance, GW, LB, etc.).
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI entity that
+     * represents the traffic node (Instance, GW, LB, etc.).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityId")
     private final String entityId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI
-     * entity that represents the traffic node (Instance, GW, LB, etc.).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OCI entity that
+     * represents the traffic node (Instance, GW, LB, etc.).
      *
      * @return the value
-     */
+     **/
     public String getEntityId() {
         return entityId;
     }
 
     /**
-     * Describes how the traffic was transformed. For example, if an address is translated by a NAT
-     * GW, the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
-     */
+     * Describes how the traffic was transformed. For example, if an address is translated by a NAT GW,
+     * the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("transformationDescription")
     private final String transformationDescription;
 
     /**
-     * Describes how the traffic was transformed. For example, if an address is translated by a NAT
-     * GW, the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
+     * Describes how the traffic was transformed. For example, if an address is translated by a NAT GW,
+     * the string will describe the translation: 'SNAT: 10.0.0.1->204.0.0.1'
      *
      * @return the value
-     */
+     **/
     public String getTransformationDescription() {
         return transformationDescription;
     }
@@ -206,7 +212,6 @@ public final class VisibleTrafficNode extends TrafficNode {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

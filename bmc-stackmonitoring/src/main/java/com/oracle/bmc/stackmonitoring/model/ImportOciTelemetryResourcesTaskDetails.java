@@ -5,159 +5,170 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Request details for importing resources from Telemetry like resources from OCI Native Services
- * and prometheus. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Request details for importing resources from Telemetry like resources from OCI Native Services and prometheus.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ImportOciTelemetryResourcesTaskDetails.Builder.class)
+    builder = ImportOciTelemetryResourcesTaskDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResourceTaskDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Source from where the metrics pushed to telemetry. Possible values: *
-         * OCI_TELEMETRY_NATIVE - The metrics are pushed to telemetry from OCI Native Services. *
-         * OCI_TELEMETRY_PROMETHEUS - The metrics are pushed to telemetry from Prometheus.
-         */
+         * Source from where the metrics pushed to telemetry.
+         * Possible values:
+         *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
+         *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("source")
         private Source source;
 
         /**
-         * Source from where the metrics pushed to telemetry. Possible values: *
-         * OCI_TELEMETRY_NATIVE - The metrics are pushed to telemetry from OCI Native Services. *
-         * OCI_TELEMETRY_PROMETHEUS - The metrics are pushed to telemetry from Prometheus.
+         * Source from where the metrics pushed to telemetry.
+         * Possible values:
+         *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
+         *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+         *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+         *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
          *
          * @param source the value to set
          * @return this builder
-         */
+         **/
         public Builder source(Source source) {
             this.source = source;
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** Name space to be used for OCI Native service resources discovery. */
+        /**
+         * Name space to be used for OCI Native service resources discovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * Name space to be used for OCI Native service resources discovery.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The resource group to use while fetching metrics from telemetry. If not specified,
-         * resource group will be skipped in the list metrics request.
-         */
+         * The resource group to use while fetching metrics from telemetry.
+         * If not specified, resource group will be skipped in the list metrics request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
         private String resourceGroup;
 
         /**
-         * The resource group to use while fetching metrics from telemetry. If not specified,
-         * resource group will be skipped in the list metrics request.
+         * The resource group to use while fetching metrics from telemetry.
+         * If not specified, resource group will be skipped in the list metrics request.
          *
          * @param resourceGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
         /**
-         * Flag to indicate whether status is calculated using metrics or LifeCycleState attribute
-         * of the resource in OCI service.
-         */
+         * Flag to indicate whether status is calculated using metrics or
+         * LifeCycleState attribute of the resource in OCI service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseMetricsFlowForStatus")
         private Boolean shouldUseMetricsFlowForStatus;
 
         /**
-         * Flag to indicate whether status is calculated using metrics or LifeCycleState attribute
-         * of the resource in OCI service.
+         * Flag to indicate whether status is calculated using metrics or
+         * LifeCycleState attribute of the resource in OCI service.
          *
          * @param shouldUseMetricsFlowForStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldUseMetricsFlowForStatus(Boolean shouldUseMetricsFlowForStatus) {
             this.shouldUseMetricsFlowForStatus = shouldUseMetricsFlowForStatus;
             this.__explicitlySet__.add("shouldUseMetricsFlowForStatus");
             return this;
         }
         /**
-         * The base URL of the OCI service to which the resource belongs to. Also this property is
-         * applicable only when source is OCI_TELEMETRY_NATIVE.
-         */
+         * The base URL of the OCI service to which the resource belongs to.
+         * Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceBaseUrl")
         private String serviceBaseUrl;
 
         /**
-         * The base URL of the OCI service to which the resource belongs to. Also this property is
-         * applicable only when source is OCI_TELEMETRY_NATIVE.
+         * The base URL of the OCI service to which the resource belongs to.
+         * Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
          *
          * @param serviceBaseUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceBaseUrl(String serviceBaseUrl) {
             this.serviceBaseUrl = serviceBaseUrl;
             this.__explicitlySet__.add("serviceBaseUrl");
             return this;
         }
         /**
-         * The console path prefix to use for providing service home url page navigation. For
-         * example if the prefix provided is 'security/bastion/bastions', the URL used for
-         * navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If
-         * not provided, service home page link will not be shown in the stack monitoring home page.
-         */
+         * The console path prefix to use for providing service home url page navigation.
+         * For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
+         * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link
+         * will not be shown in the stack monitoring home page.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consolePathPrefix")
         private String consolePathPrefix;
 
         /**
-         * The console path prefix to use for providing service home url page navigation. For
-         * example if the prefix provided is 'security/bastion/bastions', the URL used for
-         * navigation will be https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If
-         * not provided, service home page link will not be shown in the stack monitoring home page.
+         * The console path prefix to use for providing service home url page navigation.
+         * For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
+         * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link
+         * will not be shown in the stack monitoring home page.
          *
          * @param consolePathPrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder consolePathPrefix(String consolePathPrefix) {
             this.consolePathPrefix = consolePathPrefix;
             this.__explicitlySet__.add("consolePathPrefix");
             return this;
         }
         /**
-         * Lifecycle states of the external resource which reflects the status of the resource being
-         * up.
-         */
+         * Lifecycle states of the external resource which reflects the status of the resource being up.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStatusMappingsForUpStatus")
         private java.util.List<String> lifecycleStatusMappingsForUpStatus;
 
         /**
-         * Lifecycle states of the external resource which reflects the status of the resource being
-         * up.
+         * Lifecycle states of the external resource which reflects the status of the resource being up.
          *
          * @param lifecycleStatusMappingsForUpStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleStatusMappingsForUpStatus(
                 java.util.List<String> lifecycleStatusMappingsForUpStatus) {
             this.lifecycleStatusMappingsForUpStatus = lifecycleStatusMappingsForUpStatus;
@@ -165,122 +176,128 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
             return this;
         }
         /**
-         * The resource name property in the metric dimensions. Resources imported will be using
-         * this property value for resource name.
-         */
+         * The resource name property in the metric dimensions.
+         * Resources imported will be using this property value for resource name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceNameMapping")
         private String resourceNameMapping;
 
         /**
-         * The resource name property in the metric dimensions. Resources imported will be using
-         * this property value for resource name.
+         * The resource name property in the metric dimensions.
+         * Resources imported will be using this property value for resource name.
          *
          * @param resourceNameMapping the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceNameMapping(String resourceNameMapping) {
             this.resourceNameMapping = resourceNameMapping;
             this.__explicitlySet__.add("resourceNameMapping");
             return this;
         }
         /**
-         * The external resource identifier property in the metric dimensions. Resources imported
-         * will be using this property value for external id.
-         */
+         * The external resource identifier property in the metric dimensions.
+         * Resources imported will be using this property value for external id.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalIdMapping")
         private String externalIdMapping;
 
         /**
-         * The external resource identifier property in the metric dimensions. Resources imported
-         * will be using this property value for external id.
+         * The external resource identifier property in the metric dimensions.
+         * Resources imported will be using this property value for external id.
          *
          * @param externalIdMapping the value to set
          * @return this builder
-         */
+         **/
         public Builder externalIdMapping(String externalIdMapping) {
             this.externalIdMapping = externalIdMapping;
             this.__explicitlySet__.add("externalIdMapping");
             return this;
         }
         /**
-         * The resource type property in the metric dimensions. Resources imported will be using
-         * this property value for resource type. If not specified, namespace will be used for
-         * resource type.
-         */
+         * The resource type property in the metric dimensions.
+         * Resources imported will be using this property value for resource type.
+         * If not specified, namespace will be used for resource type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeMapping")
         private String resourceTypeMapping;
 
         /**
-         * The resource type property in the metric dimensions. Resources imported will be using
-         * this property value for resource type. If not specified, namespace will be used for
-         * resource type.
+         * The resource type property in the metric dimensions.
+         * Resources imported will be using this property value for resource type.
+         * If not specified, namespace will be used for resource type.
          *
          * @param resourceTypeMapping the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTypeMapping(String resourceTypeMapping) {
             this.resourceTypeMapping = resourceTypeMapping;
             this.__explicitlySet__.add("resourceTypeMapping");
             return this;
         }
         /**
-         * The resource name filter. Resources matching with the resource name filter will be
-         * imported. Regular expressions will be accepted.
-         */
+         * The resource name filter. Resources matching with the resource name filter will be imported.
+         * Regular expressions will be accepted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceNameFilter")
         private String resourceNameFilter;
 
         /**
-         * The resource name filter. Resources matching with the resource name filter will be
-         * imported. Regular expressions will be accepted.
+         * The resource name filter. Resources matching with the resource name filter will be imported.
+         * Regular expressions will be accepted.
          *
          * @param resourceNameFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceNameFilter(String resourceNameFilter) {
             this.resourceNameFilter = resourceNameFilter;
             this.__explicitlySet__.add("resourceNameFilter");
             return this;
         }
         /**
-         * The resource type filter. Resources matching with the resource type filter will be
-         * imported. Regular expressions will be accepted.
-         */
+         * The resource type filter. Resources matching with the resource type filter will be imported.
+         * Regular expressions will be accepted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeFilter")
         private String resourceTypeFilter;
 
         /**
-         * The resource type filter. Resources matching with the resource type filter will be
-         * imported. Regular expressions will be accepted.
+         * The resource type filter. Resources matching with the resource type filter will be imported.
+         * Regular expressions will be accepted.
          *
          * @param resourceTypeFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTypeFilter(String resourceTypeFilter) {
             this.resourceTypeFilter = resourceTypeFilter;
             this.__explicitlySet__.add("resourceTypeFilter");
             return this;
         }
         /**
-         * List of metrics to be used to calculate the availability of the resource. Resource is
-         * considered to be up if at least one of the specified metrics is available for the
-         * resource during the specified interval using the property
-         * 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified,
-         * availability will not be calculated for the resource.
-         */
+         * List of metrics to be used to calculate the availability of the resource.
+         * Resource is considered to be up if at least one of the specified metrics is available for
+         * the resource during the specified interval using the property
+         * 'availabilityProxyMetricCollectionInterval'.
+         * If no metrics are specified, availability will not be calculated for the resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityProxyMetrics")
         private java.util.List<String> availabilityProxyMetrics;
 
         /**
-         * List of metrics to be used to calculate the availability of the resource. Resource is
-         * considered to be up if at least one of the specified metrics is available for the
-         * resource during the specified interval using the property
-         * 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified,
-         * availability will not be calculated for the resource.
+         * List of metrics to be used to calculate the availability of the resource.
+         * Resource is considered to be up if at least one of the specified metrics is available for
+         * the resource during the specified interval using the property
+         * 'availabilityProxyMetricCollectionInterval'.
+         * If no metrics are specified, availability will not be calculated for the resource.
          *
          * @param availabilityProxyMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityProxyMetrics(java.util.List<String> availabilityProxyMetrics) {
             this.availabilityProxyMetrics = availabilityProxyMetrics;
             this.__explicitlySet__.add("availabilityProxyMetrics");
@@ -289,7 +306,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
         /**
          * Metrics collection interval in seconds used when calculating the availability of the
          * resource based on metrics specified using the property 'availabilityProxyMetrics'.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityProxyMetricCollectionInterval")
         private Integer availabilityProxyMetricCollectionInterval;
 
@@ -299,7 +317,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
          *
          * @param availabilityProxyMetricCollectionInterval the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityProxyMetricCollectionInterval(
                 Integer availabilityProxyMetricCollectionInterval) {
             this.availabilityProxyMetricCollectionInterval =
@@ -384,7 +402,9 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -427,17 +447,23 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
     }
 
     /**
-     * Source from where the metrics pushed to telemetry. Possible values: * OCI_TELEMETRY_NATIVE -
-     * The metrics are pushed to telemetry from OCI Native Services. * OCI_TELEMETRY_PROMETHEUS -
-     * The metrics are pushed to telemetry from Prometheus.
-     */
-    public enum Source implements com.oracle.bmc.http.internal.BmcEnum {
+     * Source from where the metrics pushed to telemetry.
+     * Possible values:
+     *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
+     *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+     *
+     **/
+    public enum Source {
         OciTelemetryNative("OCI_TELEMETRY_NATIVE"),
         OciTelemetryPrometheus("OCI_TELEMETRY_PROMETHEUS"),
+        OciTelemetryTelegraf("OCI_TELEMETRY_TELEGRAF"),
+        OciTelemetryCollectd("OCI_TELEMETRY_COLLECTD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -476,112 +502,125 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
         }
     };
     /**
-     * Source from where the metrics pushed to telemetry. Possible values: * OCI_TELEMETRY_NATIVE -
-     * The metrics are pushed to telemetry from OCI Native Services. * OCI_TELEMETRY_PROMETHEUS -
-     * The metrics are pushed to telemetry from Prometheus.
-     */
+     * Source from where the metrics pushed to telemetry.
+     * Possible values:
+     *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
+     *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("source")
     private final Source source;
 
     /**
-     * Source from where the metrics pushed to telemetry. Possible values: * OCI_TELEMETRY_NATIVE -
-     * The metrics are pushed to telemetry from OCI Native Services. * OCI_TELEMETRY_PROMETHEUS -
-     * The metrics are pushed to telemetry from Prometheus.
+     * Source from where the metrics pushed to telemetry.
+     * Possible values:
+     *   * OCI_TELEMETRY_NATIVE      - The metrics are pushed to telemetry from OCI Native Services.
+     *   * OCI_TELEMETRY_PROMETHEUS  - The metrics are pushed to telemetry from Prometheus.
+     *   * OCI_TELEMETRY_TELEGRAF    - The metrics are pushed to telemetry from Telegraf receiver.
+     *   * OCI_TELEMETRY_COLLECTD    - The metrics are pushed to telemetry from CollectD receiver.
      *
      * @return the value
-     */
+     **/
     public Source getSource() {
         return source;
     }
 
-    /** Name space to be used for OCI Native service resources discovery. */
+    /**
+     * Name space to be used for OCI Native service resources discovery.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Name space to be used for OCI Native service resources discovery.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * The resource group to use while fetching metrics from telemetry. If not specified, resource
-     * group will be skipped in the list metrics request.
-     */
+     * The resource group to use while fetching metrics from telemetry.
+     * If not specified, resource group will be skipped in the list metrics request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
     private final String resourceGroup;
 
     /**
-     * The resource group to use while fetching metrics from telemetry. If not specified, resource
-     * group will be skipped in the list metrics request.
+     * The resource group to use while fetching metrics from telemetry.
+     * If not specified, resource group will be skipped in the list metrics request.
      *
      * @return the value
-     */
+     **/
     public String getResourceGroup() {
         return resourceGroup;
     }
 
     /**
-     * Flag to indicate whether status is calculated using metrics or LifeCycleState attribute of
-     * the resource in OCI service.
-     */
+     * Flag to indicate whether status is calculated using metrics or
+     * LifeCycleState attribute of the resource in OCI service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseMetricsFlowForStatus")
     private final Boolean shouldUseMetricsFlowForStatus;
 
     /**
-     * Flag to indicate whether status is calculated using metrics or LifeCycleState attribute of
-     * the resource in OCI service.
+     * Flag to indicate whether status is calculated using metrics or
+     * LifeCycleState attribute of the resource in OCI service.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldUseMetricsFlowForStatus() {
         return shouldUseMetricsFlowForStatus;
     }
 
     /**
-     * The base URL of the OCI service to which the resource belongs to. Also this property is
-     * applicable only when source is OCI_TELEMETRY_NATIVE.
-     */
+     * The base URL of the OCI service to which the resource belongs to.
+     * Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceBaseUrl")
     private final String serviceBaseUrl;
 
     /**
-     * The base URL of the OCI service to which the resource belongs to. Also this property is
-     * applicable only when source is OCI_TELEMETRY_NATIVE.
+     * The base URL of the OCI service to which the resource belongs to.
+     * Also this property is applicable only when source is OCI_TELEMETRY_NATIVE.
      *
      * @return the value
-     */
+     **/
     public String getServiceBaseUrl() {
         return serviceBaseUrl;
     }
 
     /**
-     * The console path prefix to use for providing service home url page navigation. For example if
-     * the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
-     * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service
-     * home page link will not be shown in the stack monitoring home page.
-     */
+     * The console path prefix to use for providing service home url page navigation.
+     * For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
+     * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link
+     * will not be shown in the stack monitoring home page.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consolePathPrefix")
     private final String consolePathPrefix;
 
     /**
-     * The console path prefix to use for providing service home url page navigation. For example if
-     * the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
-     * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service
-     * home page link will not be shown in the stack monitoring home page.
+     * The console path prefix to use for providing service home url page navigation.
+     * For example if the prefix provided is 'security/bastion/bastions', the URL used for navigation will be
+     * https://<cloudhostname>/security/bastion/bastions/<resourceOcid>. If not provided, service home page link
+     * will not be shown in the stack monitoring home page.
      *
      * @return the value
-     */
+     **/
     public String getConsolePathPrefix() {
         return consolePathPrefix;
     }
 
     /**
      * Lifecycle states of the external resource which reflects the status of the resource being up.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStatusMappingsForUpStatus")
     private final java.util.List<String> lifecycleStatusMappingsForUpStatus;
 
@@ -589,58 +628,63 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Lifecycle states of the external resource which reflects the status of the resource being up.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getLifecycleStatusMappingsForUpStatus() {
         return lifecycleStatusMappingsForUpStatus;
     }
 
     /**
-     * The resource name property in the metric dimensions. Resources imported will be using this
-     * property value for resource name.
-     */
+     * The resource name property in the metric dimensions.
+     * Resources imported will be using this property value for resource name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceNameMapping")
     private final String resourceNameMapping;
 
     /**
-     * The resource name property in the metric dimensions. Resources imported will be using this
-     * property value for resource name.
+     * The resource name property in the metric dimensions.
+     * Resources imported will be using this property value for resource name.
      *
      * @return the value
-     */
+     **/
     public String getResourceNameMapping() {
         return resourceNameMapping;
     }
 
     /**
-     * The external resource identifier property in the metric dimensions. Resources imported will
-     * be using this property value for external id.
-     */
+     * The external resource identifier property in the metric dimensions.
+     * Resources imported will be using this property value for external id.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalIdMapping")
     private final String externalIdMapping;
 
     /**
-     * The external resource identifier property in the metric dimensions. Resources imported will
-     * be using this property value for external id.
+     * The external resource identifier property in the metric dimensions.
+     * Resources imported will be using this property value for external id.
      *
      * @return the value
-     */
+     **/
     public String getExternalIdMapping() {
         return externalIdMapping;
     }
 
     /**
-     * The resource type property in the metric dimensions. Resources imported will be using this
-     * property value for resource type. If not specified, namespace will be used for resource type.
-     */
+     * The resource type property in the metric dimensions.
+     * Resources imported will be using this property value for resource type.
+     * If not specified, namespace will be used for resource type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeMapping")
     private final String resourceTypeMapping;
 
     /**
-     * The resource type property in the metric dimensions. Resources imported will be using this
-     * property value for resource type. If not specified, namespace will be used for resource type.
+     * The resource type property in the metric dimensions.
+     * Resources imported will be using this property value for resource type.
+     * If not specified, namespace will be used for resource type.
      *
      * @return the value
-     */
+     **/
     public String getResourceTypeMapping() {
         return resourceTypeMapping;
     }
@@ -648,7 +692,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
     /**
      * The resource name filter. Resources matching with the resource name filter will be imported.
      * Regular expressions will be accepted.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceNameFilter")
     private final String resourceNameFilter;
 
@@ -657,7 +702,7 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Regular expressions will be accepted.
      *
      * @return the value
-     */
+     **/
     public String getResourceNameFilter() {
         return resourceNameFilter;
     }
@@ -665,7 +710,8 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
     /**
      * The resource type filter. Resources matching with the resource type filter will be imported.
      * Regular expressions will be accepted.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeFilter")
     private final String resourceTypeFilter;
 
@@ -674,47 +720,49 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
      * Regular expressions will be accepted.
      *
      * @return the value
-     */
+     **/
     public String getResourceTypeFilter() {
         return resourceTypeFilter;
     }
 
     /**
-     * List of metrics to be used to calculate the availability of the resource. Resource is
-     * considered to be up if at least one of the specified metrics is available for the resource
-     * during the specified interval using the property
-     * 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified,
-     * availability will not be calculated for the resource.
-     */
+     * List of metrics to be used to calculate the availability of the resource.
+     * Resource is considered to be up if at least one of the specified metrics is available for
+     * the resource during the specified interval using the property
+     * 'availabilityProxyMetricCollectionInterval'.
+     * If no metrics are specified, availability will not be calculated for the resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityProxyMetrics")
     private final java.util.List<String> availabilityProxyMetrics;
 
     /**
-     * List of metrics to be used to calculate the availability of the resource. Resource is
-     * considered to be up if at least one of the specified metrics is available for the resource
-     * during the specified interval using the property
-     * 'availabilityProxyMetricCollectionIntervalInSeconds'. If no metrics are specified,
-     * availability will not be calculated for the resource.
+     * List of metrics to be used to calculate the availability of the resource.
+     * Resource is considered to be up if at least one of the specified metrics is available for
+     * the resource during the specified interval using the property
+     * 'availabilityProxyMetricCollectionInterval'.
+     * If no metrics are specified, availability will not be calculated for the resource.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAvailabilityProxyMetrics() {
         return availabilityProxyMetrics;
     }
 
     /**
-     * Metrics collection interval in seconds used when calculating the availability of the resource
-     * based on metrics specified using the property 'availabilityProxyMetrics'.
-     */
+     * Metrics collection interval in seconds used when calculating the availability of the
+     * resource based on metrics specified using the property 'availabilityProxyMetrics'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityProxyMetricCollectionInterval")
     private final Integer availabilityProxyMetricCollectionInterval;
 
     /**
-     * Metrics collection interval in seconds used when calculating the availability of the resource
-     * based on metrics specified using the property 'availabilityProxyMetrics'.
+     * Metrics collection interval in seconds used when calculating the availability of the
+     * resource based on metrics specified using the property 'availabilityProxyMetrics'.
      *
      * @return the value
-     */
+     **/
     public Integer getAvailabilityProxyMetricCollectionInterval() {
         return availabilityProxyMetricCollectionInterval;
     }
@@ -726,7 +774,6 @@ public final class ImportOciTelemetryResourcesTaskDetails extends MonitoredResou
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

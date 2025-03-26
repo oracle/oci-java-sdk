@@ -5,15 +5,16 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Content Availability Status: * NOT_AVAILABLE - content is not available on the instance nor in
- * the service * AVAILABLE_ON_INSTANCE - content is only available on the instance *
- * AVAILABLE_ON_SERVICE - content is only available on the service *
- * AVAILABLE_ON_INSTANCE_AND_SERVICE - content is available both on the instance and the service *
- * AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS - content is available on the instance and its upload is
- * in progress
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
-public enum ContentAvailability implements com.oracle.bmc.http.internal.BmcEnum {
+ * Content Availability Status:
+ *   * NOT_AVAILABLE - content is not available on the instance nor in the service
+ *   * AVAILABLE_ON_INSTANCE - content is only available on the instance
+ *   * AVAILABLE_ON_SERVICE - content is only available on the service
+ *   * AVAILABLE_ON_INSTANCE_AND_SERVICE - content is available both on the instance and the service
+ *   * AVAILABLE_ON_INSTANCE_UPLOAD_IN_PROGRESS - content is available on the instance and its upload is in progress
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+public enum ContentAvailability {
     NotAvailable("NOT_AVAILABLE"),
     AvailableOnInstance("AVAILABLE_ON_INSTANCE"),
     AvailableOnService("AVAILABLE_ON_SERVICE"),

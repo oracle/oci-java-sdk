@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the High Availability (HA) and backup for a database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of the High Availability (HA) and backup for a database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseBackupSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabaseBackupSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseBackupSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "backupStatus",
@@ -49,95 +48,97 @@ public final class DatabaseBackupSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The backup status of the database. */
+        /**
+         * The backup status of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupStatus")
         private String backupStatus;
 
         /**
          * The backup status of the database.
-         *
          * @param backupStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder backupStatus(String backupStatus) {
             this.backupStatus = backupStatus;
             this.__explicitlySet__.add("backupStatus");
             return this;
         }
         /**
-         * The database backup completion date and time in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         */
+         * The database backup completion date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBackupCompleted")
         private java.util.Date timeBackupCompleted;
 
         /**
-         * The database backup completion date and time in UTC in ISO-8601 format, which is
-         * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-         *
+         * The database backup completion date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          * @param timeBackupCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBackupCompleted(java.util.Date timeBackupCompleted) {
             this.timeBackupCompleted = timeBackupCompleted;
             this.__explicitlySet__.add("timeBackupCompleted");
             return this;
         }
-        /** The backup duration of the database in seconds. */
+        /**
+         * The backup duration of the database in seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDurationInSeconds")
         private Integer backupDurationInSeconds;
 
         /**
          * The backup duration of the database in seconds.
-         *
          * @param backupDurationInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder backupDurationInSeconds(Integer backupDurationInSeconds) {
             this.backupDurationInSeconds = backupDurationInSeconds;
             this.__explicitlySet__.add("backupDurationInSeconds");
             return this;
         }
-        /** The backup type of the database (FULL/INCREMENTAL). */
+        /**
+         * The backup type of the database (FULL/INCREMENTAL).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private String backupType;
 
         /**
          * The backup type of the database (FULL/INCREMENTAL).
-         *
          * @param backupType the value to set
          * @return this builder
-         */
+         **/
         public Builder backupType(String backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-        /** The backup destination of the database. */
+        /**
+         * The backup destination of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupDestination")
         private BackupDestination backupDestination;
 
         /**
          * The backup destination of the database.
-         *
          * @param backupDestination the value to set
          * @return this builder
-         */
+         **/
         public Builder backupDestination(BackupDestination backupDestination) {
             this.backupDestination = backupDestination;
             this.__explicitlySet__.add("backupDestination");
             return this;
         }
-        /** The backup size of the database. */
+        /**
+         * The backup size of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupSizeInGBs")
         private Float backupSizeInGBs;
 
         /**
          * The backup size of the database.
-         *
          * @param backupSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder backupSizeInGBs(Float backupSizeInGBs) {
             this.backupSizeInGBs = backupSizeInGBs;
             this.__explicitlySet__.add("backupSizeInGBs");
@@ -186,7 +187,9 @@ public final class DatabaseBackupSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -195,64 +198,66 @@ public final class DatabaseBackupSummary
         return new Builder().copy(this);
     }
 
-    /** The backup status of the database. */
+    /**
+     * The backup status of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupStatus")
     private final String backupStatus;
 
     /**
      * The backup status of the database.
-     *
      * @return the value
-     */
+     **/
     public String getBackupStatus() {
         return backupStatus;
     }
 
     /**
-     * The database backup completion date and time in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     */
+     * The database backup completion date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBackupCompleted")
     private final java.util.Date timeBackupCompleted;
 
     /**
-     * The database backup completion date and time in UTC in ISO-8601 format, which is
-     * "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
-     *
+     * The database backup completion date and time in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBackupCompleted() {
         return timeBackupCompleted;
     }
 
-    /** The backup duration of the database in seconds. */
+    /**
+     * The backup duration of the database in seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDurationInSeconds")
     private final Integer backupDurationInSeconds;
 
     /**
      * The backup duration of the database in seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getBackupDurationInSeconds() {
         return backupDurationInSeconds;
     }
 
-    /** The backup type of the database (FULL/INCREMENTAL). */
+    /**
+     * The backup type of the database (FULL/INCREMENTAL).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final String backupType;
 
     /**
      * The backup type of the database (FULL/INCREMENTAL).
-     *
      * @return the value
-     */
+     **/
     public String getBackupType() {
         return backupType;
     }
 
-    /** The backup destination of the database. */
-    public enum BackupDestination implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The backup destination of the database.
+     **/
+    public enum BackupDestination {
         Disk("DISK"),
         Tape("TAPE"),
         Nfs("NFS"),
@@ -262,8 +267,8 @@ public final class DatabaseBackupSummary
         RecoveryAppliance("RECOVERY_APPLIANCE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -302,28 +307,30 @@ public final class DatabaseBackupSummary
             return UnknownEnumValue;
         }
     };
-    /** The backup destination of the database. */
+    /**
+     * The backup destination of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupDestination")
     private final BackupDestination backupDestination;
 
     /**
      * The backup destination of the database.
-     *
      * @return the value
-     */
+     **/
     public BackupDestination getBackupDestination() {
         return backupDestination;
     }
 
-    /** The backup size of the database. */
+    /**
+     * The backup size of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupSizeInGBs")
     private final Float backupSizeInGBs;
 
     /**
      * The backup size of the database.
-     *
      * @return the value
-     */
+     **/
     public Float getBackupSizeInGBs() {
         return backupSizeInGBs;
     }
@@ -335,7 +342,6 @@ public final class DatabaseBackupSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

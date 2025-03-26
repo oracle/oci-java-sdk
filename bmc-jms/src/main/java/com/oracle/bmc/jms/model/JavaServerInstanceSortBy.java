@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field to sort Java Server instances. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JavaServerInstanceSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort Java Server instances.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum JavaServerInstanceSortBy {
     ServerInstanceName("serverInstanceName"),
     ManagedInstanceName("managedInstanceName"),
     ApproximateDeployedApplicationCount("approximateDeployedApplicationCount"),

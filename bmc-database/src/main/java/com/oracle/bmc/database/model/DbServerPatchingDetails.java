@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The scheduling details for the quarterly maintenance window. Patching and system updates take
- * place during the maintenance window. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DbServerPatchingDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DbServerPatchingDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DbServerPatchingDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "estimatedPatchDuration",
@@ -44,61 +43,65 @@ public final class DbServerPatchingDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Estimated time, in minutes, to patch one database server. */
+        /**
+         * Estimated time, in minutes, to patch one database server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
         private Integer estimatedPatchDuration;
 
         /**
          * Estimated time, in minutes, to patch one database server.
-         *
          * @param estimatedPatchDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedPatchDuration(Integer estimatedPatchDuration) {
             this.estimatedPatchDuration = estimatedPatchDuration;
             this.__explicitlySet__.add("estimatedPatchDuration");
             return this;
         }
-        /** The status of the patching operation. */
+        /**
+         * The status of the patching operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
         private PatchingStatus patchingStatus;
 
         /**
          * The status of the patching operation.
-         *
          * @param patchingStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder patchingStatus(PatchingStatus patchingStatus) {
             this.patchingStatus = patchingStatus;
             this.__explicitlySet__.add("patchingStatus");
             return this;
         }
-        /** The time when the patching operation started. */
+        /**
+         * The time when the patching operation started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePatchingStarted")
         private java.util.Date timePatchingStarted;
 
         /**
          * The time when the patching operation started.
-         *
          * @param timePatchingStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timePatchingStarted(java.util.Date timePatchingStarted) {
             this.timePatchingStarted = timePatchingStarted;
             this.__explicitlySet__.add("timePatchingStarted");
             return this;
         }
-        /** The time when the patching operation ended. */
+        /**
+         * The time when the patching operation ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePatchingEnded")
         private java.util.Date timePatchingEnded;
 
         /**
          * The time when the patching operation ended.
-         *
          * @param timePatchingEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timePatchingEnded(java.util.Date timePatchingEnded) {
             this.timePatchingEnded = timePatchingEnded;
             this.__explicitlySet__.add("timePatchingEnded");
@@ -139,7 +142,9 @@ public final class DbServerPatchingDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,29 +153,32 @@ public final class DbServerPatchingDetails
         return new Builder().copy(this);
     }
 
-    /** Estimated time, in minutes, to patch one database server. */
+    /**
+     * Estimated time, in minutes, to patch one database server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedPatchDuration")
     private final Integer estimatedPatchDuration;
 
     /**
      * Estimated time, in minutes, to patch one database server.
-     *
      * @return the value
-     */
+     **/
     public Integer getEstimatedPatchDuration() {
         return estimatedPatchDuration;
     }
 
-    /** The status of the patching operation. */
-    public enum PatchingStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the patching operation.
+     **/
+    public enum PatchingStatus {
         Scheduled("SCHEDULED"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         Failed("FAILED"),
         Complete("COMPLETE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -209,41 +217,44 @@ public final class DbServerPatchingDetails
             return UnknownEnumValue;
         }
     };
-    /** The status of the patching operation. */
+    /**
+     * The status of the patching operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchingStatus")
     private final PatchingStatus patchingStatus;
 
     /**
      * The status of the patching operation.
-     *
      * @return the value
-     */
+     **/
     public PatchingStatus getPatchingStatus() {
         return patchingStatus;
     }
 
-    /** The time when the patching operation started. */
+    /**
+     * The time when the patching operation started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingStarted")
     private final java.util.Date timePatchingStarted;
 
     /**
      * The time when the patching operation started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePatchingStarted() {
         return timePatchingStarted;
     }
 
-    /** The time when the patching operation ended. */
+    /**
+     * The time when the patching operation ended.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePatchingEnded")
     private final java.util.Date timePatchingEnded;
 
     /**
      * The time when the patching operation ended.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePatchingEnded() {
         return timePatchingEnded;
     }
@@ -255,7 +266,6 @@ public final class DbServerPatchingDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

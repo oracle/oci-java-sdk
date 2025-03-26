@@ -6,17 +6,16 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,12 +38,13 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code Alert} instance. */
+    /**
+     * The returned Alert instance.
+     */
     private com.oracle.bmc.datasafe.model.Alert alert;
 
     /**
-     * The returned {@code Alert} instance.
-     *
+     * The returned Alert instance.
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.Alert getAlert() {
@@ -61,7 +60,7 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
     })
     private UpdateAlertResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.Alert alert) {
@@ -71,35 +70,29 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
         this.alert = alert;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<UpdateAlertResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -110,14 +103,13 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -127,12 +119,13 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Alert} instance. */
+        /**
+         * The returned Alert instance.
+         */
         private com.oracle.bmc.datasafe.model.Alert alert;
 
         /**
-         * The returned {@code Alert} instance.
-         *
+         * The returned Alert instance.
          * @param alert the value to set
          * @return this builder
          */
@@ -143,10 +136,8 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateAlertResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -159,10 +150,8 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateAlertResponse build() {
             return new UpdateAlertResponse(__httpStatusCode__, headers, etag, opcRequestId, alert);
         }
@@ -170,7 +159,6 @@ public class UpdateAlertResponse extends com.oracle.bmc.responses.BmcResponse {
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

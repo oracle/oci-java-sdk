@@ -6,81 +6,97 @@ package com.oracle.bmc.apmconfig.requests;
 
 import com.oracle.bmc.apmconfig.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmconfig/UpdateConfigExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class UpdateConfigRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.apmconfig.model.UpdateConfigDetails> {
 
-    /** The APM Domain ID the request is intended for. */
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     private String apmDomainId;
 
-    /** The APM Domain ID the request is intended for. */
+    /**
+     * The APM Domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * configuration item.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
      */
     private String configId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * configuration item.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
+     *
      */
     public String getConfigId() {
         return configId;
     }
-    /** The configuration details to be updated. */
+    /**
+     * The configuration details to be updated.
+     */
     private com.oracle.bmc.apmconfig.model.UpdateConfigDetails updateConfigDetails;
 
-    /** The configuration details to be updated. */
+    /**
+     * The configuration details to be updated.
+     */
     public com.oracle.bmc.apmconfig.model.UpdateConfigDetails getUpdateConfigDetails() {
         return updateConfigDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify
-     * the configuration item details and is used only to perform validation on the submitted data.
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+     * configuration item details and is used only to perform validation on the submitted data.
+     *
      */
     private String opcDryRun;
 
     /**
-     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify
-     * the configuration item details and is used only to perform validation on the submitted data.
+     * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+     * configuration item details and is used only to perform validation on the submitted data.
+     *
      */
     public String getOpcDryRun() {
         return opcDryRun;
@@ -88,7 +104,6 @@ public class UpdateConfigRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -100,10 +115,14 @@ public class UpdateConfigRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateConfigRequest, com.oracle.bmc.apmconfig.model.UpdateConfigDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM Domain ID the request is intended for. */
+        /**
+         * The APM Domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
@@ -118,14 +137,13 @@ public class UpdateConfigRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * configuration item.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
+         *
          */
         private String configId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * configuration item.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration item.
          *
          * @param configId the value to set
          * @return this builder instance
@@ -135,12 +153,13 @@ public class UpdateConfigRequest
             return this;
         }
 
-        /** The configuration details to be updated. */
+        /**
+         * The configuration details to be updated.
+         */
         private com.oracle.bmc.apmconfig.model.UpdateConfigDetails updateConfigDetails = null;
 
         /**
          * The configuration details to be updated.
-         *
          * @param updateConfigDetails the value to set
          * @return this builder instance
          */
@@ -151,18 +170,21 @@ public class UpdateConfigRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -173,14 +195,15 @@ public class UpdateConfigRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -191,16 +214,15 @@ public class UpdateConfigRequest
         }
 
         /**
-         * Indicates that the request is a dry run, if set to "true". A dry run request does not
-         * modify the configuration item details and is used only to perform validation on the
-         * submitted data.
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+         * configuration item details and is used only to perform validation on the submitted data.
+         *
          */
         private String opcDryRun = null;
 
         /**
-         * Indicates that the request is a dry run, if set to "true". A dry run request does not
-         * modify the configuration item details and is used only to perform validation on the
-         * submitted data.
+         * Indicates that the request is a dry run, if set to "true". A dry run request does not modify the
+         * configuration item details and is used only to perform validation on the submitted data.
          *
          * @param opcDryRun the value to set
          * @return this builder instance
@@ -212,19 +234,18 @@ public class UpdateConfigRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -236,7 +257,6 @@ public class UpdateConfigRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateConfigRequest o) {
@@ -254,11 +274,10 @@ public class UpdateConfigRequest
         /**
          * Build the instance of UpdateConfigRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateConfigRequest
          */
@@ -271,7 +290,6 @@ public class UpdateConfigRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -284,8 +302,7 @@ public class UpdateConfigRequest
         /**
          * Build the instance of UpdateConfigRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateConfigRequest
@@ -299,14 +316,12 @@ public class UpdateConfigRequest
             request.opcRequestId = opcRequestId;
             request.opcDryRun = opcDryRun;
             return request;
-            // new UpdateConfigRequest(apmDomainId, configId, updateConfigDetails, ifMatch,
-            // opcRequestId, opcDryRun);
+            // new UpdateConfigRequest(apmDomainId, configId, updateConfigDetails, ifMatch, opcRequestId, opcDryRun);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -321,7 +336,6 @@ public class UpdateConfigRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

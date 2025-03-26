@@ -8,70 +8,68 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
- * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface ManagedInstanceAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
      * Associates managed instances to the specified management station
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AssociateManagedInstancesWithManagementStationResponse>
             associateManagedInstancesWithManagementStation(
@@ -82,15 +80,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Adds profile to a managed instance. After the profile has been added, the instance can be
-     * registered as a managed instance.
+     * Adds profile to a managed instance. After the profile has been added,
+     * the instance can be registered as a managed instance.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AttachProfileToManagedInstanceResponse>
             attachProfileToManagedInstance(
@@ -101,15 +100,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Adds software sources to a managed instance. After the software source has been added, then
-     * packages from that software source can be installed on the managed instance.
+     * Adds software sources to a managed instance. After the software source has been added,
+     * then packages from that software source can be installed on the managed instance.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AttachSoftwareSourcesToManagedInstanceResponse>
             attachSoftwareSourcesToManagedInstance(
@@ -120,16 +120,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Unregisters the specified managed instance from the service. Once unregistered, the service
-     * will no longer manage the instance. For Linux instances, yum or DNF repository files will be
-     * restored to their state prior to registration.
+     * Unregisters the specified managed instance from the service. Once unregistered, the service will no longer manage the instance.
+     * For Linux instances, yum or DNF repository files will be restored to their state prior to registration.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteManagedInstanceResponse> deleteManagedInstance(
             DeleteManagedInstanceRequest request,
@@ -138,15 +138,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Detaches profile from a managed instance. After the profile has been removed, the instance
-     * cannot be registered as a managed instance.
+     * Detaches profile from a managed instance. After the profile has been removed,
+     * the instance cannot be registered as a managed instance.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DetachProfileFromManagedInstanceResponse>
             detachProfileFromManagedInstance(
@@ -157,15 +158,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Removes software sources from a managed instance. Packages will no longer be able to be
-     * installed from these software sources.
+     * Removes software sources from a managed instance.
+     * Packages will no longer be able to be installed from these software sources.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DetachSoftwareSourcesFromManagedInstanceResponse>
             detachSoftwareSourcesFromManagedInstance(
@@ -176,16 +178,18 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Disables a module stream on a managed instance. After the stream is disabled, it is no longer
-     * possible to install the profiles that are contained by the stream. All installed profiles
-     * must be removed prior to disabling a module stream.
+     * Disables a module stream on a managed instance.  After the stream is
+     * disabled, it is no longer possible to install the profiles that are
+     * contained by the stream.  All installed profiles must be removed prior
+     * to disabling a module stream.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DisableModuleStreamOnManagedInstanceResponse>
             disableModuleStreamOnManagedInstance(
@@ -196,17 +200,19 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables a module stream on a managed instance. After the stream is enabled, it is possible to
-     * install the profiles that are contained by the stream. Enabling a stream that is already
-     * enabled will succeed. Attempting to enable a different stream for a module that already has a
-     * stream enabled results in an error.
+     * Enables a module stream on a managed instance.  After the stream is
+     * enabled, it is possible to install the profiles that are contained
+     * by the stream.  Enabling a stream that is already enabled will
+     * succeed.  Attempting to enable a different stream for a module that
+     * already has a stream enabled results in an error.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<EnableModuleStreamOnManagedInstanceResponse>
             enableModuleStreamOnManagedInstance(
@@ -221,10 +227,10 @@ public interface ManagedInstanceAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetManagedInstanceResponse> getManagedInstance(
             GetManagedInstanceRequest request,
@@ -235,12 +241,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a Windows Update object.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetWindowsUpdateResponse> getWindowsUpdate(
             GetWindowsUpdateRequest request,
@@ -248,16 +255,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Installs all of the available Windows updates for managed instances in a compartment. This
-     * applies only to standalone Windows instances. This will not update instances that belong to a
-     * group.
+     * Installs all of the available Windows updates for managed instances in a compartment. This applies only to standalone Windows instances. This will not update instances that belong to a group.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<InstallAllWindowsUpdatesOnManagedInstancesInCompartmentResponse>
             installAllWindowsUpdatesOnManagedInstancesInCompartment(
@@ -268,16 +274,17 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Installs a profile for an module stream. The stream must be enabled before a profile can be
-     * installed. If a module stream defines multiple profiles, each one can be installed
-     * independently.
+     * Installs a profile for an module stream.  The stream must be
+     * enabled before a profile can be installed.  If a module stream
+     * defines multiple profiles, each one can be installed independently.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<InstallModuleStreamProfileOnManagedInstanceResponse>
             installModuleStreamProfileOnManagedInstance(
@@ -290,12 +297,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Installs packages on a managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<InstallPackagesOnManagedInstanceResponse>
             installPackagesOnManagedInstance(
@@ -308,12 +316,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Installs Windows updates on the specified managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<InstallWindowsUpdatesOnManagedInstanceResponse>
             installWindowsUpdatesOnManagedInstance(
@@ -326,12 +335,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a list of packages that are available for installation on a managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceAvailablePackagesResponse>
             listManagedInstanceAvailablePackages(
@@ -342,15 +352,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of software sources that can be attached to the specified managed instance.
-     * Any software sources already attached to the instance are not included in the list.
+     * Returns a list of software sources that can be attached to the specified managed instance. Any software sources already attached to the instance are not included in the list.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceAvailableSoftwareSourcesResponse>
             listManagedInstanceAvailableSoftwareSources(
@@ -363,12 +373,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a list of Windows updates that can be installed on the specified managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceAvailableWindowsUpdatesResponse>
             listManagedInstanceAvailableWindowsUpdates(
@@ -381,12 +392,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a list of applicable errata on the managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceErrataResponse> listManagedInstanceErrata(
             ListManagedInstanceErrataRequest request,
@@ -397,12 +409,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Lists the packages that are installed on the managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceInstalledPackagesResponse>
             listManagedInstanceInstalledPackages(
@@ -415,12 +428,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a list of Windows updates that have been installed on the specified managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceInstalledWindowsUpdatesResponse>
             listManagedInstanceInstalledWindowsUpdates(
@@ -431,15 +445,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Retrieves a list of modules, along with streams of the modules, from a managed instance.
-     * Filters may be applied to select a subset of modules based on the filter criteria.
+     * Retrieves a list of modules, along with streams of the modules, from a managed instance. Filters may be applied to select a subset of modules based on the filter criteria.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceModulesResponse> listManagedInstanceModules(
             ListManagedInstanceModulesRequest request,
@@ -450,12 +464,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Returns a list of updatable packages for a managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstanceUpdatablePackagesResponse>
             listManagedInstanceUpdatablePackages(
@@ -466,16 +481,14 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists managed instances that match the specified compartment or managed instance OCID. Filter
-     * the list against a variety of criteria including but not limited to its name, status,
-     * architecture, and OS version.
+     * Lists managed instances that match the specified compartment or managed instance OCID. Filter the list against a variety of criteria including but not limited to its name, status, architecture, and OS version.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListManagedInstancesResponse> listManagedInstances(
             ListManagedInstancesRequest request,
@@ -486,12 +499,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Lists Windows updates that have been reported to the service.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListWindowsUpdatesResponse> listWindowsUpdates(
             ListWindowsUpdatesRequest request,
@@ -500,22 +514,18 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables or disables module streams and installs or removes module stream profiles. Once
-     * complete, the state of the modules, streams, and profiles will match the state indicated in
-     * the operation. See {@link
-     * #manageModuleStreamsOnManagedInstanceDetails(ManageModuleStreamsOnManagedInstanceDetailsRequest,
-     * Consumer, Consumer) manageModuleStreamsOnManagedInstanceDetails} for more information. You
-     * can preform this operation as a dry run. For a dry run, the service evaluates the operation
-     * against the current module, stream, and profile state on the managed instance, but does not
-     * commit the changes. Instead, the service returns work request log or error entries indicating
-     * the impact of the operation.
+     * Enables or disables module streams and installs or removes module stream profiles. Once complete, the state of the modules, streams, and
+     * profiles will match the state indicated in the operation. See {@link #manageModuleStreamsOnManagedInstanceDetails(ManageModuleStreamsOnManagedInstanceDetailsRequest, Consumer, Consumer) manageModuleStreamsOnManagedInstanceDetails}
+     * for more information. You can preform this operation as a dry run. For a dry run, the service evaluates the operation against the
+     * current module, stream, and profile state on the managed instance, but does not commit the changes. Instead, the service returns work request log or error entries indicating the impact of the operation.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ManageModuleStreamsOnManagedInstanceResponse>
             manageModuleStreamsOnManagedInstance(
@@ -526,15 +536,16 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Initiates a reboot of the specified managed instance. You can also specify the number of
-     * minutes the service waits before marking the reboot operation as failed.
+     * Initiates a reboot of the specified managed instance. You can also specify the number of minutes the service
+     * waits before marking the reboot operation as failed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RebootManagedInstanceResponse> rebootManagedInstance(
             RebootManagedInstanceRequest request,
@@ -543,16 +554,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Refreshes the package or Windows update information on a managed instance with the latest
-     * data from the software source. This does not update packages on the instance. It provides the
-     * service with the latest package data.
+     * Refreshes the package or Windows update information on a managed instance with the latest data from the software source. This does not update packages on the instance. It provides the service with the latest package data.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RefreshSoftwareOnManagedInstanceResponse>
             refreshSoftwareOnManagedInstance(
@@ -563,16 +573,17 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Removes a profile for a module stream that is installed on a managed instance. If a module
-     * stream is provided, rather than a fully qualified profile, all profiles that have been
-     * installed for the module stream will be removed.
+     * Removes a profile for a module stream that is installed on a managed instance.
+     * If a module stream is provided, rather than a fully qualified profile, all
+     * profiles that have been installed for the module stream will be removed.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemoveModuleStreamProfileFromManagedInstanceResponse>
             removeModuleStreamProfileFromManagedInstance(
@@ -585,12 +596,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Removes an installed package from a managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemovePackagesFromManagedInstanceResponse>
             removePackagesFromManagedInstance(
@@ -601,16 +613,18 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Enables a new stream for a module that already has a stream enabled. If any profiles or
-     * packages from the original module are installed, switching to a new stream will remove the
-     * existing packages and install their counterparts in the new stream.
+     * Enables a new stream for a module that already has a stream enabled.
+     * If any profiles or packages from the original module are installed,
+     * switching to a new stream will remove the existing packages and
+     * install their counterparts in the new stream.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SwitchModuleStreamOnManagedInstanceResponse>
             switchModuleStreamOnManagedInstance(
@@ -621,16 +635,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Install all of the available package updates for all of the managed instances in a
-     * compartment. This applies only to standalone non-Windows instances. This will not update
-     * instances that belong to a group or lifecycle environment.
+     * Install all of the available package updates for all of the managed instances in a compartment. This applies only to standalone non-Windows instances. This will not update instances that belong to a group or lifecycle environment.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAllPackagesOnManagedInstancesInCompartmentResponse>
             updateAllPackagesOnManagedInstancesInCompartment(
@@ -641,15 +654,15 @@ public interface ManagedInstanceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified managed instance information, such as description, ONS topic, and
-     * associated management station.
+     * Updates the specified managed instance information, such as description, ONS topic, and associated management station.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateManagedInstanceResponse> updateManagedInstance(
             UpdateManagedInstanceRequest request,
@@ -660,12 +673,13 @@ public interface ManagedInstanceAsync extends AutoCloseable {
     /**
      * Updates a package on a managed instance.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdatePackagesOnManagedInstanceResponse>
             updatePackagesOnManagedInstance(

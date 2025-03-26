@@ -5,83 +5,87 @@
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
 /**
- * Object Storage Source Details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+ * Object Storage Source Details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectStorageSourceDetails.Builder.class)
+    builder = ObjectStorageSourceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "sourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "sourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageSourceDetails extends SourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The path relative to the prefix specified in the dataset source details (file name). */
+        /**
+         * The path relative to the prefix specified in the dataset source details (file name).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
         private String relativePath;
 
         /**
          * The path relative to the prefix specified in the dataset source details (file name).
-         *
          * @param relativePath the value to set
          * @return this builder
-         */
+         **/
         public Builder relativePath(String relativePath) {
             this.relativePath = relativePath;
             this.__explicitlySet__.add("relativePath");
             return this;
         }
-        /** The full path of the file this record belongs to. */
+        /**
+         * The full path of the file this record belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * The full path of the file this record belongs to.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** The offset into the file containing the content. */
+        /**
+         * The offset into the file containing the content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offset")
         private java.math.BigDecimal offset;
 
         /**
          * The offset into the file containing the content.
-         *
          * @param offset the value to set
          * @return this builder
-         */
+         **/
         public Builder offset(java.math.BigDecimal offset) {
             this.offset = offset;
             this.__explicitlySet__.add("offset");
             return this;
         }
-        /** The length from the offset into the file containing the content. */
+        /**
+         * The length from the offset into the file containing the content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("length")
         private java.math.BigDecimal length;
 
         /**
          * The length from the offset into the file containing the content.
-         *
          * @param length the value to set
          * @return this builder
-         */
+         **/
         public Builder length(java.math.BigDecimal length) {
             this.length = length;
             this.__explicitlySet__.add("length");
@@ -119,7 +123,9 @@ public final class ObjectStorageSourceDetails extends SourceDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,54 +147,58 @@ public final class ObjectStorageSourceDetails extends SourceDetails {
         this.length = length;
     }
 
-    /** The path relative to the prefix specified in the dataset source details (file name). */
+    /**
+     * The path relative to the prefix specified in the dataset source details (file name).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relativePath")
     private final String relativePath;
 
     /**
      * The path relative to the prefix specified in the dataset source details (file name).
-     *
      * @return the value
-     */
+     **/
     public String getRelativePath() {
         return relativePath;
     }
 
-    /** The full path of the file this record belongs to. */
+    /**
+     * The full path of the file this record belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * The full path of the file this record belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** The offset into the file containing the content. */
+    /**
+     * The offset into the file containing the content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offset")
     private final java.math.BigDecimal offset;
 
     /**
      * The offset into the file containing the content.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getOffset() {
         return offset;
     }
 
-    /** The length from the offset into the file containing the content. */
+    /**
+     * The length from the offset into the file containing the content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("length")
     private final java.math.BigDecimal length;
 
     /**
      * The length from the offset into the file containing the content.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getLength() {
         return length;
     }
@@ -200,7 +210,6 @@ public final class ObjectStorageSourceDetails extends SourceDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,11 +5,11 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Possible Batching Strategy types to specify during an update Exadata Fleet Update Cycle
- * operation.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum UpdateBatchingStrategies implements com.oracle.bmc.http.internal.BmcEnum {
+ * Possible Batching Strategy types to specify during an update Exadata Fleet Update Cycle operation.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum UpdateBatchingStrategies {
     Sequential("SEQUENTIAL"),
     FiftyFifty("FIFTY_FIFTY"),
     ServiceAvailabilityFactor("SERVICE_AVAILABILITY_FACTOR"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to use when performing health check on a masking policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details to use when performing health check on a masking policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GenerateHealthReportDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GenerateHealthReportDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenerateHealthReportDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "checkType",
@@ -49,7 +48,10 @@ public final class GenerateHealthReportDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of health check. The default behaviour is to perform all health checks. */
+        /**
+         * The type of health check. The default behaviour is to perform all health checks.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checkType")
         private CheckType checkType;
 
@@ -58,108 +60,107 @@ public final class GenerateHealthReportDetails
          *
          * @param checkType the value to set
          * @return this builder
-         */
+         **/
         public Builder checkType(CheckType checkType) {
             this.checkType = checkType;
             this.__explicitlySet__.add("checkType");
             return this;
         }
         /**
-         * The OCID of the target database to use for the masking policy health check. The targetId
-         * associated with the masking policy is used if this is not passed.
-         */
+         * The OCID of the target database to use for the masking policy
+         * health check. The targetId associated with the masking policy
+         * is used if this is not passed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the target database to use for the masking policy health check. The targetId
-         * associated with the masking policy is used if this is not passed.
+         * The OCID of the target database to use for the masking policy
+         * health check. The targetId associated with the masking policy
+         * is used if this is not passed.
          *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The OCID of the compartment where the health report resource should be created. */
+        /**
+         * The OCID of the compartment where the health report resource should be created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the health report resource should be created.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The tablespace that should be used to estimate space. If no tablespace is provided, the
-         * DEFAULT tablespace is used.
-         */
+         * The tablespace that should be used to estimate space.
+         * If no tablespace is provided, the DEFAULT tablespace is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
         private String tablespace;
 
         /**
-         * The tablespace that should be used to estimate space. If no tablespace is provided, the
-         * DEFAULT tablespace is used.
+         * The tablespace that should be used to estimate space.
+         * If no tablespace is provided, the DEFAULT tablespace is used.
          *
          * @param tablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder tablespace(String tablespace) {
             this.tablespace = tablespace;
             this.__explicitlySet__.add("tablespace");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -209,7 +210,9 @@ public final class GenerateHealthReportDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -218,8 +221,11 @@ public final class GenerateHealthReportDetails
         return new Builder().copy(this);
     }
 
-    /** The type of health check. The default behaviour is to perform all health checks. */
-    public enum CheckType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of health check. The default behaviour is to perform all health checks.
+     *
+     **/
+    public enum CheckType {
         All("ALL"),
         ;
 
@@ -250,7 +256,10 @@ public final class GenerateHealthReportDetails
             throw new IllegalArgumentException("Invalid CheckType: " + key);
         }
     };
-    /** The type of health check. The default behaviour is to perform all health checks. */
+    /**
+     * The type of health check. The default behaviour is to perform all health checks.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkType")
     private final CheckType checkType;
 
@@ -258,98 +267,97 @@ public final class GenerateHealthReportDetails
      * The type of health check. The default behaviour is to perform all health checks.
      *
      * @return the value
-     */
+     **/
     public CheckType getCheckType() {
         return checkType;
     }
 
     /**
-     * The OCID of the target database to use for the masking policy health check. The targetId
-     * associated with the masking policy is used if this is not passed.
-     */
+     * The OCID of the target database to use for the masking policy
+     * health check. The targetId associated with the masking policy
+     * is used if this is not passed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the target database to use for the masking policy health check. The targetId
-     * associated with the masking policy is used if this is not passed.
+     * The OCID of the target database to use for the masking policy
+     * health check. The targetId associated with the masking policy
+     * is used if this is not passed.
      *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The OCID of the compartment where the health report resource should be created. */
+    /**
+     * The OCID of the compartment where the health report resource should be created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the health report resource should be created.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The tablespace that should be used to estimate space. If no tablespace is provided, the
-     * DEFAULT tablespace is used.
-     */
+     * The tablespace that should be used to estimate space.
+     * If no tablespace is provided, the DEFAULT tablespace is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tablespace")
     private final String tablespace;
 
     /**
-     * The tablespace that should be used to estimate space. If no tablespace is provided, the
-     * DEFAULT tablespace is used.
+     * The tablespace that should be used to estimate space.
+     * If no tablespace is provided, the DEFAULT tablespace is used.
      *
      * @return the value
-     */
+     **/
     public String getTablespace() {
         return tablespace;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -361,7 +369,6 @@ public final class GenerateHealthReportDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

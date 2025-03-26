@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Summary of the MySQL Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Summary of the MySQL Connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MysqlConnectionSummary.Builder.class)
+    builder = MysqlConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MysqlConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -172,115 +172,125 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             return this;
         }
         /**
-         * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-         * HeatWave Database Service
-         */
+         * The type of MySQL source or target connection.
+         * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MysqlConnection.TechnologyType technologyType;
 
         /**
-         * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-         * HeatWave Database Service
+         * The type of MySQL source or target connection.
+         * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
          *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(MysqlConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** The IP Address of the host. */
+        /**
+         * The IP Address of the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The IP Address of the host.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The port to be used for the connection. */
+        /**
+         * The port to be used for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port to be used for the connection.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The name of the database being referenced. */
+        /**
+         * The name of the database being referenced.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
         /**
          * The name of the database being referenced.
-         *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** Security Type for MySQL. */
+        /**
+         * Security Type for MySQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private MysqlConnection.SecurityProtocol securityProtocol;
 
         /**
          * Security Type for MySQL.
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(MysqlConnection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
-        /** SSL modes for MySQL. */
+        /**
+         * SSL modes for MySQL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
         private MysqlConnection.SslMode sslMode;
 
         /**
          * SSL modes for MySQL.
-         *
          * @param sslMode the value to set
          * @return this builder
-         */
+         **/
         public Builder sslMode(MysqlConnection.SslMode sslMode) {
             this.sslMode = sslMode;
             this.__explicitlySet__.add("sslMode");
             return this;
         }
-        /** An array of name-value pair attribute entries. */
+        /**
+         * An array of name-value pair attribute entries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
         private java.util.List<NameValuePair> additionalAttributes;
 
         /**
          * An array of name-value pair attribute entries.
-         *
          * @param additionalAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalAttributes(java.util.List<NameValuePair> additionalAttributes) {
             this.additionalAttributes = additionalAttributes;
             this.__explicitlySet__.add("additionalAttributes");
             return this;
         }
-        /** The OCID of the database system being referenced. */
+        /**
+         * The OCID of the database system being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
         private String dbSystemId;
 
@@ -289,7 +299,7 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
          *
          * @param dbSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbSystemId(String dbSystemId) {
             this.dbSystemId = dbSystemId;
             this.__explicitlySet__.add("dbSystemId");
@@ -410,7 +420,9 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -473,101 +485,111 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
     }
 
     /**
-     * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-     * HeatWave Database Service
-     */
+     * The type of MySQL source or target connection.
+     * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final MysqlConnection.TechnologyType technologyType;
 
     /**
-     * The type of MySQL source or target connection. Example: OCI_MYSQL represents OCI MySQL
-     * HeatWave Database Service
+     * The type of MySQL source or target connection.
+     * Example: OCI_MYSQL represents OCI MySQL HeatWave Database Service
      *
      * @return the value
-     */
+     **/
     public MysqlConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** The IP Address of the host. */
+    /**
+     * The IP Address of the host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The IP Address of the host.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The port to be used for the connection. */
+    /**
+     * The port to be used for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port to be used for the connection.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** The name of the database being referenced. */
+    /**
+     * The name of the database being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * The name of the database being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** Security Type for MySQL. */
+    /**
+     * Security Type for MySQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final MysqlConnection.SecurityProtocol securityProtocol;
 
     /**
      * Security Type for MySQL.
-     *
      * @return the value
-     */
+     **/
     public MysqlConnection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
-    /** SSL modes for MySQL. */
+    /**
+     * SSL modes for MySQL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslMode")
     private final MysqlConnection.SslMode sslMode;
 
     /**
      * SSL modes for MySQL.
-     *
      * @return the value
-     */
+     **/
     public MysqlConnection.SslMode getSslMode() {
         return sslMode;
     }
 
-    /** An array of name-value pair attribute entries. */
+    /**
+     * An array of name-value pair attribute entries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
     private final java.util.List<NameValuePair> additionalAttributes;
 
     /**
      * An array of name-value pair attribute entries.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NameValuePair> getAdditionalAttributes() {
         return additionalAttributes;
     }
 
-    /** The OCID of the database system being referenced. */
+    /**
+     * The OCID of the database system being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
     private final String dbSystemId;
 
@@ -575,7 +597,7 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
      * The OCID of the database system being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDbSystemId() {
         return dbSystemId;
     }
@@ -587,7 +609,6 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

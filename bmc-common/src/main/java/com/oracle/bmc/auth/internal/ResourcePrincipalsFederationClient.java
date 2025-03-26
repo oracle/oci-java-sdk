@@ -8,16 +8,20 @@ import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.Method;
+import com.oracle.bmc.http.internal.ResponseHelper;
+import com.oracle.bmc.model.BmcException;
 import org.slf4j.Logger;
 
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+import java.net.URI;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 
 /**
- * This class gets a security token from the auth service by signing the request with a PKI issued
- * leaf certificate, passing along a temporary public key that is bounded to the the security token,
- * and the leaf certificate.
+ * This class gets a security token from the auth service by signing the request with a PKI issued leaf certificate,
+ * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
 public class ResourcePrincipalsFederationClient extends AbstractFederationClient {
     private static final Logger LOG =
@@ -28,14 +32,11 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
     /**
      * Constructor of ResourcePrincipalsFederationClient.
      *
-     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
-     *     token.
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal token.
      * @param resourcePrincipalTokenPathProvider the path provider for the resource principal token
-     * @param resourcePrincipalSessionTokenEndpoint the endpoint that can provide the resource
-     *     principal session token.
+     * @param resourcePrincipalSessionTokenEndpoint the endpoint that can provide the resource principal session token.
      * @param sessionKeySupplier the session key supplier.
-     * @param instancePrincipalsAuthenticationDetailsProvider the instance principals authentication
-     *     details provider.
+     * @param instancePrincipalsAuthenticationDetailsProvider the instance principals authentication details provider.
      * @param clientConfigurator the reset client configurator.
      */
     public ResourcePrincipalsFederationClient(
@@ -61,7 +62,6 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
 
     /**
      * Gets a security token from the federation server
-     *
      * @return the security token, which is basically a JWT token string
      */
     @Override
@@ -78,27 +78,18 @@ public class ResourcePrincipalsFederationClient extends AbstractFederationClient
             throw new IllegalArgumentException("Public key is not present");
         }
 
-        // Get instance principal token with Identity
-        provider.refresh();
+        try {
+            // Get instance principal token with Identity
+            provider.refresh();
 
-        // Get resource principal token from the path provided by the path provider
-        GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
-                prepareRptCall()
-                        .method(Method.GET)
-                        .logger(LOG, "ResourcePrincipalsFederationClient")
-                        .appendPathPart(resourcePrincipalTokenPathProvider.getPath())
-                        .callSync()
-                        .body;
+            // Get resource principal token from the path provided by the path provider
+            restClient.setEndpoint(resourcePrincipalTokenEndpoint);
+            WebTarget target =
+                    restClient.getBaseTarget().path(resourcePrincipalTokenPathProvider.getPath());
+            return getSecurityTokenFromServerInner(publicKey, target, null);
 
-        String servicePrincipalSessionToken =
-                getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
-        String resourcePrincipalToken =
-                getResourcePrincipalTokenResponse.getResourcePrincipalToken();
-
-        return requestSessionToken(
-                new GetResourcePrincipalSessionTokenRequest(
-                        resourcePrincipalToken,
-                        servicePrincipalSessionToken,
-                        AuthUtils.base64EncodeNoChunking(publicKey)));
+        } catch (BmcException ex) {
+            throw ex;
+        }
     }
 }

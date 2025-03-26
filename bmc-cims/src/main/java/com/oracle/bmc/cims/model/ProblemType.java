@@ -5,16 +5,17 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
- * support tickets, see [Creating a Billing Support
- * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
- * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
- * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
- * information about {@code TECH} support tickets, see [Creating a Technical Support
- * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum ProblemType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The kind of support ticket (type of support request).
+ * For information about {@code ACCOUNT} support tickets, see
+ * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+ * For information about {@code LIMIT} support tickets, see
+ * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+ * For information about {@code TECH} support tickets, see
+ * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+public enum ProblemType {
     Limit("LIMIT"),
     LegacyLimit("LEGACY_LIMIT"),
     Tech("TECH"),

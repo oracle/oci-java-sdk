@@ -6,52 +6,55 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSqlFirewallViolationAnalyticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSqlFirewallViolationAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSqlFirewallViolationAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlFirewallViolationAnalyticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListSqlFirewallViolationAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -85,101 +88,100 @@ public class ListSqlFirewallViolationAnalyticsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * An optional filter to return audit events whose creation time in the database is greater than
-     * and equal to the date-time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      */
     private java.util.Date timeStarted;
 
     /**
-     * An optional filter to return audit events whose creation time in the database is greater than
-     * and equal to the date-time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      */
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
     /**
-     * An optional filter to return audit events whose creation time in the database is less than
-     * and equal to the date-time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      */
     private java.util.Date timeEnded;
 
     /**
-     * An optional filter to return audit events whose creation time in the database is less than
-     * and equal to the date-time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
      */
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
     /**
-     * Default time zone is UTC if no time zone provided. The date-time considerations of the
-     * resource will be in accordance with the specified time zone.
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+     *
      */
     private String queryTimeZone;
 
     /**
-     * Default time zone is UTC if no time zone provided. The date-time considerations of the
-     * resource will be in accordance with the specified time zone.
+     * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+     *
      */
     public String getQueryTimeZone() {
         return queryTimeZone;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -212,15 +214,23 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     private SortBy sortBy;
 
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     **/
+    public enum SortBy {
         DbUserName("dbUserName"),
         TargetId("targetId"),
         TargetName("targetName"),
@@ -265,42 +275,47 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
     };
 
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-     * 'BLOCKED')
      */
     private String scimQuery;
 
     /**
-     * The scimQuery query parameter accepts filter expressions that use the syntax described in
-     * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-     * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM
-     * filtering expressions, text, date, and time values must be enclosed in quotation marks, with
-     * date and time values using ISO-8601 format. (Numeric and boolean values should not be
-     * quoted.)
+     * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+     * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+     * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+     * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+     * (Numeric and boolean values should not be quoted.)
+     * <p>
+     **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-     * 'BLOCKED')
      */
     public String getScimQuery() {
         return scimQuery;
     }
-    /** Specifies a subset of summarized fields to be returned in the response. */
+    /**
+     * Specifies a subset of summarized fields to be returned in the response.
+     */
     private java.util.List<SummaryField> summaryField;
 
-    /** Specifies a subset of summarized fields to be returned in the response. */
-    public enum SummaryField implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies a subset of summarized fields to be returned in the response.
+     **/
+    public enum SummaryField {
         DbUserName("dbUserName"),
         TargetName("targetName"),
         ClientOsUserName("clientOsUserName"),
@@ -348,21 +363,25 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
     };
 
-    /** Specifies a subset of summarized fields to be returned in the response. */
+    /**
+     * Specifies a subset of summarized fields to be returned in the response.
+     */
     public java.util.List<SummaryField> getSummaryField() {
         return summaryField;
     }
     /**
-     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
-     * be a subset of the values mentioned in summaryField parameter.
+     * A groupBy can only be used in combination with summaryField parameter.
+     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+     *
      */
     private java.util.List<GroupBy> groupBy;
 
     /**
-     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
-     * be a subset of the values mentioned in summaryField parameter.
-     */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * A groupBy can only be used in combination with summaryField parameter.
+     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+     *
+     **/
+    public enum GroupBy {
         DbUserName("dbUserName"),
         TargetName("targetName"),
         OperationTime("operationTime"),
@@ -407,8 +426,9 @@ public class ListSqlFirewallViolationAnalyticsRequest
     };
 
     /**
-     * A groupBy can only be used in combination with summaryField parameter. A groupBy value has to
-     * be a subset of the values mentioned in summaryField parameter.
+     * A groupBy can only be used in combination with summaryField parameter.
+     * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+     *
      */
     public java.util.List<GroupBy> getGroupBy() {
         return groupBy;
@@ -416,18 +436,18 @@ public class ListSqlFirewallViolationAnalyticsRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -436,15 +456,17 @@ public class ListSqlFirewallViolationAnalyticsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlFirewallViolationAnalyticsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -454,16 +476,15 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -474,18 +495,19 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -496,17 +518,12 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -516,19 +533,12 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -537,12 +547,13 @@ public class ListSqlFirewallViolationAnalyticsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -552,16 +563,15 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * An optional filter to return audit events whose creation time in the database is greater
-         * than and equal to the date-time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          */
         private java.util.Date timeStarted = null;
 
         /**
-         * An optional filter to return audit events whose creation time in the database is greater
-         * than and equal to the date-time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is greater than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeStarted the value to set
          * @return this builder instance
@@ -572,16 +582,15 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * An optional filter to return audit events whose creation time in the database is less
-         * than and equal to the date-time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
          */
         private java.util.Date timeEnded = null;
 
         /**
-         * An optional filter to return audit events whose creation time in the database is less
-         * than and equal to the date-time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * An optional filter to return audit events whose creation time in the database is less than and equal to the date-time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeEnded the value to set
          * @return this builder instance
@@ -592,14 +601,13 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Default time zone is UTC if no time zone provided. The date-time considerations of the
-         * resource will be in accordance with the specified time zone.
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
+         *
          */
         private String queryTimeZone = null;
 
         /**
-         * Default time zone is UTC if no time zone provided. The date-time considerations of the
-         * resource will be in accordance with the specified time zone.
+         * Default time zone is UTC if no time zone provided. The date-time considerations of the resource will be in accordance with the specified time zone.
          *
          * @param queryTimeZone the value to set
          * @return this builder instance
@@ -609,12 +617,13 @@ public class ListSqlFirewallViolationAnalyticsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -625,6 +634,7 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
         /**
          * If this query parameter is specified, the result is sorted by this query parameter value.
+         *
          */
         private SortBy sortBy = null;
 
@@ -640,28 +650,25 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
          *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-         * 'BLOCKED')
          */
         private String scimQuery = null;
 
         /**
-         * The scimQuery query parameter accepts filter expressions that use the syntax described in
-         * Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification,
-         * which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In
-         * SCIM filtering expressions, text, date, and time values must be enclosed in quotation
-         * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
-         * should not be quoted.)
-         *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq
-         * 'BLOCKED')
+         * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2
+         * of the System for Cross-Domain Identity Management (SCIM) specification, which is available
+         * at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions,
+         * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
+         * (Numeric and boolean values should not be quoted.)
+         * <p>
+         **Example:** query=(operationTime ge '2021-06-04T01-00-26') and (violationAction eq 'BLOCKED')
          *
          * @param scimQuery the value to set
          * @return this builder instance
@@ -671,12 +678,13 @@ public class ListSqlFirewallViolationAnalyticsRequest
             return this;
         }
 
-        /** Specifies a subset of summarized fields to be returned in the response. */
+        /**
+         * Specifies a subset of summarized fields to be returned in the response.
+         */
         private java.util.List<SummaryField> summaryField = null;
 
         /**
          * Specifies a subset of summarized fields to be returned in the response.
-         *
          * @param summaryField the value to set
          * @return this builder instance
          */
@@ -687,7 +695,6 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
         /**
          * Singular setter. Specifies a subset of summarized fields to be returned in the response.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -696,14 +703,15 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * A groupBy can only be used in combination with summaryField parameter. A groupBy value
-         * has to be a subset of the values mentioned in summaryField parameter.
+         * A groupBy can only be used in combination with summaryField parameter.
+         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
+         *
          */
         private java.util.List<GroupBy> groupBy = null;
 
         /**
-         * A groupBy can only be used in combination with summaryField parameter. A groupBy value
-         * has to be a subset of the values mentioned in summaryField parameter.
+         * A groupBy can only be used in combination with summaryField parameter.
+         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
          *
          * @param groupBy the value to set
          * @return this builder instance
@@ -714,8 +722,8 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Singular setter. A groupBy can only be used in combination with summaryField parameter. A
-         * groupBy value has to be a subset of the values mentioned in summaryField parameter.
+         * Singular setter. A groupBy can only be used in combination with summaryField parameter.
+         * A groupBy value has to be a subset of the values mentioned in summaryField parameter.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -726,19 +734,18 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -750,19 +757,18 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -774,7 +780,6 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSqlFirewallViolationAnalyticsRequest o) {
@@ -799,14 +804,12 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Build the instance of ListSqlFirewallViolationAnalyticsRequest as configured by this
-         * builder
+         * Build the instance of ListSqlFirewallViolationAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSqlFirewallViolationAnalyticsRequest
          */
@@ -818,11 +821,9 @@ public class ListSqlFirewallViolationAnalyticsRequest
         }
 
         /**
-         * Build the instance of ListSqlFirewallViolationAnalyticsRequest as configured by this
-         * builder
+         * Build the instance of ListSqlFirewallViolationAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSqlFirewallViolationAnalyticsRequest
@@ -846,15 +847,12 @@ public class ListSqlFirewallViolationAnalyticsRequest
             request.groupBy = groupBy;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ListSqlFirewallViolationAnalyticsRequest(compartmentId, compartmentIdInSubtree,
-            // accessLevel, limit, page, opcRequestId, timeStarted, timeEnded, queryTimeZone,
-            // sortOrder, sortBy, scimQuery, summaryField, groupBy, opcRetryToken);
+            // new ListSqlFirewallViolationAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, opcRequestId, timeStarted, timeEnded, queryTimeZone, sortOrder, sortBy, scimQuery, summaryField, groupBy, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -878,7 +876,6 @@ public class ListSqlFirewallViolationAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

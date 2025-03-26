@@ -6,164 +6,119 @@ package com.oracle.bmc.identitydomains.requests;
 
 import com.oracle.bmc.identitydomains.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMyRequestableGroupsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListMyRequestableGroupsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListMyRequestableGroupsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMyRequestableGroupsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class ListMyRequestableGroupsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * OPTIONAL. The filter string that is used to request a subset of resources. The filter string
-     * MUST be a valid filter expression. See the Filtering section of the SCIM specification for
-     * more information (Section 3.4.2.2). The string should contain at least one condition that
-     * each item must match in order to be returned in the search results. Each condition specifies
-     * an attribute, an operator, and a value. Conditions within a filter can be connected by
-     * logical operators (such as AND and OR). Sets of conditions can be grouped together using
-     * parentheses.
+     * OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
      */
     private String filter;
 
     /**
-     * OPTIONAL. The filter string that is used to request a subset of resources. The filter string
-     * MUST be a valid filter expression. See the Filtering section of the SCIM specification for
-     * more information (Section 3.4.2.2). The string should contain at least one condition that
-     * each item must match in order to be returned in the search results. Each condition specifies
-     * an attribute, an operator, and a value. Conditions within a filter can be connected by
-     * logical operators (such as AND and OR). Sets of conditions can be grouped together using
-     * parentheses.
+     * OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
      */
     public String getFilter() {
         return filter;
     }
     /**
-     * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the
-     * returned responses. The sortBy attribute MUST be in standard attribute notation form. See the
-     * Attribute Notation section of the SCIM specification for more information (Section 3.10).
-     * Also, see the Sorting section of the SCIM specification for more information (Section
-     * 3.4.2.3).
+     * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
      */
     private String sortBy;
 
     /**
-     * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the
-     * returned responses. The sortBy attribute MUST be in standard attribute notation form. See the
-     * Attribute Notation section of the SCIM specification for more information (Section 3.10).
-     * Also, see the Sorting section of the SCIM specification for more information (Section
-     * 3.4.2.3).
+     * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
      */
     public String getSortBy() {
         return sortBy;
     }
     /**
-     * A string that indicates the order in which the sortBy parameter is applied. Allowed values
-     * are 'ascending' and 'descending'. See ([Sorting
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
+     * A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
      */
     private com.oracle.bmc.identitydomains.model.SortOrder sortOrder;
 
     /**
-     * A string that indicates the order in which the sortBy parameter is applied. Allowed values
-     * are 'ascending' and 'descending'. See ([Sorting
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
+     * A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
      */
     public com.oracle.bmc.identitydomains.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the
-     * Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The
-     * number of results pages to return. The first page is 1. Specify 2 to access the second page
-     * of results, and so on.
+     * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
      */
     private Integer startIndex;
 
     /**
-     * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the
-     * Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The
-     * number of results pages to return. The first page is 1. Specify 2 to access the second page
-     * of results, and so on.
+     * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
      */
     public Integer getStartIndex() {
         return startIndex;
     }
     /**
-     * OPTIONAL. An integer that indicates the desired maximum number of query results per page.
-     * 1000 is the largest value that you can use. See the Pagination section of the System for
-     * Cross-Domain Identity Management Protocol specification for more information. (Section
-     * 3.4.2.4).
+     * OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
      */
     private Integer count;
 
     /**
-     * OPTIONAL. An integer that indicates the desired maximum number of query results per page.
-     * 1000 is the largest value that you can use. See the Pagination section of the System for
-     * Cross-Domain Identity Management Protocol specification for more information. (Section
-     * 3.4.2.4).
+     * OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
      */
     public Integer getCount() {
         return count;
     }
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     private String authorization;
 
     /**
-     * The Authorization field value consists of credentials containing the authentication
-     * information of the user agent for the realm of the resource being requested.
+     * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
      */
     public String getAuthorization() {
         return authorization;
     }
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     private String resourceTypeSchemaVersion;
 
     /**
-     * An endpoint-specific schema version number to use in the Request. Allowed version values are
-     * Earliest Version or Latest Version as specified in each REST API endpoint description, or any
-     * sequential number inbetween. All schema attributes/body parameters are a part of version 1.
-     * After version 1, any attributes added or deprecated will be tagged with the version that they
-     * were added to or deprecated in. If no version is provided, the latest schema version is
-     * returned.
+     * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
      */
     public String getResourceTypeSchemaVersion() {
         return resourceTypeSchemaVersion;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous 'List' call.
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous 'List' call.
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return in a paginated 'List' call. */
+    /**
+     * The maximum number of items to return in a paginated 'List' call.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated 'List' call. */
+    /**
+     * The maximum number of items to return in a paginated 'List' call.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,29 +126,17 @@ public class ListMyRequestableGroupsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMyRequestableGroupsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * OPTIONAL. The filter string that is used to request a subset of resources. The filter
-         * string MUST be a valid filter expression. See the Filtering section of the SCIM
-         * specification for more information (Section 3.4.2.2). The string should contain at least
-         * one condition that each item must match in order to be returned in the search results.
-         * Each condition specifies an attribute, an operator, and a value. Conditions within a
-         * filter can be connected by logical operators (such as AND and OR). Sets of conditions can
-         * be grouped together using parentheses.
+         * OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
          */
         private String filter = null;
 
         /**
-         * OPTIONAL. The filter string that is used to request a subset of resources. The filter
-         * string MUST be a valid filter expression. See the Filtering section of the SCIM
-         * specification for more information (Section 3.4.2.2). The string should contain at least
-         * one condition that each item must match in order to be returned in the search results.
-         * Each condition specifies an attribute, an operator, and a value. Conditions within a
-         * filter can be connected by logical operators (such as AND and OR). Sets of conditions can
-         * be grouped together using parentheses.
-         *
+         * OPTIONAL. The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See the Filtering section of the SCIM specification for more information (Section 3.4.2.2). The string should contain at least one condition that each item must match in order to be returned in the search results. Each condition specifies an attribute, an operator, and a value. Conditions within a filter can be connected by logical operators (such as AND and OR). Sets of conditions can be grouped together using parentheses.
          * @param filter the value to set
          * @return this builder instance
          */
@@ -203,21 +146,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the
-         * returned responses. The sortBy attribute MUST be in standard attribute notation form. See
-         * the Attribute Notation section of the SCIM specification for more information (Section
-         * 3.10). Also, see the Sorting section of the SCIM specification for more information
-         * (Section 3.4.2.3).
+         * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
          */
         private String sortBy = null;
 
         /**
-         * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the
-         * returned responses. The sortBy attribute MUST be in standard attribute notation form. See
-         * the Attribute Notation section of the SCIM specification for more information (Section
-         * 3.10). Also, see the Sorting section of the SCIM specification for more information
-         * (Section 3.4.2.3).
-         *
+         * OPTIONAL. A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation form. See the Attribute Notation section of the SCIM specification for more information (Section 3.10). Also, see the Sorting section of the SCIM specification for more information (Section 3.4.2.3).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -227,17 +161,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * A string that indicates the order in which the sortBy parameter is applied. Allowed
-         * values are 'ascending' and 'descending'. See ([Sorting
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
+         * A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
          */
         private com.oracle.bmc.identitydomains.model.SortOrder sortOrder = null;
 
         /**
-         * A string that indicates the order in which the sortBy parameter is applied. Allowed
-         * values are 'ascending' and 'descending'. See ([Sorting
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
-         *
+         * A string that indicates the order in which the sortBy parameter is applied. Allowed values are 'ascending' and 'descending'. See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -247,19 +176,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the
-         * Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The
-         * number of results pages to return. The first page is 1. Specify 2 to access the second
-         * page of results, and so on.
+         * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
          */
         private Integer startIndex = null;
 
         /**
-         * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the
-         * Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The
-         * number of results pages to return. The first page is 1. Specify 2 to access the second
-         * page of results, and so on.
-         *
+         * OPTIONAL. An integer that indicates the 1-based index of the first query result. See the Pagination section of the SCIM specification for more information. (Section 3.4.2.4). The number of results pages to return. The first page is 1. Specify 2 to access the second page of results, and so on.
          * @param startIndex the value to set
          * @return this builder instance
          */
@@ -269,19 +191,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * OPTIONAL. An integer that indicates the desired maximum number of query results per page.
-         * 1000 is the largest value that you can use. See the Pagination section of the System for
-         * Cross-Domain Identity Management Protocol specification for more information. (Section
-         * 3.4.2.4).
+         * OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
          */
         private Integer count = null;
 
         /**
-         * OPTIONAL. An integer that indicates the desired maximum number of query results per page.
-         * 1000 is the largest value that you can use. See the Pagination section of the System for
-         * Cross-Domain Identity Management Protocol specification for more information. (Section
-         * 3.4.2.4).
-         *
+         * OPTIONAL. An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. (Section 3.4.2.4).
          * @param count the value to set
          * @return this builder instance
          */
@@ -291,15 +206,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          */
         private String authorization = null;
 
         /**
-         * The Authorization field value consists of credentials containing the authentication
-         * information of the user agent for the realm of the resource being requested.
-         *
+         * The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
          * @param authorization the value to set
          * @return this builder instance
          */
@@ -309,23 +221,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          */
         private String resourceTypeSchemaVersion = null;
 
         /**
-         * An endpoint-specific schema version number to use in the Request. Allowed version values
-         * are Earliest Version or Latest Version as specified in each REST API endpoint
-         * description, or any sequential number inbetween. All schema attributes/body parameters
-         * are a part of version 1. After version 1, any attributes added or deprecated will be
-         * tagged with the version that they were added to or deprecated in. If no version is
-         * provided, the latest schema version is returned.
-         *
+         * An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
          * @param resourceTypeSchemaVersion the value to set
          * @return this builder instance
          */
@@ -335,15 +236,12 @@ public class ListMyRequestableGroupsRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
-         *
+         * A token you supply to uniquely identify the request and provide idempotency if the request is retried. Idempotency tokens expire after 24 hours.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -352,12 +250,13 @@ public class ListMyRequestableGroupsRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous 'List' call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous 'List' call.
+         */
         private String page = null;
 
         /**
          * The value of the {@code opc-next-page} response header from the previous 'List' call.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -366,12 +265,13 @@ public class ListMyRequestableGroupsRequest
             return this;
         }
 
-        /** The maximum number of items to return in a paginated 'List' call. */
+        /**
+         * The maximum number of items to return in a paginated 'List' call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated 'List' call.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -382,19 +282,18 @@ public class ListMyRequestableGroupsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -406,7 +305,6 @@ public class ListMyRequestableGroupsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMyRequestableGroupsRequest o) {
@@ -428,11 +326,10 @@ public class ListMyRequestableGroupsRequest
         /**
          * Build the instance of ListMyRequestableGroupsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMyRequestableGroupsRequest
          */
@@ -446,8 +343,7 @@ public class ListMyRequestableGroupsRequest
         /**
          * Build the instance of ListMyRequestableGroupsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMyRequestableGroupsRequest
@@ -465,14 +361,12 @@ public class ListMyRequestableGroupsRequest
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListMyRequestableGroupsRequest(filter, sortBy, sortOrder, startIndex, count,
-            // authorization, resourceTypeSchemaVersion, opcRetryToken, page, limit);
+            // new ListMyRequestableGroupsRequest(filter, sortBy, sortOrder, startIndex, count, authorization, resourceTypeSchemaVersion, opcRetryToken, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -491,7 +385,6 @@ public class ListMyRequestableGroupsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

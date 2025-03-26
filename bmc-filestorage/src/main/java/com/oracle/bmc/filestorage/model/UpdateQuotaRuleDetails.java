@@ -5,23 +5,22 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Details for updating a quota rule in the file system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Details for updating a quota rule in the file system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateQuotaRuleDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateQuotaRuleDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateQuotaRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"displayName", "quotaLimitInGigabytes"})
     public UpdateQuotaRuleDetails(String displayName, Integer quotaLimitInGigabytes) {
@@ -33,25 +32,31 @@ public final class UpdateQuotaRuleDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name that the quota rule will be renamed to. It does not have to be
-         * unique. Avoid entering confidential information. Example: {@code UserXYZ's quota}
-         */
+         * A user-friendly name that the quota rule will be renamed to. It does not have to be unique.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name that the quota rule will be renamed to. It does not have to be
-         * unique. Avoid entering confidential information. Example: {@code UserXYZ's quota}
+         * A user-friendly name that the quota rule will be renamed to. It does not have to be unique.
+         * Avoid entering confidential information.
+         * Example: {@code UserXYZ's quota}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** An updated value of the quota rule in gigabytes. */
+        /**
+         * An updated value of the quota rule in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
         private Integer quotaLimitInGigabytes;
 
@@ -60,7 +65,7 @@ public final class UpdateQuotaRuleDetails
          *
          * @param quotaLimitInGigabytes the value to set
          * @return this builder
-         */
+         **/
         public Builder quotaLimitInGigabytes(Integer quotaLimitInGigabytes) {
             this.quotaLimitInGigabytes = quotaLimitInGigabytes;
             this.__explicitlySet__.add("quotaLimitInGigabytes");
@@ -91,7 +96,9 @@ public final class UpdateQuotaRuleDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,22 +109,28 @@ public final class UpdateQuotaRuleDetails
 
     /**
      * A user-friendly name that the quota rule will be renamed to. It does not have to be unique.
-     * Avoid entering confidential information. Example: {@code UserXYZ's quota}
-     */
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name that the quota rule will be renamed to. It does not have to be unique.
-     * Avoid entering confidential information. Example: {@code UserXYZ's quota}
+     * Avoid entering confidential information.
+     * Example: {@code UserXYZ's quota}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** An updated value of the quota rule in gigabytes. */
+    /**
+     * An updated value of the quota rule in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quotaLimitInGigabytes")
     private final Integer quotaLimitInGigabytes;
 
@@ -125,7 +138,7 @@ public final class UpdateQuotaRuleDetails
      * An updated value of the quota rule in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Integer getQuotaLimitInGigabytes() {
         return quotaLimitInGigabytes;
     }
@@ -137,7 +150,6 @@ public final class UpdateQuotaRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

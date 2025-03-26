@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.aivision.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum OperationType {
     CreateProject("CREATE_PROJECT"),
     UpdateProject("UPDATE_PROJECT"),
     DeleteProject("DELETE_PROJECT"),

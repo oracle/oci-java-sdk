@@ -5,54 +5,56 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * Access control rules for secure access selection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * Access control rules for secure access selection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlEndpointSecureAccessConfig.Builder.class)
+    builder = SqlEndpointSecureAccessConfig.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "networkType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "networkType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlEndpointSecureAccessConfig extends SqlEndpointNetworkConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A list of SecureAccessControlRule's to which access is limited to */
+        /**
+         * A list of SecureAccessControlRule's to which access is limited to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessControlRules")
         private java.util.List<SecureAccessControlRule> accessControlRules;
 
         /**
          * A list of SecureAccessControlRule's to which access is limited to
-         *
          * @param accessControlRules the value to set
          * @return this builder
-         */
+         **/
         public Builder accessControlRules(
                 java.util.List<SecureAccessControlRule> accessControlRules) {
             this.accessControlRules = accessControlRules;
             this.__explicitlySet__.add("accessControlRules");
             return this;
         }
-        /** Ip Address of public endpoint */
+        /**
+         * Ip Address of public endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicEndpointIp")
         private String publicEndpointIp;
 
         /**
          * Ip Address of public endpoint
-         *
          * @param publicEndpointIp the value to set
          * @return this builder
-         */
+         **/
         public Builder publicEndpointIp(String publicEndpointIp) {
             this.publicEndpointIp = publicEndpointIp;
             this.__explicitlySet__.add("publicEndpointIp");
@@ -84,7 +86,9 @@ public final class SqlEndpointSecureAccessConfig extends SqlEndpointNetworkConfi
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,28 +105,30 @@ public final class SqlEndpointSecureAccessConfig extends SqlEndpointNetworkConfi
         this.publicEndpointIp = publicEndpointIp;
     }
 
-    /** A list of SecureAccessControlRule's to which access is limited to */
+    /**
+     * A list of SecureAccessControlRule's to which access is limited to
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessControlRules")
     private final java.util.List<SecureAccessControlRule> accessControlRules;
 
     /**
      * A list of SecureAccessControlRule's to which access is limited to
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SecureAccessControlRule> getAccessControlRules() {
         return accessControlRules;
     }
 
-    /** Ip Address of public endpoint */
+    /**
+     * Ip Address of public endpoint
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicEndpointIp")
     private final String publicEndpointIp;
 
     /**
      * Ip Address of public endpoint
-     *
      * @return the value
-     */
+     **/
     public String getPublicEndpointIp() {
         return publicEndpointIp;
     }
@@ -134,7 +140,6 @@ public final class SqlEndpointSecureAccessConfig extends SqlEndpointNetworkConfi
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

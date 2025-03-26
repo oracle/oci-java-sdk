@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The process type (Extract or Replicat). */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum ProcessType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The process type (Extract or Replicat).
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum ProcessType {
     Extract("EXTRACT"),
     Replicat("REPLICAT"),
 

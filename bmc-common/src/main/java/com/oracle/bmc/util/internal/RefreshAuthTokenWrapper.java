@@ -8,7 +8,7 @@ import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.AsyncHandler;
-import jakarta.annotation.Nonnull;
+import javax.annotation.Nonnull;
 import org.slf4j.Logger;
 
 import java.util.concurrent.ExecutionException;
@@ -17,28 +17,25 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
-import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
-import com.oracle.bmc.model.BmcException;
-import com.oracle.bmc.requests.BmcRequest;
-import com.oracle.bmc.responses.AsyncHandler;
-
 /**
- * Combined future and callbacks for asynchronous requests intended to work with some authenticated
- * calls, like instance principals.
+ * Combined future and callbacks for asynchronous requests intended to work with some authenticated calls, like
+ * instance principals.
  *
- * <p>This handler wraps a base AsyncHandler and has additional logic so that if a call fails with a
- * 401, we'll refresh the auth token and then try again up to a given number of retries (it is
- * recommended that we only do one retry).
+ * This handler wraps a base AsyncHandler and has additional logic so that if a call fails with a 401,  we'll
+ * refresh the auth token and then try again up to a given number of retries (it is recommended that we only do one
+ * retry).
  *
- * <p>It also wraps a delegate Future, and when the result of the future is requested, but the call
- * fails with a 401, we perform the additional logic described above.
+ * It also wraps a delegate Future, and when the result of the future is requested, but the call fails with a 401,
+ * we perform the additional logic described above.
  *
- * <p>This is to account for scenarios where we have a valid/non-expired token but the permissions
+ * This is to account for scenarios where we  have a valid/non-expired token but the permissions
  * for the instance have changed since the token was issued and so on the server-side the presented
  * token is considered invalid.
  *
- * @param <REQUEST> The request type.
- * @param <RESPONSE> The response type.
+ * @param <REQUEST>
+ *            The request type.
+ * @param <RESPONSE>
+ *            The response type.
  */
 public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RESPONSE>
         implements AsyncHandler<REQUEST, RESPONSE>, Future<RESPONSE> {
@@ -86,8 +83,8 @@ public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RES
     }
 
     /**
-     * If we need to retry the request (i.e. on a 401), this method contains the information on how
-     * to do that. This method will be leveraged by the onError callback of this handler.
+     * If we need to retry the request (i.e. on a 401), this method contains the information on how to do that. This method
+     * will be leveraged by the onError callback of this handler.
      *
      * @return false if the retry was not allowed because of the number of attempts
      */
@@ -109,12 +106,13 @@ public abstract class RefreshAuthTokenWrapper<REQUEST extends BmcRequest<?>, RES
         return true;
     }
 
-    /** Abstract action to be taken before a retry. */
+    /**
+     * Abstract action to be taken before a retry.
+     */
     protected abstract void beforeRetryAction();
 
     /**
      * Call the future supplier to get the response future.
-     *
      * @return response future
      */
     protected java.util.concurrent.Future<RESPONSE> buildResponseFuture() {

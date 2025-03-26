@@ -5,37 +5,39 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Rule for routing incoming ingress gateway traffic to a virtual service. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Rule for routing incoming ingress gateway traffic to a virtual service.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = IngressGatewayTrafficRouteRuleDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = IngressGatewayTrafficRouteRuleDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TlsPassthroughIngressGatewayTrafficRouteRuleDetails.class,
-            name = "TLS_PASSTHROUGH"),
+        value = TlsPassthroughIngressGatewayTrafficRouteRuleDetails.class,
+        name = "TLS_PASSTHROUGH"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TcpIngressGatewayTrafficRouteRuleDetails.class,
-            name = "TCP"),
+        value = TcpIngressGatewayTrafficRouteRuleDetails.class,
+        name = "TCP"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HttpIngressGatewayTrafficRouteRuleDetails.class,
-            name = "HTTP")
+        value = HttpIngressGatewayTrafficRouteRuleDetails.class,
+        name = "HTTP"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class IngressGatewayTrafficRouteRuleDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ingressGatewayHost", "destinations"})
     protected IngressGatewayTrafficRouteRuleDetails(
@@ -53,15 +55,16 @@ public class IngressGatewayTrafficRouteRuleDetails
         return ingressGatewayHost;
     }
 
-    /** The destination of the request. */
+    /**
+     * The destination of the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<VirtualServiceTrafficRuleTargetDetails> destinations;
 
     /**
      * The destination of the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VirtualServiceTrafficRuleTargetDetails> getDestinations() {
         return destinations;
     }
@@ -73,7 +76,6 @@ public class IngressGatewayTrafficRouteRuleDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -116,8 +118,10 @@ public class IngressGatewayTrafficRouteRuleDetails
         return result;
     }
 
-    /** Type of protocol. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of protocol.
+     **/
+    public enum Type {
         Http("HTTP"),
         TlsPassthrough("TLS_PASSTHROUGH"),
         Tcp("TCP"),

@@ -5,22 +5,19 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Retention setting details of the model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Retention setting details of the model.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RetentionSetting.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RetentionSetting
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RetentionSetting extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "archiveAfterDays",
@@ -39,46 +36,49 @@ public final class RetentionSetting
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of days after which the model will be archived. */
+        /**
+         * Number of days after which the model will be archived.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archiveAfterDays")
         private Integer archiveAfterDays;
 
         /**
          * Number of days after which the model will be archived.
-         *
          * @param archiveAfterDays the value to set
          * @return this builder
-         */
+         **/
         public Builder archiveAfterDays(Integer archiveAfterDays) {
             this.archiveAfterDays = archiveAfterDays;
             this.__explicitlySet__.add("archiveAfterDays");
             return this;
         }
-        /** Number of days after which the archived model will be deleted. */
+        /**
+         * Number of days after which the archived model will be deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteAfterDays")
         private Integer deleteAfterDays;
 
         /**
          * Number of days after which the archived model will be deleted.
-         *
          * @param deleteAfterDays the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteAfterDays(Integer deleteAfterDays) {
             this.deleteAfterDays = deleteAfterDays;
             this.__explicitlySet__.add("deleteAfterDays");
             return this;
         }
-        /** Customer notification options on success/failure of archival, deletion events. */
+        /**
+         * Customer notification options on success/failure of archival, deletion events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerNotificationType")
         private ModelSettingCustomerNotificationType customerNotificationType;
 
         /**
          * Customer notification options on success/failure of archival, deletion events.
-         *
          * @param customerNotificationType the value to set
          * @return this builder
-         */
+         **/
         public Builder customerNotificationType(
                 ModelSettingCustomerNotificationType customerNotificationType) {
             this.customerNotificationType = customerNotificationType;
@@ -116,7 +116,9 @@ public final class RetentionSetting
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,41 +127,44 @@ public final class RetentionSetting
         return new Builder().copy(this);
     }
 
-    /** Number of days after which the model will be archived. */
+    /**
+     * Number of days after which the model will be archived.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archiveAfterDays")
     private final Integer archiveAfterDays;
 
     /**
      * Number of days after which the model will be archived.
-     *
      * @return the value
-     */
+     **/
     public Integer getArchiveAfterDays() {
         return archiveAfterDays;
     }
 
-    /** Number of days after which the archived model will be deleted. */
+    /**
+     * Number of days after which the archived model will be deleted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteAfterDays")
     private final Integer deleteAfterDays;
 
     /**
      * Number of days after which the archived model will be deleted.
-     *
      * @return the value
-     */
+     **/
     public Integer getDeleteAfterDays() {
         return deleteAfterDays;
     }
 
-    /** Customer notification options on success/failure of archival, deletion events. */
+    /**
+     * Customer notification options on success/failure of archival, deletion events.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerNotificationType")
     private final ModelSettingCustomerNotificationType customerNotificationType;
 
     /**
      * Customer notification options on success/failure of archival, deletion events.
-     *
      * @return the value
-     */
+     **/
     public ModelSettingCustomerNotificationType getCustomerNotificationType() {
         return customerNotificationType;
     }
@@ -171,7 +176,6 @@ public final class RetentionSetting
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

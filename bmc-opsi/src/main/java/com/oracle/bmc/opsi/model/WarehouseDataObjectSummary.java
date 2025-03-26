@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summary of a Warehouse data object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summary of a Warehouse data object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WarehouseDataObjectSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = WarehouseDataObjectSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WarehouseDataObjectSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dataObjectType", "name", "owner", "details"})
     public WarehouseDataObjectSummary(
@@ -38,54 +37,49 @@ public final class WarehouseDataObjectSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the data object. */
+        /**
+         * Type of the data object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataObjectType")
         private DataObjectType dataObjectType;
 
         /**
          * Type of the data object.
-         *
          * @param dataObjectType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataObjectType(DataObjectType dataObjectType) {
             this.dataObjectType = dataObjectType;
             this.__explicitlySet__.add("dataObjectType");
             return this;
         }
         /**
-         * Name of the data object, which can be used in data object queries just like how view
-         * names are used in a query.
-         */
+         * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Name of the data object, which can be used in data object queries just like how view
-         * names are used in a query.
-         *
+         * Name of the data object, which can be used in data object queries just like how view names are used in a query.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Owner of the data object, which can be used in data object queries in front of data
-         * object names just like SCHEMA.VIEW notation in queries.
-         */
+         * Owner of the data object, which can be used in data object queries in front of data object names just like SCHEMA.VIEW notation in queries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
-         * Owner of the data object, which can be used in data object queries in front of data
-         * object names just like SCHEMA.VIEW notation in queries.
-         *
+         * Owner of the data object, which can be used in data object queries in front of data object names just like SCHEMA.VIEW notation in queries.
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
@@ -132,7 +126,9 @@ public final class WarehouseDataObjectSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,49 +137,44 @@ public final class WarehouseDataObjectSummary
         return new Builder().copy(this);
     }
 
-    /** Type of the data object. */
+    /**
+     * Type of the data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataObjectType")
     private final DataObjectType dataObjectType;
 
     /**
      * Type of the data object.
-     *
      * @return the value
-     */
+     **/
     public DataObjectType getDataObjectType() {
         return dataObjectType;
     }
 
     /**
-     * Name of the data object, which can be used in data object queries just like how view names
-     * are used in a query.
-     */
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the data object, which can be used in data object queries just like how view names
-     * are used in a query.
-     *
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Owner of the data object, which can be used in data object queries in front of data object
-     * names just like SCHEMA.VIEW notation in queries.
-     */
+     * Owner of the data object, which can be used in data object queries in front of data object names just like SCHEMA.VIEW notation in queries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
-     * Owner of the data object, which can be used in data object queries in front of data object
-     * names just like SCHEMA.VIEW notation in queries.
-     *
+     * Owner of the data object, which can be used in data object queries in front of data object names just like SCHEMA.VIEW notation in queries.
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
@@ -202,7 +193,6 @@ public final class WarehouseDataObjectSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

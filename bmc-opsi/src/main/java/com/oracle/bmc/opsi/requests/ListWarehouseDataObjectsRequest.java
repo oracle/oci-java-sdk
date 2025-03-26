@@ -6,20 +6,21 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWarehouseDataObjectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListWarehouseDataObjectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListWarehouseDataObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWarehouseDataObjectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListWarehouseDataObjectsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Type of the Warehouse. */
+    /**
+     * Type of the Warehouse.
+     */
     private WarehouseType warehouseType;
 
-    /** Type of the Warehouse. */
-    public enum WarehouseType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the Warehouse.
+     **/
+    public enum WarehouseType {
         AwrHubs("awrHubs"),
         ;
 
@@ -51,106 +52,118 @@ public class ListWarehouseDataObjectsRequest
         }
     };
 
-    /** Type of the Warehouse. */
+    /**
+     * Type of the Warehouse.
+     */
     public WarehouseType getWarehouseType() {
         return warehouseType;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Warehouse.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+     *
      */
     private String warehouseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Warehouse.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+     *
      */
     public String getWarehouseId() {
         return warehouseId;
     }
     /**
-     * A filter to return only data objects that match the data object type. By default, no
-     * filtering will be applied on data object type.
+     * A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
      */
     private java.util.List<com.oracle.bmc.opsi.model.DataObjectType> dataObjectType;
 
     /**
-     * A filter to return only data objects that match the data object type. By default, no
-     * filtering will be applied on data object type.
+     * A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
      */
     public java.util.List<com.oracle.bmc.opsi.model.DataObjectType> getDataObjectType() {
         return dataObjectType;
     }
     /**
-     * A filter to return only data objects that match the entire data object name. By default, no
-     * filtering will be applied on data object name.
+     * A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
      */
     private String name;
 
     /**
-     * A filter to return only data objects that match the entire data object name. By default, no
-     * filtering will be applied on data object name.
+     * A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
      */
     public String getName() {
         return name;
     }
     /**
-     * A filter to return only data objects that match the entire data object owner name. By
-     * default, no filtering will be applied on data object owner name.
+     * A filter to return only data objects that match the entire data object owner name.  By default, no filtering will be applied on data object owner name.
      */
     private String owner;
 
     /**
-     * A filter to return only data objects that match the entire data object owner name. By
-     * default, no filtering will be applied on data object owner name.
+     * A filter to return only data objects that match the entire data object owner name.  By default, no filtering will be applied on data object owner name.
      */
     public String getOwner() {
         return owner;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Sort options for Warehouse data objects list. */
+    /**
+     * Sort options for Warehouse data objects list.
+     */
     private SortBy sortBy;
 
-    /** Sort options for Warehouse data objects list. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sort options for Warehouse data objects list.
+     **/
+    public enum SortBy {
         DataObjectType("dataObjectType"),
         Name("name"),
         Owner("owner"),
@@ -184,21 +197,23 @@ public class ListWarehouseDataObjectsRequest
         }
     };
 
-    /** Sort options for Warehouse data objects list. */
+    /**
+     * Sort options for Warehouse data objects list.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested,
-     * these fields are not returned by default.
+     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
+     *
      */
     private java.util.List<SummaryField> summaryField;
 
     /**
-     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested,
-     * these fields are not returned by default.
-     */
-    public enum SummaryField implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
+     *
+     **/
+    public enum SummaryField {
         Details("details"),
         ;
 
@@ -231,21 +246,23 @@ public class ListWarehouseDataObjectsRequest
     };
 
     /**
-     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested,
-     * these fields are not returned by default.
+     * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
+     *
      */
     public java.util.List<SummaryField> getSummaryField() {
         return summaryField;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -254,15 +271,17 @@ public class ListWarehouseDataObjectsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListWarehouseDataObjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Type of the Warehouse. */
+        /**
+         * Type of the Warehouse.
+         */
         private WarehouseType warehouseType = null;
 
         /**
          * Type of the Warehouse.
-         *
          * @param warehouseType the value to set
          * @return this builder instance
          */
@@ -272,14 +291,13 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Warehouse.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
+         *
          */
         private String warehouseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Warehouse.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Warehouse.
          *
          * @param warehouseId the value to set
          * @return this builder instance
@@ -290,15 +308,12 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * A filter to return only data objects that match the data object type. By default, no
-         * filtering will be applied on data object type.
+         * A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
          */
         private java.util.List<com.oracle.bmc.opsi.model.DataObjectType> dataObjectType = null;
 
         /**
-         * A filter to return only data objects that match the data object type. By default, no
-         * filtering will be applied on data object type.
-         *
+         * A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
          * @param dataObjectType the value to set
          * @return this builder instance
          */
@@ -309,9 +324,7 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * Singular setter. A filter to return only data objects that match the data object type. By
-         * default, no filtering will be applied on data object type.
-         *
+         * Singular setter. A filter to return only data objects that match the data object type. By default, no filtering will be applied on data object type.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -320,15 +333,12 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * A filter to return only data objects that match the entire data object name. By default,
-         * no filtering will be applied on data object name.
+         * A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
          */
         private String name = null;
 
         /**
-         * A filter to return only data objects that match the entire data object name. By default,
-         * no filtering will be applied on data object name.
-         *
+         * A filter to return only data objects that match the entire data object name. By default, no filtering will be applied on data object name.
          * @param name the value to set
          * @return this builder instance
          */
@@ -338,15 +348,12 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * A filter to return only data objects that match the entire data object owner name. By
-         * default, no filtering will be applied on data object owner name.
+         * A filter to return only data objects that match the entire data object owner name.  By default, no filtering will be applied on data object owner name.
          */
         private String owner = null;
 
         /**
-         * A filter to return only data objects that match the entire data object owner name. By
-         * default, no filtering will be applied on data object owner name.
-         *
+         * A filter to return only data objects that match the entire data object owner name.  By default, no filtering will be applied on data object owner name.
          * @param owner the value to set
          * @return this builder instance
          */
@@ -356,17 +363,20 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -378,16 +388,17 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -397,7 +408,10 @@ public class ListWarehouseDataObjectsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -411,12 +425,13 @@ public class ListWarehouseDataObjectsRequest
             return this;
         }
 
-        /** Sort options for Warehouse data objects list. */
+        /**
+         * Sort options for Warehouse data objects list.
+         */
         private SortBy sortBy = null;
 
         /**
          * Sort options for Warehouse data objects list.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -426,14 +441,13 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless
-         * requested, these fields are not returned by default.
+         * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
+         *
          */
         private java.util.List<SummaryField> summaryField = null;
 
         /**
-         * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless
-         * requested, these fields are not returned by default.
+         * Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
          *
          * @param summaryField the value to set
          * @return this builder instance
@@ -444,8 +458,7 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * Singular setter. Specifies the optional fields to return in a WarehouseDataObjectSummary.
-         * Unless requested, these fields are not returned by default.
+         * Singular setter. Specifies the optional fields to return in a WarehouseDataObjectSummary. Unless requested, these fields are not returned by default.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -455,14 +468,15 @@ public class ListWarehouseDataObjectsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -474,19 +488,18 @@ public class ListWarehouseDataObjectsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -498,7 +511,6 @@ public class ListWarehouseDataObjectsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListWarehouseDataObjectsRequest o) {
@@ -521,11 +533,10 @@ public class ListWarehouseDataObjectsRequest
         /**
          * Build the instance of ListWarehouseDataObjectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListWarehouseDataObjectsRequest
          */
@@ -539,8 +550,7 @@ public class ListWarehouseDataObjectsRequest
         /**
          * Build the instance of ListWarehouseDataObjectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListWarehouseDataObjectsRequest
@@ -559,14 +569,12 @@ public class ListWarehouseDataObjectsRequest
             request.summaryField = summaryField;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListWarehouseDataObjectsRequest(warehouseType, warehouseId, dataObjectType, name,
-            // owner, limit, page, sortOrder, sortBy, summaryField, opcRequestId);
+            // new ListWarehouseDataObjectsRequest(warehouseType, warehouseId, dataObjectType, name, owner, limit, page, sortOrder, sortBy, summaryField, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -586,7 +594,6 @@ public class ListWarehouseDataObjectsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

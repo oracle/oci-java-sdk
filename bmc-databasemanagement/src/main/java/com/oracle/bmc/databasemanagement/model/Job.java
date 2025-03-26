@@ -5,28 +5,27 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "jobType",
-        defaultImpl = Job.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "jobType",
+    defaultImpl = Job.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = SqlJob.class, name = "SQL")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -84,134 +83,126 @@ public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMod
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the job resides.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the job resides.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job resides.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The display name of the job. */
+    /**
+     * The display name of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The display name of the job.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The description of the job. */
+    /**
+     * The description of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the job.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group where the job has to be executed.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseGroupId")
     private final String managedDatabaseGroupId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database Group where the job has to be executed.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database Group where the job has to be executed.
      * @return the value
-     */
+     **/
     public String getManagedDatabaseGroupId() {
         return managedDatabaseGroupId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database where the job has to be executed.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabaseId")
     private final String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database where the job has to be executed.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database where the job has to be executed.
      * @return the value
-     */
+     **/
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
 
-    /** The details of the Managed Databases where the job has to be executed. */
+    /**
+     * The details of the Managed Databases where the job has to be executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedDatabasesDetails")
     private final java.util.List<JobDatabase> managedDatabasesDetails;
 
     /**
      * The details of the Managed Databases where the job has to be executed.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<JobDatabase> getManagedDatabasesDetails() {
         return managedDatabasesDetails;
     }
 
     /**
-     * The subtype of the Oracle Database where the job has to be executed. Applicable only when
-     * managedDatabaseGroupId is provided.
-     */
+     * The subtype of the Oracle Database where the job has to be executed. Applicable only when managedDatabaseGroupId is provided.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSubType")
     private final DatabaseSubType databaseSubType;
 
     /**
-     * The subtype of the Oracle Database where the job has to be executed. Applicable only when
-     * managedDatabaseGroupId is provided.
-     *
+     * The subtype of the Oracle Database where the job has to be executed. Applicable only when managedDatabaseGroupId is provided.
      * @return the value
-     */
+     **/
     public DatabaseSubType getDatabaseSubType() {
         return databaseSubType;
     }
 
-    /** The schedule type of the job. */
-    public enum ScheduleType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The schedule type of the job.
+     **/
+    public enum ScheduleType {
         Immediate("IMMEDIATE"),
         Later("LATER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -250,27 +241,30 @@ public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMod
             return UnknownEnumValue;
         }
     };
-    /** The schedule type of the job. */
+    /**
+     * The schedule type of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final ScheduleType scheduleType;
 
     /**
      * The schedule type of the job.
-     *
      * @return the value
-     */
+     **/
     public ScheduleType getScheduleType() {
         return scheduleType;
     }
 
-    /** The lifecycle state of the job. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The lifecycle state of the job.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -309,28 +303,30 @@ public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMod
             return UnknownEnumValue;
         }
     };
-    /** The lifecycle state of the job. */
+    /**
+     * The lifecycle state of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the job.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The job timeout duration, which is expressed like "1h 10m 15s". */
+    /**
+     * The job timeout duration, which is expressed like "1h 10m 15s".
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeout")
     private final String timeout;
 
     /**
      * The job timeout duration, which is expressed like "1h 10m 15s".
-     *
      * @return the value
-     */
+     **/
     public String getTimeout() {
         return timeout;
     }
@@ -350,44 +346,43 @@ public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The error message that is returned if the job submission fails. Null is returned in all other
-     * scenarios.
-     */
+     * The error message that is returned if the job submission fails. Null is returned in all other scenarios.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("submissionErrorMessage")
     private final String submissionErrorMessage;
 
     /**
-     * The error message that is returned if the job submission fails. Null is returned in all other
-     * scenarios.
-     *
+     * The error message that is returned if the job submission fails. Null is returned in all other scenarios.
      * @return the value
-     */
+     **/
     public String getSubmissionErrorMessage() {
         return submissionErrorMessage;
     }
 
-    /** The date and time when the job was created. */
+    /**
+     * The date and time when the job was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time when the job was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time when the job was last updated. */
+    /**
+     * The date and time when the job was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time when the job was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -399,7 +394,6 @@ public class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcMod
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

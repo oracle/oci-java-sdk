@@ -5,23 +5,22 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * Helmchart image details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Helmchart image details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HelmChartImageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HelmChartImageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HelmChartImageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceRegistryId",
@@ -52,107 +51,114 @@ public final class HelmChartImageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source registry OCID of the helmchart image. */
+        /**
+         * The source registry OCID of the helmchart image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
         private String sourceRegistryId;
 
         /**
          * The source registry OCID of the helmchart image.
-         *
          * @param sourceRegistryId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryId(String sourceRegistryId) {
             this.sourceRegistryId = sourceRegistryId;
             this.__explicitlySet__.add("sourceRegistryId");
             return this;
         }
-        /** source registry url of the helmchart image. */
+        /**
+         * source registry url of the helmchart image.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
         private String sourceRegistryUrl;
 
         /**
          * source registry url of the helmchart image.
-         *
          * @param sourceRegistryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceRegistryUrl(String sourceRegistryUrl) {
             this.sourceRegistryUrl = sourceRegistryUrl;
             this.__explicitlySet__.add("sourceRegistryUrl");
             return this;
         }
-        /** The supported versions of Kubernetes */
+        /**
+         * The supported versions of Kubernetes
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedKubernetesVersions")
         private java.util.List<String> supportedKubernetesVersions;
 
         /**
          * The supported versions of Kubernetes
-         *
          * @param supportedKubernetesVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedKubernetesVersions(
                 java.util.List<String> supportedKubernetesVersions) {
             this.supportedKubernetesVersions = supportedKubernetesVersions;
             this.__explicitlySet__.add("supportedKubernetesVersions");
             return this;
         }
-        /** image validation status. */
+        /**
+         * image validation status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
         private ValidationStatus validationStatus;
 
         /**
          * image validation status.
-         *
          * @param validationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder validationStatus(ValidationStatus validationStatus) {
             this.validationStatus = validationStatus;
             this.__explicitlySet__.add("validationStatus");
             return this;
         }
-        /** image validation failure errors */
+        /**
+         * image validation failure errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationError")
         private String validationError;
 
         /**
          * image validation failure errors
-         *
          * @param validationError the value to set
          * @return this builder
-         */
+         **/
         public Builder validationError(String validationError) {
             this.validationError = validationError;
             this.__explicitlySet__.add("validationError");
             return this;
         }
-        /** image publication status */
+        /**
+         * image publication status
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicationStatus")
         private PublicationStatus publicationStatus;
 
         /**
          * image publication status
-         *
          * @param publicationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder publicationStatus(PublicationStatus publicationStatus) {
             this.publicationStatus = publicationStatus;
             this.__explicitlySet__.add("publicationStatus");
             return this;
         }
-        /** image validation failure errors */
+        /**
+         * image validation failure errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicationError")
         private String publicationError;
 
         /**
          * image validation failure errors
-         *
          * @param publicationError the value to set
          * @return this builder
-         */
+         **/
         public Builder publicationError(String publicationError) {
             this.publicationError = publicationError;
             this.__explicitlySet__.add("publicationError");
@@ -205,7 +211,9 @@ public final class HelmChartImageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -214,93 +222,100 @@ public final class HelmChartImageDetails
         return new Builder().copy(this);
     }
 
-    /** The source registry OCID of the helmchart image. */
+    /**
+     * The source registry OCID of the helmchart image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryId")
     private final String sourceRegistryId;
 
     /**
      * The source registry OCID of the helmchart image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryId() {
         return sourceRegistryId;
     }
 
-    /** source registry url of the helmchart image. */
+    /**
+     * source registry url of the helmchart image.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceRegistryUrl")
     private final String sourceRegistryUrl;
 
     /**
      * source registry url of the helmchart image.
-     *
      * @return the value
-     */
+     **/
     public String getSourceRegistryUrl() {
         return sourceRegistryUrl;
     }
 
-    /** The supported versions of Kubernetes */
+    /**
+     * The supported versions of Kubernetes
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedKubernetesVersions")
     private final java.util.List<String> supportedKubernetesVersions;
 
     /**
      * The supported versions of Kubernetes
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedKubernetesVersions() {
         return supportedKubernetesVersions;
     }
 
-    /** image validation status. */
+    /**
+     * image validation status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationStatus")
     private final ValidationStatus validationStatus;
 
     /**
      * image validation status.
-     *
      * @return the value
-     */
+     **/
     public ValidationStatus getValidationStatus() {
         return validationStatus;
     }
 
-    /** image validation failure errors */
+    /**
+     * image validation failure errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationError")
     private final String validationError;
 
     /**
      * image validation failure errors
-     *
      * @return the value
-     */
+     **/
     public String getValidationError() {
         return validationError;
     }
 
-    /** image publication status */
+    /**
+     * image publication status
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicationStatus")
     private final PublicationStatus publicationStatus;
 
     /**
      * image publication status
-     *
      * @return the value
-     */
+     **/
     public PublicationStatus getPublicationStatus() {
         return publicationStatus;
     }
 
-    /** image validation failure errors */
+    /**
+     * image validation failure errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicationError")
     private final String publicationError;
 
     /**
      * image validation failure errors
-     *
      * @return the value
-     */
+     **/
     public String getPublicationError() {
         return publicationError;
     }
@@ -312,7 +327,6 @@ public final class HelmChartImageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

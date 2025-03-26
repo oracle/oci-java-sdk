@@ -5,75 +5,68 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * Alarm suppression recurring schedule. Only one recurrence condition is supported within the list
- * of preconditions for a suppression ({@code suppressionConditions}). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * Alarm suppression recurring schedule. Only one recurrence condition is supported within the list of preconditions for a suppression ({@code suppressionConditions}).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Recurrence.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "conditionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "conditionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Recurrence extends SuppressionCondition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Frequency and start time of the recurring suppression. The format follows [the iCalendar
-         * specification (RFC 5545, section
-         * 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule
-         * parts: * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code
-         * DAILY} only. * {@code BYDAY}: Comma separated days. Use with weekly suppressions only.
-         * Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA}
-         * ,{@code SU}. * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC,
-         * after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code
-         * timeSuppressFrom}.
-         */
+         * Frequency and start time of the recurring suppression. The format follows
+         * [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported rule parts:
+         * * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code DAILY} only.
+         * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}.
+         * * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressionRecurrence")
         private String suppressionRecurrence;
 
         /**
-         * Frequency and start time of the recurring suppression. The format follows [the iCalendar
-         * specification (RFC 5545, section
-         * 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule
-         * parts: * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code
-         * DAILY} only. * {@code BYDAY}: Comma separated days. Use with weekly suppressions only.
-         * Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA}
-         * ,{@code SU}. * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC,
-         * after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code
-         * timeSuppressFrom}.
+         * Frequency and start time of the recurring suppression. The format follows
+         * [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+         * Supported rule parts:
+         * * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code DAILY} only.
+         * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}.
+         * * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
          *
          * @param suppressionRecurrence the value to set
          * @return this builder
-         */
+         **/
         public Builder suppressionRecurrence(String suppressionRecurrence) {
             this.suppressionRecurrence = suppressionRecurrence;
             this.__explicitlySet__.add("suppressionRecurrence");
             return this;
         }
         /**
-         * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum:
-         * {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
-         */
+         * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressionDuration")
         private String suppressionDuration;
 
         /**
-         * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum:
-         * {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
+         * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
          *
          * @param suppressionDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder suppressionDuration(String suppressionDuration) {
             this.suppressionDuration = suppressionDuration;
             this.__explicitlySet__.add("suppressionDuration");
@@ -103,7 +96,9 @@ public final class Recurrence extends SuppressionCondition {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,47 +115,43 @@ public final class Recurrence extends SuppressionCondition {
     }
 
     /**
-     * Frequency and start time of the recurring suppression. The format follows [the iCalendar
-     * specification (RFC 5545, section
-     * 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+     * Frequency and start time of the recurring suppression. The format follows
+     * [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported rule parts:
      * * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code DAILY} only.
-     * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values:
-     * {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}. * {@code
-     * BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code
-     * timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
-     */
+     * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}.
+     * * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressionRecurrence")
     private final String suppressionRecurrence;
 
     /**
-     * Frequency and start time of the recurring suppression. The format follows [the iCalendar
-     * specification (RFC 5545, section
-     * 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10). Supported rule parts:
+     * Frequency and start time of the recurring suppression. The format follows
+     * [the iCalendar specification (RFC 5545, section 3.3.10)](https://datatracker.ietf.org/doc/html/rfc5545#section-3.3.10).
+     * Supported rule parts:
      * * {@code FREQ}: Frequency of the recurring suppression: {@code WEEKLY} or {@code DAILY} only.
-     * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values:
-     * {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}. * {@code
-     * BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code
-     * timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
+     * * {@code BYDAY}: Comma separated days. Use with weekly suppressions only. Supported values: {@code MO}, {@code TU}, {@code WE}, {@code TH}, {@code FR}, {@code SA} ,{@code SU}.
+     * * {@code BYHOUR}, {@code BYMINUTE}, {@code BYSECOND}: Start time in UTC, after {@code timeSuppressFrom} value. Default is 00:00:00 UTC after {@code timeSuppressFrom}.
      *
      * @return the value
-     */
+     **/
     public String getSuppressionRecurrence() {
         return suppressionRecurrence;
     }
 
     /**
-     * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum:
-     * {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
-     */
+     * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressionDuration")
     private final String suppressionDuration;
 
     /**
-     * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum:
-     * {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
+     * Duration of the recurring suppression. Specified as a string in ISO 8601 format. Minimum: {@code PT1M} (1 minute). Maximum: {@code PT24H} (24 hours).
      *
      * @return the value
-     */
+     **/
     public String getSuppressionDuration() {
         return suppressionDuration;
     }
@@ -172,7 +163,6 @@ public final class Recurrence extends SuppressionCondition {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

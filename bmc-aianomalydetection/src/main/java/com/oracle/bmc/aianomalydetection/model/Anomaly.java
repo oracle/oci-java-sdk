@@ -5,21 +5,19 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * An object to hold value information for each anomaly point <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * An object to hold value information for each anomaly point
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Anomaly.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Anomaly extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Anomaly extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "signalName",
@@ -44,76 +42,81 @@ public final class Anomaly extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of a signal where current anomaly point belongs to */
+        /**
+         * Name of a signal where current anomaly point belongs to
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signalName")
         private String signalName;
 
         /**
          * Name of a signal where current anomaly point belongs to
-         *
          * @param signalName the value to set
          * @return this builder
-         */
+         **/
         public Builder signalName(String signalName) {
             this.signalName = signalName;
             this.__explicitlySet__.add("signalName");
             return this;
         }
-        /** The actual value for the anomaly point at given signal and timestamp/row */
+        /**
+         * The actual value for the anomaly point at given signal and timestamp/row
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actualValue")
         private Double actualValue;
 
         /**
          * The actual value for the anomaly point at given signal and timestamp/row
-         *
          * @param actualValue the value to set
          * @return this builder
-         */
+         **/
         public Builder actualValue(Double actualValue) {
             this.actualValue = actualValue;
             this.__explicitlySet__.add("actualValue");
             return this;
         }
-        /** The estimated value for the anomaly point at given signal and timestamp/row */
+        /**
+         * The estimated value for the anomaly point at given signal and timestamp/row
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedValue")
         private Double estimatedValue;
 
         /**
          * The estimated value for the anomaly point at given signal and timestamp/row
-         *
          * @param estimatedValue the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedValue(Double estimatedValue) {
             this.estimatedValue = estimatedValue;
             this.__explicitlySet__.add("estimatedValue");
             return this;
         }
-        /** The value imputed by an IDP step for missing values in origin data. */
+        /**
+         * The value imputed by an IDP step for missing values in origin data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
         private Double imputedValue;
 
         /**
          * The value imputed by an IDP step for missing values in origin data.
-         *
          * @param imputedValue the value to set
          * @return this builder
-         */
+         **/
         public Builder imputedValue(Double imputedValue) {
             this.imputedValue = imputedValue;
             this.__explicitlySet__.add("imputedValue");
             return this;
         }
-        /** A significant score ranged from 0 to 1 to each anomaly point. */
+        /**
+         * A significant score ranged from 0 to 1 to each anomaly point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
         private Double anomalyScore;
 
         /**
          * A significant score ranged from 0 to 1 to each anomaly point.
-         *
          * @param anomalyScore the value to set
          * @return this builder
-         */
+         **/
         public Builder anomalyScore(Double anomalyScore) {
             this.anomalyScore = anomalyScore;
             this.__explicitlySet__.add("anomalyScore");
@@ -158,7 +161,9 @@ public final class Anomaly extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,67 +172,72 @@ public final class Anomaly extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Name of a signal where current anomaly point belongs to */
+    /**
+     * Name of a signal where current anomaly point belongs to
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signalName")
     private final String signalName;
 
     /**
      * Name of a signal where current anomaly point belongs to
-     *
      * @return the value
-     */
+     **/
     public String getSignalName() {
         return signalName;
     }
 
-    /** The actual value for the anomaly point at given signal and timestamp/row */
+    /**
+     * The actual value for the anomaly point at given signal and timestamp/row
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actualValue")
     private final Double actualValue;
 
     /**
      * The actual value for the anomaly point at given signal and timestamp/row
-     *
      * @return the value
-     */
+     **/
     public Double getActualValue() {
         return actualValue;
     }
 
-    /** The estimated value for the anomaly point at given signal and timestamp/row */
+    /**
+     * The estimated value for the anomaly point at given signal and timestamp/row
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedValue")
     private final Double estimatedValue;
 
     /**
      * The estimated value for the anomaly point at given signal and timestamp/row
-     *
      * @return the value
-     */
+     **/
     public Double getEstimatedValue() {
         return estimatedValue;
     }
 
-    /** The value imputed by an IDP step for missing values in origin data. */
+    /**
+     * The value imputed by an IDP step for missing values in origin data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imputedValue")
     private final Double imputedValue;
 
     /**
      * The value imputed by an IDP step for missing values in origin data.
-     *
      * @return the value
-     */
+     **/
     public Double getImputedValue() {
         return imputedValue;
     }
 
-    /** A significant score ranged from 0 to 1 to each anomaly point. */
+    /**
+     * A significant score ranged from 0 to 1 to each anomaly point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("anomalyScore")
     private final Double anomalyScore;
 
     /**
      * A significant score ranged from 0 to 1 to each anomaly point.
-     *
      * @return the value
-     */
+     **/
     public Double getAnomalyScore() {
         return anomalyScore;
     }
@@ -239,7 +249,6 @@ public final class Anomaly extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

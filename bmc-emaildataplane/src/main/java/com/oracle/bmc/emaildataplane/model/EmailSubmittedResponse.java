@@ -5,23 +5,22 @@
 package com.oracle.bmc.emaildataplane.model;
 
 /**
- * Response object that is returned to sender upon successfully submitting the email request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220926")
+ * Response object that is returned to sender upon successfully submitting the email request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220926")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = EmailSubmittedResponse.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = EmailSubmittedResponse.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class EmailSubmittedResponse
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"messageId", "envelopeId", "suppressedRecipients"})
     public EmailSubmittedResponse(
@@ -37,55 +36,52 @@ public final class EmailSubmittedResponse
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The
-         * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This
-         * will be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
-         */
+         * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+         * Example: sdiofu234qwermls24fd@mail.example.com
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageId")
         private String messageId;
 
         /**
-         * The unique ID for the email's Message-ID header used for service log correlation. The
-         * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This
-         * will be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+         * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+         * Example: sdiofu234qwermls24fd@mail.example.com
          *
          * @param messageId the value to set
          * @return this builder
-         */
+         **/
         public Builder messageId(String messageId) {
             this.messageId = messageId;
             this.__explicitlySet__.add("messageId");
             return this;
         }
         /**
-         * Email Delivery generated unique Envelope ID of the email submission. If you need to
-         * contact Email Delivery about a particular request, please provide the Envelope ID.
-         */
+         * Email Delivery generated unique Envelope ID of the email submission. If you need to contact Email Delivery about a particular request, please provide the Envelope ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("envelopeId")
         private String envelopeId;
 
         /**
-         * Email Delivery generated unique Envelope ID of the email submission. If you need to
-         * contact Email Delivery about a particular request, please provide the Envelope ID.
-         *
+         * Email Delivery generated unique Envelope ID of the email submission. If you need to contact Email Delivery about a particular request, please provide the Envelope ID.
          * @param envelopeId the value to set
          * @return this builder
-         */
+         **/
         public Builder envelopeId(String envelopeId) {
             this.envelopeId = envelopeId;
             this.__explicitlySet__.add("envelopeId");
             return this;
         }
-        /** Return list of suppressed email addresses. */
+        /**
+         * Return list of suppressed email addresses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("suppressedRecipients")
         private java.util.List<EmailAddress> suppressedRecipients;
 
         /**
          * Return list of suppressed email addresses.
-         *
          * @param suppressedRecipients the value to set
          * @return this builder
-         */
+         **/
         public Builder suppressedRecipients(java.util.List<EmailAddress> suppressedRecipients) {
             this.suppressedRecipients = suppressedRecipients;
             this.__explicitlySet__.add("suppressedRecipients");
@@ -120,7 +116,9 @@ public final class EmailSubmittedResponse
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,50 +128,47 @@ public final class EmailSubmittedResponse
     }
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The
-     * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will
-     * be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
-     */
+     * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+     * Example: sdiofu234qwermls24fd@mail.example.com
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageId")
     private final String messageId;
 
     /**
-     * The unique ID for the email's Message-ID header used for service log correlation. The
-     * submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will
-     * be generated if not provided. Example: sdiofu234qwermls24fd@mail.example.com
+     * The unique ID for the email's Message-ID header used for service log correlation. The submission will return an error if the syntax is not a valid RFC 5322 Message-ID. This will be generated if not provided.
+     * Example: sdiofu234qwermls24fd@mail.example.com
      *
      * @return the value
-     */
+     **/
     public String getMessageId() {
         return messageId;
     }
 
     /**
-     * Email Delivery generated unique Envelope ID of the email submission. If you need to contact
-     * Email Delivery about a particular request, please provide the Envelope ID.
-     */
+     * Email Delivery generated unique Envelope ID of the email submission. If you need to contact Email Delivery about a particular request, please provide the Envelope ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("envelopeId")
     private final String envelopeId;
 
     /**
-     * Email Delivery generated unique Envelope ID of the email submission. If you need to contact
-     * Email Delivery about a particular request, please provide the Envelope ID.
-     *
+     * Email Delivery generated unique Envelope ID of the email submission. If you need to contact Email Delivery about a particular request, please provide the Envelope ID.
      * @return the value
-     */
+     **/
     public String getEnvelopeId() {
         return envelopeId;
     }
 
-    /** Return list of suppressed email addresses. */
+    /**
+     * Return list of suppressed email addresses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("suppressedRecipients")
     private final java.util.List<EmailAddress> suppressedRecipients;
 
     /**
      * Return list of suppressed email addresses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EmailAddress> getSuppressedRecipients() {
         return suppressedRecipients;
     }
@@ -185,7 +180,6 @@ public final class EmailSubmittedResponse
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

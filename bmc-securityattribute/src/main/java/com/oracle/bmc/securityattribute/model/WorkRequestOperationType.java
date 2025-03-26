@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.securityattribute.model;
 
-/** An enum-like description of the type of work the work request is doing. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
-public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * An enum-like description of the type of work the work request is doing.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+public enum WorkRequestOperationType {
     DeleteSecurityAttributeDefinition("DELETE_SECURITY_ATTRIBUTE_DEFINITION"),
     DeleteNonEmptySecurityAttributeNamespace("DELETE_NON_EMPTY_SECURITY_ATTRIBUTE_NAMESPACE"),
     BulkDeleteSecurityAttributes("BULK_DELETE_SECURITY_ATTRIBUTES"),

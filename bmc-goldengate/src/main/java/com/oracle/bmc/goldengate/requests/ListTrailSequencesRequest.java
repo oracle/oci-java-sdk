@@ -6,81 +6,119 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListTrailSequencesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTrailSequencesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListTrailSequencesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTrailSequencesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     private String deploymentId;
 
-    /** A unique Deployment identifier. */
+    /**
+     * A unique Deployment identifier.
+     *
+     */
     public String getDeploymentId() {
         return deploymentId;
     }
-    /** A Trail File identifier */
+    /**
+     * A Trail File identifier
+     *
+     */
     private String trailFileId;
 
-    /** A Trail File identifier */
+    /**
+     * A Trail File identifier
+     *
+     */
     public String getTrailFileId() {
         return trailFileId;
     }
-    /** A Trail Sequence identifier */
+    /**
+     * A Trail Sequence identifier
+     *
+     */
     private String trailSequenceId;
 
-    /** A Trail Sequence identifier */
+    /**
+     * A Trail Sequence identifier
+     *
+     */
     public String getTrailSequenceId() {
         return trailSequenceId;
     }
-    /** A filter to return only the resources that match the entire 'displayName' given. */
+    /**
+     * A filter to return only the resources that match the entire 'displayName' given.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only the resources that match the entire 'displayName' given. */
+    /**
+     * A filter to return only the resources that match the entire 'displayName' given.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
      * The page token representing the page at which to start retrieving results. This is usually
      * retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for
-     * 'timeLastUpdated' is descending. Default order for 'displayName' is ascending. If no value is
-     * specified displayName is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeLastUpdated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * displayName is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for
-     * 'timeLastUpdated' is descending. Default order for 'displayName' is ascending. If no value is
-     * specified displayName is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeLastUpdated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * displayName is the default.
+     *
+     **/
+    public enum SortBy {
         TimeLastUpdated("timeLastUpdated"),
         DisplayName("displayName"),
         ;
@@ -114,17 +152,24 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. Default order for
-     * 'timeLastUpdated' is descending. Default order for 'displayName' is ascending. If no value is
-     * specified displayName is the default.
+     * The field to sort by. Only one sort order can be provided. Default order for 'timeLastUpdated' is
+     * descending.  Default order for 'displayName' is ascending. If no value is specified
+     * displayName is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private com.oracle.bmc.goldengate.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public com.oracle.bmc.goldengate.model.SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -132,10 +177,14 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTrailSequencesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique Deployment identifier. */
+        /**
+         * A unique Deployment identifier.
+         *
+         */
         private String deploymentId = null;
 
         /**
@@ -149,7 +198,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A Trail File identifier */
+        /**
+         * A Trail File identifier
+         *
+         */
         private String trailFileId = null;
 
         /**
@@ -163,7 +215,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A Trail Sequence identifier */
+        /**
+         * A Trail Sequence identifier
+         *
+         */
         private String trailSequenceId = null;
 
         /**
@@ -177,7 +232,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only the resources that match the entire 'displayName' given. */
+        /**
+         * A filter to return only the resources that match the entire 'displayName' given.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -191,7 +249,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -205,7 +266,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -220,14 +284,15 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually
+         * retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -238,16 +303,17 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeLastUpdated' is descending. Default order for 'displayName' is ascending. If no
-         * value is specified displayName is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeLastUpdated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * displayName is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. Default order for
-         * 'timeLastUpdated' is descending. Default order for 'displayName' is ascending. If no
-         * value is specified displayName is the default.
+         * The field to sort by. Only one sort order can be provided. Default order for 'timeLastUpdated' is
+         * descending.  Default order for 'displayName' is ascending. If no value is specified
+         * displayName is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -257,7 +323,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private com.oracle.bmc.goldengate.model.SortOrder sortOrder = null;
 
         /**
@@ -273,19 +342,18 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -297,7 +365,6 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTrailSequencesRequest o) {
@@ -318,11 +385,10 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListTrailSequencesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTrailSequencesRequest
          */
@@ -336,8 +402,7 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListTrailSequencesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTrailSequencesRequest
@@ -354,14 +419,12 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListTrailSequencesRequest(deploymentId, trailFileId, trailSequenceId,
-            // displayName, opcRequestId, limit, page, sortBy, sortOrder);
+            // new ListTrailSequencesRequest(deploymentId, trailFileId, trailSequenceId, displayName, opcRequestId, limit, page, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -379,7 +442,6 @@ public class ListTrailSequencesRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,27 +5,31 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step,
- * passcode length, and so on
- *
- * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite -
- * required: true - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Settings related to Time-Based One-Time Passcodes (TOTP), such as hashing algo, totp time step, passcode length, and so on
+ * <p>
+ **SCIM++ Properties:**
+ *  - idcsSearchable: false
+ *  - multiValued: false
+ *  - mutability: readWrite
+ *  - required: true
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AuthenticationFactorSettingsTotpSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AuthenticationFactorSettingsTotpSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AuthenticationFactorSettingsTotpSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hashingAlgorithm",
@@ -66,25 +70,34 @@ public final class AuthenticationFactorSettingsTotpSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system
-         * uses SHA1.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: string - uniqueness: none
-         */
+         * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hashingAlgorithm")
         private HashingAlgorithm hashingAlgorithm;
 
         /**
-         * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system
-         * uses SHA1.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: true - returned: default - type: string - uniqueness: none
-         *
+         * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param hashingAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder hashingAlgorithm(HashingAlgorithm hashingAlgorithm) {
             this.hashingAlgorithm = hashingAlgorithm;
             this.__explicitlySet__.add("hashingAlgorithm");
@@ -92,24 +105,37 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * Exact length of the One-Time Passcode that the system should generate
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passcodeLength")
         private Integer passcodeLength;
 
         /**
          * Exact length of the One-Time Passcode that the system should generate
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param passcodeLength the value to set
          * @return this builder
-         */
+         **/
         public Builder passcodeLength(Integer passcodeLength) {
             this.passcodeLength = passcodeLength;
             this.__explicitlySet__.add("passcodeLength");
@@ -117,24 +143,37 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * The duration of time (in days) after which the shared secret has to be refreshed
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 30 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyRefreshIntervalInDays")
         private Integer keyRefreshIntervalInDays;
 
         /**
          * The duration of time (in days) after which the shared secret has to be refreshed
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 30 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 999
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param keyRefreshIntervalInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder keyRefreshIntervalInDays(Integer keyRefreshIntervalInDays) {
             this.keyRefreshIntervalInDays = keyRefreshIntervalInDays;
             this.__explicitlySet__.add("keyRefreshIntervalInDays");
@@ -142,24 +181,37 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * Time (in secs) to be used as the time step
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 300 - idcsMinValue: 30 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 300
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStepInSecs")
         private Integer timeStepInSecs;
 
         /**
          * Time (in secs) to be used as the time step
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 300 - idcsMinValue: 30 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 300
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param timeStepInSecs the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStepInSecs(Integer timeStepInSecs) {
             this.timeStepInSecs = timeStepInSecs;
             this.__explicitlySet__.add("timeStepInSecs");
@@ -167,51 +219,75 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * The tolerance/step-size that the system should use when validating a One-Time Passcode
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStepTolerance")
         private Integer timeStepTolerance;
 
         /**
          * The tolerance/step-size that the system should use when validating a One-Time Passcode
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param timeStepTolerance the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStepTolerance(Integer timeStepTolerance) {
             this.timeStepTolerance = timeStepTolerance;
             this.__explicitlySet__.add("timeStepTolerance");
             return this;
         }
         /**
-         * The period of time (in minutes) for which a One-Time Passcode that the system sends by
-         * Short Message Service (SMS) or by voice remains valid
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 60
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("smsOtpValidityDurationInMins")
         private Integer smsOtpValidityDurationInMins;
 
         /**
-         * The period of time (in minutes) for which a One-Time Passcode that the system sends by
-         * Short Message Service (SMS) or by voice remains valid
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 60
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param smsOtpValidityDurationInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder smsOtpValidityDurationInMins(Integer smsOtpValidityDurationInMins) {
             this.smsOtpValidityDurationInMins = smsOtpValidityDurationInMins;
             this.__explicitlySet__.add("smsOtpValidityDurationInMins");
@@ -219,24 +295,37 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * The period of time (in seconds) that a JSON Web Token (JWT) is valid
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 99999 - idcsMinValue: 30 - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 99999
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jwtValidityDurationInSecs")
         private Integer jwtValidityDurationInSecs;
 
         /**
          * The period of time (in seconds) that a JSON Web Token (JWT) is valid
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 99999 - idcsMinValue: 30 - idcsSearchable: false
-         * - multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 99999
+         *  - idcsMinValue: 30
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param jwtValidityDurationInSecs the value to set
          * @return this builder
-         */
+         **/
         public Builder jwtValidityDurationInSecs(Integer jwtValidityDurationInSecs) {
             this.jwtValidityDurationInSecs = jwtValidityDurationInSecs;
             this.__explicitlySet__.add("jwtValidityDurationInSecs");
@@ -244,55 +333,79 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * Exact length of the Short Message Service (SMS) One-Time Passcode
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("smsPasscodeLength")
         private Integer smsPasscodeLength;
 
         /**
          * Exact length of the Short Message Service (SMS) One-Time Passcode
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param smsPasscodeLength the value to set
          * @return this builder
-         */
+         **/
         public Builder smsPasscodeLength(Integer smsPasscodeLength) {
             this.smsPasscodeLength = smsPasscodeLength;
             this.__explicitlySet__.add("smsPasscodeLength");
             return this;
         }
         /**
-         * The period of time (in minutes) that a one-time passcode remains valid that the system
-         * sends by email.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 60
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailOtpValidityDurationInMins")
         private Integer emailOtpValidityDurationInMins;
 
         /**
-         * The period of time (in minutes) that a one-time passcode remains valid that the system
-         * sends by email.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 60
+         *  - idcsMinValue: 2
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param emailOtpValidityDurationInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder emailOtpValidityDurationInMins(Integer emailOtpValidityDurationInMins) {
             this.emailOtpValidityDurationInMins = emailOtpValidityDurationInMins;
             this.__explicitlySet__.add("emailOtpValidityDurationInMins");
@@ -300,28 +413,41 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
         /**
          * Exact length of the email one-time passcode.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("emailPasscodeLength")
         private Integer emailPasscodeLength;
 
         /**
          * Exact length of the email one-time passcode.
-         *
-         * <p>*Added In:** 18.1.2
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 18.1.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 10
+         *  - idcsMinValue: 4
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param emailPasscodeLength the value to set
          * @return this builder
-         */
+         **/
         public Builder emailPasscodeLength(Integer emailPasscodeLength) {
             this.emailPasscodeLength = emailPasscodeLength;
             this.__explicitlySet__.add("emailPasscodeLength");
@@ -386,7 +512,9 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -396,13 +524,18 @@ public final class AuthenticationFactorSettingsTotpSettings
     }
 
     /**
-     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system
-     * uses SHA1.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: string - uniqueness: none
-     */
-    public enum HashingAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum HashingAlgorithm {
         Sha1("SHA1"),
         Sha256("SHA256"),
         Sha384("SHA384"),
@@ -410,8 +543,8 @@ public final class AuthenticationFactorSettingsTotpSettings
         Md5("MD5"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -451,243 +584,365 @@ public final class AuthenticationFactorSettingsTotpSettings
         }
     };
     /**
-     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system
-     * uses SHA1.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: string - uniqueness: none
-     */
+     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hashingAlgorithm")
     private final HashingAlgorithm hashingAlgorithm;
 
     /**
-     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system
-     * uses SHA1.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: true - returned: default - type: string - uniqueness: none
-     *
+     * The hashing algorithm to be used to calculate a One-Time Passcode. By default, the system uses SHA1.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public HashingAlgorithm getHashingAlgorithm() {
         return hashingAlgorithm;
     }
 
     /**
      * Exact length of the One-Time Passcode that the system should generate
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passcodeLength")
     private final Integer passcodeLength;
 
     /**
      * Exact length of the One-Time Passcode that the system should generate
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getPasscodeLength() {
         return passcodeLength;
     }
 
     /**
      * The duration of time (in days) after which the shared secret has to be refreshed
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyRefreshIntervalInDays")
     private final Integer keyRefreshIntervalInDays;
 
     /**
      * The duration of time (in days) after which the shared secret has to be refreshed
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 999 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 999
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getKeyRefreshIntervalInDays() {
         return keyRefreshIntervalInDays;
     }
 
     /**
      * Time (in secs) to be used as the time step
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 300 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 300
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStepInSecs")
     private final Integer timeStepInSecs;
 
     /**
      * Time (in secs) to be used as the time step
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 300 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 300
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getTimeStepInSecs() {
         return timeStepInSecs;
     }
 
     /**
      * The tolerance/step-size that the system should use when validating a One-Time Passcode
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStepTolerance")
     private final Integer timeStepTolerance;
 
     /**
      * The tolerance/step-size that the system should use when validating a One-Time Passcode
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getTimeStepTolerance() {
         return timeStepTolerance;
     }
 
     /**
-     * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short
-     * Message Service (SMS) or by voice remains valid
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 60
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("smsOtpValidityDurationInMins")
     private final Integer smsOtpValidityDurationInMins;
 
     /**
-     * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short
-     * Message Service (SMS) or by voice remains valid
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * The period of time (in minutes) for which a One-Time Passcode that the system sends by Short Message Service (SMS) or by voice remains valid
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 60
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getSmsOtpValidityDurationInMins() {
         return smsOtpValidityDurationInMins;
     }
 
     /**
      * The period of time (in seconds) that a JSON Web Token (JWT) is valid
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 99999 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 99999
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jwtValidityDurationInSecs")
     private final Integer jwtValidityDurationInSecs;
 
     /**
      * The period of time (in seconds) that a JSON Web Token (JWT) is valid
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 99999 - idcsMinValue: 30 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 99999
+     *  - idcsMinValue: 30
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getJwtValidityDurationInSecs() {
         return jwtValidityDurationInSecs;
     }
 
     /**
      * Exact length of the Short Message Service (SMS) One-Time Passcode
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("smsPasscodeLength")
     private final Integer smsPasscodeLength;
 
     /**
      * Exact length of the Short Message Service (SMS) One-Time Passcode
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getSmsPasscodeLength() {
         return smsPasscodeLength;
     }
 
     /**
-     * The period of time (in minutes) that a one-time passcode remains valid that the system sends
-     * by email.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 60
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailOtpValidityDurationInMins")
     private final Integer emailOtpValidityDurationInMins;
 
     /**
-     * The period of time (in minutes) that a one-time passcode remains valid that the system sends
-     * by email.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 60 - idcsMinValue: 2 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * The period of time (in minutes) that a one-time passcode remains valid that the system sends by email.
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 60
+     *  - idcsMinValue: 2
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getEmailOtpValidityDurationInMins() {
         return emailOtpValidityDurationInMins;
     }
 
     /**
      * Exact length of the email one-time passcode.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("emailPasscodeLength")
     private final Integer emailPasscodeLength;
 
     /**
      * Exact length of the email one-time passcode.
-     *
-     * <p>*Added In:** 18.1.2
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 10 - idcsMinValue: 4 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: true - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 18.1.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 10
+     *  - idcsMinValue: 4
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getEmailPasscodeLength() {
         return emailPasscodeLength;
     }
@@ -699,7 +954,6 @@ public final class AuthenticationFactorSettingsTotpSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

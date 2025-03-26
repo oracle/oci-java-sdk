@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.waas.model;
 
-/** An enum value indicating the operation being performed by the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-public enum WorkRequestOperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * An enum value indicating the operation being performed by the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+public enum WorkRequestOperationTypes {
     CreateWaasPolicy("CREATE_WAAS_POLICY"),
     UpdateWaasPolicy("UPDATE_WAAS_POLICY"),
     DeleteWaasPolicy("DELETE_WAAS_POLICY"),

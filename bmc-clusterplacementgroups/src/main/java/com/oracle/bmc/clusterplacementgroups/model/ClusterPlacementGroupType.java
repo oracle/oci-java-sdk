@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.clusterplacementgroups.model;
 
-/** The type of cluster placement group. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum ClusterPlacementGroupType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of cluster placement group.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum ClusterPlacementGroupType {
     Standard("STANDARD"),
 
     /**

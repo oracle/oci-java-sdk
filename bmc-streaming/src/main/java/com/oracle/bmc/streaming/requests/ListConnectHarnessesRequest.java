@@ -6,32 +6,46 @@ package com.oracle.bmc.streaming.requests;
 
 import com.oracle.bmc.streaming.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectHarnessesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ListConnectHarnessesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListConnectHarnessesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 public class ListConnectHarnessesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources that match the given ID exactly. */
+    /**
+     * A filter to return only resources that match the given ID exactly.
+     *
+     */
     private String id;
 
-    /** A filter to return only resources that match the given ID exactly. */
+    /**
+     * A filter to return only resources that match the given ID exactly.
+     *
+     */
     public String getId() {
         return id;
     }
-    /** A filter to return only resources that match the given name exactly. */
+    /**
+     * A filter to return only resources that match the given name exactly.
+     *
+     */
     private String name;
 
-    /** A filter to return only resources that match the given name exactly. */
+    /**
+     * A filter to return only resources that match the given name exactly.
+     *
+     */
     public String getName() {
         return name;
     }
@@ -46,26 +60,28 @@ public class ListConnectHarnessesRequest
     public Integer getLimit() {
         return limit;
     }
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     private String page;
 
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, {@code
-     * TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending
-     * order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, {@code
-     * TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending
-     * order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+     *
+     **/
+    public enum SortBy {
         Name("NAME"),
         Timecreated("TIMECREATED"),
         ;
@@ -99,18 +115,23 @@ public class ListConnectHarnessesRequest
     };
 
     /**
-     * The field to sort by. You can provide no more than one sort order. By default, {@code
-     * TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending
-     * order.
+     * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -143,19 +164,22 @@ public class ListConnectHarnessesRequest
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * A filter to only return resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+     *
      */
     private com.oracle.bmc.streaming.model.ConnectHarnessSummary.LifecycleState lifecycleState;
 
     /**
-     * A filter to only return resources that match the given lifecycle state. The state value is
-     * case-insensitive.
+     * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+     *
      */
     public com.oracle.bmc.streaming.model.ConnectHarnessSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -163,12 +187,14 @@ public class ListConnectHarnessesRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -177,15 +203,17 @@ public class ListConnectHarnessesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListConnectHarnessesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -194,7 +222,10 @@ public class ListConnectHarnessesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the given ID exactly. */
+        /**
+         * A filter to return only resources that match the given ID exactly.
+         *
+         */
         private String id = null;
 
         /**
@@ -208,7 +239,10 @@ public class ListConnectHarnessesRequest
             return this;
         }
 
-        /** A filter to return only resources that match the given name exactly. */
+        /**
+         * A filter to return only resources that match the given name exactly.
+         *
+         */
         private String name = null;
 
         /**
@@ -223,15 +257,12 @@ public class ListConnectHarnessesRequest
         }
 
         /**
-         * The maximum number of items to return. The value must be between 1 and 50. The default is
-         * 10.
+         * The maximum number of items to return. The value must be between 1 and 50. The default is 10.
          */
         private Integer limit = null;
 
         /**
-         * The maximum number of items to return. The value must be between 1 and 50. The default is
-         * 10.
-         *
+         * The maximum number of items to return. The value must be between 1 and 50. The default is 10.
          * @param limit the value to set
          * @return this builder instance
          */
@@ -240,12 +271,13 @@ public class ListConnectHarnessesRequest
             return this;
         }
 
-        /** The page at which to start retrieving results. */
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -255,16 +287,13 @@ public class ListConnectHarnessesRequest
         }
 
         /**
-         * The field to sort by. You can provide no more than one sort order. By default, {@code
-         * TIMECREATED} sorts results in descending order and {@code NAME} sorts results in
-         * ascending order.
+         * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide no more than one sort order. By default, {@code
-         * TIMECREATED} sorts results in descending order and {@code NAME} sorts results in
-         * ascending order.
+         * The field to sort by. You can provide no more than one sort order. By default, {@code TIMECREATED} sorts results in descending order and {@code NAME} sorts results in ascending order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -274,7 +303,10 @@ public class ListConnectHarnessesRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -289,15 +321,14 @@ public class ListConnectHarnessesRequest
         }
 
         /**
-         * A filter to only return resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
+         *
          */
         private com.oracle.bmc.streaming.model.ConnectHarnessSummary.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to only return resources that match the given lifecycle state. The state value
-         * is case-insensitive.
+         * A filter to only return resources that match the given lifecycle state. The state value is case-insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -310,14 +341,15 @@ public class ListConnectHarnessesRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -329,19 +361,18 @@ public class ListConnectHarnessesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -353,7 +384,6 @@ public class ListConnectHarnessesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListConnectHarnessesRequest o) {
@@ -374,11 +404,10 @@ public class ListConnectHarnessesRequest
         /**
          * Build the instance of ListConnectHarnessesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListConnectHarnessesRequest
          */
@@ -392,8 +421,7 @@ public class ListConnectHarnessesRequest
         /**
          * Build the instance of ListConnectHarnessesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListConnectHarnessesRequest
@@ -410,14 +438,12 @@ public class ListConnectHarnessesRequest
             request.lifecycleState = lifecycleState;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListConnectHarnessesRequest(compartmentId, id, name, limit, page, sortBy,
-            // sortOrder, lifecycleState, opcRequestId);
+            // new ListConnectHarnessesRequest(compartmentId, id, name, limit, page, sortBy, sortOrder, lifecycleState, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -435,7 +461,6 @@ public class ListConnectHarnessesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

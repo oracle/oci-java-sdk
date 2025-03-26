@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** The action type of the task. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum TaskExecutionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The action type of the task.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum TaskExecutionType {
     Script("SCRIPT"),
     Api("API"),
 

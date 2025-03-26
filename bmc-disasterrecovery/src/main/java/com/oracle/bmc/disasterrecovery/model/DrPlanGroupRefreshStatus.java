@@ -5,12 +5,14 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The refresh status of a DR plan group. - GROUP_ADDED - DR plan group was added to the plan. -
- * GROUP_DELETED - DR plan group was deleted from the plan. - GROUP_MODIFIED - DR plan group was
- * modified.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanGroupRefreshStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * The refresh status of a DR plan group.
+ * - GROUP_ADDED - DR plan group was added to the plan.
+ * - GROUP_DELETED - DR plan group was deleted from the plan.
+ * - GROUP_MODIFIED - DR plan group was modified.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanGroupRefreshStatus {
     GroupAdded("GROUP_ADDED"),
     GroupDeleted("GROUP_DELETED"),
     GroupModified("GROUP_MODIFIED"),

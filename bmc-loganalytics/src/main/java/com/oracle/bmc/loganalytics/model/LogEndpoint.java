@@ -5,21 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * An endpoint used to fetch logs. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * An endpoint used to fetch logs.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LogEndpoint.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LogEndpoint extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LogEndpoint extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -62,61 +60,65 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The endpoint name. */
+        /**
+         * The endpoint name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The endpoint name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The endpoint description. */
+        /**
+         * The endpoint description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The endpoint description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The endpoint model. */
+        /**
+         * The endpoint model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("model")
         private String model;
 
         /**
          * The endpoint model.
-         *
          * @param model the value to set
          * @return this builder
-         */
+         **/
         public Builder model(String model) {
             this.model = model;
             this.__explicitlySet__.add("model");
             return this;
         }
-        /** The endpoint unique identifier. */
+        /**
+         * The endpoint unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private Long endpointId;
 
         /**
          * The endpoint unique identifier.
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(Long endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
@@ -158,50 +160,53 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("proxy");
             return this;
         }
-        /** A flag indicating whether or not the endpoint is enabled for log collection. */
+        /**
+         * A flag indicating whether or not the endpoint is enabled for log collection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A flag indicating whether or not the endpoint is enabled for log collection.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a custom, or user defined endpoint. A value of
-         * true denotes an Oracle defined endpoint.
-         */
+         * The system flag. A value of false denotes a custom, or user
+         * defined endpoint. A value of true denotes an Oracle defined endpoint.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a custom, or user defined endpoint. A value of
-         * true denotes an Oracle defined endpoint.
+         * The system flag. A value of false denotes a custom, or user
+         * defined endpoint. A value of true denotes an Oracle defined endpoint.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /** A list of endpoint properties. */
+        /**
+         * A list of endpoint properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointProperties")
         private java.util.List<LogAnalyticsProperty> endpointProperties;
 
         /**
          * A list of endpoint properties.
-         *
          * @param endpointProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointProperties(java.util.List<LogAnalyticsProperty> endpointProperties) {
             this.endpointProperties = endpointProperties;
             this.__explicitlySet__.add("endpointProperties");
@@ -270,7 +275,9 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -279,54 +286,58 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The endpoint name. */
+    /**
+     * The endpoint name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The endpoint name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The endpoint description. */
+    /**
+     * The endpoint description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The endpoint description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The endpoint model. */
+    /**
+     * The endpoint model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("model")
     private final String model;
 
     /**
      * The endpoint model.
-     *
      * @return the value
-     */
+     **/
     public String getModel() {
         return model;
     }
 
-    /** The endpoint unique identifier. */
+    /**
+     * The endpoint unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final Long endpointId;
 
     /**
      * The endpoint unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getEndpointId() {
         return endpointId;
     }
@@ -359,45 +370,48 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
         return proxy;
     }
 
-    /** A flag indicating whether or not the endpoint is enabled for log collection. */
+    /**
+     * A flag indicating whether or not the endpoint is enabled for log collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A flag indicating whether or not the endpoint is enabled for log collection.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined endpoint. A value of true
-     * denotes an Oracle defined endpoint.
-     */
+     * The system flag. A value of false denotes a custom, or user
+     * defined endpoint. A value of true denotes an Oracle defined endpoint.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined endpoint. A value of true
-     * denotes an Oracle defined endpoint.
+     * The system flag. A value of false denotes a custom, or user
+     * defined endpoint. A value of true denotes an Oracle defined endpoint.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /** A list of endpoint properties. */
+    /**
+     * A list of endpoint properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointProperties")
     private final java.util.List<LogAnalyticsProperty> endpointProperties;
 
     /**
      * A list of endpoint properties.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsProperty> getEndpointProperties() {
         return endpointProperties;
     }
@@ -409,7 +423,6 @@ public final class LogEndpoint extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

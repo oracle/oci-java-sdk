@@ -5,23 +5,22 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Request data required to clone a network firewall policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Request data required to clone a network firewall policy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ApplyNetworkFirewallPolicyDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ApplyNetworkFirewallPolicyDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ApplyNetworkFirewallPolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"firewalls"})
     public ApplyNetworkFirewallPolicyDetails(java.util.List<String> firewalls) {
@@ -32,21 +31,16 @@ public final class ApplyNetworkFirewallPolicyDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Ordered priority list of firewall OCIDs on which the update needs to be applied in given
-         * order. If the list is a subset of the firewalls attached, then given firewalls would be
-         * deployed first with the change, followed by remaining firewalls.
-         */
+         * Ordered priority list of firewall OCIDs on which the update needs to be applied in given order. If the list is a subset of the firewalls attached, then given firewalls would be deployed first with the change, followed by remaining firewalls.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("firewalls")
         private java.util.List<String> firewalls;
 
         /**
-         * Ordered priority list of firewall OCIDs on which the update needs to be applied in given
-         * order. If the list is a subset of the firewalls attached, then given firewalls would be
-         * deployed first with the change, followed by remaining firewalls.
-         *
+         * Ordered priority list of firewall OCIDs on which the update needs to be applied in given order. If the list is a subset of the firewalls attached, then given firewalls would be deployed first with the change, followed by remaining firewalls.
          * @param firewalls the value to set
          * @return this builder
-         */
+         **/
         public Builder firewalls(java.util.List<String> firewalls) {
             this.firewalls = firewalls;
             this.__explicitlySet__.add("firewalls");
@@ -74,7 +68,9 @@ public final class ApplyNetworkFirewallPolicyDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -84,20 +80,15 @@ public final class ApplyNetworkFirewallPolicyDetails
     }
 
     /**
-     * Ordered priority list of firewall OCIDs on which the update needs to be applied in given
-     * order. If the list is a subset of the firewalls attached, then given firewalls would be
-     * deployed first with the change, followed by remaining firewalls.
-     */
+     * Ordered priority list of firewall OCIDs on which the update needs to be applied in given order. If the list is a subset of the firewalls attached, then given firewalls would be deployed first with the change, followed by remaining firewalls.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("firewalls")
     private final java.util.List<String> firewalls;
 
     /**
-     * Ordered priority list of firewall OCIDs on which the update needs to be applied in given
-     * order. If the list is a subset of the firewalls attached, then given firewalls would be
-     * deployed first with the change, followed by remaining firewalls.
-     *
+     * Ordered priority list of firewall OCIDs on which the update needs to be applied in given order. If the list is a subset of the firewalls attached, then given firewalls would be deployed first with the change, followed by remaining firewalls.
      * @return the value
-     */
+     **/
     public java.util.List<String> getFirewalls() {
         return firewalls;
     }
@@ -109,7 +100,6 @@ public final class ApplyNetworkFirewallPolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

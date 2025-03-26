@@ -5,23 +5,21 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Address verficiation result <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * Address verficiation result
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VerifyAddressReceipt.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VerifyAddressReceipt
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VerifyAddressReceipt.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VerifyAddressReceipt extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"address", "quality", "verificationCode"})
     public VerifyAddressReceipt(
@@ -43,31 +41,33 @@ public final class VerifyAddressReceipt
             this.__explicitlySet__.add("address");
             return this;
         }
-        /** Address quality type. */
+        /**
+         * Address quality type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quality")
         private AddressQualityType quality;
 
         /**
          * Address quality type.
-         *
          * @param quality the value to set
          * @return this builder
-         */
+         **/
         public Builder quality(AddressQualityType quality) {
             this.quality = quality;
             this.__explicitlySet__.add("quality");
             return this;
         }
-        /** Address verification code. */
+        /**
+         * Address verification code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("verificationCode")
         private AddressVerificationCode verificationCode;
 
         /**
          * Address verification code.
-         *
          * @param verificationCode the value to set
          * @return this builder
-         */
+         **/
         public Builder verificationCode(AddressVerificationCode verificationCode) {
             this.verificationCode = verificationCode;
             this.__explicitlySet__.add("verificationCode");
@@ -101,7 +101,9 @@ public final class VerifyAddressReceipt
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,28 +119,30 @@ public final class VerifyAddressReceipt
         return address;
     }
 
-    /** Address quality type. */
+    /**
+     * Address quality type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quality")
     private final AddressQualityType quality;
 
     /**
      * Address quality type.
-     *
      * @return the value
-     */
+     **/
     public AddressQualityType getQuality() {
         return quality;
     }
 
-    /** Address verification code. */
+    /**
+     * Address verification code.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("verificationCode")
     private final AddressVerificationCode verificationCode;
 
     /**
      * Address verification code.
-     *
      * @return the value
-     */
+     **/
     public AddressVerificationCode getVerificationCode() {
         return verificationCode;
     }
@@ -150,7 +154,6 @@ public final class VerifyAddressReceipt
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

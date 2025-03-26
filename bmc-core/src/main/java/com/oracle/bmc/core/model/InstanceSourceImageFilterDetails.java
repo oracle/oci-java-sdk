@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * These are the criteria for selecting an image. This is required if imageId is not specified. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * These are the criteria for selecting an image. This is required if imageId is not specified.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceSourceImageFilterDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceSourceImageFilterDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceSourceImageFilterDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -43,37 +43,37 @@ public final class InstanceSourceImageFilterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment containing images to search */
+        /**
+         * The OCID of the compartment containing images to search
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing images to search
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Filter based on these defined tags. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTagsFilter")
         private java.util.Map<String, java.util.Map<String, Object>> definedTagsFilter;
 
         /**
-         * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Filter based on these defined tags. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTagsFilter the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTagsFilter(
                 java.util.Map<String, java.util.Map<String, Object>> definedTagsFilter) {
             this.definedTagsFilter = definedTagsFilter;
@@ -82,20 +82,21 @@ public final class InstanceSourceImageFilterDetails
         }
         /**
          * The image's operating system.
+         * <p>
+         * Example: {@code Oracle Linux}
          *
-         * <p>Example: {@code Oracle Linux}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
         private String operatingSystem;
 
         /**
          * The image's operating system.
-         *
-         * <p>Example: {@code Oracle Linux}
+         * <p>
+         * Example: {@code Oracle Linux}
          *
          * @param operatingSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder operatingSystem(String operatingSystem) {
             this.operatingSystem = operatingSystem;
             this.__explicitlySet__.add("operatingSystem");
@@ -103,20 +104,21 @@ public final class InstanceSourceImageFilterDetails
         }
         /**
          * The image's operating system version.
+         * <p>
+         * Example: {@code 7.2}
          *
-         * <p>Example: {@code 7.2}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
         private String operatingSystemVersion;
 
         /**
          * The image's operating system version.
-         *
-         * <p>Example: {@code 7.2}
+         * <p>
+         * Example: {@code 7.2}
          *
          * @param operatingSystemVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder operatingSystemVersion(String operatingSystemVersion) {
             this.operatingSystemVersion = operatingSystemVersion;
             this.__explicitlySet__.add("operatingSystemVersion");
@@ -157,7 +159,9 @@ public final class InstanceSourceImageFilterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,72 +170,74 @@ public final class InstanceSourceImageFilterDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment containing images to search */
+    /**
+     * The OCID of the compartment containing images to search
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing images to search
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Filter based on these defined tags. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTagsFilter")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTagsFilter;
 
     /**
-     * Filter based on these defined tags. Each key is predefined and scoped to a namespace. For
-     * more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Filter based on these defined tags. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTagsFilter() {
         return definedTagsFilter;
     }
 
     /**
      * The image's operating system.
+     * <p>
+     * Example: {@code Oracle Linux}
      *
-     * <p>Example: {@code Oracle Linux}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
     private final String operatingSystem;
 
     /**
      * The image's operating system.
-     *
-     * <p>Example: {@code Oracle Linux}
+     * <p>
+     * Example: {@code Oracle Linux}
      *
      * @return the value
-     */
+     **/
     public String getOperatingSystem() {
         return operatingSystem;
     }
 
     /**
      * The image's operating system version.
+     * <p>
+     * Example: {@code 7.2}
      *
-     * <p>Example: {@code 7.2}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operatingSystemVersion")
     private final String operatingSystemVersion;
 
     /**
      * The image's operating system version.
-     *
-     * <p>Example: {@code 7.2}
+     * <p>
+     * Example: {@code 7.2}
      *
      * @return the value
-     */
+     **/
     public String getOperatingSystemVersion() {
         return operatingSystemVersion;
     }
@@ -243,7 +249,6 @@ public final class InstanceSourceImageFilterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

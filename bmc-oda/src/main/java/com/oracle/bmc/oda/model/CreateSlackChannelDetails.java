@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties required to create a Slack channel. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Properties required to create a Slack channel.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateSlackChannelDetails.Builder.class)
+    builder = CreateSlackChannelDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateSlackChannelDetails extends CreateChannelDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -73,91 +73,97 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The Slack Client Id for the Slack app. */
+        /**
+         * The Slack Client Id for the Slack app.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * The Slack Client Id for the Slack app.
-         *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
             return this;
         }
-        /** The URL to redirect to when authentication is successful. */
+        /**
+         * The URL to redirect to when authentication is successful.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authSuccessUrl")
         private String authSuccessUrl;
 
         /**
          * The URL to redirect to when authentication is successful.
-         *
          * @param authSuccessUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder authSuccessUrl(String authSuccessUrl) {
             this.authSuccessUrl = authSuccessUrl;
             this.__explicitlySet__.add("authSuccessUrl");
             return this;
         }
-        /** The URL to redirect to when authentication is unsuccessful. */
+        /**
+         * The URL to redirect to when authentication is unsuccessful.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authErrorUrl")
         private String authErrorUrl;
 
         /**
          * The URL to redirect to when authentication is unsuccessful.
-         *
          * @param authErrorUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder authErrorUrl(String authErrorUrl) {
             this.authErrorUrl = authErrorUrl;
             this.__explicitlySet__.add("authErrorUrl");
             return this;
         }
-        /** The Signing Secret for the Slack App. */
+        /**
+         * The Signing Secret for the Slack App.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
         private String signingSecret;
 
         /**
          * The Signing Secret for the Slack App.
-         *
          * @param signingSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder signingSecret(String signingSecret) {
             this.signingSecret = signingSecret;
             this.__explicitlySet__.add("signingSecret");
             return this;
         }
-        /** The Client Secret for the Slack App. */
+        /**
+         * The Client Secret for the Slack App.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
 
         /**
          * The Client Secret for the Slack App.
-         *
          * @param clientSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder clientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
-        /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+        /**
+         * The ID of the Skill or Digital Assistant that the Channel is routed to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("botId")
         private String botId;
 
         /**
          * The ID of the Skill or Digital Assistant that the Channel is routed to.
-         *
          * @param botId the value to set
          * @return this builder
-         */
+         **/
         public Builder botId(String botId) {
             this.botId = botId;
             this.__explicitlySet__.add("botId");
@@ -227,7 +233,9 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -258,80 +266,86 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
         this.botId = botId;
     }
 
-    /** The Slack Client Id for the Slack app. */
+    /**
+     * The Slack Client Id for the Slack app.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * The Slack Client Id for the Slack app.
-     *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
 
-    /** The URL to redirect to when authentication is successful. */
+    /**
+     * The URL to redirect to when authentication is successful.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authSuccessUrl")
     private final String authSuccessUrl;
 
     /**
      * The URL to redirect to when authentication is successful.
-     *
      * @return the value
-     */
+     **/
     public String getAuthSuccessUrl() {
         return authSuccessUrl;
     }
 
-    /** The URL to redirect to when authentication is unsuccessful. */
+    /**
+     * The URL to redirect to when authentication is unsuccessful.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authErrorUrl")
     private final String authErrorUrl;
 
     /**
      * The URL to redirect to when authentication is unsuccessful.
-     *
      * @return the value
-     */
+     **/
     public String getAuthErrorUrl() {
         return authErrorUrl;
     }
 
-    /** The Signing Secret for the Slack App. */
+    /**
+     * The Signing Secret for the Slack App.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("signingSecret")
     private final String signingSecret;
 
     /**
      * The Signing Secret for the Slack App.
-     *
      * @return the value
-     */
+     **/
     public String getSigningSecret() {
         return signingSecret;
     }
 
-    /** The Client Secret for the Slack App. */
+    /**
+     * The Client Secret for the Slack App.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
 
     /**
      * The Client Secret for the Slack App.
-     *
      * @return the value
-     */
+     **/
     public String getClientSecret() {
         return clientSecret;
     }
 
-    /** The ID of the Skill or Digital Assistant that the Channel is routed to. */
+    /**
+     * The ID of the Skill or Digital Assistant that the Channel is routed to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("botId")
     private final String botId;
 
     /**
      * The ID of the Skill or Digital Assistant that the Channel is routed to.
-     *
      * @return the value
-     */
+     **/
     public String getBotId() {
         return botId;
     }
@@ -343,7 +357,6 @@ public final class CreateSlackChannelDetails extends CreateChannelDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

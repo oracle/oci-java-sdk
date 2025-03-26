@@ -6,17 +6,18 @@ package com.oracle.bmc.aianomalydetection.responses;
 
 import com.oracle.bmc.aianomalydetection.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
         return etag;
     }
 
-    /** The returned {@code AiPrivateEndpoint} instance. */
+    /**
+     * The returned AiPrivateEndpoint instance.
+     */
     private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
     /**
-     * The returned {@code AiPrivateEndpoint} instance.
-     *
+     * The returned AiPrivateEndpoint instance.
      * @return the value
      */
     public com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint getAiPrivateEndpoint() {
@@ -57,7 +62,7 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
     })
     private GetAiPrivateEndpointResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint) {
@@ -67,33 +72,31 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
         this.aiPrivateEndpoint = aiPrivateEndpoint;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetAiPrivateEndpointResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code AiPrivateEndpoint} instance. */
+        /**
+         * The returned AiPrivateEndpoint instance.
+         */
         private com.oracle.bmc.aianomalydetection.model.AiPrivateEndpoint aiPrivateEndpoint;
 
         /**
-         * The returned {@code AiPrivateEndpoint} instance.
-         *
+         * The returned AiPrivateEndpoint instance.
          * @param aiPrivateEndpoint the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetAiPrivateEndpointResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetAiPrivateEndpointResponse build() {
             return new GetAiPrivateEndpointResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, aiPrivateEndpoint);
@@ -162,7 +165,6 @@ public class GetAiPrivateEndpointResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

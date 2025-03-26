@@ -6,25 +6,24 @@ package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * Configuration details to update a network load balancer.
+ * <p>
+ **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Caution:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateNetworkLoadBalancerDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateNetworkLoadBalancerDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateNetworkLoadBalancerDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -62,170 +61,166 @@ public final class UpdateNetworkLoadBalancerDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The user-friendly display name for the network load balancer, which does not have to be
-         * unique and can be changed. Avoid entering confidential information.
+         * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_network_load_balancer}
          *
-         * <p>Example: {@code example_network_load_balancer}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The user-friendly display name for the network load balancer, which does not have to be
-         * unique and can be changed. Avoid entering confidential information.
-         *
-         * <p>Example: {@code example_network_load_balancer}
+         * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code example_network_load_balancer}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the
-         * skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC,
-         * and packets are sent to the backend with the entire IP header intact.
-         */
+         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+         * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
         private Boolean isPreserveSourceDestination;
 
         /**
-         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the
-         * skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC,
-         * and packets are sent to the backend with the entire IP header intact.
+         * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+         * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
          *
          * @param isPreserveSourceDestination the value to set
          * @return this builder
-         */
+         **/
         public Builder isPreserveSourceDestination(Boolean isPreserveSourceDestination) {
             this.isPreserveSourceDestination = isPreserveSourceDestination;
             this.__explicitlySet__.add("isPreserveSourceDestination");
             return this;
         }
         /**
-         * This can only be enabled when NLB is working in transparent mode with source destination
-         * header preservation enabled. This removes the additional dependency from NLB
-         * backends(like Firewalls) to perform SNAT.
-         */
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
         private Boolean isSymmetricHashEnabled;
 
         /**
-         * This can only be enabled when NLB is working in transparent mode with source destination
-         * header preservation enabled. This removes the additional dependency from NLB
-         * backends(like Firewalls) to perform SNAT.
+         * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+         * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
          *
          * @param isSymmetricHashEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSymmetricHashEnabled(Boolean isSymmetricHashEnabled) {
             this.isSymmetricHashEnabled = isSymmetricHashEnabled;
             this.__explicitlySet__.add("isSymmetricHashEnabled");
             return this;
         }
-        /** IP version associated with the NLB. */
+        /**
+         * IP version associated with the NLB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
         private NlbIpVersion nlbIpVersion;
 
         /**
          * IP version associated with the NLB.
-         *
          * @param nlbIpVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder nlbIpVersion(NlbIpVersion nlbIpVersion) {
             this.nlbIpVersion = nlbIpVersion;
             this.__explicitlySet__.add("nlbIpVersion");
             return this;
         }
         /**
-         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
-         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-         */
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
         private String subnetIpv6Cidr;
 
         /**
-         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
-         * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-         *
+         * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
          * @param subnetIpv6Cidr the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetIpv6Cidr(String subnetIpv6Cidr) {
             this.subnetIpv6Cidr = subnetIpv6Cidr;
             this.__explicitlySet__.add("subnetIpv6Cidr");
             return this;
         }
         /**
-         * IPv6 address to be assigned to the network load balancer being created. This IP address
-         * has to be part of one of the prefixes supported by the subnet. Example:
-         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
-         */
+         * IPv6 address to be assigned to the network load balancer being created.
+         * This IP address has to be part of one of the prefixes supported by the subnet.
+         * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
         private String assignedIpv6;
 
         /**
-         * IPv6 address to be assigned to the network load balancer being created. This IP address
-         * has to be part of one of the prefixes supported by the subnet. Example:
-         * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+         * IPv6 address to be assigned to the network load balancer being created.
+         * This IP address has to be part of one of the prefixes supported by the subnet.
+         * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
          *
          * @param assignedIpv6 the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedIpv6(String assignedIpv6) {
             this.assignedIpv6 = assignedIpv6;
             this.__explicitlySet__.add("assignedIpv6");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -233,25 +228,24 @@ public final class UpdateNetworkLoadBalancerDetails
             return this;
         }
         /**
-         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
-         * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          *
-         * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
-         * type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
          *
          * @param securityAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder securityAttributes(
                 java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
             this.securityAttributes = securityAttributes;
@@ -313,7 +307,9 @@ public final class UpdateNetworkLoadBalancerDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -323,178 +319,173 @@ public final class UpdateNetworkLoadBalancerDetails
     }
 
     /**
-     * The user-friendly display name for the network load balancer, which does not have to be
-     * unique and can be changed. Avoid entering confidential information.
+     * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_network_load_balancer}
      *
-     * <p>Example: {@code example_network_load_balancer}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly display name for the network load balancer, which does not have to be
-     * unique and can be changed. Avoid entering confidential information.
-     *
-     * <p>Example: {@code example_network_load_balancer}
+     * The user-friendly display name for the network load balancer, which does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code example_network_load_balancer}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * This parameter can be enabled only if backends are compute OCIDs. When enabled, the
-     * skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and
-     * packets are sent to the backend with the entire IP header intact.
-     */
+     * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+     * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPreserveSourceDestination")
     private final Boolean isPreserveSourceDestination;
 
     /**
-     * This parameter can be enabled only if backends are compute OCIDs. When enabled, the
-     * skipSourceDestinationCheck parameter is automatically enabled on the load balancer VNIC, and
-     * packets are sent to the backend with the entire IP header intact.
+     * This parameter can be enabled only if backends are compute OCIDs. When enabled, the skipSourceDestinationCheck parameter is automatically
+     * enabled on the load balancer VNIC, and packets are sent to the backend with the entire IP header intact.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPreserveSourceDestination() {
         return isPreserveSourceDestination;
     }
 
     /**
-     * This can only be enabled when NLB is working in transparent mode with source destination
-     * header preservation enabled. This removes the additional dependency from NLB backends(like
-     * Firewalls) to perform SNAT.
-     */
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSymmetricHashEnabled")
     private final Boolean isSymmetricHashEnabled;
 
     /**
-     * This can only be enabled when NLB is working in transparent mode with source destination
-     * header preservation enabled. This removes the additional dependency from NLB backends(like
-     * Firewalls) to perform SNAT.
+     * This can only be enabled when NLB is working in transparent mode with source destination header preservation enabled.
+     * This removes the additional dependency from NLB backends(like Firewalls) to perform SNAT.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSymmetricHashEnabled() {
         return isSymmetricHashEnabled;
     }
 
-    /** IP version associated with the NLB. */
+    /**
+     * IP version associated with the NLB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nlbIpVersion")
     private final NlbIpVersion nlbIpVersion;
 
     /**
      * IP version associated with the NLB.
-     *
      * @return the value
-     */
+     **/
     public NlbIpVersion getNlbIpVersion() {
         return nlbIpVersion;
     }
 
     /**
-     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
-     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-     */
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIpv6Cidr")
     private final String subnetIpv6Cidr;
 
     /**
-     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be
-     * assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
-     *
+     * IPv6 subnet prefix selection. If Ipv6 subnet prefix is passed, Nlb Ipv6 Address would be assign within the cidr block. NLB has to be dual or single stack ipv6 to support this.
      * @return the value
-     */
+     **/
     public String getSubnetIpv6Cidr() {
         return subnetIpv6Cidr;
     }
 
     /**
-     * IPv6 address to be assigned to the network load balancer being created. This IP address has
-     * to be part of one of the prefixes supported by the subnet. Example:
-     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
-     */
+     * IPv6 address to be assigned to the network load balancer being created.
+     * This IP address has to be part of one of the prefixes supported by the subnet.
+     * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedIpv6")
     private final String assignedIpv6;
 
     /**
-     * IPv6 address to be assigned to the network load balancer being created. This IP address has
-     * to be part of one of the prefixes supported by the subnet. Example:
-     * "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
+     * IPv6 address to be assigned to the network load balancer being created.
+     * This IP address has to be part of one of the prefixes supported by the subnet.
+     * Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
      *
      * @return the value
-     */
+     **/
     public String getAssignedIpv6() {
         return assignedIpv6;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
-     * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      *
-     * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
-     * type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
         return securityAttributes;
     }
@@ -506,7 +497,6 @@ public final class UpdateNetworkLoadBalancerDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

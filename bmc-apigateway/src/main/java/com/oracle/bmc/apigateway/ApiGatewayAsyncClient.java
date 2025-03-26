@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.apigateway;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.apigateway.internal.http.*;
 import com.oracle.bmc.apigateway.requests.*;
 import com.oracle.bmc.apigateway.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for ApiGateway service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for ApiGateway service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
-public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements ApiGatewayAsync {
-    /** Service instance for ApiGateway. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+public class ApiGatewayAsyncClient implements ApiGatewayAsync {
+    /**
+     * Service instance for ApiGateway.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("APIGATEWAY")
@@ -39,851 +36,112 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ApiGatewayAsyncClient.class);
 
-    ApiGatewayAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        this(builder, authenticationDetailsProvider, true);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
 
-    ApiGatewayAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            boolean isStreamWarningEnabled) {
-        super(builder, authenticationDetailsProvider);
-
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "ApiGatewayAsyncClient", "getApiContent"));
-        }
-    }
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ApiGatewayAsyncClient> {
-        private boolean isStreamWarningEnabled = true;
-
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "apigateway";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public ApiGatewayAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new ApiGatewayAsyncClient(
-                    this, authenticationDetailsProvider, isStreamWarningEnabled);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeApiCompartmentResponse> changeApiCompartment(
-            ChangeApiCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeApiCompartmentDetails(),
-                "changeApiCompartmentDetails is required");
-
-        return clientCall(request, ChangeApiCompartmentResponse::builder)
-                .logger(LOG, "changeApiCompartment")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ChangeApiCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeApiCompartmentRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        ChangeApiCompartmentResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeApiCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeCertificateCompartmentResponse>
-            changeCertificateCompartment(
-                    ChangeCertificateCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeCertificateCompartmentRequest,
-                                    ChangeCertificateCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeCertificateCompartmentDetails(),
-                "changeCertificateCompartmentDetails is required");
-
-        return clientCall(request, ChangeCertificateCompartmentResponse::builder)
-                .logger(LOG, "changeCertificateCompartment")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ChangeCertificateCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeCertificateCompartmentRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeCertificateCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateApiResponse> createApi(
-            CreateApiRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCreateApiDetails(), "createApiDetails is required");
-
-        return clientCall(request, CreateApiResponse::builder)
-                .logger(LOG, "createApi")
-                .serviceDetails("ApiGateway", "CreateApi", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateApiRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.Api.class, CreateApiResponse.Builder::api)
-                .handleResponseHeaderString("etag", CreateApiResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateApiResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateApiResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", CreateApiResponse.Builder::location)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
-            CreateCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateCertificateRequest, CreateCertificateResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateCertificateDetails(), "createCertificateDetails is required");
-
-        return clientCall(request, CreateCertificateResponse::builder)
-                .logger(LOG, "createCertificate")
-                .serviceDetails("ApiGateway", "CreateCertificate", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateCertificateRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.Certificate.class,
-                        CreateCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", CreateCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateCertificateResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateCertificateResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString("location", CreateCertificateResponse.Builder::location)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSdkResponse> createSdk(
-            CreateSdkRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCreateSdkDetails(), "createSdkDetails is required");
-
-        return clientCall(request, CreateSdkResponse::builder)
-                .logger(LOG, "createSdk")
-                .serviceDetails(
-                        "ApiGateway",
-                        "CreateSdk",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSdkRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdks")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.Sdk.class, CreateSdkResponse.Builder::sdk)
-                .handleResponseHeaderString("etag", CreateSdkResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateSdkResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSdkResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("location", CreateSdkResponse.Builder::location)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteApiResponse> deleteApi(
-            DeleteApiRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse>
-                    handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-
-        return clientCall(request, DeleteApiResponse::builder)
-                .logger(LOG, "deleteApi")
-                .serviceDetails(
-                        "ApiGateway",
-                        "DeleteApi",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteApiRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteApiResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteApiResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteCertificateResponse> deleteCertificate(
-            DeleteCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteCertificateRequest, DeleteCertificateResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, DeleteCertificateResponse::builder)
-                .logger(LOG, "deleteCertificate")
-                .serviceDetails(
-                        "ApiGateway",
-                        "DeleteCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteCertificateRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteCertificateResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteSdkResponse> deleteSdk(
-            DeleteSdkRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSdkId(), "sdkId must not be blank");
-
-        return clientCall(request, DeleteSdkResponse::builder)
-                .logger(LOG, "deleteSdk")
-                .serviceDetails(
-                        "ApiGateway",
-                        "DeleteSdk",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSdkRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdks")
-                .appendPathParam(request.getSdkId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteSdkResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteSdkResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetApiResponse> getApi(
-            GetApiRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse> handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-
-        return clientCall(request, GetApiResponse::builder)
-                .logger(LOG, "getApi")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetApi",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetApiRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(com.oracle.bmc.apigateway.model.Api.class, GetApiResponse.Builder::api)
-                .handleResponseHeaderString("etag", GetApiResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetApiResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetApiContentResponse> getApiContent(
-            GetApiContentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetApiContentRequest, GetApiContentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-
-        return clientCall(request, GetApiContentResponse::builder)
-                .logger(LOG, "getApiContent")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetApiContent",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetApiContentRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .appendPathParam("content")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("range", request.getRange())
-                .handleBody(java.io.InputStream.class, GetApiContentResponse.Builder::inputStream)
-                .handleResponseHeaderString("etag", GetApiContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetApiContentResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "x-content-sha256", GetApiContentResponse.Builder::xContentSha256)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetApiDeploymentSpecificationResponse>
-            getApiDeploymentSpecification(
-                    GetApiDeploymentSpecificationRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetApiDeploymentSpecificationRequest,
-                                    GetApiDeploymentSpecificationResponse>
-                            handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-
-        return clientCall(request, GetApiDeploymentSpecificationResponse::builder)
-                .logger(LOG, "getApiDeploymentSpecification")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetApiDeploymentSpecification",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetApiDeploymentSpecificationRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .appendPathParam("deploymentSpecification")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.ApiSpecification.class,
-                        GetApiDeploymentSpecificationResponse.Builder::apiSpecification)
-                .handleResponseHeaderString(
-                        "etag", GetApiDeploymentSpecificationResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetApiDeploymentSpecificationResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetApiValidationsResponse> getApiValidations(
-            GetApiValidationsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetApiValidationsRequest, GetApiValidationsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-
-        return clientCall(request, GetApiValidationsResponse::builder)
-                .logger(LOG, "getApiValidations")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetApiValidations",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetApiValidationsRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .appendPathParam("validations")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.ApiValidations.class,
-                        GetApiValidationsResponse.Builder::apiValidations)
-                .handleResponseHeaderString("etag", GetApiValidationsResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetApiValidationsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetCertificateResponse> getCertificate(
-            GetCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetCertificateRequest, GetCertificateResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-
-        return clientCall(request, GetCertificateResponse::builder)
-                .logger(LOG, "getCertificate")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCertificateRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.Certificate.class,
-                        GetCertificateResponse.Builder::certificate)
-                .handleResponseHeaderString("etag", GetCertificateResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSdkResponse> getSdk(
-            GetSdkRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handler) {
-
-        Validate.notBlank(request.getSdkId(), "sdkId must not be blank");
-
-        return clientCall(request, GetSdkResponse::builder)
-                .logger(LOG, "getSdk")
-                .serviceDetails(
-                        "ApiGateway",
-                        "GetSdk",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSdkRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdks")
-                .appendPathParam(request.getSdkId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(com.oracle.bmc.apigateway.model.Sdk.class, GetSdkResponse.Builder::sdk)
-                .handleResponseHeaderString("etag", GetSdkResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetSdkResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListApisResponse> listApis(
-            ListApisRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListApisResponse::builder)
-                .logger(LOG, "listApis")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ListApis",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListApisRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.ApiCollection.class,
-                        ListApisResponse.Builder::apiCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListApisResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListApisResponse.Builder::opcNextPage)
-                .handleResponseHeaderString("opc-prev-page", ListApisResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
-            ListCertificatesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListCertificatesRequest, ListCertificatesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListCertificatesResponse::builder)
-                .logger(LOG, "listCertificates")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ListCertificates",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListCertificatesRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.CertificateCollection.class,
-                        ListCertificatesResponse.Builder::certificateCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListCertificatesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListCertificatesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListCertificatesResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSdkLanguageTypesResponse> listSdkLanguageTypes(
-            ListSdkLanguageTypesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSdkLanguageTypesResponse::builder)
-                .logger(LOG, "listSdkLanguageTypes")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ListSdkLanguageTypes",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSdkLanguageTypesRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdkLanguageTypes")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.SdkLanguageTypeCollection.class,
-                        ListSdkLanguageTypesResponse.Builder::sdkLanguageTypeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSdkLanguageTypesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSdkLanguageTypesResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-prev-page", ListSdkLanguageTypesResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSdksResponse> listSdks(
-            ListSdksRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse>
-                    handler) {
-
-        return clientCall(request, ListSdksResponse::builder)
-                .logger(LOG, "listSdks")
-                .serviceDetails(
-                        "ApiGateway",
-                        "ListSdks",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSdksRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdks")
-                .appendQueryParam("sdkId", request.getSdkId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendQueryParam("apiId", request.getApiId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.apigateway.model.SdkCollection.class,
-                        ListSdksResponse.Builder::sdkCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSdksResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListSdksResponse.Builder::opcNextPage)
-                .handleResponseHeaderString("opc-prev-page", ListSdksResponse.Builder::opcPrevPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateApiResponse> updateApi(
-            UpdateApiRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse>
-                    handler) {
-
-        Validate.notBlank(request.getApiId(), "apiId must not be blank");
-        Objects.requireNonNull(request.getUpdateApiDetails(), "updateApiDetails is required");
-
-        return clientCall(request, UpdateApiResponse::builder)
-                .logger(LOG, "updateApi")
-                .serviceDetails(
-                        "ApiGateway",
-                        "UpdateApi",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateApiRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("apis")
-                .appendPathParam(request.getApiId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateApiResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateApiResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateCertificateResponse> updateCertificate(
-            UpdateCertificateRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateCertificateRequest, UpdateCertificateResponse>
-                    handler) {
-
-        Validate.notBlank(request.getCertificateId(), "certificateId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateCertificateDetails(), "updateCertificateDetails is required");
-
-        return clientCall(request, UpdateCertificateResponse::builder)
-                .logger(LOG, "updateCertificate")
-                .serviceDetails(
-                        "ApiGateway",
-                        "UpdateCertificate",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateCertificateRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("certificates")
-                .appendPathParam(request.getCertificateId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateCertificateResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateCertificateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateSdkResponse> updateSdk(
-            UpdateSdkRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSdkId(), "sdkId must not be blank");
-        Objects.requireNonNull(request.getUpdateSdkDetails(), "updateSdkDetails is required");
-
-        return clientCall(request, UpdateSdkResponse::builder)
-                .logger(LOG, "updateSdk")
-                .serviceDetails(
-                        "ApiGateway",
-                        "UpdateSdk",
-                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSdkRequest::builder)
-                .basePath("/20190501")
-                .appendPathParam("sdks")
-                .appendPathParam(request.getSdkId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateSdkResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -891,26 +149,26 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -919,29 +177,29 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public ApiGatewayAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -954,14 +212,1219 @@ public class ApiGatewayAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public ApiGatewayAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "ApiGatewayAsyncClient", "getApiContent"));
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, ApiGatewayAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public ApiGatewayAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new ApiGatewayAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeApiCompartmentResponse> changeApiCompartment(
+            ChangeApiCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeApiCompartment");
+        final ChangeApiCompartmentRequest interceptedRequest =
+                ChangeApiCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeApiCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ChangeApiCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ChangeApiCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeApiCompartmentResponse>
+                transformer =
+                        ChangeApiCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeApiCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeApiCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeApiCompartmentRequest, ChangeApiCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCertificateCompartmentResponse>
+            changeCertificateCompartment(
+                    ChangeCertificateCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCertificateCompartmentRequest,
+                                    ChangeCertificateCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeCertificateCompartment");
+        final ChangeCertificateCompartmentRequest interceptedRequest =
+                ChangeCertificateCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCertificateCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ChangeCertificateCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ChangeCertificateCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCertificateCompartmentResponse>
+                transformer =
+                        ChangeCertificateCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCertificateCompartmentRequest,
+                                ChangeCertificateCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeCertificateCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCertificateCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCertificateCompartmentRequest, ChangeCertificateCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApiResponse> createApi(
+            CreateApiRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse>
+                    handler) {
+        LOG.trace("Called async createApi");
+        final CreateApiRequest interceptedRequest = CreateApiConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateApiConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway", "CreateApi", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateApiResponse>
+                transformer =
+                        CreateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<CreateApiRequest, CreateApiResponse>,
+                        java.util.concurrent.Future<CreateApiResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateApiDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateApiRequest, CreateApiResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCertificateResponse> createCertificate(
+            CreateCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateCertificateRequest, CreateCertificateResponse>
+                    handler) {
+        LOG.trace("Called async createCertificate");
+        final CreateCertificateRequest interceptedRequest =
+                CreateCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway", "CreateCertificate", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateCertificateResponse>
+                transformer =
+                        CreateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateCertificateRequest, CreateCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateCertificateRequest, CreateCertificateResponse>,
+                        java.util.concurrent.Future<CreateCertificateResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateCertificateRequest, CreateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSdkResponse> createSdk(
+            CreateSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>
+                    handler) {
+        LOG.trace("Called async createSdk");
+        final CreateSdkRequest interceptedRequest = CreateSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSdkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "CreateSdk",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/CreateSdk");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSdkResponse>
+                transformer =
+                        CreateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<CreateSdkRequest, CreateSdkResponse>,
+                        java.util.concurrent.Future<CreateSdkResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSdkDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSdkRequest, CreateSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiResponse> deleteApi(
+            DeleteApiRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse>
+                    handler) {
+        LOG.trace("Called async deleteApi");
+        final DeleteApiRequest interceptedRequest = DeleteApiConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteApiConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "DeleteApi",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/DeleteApi");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteApiResponse>
+                transformer =
+                        DeleteApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<DeleteApiRequest, DeleteApiResponse>,
+                        java.util.concurrent.Future<DeleteApiResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteApiRequest, DeleteApiResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCertificateResponse> deleteCertificate(
+            DeleteCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCertificateRequest, DeleteCertificateResponse>
+                    handler) {
+        LOG.trace("Called async deleteCertificate");
+        final DeleteCertificateRequest interceptedRequest =
+                DeleteCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "DeleteCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/DeleteCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteCertificateResponse>
+                transformer =
+                        DeleteCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteCertificateRequest, DeleteCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteCertificateRequest, DeleteCertificateResponse>,
+                        java.util.concurrent.Future<DeleteCertificateResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteCertificateRequest, DeleteCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSdkResponse> deleteSdk(
+            DeleteSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse>
+                    handler) {
+        LOG.trace("Called async deleteSdk");
+        final DeleteSdkRequest interceptedRequest = DeleteSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSdkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "DeleteSdk",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/DeleteSdk");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSdkResponse>
+                transformer =
+                        DeleteSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<DeleteSdkRequest, DeleteSdkResponse>,
+                        java.util.concurrent.Future<DeleteSdkResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSdkRequest, DeleteSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiResponse> getApi(
+            GetApiRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse> handler) {
+        LOG.trace("Called async getApi");
+        final GetApiRequest interceptedRequest = GetApiConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApiConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetApi",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApi");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiResponse> transformer =
+                GetApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetApiRequest, GetApiResponse>,
+                        java.util.concurrent.Future<GetApiResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApiRequest, GetApiResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiContentResponse> getApiContent(
+            GetApiContentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetApiContentRequest, GetApiContentResponse>
+                    handler) {
+        LOG.trace("Called async getApiContent");
+        final GetApiContentRequest interceptedRequest =
+                GetApiContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApiContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetApiContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/GetApiContent");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiContentResponse>
+                transformer =
+                        GetApiContentConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetApiContentRequest, GetApiContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApiContentRequest, GetApiContentResponse>,
+                        java.util.concurrent.Future<GetApiContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApiContentRequest, GetApiContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiDeploymentSpecificationResponse>
+            getApiDeploymentSpecification(
+                    GetApiDeploymentSpecificationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetApiDeploymentSpecificationRequest,
+                                    GetApiDeploymentSpecificationResponse>
+                            handler) {
+        LOG.trace("Called async getApiDeploymentSpecification");
+        final GetApiDeploymentSpecificationRequest interceptedRequest =
+                GetApiDeploymentSpecificationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApiDeploymentSpecificationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetApiDeploymentSpecification",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiSpecification/GetApiDeploymentSpecification");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetApiDeploymentSpecificationResponse>
+                transformer =
+                        GetApiDeploymentSpecificationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetApiDeploymentSpecificationRequest, GetApiDeploymentSpecificationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApiDeploymentSpecificationRequest,
+                                GetApiDeploymentSpecificationResponse>,
+                        java.util.concurrent.Future<GetApiDeploymentSpecificationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApiDeploymentSpecificationRequest, GetApiDeploymentSpecificationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetApiValidationsResponse> getApiValidations(
+            GetApiValidationsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetApiValidationsRequest, GetApiValidationsResponse>
+                    handler) {
+        LOG.trace("Called async getApiValidations");
+        final GetApiValidationsRequest interceptedRequest =
+                GetApiValidationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetApiValidationsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetApiValidations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/ApiValidations/GetApiValidations");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetApiValidationsResponse>
+                transformer =
+                        GetApiValidationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetApiValidationsRequest, GetApiValidationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetApiValidationsRequest, GetApiValidationsResponse>,
+                        java.util.concurrent.Future<GetApiValidationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetApiValidationsRequest, GetApiValidationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCertificateResponse> getCertificate(
+            GetCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetCertificateRequest, GetCertificateResponse>
+                    handler) {
+        LOG.trace("Called async getCertificate");
+        final GetCertificateRequest interceptedRequest =
+                GetCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/GetCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetCertificateResponse>
+                transformer =
+                        GetCertificateConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetCertificateRequest, GetCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetCertificateRequest, GetCertificateResponse>,
+                        java.util.concurrent.Future<GetCertificateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetCertificateRequest, GetCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSdkResponse> getSdk(
+            GetSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handler) {
+        LOG.trace("Called async getSdk");
+        final GetSdkRequest interceptedRequest = GetSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSdkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "GetSdk",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/GetSdk");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSdkResponse> transformer =
+                GetSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetSdkRequest, GetSdkResponse>,
+                        java.util.concurrent.Future<GetSdkResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSdkRequest, GetSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApisResponse> listApis(
+            ListApisRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse>
+                    handler) {
+        LOG.trace("Called async listApis");
+        final ListApisRequest interceptedRequest = ListApisConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListApisConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ListApis",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/ListApis");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListApisResponse> transformer =
+                ListApisConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListApisRequest, ListApisResponse>,
+                        java.util.concurrent.Future<ListApisResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListApisRequest, ListApisResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCertificatesResponse> listCertificates(
+            ListCertificatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListCertificatesRequest, ListCertificatesResponse>
+                    handler) {
+        LOG.trace("Called async listCertificates");
+        final ListCertificatesRequest interceptedRequest =
+                ListCertificatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListCertificatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ListCertificates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/ListCertificates");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListCertificatesResponse>
+                transformer =
+                        ListCertificatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListCertificatesRequest, ListCertificatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListCertificatesRequest, ListCertificatesResponse>,
+                        java.util.concurrent.Future<ListCertificatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListCertificatesRequest, ListCertificatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSdkLanguageTypesResponse> listSdkLanguageTypes(
+            ListSdkLanguageTypesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
+                    handler) {
+        LOG.trace("Called async listSdkLanguageTypes");
+        final ListSdkLanguageTypesRequest interceptedRequest =
+                ListSdkLanguageTypesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSdkLanguageTypesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ListSdkLanguageTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/SdkLanguageTypeSummary/ListSdkLanguageTypes");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSdkLanguageTypesResponse>
+                transformer =
+                        ListSdkLanguageTypesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>,
+                        java.util.concurrent.Future<ListSdkLanguageTypesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSdkLanguageTypesRequest, ListSdkLanguageTypesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSdksResponse> listSdks(
+            ListSdksRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse>
+                    handler) {
+        LOG.trace("Called async listSdks");
+        final ListSdksRequest interceptedRequest = ListSdksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSdksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "ListSdks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/ListSdks");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSdksResponse> transformer =
+                ListSdksConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListSdksRequest, ListSdksResponse>,
+                        java.util.concurrent.Future<ListSdksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSdksRequest, ListSdksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiResponse> updateApi(
+            UpdateApiRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse>
+                    handler) {
+        LOG.trace("Called async updateApi");
+        final UpdateApiRequest interceptedRequest = UpdateApiConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateApiConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "UpdateApi",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Api/UpdateApi");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateApiResponse>
+                transformer =
+                        UpdateApiConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<UpdateApiRequest, UpdateApiResponse>,
+                        java.util.concurrent.Future<UpdateApiResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateApiDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateApiRequest, UpdateApiResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCertificateResponse> updateCertificate(
+            UpdateCertificateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCertificateRequest, UpdateCertificateResponse>
+                    handler) {
+        LOG.trace("Called async updateCertificate");
+        final UpdateCertificateRequest interceptedRequest =
+                UpdateCertificateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateCertificateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "UpdateCertificate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Certificate/UpdateCertificate");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateCertificateResponse>
+                transformer =
+                        UpdateCertificateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateCertificateRequest, UpdateCertificateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateCertificateRequest, UpdateCertificateResponse>,
+                        java.util.concurrent.Future<UpdateCertificateResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateCertificateDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateCertificateRequest, UpdateCertificateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSdkResponse> updateSdk(
+            UpdateSdkRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>
+                    handler) {
+        LOG.trace("Called async updateSdk");
+        final UpdateSdkRequest interceptedRequest = UpdateSdkConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSdkConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ApiGateway",
+                        "UpdateSdk",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/api-gateway/20190501/Sdk/UpdateSdk");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSdkResponse>
+                transformer =
+                        UpdateSdkConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<UpdateSdkRequest, UpdateSdkResponse>,
+                        java.util.concurrent.Future<UpdateSdkResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSdkDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSdkRequest, UpdateSdkResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

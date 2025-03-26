@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Summary of the Kafka Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Summary of the Kafka Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KafkaConnectionSummary.Builder.class)
+    builder = KafkaConnectionSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KafkaConnectionSummary extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,7 +199,10 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Kafka technology type. */
+        /**
+         * The Kafka technology type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private KafkaConnection.TechnologyType technologyType;
 
@@ -207,55 +211,58 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
          *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(KafkaConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stream pool being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
         private String streamPoolId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stream pool being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
          *
          * @param streamPoolId the value to set
          * @return this builder
-         */
+         **/
         public Builder streamPoolId(String streamPoolId) {
             this.streamPoolId = streamPoolId;
             this.__explicitlySet__.add("streamPoolId");
             return this;
         }
         /**
-         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-         * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-         * connection to the Kafka cluster. Example: {@code
-         * "server1.example.com:9092,server2.example.com:9092"}
-         */
+         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+         * list of KafkaBootstrapServer objects specified by host/port.
+         * Used for establishing the initial connection to the Kafka cluster.
+         * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
         private java.util.List<KafkaBootstrapServer> bootstrapServers;
 
         /**
-         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-         * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-         * connection to the Kafka cluster. Example: {@code
-         * "server1.example.com:9092,server2.example.com:9092"}
+         * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+         * list of KafkaBootstrapServer objects specified by host/port.
+         * Used for establishing the initial connection to the Kafka cluster.
+         * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
          *
          * @param bootstrapServers the value to set
          * @return this builder
-         */
+         **/
         public Builder bootstrapServers(java.util.List<KafkaBootstrapServer> bootstrapServers) {
             this.bootstrapServers = bootstrapServers;
             this.__explicitlySet__.add("bootstrapServers");
             return this;
         }
-        /** Security Type for Kafka. */
+        /**
+         * Security Type for Kafka.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private KafkaConnection.SecurityProtocol securityProtocol;
 
@@ -264,158 +271,155 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
          *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(KafkaConnection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-         * associated system of the given technology. It must conform to the specific security
-         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
          *
          * @param trustStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStoreSecretId(String trustStoreSecretId) {
             this.trustStoreSecretId = trustStoreSecretId;
             this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka TrustStore password is stored. Note: When provided,
-         * 'trustStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          * @param trustStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
             this.trustStorePasswordSecretId = trustStorePasswordSecretId;
             this.__explicitlySet__.add("trustStorePasswordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
          *
          * @param keyStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreSecretId(String keyStoreSecretId) {
             this.keyStoreSecretId = keyStoreSecretId;
             this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka KeyStore password is stored. Note: When provided,
-         * 'keyStorePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          * @param keyStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
             this.keyStorePasswordSecretId = keyStorePasswordSecretId;
             this.__explicitlySet__.add("keyStorePasswordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
          *
          * @param sslKeyPasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
             this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
@@ -560,7 +564,9 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -634,7 +640,10 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
     }
 
-    /** The Kafka technology type. */
+    /**
+     * The Kafka technology type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final KafkaConnection.TechnologyType technologyType;
 
@@ -642,50 +651,53 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
      * The Kafka technology type.
      *
      * @return the value
-     */
+     **/
     public KafkaConnection.TechnologyType getTechnologyType() {
         return technologyType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stream pool being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamPoolId")
     private final String streamPoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stream pool being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      *
      * @return the value
-     */
+     **/
     public String getStreamPoolId() {
         return streamPoolId;
     }
 
     /**
-     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-     * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-     * connection to the Kafka cluster. Example: {@code
-     * "server1.example.com:9092,server2.example.com:9092"}
-     */
+     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+     * list of KafkaBootstrapServer objects specified by host/port.
+     * Used for establishing the initial connection to the Kafka cluster.
+     * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bootstrapServers")
     private final java.util.List<KafkaBootstrapServer> bootstrapServers;
 
     /**
-     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of
-     * KafkaBootstrapServer objects specified by host/port. Used for establishing the initial
-     * connection to the Kafka cluster. Example: {@code
-     * "server1.example.com:9092,server2.example.com:9092"}
+     * Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka:
+     * list of KafkaBootstrapServer objects specified by host/port.
+     * Used for establishing the initial connection to the Kafka cluster.
+     * Example: {@code "server1.example.com:9092,server2.example.com:9092"}
      *
      * @return the value
-     */
+     **/
     public java.util.List<KafkaBootstrapServer> getBootstrapServers() {
         return bootstrapServers;
     }
 
-    /** Security Type for Kafka. */
+    /**
+     * Security Type for Kafka.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final KafkaConnection.SecurityProtocol securityProtocol;
 
@@ -693,144 +705,141 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
      * Security Type for Kafka.
      *
      * @return the value
-     */
+     **/
     public KafkaConnection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
-     * associated system of the given technology. It must conform to the specific security
-     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
-     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStoreSecretId() {
         return trustStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka TrustStore password is stored. Note: When provided,
-     * 'trustStorePassword' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStorePasswordSecretId() {
         return trustStorePasswordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStoreSecretId() {
         return keyStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka KeyStore password is stored. Note: When provided, 'keyStorePassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStorePasswordSecretId() {
         return keyStorePasswordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the kafka Ssl Key password is stored. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSslKeyPasswordSecretId() {
         return sslKeyPasswordSecretId;
     }
@@ -842,7 +851,6 @@ public final class KafkaConnectionSummary extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The particular finding reported by the security assessment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The particular finding reported by the security assessment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Finding.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Finding extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Finding extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -80,222 +78,209 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A unique identifier for the finding. This is common for the finding across targets. */
+        /**
+         * A unique identifier for the finding. This is common for the finding across targets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * A unique identifier for the finding. This is common for the finding across targets.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The severity of the finding. */
+        /**
+         * The severity of the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private Severity severity;
 
         /**
          * The severity of the finding.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(Severity severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** The OCID of the assessment that generated this finding. */
+        /**
+         * The OCID of the assessment that generated this finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
         private String assessmentId;
 
         /**
          * The OCID of the assessment that generated this finding.
-         *
          * @param assessmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder assessmentId(String assessmentId) {
             this.assessmentId = assessmentId;
             this.__explicitlySet__.add("assessmentId");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The short title for the finding. */
+        /**
+         * The short title for the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("title")
         private String title;
 
         /**
          * The short title for the finding.
-         *
          * @param title the value to set
          * @return this builder
-         */
+         **/
         public Builder title(String title) {
             this.title = title;
             this.__explicitlySet__.add("title");
             return this;
         }
         /**
-         * The explanation of the issue in this finding. It explains the reason for the rule and, if
-         * a risk is reported, it may also explain the recommended actions for remediation.
-         */
+         * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remarks")
         private String remarks;
 
         /**
-         * The explanation of the issue in this finding. It explains the reason for the rule and, if
-         * a risk is reported, it may also explain the recommended actions for remediation.
-         *
+         * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
          * @param remarks the value to set
          * @return this builder
-         */
+         **/
         public Builder remarks(String remarks) {
             this.remarks = remarks;
             this.__explicitlySet__.add("remarks");
             return this;
         }
         /**
-         * The details of the finding. Provides detailed information to explain the finding summary,
-         * typically results from the assessed database, followed by any recommendations for
-         * changes.
-         */
+         * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private Object details;
 
         /**
-         * The details of the finding. Provides detailed information to explain the finding summary,
-         * typically results from the assessed database, followed by any recommendations for
-         * changes.
-         *
+         * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(Object details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
         /**
-         * The brief summary of the finding. When the finding is informational, the summary
-         * typically reports only the number of data elements that were examined.
-         */
+         * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
-         * The brief summary of the finding. When the finding is informational, the summary
-         * typically reports only the number of data elements that were examined.
-         *
+         * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
          * @param summary the value to set
          * @return this builder
-         */
+         **/
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
             return this;
         }
         /**
-         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
-         * recommendation, STIG rule, or related to a GDPR Article/Recital.
-         */
+         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("references")
         private References references;
 
         /**
-         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
-         * recommendation, STIG rule, or related to a GDPR Article/Recital.
-         *
+         * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
          * @param references the value to set
          * @return this builder
-         */
+         **/
         public Builder references(References references) {
             this.references = references;
             this.__explicitlySet__.add("references");
             return this;
         }
         /**
-         * The severity of the finding as determined by security assessment. This cannot be modified
-         * by user.
-         */
+         * The severity of the finding as determined by security assessment. This cannot be modified by user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
         private Finding.Severity oracleDefinedSeverity;
 
         /**
-         * The severity of the finding as determined by security assessment. This cannot be modified
-         * by user.
-         *
+         * The severity of the finding as determined by security assessment. This cannot be modified by user.
          * @param oracleDefinedSeverity the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleDefinedSeverity(Finding.Severity oracleDefinedSeverity) {
             this.oracleDefinedSeverity = oracleDefinedSeverity;
             this.__explicitlySet__.add("oracleDefinedSeverity");
             return this;
         }
-        /** Determines if this risk level was modified by user. */
+        /**
+         * Determines if this risk level was modified by user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRiskModified")
         private Boolean isRiskModified;
 
         /**
          * Determines if this risk level was modified by user.
-         *
          * @param isRiskModified the value to set
          * @return this builder
-         */
+         **/
         public Builder isRiskModified(Boolean isRiskModified) {
             this.isRiskModified = isRiskModified;
             this.__explicitlySet__.add("isRiskModified");
             return this;
         }
         /**
-         * Determines if this risk level has changed on the target database since the last time
-         * 'severity' was modified by user.
-         */
+         * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasTargetDbRiskLevelChanged")
         private Boolean hasTargetDbRiskLevelChanged;
 
         /**
-         * Determines if this risk level has changed on the target database since the last time
-         * 'severity' was modified by user.
-         *
+         * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
          * @param hasTargetDbRiskLevelChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder hasTargetDbRiskLevelChanged(Boolean hasTargetDbRiskLevelChanged) {
             this.hasTargetDbRiskLevelChanged = hasTargetDbRiskLevelChanged;
             this.__explicitlySet__.add("hasTargetDbRiskLevelChanged");
             return this;
         }
-        /** User provided reason for accepting or modifying this finding if they choose to do so. */
+        /**
+         * User provided reason for accepting or modifying this finding if they choose to do so.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("justification")
         private String justification;
 
         /**
          * User provided reason for accepting or modifying this finding if they choose to do so.
-         *
          * @param justification the value to set
          * @return this builder
-         */
+         **/
         public Builder justification(String justification) {
             this.justification = justification;
             this.__explicitlySet__.add("justification");
@@ -303,65 +288,65 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
         }
         /**
          * The time until which the change in severity(deferred/modified) of this finding is valid.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
         private java.util.Date timeValidUntil;
 
         /**
          * The time until which the change in severity(deferred/modified) of this finding is valid.
-         *
          * @param timeValidUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidUntil(java.util.Date timeValidUntil) {
             this.timeValidUntil = timeValidUntil;
             this.__explicitlySet__.add("timeValidUntil");
             return this;
         }
         /**
-         * The date and time the risk level of finding was last updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the risk level of finding was last updated, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the finding. */
+        /**
+         * The current state of the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private FindingLifecycleState lifecycleState;
 
         /**
          * The current state of the finding.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(FindingLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Details about the current state of the finding. */
+        /**
+         * Details about the current state of the finding.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Details about the current state of the finding.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -454,7 +439,9 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -463,21 +450,24 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** A unique identifier for the finding. This is common for the finding across targets. */
+    /**
+     * A unique identifier for the finding. This is common for the finding across targets.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * A unique identifier for the finding. This is common for the finding across targets.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The severity of the finding. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The severity of the finding.
+     **/
+    public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -487,8 +477,8 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
         Deferred("DEFERRED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -527,238 +517,228 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** The severity of the finding. */
+    /**
+     * The severity of the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final Severity severity;
 
     /**
      * The severity of the finding.
-     *
      * @return the value
-     */
+     **/
     public Severity getSeverity() {
         return severity;
     }
 
-    /** The OCID of the assessment that generated this finding. */
+    /**
+     * The OCID of the assessment that generated this finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assessmentId")
     private final String assessmentId;
 
     /**
      * The OCID of the assessment that generated this finding.
-     *
      * @return the value
-     */
+     **/
     public String getAssessmentId() {
         return assessmentId;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The short title for the finding. */
+    /**
+     * The short title for the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("title")
     private final String title;
 
     /**
      * The short title for the finding.
-     *
      * @return the value
-     */
+     **/
     public String getTitle() {
         return title;
     }
 
     /**
-     * The explanation of the issue in this finding. It explains the reason for the rule and, if a
-     * risk is reported, it may also explain the recommended actions for remediation.
-     */
+     * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remarks")
     private final String remarks;
 
     /**
-     * The explanation of the issue in this finding. It explains the reason for the rule and, if a
-     * risk is reported, it may also explain the recommended actions for remediation.
-     *
+     * The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
      * @return the value
-     */
+     **/
     public String getRemarks() {
         return remarks;
     }
 
     /**
-     * The details of the finding. Provides detailed information to explain the finding summary,
-     * typically results from the assessed database, followed by any recommendations for changes.
-     */
+     * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final Object details;
 
     /**
-     * The details of the finding. Provides detailed information to explain the finding summary,
-     * typically results from the assessed database, followed by any recommendations for changes.
-     *
+     * The details of the finding. Provides detailed information to explain the finding summary, typically results from the assessed database, followed by any recommendations for changes.
      * @return the value
-     */
+     **/
     public Object getDetails() {
         return details;
     }
 
     /**
-     * The brief summary of the finding. When the finding is informational, the summary typically
-     * reports only the number of data elements that were examined.
-     */
+     * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
-     * The brief summary of the finding. When the finding is informational, the summary typically
-     * reports only the number of data elements that were examined.
-     *
+     * The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
      * @return the value
-     */
+     **/
     public String getSummary() {
         return summary;
     }
 
     /**
-     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
-     * recommendation, STIG rule, or related to a GDPR Article/Recital.
-     */
+     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("references")
     private final References references;
 
     /**
-     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark
-     * recommendation, STIG rule, or related to a GDPR Article/Recital.
-     *
+     * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, STIG rule, or related to a GDPR Article/Recital.
      * @return the value
-     */
+     **/
     public References getReferences() {
         return references;
     }
 
     /**
-     * The severity of the finding as determined by security assessment. This cannot be modified by
-     * user.
-     */
+     * The severity of the finding as determined by security assessment. This cannot be modified by user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleDefinedSeverity")
     private final Finding.Severity oracleDefinedSeverity;
 
     /**
-     * The severity of the finding as determined by security assessment. This cannot be modified by
-     * user.
-     *
+     * The severity of the finding as determined by security assessment. This cannot be modified by user.
      * @return the value
-     */
+     **/
     public Finding.Severity getOracleDefinedSeverity() {
         return oracleDefinedSeverity;
     }
 
-    /** Determines if this risk level was modified by user. */
+    /**
+     * Determines if this risk level was modified by user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRiskModified")
     private final Boolean isRiskModified;
 
     /**
      * Determines if this risk level was modified by user.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRiskModified() {
         return isRiskModified;
     }
 
     /**
-     * Determines if this risk level has changed on the target database since the last time
-     * 'severity' was modified by user.
-     */
+     * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasTargetDbRiskLevelChanged")
     private final Boolean hasTargetDbRiskLevelChanged;
 
     /**
-     * Determines if this risk level has changed on the target database since the last time
-     * 'severity' was modified by user.
-     *
+     * Determines if this risk level has changed on the target database since the last time 'severity' was modified by user.
      * @return the value
-     */
+     **/
     public Boolean getHasTargetDbRiskLevelChanged() {
         return hasTargetDbRiskLevelChanged;
     }
 
-    /** User provided reason for accepting or modifying this finding if they choose to do so. */
+    /**
+     * User provided reason for accepting or modifying this finding if they choose to do so.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("justification")
     private final String justification;
 
     /**
      * User provided reason for accepting or modifying this finding if they choose to do so.
-     *
      * @return the value
-     */
+     **/
     public String getJustification() {
         return justification;
     }
 
-    /** The time until which the change in severity(deferred/modified) of this finding is valid. */
+    /**
+     * The time until which the change in severity(deferred/modified) of this finding is valid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidUntil")
     private final java.util.Date timeValidUntil;
 
     /**
      * The time until which the change in severity(deferred/modified) of this finding is valid.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidUntil() {
         return timeValidUntil;
     }
 
     /**
-     * The date and time the risk level of finding was last updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the risk level of finding was last updated, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the finding. */
+    /**
+     * The current state of the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final FindingLifecycleState lifecycleState;
 
     /**
      * The current state of the finding.
-     *
      * @return the value
-     */
+     **/
     public FindingLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Details about the current state of the finding. */
+    /**
+     * Details about the current state of the finding.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Details about the current state of the finding.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -770,7 +750,6 @@ public final class Finding extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

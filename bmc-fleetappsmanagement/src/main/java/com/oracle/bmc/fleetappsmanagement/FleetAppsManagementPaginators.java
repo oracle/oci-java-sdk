@@ -9,31 +9,23 @@ import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of FleetAppsManagement where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of FleetAppsManagement where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class FleetAppsManagementPaginators {
     private final FleetAppsManagement client;
 
@@ -42,18 +34,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAnnouncements operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAnnouncements operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAnnouncementsResponse> listAnnouncementsResponseIterator(
             final ListAnnouncementsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAnnouncementsRequest.Builder,
-                ListAnnouncementsRequest,
+                ListAnnouncementsRequest.Builder, ListAnnouncementsRequest,
                 ListAnnouncementsResponse>(
                 new java.util.function.Supplier<ListAnnouncementsRequest.Builder>() {
                     @Override
@@ -95,21 +85,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary} objects contained in responses
-     * from the listAnnouncements operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary} objects
+     * contained in responses from the listAnnouncements operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary>
             listAnnouncementsRecordIterator(final ListAnnouncementsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAnnouncementsRequest.Builder,
-                ListAnnouncementsRequest,
+                ListAnnouncementsRequest.Builder, ListAnnouncementsRequest,
                 ListAnnouncementsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.AnnouncementSummary>(
                 new java.util.function.Supplier<ListAnnouncementsRequest.Builder>() {
@@ -163,18 +150,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFleetCredentials operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleetCredentials operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetCredentialsResponse> listFleetCredentialsResponseIterator(
             final ListFleetCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFleetCredentialsRequest.Builder,
-                ListFleetCredentialsRequest,
+                ListFleetCredentialsRequest.Builder, ListFleetCredentialsRequest,
                 ListFleetCredentialsResponse>(
                 new java.util.function.Supplier<ListFleetCredentialsRequest.Builder>() {
                     @Override
@@ -216,21 +201,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary} objects contained in
-     * responses from the listFleetCredentials operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary} objects
+     * contained in responses from the listFleetCredentials operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary>
             listFleetCredentialsRecordIterator(final ListFleetCredentialsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetCredentialsRequest.Builder,
-                ListFleetCredentialsRequest,
+                ListFleetCredentialsRequest.Builder, ListFleetCredentialsRequest,
                 ListFleetCredentialsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetCredentialSummary>(
                 new java.util.function.Supplier<ListFleetCredentialsRequest.Builder>() {
@@ -285,18 +267,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFleetProducts operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleetProducts operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetProductsResponse> listFleetProductsResponseIterator(
             final ListFleetProductsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFleetProductsRequest.Builder,
-                ListFleetProductsRequest,
+                ListFleetProductsRequest.Builder, ListFleetProductsRequest,
                 ListFleetProductsResponse>(
                 new java.util.function.Supplier<ListFleetProductsRequest.Builder>() {
                     @Override
@@ -338,21 +318,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary} objects contained in responses
-     * from the listFleetProducts operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary} objects
+     * contained in responses from the listFleetProducts operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary>
             listFleetProductsRecordIterator(final ListFleetProductsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetProductsRequest.Builder,
-                ListFleetProductsRequest,
+                ListFleetProductsRequest.Builder, ListFleetProductsRequest,
                 ListFleetProductsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetProductSummary>(
                 new java.util.function.Supplier<ListFleetProductsRequest.Builder>() {
@@ -406,18 +383,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFleetProperties operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleetProperties operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetPropertiesResponse> listFleetPropertiesResponseIterator(
             final ListFleetPropertiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFleetPropertiesRequest.Builder,
-                ListFleetPropertiesRequest,
+                ListFleetPropertiesRequest.Builder, ListFleetPropertiesRequest,
                 ListFleetPropertiesResponse>(
                 new java.util.function.Supplier<ListFleetPropertiesRequest.Builder>() {
                     @Override
@@ -459,21 +434,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary} objects contained in responses
-     * from the listFleetProperties operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary} objects
+     * contained in responses from the listFleetProperties operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary>
             listFleetPropertiesRecordIterator(final ListFleetPropertiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetPropertiesRequest.Builder,
-                ListFleetPropertiesRequest,
+                ListFleetPropertiesRequest.Builder, ListFleetPropertiesRequest,
                 ListFleetPropertiesResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetPropertySummary>(
                 new java.util.function.Supplier<ListFleetPropertiesRequest.Builder>() {
@@ -527,18 +499,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFleetResources operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleetResources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetResourcesResponse> listFleetResourcesResponseIterator(
             final ListFleetResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFleetResourcesRequest.Builder,
-                ListFleetResourcesRequest,
+                ListFleetResourcesRequest.Builder, ListFleetResourcesRequest,
                 ListFleetResourcesResponse>(
                 new java.util.function.Supplier<ListFleetResourcesRequest.Builder>() {
                     @Override
@@ -580,21 +550,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary} objects contained in responses
-     * from the listFleetResources operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary} objects
+     * contained in responses from the listFleetResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary>
             listFleetResourcesRecordIterator(final ListFleetResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetResourcesRequest.Builder,
-                ListFleetResourcesRequest,
+                ListFleetResourcesRequest.Builder, ListFleetResourcesRequest,
                 ListFleetResourcesResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetResourceSummary>(
                 new java.util.function.Supplier<ListFleetResourcesRequest.Builder>() {
@@ -648,12 +615,11 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFleetTargets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleetTargets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetTargetsResponse> listFleetTargetsResponseIterator(
             final ListFleetTargetsRequest request) {
@@ -699,22 +665,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects contained in responses
-     * from the listFleetTargets operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects
+     * contained in responses from the listFleetTargets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary>
             listFleetTargetsRecordIterator(final ListFleetTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetTargetsRequest.Builder,
-                ListFleetTargetsRequest,
-                ListFleetTargetsResponse,
+                ListFleetTargetsRequest.Builder, ListFleetTargetsRequest, ListFleetTargetsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary>(
                 new java.util.function.Supplier<ListFleetTargetsRequest.Builder>() {
                     @Override
@@ -767,12 +729,11 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listFleets
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFleets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFleetsResponse> listFleetsResponseIterator(
             final ListFleetsRequest request) {
@@ -817,21 +778,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetSummary} objects contained in responses from
-     * the listFleets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetSummary} objects
+     * contained in responses from the listFleets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetSummary> listFleetsRecordIterator(
             final ListFleetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFleetsRequest.Builder,
-                ListFleetsRequest,
-                ListFleetsResponse,
+                ListFleetsRequest.Builder, ListFleetsRequest, ListFleetsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetSummary>(
                 new java.util.function.Supplier<ListFleetsRequest.Builder>() {
                     @Override
@@ -881,19 +839,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInventoryResources operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listInventoryResources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInventoryResourcesResponse> listInventoryResourcesResponseIterator(
             final ListInventoryResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInventoryResourcesRequest.Builder,
-                ListInventoryResourcesRequest,
+                ListInventoryResourcesRequest.Builder, ListInventoryResourcesRequest,
                 ListInventoryResourcesResponse>(
                 new java.util.function.Supplier<ListInventoryResourcesRequest.Builder>() {
                     @Override
@@ -936,21 +891,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary} objects contained in
-     * responses from the listInventoryResources operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary} objects
+     * contained in responses from the listInventoryResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary>
             listInventoryResourcesRecordIterator(final ListInventoryResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInventoryResourcesRequest.Builder,
-                ListInventoryResourcesRequest,
+                ListInventoryResourcesRequest.Builder, ListInventoryResourcesRequest,
                 ListInventoryResourcesResponse,
                 com.oracle.bmc.fleetappsmanagement.model.InventoryResourceSummary>(
                 new java.util.function.Supplier<ListInventoryResourcesRequest.Builder>() {
@@ -1007,12 +959,11 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listTargets
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTargets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTargetsResponse> listTargetsResponseIterator(
             final ListTargetsRequest request) {
@@ -1057,21 +1008,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects contained in responses
-     * from the listTargets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects
+     * contained in responses from the listTargets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary>
             listTargetsRecordIterator(final ListTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTargetsRequest.Builder,
-                ListTargetsRequest,
-                ListTargetsResponse,
+                ListTargetsRequest.Builder, ListTargetsRequest, ListTargetsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.FleetTargetSummary>(
                 new java.util.function.Supplier<ListTargetsRequest.Builder>() {
                     @Override
@@ -1123,19 +1071,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -1178,21 +1123,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.WorkRequestError} objects contained in responses
-     * from the listWorkRequestErrors operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.WorkRequestError} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
@@ -1246,18 +1188,16 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1299,21 +1239,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry} objects contained in responses
-     * from the listWorkRequestLogs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
@@ -1367,12 +1304,11 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1418,22 +1354,18 @@ public class FleetAppsManagementPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary} objects contained in responses
-     * from the listWorkRequests operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

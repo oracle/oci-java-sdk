@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A summary of a field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A summary of a field.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsFieldSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsFieldSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsFieldSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "ceeAlias",
@@ -95,130 +94,141 @@ public final class LogAnalyticsFieldSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name this field is given in the common event expression standard from mitre.org. This
-         * is used for reference when exporting content conforming to CEE standard
-         */
+         * The name this field is given in the common event expression standard from mitre.org.
+         * This is used for reference when exporting content conforming to CEE standard
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ceeAlias")
         private String ceeAlias;
 
         /**
-         * The name this field is given in the common event expression standard from mitre.org. This
-         * is used for reference when exporting content conforming to CEE standard
+         * The name this field is given in the common event expression standard from mitre.org.
+         * This is used for reference when exporting content conforming to CEE standard
          *
          * @param ceeAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder ceeAlias(String ceeAlias) {
             this.ceeAlias = ceeAlias;
             this.__explicitlySet__.add("ceeAlias");
             return this;
         }
-        /** The field data type. */
+        /**
+         * The field data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private String dataType;
 
         /**
          * The field data type.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(String dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
-        /** The field default regular expression. */
+        /**
+         * The field default regular expression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
         private String regularExpression;
 
         /**
          * The field default regular expression.
-         *
          * @param regularExpression the value to set
          * @return this builder
-         */
+         **/
         public Builder regularExpression(String regularExpression) {
             this.regularExpression = regularExpression;
             this.__explicitlySet__.add("regularExpression");
             return this;
         }
-        /** The field description. */
+        /**
+         * The field description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The field description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The field display name. */
+        /**
+         * The field display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The field display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The field edit version. */
+        /**
+         * The field edit version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
         private Long editVersion;
 
         /**
          * The field edit version.
-         *
          * @param editVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder editVersion(Long editVersion) {
             this.editVersion = editVersion;
             this.__explicitlySet__.add("editVersion");
             return this;
         }
-        /** The facet priority. */
+        /**
+         * The facet priority.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("facetPriority")
         private Long facetPriority;
 
         /**
          * The facet priority.
-         *
          * @param facetPriority the value to set
          * @return this builder
-         */
+         **/
         public Builder facetPriority(Long facetPriority) {
             this.facetPriority = facetPriority;
             this.__explicitlySet__.add("facetPriority");
             return this;
         }
-        /** The field internal name. */
+        /**
+         * The field internal name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The field internal name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A flag inidcating whether or not the facet is elibigle for use. */
+        /**
+         * A flag inidcating whether or not the facet is elibigle for use.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFacetEligible")
         private Boolean isFacetEligible;
 
@@ -227,13 +237,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isFacetEligible the value to set
          * @return this builder
-         */
+         **/
         public Builder isFacetEligible(Boolean isFacetEligible) {
             this.isFacetEligible = isFacetEligible;
             this.__explicitlySet__.add("isFacetEligible");
             return this;
         }
-        /** A flag inidcating whether or not the cardinality of the field is high. */
+        /**
+         * A flag inidcating whether or not the cardinality of the field is high.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighCardinality")
         private Boolean isHighCardinality;
 
@@ -242,13 +255,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isHighCardinality the value to set
          * @return this builder
-         */
+         **/
         public Builder isHighCardinality(Boolean isHighCardinality) {
             this.isHighCardinality = isHighCardinality;
             this.__explicitlySet__.add("isHighCardinality");
             return this;
         }
-        /** A flag inidcating whether or not the field is a large data field. */
+        /**
+         * A flag inidcating whether or not the field is a large data field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLargeData")
         private Boolean isLargeData;
 
@@ -257,13 +273,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isLargeData the value to set
          * @return this builder
-         */
+         **/
         public Builder isLargeData(Boolean isLargeData) {
             this.isLargeData = isLargeData;
             this.__explicitlySet__.add("isLargeData");
             return this;
         }
-        /** A flag indicating whether or not the field is multi-valued. */
+        /**
+         * A flag indicating whether or not the field is multi-valued.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
         private Boolean isMultiValued;
 
@@ -272,13 +291,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isMultiValued the value to set
          * @return this builder
-         */
+         **/
         public Builder isMultiValued(Boolean isMultiValued) {
             this.isMultiValued = isMultiValued;
             this.__explicitlySet__.add("isMultiValued");
             return this;
         }
-        /** A flag inidcating whether or not this is a primary field. */
+        /**
+         * A flag inidcating whether or not this is a primary field.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
         private Boolean isPrimary;
 
@@ -287,32 +309,36 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isPrimary the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrimary(Boolean isPrimary) {
             this.isPrimary = isPrimary;
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
-         */
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
         private Boolean isSystem;
 
         /**
-         * The system flag. A value of false denotes a custom, or user defined object. A value of
-         * true denotes a built in object.
+         * The system flag.  A value of false denotes a custom, or user
+         * defined object.  A value of true denotes a built in object.
          *
          * @param isSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder isSystem(Boolean isSystem) {
             this.isSystem = isSystem;
             this.__explicitlySet__.add("isSystem");
             return this;
         }
-        /** A flag inidcating whether or not the field can be summarized. */
+        /**
+         * A flag inidcating whether or not the field can be summarized.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSummarizable")
         private Boolean isSummarizable;
 
@@ -321,28 +347,32 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isSummarizable the value to set
          * @return this builder
-         */
+         **/
         public Builder isSummarizable(Boolean isSummarizable) {
             this.isSummarizable = isSummarizable;
             this.__explicitlySet__.add("isSummarizable");
             return this;
         }
-        /** The mapped value. */
+        /**
+         * The mapped value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mappedValue")
         private String mappedValue;
 
         /**
          * The mapped value.
-         *
          * @param mappedValue the value to set
          * @return this builder
-         */
+         **/
         public Builder mappedValue(String mappedValue) {
             this.mappedValue = mappedValue;
             this.__explicitlySet__.add("mappedValue");
             return this;
         }
-        /** A flag inidcating whether or not the field is metric key eligible. */
+        /**
+         * A flag inidcating whether or not the field is metric key eligible.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricKeyEligible")
         private Boolean isMetricKeyEligible;
 
@@ -351,13 +381,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isMetricKeyEligible the value to set
          * @return this builder
-         */
+         **/
         public Builder isMetricKeyEligible(Boolean isMetricKeyEligible) {
             this.isMetricKeyEligible = isMetricKeyEligible;
             this.__explicitlySet__.add("isMetricKeyEligible");
             return this;
         }
-        /** A flag inidcating whether or not the field is metric value eligible. */
+        /**
+         * A flag inidcating whether or not the field is metric value eligible.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetricValueEligible")
         private Boolean isMetricValueEligible;
 
@@ -366,13 +399,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isMetricValueEligible the value to set
          * @return this builder
-         */
+         **/
         public Builder isMetricValueEligible(Boolean isMetricValueEligible) {
             this.isMetricValueEligible = isMetricValueEligible;
             this.__explicitlySet__.add("isMetricValueEligible");
             return this;
         }
-        /** A flag inidcating whether or not the field is range facet eligible. */
+        /**
+         * A flag inidcating whether or not the field is range facet eligible.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rangeFacetEligible")
         private Long rangeFacetEligible;
 
@@ -381,13 +417,16 @@ public final class LogAnalyticsFieldSummary
          *
          * @param rangeFacetEligible the value to set
          * @return this builder
-         */
+         **/
         public Builder rangeFacetEligible(Long rangeFacetEligible) {
             this.rangeFacetEligible = rangeFacetEligible;
             this.__explicitlySet__.add("rangeFacetEligible");
             return this;
         }
-        /** A flag inidcating whether or not the field is table eligible. */
+        /**
+         * A flag inidcating whether or not the field is table eligible.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTableEligible")
         private Boolean isTableEligible;
 
@@ -396,22 +435,23 @@ public final class LogAnalyticsFieldSummary
          *
          * @param isTableEligible the value to set
          * @return this builder
-         */
+         **/
         public Builder isTableEligible(Boolean isTableEligible) {
             this.isTableEligible = isTableEligible;
             this.__explicitlySet__.add("isTableEligible");
             return this;
         }
-        /** The field unit type. */
+        /**
+         * The field unit type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitType")
         private String unitType;
 
         /**
          * The field unit type.
-         *
          * @param unitType the value to set
          * @return this builder
-         */
+         **/
         public Builder unitType(String unitType) {
             this.unitType = unitType;
             this.__explicitlySet__.add("unitType");
@@ -520,7 +560,9 @@ public final class LogAnalyticsFieldSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -530,114 +572,125 @@ public final class LogAnalyticsFieldSummary
     }
 
     /**
-     * The name this field is given in the common event expression standard from mitre.org. This is
-     * used for reference when exporting content conforming to CEE standard
-     */
+     * The name this field is given in the common event expression standard from mitre.org.
+     * This is used for reference when exporting content conforming to CEE standard
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ceeAlias")
     private final String ceeAlias;
 
     /**
-     * The name this field is given in the common event expression standard from mitre.org. This is
-     * used for reference when exporting content conforming to CEE standard
+     * The name this field is given in the common event expression standard from mitre.org.
+     * This is used for reference when exporting content conforming to CEE standard
      *
      * @return the value
-     */
+     **/
     public String getCeeAlias() {
         return ceeAlias;
     }
 
-    /** The field data type. */
+    /**
+     * The field data type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final String dataType;
 
     /**
      * The field data type.
-     *
      * @return the value
-     */
+     **/
     public String getDataType() {
         return dataType;
     }
 
-    /** The field default regular expression. */
+    /**
+     * The field default regular expression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regularExpression")
     private final String regularExpression;
 
     /**
      * The field default regular expression.
-     *
      * @return the value
-     */
+     **/
     public String getRegularExpression() {
         return regularExpression;
     }
 
-    /** The field description. */
+    /**
+     * The field description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The field description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The field display name. */
+    /**
+     * The field display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The field display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The field edit version. */
+    /**
+     * The field edit version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("editVersion")
     private final Long editVersion;
 
     /**
      * The field edit version.
-     *
      * @return the value
-     */
+     **/
     public Long getEditVersion() {
         return editVersion;
     }
 
-    /** The facet priority. */
+    /**
+     * The facet priority.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("facetPriority")
     private final Long facetPriority;
 
     /**
      * The facet priority.
-     *
      * @return the value
-     */
+     **/
     public Long getFacetPriority() {
         return facetPriority;
     }
 
-    /** The field internal name. */
+    /**
+     * The field internal name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The field internal name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** A flag inidcating whether or not the facet is elibigle for use. */
+    /**
+     * A flag inidcating whether or not the facet is elibigle for use.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFacetEligible")
     private final Boolean isFacetEligible;
 
@@ -645,12 +698,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the facet is elibigle for use.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFacetEligible() {
         return isFacetEligible;
     }
 
-    /** A flag inidcating whether or not the cardinality of the field is high. */
+    /**
+     * A flag inidcating whether or not the cardinality of the field is high.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighCardinality")
     private final Boolean isHighCardinality;
 
@@ -658,12 +714,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the cardinality of the field is high.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHighCardinality() {
         return isHighCardinality;
     }
 
-    /** A flag inidcating whether or not the field is a large data field. */
+    /**
+     * A flag inidcating whether or not the field is a large data field.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLargeData")
     private final Boolean isLargeData;
 
@@ -671,12 +730,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field is a large data field.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsLargeData() {
         return isLargeData;
     }
 
-    /** A flag indicating whether or not the field is multi-valued. */
+    /**
+     * A flag indicating whether or not the field is multi-valued.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValued")
     private final Boolean isMultiValued;
 
@@ -684,12 +746,15 @@ public final class LogAnalyticsFieldSummary
      * A flag indicating whether or not the field is multi-valued.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiValued() {
         return isMultiValued;
     }
 
-    /** A flag inidcating whether or not this is a primary field. */
+    /**
+     * A flag inidcating whether or not this is a primary field.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrimary")
     private final Boolean isPrimary;
 
@@ -697,29 +762,33 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not this is a primary field.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPrimary() {
         return isPrimary;
     }
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
-     */
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSystem")
     private final Boolean isSystem;
 
     /**
-     * The system flag. A value of false denotes a custom, or user defined object. A value of true
-     * denotes a built in object.
+     * The system flag.  A value of false denotes a custom, or user
+     * defined object.  A value of true denotes a built in object.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSystem() {
         return isSystem;
     }
 
-    /** A flag inidcating whether or not the field can be summarized. */
+    /**
+     * A flag inidcating whether or not the field can be summarized.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSummarizable")
     private final Boolean isSummarizable;
 
@@ -727,25 +796,29 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field can be summarized.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSummarizable() {
         return isSummarizable;
     }
 
-    /** The mapped value. */
+    /**
+     * The mapped value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mappedValue")
     private final String mappedValue;
 
     /**
      * The mapped value.
-     *
      * @return the value
-     */
+     **/
     public String getMappedValue() {
         return mappedValue;
     }
 
-    /** A flag inidcating whether or not the field is metric key eligible. */
+    /**
+     * A flag inidcating whether or not the field is metric key eligible.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricKeyEligible")
     private final Boolean isMetricKeyEligible;
 
@@ -753,12 +826,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field is metric key eligible.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMetricKeyEligible() {
         return isMetricKeyEligible;
     }
 
-    /** A flag inidcating whether or not the field is metric value eligible. */
+    /**
+     * A flag inidcating whether or not the field is metric value eligible.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetricValueEligible")
     private final Boolean isMetricValueEligible;
 
@@ -766,12 +842,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field is metric value eligible.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsMetricValueEligible() {
         return isMetricValueEligible;
     }
 
-    /** A flag inidcating whether or not the field is range facet eligible. */
+    /**
+     * A flag inidcating whether or not the field is range facet eligible.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rangeFacetEligible")
     private final Long rangeFacetEligible;
 
@@ -779,12 +858,15 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field is range facet eligible.
      *
      * @return the value
-     */
+     **/
     public Long getRangeFacetEligible() {
         return rangeFacetEligible;
     }
 
-    /** A flag inidcating whether or not the field is table eligible. */
+    /**
+     * A flag inidcating whether or not the field is table eligible.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTableEligible")
     private final Boolean isTableEligible;
 
@@ -792,20 +874,21 @@ public final class LogAnalyticsFieldSummary
      * A flag inidcating whether or not the field is table eligible.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsTableEligible() {
         return isTableEligible;
     }
 
-    /** The field unit type. */
+    /**
+     * The field unit type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitType")
     private final String unitType;
 
     /**
      * The field unit type.
-     *
      * @return the value
-     */
+     **/
     public String getUnitType() {
         return unitType;
     }
@@ -817,7 +900,6 @@ public final class LogAnalyticsFieldSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

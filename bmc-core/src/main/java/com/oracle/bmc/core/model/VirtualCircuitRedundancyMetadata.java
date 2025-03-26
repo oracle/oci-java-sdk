@@ -5,25 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * This resource provides redundancy level details for the virtual circuit. For more about
- * redundancy, see [FastConnect Redundancy Best
- * Practices](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * This resource provides redundancy level details for the virtual circuit. For more about redundancy, see [FastConnect Redundancy Best Practices](https://docs.oracle.com/iaas/Content/Network/Concepts/fastconnectresiliency.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualCircuitRedundancyMetadata.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VirtualCircuitRedundancyMetadata.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualCircuitRedundancyMetadata
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "configuredRedundancyLevel",
@@ -42,23 +40,27 @@ public final class VirtualCircuitRedundancyMetadata
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The configured redundancy level of the virtual circuit. */
+        /**
+         * The configured redundancy level of the virtual circuit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuredRedundancyLevel")
         private ConfiguredRedundancyLevel configuredRedundancyLevel;
 
         /**
          * The configured redundancy level of the virtual circuit.
-         *
          * @param configuredRedundancyLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder configuredRedundancyLevel(
                 ConfiguredRedundancyLevel configuredRedundancyLevel) {
             this.configuredRedundancyLevel = configuredRedundancyLevel;
             this.__explicitlySet__.add("configuredRedundancyLevel");
             return this;
         }
-        /** Indicates if the configured level is met for IPv4 BGP redundancy. */
+        /**
+         * Indicates if the configured level is met for IPv4 BGP redundancy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv4bgpSessionRedundancyStatus")
         private Ipv4bgpSessionRedundancyStatus ipv4bgpSessionRedundancyStatus;
 
@@ -67,14 +69,17 @@ public final class VirtualCircuitRedundancyMetadata
          *
          * @param ipv4bgpSessionRedundancyStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv4bgpSessionRedundancyStatus(
                 Ipv4bgpSessionRedundancyStatus ipv4bgpSessionRedundancyStatus) {
             this.ipv4bgpSessionRedundancyStatus = ipv4bgpSessionRedundancyStatus;
             this.__explicitlySet__.add("ipv4bgpSessionRedundancyStatus");
             return this;
         }
-        /** Indicates if the configured level is met for IPv6 BGP redundancy. */
+        /**
+         * Indicates if the configured level is met for IPv6 BGP redundancy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6bgpSessionRedundancyStatus")
         private Ipv6bgpSessionRedundancyStatus ipv6bgpSessionRedundancyStatus;
 
@@ -83,7 +88,7 @@ public final class VirtualCircuitRedundancyMetadata
          *
          * @param ipv6bgpSessionRedundancyStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6bgpSessionRedundancyStatus(
                 Ipv6bgpSessionRedundancyStatus ipv6bgpSessionRedundancyStatus) {
             this.ipv6bgpSessionRedundancyStatus = ipv6bgpSessionRedundancyStatus;
@@ -121,7 +126,9 @@ public final class VirtualCircuitRedundancyMetadata
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,8 +137,10 @@ public final class VirtualCircuitRedundancyMetadata
         return new Builder().copy(this);
     }
 
-    /** The configured redundancy level of the virtual circuit. */
-    public enum ConfiguredRedundancyLevel implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The configured redundancy level of the virtual circuit.
+     **/
+    public enum ConfiguredRedundancyLevel {
         Device("DEVICE"),
         Pop("POP"),
         Region("REGION"),
@@ -139,8 +148,8 @@ public final class VirtualCircuitRedundancyMetadata
         Pending("PENDING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -179,28 +188,32 @@ public final class VirtualCircuitRedundancyMetadata
             return UnknownEnumValue;
         }
     };
-    /** The configured redundancy level of the virtual circuit. */
+    /**
+     * The configured redundancy level of the virtual circuit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuredRedundancyLevel")
     private final ConfiguredRedundancyLevel configuredRedundancyLevel;
 
     /**
      * The configured redundancy level of the virtual circuit.
-     *
      * @return the value
-     */
+     **/
     public ConfiguredRedundancyLevel getConfiguredRedundancyLevel() {
         return configuredRedundancyLevel;
     }
 
-    /** Indicates if the configured level is met for IPv4 BGP redundancy. */
-    public enum Ipv4bgpSessionRedundancyStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
+     *
+     **/
+    public enum Ipv4bgpSessionRedundancyStatus {
         ConfigurationMatch("CONFIGURATION_MATCH"),
         ConfigurationMismatch("CONFIGURATION_MISMATCH"),
         NotMetSla("NOT_MET_SLA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -239,7 +252,10 @@ public final class VirtualCircuitRedundancyMetadata
             return UnknownEnumValue;
         }
     };
-    /** Indicates if the configured level is met for IPv4 BGP redundancy. */
+    /**
+     * Indicates if the configured level is met for IPv4 BGP redundancy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv4bgpSessionRedundancyStatus")
     private final Ipv4bgpSessionRedundancyStatus ipv4bgpSessionRedundancyStatus;
 
@@ -247,20 +263,23 @@ public final class VirtualCircuitRedundancyMetadata
      * Indicates if the configured level is met for IPv4 BGP redundancy.
      *
      * @return the value
-     */
+     **/
     public Ipv4bgpSessionRedundancyStatus getIpv4bgpSessionRedundancyStatus() {
         return ipv4bgpSessionRedundancyStatus;
     }
 
-    /** Indicates if the configured level is met for IPv6 BGP redundancy. */
-    public enum Ipv6bgpSessionRedundancyStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
+     *
+     **/
+    public enum Ipv6bgpSessionRedundancyStatus {
         ConfigurationMatch("CONFIGURATION_MATCH"),
         ConfigurationMismatch("CONFIGURATION_MISMATCH"),
         NotMetSla("NOT_MET_SLA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -299,7 +318,10 @@ public final class VirtualCircuitRedundancyMetadata
             return UnknownEnumValue;
         }
     };
-    /** Indicates if the configured level is met for IPv6 BGP redundancy. */
+    /**
+     * Indicates if the configured level is met for IPv6 BGP redundancy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6bgpSessionRedundancyStatus")
     private final Ipv6bgpSessionRedundancyStatus ipv6bgpSessionRedundancyStatus;
 
@@ -307,7 +329,7 @@ public final class VirtualCircuitRedundancyMetadata
      * Indicates if the configured level is met for IPv6 BGP redundancy.
      *
      * @return the value
-     */
+     **/
     public Ipv6bgpSessionRedundancyStatus getIpv6bgpSessionRedundancyStatus() {
         return ipv6bgpSessionRedundancyStatus;
     }
@@ -319,7 +341,6 @@ public final class VirtualCircuitRedundancyMetadata
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

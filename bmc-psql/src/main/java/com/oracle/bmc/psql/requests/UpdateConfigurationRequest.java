@@ -6,76 +6,83 @@ package com.oracle.bmc.psql.requests;
 
 import com.oracle.bmc.psql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateConfigurationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/UpdateConfigurationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateConfigurationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class UpdateConfigurationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.psql.model.UpdateConfigurationDetails> {
 
-    /** A unique identifier for the configuration. */
+    /**
+     * A unique identifier for the configuration.
+     */
     private String configurationId;
 
-    /** A unique identifier for the configuration. */
+    /**
+     * A unique identifier for the configuration.
+     */
     public String getConfigurationId() {
         return configurationId;
     }
-    /** Details for updating display name or description for a configuration. */
+    /**
+     * Details for updating display name or description for a configuration.
+     */
     private com.oracle.bmc.psql.model.UpdateConfigurationDetails updateConfigurationDetails;
 
-    /** Details for updating display name or description for a configuration. */
+    /**
+     * Details for updating display name or description for a configuration.
+     */
     public com.oracle.bmc.psql.model.UpdateConfigurationDetails getUpdateConfigurationDetails() {
         return updateConfigurationDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
-     * invalidated.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, {@code retrytoken} could be expired or invalidated.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, {@code retrytoken} could be expired or
-     * invalidated.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, {@code retrytoken} could be expired or invalidated.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -88,15 +95,17 @@ public class UpdateConfigurationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateConfigurationRequest,
                     com.oracle.bmc.psql.model.UpdateConfigurationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique identifier for the configuration. */
+        /**
+         * A unique identifier for the configuration.
+         */
         private String configurationId = null;
 
         /**
          * A unique identifier for the configuration.
-         *
          * @param configurationId the value to set
          * @return this builder instance
          */
@@ -105,13 +114,14 @@ public class UpdateConfigurationRequest
             return this;
         }
 
-        /** Details for updating display name or description for a configuration. */
+        /**
+         * Details for updating display name or description for a configuration.
+         */
         private com.oracle.bmc.psql.model.UpdateConfigurationDetails updateConfigurationDetails =
                 null;
 
         /**
          * Details for updating display name or description for a configuration.
-         *
          * @param updateConfigurationDetails the value to set
          * @return this builder instance
          */
@@ -123,19 +133,18 @@ public class UpdateConfigurationRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
-         * expired or invalidated.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, {@code retrytoken} could be expired or invalidated.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, {@code retrytoken} could be
-         * expired or invalidated.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, {@code retrytoken} could be expired or invalidated.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -146,18 +155,15 @@ public class UpdateConfigurationRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -167,12 +173,13 @@ public class UpdateConfigurationRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -183,19 +190,18 @@ public class UpdateConfigurationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -207,7 +213,6 @@ public class UpdateConfigurationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateConfigurationRequest o) {
@@ -224,11 +229,10 @@ public class UpdateConfigurationRequest
         /**
          * Build the instance of UpdateConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateConfigurationRequest
          */
@@ -241,7 +245,6 @@ public class UpdateConfigurationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -254,8 +257,7 @@ public class UpdateConfigurationRequest
         /**
          * Build the instance of UpdateConfigurationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateConfigurationRequest
@@ -268,14 +270,12 @@ public class UpdateConfigurationRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateConfigurationRequest(configurationId, updateConfigurationDetails,
-            // opcRetryToken, ifMatch, opcRequestId);
+            // new UpdateConfigurationRequest(configurationId, updateConfigurationDetails, opcRetryToken, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -289,7 +289,6 @@ public class UpdateConfigurationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

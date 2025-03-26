@@ -6,55 +6,69 @@ package com.oracle.bmc.functions.requests;
 
 import com.oracle.bmc.functions.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTriggersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTriggersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the service trigger source of a PBF. */
+    /**
+     * A filter to return only resources that match the service trigger source of a PBF.
+     */
     private String name;
 
-    /** A filter to return only resources that match the service trigger source of a PBF. */
+    /**
+     * A filter to return only resources that match the service trigger source of a PBF.
+     */
     public String getName() {
         return name;
     }
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+     * <p>
+     * Default: 10
      *
-     * <p>Default: 10
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     private String page;
 
-    /** The pagination token for a list query returned by a previous operation */
+    /**
+     * The pagination token for a list query returned by a previous operation
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     private SortOrder sortOrder;
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -89,8 +103,10 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Specifies sort order.
+     * <p>
+     * **ASC:** Ascending sort order.
+     * * **DESC:** Descending sort order.
      *
-     * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
      */
     public SortOrder getSortOrder() {
         return sortOrder;
@@ -98,12 +114,14 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -112,15 +130,17 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTriggersRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the service trigger source of a PBF. */
+        /**
+         * A filter to return only resources that match the service trigger source of a PBF.
+         */
         private String name = null;
 
         /**
          * A filter to return only resources that match the service trigger source of a PBF.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -131,15 +151,16 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
+         * <p>
+         * Default: 10
          *
-         * <p>Default: 10
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. 1 is the minimum, 50 is the maximum.
-         *
-         * <p>Default: 10
+         * <p>
+         * Default: 10
          *
          * @param limit the value to set
          * @return this builder instance
@@ -149,7 +170,10 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The pagination token for a list query returned by a previous operation */
+        /**
+         * The pagination token for a list query returned by a previous operation
+         *
+         */
         private String page = null;
 
         /**
@@ -165,15 +189,18 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Specifies sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
          */
         private SortOrder sortOrder = null;
 
         /**
          * Specifies sort order.
-         *
-         * <p>**ASC:** Ascending sort order. * **DESC:** Descending sort order.
+         * <p>
+         * **ASC:** Ascending sort order.
+         * * **DESC:** Descending sort order.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -184,14 +211,15 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -203,19 +231,18 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -227,7 +254,6 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTriggersRequest o) {
@@ -244,11 +270,10 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListTriggersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTriggersRequest
          */
@@ -262,8 +287,7 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
         /**
          * Build the instance of ListTriggersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTriggersRequest
@@ -282,7 +306,6 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -296,7 +319,6 @@ public class ListTriggersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

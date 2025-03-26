@@ -11,8 +11,8 @@ import java.util.concurrent.TimeoutException;
 import java.util.function.Function;
 
 /**
- * Future that both delegates to another one and provides the ability to transform the response to
- * another type.
+ * Future that both delegates to another one and provides the ability to transform
+ * the response to another type.
  *
  * @param <FROM> The type returned by the delegate Future.
  * @param <TO> The type to convert to.

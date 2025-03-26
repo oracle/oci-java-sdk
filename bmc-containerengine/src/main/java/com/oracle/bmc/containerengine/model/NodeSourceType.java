@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The source type for the node. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum NodeSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The source type for the node.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+public enum NodeSourceType {
     Image("IMAGE"),
 
     /**

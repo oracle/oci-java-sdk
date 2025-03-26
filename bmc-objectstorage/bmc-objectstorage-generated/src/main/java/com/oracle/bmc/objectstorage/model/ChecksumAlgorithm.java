@@ -5,11 +5,10 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * Checksum algorithms supported by Object Storage for data integrity checks, in addition to the
- * default MD5 checksum.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum ChecksumAlgorithm implements com.oracle.bmc.http.internal.BmcEnum {
+ * Checksum algorithms supported by Object Storage for data integrity checks, in addition to the default MD5 checksum.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum ChecksumAlgorithm {
     Crc32C("CRC32C"),
     Sha256("SHA256"),
     Sha384("SHA384"),

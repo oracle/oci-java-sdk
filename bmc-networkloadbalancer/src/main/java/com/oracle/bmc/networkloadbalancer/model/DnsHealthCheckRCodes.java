@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Return code value to validate the DNS response in healthcheck. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum DnsHealthCheckRCodes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Return code value to validate the DNS response in healthcheck.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum DnsHealthCheckRCodes {
     Noerror("NOERROR"),
     Servfail("SERVFAIL"),
     Nxdomain("NXDOMAIN"),

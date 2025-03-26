@@ -5,23 +5,22 @@
 package com.oracle.bmc.identity.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateUserCapabilitiesDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateUserCapabilitiesDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateUserCapabilitiesDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "canUseConsolePassword",
@@ -52,7 +51,10 @@ public final class UpdateUserCapabilitiesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates if the user can log in to the console. */
+        /**
+         * Indicates if the user can log in to the console.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseConsolePassword")
         private Boolean canUseConsolePassword;
 
@@ -61,13 +63,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseConsolePassword the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseConsolePassword(Boolean canUseConsolePassword) {
             this.canUseConsolePassword = canUseConsolePassword;
             this.__explicitlySet__.add("canUseConsolePassword");
             return this;
         }
-        /** Indicates if the user can use API keys. */
+        /**
+         * Indicates if the user can use API keys.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseApiKeys")
         private Boolean canUseApiKeys;
 
@@ -76,13 +81,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseApiKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseApiKeys(Boolean canUseApiKeys) {
             this.canUseApiKeys = canUseApiKeys;
             this.__explicitlySet__.add("canUseApiKeys");
             return this;
         }
-        /** Indicates if the user can use SWIFT passwords / auth tokens. */
+        /**
+         * Indicates if the user can use SWIFT passwords / auth tokens.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseAuthTokens")
         private Boolean canUseAuthTokens;
 
@@ -91,13 +99,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseAuthTokens the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseAuthTokens(Boolean canUseAuthTokens) {
             this.canUseAuthTokens = canUseAuthTokens;
             this.__explicitlySet__.add("canUseAuthTokens");
             return this;
         }
-        /** Indicates if the user can use SMTP passwords. */
+        /**
+         * Indicates if the user can use SMTP passwords.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseSmtpCredentials")
         private Boolean canUseSmtpCredentials;
 
@@ -106,13 +117,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseSmtpCredentials the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseSmtpCredentials(Boolean canUseSmtpCredentials) {
             this.canUseSmtpCredentials = canUseSmtpCredentials;
             this.__explicitlySet__.add("canUseSmtpCredentials");
             return this;
         }
-        /** Indicates if the user can use DB passwords. */
+        /**
+         * Indicates if the user can use DB passwords.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseDBCredentials")
         private Boolean canUseDBCredentials;
 
@@ -121,13 +135,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseDBCredentials the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseDBCredentials(Boolean canUseDBCredentials) {
             this.canUseDBCredentials = canUseDBCredentials;
             this.__explicitlySet__.add("canUseDBCredentials");
             return this;
         }
-        /** Indicates if the user can use SigV4 symmetric keys. */
+        /**
+         * Indicates if the user can use SigV4 symmetric keys.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseCustomerSecretKeys")
         private Boolean canUseCustomerSecretKeys;
 
@@ -136,13 +153,16 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseCustomerSecretKeys the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseCustomerSecretKeys(Boolean canUseCustomerSecretKeys) {
             this.canUseCustomerSecretKeys = canUseCustomerSecretKeys;
             this.__explicitlySet__.add("canUseCustomerSecretKeys");
             return this;
         }
-        /** Indicates if the user can use OAuth2 credentials and tokens. */
+        /**
+         * Indicates if the user can use OAuth2 credentials and tokens.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("canUseOAuth2ClientCredentials")
         private Boolean canUseOAuth2ClientCredentials;
 
@@ -151,7 +171,7 @@ public final class UpdateUserCapabilitiesDetails
          *
          * @param canUseOAuth2ClientCredentials the value to set
          * @return this builder
-         */
+         **/
         public Builder canUseOAuth2ClientCredentials(Boolean canUseOAuth2ClientCredentials) {
             this.canUseOAuth2ClientCredentials = canUseOAuth2ClientCredentials;
             this.__explicitlySet__.add("canUseOAuth2ClientCredentials");
@@ -204,7 +224,9 @@ public final class UpdateUserCapabilitiesDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,7 +235,10 @@ public final class UpdateUserCapabilitiesDetails
         return new Builder().copy(this);
     }
 
-    /** Indicates if the user can log in to the console. */
+    /**
+     * Indicates if the user can log in to the console.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseConsolePassword")
     private final Boolean canUseConsolePassword;
 
@@ -221,12 +246,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can log in to the console.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseConsolePassword() {
         return canUseConsolePassword;
     }
 
-    /** Indicates if the user can use API keys. */
+    /**
+     * Indicates if the user can use API keys.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseApiKeys")
     private final Boolean canUseApiKeys;
 
@@ -234,12 +262,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use API keys.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseApiKeys() {
         return canUseApiKeys;
     }
 
-    /** Indicates if the user can use SWIFT passwords / auth tokens. */
+    /**
+     * Indicates if the user can use SWIFT passwords / auth tokens.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseAuthTokens")
     private final Boolean canUseAuthTokens;
 
@@ -247,12 +278,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use SWIFT passwords / auth tokens.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseAuthTokens() {
         return canUseAuthTokens;
     }
 
-    /** Indicates if the user can use SMTP passwords. */
+    /**
+     * Indicates if the user can use SMTP passwords.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseSmtpCredentials")
     private final Boolean canUseSmtpCredentials;
 
@@ -260,12 +294,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use SMTP passwords.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseSmtpCredentials() {
         return canUseSmtpCredentials;
     }
 
-    /** Indicates if the user can use DB passwords. */
+    /**
+     * Indicates if the user can use DB passwords.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseDBCredentials")
     private final Boolean canUseDBCredentials;
 
@@ -273,12 +310,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use DB passwords.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseDBCredentials() {
         return canUseDBCredentials;
     }
 
-    /** Indicates if the user can use SigV4 symmetric keys. */
+    /**
+     * Indicates if the user can use SigV4 symmetric keys.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseCustomerSecretKeys")
     private final Boolean canUseCustomerSecretKeys;
 
@@ -286,12 +326,15 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use SigV4 symmetric keys.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseCustomerSecretKeys() {
         return canUseCustomerSecretKeys;
     }
 
-    /** Indicates if the user can use OAuth2 credentials and tokens. */
+    /**
+     * Indicates if the user can use OAuth2 credentials and tokens.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("canUseOAuth2ClientCredentials")
     private final Boolean canUseOAuth2ClientCredentials;
 
@@ -299,7 +342,7 @@ public final class UpdateUserCapabilitiesDetails
      * Indicates if the user can use OAuth2 credentials and tokens.
      *
      * @return the value
-     */
+     **/
     public Boolean getCanUseOAuth2ClientCredentials() {
         return canUseOAuth2ClientCredentials;
     }
@@ -311,7 +354,6 @@ public final class UpdateUserCapabilitiesDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

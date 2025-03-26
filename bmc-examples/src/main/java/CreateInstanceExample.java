@@ -112,19 +112,21 @@ public class CreateInstanceExample {
     /**
      * This sample provides a basic example of how to launch an instance using the Java SDK.
      *
-     * <p>It will do the following things: 1) Prepare VCN, Subnet, Internet gateway, and Network
-     * Security Group for VMs. 2) Create a VM instance in VCN from Image and KMS key. 3) Create a
-     * new boot volume based on existing boot volume. 4) Launch another instance based on the newly
-     * created boot volume.
+     * It will do the following things:
+     * 1) Prepare VCN, Subnet, Internet gateway, and Network Security Group for VMs.
+     * 2) Create a VM instance in VCN from Image and KMS key.
+     * 3) Create a new boot volume based on existing boot volume.
+     * 4) Launch another instance based on the newly created boot volume.
      *
-     * <p>Please refer to https://docs.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm
-     * for more information about what is necessary for using API to launch a VM instance.
+     * Please refer to https://docs.oracle.com/iaas/Content/Compute/Tasks/launchinginstance.htm for more
+     * information about what is necessary for using API to launch a VM instance.
      *
-     * <p>This script takes the following arguments:
+     * This script takes the following arguments:
      *
-     * <p>1) The compartment which owns the instance 2) The network CIDR block for the VCN and
-     * subnet (these will use the same CIDR) 3) The path to the public SSH key which can be used for
-     * SSH-ing into the instance 4) The OCID of the KMS key used to encrypt boot volume (optional)
+     * 1) The compartment which owns the instance
+     * 2) The network CIDR block for the VCN and subnet (these will use the same CIDR)
+     * 3) The path to the public SSH key which can be used for SSH-ing into the instance
+     * 4) The OCID of the KMS key used to encrypt boot volume (optional)
      *
      * @param args
      * @throws Exception
@@ -139,17 +141,14 @@ public class CreateInstanceExample {
         String networkCidrBlock = args[1];
         String sshPublicKey = new String(Files.readAllBytes(Paths.get(args[2])));
 
-        // When an instance is created, a boot volume is created at the same time. User could choose
-        // to use
-        // their own kms key to encrypt the data. Pass the valid OCID of your KMS key through
-        // arguments to
+        // When an instance is created, a boot volume is created at the same time. User could choose to use
+        // their own kms key to encrypt the data. Pass the valid OCID of your KMS key through arguments to
         // enable boot volume encryption. Otherwise, leave it to null.
         //
         // Please refer to https://cloud.oracle.com/storage/block-volume/faq for more information.
         String kmsKeyId = (args.length > 3) ? args[3] : null;
 
-        // Read config from the profile DEFAULT in the file "~/.oci/config". You can switch to
-        // different profile.
+        // Read config from the profile DEFAULT in the file "~/.oci/config". You can switch to different profile.
         AuthenticationDetailsProvider authenticationDetailsProvider =
                 new ConfigFileAuthenticationDetailsProvider(PROFILE_DEFAULT);
 
@@ -188,10 +187,8 @@ public class CreateInstanceExample {
         try {
             vcn = createVcn(virtualNetworkClient, compartmentId, networkCidrBlock);
 
-            // The Internet Gateway with updated Route Rules will enable the instance to connect to
-            // the public
-            // internet. If it is not desired, remove the following two lines below that create an
-            // internet
+            // The Internet Gateway with updated Route Rules will enable the instance to connect to the public
+            // internet. If it is not desired, remove the following two lines below that create an internet
             // gateway and add that internet gateway to the VCN route table.
             internetGateway = createInternetGateway(virtualNetworkClient, compartmentId, vcn);
             addInternetGatewayToDefaultRouteTable(virtualNetworkClient, vcn, internetGateway);
@@ -204,10 +201,8 @@ public class CreateInstanceExample {
                             networkCidrBlock,
                             vcn);
 
-            // The Network Security Group with Security Rules will allow external HTTP traffic go to
-            // the instance
-            // through port 80. The HTTP server hosted on the instance will be open to the public.
-            // You update
+            // The Network Security Group with Security Rules will allow external HTTP traffic go to the instance
+            // through port 80. The HTTP server hosted on the instance will be open to the public. You update
             // the Security Rules with your need accordingly.
             networkSecurityGroup =
                     createNetworkSecurityGroup(virtualNetworkClient, compartmentId, vcn);
@@ -229,8 +224,7 @@ public class CreateInstanceExample {
             printInstance(computeClient, virtualNetworkClient, instance);
 
             System.out.println("Instance is being created via boot volume ...");
-            // This boot volume is created based on the boot volume of previous instance which needs
-            // to be running
+            // This boot volume is created based on the boot volume of previous instance which needs to be running
             bootVolume =
                     createBootVolume(
                             blockstorageClient, compartmentId, availablityDomain, image, kmsKeyId);
@@ -277,8 +271,7 @@ public class CreateInstanceExample {
                                 .compartmentId(compartmentId)
                                 .build());
         List<AvailabilityDomain> availabilityDomains = listAvailabilityDomainsResponse.getItems();
-        // For demonstration, we just return the first availability domain but for Production code
-        // you should
+        // For demonstration, we just return the first availability domain but for Production code you should
         // have a better way of determining what is needed
         AvailabilityDomain availabilityDomain = availabilityDomains.get(0);
 
@@ -309,8 +302,7 @@ public class CreateInstanceExample {
         if (vmShapes.isEmpty()) {
             throw new IllegalStateException("No available VM shape was found.");
         }
-        // For demonstration, we just return the first shape but for Production code you should have
-        // a better
+        // For demonstration, we just return the first shape but for Production code you should have a better
         // way of determining what is needed
         Shape shape = vmShapes.get(0);
 
@@ -334,8 +326,7 @@ public class CreateInstanceExample {
             throw new IllegalStateException("No available image was found.");
         }
 
-        // For demonstration, we just return the first image but for Production code you should have
-        // a better
+        // For demonstration, we just return the first image but for Production code you should have a better
         // way of determining what is needed.
         //
         // Note the latest version of the images for the same operating system is returned firstly.

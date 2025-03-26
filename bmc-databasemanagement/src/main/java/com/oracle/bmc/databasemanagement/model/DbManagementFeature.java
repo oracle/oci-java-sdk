@@ -5,12 +5,14 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The list of the database management supported features: - DIAGNOSTICS_AND_MANAGEMENT: Diagnostics
- * and management. - DB_LIFECYCLE_MANAGEMENT: Database lifecycle management. - SQLWATCH: Real
- * application testing.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DbManagementFeature implements com.oracle.bmc.http.internal.BmcEnum {
+ * The list of the database management supported features:
+ *    - DIAGNOSTICS_AND_MANAGEMENT: Diagnostics and management.
+ *    - DB_LIFECYCLE_MANAGEMENT: Database lifecycle management.
+ *    - SQLWATCH: Real application testing.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum DbManagementFeature {
     DiagnosticsAndManagement("DIAGNOSTICS_AND_MANAGEMENT"),
     DbLifecycleManagement("DB_LIFECYCLE_MANAGEMENT"),
     Sqlwatch("SQLWATCH"),

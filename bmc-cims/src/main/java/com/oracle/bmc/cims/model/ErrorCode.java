@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cims.model;
 
-/** Service error codes that can be returned from the API calls. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public enum ErrorCode implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Service error codes that can be returned from the API calls.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+public enum ErrorCode {
     ContentEmpty("CONTENT_EMPTY"),
     ClientException("CLIENT_EXCEPTION"),
     InvalidFormat("INVALID_FORMAT"),

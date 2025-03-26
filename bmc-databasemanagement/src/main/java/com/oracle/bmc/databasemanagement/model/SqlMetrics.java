@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Metrics of the Sql in the Sql tuning set. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Metrics of the Sql in the Sql tuning set.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlMetrics extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cpuTime",
@@ -47,91 +45,97 @@ public final class SqlMetrics extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total CPU time consumed by the Sql. */
+        /**
+         * Total CPU time consumed by the Sql.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuTime")
         private Long cpuTime;
 
         /**
          * Total CPU time consumed by the Sql.
-         *
          * @param cpuTime the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuTime(Long cpuTime) {
             this.cpuTime = cpuTime;
             this.__explicitlySet__.add("cpuTime");
             return this;
         }
-        /** Elapsed time of the Sql. */
+        /**
+         * Elapsed time of the Sql.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elapsedTime")
         private Long elapsedTime;
 
         /**
          * Elapsed time of the Sql.
-         *
          * @param elapsedTime the value to set
          * @return this builder
-         */
+         **/
         public Builder elapsedTime(Long elapsedTime) {
             this.elapsedTime = elapsedTime;
             this.__explicitlySet__.add("elapsedTime");
             return this;
         }
-        /** Sum total number of buffer gets. */
+        /**
+         * Sum total number of buffer gets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bufferGets")
         private Long bufferGets;
 
         /**
          * Sum total number of buffer gets.
-         *
          * @param bufferGets the value to set
          * @return this builder
-         */
+         **/
         public Builder bufferGets(Long bufferGets) {
             this.bufferGets = bufferGets;
             this.__explicitlySet__.add("bufferGets");
             return this;
         }
-        /** Sum total number of disk reads. */
+        /**
+         * Sum total number of disk reads.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskReads")
         private Long diskReads;
 
         /**
          * Sum total number of disk reads.
-         *
          * @param diskReads the value to set
          * @return this builder
-         */
+         **/
         public Builder diskReads(Long diskReads) {
             this.diskReads = diskReads;
             this.__explicitlySet__.add("diskReads");
             return this;
         }
-        /** Sum total number of direct path writes. */
+        /**
+         * Sum total number of direct path writes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("directWrites")
         private Long directWrites;
 
         /**
          * Sum total number of direct path writes.
-         *
          * @param directWrites the value to set
          * @return this builder
-         */
+         **/
         public Builder directWrites(Long directWrites) {
             this.directWrites = directWrites;
             this.__explicitlySet__.add("directWrites");
             return this;
         }
-        /** Total executions of this SQL statement. */
+        /**
+         * Total executions of this SQL statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executions")
         private Long executions;
 
         /**
          * Total executions of this SQL statement.
-         *
          * @param executions the value to set
          * @return this builder
-         */
+         **/
         public Builder executions(Long executions) {
             this.executions = executions;
             this.__explicitlySet__.add("executions");
@@ -180,7 +184,9 @@ public final class SqlMetrics extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,80 +195,86 @@ public final class SqlMetrics extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** Total CPU time consumed by the Sql. */
+    /**
+     * Total CPU time consumed by the Sql.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuTime")
     private final Long cpuTime;
 
     /**
      * Total CPU time consumed by the Sql.
-     *
      * @return the value
-     */
+     **/
     public Long getCpuTime() {
         return cpuTime;
     }
 
-    /** Elapsed time of the Sql. */
+    /**
+     * Elapsed time of the Sql.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("elapsedTime")
     private final Long elapsedTime;
 
     /**
      * Elapsed time of the Sql.
-     *
      * @return the value
-     */
+     **/
     public Long getElapsedTime() {
         return elapsedTime;
     }
 
-    /** Sum total number of buffer gets. */
+    /**
+     * Sum total number of buffer gets.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bufferGets")
     private final Long bufferGets;
 
     /**
      * Sum total number of buffer gets.
-     *
      * @return the value
-     */
+     **/
     public Long getBufferGets() {
         return bufferGets;
     }
 
-    /** Sum total number of disk reads. */
+    /**
+     * Sum total number of disk reads.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskReads")
     private final Long diskReads;
 
     /**
      * Sum total number of disk reads.
-     *
      * @return the value
-     */
+     **/
     public Long getDiskReads() {
         return diskReads;
     }
 
-    /** Sum total number of direct path writes. */
+    /**
+     * Sum total number of direct path writes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("directWrites")
     private final Long directWrites;
 
     /**
      * Sum total number of direct path writes.
-     *
      * @return the value
-     */
+     **/
     public Long getDirectWrites() {
         return directWrites;
     }
 
-    /** Total executions of this SQL statement. */
+    /**
+     * Total executions of this SQL statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executions")
     private final Long executions;
 
     /**
      * Total executions of this SQL statement.
-     *
      * @return the value
-     */
+     **/
     public Long getExecutions() {
         return executions;
     }
@@ -274,7 +286,6 @@ public final class SqlMetrics extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,16 @@ package com.oracle.bmc.datascience.responses;
 
 import com.oracle.bmc.datascience.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-     * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+     * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
      *
      * @return the value
      */
@@ -24,7 +23,10 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
         return etag;
     }
 
-    /** The URI that identifies the entity described in the response body. */
+    /**
+     * The URI that identifies the entity described in the response body.
+     *
+     */
     private String location;
 
     /**
@@ -37,14 +39,15 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
     }
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -52,12 +55,13 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The returned {@code PipelineRun} instance. */
+    /**
+     * The returned PipelineRun instance.
+     */
     private com.oracle.bmc.datascience.model.PipelineRun pipelineRun;
 
     /**
-     * The returned {@code PipelineRun} instance.
-     *
+     * The returned PipelineRun instance.
      * @return the value
      */
     public com.oracle.bmc.datascience.model.PipelineRun getPipelineRun() {
@@ -74,7 +78,7 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreatePipelineRunResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String location,
             String opcRequestId,
@@ -86,33 +90,29 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
         this.pipelineRun = pipelineRun;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreatePipelineRunResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. See [ETags for Optimistic Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
+         * For optimistic concurrency control. See [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven).
          *
          * @param etag the value to set
          * @return this builder
@@ -122,7 +122,10 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The URI that identifies the entity described in the response body. */
+        /**
+         * The URI that identifies the entity described in the response body.
+         *
+         */
         private String location;
 
         /**
@@ -137,14 +140,15 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -154,12 +158,13 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code PipelineRun} instance. */
+        /**
+         * The returned PipelineRun instance.
+         */
         private com.oracle.bmc.datascience.model.PipelineRun pipelineRun;
 
         /**
-         * The returned {@code PipelineRun} instance.
-         *
+         * The returned PipelineRun instance.
          * @param pipelineRun the value to set
          * @return this builder
          */
@@ -170,10 +175,8 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreatePipelineRunResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -187,10 +190,8 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreatePipelineRunResponse build() {
             return new CreatePipelineRunResponse(
                     __httpStatusCode__, headers, etag, location, opcRequestId, pipelineRun);
@@ -199,7 +200,6 @@ public class CreatePipelineRunResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

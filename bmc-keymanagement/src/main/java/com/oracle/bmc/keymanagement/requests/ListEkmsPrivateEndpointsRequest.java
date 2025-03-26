@@ -6,41 +6,62 @@ package com.oracle.bmc.keymanagement.requests;
 
 import com.oracle.bmc.keymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListEkmsPrivateEndpointsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListEkmsPrivateEndpointsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListEkmsPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEkmsPrivateEndpointsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class ListEkmsPrivateEndpointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     *
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header
+     * from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -73,21 +94,28 @@ public class ListEkmsPrivateEndpointsRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * TIMECREATED} is descending. The default order for {@code DISPLAYNAME} is ascending.
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
+     * is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * TIMECREATED} is descending. The default order for {@code DISPLAYNAME} is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
+     * is ascending.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -121,21 +149,27 @@ public class ListEkmsPrivateEndpointsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order. The default order for {@code
-     * TIMECREATED} is descending. The default order for {@code DISPLAYNAME} is ascending.
+     * The field to sort by. You can specify only one sort order. The default
+     * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
+     * is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID
+     * will include this value. Otherwise, a random request ID will be
+     * generated by the service.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID
+     * will include this value. Otherwise, a random request ID will be
+     * generated by the service.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -144,15 +178,17 @@ public class ListEkmsPrivateEndpointsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEkmsPrivateEndpointsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -161,7 +197,10 @@ public class ListEkmsPrivateEndpointsRequest
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         *
+         */
         private Integer limit = null;
 
         /**
@@ -175,11 +214,16 @@ public class ListEkmsPrivateEndpointsRequest
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
-         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         * The value of the {@code opc-next-page} response header
+         * from the previous "List" call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -189,7 +233,10 @@ public class ListEkmsPrivateEndpointsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -204,14 +251,17 @@ public class ListEkmsPrivateEndpointsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order. The default order for {@code
-         * TIMECREATED} is descending. The default order for {@code DISPLAYNAME} is ascending.
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
+         * is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order. The default order for {@code
-         * TIMECREATED} is descending. The default order for {@code DISPLAYNAME} is ascending.
+         * The field to sort by. You can specify only one sort order. The default
+         * order for {@code TIMECREATED} is descending. The default order for {@code DISPLAYNAME}
+         * is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -222,14 +272,17 @@ public class ListEkmsPrivateEndpointsRequest
         }
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID
+         * will include this value. Otherwise, a random request ID will be
+         * generated by the service.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID
+         * will include this value. Otherwise, a random request ID will be
+         * generated by the service.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -241,19 +294,18 @@ public class ListEkmsPrivateEndpointsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -265,7 +317,6 @@ public class ListEkmsPrivateEndpointsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListEkmsPrivateEndpointsRequest o) {
@@ -283,11 +334,10 @@ public class ListEkmsPrivateEndpointsRequest
         /**
          * Build the instance of ListEkmsPrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListEkmsPrivateEndpointsRequest
          */
@@ -301,8 +351,7 @@ public class ListEkmsPrivateEndpointsRequest
         /**
          * Build the instance of ListEkmsPrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListEkmsPrivateEndpointsRequest
@@ -316,14 +365,12 @@ public class ListEkmsPrivateEndpointsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListEkmsPrivateEndpointsRequest(compartmentId, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListEkmsPrivateEndpointsRequest(compartmentId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -338,7 +385,6 @@ public class ListEkmsPrivateEndpointsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

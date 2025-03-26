@@ -5,53 +5,52 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * An object that represents the action of removing a header from a response. This rule applies only
- * to HTTP listeners.
+ * An object that represents the action of removing a header from a response. This rule applies only to HTTP listeners.
+ * <p>
+ * If the same header appears more than once in the response, the load balancer removes all occurances of the specified header.
+ * <p>
+ **Note:** The system does not distinquish between underscore and dash characters in headers. That is, it treats
+ * {@code example_header_name} and {@code example-header-name} as identical. Oracle recommends that you do not rely on underscore
+ * or dash characters to uniquely distinguish header names.
  *
- * <p>If the same header appears more than once in the response, the load balancer removes all
- * occurances of the specified header.
- *
- * <p>*Note:** The system does not distinquish between underscore and dash characters in headers.
- * That is, it treats {@code example_header_name} and {@code example-header-name} as identical.
- * Oracle recommends that you do not rely on underscore or dash characters to uniquely distinguish
- * header names. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RemoveHttpResponseHeaderRule.Builder.class)
+    builder = RemoveHttpResponseHeaderRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "action")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "action"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RemoveHttpResponseHeaderRule extends Rule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * A header name that conforms to RFC 7230.
+         * <p>
+         * Example: {@code example_header_name}
          *
-         * <p>Example: {@code example_header_name}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("header")
         private String header;
 
         /**
          * A header name that conforms to RFC 7230.
-         *
-         * <p>Example: {@code example_header_name}
+         * <p>
+         * Example: {@code example_header_name}
          *
          * @param header the value to set
          * @return this builder
-         */
+         **/
         public Builder header(String header) {
             this.header = header;
             this.__explicitlySet__.add("header");
@@ -78,7 +77,9 @@ public final class RemoveHttpResponseHeaderRule extends Rule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,19 +96,20 @@ public final class RemoveHttpResponseHeaderRule extends Rule {
 
     /**
      * A header name that conforms to RFC 7230.
+     * <p>
+     * Example: {@code example_header_name}
      *
-     * <p>Example: {@code example_header_name}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("header")
     private final String header;
 
     /**
      * A header name that conforms to RFC 7230.
-     *
-     * <p>Example: {@code example_header_name}
+     * <p>
+     * Example: {@code example_header_name}
      *
      * @return the value
-     */
+     **/
     public String getHeader() {
         return header;
     }
@@ -119,7 +121,6 @@ public final class RemoveHttpResponseHeaderRule extends Rule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

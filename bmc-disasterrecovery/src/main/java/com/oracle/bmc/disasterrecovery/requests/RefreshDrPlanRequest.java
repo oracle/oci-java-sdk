@@ -6,50 +6,58 @@ package com.oracle.bmc.disasterrecovery.requests;
 
 import com.oracle.bmc.disasterrecovery.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/RefreshDrPlanExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use RefreshDrPlanRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/disasterrecovery/RefreshDrPlanExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RefreshDrPlanRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class RefreshDrPlanRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.disasterrecovery.model.RefreshDrPlanDetails> {
 
-    /** Details for refreshing a DR plan. */
+    /**
+     * Details for refreshing a DR plan.
+     */
     private com.oracle.bmc.disasterrecovery.model.RefreshDrPlanDetails refreshDrPlanDetails;
 
-    /** Details for refreshing a DR plan. */
+    /**
+     * Details for refreshing a DR plan.
+     */
     public com.oracle.bmc.disasterrecovery.model.RefreshDrPlanDetails getRefreshDrPlanDetails() {
         return refreshDrPlanDetails;
     }
     /**
      * The OCID of the DR plan.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     private String drPlanId;
 
     /**
      * The OCID of the DR plan.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
      */
     public String getDrPlanId() {
         return drPlanId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -57,33 +65,40 @@ public class RefreshDrPlanRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -96,16 +111,18 @@ public class RefreshDrPlanRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RefreshDrPlanRequest,
                     com.oracle.bmc.disasterrecovery.model.RefreshDrPlanDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for refreshing a DR plan. */
+        /**
+         * Details for refreshing a DR plan.
+         */
         private com.oracle.bmc.disasterrecovery.model.RefreshDrPlanDetails refreshDrPlanDetails =
                 null;
 
         /**
          * Details for refreshing a DR plan.
-         *
          * @param refreshDrPlanDetails the value to set
          * @return this builder instance
          */
@@ -117,15 +134,16 @@ public class RefreshDrPlanRequest
 
         /**
          * The OCID of the DR plan.
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
          */
         private String drPlanId = null;
 
         /**
          * The OCID of the DR plan.
-         *
-         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
          *
          * @param drPlanId the value to set
          * @return this builder instance
@@ -136,18 +154,21 @@ public class RefreshDrPlanRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -159,19 +180,20 @@ public class RefreshDrPlanRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -181,7 +203,10 @@ public class RefreshDrPlanRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -197,19 +222,18 @@ public class RefreshDrPlanRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -221,7 +245,6 @@ public class RefreshDrPlanRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RefreshDrPlanRequest o) {
@@ -238,11 +261,10 @@ public class RefreshDrPlanRequest
         /**
          * Build the instance of RefreshDrPlanRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RefreshDrPlanRequest
          */
@@ -255,7 +277,6 @@ public class RefreshDrPlanRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -268,8 +289,7 @@ public class RefreshDrPlanRequest
         /**
          * Build the instance of RefreshDrPlanRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RefreshDrPlanRequest
@@ -282,14 +302,12 @@ public class RefreshDrPlanRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RefreshDrPlanRequest(refreshDrPlanDetails, drPlanId, ifMatch, opcRetryToken,
-            // opcRequestId);
+            // new RefreshDrPlanRequest(refreshDrPlanDetails, drPlanId, ifMatch, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -303,7 +321,6 @@ public class RefreshDrPlanRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

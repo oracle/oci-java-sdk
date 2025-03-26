@@ -6,45 +6,53 @@ package com.oracle.bmc.queue.requests;
 
 import com.oracle.bmc.queue.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMessageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/queue/UpdateMessageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateMessageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public class UpdateMessageRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.queue.model.UpdateMessageDetails> {
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     private String queueId;
 
-    /** The unique queue identifier. */
+    /**
+     * The unique queue identifier.
+     */
     public String getQueueId() {
         return queueId;
     }
-    /** The receipt of the message retrieved from a GetMessages call. */
+    /**
+     * The receipt of the message retrieved from a GetMessages call.
+     */
     private String messageReceipt;
 
-    /** The receipt of the message retrieved from a GetMessages call. */
+    /**
+     * The receipt of the message retrieved from a GetMessages call.
+     */
     public String getMessageReceipt() {
         return messageReceipt;
     }
-    /** Details for the message to update. */
+    /**
+     * Details for the message to update.
+     */
     private com.oracle.bmc.queue.model.UpdateMessageDetails updateMessageDetails;
 
-    /** Details for the message to update. */
+    /**
+     * Details for the message to update.
+     */
     public com.oracle.bmc.queue.model.UpdateMessageDetails getUpdateMessageDetails() {
         return updateMessageDetails;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -52,7 +60,6 @@ public class UpdateMessageRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -64,15 +71,17 @@ public class UpdateMessageRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateMessageRequest, com.oracle.bmc.queue.model.UpdateMessageDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The unique queue identifier. */
+        /**
+         * The unique queue identifier.
+         */
         private String queueId = null;
 
         /**
          * The unique queue identifier.
-         *
          * @param queueId the value to set
          * @return this builder instance
          */
@@ -81,12 +90,13 @@ public class UpdateMessageRequest
             return this;
         }
 
-        /** The receipt of the message retrieved from a GetMessages call. */
+        /**
+         * The receipt of the message retrieved from a GetMessages call.
+         */
         private String messageReceipt = null;
 
         /**
          * The receipt of the message retrieved from a GetMessages call.
-         *
          * @param messageReceipt the value to set
          * @return this builder instance
          */
@@ -95,12 +105,13 @@ public class UpdateMessageRequest
             return this;
         }
 
-        /** Details for the message to update. */
+        /**
+         * Details for the message to update.
+         */
         private com.oracle.bmc.queue.model.UpdateMessageDetails updateMessageDetails = null;
 
         /**
          * Details for the message to update.
-         *
          * @param updateMessageDetails the value to set
          * @return this builder instance
          */
@@ -111,15 +122,12 @@ public class UpdateMessageRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -130,19 +138,18 @@ public class UpdateMessageRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -154,7 +161,6 @@ public class UpdateMessageRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateMessageRequest o) {
@@ -170,11 +176,10 @@ public class UpdateMessageRequest
         /**
          * Build the instance of UpdateMessageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateMessageRequest
          */
@@ -187,7 +192,6 @@ public class UpdateMessageRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -200,8 +204,7 @@ public class UpdateMessageRequest
         /**
          * Build the instance of UpdateMessageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateMessageRequest
@@ -213,14 +216,12 @@ public class UpdateMessageRequest
             request.updateMessageDetails = updateMessageDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateMessageRequest(queueId, messageReceipt, updateMessageDetails,
-            // opcRequestId);
+            // new UpdateMessageRequest(queueId, messageReceipt, updateMessageDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -233,7 +234,6 @@ public class UpdateMessageRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

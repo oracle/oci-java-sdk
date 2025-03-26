@@ -5,25 +5,21 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Parameters needed to create a new model. Models are mathematical representations of the
- * relationships between data. Models are represented by their associated metadata and artifact.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Parameters needed to create a new model. Models are mathematical representations of the relationships between data. Models are represented by their associated metadata and artifact.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateModelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateModelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateModelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateModelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -76,211 +72,205 @@ public final class CreateModelDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to create the model in.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment to create the model in.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * project to associate with the model.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * project to associate with the model.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
          * @param projectId the value to set
          * @return this builder
-         */
+         **/
         public Builder projectId(String projectId) {
             this.projectId = projectId;
             this.__explicitlySet__.add("projectId");
             return this;
         }
         /**
-         * A user-friendly display name for the resource. It does not have to be unique and can be
-         * modified. Avoid entering confidential information. Example: {@code My Model}
-         */
+         * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+         * Example: {@code My Model}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name for the resource. It does not have to be unique and can be
-         * modified. Avoid entering confidential information. Example: {@code My Model}
+         * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+         * Example: {@code My Model}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A short description of the model. */
+        /**
+         * A short description of the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description of the model.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** An array of custom metadata details for the model. */
+        /**
+         * An array of custom metadata details for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
         private java.util.List<Metadata> customMetadataList;
 
         /**
          * An array of custom metadata details for the model.
-         *
          * @param customMetadataList the value to set
          * @return this builder
-         */
+         **/
         public Builder customMetadataList(java.util.List<Metadata> customMetadataList) {
             this.customMetadataList = customMetadataList;
             this.__explicitlySet__.add("customMetadataList");
             return this;
         }
-        /** An array of defined metadata details for the model. */
+        /**
+         * An array of defined metadata details for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
         private java.util.List<Metadata> definedMetadataList;
 
         /**
          * An array of defined metadata details for the model.
-         *
          * @param definedMetadataList the value to set
          * @return this builder
-         */
+         **/
         public Builder definedMetadataList(java.util.List<Metadata> definedMetadataList) {
             this.definedMetadataList = definedMetadataList;
             this.__explicitlySet__.add("definedMetadataList");
             return this;
         }
-        /** Input schema file content in String format */
+        /**
+         * Input schema file content in String format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inputSchema")
         private String inputSchema;
 
         /**
          * Input schema file content in String format
-         *
          * @param inputSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder inputSchema(String inputSchema) {
             this.inputSchema = inputSchema;
             this.__explicitlySet__.add("inputSchema");
             return this;
         }
-        /** Output schema file content in String format */
+        /**
+         * Output schema file content in String format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputSchema")
         private String outputSchema;
 
         /**
          * Output schema file content in String format
-         *
          * @param outputSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder outputSchema(String outputSchema) {
             this.outputSchema = outputSchema;
             this.__explicitlySet__.add("outputSchema");
             return this;
         }
-        /** The OCID of the model version set that the model is associated to. */
+        /**
+         * The OCID of the model version set that the model is associated to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
         private String modelVersionSetId;
 
         /**
          * The OCID of the model version set that the model is associated to.
-         *
          * @param modelVersionSetId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersionSetId(String modelVersionSetId) {
             this.modelVersionSetId = modelVersionSetId;
             this.__explicitlySet__.add("modelVersionSetId");
             return this;
         }
         /**
-         * The version label can add an additional description of the lifecycle state of the model
-         * or the application using/training the model.
-         */
+         * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
         private String versionLabel;
 
         /**
-         * The version label can add an additional description of the lifecycle state of the model
-         * or the application using/training the model.
-         *
+         * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
          * @param versionLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder versionLabel(String versionLabel) {
             this.versionLabel = versionLabel;
             this.__explicitlySet__.add("versionLabel");
@@ -379,7 +369,9 @@ public final class CreateModelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -389,187 +381,181 @@ public final class CreateModelDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to create the model in.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment to create the model in.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model in.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project to associate with the model.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project to associate with the model.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
      * @return the value
-     */
+     **/
     public String getProjectId() {
         return projectId;
     }
 
     /**
-     * A user-friendly display name for the resource. It does not have to be unique and can be
-     * modified. Avoid entering confidential information. Example: {@code My Model}
-     */
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+     * Example: {@code My Model}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name for the resource. It does not have to be unique and can be
-     * modified. Avoid entering confidential information. Example: {@code My Model}
+     * A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information.
+     * Example: {@code My Model}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A short description of the model. */
+    /**
+     * A short description of the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the model.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** An array of custom metadata details for the model. */
+    /**
+     * An array of custom metadata details for the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customMetadataList")
     private final java.util.List<Metadata> customMetadataList;
 
     /**
      * An array of custom metadata details for the model.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Metadata> getCustomMetadataList() {
         return customMetadataList;
     }
 
-    /** An array of defined metadata details for the model. */
+    /**
+     * An array of defined metadata details for the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedMetadataList")
     private final java.util.List<Metadata> definedMetadataList;
 
     /**
      * An array of defined metadata details for the model.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Metadata> getDefinedMetadataList() {
         return definedMetadataList;
     }
 
-    /** Input schema file content in String format */
+    /**
+     * Input schema file content in String format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inputSchema")
     private final String inputSchema;
 
     /**
      * Input schema file content in String format
-     *
      * @return the value
-     */
+     **/
     public String getInputSchema() {
         return inputSchema;
     }
 
-    /** Output schema file content in String format */
+    /**
+     * Output schema file content in String format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputSchema")
     private final String outputSchema;
 
     /**
      * Output schema file content in String format
-     *
      * @return the value
-     */
+     **/
     public String getOutputSchema() {
         return outputSchema;
     }
 
-    /** The OCID of the model version set that the model is associated to. */
+    /**
+     * The OCID of the model version set that the model is associated to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
     private final String modelVersionSetId;
 
     /**
      * The OCID of the model version set that the model is associated to.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersionSetId() {
         return modelVersionSetId;
     }
 
     /**
-     * The version label can add an additional description of the lifecycle state of the model or
-     * the application using/training the model.
-     */
+     * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionLabel")
     private final String versionLabel;
 
     /**
-     * The version label can add an additional description of the lifecycle state of the model or
-     * the application using/training the model.
-     *
+     * The version label can add an additional description of the lifecycle state of the model or the application using/training the model.
      * @return the value
-     */
+     **/
     public String getVersionLabel() {
         return versionLabel;
     }
@@ -595,7 +581,6 @@ public final class CreateModelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

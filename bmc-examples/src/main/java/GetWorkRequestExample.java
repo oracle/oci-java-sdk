@@ -16,13 +16,13 @@ import com.oracle.bmc.workrequests.responses.ListWorkRequestLogsResponse;
 import java.io.IOException;
 
 /**
- * This class provides an example of using the APIs to get information about a Work Request, looked
- * up by the Work Request ID. The following examples are given:
+ * This class provides an example of using the APIs to get information about a Work Request, looked up by the Work
+ * Request ID. The following examples are given:
  *
  * <ul>
- *   <li>getWorkRequest - Get information about a Work Request
- *   <li>listWorkRequestErrors - List errors related to a Work Request
- *   <li>listWorkRequestLogs - List logs related to a Work Request
+ *     <li>getWorkRequest - Get information about a Work Request</li>
+ *     <li>listWorkRequestErrors - List errors related to a Work Request</li>
+ *     <li>listWorkRequestLogs - List logs related to a Work Request</li>
  * </ul>
  */
 public class GetWorkRequestExample {
@@ -34,9 +34,9 @@ public class GetWorkRequestExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the Work Request for which to request information
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of the Work Request for which to request information</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         if (args.length != 1) {
@@ -94,17 +94,15 @@ public class GetWorkRequestExample {
     }
 
     private static WorkRequestClient getWorkRequestClient() throws IOException {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        WorkRequestClient client = WorkRequestClient.builder().build(provider);
+        WorkRequestClient client = new WorkRequestClient(provider);
         return client;
     }
 }

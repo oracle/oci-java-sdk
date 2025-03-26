@@ -5,26 +5,25 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The properties of a job. A job performs the actions that are defined in your Terraform
- * configuration. For instructions on managing jobs, see [Managing
- * Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm). For more information
- * about jobs, see [Key
- * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * The properties of a job.
+ * A job performs the actions that are defined in your Terraform configuration.
+ * For instructions on managing jobs, see
+ * [Managing Jobs](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/jobs.htm).
+ * For more information about jobs, see
+ * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__jobdefinition).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Job.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -95,114 +94,106 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * job.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stack that is associated with the job.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stackId")
         private String stackId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * stack that is associated with the job.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
          * @param stackId the value to set
          * @return this builder
-         */
+         **/
         public Builder stackId(String stackId) {
             this.stackId = stackId;
             this.__explicitlySet__.add("stackId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the job's associated stack resides.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which the job's associated stack resides.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The job's display name. */
+        /**
+         * The job's display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The job's display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The type of job executing. */
+        /**
+         * The type of job executing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private Operation operation;
 
         /**
          * The type of job executing.
-         *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(Operation operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
         /**
-         * When {@code true}, the stack sources third-party Terraform providers from [Terraform
-         * Registry](https://registry.terraform.io/browse/providers) and allows {@link
-         * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For
-         * more information about stack sourcing of third-party Terraform providers, see
-         * [Third-party Provider
-         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
-         */
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
         private Boolean isThirdPartyProviderExperienceEnabled;
 
         /**
-         * When {@code true}, the stack sources third-party Terraform providers from [Terraform
-         * Registry](https://registry.terraform.io/browse/providers) and allows {@link
-         * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For
-         * more information about stack sourcing of third-party Terraform providers, see
-         * [Third-party Provider
-         * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+         * When {@code true}, the stack sources third-party Terraform providers from
+         * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+         * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+         * For more information about stack sourcing of third-party Terraform providers, see
+         * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
          *
          * @param isThirdPartyProviderExperienceEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isThirdPartyProviderExperienceEnabled(
                 Boolean isThirdPartyProviderExperienceEnabled) {
             this.isThirdPartyProviderExperienceEnabled = isThirdPartyProviderExperienceEnabled;
@@ -210,23 +201,22 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * Specifies whether or not to upgrade provider versions. Within the version constraints of
-         * your Terraform configuration, use the latest versions available from the source of
-         * Terraform providers. For more information about this option, see [Dependency Lock File
-         * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
-         */
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
         private Boolean isProviderUpgradeRequired;
 
         /**
-         * Specifies whether or not to upgrade provider versions. Within the version constraints of
-         * your Terraform configuration, use the latest versions available from the source of
-         * Terraform providers. For more information about this option, see [Dependency Lock File
-         * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+         * Specifies whether or not to upgrade provider versions.
+         * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+         * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
          *
          * @param isProviderUpgradeRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isProviderUpgradeRequired(Boolean isProviderUpgradeRequired) {
             this.isProviderUpgradeRequired = isProviderUpgradeRequired;
             this.__explicitlySet__.add("isProviderUpgradeRequired");
@@ -251,82 +241,86 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails}
-         * instead. The plan job
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was
-         * used (if this was an apply job and was not auto-approved).
-         */
+         * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
+         * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
         private String resolvedPlanJobId;
 
         /**
-         * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails}
-         * instead. The plan job
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was
-         * used (if this was an apply job and was not auto-approved).
+         * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
+         * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
          *
          * @param resolvedPlanJobId the value to set
          * @return this builder
-         */
+         **/
         public Builder resolvedPlanJobId(String resolvedPlanJobId) {
             this.resolvedPlanJobId = resolvedPlanJobId;
             this.__explicitlySet__.add("resolvedPlanJobId");
             return this;
         }
         /**
-         * The date and time when the job was created. Format is defined by RFC3339. Example: {@code
-         * 2020-01-25T21:10:29.600Z}
-         */
+         * The date and time when the job was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time when the job was created. Format is defined by RFC3339. Example: {@code
-         * 2020-01-25T21:10:29.600Z}
+         * The date and time when the job was created.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time when the job stopped running, irrespective of whether the job ran
-         * successfully. Format is defined by RFC3339. Example: {@code 2020-01-25T21:10:29.600Z}
-         */
+         * The date and time when the job stopped running, irrespective of whether the job ran successfully.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time when the job stopped running, irrespective of whether the job ran
-         * successfully. Format is defined by RFC3339. Example: {@code 2020-01-25T21:10:29.600Z}
+         * The date and time when the job stopped running, irrespective of whether the job ran successfully.
+         * Format is defined by RFC3339.
+         * Example: {@code 2020-01-25T21:10:29.600Z}
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * Current state of the specified job. For more information about job lifecycle states in
-         * Resource Manager, see [Key
-         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-         */
+         * Current state of the specified job.
+         * For more information about job lifecycle states in Resource Manager, see
+         * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * Current state of the specified job. For more information about job lifecycle states in
-         * Resource Manager, see [Key
-         * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+         * Current state of the specified job.
+         * For more information about job lifecycle states in Resource Manager, see
+         * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -351,50 +345,52 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * File path to the directory to use for running Terraform. If not specified, the root
-         * directory is used. Required when using a zip Terraform configuration ({@code
-         * configSourceType} value of {@code ZIP_UPLOAD}) that contains folders. Ignored for the
-         * {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}. For more information
-         * about required and recommended file structure, see [File Structure (Terraform
-         * Configurations for Resource
-         * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
-         */
+         * File path to the directory to use for running Terraform.
+         * If not specified, the root directory is used.
+         * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+         * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+         * For more information about required and recommended file structure, see
+         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
         private String workingDirectory;
 
         /**
-         * File path to the directory to use for running Terraform. If not specified, the root
-         * directory is used. Required when using a zip Terraform configuration ({@code
-         * configSourceType} value of {@code ZIP_UPLOAD}) that contains folders. Ignored for the
-         * {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}. For more information
-         * about required and recommended file structure, see [File Structure (Terraform
-         * Configurations for Resource
-         * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+         * File path to the directory to use for running Terraform.
+         * If not specified, the root directory is used.
+         * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+         * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+         * For more information about required and recommended file structure, see
+         * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
          *
          * @param workingDirectory the value to set
          * @return this builder
-         */
+         **/
         public Builder workingDirectory(String workingDirectory) {
             this.workingDirectory = workingDirectory;
             this.__explicitlySet__.add("workingDirectory");
             return this;
         }
         /**
-         * Terraform variables associated with this resource. Maximum number of variables supported
-         * is 250. The maximum size of each variable, including both name and value, is 8192 bytes.
+         * Terraform variables associated with this resource.
+         * Maximum number of variables supported is 250.
+         * The maximum size of each variable, including both name and value, is 8192 bytes.
          * Example: {@code {"CompartmentId": "compartment-id-value"}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.Map<String, String> variables;
 
         /**
-         * Terraform variables associated with this resource. Maximum number of variables supported
-         * is 250. The maximum size of each variable, including both name and value, is 8192 bytes.
+         * Terraform variables associated with this resource.
+         * Maximum number of variables supported is 250.
+         * The maximum size of each variable, including both name and value, is 8192 bytes.
          * Example: {@code {"CompartmentId": "compartment-id-value"}}
          *
          * @param variables the value to set
          * @return this builder
-         */
+         **/
         public Builder variables(java.util.Map<String, String> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -410,46 +406,44 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
-         * Free-form tags associated with this resource. Each tag is a key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags associated with this resource. Each tag is a key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -556,7 +550,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -567,68 +563,64 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stack that is associated with the job.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stackId")
     private final String stackId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * stack that is associated with the job.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stack that is associated with the job.
      * @return the value
-     */
+     **/
     public String getStackId() {
         return stackId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the job's associated stack resides.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which the job's associated stack resides.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the job's associated stack resides.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The job's display name. */
+    /**
+     * The job's display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The job's display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The type of job executing. */
-    public enum Operation implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of job executing.
+     **/
+    public enum Operation {
         Plan("PLAN"),
         Apply("APPLY"),
         Destroy("DESTROY"),
@@ -637,8 +629,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         ApplyRollback("APPLY_ROLLBACK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -677,61 +669,60 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return UnknownEnumValue;
         }
     };
-    /** The type of job executing. */
+    /**
+     * The type of job executing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final Operation operation;
 
     /**
      * The type of job executing.
-     *
      * @return the value
-     */
+     **/
     public Operation getOperation() {
         return operation;
     }
 
     /**
-     * When {@code true}, the stack sources third-party Terraform providers from [Terraform
-     * Registry](https://registry.terraform.io/browse/providers) and allows {@link
-     * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For more
-     * information about stack sourcing of third-party Terraform providers, see [Third-party
-     * Provider
-     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
-     */
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isThirdPartyProviderExperienceEnabled")
     private final Boolean isThirdPartyProviderExperienceEnabled;
 
     /**
-     * When {@code true}, the stack sources third-party Terraform providers from [Terraform
-     * Registry](https://registry.terraform.io/browse/providers) and allows {@link
-     * #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}. For more
-     * information about stack sourcing of third-party Terraform providers, see [Third-party
-     * Provider
-     * Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
+     * When {@code true}, the stack sources third-party Terraform providers from
+     * [Terraform Registry](https://registry.terraform.io/browse/providers) and allows
+     * {@link #customTerraformProvider(CustomTerraformProviderRequest) customTerraformProvider}.
+     * For more information about stack sourcing of third-party Terraform providers, see
+     * [Third-party Provider Configuration](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#third-party-providers).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsThirdPartyProviderExperienceEnabled() {
         return isThirdPartyProviderExperienceEnabled;
     }
 
     /**
-     * Specifies whether or not to upgrade provider versions. Within the version constraints of your
-     * Terraform configuration, use the latest versions available from the source of Terraform
-     * providers. For more information about this option, see [Dependency Lock File
-     * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
-     */
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isProviderUpgradeRequired")
     private final Boolean isProviderUpgradeRequired;
 
     /**
-     * Specifies whether or not to upgrade provider versions. Within the version constraints of your
-     * Terraform configuration, use the latest versions available from the source of Terraform
-     * providers. For more information about this option, see [Dependency Lock File
-     * (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
+     * Specifies whether or not to upgrade provider versions.
+     * Within the version constraints of your Terraform configuration, use the latest versions available from the source of Terraform providers.
+     * For more information about this option, see [Dependency Lock File (terraform.io)](https://www.terraform.io/language/files/dependency-lock).
      *
      * @return the value
-     */
+     **/
     public Boolean getIsProviderUpgradeRequired() {
         return isProviderUpgradeRequired;
     }
@@ -751,66 +742,70 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails}
-     * instead. The plan job
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used
-     * (if this was an apply job and was not auto-approved).
-     */
+     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
+     * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolvedPlanJobId")
     private final String resolvedPlanJobId;
 
     /**
-     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails}
-     * instead. The plan job
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used
-     * (if this was an apply job and was not auto-approved).
+     * Deprecated. Use the property {@code executionPlanJobId} in {@code jobOperationDetails} instead.
+     * The plan job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that was used (if this was an apply job and was not auto-approved).
      *
      * @return the value
-     */
+     **/
     public String getResolvedPlanJobId() {
         return resolvedPlanJobId;
     }
 
     /**
-     * The date and time when the job was created. Format is defined by RFC3339. Example: {@code
-     * 2020-01-25T21:10:29.600Z}
-     */
+     * The date and time when the job was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time when the job was created. Format is defined by RFC3339. Example: {@code
-     * 2020-01-25T21:10:29.600Z}
+     * The date and time when the job was created.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time when the job stopped running, irrespective of whether the job ran
-     * successfully. Format is defined by RFC3339. Example: {@code 2020-01-25T21:10:29.600Z}
-     */
+     * The date and time when the job stopped running, irrespective of whether the job ran successfully.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time when the job stopped running, irrespective of whether the job ran
-     * successfully. Format is defined by RFC3339. Example: {@code 2020-01-25T21:10:29.600Z}
+     * The date and time when the job stopped running, irrespective of whether the job ran successfully.
+     * Format is defined by RFC3339.
+     * Example: {@code 2020-01-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * Current state of the specified job. For more information about job lifecycle states in
-     * Resource Manager, see [Key
-     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * Current state of the specified job.
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     *
+     **/
+    public enum LifecycleState {
         Accepted("ACCEPTED"),
         InProgress("IN_PROGRESS"),
         Failed("FAILED"),
@@ -819,8 +814,8 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -860,20 +855,21 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     };
     /**
-     * Current state of the specified job. For more information about job lifecycle states in
-     * Resource Manager, see [Key
-     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
-     */
+     * Current state of the specified job.
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * Current state of the specified job. For more information about job lifecycle states in
-     * Resource Manager, see [Key
-     * Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
+     * Current state of the specified job.
+     * For more information about job lifecycle states in Resource Manager, see
+     * [Key Concepts](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/resourcemanager.htm#concepts__JobStates).
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -893,45 +889,49 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
-     */
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      * @return the value
-     */
+     **/
     public String getWorkingDirectory() {
         return workingDirectory;
     }
 
     /**
-     * Terraform variables associated with this resource. Maximum number of variables supported is
-     * 250. The maximum size of each variable, including both name and value, is 8192 bytes.
+     * Terraform variables associated with this resource.
+     * Maximum number of variables supported is 250.
+     * The maximum size of each variable, including both name and value, is 8192 bytes.
      * Example: {@code {"CompartmentId": "compartment-id-value"}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.Map<String, String> variables;
 
     /**
-     * Terraform variables associated with this resource. Maximum number of variables supported is
-     * 250. The maximum size of each variable, including both name and value, is 8192 bytes.
+     * Terraform variables associated with this resource.
+     * Maximum number of variables supported is 250.
+     * The maximum size of each variable, including both name and value, is 8192 bytes.
      * Example: {@code {"CompartmentId": "compartment-id-value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getVariables() {
         return variables;
     }
@@ -944,43 +944,41 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags associated with this resource. Each tag is a key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -992,7 +990,6 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

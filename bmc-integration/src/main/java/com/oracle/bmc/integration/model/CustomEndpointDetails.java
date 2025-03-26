@@ -5,23 +5,22 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Details for a custom endpoint for the integration instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Details for a custom endpoint for the integration instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CustomEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
@@ -52,118 +51,119 @@ public final class CustomEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A custom hostname to be used for the integration instance URL, in FQDN format. */
+        /**
+         * A custom hostname to be used for the integration instance URL, in FQDN format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * A custom hostname to be used for the integration instance URL, in FQDN format.
-         *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
             return this;
         }
-        /** Indicates if custom endpoint is managed by oracle or customer. */
+        /**
+         * Indicates if custom endpoint is managed by oracle or customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedType")
         private ManagedType managedType;
 
         /**
          * Indicates if custom endpoint is managed by oracle or customer.
-         *
          * @param managedType the value to set
          * @return this builder
-         */
+         **/
         public Builder managedType(ManagedType managedType) {
             this.managedType = managedType;
             this.__explicitlySet__.add("managedType");
             return this;
         }
-        /** DNS Zone name */
+        /**
+         * DNS Zone name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
         private String dnsZoneName;
 
         /**
          * DNS Zone name
-         *
          * @param dnsZoneName the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsZoneName(String dnsZoneName) {
             this.dnsZoneName = dnsZoneName;
             this.__explicitlySet__.add("dnsZoneName");
             return this;
         }
-        /** Type of DNS. */
+        /**
+         * Type of DNS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
         private DnsType dnsType;
 
         /**
          * Type of DNS.
-         *
          * @param dnsType the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsType(DnsType dnsType) {
             this.dnsType = dnsType;
             this.__explicitlySet__.add("dnsType");
             return this;
         }
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
-         * for the custom hostname.
-         */
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
         private String certificateSecretId;
 
         /**
-         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used
-         * for the custom hostname.
+         * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
          *
          * @param certificateSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateSecretId(String certificateSecretId) {
             this.certificateSecretId = certificateSecretId;
             this.__explicitlySet__.add("certificateSecretId");
             return this;
         }
         /**
-         * The secret version used for the certificate-secret-id (if certificate-secret-id is
-         * specified).
-         */
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
         private Integer certificateSecretVersion;
 
         /**
-         * The secret version used for the certificate-secret-id (if certificate-secret-id is
-         * specified).
+         * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
          *
          * @param certificateSecretVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateSecretVersion(Integer certificateSecretVersion) {
             this.certificateSecretVersion = certificateSecretVersion;
             this.__explicitlySet__.add("certificateSecretVersion");
             return this;
         }
         /**
-         * When creating the DNS CNAME record for the custom hostname, this value must be specified
-         * in the rdata.
-         */
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
-         * When creating the DNS CNAME record for the custom hostname, this value must be specified
-         * in the rdata.
+         * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
          *
          * @param alias the value to set
          * @return this builder
-         */
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
@@ -216,7 +216,9 @@ public final class CustomEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -225,27 +227,30 @@ public final class CustomEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** A custom hostname to be used for the integration instance URL, in FQDN format. */
+    /**
+     * A custom hostname to be used for the integration instance URL, in FQDN format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * A custom hostname to be used for the integration instance URL, in FQDN format.
-     *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
 
-    /** Indicates if custom endpoint is managed by oracle or customer. */
-    public enum ManagedType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates if custom endpoint is managed by oracle or customer.
+     **/
+    public enum ManagedType {
         OracleManaged("ORACLE_MANAGED"),
         CustomerManaged("CUSTOMER_MANAGED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -284,39 +289,43 @@ public final class CustomEndpointDetails
             return UnknownEnumValue;
         }
     };
-    /** Indicates if custom endpoint is managed by oracle or customer. */
+    /**
+     * Indicates if custom endpoint is managed by oracle or customer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedType")
     private final ManagedType managedType;
 
     /**
      * Indicates if custom endpoint is managed by oracle or customer.
-     *
      * @return the value
-     */
+     **/
     public ManagedType getManagedType() {
         return managedType;
     }
 
-    /** DNS Zone name */
+    /**
+     * DNS Zone name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
     private final String dnsZoneName;
 
     /**
      * DNS Zone name
-     *
      * @return the value
-     */
+     **/
     public String getDnsZoneName() {
         return dnsZoneName;
     }
 
-    /** Type of DNS. */
-    public enum DnsType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of DNS.
+     **/
+    public enum DnsType {
         Oci("OCI"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -355,66 +364,64 @@ public final class CustomEndpointDetails
             return UnknownEnumValue;
         }
     };
-    /** Type of DNS. */
+    /**
+     * Type of DNS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
     private final DnsType dnsType;
 
     /**
      * Type of DNS.
-     *
      * @return the value
-     */
+     **/
     public DnsType getDnsType() {
         return dnsType;
     }
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
-     * the custom hostname.
-     */
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretId")
     private final String certificateSecretId;
 
     /**
-     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for
-     * the custom hostname.
+     * Optional OCID of a vault/secret containing a private SSL certificate bundle to be used for the custom hostname.
      *
      * @return the value
-     */
+     **/
     public String getCertificateSecretId() {
         return certificateSecretId;
     }
 
     /**
-     * The secret version used for the certificate-secret-id (if certificate-secret-id is
-     * specified).
-     */
+     * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateSecretVersion")
     private final Integer certificateSecretVersion;
 
     /**
-     * The secret version used for the certificate-secret-id (if certificate-secret-id is
-     * specified).
+     * The secret version used for the certificate-secret-id (if certificate-secret-id is specified).
      *
      * @return the value
-     */
+     **/
     public Integer getCertificateSecretVersion() {
         return certificateSecretVersion;
     }
 
     /**
-     * When creating the DNS CNAME record for the custom hostname, this value must be specified in
-     * the rdata.
-     */
+     * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
-     * When creating the DNS CNAME record for the custom hostname, this value must be specified in
-     * the rdata.
+     * When creating the DNS CNAME record for the custom hostname, this value must be specified in the rdata.
      *
      * @return the value
-     */
+     **/
     public String getAlias() {
         return alias;
     }
@@ -426,7 +433,6 @@ public final class CustomEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

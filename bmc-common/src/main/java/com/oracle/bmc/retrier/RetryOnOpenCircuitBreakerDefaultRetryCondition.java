@@ -6,12 +6,12 @@ package com.oracle.bmc.retrier;
 
 import com.oracle.bmc.circuitbreaker.CallNotAllowedException;
 import com.oracle.bmc.model.BmcException;
-import jakarta.annotation.Nonnull;
+
+import javax.annotation.Nonnull;
 
 /**
  * Class that may retry for the conditions documented in
- * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm and when the CircuitBreaker is
- * OPEN.
+ * https://docs.oracle.com/iaas/Content/API/References/apierrors.htm and when the CircuitBreaker is OPEN.
  */
 public class RetryOnOpenCircuitBreakerDefaultRetryCondition extends DefaultRetryCondition {
 

@@ -5,23 +5,22 @@
 package com.oracle.bmc.artifacts.model;
 
 /**
- * Container configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Container configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ContainerConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ContainerConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isRepositoryCreatedOnFirstPush", "namespace"})
     public ContainerConfiguration(Boolean isRepositoryCreatedOnFirstPush, String namespace) {
@@ -33,34 +32,36 @@ public final class ContainerConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether to create a new container repository when a container is pushed to a new
-         * repository path. Repositories created in this way belong to the root compartment.
-         */
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
         private Boolean isRepositoryCreatedOnFirstPush;
 
         /**
-         * Whether to create a new container repository when a container is pushed to a new
-         * repository path. Repositories created in this way belong to the root compartment.
+         * Whether to create a new container repository when a container is pushed to a new repository path.
+         * Repositories created in this way belong to the root compartment.
          *
          * @param isRepositoryCreatedOnFirstPush the value to set
          * @return this builder
-         */
+         **/
         public Builder isRepositoryCreatedOnFirstPush(Boolean isRepositoryCreatedOnFirstPush) {
             this.isRepositoryCreatedOnFirstPush = isRepositoryCreatedOnFirstPush;
             this.__explicitlySet__.add("isRepositoryCreatedOnFirstPush");
             return this;
         }
-        /** The tenancy namespace used in the container repository path. */
+        /**
+         * The tenancy namespace used in the container repository path.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The tenancy namespace used in the container repository path.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -91,7 +92,9 @@ public final class ContainerConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,31 +104,33 @@ public final class ContainerConfiguration
     }
 
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository
-     * path. Repositories created in this way belong to the root compartment.
-     */
+     * Whether to create a new container repository when a container is pushed to a new repository path.
+     * Repositories created in this way belong to the root compartment.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRepositoryCreatedOnFirstPush")
     private final Boolean isRepositoryCreatedOnFirstPush;
 
     /**
-     * Whether to create a new container repository when a container is pushed to a new repository
-     * path. Repositories created in this way belong to the root compartment.
+     * Whether to create a new container repository when a container is pushed to a new repository path.
+     * Repositories created in this way belong to the root compartment.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRepositoryCreatedOnFirstPush() {
         return isRepositoryCreatedOnFirstPush;
     }
 
-    /** The tenancy namespace used in the container repository path. */
+    /**
+     * The tenancy namespace used in the container repository path.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The tenancy namespace used in the container repository path.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -137,7 +142,6 @@ public final class ContainerConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

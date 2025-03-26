@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Autonomous Transaction Processing data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Autonomous Transaction Processing data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataAssetFromJdbc.Builder.class)
+    builder = UpdateDataAssetFromJdbc.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataAssetFromJdbc extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,46 +116,49 @@ public final class UpdateDataAssetFromJdbc extends UpdateDataAssetDetails {
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The generic JDBC host name. */
+        /**
+         * The generic JDBC host name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
         /**
          * The generic JDBC host name.
-         *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The generic JDBC port number. */
+        /**
+         * The generic JDBC port number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private String port;
 
         /**
          * The generic JDBC port number.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(String port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** The data asset type for the generic JDBC data asset. */
+        /**
+         * The data asset type for the generic JDBC data asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
         private String dataAssetType;
 
         /**
          * The data asset type for the generic JDBC data asset.
-         *
          * @param dataAssetType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataAssetType(String dataAssetType) {
             this.dataAssetType = dataAssetType;
             this.__explicitlySet__.add("dataAssetType");
@@ -245,7 +248,9 @@ public final class UpdateDataAssetFromJdbc extends UpdateDataAssetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,41 +292,44 @@ public final class UpdateDataAssetFromJdbc extends UpdateDataAssetDetails {
         this.defaultConnection = defaultConnection;
     }
 
-    /** The generic JDBC host name. */
+    /**
+     * The generic JDBC host name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
     /**
      * The generic JDBC host name.
-     *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The generic JDBC port number. */
+    /**
+     * The generic JDBC port number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final String port;
 
     /**
      * The generic JDBC port number.
-     *
      * @return the value
-     */
+     **/
     public String getPort() {
         return port;
     }
 
-    /** The data asset type for the generic JDBC data asset. */
+    /**
+     * The data asset type for the generic JDBC data asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetType")
     private final String dataAssetType;
 
     /**
      * The data asset type for the generic JDBC data asset.
-     *
      * @return the value
-     */
+     **/
     public String getDataAssetType() {
         return dataAssetType;
     }
@@ -340,7 +348,6 @@ public final class UpdateDataAssetFromJdbc extends UpdateDataAssetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

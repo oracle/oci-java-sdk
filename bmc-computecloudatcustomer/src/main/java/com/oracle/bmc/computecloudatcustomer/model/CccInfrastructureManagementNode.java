@@ -5,23 +5,23 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Information about an individual management node in a Compute Cloud@Customer infrastructure. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Information about an individual management node in a Compute Cloud@Customer infrastructure.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccInfrastructureManagementNode.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CccInfrastructureManagementNode.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CccInfrastructureManagementNode
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ip", "hostname"})
     public CccInfrastructureManagementNode(String ip, String hostname) {
@@ -32,31 +32,33 @@ public final class CccInfrastructureManagementNode
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Address of the management node. */
+        /**
+         * Address of the management node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ip")
         private String ip;
 
         /**
          * Address of the management node.
-         *
          * @param ip the value to set
          * @return this builder
-         */
+         **/
         public Builder ip(String ip) {
             this.ip = ip;
             this.__explicitlySet__.add("ip");
             return this;
         }
-        /** Hostname for interface to the management node. */
+        /**
+         * Hostname for interface to the management node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostname")
         private String hostname;
 
         /**
          * Hostname for interface to the management node.
-         *
          * @param hostname the value to set
          * @return this builder
-         */
+         **/
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
@@ -87,7 +89,9 @@ public final class CccInfrastructureManagementNode
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +100,30 @@ public final class CccInfrastructureManagementNode
         return new Builder().copy(this);
     }
 
-    /** Address of the management node. */
+    /**
+     * Address of the management node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ip")
     private final String ip;
 
     /**
      * Address of the management node.
-     *
      * @return the value
-     */
+     **/
     public String getIp() {
         return ip;
     }
 
-    /** Hostname for interface to the management node. */
+    /**
+     * Hostname for interface to the management node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostname")
     private final String hostname;
 
     /**
      * Hostname for interface to the management node.
-     *
      * @return the value
-     */
+     **/
     public String getHostname() {
         return hostname;
     }
@@ -129,7 +135,6 @@ public final class CccInfrastructureManagementNode
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

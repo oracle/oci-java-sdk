@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** OCI Exadata VM Cluster Type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum ExadataVmClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * OCI Exadata VM Cluster Type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum ExadataVmClusterType {
     VmCluster("vmCluster"),
     ;
 

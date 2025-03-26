@@ -7,23 +7,28 @@ package com.oracle.bmc.auth.internal;
 import com.oracle.bmc.auth.SessionKeySupplier;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.client.Method;
-import com.oracle.bmc.http.internal.ClientCall;
+import com.oracle.bmc.http.internal.ResponseHelper;
+import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.internal.StringUtils;
 import org.slf4j.Logger;
 
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+import java.net.URI;
 import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 
 /**
- * This class gets a security token from the auth service by signing the request with the provided
- * private key.
+ * This class gets a security token from the auth service by signing the request with the provided private key.
  */
 public class ResourcePrincipalV2FederationClient extends AbstractFederationClient {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(ResourcePrincipalV2FederationClient.class);
 
-    /** The authentication provider to sign the internal requests. */
+    /**
+     * The authentication provider to sign the internal requests.
+     */
     private final KeyPairAuthenticationDetailProvider provider;
 
     /** The resource principal token path. */
@@ -35,13 +40,12 @@ public class ResourcePrincipalV2FederationClient extends AbstractFederationClien
     /**
      * Constructor of ResourcePrincipalsV2FederationClient.
      *
-     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
-     *     token.
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal token.
      * @param federationEndpoint the endpoint that can provide the resource principal session token.
      * @param sessionKeySupplier the session key supplier.
      * @param keyPairAuthenticationDetailsProvider the key pair authentication details provider.
      * @param clientConfigurator the reset client configurator.
-     * @param circuitBreakerConfiguration the rest client circuit breaker configuration. *
+     * @param circuitBreakerConfiguration the rest client circuit breaker configuration.
      */
     public ResourcePrincipalV2FederationClient(
             String resourcePrincipalTokenEndpoint,
@@ -64,15 +68,14 @@ public class ResourcePrincipalV2FederationClient extends AbstractFederationClien
     /**
      * Constructor of ResourcePrincipalsV2FederationClient.
      *
-     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal
-     *     token.
+     * @param resourcePrincipalTokenEndpoint the endpoint that can provide the resource principal token.
      * @param federationEndpoint the endpoint that can provide the resource principal session token.
      * @param resourcePrincipalTokenPath the resource principal token path
      * @param securityContext the security context
      * @param sessionKeySupplier the session key supplier.
      * @param keyPairAuthenticationDetailsProvider the key pair authentication details provider.
      * @param clientConfigurator the reset client configurator.
-     * @param circuitBreakerConfiguration the rest client circuit breaker configuration. *
+     * @param circuitBreakerConfiguration the rest client circuit breaker configuration.
      */
     public ResourcePrincipalV2FederationClient(
             String resourcePrincipalTokenEndpoint,
@@ -83,6 +86,7 @@ public class ResourcePrincipalV2FederationClient extends AbstractFederationClien
             KeyPairAuthenticationDetailProvider keyPairAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
             CircuitBreakerConfiguration circuitBreakerConfiguration) {
+
         super(
                 resourcePrincipalTokenEndpoint,
                 federationEndpoint,
@@ -98,7 +102,6 @@ public class ResourcePrincipalV2FederationClient extends AbstractFederationClien
 
     /**
      * Gets a security token from the federation server
-     *
      * @return the security token, which is basically a JWT token string
      */
     @Override
@@ -115,33 +118,29 @@ public class ResourcePrincipalV2FederationClient extends AbstractFederationClien
             throw new IllegalArgumentException("Public key is not present");
         }
 
-        // Get resource principal token from service cp, like SecretsVault or DBAAS
-        ClientCall<?, GetResourcePrincipalTokenResponse.ResponseWrapper, ?> rptCall =
-                prepareRptCall()
-                        .method(Method.GET)
-                        .logger(LOG, "ResourcePrincipalsV2FederationClient")
-                        .appendPathPart(
-                                (StringUtils.isNotBlank(resourcePrincipalTokenPath))
-                                        ? resourcePrincipalTokenPath
-                                        : "20180711/resourcePrincipalTokenV2")
-                        .appendPathPart(provider.refresh()); // refresh will return the resource id
+        try {
+            // Get resource principal token from service cp, like SecretsVault or DBAAS
+            restClient.setEndpoint(resourcePrincipalTokenEndpoint);
+            WebTarget target;
+            if (StringUtils.isNotBlank(resourcePrincipalTokenPath)) {
+                target =
+                        restClient
+                                .getBaseTarget()
+                                .path(resourcePrincipalTokenPath)
+                                .path(provider.refresh()); // refresh will return the resource id
+            } else {
+                target =
+                        restClient
+                                .getBaseTarget()
+                                .path("20180711")
+                                .path("resourcePrincipalTokenV2")
+                                .path(provider.refresh()); // refresh will return the resource id
+            }
 
-        if (StringUtils.isNotBlank(securityContext)) {
-            rptCall.appendHeader("security-context", securityContext);
+            return getSecurityTokenFromServerInner(publicKey, target, securityContext);
+
+        } catch (BmcException ex) {
+            throw ex;
         }
-        GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
-                rptCall.callSync().body;
-
-        String servicePrincipalSessionToken =
-                getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
-        String resourcePrincipalToken =
-                getResourcePrincipalTokenResponse.getResourcePrincipalToken();
-
-        // Get resource principal session token with Identity
-        return requestSessionToken(
-                new GetResourcePrincipalSessionTokenRequest(
-                        resourcePrincipalToken,
-                        servicePrincipalSessionToken,
-                        AuthUtils.base64EncodeNoChunking(publicKey)));
     }
 }

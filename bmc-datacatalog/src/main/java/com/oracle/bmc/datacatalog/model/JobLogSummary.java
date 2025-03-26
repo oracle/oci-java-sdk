@@ -5,22 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * A list of job execution logs. A job log is an audit log record inserted during the lifecycle of a
- * job execution instance. There can be one or more logs for an execution instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * A list of job execution logs.
+ * A job log is an audit log record inserted during the lifecycle of a job execution instance.
+ * There can be one or more logs for an execution instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobLogSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobLogSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobLogSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -48,95 +48,101 @@ public final class JobLogSummary extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique key of the job log that is immutable. */
+        /**
+         * Unique key of the job log that is immutable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique key of the job log that is immutable.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The unique key of the parent job execution for which the log resource was created. */
+        /**
+         * The unique key of the parent job execution for which the log resource was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
         private String jobExecutionKey;
 
         /**
          * The unique key of the parent job execution for which the log resource was created.
-         *
          * @param jobExecutionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobExecutionKey(String jobExecutionKey) {
             this.jobExecutionKey = jobExecutionKey;
             this.__explicitlySet__.add("jobExecutionKey");
             return this;
         }
-        /** URI to the job log instance in the API. */
+        /**
+         * URI to the job log instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the job log instance in the API.
-         *
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
             return this;
         }
         /**
-         * The date and time the job log was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-         */
+         * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the job log was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Severity level for this log. */
+        /**
+         * Severity level for this log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("severity")
         private String severity;
 
         /**
          * Severity level for this log.
-         *
          * @param severity the value to set
          * @return this builder
-         */
+         **/
         public Builder severity(String severity) {
             this.severity = severity;
             this.__explicitlySet__.add("severity");
             return this;
         }
-        /** Message for this job log. */
+        /**
+         * Message for this job log.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
         private String logMessage;
 
         /**
          * Message for this job log.
-         *
          * @param logMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder logMessage(String logMessage) {
             this.logMessage = logMessage;
             this.__explicitlySet__.add("logMessage");
@@ -185,7 +191,9 @@ public final class JobLogSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,84 +202,90 @@ public final class JobLogSummary extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Unique key of the job log that is immutable. */
+    /**
+     * Unique key of the job log that is immutable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique key of the job log that is immutable.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The unique key of the parent job execution for which the log resource was created. */
+    /**
+     * The unique key of the parent job execution for which the log resource was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobExecutionKey")
     private final String jobExecutionKey;
 
     /**
      * The unique key of the parent job execution for which the log resource was created.
-     *
      * @return the value
-     */
+     **/
     public String getJobExecutionKey() {
         return jobExecutionKey;
     }
 
-    /** URI to the job log instance in the API. */
+    /**
+     * URI to the job log instance in the API.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the job log instance in the API.
-     *
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
 
     /**
-     * The date and time the job log was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-     */
+     * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the job log was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time the job log was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Severity level for this log. */
+    /**
+     * Severity level for this log.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("severity")
     private final String severity;
 
     /**
      * Severity level for this log.
-     *
      * @return the value
-     */
+     **/
     public String getSeverity() {
         return severity;
     }
 
-    /** Message for this job log. */
+    /**
+     * Message for this job log.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logMessage")
     private final String logMessage;
 
     /**
      * Message for this job log.
-     *
      * @return the value
-     */
+     **/
     public String getLogMessage() {
         return logMessage;
     }
@@ -283,7 +297,6 @@ public final class JobLogSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

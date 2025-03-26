@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * SAML policy is optionally used for Opensearch cluster to config SAML authentication <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * SAML policy is optionally used for Opensearch cluster to config SAML authentication
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecuritySamlConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SecuritySamlConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SecuritySamlConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SecuritySamlConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -52,106 +51,113 @@ public final class SecuritySamlConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A flag determine whether SAML is enabled */
+        /**
+         * A flag determine whether SAML is enabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * A flag determine whether SAML is enabled
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** The content of identity provider metadata */
+        /**
+         * The content of identity provider metadata
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idpMetadataContent")
         private String idpMetadataContent;
 
         /**
          * The content of identity provider metadata
-         *
          * @param idpMetadataContent the value to set
          * @return this builder
-         */
+         **/
         public Builder idpMetadataContent(String idpMetadataContent) {
             this.idpMetadataContent = idpMetadataContent;
             this.__explicitlySet__.add("idpMetadataContent");
             return this;
         }
-        /** The unique name for a identity provider entity */
+        /**
+         * The unique name for a identity provider entity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idpEntityId")
         private String idpEntityId;
 
         /**
          * The unique name for a identity provider entity
-         *
          * @param idpEntityId the value to set
          * @return this builder
-         */
+         **/
         public Builder idpEntityId(String idpEntityId) {
             this.idpEntityId = idpEntityId;
             this.__explicitlySet__.add("idpEntityId");
             return this;
         }
-        /** The endpoint of opendashboard */
+        /**
+         * The endpoint of opendashboard
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("opendashboardUrl")
         private String opendashboardUrl;
 
         /**
          * The endpoint of opendashboard
-         *
          * @param opendashboardUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder opendashboardUrl(String opendashboardUrl) {
             this.opendashboardUrl = opendashboardUrl;
             this.__explicitlySet__.add("opendashboardUrl");
             return this;
         }
-        /** The backend role of admins who have all permissions like local master user */
+        /**
+         * The backend role of admins who have all permissions like local master user
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminBackendRole")
         private String adminBackendRole;
 
         /**
          * The backend role of admins who have all permissions like local master user
-         *
          * @param adminBackendRole the value to set
          * @return this builder
-         */
+         **/
         public Builder adminBackendRole(String adminBackendRole) {
             this.adminBackendRole = adminBackendRole;
             this.__explicitlySet__.add("adminBackendRole");
             return this;
         }
-        /** The subject key is used to get username from SAML assertion. By default, it is NameID */
+        /**
+         * The subject key is used to get username from SAML assertion. By default, it is NameID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectKey")
         private String subjectKey;
 
         /**
          * The subject key is used to get username from SAML assertion. By default, it is NameID
-         *
          * @param subjectKey the value to set
          * @return this builder
-         */
+         **/
         public Builder subjectKey(String subjectKey) {
             this.subjectKey = subjectKey;
             this.__explicitlySet__.add("subjectKey");
             return this;
         }
-        /** The roles key is sued to get backend roles from SAML assertion */
+        /**
+         * The roles key is sued to get backend roles from SAML assertion
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rolesKey")
         private String rolesKey;
 
         /**
          * The roles key is sued to get backend roles from SAML assertion
-         *
          * @param rolesKey the value to set
          * @return this builder
-         */
+         **/
         public Builder rolesKey(String rolesKey) {
             this.rolesKey = rolesKey;
             this.__explicitlySet__.add("rolesKey");
@@ -204,7 +210,9 @@ public final class SecuritySamlConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -213,93 +221,100 @@ public final class SecuritySamlConfig
         return new Builder().copy(this);
     }
 
-    /** A flag determine whether SAML is enabled */
+    /**
+     * A flag determine whether SAML is enabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * A flag determine whether SAML is enabled
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** The content of identity provider metadata */
+    /**
+     * The content of identity provider metadata
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpMetadataContent")
     private final String idpMetadataContent;
 
     /**
      * The content of identity provider metadata
-     *
      * @return the value
-     */
+     **/
     public String getIdpMetadataContent() {
         return idpMetadataContent;
     }
 
-    /** The unique name for a identity provider entity */
+    /**
+     * The unique name for a identity provider entity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idpEntityId")
     private final String idpEntityId;
 
     /**
      * The unique name for a identity provider entity
-     *
      * @return the value
-     */
+     **/
     public String getIdpEntityId() {
         return idpEntityId;
     }
 
-    /** The endpoint of opendashboard */
+    /**
+     * The endpoint of opendashboard
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("opendashboardUrl")
     private final String opendashboardUrl;
 
     /**
      * The endpoint of opendashboard
-     *
      * @return the value
-     */
+     **/
     public String getOpendashboardUrl() {
         return opendashboardUrl;
     }
 
-    /** The backend role of admins who have all permissions like local master user */
+    /**
+     * The backend role of admins who have all permissions like local master user
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminBackendRole")
     private final String adminBackendRole;
 
     /**
      * The backend role of admins who have all permissions like local master user
-     *
      * @return the value
-     */
+     **/
     public String getAdminBackendRole() {
         return adminBackendRole;
     }
 
-    /** The subject key is used to get username from SAML assertion. By default, it is NameID */
+    /**
+     * The subject key is used to get username from SAML assertion. By default, it is NameID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectKey")
     private final String subjectKey;
 
     /**
      * The subject key is used to get username from SAML assertion. By default, it is NameID
-     *
      * @return the value
-     */
+     **/
     public String getSubjectKey() {
         return subjectKey;
     }
 
-    /** The roles key is sued to get backend roles from SAML assertion */
+    /**
+     * The roles key is sued to get backend roles from SAML assertion
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rolesKey")
     private final String rolesKey;
 
     /**
      * The roles key is sued to get backend roles from SAML assertion
-     *
      * @return the value
-     */
+     **/
     public String getRolesKey() {
         return rolesKey;
     }
@@ -311,7 +326,6 @@ public final class SecuritySamlConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

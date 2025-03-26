@@ -6,64 +6,74 @@ package com.oracle.bmc.osubusage.requests;
 
 import com.oracle.bmc.osubusage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/GetComputedUsageExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputedUsageRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubusage/GetComputedUsageExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetComputedUsageRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Computed Usage Id */
+    /**
+     * The Computed Usage Id
+     */
     private String computedUsageId;
 
-    /** The Computed Usage Id */
+    /**
+     * The Computed Usage Id
+     */
     public String getComputedUsageId() {
         return computedUsageId;
     }
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     private java.util.List<String> fields;
 
     /**
-     * Partial response refers to an optimization technique offered by the RESTful web APIs to
-     * return only the information (fields) required by the client. This parameter is used to
-     * control what fields to return.
+     * Partial response refers to an optimization technique offered
+     * by the RESTful web APIs to return only the information
+     * (fields) required by the client. This parameter is used to control what fields to
+     * return.
+     *
      */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     private String xOneOriginRegion;
 
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
@@ -72,15 +82,17 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetComputedUsageRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Computed Usage Id */
+        /**
+         * The Computed Usage Id
+         */
         private String computedUsageId = null;
 
         /**
          * The Computed Usage Id
-         *
          * @param computedUsageId the value to set
          * @return this builder instance
          */
@@ -89,12 +101,13 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -104,16 +117,19 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
+         *
          */
         private java.util.List<String> fields = null;
 
         /**
-         * Partial response refers to an optimization technique offered by the RESTful web APIs to
-         * return only the information (fields) required by the client. This parameter is used to
-         * control what fields to return.
+         * Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -124,9 +140,10 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Singular setter. Partial response refers to an optimization technique offered by the
-         * RESTful web APIs to return only the information (fields) required by the client. This
-         * parameter is used to control what fields to return.
+         * Singular setter. Partial response refers to an optimization technique offered
+         * by the RESTful web APIs to return only the information
+         * (fields) required by the client. This parameter is used to control what fields to
+         * return.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -136,14 +153,13 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -154,14 +170,13 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
          */
         private String xOneOriginRegion = null;
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
          * @param xOneOriginRegion the value to set
          * @return this builder instance
@@ -173,19 +188,18 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -197,7 +211,6 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetComputedUsageRequest o) {
@@ -214,11 +227,10 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetComputedUsageRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetComputedUsageRequest
          */
@@ -232,8 +244,7 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetComputedUsageRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetComputedUsageRequest
@@ -246,14 +257,12 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
             request.opcRequestId = opcRequestId;
             request.xOneOriginRegion = xOneOriginRegion;
             return request;
-            // new GetComputedUsageRequest(computedUsageId, compartmentId, fields, opcRequestId,
-            // xOneOriginRegion);
+            // new GetComputedUsageRequest(computedUsageId, compartmentId, fields, opcRequestId, xOneOriginRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -267,7 +276,6 @@ public class GetComputedUsageRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

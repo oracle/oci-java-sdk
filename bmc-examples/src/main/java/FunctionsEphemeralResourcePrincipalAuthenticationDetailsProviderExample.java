@@ -15,16 +15,16 @@ import com.oracle.bmc.identity.responses.ListCompartmentsResponse;
  * This sample only works when running inside a function launched by the OCI Functions service. The
  * {@link ResourcePrincipalAuthenticationDetailsProvider} builder expects the following environment
  * variables to be set:
- *
  * <ul>
- *   <li><b>OCI_RESOURCE_PRINCIPAL_VERSION</b>:
- *       <p>Under OCI Functions, this will contain the value {@code 2.2}
- *   <li><b>OCI_RESOURCE_PRINCIPAL_REGION</b>:
- *       <p>The OCI Functions service will set this to correspond to the local region (that is,
- *       where the function is currently executing).
- *   <li><b>OCI_RESOURCE_PRINCIPAL_RPST</b> and <b>OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM</b>:
- *       <p>These will be set to the location of files containing the token information for the
- *       current function invocation.
+ * <li><b>OCI_RESOURCE_PRINCIPAL_VERSION</b>:
+ * <p>Under OCI Functions, this will contain the value {@code 2.2}
+ * </p></li>
+ * <li><b>OCI_RESOURCE_PRINCIPAL_REGION</b>:
+ * <p>The OCI Functions service will set this to correspond to the local region (that is, where the function is
+ *    currently executing).</p></li>
+ * <li><b>OCI_RESOURCE_PRINCIPAL_RPST</b> and <b>OCI_RESOURCE_PRINCIPAL_PRIVATE_PEM</b>:
+ * <p>These will be set to the location of files containing the token information for the current function invocation.
+ * </p></li>
  * </ul>
  */
 public class FunctionsEphemeralResourcePrincipalAuthenticationDetailsProviderExample {
@@ -33,7 +33,7 @@ public class FunctionsEphemeralResourcePrincipalAuthenticationDetailsProviderExa
         final ResourcePrincipalAuthenticationDetailsProvider provider =
                 ResourcePrincipalAuthenticationDetailsProvider.builder().build();
 
-        final IdentityClient identityClient = IdentityClient.builder().build(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
 
         // Load the compartment ID of the current function
         String compartmentId =

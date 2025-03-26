@@ -6,9 +6,12 @@ package com.oracle.bmc.generativeaiagent.responses;
 
 import com.oracle.bmc.generativeaiagent.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
 public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned {@code DataIngestionJob} instance. */
+    /**
+     * The returned DataIngestionJob instance.
+     */
     private com.oracle.bmc.generativeaiagent.model.DataIngestionJob dataIngestionJob;
 
     /**
-     * The returned {@code DataIngestionJob} instance.
-     *
+     * The returned DataIngestionJob instance.
      * @return the value
      */
     public com.oracle.bmc.generativeaiagent.model.DataIngestionJob getDataIngestionJob() {
@@ -57,7 +62,7 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
     })
     private GetDataIngestionJobResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.generativeaiagent.model.DataIngestionJob dataIngestionJob) {
@@ -67,25 +72,25 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
         this.dataIngestionJob = dataIngestionJob;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetDataIngestionJobResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +105,15 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +123,13 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code DataIngestionJob} instance. */
+        /**
+         * The returned DataIngestionJob instance.
+         */
         private com.oracle.bmc.generativeaiagent.model.DataIngestionJob dataIngestionJob;
 
         /**
-         * The returned {@code DataIngestionJob} instance.
-         *
+         * The returned DataIngestionJob instance.
          * @param dataIngestionJob the value to set
          * @return this builder
          */
@@ -134,10 +141,8 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetDataIngestionJobResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +155,8 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetDataIngestionJobResponse build() {
             return new GetDataIngestionJobResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, dataIngestionJob);
@@ -162,7 +165,6 @@ public class GetDataIngestionJobResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

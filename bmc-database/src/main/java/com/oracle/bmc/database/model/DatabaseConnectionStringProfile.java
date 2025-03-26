@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The connection string profile to allow clients to group, filter and select connection string
- * values based on structured metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The connection string profile to allow clients to group, filter and select connection string values based on structured metadata.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseConnectionStringProfile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabaseConnectionStringProfile.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseConnectionStringProfile
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -59,154 +58,149 @@ public final class DatabaseConnectionStringProfile
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A user-friendly name for the connection. */
+        /**
+         * A user-friendly name for the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A user-friendly name for the connection.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Connection string value. */
+        /**
+         * Connection string value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * Connection string value.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Consumer group used by the connection. */
+        /**
+         * Consumer group used by the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
         private ConsumerGroup consumerGroup;
 
         /**
          * Consumer group used by the connection.
-         *
          * @param consumerGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder consumerGroup(ConsumerGroup consumerGroup) {
             this.consumerGroup = consumerGroup;
             this.__explicitlySet__.add("consumerGroup");
             return this;
         }
-        /** Protocol used by the connection. */
+        /**
+         * Protocol used by the connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Protocol used by the connection.
-         *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
         /**
-         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code
-         * MUTUAL}) authentication.
-         */
+         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsAuthentication")
         private TlsAuthentication tlsAuthentication;
 
         /**
-         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code
-         * MUTUAL}) authentication.
-         *
+         * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
          * @param tlsAuthentication the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsAuthentication(TlsAuthentication tlsAuthentication) {
             this.tlsAuthentication = tlsAuthentication;
             this.__explicitlySet__.add("tlsAuthentication");
             return this;
         }
-        /** Host format used in connection string. */
+        /**
+         * Host format used in connection string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostFormat")
         private HostFormat hostFormat;
 
         /**
          * Host format used in connection string.
-         *
          * @param hostFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder hostFormat(HostFormat hostFormat) {
             this.hostFormat = hostFormat;
             this.__explicitlySet__.add("hostFormat");
             return this;
         }
         /**
-         * Specifies whether the listener performs a direct hand-off of the session, or redirects
-         * the session. In RAC deployments where SCAN is used, sessions are redirected to a Node
-         * VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the
-         * session.
-         */
+         * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
         /**
-         * Specifies whether the listener performs a direct hand-off of the session, or redirects
-         * the session. In RAC deployments where SCAN is used, sessions are redirected to a Node
-         * VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the
-         * session.
-         *
+         * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
          * @param sessionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionMode(SessionMode sessionMode) {
             this.sessionMode = sessionMode;
             this.__explicitlySet__.add("sessionMode");
             return this;
         }
         /**
-         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous
-         * Database Serverless instances always use the long format.
-         */
+         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+         * Autonomous Database Serverless instances always use the long format.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
         private SyntaxFormat syntaxFormat;
 
         /**
-         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-         * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous
-         * Database Serverless instances always use the long format.
+         * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+         * Autonomous Database Serverless instances always use the long format.
          *
          * @param syntaxFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder syntaxFormat(SyntaxFormat syntaxFormat) {
             this.syntaxFormat = syntaxFormat;
             this.__explicitlySet__.add("syntaxFormat");
             return this;
         }
-        /** True for a regional connection string, applicable to cross-region DG only. */
+        /**
+         * True for a regional connection string, applicable to cross-region DG only.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
         private Boolean isRegional;
 
         /**
          * True for a regional connection string, applicable to cross-region DG only.
-         *
          * @param isRegional the value to set
          * @return this builder
-         */
+         **/
         public Builder isRegional(Boolean isRegional) {
             this.isRegional = isRegional;
             this.__explicitlySet__.add("isRegional");
@@ -267,7 +261,9 @@ public final class DatabaseConnectionStringProfile
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -276,34 +272,38 @@ public final class DatabaseConnectionStringProfile
         return new Builder().copy(this);
     }
 
-    /** A user-friendly name for the connection. */
+    /**
+     * A user-friendly name for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name for the connection.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Connection string value. */
+    /**
+     * Connection string value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * Connection string value.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Consumer group used by the connection. */
-    public enum ConsumerGroup implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Consumer group used by the connection.
+     **/
+    public enum ConsumerGroup {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -311,8 +311,8 @@ public final class DatabaseConnectionStringProfile
         Tpurgent("TPURGENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -351,27 +351,30 @@ public final class DatabaseConnectionStringProfile
             return UnknownEnumValue;
         }
     };
-    /** Consumer group used by the connection. */
+    /**
+     * Consumer group used by the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
     private final ConsumerGroup consumerGroup;
 
     /**
      * Consumer group used by the connection.
-     *
      * @return the value
-     */
+     **/
     public ConsumerGroup getConsumerGroup() {
         return consumerGroup;
     }
 
-    /** Protocol used by the connection. */
-    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Protocol used by the connection.
+     **/
+    public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -410,30 +413,30 @@ public final class DatabaseConnectionStringProfile
             return UnknownEnumValue;
         }
     };
-    /** Protocol used by the connection. */
+    /**
+     * Protocol used by the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Protocol used by the connection.
-     *
      * @return the value
-     */
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
 
     /**
-     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code
-     * MUTUAL}) authentication.
-     */
-    public enum TlsAuthentication implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+     **/
+    public enum TlsAuthentication {
         Server("SERVER"),
         Mutual("MUTUAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -473,30 +476,29 @@ public final class DatabaseConnectionStringProfile
         }
     };
     /**
-     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code
-     * MUTUAL}) authentication.
-     */
+     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsAuthentication")
     private final TlsAuthentication tlsAuthentication;
 
     /**
-     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code
-     * MUTUAL}) authentication.
-     *
+     * Specifies whether the TLS handshake is using one-way ({@code SERVER}) or mutual ({@code MUTUAL}) authentication.
      * @return the value
-     */
+     **/
     public TlsAuthentication getTlsAuthentication() {
         return tlsAuthentication;
     }
 
-    /** Host format used in connection string. */
-    public enum HostFormat implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Host format used in connection string.
+     **/
+    public enum HostFormat {
         Fqdn("FQDN"),
         Ip("IP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -535,31 +537,30 @@ public final class DatabaseConnectionStringProfile
             return UnknownEnumValue;
         }
     };
-    /** Host format used in connection string. */
+    /**
+     * Host format used in connection string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostFormat")
     private final HostFormat hostFormat;
 
     /**
      * Host format used in connection string.
-     *
      * @return the value
-     */
+     **/
     public HostFormat getHostFormat() {
         return hostFormat;
     }
 
     /**
-     * Specifies whether the listener performs a direct hand-off of the session, or redirects the
-     * session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use
-     * {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
-     */
-    public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+     **/
+    public enum SessionMode {
         Direct("DIRECT"),
         Redirect("REDIRECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -599,37 +600,32 @@ public final class DatabaseConnectionStringProfile
         }
     };
     /**
-     * Specifies whether the listener performs a direct hand-off of the session, or redirects the
-     * session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use
-     * {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
-     */
+     * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * Specifies whether the listener performs a direct hand-off of the session, or redirects the
-     * session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use
-     * {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
-     *
+     * Specifies whether the listener performs a direct hand-off of the session, or redirects the session. In RAC deployments where SCAN is used, sessions are redirected to a Node VIP. Use {@code DIRECT} for direct hand-offs. Use {@code REDIRECT} to redirect the session.
      * @return the value
-     */
+     **/
     public SessionMode getSessionMode() {
         return sessionMode;
     }
 
     /**
-     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
-     */
-    public enum SyntaxFormat implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+     * Autonomous Database Serverless instances always use the long format.
+     *
+     **/
+    public enum SyntaxFormat {
         Long("LONG"),
         Ezconnect("EZCONNECT"),
         Ezconnectplus("EZCONNECTPLUS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -669,33 +665,33 @@ public final class DatabaseConnectionStringProfile
         }
     };
     /**
-     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
-     */
+     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+     * Autonomous Database Serverless instances always use the long format.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syntaxFormat")
     private final SyntaxFormat syntaxFormat;
 
     /**
-     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect
-     * ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format. Autonomous Database
-     * Serverless instances always use the long format.
+     * Specifies whether the connection string is using the long ({@code LONG}), Easy Connect ({@code EZCONNECT}), or Easy Connect Plus ({@code EZCONNECTPLUS}) format.
+     * Autonomous Database Serverless instances always use the long format.
      *
      * @return the value
-     */
+     **/
     public SyntaxFormat getSyntaxFormat() {
         return syntaxFormat;
     }
 
-    /** True for a regional connection string, applicable to cross-region DG only. */
+    /**
+     * True for a regional connection string, applicable to cross-region DG only.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRegional")
     private final Boolean isRegional;
 
     /**
      * True for a regional connection string, applicable to cross-region DG only.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRegional() {
         return isRegional;
     }
@@ -707,7 +703,6 @@ public final class DatabaseConnectionStringProfile
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

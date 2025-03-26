@@ -6,11 +6,12 @@ package com.oracle.bmc.identity.responses;
 
 import com.oracle.bmc.identity.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,24 +25,26 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code CustomerSecretKeySummary} instance. */
+    /**
+     * The returned CustomerSecretKeySummary instance.
+     */
     private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
     /**
-     * The returned {@code CustomerSecretKeySummary} instance.
-     *
+     * The returned CustomerSecretKeySummary instance.
      * @return the value
      */
     public com.oracle.bmc.identity.model.CustomerSecretKeySummary getCustomerSecretKeySummary() {
@@ -57,7 +60,7 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
     })
     private UpdateCustomerSecretKeyResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary) {
@@ -67,21 +70,17 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
         this.customerSecretKeySummary = customerSecretKeySummary;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateCustomerSecretKeyResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -89,6 +88,7 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -104,12 +104,13 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -118,12 +119,13 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code CustomerSecretKeySummary} instance. */
+        /**
+         * The returned CustomerSecretKeySummary instance.
+         */
         private com.oracle.bmc.identity.model.CustomerSecretKeySummary customerSecretKeySummary;
 
         /**
-         * The returned {@code CustomerSecretKeySummary} instance.
-         *
+         * The returned CustomerSecretKeySummary instance.
          * @param customerSecretKeySummary the value to set
          * @return this builder
          */
@@ -135,10 +137,8 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateCustomerSecretKeyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +151,8 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateCustomerSecretKeyResponse build() {
             return new UpdateCustomerSecretKeyResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, customerSecretKeySummary);
@@ -163,7 +161,6 @@ public class UpdateCustomerSecretKeyResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

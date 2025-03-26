@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Lifecycle substates of a pipeline. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum PipelineLifecycleSubState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle substates of a pipeline.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum PipelineLifecycleSubState {
     Starting("STARTING"),
     Stopping("STOPPING"),
     Stopped("STOPPED"),

@@ -6,60 +6,67 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionMinorVersionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListGiVersionMinorVersionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionMinorVersionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListGiVersionMinorVersionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListGiVersionMinorVersionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Oracle Grid Infrastructure major version. */
+    /**
+     * The Oracle Grid Infrastructure major version.
+     */
     private String version;
 
-    /** The Oracle Grid Infrastructure major version. */
+    /**
+     * The Oracle Grid Infrastructure major version.
+     */
     public String getVersion() {
         return version;
     }
-    /** The target availability domain. Only passed if the limit is AD-specific. */
+    /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     */
     private String availabilityDomain;
 
-    /** The target availability domain. Only passed if the limit is AD-specific. */
+    /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     private ShapeFamily shapeFamily;
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
-     */
-    public enum ShapeFamily implements com.oracle.bmc.http.internal.BmcEnum {
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
+     **/
+    public enum ShapeFamily {
         Singlenode("SINGLENODE"),
         Yoda("YODA"),
         Virtualmachine("VIRTUALMACHINE"),
@@ -97,8 +104,7 @@ public class ListGiVersionMinorVersionsRequest
     };
 
     /**
-     * If provided, filters the results to the set of database versions which are supported for the
-     * given shape family.
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
      */
     public ShapeFamily getShapeFamily() {
         return shapeFamily;
@@ -114,18 +120,26 @@ public class ListGiVersionMinorVersionsRequest
     public Boolean getIsGiVersionForProvisioning() {
         return isGiVersionForProvisioning;
     }
-    /** If provided, filters the results for the given shape. */
+    /**
+     * If provided, filters the results for the given shape.
+     */
     private String shape;
 
-    /** If provided, filters the results for the given shape. */
+    /**
+     * If provided, filters the results for the given shape.
+     */
     public String getShape() {
         return shape;
     }
-    /** Sort by VERSION. Default order for VERSION is descending. */
+    /**
+     * Sort by VERSION.  Default order for VERSION is descending.
+     */
     private SortBy sortBy;
 
-    /** Sort by VERSION. Default order for VERSION is descending. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sort by VERSION.  Default order for VERSION is descending.
+     **/
+    public enum SortBy {
         Version("VERSION"),
         ;
 
@@ -157,15 +171,21 @@ public class ListGiVersionMinorVersionsRequest
         }
     };
 
-    /** Sort by VERSION. Default order for VERSION is descending. */
+    /**
+     * Sort by VERSION.  Default order for VERSION is descending.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -198,21 +218,31 @@ public class ListGiVersionMinorVersionsRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
@@ -220,15 +250,17 @@ public class ListGiVersionMinorVersionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListGiVersionMinorVersionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Oracle Grid Infrastructure major version. */
+        /**
+         * The Oracle Grid Infrastructure major version.
+         */
         private String version = null;
 
         /**
          * The Oracle Grid Infrastructure major version.
-         *
          * @param version the value to set
          * @return this builder instance
          */
@@ -237,12 +269,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** The target availability domain. Only passed if the limit is AD-specific. */
+        /**
+         * The target availability domain. Only passed if the limit is AD-specific.
+         */
         private String availabilityDomain = null;
 
         /**
          * The target availability domain. Only passed if the limit is AD-specific.
-         *
          * @param availabilityDomain the value to set
          * @return this builder instance
          */
@@ -252,15 +285,12 @@ public class ListGiVersionMinorVersionsRequest
         }
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -269,7 +299,10 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -284,15 +317,12 @@ public class ListGiVersionMinorVersionsRequest
         }
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for
-         * the given shape family.
+         * If provided, filters the results to the set of database versions which are supported for the given shape family.
          */
         private ShapeFamily shapeFamily = null;
 
         /**
-         * If provided, filters the results to the set of database versions which are supported for
-         * the given shape family.
-         *
+         * If provided, filters the results to the set of database versions which are supported for the given shape family.
          * @param shapeFamily the value to set
          * @return this builder instance
          */
@@ -302,15 +332,12 @@ public class ListGiVersionMinorVersionsRequest
         }
 
         /**
-         * If true, returns the Grid Infrastructure versions that can be used for provisioning a
-         * cluster
+         * If true, returns the Grid Infrastructure versions that can be used for provisioning a cluster
          */
         private Boolean isGiVersionForProvisioning = null;
 
         /**
-         * If true, returns the Grid Infrastructure versions that can be used for provisioning a
-         * cluster
-         *
+         * If true, returns the Grid Infrastructure versions that can be used for provisioning a cluster
          * @param isGiVersionForProvisioning the value to set
          * @return this builder instance
          */
@@ -319,12 +346,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** If provided, filters the results for the given shape. */
+        /**
+         * If provided, filters the results for the given shape.
+         */
         private String shape = null;
 
         /**
          * If provided, filters the results for the given shape.
-         *
          * @param shape the value to set
          * @return this builder instance
          */
@@ -333,12 +361,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** Sort by VERSION. Default order for VERSION is descending. */
+        /**
+         * Sort by VERSION.  Default order for VERSION is descending.
+         */
         private SortBy sortBy = null;
 
         /**
-         * Sort by VERSION. Default order for VERSION is descending.
-         *
+         * Sort by VERSION.  Default order for VERSION is descending.
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -347,12 +376,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -361,12 +391,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -375,12 +406,13 @@ public class ListGiVersionMinorVersionsRequest
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -391,19 +423,18 @@ public class ListGiVersionMinorVersionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -415,7 +446,6 @@ public class ListGiVersionMinorVersionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListGiVersionMinorVersionsRequest o) {
@@ -438,11 +468,10 @@ public class ListGiVersionMinorVersionsRequest
         /**
          * Build the instance of ListGiVersionMinorVersionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListGiVersionMinorVersionsRequest
          */
@@ -456,8 +485,7 @@ public class ListGiVersionMinorVersionsRequest
         /**
          * Build the instance of ListGiVersionMinorVersionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListGiVersionMinorVersionsRequest
@@ -476,15 +504,12 @@ public class ListGiVersionMinorVersionsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListGiVersionMinorVersionsRequest(version, availabilityDomain, compartmentId,
-            // opcRequestId, shapeFamily, isGiVersionForProvisioning, shape, sortBy, sortOrder,
-            // limit, page);
+            // new ListGiVersionMinorVersionsRequest(version, availabilityDomain, compartmentId, opcRequestId, shapeFamily, isGiVersionForProvisioning, shape, sortBy, sortOrder, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -504,7 +529,6 @@ public class ListGiVersionMinorVersionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,19 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Summary representation of a container <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * Summary representation of a container
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ContainerSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ContainerSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ContainerSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "containerName",
@@ -69,215 +66,218 @@ public final class ContainerSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the container. This can be same for different tags */
+        /**
+         * The name of the container. This can be same for different tags
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerName")
         private String containerName;
 
         /**
          * The name of the container. This can be same for different tags
-         *
          * @param containerName the value to set
          * @return this builder
-         */
+         **/
         public Builder containerName(String containerName) {
             this.containerName = containerName;
             this.__explicitlySet__.add("containerName");
             return this;
         }
-        /** The display name of the container. */
+        /**
+         * The display name of the container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the container.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The family name of the container. */
+        /**
+         * The family name of the container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("familyName")
         private String familyName;
 
         /**
          * The family name of the container.
-         *
          * @param familyName the value to set
          * @return this builder
-         */
+         **/
         public Builder familyName(String familyName) {
             this.familyName = familyName;
             this.__explicitlySet__.add("familyName");
             return this;
         }
-        /** Description of the container. */
+        /**
+         * Description of the container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the container.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The latest tag of the container. */
+        /**
+         * The latest tag of the container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
         private Boolean isLatest;
 
         /**
          * The latest tag of the container.
-         *
          * @param isLatest the value to set
          * @return this builder
-         */
+         **/
         public Builder isLatest(Boolean isLatest) {
             this.isLatest = isLatest;
             this.__explicitlySet__.add("isLatest");
             return this;
         }
         /**
-         * The list of target workload. This Container can be used with given data science
-         * resources.
-         */
+         * The list of target workload. This Container can be used with given data science resources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetWorkloads")
         private java.util.List<TargetWorkloads> targetWorkloads;
 
         /**
-         * The list of target workload. This Container can be used with given data science
-         * resources.
-         *
+         * The list of target workload. This Container can be used with given data science resources.
          * @param targetWorkloads the value to set
          * @return this builder
-         */
+         **/
         public Builder targetWorkloads(java.util.List<TargetWorkloads> targetWorkloads) {
             this.targetWorkloads = targetWorkloads;
             this.__explicitlySet__.add("targetWorkloads");
             return this;
         }
-        /** The list of usages of this container. This Container can be used for given use-cases. */
+        /**
+         * The list of usages of this container. This Container can be used for given use-cases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usages")
         private java.util.List<Usages> usages;
 
         /**
          * The list of usages of this container. This Container can be used for given use-cases.
-         *
          * @param usages the value to set
          * @return this builder
-         */
+         **/
         public Builder usages(java.util.List<Usages> usages) {
             this.usages = usages;
             this.__explicitlySet__.add("usages");
             return this;
         }
-        /** Container Tag. */
+        /**
+         * Container Tag.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tag")
         private String tag;
 
         /**
          * Container Tag.
-         *
          * @param tag the value to set
          * @return this builder
-         */
+         **/
         public Builder tag(String tag) {
             this.tag = tag;
             this.__explicitlySet__.add("tag");
             return this;
         }
-        /** Container Version LifecycleState. */
+        /**
+         * Container Version LifecycleState.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private ContainerVersionLifecycleState lifecycleState;
 
         /**
          * Container Version LifecycleState.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(ContainerVersionLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** workload configuration of the container. */
+        /**
+         * workload configuration of the container.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadConfigurationDetailsList")
         private java.util.List<WorkloadConfigurationDetails> workloadConfigurationDetailsList;
 
         /**
          * workload configuration of the container.
-         *
          * @param workloadConfigurationDetailsList the value to set
          * @return this builder
-         */
+         **/
         public Builder workloadConfigurationDetailsList(
                 java.util.List<WorkloadConfigurationDetails> workloadConfigurationDetailsList) {
             this.workloadConfigurationDetailsList = workloadConfigurationDetailsList;
             this.__explicitlySet__.add("workloadConfigurationDetailsList");
             return this;
         }
-        /** An array of defined metadata details for the model. */
+        /**
+         * An array of defined metadata details for the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tagConfigurationList")
         private java.util.List<TagConfiguration> tagConfigurationList;
 
         /**
          * An array of defined metadata details for the model.
-         *
          * @param tagConfigurationList the value to set
          * @return this builder
-         */
+         **/
         public Builder tagConfigurationList(java.util.List<TagConfiguration> tagConfigurationList) {
             this.tagConfigurationList = tagConfigurationList;
             this.__explicitlySet__.add("tagConfigurationList");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -355,7 +355,9 @@ public final class ContainerSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -364,79 +366,85 @@ public final class ContainerSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the container. This can be same for different tags */
+    /**
+     * The name of the container. This can be same for different tags
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerName")
     private final String containerName;
 
     /**
      * The name of the container. This can be same for different tags
-     *
      * @return the value
-     */
+     **/
     public String getContainerName() {
         return containerName;
     }
 
-    /** The display name of the container. */
+    /**
+     * The display name of the container.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the container.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The family name of the container. */
+    /**
+     * The family name of the container.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("familyName")
     private final String familyName;
 
     /**
      * The family name of the container.
-     *
      * @return the value
-     */
+     **/
     public String getFamilyName() {
         return familyName;
     }
 
-    /** Description of the container. */
+    /**
+     * Description of the container.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the container.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The latest tag of the container. */
+    /**
+     * The latest tag of the container.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLatest")
     private final Boolean isLatest;
 
     /**
      * The latest tag of the container.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLatest() {
         return isLatest;
     }
 
-    /** */
-    public enum TargetWorkloads implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum TargetWorkloads {
         ModelDeployment("MODEL_DEPLOYMENT"),
         JobRun("JOB_RUN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -477,21 +485,21 @@ public final class ContainerSummary
     };
     /**
      * The list of target workload. This Container can be used with given data science resources.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetWorkloads")
     private final java.util.List<TargetWorkloads> targetWorkloads;
 
     /**
      * The list of target workload. This Container can be used with given data science resources.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TargetWorkloads> getTargetWorkloads() {
         return targetWorkloads;
     }
 
-    /** */
-    public enum Usages implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum Usages {
         Inference("INFERENCE"),
         FineTune("FINE_TUNE"),
         Evaluation("EVALUATION"),
@@ -499,8 +507,8 @@ public final class ContainerSummary
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -538,107 +546,108 @@ public final class ContainerSummary
             return UnknownEnumValue;
         }
     };
-    /** The list of usages of this container. This Container can be used for given use-cases. */
+    /**
+     * The list of usages of this container. This Container can be used for given use-cases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usages")
     private final java.util.List<Usages> usages;
 
     /**
      * The list of usages of this container. This Container can be used for given use-cases.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Usages> getUsages() {
         return usages;
     }
 
-    /** Container Tag. */
+    /**
+     * Container Tag.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tag")
     private final String tag;
 
     /**
      * Container Tag.
-     *
      * @return the value
-     */
+     **/
     public String getTag() {
         return tag;
     }
 
-    /** Container Version LifecycleState. */
+    /**
+     * Container Version LifecycleState.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final ContainerVersionLifecycleState lifecycleState;
 
     /**
      * Container Version LifecycleState.
-     *
      * @return the value
-     */
+     **/
     public ContainerVersionLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** workload configuration of the container. */
+    /**
+     * workload configuration of the container.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadConfigurationDetailsList")
     private final java.util.List<WorkloadConfigurationDetails> workloadConfigurationDetailsList;
 
     /**
      * workload configuration of the container.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<WorkloadConfigurationDetails> getWorkloadConfigurationDetailsList() {
         return workloadConfigurationDetailsList;
     }
 
-    /** An array of defined metadata details for the model. */
+    /**
+     * An array of defined metadata details for the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tagConfigurationList")
     private final java.util.List<TagConfiguration> tagConfigurationList;
 
     /**
      * An array of defined metadata details for the model.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TagConfiguration> getTagConfigurationList() {
         return tagConfigurationList;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -650,7 +659,6 @@ public final class ContainerSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

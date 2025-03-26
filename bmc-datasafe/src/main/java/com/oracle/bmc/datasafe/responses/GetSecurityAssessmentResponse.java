@@ -6,17 +6,16 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -40,12 +38,13 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned {@code SecurityAssessment} instance. */
+    /**
+     * The returned SecurityAssessment instance.
+     */
     private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
     /**
-     * The returned {@code SecurityAssessment} instance.
-     *
+     * The returned SecurityAssessment instance.
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.SecurityAssessment getSecurityAssessment() {
@@ -61,7 +60,7 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
     })
     private GetSecurityAssessmentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment) {
@@ -71,33 +70,29 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
         this.securityAssessment = securityAssessment;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetSecurityAssessmentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -108,16 +103,13 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -127,12 +119,13 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code SecurityAssessment} instance. */
+        /**
+         * The returned SecurityAssessment instance.
+         */
         private com.oracle.bmc.datasafe.model.SecurityAssessment securityAssessment;
 
         /**
-         * The returned {@code SecurityAssessment} instance.
-         *
+         * The returned SecurityAssessment instance.
          * @param securityAssessment the value to set
          * @return this builder
          */
@@ -144,10 +137,8 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSecurityAssessmentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -160,10 +151,8 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSecurityAssessmentResponse build() {
             return new GetSecurityAssessmentResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, securityAssessment);
@@ -172,7 +161,6 @@ public class GetSecurityAssessmentResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

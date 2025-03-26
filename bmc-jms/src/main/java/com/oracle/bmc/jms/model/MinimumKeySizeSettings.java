@@ -5,23 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * test <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * test
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MinimumKeySizeSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MinimumKeySizeSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MinimumKeySizeSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tls", "jar", "certpath"})
     public MinimumKeySizeSettings(
@@ -37,67 +36,74 @@ public final class MinimumKeySizeSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.tls.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for Diffie-Hellman
-         */
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for Diffie-Hellman
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tls")
         private java.util.List<KeySizeAlgorithm> tls;
 
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.tls.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for Diffie-Hellman
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for Diffie-Hellman
          *
          * @param tls the value to set
          * @return this builder
-         */
+         **/
         public Builder tls(java.util.List<KeySizeAlgorithm> tls) {
             this.tls = tls;
             this.__explicitlySet__.add("tls");
             return this;
         }
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.jar.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-         * Changing minimum key length for DSA
-         */
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for RSA signed jars
+         * - Changing minimum key length for EC
+         * - Changing minimum key length for DSA
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jar")
         private java.util.List<KeySizeAlgorithm> jar;
 
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.jar.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-         * Changing minimum key length for DSA
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for RSA signed jars
+         * - Changing minimum key length for EC
+         * - Changing minimum key length for DSA
          *
          * @param jar the value to set
          * @return this builder
-         */
+         **/
         public Builder jar(java.util.List<KeySizeAlgorithm> jar) {
             this.jar = jar;
             this.__explicitlySet__.add("jar");
             return this;
         }
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.certpath.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-         * Changing minimum key length for DSA
-         */
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for RSA signed jars
+         * - Changing minimum key length for EC
+         * - Changing minimum key length for DSA
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certpath")
         private java.util.List<KeySizeAlgorithm> certpath;
 
         /**
-         * Updates the minimum key size for the specified encryption algorithm. The JDK property
-         * jdk.certpath.disabledAlgorithms will be updated with the following supported actions: -
-         * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-         * Changing minimum key length for DSA
+         * Updates the minimum key size for the specified encryption algorithm.
+         * The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+         * - Changing minimum key length for RSA signed jars
+         * - Changing minimum key length for EC
+         * - Changing minimum key length for DSA
          *
          * @param certpath the value to set
          * @return this builder
-         */
+         **/
         public Builder certpath(java.util.List<KeySizeAlgorithm> certpath) {
             this.certpath = certpath;
             this.__explicitlySet__.add("certpath");
@@ -131,7 +137,9 @@ public final class MinimumKeySizeSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,62 +149,69 @@ public final class MinimumKeySizeSettings
     }
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.tls.disabledAlgorithms will be updated with the following supported actions: - Changing
-     * minimum key length for Diffie-Hellman
-     */
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for Diffie-Hellman
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tls")
     private final java.util.List<KeySizeAlgorithm> tls;
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.tls.disabledAlgorithms will be updated with the following supported actions: - Changing
-     * minimum key length for Diffie-Hellman
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for Diffie-Hellman
      *
      * @return the value
-     */
+     **/
     public java.util.List<KeySizeAlgorithm> getTls() {
         return tls;
     }
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.jar.disabledAlgorithms will be updated with the following supported actions: - Changing
-     * minimum key length for RSA signed jars - Changing minimum key length for EC - Changing
-     * minimum key length for DSA
-     */
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for RSA signed jars
+     * - Changing minimum key length for EC
+     * - Changing minimum key length for DSA
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jar")
     private final java.util.List<KeySizeAlgorithm> jar;
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.jar.disabledAlgorithms will be updated with the following supported actions: - Changing
-     * minimum key length for RSA signed jars - Changing minimum key length for EC - Changing
-     * minimum key length for DSA
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for RSA signed jars
+     * - Changing minimum key length for EC
+     * - Changing minimum key length for DSA
      *
      * @return the value
-     */
+     **/
     public java.util.List<KeySizeAlgorithm> getJar() {
         return jar;
     }
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.certpath.disabledAlgorithms will be updated with the following supported actions: -
-     * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-     * Changing minimum key length for DSA
-     */
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for RSA signed jars
+     * - Changing minimum key length for EC
+     * - Changing minimum key length for DSA
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certpath")
     private final java.util.List<KeySizeAlgorithm> certpath;
 
     /**
-     * Updates the minimum key size for the specified encryption algorithm. The JDK property
-     * jdk.certpath.disabledAlgorithms will be updated with the following supported actions: -
-     * Changing minimum key length for RSA signed jars - Changing minimum key length for EC -
-     * Changing minimum key length for DSA
+     * Updates the minimum key size for the specified encryption algorithm.
+     * The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+     * - Changing minimum key length for RSA signed jars
+     * - Changing minimum key length for EC
+     * - Changing minimum key length for DSA
      *
      * @return the value
-     */
+     **/
     public java.util.List<KeySizeAlgorithm> getCertpath() {
         return certpath;
     }
@@ -208,7 +223,6 @@ public final class MinimumKeySizeSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

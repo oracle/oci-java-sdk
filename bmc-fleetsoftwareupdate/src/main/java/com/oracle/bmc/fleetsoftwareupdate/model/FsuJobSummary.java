@@ -5,45 +5,51 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Exadata Fleet Update Job resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Exadata Fleet Update Job resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = FsuJobSummary.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = FsuJobSummary.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = StageFsuJobSummary.class,
-            name = "STAGE"),
+        value = StageFsuJobSummary.class,
+        name = "STAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PrecheckFsuJobSummary.class,
-            name = "PRECHECK"),
+        value = PrecheckFsuJobSummary.class,
+        name = "PRECHECK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ApplyFsuJobSummary.class,
-            name = "APPLY"),
+        value = ApplyFsuJobSummary.class,
+        name = "APPLY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RollbackCycleFsuJobSummary.class,
-            name = "ROLLBACK_MAINTENANCE_CYCLE"),
+        value = RollbackCycleFsuJobSummary.class,
+        name = "ROLLBACK_MAINTENANCE_CYCLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CleanupFsuJobSummary.class,
-            name = "CLEANUP"),
+        value = CleanupFsuJobSummary.class,
+        name = "CLEANUP"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RollbackFsuJobSummary.class,
-            name = "ROLLBACK_AND_REMOVE_TARGET")
+        value = RollbackFsuJobSummary.class,
+        name = "ROLLBACK_AND_REMOVE_TARGET"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class FsuJobSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class FsuJobSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -93,7 +99,10 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
         this.systemTags = systemTags;
     }
 
-    /** OCID identifier for the Exadata Fleet Update Job. */
+    /**
+     * OCID identifier for the Exadata Fleet Update Job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -101,12 +110,15 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * OCID identifier for the Exadata Fleet Update Job.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Exadata Fleet Update Job display name. */
+    /**
+     * Exadata Fleet Update Job display name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -114,12 +126,15 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * Exadata Fleet Update Job display name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier, this will map to the owner Exadata Fleet Update Action resource. */
+    /**
+     * Compartment Identifier, this will map to the owner Exadata Fleet Update Action resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -127,12 +142,15 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * Compartment Identifier, this will map to the owner Exadata Fleet Update Action resource.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OCID of the Exadata Fleet Update Action that this job is part of. */
+    /**
+     * OCID of the Exadata Fleet Update Action that this job is part of.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuActionId")
     private final String fsuActionId;
 
@@ -140,7 +158,7 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * OCID of the Exadata Fleet Update Action that this job is part of.
      *
      * @return the value
-     */
+     **/
     public String getFsuActionId() {
         return fsuActionId;
     }
@@ -152,7 +170,10 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
         return progress;
     }
 
-    /** The time the Exadata Fleet Update Job was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Exadata Fleet Update Job was created. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -160,29 +181,31 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * The time the Exadata Fleet Update Job was created. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the Exadata Fleet Update Job started execution. An RFC3339 formatted datetime
-     * string.
-     */
+     * The time the Exadata Fleet Update Job started execution. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the Exadata Fleet Update Job started execution. An RFC3339 formatted datetime
-     * string.
+     * The time the Exadata Fleet Update Job started execution. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the Exadata Fleet Update Job was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Exadata Fleet Update Job was updated. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -190,29 +213,31 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * The time the Exadata Fleet Update Job was updated. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The time the Exadata Fleet Update Job completed execution. An RFC3339 formatted datetime
-     * string.
-     */
+     * The time the Exadata Fleet Update Job completed execution. An RFC3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The time the Exadata Fleet Update Job completed execution. An RFC3339 formatted datetime
-     * string.
+     * The time the Exadata Fleet Update Job completed execution. An RFC3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The current state of the Job. */
+    /**
+     * The current state of the Job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobLifecycleStates lifecycleState;
 
@@ -220,12 +245,15 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * The current state of the Job.
      *
      * @return the value
-     */
+     **/
     public JobLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the current state in more detail. */
+    /**
+     * A message describing the current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -233,58 +261,61 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
      * A message describing the current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -296,7 +327,6 @@ public class FsuJobSummary extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

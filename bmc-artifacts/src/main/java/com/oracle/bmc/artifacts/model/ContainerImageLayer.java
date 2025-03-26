@@ -5,23 +5,21 @@
 package com.oracle.bmc.artifacts.model;
 
 /**
- * The container image layer metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The container image layer metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerImageLayer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ContainerImageLayer
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ContainerImageLayer.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ContainerImageLayer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"digest", "sizeInBytes", "timeCreated"})
     public ContainerImageLayer(String digest, Long sizeInBytes, java.util.Date timeCreated) {
@@ -33,46 +31,49 @@ public final class ContainerImageLayer
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The sha256 digest of the image layer. */
+        /**
+         * The sha256 digest of the image layer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
         /**
          * The sha256 digest of the image layer.
-         *
          * @param digest the value to set
          * @return this builder
-         */
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
-        /** The size of the layer in bytes. */
+        /**
+         * The size of the layer in bytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
         private Long sizeInBytes;
 
         /**
          * The size of the layer in bytes.
-         *
          * @param sizeInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder sizeInBytes(Long sizeInBytes) {
             this.sizeInBytes = sizeInBytes;
             this.__explicitlySet__.add("sizeInBytes");
             return this;
         }
-        /** An RFC 3339 timestamp indicating when the layer was created. */
+        /**
+         * An RFC 3339 timestamp indicating when the layer was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * An RFC 3339 timestamp indicating when the layer was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -106,7 +107,9 @@ public final class ContainerImageLayer
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class ContainerImageLayer
         return new Builder().copy(this);
     }
 
-    /** The sha256 digest of the image layer. */
+    /**
+     * The sha256 digest of the image layer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
     /**
      * The sha256 digest of the image layer.
-     *
      * @return the value
-     */
+     **/
     public String getDigest() {
         return digest;
     }
 
-    /** The size of the layer in bytes. */
+    /**
+     * The size of the layer in bytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sizeInBytes")
     private final Long sizeInBytes;
 
     /**
      * The size of the layer in bytes.
-     *
      * @return the value
-     */
+     **/
     public Long getSizeInBytes() {
         return sizeInBytes;
     }
 
-    /** An RFC 3339 timestamp indicating when the layer was created. */
+    /**
+     * An RFC 3339 timestamp indicating when the layer was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * An RFC 3339 timestamp indicating when the layer was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -161,7 +167,6 @@ public final class ContainerImageLayer
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

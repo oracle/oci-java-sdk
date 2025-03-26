@@ -5,23 +5,23 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * List of available post actions you can execute after the successful Java installation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * List of available post actions you can execute after the successful Java installation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PostInstallationActionSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PostInstallationActionSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PostInstallationActionSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "disabledTlsVersions",
@@ -50,40 +50,42 @@ public final class PostInstallationActionSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The following post JRE installation actions are supported by the field: - Disable TLS 1.0
-         * , TLS 1.1
-         */
+         * The following post JRE installation actions are supported by the field:
+         * - Disable TLS 1.0 , TLS 1.1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disabledTlsVersions")
         private java.util.List<TlsVersions> disabledTlsVersions;
 
         /**
-         * The following post JRE installation actions are supported by the field: - Disable TLS 1.0
-         * , TLS 1.1
+         * The following post JRE installation actions are supported by the field:
+         * - Disable TLS 1.0 , TLS 1.1
          *
          * @param disabledTlsVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder disabledTlsVersions(java.util.List<TlsVersions> disabledTlsVersions) {
             this.disabledTlsVersions = disabledTlsVersions;
             this.__explicitlySet__.add("disabledTlsVersions");
             return this;
         }
         /**
-         * Restores JDK root certificates with the certificates that are available in the operating
-         * system. The following action is supported by the field: - Replace JDK root certificates
-         * with a list provided by the operating system.
-         */
+         * Restores JDK root certificates with the certificates that are available in the operating system.
+         * The following action is supported by the field:
+         * - Replace JDK root certificates with a list provided by the operating system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldReplaceCertificatesOperatingSystem")
         private Boolean shouldReplaceCertificatesOperatingSystem;
 
         /**
-         * Restores JDK root certificates with the certificates that are available in the operating
-         * system. The following action is supported by the field: - Replace JDK root certificates
-         * with a list provided by the operating system.
+         * Restores JDK root certificates with the certificates that are available in the operating system.
+         * The following action is supported by the field:
+         * - Replace JDK root certificates with a list provided by the operating system.
          *
          * @param shouldReplaceCertificatesOperatingSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldReplaceCertificatesOperatingSystem(
                 Boolean shouldReplaceCertificatesOperatingSystem) {
             this.shouldReplaceCertificatesOperatingSystem =
@@ -100,7 +102,10 @@ public final class PostInstallationActionSettings
             this.__explicitlySet__.add("minimumKeySizeSettings");
             return this;
         }
-        /** Sets FileHandler and ConsoleHandler as handlers in logging.properties file. */
+        /**
+         * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addLoggingHandler")
         private Boolean addLoggingHandler;
 
@@ -109,13 +114,16 @@ public final class PostInstallationActionSettings
          *
          * @param addLoggingHandler the value to set
          * @return this builder
-         */
+         **/
         public Builder addLoggingHandler(Boolean addLoggingHandler) {
             this.addLoggingHandler = addLoggingHandler;
             this.__explicitlySet__.add("addLoggingHandler");
             return this;
         }
-        /** Sets the logging level in logging.properties file. */
+        /**
+         * Sets the logging level in logging.properties file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("globalLoggingLevel")
         private GlobalLoggingLevel globalLoggingLevel;
 
@@ -124,7 +132,7 @@ public final class PostInstallationActionSettings
          *
          * @param globalLoggingLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder globalLoggingLevel(GlobalLoggingLevel globalLoggingLevel) {
             this.globalLoggingLevel = globalLoggingLevel;
             this.__explicitlySet__.add("globalLoggingLevel");
@@ -183,7 +191,9 @@ public final class PostInstallationActionSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -193,37 +203,39 @@ public final class PostInstallationActionSettings
     }
 
     /**
-     * The following post JRE installation actions are supported by the field: - Disable TLS 1.0 ,
-     * TLS 1.1
-     */
+     * The following post JRE installation actions are supported by the field:
+     * - Disable TLS 1.0 , TLS 1.1
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disabledTlsVersions")
     private final java.util.List<TlsVersions> disabledTlsVersions;
 
     /**
-     * The following post JRE installation actions are supported by the field: - Disable TLS 1.0 ,
-     * TLS 1.1
+     * The following post JRE installation actions are supported by the field:
+     * - Disable TLS 1.0 , TLS 1.1
      *
      * @return the value
-     */
+     **/
     public java.util.List<TlsVersions> getDisabledTlsVersions() {
         return disabledTlsVersions;
     }
 
     /**
-     * Restores JDK root certificates with the certificates that are available in the operating
-     * system. The following action is supported by the field: - Replace JDK root certificates with
-     * a list provided by the operating system.
-     */
+     * Restores JDK root certificates with the certificates that are available in the operating system.
+     * The following action is supported by the field:
+     * - Replace JDK root certificates with a list provided by the operating system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldReplaceCertificatesOperatingSystem")
     private final Boolean shouldReplaceCertificatesOperatingSystem;
 
     /**
-     * Restores JDK root certificates with the certificates that are available in the operating
-     * system. The following action is supported by the field: - Replace JDK root certificates with
-     * a list provided by the operating system.
+     * Restores JDK root certificates with the certificates that are available in the operating system.
+     * The following action is supported by the field:
+     * - Replace JDK root certificates with a list provided by the operating system.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldReplaceCertificatesOperatingSystem() {
         return shouldReplaceCertificatesOperatingSystem;
     }
@@ -235,7 +247,10 @@ public final class PostInstallationActionSettings
         return minimumKeySizeSettings;
     }
 
-    /** Sets FileHandler and ConsoleHandler as handlers in logging.properties file. */
+    /**
+     * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addLoggingHandler")
     private final Boolean addLoggingHandler;
 
@@ -243,12 +258,15 @@ public final class PostInstallationActionSettings
      * Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
      *
      * @return the value
-     */
+     **/
     public Boolean getAddLoggingHandler() {
         return addLoggingHandler;
     }
 
-    /** Sets the logging level in logging.properties file. */
+    /**
+     * Sets the logging level in logging.properties file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("globalLoggingLevel")
     private final GlobalLoggingLevel globalLoggingLevel;
 
@@ -256,7 +274,7 @@ public final class PostInstallationActionSettings
      * Sets the logging level in logging.properties file.
      *
      * @return the value
-     */
+     **/
     public GlobalLoggingLevel getGlobalLoggingLevel() {
         return globalLoggingLevel;
     }
@@ -275,7 +293,6 @@ public final class PostInstallationActionSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

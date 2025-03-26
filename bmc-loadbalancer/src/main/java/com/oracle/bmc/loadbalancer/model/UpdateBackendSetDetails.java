@@ -5,33 +5,31 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * The configuration details for updating a load balancer backend set. For more information on
- * backend set configuration, see [Managing Backend
- * Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendsets.htm).
+ * The configuration details for updating a load balancer backend set.
+ * For more information on backend set configuration, see
+ * [Managing Backend Sets](https://docs.oracle.com/iaas/Content/Balance/Tasks/managingbackendsets.htm).
+ * <p>
+ **Note:** The {@code sessionPersistenceConfiguration} (application cookie stickiness) and {@code lbCookieSessionPersistenceConfiguration}
+ * (LB cookie stickiness) attributes are mutually exclusive. To avoid returning an error, configure only one of these two
+ * attributes per backend set.
+ * <p>
+ **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
- * <p>*Note:** The {@code sessionPersistenceConfiguration} (application cookie stickiness) and
- * {@code lbCookieSessionPersistenceConfiguration} (LB cookie stickiness) attributes are mutually
- * exclusive. To avoid returning an error, configure only one of these two attributes per backend
- * set.
- *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
- * supply string values using the API. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateBackendSetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateBackendSetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateBackendSetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "policy",
@@ -64,23 +62,24 @@ public final class UpdateBackendSetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The load balancer policy for the backend set. To get a list of available policies, use
-         * the {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
          *
-         * <p>Example: {@code LEAST_CONNECTIONS}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policy")
         private String policy;
 
         /**
-         * The load balancer policy for the backend set. To get a list of available policies, use
-         * the {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
-         *
-         * <p>Example: {@code LEAST_CONNECTIONS}
+         * The load balancer policy for the backend set. To get a list of available policies, use the
+         * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+         * <p>
+         * Example: {@code LEAST_CONNECTIONS}
          *
          * @param policy the value to set
          * @return this builder
-         */
+         **/
         public Builder policy(String policy) {
             this.policy = policy;
             this.__explicitlySet__.add("policy");
@@ -100,9 +99,10 @@ public final class UpdateBackendSetDetails
          * in the backend set unless the backend has its own maxConnections setting. If this is not
          * set then the number of simultaneous connections the load balancer can make to any backend
          * in the backend set unless the backend has its own maxConnections setting is unlimited.
+         * <p>
+         * Example: {@code 300}
          *
-         * <p>Example: {@code 300}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
         private Integer backendMaxConnections;
 
@@ -111,12 +111,12 @@ public final class UpdateBackendSetDetails
          * in the backend set unless the backend has its own maxConnections setting. If this is not
          * set then the number of simultaneous connections the load balancer can make to any backend
          * in the backend set unless the backend has its own maxConnections setting is unlimited.
-         *
-         * <p>Example: {@code 300}
+         * <p>
+         * Example: {@code 300}
          *
          * @param backendMaxConnections the value to set
          * @return this builder
-         */
+         **/
         public Builder backendMaxConnections(Integer backendMaxConnections) {
             this.backendMaxConnections = backendMaxConnections;
             this.__explicitlySet__.add("backendMaxConnections");
@@ -210,7 +210,9 @@ public final class UpdateBackendSetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -222,20 +224,21 @@ public final class UpdateBackendSetDetails
     /**
      * The load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
+     * <p>
+     * Example: {@code LEAST_CONNECTIONS}
      *
-     * <p>Example: {@code LEAST_CONNECTIONS}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policy")
     private final String policy;
 
     /**
      * The load balancer policy for the backend set. To get a list of available policies, use the
      * {@link #listPolicies(ListPoliciesRequest) listPolicies} operation.
-     *
-     * <p>Example: {@code LEAST_CONNECTIONS}
+     * <p>
+     * Example: {@code LEAST_CONNECTIONS}
      *
      * @return the value
-     */
+     **/
     public String getPolicy() {
         return policy;
     }
@@ -248,26 +251,27 @@ public final class UpdateBackendSetDetails
     }
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to any backend in
-     * the backend set unless the backend has its own maxConnections setting. If this is not set
-     * then the number of simultaneous connections the load balancer can make to any backend in the
-     * backend set unless the backend has its own maxConnections setting is unlimited.
+     * The maximum number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting. If this is not
+     * set then the number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting is unlimited.
+     * <p>
+     * Example: {@code 300}
      *
-     * <p>Example: {@code 300}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendMaxConnections")
     private final Integer backendMaxConnections;
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to any backend in
-     * the backend set unless the backend has its own maxConnections setting. If this is not set
-     * then the number of simultaneous connections the load balancer can make to any backend in the
-     * backend set unless the backend has its own maxConnections setting is unlimited.
-     *
-     * <p>Example: {@code 300}
+     * The maximum number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting. If this is not
+     * set then the number of simultaneous connections the load balancer can make to any backend
+     * in the backend set unless the backend has its own maxConnections setting is unlimited.
+     * <p>
+     * Example: {@code 300}
      *
      * @return the value
-     */
+     **/
     public Integer getBackendMaxConnections() {
         return backendMaxConnections;
     }
@@ -309,7 +313,6 @@ public final class UpdateBackendSetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

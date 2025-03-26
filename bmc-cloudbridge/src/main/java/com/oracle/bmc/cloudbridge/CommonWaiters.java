@@ -10,11 +10,10 @@ import com.oracle.bmc.cloudbridge.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of Common.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class CommonWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final Common client;

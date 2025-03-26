@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Determines the traffic flow of the connection */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RoutingMethod implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Determines the traffic flow of the connection
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RoutingMethod {
     SharedServiceEndpoint("SHARED_SERVICE_ENDPOINT"),
     SharedDeploymentEndpoint("SHARED_DEPLOYMENT_ENDPOINT"),
     DedicatedEndpoint("DEDICATED_ENDPOINT"),

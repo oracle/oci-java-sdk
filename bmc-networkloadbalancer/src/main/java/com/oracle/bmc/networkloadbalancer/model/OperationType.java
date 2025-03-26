@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Possible operations. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operations.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum OperationType {
     CreateNetworkLoadBalancer("CREATE_NETWORK_LOAD_BALANCER"),
     UpdateNetworkLoadBalancer("UPDATE_NETWORK_LOAD_BALANCER"),
     DeleteNetworkLoadBalancer("DELETE_NETWORK_LOAD_BALANCER"),

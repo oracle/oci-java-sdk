@@ -5,34 +5,35 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * An object that represents action and its options. The action can be terminating, if it stops
- * further execution of rules and modules. And non-terminating, if it does not interrupt execution
- * flow. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * An object that represents action and its options.
+ * The action can be terminating, if it stops further execution of rules and modules.
+ * And non-terminating, if it does not interrupt execution flow.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = Action.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = Action.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ReturnHttpResponseAction.class,
-            name = "RETURN_HTTP_RESPONSE"),
+        value = ReturnHttpResponseAction.class,
+        name = "RETURN_HTTP_RESPONSE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AllowAction.class, name = "ALLOW"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = CheckAction.class, name = "CHECK")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Action extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name"})
     protected Action(String name) {
@@ -40,15 +41,16 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
         this.name = name;
     }
 
-    /** Action name. Can be used to reference the action. */
+    /**
+     * Action name. Can be used to reference the action.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Action name. Can be used to reference the action.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -60,7 +62,6 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -96,23 +97,22 @@ public class Action extends com.oracle.bmc.http.client.internal.ExplicitlySetBmc
     }
 
     /**
-     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current
-     * module, just emits a log message documenting result of rule execution.
+     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module,
+     *   just emits a log message documenting result of rule execution.
+     * <p>
+     * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+     * <p>
+     * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
      *
-     * <p>**ALLOW** is a non-terminating action which upon matching rule skips all remaining rules
-     * in the current module.
-     *
-     * <p>**RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a
-     * defined HTTP response.
-     */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Type {
         Check("CHECK"),
         Allow("ALLOW"),
         ReturnHttpResponse("RETURN_HTTP_RESPONSE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

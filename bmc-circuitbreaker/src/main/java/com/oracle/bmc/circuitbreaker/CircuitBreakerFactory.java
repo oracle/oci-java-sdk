@@ -4,36 +4,23 @@
  */
 package com.oracle.bmc.circuitbreaker;
 
-import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl;
+import com.oracle.bmc.circuitbreaker.internal.JaxRsCircuitBreakerImpl;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 
-import java.util.function.Predicate;
-
-/** This is a Factory class to create OciCircuitBreaker for OCI clients */
+/**
+ * This is a Factory class to create JaxRsCircuitBreaker for JaxRs clients
+ */
 public class CircuitBreakerFactory {
 
     /**
-     * Creates OciCircuitBreaker a specialized {@link CircuitBreaker} for OCI clients
+     * Creates JaxRsCircuitBreaker a specialized {@link CircuitBreaker} for JaxRs clients
      *
-     * @param cbConfig Custom Oci CircuitBreaker configuration
+     * @param cbConfig custom JaxRs CircuitBreaker configuration
      */
-    public static OciCircuitBreaker build(CircuitBreakerConfiguration cbConfig) {
-        /* The default exception predicate counts all exceptions as failures */
-        return build(cbConfig, throwable -> true);
-    }
-
-    /**
-     * Creates OciCircuitBreaker a specialized {@link CircuitBreaker} for OCI clients
-     *
-     * @param cbConfig Custom Oci CircuitBreaker configuration
-     * @param recordExceptionPredicate Predicate which evaluates if an exception should be recorded
-     *     as a failure
-     */
-    public static OciCircuitBreaker build(
-            CircuitBreakerConfiguration cbConfig, Predicate<Throwable> recordExceptionPredicate) {
-        OciCircuitBreaker circuitBreaker = null;
+    public static JaxRsCircuitBreaker build(CircuitBreakerConfiguration cbConfig) {
+        JaxRsCircuitBreaker circuitBreaker = null;
         if (cbConfig != null) {
-            circuitBreaker = new OciCircuitBreakerImpl(cbConfig, recordExceptionPredicate);
+            circuitBreaker = new JaxRsCircuitBreakerImpl(cbConfig);
         }
         return circuitBreaker;
     }

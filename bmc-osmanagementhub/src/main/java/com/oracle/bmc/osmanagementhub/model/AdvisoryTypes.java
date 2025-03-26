@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible erratum advisory types. These map to ELSA, ELBA, ELEA types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum AdvisoryTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible erratum advisory types. These map to ELSA, ELBA, ELEA types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum AdvisoryTypes {
     Security("SECURITY"),
     Bugfix("BUGFIX"),
     Enhancement("ENHANCEMENT"),

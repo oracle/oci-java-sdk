@@ -5,23 +5,21 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Domain details of the On-premise VP worker. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Domain details of the On-premise VP worker.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IdentityInfoDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IdentityInfoDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = IdentityInfoDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IdentityInfoDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"regionName", "apmShortId", "collectorEndPoint"})
     public IdentityInfoDetails(String regionName, String apmShortId, String collectorEndPoint) {
@@ -33,46 +31,49 @@ public final class IdentityInfoDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Domain region of the On-premise VP worker. */
+        /**
+         * Domain region of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionName")
         private String regionName;
 
         /**
          * Domain region of the On-premise VP worker.
-         *
          * @param regionName the value to set
          * @return this builder
-         */
+         **/
         public Builder regionName(String regionName) {
             this.regionName = regionName;
             this.__explicitlySet__.add("regionName");
             return this;
         }
-        /** Domain short id of the On-premise VP worker. */
+        /**
+         * Domain short id of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apmShortId")
         private String apmShortId;
 
         /**
          * Domain short id of the On-premise VP worker.
-         *
          * @param apmShortId the value to set
          * @return this builder
-         */
+         **/
         public Builder apmShortId(String apmShortId) {
             this.apmShortId = apmShortId;
             this.__explicitlySet__.add("apmShortId");
             return this;
         }
-        /** Collector endpoint of the On-premise VP worker. */
+        /**
+         * Collector endpoint of the On-premise VP worker.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collectorEndPoint")
         private String collectorEndPoint;
 
         /**
          * Collector endpoint of the On-premise VP worker.
-         *
          * @param collectorEndPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder collectorEndPoint(String collectorEndPoint) {
             this.collectorEndPoint = collectorEndPoint;
             this.__explicitlySet__.add("collectorEndPoint");
@@ -107,7 +108,9 @@ public final class IdentityInfoDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +119,44 @@ public final class IdentityInfoDetails
         return new Builder().copy(this);
     }
 
-    /** Domain region of the On-premise VP worker. */
+    /**
+     * Domain region of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionName")
     private final String regionName;
 
     /**
      * Domain region of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getRegionName() {
         return regionName;
     }
 
-    /** Domain short id of the On-premise VP worker. */
+    /**
+     * Domain short id of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("apmShortId")
     private final String apmShortId;
 
     /**
      * Domain short id of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getApmShortId() {
         return apmShortId;
     }
 
-    /** Collector endpoint of the On-premise VP worker. */
+    /**
+     * Collector endpoint of the On-premise VP worker.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collectorEndPoint")
     private final String collectorEndPoint;
 
     /**
      * Collector endpoint of the On-premise VP worker.
-     *
      * @return the value
-     */
+     **/
     public String getCollectorEndPoint() {
         return collectorEndPoint;
     }
@@ -162,7 +168,6 @@ public final class IdentityInfoDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

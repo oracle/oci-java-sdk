@@ -5,21 +5,19 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JWK.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JWK extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JWK extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"n", "e", "kid", "use", "alg", "kty"})
     public JWK(String n, String e, String kid, String use, String alg, String kty) {
@@ -34,91 +32,97 @@ public final class JWK extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The modulus. */
+        /**
+         * The modulus.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("n")
         private String n;
 
         /**
          * The modulus.
-         *
          * @param n the value to set
          * @return this builder
-         */
+         **/
         public Builder n(String n) {
             this.n = n;
             this.__explicitlySet__.add("n");
             return this;
         }
-        /** The exponent. */
+        /**
+         * The exponent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("e")
         private String e;
 
         /**
          * The exponent.
-         *
          * @param e the value to set
          * @return this builder
-         */
+         **/
         public Builder e(String e) {
             this.e = e;
             this.__explicitlySet__.add("e");
             return this;
         }
-        /** The key id. */
+        /**
+         * The key id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kid")
         private String kid;
 
         /**
          * The key id.
-         *
          * @param kid the value to set
          * @return this builder
-         */
+         **/
         public Builder kid(String kid) {
             this.kid = kid;
             this.__explicitlySet__.add("kid");
             return this;
         }
-        /** The key use. */
+        /**
+         * The key use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("use")
         private String use;
 
         /**
          * The key use.
-         *
          * @param use the value to set
          * @return this builder
-         */
+         **/
         public Builder use(String use) {
             this.use = use;
             this.__explicitlySet__.add("use");
             return this;
         }
-        /** The algorithm. */
+        /**
+         * The algorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alg")
         private String alg;
 
         /**
          * The algorithm.
-         *
          * @param alg the value to set
          * @return this builder
-         */
+         **/
         public Builder alg(String alg) {
             this.alg = alg;
             this.__explicitlySet__.add("alg");
             return this;
         }
-        /** The key type. */
+        /**
+         * The key type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kty")
         private String kty;
 
         /**
          * The key type.
-         *
          * @param kty the value to set
          * @return this builder
-         */
+         **/
         public Builder kty(String kty) {
             this.kty = kty;
             this.__explicitlySet__.add("kty");
@@ -160,7 +164,9 @@ public final class JWK extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,80 +175,86 @@ public final class JWK extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** The modulus. */
+    /**
+     * The modulus.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("n")
     private final String n;
 
     /**
      * The modulus.
-     *
      * @return the value
-     */
+     **/
     public String getN() {
         return n;
     }
 
-    /** The exponent. */
+    /**
+     * The exponent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("e")
     private final String e;
 
     /**
      * The exponent.
-     *
      * @return the value
-     */
+     **/
     public String getE() {
         return e;
     }
 
-    /** The key id. */
+    /**
+     * The key id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kid")
     private final String kid;
 
     /**
      * The key id.
-     *
      * @return the value
-     */
+     **/
     public String getKid() {
         return kid;
     }
 
-    /** The key use. */
+    /**
+     * The key use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("use")
     private final String use;
 
     /**
      * The key use.
-     *
      * @return the value
-     */
+     **/
     public String getUse() {
         return use;
     }
 
-    /** The algorithm. */
+    /**
+     * The algorithm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
     private final String alg;
 
     /**
      * The algorithm.
-     *
      * @return the value
-     */
+     **/
     public String getAlg() {
         return alg;
     }
 
-    /** The key type. */
+    /**
+     * The key type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
     private final String kty;
 
     /**
      * The key type.
-     *
      * @return the value
-     */
+     **/
     public String getKty() {
         return kty;
     }
@@ -254,7 +266,6 @@ public final class JWK extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

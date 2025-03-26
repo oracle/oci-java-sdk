@@ -6,9 +6,12 @@ package com.oracle.bmc.containerinstances.responses;
 
 import com.oracle.bmc.containerinstances.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,13 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +38,13 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
-    /** The returned {@code ContainerInstance} instance. */
+    /**
+     * The returned ContainerInstance instance.
+     */
     private com.oracle.bmc.containerinstances.model.ContainerInstance containerInstance;
 
     /**
-     * The returned {@code ContainerInstance} instance.
-     *
+     * The returned ContainerInstance instance.
      * @return the value
      */
     public com.oracle.bmc.containerinstances.model.ContainerInstance getContainerInstance() {
@@ -57,7 +60,7 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
     })
     private GetContainerInstanceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.containerinstances.model.ContainerInstance containerInstance) {
@@ -67,25 +70,25 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
         this.containerInstance = containerInstance;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetContainerInstanceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -100,14 +103,13 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,12 +119,13 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code ContainerInstance} instance. */
+        /**
+         * The returned ContainerInstance instance.
+         */
         private com.oracle.bmc.containerinstances.model.ContainerInstance containerInstance;
 
         /**
-         * The returned {@code ContainerInstance} instance.
-         *
+         * The returned ContainerInstance instance.
          * @param containerInstance the value to set
          * @return this builder
          */
@@ -134,10 +137,8 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetContainerInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -150,10 +151,8 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetContainerInstanceResponse build() {
             return new GetContainerInstanceResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, containerInstance);
@@ -162,7 +161,6 @@ public class GetContainerInstanceResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

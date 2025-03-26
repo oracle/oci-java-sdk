@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Possible operation status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum OperationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation status.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum OperationStatus {
     Accepted("ACCEPTED"),
     Canceled("CANCELED"),
     Canceling("CANCELING"),

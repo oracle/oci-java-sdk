@@ -5,23 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Key replica details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * Key replica details
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KeyReplicaDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KeyReplicaDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = KeyReplicaDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KeyReplicaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"replicationId"})
     public KeyReplicaDetails(String replicationId) {
@@ -31,7 +30,10 @@ public final class KeyReplicaDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** ReplicationId associated with a key operation */
+        /**
+         * ReplicationId associated with a key operation
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationId")
         private String replicationId;
 
@@ -40,7 +42,7 @@ public final class KeyReplicaDetails
          *
          * @param replicationId the value to set
          * @return this builder
-         */
+         **/
         public Builder replicationId(String replicationId) {
             this.replicationId = replicationId;
             this.__explicitlySet__.add("replicationId");
@@ -67,7 +69,9 @@ public final class KeyReplicaDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,7 +80,10 @@ public final class KeyReplicaDetails
         return new Builder().copy(this);
     }
 
-    /** ReplicationId associated with a key operation */
+    /**
+     * ReplicationId associated with a key operation
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationId")
     private final String replicationId;
 
@@ -84,7 +91,7 @@ public final class KeyReplicaDetails
      * ReplicationId associated with a key operation
      *
      * @return the value
-     */
+     **/
     public String getReplicationId() {
         return replicationId;
     }
@@ -96,7 +103,6 @@ public final class KeyReplicaDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

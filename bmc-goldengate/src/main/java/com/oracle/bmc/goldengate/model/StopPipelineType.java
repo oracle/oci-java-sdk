@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The pipeline stop type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum StopPipelineType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The pipeline stop type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum StopPipelineType {
     Default("DEFAULT"),
     ;
 

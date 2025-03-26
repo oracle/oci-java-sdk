@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The cancel snooze type of deploymentUpgrade. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum CancelSnoozeDeploymentUpgradeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The cancel snooze type of deploymentUpgrade.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum CancelSnoozeDeploymentUpgradeType {
     Default("DEFAULT"),
     ;
 

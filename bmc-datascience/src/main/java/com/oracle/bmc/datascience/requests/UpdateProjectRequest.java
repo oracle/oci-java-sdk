@@ -6,67 +6,65 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateProjectExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateProjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateProjectRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class UpdateProjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datascience.model.UpdateProjectDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     private String projectId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * project.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      */
     public String getProjectId() {
         return projectId;
     }
     /**
-     * Details for updating a project. You can update the {@code displayName}, {@code description},
-     * {@code freeformTags}, and {@code definedTags} properties.
+     * Details for updating a project. You can update the {@code displayName}, {@code description}, {@code freeformTags}, and {@code definedTags} properties.
      */
     private com.oracle.bmc.datascience.model.UpdateProjectDetails updateProjectDetails;
 
     /**
-     * Details for updating a project. You can update the {@code displayName}, {@code description},
-     * {@code freeformTags}, and {@code definedTags} properties.
+     * Details for updating a project. You can update the {@code displayName}, {@code description}, {@code freeformTags}, and {@code definedTags} properties.
      */
     public com.oracle.bmc.datascience.model.UpdateProjectDetails getUpdateProjectDetails() {
         return updateProjectDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the {@code etag} you provide matches the
-     * resource's current {@code etag} value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the {@code etag} you provide matches the
-     * resource's current {@code etag} value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource is updated or deleted only if the {@code etag} you
+     * provide matches the resource's current {@code etag} value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -74,7 +72,6 @@ public class UpdateProjectRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -86,19 +83,17 @@ public class UpdateProjectRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateProjectRequest, com.oracle.bmc.datascience.model.UpdateProjectDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * project.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
          */
         private String projectId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * project.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
          * @param projectId the value to set
          * @return this builder instance
          */
@@ -108,15 +103,12 @@ public class UpdateProjectRequest
         }
 
         /**
-         * Details for updating a project. You can update the {@code displayName}, {@code
-         * description}, {@code freeformTags}, and {@code definedTags} properties.
+         * Details for updating a project. You can update the {@code displayName}, {@code description}, {@code freeformTags}, and {@code definedTags} properties.
          */
         private com.oracle.bmc.datascience.model.UpdateProjectDetails updateProjectDetails = null;
 
         /**
-         * Details for updating a project. You can update the {@code displayName}, {@code
-         * description}, {@code freeformTags}, and {@code definedTags} properties.
-         *
+         * Details for updating a project. You can update the {@code displayName}, {@code description}, {@code freeformTags}, and {@code definedTags} properties.
          * @param updateProjectDetails the value to set
          * @return this builder instance
          */
@@ -127,17 +119,20 @@ public class UpdateProjectRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the {@code etag} you
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the {@code etag} you
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource is updated or deleted only if the {@code etag} you
          * provide matches the resource's current {@code etag} value.
          *
          * @param ifMatch the value to set
@@ -149,14 +144,13 @@ public class UpdateProjectRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -168,19 +162,18 @@ public class UpdateProjectRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -192,7 +185,6 @@ public class UpdateProjectRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateProjectRequest o) {
@@ -208,11 +200,10 @@ public class UpdateProjectRequest
         /**
          * Build the instance of UpdateProjectRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateProjectRequest
          */
@@ -225,7 +216,6 @@ public class UpdateProjectRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -238,8 +228,7 @@ public class UpdateProjectRequest
         /**
          * Build the instance of UpdateProjectRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateProjectRequest
@@ -257,7 +246,6 @@ public class UpdateProjectRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -270,7 +258,6 @@ public class UpdateProjectRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

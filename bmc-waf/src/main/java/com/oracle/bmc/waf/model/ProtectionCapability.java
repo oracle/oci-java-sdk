@@ -6,23 +6,21 @@ package com.oracle.bmc.waf.model;
 
 /**
  * References an OCI-managed protection capability. Checks if HTTP requests/responses are malicious.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProtectionCapability.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProtectionCapability
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ProtectionCapability.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProtectionCapability extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -50,31 +48,33 @@ public final class ProtectionCapability
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique key of referenced protection capability. */
+        /**
+         * Unique key of referenced protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique key of referenced protection capability.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Version of referenced protection capability. */
+        /**
+         * Version of referenced protection capability.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Integer version;
 
         /**
          * Version of referenced protection capability.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Integer version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -90,46 +90,51 @@ public final class ProtectionCapability
             return this;
         }
         /**
-         * Override action to take if capability was triggered, defined in Protection Rule for this
-         * capability. Only actions of type CHECK are allowed.
-         */
+         * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+         * Only actions of type CHECK are allowed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionName")
         private String actionName;
 
         /**
-         * Override action to take if capability was triggered, defined in Protection Rule for this
-         * capability. Only actions of type CHECK are allowed.
+         * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+         * Only actions of type CHECK are allowed.
          *
          * @param actionName the value to set
          * @return this builder
-         */
+         **/
         public Builder actionName(String actionName) {
             this.actionName = actionName;
             this.__explicitlySet__.add("actionName");
             return this;
         }
         /**
-         * The minimum sum of weights of associated collaborative protection capabilities that have
-         * triggered which must be reached in order for _this_ capability to trigger. This field is
-         * ignored for non-collaborative capabilities.
-         */
+         * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+         * must be reached in order for _this_ capability to trigger.
+         * This field is ignored for non-collaborative capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
         private Integer collaborativeActionThreshold;
 
         /**
-         * The minimum sum of weights of associated collaborative protection capabilities that have
-         * triggered which must be reached in order for _this_ capability to trigger. This field is
-         * ignored for non-collaborative capabilities.
+         * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+         * must be reached in order for _this_ capability to trigger.
+         * This field is ignored for non-collaborative capabilities.
          *
          * @param collaborativeActionThreshold the value to set
          * @return this builder
-         */
+         **/
         public Builder collaborativeActionThreshold(Integer collaborativeActionThreshold) {
             this.collaborativeActionThreshold = collaborativeActionThreshold;
             this.__explicitlySet__.add("collaborativeActionThreshold");
             return this;
         }
-        /** Explicit weight values to use for associated collaborative protection capabilities. */
+        /**
+         * Explicit weight values to use for associated collaborative protection capabilities.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
         private java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
 
@@ -138,7 +143,7 @@ public final class ProtectionCapability
          *
          * @param collaborativeWeights the value to set
          * @return this builder
-         */
+         **/
         public Builder collaborativeWeights(
                 java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights) {
             this.collaborativeWeights = collaborativeWeights;
@@ -188,7 +193,9 @@ public final class ProtectionCapability
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,28 +204,30 @@ public final class ProtectionCapability
         return new Builder().copy(this);
     }
 
-    /** Unique key of referenced protection capability. */
+    /**
+     * Unique key of referenced protection capability.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique key of referenced protection capability.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Version of referenced protection capability. */
+    /**
+     * Version of referenced protection capability.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Integer version;
 
     /**
      * Version of referenced protection capability.
-     *
      * @return the value
-     */
+     **/
     public Integer getVersion() {
         return version;
     }
@@ -231,42 +240,47 @@ public final class ProtectionCapability
     }
 
     /**
-     * Override action to take if capability was triggered, defined in Protection Rule for this
-     * capability. Only actions of type CHECK are allowed.
-     */
+     * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+     * Only actions of type CHECK are allowed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
     private final String actionName;
 
     /**
-     * Override action to take if capability was triggered, defined in Protection Rule for this
-     * capability. Only actions of type CHECK are allowed.
+     * Override action to take if capability was triggered, defined in Protection Rule for this capability.
+     * Only actions of type CHECK are allowed.
      *
      * @return the value
-     */
+     **/
     public String getActionName() {
         return actionName;
     }
 
     /**
-     * The minimum sum of weights of associated collaborative protection capabilities that have
-     * triggered which must be reached in order for _this_ capability to trigger. This field is
-     * ignored for non-collaborative capabilities.
-     */
+     * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+     * must be reached in order for _this_ capability to trigger.
+     * This field is ignored for non-collaborative capabilities.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeActionThreshold")
     private final Integer collaborativeActionThreshold;
 
     /**
-     * The minimum sum of weights of associated collaborative protection capabilities that have
-     * triggered which must be reached in order for _this_ capability to trigger. This field is
-     * ignored for non-collaborative capabilities.
+     * The minimum sum of weights of associated collaborative protection capabilities that have triggered which
+     * must be reached in order for _this_ capability to trigger.
+     * This field is ignored for non-collaborative capabilities.
      *
      * @return the value
-     */
+     **/
     public Integer getCollaborativeActionThreshold() {
         return collaborativeActionThreshold;
     }
 
-    /** Explicit weight values to use for associated collaborative protection capabilities. */
+    /**
+     * Explicit weight values to use for associated collaborative protection capabilities.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("collaborativeWeights")
     private final java.util.List<CollaborativeCapabilityWeightOverride> collaborativeWeights;
 
@@ -274,7 +288,7 @@ public final class ProtectionCapability
      * Explicit weight values to use for associated collaborative protection capabilities.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CollaborativeCapabilityWeightOverride> getCollaborativeWeights() {
         return collaborativeWeights;
     }
@@ -286,7 +300,6 @@ public final class ProtectionCapability
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

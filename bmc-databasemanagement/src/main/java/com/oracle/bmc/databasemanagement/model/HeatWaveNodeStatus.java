@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The status of the HeatWave node. Indicates whether the status of the HeatWave node is UP, DOWN,
- * or UNKNOWN at the current time.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum HeatWaveNodeStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * The status of the HeatWave node. Indicates whether the status of the HeatWave node is UP, DOWN, or UNKNOWN at the current time.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum HeatWaveNodeStatus {
     Up("UP"),
     Down("DOWN"),
     Unknown("UNKNOWN"),

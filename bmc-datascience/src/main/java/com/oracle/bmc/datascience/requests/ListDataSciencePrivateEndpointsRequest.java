@@ -6,95 +6,104 @@ package com.oracle.bmc.datascience.requests;
 
 import com.oracle.bmc.datascience.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListDataSciencePrivateEndpointsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDataSciencePrivateEndpointsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListDataSciencePrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataSciencePrivateEndpointsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public class ListDataSciencePrivateEndpointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * <b>Filter</b> results by the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * <b>Filter</b> results by the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 100 is the maximum.
+     * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page,
+     * or items to return in a paginated "List" call.
+     * 1 is the minimum, 100 is the maximum.
+     * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
-     * <p>See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call.
+     * For list pagination. The value of the {@code opc-next-page} response
+     * header from the previous "List" call.
+     * <p>
+     * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      *
-     * <p>See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The lifecycle state of the private endpoint. */
+    /**
+     * The lifecycle state of the private endpoint.
+     *
+     */
     private com.oracle.bmc.datascience.model.DataSciencePrivateEndpointLifecycleState
             lifecycleState;
 
-    /** The lifecycle state of the private endpoint. */
+    /**
+     * The lifecycle state of the private endpoint.
+     *
+     */
     public com.oracle.bmc.datascience.model.DataSciencePrivateEndpointLifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
-    /** The field used to sort the results. Multiple fields aren't supported. */
+    /**
+     * The field used to sort the results. Multiple fields aren't supported.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field used to sort the results. Multiple fields aren't supported. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field used to sort the results. Multiple fields aren't supported.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         ;
 
@@ -126,15 +135,24 @@ public class ListDataSciencePrivateEndpointsRequest
         }
     };
 
-    /** The field used to sort the results. Multiple fields aren't supported. */
+    /**
+     * The field used to sort the results. Multiple fields aren't supported.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -167,36 +185,45 @@ public class ListDataSciencePrivateEndpointsRequest
         }
     };
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** <b>Filter</b> results by its user-friendly name. */
+    /**
+     * <b>Filter</b> results by its user-friendly name.
+     */
     private String displayName;
 
-    /** <b>Filter</b> results by its user-friendly name. */
+    /**
+     * <b>Filter</b> results by its user-friendly name.
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * <b>Filter</b> results by the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
-     * created the resource.
+     * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
     private String createdBy;
 
     /**
-     * <b>Filter</b> results by the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who
-     * created the resource.
+     * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
      */
     public String getCreatedBy() {
         return createdBy;
     }
-    /** Resource types in the Data Science service such as notebooks. */
+    /**
+     * Resource types in the Data Science service such as notebooks.
+     *
+     */
     private com.oracle.bmc.datascience.model.DataScienceResourceType dataScienceResourceType;
 
-    /** Resource types in the Data Science service such as notebooks. */
+    /**
+     * Resource types in the Data Science service such as notebooks.
+     *
+     */
     public com.oracle.bmc.datascience.model.DataScienceResourceType getDataScienceResourceType() {
         return dataScienceResourceType;
     }
@@ -204,21 +231,17 @@ public class ListDataSciencePrivateEndpointsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDataSciencePrivateEndpointsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * <b>Filter</b> results by the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * <b>Filter</b> results by the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -228,14 +251,13 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle assigned identifier for the request. If you need to contact Oracle about a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -246,20 +268,23 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 100 is the maximum.
+         * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. 1 is the minimum, 100 is the maximum. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * For list pagination. The maximum number of results per page,
+         * or items to return in a paginated "List" call.
+         * 1 is the minimum, 100 is the maximum.
+         * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -270,20 +295,19 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
-         * <p>See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call.
-         *
-         * <p>See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response
+         * header from the previous "List" call.
+         * <p>
+         * See [List Pagination](https://docs.oracle.com/iaas/Content/General/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -293,7 +317,10 @@ public class ListDataSciencePrivateEndpointsRequest
             return this;
         }
 
-        /** The lifecycle state of the private endpoint. */
+        /**
+         * The lifecycle state of the private endpoint.
+         *
+         */
         private com.oracle.bmc.datascience.model.DataSciencePrivateEndpointLifecycleState
                 lifecycleState = null;
 
@@ -310,7 +337,10 @@ public class ListDataSciencePrivateEndpointsRequest
             return this;
         }
 
-        /** The field used to sort the results. Multiple fields aren't supported. */
+        /**
+         * The field used to sort the results. Multiple fields aren't supported.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -326,6 +356,7 @@ public class ListDataSciencePrivateEndpointsRequest
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+         *
          */
         private SortOrder sortOrder = null;
 
@@ -340,12 +371,13 @@ public class ListDataSciencePrivateEndpointsRequest
             return this;
         }
 
-        /** <b>Filter</b> results by its user-friendly name. */
+        /**
+         * <b>Filter</b> results by its user-friendly name.
+         */
         private String displayName = null;
 
         /**
          * <b>Filter</b> results by its user-friendly name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -355,17 +387,12 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * <b>Filter</b> results by the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-         * who created the resource.
+         * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
          */
         private String createdBy = null;
 
         /**
-         * <b>Filter</b> results by the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user
-         * who created the resource.
-         *
+         * <b>Filter</b> results by the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the resource.
          * @param createdBy the value to set
          * @return this builder instance
          */
@@ -374,7 +401,10 @@ public class ListDataSciencePrivateEndpointsRequest
             return this;
         }
 
-        /** Resource types in the Data Science service such as notebooks. */
+        /**
+         * Resource types in the Data Science service such as notebooks.
+         *
+         */
         private com.oracle.bmc.datascience.model.DataScienceResourceType dataScienceResourceType =
                 null;
 
@@ -392,19 +422,18 @@ public class ListDataSciencePrivateEndpointsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -416,7 +445,6 @@ public class ListDataSciencePrivateEndpointsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDataSciencePrivateEndpointsRequest o) {
@@ -436,14 +464,12 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * Build the instance of ListDataSciencePrivateEndpointsRequest as configured by this
-         * builder
+         * Build the instance of ListDataSciencePrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDataSciencePrivateEndpointsRequest
          */
@@ -455,11 +481,9 @@ public class ListDataSciencePrivateEndpointsRequest
         }
 
         /**
-         * Build the instance of ListDataSciencePrivateEndpointsRequest as configured by this
-         * builder
+         * Build the instance of ListDataSciencePrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDataSciencePrivateEndpointsRequest
@@ -478,14 +502,12 @@ public class ListDataSciencePrivateEndpointsRequest
             request.createdBy = createdBy;
             request.dataScienceResourceType = dataScienceResourceType;
             return request;
-            // new ListDataSciencePrivateEndpointsRequest(compartmentId, opcRequestId, limit, page,
-            // lifecycleState, sortBy, sortOrder, displayName, createdBy, dataScienceResourceType);
+            // new ListDataSciencePrivateEndpointsRequest(compartmentId, opcRequestId, limit, page, lifecycleState, sortBy, sortOrder, displayName, createdBy, dataScienceResourceType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -504,7 +526,6 @@ public class ListDataSciencePrivateEndpointsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

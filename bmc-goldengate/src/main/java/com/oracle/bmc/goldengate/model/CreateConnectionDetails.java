@@ -5,109 +5,135 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information about a new Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information about a new Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType",
-        defaultImpl = CreateConnectionDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType",
+    defaultImpl = CreateConnectionDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreatePostgresqlConnectionDetails.class,
-            name = "POSTGRESQL"),
+        value = CreatePostgresqlConnectionDetails.class,
+        name = "POSTGRESQL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateKafkaSchemaRegistryConnectionDetails.class,
-            name = "KAFKA_SCHEMA_REGISTRY"),
+        value = CreateKafkaSchemaRegistryConnectionDetails.class,
+        name = "KAFKA_SCHEMA_REGISTRY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateMicrosoftSqlserverConnectionDetails.class,
-            name = "MICROSOFT_SQLSERVER"),
+        value = CreateMicrosoftSqlserverConnectionDetails.class,
+        name = "MICROSOFT_SQLSERVER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAmazonKinesisConnectionDetails.class,
-            name = "AMAZON_KINESIS"),
+        value = CreateAmazonKinesisConnectionDetails.class,
+        name = "AMAZON_KINESIS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAzureDataLakeStorageConnectionDetails.class,
-            name = "AZURE_DATA_LAKE_STORAGE"),
+        value = CreateAzureDataLakeStorageConnectionDetails.class,
+        name = "AZURE_DATA_LAKE_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGooglePubSubConnectionDetails.class,
-            name = "GOOGLE_PUBSUB"),
+        value = CreateGooglePubSubConnectionDetails.class,
+        name = "GOOGLE_PUBSUB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateHdfsConnectionDetails.class,
-            name = "HDFS"),
+        value = CreateHdfsConnectionDetails.class,
+        name = "HDFS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateOciObjectStorageConnectionDetails.class,
-            name = "OCI_OBJECT_STORAGE"),
+        value = CreateOciObjectStorageConnectionDetails.class,
+        name = "OCI_OBJECT_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateRedisConnectionDetails.class,
-            name = "REDIS"),
+        value = CreateRedisConnectionDetails.class,
+        name = "REDIS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateMicrosoftFabricConnectionDetails.class,
-            name = "MICROSOFT_FABRIC"),
+        value = CreateMicrosoftFabricConnectionDetails.class,
+        name = "MICROSOFT_FABRIC"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGoogleCloudStorageConnectionDetails.class,
-            name = "GOOGLE_CLOUD_STORAGE"),
+        value = CreateGoogleCloudStorageConnectionDetails.class,
+        name = "GOOGLE_CLOUD_STORAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateKafkaConnectionDetails.class,
-            name = "KAFKA"),
+        value = CreateKafkaConnectionDetails.class,
+        name = "KAFKA"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateOracleNosqlConnectionDetails.class,
-            name = "ORACLE_NOSQL"),
+        value = CreateOracleNosqlConnectionDetails.class,
+        name = "ORACLE_NOSQL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateJavaMessageServiceConnectionDetails.class,
-            name = "JAVA_MESSAGE_SERVICE"),
+        value = CreateJavaMessageServiceConnectionDetails.class,
+        name = "JAVA_MESSAGE_SERVICE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGoogleBigQueryConnectionDetails.class,
-            name = "GOOGLE_BIGQUERY"),
+        value = CreateGoogleBigQueryConnectionDetails.class,
+        name = "GOOGLE_BIGQUERY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateSnowflakeConnectionDetails.class,
-            name = "SNOWFLAKE"),
+        value = CreateSnowflakeConnectionDetails.class,
+        name = "SNOWFLAKE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateMongoDbConnectionDetails.class,
-            name = "MONGODB"),
+        value = CreateMongoDbConnectionDetails.class,
+        name = "MONGODB"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAmazonS3ConnectionDetails.class,
-            name = "AMAZON_S3"),
+        value = CreateAmazonS3ConnectionDetails.class,
+        name = "AMAZON_S3"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDatabricksConnectionDetails.class,
-            name = "DATABRICKS"),
+        value = CreateDatabricksConnectionDetails.class,
+        name = "DATABRICKS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateDb2ConnectionDetails.class,
-            name = "DB2"),
+        value = CreateDb2ConnectionDetails.class,
+        name = "DB2"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateElasticsearchConnectionDetails.class,
-            name = "ELASTICSEARCH"),
+        value = CreateElasticsearchConnectionDetails.class,
+        name = "ELASTICSEARCH"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAzureSynapseConnectionDetails.class,
-            name = "AZURE_SYNAPSE_ANALYTICS"),
+        value = CreateAzureSynapseConnectionDetails.class,
+        name = "AZURE_SYNAPSE_ANALYTICS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateMysqlConnectionDetails.class,
-            name = "MYSQL"),
+        value = CreateMysqlConnectionDetails.class,
+        name = "MYSQL"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGenericConnectionDetails.class,
-            name = "GENERIC"),
+        value = CreateGenericConnectionDetails.class,
+        name = "GENERIC"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateOracleConnectionDetails.class,
-            name = "ORACLE"),
+        value = CreateOracleConnectionDetails.class,
+        name = "ORACLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateGoldenGateConnectionDetails.class,
-            name = "GOLDENGATE"),
+        value = CreateGoldenGateConnectionDetails.class,
+        name = "GOLDENGATE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateAmazonRedshiftConnectionDetails.class,
-            name = "AMAZON_REDSHIFT")
+        value = CreateAmazonRedshiftConnectionDetails.class,
+        name = "AMAZON_REDSHIFT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class CreateConnectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class CreateConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -151,7 +177,10 @@ public class CreateConnectionDetails
         this.doesUseSecretIds = doesUseSecretIds;
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -159,12 +188,15 @@ public class CreateConnectionDetails
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -172,24 +204,23 @@ public class CreateConnectionDetails
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -197,152 +228,155 @@ public class CreateConnectionDetails
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<AddResourceLockDetails> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AddResourceLockDetails> getLocks() {
         return locks;
     }
 
     /**
-     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
-     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
-     * within this vault.
-     */
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
-     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
 
     /**
-     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
-     * Customers must add policies to permit GoldenGate to use this key.
-     */
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
-     * Customers must add policies to permit GoldenGate to use this key.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
     /**
-     * An array of Network Security Group OCIDs used to define network access for either Deployments
-     * or Connections.
-     */
+     * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * An array of Network Security Group OCIDs used to define network access for either Deployments
-     * or Connections.
+     * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * target subnet of the dedicated connection.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
-     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
-     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
-     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
-     * created in the target VCN subnet for the connection. The subnetId is required when
-     * DEDICATED_ENDPOINT networking is selected.
-     */
+     * Controls the network traffic direction to the target:
+     * SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+     * DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routingMethod")
     private final RoutingMethod routingMethod;
 
     /**
-     * Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows
-     * through the Goldengate Service's network to public hosts. Cannot be used for private targets.
-     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private
-     * endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is
-     * created in the target VCN subnet for the connection. The subnetId is required when
-     * DEDICATED_ENDPOINT networking is selected.
+     * Controls the network traffic direction to the target:
+     * SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+     * SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet.
+     * DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
      *
      * @return the value
-     */
+     **/
     public RoutingMethod getRoutingMethod() {
         return routingMethod;
     }
 
-    /** Indicates that sensitive attributes are provided via Secrets. */
+    /**
+     * Indicates that sensitive attributes are provided via Secrets.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
     private final Boolean doesUseSecretIds;
 
@@ -350,7 +384,7 @@ public class CreateConnectionDetails
      * Indicates that sensitive attributes are provided via Secrets.
      *
      * @return the value
-     */
+     **/
     public Boolean getDoesUseSecretIds() {
         return doesUseSecretIds;
     }
@@ -362,7 +396,6 @@ public class CreateConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

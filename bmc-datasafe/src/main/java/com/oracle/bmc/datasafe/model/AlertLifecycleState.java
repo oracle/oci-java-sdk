@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of a alert resource. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AlertLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of a alert resource.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum AlertLifecycleState {
     Updating("UPDATING"),
     Succeeded("SUCCEEDED"),
     Failed("FAILED"),

@@ -18,8 +18,9 @@ import java.io.IOException;
 
 /**
  * An example for using the Authentication Policy api, which is a part of the OCI Platform APIs.
- * Steps: 1. Get the Authentication-Policy for your tenant 2. Update the Authentication-Policy for
- * your tenant
+ * Steps:
+ * 1. Get the Authentication-Policy for your tenant
+ * 2. Update the Authentication-Policy for your tenant
  */
 public class AuthenticationPolicyExample {
     public static void main(String[] args) throws IOException {
@@ -27,10 +28,8 @@ public class AuthenticationPolicyExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -39,7 +38,7 @@ public class AuthenticationPolicyExample {
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
         final String tenantId = provider.getTenantId();
-        Identity identityClient = IdentityClient.builder().build(provider);
+        Identity identityClient = new IdentityClient(provider);
 
         queryAuthenticationPolicy(tenantId, identityClient);
 
@@ -51,8 +50,7 @@ public class AuthenticationPolicyExample {
         GetAuthenticationPolicyResponse getAuthenticationPolicyResponse =
                 identityClient.getAuthenticationPolicy(
                         GetAuthenticationPolicyRequest.builder()
-                                // currently only the tenant (ie the root compartment) can have an
-                                // authentication policy
+                                // currently only the tenant (ie the root compartment) can have an authentication policy
                                 .compartmentId(tenantId)
                                 .build());
         System.out.printf(
@@ -70,8 +68,7 @@ public class AuthenticationPolicyExample {
                                         .passwordPolicy(
                                                 PasswordPolicy.builder()
                                                         .minimumPasswordLength(
-                                                                15) // note that this is changed
-                                                        // from the default
+                                                                15) // note that this is changed from the default
                                                         .isLowercaseCharactersRequired(true)
                                                         .isUppercaseCharactersRequired(true)
                                                         .isNumericCharactersRequired(true)

@@ -5,40 +5,42 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Migration strategy for the resource to be migrated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Migration strategy for the resource to be migrated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "strategyType",
-        defaultImpl = ResourceAssessmentStrategy.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "strategyType",
+    defaultImpl = ResourceAssessmentStrategy.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PeakResourceAssessmentStrategy.class,
-            name = "PEAK"),
+        value = PeakResourceAssessmentStrategy.class,
+        name = "PEAK"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PercentileResourceAssessmentStrategy.class,
-            name = "PERCENTILE"),
+        value = PercentileResourceAssessmentStrategy.class,
+        name = "PERCENTILE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AverageResourceAssessmentStrategy.class,
-            name = "AVERAGE"),
+        value = AverageResourceAssessmentStrategy.class,
+        name = "AVERAGE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AsIsResourceAssessmentStrategy.class,
-            name = "AS_IS")
+        value = AsIsResourceAssessmentStrategy.class,
+        name = "AS_IS"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ResourceAssessmentStrategy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ResourceAssessmentStrategy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType"})
     protected ResourceAssessmentStrategy(ResourceType resourceType) {
@@ -46,15 +48,17 @@ public class ResourceAssessmentStrategy
         this.resourceType = resourceType;
     }
 
-    /** The type of resource. */
-    public enum ResourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of resource.
+     **/
+    public enum ResourceType {
         Cpu("CPU"),
         Memory("MEMORY"),
         All("ALL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -93,15 +97,16 @@ public class ResourceAssessmentStrategy
             return UnknownEnumValue;
         }
     };
-    /** The type of resource. */
+    /**
+     * The type of resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final ResourceType resourceType;
 
     /**
      * The type of resource.
-     *
      * @return the value
-     */
+     **/
     public ResourceType getResourceType() {
         return resourceType;
     }
@@ -113,7 +118,6 @@ public class ResourceAssessmentStrategy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -149,16 +153,18 @@ public class ResourceAssessmentStrategy
         return result;
     }
 
-    /** The type of strategy used for migration. */
-    public enum StrategyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of strategy used for migration.
+     **/
+    public enum StrategyType {
         AsIs("AS_IS"),
         Average("AVERAGE"),
         Peak("PEAK"),
         Percentile("PERCENTILE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

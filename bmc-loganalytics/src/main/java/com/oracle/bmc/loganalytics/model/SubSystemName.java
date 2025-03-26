@@ -5,13 +5,13 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Each subsystem has its own namespace for fields it contains. This means two fields in different
- * subsystems can have the same name; for example, log.status and security.status refer to two
- * different fields. The subsystem parameter identifies the default subsystem to use when
- * validating/querying a field that is not explicitly qualified by its subsystem.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum SubSystemName implements com.oracle.bmc.http.internal.BmcEnum {
+ * Each subsystem has its own namespace for fields it contains. This means two fields in different subsystems can have the same name;
+ * for example, log.status and security.status refer to two different fields. The subsystem parameter identifies the default subsystem
+ * to use when validating/querying a field that is not explicitly qualified by its subsystem.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum SubSystemName {
     Log("LOG"),
 
     /**

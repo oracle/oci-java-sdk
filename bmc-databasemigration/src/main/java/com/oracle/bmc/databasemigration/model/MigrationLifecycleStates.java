@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Possible Migration lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum MigrationLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Migration lifecycle states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum MigrationLifecycleStates {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

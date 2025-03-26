@@ -5,11 +5,10 @@
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
 /**
- * The entity version of the subscription, whether V1 (the legacy schema version), or V2 (the latest
- * 20230401 API version).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum EntityVersion implements com.oracle.bmc.http.internal.BmcEnum {
+ * The entity version of the subscription, whether V1 (the legacy schema version), or V2 (the latest 20230401 API version).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum EntityVersion {
     V1("V1"),
     V2("V2"),
     ;

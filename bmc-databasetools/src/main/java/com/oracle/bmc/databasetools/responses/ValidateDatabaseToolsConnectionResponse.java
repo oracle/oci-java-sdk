@@ -6,17 +6,18 @@ package com.oracle.bmc.databasetools.responses;
 
 import com.oracle.bmc.databasetools.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,14 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned {@code ValidateDatabaseToolsConnectionResult} instance. */
+    /**
+     * The returned ValidateDatabaseToolsConnectionResult instance.
+     */
     private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
             validateDatabaseToolsConnectionResult;
 
     /**
-     * The returned {@code ValidateDatabaseToolsConnectionResult} instance.
-     *
+     * The returned ValidateDatabaseToolsConnectionResult instance.
      * @return the value
      */
     public com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
@@ -46,7 +48,7 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
     })
     private ValidateDatabaseToolsConnectionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
                     validateDatabaseToolsConnectionResult) {
@@ -55,34 +57,31 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
         this.validateDatabaseToolsConnectionResult = validateDatabaseToolsConnectionResult;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ValidateDatabaseToolsConnectionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,13 +91,14 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code ValidateDatabaseToolsConnectionResult} instance. */
+        /**
+         * The returned ValidateDatabaseToolsConnectionResult instance.
+         */
         private com.oracle.bmc.databasetools.model.ValidateDatabaseToolsConnectionResult
                 validateDatabaseToolsConnectionResult;
 
         /**
-         * The returned {@code ValidateDatabaseToolsConnectionResult} instance.
-         *
+         * The returned ValidateDatabaseToolsConnectionResult instance.
          * @param validateDatabaseToolsConnectionResult the value to set
          * @return this builder
          */
@@ -111,10 +111,8 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ValidateDatabaseToolsConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +124,8 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ValidateDatabaseToolsConnectionResponse build() {
             return new ValidateDatabaseToolsConnectionResponse(
                     __httpStatusCode__,
@@ -141,7 +137,6 @@ public class ValidateDatabaseToolsConnectionResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

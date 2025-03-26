@@ -6,30 +6,38 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/RequestMonitoredResourcesSummarizedCountExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RequestMonitoredResourcesSummarizedCountRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/RequestMonitoredResourcesSummarizedCountExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestMonitoredResourcesSummarizedCountRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class RequestMonitoredResourcesSummarizedCountRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which data is listed. */
+    /**
+     * The ID of the compartment in which data is listed.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which data is listed. */
+    /**
+     * The ID of the compartment in which data is listed.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The field to group by. Default group by is 'resourceType'. */
+    /**
+     * The field to group by. Default group by is 'resourceType'.
+     *
+     */
     private GroupBy groupBy;
 
-    /** The field to group by. Default group by is 'resourceType'. */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to group by. Default group by is 'resourceType'.
+     *
+     **/
+    public enum GroupBy {
         ResourceType("resourceType"),
         License("license"),
         ParentResourceId("parentResourceId"),
+        Namespace("namespace"),
         ;
 
         private final String value;
@@ -60,29 +68,48 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         }
     };
 
-    /** The field to group by. Default group by is 'resourceType'. */
+    /**
+     * The field to group by. Default group by is 'resourceType'.
+     *
+     */
     public GroupBy getGroupBy() {
         return groupBy;
     }
-    /** Filter to return resource counts that match with the given licence edition. */
+    /**
+     * Filter to return resource counts that match with the given licence edition.
+     *
+     */
     private com.oracle.bmc.stackmonitoring.model.LicenseType license;
 
-    /** Filter to return resource counts that match with the given licence edition. */
+    /**
+     * Filter to return resource counts that match with the given licence edition.
+     *
+     */
     public com.oracle.bmc.stackmonitoring.model.LicenseType getLicense() {
         return license;
     }
-    /** A filter to return resource counts that match exact resource type. */
+    /**
+     * A filter to return resource counts that match exact resource type.
+     */
     private String resourceType;
 
-    /** A filter to return resource counts that match exact resource type. */
+    /**
+     * A filter to return resource counts that match exact resource type.
+     */
     public String getResourceType() {
         return resourceType;
     }
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     private SortBy sortBy;
 
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     **/
+    public enum SortBy {
         Count("count"),
         ;
 
@@ -114,43 +141,56 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         }
     };
 
-    /** If this query parameter is specified, the result is sorted by this query parameter value. */
+    /**
+     * If this query parameter is specified, the result is sorted by this query parameter value.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.stackmonitoring.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
@@ -158,12 +198,14 @@ public class RequestMonitoredResourcesSummarizedCountRequest
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -172,15 +214,17 @@ public class RequestMonitoredResourcesSummarizedCountRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestMonitoredResourcesSummarizedCountRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which data is listed. */
+        /**
+         * The ID of the compartment in which data is listed.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which data is listed.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -189,7 +233,10 @@ public class RequestMonitoredResourcesSummarizedCountRequest
             return this;
         }
 
-        /** The field to group by. Default group by is 'resourceType'. */
+        /**
+         * The field to group by. Default group by is 'resourceType'.
+         *
+         */
         private GroupBy groupBy = null;
 
         /**
@@ -203,7 +250,10 @@ public class RequestMonitoredResourcesSummarizedCountRequest
             return this;
         }
 
-        /** Filter to return resource counts that match with the given licence edition. */
+        /**
+         * Filter to return resource counts that match with the given licence edition.
+         *
+         */
         private com.oracle.bmc.stackmonitoring.model.LicenseType license = null;
 
         /**
@@ -217,12 +267,13 @@ public class RequestMonitoredResourcesSummarizedCountRequest
             return this;
         }
 
-        /** A filter to return resource counts that match exact resource type. */
+        /**
+         * A filter to return resource counts that match exact resource type.
+         */
         private String resourceType = null;
 
         /**
          * A filter to return resource counts that match exact resource type.
-         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -233,6 +284,7 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
         /**
          * If this query parameter is specified, the result is sorted by this query parameter value.
+         *
          */
         private SortBy sortBy = null;
 
@@ -247,7 +299,10 @@ public class RequestMonitoredResourcesSummarizedCountRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder = null;
 
         /**
@@ -263,15 +318,16 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -283,15 +339,16 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -304,6 +361,7 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -321,19 +379,18 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -345,7 +402,6 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RequestMonitoredResourcesSummarizedCountRequest o) {
@@ -364,14 +420,12 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         }
 
         /**
-         * Build the instance of RequestMonitoredResourcesSummarizedCountRequest as configured by
-         * this builder
+         * Build the instance of RequestMonitoredResourcesSummarizedCountRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RequestMonitoredResourcesSummarizedCountRequest
          */
@@ -384,11 +438,9 @@ public class RequestMonitoredResourcesSummarizedCountRequest
         }
 
         /**
-         * Build the instance of RequestMonitoredResourcesSummarizedCountRequest as configured by
-         * this builder
+         * Build the instance of RequestMonitoredResourcesSummarizedCountRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestMonitoredResourcesSummarizedCountRequest
@@ -406,14 +458,12 @@ public class RequestMonitoredResourcesSummarizedCountRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RequestMonitoredResourcesSummarizedCountRequest(compartmentId, groupBy, license,
-            // resourceType, sortBy, sortOrder, limit, page, opcRequestId);
+            // new RequestMonitoredResourcesSummarizedCountRequest(compartmentId, groupBy, license, resourceType, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -431,7 +481,6 @@ public class RequestMonitoredResourcesSummarizedCountRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,11 +5,12 @@
 package com.oracle.bmc.budget.model;
 
 /**
- * Valid values are ACTUAL (the alert triggers based on actual usage), or FORECAST (the alert
- * triggers based on predicted usage).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
-public enum AlertType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Valid values are ACTUAL (the alert triggers based on actual usage), or
+ * FORECAST (the alert triggers based on predicted usage).
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+public enum AlertType {
     Actual("ACTUAL"),
     Forecast("FORECAST"),
 

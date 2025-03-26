@@ -6,60 +6,75 @@ package com.oracle.bmc.usageapi.requests;
 
 import com.oracle.bmc.usageapi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListUsageCarbonEmissionsQueriesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListUsageCarbonEmissionsQueriesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListUsageCarbonEmissionsQueriesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListUsageCarbonEmissionsQueriesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class ListUsageCarbonEmissionsQueriesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The compartment ID in which to list resources. */
+    /**
+     * The compartment ID in which to list resources.
+     */
     private String compartmentId;
 
-    /** The compartment ID in which to list resources. */
+    /**
+     * The compartment ID in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximumimum number of items to return. */
+    /**
+     * The maximumimum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximumimum number of items to return. */
+    /**
+     * The maximumimum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results.
+     * This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The field to sort by. If not specified, the default is displayName. */
+    /**
+     * The field to sort by. If not specified, the default is displayName.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. If not specified, the default is displayName. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. If not specified, the default is displayName.
+     *
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         ;
 
@@ -91,15 +106,22 @@ public class ListUsageCarbonEmissionsQueriesRequest
         }
     };
 
-    /** The field to sort by. If not specified, the default is displayName. */
+    /**
+     * The field to sort by. If not specified, the default is displayName.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, whether 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -132,7 +154,9 @@ public class ListUsageCarbonEmissionsQueriesRequest
         }
     };
 
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
@@ -140,15 +164,17 @@ public class ListUsageCarbonEmissionsQueriesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListUsageCarbonEmissionsQueriesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The compartment ID in which to list resources. */
+        /**
+         * The compartment ID in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The compartment ID in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -160,6 +186,7 @@ public class ListUsageCarbonEmissionsQueriesRequest
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -175,12 +202,13 @@ public class ListUsageCarbonEmissionsQueriesRequest
             return this;
         }
 
-        /** The maximumimum number of items to return. */
+        /**
+         * The maximumimum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximumimum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -190,14 +218,15 @@ public class ListUsageCarbonEmissionsQueriesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results.
+         * This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -207,7 +236,10 @@ public class ListUsageCarbonEmissionsQueriesRequest
             return this;
         }
 
-        /** The field to sort by. If not specified, the default is displayName. */
+        /**
+         * The field to sort by. If not specified, the default is displayName.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -221,12 +253,13 @@ public class ListUsageCarbonEmissionsQueriesRequest
             return this;
         }
 
-        /** The sort order to use, whether 'asc' or 'desc'. */
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -237,19 +270,18 @@ public class ListUsageCarbonEmissionsQueriesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -261,7 +293,6 @@ public class ListUsageCarbonEmissionsQueriesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListUsageCarbonEmissionsQueriesRequest o) {
@@ -277,14 +308,12 @@ public class ListUsageCarbonEmissionsQueriesRequest
         }
 
         /**
-         * Build the instance of ListUsageCarbonEmissionsQueriesRequest as configured by this
-         * builder
+         * Build the instance of ListUsageCarbonEmissionsQueriesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListUsageCarbonEmissionsQueriesRequest
          */
@@ -296,11 +325,9 @@ public class ListUsageCarbonEmissionsQueriesRequest
         }
 
         /**
-         * Build the instance of ListUsageCarbonEmissionsQueriesRequest as configured by this
-         * builder
+         * Build the instance of ListUsageCarbonEmissionsQueriesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListUsageCarbonEmissionsQueriesRequest
@@ -315,14 +342,12 @@ public class ListUsageCarbonEmissionsQueriesRequest
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
-            // new ListUsageCarbonEmissionsQueriesRequest(compartmentId, opcRequestId, limit, page,
-            // sortBy, sortOrder);
+            // new ListUsageCarbonEmissionsQueriesRequest(compartmentId, opcRequestId, limit, page, sortBy, sortOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -337,7 +362,6 @@ public class ListUsageCarbonEmissionsQueriesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

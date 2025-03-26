@@ -5,23 +5,22 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * The quota details of resources under a tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * The quota details of resources under a tenancy.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceQuotumCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceQuotumCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceQuotumCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items", "isAllowed"})
     public ResourceQuotumCollection(
@@ -33,31 +32,33 @@ public final class ResourceQuotumCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of resource quota details. */
+        /**
+         * The list of resource quota details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceQuotumSummary> items;
 
         /**
          * The list of resource quota details.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<ResourceQuotumSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
             return this;
         }
-        /** Used to indicate if further quota consumption isAllowed. */
+        /**
+         * Used to indicate if further quota consumption isAllowed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAllowed")
         private Boolean isAllowed;
 
         /**
          * Used to indicate if further quota consumption isAllowed.
-         *
          * @param isAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isAllowed(Boolean isAllowed) {
             this.isAllowed = isAllowed;
             this.__explicitlySet__.add("isAllowed");
@@ -88,7 +89,9 @@ public final class ResourceQuotumCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +100,30 @@ public final class ResourceQuotumCollection
         return new Builder().copy(this);
     }
 
-    /** The list of resource quota details. */
+    /**
+     * The list of resource quota details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceQuotumSummary> items;
 
     /**
      * The list of resource quota details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceQuotumSummary> getItems() {
         return items;
     }
 
-    /** Used to indicate if further quota consumption isAllowed. */
+    /**
+     * Used to indicate if further quota consumption isAllowed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAllowed")
     private final Boolean isAllowed;
 
     /**
      * Used to indicate if further quota consumption isAllowed.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAllowed() {
         return isAllowed;
     }
@@ -130,7 +135,6 @@ public final class ResourceQuotumCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Resource Principal Session Token Details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Resource Principal Session Token Details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourcePrincipalConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourcePrincipalConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourcePrincipalConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -58,159 +57,148 @@ public final class ResourcePrincipalConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the ResourcePrincipalConfiguration. */
+        /**
+         * The id of the ResourcePrincipalConfiguration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The id of the ResourcePrincipalConfiguration.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the bdsInstance which is the parent resource id. */
+        /**
+         * The OCID of the bdsInstance which is the parent resource id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsInstanceId")
         private String bdsInstanceId;
 
         /**
          * The OCID of the bdsInstance which is the parent resource id.
-         *
          * @param bdsInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = bdsInstanceId;
             this.__explicitlySet__.add("bdsInstanceId");
             return this;
         }
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         *
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Life span in hours of each resource principal session token. */
+        /**
+         * Life span in hours of each resource principal session token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionTokenLifeSpanDurationInHours")
         private Integer sessionTokenLifeSpanDurationInHours;
 
         /**
          * Life span in hours of each resource principal session token.
-         *
          * @param sessionTokenLifeSpanDurationInHours the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionTokenLifeSpanDurationInHours(
                 Integer sessionTokenLifeSpanDurationInHours) {
             this.sessionTokenLifeSpanDurationInHours = sessionTokenLifeSpanDurationInHours;
             this.__explicitlySet__.add("sessionTokenLifeSpanDurationInHours");
             return this;
         }
-        /** The state of the ResourcePrincipalConfiguration. */
+        /**
+         * The state of the ResourcePrincipalConfiguration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the ResourcePrincipalConfiguration.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * the time the resource principal session token was refreshed, shown as an rfc 3339
-         * formatted datetime string.
-         */
+         * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTokenRefreshed")
         private java.util.Date timeTokenRefreshed;
 
         /**
-         * the time the resource principal session token was refreshed, shown as an rfc 3339
-         * formatted datetime string.
-         *
+         * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
          * @param timeTokenRefreshed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeTokenRefreshed(java.util.Date timeTokenRefreshed) {
             this.timeTokenRefreshed = timeTokenRefreshed;
             this.__explicitlySet__.add("timeTokenRefreshed");
             return this;
         }
         /**
-         * the time the resource principal session token will expired, shown as an rfc 3339
-         * formatted datetime string.
-         */
+         * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTokenExpiry")
         private java.util.Date timeTokenExpiry;
 
         /**
-         * the time the resource principal session token will expired, shown as an rfc 3339
-         * formatted datetime string.
-         *
+         * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
          * @param timeTokenExpiry the value to set
          * @return this builder
-         */
+         **/
         public Builder timeTokenExpiry(java.util.Date timeTokenExpiry) {
             this.timeTokenExpiry = timeTokenExpiry;
             this.__explicitlySet__.add("timeTokenExpiry");
             return this;
         }
         /**
-         * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted
-         * datetime string.
-         */
+         * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted
-         * datetime string.
-         *
+         * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted
-         * datetime string.
-         */
+         * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted
-         * datetime string.
+         * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -272,7 +260,9 @@ public final class ResourcePrincipalConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -281,64 +271,66 @@ public final class ResourcePrincipalConfiguration
         return new Builder().copy(this);
     }
 
-    /** The id of the ResourcePrincipalConfiguration. */
+    /**
+     * The id of the ResourcePrincipalConfiguration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The id of the ResourcePrincipalConfiguration.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the bdsInstance which is the parent resource id. */
+    /**
+     * The OCID of the bdsInstance which is the parent resource id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsInstanceId")
     private final String bdsInstanceId;
 
     /**
      * The OCID of the bdsInstance which is the parent resource id.
-     *
      * @return the value
-     */
+     **/
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     */
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     *
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Life span in hours of each resource principal session token. */
+    /**
+     * Life span in hours of each resource principal session token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionTokenLifeSpanDurationInHours")
     private final Integer sessionTokenLifeSpanDurationInHours;
 
     /**
      * Life span in hours of each resource principal session token.
-     *
      * @return the value
-     */
+     **/
     public Integer getSessionTokenLifeSpanDurationInHours() {
         return sessionTokenLifeSpanDurationInHours;
     }
 
-    /** The state of the ResourcePrincipalConfiguration. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the ResourcePrincipalConfiguration.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
@@ -347,8 +339,8 @@ public final class ResourcePrincipalConfiguration
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -387,83 +379,74 @@ public final class ResourcePrincipalConfiguration
             return UnknownEnumValue;
         }
     };
-    /** The state of the ResourcePrincipalConfiguration. */
+    /**
+     * The state of the ResourcePrincipalConfiguration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the ResourcePrincipalConfiguration.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted
-     * datetime string.
-     */
+     * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTokenRefreshed")
     private final java.util.Date timeTokenRefreshed;
 
     /**
-     * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted
-     * datetime string.
-     *
+     * the time the resource principal session token was refreshed, shown as an rfc 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeTokenRefreshed() {
         return timeTokenRefreshed;
     }
 
     /**
-     * the time the resource principal session token will expired, shown as an rfc 3339 formatted
-     * datetime string.
-     */
+     * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTokenExpiry")
     private final java.util.Date timeTokenExpiry;
 
     /**
-     * the time the resource principal session token will expired, shown as an rfc 3339 formatted
-     * datetime string.
-     *
+     * the time the resource principal session token will expired, shown as an rfc 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeTokenExpiry() {
         return timeTokenExpiry;
     }
 
     /**
-     * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted
-     * datetime string.
-     */
+     * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted
-     * datetime string.
-     *
+     * The time the ResourcePrincipalConfiguration was created, shown as an RFC 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted
-     * datetime string.
-     */
+     * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted
-     * datetime string.
+     * The time the ResourcePrincipalConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -475,7 +458,6 @@ public final class ResourcePrincipalConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

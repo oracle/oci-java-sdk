@@ -6,32 +6,31 @@ package com.oracle.bmc.delegateaccesscontrol.requests;
 
 import com.oracle.bmc.delegateaccesscontrol.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDelegatedResourceAccessRequestsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDelegatedResourceAccessRequestsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class ListDelegatedResourceAccessRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** unique Delegation Control identifier */
+    /**
+     * unique Delegation Control identifier
+     */
     private String delegationControlId;
 
-    /** unique Delegation Control identifier */
+    /**
+     * unique Delegation Control identifier
+     */
     public String getDelegationControlId() {
         return delegationControlId;
     }
@@ -47,105 +46,109 @@ public class ListDelegatedResourceAccessRequestsRequest
         return resourceId;
     }
     /**
-     * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the
-     * given Delegated Resource Access Request lifecycleState.
+     * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the given Delegated Resource Access Request lifecycleState.
      */
     private com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest.LifecycleState
             lifecycleState;
 
     /**
-     * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the
-     * given Delegated Resource Access Request lifecycleState.
+     * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the given Delegated Resource Access Request lifecycleState.
      */
     public com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest.LifecycleState
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * A filter to return only Delegated Resource Access Requests whose status matches the given
-     * Delegated Resource Access Request status.
+     * A filter to return only Delegated Resource Access Requests whose status matches the given Delegated Resource Access Request status.
      */
     private com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestStatus
             requestStatus;
 
     /**
-     * A filter to return only Delegated Resource Access Requests whose status matches the given
-     * Delegated Resource Access Request status.
+     * A filter to return only Delegated Resource Access Requests whose status matches the given Delegated Resource Access Request status.
      */
     public com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestStatus
             getRequestStatus() {
         return requestStatus;
     }
     /**
-     * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-     * together.
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+     *
      */
     private java.util.Date timeStart;
 
     /**
-     * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-     * together.
+     * Query start time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+     *
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-     * together.
+     * Query end time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+     *
      */
     private java.util.Date timeEnd;
 
     /**
-     * Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-     * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-     * together.
+     * Query end time in UTC in ISO 8601 format(inclusive).
+     * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+     * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+     *
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.delegateaccesscontrol.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.delegateaccesscontrol.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified, default is
-     * timeCreated.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified, default is timeCreated.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified, default is
-     * timeCreated.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified, default is timeCreated.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -179,17 +182,20 @@ public class ListDelegatedResourceAccessRequestsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified, default is
-     * timeCreated.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified, default is timeCreated.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -197,19 +203,17 @@ public class ListDelegatedResourceAccessRequestsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDelegatedResourceAccessRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -218,12 +222,13 @@ public class ListDelegatedResourceAccessRequestsRequest
             return this;
         }
 
-        /** unique Delegation Control identifier */
+        /**
+         * unique Delegation Control identifier
+         */
         private String delegationControlId = null;
 
         /**
          * unique Delegation Control identifier
-         *
          * @param delegationControlId the value to set
          * @return this builder instance
          */
@@ -233,15 +238,12 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * A filter to return only Delegated Resource Access Requests for the given resource
-         * identifier.
+         * A filter to return only Delegated Resource Access Requests for the given resource identifier.
          */
         private String resourceId = null;
 
         /**
-         * A filter to return only Delegated Resource Access Requests for the given resource
-         * identifier.
-         *
+         * A filter to return only Delegated Resource Access Requests for the given resource identifier.
          * @param resourceId the value to set
          * @return this builder instance
          */
@@ -251,17 +253,14 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * A filter to return only Delegated Resource Access Requests whose lifecycleState matches
-         * the given Delegated Resource Access Request lifecycleState.
+         * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the given Delegated Resource Access Request lifecycleState.
          */
         private com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
                         .LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only Delegated Resource Access Requests whose lifecycleState matches
-         * the given Delegated Resource Access Request lifecycleState.
-         *
+         * A filter to return only Delegated Resource Access Requests whose lifecycleState matches the given Delegated Resource Access Request lifecycleState.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -274,16 +273,13 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * A filter to return only Delegated Resource Access Requests whose status matches the given
-         * Delegated Resource Access Request status.
+         * A filter to return only Delegated Resource Access Requests whose status matches the given Delegated Resource Access Request status.
          */
         private com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestStatus
                 requestStatus = null;
 
         /**
-         * A filter to return only Delegated Resource Access Requests whose status matches the given
-         * Delegated Resource Access Request status.
-         *
+         * A filter to return only Delegated Resource Access Requests whose status matches the given Delegated Resource Access Request status.
          * @param requestStatus the value to set
          * @return this builder instance
          */
@@ -295,16 +291,17 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-         * together.
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+         *
          */
         private java.util.Date timeStart = null;
 
         /**
-         * Query start time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-         * together.
+         * Query start time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
          *
          * @param timeStart the value to set
          * @return this builder instance
@@ -315,16 +312,17 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-         * together.
+         * Query end time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
+         *
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * Query end time in UTC in ISO 8601 format(inclusive). Example 2019-10-30T00:00:00Z
-         * (yyyy-MM-ddThh:mm:ssZ). timeIntervalStart and timeIntervalEnd parameters cannot be used
-         * together.
+         * Query end time in UTC in ISO 8601 format(inclusive).
+         * Example 2019-10-30T00:00:00Z (yyyy-MM-ddThh:mm:ssZ).
+         * timeIntervalStart and timeIntervalEnd parameters cannot be used together.
          *
          * @param timeEnd the value to set
          * @return this builder instance
@@ -334,12 +332,13 @@ public class ListDelegatedResourceAccessRequestsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -349,15 +348,12 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -366,12 +362,13 @@ public class ListDelegatedResourceAccessRequestsRequest
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.delegateaccesscontrol.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -381,16 +378,13 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified,
-         * default is timeCreated.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified, default is timeCreated.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified,
-         * default is timeCreated.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified, default is timeCreated.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -400,12 +394,13 @@ public class ListDelegatedResourceAccessRequestsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -416,19 +411,18 @@ public class ListDelegatedResourceAccessRequestsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -440,7 +434,6 @@ public class ListDelegatedResourceAccessRequestsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDelegatedResourceAccessRequestsRequest o) {
@@ -462,14 +455,12 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * Build the instance of ListDelegatedResourceAccessRequestsRequest as configured by this
-         * builder
+         * Build the instance of ListDelegatedResourceAccessRequestsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDelegatedResourceAccessRequestsRequest
          */
@@ -481,11 +472,9 @@ public class ListDelegatedResourceAccessRequestsRequest
         }
 
         /**
-         * Build the instance of ListDelegatedResourceAccessRequestsRequest as configured by this
-         * builder
+         * Build the instance of ListDelegatedResourceAccessRequestsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDelegatedResourceAccessRequestsRequest
@@ -506,15 +495,12 @@ public class ListDelegatedResourceAccessRequestsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDelegatedResourceAccessRequestsRequest(compartmentId, delegationControlId,
-            // resourceId, lifecycleState, requestStatus, timeStart, timeEnd, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListDelegatedResourceAccessRequestsRequest(compartmentId, delegationControlId, resourceId, lifecycleState, requestStatus, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -535,7 +521,6 @@ public class ListDelegatedResourceAccessRequestsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

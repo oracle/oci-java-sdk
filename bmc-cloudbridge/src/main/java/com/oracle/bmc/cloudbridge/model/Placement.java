@@ -5,21 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Describes the placement of an instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Describes the placement of an instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Placement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Placement extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Placement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "affinity",
@@ -53,121 +51,129 @@ public final class Placement extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The affinity setting for the instance on the Dedicated Host. */
+        /**
+         * The affinity setting for the instance on the Dedicated Host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("affinity")
         private String affinity;
 
         /**
          * The affinity setting for the instance on the Dedicated Host.
-         *
          * @param affinity the value to set
          * @return this builder
-         */
+         **/
         public Builder affinity(String affinity) {
             this.affinity = affinity;
             this.__explicitlySet__.add("affinity");
             return this;
         }
-        /** The Availability Zone of the instance. */
+        /**
+         * The Availability Zone of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityZone")
         private String availabilityZone;
 
         /**
          * The Availability Zone of the instance.
-         *
          * @param availabilityZone the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityZone(String availabilityZone) {
             this.availabilityZone = availabilityZone;
             this.__explicitlySet__.add("availabilityZone");
             return this;
         }
-        /** The name of the placement group the instance is in. */
+        /**
+         * The name of the placement group the instance is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
          * The name of the placement group the instance is in.
-         *
          * @param groupName the value to set
          * @return this builder
-         */
+         **/
         public Builder groupName(String groupName) {
             this.groupName = groupName;
             this.__explicitlySet__.add("groupName");
             return this;
         }
-        /** The ID of the Dedicated Host on which the instance resides. */
+        /**
+         * The ID of the Dedicated Host on which the instance resides.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostKey")
         private String hostKey;
 
         /**
          * The ID of the Dedicated Host on which the instance resides.
-         *
          * @param hostKey the value to set
          * @return this builder
-         */
+         **/
         public Builder hostKey(String hostKey) {
             this.hostKey = hostKey;
             this.__explicitlySet__.add("hostKey");
             return this;
         }
-        /** The ARN of the host resource group in which to launch the instances. */
+        /**
+         * The ARN of the host resource group in which to launch the instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostResourceGroupArn")
         private String hostResourceGroupArn;
 
         /**
          * The ARN of the host resource group in which to launch the instances.
-         *
          * @param hostResourceGroupArn the value to set
          * @return this builder
-         */
+         **/
         public Builder hostResourceGroupArn(String hostResourceGroupArn) {
             this.hostResourceGroupArn = hostResourceGroupArn;
             this.__explicitlySet__.add("hostResourceGroupArn");
             return this;
         }
-        /** The number of the partition that the instance is in. */
+        /**
+         * The number of the partition that the instance is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionNumber")
         private Integer partitionNumber;
 
         /**
          * The number of the partition that the instance is in.
-         *
          * @param partitionNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionNumber(Integer partitionNumber) {
             this.partitionNumber = partitionNumber;
             this.__explicitlySet__.add("partitionNumber");
             return this;
         }
-        /** Reserved for future use. */
+        /**
+         * Reserved for future use.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spreadDomain")
         private String spreadDomain;
 
         /**
          * Reserved for future use.
-         *
          * @param spreadDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder spreadDomain(String spreadDomain) {
             this.spreadDomain = spreadDomain;
             this.__explicitlySet__.add("spreadDomain");
             return this;
         }
-        /** The tenancy of the instance (if the instance is running in a VPC). */
+        /**
+         * The tenancy of the instance (if the instance is running in a VPC).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
         private String tenancy;
 
         /**
          * The tenancy of the instance (if the instance is running in a VPC).
-         *
          * @param tenancy the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancy(String tenancy) {
             this.tenancy = tenancy;
             this.__explicitlySet__.add("tenancy");
@@ -224,7 +230,9 @@ public final class Placement extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -233,106 +241,114 @@ public final class Placement extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The affinity setting for the instance on the Dedicated Host. */
+    /**
+     * The affinity setting for the instance on the Dedicated Host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("affinity")
     private final String affinity;
 
     /**
      * The affinity setting for the instance on the Dedicated Host.
-     *
      * @return the value
-     */
+     **/
     public String getAffinity() {
         return affinity;
     }
 
-    /** The Availability Zone of the instance. */
+    /**
+     * The Availability Zone of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityZone")
     private final String availabilityZone;
 
     /**
      * The Availability Zone of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityZone() {
         return availabilityZone;
     }
 
-    /** The name of the placement group the instance is in. */
+    /**
+     * The name of the placement group the instance is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
      * The name of the placement group the instance is in.
-     *
      * @return the value
-     */
+     **/
     public String getGroupName() {
         return groupName;
     }
 
-    /** The ID of the Dedicated Host on which the instance resides. */
+    /**
+     * The ID of the Dedicated Host on which the instance resides.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostKey")
     private final String hostKey;
 
     /**
      * The ID of the Dedicated Host on which the instance resides.
-     *
      * @return the value
-     */
+     **/
     public String getHostKey() {
         return hostKey;
     }
 
-    /** The ARN of the host resource group in which to launch the instances. */
+    /**
+     * The ARN of the host resource group in which to launch the instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostResourceGroupArn")
     private final String hostResourceGroupArn;
 
     /**
      * The ARN of the host resource group in which to launch the instances.
-     *
      * @return the value
-     */
+     **/
     public String getHostResourceGroupArn() {
         return hostResourceGroupArn;
     }
 
-    /** The number of the partition that the instance is in. */
+    /**
+     * The number of the partition that the instance is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionNumber")
     private final Integer partitionNumber;
 
     /**
      * The number of the partition that the instance is in.
-     *
      * @return the value
-     */
+     **/
     public Integer getPartitionNumber() {
         return partitionNumber;
     }
 
-    /** Reserved for future use. */
+    /**
+     * Reserved for future use.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spreadDomain")
     private final String spreadDomain;
 
     /**
      * Reserved for future use.
-     *
      * @return the value
-     */
+     **/
     public String getSpreadDomain() {
         return spreadDomain;
     }
 
-    /** The tenancy of the instance (if the instance is running in a VPC). */
+    /**
+     * The tenancy of the instance (if the instance is running in a VPC).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancy")
     private final String tenancy;
 
     /**
      * The tenancy of the instance (if the instance is running in a VPC).
-     *
      * @return the value
-     */
+     **/
     public String getTenancy() {
         return tenancy;
     }
@@ -344,7 +360,6 @@ public final class Placement extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

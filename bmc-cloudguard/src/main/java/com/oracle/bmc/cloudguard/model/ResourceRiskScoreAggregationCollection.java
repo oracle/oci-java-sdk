@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Collection of risk score aggregations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Collection of risk score aggregations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceRiskScoreAggregationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceRiskScoreAggregationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceRiskScoreAggregationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"filterType", "filterId", "riskThreshold", "items"})
     public ResourceRiskScoreAggregationCollection(
@@ -38,61 +37,65 @@ public final class ResourceRiskScoreAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of filter */
+        /**
+         * Type of filter
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterType")
         private String filterType;
 
         /**
          * Type of filter
-         *
          * @param filterType the value to set
          * @return this builder
-         */
+         **/
         public Builder filterType(String filterType) {
             this.filterType = filterType;
             this.__explicitlySet__.add("filterType");
             return this;
         }
-        /** ID for filter that to be used to filter risk scores */
+        /**
+         * ID for filter that to be used to filter risk scores
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterId")
         private String filterId;
 
         /**
          * ID for filter that to be used to filter risk scores
-         *
          * @param filterId the value to set
          * @return this builder
-         */
+         **/
         public Builder filterId(String filterId) {
             this.filterId = filterId;
             this.__explicitlySet__.add("filterId");
             return this;
         }
-        /** Risk score value that triggers a problem */
+        /**
+         * Risk score value that triggers a problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
         private Integer riskThreshold;
 
         /**
          * Risk score value that triggers a problem
-         *
          * @param riskThreshold the value to set
          * @return this builder
-         */
+         **/
         public Builder riskThreshold(Integer riskThreshold) {
             this.riskThreshold = riskThreshold;
             this.__explicitlySet__.add("riskThreshold");
             return this;
         }
-        /** List of ResourceRiskScoreAggregation resources */
+        /**
+         * List of ResourceRiskScoreAggregation resources
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ResourceRiskScoreAggregation> items;
 
         /**
          * List of ResourceRiskScoreAggregation resources
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<ResourceRiskScoreAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -130,7 +133,9 @@ public final class ResourceRiskScoreAggregationCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,54 +144,58 @@ public final class ResourceRiskScoreAggregationCollection
         return new Builder().copy(this);
     }
 
-    /** Type of filter */
+    /**
+     * Type of filter
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterType")
     private final String filterType;
 
     /**
      * Type of filter
-     *
      * @return the value
-     */
+     **/
     public String getFilterType() {
         return filterType;
     }
 
-    /** ID for filter that to be used to filter risk scores */
+    /**
+     * ID for filter that to be used to filter risk scores
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterId")
     private final String filterId;
 
     /**
      * ID for filter that to be used to filter risk scores
-     *
      * @return the value
-     */
+     **/
     public String getFilterId() {
         return filterId;
     }
 
-    /** Risk score value that triggers a problem */
+    /**
+     * Risk score value that triggers a problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("riskThreshold")
     private final Integer riskThreshold;
 
     /**
      * Risk score value that triggers a problem
-     *
      * @return the value
-     */
+     **/
     public Integer getRiskThreshold() {
         return riskThreshold;
     }
 
-    /** List of ResourceRiskScoreAggregation resources */
+    /**
+     * List of ResourceRiskScoreAggregation resources
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ResourceRiskScoreAggregation> items;
 
     /**
      * List of ResourceRiskScoreAggregation resources
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceRiskScoreAggregation> getItems() {
         return items;
     }
@@ -198,7 +207,6 @@ public final class ResourceRiskScoreAggregationCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

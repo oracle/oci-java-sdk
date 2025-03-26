@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** The enablement status of the data mask rule. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum DataMaskRuleStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The enablement status of the data mask rule.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum DataMaskRuleStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

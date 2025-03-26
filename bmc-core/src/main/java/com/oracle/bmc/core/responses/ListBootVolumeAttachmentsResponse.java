@@ -6,19 +6,20 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response, additional pages
+     * of results remain. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -27,14 +28,15 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
         return opcRequestId;
     }
 
-    /** A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances. */
+    /**
+     * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
+     */
     private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
     /**
-     * A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances.
-     *
+     * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> getItems() {
@@ -63,7 +66,7 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
     })
     private ListBootVolumeAttachmentsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items) {
@@ -73,36 +76,33 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListBootVolumeAttachmentsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response, additional pages
+         * of results remain. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -113,14 +113,15 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -130,12 +131,13 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances. */
+        /**
+         * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
+         */
         private java.util.List<com.oracle.bmc.core.model.BootVolumeAttachment> items;
 
         /**
-         * A list of {@code com.oracle.bmc.core.model.BootVolumeAttachment} instances.
-         *
+         * A list of com.oracle.bmc.core.model.BootVolumeAttachment instances.
          * @param items the value to set
          * @return this builder
          */
@@ -146,10 +148,8 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListBootVolumeAttachmentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +162,8 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListBootVolumeAttachmentsResponse build() {
             return new ListBootVolumeAttachmentsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -174,7 +172,6 @@ public class ListBootVolumeAttachmentsResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,9 +6,12 @@ package com.oracle.bmc.core.responses;
 
 import com.oracle.bmc.core.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,7 +40,10 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcRequestId;
     }
 
-    /** For list pagination. A pagination token to get the total number of results available. */
+    /**
+     * For list pagination. A pagination token to get the total number of results available.
+     *
+     */
     private Integer opcTotalItems;
 
     /**
@@ -49,17 +56,16 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the request.
      *
      * @return the value
@@ -68,31 +74,26 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         return opcWorkRequestId;
     }
 
-    /** The IpInventory API current state. */
+    /**
+     * The IpInventory API current state.
+     */
     private LifecycleState lifecycleState;
 
     /**
      * The IpInventory API current state.
-     *
      * @return the value
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The IpInventory API current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The IpInventory API current state.
+     **/
+    public enum LifecycleState {
         InProgress("IN_PROGRESS"),
         Done("DONE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -100,9 +101,7 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -120,25 +119,21 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
         }
     };
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the resource.
+     *
      */
     private String dataRequestId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource. Use
-     * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+     * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
      * with this ID to track the status of the resource.
      *
      * @return the value
@@ -147,13 +142,14 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         return dataRequestId;
     }
 
-    /** The returned {@code IpInventoryVcnOverlapCollection} instance. */
+    /**
+     * The returned IpInventoryVcnOverlapCollection instance.
+     */
     private com.oracle.bmc.core.model.IpInventoryVcnOverlapCollection
             ipInventoryVcnOverlapCollection;
 
     /**
-     * The returned {@code IpInventoryVcnOverlapCollection} instance.
-     *
+     * The returned IpInventoryVcnOverlapCollection instance.
      * @return the value
      */
     public com.oracle.bmc.core.model.IpInventoryVcnOverlapCollection
@@ -174,7 +170,7 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
     })
     private GetVcnOverlapResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Integer opcTotalItems,
@@ -193,25 +189,25 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         this.ipInventoryVcnOverlapCollection = ipInventoryVcnOverlapCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetVcnOverlapResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -226,14 +222,15 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -243,7 +240,10 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** For list pagination. A pagination token to get the total number of results available. */
+        /**
+         * For list pagination. A pagination token to get the total number of results available.
+         *
+         */
         private Integer opcTotalItems;
 
         /**
@@ -258,17 +258,16 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the request.
          *
          * @param opcWorkRequestId the value to set
@@ -279,12 +278,13 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The IpInventory API current state. */
+        /**
+         * The IpInventory API current state.
+         */
         private LifecycleState lifecycleState;
 
         /**
          * The IpInventory API current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
          */
@@ -294,17 +294,16 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the resource.
+         *
          */
         private String dataRequestId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource. Use
-         * [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
+         * Use [GetWorkRequest](https://docs.oracle.com/iaas/api/#/en/workrequests/latest/WorkRequest/GetWorkRequest)
          * with this ID to track the status of the resource.
          *
          * @param dataRequestId the value to set
@@ -315,13 +314,14 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
             return this;
         }
 
-        /** The returned {@code IpInventoryVcnOverlapCollection} instance. */
+        /**
+         * The returned IpInventoryVcnOverlapCollection instance.
+         */
         private com.oracle.bmc.core.model.IpInventoryVcnOverlapCollection
                 ipInventoryVcnOverlapCollection;
 
         /**
-         * The returned {@code IpInventoryVcnOverlapCollection} instance.
-         *
+         * The returned IpInventoryVcnOverlapCollection instance.
          * @param ipInventoryVcnOverlapCollection the value to set
          * @return this builder
          */
@@ -334,10 +334,8 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetVcnOverlapResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -354,10 +352,8 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetVcnOverlapResponse build() {
             return new GetVcnOverlapResponse(
                     __httpStatusCode__,
@@ -374,7 +370,6 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

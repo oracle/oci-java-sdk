@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible Batching Strategy types to specify. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum BatchingStrategies implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible Batching Strategy types to specify.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum BatchingStrategies {
     Sequential("SEQUENTIAL"),
     FiftyFifty("FIFTY_FIFTY"),
     ServiceAvailabilityFactor("SERVICE_AVAILABILITY_FACTOR"),

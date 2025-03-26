@@ -6,52 +6,55 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditPolicyAnalyticsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAuditPolicyAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditPolicyAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAuditPolicyAnalyticsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListAuditPolicyAnalyticsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     private String compartmentId;
 
-    /** A filter to return only resources that match the specified compartment OCID. */
+    /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel'
-     * setting.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -85,51 +88,46 @@ public class ListAuditPolicyAnalyticsRequest
     };
 
     /**
-     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE
-     * returns only those compartments for which the user has INSPECT permissions directly or
-     * indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED
-     * permissions are checked and no partial results are displayed.
+     * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+     * Setting this to ACCESSIBLE returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The group by parameter to summarize audit policy aggregation. */
+    /**
+     * The group by parameter to summarize audit policy aggregation.
+     */
     private java.util.List<GroupBy> groupBy;
 
-    /** The group by parameter to summarize audit policy aggregation. */
-    public enum GroupBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The group by parameter to summarize audit policy aggregation.
+     **/
+    public enum GroupBy {
         AuditPolicyCategory("auditPolicyCategory"),
         AuditPolicyName("auditPolicyName"),
         TargetId("targetId"),
@@ -163,50 +161,70 @@ public class ListAuditPolicyAnalyticsRequest
         }
     };
 
-    /** The group by parameter to summarize audit policy aggregation. */
+    /**
+     * The group by parameter to summarize audit policy aggregation.
+     */
     public java.util.List<GroupBy> getGroupBy() {
         return groupBy;
     }
-    /** The category to which the audit policy belongs to. */
+    /**
+     * The category to which the audit policy belongs to.
+     */
     private com.oracle.bmc.datasafe.model.AuditPolicyCategory auditPolicyCategory;
 
-    /** The category to which the audit policy belongs to. */
+    /**
+     * The category to which the audit policy belongs to.
+     */
     public com.oracle.bmc.datasafe.model.AuditPolicyCategory getAuditPolicyCategory() {
         return auditPolicyCategory;
     }
     /**
-     * In case of seeded policies, it is the policy name defined by Data Safe. In case of custom
-     * Policies, it is the policy name that is used to create the policies on the target database.
+     * In case of seeded policies, it is the policy name defined by Data Safe.
+     * In case of custom Policies, it is the policy name that is used to create the policies on the target database.
      * In case of Oracle Pre-seeded policies, it is the default policy name of the same.
+     *
      */
     private String auditPolicyName;
 
     /**
-     * In case of seeded policies, it is the policy name defined by Data Safe. In case of custom
-     * Policies, it is the policy name that is used to create the policies on the target database.
+     * In case of seeded policies, it is the policy name defined by Data Safe.
+     * In case of custom Policies, it is the policy name that is used to create the policies on the target database.
      * In case of Oracle Pre-seeded policies, it is the default policy name of the same.
+     *
      */
     public String getAuditPolicyName() {
         return auditPolicyName;
     }
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     private String targetId;
 
-    /** A filter to return only items related to a specific target OCID. */
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** The current state of the audit policy. */
+    /**
+     * The current state of the audit policy.
+     */
     private com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState lifecycleState;
 
-    /** The current state of the audit policy. */
+    /**
+     * The current state of the audit policy.
+     */
     public com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -214,15 +232,17 @@ public class ListAuditPolicyAnalyticsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAuditPolicyAnalyticsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A filter to return only resources that match the specified compartment OCID. */
+        /**
+         * A filter to return only resources that match the specified compartment OCID.
+         */
         private String compartmentId = null;
 
         /**
          * A filter to return only resources that match the specified compartment OCID.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -232,16 +252,15 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned. Depends on the
-         * 'accessLevel' setting.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -252,18 +271,19 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to
-         * ACCESSIBLE returns only those compartments for which the user has INSPECT permissions
-         * directly or indirectly (permissions can be on a resource in a subcompartment). When set
-         * to RESTRICTED permissions are checked and no partial results are displayed.
+         * Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED.
+         * Setting this to ACCESSIBLE returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -274,17 +294,12 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -294,19 +309,12 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -315,12 +323,13 @@ public class ListAuditPolicyAnalyticsRequest
             return this;
         }
 
-        /** The group by parameter to summarize audit policy aggregation. */
+        /**
+         * The group by parameter to summarize audit policy aggregation.
+         */
         private java.util.List<GroupBy> groupBy = null;
 
         /**
          * The group by parameter to summarize audit policy aggregation.
-         *
          * @param groupBy the value to set
          * @return this builder instance
          */
@@ -331,7 +340,6 @@ public class ListAuditPolicyAnalyticsRequest
 
         /**
          * Singular setter. The group by parameter to summarize audit policy aggregation.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -339,12 +347,13 @@ public class ListAuditPolicyAnalyticsRequest
             return this.groupBy(java.util.Arrays.asList(singularValue));
         }
 
-        /** The category to which the audit policy belongs to. */
+        /**
+         * The category to which the audit policy belongs to.
+         */
         private com.oracle.bmc.datasafe.model.AuditPolicyCategory auditPolicyCategory = null;
 
         /**
          * The category to which the audit policy belongs to.
-         *
          * @param auditPolicyCategory the value to set
          * @return this builder instance
          */
@@ -355,18 +364,17 @@ public class ListAuditPolicyAnalyticsRequest
         }
 
         /**
-         * In case of seeded policies, it is the policy name defined by Data Safe. In case of custom
-         * Policies, it is the policy name that is used to create the policies on the target
-         * database. In case of Oracle Pre-seeded policies, it is the default policy name of the
-         * same.
+         * In case of seeded policies, it is the policy name defined by Data Safe.
+         * In case of custom Policies, it is the policy name that is used to create the policies on the target database.
+         * In case of Oracle Pre-seeded policies, it is the default policy name of the same.
+         *
          */
         private String auditPolicyName = null;
 
         /**
-         * In case of seeded policies, it is the policy name defined by Data Safe. In case of custom
-         * Policies, it is the policy name that is used to create the policies on the target
-         * database. In case of Oracle Pre-seeded policies, it is the default policy name of the
-         * same.
+         * In case of seeded policies, it is the policy name defined by Data Safe.
+         * In case of custom Policies, it is the policy name that is used to create the policies on the target database.
+         * In case of Oracle Pre-seeded policies, it is the default policy name of the same.
          *
          * @param auditPolicyName the value to set
          * @return this builder instance
@@ -376,12 +384,13 @@ public class ListAuditPolicyAnalyticsRequest
             return this;
         }
 
-        /** A filter to return only items related to a specific target OCID. */
+        /**
+         * A filter to return only items related to a specific target OCID.
+         */
         private String targetId = null;
 
         /**
          * A filter to return only items related to a specific target OCID.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -390,12 +399,13 @@ public class ListAuditPolicyAnalyticsRequest
             return this;
         }
 
-        /** The current state of the audit policy. */
+        /**
+         * The current state of the audit policy.
+         */
         private com.oracle.bmc.datasafe.model.AuditPolicyLifecycleState lifecycleState = null;
 
         /**
          * The current state of the audit policy.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -405,12 +415,13 @@ public class ListAuditPolicyAnalyticsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -421,19 +432,18 @@ public class ListAuditPolicyAnalyticsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -445,7 +455,6 @@ public class ListAuditPolicyAnalyticsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAuditPolicyAnalyticsRequest o) {
@@ -468,11 +477,10 @@ public class ListAuditPolicyAnalyticsRequest
         /**
          * Build the instance of ListAuditPolicyAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAuditPolicyAnalyticsRequest
          */
@@ -486,8 +494,7 @@ public class ListAuditPolicyAnalyticsRequest
         /**
          * Build the instance of ListAuditPolicyAnalyticsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAuditPolicyAnalyticsRequest
@@ -506,15 +513,12 @@ public class ListAuditPolicyAnalyticsRequest
             request.lifecycleState = lifecycleState;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListAuditPolicyAnalyticsRequest(compartmentId, compartmentIdInSubtree,
-            // accessLevel, limit, page, groupBy, auditPolicyCategory, auditPolicyName, targetId,
-            // lifecycleState, opcRequestId);
+            // new ListAuditPolicyAnalyticsRequest(compartmentId, compartmentIdInSubtree, accessLevel, limit, page, groupBy, auditPolicyCategory, auditPolicyName, targetId, lifecycleState, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -534,7 +538,6 @@ public class ListAuditPolicyAnalyticsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

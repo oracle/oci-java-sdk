@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * Request parameters in body for obtaining a user principal session token (UPST) for self. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Request parameters in body for obtaining a user principal session token (UPST) for self.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GenerateUserSecurityTokenDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GenerateUserSecurityTokenDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenerateUserSecurityTokenDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"publicKey", "sessionExpirationInMinutes"})
     public GenerateUserSecurityTokenDetails(String publicKey, Integer sessionExpirationInMinutes) {
@@ -33,42 +32,42 @@ public final class GenerateUserSecurityTokenDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The user-owned public key in PEM format that corresponds to the RSA key pair used for
-         * signing requests. The user also owns the corresponding private key. This public key will
-         * be put inside the user security token by the auth service after successful validation of
-         * the request.
-         */
+         * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing requests.
+         * The user also owns the corresponding private key. This public key will be put inside the user
+         * security token by the auth service after successful validation of the request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
         /**
-         * The user-owned public key in PEM format that corresponds to the RSA key pair used for
-         * signing requests. The user also owns the corresponding private key. This public key will
-         * be put inside the user security token by the auth service after successful validation of
-         * the request.
+         * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing requests.
+         * The user also owns the corresponding private key. This public key will be put inside the user
+         * security token by the auth service after successful validation of the request.
          *
          * @param publicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
         /**
-         * User session expiration in minutes to which the requested user principal session token
-         * (UPST) is bounded. Valid values are from 5 to 60 for all realms.
-         */
+         * User session expiration in minutes to which the requested user principal session token (UPST) is bounded.
+         * Valid values are from 5 to 60 for all realms.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInMinutes")
         private Integer sessionExpirationInMinutes;
 
         /**
-         * User session expiration in minutes to which the requested user principal session token
-         * (UPST) is bounded. Valid values are from 5 to 60 for all realms.
+         * User session expiration in minutes to which the requested user principal session token (UPST) is bounded.
+         * Valid values are from 5 to 60 for all realms.
          *
          * @param sessionExpirationInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionExpirationInMinutes(Integer sessionExpirationInMinutes) {
             this.sessionExpirationInMinutes = sessionExpirationInMinutes;
             this.__explicitlySet__.add("sessionExpirationInMinutes");
@@ -100,7 +99,9 @@ public final class GenerateUserSecurityTokenDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -110,39 +111,39 @@ public final class GenerateUserSecurityTokenDetails
     }
 
     /**
-     * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing
-     * requests. The user also owns the corresponding private key. This public key will be put
-     * inside the user security token by the auth service after successful validation of the
-     * request.
-     */
+     * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing requests.
+     * The user also owns the corresponding private key. This public key will be put inside the user
+     * security token by the auth service after successful validation of the request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
     /**
-     * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing
-     * requests. The user also owns the corresponding private key. This public key will be put
-     * inside the user security token by the auth service after successful validation of the
-     * request.
+     * The user-owned public key in PEM format that corresponds to the RSA key pair used for signing requests.
+     * The user also owns the corresponding private key. This public key will be put inside the user
+     * security token by the auth service after successful validation of the request.
      *
      * @return the value
-     */
+     **/
     public String getPublicKey() {
         return publicKey;
     }
 
     /**
-     * User session expiration in minutes to which the requested user principal session token (UPST)
-     * is bounded. Valid values are from 5 to 60 for all realms.
-     */
+     * User session expiration in minutes to which the requested user principal session token (UPST) is bounded.
+     * Valid values are from 5 to 60 for all realms.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionExpirationInMinutes")
     private final Integer sessionExpirationInMinutes;
 
     /**
-     * User session expiration in minutes to which the requested user principal session token (UPST)
-     * is bounded. Valid values are from 5 to 60 for all realms.
+     * User session expiration in minutes to which the requested user principal session token (UPST) is bounded.
+     * Valid values are from 5 to 60 for all realms.
      *
      * @return the value
-     */
+     **/
     public Integer getSessionExpirationInMinutes() {
         return sessionExpirationInMinutes;
     }
@@ -154,7 +155,6 @@ public final class GenerateUserSecurityTokenDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,228 +6,234 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetObjectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetObjectRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     private String namespaceName;
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     public String getBucketName() {
         return bucketName;
     }
     /**
-     * The name of the object. Avoid entering confidential information. Example: {@code
-     * test/object1.log}
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
      */
     private String objectName;
 
     /**
-     * The name of the object. Avoid entering confidential information. Example: {@code
-     * test/object1.log}
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
      */
     public String getObjectName() {
         return objectName;
     }
-    /** VersionId used to identify a particular version of the object */
+    /**
+     * VersionId used to identify a particular version of the object
+     */
     private String versionId;
 
-    /** VersionId used to identify a particular version of the object */
+    /**
+     * VersionId used to identify a particular version of the object
+     */
     public String getVersionId() {
         return versionId;
     }
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified
-     * ETag does not match the ETag of the existing resource, the request returns the expected
-     * response. If the ETag matches the ETag of the existing resource, the request returns an HTTP
-     * 304 status without a response body.
+     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+     * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+     * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified
-     * ETag does not match the ETag of the existing resource, the request returns the expected
-     * response. If the ETag matches the ETag of the existing resource, the request returns an HTTP
-     * 304 status without a response body.
+     * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+     * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+     * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcClientRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
     /**
-     * Optional byte range to fetch, as described in [RFC
-     * 7233](https://tools.ietf.org/html/rfc7233#section-2.1). Note that only a single range of
-     * bytes is supported.
+     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7233#section-2.1).
+     * Note that only a single range of bytes is supported.
+     *
      */
     private com.oracle.bmc.model.Range range;
 
     /**
-     * Optional byte range to fetch, as described in [RFC
-     * 7233](https://tools.ietf.org/html/rfc7233#section-2.1). Note that only a single range of
-     * bytes is supported.
+     * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7233#section-2.1).
+     * Note that only a single range of bytes is supported.
+     *
      */
     public com.oracle.bmc.model.Range getRange() {
         return range;
     }
     /**
-     * The optional header that specifies "AES256" as the encryption algorithm. For more
-     * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerAlgorithm;
 
     /**
-     * The optional header that specifies "AES256" as the encryption algorithm. For more
-     * information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerAlgorithm() {
         return opcSseCustomerAlgorithm;
     }
     /**
-     * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-     * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerKey;
 
     /**
-     * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-     * encrypt or decrypt the data. For more information, see [Using Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+     * decrypt the data. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerKey() {
         return opcSseCustomerKey;
     }
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-     * value is used to check the integrity of the encryption key. For more information, see [Using
-     * Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     private String opcSseCustomerKeySha256;
 
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
-     * value is used to check the integrity of the encryption key. For more information, see [Using
-     * Your Own Keys for Server-Side
-     * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * value is used to check the integrity of the encryption key. For more information, see
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     *
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
     /**
-     * Specify this query parameter to override the value of the Content-Disposition response header
-     * in the GetObject response.
+     * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
      */
     private String httpResponseContentDisposition;
 
     /**
-     * Specify this query parameter to override the value of the Content-Disposition response header
-     * in the GetObject response.
+     * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
      */
     public String getHttpResponseContentDisposition() {
         return httpResponseContentDisposition;
     }
     /**
-     * Specify this query parameter to override the Cache-Control response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Cache-Control response header in the GetObject response.
      */
     private String httpResponseCacheControl;
 
     /**
-     * Specify this query parameter to override the Cache-Control response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Cache-Control response header in the GetObject response.
      */
     public String getHttpResponseCacheControl() {
         return httpResponseCacheControl;
     }
     /**
-     * Specify this query parameter to override the Content-Type response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Content-Type response header in the GetObject response.
      */
     private String httpResponseContentType;
 
     /**
-     * Specify this query parameter to override the Content-Type response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Content-Type response header in the GetObject response.
      */
     public String getHttpResponseContentType() {
         return httpResponseContentType;
     }
     /**
-     * Specify this query parameter to override the Content-Language response header in the
-     * GetObject response.
+     * Specify this query parameter to override the Content-Language response header in the GetObject response.
      */
     private String httpResponseContentLanguage;
 
     /**
-     * Specify this query parameter to override the Content-Language response header in the
-     * GetObject response.
+     * Specify this query parameter to override the Content-Language response header in the GetObject response.
      */
     public String getHttpResponseContentLanguage() {
         return httpResponseContentLanguage;
     }
     /**
-     * Specify this query parameter to override the Content-Encoding response header in the
-     * GetObject response.
+     * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
      */
     private String httpResponseContentEncoding;
 
     /**
-     * Specify this query parameter to override the Content-Encoding response header in the
-     * GetObject response.
+     * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
      */
     public String getHttpResponseContentEncoding() {
         return httpResponseContentEncoding;
     }
     /**
-     * Specify this query parameter to override the Expires response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Expires response header in the GetObject response.
      */
     private String httpResponseExpires;
 
     /**
-     * Specify this query parameter to override the Expires response header in the GetObject
-     * response.
+     * Specify this query parameter to override the Expires response header in the GetObject response.
      */
     public String getHttpResponseExpires() {
         return httpResponseExpires;
@@ -236,15 +242,17 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetObjectRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Object Storage namespace used for the request. */
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
-         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -254,14 +262,15 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -272,14 +281,15 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The name of the object. Avoid entering confidential information. Example: {@code
-         * test/object1.log}
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
+         *
          */
         private String objectName = null;
 
         /**
-         * The name of the object. Avoid entering confidential information. Example: {@code
-         * test/object1.log}
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
          *
          * @param objectName the value to set
          * @return this builder instance
@@ -289,12 +299,13 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** VersionId used to identify a particular version of the object */
+        /**
+         * VersionId used to identify a particular version of the object
+         */
         private String versionId = null;
 
         /**
          * VersionId used to identify a particular version of the object
-         *
          * @param versionId the value to set
          * @return this builder instance
          */
@@ -304,16 +315,17 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -324,18 +336,17 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the
-         * specified ETag does not match the ETag of the existing resource, the request returns the
-         * expected response. If the ETag matches the ETag of the existing resource, the request
-         * returns an HTTP 304 status without a response body.
+         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+         * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+         * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the
-         * specified ETag does not match the ETag of the existing resource, the request returns the
-         * expected response. If the ETag matches the ETag of the existing resource, the request
-         * returns an HTTP 304 status without a response body.
+         * The entity tag (ETag) to avoid matching. Wildcards ('*') are not allowed. If the specified ETag does not
+         * match the ETag of the existing resource, the request returns the expected response. If the ETag matches
+         * the ETag of the existing resource, the request returns an HTTP 304 status without a response body.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -345,12 +356,13 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -360,16 +372,15 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Optional byte range to fetch, as described in [RFC
-         * 7233](https://tools.ietf.org/html/rfc7233#section-2.1). Note that only a single range of
-         * bytes is supported.
+         * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7233#section-2.1).
+         * Note that only a single range of bytes is supported.
+         *
          */
         private com.oracle.bmc.model.Range range = null;
 
         /**
-         * Optional byte range to fetch, as described in [RFC
-         * 7233](https://tools.ietf.org/html/rfc7233#section-2.1). Note that only a single range of
-         * bytes is supported.
+         * Optional byte range to fetch, as described in [RFC 7233](https://tools.ietf.org/html/rfc7233#section-2.1).
+         * Note that only a single range of bytes is supported.
          *
          * @param range the value to set
          * @return this builder instance
@@ -380,16 +391,15 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The optional header that specifies "AES256" as the encryption algorithm. For more
-         * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
-         * The optional header that specifies "AES256" as the encryption algorithm. For more
-         * information, see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -400,18 +410,17 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-         * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
-         * Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerKey = null;
 
         /**
-         * The optional header that specifies the base64-encoded 256-bit encryption key to use to
-         * encrypt or decrypt the data. For more information, see [Using Your Own Keys for
-         * Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
+         * decrypt the data. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -422,18 +431,17 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
-         * This value is used to check the integrity of the encryption key. For more information,
-         * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         *
          */
         private String opcSseCustomerKeySha256 = null;
 
         /**
-         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key.
-         * This value is used to check the integrity of the encryption key. For more information,
-         * see [Using Your Own Keys for Server-Side
-         * Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
+         * value is used to check the integrity of the encryption key. For more information, see
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -444,15 +452,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the value of the Content-Disposition response
-         * header in the GetObject response.
+         * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
          */
         private String httpResponseContentDisposition = null;
 
         /**
-         * Specify this query parameter to override the value of the Content-Disposition response
-         * header in the GetObject response.
-         *
+         * Specify this query parameter to override the value of the Content-Disposition response header in the GetObject response.
          * @param httpResponseContentDisposition the value to set
          * @return this builder instance
          */
@@ -462,15 +467,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the Cache-Control response header in the
-         * GetObject response.
+         * Specify this query parameter to override the Cache-Control response header in the GetObject response.
          */
         private String httpResponseCacheControl = null;
 
         /**
-         * Specify this query parameter to override the Cache-Control response header in the
-         * GetObject response.
-         *
+         * Specify this query parameter to override the Cache-Control response header in the GetObject response.
          * @param httpResponseCacheControl the value to set
          * @return this builder instance
          */
@@ -480,15 +482,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the Content-Type response header in the
-         * GetObject response.
+         * Specify this query parameter to override the Content-Type response header in the GetObject response.
          */
         private String httpResponseContentType = null;
 
         /**
-         * Specify this query parameter to override the Content-Type response header in the
-         * GetObject response.
-         *
+         * Specify this query parameter to override the Content-Type response header in the GetObject response.
          * @param httpResponseContentType the value to set
          * @return this builder instance
          */
@@ -498,15 +497,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the Content-Language response header in the
-         * GetObject response.
+         * Specify this query parameter to override the Content-Language response header in the GetObject response.
          */
         private String httpResponseContentLanguage = null;
 
         /**
-         * Specify this query parameter to override the Content-Language response header in the
-         * GetObject response.
-         *
+         * Specify this query parameter to override the Content-Language response header in the GetObject response.
          * @param httpResponseContentLanguage the value to set
          * @return this builder instance
          */
@@ -516,15 +512,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the Content-Encoding response header in the
-         * GetObject response.
+         * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
          */
         private String httpResponseContentEncoding = null;
 
         /**
-         * Specify this query parameter to override the Content-Encoding response header in the
-         * GetObject response.
-         *
+         * Specify this query parameter to override the Content-Encoding response header in the GetObject response.
          * @param httpResponseContentEncoding the value to set
          * @return this builder instance
          */
@@ -534,15 +527,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Specify this query parameter to override the Expires response header in the GetObject
-         * response.
+         * Specify this query parameter to override the Expires response header in the GetObject response.
          */
         private String httpResponseExpires = null;
 
         /**
-         * Specify this query parameter to override the Expires response header in the GetObject
-         * response.
-         *
+         * Specify this query parameter to override the Expires response header in the GetObject response.
          * @param httpResponseExpires the value to set
          * @return this builder instance
          */
@@ -553,19 +543,18 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -577,7 +566,6 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetObjectRequest o) {
@@ -606,11 +594,10 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetObjectRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetObjectRequest
          */
@@ -624,8 +611,7 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetObjectRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetObjectRequest
@@ -650,17 +636,12 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.httpResponseContentEncoding = httpResponseContentEncoding;
             request.httpResponseExpires = httpResponseExpires;
             return request;
-            // new GetObjectRequest(namespaceName, bucketName, objectName, versionId, ifMatch,
-            // ifNoneMatch, opcClientRequestId, range, opcSseCustomerAlgorithm, opcSseCustomerKey,
-            // opcSseCustomerKeySha256, httpResponseContentDisposition, httpResponseCacheControl,
-            // httpResponseContentType, httpResponseContentLanguage, httpResponseContentEncoding,
-            // httpResponseExpires);
+            // new GetObjectRequest(namespaceName, bucketName, objectName, versionId, ifMatch, ifNoneMatch, opcClientRequestId, range, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, httpResponseContentDisposition, httpResponseCacheControl, httpResponseContentType, httpResponseContentLanguage, httpResponseContentEncoding, httpResponseExpires);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -686,7 +667,6 @@ public class GetObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

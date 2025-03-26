@@ -6,17 +6,18 @@ package com.oracle.bmc.lockbox.responses;
 
 import com.oracle.bmc.lockbox.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,14 +26,13 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * this contains the full URI for the get request, e.g.
-     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+     *
      */
     private String location;
 
     /**
-     * this contains the full URI for the get request, e.g.
-     * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+     * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
      *
      * @return the value
      */
@@ -40,7 +40,10 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
         return location;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -52,12 +55,13 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
         return etag;
     }
 
-    /** The returned {@code ApprovalTemplate} instance. */
+    /**
+     * The returned ApprovalTemplate instance.
+     */
     private com.oracle.bmc.lockbox.model.ApprovalTemplate approvalTemplate;
 
     /**
-     * The returned {@code ApprovalTemplate} instance.
-     *
+     * The returned ApprovalTemplate instance.
      * @return the value
      */
     public com.oracle.bmc.lockbox.model.ApprovalTemplate getApprovalTemplate() {
@@ -74,7 +78,7 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
     })
     private CreateApprovalTemplateResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             String etag,
@@ -86,34 +90,31 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
         this.approvalTemplate = approvalTemplate;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateApprovalTemplateResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -124,14 +125,13 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * this contains the full URI for the get request, e.g.
-         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+         *
          */
         private String location;
 
         /**
-         * this contains the full URI for the get request, e.g.
-         * "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
+         * this contains the full URI for the get request, e.g. "https://iaas.us-phoenix-1.oraclecloud.com/20210331/lockbox/<some-ocid>"
          *
          * @param location the value to set
          * @return this builder
@@ -141,7 +141,10 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -155,12 +158,13 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
             return this;
         }
 
-        /** The returned {@code ApprovalTemplate} instance. */
+        /**
+         * The returned ApprovalTemplate instance.
+         */
         private com.oracle.bmc.lockbox.model.ApprovalTemplate approvalTemplate;
 
         /**
-         * The returned {@code ApprovalTemplate} instance.
-         *
+         * The returned ApprovalTemplate instance.
          * @param approvalTemplate the value to set
          * @return this builder
          */
@@ -172,10 +176,8 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateApprovalTemplateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -189,10 +191,8 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateApprovalTemplateResponse build() {
             return new CreateApprovalTemplateResponse(
                     __httpStatusCode__, headers, opcRequestId, location, etag, approvalTemplate);
@@ -201,7 +201,6 @@ public class CreateApprovalTemplateResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,41 +6,38 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceKeyExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetFastConnectProviderServiceKeyRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetFastConnectProviderServiceKeyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFastConnectProviderServiceKeyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetFastConnectProviderServiceKeyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * provider service.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
      */
     private String providerServiceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * provider service.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
      */
     public String getProviderServiceId() {
         return providerServiceId;
     }
     /**
-     * The provider service key that the provider gives you when you set up a virtual circuit
-     * connection from the provider to Oracle Cloud Infrastructure. You can set up that connection
-     * and get your provider service key at the provider's website or portal. For the portal
-     * location, see the {@code description} attribute of the {@link FastConnectProviderService}.
+     * The provider service key that the provider gives you when you set up a virtual circuit connection
+     * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+     * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+     * attribute of the {@link FastConnectProviderService}.
+     *
      */
     private String providerServiceKeyName;
 
     /**
-     * The provider service key that the provider gives you when you set up a virtual circuit
-     * connection from the provider to Oracle Cloud Infrastructure. You can set up that connection
-     * and get your provider service key at the provider's website or portal. For the portal
-     * location, see the {@code description} attribute of the {@link FastConnectProviderService}.
+     * The provider service key that the provider gives you when you set up a virtual circuit connection
+     * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+     * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+     * attribute of the {@link FastConnectProviderService}.
+     *
      */
     public String getProviderServiceKeyName() {
         return providerServiceKeyName;
@@ -49,19 +46,17 @@ public class GetFastConnectProviderServiceKeyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetFastConnectProviderServiceKeyRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * provider service.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
          */
         private String providerServiceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * provider service.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the provider service.
          * @param providerServiceId the value to set
          * @return this builder instance
          */
@@ -71,20 +66,19 @@ public class GetFastConnectProviderServiceKeyRequest
         }
 
         /**
-         * The provider service key that the provider gives you when you set up a virtual circuit
-         * connection from the provider to Oracle Cloud Infrastructure. You can set up that
-         * connection and get your provider service key at the provider's website or portal. For the
-         * portal location, see the {@code description} attribute of the {@link
-         * FastConnectProviderService}.
+         * The provider service key that the provider gives you when you set up a virtual circuit connection
+         * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+         * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+         * attribute of the {@link FastConnectProviderService}.
+         *
          */
         private String providerServiceKeyName = null;
 
         /**
-         * The provider service key that the provider gives you when you set up a virtual circuit
-         * connection from the provider to Oracle Cloud Infrastructure. You can set up that
-         * connection and get your provider service key at the provider's website or portal. For the
-         * portal location, see the {@code description} attribute of the {@link
-         * FastConnectProviderService}.
+         * The provider service key that the provider gives you when you set up a virtual circuit connection
+         * from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your
+         * provider service key at the provider's website or portal. For the portal location, see the {@code description}
+         * attribute of the {@link FastConnectProviderService}.
          *
          * @param providerServiceKeyName the value to set
          * @return this builder instance
@@ -96,19 +90,18 @@ public class GetFastConnectProviderServiceKeyRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -120,7 +113,6 @@ public class GetFastConnectProviderServiceKeyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetFastConnectProviderServiceKeyRequest o) {
@@ -132,14 +124,12 @@ public class GetFastConnectProviderServiceKeyRequest
         }
 
         /**
-         * Build the instance of GetFastConnectProviderServiceKeyRequest as configured by this
-         * builder
+         * Build the instance of GetFastConnectProviderServiceKeyRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetFastConnectProviderServiceKeyRequest
          */
@@ -151,11 +141,9 @@ public class GetFastConnectProviderServiceKeyRequest
         }
 
         /**
-         * Build the instance of GetFastConnectProviderServiceKeyRequest as configured by this
-         * builder
+         * Build the instance of GetFastConnectProviderServiceKeyRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetFastConnectProviderServiceKeyRequest
@@ -166,14 +154,12 @@ public class GetFastConnectProviderServiceKeyRequest
             request.providerServiceId = providerServiceId;
             request.providerServiceKeyName = providerServiceKeyName;
             return request;
-            // new GetFastConnectProviderServiceKeyRequest(providerServiceId,
-            // providerServiceKeyName);
+            // new GetFastConnectProviderServiceKeyRequest(providerServiceId, providerServiceKeyName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -184,7 +170,6 @@ public class GetFastConnectProviderServiceKeyRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,81 +5,98 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection for a data asset. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The connection for a data asset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType",
-        defaultImpl = Connection.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType",
+    defaultImpl = Connection.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromAmazonS3.class,
-            name = "AMAZON_S3_CONNECTION"),
+        value = ConnectionFromAmazonS3.class,
+        name = "AMAZON_S3_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromBIP.class,
-            name = "BIP_CONNECTION"),
+        value = ConnectionFromBIP.class,
+        name = "BIP_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromMySQL.class,
-            name = "MYSQL_CONNECTION"),
+        value = ConnectionFromMySQL.class,
+        name = "MYSQL_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOAuth2.class,
-            name = "OAUTH2_CONNECTION"),
+        value = ConnectionFromOAuth2.class,
+        name = "OAUTH2_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromJdbc.class,
-            name = "GENERIC_JDBC_CONNECTION"),
+        value = ConnectionFromJdbc.class,
+        name = "GENERIC_JDBC_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromBICC.class,
-            name = "BICC_CONNECTION"),
+        value = ConnectionFromBICC.class,
+        name = "BICC_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromMySqlHeatWave.class,
-            name = "MYSQL_HEATWAVE_CONNECTION"),
+        value = ConnectionFromMySqlHeatWave.class,
+        name = "MYSQL_HEATWAVE_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromRestBasicAuth.class,
-            name = "REST_BASIC_AUTH_CONNECTION"),
+        value = ConnectionFromRestBasicAuth.class,
+        name = "REST_BASIC_AUTH_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromObjectStorage.class,
-            name = "ORACLE_OBJECT_STORAGE_CONNECTION"),
+        value = ConnectionFromObjectStorage.class,
+        name = "ORACLE_OBJECT_STORAGE_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromAdwc.class,
-            name = "ORACLE_ADWC_CONNECTION"),
+        value = ConnectionFromAdwc.class,
+        name = "ORACLE_ADWC_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromAtp.class,
-            name = "ORACLE_ATP_CONNECTION"),
+        value = ConnectionFromAtp.class,
+        name = "ORACLE_ATP_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOracle.class,
-            name = "ORACLEDB_CONNECTION"),
+        value = ConnectionFromOracle.class,
+        name = "ORACLEDB_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOraclePeopleSoft.class,
-            name = "ORACLE_PEOPLESOFT_CONNECTION"),
+        value = ConnectionFromOraclePeopleSoft.class,
+        name = "ORACLE_PEOPLESOFT_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromHdfs.class,
-            name = "HDFS_CONNECTION"),
+        value = ConnectionFromHdfs.class,
+        name = "HDFS_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOracleEbs.class,
-            name = "ORACLE_EBS_CONNECTION"),
+        value = ConnectionFromOracleEbs.class,
+        name = "ORACLE_EBS_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromOracleSiebel.class,
-            name = "ORACLE_SIEBEL_CONNECTION"),
+        value = ConnectionFromOracleSiebel.class,
+        name = "ORACLE_SIEBEL_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromRestNoAuth.class,
-            name = "REST_NO_AUTH_CONNECTION"),
+        value = ConnectionFromRestNoAuth.class,
+        name = "REST_NO_AUTH_CONNECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ConnectionFromLake.class,
-            name = "LAKE_CONNECTION")
+        value = ConnectionFromLake.class,
+        name = "LAKE_CONNECTION"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -127,31 +144,29 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * Generated key that can be used in API calls to identify connection. On scenarios where
-     * reference to the connection is needed, a value can be passed in create.
-     */
+     * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify connection. On scenarios where
-     * reference to the connection is needed, a value can be passed in create.
-     *
+     * Generated key that can be used in API calls to identify connection. On scenarios where reference to the connection is needed, a value can be passed in create.
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The model version of an object. */
+    /**
+     * The model version of an object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The model version of an object.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -164,78 +179,71 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** User-defined description for the connection. */
+    /**
+     * User-defined description for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-defined description for the connection.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
@@ -247,28 +255,30 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return primarySchema;
     }
 
-    /** The properties for the connection. */
+    /**
+     * The properties for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionProperties")
     private final java.util.List<ConnectionProperty> connectionProperties;
 
     /**
      * The properties for the connection.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ConnectionProperty> getConnectionProperties() {
         return connectionProperties;
     }
 
-    /** The default property for the connection. */
+    /**
+     * The default property for the connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * The default property for the connection.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -281,18 +291,15 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping
-     * between user provided key and generated key.
-     */
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyMap")
     private final java.util.Map<String, String> keyMap;
 
     /**
-     * A key map. If provided, key is replaced with generated key. This structure provides mapping
-     * between user provided key and generated key.
-     *
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getKeyMap() {
         return keyMap;
     }
@@ -304,7 +311,6 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -384,8 +390,10 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return result;
     }
 
-    /** The type of the connection. */
-    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the connection.
+     **/
+    public enum ModelType {
         OracleAdwcConnection("ORACLE_ADWC_CONNECTION"),
         OracleAtpConnection("ORACLE_ATP_CONNECTION"),
         OracleObjectStorageConnection("ORACLE_OBJECT_STORAGE_CONNECTION"),
@@ -406,8 +414,8 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         Oauth2Connection("OAUTH2_CONNECTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

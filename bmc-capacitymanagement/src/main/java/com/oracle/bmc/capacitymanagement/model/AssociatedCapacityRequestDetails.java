@@ -5,24 +5,23 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * Details about the associated capacity requests against which the resources were provisioned by
- * oracle. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * Details about the associated capacity requests against which the resources were provisioned by oracle.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedCapacityRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedCapacityRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedCapacityRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"occCapacityRequestId", "handoverQuantity"})
     public AssociatedCapacityRequestDetails(String occCapacityRequestId, Long handoverQuantity) {
@@ -33,7 +32,10 @@ public final class AssociatedCapacityRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the capacity request against which the resources were provisioned. */
+        /**
+         * The OCID of the capacity request against which the resources were provisioned.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("occCapacityRequestId")
         private String occCapacityRequestId;
 
@@ -42,26 +44,25 @@ public final class AssociatedCapacityRequestDetails
          *
          * @param occCapacityRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder occCapacityRequestId(String occCapacityRequestId) {
             this.occCapacityRequestId = occCapacityRequestId;
             this.__explicitlySet__.add("occCapacityRequestId");
             return this;
         }
         /**
-         * The total quantity of the bare metal hardware that was made available corresponding to
-         * the capacity request ocid.
-         */
+         * The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("handoverQuantity")
         private Long handoverQuantity;
 
         /**
-         * The total quantity of the bare metal hardware that was made available corresponding to
-         * the capacity request ocid.
+         * The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
          *
          * @param handoverQuantity the value to set
          * @return this builder
-         */
+         **/
         public Builder handoverQuantity(Long handoverQuantity) {
             this.handoverQuantity = handoverQuantity;
             this.__explicitlySet__.add("handoverQuantity");
@@ -93,7 +94,9 @@ public final class AssociatedCapacityRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,7 +105,10 @@ public final class AssociatedCapacityRequestDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the capacity request against which the resources were provisioned. */
+    /**
+     * The OCID of the capacity request against which the resources were provisioned.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("occCapacityRequestId")
     private final String occCapacityRequestId;
 
@@ -110,24 +116,23 @@ public final class AssociatedCapacityRequestDetails
      * The OCID of the capacity request against which the resources were provisioned.
      *
      * @return the value
-     */
+     **/
     public String getOccCapacityRequestId() {
         return occCapacityRequestId;
     }
 
     /**
-     * The total quantity of the bare metal hardware that was made available corresponding to the
-     * capacity request ocid.
-     */
+     * The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("handoverQuantity")
     private final Long handoverQuantity;
 
     /**
-     * The total quantity of the bare metal hardware that was made available corresponding to the
-     * capacity request ocid.
+     * The total quantity of the bare metal hardware that was made available corresponding to the capacity request ocid.
      *
      * @return the value
-     */
+     **/
     public Long getHandoverQuantity() {
         return handoverQuantity;
     }
@@ -139,7 +144,6 @@ public final class AssociatedCapacityRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

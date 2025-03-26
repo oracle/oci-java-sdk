@@ -6,32 +6,43 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class GetTransferApplianceEncryptionPassphraseResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** */
+    /**
+     *
+     */
     private String etag;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code TransferApplianceEncryptionPassphrase} instance. */
+    /**
+     * The returned TransferApplianceEncryptionPassphrase instance.
+     */
     private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
             transferApplianceEncryptionPassphrase;
 
     /**
-     * The returned {@code TransferApplianceEncryptionPassphrase} instance.
-     *
+     * The returned TransferApplianceEncryptionPassphrase instance.
      * @return the value
      */
     public com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
@@ -48,7 +59,7 @@ public class GetTransferApplianceEncryptionPassphraseResponse
     })
     private GetTransferApplianceEncryptionPassphraseResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
@@ -59,29 +70,28 @@ public class GetTransferApplianceEncryptionPassphraseResponse
         this.transferApplianceEncryptionPassphrase = transferApplianceEncryptionPassphrase;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetTransferApplianceEncryptionPassphraseResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -90,10 +100,13 @@ public class GetTransferApplianceEncryptionPassphraseResponse
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String etag;
 
         /**
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -102,13 +115,14 @@ public class GetTransferApplianceEncryptionPassphraseResponse
             return this;
         }
 
-        /** The returned {@code TransferApplianceEncryptionPassphrase} instance. */
+        /**
+         * The returned TransferApplianceEncryptionPassphrase instance.
+         */
         private com.oracle.bmc.dts.model.TransferApplianceEncryptionPassphrase
                 transferApplianceEncryptionPassphrase;
 
         /**
-         * The returned {@code TransferApplianceEncryptionPassphrase} instance.
-         *
+         * The returned TransferApplianceEncryptionPassphrase instance.
          * @param transferApplianceEncryptionPassphrase the value to set
          * @return this builder
          */
@@ -121,10 +135,8 @@ public class GetTransferApplianceEncryptionPassphraseResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetTransferApplianceEncryptionPassphraseResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -137,10 +149,8 @@ public class GetTransferApplianceEncryptionPassphraseResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetTransferApplianceEncryptionPassphraseResponse build() {
             return new GetTransferApplianceEncryptionPassphraseResponse(
                     __httpStatusCode__,
@@ -153,7 +163,6 @@ public class GetTransferApplianceEncryptionPassphraseResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

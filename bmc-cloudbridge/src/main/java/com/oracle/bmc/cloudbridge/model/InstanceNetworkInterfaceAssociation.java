@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Describes association information for an Elastic IP address (IPv4). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Describes association information for an Elastic IP address (IPv4).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceNetworkInterfaceAssociation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceNetworkInterfaceAssociation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceNetworkInterfaceAssociation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "carrierIp",
@@ -46,76 +45,81 @@ public final class InstanceNetworkInterfaceAssociation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The carrier IP address associated with the network interface. */
+        /**
+         * The carrier IP address associated with the network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("carrierIp")
         private String carrierIp;
 
         /**
          * The carrier IP address associated with the network interface.
-         *
          * @param carrierIp the value to set
          * @return this builder
-         */
+         **/
         public Builder carrierIp(String carrierIp) {
             this.carrierIp = carrierIp;
             this.__explicitlySet__.add("carrierIp");
             return this;
         }
-        /** The customer-owned IP address associated with the network interface. */
+        /**
+         * The customer-owned IP address associated with the network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerOwnedIp")
         private String customerOwnedIp;
 
         /**
          * The customer-owned IP address associated with the network interface.
-         *
          * @param customerOwnedIp the value to set
          * @return this builder
-         */
+         **/
         public Builder customerOwnedIp(String customerOwnedIp) {
             this.customerOwnedIp = customerOwnedIp;
             this.__explicitlySet__.add("customerOwnedIp");
             return this;
         }
-        /** The ID of the owner of the Elastic IP address. */
+        /**
+         * The ID of the owner of the Elastic IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipOwnerKey")
         private String ipOwnerKey;
 
         /**
          * The ID of the owner of the Elastic IP address.
-         *
          * @param ipOwnerKey the value to set
          * @return this builder
-         */
+         **/
         public Builder ipOwnerKey(String ipOwnerKey) {
             this.ipOwnerKey = ipOwnerKey;
             this.__explicitlySet__.add("ipOwnerKey");
             return this;
         }
-        /** The public DNS name. */
+        /**
+         * The public DNS name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicDnsName")
         private String publicDnsName;
 
         /**
          * The public DNS name.
-         *
          * @param publicDnsName the value to set
          * @return this builder
-         */
+         **/
         public Builder publicDnsName(String publicDnsName) {
             this.publicDnsName = publicDnsName;
             this.__explicitlySet__.add("publicDnsName");
             return this;
         }
-        /** The public IP address or Elastic IP address bound to the network interface. */
+        /**
+         * The public IP address or Elastic IP address bound to the network interface.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
         private String publicIp;
 
         /**
          * The public IP address or Elastic IP address bound to the network interface.
-         *
          * @param publicIp the value to set
          * @return this builder
-         */
+         **/
         public Builder publicIp(String publicIp) {
             this.publicIp = publicIp;
             this.__explicitlySet__.add("publicIp");
@@ -160,7 +164,9 @@ public final class InstanceNetworkInterfaceAssociation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +175,72 @@ public final class InstanceNetworkInterfaceAssociation
         return new Builder().copy(this);
     }
 
-    /** The carrier IP address associated with the network interface. */
+    /**
+     * The carrier IP address associated with the network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("carrierIp")
     private final String carrierIp;
 
     /**
      * The carrier IP address associated with the network interface.
-     *
      * @return the value
-     */
+     **/
     public String getCarrierIp() {
         return carrierIp;
     }
 
-    /** The customer-owned IP address associated with the network interface. */
+    /**
+     * The customer-owned IP address associated with the network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerOwnedIp")
     private final String customerOwnedIp;
 
     /**
      * The customer-owned IP address associated with the network interface.
-     *
      * @return the value
-     */
+     **/
     public String getCustomerOwnedIp() {
         return customerOwnedIp;
     }
 
-    /** The ID of the owner of the Elastic IP address. */
+    /**
+     * The ID of the owner of the Elastic IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipOwnerKey")
     private final String ipOwnerKey;
 
     /**
      * The ID of the owner of the Elastic IP address.
-     *
      * @return the value
-     */
+     **/
     public String getIpOwnerKey() {
         return ipOwnerKey;
     }
 
-    /** The public DNS name. */
+    /**
+     * The public DNS name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicDnsName")
     private final String publicDnsName;
 
     /**
      * The public DNS name.
-     *
      * @return the value
-     */
+     **/
     public String getPublicDnsName() {
         return publicDnsName;
     }
 
-    /** The public IP address or Elastic IP address bound to the network interface. */
+    /**
+     * The public IP address or Elastic IP address bound to the network interface.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIp")
     private final String publicIp;
 
     /**
      * The public IP address or Elastic IP address bound to the network interface.
-     *
      * @return the value
-     */
+     **/
     public String getPublicIp() {
         return publicIp;
     }
@@ -241,7 +252,6 @@ public final class InstanceNetworkInterfaceAssociation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

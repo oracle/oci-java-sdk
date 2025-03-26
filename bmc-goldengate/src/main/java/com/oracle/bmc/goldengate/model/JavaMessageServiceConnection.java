@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a Java Message Service Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a Java Message Service Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaMessageServiceConnection.Builder.class)
+    builder = JavaMessageServiceConnection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JavaMessageServiceConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,7 +199,10 @@ public final class JavaMessageServiceConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Java Message Service technology type. */
+        /**
+         * The Java Message Service technology type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
@@ -207,7 +211,7 @@ public final class JavaMessageServiceConnection extends Connection {
          *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
@@ -215,7 +219,8 @@ public final class JavaMessageServiceConnection extends Connection {
         }
         /**
          * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseJndi")
         private Boolean shouldUseJndi;
 
@@ -224,358 +229,367 @@ public final class JavaMessageServiceConnection extends Connection {
          *
          * @param shouldUseJndi the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldUseJndi(Boolean shouldUseJndi) {
             this.shouldUseJndi = shouldUseJndi;
             this.__explicitlySet__.add("shouldUseJndi");
             return this;
         }
-        /** The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory' */
+        /**
+         * The Connection Factory can be looked up using this name.
+         * e.g.: 'ConnectionFactory'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jndiConnectionFactory")
         private String jndiConnectionFactory;
 
         /**
-         * The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+         * The Connection Factory can be looked up using this name.
+         * e.g.: 'ConnectionFactory'
          *
          * @param jndiConnectionFactory the value to set
          * @return this builder
-         */
+         **/
         public Builder jndiConnectionFactory(String jndiConnectionFactory) {
             this.jndiConnectionFactory = jndiConnectionFactory;
             this.__explicitlySet__.add("jndiConnectionFactory");
             return this;
         }
         /**
-         * The URL that Java Message Service will use to contact the JNDI provider. e.g.:
-         * 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-         */
+         * The URL that Java Message Service will use to contact the JNDI provider.
+         * e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jndiProviderUrl")
         private String jndiProviderUrl;
 
         /**
-         * The URL that Java Message Service will use to contact the JNDI provider. e.g.:
-         * 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+         * The URL that Java Message Service will use to contact the JNDI provider.
+         * e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
          *
          * @param jndiProviderUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder jndiProviderUrl(String jndiProviderUrl) {
             this.jndiProviderUrl = jndiProviderUrl;
             this.__explicitlySet__.add("jndiProviderUrl");
             return this;
         }
         /**
-         * The implementation of javax.naming.spi.InitialContextFactory interface that the client
-         * uses to obtain initial naming context. e.g.:
-         * 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-         */
+         * The implementation of javax.naming.spi.InitialContextFactory interface
+         * that the client uses to obtain initial naming context.
+         * e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jndiInitialContextFactory")
         private String jndiInitialContextFactory;
 
         /**
-         * The implementation of javax.naming.spi.InitialContextFactory interface that the client
-         * uses to obtain initial naming context. e.g.:
-         * 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+         * The implementation of javax.naming.spi.InitialContextFactory interface
+         * that the client uses to obtain initial naming context.
+         * e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
          *
          * @param jndiInitialContextFactory the value to set
          * @return this builder
-         */
+         **/
         public Builder jndiInitialContextFactory(String jndiInitialContextFactory) {
             this.jndiInitialContextFactory = jndiInitialContextFactory;
             this.__explicitlySet__.add("jndiInitialContextFactory");
             return this;
         }
-        /** Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2' */
+        /**
+         * Specifies the identity of the principal (user) to be authenticated.
+         * e.g.: 'admin2'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityPrincipal")
         private String jndiSecurityPrincipal;
 
         /**
-         * Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+         * Specifies the identity of the principal (user) to be authenticated.
+         * e.g.: 'admin2'
          *
          * @param jndiSecurityPrincipal the value to set
          * @return this builder
-         */
+         **/
         public Builder jndiSecurityPrincipal(String jndiSecurityPrincipal) {
             this.jndiSecurityPrincipal = jndiSecurityPrincipal;
             this.__explicitlySet__.add("jndiSecurityPrincipal");
             return this;
         }
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-         * 'mq://myjms.host.domain:7676'
-         */
+         * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+         * e.g.: 'mq://myjms.host.domain:7676'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
         private String connectionUrl;
 
         /**
-         * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-         * 'mq://myjms.host.domain:7676'
+         * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+         * e.g.: 'mq://myjms.host.domain:7676'
          *
          * @param connectionUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionUrl(String connectionUrl) {
             this.connectionUrl = connectionUrl;
             this.__explicitlySet__.add("connectionUrl");
             return this;
         }
         /**
-         * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java
-         * Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-         */
+         * The of Java class implementing javax.jms.ConnectionFactory interface
+         * supplied by the Java Message Service provider.
+         * e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionFactory")
         private String connectionFactory;
 
         /**
-         * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java
-         * Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+         * The of Java class implementing javax.jms.ConnectionFactory interface
+         * supplied by the Java Message Service provider.
+         * e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
          *
          * @param connectionFactory the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionFactory(String connectionFactory) {
             this.connectionFactory = connectionFactory;
             this.__explicitlySet__.add("connectionFactory");
             return this;
         }
         /**
-         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
-         * until 2024-06-27, in the release after it will be made required.
-         */
+         * Security protocol for Java Message Service. If not provided, default is PLAIN.
+         * Optional until 2024-06-27, in the release after it will be made required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private SecurityProtocol securityProtocol;
 
         /**
-         * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional
-         * until 2024-06-27, in the release after it will be made required.
+         * Security protocol for Java Message Service. If not provided, default is PLAIN.
+         * Optional until 2024-06-27, in the release after it will be made required.
          *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
-         * until 2024-06-27, in the release after it will be made required.
-         */
+         * Authentication type for Java Message Service.  If not provided, default is NONE.
+         * Optional until 2024-06-27, in the release after it will be made required.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AuthenticationType authenticationType;
 
         /**
-         * Authentication type for Java Message Service. If not provided, default is NONE. Optional
-         * until 2024-06-27, in the release after it will be made required.
+         * Authentication type for Java Message Service.  If not provided, default is NONE.
+         * Optional until 2024-06-27, in the release after it will be made required.
          *
          * @param authenticationType the value to set
          * @return this builder
-         */
+         **/
         public Builder authenticationType(AuthenticationType authenticationType) {
             this.authenticationType = authenticationType;
             this.__explicitlySet__.add("authenticationType");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
-         * must already exist and be available by the Java Message Service to be connected to.
-         */
+         * The username Oracle GoldenGate uses to connect to the Java Message Service.
+         * This username must already exist and be available by the Java Message Service to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
-         * must already exist and be available by the Java Message Service to be connected to.
+         * The username Oracle GoldenGate uses to connect to the Java Message Service.
+         * This username must already exist and be available by the Java Message Service to be connected to.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the security credentials are stored associated to the principal. Note: When
-         * provided, 'jndiSecurityCredentials' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal.
+         * Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
         private String jndiSecurityCredentialsSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the security credentials are stored associated to the principal. Note: When
-         * provided, 'jndiSecurityCredentials' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal.
+         * Note: When provided, 'jndiSecurityCredentials' field must not be provided.
          *
          * @param jndiSecurityCredentialsSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder jndiSecurityCredentialsSecretId(String jndiSecurityCredentialsSecretId) {
             this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
             this.__explicitlySet__.add("jndiSecurityCredentialsSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
-         * associated Java Message Service. Note: When provided, 'password' field must not be
-         * provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * that Oracle GoldenGate uses to connect the associated Java Message Service.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
-         * associated Java Message Service. Note: When provided, 'password' field must not be
-         * provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * that Oracle GoldenGate uses to connect the associated Java Message Service.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
         private String trustStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the TrustStore file is stored. Note: When provided,
-         * 'trustStore' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
          *
          * @param trustStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStoreSecretId(String trustStoreSecretId) {
             this.trustStoreSecretId = trustStoreSecretId;
             this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
         private String trustStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
          *
          * @param trustStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
             this.trustStorePasswordSecretId = trustStorePasswordSecretId;
             this.__explicitlySet__.add("trustStorePasswordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
         private String keyStoreSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
          *
          * @param keyStoreSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreSecretId(String keyStoreSecretId) {
             this.keyStoreSecretId = keyStoreSecretId;
             this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
         private String keyStorePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
          *
          * @param keyStorePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
             this.keyStorePasswordSecretId = keyStorePasswordSecretId;
             this.__explicitlySet__.add("keyStorePasswordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored for the cert inside of the Keystore. In case it
-         * differs from the KeyStore password, it should be provided. Note: When provided,
-         * 'sslKeyPassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore.
+         * In case it differs from the KeyStore password, it should be provided.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
         private String sslKeyPasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored for the cert inside of the Keystore. In case it
-         * differs from the KeyStore password, it should be provided. Note: When provided,
-         * 'sslKeyPassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore.
+         * In case it differs from the KeyStore password, it should be provided.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
          *
          * @param sslKeyPasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
             this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
             this.__explicitlySet__.add("sslKeyPasswordSecretId");
@@ -752,7 +766,9 @@ public final class JavaMessageServiceConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -842,13 +858,16 @@ public final class JavaMessageServiceConnection extends Connection {
         this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
     }
 
-    /** The Java Message Service technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Java Message Service technology type.
+     *
+     **/
+    public enum TechnologyType {
         OracleWeblogicJms("ORACLE_WEBLOGIC_JMS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -887,7 +906,10 @@ public final class JavaMessageServiceConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Java Message Service technology type. */
+    /**
+     * The Java Message Service technology type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
@@ -895,12 +917,15 @@ public final class JavaMessageServiceConnection extends Connection {
      * The Java Message Service technology type.
      *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** If set to true, Java Naming and Directory Interface (JNDI) properties should be provided. */
+    /**
+     * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseJndi")
     private final Boolean shouldUseJndi;
 
@@ -908,119 +933,136 @@ public final class JavaMessageServiceConnection extends Connection {
      * If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldUseJndi() {
         return shouldUseJndi;
     }
 
-    /** The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory' */
+    /**
+     * The Connection Factory can be looked up using this name.
+     * e.g.: 'ConnectionFactory'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jndiConnectionFactory")
     private final String jndiConnectionFactory;
 
     /**
-     * The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
+     * The Connection Factory can be looked up using this name.
+     * e.g.: 'ConnectionFactory'
      *
      * @return the value
-     */
+     **/
     public String getJndiConnectionFactory() {
         return jndiConnectionFactory;
     }
 
     /**
-     * The URL that Java Message Service will use to contact the JNDI provider. e.g.:
-     * 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
-     */
+     * The URL that Java Message Service will use to contact the JNDI provider.
+     * e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jndiProviderUrl")
     private final String jndiProviderUrl;
 
     /**
-     * The URL that Java Message Service will use to contact the JNDI provider. e.g.:
-     * 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
+     * The URL that Java Message Service will use to contact the JNDI provider.
+     * e.g.: 'tcp://myjms.host.domain:61616?jms.prefetchPolicy.all=1000'
      *
      * @return the value
-     */
+     **/
     public String getJndiProviderUrl() {
         return jndiProviderUrl;
     }
 
     /**
-     * The implementation of javax.naming.spi.InitialContextFactory interface that the client uses
-     * to obtain initial naming context. e.g.:
-     * 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
-     */
+     * The implementation of javax.naming.spi.InitialContextFactory interface
+     * that the client uses to obtain initial naming context.
+     * e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jndiInitialContextFactory")
     private final String jndiInitialContextFactory;
 
     /**
-     * The implementation of javax.naming.spi.InitialContextFactory interface that the client uses
-     * to obtain initial naming context. e.g.:
-     * 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
+     * The implementation of javax.naming.spi.InitialContextFactory interface
+     * that the client uses to obtain initial naming context.
+     * e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
      *
      * @return the value
-     */
+     **/
     public String getJndiInitialContextFactory() {
         return jndiInitialContextFactory;
     }
 
-    /** Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2' */
+    /**
+     * Specifies the identity of the principal (user) to be authenticated.
+     * e.g.: 'admin2'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityPrincipal")
     private final String jndiSecurityPrincipal;
 
     /**
-     * Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
+     * Specifies the identity of the principal (user) to be authenticated.
+     * e.g.: 'admin2'
      *
      * @return the value
-     */
+     **/
     public String getJndiSecurityPrincipal() {
         return jndiSecurityPrincipal;
     }
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-     * 'mq://myjms.host.domain:7676'
-     */
+     * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+     * e.g.: 'mq://myjms.host.domain:7676'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionUrl")
     private final String connectionUrl;
 
     /**
-     * Connectin URL of the Java Message Service, specifying the protocol, host, and port. e.g.:
-     * 'mq://myjms.host.domain:7676'
+     * Connectin URL of the Java Message Service, specifying the protocol, host, and port.
+     * e.g.: 'mq://myjms.host.domain:7676'
      *
      * @return the value
-     */
+     **/
     public String getConnectionUrl() {
         return connectionUrl;
     }
 
     /**
-     * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java
-     * Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-     */
+     * The of Java class implementing javax.jms.ConnectionFactory interface
+     * supplied by the Java Message Service provider.
+     * e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionFactory")
     private final String connectionFactory;
 
     /**
-     * The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java
-     * Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
+     * The of Java class implementing javax.jms.ConnectionFactory interface
+     * supplied by the Java Message Service provider.
+     * e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
      *
      * @return the value
-     */
+     **/
     public String getConnectionFactory() {
         return connectionFactory;
     }
 
     /**
-     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
-     * 2024-06-27, in the release after it will be made required.
-     */
-    public enum SecurityProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+     * Security protocol for Java Message Service. If not provided, default is PLAIN.
+     * Optional until 2024-06-27, in the release after it will be made required.
+     *
+     **/
+    public enum SecurityProtocol {
         Plain("PLAIN"),
         Tls("TLS"),
         Mtls("MTLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1060,33 +1102,35 @@ public final class JavaMessageServiceConnection extends Connection {
         }
     };
     /**
-     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
-     * 2024-06-27, in the release after it will be made required.
-     */
+     * Security protocol for Java Message Service. If not provided, default is PLAIN.
+     * Optional until 2024-06-27, in the release after it will be made required.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final SecurityProtocol securityProtocol;
 
     /**
-     * Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until
-     * 2024-06-27, in the release after it will be made required.
+     * Security protocol for Java Message Service. If not provided, default is PLAIN.
+     * Optional until 2024-06-27, in the release after it will be made required.
      *
      * @return the value
-     */
+     **/
     public SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
-     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
-     * until 2024-06-27, in the release after it will be made required.
-     */
-    public enum AuthenticationType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Authentication type for Java Message Service.  If not provided, default is NONE.
+     * Optional until 2024-06-27, in the release after it will be made required.
+     *
+     **/
+    public enum AuthenticationType {
         None("NONE"),
         Basic("BASIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1126,203 +1170,197 @@ public final class JavaMessageServiceConnection extends Connection {
         }
     };
     /**
-     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
-     * until 2024-06-27, in the release after it will be made required.
-     */
+     * Authentication type for Java Message Service.  If not provided, default is NONE.
+     * Optional until 2024-06-27, in the release after it will be made required.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
     private final AuthenticationType authenticationType;
 
     /**
-     * Authentication type for Java Message Service. If not provided, default is NONE. Optional
-     * until 2024-06-27, in the release after it will be made required.
+     * Authentication type for Java Message Service.  If not provided, default is NONE.
+     * Optional until 2024-06-27, in the release after it will be made required.
      *
      * @return the value
-     */
+     **/
     public AuthenticationType getAuthenticationType() {
         return authenticationType;
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
-     * must already exist and be available by the Java Message Service to be connected to.
-     */
+     * The username Oracle GoldenGate uses to connect to the Java Message Service.
+     * This username must already exist and be available by the Java Message Service to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect to the Java Message Service. This username
-     * must already exist and be available by the Java Message Service to be connected to.
+     * The username Oracle GoldenGate uses to connect to the Java Message Service.
+     * This username must already exist and be available by the Java Message Service to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the security credentials are stored associated to the principal. Note: When
-     * provided, 'jndiSecurityCredentials' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal.
+     * Note: When provided, 'jndiSecurityCredentials' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
     private final String jndiSecurityCredentialsSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the security credentials are stored associated to the principal. Note: When
-     * provided, 'jndiSecurityCredentials' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal.
+     * Note: When provided, 'jndiSecurityCredentials' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getJndiSecurityCredentialsSecretId() {
         return jndiSecurityCredentialsSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
-     * Java Message Service. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * that Oracle GoldenGate uses to connect the associated Java Message Service.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
-     * Java Message Service. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * that Oracle GoldenGate uses to connect the associated Java Message Service.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
     private final String trustStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStoreSecretId() {
         return trustStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
     private final String trustStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTrustStorePasswordSecretId() {
         return trustStorePasswordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
     private final String keyStoreSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStoreSecretId() {
         return keyStoreSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
-     * must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
     private final String keyStorePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
-     * must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getKeyStorePasswordSecretId() {
         return keyStorePasswordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
-     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
     private final String sslKeyPasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
-     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
-     * field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore.
+     * In case it differs from the KeyStore password, it should be provided.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSslKeyPasswordSecretId() {
         return sslKeyPasswordSecretId;
     }
@@ -1334,7 +1372,6 @@ public final class JavaMessageServiceConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

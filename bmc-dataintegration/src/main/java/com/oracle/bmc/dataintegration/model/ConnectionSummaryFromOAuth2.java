@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection summary for a OAuth connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The connection summary for a OAuth connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionSummaryFromOAuth2.Builder.class)
+    builder = ConnectionSummaryFromOAuth2.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,31 +144,33 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-        /** Specifies the endpoint used to exchange authentication credentials for access tokens */
+        /**
+         * Specifies the endpoint used to exchange authentication credentials for access tokens
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessTokenUrl")
         private String accessTokenUrl;
 
         /**
          * Specifies the endpoint used to exchange authentication credentials for access tokens
-         *
          * @param accessTokenUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder accessTokenUrl(String accessTokenUrl) {
             this.accessTokenUrl = accessTokenUrl;
             this.__explicitlySet__.add("accessTokenUrl");
             return this;
         }
-        /** Specifies the client ID key for specific application */
+        /**
+         * Specifies the client ID key for specific application
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clientId")
         private String clientId;
 
         /**
          * Specifies the client ID key for specific application
-         *
          * @param clientId the value to set
          * @return this builder
-         */
+         **/
         public Builder clientId(String clientId) {
             this.clientId = clientId;
             this.__explicitlySet__.add("clientId");
@@ -183,31 +185,33 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
-        /** Specifies the OAuth scopes that limit the permissions granted by an access token. */
+        /**
+         * Specifies the OAuth scopes that limit the permissions granted by an access token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private String scope;
 
         /**
          * Specifies the OAuth scopes that limit the permissions granted by an access token.
-         *
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(String scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
-        /** Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc. */
+        /**
+         * Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantType")
         private GrantType grantType;
 
         /**
          * Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
-         *
          * @param grantType the value to set
          * @return this builder
-         */
+         **/
         public Builder grantType(GrantType grantType) {
             this.grantType = grantType;
             this.__explicitlySet__.add("grantType");
@@ -304,7 +308,9 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -354,28 +360,30 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
         this.grantType = grantType;
     }
 
-    /** Specifies the endpoint used to exchange authentication credentials for access tokens */
+    /**
+     * Specifies the endpoint used to exchange authentication credentials for access tokens
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessTokenUrl")
     private final String accessTokenUrl;
 
     /**
      * Specifies the endpoint used to exchange authentication credentials for access tokens
-     *
      * @return the value
-     */
+     **/
     public String getAccessTokenUrl() {
         return accessTokenUrl;
     }
 
-    /** Specifies the client ID key for specific application */
+    /**
+     * Specifies the client ID key for specific application
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clientId")
     private final String clientId;
 
     /**
      * Specifies the client ID key for specific application
-     *
      * @return the value
-     */
+     **/
     public String getClientId() {
         return clientId;
     }
@@ -387,26 +395,29 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
         return clientSecret;
     }
 
-    /** Specifies the OAuth scopes that limit the permissions granted by an access token. */
+    /**
+     * Specifies the OAuth scopes that limit the permissions granted by an access token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final String scope;
 
     /**
      * Specifies the OAuth scopes that limit the permissions granted by an access token.
-     *
      * @return the value
-     */
+     **/
     public String getScope() {
         return scope;
     }
 
-    /** Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc. */
-    public enum GrantType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
+     **/
+    public enum GrantType {
         ClientCredentials("CLIENT_CREDENTIALS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -445,15 +456,16 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
             return UnknownEnumValue;
         }
     };
-    /** Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc. */
+    /**
+     * Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantType")
     private final GrantType grantType;
 
     /**
      * Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc.
-     *
      * @return the value
-     */
+     **/
     public GrantType getGrantType() {
         return grantType;
     }
@@ -465,7 +477,6 @@ public final class ConnectionSummaryFromOAuth2 extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

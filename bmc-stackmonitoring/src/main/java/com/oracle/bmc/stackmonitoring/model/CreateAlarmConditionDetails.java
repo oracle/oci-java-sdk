@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about new alarm condition in the same monitoringTemplate in a compartment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about new alarm condition in the same monitoringTemplate in a compartment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateAlarmConditionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateAlarmConditionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateAlarmConditionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespace",
@@ -56,113 +55,116 @@ public final class CreateAlarmConditionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         */
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         *
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The OCID of the composite resource type like EBS/PEOPLE_SOFT. */
+        /**
+         * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
         private String compositeType;
 
         /**
          * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
-         *
          * @param compositeType the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeType(String compositeType) {
             this.compositeType = compositeType;
             this.__explicitlySet__.add("compositeType");
             return this;
         }
-        /** The resource group OCID. */
+        /**
+         * The resource group OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The resource group OCID.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** The metric name. */
+        /**
+         * The metric name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
         /**
          * The metric name.
-         *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
-        /** Type of defined monitoring template. */
+        /**
+         * Type of defined monitoring template.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionType")
         private ConditionType conditionType;
 
         /**
          * Type of defined monitoring template.
-         *
          * @param conditionType the value to set
          * @return this builder
-         */
+         **/
         public Builder conditionType(ConditionType conditionType) {
             this.conditionType = conditionType;
             this.__explicitlySet__.add("conditionType");
             return this;
         }
-        /** Monitoring template conditions. */
+        /**
+         * Monitoring template conditions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditions")
         private java.util.List<Condition> conditions;
 
         /**
          * Monitoring template conditions.
-         *
          * @param conditions the value to set
          * @return this builder
-         */
+         **/
         public Builder conditions(java.util.List<Condition> conditions) {
             this.conditions = conditions;
             this.__explicitlySet__.add("conditions");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -171,7 +173,8 @@ public final class CreateAlarmConditionDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -181,7 +184,7 @@ public final class CreateAlarmConditionDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -239,7 +242,9 @@ public final class CreateAlarmConditionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -249,117 +254,121 @@ public final class CreateAlarmConditionDetails
     }
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     */
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     *
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The OCID of the composite resource type like EBS/PEOPLE_SOFT. */
+    /**
+     * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
     private final String compositeType;
 
     /**
      * The OCID of the composite resource type like EBS/PEOPLE_SOFT.
-     *
      * @return the value
-     */
+     **/
     public String getCompositeType() {
         return compositeType;
     }
 
-    /** The resource group OCID. */
+    /**
+     * The resource group OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The resource group OCID.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** The metric name. */
+    /**
+     * The metric name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
     /**
      * The metric name.
-     *
      * @return the value
-     */
+     **/
     public String getMetricName() {
         return metricName;
     }
 
-    /** Type of defined monitoring template. */
+    /**
+     * Type of defined monitoring template.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionType")
     private final ConditionType conditionType;
 
     /**
      * Type of defined monitoring template.
-     *
      * @return the value
-     */
+     **/
     public ConditionType getConditionType() {
         return conditionType;
     }
 
-    /** Monitoring template conditions. */
+    /**
+     * Monitoring template conditions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditions")
     private final java.util.List<Condition> conditions;
 
     /**
      * Monitoring template conditions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Condition> getConditions() {
         return conditions;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -371,7 +380,6 @@ public final class CreateAlarmConditionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

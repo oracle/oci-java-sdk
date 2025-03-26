@@ -27,8 +27,7 @@ import com.oracle.bmc.database.model.CreateAutonomousDatabaseBase;
 import java.util.zip.ZipInputStream;
 import java.util.Random;
 
-/** See also: AutonomousDatabaseExample */
-public class AutonomousDataWarehouseExample {
+public class AutonomousDatawarehouseExample {
 
     public static void main(String[] args) throws Exception {
         String configurationFilePath = "~/.oci/config";
@@ -44,10 +43,8 @@ public class AutonomousDataWarehouseExample {
         String compartmentId = args[0];
         String password = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -55,8 +52,8 @@ public class AutonomousDataWarehouseExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        DatabaseClient dbClient =
-                DatabaseClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        DatabaseClient dbClient = new DatabaseClient(provider);
+        dbClient.setRegion(Region.US_PHOENIX_1);
 
         // Create
         CreateAutonomousDatabaseDetails createRequest = createAdwRequest(compartmentId);
@@ -114,7 +111,7 @@ public class AutonomousDataWarehouseExample {
         adw = waitForInstanceToBecomeAvailable(dbClient, adw.getId());
         System.out.println("Started Autonomous Datawarehouse Shared : " + adw);
 
-        // download wallet
+        //download wallet
 
         System.out.println("Downloading wallet for  : " + adw);
         GenerateAutonomousDatabaseWalletDetails adwWalletDetails = createAdwWalletDetails(password);
@@ -145,6 +142,7 @@ public class AutonomousDataWarehouseExample {
 
     public static AutonomousDatabase createADW(
             DatabaseClient dbClient, CreateAutonomousDatabaseDetails request) {
+
         CreateAutonomousDatabaseResponse response =
                 dbClient.createAutonomousDatabase(
                         CreateAutonomousDatabaseRequest.builder()
@@ -156,6 +154,7 @@ public class AutonomousDataWarehouseExample {
 
     private static AutonomousDatabase waitForInstanceToBecomeAvailable(
             DatabaseClient dbClient, String id) throws Exception {
+
         DatabaseWaiters waiter = dbClient.getWaiters();
         GetAutonomousDatabaseResponse response =
                 waiter.forAutonomousDatabase(

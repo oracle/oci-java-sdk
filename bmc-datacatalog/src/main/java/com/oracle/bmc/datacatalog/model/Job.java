@@ -5,21 +5,19 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Details of a job. Jobs are scheduled instances of a job definition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Details of a job. Jobs are scheduled instances of a job definition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Job.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Job extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -104,266 +102,268 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique key of the job resource. */
+        /**
+         * Unique key of the job resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique key of the job resource.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Detailed description of the job. */
+        /**
+         * Detailed description of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of the job.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The data catalog's OCID. */
+        /**
+         * The data catalog's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
         private String catalogId;
 
         /**
          * The data catalog's OCID.
-         *
          * @param catalogId the value to set
          * @return this builder
-         */
+         **/
         public Builder catalogId(String catalogId) {
             this.catalogId = catalogId;
             this.__explicitlySet__.add("catalogId");
             return this;
         }
-        /** Lifecycle state for job. */
+        /**
+         * Lifecycle state for job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobLifecycleState lifecycleState;
 
         /**
          * Lifecycle state for job.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(JobLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The date and time the job was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-         */
+         * The date and time the job was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the job was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time the job was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         */
+         * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Type of the job. */
+        /**
+         * Type of the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobType")
         private JobType jobType;
 
         /**
          * Type of the job.
-         *
          * @param jobType the value to set
          * @return this builder
-         */
+         **/
         public Builder jobType(JobType jobType) {
             this.jobType = jobType;
             this.__explicitlySet__.add("jobType");
             return this;
         }
         /**
-         * Interval on which the job will be run. Value is specified as a cron-supported time
-         * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
-         * option @default is supported, which will schedule jobs at a more granular frequency.
-         */
+         * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+         * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
         private String scheduleCronExpression;
 
         /**
-         * Interval on which the job will be run. Value is specified as a cron-supported time
-         * specification "nickname". The following subset of those is
-         * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
-         * option @default is supported, which will schedule jobs at a more granular frequency.
+         * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+         * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+         * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
          *
          * @param scheduleCronExpression the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleCronExpression(String scheduleCronExpression) {
             this.scheduleCronExpression = scheduleCronExpression;
             this.__explicitlySet__.add("scheduleCronExpression");
             return this;
         }
         /**
-         * Date that the schedule should be operational. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         */
+         * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
         private java.util.Date timeScheduleBegin;
 
         /**
-         * Date that the schedule should be operational. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         *
+         * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeScheduleBegin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduleBegin(java.util.Date timeScheduleBegin) {
             this.timeScheduleBegin = timeScheduleBegin;
             this.__explicitlySet__.add("timeScheduleBegin");
             return this;
         }
         /**
-         * Date that the schedule should end from being operational. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         */
+         * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleEnd")
         private java.util.Date timeScheduleEnd;
 
         /**
-         * Date that the schedule should end from being operational. An
-         * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-         *
+         * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeScheduleEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduleEnd(java.util.Date timeScheduleEnd) {
             this.timeScheduleEnd = timeScheduleEnd;
             this.__explicitlySet__.add("timeScheduleEnd");
             return this;
         }
-        /** Type of job schedule that is inferred from the scheduling properties. */
+        /**
+         * Type of job schedule that is inferred from the scheduling properties.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
         private JobScheduleType scheduleType;
 
         /**
          * Type of job schedule that is inferred from the scheduling properties.
-         *
          * @param scheduleType the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduleType(JobScheduleType scheduleType) {
             this.scheduleType = scheduleType;
             this.__explicitlySet__.add("scheduleType");
             return this;
         }
         /**
-         * The key of the connection used by the job. This connection will override the default
-         * connection specified in the associated job definition. All executions will use this
-         * connection.
-         */
+         * The key of the connection used by the job. This connection will override the default connection specified in
+         * the associated job definition. All executions will use this connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
         private String connectionKey;
 
         /**
-         * The key of the connection used by the job. This connection will override the default
-         * connection specified in the associated job definition. All executions will use this
-         * connection.
+         * The key of the connection used by the job. This connection will override the default connection specified in
+         * the associated job definition. All executions will use this connection.
          *
          * @param connectionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionKey(String connectionKey) {
             this.connectionKey = connectionKey;
             this.__explicitlySet__.add("connectionKey");
             return this;
         }
-        /** The unique key of the job definition resource that defined the scope of this job. */
+        /**
+         * The unique key of the job definition resource that defined the scope of this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
         private String jobDefinitionKey;
 
         /**
          * The unique key of the job definition resource that defined the scope of this job.
-         *
          * @param jobDefinitionKey the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDefinitionKey(String jobDefinitionKey) {
             this.jobDefinitionKey = jobDefinitionKey;
             this.__explicitlySet__.add("jobDefinitionKey");
             return this;
         }
-        /** Internal version of the job resource. */
+        /**
+         * Internal version of the job resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("internalVersion")
         private String internalVersion;
 
         /**
          * Internal version of the job resource.
-         *
          * @param internalVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder internalVersion(String internalVersion) {
             this.internalVersion = internalVersion;
             this.__explicitlySet__.add("internalVersion");
             return this;
         }
-        /** The total number of executions for this job schedule. */
+        /**
+         * The total number of executions for this job schedule.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionCount")
         private Integer executionCount;
 
@@ -372,71 +372,75 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
          *
          * @param executionCount the value to set
          * @return this builder
-         */
+         **/
         public Builder executionCount(Integer executionCount) {
             this.executionCount = executionCount;
             this.__explicitlySet__.add("executionCount");
             return this;
         }
         /**
-         * The date and time of the most recent execution for this Job, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-         */
+         * The date and time of the most recent execution for this Job, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestExecution")
         private java.util.Date timeOfLatestExecution;
 
         /**
-         * The date and time of the most recent execution for this Job, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+         * The date and time of the most recent execution for this Job, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Example: {@code 2019-03-25T21:10:29.600Z}
          *
          * @param timeOfLatestExecution the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfLatestExecution(java.util.Date timeOfLatestExecution) {
             this.timeOfLatestExecution = timeOfLatestExecution;
             this.__explicitlySet__.add("timeOfLatestExecution");
             return this;
         }
-        /** OCID of the user who created this job. */
+        /**
+         * OCID of the user who created this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdById")
         private String createdById;
 
         /**
          * OCID of the user who created this job.
-         *
          * @param createdById the value to set
          * @return this builder
-         */
+         **/
         public Builder createdById(String createdById) {
             this.createdById = createdById;
             this.__explicitlySet__.add("createdById");
             return this;
         }
-        /** OCID of the user who updated this job. */
+        /**
+         * OCID of the user who updated this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
         private String updatedById;
 
         /**
          * OCID of the user who updated this job.
-         *
          * @param updatedById the value to set
          * @return this builder
-         */
+         **/
         public Builder updatedById(String updatedById) {
             this.updatedById = updatedById;
             this.__explicitlySet__.add("updatedById");
             return this;
         }
-        /** The display name of the job definition resource that defined the scope of this job. */
+        /**
+         * The display name of the job definition resource that defined the scope of this job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
         private String jobDefinitionName;
 
         /**
          * The display name of the job definition resource that defined the scope of this job.
-         *
          * @param jobDefinitionName the value to set
          * @return this builder
-         */
+         **/
         public Builder jobDefinitionName(String jobDefinitionName) {
             this.jobDefinitionName = jobDefinitionName;
             this.__explicitlySet__.add("jobDefinitionName");
@@ -444,84 +448,83 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
         /**
          * Unique key of the data asset to which this job applies, if the job involves a data asset.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
         private String dataAssetKey;
 
         /**
          * Unique key of the data asset to which this job applies, if the job involves a data asset.
-         *
          * @param dataAssetKey the value to set
          * @return this builder
-         */
+         **/
         public Builder dataAssetKey(String dataAssetKey) {
             this.dataAssetKey = dataAssetKey;
             this.__explicitlySet__.add("dataAssetKey");
             return this;
         }
-        /** Unique key of the glossary to which this job applies. */
+        /**
+         * Unique key of the glossary to which this job applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
         private String glossaryKey;
 
         /**
          * Unique key of the glossary to which this job applies.
-         *
          * @param glossaryKey the value to set
          * @return this builder
-         */
+         **/
         public Builder glossaryKey(String glossaryKey) {
             this.glossaryKey = glossaryKey;
             this.__explicitlySet__.add("glossaryKey");
             return this;
         }
         /**
-         * Error code returned from the latest job execution for this job. Useful when the latest
-         * Job execution is in FAILED state.
-         */
+         * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
         /**
-         * Error code returned from the latest job execution for this job. Useful when the latest
-         * Job execution is in FAILED state.
+         * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
          *
          * @param errorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
         /**
-         * Error message returned from the latest job execution for this job. Useful when the latest
-         * Job Execution is in a FAILED state.
-         */
+         * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * Error message returned from the latest job execution for this job. Useful when the latest
-         * Job Execution is in a FAILED state.
+         * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
          *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /** URI to the job instance in the API. */
+        /**
+         * URI to the job instance in the API.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("uri")
         private String uri;
 
         /**
          * URI to the job instance in the API.
-         *
          * @param uri the value to set
          * @return this builder
-         */
+         **/
         public Builder uri(String uri) {
             this.uri = uri;
             this.__explicitlySet__.add("uri");
@@ -646,7 +649,9 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -655,236 +660,238 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
         return new Builder().copy(this);
     }
 
-    /** Unique key of the job resource. */
+    /**
+     * Unique key of the job resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique key of the job resource.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Detailed description of the job. */
+    /**
+     * Detailed description of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of the job.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The data catalog's OCID. */
+    /**
+     * The data catalog's OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("catalogId")
     private final String catalogId;
 
     /**
      * The data catalog's OCID.
-     *
      * @return the value
-     */
+     **/
     public String getCatalogId() {
         return catalogId;
     }
 
-    /** Lifecycle state for job. */
+    /**
+     * Lifecycle state for job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobLifecycleState lifecycleState;
 
     /**
      * Lifecycle state for job.
-     *
      * @return the value
-     */
+     **/
     public JobLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The date and time the job was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-     */
+     * The date and time the job was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the job was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time the job was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     */
+     * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
-     *
+     * Time that this job was last updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Type of the job. */
+    /**
+     * Type of the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobType")
     private final JobType jobType;
 
     /**
      * Type of the job.
-     *
      * @return the value
-     */
+     **/
     public JobType getJobType() {
         return jobType;
     }
 
     /**
-     * Interval on which the job will be run. Value is specified as a cron-supported time
-     * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
-     * option @default is supported, which will schedule jobs at a more granular frequency.
-     */
+     * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+     * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleCronExpression")
     private final String scheduleCronExpression;
 
     /**
-     * Interval on which the job will be run. Value is specified as a cron-supported time
-     * specification "nickname". The following subset of those is
-     * supported: @monthly, @weekly, @daily, @hourly. For metastore sync, an additional
-     * option @default is supported, which will schedule jobs at a more granular frequency.
+     * Interval on which the job will be run. Value is specified as a cron-supported time specification "nickname".
+     * The following subset of those is supported: @monthly, @weekly, @daily, @hourly.
+     * For metastore sync, an additional option @default is supported, which will schedule jobs at a more granular frequency.
      *
      * @return the value
-     */
+     **/
     public String getScheduleCronExpression() {
         return scheduleCronExpression;
     }
 
     /**
-     * Date that the schedule should be operational. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     */
+     * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleBegin")
     private final java.util.Date timeScheduleBegin;
 
     /**
-     * Date that the schedule should be operational. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Date that the schedule should be operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduleBegin() {
         return timeScheduleBegin;
     }
 
     /**
-     * Date that the schedule should end from being operational. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     */
+     * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleEnd")
     private final java.util.Date timeScheduleEnd;
 
     /**
-     * Date that the schedule should end from being operational. An
-     * [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
-     *
+     * Date that the schedule should end from being operational. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduleEnd() {
         return timeScheduleEnd;
     }
 
-    /** Type of job schedule that is inferred from the scheduling properties. */
+    /**
+     * Type of job schedule that is inferred from the scheduling properties.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduleType")
     private final JobScheduleType scheduleType;
 
     /**
      * Type of job schedule that is inferred from the scheduling properties.
-     *
      * @return the value
-     */
+     **/
     public JobScheduleType getScheduleType() {
         return scheduleType;
     }
 
     /**
-     * The key of the connection used by the job. This connection will override the default
-     * connection specified in the associated job definition. All executions will use this
-     * connection.
-     */
+     * The key of the connection used by the job. This connection will override the default connection specified in
+     * the associated job definition. All executions will use this connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionKey")
     private final String connectionKey;
 
     /**
-     * The key of the connection used by the job. This connection will override the default
-     * connection specified in the associated job definition. All executions will use this
-     * connection.
+     * The key of the connection used by the job. This connection will override the default connection specified in
+     * the associated job definition. All executions will use this connection.
      *
      * @return the value
-     */
+     **/
     public String getConnectionKey() {
         return connectionKey;
     }
 
-    /** The unique key of the job definition resource that defined the scope of this job. */
+    /**
+     * The unique key of the job definition resource that defined the scope of this job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionKey")
     private final String jobDefinitionKey;
 
     /**
      * The unique key of the job definition resource that defined the scope of this job.
-     *
      * @return the value
-     */
+     **/
     public String getJobDefinitionKey() {
         return jobDefinitionKey;
     }
 
-    /** Internal version of the job resource. */
+    /**
+     * Internal version of the job resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalVersion")
     private final String internalVersion;
 
     /**
      * Internal version of the job resource.
-     *
      * @return the value
-     */
+     **/
     public String getInternalVersion() {
         return internalVersion;
     }
 
-    /** The total number of executions for this job schedule. */
+    /**
+     * The total number of executions for this job schedule.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionCount")
     private final Integer executionCount;
 
@@ -892,136 +899,141 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * The total number of executions for this job schedule.
      *
      * @return the value
-     */
+     **/
     public Integer getExecutionCount() {
         return executionCount;
     }
 
     /**
-     * The date and time of the most recent execution for this Job, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
-     */
+     * The date and time of the most recent execution for this Job, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLatestExecution")
     private final java.util.Date timeOfLatestExecution;
 
     /**
-     * The date and time of the most recent execution for this Job, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339). Example: {@code 2019-03-25T21:10:29.600Z}
+     * The date and time of the most recent execution for this Job, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Example: {@code 2019-03-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfLatestExecution() {
         return timeOfLatestExecution;
     }
 
-    /** OCID of the user who created this job. */
+    /**
+     * OCID of the user who created this job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdById")
     private final String createdById;
 
     /**
      * OCID of the user who created this job.
-     *
      * @return the value
-     */
+     **/
     public String getCreatedById() {
         return createdById;
     }
 
-    /** OCID of the user who updated this job. */
+    /**
+     * OCID of the user who updated this job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updatedById")
     private final String updatedById;
 
     /**
      * OCID of the user who updated this job.
-     *
      * @return the value
-     */
+     **/
     public String getUpdatedById() {
         return updatedById;
     }
 
-    /** The display name of the job definition resource that defined the scope of this job. */
+    /**
+     * The display name of the job definition resource that defined the scope of this job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jobDefinitionName")
     private final String jobDefinitionName;
 
     /**
      * The display name of the job definition resource that defined the scope of this job.
-     *
      * @return the value
-     */
+     **/
     public String getJobDefinitionName() {
         return jobDefinitionName;
     }
 
-    /** Unique key of the data asset to which this job applies, if the job involves a data asset. */
+    /**
+     * Unique key of the data asset to which this job applies, if the job involves a data asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataAssetKey")
     private final String dataAssetKey;
 
     /**
      * Unique key of the data asset to which this job applies, if the job involves a data asset.
-     *
      * @return the value
-     */
+     **/
     public String getDataAssetKey() {
         return dataAssetKey;
     }
 
-    /** Unique key of the glossary to which this job applies. */
+    /**
+     * Unique key of the glossary to which this job applies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("glossaryKey")
     private final String glossaryKey;
 
     /**
      * Unique key of the glossary to which this job applies.
-     *
      * @return the value
-     */
+     **/
     public String getGlossaryKey() {
         return glossaryKey;
     }
 
     /**
-     * Error code returned from the latest job execution for this job. Useful when the latest Job
-     * execution is in FAILED state.
-     */
+     * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
     /**
-     * Error code returned from the latest job execution for this job. Useful when the latest Job
-     * execution is in FAILED state.
+     * Error code returned from the latest job execution for this job. Useful when the latest Job execution is in FAILED state.
      *
      * @return the value
-     */
+     **/
     public String getErrorCode() {
         return errorCode;
     }
 
     /**
-     * Error message returned from the latest job execution for this job. Useful when the latest Job
-     * Execution is in a FAILED state.
-     */
+     * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * Error message returned from the latest job execution for this job. Useful when the latest Job
-     * Execution is in a FAILED state.
+     * Error message returned from the latest job execution for this job. Useful when the latest Job Execution is in a FAILED state.
      *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /** URI to the job instance in the API. */
+    /**
+     * URI to the job instance in the API.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("uri")
     private final String uri;
 
     /**
      * URI to the job instance in the API.
-     *
      * @return the value
-     */
+     **/
     public String getUri() {
         return uri;
     }
@@ -1033,7 +1045,6 @@ public final class Job extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

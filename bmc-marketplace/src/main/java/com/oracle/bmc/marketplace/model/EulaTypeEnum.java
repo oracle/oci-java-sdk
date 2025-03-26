@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplace.model;
 
-/** Possible values for end user license agreement (EULA) formats. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
-public enum EulaTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for end user license agreement (EULA) formats.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+public enum EulaTypeEnum {
     Text("TEXT"),
     ;
 

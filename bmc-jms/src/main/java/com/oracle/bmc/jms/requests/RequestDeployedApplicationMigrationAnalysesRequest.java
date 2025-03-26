@@ -6,49 +6,51 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestDeployedApplicationMigrationAnalysesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RequestDeployedApplicationMigrationAnalysesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestDeployedApplicationMigrationAnalysesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestDeployedApplicationMigrationAnalysesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class RequestDeployedApplicationMigrationAnalysesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.jms.model.RequestDeployedApplicationMigrationAnalysesDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** Detail information that starts the deployed Java migration analyses */
+    /**
+     * Detail information that starts the deployed Java migration analyses
+     */
     private com.oracle.bmc.jms.model.RequestDeployedApplicationMigrationAnalysesDetails
             requestDeployedApplicationMigrationAnalysesDetails;
 
-    /** Detail information that starts the deployed Java migration analyses */
+    /**
+     * Detail information that starts the deployed Java migration analyses
+     */
     public com.oracle.bmc.jms.model.RequestDeployedApplicationMigrationAnalysesDetails
             getRequestDeployedApplicationMigrationAnalysesDetails() {
         return requestDeployedApplicationMigrationAnalysesDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -61,19 +63,17 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestDeployedApplicationMigrationAnalysesRequest,
                     com.oracle.bmc.jms.model.RequestDeployedApplicationMigrationAnalysesDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -82,13 +82,14 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
             return this;
         }
 
-        /** Detail information that starts the deployed Java migration analyses */
+        /**
+         * Detail information that starts the deployed Java migration analyses
+         */
         private com.oracle.bmc.jms.model.RequestDeployedApplicationMigrationAnalysesDetails
                 requestDeployedApplicationMigrationAnalysesDetails = null;
 
         /**
          * Detail information that starts the deployed Java migration analyses
-         *
          * @param requestDeployedApplicationMigrationAnalysesDetails the value to set
          * @return this builder instance
          */
@@ -100,12 +101,13 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -116,19 +118,18 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -140,7 +141,6 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RequestDeployedApplicationMigrationAnalysesRequest o) {
@@ -154,14 +154,12 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
         }
 
         /**
-         * Build the instance of RequestDeployedApplicationMigrationAnalysesRequest as configured by
-         * this builder
+         * Build the instance of RequestDeployedApplicationMigrationAnalysesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RequestDeployedApplicationMigrationAnalysesRequest
          */
@@ -175,7 +173,6 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -187,11 +184,9 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
         }
 
         /**
-         * Build the instance of RequestDeployedApplicationMigrationAnalysesRequest as configured by
-         * this builder
+         * Build the instance of RequestDeployedApplicationMigrationAnalysesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestDeployedApplicationMigrationAnalysesRequest
@@ -204,14 +199,12 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
                     requestDeployedApplicationMigrationAnalysesDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new RequestDeployedApplicationMigrationAnalysesRequest(fleetId,
-            // requestDeployedApplicationMigrationAnalysesDetails, opcRequestId);
+            // new RequestDeployedApplicationMigrationAnalysesRequest(fleetId, requestDeployedApplicationMigrationAnalysesDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -224,7 +217,6 @@ public class RequestDeployedApplicationMigrationAnalysesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

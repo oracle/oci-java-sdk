@@ -6,54 +6,61 @@ package com.oracle.bmc.datalabelingservicedataplane.requests;
 
 import com.oracle.bmc.datalabelingservicedataplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservicedataplane/CreateRecordExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRecordRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservicedataplane/CreateRecordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateRecordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
 public class CreateRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datalabelingservicedataplane.model.CreateRecordDetails> {
 
-    /** The details for the new record. */
+    /**
+     * The details for the new record.
+     */
     private com.oracle.bmc.datalabelingservicedataplane.model.CreateRecordDetails
             createRecordDetails;
 
-    /** The details for the new record. */
+    /**
+     * The details for the new record.
+     */
     public com.oracle.bmc.datalabelingservicedataplane.model.CreateRecordDetails
             getCreateRecordDetails() {
         return createRecordDetails;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried, without risk of executing
-     * that same action again, if there is a timeout or server error. Retry tokens expire after 24
-     * hours, but can be invalidated before then if there are conflicting operations. For example,
-     * if a resource has been deleted and purged from the system, then a retry of the original
-     * creation request might be rejected.
+     * A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+     * server error. Retry tokens expire after 24
+     * hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried, without risk of executing
-     * that same action again, if there is a timeout or server error. Retry tokens expire after 24
-     * hours, but can be invalidated before then if there are conflicting operations. For example,
-     * if a resource has been deleted and purged from the system, then a retry of the original
-     * creation request might be rejected.
+     * A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+     * server error. Retry tokens expire after 24
+     * hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -66,16 +73,18 @@ public class CreateRecordRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateRecordRequest,
                     com.oracle.bmc.datalabelingservicedataplane.model.CreateRecordDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details for the new record. */
+        /**
+         * The details for the new record.
+         */
         private com.oracle.bmc.datalabelingservicedataplane.model.CreateRecordDetails
                 createRecordDetails = null;
 
         /**
          * The details for the new record.
-         *
          * @param createRecordDetails the value to set
          * @return this builder instance
          */
@@ -87,20 +96,21 @@ public class CreateRecordRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried, without risk of
-         * executing that same action again, if there is a timeout or server error. Retry tokens
-         * expire after 24 hours, but can be invalidated before then if there are conflicting
-         * operations. For example, if a resource has been deleted and purged from the system, then
-         * a retry of the original creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+         * server error. Retry tokens expire after 24
+         * hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried, without risk of
-         * executing that same action again, if there is a timeout or server error. Retry tokens
-         * expire after 24 hours, but can be invalidated before then if there are conflicting
-         * operations. For example, if a resource has been deleted and purged from the system, then
-         * a retry of the original creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried, without risk of executing that same action again, if there is a timeout or
+         * server error. Retry tokens expire after 24
+         * hours, but can be invalidated before then if there are conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -110,12 +120,13 @@ public class CreateRecordRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -126,19 +137,18 @@ public class CreateRecordRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -150,7 +160,6 @@ public class CreateRecordRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateRecordRequest o) {
@@ -165,11 +174,10 @@ public class CreateRecordRequest
         /**
          * Build the instance of CreateRecordRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateRecordRequest
          */
@@ -182,7 +190,6 @@ public class CreateRecordRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -196,8 +203,7 @@ public class CreateRecordRequest
         /**
          * Build the instance of CreateRecordRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateRecordRequest
@@ -214,7 +220,6 @@ public class CreateRecordRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -226,7 +231,6 @@ public class CreateRecordRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

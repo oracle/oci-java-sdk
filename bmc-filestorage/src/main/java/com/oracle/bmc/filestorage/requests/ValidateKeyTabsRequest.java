@@ -6,31 +6,35 @@ package com.oracle.bmc.filestorage.requests;
 
 import com.oracle.bmc.filestorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ValidateKeyTabsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateKeyTabsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ValidateKeyTabsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ValidateKeyTabsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ValidateKeyTabsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.filestorage.model.ValidateKeyTabsDetails> {
 
-    /** Keytab secret details or mount target ID for validating keytabs. */
+    /**
+     * Keytab secret details or mount target ID for validating keytabs.
+     */
     private com.oracle.bmc.filestorage.model.ValidateKeyTabsDetails validateKeyTabsDetails;
 
-    /** Keytab secret details or mount target ID for validating keytabs. */
+    /**
+     * Keytab secret details or mount target ID for validating keytabs.
+     */
     public com.oracle.bmc.filestorage.model.ValidateKeyTabsDetails getValidateKeyTabsDetails() {
         return validateKeyTabsDetails;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -38,7 +42,6 @@ public class ValidateKeyTabsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -51,16 +54,18 @@ public class ValidateKeyTabsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ValidateKeyTabsRequest,
                     com.oracle.bmc.filestorage.model.ValidateKeyTabsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Keytab secret details or mount target ID for validating keytabs. */
+        /**
+         * Keytab secret details or mount target ID for validating keytabs.
+         */
         private com.oracle.bmc.filestorage.model.ValidateKeyTabsDetails validateKeyTabsDetails =
                 null;
 
         /**
          * Keytab secret details or mount target ID for validating keytabs.
-         *
          * @param validateKeyTabsDetails the value to set
          * @return this builder instance
          */
@@ -71,14 +76,15 @@ public class ValidateKeyTabsRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -90,19 +96,18 @@ public class ValidateKeyTabsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -114,7 +119,6 @@ public class ValidateKeyTabsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ValidateKeyTabsRequest o) {
@@ -128,11 +132,10 @@ public class ValidateKeyTabsRequest
         /**
          * Build the instance of ValidateKeyTabsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ValidateKeyTabsRequest
          */
@@ -145,7 +148,6 @@ public class ValidateKeyTabsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -158,8 +160,7 @@ public class ValidateKeyTabsRequest
         /**
          * Build the instance of ValidateKeyTabsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ValidateKeyTabsRequest
@@ -175,7 +176,6 @@ public class ValidateKeyTabsRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -186,7 +186,6 @@ public class ValidateKeyTabsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

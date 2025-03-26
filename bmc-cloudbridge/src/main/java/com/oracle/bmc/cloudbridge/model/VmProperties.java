@@ -5,21 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Virtual machine related properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Virtual machine related properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VmProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VmProperties extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VmProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hypervisorVendor", "hypervisorVersion", "hypervisorHost"})
     public VmProperties(String hypervisorVendor, String hypervisorVersion, String hypervisorHost) {
@@ -31,46 +29,49 @@ public final class VmProperties extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Hypervisor vendor. */
+        /**
+         * Hypervisor vendor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hypervisorVendor")
         private String hypervisorVendor;
 
         /**
          * Hypervisor vendor.
-         *
          * @param hypervisorVendor the value to set
          * @return this builder
-         */
+         **/
         public Builder hypervisorVendor(String hypervisorVendor) {
             this.hypervisorVendor = hypervisorVendor;
             this.__explicitlySet__.add("hypervisorVendor");
             return this;
         }
-        /** Hypervisor version. */
+        /**
+         * Hypervisor version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hypervisorVersion")
         private String hypervisorVersion;
 
         /**
          * Hypervisor version.
-         *
          * @param hypervisorVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder hypervisorVersion(String hypervisorVersion) {
             this.hypervisorVersion = hypervisorVersion;
             this.__explicitlySet__.add("hypervisorVersion");
             return this;
         }
-        /** Host name/IP address of VM on which the host is running. */
+        /**
+         * Host name/IP address of VM on which the host is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hypervisorHost")
         private String hypervisorHost;
 
         /**
          * Host name/IP address of VM on which the host is running.
-         *
          * @param hypervisorHost the value to set
          * @return this builder
-         */
+         **/
         public Builder hypervisorHost(String hypervisorHost) {
             this.hypervisorHost = hypervisorHost;
             this.__explicitlySet__.add("hypervisorHost");
@@ -105,7 +106,9 @@ public final class VmProperties extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,41 +117,44 @@ public final class VmProperties extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Hypervisor vendor. */
+    /**
+     * Hypervisor vendor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hypervisorVendor")
     private final String hypervisorVendor;
 
     /**
      * Hypervisor vendor.
-     *
      * @return the value
-     */
+     **/
     public String getHypervisorVendor() {
         return hypervisorVendor;
     }
 
-    /** Hypervisor version. */
+    /**
+     * Hypervisor version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hypervisorVersion")
     private final String hypervisorVersion;
 
     /**
      * Hypervisor version.
-     *
      * @return the value
-     */
+     **/
     public String getHypervisorVersion() {
         return hypervisorVersion;
     }
 
-    /** Host name/IP address of VM on which the host is running. */
+    /**
+     * Host name/IP address of VM on which the host is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hypervisorHost")
     private final String hypervisorHost;
 
     /**
      * Host name/IP address of VM on which the host is running.
-     *
      * @return the value
-     */
+     **/
     public String getHypervisorHost() {
         return hypervisorHost;
     }
@@ -160,7 +166,6 @@ public final class VmProperties extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

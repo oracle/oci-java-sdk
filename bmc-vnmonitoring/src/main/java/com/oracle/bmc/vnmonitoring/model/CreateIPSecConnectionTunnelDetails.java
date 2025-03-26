@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateIPSecConnectionTunnelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateIPSecConnectionTunnelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateIPSecConnectionTunnelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -74,44 +73,47 @@ public final class CreateIPSecConnectionTunnelDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or
-         * policy-based routing).
-         */
+         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routing")
         private Routing routing;
 
         /**
-         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or
-         * policy-based routing).
+         * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
          *
          * @param routing the value to set
          * @return this builder
-         */
+         **/
         public Builder routing(Routing routing) {
             this.routing = routing;
             this.__explicitlySet__.add("routing");
             return this;
         }
-        /** Internet Key Exchange protocol version. */
+        /**
+         * Internet Key Exchange protocol version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
         private IkeVersion ikeVersion;
 
@@ -120,32 +122,31 @@ public final class CreateIPSecConnectionTunnelDetails
          *
          * @param ikeVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder ikeVersion(IkeVersion ikeVersion) {
             this.ikeVersion = ikeVersion;
             this.__explicitlySet__.add("ikeVersion");
             return this;
         }
         /**
-         * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters,
-         * and spaces are allowed. If you don't provide a value, Oracle generates a value for you.
-         * You can specify your own shared secret later if you like with {@link
-         * #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest)
-         * updateIPSecConnectionTunnelSharedSecret}.
-         */
+         * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters, and
+         * spaces are allowed. If you don't provide a value,
+         * Oracle generates a value for you. You can specify your own shared secret later if
+         * you like with {@link #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest) updateIPSecConnectionTunnelSharedSecret}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
         private String sharedSecret;
 
         /**
-         * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters,
-         * and spaces are allowed. If you don't provide a value, Oracle generates a value for you.
-         * You can specify your own shared secret later if you like with {@link
-         * #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest)
-         * updateIPSecConnectionTunnelSharedSecret}.
+         * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters, and
+         * spaces are allowed. If you don't provide a value,
+         * Oracle generates a value for you. You can specify your own shared secret later if
+         * you like with {@link #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest) updateIPSecConnectionTunnelSharedSecret}.
          *
          * @param sharedSecret the value to set
          * @return this builder
-         */
+         **/
         public Builder sharedSecret(String sharedSecret) {
             this.sharedSecret = sharedSecret;
             this.__explicitlySet__.add("sharedSecret");
@@ -161,54 +162,50 @@ public final class CreateIPSecConnectionTunnelDetails
             return this;
         }
         /**
-         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up
-         * the IPSec tunnel.
-         */
+         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
         private OracleInitiation oracleInitiation;
 
         /**
-         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up
-         * the IPSec tunnel.
+         * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
          *
          * @param oracleInitiation the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleInitiation(OracleInitiation oracleInitiation) {
             this.oracleInitiation = oracleInitiation;
             this.__explicitlySet__.add("oracleInitiation");
             return this;
         }
         /**
-         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination
-         * port set to 500, and when it detects that the port used to forward packets has changed
-         * (most likely because a NAT device is between the CPE device and the Oracle VPN headend)
-         * it will try to negotiate the use of NAT-T.
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
          *
-         * <p>The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and
-         * forces encapsulating traffic with the ESP protocol inside UDP packets.
-         *
-         * <p>The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T even
-         * if it senses there may be a NAT device in use.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
         private NatTranslationEnabled natTranslationEnabled;
 
         /**
-         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination
-         * port set to 500, and when it detects that the port used to forward packets has changed
-         * (most likely because a NAT device is between the CPE device and the Oracle VPN headend)
-         * it will try to negotiate the use of NAT-T.
-         *
-         * <p>The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and
-         * forces encapsulating traffic with the ESP protocol inside UDP packets.
-         *
-         * <p>The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T even
-         * if it senses there may be a NAT device in use.
+         * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+         * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+         * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+         * <p>
+         * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+         * <p>
+         * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+         * even if it senses there may be a NAT device in use.
          *
          * @param natTranslationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder natTranslationEnabled(NatTranslationEnabled natTranslationEnabled) {
             this.natTranslationEnabled = natTranslationEnabled;
             this.__explicitlySet__.add("natTranslationEnabled");
@@ -242,63 +239,58 @@ public final class CreateIPSecConnectionTunnelDetails
             return this;
         }
         /**
-         * The headend IP that you can choose on the Oracle side to terminate your private IPSec
-         * tunnel.
-         */
+         * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleTunnelIp")
         private String oracleTunnelIp;
 
         /**
-         * The headend IP that you can choose on the Oracle side to terminate your private IPSec
-         * tunnel.
+         * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
          *
          * @param oracleTunnelIp the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleTunnelIp(String oracleTunnelIp) {
             this.oracleTunnelIp = oracleTunnelIp;
             this.__explicitlySet__.add("oracleTunnelIp");
             return this;
         }
         /**
-         * The list of virtual circuit
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
-         * your network can reach this tunnel.
-         */
+         * The list of virtual circuit [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
         private java.util.List<String> associatedVirtualCircuits;
 
         /**
-         * The list of virtual circuit
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
-         * your network can reach this tunnel.
+         * The list of virtual circuit [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
          *
          * @param associatedVirtualCircuits the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedVirtualCircuits(java.util.List<String> associatedVirtualCircuits) {
             this.associatedVirtualCircuits = associatedVirtualCircuits;
             this.__explicitlySet__.add("associatedVirtualCircuits");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG route table assigned to this attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to this attachment.
+         * <p>
+         * The DRG route table manages traffic inside the DRG.
          *
-         * <p>The DRG route table manages traffic inside the DRG.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
         private String drgRouteTableId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG route table assigned to this attachment.
-         *
-         * <p>The DRG route table manages traffic inside the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to this attachment.
+         * <p>
+         * The DRG route table manages traffic inside the DRG.
          *
          * @param drgRouteTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder drgRouteTableId(String drgRouteTableId) {
             this.drgRouteTableId = drgRouteTableId;
             this.__explicitlySet__.add("drgRouteTableId");
@@ -389,7 +381,9 @@ public final class CreateIPSecConnectionTunnelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -399,27 +393,28 @@ public final class CreateIPSecConnectionTunnelDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or
-     * policy-based routing).
-     */
-    public enum Routing implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+     *
+     **/
+    public enum Routing {
         Bgp("BGP"),
         Static("STATIC"),
         Policy("POLICY"),
@@ -453,24 +448,26 @@ public final class CreateIPSecConnectionTunnelDetails
         }
     };
     /**
-     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or
-     * policy-based routing).
-     */
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routing")
     private final Routing routing;
 
     /**
-     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or
-     * policy-based routing).
+     * The type of routing to use for this tunnel (BGP dynamic routing, static routing, or policy-based routing).
      *
      * @return the value
-     */
+     **/
     public Routing getRouting() {
         return routing;
     }
 
-    /** Internet Key Exchange protocol version. */
-    public enum IkeVersion implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     **/
+    public enum IkeVersion {
         V1("V1"),
         V2("V2"),
         ;
@@ -502,7 +499,10 @@ public final class CreateIPSecConnectionTunnelDetails
             throw new IllegalArgumentException("Invalid IkeVersion: " + key);
         }
     };
-    /** Internet Key Exchange protocol version. */
+    /**
+     * Internet Key Exchange protocol version.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ikeVersion")
     private final IkeVersion ikeVersion;
 
@@ -510,30 +510,29 @@ public final class CreateIPSecConnectionTunnelDetails
      * Internet Key Exchange protocol version.
      *
      * @return the value
-     */
+     **/
     public IkeVersion getIkeVersion() {
         return ikeVersion;
     }
 
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters, and
-     * spaces are allowed. If you don't provide a value, Oracle generates a value for you. You can
-     * specify your own shared secret later if you like with {@link
-     * #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest)
-     * updateIPSecConnectionTunnelSharedSecret}.
-     */
+     * spaces are allowed. If you don't provide a value,
+     * Oracle generates a value for you. You can specify your own shared secret later if
+     * you like with {@link #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest) updateIPSecConnectionTunnelSharedSecret}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sharedSecret")
     private final String sharedSecret;
 
     /**
      * The shared secret (pre-shared key) to use for the IPSec tunnel. Only numbers, letters, and
-     * spaces are allowed. If you don't provide a value, Oracle generates a value for you. You can
-     * specify your own shared secret later if you like with {@link
-     * #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest)
-     * updateIPSecConnectionTunnelSharedSecret}.
+     * spaces are allowed. If you don't provide a value,
+     * Oracle generates a value for you. You can specify your own shared secret later if
+     * you like with {@link #updateIPSecConnectionTunnelSharedSecret(UpdateIPSecConnectionTunnelSharedSecretRequest) updateIPSecConnectionTunnelSharedSecret}.
      *
      * @return the value
-     */
+     **/
     public String getSharedSecret() {
         return sharedSecret;
     }
@@ -546,10 +545,10 @@ public final class CreateIPSecConnectionTunnelDetails
     }
 
     /**
-     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the
-     * IPSec tunnel.
-     */
-    public enum OracleInitiation implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+     *
+     **/
+    public enum OracleInitiation {
         InitiatorOrResponder("INITIATOR_OR_RESPONDER"),
         ResponderOnly("RESPONDER_ONLY"),
         ;
@@ -582,35 +581,33 @@ public final class CreateIPSecConnectionTunnelDetails
         }
     };
     /**
-     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the
-     * IPSec tunnel.
-     */
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleInitiation")
     private final OracleInitiation oracleInitiation;
 
     /**
-     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the
-     * IPSec tunnel.
+     * Indicates whether the Oracle end of the IPSec connection is able to initiate starting up the IPSec tunnel.
      *
      * @return the value
-     */
+     **/
     public OracleInitiation getOracleInitiation() {
         return oracleInitiation;
     }
 
     /**
-     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port
-     * set to 500, and when it detects that the port used to forward packets has changed (most
-     * likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try
-     * to negotiate the use of NAT-T.
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
      *
-     * <p>The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and
-     * forces encapsulating traffic with the ESP protocol inside UDP packets.
-     *
-     * <p>The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T even if it
-     * senses there may be a NAT device in use.
-     */
-    public enum NatTranslationEnabled implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum NatTranslationEnabled {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         Auto("AUTO"),
@@ -644,34 +641,31 @@ public final class CreateIPSecConnectionTunnelDetails
         }
     };
     /**
-     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port
-     * set to 500, and when it detects that the port used to forward packets has changed (most
-     * likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try
-     * to negotiate the use of NAT-T.
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
      *
-     * <p>The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and
-     * forces encapsulating traffic with the ESP protocol inside UDP packets.
-     *
-     * <p>The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T even if it
-     * senses there may be a NAT device in use.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("natTranslationEnabled")
     private final NatTranslationEnabled natTranslationEnabled;
 
     /**
-     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port
-     * set to 500, and when it detects that the port used to forward packets has changed (most
-     * likely because a NAT device is between the CPE device and the Oracle VPN headend) it will try
-     * to negotiate the use of NAT-T.
-     *
-     * <p>The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and
-     * forces encapsulating traffic with the ESP protocol inside UDP packets.
-     *
-     * <p>The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T even if it
-     * senses there may be a NAT device in use.
+     * By default (the {@code AUTO} setting), IKE sends packets with a source and destination port set to 500,
+     * and when it detects that the port used to forward packets has changed (most likely because a NAT device
+     * is between the CPE device and the Oracle VPN headend) it will try to negotiate the use of NAT-T.
+     * <p>
+     * The {@code ENABLED} option sets the IKE protocol to use port 4500 instead of 500 and forces encapsulating traffic with the ESP protocol inside UDP packets.
+     * <p>
+     * The {@code DISABLED} option directs IKE to completely refuse to negotiate NAT-T
+     * even if it senses there may be a NAT device in use.
      *
      * @return the value
-     */
+     **/
     public NatTranslationEnabled getNatTranslationEnabled() {
         return natTranslationEnabled;
     }
@@ -699,7 +693,8 @@ public final class CreateIPSecConnectionTunnelDetails
 
     /**
      * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleTunnelIp")
     private final String oracleTunnelIp;
 
@@ -707,47 +702,43 @@ public final class CreateIPSecConnectionTunnelDetails
      * The headend IP that you can choose on the Oracle side to terminate your private IPSec tunnel.
      *
      * @return the value
-     */
+     **/
     public String getOracleTunnelIp() {
         return oracleTunnelIp;
     }
 
     /**
-     * The list of virtual circuit
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
-     * your network can reach this tunnel.
-     */
+     * The list of virtual circuit [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedVirtualCircuits")
     private final java.util.List<String> associatedVirtualCircuits;
 
     /**
-     * The list of virtual circuit
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which
-     * your network can reach this tunnel.
+     * The list of virtual circuit [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s over which your network can reach this tunnel.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAssociatedVirtualCircuits() {
         return associatedVirtualCircuits;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
-     * route table assigned to this attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to this attachment.
+     * <p>
+     * The DRG route table manages traffic inside the DRG.
      *
-     * <p>The DRG route table manages traffic inside the DRG.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgRouteTableId")
     private final String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
-     * route table assigned to this attachment.
-     *
-     * <p>The DRG route table manages traffic inside the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to this attachment.
+     * <p>
+     * The DRG route table manages traffic inside the DRG.
      *
      * @return the value
-     */
+     **/
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
@@ -766,7 +757,6 @@ public final class CreateIPSecConnectionTunnelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

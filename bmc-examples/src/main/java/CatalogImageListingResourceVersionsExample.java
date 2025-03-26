@@ -18,23 +18,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This class demonstrates how to consume the Image Catalog Listings service using the given Java
- * SDK. This will cover:
- *
+ * This class demonstrates how to consume the Image Catalog Listings service using the given Java SDK. This will cover:
  * <ul>
- *   <li>Retrieving a listing
- *   <li>Retrieving all the versions available for the listing
- *   <li>Collating the above information to print the listing id, display name, publisher name,
- *       summary, versions to stdout
+ * <li>Retrieving a listing</li>
+ * <li>Retrieving all the versions available for the listing</li>
+ * <li>Collating the above information to print the listing id, display name, publisher name, summary, versions to
+ *     stdout</li>
  * </ul>
- *
- * This class makes the following assumptions:
- *
- * <ul>
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Resources will be listed from us-phoenix-1
- * </ul>
+ *  This class makes the following assumptions:
+ *  <ul>
+ *    <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *    </li>
+ *    <li>Resources will be listed from us-phoenix-1</li>
+ *  </ul>
  */
 public class CatalogImageListingResourceVersionsExample {
     public static void main(String[] args) throws Exception {
@@ -44,10 +42,8 @@ public class CatalogImageListingResourceVersionsExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -55,16 +51,17 @@ public class CatalogImageListingResourceVersionsExample {
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        ComputeClient computeClient = ComputeClient.builder().region(region).build(provider);
+        ComputeClient computeClient = new ComputeClient(provider);
+        computeClient.setRegion(region);
 
-        // Get the first alphabetically sorted listing
+        //Get the first alphabetically sorted listing
         ListAppCatalogListingsResponse listImagesResponse =
                 computeClient.listAppCatalogListings(
                         ListAppCatalogListingsRequest.builder()
                                 .limit(1)
                                 .sortOrder(
                                         ListAppCatalogListingsRequest.SortOrder
-                                                .Asc) // sort by displayname
+                                                .Asc) //sort by displayname
                                 .build());
 
         if (!listImagesResponse.getItems().isEmpty()) {
@@ -85,7 +82,6 @@ public class CatalogImageListingResourceVersionsExample {
 
     /**
      * Returns an exhaustive list of all versions associated with a listing.
-     *
      * @param computeClient the client used to communicate with Compute service
      * @param listingId the OCID of the listing
      * @return all the versions of listing

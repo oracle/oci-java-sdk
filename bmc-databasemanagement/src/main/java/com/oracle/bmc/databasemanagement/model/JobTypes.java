@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The types of jobs. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum JobTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The types of jobs.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum JobTypes {
     Sql("SQL"),
 
     /**

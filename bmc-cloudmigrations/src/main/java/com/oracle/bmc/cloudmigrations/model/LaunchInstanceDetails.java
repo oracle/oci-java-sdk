@@ -5,24 +5,24 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Instance launch details. Use the {@code sourceDetails} parameter to specify whether a boot volume
- * or an image should be used to launch a new instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Instance launch details.
+ * Use the {@code sourceDetails} parameter to specify whether a boot volume or an image should be used to launch a new instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LaunchInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LaunchInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LaunchInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityDomain",
@@ -88,58 +88,59 @@ public final class LaunchInstanceDetails
     public static class Builder {
         /**
          * The availability domain of the instance.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain of the instance.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The OCID of the compute capacity reservation under which this instance is launched. You
-         * can opt out of all default reservations by specifying an empty string as input for this
-         * field. For more information, see [Capacity
-         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-         */
+         * The OCID of the compute capacity reservation under which this instance is launched.
+         * You can opt out of all default reservations by specifying an empty string as input for this field.
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
         private String capacityReservationId;
 
         /**
-         * The OCID of the compute capacity reservation under which this instance is launched. You
-         * can opt out of all default reservations by specifying an empty string as input for this
-         * field. For more information, see [Capacity
-         * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+         * The OCID of the compute capacity reservation under which this instance is launched.
+         * You can opt out of all default reservations by specifying an empty string as input for this field.
+         * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
          *
          * @param capacityReservationId the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityReservationId(String capacityReservationId) {
             this.capacityReservationId = capacityReservationId;
             this.__explicitlySet__.add("capacityReservationId");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -154,7 +155,10 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("createVnicDetails");
             return this;
         }
-        /** The OCID of the dedicated VM host. */
+        /**
+         * The OCID of the dedicated VM host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
         private String dedicatedVmHostId;
 
@@ -163,7 +167,7 @@ public final class LaunchInstanceDetails
          *
          * @param dedicatedVmHostId the value to set
          * @return this builder
-         */
+         **/
         public Builder dedicatedVmHostId(String dedicatedVmHostId) {
             this.dedicatedVmHostId = dedicatedVmHostId;
             this.__explicitlySet__.add("dedicatedVmHostId");
@@ -172,7 +176,8 @@ public final class LaunchInstanceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -182,7 +187,7 @@ public final class LaunchInstanceDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -190,98 +195,106 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A fault domain is a grouping of hardware and infrastructure within an availability
-         * domain. Each availability domain contains three fault domains. Fault domains lets you
-         * distribute your instances so that they are not on the same physical hardware within a
-         * single availability domain. A hardware failure or Compute hardware maintenance that
-         * affects one fault domain does not affect instances in other fault domains.
+         * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+         * Each availability domain contains three fault domains. Fault domains lets you distribute your
+         * instances so that they are not on the same physical hardware within a single availability domain.
+         * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+         * instances in other fault domains.
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you.
+         * <p>
          *
-         * <p>If you do not specify the fault domain, the system selects one for you.
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
          *
-         * <p>To get a list of fault domains, use the {@link
-         * #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the Identity
-         * and Access Management Service API.
-         *
-         * <p>Example: {@code FAULT-DOMAIN-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * A fault domain is a grouping of hardware and infrastructure within an availability
-         * domain. Each availability domain contains three fault domains. Fault domains lets you
-         * distribute your instances so that they are not on the same physical hardware within a
-         * single availability domain. A hardware failure or Compute hardware maintenance that
-         * affects one fault domain does not affect instances in other fault domains.
+         * A fault domain is a grouping of hardware and infrastructure within an availability domain.
+         * Each availability domain contains three fault domains. Fault domains lets you distribute your
+         * instances so that they are not on the same physical hardware within a single availability domain.
+         * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+         * instances in other fault domains.
+         * <p>
+         * If you do not specify the fault domain, the system selects one for you.
+         * <p>
          *
-         * <p>If you do not specify the fault domain, the system selects one for you.
-         *
-         * <p>To get a list of fault domains, use the {@link
-         * #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the Identity
-         * and Access Management Service API.
-         *
-         * <p>Example: {@code FAULT-DOMAIN-1}
+         * To get a list of fault domains, use the
+         * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+         * Identity and Access Management Service API.
+         * <p>
+         * Example: {@code FAULT-DOMAIN-1}
          *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It
-         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It
-         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you
-         * provide both, the values must match.
-         */
+         * Deprecated. Instead use {@code hostnameLabel} in
+         * {@link CreateVnicDetails}.
+         * If you provide both, the values must match.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
         private String hostnameLabel;
 
         /**
-         * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you
-         * provide both, the values must match.
+         * Deprecated. Instead use {@code hostnameLabel} in
+         * {@link CreateVnicDetails}.
+         * If you provide both, the values must match.
          *
          * @param hostnameLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder hostnameLabel(String hostnameLabel) {
             this.hostnameLabel = hostnameLabel;
             this.__explicitlySet__.add("hostnameLabel");
@@ -289,66 +302,75 @@ public final class LaunchInstanceDetails
         }
         /**
          * This is an advanced option.
-         *
-         * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on
-         * the instance is configured to run an iPXE script to continue the boot process.
-         *
-         * <p>If you want more control over the boot process, you can provide your own custom iPXE
-         * script that will run when the instance boots. Be aware that the same iPXE script will run
-         * every time an instance boots, not only after the initial LaunchInstance call.
-         *
-         * <p>By default, the iPXE script connects to the instance's local boot volume over iSCSI
-         * and performs a network boot. If you use a custom iPXE script and want to network-boot
-         * from the instance's local boot volume over iSCSI in the same way as the default iPXE
-         * script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+         * <p>
+         * When a bare metal or virtual machine
+         * instance boots, the iPXE firmware that runs on the instance is
+         * configured to run an iPXE script to continue the boot process.
+         * <p>
+         * If you want more control over the boot process, you can provide
+         * your own custom iPXE script that will run when the instance boots.
+         * Be aware that the same iPXE script will run
+         * every time an instance boots, not only after the initial
+         * LaunchInstance call.
+         * <p>
+         * By default, the iPXE script connects to the instance's local boot
+         * volume over iSCSI and performs a network boot. If you use a custom iPXE
+         * script and want to network-boot from the instance's local boot volume
+         * over iSCSI in the same way as the default iPXE script, use the
+         * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
+         * <p>
+         * If your instance boot volume type is paravirtualized,
+         * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+         * If your instance boot volume type is paravirtualized
+         * and you use custom iPXE to perform network-boot into your instance,
+         * the primary boot volume is attached as a data volume through the virtio-scsi drive.
+         * <p>
+         * For more information about the Bring Your Own Image feature of
+         * Oracle Cloud Infrastructure, see
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * <p>
+         * For more information about iPXE, see http://ipxe.org.
          *
-         * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to
-         * the instance through virtio-scsi and no iPXE script is used. If your instance boot volume
-         * type is paravirtualized and you use custom iPXE to perform network-boot into your
-         * instance, the primary boot volume is attached as a data volume through the virtio-scsi
-         * drive.
-         *
-         * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-         * Infrastructure, see [Bring Your Own
-         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         *
-         * <p>For more information about iPXE, see http://ipxe.org.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
         private String ipxeScript;
 
         /**
          * This is an advanced option.
-         *
-         * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on
-         * the instance is configured to run an iPXE script to continue the boot process.
-         *
-         * <p>If you want more control over the boot process, you can provide your own custom iPXE
-         * script that will run when the instance boots. Be aware that the same iPXE script will run
-         * every time an instance boots, not only after the initial LaunchInstance call.
-         *
-         * <p>By default, the iPXE script connects to the instance's local boot volume over iSCSI
-         * and performs a network boot. If you use a custom iPXE script and want to network-boot
-         * from the instance's local boot volume over iSCSI in the same way as the default iPXE
-         * script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+         * <p>
+         * When a bare metal or virtual machine
+         * instance boots, the iPXE firmware that runs on the instance is
+         * configured to run an iPXE script to continue the boot process.
+         * <p>
+         * If you want more control over the boot process, you can provide
+         * your own custom iPXE script that will run when the instance boots.
+         * Be aware that the same iPXE script will run
+         * every time an instance boots, not only after the initial
+         * LaunchInstance call.
+         * <p>
+         * By default, the iPXE script connects to the instance's local boot
+         * volume over iSCSI and performs a network boot. If you use a custom iPXE
+         * script and want to network-boot from the instance's local boot volume
+         * over iSCSI in the same way as the default iPXE script, use the
+         * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
          * iqn.2015-02.oracle.boot.
-         *
-         * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to
-         * the instance through virtio-scsi and no iPXE script is used. If your instance boot volume
-         * type is paravirtualized and you use custom iPXE to perform network-boot into your
-         * instance, the primary boot volume is attached as a data volume through the virtio-scsi
-         * drive.
-         *
-         * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-         * Infrastructure, see [Bring Your Own
-         * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-         *
-         * <p>For more information about iPXE, see http://ipxe.org.
+         * <p>
+         * If your instance boot volume type is paravirtualized,
+         * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+         * If your instance boot volume type is paravirtualized
+         * and you use custom iPXE to perform network-boot into your instance,
+         * the primary boot volume is attached as a data volume through the virtio-scsi drive.
+         * <p>
+         * For more information about the Bring Your Own Image feature of
+         * Oracle Cloud Infrastructure, see
+         * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+         * <p>
+         * For more information about iPXE, see http://ipxe.org.
          *
          * @param ipxeScript the value to set
          * @return this builder
-         */
+         **/
         public Builder ipxeScript(String ipxeScript) {
             this.ipxeScript = ipxeScript;
             this.__explicitlySet__.add("ipxeScript");
@@ -383,25 +405,24 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
          *
-         * <p>You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-         * other resources allocated to the instance.
-         *
-         * <p>You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
+         * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+         * and other resources allocated to the instance.
+         * <p>
+         * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -426,21 +447,16 @@ public final class LaunchInstanceDetails
             return this;
         }
         /**
-         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-         * This field applies to both block volumes and boot volumes. By default, the value is
-         * false.
-         */
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
         private Boolean isPvEncryptionInTransitEnabled;
 
         /**
-         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-         * This field applies to both block volumes and boot volumes. By default, the value is
-         * false.
-         *
+         * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
          * @param isPvEncryptionInTransitEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPvEncryptionInTransitEnabled(Boolean isPvEncryptionInTransitEnabled) {
             this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
             this.__explicitlySet__.add("isPvEncryptionInTransitEnabled");
@@ -537,7 +553,9 @@ public final class LaunchInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -548,53 +566,54 @@ public final class LaunchInstanceDetails
 
     /**
      * The availability domain of the instance.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain of the instance.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The OCID of the compute capacity reservation under which this instance is launched. You can
-     * opt out of all default reservations by specifying an empty string as input for this field.
-     * For more information, see [Capacity
-     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
-     */
+     * The OCID of the compute capacity reservation under which this instance is launched.
+     * You can opt out of all default reservations by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityReservationId")
     private final String capacityReservationId;
 
     /**
-     * The OCID of the compute capacity reservation under which this instance is launched. You can
-     * opt out of all default reservations by specifying an empty string as input for this field.
-     * For more information, see [Capacity
-     * Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * The OCID of the compute capacity reservation under which this instance is launched.
+     * You can opt out of all default reservations by specifying an empty string as input for this field.
+     * For more information, see [Capacity Reservations](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      *
      * @return the value
-     */
+     **/
     public String getCapacityReservationId() {
         return capacityReservationId;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -606,7 +625,10 @@ public final class LaunchInstanceDetails
         return createVnicDetails;
     }
 
-    /** The OCID of the dedicated VM host. */
+    /**
+     * The OCID of the dedicated VM host.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dedicatedVmHostId")
     private final String dedicatedVmHostId;
 
@@ -614,41 +636,43 @@ public final class LaunchInstanceDetails
      * The OCID of the dedicated VM host.
      *
      * @return the value
-     */
+     **/
     public String getDedicatedVmHostId() {
         return dedicatedVmHostId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -656,131 +680,153 @@ public final class LaunchInstanceDetails
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
      * Each availability domain contains three fault domains. Fault domains lets you distribute your
-     * instances so that they are not on the same physical hardware within a single availability
-     * domain. A hardware failure or Compute hardware maintenance that affects one fault domain does
-     * not affect instances in other fault domains.
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you.
+     * <p>
      *
-     * <p>If you do not specify the fault domain, the system selects one for you.
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
      *
-     * <p>To get a list of fault domains, use the {@link #listFaultDomains(ListFaultDomainsRequest)
-     * listFaultDomains} operation in the Identity and Access Management Service API.
-     *
-     * <p>Example: {@code FAULT-DOMAIN-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * A fault domain is a grouping of hardware and infrastructure within an availability domain.
      * Each availability domain contains three fault domains. Fault domains lets you distribute your
-     * instances so that they are not on the same physical hardware within a single availability
-     * domain. A hardware failure or Compute hardware maintenance that affects one fault domain does
-     * not affect instances in other fault domains.
+     * instances so that they are not on the same physical hardware within a single availability domain.
+     * A hardware failure or Compute hardware maintenance that affects one fault domain does not affect
+     * instances in other fault domains.
+     * <p>
+     * If you do not specify the fault domain, the system selects one for you.
+     * <p>
      *
-     * <p>If you do not specify the fault domain, the system selects one for you.
-     *
-     * <p>To get a list of fault domains, use the {@link #listFaultDomains(ListFaultDomainsRequest)
-     * listFaultDomains} operation in the Identity and Access Management Service API.
-     *
-     * <p>Example: {@code FAULT-DOMAIN-1}
+     * To get a list of fault domains, use the
+     * {@link #listFaultDomains(ListFaultDomainsRequest) listFaultDomains} operation in the
+     * Identity and Access Management Service API.
+     * <p>
+     * Example: {@code FAULT-DOMAIN-1}
      *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
-     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
-     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you provide
-     * both, the values must match.
-     */
+     * Deprecated. Instead use {@code hostnameLabel} in
+     * {@link CreateVnicDetails}.
+     * If you provide both, the values must match.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostnameLabel")
     private final String hostnameLabel;
 
     /**
-     * Deprecated. Instead use {@code hostnameLabel} in {@link CreateVnicDetails}. If you provide
-     * both, the values must match.
+     * Deprecated. Instead use {@code hostnameLabel} in
+     * {@link CreateVnicDetails}.
+     * If you provide both, the values must match.
      *
      * @return the value
-     */
+     **/
     public String getHostnameLabel() {
         return hostnameLabel;
     }
 
     /**
      * This is an advanced option.
+     * <p>
+     * When a bare metal or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots.
+     * Be aware that the same iPXE script will run
+     * every time an instance boots, not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * By default, the iPXE script connects to the instance's local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance's local boot volume
+     * over iSCSI in the same way as the default iPXE script, use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * If your instance boot volume type is paravirtualized,
+     * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+     * If your instance boot volume type is paravirtualized
+     * and you use custom iPXE to perform network-boot into your instance,
+     * the primary boot volume is attached as a data volume through the virtio-scsi drive.
+     * <p>
+     * For more information about the Bring Your Own Image feature of
+     * Oracle Cloud Infrastructure, see
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
      *
-     * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the
-     * instance is configured to run an iPXE script to continue the boot process.
-     *
-     * <p>If you want more control over the boot process, you can provide your own custom iPXE
-     * script that will run when the instance boots. Be aware that the same iPXE script will run
-     * every time an instance boots, not only after the initial LaunchInstance call.
-     *
-     * <p>By default, the iPXE script connects to the instance's local boot volume over iSCSI and
-     * performs a network boot. If you use a custom iPXE script and want to network-boot from the
-     * instance's local boot volume over iSCSI in the same way as the default iPXE script, use the
-     * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     *
-     * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to the
-     * instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is
-     * paravirtualized and you use custom iPXE to perform network-boot into your instance, the
-     * primary boot volume is attached as a data volume through the virtio-scsi drive.
-     *
-     * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-     * Infrastructure, see [Bring Your Own
-     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     *
-     * <p>For more information about iPXE, see http://ipxe.org.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipxeScript")
     private final String ipxeScript;
 
     /**
      * This is an advanced option.
-     *
-     * <p>When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the
-     * instance is configured to run an iPXE script to continue the boot process.
-     *
-     * <p>If you want more control over the boot process, you can provide your own custom iPXE
-     * script that will run when the instance boots. Be aware that the same iPXE script will run
-     * every time an instance boots, not only after the initial LaunchInstance call.
-     *
-     * <p>By default, the iPXE script connects to the instance's local boot volume over iSCSI and
-     * performs a network boot. If you use a custom iPXE script and want to network-boot from the
-     * instance's local boot volume over iSCSI in the same way as the default iPXE script, use the
-     * following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     *
-     * <p>If your instance boot volume type is paravirtualized, the boot volume is attached to the
-     * instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is
-     * paravirtualized and you use custom iPXE to perform network-boot into your instance, the
-     * primary boot volume is attached as a data volume through the virtio-scsi drive.
-     *
-     * <p>For more information about the Bring Your Own Image feature of Oracle Cloud
-     * Infrastructure, see [Bring Your Own
-     * Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     *
-     * <p>For more information about iPXE, see http://ipxe.org.
+     * <p>
+     * When a bare metal or virtual machine
+     * instance boots, the iPXE firmware that runs on the instance is
+     * configured to run an iPXE script to continue the boot process.
+     * <p>
+     * If you want more control over the boot process, you can provide
+     * your own custom iPXE script that will run when the instance boots.
+     * Be aware that the same iPXE script will run
+     * every time an instance boots, not only after the initial
+     * LaunchInstance call.
+     * <p>
+     * By default, the iPXE script connects to the instance's local boot
+     * volume over iSCSI and performs a network boot. If you use a custom iPXE
+     * script and want to network-boot from the instance's local boot volume
+     * over iSCSI in the same way as the default iPXE script, use the
+     * following iSCSI IP address: 169.254.0.2, and boot volume IQN:
+     * iqn.2015-02.oracle.boot.
+     * <p>
+     * If your instance boot volume type is paravirtualized,
+     * the boot volume is attached to the instance through virtio-scsi and no iPXE script is used.
+     * If your instance boot volume type is paravirtualized
+     * and you use custom iPXE to perform network-boot into your instance,
+     * the primary boot volume is attached as a data volume through the virtio-scsi drive.
+     * <p>
+     * For more information about the Bring Your Own Image feature of
+     * Oracle Cloud Infrastructure, see
+     * [Bring Your Own Image](https://docs.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
+     * <p>
+     * For more information about iPXE, see http://ipxe.org.
      *
      * @return the value
-     */
+     **/
     public String getIpxeScript() {
         return ipxeScript;
     }
@@ -807,24 +853,23 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * <p>
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
-     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
-     * listShapes}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of an instance. The shape determines the number of CPUs, amount of memory, and
-     * other resources allocated to the instance.
-     *
-     * <p>You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest)
-     * listShapes}.
+     * The shape of an instance. The shape determines the number of CPUs, amount of memory,
+     * and other resources allocated to the instance.
+     * <p>
+     * You can enumerate all available shapes by calling {@link #listShapes(ListShapesRequest) listShapes}.
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
@@ -844,18 +889,15 @@ public final class LaunchInstanceDetails
     }
 
     /**
-     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-     * This field applies to both block volumes and boot volumes. By default, the value is false.
-     */
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPvEncryptionInTransitEnabled")
     private final Boolean isPvEncryptionInTransitEnabled;
 
     /**
-     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment.
-     * This field applies to both block volumes and boot volumes. By default, the value is false.
-     *
+     * Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * @return the value
-     */
+     **/
     public Boolean getIsPvEncryptionInTransitEnabled() {
         return isPvEncryptionInTransitEnabled;
     }
@@ -867,7 +909,6 @@ public final class LaunchInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

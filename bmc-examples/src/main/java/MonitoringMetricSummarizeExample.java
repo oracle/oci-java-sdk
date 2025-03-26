@@ -20,18 +20,20 @@ import java.util.concurrent.TimeUnit;
  * This class demonstrates how to use the Monitoring api in the Java SDK. This will cover:
  *
  * <ul>
- *   <li>Retrieving a summary of metric data
+ *   <li>Retrieving a summary of metric data</li>
  * </ul>
  *
  * This class makes the following assumptions:
- *
  * <ul>
- *   <li>The configuration file used by service clients will be sourced from the default location
- *       (~/.oci/config) and the DEFAULT profile will be used
- *   <li>Region where the example will be run is: us-phoenix-1
- *   <li>The user has the appropriate permissions to summarizeMetricsData in the compartment
- *       specified.
- *       <ul>
+ *   <li>
+ *      The configuration file used by service clients will be sourced from the default
+ *      location (~/.oci/config) and the DEFAULT profile will be used
+ *   </li>
+ *   <li>Region where the example will be run is: us-phoenix-1</li>
+ *   <li>
+ *      The user has the appropriate permissions to summarizeMetricsData in the compartment specified.
+ *   </li>
+ * <ul>
  */
 public class MonitoringMetricSummarizeExample {
 
@@ -48,7 +50,9 @@ public class MonitoringMetricSummarizeExample {
                         + "MonitoringMetricSummarizeExample <compartment> <namespace> <query> [oci-profile-name]");
     }
 
-    /** The entry point for the example. */
+    /**
+     * The entry point for the example.
+     */
     public static void main(String[] args) throws Exception {
         if (args.length < 3) {
             printUsageAndThrowException("Insufficient args\n");
@@ -86,18 +90,16 @@ public class MonitoringMetricSummarizeExample {
     }
 
     private static MonitoringClient getMonitoringClient(String profile) throws IOException {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final MonitoringClient monitoringClient =
-                MonitoringClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        final MonitoringClient monitoringClient = new MonitoringClient(provider);
+        monitoringClient.setRegion(Region.US_PHOENIX_1);
         return monitoringClient;
     }
 }

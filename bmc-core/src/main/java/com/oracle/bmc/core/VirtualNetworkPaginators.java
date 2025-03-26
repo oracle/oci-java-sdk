@@ -9,31 +9,23 @@ import com.oracle.bmc.core.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of VirtualNetwork where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of VirtualNetwork where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class VirtualNetworkPaginators {
     private final VirtualNetwork client;
 
@@ -42,18 +34,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * getAllDrgAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the getAllDrgAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<GetAllDrgAttachmentsResponse> getAllDrgAttachmentsResponseIterator(
             final GetAllDrgAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                GetAllDrgAttachmentsRequest.Builder,
-                GetAllDrgAttachmentsRequest,
+                GetAllDrgAttachmentsRequest.Builder, GetAllDrgAttachmentsRequest,
                 GetAllDrgAttachmentsResponse>(
                 new java.util.function.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
                     @Override
@@ -95,22 +85,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgAttachmentInfo} objects contained in responses from the
-     * getAllDrgAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgAttachmentInfo} objects
+     * contained in responses from the getAllDrgAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgAttachmentInfo} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgAttachmentInfo} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgAttachmentInfo> getAllDrgAttachmentsRecordIterator(
             final GetAllDrgAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                GetAllDrgAttachmentsRequest.Builder,
-                GetAllDrgAttachmentsRequest,
-                GetAllDrgAttachmentsResponse,
-                com.oracle.bmc.core.model.DrgAttachmentInfo>(
+                GetAllDrgAttachmentsRequest.Builder, GetAllDrgAttachmentsRequest,
+                GetAllDrgAttachmentsResponse, com.oracle.bmc.core.model.DrgAttachmentInfo>(
                 new java.util.function.Supplier<GetAllDrgAttachmentsRequest.Builder>() {
                     @Override
                     public GetAllDrgAttachmentsRequest.Builder get() {
@@ -160,12 +147,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listByoasns
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listByoasns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListByoasnsResponse> listByoasnsResponseIterator(
             final ListByoasnsRequest request) {
@@ -210,21 +196,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ByoasnSummary} objects contained in responses from the listByoasns
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ByoasnSummary} objects
+     * contained in responses from the listByoasns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ByoasnSummary} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ByoasnSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ByoasnSummary> listByoasnsRecordIterator(
             final ListByoasnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListByoasnsRequest.Builder,
-                ListByoasnsRequest,
-                ListByoasnsResponse,
+                ListByoasnsRequest.Builder, ListByoasnsRequest, ListByoasnsResponse,
                 com.oracle.bmc.core.model.ByoasnSummary>(
                 new java.util.function.Supplier<ListByoasnsRequest.Builder>() {
                     @Override
@@ -274,19 +257,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listByoipAllocatedRanges operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listByoipAllocatedRanges operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListByoipAllocatedRangesResponse> listByoipAllocatedRangesResponseIterator(
             final ListByoipAllocatedRangesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListByoipAllocatedRangesRequest.Builder,
-                ListByoipAllocatedRangesRequest,
+                ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
                 ListByoipAllocatedRangesResponse>(
                 new java.util.function.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
                     @Override
@@ -329,21 +309,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects contained in responses from the
-     * listByoipAllocatedRanges operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects
+     * contained in responses from the listByoipAllocatedRanges operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ByoipAllocatedRangeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>
             listByoipAllocatedRangesRecordIterator(final ListByoipAllocatedRangesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListByoipAllocatedRangesRequest.Builder,
-                ListByoipAllocatedRangesRequest,
+                ListByoipAllocatedRangesRequest.Builder, ListByoipAllocatedRangesRequest,
                 ListByoipAllocatedRangesResponse,
                 com.oracle.bmc.core.model.ByoipAllocatedRangeSummary>(
                 new java.util.function.Supplier<ListByoipAllocatedRangesRequest.Builder>() {
@@ -396,12 +373,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listByoipRanges operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listByoipRanges operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListByoipRangesResponse> listByoipRangesResponseIterator(
             final ListByoipRangesRequest request) {
@@ -446,21 +422,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ByoipRangeSummary} objects contained in responses from the
-     * listByoipRanges operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ByoipRangeSummary} objects
+     * contained in responses from the listByoipRanges operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ByoipRangeSummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ByoipRangeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ByoipRangeSummary> listByoipRangesRecordIterator(
             final ListByoipRangesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListByoipRangesRequest.Builder,
-                ListByoipRangesRequest,
-                ListByoipRangesResponse,
+                ListByoipRangesRequest.Builder, ListByoipRangesRequest, ListByoipRangesResponse,
                 com.oracle.bmc.core.model.ByoipRangeSummary>(
                 new java.util.function.Supplier<ListByoipRangesRequest.Builder>() {
                     @Override
@@ -510,18 +483,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCaptureFilters operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCaptureFilters operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCaptureFiltersResponse> listCaptureFiltersResponseIterator(
             final ListCaptureFiltersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCaptureFiltersRequest.Builder,
-                ListCaptureFiltersRequest,
+                ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
                 ListCaptureFiltersResponse>(
                 new java.util.function.Supplier<ListCaptureFiltersRequest.Builder>() {
                     @Override
@@ -563,22 +534,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CaptureFilter} objects contained in responses from the
-     * listCaptureFilters operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CaptureFilter} objects
+     * contained in responses from the listCaptureFilters operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CaptureFilter} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CaptureFilter} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CaptureFilter> listCaptureFiltersRecordIterator(
             final ListCaptureFiltersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCaptureFiltersRequest.Builder,
-                ListCaptureFiltersRequest,
-                ListCaptureFiltersResponse,
-                com.oracle.bmc.core.model.CaptureFilter>(
+                ListCaptureFiltersRequest.Builder, ListCaptureFiltersRequest,
+                ListCaptureFiltersResponse, com.oracle.bmc.core.model.CaptureFilter>(
                 new java.util.function.Supplier<ListCaptureFiltersRequest.Builder>() {
                     @Override
                     public ListCaptureFiltersRequest.Builder get() {
@@ -628,18 +596,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCpeDeviceShapes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCpeDeviceShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCpeDeviceShapesResponse> listCpeDeviceShapesResponseIterator(
             final ListCpeDeviceShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCpeDeviceShapesRequest.Builder,
-                ListCpeDeviceShapesRequest,
+                ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
                 ListCpeDeviceShapesResponse>(
                 new java.util.function.Supplier<ListCpeDeviceShapesRequest.Builder>() {
                     @Override
@@ -681,22 +647,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects contained in responses from the
-     * listCpeDeviceShapes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects
+     * contained in responses from the listCpeDeviceShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CpeDeviceShapeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CpeDeviceShapeSummary>
             listCpeDeviceShapesRecordIterator(final ListCpeDeviceShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCpeDeviceShapesRequest.Builder,
-                ListCpeDeviceShapesRequest,
-                ListCpeDeviceShapesResponse,
-                com.oracle.bmc.core.model.CpeDeviceShapeSummary>(
+                ListCpeDeviceShapesRequest.Builder, ListCpeDeviceShapesRequest,
+                ListCpeDeviceShapesResponse, com.oracle.bmc.core.model.CpeDeviceShapeSummary>(
                 new java.util.function.Supplier<ListCpeDeviceShapesRequest.Builder>() {
                     @Override
                     public ListCpeDeviceShapesRequest.Builder get() {
@@ -746,12 +709,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listCpes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCpes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCpesResponse> listCpesResponseIterator(final ListCpesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -795,20 +757,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Cpe}
-     * objects contained in responses from the listCpes operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Cpe} objects
+     * contained in responses from the listCpes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Cpe} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Cpe} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Cpe> listCpesRecordIterator(
             final ListCpesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCpesRequest.Builder,
-                ListCpesRequest,
-                ListCpesResponse,
+                ListCpesRequest.Builder, ListCpesRequest, ListCpesResponse,
                 com.oracle.bmc.core.model.Cpe>(
                 new java.util.function.Supplier<ListCpesRequest.Builder>() {
                     @Override
@@ -857,19 +817,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCrossConnectGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listCrossConnectGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCrossConnectGroupsResponse> listCrossConnectGroupsResponseIterator(
             final ListCrossConnectGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCrossConnectGroupsRequest.Builder,
-                ListCrossConnectGroupsRequest,
+                ListCrossConnectGroupsRequest.Builder, ListCrossConnectGroupsRequest,
                 ListCrossConnectGroupsResponse>(
                 new java.util.function.Supplier<ListCrossConnectGroupsRequest.Builder>() {
                     @Override
@@ -912,23 +869,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CrossConnectGroup} objects contained in responses from the
-     * listCrossConnectGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CrossConnectGroup} objects
+     * contained in responses from the listCrossConnectGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CrossConnectGroup} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CrossConnectGroup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CrossConnectGroup>
             listCrossConnectGroupsRecordIterator(final ListCrossConnectGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCrossConnectGroupsRequest.Builder,
-                ListCrossConnectGroupsRequest,
-                ListCrossConnectGroupsResponse,
-                com.oracle.bmc.core.model.CrossConnectGroup>(
+                ListCrossConnectGroupsRequest.Builder, ListCrossConnectGroupsRequest,
+                ListCrossConnectGroupsResponse, com.oracle.bmc.core.model.CrossConnectGroup>(
                 new java.util.function.Supplier<ListCrossConnectGroupsRequest.Builder>() {
                     @Override
                     public ListCrossConnectGroupsRequest.Builder get() {
@@ -979,19 +932,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCrossConnectLocations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listCrossConnectLocations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCrossConnectLocationsResponse> listCrossConnectLocationsResponseIterator(
             final ListCrossConnectLocationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCrossConnectLocationsRequest.Builder,
-                ListCrossConnectLocationsRequest,
+                ListCrossConnectLocationsRequest.Builder, ListCrossConnectLocationsRequest,
                 ListCrossConnectLocationsResponse>(
                 new java.util.function.Supplier<ListCrossConnectLocationsRequest.Builder>() {
                     @Override
@@ -1034,24 +984,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CrossConnectLocation} objects contained in responses from the
-     * listCrossConnectLocations operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CrossConnectLocation} objects
+     * contained in responses from the listCrossConnectLocations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CrossConnectLocation} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CrossConnectLocation} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CrossConnectLocation>
             listCrossConnectLocationsRecordIterator(
                     final ListCrossConnectLocationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCrossConnectLocationsRequest.Builder,
-                ListCrossConnectLocationsRequest,
-                ListCrossConnectLocationsResponse,
-                com.oracle.bmc.core.model.CrossConnectLocation>(
+                ListCrossConnectLocationsRequest.Builder, ListCrossConnectLocationsRequest,
+                ListCrossConnectLocationsResponse, com.oracle.bmc.core.model.CrossConnectLocation>(
                 new java.util.function.Supplier<ListCrossConnectLocationsRequest.Builder>() {
                     @Override
                     public ListCrossConnectLocationsRequest.Builder get() {
@@ -1102,18 +1048,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCrossConnects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCrossConnects operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCrossConnectsResponse> listCrossConnectsResponseIterator(
             final ListCrossConnectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListCrossConnectsRequest.Builder,
-                ListCrossConnectsRequest,
+                ListCrossConnectsRequest.Builder, ListCrossConnectsRequest,
                 ListCrossConnectsResponse>(
                 new java.util.function.Supplier<ListCrossConnectsRequest.Builder>() {
                     @Override
@@ -1155,22 +1099,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CrossConnect} objects contained in responses from the
-     * listCrossConnects operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CrossConnect} objects
+     * contained in responses from the listCrossConnects operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CrossConnect} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CrossConnect} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CrossConnect> listCrossConnectsRecordIterator(
             final ListCrossConnectsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCrossConnectsRequest.Builder,
-                ListCrossConnectsRequest,
-                ListCrossConnectsResponse,
-                com.oracle.bmc.core.model.CrossConnect>(
+                ListCrossConnectsRequest.Builder, ListCrossConnectsRequest,
+                ListCrossConnectsResponse, com.oracle.bmc.core.model.CrossConnect>(
                 new java.util.function.Supplier<ListCrossConnectsRequest.Builder>() {
                     @Override
                     public ListCrossConnectsRequest.Builder get() {
@@ -1220,21 +1161,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCrossconnectPortSpeedShapes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCrossconnectPortSpeedShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCrossconnectPortSpeedShapesResponse>
             listCrossconnectPortSpeedShapesResponseIterator(
                     final ListCrossconnectPortSpeedShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListCrossconnectPortSpeedShapesRequest.Builder,
-                ListCrossconnectPortSpeedShapesRequest,
-                ListCrossconnectPortSpeedShapesResponse>(
+                ListCrossconnectPortSpeedShapesRequest, ListCrossconnectPortSpeedShapesResponse>(
                 new java.util.function.Supplier<ListCrossconnectPortSpeedShapesRequest.Builder>() {
                     @Override
                     public ListCrossconnectPortSpeedShapesRequest.Builder get() {
@@ -1277,23 +1215,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.CrossConnectPortSpeedShape} objects contained in responses from the
-     * listCrossconnectPortSpeedShapes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.CrossConnectPortSpeedShape} objects
+     * contained in responses from the listCrossconnectPortSpeedShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.CrossConnectPortSpeedShape} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.CrossConnectPortSpeedShape} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.CrossConnectPortSpeedShape>
             listCrossconnectPortSpeedShapesRecordIterator(
                     final ListCrossconnectPortSpeedShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListCrossconnectPortSpeedShapesRequest.Builder,
-                ListCrossconnectPortSpeedShapesRequest,
-                ListCrossconnectPortSpeedShapesResponse,
+                ListCrossconnectPortSpeedShapesRequest, ListCrossconnectPortSpeedShapesResponse,
                 com.oracle.bmc.core.model.CrossConnectPortSpeedShape>(
                 new java.util.function.Supplier<ListCrossconnectPortSpeedShapesRequest.Builder>() {
                     @Override
@@ -1346,12 +1281,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDhcpOptions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDhcpOptions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDhcpOptionsResponse> listDhcpOptionsResponseIterator(
             final ListDhcpOptionsRequest request) {
@@ -1396,21 +1330,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DhcpOptions} objects contained in responses from the
-     * listDhcpOptions operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DhcpOptions} objects
+     * contained in responses from the listDhcpOptions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DhcpOptions} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DhcpOptions} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DhcpOptions> listDhcpOptionsRecordIterator(
             final ListDhcpOptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDhcpOptionsRequest.Builder,
-                ListDhcpOptionsRequest,
-                ListDhcpOptionsResponse,
+                ListDhcpOptionsRequest.Builder, ListDhcpOptionsRequest, ListDhcpOptionsResponse,
                 com.oracle.bmc.core.model.DhcpOptions>(
                 new java.util.function.Supplier<ListDhcpOptionsRequest.Builder>() {
                     @Override
@@ -1460,18 +1391,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDrgAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgAttachmentsResponse> listDrgAttachmentsResponseIterator(
             final ListDrgAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDrgAttachmentsRequest.Builder,
-                ListDrgAttachmentsRequest,
+                ListDrgAttachmentsRequest.Builder, ListDrgAttachmentsRequest,
                 ListDrgAttachmentsResponse>(
                 new java.util.function.Supplier<ListDrgAttachmentsRequest.Builder>() {
                     @Override
@@ -1513,22 +1442,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgAttachment} objects contained in responses from the
-     * listDrgAttachments operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgAttachment} objects
+     * contained in responses from the listDrgAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgAttachment} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgAttachment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgAttachment> listDrgAttachmentsRecordIterator(
             final ListDrgAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDrgAttachmentsRequest.Builder,
-                ListDrgAttachmentsRequest,
-                ListDrgAttachmentsResponse,
-                com.oracle.bmc.core.model.DrgAttachment>(
+                ListDrgAttachmentsRequest.Builder, ListDrgAttachmentsRequest,
+                ListDrgAttachmentsResponse, com.oracle.bmc.core.model.DrgAttachment>(
                 new java.util.function.Supplier<ListDrgAttachmentsRequest.Builder>() {
                     @Override
                     public ListDrgAttachmentsRequest.Builder get() {
@@ -1578,13 +1504,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDrgRouteDistributionStatements operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgRouteDistributionStatements operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgRouteDistributionStatementsResponse>
             listDrgRouteDistributionStatementsResponseIterator(
@@ -1637,15 +1561,13 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgRouteDistributionStatement} objects contained in responses from
-     * the listDrgRouteDistributionStatements operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgRouteDistributionStatement} objects
+     * contained in responses from the listDrgRouteDistributionStatements operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgRouteDistributionStatement} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgRouteDistributionStatement} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgRouteDistributionStatement>
             listDrgRouteDistributionStatementsRecordIterator(
@@ -1708,19 +1630,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDrgRouteDistributions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgRouteDistributions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgRouteDistributionsResponse> listDrgRouteDistributionsResponseIterator(
             final ListDrgRouteDistributionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDrgRouteDistributionsRequest.Builder,
-                ListDrgRouteDistributionsRequest,
+                ListDrgRouteDistributionsRequest.Builder, ListDrgRouteDistributionsRequest,
                 ListDrgRouteDistributionsResponse>(
                 new java.util.function.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
                     @Override
@@ -1763,24 +1682,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgRouteDistribution} objects contained in responses from the
-     * listDrgRouteDistributions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgRouteDistribution} objects
+     * contained in responses from the listDrgRouteDistributions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgRouteDistribution} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgRouteDistribution} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgRouteDistribution>
             listDrgRouteDistributionsRecordIterator(
                     final ListDrgRouteDistributionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDrgRouteDistributionsRequest.Builder,
-                ListDrgRouteDistributionsRequest,
-                ListDrgRouteDistributionsResponse,
-                com.oracle.bmc.core.model.DrgRouteDistribution>(
+                ListDrgRouteDistributionsRequest.Builder, ListDrgRouteDistributionsRequest,
+                ListDrgRouteDistributionsResponse, com.oracle.bmc.core.model.DrgRouteDistribution>(
                 new java.util.function.Supplier<ListDrgRouteDistributionsRequest.Builder>() {
                     @Override
                     public ListDrgRouteDistributionsRequest.Builder get() {
@@ -1831,18 +1746,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDrgRouteRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgRouteRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgRouteRulesResponse> listDrgRouteRulesResponseIterator(
             final ListDrgRouteRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDrgRouteRulesRequest.Builder,
-                ListDrgRouteRulesRequest,
+                ListDrgRouteRulesRequest.Builder, ListDrgRouteRulesRequest,
                 ListDrgRouteRulesResponse>(
                 new java.util.function.Supplier<ListDrgRouteRulesRequest.Builder>() {
                     @Override
@@ -1884,22 +1797,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgRouteRule} objects contained in responses from the
-     * listDrgRouteRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgRouteRule} objects
+     * contained in responses from the listDrgRouteRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgRouteRule} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgRouteRule} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgRouteRule> listDrgRouteRulesRecordIterator(
             final ListDrgRouteRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDrgRouteRulesRequest.Builder,
-                ListDrgRouteRulesRequest,
-                ListDrgRouteRulesResponse,
-                com.oracle.bmc.core.model.DrgRouteRule>(
+                ListDrgRouteRulesRequest.Builder, ListDrgRouteRulesRequest,
+                ListDrgRouteRulesResponse, com.oracle.bmc.core.model.DrgRouteRule>(
                 new java.util.function.Supplier<ListDrgRouteRulesRequest.Builder>() {
                     @Override
                     public ListDrgRouteRulesRequest.Builder get() {
@@ -1949,18 +1859,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDrgRouteTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgRouteTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgRouteTablesResponse> listDrgRouteTablesResponseIterator(
             final ListDrgRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDrgRouteTablesRequest.Builder,
-                ListDrgRouteTablesRequest,
+                ListDrgRouteTablesRequest.Builder, ListDrgRouteTablesRequest,
                 ListDrgRouteTablesResponse>(
                 new java.util.function.Supplier<ListDrgRouteTablesRequest.Builder>() {
                     @Override
@@ -2002,22 +1910,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.DrgRouteTable} objects contained in responses from the
-     * listDrgRouteTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.DrgRouteTable} objects
+     * contained in responses from the listDrgRouteTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.DrgRouteTable} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.DrgRouteTable} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.DrgRouteTable> listDrgRouteTablesRecordIterator(
             final ListDrgRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDrgRouteTablesRequest.Builder,
-                ListDrgRouteTablesRequest,
-                ListDrgRouteTablesResponse,
-                com.oracle.bmc.core.model.DrgRouteTable>(
+                ListDrgRouteTablesRequest.Builder, ListDrgRouteTablesRequest,
+                ListDrgRouteTablesResponse, com.oracle.bmc.core.model.DrgRouteTable>(
                 new java.util.function.Supplier<ListDrgRouteTablesRequest.Builder>() {
                     @Override
                     public ListDrgRouteTablesRequest.Builder get() {
@@ -2067,12 +1972,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listDrgs
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDrgs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDrgsResponse> listDrgsResponseIterator(final ListDrgsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -2116,20 +2020,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Drg}
-     * objects contained in responses from the listDrgs operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Drg} objects
+     * contained in responses from the listDrgs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Drg} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Drg} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Drg> listDrgsRecordIterator(
             final ListDrgsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDrgsRequest.Builder,
-                ListDrgsRequest,
-                ListDrgsResponse,
+                ListDrgsRequest.Builder, ListDrgsRequest, ListDrgsResponse,
                 com.oracle.bmc.core.model.Drg>(
                 new java.util.function.Supplier<ListDrgsRequest.Builder>() {
                     @Override
@@ -2178,21 +2080,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFastConnectProviderServices operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFastConnectProviderServices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFastConnectProviderServicesResponse>
             listFastConnectProviderServicesResponseIterator(
                     final ListFastConnectProviderServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListFastConnectProviderServicesRequest.Builder,
-                ListFastConnectProviderServicesRequest,
-                ListFastConnectProviderServicesResponse>(
+                ListFastConnectProviderServicesRequest, ListFastConnectProviderServicesResponse>(
                 new java.util.function.Supplier<ListFastConnectProviderServicesRequest.Builder>() {
                     @Override
                     public ListFastConnectProviderServicesRequest.Builder get() {
@@ -2235,23 +2134,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.FastConnectProviderService} objects contained in responses from the
-     * listFastConnectProviderServices operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.FastConnectProviderService} objects
+     * contained in responses from the listFastConnectProviderServices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.FastConnectProviderService} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.FastConnectProviderService} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.FastConnectProviderService>
             listFastConnectProviderServicesRecordIterator(
                     final ListFastConnectProviderServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListFastConnectProviderServicesRequest.Builder,
-                ListFastConnectProviderServicesRequest,
-                ListFastConnectProviderServicesResponse,
+                ListFastConnectProviderServicesRequest, ListFastConnectProviderServicesResponse,
                 com.oracle.bmc.core.model.FastConnectProviderService>(
                 new java.util.function.Supplier<ListFastConnectProviderServicesRequest.Builder>() {
                     @Override
@@ -2304,13 +2200,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFastConnectProviderVirtualCircuitBandwidthShapes operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFastConnectProviderVirtualCircuitBandwidthShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFastConnectProviderVirtualCircuitBandwidthShapesResponse>
             listFastConnectProviderVirtualCircuitBandwidthShapesResponseIterator(
@@ -2368,15 +2262,13 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects contained in responses from
-     * the listFastConnectProviderVirtualCircuitBandwidthShapes operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects
+     * contained in responses from the listFastConnectProviderVirtualCircuitBandwidthShapes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>
             listFastConnectProviderVirtualCircuitBandwidthShapesRecordIterator(
@@ -2446,21 +2338,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIPSecConnectionTunnelRoutes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIPSecConnectionTunnelRoutes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIPSecConnectionTunnelRoutesResponse>
             listIPSecConnectionTunnelRoutesResponseIterator(
                     final ListIPSecConnectionTunnelRoutesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListIPSecConnectionTunnelRoutesRequest.Builder,
-                ListIPSecConnectionTunnelRoutesRequest,
-                ListIPSecConnectionTunnelRoutesResponse>(
+                ListIPSecConnectionTunnelRoutesRequest, ListIPSecConnectionTunnelRoutesResponse>(
                 new java.util.function.Supplier<ListIPSecConnectionTunnelRoutesRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionTunnelRoutesRequest.Builder get() {
@@ -2503,23 +2392,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.TunnelRouteSummary} objects contained in responses from the
-     * listIPSecConnectionTunnelRoutes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.TunnelRouteSummary} objects
+     * contained in responses from the listIPSecConnectionTunnelRoutes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.TunnelRouteSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.TunnelRouteSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.TunnelRouteSummary>
             listIPSecConnectionTunnelRoutesRecordIterator(
                     final ListIPSecConnectionTunnelRoutesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListIPSecConnectionTunnelRoutesRequest.Builder,
-                ListIPSecConnectionTunnelRoutesRequest,
-                ListIPSecConnectionTunnelRoutesResponse,
+                ListIPSecConnectionTunnelRoutesRequest, ListIPSecConnectionTunnelRoutesResponse,
                 com.oracle.bmc.core.model.TunnelRouteSummary>(
                 new java.util.function.Supplier<ListIPSecConnectionTunnelRoutesRequest.Builder>() {
                     @Override
@@ -2572,13 +2458,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIPSecConnectionTunnelSecurityAssociations operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIPSecConnectionTunnelSecurityAssociations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIPSecConnectionTunnelSecurityAssociationsResponse>
             listIPSecConnectionTunnelSecurityAssociationsResponseIterator(
@@ -2634,15 +2518,13 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} objects contained in responses
-     * from the listIPSecConnectionTunnelSecurityAssociations operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} objects
+     * contained in responses from the listIPSecConnectionTunnelSecurityAssociations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.TunnelSecurityAssociationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.TunnelSecurityAssociationSummary>
             listIPSecConnectionTunnelSecurityAssociationsRecordIterator(
@@ -2710,19 +2592,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIPSecConnectionTunnels operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listIPSecConnectionTunnels operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIPSecConnectionTunnelsResponse> listIPSecConnectionTunnelsResponseIterator(
             final ListIPSecConnectionTunnelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIPSecConnectionTunnelsRequest.Builder,
-                ListIPSecConnectionTunnelsRequest,
+                ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
                 ListIPSecConnectionTunnelsResponse>(
                 new java.util.function.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
                     @Override
@@ -2765,22 +2644,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.IPSecConnectionTunnel} objects contained in responses from the
-     * listIPSecConnectionTunnels operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.IPSecConnectionTunnel} objects
+     * contained in responses from the listIPSecConnectionTunnels operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.IPSecConnectionTunnel} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.IPSecConnectionTunnel} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.IPSecConnectionTunnel>
             listIPSecConnectionTunnelsRecordIterator(
                     final ListIPSecConnectionTunnelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIPSecConnectionTunnelsRequest.Builder,
-                ListIPSecConnectionTunnelsRequest,
+                ListIPSecConnectionTunnelsRequest.Builder, ListIPSecConnectionTunnelsRequest,
                 ListIPSecConnectionTunnelsResponse,
                 com.oracle.bmc.core.model.IPSecConnectionTunnel>(
                 new java.util.function.Supplier<ListIPSecConnectionTunnelsRequest.Builder>() {
@@ -2833,18 +2709,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIPSecConnections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIPSecConnections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIPSecConnectionsResponse> listIPSecConnectionsResponseIterator(
             final ListIPSecConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIPSecConnectionsRequest.Builder,
-                ListIPSecConnectionsRequest,
+                ListIPSecConnectionsRequest.Builder, ListIPSecConnectionsRequest,
                 ListIPSecConnectionsResponse>(
                 new java.util.function.Supplier<ListIPSecConnectionsRequest.Builder>() {
                     @Override
@@ -2886,22 +2760,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.IPSecConnection} objects contained in responses from the
-     * listIPSecConnections operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.IPSecConnection} objects
+     * contained in responses from the listIPSecConnections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.IPSecConnection} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.IPSecConnection} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.IPSecConnection> listIPSecConnectionsRecordIterator(
             final ListIPSecConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIPSecConnectionsRequest.Builder,
-                ListIPSecConnectionsRequest,
-                ListIPSecConnectionsResponse,
-                com.oracle.bmc.core.model.IPSecConnection>(
+                ListIPSecConnectionsRequest.Builder, ListIPSecConnectionsRequest,
+                ListIPSecConnectionsResponse, com.oracle.bmc.core.model.IPSecConnection>(
                 new java.util.function.Supplier<ListIPSecConnectionsRequest.Builder>() {
                     @Override
                     public ListIPSecConnectionsRequest.Builder get() {
@@ -2951,18 +2822,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listInternetGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listInternetGateways operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListInternetGatewaysResponse> listInternetGatewaysResponseIterator(
             final ListInternetGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListInternetGatewaysRequest.Builder,
-                ListInternetGatewaysRequest,
+                ListInternetGatewaysRequest.Builder, ListInternetGatewaysRequest,
                 ListInternetGatewaysResponse>(
                 new java.util.function.Supplier<ListInternetGatewaysRequest.Builder>() {
                     @Override
@@ -3004,22 +2873,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.InternetGateway} objects contained in responses from the
-     * listInternetGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.InternetGateway} objects
+     * contained in responses from the listInternetGateways operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.InternetGateway} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.InternetGateway} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.InternetGateway> listInternetGatewaysRecordIterator(
             final ListInternetGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListInternetGatewaysRequest.Builder,
-                ListInternetGatewaysRequest,
-                ListInternetGatewaysResponse,
-                com.oracle.bmc.core.model.InternetGateway>(
+                ListInternetGatewaysRequest.Builder, ListInternetGatewaysRequest,
+                ListInternetGatewaysResponse, com.oracle.bmc.core.model.InternetGateway>(
                 new java.util.function.Supplier<ListInternetGatewaysRequest.Builder>() {
                     @Override
                     public ListInternetGatewaysRequest.Builder get() {
@@ -3069,12 +2935,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listIpv6s
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIpv6s operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIpv6sResponse> listIpv6sResponseIterator(final ListIpv6sRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -3118,20 +2983,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Ipv6}
-     * objects contained in responses from the listIpv6s operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Ipv6} objects
+     * contained in responses from the listIpv6s operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Ipv6} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Ipv6} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Ipv6> listIpv6sRecordIterator(
             final ListIpv6sRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIpv6sRequest.Builder,
-                ListIpv6sRequest,
-                ListIpv6sResponse,
+                ListIpv6sRequest.Builder, ListIpv6sRequest, ListIpv6sResponse,
                 com.oracle.bmc.core.model.Ipv6>(
                 new java.util.function.Supplier<ListIpv6sRequest.Builder>() {
                     @Override
@@ -3180,19 +3043,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLocalPeeringGateways operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listLocalPeeringGateways operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLocalPeeringGatewaysResponse> listLocalPeeringGatewaysResponseIterator(
             final ListLocalPeeringGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLocalPeeringGatewaysRequest.Builder,
-                ListLocalPeeringGatewaysRequest,
+                ListLocalPeeringGatewaysRequest.Builder, ListLocalPeeringGatewaysRequest,
                 ListLocalPeeringGatewaysResponse>(
                 new java.util.function.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
                     @Override
@@ -3235,23 +3095,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.LocalPeeringGateway} objects contained in responses from the
-     * listLocalPeeringGateways operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.LocalPeeringGateway} objects
+     * contained in responses from the listLocalPeeringGateways operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.LocalPeeringGateway} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.LocalPeeringGateway} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.LocalPeeringGateway>
             listLocalPeeringGatewaysRecordIterator(final ListLocalPeeringGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLocalPeeringGatewaysRequest.Builder,
-                ListLocalPeeringGatewaysRequest,
-                ListLocalPeeringGatewaysResponse,
-                com.oracle.bmc.core.model.LocalPeeringGateway>(
+                ListLocalPeeringGatewaysRequest.Builder, ListLocalPeeringGatewaysRequest,
+                ListLocalPeeringGatewaysResponse, com.oracle.bmc.core.model.LocalPeeringGateway>(
                 new java.util.function.Supplier<ListLocalPeeringGatewaysRequest.Builder>() {
                     @Override
                     public ListLocalPeeringGatewaysRequest.Builder get() {
@@ -3302,12 +3158,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNatGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNatGateways operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNatGatewaysResponse> listNatGatewaysResponseIterator(
             final ListNatGatewaysRequest request) {
@@ -3352,21 +3207,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.NatGateway} objects contained in responses from the listNatGateways
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NatGateway} objects
+     * contained in responses from the listNatGateways operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.NatGateway} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NatGateway} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.NatGateway> listNatGatewaysRecordIterator(
             final ListNatGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNatGatewaysRequest.Builder,
-                ListNatGatewaysRequest,
-                ListNatGatewaysResponse,
+                ListNatGatewaysRequest.Builder, ListNatGatewaysRequest, ListNatGatewaysResponse,
                 com.oracle.bmc.core.model.NatGateway>(
                 new java.util.function.Supplier<ListNatGatewaysRequest.Builder>() {
                     @Override
@@ -3416,13 +3268,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkSecurityGroupSecurityRules operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroupSecurityRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkSecurityGroupSecurityRulesResponse>
             listNetworkSecurityGroupSecurityRulesResponseIterator(
@@ -3475,15 +3325,13 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.SecurityRule} objects contained in responses from the
-     * listNetworkSecurityGroupSecurityRules operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.SecurityRule} objects
+     * contained in responses from the listNetworkSecurityGroupSecurityRules operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.SecurityRule} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.SecurityRule} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.SecurityRule>
             listNetworkSecurityGroupSecurityRulesRecordIterator(
@@ -3546,20 +3394,17 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkSecurityGroupVnics operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroupVnics operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkSecurityGroupVnicsResponse>
             listNetworkSecurityGroupVnicsResponseIterator(
                     final ListNetworkSecurityGroupVnicsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkSecurityGroupVnicsRequest.Builder,
-                ListNetworkSecurityGroupVnicsRequest,
+                ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
                 ListNetworkSecurityGroupVnicsResponse>(
                 new java.util.function.Supplier<ListNetworkSecurityGroupVnicsRequest.Builder>() {
                     @Override
@@ -3603,22 +3448,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects contained in responses from the
-     * listNetworkSecurityGroupVnics operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects
+     * contained in responses from the listNetworkSecurityGroupVnics operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroupVnic} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.NetworkSecurityGroupVnic>
             listNetworkSecurityGroupVnicsRecordIterator(
                     final ListNetworkSecurityGroupVnicsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkSecurityGroupVnicsRequest.Builder,
-                ListNetworkSecurityGroupVnicsRequest,
+                ListNetworkSecurityGroupVnicsRequest.Builder, ListNetworkSecurityGroupVnicsRequest,
                 ListNetworkSecurityGroupVnicsResponse,
                 com.oracle.bmc.core.model.NetworkSecurityGroupVnic>(
                 new java.util.function.Supplier<ListNetworkSecurityGroupVnicsRequest.Builder>() {
@@ -3672,19 +3514,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkSecurityGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkSecurityGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkSecurityGroupsResponse> listNetworkSecurityGroupsResponseIterator(
             final ListNetworkSecurityGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkSecurityGroupsRequest.Builder,
-                ListNetworkSecurityGroupsRequest,
+                ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
                 ListNetworkSecurityGroupsResponse>(
                 new java.util.function.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
                     @Override
@@ -3727,24 +3566,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.NetworkSecurityGroup} objects contained in responses from the
-     * listNetworkSecurityGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroup} objects
+     * contained in responses from the listNetworkSecurityGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.NetworkSecurityGroup} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.NetworkSecurityGroup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.NetworkSecurityGroup>
             listNetworkSecurityGroupsRecordIterator(
                     final ListNetworkSecurityGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkSecurityGroupsRequest.Builder,
-                ListNetworkSecurityGroupsRequest,
-                ListNetworkSecurityGroupsResponse,
-                com.oracle.bmc.core.model.NetworkSecurityGroup>(
+                ListNetworkSecurityGroupsRequest.Builder, ListNetworkSecurityGroupsRequest,
+                ListNetworkSecurityGroupsResponse, com.oracle.bmc.core.model.NetworkSecurityGroup>(
                 new java.util.function.Supplier<ListNetworkSecurityGroupsRequest.Builder>() {
                     @Override
                     public ListNetworkSecurityGroupsRequest.Builder get() {
@@ -3795,12 +3630,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPrivateIps
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPrivateIps operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPrivateIpsResponse> listPrivateIpsResponseIterator(
             final ListPrivateIpsRequest request) {
@@ -3845,21 +3679,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.PrivateIp} objects contained in responses from the listPrivateIps
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.PrivateIp} objects
+     * contained in responses from the listPrivateIps operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.PrivateIp} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.PrivateIp} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.PrivateIp> listPrivateIpsRecordIterator(
             final ListPrivateIpsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPrivateIpsRequest.Builder,
-                ListPrivateIpsRequest,
-                ListPrivateIpsResponse,
+                ListPrivateIpsRequest.Builder, ListPrivateIpsRequest, ListPrivateIpsResponse,
                 com.oracle.bmc.core.model.PrivateIp>(
                 new java.util.function.Supplier<ListPrivateIpsRequest.Builder>() {
                     @Override
@@ -3909,18 +3740,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listPublicIpPools operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPublicIpPools operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPublicIpPoolsResponse> listPublicIpPoolsResponseIterator(
             final ListPublicIpPoolsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListPublicIpPoolsRequest.Builder,
-                ListPublicIpPoolsRequest,
+                ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
                 ListPublicIpPoolsResponse>(
                 new java.util.function.Supplier<ListPublicIpPoolsRequest.Builder>() {
                     @Override
@@ -3962,22 +3791,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.PublicIpPoolSummary} objects contained in responses from the
-     * listPublicIpPools operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.PublicIpPoolSummary} objects
+     * contained in responses from the listPublicIpPools operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.PublicIpPoolSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.PublicIpPoolSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.PublicIpPoolSummary> listPublicIpPoolsRecordIterator(
             final ListPublicIpPoolsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPublicIpPoolsRequest.Builder,
-                ListPublicIpPoolsRequest,
-                ListPublicIpPoolsResponse,
-                com.oracle.bmc.core.model.PublicIpPoolSummary>(
+                ListPublicIpPoolsRequest.Builder, ListPublicIpPoolsRequest,
+                ListPublicIpPoolsResponse, com.oracle.bmc.core.model.PublicIpPoolSummary>(
                 new java.util.function.Supplier<ListPublicIpPoolsRequest.Builder>() {
                     @Override
                     public ListPublicIpPoolsRequest.Builder get() {
@@ -4027,12 +3853,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listPublicIps
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listPublicIps operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListPublicIpsResponse> listPublicIpsResponseIterator(
             final ListPublicIpsRequest request) {
@@ -4077,21 +3902,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.PublicIp}
-     * objects contained in responses from the listPublicIps operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.PublicIp} objects
+     * contained in responses from the listPublicIps operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.PublicIp} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.PublicIp} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.PublicIp> listPublicIpsRecordIterator(
             final ListPublicIpsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListPublicIpsRequest.Builder,
-                ListPublicIpsRequest,
-                ListPublicIpsResponse,
+                ListPublicIpsRequest.Builder, ListPublicIpsRequest, ListPublicIpsResponse,
                 com.oracle.bmc.core.model.PublicIp>(
                 new java.util.function.Supplier<ListPublicIpsRequest.Builder>() {
                     @Override
@@ -4141,20 +3963,17 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRemotePeeringConnections operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listRemotePeeringConnections operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRemotePeeringConnectionsResponse>
             listRemotePeeringConnectionsResponseIterator(
                     final ListRemotePeeringConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListRemotePeeringConnectionsRequest.Builder,
-                ListRemotePeeringConnectionsRequest,
+                ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
                 ListRemotePeeringConnectionsResponse>(
                 new java.util.function.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
                     @Override
@@ -4198,22 +4017,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.RemotePeeringConnection} objects contained in responses from the
-     * listRemotePeeringConnections operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.RemotePeeringConnection} objects
+     * contained in responses from the listRemotePeeringConnections operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.RemotePeeringConnection} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.RemotePeeringConnection} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.RemotePeeringConnection>
             listRemotePeeringConnectionsRecordIterator(
                     final ListRemotePeeringConnectionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRemotePeeringConnectionsRequest.Builder,
-                ListRemotePeeringConnectionsRequest,
+                ListRemotePeeringConnectionsRequest.Builder, ListRemotePeeringConnectionsRequest,
                 ListRemotePeeringConnectionsResponse,
                 com.oracle.bmc.core.model.RemotePeeringConnection>(
                 new java.util.function.Supplier<ListRemotePeeringConnectionsRequest.Builder>() {
@@ -4267,12 +4083,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRouteTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listRouteTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRouteTablesResponse> listRouteTablesResponseIterator(
             final ListRouteTablesRequest request) {
@@ -4317,21 +4132,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.RouteTable} objects contained in responses from the listRouteTables
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.RouteTable} objects
+     * contained in responses from the listRouteTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.RouteTable} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.RouteTable} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.RouteTable> listRouteTablesRecordIterator(
             final ListRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRouteTablesRequest.Builder,
-                ListRouteTablesRequest,
-                ListRouteTablesResponse,
+                ListRouteTablesRequest.Builder, ListRouteTablesRequest, ListRouteTablesResponse,
                 com.oracle.bmc.core.model.RouteTable>(
                 new java.util.function.Supplier<ListRouteTablesRequest.Builder>() {
                     @Override
@@ -4381,18 +4193,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityLists operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityListsResponse> listSecurityListsResponseIterator(
             final ListSecurityListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityListsRequest.Builder,
-                ListSecurityListsRequest,
+                ListSecurityListsRequest.Builder, ListSecurityListsRequest,
                 ListSecurityListsResponse>(
                 new java.util.function.Supplier<ListSecurityListsRequest.Builder>() {
                     @Override
@@ -4434,22 +4244,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.SecurityList} objects contained in responses from the
-     * listSecurityLists operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.SecurityList} objects
+     * contained in responses from the listSecurityLists operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.SecurityList} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.SecurityList} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.SecurityList> listSecurityListsRecordIterator(
             final ListSecurityListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityListsRequest.Builder,
-                ListSecurityListsRequest,
-                ListSecurityListsResponse,
-                com.oracle.bmc.core.model.SecurityList>(
+                ListSecurityListsRequest.Builder, ListSecurityListsRequest,
+                ListSecurityListsResponse, com.oracle.bmc.core.model.SecurityList>(
                 new java.util.function.Supplier<ListSecurityListsRequest.Builder>() {
                     @Override
                     public ListSecurityListsRequest.Builder get() {
@@ -4499,18 +4306,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceGateways operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceGatewaysResponse> listServiceGatewaysResponseIterator(
             final ListServiceGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListServiceGatewaysRequest.Builder,
-                ListServiceGatewaysRequest,
+                ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
                 ListServiceGatewaysResponse>(
                 new java.util.function.Supplier<ListServiceGatewaysRequest.Builder>() {
                     @Override
@@ -4552,22 +4357,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.ServiceGateway} objects contained in responses from the
-     * listServiceGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.ServiceGateway} objects
+     * contained in responses from the listServiceGateways operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.ServiceGateway} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.ServiceGateway} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.ServiceGateway> listServiceGatewaysRecordIterator(
             final ListServiceGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServiceGatewaysRequest.Builder,
-                ListServiceGatewaysRequest,
-                ListServiceGatewaysResponse,
-                com.oracle.bmc.core.model.ServiceGateway>(
+                ListServiceGatewaysRequest.Builder, ListServiceGatewaysRequest,
+                ListServiceGatewaysResponse, com.oracle.bmc.core.model.ServiceGateway>(
                 new java.util.function.Supplier<ListServiceGatewaysRequest.Builder>() {
                     @Override
                     public ListServiceGatewaysRequest.Builder get() {
@@ -4617,12 +4419,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listServices
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServicesResponse> listServicesResponseIterator(
             final ListServicesRequest request) {
@@ -4667,21 +4468,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Service}
-     * objects contained in responses from the listServices operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Service} objects
+     * contained in responses from the listServices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Service} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Service} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Service> listServicesRecordIterator(
             final ListServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServicesRequest.Builder,
-                ListServicesRequest,
-                ListServicesResponse,
+                ListServicesRequest.Builder, ListServicesRequest, ListServicesResponse,
                 com.oracle.bmc.core.model.Service>(
                 new java.util.function.Supplier<ListServicesRequest.Builder>() {
                     @Override
@@ -4730,12 +4528,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSubnets
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSubnets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSubnetsResponse> listSubnetsResponseIterator(
             final ListSubnetsRequest request) {
@@ -4780,21 +4577,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Subnet}
-     * objects contained in responses from the listSubnets operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Subnet} objects
+     * contained in responses from the listSubnets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Subnet} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Subnet} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Subnet> listSubnetsRecordIterator(
             final ListSubnetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSubnetsRequest.Builder,
-                ListSubnetsRequest,
-                ListSubnetsResponse,
+                ListSubnetsRequest.Builder, ListSubnetsRequest, ListSubnetsResponse,
                 com.oracle.bmc.core.model.Subnet>(
                 new java.util.function.Supplier<ListSubnetsRequest.Builder>() {
                     @Override
@@ -4843,12 +4637,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listVcns
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVcns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVcnsResponse> listVcnsResponseIterator(final ListVcnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -4892,20 +4685,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vcn}
-     * objects contained in responses from the listVcns operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vcn} objects
+     * contained in responses from the listVcns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Vcn} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Vcn} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Vcn> listVcnsRecordIterator(
             final ListVcnsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVcnsRequest.Builder,
-                ListVcnsRequest,
-                ListVcnsResponse,
+                ListVcnsRequest.Builder, ListVcnsRequest, ListVcnsResponse,
                 com.oracle.bmc.core.model.Vcn>(
                 new java.util.function.Supplier<ListVcnsRequest.Builder>() {
                     @Override
@@ -4954,13 +4745,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualCircuitAssociatedTunnels operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualCircuitAssociatedTunnels operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualCircuitAssociatedTunnelsResponse>
             listVirtualCircuitAssociatedTunnelsResponseIterator(
@@ -5013,15 +4802,13 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects contained in
-     * responses from the listVirtualCircuitAssociatedTunnels operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects
+     * contained in responses from the listVirtualCircuitAssociatedTunnels operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VirtualCircuitAssociatedTunnelDetails>
             listVirtualCircuitAssociatedTunnelsRecordIterator(
@@ -5087,13 +4874,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualCircuitBandwidthShapes operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualCircuitBandwidthShapes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualCircuitBandwidthShapesResponse>
             listVirtualCircuitBandwidthShapesResponseIterator(
@@ -5146,23 +4931,20 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects contained in responses from
-     * the listVirtualCircuitBandwidthShapes operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects
+     * contained in responses from the listVirtualCircuitBandwidthShapes operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VirtualCircuitBandwidthShape} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>
             listVirtualCircuitBandwidthShapesRecordIterator(
                     final ListVirtualCircuitBandwidthShapesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListVirtualCircuitBandwidthShapesRequest.Builder,
-                ListVirtualCircuitBandwidthShapesRequest,
-                ListVirtualCircuitBandwidthShapesResponse,
+                ListVirtualCircuitBandwidthShapesRequest, ListVirtualCircuitBandwidthShapesResponse,
                 com.oracle.bmc.core.model.VirtualCircuitBandwidthShape>(
                 new java.util.function.Supplier<
                         ListVirtualCircuitBandwidthShapesRequest.Builder>() {
@@ -5217,18 +4999,16 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualCircuits operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualCircuits operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualCircuitsResponse> listVirtualCircuitsResponseIterator(
             final ListVirtualCircuitsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVirtualCircuitsRequest.Builder,
-                ListVirtualCircuitsRequest,
+                ListVirtualCircuitsRequest.Builder, ListVirtualCircuitsRequest,
                 ListVirtualCircuitsResponse>(
                 new java.util.function.Supplier<ListVirtualCircuitsRequest.Builder>() {
                     @Override
@@ -5270,22 +5050,19 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VirtualCircuit} objects contained in responses from the
-     * listVirtualCircuits operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VirtualCircuit} objects
+     * contained in responses from the listVirtualCircuits operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VirtualCircuit} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VirtualCircuit} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VirtualCircuit> listVirtualCircuitsRecordIterator(
             final ListVirtualCircuitsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVirtualCircuitsRequest.Builder,
-                ListVirtualCircuitsRequest,
-                ListVirtualCircuitsResponse,
-                com.oracle.bmc.core.model.VirtualCircuit>(
+                ListVirtualCircuitsRequest.Builder, ListVirtualCircuitsRequest,
+                ListVirtualCircuitsResponse, com.oracle.bmc.core.model.VirtualCircuit>(
                 new java.util.function.Supplier<ListVirtualCircuitsRequest.Builder>() {
                     @Override
                     public ListVirtualCircuitsRequest.Builder get() {
@@ -5335,12 +5112,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listVlans
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVlans operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVlansResponse> listVlansResponseIterator(final ListVlansRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -5384,20 +5160,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vlan}
-     * objects contained in responses from the listVlans operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vlan} objects
+     * contained in responses from the listVlans operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Vlan} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Vlan} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Vlan> listVlansRecordIterator(
             final ListVlansRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVlansRequest.Builder,
-                ListVlansRequest,
-                ListVlansResponse,
+                ListVlansRequest.Builder, ListVlansRequest, ListVlansResponse,
                 com.oracle.bmc.core.model.Vlan>(
                 new java.util.function.Supplier<ListVlansRequest.Builder>() {
                     @Override
@@ -5446,12 +5220,11 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listVtaps
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVtaps operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVtapsResponse> listVtapsResponseIterator(final ListVtapsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
@@ -5495,20 +5268,18 @@ public class VirtualNetworkPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vtap}
-     * objects contained in responses from the listVtaps operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Vtap} objects
+     * contained in responses from the listVtaps operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Vtap} objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Vtap} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Vtap> listVtapsRecordIterator(
             final ListVtapsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVtapsRequest.Builder,
-                ListVtapsRequest,
-                ListVtapsResponse,
+                ListVtapsRequest.Builder, ListVtapsRequest, ListVtapsResponse,
                 com.oracle.bmc.core.model.Vtap>(
                 new java.util.function.Supplier<ListVtapsRequest.Builder>() {
                     @Override

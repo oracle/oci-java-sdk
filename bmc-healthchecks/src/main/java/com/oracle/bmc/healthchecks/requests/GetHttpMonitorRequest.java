@@ -6,46 +6,52 @@ package com.oracle.bmc.healthchecks.requests;
 
 import com.oracle.bmc.healthchecks.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetHttpMonitorExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetHttpMonitorRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/healthchecks/GetHttpMonitorExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetHttpMonitorRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of a monitor. */
+    /**
+     * The OCID of a monitor.
+     */
     private String monitorId;
 
-    /** The OCID of a monitor. */
+    /**
+     * The OCID of a monitor.
+     */
     public String getMonitorId() {
         return monitorId;
     }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The {@code If-None-Match} header field makes the request method conditional on the absence of
-     * any current representation of the target resource, when the field-value is {@code *}, or
-     * having a selected representation with an entity-tag that does not match any of those listed
-     * in the field-value.
+     * The {@code If-None-Match} header field makes the request method conditional on
+     * the absence of any current representation of the target resource, when
+     * the field-value is {@code *}, or having a selected representation with an
+     * entity-tag that does not match any of those listed in the field-value.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
@@ -54,15 +60,17 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetHttpMonitorRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of a monitor. */
+        /**
+         * The OCID of a monitor.
+         */
         private String monitorId = null;
 
         /**
          * The OCID of a monitor.
-         *
          * @param monitorId the value to set
          * @return this builder instance
          */
@@ -74,6 +82,7 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -90,18 +99,19 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The {@code If-None-Match} header field makes the request method conditional on the
-         * absence of any current representation of the target resource, when the field-value is
-         * {@code *}, or having a selected representation with an entity-tag that does not match any
-         * of those listed in the field-value.
+         * The {@code If-None-Match} header field makes the request method conditional on
+         * the absence of any current representation of the target resource, when
+         * the field-value is {@code *}, or having a selected representation with an
+         * entity-tag that does not match any of those listed in the field-value.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -113,19 +123,18 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -137,7 +146,6 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetHttpMonitorRequest o) {
@@ -152,11 +160,10 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetHttpMonitorRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetHttpMonitorRequest
          */
@@ -170,8 +177,7 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of GetHttpMonitorRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetHttpMonitorRequest
@@ -188,7 +194,6 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -200,7 +205,6 @@ public class GetHttpMonitorRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

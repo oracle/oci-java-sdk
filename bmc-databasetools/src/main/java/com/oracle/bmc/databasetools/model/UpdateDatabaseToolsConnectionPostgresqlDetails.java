@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasetools.model;
 
 /**
- * The update details for a Database Tools PostgreSQL Server connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+ * The update details for a Database Tools PostgreSQL Server connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDatabaseToolsConnectionPostgresqlDetails.Builder.class)
+    builder = UpdateDatabaseToolsConnectionPostgresqlDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         extends UpdateDatabaseToolsConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -65,31 +65,33 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
             this.__explicitlySet__.add("relatedResource");
             return this;
         }
-        /** The connection string used to connect to the PostgreSQL Server. */
+        /**
+         * The connection string used to connect to the PostgreSQL Server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
          * The connection string used to connect to the PostgreSQL Server.
-         *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
-        /** The user name. */
+        /**
+         * The user name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userName")
         private String userName;
 
         /**
          * The user name.
-         *
          * @param userName the value to set
          * @return this builder
-         */
+         **/
         public Builder userName(String userName) {
             this.userName = userName;
             this.__explicitlySet__.add("userName");
@@ -104,54 +106,53 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
             this.__explicitlySet__.add("userPassword");
             return this;
         }
-        /** The advanced connection properties key-value pair (e.g., {@code sslMode}). */
+        /**
+         * The advanced connection properties key-value pair (e.g., {@code sslMode}).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
         private java.util.Map<String, String> advancedProperties;
 
         /**
          * The advanced connection properties key-value pair (e.g., {@code sslMode}).
-         *
          * @param advancedProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedProperties(java.util.Map<String, String> advancedProperties) {
             this.advancedProperties = advancedProperties;
             this.__explicitlySet__.add("advancedProperties");
             return this;
         }
         /**
-         * The CA certificate to verify the server's certificate and the client private key and
-         * associated certificate required for client authentication.
-         */
+         * The CA certificate to verify the server's certificate and
+         * the client private key and associated certificate required for client authentication.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
         private java.util.List<DatabaseToolsKeyStorePostgresqlDetails> keyStores;
 
         /**
-         * The CA certificate to verify the server's certificate and the client private key and
-         * associated certificate required for client authentication.
+         * The CA certificate to verify the server's certificate and
+         * the client private key and associated certificate required for client authentication.
          *
          * @param keyStores the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStores(java.util.List<DatabaseToolsKeyStorePostgresqlDetails> keyStores) {
             this.keyStores = keyStores;
             this.__explicitlySet__.add("keyStores");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
         private String privateEndpointId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
          * @param privateEndpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
             this.__explicitlySet__.add("privateEndpointId");
@@ -216,7 +217,9 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -254,28 +257,30 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         return relatedResource;
     }
 
-    /** The connection string used to connect to the PostgreSQL Server. */
+    /**
+     * The connection string used to connect to the PostgreSQL Server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
      * The connection string used to connect to the PostgreSQL Server.
-     *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
-    /** The user name. */
+    /**
+     * The user name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userName")
     private final String userName;
 
     /**
      * The user name.
-     *
      * @return the value
-     */
+     **/
     public String getUserName() {
         return userName;
     }
@@ -287,49 +292,48 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
         return userPassword;
     }
 
-    /** The advanced connection properties key-value pair (e.g., {@code sslMode}). */
+    /**
+     * The advanced connection properties key-value pair (e.g., {@code sslMode}).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedProperties")
     private final java.util.Map<String, String> advancedProperties;
 
     /**
      * The advanced connection properties key-value pair (e.g., {@code sslMode}).
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAdvancedProperties() {
         return advancedProperties;
     }
 
     /**
-     * The CA certificate to verify the server's certificate and the client private key and
-     * associated certificate required for client authentication.
-     */
+     * The CA certificate to verify the server's certificate and
+     * the client private key and associated certificate required for client authentication.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStores")
     private final java.util.List<DatabaseToolsKeyStorePostgresqlDetails> keyStores;
 
     /**
-     * The CA certificate to verify the server's certificate and the client private key and
-     * associated certificate required for client authentication.
+     * The CA certificate to verify the server's certificate and
+     * the client private key and associated certificate required for client authentication.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DatabaseToolsKeyStorePostgresqlDetails> getKeyStores() {
         return keyStores;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
     private final String privateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DatabaseToolsPrivateEndpoint used to access the database in the Customer VCN.
      * @return the value
-     */
+     **/
     public String getPrivateEndpointId() {
         return privateEndpointId;
     }
@@ -341,7 +345,6 @@ public final class UpdateDatabaseToolsConnectionPostgresqlDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

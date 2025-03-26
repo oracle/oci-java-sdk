@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Config for incremental read operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Config for incremental read operation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IncrementalReadConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IncrementalReadConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IncrementalReadConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"lastExtractedFieldDate", "lastExtractedDataEntityDate"})
     public IncrementalReadConfig(
@@ -34,32 +33,34 @@ public final class IncrementalReadConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of incremental field clauses. */
+        /**
+         * List of incremental field clauses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastExtractedFieldDate")
         private java.util.List<IncrementalFieldClause> lastExtractedFieldDate;
 
         /**
          * List of incremental field clauses.
-         *
          * @param lastExtractedFieldDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastExtractedFieldDate(
                 java.util.List<IncrementalFieldClause> lastExtractedFieldDate) {
             this.lastExtractedFieldDate = lastExtractedFieldDate;
             this.__explicitlySet__.add("lastExtractedFieldDate");
             return this;
         }
-        /** List of incremental data entity clauses. */
+        /**
+         * List of incremental data entity clauses.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastExtractedDataEntityDate")
         private java.util.List<IncrementalDataEntityClause> lastExtractedDataEntityDate;
 
         /**
          * List of incremental data entity clauses.
-         *
          * @param lastExtractedDataEntityDate the value to set
          * @return this builder
-         */
+         **/
         public Builder lastExtractedDataEntityDate(
                 java.util.List<IncrementalDataEntityClause> lastExtractedDataEntityDate) {
             this.lastExtractedDataEntityDate = lastExtractedDataEntityDate;
@@ -92,7 +93,9 @@ public final class IncrementalReadConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,28 +104,30 @@ public final class IncrementalReadConfig
         return new Builder().copy(this);
     }
 
-    /** List of incremental field clauses. */
+    /**
+     * List of incremental field clauses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastExtractedFieldDate")
     private final java.util.List<IncrementalFieldClause> lastExtractedFieldDate;
 
     /**
      * List of incremental field clauses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<IncrementalFieldClause> getLastExtractedFieldDate() {
         return lastExtractedFieldDate;
     }
 
-    /** List of incremental data entity clauses. */
+    /**
+     * List of incremental data entity clauses.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastExtractedDataEntityDate")
     private final java.util.List<IncrementalDataEntityClause> lastExtractedDataEntityDate;
 
     /**
      * List of incremental data entity clauses.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<IncrementalDataEntityClause> getLastExtractedDataEntityDate() {
         return lastExtractedDataEntityDate;
     }
@@ -134,7 +139,6 @@ public final class IncrementalReadConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

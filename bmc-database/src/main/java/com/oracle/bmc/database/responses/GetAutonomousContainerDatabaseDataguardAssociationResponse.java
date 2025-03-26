@@ -6,15 +6,16 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class GetAutonomousContainerDatabaseDataguardAssociationResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -22,14 +23,15 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+     * a particular request, then provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-     * particular request, then provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+     * a particular request, then provide the request ID.
      *
      * @return the value
      */
@@ -37,13 +39,14 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
         return opcRequestId;
     }
 
-    /** The returned {@code AutonomousContainerDatabaseDataguardAssociation} instance. */
+    /**
+     * The returned AutonomousContainerDatabaseDataguardAssociation instance.
+     */
     private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
             autonomousContainerDatabaseDataguardAssociation;
 
     /**
-     * The returned {@code AutonomousContainerDatabaseDataguardAssociation} instance.
-     *
+     * The returned AutonomousContainerDatabaseDataguardAssociation instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
@@ -60,7 +63,7 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
     })
     private GetAutonomousContainerDatabaseDataguardAssociationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
@@ -72,31 +75,28 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
                 autonomousContainerDatabaseDataguardAssociation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetAutonomousContainerDatabaseDataguardAssociationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -106,14 +106,15 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about a
-         * particular request, then provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you must contact Oracle about
+         * a particular request, then provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -123,13 +124,14 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
             return this;
         }
 
-        /** The returned {@code AutonomousContainerDatabaseDataguardAssociation} instance. */
+        /**
+         * The returned AutonomousContainerDatabaseDataguardAssociation instance.
+         */
         private com.oracle.bmc.database.model.AutonomousContainerDatabaseDataguardAssociation
                 autonomousContainerDatabaseDataguardAssociation;
 
         /**
-         * The returned {@code AutonomousContainerDatabaseDataguardAssociation} instance.
-         *
+         * The returned AutonomousContainerDatabaseDataguardAssociation instance.
          * @param autonomousContainerDatabaseDataguardAssociation the value to set
          * @return this builder
          */
@@ -143,10 +145,8 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetAutonomousContainerDatabaseDataguardAssociationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -160,10 +160,8 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetAutonomousContainerDatabaseDataguardAssociationResponse build() {
             return new GetAutonomousContainerDatabaseDataguardAssociationResponse(
                     __httpStatusCode__,
@@ -176,7 +174,6 @@ public class GetAutonomousContainerDatabaseDataguardAssociationResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

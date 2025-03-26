@@ -5,53 +5,55 @@
 package com.oracle.bmc.aianomalydetection.model;
 
 /**
- * Influx details for V_1_8. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
+ * Influx details for V_1_8.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InfluxDetailsV1v8.Builder.class)
+    builder = InfluxDetailsV1v8.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "influxVersion")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "influxVersion"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InfluxDetailsV1v8 extends InfluxDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** DB Name for influx connection */
+        /**
+         * DB Name for influx connection
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
         /**
          * DB Name for influx connection
-         *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** retention policy is how long the bucket would last */
+        /**
+         * retention policy is how long the bucket would last
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPolicyName")
         private String retentionPolicyName;
 
         /**
          * retention policy is how long the bucket would last
-         *
          * @param retentionPolicyName the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPolicyName(String retentionPolicyName) {
             this.retentionPolicyName = retentionPolicyName;
             this.__explicitlySet__.add("retentionPolicyName");
@@ -82,7 +84,9 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +102,30 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
         this.retentionPolicyName = retentionPolicyName;
     }
 
-    /** DB Name for influx connection */
+    /**
+     * DB Name for influx connection
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
     /**
      * DB Name for influx connection
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** retention policy is how long the bucket would last */
+    /**
+     * retention policy is how long the bucket would last
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPolicyName")
     private final String retentionPolicyName;
 
     /**
      * retention policy is how long the bucket would last
-     *
      * @return the value
-     */
+     **/
     public String getRetentionPolicyName() {
         return retentionPolicyName;
     }
@@ -131,7 +137,6 @@ public final class InfluxDetailsV1v8 extends InfluxDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

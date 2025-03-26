@@ -5,24 +5,23 @@
 package com.oracle.bmc.apmconfig.model;
 
 /**
- * An object that represents configuration options. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * An object that represents configuration options.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Options.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class Options extends Config {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -98,37 +97,42 @@ public final class Options extends Config {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The name by which a configuration entity is displayed to the end user. */
+        /**
+         * The name by which a configuration entity is displayed to the end user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name by which a configuration entity is displayed to the end user.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The options are stored here as JSON. */
+        /**
+         * The options are stored here as JSON.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private Object options;
 
         /**
          * The options are stored here as JSON.
-         *
          * @param options the value to set
          * @return this builder
-         */
+         **/
         public Builder options(Object options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
-        /** A string that specifies the group that an OPTIONS item belongs to. */
+        /**
+         * A string that specifies the group that an OPTIONS item belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("group")
         private String group;
 
@@ -137,22 +141,23 @@ public final class Options extends Config {
          *
          * @param group the value to set
          * @return this builder
-         */
+         **/
         public Builder group(String group) {
             this.group = group;
             this.__explicitlySet__.add("group");
             return this;
         }
-        /** An optional string that describes what the options are intended or used for. */
+        /**
+         * An optional string that describes what the options are intended or used for.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * An optional string that describes what the options are intended or used for.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -225,7 +230,9 @@ public final class Options extends Config {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -255,33 +262,38 @@ public final class Options extends Config {
         this.description = description;
     }
 
-    /** The name by which a configuration entity is displayed to the end user. */
+    /**
+     * The name by which a configuration entity is displayed to the end user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name by which a configuration entity is displayed to the end user.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The options are stored here as JSON. */
+    /**
+     * The options are stored here as JSON.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final Object options;
 
     /**
      * The options are stored here as JSON.
-     *
      * @return the value
-     */
+     **/
     public Object getOptions() {
         return options;
     }
 
-    /** A string that specifies the group that an OPTIONS item belongs to. */
+    /**
+     * A string that specifies the group that an OPTIONS item belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("group")
     private final String group;
 
@@ -289,20 +301,21 @@ public final class Options extends Config {
      * A string that specifies the group that an OPTIONS item belongs to.
      *
      * @return the value
-     */
+     **/
     public String getGroup() {
         return group;
     }
 
-    /** An optional string that describes what the options are intended or used for. */
+    /**
+     * An optional string that describes what the options are intended or used for.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * An optional string that describes what the options are intended or used for.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -314,7 +327,6 @@ public final class Options extends Config {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ospgateway.model;
 
-/** Address quality type */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
-public enum AddressQualityType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Address quality type
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+public enum AddressQualityType {
     Excellent("EXCELLENT"),
     Good("GOOD"),
     Average("AVERAGE"),

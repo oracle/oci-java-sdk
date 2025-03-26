@@ -6,84 +6,102 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListBlocklistsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBlocklistsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListBlocklistsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBlocklistsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** The operation type. */
+    /**
+     * The operation type.
+     */
     private com.oracle.bmc.jms.model.OperationType operation;
 
-    /** The operation type. */
+    /**
+     * The operation type.
+     */
     public com.oracle.bmc.jms.model.OperationType getOperation() {
         return operation;
     }
-    /** The Fleet-unique identifier of the related managed instance. */
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     private String managedInstanceId;
 
-    /** The Fleet-unique identifier of the related managed instance. */
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field used to sort blocklist records. Only one sort order may be provided. Default order
-     * for _operation_ is **ascending**. If no value is specified, _operation_ is default.
+     * The field used to sort blocklist records. Only one sort order may be provided.
+     * Default order for _operation_ is **ascending**.
+     * If no value is specified, _operation_ is default.
+     *
      */
     private com.oracle.bmc.jms.model.BlocklistSortBy sortBy;
 
     /**
-     * The field used to sort blocklist records. Only one sort order may be provided. Default order
-     * for _operation_ is **ascending**. If no value is specified, _operation_ is default.
+     * The field used to sort blocklist records. Only one sort order may be provided.
+     * Default order for _operation_ is **ascending**.
+     * If no value is specified, _operation_ is default.
+     *
      */
     public com.oracle.bmc.jms.model.BlocklistSortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -91,19 +109,17 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBlocklistsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -112,12 +128,13 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The operation type. */
+        /**
+         * The operation type.
+         */
         private com.oracle.bmc.jms.model.OperationType operation = null;
 
         /**
          * The operation type.
-         *
          * @param operation the value to set
          * @return this builder instance
          */
@@ -126,12 +143,13 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The Fleet-unique identifier of the related managed instance. */
+        /**
+         * The Fleet-unique identifier of the related managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the related managed instance.
-         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -140,12 +158,13 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -155,15 +174,12 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -172,12 +188,13 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -187,14 +204,17 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field used to sort blocklist records. Only one sort order may be provided. Default
-         * order for _operation_ is **ascending**. If no value is specified, _operation_ is default.
+         * The field used to sort blocklist records. Only one sort order may be provided.
+         * Default order for _operation_ is **ascending**.
+         * If no value is specified, _operation_ is default.
+         *
          */
         private com.oracle.bmc.jms.model.BlocklistSortBy sortBy = null;
 
         /**
-         * The field used to sort blocklist records. Only one sort order may be provided. Default
-         * order for _operation_ is **ascending**. If no value is specified, _operation_ is default.
+         * The field used to sort blocklist records. Only one sort order may be provided.
+         * Default order for _operation_ is **ascending**.
+         * If no value is specified, _operation_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -204,12 +224,13 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -220,19 +241,18 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -244,7 +264,6 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListBlocklistsRequest o) {
@@ -264,11 +283,10 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListBlocklistsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListBlocklistsRequest
          */
@@ -282,8 +300,7 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListBlocklistsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBlocklistsRequest
@@ -299,14 +316,12 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListBlocklistsRequest(fleetId, operation, managedInstanceId, limit, page,
-            // sortOrder, sortBy, opcRequestId);
+            // new ListBlocklistsRequest(fleetId, operation, managedInstanceId, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -323,7 +338,6 @@ public class ListBlocklistsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

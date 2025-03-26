@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.adm.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+public enum OperationType {
     CreateRemediationRecipe("CREATE_REMEDIATION_RECIPE"),
     DeleteRemediationRecipe("DELETE_REMEDIATION_RECIPE"),
     MoveRemediationRecipe("MOVE_REMEDIATION_RECIPE"),

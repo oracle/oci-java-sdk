@@ -5,31 +5,31 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * Base policy for Response Cache lookup. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * Base policy for Response Cache lookup.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = ResponseCacheLookupPolicy.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = ResponseCacheLookupPolicy.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = SimpleLookupPolicy.class,
-            name = "SIMPLE_LOOKUP_POLICY")
+        value = SimpleLookupPolicy.class,
+        name = "SIMPLE_LOOKUP_POLICY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ResponseCacheLookupPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ResponseCacheLookupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "isPrivateCachingEnabled"})
     protected ResponseCacheLookupPolicy(Boolean isEnabled, Boolean isPrivateCachingEnabled) {
@@ -38,7 +38,10 @@ public class ResponseCacheLookupPolicy
         this.isPrivateCachingEnabled = isPrivateCachingEnabled;
     }
 
-    /** Whether this policy is currently enabled. */
+    /**
+     * Whether this policy is currently enabled.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -46,38 +49,33 @@ public class ResponseCacheLookupPolicy
      * Whether this policy is currently enabled.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * Set true to allow caching responses where the request has an Authorization header. Ensure you
-     * have configured your cache key additions to get the level of isolation across authenticated
-     * requests that you require.
+     * Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your
+     * cache key additions to get the level of isolation across authenticated requests that you require.
+     * <p>
+     * When false, any request with an Authorization header will not be stored in the Response Cache.
+     * <p>
+     * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
      *
-     * <p>When false, any request with an Authorization header will not be stored in the Response
-     * Cache.
-     *
-     * <p>If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also
-     * subject to this check.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateCachingEnabled")
     private final Boolean isPrivateCachingEnabled;
 
     /**
-     * Set true to allow caching responses where the request has an Authorization header. Ensure you
-     * have configured your cache key additions to get the level of isolation across authenticated
-     * requests that you require.
-     *
-     * <p>When false, any request with an Authorization header will not be stored in the Response
-     * Cache.
-     *
-     * <p>If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also
-     * subject to this check.
+     * Set true to allow caching responses where the request has an Authorization header. Ensure you have configured your
+     * cache key additions to get the level of isolation across authenticated requests that you require.
+     * <p>
+     * When false, any request with an Authorization header will not be stored in the Response Cache.
+     * <p>
+     * If using the CustomAuthenticationPolicy then the tokenHeader/tokenQueryParam are also subject to this check.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsPrivateCachingEnabled() {
         return isPrivateCachingEnabled;
     }
@@ -89,7 +87,6 @@ public class ResponseCacheLookupPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -134,13 +131,15 @@ public class ResponseCacheLookupPolicy
         return result;
     }
 
-    /** Type of the Response Cache Store Policy. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the Response Cache Store Policy.
+     **/
+    public enum Type {
         SimpleLookupPolicy("SIMPLE_LOOKUP_POLICY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

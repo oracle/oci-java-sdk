@@ -6,43 +6,51 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSensitiveDataModelExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DownloadSensitiveDataModelRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSensitiveDataModelExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DownloadSensitiveDataModelRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class DownloadSensitiveDataModelRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails> {
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     private String sensitiveDataModelId;
 
-    /** The OCID of the sensitive data model. */
+    /**
+     * The OCID of the sensitive data model.
+     */
     public String getSensitiveDataModelId() {
         return sensitiveDataModelId;
     }
-    /** Details to download a sensitive data model file. */
+    /**
+     * Details to download a sensitive data model file.
+     */
     private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
             downloadSensitiveDataModelDetails;
 
-    /** Details to download a sensitive data model file. */
+    /**
+     * Details to download a sensitive data model file.
+     */
     public com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
             getDownloadSensitiveDataModelDetails() {
         return downloadSensitiveDataModelDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -55,15 +63,17 @@ public class DownloadSensitiveDataModelRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DownloadSensitiveDataModelRequest,
                     com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive data model. */
+        /**
+         * The OCID of the sensitive data model.
+         */
         private String sensitiveDataModelId = null;
 
         /**
          * The OCID of the sensitive data model.
-         *
          * @param sensitiveDataModelId the value to set
          * @return this builder instance
          */
@@ -72,13 +82,14 @@ public class DownloadSensitiveDataModelRequest
             return this;
         }
 
-        /** Details to download a sensitive data model file. */
+        /**
+         * Details to download a sensitive data model file.
+         */
         private com.oracle.bmc.datasafe.model.DownloadSensitiveDataModelDetails
                 downloadSensitiveDataModelDetails = null;
 
         /**
          * Details to download a sensitive data model file.
-         *
          * @param downloadSensitiveDataModelDetails the value to set
          * @return this builder instance
          */
@@ -89,12 +100,13 @@ public class DownloadSensitiveDataModelRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -105,19 +117,18 @@ public class DownloadSensitiveDataModelRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -129,7 +140,6 @@ public class DownloadSensitiveDataModelRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DownloadSensitiveDataModelRequest o) {
@@ -144,11 +154,10 @@ public class DownloadSensitiveDataModelRequest
         /**
          * Build the instance of DownloadSensitiveDataModelRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DownloadSensitiveDataModelRequest
          */
@@ -161,7 +170,6 @@ public class DownloadSensitiveDataModelRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -174,8 +182,7 @@ public class DownloadSensitiveDataModelRequest
         /**
          * Build the instance of DownloadSensitiveDataModelRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DownloadSensitiveDataModelRequest
@@ -186,14 +193,12 @@ public class DownloadSensitiveDataModelRequest
             request.downloadSensitiveDataModelDetails = downloadSensitiveDataModelDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DownloadSensitiveDataModelRequest(sensitiveDataModelId,
-            // downloadSensitiveDataModelDetails, opcRequestId);
+            // new DownloadSensitiveDataModelRequest(sensitiveDataModelId, downloadSensitiveDataModelDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -205,7 +210,6 @@ public class DownloadSensitiveDataModelRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

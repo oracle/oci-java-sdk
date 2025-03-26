@@ -6,39 +6,55 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTermRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetTermExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetTermRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
-    /** Unique glossary key. */
+    /**
+     * Unique glossary key.
+     */
     private String glossaryKey;
 
-    /** Unique glossary key. */
+    /**
+     * Unique glossary key.
+     */
     public String getGlossaryKey() {
         return glossaryKey;
     }
-    /** Unique glossary term key. */
+    /**
+     * Unique glossary term key.
+     */
     private String termKey;
 
-    /** Unique glossary term key. */
+    /**
+     * Unique glossary term key.
+     */
     public String getTermKey() {
         return termKey;
     }
-    /** Specifies the fields to return in a term response. */
+    /**
+     * Specifies the fields to return in a term response.
+     *
+     */
     private java.util.List<Fields> fields;
 
-    /** Specifies the fields to return in a term response. */
-    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the fields to return in a term response.
+     *
+     **/
+    public enum Fields {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -87,29 +103,38 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         }
     };
 
-    /** Specifies the fields to return in a term response. */
+    /**
+     * Specifies the fields to return in a term response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<GetTermRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -118,12 +143,13 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
-        /** Unique glossary key. */
+        /**
+         * Unique glossary key.
+         */
         private String glossaryKey = null;
 
         /**
          * Unique glossary key.
-         *
          * @param glossaryKey the value to set
          * @return this builder instance
          */
@@ -132,12 +158,13 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
-        /** Unique glossary term key. */
+        /**
+         * Unique glossary term key.
+         */
         private String termKey = null;
 
         /**
          * Unique glossary term key.
-         *
          * @param termKey the value to set
          * @return this builder instance
          */
@@ -146,7 +173,10 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this;
         }
 
-        /** Specifies the fields to return in a term response. */
+        /**
+         * Specifies the fields to return in a term response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -170,12 +200,13 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -186,19 +217,18 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -210,7 +240,6 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetTermRequest o) {
@@ -227,11 +256,10 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         /**
          * Build the instance of GetTermRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetTermRequest
          */
@@ -245,8 +273,7 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
         /**
          * Build the instance of GetTermRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetTermRequest
@@ -265,7 +292,6 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -279,7 +305,6 @@ public class GetTermRequest extends com.oracle.bmc.requests.BmcRequest<java.lang
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

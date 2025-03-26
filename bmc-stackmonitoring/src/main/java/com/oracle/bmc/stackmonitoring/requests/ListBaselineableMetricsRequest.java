@@ -6,119 +6,166 @@ package com.oracle.bmc.stackmonitoring.requests;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListBaselineableMetricsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListBaselineableMetricsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListBaselineableMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListBaselineableMetricsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class ListBaselineableMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Resource Group */
+    /**
+     * Resource Group
+     */
     private String resourceGroup;
 
-    /** Resource Group */
+    /**
+     * Resource Group
+     */
     public String getResourceGroup() {
         return resourceGroup;
     }
-    /** Resource Type */
+    /**
+     * Resource Type
+     */
     private String resourceType;
 
-    /** Resource Type */
+    /**
+     * Resource Type
+     */
     public String getResourceType() {
         return resourceType;
     }
-    /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+    /**
+     * Is the baseline enabled metric defined out of box by Oracle or by end-user
+     *
+     */
     private Boolean isOutOfBox;
 
-    /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+    /**
+     * Is the baseline enabled metric defined out of box by Oracle or by end-user
+     *
+     */
     public Boolean getIsOutOfBox() {
         return isOutOfBox;
     }
-    /** Metric Name */
+    /**
+     * Metric Name
+     */
     private String name;
 
-    /** Metric Name */
+    /**
+     * Metric Name
+     */
     public String getName() {
         return name;
     }
-    /** A filter to return monitored resource types that has the matching namespace. */
+    /**
+     * A filter to return monitored resource types that has the matching namespace.
+     *
+     */
     private String metricNamespace;
 
-    /** A filter to return monitored resource types that has the matching namespace. */
+    /**
+     * A filter to return monitored resource types that has the matching namespace.
+     *
+     */
     public String getMetricNamespace() {
         return metricNamespace;
     }
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * paginated "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the
+     * previous "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The ID of the compartment in which data is listed. */
+    /**
+     * The ID of the compartment in which data is listed.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which data is listed. */
+    /**
+     * The ID of the compartment in which data is listed.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Identifier for the metric */
+    /**
+     * Identifier for the metric
+     */
     private String baselineableMetricId;
 
-    /** Identifier for the metric */
+    /**
+     * Identifier for the metric
+     */
     public String getBaselineableMetricId() {
         return baselineableMetricId;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.stackmonitoring.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. Only one sort order may be provided. Default order is ascending. */
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order is ascending.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Only one sort order may be provided. Default order is ascending. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order is ascending.
+     *
+     **/
+    public enum SortBy {
         Name("name"),
         Namespace("namespace"),
         ResourceGroup("resourceGroup"),
@@ -152,7 +199,10 @@ public class ListBaselineableMetricsRequest
         }
     };
 
-    /** The field to sort by. Only one sort order may be provided. Default order is ascending. */
+    /**
+     * The field to sort by. Only one sort order may be provided. Default order is ascending.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
@@ -160,12 +210,14 @@ public class ListBaselineableMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListBaselineableMetricsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
@@ -181,12 +233,13 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** Resource Group */
+        /**
+         * Resource Group
+         */
         private String resourceGroup = null;
 
         /**
          * Resource Group
-         *
          * @param resourceGroup the value to set
          * @return this builder instance
          */
@@ -195,12 +248,13 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** Resource Type */
+        /**
+         * Resource Type
+         */
         private String resourceType = null;
 
         /**
          * Resource Type
-         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -209,7 +263,10 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+        /**
+         * Is the baseline enabled metric defined out of box by Oracle or by end-user
+         *
+         */
         private Boolean isOutOfBox = null;
 
         /**
@@ -223,12 +280,13 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** Metric Name */
+        /**
+         * Metric Name
+         */
         private String name = null;
 
         /**
          * Metric Name
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -237,7 +295,10 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** A filter to return monitored resource types that has the matching namespace. */
+        /**
+         * A filter to return monitored resource types that has the matching namespace.
+         *
+         */
         private String metricNamespace = null;
 
         /**
@@ -253,15 +314,16 @@ public class ListBaselineableMetricsRequest
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * paginated "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -273,15 +335,16 @@ public class ListBaselineableMetricsRequest
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
          * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * previous "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -291,12 +354,13 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** The ID of the compartment in which data is listed. */
+        /**
+         * The ID of the compartment in which data is listed.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which data is listed.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -305,12 +369,13 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** Identifier for the metric */
+        /**
+         * Identifier for the metric
+         */
         private String baselineableMetricId = null;
 
         /**
          * Identifier for the metric
-         *
          * @param baselineableMetricId the value to set
          * @return this builder instance
          */
@@ -319,7 +384,10 @@ public class ListBaselineableMetricsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.stackmonitoring.model.SortOrder sortOrder = null;
 
         /**
@@ -335,6 +403,7 @@ public class ListBaselineableMetricsRequest
 
         /**
          * The field to sort by. Only one sort order may be provided. Default order is ascending.
+         *
          */
         private SortBy sortBy = null;
 
@@ -351,19 +420,18 @@ public class ListBaselineableMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -375,7 +443,6 @@ public class ListBaselineableMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListBaselineableMetricsRequest o) {
@@ -399,11 +466,10 @@ public class ListBaselineableMetricsRequest
         /**
          * Build the instance of ListBaselineableMetricsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListBaselineableMetricsRequest
          */
@@ -417,8 +483,7 @@ public class ListBaselineableMetricsRequest
         /**
          * Build the instance of ListBaselineableMetricsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListBaselineableMetricsRequest
@@ -438,15 +503,12 @@ public class ListBaselineableMetricsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListBaselineableMetricsRequest(opcRequestId, resourceGroup, resourceType,
-            // isOutOfBox, name, metricNamespace, limit, page, compartmentId, baselineableMetricId,
-            // sortOrder, sortBy);
+            // new ListBaselineableMetricsRequest(opcRequestId, resourceGroup, resourceType, isOutOfBox, name, metricNamespace, limit, page, compartmentId, baselineableMetricId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -467,7 +529,6 @@ public class ListBaselineableMetricsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

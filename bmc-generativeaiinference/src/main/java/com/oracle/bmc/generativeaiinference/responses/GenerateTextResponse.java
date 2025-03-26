@@ -6,9 +6,12 @@ package com.oracle.bmc.generativeaiinference.responses;
 
 import com.oracle.bmc.generativeaiinference.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,39 +40,17 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code GenerateTextResult} instance. */
+    /**
+     * The returned GenerateTextResult instance.
+     */
     private com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult;
 
     /**
-     * The returned {@code GenerateTextResult} instance.
-     *
+     * The returned GenerateTextResult instance.
      * @return the value
      */
     public com.oracle.bmc.generativeaiinference.model.GenerateTextResult getGenerateTextResult() {
         return generateTextResult;
-    }
-    /**
-     * Returns the event-stream for operations that support 'text/event-stream' media type. The
-     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-     * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-     * important to avoid the issue mentioned in the link below
-     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-     *
-     * @return the event-stream
-     */
-    private java.io.InputStream eventStream;
-
-    /**
-     * Returns the event-stream for operations that support 'text/event-stream' media type. The
-     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-     * try-with-resources or explicitly call getEventStream().close() to close the stream. This is
-     * important to avoid the issue mentioned in the link below
-     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-     *
-     * @return the event-stream
-     */
-    public java.io.InputStream getEventStream() {
-        return eventStream;
     }
 
     @java.beans.ConstructorProperties({
@@ -76,43 +58,39 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "etag",
         "opcRequestId",
-        "generateTextResult",
-        "eventStream"
+        "generateTextResult"
     })
     private GenerateTextResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
-            com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult,
-            java.io.InputStream eventStream) {
+            com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.generateTextResult = generateTextResult;
-
-        this.eventStream = eventStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GenerateTextResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -127,14 +105,15 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -144,12 +123,13 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code GenerateTextResult} instance. */
+        /**
+         * The returned GenerateTextResult instance.
+         */
         private com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult;
 
         /**
-         * The returned {@code GenerateTextResult} instance.
-         *
+         * The returned GenerateTextResult instance.
          * @param generateTextResult the value to set
          * @return this builder
          */
@@ -160,35 +140,9 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The event-stream for operations that support 'text/event-stream' media type. The value
-         * can be null in-case a non-streamed response is returned by the server. NOTE : Use
-         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-         * important to avoid the issue mentioned in the link below
-         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-         *
-         * @return the event-stream
-         */
-        private java.io.InputStream eventStream;
-
-        /**
-         * Returns the event-stream for operations that support 'text/event-stream' media type. The
-         * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-         * important to avoid the issue mentioned in the link below
-         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-         *
-         * @return the event-stream
-         */
-        public Builder eventStream(java.io.InputStream eventStream) {
-            this.eventStream = eventStream;
-            return this;
-        }
-        /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GenerateTextResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -196,30 +150,21 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
             opcRequestId(o.getOpcRequestId());
             generateTextResult(o.getGenerateTextResult());
 
-            eventStream(o.getEventStream());
             return this;
         }
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GenerateTextResponse build() {
             return new GenerateTextResponse(
-                    __httpStatusCode__,
-                    headers,
-                    etag,
-                    opcRequestId,
-                    generateTextResult,
-                    eventStream);
+                    __httpStatusCode__, headers, etag, opcRequestId, generateTextResult);
         }
     }
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {
@@ -234,7 +179,6 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",generateTextResult=").append(String.valueOf(generateTextResult));
-        sb.append(",eventStream=").append(String.valueOf(eventStream));
         sb.append(")");
         return sb.toString();
     }
@@ -252,8 +196,7 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.generateTextResult, other.generateTextResult)
-                && java.util.Objects.equals(this.eventStream, other.eventStream);
+                && java.util.Objects.equals(this.generateTextResult, other.generateTextResult);
     }
 
     @Override
@@ -267,7 +210,6 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
                         + (this.generateTextResult == null
                                 ? 43
                                 : this.generateTextResult.hashCode());
-        result = (result * PRIME) + (this.eventStream == null ? 43 : this.eventStream.hashCode());
         return result;
     }
 }

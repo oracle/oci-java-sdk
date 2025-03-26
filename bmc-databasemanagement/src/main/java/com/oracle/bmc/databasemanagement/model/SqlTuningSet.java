@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Details of the Sql tuning set. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Details of the Sql tuning set.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlTuningSet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlTuningSet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,191 +63,205 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique Sql tuning set identifier. */
+        /**
+         * The unique Sql tuning set identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Integer id;
 
         /**
          * The unique Sql tuning set identifier.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Integer id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The owner of the Sql tuning set. */
+        /**
+         * The owner of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * The owner of the Sql tuning set.
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** The name of the Sql tuning set. */
+        /**
+         * The name of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the Sql tuning set.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Number of statements in the Sql tuning set */
+        /**
+         * Number of statements in the Sql tuning set
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statementCount")
         private Integer statementCount;
 
         /**
          * Number of statements in the Sql tuning set
-         *
          * @param statementCount the value to set
          * @return this builder
-         */
+         **/
         public Builder statementCount(Integer statementCount) {
             this.statementCount = statementCount;
             this.__explicitlySet__.add("statementCount");
             return this;
         }
-        /** The created time of the Sql tuning set. */
+        /**
+         * The created time of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The created time of the Sql tuning set.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The description of the Sql tuning set. */
+        /**
+         * The description of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the Sql tuning set.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Last modified time of the Sql tuning set. */
+        /**
+         * Last modified time of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
          * Last modified time of the Sql tuning set.
-         *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
             return this;
         }
-        /** Current status of the Sql tuning set. */
+        /**
+         * Current status of the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private SqlTuningSetStatusTypes status;
 
         /**
          * Current status of the Sql tuning set.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(SqlTuningSetStatusTypes status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Name of the Sql tuning set scheduler job. */
+        /**
+         * Name of the Sql tuning set scheduler job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobName")
         private String scheduledJobName;
 
         /**
          * Name of the Sql tuning set scheduler job.
-         *
          * @param scheduledJobName the value to set
          * @return this builder
-         */
+         **/
         public Builder scheduledJobName(String scheduledJobName) {
             this.scheduledJobName = scheduledJobName;
             this.__explicitlySet__.add("scheduledJobName");
             return this;
         }
-        /** Latest execution error of the plsql that was submitted as a scheduler job. */
+        /**
+         * Latest execution error of the plsql that was submitted as a scheduler job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * Latest execution error of the plsql that was submitted as a scheduler job.
-         *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
         /**
-         * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
-         * whether all Sql statements of this Sql tuning set matching the filter criteria are
-         * fetched or not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the
-         * filter criteria are fetched. - No - There are more Sql statements matching the fitler
-         * criteria. User should fine tune the filter criteria to narrow down the result set.
-         */
+         * In OCI database management, there is a limit to fetch only 2000 rows.
+         * This flag indicates whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or not.
+         * Possible values are 'Yes' or 'No'
+         *   - Yes - All Sql statements matching the filter criteria are fetched.
+         *   - No  - There are more Sql statements matching the fitler criteria.
+         *           User should fine tune the filter criteria to narrow down the result set.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allSqlStatementsFetched")
         private AllSqlStatementsFetched allSqlStatementsFetched;
 
         /**
-         * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
-         * whether all Sql statements of this Sql tuning set matching the filter criteria are
-         * fetched or not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the
-         * filter criteria are fetched. - No - There are more Sql statements matching the fitler
-         * criteria. User should fine tune the filter criteria to narrow down the result set.
+         * In OCI database management, there is a limit to fetch only 2000 rows.
+         * This flag indicates whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or not.
+         * Possible values are 'Yes' or 'No'
+         *   - Yes - All Sql statements matching the filter criteria are fetched.
+         *   - No  - There are more Sql statements matching the fitler criteria.
+         *           User should fine tune the filter criteria to narrow down the result set.
          *
          * @param allSqlStatementsFetched the value to set
          * @return this builder
-         */
+         **/
         public Builder allSqlStatementsFetched(AllSqlStatementsFetched allSqlStatementsFetched) {
             this.allSqlStatementsFetched = allSqlStatementsFetched;
             this.__explicitlySet__.add("allSqlStatementsFetched");
             return this;
         }
-        /** A list of the Sqls associated with the Sql tuning set. */
+        /**
+         * A list of the Sqls associated with the Sql tuning set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlList")
         private java.util.List<SqlInSqlTuningSet> sqlList;
 
         /**
          * A list of the Sqls associated with the Sql tuning set.
-         *
          * @param sqlList the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlList(java.util.List<SqlInSqlTuningSet> sqlList) {
             this.sqlList = sqlList;
             this.__explicitlySet__.add("sqlList");
@@ -322,7 +334,9 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,150 +345,162 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The unique Sql tuning set identifier. */
+    /**
+     * The unique Sql tuning set identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Integer id;
 
     /**
      * The unique Sql tuning set identifier.
-     *
      * @return the value
-     */
+     **/
     public Integer getId() {
         return id;
     }
 
-    /** The owner of the Sql tuning set. */
+    /**
+     * The owner of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * The owner of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** The name of the Sql tuning set. */
+    /**
+     * The name of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Number of statements in the Sql tuning set */
+    /**
+     * Number of statements in the Sql tuning set
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statementCount")
     private final Integer statementCount;
 
     /**
      * Number of statements in the Sql tuning set
-     *
      * @return the value
-     */
+     **/
     public Integer getStatementCount() {
         return statementCount;
     }
 
-    /** The created time of the Sql tuning set. */
+    /**
+     * The created time of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The created time of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The description of the Sql tuning set. */
+    /**
+     * The description of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Last modified time of the Sql tuning set. */
+    /**
+     * Last modified time of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
      * Last modified time of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
 
-    /** Current status of the Sql tuning set. */
+    /**
+     * Current status of the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final SqlTuningSetStatusTypes status;
 
     /**
      * Current status of the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public SqlTuningSetStatusTypes getStatus() {
         return status;
     }
 
-    /** Name of the Sql tuning set scheduler job. */
+    /**
+     * Name of the Sql tuning set scheduler job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledJobName")
     private final String scheduledJobName;
 
     /**
      * Name of the Sql tuning set scheduler job.
-     *
      * @return the value
-     */
+     **/
     public String getScheduledJobName() {
         return scheduledJobName;
     }
 
-    /** Latest execution error of the plsql that was submitted as a scheduler job. */
+    /**
+     * Latest execution error of the plsql that was submitted as a scheduler job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * Latest execution error of the plsql that was submitted as a scheduler job.
-     *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
 
     /**
-     * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
-     * whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or
-     * not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the filter
-     * criteria are fetched. - No - There are more Sql statements matching the fitler criteria. User
-     * should fine tune the filter criteria to narrow down the result set.
-     */
-    public enum AllSqlStatementsFetched implements com.oracle.bmc.http.internal.BmcEnum {
+     * In OCI database management, there is a limit to fetch only 2000 rows.
+     * This flag indicates whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or not.
+     * Possible values are 'Yes' or 'No'
+     *   - Yes - All Sql statements matching the filter criteria are fetched.
+     *   - No  - There are more Sql statements matching the fitler criteria.
+     *           User should fine tune the filter criteria to narrow down the result set.
+     *
+     **/
+    public enum AllSqlStatementsFetched {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -514,37 +540,41 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
-     * whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or
-     * not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the filter
-     * criteria are fetched. - No - There are more Sql statements matching the fitler criteria. User
-     * should fine tune the filter criteria to narrow down the result set.
-     */
+     * In OCI database management, there is a limit to fetch only 2000 rows.
+     * This flag indicates whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or not.
+     * Possible values are 'Yes' or 'No'
+     *   - Yes - All Sql statements matching the filter criteria are fetched.
+     *   - No  - There are more Sql statements matching the fitler criteria.
+     *           User should fine tune the filter criteria to narrow down the result set.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allSqlStatementsFetched")
     private final AllSqlStatementsFetched allSqlStatementsFetched;
 
     /**
-     * In OCI database management, there is a limit to fetch only 2000 rows. This flag indicates
-     * whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or
-     * not. Possible values are 'Yes' or 'No' - Yes - All Sql statements matching the filter
-     * criteria are fetched. - No - There are more Sql statements matching the fitler criteria. User
-     * should fine tune the filter criteria to narrow down the result set.
+     * In OCI database management, there is a limit to fetch only 2000 rows.
+     * This flag indicates whether all Sql statements of this Sql tuning set matching the filter criteria are fetched or not.
+     * Possible values are 'Yes' or 'No'
+     *   - Yes - All Sql statements matching the filter criteria are fetched.
+     *   - No  - There are more Sql statements matching the fitler criteria.
+     *           User should fine tune the filter criteria to narrow down the result set.
      *
      * @return the value
-     */
+     **/
     public AllSqlStatementsFetched getAllSqlStatementsFetched() {
         return allSqlStatementsFetched;
     }
 
-    /** A list of the Sqls associated with the Sql tuning set. */
+    /**
+     * A list of the Sqls associated with the Sql tuning set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlList")
     private final java.util.List<SqlInSqlTuningSet> sqlList;
 
     /**
      * A list of the Sqls associated with the Sql tuning set.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SqlInSqlTuningSet> getSqlList() {
         return sqlList;
     }
@@ -556,7 +586,6 @@ public final class SqlTuningSet extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * Specifies a single key in a secondary index. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * Specifies a single key in a secondary index.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IndexKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IndexKey extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IndexKey extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"columnName", "jsonPath", "jsonFieldType"})
     public IndexKey(String columnName, String jsonPath, String jsonFieldType) {
@@ -31,54 +29,59 @@ public final class IndexKey extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of a column to be included as an index key. */
+        /**
+         * The name of a column to be included as an index key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of a column to be included as an index key.
-         *
          * @param columnName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
         /**
-         * If the specified column is of type JSON, jsonPath contains a dotted path indicating the
-         * field within the JSON object that will be the index key.
-         */
+         * If the specified column is of type JSON, jsonPath contains
+         * a dotted path indicating the field within the JSON object
+         * that will be the index key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonPath")
         private String jsonPath;
 
         /**
-         * If the specified column is of type JSON, jsonPath contains a dotted path indicating the
-         * field within the JSON object that will be the index key.
+         * If the specified column is of type JSON, jsonPath contains
+         * a dotted path indicating the field within the JSON object
+         * that will be the index key.
          *
          * @param jsonPath the value to set
          * @return this builder
-         */
+         **/
         public Builder jsonPath(String jsonPath) {
             this.jsonPath = jsonPath;
             this.__explicitlySet__.add("jsonPath");
             return this;
         }
         /**
-         * If the specified column is of type JSON, jsonFieldType contains the type of the field
-         * indicated by jsonPath.
-         */
+         * If the specified column is of type JSON, jsonFieldType contains
+         * the type of the field indicated by jsonPath.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jsonFieldType")
         private String jsonFieldType;
 
         /**
-         * If the specified column is of type JSON, jsonFieldType contains the type of the field
-         * indicated by jsonPath.
+         * If the specified column is of type JSON, jsonFieldType contains
+         * the type of the field indicated by jsonPath.
          *
          * @param jsonFieldType the value to set
          * @return this builder
-         */
+         **/
         public Builder jsonFieldType(String jsonFieldType) {
             this.jsonFieldType = jsonFieldType;
             this.__explicitlySet__.add("jsonFieldType");
@@ -111,7 +114,9 @@ public final class IndexKey extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,49 +125,54 @@ public final class IndexKey extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The name of a column to be included as an index key. */
+    /**
+     * The name of a column to be included as an index key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of a column to be included as an index key.
-     *
      * @return the value
-     */
+     **/
     public String getColumnName() {
         return columnName;
     }
 
     /**
-     * If the specified column is of type JSON, jsonPath contains a dotted path indicating the field
-     * within the JSON object that will be the index key.
-     */
+     * If the specified column is of type JSON, jsonPath contains
+     * a dotted path indicating the field within the JSON object
+     * that will be the index key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonPath")
     private final String jsonPath;
 
     /**
-     * If the specified column is of type JSON, jsonPath contains a dotted path indicating the field
-     * within the JSON object that will be the index key.
+     * If the specified column is of type JSON, jsonPath contains
+     * a dotted path indicating the field within the JSON object
+     * that will be the index key.
      *
      * @return the value
-     */
+     **/
     public String getJsonPath() {
         return jsonPath;
     }
 
     /**
-     * If the specified column is of type JSON, jsonFieldType contains the type of the field
-     * indicated by jsonPath.
-     */
+     * If the specified column is of type JSON, jsonFieldType contains
+     * the type of the field indicated by jsonPath.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jsonFieldType")
     private final String jsonFieldType;
 
     /**
-     * If the specified column is of type JSON, jsonFieldType contains the type of the field
-     * indicated by jsonPath.
+     * If the specified column is of type JSON, jsonFieldType contains
+     * the type of the field indicated by jsonPath.
      *
      * @return the value
-     */
+     **/
     public String getJsonFieldType() {
         return jsonFieldType;
     }
@@ -174,7 +184,6 @@ public final class IndexKey extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

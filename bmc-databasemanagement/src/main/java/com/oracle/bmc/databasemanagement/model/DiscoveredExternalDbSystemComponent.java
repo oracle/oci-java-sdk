@@ -5,55 +5,63 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an external DB system component. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an external DB system component.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType",
-        defaultImpl = DiscoveredExternalDbSystemComponent.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType",
+    defaultImpl = DiscoveredExternalDbSystemComponent.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalCluster.class,
-            name = "CLUSTER"),
+        value = DiscoveredExternalCluster.class,
+        name = "CLUSTER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalDbHome.class,
-            name = "DATABASE_HOME"),
+        value = DiscoveredExternalDbHome.class,
+        name = "DATABASE_HOME"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalDatabase.class,
-            name = "DATABASE"),
+        value = DiscoveredExternalDatabase.class,
+        name = "DATABASE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalPluggableDatabase.class,
-            name = "PLUGGABLE_DATABASE"),
+        value = DiscoveredExternalPluggableDatabase.class,
+        name = "PLUGGABLE_DATABASE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalClusterInstance.class,
-            name = "CLUSTER_INSTANCE"),
+        value = DiscoveredExternalClusterInstance.class,
+        name = "CLUSTER_INSTANCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalListener.class,
-            name = "LISTENER"),
+        value = DiscoveredExternalListener.class,
+        name = "LISTENER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalDbNode.class,
-            name = "DATABASE_NODE"),
+        value = DiscoveredExternalDbNode.class,
+        name = "DATABASE_NODE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalAsm.class,
-            name = "ASM"),
+        value = DiscoveredExternalAsm.class,
+        name = "ASM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DiscoveredExternalAsmInstance.class,
-            name = "ASM_INSTANCE")
+        value = DiscoveredExternalAsmInstance.class,
+        name = "ASM_INSTANCE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class DiscoveredExternalDbSystemComponent
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "componentId",
@@ -82,91 +90,88 @@ public class DiscoveredExternalDbSystemComponent
         this.associatedComponents = associatedComponents;
     }
 
-    /** The identifier of the discovered DB system component. */
+    /**
+     * The identifier of the discovered DB system component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("componentId")
     private final String componentId;
 
     /**
      * The identifier of the discovered DB system component.
-     *
      * @return the value
-     */
+     **/
     public String getComponentId() {
         return componentId;
     }
 
     /**
-     * The user-friendly name for the discovered DB system component. The name does not have to be
-     * unique.
-     */
+     * The user-friendly name for the discovered DB system component. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The user-friendly name for the discovered DB system component. The name does not have to be
-     * unique.
-     *
+     * The user-friendly name for the discovered DB system component. The name does not have to be unique.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The name of the discovered DB system component. */
+    /**
+     * The name of the discovered DB system component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("componentName")
     private final String componentName;
 
     /**
      * The name of the discovered DB system component.
-     *
      * @return the value
-     */
+     **/
     public String getComponentName() {
         return componentName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * existing OCI resource matching the discovered DB system component.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing OCI resource matching the discovered DB system component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * existing OCI resource matching the discovered DB system component.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the existing OCI resource matching the discovered DB system component.
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
     /**
      * Indicates whether the DB system component should be provisioned as an OCI resource or not.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelectedForMonitoring")
     private final Boolean isSelectedForMonitoring;
 
     /**
      * Indicates whether the DB system component should be provisioned as an OCI resource or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSelectedForMonitoring() {
         return isSelectedForMonitoring;
     }
 
-    /** The state of the discovered DB system component. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the discovered DB system component.
+     **/
+    public enum Status {
         New("NEW"),
         Existing("EXISTING"),
         MarkedForDeletion("MARKED_FOR_DELETION"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -204,28 +209,30 @@ public class DiscoveredExternalDbSystemComponent
             return UnknownEnumValue;
         }
     };
-    /** The state of the discovered DB system component. */
+    /**
+     * The state of the discovered DB system component.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The state of the discovered DB system component.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The list of associated components. */
+    /**
+     * The list of associated components.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedComponents")
     private final java.util.List<AssociatedComponent> associatedComponents;
 
     /**
      * The list of associated components.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedComponent> getAssociatedComponents() {
         return associatedComponents;
     }
@@ -237,7 +244,6 @@ public class DiscoveredExternalDbSystemComponent
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

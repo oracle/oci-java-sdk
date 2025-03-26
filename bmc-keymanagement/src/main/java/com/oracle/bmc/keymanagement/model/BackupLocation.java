@@ -5,33 +5,34 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Backup upload location <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * Backup upload location
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "destination",
-        defaultImpl = BackupLocation.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "destination",
+    defaultImpl = BackupLocation.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BackupLocationBucket.class,
-            name = "BUCKET"),
+        value = BackupLocationBucket.class,
+        name = "BUCKET"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BackupLocationURI.class,
-            name = "PRE_AUTHENTICATED_REQUEST_URI")
+        value = BackupLocationURI.class,
+        name = "PRE_AUTHENTICATED_REQUEST_URI"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class BackupLocation extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class BackupLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected BackupLocation() {
@@ -45,7 +46,6 @@ public class BackupLocation extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -79,11 +79,12 @@ public class BackupLocation extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * 'Backup location destination: BUCKET - Uploading or downloading backup via object store
-     * bucket PRE_AUTHENTICATED_REQUEST_URI - Uploading or downloading backup via a PreAuthenticated
-     * object store URI'
-     */
-    public enum Destination implements com.oracle.bmc.http.internal.BmcEnum {
+     * 'Backup location destination:
+     * BUCKET - Uploading or downloading backup via object store bucket
+     * PRE_AUTHENTICATED_REQUEST_URI - Uploading or downloading backup via a PreAuthenticated object store URI'
+     *
+     **/
+    public enum Destination {
         Bucket("BUCKET"),
         PreAuthenticatedRequestUri("PRE_AUTHENTICATED_REQUEST_URI"),
         ;

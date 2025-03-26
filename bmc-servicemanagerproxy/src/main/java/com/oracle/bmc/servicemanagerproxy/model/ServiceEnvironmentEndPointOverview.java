@@ -5,23 +5,23 @@
 package com.oracle.bmc.servicemanagerproxy.model;
 
 /**
- * An overview of service environment endpoints. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
+ * An overview of service environment endpoints.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210914")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ServiceEnvironmentEndPointOverview.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ServiceEnvironmentEndPointOverview.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ServiceEnvironmentEndPointOverview
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"environmentType", "url", "description"})
     public ServiceEnvironmentEndPointOverview(
@@ -34,46 +34,49 @@ public final class ServiceEnvironmentEndPointOverview
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Service environment endpoint type. */
+        /**
+         * Service environment endpoint type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private EnvironmentType environmentType;
 
         /**
          * Service environment endpoint type.
-         *
          * @param environmentType the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentType(EnvironmentType environmentType) {
             this.environmentType = environmentType;
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** Service environment instance URL. */
+        /**
+         * Service environment instance URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * Service environment instance URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** Description of the environment link */
+        /**
+         * Description of the environment link
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the environment link
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -108,7 +111,9 @@ public final class ServiceEnvironmentEndPointOverview
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,16 +122,18 @@ public final class ServiceEnvironmentEndPointOverview
         return new Builder().copy(this);
     }
 
-    /** Service environment endpoint type. */
-    public enum EnvironmentType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Service environment endpoint type.
+     **/
+    public enum EnvironmentType {
         InstanceUrlProd("INSTANCE_URL_PROD"),
         InstanceUrlTest("INSTANCE_URL_TEST"),
         InstanceUrlDev("INSTANCE_URL_DEV"),
         Other("OTHER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -165,41 +172,44 @@ public final class ServiceEnvironmentEndPointOverview
             return UnknownEnumValue;
         }
     };
-    /** Service environment endpoint type. */
+    /**
+     * Service environment endpoint type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final EnvironmentType environmentType;
 
     /**
      * Service environment endpoint type.
-     *
      * @return the value
-     */
+     **/
     public EnvironmentType getEnvironmentType() {
         return environmentType;
     }
 
-    /** Service environment instance URL. */
+    /**
+     * Service environment instance URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * Service environment instance URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** Description of the environment link */
+    /**
+     * Description of the environment link
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the environment link
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -211,7 +221,6 @@ public final class ServiceEnvironmentEndPointOverview
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

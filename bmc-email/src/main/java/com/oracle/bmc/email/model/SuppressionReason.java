@@ -5,12 +5,12 @@
 package com.oracle.bmc.email.model;
 
 /**
- * The reason that the email address was suppressed. For more information on the types of bounces,
- * see [Suppression
- * List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
-public enum SuppressionReason implements com.oracle.bmc.http.internal.BmcEnum {
+ * The reason that the email address was suppressed. For more information
+ * on the types of bounces, see [Suppression List](https://docs.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+public enum SuppressionReason {
     Unknown("UNKNOWN"),
     Hardbounce("HARDBOUNCE"),
     Complaint("COMPLAINT"),

@@ -5,26 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This attribute specifies the mapping of "uniqueAttributeNameForDisplay" attributes(s) of the
- * referenced resource with the columnHeaderName(s). This attribute should be given in the
- * idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This attribute specifies the mapping of "uniqueAttributeNameForDisplay" attributes(s) of the referenced resource with the columnHeaderName(s). This attribute should be given in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SchemaReferencedResourceTypeUniqueAttributeNameMappings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SchemaReferencedResourceTypeUniqueAttributeNameMappings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SchemaReferencedResourceTypeUniqueAttributeNameMappings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceTypeAttributeName", "mapsFromColumnName"})
     public SchemaReferencedResourceTypeUniqueAttributeNameMappings(
@@ -37,50 +33,68 @@ public final class SchemaReferencedResourceTypeUniqueAttributeNameMappings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the
-         * Resource type definition.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the Resource type definition.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeAttributeName")
         private String resourceTypeAttributeName;
 
         /**
-         * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the
-         * Resource type definition.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the Resource type definition.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param resourceTypeAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTypeAttributeName(String resourceTypeAttributeName) {
             this.resourceTypeAttributeName = resourceTypeAttributeName;
             this.__explicitlySet__.add("resourceTypeAttributeName");
             return this;
         }
         /**
-         * Specifies the CSV column header name that maps to the corresponding
-         * \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * Specifies the CSV column header name that maps to the corresponding \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mapsFromColumnName")
         private String mapsFromColumnName;
 
         /**
-         * Specifies the CSV column header name that maps to the corresponding
-         * \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * Specifies the CSV column header name that maps to the corresponding \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mapsFromColumnName the value to set
          * @return this builder
-         */
+         **/
         public Builder mapsFromColumnName(String mapsFromColumnName) {
             this.mapsFromColumnName = mapsFromColumnName;
             this.__explicitlySet__.add("mapsFromColumnName");
@@ -112,7 +126,9 @@ public final class SchemaReferencedResourceTypeUniqueAttributeNameMappings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,47 +138,65 @@ public final class SchemaReferencedResourceTypeUniqueAttributeNameMappings
     }
 
     /**
-     * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the
-     * Resource type definition.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the Resource type definition.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTypeAttributeName")
     private final String resourceTypeAttributeName;
 
     /**
-     * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the
-     * Resource type definition.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the name of the attribute given in \\"uniqueAttributeNameForDisplay\\" in the Resource type definition.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getResourceTypeAttributeName() {
         return resourceTypeAttributeName;
     }
 
     /**
-     * Specifies the CSV column header name that maps to the corresponding
-     * \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * Specifies the CSV column header name that maps to the corresponding \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mapsFromColumnName")
     private final String mapsFromColumnName;
 
     /**
-     * Specifies the CSV column header name that maps to the corresponding
-     * \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * Specifies the CSV column header name that maps to the corresponding \\"uniqueAttributeNameForDisplay\\" attribute of the resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMapsFromColumnName() {
         return mapsFromColumnName;
     }
@@ -174,7 +208,6 @@ public final class SchemaReferencedResourceTypeUniqueAttributeNameMappings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

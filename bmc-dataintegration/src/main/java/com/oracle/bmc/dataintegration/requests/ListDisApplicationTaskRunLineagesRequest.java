@@ -6,84 +6,93 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDisApplicationTaskRunLineagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationTaskRunLineagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDisApplicationTaskRunLineagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListDisApplicationTaskRunLineagesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     private String workspaceId;
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /** The OCID of the DIS Application. */
+    /**
+     * The OCID of the DIS Application.
+     */
     private String disApplicationId;
 
-    /** The OCID of the DIS Application. */
+    /**
+     * The OCID of the DIS Application.
+     */
     public String getDisApplicationId() {
         return disApplicationId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Specifies the fields to get for an object. */
+    /**
+     * Specifies the fields to get for an object.
+     */
     private java.util.List<String> fields;
 
-    /** Specifies the fields to get for an object. */
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
-     * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
-     * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
-     * call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
-     * call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     private SortOrder sortOrder;
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -116,25 +125,21 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
     };
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     **/
+    public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -169,89 +174,62 @@ public class ListDisApplicationTaskRunLineagesRequest
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * This filter parameter can be used to filter by model specific queryable fields of the object
-     * <br>
-     * <br>
-     * <B>Examples:-</B><br>
-     *
-     * <ul>
-     *   <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value
-     *       Failed
-     * </ul>
+     * This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
      */
     private java.util.List<String> filter;
 
     /**
-     * This filter parameter can be used to filter by model specific queryable fields of the object
-     * <br>
-     * <br>
-     * <B>Examples:-</B><br>
-     *
-     * <ul>
-     *   <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value
-     *       Failed
-     * </ul>
+     * This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
      */
     public java.util.List<String> getFilter() {
         return filter;
     }
     /**
-     * This parameter allows users to get objects which were updated after a certain time. The
-     * format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     private java.util.Date timeUpdatedGreaterThan;
 
     /**
-     * This parameter allows users to get objects which were updated after a certain time. The
-     * format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     public java.util.Date getTimeUpdatedGreaterThan() {
         return timeUpdatedGreaterThan;
     }
     /**
-     * This parameter allows users to get objects which were updated after and at a certain time.
-     * The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
     /**
-     * This parameter allows users to get objects which were updated after and at a certain time.
-     * The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
     /**
-     * This parameter allows users to get objects which were updated before a certain time. The
-     * format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     private java.util.Date timeUpatedLessThan;
 
     /**
-     * This parameter allows users to get objects which were updated before a certain time. The
-     * format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     public java.util.Date getTimeUpatedLessThan() {
         return timeUpatedLessThan;
     }
     /**
-     * This parameter allows users to get objects which were updated before and at a certain time.
-     * The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     private java.util.Date timeUpatedLessThanOrEqualTo;
 
     /**
-     * This parameter allows users to get objects which were updated before and at a certain time.
-     * The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+     * This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
      */
     public java.util.Date getTimeUpatedLessThanOrEqualTo() {
         return timeUpatedLessThanOrEqualTo;
@@ -260,15 +238,17 @@ public class ListDisApplicationTaskRunLineagesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDisApplicationTaskRunLineagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The workspace ID. */
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
-         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -277,12 +257,13 @@ public class ListDisApplicationTaskRunLineagesRequest
             return this;
         }
 
-        /** The OCID of the DIS Application. */
+        /**
+         * The OCID of the DIS Application.
+         */
         private String disApplicationId = null;
 
         /**
          * The OCID of the DIS Application.
-         *
          * @param disApplicationId the value to set
          * @return this builder instance
          */
@@ -292,14 +273,17 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -309,12 +293,13 @@ public class ListDisApplicationTaskRunLineagesRequest
             return this;
         }
 
-        /** Specifies the fields to get for an object. */
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
-         *
          * @param fields the value to set
          * @return this builder instance
          */
@@ -325,7 +310,6 @@ public class ListDisApplicationTaskRunLineagesRequest
 
         /**
          * Singular setter. Specifies the fields to get for an object.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -334,17 +318,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
-         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
-         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -354,17 +333,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code
-         * List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code
-         * List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -380,7 +354,6 @@ public class ListDisApplicationTaskRunLineagesRequest
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -390,19 +363,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-         * fields, results are shown in descending order. All other fields default to ascending
-         * order. Sorting related parameters are ignored when parameter {@code query} is present
-         * (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-         * fields, results are shown in descending order. All other fields default to ascending
-         * order. Sorting related parameters are ignored when parameter {@code query} is present
-         * (search operation and sorting order is by relevance score in descending order).
-         *
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -412,29 +378,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * This filter parameter can be used to filter by model specific queryable fields of the
-         * object <br>
-         * <br>
-         * <B>Examples:-</B><br>
-         *
-         * <ul>
-         *   <li><B>?filter=status eq Failed</B> returns all objects that have a status field with
-         *       value Failed
-         * </ul>
+         * This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
          */
         private java.util.List<String> filter = null;
 
         /**
-         * This filter parameter can be used to filter by model specific queryable fields of the
-         * object <br>
-         * <br>
-         * <B>Examples:-</B><br>
-         *
-         * <ul>
-         *   <li><B>?filter=status eq Failed</B> returns all objects that have a status field with
-         *       value Failed
-         * </ul>
-         *
+         * This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
          * @param filter the value to set
          * @return this builder instance
          */
@@ -444,16 +393,7 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Singular setter. This filter parameter can be used to filter by model specific queryable
-         * fields of the object <br>
-         * <br>
-         * <B>Examples:-</B><br>
-         *
-         * <ul>
-         *   <li><B>?filter=status eq Failed</B> returns all objects that have a status field with
-         *       value Failed
-         * </ul>
-         *
+         * Singular setter. This filter parameter can be used to filter by model specific queryable fields of the object <br><br><B>Examples:-</B><br> <ul> <li><B>?filter=status eq Failed</B> returns all objects that have a status field with value Failed</li> </ul>
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -462,15 +402,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * This parameter allows users to get objects which were updated after a certain time. The
-         * format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+         * This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          */
         private java.util.Date timeUpdatedGreaterThan = null;
 
         /**
-         * This parameter allows users to get objects which were updated after a certain time. The
-         * format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
-         *
+         * This parameter allows users to get objects which were updated after a certain time. The format of timeUpdatedGreaterThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          * @param timeUpdatedGreaterThan the value to set
          * @return this builder instance
          */
@@ -480,15 +417,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * This parameter allows users to get objects which were updated after and at a certain
-         * time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+         * This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          */
         private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
 
         /**
-         * This parameter allows users to get objects which were updated after and at a certain
-         * time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
-         *
+         * This parameter allows users to get objects which were updated after and at a certain time. The format of timeUpdatedGreaterThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -499,15 +433,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * This parameter allows users to get objects which were updated before a certain time. The
-         * format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+         * This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          */
         private java.util.Date timeUpatedLessThan = null;
 
         /**
-         * This parameter allows users to get objects which were updated before a certain time. The
-         * format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
-         *
+         * This parameter allows users to get objects which were updated before a certain time. The format of timeUpatedLessThan is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          * @param timeUpatedLessThan the value to set
          * @return this builder instance
          */
@@ -517,15 +448,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * This parameter allows users to get objects which were updated before and at a certain
-         * time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
+         * This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          */
         private java.util.Date timeUpatedLessThanOrEqualTo = null;
 
         /**
-         * This parameter allows users to get objects which were updated before and at a certain
-         * time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
-         *
+         * This parameter allows users to get objects which were updated before and at a certain time. The format of timeUpatedLessThanOrEqualTo is "YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"
          * @param timeUpatedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -536,19 +464,18 @@ public class ListDisApplicationTaskRunLineagesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -560,7 +487,6 @@ public class ListDisApplicationTaskRunLineagesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDisApplicationTaskRunLineagesRequest o) {
@@ -583,14 +509,12 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Build the instance of ListDisApplicationTaskRunLineagesRequest as configured by this
-         * builder
+         * Build the instance of ListDisApplicationTaskRunLineagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDisApplicationTaskRunLineagesRequest
          */
@@ -602,11 +526,9 @@ public class ListDisApplicationTaskRunLineagesRequest
         }
 
         /**
-         * Build the instance of ListDisApplicationTaskRunLineagesRequest as configured by this
-         * builder
+         * Build the instance of ListDisApplicationTaskRunLineagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDisApplicationTaskRunLineagesRequest
@@ -628,15 +550,12 @@ public class ListDisApplicationTaskRunLineagesRequest
             request.timeUpatedLessThan = timeUpatedLessThan;
             request.timeUpatedLessThanOrEqualTo = timeUpatedLessThanOrEqualTo;
             return request;
-            // new ListDisApplicationTaskRunLineagesRequest(workspaceId, disApplicationId,
-            // opcRequestId, fields, page, limit, sortOrder, sortBy, filter, timeUpdatedGreaterThan,
-            // timeUpdatedGreaterThanOrEqualTo, timeUpatedLessThan, timeUpatedLessThanOrEqualTo);
+            // new ListDisApplicationTaskRunLineagesRequest(workspaceId, disApplicationId, opcRequestId, fields, page, limit, sortOrder, sortBy, filter, timeUpdatedGreaterThan, timeUpdatedGreaterThanOrEqualTo, timeUpatedLessThan, timeUpatedLessThanOrEqualTo);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -658,7 +577,6 @@ public class ListDisApplicationTaskRunLineagesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

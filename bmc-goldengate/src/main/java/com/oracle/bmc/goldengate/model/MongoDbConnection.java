@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a MongoDB Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a MongoDB Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MongoDbConnection.Builder.class)
+    builder = MongoDbConnection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MongoDbConnection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,151 +199,153 @@ public final class MongoDbConnection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The MongoDB technology type. */
+        /**
+         * The MongoDB technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The MongoDB technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
         /**
-         * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-         */
+         * MongoDB connection string.
+         * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
-         * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+         * MongoDB connection string.
+         * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect to the database. This username must
-         * already exist and be available by the database to be connected to.
-         */
+         * The username Oracle GoldenGate uses to connect to the database.
+         * This username must already exist and be available by the database to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect to the database. This username must
-         * already exist and be available by the database to be connected to.
+         * The username Oracle GoldenGate uses to connect to the database.
+         * This username must already exist and be available by the database to be connected to.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Autonomous Json Database.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Autonomous Json Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** Security Protocol for MongoDB. */
+        /**
+         * Security Protocol for MongoDB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private SecurityProtocol securityProtocol;
 
         /**
          * Security Protocol for MongoDB.
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password Oracle GoldenGate uses to connect the associated
-         * database. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password Oracle GoldenGate uses to connect the associated
-         * database. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the certificate key file of the mtls connection. - The content of a
-         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
-         * 'tlsCertificateKeyFile' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * - The content of a .pem file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
         private String tlsCertificateKeyFileSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the certificate key file of the mtls connection. - The content of a
-         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
-         * 'tlsCertificateKeyFile' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+         * - The content of a .pem file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
          *
          * @param tlsCertificateKeyFileSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
             this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
             this.__explicitlySet__.add("tlsCertificateKeyFileSecretId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password of the tls certificate key file. Note: When provided,
-         * 'tlsCertificateKeyFilePassword' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+         * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
         private String tlsCertificateKeyFilePasswordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret that stores the password of the tls certificate key file. Note: When provided,
-         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+         * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
          *
          * @param tlsCertificateKeyFilePasswordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder tlsCertificateKeyFilePasswordSecretId(
                 String tlsCertificateKeyFilePasswordSecretId) {
             this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
@@ -477,7 +480,9 @@ public final class MongoDbConnection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -545,8 +550,10 @@ public final class MongoDbConnection extends Connection {
         this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
     }
 
-    /** The MongoDB technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The MongoDB technology type.
+     **/
+    public enum TechnologyType {
         Mongodb("MONGODB"),
         OciAutonomousJsonDatabase("OCI_AUTONOMOUS_JSON_DATABASE"),
         AzureCosmosDbForMongodb("AZURE_COSMOS_DB_FOR_MONGODB"),
@@ -554,8 +561,8 @@ public final class MongoDbConnection extends Connection {
         OracleJsonCollection("ORACLE_JSON_COLLECTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -594,75 +601,83 @@ public final class MongoDbConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The MongoDB technology type. */
+    /**
+     * The MongoDB technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The MongoDB technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords' */
+    /**
+     * MongoDB connection string.
+     * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
-     * MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
+     * MongoDB connection string.
+     * e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect to the database. This username must already
-     * exist and be available by the database to be connected to.
-     */
+     * The username Oracle GoldenGate uses to connect to the database.
+     * This username must already exist and be available by the database to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect to the database. This username must already
-     * exist and be available by the database to be connected to.
+     * The username Oracle GoldenGate uses to connect to the database.
+     * This username must already exist and be available by the database to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Autonomous Json Database.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Autonomous Json Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** Security Protocol for MongoDB. */
-    public enum SecurityProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Security Protocol for MongoDB.
+     **/
+    public enum SecurityProtocol {
         Plain("PLAIN"),
         Tls("TLS"),
         Mtls("MTLS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -701,74 +716,72 @@ public final class MongoDbConnection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** Security Protocol for MongoDB. */
+    /**
+     * Security Protocol for MongoDB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final SecurityProtocol securityProtocol;
 
     /**
      * Security Protocol for MongoDB.
-     *
      * @return the value
-     */
+     **/
     public SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
      * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
-     * file containing the client private key (for 2-way SSL). Note: When provided,
-     * 'tlsCertificateKeyFile' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * - The content of a .pem file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
     private final String tlsCertificateKeyFileSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
-     * file containing the client private key (for 2-way SSL). Note: When provided,
-     * 'tlsCertificateKeyFile' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
+     * - The content of a .pem file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFileSecretId() {
         return tlsCertificateKeyFileSecretId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password of the tls certificate key file. Note: When provided,
-     * 'tlsCertificateKeyFilePassword' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+     * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
     private final String tlsCertificateKeyFilePasswordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret that stores the password of the tls certificate key file. Note: When provided,
-     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file.
+     * Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getTlsCertificateKeyFilePasswordSecretId() {
         return tlsCertificateKeyFilePasswordSecretId;
     }
@@ -780,7 +793,6 @@ public final class MongoDbConnection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

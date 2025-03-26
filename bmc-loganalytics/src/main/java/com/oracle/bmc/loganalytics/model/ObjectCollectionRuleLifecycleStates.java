@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Possible object collection rule life cycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum ObjectCollectionRuleLifecycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible object collection rule life cycle states.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum ObjectCollectionRuleLifecycleStates {
     Active("ACTIVE"),
     Deleted("DELETED"),
     Inactive("INACTIVE"),

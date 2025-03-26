@@ -5,22 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Individual worker nodes groups details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Individual worker nodes groups details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChangeShapeNodes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ChangeShapeNodes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ChangeShapeNodes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "worker",
@@ -73,19 +70,16 @@ public final class ChangeShapeNodes
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         */
+         * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("worker")
         private String worker;
 
         /**
-         * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         *
+         * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param worker the value to set
          * @return this builder
-         */
+         **/
         public Builder worker(String worker) {
             this.worker = worker;
             this.__explicitlySet__.add("worker");
@@ -101,19 +95,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD
-         * and E4 Flex shapes are allowed here.
-         */
+         * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorker")
         private String computeOnlyWorker;
 
         /**
-         * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD
-         * and E4 Flex shapes are allowed here.
-         *
+         * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param computeOnlyWorker the value to set
          * @return this builder
-         */
+         **/
         public Builder computeOnlyWorker(String computeOnlyWorker) {
             this.computeOnlyWorker = computeOnlyWorker;
             this.__explicitlySet__.add("computeOnlyWorker");
@@ -130,19 +121,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         */
+         * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("master")
         private String master;
 
         /**
-         * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         *
+         * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param master the value to set
          * @return this builder
-         */
+         **/
         public Builder master(String master) {
             this.master = master;
             this.__explicitlySet__.add("master");
@@ -158,19 +146,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         */
+         * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utility")
         private String utility;
 
         /**
-         * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         *
+         * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param utility the value to set
          * @return this builder
-         */
+         **/
         public Builder utility(String utility) {
             this.utility = utility;
             this.__explicitlySet__.add("utility");
@@ -186,19 +171,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4
-         * Flex shapes are allowed here.
-         */
+         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
         private String cloudsql;
 
         /**
-         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4
-         * Flex shapes are allowed here.
-         *
+         * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param cloudsql the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudsql(String cloudsql) {
             this.cloudsql = cloudsql;
             this.__explicitlySet__.add("cloudsql");
@@ -214,19 +196,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         */
+         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("edge")
         private String edge;
 
         /**
-         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-         * shapes are allowed here.
-         *
+         * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param edge the value to set
          * @return this builder
-         */
+         **/
         public Builder edge(String edge) {
             this.edge = edge;
             this.__explicitlySet__.add("edge");
@@ -242,19 +221,16 @@ public final class ChangeShapeNodes
             return this;
         }
         /**
-         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4
-         * Flex shapes are allowed here.
-         */
+         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kafkaBroker")
         private String kafkaBroker;
 
         /**
-         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4
-         * Flex shapes are allowed here.
-         *
+         * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
          * @param kafkaBroker the value to set
          * @return this builder
-         */
+         **/
         public Builder kafkaBroker(String kafkaBroker) {
             this.kafkaBroker = kafkaBroker;
             this.__explicitlySet__.add("kafkaBroker");
@@ -344,7 +320,9 @@ public final class ChangeShapeNodes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -354,18 +332,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     */
+     * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("worker")
     private final String worker;
 
     /**
-     * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     *
+     * Change shape of worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getWorker() {
         return worker;
     }
@@ -378,18 +353,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and
-     * E4 Flex shapes are allowed here.
-     */
+     * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeOnlyWorker")
     private final String computeOnlyWorker;
 
     /**
-     * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and
-     * E4 Flex shapes are allowed here.
-     *
+     * Change shape of compute only worker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getComputeOnlyWorker() {
         return computeOnlyWorker;
     }
@@ -402,18 +374,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     */
+     * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("master")
     private final String master;
 
     /**
-     * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     *
+     * Change shape of master nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getMaster() {
         return master;
     }
@@ -426,18 +395,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     */
+     * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("utility")
     private final String utility;
 
     /**
-     * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     *
+     * Change shape of utility nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getUtility() {
         return utility;
     }
@@ -450,18 +416,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     */
+     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudsql")
     private final String cloudsql;
 
     /**
-     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     *
+     * Change shape of the Cloud SQL node to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getCloudsql() {
         return cloudsql;
     }
@@ -474,18 +437,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     */
+     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("edge")
     private final String edge;
 
     /**
-     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes
-     * are allowed here.
-     *
+     * Change shape of edge nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getEdge() {
         return edge;
     }
@@ -498,18 +458,15 @@ public final class ChangeShapeNodes
     }
 
     /**
-     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     */
+     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kafkaBroker")
     private final String kafkaBroker;
 
     /**
-     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex
-     * shapes are allowed here.
-     *
+     * Change shape of Kafka Broker nodes to the desired target shape. Both VM_STANDARD and E4 Flex shapes are allowed here.
      * @return the value
-     */
+     **/
     public String getKafkaBroker() {
         return kafkaBroker;
     }
@@ -528,7 +485,6 @@ public final class ChangeShapeNodes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

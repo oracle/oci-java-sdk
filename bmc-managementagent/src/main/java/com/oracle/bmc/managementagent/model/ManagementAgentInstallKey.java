@@ -5,23 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The details of the Agent install Key <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * The details of the Agent install Key
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagementAgentInstallKey.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagementAgentInstallKey.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagementAgentInstallKey
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -70,193 +69,193 @@ public final class ManagementAgentInstallKey
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Agent install Key identifier */
+        /**
+         * Agent install Key identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Agent install Key identifier
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Management Agent Install Key Name */
+        /**
+         * Management Agent Install Key Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Management Agent Install Key Name
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Management Agent Install Key */
+        /**
+         * Management Agent Install Key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Management Agent Install Key
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Principal id of user who created the Agent Install key */
+        /**
+         * Principal id of user who created the Agent Install key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdByPrincipalId")
         private String createdByPrincipalId;
 
         /**
          * Principal id of user who created the Agent Install key
-         *
          * @param createdByPrincipalId the value to set
          * @return this builder
-         */
+         **/
         public Builder createdByPrincipalId(String createdByPrincipalId) {
             this.createdByPrincipalId = createdByPrincipalId;
             this.__explicitlySet__.add("createdByPrincipalId");
             return this;
         }
-        /** Compartment Identifier */
+        /**
+         * Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Total number of install for this keys */
+        /**
+         * Total number of install for this keys
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
         private Integer allowedKeyInstallCount;
 
         /**
          * Total number of install for this keys
-         *
          * @param allowedKeyInstallCount the value to set
          * @return this builder
-         */
+         **/
         public Builder allowedKeyInstallCount(Integer allowedKeyInstallCount) {
             this.allowedKeyInstallCount = allowedKeyInstallCount;
             this.__explicitlySet__.add("allowedKeyInstallCount");
             return this;
         }
-        /** Total number of install for this keys */
+        /**
+         * Total number of install for this keys
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentKeyInstallCount")
         private Integer currentKeyInstallCount;
 
         /**
          * Total number of install for this keys
-         *
          * @param currentKeyInstallCount the value to set
          * @return this builder
-         */
+         **/
         public Builder currentKeyInstallCount(Integer currentKeyInstallCount) {
             this.currentKeyInstallCount = currentKeyInstallCount;
             this.__explicitlySet__.add("currentKeyInstallCount");
             return this;
         }
-        /** Status of Key */
+        /**
+         * Status of Key
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
          * Status of Key
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** date after which key would expire after creation */
+        /**
+         * date after which key would expire after creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
          * date after which key would expire after creation
-         *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
         /**
-         * The time when Management Agent install Key was created. An RFC3339 formatted date time
-         * string
-         */
+         * The time when Management Agent install Key was created. An RFC3339 formatted date time string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time when Management Agent install Key was created. An RFC3339 formatted date time
-         * string
-         *
+         * The time when Management Agent install Key was created. An RFC3339 formatted date time string
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time when Management Agent install Key was updated. An RFC3339 formatted date time
-         * string
-         */
+         * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time when Management Agent install Key was updated. An RFC3339 formatted date time
-         * string
-         *
+         * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -264,16 +263,15 @@ public final class ManagementAgentInstallKey
         }
         /**
          * If set to true, the install key has no expiration date or usage limit. Defaults to false
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
         private Boolean isUnlimited;
 
         /**
          * If set to true, the install key has no expiration date or usage limit. Defaults to false
-         *
          * @param isUnlimited the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnlimited(Boolean isUnlimited) {
             this.isUnlimited = isUnlimited;
             this.__explicitlySet__.add("isUnlimited");
@@ -350,7 +348,9 @@ public final class ManagementAgentInstallKey
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -359,179 +359,184 @@ public final class ManagementAgentInstallKey
         return new Builder().copy(this);
     }
 
-    /** Agent install Key identifier */
+    /**
+     * Agent install Key identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Agent install Key identifier
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Management Agent Install Key Name */
+    /**
+     * Management Agent Install Key Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Management Agent Install Key Name
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Management Agent Install Key */
+    /**
+     * Management Agent Install Key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Management Agent Install Key
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Principal id of user who created the Agent Install key */
+    /**
+     * Principal id of user who created the Agent Install key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdByPrincipalId")
     private final String createdByPrincipalId;
 
     /**
      * Principal id of user who created the Agent Install key
-     *
      * @return the value
-     */
+     **/
     public String getCreatedByPrincipalId() {
         return createdByPrincipalId;
     }
 
-    /** Compartment Identifier */
+    /**
+     * Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Total number of install for this keys */
+    /**
+     * Total number of install for this keys
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowedKeyInstallCount")
     private final Integer allowedKeyInstallCount;
 
     /**
      * Total number of install for this keys
-     *
      * @return the value
-     */
+     **/
     public Integer getAllowedKeyInstallCount() {
         return allowedKeyInstallCount;
     }
 
-    /** Total number of install for this keys */
+    /**
+     * Total number of install for this keys
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKeyInstallCount")
     private final Integer currentKeyInstallCount;
 
     /**
      * Total number of install for this keys
-     *
      * @return the value
-     */
+     **/
     public Integer getCurrentKeyInstallCount() {
         return currentKeyInstallCount;
     }
 
-    /** Status of Key */
+    /**
+     * Status of Key
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
      * Status of Key
-     *
      * @return the value
-     */
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** date after which key would expire after creation */
+    /**
+     * date after which key would expire after creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
      * date after which key would expire after creation
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when Management Agent install Key was created. An RFC3339 formatted date time string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when Management Agent install Key was updated. An RFC3339 formatted date time string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** If set to true, the install key has no expiration date or usage limit. Defaults to false */
+    /**
+     * If set to true, the install key has no expiration date or usage limit. Defaults to false
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnlimited")
     private final Boolean isUnlimited;
 
     /**
      * If set to true, the install key has no expiration date or usage limit. Defaults to false
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUnlimited() {
         return isUnlimited;
     }
@@ -543,7 +548,6 @@ public final class ManagementAgentInstallKey
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

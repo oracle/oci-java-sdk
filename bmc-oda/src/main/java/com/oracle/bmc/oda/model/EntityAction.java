@@ -5,21 +5,19 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Action of an entity <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Action of an entity
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityAction.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntityAction extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntityAction extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "crudType", "naturalLanguageMapping", "arguments"})
     public EntityAction(
@@ -36,31 +34,33 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of an entity action */
+        /**
+         * Name of an entity action
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of an entity action
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of CRUD operation for entity action */
+        /**
+         * Type of CRUD operation for entity action
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crudType")
         private String crudType;
 
         /**
          * Type of CRUD operation for entity action
-         *
          * @param crudType the value to set
          * @return this builder
-         */
+         **/
         public Builder crudType(String crudType) {
             this.crudType = crudType;
             this.__explicitlySet__.add("crudType");
@@ -76,16 +76,17 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("naturalLanguageMapping");
             return this;
         }
-        /** List of entity action arguments */
+        /**
+         * List of entity action arguments
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<EntityActionArgument> arguments;
 
         /**
          * List of entity action arguments
-         *
          * @param arguments the value to set
          * @return this builder
-         */
+         **/
         public Builder arguments(java.util.List<EntityActionArgument> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
@@ -123,7 +124,9 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,28 +135,30 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Name of an entity action */
+    /**
+     * Name of an entity action
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of an entity action
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of CRUD operation for entity action */
+    /**
+     * Type of CRUD operation for entity action
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crudType")
     private final String crudType;
 
     /**
      * Type of CRUD operation for entity action
-     *
      * @return the value
-     */
+     **/
     public String getCrudType() {
         return crudType;
     }
@@ -165,15 +170,16 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
         return naturalLanguageMapping;
     }
 
-    /** List of entity action arguments */
+    /**
+     * List of entity action arguments
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<EntityActionArgument> arguments;
 
     /**
      * List of entity action arguments
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityActionArgument> getArguments() {
         return arguments;
     }
@@ -185,7 +191,6 @@ public final class EntityAction extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

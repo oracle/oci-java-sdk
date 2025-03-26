@@ -11,18 +11,26 @@ import com.oracle.bmc.responses.AsyncHandler;
 import com.oracle.bmc.waiter.Waiter;
 
 /**
- * SimpleWaiterImpl is a basic wrapper around a Callable that executes an action, and provides
- * methods to either execute it synchronously or asynchronously.
+ * SimpleWaiterImpl is a basic wrapper around a Callable that executes an action, and
+ * provides methods to either execute it synchronously or asynchronously.
  *
- * @param <REQUEST> The request type.
- * @param <RESPONSE> The response type.
+ * @param <REQUEST>
+ *            The request type.
+ * @param <RESPONSE>
+ *            The response type.
  */
 public class SimpleWaiterImpl<REQUEST, RESPONSE> implements Waiter<REQUEST, RESPONSE> {
-    /** The executor service to submit async requests to. */
+    /**
+     * The executor service to submit async requests to.
+     */
     private final ExecutorService executorService;
-    /** The callable to invoke. */
+    /**
+     * The callable to invoke.
+     */
     private final Callable<RESPONSE> callable;
-    /** The request this waiter is being invoked on. */
+    /**
+     * The request this waiter is being invoked on.
+     */
     private final REQUEST request;
 
     @Override
@@ -58,7 +66,9 @@ public class SimpleWaiterImpl<REQUEST, RESPONSE> implements Waiter<REQUEST, RESP
         this.request = request;
     }
 
-    /** The request this waiter is being invoked on. */
+    /**
+     * The request this waiter is being invoked on.
+     */
     public REQUEST getRequest() {
         return this.request;
     }

@@ -6,54 +6,61 @@ package com.oracle.bmc.cloudguard.requests;
 
 import com.oracle.bmc.cloudguard.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderExecutionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListResponderExecutionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResponderExecutionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResponderExecutionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListResponderExecutionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the setting of
-     * {@code accessLevel}.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the setting of {@code accessLevel}.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the setting of
-     * {@code accessLevel}.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the setting of {@code accessLevel}.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -88,74 +95,103 @@ public class ListResponderExecutionsRequest
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** Responder rule unique identifier filter for the responder executions. */
+    /**
+     * Responder rule unique identifier filter for the responder executions.
+     */
     private java.util.List<String> responderRuleIds;
 
-    /** Responder rule unique identifier filter for the responder executions. */
+    /**
+     * Responder rule unique identifier filter for the responder executions.
+     */
     public java.util.List<String> getResponderRuleIds() {
         return responderRuleIds;
     }
-    /** Creation start time for filtering */
+    /**
+     * Creation start time for filtering
+     */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
-    /** Creation start time for filtering */
+    /**
+     * Creation start time for filtering
+     */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
-    /** Creation end time for filtering. */
+    /**
+     * Creation end time for filtering.
+     */
     private java.util.Date timeCreatedLessThanOrEqualTo;
 
-    /** Creation end time for filtering. */
+    /**
+     * Creation end time for filtering.
+     */
     public java.util.Date getTimeCreatedLessThanOrEqualTo() {
         return timeCreatedLessThanOrEqualTo;
     }
-    /** Completion end time. */
+    /**
+     * Completion end time.
+     */
     private java.util.Date timeCompletedGreaterThanOrEqualTo;
 
-    /** Completion end time. */
+    /**
+     * Completion end time.
+     */
     public java.util.Date getTimeCompletedGreaterThanOrEqualTo() {
         return timeCompletedGreaterThanOrEqualTo;
     }
-    /** Completion start time. */
+    /**
+     * Completion start time.
+     */
     private java.util.Date timeCompletedLessThanOrEqualTo;
 
-    /** Completion start time. */
+    /**
+     * Completion start time.
+     */
     public java.util.Date getTimeCompletedLessThanOrEqualTo() {
         return timeCompletedLessThanOrEqualTo;
     }
-    /** The ID of the target in which to list resources. */
+    /**
+     * The ID of the target in which to list resources.
+     */
     private String targetId;
 
-    /** The ID of the target in which to list resources. */
+    /**
+     * The ID of the target in which to list resources.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** Resource type associated with the resource. */
+    /**
+     * Resource type associated with the resource.
+     */
     private String resourceType;
 
-    /** Resource type associated with the resource. */
+    /**
+     * Resource type associated with the resource.
+     */
     public String getResourceType() {
         return resourceType;
     }
     /**
-     * The field to list the responder executions by responder type. Valid values are REMEDIATION
-     * and NOTIFICATION.
+     * The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
+     *
      */
     private ResponderType responderType;
 
     /**
-     * The field to list the responder executions by responder type. Valid values are REMEDIATION
-     * and NOTIFICATION.
-     */
-    public enum ResponderType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
+     *
+     **/
+    public enum ResponderType {
         Remediation("REMEDIATION"),
         Notification("NOTIFICATION"),
         ;
@@ -189,66 +225,78 @@ public class ListResponderExecutionsRequest
     };
 
     /**
-     * The field to list the responder executions by responder type. Valid values are REMEDIATION
-     * and NOTIFICATION.
+     * The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
+     *
      */
     public ResponderType getResponderType() {
         return responderType;
     }
-    /** The status of the responder execution in which to list responders. */
+    /**
+     * The status of the responder execution in which to list responders.
+     */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionStates responderExecutionStatus;
 
-    /** The status of the responder execution in which to list responders. */
+    /**
+     * The status of the responder execution in which to list responders.
+     */
     public com.oracle.bmc.cloudguard.model.ResponderExecutionStates getResponderExecutionStatus() {
         return responderExecutionStatus;
     }
-    /** The mode of the responder execution in which to list responders. */
+    /**
+     * The mode of the responder execution in which to list responders.
+     */
     private com.oracle.bmc.cloudguard.model.ResponderExecutionModes responderExecutionMode;
 
-    /** The mode of the responder execution in which to list responders. */
+    /**
+     * The mode of the responder execution in which to list responders.
+     */
     public com.oracle.bmc.cloudguard.model.ResponderExecutionModes getResponderExecutionMode() {
         return responderExecutionMode;
     }
-    /** The maximum number of items to return */
+    /**
+     * The maximum number of items to return
+     */
     private Integer limit;
 
-    /** The maximum number of items to return */
+    /**
+     * The maximum number of items to return
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use */
+    /**
+     * The sort order to use
+     */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use */
+    /**
+     * The sort order to use
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for responderRuleName and resourceName is ascending. If no value is
-     * specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for responderRuleName and resourceName is ascending. If no value is
-     * specified timeCreated is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         ResponderRuleName("responderRuleName"),
         ResourceName("resourceName"),
@@ -284,17 +332,20 @@ public class ListResponderExecutionsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for responderRuleName and resourceName is ascending. If no value is
-     * specified timeCreated is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -302,15 +353,17 @@ public class ListResponderExecutionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListResponderExecutionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment in which to list resources. */
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -320,16 +373,19 @@ public class ListResponderExecutionsRequest
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the setting of
-         * {@code accessLevel}.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the setting of {@code accessLevel}.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the setting of
-         * {@code accessLevel}.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the setting of {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -340,20 +396,21 @@ public class ListResponderExecutionsRequest
         }
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
-         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
-         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
-         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
-         * partial results are displayed.
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
-         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
-         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
-         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
-         * partial results are displayed.
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -363,12 +420,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** Responder rule unique identifier filter for the responder executions. */
+        /**
+         * Responder rule unique identifier filter for the responder executions.
+         */
         private java.util.List<String> responderRuleIds = null;
 
         /**
          * Responder rule unique identifier filter for the responder executions.
-         *
          * @param responderRuleIds the value to set
          * @return this builder instance
          */
@@ -379,7 +437,6 @@ public class ListResponderExecutionsRequest
 
         /**
          * Singular setter. Responder rule unique identifier filter for the responder executions.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -387,12 +444,13 @@ public class ListResponderExecutionsRequest
             return this.responderRuleIds(java.util.Arrays.asList(singularValue));
         }
 
-        /** Creation start time for filtering */
+        /**
+         * Creation start time for filtering
+         */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
          * Creation start time for filtering
-         *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -402,12 +460,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** Creation end time for filtering. */
+        /**
+         * Creation end time for filtering.
+         */
         private java.util.Date timeCreatedLessThanOrEqualTo = null;
 
         /**
          * Creation end time for filtering.
-         *
          * @param timeCreatedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -416,12 +475,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** Completion end time. */
+        /**
+         * Completion end time.
+         */
         private java.util.Date timeCompletedGreaterThanOrEqualTo = null;
 
         /**
          * Completion end time.
-         *
          * @param timeCompletedGreaterThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -431,12 +491,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** Completion start time. */
+        /**
+         * Completion start time.
+         */
         private java.util.Date timeCompletedLessThanOrEqualTo = null;
 
         /**
          * Completion start time.
-         *
          * @param timeCompletedLessThanOrEqualTo the value to set
          * @return this builder instance
          */
@@ -446,12 +507,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The ID of the target in which to list resources. */
+        /**
+         * The ID of the target in which to list resources.
+         */
         private String targetId = null;
 
         /**
          * The ID of the target in which to list resources.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -460,12 +522,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** Resource type associated with the resource. */
+        /**
+         * Resource type associated with the resource.
+         */
         private String resourceType = null;
 
         /**
          * Resource type associated with the resource.
-         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -475,14 +538,13 @@ public class ListResponderExecutionsRequest
         }
 
         /**
-         * The field to list the responder executions by responder type. Valid values are
-         * REMEDIATION and NOTIFICATION.
+         * The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
+         *
          */
         private ResponderType responderType = null;
 
         /**
-         * The field to list the responder executions by responder type. Valid values are
-         * REMEDIATION and NOTIFICATION.
+         * The field to list the responder executions by responder type. Valid values are REMEDIATION and NOTIFICATION.
          *
          * @param responderType the value to set
          * @return this builder instance
@@ -492,13 +554,14 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The status of the responder execution in which to list responders. */
+        /**
+         * The status of the responder execution in which to list responders.
+         */
         private com.oracle.bmc.cloudguard.model.ResponderExecutionStates responderExecutionStatus =
                 null;
 
         /**
          * The status of the responder execution in which to list responders.
-         *
          * @param responderExecutionStatus the value to set
          * @return this builder instance
          */
@@ -508,13 +571,14 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The mode of the responder execution in which to list responders. */
+        /**
+         * The mode of the responder execution in which to list responders.
+         */
         private com.oracle.bmc.cloudguard.model.ResponderExecutionModes responderExecutionMode =
                 null;
 
         /**
          * The mode of the responder execution in which to list responders.
-         *
          * @param responderExecutionMode the value to set
          * @return this builder instance
          */
@@ -524,12 +588,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The maximum number of items to return */
+        /**
+         * The maximum number of items to return
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -539,15 +604,12 @@ public class ListResponderExecutionsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -556,12 +618,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The sort order to use */
+        /**
+         * The sort order to use
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -571,16 +634,13 @@ public class ListResponderExecutionsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for responderRuleName and resourceName is ascending. If no
-         * value is specified timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for responderRuleName and resourceName is ascending. If no
-         * value is specified timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for responderRuleName and resourceName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -590,12 +650,13 @@ public class ListResponderExecutionsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -606,19 +667,18 @@ public class ListResponderExecutionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -630,7 +690,6 @@ public class ListResponderExecutionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListResponderExecutionsRequest o) {
@@ -660,11 +719,10 @@ public class ListResponderExecutionsRequest
         /**
          * Build the instance of ListResponderExecutionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListResponderExecutionsRequest
          */
@@ -678,8 +736,7 @@ public class ListResponderExecutionsRequest
         /**
          * Build the instance of ListResponderExecutionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListResponderExecutionsRequest
@@ -705,18 +762,12 @@ public class ListResponderExecutionsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResponderExecutionsRequest(compartmentId, compartmentIdInSubtree,
-            // accessLevel, responderRuleIds, timeCreatedGreaterThanOrEqualTo,
-            // timeCreatedLessThanOrEqualTo, timeCompletedGreaterThanOrEqualTo,
-            // timeCompletedLessThanOrEqualTo, targetId, resourceType, responderType,
-            // responderExecutionStatus, responderExecutionMode, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListResponderExecutionsRequest(compartmentId, compartmentIdInSubtree, accessLevel, responderRuleIds, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThanOrEqualTo, timeCompletedGreaterThanOrEqualTo, timeCompletedLessThanOrEqualTo, targetId, resourceType, responderType, responderExecutionStatus, responderExecutionMode, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -743,7 +794,6 @@ public class ListResponderExecutionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

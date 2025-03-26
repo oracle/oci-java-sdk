@@ -5,23 +5,23 @@
 package com.oracle.bmc.ocicontrolcenter.model;
 
 /**
- * A summary of the properties that define a metric. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
+ * A summary of the properties that define a metric.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MetricPropertySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MetricPropertySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MetricPropertySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"metricName", "dimensions"})
     public MetricPropertySummary(
@@ -33,7 +33,10 @@ public final class MetricPropertySummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the metric. */
+        /**
+         * The name of the metric.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricName")
         private String metricName;
 
@@ -42,26 +45,25 @@ public final class MetricPropertySummary
          *
          * @param metricName the value to set
          * @return this builder
-         */
+         **/
         public Builder metricName(String metricName) {
             this.metricName = metricName;
             this.__explicitlySet__.add("metricName");
             return this;
         }
         /**
-         * Qualifiers provided in a metric definition. Available dimensions vary by metric
-         * namespace.
-         */
+         * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, DimensionValue> dimensions;
 
         /**
-         * Qualifiers provided in a metric definition. Available dimensions vary by metric
-         * namespace.
+         * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, DimensionValue> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
@@ -92,7 +94,9 @@ public final class MetricPropertySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,7 +105,10 @@ public final class MetricPropertySummary
         return new Builder().copy(this);
     }
 
-    /** The name of the metric. */
+    /**
+     * The name of the metric.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricName")
     private final String metricName;
 
@@ -109,14 +116,15 @@ public final class MetricPropertySummary
      * The name of the metric.
      *
      * @return the value
-     */
+     **/
     public String getMetricName() {
         return metricName;
     }
 
     /**
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, DimensionValue> dimensions;
 
@@ -124,7 +132,7 @@ public final class MetricPropertySummary
      * Qualifiers provided in a metric definition. Available dimensions vary by metric namespace.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, DimensionValue> getDimensions() {
         return dimensions;
     }
@@ -136,7 +144,6 @@ public final class MetricPropertySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

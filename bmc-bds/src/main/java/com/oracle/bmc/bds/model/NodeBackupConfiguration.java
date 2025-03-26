@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the NodeBackupConfiguration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the NodeBackupConfiguration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NodeBackupConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = NodeBackupConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NodeBackupConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -64,52 +63,49 @@ public final class NodeBackupConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier for the NodeBackupConfiguration. */
+        /**
+         * The unique identifier for the NodeBackupConfiguration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier for the NodeBackupConfiguration.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the bdsInstance which is the parent resource id. */
+        /**
+         * The OCID of the bdsInstance which is the parent resource id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsInstanceId")
         private String bdsInstanceId;
 
         /**
          * The OCID of the bdsInstance which is the parent resource id.
-         *
          * @param bdsInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder bdsInstanceId(String bdsInstanceId) {
             this.bdsInstanceId = bdsInstanceId;
             this.__explicitlySet__.add("bdsInstanceId");
             return this;
         }
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         *
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -124,126 +120,117 @@ public final class NodeBackupConfiguration
             this.__explicitlySet__.add("levelTypeDetails");
             return this;
         }
-        /** The state of the NodeBackupConfiguration. */
+        /**
+         * The state of the NodeBackupConfiguration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the NodeBackupConfiguration.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime
-         * string.
-         */
+         * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime
-         * string.
-         *
+         * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime
-         * string.
-         */
+         * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime
-         * string.
+         * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The time zone of the execution schedule, in IANA time zone database name format */
+        /**
+         * The time zone of the execution schedule, in IANA time zone database name format
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timezone")
         private String timezone;
 
         /**
          * The time zone of the execution schedule, in IANA time zone database name format
-         *
          * @param timezone the value to set
          * @return this builder
-         */
+         **/
         public Builder timezone(String timezone) {
             this.timezone = timezone;
             this.__explicitlySet__.add("timezone");
             return this;
         }
         /**
-         * Day/time recurrence (specified following RFC 5545) at which to trigger the backup
-         * process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the
-         * week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other
-         * fields are not supported.
-         */
+         * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schedule")
         private String schedule;
 
         /**
-         * Day/time recurrence (specified following RFC 5545) at which to trigger the backup
-         * process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the
-         * week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other
-         * fields are not supported.
+         * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
          *
          * @param schedule the value to set
          * @return this builder
-         */
+         **/
         public Builder schedule(String schedule) {
             this.schedule = schedule;
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Number of backup copies to retain. */
+        /**
+         * Number of backup copies to retain.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfBackupsToRetain")
         private Integer numberOfBackupsToRetain;
 
         /**
          * Number of backup copies to retain.
-         *
          * @param numberOfBackupsToRetain the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfBackupsToRetain(Integer numberOfBackupsToRetain) {
             this.numberOfBackupsToRetain = numberOfBackupsToRetain;
             this.__explicitlySet__.add("numberOfBackupsToRetain");
             return this;
         }
         /**
-         * Incremental backup type includes only the changes since the last backup. Full backup type
-         * includes all changes since the volume was created.
-         */
+         * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private NodeBackup.BackupType backupType;
 
         /**
-         * Incremental backup type includes only the changes since the last backup. Full backup type
-         * includes all changes since the volume was created.
-         *
+         * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
          * @param backupType the value to set
          * @return this builder
-         */
+         **/
         public Builder backupType(NodeBackup.BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
@@ -312,7 +299,9 @@ public final class NodeBackupConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -321,45 +310,44 @@ public final class NodeBackupConfiguration
         return new Builder().copy(this);
     }
 
-    /** The unique identifier for the NodeBackupConfiguration. */
+    /**
+     * The unique identifier for the NodeBackupConfiguration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier for the NodeBackupConfiguration.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the bdsInstance which is the parent resource id. */
+    /**
+     * The OCID of the bdsInstance which is the parent resource id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsInstanceId")
     private final String bdsInstanceId;
 
     /**
      * The OCID of the bdsInstance which is the parent resource id.
-     *
      * @return the value
-     */
+     **/
     public String getBdsInstanceId() {
         return bdsInstanceId;
     }
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     */
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     *
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -371,8 +359,10 @@ public final class NodeBackupConfiguration
         return levelTypeDetails;
     }
 
-    /** The state of the NodeBackupConfiguration. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the NodeBackupConfiguration.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
@@ -381,8 +371,8 @@ public final class NodeBackupConfiguration
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -421,113 +411,104 @@ public final class NodeBackupConfiguration
             return UnknownEnumValue;
         }
     };
-    /** The state of the NodeBackupConfiguration. */
+    /**
+     * The state of the NodeBackupConfiguration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the NodeBackupConfiguration.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime
-     * string.
-     */
+     * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime
-     * string.
-     *
+     * The time the NodeBackupConfiguration was created, shown as an RFC 3339 formatted datetime string.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime
-     * string.
-     */
+     * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime
-     * string.
+     * The time the NodeBackupConfiguration was updated, shown as an RFC 3339 formatted datetime string.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The time zone of the execution schedule, in IANA time zone database name format */
+    /**
+     * The time zone of the execution schedule, in IANA time zone database name format
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timezone")
     private final String timezone;
 
     /**
      * The time zone of the execution schedule, in IANA time zone database name format
-     *
      * @return the value
-     */
+     **/
     public String getTimezone() {
         return timezone;
     }
 
     /**
-     * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process.
-     * Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are
-     * specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not
-     * supported.
-     */
+     * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schedule")
     private final String schedule;
 
     /**
-     * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process.
-     * Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are
-     * specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not
-     * supported.
+     * Day/time recurrence (specified following RFC 5545) at which to trigger the backup process. Currently only DAILY, WEEKLY and MONTHLY frequency is supported. Days of the week are specified using BYDAY field. Time of the day is specified using BYHOUR. Other fields are not supported.
      *
      * @return the value
-     */
+     **/
     public String getSchedule() {
         return schedule;
     }
 
-    /** Number of backup copies to retain. */
+    /**
+     * Number of backup copies to retain.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfBackupsToRetain")
     private final Integer numberOfBackupsToRetain;
 
     /**
      * Number of backup copies to retain.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfBackupsToRetain() {
         return numberOfBackupsToRetain;
     }
 
     /**
-     * Incremental backup type includes only the changes since the last backup. Full backup type
-     * includes all changes since the volume was created.
-     */
+     * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final NodeBackup.BackupType backupType;
 
     /**
-     * Incremental backup type includes only the changes since the last backup. Full backup type
-     * includes all changes since the volume was created.
-     *
+     * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      * @return the value
-     */
+     **/
     public NodeBackup.BackupType getBackupType() {
         return backupType;
     }
@@ -539,7 +520,6 @@ public final class NodeBackupConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

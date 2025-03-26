@@ -6,58 +6,67 @@ package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetModuleStreamProfileRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetModuleStreamProfileExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetModuleStreamProfileRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetModuleStreamProfileRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     private String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      */
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
-    /** The name of the module stream profile. */
+    /**
+     * The name of the module stream profile.
+     */
     private String profileName;
 
-    /** The name of the module stream profile. */
+    /**
+     * The name of the module stream profile.
+     */
     public String getProfileName() {
         return profileName;
     }
-    /** The name of a module. */
+    /**
+     * The name of a module.
+     *
+     */
     private String moduleName;
 
-    /** The name of a module. */
+    /**
+     * The name of a module.
+     *
+     */
     public String getModuleName() {
         return moduleName;
     }
-    /** The name of the stream of the containing module. */
+    /**
+     * The name of the stream of the containing module.
+     *
+     */
     private String streamName;
 
-    /** The name of the stream of the containing module. */
+    /**
+     * The name of the stream of the containing module.
+     *
+     */
     public String getStreamName() {
         return streamName;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -66,19 +75,17 @@ public class GetModuleStreamProfileRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetModuleStreamProfileRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          */
         private String softwareSourceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
          * @param softwareSourceId the value to set
          * @return this builder instance
          */
@@ -87,12 +94,13 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /** The name of the module stream profile. */
+        /**
+         * The name of the module stream profile.
+         */
         private String profileName = null;
 
         /**
          * The name of the module stream profile.
-         *
          * @param profileName the value to set
          * @return this builder instance
          */
@@ -101,7 +109,10 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /** The name of a module. */
+        /**
+         * The name of a module.
+         *
+         */
         private String moduleName = null;
 
         /**
@@ -115,7 +126,10 @@ public class GetModuleStreamProfileRequest
             return this;
         }
 
-        /** The name of the stream of the containing module. */
+        /**
+         * The name of the stream of the containing module.
+         *
+         */
         private String streamName = null;
 
         /**
@@ -130,15 +144,12 @@ public class GetModuleStreamProfileRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -149,19 +160,18 @@ public class GetModuleStreamProfileRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -173,7 +183,6 @@ public class GetModuleStreamProfileRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetModuleStreamProfileRequest o) {
@@ -190,11 +199,10 @@ public class GetModuleStreamProfileRequest
         /**
          * Build the instance of GetModuleStreamProfileRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetModuleStreamProfileRequest
          */
@@ -208,8 +216,7 @@ public class GetModuleStreamProfileRequest
         /**
          * Build the instance of GetModuleStreamProfileRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetModuleStreamProfileRequest
@@ -222,14 +229,12 @@ public class GetModuleStreamProfileRequest
             request.streamName = streamName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetModuleStreamProfileRequest(softwareSourceId, profileName, moduleName,
-            // streamName, opcRequestId);
+            // new GetModuleStreamProfileRequest(softwareSourceId, profileName, moduleName, streamName, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -243,7 +248,6 @@ public class GetModuleStreamProfileRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

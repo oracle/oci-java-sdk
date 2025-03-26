@@ -5,21 +5,19 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Details of a metric which is part of this metric extension <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Details of a metric which is part of this metric extension
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Metric.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Metric extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Metric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -53,125 +51,129 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the metric. */
+        /**
+         * Name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the metric.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Display name of the metric. */
+        /**
+         * Display name of the metric.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the metric.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Current metric need to be included as dimension or not */
+        /**
+         * Current metric need to be included as dimension or not
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDimension")
         private Boolean isDimension;
 
         /**
          * Current metric need to be included as dimension or not
-         *
          * @param isDimension the value to set
          * @return this builder
-         */
+         **/
         public Builder isDimension(Boolean isDimension) {
             this.isDimension = isDimension;
             this.__explicitlySet__.add("isDimension");
             return this;
         }
-        /** Compute Expression to calculate the value of this metric */
+        /**
+         * Compute Expression to calculate the value of this metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeExpression")
         private String computeExpression;
 
         /**
          * Compute Expression to calculate the value of this metric
-         *
          * @param computeExpression the value to set
          * @return this builder
-         */
+         **/
         public Builder computeExpression(String computeExpression) {
             this.computeExpression = computeExpression;
             this.__explicitlySet__.add("computeExpression");
             return this;
         }
-        /** Data type of value of this metric */
+        /**
+         * Data type of value of this metric
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private DataType dataType;
 
         /**
          * Data type of value of this metric
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(DataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
             return this;
         }
         /**
-         * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric
-         * is uploaded, isHidden = true -> Metric is NOT uploaded
-         */
+         * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is uploaded, isHidden = true -> Metric is NOT uploaded
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
         private Boolean isHidden;
 
         /**
-         * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric
-         * is uploaded, isHidden = true -> Metric is NOT uploaded
-         *
+         * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is uploaded, isHidden = true -> Metric is NOT uploaded
          * @param isHidden the value to set
          * @return this builder
-         */
+         **/
         public Builder isHidden(Boolean isHidden) {
             this.isHidden = isHidden;
             this.__explicitlySet__.add("isHidden");
             return this;
         }
-        /** Metric category */
+        /**
+         * Metric category
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricCategory")
         private MetricCategory metricCategory;
 
         /**
          * Metric category
-         *
          * @param metricCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder metricCategory(MetricCategory metricCategory) {
             this.metricCategory = metricCategory;
             this.__explicitlySet__.add("metricCategory");
             return this;
         }
-        /** Unit of metric value */
+        /**
+         * Unit of metric value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private String unit;
 
         /**
          * Unit of metric value
-         *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(String unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
@@ -228,7 +230,9 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -237,66 +241,72 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
         return new Builder().copy(this);
     }
 
-    /** Name of the metric. */
+    /**
+     * Name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Display name of the metric. */
+    /**
+     * Display name of the metric.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the metric.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Current metric need to be included as dimension or not */
+    /**
+     * Current metric need to be included as dimension or not
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDimension")
     private final Boolean isDimension;
 
     /**
      * Current metric need to be included as dimension or not
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDimension() {
         return isDimension;
     }
 
-    /** Compute Expression to calculate the value of this metric */
+    /**
+     * Compute Expression to calculate the value of this metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeExpression")
     private final String computeExpression;
 
     /**
      * Compute Expression to calculate the value of this metric
-     *
      * @return the value
-     */
+     **/
     public String getComputeExpression() {
         return computeExpression;
     }
 
-    /** Data type of value of this metric */
-    public enum DataType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Data type of value of this metric
+     **/
+    public enum DataType {
         String("STRING"),
         Number("NUMBER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -335,46 +345,46 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** Data type of value of this metric */
+    /**
+     * Data type of value of this metric
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final DataType dataType;
 
     /**
      * Data type of value of this metric
-     *
      * @return the value
-     */
+     **/
     public DataType getDataType() {
         return dataType;
     }
 
     /**
-     * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is
-     * uploaded, isHidden = true -> Metric is NOT uploaded
-     */
+     * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is uploaded, isHidden = true -> Metric is NOT uploaded
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHidden")
     private final Boolean isHidden;
 
     /**
-     * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is
-     * uploaded, isHidden = true -> Metric is NOT uploaded
-     *
+     * Flag to marks whether a metric has to be uploaded or not. When isHidden = false -> Metric is uploaded, isHidden = true -> Metric is NOT uploaded
      * @return the value
-     */
+     **/
     public Boolean getIsHidden() {
         return isHidden;
     }
 
-    /** Metric category */
-    public enum MetricCategory implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Metric category
+     **/
+    public enum MetricCategory {
         Load("LOAD"),
         Utilization("UTILIZATION"),
         Capacity("CAPACITY"),
         Availability("AVAILABILITY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -413,28 +423,30 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** Metric category */
+    /**
+     * Metric category
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricCategory")
     private final MetricCategory metricCategory;
 
     /**
      * Metric category
-     *
      * @return the value
-     */
+     **/
     public MetricCategory getMetricCategory() {
         return metricCategory;
     }
 
-    /** Unit of metric value */
+    /**
+     * Unit of metric value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final String unit;
 
     /**
      * Unit of metric value
-     *
      * @return the value
-     */
+     **/
     public String getUnit() {
         return unit;
     }
@@ -446,7 +458,6 @@ public final class Metric extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

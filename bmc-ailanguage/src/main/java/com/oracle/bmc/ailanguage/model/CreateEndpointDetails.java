@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * The information needed to create a new endpoint and expose to end users. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * The information needed to create a new endpoint and expose to end users.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -59,144 +58,132 @@ public final class CreateEndpointDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly display name for the resource. It should be unique and can be modified.
-         * Avoid entering confidential information.
-         */
+         * A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name for the resource. It should be unique and can be modified.
-         * Avoid entering confidential information.
-         *
+         * A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compute infra type for endpoint. */
+        /**
+         * Compute infra type for endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeType")
         private ComputeType computeType;
 
         /**
          * Compute infra type for endpoint.
-         *
          * @param computeType the value to set
          * @return this builder
-         */
+         **/
         public Builder computeType(ComputeType computeType) {
             this.computeType = computeType;
             this.__explicitlySet__.add("computeType");
             return this;
         }
         /**
-         * Unique name across user tenancy in a region to identify an endpoint to be used for
-         * inferencing.
-         */
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alias")
         private String alias;
 
         /**
-         * Unique name across user tenancy in a region to identify an endpoint to be used for
-         * inferencing.
-         *
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
          * @param alias the value to set
          * @return this builder
-         */
+         **/
         public Builder alias(String alias) {
             this.alias = alias;
             this.__explicitlySet__.add("alias");
             return this;
         }
-        /** A short description of the an endpoint. */
+        /**
+         * A short description of the an endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description of the an endpoint.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * compartment identifier for the endpoint
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * compartment identifier for the endpoint
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * model to associate with the endpoint.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * model to associate with the endpoint.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
          * @param modelId the value to set
          * @return this builder
-         */
+         **/
         public Builder modelId(String modelId) {
             this.modelId = modelId;
             this.__explicitlySet__.add("modelId");
             return this;
         }
         /**
-         * Number of replicas required for this endpoint. This will be optional parameter. Default
-         * will be 1.
-         */
+         * Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
         private Integer inferenceUnits;
 
         /**
-         * Number of replicas required for this endpoint. This will be optional parameter. Default
-         * will be 1.
-         *
+         * Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
          * @param inferenceUnits the value to set
          * @return this builder
-         */
+         **/
         public Builder inferenceUnits(Integer inferenceUnits) {
             this.inferenceUnits = inferenceUnits;
             this.__explicitlySet__.add("inferenceUnits");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -205,7 +192,8 @@ public final class CreateEndpointDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -215,7 +203,7 @@ public final class CreateEndpointDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -277,7 +265,9 @@ public final class CreateEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -287,24 +277,23 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * A user-friendly display name for the resource. It should be unique and can be modified. Avoid
-     * entering confidential information.
-     */
+     * A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name for the resource. It should be unique and can be modified. Avoid
-     * entering confidential information.
-     *
+     * A user-friendly display name for the resource. It should be unique and can be modified. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compute infra type for endpoint. */
-    public enum ComputeType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Compute infra type for endpoint.
+     **/
+    public enum ComputeType {
         Cpu("CPU"),
         Gpu("GPU"),
         ;
@@ -336,130 +325,122 @@ public final class CreateEndpointDetails
             throw new IllegalArgumentException("Invalid ComputeType: " + key);
         }
     };
-    /** Compute infra type for endpoint. */
+    /**
+     * Compute infra type for endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeType")
     private final ComputeType computeType;
 
     /**
      * Compute infra type for endpoint.
-     *
      * @return the value
-     */
+     **/
     public ComputeType getComputeType() {
         return computeType;
     }
 
     /**
-     * Unique name across user tenancy in a region to identify an endpoint to be used for
-     * inferencing.
-     */
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alias")
     private final String alias;
 
     /**
-     * Unique name across user tenancy in a region to identify an endpoint to be used for
-     * inferencing.
-     *
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
      * @return the value
-     */
+     **/
     public String getAlias() {
         return alias;
     }
 
-    /** A short description of the an endpoint. */
+    /**
+     * A short description of the an endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description of the an endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment
-     * identifier for the endpoint
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment
-     * identifier for the endpoint
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) compartment identifier for the endpoint
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * model to associate with the endpoint.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * model to associate with the endpoint.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model to associate with the endpoint.
      * @return the value
-     */
+     **/
     public String getModelId() {
         return modelId;
     }
 
     /**
-     * Number of replicas required for this endpoint. This will be optional parameter. Default will
-     * be 1.
-     */
+     * Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inferenceUnits")
     private final Integer inferenceUnits;
 
     /**
-     * Number of replicas required for this endpoint. This will be optional parameter. Default will
-     * be 1.
-     *
+     * Number of replicas required for this endpoint. This will be optional parameter. Default will be 1.
      * @return the value
-     */
+     **/
     public Integer getInferenceUnits() {
         return inferenceUnits;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -471,7 +452,6 @@ public final class CreateEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

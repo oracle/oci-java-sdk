@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Object exclusion reason category. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum ReasonKeywords implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Object exclusion reason category.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum ReasonKeywords {
     OracleMaintained("ORACLE_MAINTAINED"),
     GgUnsupported("GG_UNSUPPORTED"),
     UserExcluded("USER_EXCLUDED"),

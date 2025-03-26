@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Possible status for a Delegated Resource Access Request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum DelegatedResourceAccessRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible status for a Delegated Resource Access Request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum DelegatedResourceAccessRequestStatus {
     Created("CREATED"),
     ApprovalWaiting("APPROVAL_WAITING"),
     OperatorAssignmentWaiting("OPERATOR_ASSIGNMENT_WAITING"),

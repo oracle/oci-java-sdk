@@ -5,24 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Results of a Transcription Task search. Contains both TranscriptionTaskSummary items and other
- * information, such as metadata. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Results of a Transcription Task search. Contains both TranscriptionTaskSummary items and other information, such as metadata.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TranscriptionTaskCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TranscriptionTaskCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TranscriptionTaskCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"items"})
     public TranscriptionTaskCollection(java.util.List<TranscriptionTaskSummary> items) {
@@ -32,16 +30,17 @@ public final class TranscriptionTaskCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Transcription Task. */
+        /**
+         * List of Transcription Task.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<TranscriptionTaskSummary> items;
 
         /**
          * List of Transcription Task.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<TranscriptionTaskSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -68,7 +67,9 @@ public final class TranscriptionTaskCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +78,16 @@ public final class TranscriptionTaskCollection
         return new Builder().copy(this);
     }
 
-    /** List of Transcription Task. */
+    /**
+     * List of Transcription Task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<TranscriptionTaskSummary> items;
 
     /**
      * List of Transcription Task.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TranscriptionTaskSummary> getItems() {
         return items;
     }
@@ -97,7 +99,6 @@ public final class TranscriptionTaskCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

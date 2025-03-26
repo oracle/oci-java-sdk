@@ -5,37 +5,38 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Base schema for WebAppFirewallPolicyRules, including properties common to all of them. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * Base schema for WebAppFirewallPolicyRules, including properties common to all of them.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = WebAppFirewallPolicyRule.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = WebAppFirewallPolicyRule.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ProtectionRule.class,
-            name = "PROTECTION"),
+        value = ProtectionRule.class,
+        name = "PROTECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = RequestRateLimitingRule.class,
-            name = "REQUEST_RATE_LIMITING"),
+        value = RequestRateLimitingRule.class,
+        name = "REQUEST_RATE_LIMITING"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AccessControlRule.class,
-            name = "ACCESS_CONTROL")
+        value = AccessControlRule.class,
+        name = "ACCESS_CONTROL"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class WebAppFirewallPolicyRule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class WebAppFirewallPolicyRule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "conditionLanguage", "condition", "actionName"})
     protected WebAppFirewallPolicyRule(
@@ -47,35 +48,29 @@ public class WebAppFirewallPolicyRule
         this.actionName = actionName;
     }
 
-    /** Rule name. Must be unique within the module. */
+    /**
+     * Rule name. Must be unique within the module.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Rule name. Must be unique within the module.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * The language used to parse condition from field {@code condition}. Available languages:
+     * <p>
+     * **JMESPATH** an extended JMESPath language syntax.
      *
-     * <p>**JMESPATH** an extended JMESPath language syntax.
-     */
-    public enum ConditionLanguage implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum ConditionLanguage {
         Jmespath("JMESPATH"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ConditionLanguage.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, ConditionLanguage> map;
@@ -83,9 +78,7 @@ public class WebAppFirewallPolicyRule
         static {
             map = new java.util.HashMap<>();
             for (ConditionLanguage v : ConditionLanguage.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -103,32 +96,33 @@ public class WebAppFirewallPolicyRule
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ConditionLanguage', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid ConditionLanguage: " + key);
         }
     };
     /**
      * The language used to parse condition from field {@code condition}. Available languages:
+     * <p>
+     * **JMESPATH** an extended JMESPath language syntax.
      *
-     * <p>**JMESPATH** an extended JMESPath language syntax.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionLanguage")
     private final ConditionLanguage conditionLanguage;
 
     /**
      * The language used to parse condition from field {@code condition}. Available languages:
-     *
-     * <p>**JMESPATH** an extended JMESPath language syntax.
+     * <p>
+     * **JMESPATH** an extended JMESPath language syntax.
      *
      * @return the value
-     */
+     **/
     public ConditionLanguage getConditionLanguage() {
         return conditionLanguage;
     }
 
-    /** An expression that determines whether or not the rule action should be executed. */
+    /**
+     * An expression that determines whether or not the rule action should be executed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
@@ -136,20 +130,21 @@ public class WebAppFirewallPolicyRule
      * An expression that determines whether or not the rule action should be executed.
      *
      * @return the value
-     */
+     **/
     public String getCondition() {
         return condition;
     }
 
-    /** References action by name from actions defined in WebAppFirewallPolicy. */
+    /**
+     * References action by name from actions defined in WebAppFirewallPolicy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionName")
     private final String actionName;
 
     /**
      * References action by name from actions defined in WebAppFirewallPolicy.
-     *
      * @return the value
-     */
+     **/
     public String getActionName() {
         return actionName;
     }
@@ -161,7 +156,6 @@ public class WebAppFirewallPolicyRule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -208,19 +202,14 @@ public class WebAppFirewallPolicyRule
         return result;
     }
 
-    /** Type of WebAppFirewallPolicyRule. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of WebAppFirewallPolicyRule.
+     **/
+    public enum Type {
         AccessControl("ACCESS_CONTROL"),
         Protection("PROTECTION"),
         RequestRateLimiting("REQUEST_RATE_LIMITING"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -228,9 +217,7 @@ public class WebAppFirewallPolicyRule
         static {
             map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -248,9 +235,7 @@ public class WebAppFirewallPolicyRule
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
 }

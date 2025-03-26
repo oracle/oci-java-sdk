@@ -6,35 +6,37 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SyncRepositoryExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SyncRepositoryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SyncRepositoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SyncRepositoryRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class SyncRepositoryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.devops.model.SyncRepositoryDetails> {
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     private String repositoryId;
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
     /**
-     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged
-     * into the destination branch. If discard is passed in, the changes in the fork will be
-     * overwritten with the changes brought in from the upstream.
+     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged into the destination branch.
+     * If discard is passed in, the changes in the fork will be overwritten with the changes brought in from the upstream.
+     *
      */
     private SyncMergeStrategy syncMergeStrategy;
 
     /**
-     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged
-     * into the destination branch. If discard is passed in, the changes in the fork will be
-     * overwritten with the changes brought in from the upstream.
-     */
-    public enum SyncMergeStrategy implements com.oracle.bmc.http.internal.BmcEnum {
+     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged into the destination branch.
+     * If discard is passed in, the changes in the fork will be overwritten with the changes brought in from the upstream.
+     *
+     **/
+    public enum SyncMergeStrategy {
         FetchAndMerge("FETCH_AND_MERGE"),
         Discard("DISCARD"),
         ;
@@ -68,65 +70,53 @@ public class SyncRepositoryRequest
     };
 
     /**
-     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged
-     * into the destination branch. If discard is passed in, the changes in the fork will be
-     * overwritten with the changes brought in from the upstream.
+     * If fetch and merge is passed in, the changes from the upstream will be fetched and merged into the destination branch.
+     * If discard is passed in, the changes in the fork will be overwritten with the changes brought in from the upstream.
+     *
      */
     public SyncMergeStrategy getSyncMergeStrategy() {
         return syncMergeStrategy;
     }
-    /** Details required for syncing a repository with its upstream. */
+    /**
+     * Details required for syncing a repository with its upstream.
+     */
     private com.oracle.bmc.devops.model.SyncRepositoryDetails syncRepositoryDetails;
 
-    /** Details required for syncing a repository with its upstream. */
+    /**
+     * Details required for syncing a repository with its upstream.
+     */
     public com.oracle.bmc.devops.model.SyncRepositoryDetails getSyncRepositoryDetails() {
         return syncRepositoryDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated earlier due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated earlier due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -134,7 +124,6 @@ public class SyncRepositoryRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -146,15 +135,17 @@ public class SyncRepositoryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SyncRepositoryRequest, com.oracle.bmc.devops.model.SyncRepositoryDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique repository identifier. */
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
-         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -164,16 +155,15 @@ public class SyncRepositoryRequest
         }
 
         /**
-         * If fetch and merge is passed in, the changes from the upstream will be fetched and merged
-         * into the destination branch. If discard is passed in, the changes in the fork will be
-         * overwritten with the changes brought in from the upstream.
+         * If fetch and merge is passed in, the changes from the upstream will be fetched and merged into the destination branch.
+         * If discard is passed in, the changes in the fork will be overwritten with the changes brought in from the upstream.
+         *
          */
         private SyncMergeStrategy syncMergeStrategy = null;
 
         /**
-         * If fetch and merge is passed in, the changes from the upstream will be fetched and merged
-         * into the destination branch. If discard is passed in, the changes in the fork will be
-         * overwritten with the changes brought in from the upstream.
+         * If fetch and merge is passed in, the changes from the upstream will be fetched and merged into the destination branch.
+         * If discard is passed in, the changes in the fork will be overwritten with the changes brought in from the upstream.
          *
          * @param syncMergeStrategy the value to set
          * @return this builder instance
@@ -183,12 +173,13 @@ public class SyncRepositoryRequest
             return this;
         }
 
-        /** Details required for syncing a repository with its upstream. */
+        /**
+         * Details required for syncing a repository with its upstream.
+         */
         private com.oracle.bmc.devops.model.SyncRepositoryDetails syncRepositoryDetails = null;
 
         /**
          * Details required for syncing a repository with its upstream.
-         *
          * @param syncRepositoryDetails the value to set
          * @return this builder instance
          */
@@ -199,19 +190,12 @@ public class SyncRepositoryRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
-         *
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -221,15 +205,12 @@ public class SyncRepositoryRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -239,21 +220,12 @@ public class SyncRepositoryRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
-         *
+         * A token that uniquely identifies a request so it can be retried in case of a timeout or server error without risk of executing that same action again. Retry tokens expire after 24 hours, but can be invalidated earlier due to conflicting operations. For example, if a resource has been deleted and purged from the system, then a retry of the original creation request might be rejected.
          * @param opcRetryToken the value to set
          * @return this builder instance
          */
@@ -264,19 +236,18 @@ public class SyncRepositoryRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -288,7 +259,6 @@ public class SyncRepositoryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SyncRepositoryRequest o) {
@@ -306,11 +276,10 @@ public class SyncRepositoryRequest
         /**
          * Build the instance of SyncRepositoryRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SyncRepositoryRequest
          */
@@ -323,7 +292,6 @@ public class SyncRepositoryRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -336,8 +304,7 @@ public class SyncRepositoryRequest
         /**
          * Build the instance of SyncRepositoryRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SyncRepositoryRequest
@@ -351,14 +318,12 @@ public class SyncRepositoryRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new SyncRepositoryRequest(repositoryId, syncMergeStrategy, syncRepositoryDetails,
-            // ifMatch, opcRequestId, opcRetryToken);
+            // new SyncRepositoryRequest(repositoryId, syncMergeStrategy, syncRepositoryDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -373,7 +338,6 @@ public class SyncRepositoryRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

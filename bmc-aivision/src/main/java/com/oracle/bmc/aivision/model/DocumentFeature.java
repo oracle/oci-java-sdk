@@ -5,42 +5,46 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The type of document analysis. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The type of document analysis.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "featureType",
-        defaultImpl = DocumentFeature.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "featureType",
+    defaultImpl = DocumentFeature.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DocumentTableDetectionFeature.class,
-            name = "TABLE_DETECTION"),
+        value = DocumentTableDetectionFeature.class,
+        name = "TABLE_DETECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DocumentKeyValueDetectionFeature.class,
-            name = "KEY_VALUE_DETECTION"),
+        value = DocumentKeyValueDetectionFeature.class,
+        name = "KEY_VALUE_DETECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DocumentClassificationFeature.class,
-            name = "DOCUMENT_CLASSIFICATION"),
+        value = DocumentClassificationFeature.class,
+        name = "DOCUMENT_CLASSIFICATION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DocumentTextDetectionFeature.class,
-            name = "TEXT_DETECTION"),
+        value = DocumentTextDetectionFeature.class,
+        name = "TEXT_DETECTION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DocumentLanguageClassificationFeature.class,
-            name = "LANGUAGE_CLASSIFICATION")
+        value = DocumentLanguageClassificationFeature.class,
+        name = "LANGUAGE_CLASSIFICATION"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class DocumentFeature extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class DocumentFeature extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected DocumentFeature() {
@@ -54,7 +58,6 @@ public class DocumentFeature extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -88,12 +91,16 @@ public class DocumentFeature extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The type of document analysis requested. The allowed values are: - {@code
-     * LANGUAGE_CLASSIFICATION}: Detect the language. - {@code TEXT_DETECTION}: Recognize text. -
-     * {@code TABLE_DETECTION}: Detect and extract data in tables. - {@code KEY_VALUE_DETECTION}:
-     * Extract form fields. - {@code DOCUMENT_CLASSIFICATION}: Identify the type of document.
-     */
-    public enum FeatureType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of document analysis requested.
+     * The allowed values are:
+     * - {@code LANGUAGE_CLASSIFICATION}: Detect the language.
+     * - {@code TEXT_DETECTION}: Recognize text.
+     * - {@code TABLE_DETECTION}: Detect and extract data in tables.
+     * - {@code KEY_VALUE_DETECTION}: Extract form fields.
+     * - {@code DOCUMENT_CLASSIFICATION}: Identify the type of document.
+     *
+     **/
+    public enum FeatureType {
         LanguageClassification("LANGUAGE_CLASSIFICATION"),
         TextDetection("TEXT_DETECTION"),
         TableDetection("TABLE_DETECTION"),
@@ -101,8 +108,8 @@ public class DocumentFeature extends com.oracle.bmc.http.client.internal.Explici
         DocumentClassification("DOCUMENT_CLASSIFICATION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

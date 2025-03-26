@@ -5,22 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides additional information for a reboot event. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides additional information for a reboot event.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RebootEventData.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RebootEventData
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RebootEventData extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"rebootStatus", "additionalDetails"})
     public RebootEventData(
@@ -32,16 +29,17 @@ public final class RebootEventData
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Reboot status for the current event */
+        /**
+         * Reboot status for the current event
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rebootStatus")
         private RebootStatus rebootStatus;
 
         /**
          * Reboot status for the current event
-         *
          * @param rebootStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder rebootStatus(RebootStatus rebootStatus) {
             this.rebootStatus = rebootStatus;
             this.__explicitlySet__.add("rebootStatus");
@@ -80,7 +78,9 @@ public final class RebootEventData
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -89,16 +89,18 @@ public final class RebootEventData
         return new Builder().copy(this);
     }
 
-    /** Reboot status for the current event */
-    public enum RebootStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Reboot status for the current event
+     **/
+    public enum RebootStatus {
         RebootStarted("REBOOT_STARTED"),
         RebootSucceeded("REBOOT_SUCCEEDED"),
         RebootFailed("REBOOT_FAILED"),
         RebootSucceededAfterTimeout("REBOOT_SUCCEEDED_AFTER_TIMEOUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -137,15 +139,16 @@ public final class RebootEventData
             return UnknownEnumValue;
         }
     };
-    /** Reboot status for the current event */
+    /**
+     * Reboot status for the current event
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rebootStatus")
     private final RebootStatus rebootStatus;
 
     /**
      * Reboot status for the current event
-     *
      * @return the value
-     */
+     **/
     public RebootStatus getRebootStatus() {
         return rebootStatus;
     }
@@ -164,7 +167,6 @@ public final class RebootEventData
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

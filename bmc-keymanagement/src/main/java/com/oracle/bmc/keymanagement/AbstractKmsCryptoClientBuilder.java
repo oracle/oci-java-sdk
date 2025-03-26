@@ -8,7 +8,6 @@ import com.oracle.bmc.Service;
 
 /**
  * An abstract client builder for clients that need the cryptoEndpoint
- *
  * @param <B> actual builder class
  * @param <C> client class
  */

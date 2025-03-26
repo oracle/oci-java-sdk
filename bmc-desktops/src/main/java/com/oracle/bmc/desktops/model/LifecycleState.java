@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.desktops.model;
 
-/** The lifecycle state of an entity. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
-public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The lifecycle state of an entity.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+public enum LifecycleState {
     Creating("CREATING"),
     Active("ACTIVE"),
     Inactive("INACTIVE"),

@@ -5,21 +5,20 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * A fleet is a collection or grouping of resources based on criteria. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * A fleet is a collection or grouping of resources based on criteria.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Fleet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -101,220 +100,247 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Tenancy OCID */
+        /**
+         * Tenancy OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Tenancy OCID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Associated region */
+        /**
+         * Associated region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
         private String resourceRegion;
 
         /**
          * Associated region
-         *
          * @param resourceRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceRegion(String resourceRegion) {
             this.resourceRegion = resourceRegion;
             this.__explicitlySet__.add("resourceRegion");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The time this resource was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
-         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
-         * selected dynamically or manually for reporting purposes
-         */
+         * Type of the Fleet.
+         * PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+         * GROUP - A fleet of a fleet of either environment or product fleets.
+         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
         private FleetType fleetType;
 
         /**
-         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
-         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
-         * selected dynamically or manually for reporting purposes
+         * Type of the Fleet.
+         * PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+         * GROUP - A fleet of a fleet of either environment or product fleets.
+         * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
          *
          * @param fleetType the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetType(FleetType fleetType) {
             this.fleetType = fleetType;
             this.__explicitlySet__.add("fleetType");
             return this;
         }
-        /** Products associated with the Fleet. */
+        /**
+         * Products associated with the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
          * Products associated with the Fleet.
-         *
          * @param products the value to set
          * @return this builder
-         */
+         **/
         public Builder products(java.util.List<String> products) {
             this.products = products;
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+        /**
+         * Product stack associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+         * Product stack associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
          *
          * @param applicationType the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationType(String applicationType) {
             this.applicationType = applicationType;
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-        /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+        /**
+         * Environment Type associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
 
         /**
-         * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+         * Environment Type associated with the Fleet.
+         * Applicable for ENVIRONMENT fleet types.
          *
          * @param environmentType the value to set
          * @return this builder
-         */
+         **/
         public Builder environmentType(String environmentType) {
             this.environmentType = environmentType;
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
+        /**
+         * Group Type associated with Group Fleet.
+         * Applicable for GROUP fleet types.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupType")
         private GroupType groupType;
 
         /**
-         * Group Type associated with Group Fleet. Applicable for GROUP fleet types.
+         * Group Type associated with Group Fleet.
+         * Applicable for GROUP fleet types.
          *
          * @param groupType the value to set
          * @return this builder
-         */
+         **/
         public Builder groupType(GroupType groupType) {
             this.groupType = groupType;
             this.__explicitlySet__.add("groupType");
             return this;
         }
         /**
-         * Type of resource selection in a Fleet. Select resources manually or select resources
-         * based on rules.
-         */
+         * Type of resource selection in a Fleet.
+         * Select resources manually or select resources based on rules.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
         private ResourceSelectionType resourceSelectionType;
 
         /**
-         * Type of resource selection in a Fleet. Select resources manually or select resources
-         * based on rules.
+         * Type of resource selection in a Fleet.
+         * Select resources manually or select resources based on rules.
          *
          * @param resourceSelectionType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceSelectionType(ResourceSelectionType resourceSelectionType) {
             this.resourceSelectionType = resourceSelectionType;
             this.__explicitlySet__.add("resourceSelectionType");
@@ -338,118 +364,121 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("notificationPreferences");
             return this;
         }
-        /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
+        /**
+         * Resources associated with the Fleet if resourceSelectionType is MANUAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<AssociatedFleetResourceDetails> resources;
 
         /**
          * Resources associated with the Fleet if resourceSelectionType is MANUAL.
-         *
          * @param resources the value to set
          * @return this builder
-         */
+         **/
         public Builder resources(java.util.List<AssociatedFleetResourceDetails> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** Properties associated with the Fleet. */
+        /**
+         * Properties associated with the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<AssociatedFleetPropertyDetails> properties;
 
         /**
          * Properties associated with the Fleet.
-         *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.List<AssociatedFleetPropertyDetails> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** Credentials associated with the Fleet. */
+        /**
+         * Credentials associated with the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
         private java.util.List<AssociatedFleetCredentialDetails> credentials;
 
         /**
          * Credentials associated with the Fleet.
-         *
          * @param credentials the value to set
          * @return this builder
-         */
+         **/
         public Builder credentials(java.util.List<AssociatedFleetCredentialDetails> credentials) {
             this.credentials = credentials;
             this.__explicitlySet__.add("credentials");
             return this;
         }
         /**
-         * A value that represents if auto-confirming of the targets can be enabled. This will allow
-         * targets to be auto-confirmed in the fleet without manual intervention.
-         */
+         * A value that represents if auto-confirming of the targets can be enabled.
+         * This will allow targets to be auto-confirmed in the fleet without manual intervention.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
         private Boolean isTargetAutoConfirm;
 
         /**
-         * A value that represents if auto-confirming of the targets can be enabled. This will allow
-         * targets to be auto-confirmed in the fleet without manual intervention.
+         * A value that represents if auto-confirming of the targets can be enabled.
+         * This will allow targets to be auto-confirmed in the fleet without manual intervention.
          *
          * @param isTargetAutoConfirm the value to set
          * @return this builder
-         */
+         **/
         public Builder isTargetAutoConfirm(Boolean isTargetAutoConfirm) {
             this.isTargetAutoConfirm = isTargetAutoConfirm;
             this.__explicitlySet__.add("isTargetAutoConfirm");
             return this;
         }
-        /** The lifecycle state of the Fleet. */
+        /**
+         * The lifecycle state of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The lifecycle state of the Fleet.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -458,7 +487,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -468,7 +498,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -476,19 +506,20 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -609,7 +640,9 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -618,124 +651,133 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Tenancy OCID */
+    /**
+     * Tenancy OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Tenancy OCID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Associated region */
+    /**
+     * Associated region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
     private final String resourceRegion;
 
     /**
      * Associated region
-     *
      * @return the value
-     */
+     **/
     public String getResourceRegion() {
         return resourceRegion;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The time this resource was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was last updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
-     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
-     * dynamically or manually for reporting purposes
-     */
-    public enum FleetType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of the Fleet.
+     * PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+     * GROUP - A fleet of a fleet of either environment or product fleets.
+     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
+     *
+     **/
+    public enum FleetType {
         Product("PRODUCT"),
         Environment("ENVIRONMENT"),
         Generic("GENERIC"),
         Group("GROUP"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -775,73 +817,91 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     };
     /**
-     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
-     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
-     * dynamically or manually for reporting purposes
-     */
+     * Type of the Fleet.
+     * PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+     * GROUP - A fleet of a fleet of either environment or product fleets.
+     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     private final FleetType fleetType;
 
     /**
-     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
-     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
-     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
-     * dynamically or manually for reporting purposes
+     * Type of the Fleet.
+     * PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack.
+     * GROUP - A fleet of a fleet of either environment or product fleets.
+     * GENERIC - A fleet of resources selected dynamically or manually for reporting purposes
      *
      * @return the value
-     */
+     **/
     public FleetType getFleetType() {
         return fleetType;
     }
 
-    /** Products associated with the Fleet. */
+    /**
+     * Products associated with the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
      * Products associated with the Fleet.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getProducts() {
         return products;
     }
 
-    /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+    /**
+     * Product stack associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * Product stack associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
-     */
+     **/
     public String getApplicationType() {
         return applicationType;
     }
 
-    /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
+    /**
+     * Environment Type associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
 
     /**
-     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
+     * Environment Type associated with the Fleet.
+     * Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
-     */
+     **/
     public String getEnvironmentType() {
         return environmentType;
     }
 
-    /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
-    public enum GroupType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Group Type associated with Group Fleet.
+     * Applicable for GROUP fleet types.
+     *
+     **/
+    public enum GroupType {
         Environment("ENVIRONMENT"),
         Product("PRODUCT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -880,30 +940,36 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
+    /**
+     * Group Type associated with Group Fleet.
+     * Applicable for GROUP fleet types.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupType")
     private final GroupType groupType;
 
     /**
-     * Group Type associated with Group Fleet. Applicable for GROUP fleet types.
+     * Group Type associated with Group Fleet.
+     * Applicable for GROUP fleet types.
      *
      * @return the value
-     */
+     **/
     public GroupType getGroupType() {
         return groupType;
     }
 
     /**
-     * Type of resource selection in a Fleet. Select resources manually or select resources based on
-     * rules.
-     */
-    public enum ResourceSelectionType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of resource selection in a Fleet.
+     * Select resources manually or select resources based on rules.
+     *
+     **/
+    public enum ResourceSelectionType {
         Dynamic("DYNAMIC"),
         Manual("MANUAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -943,18 +1009,19 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     };
     /**
-     * Type of resource selection in a Fleet. Select resources manually or select resources based on
-     * rules.
-     */
+     * Type of resource selection in a Fleet.
+     * Select resources manually or select resources based on rules.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
     private final ResourceSelectionType resourceSelectionType;
 
     /**
-     * Type of resource selection in a Fleet. Select resources manually or select resources based on
-     * rules.
+     * Type of resource selection in a Fleet.
+     * Select resources manually or select resources based on rules.
      *
      * @return the value
-     */
+     **/
     public ResourceSelectionType getResourceSelectionType() {
         return resourceSelectionType;
     }
@@ -973,64 +1040,70 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return notificationPreferences;
     }
 
-    /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
+    /**
+     * Resources associated with the Fleet if resourceSelectionType is MANUAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<AssociatedFleetResourceDetails> resources;
 
     /**
      * Resources associated with the Fleet if resourceSelectionType is MANUAL.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedFleetResourceDetails> getResources() {
         return resources;
     }
 
-    /** Properties associated with the Fleet. */
+    /**
+     * Properties associated with the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<AssociatedFleetPropertyDetails> properties;
 
     /**
      * Properties associated with the Fleet.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedFleetPropertyDetails> getProperties() {
         return properties;
     }
 
-    /** Credentials associated with the Fleet. */
+    /**
+     * Credentials associated with the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
     private final java.util.List<AssociatedFleetCredentialDetails> credentials;
 
     /**
      * Credentials associated with the Fleet.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AssociatedFleetCredentialDetails> getCredentials() {
         return credentials;
     }
 
     /**
-     * A value that represents if auto-confirming of the targets can be enabled. This will allow
-     * targets to be auto-confirmed in the fleet without manual intervention.
-     */
+     * A value that represents if auto-confirming of the targets can be enabled.
+     * This will allow targets to be auto-confirmed in the fleet without manual intervention.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
     private final Boolean isTargetAutoConfirm;
 
     /**
-     * A value that represents if auto-confirming of the targets can be enabled. This will allow
-     * targets to be auto-confirmed in the fleet without manual intervention.
+     * A value that represents if auto-confirming of the targets can be enabled.
+     * This will allow targets to be auto-confirmed in the fleet without manual intervention.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsTargetAutoConfirm() {
         return isTargetAutoConfirm;
     }
 
-    /** The lifecycle state of the Fleet. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The lifecycle state of the Fleet.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Creating("CREATING"),
@@ -1041,8 +1114,8 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         NeedsAttention("NEEDS_ATTENTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1081,83 +1154,84 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The lifecycle state of the Fleet. */
+    /**
+     * The lifecycle state of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the Fleet.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -1169,7 +1243,6 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Possible metric names. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum MetricName implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible metric names.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum MetricName {
     TotalInstanceCount("TOTAL_INSTANCE_COUNT"),
     InstanceWithAvailableSecurityUpdatesCount("INSTANCE_WITH_AVAILABLE_SECURITY_UPDATES_COUNT"),
     InstanceWithAvailableBugfixUpdatesCount("INSTANCE_WITH_AVAILABLE_BUGFIX_UPDATES_COUNT"),

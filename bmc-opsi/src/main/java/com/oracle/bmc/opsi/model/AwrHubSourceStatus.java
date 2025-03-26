@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Possible statuses of a awr hub source in Operations Insights. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum AwrHubSourceStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible statuses of a awr hub source in Operations Insights.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum AwrHubSourceStatus {
     Accepting("ACCEPTING"),
     NotAccepting("NOT_ACCEPTING"),
     NotRegistered("NOT_REGISTERED"),

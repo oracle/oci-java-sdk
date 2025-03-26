@@ -5,23 +5,22 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Patch. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Details of the Patch.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComplianceReportPatchDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComplianceReportPatchDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComplianceReportPatchDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "patchName",
@@ -46,76 +45,81 @@ public final class ComplianceReportPatchDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Patch name. */
+        /**
+         * Patch name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchName")
         private String patchName;
 
         /**
          * Patch name.
-         *
          * @param patchName the value to set
          * @return this builder
-         */
+         **/
         public Builder patchName(String patchName) {
             this.patchName = patchName;
             this.__explicitlySet__.add("patchName");
             return this;
         }
-        /** Patch description. */
+        /**
+         * Patch description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
         private String patchDescription;
 
         /**
          * Patch description.
-         *
          * @param patchDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder patchDescription(String patchDescription) {
             this.patchDescription = patchDescription;
             this.__explicitlySet__.add("patchDescription");
             return this;
         }
-        /** Time the patch was applied. */
+        /**
+         * Time the patch was applied.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeApplied")
         private java.util.Date timeApplied;
 
         /**
          * Time the patch was applied.
-         *
          * @param timeApplied the value to set
          * @return this builder
-         */
+         **/
         public Builder timeApplied(java.util.Date timeApplied) {
             this.timeApplied = timeApplied;
             this.__explicitlySet__.add("timeApplied");
             return this;
         }
-        /** The date on which patch was released. */
+        /**
+         * The date on which patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
          * The date on which patch was released.
-         *
          * @param timeReleased the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReleased(java.util.Date timeReleased) {
             this.timeReleased = timeReleased;
             this.__explicitlySet__.add("timeReleased");
             return this;
         }
-        /** Type of patch. */
+        /**
+         * Type of patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private String patchType;
 
         /**
          * Type of patch.
-         *
          * @param patchType the value to set
          * @return this builder
-         */
+         **/
         public Builder patchType(String patchType) {
             this.patchType = patchType;
             this.__explicitlySet__.add("patchType");
@@ -160,7 +164,9 @@ public final class ComplianceReportPatchDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +175,72 @@ public final class ComplianceReportPatchDetail
         return new Builder().copy(this);
     }
 
-    /** Patch name. */
+    /**
+     * Patch name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchName")
     private final String patchName;
 
     /**
      * Patch name.
-     *
      * @return the value
-     */
+     **/
     public String getPatchName() {
         return patchName;
     }
 
-    /** Patch description. */
+    /**
+     * Patch description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
     private final String patchDescription;
 
     /**
      * Patch description.
-     *
      * @return the value
-     */
+     **/
     public String getPatchDescription() {
         return patchDescription;
     }
 
-    /** Time the patch was applied. */
+    /**
+     * Time the patch was applied.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeApplied")
     private final java.util.Date timeApplied;
 
     /**
      * Time the patch was applied.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeApplied() {
         return timeApplied;
     }
 
-    /** The date on which patch was released. */
+    /**
+     * The date on which patch was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
      * The date on which patch was released.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReleased() {
         return timeReleased;
     }
 
-    /** Type of patch. */
+    /**
+     * Type of patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final String patchType;
 
     /**
      * Type of patch.
-     *
      * @return the value
-     */
+     **/
     public String getPatchType() {
         return patchType;
     }
@@ -241,7 +252,6 @@ public final class ComplianceReportPatchDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

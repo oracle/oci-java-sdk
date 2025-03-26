@@ -5,24 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines attributes used to record consent for modification of the "Security Policy
- * for OCI Console" sign-on policy, Rule, Condition or ConditionGroup. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines attributes used to record consent for modification of the "Security Policy for OCI Console" sign-on policy, Rule, Condition or ConditionGroup.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RuleExtensionOciconsolesignonpolicyconsentPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RuleExtensionOciconsolesignonpolicyconsentPolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RuleExtensionOciconsolesignonpolicyconsentPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"consent", "justification", "reason"})
     public RuleExtensionOciconsolesignonpolicyconsentPolicy(
@@ -36,91 +34,108 @@ public final class RuleExtensionOciconsolesignonpolicyconsentPolicy
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Set to true when an identity domain administrator opts to change the Oracle security
-         * defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: boolean
-         */
+         * Set to true when an identity domain administrator opts to change the Oracle security defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consent")
         private Boolean consent;
 
         /**
-         * Set to true when an identity domain administrator opts to change the Oracle security
-         * defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: boolean
-         *
+         * Set to true when an identity domain administrator opts to change the Oracle security defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: boolean
          * @param consent the value to set
          * @return this builder
-         */
+         **/
         public Builder consent(Boolean consent) {
             this.consent = consent;
             this.__explicitlySet__.add("consent");
             return this;
         }
         /**
-         * The justification for the change when an identity domain administrator opts to modify the
-         * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped
-         * by Oracle.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: string
-         */
+         * The justification for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("justification")
         private String justification;
 
         /**
-         * The justification for the change when an identity domain administrator opts to modify the
-         * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped
-         * by Oracle.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: string
-         *
+         * The justification for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
          * @param justification the value to set
          * @return this builder
-         */
+         **/
         public Builder justification(String justification) {
             this.justification = justification;
             this.__explicitlySet__.add("justification");
             return this;
         }
         /**
-         * The detailed reason for the change when an identity domain administrator opts to modify
-         * the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy
-         * shipped by Oracle.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: string
-         */
+         * The detailed reason for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private String reason;
 
         /**
-         * The detailed reason for the change when an identity domain administrator opts to modify
-         * the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy
-         * shipped by Oracle.
-         *
-         * <p>*Added In:** 2405220110
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * writeOnly - required: false - returned: never - type: string
-         *
+         * The detailed reason for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+         * <p>
+         **Added In:** 2405220110
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: writeOnly
+         *  - required: false
+         *  - returned: never
+         *  - type: string
          * @param reason the value to set
          * @return this builder
-         */
+         **/
         public Builder reason(String reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
@@ -155,7 +170,9 @@ public final class RuleExtensionOciconsolesignonpolicyconsentPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -165,86 +182,103 @@ public final class RuleExtensionOciconsolesignonpolicyconsentPolicy
     }
 
     /**
-     * Set to true when an identity domain administrator opts to change the Oracle security defaults
-     * for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: boolean
-     */
+     * Set to true when an identity domain administrator opts to change the Oracle security defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consent")
     private final Boolean consent;
 
     /**
-     * Set to true when an identity domain administrator opts to change the Oracle security defaults
-     * for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: boolean
-     *
+     * Set to true when an identity domain administrator opts to change the Oracle security defaults for the "Security Policy for OCI Console" shipped by Oracle. Defaults to false.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: boolean
      * @return the value
-     */
+     **/
     public Boolean getConsent() {
         return consent;
     }
 
     /**
-     * The justification for the change when an identity domain administrator opts to modify the
-     * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by
-     * Oracle.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: string
-     */
+     * The justification for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("justification")
     private final String justification;
 
     /**
-     * The justification for the change when an identity domain administrator opts to modify the
-     * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by
-     * Oracle.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: string
-     *
+     * The justification for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getJustification() {
         return justification;
     }
 
     /**
-     * The detailed reason for the change when an identity domain administrator opts to modify the
-     * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by
-     * Oracle.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: string
-     */
+     * The detailed reason for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final String reason;
 
     /**
-     * The detailed reason for the change when an identity domain administrator opts to modify the
-     * Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by
-     * Oracle.
-     *
-     * <p>*Added In:** 2405220110
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: writeOnly
-     * - required: false - returned: never - type: string
-     *
+     * The detailed reason for the change when an identity domain administrator opts to modify the Oracle security defaults for the "Security Policy for OCI Console" sign-on policy shipped by Oracle.
+     * <p>
+     **Added In:** 2405220110
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: writeOnly
+     *  - required: false
+     *  - returned: never
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getReason() {
         return reason;
     }
@@ -256,7 +290,6 @@ public final class RuleExtensionOciconsolesignonpolicyconsentPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

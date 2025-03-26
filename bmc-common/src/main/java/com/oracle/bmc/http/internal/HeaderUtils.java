@@ -4,30 +4,75 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.oracle.bmc.InternalSdk;
-import com.oracle.bmc.model.Range;
-
 import java.lang.reflect.InvocationTargetException;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map.Entry;
 
-/** Utilities to deal with header values. */
+import javax.ws.rs.core.MultivaluedMap;
+
+import java.util.Optional;
+
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.internal.GuavaUtils;
+import com.oracle.bmc.model.Range;
+
+/**
+ * Utilities to deal with header values.
+ */
 public class HeaderUtils {
     /**
-     * See {@link <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.8">HTTP/1.1
-     * documentation</a>}.
+     * Returns the header values for the given header key.
+     *
+     * @param headers
+     *            The header map.
+     * @param name
+     *            The header to get the value for.
+     * @return The values, or empty.
      */
-    public static final String AUTHORIZATION_HEADER_NAME = "Authorization";
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static com.google.common /*Guava will be removed soon*/.base.Optional<List<String>> get(
+            MultivaluedMap<String, String> headers, String name) {
+        return GuavaUtils.adaptToGuava(getHeadersWithName(headers, name));
+    }
 
-    /** A {@code String} constant representing "application/json"" media type. */
-    public static final String MEDIA_TYPE_APPLICATION_JSON = "application/json";
+    /**
+     * Returns the header values for the given header key.
+     *
+     * @param headers
+     *            The header map.
+     * @param name
+     *            The header to get the value for.
+     * @return The values, or empty.
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    public static Optional<List<String>> getHeadersWithName(
+            MultivaluedMap<String, String> headers, String name) {
+        if (headers == null) {
+            return Optional.empty();
+        }
+        // NOTE: this multivaluedmap should be the case-insensitive-key version,
+        // but opting to do a simple search instead.
+        String lowerCaseHeaderName = name.toLowerCase(Locale.ROOT);
+        for (Entry<String, List<String>> entry : headers.entrySet()) {
+            if (entry.getKey().toLowerCase(Locale.ROOT).equals(lowerCaseHeaderName)) {
+                return Optional.of(entry.getValue());
+            }
+        }
+        return Optional.empty();
+    }
 
     /**
      * Deserialize a header value to its desired type if possible.
      *
-     * @param headerName The header name.
-     * @param value The header value.
-     * @param clazz The class to convert to.
+     * @param headerName
+     *            The header name.
+     * @param value
+     *            The header value.
+     * @param clazz
+     *            The class to convert to.
      * @return A new class instance.
      */
     @SuppressWarnings("unchecked")

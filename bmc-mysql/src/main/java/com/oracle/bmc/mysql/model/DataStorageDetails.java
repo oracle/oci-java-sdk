@@ -5,23 +5,22 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Data Storage configuration properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Data Storage configuration properties.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DataStorageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DataStorageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DataStorageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DataStorageDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isAutoExpandStorageEnabled", "maxStorageSizeInGBs"})
     public DataStorageDetails(Boolean isAutoExpandStorageEnabled, Integer maxStorageSizeInGBs) {
@@ -33,56 +32,56 @@ public final class DataStorageDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Enable/disable automatic storage expansion. When set to true, the DB System will
-         * automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-         */
+         * Enable/disable automatic storage expansion. When set to true, the DB System will automatically
+         * add storage incrementally up to the value specified in maxStorageSizeInGBs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoExpandStorageEnabled")
         private Boolean isAutoExpandStorageEnabled;
 
         /**
-         * Enable/disable automatic storage expansion. When set to true, the DB System will
-         * automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+         * Enable/disable automatic storage expansion. When set to true, the DB System will automatically
+         * add storage incrementally up to the value specified in maxStorageSizeInGBs.
          *
          * @param isAutoExpandStorageEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoExpandStorageEnabled(Boolean isAutoExpandStorageEnabled) {
             this.isAutoExpandStorageEnabled = isAutoExpandStorageEnabled;
             this.__explicitlySet__.add("isAutoExpandStorageEnabled");
             return this;
         }
         /**
-         * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set
-         * to true, the DB System will add storage incrementally up to this value.
-         *
-         * <p>DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
+         * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled
+         * is set to true, the DB System will add storage incrementally up to this value.
+         * <p>
+         * DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
          * DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB.
          * DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB.
          * DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+         * <p>
+         * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less
+         * than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
          *
-         * <p>It is not possible to decrease data storage size. You cannot set the maximum data
-         * storage size to less than either current DB System dataStorageSizeInGBs or
-         * allocatedStorageSizeInGBs.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxStorageSizeInGBs")
         private Integer maxStorageSizeInGBs;
 
         /**
-         * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set
-         * to true, the DB System will add storage incrementally up to this value.
-         *
-         * <p>DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
+         * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled
+         * is set to true, the DB System will add storage incrementally up to this value.
+         * <p>
+         * DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
          * DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB.
          * DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB.
          * DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
-         *
-         * <p>It is not possible to decrease data storage size. You cannot set the maximum data
-         * storage size to less than either current DB System dataStorageSizeInGBs or
-         * allocatedStorageSizeInGBs.
+         * <p>
+         * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less
+         * than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
          *
          * @param maxStorageSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxStorageSizeInGBs(Integer maxStorageSizeInGBs) {
             this.maxStorageSizeInGBs = maxStorageSizeInGBs;
             this.__explicitlySet__.add("maxStorageSizeInGBs");
@@ -114,7 +113,9 @@ public final class DataStorageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,51 +125,53 @@ public final class DataStorageDetails
     }
 
     /**
-     * Enable/disable automatic storage expansion. When set to true, the DB System will
-     * automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-     */
+     * Enable/disable automatic storage expansion. When set to true, the DB System will automatically
+     * add storage incrementally up to the value specified in maxStorageSizeInGBs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoExpandStorageEnabled")
     private final Boolean isAutoExpandStorageEnabled;
 
     /**
-     * Enable/disable automatic storage expansion. When set to true, the DB System will
-     * automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
+     * Enable/disable automatic storage expansion. When set to true, the DB System will automatically
+     * add storage incrementally up to the value specified in maxStorageSizeInGBs.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoExpandStorageEnabled() {
         return isAutoExpandStorageEnabled;
     }
 
     /**
-     * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to
-     * true, the DB System will add storage incrementally up to this value.
+     * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled
+     * is set to true, the DB System will add storage incrementally up to this value.
+     * <p>
+     * DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
+     * DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB.
+     * DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB.
+     * DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+     * <p>
+     * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less
+     * than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
      *
-     * <p>DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB
-     * Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB
-     * Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB
-     * Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
-     *
-     * <p>It is not possible to decrease data storage size. You cannot set the maximum data storage
-     * size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxStorageSizeInGBs")
     private final Integer maxStorageSizeInGBs;
 
     /**
-     * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to
-     * true, the DB System will add storage incrementally up to this value.
-     *
-     * <p>DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB. DB
-     * Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB. DB
-     * Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB. DB
-     * Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
-     *
-     * <p>It is not possible to decrease data storage size. You cannot set the maximum data storage
-     * size to less than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
+     * Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled
+     * is set to true, the DB System will add storage incrementally up to this value.
+     * <p>
+     * DB Systems with an initial storage size of 400 GB or less can be expanded up to 32 TB.
+     * DB Systems with an initial storage size between 401-800 GB can be expanded up to 64 TB.
+     * DB Systems with an initial storage size between 801-1200 GB can be expanded up to 96 TB.
+     * DB Systems with an initial storage size of 1201 GB or more can be expanded up to 128 TB.
+     * <p>
+     * It is not possible to decrease data storage size. You cannot set the maximum data storage size to less
+     * than either current DB System dataStorageSizeInGBs or allocatedStorageSizeInGBs.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxStorageSizeInGBs() {
         return maxStorageSizeInGBs;
     }
@@ -180,7 +183,6 @@ public final class DataStorageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

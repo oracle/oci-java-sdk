@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum OperationType {
     CreateDelegationControl("CREATE_DELEGATION_CONTROL"),
     UpdateDelegationControl("UPDATE_DELEGATION_CONTROL"),
     DeleteDelegationControl("DELETE_DELEGATION_CONTROL"),

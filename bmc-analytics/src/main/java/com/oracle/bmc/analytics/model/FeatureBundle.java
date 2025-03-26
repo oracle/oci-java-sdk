@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.analytics.model;
 
-/** Feature Bundle Enum. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
-public enum FeatureBundle implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Feature Bundle Enum.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190331")
+public enum FeatureBundle {
     FawPaid("FAW_PAID"),
     FawFree("FAW_FREE"),
     EeEmbedded("EE_EMBEDDED"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The initialization parameters for an ASM instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The initialization parameters for an ASM instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalAsmInstanceParameters.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalAsmInstanceParameters.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalAsmInstanceParameters
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "asmInstanceId",
@@ -50,78 +49,77 @@ public final class ExternalAsmInstanceParameters
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external ASM instance.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceId")
         private String asmInstanceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external ASM instance.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
          * @param asmInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder asmInstanceId(String asmInstanceId) {
             this.asmInstanceId = asmInstanceId;
             this.__explicitlySet__.add("asmInstanceId");
             return this;
         }
-        /** The user-friendly name for the ASM instance. The name does not have to be unique. */
+        /**
+         * The user-friendly name for the ASM instance. The name does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceDisplayName")
         private String asmInstanceDisplayName;
 
         /**
          * The user-friendly name for the ASM instance. The name does not have to be unique.
-         *
          * @param asmInstanceDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder asmInstanceDisplayName(String asmInstanceDisplayName) {
             this.asmInstanceDisplayName = asmInstanceDisplayName;
             this.__explicitlySet__.add("asmInstanceDisplayName");
             return this;
         }
         /**
-         * An operating system-dependent value used to limit the set of disks considered for
-         * discovery.
-         */
+         * An operating system-dependent value used to limit the set of disks considered for discovery.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("diskDiscoveryPath")
         private String diskDiscoveryPath;
 
         /**
-         * An operating system-dependent value used to limit the set of disks considered for
-         * discovery.
+         * An operating system-dependent value used to limit the set of disks considered for discovery.
          *
          * @param diskDiscoveryPath the value to set
          * @return this builder
-         */
+         **/
         public Builder diskDiscoveryPath(String diskDiscoveryPath) {
             this.diskDiscoveryPath = diskDiscoveryPath;
             this.__explicitlySet__.add("diskDiscoveryPath");
             return this;
         }
         /**
-         * The list of disk group names that an ASM instance mounts at startup or when the {@code
-         * ALTER DISKGROUP ALL MOUNT} statement is issued.
-         */
+         * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER DISKGROUP ALL MOUNT} statement is issued.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoMountDiskGroups")
         private java.util.List<String> autoMountDiskGroups;
 
         /**
-         * The list of disk group names that an ASM instance mounts at startup or when the {@code
-         * ALTER DISKGROUP ALL MOUNT} statement is issued.
+         * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER DISKGROUP ALL MOUNT} statement is issued.
          *
          * @param autoMountDiskGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder autoMountDiskGroups(java.util.List<String> autoMountDiskGroups) {
             this.autoMountDiskGroups = autoMountDiskGroups;
             this.__explicitlySet__.add("autoMountDiskGroups");
             return this;
         }
-        /** The maximum power on an ASM instance for disk rebalancing. */
+        /**
+         * The maximum power on an ASM instance for disk rebalancing.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rebalancePower")
         private Integer rebalancePower;
 
@@ -130,22 +128,23 @@ public final class ExternalAsmInstanceParameters
          *
          * @param rebalancePower the value to set
          * @return this builder
-         */
+         **/
         public Builder rebalancePower(Integer rebalancePower) {
             this.rebalancePower = rebalancePower;
             this.__explicitlySet__.add("rebalancePower");
             return this;
         }
-        /** The list of failure groups that contain preferred read disks. */
+        /**
+         * The list of failure groups that contain preferred read disks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredReadFailureGroups")
         private java.util.List<String> preferredReadFailureGroups;
 
         /**
          * The list of failure groups that contain preferred read disks.
-         *
          * @param preferredReadFailureGroups the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredReadFailureGroups(
                 java.util.List<String> preferredReadFailureGroups) {
             this.preferredReadFailureGroups = preferredReadFailureGroups;
@@ -195,7 +194,9 @@ public final class ExternalAsmInstanceParameters
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,38 +206,37 @@ public final class ExternalAsmInstanceParameters
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external ASM instance.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceId")
     private final String asmInstanceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external ASM instance.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external ASM instance.
      * @return the value
-     */
+     **/
     public String getAsmInstanceId() {
         return asmInstanceId;
     }
 
-    /** The user-friendly name for the ASM instance. The name does not have to be unique. */
+    /**
+     * The user-friendly name for the ASM instance. The name does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("asmInstanceDisplayName")
     private final String asmInstanceDisplayName;
 
     /**
      * The user-friendly name for the ASM instance. The name does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getAsmInstanceDisplayName() {
         return asmInstanceDisplayName;
     }
 
     /**
      * An operating system-dependent value used to limit the set of disks considered for discovery.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("diskDiscoveryPath")
     private final String diskDiscoveryPath;
 
@@ -244,29 +244,31 @@ public final class ExternalAsmInstanceParameters
      * An operating system-dependent value used to limit the set of disks considered for discovery.
      *
      * @return the value
-     */
+     **/
     public String getDiskDiscoveryPath() {
         return diskDiscoveryPath;
     }
 
     /**
-     * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER
-     * DISKGROUP ALL MOUNT} statement is issued.
-     */
+     * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER DISKGROUP ALL MOUNT} statement is issued.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoMountDiskGroups")
     private final java.util.List<String> autoMountDiskGroups;
 
     /**
-     * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER
-     * DISKGROUP ALL MOUNT} statement is issued.
+     * The list of disk group names that an ASM instance mounts at startup or when the {@code ALTER DISKGROUP ALL MOUNT} statement is issued.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAutoMountDiskGroups() {
         return autoMountDiskGroups;
     }
 
-    /** The maximum power on an ASM instance for disk rebalancing. */
+    /**
+     * The maximum power on an ASM instance for disk rebalancing.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rebalancePower")
     private final Integer rebalancePower;
 
@@ -274,20 +276,21 @@ public final class ExternalAsmInstanceParameters
      * The maximum power on an ASM instance for disk rebalancing.
      *
      * @return the value
-     */
+     **/
     public Integer getRebalancePower() {
         return rebalancePower;
     }
 
-    /** The list of failure groups that contain preferred read disks. */
+    /**
+     * The list of failure groups that contain preferred read disks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredReadFailureGroups")
     private final java.util.List<String> preferredReadFailureGroups;
 
     /**
      * The list of failure groups that contain preferred read disks.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPreferredReadFailureGroups() {
         return preferredReadFailureGroups;
     }
@@ -299,7 +302,6 @@ public final class ExternalAsmInstanceParameters
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

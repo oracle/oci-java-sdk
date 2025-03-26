@@ -5,23 +5,22 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * Summary of the RoverBundleRequest <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * Summary of the RoverBundleRequest
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RoverBundleRequestSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RoverBundleRequestSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RoverBundleRequestSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -49,91 +48,97 @@ public final class RoverBundleRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of roverBundleRequest. */
+        /**
+         * The unique identifier of roverBundleRequest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of roverBundleRequest.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of destination compartment that the bundle will be copied to. */
+        /**
+         * The OCID of destination compartment that the bundle will be copied to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
         private String destinationCompartmentId;
 
         /**
          * The OCID of destination compartment that the bundle will be copied to.
-         *
          * @param destinationCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationCompartmentId(String destinationCompartmentId) {
             this.destinationCompartmentId = destinationCompartmentId;
             this.__explicitlySet__.add("destinationCompartmentId");
             return this;
         }
-        /** The destination bucket name the bundle will be copied to. */
+        /**
+         * The destination bucket name the bundle will be copied to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
         private String destinationBucketName;
 
         /**
          * The destination bucket name the bundle will be copied to.
-         *
          * @param destinationBucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationBucketName(String destinationBucketName) {
             this.destinationBucketName = destinationBucketName;
             this.__explicitlySet__.add("destinationBucketName");
             return this;
         }
-        /** The bundle version that customer wants to upgrade to. */
+        /**
+         * The bundle version that customer wants to upgrade to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bundleVersion")
         private String bundleVersion;
 
         /**
          * The bundle version that customer wants to upgrade to.
-         *
          * @param bundleVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder bundleVersion(String bundleVersion) {
             this.bundleVersion = bundleVersion;
             this.__explicitlySet__.add("bundleVersion");
             return this;
         }
-        /** The work request id for an async copyObject operation. */
+        /**
+         * The work request id for an async copyObject operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The work request id for an async copyObject operation.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /** The time of the task was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time of the task was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeTaskCreated")
         private java.util.Date timeTaskCreated;
 
         /**
          * The time of the task was created. An RFC3339 formatted datetime string.
-         *
          * @param timeTaskCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeTaskCreated(java.util.Date timeTaskCreated) {
             this.timeTaskCreated = timeTaskCreated;
             this.__explicitlySet__.add("timeTaskCreated");
@@ -182,7 +187,9 @@ public final class RoverBundleRequestSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class RoverBundleRequestSummary
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of roverBundleRequest. */
+    /**
+     * The unique identifier of roverBundleRequest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of roverBundleRequest.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of destination compartment that the bundle will be copied to. */
+    /**
+     * The OCID of destination compartment that the bundle will be copied to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationCompartmentId")
     private final String destinationCompartmentId;
 
     /**
      * The OCID of destination compartment that the bundle will be copied to.
-     *
      * @return the value
-     */
+     **/
     public String getDestinationCompartmentId() {
         return destinationCompartmentId;
     }
 
-    /** The destination bucket name the bundle will be copied to. */
+    /**
+     * The destination bucket name the bundle will be copied to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationBucketName")
     private final String destinationBucketName;
 
     /**
      * The destination bucket name the bundle will be copied to.
-     *
      * @return the value
-     */
+     **/
     public String getDestinationBucketName() {
         return destinationBucketName;
     }
 
-    /** The bundle version that customer wants to upgrade to. */
+    /**
+     * The bundle version that customer wants to upgrade to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bundleVersion")
     private final String bundleVersion;
 
     /**
      * The bundle version that customer wants to upgrade to.
-     *
      * @return the value
-     */
+     **/
     public String getBundleVersion() {
         return bundleVersion;
     }
 
-    /** The work request id for an async copyObject operation. */
+    /**
+     * The work request id for an async copyObject operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The work request id for an async copyObject operation.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /** The time of the task was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time of the task was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeTaskCreated")
     private final java.util.Date timeTaskCreated;
 
     /**
      * The time of the task was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeTaskCreated() {
         return timeTaskCreated;
     }
@@ -276,7 +289,6 @@ public final class RoverBundleRequestSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

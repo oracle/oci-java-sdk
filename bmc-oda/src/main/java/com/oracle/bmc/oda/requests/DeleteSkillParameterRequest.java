@@ -6,61 +6,75 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillParameterExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteSkillParameterRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteSkillParameterExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteSkillParameterRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class DeleteSkillParameterRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     private String odaInstanceId;
 
-    /** Unique Digital Assistant instance identifier. */
+    /**
+     * Unique Digital Assistant instance identifier.
+     */
     public String getOdaInstanceId() {
         return odaInstanceId;
     }
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     private String skillId;
 
-    /** Unique Skill identifier. */
+    /**
+     * Unique Skill identifier.
+     */
     public String getSkillId() {
         return skillId;
     }
-    /** The name of a Skill Parameter. */
+    /**
+     * The name of a Skill Parameter.
+     */
     private String parameterName;
 
-    /** The name of a Skill Parameter. */
+    /**
+     * The name of a Skill Parameter.
+     */
     public String getParameterName() {
         return parameterName;
     }
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -69,15 +83,17 @@ public class DeleteSkillParameterRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteSkillParameterRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Digital Assistant instance identifier. */
+        /**
+         * Unique Digital Assistant instance identifier.
+         */
         private String odaInstanceId = null;
 
         /**
          * Unique Digital Assistant instance identifier.
-         *
          * @param odaInstanceId the value to set
          * @return this builder instance
          */
@@ -86,12 +102,13 @@ public class DeleteSkillParameterRequest
             return this;
         }
 
-        /** Unique Skill identifier. */
+        /**
+         * Unique Skill identifier.
+         */
         private String skillId = null;
 
         /**
          * Unique Skill identifier.
-         *
          * @param skillId the value to set
          * @return this builder instance
          */
@@ -100,12 +117,13 @@ public class DeleteSkillParameterRequest
             return this;
         }
 
-        /** The name of a Skill Parameter. */
+        /**
+         * The name of a Skill Parameter.
+         */
         private String parameterName = null;
 
         /**
          * The name of a Skill Parameter.
-         *
          * @param parameterName the value to set
          * @return this builder instance
          */
@@ -115,20 +133,23 @@ public class DeleteSkillParameterRequest
         }
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -139,15 +160,12 @@ public class DeleteSkillParameterRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -158,19 +176,18 @@ public class DeleteSkillParameterRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -182,7 +199,6 @@ public class DeleteSkillParameterRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteSkillParameterRequest o) {
@@ -199,11 +215,10 @@ public class DeleteSkillParameterRequest
         /**
          * Build the instance of DeleteSkillParameterRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteSkillParameterRequest
          */
@@ -217,8 +232,7 @@ public class DeleteSkillParameterRequest
         /**
          * Build the instance of DeleteSkillParameterRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteSkillParameterRequest
@@ -231,14 +245,12 @@ public class DeleteSkillParameterRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteSkillParameterRequest(odaInstanceId, skillId, parameterName, ifMatch,
-            // opcRequestId);
+            // new DeleteSkillParameterRequest(odaInstanceId, skillId, parameterName, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -252,7 +264,6 @@ public class DeleteSkillParameterRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

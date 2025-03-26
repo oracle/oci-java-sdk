@@ -5,25 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a software package installed on a managed instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a software package installed on a managed instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstalledPackageSummary.Builder.class)
+    builder = InstalledPackageSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageClassification")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageClassification"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstalledPackageSummary extends PackageSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -81,38 +81,38 @@ public final class InstalledPackageSummary extends PackageSummary {
             return this;
         }
         /**
-         * The date and time the package was installed, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         */
+         * The date and time the package was installed, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeInstalled")
         private java.util.Date timeInstalled;
 
         /**
-         * The date and time the package was installed, as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         * The date and time the package was installed, as described in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          *
          * @param timeInstalled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeInstalled(java.util.Date timeInstalled) {
             this.timeInstalled = timeInstalled;
             this.__explicitlySet__.add("timeInstalled");
             return this;
         }
         /**
-         * The date and time the package was issued by a providing erratum (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the package was issued by a providing erratum (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIssued(java.util.Date timeIssued) {
             this.timeIssued = timeIssued;
             this.__explicitlySet__.add("timeIssued");
@@ -169,7 +169,9 @@ public final class InstalledPackageSummary extends PackageSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -194,35 +196,35 @@ public final class InstalledPackageSummary extends PackageSummary {
     }
 
     /**
-     * The date and time the package was installed, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     */
+     * The date and time the package was installed, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeInstalled")
     private final java.util.Date timeInstalled;
 
     /**
-     * The date and time the package was installed, as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     * The date and time the package was installed, as described in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeInstalled() {
         return timeInstalled;
     }
 
     /**
-     * The date and time the package was issued by a providing erratum (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the package was issued by a providing erratum (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the package was issued by a providing erratum (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIssued() {
         return timeIssued;
     }
@@ -234,7 +236,6 @@ public final class InstalledPackageSummary extends PackageSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

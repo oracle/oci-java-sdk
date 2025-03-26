@@ -5,24 +5,23 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The timestamp of the projected event and their corresponding resource value. {@code highValue}
- * and {@code lowValue} are the uncertainty bounds of the corresponding value. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * The timestamp of the projected event and their corresponding resource value.
+ * {@code highValue} and {@code lowValue} are the uncertainty bounds of the corresponding value.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProjectedDataItem.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProjectedDataItem
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ProjectedDataItem.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProjectedDataItem extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"endTimestamp", "usage", "highValue", "lowValue"})
     public ProjectedDataItem(
@@ -36,22 +35,26 @@ public final class ProjectedDataItem
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The timestamp in which the current sampling period ends in RFC 3339 format. */
+        /**
+         * The timestamp in which the current sampling period ends in RFC 3339 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
         private java.util.Date endTimestamp;
 
         /**
          * The timestamp in which the current sampling period ends in RFC 3339 format.
-         *
          * @param endTimestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
             return this;
         }
-        /** Total amount used of the resource metric type (CPU, STORAGE). */
+        /**
+         * Total amount used of the resource metric type (CPU, STORAGE).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usage")
         private Double usage;
 
@@ -60,37 +63,39 @@ public final class ProjectedDataItem
          *
          * @param usage the value to set
          * @return this builder
-         */
+         **/
         public Builder usage(Double usage) {
             this.usage = usage;
             this.__explicitlySet__.add("usage");
             return this;
         }
-        /** Upper uncertainty bound of the current usage value. */
+        /**
+         * Upper uncertainty bound of the current usage value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("highValue")
         private Double highValue;
 
         /**
          * Upper uncertainty bound of the current usage value.
-         *
          * @param highValue the value to set
          * @return this builder
-         */
+         **/
         public Builder highValue(Double highValue) {
             this.highValue = highValue;
             this.__explicitlySet__.add("highValue");
             return this;
         }
-        /** Lower uncertainty bound of the current usage value. */
+        /**
+         * Lower uncertainty bound of the current usage value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lowValue")
         private Double lowValue;
 
         /**
          * Lower uncertainty bound of the current usage value.
-         *
          * @param lowValue the value to set
          * @return this builder
-         */
+         **/
         public Builder lowValue(Double lowValue) {
             this.lowValue = lowValue;
             this.__explicitlySet__.add("lowValue");
@@ -128,7 +133,9 @@ public final class ProjectedDataItem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -137,20 +144,24 @@ public final class ProjectedDataItem
         return new Builder().copy(this);
     }
 
-    /** The timestamp in which the current sampling period ends in RFC 3339 format. */
+    /**
+     * The timestamp in which the current sampling period ends in RFC 3339 format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTimestamp")
     private final java.util.Date endTimestamp;
 
     /**
      * The timestamp in which the current sampling period ends in RFC 3339 format.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
     }
 
-    /** Total amount used of the resource metric type (CPU, STORAGE). */
+    /**
+     * Total amount used of the resource metric type (CPU, STORAGE).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usage")
     private final Double usage;
 
@@ -158,33 +169,35 @@ public final class ProjectedDataItem
      * Total amount used of the resource metric type (CPU, STORAGE).
      *
      * @return the value
-     */
+     **/
     public Double getUsage() {
         return usage;
     }
 
-    /** Upper uncertainty bound of the current usage value. */
+    /**
+     * Upper uncertainty bound of the current usage value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("highValue")
     private final Double highValue;
 
     /**
      * Upper uncertainty bound of the current usage value.
-     *
      * @return the value
-     */
+     **/
     public Double getHighValue() {
         return highValue;
     }
 
-    /** Lower uncertainty bound of the current usage value. */
+    /**
+     * Lower uncertainty bound of the current usage value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lowValue")
     private final Double lowValue;
 
     /**
      * Lower uncertainty bound of the current usage value.
-     *
      * @return the value
-     */
+     **/
     public Double getLowValue() {
         return lowValue;
     }
@@ -196,7 +209,6 @@ public final class ProjectedDataItem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

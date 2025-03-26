@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The version details specific to an app. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The version details specific to an app.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AppVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AppVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AppVersionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "releaseDate",
@@ -40,61 +39,65 @@ public final class AppVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Autonomous Container Database version release date. */
+        /**
+         * The Autonomous Container Database version release date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private String releaseDate;
 
         /**
          * The Autonomous Container Database version release date.
-         *
          * @param releaseDate the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseDate(String releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
             return this;
         }
-        /** The Autonomous Container Database version end of support date. */
+        /**
+         * The Autonomous Container Database version end of support date.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endOfSupport")
         private String endOfSupport;
 
         /**
          * The Autonomous Container Database version end of support date.
-         *
          * @param endOfSupport the value to set
          * @return this builder
-         */
+         **/
         public Builder endOfSupport(String endOfSupport) {
             this.endOfSupport = endOfSupport;
             this.__explicitlySet__.add("endOfSupport");
             return this;
         }
-        /** The name of the supported application. */
+        /**
+         * The name of the supported application.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedAppName")
         private String supportedAppName;
 
         /**
          * The name of the supported application.
-         *
          * @param supportedAppName the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedAppName(String supportedAppName) {
             this.supportedAppName = supportedAppName;
             this.__explicitlySet__.add("supportedAppName");
             return this;
         }
-        /** Indicates if the image is certified. */
+        /**
+         * Indicates if the image is certified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCertified")
         private Boolean isCertified;
 
         /**
          * Indicates if the image is certified.
-         *
          * @param isCertified the value to set
          * @return this builder
-         */
+         **/
         public Builder isCertified(Boolean isCertified) {
             this.isCertified = isCertified;
             this.__explicitlySet__.add("isCertified");
@@ -135,7 +138,9 @@ public final class AppVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,54 +149,58 @@ public final class AppVersionSummary
         return new Builder().copy(this);
     }
 
-    /** The Autonomous Container Database version release date. */
+    /**
+     * The Autonomous Container Database version release date.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final String releaseDate;
 
     /**
      * The Autonomous Container Database version release date.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseDate() {
         return releaseDate;
     }
 
-    /** The Autonomous Container Database version end of support date. */
+    /**
+     * The Autonomous Container Database version end of support date.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endOfSupport")
     private final String endOfSupport;
 
     /**
      * The Autonomous Container Database version end of support date.
-     *
      * @return the value
-     */
+     **/
     public String getEndOfSupport() {
         return endOfSupport;
     }
 
-    /** The name of the supported application. */
+    /**
+     * The name of the supported application.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedAppName")
     private final String supportedAppName;
 
     /**
      * The name of the supported application.
-     *
      * @return the value
-     */
+     **/
     public String getSupportedAppName() {
         return supportedAppName;
     }
 
-    /** Indicates if the image is certified. */
+    /**
+     * Indicates if the image is certified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCertified")
     private final Boolean isCertified;
 
     /**
      * Indicates if the image is certified.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCertified() {
         return isCertified;
     }
@@ -203,7 +212,6 @@ public final class AppVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

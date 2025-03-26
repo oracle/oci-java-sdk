@@ -5,22 +5,19 @@
 package com.oracle.bmc.securityattribute.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BulkEditResource.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BulkEditResource
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BulkEditResource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "resourceType", "metadata"})
     public BulkEditResource(
@@ -33,56 +30,51 @@ public final class BulkEditResource
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique OCID of the resource. */
+        /**
+         * The unique OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The type of resource. See {@link
-         * #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest)
-         * listBulkEditTagsResourceTypes}.
-         */
+         * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
-         * The type of resource. See {@link
-         * #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest)
-         * listBulkEditTagsResourceTypes}.
-         *
+         * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * Additional information that identifies the resource for bulk editing of tags. This
-         * information is provided in the resource's API documentation.
-         */
+         * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private java.util.Map<String, String> metadata;
 
         /**
-         * Additional information that identifies the resource for bulk editing of tags. This
-         * information is provided in the resource's API documentation.
+         * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
          *
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(java.util.Map<String, String> metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -116,7 +108,9 @@ public final class BulkEditResource
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,51 +119,46 @@ public final class BulkEditResource
         return new Builder().copy(this);
     }
 
-    /** The unique OCID of the resource. */
+    /**
+     * The unique OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The type of resource. See {@link
-     * #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest)
-     * listBulkEditTagsResourceTypes}.
-     */
+     * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
-     * The type of resource. See {@link
-     * #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest)
-     * listBulkEditTagsResourceTypes}.
-     *
+     * The type of resource. See {@link #listBulkEditTagsResourceTypes(ListBulkEditTagsResourceTypesRequest) listBulkEditTagsResourceTypes}.
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * Additional information that identifies the resource for bulk editing of tags. This
-     * information is provided in the resource's API documentation.
-     */
+     * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final java.util.Map<String, String> metadata;
 
     /**
-     * Additional information that identifies the resource for bulk editing of tags. This
-     * information is provided in the resource's API documentation.
+     * Additional information that identifies the resource for bulk editing of tags. This information is provided in the resource's API documentation.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getMetadata() {
         return metadata;
     }
@@ -181,7 +170,6 @@ public final class BulkEditResource
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

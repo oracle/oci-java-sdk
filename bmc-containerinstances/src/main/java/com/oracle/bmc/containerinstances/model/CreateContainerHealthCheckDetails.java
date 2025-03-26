@@ -5,34 +5,36 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Container Health Check is used to check and report the status of a container. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * Container Health Check is used to check and report the status of a container.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "healthCheckType",
-        defaultImpl = CreateContainerHealthCheckDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "healthCheckType",
+    defaultImpl = CreateContainerHealthCheckDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateContainerTcpHealthCheckDetails.class,
-            name = "TCP"),
+        value = CreateContainerTcpHealthCheckDetails.class,
+        name = "TCP"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateContainerHttpHealthCheckDetails.class,
-            name = "HTTP")
+        value = CreateContainerHttpHealthCheckDetails.class,
+        name = "HTTP"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class CreateContainerHealthCheckDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -61,103 +63,104 @@ public class CreateContainerHealthCheckDetails
         this.failureAction = failureAction;
     }
 
-    /** Health check name. */
+    /**
+     * Health check name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Health check name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The initial delay in seconds before start checking container health status. */
+    /**
+     * The initial delay in seconds before start checking container health status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initialDelayInSeconds")
     private final Integer initialDelayInSeconds;
 
     /**
      * The initial delay in seconds before start checking container health status.
-     *
      * @return the value
-     */
+     **/
     public Integer getInitialDelayInSeconds() {
         return initialDelayInSeconds;
     }
 
-    /** Number of seconds between two consecutive runs for checking container health. */
+    /**
+     * Number of seconds between two consecutive runs for checking container health.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalInSeconds")
     private final Integer intervalInSeconds;
 
     /**
      * Number of seconds between two consecutive runs for checking container health.
-     *
      * @return the value
-     */
+     **/
     public Integer getIntervalInSeconds() {
         return intervalInSeconds;
     }
 
-    /** Number of consecutive failures at which we consider the check failed. */
+    /**
+     * Number of consecutive failures at which we consider the check failed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureThreshold")
     private final Integer failureThreshold;
 
     /**
      * Number of consecutive failures at which we consider the check failed.
-     *
      * @return the value
-     */
+     **/
     public Integer getFailureThreshold() {
         return failureThreshold;
     }
 
     /**
-     * Number of consecutive successes at which we consider the check succeeded again after it was
-     * in failure state.
-     */
+     * Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("successThreshold")
     private final Integer successThreshold;
 
     /**
-     * Number of consecutive successes at which we consider the check succeeded again after it was
-     * in failure state.
-     *
+     * Number of consecutive successes at which we consider the check succeeded again after it was in failure state.
      * @return the value
-     */
+     **/
     public Integer getSuccessThreshold() {
         return successThreshold;
     }
 
-    /** Length of waiting time in seconds before marking health check failed. */
+    /**
+     * Length of waiting time in seconds before marking health check failed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
      * Length of waiting time in seconds before marking health check failed.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
 
     /**
-     * The action will be triggered when the container health check fails. There are two types of
-     * action: KILL or NONE. The default action is KILL. If failure action is KILL, the container
-     * will be subject to the container restart policy.
-     */
+     * The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default
+     * action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failureAction")
     private final ContainerHealthCheckFailureAction failureAction;
 
     /**
-     * The action will be triggered when the container health check fails. There are two types of
-     * action: KILL or NONE. The default action is KILL. If failure action is KILL, the container
-     * will be subject to the container restart policy.
+     * The action will be triggered when the container health check fails. There are two types of action: KILL or NONE. The default
+     * action is KILL. If failure action is KILL, the container will be subject to the container restart policy.
      *
      * @return the value
-     */
+     **/
     public ContainerHealthCheckFailureAction getFailureAction() {
         return failureAction;
     }
@@ -169,7 +172,6 @@ public class CreateContainerHealthCheckDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

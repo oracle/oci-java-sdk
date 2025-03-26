@@ -5,11 +5,12 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * The specific database technology for a type of database connection. Example:
- * OCI_AUTONOMOUS_DATABASE for an ORACLE connection type.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The specific database technology for a type of database connection.
+ * Example: OCI_AUTONOMOUS_DATABASE for an ORACLE connection type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum TechnologyType {
     OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
     OciMysql("OCI_MYSQL"),
     OracleDatabase("ORACLE_DATABASE"),

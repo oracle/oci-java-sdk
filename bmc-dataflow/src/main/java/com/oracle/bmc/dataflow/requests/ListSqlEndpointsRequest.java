@@ -6,72 +6,90 @@ package com.oracle.bmc.dataflow.requests;
 
 import com.oracle.bmc.dataflow.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListSqlEndpointsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlEndpointsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListSqlEndpointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlEndpointsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment in which to query resources. */
+    /**
+     * The OCID of the compartment in which to query resources.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment in which to query resources. */
+    /**
+     * The OCID of the compartment in which to query resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The unique id of the SQL Endpoint. */
+    /**
+     * The unique id of the SQL Endpoint.
+     */
     private String sqlEndpointId;
 
-    /** The unique id of the SQL Endpoint. */
+    /**
+     * The unique id of the SQL Endpoint.
+     */
     public String getSqlEndpointId() {
         return sqlEndpointId;
     }
     /**
-     * A filter to return only those resources whose sqlEndpointLifecycleState matches the given
-     * sqlEndpointLifecycleState.
+     * A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
      */
     private com.oracle.bmc.dataflow.model.SqlEndpointLifecycleState lifecycleState;
 
     /**
-     * A filter to return only those resources whose sqlEndpointLifecycleState matches the given
-     * sqlEndpointLifecycleState.
+     * A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
      */
     public com.oracle.bmc.dataflow.model.SqlEndpointLifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The query parameter for the Spark application name. */
+    /**
+     * The query parameter for the Spark application name.
+     *
+     */
     private String displayName;
 
-    /** The query parameter for the Spark application name. */
+    /**
+     * The query parameter for the Spark application name.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** The maximum number of items that can be returned. */
+    /**
+     * The maximum number of items that can be returned.
+     */
     private Integer limit;
 
-    /** The maximum number of items that can be returned. */
+    /**
+     * The maximum number of items that can be returned.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The ordering of results in ascending or descending order. */
+    /**
+     * The ordering of results in ascending or descending order.
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The ordering of results in ascending or descending order. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The ordering of results in ascending or descending order.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -104,23 +122,24 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
     };
 
-    /** The ordering of results in ascending or descending order. */
+    /**
+     * The ordering of results in ascending or descending order.
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified
-     * timeCreated is used by default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending. If no value is specified timeCreated is used by default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified
-     * timeCreated is used by default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending. If no value is specified timeCreated is used by default.
+     *
+     **/
+    public enum SortBy {
         Id("id"),
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
@@ -155,22 +174,23 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for timeCreated
-     * is descending. The default order for displayName is ascending. If no value is specified
-     * timeCreated is used by default.
+     * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending. If no value is specified timeCreated is used by default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID will include this value.
+     * Otherwise, a random request ID will be generated by the service.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If provided, the returned request ID will include this
-     * value. Otherwise, a random request ID will be generated by the service.
+     * Unique identifier for the request. If provided, the returned request ID will include this value.
+     * Otherwise, a random request ID will be generated by the service.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -179,15 +199,17 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlEndpointsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment in which to query resources. */
+        /**
+         * The OCID of the compartment in which to query resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to query resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -196,12 +218,13 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The unique id of the SQL Endpoint. */
+        /**
+         * The unique id of the SQL Endpoint.
+         */
         private String sqlEndpointId = null;
 
         /**
          * The unique id of the SQL Endpoint.
-         *
          * @param sqlEndpointId the value to set
          * @return this builder instance
          */
@@ -211,15 +234,12 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * A filter to return only those resources whose sqlEndpointLifecycleState matches the given
-         * sqlEndpointLifecycleState.
+         * A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
          */
         private com.oracle.bmc.dataflow.model.SqlEndpointLifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only those resources whose sqlEndpointLifecycleState matches the given
-         * sqlEndpointLifecycleState.
-         *
+         * A filter to return only those resources whose sqlEndpointLifecycleState matches the given sqlEndpointLifecycleState.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -229,7 +249,10 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The query parameter for the Spark application name. */
+        /**
+         * The query parameter for the Spark application name.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -243,12 +266,13 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The maximum number of items that can be returned. */
+        /**
+         * The maximum number of items that can be returned.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items that can be returned.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -258,15 +282,12 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -275,7 +296,10 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The ordering of results in ascending or descending order. */
+        /**
+         * The ordering of results in ascending or descending order.
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -290,16 +314,13 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified timeCreated is used by default.
+         * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending. If no value is specified timeCreated is used by default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * timeCreated is descending. The default order for displayName is ascending. If no value is
-         * specified timeCreated is used by default.
+         * The field to sort by. Only one sort order may be provided. The default order for timeCreated is descending. The default order for displayName is ascending. If no value is specified timeCreated is used by default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -310,14 +331,15 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID will include this value.
+         * Otherwise, a random request ID will be generated by the service.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If provided, the returned request ID will include this
-         * value. Otherwise, a random request ID will be generated by the service.
+         * Unique identifier for the request. If provided, the returned request ID will include this value.
+         * Otherwise, a random request ID will be generated by the service.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -329,19 +351,18 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -353,7 +374,6 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSqlEndpointsRequest o) {
@@ -374,11 +394,10 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListSqlEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSqlEndpointsRequest
          */
@@ -392,8 +411,7 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of ListSqlEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSqlEndpointsRequest
@@ -410,14 +428,12 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSqlEndpointsRequest(compartmentId, sqlEndpointId, lifecycleState,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListSqlEndpointsRequest(compartmentId, sqlEndpointId, lifecycleState, displayName, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -435,7 +451,6 @@ public class ListSqlEndpointsRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

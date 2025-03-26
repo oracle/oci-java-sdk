@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Availability status of the JmsPlugin. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum JmsPluginAvailabilityStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Availability status of the JmsPlugin.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum JmsPluginAvailabilityStatus {
     Active("ACTIVE"),
     Silent("SILENT"),
     NotAvailable("NOT_AVAILABLE"),

@@ -5,23 +5,22 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Properties of a tracked object in a video. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Properties of a tracked object in a video.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VideoTrackedObjectProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VideoTrackedObjectProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VideoTrackedObjectProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"axleCount"})
     public VideoTrackedObjectProperties(Integer axleCount) {
@@ -31,16 +30,17 @@ public final class VideoTrackedObjectProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The axle count value of a tracked vehicle. */
+        /**
+         * The axle count value of a tracked vehicle.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("axleCount")
         private Integer axleCount;
 
         /**
          * The axle count value of a tracked vehicle.
-         *
          * @param axleCount the value to set
          * @return this builder
-         */
+         **/
         public Builder axleCount(Integer axleCount) {
             this.axleCount = axleCount;
             this.__explicitlySet__.add("axleCount");
@@ -67,7 +67,9 @@ public final class VideoTrackedObjectProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class VideoTrackedObjectProperties
         return new Builder().copy(this);
     }
 
-    /** The axle count value of a tracked vehicle. */
+    /**
+     * The axle count value of a tracked vehicle.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("axleCount")
     private final Integer axleCount;
 
     /**
      * The axle count value of a tracked vehicle.
-     *
      * @return the value
-     */
+     **/
     public Integer getAxleCount() {
         return axleCount;
     }
@@ -96,7 +99,6 @@ public final class VideoTrackedObjectProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

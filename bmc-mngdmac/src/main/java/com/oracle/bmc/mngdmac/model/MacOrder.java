@@ -5,21 +5,20 @@
 package com.oracle.bmc.mngdmac.model;
 
 /**
- * A description of a MacOrder resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+ * A description of a MacOrder resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MacOrder.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MacOrder extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MacOrder extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -83,252 +82,262 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the resource. */
+        /**
+         * The OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** OCID of the compartment to which the resource belongs to. */
+        /**
+         * OCID of the compartment to which the resource belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of the compartment to which the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderDescription")
         private String orderDescription;
 
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
          *
          * @param orderDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder orderDescription(String orderDescription) {
             this.orderDescription = orderDescription;
             this.__explicitlySet__.add("orderDescription");
             return this;
         }
-        /** Number of macs requested in this MacOrder. */
+        /**
+         * Number of macs requested in this MacOrder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderSize")
         private Integer orderSize;
 
         /**
          * Number of macs requested in this MacOrder.
-         *
          * @param orderSize the value to set
          * @return this builder
-         */
+         **/
         public Builder orderSize(Integer orderSize) {
             this.orderSize = orderSize;
             this.__explicitlySet__.add("orderSize");
             return this;
         }
-        /** The IP Range specified by the customer for this order. */
+        /**
+         * The IP Range specified by the customer for this order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipRange")
         private String ipRange;
 
         /**
          * The IP Range specified by the customer for this order.
-         *
          * @param ipRange the value to set
          * @return this builder
-         */
+         **/
         public Builder ipRange(String ipRange) {
             this.ipRange = ipRange;
             this.__explicitlySet__.add("ipRange");
             return this;
         }
-        /** Checkbox value that indicates whether the customer completed docusign process. */
+        /**
+         * Checkbox value that indicates whether the customer completed docusign process.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDocusigned")
         private Boolean isDocusigned;
 
         /**
          * Checkbox value that indicates whether the customer completed docusign process.
-         *
          * @param isDocusigned the value to set
          * @return this builder
-         */
+         **/
         public Builder isDocusigned(Boolean isDocusigned) {
             this.isDocusigned = isDocusigned;
             this.__explicitlySet__.add("isDocusigned");
             return this;
         }
-        /** Enum indicating the requested shape for the MacDevices. */
+        /**
+         * Enum indicating the requested shape for the MacDevices.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
 
         /**
          * Enum indicating the requested shape for the MacDevices.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The time this resource was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time this resource was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time this resource was last updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time this resource was last updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Enum indicating the agreed commitment term for the requested MacDevices. */
+        /**
+         * Enum indicating the agreed commitment term for the requested MacDevices.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitmentTerm")
         private CommitmentTerm commitmentTerm;
 
         /**
          * Enum indicating the agreed commitment term for the requested MacDevices.
-         *
          * @param commitmentTerm the value to set
          * @return this builder
-         */
+         **/
         public Builder commitmentTerm(CommitmentTerm commitmentTerm) {
             this.commitmentTerm = commitmentTerm;
             this.__explicitlySet__.add("commitmentTerm");
             return this;
         }
         /**
-         * An RFC3339-formatted datetime string containing the date and time that billing for this
-         * MacOrder begins.
-         */
+         * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder begins.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBillingStarted")
         private java.util.Date timeBillingStarted;
 
         /**
-         * An RFC3339-formatted datetime string containing the date and time that billing for this
-         * MacOrder begins.
-         *
+         * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder begins.
          * @param timeBillingStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBillingStarted(java.util.Date timeBillingStarted) {
             this.timeBillingStarted = timeBillingStarted;
             this.__explicitlySet__.add("timeBillingStarted");
             return this;
         }
         /**
-         * An RFC3339-formatted datetime string containing the date and time that billing for this
-         * MacOrder ends.
-         */
+         * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder ends.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBillingEnded")
         private java.util.Date timeBillingEnded;
 
         /**
-         * An RFC3339-formatted datetime string containing the date and time that billing for this
-         * MacOrder ends.
-         *
+         * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder ends.
          * @param timeBillingEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBillingEnded(java.util.Date timeBillingEnded) {
             this.timeBillingEnded = timeBillingEnded;
             this.__explicitlySet__.add("timeBillingEnded");
             return this;
         }
-        /** The current status of the MacOrder. */
+        /**
+         * The current status of the MacOrder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderStatus")
         private OrderStatus orderStatus;
 
         /**
          * The current status of the MacOrder.
-         *
          * @param orderStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder orderStatus(OrderStatus orderStatus) {
             this.orderStatus = orderStatus;
             this.__explicitlySet__.add("orderStatus");
             return this;
         }
-        /** The current state of the MacOrder. */
+        /**
+         * The current state of the MacOrder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the MacOrder.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message that describes the current state of the MacOrder in more detail. */
+        /**
+         * A message that describes the current state of the MacOrder in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
@@ -337,37 +346,39 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The reason for the MacOrder cancellation. */
+        /**
+         * The reason for the MacOrder cancellation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cancelReason")
         private String cancelReason;
 
         /**
          * The reason for the MacOrder cancellation.
-         *
          * @param cancelReason the value to set
          * @return this builder
-         */
+         **/
         public Builder cancelReason(String cancelReason) {
             this.cancelReason = cancelReason;
             this.__explicitlySet__.add("cancelReason");
             return this;
         }
-        /** An RFC3339-formatted datetime string containing the time this MacOrder was cancelled. */
+        /**
+         * An RFC3339-formatted datetime string containing the time this MacOrder was cancelled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCanceled")
         private java.util.Date timeCanceled;
 
         /**
          * An RFC3339-formatted datetime string containing the time this MacOrder was cancelled.
-         *
          * @param timeCanceled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCanceled(java.util.Date timeCanceled) {
             this.timeCanceled = timeCanceled;
             this.__explicitlySet__.add("timeCanceled");
@@ -464,7 +475,9 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -473,111 +486,120 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The OCID of the resource. */
+    /**
+     * The OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** OCID of the compartment to which the resource belongs to. */
+    /**
+     * OCID of the compartment to which the resource belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of the compartment to which the resource belongs to.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderDescription")
     private final String orderDescription;
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getOrderDescription() {
         return orderDescription;
     }
 
-    /** Number of macs requested in this MacOrder. */
+    /**
+     * Number of macs requested in this MacOrder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderSize")
     private final Integer orderSize;
 
     /**
      * Number of macs requested in this MacOrder.
-     *
      * @return the value
-     */
+     **/
     public Integer getOrderSize() {
         return orderSize;
     }
 
-    /** The IP Range specified by the customer for this order. */
+    /**
+     * The IP Range specified by the customer for this order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipRange")
     private final String ipRange;
 
     /**
      * The IP Range specified by the customer for this order.
-     *
      * @return the value
-     */
+     **/
     public String getIpRange() {
         return ipRange;
     }
 
-    /** Checkbox value that indicates whether the customer completed docusign process. */
+    /**
+     * Checkbox value that indicates whether the customer completed docusign process.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDocusigned")
     private final Boolean isDocusigned;
 
     /**
      * Checkbox value that indicates whether the customer completed docusign process.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDocusigned() {
         return isDocusigned;
     }
 
-    /** Enum indicating the requested shape for the MacDevices. */
-    public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Enum indicating the requested shape for the MacDevices.
+     **/
+    public enum Shape {
         M2ProMacMini32Gb1Tb("M2_PRO_MAC_MINI_32GB_1TB"),
         M2UltraMacStudio64Gb4Tb("M2_ULTRA_MAC_STUDIO_64GB_4TB"),
         M2UltraMacStudio192Gb4Tb("M2_ULTRA_MAC_STUDIO_192GB_4TB"),
@@ -585,8 +607,8 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
         M4ProMacMini64Gb4Tb("M4_PRO_MAC_MINI_64GB_4TB"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -624,52 +646,57 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Enum indicating the requested shape for the MacDevices. */
+    /**
+     * Enum indicating the requested shape for the MacDevices.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final Shape shape;
 
     /**
      * Enum indicating the requested shape for the MacDevices.
-     *
      * @return the value
-     */
+     **/
     public Shape getShape() {
         return shape;
     }
 
-    /** The time this resource was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time this resource was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time this resource was last updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time this resource was last updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time this resource was last updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Enum indicating the agreed commitment term for the requested MacDevices. */
-    public enum CommitmentTerm implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Enum indicating the agreed commitment term for the requested MacDevices.
+     **/
+    public enum CommitmentTerm {
         Years3("YEARS_3"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -708,55 +735,52 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** Enum indicating the agreed commitment term for the requested MacDevices. */
+    /**
+     * Enum indicating the agreed commitment term for the requested MacDevices.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitmentTerm")
     private final CommitmentTerm commitmentTerm;
 
     /**
      * Enum indicating the agreed commitment term for the requested MacDevices.
-     *
      * @return the value
-     */
+     **/
     public CommitmentTerm getCommitmentTerm() {
         return commitmentTerm;
     }
 
     /**
-     * An RFC3339-formatted datetime string containing the date and time that billing for this
-     * MacOrder begins.
-     */
+     * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder begins.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBillingStarted")
     private final java.util.Date timeBillingStarted;
 
     /**
-     * An RFC3339-formatted datetime string containing the date and time that billing for this
-     * MacOrder begins.
-     *
+     * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder begins.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBillingStarted() {
         return timeBillingStarted;
     }
 
     /**
-     * An RFC3339-formatted datetime string containing the date and time that billing for this
-     * MacOrder ends.
-     */
+     * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder ends.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBillingEnded")
     private final java.util.Date timeBillingEnded;
 
     /**
-     * An RFC3339-formatted datetime string containing the date and time that billing for this
-     * MacOrder ends.
-     *
+     * An RFC3339-formatted datetime string containing the date and time that billing for this MacOrder ends.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBillingEnded() {
         return timeBillingEnded;
     }
 
-    /** The current status of the MacOrder. */
-    public enum OrderStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current status of the MacOrder.
+     **/
+    public enum OrderStatus {
         Submitted("SUBMITTED"),
         PendingDocusign("PENDING_DOCUSIGN"),
         OrderReview("ORDER_REVIEW"),
@@ -769,8 +793,8 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
         Canceled("CANCELED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -809,21 +833,24 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The current status of the MacOrder. */
+    /**
+     * The current status of the MacOrder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderStatus")
     private final OrderStatus orderStatus;
 
     /**
      * The current status of the MacOrder.
-     *
      * @return the value
-     */
+     **/
     public OrderStatus getOrderStatus() {
         return orderStatus;
     }
 
-    /** The current state of the MacOrder. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the MacOrder.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -833,8 +860,8 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -873,20 +900,24 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The current state of the MacOrder. */
+    /**
+     * The current state of the MacOrder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the MacOrder.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message that describes the current state of the MacOrder in more detail. */
+    /**
+     * A message that describes the current state of the MacOrder in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
@@ -894,33 +925,35 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
      * A message that describes the current state of the MacOrder in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The reason for the MacOrder cancellation. */
+    /**
+     * The reason for the MacOrder cancellation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cancelReason")
     private final String cancelReason;
 
     /**
      * The reason for the MacOrder cancellation.
-     *
      * @return the value
-     */
+     **/
     public String getCancelReason() {
         return cancelReason;
     }
 
-    /** An RFC3339-formatted datetime string containing the time this MacOrder was cancelled. */
+    /**
+     * An RFC3339-formatted datetime string containing the time this MacOrder was cancelled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCanceled")
     private final java.util.Date timeCanceled;
 
     /**
      * An RFC3339-formatted datetime string containing the time this MacOrder was cancelled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCanceled() {
         return timeCanceled;
     }
@@ -932,7 +965,6 @@ public final class MacOrder extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

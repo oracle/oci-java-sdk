@@ -5,21 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides information about the system architecture and operating system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides information about the system architecture and operating system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SystemDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SystemDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SystemDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "architecture",
@@ -50,106 +48,113 @@ public final class SystemDetails extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Architecture type. */
+        /**
+         * Architecture type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("architecture")
         private ArchType architecture;
 
         /**
          * Architecture type.
-         *
          * @param architecture the value to set
          * @return this builder
-         */
+         **/
         public Builder architecture(ArchType architecture) {
             this.architecture = architecture;
             this.__explicitlySet__.add("architecture");
             return this;
         }
-        /** Version of the Ksplice effective kernel. */
+        /**
+         * Version of the Ksplice effective kernel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
         private String kspliceEffectiveKernelVersion;
 
         /**
          * Version of the Ksplice effective kernel.
-         *
          * @param kspliceEffectiveKernelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder kspliceEffectiveKernelVersion(String kspliceEffectiveKernelVersion) {
             this.kspliceEffectiveKernelVersion = kspliceEffectiveKernelVersion;
             this.__explicitlySet__.add("kspliceEffectiveKernelVersion");
             return this;
         }
-        /** Operating system type. */
+        /**
+         * Operating system type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
          * Operating system type.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** Name of the operating system. */
+        /**
+         * Name of the operating system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osName")
         private String osName;
 
         /**
          * Name of the operating system.
-         *
          * @param osName the value to set
          * @return this builder
-         */
+         **/
         public Builder osName(String osName) {
             this.osName = osName;
             this.__explicitlySet__.add("osName");
             return this;
         }
-        /** Release of the kernel. */
+        /**
+         * Release of the kernel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelRelease")
         private String osKernelRelease;
 
         /**
          * Release of the kernel.
-         *
          * @param osKernelRelease the value to set
          * @return this builder
-         */
+         **/
         public Builder osKernelRelease(String osKernelRelease) {
             this.osKernelRelease = osKernelRelease;
             this.__explicitlySet__.add("osKernelRelease");
             return this;
         }
-        /** Version of the kernel. */
+        /**
+         * Version of the kernel.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
         private String osKernelVersion;
 
         /**
          * Version of the kernel.
-         *
          * @param osKernelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osKernelVersion(String osKernelVersion) {
             this.osKernelVersion = osKernelVersion;
             this.__explicitlySet__.add("osKernelVersion");
             return this;
         }
-        /** Version of the operating system. */
+        /**
+         * Version of the operating system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osSystemVersion")
         private String osSystemVersion;
 
         /**
          * Version of the operating system.
-         *
          * @param osSystemVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osSystemVersion(String osSystemVersion) {
             this.osSystemVersion = osSystemVersion;
             this.__explicitlySet__.add("osSystemVersion");
@@ -202,7 +207,9 @@ public final class SystemDetails extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,93 +218,100 @@ public final class SystemDetails extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Architecture type. */
+    /**
+     * Architecture type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("architecture")
     private final ArchType architecture;
 
     /**
      * Architecture type.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchitecture() {
         return architecture;
     }
 
-    /** Version of the Ksplice effective kernel. */
+    /**
+     * Version of the Ksplice effective kernel.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kspliceEffectiveKernelVersion")
     private final String kspliceEffectiveKernelVersion;
 
     /**
      * Version of the Ksplice effective kernel.
-     *
      * @return the value
-     */
+     **/
     public String getKspliceEffectiveKernelVersion() {
         return kspliceEffectiveKernelVersion;
     }
 
-    /** Operating system type. */
+    /**
+     * Operating system type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * Operating system type.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** Name of the operating system. */
+    /**
+     * Name of the operating system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osName")
     private final String osName;
 
     /**
      * Name of the operating system.
-     *
      * @return the value
-     */
+     **/
     public String getOsName() {
         return osName;
     }
 
-    /** Release of the kernel. */
+    /**
+     * Release of the kernel.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelRelease")
     private final String osKernelRelease;
 
     /**
      * Release of the kernel.
-     *
      * @return the value
-     */
+     **/
     public String getOsKernelRelease() {
         return osKernelRelease;
     }
 
-    /** Version of the kernel. */
+    /**
+     * Version of the kernel.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osKernelVersion")
     private final String osKernelVersion;
 
     /**
      * Version of the kernel.
-     *
      * @return the value
-     */
+     **/
     public String getOsKernelVersion() {
         return osKernelVersion;
     }
 
-    /** Version of the operating system. */
+    /**
+     * Version of the operating system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osSystemVersion")
     private final String osSystemVersion;
 
     /**
      * Version of the operating system.
-     *
      * @return the value
-     */
+     **/
     public String getOsSystemVersion() {
         return osSystemVersion;
     }
@@ -309,7 +323,6 @@ public final class SystemDetails extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

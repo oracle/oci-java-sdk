@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of Bot publish states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum BotPublishState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of Bot publish states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum BotPublishState {
     Published("PUBLISHED"),
     Draft("DRAFT"),
 

@@ -6,25 +6,24 @@ package com.oracle.bmc.containerinstances.model;
 
 /**
  * A container instance to host containers.
+ * <p>
+ * If you delete a container instance, the record remains visible for a short period
+ * of time before being permanently removed.
  *
- * <p>If you delete a container instance, the record remains visible for a short period of time
- * before being permanently removed. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerInstance.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ContainerInstance
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ContainerInstance.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ContainerInstance extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -103,69 +102,69 @@ public final class ContainerInstance
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An OCID that cannot be changed. */
+        /**
+         * An OCID that cannot be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * An OCID that cannot be changed.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
+         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -174,7 +173,8 @@ public final class ContainerInstance
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -184,7 +184,7 @@ public final class ContainerInstance
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -192,83 +192,88 @@ public final class ContainerInstance
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}.
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The availability domain to place the container instance. */
+        /**
+         * The availability domain to place the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The availability domain to place the container instance.
-         *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The fault domain to place the container instance. */
+        /**
+         * The fault domain to place the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
          * The fault domain to place the container instance.
-         *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The current state of the container instance. */
+        /**
+         * The current state of the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the container instance.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message that describes the current state of the container in more detail. Can be used
-         * to provide actionable information.
-         */
+         * A message that describes the current state of the container in more detail. Can be used to provide
+         * actionable information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message that describes the current state of the container in more detail. Can be used
-         * to provide actionable information.
+         * A message that describes the current state of the container in more detail. Can be used to provide
+         * actionable information.
          *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -277,7 +282,8 @@ public final class ContainerInstance
         /**
          * A volume is a directory with data that is accessible across multiple containers in a
          * container instance.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumes")
         private java.util.List<ContainerVolume> volumes;
 
@@ -287,109 +293,103 @@ public final class ContainerInstance
          *
          * @param volumes the value to set
          * @return this builder
-         */
+         **/
         public Builder volumes(java.util.List<ContainerVolume> volumes) {
             this.volumes = volumes;
             this.__explicitlySet__.add("volumes");
             return this;
         }
-        /** The number of volumes that are attached to the container instance. */
+        /**
+         * The number of volumes that are attached to the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
         private Integer volumeCount;
 
         /**
          * The number of volumes that are attached to the container instance.
-         *
          * @param volumeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeCount(Integer volumeCount) {
             this.volumeCount = volumeCount;
             this.__explicitlySet__.add("volumeCount");
             return this;
         }
-        /** The containers on the container instance. */
+        /**
+         * The containers on the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containers")
         private java.util.List<ContainerInstanceContainer> containers;
 
         /**
          * The containers on the container instance.
-         *
          * @param containers the value to set
          * @return this builder
-         */
+         **/
         public Builder containers(java.util.List<ContainerInstanceContainer> containers) {
             this.containers = containers;
             this.__explicitlySet__.add("containers");
             return this;
         }
-        /** The number of containers on the container instance. */
+        /**
+         * The number of containers on the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
         private Integer containerCount;
 
         /**
          * The number of containers on the container instance.
-         *
          * @param containerCount the value to set
          * @return this builder
-         */
+         **/
         public Builder containerCount(Integer containerCount) {
             this.containerCount = containerCount;
             this.__explicitlySet__.add("containerCount");
             return this;
         }
         /**
-         * The time the container instance was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the container instance was created, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         *
+         * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The time the container instance was updated, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         */
+         * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the container instance was updated, in the format defined by [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339).
-         *
+         * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The shape of the container instance. The shape determines the number of OCPUs, amount of
-         * memory, and other resources that are allocated to a container instance.
-         */
+         * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the container instance. The shape determines the number of OCPUs, amount of
-         * memory, and other resources that are allocated to a container instance.
-         *
+         * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
@@ -404,16 +404,17 @@ public final class ContainerInstance
             this.__explicitlySet__.add("shapeConfig");
             return this;
         }
-        /** The virtual networks available to the containers in the container instance. */
+        /**
+         * The virtual networks available to the containers in the container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vnics")
         private java.util.List<ContainerVnic> vnics;
 
         /**
          * The virtual networks available to the containers in the container instance.
-         *
          * @param vnics the value to set
          * @return this builder
-         */
+         **/
         public Builder vnics(java.util.List<ContainerVnic> vnics) {
             this.vnics = vnics;
             this.__explicitlySet__.add("vnics");
@@ -429,51 +430,48 @@ public final class ContainerInstance
             return this;
         }
         /**
-         * The amount of time that processes in a container have to gracefully end when the
-         * container must be stopped. For example, when you delete a container instance. After the
-         * timeout is reached, the processes are sent a signal to be deleted.
-         */
+         * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
         private Long gracefulShutdownTimeoutInSeconds;
 
         /**
-         * The amount of time that processes in a container have to gracefully end when the
-         * container must be stopped. For example, when you delete a container instance. After the
-         * timeout is reached, the processes are sent a signal to be deleted.
-         *
+         * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
          * @param gracefulShutdownTimeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder gracefulShutdownTimeoutInSeconds(Long gracefulShutdownTimeoutInSeconds) {
             this.gracefulShutdownTimeoutInSeconds = gracefulShutdownTimeoutInSeconds;
             this.__explicitlySet__.add("gracefulShutdownTimeoutInSeconds");
             return this;
         }
-        /** The image pulls secrets so you can access private registry to pull container images. */
+        /**
+         * The image pulls secrets so you can access private registry to pull container images.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
         private java.util.List<ImagePullSecret> imagePullSecrets;
 
         /**
          * The image pulls secrets so you can access private registry to pull container images.
-         *
          * @param imagePullSecrets the value to set
          * @return this builder
-         */
+         **/
         public Builder imagePullSecrets(java.util.List<ImagePullSecret> imagePullSecrets) {
             this.imagePullSecrets = imagePullSecrets;
             this.__explicitlySet__.add("imagePullSecrets");
             return this;
         }
-        /** The container restart policy is applied for all containers in container instance. */
+        /**
+         * The container restart policy is applied for all containers in container instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("containerRestartPolicy")
         private ContainerRestartPolicy containerRestartPolicy;
 
         /**
          * The container restart policy is applied for all containers in container instance.
-         *
          * @param containerRestartPolicy the value to set
          * @return this builder
-         */
+         **/
         public Builder containerRestartPolicy(ContainerRestartPolicy containerRestartPolicy) {
             this.containerRestartPolicy = containerRestartPolicy;
             this.__explicitlySet__.add("containerRestartPolicy");
@@ -590,7 +588,9 @@ public final class ContainerInstance
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -599,128 +599,134 @@ public final class ContainerInstance
         return new Builder().copy(this);
     }
 
-    /** An OCID that cannot be changed. */
+    /**
+     * An OCID that cannot be changed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * An OCID that cannot be changed.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
+     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}.
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}.
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}.
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** The availability domain to place the container instance. */
+    /**
+     * The availability domain to place the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
      * The availability domain to place the container instance.
-     *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The fault domain to place the container instance. */
+    /**
+     * The fault domain to place the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
      * The fault domain to place the container instance.
-     *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The current state of the container instance. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the container instance.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -730,8 +736,8 @@ public final class ContainerInstance
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -770,32 +776,34 @@ public final class ContainerInstance
             return UnknownEnumValue;
         }
     };
-    /** The current state of the container instance. */
+    /**
+     * The current state of the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the container instance.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message that describes the current state of the container in more detail. Can be used to
-     * provide actionable information.
-     */
+     * A message that describes the current state of the container in more detail. Can be used to provide
+     * actionable information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message that describes the current state of the container in more detail. Can be used to
-     * provide actionable information.
+     * A message that describes the current state of the container in more detail. Can be used to provide
+     * actionable information.
      *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -803,7 +811,8 @@ public final class ContainerInstance
     /**
      * A volume is a directory with data that is accessible across multiple containers in a
      * container instance.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumes")
     private final java.util.List<ContainerVolume> volumes;
 
@@ -812,97 +821,91 @@ public final class ContainerInstance
      * container instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ContainerVolume> getVolumes() {
         return volumes;
     }
 
-    /** The number of volumes that are attached to the container instance. */
+    /**
+     * The number of volumes that are attached to the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeCount")
     private final Integer volumeCount;
 
     /**
      * The number of volumes that are attached to the container instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getVolumeCount() {
         return volumeCount;
     }
 
-    /** The containers on the container instance. */
+    /**
+     * The containers on the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containers")
     private final java.util.List<ContainerInstanceContainer> containers;
 
     /**
      * The containers on the container instance.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ContainerInstanceContainer> getContainers() {
         return containers;
     }
 
-    /** The number of containers on the container instance. */
+    /**
+     * The number of containers on the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerCount")
     private final Integer containerCount;
 
     /**
      * The number of containers on the container instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getContainerCount() {
         return containerCount;
     }
 
     /**
-     * The time the container instance was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the container instance was created, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     *
+     * The time the container instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The time the container instance was updated, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     */
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the container instance was updated, in the format defined by [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339).
-     *
+     * The time the container instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The shape of the container instance. The shape determines the number of OCPUs, amount of
-     * memory, and other resources that are allocated to a container instance.
-     */
+     * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the container instance. The shape determines the number of OCPUs, amount of
-     * memory, and other resources that are allocated to a container instance.
-     *
+     * The shape of the container instance. The shape determines the number of OCPUs, amount of memory, and other resources that are allocated to a container instance.
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
@@ -914,15 +917,16 @@ public final class ContainerInstance
         return shapeConfig;
     }
 
-    /** The virtual networks available to the containers in the container instance. */
+    /**
+     * The virtual networks available to the containers in the container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vnics")
     private final java.util.List<ContainerVnic> vnics;
 
     /**
      * The virtual networks available to the containers in the container instance.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ContainerVnic> getVnics() {
         return vnics;
     }
@@ -935,46 +939,44 @@ public final class ContainerInstance
     }
 
     /**
-     * The amount of time that processes in a container have to gracefully end when the container
-     * must be stopped. For example, when you delete a container instance. After the timeout is
-     * reached, the processes are sent a signal to be deleted.
-     */
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gracefulShutdownTimeoutInSeconds")
     private final Long gracefulShutdownTimeoutInSeconds;
 
     /**
-     * The amount of time that processes in a container have to gracefully end when the container
-     * must be stopped. For example, when you delete a container instance. After the timeout is
-     * reached, the processes are sent a signal to be deleted.
-     *
+     * The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
      * @return the value
-     */
+     **/
     public Long getGracefulShutdownTimeoutInSeconds() {
         return gracefulShutdownTimeoutInSeconds;
     }
 
-    /** The image pulls secrets so you can access private registry to pull container images. */
+    /**
+     * The image pulls secrets so you can access private registry to pull container images.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("imagePullSecrets")
     private final java.util.List<ImagePullSecret> imagePullSecrets;
 
     /**
      * The image pulls secrets so you can access private registry to pull container images.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ImagePullSecret> getImagePullSecrets() {
         return imagePullSecrets;
     }
 
-    /** The container restart policy is applied for all containers in container instance. */
-    public enum ContainerRestartPolicy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The container restart policy is applied for all containers in container instance.
+     **/
+    public enum ContainerRestartPolicy {
         Always("ALWAYS"),
         Never("NEVER"),
         OnFailure("ON_FAILURE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1013,15 +1015,16 @@ public final class ContainerInstance
             return UnknownEnumValue;
         }
     };
-    /** The container restart policy is applied for all containers in container instance. */
+    /**
+     * The container restart policy is applied for all containers in container instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("containerRestartPolicy")
     private final ContainerRestartPolicy containerRestartPolicy;
 
     /**
      * The container restart policy is applied for all containers in container instance.
-     *
      * @return the value
-     */
+     **/
     public ContainerRestartPolicy getContainerRestartPolicy() {
         return containerRestartPolicy;
     }
@@ -1033,7 +1036,6 @@ public final class ContainerInstance
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

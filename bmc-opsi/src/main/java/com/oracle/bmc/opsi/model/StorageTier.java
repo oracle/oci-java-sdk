@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Supported storage tiers. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum StorageTier implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Supported storage tiers.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum StorageTier {
     Standard("STANDARD"),
     Infrequentaccess("INFREQUENTACCESS"),
     Archive("ARCHIVE"),

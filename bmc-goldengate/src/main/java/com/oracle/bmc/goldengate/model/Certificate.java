@@ -5,21 +5,19 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Certificate data. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Certificate data.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Certificate.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Certificate extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Certificate extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -90,46 +88,47 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The identifier key (unique name in the scope of the deployment) of the certificate being
-         * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters
-         * and must start with a letter.
-         */
+         * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+         * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The identifier key (unique name in the scope of the deployment) of the certificate being
-         * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters
-         * and must start with a letter.
+         * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+         * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
         private String deploymentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * deployment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
          *
          * @param deploymentId the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
-        /** The base64 encoded content of the PEM file containing the SSL certificate. */
+        /**
+         * The base64 encoded content of the PEM file containing the SSL certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateContent")
         private String certificateContent;
 
@@ -138,13 +137,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param certificateContent the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateContent(String certificateContent) {
             this.certificateContent = certificateContent;
             this.__explicitlySet__.add("certificateContent");
             return this;
         }
-        /** The Certificate issuer. */
+        /**
+         * The Certificate issuer.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("issuer")
         private String issuer;
 
@@ -153,13 +155,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param issuer the value to set
          * @return this builder
-         */
+         **/
         public Builder issuer(String issuer) {
             this.issuer = issuer;
             this.__explicitlySet__.add("issuer");
             return this;
         }
-        /** Indicates if the certificate is self signed. */
+        /**
+         * Indicates if the certificate is self signed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSelfSigned")
         private Boolean isSelfSigned;
 
@@ -168,13 +173,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param isSelfSigned the value to set
          * @return this builder
-         */
+         **/
         public Builder isSelfSigned(Boolean isSelfSigned) {
             this.isSelfSigned = isSelfSigned;
             this.__explicitlySet__.add("isSelfSigned");
             return this;
         }
-        /** The Certificate md5Hash. */
+        /**
+         * The Certificate md5Hash.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("md5Hash")
         private String md5Hash;
 
@@ -183,13 +191,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param md5Hash the value to set
          * @return this builder
-         */
+         **/
         public Builder md5Hash(String md5Hash) {
             this.md5Hash = md5Hash;
             this.__explicitlySet__.add("md5Hash");
             return this;
         }
-        /** The Certificate public key. */
+        /**
+         * The Certificate public key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
         private String publicKey;
 
@@ -198,13 +209,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param publicKey the value to set
          * @return this builder
-         */
+         **/
         public Builder publicKey(String publicKey) {
             this.publicKey = publicKey;
             this.__explicitlySet__.add("publicKey");
             return this;
         }
-        /** The Certificate public key algorithm. */
+        /**
+         * The Certificate public key algorithm.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKeyAlgorithm")
         private String publicKeyAlgorithm;
 
@@ -213,13 +227,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param publicKeyAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder publicKeyAlgorithm(String publicKeyAlgorithm) {
             this.publicKeyAlgorithm = publicKeyAlgorithm;
             this.__explicitlySet__.add("publicKeyAlgorithm");
             return this;
         }
-        /** The Certificate public key size. */
+        /**
+         * The Certificate public key size.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicKeySize")
         private Long publicKeySize;
 
@@ -228,13 +245,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param publicKeySize the value to set
          * @return this builder
-         */
+         **/
         public Builder publicKeySize(Long publicKeySize) {
             this.publicKeySize = publicKeySize;
             this.__explicitlySet__.add("publicKeySize");
             return this;
         }
-        /** The Certificate serial. */
+        /**
+         * The Certificate serial.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serial")
         private String serial;
 
@@ -243,13 +263,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param serial the value to set
          * @return this builder
-         */
+         **/
         public Builder serial(String serial) {
             this.serial = serial;
             this.__explicitlySet__.add("serial");
             return this;
         }
-        /** The Certificate subject. */
+        /**
+         * The Certificate subject.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subject")
         private String subject;
 
@@ -258,7 +281,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param subject the value to set
          * @return this builder
-         */
+         **/
         public Builder subject(String subject) {
             this.subject = subject;
             this.__explicitlySet__.add("subject");
@@ -267,7 +290,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The time the certificate is valid from. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidFrom")
         private java.util.Date timeValidFrom;
 
@@ -277,7 +301,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeValidFrom the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidFrom(java.util.Date timeValidFrom) {
             this.timeValidFrom = timeValidFrom;
             this.__explicitlySet__.add("timeValidFrom");
@@ -286,7 +310,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The time the certificate is valid to. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidTo")
         private java.util.Date timeValidTo;
 
@@ -296,13 +321,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeValidTo the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidTo(java.util.Date timeValidTo) {
             this.timeValidTo = timeValidTo;
             this.__explicitlySet__.add("timeValidTo");
             return this;
         }
-        /** The Certificate version. */
+        /**
+         * The Certificate version.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
@@ -311,13 +339,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** The Certificate sha1 hash. */
+        /**
+         * The Certificate sha1 hash.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha1Hash")
         private String sha1Hash;
 
@@ -326,13 +357,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param sha1Hash the value to set
          * @return this builder
-         */
+         **/
         public Builder sha1Hash(String sha1Hash) {
             this.sha1Hash = sha1Hash;
             this.__explicitlySet__.add("sha1Hash");
             return this;
         }
-        /** The Certificate authority key id. */
+        /**
+         * The Certificate authority key id.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authorityKeyId")
         private String authorityKeyId;
 
@@ -341,13 +375,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param authorityKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder authorityKeyId(String authorityKeyId) {
             this.authorityKeyId = authorityKeyId;
             this.__explicitlySet__.add("authorityKeyId");
             return this;
         }
-        /** Indicates if the certificate is ca. */
+        /**
+         * Indicates if the certificate is ca.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCa")
         private Boolean isCa;
 
@@ -356,13 +393,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param isCa the value to set
          * @return this builder
-         */
+         **/
         public Builder isCa(Boolean isCa) {
             this.isCa = isCa;
             this.__explicitlySet__.add("isCa");
             return this;
         }
-        /** The Certificate subject key id. */
+        /**
+         * The Certificate subject key id.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectKeyId")
         private String subjectKeyId;
 
@@ -371,13 +411,16 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param subjectKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder subjectKeyId(String subjectKeyId) {
             this.subjectKeyId = subjectKeyId;
             this.__explicitlySet__.add("subjectKeyId");
             return this;
         }
-        /** Possible certificate lifecycle states. */
+        /**
+         * Possible certificate lifecycle states.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private CertificateLifecycleState lifecycleState;
 
@@ -386,7 +429,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(CertificateLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -395,7 +438,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
         /**
          * The time the resource was created. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -405,7 +449,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -510,7 +554,9 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -520,42 +566,43 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The identifier key (unique name in the scope of the deployment) of the certificate being
-     * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters and
-     * must start with a letter.
-     */
+     * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+     * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The identifier key (unique name in the scope of the deployment) of the certificate being
-     * referenced. It must be 1 to 32 characters long, must contain only alphanumeric characters and
-     * must start with a letter.
+     * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.
+     * It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentId")
     private final String deploymentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * deployment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDeploymentId() {
         return deploymentId;
     }
 
-    /** The base64 encoded content of the PEM file containing the SSL certificate. */
+    /**
+     * The base64 encoded content of the PEM file containing the SSL certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateContent")
     private final String certificateContent;
 
@@ -563,12 +610,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
-     */
+     **/
     public String getCertificateContent() {
         return certificateContent;
     }
 
-    /** The Certificate issuer. */
+    /**
+     * The Certificate issuer.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("issuer")
     private final String issuer;
 
@@ -576,12 +626,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate issuer.
      *
      * @return the value
-     */
+     **/
     public String getIssuer() {
         return issuer;
     }
 
-    /** Indicates if the certificate is self signed. */
+    /**
+     * Indicates if the certificate is self signed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSelfSigned")
     private final Boolean isSelfSigned;
 
@@ -589,12 +642,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * Indicates if the certificate is self signed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSelfSigned() {
         return isSelfSigned;
     }
 
-    /** The Certificate md5Hash. */
+    /**
+     * The Certificate md5Hash.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("md5Hash")
     private final String md5Hash;
 
@@ -602,12 +658,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate md5Hash.
      *
      * @return the value
-     */
+     **/
     public String getMd5Hash() {
         return md5Hash;
     }
 
-    /** The Certificate public key. */
+    /**
+     * The Certificate public key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKey")
     private final String publicKey;
 
@@ -615,12 +674,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate public key.
      *
      * @return the value
-     */
+     **/
     public String getPublicKey() {
         return publicKey;
     }
 
-    /** The Certificate public key algorithm. */
+    /**
+     * The Certificate public key algorithm.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeyAlgorithm")
     private final String publicKeyAlgorithm;
 
@@ -628,12 +690,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate public key algorithm.
      *
      * @return the value
-     */
+     **/
     public String getPublicKeyAlgorithm() {
         return publicKeyAlgorithm;
     }
 
-    /** The Certificate public key size. */
+    /**
+     * The Certificate public key size.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicKeySize")
     private final Long publicKeySize;
 
@@ -641,12 +706,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate public key size.
      *
      * @return the value
-     */
+     **/
     public Long getPublicKeySize() {
         return publicKeySize;
     }
 
-    /** The Certificate serial. */
+    /**
+     * The Certificate serial.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serial")
     private final String serial;
 
@@ -654,12 +722,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate serial.
      *
      * @return the value
-     */
+     **/
     public String getSerial() {
         return serial;
     }
 
-    /** The Certificate subject. */
+    /**
+     * The Certificate subject.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     private final String subject;
 
@@ -667,7 +738,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate subject.
      *
      * @return the value
-     */
+     **/
     public String getSubject() {
         return subject;
     }
@@ -675,7 +746,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The time the certificate is valid from. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidFrom")
     private final java.util.Date timeValidFrom;
 
@@ -684,7 +756,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidFrom() {
         return timeValidFrom;
     }
@@ -692,7 +764,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The time the certificate is valid to. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidTo")
     private final java.util.Date timeValidTo;
 
@@ -701,12 +774,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidTo() {
         return timeValidTo;
     }
 
-    /** The Certificate version. */
+    /**
+     * The Certificate version.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
@@ -714,12 +790,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate version.
      *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The Certificate sha1 hash. */
+    /**
+     * The Certificate sha1 hash.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha1Hash")
     private final String sha1Hash;
 
@@ -727,12 +806,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate sha1 hash.
      *
      * @return the value
-     */
+     **/
     public String getSha1Hash() {
         return sha1Hash;
     }
 
-    /** The Certificate authority key id. */
+    /**
+     * The Certificate authority key id.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authorityKeyId")
     private final String authorityKeyId;
 
@@ -740,12 +822,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate authority key id.
      *
      * @return the value
-     */
+     **/
     public String getAuthorityKeyId() {
         return authorityKeyId;
     }
 
-    /** Indicates if the certificate is ca. */
+    /**
+     * Indicates if the certificate is ca.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCa")
     private final Boolean isCa;
 
@@ -753,12 +838,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * Indicates if the certificate is ca.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCa() {
         return isCa;
     }
 
-    /** The Certificate subject key id. */
+    /**
+     * The Certificate subject key id.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectKeyId")
     private final String subjectKeyId;
 
@@ -766,12 +854,15 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * The Certificate subject key id.
      *
      * @return the value
-     */
+     **/
     public String getSubjectKeyId() {
         return subjectKeyId;
     }
 
-    /** Possible certificate lifecycle states. */
+    /**
+     * Possible certificate lifecycle states.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final CertificateLifecycleState lifecycleState;
 
@@ -779,7 +870,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * Possible certificate lifecycle states.
      *
      * @return the value
-     */
+     **/
     public CertificateLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -787,7 +878,8 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
     /**
      * The time the resource was created. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -796,7 +888,7 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -808,7 +900,6 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,20 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Mount target details about the LDAP ID mapping configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Mount target details about the LDAP ID mapping configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = LdapIdmap.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LdapIdmap extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LdapIdmap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schemaType",
@@ -53,69 +52,65 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Schema type of the LDAP account. */
+        /**
+         * Schema type of the LDAP account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
         private SchemaType schemaType;
 
         /**
          * Schema type of the LDAP account.
-         *
          * @param schemaType the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaType(SchemaType schemaType) {
             this.schemaType = schemaType;
             this.__explicitlySet__.add("schemaType");
             return this;
         }
         /**
-         * The amount of time that the mount target should allow an entry to persist in its cache
-         * before attempting to refresh the entry.
-         */
+         * The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cacheRefreshIntervalSeconds")
         private Integer cacheRefreshIntervalSeconds;
 
         /**
-         * The amount of time that the mount target should allow an entry to persist in its cache
-         * before attempting to refresh the entry.
-         *
+         * The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
          * @param cacheRefreshIntervalSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder cacheRefreshIntervalSeconds(Integer cacheRefreshIntervalSeconds) {
             this.cacheRefreshIntervalSeconds = cacheRefreshIntervalSeconds;
             this.__explicitlySet__.add("cacheRefreshIntervalSeconds");
             return this;
         }
-        /** The maximum amount of time the mount target is allowed to use a cached entry. */
+        /**
+         * The maximum amount of time the mount target is allowed to use a cached entry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cacheLifetimeSeconds")
         private Integer cacheLifetimeSeconds;
 
         /**
          * The maximum amount of time the mount target is allowed to use a cached entry.
-         *
          * @param cacheLifetimeSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder cacheLifetimeSeconds(Integer cacheLifetimeSeconds) {
             this.cacheLifetimeSeconds = cacheLifetimeSeconds;
             this.__explicitlySet__.add("cacheLifetimeSeconds");
             return this;
         }
         /**
-         * The amount of time that a mount target will maintain information that a user is not found
-         * in the ID mapping configuration.
-         */
+         * The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("negativeCacheLifetimeSeconds")
         private Integer negativeCacheLifetimeSeconds;
 
         /**
-         * The amount of time that a mount target will maintain information that a user is not found
-         * in the ID mapping configuration.
-         *
+         * The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
          * @param negativeCacheLifetimeSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder negativeCacheLifetimeSeconds(Integer negativeCacheLifetimeSeconds) {
             this.negativeCacheLifetimeSeconds = negativeCacheLifetimeSeconds;
             this.__explicitlySet__.add("negativeCacheLifetimeSeconds");
@@ -123,20 +118,21 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * All LDAP searches are recursive starting at this user.
+         * <p>
+         * Example: {@code CN=User,DC=domain,DC=com}
          *
-         * <p>Example: {@code CN=User,DC=domain,DC=com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userSearchBase")
         private String userSearchBase;
 
         /**
          * All LDAP searches are recursive starting at this user.
-         *
-         * <p>Example: {@code CN=User,DC=domain,DC=com}
+         * <p>
+         * Example: {@code CN=User,DC=domain,DC=com}
          *
          * @param userSearchBase the value to set
          * @return this builder
-         */
+         **/
         public Builder userSearchBase(String userSearchBase) {
             this.userSearchBase = userSearchBase;
             this.__explicitlySet__.add("userSearchBase");
@@ -144,58 +140,53 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * All LDAP searches are recursive starting at this group.
+         * <p>
+         * Example: {@code CN=Group,DC=domain,DC=com}
          *
-         * <p>Example: {@code CN=Group,DC=domain,DC=com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupSearchBase")
         private String groupSearchBase;
 
         /**
          * All LDAP searches are recursive starting at this group.
-         *
-         * <p>Example: {@code CN=Group,DC=domain,DC=com}
+         * <p>
+         * Example: {@code CN=Group,DC=domain,DC=com}
          *
          * @param groupSearchBase the value to set
          * @return this builder
-         */
+         **/
         public Builder groupSearchBase(String groupSearchBase) {
             this.groupSearchBase = groupSearchBase;
             this.__explicitlySet__.add("groupSearchBase");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * first connector to use to communicate with the LDAP server.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector1Id")
         private String outboundConnector1Id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * first connector to use to communicate with the LDAP server.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
          * @param outboundConnector1Id the value to set
          * @return this builder
-         */
+         **/
         public Builder outboundConnector1Id(String outboundConnector1Id) {
             this.outboundConnector1Id = outboundConnector1Id;
             this.__explicitlySet__.add("outboundConnector1Id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * second connector to use to communicate with the LDAP server.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector2Id")
         private String outboundConnector2Id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * second connector to use to communicate with the LDAP server.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
          * @param outboundConnector2Id the value to set
          * @return this builder
-         */
+         **/
         public Builder outboundConnector2Id(String outboundConnector2Id) {
             this.outboundConnector2Id = outboundConnector2Id;
             this.__explicitlySet__.add("outboundConnector2Id");
@@ -252,7 +243,9 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -261,13 +254,15 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Schema type of the LDAP account. */
-    public enum SchemaType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Schema type of the LDAP account.
+     **/
+    public enum SchemaType {
         Rfc2307("RFC2307"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -306,134 +301,126 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** Schema type of the LDAP account. */
+    /**
+     * Schema type of the LDAP account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaType")
     private final SchemaType schemaType;
 
     /**
      * Schema type of the LDAP account.
-     *
      * @return the value
-     */
+     **/
     public SchemaType getSchemaType() {
         return schemaType;
     }
 
     /**
-     * The amount of time that the mount target should allow an entry to persist in its cache before
-     * attempting to refresh the entry.
-     */
+     * The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cacheRefreshIntervalSeconds")
     private final Integer cacheRefreshIntervalSeconds;
 
     /**
-     * The amount of time that the mount target should allow an entry to persist in its cache before
-     * attempting to refresh the entry.
-     *
+     * The amount of time that the mount target should allow an entry to persist in its cache before attempting to refresh the entry.
      * @return the value
-     */
+     **/
     public Integer getCacheRefreshIntervalSeconds() {
         return cacheRefreshIntervalSeconds;
     }
 
-    /** The maximum amount of time the mount target is allowed to use a cached entry. */
+    /**
+     * The maximum amount of time the mount target is allowed to use a cached entry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cacheLifetimeSeconds")
     private final Integer cacheLifetimeSeconds;
 
     /**
      * The maximum amount of time the mount target is allowed to use a cached entry.
-     *
      * @return the value
-     */
+     **/
     public Integer getCacheLifetimeSeconds() {
         return cacheLifetimeSeconds;
     }
 
     /**
-     * The amount of time that a mount target will maintain information that a user is not found in
-     * the ID mapping configuration.
-     */
+     * The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("negativeCacheLifetimeSeconds")
     private final Integer negativeCacheLifetimeSeconds;
 
     /**
-     * The amount of time that a mount target will maintain information that a user is not found in
-     * the ID mapping configuration.
-     *
+     * The amount of time that a mount target will maintain information that a user is not found in the ID mapping configuration.
      * @return the value
-     */
+     **/
     public Integer getNegativeCacheLifetimeSeconds() {
         return negativeCacheLifetimeSeconds;
     }
 
     /**
      * All LDAP searches are recursive starting at this user.
+     * <p>
+     * Example: {@code CN=User,DC=domain,DC=com}
      *
-     * <p>Example: {@code CN=User,DC=domain,DC=com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userSearchBase")
     private final String userSearchBase;
 
     /**
      * All LDAP searches are recursive starting at this user.
-     *
-     * <p>Example: {@code CN=User,DC=domain,DC=com}
+     * <p>
+     * Example: {@code CN=User,DC=domain,DC=com}
      *
      * @return the value
-     */
+     **/
     public String getUserSearchBase() {
         return userSearchBase;
     }
 
     /**
      * All LDAP searches are recursive starting at this group.
+     * <p>
+     * Example: {@code CN=Group,DC=domain,DC=com}
      *
-     * <p>Example: {@code CN=Group,DC=domain,DC=com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupSearchBase")
     private final String groupSearchBase;
 
     /**
      * All LDAP searches are recursive starting at this group.
-     *
-     * <p>Example: {@code CN=Group,DC=domain,DC=com}
+     * <p>
+     * Example: {@code CN=Group,DC=domain,DC=com}
      *
      * @return the value
-     */
+     **/
     public String getGroupSearchBase() {
         return groupSearchBase;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * first connector to use to communicate with the LDAP server.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector1Id")
     private final String outboundConnector1Id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * first connector to use to communicate with the LDAP server.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the first connector to use to communicate with the LDAP server.
      * @return the value
-     */
+     **/
     public String getOutboundConnector1Id() {
         return outboundConnector1Id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * second connector to use to communicate with the LDAP server.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outboundConnector2Id")
     private final String outboundConnector2Id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * second connector to use to communicate with the LDAP server.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second connector to use to communicate with the LDAP server.
      * @return the value
-     */
+     **/
     public String getOutboundConnector2Id() {
         return outboundConnector2Id;
     }
@@ -445,7 +432,6 @@ public final class LdapIdmap extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

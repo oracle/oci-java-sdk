@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Properties used in pipeline create operations <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Properties used in pipeline create operations
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePipelineDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreatePipelineDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreatePipelineDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -74,38 +73,32 @@ public final class CreatePipelineDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Generated key that can be used in API calls to identify pipeline. On scenarios where
-         * reference to the pipeline is needed, a value can be passed in create.
-         */
+         * Generated key that can be used in API calls to identify pipeline. On scenarios where reference to the pipeline is needed, a value can be passed in create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * Generated key that can be used in API calls to identify pipeline. On scenarios where
-         * reference to the pipeline is needed, a value can be passed in create.
-         *
+         * Generated key that can be used in API calls to identify pipeline. On scenarios where reference to the pipeline is needed, a value can be passed in create.
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through
-         * releases of the service.
-         */
+         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
-         * This is a version number that is used by the service to upgrade objects if needed through
-         * releases of the service.
-         *
+         * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -121,138 +114,128 @@ public final class CreatePipelineDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Detailed description for the object. */
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The type of the object. */
+        /**
+         * The type of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The type of the object.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
         /**
-         * This is used by the service for optimistic locking of the object, to prevent multiple
-         * users from simultaneously updating the object.
-         */
+         * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
-         * This is used by the service for optimistic locking of the object, to prevent multiple
-         * users from simultaneously updating the object.
-         *
+         * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         */
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
         private Integer objectStatus;
 
         /**
-         * The status of an object that can be set to value 1 for shallow references across objects,
-         * other values reserved.
-         *
+         * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
          * @param objectStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder objectStatus(Integer objectStatus) {
             this.objectStatus = objectStatus;
             this.__explicitlySet__.add("objectStatus");
             return this;
         }
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         */
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private String identifier;
 
         /**
-         * Value can only contain upper case letters, underscore, and numbers. It should begin with
-         * upper case letter or underscore. The value can be modified.
-         *
+         * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(String identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** A list of nodes attached to the pipeline */
+        /**
+         * A list of nodes attached to the pipeline
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodes")
         private java.util.List<FlowNode> nodes;
 
         /**
          * A list of nodes attached to the pipeline
-         *
          * @param nodes the value to set
          * @return this builder
-         */
+         **/
         public Builder nodes(java.util.List<FlowNode> nodes) {
             this.nodes = nodes;
             this.__explicitlySet__.add("nodes");
             return this;
         }
-        /** A list of additional parameters required in pipeline. */
+        /**
+         * A list of additional parameters required in pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<Parameter> parameters;
 
         /**
          * A list of additional parameters required in pipeline.
-         *
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(java.util.List<Parameter> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -267,16 +250,17 @@ public final class CreatePipelineDetails
             this.__explicitlySet__.add("flowConfigValues");
             return this;
         }
-        /** The list of variables required in pipeline. */
+        /**
+         * The list of variables required in pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<Variable> variables;
 
         /**
          * The list of variables required in pipeline.
-         *
          * @param variables the value to set
          * @return this builder
-         */
+         **/
         public Builder variables(java.util.List<Variable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -366,7 +350,9 @@ public final class CreatePipelineDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -376,35 +362,29 @@ public final class CreatePipelineDetails
     }
 
     /**
-     * Generated key that can be used in API calls to identify pipeline. On scenarios where
-     * reference to the pipeline is needed, a value can be passed in create.
-     */
+     * Generated key that can be used in API calls to identify pipeline. On scenarios where reference to the pipeline is needed, a value can be passed in create.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * Generated key that can be used in API calls to identify pipeline. On scenarios where
-     * reference to the pipeline is needed, a value can be passed in create.
-     *
+     * Generated key that can be used in API calls to identify pipeline. On scenarios where reference to the pipeline is needed, a value can be passed in create.
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through
-     * releases of the service.
-     */
+     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
-     * This is a version number that is used by the service to upgrade objects if needed through
-     * releases of the service.
-     *
+     * This is a version number that is used by the service to upgrade objects if needed through releases of the service.
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -417,121 +397,113 @@ public final class CreatePipelineDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The type of the object. */
+    /**
+     * The type of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The type of the object.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
     /**
-     * This is used by the service for optimistic locking of the object, to prevent multiple users
-     * from simultaneously updating the object.
-     */
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
-     * This is used by the service for optimistic locking of the object, to prevent multiple users
-     * from simultaneously updating the object.
-     *
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     */
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectStatus")
     private final Integer objectStatus;
 
     /**
-     * The status of an object that can be set to value 1 for shallow references across objects,
-     * other values reserved.
-     *
+     * The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
      * @return the value
-     */
+     **/
     public Integer getObjectStatus() {
         return objectStatus;
     }
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     */
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
-     * Value can only contain upper case letters, underscore, and numbers. It should begin with
-     * upper case letter or underscore. The value can be modified.
-     *
+     * Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** A list of nodes attached to the pipeline */
+    /**
+     * A list of nodes attached to the pipeline
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodes")
     private final java.util.List<FlowNode> nodes;
 
     /**
      * A list of nodes attached to the pipeline
-     *
      * @return the value
-     */
+     **/
     public java.util.List<FlowNode> getNodes() {
         return nodes;
     }
 
-    /** A list of additional parameters required in pipeline. */
+    /**
+     * A list of additional parameters required in pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<Parameter> parameters;
 
     /**
      * A list of additional parameters required in pipeline.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Parameter> getParameters() {
         return parameters;
     }
@@ -543,15 +515,16 @@ public final class CreatePipelineDetails
         return flowConfigValues;
     }
 
-    /** The list of variables required in pipeline. */
+    /**
+     * The list of variables required in pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<Variable> variables;
 
     /**
      * The list of variables required in pipeline.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Variable> getVariables() {
         return variables;
     }
@@ -570,7 +543,6 @@ public final class CreatePipelineDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

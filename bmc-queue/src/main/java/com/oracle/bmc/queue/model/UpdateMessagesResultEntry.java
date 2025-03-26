@@ -5,26 +5,25 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * Represents the result of a UpdateMessages request, whether it was successful or not. If a message
- * was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter}
- * fields. If a message failed to be updated in the queue, the entry includes the {@code errorCode}
- * and {@code errorMessage} fields. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * Represents the result of a UpdateMessages request, whether it was successful or not.
+ * If a message was successfully updated in the queue, the entry includes the {@code id} and {@code visibleAfter} fields.
+ * If a message failed to be updated in the queue, the entry includes the {@code errorCode} and {@code errorMessage} fields.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMessagesResultEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMessagesResultEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMessagesResultEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "visibleAfter", "errorCode", "errorMessage"})
     public UpdateMessagesResultEntry(
@@ -38,69 +37,71 @@ public final class UpdateMessagesResultEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the message that's been updated. */
+        /**
+         * The ID of the message that's been updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
          * The ID of the message that's been updated.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The time after which the message will be visible to other consumers, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
          *
-         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
         private java.util.Date visibleAfter;
 
         /**
-         * The time after which the message will be visible to other consumers, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+         * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
          *
          * @param visibleAfter the value to set
          * @return this builder
-         */
+         **/
         public Builder visibleAfter(java.util.Date visibleAfter) {
             this.visibleAfter = visibleAfter;
             this.__explicitlySet__.add("visibleAfter");
             return this;
         }
-        /** The error code, in case the message was not successfully updated in the queue. */
+        /**
+         * The error code, in case the message was not successfully updated in the queue.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private Integer errorCode;
 
         /**
          * The error code, in case the message was not successfully updated in the queue.
-         *
          * @param errorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCode(Integer errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-        /** A human-readable error message associated with the error code. */
+        /**
+         * A human-readable error message associated with the error code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
          * A human-readable error message associated with the error code.
-         *
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
@@ -138,7 +139,9 @@ public final class UpdateMessagesResultEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,62 +150,64 @@ public final class UpdateMessagesResultEntry
         return new Builder().copy(this);
     }
 
-    /** The ID of the message that's been updated. */
+    /**
+     * The ID of the message that's been updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
      * The ID of the message that's been updated.
-     *
      * @return the value
-     */
+     **/
     public Long getId() {
         return id;
     }
 
     /**
-     * The time after which the message will be visible to other consumers, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
      *
-     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("visibleAfter")
     private final java.util.Date visibleAfter;
 
     /**
-     * The time after which the message will be visible to other consumers, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2018-04-20T00:00:07.405Z}
+     * The time after which the message will be visible to other consumers, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getVisibleAfter() {
         return visibleAfter;
     }
 
-    /** The error code, in case the message was not successfully updated in the queue. */
+    /**
+     * The error code, in case the message was not successfully updated in the queue.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final Integer errorCode;
 
     /**
      * The error code, in case the message was not successfully updated in the queue.
-     *
      * @return the value
-     */
+     **/
     public Integer getErrorCode() {
         return errorCode;
     }
 
-    /** A human-readable error message associated with the error code. */
+    /**
+     * A human-readable error message associated with the error code.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
      * A human-readable error message associated with the error code.
-     *
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
@@ -214,7 +219,6 @@ public final class UpdateMessagesResultEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The contract guiding the import experience for the consumer and behavior of the resource provider
- * for a single resourceType. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * The contract guiding the import experience for the consumer and behavior of the resource provider for a single resourceType.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceTypeImportContract.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceTypeImportContract.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceTypeImportContract
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceType", "parameters"})
     public ResourceTypeImportContract(
@@ -34,35 +32,33 @@ public final class ResourceTypeImportContract
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of resource to which this resourceType-specific contract applies */
+        /**
+         * The type of resource to which this resourceType-specific contract applies
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The type of resource to which this resourceType-specific contract applies
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
         /**
-         * A list of definitions for parameters that are required to import this package into a
-         * target instance.
-         */
+         * A list of definitions for parameters that are required to import this package into a target instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.List<ParameterDefinition> parameters;
 
         /**
-         * A list of definitions for parameters that are required to import this package into a
-         * target instance.
-         *
+         * A list of definitions for parameters that are required to import this package into a target instance.
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(java.util.List<ParameterDefinition> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -93,7 +89,9 @@ public final class ResourceTypeImportContract
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,32 +100,30 @@ public final class ResourceTypeImportContract
         return new Builder().copy(this);
     }
 
-    /** The type of resource to which this resourceType-specific contract applies */
+    /**
+     * The type of resource to which this resourceType-specific contract applies
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The type of resource to which this resourceType-specific contract applies
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
     /**
-     * A list of definitions for parameters that are required to import this package into a target
-     * instance.
-     */
+     * A list of definitions for parameters that are required to import this package into a target instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.List<ParameterDefinition> parameters;
 
     /**
-     * A list of definitions for parameters that are required to import this package into a target
-     * instance.
-     *
+     * A list of definitions for parameters that are required to import this package into a target instance.
      * @return the value
-     */
+     **/
     public java.util.List<ParameterDefinition> getParameters() {
         return parameters;
     }
@@ -139,7 +135,6 @@ public final class ResourceTypeImportContract
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

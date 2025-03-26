@@ -4,40 +4,336 @@
  */
 package com.oracle.bmc.fleetappsmanagement;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.fleetappsmanagement.internal.http.*;
 import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.util.CircuitBreakerUtils;
 
-import java.util.Objects;
-
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.BaseSyncClient
-        implements FleetAppsManagement {
-    /** Service instance for FleetAppsManagement. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public class FleetAppsManagementClient implements FleetAppsManagement {
+    /**
+     * Service instance for FleetAppsManagement.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("FLEETAPPSMANAGEMENT")
                     .serviceEndpointPrefix("")
                     .serviceEndpointTemplate("https://fams.{region}.oci.{secondLevelDomain}")
                     .build();
+    // attempt twice if it's instance principals, immediately failures will try to refresh the token
+    private static final int MAX_IMMEDIATE_RETRIES_IF_USING_INSTANCE_PRINCIPALS = 2;
 
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(FleetAppsManagementClient.class);
 
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
     private final FleetAppsManagementWaiters waiters;
 
     private final FleetAppsManagementPaginators paginators;
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+    private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+            circuitBreakerConfiguration;
+    private String regionId;
 
-    FleetAppsManagementClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            java.util.concurrent.ExecutorService executorService) {
-        super(
-                builder,
+    /**
+     * Used to synchronize any updates on the `this.client` object.
+     */
+    private final Object clientUpdate = new Object();
+
+    /**
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
+     */
+    private volatile com.oracle.bmc.http.internal.RestClient client;
+
+    /**
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
+     */
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
+        this(authenticationDetailsProvider, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration) {
+        this(authenticationDetailsProvider, configuration, null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
+        this(
                 authenticationDetailsProvider,
-                CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION);
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                null);
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     */
+    public FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService) {
+        this(
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                executorService,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * Use the {@link Builder} to get access to all these parameters.
+     *
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param executorService ExecutorService used by the client, or null to use the default configured ThreadPoolExecutor
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    protected FleetAppsManagementClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            java.util.concurrent.ExecutorService executorService,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
+                        .clientConfigurator(clientConfigurator)
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        this.restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+
+        this.clientConfigurationToUse =
+                (configuration != null)
+                        ? configuration
+                        : com.oracle.bmc.ClientConfiguration.builder().build();
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.retryConfiguration = clientConfigurationToUse.getRetryConfiguration();
+        final com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration
+                userCircuitBreakerConfiguration =
+                        CircuitBreakerUtils.getUserDefinedCircuitBreakerConfiguration(
+                                configuration);
+        if (userCircuitBreakerConfiguration == null) {
+            this.circuitBreakerConfiguration =
+                    CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER_CONFIGURATION;
+        } else {
+            this.circuitBreakerConfiguration = userCircuitBreakerConfiguration;
+        }
+
+        this.refreshClient();
 
         if (executorService == null) {
             // up to 50 (core) threads, time out after 60s idle, all daemon
@@ -59,11 +355,29 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
         this.waiters = new FleetAppsManagementWaiters(executorService, this);
 
         this.paginators = new FleetAppsManagementPaginators(this);
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
     }
 
     /**
      * Create a builder for this client.
-     *
      * @return builder
      */
     public static Builder builder() {
@@ -71,8 +385,8 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
     }
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
@@ -81,8 +395,6 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         private Builder(com.oracle.bmc.Service service) {
             super(service);
-            final String packageName = "fleetappsmanagement";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
@@ -90,7 +402,6 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         /**
          * Set the ExecutorService for the client to be created.
-         *
          * @param executorService executorService
          * @return this builder
          */
@@ -101,1248 +412,1491 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         /**
          * Build the client.
-         *
          * @param authenticationDetailsProvider authentication details provider
          * @return the client
          */
         public FleetAppsManagementClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
             return new FleetAppsManagementClient(
-                    this, authenticationDetailsProvider, executorService);
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint,
+                    executorService,
+                    restClientFactoryBuilder);
         }
     }
 
     @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, this.authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient,
+                        null,
+                        this.circuitBreakerConfiguration);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
     public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
     }
 
     @Override
     public void setRegion(String regionId) {
-        super.setRegion(regionId);
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
     }
 
     @Override
     public CheckResourceTaggingResponse checkResourceTagging(CheckResourceTaggingRequest request) {
-        Objects.requireNonNull(
-                request.getCheckResourceTaggingDetails(),
-                "checkResourceTaggingDetails is required");
+        LOG.trace("Called checkResourceTagging");
+        final CheckResourceTaggingRequest interceptedRequest =
+                CheckResourceTaggingConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CheckResourceTaggingConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CheckResourceTaggingResponse::builder)
-                .logger(LOG, "checkResourceTagging")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "CheckResourceTagging",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CheckResourceTaggingRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam("actions")
-                .appendPathParam("checkResourceTagging")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.ResourceTagCheckDetails.class,
-                        CheckResourceTaggingResponse.Builder::resourceTagCheckDetails)
-                .handleResponseHeaderString("etag", CheckResourceTaggingResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CheckResourceTaggingResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging");
+        java.util.function.Function<javax.ws.rs.core.Response, CheckResourceTaggingResponse>
+                transformer =
+                        CheckResourceTaggingConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCheckResourceTaggingDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ConfirmTargetsResponse confirmTargets(ConfirmTargetsRequest request) {
-        Objects.requireNonNull(
-                request.getConfirmTargetsDetails(), "confirmTargetsDetails is required");
+        LOG.trace("Called confirmTargets");
+        final ConfirmTargetsRequest interceptedRequest =
+                ConfirmTargetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfirmTargetsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ConfirmTargetsResponse::builder)
-                .logger(LOG, "confirmTargets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ConfirmTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ConfirmTargetsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("actions")
-                .appendPathParam("confirmTargets")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", ConfirmTargetsResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", ConfirmTargetsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets");
+        java.util.function.Function<javax.ws.rs.core.Response, ConfirmTargetsResponse> transformer =
+                ConfirmTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getConfirmTargetsDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateFleetResponse createFleet(CreateFleetRequest request) {
-        Objects.requireNonNull(request.getCreateFleetDetails(), "createFleetDetails is required");
+        LOG.trace("Called createFleet");
+        final CreateFleetRequest interceptedRequest =
+                CreateFleetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFleetConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, CreateFleetResponse::builder)
-                .logger(LOG, "createFleet")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "CreateFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateFleetRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Fleet.class,
-                        CreateFleetResponse.Builder::fleet)
-                .handleResponseHeaderString("location", CreateFleetResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreateFleetResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", CreateFleetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateFleetResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateFleetResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResponse> transformer =
+                CreateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateFleetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateFleetCredentialResponse createFleetCredential(
             CreateFleetCredentialRequest request) {
-        Objects.requireNonNull(
-                request.getCreateFleetCredentialDetails(),
-                "createFleetCredentialDetails is required");
+        LOG.trace("Called createFleetCredential");
+        final CreateFleetCredentialRequest interceptedRequest =
+                CreateFleetCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFleetCredentialConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, CreateFleetCredentialResponse::builder)
-                .logger(LOG, "createFleetCredential")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "CreateFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateFleetCredentialRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetCredentials")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetCredential.class,
-                        CreateFleetCredentialResponse.Builder::fleetCredential)
-                .handleResponseHeaderString(
-                        "location", CreateFleetCredentialResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreateFleetCredentialResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", CreateFleetCredentialResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateFleetCredentialResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateFleetCredentialResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFleetCredentialResponse>
+                transformer =
+                        CreateFleetCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateFleetCredentialDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateFleetPropertyResponse createFleetProperty(CreateFleetPropertyRequest request) {
-        Objects.requireNonNull(
-                request.getCreateFleetPropertyDetails(), "createFleetPropertyDetails is required");
+        LOG.trace("Called createFleetProperty");
+        final CreateFleetPropertyRequest interceptedRequest =
+                CreateFleetPropertyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFleetPropertyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, CreateFleetPropertyResponse::builder)
-                .logger(LOG, "createFleetProperty")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "CreateFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateFleetPropertyRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProperties")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetProperty.class,
-                        CreateFleetPropertyResponse.Builder::fleetProperty)
-                .handleResponseHeaderString("etag", CreateFleetPropertyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateFleetPropertyResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFleetPropertyResponse>
+                transformer =
+                        CreateFleetPropertyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateFleetPropertyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public CreateFleetResourceResponse createFleetResource(CreateFleetResourceRequest request) {
-        Objects.requireNonNull(
-                request.getCreateFleetResourceDetails(), "createFleetResourceDetails is required");
+        LOG.trace("Called createFleetResource");
+        final CreateFleetResourceRequest interceptedRequest =
+                CreateFleetResourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateFleetResourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, CreateFleetResourceResponse::builder)
-                .logger(LOG, "createFleetResource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "CreateFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateFleetResourceRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetResources")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetResource.class,
-                        CreateFleetResourceResponse.Builder::fleetResource)
-                .handleResponseHeaderString(
-                        "location", CreateFleetResourceResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "content-location", CreateFleetResourceResponse.Builder::contentLocation)
-                .handleResponseHeaderString("etag", CreateFleetResourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateFleetResourceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateFleetResourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResourceResponse>
+                transformer =
+                        CreateFleetResourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateFleetResourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteFleetResponse deleteFleet(DeleteFleetRequest request) {
+        LOG.trace("Called deleteFleet");
+        final DeleteFleetRequest interceptedRequest =
+                DeleteFleetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFleetConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, DeleteFleetResponse::builder)
-                .logger(LOG, "deleteFleet")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "DeleteFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFleetRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteFleetResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFleetResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResponse> transformer =
+                DeleteFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteFleetCredentialResponse deleteFleetCredential(
             DeleteFleetCredentialRequest request) {
+        LOG.trace("Called deleteFleetCredential");
+        final DeleteFleetCredentialRequest interceptedRequest =
+                DeleteFleetCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFleetCredentialConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetCredentialId(), "fleetCredentialId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, DeleteFleetCredentialResponse::builder)
-                .logger(LOG, "deleteFleetCredential")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFleetCredentialRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetCredentials")
-                .appendPathParam(request.getFleetCredentialId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteFleetCredentialResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFleetCredentialResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetCredentialResponse>
+                transformer =
+                        DeleteFleetCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteFleetPropertyResponse deleteFleetProperty(DeleteFleetPropertyRequest request) {
+        LOG.trace("Called deleteFleetProperty");
+        final DeleteFleetPropertyRequest interceptedRequest =
+                DeleteFleetPropertyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFleetPropertyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetPropertyId(), "fleetPropertyId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, DeleteFleetPropertyResponse::builder)
-                .logger(LOG, "deleteFleetProperty")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFleetPropertyRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProperties")
-                .appendPathParam(request.getFleetPropertyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFleetPropertyResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetPropertyResponse>
+                transformer =
+                        DeleteFleetPropertyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public DeleteFleetResourceResponse deleteFleetResource(DeleteFleetResourceRequest request) {
+        LOG.trace("Called deleteFleetResource");
+        final DeleteFleetResourceRequest interceptedRequest =
+                DeleteFleetResourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFleetResourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetResourceId(), "fleetResourceId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, DeleteFleetResourceResponse::builder)
-                .logger(LOG, "deleteFleetResource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "DeleteFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteFleetResourceRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetResources")
-                .appendPathParam(request.getFleetResourceId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteFleetResourceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteFleetResourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResourceResponse>
+                transformer =
+                        DeleteFleetResourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GenerateComplianceReportResponse generateComplianceReport(
             GenerateComplianceReportRequest request) {
-        Objects.requireNonNull(
-                request.getGenerateComplianceReportDetails(),
-                "generateComplianceReportDetails is required");
+        LOG.trace("Called generateComplianceReport");
+        final GenerateComplianceReportRequest interceptedRequest =
+                GenerateComplianceReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateComplianceReportConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, GenerateComplianceReportResponse::builder)
-                .logger(LOG, "generateComplianceReport")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GenerateComplianceReport",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(GenerateComplianceReportRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("actions")
-                .appendPathParam("generateComplianceReport")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        GenerateComplianceReportResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", GenerateComplianceReportResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GenerateComplianceReportResponse>
+                transformer =
+                        GenerateComplianceReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getGenerateComplianceReportDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetComplianceReportResponse getComplianceReport(GetComplianceReportRequest request) {
+        LOG.trace("Called getComplianceReport");
+        final GetComplianceReportRequest interceptedRequest =
+                GetComplianceReportConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetComplianceReportConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        Validate.notBlank(request.getComplianceReportId(), "complianceReportId must not be blank");
-
-        return clientCall(request, GetComplianceReportResponse::builder)
-                .logger(LOG, "getComplianceReport")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetComplianceReport",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetComplianceReportRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("complianceReports")
-                .appendPathParam(request.getComplianceReportId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.ComplianceReport.class,
-                        GetComplianceReportResponse.Builder::complianceReport)
-                .handleResponseHeaderString("etag", GetComplianceReportResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetComplianceReportResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport");
+        java.util.function.Function<javax.ws.rs.core.Response, GetComplianceReportResponse>
+                transformer =
+                        GetComplianceReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFleetResponse getFleet(GetFleetRequest request) {
+        LOG.trace("Called getFleet");
+        final GetFleetRequest interceptedRequest = GetFleetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFleetConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, GetFleetResponse::builder)
-                .logger(LOG, "getFleet")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFleetRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Fleet.class,
-                        GetFleetResponse.Builder::fleet)
-                .handleResponseHeaderString("etag", GetFleetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFleetResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFleetResponse> transformer =
+                GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFleetCredentialResponse getFleetCredential(GetFleetCredentialRequest request) {
+        LOG.trace("Called getFleetCredential");
+        final GetFleetCredentialRequest interceptedRequest =
+                GetFleetCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFleetCredentialConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetCredentialId(), "fleetCredentialId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, GetFleetCredentialResponse::builder)
-                .logger(LOG, "getFleetCredential")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFleetCredentialRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetCredentials")
-                .appendPathParam(request.getFleetCredentialId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetCredential.class,
-                        GetFleetCredentialResponse.Builder::fleetCredential)
-                .handleResponseHeaderString("etag", GetFleetCredentialResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFleetCredentialResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFleetCredentialResponse>
+                transformer =
+                        GetFleetCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFleetPropertyResponse getFleetProperty(GetFleetPropertyRequest request) {
+        LOG.trace("Called getFleetProperty");
+        final GetFleetPropertyRequest interceptedRequest =
+                GetFleetPropertyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFleetPropertyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetPropertyId(), "fleetPropertyId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, GetFleetPropertyResponse::builder)
-                .logger(LOG, "getFleetProperty")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFleetPropertyRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProperties")
-                .appendPathParam(request.getFleetPropertyId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetProperty.class,
-                        GetFleetPropertyResponse.Builder::fleetProperty)
-                .handleResponseHeaderString("etag", GetFleetPropertyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFleetPropertyResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFleetPropertyResponse>
+                transformer =
+                        GetFleetPropertyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetFleetResourceResponse getFleetResource(GetFleetResourceRequest request) {
+        LOG.trace("Called getFleetResource");
+        final GetFleetResourceRequest interceptedRequest =
+                GetFleetResourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFleetResourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetResourceId(), "fleetResourceId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, GetFleetResourceResponse::builder)
-                .logger(LOG, "getFleetResource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetFleetResourceRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetResources")
-                .appendPathParam(request.getFleetResourceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetResource.class,
-                        GetFleetResourceResponse.Builder::fleetResource)
-                .handleResponseHeaderString("etag", GetFleetResourceResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetFleetResourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource");
+        java.util.function.Function<javax.ws.rs.core.Response, GetFleetResourceResponse>
+                transformer =
+                        GetFleetResourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request) {
+        LOG.trace("Called getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderInteger(
-                        "retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest");
+        java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
+                GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request) {
+        LOG.trace("Called listAnnouncements");
+        final ListAnnouncementsRequest interceptedRequest =
+                ListAnnouncementsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAnnouncementsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListAnnouncementsResponse::builder)
-                .logger(LOG, "listAnnouncements")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListAnnouncements",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListAnnouncementsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("announcements")
-                .appendQueryParam("summaryContains", request.getSummaryContains())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.AnnouncementCollection.class,
-                        ListAnnouncementsResponse.Builder::announcementCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListAnnouncementsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListAnnouncementsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
+                transformer =
+                        ListAnnouncementsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetCredentialsResponse listFleetCredentials(ListFleetCredentialsRequest request) {
+        LOG.trace("Called listFleetCredentials");
+        final ListFleetCredentialsRequest interceptedRequest =
+                ListFleetCredentialsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetCredentialsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListFleetCredentialsResponse::builder)
-                .logger(LOG, "listFleetCredentials")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleetCredentials",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetCredentialsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetCredentials")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("target", request.getTarget())
-                .appendEnumQueryParam("credentialLevel", request.getCredentialLevel())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetCredentialCollection.class,
-                        ListFleetCredentialsResponse.Builder::fleetCredentialCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetCredentialsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetCredentialsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetCredentialsResponse>
+                transformer =
+                        ListFleetCredentialsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetProductsResponse listFleetProducts(ListFleetProductsRequest request) {
+        LOG.trace("Called listFleetProducts");
+        final ListFleetProductsRequest interceptedRequest =
+                ListFleetProductsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetProductsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListFleetProductsResponse::builder)
-                .logger(LOG, "listFleetProducts")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleetProducts",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetProductsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProducts")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("resourceDisplayName", request.getResourceDisplayName())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetProductCollection.class,
-                        ListFleetProductsResponse.Builder::fleetProductCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetProductsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetProductsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetProductsResponse>
+                transformer =
+                        ListFleetProductsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetPropertiesResponse listFleetProperties(ListFleetPropertiesRequest request) {
+        LOG.trace("Called listFleetProperties");
+        final ListFleetPropertiesRequest interceptedRequest =
+                ListFleetPropertiesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetPropertiesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListFleetPropertiesResponse::builder)
-                .logger(LOG, "listFleetProperties")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleetProperties",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetPropertiesRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProperties")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetPropertyCollection.class,
-                        ListFleetPropertiesResponse.Builder::fleetPropertyCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetPropertiesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetPropertiesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetPropertiesResponse>
+                transformer =
+                        ListFleetPropertiesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetResourcesResponse listFleetResources(ListFleetResourcesRequest request) {
+        LOG.trace("Called listFleetResources");
+        final ListFleetResourcesRequest interceptedRequest =
+                ListFleetResourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetResourcesConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListFleetResourcesResponse::builder)
-                .logger(LOG, "listFleetResources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleetResources",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetResourcesRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetResources")
-                .appendQueryParam("tenancyId", request.getTenancyId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("fleetResourceType", request.getFleetResourceType())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetResourceCollection.class,
-                        ListFleetResourcesResponse.Builder::fleetResourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetResourcesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetResourcesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetResourcesResponse>
+                transformer =
+                        ListFleetResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetTargetsResponse listFleetTargets(ListFleetTargetsRequest request) {
+        LOG.trace("Called listFleetTargets");
+        final ListFleetTargetsRequest interceptedRequest =
+                ListFleetTargetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetTargetsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListFleetTargetsResponse::builder)
-                .logger(LOG, "listFleetTargets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleetTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetTargetsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetTargets")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("product", request.getProduct())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("resourceDisplayName", request.getResourceDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetTargetCollection.class,
-                        ListFleetTargetsResponse.Builder::fleetTargetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetTargetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetTargetsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetTargetsResponse>
+                transformer =
+                        ListFleetTargetsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListFleetsResponse listFleets(ListFleetsRequest request) {
+        LOG.trace("Called listFleets");
+        final ListFleetsRequest interceptedRequest = ListFleetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListFleetsResponse::builder)
-                .logger(LOG, "listFleets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListFleets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListFleetsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("fleetType", request.getFleetType())
-                .appendQueryParam("applicationType", request.getApplicationType())
-                .appendQueryParam("product", request.getProduct())
-                .appendQueryParam("environmentType", request.getEnvironmentType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetCollection.class,
-                        ListFleetsResponse.Builder::fleetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListFleetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListFleetsResponse.Builder::opcNextPage)
-                .handleResponseHeaderInteger(
-                        "opc-total-items", ListFleetsResponse.Builder::opcTotalItems)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetsResponse> transformer =
+                ListFleetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListInventoryResourcesResponse listInventoryResources(
             ListInventoryResourcesRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+        LOG.trace("Called listInventoryResources");
+        final ListInventoryResourcesRequest interceptedRequest =
+                ListInventoryResourcesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInventoryResourcesConverter.fromRequest(client, interceptedRequest);
 
-        Objects.requireNonNull(
-                request.getResourceCompartmentId(), "resourceCompartmentId is required");
-
-        return clientCall(request, ListInventoryResourcesResponse::builder)
-                .logger(LOG, "listInventoryResources")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListInventoryResources",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListInventoryResourcesRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("inventoryResources")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("resourceRegion", request.getResourceRegion())
-                .appendQueryParam("resourceCompartmentId", request.getResourceCompartmentId())
-                .appendListQueryParam(
-                        "definedTagEquals",
-                        request.getDefinedTagEquals(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "freeformTagEquals",
-                        request.getFreeformTagEquals(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "inventoryProperties",
-                        request.getInventoryProperties(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("matchingCriteria", request.getMatchingCriteria())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.InventoryResourceCollection.class,
-                        ListInventoryResourcesResponse.Builder::inventoryResourceCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListInventoryResourcesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListInventoryResourcesResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources");
+        java.util.function.Function<javax.ws.rs.core.Response, ListInventoryResourcesResponse>
+                transformer =
+                        ListInventoryResourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListTargetsResponse listTargets(ListTargetsRequest request) {
+        LOG.trace("Called listTargets");
+        final ListTargetsRequest interceptedRequest =
+                ListTargetsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTargetsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, ListTargetsResponse::builder)
-                .logger(LOG, "listTargets")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListTargets",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListTargetsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("targets")
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetTargetCollection.class,
-                        ListTargetsResponse.Builder::fleetTargetCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListTargetsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListTargetsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTargetsResponse> transformer =
+                ListTargetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
+        LOG.trace("Called listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request) {
+        LOG.trace("Called listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestLogEntryCollection
-                                .class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request) {
+        LOG.trace("Called listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
 
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("workRequestId", request.getWorkRequestId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.WorkRequestSummaryCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests");
+        java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RequestResourceValidationResponse requestResourceValidation(
             RequestResourceValidationRequest request) {
-        Objects.requireNonNull(
-                request.getRequestResourceValidationDetails(),
-                "requestResourceValidationDetails is required");
+        LOG.trace("Called requestResourceValidation");
+        final RequestResourceValidationRequest interceptedRequest =
+                RequestResourceValidationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestResourceValidationConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, RequestResourceValidationResponse::builder)
-                .logger(LOG, "requestResourceValidation")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "RequestResourceValidation",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RequestResourceValidationRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("actions")
-                .appendPathParam("requestResourceValidation")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RequestResourceValidationResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RequestResourceValidationResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestResourceValidationResponse>
+                transformer =
+                        RequestResourceValidationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRequestResourceValidationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public RequestTargetDiscoveryResponse requestTargetDiscovery(
             RequestTargetDiscoveryRequest request) {
-        Objects.requireNonNull(
-                request.getRequestTargetDiscoveryDetails(),
-                "requestTargetDiscoveryDetails is required");
+        LOG.trace("Called requestTargetDiscovery");
+        final RequestTargetDiscoveryRequest interceptedRequest =
+                RequestTargetDiscoveryConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestTargetDiscoveryConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-
-        return clientCall(request, RequestTargetDiscoveryResponse::builder)
-                .logger(LOG, "requestTargetDiscovery")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "RequestTargetDiscovery",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RequestTargetDiscoveryRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("actions")
-                .appendPathParam("requestTargetDiscovery")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RequestTargetDiscoveryResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RequestTargetDiscoveryResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery");
+        java.util.function.Function<javax.ws.rs.core.Response, RequestTargetDiscoveryResponse>
+                transformer =
+                        RequestTargetDiscoveryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRequestTargetDiscoveryDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateFleetResponse updateFleet(UpdateFleetRequest request) {
+        LOG.trace("Called updateFleet");
+        final UpdateFleetRequest interceptedRequest =
+                UpdateFleetConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFleetConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-        Objects.requireNonNull(request.getUpdateFleetDetails(), "updateFleetDetails is required");
-
-        return clientCall(request, UpdateFleetResponse::builder)
-                .logger(LOG, "updateFleet")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "UpdateFleet",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateFleetRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.Fleet.class,
-                        UpdateFleetResponse.Builder::fleet)
-                .handleResponseHeaderString("etag", UpdateFleetResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateFleetResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResponse> transformer =
+                UpdateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFleetDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateFleetCredentialResponse updateFleetCredential(
             UpdateFleetCredentialRequest request) {
+        LOG.trace("Called updateFleetCredential");
+        final UpdateFleetCredentialRequest interceptedRequest =
+                UpdateFleetCredentialConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFleetCredentialConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetCredentialId(), "fleetCredentialId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateFleetCredentialDetails(),
-                "updateFleetCredentialDetails is required");
-
-        return clientCall(request, UpdateFleetCredentialResponse::builder)
-                .logger(LOG, "updateFleetCredential")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetCredential",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateFleetCredentialRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetCredentials")
-                .appendPathParam(request.getFleetCredentialId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateFleetCredentialResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateFleetCredentialResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetCredentialResponse>
+                transformer =
+                        UpdateFleetCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFleetCredentialDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateFleetPropertyResponse updateFleetProperty(UpdateFleetPropertyRequest request) {
+        LOG.trace("Called updateFleetProperty");
+        final UpdateFleetPropertyRequest interceptedRequest =
+                UpdateFleetPropertyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFleetPropertyConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetPropertyId(), "fleetPropertyId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateFleetPropertyDetails(), "updateFleetPropertyDetails is required");
-
-        return clientCall(request, UpdateFleetPropertyResponse::builder)
-                .logger(LOG, "updateFleetProperty")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetProperty",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateFleetPropertyRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetProperties")
-                .appendPathParam(request.getFleetPropertyId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.fleetappsmanagement.model.FleetProperty.class,
-                        UpdateFleetPropertyResponse.Builder::fleetProperty)
-                .handleResponseHeaderString("etag", UpdateFleetPropertyResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateFleetPropertyResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetPropertyResponse>
+                transformer =
+                        UpdateFleetPropertyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFleetPropertyDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
     public UpdateFleetResourceResponse updateFleetResource(UpdateFleetResourceRequest request) {
+        LOG.trace("Called updateFleetResource");
+        final UpdateFleetResourceRequest interceptedRequest =
+                UpdateFleetResourceConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateFleetResourceConverter.fromRequest(client, interceptedRequest);
 
-        Validate.notBlank(request.getFleetResourceId(), "fleetResourceId must not be blank");
-
-        Validate.notBlank(request.getFleetId(), "fleetId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateFleetResourceDetails(), "updateFleetResourceDetails is required");
-
-        return clientCall(request, UpdateFleetResourceResponse::builder)
-                .logger(LOG, "updateFleetResource")
-                .serviceDetails(
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
                         "FleetAppsManagement",
                         "UpdateFleetResource",
-                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateFleetResourceRequest::builder)
-                .basePath("/20230831")
-                .appendPathParam("fleets")
-                .appendPathParam(request.getFleetId())
-                .appendPathParam("fleetResources")
-                .appendPathParam(request.getFleetResourceId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .operationUsesDefaultRetries()
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateFleetResourceResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateFleetResourceResponse.Builder::opcRequestId)
-                .callSync();
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResourceResponse>
+                transformer =
+                        UpdateFleetResourceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateFleetResourceDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
     }
 
     @Override
@@ -1353,209 +1907,5 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
     @Override
     public FleetAppsManagementPaginators getPaginators() {
         return paginators;
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider, null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
-        this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                null);
-    }
-
-    /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @param executorService {@link Builder#executorService}
-     * @deprecated Use the {@link #builder() builder} instead.
-     */
-    @Deprecated
-    public FleetAppsManagementClient(
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            com.oracle.bmc.ClientConfiguration configuration,
-            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
-            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
-            java.util.Map<
-                            com.oracle.bmc.http.signing.SigningStrategy,
-                            com.oracle.bmc.http.signing.RequestSignerFactory>
-                    signingStrategyRequestSignerFactories,
-            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
-            String endpoint,
-            java.util.concurrent.ExecutorService executorService) {
-        this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider,
-                executorService);
     }
 }

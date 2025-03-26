@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible risk level values for a CVE */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum CveRiskLevel implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible risk level values for a CVE
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum CveRiskLevel {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

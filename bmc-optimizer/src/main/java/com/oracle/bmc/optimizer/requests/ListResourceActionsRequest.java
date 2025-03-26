@@ -6,173 +6,199 @@ package com.oracle.bmc.optimizer.requests;
 
 import com.oracle.bmc.optimizer.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceActionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/optimizer/ListResourceActionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourceActionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200606")
 public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * When set to true, the hierarchy of compartments is traversed and all compartments and
-     * subcompartments in the tenancy are returned depending on the the setting of {@code
-     * accessLevel}.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+     * <p>
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      *
-     * <p>Can only be set to true when performing ListCompartments on the tenancy (root
-     * compartment).
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * When set to true, the hierarchy of compartments is traversed and all compartments and
-     * subcompartments in the tenancy are returned depending on the the setting of {@code
-     * accessLevel}.
+     * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+     * <p>
+     * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
      *
-     * <p>Can only be set to true when performing ListCompartments on the tenancy (root
-     * compartment).
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
-    /** The unique OCID associated with the recommendation. */
+    /**
+     * The unique OCID associated with the recommendation.
+     */
     private String recommendationId;
 
-    /** The unique OCID associated with the recommendation. */
+    /**
+     * The unique OCID associated with the recommendation.
+     */
     public String getRecommendationId() {
         return recommendationId;
     }
-    /** Optional. A filter that returns results that match the recommendation name specified. */
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
     private String recommendationName;
 
-    /** Optional. A filter that returns results that match the recommendation name specified. */
+    /**
+     * Optional. A filter that returns results that match the recommendation name specified.
+     */
     public String getRecommendationName() {
         return recommendationName;
     }
     /**
      * A list of child tenancies for which the respective data will be returned. Please note that
-     * the parent tenancy id can also be included in this list. For example, if there is a parent P
-     * with two children A and B, to return results of only parent P and child A, this list should
-     * be populated with tenancy id of parent P and child A.
+     * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+     * children A and B, to return results of only parent P and child A, this list should be populated with
+     * tenancy id of parent P and child A.
+     * <p>
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+     * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+     * other tenant T that isn't part of the organization. If T is included in the list of
+     * childTenancyIds, the request will fail.
+     * <p>
+     * It is important to note that if you are setting the includeOrganization parameter value as true and
+     * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+     * The childTenancyIds and includeOrganization should be used exclusively.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      *
-     * <p>If this list contains a tenancy id that isn't part of the organization of parent P, the
-     * request will fail. That is, let's say there is an organization with parent P with children A
-     * and B, and also one other tenant T that isn't part of the organization. If T is included in
-     * the list of childTenancyIds, the request will fail.
-     *
-     * <p>It is important to note that if you are setting the includeOrganization parameter value as
-     * true and also populating the childTenancyIds parameter with a list of child tenancies, the
-     * request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-     *
-     * <p>When using this parameter, please make sure to set the compartmentId with the parent
-     * tenancy ID.
      */
     private java.util.List<String> childTenancyIds;
 
     /**
      * A list of child tenancies for which the respective data will be returned. Please note that
-     * the parent tenancy id can also be included in this list. For example, if there is a parent P
-     * with two children A and B, to return results of only parent P and child A, this list should
-     * be populated with tenancy id of parent P and child A.
+     * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+     * children A and B, to return results of only parent P and child A, this list should be populated with
+     * tenancy id of parent P and child A.
+     * <p>
+     * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+     * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+     * other tenant T that isn't part of the organization. If T is included in the list of
+     * childTenancyIds, the request will fail.
+     * <p>
+     * It is important to note that if you are setting the includeOrganization parameter value as true and
+     * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+     * The childTenancyIds and includeOrganization should be used exclusively.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      *
-     * <p>If this list contains a tenancy id that isn't part of the organization of parent P, the
-     * request will fail. That is, let's say there is an organization with parent P with children A
-     * and B, and also one other tenant T that isn't part of the organization. If T is included in
-     * the list of childTenancyIds, the request will fail.
-     *
-     * <p>It is important to note that if you are setting the includeOrganization parameter value as
-     * true and also populating the childTenancyIds parameter with a list of child tenancies, the
-     * request will fail. The childTenancyIds and includeOrganization should be used exclusively.
-     *
-     * <p>When using this parameter, please make sure to set the compartmentId with the parent
-     * tenancy ID.
      */
     public java.util.List<String> getChildTenancyIds() {
         return childTenancyIds;
     }
     /**
-     * When set to true, the data for all child tenancies including the parent is returned. That is,
-     * if there is an organization with parent P and children A and B, to return the data for the
-     * parent P, child A and child B, this parameter value should be set to true.
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if
+     * there is an organization with parent P and children A and B, to return the data for the parent P, child
+     * A and child B, this parameter value should be set to true.
+     * <p>
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+     * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+     * the list with tenancy id of P and A.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      *
-     * <p>Please note that this parameter shouldn't be used along with childTenancyIds parameter. If
-     * you would like to get results specifically for parent P and only child A, use the
-     * childTenancyIds parameter and populate the list with tenancy id of P and A.
-     *
-     * <p>When using this parameter, please make sure to set the compartmentId with the parent
-     * tenancy ID.
      */
     private Boolean includeOrganization;
 
     /**
-     * When set to true, the data for all child tenancies including the parent is returned. That is,
-     * if there is an organization with parent P and children A and B, to return the data for the
-     * parent P, child A and child B, this parameter value should be set to true.
+     * When set to true, the data for all child tenancies including the parent is returned. That is, if
+     * there is an organization with parent P and children A and B, to return the data for the parent P, child
+     * A and child B, this parameter value should be set to true.
+     * <p>
+     * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+     * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+     * the list with tenancy id of P and A.
+     * <p>
+     * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
      *
-     * <p>Please note that this parameter shouldn't be used along with childTenancyIds parameter. If
-     * you would like to get results specifically for parent P and only child A, use the
-     * childTenancyIds parameter and populate the list with tenancy id of P and A.
-     *
-     * <p>When using this parameter, please make sure to set the compartmentId with the parent
-     * tenancy ID.
      */
     public Boolean getIncludeOrganization() {
         return includeOrganization;
     }
-    /** Optional. A filter that returns results that match the name specified. */
+    /**
+     * Optional. A filter that returns results that match the name specified.
+     */
     private String name;
 
-    /** Optional. A filter that returns results that match the name specified. */
+    /**
+     * Optional. A filter that returns results that match the name specified.
+     */
     public String getName() {
         return name;
     }
-    /** Optional. A filter that returns results that match the resource type specified. */
+    /**
+     * Optional. A filter that returns results that match the resource type specified.
+     */
     private String resourceType;
 
-    /** Optional. A filter that returns results that match the resource type specified. */
+    /**
+     * Optional. A filter that returns results that match the resource type specified.
+     */
     public String getResourceType() {
         return resourceType;
     }
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return in a paginated "List" call. */
+    /**
+     * The maximum number of items to return in a paginated "List" call.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private com.oracle.bmc.optimizer.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public com.oracle.bmc.optimizer.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
-     * sensitive.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
-     * sensitive.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+     *
+     **/
+    public enum SortBy {
         Name("NAME"),
         Timecreated("TIMECREATED"),
         ;
@@ -206,43 +232,60 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case
-     * sensitive.
+     * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A filter that returns results that match the lifecycle state specified. */
+    /**
+     * A filter that returns results that match the lifecycle state specified.
+     *
+     */
     private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState;
 
-    /** A filter that returns results that match the lifecycle state specified. */
+    /**
+     * A filter that returns results that match the lifecycle state specified.
+     *
+     */
     public com.oracle.bmc.optimizer.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter that returns recommendations that match the status specified. */
+    /**
+     * A filter that returns recommendations that match the status specified.
+     *
+     */
     private com.oracle.bmc.optimizer.model.Status status;
 
-    /** A filter that returns recommendations that match the status specified. */
+    /**
+     * A filter that returns recommendations that match the status specified.
+     *
+     */
     public com.oracle.bmc.optimizer.model.Status getStatus() {
         return status;
     }
-    /** Supplement additional resource information in extended metadata response. */
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
     private Boolean includeResourceMetadata;
 
-    /** Supplement additional resource information in extended metadata response. */
+    /**
+     * Supplement additional resource information in extended metadata response.
+     */
     public Boolean getIncludeResourceMetadata() {
         return includeResourceMetadata;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -251,15 +294,17 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListResourceActionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -269,22 +314,17 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * When set to true, the hierarchy of compartments is traversed and all compartments and
-         * subcompartments in the tenancy are returned depending on the the setting of {@code
-         * accessLevel}.
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+         * <p>
+         * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
          *
-         * <p>Can only be set to true when performing ListCompartments on the tenancy (root
-         * compartment).
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * When set to true, the hierarchy of compartments is traversed and all compartments and
-         * subcompartments in the tenancy are returned depending on the the setting of {@code
-         * accessLevel}.
-         *
-         * <p>Can only be set to true when performing ListCompartments on the tenancy (root
-         * compartment).
+         * When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of {@code accessLevel}.
+         * <p>
+         * Can only be set to true when performing ListCompartments on the tenancy (root compartment).
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -294,12 +334,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The unique OCID associated with the recommendation. */
+        /**
+         * The unique OCID associated with the recommendation.
+         */
         private String recommendationId = null;
 
         /**
          * The unique OCID associated with the recommendation.
-         *
          * @param recommendationId the value to set
          * @return this builder instance
          */
@@ -308,12 +349,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Optional. A filter that returns results that match the recommendation name specified. */
+        /**
+         * Optional. A filter that returns results that match the recommendation name specified.
+         */
         private String recommendationName = null;
 
         /**
          * Optional. A filter that returns results that match the recommendation name specified.
-         *
          * @param recommendationName the value to set
          * @return this builder instance
          */
@@ -323,44 +365,41 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A list of child tenancies for which the respective data will be returned. Please note
-         * that the parent tenancy id can also be included in this list. For example, if there is a
-         * parent P with two children A and B, to return results of only parent P and child A, this
-         * list should be populated with tenancy id of parent P and child A.
+         * A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
          *
-         * <p>If this list contains a tenancy id that isn't part of the organization of parent P,
-         * the request will fail. That is, let's say there is an organization with parent P with
-         * children A and B, and also one other tenant T that isn't part of the organization. If T
-         * is included in the list of childTenancyIds, the request will fail.
-         *
-         * <p>It is important to note that if you are setting the includeOrganization parameter
-         * value as true and also populating the childTenancyIds parameter with a list of child
-         * tenancies, the request will fail. The childTenancyIds and includeOrganization should be
-         * used exclusively.
-         *
-         * <p>When using this parameter, please make sure to set the compartmentId with the parent
-         * tenancy ID.
          */
         private java.util.List<String> childTenancyIds = null;
 
         /**
-         * A list of child tenancies for which the respective data will be returned. Please note
-         * that the parent tenancy id can also be included in this list. For example, if there is a
-         * parent P with two children A and B, to return results of only parent P and child A, this
-         * list should be populated with tenancy id of parent P and child A.
-         *
-         * <p>If this list contains a tenancy id that isn't part of the organization of parent P,
-         * the request will fail. That is, let's say there is an organization with parent P with
-         * children A and B, and also one other tenant T that isn't part of the organization. If T
-         * is included in the list of childTenancyIds, the request will fail.
-         *
-         * <p>It is important to note that if you are setting the includeOrganization parameter
-         * value as true and also populating the childTenancyIds parameter with a list of child
-         * tenancies, the request will fail. The childTenancyIds and includeOrganization should be
-         * used exclusively.
-         *
-         * <p>When using this parameter, please make sure to set the compartmentId with the parent
-         * tenancy ID.
+         * A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
          *
          * @param childTenancyIds the value to set
          * @return this builder instance
@@ -371,24 +410,21 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Singular setter. A list of child tenancies for which the respective data will be
-         * returned. Please note that the parent tenancy id can also be included in this list. For
-         * example, if there is a parent P with two children A and B, to return results of only
-         * parent P and child A, this list should be populated with tenancy id of parent P and child
-         * A.
-         *
-         * <p>If this list contains a tenancy id that isn't part of the organization of parent P,
-         * the request will fail. That is, let's say there is an organization with parent P with
-         * children A and B, and also one other tenant T that isn't part of the organization. If T
-         * is included in the list of childTenancyIds, the request will fail.
-         *
-         * <p>It is important to note that if you are setting the includeOrganization parameter
-         * value as true and also populating the childTenancyIds parameter with a list of child
-         * tenancies, the request will fail. The childTenancyIds and includeOrganization should be
-         * used exclusively.
-         *
-         * <p>When using this parameter, please make sure to set the compartmentId with the parent
-         * tenancy ID.
+         * Singular setter. A list of child tenancies for which the respective data will be returned. Please note that
+         * the parent tenancy id can also be included in this list. For example, if there is a parent P with two
+         * children A and B, to return results of only parent P and child A, this list should be populated with
+         * tenancy id of parent P and child A.
+         * <p>
+         * If this list contains a tenancy id that isn't part of the organization of parent P, the request will
+         * fail. That is, let's say there is an organization with parent P with children A and B, and also one
+         * other tenant T that isn't part of the organization. If T is included in the list of
+         * childTenancyIds, the request will fail.
+         * <p>
+         * It is important to note that if you are setting the includeOrganization parameter value as true and
+         * also populating the childTenancyIds parameter with a list of child tenancies, the request will fail.
+         * The childTenancyIds and includeOrganization should be used exclusively.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -398,30 +434,29 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * When set to true, the data for all child tenancies including the parent is returned. That
-         * is, if there is an organization with parent P and children A and B, to return the data
-         * for the parent P, child A and child B, this parameter value should be set to true.
+         * When set to true, the data for all child tenancies including the parent is returned. That is, if
+         * there is an organization with parent P and children A and B, to return the data for the parent P, child
+         * A and child B, this parameter value should be set to true.
+         * <p>
+         * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+         * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+         * the list with tenancy id of P and A.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
          *
-         * <p>Please note that this parameter shouldn't be used along with childTenancyIds
-         * parameter. If you would like to get results specifically for parent P and only child A,
-         * use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-         *
-         * <p>When using this parameter, please make sure to set the compartmentId with the parent
-         * tenancy ID.
          */
         private Boolean includeOrganization = null;
 
         /**
-         * When set to true, the data for all child tenancies including the parent is returned. That
-         * is, if there is an organization with parent P and children A and B, to return the data
-         * for the parent P, child A and child B, this parameter value should be set to true.
-         *
-         * <p>Please note that this parameter shouldn't be used along with childTenancyIds
-         * parameter. If you would like to get results specifically for parent P and only child A,
-         * use the childTenancyIds parameter and populate the list with tenancy id of P and A.
-         *
-         * <p>When using this parameter, please make sure to set the compartmentId with the parent
-         * tenancy ID.
+         * When set to true, the data for all child tenancies including the parent is returned. That is, if
+         * there is an organization with parent P and children A and B, to return the data for the parent P, child
+         * A and child B, this parameter value should be set to true.
+         * <p>
+         * Please note that this parameter shouldn't be used along with childTenancyIds parameter. If you would like
+         * to get results specifically for parent P and only child A, use the childTenancyIds parameter and populate
+         * the list with tenancy id of P and A.
+         * <p>
+         * When using this parameter, please make sure to set the compartmentId with the parent tenancy ID.
          *
          * @param includeOrganization the value to set
          * @return this builder instance
@@ -431,12 +466,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Optional. A filter that returns results that match the name specified. */
+        /**
+         * Optional. A filter that returns results that match the name specified.
+         */
         private String name = null;
 
         /**
          * Optional. A filter that returns results that match the name specified.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -445,12 +481,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Optional. A filter that returns results that match the resource type specified. */
+        /**
+         * Optional. A filter that returns results that match the resource type specified.
+         */
         private String resourceType = null;
 
         /**
          * Optional. A filter that returns results that match the resource type specified.
-         *
          * @param resourceType the value to set
          * @return this builder instance
          */
@@ -459,12 +496,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return in a paginated "List" call. */
+        /**
+         * The maximum number of items to return in a paginated "List" call.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -473,7 +511,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -487,12 +528,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private com.oracle.bmc.optimizer.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -502,16 +544,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order
-         * is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order
-         * is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for TIMECREATED is descending. Default order for NAME is ascending. The NAME sort order is case sensitive.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -521,7 +560,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter that returns results that match the lifecycle state specified. */
+        /**
+         * A filter that returns results that match the lifecycle state specified.
+         *
+         */
         private com.oracle.bmc.optimizer.model.LifecycleState lifecycleState = null;
 
         /**
@@ -536,7 +578,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter that returns recommendations that match the status specified. */
+        /**
+         * A filter that returns recommendations that match the status specified.
+         *
+         */
         private com.oracle.bmc.optimizer.model.Status status = null;
 
         /**
@@ -550,12 +595,13 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Supplement additional resource information in extended metadata response. */
+        /**
+         * Supplement additional resource information in extended metadata response.
+         */
         private Boolean includeResourceMetadata = null;
 
         /**
          * Supplement additional resource information in extended metadata response.
-         *
          * @param includeResourceMetadata the value to set
          * @return this builder instance
          */
@@ -565,14 +611,15 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -584,19 +631,18 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -608,7 +654,6 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListResourceActionsRequest o) {
@@ -636,11 +681,10 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListResourceActionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListResourceActionsRequest
          */
@@ -654,8 +698,7 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListResourceActionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListResourceActionsRequest
@@ -679,16 +722,12 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
             request.includeResourceMetadata = includeResourceMetadata;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree,
-            // recommendationId, recommendationName, childTenancyIds, includeOrganization, name,
-            // resourceType, limit, page, sortOrder, sortBy, lifecycleState, status,
-            // includeResourceMetadata, opcRequestId);
+            // new ListResourceActionsRequest(compartmentId, compartmentIdInSubtree, recommendationId, recommendationName, childTenancyIds, includeOrganization, name, resourceType, limit, page, sortOrder, sortBy, lifecycleState, status, includeResourceMetadata, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -713,7 +752,6 @@ public class ListResourceActionsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

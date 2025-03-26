@@ -6,35 +6,47 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use TestParserRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/TestParserExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use TestParserRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class TestParserRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.TestParserPayloadDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** Details for test payload */
+    /**
+     * Details for test payload
+     */
     private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails testParserPayloadDetails;
 
-    /** Details for test payload */
+    /**
+     * Details for test payload
+     */
     public com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
             getTestParserPayloadDetails() {
         return testParserPayloadDetails;
     }
-    /** The scope used when testing a parser. */
+    /**
+     * The scope used when testing a parser.
+     */
     private Scope scope;
 
-    /** The scope used when testing a parser. */
-    public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The scope used when testing a parser.
+     **/
+    public enum Scope {
         LogLines("LOG_LINES"),
         LogEntries("LOG_ENTRIES"),
         LogLinesLogEntries("LOG_LINES_LOG_ENTRIES"),
@@ -68,19 +80,23 @@ public class TestParserRequest
         }
     };
 
-    /** The scope used when testing a parser. */
+    /**
+     * The scope used when testing a parser.
+     */
     public Scope getScope() {
         return scope;
     }
     /**
-     * The module to test. A value of 'ParserFunctionTest' will result in testing of the parser
-     * functions.
+     * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+     * the parser functions.
+     *
      */
     private String reqOriginModule;
 
     /**
-     * The module to test. A value of 'ParserFunctionTest' will result in testing of the parser
-     * functions.
+     * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+     * the parser functions.
+     *
      */
     public String getReqOriginModule() {
         return reqOriginModule;
@@ -88,33 +104,38 @@ public class TestParserRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -131,10 +152,14 @@ public class TestParserRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     TestParserRequest, com.oracle.bmc.loganalytics.model.TestParserPayloadDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -148,13 +173,14 @@ public class TestParserRequest
             return this;
         }
 
-        /** Details for test payload */
+        /**
+         * Details for test payload
+         */
         private com.oracle.bmc.loganalytics.model.TestParserPayloadDetails
                 testParserPayloadDetails = null;
 
         /**
          * Details for test payload
-         *
          * @param testParserPayloadDetails the value to set
          * @return this builder instance
          */
@@ -165,12 +191,13 @@ public class TestParserRequest
             return this;
         }
 
-        /** The scope used when testing a parser. */
+        /**
+         * The scope used when testing a parser.
+         */
         private Scope scope = null;
 
         /**
          * The scope used when testing a parser.
-         *
          * @param scope the value to set
          * @return this builder instance
          */
@@ -180,14 +207,15 @@ public class TestParserRequest
         }
 
         /**
-         * The module to test. A value of 'ParserFunctionTest' will result in testing of the parser
-         * functions.
+         * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+         * the parser functions.
+         *
          */
         private String reqOriginModule = null;
 
         /**
-         * The module to test. A value of 'ParserFunctionTest' will result in testing of the parser
-         * functions.
+         * The module to test.  A value of 'ParserFunctionTest' will result in testing of
+         * the parser functions.
          *
          * @param reqOriginModule the value to set
          * @return this builder instance
@@ -199,19 +227,20 @@ public class TestParserRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -221,12 +250,13 @@ public class TestParserRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -237,19 +267,18 @@ public class TestParserRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -261,7 +290,6 @@ public class TestParserRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(TestParserRequest o) {
@@ -279,11 +307,10 @@ public class TestParserRequest
         /**
          * Build the instance of TestParserRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of TestParserRequest
          */
@@ -296,7 +323,6 @@ public class TestParserRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -309,8 +335,7 @@ public class TestParserRequest
         /**
          * Build the instance of TestParserRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of TestParserRequest
@@ -324,14 +349,12 @@ public class TestParserRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new TestParserRequest(namespaceName, testParserPayloadDetails, scope,
-            // reqOriginModule, opcRetryToken, opcRequestId);
+            // new TestParserRequest(namespaceName, testParserPayloadDetails, scope, reqOriginModule, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -346,7 +369,6 @@ public class TestParserRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

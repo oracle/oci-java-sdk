@@ -6,42 +6,41 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code MyOAuth2ClientCredential} instance. */
+    /**
+     * The returned MyOAuth2ClientCredential instance.
+     */
     private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential myOAuth2ClientCredential;
 
     /**
-     * The returned {@code MyOAuth2ClientCredential} instance.
-     *
+     * The returned MyOAuth2ClientCredential instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential
@@ -58,7 +57,7 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
     })
     private PatchMyOAuth2ClientCredentialResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential
@@ -69,35 +68,28 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
         this.myOAuth2ClientCredential = myOAuth2ClientCredential;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    PatchMyOAuth2ClientCredentialResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -106,12 +98,13 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -120,13 +113,14 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code MyOAuth2ClientCredential} instance. */
+        /**
+         * The returned MyOAuth2ClientCredential instance.
+         */
         private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredential
                 myOAuth2ClientCredential;
 
         /**
-         * The returned {@code MyOAuth2ClientCredential} instance.
-         *
+         * The returned MyOAuth2ClientCredential instance.
          * @param myOAuth2ClientCredential the value to set
          * @return this builder
          */
@@ -139,10 +133,8 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PatchMyOAuth2ClientCredentialResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,10 +147,8 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PatchMyOAuth2ClientCredentialResponse build() {
             return new PatchMyOAuth2ClientCredentialResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, myOAuth2ClientCredential);
@@ -167,7 +157,6 @@ public class PatchMyOAuth2ClientCredentialResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

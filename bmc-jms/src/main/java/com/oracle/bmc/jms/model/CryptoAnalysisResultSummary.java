@@ -5,24 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Summary of a crypto analysis result. The actual output of the analysis is stored in the Object
- * Storage object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Summary of a crypto analysis result. The actual output of the analysis is stored in the Object Storage object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CryptoAnalysisResultSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CryptoAnalysisResultSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CryptoAnalysisResultSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -89,136 +87,145 @@ public final class CryptoAnalysisResultSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID to identify this analysis results. */
+        /**
+         * The OCID to identify this analysis results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID to identify this analysis results.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of the work request to start the analysis. */
+        /**
+         * The OCID of the work request to start the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
         private String workRequestId;
 
         /**
          * The OCID of the work request to start the analysis.
-         *
          * @param workRequestId the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestId(String workRequestId) {
             this.workRequestId = workRequestId;
             this.__explicitlySet__.add("workRequestId");
             return this;
         }
-        /** The result aggregation mode */
+        /**
+         * The result aggregation mode
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationMode")
         private CryptoAnalysisResultMode aggregationMode;
 
         /**
          * The result aggregation mode
-         *
          * @param aggregationMode the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregationMode(CryptoAnalysisResultMode aggregationMode) {
             this.aggregationMode = aggregationMode;
             this.__explicitlySet__.add("aggregationMode");
             return this;
         }
-        /** The fleet OCID. */
+        /**
+         * The fleet OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
          * The fleet OCID.
-         *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The managed instance OCID. */
+        /**
+         * The managed instance OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
         private String managedInstanceId;
 
         /**
          * The managed instance OCID.
-         *
          * @param managedInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
             this.__explicitlySet__.add("managedInstanceId");
             return this;
         }
-        /** The hostname of the managed instance. */
+        /**
+         * The hostname of the managed instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The hostname of the managed instance.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** Time of the first event in the analysis. */
+        /**
+         * Time of the first event in the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstEvent")
         private java.util.Date timeFirstEvent;
 
         /**
          * Time of the first event in the analysis.
-         *
          * @param timeFirstEvent the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstEvent(java.util.Date timeFirstEvent) {
             this.timeFirstEvent = timeFirstEvent;
             this.__explicitlySet__.add("timeFirstEvent");
             return this;
         }
-        /** Time of the last event in the analysis. */
+        /**
+         * Time of the last event in the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastEvent")
         private java.util.Date timeLastEvent;
 
         /**
          * Time of the last event in the analysis.
-         *
          * @param timeLastEvent the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastEvent(java.util.Date timeLastEvent) {
             this.timeLastEvent = timeLastEvent;
             this.__explicitlySet__.add("timeLastEvent");
             return this;
         }
-        /** Total number of events in the analysis. */
+        /**
+         * Total number of events in the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEventCount")
         private Integer totalEventCount;
 
         /**
          * Total number of events in the analysis.
-         *
          * @param totalEventCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalEventCount(Integer totalEventCount) {
             this.totalEventCount = totalEventCount;
             this.__explicitlySet__.add("totalEventCount");
@@ -226,157 +233,165 @@ public final class CryptoAnalysisResultSummary
         }
         /**
          * Total number of summarized events. Summarized events are deduplicated events of interest.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("summarizedEventCount")
         private Integer summarizedEventCount;
 
         /**
          * Total number of summarized events. Summarized events are deduplicated events of interest.
-         *
          * @param summarizedEventCount the value to set
          * @return this builder
-         */
+         **/
         public Builder summarizedEventCount(Integer summarizedEventCount) {
             this.summarizedEventCount = summarizedEventCount;
             this.__explicitlySet__.add("summarizedEventCount");
             return this;
         }
-        /** Total number of findings with the analysis. */
+        /**
+         * Total number of findings with the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
         private Integer findingCount;
 
         /**
          * Total number of findings with the analysis.
-         *
          * @param findingCount the value to set
          * @return this builder
-         */
+         **/
         public Builder findingCount(Integer findingCount) {
             this.findingCount = findingCount;
             this.__explicitlySet__.add("findingCount");
             return this;
         }
         /**
-         * Total number of non-compliant findings with the analysis. A non-compliant finding means
-         * the application won't work properly with the changes introduced by the Crypto Roadmap
-         * version used by the analysis.
-         */
+         * Total number of non-compliant findings with the analysis. A non-compliant finding means the
+         * application won't work properly with the changes introduced by the Crypto Roadmap version
+         * used by the analysis.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
         private Integer nonCompliantFindingCount;
 
         /**
-         * Total number of non-compliant findings with the analysis. A non-compliant finding means
-         * the application won't work properly with the changes introduced by the Crypto Roadmap
-         * version used by the analysis.
+         * Total number of non-compliant findings with the analysis. A non-compliant finding means the
+         * application won't work properly with the changes introduced by the Crypto Roadmap version
+         * used by the analysis.
          *
          * @param nonCompliantFindingCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nonCompliantFindingCount(Integer nonCompliantFindingCount) {
             this.nonCompliantFindingCount = nonCompliantFindingCount;
             this.__explicitlySet__.add("nonCompliantFindingCount");
             return this;
         }
-        /** The time the result is compiled. */
+        /**
+         * The time the result is compiled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the result is compiled.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the JFR recording has started. */
+        /**
+         * The time the JFR recording has started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time the JFR recording has started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the JFR recording has finished. */
+        /**
+         * The time the JFR recording has finished.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * The time the JFR recording has finished.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** The Crypto Roadmap version used to perform the analysis. */
+        /**
+         * The Crypto Roadmap version used to perform the analysis.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cryptoRoadmapVersion")
         private String cryptoRoadmapVersion;
 
         /**
          * The Crypto Roadmap version used to perform the analysis.
-         *
          * @param cryptoRoadmapVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder cryptoRoadmapVersion(String cryptoRoadmapVersion) {
             this.cryptoRoadmapVersion = cryptoRoadmapVersion;
             this.__explicitlySet__.add("cryptoRoadmapVersion");
             return this;
         }
-        /** The Object Storage namespace of this analysis result. */
+        /**
+         * The Object Storage namespace of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The Object Storage namespace of this analysis result.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The Object Storage bucket name of this analysis result. */
+        /**
+         * The Object Storage bucket name of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The Object Storage bucket name of this analysis result.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The Object Storage object name of this analysis result. */
+        /**
+         * The Object Storage object name of this analysis result.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * The Object Storage object name of this analysis result.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
@@ -477,7 +492,9 @@ public final class CryptoAnalysisResultSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -486,145 +503,156 @@ public final class CryptoAnalysisResultSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID to identify this analysis results. */
+    /**
+     * The OCID to identify this analysis results.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID to identify this analysis results.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The OCID of the work request to start the analysis. */
+    /**
+     * The OCID of the work request to start the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
     private final String workRequestId;
 
     /**
      * The OCID of the work request to start the analysis.
-     *
      * @return the value
-     */
+     **/
     public String getWorkRequestId() {
         return workRequestId;
     }
 
-    /** The result aggregation mode */
+    /**
+     * The result aggregation mode
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationMode")
     private final CryptoAnalysisResultMode aggregationMode;
 
     /**
      * The result aggregation mode
-     *
      * @return the value
-     */
+     **/
     public CryptoAnalysisResultMode getAggregationMode() {
         return aggregationMode;
     }
 
-    /** The fleet OCID. */
+    /**
+     * The fleet OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
      * The fleet OCID.
-     *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The managed instance OCID. */
+    /**
+     * The managed instance OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceId")
     private final String managedInstanceId;
 
     /**
      * The managed instance OCID.
-     *
      * @return the value
-     */
+     **/
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
 
-    /** The hostname of the managed instance. */
+    /**
+     * The hostname of the managed instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The hostname of the managed instance.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** Time of the first event in the analysis. */
+    /**
+     * Time of the first event in the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstEvent")
     private final java.util.Date timeFirstEvent;
 
     /**
      * Time of the first event in the analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstEvent() {
         return timeFirstEvent;
     }
 
-    /** Time of the last event in the analysis. */
+    /**
+     * Time of the last event in the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastEvent")
     private final java.util.Date timeLastEvent;
 
     /**
      * Time of the last event in the analysis.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastEvent() {
         return timeLastEvent;
     }
 
-    /** Total number of events in the analysis. */
+    /**
+     * Total number of events in the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalEventCount")
     private final Integer totalEventCount;
 
     /**
      * Total number of events in the analysis.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalEventCount() {
         return totalEventCount;
     }
 
-    /** Total number of summarized events. Summarized events are deduplicated events of interest. */
+    /**
+     * Total number of summarized events. Summarized events are deduplicated events of interest.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("summarizedEventCount")
     private final Integer summarizedEventCount;
 
     /**
      * Total number of summarized events. Summarized events are deduplicated events of interest.
-     *
      * @return the value
-     */
+     **/
     public Integer getSummarizedEventCount() {
         return summarizedEventCount;
     }
 
-    /** Total number of findings with the analysis. */
+    /**
+     * Total number of findings with the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("findingCount")
     private final Integer findingCount;
 
     /**
      * Total number of findings with the analysis.
-     *
      * @return the value
-     */
+     **/
     public Integer getFindingCount() {
         return findingCount;
     }
@@ -633,7 +661,8 @@ public final class CryptoAnalysisResultSummary
      * Total number of non-compliant findings with the analysis. A non-compliant finding means the
      * application won't work properly with the changes introduced by the Crypto Roadmap version
      * used by the analysis.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nonCompliantFindingCount")
     private final Integer nonCompliantFindingCount;
 
@@ -643,98 +672,105 @@ public final class CryptoAnalysisResultSummary
      * used by the analysis.
      *
      * @return the value
-     */
+     **/
     public Integer getNonCompliantFindingCount() {
         return nonCompliantFindingCount;
     }
 
-    /** The time the result is compiled. */
+    /**
+     * The time the result is compiled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the result is compiled.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the JFR recording has started. */
+    /**
+     * The time the JFR recording has started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time the JFR recording has started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the JFR recording has finished. */
+    /**
+     * The time the JFR recording has finished.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * The time the JFR recording has finished.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** The Crypto Roadmap version used to perform the analysis. */
+    /**
+     * The Crypto Roadmap version used to perform the analysis.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cryptoRoadmapVersion")
     private final String cryptoRoadmapVersion;
 
     /**
      * The Crypto Roadmap version used to perform the analysis.
-     *
      * @return the value
-     */
+     **/
     public String getCryptoRoadmapVersion() {
         return cryptoRoadmapVersion;
     }
 
-    /** The Object Storage namespace of this analysis result. */
+    /**
+     * The Object Storage namespace of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The Object Storage namespace of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The Object Storage bucket name of this analysis result. */
+    /**
+     * The Object Storage bucket name of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The Object Storage bucket name of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The Object Storage object name of this analysis result. */
+    /**
+     * The Object Storage object name of this analysis result.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * The Object Storage object name of this analysis result.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
@@ -746,7 +782,6 @@ public final class CryptoAnalysisResultSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

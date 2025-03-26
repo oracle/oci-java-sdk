@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The rollback type of deploymentUpgrade. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RollbackDeploymentUpgradeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The rollback type of deploymentUpgrade.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RollbackDeploymentUpgradeType {
     Default("DEFAULT"),
     ;
 

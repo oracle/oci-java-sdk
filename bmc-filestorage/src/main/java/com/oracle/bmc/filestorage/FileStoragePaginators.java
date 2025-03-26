@@ -9,31 +9,23 @@ import com.oracle.bmc.filestorage.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of FileStorage where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of FileStorage where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class FileStoragePaginators {
     private final FileStorage client;
 
@@ -42,12 +34,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listExportSets
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listExportSets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListExportSetsResponse> listExportSetsResponseIterator(
             final ListExportSetsRequest request) {
@@ -92,21 +83,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.ExportSetSummary} objects contained in responses from the
-     * listExportSets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ExportSetSummary} objects
+     * contained in responses from the listExportSets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.ExportSetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ExportSetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.ExportSetSummary> listExportSetsRecordIterator(
             final ListExportSetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListExportSetsRequest.Builder,
-                ListExportSetsRequest,
-                ListExportSetsResponse,
+                ListExportSetsRequest.Builder, ListExportSetsRequest, ListExportSetsResponse,
                 com.oracle.bmc.filestorage.model.ExportSetSummary>(
                 new java.util.function.Supplier<ListExportSetsRequest.Builder>() {
                     @Override
@@ -156,12 +144,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listExports
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listExports operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListExportsResponse> listExportsResponseIterator(
             final ListExportsRequest request) {
@@ -206,21 +193,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.ExportSummary} objects contained in responses from the
-     * listExports operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ExportSummary} objects
+     * contained in responses from the listExports operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.ExportSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ExportSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.ExportSummary> listExportsRecordIterator(
             final ListExportsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListExportsRequest.Builder,
-                ListExportsRequest,
-                ListExportsResponse,
+                ListExportsRequest.Builder, ListExportsRequest, ListExportsResponse,
                 com.oracle.bmc.filestorage.model.ExportSummary>(
                 new java.util.function.Supplier<ListExportsRequest.Builder>() {
                     @Override
@@ -270,12 +254,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFileSystems operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFileSystems operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFileSystemsResponse> listFileSystemsResponseIterator(
             final ListFileSystemsRequest request) {
@@ -320,21 +303,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.FileSystemSummary} objects contained in responses from the
-     * listFileSystems operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.FileSystemSummary} objects
+     * contained in responses from the listFileSystems operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.FileSystemSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.FileSystemSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.FileSystemSummary>
             listFileSystemsRecordIterator(final ListFileSystemsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFileSystemsRequest.Builder,
-                ListFileSystemsRequest,
-                ListFileSystemsResponse,
+                ListFileSystemsRequest.Builder, ListFileSystemsRequest, ListFileSystemsResponse,
                 com.oracle.bmc.filestorage.model.FileSystemSummary>(
                 new java.util.function.Supplier<ListFileSystemsRequest.Builder>() {
                     @Override
@@ -384,21 +364,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFilesystemSnapshotPolicies operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFilesystemSnapshotPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFilesystemSnapshotPoliciesResponse>
             listFilesystemSnapshotPoliciesResponseIterator(
                     final ListFilesystemSnapshotPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListFilesystemSnapshotPoliciesRequest.Builder,
-                ListFilesystemSnapshotPoliciesRequest,
-                ListFilesystemSnapshotPoliciesResponse>(
+                ListFilesystemSnapshotPoliciesRequest, ListFilesystemSnapshotPoliciesResponse>(
                 new java.util.function.Supplier<ListFilesystemSnapshotPoliciesRequest.Builder>() {
                     @Override
                     public ListFilesystemSnapshotPoliciesRequest.Builder get() {
@@ -441,23 +418,20 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects contained in
-     * responses from the listFilesystemSnapshotPolicies operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects
+     * contained in responses from the listFilesystemSnapshotPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary>
             listFilesystemSnapshotPoliciesRecordIterator(
                     final ListFilesystemSnapshotPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListFilesystemSnapshotPoliciesRequest.Builder,
-                ListFilesystemSnapshotPoliciesRequest,
-                ListFilesystemSnapshotPoliciesResponse,
+                ListFilesystemSnapshotPoliciesRequest, ListFilesystemSnapshotPoliciesResponse,
                 com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicySummary>(
                 new java.util.function.Supplier<ListFilesystemSnapshotPoliciesRequest.Builder>() {
                     @Override
@@ -514,12 +488,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMountTargets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMountTargets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMountTargetsResponse> listMountTargetsResponseIterator(
             final ListMountTargetsRequest request) {
@@ -565,21 +538,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.MountTargetSummary} objects contained in responses from the
-     * listMountTargets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.MountTargetSummary} objects
+     * contained in responses from the listMountTargets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.MountTargetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.MountTargetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.MountTargetSummary>
             listMountTargetsRecordIterator(final ListMountTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMountTargetsRequest.Builder,
-                ListMountTargetsRequest,
-                ListMountTargetsResponse,
+                ListMountTargetsRequest.Builder, ListMountTargetsRequest, ListMountTargetsResponse,
                 com.oracle.bmc.filestorage.model.MountTargetSummary>(
                 new java.util.function.Supplier<ListMountTargetsRequest.Builder>() {
                     @Override
@@ -630,19 +600,16 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listOutboundConnectors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listOutboundConnectors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListOutboundConnectorsResponse> listOutboundConnectorsResponseIterator(
             final ListOutboundConnectorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListOutboundConnectorsRequest.Builder,
-                ListOutboundConnectorsRequest,
+                ListOutboundConnectorsRequest.Builder, ListOutboundConnectorsRequest,
                 ListOutboundConnectorsResponse>(
                 new java.util.function.Supplier<ListOutboundConnectorsRequest.Builder>() {
                     @Override
@@ -685,21 +652,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects contained in responses
-     * from the listOutboundConnectors operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects
+     * contained in responses from the listOutboundConnectors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.OutboundConnectorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.OutboundConnectorSummary>
             listOutboundConnectorsRecordIterator(final ListOutboundConnectorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListOutboundConnectorsRequest.Builder,
-                ListOutboundConnectorsRequest,
+                ListOutboundConnectorsRequest.Builder, ListOutboundConnectorsRequest,
                 ListOutboundConnectorsResponse,
                 com.oracle.bmc.filestorage.model.OutboundConnectorSummary>(
                 new java.util.function.Supplier<ListOutboundConnectorsRequest.Builder>() {
@@ -753,12 +717,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listQuotaRules
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listQuotaRules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListQuotaRulesResponse> listQuotaRulesResponseIterator(
             final ListQuotaRulesRequest request) {
@@ -803,21 +766,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects contained in responses from the
-     * listQuotaRules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects
+     * contained in responses from the listQuotaRules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.QuotaRuleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.QuotaRuleSummary> listQuotaRulesRecordIterator(
             final ListQuotaRulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListQuotaRulesRequest.Builder,
-                ListQuotaRulesRequest,
-                ListQuotaRulesResponse,
+                ListQuotaRulesRequest.Builder, ListQuotaRulesRequest, ListQuotaRulesResponse,
                 com.oracle.bmc.filestorage.model.QuotaRuleSummary>(
                 new java.util.function.Supplier<ListQuotaRulesRequest.Builder>() {
                     @Override
@@ -867,19 +827,16 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listReplicationTargets operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listReplicationTargets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListReplicationTargetsResponse> listReplicationTargetsResponseIterator(
             final ListReplicationTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListReplicationTargetsRequest.Builder,
-                ListReplicationTargetsRequest,
+                ListReplicationTargetsRequest.Builder, ListReplicationTargetsRequest,
                 ListReplicationTargetsResponse>(
                 new java.util.function.Supplier<ListReplicationTargetsRequest.Builder>() {
                     @Override
@@ -922,21 +879,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects contained in responses
-     * from the listReplicationTargets operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects
+     * contained in responses from the listReplicationTargets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationTargetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.ReplicationTargetSummary>
             listReplicationTargetsRecordIterator(final ListReplicationTargetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReplicationTargetsRequest.Builder,
-                ListReplicationTargetsRequest,
+                ListReplicationTargetsRequest.Builder, ListReplicationTargetsRequest,
                 ListReplicationTargetsResponse,
                 com.oracle.bmc.filestorage.model.ReplicationTargetSummary>(
                 new java.util.function.Supplier<ListReplicationTargetsRequest.Builder>() {
@@ -990,12 +944,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listReplications operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listReplications operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListReplicationsResponse> listReplicationsResponseIterator(
             final ListReplicationsRequest request) {
@@ -1041,21 +994,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.ReplicationSummary} objects contained in responses from the
-     * listReplications operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationSummary} objects
+     * contained in responses from the listReplications operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.ReplicationSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.ReplicationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.ReplicationSummary>
             listReplicationsRecordIterator(final ListReplicationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListReplicationsRequest.Builder,
-                ListReplicationsRequest,
-                ListReplicationsResponse,
+                ListReplicationsRequest.Builder, ListReplicationsRequest, ListReplicationsResponse,
                 com.oracle.bmc.filestorage.model.ReplicationSummary>(
                 new java.util.function.Supplier<ListReplicationsRequest.Builder>() {
                     @Override
@@ -1106,12 +1056,11 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSnapshots
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSnapshots operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSnapshotsResponse> listSnapshotsResponseIterator(
             final ListSnapshotsRequest request) {
@@ -1156,21 +1105,18 @@ public class FileStoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.filestorage.model.SnapshotSummary} objects contained in responses from the
-     * listSnapshots operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.filestorage.model.SnapshotSummary} objects
+     * contained in responses from the listSnapshots operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.filestorage.model.SnapshotSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.filestorage.model.SnapshotSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.filestorage.model.SnapshotSummary> listSnapshotsRecordIterator(
             final ListSnapshotsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSnapshotsRequest.Builder,
-                ListSnapshotsRequest,
-                ListSnapshotsResponse,
+                ListSnapshotsRequest.Builder, ListSnapshotsRequest, ListSnapshotsResponse,
                 com.oracle.bmc.filestorage.model.SnapshotSummary>(
                 new java.util.function.Supplier<ListSnapshotsRequest.Builder>() {
                     @Override

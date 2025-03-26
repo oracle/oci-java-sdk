@@ -5,23 +5,22 @@
 package com.oracle.bmc.jmsjavadownloads.model;
 
 /**
- * Collection of download count aggregations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+ * Collection of download count aggregations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = JavaDownloadCountAggregationCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = JavaDownloadCountAggregationCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JavaDownloadCountAggregationCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"aggregationType", "items"})
     public JavaDownloadCountAggregationCollection(
@@ -34,31 +33,33 @@ public final class JavaDownloadCountAggregationCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Aggregation type */
+        /**
+         * Aggregation type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregationType")
         private JavaDownloadCountAggregationType aggregationType;
 
         /**
          * Aggregation type
-         *
          * @param aggregationType the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregationType(JavaDownloadCountAggregationType aggregationType) {
             this.aggregationType = aggregationType;
             this.__explicitlySet__.add("aggregationType");
             return this;
         }
-        /** A list of download count aggregations. */
+        /**
+         * A list of download count aggregations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<JavaDownloadCountAggregation> items;
 
         /**
          * A list of download count aggregations.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<JavaDownloadCountAggregation> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -89,7 +90,9 @@ public final class JavaDownloadCountAggregationCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +101,30 @@ public final class JavaDownloadCountAggregationCollection
         return new Builder().copy(this);
     }
 
-    /** Aggregation type */
+    /**
+     * Aggregation type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregationType")
     private final JavaDownloadCountAggregationType aggregationType;
 
     /**
      * Aggregation type
-     *
      * @return the value
-     */
+     **/
     public JavaDownloadCountAggregationType getAggregationType() {
         return aggregationType;
     }
 
-    /** A list of download count aggregations. */
+    /**
+     * A list of download count aggregations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<JavaDownloadCountAggregation> items;
 
     /**
      * A list of download count aggregations.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<JavaDownloadCountAggregation> getItems() {
         return items;
     }
@@ -131,7 +136,6 @@ public final class JavaDownloadCountAggregationCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

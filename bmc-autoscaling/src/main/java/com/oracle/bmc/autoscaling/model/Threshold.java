@@ -5,21 +5,19 @@
 package com.oracle.bmc.autoscaling.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Threshold.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Threshold extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Threshold extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"operator", "value"})
     public Threshold(Operator operator, Integer value) {
@@ -31,19 +29,20 @@ public final class Threshold extends com.oracle.bmc.http.client.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The comparison operator to use. Options are greater than ({@code GT}), greater than or
-         * equal to ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
-         */
+         * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+         * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operator")
         private Operator operator;
 
         /**
-         * The comparison operator to use. Options are greater than ({@code GT}), greater than or
-         * equal to ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+         * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+         * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
          *
          * @param operator the value to set
          * @return this builder
-         */
+         **/
         public Builder operator(Operator operator) {
             this.operator = operator;
             this.__explicitlySet__.add("operator");
@@ -82,7 +81,9 @@ public final class Threshold extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -92,18 +93,19 @@ public final class Threshold extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
-     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal
-     * to ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
-     */
-    public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+     *
+     **/
+    public enum Operator {
         Gt("GT"),
         Gte("GTE"),
         Lt("LT"),
         Lte("LTE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -143,18 +145,19 @@ public final class Threshold extends com.oracle.bmc.http.client.internal.Explici
         }
     };
     /**
-     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal
-     * to ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
-     */
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operator")
     private final Operator operator;
 
     /**
-     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal
-     * to ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
+     * The comparison operator to use. Options are greater than ({@code GT}), greater than or equal to
+     * ({@code GTE}), less than ({@code LT}), and less than or equal to ({@code LTE}).
      *
      * @return the value
-     */
+     **/
     public Operator getOperator() {
         return operator;
     }
@@ -173,7 +176,6 @@ public final class Threshold extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

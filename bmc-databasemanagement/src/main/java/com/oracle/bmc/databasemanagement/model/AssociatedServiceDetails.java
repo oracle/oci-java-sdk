@@ -6,23 +6,21 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details of the associated service that will be enabled or disabled for an external DB System.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AssociatedServiceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AssociatedServiceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AssociatedServiceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "metadata"})
     public AssociatedServiceDetails(Boolean isEnabled, String metadata) {
@@ -33,35 +31,33 @@ public final class AssociatedServiceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The status of the associated service. */
+        /**
+         * The status of the associated service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * The status of the associated service.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The associated service-specific inputs in JSON string format, which Database Management
-         * can identify.
-         */
+         * The associated service-specific inputs in JSON string format, which Database Management can identify.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private String metadata;
 
         /**
-         * The associated service-specific inputs in JSON string format, which Database Management
-         * can identify.
-         *
+         * The associated service-specific inputs in JSON string format, which Database Management can identify.
          * @param metadata the value to set
          * @return this builder
-         */
+         **/
         public Builder metadata(String metadata) {
             this.metadata = metadata;
             this.__explicitlySet__.add("metadata");
@@ -92,7 +88,9 @@ public final class AssociatedServiceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,32 +99,30 @@ public final class AssociatedServiceDetails
         return new Builder().copy(this);
     }
 
-    /** The status of the associated service. */
+    /**
+     * The status of the associated service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * The status of the associated service.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The associated service-specific inputs in JSON string format, which Database Management can
-     * identify.
-     */
+     * The associated service-specific inputs in JSON string format, which Database Management can identify.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final String metadata;
 
     /**
-     * The associated service-specific inputs in JSON string format, which Database Management can
-     * identify.
-     *
+     * The associated service-specific inputs in JSON string format, which Database Management can identify.
      * @return the value
-     */
+     **/
     public String getMetadata() {
         return metadata;
     }
@@ -138,7 +134,6 @@ public final class AssociatedServiceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

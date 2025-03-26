@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateServiceGatewayDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateServiceGatewayDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateServiceGatewayDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "blockTraffic",
@@ -50,25 +49,24 @@ public final class UpdateServiceGatewayDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Whether the service gateway blocks all traffic through it. The default is {@code false}.
-         * When this is {@code true}, traffic is not routed to any services, regardless of route
-         * rules.
+         * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
+         * this is {@code true}, traffic is not routed to any services, regardless of route rules.
+         * <p>
+         * Example: {@code true}
          *
-         * <p>Example: {@code true}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockTraffic")
         private Boolean blockTraffic;
 
         /**
-         * Whether the service gateway blocks all traffic through it. The default is {@code false}.
-         * When this is {@code true}, traffic is not routed to any services, regardless of route
-         * rules.
-         *
-         * <p>Example: {@code true}
+         * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
+         * this is {@code true}, traffic is not routed to any services, regardless of route rules.
+         * <p>
+         * Example: {@code true}
          *
          * @param blockTraffic the value to set
          * @return this builder
-         */
+         **/
         public Builder blockTraffic(Boolean blockTraffic) {
             this.blockTraffic = blockTraffic;
             this.__explicitlySet__.add("blockTraffic");
@@ -77,7 +75,8 @@ public final class UpdateServiceGatewayDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -87,7 +86,7 @@ public final class UpdateServiceGatewayDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -95,98 +94,100 @@ public final class UpdateServiceGatewayDetails
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the service gateway will use. For information about why you would associate a
-         * route table with a service gateway, see [Transit Routing: Private Access to Oracle
-         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route table the service gateway will use. For information about why you would associate a
-         * route table with a service gateway, see [Transit Routing: Private Access to Oracle
-         * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+         * For information about why you would associate a route table with a service gateway, see
+         * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
          *
          * @param routeTableId the value to set
          * @return this builder
-         */
+         **/
         public Builder routeTableId(String routeTableId) {
             this.routeTableId = routeTableId;
             this.__explicitlySet__.add("routeTableId");
             return this;
         }
         /**
-         * List of all the {@code Service} objects you want enabled on this service gateway. Sending
-         * an empty list means you want to disable all services. Omitting this parameter entirely
-         * keeps the existing list of services intact.
+         * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
+         * means you want to disable all services. Omitting this parameter entirely keeps the
+         * existing list of services intact.
+         * <p>
+         * You can also enable or disable a particular {@code Service} by using
+         * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
+         * {@link #detachServiceId(DetachServiceIdRequest) detachServiceId}.
+         * <p>
+         * For each enabled {@code Service}, make sure there's a route rule with the {@code Service} object's {@code cidrBlock}
+         * as the rule's destination and the service gateway as the rule's target. See
+         * {@link RouteTable}.
          *
-         * <p>You can also enable or disable a particular {@code Service} by using {@link
-         * #attachServiceId(AttachServiceIdRequest) attachServiceId} or {@link
-         * #detachServiceId(DetachServiceIdRequest) detachServiceId}.
-         *
-         * <p>For each enabled {@code Service}, make sure there's a route rule with the {@code
-         * Service} object's {@code cidrBlock} as the rule's destination and the service gateway as
-         * the rule's target. See {@link RouteTable}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("services")
         private java.util.List<ServiceIdRequestDetails> services;
 
         /**
-         * List of all the {@code Service} objects you want enabled on this service gateway. Sending
-         * an empty list means you want to disable all services. Omitting this parameter entirely
-         * keeps the existing list of services intact.
-         *
-         * <p>You can also enable or disable a particular {@code Service} by using {@link
-         * #attachServiceId(AttachServiceIdRequest) attachServiceId} or {@link
-         * #detachServiceId(DetachServiceIdRequest) detachServiceId}.
-         *
-         * <p>For each enabled {@code Service}, make sure there's a route rule with the {@code
-         * Service} object's {@code cidrBlock} as the rule's destination and the service gateway as
-         * the rule's target. See {@link RouteTable}.
+         * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
+         * means you want to disable all services. Omitting this parameter entirely keeps the
+         * existing list of services intact.
+         * <p>
+         * You can also enable or disable a particular {@code Service} by using
+         * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
+         * {@link #detachServiceId(DetachServiceIdRequest) detachServiceId}.
+         * <p>
+         * For each enabled {@code Service}, make sure there's a route rule with the {@code Service} object's {@code cidrBlock}
+         * as the rule's destination and the service gateway as the rule's target. See
+         * {@link RouteTable}.
          *
          * @param services the value to set
          * @return this builder
-         */
+         **/
         public Builder services(java.util.List<ServiceIdRequestDetails> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
@@ -235,7 +236,9 @@ public final class UpdateServiceGatewayDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -247,127 +250,131 @@ public final class UpdateServiceGatewayDetails
     /**
      * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
      * this is {@code true}, traffic is not routed to any services, regardless of route rules.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockTraffic")
     private final Boolean blockTraffic;
 
     /**
      * Whether the service gateway blocks all traffic through it. The default is {@code false}. When
      * this is {@code true}, traffic is not routed to any services, regardless of route rules.
-     *
-     * <p>Example: {@code true}
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getBlockTraffic() {
         return blockTraffic;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the service gateway will use. For information about why you would associate a
-     * route table with a service gateway, see [Transit Routing: Private Access to Oracle
-     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route table the service gateway will use. For information about why you would associate a
-     * route table with a service gateway, see [Transit Routing: Private Access to Oracle
-     * Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the service gateway will use.
+     * For information about why you would associate a route table with a service gateway, see
+     * [Transit Routing: Private Access to Oracle Services](https://docs.oracle.com/iaas/Content/Network/Tasks/transitroutingoracleservices.htm).
      *
      * @return the value
-     */
+     **/
     public String getRouteTableId() {
         return routeTableId;
     }
 
     /**
-     * List of all the {@code Service} objects you want enabled on this service gateway. Sending an
-     * empty list means you want to disable all services. Omitting this parameter entirely keeps the
+     * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
+     * means you want to disable all services. Omitting this parameter entirely keeps the
      * existing list of services intact.
+     * <p>
+     * You can also enable or disable a particular {@code Service} by using
+     * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
+     * {@link #detachServiceId(DetachServiceIdRequest) detachServiceId}.
+     * <p>
+     * For each enabled {@code Service}, make sure there's a route rule with the {@code Service} object's {@code cidrBlock}
+     * as the rule's destination and the service gateway as the rule's target. See
+     * {@link RouteTable}.
      *
-     * <p>You can also enable or disable a particular {@code Service} by using {@link
-     * #attachServiceId(AttachServiceIdRequest) attachServiceId} or {@link
-     * #detachServiceId(DetachServiceIdRequest) detachServiceId}.
-     *
-     * <p>For each enabled {@code Service}, make sure there's a route rule with the {@code Service}
-     * object's {@code cidrBlock} as the rule's destination and the service gateway as the rule's
-     * target. See {@link RouteTable}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("services")
     private final java.util.List<ServiceIdRequestDetails> services;
 
     /**
-     * List of all the {@code Service} objects you want enabled on this service gateway. Sending an
-     * empty list means you want to disable all services. Omitting this parameter entirely keeps the
+     * List of all the {@code Service} objects you want enabled on this service gateway. Sending an empty list
+     * means you want to disable all services. Omitting this parameter entirely keeps the
      * existing list of services intact.
-     *
-     * <p>You can also enable or disable a particular {@code Service} by using {@link
-     * #attachServiceId(AttachServiceIdRequest) attachServiceId} or {@link
-     * #detachServiceId(DetachServiceIdRequest) detachServiceId}.
-     *
-     * <p>For each enabled {@code Service}, make sure there's a route rule with the {@code Service}
-     * object's {@code cidrBlock} as the rule's destination and the service gateway as the rule's
-     * target. See {@link RouteTable}.
+     * <p>
+     * You can also enable or disable a particular {@code Service} by using
+     * {@link #attachServiceId(AttachServiceIdRequest) attachServiceId} or
+     * {@link #detachServiceId(DetachServiceIdRequest) detachServiceId}.
+     * <p>
+     * For each enabled {@code Service}, make sure there's a route rule with the {@code Service} object's {@code cidrBlock}
+     * as the rule's destination and the service gateway as the rule's target. See
+     * {@link RouteTable}.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ServiceIdRequestDetails> getServices() {
         return services;
     }
@@ -379,7 +386,6 @@ public final class UpdateServiceGatewayDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

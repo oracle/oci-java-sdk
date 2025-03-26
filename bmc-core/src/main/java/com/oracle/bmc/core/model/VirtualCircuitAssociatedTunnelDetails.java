@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Detailed private tunnel info associated with the virtual circuit. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Detailed private tunnel info associated with the virtual circuit.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VirtualCircuitAssociatedTunnelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VirtualCircuitAssociatedTunnelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VirtualCircuitAssociatedTunnelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tunnelType", "ipsecConnectionId", "tunnelId"})
     public VirtualCircuitAssociatedTunnelDetails(
@@ -34,54 +33,49 @@ public final class VirtualCircuitAssociatedTunnelDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the tunnel associated with the virtual circuit. */
+        /**
+         * The type of the tunnel associated with the virtual circuit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelType")
         private TunnelType tunnelType;
 
         /**
          * The type of the tunnel associated with the virtual circuit.
-         *
          * @param tunnelType the value to set
          * @return this builder
-         */
+         **/
         public Builder tunnelType(TunnelType tunnelType) {
             this.tunnelType = tunnelType;
             this.__explicitlySet__.add("tunnelType");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * IPSec connection associated with the virtual circuit.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
         private String ipsecConnectionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * IPSec connection associated with the virtual circuit.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
          * @param ipsecConnectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder ipsecConnectionId(String ipsecConnectionId) {
             this.ipsecConnectionId = ipsecConnectionId;
             this.__explicitlySet__.add("ipsecConnectionId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IPSec tunnel associated with the virtual circuit.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
         private String tunnelId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * IPSec tunnel associated with the virtual circuit.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
          * @param tunnelId the value to set
          * @return this builder
-         */
+         **/
         public Builder tunnelId(String tunnelId) {
             this.tunnelId = tunnelId;
             this.__explicitlySet__.add("tunnelId");
@@ -116,7 +110,9 @@ public final class VirtualCircuitAssociatedTunnelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,13 +121,15 @@ public final class VirtualCircuitAssociatedTunnelDetails
         return new Builder().copy(this);
     }
 
-    /** The type of the tunnel associated with the virtual circuit. */
-    public enum TunnelType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the tunnel associated with the virtual circuit.
+     **/
+    public enum TunnelType {
         Ipsec("IPSEC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -170,49 +168,44 @@ public final class VirtualCircuitAssociatedTunnelDetails
             return UnknownEnumValue;
         }
     };
-    /** The type of the tunnel associated with the virtual circuit. */
+    /**
+     * The type of the tunnel associated with the virtual circuit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelType")
     private final TunnelType tunnelType;
 
     /**
      * The type of the tunnel associated with the virtual circuit.
-     *
      * @return the value
-     */
+     **/
     public TunnelType getTunnelType() {
         return tunnelType;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
-     * connection associated with the virtual circuit.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipsecConnectionId")
     private final String ipsecConnectionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec
-     * connection associated with the virtual circuit.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of IPSec connection associated with the virtual circuit.
      * @return the value
-     */
+     **/
     public String getIpsecConnectionId() {
         return ipsecConnectionId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * IPSec tunnel associated with the virtual circuit.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tunnelId")
     private final String tunnelId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * IPSec tunnel associated with the virtual circuit.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPSec tunnel associated with the virtual circuit.
      * @return the value
-     */
+     **/
     public String getTunnelId() {
         return tunnelId;
     }
@@ -224,7 +217,6 @@ public final class VirtualCircuitAssociatedTunnelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

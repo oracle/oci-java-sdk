@@ -5,31 +5,32 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The target license config to be updated on the instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The target license config to be updated on the instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = UpdateInstanceLicensingConfig.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = UpdateInstanceLicensingConfig.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = UpdateInstanceWindowsLicensingConfig.class,
-            name = "WINDOWS")
+        value = UpdateInstanceWindowsLicensingConfig.class,
+        name = "WINDOWS"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public class UpdateInstanceLicensingConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"licenseType"})
     protected UpdateInstanceLicensingConfig(LicenseType licenseType) {
@@ -38,10 +39,12 @@ public class UpdateInstanceLicensingConfig
     }
 
     /**
-     * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
-     */
-    public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
+     * License Type for the OS license.
+     * * {@code OCI_PROVIDED} - OCI provided license (e.g. metered $/OCPU-hour).
+     * * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     *
+     **/
+    public enum LicenseType {
         OciProvided("OCI_PROVIDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
         ;
@@ -74,18 +77,21 @@ public class UpdateInstanceLicensingConfig
         }
     };
     /**
-     * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
-     */
+     * License Type for the OS license.
+     * * {@code OCI_PROVIDED} - OCI provided license (e.g. metered $/OCPU-hour).
+     * * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseType")
     private final LicenseType licenseType;
 
     /**
-     * License Type for the OS license. * {@code OCI_PROVIDED} - OCI provided license (e.g. metered
-     * $/OCPU-hour). * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
+     * License Type for the OS license.
+     * * {@code OCI_PROVIDED} - OCI provided license (e.g. metered $/OCPU-hour).
+     * * {@code BRING_YOUR_OWN_LICENSE} - Bring your own license.
      *
      * @return the value
-     */
+     **/
     public LicenseType getLicenseType() {
         return licenseType;
     }
@@ -97,7 +103,6 @@ public class UpdateInstanceLicensingConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -132,8 +137,10 @@ public class UpdateInstanceLicensingConfig
         return result;
     }
 
-    /** Operating system type of the configuration. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Operating system type of the configuration.
+     **/
+    public enum Type {
         Windows("WINDOWS"),
         ;
 

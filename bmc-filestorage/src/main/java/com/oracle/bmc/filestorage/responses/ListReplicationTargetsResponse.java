@@ -6,23 +6,24 @@ package com.oracle.bmc.filestorage.responses;
 
 import com.oracle.bmc.filestorage.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain.
+     * For list pagination. When this header appears in the response,
+     * additional pages of results remain.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
-     * remain.
-     *
-     * <p>For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. When this header appears in the response,
+     * additional pages of results remain.
+     * <p>
+     * For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      * @return the value
      */
@@ -31,14 +32,17 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
      *
      * @return the value
      */
@@ -46,12 +50,13 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
         return opcRequestId;
     }
 
-    /** A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances. */
+    /**
+     * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
+     */
     private java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> items;
 
     /**
-     * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
-     *
+     * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> getItems() {
@@ -67,7 +72,7 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
     })
     private ListReplicationTargetsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> items) {
@@ -77,40 +82,37 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListReplicationTargetsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain.
+         * For list pagination. When this header appears in the response,
+         * additional pages of results remain.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
-         * results remain.
-         *
-         * <p>For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. When this header appears in the response,
+         * additional pages of results remain.
+         * <p>
+         * For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -121,14 +123,17 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -139,13 +144,12 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
         }
 
         /**
-         * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
+         * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
          */
         private java.util.List<com.oracle.bmc.filestorage.model.ReplicationTargetSummary> items;
 
         /**
-         * A list of {@code com.oracle.bmc.filestorage.model.ReplicationTargetSummary} instances.
-         *
+         * A list of com.oracle.bmc.filestorage.model.ReplicationTargetSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -157,10 +161,8 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListReplicationTargetsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -173,10 +175,8 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListReplicationTargetsResponse build() {
             return new ListReplicationTargetsResponse(
                     __httpStatusCode__, headers, opcNextPage, opcRequestId, items);
@@ -185,7 +185,6 @@ public class ListReplicationTargetsResponse extends com.oracle.bmc.responses.Bmc
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.dblm.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+public enum OperationType {
     DblmSubscribe("DBLM_SUBSCRIBE"),
     DblmEnable("DBLM_ENABLE"),
     ScanVulCve("SCAN_VUL_CVE"),

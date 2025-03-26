@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * The information about the new migration plan. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * The information about the new migration plan.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMigrationPlanDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMigrationPlanDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMigrationPlanDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -55,110 +54,117 @@ public final class CreateMigrationPlanDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Migration plan identifier */
+        /**
+         * Migration plan identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Migration plan identifier
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment identifier */
+        /**
+         * Compartment identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment identifier
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the associated migration. */
+        /**
+         * The OCID of the associated migration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
         private String migrationId;
 
         /**
          * The OCID of the associated migration.
-         *
          * @param migrationId the value to set
          * @return this builder
-         */
+         **/
         public Builder migrationId(String migrationId) {
             this.migrationId = migrationId;
             this.__explicitlySet__.add("migrationId");
             return this;
         }
-        /** Source migraiton plan ID to be cloned. */
+        /**
+         * Source migraiton plan ID to be cloned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceMigrationPlanId")
         private String sourceMigrationPlanId;
 
         /**
          * Source migraiton plan ID to be cloned.
-         *
          * @param sourceMigrationPlanId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceMigrationPlanId(String sourceMigrationPlanId) {
             this.sourceMigrationPlanId = sourceMigrationPlanId;
             this.__explicitlySet__.add("sourceMigrationPlanId");
             return this;
         }
-        /** List of strategies for the resources to be migrated. */
+        /**
+         * List of strategies for the resources to be migrated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("strategies")
         private java.util.List<ResourceAssessmentStrategy> strategies;
 
         /**
          * List of strategies for the resources to be migrated.
-         *
          * @param strategies the value to set
          * @return this builder
-         */
+         **/
         public Builder strategies(java.util.List<ResourceAssessmentStrategy> strategies) {
             this.strategies = strategies;
             this.__explicitlySet__.add("strategies");
             return this;
         }
-        /** List of target environments. */
+        /**
+         * List of target environments.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetEnvironments")
         private java.util.List<TargetEnvironment> targetEnvironments;
 
         /**
          * List of target environments.
-         *
          * @param targetEnvironments the value to set
          * @return this builder
-         */
+         **/
         public Builder targetEnvironments(java.util.List<TargetEnvironment> targetEnvironments) {
             this.targetEnvironments = targetEnvironments;
             this.__explicitlySet__.add("targetEnvironments");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It
-         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. It
-         * exists only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -167,7 +173,8 @@ public final class CreateMigrationPlanDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -177,7 +184,7 @@ public final class CreateMigrationPlanDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -235,7 +242,9 @@ public final class CreateMigrationPlanDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -244,114 +253,122 @@ public final class CreateMigrationPlanDetails
         return new Builder().copy(this);
     }
 
-    /** Migration plan identifier */
+    /**
+     * Migration plan identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Migration plan identifier
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment identifier */
+    /**
+     * Compartment identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment identifier
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the associated migration. */
+    /**
+     * The OCID of the associated migration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationId")
     private final String migrationId;
 
     /**
      * The OCID of the associated migration.
-     *
      * @return the value
-     */
+     **/
     public String getMigrationId() {
         return migrationId;
     }
 
-    /** Source migraiton plan ID to be cloned. */
+    /**
+     * Source migraiton plan ID to be cloned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceMigrationPlanId")
     private final String sourceMigrationPlanId;
 
     /**
      * Source migraiton plan ID to be cloned.
-     *
      * @return the value
-     */
+     **/
     public String getSourceMigrationPlanId() {
         return sourceMigrationPlanId;
     }
 
-    /** List of strategies for the resources to be migrated. */
+    /**
+     * List of strategies for the resources to be migrated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("strategies")
     private final java.util.List<ResourceAssessmentStrategy> strategies;
 
     /**
      * List of strategies for the resources to be migrated.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceAssessmentStrategy> getStrategies() {
         return strategies;
     }
 
-    /** List of target environments. */
+    /**
+     * List of target environments.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetEnvironments")
     private final java.util.List<TargetEnvironment> targetEnvironments;
 
     /**
      * List of target environments.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TargetEnvironment> getTargetEnvironments() {
         return targetEnvironments;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
-     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. It exists
-     * only for cross-compatibility. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -363,7 +380,6 @@ public final class CreateMigrationPlanDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

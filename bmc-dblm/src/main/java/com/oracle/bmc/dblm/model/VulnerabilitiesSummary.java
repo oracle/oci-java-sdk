@@ -5,23 +5,22 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Summary of vulnerabilities found in registered resources grouped by severity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Summary of vulnerabilities found in registered resources grouped by severity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VulnerabilitiesSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VulnerabilitiesSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VulnerabilitiesSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"total", "critical", "high", "medium", "info", "low"})
     public VulnerabilitiesSummary(
@@ -42,91 +41,97 @@ public final class VulnerabilitiesSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Total number of vulnerabilities. */
+        /**
+         * Total number of vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
         /**
          * Total number of vulnerabilities.
-         *
          * @param total the value to set
          * @return this builder
-         */
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
             return this;
         }
-        /** Cummulative number of resources that have critical level vulnerabilities. */
+        /**
+         * Cummulative number of resources that have critical level vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("critical")
         private Integer critical;
 
         /**
          * Cummulative number of resources that have critical level vulnerabilities.
-         *
          * @param critical the value to set
          * @return this builder
-         */
+         **/
         public Builder critical(Integer critical) {
             this.critical = critical;
             this.__explicitlySet__.add("critical");
             return this;
         }
-        /** Cummulative number of resources that have high level vulnerabilities. */
+        /**
+         * Cummulative number of resources that have high level vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private Integer high;
 
         /**
          * Cummulative number of resources that have high level vulnerabilities.
-         *
          * @param high the value to set
          * @return this builder
-         */
+         **/
         public Builder high(Integer high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
-        /** Cummulative number of resources that have medium level vulnerabilities. */
+        /**
+         * Cummulative number of resources that have medium level vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private Integer medium;
 
         /**
          * Cummulative number of resources that have medium level vulnerabilities.
-         *
          * @param medium the value to set
          * @return this builder
-         */
+         **/
         public Builder medium(Integer medium) {
             this.medium = medium;
             this.__explicitlySet__.add("medium");
             return this;
         }
-        /** Cummulative number of resources that have info level vulnerabilities. */
+        /**
+         * Cummulative number of resources that have info level vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("info")
         private Integer info;
 
         /**
          * Cummulative number of resources that have info level vulnerabilities.
-         *
          * @param info the value to set
          * @return this builder
-         */
+         **/
         public Builder info(Integer info) {
             this.info = info;
             this.__explicitlySet__.add("info");
             return this;
         }
-        /** Cummulative number of resources that have low level vulnerabilities. */
+        /**
+         * Cummulative number of resources that have low level vulnerabilities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private Integer low;
 
         /**
          * Cummulative number of resources that have low level vulnerabilities.
-         *
          * @param low the value to set
          * @return this builder
-         */
+         **/
         public Builder low(Integer low) {
             this.low = low;
             this.__explicitlySet__.add("low");
@@ -170,7 +175,9 @@ public final class VulnerabilitiesSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,80 +186,86 @@ public final class VulnerabilitiesSummary
         return new Builder().copy(this);
     }
 
-    /** Total number of vulnerabilities. */
+    /**
+     * Total number of vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
     /**
      * Total number of vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotal() {
         return total;
     }
 
-    /** Cummulative number of resources that have critical level vulnerabilities. */
+    /**
+     * Cummulative number of resources that have critical level vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("critical")
     private final Integer critical;
 
     /**
      * Cummulative number of resources that have critical level vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getCritical() {
         return critical;
     }
 
-    /** Cummulative number of resources that have high level vulnerabilities. */
+    /**
+     * Cummulative number of resources that have high level vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final Integer high;
 
     /**
      * Cummulative number of resources that have high level vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getHigh() {
         return high;
     }
 
-    /** Cummulative number of resources that have medium level vulnerabilities. */
+    /**
+     * Cummulative number of resources that have medium level vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final Integer medium;
 
     /**
      * Cummulative number of resources that have medium level vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getMedium() {
         return medium;
     }
 
-    /** Cummulative number of resources that have info level vulnerabilities. */
+    /**
+     * Cummulative number of resources that have info level vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("info")
     private final Integer info;
 
     /**
      * Cummulative number of resources that have info level vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getInfo() {
         return info;
     }
 
-    /** Cummulative number of resources that have low level vulnerabilities. */
+    /**
+     * Cummulative number of resources that have low level vulnerabilities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final Integer low;
 
     /**
      * Cummulative number of resources that have low level vulnerabilities.
-     *
      * @return the value
-     */
+     **/
     public Integer getLow() {
         return low;
     }
@@ -264,7 +277,6 @@ public final class VulnerabilitiesSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,19 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Summary of database tools of autonomous database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Summary of database tools of autonomous database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatabaseTool.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DatabaseTool extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DatabaseTool extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "isEnabled", "computeCount", "maxIdleTimeInMinutes"})
     public DatabaseTool(
@@ -33,65 +31,65 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of database tool. */
+        /**
+         * Name of database tool.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
         /**
          * Name of database tool.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Indicates whether tool is enabled. */
+        /**
+         * Indicates whether tool is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Indicates whether tool is enabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
-        /** Compute used by database tools. */
+        /**
+         * Compute used by database tools.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
 
         /**
          * Compute used by database tools.
-         *
          * @param computeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder computeCount(Float computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
         /**
-         * The max idle time, in minutes, after which the VM used by database tools will be
-         * terminated.
-         */
+         * The max idle time, in minutes, after which the VM used by database tools will be terminated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxIdleTimeInMinutes")
         private Integer maxIdleTimeInMinutes;
 
         /**
-         * The max idle time, in minutes, after which the VM used by database tools will be
-         * terminated.
-         *
+         * The max idle time, in minutes, after which the VM used by database tools will be terminated.
          * @param maxIdleTimeInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder maxIdleTimeInMinutes(Integer maxIdleTimeInMinutes) {
             this.maxIdleTimeInMinutes = maxIdleTimeInMinutes;
             this.__explicitlySet__.add("maxIdleTimeInMinutes");
@@ -132,7 +130,9 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -141,8 +141,10 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Name of database tool. */
-    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Name of database tool.
+     **/
+    public enum Name {
         Apex("APEX"),
         DatabaseActions("DATABASE_ACTIONS"),
         GraphStudio("GRAPH_STUDIO"),
@@ -152,8 +154,8 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
         MongodbApi("MONGODB_API"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -190,56 +192,58 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Name of database tool. */
+    /**
+     * Name of database tool.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
     /**
      * Name of database tool.
-     *
      * @return the value
-     */
+     **/
     public Name getName() {
         return name;
     }
 
-    /** Indicates whether tool is enabled. */
+    /**
+     * Indicates whether tool is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Indicates whether tool is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
-    /** Compute used by database tools. */
+    /**
+     * Compute used by database tools.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
 
     /**
      * Compute used by database tools.
-     *
      * @return the value
-     */
+     **/
     public Float getComputeCount() {
         return computeCount;
     }
 
     /**
      * The max idle time, in minutes, after which the VM used by database tools will be terminated.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxIdleTimeInMinutes")
     private final Integer maxIdleTimeInMinutes;
 
     /**
      * The max idle time, in minutes, after which the VM used by database tools will be terminated.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxIdleTimeInMinutes() {
         return maxIdleTimeInMinutes;
     }
@@ -251,7 +255,6 @@ public final class DatabaseTool extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

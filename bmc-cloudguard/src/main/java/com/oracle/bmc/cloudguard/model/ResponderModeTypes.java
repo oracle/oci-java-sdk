@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Responder rule execution mode. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ResponderModeTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Responder rule execution mode.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum ResponderModeTypes {
     Autoaction("AUTOACTION"),
     Useraction("USERACTION"),
 

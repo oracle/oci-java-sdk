@@ -5,26 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * **Deprecated.** For information about connection strings to connect to an Oracle Autonomous Data
- * Warehouse, see {@link
- * #autonomousDatabaseConnectionStrings(AutonomousDatabaseConnectionStringsRequest)
- * autonomousDatabaseConnectionStrings}. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * **Deprecated.** For information about connection strings to connect to an Oracle Autonomous Data Warehouse, see {@link #autonomousDatabaseConnectionStrings(AutonomousDatabaseConnectionStringsRequest) autonomousDatabaseConnectionStrings}.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutonomousDataWarehouseConnectionStrings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutonomousDataWarehouseConnectionStrings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutonomousDataWarehouseConnectionStrings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"high", "medium", "low", "allConnectionStrings"})
     public AutonomousDataWarehouseConnectionStrings(
@@ -42,84 +39,68 @@ public final class AutonomousDataWarehouseConnectionStrings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The High database service provides the highest level of resources to each SQL statement
-         * resulting in the highest performance, but supports the fewest number of concurrent SQL
-         * statements.
-         */
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("high")
         private String high;
 
         /**
-         * The High database service provides the highest level of resources to each SQL statement
-         * resulting in the highest performance, but supports the fewest number of concurrent SQL
-         * statements.
-         *
+         * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
          * @param high the value to set
          * @return this builder
-         */
+         **/
         public Builder high(String high) {
             this.high = high;
             this.__explicitlySet__.add("high");
             return this;
         }
         /**
-         * The Medium database service provides a lower level of resources to each SQL statement
-         * potentially resulting a lower level of performance, but supports more concurrent SQL
-         * statements.
-         */
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("medium")
         private String medium;
 
         /**
-         * The Medium database service provides a lower level of resources to each SQL statement
-         * potentially resulting a lower level of performance, but supports more concurrent SQL
-         * statements.
-         *
+         * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
          * @param medium the value to set
          * @return this builder
-         */
+         **/
         public Builder medium(String medium) {
             this.medium = medium;
             this.__explicitlySet__.add("medium");
             return this;
         }
         /**
-         * The Low database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         */
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("low")
         private String low;
 
         /**
-         * The Low database service provides the least level of resources to each SQL statement, but
-         * supports the most number of concurrent SQL statements.
-         *
+         * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
          * @param low the value to set
          * @return this builder
-         */
+         **/
         public Builder low(String low) {
             this.low = low;
             this.__explicitlySet__.add("low");
             return this;
         }
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Data
-         * Warehouse. For more information, please see [Predefined Database Service Names for
-         * Autonomous Transaction
-         * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-         */
+         * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
         private java.util.Map<String, String> allConnectionStrings;
 
         /**
-         * Returns all connection strings that can be used to connect to the Autonomous Data
-         * Warehouse. For more information, please see [Predefined Database Service Names for
-         * Autonomous Transaction
-         * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+         * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
+         * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
          *
          * @param allConnectionStrings the value to set
          * @return this builder
-         */
+         **/
         public Builder allConnectionStrings(java.util.Map<String, String> allConnectionStrings) {
             this.allConnectionStrings = allConnectionStrings;
             this.__explicitlySet__.add("allConnectionStrings");
@@ -157,7 +138,9 @@ public final class AutonomousDataWarehouseConnectionStrings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,77 +150,61 @@ public final class AutonomousDataWarehouseConnectionStrings
     }
 
     /**
-     * The High database service provides the highest level of resources to each SQL statement
-     * resulting in the highest performance, but supports the fewest number of concurrent SQL
-     * statements.
-     */
+     * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("high")
     private final String high;
 
     /**
-     * The High database service provides the highest level of resources to each SQL statement
-     * resulting in the highest performance, but supports the fewest number of concurrent SQL
-     * statements.
-     *
+     * The High database service provides the highest level of resources to each SQL statement resulting in the highest performance, but supports the fewest number of concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getHigh() {
         return high;
     }
 
     /**
-     * The Medium database service provides a lower level of resources to each SQL statement
-     * potentially resulting a lower level of performance, but supports more concurrent SQL
-     * statements.
-     */
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("medium")
     private final String medium;
 
     /**
-     * The Medium database service provides a lower level of resources to each SQL statement
-     * potentially resulting a lower level of performance, but supports more concurrent SQL
-     * statements.
-     *
+     * The Medium database service provides a lower level of resources to each SQL statement potentially resulting a lower level of performance, but supports more concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getMedium() {
         return medium;
     }
 
     /**
-     * The Low database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     */
+     * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("low")
     private final String low;
 
     /**
-     * The Low database service provides the least level of resources to each SQL statement, but
-     * supports the most number of concurrent SQL statements.
-     *
+     * The Low database service provides the least level of resources to each SQL statement, but supports the most number of concurrent SQL statements.
      * @return the value
-     */
+     **/
     public String getLow() {
         return low;
     }
 
     /**
      * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-     * For more information, please see [Predefined Database Service Names for Autonomous
-     * Transaction
-     * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
-     */
+     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allConnectionStrings")
     private final java.util.Map<String, String> allConnectionStrings;
 
     /**
      * Returns all connection strings that can be used to connect to the Autonomous Data Warehouse.
-     * For more information, please see [Predefined Database Service Names for Autonomous
-     * Transaction
-     * Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
+     * For more information, please see [Predefined Database Service Names for Autonomous Transaction Processing](https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-predefined.html#GUID-9747539B-FD46-44F1-8FF8-F5AC650F15BE)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getAllConnectionStrings() {
         return allConnectionStrings;
     }
@@ -249,7 +216,6 @@ public final class AutonomousDataWarehouseConnectionStrings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

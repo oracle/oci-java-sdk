@@ -9,31 +9,23 @@ import com.oracle.bmc.fusionapps.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of FusionApplications where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of FusionApplications where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 public class FusionApplicationsPaginators {
     private final FusionApplications client;
 
@@ -42,19 +34,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDataMaskingActivities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDataMaskingActivities operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDataMaskingActivitiesResponse> listDataMaskingActivitiesResponseIterator(
             final ListDataMaskingActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDataMaskingActivitiesRequest.Builder,
-                ListDataMaskingActivitiesRequest,
+                ListDataMaskingActivitiesRequest.Builder, ListDataMaskingActivitiesRequest,
                 ListDataMaskingActivitiesResponse>(
                 new java.util.function.Supplier<ListDataMaskingActivitiesRequest.Builder>() {
                     @Override
@@ -97,22 +86,19 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary} objects contained in responses
-     * from the listDataMaskingActivities operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary} objects
+     * contained in responses from the listDataMaskingActivities operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary>
             listDataMaskingActivitiesRecordIterator(
                     final ListDataMaskingActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDataMaskingActivitiesRequest.Builder,
-                ListDataMaskingActivitiesRequest,
+                ListDataMaskingActivitiesRequest.Builder, ListDataMaskingActivitiesRequest,
                 ListDataMaskingActivitiesResponse,
                 com.oracle.bmc.fusionapps.model.DataMaskingActivitySummary>(
                 new java.util.function.Supplier<ListDataMaskingActivitiesRequest.Builder>() {
@@ -167,20 +153,17 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFusionEnvironmentFamilies operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listFusionEnvironmentFamilies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFusionEnvironmentFamiliesResponse>
             listFusionEnvironmentFamiliesResponseIterator(
                     final ListFusionEnvironmentFamiliesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFusionEnvironmentFamiliesRequest.Builder,
-                ListFusionEnvironmentFamiliesRequest,
+                ListFusionEnvironmentFamiliesRequest.Builder, ListFusionEnvironmentFamiliesRequest,
                 ListFusionEnvironmentFamiliesResponse>(
                 new java.util.function.Supplier<ListFusionEnvironmentFamiliesRequest.Builder>() {
                     @Override
@@ -224,22 +207,19 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary} objects contained in
-     * responses from the listFusionEnvironmentFamilies operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary} objects
+     * contained in responses from the listFusionEnvironmentFamilies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary>
             listFusionEnvironmentFamiliesRecordIterator(
                     final ListFusionEnvironmentFamiliesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFusionEnvironmentFamiliesRequest.Builder,
-                ListFusionEnvironmentFamiliesRequest,
+                ListFusionEnvironmentFamiliesRequest.Builder, ListFusionEnvironmentFamiliesRequest,
                 ListFusionEnvironmentFamiliesResponse,
                 com.oracle.bmc.fusionapps.model.FusionEnvironmentFamilySummary>(
                 new java.util.function.Supplier<ListFusionEnvironmentFamiliesRequest.Builder>() {
@@ -295,19 +275,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listFusionEnvironments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listFusionEnvironments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListFusionEnvironmentsResponse> listFusionEnvironmentsResponseIterator(
             final ListFusionEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListFusionEnvironmentsRequest.Builder,
-                ListFusionEnvironmentsRequest,
+                ListFusionEnvironmentsRequest.Builder, ListFusionEnvironmentsRequest,
                 ListFusionEnvironmentsResponse>(
                 new java.util.function.Supplier<ListFusionEnvironmentsRequest.Builder>() {
                     @Override
@@ -350,21 +327,18 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary} objects contained in responses from
-     * the listFusionEnvironments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary} objects
+     * contained in responses from the listFusionEnvironments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary>
             listFusionEnvironmentsRecordIterator(final ListFusionEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListFusionEnvironmentsRequest.Builder,
-                ListFusionEnvironmentsRequest,
+                ListFusionEnvironmentsRequest.Builder, ListFusionEnvironmentsRequest,
                 ListFusionEnvironmentsResponse,
                 com.oracle.bmc.fusionapps.model.FusionEnvironmentSummary>(
                 new java.util.function.Supplier<ListFusionEnvironmentsRequest.Builder>() {
@@ -418,19 +392,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listRefreshActivities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listRefreshActivities operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListRefreshActivitiesResponse> listRefreshActivitiesResponseIterator(
             final ListRefreshActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListRefreshActivitiesRequest.Builder,
-                ListRefreshActivitiesRequest,
+                ListRefreshActivitiesRequest.Builder, ListRefreshActivitiesRequest,
                 ListRefreshActivitiesResponse>(
                 new java.util.function.Supplier<ListRefreshActivitiesRequest.Builder>() {
                     @Override
@@ -473,21 +444,18 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.RefreshActivitySummary} objects contained in responses from
-     * the listRefreshActivities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.RefreshActivitySummary} objects
+     * contained in responses from the listRefreshActivities operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.RefreshActivitySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.RefreshActivitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.RefreshActivitySummary>
             listRefreshActivitiesRecordIterator(final ListRefreshActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListRefreshActivitiesRequest.Builder,
-                ListRefreshActivitiesRequest,
+                ListRefreshActivitiesRequest.Builder, ListRefreshActivitiesRequest,
                 ListRefreshActivitiesResponse,
                 com.oracle.bmc.fusionapps.model.RefreshActivitySummary>(
                 new java.util.function.Supplier<ListRefreshActivitiesRequest.Builder>() {
@@ -540,19 +508,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listScheduledActivities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listScheduledActivities operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListScheduledActivitiesResponse> listScheduledActivitiesResponseIterator(
             final ListScheduledActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListScheduledActivitiesRequest.Builder,
-                ListScheduledActivitiesRequest,
+                ListScheduledActivitiesRequest.Builder, ListScheduledActivitiesRequest,
                 ListScheduledActivitiesResponse>(
                 new java.util.function.Supplier<ListScheduledActivitiesRequest.Builder>() {
                     @Override
@@ -595,21 +560,18 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.ScheduledActivitySummary} objects contained in responses from
-     * the listScheduledActivities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.ScheduledActivitySummary} objects
+     * contained in responses from the listScheduledActivities operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.ScheduledActivitySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.ScheduledActivitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.ScheduledActivitySummary>
             listScheduledActivitiesRecordIterator(final ListScheduledActivitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListScheduledActivitiesRequest.Builder,
-                ListScheduledActivitiesRequest,
+                ListScheduledActivitiesRequest.Builder, ListScheduledActivitiesRequest,
                 ListScheduledActivitiesResponse,
                 com.oracle.bmc.fusionapps.model.ScheduledActivitySummary>(
                 new java.util.function.Supplier<ListScheduledActivitiesRequest.Builder>() {
@@ -663,19 +625,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceAttachmentsResponse> listServiceAttachmentsResponseIterator(
             final ListServiceAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListServiceAttachmentsRequest.Builder,
-                ListServiceAttachmentsRequest,
+                ListServiceAttachmentsRequest.Builder, ListServiceAttachmentsRequest,
                 ListServiceAttachmentsResponse>(
                 new java.util.function.Supplier<ListServiceAttachmentsRequest.Builder>() {
                     @Override
@@ -718,21 +677,18 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary} objects contained in responses from
-     * the listServiceAttachments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary} objects
+     * contained in responses from the listServiceAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary>
             listServiceAttachmentsRecordIterator(final ListServiceAttachmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServiceAttachmentsRequest.Builder,
-                ListServiceAttachmentsRequest,
+                ListServiceAttachmentsRequest.Builder, ListServiceAttachmentsRequest,
                 ListServiceAttachmentsResponse,
                 com.oracle.bmc.fusionapps.model.ServiceAttachmentSummary>(
                 new java.util.function.Supplier<ListServiceAttachmentsRequest.Builder>() {
@@ -786,20 +742,17 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listTimeAvailableForRefreshes operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listTimeAvailableForRefreshes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListTimeAvailableForRefreshesResponse>
             listTimeAvailableForRefreshesResponseIterator(
                     final ListTimeAvailableForRefreshesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListTimeAvailableForRefreshesRequest.Builder,
-                ListTimeAvailableForRefreshesRequest,
+                ListTimeAvailableForRefreshesRequest.Builder, ListTimeAvailableForRefreshesRequest,
                 ListTimeAvailableForRefreshesResponse>(
                 new java.util.function.Supplier<ListTimeAvailableForRefreshesRequest.Builder>() {
                     @Override
@@ -843,22 +796,19 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary} objects contained in
-     * responses from the listTimeAvailableForRefreshes operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary} objects
+     * contained in responses from the listTimeAvailableForRefreshes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary>
             listTimeAvailableForRefreshesRecordIterator(
                     final ListTimeAvailableForRefreshesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListTimeAvailableForRefreshesRequest.Builder,
-                ListTimeAvailableForRefreshesRequest,
+                ListTimeAvailableForRefreshesRequest.Builder, ListTimeAvailableForRefreshesRequest,
                 ListTimeAvailableForRefreshesResponse,
                 com.oracle.bmc.fusionapps.model.TimeAvailableForRefreshSummary>(
                 new java.util.function.Supplier<ListTimeAvailableForRefreshesRequest.Builder>() {
@@ -914,19 +864,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -969,23 +916,19 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.WorkRequestError} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.fusionapps.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.fusionapps.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -1036,18 +979,16 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1089,22 +1030,19 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.fusionapps.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.fusionapps.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -1154,12 +1092,11 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1205,21 +1142,18 @@ public class FusionApplicationsPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.fusionapps.model.WorkRequestSummary} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.fusionapps.model.WorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.fusionapps.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.fusionapps.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.fusionapps.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

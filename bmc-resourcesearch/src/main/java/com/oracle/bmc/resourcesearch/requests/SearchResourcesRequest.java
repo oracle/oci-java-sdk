@@ -6,64 +6,72 @@ package com.oracle.bmc.resourcesearch.requests;
 
 import com.oracle.bmc.resourcesearch.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/SearchResourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchResourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/resourcesearch/SearchResourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SearchResourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180409")
 public class SearchResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.resourcesearch.model.SearchDetails> {
 
     /**
-     * Request parameters that describe query criteria. For more information, see {@link
-     * #searchDetails(SearchDetailsRequest) searchDetails}.
+     * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+     *
      */
     private com.oracle.bmc.resourcesearch.model.SearchDetails searchDetails;
 
     /**
-     * Request parameters that describe query criteria. For more information, see {@link
-     * #searchDetails(SearchDetailsRequest) searchDetails}.
+     * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+     *
      */
     public com.oracle.bmc.resourcesearch.model.SearchDetails getSearchDetails() {
         return searchDetails;
     }
-    /** The maximum number of items to return. The value must be between 1 and 1000. */
+    /**
+     * The maximum number of items to return. The value must be between 1 and 1000.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. The value must be between 1 and 1000. */
+    /**
+     * The maximum number of items to return. The value must be between 1 and 1000.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     private String page;
 
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
     /**
-     * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy
-     * authorization) when searching for resources in a different tenancy.
+     * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
+     *
      */
     private String tenantId;
 
     /**
-     * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy
-     * authorization) when searching for resources in a different tenancy.
+     * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
+     *
      */
     public String getTenantId() {
         return tenantId;
     }
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -71,7 +79,6 @@ public class SearchResourcesRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -83,18 +90,18 @@ public class SearchResourcesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SearchResourcesRequest, com.oracle.bmc.resourcesearch.model.SearchDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Request parameters that describe query criteria. For more information, see {@link
-         * #searchDetails(SearchDetailsRequest) searchDetails}.
+         * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
+         *
          */
         private com.oracle.bmc.resourcesearch.model.SearchDetails searchDetails = null;
 
         /**
-         * Request parameters that describe query criteria. For more information, see {@link
-         * #searchDetails(SearchDetailsRequest) searchDetails}.
+         * Request parameters that describe query criteria. For more information, see {@link #searchDetails(SearchDetailsRequest) searchDetails}.
          *
          * @param searchDetails the value to set
          * @return this builder instance
@@ -105,12 +112,13 @@ public class SearchResourcesRequest
             return this;
         }
 
-        /** The maximum number of items to return. The value must be between 1 and 1000. */
+        /**
+         * The maximum number of items to return. The value must be between 1 and 1000.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return. The value must be between 1 and 1000.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -119,12 +127,13 @@ public class SearchResourcesRequest
             return this;
         }
 
-        /** The page at which to start retrieving results. */
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -134,14 +143,13 @@ public class SearchResourcesRequest
         }
 
         /**
-         * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy
-         * authorization) when searching for resources in a different tenancy.
+         * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
+         *
          */
         private String tenantId = null;
 
         /**
-         * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy
-         * authorization) when searching for resources in a different tenancy.
+         * The tenancy ID, which can be used to specify a different tenancy (for cross-tenancy authorization) when searching for resources in a different tenancy.
          *
          * @param tenantId the value to set
          * @return this builder instance
@@ -152,14 +160,15 @@ public class SearchResourcesRequest
         }
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle
-         * about a particular request, please provide the complete request ID.
+         * The unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -171,19 +180,18 @@ public class SearchResourcesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -195,7 +203,6 @@ public class SearchResourcesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SearchResourcesRequest o) {
@@ -212,11 +219,10 @@ public class SearchResourcesRequest
         /**
          * Build the instance of SearchResourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SearchResourcesRequest
          */
@@ -229,7 +235,6 @@ public class SearchResourcesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -242,8 +247,7 @@ public class SearchResourcesRequest
         /**
          * Build the instance of SearchResourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SearchResourcesRequest
@@ -262,7 +266,6 @@ public class SearchResourcesRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -276,7 +279,6 @@ public class SearchResourcesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

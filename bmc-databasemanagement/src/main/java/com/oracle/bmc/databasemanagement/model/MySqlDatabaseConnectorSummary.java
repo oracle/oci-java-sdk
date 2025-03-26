@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Details of external database connector. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Details of external database connector.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MySqlDatabaseConnectorSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MySqlDatabaseConnectorSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MySqlDatabaseConnectorSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -85,283 +84,299 @@ public final class MySqlDatabaseConnectorSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** External MySQL Database Connector Name */
+        /**
+         * External MySQL Database Connector Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * External MySQL Database Connector Name
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** OCID of compartment for the External MySQL connector. */
+        /**
+         * OCID of compartment for the External MySQL connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of compartment for the External MySQL connector.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCI Services associated with this connector. */
+        /**
+         * OCI Services associated with this connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associatedServices")
         private String associatedServices;
 
         /**
          * OCI Services associated with this connector.
-         *
          * @param associatedServices the value to set
          * @return this builder
-         */
+         **/
         public Builder associatedServices(String associatedServices) {
             this.associatedServices = associatedServices;
             this.__explicitlySet__.add("associatedServices");
             return this;
         }
-        /** OCID of MySQL Database Connector. */
+        /**
+         * OCID of MySQL Database Connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID of MySQL Database Connector.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Connector creation time. */
+        /**
+         * Connector creation time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Connector creation time.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Connector update time. */
+        /**
+         * Connector update time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * Connector update time.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Name of MySQL Database. */
+        /**
+         * Name of MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabase")
         private String sourceDatabase;
 
         /**
          * Name of MySQL Database.
-         *
          * @param sourceDatabase the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDatabase(String sourceDatabase) {
             this.sourceDatabase = sourceDatabase;
             this.__explicitlySet__.add("sourceDatabase");
             return this;
         }
-        /** Type of MySQL Database. */
+        /**
+         * Type of MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseType")
         private MySqlType sourceDatabaseType;
 
         /**
          * Type of MySQL Database.
-         *
          * @param sourceDatabaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceDatabaseType(MySqlType sourceDatabaseType) {
             this.sourceDatabaseType = sourceDatabaseType;
             this.__explicitlySet__.add("sourceDatabaseType");
             return this;
         }
-        /** Connection Status. */
+        /**
+         * Connection Status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionStatus")
         private String connectionStatus;
 
         /**
          * Connection Status.
-         *
          * @param connectionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionStatus(String connectionStatus) {
             this.connectionStatus = connectionStatus;
             this.__explicitlySet__.add("connectionStatus");
             return this;
         }
-        /** Time when connection status was last updated. */
+        /**
+         * Time when connection status was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeConnectionStatusUpdated")
         private java.util.Date timeConnectionStatusUpdated;
 
         /**
          * Time when connection status was last updated.
-         *
          * @param timeConnectionStatusUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeConnectionStatusUpdated(java.util.Date timeConnectionStatusUpdated) {
             this.timeConnectionStatusUpdated = timeConnectionStatusUpdated;
             this.__explicitlySet__.add("timeConnectionStatusUpdated");
             return this;
         }
-        /** Host name for Connector. */
+        /**
+         * Host name for Connector.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Host name for Connector.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** Agent Id of the MACS agent. */
+        /**
+         * Agent Id of the MACS agent.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("macsAgentId")
         private String macsAgentId;
 
         /**
          * Agent Id of the MACS agent.
-         *
          * @param macsAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder macsAgentId(String macsAgentId) {
             this.macsAgentId = macsAgentId;
             this.__explicitlySet__.add("macsAgentId");
             return this;
         }
-        /** Connector port. */
+        /**
+         * Connector port.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Connector port.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
-        /** Connector Type. */
+        /**
+         * Connector Type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorType")
         private MySqlConnectorType connectorType;
 
         /**
          * Connector Type.
-         *
          * @param connectorType the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorType(MySqlConnectorType connectorType) {
             this.connectorType = connectorType;
             this.__explicitlySet__.add("connectorType");
             return this;
         }
-        /** Network Protocol. */
+        /**
+         * Network Protocol.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkProtocol")
         private MySqlNetworkProtocolType networkProtocol;
 
         /**
          * Network Protocol.
-         *
          * @param networkProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder networkProtocol(MySqlNetworkProtocolType networkProtocol) {
             this.networkProtocol = networkProtocol;
             this.__explicitlySet__.add("networkProtocol");
             return this;
         }
-        /** Credential type used to connect to database. */
+        /**
+         * Credential type used to connect to database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
         private MySqlCredType credentialType;
 
         /**
          * Credential type used to connect to database.
-         *
          * @param credentialType the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialType(MySqlCredType credentialType) {
             this.credentialType = credentialType;
             this.__explicitlySet__.add("credentialType");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates lifecycle state of the resource. */
+        /**
+         * Indicates lifecycle  state of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleStates lifecycleState;
 
         /**
-         * Indicates lifecycle state of the resource.
-         *
+         * Indicates lifecycle  state of the resource.
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleStates lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -458,7 +473,9 @@ public final class MySqlDatabaseConnectorSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -467,248 +484,264 @@ public final class MySqlDatabaseConnectorSummary
         return new Builder().copy(this);
     }
 
-    /** External MySQL Database Connector Name */
+    /**
+     * External MySQL Database Connector Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * External MySQL Database Connector Name
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** OCID of compartment for the External MySQL connector. */
+    /**
+     * OCID of compartment for the External MySQL connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of compartment for the External MySQL connector.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OCI Services associated with this connector. */
+    /**
+     * OCI Services associated with this connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associatedServices")
     private final String associatedServices;
 
     /**
      * OCI Services associated with this connector.
-     *
      * @return the value
-     */
+     **/
     public String getAssociatedServices() {
         return associatedServices;
     }
 
-    /** OCID of MySQL Database Connector. */
+    /**
+     * OCID of MySQL Database Connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of MySQL Database Connector.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Connector creation time. */
+    /**
+     * Connector creation time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Connector creation time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Connector update time. */
+    /**
+     * Connector update time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * Connector update time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Name of MySQL Database. */
+    /**
+     * Name of MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabase")
     private final String sourceDatabase;
 
     /**
      * Name of MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getSourceDatabase() {
         return sourceDatabase;
     }
 
-    /** Type of MySQL Database. */
+    /**
+     * Type of MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseType")
     private final MySqlType sourceDatabaseType;
 
     /**
      * Type of MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public MySqlType getSourceDatabaseType() {
         return sourceDatabaseType;
     }
 
-    /** Connection Status. */
+    /**
+     * Connection Status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionStatus")
     private final String connectionStatus;
 
     /**
      * Connection Status.
-     *
      * @return the value
-     */
+     **/
     public String getConnectionStatus() {
         return connectionStatus;
     }
 
-    /** Time when connection status was last updated. */
+    /**
+     * Time when connection status was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeConnectionStatusUpdated")
     private final java.util.Date timeConnectionStatusUpdated;
 
     /**
      * Time when connection status was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeConnectionStatusUpdated() {
         return timeConnectionStatusUpdated;
     }
 
-    /** Host name for Connector. */
+    /**
+     * Host name for Connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Host name for Connector.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** Agent Id of the MACS agent. */
+    /**
+     * Agent Id of the MACS agent.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("macsAgentId")
     private final String macsAgentId;
 
     /**
      * Agent Id of the MACS agent.
-     *
      * @return the value
-     */
+     **/
     public String getMacsAgentId() {
         return macsAgentId;
     }
 
-    /** Connector port. */
+    /**
+     * Connector port.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Connector port.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
-    /** Connector Type. */
+    /**
+     * Connector Type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorType")
     private final MySqlConnectorType connectorType;
 
     /**
      * Connector Type.
-     *
      * @return the value
-     */
+     **/
     public MySqlConnectorType getConnectorType() {
         return connectorType;
     }
 
-    /** Network Protocol. */
+    /**
+     * Network Protocol.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkProtocol")
     private final MySqlNetworkProtocolType networkProtocol;
 
     /**
      * Network Protocol.
-     *
      * @return the value
-     */
+     **/
     public MySqlNetworkProtocolType getNetworkProtocol() {
         return networkProtocol;
     }
 
-    /** Credential type used to connect to database. */
+    /**
+     * Credential type used to connect to database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialType")
     private final MySqlCredType credentialType;
 
     /**
      * Credential type used to connect to database.
-     *
      * @return the value
-     */
+     **/
     public MySqlCredType getCredentialType() {
         return credentialType;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** Indicates lifecycle state of the resource. */
+    /**
+     * Indicates lifecycle  state of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleStates lifecycleState;
 
     /**
-     * Indicates lifecycle state of the resource.
-     *
+     * Indicates lifecycle  state of the resource.
      * @return the value
-     */
+     **/
     public LifecycleStates getLifecycleState() {
         return lifecycleState;
     }
@@ -720,7 +753,6 @@ public final class MySqlDatabaseConnectorSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

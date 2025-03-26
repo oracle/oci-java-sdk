@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The type of the library. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum LibraryType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of the library.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum LibraryType {
     LogReaderComponent("LOG_READER_COMPONENT"),
     ;
 

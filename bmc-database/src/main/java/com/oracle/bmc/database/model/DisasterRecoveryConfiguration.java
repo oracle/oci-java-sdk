@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Configurations of a Disaster Recovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Configurations of a Disaster Recovery.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DisasterRecoveryConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DisasterRecoveryConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DisasterRecoveryConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "disasterRecoveryType",
@@ -45,43 +44,37 @@ public final class DisasterRecoveryConfiguration
     public static class Builder {
         /**
          * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
-         */
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
         private DisasterRecoveryType disasterRecoveryType;
 
         /**
          * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery
-         * time objective (RTO) during failover or switchover. Backup-based DR type provides lower
-         * cost DR with a slower RTO during failover or switchover.
+         * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+         * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          *
          * @param disasterRecoveryType the value to set
          * @return this builder
-         */
+         **/
         public Builder disasterRecoveryType(DisasterRecoveryType disasterRecoveryType) {
             this.disasterRecoveryType = disasterRecoveryType;
             this.__explicitlySet__.add("disasterRecoveryType");
             return this;
         }
         /**
-         * Time and date stored as an RFC 3339 formatted timestamp string. For example,
-         * 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back
-         * to a cross-region standby database.
-         */
+         * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyEnabledTill")
         private java.util.Date timeSnapshotStandbyEnabledTill;
 
         /**
-         * Time and date stored as an RFC 3339 formatted timestamp string. For example,
-         * 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back
-         * to a cross-region standby database.
-         *
+         * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
          * @param timeSnapshotStandbyEnabledTill the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSnapshotStandbyEnabledTill(
                 java.util.Date timeSnapshotStandbyEnabledTill) {
             this.timeSnapshotStandbyEnabledTill = timeSnapshotStandbyEnabledTill;
@@ -89,42 +82,34 @@ public final class DisasterRecoveryConfiguration
             return this;
         }
         /**
-         * Indicates if user wants to convert to a snapshot standby. For example, true would set a
-         * standby database to snapshot standby database. False would set a snapshot standby
-         * database back to regular standby database.
-         */
+         * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotStandby")
         private Boolean isSnapshotStandby;
 
         /**
-         * Indicates if user wants to convert to a snapshot standby. For example, true would set a
-         * standby database to snapshot standby database. False would set a snapshot standby
-         * database back to regular standby database.
+         * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
          *
          * @param isSnapshotStandby the value to set
          * @return this builder
-         */
+         **/
         public Builder isSnapshotStandby(Boolean isSnapshotStandby) {
             this.isSnapshotStandby = isSnapshotStandby;
             this.__explicitlySet__.add("isSnapshotStandby");
             return this;
         }
         /**
-         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
-         * are not replicated to the Standby database.
-         */
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
         private Boolean isReplicateAutomaticBackups;
 
         /**
-         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-         * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary
-         * are not replicated to the Standby database.
-         *
+         * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
          * @param isReplicateAutomaticBackups the value to set
          * @return this builder
-         */
+         **/
         public Builder isReplicateAutomaticBackups(Boolean isReplicateAutomaticBackups) {
             this.isReplicateAutomaticBackups = isReplicateAutomaticBackups;
             this.__explicitlySet__.add("isReplicateAutomaticBackups");
@@ -165,7 +150,9 @@ public final class DisasterRecoveryConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,17 +163,17 @@ public final class DisasterRecoveryConfiguration
 
     /**
      * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
-     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
-     * with a slower RTO during failover or switchover.
-     */
-    public enum DisasterRecoveryType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     *
+     **/
+    public enum DisasterRecoveryType {
         Adg("ADG"),
         BackupBased("BACKUP_BASED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -227,78 +214,64 @@ public final class DisasterRecoveryConfiguration
     };
     /**
      * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
-     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
-     * with a slower RTO during failover or switchover.
-     */
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryType")
     private final DisasterRecoveryType disasterRecoveryType;
 
     /**
      * Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance.
-     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time
-     * objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR
-     * with a slower RTO during failover or switchover.
+     * Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover.
+     * Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      *
      * @return the value
-     */
+     **/
     public DisasterRecoveryType getDisasterRecoveryType() {
         return disasterRecoveryType;
     }
 
     /**
-     * Time and date stored as an RFC 3339 formatted timestamp string. For example,
-     * 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a
-     * cross-region standby database.
-     */
+     * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSnapshotStandbyEnabledTill")
     private final java.util.Date timeSnapshotStandbyEnabledTill;
 
     /**
-     * Time and date stored as an RFC 3339 formatted timestamp string. For example,
-     * 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a
-     * cross-region standby database.
-     *
+     * Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSnapshotStandbyEnabledTill() {
         return timeSnapshotStandbyEnabledTill;
     }
 
     /**
-     * Indicates if user wants to convert to a snapshot standby. For example, true would set a
-     * standby database to snapshot standby database. False would set a snapshot standby database
-     * back to regular standby database.
-     */
+     * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSnapshotStandby")
     private final Boolean isSnapshotStandby;
 
     /**
-     * Indicates if user wants to convert to a snapshot standby. For example, true would set a
-     * standby database to snapshot standby database. False would set a snapshot standby database
-     * back to regular standby database.
+     * Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSnapshotStandby() {
         return isSnapshotStandby;
     }
 
     /**
-     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
-     * not replicated to the Standby database.
-     */
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReplicateAutomaticBackups")
     private final Boolean isReplicateAutomaticBackups;
 
     /**
-     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or
-     * Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are
-     * not replicated to the Standby database.
-     *
+     * If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
      * @return the value
-     */
+     **/
     public Boolean getIsReplicateAutomaticBackups() {
         return isReplicateAutomaticBackups;
     }
@@ -310,7 +283,6 @@ public final class DisasterRecoveryConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

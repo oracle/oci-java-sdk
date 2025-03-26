@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OnBehalfOfRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OnBehalfOfRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OnBehalfOfRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OnBehalfOfRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "requestHeaders",
@@ -43,62 +41,66 @@ public final class OnBehalfOfRequest
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The signed headers of the customer call. */
+        /**
+         * The signed headers of the customer call.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
         private java.util.Map<String, java.util.List<String>> requestHeaders;
 
         /**
          * The signed headers of the customer call.
-         *
          * @param requestHeaders the value to set
          * @return this builder
-         */
+         **/
         public Builder requestHeaders(
                 java.util.Map<String, java.util.List<String>> requestHeaders) {
             this.requestHeaders = requestHeaders;
             this.__explicitlySet__.add("requestHeaders");
             return this;
         }
-        /** The name of the target service. */
+        /**
+         * The name of the target service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetServiceName")
         private String targetServiceName;
 
         /**
          * The name of the target service.
-         *
          * @param targetServiceName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetServiceName(String targetServiceName) {
             this.targetServiceName = targetServiceName;
             this.__explicitlySet__.add("targetServiceName");
             return this;
         }
-        /** If you have an obo token already, exchange that for a new obo token. */
+        /**
+         * If you have an obo token already, exchange that for a new obo token.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oboToken")
         private String oboToken;
 
         /**
          * If you have an obo token already, exchange that for a new obo token.
-         *
          * @param oboToken the value to set
          * @return this builder
-         */
+         **/
         public Builder oboToken(String oboToken) {
             this.oboToken = oboToken;
             this.__explicitlySet__.add("oboToken");
             return this;
         }
-        /** A duration for which the obo token is requested to be valid. */
+        /**
+         * A duration for which the obo token is requested to be valid.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expiration")
         private String expiration;
 
         /**
          * A duration for which the obo token is requested to be valid.
-         *
          * @param expiration the value to set
          * @return this builder
-         */
+         **/
         public Builder expiration(String expiration) {
             this.expiration = expiration;
             this.__explicitlySet__.add("expiration");
@@ -139,7 +141,9 @@ public final class OnBehalfOfRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -148,54 +152,58 @@ public final class OnBehalfOfRequest
         return new Builder().copy(this);
     }
 
-    /** The signed headers of the customer call. */
+    /**
+     * The signed headers of the customer call.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestHeaders")
     private final java.util.Map<String, java.util.List<String>> requestHeaders;
 
     /**
      * The signed headers of the customer call.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.List<String>> getRequestHeaders() {
         return requestHeaders;
     }
 
-    /** The name of the target service. */
+    /**
+     * The name of the target service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetServiceName")
     private final String targetServiceName;
 
     /**
      * The name of the target service.
-     *
      * @return the value
-     */
+     **/
     public String getTargetServiceName() {
         return targetServiceName;
     }
 
-    /** If you have an obo token already, exchange that for a new obo token. */
+    /**
+     * If you have an obo token already, exchange that for a new obo token.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oboToken")
     private final String oboToken;
 
     /**
      * If you have an obo token already, exchange that for a new obo token.
-     *
      * @return the value
-     */
+     **/
     public String getOboToken() {
         return oboToken;
     }
 
-    /** A duration for which the obo token is requested to be valid. */
+    /**
+     * A duration for which the obo token is requested to be valid.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expiration")
     private final String expiration;
 
     /**
      * A duration for which the obo token is requested to be valid.
-     *
      * @return the value
-     */
+     **/
     public String getExpiration() {
         return expiration;
     }
@@ -207,7 +215,6 @@ public final class OnBehalfOfRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

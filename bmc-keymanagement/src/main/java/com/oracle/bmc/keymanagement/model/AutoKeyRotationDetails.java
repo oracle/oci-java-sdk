@@ -5,23 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of auto rotation schedule for the Key being create updated or imported. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * The details of auto rotation schedule for the Key being create updated or imported.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutoKeyRotationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutoKeyRotationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutoKeyRotationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "rotationIntervalInDays",
@@ -50,109 +49,89 @@ public final class AutoKeyRotationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The interval of auto key rotation. For auto key rotation the interval should between 60
-         * day and 365 days (1 year). Note: User must specify this parameter when creating a new
-         * schedule.
-         */
+         * The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rotationIntervalInDays")
         private Integer rotationIntervalInDays;
 
         /**
-         * The interval of auto key rotation. For auto key rotation the interval should between 60
-         * day and 365 days (1 year). Note: User must specify this parameter when creating a new
-         * schedule.
-         *
+         * The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
          * @param rotationIntervalInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder rotationIntervalInDays(Integer rotationIntervalInDays) {
             this.rotationIntervalInDays = rotationIntervalInDays;
             this.__explicitlySet__.add("rotationIntervalInDays");
             return this;
         }
         /**
-         * A property indicating scheduled start date expressed as date YYYY-MM-DD String. Example:
-         * 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation
-         * as this can be done anytime approximately the scheduled day, KMS ignores the time and
-         * replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as
-         * 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by
-         * customer.
-         */
+         * A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfScheduleStart")
         private java.util.Date timeOfScheduleStart;
 
         /**
-         * A property indicating scheduled start date expressed as date YYYY-MM-DD String. Example:
-         * 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation
-         * as this can be done anytime approximately the scheduled day, KMS ignores the time and
-         * replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as
-         * 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by
-         * customer.
-         *
+         * A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
          * @param timeOfScheduleStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfScheduleStart(java.util.Date timeOfScheduleStart) {
             this.timeOfScheduleStart = timeOfScheduleStart;
             this.__explicitlySet__.add("timeOfScheduleStart");
             return this;
         }
         /**
-         * A property indicating Next estimated scheduled Time, as per the interval, expressed as
-         * date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no
-         * significance when scheduling an auto key rotation as this can be done anytime
-         * approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for
-         * example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
-         */
+         * A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRotation")
         private java.util.Date timeOfNextRotation;
 
         /**
-         * A property indicating Next estimated scheduled Time, as per the interval, expressed as
-         * date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no
-         * significance when scheduling an auto key rotation as this can be done anytime
-         * approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for
-         * example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
-         *
+         * A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
          * @param timeOfNextRotation the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfNextRotation(java.util.Date timeOfNextRotation) {
             this.timeOfNextRotation = timeOfNextRotation;
             this.__explicitlySet__.add("timeOfNextRotation");
             return this;
         }
-        /** A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}. */
+        /**
+         * A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRotation")
         private java.util.Date timeOfLastRotation;
 
         /**
          * A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}.
-         *
          * @param timeOfLastRotation the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfLastRotation(java.util.Date timeOfLastRotation) {
             this.timeOfLastRotation = timeOfLastRotation;
             this.__explicitlySet__.add("timeOfLastRotation");
             return this;
         }
-        /** The status of last execution of auto key rotation. */
+        /**
+         * The status of last execution of auto key rotation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastRotationStatus")
         private LastRotationStatus lastRotationStatus;
 
         /**
          * The status of last execution of auto key rotation.
-         *
          * @param lastRotationStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder lastRotationStatus(LastRotationStatus lastRotationStatus) {
             this.lastRotationStatus = lastRotationStatus;
             this.__explicitlySet__.add("lastRotationStatus");
             return this;
         }
-        /** The last execution status message of auto key rotation. */
+        /**
+         * The last execution status message of auto key rotation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastRotationMessage")
         private String lastRotationMessage;
 
@@ -161,7 +140,7 @@ public final class AutoKeyRotationDetails
          *
          * @param lastRotationMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder lastRotationMessage(String lastRotationMessage) {
             this.lastRotationMessage = lastRotationMessage;
             this.__explicitlySet__.add("lastRotationMessage");
@@ -210,7 +189,9 @@ public final class AutoKeyRotationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -220,90 +201,72 @@ public final class AutoKeyRotationDetails
     }
 
     /**
-     * The interval of auto key rotation. For auto key rotation the interval should between 60 day
-     * and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
-     */
+     * The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rotationIntervalInDays")
     private final Integer rotationIntervalInDays;
 
     /**
-     * The interval of auto key rotation. For auto key rotation the interval should between 60 day
-     * and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
-     *
+     * The interval of auto key rotation. For auto key rotation the interval should between 60 day and 365 days (1 year). Note: User must specify this parameter when creating a new schedule.
      * @return the value
-     */
+     **/
     public Integer getRotationIntervalInDays() {
         return rotationIntervalInDays;
     }
 
     /**
-     * A property indicating scheduled start date expressed as date YYYY-MM-DD String. Example:
-     * 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as
-     * this can be done anytime approximately the scheduled day, KMS ignores the time and replaces
-     * it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note :
-     * Today\u2019s date will be used if not specified by customer.
-     */
+     * A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfScheduleStart")
     private final java.util.Date timeOfScheduleStart;
 
     /**
-     * A property indicating scheduled start date expressed as date YYYY-MM-DD String. Example:
-     * 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as
-     * this can be done anytime approximately the scheduled day, KMS ignores the time and replaces
-     * it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note :
-     * Today\u2019s date will be used if not specified by customer.
-     *
+     * A property indicating  scheduled start date expressed as date YYYY-MM-DD String. Example: 2023-04-04T00:00:00Z. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z . Note : Today\u2019s date will be used if not specified by customer.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfScheduleStart() {
         return timeOfScheduleStart;
     }
 
     /**
-     * A property indicating Next estimated scheduled Time, as per the interval, expressed as date
-     * YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when
-     * scheduling an auto key rotation as this can be done anytime approximately the scheduled day,
-     * KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be
-     * used as 2023-04-04T00:00:00Z.
-     */
+     * A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfNextRotation")
     private final java.util.Date timeOfNextRotation;
 
     /**
-     * A property indicating Next estimated scheduled Time, as per the interval, expressed as date
-     * YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when
-     * scheduling an auto key rotation as this can be done anytime approximately the scheduled day,
-     * KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be
-     * used as 2023-04-04T00:00:00Z.
-     *
+     * A property indicating Next estimated scheduled Time, as per the interval, expressed as date YYYY-MM-DD String. Example: {@code 2023-04-04T00:00:00Z}. The time has no significance when scheduling an auto key rotation as this can be done anytime approximately the scheduled day, KMS ignores the time and replaces it with 00:00, for example 2023-04-04T15:14:13Z will be used as 2023-04-04T00:00:00Z.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfNextRotation() {
         return timeOfNextRotation;
     }
 
-    /** A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}. */
+    /**
+     * A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastRotation")
     private final java.util.Date timeOfLastRotation;
 
     /**
      * A property indicating Last rotation Date. Example: {@code 2023-04-04T00:00:00Z}.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfLastRotation() {
         return timeOfLastRotation;
     }
 
-    /** The status of last execution of auto key rotation. */
-    public enum LastRotationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of last execution of auto key rotation.
+     **/
+    public enum LastRotationStatus {
         Success("SUCCESS"),
         Failed("FAILED"),
         InProgress("IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -342,20 +305,24 @@ public final class AutoKeyRotationDetails
             return UnknownEnumValue;
         }
     };
-    /** The status of last execution of auto key rotation. */
+    /**
+     * The status of last execution of auto key rotation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastRotationStatus")
     private final LastRotationStatus lastRotationStatus;
 
     /**
      * The status of last execution of auto key rotation.
-     *
      * @return the value
-     */
+     **/
     public LastRotationStatus getLastRotationStatus() {
         return lastRotationStatus;
     }
 
-    /** The last execution status message of auto key rotation. */
+    /**
+     * The last execution status message of auto key rotation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastRotationMessage")
     private final String lastRotationMessage;
 
@@ -363,7 +330,7 @@ public final class AutoKeyRotationDetails
      * The last execution status message of auto key rotation.
      *
      * @return the value
-     */
+     **/
     public String getLastRotationMessage() {
         return lastRotationMessage;
     }
@@ -375,7 +342,6 @@ public final class AutoKeyRotationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

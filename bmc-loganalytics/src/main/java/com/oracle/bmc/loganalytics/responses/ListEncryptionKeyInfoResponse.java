@@ -6,17 +6,16 @@ package com.oracle.bmc.loganalytics.responses;
 
 import com.oracle.bmc.loganalytics.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific
-     * request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +23,14 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** The returned {@code EncryptionKeyInfoCollection} instance. */
+    /**
+     * The returned EncryptionKeyInfoCollection instance.
+     */
     private com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
             encryptionKeyInfoCollection;
 
     /**
-     * The returned {@code EncryptionKeyInfoCollection} instance.
-     *
+     * The returned EncryptionKeyInfoCollection instance.
      * @return the value
      */
     public com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
@@ -46,7 +46,7 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
     })
     private ListEncryptionKeyInfoResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
                     encryptionKeyInfoCollection) {
@@ -55,33 +55,29 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
         this.encryptionKeyInfoCollection = encryptionKeyInfoCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListEncryptionKeyInfoResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a
-         * specific request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. When you contact Oracle about a specific request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -91,13 +87,14 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code EncryptionKeyInfoCollection} instance. */
+        /**
+         * The returned EncryptionKeyInfoCollection instance.
+         */
         private com.oracle.bmc.loganalytics.model.EncryptionKeyInfoCollection
                 encryptionKeyInfoCollection;
 
         /**
-         * The returned {@code EncryptionKeyInfoCollection} instance.
-         *
+         * The returned EncryptionKeyInfoCollection instance.
          * @param encryptionKeyInfoCollection the value to set
          * @return this builder
          */
@@ -110,10 +107,8 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListEncryptionKeyInfoResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -125,10 +120,8 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListEncryptionKeyInfoResponse build() {
             return new ListEncryptionKeyInfoResponse(
                     __httpStatusCode__, headers, opcRequestId, encryptionKeyInfoCollection);
@@ -137,7 +130,6 @@ public class ListEncryptionKeyInfoResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

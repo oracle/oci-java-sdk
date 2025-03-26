@@ -5,36 +5,39 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Details of target member of a Exadata Fleet Update Collection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Details of target member of a Exadata Fleet Update Collection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityType",
-        defaultImpl = TargetDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType",
+    defaultImpl = TargetDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = VmClusterTargetSummary.class,
-            name = "VMCLUSTER"),
+        value = VmClusterTargetSummary.class,
+        name = "VMCLUSTER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CloudVmClusterTargetSummary.class,
-            name = "CLOUDVMCLUSTER"),
+        value = CloudVmClusterTargetSummary.class,
+        name = "CLOUDVMCLUSTER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseTargetSummary.class,
-            name = "DATABASE")
+        value = DatabaseTargetSummary.class,
+        name = "DATABASE"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class TargetDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class TargetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "compartmentId"})
     protected TargetDetails(String id, String compartmentId) {
@@ -43,20 +46,24 @@ public class TargetDetails extends com.oracle.bmc.http.client.internal.Explicitl
         this.compartmentId = compartmentId;
     }
 
-    /** OCID of the target resource in the Exadata Fleet Update Collection. */
+    /**
+     * OCID of the target resource in the Exadata Fleet Update Collection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of the target resource in the Exadata Fleet Update Collection.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Compartment identifier of the target. */
+    /**
+     * Compartment identifier of the target.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
@@ -64,7 +71,7 @@ public class TargetDetails extends com.oracle.bmc.http.client.internal.Explicitl
      * Compartment identifier of the target.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -76,7 +83,6 @@ public class TargetDetails extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -117,15 +123,18 @@ public class TargetDetails extends com.oracle.bmc.http.client.internal.Explicitl
         return result;
     }
 
-    /** Resource EntityType for the target in the Exadata Fleet Update Collection. */
-    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Resource EntityType for the target in the Exadata Fleet Update Collection.
+     *
+     **/
+    public enum EntityType {
         Database("DATABASE"),
         Vmcluster("VMCLUSTER"),
         Cloudvmcluster("CLOUDVMCLUSTER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

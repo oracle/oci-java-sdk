@@ -5,23 +5,22 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * The compute instance shape configuration requested for each desktop in the desktop pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * The compute instance shape configuration requested for each desktop in the desktop pool.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDesktopPoolShapeConfigDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDesktopPoolShapeConfigDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDesktopPoolShapeConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ocpus", "memoryInGBs", "baselineOcpuUtilization"})
     public CreateDesktopPoolShapeConfigDetails(
@@ -35,69 +34,70 @@ public final class CreateDesktopPoolShapeConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The total number of OCPUs available for each desktop compute instance in the desktop
-         * pool.
-         */
+         * The total number of OCPUs available for each desktop compute instance in the desktop pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Long ocpus;
 
         /**
-         * The total number of OCPUs available for each desktop compute instance in the desktop
-         * pool.
+         * The total number of OCPUs available for each desktop compute instance in the desktop pool.
          *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Long ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
         /**
-         * The total amount of memory available in gigabytes for each desktop compute instance in
-         * the desktop pool.
-         */
+         * The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Long memoryInGBs;
 
         /**
-         * The total amount of memory available in gigabytes for each desktop compute instance in
-         * the desktop pool.
+         * The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Long memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop
-         * compute instance in the desktop pool. Leave this attribute blank for a non-burstable
-         * instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in
+         * the desktop pool.
+         * Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with
+         * {@code BASELINE_1_1}.
          *
-         * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of
-         * an OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code
-         * BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable
-         * instance.
-         */
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
         private BaselineOcpuUtilization baselineOcpuUtilization;
 
         /**
-         * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop
-         * compute instance in the desktop pool. Leave this attribute blank for a non-burstable
-         * instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+         * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in
+         * the desktop pool.
+         * Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with
+         * {@code BASELINE_1_1}.
          *
-         * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of
-         * an OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code
-         * BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable
-         * instance.
+         * The following values are supported:
+         * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+         * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+         * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
          *
          * @param baselineOcpuUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder baselineOcpuUtilization(BaselineOcpuUtilization baselineOcpuUtilization) {
             this.baselineOcpuUtilization = baselineOcpuUtilization;
             this.__explicitlySet__.add("baselineOcpuUtilization");
@@ -132,7 +132,9 @@ public final class CreateDesktopPoolShapeConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,7 +145,8 @@ public final class CreateDesktopPoolShapeConfigDetails
 
     /**
      * The total number of OCPUs available for each desktop compute instance in the desktop pool.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Long ocpus;
 
@@ -151,38 +154,40 @@ public final class CreateDesktopPoolShapeConfigDetails
      * The total number of OCPUs available for each desktop compute instance in the desktop pool.
      *
      * @return the value
-     */
+     **/
     public Long getOcpus() {
         return ocpus;
     }
 
     /**
-     * The total amount of memory available in gigabytes for each desktop compute instance in the
-     * desktop pool.
-     */
+     * The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Long memoryInGBs;
 
     /**
-     * The total amount of memory available in gigabytes for each desktop compute instance in the
-     * desktop pool.
+     * The total amount of memory available in gigabytes for each desktop compute instance in the desktop pool.
      *
      * @return the value
-     */
+     **/
     public Long getMemoryInGBs() {
         return memoryInGBs;
     }
 
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop
-     * compute instance in the desktop pool. Leave this attribute blank for a non-burstable
-     * instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in
+     * the desktop pool.
+     * Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with
+     * {@code BASELINE_1_1}.
      *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is the entire OCPU. This represents a non-burstable instance.
-     */
-    public enum BaselineOcpuUtilization implements com.oracle.bmc.http.internal.BmcEnum {
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     *
+     **/
+    public enum BaselineOcpuUtilization {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
         Baseline11("BASELINE_1_1"),
@@ -216,28 +221,33 @@ public final class CreateDesktopPoolShapeConfigDetails
         }
     };
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop
-     * compute instance in the desktop pool. Leave this attribute blank for a non-burstable
-     * instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in
+     * the desktop pool.
+     * Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with
+     * {@code BASELINE_1_1}.
      *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is the entire OCPU. This represents a non-burstable instance.
-     */
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilization")
     private final BaselineOcpuUtilization baselineOcpuUtilization;
 
     /**
-     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop
-     * compute instance in the desktop pool. Leave this attribute blank for a non-burstable
-     * instance, or explicitly specify non-burstable with {@code BASELINE_1_1}.
+     * The baseline OCPU utilization for a subcore burstable VM instance used for each desktop compute instance in
+     * the desktop pool.
+     * Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with
+     * {@code BASELINE_1_1}.
      *
-     * <p>The following values are supported: - {@code BASELINE_1_8} - baseline usage is 1/8 of an
-     * OCPU. - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU. - {@code BASELINE_1_1} -
-     * baseline usage is the entire OCPU. This represents a non-burstable instance.
+     * The following values are supported:
+     * - {@code BASELINE_1_8} - baseline usage is 1/8 of an OCPU.
+     * - {@code BASELINE_1_2} - baseline usage is 1/2 of an OCPU.
+     * - {@code BASELINE_1_1} - baseline usage is the entire OCPU. This represents a non-burstable instance.
      *
      * @return the value
-     */
+     **/
     public BaselineOcpuUtilization getBaselineOcpuUtilization() {
         return baselineOcpuUtilization;
     }
@@ -249,7 +259,6 @@ public final class CreateDesktopPoolShapeConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

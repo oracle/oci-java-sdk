@@ -7,14 +7,14 @@ package com.oracle.bmc.auth;
 import java.time.Duration;
 
 /**
- * An interface that has the API to return refresh security token after if the token expires within
+ * An interface that has the API to return
+ * refresh security token after if the token expires within
  * a configurable time
  */
 public interface ProvidesConfigurableRefresh {
     /**
-     * Gets a security token from the federation endpoint if the security token expires within the
-     * provided duration. This will always retrieve a new token from the federation endpoint and
-     * does not use a cached token.
+     * Gets a security token from the federation endpoint if the security token expires within the provided duration.
+     * This will always retrieve a new token from the federation endpoint and does not use a cached token.
      *
      * @param time the duration to check
      * @return A security token that can be used to authenticate requests.
@@ -22,9 +22,9 @@ public interface ProvidesConfigurableRefresh {
     String refreshAndGetSecurityTokenIfExpiringWithin(Duration time);
 
     /**
-     * Gets a security token from the federation endpoint if the security token expires within the
-     * provided duration and allows to enable/disable refresh of keys. This will always retrieve a
-     * new token from the federation endpoint and does not use a cached token.
+     * Gets a security token from the federation endpoint if the security token expires within the provided duration
+     * and allows to enable/disable refresh of keys. This will always retrieve a new token from the federation endpoint
+     * and does not use a cached token.
      *
      * @param time the duration to check
      * @param refreshKeys boolean value to enable/disable refresh of keys

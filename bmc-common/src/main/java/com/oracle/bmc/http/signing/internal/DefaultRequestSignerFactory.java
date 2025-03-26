@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
+import java.security.PrivateKey;
 import java.security.interfaces.RSAPrivateKey;
 import java.util.Collections;
 import java.util.HashMap;
@@ -16,25 +17,26 @@ import com.oracle.bmc.Service;
 import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.AuthCachingPolicy;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
+import com.oracle.bmc.auth.YubikeyAuthenticationDetailsProvider;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
 /**
- * Factory class to create RequestSigner instances. Takes care of setting up the appropriate
- * suppliers based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.
- * By default, all credentials are cacheable.
- *
- * <p>This factory supports authentication providers that inherit from {@link
- * BasicAuthenticationDetailsProvider}.
+ * Factory class to create RequestSigner instances. Takes care of setting up the appropriate suppliers
+ * based on the cacheability of the credentials (indicated by {@link AuthCachingPolicy}.  By default,
+ * all credentials are cacheable.
+ * <p>
+ * This factory supports authentication providers that inherit from
+ * {@link BasicAuthenticationDetailsProvider}.
  */
 public class DefaultRequestSignerFactory implements RequestSignerFactory {
     private final SigningStrategy signingStrategy;
 
     /**
      * {@inheritDoc}
-     *
-     * <p>Note, service parameter is not used by this factory.
+     * <p>
+     * Note, service parameter is not used by this factory.
      */
     @Override
     public RequestSigner createRequestSigner(
@@ -50,12 +52,23 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         AuthCachingPolicy policy = getAuthCachingPolicy(authProvider);
 
         Supplier<String> keyIdSupplier = createKeyIdSupplier(authProvider, policy);
+
+        if (abstractAuthProvider instanceof YubikeyAuthenticationDetailsProvider) {
+            // YubikeyAuthenticationDetailsProvider requires a different request signer constructor
+            KeySupplier<PrivateKey> keySupplier =
+                    keyId ->
+                            Optional.ofNullable(
+                                    ((YubikeyAuthenticationDetailsProvider) abstractAuthProvider)
+                                            .getYubikeyPrivateKey());
+            return new RequestSignerImpl(signingStrategy, keySupplier, keyIdSupplier);
+        }
+
         KeySupplier<RSAPrivateKey> keySupplier = createKeySupplier(authProvider, policy);
 
         return new RequestSignerImpl(keySupplier, signingStrategy, keyIdSupplier);
     }
 
-    protected Supplier<String> createKeyIdSupplier(
+    private static Supplier<String> createKeyIdSupplier(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             final AuthCachingPolicy policy) {
         boolean cacheKeyId = true;
@@ -83,7 +96,7 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
         };
     }
 
-    public static KeySupplier<RSAPrivateKey> createKeySupplier(
+    private static KeySupplier<RSAPrivateKey> createKeySupplier(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             final AuthCachingPolicy policy) {
         boolean cachePrivateKey = true;
@@ -110,14 +123,13 @@ public class DefaultRequestSignerFactory implements RequestSignerFactory {
                 authenticationDetailsProvider.getPassphraseCharacters());
     }
 
-    public static AuthCachingPolicy getAuthCachingPolicy(
+    private static AuthCachingPolicy getAuthCachingPolicy(
             final BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
         return authenticationDetailsProvider.getClass().getAnnotation(AuthCachingPolicy.class);
     }
 
     /**
      * Create the default request signer factories.
-     *
      * @return default request signer factories
      */
     public static Map<SigningStrategy, RequestSignerFactory> createDefaultRequestSignerFactories() {

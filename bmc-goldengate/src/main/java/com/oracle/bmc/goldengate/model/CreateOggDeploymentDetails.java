@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Deployment Data for creating an OggDeployment <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Deployment Data for creating an OggDeployment
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOggDeploymentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOggDeploymentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOggDeploymentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "deploymentName",
@@ -62,25 +62,29 @@ public final class CreateOggDeploymentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-         * long, must contain only alphanumeric characters and must start with a letter.
-         */
+         * The name given to the GoldenGate service deployment.
+         * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
         private String deploymentName;
 
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-         * long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment.
+         * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
          *
          * @param deploymentName the value to set
          * @return this builder
-         */
+         **/
         public Builder deploymentName(String deploymentName) {
             this.deploymentName = deploymentName;
             this.__explicitlySet__.add("deploymentName");
             return this;
         }
-        /** The type of credential store for OGG. */
+        /**
+         * The type of credential store for OGG.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
         private CredentialStore credentialStore;
 
@@ -89,51 +93,52 @@ public final class CreateOggDeploymentDetails
          *
          * @param credentialStore the value to set
          * @return this builder
-         */
+         **/
         public Builder credentialStore(CredentialStore credentialStore) {
             this.credentialStore = credentialStore;
             this.__explicitlySet__.add("credentialStore");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Identity Domain when IAM credential store is used.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
         private String identityDomainId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Identity Domain when IAM credential store is used.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
          *
          * @param identityDomainId the value to set
          * @return this builder
-         */
+         **/
         public Builder identityDomainId(String identityDomainId) {
             this.identityDomainId = identityDomainId;
             this.__explicitlySet__.add("identityDomainId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the deployment password is stored.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the deployment password is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** The GoldenGate deployment console username. */
+        /**
+         * The GoldenGate deployment console username.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
         private String adminUsername;
 
@@ -142,36 +147,40 @@ public final class CreateOggDeploymentDetails
          *
          * @param adminUsername the value to set
          * @return this builder
-         */
+         **/
         public Builder adminUsername(String adminUsername) {
             this.adminUsername = adminUsername;
             this.__explicitlySet__.add("adminUsername");
             return this;
         }
         /**
-         * The password associated with the GoldenGate deployment console username. The password
-         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
-         * numeric, and 1 special character. Special characters such as '$', '^', or '?' are not
-         * allowed. This field will be deprecated and replaced by "passwordSecretId".
-         */
+         * The password associated with the GoldenGate deployment console username.
+         * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
         /**
-         * The password associated with the GoldenGate deployment console username. The password
-         * must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1
-         * numeric, and 1 special character. Special characters such as '$', '^', or '?' are not
-         * allowed. This field will be deprecated and replaced by "passwordSecretId".
+         * The password associated with the GoldenGate deployment console username.
+         * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+         * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+         * This field will be deprecated and replaced by "passwordSecretId".
          *
          * @param adminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /** The base64 encoded content of the PEM file containing the SSL certificate. */
+        /**
+         * The base64 encoded content of the PEM file containing the SSL certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
@@ -180,13 +189,16 @@ public final class CreateOggDeploymentDetails
          *
          * @param certificate the value to set
          * @return this builder
-         */
+         **/
         public Builder certificate(String certificate) {
             this.certificate = certificate;
             this.__explicitlySet__.add("certificate");
             return this;
         }
-        /** The base64 encoded content of the PEM file containing the private key. */
+        /**
+         * The base64 encoded content of the PEM file containing the private key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
@@ -195,13 +207,16 @@ public final class CreateOggDeploymentDetails
          *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Version of OGG */
+        /**
+         * Version of OGG
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
         private String oggVersion;
 
@@ -210,7 +225,7 @@ public final class CreateOggDeploymentDetails
          *
          * @param oggVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder oggVersion(String oggVersion) {
             this.oggVersion = oggVersion;
             this.__explicitlySet__.add("oggVersion");
@@ -284,7 +299,9 @@ public final class CreateOggDeploymentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -294,23 +311,27 @@ public final class CreateOggDeploymentDetails
     }
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-     * long, must contain only alphanumeric characters and must start with a letter.
-     */
+     * The name given to the GoldenGate service deployment.
+     * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deploymentName")
     private final String deploymentName;
 
     /**
-     * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters
-     * long, must contain only alphanumeric characters and must start with a letter.
+     * The name given to the GoldenGate service deployment.
+     * The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      *
      * @return the value
-     */
+     **/
     public String getDeploymentName() {
         return deploymentName;
     }
 
-    /** The type of credential store for OGG. */
+    /**
+     * The type of credential store for OGG.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("credentialStore")
     private final CredentialStore credentialStore;
 
@@ -318,46 +339,47 @@ public final class CreateOggDeploymentDetails
      * The type of credential store for OGG.
      *
      * @return the value
-     */
+     **/
     public CredentialStore getCredentialStore() {
         return credentialStore;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Identity Domain when IAM credential store is used.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identityDomainId")
     private final String identityDomainId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Identity Domain when IAM credential store is used.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
      *
      * @return the value
-     */
+     **/
     public String getIdentityDomainId() {
         return identityDomainId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the deployment password is stored.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the deployment password is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
-    /** The GoldenGate deployment console username. */
+    /**
+     * The GoldenGate deployment console username.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminUsername")
     private final String adminUsername;
 
@@ -365,33 +387,37 @@ public final class CreateOggDeploymentDetails
      * The GoldenGate deployment console username.
      *
      * @return the value
-     */
+     **/
     public String getAdminUsername() {
         return adminUsername;
     }
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be
-     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
-     * special character. Special characters such as '$', '^', or '?' are not allowed. This field
-     * will be deprecated and replaced by "passwordSecretId".
-     */
+     * The password associated with the GoldenGate deployment console username.
+     * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
     /**
-     * The password associated with the GoldenGate deployment console username. The password must be
-     * 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1
-     * special character. Special characters such as '$', '^', or '?' are not allowed. This field
-     * will be deprecated and replaced by "passwordSecretId".
+     * The password associated with the GoldenGate deployment console username.
+     * The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric,
+     * and 1 special character. Special characters such as '$', '^', or '?' are not allowed.
+     * This field will be deprecated and replaced by "passwordSecretId".
      *
      * @return the value
-     */
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }
 
-    /** The base64 encoded content of the PEM file containing the SSL certificate. */
+    /**
+     * The base64 encoded content of the PEM file containing the SSL certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
@@ -399,12 +425,15 @@ public final class CreateOggDeploymentDetails
      * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
-     */
+     **/
     public String getCertificate() {
         return certificate;
     }
 
-    /** The base64 encoded content of the PEM file containing the private key. */
+    /**
+     * The base64 encoded content of the PEM file containing the private key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
@@ -412,12 +441,15 @@ public final class CreateOggDeploymentDetails
      * The base64 encoded content of the PEM file containing the private key.
      *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Version of OGG */
+    /**
+     * Version of OGG
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oggVersion")
     private final String oggVersion;
 
@@ -425,7 +457,7 @@ public final class CreateOggDeploymentDetails
      * Version of OGG
      *
      * @return the value
-     */
+     **/
     public String getOggVersion() {
         return oggVersion;
     }
@@ -444,7 +476,6 @@ public final class CreateOggDeploymentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

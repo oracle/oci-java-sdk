@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * The page token represents the page to start retrieving results. This is usually retrieved
      * from a previous list call.
+     *
      */
     private String opcNextPage;
 
@@ -27,6 +28,7 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -40,13 +42,14 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** The returned {@code PipelineRunningProcessCollection} instance. */
+    /**
+     * The returned PipelineRunningProcessCollection instance.
+     */
     private com.oracle.bmc.goldengate.model.PipelineRunningProcessCollection
             pipelineRunningProcessCollection;
 
     /**
-     * The returned {@code PipelineRunningProcessCollection} instance.
-     *
+     * The returned PipelineRunningProcessCollection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.PipelineRunningProcessCollection
@@ -63,7 +66,7 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
     })
     private ListPipelineRunningProcessesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcNextPage,
             String opcRequestId,
             com.oracle.bmc.goldengate.model.PipelineRunningProcessCollection
@@ -74,21 +77,17 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
         this.pipelineRunningProcessCollection = pipelineRunningProcessCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListPipelineRunningProcessesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -96,6 +95,7 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
         /**
          * The page token represents the page to start retrieving results. This is usually retrieved
          * from a previous list call.
+         *
          */
         private String opcNextPage;
 
@@ -112,14 +112,15 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,13 +130,14 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code PipelineRunningProcessCollection} instance. */
+        /**
+         * The returned PipelineRunningProcessCollection instance.
+         */
         private com.oracle.bmc.goldengate.model.PipelineRunningProcessCollection
                 pipelineRunningProcessCollection;
 
         /**
-         * The returned {@code PipelineRunningProcessCollection} instance.
-         *
+         * The returned PipelineRunningProcessCollection instance.
          * @param pipelineRunningProcessCollection the value to set
          * @return this builder
          */
@@ -148,10 +150,8 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListPipelineRunningProcessesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -164,10 +164,8 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListPipelineRunningProcessesResponse build() {
             return new ListPipelineRunningProcessesResponse(
                     __httpStatusCode__,
@@ -180,7 +178,6 @@ public class ListPipelineRunningProcessesResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * IPsec tunnel detail information specific to phase two. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * IPsec tunnel detail information specific to phase two.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TunnelPhaseTwoDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TunnelPhaseTwoDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TunnelPhaseTwoDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isCustomPhaseTwoConfig",
@@ -68,55 +67,61 @@ public final class TunnelPhaseTwoDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Indicates whether custom phase two configuration is enabled. If this option is not
-         * enabled, default settings are proposed.
-         */
+         * Indicates whether custom phase two configuration is enabled.
+         * If this option is not enabled, default settings are proposed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
         private Boolean isCustomPhaseTwoConfig;
 
         /**
-         * Indicates whether custom phase two configuration is enabled. If this option is not
-         * enabled, default settings are proposed.
+         * Indicates whether custom phase two configuration is enabled.
+         * If this option is not enabled, default settings are proposed.
          *
          * @param isCustomPhaseTwoConfig the value to set
          * @return this builder
-         */
+         **/
         public Builder isCustomPhaseTwoConfig(Boolean isCustomPhaseTwoConfig) {
             this.isCustomPhaseTwoConfig = isCustomPhaseTwoConfig;
             this.__explicitlySet__.add("isCustomPhaseTwoConfig");
             return this;
         }
-        /** The total configured lifetime of the IKE security association. */
+        /**
+         * The total configured lifetime of the IKE security association.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Long lifetime;
 
         /**
          * The total configured lifetime of the IKE security association.
-         *
          * @param lifetime the value to set
          * @return this builder
-         */
+         **/
         public Builder lifetime(Long lifetime) {
             this.lifetime = lifetime;
             this.__explicitlySet__.add("lifetime");
             return this;
         }
-        /** The remaining lifetime before the key is refreshed. */
+        /**
+         * The remaining lifetime before the key is refreshed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetime")
         private Long remainingLifetime;
 
         /**
          * The remaining lifetime before the key is refreshed.
-         *
          * @param remainingLifetime the value to set
          * @return this builder
-         */
+         **/
         public Builder remainingLifetime(Long remainingLifetime) {
             this.remainingLifetime = remainingLifetime;
             this.__explicitlySet__.add("remainingLifetime");
             return this;
         }
-        /** Phase two authentication algorithm proposed during tunnel negotiation. */
+        /**
+         * Phase two authentication algorithm proposed during tunnel negotiation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customAuthenticationAlgorithm")
         private String customAuthenticationAlgorithm;
 
@@ -125,28 +130,32 @@ public final class TunnelPhaseTwoDetails
          *
          * @param customAuthenticationAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder customAuthenticationAlgorithm(String customAuthenticationAlgorithm) {
             this.customAuthenticationAlgorithm = customAuthenticationAlgorithm;
             this.__explicitlySet__.add("customAuthenticationAlgorithm");
             return this;
         }
-        /** The negotiated phase two authentication algorithm. */
+        /**
+         * The negotiated phase two authentication algorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("negotiatedAuthenticationAlgorithm")
         private String negotiatedAuthenticationAlgorithm;
 
         /**
          * The negotiated phase two authentication algorithm.
-         *
          * @param negotiatedAuthenticationAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder negotiatedAuthenticationAlgorithm(String negotiatedAuthenticationAlgorithm) {
             this.negotiatedAuthenticationAlgorithm = negotiatedAuthenticationAlgorithm;
             this.__explicitlySet__.add("negotiatedAuthenticationAlgorithm");
             return this;
         }
-        /** The proposed custom phase two encryption algorithm. */
+        /**
+         * The proposed custom phase two encryption algorithm.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionAlgorithm")
         private String customEncryptionAlgorithm;
 
@@ -155,28 +164,32 @@ public final class TunnelPhaseTwoDetails
          *
          * @param customEncryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder customEncryptionAlgorithm(String customEncryptionAlgorithm) {
             this.customEncryptionAlgorithm = customEncryptionAlgorithm;
             this.__explicitlySet__.add("customEncryptionAlgorithm");
             return this;
         }
-        /** The negotiated encryption algorithm. */
+        /**
+         * The negotiated encryption algorithm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("negotiatedEncryptionAlgorithm")
         private String negotiatedEncryptionAlgorithm;
 
         /**
          * The negotiated encryption algorithm.
-         *
          * @param negotiatedEncryptionAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder negotiatedEncryptionAlgorithm(String negotiatedEncryptionAlgorithm) {
             this.negotiatedEncryptionAlgorithm = negotiatedEncryptionAlgorithm;
             this.__explicitlySet__.add("negotiatedEncryptionAlgorithm");
             return this;
         }
-        /** The proposed Diffie-Hellman group. */
+        /**
+         * The proposed Diffie-Hellman group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dhGroup")
         private String dhGroup;
 
@@ -185,75 +198,77 @@ public final class TunnelPhaseTwoDetails
          *
          * @param dhGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder dhGroup(String dhGroup) {
             this.dhGroup = dhGroup;
             this.__explicitlySet__.add("dhGroup");
             return this;
         }
-        /** The negotiated Diffie-Hellman group. */
+        /**
+         * The negotiated Diffie-Hellman group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("negotiatedDhGroup")
         private String negotiatedDhGroup;
 
         /**
          * The negotiated Diffie-Hellman group.
-         *
          * @param negotiatedDhGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder negotiatedDhGroup(String negotiatedDhGroup) {
             this.negotiatedDhGroup = negotiatedDhGroup;
             this.__explicitlySet__.add("negotiatedDhGroup");
             return this;
         }
-        /** Indicates that ESP phase two is established. */
+        /**
+         * Indicates that ESP phase two is established.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEspEstablished")
         private Boolean isEspEstablished;
 
         /**
          * Indicates that ESP phase two is established.
-         *
          * @param isEspEstablished the value to set
          * @return this builder
-         */
+         **/
         public Builder isEspEstablished(Boolean isEspEstablished) {
             this.isEspEstablished = isEspEstablished;
             this.__explicitlySet__.add("isEspEstablished");
             return this;
         }
-        /** Indicates that PFS (perfect forward secrecy) is enabled. */
+        /**
+         * Indicates that PFS (perfect forward secrecy) is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
         private Boolean isPfsEnabled;
 
         /**
          * Indicates that PFS (perfect forward secrecy) is enabled.
-         *
          * @param isPfsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPfsEnabled(Boolean isPfsEnabled) {
             this.isPfsEnabled = isPfsEnabled;
             this.__explicitlySet__.add("isPfsEnabled");
             return this;
         }
         /**
-         * The date and time the remaining lifetime was last retrieved, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetimeLastRetrieved")
         private java.util.Date remainingLifetimeLastRetrieved;
 
         /**
-         * The date and time the remaining lifetime was last retrieved, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param remainingLifetimeLastRetrieved the value to set
          * @return this builder
-         */
+         **/
         public Builder remainingLifetimeLastRetrieved(
                 java.util.Date remainingLifetimeLastRetrieved) {
             this.remainingLifetimeLastRetrieved = remainingLifetimeLastRetrieved;
@@ -328,7 +343,9 @@ public final class TunnelPhaseTwoDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -338,49 +355,55 @@ public final class TunnelPhaseTwoDetails
     }
 
     /**
-     * Indicates whether custom phase two configuration is enabled. If this option is not enabled,
-     * default settings are proposed.
-     */
+     * Indicates whether custom phase two configuration is enabled.
+     * If this option is not enabled, default settings are proposed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCustomPhaseTwoConfig")
     private final Boolean isCustomPhaseTwoConfig;
 
     /**
-     * Indicates whether custom phase two configuration is enabled. If this option is not enabled,
-     * default settings are proposed.
+     * Indicates whether custom phase two configuration is enabled.
+     * If this option is not enabled, default settings are proposed.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCustomPhaseTwoConfig() {
         return isCustomPhaseTwoConfig;
     }
 
-    /** The total configured lifetime of the IKE security association. */
+    /**
+     * The total configured lifetime of the IKE security association.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Long lifetime;
 
     /**
      * The total configured lifetime of the IKE security association.
-     *
      * @return the value
-     */
+     **/
     public Long getLifetime() {
         return lifetime;
     }
 
-    /** The remaining lifetime before the key is refreshed. */
+    /**
+     * The remaining lifetime before the key is refreshed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetime")
     private final Long remainingLifetime;
 
     /**
      * The remaining lifetime before the key is refreshed.
-     *
      * @return the value
-     */
+     **/
     public Long getRemainingLifetime() {
         return remainingLifetime;
     }
 
-    /** Phase two authentication algorithm proposed during tunnel negotiation. */
+    /**
+     * Phase two authentication algorithm proposed during tunnel negotiation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customAuthenticationAlgorithm")
     private final String customAuthenticationAlgorithm;
 
@@ -388,25 +411,29 @@ public final class TunnelPhaseTwoDetails
      * Phase two authentication algorithm proposed during tunnel negotiation.
      *
      * @return the value
-     */
+     **/
     public String getCustomAuthenticationAlgorithm() {
         return customAuthenticationAlgorithm;
     }
 
-    /** The negotiated phase two authentication algorithm. */
+    /**
+     * The negotiated phase two authentication algorithm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedAuthenticationAlgorithm")
     private final String negotiatedAuthenticationAlgorithm;
 
     /**
      * The negotiated phase two authentication algorithm.
-     *
      * @return the value
-     */
+     **/
     public String getNegotiatedAuthenticationAlgorithm() {
         return negotiatedAuthenticationAlgorithm;
     }
 
-    /** The proposed custom phase two encryption algorithm. */
+    /**
+     * The proposed custom phase two encryption algorithm.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customEncryptionAlgorithm")
     private final String customEncryptionAlgorithm;
 
@@ -414,25 +441,29 @@ public final class TunnelPhaseTwoDetails
      * The proposed custom phase two encryption algorithm.
      *
      * @return the value
-     */
+     **/
     public String getCustomEncryptionAlgorithm() {
         return customEncryptionAlgorithm;
     }
 
-    /** The negotiated encryption algorithm. */
+    /**
+     * The negotiated encryption algorithm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedEncryptionAlgorithm")
     private final String negotiatedEncryptionAlgorithm;
 
     /**
      * The negotiated encryption algorithm.
-     *
      * @return the value
-     */
+     **/
     public String getNegotiatedEncryptionAlgorithm() {
         return negotiatedEncryptionAlgorithm;
     }
 
-    /** The proposed Diffie-Hellman group. */
+    /**
+     * The proposed Diffie-Hellman group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dhGroup")
     private final String dhGroup;
 
@@ -440,67 +471,69 @@ public final class TunnelPhaseTwoDetails
      * The proposed Diffie-Hellman group.
      *
      * @return the value
-     */
+     **/
     public String getDhGroup() {
         return dhGroup;
     }
 
-    /** The negotiated Diffie-Hellman group. */
+    /**
+     * The negotiated Diffie-Hellman group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("negotiatedDhGroup")
     private final String negotiatedDhGroup;
 
     /**
      * The negotiated Diffie-Hellman group.
-     *
      * @return the value
-     */
+     **/
     public String getNegotiatedDhGroup() {
         return negotiatedDhGroup;
     }
 
-    /** Indicates that ESP phase two is established. */
+    /**
+     * Indicates that ESP phase two is established.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEspEstablished")
     private final Boolean isEspEstablished;
 
     /**
      * Indicates that ESP phase two is established.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEspEstablished() {
         return isEspEstablished;
     }
 
-    /** Indicates that PFS (perfect forward secrecy) is enabled. */
+    /**
+     * Indicates that PFS (perfect forward secrecy) is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPfsEnabled")
     private final Boolean isPfsEnabled;
 
     /**
      * Indicates that PFS (perfect forward secrecy) is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPfsEnabled() {
         return isPfsEnabled;
     }
 
     /**
-     * The date and time the remaining lifetime was last retrieved, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remainingLifetimeLastRetrieved")
     private final java.util.Date remainingLifetimeLastRetrieved;
 
     /**
-     * The date and time the remaining lifetime was last retrieved, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the remaining lifetime was last retrieved, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getRemainingLifetimeLastRetrieved() {
         return remainingLifetimeLastRetrieved;
     }
@@ -512,7 +545,6 @@ public final class TunnelPhaseTwoDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

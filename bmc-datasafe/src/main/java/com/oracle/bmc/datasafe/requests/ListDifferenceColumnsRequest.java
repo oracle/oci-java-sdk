@@ -6,88 +6,99 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDifferenceColumnsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListDifferenceColumnsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListDifferenceColumnsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDifferenceColumnsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListDifferenceColumnsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the SDM masking policy difference. */
+    /**
+     * The OCID of the SDM masking policy difference.
+     */
     private String sdmMaskingPolicyDifferenceId;
 
-    /** The OCID of the SDM masking policy difference. */
+    /**
+     * The OCID of the SDM masking policy difference.
+     */
     public String getSdmMaskingPolicyDifferenceId() {
         return sdmMaskingPolicyDifferenceId;
     }
     /**
-     * A filter to return only the SDM masking policy difference columns that match the specified
-     * difference type
+     * A filter to return only the SDM masking policy difference columns that match the specified difference type
      */
     private com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.DifferenceType differenceType;
 
     /**
-     * A filter to return only the SDM masking policy difference columns that match the specified
-     * difference type
+     * A filter to return only the SDM masking policy difference columns that match the specified difference type
      */
     public com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.DifferenceType
             getDifferenceType() {
         return differenceType;
     }
     /**
-     * A filter to return only the SDM masking policy difference columns that match the specified
-     * planned action.
+     * A filter to return only the SDM masking policy difference columns that match the specified planned action.
      */
     private com.oracle.bmc.datasafe.model.DifferenceColumn.PlannedAction plannedAction;
 
     /**
-     * A filter to return only the SDM masking policy difference columns that match the specified
-     * planned action.
+     * A filter to return only the SDM masking policy difference columns that match the specified planned action.
      */
     public com.oracle.bmc.datasafe.model.DifferenceColumn.PlannedAction getPlannedAction() {
         return plannedAction;
     }
     /**
-     * A filter to return the SDM masking policy difference columns based on the value of their
-     * syncStatus attribute.
+     * A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
      */
     private com.oracle.bmc.datasafe.model.DifferenceColumn.SyncStatus syncStatus;
 
     /**
-     * A filter to return the SDM masking policy difference columns based on the value of their
-     * syncStatus attribute.
+     * A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
      */
     public com.oracle.bmc.datasafe.model.DifferenceColumn.SyncStatus getSyncStatus() {
         return syncStatus;
     }
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     private java.util.List<String> schemaName;
 
-    /** A filter to return only items related to specific schema name. */
+    /**
+     * A filter to return only items related to specific schema name.
+     */
     public java.util.List<String> getSchemaName() {
         return schemaName;
     }
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     private java.util.List<String> objectName;
 
-    /** A filter to return only items related to a specific object name. */
+    /**
+     * A filter to return only items related to a specific object name.
+     */
     public java.util.List<String> getObjectName() {
         return objectName;
     }
-    /** A filter to return only a specific column based on column name. */
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     private java.util.List<String> columnName;
 
-    /** A filter to return only a specific column based on column name. */
+    /**
+     * A filter to return only a specific column based on column name.
+     */
     public java.util.List<String> getColumnName() {
         return columnName;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -120,23 +131,25 @@ public class ListDifferenceColumnsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for schemaName is descending. The default order for differenceType, schemaName,
-     * objectName, columnName and plannedAction is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for schemaName is descending.
+     * The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for schemaName is descending. The default order for differenceType, schemaName,
-     * objectName, columnName and plannedAction is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for schemaName is descending.
+     * The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
+     *
+     **/
+    public enum SortBy {
         DifferenceType("differenceType"),
         SchemaName("schemaName"),
         ObjectName("objectName"),
@@ -173,48 +186,42 @@ public class ListDifferenceColumnsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-     * order for schemaName is descending. The default order for differenceType, schemaName,
-     * objectName, columnName and plannedAction is ascending.
+     * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for schemaName is descending.
+     * The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
@@ -223,15 +230,17 @@ public class ListDifferenceColumnsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDifferenceColumnsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the SDM masking policy difference. */
+        /**
+         * The OCID of the SDM masking policy difference.
+         */
         private String sdmMaskingPolicyDifferenceId = null;
 
         /**
          * The OCID of the SDM masking policy difference.
-         *
          * @param sdmMaskingPolicyDifferenceId the value to set
          * @return this builder instance
          */
@@ -241,16 +250,13 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * A filter to return only the SDM masking policy difference columns that match the
-         * specified difference type
+         * A filter to return only the SDM masking policy difference columns that match the specified difference type
          */
         private com.oracle.bmc.datasafe.model.SdmMaskingPolicyDifference.DifferenceType
                 differenceType = null;
 
         /**
-         * A filter to return only the SDM masking policy difference columns that match the
-         * specified difference type
-         *
+         * A filter to return only the SDM masking policy difference columns that match the specified difference type
          * @param differenceType the value to set
          * @return this builder instance
          */
@@ -262,15 +268,12 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * A filter to return only the SDM masking policy difference columns that match the
-         * specified planned action.
+         * A filter to return only the SDM masking policy difference columns that match the specified planned action.
          */
         private com.oracle.bmc.datasafe.model.DifferenceColumn.PlannedAction plannedAction = null;
 
         /**
-         * A filter to return only the SDM masking policy difference columns that match the
-         * specified planned action.
-         *
+         * A filter to return only the SDM masking policy difference columns that match the specified planned action.
          * @param plannedAction the value to set
          * @return this builder instance
          */
@@ -281,15 +284,12 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * A filter to return the SDM masking policy difference columns based on the value of their
-         * syncStatus attribute.
+         * A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
          */
         private com.oracle.bmc.datasafe.model.DifferenceColumn.SyncStatus syncStatus = null;
 
         /**
-         * A filter to return the SDM masking policy difference columns based on the value of their
-         * syncStatus attribute.
-         *
+         * A filter to return the SDM masking policy difference columns based on the value of their syncStatus attribute.
          * @param syncStatus the value to set
          * @return this builder instance
          */
@@ -299,12 +299,13 @@ public class ListDifferenceColumnsRequest
             return this;
         }
 
-        /** A filter to return only items related to specific schema name. */
+        /**
+         * A filter to return only items related to specific schema name.
+         */
         private java.util.List<String> schemaName = null;
 
         /**
          * A filter to return only items related to specific schema name.
-         *
          * @param schemaName the value to set
          * @return this builder instance
          */
@@ -315,7 +316,6 @@ public class ListDifferenceColumnsRequest
 
         /**
          * Singular setter. A filter to return only items related to specific schema name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -323,12 +323,13 @@ public class ListDifferenceColumnsRequest
             return this.schemaName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only items related to a specific object name. */
+        /**
+         * A filter to return only items related to a specific object name.
+         */
         private java.util.List<String> objectName = null;
 
         /**
          * A filter to return only items related to a specific object name.
-         *
          * @param objectName the value to set
          * @return this builder instance
          */
@@ -339,7 +340,6 @@ public class ListDifferenceColumnsRequest
 
         /**
          * Singular setter. A filter to return only items related to a specific object name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -347,12 +347,13 @@ public class ListDifferenceColumnsRequest
             return this.objectName(java.util.Arrays.asList(singularValue));
         }
 
-        /** A filter to return only a specific column based on column name. */
+        /**
+         * A filter to return only a specific column based on column name.
+         */
         private java.util.List<String> columnName = null;
 
         /**
          * A filter to return only a specific column based on column name.
-         *
          * @param columnName the value to set
          * @return this builder instance
          */
@@ -363,7 +364,6 @@ public class ListDifferenceColumnsRequest
 
         /**
          * Singular setter. A filter to return only a specific column based on column name.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -371,12 +371,13 @@ public class ListDifferenceColumnsRequest
             return this.columnName(java.util.Arrays.asList(singularValue));
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -386,16 +387,15 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order for schemaName is descending. The default order for differenceType, schemaName,
-         * objectName, columnName and plannedAction is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for schemaName is descending.
+         * The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default
-         * order for schemaName is descending. The default order for differenceType, schemaName,
-         * objectName, columnName and plannedAction is ascending.
+         * The field to sort by. You can specify only one sorting parameter (sortOrder). The default order for schemaName is descending.
+         * The default order for differenceType, schemaName, objectName, columnName and plannedAction is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -405,12 +405,13 @@ public class ListDifferenceColumnsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -420,17 +421,12 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -440,19 +436,12 @@ public class ListDifferenceColumnsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -463,19 +452,18 @@ public class ListDifferenceColumnsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -487,7 +475,6 @@ public class ListDifferenceColumnsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDifferenceColumnsRequest o) {
@@ -511,11 +498,10 @@ public class ListDifferenceColumnsRequest
         /**
          * Build the instance of ListDifferenceColumnsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDifferenceColumnsRequest
          */
@@ -529,8 +515,7 @@ public class ListDifferenceColumnsRequest
         /**
          * Build the instance of ListDifferenceColumnsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDifferenceColumnsRequest
@@ -550,15 +535,12 @@ public class ListDifferenceColumnsRequest
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListDifferenceColumnsRequest(sdmMaskingPolicyDifferenceId, differenceType,
-            // plannedAction, syncStatus, schemaName, objectName, columnName, sortOrder, sortBy,
-            // opcRequestId, limit, page);
+            // new ListDifferenceColumnsRequest(sdmMaskingPolicyDifferenceId, differenceType, plannedAction, syncStatus, schemaName, objectName, columnName, sortOrder, sortBy, opcRequestId, limit, page);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -579,7 +561,6 @@ public class ListDifferenceColumnsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

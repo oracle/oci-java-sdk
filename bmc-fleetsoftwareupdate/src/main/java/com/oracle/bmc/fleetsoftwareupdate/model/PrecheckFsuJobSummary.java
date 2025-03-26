@@ -5,25 +5,26 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Summary of Precheck Exadata Fleet Update Job resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Summary of Precheck Exadata Fleet Update Job resource.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PrecheckFsuJobSummary.Builder.class)
+    builder = PrecheckFsuJobSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PrecheckFsuJobSummary extends FsuJobSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -153,7 +154,10 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** OCID of the Exadata Fleet Update Collection that the job is executing on. */
+        /**
+         * OCID of the Exadata Fleet Update Collection that the job is executing on.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
         private String fsuCollectionId;
 
@@ -162,13 +166,16 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
          *
          * @param fsuCollectionId the value to set
          * @return this builder
-         */
+         **/
         public Builder fsuCollectionId(String fsuCollectionId) {
             this.fsuCollectionId = fsuCollectionId;
             this.__explicitlySet__.add("fsuCollectionId");
             return this;
         }
-        /** OCID of the Exadata Fleet Update Cycle that this job is part of. */
+        /**
+         * OCID of the Exadata Fleet Update Cycle that this job is part of.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
         private String fsuCycleId;
 
@@ -177,13 +184,16 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
          *
          * @param fsuCycleId the value to set
          * @return this builder
-         */
+         **/
         public Builder fsuCycleId(String fsuCycleId) {
             this.fsuCycleId = fsuCycleId;
             this.__explicitlySet__.add("fsuCycleId");
             return this;
         }
-        /** OCID of Target resource on which the job is executing the action. */
+        /**
+         * OCID of Target resource on which the job is executing the action.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
@@ -192,7 +202,7 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
          *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
@@ -298,7 +308,9 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -348,7 +360,10 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
         this.schedule = schedule;
     }
 
-    /** OCID of the Exadata Fleet Update Collection that the job is executing on. */
+    /**
+     * OCID of the Exadata Fleet Update Collection that the job is executing on.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCollectionId")
     private final String fsuCollectionId;
 
@@ -356,12 +371,15 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
      * OCID of the Exadata Fleet Update Collection that the job is executing on.
      *
      * @return the value
-     */
+     **/
     public String getFsuCollectionId() {
         return fsuCollectionId;
     }
 
-    /** OCID of the Exadata Fleet Update Cycle that this job is part of. */
+    /**
+     * OCID of the Exadata Fleet Update Cycle that this job is part of.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fsuCycleId")
     private final String fsuCycleId;
 
@@ -369,12 +387,15 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
      * OCID of the Exadata Fleet Update Cycle that this job is part of.
      *
      * @return the value
-     */
+     **/
     public String getFsuCycleId() {
         return fsuCycleId;
     }
 
-    /** OCID of Target resource on which the job is executing the action. */
+    /**
+     * OCID of Target resource on which the job is executing the action.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
@@ -382,7 +403,7 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
      * OCID of Target resource on which the job is executing the action.
      *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
@@ -401,7 +422,6 @@ public final class PrecheckFsuJobSummary extends FsuJobSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

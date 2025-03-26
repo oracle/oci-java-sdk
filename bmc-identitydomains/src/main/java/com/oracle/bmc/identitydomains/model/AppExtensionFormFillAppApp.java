@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension provides attributes for Form-Fill facet of App <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension provides attributes for Form-Fill facet of App
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionFormFillAppApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionFormFillAppApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionFormFillAppApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "formType",
@@ -59,27 +58,36 @@ public final class AppExtensionFormFillAppApp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Type of the FormFill application like WebApplication, MainFrameApplication,
-         * WindowsApplication. Initially, we will support only WebApplication.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formType")
         private FormType formType;
 
         /**
-         * Type of the FormFill application like WebApplication, MainFrameApplication,
-         * WindowsApplication. Initially, we will support only WebApplication.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param formType the value to set
          * @return this builder
-         */
+         **/
         public Builder formType(FormType formType) {
             this.formType = formType;
             this.__explicitlySet__.add("formType");
@@ -87,219 +95,285 @@ public final class AppExtensionFormFillAppApp
         }
         /**
          * Credential Sharing Group to which this form-fill application belongs.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formCredentialSharingGroupID")
         private String formCredentialSharingGroupID;
 
         /**
          * Credential Sharing Group to which this form-fill application belongs.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param formCredentialSharingGroupID the value to set
          * @return this builder
-         */
+         **/
         public Builder formCredentialSharingGroupID(String formCredentialSharingGroupID) {
             this.formCredentialSharingGroupID = formCredentialSharingGroupID;
             this.__explicitlySet__.add("formCredentialSharingGroupID");
             return this;
         }
         /**
-         * If true, indicates that system is allowed to show the password in plain-text for this
-         * account after re-authentication.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("revealPasswordOnForm")
         private Boolean revealPasswordOnForm;
 
         /**
-         * If true, indicates that system is allowed to show the password in plain-text for this
-         * account after re-authentication.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param revealPasswordOnForm the value to set
          * @return this builder
-         */
+         **/
         public Builder revealPasswordOnForm(Boolean revealPasswordOnForm) {
             this.revealPasswordOnForm = revealPasswordOnForm;
             this.__explicitlySet__.add("revealPasswordOnForm");
             return this;
         }
         /**
-         * Format for generating a username. This value can be Username or Email Address; any other
-         * value will be treated as a custom expression. A custom expression may combine 'concat'
-         * and 'substring' operations with literals and with any attribute of the Oracle Identity
-         * Cloud Service user.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         */
+         * Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userNameFormTemplate")
         private String userNameFormTemplate;
 
         /**
-         * Format for generating a username. This value can be Username or Email Address; any other
-         * value will be treated as a custom expression. A custom expression may combine 'concat'
-         * and 'substring' operations with literals and with any attribute of the Oracle Identity
-         * Cloud Service user.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: true -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * string - uniqueness: none
-         *
+         * Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsPii: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userNameFormTemplate the value to set
          * @return this builder
-         */
+         **/
         public Builder userNameFormTemplate(String userNameFormTemplate) {
             this.userNameFormTemplate = userNameFormTemplate;
             this.__explicitlySet__.add("userNameFormTemplate");
             return this;
         }
         /**
-         * Indicates the custom expression, which can combine concat and substring operations with
-         * literals and with any attribute of the Oracle Identity Cloud Service User
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userNameFormExpression")
         private String userNameFormExpression;
 
         /**
-         * Indicates the custom expression, which can combine concat and substring operations with
-         * literals and with any attribute of the Oracle Identity Cloud Service User
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userNameFormExpression the value to set
          * @return this builder
-         */
+         **/
         public Builder userNameFormExpression(String userNameFormExpression) {
             this.userNameFormExpression = userNameFormExpression;
             this.__explicitlySet__.add("userNameFormExpression");
             return this;
         }
         /**
-         * Indicates how FormFill obtains the username and password of the account that FormFill
-         * will use to sign into the target App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formCredMethod")
         private FormCredMethod formCredMethod;
 
         /**
-         * Indicates how FormFill obtains the username and password of the account that FormFill
-         * will use to sign into the target App.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param formCredMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder formCredMethod(FormCredMethod formCredMethod) {
             this.formCredMethod = formCredMethod;
             this.__explicitlySet__.add("formCredMethod");
             return this;
         }
         /**
-         * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for
-         * legacy code to do Form-Fill injection
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         */
+         * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configuration")
         private String configuration;
 
         /**
-         * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for
-         * legacy code to do Form-Fill injection
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readWrite - required: false - returned: default - type: string - uniqueness: none
-         *
+         * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param configuration the value to set
          * @return this builder
-         */
+         **/
         public Builder configuration(String configuration) {
             this.configuration = configuration;
             this.__explicitlySet__.add("configuration");
             return this;
         }
         /**
-         * If true, indicates that each of the Form-Fill-related attributes that can be inherited
-         * from the template actually will be inherited from the template. If false, indicates that
-         * the AppTemplate on which this App is based has disabled inheritance for these
-         * Form-Fill-related attributes.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         */
+         * If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("syncFromTemplate")
         private Boolean syncFromTemplate;
 
         /**
-         * If true, indicates that each of the Form-Fill-related attributes that can be inherited
-         * from the template actually will be inherited from the template. If false, indicates that
-         * the AppTemplate on which this App is based has disabled inheritance for these
-         * Form-Fill-related attributes.
-         *
-         * <p>*Added In:** 17.4.2
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: default - type: boolean - uniqueness: none
-         *
+         * If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
+         * <p>
+         **Added In:** 17.4.2
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param syncFromTemplate the value to set
          * @return this builder
-         */
+         **/
         public Builder syncFromTemplate(Boolean syncFromTemplate) {
             this.syncFromTemplate = syncFromTemplate;
             this.__explicitlySet__.add("syncFromTemplate");
             return this;
         }
         /**
-         * A list of application-formURLs that FormFill should match against any formUrl that the
-         * user-specifies when signing in to the target service. Each item in the list also
-         * indicates how FormFill should interpret that formUrl.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [formUrl] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         */
+         * A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [formUrl]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("formFillUrlMatch")
         private java.util.List<AppFormFillUrlMatch> formFillUrlMatch;
 
         /**
-         * A list of application-formURLs that FormFill should match against any formUrl that the
-         * user-specifies when signing in to the target service. Each item in the list also
-         * indicates how FormFill should interpret that formUrl.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [formUrl] - multiValued: true - mutability:
-         * readWrite - required: false - returned: default - type: complex - uniqueness: none
-         *
+         * A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [formUrl]
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param formFillUrlMatch the value to set
          * @return this builder
-         */
+         **/
         public Builder formFillUrlMatch(java.util.List<AppFormFillUrlMatch> formFillUrlMatch) {
             this.formFillUrlMatch = formFillUrlMatch;
             this.__explicitlySet__.add("formFillUrlMatch");
@@ -360,7 +434,9 @@ public final class AppExtensionFormFillAppApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -370,18 +446,24 @@ public final class AppExtensionFormFillAppApp
     }
 
     /**
-     * Type of the FormFill application like WebApplication, MainFrameApplication,
-     * WindowsApplication. Initially, we will support only WebApplication.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum FormType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum FormType {
         WebApplication("WebApplication"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -421,140 +503,197 @@ public final class AppExtensionFormFillAppApp
         }
     };
     /**
-     * Type of the FormFill application like WebApplication, MainFrameApplication,
-     * WindowsApplication. Initially, we will support only WebApplication.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formType")
     private final FormType formType;
 
     /**
-     * Type of the FormFill application like WebApplication, MainFrameApplication,
-     * WindowsApplication. Initially, we will support only WebApplication.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Type of the FormFill application like WebApplication, MainFrameApplication, WindowsApplication. Initially, we will support only WebApplication.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public FormType getFormType() {
         return formType;
     }
 
     /**
      * Credential Sharing Group to which this form-fill application belongs.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formCredentialSharingGroupID")
     private final String formCredentialSharingGroupID;
 
     /**
      * Credential Sharing Group to which this form-fill application belongs.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFormCredentialSharingGroupID() {
         return formCredentialSharingGroupID;
     }
 
     /**
-     * If true, indicates that system is allowed to show the password in plain-text for this account
-     * after re-authentication.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("revealPasswordOnForm")
     private final Boolean revealPasswordOnForm;
 
     /**
-     * If true, indicates that system is allowed to show the password in plain-text for this account
-     * after re-authentication.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: true - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that system is allowed to show the password in plain-text for this account after re-authentication.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getRevealPasswordOnForm() {
         return revealPasswordOnForm;
     }
 
     /**
-     * Format for generating a username. This value can be Username or Email Address; any other
-     * value will be treated as a custom expression. A custom expression may combine 'concat' and
-     * 'substring' operations with literals and with any attribute of the Oracle Identity Cloud
-     * Service user.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     */
+     * Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userNameFormTemplate")
     private final String userNameFormTemplate;
 
     /**
-     * Format for generating a username. This value can be Username or Email Address; any other
-     * value will be treated as a custom expression. A custom expression may combine 'concat' and
-     * 'substring' operations with literals and with any attribute of the Oracle Identity Cloud
-     * Service user.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsPii: true - idcsSearchable: true -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * string - uniqueness: none
-     *
+     * Format for generating a username.  This value can be Username or Email Address; any other value will be treated as a custom expression.  A custom expression may combine 'concat' and 'substring' operations with literals and with any attribute of the Oracle Identity Cloud Service user.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsPii: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getUserNameFormTemplate() {
         return userNameFormTemplate;
     }
 
     /**
-     * Indicates the custom expression, which can combine concat and substring operations with
-     * literals and with any attribute of the Oracle Identity Cloud Service User
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userNameFormExpression")
     private final String userNameFormExpression;
 
     /**
-     * Indicates the custom expression, which can combine concat and substring operations with
-     * literals and with any attribute of the Oracle Identity Cloud Service User
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Indicates the custom expression, which can combine concat and substring operations with literals and with any attribute of the Oracle Identity Cloud Service User
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getUserNameFormExpression() {
         return userNameFormExpression;
     }
 
     /**
-     * Indicates how FormFill obtains the username and password of the account that FormFill will
-     * use to sign into the target App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
-    public enum FormCredMethod implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
+    public enum FormCredMethod {
         AdminSetsCredentials("ADMIN_SETS_CREDENTIALS"),
         AdminSetsSharedCredentials("ADMIN_SETS_SHARED_CREDENTIALS"),
         UserSetsPasswordOnly("USER_SETS_PASSWORD_ONLY"),
         UserSetsCredentials("USER_SETS_CREDENTIALS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -594,103 +733,135 @@ public final class AppExtensionFormFillAppApp
         }
     };
     /**
-     * Indicates how FormFill obtains the username and password of the account that FormFill will
-     * use to sign into the target App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     */
+     * Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formCredMethod")
     private final FormCredMethod formCredMethod;
 
     /**
-     * Indicates how FormFill obtains the username and password of the account that FormFill will
-     * use to sign into the target App.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
-     *
+     * Indicates how FormFill obtains the username and password of the account that FormFill will use to sign into the target App.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public FormCredMethod getFormCredMethod() {
         return formCredMethod;
     }
 
     /**
-     * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for
-     * legacy code to do Form-Fill injection
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     */
+     * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configuration")
     private final String configuration;
 
     /**
-     * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for
-     * legacy code to do Form-Fill injection
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readWrite
-     * - required: false - returned: default - type: string - uniqueness: none
-     *
+     * FormFill Application Configuration CLOB which has to be maintained in Form-Fill APP for legacy code to do Form-Fill injection
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getConfiguration() {
         return configuration;
     }
 
     /**
-     * If true, indicates that each of the Form-Fill-related attributes that can be inherited from
-     * the template actually will be inherited from the template. If false, indicates that the
-     * AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related
-     * attributes.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("syncFromTemplate")
     private final Boolean syncFromTemplate;
 
     /**
-     * If true, indicates that each of the Form-Fill-related attributes that can be inherited from
-     * the template actually will be inherited from the template. If false, indicates that the
-     * AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related
-     * attributes.
-     *
-     * <p>*Added In:** 17.4.2
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
+     * <p>
+     **Added In:** 17.4.2
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getSyncFromTemplate() {
         return syncFromTemplate;
     }
 
     /**
-     * A list of application-formURLs that FormFill should match against any formUrl that the
-     * user-specifies when signing in to the target service. Each item in the list also indicates
-     * how FormFill should interpret that formUrl.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [formUrl] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     */
+     * A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [formUrl]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("formFillUrlMatch")
     private final java.util.List<AppFormFillUrlMatch> formFillUrlMatch;
 
     /**
-     * A list of application-formURLs that FormFill should match against any formUrl that the
-     * user-specifies when signing in to the target service. Each item in the list also indicates
-     * how FormFill should interpret that formUrl.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [formUrl] - multiValued: true - mutability:
-     * readWrite - required: false - returned: default - type: complex - uniqueness: none
-     *
+     * A list of application-formURLs that FormFill should match against any formUrl that the user-specifies when signing in to the target service.  Each item in the list also indicates how FormFill should interpret that formUrl.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [formUrl]
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<AppFormFillUrlMatch> getFormFillUrlMatch() {
         return formFillUrlMatch;
     }
@@ -702,7 +873,6 @@ public final class AppExtensionFormFillAppApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

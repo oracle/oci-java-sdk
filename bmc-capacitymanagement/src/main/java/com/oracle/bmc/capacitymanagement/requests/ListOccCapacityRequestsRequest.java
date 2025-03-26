@@ -6,142 +6,137 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListOccCapacityRequestsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOccCapacityRequestsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class ListOccCapacityRequestsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     private String compartmentId;
 
     /**
-     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be
-     * used for authorization purposes.
+     * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return the list of capacity requests based on the OCID of the availability
-     * catalog against which they were created.
+     * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
      */
     private String occAvailabilityCatalogId;
 
     /**
-     * A filter to return the list of capacity requests based on the OCID of the availability
-     * catalog against which they were created.
+     * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
      */
     public String getOccAvailabilityCatalogId() {
         return occAvailabilityCatalogId;
     }
-    /** The namespace by which we would filter the list. */
+    /**
+     * The namespace by which we would filter the list.
+     */
     private com.oracle.bmc.capacitymanagement.model.Namespace namespace;
 
-    /** The namespace by which we would filter the list. */
+    /**
+     * The namespace by which we would filter the list.
+     */
     public com.oracle.bmc.capacitymanagement.model.Namespace getNamespace() {
         return namespace;
     }
     /**
-     * A filter to return only the resources that match the request type. The match is not case
-     * sensitive.
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
      */
     private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType requestType;
 
     /**
-     * A filter to return only the resources that match the request type. The match is not case
-     * sensitive.
+     * A filter to return only the resources that match the request type. The match is not case sensitive.
      */
     public com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType getRequestType() {
         return requestType;
     }
     /**
-     * A filter to return only the resources that match the entire display name. The match is not
-     * case sensitive.
+     * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
     private String displayName;
 
     /**
-     * A filter to return only the resources that match the entire display name. The match is not
-     * case sensitive.
+     * A filter to return only the resources that match the entire display name. The match is not case sensitive.
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return the list of capacity requests based on the OCID of the capacity request.
-     * This is done for the users who have INSPECT permission on the resource but do not have READ
-     * permission.
+     * A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
      */
     private String id;
 
     /**
-     * A filter to return the list of capacity requests based on the OCID of the capacity request.
-     * This is done for the users who have INSPECT permission on the resource but do not have READ
-     * permission.
+     * A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
      */
     public String getId() {
         return id;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.capacitymanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for display name
-     * is ascending. The default order for time created is reverse chronological order(latest date
-     * at the top).
+     * The field to sort by. Only one sort order may be provided. The default order for display name is ascending. The default order for time created is reverse chronological order(latest date at the top).
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for display name
-     * is ascending. The default order for time created is reverse chronological order(latest date
-     * at the top).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. The default order for display name is ascending. The default order for time created is reverse chronological order(latest date at the top).
+     *
+     **/
+    public enum SortBy {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
         ;
@@ -175,9 +170,8 @@ public class ListOccCapacityRequestsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for display name
-     * is ascending. The default order for time created is reverse chronological order(latest date
-     * at the top).
+     * The field to sort by. Only one sort order may be provided. The default order for display name is ascending. The default order for time created is reverse chronological order(latest date at the top).
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -186,19 +180,17 @@ public class ListOccCapacityRequestsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOccCapacityRequestsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          */
         private String compartmentId = null;
 
         /**
-         * The ocid of the compartment or tenancy in which resources are to be listed. This will
-         * also be used for authorization purposes.
-         *
+         * The ocid of the compartment or tenancy in which resources are to be listed. This will also be used for authorization purposes.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -208,15 +200,12 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * A filter to return the list of capacity requests based on the OCID of the availability
-         * catalog against which they were created.
+         * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
          */
         private String occAvailabilityCatalogId = null;
 
         /**
-         * A filter to return the list of capacity requests based on the OCID of the availability
-         * catalog against which they were created.
-         *
+         * A filter to return the list of capacity requests based on the OCID of the availability catalog against which they were created.
          * @param occAvailabilityCatalogId the value to set
          * @return this builder instance
          */
@@ -225,12 +214,13 @@ public class ListOccCapacityRequestsRequest
             return this;
         }
 
-        /** The namespace by which we would filter the list. */
+        /**
+         * The namespace by which we would filter the list.
+         */
         private com.oracle.bmc.capacitymanagement.model.Namespace namespace = null;
 
         /**
          * The namespace by which we would filter the list.
-         *
          * @param namespace the value to set
          * @return this builder instance
          */
@@ -240,16 +230,13 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * A filter to return only the resources that match the request type. The match is not case
-         * sensitive.
+         * A filter to return only the resources that match the request type. The match is not case sensitive.
          */
         private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest.RequestType requestType =
                 null;
 
         /**
-         * A filter to return only the resources that match the request type. The match is not case
-         * sensitive.
-         *
+         * A filter to return only the resources that match the request type. The match is not case sensitive.
          * @param requestType the value to set
          * @return this builder instance
          */
@@ -261,15 +248,12 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * A filter to return only the resources that match the entire display name. The match is
-         * not case sensitive.
+         * A filter to return only the resources that match the entire display name. The match is not case sensitive.
          */
         private String displayName = null;
 
         /**
-         * A filter to return only the resources that match the entire display name. The match is
-         * not case sensitive.
-         *
+         * A filter to return only the resources that match the entire display name. The match is not case sensitive.
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -279,17 +263,12 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * A filter to return the list of capacity requests based on the OCID of the capacity
-         * request. This is done for the users who have INSPECT permission on the resource but do
-         * not have READ permission.
+         * A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
          */
         private String id = null;
 
         /**
-         * A filter to return the list of capacity requests based on the OCID of the capacity
-         * request. This is done for the users who have INSPECT permission on the resource but do
-         * not have READ permission.
-         *
+         * A filter to return the list of capacity requests based on the OCID of the capacity request. This is done for the users who have INSPECT permission on the resource but do not have READ permission.
          * @param id the value to set
          * @return this builder instance
          */
@@ -298,12 +277,13 @@ public class ListOccCapacityRequestsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -313,15 +293,12 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -331,14 +308,15 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -348,12 +326,13 @@ public class ListOccCapacityRequestsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -363,16 +342,13 @@ public class ListOccCapacityRequestsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for display
-         * name is ascending. The default order for time created is reverse chronological
-         * order(latest date at the top).
+         * The field to sort by. Only one sort order may be provided. The default order for display name is ascending. The default order for time created is reverse chronological order(latest date at the top).
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for display
-         * name is ascending. The default order for time created is reverse chronological
-         * order(latest date at the top).
+         * The field to sort by. Only one sort order may be provided. The default order for display name is ascending. The default order for time created is reverse chronological order(latest date at the top).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -384,19 +360,18 @@ public class ListOccCapacityRequestsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -408,7 +383,6 @@ public class ListOccCapacityRequestsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListOccCapacityRequestsRequest o) {
@@ -431,11 +405,10 @@ public class ListOccCapacityRequestsRequest
         /**
          * Build the instance of ListOccCapacityRequestsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListOccCapacityRequestsRequest
          */
@@ -449,8 +422,7 @@ public class ListOccCapacityRequestsRequest
         /**
          * Build the instance of ListOccCapacityRequestsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOccCapacityRequestsRequest
@@ -469,15 +441,12 @@ public class ListOccCapacityRequestsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListOccCapacityRequestsRequest(compartmentId, occAvailabilityCatalogId,
-            // namespace, requestType, displayName, id, limit, page, opcRequestId, sortOrder,
-            // sortBy);
+            // new ListOccCapacityRequestsRequest(compartmentId, occAvailabilityCatalogId, namespace, requestType, displayName, id, limit, page, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -497,7 +466,6 @@ public class ListOccCapacityRequestsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

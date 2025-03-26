@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Registration profile type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ProfileType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Registration profile type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ProfileType {
     Softwaresource("SOFTWARESOURCE"),
     Group("GROUP"),
     Lifecycle("LIFECYCLE"),

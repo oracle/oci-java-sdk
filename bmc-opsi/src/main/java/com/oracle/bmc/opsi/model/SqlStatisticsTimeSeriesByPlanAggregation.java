@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL performance statistics for a given plan <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * SQL performance statistics for a given plan
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlStatisticsTimeSeriesByPlanAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SqlStatisticsTimeSeriesByPlanAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlStatisticsTimeSeriesByPlanAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"planHash", "statistics"})
     public SqlStatisticsTimeSeriesByPlanAggregation(
@@ -33,22 +32,26 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Plan hash value for the SQL Execution Plan */
+        /**
+         * Plan hash value for the SQL Execution Plan
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
         /**
          * Plan hash value for the SQL Execution Plan
-         *
          * @param planHash the value to set
          * @return this builder
-         */
+         **/
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-        /** SQL performance statistics for a given plan */
+        /**
+         * SQL performance statistics for a given plan
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statistics")
         private java.util.List<SqlStatisticsTimeSeries> statistics;
 
@@ -57,7 +60,7 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
          *
          * @param statistics the value to set
          * @return this builder
-         */
+         **/
         public Builder statistics(java.util.List<SqlStatisticsTimeSeries> statistics) {
             this.statistics = statistics;
             this.__explicitlySet__.add("statistics");
@@ -88,7 +91,9 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,20 +102,24 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
         return new Builder().copy(this);
     }
 
-    /** Plan hash value for the SQL Execution Plan */
+    /**
+     * Plan hash value for the SQL Execution Plan
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
     /**
      * Plan hash value for the SQL Execution Plan
-     *
      * @return the value
-     */
+     **/
     public Long getPlanHash() {
         return planHash;
     }
 
-    /** SQL performance statistics for a given plan */
+    /**
+     * SQL performance statistics for a given plan
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statistics")
     private final java.util.List<SqlStatisticsTimeSeries> statistics;
 
@@ -118,7 +127,7 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
      * SQL performance statistics for a given plan
      *
      * @return the value
-     */
+     **/
     public java.util.List<SqlStatisticsTimeSeries> getStatistics() {
         return statistics;
     }
@@ -130,7 +139,6 @@ public final class SqlStatisticsTimeSeriesByPlanAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

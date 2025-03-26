@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.aidocument.model;
 
-/** Sort order. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort order.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
     ;

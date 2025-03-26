@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of DatabaseViewAccess Object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of DatabaseViewAccess Object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseViewAccessEntrySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabaseViewAccessEntrySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseViewAccessEntrySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -94,279 +93,288 @@ public final class DatabaseViewAccessEntrySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The unique key that identifies the view report. It is numeric and unique within a
-         * security policy report.
-         */
+         * The unique key that identifies the view report. It is numeric and unique within a security policy report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * The unique key that identifies the view report. It is numeric and unique within a
-         * security policy report.
-         *
+         * The unique key that identifies the view report. It is numeric and unique within a security policy report.
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** Grantee is the user who can access the view. */
+        /**
+         * Grantee is the user who can access the view.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantee")
         private String grantee;
 
         /**
          * Grantee is the user who can access the view.
-         *
          * @param grantee the value to set
          * @return this builder
-         */
+         **/
         public Builder grantee(String grantee) {
             this.grantee = grantee;
             this.__explicitlySet__.add("grantee");
             return this;
         }
         /**
-         * This can be empty in case of direct grant, in case of indirect grant, this attribute
-         * displays the name of the role which is granted to the user though which the user has
-         * access to the table.
-         */
+         * This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the
+         * role which is granted to the user though which the user has access to the table.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantFromRole")
         private String grantFromRole;
 
         /**
-         * This can be empty in case of direct grant, in case of indirect grant, this attribute
-         * displays the name of the role which is granted to the user though which the user has
-         * access to the table.
+         * This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the
+         * role which is granted to the user though which the user has access to the table.
          *
          * @param grantFromRole the value to set
          * @return this builder
-         */
+         **/
         public Builder grantFromRole(String grantFromRole) {
             this.grantFromRole = grantFromRole;
             this.__explicitlySet__.add("grantFromRole");
             return this;
         }
         /**
-         * The type of the access the user has on the table, there can be one or more from SELECT,
-         * DELETE, INSERT, READ or UPDATE.
-         */
+         * The type of the access the user has on the table, there can be one or more from SELECT, DELETE, INSERT, READ or UPDATE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
         /**
-         * The type of the access the user has on the table, there can be one or more from SELECT,
-         * DELETE, INSERT, READ or UPDATE.
+         * The type of the access the user has on the table, there can be one or more from SELECT, DELETE, INSERT, READ or UPDATE.
          *
          * @param accessType the value to set
          * @return this builder
-         */
+         **/
         public Builder accessType(AccessType accessType) {
             this.accessType = accessType;
             this.__explicitlySet__.add("accessType");
             return this;
         }
-        /** The name of the privilege. */
+        /**
+         * The name of the privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilege")
         private PrivilegeName privilege;
 
         /**
          * The name of the privilege.
-         *
          * @param privilege the value to set
          * @return this builder
-         */
+         **/
         public Builder privilege(PrivilegeName privilege) {
             this.privilege = privilege;
             this.__explicitlySet__.add("privilege");
             return this;
         }
-        /** The OCID of the of the target database. */
+        /**
+         * The OCID of the of the  target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * The OCID of the of the target database.
-         *
+         * The OCID of the of the  target database.
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
         /**
-         * Indicates whether the grantee can grant this privilege to other users. Privileges can be
-         * granted to a user or role with GRANT_OPTION or ADMIN_OPTION
-         */
+         * Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with
+         * GRANT_OPTION or ADMIN_OPTION
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeGrantable")
         private PrivilegeGrantableOption privilegeGrantable;
 
         /**
-         * Indicates whether the grantee can grant this privilege to other users. Privileges can be
-         * granted to a user or role with GRANT_OPTION or ADMIN_OPTION
+         * Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with
+         * GRANT_OPTION or ADMIN_OPTION
          *
          * @param privilegeGrantable the value to set
          * @return this builder
-         */
+         **/
         public Builder privilegeGrantable(PrivilegeGrantableOption privilegeGrantable) {
             this.privilegeGrantable = privilegeGrantable;
             this.__explicitlySet__.add("privilegeGrantable");
             return this;
         }
         /**
-         * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object
-         * Privilege, Column Privilege, Owner or Schema Privilege on a schema.
-         */
+         * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege,
+         * Owner or Schema Privilege on a schema.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
         private String privilegeType;
 
         /**
-         * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object
-         * Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+         * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege,
+         * Owner or Schema Privilege on a schema.
          *
          * @param privilegeType the value to set
          * @return this builder
-         */
+         **/
         public Builder privilegeType(String privilegeType) {
             this.privilegeType = privilegeType;
             this.__explicitlySet__.add("privilegeType");
             return this;
         }
-        /** The name of the schema */
+        /**
+         * The name of the schema
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableSchema")
         private String tableSchema;
 
         /**
          * The name of the schema
-         *
          * @param tableSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder tableSchema(String tableSchema) {
             this.tableSchema = tableSchema;
             this.__explicitlySet__.add("tableSchema");
             return this;
         }
-        /** The name of the table. */
+        /**
+         * The name of the table.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tableName")
         private String tableName;
 
         /**
          * The name of the table.
-         *
          * @param tableName the value to set
          * @return this builder
-         */
+         **/
         public Builder tableName(String tableName) {
             this.tableName = tableName;
             this.__explicitlySet__.add("tableName");
             return this;
         }
-        /** The name of the schema. */
+        /**
+         * The name of the schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewSchema")
         private String viewSchema;
 
         /**
          * The name of the schema.
-         *
          * @param viewSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder viewSchema(String viewSchema) {
             this.viewSchema = viewSchema;
             this.__explicitlySet__.add("viewSchema");
             return this;
         }
-        /** The name of the view. */
+        /**
+         * The name of the view.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewName")
         private String viewName;
 
         /**
          * The name of the view.
-         *
          * @param viewName the value to set
          * @return this builder
-         */
+         **/
         public Builder viewName(String viewName) {
             this.viewName = viewName;
             this.__explicitlySet__.add("viewName");
             return this;
         }
-        /** The definition of the view. */
+        /**
+         * The definition of the view.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("viewText")
         private String viewText;
 
         /**
          * The definition of the view.
-         *
          * @param viewText the value to set
          * @return this builder
-         */
+         **/
         public Builder viewText(String viewText) {
             this.viewText = viewText;
             this.__explicitlySet__.add("viewText");
             return this;
         }
-        /** The name of column when there are column level privileges on a table or view. */
+        /**
+         * The name of column when there are column level privileges on a table or view.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnName")
         private String columnName;
 
         /**
          * The name of column when there are column level privileges on a table or view.
-         *
          * @param columnName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnName(String columnName) {
             this.columnName = columnName;
             this.__explicitlySet__.add("columnName");
             return this;
         }
-        /** The user who granted the privilege. */
+        /**
+         * The user who granted the privilege.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("grantor")
         private String grantor;
 
         /**
          * The user who granted the privilege.
-         *
          * @param grantor the value to set
          * @return this builder
-         */
+         **/
         public Builder grantor(String grantor) {
             this.grantor = grantor;
             this.__explicitlySet__.add("grantor");
             return this;
         }
-        /** Indicates whether the table access is constrained via Oracle Database Vault. */
+        /**
+         * Indicates whether the table access is constrained via Oracle Database Vault.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByDatabaseVault")
         private Boolean isAccessConstrainedByDatabaseVault;
 
         /**
          * Indicates whether the table access is constrained via Oracle Database Vault.
-         *
          * @param isAccessConstrainedByDatabaseVault the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccessConstrainedByDatabaseVault(
                 Boolean isAccessConstrainedByDatabaseVault) {
             this.isAccessConstrainedByDatabaseVault = isAccessConstrainedByDatabaseVault;
             this.__explicitlySet__.add("isAccessConstrainedByDatabaseVault");
             return this;
         }
-        /** Indicates whether the view access is constrained via Virtual Private Database. */
+        /**
+         * Indicates whether the view access is constrained via Virtual Private Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "isAccessConstrainedByVirtualPrivateDatabase")
         private Boolean isAccessConstrainedByVirtualPrivateDatabase;
 
         /**
          * Indicates whether the view access is constrained via Virtual Private Database.
-         *
          * @param isAccessConstrainedByVirtualPrivateDatabase the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccessConstrainedByVirtualPrivateDatabase(
                 Boolean isAccessConstrainedByVirtualPrivateDatabase) {
             this.isAccessConstrainedByVirtualPrivateDatabase =
@@ -374,32 +382,34 @@ public final class DatabaseViewAccessEntrySummary
             this.__explicitlySet__.add("isAccessConstrainedByVirtualPrivateDatabase");
             return this;
         }
-        /** Indicates whether the view access is constrained via Oracle Data Redaction. */
+        /**
+         * Indicates whether the view access is constrained via Oracle Data Redaction.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByRedaction")
         private Boolean isAccessConstrainedByRedaction;
 
         /**
          * Indicates whether the view access is constrained via Oracle Data Redaction.
-         *
          * @param isAccessConstrainedByRedaction the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccessConstrainedByRedaction(Boolean isAccessConstrainedByRedaction) {
             this.isAccessConstrainedByRedaction = isAccessConstrainedByRedaction;
             this.__explicitlySet__.add("isAccessConstrainedByRedaction");
             return this;
         }
-        /** Indicates whether the view access is constrained via Real Application Security. */
+        /**
+         * Indicates whether the view access is constrained via Real Application Security.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "isAccessConstrainedByRealApplicationSecurity")
         private Boolean isAccessConstrainedByRealApplicationSecurity;
 
         /**
          * Indicates whether the view access is constrained via Real Application Security.
-         *
          * @param isAccessConstrainedByRealApplicationSecurity the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccessConstrainedByRealApplicationSecurity(
                 Boolean isAccessConstrainedByRealApplicationSecurity) {
             this.isAccessConstrainedByRealApplicationSecurity =
@@ -407,16 +417,17 @@ public final class DatabaseViewAccessEntrySummary
             this.__explicitlySet__.add("isAccessConstrainedByRealApplicationSecurity");
             return this;
         }
-        /** Indicates whether the view access is constrained via Oracle Database SQL Firewall. */
+        /**
+         * Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedBySqlFirewall")
         private Boolean isAccessConstrainedBySqlFirewall;
 
         /**
          * Indicates whether the view access is constrained via Oracle Database SQL Firewall.
-         *
          * @param isAccessConstrainedBySqlFirewall the value to set
          * @return this builder
-         */
+         **/
         public Builder isAccessConstrainedBySqlFirewall(Boolean isAccessConstrainedBySqlFirewall) {
             this.isAccessConstrainedBySqlFirewall = isAccessConstrainedBySqlFirewall;
             this.__explicitlySet__.add("isAccessConstrainedBySqlFirewall");
@@ -524,7 +535,9 @@ public final class DatabaseViewAccessEntrySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -534,283 +547,295 @@ public final class DatabaseViewAccessEntrySummary
     }
 
     /**
-     * The unique key that identifies the view report. It is numeric and unique within a security
-     * policy report.
-     */
+     * The unique key that identifies the view report. It is numeric and unique within a security policy report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * The unique key that identifies the view report. It is numeric and unique within a security
-     * policy report.
-     *
+     * The unique key that identifies the view report. It is numeric and unique within a security policy report.
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** Grantee is the user who can access the view. */
+    /**
+     * Grantee is the user who can access the view.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantee")
     private final String grantee;
 
     /**
      * Grantee is the user who can access the view.
-     *
      * @return the value
-     */
+     **/
     public String getGrantee() {
         return grantee;
     }
 
     /**
-     * This can be empty in case of direct grant, in case of indirect grant, this attribute displays
-     * the name of the role which is granted to the user though which the user has access to the
-     * table.
-     */
+     * This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the
+     * role which is granted to the user though which the user has access to the table.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantFromRole")
     private final String grantFromRole;
 
     /**
-     * This can be empty in case of direct grant, in case of indirect grant, this attribute displays
-     * the name of the role which is granted to the user though which the user has access to the
-     * table.
+     * This can be empty in case of direct grant, in case of indirect grant, this attribute displays the name of the
+     * role which is granted to the user though which the user has access to the table.
      *
      * @return the value
-     */
+     **/
     public String getGrantFromRole() {
         return grantFromRole;
     }
 
     /**
-     * The type of the access the user has on the table, there can be one or more from SELECT,
-     * DELETE, INSERT, READ or UPDATE.
-     */
+     * The type of the access the user has on the table, there can be one or more from SELECT, DELETE, INSERT, READ or UPDATE.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     private final AccessType accessType;
 
     /**
-     * The type of the access the user has on the table, there can be one or more from SELECT,
-     * DELETE, INSERT, READ or UPDATE.
+     * The type of the access the user has on the table, there can be one or more from SELECT, DELETE, INSERT, READ or UPDATE.
      *
      * @return the value
-     */
+     **/
     public AccessType getAccessType() {
         return accessType;
     }
 
-    /** The name of the privilege. */
+    /**
+     * The name of the privilege.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilege")
     private final PrivilegeName privilege;
 
     /**
      * The name of the privilege.
-     *
      * @return the value
-     */
+     **/
     public PrivilegeName getPrivilege() {
         return privilege;
     }
 
-    /** The OCID of the of the target database. */
+    /**
+     * The OCID of the of the  target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * The OCID of the of the target database.
-     *
+     * The OCID of the of the  target database.
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
     /**
-     * Indicates whether the grantee can grant this privilege to other users. Privileges can be
-     * granted to a user or role with GRANT_OPTION or ADMIN_OPTION
-     */
+     * Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with
+     * GRANT_OPTION or ADMIN_OPTION
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeGrantable")
     private final PrivilegeGrantableOption privilegeGrantable;
 
     /**
-     * Indicates whether the grantee can grant this privilege to other users. Privileges can be
-     * granted to a user or role with GRANT_OPTION or ADMIN_OPTION
+     * Indicates whether the grantee can grant this privilege to other users. Privileges can be granted to a user or role with
+     * GRANT_OPTION or ADMIN_OPTION
      *
      * @return the value
-     */
+     **/
     public PrivilegeGrantableOption getPrivilegeGrantable() {
         return privilegeGrantable;
     }
 
     /**
-     * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object
-     * Privilege, Column Privilege, Owner or Schema Privilege on a schema.
-     */
+     * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege,
+     * Owner or Schema Privilege on a schema.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privilegeType")
     private final String privilegeType;
 
     /**
-     * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object
-     * Privilege, Column Privilege, Owner or Schema Privilege on a schema.
+     * Type of the privilege user has, this includes System Privilege, Schema Privilege, Object Privilege, Column Privilege,
+     * Owner or Schema Privilege on a schema.
      *
      * @return the value
-     */
+     **/
     public String getPrivilegeType() {
         return privilegeType;
     }
 
-    /** The name of the schema */
+    /**
+     * The name of the schema
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableSchema")
     private final String tableSchema;
 
     /**
      * The name of the schema
-     *
      * @return the value
-     */
+     **/
     public String getTableSchema() {
         return tableSchema;
     }
 
-    /** The name of the table. */
+    /**
+     * The name of the table.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tableName")
     private final String tableName;
 
     /**
      * The name of the table.
-     *
      * @return the value
-     */
+     **/
     public String getTableName() {
         return tableName;
     }
 
-    /** The name of the schema. */
+    /**
+     * The name of the schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewSchema")
     private final String viewSchema;
 
     /**
      * The name of the schema.
-     *
      * @return the value
-     */
+     **/
     public String getViewSchema() {
         return viewSchema;
     }
 
-    /** The name of the view. */
+    /**
+     * The name of the view.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewName")
     private final String viewName;
 
     /**
      * The name of the view.
-     *
      * @return the value
-     */
+     **/
     public String getViewName() {
         return viewName;
     }
 
-    /** The definition of the view. */
+    /**
+     * The definition of the view.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("viewText")
     private final String viewText;
 
     /**
      * The definition of the view.
-     *
      * @return the value
-     */
+     **/
     public String getViewText() {
         return viewText;
     }
 
-    /** The name of column when there are column level privileges on a table or view. */
+    /**
+     * The name of column when there are column level privileges on a table or view.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnName")
     private final String columnName;
 
     /**
      * The name of column when there are column level privileges on a table or view.
-     *
      * @return the value
-     */
+     **/
     public String getColumnName() {
         return columnName;
     }
 
-    /** The user who granted the privilege. */
+    /**
+     * The user who granted the privilege.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("grantor")
     private final String grantor;
 
     /**
      * The user who granted the privilege.
-     *
      * @return the value
-     */
+     **/
     public String getGrantor() {
         return grantor;
     }
 
-    /** Indicates whether the table access is constrained via Oracle Database Vault. */
+    /**
+     * Indicates whether the table access is constrained via Oracle Database Vault.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByDatabaseVault")
     private final Boolean isAccessConstrainedByDatabaseVault;
 
     /**
      * Indicates whether the table access is constrained via Oracle Database Vault.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAccessConstrainedByDatabaseVault() {
         return isAccessConstrainedByDatabaseVault;
     }
 
-    /** Indicates whether the view access is constrained via Virtual Private Database. */
+    /**
+     * Indicates whether the view access is constrained via Virtual Private Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByVirtualPrivateDatabase")
     private final Boolean isAccessConstrainedByVirtualPrivateDatabase;
 
     /**
      * Indicates whether the view access is constrained via Virtual Private Database.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAccessConstrainedByVirtualPrivateDatabase() {
         return isAccessConstrainedByVirtualPrivateDatabase;
     }
 
-    /** Indicates whether the view access is constrained via Oracle Data Redaction. */
+    /**
+     * Indicates whether the view access is constrained via Oracle Data Redaction.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByRedaction")
     private final Boolean isAccessConstrainedByRedaction;
 
     /**
      * Indicates whether the view access is constrained via Oracle Data Redaction.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAccessConstrainedByRedaction() {
         return isAccessConstrainedByRedaction;
     }
 
-    /** Indicates whether the view access is constrained via Real Application Security. */
+    /**
+     * Indicates whether the view access is constrained via Real Application Security.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedByRealApplicationSecurity")
     private final Boolean isAccessConstrainedByRealApplicationSecurity;
 
     /**
      * Indicates whether the view access is constrained via Real Application Security.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAccessConstrainedByRealApplicationSecurity() {
         return isAccessConstrainedByRealApplicationSecurity;
     }
 
-    /** Indicates whether the view access is constrained via Oracle Database SQL Firewall. */
+    /**
+     * Indicates whether the view access is constrained via Oracle Database SQL Firewall.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAccessConstrainedBySqlFirewall")
     private final Boolean isAccessConstrainedBySqlFirewall;
 
     /**
      * Indicates whether the view access is constrained via Oracle Database SQL Firewall.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAccessConstrainedBySqlFirewall() {
         return isAccessConstrainedBySqlFirewall;
     }
@@ -822,7 +847,6 @@ public final class DatabaseViewAccessEntrySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -12,8 +12,7 @@ import com.oracle.bmc.identity.requests.ListAvailabilityDomainsRequest;
 import com.oracle.bmc.identity.responses.ListAvailabilityDomainsResponse;
 
 /**
- * A sample to demonstrate how to configure connection timeout and read timeout using client
- * configuration.
+ * A sample to demonstrate how to configure connection timeout and read timeout using client configuration.
  */
 public class ClientConfigurationTimeoutExample {
 
@@ -36,12 +35,9 @@ public class ClientConfigurationTimeoutExample {
                 "Connection timeout set to " + CONNECTION_TIMEOUT_IN_MILLISECONDS + "ms");
         System.out.println("Read timeout set to " + READ_TIMEOUT_IN_MILLISECONDS + "ms");
 
-        // final IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
-        final IdentityClient identityClient =
-                IdentityClient.builder().configuration(clientConfiguration).build(provider);
+        final IdentityClient identityClient = new IdentityClient(provider, clientConfiguration);
 
-        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if
-        // known)
+        // TODO: Pass in the compartment ID as an argument, or enter the value directly here (if known)
         final String compartmentId = args[0];
         System.out.println(compartmentId);
 

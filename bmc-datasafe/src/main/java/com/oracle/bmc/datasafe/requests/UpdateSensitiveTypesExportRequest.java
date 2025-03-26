@@ -6,60 +6,72 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveTypesExportExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateSensitiveTypesExportRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveTypesExportExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSensitiveTypesExportRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateSensitiveTypesExportRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateSensitiveTypesExportDetails> {
 
-    /** The OCID of the sensitive types export. */
+    /**
+     * The OCID of the sensitive types export.
+     */
     private String sensitiveTypesExportId;
 
-    /** The OCID of the sensitive types export. */
+    /**
+     * The OCID of the sensitive types export.
+     */
     public String getSensitiveTypesExportId() {
         return sensitiveTypesExportId;
     }
-    /** Details to update a sensitive type. */
+    /**
+     * Details to update a sensitive type.
+     */
     private com.oracle.bmc.datasafe.model.UpdateSensitiveTypesExportDetails
             updateSensitiveTypesExportDetails;
 
-    /** Details to update a sensitive type. */
+    /**
+     * Details to update a sensitive type.
+     */
     public com.oracle.bmc.datasafe.model.UpdateSensitiveTypesExportDetails
             getUpdateSensitiveTypesExportDetails() {
         return updateSensitiveTypesExportDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateSensitiveTypesExportRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateSensitiveTypesExportRequest,
                     com.oracle.bmc.datasafe.model.UpdateSensitiveTypesExportDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive types export. */
+        /**
+         * The OCID of the sensitive types export.
+         */
         private String sensitiveTypesExportId = null;
 
         /**
          * The OCID of the sensitive types export.
-         *
          * @param sensitiveTypesExportId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateSensitiveTypesExportRequest
             return this;
         }
 
-        /** Details to update a sensitive type. */
+        /**
+         * Details to update a sensitive type.
+         */
         private com.oracle.bmc.datasafe.model.UpdateSensitiveTypesExportDetails
                 updateSensitiveTypesExportDetails = null;
 
         /**
          * Details to update a sensitive type.
-         *
          * @param updateSensitiveTypesExportDetails the value to set
          * @return this builder instance
          */
@@ -107,18 +122,21 @@ public class UpdateSensitiveTypesExportRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +146,13 @@ public class UpdateSensitiveTypesExportRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -144,19 +163,18 @@ public class UpdateSensitiveTypesExportRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateSensitiveTypesExportRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateSensitiveTypesExportRequest o) {
@@ -184,11 +201,10 @@ public class UpdateSensitiveTypesExportRequest
         /**
          * Build the instance of UpdateSensitiveTypesExportRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateSensitiveTypesExportRequest
          */
@@ -201,7 +217,6 @@ public class UpdateSensitiveTypesExportRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,8 +229,7 @@ public class UpdateSensitiveTypesExportRequest
         /**
          * Build the instance of UpdateSensitiveTypesExportRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateSensitiveTypesExportRequest
@@ -227,14 +241,12 @@ public class UpdateSensitiveTypesExportRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateSensitiveTypesExportRequest(sensitiveTypesExportId,
-            // updateSensitiveTypesExportDetails, ifMatch, opcRequestId);
+            // new UpdateSensitiveTypesExportRequest(sensitiveTypesExportId, updateSensitiveTypesExportDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,7 +259,6 @@ public class UpdateSensitiveTypesExportRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

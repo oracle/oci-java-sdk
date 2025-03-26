@@ -5,53 +5,55 @@
 package com.oracle.bmc.generativeai.model;
 
 /**
- * The capacity of a hosting type dedicated AI cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The capacity of a hosting type dedicated AI cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DedicatedAiClusterHostingCapacity.Builder.class)
+    builder = DedicatedAiClusterHostingCapacity.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "capacityType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "capacityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DedicatedAiClusterHostingCapacity extends DedicatedAiClusterCapacity {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The total number of endpoints that can be hosted on this dedicated AI cluster. */
+        /**
+         * The total number of endpoints that can be hosted on this dedicated AI cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalEndpointCapacity")
         private Integer totalEndpointCapacity;
 
         /**
          * The total number of endpoints that can be hosted on this dedicated AI cluster.
-         *
          * @param totalEndpointCapacity the value to set
          * @return this builder
-         */
+         **/
         public Builder totalEndpointCapacity(Integer totalEndpointCapacity) {
             this.totalEndpointCapacity = totalEndpointCapacity;
             this.__explicitlySet__.add("totalEndpointCapacity");
             return this;
         }
-        /** The number of endpoints hosted on this dedicated AI cluster. */
+        /**
+         * The number of endpoints hosted on this dedicated AI cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedEndpointCapacity")
         private Integer usedEndpointCapacity;
 
         /**
          * The number of endpoints hosted on this dedicated AI cluster.
-         *
          * @param usedEndpointCapacity the value to set
          * @return this builder
-         */
+         **/
         public Builder usedEndpointCapacity(Integer usedEndpointCapacity) {
             this.usedEndpointCapacity = usedEndpointCapacity;
             this.__explicitlySet__.add("usedEndpointCapacity");
@@ -83,7 +85,9 @@ public final class DedicatedAiClusterHostingCapacity extends DedicatedAiClusterC
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,28 +104,30 @@ public final class DedicatedAiClusterHostingCapacity extends DedicatedAiClusterC
         this.usedEndpointCapacity = usedEndpointCapacity;
     }
 
-    /** The total number of endpoints that can be hosted on this dedicated AI cluster. */
+    /**
+     * The total number of endpoints that can be hosted on this dedicated AI cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalEndpointCapacity")
     private final Integer totalEndpointCapacity;
 
     /**
      * The total number of endpoints that can be hosted on this dedicated AI cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalEndpointCapacity() {
         return totalEndpointCapacity;
     }
 
-    /** The number of endpoints hosted on this dedicated AI cluster. */
+    /**
+     * The number of endpoints hosted on this dedicated AI cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedEndpointCapacity")
     private final Integer usedEndpointCapacity;
 
     /**
      * The number of endpoints hosted on this dedicated AI cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getUsedEndpointCapacity() {
         return usedEndpointCapacity;
     }
@@ -133,7 +139,6 @@ public final class DedicatedAiClusterHostingCapacity extends DedicatedAiClusterC
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

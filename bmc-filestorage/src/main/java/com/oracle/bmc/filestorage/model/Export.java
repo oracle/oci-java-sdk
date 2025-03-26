@@ -5,45 +5,52 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * A file system and the path that you can use to mount it. Each export resource belongs to exactly
- * one export set.
- *
- * <p>The export's path attribute is not a path in the referenced file system, but the value used by
- * clients for the path component of the remotetarget argument when mounting the file system.
- *
- * <p>The path must start with a slash (/) followed by a sequence of zero or more slash-separated
- * path elements. For any two export resources associated with the same export set, except those in
- * a 'DELETED' state, the path element sequence for the first export resource can't contain the
- * complete path element sequence of the second export resource.
- *
- * <p>For example, the following are acceptable:
- *
- * <p>/example and /path * /example1 and /example2 * /example and /example1
- *
- * <p>The following examples are not acceptable: * /example and /example/path * / and /example
- *
- * <p>Paths may not end in a slash (/). No path element can be a period (.) or two periods in
- * sequence (..). All path elements must be 255 bytes or less.
- *
- * <p>No two non-'DELETED' export resources in the same export set can reference the same file
+ * A file system and the path that you can use to mount it. Each export
+ * resource belongs to exactly one export set.
+ * <p>
+ * The export's path attribute is not a path in the
+ * referenced file system, but the value used by clients for the path
+ * component of the remotetarget argument when mounting the file
  * system.
+ * <p>
+ * The path must start with a slash (/) followed by a sequence of zero or more
+ * slash-separated path elements. For any two export resources associated with
+ * the same export set, except those in a 'DELETED' state, the path element
+ * sequence for the first export resource can't contain the
+ * complete path element sequence of the second export resource.
+ * <p>
  *
- * <p>Use {@code exportOptions} to control access to an export. For more information, see [Export
- * Options](https://docs.oracle.com/iaas/Content/File/Tasks/exportoptions.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * For example, the following are acceptable:
+ * <p>
+ * /example and /path
+ *   * /example1 and /example2
+ *   * /example and /example1
+ * <p>
+ * The following examples are not acceptable:
+ *   * /example and /example/path
+ *   * / and /example
+ * <p>
+ * Paths may not end in a slash (/). No path element can be a period (.)
+ * or two periods in sequence (..). All path elements must be 255 bytes or less.
+ * <p>
+ * No two non-'DELETED' export resources in the same export set can
+ * reference the same file system.
+ * <p>
+ * Use {@code exportOptions} to control access to an export. For more information, see
+ * [Export Options](https://docs.oracle.com/iaas/Content/File/Tasks/exportoptions.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Export.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Export extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Export extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exportOptions",
@@ -81,123 +88,130 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Policies that apply to NFS requests made through this export. {@code exportOptions}
-         * contains a sequential list of {@code ClientOptions}. Each {@code ClientOptions} item
-         * defines the export options that are applied to a specified set of clients.
+         * Policies that apply to NFS requests made through this
+         * export. {@code exportOptions} contains a sequential list of
+         * {@code ClientOptions}. Each {@code ClientOptions} item defines the
+         * export options that are applied to a specified
+         * set of clients.
+         * <p>
+         * For each NFS request, the first {@code ClientOptions} option
+         * in the list whose {@code source} attribute matches the source
+         * IP address of the request is applied.
+         * <p>
+         * If a client source IP address does not match the {@code source}
+         * property of any {@code ClientOptions} in the list, then the
+         * export will be invisible to that client. This export will
+         * not be returned by {@code MOUNTPROC_EXPORT} calls made by the client
+         * and any attempt to mount or access the file system through
+         * this export will result in an error.
+         * <p>
+         **Exports without defined {@code ClientOptions} are invisible to all clients.**
+         * <p>
+         * If one export is invisible to a particular client, associated file
+         * systems may still be accessible through other exports on the same
+         * or different mount targets.
+         * To completely deny client access to a file system, be sure that the client
+         * source IP address is not included in any export for any mount target
+         * associated with the file system.
          *
-         * <p>For each NFS request, the first {@code ClientOptions} option in the list whose {@code
-         * source} attribute matches the source IP address of the request is applied.
-         *
-         * <p>If a client source IP address does not match the {@code source} property of any {@code
-         * ClientOptions} in the list, then the export will be invisible to that client. This export
-         * will not be returned by {@code MOUNTPROC_EXPORT} calls made by the client and any attempt
-         * to mount or access the file system through this export will result in an error.
-         *
-         * <p>*Exports without defined {@code ClientOptions} are invisible to all clients.**
-         *
-         * <p>If one export is invisible to a particular client, associated file systems may still
-         * be accessible through other exports on the same or different mount targets. To completely
-         * deny client access to a file system, be sure that the client source IP address is not
-         * included in any export for any mount target associated with the file system.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
         private java.util.List<ClientOptions> exportOptions;
 
         /**
-         * Policies that apply to NFS requests made through this export. {@code exportOptions}
-         * contains a sequential list of {@code ClientOptions}. Each {@code ClientOptions} item
-         * defines the export options that are applied to a specified set of clients.
-         *
-         * <p>For each NFS request, the first {@code ClientOptions} option in the list whose {@code
-         * source} attribute matches the source IP address of the request is applied.
-         *
-         * <p>If a client source IP address does not match the {@code source} property of any {@code
-         * ClientOptions} in the list, then the export will be invisible to that client. This export
-         * will not be returned by {@code MOUNTPROC_EXPORT} calls made by the client and any attempt
-         * to mount or access the file system through this export will result in an error.
-         *
-         * <p>*Exports without defined {@code ClientOptions} are invisible to all clients.**
-         *
-         * <p>If one export is invisible to a particular client, associated file systems may still
-         * be accessible through other exports on the same or different mount targets. To completely
-         * deny client access to a file system, be sure that the client source IP address is not
-         * included in any export for any mount target associated with the file system.
+         * Policies that apply to NFS requests made through this
+         * export. {@code exportOptions} contains a sequential list of
+         * {@code ClientOptions}. Each {@code ClientOptions} item defines the
+         * export options that are applied to a specified
+         * set of clients.
+         * <p>
+         * For each NFS request, the first {@code ClientOptions} option
+         * in the list whose {@code source} attribute matches the source
+         * IP address of the request is applied.
+         * <p>
+         * If a client source IP address does not match the {@code source}
+         * property of any {@code ClientOptions} in the list, then the
+         * export will be invisible to that client. This export will
+         * not be returned by {@code MOUNTPROC_EXPORT} calls made by the client
+         * and any attempt to mount or access the file system through
+         * this export will result in an error.
+         * <p>
+         **Exports without defined {@code ClientOptions} are invisible to all clients.**
+         * <p>
+         * If one export is invisible to a particular client, associated file
+         * systems may still be accessible through other exports on the same
+         * or different mount targets.
+         * To completely deny client access to a file system, be sure that the client
+         * source IP address is not included in any export for any mount target
+         * associated with the file system.
          *
          * @param exportOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder exportOptions(java.util.List<ClientOptions> exportOptions) {
             this.exportOptions = exportOptions;
             this.__explicitlySet__.add("exportOptions");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export's export set.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
         private String exportSetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export's export set.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
          * @param exportSetId the value to set
          * @return this builder
-         */
+         **/
         public Builder exportSetId(String exportSetId) {
             this.exportSetId = exportSetId;
             this.__explicitlySet__.add("exportSetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export's file system.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
         private String fileSystemId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export's file system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
          * @param fileSystemId the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSystemId(String fileSystemId) {
             this.fileSystemId = fileSystemId;
             this.__explicitlySet__.add("fileSystemId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * export.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The current state of this export. */
+        /**
+         * The current state of this export.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of this export.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -205,93 +219,81 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         }
         /**
          * Path used to access the associated file system.
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /accounting}
          *
-         * <p>Avoid entering confidential information.
-         *
-         * <p>Example: {@code /accounting}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Path used to access the associated file system.
-         *
-         * <p>Avoid entering confidential information.
-         *
-         * <p>Example: {@code /accounting}
+         * <p>
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code /accounting}
          *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
         /**
-         * Whether or not the export should use ID mapping for Unix groups rather than the group
-         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
-         * from the RPC header is used to retrieve the list of secondary groups from a the ID
-         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
-         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
-         * list of secondary groups then an empty secondary group list is used for authorization. If
-         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
-         * truncated to the first 256 groups read.
-         */
+         * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
         private Boolean isIdmapGroupsForSysAuth;
 
         /**
-         * Whether or not the export should use ID mapping for Unix groups rather than the group
-         * list provided within an NFS request's RPC header. When this flag is true the Unix UID
-         * from the RPC header is used to retrieve the list of secondary groups from a the ID
-         * mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is
-         * not configured, incorrectly configured, unavailable, or cannot be used to determine a
-         * list of secondary groups then an empty secondary group list is used for authorization. If
-         * the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is
-         * truncated to the first 256 groups read.
-         *
+         * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
          * @param isIdmapGroupsForSysAuth the value to set
          * @return this builder
-         */
+         **/
         public Builder isIdmapGroupsForSysAuth(Boolean isIdmapGroupsForSysAuth) {
             this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
             this.__explicitlySet__.add("isIdmapGroupsForSysAuth");
             return this;
         }
         /**
-         * The date and time the export was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * The date and time the export was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the export was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the export was created, expressed
+         * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -352,7 +354,9 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -362,115 +366,123 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * Policies that apply to NFS requests made through this export. {@code exportOptions} contains
-     * a sequential list of {@code ClientOptions}. Each {@code ClientOptions} item defines the
-     * export options that are applied to a specified set of clients.
+     * Policies that apply to NFS requests made through this
+     * export. {@code exportOptions} contains a sequential list of
+     * {@code ClientOptions}. Each {@code ClientOptions} item defines the
+     * export options that are applied to a specified
+     * set of clients.
+     * <p>
+     * For each NFS request, the first {@code ClientOptions} option
+     * in the list whose {@code source} attribute matches the source
+     * IP address of the request is applied.
+     * <p>
+     * If a client source IP address does not match the {@code source}
+     * property of any {@code ClientOptions} in the list, then the
+     * export will be invisible to that client. This export will
+     * not be returned by {@code MOUNTPROC_EXPORT} calls made by the client
+     * and any attempt to mount or access the file system through
+     * this export will result in an error.
+     * <p>
+     **Exports without defined {@code ClientOptions} are invisible to all clients.**
+     * <p>
+     * If one export is invisible to a particular client, associated file
+     * systems may still be accessible through other exports on the same
+     * or different mount targets.
+     * To completely deny client access to a file system, be sure that the client
+     * source IP address is not included in any export for any mount target
+     * associated with the file system.
      *
-     * <p>For each NFS request, the first {@code ClientOptions} option in the list whose {@code
-     * source} attribute matches the source IP address of the request is applied.
-     *
-     * <p>If a client source IP address does not match the {@code source} property of any {@code
-     * ClientOptions} in the list, then the export will be invisible to that client. This export
-     * will not be returned by {@code MOUNTPROC_EXPORT} calls made by the client and any attempt to
-     * mount or access the file system through this export will result in an error.
-     *
-     * <p>*Exports without defined {@code ClientOptions} are invisible to all clients.**
-     *
-     * <p>If one export is invisible to a particular client, associated file systems may still be
-     * accessible through other exports on the same or different mount targets. To completely deny
-     * client access to a file system, be sure that the client source IP address is not included in
-     * any export for any mount target associated with the file system.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportOptions")
     private final java.util.List<ClientOptions> exportOptions;
 
     /**
-     * Policies that apply to NFS requests made through this export. {@code exportOptions} contains
-     * a sequential list of {@code ClientOptions}. Each {@code ClientOptions} item defines the
-     * export options that are applied to a specified set of clients.
-     *
-     * <p>For each NFS request, the first {@code ClientOptions} option in the list whose {@code
-     * source} attribute matches the source IP address of the request is applied.
-     *
-     * <p>If a client source IP address does not match the {@code source} property of any {@code
-     * ClientOptions} in the list, then the export will be invisible to that client. This export
-     * will not be returned by {@code MOUNTPROC_EXPORT} calls made by the client and any attempt to
-     * mount or access the file system through this export will result in an error.
-     *
-     * <p>*Exports without defined {@code ClientOptions} are invisible to all clients.**
-     *
-     * <p>If one export is invisible to a particular client, associated file systems may still be
-     * accessible through other exports on the same or different mount targets. To completely deny
-     * client access to a file system, be sure that the client source IP address is not included in
-     * any export for any mount target associated with the file system.
+     * Policies that apply to NFS requests made through this
+     * export. {@code exportOptions} contains a sequential list of
+     * {@code ClientOptions}. Each {@code ClientOptions} item defines the
+     * export options that are applied to a specified
+     * set of clients.
+     * <p>
+     * For each NFS request, the first {@code ClientOptions} option
+     * in the list whose {@code source} attribute matches the source
+     * IP address of the request is applied.
+     * <p>
+     * If a client source IP address does not match the {@code source}
+     * property of any {@code ClientOptions} in the list, then the
+     * export will be invisible to that client. This export will
+     * not be returned by {@code MOUNTPROC_EXPORT} calls made by the client
+     * and any attempt to mount or access the file system through
+     * this export will result in an error.
+     * <p>
+     **Exports without defined {@code ClientOptions} are invisible to all clients.**
+     * <p>
+     * If one export is invisible to a particular client, associated file
+     * systems may still be accessible through other exports on the same
+     * or different mount targets.
+     * To completely deny client access to a file system, be sure that the client
+     * source IP address is not included in any export for any mount target
+     * associated with the file system.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ClientOptions> getExportOptions() {
         return exportOptions;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export's export set.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSetId")
     private final String exportSetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export's export set.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's export set.
      * @return the value
-     */
+     **/
     public String getExportSetId() {
         return exportSetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export's file system.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemId")
     private final String fileSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export's file system.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export's file system.
      * @return the value
-     */
+     **/
     public String getFileSystemId() {
         return fileSystemId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * export.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this export.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The current state of this export. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of this export.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Deleting("DELETING"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -509,99 +521,90 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
             return UnknownEnumValue;
         }
     };
-    /** The current state of this export. */
+    /**
+     * The current state of this export.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of this export.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Path used to access the associated file system.
+     * <p>
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code /accounting}
      *
-     * <p>Avoid entering confidential information.
-     *
-     * <p>Example: {@code /accounting}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Path used to access the associated file system.
-     *
-     * <p>Avoid entering confidential information.
-     *
-     * <p>Example: {@code /accounting}
+     * <p>
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code /accounting}
      *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
     /**
-     * Whether or not the export should use ID mapping for Unix groups rather than the group list
-     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
-     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
-     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
-     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
-     * empty secondary group list is used for authorization. If the number of groups exceeds the
-     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-     */
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIdmapGroupsForSysAuth")
     private final Boolean isIdmapGroupsForSysAuth;
 
     /**
-     * Whether or not the export should use ID mapping for Unix groups rather than the group list
-     * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
-     * header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The
-     * primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly
-     * configured, unavailable, or cannot be used to determine a list of secondary groups then an
-     * empty secondary group list is used for authorization. If the number of groups exceeds the
-     * limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
-     *
+     * Whether or not the export should use ID mapping for Unix groups rather than the group list provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC header is used to retrieve the list of secondary groups from a the ID mapping subsystem. The primary GID is always taken from the RPC header. If ID mapping is not configured, incorrectly configured, unavailable, or cannot be used to determine a list of secondary groups then an empty secondary group list is used for authorization. If the number of groups exceeds the limit of 256 groups, the list retrieved from LDAP is truncated to the first 256 groups read.
      * @return the value
-     */
+     **/
     public Boolean getIsIdmapGroupsForSysAuth() {
         return isIdmapGroupsForSysAuth;
     }
 
     /**
-     * The date and time the export was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * The date and time the export was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the export was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the export was created, expressed
+     * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -613,7 +616,6 @@ public final class Export extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

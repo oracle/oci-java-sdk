@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The properties for updating a standby database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The properties for updating a standby database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataGuardDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateDataGuardDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataGuardDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseAdminPassword",
@@ -45,97 +44,97 @@ public final class UpdateDataGuardDetails
     public static class Builder {
         /**
          * The administrator password of the primary database in this Data Guard association.
+         * <p>
+         **The password MUST be the same as the primary admin password.**
          *
-         * <p>*The password MUST be the same as the primary admin password.**
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
         private String databaseAdminPassword;
 
         /**
          * The administrator password of the primary database in this Data Guard association.
-         *
-         * <p>*The password MUST be the same as the primary admin password.**
+         * <p>
+         **The password MUST be the same as the primary admin password.**
          *
          * @param databaseAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
             this.__explicitlySet__.add("databaseAdminPassword");
             return this;
         }
         /**
-         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-         * Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
         /**
-         * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-         * Protection
-         * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+         * The protection mode of this Data Guard. For more information, see
+         * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
          * in the Oracle Data Guard documentation.
          *
          * @param protectionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionMode(ProtectionMode protectionMode) {
             this.protectionMode = protectionMode;
             this.__explicitlySet__.add("protectionMode");
             return this;
         }
         /**
-         * The redo transport type to use for this Data Guard association. Valid values depend on
-         * the specified {@code protectionMode}:
-         *
-         * <p>MAXIMUM_AVAILABILITY - SYNC or FASTSYNC * MAXIMUM_PERFORMANCE - ASYNC *
-         * MAXIMUM_PROTECTION - SYNC
-         *
-         * <p>For more information, see [Redo Transport
-         * Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+         * <p>
+         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
          * in the Oracle Data Guard documentation.
+         * <p>
+         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
          *
-         * <p>*IMPORTANT** - The only transport type currently supported by the Database service is
-         * ASYNC.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transportType")
         private TransportType transportType;
 
         /**
-         * The redo transport type to use for this Data Guard association. Valid values depend on
-         * the specified {@code protectionMode}:
-         *
-         * <p>MAXIMUM_AVAILABILITY - SYNC or FASTSYNC * MAXIMUM_PERFORMANCE - ASYNC *
-         * MAXIMUM_PROTECTION - SYNC
-         *
-         * <p>For more information, see [Redo Transport
-         * Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+         * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+         * <p>
+         * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+         * * MAXIMUM_PERFORMANCE - ASYNC
+         * * MAXIMUM_PROTECTION - SYNC
+         * <p>
+         * For more information, see
+         * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
          * in the Oracle Data Guard documentation.
-         *
-         * <p>*IMPORTANT** - The only transport type currently supported by the Database service is
-         * ASYNC.
+         * <p>
+         **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
          *
          * @param transportType the value to set
          * @return this builder
-         */
+         **/
         public Builder transportType(TransportType transportType) {
             this.transportType = transportType;
             this.__explicitlySet__.add("transportType");
             return this;
         }
-        /** True if active Data Guard is enabled. */
+        /**
+         * True if active Data Guard is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
         private Boolean isActiveDataGuardEnabled;
 
         /**
          * True if active Data Guard is enabled.
-         *
          * @param isActiveDataGuardEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isActiveDataGuardEnabled(Boolean isActiveDataGuardEnabled) {
             this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
             this.__explicitlySet__.add("isActiveDataGuardEnabled");
@@ -176,7 +175,9 @@ public final class UpdateDataGuardDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -187,30 +188,31 @@ public final class UpdateDataGuardDetails
 
     /**
      * The administrator password of the primary database in this Data Guard association.
+     * <p>
+     **The password MUST be the same as the primary admin password.**
      *
-     * <p>*The password MUST be the same as the primary admin password.**
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseAdminPassword")
     private final String databaseAdminPassword;
 
     /**
      * The administrator password of the primary database in this Data Guard association.
-     *
-     * <p>*The password MUST be the same as the primary admin password.**
+     * <p>
+     **The password MUST be the same as the primary admin password.**
      *
      * @return the value
-     */
+     **/
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
     }
 
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
-    public enum ProtectionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum ProtectionMode {
         MaximumAvailability("MAXIMUM_AVAILABILITY"),
         MaximumPerformance("MAXIMUM_PERFORMANCE"),
         MaximumProtection("MAXIMUM_PROTECTION"),
@@ -244,41 +246,40 @@ public final class UpdateDataGuardDetails
         }
     };
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
     private final ProtectionMode protectionMode;
 
     /**
-     * The protection mode of this Data Guard. For more information, see [Oracle Data Guard
-     * Protection
-     * Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
+     * The protection mode of this Data Guard. For more information, see
+     * [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000)
      * in the Oracle Data Guard documentation.
      *
      * @return the value
-     */
+     **/
     public ProtectionMode getProtectionMode() {
         return protectionMode;
     }
 
     /**
-     * The redo transport type to use for this Data Guard association. Valid values depend on the
-     * specified {@code protectionMode}:
-     *
-     * <p>MAXIMUM_AVAILABILITY - SYNC or FASTSYNC * MAXIMUM_PERFORMANCE - ASYNC * MAXIMUM_PROTECTION
-     * - SYNC
-     *
-     * <p>For more information, see [Redo Transport
-     * Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
-     * <p>*IMPORTANT** - The only transport type currently supported by the Database service is
-     * ASYNC.
-     */
-    public enum TransportType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum TransportType {
         Sync("SYNC"),
         Async("ASYNC"),
         Fastsync("FASTSYNC"),
@@ -312,51 +313,51 @@ public final class UpdateDataGuardDetails
         }
     };
     /**
-     * The redo transport type to use for this Data Guard association. Valid values depend on the
-     * specified {@code protectionMode}:
-     *
-     * <p>MAXIMUM_AVAILABILITY - SYNC or FASTSYNC * MAXIMUM_PERFORMANCE - ASYNC * MAXIMUM_PROTECTION
-     * - SYNC
-     *
-     * <p>For more information, see [Redo Transport
-     * Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
-     * <p>*IMPORTANT** - The only transport type currently supported by the Database service is
-     * ASYNC.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     private final TransportType transportType;
 
     /**
-     * The redo transport type to use for this Data Guard association. Valid values depend on the
-     * specified {@code protectionMode}:
-     *
-     * <p>MAXIMUM_AVAILABILITY - SYNC or FASTSYNC * MAXIMUM_PERFORMANCE - ASYNC * MAXIMUM_PROTECTION
-     * - SYNC
-     *
-     * <p>For more information, see [Redo Transport
-     * Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
+     * The redo transport type to use for this Data Guard association.  Valid values depend on the specified {@code protectionMode}:
+     * <p>
+     * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
+     * * MAXIMUM_PERFORMANCE - ASYNC
+     * * MAXIMUM_PROTECTION - SYNC
+     * <p>
+     * For more information, see
+     * [Redo Transport Services](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-redo-transport-services.htm#SBYDB00400)
      * in the Oracle Data Guard documentation.
-     *
-     * <p>*IMPORTANT** - The only transport type currently supported by the Database service is
-     * ASYNC.
+     * <p>
+     **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
      *
      * @return the value
-     */
+     **/
     public TransportType getTransportType() {
         return transportType;
     }
 
-    /** True if active Data Guard is enabled. */
+    /**
+     * True if active Data Guard is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isActiveDataGuardEnabled")
     private final Boolean isActiveDataGuardEnabled;
 
     /**
      * True if active Data Guard is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsActiveDataGuardEnabled() {
         return isActiveDataGuardEnabled;
     }
@@ -368,7 +369,6 @@ public final class UpdateDataGuardDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

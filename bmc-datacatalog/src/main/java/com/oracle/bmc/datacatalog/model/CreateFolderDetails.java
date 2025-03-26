@@ -5,23 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Properties used in folder create operations. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Properties used in folder create operations.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateFolderDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateFolderDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CreateFolderDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CreateFolderDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -62,68 +60,68 @@ public final class CreateFolderDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
+         * A user-friendly display name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Optional user friendly business name of the folder. If set, this supplements the
-         * harvested display name of the object.
-         */
+         * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("businessName")
         private String businessName;
 
         /**
-         * Optional user friendly business name of the folder. If set, this supplements the
-         * harvested display name of the object.
-         *
+         * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
          * @param businessName the value to set
          * @return this builder
-         */
+         **/
         public Builder businessName(String businessName) {
             this.businessName = businessName;
             this.__explicitlySet__.add("businessName");
             return this;
         }
-        /** Detailed description of a folder. */
+        /**
+         * Detailed description of a folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description of a folder.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The list of customized properties along with the values for this object */
+        /**
+         * The list of customized properties along with the values for this object
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
         private java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
         /**
          * The list of customized properties along with the values for this object
-         *
          * @param customPropertyMembers the value to set
          * @return this builder
-         */
+         **/
         public Builder customPropertyMembers(
                 java.util.List<CustomPropertySetUsage> customPropertyMembers) {
             this.customPropertyMembers = customPropertyMembers;
@@ -131,112 +129,112 @@ public final class CreateFolderDetails
             return this;
         }
         /**
-         * A map of maps that contains the properties which are specific to the folder type. Each
-         * folder type definition defines it's set of required and optional properties. The map keys
-         * are category names and the values are maps of property name to property value. Every
-         * property is contained inside of a category. Most folders have required properties within
-         * the "default" category. To determine the set of optional and required properties for a
-         * folder type, a query can be done on '/types?type=folder' that returns a collection of all
-         * folder types. The appropriate folder type, which includes definitions of all of it's
-         * properties, can be identified from this collection. Example: {@code {"properties": {
-         * "default": { "key1": "value1"}}}}
-         */
+         * A map of maps that contains the properties which are specific to the folder type. Each folder type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * folders have required properties within the "default" category. To determine the set of optional and
+         * required properties for a folder type, a query can be done on '/types?type=folder' that returns a
+         * collection of all folder types. The appropriate folder type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.Map<String, java.util.Map<String, String>> properties;
 
         /**
-         * A map of maps that contains the properties which are specific to the folder type. Each
-         * folder type definition defines it's set of required and optional properties. The map keys
-         * are category names and the values are maps of property name to property value. Every
-         * property is contained inside of a category. Most folders have required properties within
-         * the "default" category. To determine the set of optional and required properties for a
-         * folder type, a query can be done on '/types?type=folder' that returns a collection of all
-         * folder types. The appropriate folder type, which includes definitions of all of it's
-         * properties, can be identified from this collection. Example: {@code {"properties": {
-         * "default": { "key1": "value1"}}}}
+         * A map of maps that contains the properties which are specific to the folder type. Each folder type
+         * definition defines it's set of required and optional properties. The map keys are category names and the
+         * values are maps of property name to property value. Every property is contained inside of a category. Most
+         * folders have required properties within the "default" category. To determine the set of optional and
+         * required properties for a folder type, a query can be done on '/types?type=folder' that returns a
+         * collection of all folder types. The appropriate folder type, which includes definitions of all of
+         * it's properties, can be identified from this collection.
+         * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.Map<String, java.util.Map<String, String>> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** The key of the containing folder or null if there isn't a parent folder. */
+        /**
+         * The key of the containing folder or null if there isn't a parent folder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
         private String parentFolderKey;
 
         /**
          * The key of the containing folder or null if there isn't a parent folder.
-         *
          * @param parentFolderKey the value to set
          * @return this builder
-         */
+         **/
         public Builder parentFolderKey(String parentFolderKey) {
             this.parentFolderKey = parentFolderKey;
             this.__explicitlySet__.add("parentFolderKey");
             return this;
         }
-        /** Last modified timestamp of this object in the external system. */
+        /**
+         * Last modified timestamp of this object in the external system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
         private java.util.Date timeExternal;
 
         /**
          * Last modified timestamp of this object in the external system.
-         *
          * @param timeExternal the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExternal(java.util.Date timeExternal) {
             this.timeExternal = timeExternal;
             this.__explicitlySet__.add("timeExternal");
             return this;
         }
         /**
-         * The job key of the harvest process that updated the folder definition from the source
-         * system.
-         */
+         * The job key of the harvest process that updated the folder definition from the source system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastJobKey")
         private String lastJobKey;
 
         /**
-         * The job key of the harvest process that updated the folder definition from the source
-         * system.
-         *
+         * The job key of the harvest process that updated the folder definition from the source system.
          * @param lastJobKey the value to set
          * @return this builder
-         */
+         **/
         public Builder lastJobKey(String lastJobKey) {
             this.lastJobKey = lastJobKey;
             this.__explicitlySet__.add("lastJobKey");
             return this;
         }
-        /** Folder harvesting status. */
+        /**
+         * Folder harvesting status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
         private HarvestStatus harvestStatus;
 
         /**
          * Folder harvesting status.
-         *
          * @param harvestStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder harvestStatus(HarvestStatus harvestStatus) {
             this.harvestStatus = harvestStatus;
             this.__explicitlySet__.add("harvestStatus");
             return this;
         }
-        /** Type key of the object. Type keys can be found via the '/types' endpoint. */
+        /**
+         * Type key of the object. Type keys can be found via the '/types' endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
         private String typeKey;
 
         /**
          * Type key of the object. Type keys can be found via the '/types' endpoint.
-         *
          * @param typeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder typeKey(String typeKey) {
             this.typeKey = typeKey;
             this.__explicitlySet__.add("typeKey");
@@ -301,7 +299,9 @@ public final class CreateFolderDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -311,159 +311,161 @@ public final class CreateFolderDetails
     }
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly display name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Optional user friendly business name of the folder. If set, this supplements the harvested
-     * display name of the object.
-     */
+     * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("businessName")
     private final String businessName;
 
     /**
-     * Optional user friendly business name of the folder. If set, this supplements the harvested
-     * display name of the object.
-     *
+     * Optional user friendly business name of the folder. If set, this supplements the harvested display name of the object.
      * @return the value
-     */
+     **/
     public String getBusinessName() {
         return businessName;
     }
 
-    /** Detailed description of a folder. */
+    /**
+     * Detailed description of a folder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description of a folder.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The list of customized properties along with the values for this object */
+    /**
+     * The list of customized properties along with the values for this object
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customPropertyMembers")
     private final java.util.List<CustomPropertySetUsage> customPropertyMembers;
 
     /**
      * The list of customized properties along with the values for this object
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CustomPropertySetUsage> getCustomPropertyMembers() {
         return customPropertyMembers;
     }
 
     /**
-     * A map of maps that contains the properties which are specific to the folder type. Each folder
-     * type definition defines it's set of required and optional properties. The map keys are
-     * category names and the values are maps of property name to property value. Every property is
-     * contained inside of a category. Most folders have required properties within the "default"
-     * category. To determine the set of optional and required properties for a folder type, a query
-     * can be done on '/types?type=folder' that returns a collection of all folder types. The
-     * appropriate folder type, which includes definitions of all of it's properties, can be
-     * identified from this collection. Example: {@code {"properties": { "default": { "key1":
-     * "value1"}}}}
-     */
+     * A map of maps that contains the properties which are specific to the folder type. Each folder type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * folders have required properties within the "default" category. To determine the set of optional and
+     * required properties for a folder type, a query can be done on '/types?type=folder' that returns a
+     * collection of all folder types. The appropriate folder type, which includes definitions of all of
+     * it's properties, can be identified from this collection.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.Map<String, java.util.Map<String, String>> properties;
 
     /**
-     * A map of maps that contains the properties which are specific to the folder type. Each folder
-     * type definition defines it's set of required and optional properties. The map keys are
-     * category names and the values are maps of property name to property value. Every property is
-     * contained inside of a category. Most folders have required properties within the "default"
-     * category. To determine the set of optional and required properties for a folder type, a query
-     * can be done on '/types?type=folder' that returns a collection of all folder types. The
-     * appropriate folder type, which includes definitions of all of it's properties, can be
-     * identified from this collection. Example: {@code {"properties": { "default": { "key1":
-     * "value1"}}}}
+     * A map of maps that contains the properties which are specific to the folder type. Each folder type
+     * definition defines it's set of required and optional properties. The map keys are category names and the
+     * values are maps of property name to property value. Every property is contained inside of a category. Most
+     * folders have required properties within the "default" category. To determine the set of optional and
+     * required properties for a folder type, a query can be done on '/types?type=folder' that returns a
+     * collection of all folder types. The appropriate folder type, which includes definitions of all of
+     * it's properties, can be identified from this collection.
+     * Example: {@code {"properties": { "default": { "key1": "value1"}}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, String>> getProperties() {
         return properties;
     }
 
-    /** The key of the containing folder or null if there isn't a parent folder. */
+    /**
+     * The key of the containing folder or null if there isn't a parent folder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentFolderKey")
     private final String parentFolderKey;
 
     /**
      * The key of the containing folder or null if there isn't a parent folder.
-     *
      * @return the value
-     */
+     **/
     public String getParentFolderKey() {
         return parentFolderKey;
     }
 
-    /** Last modified timestamp of this object in the external system. */
+    /**
+     * Last modified timestamp of this object in the external system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExternal")
     private final java.util.Date timeExternal;
 
     /**
      * Last modified timestamp of this object in the external system.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExternal() {
         return timeExternal;
     }
 
     /**
      * The job key of the harvest process that updated the folder definition from the source system.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastJobKey")
     private final String lastJobKey;
 
     /**
      * The job key of the harvest process that updated the folder definition from the source system.
-     *
      * @return the value
-     */
+     **/
     public String getLastJobKey() {
         return lastJobKey;
     }
 
-    /** Folder harvesting status. */
+    /**
+     * Folder harvesting status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("harvestStatus")
     private final HarvestStatus harvestStatus;
 
     /**
      * Folder harvesting status.
-     *
      * @return the value
-     */
+     **/
     public HarvestStatus getHarvestStatus() {
         return harvestStatus;
     }
 
-    /** Type key of the object. Type keys can be found via the '/types' endpoint. */
+    /**
+     * Type key of the object. Type keys can be found via the '/types' endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("typeKey")
     private final String typeKey;
 
     /**
      * Type key of the object. Type keys can be found via the '/types' endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getTypeKey() {
         return typeKey;
     }
@@ -475,7 +477,6 @@ public final class CreateFolderDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

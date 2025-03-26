@@ -5,24 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The response containing the CPU, Wait, DB Time, and Memory metrics for a specific Oracle Real
- * Application Clusters (Oracle RAC) database instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The response containing the CPU, Wait, DB Time, and Memory metrics
+ * for a specific Oracle Real Application Clusters (Oracle RAC) database
+ * instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DatabaseInstanceHomeMetricsDefinition.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DatabaseInstanceHomeMetricsDefinition.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DatabaseInstanceHomeMetricsDefinition
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceName",
@@ -54,57 +55,62 @@ public final class DatabaseInstanceHomeMetricsDefinition
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the Oracle Real Application Clusters (Oracle RAC) database instance to which
-         * the corresponding metrics belong.
-         */
+         * The name of the Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
         private String instanceName;
 
         /**
-         * The name of the Oracle Real Application Clusters (Oracle RAC) database instance to which
-         * the corresponding metrics belong.
+         * The name of the Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
          *
          * @param instanceName the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceName(String instanceName) {
             this.instanceName = instanceName;
             this.__explicitlySet__.add("instanceName");
             return this;
         }
         /**
-         * The number of Oracle Real Application Clusters (Oracle RAC) database instance to which
-         * the corresponding metrics belong.
-         */
+         * The number of Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
         private Integer instanceNumber;
 
         /**
-         * The number of Oracle Real Application Clusters (Oracle RAC) database instance to which
-         * the corresponding metrics belong.
+         * The number of Oracle Real Application Clusters (Oracle RAC)
+         * database instance to which the corresponding metrics belong.
          *
          * @param instanceNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceNumber(Integer instanceNumber) {
             this.instanceNumber = instanceNumber;
             this.__explicitlySet__.add("instanceNumber");
             return this;
         }
         /**
-         * A list of the active session metrics for CPU and Wait time for a specific Oracle Real
-         * Application Clusters (Oracle RAC) database instance.
-         */
+         * A list of the active session metrics for CPU and Wait time for
+         * a specific Oracle Real Application Clusters (Oracle RAC)
+         * database instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
         private java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
         /**
-         * A list of the active session metrics for CPU and Wait time for a specific Oracle Real
-         * Application Clusters (Oracle RAC) database instance.
+         * A list of the active session metrics for CPU and Wait time for
+         * a specific Oracle Real Application Clusters (Oracle RAC)
+         * database instance.
          *
          * @param activityTimeSeriesMetrics the value to set
          * @return this builder
-         */
+         **/
         public Builder activityTimeSeriesMetrics(
                 java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics) {
             this.activityTimeSeriesMetrics = activityTimeSeriesMetrics;
@@ -195,7 +201,9 @@ public final class DatabaseInstanceHomeMetricsDefinition
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,52 +213,57 @@ public final class DatabaseInstanceHomeMetricsDefinition
     }
 
     /**
-     * The name of the Oracle Real Application Clusters (Oracle RAC) database instance to which the
-     * corresponding metrics belong.
-     */
+     * The name of the Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceName")
     private final String instanceName;
 
     /**
-     * The name of the Oracle Real Application Clusters (Oracle RAC) database instance to which the
-     * corresponding metrics belong.
+     * The name of the Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
      *
      * @return the value
-     */
+     **/
     public String getInstanceName() {
         return instanceName;
     }
 
     /**
-     * The number of Oracle Real Application Clusters (Oracle RAC) database instance to which the
-     * corresponding metrics belong.
-     */
+     * The number of Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceNumber")
     private final Integer instanceNumber;
 
     /**
-     * The number of Oracle Real Application Clusters (Oracle RAC) database instance to which the
-     * corresponding metrics belong.
+     * The number of Oracle Real Application Clusters (Oracle RAC)
+     * database instance to which the corresponding metrics belong.
      *
      * @return the value
-     */
+     **/
     public Integer getInstanceNumber() {
         return instanceNumber;
     }
 
     /**
-     * A list of the active session metrics for CPU and Wait time for a specific Oracle Real
-     * Application Clusters (Oracle RAC) database instance.
-     */
+     * A list of the active session metrics for CPU and Wait time for
+     * a specific Oracle Real Application Clusters (Oracle RAC)
+     * database instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityTimeSeriesMetrics")
     private final java.util.List<ActivityTimeSeriesMetrics> activityTimeSeriesMetrics;
 
     /**
-     * A list of the active session metrics for CPU and Wait time for a specific Oracle Real
-     * Application Clusters (Oracle RAC) database instance.
+     * A list of the active session metrics for CPU and Wait time for
+     * a specific Oracle Real Application Clusters (Oracle RAC)
+     * database instance.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ActivityTimeSeriesMetrics> getActivityTimeSeriesMetrics() {
         return activityTimeSeriesMetrics;
     }
@@ -290,7 +303,6 @@ public final class DatabaseInstanceHomeMetricsDefinition
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

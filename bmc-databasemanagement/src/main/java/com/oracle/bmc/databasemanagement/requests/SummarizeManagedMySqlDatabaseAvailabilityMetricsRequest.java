@@ -6,72 +6,87 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeManagedMySqlDatabaseAvailabilityMetricsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeManagedMySqlDatabaseAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the Managed MySQL Database. */
+    /**
+     * The OCID of the Managed MySQL Database.
+     */
     private String managedMySqlDatabaseId;
 
-    /** The OCID of the Managed MySQL Database. */
+    /**
+     * The OCID of the Managed MySQL Database.
+     */
     public String getManagedMySqlDatabaseId() {
         return managedMySqlDatabaseId;
     }
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String startTime;
 
     /**
-     * The start time of the time range to retrieve the health metrics of a Managed Database in UTC
-     * in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The start time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getStartTime() {
         return startTime;
     }
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     private String endTime;
 
     /**
-     * The end time of the time range to retrieve the health metrics of a Managed Database in UTC in
-     * ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     * The end time of the time range to retrieve the health metrics of a Managed Database
+     * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+     *
      */
     public String getEndTime() {
         return endTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -79,15 +94,17 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the Managed MySQL Database. */
+        /**
+         * The OCID of the Managed MySQL Database.
+         */
         private String managedMySqlDatabaseId = null;
 
         /**
          * The OCID of the Managed MySQL Database.
-         *
          * @param managedMySqlDatabaseId the value to set
          * @return this builder instance
          */
@@ -97,14 +114,15 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         }
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String startTime = null;
 
         /**
-         * The start time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The start time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param startTime the value to set
          * @return this builder instance
@@ -115,14 +133,15 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         }
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         *
          */
         private String endTime = null;
 
         /**
-         * The end time of the time range to retrieve the health metrics of a Managed Database in
-         * UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
+         * The end time of the time range to retrieve the health metrics of a Managed Database
+         * in UTC in ISO-8601 format, which is "yyyy-MM-dd'T'hh:mm:ss.sss'Z'".
          *
          * @param endTime the value to set
          * @return this builder instance
@@ -132,12 +151,13 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -147,14 +167,15 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -164,12 +185,13 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -180,19 +202,18 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -204,7 +225,6 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest o) {
@@ -220,14 +240,12 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         }
 
         /**
-         * Build the instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest as
-         * configured by this builder
+         * Build the instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
          */
@@ -240,11 +258,9 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
         }
 
         /**
-         * Build the instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest as
-         * configured by this builder
+         * Build the instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
@@ -260,14 +276,12 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
             request.page = page;
             request.limit = limit;
             return request;
-            // new SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest(managedMySqlDatabaseId,
-            // startTime, endTime, opcRequestId, page, limit);
+            // new SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest(managedMySqlDatabaseId, startTime, endTime, opcRequestId, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -282,7 +296,6 @@ public class SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

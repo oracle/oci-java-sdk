@@ -6,149 +6,205 @@ package com.oracle.bmc.cloudguard.requests;
 
 import com.oracle.bmc.cloudguard.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourcesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudguard/ListResourcesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListResourcesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment in which to list resources. */
+    /**
+     * The OCID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the target in which to list resources. */
+    /**
+     * The ID of the target in which to list resources.
+     */
     private String targetId;
 
-    /** The ID of the target in which to list resources. */
+    /**
+     * The ID of the target in which to list resources.
+     */
     public String getTargetId() {
         return targetId;
     }
-    /** OCI monitoring region. */
+    /**
+     * OCI monitoring region.
+     */
     private String region;
 
-    /** OCI monitoring region. */
+    /**
+     * OCI monitoring region.
+     */
     public String getRegion() {
         return region;
     }
-    /** Cvss score associated with the resource. */
+    /**
+     * Cvss score associated with the resource.
+     */
     private Integer cvssScore;
 
-    /** Cvss score associated with the resource. */
+    /**
+     * Cvss score associated with the resource.
+     */
     public Integer getCvssScore() {
         return cvssScore;
     }
-    /** Cvss score greater than associated with the resource. */
+    /**
+     * Cvss score greater than associated with the resource.
+     */
     private Integer cvssScoreGreaterThan;
 
-    /** Cvss score greater than associated with the resource. */
+    /**
+     * Cvss score greater than associated with the resource.
+     */
     public Integer getCvssScoreGreaterThan() {
         return cvssScoreGreaterThan;
     }
-    /** Cvss score less than associated with the resource. */
+    /**
+     * Cvss score less than associated with the resource.
+     */
     private Integer cvssScoreLessThan;
 
-    /** Cvss score less than associated with the resource. */
+    /**
+     * Cvss score less than associated with the resource.
+     */
     public Integer getCvssScoreLessThan() {
         return cvssScoreLessThan;
     }
-    /** CVE ID associated with the resource. */
+    /**
+     * CVE ID associated with the resource.
+     */
     private String cveId;
 
-    /** CVE ID associated with the resource. */
+    /**
+     * CVE ID associated with the resource.
+     */
     public String getCveId() {
         return cveId;
     }
-    /** Risk level of the problem. */
+    /**
+     * Risk level of the problem.
+     */
     private String riskLevel;
 
-    /** Risk level of the problem. */
+    /**
+     * Risk level of the problem.
+     */
     public String getRiskLevel() {
         return riskLevel;
     }
-    /** To filter risk level greater than the one mentioned in query param */
+    /**
+     * To filter risk level greater than the one mentioned in query param
+     */
     private String riskLevelGreaterThan;
 
-    /** To filter risk level greater than the one mentioned in query param */
+    /**
+     * To filter risk level greater than the one mentioned in query param
+     */
     public String getRiskLevelGreaterThan() {
         return riskLevelGreaterThan;
     }
-    /** To filter risk level less than the one mentioned in query param */
+    /**
+     * To filter risk level less than the one mentioned in query param
+     */
     private String riskLevelLessThan;
 
-    /** To filter risk level less than the one mentioned in query param */
+    /**
+     * To filter risk level less than the one mentioned in query param
+     */
     public String getRiskLevelLessThan() {
         return riskLevelLessThan;
     }
-    /** Comma seperated list of detector rule IDs to be passed in to match against Problems. */
+    /**
+     * Comma seperated list of detector rule IDs to be passed in to match against Problems.
+     */
     private java.util.List<String> detectorRuleIdList;
 
-    /** Comma seperated list of detector rule IDs to be passed in to match against Problems. */
+    /**
+     * Comma seperated list of detector rule IDs to be passed in to match against Problems.
+     */
     public java.util.List<String> getDetectorRuleIdList() {
         return detectorRuleIdList;
     }
-    /** The field to list the problems by detector type. */
+    /**
+     * The field to list the problems by detector type.
+     *
+     */
     private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType;
 
-    /** The field to list the problems by detector type. */
+    /**
+     * The field to list the problems by detector type.
+     *
+     */
     public com.oracle.bmc.cloudguard.model.DetectorEnum getDetectorType() {
         return detectorType;
     }
-    /** The maximum number of items to return */
+    /**
+     * The maximum number of items to return
+     */
     private Integer limit;
 
-    /** The maximum number of items to return */
+    /**
+     * The maximum number of items to return
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the setting of
-     * {@code accessLevel}.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the setting of {@code accessLevel}.
+     *
      */
     private Boolean compartmentIdInSubtree;
 
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all
-     * compartments and subcompartments in the tenancy are returned depending on the setting of
-     * {@code accessLevel}.
+     * Default is false.
+     * When set to true, the hierarchy of compartments is traversed
+     * and all compartments and subcompartments in the tenancy are
+     * returned depending on the setting of {@code accessLevel}.
+     *
      */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
      */
     private AccessLevel accessLevel;
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
-     */
-    public enum AccessLevel implements com.oracle.bmc.http.internal.BmcEnum {
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
+     **/
+    public enum AccessLevel {
         Restricted("RESTRICTED"),
         Accessible("ACCESSIBLE"),
         ;
@@ -183,34 +239,37 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
-     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the user has
-     * INSPECT permissions directly or indirectly (permissions can be on a resource in a
-     * subcompartment). When set to {@code RESTRICTED} permissions are checked and no partial
-     * results are displayed.
+     * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+     * user has INSPECT permissions directly or indirectly (permissions can be on a
+     * resource in a subcompartment).
+     * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+     *
      */
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
-    /** The sort order to use */
+    /**
+     * The sort order to use
+     */
     private com.oracle.bmc.cloudguard.model.SortOrders sortOrder;
 
-    /** The sort order to use */
+    /**
+     * The sort order to use
+     */
     public com.oracle.bmc.cloudguard.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -244,17 +303,20 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If no value is specified timeCreated
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -262,15 +324,17 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListResourcesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment in which to list resources. */
+        /**
+         * The OCID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -279,12 +343,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The ID of the target in which to list resources. */
+        /**
+         * The ID of the target in which to list resources.
+         */
         private String targetId = null;
 
         /**
          * The ID of the target in which to list resources.
-         *
          * @param targetId the value to set
          * @return this builder instance
          */
@@ -293,12 +358,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** OCI monitoring region. */
+        /**
+         * OCI monitoring region.
+         */
         private String region = null;
 
         /**
          * OCI monitoring region.
-         *
          * @param region the value to set
          * @return this builder instance
          */
@@ -307,12 +373,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Cvss score associated with the resource. */
+        /**
+         * Cvss score associated with the resource.
+         */
         private Integer cvssScore = null;
 
         /**
          * Cvss score associated with the resource.
-         *
          * @param cvssScore the value to set
          * @return this builder instance
          */
@@ -321,12 +388,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Cvss score greater than associated with the resource. */
+        /**
+         * Cvss score greater than associated with the resource.
+         */
         private Integer cvssScoreGreaterThan = null;
 
         /**
          * Cvss score greater than associated with the resource.
-         *
          * @param cvssScoreGreaterThan the value to set
          * @return this builder instance
          */
@@ -335,12 +403,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Cvss score less than associated with the resource. */
+        /**
+         * Cvss score less than associated with the resource.
+         */
         private Integer cvssScoreLessThan = null;
 
         /**
          * Cvss score less than associated with the resource.
-         *
          * @param cvssScoreLessThan the value to set
          * @return this builder instance
          */
@@ -349,12 +418,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** CVE ID associated with the resource. */
+        /**
+         * CVE ID associated with the resource.
+         */
         private String cveId = null;
 
         /**
          * CVE ID associated with the resource.
-         *
          * @param cveId the value to set
          * @return this builder instance
          */
@@ -363,12 +433,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Risk level of the problem. */
+        /**
+         * Risk level of the problem.
+         */
         private String riskLevel = null;
 
         /**
          * Risk level of the problem.
-         *
          * @param riskLevel the value to set
          * @return this builder instance
          */
@@ -377,12 +448,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** To filter risk level greater than the one mentioned in query param */
+        /**
+         * To filter risk level greater than the one mentioned in query param
+         */
         private String riskLevelGreaterThan = null;
 
         /**
          * To filter risk level greater than the one mentioned in query param
-         *
          * @param riskLevelGreaterThan the value to set
          * @return this builder instance
          */
@@ -391,12 +463,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** To filter risk level less than the one mentioned in query param */
+        /**
+         * To filter risk level less than the one mentioned in query param
+         */
         private String riskLevelLessThan = null;
 
         /**
          * To filter risk level less than the one mentioned in query param
-         *
          * @param riskLevelLessThan the value to set
          * @return this builder instance
          */
@@ -405,12 +478,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** Comma seperated list of detector rule IDs to be passed in to match against Problems. */
+        /**
+         * Comma seperated list of detector rule IDs to be passed in to match against Problems.
+         */
         private java.util.List<String> detectorRuleIdList = null;
 
         /**
          * Comma seperated list of detector rule IDs to be passed in to match against Problems.
-         *
          * @param detectorRuleIdList the value to set
          * @return this builder instance
          */
@@ -420,9 +494,7 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Singular setter. Comma seperated list of detector rule IDs to be passed in to match
-         * against Problems.
-         *
+         * Singular setter. Comma seperated list of detector rule IDs to be passed in to match against Problems.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -430,7 +502,10 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this.detectorRuleIdList(java.util.Arrays.asList(singularValue));
         }
 
-        /** The field to list the problems by detector type. */
+        /**
+         * The field to list the problems by detector type.
+         *
+         */
         private com.oracle.bmc.cloudguard.model.DetectorEnum detectorType = null;
 
         /**
@@ -444,12 +519,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The maximum number of items to return */
+        /**
+         * The maximum number of items to return
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -459,15 +535,12 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -477,16 +550,19 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the setting of
-         * {@code accessLevel}.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the setting of {@code accessLevel}.
+         *
          */
         private Boolean compartmentIdInSubtree = null;
 
         /**
-         * Default is false. When set to true, the hierarchy of compartments is traversed and all
-         * compartments and subcompartments in the tenancy are returned depending on the setting of
-         * {@code accessLevel}.
+         * Default is false.
+         * When set to true, the hierarchy of compartments is traversed
+         * and all compartments and subcompartments in the tenancy are
+         * returned depending on the setting of {@code accessLevel}.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder instance
@@ -497,20 +573,21 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
-         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
-         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
-         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
-         * partial results are displayed.
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
+         *
          */
         private AccessLevel accessLevel = null;
 
         /**
-         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code
-         * RESTRICTED}. Setting this to {@code ACCESSIBLE} returns only those compartments for which
-         * the user has INSPECT permissions directly or indirectly (permissions can be on a resource
-         * in a subcompartment). When set to {@code RESTRICTED} permissions are checked and no
-         * partial results are displayed.
+         * Valid values are {@code RESTRICTED} and {@code ACCESSIBLE}. Default is {@code RESTRICTED}.
+         * Setting this to {@code ACCESSIBLE} returns only those compartments for which the
+         * user has INSPECT permissions directly or indirectly (permissions can be on a
+         * resource in a subcompartment).
+         * When set to {@code RESTRICTED} permissions are checked and no partial results are displayed.
          *
          * @param accessLevel the value to set
          * @return this builder instance
@@ -520,12 +597,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The sort order to use */
+        /**
+         * The sort order to use
+         */
         private com.oracle.bmc.cloudguard.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -535,16 +613,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending. If no value is specified
-         * timeCreated is default.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending. If no value is specified timeCreated is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -554,12 +629,13 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -570,19 +646,18 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -594,7 +669,6 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListResourcesRequest o) {
@@ -625,11 +699,10 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListResourcesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListResourcesRequest
          */
@@ -643,8 +716,7 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of ListResourcesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListResourcesRequest
@@ -671,16 +743,12 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListResourcesRequest(compartmentId, targetId, region, cvssScore,
-            // cvssScoreGreaterThan, cvssScoreLessThan, cveId, riskLevel, riskLevelGreaterThan,
-            // riskLevelLessThan, detectorRuleIdList, detectorType, limit, page,
-            // compartmentIdInSubtree, accessLevel, sortOrder, sortBy, opcRequestId);
+            // new ListResourcesRequest(compartmentId, targetId, region, cvssScore, cvssScoreGreaterThan, cvssScoreLessThan, cveId, riskLevel, riskLevelGreaterThan, riskLevelLessThan, detectorRuleIdList, detectorType, limit, page, compartmentIdInSubtree, accessLevel, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -708,7 +776,6 @@ public class ListResourcesRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

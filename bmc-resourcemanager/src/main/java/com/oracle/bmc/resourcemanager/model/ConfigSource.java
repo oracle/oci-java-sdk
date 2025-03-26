@@ -5,48 +5,55 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * Information about the Terraform configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * Information about the Terraform configuration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configSourceType",
-        defaultImpl = ConfigSource.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configSourceType",
+    defaultImpl = ConfigSource.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GitConfigSource.class,
-            name = "GIT_CONFIG_SOURCE"),
+        value = GitConfigSource.class,
+        name = "GIT_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DevOpsConfigSource.class,
-            name = "DEVOPS_CONFIG_SOURCE"),
+        value = DevOpsConfigSource.class,
+        name = "DEVOPS_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ObjectStorageConfigSource.class,
-            name = "OBJECT_STORAGE_CONFIG_SOURCE"),
+        value = ObjectStorageConfigSource.class,
+        name = "OBJECT_STORAGE_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BitbucketServerConfigSource.class,
-            name = "BITBUCKET_SERVER_CONFIG_SOURCE"),
+        value = BitbucketServerConfigSource.class,
+        name = "BITBUCKET_SERVER_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = BitbucketCloudConfigSource.class,
-            name = "BITBUCKET_CLOUD_CONFIG_SOURCE"),
+        value = BitbucketCloudConfigSource.class,
+        name = "BITBUCKET_CLOUD_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CompartmentConfigSource.class,
-            name = "COMPARTMENT_CONFIG_SOURCE"),
+        value = CompartmentConfigSource.class,
+        name = "COMPARTMENT_CONFIG_SOURCE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ZipUploadConfigSource.class,
-            name = "ZIP_UPLOAD")
+        value = ZipUploadConfigSource.class,
+        name = "ZIP_UPLOAD"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ConfigSource extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ConfigSource extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"workingDirectory"})
     protected ConfigSource(String workingDirectory) {
@@ -55,26 +62,27 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
     }
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
-     */
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workingDirectory")
     private final String workingDirectory;
 
     /**
-     * File path to the directory to use for running Terraform. If not specified, the root directory
-     * is used. Required when using a zip Terraform configuration ({@code configSourceType} value of
-     * {@code ZIP_UPLOAD}) that contains folders. Ignored for the {@code configSourceType} value of
-     * {@code COMPARTMENT_CONFIG_SOURCE}. For more information about required and recommended file
-     * structure, see [File Structure (Terraform Configurations for Resource
-     * Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
+     * File path to the directory to use for running Terraform.
+     * If not specified, the root directory is used.
+     * Required when using a zip Terraform configuration ({@code configSourceType} value of {@code ZIP_UPLOAD}) that contains folders.
+     * Ignored for the {@code configSourceType} value of {@code COMPARTMENT_CONFIG_SOURCE}.
+     * For more information about required and recommended file structure, see
+     * [File Structure (Terraform Configurations for Resource Manager)](https://docs.oracle.com/iaas/Content/ResourceManager/Concepts/terraformconfigresourcemanager.htm#filestructure).
      *
      * @return the value
-     */
+     **/
     public String getWorkingDirectory() {
         return workingDirectory;
     }
@@ -86,7 +94,6 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -124,8 +131,11 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
         return result;
     }
 
-    /** The type of configuration source to use for the Terraform configuration. */
-    public enum ConfigSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of configuration source to use for the Terraform configuration.
+     *
+     **/
+    public enum ConfigSourceType {
         BitbucketCloudConfigSource("BITBUCKET_CLOUD_CONFIG_SOURCE"),
         BitbucketServerConfigSource("BITBUCKET_SERVER_CONFIG_SOURCE"),
         CompartmentConfigSource("COMPARTMENT_CONFIG_SOURCE"),
@@ -135,8 +145,8 @@ public class ConfigSource extends com.oracle.bmc.http.client.internal.Explicitly
         ZipUpload("ZIP_UPLOAD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

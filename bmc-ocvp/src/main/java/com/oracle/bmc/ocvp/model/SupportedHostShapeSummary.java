@@ -5,23 +5,23 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * A specific compute shape supported by the Oracle Cloud VMware Solution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+ * A specific compute shape supported by the Oracle Cloud VMware Solution.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SupportedHostShapeSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SupportedHostShapeSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SupportedHostShapeSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -61,7 +61,10 @@ public final class SupportedHostShapeSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the supported compute shape. */
+        /**
+         * The name of the supported compute shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -70,32 +73,34 @@ public final class SupportedHostShapeSummary
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The operations where you can use the shape. The operations can be CREATE_SDDC or
-         * CREATE_ESXI_HOST.
-         */
+         * The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedOperations")
         private java.util.List<OperationTypes> supportedOperations;
 
         /**
-         * The operations where you can use the shape. The operations can be CREATE_SDDC or
-         * CREATE_ESXI_HOST.
+         * The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
          *
          * @param supportedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedOperations(java.util.List<OperationTypes> supportedOperations) {
             this.supportedOperations = supportedOperations;
             this.__explicitlySet__.add("supportedOperations");
             return this;
         }
-        /** The family of the shape. ESXi hosts of one SDDC must have the same shape family. */
+        /**
+         * The family of the shape. ESXi hosts of one SDDC must have the same shape family.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
         private String shapeFamily;
 
@@ -104,13 +109,16 @@ public final class SupportedHostShapeSummary
          *
          * @param shapeFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeFamily(String shapeFamily) {
             this.shapeFamily = shapeFamily;
             this.__explicitlySet__.add("shapeFamily");
             return this;
         }
-        /** The default OCPU count of the shape. */
+        /**
+         * The default OCPU count of the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultOcpuCount")
         private Float defaultOcpuCount;
 
@@ -119,13 +127,16 @@ public final class SupportedHostShapeSummary
          *
          * @param defaultOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultOcpuCount(Float defaultOcpuCount) {
             this.defaultOcpuCount = defaultOcpuCount;
             this.__explicitlySet__.add("defaultOcpuCount");
             return this;
         }
-        /** Support OCPU count of the shape. */
+        /**
+         * Support OCPU count of the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedOcpuCount")
         private java.util.List<Float> supportedOcpuCount;
 
@@ -134,13 +145,16 @@ public final class SupportedHostShapeSummary
          *
          * @param supportedOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedOcpuCount(java.util.List<Float> supportedOcpuCount) {
             this.supportedOcpuCount = supportedOcpuCount;
             this.__explicitlySet__.add("supportedOcpuCount");
             return this;
         }
-        /** Indicates whether the shape supports single host SDDCs. */
+        /**
+         * Indicates whether the shape supports single host SDDCs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddcSupported")
         private Boolean isSingleHostSddcSupported;
 
@@ -149,13 +163,16 @@ public final class SupportedHostShapeSummary
          *
          * @param isSingleHostSddcSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isSingleHostSddcSupported(Boolean isSingleHostSddcSupported) {
             this.isSingleHostSddcSupported = isSingleHostSddcSupported;
             this.__explicitlySet__.add("isSingleHostSddcSupported");
             return this;
         }
-        /** The VMware software versions supported by the shape. */
+        /**
+         * The VMware software versions supported by the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("supportedVmwareSoftwareVersions")
         private java.util.List<String> supportedVmwareSoftwareVersions;
 
@@ -164,14 +181,17 @@ public final class SupportedHostShapeSummary
          *
          * @param supportedVmwareSoftwareVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder supportedVmwareSoftwareVersions(
                 java.util.List<String> supportedVmwareSoftwareVersions) {
             this.supportedVmwareSoftwareVersions = supportedVmwareSoftwareVersions;
             this.__explicitlySet__.add("supportedVmwareSoftwareVersions");
             return this;
         }
-        /** Description of the shape. */
+        /**
+         * Description of the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -180,37 +200,39 @@ public final class SupportedHostShapeSummary
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Indicates whether the shape supports shielded instances. */
+        /**
+         * Indicates whether the shape supports shielded instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportShieldedInstances")
         private Boolean isSupportShieldedInstances;
 
         /**
          * Indicates whether the shape supports shielded instances.
-         *
          * @param isSupportShieldedInstances the value to set
          * @return this builder
-         */
+         **/
         public Builder isSupportShieldedInstances(Boolean isSupportShieldedInstances) {
             this.isSupportShieldedInstances = isSupportShieldedInstances;
             this.__explicitlySet__.add("isSupportShieldedInstances");
             return this;
         }
-        /** Whether the shape supports "MONTH" Commitment. */
+        /**
+         * Whether the shape supports "MONTH" Commitment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlyCommitment")
         private Boolean isSupportMonthlyCommitment;
 
         /**
          * Whether the shape supports "MONTH" Commitment.
-         *
          * @param isSupportMonthlyCommitment the value to set
          * @return this builder
-         */
+         **/
         public Builder isSupportMonthlyCommitment(Boolean isSupportMonthlyCommitment) {
             this.isSupportMonthlyCommitment = isSupportMonthlyCommitment;
             this.__explicitlySet__.add("isSupportMonthlyCommitment");
@@ -275,7 +297,9 @@ public final class SupportedHostShapeSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,7 +308,10 @@ public final class SupportedHostShapeSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the supported compute shape. */
+    /**
+     * The name of the supported compute shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -292,29 +319,31 @@ public final class SupportedHostShapeSummary
      * The name of the supported compute shape.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The operations where you can use the shape. The operations can be CREATE_SDDC or
-     * CREATE_ESXI_HOST.
-     */
+     * The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOperations")
     private final java.util.List<OperationTypes> supportedOperations;
 
     /**
-     * The operations where you can use the shape. The operations can be CREATE_SDDC or
-     * CREATE_ESXI_HOST.
+     * The operations where you can use the shape. The operations can be CREATE_SDDC or CREATE_ESXI_HOST.
      *
      * @return the value
-     */
+     **/
     public java.util.List<OperationTypes> getSupportedOperations() {
         return supportedOperations;
     }
 
-    /** The family of the shape. ESXi hosts of one SDDC must have the same shape family. */
+    /**
+     * The family of the shape. ESXi hosts of one SDDC must have the same shape family.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeFamily")
     private final String shapeFamily;
 
@@ -322,12 +351,15 @@ public final class SupportedHostShapeSummary
      * The family of the shape. ESXi hosts of one SDDC must have the same shape family.
      *
      * @return the value
-     */
+     **/
     public String getShapeFamily() {
         return shapeFamily;
     }
 
-    /** The default OCPU count of the shape. */
+    /**
+     * The default OCPU count of the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultOcpuCount")
     private final Float defaultOcpuCount;
 
@@ -335,12 +367,15 @@ public final class SupportedHostShapeSummary
      * The default OCPU count of the shape.
      *
      * @return the value
-     */
+     **/
     public Float getDefaultOcpuCount() {
         return defaultOcpuCount;
     }
 
-    /** Support OCPU count of the shape. */
+    /**
+     * Support OCPU count of the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedOcpuCount")
     private final java.util.List<Float> supportedOcpuCount;
 
@@ -348,12 +383,15 @@ public final class SupportedHostShapeSummary
      * Support OCPU count of the shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Float> getSupportedOcpuCount() {
         return supportedOcpuCount;
     }
 
-    /** Indicates whether the shape supports single host SDDCs. */
+    /**
+     * Indicates whether the shape supports single host SDDCs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSingleHostSddcSupported")
     private final Boolean isSingleHostSddcSupported;
 
@@ -361,12 +399,15 @@ public final class SupportedHostShapeSummary
      * Indicates whether the shape supports single host SDDCs.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSingleHostSddcSupported() {
         return isSingleHostSddcSupported;
     }
 
-    /** The VMware software versions supported by the shape. */
+    /**
+     * The VMware software versions supported by the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedVmwareSoftwareVersions")
     private final java.util.List<String> supportedVmwareSoftwareVersions;
 
@@ -374,12 +415,15 @@ public final class SupportedHostShapeSummary
      * The VMware software versions supported by the shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSupportedVmwareSoftwareVersions() {
         return supportedVmwareSoftwareVersions;
     }
 
-    /** Description of the shape. */
+    /**
+     * Description of the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -387,33 +431,35 @@ public final class SupportedHostShapeSummary
      * Description of the shape.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Indicates whether the shape supports shielded instances. */
+    /**
+     * Indicates whether the shape supports shielded instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportShieldedInstances")
     private final Boolean isSupportShieldedInstances;
 
     /**
      * Indicates whether the shape supports shielded instances.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSupportShieldedInstances() {
         return isSupportShieldedInstances;
     }
 
-    /** Whether the shape supports "MONTH" Commitment. */
+    /**
+     * Whether the shape supports "MONTH" Commitment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSupportMonthlyCommitment")
     private final Boolean isSupportMonthlyCommitment;
 
     /**
      * Whether the shape supports "MONTH" Commitment.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSupportMonthlyCommitment() {
         return isSupportMonthlyCommitment;
     }
@@ -425,7 +471,6 @@ public final class SupportedHostShapeSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,22 @@
 package com.oracle.bmc.desktops.model;
 
 /**
- * Provides the settings for desktop and client device options, such as audio in and out, client
- * drive mapping, and clipboard access. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+ * Provides the settings for desktop and client device options, such as audio in and out, client drive mapping, and clipboard access.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DesktopDevicePolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DesktopDevicePolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DesktopDevicePolicy.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DesktopDevicePolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clipboardMode",
@@ -54,125 +52,140 @@ public final class DesktopDevicePolicy
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The
-         * clipboard can be used to transfer data to the desktop only. FROMDESKTOP: The clipboard
-         * can be used to transfer data from the desktop only. FULL: The clipboard can be used to
-         * transfer data to and from the desktop.
-         */
+         * The clipboard mode.
+         * NONE: No access to the local clipboard is permitted.
+         * TODESKTOP: The clipboard can be used to transfer data to the desktop only.
+         * FROMDESKTOP: The clipboard can be used to transfer data from the desktop only.
+         * FULL: The clipboard can be used to transfer data to and from the desktop.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clipboardMode")
         private ClipboardMode clipboardMode;
 
         /**
-         * The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The
-         * clipboard can be used to transfer data to the desktop only. FROMDESKTOP: The clipboard
-         * can be used to transfer data from the desktop only. FULL: The clipboard can be used to
-         * transfer data to and from the desktop.
+         * The clipboard mode.
+         * NONE: No access to the local clipboard is permitted.
+         * TODESKTOP: The clipboard can be used to transfer data to the desktop only.
+         * FROMDESKTOP: The clipboard can be used to transfer data from the desktop only.
+         * FULL: The clipboard can be used to transfer data to and from the desktop.
          *
          * @param clipboardMode the value to set
          * @return this builder
-         */
+         **/
         public Builder clipboardMode(ClipboardMode clipboardMode) {
             this.clipboardMode = clipboardMode;
             this.__explicitlySet__.add("clipboardMode");
             return this;
         }
         /**
-         * The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The
-         * user may record audio on their desktop. FROMDESKTOP: The user may play audio on their
-         * desktop. FULL: The user may play and record audio on their desktop.
-         */
+         * The audio mode.
+         * NONE: No access to the local audio devices is permitted.
+         * TODESKTOP: The user may record audio on their desktop.
+         * FROMDESKTOP: The user may play audio on their desktop.
+         * FULL: The user may play and record audio on their desktop.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("audioMode")
         private AudioMode audioMode;
 
         /**
-         * The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The
-         * user may record audio on their desktop. FROMDESKTOP: The user may play audio on their
-         * desktop. FULL: The user may play and record audio on their desktop.
+         * The audio mode.
+         * NONE: No access to the local audio devices is permitted.
+         * TODESKTOP: The user may record audio on their desktop.
+         * FROMDESKTOP: The user may play audio on their desktop.
+         * FULL: The user may play and record audio on their desktop.
          *
          * @param audioMode the value to set
          * @return this builder
-         */
+         **/
         public Builder audioMode(AudioMode audioMode) {
             this.audioMode = audioMode;
             this.__explicitlySet__.add("audioMode");
             return this;
         }
         /**
-         * The client local drive access mode. NONE: No access to local drives permitted. READONLY:
-         * The user may read from local drives on their desktop. FULL: The user may read from and
-         * write to their local drives on their desktop.
-         */
+         * The client local drive access mode.
+         * NONE: No access to local drives permitted.
+         * READONLY: The user may read from local drives on their desktop.
+         * FULL: The user may read from and write to their local drives on their desktop.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cdmMode")
         private CdmMode cdmMode;
 
         /**
-         * The client local drive access mode. NONE: No access to local drives permitted. READONLY:
-         * The user may read from local drives on their desktop. FULL: The user may read from and
-         * write to their local drives on their desktop.
+         * The client local drive access mode.
+         * NONE: No access to local drives permitted.
+         * READONLY: The user may read from local drives on their desktop.
+         * FULL: The user may read from and write to their local drives on their desktop.
          *
          * @param cdmMode the value to set
          * @return this builder
-         */
+         **/
         public Builder cdmMode(CdmMode cdmMode) {
             this.cdmMode = cdmMode;
             this.__explicitlySet__.add("cdmMode");
             return this;
         }
-        /** Indicates whether printing is enabled. */
+        /**
+         * Indicates whether printing is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrintingEnabled")
         private Boolean isPrintingEnabled;
 
         /**
          * Indicates whether printing is enabled.
-         *
          * @param isPrintingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrintingEnabled(Boolean isPrintingEnabled) {
             this.isPrintingEnabled = isPrintingEnabled;
             this.__explicitlySet__.add("isPrintingEnabled");
             return this;
         }
-        /** Indicates whether the pointer is enabled. */
+        /**
+         * Indicates whether the pointer is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPointerEnabled")
         private Boolean isPointerEnabled;
 
         /**
          * Indicates whether the pointer is enabled.
-         *
          * @param isPointerEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPointerEnabled(Boolean isPointerEnabled) {
             this.isPointerEnabled = isPointerEnabled;
             this.__explicitlySet__.add("isPointerEnabled");
             return this;
         }
-        /** Indicates whether the keyboard is enabled. */
+        /**
+         * Indicates whether the keyboard is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isKeyboardEnabled")
         private Boolean isKeyboardEnabled;
 
         /**
          * Indicates whether the keyboard is enabled.
-         *
          * @param isKeyboardEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isKeyboardEnabled(Boolean isKeyboardEnabled) {
             this.isKeyboardEnabled = isKeyboardEnabled;
             this.__explicitlySet__.add("isKeyboardEnabled");
             return this;
         }
-        /** Indicates whether the display is enabled. */
+        /**
+         * Indicates whether the display is enabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisplayEnabled")
         private Boolean isDisplayEnabled;
 
         /**
          * Indicates whether the display is enabled.
-         *
          * @param isDisplayEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisplayEnabled(Boolean isDisplayEnabled) {
             this.isDisplayEnabled = isDisplayEnabled;
             this.__explicitlySet__.add("isDisplayEnabled");
@@ -225,7 +238,9 @@ public final class DesktopDevicePolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,20 +250,22 @@ public final class DesktopDevicePolicy
     }
 
     /**
-     * The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The
-     * clipboard can be used to transfer data to the desktop only. FROMDESKTOP: The clipboard can be
-     * used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data
-     * to and from the desktop.
-     */
-    public enum ClipboardMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The clipboard mode.
+     * NONE: No access to the local clipboard is permitted.
+     * TODESKTOP: The clipboard can be used to transfer data to the desktop only.
+     * FROMDESKTOP: The clipboard can be used to transfer data from the desktop only.
+     * FULL: The clipboard can be used to transfer data to and from the desktop.
+     *
+     **/
+    public enum ClipboardMode {
         None("NONE"),
         Todesktop("TODESKTOP"),
         Fromdesktop("FROMDESKTOP"),
         Full("FULL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -288,40 +305,46 @@ public final class DesktopDevicePolicy
         }
     };
     /**
-     * The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The
-     * clipboard can be used to transfer data to the desktop only. FROMDESKTOP: The clipboard can be
-     * used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data
-     * to and from the desktop.
-     */
+     * The clipboard mode.
+     * NONE: No access to the local clipboard is permitted.
+     * TODESKTOP: The clipboard can be used to transfer data to the desktop only.
+     * FROMDESKTOP: The clipboard can be used to transfer data from the desktop only.
+     * FULL: The clipboard can be used to transfer data to and from the desktop.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clipboardMode")
     private final ClipboardMode clipboardMode;
 
     /**
-     * The clipboard mode. NONE: No access to the local clipboard is permitted. TODESKTOP: The
-     * clipboard can be used to transfer data to the desktop only. FROMDESKTOP: The clipboard can be
-     * used to transfer data from the desktop only. FULL: The clipboard can be used to transfer data
-     * to and from the desktop.
+     * The clipboard mode.
+     * NONE: No access to the local clipboard is permitted.
+     * TODESKTOP: The clipboard can be used to transfer data to the desktop only.
+     * FROMDESKTOP: The clipboard can be used to transfer data from the desktop only.
+     * FULL: The clipboard can be used to transfer data to and from the desktop.
      *
      * @return the value
-     */
+     **/
     public ClipboardMode getClipboardMode() {
         return clipboardMode;
     }
 
     /**
-     * The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user
-     * may record audio on their desktop. FROMDESKTOP: The user may play audio on their desktop.
+     * The audio mode.
+     * NONE: No access to the local audio devices is permitted.
+     * TODESKTOP: The user may record audio on their desktop.
+     * FROMDESKTOP: The user may play audio on their desktop.
      * FULL: The user may play and record audio on their desktop.
-     */
-    public enum AudioMode implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum AudioMode {
         None("NONE"),
         Todesktop("TODESKTOP"),
         Fromdesktop("FROMDESKTOP"),
         Full("FULL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -361,37 +384,44 @@ public final class DesktopDevicePolicy
         }
     };
     /**
-     * The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user
-     * may record audio on their desktop. FROMDESKTOP: The user may play audio on their desktop.
+     * The audio mode.
+     * NONE: No access to the local audio devices is permitted.
+     * TODESKTOP: The user may record audio on their desktop.
+     * FROMDESKTOP: The user may play audio on their desktop.
      * FULL: The user may play and record audio on their desktop.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("audioMode")
     private final AudioMode audioMode;
 
     /**
-     * The audio mode. NONE: No access to the local audio devices is permitted. TODESKTOP: The user
-     * may record audio on their desktop. FROMDESKTOP: The user may play audio on their desktop.
+     * The audio mode.
+     * NONE: No access to the local audio devices is permitted.
+     * TODESKTOP: The user may record audio on their desktop.
+     * FROMDESKTOP: The user may play audio on their desktop.
      * FULL: The user may play and record audio on their desktop.
      *
      * @return the value
-     */
+     **/
     public AudioMode getAudioMode() {
         return audioMode;
     }
 
     /**
-     * The client local drive access mode. NONE: No access to local drives permitted. READONLY: The
-     * user may read from local drives on their desktop. FULL: The user may read from and write to
-     * their local drives on their desktop.
-     */
-    public enum CdmMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The client local drive access mode.
+     * NONE: No access to local drives permitted.
+     * READONLY: The user may read from local drives on their desktop.
+     * FULL: The user may read from and write to their local drives on their desktop.
+     *
+     **/
+    public enum CdmMode {
         None("NONE"),
         Readonly("READONLY"),
         Full("FULL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -431,72 +461,79 @@ public final class DesktopDevicePolicy
         }
     };
     /**
-     * The client local drive access mode. NONE: No access to local drives permitted. READONLY: The
-     * user may read from local drives on their desktop. FULL: The user may read from and write to
-     * their local drives on their desktop.
-     */
+     * The client local drive access mode.
+     * NONE: No access to local drives permitted.
+     * READONLY: The user may read from local drives on their desktop.
+     * FULL: The user may read from and write to their local drives on their desktop.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cdmMode")
     private final CdmMode cdmMode;
 
     /**
-     * The client local drive access mode. NONE: No access to local drives permitted. READONLY: The
-     * user may read from local drives on their desktop. FULL: The user may read from and write to
-     * their local drives on their desktop.
+     * The client local drive access mode.
+     * NONE: No access to local drives permitted.
+     * READONLY: The user may read from local drives on their desktop.
+     * FULL: The user may read from and write to their local drives on their desktop.
      *
      * @return the value
-     */
+     **/
     public CdmMode getCdmMode() {
         return cdmMode;
     }
 
-    /** Indicates whether printing is enabled. */
+    /**
+     * Indicates whether printing is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrintingEnabled")
     private final Boolean isPrintingEnabled;
 
     /**
      * Indicates whether printing is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPrintingEnabled() {
         return isPrintingEnabled;
     }
 
-    /** Indicates whether the pointer is enabled. */
+    /**
+     * Indicates whether the pointer is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPointerEnabled")
     private final Boolean isPointerEnabled;
 
     /**
      * Indicates whether the pointer is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPointerEnabled() {
         return isPointerEnabled;
     }
 
-    /** Indicates whether the keyboard is enabled. */
+    /**
+     * Indicates whether the keyboard is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isKeyboardEnabled")
     private final Boolean isKeyboardEnabled;
 
     /**
      * Indicates whether the keyboard is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsKeyboardEnabled() {
         return isKeyboardEnabled;
     }
 
-    /** Indicates whether the display is enabled. */
+    /**
+     * Indicates whether the display is enabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisplayEnabled")
     private final Boolean isDisplayEnabled;
 
     /**
      * Indicates whether the display is enabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDisplayEnabled() {
         return isDisplayEnabled;
     }
@@ -508,7 +545,6 @@ public final class DesktopDevicePolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

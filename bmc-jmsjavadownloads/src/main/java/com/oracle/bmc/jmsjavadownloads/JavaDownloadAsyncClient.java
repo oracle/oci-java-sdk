@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.jmsjavadownloads;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.jmsjavadownloads.internal.http.*;
 import com.oracle.bmc.jmsjavadownloads.requests.*;
 import com.oracle.bmc.jmsjavadownloads.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for JavaDownload service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for JavaDownload service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements JavaDownloadAsync {
-    /** Service instance for JavaDownload. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public class JavaDownloadAsyncClient implements JavaDownloadAsync {
+    /**
+     * Service instance for JavaDownload.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("JAVADOWNLOAD")
@@ -40,1088 +37,112 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(JavaDownloadAsyncClient.class);
 
-    JavaDownloadAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        this(builder, authenticationDetailsProvider, true);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
 
-    JavaDownloadAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
-            boolean isStreamWarningEnabled) {
-        super(builder, authenticationDetailsProvider);
-
-        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
-            LOG.warn(
-                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
-                            "JavaDownloadAsyncClient", "getJavaDownloadReportContent"));
-        }
-    }
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, JavaDownloadAsyncClient> {
-        private boolean isStreamWarningEnabled = true;
-
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "jmsjavadownloads";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Enable/disable the stream warnings for the client
-         *
-         * @param isStreamWarningEnabled executorService
-         * @return this builder
-         */
-        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
-            this.isStreamWarningEnabled = isStreamWarningEnabled;
-            return this;
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public JavaDownloadAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new JavaDownloadAsyncClient(
-                    this, authenticationDetailsProvider, isStreamWarningEnabled);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
-            CancelWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelWorkRequestRequest, CancelWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, CancelWorkRequestResponse::builder)
-                .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(CancelWorkRequestRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelWorkRequestResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateJavaDownloadReportResponse> createJavaDownloadReport(
-            CreateJavaDownloadReportRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateJavaDownloadReportRequest, CreateJavaDownloadReportResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateJavaDownloadReportDetails(),
-                "createJavaDownloadReportDetails is required");
-
-        return clientCall(request, CreateJavaDownloadReportResponse::builder)
-                .logger(LOG, "createJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateJavaDownloadReportRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadReports")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateJavaDownloadReportResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateJavaDownloadReportResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateJavaDownloadTokenResponse> createJavaDownloadToken(
-            CreateJavaDownloadTokenRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateJavaDownloadTokenRequest, CreateJavaDownloadTokenResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateJavaDownloadTokenDetails(),
-                "createJavaDownloadTokenDetails is required");
-
-        return clientCall(request, CreateJavaDownloadTokenResponse::builder)
-                .logger(LOG, "createJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateJavaDownloadTokenRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadTokens")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadToken.class,
-                        CreateJavaDownloadTokenResponse.Builder::javaDownloadToken)
-                .handleResponseHeaderString("etag", CreateJavaDownloadTokenResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        CreateJavaDownloadTokenResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateJavaDownloadTokenResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateJavaLicenseAcceptanceRecordResponse>
-            createJavaLicenseAcceptanceRecord(
-                    CreateJavaLicenseAcceptanceRecordRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateJavaLicenseAcceptanceRecordRequest,
-                                    CreateJavaLicenseAcceptanceRecordResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateJavaLicenseAcceptanceRecordDetails(),
-                "createJavaLicenseAcceptanceRecordDetails is required");
-
-        return clientCall(request, CreateJavaLicenseAcceptanceRecordResponse::builder)
-                .logger(LOG, "createJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "CreateJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateJavaLicenseAcceptanceRecordRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenseAcceptanceRecords")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
-                        CreateJavaLicenseAcceptanceRecordResponse.Builder
-                                ::javaLicenseAcceptanceRecord)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        CreateJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", CreateJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteJavaDownloadReportResponse> deleteJavaDownloadReport(
-            DeleteJavaDownloadReportRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteJavaDownloadReportRequest, DeleteJavaDownloadReportResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
-
-        return clientCall(request, DeleteJavaDownloadReportResponse::builder)
-                .logger(LOG, "deleteJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteJavaDownloadReportRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadReports")
-                .appendPathParam(request.getJavaDownloadReportId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteJavaDownloadReportResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteJavaDownloadReportResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteJavaDownloadTokenResponse> deleteJavaDownloadToken(
-            DeleteJavaDownloadTokenRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteJavaDownloadTokenRequest, DeleteJavaDownloadTokenResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
-
-        return clientCall(request, DeleteJavaDownloadTokenResponse::builder)
-                .logger(LOG, "deleteJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteJavaDownloadTokenRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadTokens")
-                .appendPathParam(request.getJavaDownloadTokenId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteJavaDownloadTokenResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteJavaDownloadTokenResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteJavaLicenseAcceptanceRecordResponse>
-            deleteJavaLicenseAcceptanceRecord(
-                    DeleteJavaLicenseAcceptanceRecordRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteJavaLicenseAcceptanceRecordRequest,
-                                    DeleteJavaLicenseAcceptanceRecordResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getJavaLicenseAcceptanceRecordId(),
-                "javaLicenseAcceptanceRecordId must not be blank");
-
-        return clientCall(request, DeleteJavaLicenseAcceptanceRecordResponse::builder)
-                .logger(LOG, "deleteJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "DeleteJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteJavaLicenseAcceptanceRecordRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenseAcceptanceRecords")
-                .appendPathParam(request.getJavaLicenseAcceptanceRecordId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DeleteJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GenerateArtifactDownloadUrlResponse>
-            generateArtifactDownloadUrl(
-                    GenerateArtifactDownloadUrlRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateArtifactDownloadUrlRequest,
-                                    GenerateArtifactDownloadUrlResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getGenerateArtifactDownloadUrlDetails(),
-                "generateArtifactDownloadUrlDetails is required");
-
-        return clientCall(request, GenerateArtifactDownloadUrlResponse::builder)
-                .logger(LOG, "generateArtifactDownloadUrl")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GenerateArtifactDownloadUrl",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(GenerateArtifactDownloadUrlRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("actions")
-                .appendPathParam("generateArtifactDownloadUrl")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.DownloadUrl.class,
-                        GenerateArtifactDownloadUrlResponse.Builder::downloadUrl)
-                .handleResponseHeaderString(
-                        "opc-request-id", GenerateArtifactDownloadUrlResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJavaDownloadReportResponse> getJavaDownloadReport(
-            GetJavaDownloadReportRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetJavaDownloadReportRequest, GetJavaDownloadReportResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
-
-        return clientCall(request, GetJavaDownloadReportResponse::builder)
-                .logger(LOG, "getJavaDownloadReport")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadReport",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetJavaDownloadReportRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadReports")
-                .appendPathParam(request.getJavaDownloadReportId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadReport.class,
-                        GetJavaDownloadReportResponse.Builder::javaDownloadReport)
-                .handleResponseHeaderString("etag", GetJavaDownloadReportResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetJavaDownloadReportResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJavaDownloadReportContentResponse>
-            getJavaDownloadReportContent(
-                    GetJavaDownloadReportContentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetJavaDownloadReportContentRequest,
-                                    GetJavaDownloadReportContentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadReportId(), "javaDownloadReportId must not be blank");
-
-        return clientCall(request, GetJavaDownloadReportContentResponse::builder)
-                .logger(LOG, "getJavaDownloadReportContent")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadReportContent",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetJavaDownloadReportContentRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadReports")
-                .appendPathParam(request.getJavaDownloadReportId())
-                .appendPathParam("content")
-                .accept("text/csv")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        java.io.InputStream.class,
-                        GetJavaDownloadReportContentResponse.Builder::inputStream)
-                .handleResponseHeaderString(
-                        "etag", GetJavaDownloadReportContentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetJavaDownloadReportContentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJavaDownloadTokenResponse> getJavaDownloadToken(
-            GetJavaDownloadTokenRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetJavaDownloadTokenRequest, GetJavaDownloadTokenResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
-
-        return clientCall(request, GetJavaDownloadTokenResponse::builder)
-                .logger(LOG, "getJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetJavaDownloadTokenRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadTokens")
-                .appendPathParam(request.getJavaDownloadTokenId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadToken.class,
-                        GetJavaDownloadTokenResponse.Builder::javaDownloadToken)
-                .handleResponseHeaderString("etag", GetJavaDownloadTokenResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetJavaDownloadTokenResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJavaLicenseResponse> getJavaLicense(
-            GetJavaLicenseRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetJavaLicenseRequest, GetJavaLicenseResponse>
-                    handler) {
-
-        Validate.notBlank(request.getLicenseType().getValue(), "licenseType must not be blank");
-
-        return clientCall(request, GetJavaLicenseResponse::builder)
-                .logger(LOG, "getJavaLicense")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaLicense",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetJavaLicenseRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenses")
-                .appendPathParam(request.getLicenseType().getValue())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicense.class,
-                        GetJavaLicenseResponse.Builder::javaLicense)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetJavaLicenseResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJavaLicenseAcceptanceRecordResponse>
-            getJavaLicenseAcceptanceRecord(
-                    GetJavaLicenseAcceptanceRecordRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetJavaLicenseAcceptanceRecordRequest,
-                                    GetJavaLicenseAcceptanceRecordResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getJavaLicenseAcceptanceRecordId(),
-                "javaLicenseAcceptanceRecordId must not be blank");
-
-        return clientCall(request, GetJavaLicenseAcceptanceRecordResponse::builder)
-                .logger(LOG, "getJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetJavaLicenseAcceptanceRecordRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenseAcceptanceRecords")
-                .appendPathParam(request.getJavaLicenseAcceptanceRecordId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
-                        GetJavaLicenseAcceptanceRecordResponse.Builder::javaLicenseAcceptanceRecord)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", GetJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
-            GetWorkRequestRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetWorkRequestRequest, GetWorkRequestResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, GetWorkRequestResponse::builder)
-                .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "JavaDownload",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetWorkRequestRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.WorkRequest.class,
-                        GetWorkRequestResponse.Builder::workRequest)
-                .handleResponseHeaderString("etag", GetWorkRequestResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
-                .handleResponseHeaderLong("retry-after", GetWorkRequestResponse.Builder::retryAfter)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListJavaDownloadRecordsResponse> listJavaDownloadRecords(
-            ListJavaDownloadRecordsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListJavaDownloadRecordsRequest, ListJavaDownloadRecordsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListJavaDownloadRecordsResponse::builder)
-                .logger(LOG, "listJavaDownloadRecords")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListJavaDownloadRecordsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadRecords")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("familyVersion", request.getFamilyVersion())
-                .appendQueryParam("releaseVersion", request.getReleaseVersion())
-                .appendQueryParam("osFamily", request.getOsFamily())
-                .appendQueryParam("architecture", request.getArchitecture())
-                .appendQueryParam("packageTypeDetail", request.getPackageTypeDetail())
-                .appendQueryParam("timeStart", request.getTimeStart())
-                .appendQueryParam("timeEnd", request.getTimeEnd())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadRecordCollection.class,
-                        ListJavaDownloadRecordsResponse.Builder::javaDownloadRecordCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListJavaDownloadRecordsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListJavaDownloadRecordsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListJavaDownloadReportsResponse> listJavaDownloadReports(
-            ListJavaDownloadReportsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListJavaDownloadReportsRequest, ListJavaDownloadReportsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListJavaDownloadReportsResponse::builder)
-                .logger(LOG, "listJavaDownloadReports")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadReports",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListJavaDownloadReportsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadReports")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("javaDownloadReportId", request.getJavaDownloadReportId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadReportCollection.class,
-                        ListJavaDownloadReportsResponse.Builder::javaDownloadReportCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListJavaDownloadReportsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListJavaDownloadReportsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListJavaDownloadTokensResponse> listJavaDownloadTokens(
-            ListJavaDownloadTokensRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListJavaDownloadTokensRequest, ListJavaDownloadTokensResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListJavaDownloadTokensResponse::builder)
-                .logger(LOG, "listJavaDownloadTokens")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaDownloadTokens",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListJavaDownloadTokensRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadTokens")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("id", request.getId())
-                .appendQueryParam("value", request.getValue())
-                .appendQueryParam("familyVersion", request.getFamilyVersion())
-                .appendQueryParam("searchByUser", request.getSearchByUser())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadTokenCollection.class,
-                        ListJavaDownloadTokensResponse.Builder::javaDownloadTokenCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListJavaDownloadTokensResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListJavaDownloadTokensResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListJavaLicenseAcceptanceRecordsResponse>
-            listJavaLicenseAcceptanceRecords(
-                    ListJavaLicenseAcceptanceRecordsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListJavaLicenseAcceptanceRecordsRequest,
-                                    ListJavaLicenseAcceptanceRecordsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListJavaLicenseAcceptanceRecordsResponse::builder)
-                .logger(LOG, "listJavaLicenseAcceptanceRecords")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaLicenseAcceptanceRecords",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListJavaLicenseAcceptanceRecordsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenseAcceptanceRecords")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("searchByUser", request.getSearchByUser())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("licenseType", request.getLicenseType())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecordCollection
-                                .class,
-                        ListJavaLicenseAcceptanceRecordsResponse.Builder
-                                ::javaLicenseAcceptanceRecordCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListJavaLicenseAcceptanceRecordsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListJavaLicenseAcceptanceRecordsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListJavaLicensesResponse> listJavaLicenses(
-            ListJavaLicensesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListJavaLicensesRequest, ListJavaLicensesResponse>
-                    handler) {
-
-        return clientCall(request, ListJavaLicensesResponse::builder)
-                .logger(LOG, "listJavaLicenses")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListJavaLicenses",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListJavaLicensesRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenses")
-                .appendEnumQueryParam("licenseType", request.getLicenseType())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicenseCollection.class,
-                        ListJavaLicensesResponse.Builder::javaLicenseCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListJavaLicensesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListJavaLicensesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
-            ListWorkRequestErrorsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestErrorsResponse::builder)
-                .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestErrorsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("errors")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.WorkRequestErrorCollection.class,
-                        ListWorkRequestErrorsResponse.Builder::workRequestErrorCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestErrorsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestErrorsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
-            ListWorkRequestLogsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
-                    handler) {
-
-        Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        return clientCall(request, ListWorkRequestLogsResponse::builder)
-                .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestLogsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("workRequests")
-                .appendPathParam(request.getWorkRequestId())
-                .appendPathParam("logs")
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.WorkRequestLogEntryCollection.class,
-                        ListWorkRequestLogsResponse.Builder::workRequestLogEntryCollection)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestLogsResponse.Builder::opcNextPage)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestLogsResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
-            ListWorkRequestsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListWorkRequestsRequest, ListWorkRequestsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListWorkRequestsResponse::builder)
-                .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "JavaDownload",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListWorkRequestsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("workRequests")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("id", request.getId())
-                .appendEnumQueryParam("status", request.getStatus())
-                .appendQueryParam("resourceId", request.getResourceId())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("limit", request.getLimit())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.WorkRequestSummaryCollection.class,
-                        ListWorkRequestsResponse.Builder::workRequestSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RequestSummarizedJavaDownloadCountsResponse>
-            requestSummarizedJavaDownloadCounts(
-                    RequestSummarizedJavaDownloadCountsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    RequestSummarizedJavaDownloadCountsRequest,
-                                    RequestSummarizedJavaDownloadCountsResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getRequestSummarizedJavaDownloadCountsDetails(),
-                "requestSummarizedJavaDownloadCountsDetails is required");
-
-        return clientCall(request, RequestSummarizedJavaDownloadCountsResponse::builder)
-                .logger(LOG, "requestSummarizedJavaDownloadCounts")
-                .serviceDetails(
-                        "JavaDownload",
-                        "RequestSummarizedJavaDownloadCounts",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RequestSummarizedJavaDownloadCountsRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("actions")
-                .appendPathParam("requestSummarizedJavaDownloadCounts")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaDownloadCountAggregationCollection
-                                .class,
-                        RequestSummarizedJavaDownloadCountsResponse.Builder
-                                ::javaDownloadCountAggregationCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        RequestSummarizedJavaDownloadCountsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        RequestSummarizedJavaDownloadCountsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateJavaDownloadTokenResponse> updateJavaDownloadToken(
-            UpdateJavaDownloadTokenRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateJavaDownloadTokenRequest, UpdateJavaDownloadTokenResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getJavaDownloadTokenId(), "javaDownloadTokenId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateJavaDownloadTokenDetails(),
-                "updateJavaDownloadTokenDetails is required");
-
-        return clientCall(request, UpdateJavaDownloadTokenResponse::builder)
-                .logger(LOG, "updateJavaDownloadToken")
-                .serviceDetails(
-                        "JavaDownload",
-                        "UpdateJavaDownloadToken",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateJavaDownloadTokenRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaDownloadTokens")
-                .appendPathParam(request.getJavaDownloadTokenId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateJavaDownloadTokenResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateJavaDownloadTokenResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateJavaLicenseAcceptanceRecordResponse>
-            updateJavaLicenseAcceptanceRecord(
-                    UpdateJavaLicenseAcceptanceRecordRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateJavaLicenseAcceptanceRecordRequest,
-                                    UpdateJavaLicenseAcceptanceRecordResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getJavaLicenseAcceptanceRecordId(),
-                "javaLicenseAcceptanceRecordId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateJavaLicenseAcceptanceRecordDetails(),
-                "updateJavaLicenseAcceptanceRecordDetails is required");
-
-        return clientCall(request, UpdateJavaLicenseAcceptanceRecordResponse::builder)
-                .logger(LOG, "updateJavaLicenseAcceptanceRecord")
-                .serviceDetails(
-                        "JavaDownload",
-                        "UpdateJavaLicenseAcceptanceRecord",
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateJavaLicenseAcceptanceRecordRequest::builder)
-                .basePath("/")
-                .appendPathParam("20230601")
-                .appendPathParam("javaLicenseAcceptanceRecords")
-                .appendPathParam(request.getJavaLicenseAcceptanceRecordId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.jmsjavadownloads.model.JavaLicenseAcceptanceRecord.class,
-                        UpdateJavaLicenseAcceptanceRecordResponse.Builder
-                                ::javaLicenseAcceptanceRecord)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        UpdateJavaLicenseAcceptanceRecordResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "etag", UpdateJavaLicenseAcceptanceRecordResponse.Builder::etag)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1129,26 +150,26 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1157,29 +178,29 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public JavaDownloadAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -1192,14 +213,1510 @@ public class JavaDownloadAsyncClient extends com.oracle.bmc.http.internal.BaseAs
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public JavaDownloadAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+        if (com.oracle.bmc.http.ApacheUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.http.ApacheUtils.getStreamWarningMessage(
+                            "JavaDownloadAsyncClient", "getJavaDownloadReportContent"));
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, JavaDownloadAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public JavaDownloadAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new JavaDownloadAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
+            CancelWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelWorkRequestRequest, CancelWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async cancelWorkRequest");
+        final CancelWorkRequestRequest interceptedRequest =
+                CancelWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
+                transformer =
+                        CancelWorkRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelWorkRequestRequest, CancelWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelWorkRequestRequest, CancelWorkRequestResponse>,
+                        java.util.concurrent.Future<CancelWorkRequestResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelWorkRequestRequest, CancelWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJavaDownloadReportResponse> createJavaDownloadReport(
+            CreateJavaDownloadReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateJavaDownloadReportRequest, CreateJavaDownloadReportResponse>
+                    handler) {
+        LOG.trace("Called async createJavaDownloadReport");
+        final CreateJavaDownloadReportRequest interceptedRequest =
+                CreateJavaDownloadReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateJavaDownloadReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "CreateJavaDownloadReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateJavaDownloadReportResponse>
+                transformer =
+                        CreateJavaDownloadReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateJavaDownloadReportRequest, CreateJavaDownloadReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateJavaDownloadReportRequest, CreateJavaDownloadReportResponse>,
+                        java.util.concurrent.Future<CreateJavaDownloadReportResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJavaDownloadReportDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateJavaDownloadReportRequest, CreateJavaDownloadReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJavaDownloadTokenResponse> createJavaDownloadToken(
+            CreateJavaDownloadTokenRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateJavaDownloadTokenRequest, CreateJavaDownloadTokenResponse>
+                    handler) {
+        LOG.trace("Called async createJavaDownloadToken");
+        final CreateJavaDownloadTokenRequest interceptedRequest =
+                CreateJavaDownloadTokenConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateJavaDownloadTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "CreateJavaDownloadToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateJavaDownloadTokenResponse>
+                transformer =
+                        CreateJavaDownloadTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateJavaDownloadTokenRequest, CreateJavaDownloadTokenResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateJavaDownloadTokenRequest, CreateJavaDownloadTokenResponse>,
+                        java.util.concurrent.Future<CreateJavaDownloadTokenResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJavaDownloadTokenDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateJavaDownloadTokenRequest, CreateJavaDownloadTokenResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateJavaLicenseAcceptanceRecordResponse>
+            createJavaLicenseAcceptanceRecord(
+                    CreateJavaLicenseAcceptanceRecordRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateJavaLicenseAcceptanceRecordRequest,
+                                    CreateJavaLicenseAcceptanceRecordResponse>
+                            handler) {
+        LOG.trace("Called async createJavaLicenseAcceptanceRecord");
+        final CreateJavaLicenseAcceptanceRecordRequest interceptedRequest =
+                CreateJavaLicenseAcceptanceRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateJavaLicenseAcceptanceRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "CreateJavaLicenseAcceptanceRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateJavaLicenseAcceptanceRecordResponse>
+                transformer =
+                        CreateJavaLicenseAcceptanceRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateJavaLicenseAcceptanceRecordRequest,
+                        CreateJavaLicenseAcceptanceRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateJavaLicenseAcceptanceRecordRequest,
+                                CreateJavaLicenseAcceptanceRecordResponse>,
+                        java.util.concurrent.Future<CreateJavaLicenseAcceptanceRecordResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateJavaLicenseAcceptanceRecordDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateJavaLicenseAcceptanceRecordRequest,
+                    CreateJavaLicenseAcceptanceRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJavaDownloadReportResponse> deleteJavaDownloadReport(
+            DeleteJavaDownloadReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteJavaDownloadReportRequest, DeleteJavaDownloadReportResponse>
+                    handler) {
+        LOG.trace("Called async deleteJavaDownloadReport");
+        final DeleteJavaDownloadReportRequest interceptedRequest =
+                DeleteJavaDownloadReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteJavaDownloadReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "DeleteJavaDownloadReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteJavaDownloadReportResponse>
+                transformer =
+                        DeleteJavaDownloadReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteJavaDownloadReportRequest, DeleteJavaDownloadReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteJavaDownloadReportRequest, DeleteJavaDownloadReportResponse>,
+                        java.util.concurrent.Future<DeleteJavaDownloadReportResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteJavaDownloadReportRequest, DeleteJavaDownloadReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJavaDownloadTokenResponse> deleteJavaDownloadToken(
+            DeleteJavaDownloadTokenRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteJavaDownloadTokenRequest, DeleteJavaDownloadTokenResponse>
+                    handler) {
+        LOG.trace("Called async deleteJavaDownloadToken");
+        final DeleteJavaDownloadTokenRequest interceptedRequest =
+                DeleteJavaDownloadTokenConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteJavaDownloadTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "DeleteJavaDownloadToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteJavaDownloadTokenResponse>
+                transformer =
+                        DeleteJavaDownloadTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteJavaDownloadTokenRequest, DeleteJavaDownloadTokenResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteJavaDownloadTokenRequest, DeleteJavaDownloadTokenResponse>,
+                        java.util.concurrent.Future<DeleteJavaDownloadTokenResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteJavaDownloadTokenRequest, DeleteJavaDownloadTokenResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteJavaLicenseAcceptanceRecordResponse>
+            deleteJavaLicenseAcceptanceRecord(
+                    DeleteJavaLicenseAcceptanceRecordRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteJavaLicenseAcceptanceRecordRequest,
+                                    DeleteJavaLicenseAcceptanceRecordResponse>
+                            handler) {
+        LOG.trace("Called async deleteJavaLicenseAcceptanceRecord");
+        final DeleteJavaLicenseAcceptanceRecordRequest interceptedRequest =
+                DeleteJavaLicenseAcceptanceRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteJavaLicenseAcceptanceRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "DeleteJavaLicenseAcceptanceRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteJavaLicenseAcceptanceRecordResponse>
+                transformer =
+                        DeleteJavaLicenseAcceptanceRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteJavaLicenseAcceptanceRecordRequest,
+                        DeleteJavaLicenseAcceptanceRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteJavaLicenseAcceptanceRecordRequest,
+                                DeleteJavaLicenseAcceptanceRecordResponse>,
+                        java.util.concurrent.Future<DeleteJavaLicenseAcceptanceRecordResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteJavaLicenseAcceptanceRecordRequest,
+                    DeleteJavaLicenseAcceptanceRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateArtifactDownloadUrlResponse>
+            generateArtifactDownloadUrl(
+                    GenerateArtifactDownloadUrlRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateArtifactDownloadUrlRequest,
+                                    GenerateArtifactDownloadUrlResponse>
+                            handler) {
+        LOG.trace("Called async generateArtifactDownloadUrl");
+        final GenerateArtifactDownloadUrlRequest interceptedRequest =
+                GenerateArtifactDownloadUrlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateArtifactDownloadUrlConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GenerateArtifactDownloadUrl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateArtifactDownloadUrlResponse>
+                transformer =
+                        GenerateArtifactDownloadUrlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateArtifactDownloadUrlRequest, GenerateArtifactDownloadUrlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateArtifactDownloadUrlRequest,
+                                GenerateArtifactDownloadUrlResponse>,
+                        java.util.concurrent.Future<GenerateArtifactDownloadUrlResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateArtifactDownloadUrlDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateArtifactDownloadUrlRequest, GenerateArtifactDownloadUrlResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaDownloadReportResponse> getJavaDownloadReport(
+            GetJavaDownloadReportRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetJavaDownloadReportRequest, GetJavaDownloadReportResponse>
+                    handler) {
+        LOG.trace("Called async getJavaDownloadReport");
+        final GetJavaDownloadReportRequest interceptedRequest =
+                GetJavaDownloadReportConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaDownloadReportConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadReport",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJavaDownloadReportResponse>
+                transformer =
+                        GetJavaDownloadReportConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetJavaDownloadReportRequest, GetJavaDownloadReportResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaDownloadReportRequest, GetJavaDownloadReportResponse>,
+                        java.util.concurrent.Future<GetJavaDownloadReportResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaDownloadReportRequest, GetJavaDownloadReportResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaDownloadReportContentResponse>
+            getJavaDownloadReportContent(
+                    GetJavaDownloadReportContentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetJavaDownloadReportContentRequest,
+                                    GetJavaDownloadReportContentResponse>
+                            handler) {
+        LOG.trace("Called async getJavaDownloadReportContent");
+        final GetJavaDownloadReportContentRequest interceptedRequest =
+                GetJavaDownloadReportContentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaDownloadReportContentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadReportContent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetJavaDownloadReportContentResponse>
+                transformer =
+                        GetJavaDownloadReportContentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetJavaDownloadReportContentRequest, GetJavaDownloadReportContentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaDownloadReportContentRequest,
+                                GetJavaDownloadReportContentResponse>,
+                        java.util.concurrent.Future<GetJavaDownloadReportContentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaDownloadReportContentRequest, GetJavaDownloadReportContentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaDownloadTokenResponse> getJavaDownloadToken(
+            GetJavaDownloadTokenRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetJavaDownloadTokenRequest, GetJavaDownloadTokenResponse>
+                    handler) {
+        LOG.trace("Called async getJavaDownloadToken");
+        final GetJavaDownloadTokenRequest interceptedRequest =
+                GetJavaDownloadTokenConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaDownloadTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetJavaDownloadToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJavaDownloadTokenResponse>
+                transformer =
+                        GetJavaDownloadTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetJavaDownloadTokenRequest, GetJavaDownloadTokenResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaDownloadTokenRequest, GetJavaDownloadTokenResponse>,
+                        java.util.concurrent.Future<GetJavaDownloadTokenResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaDownloadTokenRequest, GetJavaDownloadTokenResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaLicenseResponse> getJavaLicense(
+            GetJavaLicenseRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetJavaLicenseRequest, GetJavaLicenseResponse>
+                    handler) {
+        LOG.trace("Called async getJavaLicense");
+        final GetJavaLicenseRequest interceptedRequest =
+                GetJavaLicenseConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaLicenseConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetJavaLicense",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetJavaLicenseResponse>
+                transformer =
+                        GetJavaLicenseConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetJavaLicenseRequest, GetJavaLicenseResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaLicenseRequest, GetJavaLicenseResponse>,
+                        java.util.concurrent.Future<GetJavaLicenseResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaLicenseRequest, GetJavaLicenseResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetJavaLicenseAcceptanceRecordResponse>
+            getJavaLicenseAcceptanceRecord(
+                    GetJavaLicenseAcceptanceRecordRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetJavaLicenseAcceptanceRecordRequest,
+                                    GetJavaLicenseAcceptanceRecordResponse>
+                            handler) {
+        LOG.trace("Called async getJavaLicenseAcceptanceRecord");
+        final GetJavaLicenseAcceptanceRecordRequest interceptedRequest =
+                GetJavaLicenseAcceptanceRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetJavaLicenseAcceptanceRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetJavaLicenseAcceptanceRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetJavaLicenseAcceptanceRecordResponse>
+                transformer =
+                        GetJavaLicenseAcceptanceRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetJavaLicenseAcceptanceRecordRequest,
+                        GetJavaLicenseAcceptanceRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetJavaLicenseAcceptanceRecordRequest,
+                                GetJavaLicenseAcceptanceRecordResponse>,
+                        java.util.concurrent.Future<GetJavaLicenseAcceptanceRecordResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetJavaLicenseAcceptanceRecordRequest, GetJavaLicenseAcceptanceRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
+            GetWorkRequestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler) {
+        LOG.trace("Called async getWorkRequest");
+        final GetWorkRequestRequest interceptedRequest =
+                GetWorkRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetWorkRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
+                transformer =
+                        GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetWorkRequestRequest, GetWorkRequestResponse>,
+                        java.util.concurrent.Future<GetWorkRequestResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaDownloadRecordsResponse> listJavaDownloadRecords(
+            ListJavaDownloadRecordsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaDownloadRecordsRequest, ListJavaDownloadRecordsResponse>
+                    handler) {
+        LOG.trace("Called async listJavaDownloadRecords");
+        final ListJavaDownloadRecordsRequest interceptedRequest =
+                ListJavaDownloadRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaDownloadRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListJavaDownloadRecordsResponse>
+                transformer =
+                        ListJavaDownloadRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListJavaDownloadRecordsRequest, ListJavaDownloadRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaDownloadRecordsRequest, ListJavaDownloadRecordsResponse>,
+                        java.util.concurrent.Future<ListJavaDownloadRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaDownloadRecordsRequest, ListJavaDownloadRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaDownloadReportsResponse> listJavaDownloadReports(
+            ListJavaDownloadReportsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaDownloadReportsRequest, ListJavaDownloadReportsResponse>
+                    handler) {
+        LOG.trace("Called async listJavaDownloadReports");
+        final ListJavaDownloadReportsRequest interceptedRequest =
+                ListJavaDownloadReportsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaDownloadReportsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadReports",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListJavaDownloadReportsResponse>
+                transformer =
+                        ListJavaDownloadReportsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListJavaDownloadReportsRequest, ListJavaDownloadReportsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaDownloadReportsRequest, ListJavaDownloadReportsResponse>,
+                        java.util.concurrent.Future<ListJavaDownloadReportsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaDownloadReportsRequest, ListJavaDownloadReportsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaDownloadTokensResponse> listJavaDownloadTokens(
+            ListJavaDownloadTokensRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaDownloadTokensRequest, ListJavaDownloadTokensResponse>
+                    handler) {
+        LOG.trace("Called async listJavaDownloadTokens");
+        final ListJavaDownloadTokensRequest interceptedRequest =
+                ListJavaDownloadTokensConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaDownloadTokensConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListJavaDownloadTokens",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJavaDownloadTokensResponse>
+                transformer =
+                        ListJavaDownloadTokensConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListJavaDownloadTokensRequest, ListJavaDownloadTokensResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaDownloadTokensRequest, ListJavaDownloadTokensResponse>,
+                        java.util.concurrent.Future<ListJavaDownloadTokensResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaDownloadTokensRequest, ListJavaDownloadTokensResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaLicenseAcceptanceRecordsResponse>
+            listJavaLicenseAcceptanceRecords(
+                    ListJavaLicenseAcceptanceRecordsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListJavaLicenseAcceptanceRecordsRequest,
+                                    ListJavaLicenseAcceptanceRecordsResponse>
+                            handler) {
+        LOG.trace("Called async listJavaLicenseAcceptanceRecords");
+        final ListJavaLicenseAcceptanceRecordsRequest interceptedRequest =
+                ListJavaLicenseAcceptanceRecordsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaLicenseAcceptanceRecordsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListJavaLicenseAcceptanceRecords",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListJavaLicenseAcceptanceRecordsResponse>
+                transformer =
+                        ListJavaLicenseAcceptanceRecordsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListJavaLicenseAcceptanceRecordsRequest,
+                        ListJavaLicenseAcceptanceRecordsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaLicenseAcceptanceRecordsRequest,
+                                ListJavaLicenseAcceptanceRecordsResponse>,
+                        java.util.concurrent.Future<ListJavaLicenseAcceptanceRecordsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaLicenseAcceptanceRecordsRequest,
+                    ListJavaLicenseAcceptanceRecordsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListJavaLicensesResponse> listJavaLicenses(
+            ListJavaLicensesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListJavaLicensesRequest, ListJavaLicensesResponse>
+                    handler) {
+        LOG.trace("Called async listJavaLicenses");
+        final ListJavaLicensesRequest interceptedRequest =
+                ListJavaLicensesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListJavaLicensesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListJavaLicenses",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListJavaLicensesResponse>
+                transformer =
+                        ListJavaLicensesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListJavaLicensesRequest, ListJavaLicensesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListJavaLicensesRequest, ListJavaLicensesResponse>,
+                        java.util.concurrent.Future<ListJavaLicensesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListJavaLicensesRequest, ListJavaLicensesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
+            ListWorkRequestErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestErrors");
+        final ListWorkRequestErrorsRequest interceptedRequest =
+                ListWorkRequestErrorsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
+                transformer =
+                        ListWorkRequestErrorsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestErrorsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestErrorsRequest, ListWorkRequestErrorsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestLogsResponse> listWorkRequestLogs(
+            ListWorkRequestLogsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequestLogs");
+        final ListWorkRequestLogsRequest interceptedRequest =
+                ListWorkRequestLogsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
+                transformer =
+                        ListWorkRequestLogsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestLogsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestLogsRequest, ListWorkRequestLogsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
+            ListWorkRequestsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler) {
+        LOG.trace("Called async listWorkRequests");
+        final ListWorkRequestsRequest interceptedRequest =
+                ListWorkRequestsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
+                transformer =
+                        ListWorkRequestsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListWorkRequestsRequest, ListWorkRequestsResponse>,
+                        java.util.concurrent.Future<ListWorkRequestsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RequestSummarizedJavaDownloadCountsResponse>
+            requestSummarizedJavaDownloadCounts(
+                    RequestSummarizedJavaDownloadCountsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedJavaDownloadCountsRequest,
+                                    RequestSummarizedJavaDownloadCountsResponse>
+                            handler) {
+        LOG.trace("Called async requestSummarizedJavaDownloadCounts");
+        final RequestSummarizedJavaDownloadCountsRequest interceptedRequest =
+                RequestSummarizedJavaDownloadCountsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RequestSummarizedJavaDownloadCountsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "RequestSummarizedJavaDownloadCounts",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RequestSummarizedJavaDownloadCountsResponse>
+                transformer =
+                        RequestSummarizedJavaDownloadCountsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RequestSummarizedJavaDownloadCountsRequest,
+                        RequestSummarizedJavaDownloadCountsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RequestSummarizedJavaDownloadCountsRequest,
+                                RequestSummarizedJavaDownloadCountsResponse>,
+                        java.util.concurrent.Future<RequestSummarizedJavaDownloadCountsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRequestSummarizedJavaDownloadCountsDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RequestSummarizedJavaDownloadCountsRequest,
+                    RequestSummarizedJavaDownloadCountsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJavaDownloadTokenResponse> updateJavaDownloadToken(
+            UpdateJavaDownloadTokenRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateJavaDownloadTokenRequest, UpdateJavaDownloadTokenResponse>
+                    handler) {
+        LOG.trace("Called async updateJavaDownloadToken");
+        final UpdateJavaDownloadTokenRequest interceptedRequest =
+                UpdateJavaDownloadTokenConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateJavaDownloadTokenConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "UpdateJavaDownloadToken",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateJavaDownloadTokenResponse>
+                transformer =
+                        UpdateJavaDownloadTokenConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateJavaDownloadTokenRequest, UpdateJavaDownloadTokenResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateJavaDownloadTokenRequest, UpdateJavaDownloadTokenResponse>,
+                        java.util.concurrent.Future<UpdateJavaDownloadTokenResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJavaDownloadTokenDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateJavaDownloadTokenRequest, UpdateJavaDownloadTokenResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateJavaLicenseAcceptanceRecordResponse>
+            updateJavaLicenseAcceptanceRecord(
+                    UpdateJavaLicenseAcceptanceRecordRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateJavaLicenseAcceptanceRecordRequest,
+                                    UpdateJavaLicenseAcceptanceRecordResponse>
+                            handler) {
+        LOG.trace("Called async updateJavaLicenseAcceptanceRecord");
+        final UpdateJavaLicenseAcceptanceRecordRequest interceptedRequest =
+                UpdateJavaLicenseAcceptanceRecordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateJavaLicenseAcceptanceRecordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaDownload",
+                        "UpdateJavaLicenseAcceptanceRecord",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateJavaLicenseAcceptanceRecordResponse>
+                transformer =
+                        UpdateJavaLicenseAcceptanceRecordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateJavaLicenseAcceptanceRecordRequest,
+                        UpdateJavaLicenseAcceptanceRecordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateJavaLicenseAcceptanceRecordRequest,
+                                UpdateJavaLicenseAcceptanceRecordResponse>,
+                        java.util.concurrent.Future<UpdateJavaLicenseAcceptanceRecordResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateJavaLicenseAcceptanceRecordDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateJavaLicenseAcceptanceRecordRequest,
+                    UpdateJavaLicenseAcceptanceRecordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

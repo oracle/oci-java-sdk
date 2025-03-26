@@ -5,21 +5,19 @@
 package com.oracle.bmc.lockbox.model;
 
 /**
- * The approver data for this approver level. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
+ * The approver data for this approver level.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220126")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ApproverInfo.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ApproverInfo extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ApproverInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"approverType", "approverId", "domainId"})
     public ApproverInfo(ApproverType approverType, String approverId, String domainId) {
@@ -31,46 +29,49 @@ public final class ApproverInfo extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The approver type of this approver level. */
+        /**
+         * The approver type of this approver level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverType")
         private ApproverType approverType;
 
         /**
          * The approver type of this approver level.
-         *
          * @param approverType the value to set
          * @return this builder
-         */
+         **/
         public Builder approverType(ApproverType approverType) {
             this.approverType = approverType;
             this.__explicitlySet__.add("approverType");
             return this;
         }
-        /** The group or user ocid of the approver for this approver level. */
+        /**
+         * The group or user ocid of the approver for this approver level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approverId")
         private String approverId;
 
         /**
          * The group or user ocid of the approver for this approver level.
-         *
          * @param approverId the value to set
          * @return this builder
-         */
+         **/
         public Builder approverId(String approverId) {
             this.approverId = approverId;
             this.__explicitlySet__.add("approverId");
             return this;
         }
-        /** The identity domain ocid of the approver. */
+        /**
+         * The identity domain ocid of the approver.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainId")
         private String domainId;
 
         /**
          * The identity domain ocid of the approver.
-         *
          * @param domainId the value to set
          * @return this builder
-         */
+         **/
         public Builder domainId(String domainId) {
             this.domainId = domainId;
             this.__explicitlySet__.add("domainId");
@@ -104,7 +105,9 @@ public final class ApproverInfo extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,41 +116,44 @@ public final class ApproverInfo extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The approver type of this approver level. */
+    /**
+     * The approver type of this approver level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverType")
     private final ApproverType approverType;
 
     /**
      * The approver type of this approver level.
-     *
      * @return the value
-     */
+     **/
     public ApproverType getApproverType() {
         return approverType;
     }
 
-    /** The group or user ocid of the approver for this approver level. */
+    /**
+     * The group or user ocid of the approver for this approver level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approverId")
     private final String approverId;
 
     /**
      * The group or user ocid of the approver for this approver level.
-     *
      * @return the value
-     */
+     **/
     public String getApproverId() {
         return approverId;
     }
 
-    /** The identity domain ocid of the approver. */
+    /**
+     * The identity domain ocid of the approver.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainId")
     private final String domainId;
 
     /**
      * The identity domain ocid of the approver.
-     *
      * @return the value
-     */
+     **/
     public String getDomainId() {
         return domainId;
     }
@@ -159,7 +165,6 @@ public final class ApproverInfo extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,23 +6,22 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details of the action parameter and its possible values that is used in listParamsForActionType.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ActionParamValuesSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ActionParamValuesSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ActionParamValuesSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "parameterName",
@@ -47,76 +46,81 @@ public final class ActionParamValuesSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of this parameter. */
+        /**
+         * The name of this parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
         private String parameterName;
 
         /**
          * The name of this parameter.
-         *
          * @param parameterName the value to set
          * @return this builder
-         */
+         **/
         public Builder parameterName(String parameterName) {
             this.parameterName = parameterName;
             this.__explicitlySet__.add("parameterName");
             return this;
         }
-        /** The type of the parameter. */
+        /**
+         * The type of the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterType")
         private ParameterType parameterType;
 
         /**
          * The type of the parameter.
-         *
          * @param parameterType the value to set
          * @return this builder
-         */
+         **/
         public Builder parameterType(ParameterType parameterType) {
             this.parameterType = parameterType;
             this.__explicitlySet__.add("parameterType");
             return this;
         }
-        /** Possible values for this parameter. In case of integer it's min and max values. */
+        /**
+         * Possible values for this parameter. In case of integer it's min and max values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
         private java.util.List<String> parameterValues;
 
         /**
          * Possible values for this parameter. In case of integer it's min and max values.
-         *
          * @param parameterValues the value to set
          * @return this builder
-         */
+         **/
         public Builder parameterValues(java.util.List<String> parameterValues) {
             this.parameterValues = parameterValues;
             this.__explicitlySet__.add("parameterValues");
             return this;
         }
-        /** The default value for this parameter. */
+        /**
+         * The default value for this parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * The default value for this parameter.
-         *
          * @param defaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /** Whether this parameter is required or not for this action type.\u3001 */
+        /**
+         * Whether this parameter is required or not for this action type.\u3001
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
          * Whether this parameter is required or not for this action type.\u3001
-         *
          * @param isRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             this.__explicitlySet__.add("isRequired");
@@ -161,7 +165,9 @@ public final class ActionParamValuesSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -170,28 +176,31 @@ public final class ActionParamValuesSummary
         return new Builder().copy(this);
     }
 
-    /** The name of this parameter. */
+    /**
+     * The name of this parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterName")
     private final String parameterName;
 
     /**
      * The name of this parameter.
-     *
      * @return the value
-     */
+     **/
     public String getParameterName() {
         return parameterName;
     }
 
-    /** The type of the parameter. */
-    public enum ParameterType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the parameter.
+     **/
+    public enum ParameterType {
         Boolean("BOOLEAN"),
         String("STRING"),
         Integer("INTEGER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -230,54 +239,58 @@ public final class ActionParamValuesSummary
             return UnknownEnumValue;
         }
     };
-    /** The type of the parameter. */
+    /**
+     * The type of the parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterType")
     private final ParameterType parameterType;
 
     /**
      * The type of the parameter.
-     *
      * @return the value
-     */
+     **/
     public ParameterType getParameterType() {
         return parameterType;
     }
 
-    /** Possible values for this parameter. In case of integer it's min and max values. */
+    /**
+     * Possible values for this parameter. In case of integer it's min and max values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameterValues")
     private final java.util.List<String> parameterValues;
 
     /**
      * Possible values for this parameter. In case of integer it's min and max values.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getParameterValues() {
         return parameterValues;
     }
 
-    /** The default value for this parameter. */
+    /**
+     * The default value for this parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * The default value for this parameter.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
 
-    /** Whether this parameter is required or not for this action type.\u3001 */
+    /**
+     * Whether this parameter is required or not for this action type.\u3001
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
      * Whether this parameter is required or not for this action type.\u3001
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRequired() {
         return isRequired;
     }
@@ -289,7 +302,6 @@ public final class ActionParamValuesSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

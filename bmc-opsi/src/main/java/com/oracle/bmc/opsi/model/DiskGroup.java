@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Displays exadata diskgroup resource metrics */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DiskGroup implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Displays exadata diskgroup resource metrics
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DiskGroup {
     Storage("STORAGE"),
     ;
 

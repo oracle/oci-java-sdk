@@ -5,33 +5,34 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Migration resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "databaseCombination",
-        defaultImpl = Migration.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "databaseCombination",
+    defaultImpl = Migration.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OracleMigration.class,
-            name = "ORACLE"),
+        value = OracleMigration.class,
+        name = "ORACLE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MySqlMigration.class,
-            name = "MYSQL")
+        value = MySqlMigration.class,
+        name = "MYSQL"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class Migration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -90,140 +91,152 @@ public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.systemTags = systemTags;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A user-friendly description. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a
-     * migration. This method uses Oracle GoldenGate for replication.
-     */
+     * The type of the migration to be performed.
+     * Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final MigrationTypes type;
 
     /**
-     * The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a
-     * migration. This method uses Oracle GoldenGate for replication.
+     * The type of the migration to be performed.
+     * Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
      *
      * @return the value
-     */
+     **/
     public MigrationTypes getType() {
         return type;
     }
 
     /**
-     * You can optionally pause a migration after a job phase. This property allows you to
-     * optionally specify the phase after which you can pause the migration.
-     */
+     * You can optionally pause a migration after a job phase.
+     * This property allows you to optionally specify the phase after which you can pause the migration.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("waitAfter")
     private final OdmsJobPhases waitAfter;
 
     /**
-     * You can optionally pause a migration after a job phase. This property allows you to
-     * optionally specify the phase after which you can pause the migration.
+     * You can optionally pause a migration after a job phase.
+     * This property allows you to optionally specify the phase after which you can pause the migration.
      *
      * @return the value
-     */
+     **/
     public OdmsJobPhases getWaitAfter() {
         return waitAfter;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDatabaseConnectionId")
     private final String sourceDatabaseConnectionId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getSourceDatabaseConnectionId() {
         return sourceDatabaseConnectionId;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseConnectionId")
     private final String targetDatabaseConnectionId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getTargetDatabaseConnectionId() {
         return targetDatabaseConnectionId;
     }
 
-    /** The OCID of the resource being referenced. */
+    /**
+     * The OCID of the resource being referenced.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executingJobId")
     private final String executingJobId;
 
     /**
      * The OCID of the resource being referenced.
-     *
      * @return the value
-     */
+     **/
     public String getExecutingJobId() {
         return executingJobId;
     }
 
-    /** An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}. */
+    /**
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -231,12 +244,15 @@ public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}. */
+    /**
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -244,12 +260,15 @@ public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}. */
+    /**
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastMigration")
     private final java.util.Date timeLastMigration;
 
@@ -257,86 +276,89 @@ public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySet
      * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastMigration() {
         return timeLastMigration;
     }
 
-    /** The current state of the Migration resource. */
+    /**
+     * The current state of the Migration resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final MigrationLifecycleStates lifecycleState;
 
     /**
      * The current state of the Migration resource.
-     *
      * @return the value
-     */
+     **/
     public MigrationLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional status related to the execution and current state of the Migration. */
+    /**
+     * Additional status related to the execution and current state of the Migration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final MigrationStatus lifecycleDetails;
 
     /**
      * Additional status related to the execution and current state of the Migration.
-     *
      * @return the value
-     */
+     **/
     public MigrationStatus getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see Resource Tags. Example: {"Department":
-     * "Finance"}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -348,7 +370,6 @@ public class Migration extends com.oracle.bmc.http.client.internal.ExplicitlySet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

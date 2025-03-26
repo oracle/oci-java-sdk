@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.resourcescheduler.model;
 
-/** This is the asynchronous operation tracked by the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * This is the asynchronous operation tracked by the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+public enum OperationType {
     StartResource("START_RESOURCE"),
     StopResource("STOP_RESOURCE"),
     ChangeScheduleCompartment("CHANGE_SCHEDULE_COMPARTMENT"),

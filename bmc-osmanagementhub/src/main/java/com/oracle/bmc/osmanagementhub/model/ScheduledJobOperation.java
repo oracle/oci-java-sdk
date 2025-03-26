@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Defines an operation that is performed by a scheduled job. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Defines an operation that is performed by a scheduled job.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ScheduledJobOperation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ScheduledJobOperation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ScheduledJobOperation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -52,56 +51,55 @@ public final class ScheduledJobOperation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of operation this scheduled job performs. */
+        /**
+         * The type of operation this scheduled job performs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private OperationTypes operationType;
 
         /**
          * The type of operation this scheduled job performs.
-         *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(OperationTypes operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
         /**
-         * The names of the target packages. This parameter only applies when the scheduled job is
-         * for installing, updating, or removing packages.
-         */
+         * The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<String> packageNames;
 
         /**
-         * The names of the target packages. This parameter only applies when the scheduled job is
-         * for installing, updating, or removing packages.
-         *
+         * The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
          * @param packageNames the value to set
          * @return this builder
-         */
+         **/
         public Builder packageNames(java.util.List<String> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
             return this;
         }
         /**
-         * Unique identifier for the Windows update. This parameter only applies if the scheduled
-         * job is for installing Windows updates. Note that this is not an OCID, but is a unique
-         * identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
-         */
+         * Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+         * Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+         * For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
         private java.util.List<String> windowsUpdateNames;
 
         /**
-         * Unique identifier for the Windows update. This parameter only applies if the scheduled
-         * job is for installing Windows updates. Note that this is not an OCID, but is a unique
-         * identifier assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+         * Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+         * Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+         * For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
          *
          * @param windowsUpdateNames the value to set
          * @return this builder
-         */
+         **/
         public Builder windowsUpdateNames(java.util.List<String> windowsUpdateNames) {
             this.windowsUpdateNames = windowsUpdateNames;
             this.__explicitlySet__.add("windowsUpdateNames");
@@ -127,42 +125,40 @@ public final class ScheduledJobOperation
             return this;
         }
         /**
-         * The software source
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-         * parameter only applies when the scheduled job is for attaching or detaching software
-         * sources.
-         */
+         * The software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This parameter only applies when the scheduled job is for attaching or detaching software sources.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
         private java.util.List<String> softwareSourceIds;
 
         /**
-         * The software source
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-         * parameter only applies when the scheduled job is for attaching or detaching software
-         * sources.
+         * The software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * This parameter only applies when the scheduled job is for attaching or detaching software sources.
          *
          * @param softwareSourceIds the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceIds(java.util.List<String> softwareSourceIds) {
             this.softwareSourceIds = softwareSourceIds;
             this.__explicitlySet__.add("softwareSourceIds");
             return this;
         }
         /**
-         * The number of minutes the service waits for the reboot to complete. If the instance
-         * doesn't reboot within the timeout, the service marks the reboot job as failed.
-         */
+         * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+         * timeout, the service marks the reboot job as failed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
         private Integer rebootTimeoutInMins;
 
         /**
-         * The number of minutes the service waits for the reboot to complete. If the instance
-         * doesn't reboot within the timeout, the service marks the reboot job as failed.
+         * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+         * timeout, the service marks the reboot job as failed.
          *
          * @param rebootTimeoutInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
             this.rebootTimeoutInMins = rebootTimeoutInMins;
             this.__explicitlySet__.add("rebootTimeoutInMins");
@@ -215,7 +211,9 @@ public final class ScheduledJobOperation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -224,51 +222,50 @@ public final class ScheduledJobOperation
         return new Builder().copy(this);
     }
 
-    /** The type of operation this scheduled job performs. */
+    /**
+     * The type of operation this scheduled job performs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final OperationTypes operationType;
 
     /**
      * The type of operation this scheduled job performs.
-     *
      * @return the value
-     */
+     **/
     public OperationTypes getOperationType() {
         return operationType;
     }
 
     /**
-     * The names of the target packages. This parameter only applies when the scheduled job is for
-     * installing, updating, or removing packages.
-     */
+     * The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<String> packageNames;
 
     /**
-     * The names of the target packages. This parameter only applies when the scheduled job is for
-     * installing, updating, or removing packages.
-     *
+     * The names of the target packages. This parameter only applies when the scheduled job is for installing, updating, or removing packages.
      * @return the value
-     */
+     **/
     public java.util.List<String> getPackageNames() {
         return packageNames;
     }
 
     /**
-     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is
-     * for installing Windows updates. Note that this is not an OCID, but is a unique identifier
-     * assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
-     */
+     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+     * Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+     * For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
     private final java.util.List<String> windowsUpdateNames;
 
     /**
-     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is
-     * for installing Windows updates. Note that this is not an OCID, but is a unique identifier
-     * assigned by Microsoft. For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
+     * Unique identifier for the Windows update. This parameter only applies if the scheduled job is for installing Windows updates.
+     * Note that this is not an OCID, but is a unique identifier assigned by Microsoft.
+     * For example: '6981d463-cd91-4a26-b7c4-ea4ded9183ed'.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getWindowsUpdateNames() {
         return windowsUpdateNames;
     }
@@ -288,37 +285,37 @@ public final class ScheduledJobOperation
     }
 
     /**
-     * The software source
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-     * parameter only applies when the scheduled job is for attaching or detaching software sources.
-     */
+     * The software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * This parameter only applies when the scheduled job is for attaching or detaching software sources.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceIds")
     private final java.util.List<String> softwareSourceIds;
 
     /**
-     * The software source
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This
-     * parameter only applies when the scheduled job is for attaching or detaching software sources.
+     * The software source [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * This parameter only applies when the scheduled job is for attaching or detaching software sources.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSoftwareSourceIds() {
         return softwareSourceIds;
     }
 
     /**
-     * The number of minutes the service waits for the reboot to complete. If the instance doesn't
-     * reboot within the timeout, the service marks the reboot job as failed.
-     */
+     * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+     * timeout, the service marks the reboot job as failed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
     private final Integer rebootTimeoutInMins;
 
     /**
-     * The number of minutes the service waits for the reboot to complete. If the instance doesn't
-     * reboot within the timeout, the service marks the reboot job as failed.
+     * The number of minutes the service waits for the reboot to complete. If the instance doesn't reboot within the
+     * timeout, the service marks the reboot job as failed.
      *
      * @return the value
-     */
+     **/
     public Integer getRebootTimeoutInMins() {
         return rebootTimeoutInMins;
     }
@@ -330,7 +327,6 @@ public final class ScheduledJobOperation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

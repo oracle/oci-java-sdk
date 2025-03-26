@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Possible responder execution lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ResponderExecutionStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible responder execution lifecycle states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum ResponderExecutionStates {
     Started("STARTED"),
     AwaitingConfirmation("AWAITING_CONFIRMATION"),
     AwaitingInput("AWAITING_INPUT"),

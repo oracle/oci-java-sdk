@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** The scope of the task. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
-public enum TaskScope implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The scope of the task.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public enum TaskScope {
     Local("LOCAL"),
     Shared("SHARED"),
 

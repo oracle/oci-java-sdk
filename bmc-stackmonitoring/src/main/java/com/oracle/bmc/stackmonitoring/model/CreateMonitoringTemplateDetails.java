@@ -5,24 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about new monitoring template. The monitoring template name should be unique in a
- * compartment. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about new monitoring template. The monitoring template name should be unique in a compartment.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMonitoringTemplateDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMonitoringTemplateDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMonitoringTemplateDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -66,172 +64,164 @@ public final class CreateMonitoringTemplateDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name for the monitoring template. It is unique and mutable in nature.
-         * Avoid entering confidential information.
-         */
+         * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the monitoring template. It is unique and mutable in nature.
-         * Avoid entering confidential information.
-         *
+         * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment containing the monitoringTemplate. */
+        /**
+         * The OCID of the compartment containing the monitoringTemplate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the monitoringTemplate.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly description for the monitoring template. It does not have to be unique,
-         * and it's changeable. Avoid entering confidential information.
-         */
+         * A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A user-friendly description for the monitoring template. It does not have to be unique,
-         * and it's changeable. Avoid entering confidential information.
-         *
+         * A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A list of destinations for alarm notifications. Each destination is represented by the
-         * OCID of a related resource, such as a topic.
-         */
+         * A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinations")
         private java.util.List<String> destinations;
 
         /**
-         * A list of destinations for alarm notifications. Each destination is represented by the
-         * OCID of a related resource, such as a topic.
-         *
+         * A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
          * @param destinations the value to set
          * @return this builder
-         */
+         **/
         public Builder destinations(java.util.List<String> destinations) {
             this.destinations = destinations;
             this.__explicitlySet__.add("destinations");
             return this;
         }
-        /** Whether the alarm is enabled or disabled, it will be Enabled by default. */
+        /**
+         * Whether the alarm is enabled or disabled, it will be Enabled by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAlarmsEnabled")
         private Boolean isAlarmsEnabled;
 
         /**
          * Whether the alarm is enabled or disabled, it will be Enabled by default.
-         *
          * @param isAlarmsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAlarmsEnabled(Boolean isAlarmsEnabled) {
             this.isAlarmsEnabled = isAlarmsEnabled;
             this.__explicitlySet__.add("isAlarmsEnabled");
             return this;
         }
-        /** Whether the alarm notification is enabled or disabled, it will be Enabled by default. */
+        /**
+         * Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSplitNotificationEnabled")
         private Boolean isSplitNotificationEnabled;
 
         /**
          * Whether the alarm notification is enabled or disabled, it will be Enabled by default.
-         *
          * @param isSplitNotificationEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSplitNotificationEnabled(Boolean isSplitNotificationEnabled) {
             this.isSplitNotificationEnabled = isSplitNotificationEnabled;
             this.__explicitlySet__.add("isSplitNotificationEnabled");
             return this;
         }
-        /** List of members of this monitoring template */
+        /**
+         * List of members of this monitoring template
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("members")
         private java.util.List<MemberReference> members;
 
         /**
          * List of members of this monitoring template
-         *
          * @param members the value to set
          * @return this builder
-         */
+         **/
         public Builder members(java.util.List<MemberReference> members) {
             this.members = members;
             this.__explicitlySet__.add("members");
             return this;
         }
         /**
-         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
-         * interruption. Format defined by ISO 8601. For example, PT4H indicates four hours.
-         * Minimum- PT1M. Maximum - P30D.
-         */
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repeatNotificationDuration")
         private String repeatNotificationDuration;
 
         /**
-         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
-         * interruption. Format defined by ISO 8601. For example, PT4H indicates four hours.
-         * Minimum- PT1M. Maximum - P30D.
-         *
+         * The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
          * @param repeatNotificationDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder repeatNotificationDuration(String repeatNotificationDuration) {
             this.repeatNotificationDuration = repeatNotificationDuration;
             this.__explicitlySet__.add("repeatNotificationDuration");
             return this;
         }
-        /** The format to use for alarm notifications. */
+        /**
+         * The format to use for alarm notifications.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
         private MessageFormat messageFormat;
 
         /**
          * The format to use for alarm notifications.
-         *
          * @param messageFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder messageFormat(MessageFormat messageFormat) {
             this.messageFormat = messageFormat;
             this.__explicitlySet__.add("messageFormat");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -240,7 +230,8 @@ public final class CreateMonitoringTemplateDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -250,7 +241,7 @@ public final class CreateMonitoringTemplateDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -320,7 +311,9 @@ public final class CreateMonitoringTemplateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -330,170 +323,163 @@ public final class CreateMonitoringTemplateDetails
     }
 
     /**
-     * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid
-     * entering confidential information.
-     */
+     * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid
-     * entering confidential information.
-     *
+     * A user-friendly name for the monitoring template. It is unique and mutable in nature. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment containing the monitoringTemplate. */
+    /**
+     * The OCID of the compartment containing the monitoringTemplate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the monitoringTemplate.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * A user-friendly description for the monitoring template. It does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
-     */
+     * A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A user-friendly description for the monitoring template. It does not have to be unique, and
-     * it's changeable. Avoid entering confidential information.
-     *
+     * A user-friendly description for the monitoring template. It does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A list of destinations for alarm notifications. Each destination is represented by the OCID
-     * of a related resource, such as a topic.
-     */
+     * A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinations")
     private final java.util.List<String> destinations;
 
     /**
-     * A list of destinations for alarm notifications. Each destination is represented by the OCID
-     * of a related resource, such as a topic.
-     *
+     * A list of destinations for alarm notifications. Each destination is represented by the OCID of a related resource, such as a topic.
      * @return the value
-     */
+     **/
     public java.util.List<String> getDestinations() {
         return destinations;
     }
 
-    /** Whether the alarm is enabled or disabled, it will be Enabled by default. */
+    /**
+     * Whether the alarm is enabled or disabled, it will be Enabled by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAlarmsEnabled")
     private final Boolean isAlarmsEnabled;
 
     /**
      * Whether the alarm is enabled or disabled, it will be Enabled by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAlarmsEnabled() {
         return isAlarmsEnabled;
     }
 
-    /** Whether the alarm notification is enabled or disabled, it will be Enabled by default. */
+    /**
+     * Whether the alarm notification is enabled or disabled, it will be Enabled by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSplitNotificationEnabled")
     private final Boolean isSplitNotificationEnabled;
 
     /**
      * Whether the alarm notification is enabled or disabled, it will be Enabled by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSplitNotificationEnabled() {
         return isSplitNotificationEnabled;
     }
 
-    /** List of members of this monitoring template */
+    /**
+     * List of members of this monitoring template
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("members")
     private final java.util.List<MemberReference> members;
 
     /**
      * List of members of this monitoring template
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MemberReference> getMembers() {
         return members;
     }
 
     /**
-     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
-     * interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum-
-     * PT1M. Maximum - P30D.
-     */
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repeatNotificationDuration")
     private final String repeatNotificationDuration;
 
     /**
-     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without
-     * interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum-
-     * PT1M. Maximum - P30D.
-     *
+     * The frequency for re-submitting alarm notifications, if the alarm keeps firing without interruption. Format defined by ISO 8601. For example, PT4H indicates four hours. Minimum- PT1M. Maximum - P30D.
      * @return the value
-     */
+     **/
     public String getRepeatNotificationDuration() {
         return repeatNotificationDuration;
     }
 
-    /** The format to use for alarm notifications. */
+    /**
+     * The format to use for alarm notifications.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("messageFormat")
     private final MessageFormat messageFormat;
 
     /**
      * The format to use for alarm notifications.
-     *
      * @return the value
-     */
+     **/
     public MessageFormat getMessageFormat() {
         return messageFormat;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -505,7 +491,6 @@ public final class CreateMonitoringTemplateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

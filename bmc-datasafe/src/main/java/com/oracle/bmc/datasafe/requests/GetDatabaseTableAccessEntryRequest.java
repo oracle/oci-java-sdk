@@ -6,39 +6,42 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetDatabaseTableAccessEntryExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetDatabaseTableAccessEntryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetDatabaseTableAccessEntryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDatabaseTableAccessEntryRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetDatabaseTableAccessEntryRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the security policy report resource. */
+    /**
+     * The OCID of the security policy report resource.
+     */
     private String securityPolicyReportId;
 
-    /** The OCID of the security policy report resource. */
+    /**
+     * The OCID of the security policy report resource.
+     */
     public String getSecurityPolicyReportId() {
         return securityPolicyReportId;
     }
     /**
-     * The unique key that identifies the table access object. This is a system-generated
-     * identifier.
+     * The unique key that identifies the table access object. This is a system-generated identifier.
      */
     private String databaseTableAccessEntryKey;
 
     /**
-     * The unique key that identifies the table access object. This is a system-generated
-     * identifier.
+     * The unique key that identifies the table access object. This is a system-generated identifier.
      */
     public String getDatabaseTableAccessEntryKey() {
         return databaseTableAccessEntryKey;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -46,15 +49,17 @@ public class GetDatabaseTableAccessEntryRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDatabaseTableAccessEntryRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security policy report resource. */
+        /**
+         * The OCID of the security policy report resource.
+         */
         private String securityPolicyReportId = null;
 
         /**
          * The OCID of the security policy report resource.
-         *
          * @param securityPolicyReportId the value to set
          * @return this builder instance
          */
@@ -64,15 +69,12 @@ public class GetDatabaseTableAccessEntryRequest
         }
 
         /**
-         * The unique key that identifies the table access object. This is a system-generated
-         * identifier.
+         * The unique key that identifies the table access object. This is a system-generated identifier.
          */
         private String databaseTableAccessEntryKey = null;
 
         /**
-         * The unique key that identifies the table access object. This is a system-generated
-         * identifier.
-         *
+         * The unique key that identifies the table access object. This is a system-generated identifier.
          * @param databaseTableAccessEntryKey the value to set
          * @return this builder instance
          */
@@ -81,12 +83,13 @@ public class GetDatabaseTableAccessEntryRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -97,19 +100,18 @@ public class GetDatabaseTableAccessEntryRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -121,7 +123,6 @@ public class GetDatabaseTableAccessEntryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetDatabaseTableAccessEntryRequest o) {
@@ -136,11 +137,10 @@ public class GetDatabaseTableAccessEntryRequest
         /**
          * Build the instance of GetDatabaseTableAccessEntryRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetDatabaseTableAccessEntryRequest
          */
@@ -154,8 +154,7 @@ public class GetDatabaseTableAccessEntryRequest
         /**
          * Build the instance of GetDatabaseTableAccessEntryRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDatabaseTableAccessEntryRequest
@@ -166,14 +165,12 @@ public class GetDatabaseTableAccessEntryRequest
             request.databaseTableAccessEntryKey = databaseTableAccessEntryKey;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetDatabaseTableAccessEntryRequest(securityPolicyReportId,
-            // databaseTableAccessEntryKey, opcRequestId);
+            // new GetDatabaseTableAccessEntryRequest(securityPolicyReportId, databaseTableAccessEntryKey, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -185,7 +182,6 @@ public class GetDatabaseTableAccessEntryRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

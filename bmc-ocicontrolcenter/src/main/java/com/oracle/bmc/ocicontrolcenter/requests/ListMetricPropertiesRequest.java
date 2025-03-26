@@ -6,73 +6,73 @@ package com.oracle.bmc.ocicontrolcenter.requests;
 
 import com.oracle.bmc.ocicontrolcenter.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListMetricPropertiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMetricPropertiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocicontrolcenter/ListMetricPropertiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMetricPropertiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230515")
 public class ListMetricPropertiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The name of the source service emitting the metric. */
+    /**
+     * The name of the source service emitting the metric.
+     *
+     */
     private String namespaceName;
 
-    /** The name of the source service emitting the metric. */
+    /**
+     * The name of the source service emitting the metric.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The OCID of the compartment to use for authorization. To use the root compartment, provide
-     * the tenancyId.
+     * The OCID of the compartment to use for authorization. To use the root compartment, provide the tenancyId.
+     *
      */
     private String compartmentId;
 
     /**
-     * The OCID of the compartment to use for authorization. To use the root compartment, provide
-     * the tenancyId.
+     * The OCID of the compartment to use for authorization. To use the root compartment, provide the tenancyId.
+     *
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see <a
-     * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-     * Pagination</a>.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see <a
-     * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-     * Pagination</a>.
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call.
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -81,10 +81,14 @@ public class ListMetricPropertiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMetricPropertiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The name of the source service emitting the metric. */
+        /**
+         * The name of the source service emitting the metric.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -99,14 +103,13 @@ public class ListMetricPropertiesRequest
         }
 
         /**
-         * The OCID of the compartment to use for authorization. To use the root compartment,
-         * provide the tenancyId.
+         * The OCID of the compartment to use for authorization. To use the root compartment, provide the tenancyId.
+         *
          */
         private String compartmentId = null;
 
         /**
-         * The OCID of the compartment to use for authorization. To use the root compartment,
-         * provide the tenancyId.
+         * The OCID of the compartment to use for authorization. To use the root compartment, provide the tenancyId.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -117,18 +120,15 @@ public class ListMetricPropertiesRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see <a
-         * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-         * Pagination</a>.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see <a
-         * href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List
-         * Pagination</a>.
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see <a href="https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine">List Pagination</a>.
          *
          * @param page the value to set
          * @return this builder instance
@@ -139,14 +139,13 @@ public class ListMetricPropertiesRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call.
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
          *
          * @param limit the value to set
          * @return this builder instance
@@ -157,15 +156,12 @@ public class ListMetricPropertiesRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
-         *
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular request, please provide the complete request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -176,19 +172,18 @@ public class ListMetricPropertiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -200,7 +195,6 @@ public class ListMetricPropertiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMetricPropertiesRequest o) {
@@ -217,11 +211,10 @@ public class ListMetricPropertiesRequest
         /**
          * Build the instance of ListMetricPropertiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMetricPropertiesRequest
          */
@@ -235,8 +228,7 @@ public class ListMetricPropertiesRequest
         /**
          * Build the instance of ListMetricPropertiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMetricPropertiesRequest
@@ -249,14 +241,12 @@ public class ListMetricPropertiesRequest
             request.limit = limit;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMetricPropertiesRequest(namespaceName, compartmentId, page, limit,
-            // opcRequestId);
+            // new ListMetricPropertiesRequest(namespaceName, compartmentId, page, limit, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -270,7 +260,6 @@ public class ListMetricPropertiesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

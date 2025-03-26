@@ -6,12 +6,9 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdatePluggableDatabaseRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePluggableDatabaseRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdatePluggableDatabaseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails> {
@@ -27,28 +24,32 @@ public class UpdatePluggableDatabaseRequest
     public String getPluggableDatabaseId() {
         return pluggableDatabaseId;
     }
-    /** Request to perform pluggable database update. */
+    /**
+     * Request to perform pluggable database update.
+     */
     private com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails
             updatePluggableDatabaseDetails;
 
-    /** Request to perform pluggable database update. */
+    /**
+     * Request to perform pluggable database update.
+     */
     public com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails
             getUpdatePluggableDatabaseDetails() {
         return updatePluggableDatabaseDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -56,7 +57,6 @@ public class UpdatePluggableDatabaseRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -69,19 +69,17 @@ public class UpdatePluggableDatabaseRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdatePluggableDatabaseRequest,
                     com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String pluggableDatabaseId = null;
 
         /**
-         * The database
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param pluggableDatabaseId the value to set
          * @return this builder instance
          */
@@ -90,13 +88,14 @@ public class UpdatePluggableDatabaseRequest
             return this;
         }
 
-        /** Request to perform pluggable database update. */
+        /**
+         * Request to perform pluggable database update.
+         */
         private com.oracle.bmc.database.model.UpdatePluggableDatabaseDetails
                 updatePluggableDatabaseDetails = null;
 
         /**
          * Request to perform pluggable database update.
-         *
          * @param updatePluggableDatabaseDetails the value to set
          * @return this builder instance
          */
@@ -108,18 +107,17 @@ public class UpdatePluggableDatabaseRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -131,19 +129,18 @@ public class UpdatePluggableDatabaseRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -155,7 +152,6 @@ public class UpdatePluggableDatabaseRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdatePluggableDatabaseRequest o) {
@@ -170,11 +166,10 @@ public class UpdatePluggableDatabaseRequest
         /**
          * Build the instance of UpdatePluggableDatabaseRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdatePluggableDatabaseRequest
          */
@@ -187,7 +182,6 @@ public class UpdatePluggableDatabaseRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -200,8 +194,7 @@ public class UpdatePluggableDatabaseRequest
         /**
          * Build the instance of UpdatePluggableDatabaseRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdatePluggableDatabaseRequest
@@ -212,14 +205,12 @@ public class UpdatePluggableDatabaseRequest
             request.updatePluggableDatabaseDetails = updatePluggableDatabaseDetails;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdatePluggableDatabaseRequest(pluggableDatabaseId,
-            // updatePluggableDatabaseDetails, ifMatch);
+            // new UpdatePluggableDatabaseRequest(pluggableDatabaseId, updatePluggableDatabaseDetails, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -231,7 +222,6 @@ public class UpdatePluggableDatabaseRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

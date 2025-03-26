@@ -6,26 +6,31 @@ package com.oracle.bmc.jmsjavadownloads.requests;
 
 import com.oracle.bmc.jmsjavadownloads.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetJavaDownloadReportContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jmsjavadownloads/GetJavaDownloadReportContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetJavaDownloadReportContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
 public class GetJavaDownloadReportContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Java download report identifier. */
+    /**
+     * Unique Java download report identifier.
+     */
     private String javaDownloadReportId;
 
-    /** Unique Java download report identifier. */
+    /**
+     * Unique Java download report identifier.
+     */
     public String getJavaDownloadReportId() {
         return javaDownloadReportId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -33,15 +38,17 @@ public class GetJavaDownloadReportContentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetJavaDownloadReportContentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Java download report identifier. */
+        /**
+         * Unique Java download report identifier.
+         */
         private String javaDownloadReportId = null;
 
         /**
          * Unique Java download report identifier.
-         *
          * @param javaDownloadReportId the value to set
          * @return this builder instance
          */
@@ -50,12 +57,13 @@ public class GetJavaDownloadReportContentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -66,19 +74,18 @@ public class GetJavaDownloadReportContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -90,7 +97,6 @@ public class GetJavaDownloadReportContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetJavaDownloadReportContentRequest o) {
@@ -104,11 +110,10 @@ public class GetJavaDownloadReportContentRequest
         /**
          * Build the instance of GetJavaDownloadReportContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetJavaDownloadReportContentRequest
          */
@@ -122,8 +127,7 @@ public class GetJavaDownloadReportContentRequest
         /**
          * Build the instance of GetJavaDownloadReportContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetJavaDownloadReportContentRequest
@@ -139,7 +143,6 @@ public class GetJavaDownloadReportContentRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -148,7 +151,6 @@ public class GetJavaDownloadReportContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

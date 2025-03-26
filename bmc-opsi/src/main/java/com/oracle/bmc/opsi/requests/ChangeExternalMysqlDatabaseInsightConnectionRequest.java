@@ -6,77 +6,88 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeExternalMysqlDatabaseInsightConnectionExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeExternalMysqlDatabaseInsightConnectionRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ChangeExternalMysqlDatabaseInsightConnectionExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeExternalMysqlDatabaseInsightConnectionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ChangeExternalMysqlDatabaseInsightConnectionRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.ChangeExternalMysqlDatabaseInsightConnectionDetails> {
 
-    /** Unique database insight identifier */
+    /**
+     * Unique database insight identifier
+     */
     private String databaseInsightId;
 
-    /** Unique database insight identifier */
+    /**
+     * Unique database insight identifier
+     */
     public String getDatabaseInsightId() {
         return databaseInsightId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.opsi.model.ChangeExternalMysqlDatabaseInsightConnectionDetails
             changeExternalMysqlDatabaseInsightConnectionDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.opsi.model.ChangeExternalMysqlDatabaseInsightConnectionDetails
             getChangeExternalMysqlDatabaseInsightConnectionDetails() {
         return changeExternalMysqlDatabaseInsightConnectionDetails;
     }
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request that can be retried in case of a timeout or server
-     * error without risk of executing the same action again. Retry tokens expire after 24 hours.
-     *
-     * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
      * operations, such as a resource being deleted or purged from the system.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request that can be retried in case of a timeout or server
-     * error without risk of executing the same action again. Retry tokens expire after 24 hours.
-     *
-     * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+     * A token that uniquely identifies a request that can be retried in case of a timeout or
+     * server error without risk of executing the same action again. Retry tokens expire after 24
+     * hours.
+     * <p>
+     *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
      * operations, such as a resource being deleted or purged from the system.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -84,7 +95,6 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -98,15 +108,17 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeExternalMysqlDatabaseInsightConnectionRequest,
                     com.oracle.bmc.opsi.model.ChangeExternalMysqlDatabaseInsightConnectionDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique database insight identifier */
+        /**
+         * Unique database insight identifier
+         */
         private String databaseInsightId = null;
 
         /**
          * Unique database insight identifier
-         *
          * @param databaseInsightId the value to set
          * @return this builder instance
          */
@@ -115,13 +127,14 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.opsi.model.ChangeExternalMysqlDatabaseInsightConnectionDetails
                 changeExternalMysqlDatabaseInsightConnectionDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param changeExternalMysqlDatabaseInsightConnectionDetails the value to set
          * @return this builder instance
          */
@@ -134,18 +147,17 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -156,14 +168,15 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -175,21 +188,22 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
         /**
          * A token that uniquely identifies a request that can be retried in case of a timeout or
-         * server error without risk of executing the same action again. Retry tokens expire after
-         * 24 hours.
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
          *
-         * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to
-         * conflicting operations, such as a resource being deleted or purged from the system.
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request that can be retried in case of a timeout or
-         * server error without risk of executing the same action again. Retry tokens expire after
-         * 24 hours.
-         *
-         * <p>Note:* Retry tokens can be invalidated before the 24 hour time limit due to
-         * conflicting operations, such as a resource being deleted or purged from the system.
+         * server error without risk of executing the same action again. Retry tokens expire after 24
+         * hours.
+         * <p>
+         *Note:* Retry tokens can be invalidated before the 24 hour time limit due to conflicting
+         * operations, such as a resource being deleted or purged from the system.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -201,19 +215,18 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -225,7 +238,6 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeExternalMysqlDatabaseInsightConnectionRequest o) {
@@ -241,14 +253,12 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
         }
 
         /**
-         * Build the instance of ChangeExternalMysqlDatabaseInsightConnectionRequest as configured
-         * by this builder
+         * Build the instance of ChangeExternalMysqlDatabaseInsightConnectionRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeExternalMysqlDatabaseInsightConnectionRequest
          */
@@ -262,7 +272,6 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -275,11 +284,9 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
         }
 
         /**
-         * Build the instance of ChangeExternalMysqlDatabaseInsightConnectionRequest as configured
-         * by this builder
+         * Build the instance of ChangeExternalMysqlDatabaseInsightConnectionRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeExternalMysqlDatabaseInsightConnectionRequest
@@ -295,15 +302,12 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeExternalMysqlDatabaseInsightConnectionRequest(databaseInsightId,
-            // changeExternalMysqlDatabaseInsightConnectionDetails, ifMatch, opcRequestId,
-            // opcRetryToken);
+            // new ChangeExternalMysqlDatabaseInsightConnectionRequest(databaseInsightId, changeExternalMysqlDatabaseInsightConnectionDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -318,7 +322,6 @@ public class ChangeExternalMysqlDatabaseInsightConnectionRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

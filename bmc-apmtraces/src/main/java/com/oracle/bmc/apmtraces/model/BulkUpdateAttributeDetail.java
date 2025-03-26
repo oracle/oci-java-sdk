@@ -5,24 +5,23 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Object that contains the details about a single attribute in the bulk request for which
- * properties are to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Object that contains the details about a single attribute in the bulk request for which properties are to be updated.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BulkUpdateAttributeDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BulkUpdateAttributeDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BulkUpdateAttributeDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"attributeName", "unit", "attributeNameSpace"})
     public BulkUpdateAttributeDetail(
@@ -35,7 +34,10 @@ public final class BulkUpdateAttributeDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the attribute for which notes are to be updated. */
+        /**
+         * Name of the attribute for which notes are to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
         private String attributeName;
 
@@ -44,13 +46,16 @@ public final class BulkUpdateAttributeDetail
          *
          * @param attributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeName(String attributeName) {
             this.attributeName = attributeName;
             this.__explicitlySet__.add("attributeName");
             return this;
         }
-        /** Unit of the attribute to be updated. */
+        /**
+         * Unit of the attribute to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unit")
         private Unit unit;
 
@@ -59,13 +64,16 @@ public final class BulkUpdateAttributeDetail
          *
          * @param unit the value to set
          * @return this builder
-         */
+         **/
         public Builder unit(Unit unit) {
             this.unit = unit;
             this.__explicitlySet__.add("unit");
             return this;
         }
-        /** Namespace of the attribute for which the properties are to be updated. */
+        /**
+         * Namespace of the attribute for which the properties are to be updated.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
         private AttributeNameSpace attributeNameSpace;
 
@@ -74,7 +82,7 @@ public final class BulkUpdateAttributeDetail
          *
          * @param attributeNameSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeNameSpace(AttributeNameSpace attributeNameSpace) {
             this.attributeNameSpace = attributeNameSpace;
             this.__explicitlySet__.add("attributeNameSpace");
@@ -109,7 +117,9 @@ public final class BulkUpdateAttributeDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,7 +128,10 @@ public final class BulkUpdateAttributeDetail
         return new Builder().copy(this);
     }
 
-    /** Name of the attribute for which notes are to be updated. */
+    /**
+     * Name of the attribute for which notes are to be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeName")
     private final String attributeName;
 
@@ -126,13 +139,16 @@ public final class BulkUpdateAttributeDetail
      * Name of the attribute for which notes are to be updated.
      *
      * @return the value
-     */
+     **/
     public String getAttributeName() {
         return attributeName;
     }
 
-    /** Unit of the attribute to be updated. */
-    public enum Unit implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Unit of the attribute to be updated.
+     *
+     **/
+    public enum Unit {
         None("NONE"),
         EpochTimeMs("EPOCH_TIME_MS"),
         Bytes("BYTES"),
@@ -169,7 +185,10 @@ public final class BulkUpdateAttributeDetail
             throw new IllegalArgumentException("Invalid Unit: " + key);
         }
     };
-    /** Unit of the attribute to be updated. */
+    /**
+     * Unit of the attribute to be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unit")
     private final Unit unit;
 
@@ -177,13 +196,16 @@ public final class BulkUpdateAttributeDetail
      * Unit of the attribute to be updated.
      *
      * @return the value
-     */
+     **/
     public Unit getUnit() {
         return unit;
     }
 
-    /** Namespace of the attribute for which the properties are to be updated. */
-    public enum AttributeNameSpace implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Namespace of the attribute for which the properties are to be updated.
+     *
+     **/
+    public enum AttributeNameSpace {
         Traces("TRACES"),
         Synthetic("SYNTHETIC"),
         ;
@@ -215,7 +237,10 @@ public final class BulkUpdateAttributeDetail
             throw new IllegalArgumentException("Invalid AttributeNameSpace: " + key);
         }
     };
-    /** Namespace of the attribute for which the properties are to be updated. */
+    /**
+     * Namespace of the attribute for which the properties are to be updated.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeNameSpace")
     private final AttributeNameSpace attributeNameSpace;
 
@@ -223,7 +248,7 @@ public final class BulkUpdateAttributeDetail
      * Namespace of the attribute for which the properties are to be updated.
      *
      * @return the value
-     */
+     **/
     public AttributeNameSpace getAttributeNameSpace() {
         return attributeNameSpace;
     }
@@ -235,7 +260,6 @@ public final class BulkUpdateAttributeDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

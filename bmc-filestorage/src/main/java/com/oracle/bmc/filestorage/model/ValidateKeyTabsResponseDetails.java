@@ -5,23 +5,22 @@
 package com.oracle.bmc.filestorage.model;
 
 /**
- * Validate keytabs response details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
+ * Validate keytabs response details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20171215")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ValidateKeyTabsResponseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ValidateKeyTabsResponseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ValidateKeyTabsResponseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "currentKerberosKeytabEntries",
@@ -37,32 +36,34 @@ public final class ValidateKeyTabsResponseDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of keytab entries (principal, encryptionType, keyVersionNumber). */
+        /**
+         * An array of keytab entries (principal, encryptionType, keyVersionNumber).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currentKerberosKeytabEntries")
         private java.util.List<KerberosKeytabEntry> currentKerberosKeytabEntries;
 
         /**
          * An array of keytab entries (principal, encryptionType, keyVersionNumber).
-         *
          * @param currentKerberosKeytabEntries the value to set
          * @return this builder
-         */
+         **/
         public Builder currentKerberosKeytabEntries(
                 java.util.List<KerberosKeytabEntry> currentKerberosKeytabEntries) {
             this.currentKerberosKeytabEntries = currentKerberosKeytabEntries;
             this.__explicitlySet__.add("currentKerberosKeytabEntries");
             return this;
         }
-        /** An array of keytab entries (principal, encryptionType, keyVersionNumber). */
+        /**
+         * An array of keytab entries (principal, encryptionType, keyVersionNumber).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupKerberosKeytabEntries")
         private java.util.List<KerberosKeytabEntry> backupKerberosKeytabEntries;
 
         /**
          * An array of keytab entries (principal, encryptionType, keyVersionNumber).
-         *
          * @param backupKerberosKeytabEntries the value to set
          * @return this builder
-         */
+         **/
         public Builder backupKerberosKeytabEntries(
                 java.util.List<KerberosKeytabEntry> backupKerberosKeytabEntries) {
             this.backupKerberosKeytabEntries = backupKerberosKeytabEntries;
@@ -95,7 +96,9 @@ public final class ValidateKeyTabsResponseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,28 +107,30 @@ public final class ValidateKeyTabsResponseDetails
         return new Builder().copy(this);
     }
 
-    /** An array of keytab entries (principal, encryptionType, keyVersionNumber). */
+    /**
+     * An array of keytab entries (principal, encryptionType, keyVersionNumber).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currentKerberosKeytabEntries")
     private final java.util.List<KerberosKeytabEntry> currentKerberosKeytabEntries;
 
     /**
      * An array of keytab entries (principal, encryptionType, keyVersionNumber).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<KerberosKeytabEntry> getCurrentKerberosKeytabEntries() {
         return currentKerberosKeytabEntries;
     }
 
-    /** An array of keytab entries (principal, encryptionType, keyVersionNumber). */
+    /**
+     * An array of keytab entries (principal, encryptionType, keyVersionNumber).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupKerberosKeytabEntries")
     private final java.util.List<KerberosKeytabEntry> backupKerberosKeytabEntries;
 
     /**
      * An array of keytab entries (principal, encryptionType, keyVersionNumber).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<KerberosKeytabEntry> getBackupKerberosKeytabEntries() {
         return backupKerberosKeytabEntries;
     }
@@ -137,7 +142,6 @@ public final class ValidateKeyTabsResponseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

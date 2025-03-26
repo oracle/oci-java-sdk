@@ -5,27 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The object that defines a private software source. A software source is a collection of packages.
- * For more information, see [Managing Software
- * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The object that defines a private software source. A software source is a collection of packages. For more information, see [Managing Software Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PrivateSoftwareSource.Builder.class)
+    builder = PrivateSoftwareSource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PrivateSoftwareSource extends SoftwareSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -218,61 +216,65 @@ public final class PrivateSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates if GPG verification is enabled for the software source. */
+        /**
+         * Indicates if GPG verification is enabled for the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGpgCheckEnabled")
         private Boolean isGpgCheckEnabled;
 
         /**
          * Indicates if GPG verification is enabled for the software source.
-         *
          * @param isGpgCheckEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isGpgCheckEnabled(Boolean isGpgCheckEnabled) {
             this.isGpgCheckEnabled = isGpgCheckEnabled;
             this.__explicitlySet__.add("isGpgCheckEnabled");
             return this;
         }
-        /** Indicates if SSL validation is enabled for the software source. */
+        /**
+         * Indicates if SSL validation is enabled for the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyEnabled")
         private Boolean isSslVerifyEnabled;
 
         /**
          * Indicates if SSL validation is enabled for the software source.
-         *
          * @param isSslVerifyEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSslVerifyEnabled(Boolean isSslVerifyEnabled) {
             this.isSslVerifyEnabled = isSslVerifyEnabled;
             this.__explicitlySet__.add("isSslVerifyEnabled");
             return this;
         }
-        /** Advanced repository options for the software source */
+        /**
+         * Advanced repository options for the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedRepoOptions")
         private String advancedRepoOptions;
 
         /**
          * Advanced repository options for the software source
-         *
          * @param advancedRepoOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedRepoOptions(String advancedRepoOptions) {
             this.advancedRepoOptions = advancedRepoOptions;
             this.__explicitlySet__.add("advancedRepoOptions");
             return this;
         }
-        /** Indicates if this software source can be mirrored to a management station. */
+        /**
+         * Indicates if this software source can be mirrored to a management station.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
         private Boolean isMirrorSyncAllowed;
 
         /**
          * Indicates if this software source can be mirrored to a management station.
-         *
          * @param isMirrorSyncAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
             this.isMirrorSyncAllowed = isMirrorSyncAllowed;
             this.__explicitlySet__.add("isMirrorSyncAllowed");
@@ -397,7 +399,9 @@ public final class PrivateSoftwareSource extends SoftwareSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -461,54 +465,58 @@ public final class PrivateSoftwareSource extends SoftwareSource {
         this.isMirrorSyncAllowed = isMirrorSyncAllowed;
     }
 
-    /** Indicates if GPG verification is enabled for the software source. */
+    /**
+     * Indicates if GPG verification is enabled for the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGpgCheckEnabled")
     private final Boolean isGpgCheckEnabled;
 
     /**
      * Indicates if GPG verification is enabled for the software source.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsGpgCheckEnabled() {
         return isGpgCheckEnabled;
     }
 
-    /** Indicates if SSL validation is enabled for the software source. */
+    /**
+     * Indicates if SSL validation is enabled for the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyEnabled")
     private final Boolean isSslVerifyEnabled;
 
     /**
      * Indicates if SSL validation is enabled for the software source.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSslVerifyEnabled() {
         return isSslVerifyEnabled;
     }
 
-    /** Advanced repository options for the software source */
+    /**
+     * Advanced repository options for the software source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedRepoOptions")
     private final String advancedRepoOptions;
 
     /**
      * Advanced repository options for the software source
-     *
      * @return the value
-     */
+     **/
     public String getAdvancedRepoOptions() {
         return advancedRepoOptions;
     }
 
-    /** Indicates if this software source can be mirrored to a management station. */
+    /**
+     * Indicates if this software source can be mirrored to a management station.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
     private final Boolean isMirrorSyncAllowed;
 
     /**
      * Indicates if this software source can be mirrored to a management station.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMirrorSyncAllowed() {
         return isMirrorSyncAllowed;
     }
@@ -520,7 +528,6 @@ public final class PrivateSoftwareSource extends SoftwareSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

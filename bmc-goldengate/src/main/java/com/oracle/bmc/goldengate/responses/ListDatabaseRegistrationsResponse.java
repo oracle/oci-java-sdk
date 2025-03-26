@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -27,6 +28,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
     /**
      * The page token represents the page to start retrieving results. This is usually retrieved
      * from a previous list call.
+     *
      */
     private String opcNextPage;
 
@@ -40,7 +42,10 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return opcNextPage;
     }
 
-    /** Deprecation date of this API version. */
+    /**
+     * Deprecation date of this API version.
+     *
+     */
     private String sunset;
 
     /**
@@ -52,13 +57,14 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         return sunset;
     }
 
-    /** The returned {@code DatabaseRegistrationCollection} instance. */
+    /**
+     * The returned DatabaseRegistrationCollection instance.
+     */
     private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
             databaseRegistrationCollection;
 
     /**
-     * The returned {@code DatabaseRegistrationCollection} instance.
-     *
+     * The returned DatabaseRegistrationCollection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
@@ -76,7 +82,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
     })
     private ListDatabaseRegistrationsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             String sunset,
@@ -89,34 +95,31 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         this.databaseRegistrationCollection = databaseRegistrationCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListDatabaseRegistrationsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -129,6 +132,7 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
         /**
          * The page token represents the page to start retrieving results. This is usually retrieved
          * from a previous list call.
+         *
          */
         private String opcNextPage;
 
@@ -144,7 +148,10 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** Deprecation date of this API version. */
+        /**
+         * Deprecation date of this API version.
+         *
+         */
         private String sunset;
 
         /**
@@ -158,13 +165,14 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
             return this;
         }
 
-        /** The returned {@code DatabaseRegistrationCollection} instance. */
+        /**
+         * The returned DatabaseRegistrationCollection instance.
+         */
         private com.oracle.bmc.goldengate.model.DatabaseRegistrationCollection
                 databaseRegistrationCollection;
 
         /**
-         * The returned {@code DatabaseRegistrationCollection} instance.
-         *
+         * The returned DatabaseRegistrationCollection instance.
          * @param databaseRegistrationCollection the value to set
          * @return this builder
          */
@@ -177,10 +185,8 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListDatabaseRegistrationsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -194,10 +200,8 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListDatabaseRegistrationsResponse build() {
             return new ListDatabaseRegistrationsResponse(
                     __httpStatusCode__,
@@ -211,7 +215,6 @@ public class ListDatabaseRegistrationsResponse extends com.oracle.bmc.responses.
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

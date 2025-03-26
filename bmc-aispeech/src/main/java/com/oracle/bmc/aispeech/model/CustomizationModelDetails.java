@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Customization details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Customization details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CustomizationModelDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CustomizationModelDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CustomizationModelDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domain", "languageCode"})
     public CustomizationModelDetails(Domain domain, String languageCode) {
@@ -32,39 +31,55 @@ public final class CustomizationModelDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Customization Domain */
+        /**
+         * Customization Domain
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private Domain domain;
 
         /**
          * Customization Domain
-         *
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(Domain domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
-         */
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
-         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-         * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-         * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN:
-         * Hindi - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+         * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+         * - en-US: English - United States
+         * - es-ES: Spanish - Spain
+         * - pt-BR: Portuguese - Brazil
+         * - en-GB: English - Great Britain
+         * - en-AU: English - Australia
+         * - en-IN: English - India
+         * - hi-IN: Hindi - India
+         * - fr-FR: French - France
+         * - de-DE: German - Germany
+         * - it-IT: Italian - Italy
          *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
@@ -95,7 +110,9 @@ public final class CustomizationModelDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -104,14 +121,16 @@ public final class CustomizationModelDetails
         return new Builder().copy(this);
     }
 
-    /** Customization Domain */
-    public enum Domain implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Customization Domain
+     **/
+    public enum Domain {
         Generic("GENERIC"),
         Medical("MEDICAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -149,36 +168,52 @@ public final class CustomizationModelDetails
             return UnknownEnumValue;
         }
     };
-    /** Customization Domain */
+    /**
+     * Customization Domain
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final Domain domain;
 
     /**
      * Customization Domain
-     *
      * @return the value
-     */
+     **/
     public Domain getDomain() {
         return domain;
     }
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
-     */
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
-     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646]. - en-US:
-     * English - United States - es-ES: Spanish - Spain - pt-BR: Portuguese - Brazil - en-GB:
-     * English - Great Britain - en-AU: English - Australia - en-IN: English - India - hi-IN: Hindi
-     * - India - fr-FR: French - France - de-DE: German - Germany - it-IT: Italian - Italy
+     * Locale value as per given in [https://datatracker.ietf.org/doc/html/rfc5646].
+     * - en-US: English - United States
+     * - es-ES: Spanish - Spain
+     * - pt-BR: Portuguese - Brazil
+     * - en-GB: English - Great Britain
+     * - en-AU: English - Australia
+     * - en-IN: English - India
+     * - hi-IN: Hindi - India
+     * - fr-FR: French - France
+     * - de-DE: German - Germany
+     * - it-IT: Italian - Italy
      *
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
@@ -190,7 +225,6 @@ public final class CustomizationModelDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

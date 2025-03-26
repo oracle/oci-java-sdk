@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that are required to create a new Skill by cloning an existing Skill. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Properties that are required to create a new Skill by cloning an existing Skill.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CloneSkillDetails.Builder.class)
+    builder = CloneSkillDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CloneSkillDetails extends CreateSkillDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -99,41 +99,44 @@ public final class CloneSkillDetails extends CreateSkillDetails {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The unique identifier of the Skill to clone. */
+        /**
+         * The unique identifier of the Skill to clone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of the Skill to clone.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The reource's name. The name can contain only letters, numbers, periods, and underscores.
-         * The name must begin with a letter.
-         */
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The reource's name. The name can contain only letters, numbers, periods, and underscores.
-         * The name must begin with a letter.
+         * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The resource's display name. */
+        /**
+         * The resource's display name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -142,26 +145,25 @@ public final class CloneSkillDetails extends CreateSkillDetails {
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The resource's version. The version can only contain numbers, letters, periods,
-         * underscores, dashes or spaces. The version must begin with a letter or a number.
-         */
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * The resource's version. The version can only contain numbers, letters, periods,
-         * underscores, dashes or spaces. The version must begin with a letter or a number.
+         * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
          *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
@@ -234,7 +236,9 @@ public final class CloneSkillDetails extends CreateSkillDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -272,37 +276,40 @@ public final class CloneSkillDetails extends CreateSkillDetails {
         this.version = version;
     }
 
-    /** The unique identifier of the Skill to clone. */
+    /**
+     * The unique identifier of the Skill to clone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of the Skill to clone.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The
-     * name must begin with a letter.
-     */
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The
-     * name must begin with a letter.
+     * The reource's name. The name can contain only letters, numbers, periods, and underscores. The name must begin with a letter.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The resource's display name. */
+    /**
+     * The resource's display name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -310,24 +317,23 @@ public final class CloneSkillDetails extends CreateSkillDetails {
      * The resource's display name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The resource's version. The version can only contain numbers, letters, periods, underscores,
-     * dashes or spaces. The version must begin with a letter or a number.
-     */
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * The resource's version. The version can only contain numbers, letters, periods, underscores,
-     * dashes or spaces. The version must begin with a letter or a number.
+     * The resource's version. The version can only contain numbers, letters, periods, underscores, dashes or spaces.  The version must begin with a letter or a number.
      *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
@@ -339,7 +345,6 @@ public final class CloneSkillDetails extends CreateSkillDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

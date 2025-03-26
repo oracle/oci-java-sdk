@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.vnmonitoring.model;
 
-/** Allowed sort orders, either 'ASC' for ascending or 'DESC' for descending. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Allowed sort orders, either 'ASC' for ascending or 'DESC' for descending.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
     ;

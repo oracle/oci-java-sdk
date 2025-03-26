@@ -5,21 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * An object that defines a work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * An object that defines a work request.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = WorkRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class WorkRequest extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class WorkRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "operationType",
@@ -116,338 +114,319 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the work request. */
+        /**
+         * Type of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private WorkRequestOperationType operationType;
 
         /**
          * Type of the work request.
-         *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(WorkRequestOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
             return this;
         }
-        /** Status of the work request. */
+        /**
+         * Status of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
          * Status of the work request.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(OperationStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * work request.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** A short description about the work request. */
+        /**
+         * A short description about the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A short description about the work request.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** A short display name for the work request. */
+        /**
+         * A short display name for the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * A short display name for the work request.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A progress or error message, if there is any. */
+        /**
+         * A progress or error message, if there is any.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A progress or error message, if there is any.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent work request, if there is any.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent work request, if there is any.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
          * @param parentId the value to set
          * @return this builder
-         */
+         **/
         public Builder parentId(String parentId) {
             this.parentId = parentId;
             this.__explicitlySet__.add("parentId");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * child work requests.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the child work requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * child work requests.
-         *
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the child work requests.
          * @param childrenId the value to set
          * @return this builder
-         */
+         **/
         public Builder childrenId(java.util.List<String> childrenId) {
             this.childrenId = childrenId;
             this.__explicitlySet__.add("childrenId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the work request. Work requests should be scoped to the same
-         * compartment as the resource it affects. If the work request affects multiple resources
-         * the different compartments, the services selects the compartment of the primary resource.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+         * Work requests should be scoped to the same compartment as the resource it affects.
+         * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment that contains the work request. Work requests should be scoped to the same
-         * compartment as the resource it affects. If the work request affects multiple resources
-         * the different compartments, the services selects the compartment of the primary resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+         * Work requests should be scoped to the same compartment as the resource it affects.
+         * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * resources affected by the work request.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the resources affected by the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<WorkRequestResource> resources;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * resources affected by the work request.
-         *
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the resources affected by the work request.
          * @param resources the value to set
          * @return this builder
-         */
+         **/
         public Builder resources(java.util.List<WorkRequestResource> resources) {
             this.resources = resources;
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** A list of package names to be installed, updated, or removed. */
+        /**
+         * A list of package names to be installed, updated, or removed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
         private java.util.List<String> packageNames;
 
         /**
          * A list of package names to be installed, updated, or removed.
-         *
          * @param packageNames the value to set
          * @return this builder
-         */
+         **/
         public Builder packageNames(java.util.List<String> packageNames) {
             this.packageNames = packageNames;
             this.__explicitlySet__.add("packageNames");
             return this;
         }
         /**
-         * The UUIDs of the target Windows update (only used when operation type is
-         * INSTALL_WINDOWS_UPDATES).
-         */
+         * The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
         private java.util.List<String> windowsUpdateNames;
 
         /**
-         * The UUIDs of the target Windows update (only used when operation type is
-         * INSTALL_WINDOWS_UPDATES).
-         *
+         * The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
          * @param windowsUpdateNames the value to set
          * @return this builder
-         */
+         **/
         public Builder windowsUpdateNames(java.util.List<String> windowsUpdateNames) {
             this.windowsUpdateNames = windowsUpdateNames;
             this.__explicitlySet__.add("windowsUpdateNames");
             return this;
         }
-        /** The list of appstream modules being operated on. */
+        /**
+         * The list of appstream modules being operated on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleSpecs")
         private java.util.List<ModuleSpecDetails> moduleSpecs;
 
         /**
          * The list of appstream modules being operated on.
-         *
          * @param moduleSpecs the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleSpecs(java.util.List<ModuleSpecDetails> moduleSpecs) {
             this.moduleSpecs = moduleSpecs;
             this.__explicitlySet__.add("moduleSpecs");
             return this;
         }
-        /** The percentage complete of the operation tracked by this work request. */
+        /**
+         * The percentage complete of the operation tracked by this work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Float percentComplete;
 
         /**
          * The percentage complete of the operation tracked by this work request.
-         *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Float percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
         /**
-         * The date and time the work request was created (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the work request was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the work request was created (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the work request was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the work request started (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the work request started (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * The date and time the work request started (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The date and time the work request started (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
         /**
-         * The date and time the work request completed (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
-         * The date and time the work request completed (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource that initiated the work request.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that initiated the work request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
         private String initiatorId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource that initiated the work request.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that initiated the work request.
          * @param initiatorId the value to set
          * @return this builder
-         */
+         **/
         public Builder initiatorId(String initiatorId) {
             this.initiatorId = initiatorId;
             this.__explicitlySet__.add("initiatorId");
@@ -463,173 +442,162 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The scheduled date and time to retry the work request (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The scheduled date and time to retry the work request (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * The scheduled date and time to retry the work request (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         *
+         * The scheduled date and time to retry the work request (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          * @param timeScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
         /**
-         * The location of the bundle in the filesystem of the resource associated to this work
-         * request.
-         */
+         * The location of the bundle in the filesystem of the resource associated to this work request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentLocation")
         private String contentLocation;
 
         /**
-         * The location of the bundle in the filesystem of the resource associated to this work
-         * request.
+         * The location of the bundle in the filesystem of the resource associated to this work request.
          *
          * @param contentLocation the value to set
          * @return this builder
-         */
+         **/
         public Builder contentLocation(String contentLocation) {
             this.contentLocation = contentLocation;
             this.__explicitlySet__.add("contentLocation");
             return this;
         }
         /**
-         * The event id of the content. This property is required when the work request type is
-         * IMPORT_CONTENT or REMOVE_CONTENT.
-         */
+         * The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventId")
         private String eventId;
 
         /**
-         * The event id of the content. This property is required when the work request type is
-         * IMPORT_CONTENT or REMOVE_CONTENT.
+         * The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
          *
          * @param eventId the value to set
          * @return this builder
-         */
+         **/
         public Builder eventId(String eventId) {
             this.eventId = eventId;
             this.__explicitlySet__.add("eventId");
             return this;
         }
         /**
-         * The EventFingerprint associated with the content. This property is required when the work
-         * request type is IMPORT_CONTENT or REMOVE_CONTENT.
-         */
+         * The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contentChecksum")
         private String contentChecksum;
 
         /**
-         * The EventFingerprint associated with the content. This property is required when the work
-         * request type is IMPORT_CONTENT or REMOVE_CONTENT.
+         * The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
          *
          * @param contentChecksum the value to set
          * @return this builder
-         */
+         **/
         public Builder contentChecksum(String contentChecksum) {
             this.contentChecksum = contentChecksum;
             this.__explicitlySet__.add("contentChecksum");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * original work request that is being retried.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being retried.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryOfId")
         private String retryOfId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * original work request that is being retried.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being retried.
          *
          * @param retryOfId the value to set
          * @return this builder
-         */
+         **/
         public Builder retryOfId(String retryOfId) {
             this.retryOfId = retryOfId;
             this.__explicitlySet__.add("retryOfId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * original work request that is being rerun.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being rerun.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
         private String rerunOfId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * original work request that is being rerun.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being rerun.
          *
          * @param rerunOfId the value to set
          * @return this builder
-         */
+         **/
         public Builder rerunOfId(String rerunOfId) {
             this.rerunOfId = rerunOfId;
             this.__explicitlySet__.add("rerunOfId");
             return this;
         }
         /**
-         * The amount of time in minutes to wait until retrying the work request. If set, the
-         * service will automatically retry a failed work request after the interval. For example,
-         * An interval set to [2,5,10]. If the initial execution of the work request fails, the
-         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
-         * then retries. If that fails, the service waits 10 minutes and then retries.
-         */
+         * The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+         * a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+         * execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+         * and then retries. If that fails, the service waits 10 minutes and then retries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
         private java.util.List<Integer> retryIntervals;
 
         /**
-         * The amount of time in minutes to wait until retrying the work request. If set, the
-         * service will automatically retry a failed work request after the interval. For example,
-         * An interval set to [2,5,10]. If the initial execution of the work request fails, the
-         * service waits 2 minutes and then retries. If that fails, the service waits 5 minutes and
-         * then retries. If that fails, the service waits 10 minutes and then retries.
+         * The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+         * a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+         * execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+         * and then retries. If that fails, the service waits 10 minutes and then retries.
          *
          * @param retryIntervals the value to set
          * @return this builder
-         */
+         **/
         public Builder retryIntervals(java.util.List<Integer> retryIntervals) {
             this.retryIntervals = retryIntervals;
             this.__explicitlySet__.add("retryIntervals");
             return this;
         }
-        /** Indicates whether this work request is managed by the Autonomous Linux service. */
+        /**
+         * Indicates whether this work request is managed by the Autonomous Linux service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
         private Boolean isManagedByAutonomousLinux;
 
         /**
          * Indicates whether this work request is managed by the Autonomous Linux service.
-         *
          * @param isManagedByAutonomousLinux the value to set
          * @return this builder
-         */
+         **/
         public Builder isManagedByAutonomousLinux(Boolean isManagedByAutonomousLinux) {
             this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
         /**
-         * The number of minutes the service waits for the reboot to complete. If the managed
-         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
-         */
+         * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
         private Integer rebootTimeoutInMins;
 
         /**
-         * The number of minutes the service waits for the reboot to complete. If the managed
-         * instance doesn't reboot within the timeout, the service marks the reboot job as failed.
-         *
+         * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
          * @param rebootTimeoutInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
             this.rebootTimeoutInMins = rebootTimeoutInMins;
             this.__explicitlySet__.add("rebootTimeoutInMins");
@@ -770,7 +738,9 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -779,297 +749,282 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Type of the work request. */
+    /**
+     * Type of the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final WorkRequestOperationType operationType;
 
     /**
      * Type of the work request.
-     *
      * @return the value
-     */
+     **/
     public WorkRequestOperationType getOperationType() {
         return operationType;
     }
 
-    /** Status of the work request. */
+    /**
+     * Status of the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
      * Status of the work request.
-     *
      * @return the value
-     */
+     **/
     public OperationStatus getStatus() {
         return status;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work
-     * request.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** A short description about the work request. */
+    /**
+     * A short description about the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A short description about the work request.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** A short display name for the work request. */
+    /**
+     * A short display name for the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A short display name for the work request.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A progress or error message, if there is any. */
+    /**
+     * A progress or error message, if there is any.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A progress or error message, if there is any.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent work request, if there is any.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent work request, if there is any.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
      * @return the value
-     */
+     **/
     public String getParentId() {
         return parentId;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the child work requests.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the child work requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the child work requests.
-     *
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the child work requests.
      * @return the value
-     */
+     **/
     public java.util.List<String> getChildrenId() {
         return childrenId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the work request. Work requests should be scoped to the same
-     * compartment as the resource it affects. If the work request affects multiple resources the
-     * different compartments, the services selects the compartment of the primary resource.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+     * Work requests should be scoped to the same compartment as the resource it affects.
+     * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment that contains the work request. Work requests should be scoped to the same
-     * compartment as the resource it affects. If the work request affects multiple resources the
-     * different compartments, the services selects the compartment of the primary resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+     * Work requests should be scoped to the same compartment as the resource it affects.
+     * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the resources affected by the work request.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the resources affected by the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<WorkRequestResource> resources;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * for the resources affected by the work request.
-     *
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the resources affected by the work request.
      * @return the value
-     */
+     **/
     public java.util.List<WorkRequestResource> getResources() {
         return resources;
     }
 
-    /** A list of package names to be installed, updated, or removed. */
+    /**
+     * A list of package names to be installed, updated, or removed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageNames")
     private final java.util.List<String> packageNames;
 
     /**
      * A list of package names to be installed, updated, or removed.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPackageNames() {
         return packageNames;
     }
 
     /**
-     * The UUIDs of the target Windows update (only used when operation type is
-     * INSTALL_WINDOWS_UPDATES).
-     */
+     * The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowsUpdateNames")
     private final java.util.List<String> windowsUpdateNames;
 
     /**
-     * The UUIDs of the target Windows update (only used when operation type is
-     * INSTALL_WINDOWS_UPDATES).
-     *
+     * The UUIDs of the target Windows update (only used when operation type is INSTALL_WINDOWS_UPDATES).
      * @return the value
-     */
+     **/
     public java.util.List<String> getWindowsUpdateNames() {
         return windowsUpdateNames;
     }
 
-    /** The list of appstream modules being operated on. */
+    /**
+     * The list of appstream modules being operated on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleSpecs")
     private final java.util.List<ModuleSpecDetails> moduleSpecs;
 
     /**
      * The list of appstream modules being operated on.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ModuleSpecDetails> getModuleSpecs() {
         return moduleSpecs;
     }
 
-    /** The percentage complete of the operation tracked by this work request. */
+    /**
+     * The percentage complete of the operation tracked by this work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Float percentComplete;
 
     /**
      * The percentage complete of the operation tracked by this work request.
-     *
      * @return the value
-     */
+     **/
     public Float getPercentComplete() {
         return percentComplete;
     }
 
     /**
-     * The date and time the work request was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the work request was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the work request was created (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the work request was created (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
-     */
+     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
+     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
-     */
+     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
+     * The date and time the work request started (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
     /**
-     * The date and time the work request completed (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
-     * The date and time the work request completed (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     * The date and time the work request completed (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource that initiated the work request.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that initiated the work request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("initiatorId")
     private final String initiatorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource that initiated the work request.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that initiated the work request.
      * @return the value
-     */
+     **/
     public String getInitiatorId() {
         return initiatorId;
     }
@@ -1082,25 +1037,23 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The scheduled date and time to retry the work request (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     */
+     * The scheduled date and time to retry the work request (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * The scheduled date and time to retry the work request (in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-     *
+     * The scheduled date and time to retry the work request (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
 
     /**
      * The location of the bundle in the filesystem of the resource associated to this work request.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentLocation")
     private final String contentLocation;
 
@@ -1108,128 +1061,121 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
      * The location of the bundle in the filesystem of the resource associated to this work request.
      *
      * @return the value
-     */
+     **/
     public String getContentLocation() {
         return contentLocation;
     }
 
     /**
-     * The event id of the content. This property is required when the work request type is
-     * IMPORT_CONTENT or REMOVE_CONTENT.
-     */
+     * The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventId")
     private final String eventId;
 
     /**
-     * The event id of the content. This property is required when the work request type is
-     * IMPORT_CONTENT or REMOVE_CONTENT.
+     * The event id of the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
      *
      * @return the value
-     */
+     **/
     public String getEventId() {
         return eventId;
     }
 
     /**
-     * The EventFingerprint associated with the content. This property is required when the work
-     * request type is IMPORT_CONTENT or REMOVE_CONTENT.
-     */
+     * The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contentChecksum")
     private final String contentChecksum;
 
     /**
-     * The EventFingerprint associated with the content. This property is required when the work
-     * request type is IMPORT_CONTENT or REMOVE_CONTENT.
+     * The EventFingerprint associated with the content. This property is required when the work request type is IMPORT_CONTENT or REMOVE_CONTENT.
      *
      * @return the value
-     */
+     **/
     public String getContentChecksum() {
         return contentChecksum;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * original work request that is being retried.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being retried.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryOfId")
     private final String retryOfId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * original work request that is being retried.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being retried.
      *
      * @return the value
-     */
+     **/
     public String getRetryOfId() {
         return retryOfId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * original work request that is being rerun.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being rerun.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rerunOfId")
     private final String rerunOfId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * original work request that is being rerun.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the original work request that is being rerun.
      *
      * @return the value
-     */
+     **/
     public String getRerunOfId() {
         return rerunOfId;
     }
 
     /**
-     * The amount of time in minutes to wait until retrying the work request. If set, the service
-     * will automatically retry a failed work request after the interval. For example, An interval
-     * set to [2,5,10]. If the initial execution of the work request fails, the service waits 2
-     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
-     * that fails, the service waits 10 minutes and then retries.
-     */
+     * The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+     * a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+     * execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+     * and then retries. If that fails, the service waits 10 minutes and then retries.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retryIntervals")
     private final java.util.List<Integer> retryIntervals;
 
     /**
-     * The amount of time in minutes to wait until retrying the work request. If set, the service
-     * will automatically retry a failed work request after the interval. For example, An interval
-     * set to [2,5,10]. If the initial execution of the work request fails, the service waits 2
-     * minutes and then retries. If that fails, the service waits 5 minutes and then retries. If
-     * that fails, the service waits 10 minutes and then retries.
+     * The amount of time in minutes to wait until retrying the work request. If set, the service will automatically retry
+     * a failed work request after the interval. For example, An interval set to [2,5,10]. If the initial
+     * execution of the work request fails, the service waits 2 minutes and then retries. If that fails, the service waits 5 minutes
+     * and then retries. If that fails, the service waits 10 minutes and then retries.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Integer> getRetryIntervals() {
         return retryIntervals;
     }
 
-    /** Indicates whether this work request is managed by the Autonomous Linux service. */
+    /**
+     * Indicates whether this work request is managed by the Autonomous Linux service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isManagedByAutonomousLinux")
     private final Boolean isManagedByAutonomousLinux;
 
     /**
      * Indicates whether this work request is managed by the Autonomous Linux service.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsManagedByAutonomousLinux() {
         return isManagedByAutonomousLinux;
     }
 
     /**
-     * The number of minutes the service waits for the reboot to complete. If the managed instance
-     * doesn't reboot within the timeout, the service marks the reboot job as failed.
-     */
+     * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
     private final Integer rebootTimeoutInMins;
 
     /**
-     * The number of minutes the service waits for the reboot to complete. If the managed instance
-     * doesn't reboot within the timeout, the service marks the reboot job as failed.
-     *
+     * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
      * @return the value
-     */
+     **/
     public Integer getRebootTimeoutInMins() {
         return rebootTimeoutInMins;
     }
@@ -1241,7 +1187,6 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

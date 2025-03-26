@@ -5,23 +5,22 @@
 package com.oracle.bmc.certificatesmanagement.model;
 
 /**
- * The details of the request to revoke a certificate authority (CA) version. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
+ * The details of the request to revoke a certificate authority (CA) version.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210224")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RevokeCertificateAuthorityVersionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RevokeCertificateAuthorityVersionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RevokeCertificateAuthorityVersionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"revocationReason"})
     public RevokeCertificateAuthorityVersionDetails(RevocationReason revocationReason) {
@@ -31,16 +30,17 @@ public final class RevokeCertificateAuthorityVersionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The reason the certificate or certificate authority was revoked. */
+        /**
+         * The reason the certificate or certificate authority was revoked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
         private RevocationReason revocationReason;
 
         /**
          * The reason the certificate or certificate authority was revoked.
-         *
          * @param revocationReason the value to set
          * @return this builder
-         */
+         **/
         public Builder revocationReason(RevocationReason revocationReason) {
             this.revocationReason = revocationReason;
             this.__explicitlySet__.add("revocationReason");
@@ -68,7 +68,9 @@ public final class RevokeCertificateAuthorityVersionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -77,15 +79,16 @@ public final class RevokeCertificateAuthorityVersionDetails
         return new Builder().copy(this);
     }
 
-    /** The reason the certificate or certificate authority was revoked. */
+    /**
+     * The reason the certificate or certificate authority was revoked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("revocationReason")
     private final RevocationReason revocationReason;
 
     /**
      * The reason the certificate or certificate authority was revoked.
-     *
      * @return the value
-     */
+     **/
     public RevocationReason getRevocationReason() {
         return revocationReason;
     }
@@ -97,7 +100,6 @@ public final class RevokeCertificateAuthorityVersionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

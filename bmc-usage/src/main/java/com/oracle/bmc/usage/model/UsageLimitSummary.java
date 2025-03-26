@@ -5,23 +5,21 @@
 package com.oracle.bmc.usage.model;
 
 /**
- * Encapsulates a collection of Hard and Soft Limits for a resource within a subscription. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+ * Encapsulates a collection of Hard and Soft Limits for a resource within a subscription.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UsageLimitSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UsageLimitSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UsageLimitSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UsageLimitSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeCreated",
@@ -79,241 +77,257 @@ public final class UsageLimitSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Time when the usage limit was created */
+        /**
+         * Time when the usage limit was created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * Time when the usage limit was created
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Entitlement ID of the usage limit */
+        /**
+         * Entitlement ID of the usage limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entitlementId")
         private String entitlementId;
 
         /**
          * Entitlement ID of the usage limit
-         *
          * @param entitlementId the value to set
          * @return this builder
-         */
+         **/
         public Builder entitlementId(String entitlementId) {
             this.entitlementId = entitlementId;
             this.__explicitlySet__.add("entitlementId");
             return this;
         }
-        /** The usage limit ID */
+        /**
+         * The usage limit ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The usage limit ID
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Time when the usage limit was modified */
+        /**
+         * Time when the usage limit was modified
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
         private java.util.Date timeModified;
 
         /**
          * Time when the usage limit was modified
-         *
          * @param timeModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeModified(java.util.Date timeModified) {
             this.timeModified = timeModified;
             this.__explicitlySet__.add("timeModified");
             return this;
         }
-        /** The resource for which the limit is defined */
+        /**
+         * The resource for which the limit is defined
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * The resource for which the limit is defined
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The service for which the limit is defined */
+        /**
+         * The service for which the limit is defined
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * The service for which the limit is defined
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** The limit value */
+        /**
+         * The limit value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limit")
         private String limit;
 
         /**
          * The limit value
-         *
          * @param limit the value to set
          * @return this builder
-         */
+         **/
         public Builder limit(String limit) {
             this.limit = limit;
             this.__explicitlySet__.add("limit");
             return this;
         }
-        /** The user who created the limit */
+        /**
+         * The user who created the limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
         private String createdBy;
 
         /**
          * The user who created the limit
-         *
          * @param createdBy the value to set
          * @return this builder
-         */
+         **/
         public Builder createdBy(String createdBy) {
             this.createdBy = createdBy;
             this.__explicitlySet__.add("createdBy");
             return this;
         }
-        /** The user who modified the limit */
+        /**
+         * The user who modified the limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
         private String modifiedBy;
 
         /**
          * The user who modified the limit
-         *
          * @param modifiedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder modifiedBy(String modifiedBy) {
             this.modifiedBy = modifiedBy;
             this.__explicitlySet__.add("modifiedBy");
             return this;
         }
-        /** The action when usage limit is hit */
+        /**
+         * The action when usage limit is hit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("action")
         private Action action;
 
         /**
          * The action when usage limit is hit
-         *
          * @param action the value to set
          * @return this builder
-         */
+         **/
         public Builder action(Action action) {
             this.action = action;
             this.__explicitlySet__.add("action");
             return this;
         }
-        /** The alert level of the usage limit */
+        /**
+         * The alert level of the usage limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alertLevel")
         private java.math.BigDecimal alertLevel;
 
         /**
          * The alert level of the usage limit
-         *
          * @param alertLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder alertLevel(java.math.BigDecimal alertLevel) {
             this.alertLevel = alertLevel;
             this.__explicitlySet__.add("alertLevel");
             return this;
         }
-        /** The limit type of the usage limit */
+        /**
+         * The limit type of the usage limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("limitType")
         private LimitType limitType;
 
         /**
          * The limit type of the usage limit
-         *
          * @param limitType the value to set
          * @return this builder
-         */
+         **/
         public Builder limitType(LimitType limitType) {
             this.limitType = limitType;
             this.__explicitlySet__.add("limitType");
             return this;
         }
-        /** The value type of the usage limit */
+        /**
+         * The value type of the usage limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
         /**
          * The value type of the usage limit
-         *
          * @param valueType the value to set
          * @return this builder
-         */
+         **/
         public Builder valueType(ValueType valueType) {
             this.valueType = valueType;
             this.__explicitlySet__.add("valueType");
             return this;
         }
-        /** The usage limit lifecycle state. */
+        /**
+         * The usage limit lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The usage limit lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The maximum hard limit set for the usage limit */
+        /**
+         * The maximum hard limit set for the usage limit
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHardLimit")
         private String maxHardLimit;
 
         /**
          * The maximum hard limit set for the usage limit
-         *
          * @param maxHardLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder maxHardLimit(String maxHardLimit) {
             this.maxHardLimit = maxHardLimit;
             this.__explicitlySet__.add("maxHardLimit");
             return this;
         }
-        /** The SKU for which the usage limit is set */
+        /**
+         * The SKU for which the usage limit is set
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skuPartId")
         private String skuPartId;
 
         /**
          * The SKU for which the usage limit is set
-         *
          * @param skuPartId the value to set
          * @return this builder
-         */
+         **/
         public Builder skuPartId(String skuPartId) {
             this.skuPartId = skuPartId;
             this.__explicitlySet__.add("skuPartId");
@@ -402,7 +416,9 @@ public final class UsageLimitSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -411,131 +427,142 @@ public final class UsageLimitSummary
         return new Builder().copy(this);
     }
 
-    /** Time when the usage limit was created */
+    /**
+     * Time when the usage limit was created
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * Time when the usage limit was created
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Entitlement ID of the usage limit */
+    /**
+     * Entitlement ID of the usage limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entitlementId")
     private final String entitlementId;
 
     /**
      * Entitlement ID of the usage limit
-     *
      * @return the value
-     */
+     **/
     public String getEntitlementId() {
         return entitlementId;
     }
 
-    /** The usage limit ID */
+    /**
+     * The usage limit ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The usage limit ID
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Time when the usage limit was modified */
+    /**
+     * Time when the usage limit was modified
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeModified")
     private final java.util.Date timeModified;
 
     /**
      * Time when the usage limit was modified
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeModified() {
         return timeModified;
     }
 
-    /** The resource for which the limit is defined */
+    /**
+     * The resource for which the limit is defined
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * The resource for which the limit is defined
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The service for which the limit is defined */
+    /**
+     * The service for which the limit is defined
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * The service for which the limit is defined
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** The limit value */
+    /**
+     * The limit value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("limit")
     private final String limit;
 
     /**
      * The limit value
-     *
      * @return the value
-     */
+     **/
     public String getLimit() {
         return limit;
     }
 
-    /** The user who created the limit */
+    /**
+     * The user who created the limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
     private final String createdBy;
 
     /**
      * The user who created the limit
-     *
      * @return the value
-     */
+     **/
     public String getCreatedBy() {
         return createdBy;
     }
 
-    /** The user who modified the limit */
+    /**
+     * The user who modified the limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
     private final String modifiedBy;
 
     /**
      * The user who modified the limit
-     *
      * @return the value
-     */
+     **/
     public String getModifiedBy() {
         return modifiedBy;
     }
 
-    /** The action when usage limit is hit */
-    public enum Action implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The action when usage limit is hit
+     **/
+    public enum Action {
         QuotaBreach("QUOTA_BREACH"),
         QuotaAlert("QUOTA_ALERT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -573,40 +600,44 @@ public final class UsageLimitSummary
             return UnknownEnumValue;
         }
     };
-    /** The action when usage limit is hit */
+    /**
+     * The action when usage limit is hit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("action")
     private final Action action;
 
     /**
      * The action when usage limit is hit
-     *
      * @return the value
-     */
+     **/
     public Action getAction() {
         return action;
     }
 
-    /** The alert level of the usage limit */
+    /**
+     * The alert level of the usage limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alertLevel")
     private final java.math.BigDecimal alertLevel;
 
     /**
      * The alert level of the usage limit
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getAlertLevel() {
         return alertLevel;
     }
 
-    /** The limit type of the usage limit */
-    public enum LimitType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The limit type of the usage limit
+     **/
+    public enum LimitType {
         Hard("HARD"),
         Soft("SOFT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -645,27 +676,30 @@ public final class UsageLimitSummary
             return UnknownEnumValue;
         }
     };
-    /** The limit type of the usage limit */
+    /**
+     * The limit type of the usage limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("limitType")
     private final LimitType limitType;
 
     /**
      * The limit type of the usage limit
-     *
      * @return the value
-     */
+     **/
     public LimitType getLimitType() {
         return limitType;
     }
 
-    /** The value type of the usage limit */
-    public enum ValueType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The value type of the usage limit
+     **/
+    public enum ValueType {
         Absolute("ABSOLUTE"),
         Percentage("PERCENTAGE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -704,26 +738,29 @@ public final class UsageLimitSummary
             return UnknownEnumValue;
         }
     };
-    /** The value type of the usage limit */
+    /**
+     * The value type of the usage limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
     /**
      * The value type of the usage limit
-     *
      * @return the value
-     */
+     **/
     public ValueType getValueType() {
         return valueType;
     }
 
-    /** The usage limit lifecycle state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The usage limit lifecycle state.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -762,41 +799,44 @@ public final class UsageLimitSummary
             return UnknownEnumValue;
         }
     };
-    /** The usage limit lifecycle state. */
+    /**
+     * The usage limit lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The usage limit lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The maximum hard limit set for the usage limit */
+    /**
+     * The maximum hard limit set for the usage limit
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHardLimit")
     private final String maxHardLimit;
 
     /**
      * The maximum hard limit set for the usage limit
-     *
      * @return the value
-     */
+     **/
     public String getMaxHardLimit() {
         return maxHardLimit;
     }
 
-    /** The SKU for which the usage limit is set */
+    /**
+     * The SKU for which the usage limit is set
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skuPartId")
     private final String skuPartId;
 
     /**
      * The SKU for which the usage limit is set
-     *
      * @return the value
-     */
+     **/
     public String getSkuPartId() {
         return skuPartId;
     }
@@ -808,7 +848,6 @@ public final class UsageLimitSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

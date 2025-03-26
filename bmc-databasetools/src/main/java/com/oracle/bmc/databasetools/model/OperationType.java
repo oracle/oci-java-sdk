@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasetools.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+public enum OperationType {
     CreateDatabaseToolsConnection("CREATE_DATABASE_TOOLS_CONNECTION"),
     UpdateDatabaseToolsConnection("UPDATE_DATABASE_TOOLS_CONNECTION"),
     DeleteDatabaseToolsConnection("DELETE_DATABASE_TOOLS_CONNECTION"),

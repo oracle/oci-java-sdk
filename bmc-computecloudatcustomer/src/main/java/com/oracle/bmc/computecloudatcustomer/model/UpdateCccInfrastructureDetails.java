@@ -5,23 +5,22 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Updates Compute Cloud@Customer infrastructure configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Updates Compute Cloud@Customer infrastructure configuration details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateCccInfrastructureDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateCccInfrastructureDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateCccInfrastructureDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -56,65 +55,71 @@ public final class UpdateCccInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name that will be used to display the Compute Cloud@Customer infrastructure in the
-         * Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid
-         * entering confidential information.
-         */
+         * The name that will be used to display the Compute Cloud@Customer infrastructure
+         * in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The name that will be used to display the Compute Cloud@Customer infrastructure in the
-         * Oracle Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid
-         * entering confidential information.
+         * The name that will be used to display the Compute Cloud@Customer infrastructure
+         * in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A mutable client-meaningful text description of the Compute Cloud@Customer
-         * infrastructure. Avoid entering confidential information.
-         */
+         * A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A mutable client-meaningful text description of the Compute Cloud@Customer
-         * infrastructure. Avoid entering confidential information.
+         * A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure.
+         * Avoid entering confidential information.
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-         */
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+         * used to communicate with Compute Cloud@Customer infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the
-         * network subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+         * used to communicate with Compute Cloud@Customer infrastructure.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** An updated connection state of the Compute Cloud@Customer infrastructure. */
+        /**
+         * An updated connection state of the Compute Cloud@Customer infrastructure.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionState")
         private CccInfrastructure.ConnectionState connectionState;
 
@@ -123,13 +128,16 @@ public final class UpdateCccInfrastructureDetails
          *
          * @param connectionState the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionState(CccInfrastructure.ConnectionState connectionState) {
             this.connectionState = connectionState;
             this.__explicitlySet__.add("connectionState");
             return this;
         }
-        /** A message describing the current connection state in more detail. */
+        /**
+         * A message describing the current connection state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
         private String connectionDetails;
 
@@ -138,45 +146,47 @@ public final class UpdateCccInfrastructureDetails
          *
          * @param connectionDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionDetails(String connectionDetails) {
             this.connectionDetails = connectionDetails;
             this.__explicitlySet__.add("connectionDetails");
             return this;
         }
         /**
-         * Schedule used for upgrades. If no schedule is associated with the infrastructure, it can
-         * be updated at any time.
-         */
+         * Schedule used for upgrades. If no schedule is associated with the infrastructure,
+         * it can be updated at any time.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cccUpgradeScheduleId")
         private String cccUpgradeScheduleId;
 
         /**
-         * Schedule used for upgrades. If no schedule is associated with the infrastructure, it can
-         * be updated at any time.
+         * Schedule used for upgrades. If no schedule is associated with the infrastructure,
+         * it can be updated at any time.
          *
          * @param cccUpgradeScheduleId the value to set
          * @return this builder
-         */
+         **/
         public Builder cccUpgradeScheduleId(String cccUpgradeScheduleId) {
             this.cccUpgradeScheduleId = cccUpgradeScheduleId;
             this.__explicitlySet__.add("cccUpgradeScheduleId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -185,7 +195,8 @@ public final class UpdateCccInfrastructureDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -195,7 +206,7 @@ public final class UpdateCccInfrastructureDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -253,7 +264,9 @@ public final class UpdateCccInfrastructureDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -263,20 +276,21 @@ public final class UpdateCccInfrastructureDetails
     }
 
     /**
-     * The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle
-     * Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering
-     * confidential information.
-     */
+     * The name that will be used to display the Compute Cloud@Customer infrastructure
+     * in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The name that will be used to display the Compute Cloud@Customer infrastructure in the Oracle
-     * Cloud Infrastructure console. Does not have to be unique and can be changed. Avoid entering
-     * confidential information.
+     * The name that will be used to display the Compute Cloud@Customer infrastructure
+     * in the Oracle Cloud Infrastructure console. Does not have to be unique and can be changed.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -284,7 +298,8 @@ public final class UpdateCccInfrastructureDetails
     /**
      * A mutable client-meaningful text description of the Compute Cloud@Customer infrastructure.
      * Avoid entering confidential information.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -293,29 +308,33 @@ public final class UpdateCccInfrastructureDetails
      * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
-     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
-     */
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+     * used to communicate with Compute Cloud@Customer infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network
-     * subnet that is used to communicate with Compute Cloud@Customer infrastructure.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+     * used to communicate with Compute Cloud@Customer infrastructure.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** An updated connection state of the Compute Cloud@Customer infrastructure. */
+    /**
+     * An updated connection state of the Compute Cloud@Customer infrastructure.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionState")
     private final CccInfrastructure.ConnectionState connectionState;
 
@@ -323,12 +342,15 @@ public final class UpdateCccInfrastructureDetails
      * An updated connection state of the Compute Cloud@Customer infrastructure.
      *
      * @return the value
-     */
+     **/
     public CccInfrastructure.ConnectionState getConnectionState() {
         return connectionState;
     }
 
-    /** A message describing the current connection state in more detail. */
+    /**
+     * A message describing the current connection state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionDetails")
     private final String connectionDetails;
 
@@ -336,58 +358,61 @@ public final class UpdateCccInfrastructureDetails
      * A message describing the current connection state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getConnectionDetails() {
         return connectionDetails;
     }
 
     /**
-     * Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be
-     * updated at any time.
-     */
+     * Schedule used for upgrades. If no schedule is associated with the infrastructure,
+     * it can be updated at any time.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cccUpgradeScheduleId")
     private final String cccUpgradeScheduleId;
 
     /**
-     * Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be
-     * updated at any time.
+     * Schedule used for upgrades. If no schedule is associated with the infrastructure,
+     * it can be updated at any time.
      *
      * @return the value
-     */
+     **/
     public String getCccUpgradeScheduleId() {
         return cccUpgradeScheduleId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -399,7 +424,6 @@ public final class UpdateCccInfrastructureDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

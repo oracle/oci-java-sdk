@@ -5,23 +5,22 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The result of validating the credentials of a connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The result of validating the credentials of a connection.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionValidationResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConnectionValidationResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConnectionValidationResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"result", "timeValidated", "message"})
     public ConnectionValidationResult(Result result, java.util.Date timeValidated, String message) {
@@ -33,50 +32,49 @@ public final class ConnectionValidationResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The latest result of whether the credentials pass the validation. */
+        /**
+         * The latest result of whether the credentials pass the validation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private Result result;
 
         /**
          * The latest result of whether the credentials pass the validation.
-         *
          * @param result the value to set
          * @return this builder
-         */
+         **/
         public Builder result(Result result) {
             this.result = result;
             this.__explicitlySet__.add("result");
             return this;
         }
         /**
-         * The latest timestamp when the connection was validated. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         */
+         * The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeValidated")
         private java.util.Date timeValidated;
 
         /**
-         * The latest timestamp when the connection was validated. Format defined by
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-         *
+         * The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
          * @param timeValidated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeValidated(java.util.Date timeValidated) {
             this.timeValidated = timeValidated;
             this.__explicitlySet__.add("timeValidated");
             return this;
         }
-        /** A message describing the result of connection validation in more detail. */
+        /**
+         * A message describing the result of connection validation in more detail.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * A message describing the result of connection validation in more detail.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -110,7 +108,9 @@ public final class ConnectionValidationResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,14 +119,16 @@ public final class ConnectionValidationResult
         return new Builder().copy(this);
     }
 
-    /** The latest result of whether the credentials pass the validation. */
-    public enum Result implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The latest result of whether the credentials pass the validation.
+     **/
+    public enum Result {
         Pass("PASS"),
         Fail("FAIL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -164,45 +166,44 @@ public final class ConnectionValidationResult
             return UnknownEnumValue;
         }
     };
-    /** The latest result of whether the credentials pass the validation. */
+    /**
+     * The latest result of whether the credentials pass the validation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final Result result;
 
     /**
      * The latest result of whether the credentials pass the validation.
-     *
      * @return the value
-     */
+     **/
     public Result getResult() {
         return result;
     }
 
     /**
-     * The latest timestamp when the connection was validated. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     */
+     * The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeValidated")
     private final java.util.Date timeValidated;
 
     /**
-     * The latest timestamp when the connection was validated. Format defined by
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
-     *
+     * The latest timestamp when the connection was validated. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * @return the value
-     */
+     **/
     public java.util.Date getTimeValidated() {
         return timeValidated;
     }
 
-    /** A message describing the result of connection validation in more detail. */
+    /**
+     * A message describing the result of connection validation in more detail.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * A message describing the result of connection validation in more detail.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
@@ -214,7 +215,6 @@ public final class ConnectionValidationResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,27 +5,27 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * The details for creating a configuration source provider of the type {@code
- * BITBUCKET_SERVER_ACCESS_TOKEN}. This type corresponds to a configuration source provider in
- * Bitbucket server that is authenticated with a personal access token. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * The details for creating a configuration source provider of the type {@code BITBUCKET_SERVER_ACCESS_TOKEN}.
+ * This type corresponds to a configuration source provider in Bitbucket server that is authenticated with a personal access token.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails.Builder.class)
+    builder = CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configSourceProviderType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configSourceProviderType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDetails
         extends CreateConfigurationSourceProviderDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -85,7 +85,10 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The secret ocid which is used to authorize the user. */
+        /**
+         * The secret ocid which is used to authorize the user.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
@@ -94,22 +97,27 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
          *
          * @param secretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
-        /** The Bitbucket Server service endpoint Example: {@code https://bitbucket.org/} */
+        /**
+         * The Bitbucket Server service endpoint
+         * Example: {@code https://bitbucket.org/}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
         private String apiEndpoint;
 
         /**
-         * The Bitbucket Server service endpoint Example: {@code https://bitbucket.org/}
+         * The Bitbucket Server service endpoint
+         * Example: {@code https://bitbucket.org/}
          *
          * @param apiEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder apiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             this.__explicitlySet__.add("apiEndpoint");
@@ -167,7 +175,9 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -197,7 +207,10 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
         this.apiEndpoint = apiEndpoint;
     }
 
-    /** The secret ocid which is used to authorize the user. */
+    /**
+     * The secret ocid which is used to authorize the user.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
@@ -205,20 +218,25 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
      * The secret ocid which is used to authorize the user.
      *
      * @return the value
-     */
+     **/
     public String getSecretId() {
         return secretId;
     }
 
-    /** The Bitbucket Server service endpoint Example: {@code https://bitbucket.org/} */
+    /**
+     * The Bitbucket Server service endpoint
+     * Example: {@code https://bitbucket.org/}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("apiEndpoint")
     private final String apiEndpoint;
 
     /**
-     * The Bitbucket Server service endpoint Example: {@code https://bitbucket.org/}
+     * The Bitbucket Server service endpoint
+     * Example: {@code https://bitbucket.org/}
      *
      * @return the value
-     */
+     **/
     public String getApiEndpoint() {
         return apiEndpoint;
     }
@@ -230,7 +248,6 @@ public final class CreateBitbucketServerAccessTokenConfigurationSourceProviderDe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

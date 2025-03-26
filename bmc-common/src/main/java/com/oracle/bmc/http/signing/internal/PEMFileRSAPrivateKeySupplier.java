@@ -4,27 +4,28 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-import com.oracle.bmc.http.client.InternalSdk;
-
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.interfaces.RSAPrivateKey;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+
+import com.oracle.bmc.InternalSdk;
+import com.oracle.bmc.internal.GuavaUtils;
+
 import java.util.Optional;
 
 /**
- * An implementation of {@link KeySupplier} that supplies a RSA private key from a PEM file.
- * Supports PKCS#8 (starts with '-----BEGIN PRIVATE KEY-----' tag), PKCS#8 encrypted key (starts
- * with '-----BEGIN ENCRYPTED PRIVATE KEY-----' tag) and PKCS#1 (i.e., starts with '-----BEGIN RSA
- * PRIVATE KEY-----' tag) format.
- *
- * <p>Example commands that can be used to generate a 2048 bits RSA private key: <code>
- * $ openssl genrsa -out privateKey 2048</code>
- *
- * <p><code>$ ssh-keygen -t rsa -b 2048</code>
- *
+ * An implementation of {@link KeySupplier} that supplies a RSA private key from
+ * a PEM file. Supports both PKCS#8 (starts with '-----BEGIN PRIVATE KEY-----'
+ * tag) and PKCS#1 (i.e., starts with '-----BEGIN RSA PRIVATE KEY-----' tag)
+ * format.
+ * <p>
+ * Example commands that can be used to generate a 2048 bits RSA private key:
+ * </p>
+ * <code>$ openssl genrsa -out privateKey 2048</code>
+ * <p>
+ * <code>$ ssh-keygen -t rsa -b 2048</code>
  * <p>
  */
 public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> {
@@ -47,8 +48,7 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
             delegate = new PEMStreamRSAPrivateKeySupplier(inputStream, passphraseCharacters);
         } catch (IOException ex) {
             LOG.debug("Failed to read RSA private key from file ", ex);
-            throw new PEMFileRSAPrivateKeySupplierException(
-                    "Failed to read RSA private key from file ", ex);
+            throw new PEMFileRSAPrivateKeySupplierException(ex);
         }
     }
 
@@ -68,12 +68,41 @@ public class PEMFileRSAPrivateKeySupplier implements KeySupplier<RSAPrivateKey> 
     /**
      * Get the key from the file.
      *
+     * @param ignored
+     *            this parameter is ignored. The key returned is always the same, the one from the file.
+     * @return an Optional for the key
+     * @deprecated use supplyKey instead
+     */
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Deprecated
+    public com.google.common /*Guava will be removed soon*/.base.Optional<RSAPrivateKey> getKey(
+            @Nonnull String ignored) {
+        return GuavaUtils.adaptToGuava(supplyKey(ignored));
+    }
+
+    /**
+     * Get the key from the file.
+     *
      * @return an Optional for the key
      */
     @InternalSdk(backwardCompatibilityRequired = true)
     @Nonnull
     public Optional<RSAPrivateKey> supplyKey() {
         return supplyKey(null);
+    }
+
+    /**
+     * Get the key from the file.
+     *
+     * @return an Optional for the key
+     *
+     * @deprecated use supplyKey instead
+     */
+    @Deprecated
+    @InternalSdk(backwardCompatibilityRequired = true)
+    @Nonnull
+    public com.google.common /*Guava will be removed soon*/.base.Optional<RSAPrivateKey> getKey() {
+        return GuavaUtils.adaptToGuava(supplyKey());
     }
 
     /** An exception in the {@link PEMFileRSAPrivateKeySupplier}. */

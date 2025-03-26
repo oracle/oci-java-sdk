@@ -5,21 +5,20 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A collection of metrics related to a particular pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * A collection of metrics related to a particular pool.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PoolMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PoolMetrics extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PoolMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeLastStarted",
@@ -47,7 +46,10 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The last time this pool was started. */
+        /**
+         * The last time this pool was started.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastStarted")
         private java.util.Date timeLastStarted;
 
@@ -56,13 +58,16 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeLastStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastStarted(java.util.Date timeLastStarted) {
             this.timeLastStarted = timeLastStarted;
             this.__explicitlySet__.add("timeLastStarted");
             return this;
         }
-        /** The last time this pool was stopped. */
+        /**
+         * The last time this pool was stopped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastStopped")
         private java.util.Date timeLastStopped;
 
@@ -71,13 +76,16 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeLastStopped the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastStopped(java.util.Date timeLastStopped) {
             this.timeLastStopped = timeLastStopped;
             this.__explicitlySet__.add("timeLastStopped");
             return this;
         }
-        /** The last time a run used this pool. */
+        /**
+         * The last time a run used this pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUsed")
         private java.util.Date timeLastUsed;
 
@@ -86,13 +94,16 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeLastUsed the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastUsed(java.util.Date timeLastUsed) {
             this.timeLastUsed = timeLastUsed;
             this.__explicitlySet__.add("timeLastUsed");
             return this;
         }
-        /** The last time the mertics were updated for this. */
+        /**
+         * The last time the mertics were updated for this.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastMetricsUpdated")
         private java.util.Date timeLastMetricsUpdated;
 
@@ -101,13 +112,16 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param timeLastMetricsUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastMetricsUpdated(java.util.Date timeLastMetricsUpdated) {
             this.timeLastMetricsUpdated = timeLastMetricsUpdated;
             this.__explicitlySet__.add("timeLastMetricsUpdated");
             return this;
         }
-        /** The number of runs that are currently running that are using this pool. */
+        /**
+         * The number of runs that are currently running that are using this pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeRunsCount")
         private Long activeRunsCount;
 
@@ -116,13 +130,16 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param activeRunsCount the value to set
          * @return this builder
-         */
+         **/
         public Builder activeRunsCount(Long activeRunsCount) {
             this.activeRunsCount = activeRunsCount;
             this.__explicitlySet__.add("activeRunsCount");
             return this;
         }
-        /** A count of the nodes that are currently being used for each shape in this pool. */
+        /**
+         * A count of the nodes that are currently being used for each shape in this pool.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activelyUsedNodeCount")
         private java.util.List<NodeCount> activelyUsedNodeCount;
 
@@ -131,7 +148,7 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param activelyUsedNodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder activelyUsedNodeCount(java.util.List<NodeCount> activelyUsedNodeCount) {
             this.activelyUsedNodeCount = activelyUsedNodeCount;
             this.__explicitlySet__.add("activelyUsedNodeCount");
@@ -180,7 +197,9 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,7 +208,10 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The last time this pool was started. */
+    /**
+     * The last time this pool was started.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastStarted")
     private final java.util.Date timeLastStarted;
 
@@ -197,12 +219,15 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * The last time this pool was started.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastStarted() {
         return timeLastStarted;
     }
 
-    /** The last time this pool was stopped. */
+    /**
+     * The last time this pool was stopped.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastStopped")
     private final java.util.Date timeLastStopped;
 
@@ -210,12 +235,15 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * The last time this pool was stopped.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastStopped() {
         return timeLastStopped;
     }
 
-    /** The last time a run used this pool. */
+    /**
+     * The last time a run used this pool.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUsed")
     private final java.util.Date timeLastUsed;
 
@@ -223,12 +251,15 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * The last time a run used this pool.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastUsed() {
         return timeLastUsed;
     }
 
-    /** The last time the mertics were updated for this. */
+    /**
+     * The last time the mertics were updated for this.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastMetricsUpdated")
     private final java.util.Date timeLastMetricsUpdated;
 
@@ -236,12 +267,15 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * The last time the mertics were updated for this.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastMetricsUpdated() {
         return timeLastMetricsUpdated;
     }
 
-    /** The number of runs that are currently running that are using this pool. */
+    /**
+     * The number of runs that are currently running that are using this pool.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeRunsCount")
     private final Long activeRunsCount;
 
@@ -249,12 +283,15 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * The number of runs that are currently running that are using this pool.
      *
      * @return the value
-     */
+     **/
     public Long getActiveRunsCount() {
         return activeRunsCount;
     }
 
-    /** A count of the nodes that are currently being used for each shape in this pool. */
+    /**
+     * A count of the nodes that are currently being used for each shape in this pool.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activelyUsedNodeCount")
     private final java.util.List<NodeCount> activelyUsedNodeCount;
 
@@ -262,7 +299,7 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
      * A count of the nodes that are currently being used for each shape in this pool.
      *
      * @return the value
-     */
+     **/
     public java.util.List<NodeCount> getActivelyUsedNodeCount() {
         return activelyUsedNodeCount;
     }
@@ -274,7 +311,6 @@ public final class PoolMetrics extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

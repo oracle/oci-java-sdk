@@ -6,92 +6,99 @@ package com.oracle.bmc.capacitymanagement.requests;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlockDetailsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListInternalOccHandoverResourceBlockDetailsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlockDetailsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListInternalOccHandoverResourceBlockDetailsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class ListInternalOccHandoverResourceBlockDetailsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The OCID of the OccHandoverResource which is a required query parameter for listing
-     * OccHandoverResourceDetails.
+     * The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
+     *
      */
     private String occHandoverResourceBlockId;
 
     /**
-     * The OCID of the OccHandoverResource which is a required query parameter for listing
-     * OccHandoverResourceDetails.
+     * The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
+     *
      */
     public String getOccHandoverResourceBlockId() {
         return occHandoverResourceBlockId;
     }
     /**
-     * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource
-     * block details for which the hostId is equal to the one provided in this query param.
+     * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
+     *
      */
     private String hostId;
 
     /**
-     * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource
-     * block details for which the hostId is equal to the one provided in this query param.
+     * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
+     *
      */
     public String getHostId() {
         return hostId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. The only valid characters for request IDs are letters,
-     * numbers, underscore, and dash.
+     * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+     * underscore, and dash.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.capacitymanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
+     **/
+    public enum SortBy {
         HandoverDate("handoverDate"),
         ;
 
@@ -124,8 +131,9 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. The default order for handoverDate
-     * is chronological order(latest date item at the end).
+     * The field to sort by. Only one sort order may be provided.
+     * The default order for handoverDate is chronological order(latest date item at the end).
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -134,18 +142,18 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListInternalOccHandoverResourceBlockDetailsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the OccHandoverResource which is a required query parameter for listing
-         * OccHandoverResourceDetails.
+         * The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
+         *
          */
         private String occHandoverResourceBlockId = null;
 
         /**
-         * The OCID of the OccHandoverResource which is a required query parameter for listing
-         * OccHandoverResourceDetails.
+         * The OCID of the OccHandoverResource which is a required query parameter for listing OccHandoverResourceDetails.
          *
          * @param occHandoverResourceBlockId the value to set
          * @return this builder instance
@@ -156,14 +164,13 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource
-         * block details for which the hostId is equal to the one provided in this query param.
+         * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
+         *
          */
         private String hostId = null;
 
         /**
-         * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource
-         * block details for which the hostId is equal to the one provided in this query param.
+         * This fiter is applicable only for COMPUTE namespace. It helps in fetching of all resource block details for which the hostId is equal to the one provided in this query param.
          *
          * @param hostId the value to set
          * @return this builder instance
@@ -173,12 +180,13 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -188,15 +196,12 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -206,14 +211,15 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. The only valid characters for request IDs are letters,
-         * numbers, underscore, and dash.
+         * The client request ID for tracing. The only valid characters for request IDs are letters, numbers,
+         * underscore, and dash.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -223,12 +229,13 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.capacitymanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -238,14 +245,15 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * handoverDate is chronological order(latest date item at the end).
+         * The field to sort by. Only one sort order may be provided.
+         * The default order for handoverDate is chronological order(latest date item at the end).
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. The default order for
-         * handoverDate is chronological order(latest date item at the end).
+         * The field to sort by. Only one sort order may be provided.
+         * The default order for handoverDate is chronological order(latest date item at the end).
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -257,19 +265,18 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -281,7 +288,6 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListInternalOccHandoverResourceBlockDetailsRequest o) {
@@ -298,14 +304,12 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * Build the instance of ListInternalOccHandoverResourceBlockDetailsRequest as configured by
-         * this builder
+         * Build the instance of ListInternalOccHandoverResourceBlockDetailsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListInternalOccHandoverResourceBlockDetailsRequest
          */
@@ -318,11 +322,9 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
         }
 
         /**
-         * Build the instance of ListInternalOccHandoverResourceBlockDetailsRequest as configured by
-         * this builder
+         * Build the instance of ListInternalOccHandoverResourceBlockDetailsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListInternalOccHandoverResourceBlockDetailsRequest
@@ -338,14 +340,12 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListInternalOccHandoverResourceBlockDetailsRequest(occHandoverResourceBlockId,
-            // hostId, limit, page, opcRequestId, sortOrder, sortBy);
+            // new ListInternalOccHandoverResourceBlockDetailsRequest(occHandoverResourceBlockId, hostId, limit, page, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -361,7 +361,6 @@ public class ListInternalOccHandoverResourceBlockDetailsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

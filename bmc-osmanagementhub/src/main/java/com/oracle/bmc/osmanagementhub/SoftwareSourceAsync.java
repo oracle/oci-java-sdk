@@ -8,77 +8,73 @@ import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
- * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI,
- * your private data center, or 3rd-party clouds. For more information, see [Overview of OS
- * Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+ * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public interface SoftwareSourceAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Adds packages to a software source. This operation can only be done for custom and versioned
-     * custom software sources that are not created using filters. For a versioned custom software
-     * source, you can only add packages when the source is created. Once content is added to a
-     * versioned custom software source, it is immutable. Packages can be of the format: * name (for
-     * example: git). If isLatestContentOnly is true, only the latest version of the package will be
-     * added, otherwise all versions of the package will be added. *
-     * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64) *
-     * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     * Adds packages to a software source. This operation can only be done for custom and versioned custom software sources that are not created using filters.
+     * For a versioned custom software source, you can only add packages when the source is created. Once content is added to a versioned custom software source, it is immutable.
+     * Packages can be of the format:
+     *   * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+     *   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<AddPackagesToSoftwareSourceResponse> addPackagesToSoftwareSource(
             AddPackagesToSoftwareSourceRequest request,
@@ -89,12 +85,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Updates the availability for a list of specified software sources.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAvailabilityOfSoftwareSourcesResponse>
             changeAvailabilityOfSoftwareSources(
@@ -105,16 +102,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the specified software sources to a different compartment within the same tenancy. For
-     * information about moving resources between compartments, see [Moving Resources to a Different
-     * Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves the specified software sources to a different compartment within the same tenancy.
+     * For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeSoftwareSourceCompartmentResponse>
             changeSoftwareSourceCompartment(
@@ -127,12 +124,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Registers the necessary entitlement credentials for OS vendor software sources for a tenancy.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateEntitlementResponse> createEntitlement(
             CreateEntitlementRequest request,
@@ -143,12 +141,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Creates a new software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateSoftwareSourceResponse> createSoftwareSource(
             CreateSoftwareSourceRequest request,
@@ -161,10 +160,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteSoftwareSourceResponse> deleteSoftwareSource(
             DeleteSoftwareSourceRequest request,
@@ -175,12 +174,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns information about the specified erratum based on its advisory name.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetErratumResponse> getErratum(
             GetErratumRequest request,
@@ -189,12 +189,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns information about the specified module stream in a software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetModuleStreamResponse> getModuleStream(
             GetModuleStreamRequest request,
@@ -204,12 +205,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns information about the specified module stream profile in a software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetModuleStreamProfileResponse> getModuleStreamProfile(
             GetModuleStreamProfileRequest request,
@@ -220,12 +222,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns information about the specified package group from a software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetPackageGroupResponse> getPackageGroup(
             GetPackageGroupRequest request,
@@ -235,12 +238,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns information about the specified software package.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSoftwarePackageResponse> getSoftwarePackage(
             GetSoftwarePackageRequest request,
@@ -249,15 +253,14 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns information about the specified software package based on its fully qualified name
-     * (NVRA or NEVRA).
+     * Returns information about the specified software package based on its fully qualified name (NVRA or NEVRA).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSoftwarePackageByNameResponse> getSoftwarePackageByName(
             GetSoftwarePackageByNameRequest request,
@@ -270,10 +273,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSoftwareSourceResponse> getSoftwareSource(
             GetSoftwareSourceRequest request,
@@ -284,12 +287,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Returns an archive containing the list of packages in the software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetSoftwareSourceManifestResponse> getSoftwareSourceManifest(
             GetSoftwareSourceManifestRequest request,
@@ -298,15 +302,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists software packages available through the OS Management Hub service. Filter the list
-     * against a variety of criteria including but not limited to its name.
+     * Lists software packages available through the OS Management Hub service.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAllSoftwarePackagesResponse> listAllSoftwarePackages(
             ListAllSoftwarePackagesRequest request,
@@ -315,16 +320,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists software packages that are available to be added to a custom software source of type
-     * MANIFEST. Filter the list against a variety of criteria including but not limited to its
-     * name.
+     * Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAvailableSoftwarePackagesResponse>
             listAvailableSoftwarePackages(
@@ -335,17 +340,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists entitlements in the specified tenancy
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
-     * list against a variety of criteria including but not limited to its Customer Support
-     * Identifier (CSI), and vendor name.
+     * Lists entitlements in the specified tenancy [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but
+     * not limited to its Customer Support Identifier (CSI), and vendor name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListEntitlementsResponse> listEntitlements(
             ListEntitlementsRequest request,
@@ -353,32 +357,32 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists all of the currently available errata. Filter the list against a variety of criteria
-     * including but not limited to its name, classification type, advisory severity, and OS family.
+     * Lists all of the currently available errata. Filter the list against a variety of criteria including but not
+     * limited to its name, classification type, advisory severity, and OS family.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListErrataResponse> listErrata(
             ListErrataRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListErrataRequest, ListErrataResponse> handler);
 
     /**
-     * Lists module stream profiles from the specified software source
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
-     * list against a variety of criteria including but not limited to its module name, stream name,
-     * and profile name.
+     * Lists module stream profiles from the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of
+     * criteria including but not limited to its module name, stream name, and profile name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListModuleStreamProfilesResponse> listModuleStreamProfiles(
             ListModuleStreamProfilesRequest request,
@@ -387,17 +391,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists module streams from the specified software source
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
-     * list against a variety of criteria including but not limited to its module name and (stream)
-     * name.
+     * Lists module streams from the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Filter the list against a variety of criteria including but not limited to its module name and (stream) name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListModuleStreamsResponse> listModuleStreams(
             ListModuleStreamsRequest request,
@@ -406,17 +409,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists package groups that are associated with the specified software source
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
-     * list against a variety of criteria including but not limited to its name, and package group
-     * type.
+     * Lists package groups that are associated with the specified software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+     * variety of criteria including but not limited to its name, and package group type.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListPackageGroupsResponse> listPackageGroups(
             ListPackageGroupsRequest request,
@@ -425,16 +427,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the software sources in the tenancy that contain the software package. Filter the list
-     * against a variety of criteria including but not limited to its name, type, architecture, and
-     * OS family.
+     * Lists the software sources in the tenancy that contain the software package. Filter the list against a
+     * variety of criteria including but not limited to its name, type, architecture, and OS family.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSoftwarePackageSoftwareSourcesResponse>
             listSoftwarePackageSoftwareSources(
@@ -445,15 +447,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists software packages in the specified software source. Filter the list against a variety
-     * of criteria including but not limited to its name.
+     * Lists software packages in the specified software source.  Filter the list against a variety of criteria
+     * including but not limited to its name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSoftwarePackagesResponse> listSoftwarePackages(
             ListSoftwarePackagesRequest request,
@@ -462,15 +465,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists available software source vendors. Filter the list against a variety of criteria
-     * including but not limited to its name.
+     * Lists available software source vendors. Filter the list against a variety of criteria including but not limited
+     * to its name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSoftwareSourceVendorsResponse> listSoftwareSourceVendors(
             ListSoftwareSourceVendorsRequest request,
@@ -479,17 +483,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists software sources that match the specified tenancy or software source
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the
-     * list against a variety of criteria including but not limited to its name, status,
-     * architecture, and OS family.
+     * Lists software sources that match the specified tenancy or software source [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a
+     * variety of criteria including but not limited to its name, status, architecture, and OS family.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListSoftwareSourcesResponse> listSoftwareSources(
             ListSoftwareSourcesRequest request,
@@ -498,18 +501,19 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes packages from a software source. This operation can only be done for custom software
-     * sources that are not created using filters. Packages can be of the format: * name (for
-     * example: git). This removes all versions of the package. * name-version-release.architecture
-     * (for example: git-2.43.5-1.el8_10.x86_64) * name-epoch:version-release.architecture (for
-     * example: git-0:2.43.5-1.el8_10.x86_64)
+     * Removes packages from a software source. This operation can only be done for custom software sources that are not created using filters.
+     * Packages can be of the format:
+     *   * name (for example: git). This removes all versions of the package.
+     *   * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *   * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemovePackagesFromSoftwareSourceResponse>
             removePackagesFromSoftwareSource(
@@ -520,19 +524,19 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Replaces packages in a software source with the provided list of packages. This operation can
-     * only be done for custom software sources that are not created using filters. Packages can be
-     * of the format: * name (for example: git). If isLatestContentOnly is true, only the latest
-     * version of the package will be added, otherwise all versions of the package will be added. *
-     * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64) *
-     * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     * Replaces packages in a software source with the provided list of packages. This operation can only be done for custom software sources that are not created using filters.
+     * Packages can be of the format:
+     *  * name (for example: git). If isLatestContentOnly is true, only the latest version of the package will be added, otherwise all versions of the package will be added.
+     *  * name-version-release.architecture (for example: git-2.43.5-1.el8_10.x86_64)
+     *  * name-epoch:version-release.architecture (for example: git-0:2.43.5-1.el8_10.x86_64)
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ReplacePackagesInSoftwareSourceResponse>
             replacePackagesInSoftwareSource(
@@ -543,15 +547,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns a list of module streams from the specified software sources. Filter the list against
-     * a variety of criteria including the module name.
+     * Returns a list of module streams from the specified software sources. Filter the list against a variety of
+     * criteria including the module name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchSoftwareSourceModuleStreamsResponse>
             searchSoftwareSourceModuleStreams(
@@ -562,15 +567,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists modules from a list of software sources. Filter the list against a variety of criteria
-     * including the module name.
+     * Lists modules from a list of software sources. Filter the list against a variety of
+     * criteria including the module name.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchSoftwareSourceModulesResponse> searchSoftwareSourceModules(
             SearchSoftwareSourceModulesRequest request,
@@ -579,15 +585,16 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Searches the package groups from the specified list of software sources. Filter the list
-     * against a variety of criteria including but not limited to its name, and group type.
+     * Searches the package groups from the specified list of software sources. Filter the list against a variety of criteria
+     * including but not limited to its name, and group type.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SearchSoftwareSourcePackageGroupsResponse>
             searchSoftwareSourcePackageGroups(
@@ -602,10 +609,10 @@ public interface SoftwareSourceAsync extends AutoCloseable {
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SoftwareSourceGenerateMetadataResponse>
             softwareSourceGenerateMetadata(
@@ -616,15 +623,15 @@ public interface SoftwareSourceAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the specified software source's details, including but not limited to name,
-     * description, and tags.
+     * Updates the specified software source's details, including but not limited to name, description, and tags.
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSoftwareSourceResponse> updateSoftwareSource(
             UpdateSoftwareSourceRequest request,
@@ -635,12 +642,13 @@ public interface SoftwareSourceAsync extends AutoCloseable {
     /**
      * Updates the package list document for the software source.
      *
+     *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateSoftwareSourceManifestResponse> updateSoftwareSourceManifest(
             UpdateSoftwareSourceManifestRequest request,

@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * The summary of information about an OpenSearch cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * The summary of information about an OpenSearch cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OpensearchClusterSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OpensearchClusterSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OpensearchClusterSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,118 +78,125 @@ public final class OpensearchClusterSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the cluster.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the cluster. Avoid entering confidential information. */
+        /**
+         * The name of the cluster. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the cluster. Avoid entering confidential information.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID for the compartment where the cluster is located. */
+        /**
+         * The OCID for the compartment where the cluster is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID for the compartment where the cluster is located.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The date and time the cluster was created. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the cluster was created. Format defined
+         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the cluster was created. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the cluster was created. Format defined
+         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the cluster was updated. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         * The date and time the cluster was updated. Format defined
+         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the cluster was updated. Format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the cluster was updated. Format defined
+         * by [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Additional information about the current lifecycle state of the cluster. */
+        /**
+         * Additional information about the current lifecycle state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state of the cluster.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -199,7 +205,8 @@ public final class OpensearchClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -209,7 +216,7 @@ public final class OpensearchClusterSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -217,94 +224,100 @@ public final class OpensearchClusterSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The software version the cluster is running. */
+        /**
+         * The software version the cluster is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private String softwareVersion;
 
         /**
          * The software version the cluster is running.
-         *
          * @param softwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareVersion(String softwareVersion) {
             this.softwareVersion = softwareVersion;
             this.__explicitlySet__.add("softwareVersion");
             return this;
         }
-        /** The total amount of storage in GB, for the cluster. */
+        /**
+         * The total amount of storage in GB, for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalStorageGB")
         private Integer totalStorageGB;
 
         /**
          * The total amount of storage in GB, for the cluster.
-         *
          * @param totalStorageGB the value to set
          * @return this builder
-         */
+         **/
         public Builder totalStorageGB(Integer totalStorageGB) {
             this.totalStorageGB = totalStorageGB;
             this.__explicitlySet__.add("totalStorageGB");
             return this;
         }
-        /** The current state of the cluster. */
+        /**
+         * The current state of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OpensearchCluster.LifecycleState lifecycleState;
 
         /**
          * The current state of the cluster.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(OpensearchCluster.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The availability domains to distribute the cluser nodes across. */
+        /**
+         * The availability domains to distribute the cluser nodes across.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
         private java.util.List<String> availabilityDomains;
 
         /**
          * The availability domains to distribute the cluser nodes across.
-         *
          * @param availabilityDomains the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomains(java.util.List<String> availabilityDomains) {
             this.availabilityDomains = availabilityDomains;
             this.__explicitlySet__.add("availabilityDomains");
             return this;
         }
-        /** The security mode of the cluster. */
+        /**
+         * The security mode of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
         private SecurityMode securityMode;
 
         /**
          * The security mode of the cluster.
-         *
          * @param securityMode the value to set
          * @return this builder
-         */
+         **/
         public Builder securityMode(SecurityMode securityMode) {
             this.securityMode = securityMode;
             this.__explicitlySet__.add("securityMode");
@@ -411,7 +424,9 @@ public final class OpensearchClusterSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -420,204 +435,218 @@ public final class OpensearchClusterSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the cluster. Avoid entering confidential information. */
+    /**
+     * The name of the cluster. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the cluster. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID for the compartment where the cluster is located. */
+    /**
+     * The OCID for the compartment where the cluster is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID for the compartment where the cluster is located.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The date and time the cluster was created. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the cluster was created. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the cluster was created. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the cluster was created. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time the cluster was updated. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     * The date and time the cluster was updated. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the cluster was updated. Format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the cluster was updated. Format defined
+     * by [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** Additional information about the current lifecycle state of the cluster. */
+    /**
+     * Additional information about the current lifecycle state of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state of the cluster.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
 
-    /** The software version the cluster is running. */
+    /**
+     * The software version the cluster is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final String softwareVersion;
 
     /**
      * The software version the cluster is running.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareVersion() {
         return softwareVersion;
     }
 
-    /** The total amount of storage in GB, for the cluster. */
+    /**
+     * The total amount of storage in GB, for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalStorageGB")
     private final Integer totalStorageGB;
 
     /**
      * The total amount of storage in GB, for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalStorageGB() {
         return totalStorageGB;
     }
 
-    /** The current state of the cluster. */
+    /**
+     * The current state of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OpensearchCluster.LifecycleState lifecycleState;
 
     /**
      * The current state of the cluster.
-     *
      * @return the value
-     */
+     **/
     public OpensearchCluster.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The availability domains to distribute the cluser nodes across. */
+    /**
+     * The availability domains to distribute the cluser nodes across.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomains")
     private final java.util.List<String> availabilityDomains;
 
     /**
      * The availability domains to distribute the cluser nodes across.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAvailabilityDomains() {
         return availabilityDomains;
     }
 
-    /** The security mode of the cluster. */
+    /**
+     * The security mode of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityMode")
     private final SecurityMode securityMode;
 
     /**
      * The security mode of the cluster.
-     *
      * @return the value
-     */
+     **/
     public SecurityMode getSecurityMode() {
         return securityMode;
     }
@@ -643,7 +672,6 @@ public final class OpensearchClusterSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

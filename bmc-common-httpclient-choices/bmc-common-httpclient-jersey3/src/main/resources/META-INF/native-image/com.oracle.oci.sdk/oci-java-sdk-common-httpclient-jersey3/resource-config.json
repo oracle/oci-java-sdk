@@ -1,5 +1,0 @@
-{
-  "resources": [
-    {"pattern":"\\Qcom/oracle/bmc/sdk.properties\\E"}
-  ]
-}

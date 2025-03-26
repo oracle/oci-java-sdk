@@ -5,23 +5,22 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * A configuration to define the constraints when detecting vulnerable dependencies. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * A configuration to define the constraints when detecting vulnerable dependencies.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DetectConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DetectConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DetectConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DetectConfiguration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exclusions",
@@ -47,101 +46,88 @@ public final class DetectConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The list of dependencies to be ignored by the recommendation algorithm. The dependency
-         * pattern is matched against the 'group:artifact:version' or the purl of a dependency. An
-         * asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or
-         * more characters.
-         */
+         * The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency.
+         * An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
         private java.util.List<String> exclusions;
 
         /**
-         * The list of dependencies to be ignored by the recommendation algorithm. The dependency
-         * pattern is matched against the 'group:artifact:version' or the purl of a dependency. An
-         * asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or
-         * more characters.
+         * The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency.
+         * An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
          *
          * @param exclusions the value to set
          * @return this builder
-         */
+         **/
         public Builder exclusions(java.util.List<String> exclusions) {
             this.exclusions = exclusions;
             this.__explicitlySet__.add("exclusions");
             return this;
         }
         /**
-         * The upgrade policy for recommendations. The {@code Nearest} upgrade policy upgrades a
-         * dependency to the oldest version that meets both of the following criteria: it is newer
-         * than the current version and it is not affected by a vulnerability.
-         */
+         * The upgrade policy for recommendations.
+         * The {@code Nearest} upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradePolicy")
         private UpgradePolicy upgradePolicy;
 
         /**
-         * The upgrade policy for recommendations. The {@code Nearest} upgrade policy upgrades a
-         * dependency to the oldest version that meets both of the following criteria: it is newer
-         * than the current version and it is not affected by a vulnerability.
+         * The upgrade policy for recommendations.
+         * The {@code Nearest} upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
          *
          * @param upgradePolicy the value to set
          * @return this builder
-         */
+         **/
         public Builder upgradePolicy(UpgradePolicy upgradePolicy) {
             this.upgradePolicy = upgradePolicy;
             this.__explicitlySet__.add("upgradePolicy");
             return this;
         }
         /**
-         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact
-         * with a CVSS V2 score below this value is not considered for patching.
-         */
+         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV2Score")
         private Float maxPermissibleCvssV2Score;
 
         /**
-         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact
-         * with a CVSS V2 score below this value is not considered for patching.
-         *
+         * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
          * @param maxPermissibleCvssV2Score the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPermissibleCvssV2Score(Float maxPermissibleCvssV2Score) {
             this.maxPermissibleCvssV2Score = maxPermissibleCvssV2Score;
             this.__explicitlySet__.add("maxPermissibleCvssV2Score");
             return this;
         }
         /**
-         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact
-         * with a CVSS V3 score below this value is not considered for patching.
-         */
+         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV3Score")
         private Float maxPermissibleCvssV3Score;
 
         /**
-         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact
-         * with a CVSS V3 score below this value is not considered for patching.
-         *
+         * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
          * @param maxPermissibleCvssV3Score the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPermissibleCvssV3Score(Float maxPermissibleCvssV3Score) {
             this.maxPermissibleCvssV3Score = maxPermissibleCvssV3Score;
             this.__explicitlySet__.add("maxPermissibleCvssV3Score");
             return this;
         }
         /**
-         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
-         * considered for patching.
-         */
+         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
         private ConfigSeverity maxPermissibleSeverity;
 
         /**
-         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not
-         * considered for patching.
-         *
+         * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
          * @param maxPermissibleSeverity the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPermissibleSeverity(ConfigSeverity maxPermissibleSeverity) {
             this.maxPermissibleSeverity = maxPermissibleSeverity;
             this.__explicitlySet__.add("maxPermissibleSeverity");
@@ -186,7 +172,9 @@ public final class DetectConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -196,37 +184,34 @@ public final class DetectConfiguration
     }
 
     /**
-     * The list of dependencies to be ignored by the recommendation algorithm. The dependency
-     * pattern is matched against the 'group:artifact:version' or the purl of a dependency. An
-     * asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more
-     * characters.
-     */
+     * The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency.
+     * An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclusions")
     private final java.util.List<String> exclusions;
 
     /**
-     * The list of dependencies to be ignored by the recommendation algorithm. The dependency
-     * pattern is matched against the 'group:artifact:version' or the purl of a dependency. An
-     * asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more
-     * characters.
+     * The list of dependencies to be ignored by the recommendation algorithm. The dependency pattern is matched against the 'group:artifact:version' or the purl of a dependency.
+     * An asterisk (*) at the end in the dependency pattern acts as a wildcard and matches zero or more characters.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExclusions() {
         return exclusions;
     }
 
     /**
-     * The upgrade policy for recommendations. The {@code Nearest} upgrade policy upgrades a
-     * dependency to the oldest version that meets both of the following criteria: it is newer than
-     * the current version and it is not affected by a vulnerability.
-     */
-    public enum UpgradePolicy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The upgrade policy for recommendations.
+     * The {@code Nearest} upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+     *
+     **/
+    public enum UpgradePolicy {
         Nearest("NEAREST"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -266,71 +251,61 @@ public final class DetectConfiguration
         }
     };
     /**
-     * The upgrade policy for recommendations. The {@code Nearest} upgrade policy upgrades a
-     * dependency to the oldest version that meets both of the following criteria: it is newer than
-     * the current version and it is not affected by a vulnerability.
-     */
+     * The upgrade policy for recommendations.
+     * The {@code Nearest} upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradePolicy")
     private final UpgradePolicy upgradePolicy;
 
     /**
-     * The upgrade policy for recommendations. The {@code Nearest} upgrade policy upgrades a
-     * dependency to the oldest version that meets both of the following criteria: it is newer than
-     * the current version and it is not affected by a vulnerability.
+     * The upgrade policy for recommendations.
+     * The {@code Nearest} upgrade policy upgrades a dependency to the oldest version that meets both of the following criteria: it is newer than the current version and it is not affected by a vulnerability.
      *
      * @return the value
-     */
+     **/
     public UpgradePolicy getUpgradePolicy() {
         return upgradePolicy;
     }
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a
-     * CVSS V2 score below this value is not considered for patching.
-     */
+     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV2Score")
     private final Float maxPermissibleCvssV2Score;
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a
-     * CVSS V2 score below this value is not considered for patching.
-     *
+     * The maximum Common Vulnerability Scoring System Version 2 (CVSS V2) score. An artifact with a CVSS V2 score below this value is not considered for patching.
      * @return the value
-     */
+     **/
     public Float getMaxPermissibleCvssV2Score() {
         return maxPermissibleCvssV2Score;
     }
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a
-     * CVSS V3 score below this value is not considered for patching.
-     */
+     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleCvssV3Score")
     private final Float maxPermissibleCvssV3Score;
 
     /**
-     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a
-     * CVSS V3 score below this value is not considered for patching.
-     *
+     * The maximum Common Vulnerability Scoring System Version 3 (CVSS V3) score. An artifact with a CVSS V3 score below this value is not considered for patching.
      * @return the value
-     */
+     **/
     public Float getMaxPermissibleCvssV3Score() {
         return maxPermissibleCvssV3Score;
     }
 
     /**
-     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
-     * for patching.
-     */
+     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPermissibleSeverity")
     private final ConfigSeverity maxPermissibleSeverity;
 
     /**
-     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered
-     * for patching.
-     *
+     * The maximum ADM Severity. An artifact with an ADM Severity below this value is not considered for patching.
      * @return the value
-     */
+     **/
     public ConfigSeverity getMaxPermissibleSeverity() {
         return maxPermissibleSeverity;
     }
@@ -342,7 +317,6 @@ public final class DetectConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

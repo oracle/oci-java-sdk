@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * A collection of resources and their category assignments. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * A collection of resources and their category assignments.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LogAnalyticsResourceCategoryCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = LogAnalyticsResourceCategoryCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LogAnalyticsResourceCategoryCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"categories", "items"})
     public LogAnalyticsResourceCategoryCollection(
@@ -35,34 +34,36 @@ public final class LogAnalyticsResourceCategoryCollection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An array of categories. The array contents include detailed information about the
-         * distinct set of categories assigned to all the listed resources under items.
-         */
+         * An array of categories. The array contents include detailed information about
+         * the distinct set of categories assigned to all the listed resources under items.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categories")
         private java.util.List<LogAnalyticsCategory> categories;
 
         /**
-         * An array of categories. The array contents include detailed information about the
-         * distinct set of categories assigned to all the listed resources under items.
+         * An array of categories. The array contents include detailed information about
+         * the distinct set of categories assigned to all the listed resources under items.
          *
          * @param categories the value to set
          * @return this builder
-         */
+         **/
         public Builder categories(java.util.List<LogAnalyticsCategory> categories) {
             this.categories = categories;
             this.__explicitlySet__.add("categories");
             return this;
         }
-        /** A list of resources and their category assignments */
+        /**
+         * A list of resources and their category assignments
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<LogAnalyticsResourceCategory> items;
 
         /**
          * A list of resources and their category assignments
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<LogAnalyticsResourceCategory> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -93,7 +94,9 @@ public final class LogAnalyticsResourceCategoryCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,31 +106,33 @@ public final class LogAnalyticsResourceCategoryCollection
     }
 
     /**
-     * An array of categories. The array contents include detailed information about the distinct
-     * set of categories assigned to all the listed resources under items.
-     */
+     * An array of categories. The array contents include detailed information about
+     * the distinct set of categories assigned to all the listed resources under items.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categories")
     private final java.util.List<LogAnalyticsCategory> categories;
 
     /**
-     * An array of categories. The array contents include detailed information about the distinct
-     * set of categories assigned to all the listed resources under items.
+     * An array of categories. The array contents include detailed information about
+     * the distinct set of categories assigned to all the listed resources under items.
      *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsCategory> getCategories() {
         return categories;
     }
 
-    /** A list of resources and their category assignments */
+    /**
+     * A list of resources and their category assignments
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<LogAnalyticsResourceCategory> items;
 
     /**
      * A list of resources and their category assignments
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsResourceCategory> getItems() {
         return items;
     }
@@ -139,7 +144,6 @@ public final class LogAnalyticsResourceCategoryCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

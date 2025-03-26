@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * A valid value for a database parameter. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * A valid value for a database parameter.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AllowedParameterValue.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AllowedParameterValue.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AllowedParameterValue
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ordinal", "value", "isDefault"})
     public AllowedParameterValue(java.math.BigDecimal ordinal, String value, Boolean isDefault) {
@@ -33,46 +32,49 @@ public final class AllowedParameterValue
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ordinal number in the list (1-based). */
+        /**
+         * The ordinal number in the list (1-based).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
         private java.math.BigDecimal ordinal;
 
         /**
          * The ordinal number in the list (1-based).
-         *
          * @param ordinal the value to set
          * @return this builder
-         */
+         **/
         public Builder ordinal(java.math.BigDecimal ordinal) {
             this.ordinal = ordinal;
             this.__explicitlySet__.add("ordinal");
             return this;
         }
-        /** The parameter value at ordinal. */
+        /**
+         * The parameter value at ordinal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
          * The parameter value at ordinal.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Indicates whether the given ordinal value is the default value for the parameter. */
+        /**
+         * Indicates whether the given ordinal value is the default value for the parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * Indicates whether the given ordinal value is the default value for the parameter.
-         *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -106,7 +108,9 @@ public final class AllowedParameterValue
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class AllowedParameterValue
         return new Builder().copy(this);
     }
 
-    /** The ordinal number in the list (1-based). */
+    /**
+     * The ordinal number in the list (1-based).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ordinal")
     private final java.math.BigDecimal ordinal;
 
     /**
      * The ordinal number in the list (1-based).
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getOrdinal() {
         return ordinal;
     }
 
-    /** The parameter value at ordinal. */
+    /**
+     * The parameter value at ordinal.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
      * The parameter value at ordinal.
-     *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** Indicates whether the given ordinal value is the default value for the parameter. */
+    /**
+     * Indicates whether the given ordinal value is the default value for the parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * Indicates whether the given ordinal value is the default value for the parameter.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -161,7 +168,6 @@ public final class AllowedParameterValue
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

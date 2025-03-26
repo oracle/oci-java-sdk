@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the Virtual IP (VIP) address for a node in an external cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the Virtual IP (VIP) address for a node in an external cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalClusterVipConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalClusterVipConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalClusterVipConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nodeName", "address", "networkNumber"})
     public ExternalClusterVipConfiguration(String nodeName, String address, Integer networkNumber) {
@@ -33,46 +32,49 @@ public final class ExternalClusterVipConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the node with the VIP. */
+        /**
+         * The name of the node with the VIP.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeName")
         private String nodeName;
 
         /**
          * The name of the node with the VIP.
-         *
          * @param nodeName the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeName(String nodeName) {
             this.nodeName = nodeName;
             this.__explicitlySet__.add("nodeName");
             return this;
         }
-        /** The VIP name or IP address. */
+        /**
+         * The VIP name or IP address.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("address")
         private String address;
 
         /**
          * The VIP name or IP address.
-         *
          * @param address the value to set
          * @return this builder
-         */
+         **/
         public Builder address(String address) {
             this.address = address;
             this.__explicitlySet__.add("address");
             return this;
         }
-        /** The network number from which VIPs are obtained. */
+        /**
+         * The network number from which VIPs are obtained.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
         private Integer networkNumber;
 
         /**
          * The network number from which VIPs are obtained.
-         *
          * @param networkNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder networkNumber(Integer networkNumber) {
             this.networkNumber = networkNumber;
             this.__explicitlySet__.add("networkNumber");
@@ -107,7 +109,9 @@ public final class ExternalClusterVipConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +120,44 @@ public final class ExternalClusterVipConfiguration
         return new Builder().copy(this);
     }
 
-    /** The name of the node with the VIP. */
+    /**
+     * The name of the node with the VIP.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeName")
     private final String nodeName;
 
     /**
      * The name of the node with the VIP.
-     *
      * @return the value
-     */
+     **/
     public String getNodeName() {
         return nodeName;
     }
 
-    /** The VIP name or IP address. */
+    /**
+     * The VIP name or IP address.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("address")
     private final String address;
 
     /**
      * The VIP name or IP address.
-     *
      * @return the value
-     */
+     **/
     public String getAddress() {
         return address;
     }
 
-    /** The network number from which VIPs are obtained. */
+    /**
+     * The network number from which VIPs are obtained.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkNumber")
     private final Integer networkNumber;
 
     /**
      * The network number from which VIPs are obtained.
-     *
      * @return the value
-     */
+     **/
     public Integer getNetworkNumber() {
         return networkNumber;
     }
@@ -162,7 +169,6 @@ public final class ExternalClusterVipConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,20 @@ package com.oracle.bmc.healthchecks.responses;
 
 import com.oracle.bmc.healthchecks.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180501")
 public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to
+     * contact Oracle about a particular request, please provide
+     * the request ID.
      *
      * @return the value
      */
@@ -24,36 +27,39 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         return opcRequestId;
     }
 
-    /** The URL of the newly created monitor. */
+    /**
+     * The URL of the newly created monitor.
+     */
     private String location;
 
     /**
      * The URL of the newly created monitor.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** An entity tag that uniquely identifies a version of the resource. */
+    /**
+     * An entity tag that uniquely identifies a version of the resource.
+     */
     private String etag;
 
     /**
      * An entity tag that uniquely identifies a version of the resource.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code PingMonitor} instance. */
+    /**
+     * The returned PingMonitor instance.
+     */
     private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
     /**
-     * The returned {@code PingMonitor} instance.
-     *
+     * The returned PingMonitor instance.
      * @return the value
      */
     public com.oracle.bmc.healthchecks.model.PingMonitor getPingMonitor() {
@@ -70,7 +76,7 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
     })
     private CreatePingMonitorResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             String etag,
@@ -82,33 +88,33 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
         this.pingMonitor = pingMonitor;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreatePingMonitorResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to
+         * contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +124,13 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The URL of the newly created monitor. */
+        /**
+         * The URL of the newly created monitor.
+         */
         private String location;
 
         /**
          * The URL of the newly created monitor.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -132,12 +139,13 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** An entity tag that uniquely identifies a version of the resource. */
+        /**
+         * An entity tag that uniquely identifies a version of the resource.
+         */
         private String etag;
 
         /**
          * An entity tag that uniquely identifies a version of the resource.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -146,12 +154,13 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
             return this;
         }
 
-        /** The returned {@code PingMonitor} instance. */
+        /**
+         * The returned PingMonitor instance.
+         */
         private com.oracle.bmc.healthchecks.model.PingMonitor pingMonitor;
 
         /**
-         * The returned {@code PingMonitor} instance.
-         *
+         * The returned PingMonitor instance.
          * @param pingMonitor the value to set
          * @return this builder
          */
@@ -162,10 +171,8 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreatePingMonitorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -179,10 +186,8 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreatePingMonitorResponse build() {
             return new CreatePingMonitorResponse(
                     __httpStatusCode__, headers, opcRequestId, location, etag, pingMonitor);
@@ -191,7 +196,6 @@ public class CreatePingMonitorResponse extends com.oracle.bmc.responses.BmcRespo
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -6,9 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -23,6 +26,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -36,7 +40,10 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         return opcRequestId;
     }
 
-    /** Deprecation date of this API version. */
+    /**
+     * Deprecation date of this API version.
+     *
+     */
     private String sunset;
 
     /**
@@ -48,12 +55,13 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         return sunset;
     }
 
-    /** The returned {@code DatabaseRegistration} instance. */
+    /**
+     * The returned DatabaseRegistration instance.
+     */
     private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
     /**
-     * The returned {@code DatabaseRegistration} instance.
-     *
+     * The returned DatabaseRegistration instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DatabaseRegistration getDatabaseRegistration() {
@@ -70,7 +78,7 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
     })
     private GetDatabaseRegistrationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String sunset,
@@ -82,26 +90,25 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         this.databaseRegistration = databaseRegistration;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetDatabaseRegistrationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -116,14 +123,15 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -133,7 +141,10 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** Deprecation date of this API version. */
+        /**
+         * Deprecation date of this API version.
+         *
+         */
         private String sunset;
 
         /**
@@ -147,12 +158,13 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
             return this;
         }
 
-        /** The returned {@code DatabaseRegistration} instance. */
+        /**
+         * The returned DatabaseRegistration instance.
+         */
         private com.oracle.bmc.goldengate.model.DatabaseRegistration databaseRegistration;
 
         /**
-         * The returned {@code DatabaseRegistration} instance.
-         *
+         * The returned DatabaseRegistration instance.
          * @param databaseRegistration the value to set
          * @return this builder
          */
@@ -164,10 +176,8 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetDatabaseRegistrationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -181,10 +191,8 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetDatabaseRegistrationResponse build() {
             return new GetDatabaseRegistrationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, sunset, databaseRegistration);
@@ -193,7 +201,6 @@ public class GetDatabaseRegistrationResponse extends com.oracle.bmc.responses.Bm
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

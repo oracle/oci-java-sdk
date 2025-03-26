@@ -5,23 +5,21 @@
 package com.oracle.bmc.nosql.model;
 
 /**
- * The result of query preparation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
+ * The result of query preparation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PreparedStatement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PreparedStatement
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PreparedStatement.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PreparedStatement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"statement", "queryPlan", "usage"})
     public PreparedStatement(String statement, Object queryPlan, RequestUsage usage) {
@@ -33,22 +31,30 @@ public final class PreparedStatement
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A base64-encoded, compiled and parameterized version of a SQL statement. */
+        /**
+         * A base64-encoded, compiled and parameterized version of
+         * a SQL statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statement")
         private String statement;
 
         /**
-         * A base64-encoded, compiled and parameterized version of a SQL statement.
+         * A base64-encoded, compiled and parameterized version of
+         * a SQL statement.
          *
          * @param statement the value to set
          * @return this builder
-         */
+         **/
         public Builder statement(String statement) {
             this.statement = statement;
             this.__explicitlySet__.add("statement");
             return this;
         }
-        /** A representation of the query plan as a schema-less JSON object. */
+        /**
+         * A representation of the query plan as a schema-less JSON object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryPlan")
         private Object queryPlan;
 
@@ -57,7 +63,7 @@ public final class PreparedStatement
          *
          * @param queryPlan the value to set
          * @return this builder
-         */
+         **/
         public Builder queryPlan(Object queryPlan) {
             this.queryPlan = queryPlan;
             this.__explicitlySet__.add("queryPlan");
@@ -100,7 +106,9 @@ public final class PreparedStatement
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,20 +117,28 @@ public final class PreparedStatement
         return new Builder().copy(this);
     }
 
-    /** A base64-encoded, compiled and parameterized version of a SQL statement. */
+    /**
+     * A base64-encoded, compiled and parameterized version of
+     * a SQL statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statement")
     private final String statement;
 
     /**
-     * A base64-encoded, compiled and parameterized version of a SQL statement.
+     * A base64-encoded, compiled and parameterized version of
+     * a SQL statement.
      *
      * @return the value
-     */
+     **/
     public String getStatement() {
         return statement;
     }
 
-    /** A representation of the query plan as a schema-less JSON object. */
+    /**
+     * A representation of the query plan as a schema-less JSON object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryPlan")
     private final Object queryPlan;
 
@@ -130,7 +146,7 @@ public final class PreparedStatement
      * A representation of the query plan as a schema-less JSON object.
      *
      * @return the value
-     */
+     **/
     public Object getQueryPlan() {
         return queryPlan;
     }
@@ -149,7 +165,6 @@ public final class PreparedStatement
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Definition of span log collection object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Definition of span log collection object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SpanLogCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SpanLogCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SpanLogCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SpanLogCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeCreated", "eventName", "spanLogs"})
     public SpanLogCollection(
@@ -34,7 +33,10 @@ public final class SpanLogCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Timestamp at which the log is created. */
+        /**
+         * Timestamp at which the log is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -43,13 +45,16 @@ public final class SpanLogCollection
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** Name of the event for which the log is created. */
+        /**
+         * Name of the event for which the log is created.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eventName")
         private String eventName;
 
@@ -58,13 +63,16 @@ public final class SpanLogCollection
          *
          * @param eventName the value to set
          * @return this builder
-         */
+         **/
         public Builder eventName(String eventName) {
             this.eventName = eventName;
             this.__explicitlySet__.add("eventName");
             return this;
         }
-        /** List of logs associated with the span at the given timestamp. */
+        /**
+         * List of logs associated with the span at the given timestamp.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("spanLogs")
         private java.util.List<SpanLog> spanLogs;
 
@@ -73,7 +81,7 @@ public final class SpanLogCollection
          *
          * @param spanLogs the value to set
          * @return this builder
-         */
+         **/
         public Builder spanLogs(java.util.List<SpanLog> spanLogs) {
             this.spanLogs = spanLogs;
             this.__explicitlySet__.add("spanLogs");
@@ -107,7 +115,9 @@ public final class SpanLogCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,7 +126,10 @@ public final class SpanLogCollection
         return new Builder().copy(this);
     }
 
-    /** Timestamp at which the log is created. */
+    /**
+     * Timestamp at which the log is created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -124,12 +137,15 @@ public final class SpanLogCollection
      * Timestamp at which the log is created.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** Name of the event for which the log is created. */
+    /**
+     * Name of the event for which the log is created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eventName")
     private final String eventName;
 
@@ -137,12 +153,15 @@ public final class SpanLogCollection
      * Name of the event for which the log is created.
      *
      * @return the value
-     */
+     **/
     public String getEventName() {
         return eventName;
     }
 
-    /** List of logs associated with the span at the given timestamp. */
+    /**
+     * List of logs associated with the span at the given timestamp.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("spanLogs")
     private final java.util.List<SpanLog> spanLogs;
 
@@ -150,7 +169,7 @@ public final class SpanLogCollection
      * List of logs associated with the span at the given timestamp.
      *
      * @return the value
-     */
+     **/
     public java.util.List<SpanLog> getSpanLogs() {
         return spanLogs;
     }
@@ -162,7 +181,6 @@ public final class SpanLogCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

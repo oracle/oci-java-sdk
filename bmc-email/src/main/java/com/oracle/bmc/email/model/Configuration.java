@@ -5,21 +5,19 @@
 package com.oracle.bmc.email.model;
 
 /**
- * Tenancy level customer email configuration details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+ * Tenancy level customer email configuration details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Configuration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Configuration extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Configuration extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "httpSubmitEndpoint", "smtpSubmitEndpoint"})
     public Configuration(
@@ -33,55 +31,48 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The root compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
-         * the tenancy OCID)
-         */
+         * The root compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the tenancy OCID)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The root compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as
-         * the tenancy OCID)
-         *
+         * The root compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the tenancy OCID)
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Endpoint used to submit emails via the HTTP email submission API */
+        /**
+         * Endpoint used to submit emails via the HTTP email submission API
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("httpSubmitEndpoint")
         private String httpSubmitEndpoint;
 
         /**
          * Endpoint used to submit emails via the HTTP email submission API
-         *
          * @param httpSubmitEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder httpSubmitEndpoint(String httpSubmitEndpoint) {
             this.httpSubmitEndpoint = httpSubmitEndpoint;
             this.__explicitlySet__.add("httpSubmitEndpoint");
             return this;
         }
         /**
-         * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS
-         * 1.2 and standard SMTP authentication is required for submission.
-         */
+         * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2 and standard SMTP authentication is required for submission.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("smtpSubmitEndpoint")
         private String smtpSubmitEndpoint;
 
         /**
-         * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS
-         * 1.2 and standard SMTP authentication is required for submission.
-         *
+         * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2 and standard SMTP authentication is required for submission.
          * @param smtpSubmitEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder smtpSubmitEndpoint(String smtpSubmitEndpoint) {
             this.smtpSubmitEndpoint = smtpSubmitEndpoint;
             this.__explicitlySet__.add("smtpSubmitEndpoint");
@@ -116,7 +107,9 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -126,50 +119,43 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The root compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the
-     * tenancy OCID)
-     */
+     * The root compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the tenancy OCID)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The root compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the
-     * tenancy OCID)
-     *
+     * The root compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) (same as the tenancy OCID)
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Endpoint used to submit emails via the HTTP email submission API */
+    /**
+     * Endpoint used to submit emails via the HTTP email submission API
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("httpSubmitEndpoint")
     private final String httpSubmitEndpoint;
 
     /**
      * Endpoint used to submit emails via the HTTP email submission API
-     *
      * @return the value
-     */
+     **/
     public String getHttpSubmitEndpoint() {
         return httpSubmitEndpoint;
     }
 
     /**
-     * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2
-     * and standard SMTP authentication is required for submission.
-     */
+     * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2 and standard SMTP authentication is required for submission.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("smtpSubmitEndpoint")
     private final String smtpSubmitEndpoint;
 
     /**
-     * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2
-     * and standard SMTP authentication is required for submission.
-     *
+     * Endpoint used to submit emails via the standard SMTP submission protocol. Note that TLS 1.2 and standard SMTP authentication is required for submission.
      * @return the value
-     */
+     **/
     public String getSmtpSubmitEndpoint() {
         return smtpSubmitEndpoint;
     }
@@ -181,7 +167,6 @@ public final class Configuration extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,5 +4,8 @@
  */
 package com.oracle.bmc.auth;
 
-/** Root interface for classes providing some information needed to authenticate requests. */
+/**
+ * Root interface for classes providing some information needed to authenticate
+ * requests.
+ */
 public interface AbstractAuthenticationDetailsProvider {}

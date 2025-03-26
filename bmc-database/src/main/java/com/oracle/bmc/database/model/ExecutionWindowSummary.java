@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of an execution window. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of an execution window.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExecutionWindowSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExecutionWindowSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExecutionWindowSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -92,344 +92,340 @@ public final class ExecutionWindowSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * execution window.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * execution window.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * execution resource the execution window belongs to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionResourceId")
         private String executionResourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * execution resource the execution window belongs to.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
          * @param executionResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder executionResourceId(String executionResourceId) {
             this.executionResourceId = executionResourceId;
             this.__explicitlySet__.add("executionResourceId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The user-friendly name for the execution window. The name does not need to be unique. */
+        /**
+         * The user-friendly name for the execution window. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the execution window. The name does not need to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the execution window. */
+        /**
+         * Description of the execution window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the execution window.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED,
-         * IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
-         */
+         * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED,
+         * UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED,
-         * IN_PROGRESS, FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
+         * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED,
+         * UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED,
-         * MAINTENANCE_IN_PROGRESS and WAITING.
-         */
+         * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
         private LifecycleSubstate lifecycleSubstate;
 
         /**
-         * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED,
-         * MAINTENANCE_IN_PROGRESS and WAITING.
+         * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
          *
          * @param lifecycleSubstate the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleSubstate(LifecycleSubstate lifecycleSubstate) {
             this.lifecycleSubstate = lifecycleSubstate;
             this.__explicitlySet__.add("lifecycleSubstate");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The date and time the execution window was created. */
+        /**
+         * The date and time the execution window was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the execution window was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The last date and time that the execution window was updated. */
+        /**
+         * The last date and time that the execution window was updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The last date and time that the execution window was updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The date and time that the execution window was started. */
+        /**
+         * The date and time that the execution window was started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The date and time that the execution window was started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The date and time that the execution window ended. */
+        /**
+         * The date and time that the execution window ended.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The date and time that the execution window ended.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** The scheduled start date and time of the execution window. */
+        /**
+         * The scheduled start date and time of the execution window.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
          * The scheduled start date and time of the execution window.
-         *
          * @param timeScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeScheduled(java.util.Date timeScheduled) {
             this.timeScheduled = timeScheduled;
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
-         */
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowDurationInMins")
         private Integer windowDurationInMins;
 
         /**
-         * Duration window allows user to set a duration they plan to allocate for Scheduling
-         * window. The duration is in minutes.
+         * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
          *
          * @param windowDurationInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder windowDurationInMins(Integer windowDurationInMins) {
             this.windowDurationInMins = windowDurationInMins;
             this.__explicitlySet__.add("windowDurationInMins");
             return this;
         }
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         */
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDuration")
         private Boolean isEnforcedDuration;
 
         /**
-         * Indicates if duration the user plans to allocate for scheduling window is strictly
-         * enforced. The default value is {@code FALSE}.
-         *
+         * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
          * @param isEnforcedDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnforcedDuration(Boolean isEnforcedDuration) {
             this.isEnforcedDuration = isEnforcedDuration;
             this.__explicitlySet__.add("isEnforcedDuration");
             return this;
         }
-        /** The estimated time of the execution window in minutes. */
+        /**
+         * The estimated time of the execution window in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
         private Integer estimatedTimeInMins;
 
         /**
          * The estimated time of the execution window in minutes.
-         *
          * @param estimatedTimeInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedTimeInMins(Integer estimatedTimeInMins) {
             this.estimatedTimeInMins = estimatedTimeInMins;
             this.__explicitlySet__.add("estimatedTimeInMins");
             return this;
         }
-        /** The total time taken by corresponding resource activity in minutes. */
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
         private Integer totalTimeTakenInMins;
 
         /**
          * The total time taken by corresponding resource activity in minutes.
-         *
          * @param totalTimeTakenInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
             this.totalTimeTakenInMins = totalTimeTakenInMins;
             this.__explicitlySet__.add("totalTimeTakenInMins");
             return this;
         }
-        /** The execution window is of PLANNED or UNPLANNED type. */
+        /**
+         * The execution window is of PLANNED or UNPLANNED type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowType")
         private WindowType windowType;
 
         /**
          * The execution window is of PLANNED or UNPLANNED type.
-         *
          * @param windowType the value to set
          * @return this builder
-         */
+         **/
         public Builder windowType(WindowType windowType) {
             this.windowType = windowType;
             this.__explicitlySet__.add("windowType");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -535,7 +531,9 @@ public final class ExecutionWindowSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -545,87 +543,81 @@ public final class ExecutionWindowSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * execution window.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * execution window.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution window.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * execution resource the execution window belongs to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionResourceId")
     private final String executionResourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * execution resource the execution window belongs to.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the execution resource the execution window belongs to.
      * @return the value
-     */
+     **/
     public String getExecutionResourceId() {
         return executionResourceId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The user-friendly name for the execution window. The name does not need to be unique. */
+    /**
+     * The user-friendly name for the execution window. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the execution window. The name does not need to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of the execution window. */
+    /**
+     * Description of the execution window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the execution window.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS,
-     * FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
-     */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED,
+     * UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
+     *
+     **/
+    public enum LifecycleState {
         Created("CREATED"),
         Scheduled("SCHEDULED"),
         InProgress("IN_PROGRESS"),
@@ -639,8 +631,8 @@ public final class ExecutionWindowSummary
         Deleting("DELETING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -680,35 +672,36 @@ public final class ExecutionWindowSummary
         }
     };
     /**
-     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS,
-     * FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
-     */
+     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED,
+     * UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS,
-     * FAILED, CANCELED, UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
+     * The current state of the Schedule Policy. Valid states are CREATED, SCHEDULED, IN_PROGRESS, FAILED, CANCELED,
+     * UPDATING, DELETED, SUCCEEDED and PARTIAL_SUCCESS.
      *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED,
-     * MAINTENANCE_IN_PROGRESS and WAITING.
-     */
-    public enum LifecycleSubstate implements com.oracle.bmc.http.internal.BmcEnum {
+     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+     *
+     **/
+    public enum LifecycleSubstate {
         DurationExceeded("DURATION_EXCEEDED"),
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
         Waiting("WAITING"),
         Rescheduled("RESCHEDULED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -748,168 +741,173 @@ public final class ExecutionWindowSummary
         }
     };
     /**
-     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED,
-     * MAINTENANCE_IN_PROGRESS and WAITING.
-     */
+     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubstate")
     private final LifecycleSubstate lifecycleSubstate;
 
     /**
-     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED,
-     * MAINTENANCE_IN_PROGRESS and WAITING.
+     * The current sub-state of the execution window. Valid states are DURATION_EXCEEDED, MAINTENANCE_IN_PROGRESS and WAITING.
      *
      * @return the value
-     */
+     **/
     public LifecycleSubstate getLifecycleSubstate() {
         return lifecycleSubstate;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The date and time the execution window was created. */
+    /**
+     * The date and time the execution window was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the execution window was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The last date and time that the execution window was updated. */
+    /**
+     * The last date and time that the execution window was updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The last date and time that the execution window was updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The date and time that the execution window was started. */
+    /**
+     * The date and time that the execution window was started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The date and time that the execution window was started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The date and time that the execution window ended. */
+    /**
+     * The date and time that the execution window ended.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The date and time that the execution window ended.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** The scheduled start date and time of the execution window. */
+    /**
+     * The scheduled start date and time of the execution window.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
      * The scheduled start date and time of the execution window.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeScheduled() {
         return timeScheduled;
     }
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
-     */
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowDurationInMins")
     private final Integer windowDurationInMins;
 
     /**
-     * Duration window allows user to set a duration they plan to allocate for Scheduling window.
-     * The duration is in minutes.
+     * Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
      *
      * @return the value
-     */
+     **/
     public Integer getWindowDurationInMins() {
         return windowDurationInMins;
     }
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     */
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnforcedDuration")
     private final Boolean isEnforcedDuration;
 
     /**
-     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced.
-     * The default value is {@code FALSE}.
-     *
+     * Indicates if duration the user plans to allocate for scheduling window is strictly enforced. The default value is {@code FALSE}.
      * @return the value
-     */
+     **/
     public Boolean getIsEnforcedDuration() {
         return isEnforcedDuration;
     }
 
-    /** The estimated time of the execution window in minutes. */
+    /**
+     * The estimated time of the execution window in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
     private final Integer estimatedTimeInMins;
 
     /**
      * The estimated time of the execution window in minutes.
-     *
      * @return the value
-     */
+     **/
     public Integer getEstimatedTimeInMins() {
         return estimatedTimeInMins;
     }
 
-    /** The total time taken by corresponding resource activity in minutes. */
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
     private final Integer totalTimeTakenInMins;
 
     /**
      * The total time taken by corresponding resource activity in minutes.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalTimeTakenInMins() {
         return totalTimeTakenInMins;
     }
 
-    /** The execution window is of PLANNED or UNPLANNED type. */
-    public enum WindowType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The execution window is of PLANNED or UNPLANNED type.
+     **/
+    public enum WindowType {
         Planned("PLANNED"),
         Unplanned("UNPLANNED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -948,57 +946,56 @@ public final class ExecutionWindowSummary
             return UnknownEnumValue;
         }
     };
-    /** The execution window is of PLANNED or UNPLANNED type. */
+    /**
+     * The execution window is of PLANNED or UNPLANNED type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowType")
     private final WindowType windowType;
 
     /**
      * The execution window is of PLANNED or UNPLANNED type.
-     *
      * @return the value
-     */
+     **/
     public WindowType getWindowType() {
         return windowType;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1010,7 +1007,6 @@ public final class ExecutionWindowSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

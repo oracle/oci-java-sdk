@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort performance tuning analysis reports. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum PerformanceTuningAnalysisResultSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort performance tuning analysis reports.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum PerformanceTuningAnalysisResultSortBy {
     TimeCreated("timeCreated"),
     ManagedInstanceId("managedInstanceId"),
     WorkRequestId("workRequestId"),

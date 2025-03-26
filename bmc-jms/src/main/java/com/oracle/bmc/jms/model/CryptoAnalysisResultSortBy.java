@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field used to sort Crypto event analysis reports. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum CryptoAnalysisResultSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field used to sort Crypto event analysis reports.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum CryptoAnalysisResultSortBy {
     TimeCreated("timeCreated"),
     ManagedInstanceId("managedInstanceId"),
     WorkRequestId("workRequestId"),

@@ -5,34 +5,35 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Mask recognized PII entities with different modes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Mask recognized PII entities with different modes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "mode",
-        defaultImpl = PiiEntityMasking.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "mode",
+    defaultImpl = PiiEntityMasking.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PiiEntityReplace.class,
-            name = "REPLACE"),
+        value = PiiEntityReplace.class,
+        name = "REPLACE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = PiiEntityRemove.class,
-            name = "REMOVE"),
+        value = PiiEntityRemove.class,
+        name = "REMOVE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = PiiEntityMask.class, name = "MASK")
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class PiiEntityMasking extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"exclude", "shouldDetect"})
     protected PiiEntityMasking(java.util.List<String> exclude, Boolean shouldDetect) {
@@ -41,28 +42,30 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
         this.shouldDetect = shouldDetect;
     }
 
-    /** List of offsets/entities to be removed from anonymization. */
+    /**
+     * List of offsets/entities to be removed from anonymization.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exclude")
     private final java.util.List<String> exclude;
 
     /**
      * List of offsets/entities to be removed from anonymization.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExclude() {
         return exclude;
     }
 
-    /** To include excluded entities from masking in detected entities or not. */
+    /**
+     * To include excluded entities from masking in detected entities or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldDetect")
     private final Boolean shouldDetect;
 
     /**
      * To include excluded entities from masking in detected entities or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldDetect() {
         return shouldDetect;
     }
@@ -74,7 +77,6 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -113,8 +115,10 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
         return result;
     }
 
-    /** The type of masking mode. */
-    public enum Mode implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of masking mode.
+     **/
+    public enum Mode {
         Replace("REPLACE"),
         Mask("MASK"),
         Remove("REMOVE"),

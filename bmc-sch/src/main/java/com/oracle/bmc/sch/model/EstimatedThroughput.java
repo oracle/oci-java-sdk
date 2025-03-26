@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.sch.model;
 
-/** The estimated throughput range (LOW, MEDIUM, HIGH) */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
-public enum EstimatedThroughput implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The estimated throughput range (LOW, MEDIUM, HIGH)
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+public enum EstimatedThroughput {
     Low("LOW"),
     Medium("MEDIUM"),
     High("HIGH"),

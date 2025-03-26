@@ -5,23 +5,21 @@
 package com.oracle.bmc.dblm.model;
 
 /**
- * Notifications <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
+ * Notifications
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240102")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NotificationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NotificationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = NotificationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NotificationSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "notificationType",
@@ -43,61 +41,65 @@ public final class NotificationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Notification type */
+        /**
+         * Notification type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
         private NotificationType notificationType;
 
         /**
          * Notification type
-         *
          * @param notificationType the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationType(NotificationType notificationType) {
             this.notificationType = notificationType;
             this.__explicitlySet__.add("notificationType");
             return this;
         }
-        /** Notification text */
+        /**
+         * Notification text
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationText")
         private String notificationText;
 
         /**
          * Notification text
-         *
          * @param notificationText the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationText(String notificationText) {
             this.notificationText = notificationText;
             this.__explicitlySet__.add("notificationText");
             return this;
         }
-        /** Notification identifier. */
+        /**
+         * Notification identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Notification identifier.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Published date */
+        /**
+         * Published date
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
         private java.util.Date timePublished;
 
         /**
          * Published date
-         *
          * @param timePublished the value to set
          * @return this builder
-         */
+         **/
         public Builder timePublished(java.util.Date timePublished) {
             this.timePublished = timePublished;
             this.__explicitlySet__.add("timePublished");
@@ -138,7 +140,9 @@ public final class NotificationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,15 +151,17 @@ public final class NotificationSummary
         return new Builder().copy(this);
     }
 
-    /** Notification type */
-    public enum NotificationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Notification type
+     **/
+    public enum NotificationType {
         Cve("CVE"),
         Advisory("ADVISORY"),
         Patch("PATCH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -194,54 +200,58 @@ public final class NotificationSummary
             return UnknownEnumValue;
         }
     };
-    /** Notification type */
+    /**
+     * Notification type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationType")
     private final NotificationType notificationType;
 
     /**
      * Notification type
-     *
      * @return the value
-     */
+     **/
     public NotificationType getNotificationType() {
         return notificationType;
     }
 
-    /** Notification text */
+    /**
+     * Notification text
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationText")
     private final String notificationText;
 
     /**
      * Notification text
-     *
      * @return the value
-     */
+     **/
     public String getNotificationText() {
         return notificationText;
     }
 
-    /** Notification identifier. */
+    /**
+     * Notification identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Notification identifier.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Published date */
+    /**
+     * Published date
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePublished")
     private final java.util.Date timePublished;
 
     /**
      * Published date
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePublished() {
         return timePublished;
     }
@@ -253,7 +263,6 @@ public final class NotificationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

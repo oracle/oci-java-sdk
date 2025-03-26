@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of the On-premise vantage point worker. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OnPremiseVantagePointWorkerType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of the On-premise vantage point worker.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OnPremiseVantagePointWorkerType {
     Docker("DOCKER"),
 
     /**

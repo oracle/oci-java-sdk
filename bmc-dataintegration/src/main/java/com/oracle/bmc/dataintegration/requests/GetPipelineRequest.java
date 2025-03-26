@@ -6,63 +6,57 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPipelineRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/GetPipelineExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetPipelineRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     private String workspaceId;
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /** The pipeline key. */
+    /**
+     * The pipeline key.
+     */
     private String pipelineKey;
 
-    /** The pipeline key. */
+    /**
+     * The pipeline key.
+     */
     public String getPipelineKey() {
         return pipelineKey;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Used to expand references of the object. If value is true, then all referenced objects are
-     * expanded. If value is false, then shallow objects are returned in place of references.
-     * Default is false. <br>
-     * <br>
-     * <B>Example:</B><br>
-     *
-     * <ul>
-     *   <li><B>?expandReferences=true</B> returns all objects of type data loader task
-     * </ul>
+     * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
      */
     private String expandReferences;
 
     /**
-     * Used to expand references of the object. If value is true, then all referenced objects are
-     * expanded. If value is false, then shallow objects are returned in place of references.
-     * Default is false. <br>
-     * <br>
-     * <B>Example:</B><br>
-     *
-     * <ul>
-     *   <li><B>?expandReferences=true</B> returns all objects of type data loader task
-     * </ul>
+     * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
      */
     public String getExpandReferences() {
         return expandReferences;
@@ -71,15 +65,17 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetPipelineRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The workspace ID. */
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
-         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -88,12 +84,13 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The pipeline key. */
+        /**
+         * The pipeline key.
+         */
         private String pipelineKey = null;
 
         /**
          * The pipeline key.
-         *
          * @param pipelineKey the value to set
          * @return this builder instance
          */
@@ -103,14 +100,17 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -121,29 +121,12 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Used to expand references of the object. If value is true, then all referenced objects
-         * are expanded. If value is false, then shallow objects are returned in place of
-         * references. Default is false. <br>
-         * <br>
-         * <B>Example:</B><br>
-         *
-         * <ul>
-         *   <li><B>?expandReferences=true</B> returns all objects of type data loader task
-         * </ul>
+         * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
          */
         private String expandReferences = null;
 
         /**
-         * Used to expand references of the object. If value is true, then all referenced objects
-         * are expanded. If value is false, then shallow objects are returned in place of
-         * references. Default is false. <br>
-         * <br>
-         * <B>Example:</B><br>
-         *
-         * <ul>
-         *   <li><B>?expandReferences=true</B> returns all objects of type data loader task
-         * </ul>
-         *
+         * Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
          * @param expandReferences the value to set
          * @return this builder instance
          */
@@ -154,19 +137,18 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -178,7 +160,6 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetPipelineRequest o) {
@@ -194,11 +175,10 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetPipelineRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetPipelineRequest
          */
@@ -212,8 +192,7 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetPipelineRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetPipelineRequest
@@ -231,7 +210,6 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,7 +222,6 @@ public class GetPipelineRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

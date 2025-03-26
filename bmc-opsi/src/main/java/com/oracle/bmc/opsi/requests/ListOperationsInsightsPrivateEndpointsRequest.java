@@ -6,51 +6,52 @@ package com.oracle.bmc.opsi.requests;
 
 import com.oracle.bmc.opsi.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsPrivateEndpointsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListOperationsInsightsPrivateEndpointsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/ListOperationsInsightsPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListOperationsInsightsPrivateEndpointsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class ListOperationsInsightsPrivateEndpointsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources that match the entire display name. */
+    /**
+     * A filter to return only resources that match the entire display name.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name. */
+    /**
+     * A filter to return only resources that match the entire display name.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** Unique Operations Insights PrivateEndpoint identifier */
+    /**
+     * Unique Operations Insights PrivateEndpoint identifier
+     */
     private String opsiPrivateEndpointId;
 
-    /** Unique Operations Insights PrivateEndpoint identifier */
+    /**
+     * Unique Operations Insights PrivateEndpoint identifier
+     */
     public String getOpsiPrivateEndpointId() {
         return opsiPrivateEndpointId;
     }
     /**
-     * The option to filter OPSI private endpoints that can used for RAC. Should be used along with
-     * vcnId query parameter.
+     * The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
      */
     private Boolean isUsedForRacDbs;
 
     /**
-     * The option to filter OPSI private endpoints that can used for RAC. Should be used along with
-     * vcnId query parameter.
+     * The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
      */
     public Boolean getIsUsedForRacDbs() {
         return isUsedForRacDbs;
@@ -66,60 +67,82 @@ public class ListOperationsInsightsPrivateEndpointsRequest
     public String getVcnId() {
         return vcnId;
     }
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     private java.util.List<
                     com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState>
             lifecycleState;
 
-    /** Lifecycle states */
+    /**
+     * Lifecycle states
+     */
     public java.util.List<com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState>
             getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine). Example:
-     * {@code 50}
+     * For list pagination. The maximum number of results per page, or items to
+     * return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Example: {@code 50}
+     *
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from
+     * the previous "List" call. For important details about how pagination works,
+     * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private com.oracle.bmc.opsi.model.SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public com.oracle.bmc.opsi.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort private endpoints. */
+    /**
+     * The field to sort private endpoints.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort private endpoints. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort private endpoints.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         Id("id"),
         DisplayName("displayName"),
@@ -153,26 +176,37 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
     };
 
-    /** The field to sort private endpoints. */
+    /**
+     * The field to sort private endpoints.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     private Boolean compartmentIdInSubtree;
 
-    /** A flag to search all resources within a given compartment and all sub-compartments. */
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -181,19 +215,17 @@ public class ListOperationsInsightsPrivateEndpointsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListOperationsInsightsPrivateEndpointsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -202,12 +234,13 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name. */
+        /**
+         * A filter to return only resources that match the entire display name.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -216,12 +249,13 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** Unique Operations Insights PrivateEndpoint identifier */
+        /**
+         * Unique Operations Insights PrivateEndpoint identifier
+         */
         private String opsiPrivateEndpointId = null;
 
         /**
          * Unique Operations Insights PrivateEndpoint identifier
-         *
          * @param opsiPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -231,15 +265,12 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * The option to filter OPSI private endpoints that can used for RAC. Should be used along
-         * with vcnId query parameter.
+         * The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
          */
         private Boolean isUsedForRacDbs = null;
 
         /**
-         * The option to filter OPSI private endpoints that can used for RAC. Should be used along
-         * with vcnId query parameter.
-         *
+         * The option to filter OPSI private endpoints that can used for RAC. Should be used along with vcnId query parameter.
          * @param isUsedForRacDbs the value to set
          * @return this builder instance
          */
@@ -249,15 +280,12 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          */
         private String vcnId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * @param vcnId the value to set
          * @return this builder instance
          */
@@ -266,14 +294,15 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** Lifecycle states */
+        /**
+         * Lifecycle states
+         */
         private java.util.List<
                         com.oracle.bmc.opsi.model.OperationsInsightsPrivateEndpointLifecycleState>
                 lifecycleState = null;
 
         /**
          * Lifecycle states
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -288,7 +317,6 @@ public class ListOperationsInsightsPrivateEndpointsRequest
 
         /**
          * Singular setter. Lifecycle states
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -298,17 +326,20 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to
+         * return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * Example: {@code 50}
          *
          * @param limit the value to set
@@ -320,16 +351,17 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from
+         * the previous "List" call. For important details about how pagination works,
+         * see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -339,7 +371,10 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private com.oracle.bmc.opsi.model.SortOrder sortOrder = null;
 
         /**
@@ -353,7 +388,10 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** The field to sort private endpoints. */
+        /**
+         * The field to sort private endpoints.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -367,7 +405,10 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             return this;
         }
 
-        /** A flag to search all resources within a given compartment and all sub-compartments. */
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
         private Boolean compartmentIdInSubtree = null;
 
         /**
@@ -382,14 +423,15 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -401,19 +443,18 @@ public class ListOperationsInsightsPrivateEndpointsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -425,7 +466,6 @@ public class ListOperationsInsightsPrivateEndpointsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListOperationsInsightsPrivateEndpointsRequest o) {
@@ -447,14 +487,12 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * Build the instance of ListOperationsInsightsPrivateEndpointsRequest as configured by this
-         * builder
+         * Build the instance of ListOperationsInsightsPrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListOperationsInsightsPrivateEndpointsRequest
          */
@@ -467,11 +505,9 @@ public class ListOperationsInsightsPrivateEndpointsRequest
         }
 
         /**
-         * Build the instance of ListOperationsInsightsPrivateEndpointsRequest as configured by this
-         * builder
+         * Build the instance of ListOperationsInsightsPrivateEndpointsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListOperationsInsightsPrivateEndpointsRequest
@@ -492,15 +528,12 @@ public class ListOperationsInsightsPrivateEndpointsRequest
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListOperationsInsightsPrivateEndpointsRequest(compartmentId, displayName,
-            // opsiPrivateEndpointId, isUsedForRacDbs, vcnId, lifecycleState, limit, page,
-            // sortOrder, sortBy, compartmentIdInSubtree, opcRequestId);
+            // new ListOperationsInsightsPrivateEndpointsRequest(compartmentId, displayName, opsiPrivateEndpointId, isUsedForRacDbs, vcnId, lifecycleState, limit, page, sortOrder, sortBy, compartmentIdInSubtree, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -521,7 +554,6 @@ public class ListOperationsInsightsPrivateEndpointsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

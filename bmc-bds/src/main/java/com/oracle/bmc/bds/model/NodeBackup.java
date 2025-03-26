@@ -5,21 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the Node's backup. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the Node's backup.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeBackup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NodeBackup extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NodeBackup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -56,148 +54,145 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The id of the node backup. */
+        /**
+         * The id of the node backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The id of the node backup.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** BDS generated name for the backup. Format is nodeHostName_timeCreated */
+        /**
+         * BDS generated name for the backup. Format is nodeHostName_timeCreated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * BDS generated name for the backup. Format is nodeHostName_timeCreated
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The instance OCID of the node, which is the resource from which the node backup was
-         * acquired.
-         */
+         * The instance OCID of the node, which is the resource from which the node backup was acquired.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeInstanceId")
         private String nodeInstanceId;
 
         /**
-         * The instance OCID of the node, which is the resource from which the node backup was
-         * acquired.
-         *
+         * The instance OCID of the node, which is the resource from which the node backup was acquired.
          * @param nodeInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeInstanceId(String nodeInstanceId) {
             this.nodeInstanceId = nodeInstanceId;
             this.__explicitlySet__.add("nodeInstanceId");
             return this;
         }
-        /** Host name of the node to which this backup belongs. */
+        /**
+         * Host name of the node to which this backup belongs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeHostName")
         private String nodeHostName;
 
         /**
          * Host name of the node to which this backup belongs.
-         *
          * @param nodeHostName the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeHostName(String nodeHostName) {
             this.nodeHostName = nodeHostName;
             this.__explicitlySet__.add("nodeHostName");
             return this;
         }
-        /** type based on how backup action was initiated. */
+        /**
+         * type based on how backup action was initiated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupTriggerType")
         private BackupTriggerType backupTriggerType;
 
         /**
          * type based on how backup action was initiated.
-         *
          * @param backupTriggerType the value to set
          * @return this builder
-         */
+         **/
         public Builder backupTriggerType(BackupTriggerType backupTriggerType) {
             this.backupTriggerType = backupTriggerType;
             this.__explicitlySet__.add("backupTriggerType");
             return this;
         }
         /**
-         * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by
-         * applying the configuration.
-         */
+         * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupConfigId")
         private String nodeBackupConfigId;
 
         /**
-         * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by
-         * applying the configuration.
-         *
+         * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
          * @param nodeBackupConfigId the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeBackupConfigId(String nodeBackupConfigId) {
             this.nodeBackupConfigId = nodeBackupConfigId;
             this.__explicitlySet__.add("nodeBackupConfigId");
             return this;
         }
         /**
-         * Incremental backup type includes only the changes since the last backup. Full backup type
-         * includes all changes since the volume was created.
-         */
+         * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private BackupType backupType;
 
         /**
-         * Incremental backup type includes only the changes since the last backup. Full backup type
-         * includes all changes since the volume was created.
-         *
+         * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
          * @param backupType the value to set
          * @return this builder
-         */
+         **/
         public Builder backupType(BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
-        /** The state of the NodeBackup. */
+        /**
+         * The state of the NodeBackup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The state of the NodeBackup.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -258,7 +253,9 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -267,68 +264,72 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The id of the node backup. */
+    /**
+     * The id of the node backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The id of the node backup.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** BDS generated name for the backup. Format is nodeHostName_timeCreated */
+    /**
+     * BDS generated name for the backup. Format is nodeHostName_timeCreated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * BDS generated name for the backup. Format is nodeHostName_timeCreated
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The instance OCID of the node, which is the resource from which the node backup was acquired.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeInstanceId")
     private final String nodeInstanceId;
 
     /**
      * The instance OCID of the node, which is the resource from which the node backup was acquired.
-     *
      * @return the value
-     */
+     **/
     public String getNodeInstanceId() {
         return nodeInstanceId;
     }
 
-    /** Host name of the node to which this backup belongs. */
+    /**
+     * Host name of the node to which this backup belongs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeHostName")
     private final String nodeHostName;
 
     /**
      * Host name of the node to which this backup belongs.
-     *
      * @return the value
-     */
+     **/
     public String getNodeHostName() {
         return nodeHostName;
     }
 
-    /** type based on how backup action was initiated. */
-    public enum BackupTriggerType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * type based on how backup action was initiated.
+     **/
+    public enum BackupTriggerType {
         Manual("MANUAL"),
         Scheduled("SCHEDULED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -367,47 +368,44 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** type based on how backup action was initiated. */
+    /**
+     * type based on how backup action was initiated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupTriggerType")
     private final BackupTriggerType backupTriggerType;
 
     /**
      * type based on how backup action was initiated.
-     *
      * @return the value
-     */
+     **/
     public BackupTriggerType getBackupTriggerType() {
         return backupTriggerType;
     }
 
     /**
-     * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying
-     * the configuration.
-     */
+     * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeBackupConfigId")
     private final String nodeBackupConfigId;
 
     /**
-     * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying
-     * the configuration.
-     *
+     * The ID of the nodeBackupConfiguration if the NodeBackup is automatically created by applying the configuration.
      * @return the value
-     */
+     **/
     public String getNodeBackupConfigId() {
         return nodeBackupConfigId;
     }
 
     /**
-     * Incremental backup type includes only the changes since the last backup. Full backup type
-     * includes all changes since the volume was created.
-     */
-    public enum BackupType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+     **/
+    public enum BackupType {
         Full("FULL"),
         Incremental("INCREMENTAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -447,24 +445,23 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
         }
     };
     /**
-     * Incremental backup type includes only the changes since the last backup. Full backup type
-     * includes all changes since the volume was created.
-     */
+     * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final BackupType backupType;
 
     /**
-     * Incremental backup type includes only the changes since the last backup. Full backup type
-     * includes all changes since the volume was created.
-     *
+     * Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.
      * @return the value
-     */
+     **/
     public BackupType getBackupType() {
         return backupType;
     }
 
-    /** The state of the NodeBackup. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of the NodeBackup.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
         Updating("UPDATING"),
@@ -474,8 +471,8 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
         Partial("PARTIAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -514,28 +511,30 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The state of the NodeBackup. */
+    /**
+     * The state of the NodeBackup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The state of the NodeBackup.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** The time the cluster was created, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the cluster was created, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -547,7 +546,6 @@ public final class NodeBackup extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

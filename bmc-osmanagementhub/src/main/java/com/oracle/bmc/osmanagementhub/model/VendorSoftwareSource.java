@@ -5,27 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The object that defines a vendor software source. A software source is a collection of packages.
- * For more information, see [Managing Software
- * Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The object that defines a vendor software source. A software source is a collection of packages. For more information, see [Managing Software Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VendorSoftwareSource.Builder.class)
+    builder = VendorSoftwareSource.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VendorSoftwareSource extends SoftwareSource {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -218,52 +216,49 @@ public final class VendorSoftwareSource extends SoftwareSource {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Name of the vendor providing the software source. */
+        /**
+         * Name of the vendor providing the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
         private VendorName vendorName;
 
         /**
          * Name of the vendor providing the software source.
-         *
          * @param vendorName the value to set
          * @return this builder
-         */
+         **/
         public Builder vendorName(VendorName vendorName) {
             this.vendorName = vendorName;
             this.__explicitlySet__.add("vendorName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * vendor software source in the root compartment. This property applies only to replicated
-         * vendor software sources.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
         private String originSoftwareSourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * vendor software source in the root compartment. This property applies only to replicated
-         * vendor software sources.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
          * @param originSoftwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder originSoftwareSourceId(String originSoftwareSourceId) {
             this.originSoftwareSourceId = originSoftwareSourceId;
             this.__explicitlySet__.add("originSoftwareSourceId");
             return this;
         }
-        /** Indicates whether the software source is required for the Autonomous Linux service. */
+        /**
+         * Indicates whether the software source is required for the Autonomous Linux service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
         private Boolean isMandatoryForAutonomousLinux;
 
         /**
          * Indicates whether the software source is required for the Autonomous Linux service.
-         *
          * @param isMandatoryForAutonomousLinux the value to set
          * @return this builder
-         */
+         **/
         public Builder isMandatoryForAutonomousLinux(Boolean isMandatoryForAutonomousLinux) {
             this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
             this.__explicitlySet__.add("isMandatoryForAutonomousLinux");
@@ -384,7 +379,9 @@ public final class VendorSoftwareSource extends SoftwareSource {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -446,47 +443,44 @@ public final class VendorSoftwareSource extends SoftwareSource {
         this.isMandatoryForAutonomousLinux = isMandatoryForAutonomousLinux;
     }
 
-    /** Name of the vendor providing the software source. */
+    /**
+     * Name of the vendor providing the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorName")
     private final VendorName vendorName;
 
     /**
      * Name of the vendor providing the software source.
-     *
      * @return the value
-     */
+     **/
     public VendorName getVendorName() {
         return vendorName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source in the root compartment. This property applies only to replicated
-     * vendor software sources.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("originSoftwareSourceId")
     private final String originSoftwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * vendor software source in the root compartment. This property applies only to replicated
-     * vendor software sources.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vendor software source in the root compartment. This property applies only to replicated vendor software sources.
      * @return the value
-     */
+     **/
     public String getOriginSoftwareSourceId() {
         return originSoftwareSourceId;
     }
 
-    /** Indicates whether the software source is required for the Autonomous Linux service. */
+    /**
+     * Indicates whether the software source is required for the Autonomous Linux service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMandatoryForAutonomousLinux")
     private final Boolean isMandatoryForAutonomousLinux;
 
     /**
      * Indicates whether the software source is required for the Autonomous Linux service.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMandatoryForAutonomousLinux() {
         return isMandatoryForAutonomousLinux;
     }
@@ -498,7 +492,6 @@ public final class VendorSoftwareSource extends SoftwareSource {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

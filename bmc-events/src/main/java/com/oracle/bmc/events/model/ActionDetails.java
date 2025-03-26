@@ -5,36 +5,39 @@
 package com.oracle.bmc.events.model;
 
 /**
- * Object used to create an action. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Object used to create an action.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "actionType",
-        defaultImpl = ActionDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "actionType",
+    defaultImpl = ActionDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateStreamingServiceActionDetails.class,
-            name = "OSS"),
+        value = CreateStreamingServiceActionDetails.class,
+        name = "OSS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateFaaSActionDetails.class,
-            name = "FAAS"),
+        value = CreateFaaSActionDetails.class,
+        name = "FAAS"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateNotificationServiceActionDetails.class,
-            name = "ONS")
+        value = CreateNotificationServiceActionDetails.class,
+        name = "ONS"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ActionDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ActionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"isEnabled", "description"})
     protected ActionDetails(Boolean isEnabled, String description) {
@@ -45,36 +48,38 @@ public class ActionDetails extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Whether or not this action is currently enabled.
+     * <p>
+     * Example: {@code true}
      *
-     * <p>Example: {@code true}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Whether or not this action is currently enabled.
-     *
-     * <p>Example: {@code true}
+     * <p>
+     * Example: {@code true}
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * A string that describes the details of the action. It does not have to be unique, and you can
-     * change it. Avoid entering confidential information.
-     */
+     * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering
+     * confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A string that describes the details of the action. It does not have to be unique, and you can
-     * change it. Avoid entering confidential information.
+     * A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering
+     * confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
@@ -86,7 +91,6 @@ public class ActionDetails extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -127,11 +131,13 @@ public class ActionDetails extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * The action to perform if the condition in the rule matches an event.
+     * <p>
+     * **ONS:** Send to an Oracle Notification Service topic.
+     * * **OSS:** Send to a stream from Oracle Streaming Service.
+     * * **FAAS:** Send to an Oracle Functions Service endpoint.
      *
-     * <p>**ONS:** Send to an Oracle Notification Service topic. * **OSS:** Send to a stream from
-     * Oracle Streaming Service. * **FAAS:** Send to an Oracle Functions Service endpoint.
-     */
-    public enum ActionType implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum ActionType {
         Ons("ONS"),
         Oss("OSS"),
         Faas("FAAS"),

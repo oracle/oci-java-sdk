@@ -5,12 +5,10 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Type of address List. The accepted values are - * FQDN - An address list which contains Fully
- * Qualified Domain Names as elements. * IP - - An address list which contains IP Addresses as
- * elements.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum AddressListType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Type of address List. The accepted values are - * FQDN - An address list which contains Fully Qualified Domain Names as elements. * IP - - An address list which contains IP Addresses as elements.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum AddressListType {
     Fqdn("FQDN"),
     Ip("IP"),
 

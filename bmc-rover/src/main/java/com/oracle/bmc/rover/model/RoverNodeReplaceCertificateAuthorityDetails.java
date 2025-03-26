@@ -5,23 +5,22 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * The information required to replace a certificate authority details for a roverNode. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * The information required to replace a certificate authority details for a roverNode.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RoverNodeReplaceCertificateAuthorityDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RoverNodeReplaceCertificateAuthorityDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RoverNodeReplaceCertificateAuthorityDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "certificateAuthorityId",
@@ -40,46 +39,49 @@ public final class RoverNodeReplaceCertificateAuthorityDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The certificate authority id. */
+        /**
+         * The certificate authority id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
         private String certificateAuthorityId;
 
         /**
          * The certificate authority id.
-         *
          * @param certificateAuthorityId the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateAuthorityId(String certificateAuthorityId) {
             this.certificateAuthorityId = certificateAuthorityId;
             this.__explicitlySet__.add("certificateAuthorityId");
             return this;
         }
-        /** key algorithm for issuing leaf certificate. */
+        /**
+         * key algorithm for issuing leaf certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
         private CertKeyAlgorithm certKeyAlgorithm;
 
         /**
          * key algorithm for issuing leaf certificate.
-         *
          * @param certKeyAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder certKeyAlgorithm(CertKeyAlgorithm certKeyAlgorithm) {
             this.certKeyAlgorithm = certKeyAlgorithm;
             this.__explicitlySet__.add("certKeyAlgorithm");
             return this;
         }
-        /** signature algorithm for issuing leaf certificate. */
+        /**
+         * signature algorithm for issuing leaf certificate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
         private CertSignatureAlgorithm certSignatureAlgorithm;
 
         /**
          * signature algorithm for issuing leaf certificate.
-         *
          * @param certSignatureAlgorithm the value to set
          * @return this builder
-         */
+         **/
         public Builder certSignatureAlgorithm(CertSignatureAlgorithm certSignatureAlgorithm) {
             this.certSignatureAlgorithm = certSignatureAlgorithm;
             this.__explicitlySet__.add("certSignatureAlgorithm");
@@ -116,7 +118,9 @@ public final class RoverNodeReplaceCertificateAuthorityDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,41 +129,44 @@ public final class RoverNodeReplaceCertificateAuthorityDetails
         return new Builder().copy(this);
     }
 
-    /** The certificate authority id. */
+    /**
+     * The certificate authority id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAuthorityId")
     private final String certificateAuthorityId;
 
     /**
      * The certificate authority id.
-     *
      * @return the value
-     */
+     **/
     public String getCertificateAuthorityId() {
         return certificateAuthorityId;
     }
 
-    /** key algorithm for issuing leaf certificate. */
+    /**
+     * key algorithm for issuing leaf certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certKeyAlgorithm")
     private final CertKeyAlgorithm certKeyAlgorithm;
 
     /**
      * key algorithm for issuing leaf certificate.
-     *
      * @return the value
-     */
+     **/
     public CertKeyAlgorithm getCertKeyAlgorithm() {
         return certKeyAlgorithm;
     }
 
-    /** signature algorithm for issuing leaf certificate. */
+    /**
+     * signature algorithm for issuing leaf certificate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certSignatureAlgorithm")
     private final CertSignatureAlgorithm certSignatureAlgorithm;
 
     /**
      * signature algorithm for issuing leaf certificate.
-     *
      * @return the value
-     */
+     **/
     public CertSignatureAlgorithm getCertSignatureAlgorithm() {
         return certSignatureAlgorithm;
     }
@@ -171,7 +178,6 @@ public final class RoverNodeReplaceCertificateAuthorityDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

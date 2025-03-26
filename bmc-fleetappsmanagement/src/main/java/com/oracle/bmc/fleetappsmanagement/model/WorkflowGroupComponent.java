@@ -5,53 +5,59 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Workflow Group Component Details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Workflow Group Component Details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = WorkflowGroupComponent.Builder.class)
+    builder = WorkflowGroupComponent.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class WorkflowGroupComponent extends WorkflowComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the group. */
+        /**
+         * Name of the group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
          * Name of the group.
-         *
          * @param groupName the value to set
          * @return this builder
-         */
+         **/
         public Builder groupName(String groupName) {
             this.groupName = groupName;
             this.__explicitlySet__.add("groupName");
             return this;
         }
-        /** Tasks within the Group. Provide the stepName for all applicable tasks. */
+        /**
+         * Tasks within the Group.
+         * Provide the stepName for all applicable tasks.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<String> steps;
 
         /**
-         * Tasks within the Group. Provide the stepName for all applicable tasks.
+         * Tasks within the Group.
+         * Provide the stepName for all applicable tasks.
          *
          * @param steps the value to set
          * @return this builder
-         */
+         **/
         public Builder steps(java.util.List<String> steps) {
             this.steps = steps;
             this.__explicitlySet__.add("steps");
@@ -81,7 +87,9 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -97,28 +105,34 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
         this.steps = steps;
     }
 
-    /** Name of the group. */
+    /**
+     * Name of the group.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
      * Name of the group.
-     *
      * @return the value
-     */
+     **/
     public String getGroupName() {
         return groupName;
     }
 
-    /** Tasks within the Group. Provide the stepName for all applicable tasks. */
+    /**
+     * Tasks within the Group.
+     * Provide the stepName for all applicable tasks.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<String> steps;
 
     /**
-     * Tasks within the Group. Provide the stepName for all applicable tasks.
+     * Tasks within the Group.
+     * Provide the stepName for all applicable tasks.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getSteps() {
         return steps;
     }
@@ -130,7 +144,6 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

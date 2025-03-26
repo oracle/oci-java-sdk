@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The two strings to compare. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The two strings to compare.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CompareContentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CompareContentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CompareContentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"content1", "content2"})
     public CompareContentDetails(String content1, String content2) {
@@ -32,31 +31,33 @@ public final class CompareContentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The first of two strings to compare. */
+        /**
+         * The first of two strings to compare.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content1")
         private String content1;
 
         /**
          * The first of two strings to compare.
-         *
          * @param content1 the value to set
          * @return this builder
-         */
+         **/
         public Builder content1(String content1) {
             this.content1 = content1;
             this.__explicitlySet__.add("content1");
             return this;
         }
-        /** The second of two strings to compare. */
+        /**
+         * The second of two strings to compare.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content2")
         private String content2;
 
         /**
          * The second of two strings to compare.
-         *
          * @param content2 the value to set
          * @return this builder
-         */
+         **/
         public Builder content2(String content2) {
             this.content2 = content2;
             this.__explicitlySet__.add("content2");
@@ -86,7 +87,9 @@ public final class CompareContentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +98,30 @@ public final class CompareContentDetails
         return new Builder().copy(this);
     }
 
-    /** The first of two strings to compare. */
+    /**
+     * The first of two strings to compare.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content1")
     private final String content1;
 
     /**
      * The first of two strings to compare.
-     *
      * @return the value
-     */
+     **/
     public String getContent1() {
         return content1;
     }
 
-    /** The second of two strings to compare. */
+    /**
+     * The second of two strings to compare.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content2")
     private final String content2;
 
     /**
      * The second of two strings to compare.
-     *
      * @return the value
-     */
+     **/
     public String getContent2() {
         return content2;
     }
@@ -128,7 +133,6 @@ public final class CompareContentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

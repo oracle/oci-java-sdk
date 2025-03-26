@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The type of the test to be performed. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum TestConnectionAssignmentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of the test to be performed.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum TestConnectionAssignmentType {
     Default("DEFAULT"),
     ;
 

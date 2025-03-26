@@ -5,24 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The task lineage object provides information on the lineage information of a task after
- * execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The task lineage object provides information on the lineage information of a task after execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TaskRunLineageDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TaskRunLineageDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TaskRunLineageDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -74,46 +72,49 @@ public final class TaskRunLineageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The object key. */
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * The object key.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The object type. */
+        /**
+         * The object type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelType")
         private String modelType;
 
         /**
          * The object type.
-         *
          * @param modelType the value to set
          * @return this builder
-         */
+         **/
         public Builder modelType(String modelType) {
             this.modelType = modelType;
             this.__explicitlySet__.add("modelType");
             return this;
         }
-        /** The object's model version. */
+        /**
+         * The object's model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
         private String modelVersion;
 
         /**
          * The object's model version.
-         *
          * @param modelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder modelVersion(String modelVersion) {
             this.modelVersion = modelVersion;
             this.__explicitlySet__.add("modelVersion");
@@ -129,126 +130,128 @@ public final class TaskRunLineageDetails
             return this;
         }
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         */
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Free form text without any restriction on permitted characters. Name can have letters,
-         * numbers, and special characters. The value is editable and is restricted to 1000
-         * characters.
-         *
+         * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Detailed description for the object. */
+        /**
+         * Detailed description for the object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Detailed description for the object.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The version of the object that is used to track changes in the object instance. */
+        /**
+         * The version of the object that is used to track changes in the object instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
         private Integer objectVersion;
 
         /**
          * The version of the object that is used to track changes in the object instance.
-         *
          * @param objectVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectVersion(Integer objectVersion) {
             this.objectVersion = objectVersion;
             this.__explicitlySet__.add("objectVersion");
             return this;
         }
-        /** Task name */
+        /**
+         * Task name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskName")
         private String taskName;
 
         /**
          * Task name
-         *
          * @param taskName the value to set
          * @return this builder
-         */
+         **/
         public Builder taskName(String taskName) {
             this.taskName = taskName;
             this.__explicitlySet__.add("taskName");
             return this;
         }
-        /** Task name */
+        /**
+         * Task name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskType")
         private String taskType;
 
         /**
          * Task name
-         *
          * @param taskType the value to set
          * @return this builder
-         */
+         **/
         public Builder taskType(String taskType) {
             this.taskType = taskType;
             this.__explicitlySet__.add("taskType");
             return this;
         }
-        /** The object key. */
+        /**
+         * The object key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskKey")
         private String taskKey;
 
         /**
          * The object key.
-         *
          * @param taskKey the value to set
          * @return this builder
-         */
+         **/
         public Builder taskKey(String taskKey) {
             this.taskKey = taskKey;
             this.__explicitlySet__.add("taskKey");
             return this;
         }
-        /** This value is used to track if lineage generation for a task is completed or not. */
+        /**
+         * This value is used to track if lineage generation for a task is completed or not.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLineageGenCompleted")
         private Boolean isLineageGenCompleted;
 
         /**
          * This value is used to track if lineage generation for a task is completed or not.
-         *
          * @param isLineageGenCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder isLineageGenCompleted(Boolean isLineageGenCompleted) {
             this.isLineageGenCompleted = isLineageGenCompleted;
             this.__explicitlySet__.add("isLineageGenCompleted");
             return this;
         }
-        /** The status of the task run. */
+        /**
+         * The status of the task run.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskExecutionStatus")
         private TaskExecutionStatus taskExecutionStatus;
 
         /**
          * The status of the task run.
-         *
          * @param taskExecutionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder taskExecutionStatus(TaskExecutionStatus taskExecutionStatus) {
             this.taskExecutionStatus = taskExecutionStatus;
             this.__explicitlySet__.add("taskExecutionStatus");
@@ -347,7 +350,9 @@ public final class TaskRunLineageDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -356,41 +361,44 @@ public final class TaskRunLineageDetails
         return new Builder().copy(this);
     }
 
-    /** The object key. */
+    /**
+     * The object key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * The object key.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The object type. */
+    /**
+     * The object type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelType")
     private final String modelType;
 
     /**
      * The object type.
-     *
      * @return the value
-     */
+     **/
     public String getModelType() {
         return modelType;
     }
 
-    /** The object's model version. */
+    /**
+     * The object's model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersion")
     private final String modelVersion;
 
     /**
      * The object's model version.
-     *
      * @return the value
-     */
+     **/
     public String getModelVersion() {
         return modelVersion;
     }
@@ -403,114 +411,111 @@ public final class TaskRunLineageDetails
     }
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     */
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Free form text without any restriction on permitted characters. Name can have letters,
-     * numbers, and special characters. The value is editable and is restricted to 1000 characters.
-     *
+     * Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Detailed description for the object. */
+    /**
+     * Detailed description for the object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Detailed description for the object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The version of the object that is used to track changes in the object instance. */
+    /**
+     * The version of the object that is used to track changes in the object instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectVersion")
     private final Integer objectVersion;
 
     /**
      * The version of the object that is used to track changes in the object instance.
-     *
      * @return the value
-     */
+     **/
     public Integer getObjectVersion() {
         return objectVersion;
     }
 
-    /** Task name */
+    /**
+     * Task name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskName")
     private final String taskName;
 
     /**
      * Task name
-     *
      * @return the value
-     */
+     **/
     public String getTaskName() {
         return taskName;
     }
 
-    /** Task name */
+    /**
+     * Task name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskType")
     private final String taskType;
 
     /**
      * Task name
-     *
      * @return the value
-     */
+     **/
     public String getTaskType() {
         return taskType;
     }
 
-    /** The object key. */
+    /**
+     * The object key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskKey")
     private final String taskKey;
 
     /**
      * The object key.
-     *
      * @return the value
-     */
+     **/
     public String getTaskKey() {
         return taskKey;
     }
 
-    /** This value is used to track if lineage generation for a task is completed or not. */
+    /**
+     * This value is used to track if lineage generation for a task is completed or not.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLineageGenCompleted")
     private final Boolean isLineageGenCompleted;
 
     /**
      * This value is used to track if lineage generation for a task is completed or not.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLineageGenCompleted() {
         return isLineageGenCompleted;
     }
 
-    /** The status of the task run. */
-    public enum TaskExecutionStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the task run.
+     **/
+    public enum TaskExecutionStatus {
         Success("SUCCESS"),
         Error("ERROR"),
         Terminated("TERMINATED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(TaskExecutionStatus.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, TaskExecutionStatus> map;
@@ -518,9 +523,7 @@ public final class TaskRunLineageDetails
         static {
             map = new java.util.HashMap<>();
             for (TaskExecutionStatus v : TaskExecutionStatus.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -538,21 +541,19 @@ public final class TaskRunLineageDetails
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'TaskExecutionStatus', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid TaskExecutionStatus: " + key);
         }
     };
-    /** The status of the task run. */
+    /**
+     * The status of the task run.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskExecutionStatus")
     private final TaskExecutionStatus taskExecutionStatus;
 
     /**
      * The status of the task run.
-     *
      * @return the value
-     */
+     **/
     public TaskExecutionStatus getTaskExecutionStatus() {
         return taskExecutionStatus;
     }
@@ -578,7 +579,6 @@ public final class TaskRunLineageDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

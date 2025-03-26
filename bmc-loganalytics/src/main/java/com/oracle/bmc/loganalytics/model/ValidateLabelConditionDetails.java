@@ -5,23 +5,22 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Required information needed to evaluate a source label condition. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Required information needed to evaluate a source label condition.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ValidateLabelConditionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ValidateLabelConditionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ValidateLabelConditionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"conditionString", "conditionBlock", "fieldValues"})
     public ValidateLabelConditionDetails(
@@ -36,16 +35,17 @@ public final class ValidateLabelConditionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** String representation of the label condition to validate. */
+        /**
+         * String representation of the label condition to validate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
         private String conditionString;
 
         /**
          * String representation of the label condition to validate.
-         *
          * @param conditionString the value to set
          * @return this builder
-         */
+         **/
         public Builder conditionString(String conditionString) {
             this.conditionString = conditionString;
             this.__explicitlySet__.add("conditionString");
@@ -60,16 +60,17 @@ public final class ValidateLabelConditionDetails
             this.__explicitlySet__.add("conditionBlock");
             return this;
         }
-        /** An array of field name-value pairs to evaluate the label condition. */
+        /**
+         * An array of field name-value pairs to evaluate the label condition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
         private java.util.List<LogAnalyticsProperty> fieldValues;
 
         /**
          * An array of field name-value pairs to evaluate the label condition.
-         *
          * @param fieldValues the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldValues(java.util.List<LogAnalyticsProperty> fieldValues) {
             this.fieldValues = fieldValues;
             this.__explicitlySet__.add("fieldValues");
@@ -104,7 +105,9 @@ public final class ValidateLabelConditionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,15 +116,16 @@ public final class ValidateLabelConditionDetails
         return new Builder().copy(this);
     }
 
-    /** String representation of the label condition to validate. */
+    /**
+     * String representation of the label condition to validate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("conditionString")
     private final String conditionString;
 
     /**
      * String representation of the label condition to validate.
-     *
      * @return the value
-     */
+     **/
     public String getConditionString() {
         return conditionString;
     }
@@ -133,15 +137,16 @@ public final class ValidateLabelConditionDetails
         return conditionBlock;
     }
 
-    /** An array of field name-value pairs to evaluate the label condition. */
+    /**
+     * An array of field name-value pairs to evaluate the label condition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldValues")
     private final java.util.List<LogAnalyticsProperty> fieldValues;
 
     /**
      * An array of field name-value pairs to evaluate the label condition.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<LogAnalyticsProperty> getFieldValues() {
         return fieldValues;
     }
@@ -153,7 +158,6 @@ public final class ValidateLabelConditionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

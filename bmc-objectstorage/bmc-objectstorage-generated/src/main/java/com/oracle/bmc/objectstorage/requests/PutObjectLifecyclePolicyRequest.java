@@ -6,76 +6,91 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectLifecyclePolicyExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * PutObjectLifecyclePolicyRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutObjectLifecyclePolicyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class PutObjectLifecyclePolicyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails> {
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     private String namespaceName;
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     public String getBucketName() {
         return bucketName;
     }
-    /** The lifecycle policy to apply to the bucket. */
+    /**
+     * The lifecycle policy to apply to the bucket.
+     */
     private com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails
             putObjectLifecyclePolicyDetails;
 
-    /** The lifecycle policy to apply to the bucket. */
+    /**
+     * The lifecycle policy to apply to the bucket.
+     */
     public com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails
             getPutObjectLifecyclePolicyDetails() {
         return putObjectLifecyclePolicyDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcClientRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     private String ifMatch;
 
     /**
-     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag
-     * matches the ETag of the existing resource, GET and HEAD requests will return the resource and
-     * PUT and POST requests will upload the resource.
+     * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+     * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+     * the resource.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that
-     * the request should fail if the resource already exists.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
+     *
      */
     private String ifNoneMatch;
 
     /**
-     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that
-     * the request should fail if the resource already exists.
+     * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+     * fail if the resource already exists.
+     *
      */
     public String getIfNoneMatch() {
         return ifNoneMatch;
@@ -83,7 +98,6 @@ public class PutObjectLifecyclePolicyRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -96,15 +110,17 @@ public class PutObjectLifecyclePolicyRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     PutObjectLifecyclePolicyRequest,
                     com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Object Storage namespace used for the request. */
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
-         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -114,14 +130,15 @@ public class PutObjectLifecyclePolicyRequest
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -131,13 +148,14 @@ public class PutObjectLifecyclePolicyRequest
             return this;
         }
 
-        /** The lifecycle policy to apply to the bucket. */
+        /**
+         * The lifecycle policy to apply to the bucket.
+         */
         private com.oracle.bmc.objectstorage.model.PutObjectLifecyclePolicyDetails
                 putObjectLifecyclePolicyDetails = null;
 
         /**
          * The lifecycle policy to apply to the bucket.
-         *
          * @param putObjectLifecyclePolicyDetails the value to set
          * @return this builder instance
          */
@@ -148,12 +166,13 @@ public class PutObjectLifecyclePolicyRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -163,16 +182,17 @@ public class PutObjectLifecyclePolicyRequest
         }
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified
-         * ETag matches the ETag of the existing resource, GET and HEAD requests will return the
-         * resource and PUT and POST requests will upload the resource.
+         * The entity tag (ETag) to match with the ETag of an existing resource. If the specified ETag matches the ETag of
+         * the existing resource, GET and HEAD requests will return the resource and PUT and POST requests will upload
+         * the resource.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -183,14 +203,15 @@ public class PutObjectLifecyclePolicyRequest
         }
 
         /**
-         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates
-         * that the request should fail if the resource already exists.
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+         * fail if the resource already exists.
+         *
          */
         private String ifNoneMatch = null;
 
         /**
-         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates
-         * that the request should fail if the resource already exists.
+         * The entity tag (ETag) to avoid matching. The only valid value is '*', which indicates that the request should
+         * fail if the resource already exists.
          *
          * @param ifNoneMatch the value to set
          * @return this builder instance
@@ -202,19 +223,18 @@ public class PutObjectLifecyclePolicyRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -226,7 +246,6 @@ public class PutObjectLifecyclePolicyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(PutObjectLifecyclePolicyRequest o) {
@@ -244,11 +263,10 @@ public class PutObjectLifecyclePolicyRequest
         /**
          * Build the instance of PutObjectLifecyclePolicyRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of PutObjectLifecyclePolicyRequest
          */
@@ -261,7 +279,6 @@ public class PutObjectLifecyclePolicyRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -275,8 +292,7 @@ public class PutObjectLifecyclePolicyRequest
         /**
          * Build the instance of PutObjectLifecyclePolicyRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of PutObjectLifecyclePolicyRequest
@@ -290,14 +306,12 @@ public class PutObjectLifecyclePolicyRequest
             request.ifMatch = ifMatch;
             request.ifNoneMatch = ifNoneMatch;
             return request;
-            // new PutObjectLifecyclePolicyRequest(namespaceName, bucketName,
-            // putObjectLifecyclePolicyDetails, opcClientRequestId, ifMatch, ifNoneMatch);
+            // new PutObjectLifecyclePolicyRequest(namespaceName, bucketName, putObjectLifecyclePolicyDetails, opcClientRequestId, ifMatch, ifNoneMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -312,7 +326,6 @@ public class PutObjectLifecyclePolicyRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -6,46 +6,49 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJfrRecordingsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestJfrRecordingsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestJfrRecordingsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RequestJfrRecordingsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class RequestJfrRecordingsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.jms.model.RequestJfrRecordingsDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** Detail information to start JFR recordings. */
+    /**
+     * Detail information to start JFR recordings.
+     */
     private com.oracle.bmc.jms.model.RequestJfrRecordingsDetails requestJfrRecordingsDetails;
 
-    /** Detail information to start JFR recordings. */
+    /**
+     * Detail information to start JFR recordings.
+     */
     public com.oracle.bmc.jms.model.RequestJfrRecordingsDetails getRequestJfrRecordingsDetails() {
         return requestJfrRecordingsDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -58,19 +61,17 @@ public class RequestJfrRecordingsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RequestJfrRecordingsRequest,
                     com.oracle.bmc.jms.model.RequestJfrRecordingsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -79,13 +80,14 @@ public class RequestJfrRecordingsRequest
             return this;
         }
 
-        /** Detail information to start JFR recordings. */
+        /**
+         * Detail information to start JFR recordings.
+         */
         private com.oracle.bmc.jms.model.RequestJfrRecordingsDetails requestJfrRecordingsDetails =
                 null;
 
         /**
          * Detail information to start JFR recordings.
-         *
          * @param requestJfrRecordingsDetails the value to set
          * @return this builder instance
          */
@@ -95,12 +97,13 @@ public class RequestJfrRecordingsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -111,19 +114,18 @@ public class RequestJfrRecordingsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -135,7 +137,6 @@ public class RequestJfrRecordingsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RequestJfrRecordingsRequest o) {
@@ -150,11 +151,10 @@ public class RequestJfrRecordingsRequest
         /**
          * Build the instance of RequestJfrRecordingsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RequestJfrRecordingsRequest
          */
@@ -167,7 +167,6 @@ public class RequestJfrRecordingsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -180,8 +179,7 @@ public class RequestJfrRecordingsRequest
         /**
          * Build the instance of RequestJfrRecordingsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RequestJfrRecordingsRequest
@@ -198,7 +196,6 @@ public class RequestJfrRecordingsRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -210,7 +207,6 @@ public class RequestJfrRecordingsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

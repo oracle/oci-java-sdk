@@ -5,53 +5,55 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the configuration for TCP protocol parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the configuration for TCP protocol parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TcpProtocolParameters.Builder.class)
+    builder = TcpProtocolParameters.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TcpProtocolParameters extends ProtocolParameters {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The source port to use in a {@code PathAnalyzerTest} resource. */
+        /**
+         * The source port to use in a {@code PathAnalyzerTest} resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcePort")
         private Integer sourcePort;
 
         /**
          * The source port to use in a {@code PathAnalyzerTest} resource.
-         *
          * @param sourcePort the value to set
          * @return this builder
-         */
+         **/
         public Builder sourcePort(Integer sourcePort) {
             this.sourcePort = sourcePort;
             this.__explicitlySet__.add("sourcePort");
             return this;
         }
-        /** The destination port to use in a {@code PathAnalyzerTest} resource. */
+        /**
+         * The destination port to use in a {@code PathAnalyzerTest} resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationPort")
         private Integer destinationPort;
 
         /**
          * The destination port to use in a {@code PathAnalyzerTest} resource.
-         *
          * @param destinationPort the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationPort(Integer destinationPort) {
             this.destinationPort = destinationPort;
             this.__explicitlySet__.add("destinationPort");
@@ -82,7 +84,9 @@ public final class TcpProtocolParameters extends ProtocolParameters {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +102,30 @@ public final class TcpProtocolParameters extends ProtocolParameters {
         this.destinationPort = destinationPort;
     }
 
-    /** The source port to use in a {@code PathAnalyzerTest} resource. */
+    /**
+     * The source port to use in a {@code PathAnalyzerTest} resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePort")
     private final Integer sourcePort;
 
     /**
      * The source port to use in a {@code PathAnalyzerTest} resource.
-     *
      * @return the value
-     */
+     **/
     public Integer getSourcePort() {
         return sourcePort;
     }
 
-    /** The destination port to use in a {@code PathAnalyzerTest} resource. */
+    /**
+     * The destination port to use in a {@code PathAnalyzerTest} resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationPort")
     private final Integer destinationPort;
 
     /**
      * The destination port to use in a {@code PathAnalyzerTest} resource.
-     *
      * @return the value
-     */
+     **/
     public Integer getDestinationPort() {
         return destinationPort;
     }
@@ -131,7 +137,6 @@ public final class TcpProtocolParameters extends ProtocolParameters {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

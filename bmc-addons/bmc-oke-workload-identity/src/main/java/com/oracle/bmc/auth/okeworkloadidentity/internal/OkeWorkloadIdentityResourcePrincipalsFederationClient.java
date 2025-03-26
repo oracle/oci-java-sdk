@@ -4,18 +4,7 @@
  */
 package com.oracle.bmc.auth.okeworkloadidentity.internal;
 
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URI;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.security.KeyPair;
-import java.security.interfaces.RSAPublicKey;
-import java.time.Duration;
-import java.util.Base64;
-import java.util.Collections;
-import java.util.List;
-
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.auth.ServiceAccountTokenSupplier;
 import com.oracle.bmc.auth.SessionKeySupplier;
@@ -25,68 +14,69 @@ import com.oracle.bmc.auth.internal.SecurityTokenAdapter;
 import com.oracle.bmc.auth.internal.X509FederationClient;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.http.ClientConfigurator;
-import com.oracle.bmc.http.Priorities;
-import com.oracle.bmc.http.client.HttpClient;
-import com.oracle.bmc.http.client.HttpClientBuilder;
-import com.oracle.bmc.http.client.HttpProvider;
-import com.oracle.bmc.http.client.Method;
-import com.oracle.bmc.http.client.Serializer;
-import com.oracle.bmc.http.internal.AuthnClientFilter;
-import com.oracle.bmc.http.internal.ClientCall;
-import com.oracle.bmc.http.internal.ClientIdFilter;
-import com.oracle.bmc.http.internal.LogHeadersFilter;
-import com.oracle.bmc.http.signing.RequestSigner;
-import com.oracle.bmc.requests.BmcRequest;
-import com.oracle.bmc.util.internal.StringUtils;
+import com.oracle.bmc.http.internal.ResponseHelper;
+import com.oracle.bmc.http.internal.RestClientFactory;
+import com.oracle.bmc.http.internal.WrappedInvocationBuilder;
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 
+import javax.ws.rs.client.Invocation;
+import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.Response;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.net.URI;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyPair;
+import java.security.interfaces.RSAPublicKey;
+import java.time.Duration;
+
+import static com.oracle.bmc.http.internal.RestClient.generateRequestId;
+
 /**
- * This class gets a security token from the auth service by signing the request with the provided
- * private key.
+ * This class gets a security token from the auth service by signing the request with the provided private key.
  */
 public class OkeWorkloadIdentityResourcePrincipalsFederationClient
         extends AbstractFederationClient {
     private static final Logger LOG =
             org.slf4j.LoggerFactory.getLogger(
                     OkeWorkloadIdentityResourcePrincipalsFederationClient.class);
-    private static final String KUBERNETES_SERVICE_ACCOUNT_TOKEN_PATH =
-            "/var/run/secrets/kubernetes.io/serviceaccount/token";
-    private static final String AUTHORIZATION_HEADER = "Authorization";
+    private final String AUTHORIZATION_HEADER = "Authorization";
     private final String OPC_REQUEST_ID_HEADER = "opc-request-id";
     private static final String JWT_FORMAT = "Bearer %s";
-    private static final String KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST";
-    private static final int PROXYMUX_SERVER_PORT = 12250;
+    private final String KUBERNETES_SERVICE_HOST = "KUBERNETES_SERVICE_HOST";
+    private final int PROXYMUX_SERVER_PORT = 12250;
     private final ServiceAccountTokenSupplier serviceAccountTokenSupplier;
 
-    /** The authentication provider to sign the internal requests. */
+    /**
+     * The authentication provider to sign the internal requests.
+     */
     private final OkeTenancyOnlyAuthenticationDetailsProvider provider;
 
     /**
      * Constructor of OkeWorkloadIdentityResourcePrincipalsFederationClient.
-     *
+     * @param federationEndpoint
      * @param sessionKeySupplier the session key supplier.
-     * @param okeTenancyOnlyAuthenticationDetailsProvider the key pair authentication details
-     *     provider.
+     * @param okeTenancyOnlyAuthenticationDetailsProvider the key pair authentication details provider.
      * @param clientConfigurator the reset client configurator.
      */
     public OkeWorkloadIdentityResourcePrincipalsFederationClient(
+            String federationEndpoint,
             SessionKeySupplier sessionKeySupplier,
             ServiceAccountTokenSupplier serviceAccountTokenSupplier,
             OkeTenancyOnlyAuthenticationDetailsProvider okeTenancyOnlyAuthenticationDetailsProvider,
             ClientConfigurator clientConfigurator,
-            CircuitBreakerConfiguration circuitBreakerConfiguration,
-            List<ClientConfigurator> additionalClientConfigurators) {
+            CircuitBreakerConfiguration circuitBreakerConfiguration) {
 
-        // we don't use a federationEndpoint, therefore blank
+        // we don't use a resourcePrincipalTokenEndpoint, therefore blank
         super(
-                getRptEndpoint(),
                 "",
+                federationEndpoint,
                 sessionKeySupplier,
                 okeTenancyOnlyAuthenticationDetailsProvider,
                 clientConfigurator,
-                circuitBreakerConfiguration,
-                additionalClientConfigurators);
-
+                circuitBreakerConfiguration);
         this.serviceAccountTokenSupplier = serviceAccountTokenSupplier;
         this.provider = okeTenancyOnlyAuthenticationDetailsProvider;
     }
@@ -114,123 +104,92 @@ public class OkeWorkloadIdentityResourcePrincipalsFederationClient
         }
     }
 
-    private static String getRptEndpoint() {
-        // Read proxymux ip address from environment variable.
-        String host = System.getenv().get(KUBERNETES_SERVICE_HOST);
-        if (host == null) {
-            throw new IllegalArgumentException(
-                    "Invalid environment variable KUBERNETES_SERVICE_HOST, please contact OKE Foundation team for help.");
-        }
-
-        // Set proxymux resourcePrincipalSessionTokens endpoint for requesting rpst token
-        return "https://" + host + ":" + PROXYMUX_SERVER_PORT;
-    }
-
-    @Override
-    protected HttpClient makeClient(String endpoint, RequestSigner requestSigner) {
-        if (StringUtils.isBlank(endpoint)) {
-            // this is the case for the federation client, which isn't used in OKE workload identity
-            return null;
-        }
-        HttpClientBuilder rptBuilder =
-                HttpProvider.getDefault()
-                        .newBuilder()
-                        .baseUri(URI.create(endpoint))
-                        .registerRequestInterceptor(
-                                Priorities.AUTHENTICATION,
-                                new AuthnClientFilter(requestSigner, Collections.emptyMap()))
-                        .registerRequestInterceptor(
-                                Priorities.HEADER_DECORATOR, new ClientIdFilter())
-                        .registerRequestInterceptor(Priorities.USER, new LogHeadersFilter());
-        if (clientConfigurator != null) {
-            clientConfigurator.customizeClient(rptBuilder);
-        }
-        for (ClientConfigurator additionalConfigurator : additionalClientConfigurator) {
-            additionalConfigurator.customizeClient(rptBuilder);
-        }
-        return rptBuilder.build();
+    /**
+     * Make a call to get rpst token.
+     * @param ib the invocation builder.
+     * @param requestUri the uri for the getRpst request
+     * @param request the getRpst request.
+     * @return the response for rpst token
+     */
+    protected Response makeCallToOke(
+            Invocation.Builder ib,
+            URI requestUri,
+            GetOkeResourcePrincipalSessionTokenRequest request) {
+        final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
+        return makeCallInner(wrappedIb, request);
     }
 
     /**
      * Gets a security token from the proxymux server
-     *
      * @return the security token, which is basically a JWT token string
      */
     @Override
     protected SecurityTokenAdapter getSecurityTokenFromServer() {
         LOG.info("Getting security token from the proxymux server");
-        // Get service account token.
+        //Get service account token.
         String token = serviceAccountTokenSupplier.getServiceAccountToken();
 
-        // Generate private/public key pair.
+        //Generate private/public key pair.
         KeyPair keyPair = sessionKeySupplier.getKeyPair();
         if (keyPair == null) {
-            throw new IllegalStateException("Key pair for session was not provided");
+            throw new IllegalStateException("Keypair for session was not provided");
         }
         RSAPublicKey publicKey = (RSAPublicKey) keyPair.getPublic();
         if (publicKey == null) {
             throw new IllegalArgumentException("Public key is not present");
         }
-        // generating a full 3 part opc-request-id for rpst call
-        String opcRequestId = ClientCall.generateRequestId();
-        LOG.debug("Request id for resourcePrincipalSessionTokens request: '{}'", opcRequestId);
-
-        GetOkeResourcePrincipalSessionTokenDetails getOkeResourcePrincipalSessionTokenDetails =
-                GetOkeResourcePrincipalSessionTokenDetails.builder()
-                        .podKey(AuthUtils.base64EncodeNoChunking(publicKey))
-                        .build();
-
-        GetOkeResourcePrincipalSessionTokenRequest getOkeResourcePrincipalSessionTokenRequest =
-                GetOkeResourcePrincipalSessionTokenRequest.builder()
-                        .getOkeResourcePrincipalSessionTokenDetails(
-                                getOkeResourcePrincipalSessionTokenDetails)
-                        .build();
-
-        OkeResourcePrincipalSessionToken okeResourcePrincipalSessionToken =
-                ClientCall.builder(
-                                resourcePrincipalTokenClient,
-                                getOkeResourcePrincipalSessionTokenRequest,
-                                GetOkeResourcePrincipalSessionTokenResponse.Builder::new)
-                        .logger(LOG, "OkeWorkloadIdentityResourcePrincipalsTokenClient")
-                        .serviceDetails(
-                                "OkeWorkloadIdentity",
-                                "resourcePrincipalSessionTokens",
-                                "Unknown API reference link")
-                        .method(Method.POST)
-                        .requestBuilder(GetOkeResourcePrincipalSessionTokenRequest::builder)
-                        .appendPathPart("resourcePrincipalSessionTokens")
-                        .accept("application/json")
-                        .appendHeader(AUTHORIZATION_HEADER, String.format(JWT_FORMAT, token))
-                        .appendHeader(OPC_REQUEST_ID_HEADER, opcRequestId)
-                        .hasBody()
-                        .handleBody(
-                                OkeResourcePrincipalSessionToken.class,
-                                GetOkeResourcePrincipalSessionTokenResponse.Builder::body)
-                        .clientConfigurator(clientConfigurator)
-                        .circuitBreaker(circuitBreaker)
-                        .callSync()
-                        .body;
 
         try {
-            // Decode the response and get rpst token.
-            String payload = okeResourcePrincipalSessionToken.getToken();
-            String jsonString = new String(Base64.getDecoder().decode(payload), "UTF-8");
+            // Read proxymux ip address from environment variable.
+            String host = System.getenv().get(KUBERNETES_SERVICE_HOST);
+            if (host == null) {
+                throw new IllegalArgumentException(
+                        "Invalid environment variable KUBERNETES_SERVICE_HOST, please contact OKE Foundation team for help.");
+            }
 
-            Serializer serializer = Serializer.getDefault();
-            OkeResourcePrincipalSessionToken decoded =
-                    serializer.readValue(jsonString, OkeResourcePrincipalSessionToken.class);
+            // Set proxymux resourcePrincipalSessionTokens endpoint for requesting rpst token
+            restClient.setEndpoint("https://" + host + ":" + PROXYMUX_SERVER_PORT);
+            GetOkeResourcePrincipalSessionTokenRequest getOkeResourcePrincipalSessionTokenRequest =
+                    new GetOkeResourcePrincipalSessionTokenRequest(
+                            AuthUtils.base64EncodeNoChunking(publicKey));
+            WebTarget target = restClient.getBaseTarget().path("resourcePrincipalSessionTokens");
+            Invocation.Builder ib = target.request();
+
+            //generating a full 3 part opc-request-id for rpst call
+            String opcRequestId = generateRequestId();
+            //Signing the request with service account token.
+            ib.header(AUTHORIZATION_HEADER, String.format(JWT_FORMAT, token));
+            ib.header(OPC_REQUEST_ID_HEADER, opcRequestId);
+            URI requestUri = target.getUri();
+
+            // Make a call and get back the security token
+            Response response =
+                    makeCallToOke(ib, requestUri, getOkeResourcePrincipalSessionTokenRequest);
+            ResponseHelper.throwIfNotSuccessful(response);
+
+            // Decode the response and get rpst token.
+            String payload = response.readEntity(String.class);
+            String jsonString = new String(Base64.decodeBase64(payload), "UTF-8");
+            ObjectMapper mapper = RestClientFactory.getObjectMapper();
+            GetOkeResourcePrincipalSessionTokenResponse
+                    getOkeResourcePrincipalSessionTokenResponse =
+                            mapper.readValue(
+                                    jsonString, GetOkeResourcePrincipalSessionTokenResponse.class);
 
             // Remove duplicated "ST$" for the token.
-            String jwtToken = decoded.getToken().substring(3);
+            String jwtToken = getOkeResourcePrincipalSessionTokenResponse.getToken().substring(3);
 
-            return new SecurityTokenAdapter(jwtToken, sessionKeySupplier);
+            // Create security token based on the response.
+            X509FederationClient.SecurityToken securityToken =
+                    new X509FederationClient.SecurityToken(jwtToken);
+            return new SecurityTokenAdapter(securityToken.getToken(), sessionKeySupplier);
         } catch (UnsupportedEncodingException e) {
             throw new IllegalArgumentException(
-                    "RPST cannot be decoded correctly. Please contact OKE Foundation team for help.",
+                    "Rpst token can not be decoded correctly. Please contact OKE Foundation team for help.",
                     e);
-        } catch (IOException e) {
+        } catch (JsonProcessingException e) {
             throw new IllegalArgumentException(
-                    "RPST cannot be parsed correctly. Please contact OKE Foundation team for help.",
+                    "Rpst token can not be parsed correctly. Please contact OKE Foundation team for help.",
                     e);
         }
     }

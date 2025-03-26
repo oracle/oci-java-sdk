@@ -5,23 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * The ODA Private Endpoint information to be updated. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * The ODA Private Endpoint information to be updated.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateOdaPrivateEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateOdaPrivateEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateOdaPrivateEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -49,7 +48,8 @@ public final class UpdateOdaPrivateEndpointDetails
         /**
          * User-defined name for the ODA private endpoint. Avoid entering confidential information.
          * You can change this value.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -59,43 +59,39 @@ public final class UpdateOdaPrivateEndpointDetails
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Description of the ODA private endpoint. */
+        /**
+         * Description of the ODA private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Description of the ODA private endpoint.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * [network security
-         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-         */
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * [network security
-         * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-         *
+         * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
@@ -104,7 +100,8 @@ public final class UpdateOdaPrivateEndpointDetails
         /**
          * Simple key-value pair that is applied without any predefined name, type, or scope.
          * Example: {@code {"bar-key": "value"}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -114,26 +111,27 @@ public final class UpdateOdaPrivateEndpointDetails
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -179,7 +177,9 @@ public final class UpdateOdaPrivateEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,84 +189,83 @@ public final class UpdateOdaPrivateEndpointDetails
     }
 
     /**
-     * User-defined name for the ODA private endpoint. Avoid entering confidential information. You
-     * can change this value.
-     */
+     * User-defined name for the ODA private endpoint. Avoid entering confidential information.
+     * You can change this value.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-defined name for the ODA private endpoint. Avoid entering confidential information. You
-     * can change this value.
+     * User-defined name for the ODA private endpoint. Avoid entering confidential information.
+     * You can change this value.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of the ODA private endpoint. */
+    /**
+     * Description of the ODA private endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of the ODA private endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * [network security
-     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-     */
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * [network security
-     * groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
-     *
+     * List of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of [network security groups](https://docs.oracle.com/iaas/Content/Network/Concepts/networksecuritygroups.htm)
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
-     * {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Example:
-     * {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -278,7 +277,6 @@ public final class UpdateOdaPrivateEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

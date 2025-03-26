@@ -5,23 +5,23 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Deprecated. Source VNIC to destination subnet mapping for a compute instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Deprecated. Source VNIC to destination subnet mapping for a compute instance.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ComputeInstanceVnicMapping.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ComputeInstanceVnicMapping.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ComputeInstanceVnicMapping
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "sourceVnicId",
@@ -42,20 +42,21 @@ public final class ComputeInstanceVnicMapping
     public static class Builder {
         /**
          * The OCID of the VNIC.
+         * <p>
+         * Example: {@code ocid1.vnic.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
         private String sourceVnicId;
 
         /**
          * The OCID of the VNIC.
-         *
-         * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.vnic.oc1..uniqueID}
          *
          * @param sourceVnicId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceVnicId(String sourceVnicId) {
             this.sourceVnicId = sourceVnicId;
             this.__explicitlySet__.add("sourceVnicId");
@@ -63,45 +64,45 @@ public final class ComputeInstanceVnicMapping
         }
         /**
          * The OCID of the destination subnet to which the source VNIC should connect.
+         * <p>
+         * Example: {@code ocid1.subnet.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
         private String destinationSubnetId;
 
         /**
          * The OCID of the destination subnet to which the source VNIC should connect.
-         *
-         * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.subnet.oc1..uniqueID}
          *
          * @param destinationSubnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationSubnetId(String destinationSubnetId) {
             this.destinationSubnetId = destinationSubnetId;
             this.__explicitlySet__.add("destinationSubnetId");
             return this;
         }
         /**
-         * A list of OCIDs of network security groups (NSG) in the destination region which should
-         * be assigned to the source VNIC.
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+         * the source VNIC.
+         * <p>
+         * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
          *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1,
-         * ocid1.networksecuritygroup.oc1..uniqueID2 ]}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
         private java.util.List<String> destinationNsgIdList;
 
         /**
-         * A list of OCIDs of network security groups (NSG) in the destination region which should
-         * be assigned to the source VNIC.
-         *
-         * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1,
-         * ocid1.networksecuritygroup.oc1..uniqueID2 ]}
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+         * the source VNIC.
+         * <p>
+         * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
          *
          * @param destinationNsgIdList the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationNsgIdList(java.util.List<String> destinationNsgIdList) {
             this.destinationNsgIdList = destinationNsgIdList;
             this.__explicitlySet__.add("destinationNsgIdList");
@@ -136,7 +137,9 @@ public final class ComputeInstanceVnicMapping
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,61 +150,62 @@ public final class ComputeInstanceVnicMapping
 
     /**
      * The OCID of the VNIC.
+     * <p>
+     * Example: {@code ocid1.vnic.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceVnicId")
     private final String sourceVnicId;
 
     /**
      * The OCID of the VNIC.
-     *
-     * <p>Example: {@code ocid1.vnic.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.vnic.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getSourceVnicId() {
         return sourceVnicId;
     }
 
     /**
      * The OCID of the destination subnet to which the source VNIC should connect.
+     * <p>
+     * Example: {@code ocid1.subnet.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationSubnetId")
     private final String destinationSubnetId;
 
     /**
      * The OCID of the destination subnet to which the source VNIC should connect.
-     *
-     * <p>Example: {@code ocid1.subnet.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.subnet.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getDestinationSubnetId() {
         return destinationSubnetId;
     }
 
     /**
-     * A list of OCIDs of network security groups (NSG) in the destination region which should be
-     * assigned to the source VNIC.
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+     * the source VNIC.
+     * <p>
+     * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
      *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1,
-     * ocid1.networksecuritygroup.oc1..uniqueID2 ]}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationNsgIdList")
     private final java.util.List<String> destinationNsgIdList;
 
     /**
-     * A list of OCIDs of network security groups (NSG) in the destination region which should be
-     * assigned to the source VNIC.
-     *
-     * <p>Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1,
-     * ocid1.networksecuritygroup.oc1..uniqueID2 ]}
+     * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to
+     * the source VNIC.
+     * <p>
+     * Example: {@code [ ocid1.networksecuritygroup.oc1..uniqueID1, ocid1.networksecuritygroup.oc1..uniqueID2 ]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDestinationNsgIdList() {
         return destinationNsgIdList;
     }
@@ -213,7 +217,6 @@ public final class ComputeInstanceVnicMapping
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

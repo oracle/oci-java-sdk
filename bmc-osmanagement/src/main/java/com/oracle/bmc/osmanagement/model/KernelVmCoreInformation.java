@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * VMcore information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * VMcore information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KernelVmCoreInformation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = KernelVmCoreInformation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class KernelVmCoreInformation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"component", "backtrace"})
     public KernelVmCoreInformation(String component, String backtrace) {
@@ -32,31 +31,33 @@ public final class KernelVmCoreInformation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Kernel module responsible of the crash. */
+        /**
+         * Kernel module responsible of the crash.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("component")
         private String component;
 
         /**
          * Kernel module responsible of the crash.
-         *
          * @param component the value to set
          * @return this builder
-         */
+         **/
         public Builder component(String component) {
             this.component = component;
             this.__explicitlySet__.add("component");
             return this;
         }
-        /** Crash backtrace. */
+        /**
+         * Crash backtrace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backtrace")
         private String backtrace;
 
         /**
          * Crash backtrace.
-         *
          * @param backtrace the value to set
          * @return this builder
-         */
+         **/
         public Builder backtrace(String backtrace) {
             this.backtrace = backtrace;
             this.__explicitlySet__.add("backtrace");
@@ -87,7 +88,9 @@ public final class KernelVmCoreInformation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class KernelVmCoreInformation
         return new Builder().copy(this);
     }
 
-    /** Kernel module responsible of the crash. */
+    /**
+     * Kernel module responsible of the crash.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("component")
     private final String component;
 
     /**
      * Kernel module responsible of the crash.
-     *
      * @return the value
-     */
+     **/
     public String getComponent() {
         return component;
     }
 
-    /** Crash backtrace. */
+    /**
+     * Crash backtrace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backtrace")
     private final String backtrace;
 
     /**
      * Crash backtrace.
-     *
      * @return the value
-     */
+     **/
     public String getBacktrace() {
         return backtrace;
     }
@@ -129,7 +134,6 @@ public final class KernelVmCoreInformation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

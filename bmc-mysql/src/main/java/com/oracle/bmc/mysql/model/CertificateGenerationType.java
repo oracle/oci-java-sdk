@@ -5,11 +5,11 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate
- * (BYOC).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum CertificateGenerationType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+public enum CertificateGenerationType {
     System("SYSTEM"),
     Byoc("BYOC"),
 

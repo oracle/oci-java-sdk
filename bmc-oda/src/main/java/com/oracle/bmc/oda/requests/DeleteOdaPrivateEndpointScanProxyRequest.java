@@ -6,61 +6,64 @@ package com.oracle.bmc.oda.requests;
 
 import com.oracle.bmc.oda.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointScanProxyExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DeleteOdaPrivateEndpointScanProxyRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/oda/DeleteOdaPrivateEndpointScanProxyExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteOdaPrivateEndpointScanProxyRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 public class DeleteOdaPrivateEndpointScanProxyRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique ODA Private Endpoint Scan Proxy identifier. */
+    /**
+     * Unique ODA Private Endpoint Scan Proxy identifier.
+     */
     private String odaPrivateEndpointScanProxyId;
 
-    /** Unique ODA Private Endpoint Scan Proxy identifier. */
+    /**
+     * Unique ODA Private Endpoint Scan Proxy identifier.
+     */
     public String getOdaPrivateEndpointScanProxyId() {
         return odaPrivateEndpointScanProxyId;
     }
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String odaPrivateEndpointId;
 
     /**
-     * Unique ODA Private Endpoint identifier which is the
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getOdaPrivateEndpointId() {
         return odaPrivateEndpointId;
     }
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant instance,
-     * set the {@code if-match} query parameter to the value of the {@code ETAG} header from a
-     * previous GET or POST response for that instance. The service updates or deletes the instance
-     * only if the etag that you provide matches the instance's current etag value.
+     * For optimistic concurrency control in a PUT or DELETE call for
+     * a Digital Assistant instance, set the {@code if-match} query parameter
+     * to the value of the {@code ETAG} header from a previous GET or POST
+     * response for that instance. The service updates or deletes the
+     * instance only if the etag that you provide matches the instance's
+     * current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     private String opcRequestId;
 
     /**
-     * The client request ID for tracing. This value is included in the opc-request-id response
-     * header.
+     * The client request ID for tracing. This value is included in the opc-request-id response header.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -69,15 +72,17 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteOdaPrivateEndpointScanProxyRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique ODA Private Endpoint Scan Proxy identifier. */
+        /**
+         * Unique ODA Private Endpoint Scan Proxy identifier.
+         */
         private String odaPrivateEndpointScanProxyId = null;
 
         /**
          * Unique ODA Private Endpoint Scan Proxy identifier.
-         *
          * @param odaPrivateEndpointScanProxyId the value to set
          * @return this builder instance
          */
@@ -87,15 +92,12 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String odaPrivateEndpointId = null;
 
         /**
-         * Unique ODA Private Endpoint identifier which is the
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Unique ODA Private Endpoint identifier which is the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param odaPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -105,20 +107,23 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control in a PUT or DELETE call for a Digital Assistant
-         * instance, set the {@code if-match} query parameter to the value of the {@code ETAG}
-         * header from a previous GET or POST response for that instance. The service updates or
-         * deletes the instance only if the etag that you provide matches the instance's current
-         * etag value.
+         * For optimistic concurrency control in a PUT or DELETE call for
+         * a Digital Assistant instance, set the {@code if-match} query parameter
+         * to the value of the {@code ETAG} header from a previous GET or POST
+         * response for that instance. The service updates or deletes the
+         * instance only if the etag that you provide matches the instance's
+         * current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -129,15 +134,12 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          */
         private String opcRequestId = null;
 
         /**
-         * The client request ID for tracing. This value is included in the opc-request-id response
-         * header.
-         *
+         * The client request ID for tracing. This value is included in the opc-request-id response header.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -148,19 +150,18 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +173,6 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteOdaPrivateEndpointScanProxyRequest o) {
@@ -186,14 +186,12 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Build the instance of DeleteOdaPrivateEndpointScanProxyRequest as configured by this
-         * builder
+         * Build the instance of DeleteOdaPrivateEndpointScanProxyRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteOdaPrivateEndpointScanProxyRequest
          */
@@ -205,11 +203,9 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
         }
 
         /**
-         * Build the instance of DeleteOdaPrivateEndpointScanProxyRequest as configured by this
-         * builder
+         * Build the instance of DeleteOdaPrivateEndpointScanProxyRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteOdaPrivateEndpointScanProxyRequest
@@ -222,14 +218,12 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DeleteOdaPrivateEndpointScanProxyRequest(odaPrivateEndpointScanProxyId,
-            // odaPrivateEndpointId, ifMatch, opcRequestId);
+            // new DeleteOdaPrivateEndpointScanProxyRequest(odaPrivateEndpointScanProxyId, odaPrivateEndpointId, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -242,7 +236,6 @@ public class DeleteOdaPrivateEndpointScanProxyRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

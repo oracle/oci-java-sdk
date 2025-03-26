@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.redis.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220315")
+public enum OperationType {
     CreateRedisCluster("CREATE_REDIS_CLUSTER"),
     UpdateRedisCluster("UPDATE_REDIS_CLUSTER"),
     DeleteRedisCluster("DELETE_REDIS_CLUSTER"),

@@ -5,27 +5,27 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To change the storage tier of an object, we specify the object name and the desired storage tier
- * in the body. Objects can be moved between Standard and InfrequentAccess tiers and from Standard
- * or InfrequentAccess tier to Archive tier. If a version id is specified, only the specified
- * version of the object is moved to a different storage tier, else the current version is used.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * To change the storage tier of an object, we specify the object name and the desired
+ * storage tier in the body. Objects can be moved between Standard and InfrequentAccess
+ * tiers and from Standard or InfrequentAccess tier to Archive tier. If a version id is
+ * specified, only the specified version of the object is moved to a different storage
+ * tier, else the current version is used.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateObjectStorageTierDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateObjectStorageTierDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateObjectStorageTierDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objectName", "storageTier", "versionId"})
     public UpdateObjectStorageTierDetails(
@@ -38,37 +38,42 @@ public final class UpdateObjectStorageTierDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An object for which the storage tier needs to be changed. */
+        /**
+         * An object for which the storage tier needs to be changed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * An object for which the storage tier needs to be changed.
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** The storage tier that the object should be moved to. */
+        /**
+         * The storage tier that the object should be moved to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
         private StorageTier storageTier;
 
         /**
          * The storage tier that the object should be moved to.
-         *
          * @param storageTier the value to set
          * @return this builder
-         */
+         **/
         public Builder storageTier(StorageTier storageTier) {
             this.storageTier = storageTier;
             this.__explicitlySet__.add("storageTier");
             return this;
         }
-        /** The versionId of the object. Current object version is used by default. */
+        /**
+         * The versionId of the object. Current object version is used by default.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("versionId")
         private String versionId;
 
@@ -77,7 +82,7 @@ public final class UpdateObjectStorageTierDetails
          *
          * @param versionId the value to set
          * @return this builder
-         */
+         **/
         public Builder versionId(String versionId) {
             this.versionId = versionId;
             this.__explicitlySet__.add("versionId");
@@ -112,7 +117,9 @@ public final class UpdateObjectStorageTierDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -121,33 +128,38 @@ public final class UpdateObjectStorageTierDetails
         return new Builder().copy(this);
     }
 
-    /** An object for which the storage tier needs to be changed. */
+    /**
+     * An object for which the storage tier needs to be changed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * An object for which the storage tier needs to be changed.
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** The storage tier that the object should be moved to. */
+    /**
+     * The storage tier that the object should be moved to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageTier")
     private final StorageTier storageTier;
 
     /**
      * The storage tier that the object should be moved to.
-     *
      * @return the value
-     */
+     **/
     public StorageTier getStorageTier() {
         return storageTier;
     }
 
-    /** The versionId of the object. Current object version is used by default. */
+    /**
+     * The versionId of the object. Current object version is used by default.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("versionId")
     private final String versionId;
 
@@ -155,7 +167,7 @@ public final class UpdateObjectStorageTierDetails
      * The versionId of the object. Current object version is used by default.
      *
      * @return the value
-     */
+     **/
     public String getVersionId() {
         return versionId;
     }
@@ -167,7 +179,6 @@ public final class UpdateObjectStorageTierDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

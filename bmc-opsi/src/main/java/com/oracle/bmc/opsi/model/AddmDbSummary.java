@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * ADDM summary for a database <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * ADDM summary for a database
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddmDbSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AddmDbSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AddmDbSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseDetails",
@@ -68,136 +66,145 @@ public final class AddmDbSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("databaseDetails");
             return this;
         }
-        /** Number of ADDM findings */
+        /**
+         * Number of ADDM findings
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfFindings")
         private Integer numberOfFindings;
 
         /**
          * Number of ADDM findings
-         *
          * @param numberOfFindings the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfFindings(Integer numberOfFindings) {
             this.numberOfFindings = numberOfFindings;
             this.__explicitlySet__.add("numberOfFindings");
             return this;
         }
-        /** Number of ADDM tasks */
+        /**
+         * Number of ADDM tasks
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfAddmTasks")
         private Integer numberOfAddmTasks;
 
         /**
          * Number of ADDM tasks
-         *
          * @param numberOfAddmTasks the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfAddmTasks(Integer numberOfAddmTasks) {
             this.numberOfAddmTasks = numberOfAddmTasks;
             this.__explicitlySet__.add("numberOfAddmTasks");
             return this;
         }
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotBegin")
         private java.util.Date timeFirstSnapshotBegin;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeFirstSnapshotBegin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstSnapshotBegin(java.util.Date timeFirstSnapshotBegin) {
             this.timeFirstSnapshotBegin = timeFirstSnapshotBegin;
             this.__explicitlySet__.add("timeFirstSnapshotBegin");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSnapshotEnd")
         private java.util.Date timeLatestSnapshotEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeLatestSnapshotEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLatestSnapshotEnd(java.util.Date timeLatestSnapshotEnd) {
             this.timeLatestSnapshotEnd = timeLatestSnapshotEnd;
             this.__explicitlySet__.add("timeLatestSnapshotEnd");
             return this;
         }
-        /** AWR snapshot id. */
+        /**
+         * AWR snapshot id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalStart")
         private String snapshotIntervalStart;
 
         /**
          * AWR snapshot id.
-         *
          * @param snapshotIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotIntervalStart(String snapshotIntervalStart) {
             this.snapshotIntervalStart = snapshotIntervalStart;
             this.__explicitlySet__.add("snapshotIntervalStart");
             return this;
         }
-        /** AWR snapshot id. */
+        /**
+         * AWR snapshot id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalEnd")
         private String snapshotIntervalEnd;
 
         /**
          * AWR snapshot id.
-         *
          * @param snapshotIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotIntervalEnd(String snapshotIntervalEnd) {
             this.snapshotIntervalEnd = snapshotIntervalEnd;
             this.__explicitlySet__.add("snapshotIntervalEnd");
             return this;
         }
-        /** Maximum overall impact in terms of percentage of total activity */
+        /**
+         * Maximum overall impact in terms of percentage of total activity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxOverallImpact")
         private Double maxOverallImpact;
 
         /**
          * Maximum overall impact in terms of percentage of total activity
-         *
          * @param maxOverallImpact the value to set
          * @return this builder
-         */
+         **/
         public Builder maxOverallImpact(Double maxOverallImpact) {
             this.maxOverallImpact = maxOverallImpact;
             this.__explicitlySet__.add("maxOverallImpact");
             return this;
         }
-        /** Category name */
+        /**
+         * Category name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mostFrequentCategoryName")
         private String mostFrequentCategoryName;
 
         /**
          * Category name
-         *
          * @param mostFrequentCategoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder mostFrequentCategoryName(String mostFrequentCategoryName) {
             this.mostFrequentCategoryName = mostFrequentCategoryName;
             this.__explicitlySet__.add("mostFrequentCategoryName");
             return this;
         }
-        /** Category display name */
+        /**
+         * Category display name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mostFrequentCategoryDisplayName")
         private String mostFrequentCategoryDisplayName;
 
         /**
          * Category display name
-         *
          * @param mostFrequentCategoryDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder mostFrequentCategoryDisplayName(String mostFrequentCategoryDisplayName) {
             this.mostFrequentCategoryDisplayName = mostFrequentCategoryDisplayName;
             this.__explicitlySet__.add("mostFrequentCategoryDisplayName");
@@ -262,7 +269,9 @@ public final class AddmDbSummary extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -278,119 +287,128 @@ public final class AddmDbSummary extends com.oracle.bmc.http.client.internal.Exp
         return databaseDetails;
     }
 
-    /** Number of ADDM findings */
+    /**
+     * Number of ADDM findings
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfFindings")
     private final Integer numberOfFindings;
 
     /**
      * Number of ADDM findings
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfFindings() {
         return numberOfFindings;
     }
 
-    /** Number of ADDM tasks */
+    /**
+     * Number of ADDM tasks
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfAddmTasks")
     private final Integer numberOfAddmTasks;
 
     /**
      * Number of ADDM tasks
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfAddmTasks() {
         return numberOfAddmTasks;
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSnapshotBegin")
     private final java.util.Date timeFirstSnapshotBegin;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstSnapshotBegin() {
         return timeFirstSnapshotBegin;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLatestSnapshotEnd")
     private final java.util.Date timeLatestSnapshotEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLatestSnapshotEnd() {
         return timeLatestSnapshotEnd;
     }
 
-    /** AWR snapshot id. */
+    /**
+     * AWR snapshot id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalStart")
     private final String snapshotIntervalStart;
 
     /**
      * AWR snapshot id.
-     *
      * @return the value
-     */
+     **/
     public String getSnapshotIntervalStart() {
         return snapshotIntervalStart;
     }
 
-    /** AWR snapshot id. */
+    /**
+     * AWR snapshot id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalEnd")
     private final String snapshotIntervalEnd;
 
     /**
      * AWR snapshot id.
-     *
      * @return the value
-     */
+     **/
     public String getSnapshotIntervalEnd() {
         return snapshotIntervalEnd;
     }
 
-    /** Maximum overall impact in terms of percentage of total activity */
+    /**
+     * Maximum overall impact in terms of percentage of total activity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxOverallImpact")
     private final Double maxOverallImpact;
 
     /**
      * Maximum overall impact in terms of percentage of total activity
-     *
      * @return the value
-     */
+     **/
     public Double getMaxOverallImpact() {
         return maxOverallImpact;
     }
 
-    /** Category name */
+    /**
+     * Category name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mostFrequentCategoryName")
     private final String mostFrequentCategoryName;
 
     /**
      * Category name
-     *
      * @return the value
-     */
+     **/
     public String getMostFrequentCategoryName() {
         return mostFrequentCategoryName;
     }
 
-    /** Category display name */
+    /**
+     * Category display name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mostFrequentCategoryDisplayName")
     private final String mostFrequentCategoryDisplayName;
 
     /**
      * Category display name
-     *
      * @return the value
-     */
+     **/
     public String getMostFrequentCategoryDisplayName() {
         return mostFrequentCategoryDisplayName;
     }
@@ -402,7 +420,6 @@ public final class AddmDbSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

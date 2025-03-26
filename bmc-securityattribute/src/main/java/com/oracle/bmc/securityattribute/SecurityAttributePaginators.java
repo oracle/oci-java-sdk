@@ -9,31 +9,23 @@ import com.oracle.bmc.securityattribute.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of SecurityAttribute where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of SecurityAttribute where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240815")
 public class SecurityAttributePaginators {
     private final SecurityAttribute client;
 
@@ -42,21 +34,18 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAttributeNamespaces operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAttributeNamespaces operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAttributeNamespacesResponse>
             listSecurityAttributeNamespacesResponseIterator(
                     final ListSecurityAttributeNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListSecurityAttributeNamespacesRequest.Builder,
-                ListSecurityAttributeNamespacesRequest,
-                ListSecurityAttributeNamespacesResponse>(
+                ListSecurityAttributeNamespacesRequest, ListSecurityAttributeNamespacesResponse>(
                 new java.util.function.Supplier<ListSecurityAttributeNamespacesRequest.Builder>() {
                     @Override
                     public ListSecurityAttributeNamespacesRequest.Builder get() {
@@ -99,23 +88,20 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary} objects contained
-     * in responses from the listSecurityAttributeNamespaces operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary} objects
+     * contained in responses from the listSecurityAttributeNamespaces operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary>
             listSecurityAttributeNamespacesRecordIterator(
                     final ListSecurityAttributeNamespacesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSecurityAttributeNamespacesRequest.Builder,
-                ListSecurityAttributeNamespacesRequest,
-                ListSecurityAttributeNamespacesResponse,
+                ListSecurityAttributeNamespacesRequest, ListSecurityAttributeNamespacesResponse,
                 com.oracle.bmc.securityattribute.model.SecurityAttributeNamespaceSummary>(
                 new java.util.function.Supplier<ListSecurityAttributeNamespacesRequest.Builder>() {
                     @Override
@@ -172,13 +158,11 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAttributeWorkRequestErrors operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAttributeWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAttributeWorkRequestErrorsResponse>
             listSecurityAttributeWorkRequestErrorsResponseIterator(
@@ -232,15 +216,13 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestErrorSummary} objects
-     * contained in responses from the listSecurityAttributeWorkRequestErrors operation. This
-     * iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestErrorSummary} objects
+     * contained in responses from the listSecurityAttributeWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestErrorSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestErrorSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestErrorSummary>
             listSecurityAttributeWorkRequestErrorsRecordIterator(
@@ -308,13 +290,11 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAttributeWorkRequestLogs operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAttributeWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAttributeWorkRequestLogsResponse>
             listSecurityAttributeWorkRequestLogsResponseIterator(
@@ -367,15 +347,13 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestLogSummary} objects
-     * contained in responses from the listSecurityAttributeWorkRequestLogs operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestLogSummary} objects
+     * contained in responses from the listSecurityAttributeWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestLogSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestLogSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestLogSummary>
             listSecurityAttributeWorkRequestLogsRecordIterator(
@@ -442,13 +420,11 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAttributeWorkRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAttributeWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAttributeWorkRequestsResponse>
             listSecurityAttributeWorkRequestsResponseIterator(
@@ -501,23 +477,20 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary} objects contained
-     * in responses from the listSecurityAttributeWorkRequests operation. This iterable will fetch
-     * more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary} objects
+     * contained in responses from the listSecurityAttributeWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary>
             listSecurityAttributeWorkRequestsRecordIterator(
                     final ListSecurityAttributeWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListSecurityAttributeWorkRequestsRequest.Builder,
-                ListSecurityAttributeWorkRequestsRequest,
-                ListSecurityAttributeWorkRequestsResponse,
+                ListSecurityAttributeWorkRequestsRequest, ListSecurityAttributeWorkRequestsResponse,
                 com.oracle.bmc.securityattribute.model.SecurityAttributeWorkRequestSummary>(
                 new java.util.function.Supplier<
                         ListSecurityAttributeWorkRequestsRequest.Builder>() {
@@ -576,19 +549,16 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSecurityAttributes operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSecurityAttributes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSecurityAttributesResponse> listSecurityAttributesResponseIterator(
             final ListSecurityAttributesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSecurityAttributesRequest.Builder,
-                ListSecurityAttributesRequest,
+                ListSecurityAttributesRequest.Builder, ListSecurityAttributesRequest,
                 ListSecurityAttributesResponse>(
                 new java.util.function.Supplier<ListSecurityAttributesRequest.Builder>() {
                     @Override
@@ -631,21 +601,18 @@ public class SecurityAttributePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.securityattribute.model.SecurityAttributeSummary} objects contained in
-     * responses from the listSecurityAttributes operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeSummary} objects
+     * contained in responses from the listSecurityAttributes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.securityattribute.model.SecurityAttributeSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.securityattribute.model.SecurityAttributeSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.securityattribute.model.SecurityAttributeSummary>
             listSecurityAttributesRecordIterator(final ListSecurityAttributesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSecurityAttributesRequest.Builder,
-                ListSecurityAttributesRequest,
+                ListSecurityAttributesRequest.Builder, ListSecurityAttributesRequest,
                 ListSecurityAttributesResponse,
                 com.oracle.bmc.securityattribute.model.SecurityAttributeSummary>(
                 new java.util.function.Supplier<ListSecurityAttributesRequest.Builder>() {

@@ -6,54 +6,63 @@ package com.oracle.bmc.containerengine.requests;
 
 import com.oracle.bmc.containerengine.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateWorkloadMappingExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * CreateWorkloadMappingRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerengine/CreateWorkloadMappingExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateWorkloadMappingRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class CreateWorkloadMappingRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.containerengine.model.CreateWorkloadMappingDetails> {
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     private String clusterId;
 
-    /** The OCID of the cluster. */
+    /**
+     * The OCID of the cluster.
+     */
     public String getClusterId() {
         return clusterId;
     }
-    /** The details of the workloadMapping to be create. */
+    /**
+     * The details of the workloadMapping to be create.
+     */
     private com.oracle.bmc.containerengine.model.CreateWorkloadMappingDetails
             createWorkloadMappingDetails;
 
-    /** The details of the workloadMapping to be create. */
+    /**
+     * The details of the workloadMapping to be create.
+     */
     public com.oracle.bmc.containerengine.model.CreateWorkloadMappingDetails
             getCreateWorkloadMappingDetails() {
         return createWorkloadMappingDetails;
     }
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token you supply to uniquely identify the request and provide idempotency if the request is
-     * retried. Idempotency tokens expire after 24 hours.
+     * A token you supply to uniquely identify the request and provide idempotency if
+     * the request is retried. Idempotency tokens expire after 24 hours.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -61,7 +70,6 @@ public class CreateWorkloadMappingRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -74,15 +82,17 @@ public class CreateWorkloadMappingRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateWorkloadMappingRequest,
                     com.oracle.bmc.containerengine.model.CreateWorkloadMappingDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the cluster. */
+        /**
+         * The OCID of the cluster.
+         */
         private String clusterId = null;
 
         /**
          * The OCID of the cluster.
-         *
          * @param clusterId the value to set
          * @return this builder instance
          */
@@ -91,13 +101,14 @@ public class CreateWorkloadMappingRequest
             return this;
         }
 
-        /** The details of the workloadMapping to be create. */
+        /**
+         * The details of the workloadMapping to be create.
+         */
         private com.oracle.bmc.containerengine.model.CreateWorkloadMappingDetails
                 createWorkloadMappingDetails = null;
 
         /**
          * The details of the workloadMapping to be create.
-         *
          * @param createWorkloadMappingDetails the value to set
          * @return this builder instance
          */
@@ -109,14 +120,15 @@ public class CreateWorkloadMappingRequest
         }
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token you supply to uniquely identify the request and provide idempotency if the
-         * request is retried. Idempotency tokens expire after 24 hours.
+         * A token you supply to uniquely identify the request and provide idempotency if
+         * the request is retried. Idempotency tokens expire after 24 hours.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -127,14 +139,15 @@ public class CreateWorkloadMappingRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -146,19 +159,18 @@ public class CreateWorkloadMappingRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -170,7 +182,6 @@ public class CreateWorkloadMappingRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateWorkloadMappingRequest o) {
@@ -186,11 +197,10 @@ public class CreateWorkloadMappingRequest
         /**
          * Build the instance of CreateWorkloadMappingRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateWorkloadMappingRequest
          */
@@ -203,7 +213,6 @@ public class CreateWorkloadMappingRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -217,8 +226,7 @@ public class CreateWorkloadMappingRequest
         /**
          * Build the instance of CreateWorkloadMappingRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateWorkloadMappingRequest
@@ -230,14 +238,12 @@ public class CreateWorkloadMappingRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new CreateWorkloadMappingRequest(clusterId, createWorkloadMappingDetails,
-            // opcRetryToken, opcRequestId);
+            // new CreateWorkloadMappingRequest(clusterId, createWorkloadMappingDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -250,7 +256,6 @@ public class CreateWorkloadMappingRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

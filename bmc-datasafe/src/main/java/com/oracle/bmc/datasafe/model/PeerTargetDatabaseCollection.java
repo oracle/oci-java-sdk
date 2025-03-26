@@ -5,23 +5,22 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Summary of peer target databases of a primary target database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Summary of peer target databases of a primary target database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PeerTargetDatabaseCollection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PeerTargetDatabaseCollection.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PeerTargetDatabaseCollection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "targetDatabaseId", "items"})
     public PeerTargetDatabaseCollection(
@@ -36,46 +35,49 @@ public final class PeerTargetDatabaseCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the compartment that contains the primary target database. */
+        /**
+         * The OCID of the compartment that contains the primary target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the primary target database.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the Data Safe target database. */
+        /**
+         * The OCID of the Data Safe target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseId")
         private String targetDatabaseId;
 
         /**
          * The OCID of the Data Safe target database.
-         *
          * @param targetDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetDatabaseId(String targetDatabaseId) {
             this.targetDatabaseId = targetDatabaseId;
             this.__explicitlySet__.add("targetDatabaseId");
             return this;
         }
-        /** The list of peer target databases associated to the primary target database. */
+        /**
+         * The list of peer target databases associated to the primary target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PeerTargetDatabaseSummary> items;
 
         /**
          * The list of peer target databases associated to the primary target database.
-         *
          * @param items the value to set
          * @return this builder
-         */
+         **/
         public Builder items(java.util.List<PeerTargetDatabaseSummary> items) {
             this.items = items;
             this.__explicitlySet__.add("items");
@@ -110,7 +112,9 @@ public final class PeerTargetDatabaseCollection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,41 +123,44 @@ public final class PeerTargetDatabaseCollection
         return new Builder().copy(this);
     }
 
-    /** The OCID of the compartment that contains the primary target database. */
+    /**
+     * The OCID of the compartment that contains the primary target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the primary target database.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the Data Safe target database. */
+    /**
+     * The OCID of the Data Safe target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetDatabaseId")
     private final String targetDatabaseId;
 
     /**
      * The OCID of the Data Safe target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetDatabaseId() {
         return targetDatabaseId;
     }
 
-    /** The list of peer target databases associated to the primary target database. */
+    /**
+     * The list of peer target databases associated to the primary target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PeerTargetDatabaseSummary> items;
 
     /**
      * The list of peer target databases associated to the primary target database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PeerTargetDatabaseSummary> getItems() {
         return items;
     }
@@ -165,7 +172,6 @@ public final class PeerTargetDatabaseCollection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

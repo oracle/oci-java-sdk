@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Summary information about defined Monitoring Template for specified resourceType. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Summary information about defined Monitoring Template for specified resourceType.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DefinedMonitoringTemplateSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DefinedMonitoringTemplateSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DefinedMonitoringTemplateSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,148 +58,149 @@ public final class DefinedMonitoringTemplateSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * definedMonitoringTemplate.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * definedMonitoringTemplate.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the definedMonitoringTemplate. */
+        /**
+         * The name of the definedMonitoringTemplate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the definedMonitoringTemplate.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         */
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The stack monitoring service or application emitting the metric that is evaluated by the
-         * alarm.
-         *
+         * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Type of composite resource type OCID like EBS/PEOPLE_SOFT. */
+        /**
+         * Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
         private String compositeType;
 
         /**
          * Type of composite resource type OCID like EBS/PEOPLE_SOFT.
-         *
          * @param compositeType the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeType(String compositeType) {
             this.compositeType = compositeType;
             this.__explicitlySet__.add("compositeType");
             return this;
         }
-        /** The resource types OCID. */
+        /**
+         * The resource types OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * The resource types OCID.
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Defined Monitoring template alarm conditions */
+        /**
+         * Defined Monitoring template alarm conditions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedAlarmConditions")
         private java.util.List<DefinedAlarmCondition> definedAlarmConditions;
 
         /**
          * Defined Monitoring template alarm conditions
-         *
          * @param definedAlarmConditions the value to set
          * @return this builder
-         */
+         **/
         public Builder definedAlarmConditions(
                 java.util.List<DefinedAlarmCondition> definedAlarmConditions) {
             this.definedAlarmConditions = definedAlarmConditions;
             this.__explicitlySet__.add("definedAlarmConditions");
             return this;
         }
-        /** The date and time the monitoringTemplate was created. Format defined by RFC3339. */
+        /**
+         * The date and time the monitoringTemplate was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the monitoringTemplate was created. Format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the monitoringTemplate was updated. Format defined by RFC3339. */
+        /**
+         * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -261,7 +261,9 @@ public final class DefinedMonitoringTemplateSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -271,130 +273,131 @@ public final class DefinedMonitoringTemplateSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * definedMonitoringTemplate.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * definedMonitoringTemplate.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the definedMonitoringTemplate.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the definedMonitoringTemplate. */
+    /**
+     * The name of the definedMonitoringTemplate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the definedMonitoringTemplate.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     */
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The stack monitoring service or application emitting the metric that is evaluated by the
-     * alarm.
-     *
+     * The stack monitoring service or application emitting the metric that is evaluated by the alarm.
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Type of composite resource type OCID like EBS/PEOPLE_SOFT. */
+    /**
+     * Type of composite resource type OCID like EBS/PEOPLE_SOFT.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeType")
     private final String compositeType;
 
     /**
      * Type of composite resource type OCID like EBS/PEOPLE_SOFT.
-     *
      * @return the value
-     */
+     **/
     public String getCompositeType() {
         return compositeType;
     }
 
-    /** The resource types OCID. */
+    /**
+     * The resource types OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * The resource types OCID.
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** Defined Monitoring template alarm conditions */
+    /**
+     * Defined Monitoring template alarm conditions
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedAlarmConditions")
     private final java.util.List<DefinedAlarmCondition> definedAlarmConditions;
 
     /**
      * Defined Monitoring template alarm conditions
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DefinedAlarmCondition> getDefinedAlarmConditions() {
         return definedAlarmConditions;
     }
 
-    /** The date and time the monitoringTemplate was created. Format defined by RFC3339. */
+    /**
+     * The date and time the monitoringTemplate was created. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the monitoringTemplate was created. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the monitoringTemplate was updated. Format defined by RFC3339. */
+    /**
+     * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the monitoringTemplate was updated. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -406,7 +409,6 @@ public final class DefinedMonitoringTemplateSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

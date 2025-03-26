@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.marketplacepublisher.model;
 
-/** The listing type informs where the listing appears for use. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum ListingType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The listing type informs where the listing appears for use.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum ListingType {
     OciApplication("OCI_APPLICATION"),
 
     /**

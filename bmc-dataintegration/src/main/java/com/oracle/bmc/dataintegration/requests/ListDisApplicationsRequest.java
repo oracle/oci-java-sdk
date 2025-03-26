@@ -6,96 +6,110 @@ package com.oracle.bmc.dataintegration.requests;
 
 import com.oracle.bmc.dataintegration.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDisApplicationsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataintegration/ListDisApplicationsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDisApplicationsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     private String workspaceId;
 
-    /** The workspace ID. */
+    /**
+     * The workspace ID.
+     */
     public String getWorkspaceId() {
         return workspaceId;
     }
-    /** OCID of the compartment for which the list of DIS Applications is to be retrieved. */
+    /**
+     * OCID of the compartment for which the list of DIS Applications is to be retrieved.
+     */
     private String compartmentId;
 
-    /** OCID of the compartment for which the list of DIS Applications is to be retrieved. */
+    /**
+     * OCID of the compartment for which the list of DIS Applications is to be retrieved.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Used to filter by the name of the object. */
+    /**
+     * Used to filter by the name of the object.
+     */
     private String name;
 
-    /** Used to filter by the name of the object. */
+    /**
+     * Used to filter by the name of the object.
+     */
     public String getName() {
         return name;
     }
     /**
-     * This parameter can be used to filter objects by the names that match partially or fully with
-     * the given value.
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
      */
     private String nameContains;
 
     /**
-     * This parameter can be used to filter objects by the names that match partially or fully with
-     * the given value.
+     * This parameter can be used to filter objects by the names that match partially or fully with the given value.
      */
     public String getNameContains() {
         return nameContains;
     }
-    /** Used to filter by the identifier of the published object. */
+    /**
+     * Used to filter by the identifier of the published object.
+     *
+     */
     private java.util.List<String> identifier;
 
-    /** Used to filter by the identifier of the published object. */
+    /**
+     * Used to filter by the identifier of the published object.
+     *
+     */
     public java.util.List<String> getIdentifier() {
         return identifier;
     }
-    /** Specifies the fields to get for an object. */
+    /**
+     * Specifies the fields to get for an object.
+     */
     private java.util.List<String> fields;
 
-    /** Specifies the fields to get for an object. */
+    /**
+     * Specifies the fields to get for an object.
+     */
     public java.util.List<String> getFields() {
         return fields;
     }
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
-     * call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * Sets the maximum number of results per page, or items to return in a paginated {@code List}
-     * call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
-     * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code
-     * opc-prev-page} response header from the previous {@code List} call. See [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     private SortOrder sortOrder;
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -128,25 +142,21 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
     };
 
-    /** Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending). */
+    /**
+     * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     private SortBy sortBy;
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
+     **/
+    public enum SortBy {
         TimeCreated("TIME_CREATED"),
         DisplayName("DISPLAY_NAME"),
         TimeUpdated("TIME_UPDATED"),
@@ -181,23 +191,24 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-     * fields, results are shown in descending order. All other fields default to ascending order.
-     * Sorting related parameters are ignored when parameter {@code query} is present (search
-     * operation and sorting order is by relevance score in descending order).
+     * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -206,15 +217,17 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDisApplicationsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The workspace ID. */
+        /**
+         * The workspace ID.
+         */
         private String workspaceId = null;
 
         /**
          * The workspace ID.
-         *
          * @param workspaceId the value to set
          * @return this builder instance
          */
@@ -223,12 +236,13 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** OCID of the compartment for which the list of DIS Applications is to be retrieved. */
+        /**
+         * OCID of the compartment for which the list of DIS Applications is to be retrieved.
+         */
         private String compartmentId = null;
 
         /**
          * OCID of the compartment for which the list of DIS Applications is to be retrieved.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -237,12 +251,13 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Used to filter by the name of the object. */
+        /**
+         * Used to filter by the name of the object.
+         */
         private String name = null;
 
         /**
          * Used to filter by the name of the object.
-         *
          * @param name the value to set
          * @return this builder instance
          */
@@ -252,15 +267,12 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * This parameter can be used to filter objects by the names that match partially or fully
-         * with the given value.
+         * This parameter can be used to filter objects by the names that match partially or fully with the given value.
          */
         private String nameContains = null;
 
         /**
-         * This parameter can be used to filter objects by the names that match partially or fully
-         * with the given value.
-         *
+         * This parameter can be used to filter objects by the names that match partially or fully with the given value.
          * @param nameContains the value to set
          * @return this builder instance
          */
@@ -269,7 +281,10 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Used to filter by the identifier of the published object. */
+        /**
+         * Used to filter by the identifier of the published object.
+         *
+         */
         private java.util.List<String> identifier = null;
 
         /**
@@ -293,12 +308,13 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
             return this.identifier(java.util.Arrays.asList(singularValue));
         }
 
-        /** Specifies the fields to get for an object. */
+        /**
+         * Specifies the fields to get for an object.
+         */
         private java.util.List<String> fields = null;
 
         /**
          * Specifies the fields to get for an object.
-         *
          * @param fields the value to set
          * @return this builder instance
          */
@@ -309,7 +325,6 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Singular setter. Specifies the fields to get for an object.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -318,17 +333,12 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code
-         * List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * Sets the maximum number of results per page, or items to return in a paginated {@code
-         * List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * Sets the maximum number of results per page, or items to return in a paginated {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -338,17 +348,12 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
-         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value for this parameter is the {@code opc-next-page} or the
-         * {@code opc-prev-page} response header from the previous {@code List} call. See [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value for this parameter is the {@code opc-next-page} or the {@code opc-prev-page} response header from the previous {@code List} call. See [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -364,7 +369,6 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Specifies sort order to use, either {@code ASC} (ascending) or {@code DESC} (descending).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -374,19 +378,12 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-         * fields, results are shown in descending order. All other fields default to ascending
-         * order. Sorting related parameters are ignored when parameter {@code query} is present
-         * (search operation and sorting order is by relevance score in descending order).
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          */
         private SortBy sortBy = null;
 
         /**
-         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time
-         * fields, results are shown in descending order. All other fields default to ascending
-         * order. Sorting related parameters are ignored when parameter {@code query} is present
-         * (search operation and sorting order is by relevance score in descending order).
-         *
+         * Specifies the field to sort by. Accepts only one field. By default, when you sort by time fields, results are shown in descending order. All other fields default to ascending order. Sorting related parameters are ignored when parameter {@code query} is present (search operation and sorting order is by relevance score in descending order).
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -396,14 +393,17 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -415,19 +415,18 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -439,7 +438,6 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDisApplicationsRequest o) {
@@ -462,11 +460,10 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListDisApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDisApplicationsRequest
          */
@@ -480,8 +477,7 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListDisApplicationsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDisApplicationsRequest
@@ -500,14 +496,12 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDisApplicationsRequest(workspaceId, compartmentId, name, nameContains,
-            // identifier, fields, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListDisApplicationsRequest(workspaceId, compartmentId, name, nameContains, identifier, fields, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -527,7 +521,6 @@ public class ListDisApplicationsRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

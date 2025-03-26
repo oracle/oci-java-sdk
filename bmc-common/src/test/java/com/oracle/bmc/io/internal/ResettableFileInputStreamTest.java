@@ -4,7 +4,6 @@
  */
 package com.oracle.bmc.io.internal;
 
-import com.oracle.bmc.io.internal.WrappedFileInputStream;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -20,7 +19,9 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
-/** Tests for {@link ResettableFileInputStream}. */
+/**
+ * Tests for {@link ResettableFileInputStream}.
+ */
 public class ResettableFileInputStreamTest {
     @Test
     public void testAlreadyWrapped() throws IOException {

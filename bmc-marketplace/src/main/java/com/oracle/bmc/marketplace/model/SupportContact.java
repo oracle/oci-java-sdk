@@ -5,22 +5,19 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * Contact information to use to get support. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * Contact information to use to get support.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SupportContact.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SupportContact
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SupportContact extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "phone", "email", "subject"})
     public SupportContact(String name, String phone, String email, String subject) {
@@ -33,61 +30,65 @@ public final class SupportContact
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the contact. */
+        /**
+         * The name of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the contact.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The phone number of the contact. */
+        /**
+         * The phone number of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("phone")
         private String phone;
 
         /**
          * The phone number of the contact.
-         *
          * @param phone the value to set
          * @return this builder
-         */
+         **/
         public Builder phone(String phone) {
             this.phone = phone;
             this.__explicitlySet__.add("phone");
             return this;
         }
-        /** The email of the contact. */
+        /**
+         * The email of the contact.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
          * The email of the contact.
-         *
          * @param email the value to set
          * @return this builder
-         */
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-        /** The email subject line to use when contacting support. */
+        /**
+         * The email subject line to use when contacting support.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subject")
         private String subject;
 
         /**
          * The email subject line to use when contacting support.
-         *
          * @param subject the value to set
          * @return this builder
-         */
+         **/
         public Builder subject(String subject) {
             this.subject = subject;
             this.__explicitlySet__.add("subject");
@@ -124,7 +125,9 @@ public final class SupportContact
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -133,54 +136,58 @@ public final class SupportContact
         return new Builder().copy(this);
     }
 
-    /** The name of the contact. */
+    /**
+     * The name of the contact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the contact.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The phone number of the contact. */
+    /**
+     * The phone number of the contact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("phone")
     private final String phone;
 
     /**
      * The phone number of the contact.
-     *
      * @return the value
-     */
+     **/
     public String getPhone() {
         return phone;
     }
 
-    /** The email of the contact. */
+    /**
+     * The email of the contact.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
      * The email of the contact.
-     *
      * @return the value
-     */
+     **/
     public String getEmail() {
         return email;
     }
 
-    /** The email subject line to use when contacting support. */
+    /**
+     * The email subject line to use when contacting support.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subject")
     private final String subject;
 
     /**
      * The email subject line to use when contacting support.
-     *
      * @return the value
-     */
+     **/
     public String getSubject() {
         return subject;
     }
@@ -192,7 +199,6 @@ public final class SupportContact
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Information about the service attachment to be created. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Information about the service attachment to be created.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateServiceAttachmentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateServiceAttachmentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateServiceAttachmentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"serviceInstanceType", "serviceInstanceId"})
     public CreateServiceAttachmentDetails(
@@ -33,32 +32,34 @@ public final class CreateServiceAttachmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the ServiceInstance being attached. */
+        /**
+         * Type of the ServiceInstance being attached.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceType")
         private ServiceAttachment.ServiceInstanceType serviceInstanceType;
 
         /**
          * Type of the ServiceInstance being attached.
-         *
          * @param serviceInstanceType the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceInstanceType(
                 ServiceAttachment.ServiceInstanceType serviceInstanceType) {
             this.serviceInstanceType = serviceInstanceType;
             this.__explicitlySet__.add("serviceInstanceType");
             return this;
         }
-        /** The service instance OCID of the instance being attached */
+        /**
+         * The service instance OCID of the instance being attached
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceId")
         private String serviceInstanceId;
 
         /**
          * The service instance OCID of the instance being attached
-         *
          * @param serviceInstanceId the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceInstanceId(String serviceInstanceId) {
             this.serviceInstanceId = serviceInstanceId;
             this.__explicitlySet__.add("serviceInstanceId");
@@ -90,7 +91,9 @@ public final class CreateServiceAttachmentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,28 +102,30 @@ public final class CreateServiceAttachmentDetails
         return new Builder().copy(this);
     }
 
-    /** Type of the ServiceInstance being attached. */
+    /**
+     * Type of the ServiceInstance being attached.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceType")
     private final ServiceAttachment.ServiceInstanceType serviceInstanceType;
 
     /**
      * Type of the ServiceInstance being attached.
-     *
      * @return the value
-     */
+     **/
     public ServiceAttachment.ServiceInstanceType getServiceInstanceType() {
         return serviceInstanceType;
     }
 
-    /** The service instance OCID of the instance being attached */
+    /**
+     * The service instance OCID of the instance being attached
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceInstanceId")
     private final String serviceInstanceId;
 
     /**
      * The service instance OCID of the instance being attached
-     *
      * @return the value
-     */
+     **/
     public String getServiceInstanceId() {
         return serviceInstanceId;
     }
@@ -132,7 +137,6 @@ public final class CreateServiceAttachmentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

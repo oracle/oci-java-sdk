@@ -6,23 +6,21 @@ package com.oracle.bmc.identitydomains.model;
 
 /**
  * Csv meta data for those resource type attributes which can be imported / exported from / to csv.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SchemaIdcsCsvAttributeNameMappings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SchemaIdcsCsvAttributeNameMappings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SchemaIdcsCsvAttributeNameMappings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "columnHeaderName",
@@ -60,22 +58,33 @@ public final class SchemaIdcsCsvAttributeNameMappings
     public static class Builder {
         /**
          * The CSV column header name that maps to this attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("columnHeaderName")
         private String columnHeaderName;
 
         /**
          * The CSV column header name that maps to this attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param columnHeaderName the value to set
          * @return this builder
-         */
+         **/
         public Builder columnHeaderName(String columnHeaderName) {
             this.columnHeaderName = columnHeaderName;
             this.__explicitlySet__.add("columnHeaderName");
@@ -83,99 +92,135 @@ public final class SchemaIdcsCsvAttributeNameMappings
         }
         /**
          * The deprecated CSV column header name that maps to this attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deprecatedColumnHeaderName")
         private String deprecatedColumnHeaderName;
 
         /**
          * The deprecated CSV column header name that maps to this attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param deprecatedColumnHeaderName the value to set
          * @return this builder
-         */
+         **/
         public Builder deprecatedColumnHeaderName(String deprecatedColumnHeaderName) {
             this.deprecatedColumnHeaderName = deprecatedColumnHeaderName;
             this.__explicitlySet__.add("deprecatedColumnHeaderName");
             return this;
         }
         /**
-         * The attribute path that the CSV column header name maps to for complex multi-valued
-         * attributes.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * The attribute path that the CSV column header name maps to for complex multi-valued attributes.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mapsTo")
         private String mapsTo;
 
         /**
-         * The attribute path that the CSV column header name maps to for complex multi-valued
-         * attributes.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * The attribute path that the CSV column header name maps to for complex multi-valued attributes.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param mapsTo the value to set
          * @return this builder
-         */
+         **/
         public Builder mapsTo(String mapsTo) {
             this.mapsTo = mapsTo;
             this.__explicitlySet__.add("mapsTo");
             return this;
         }
         /**
-         * The default value to be used during import processing in case the CSV column header is
-         * not present or value is not given in the import CSV.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * The default value to be used during import processing in case the CSV column header is not present or value is not given in the import CSV.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
-         * The default value to be used during import processing in case the CSV column header is
-         * not present or value is not given in the import CSV.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * The default value to be used during import processing in case the CSV column header is not present or value is not given in the import CSV.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param defaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
         /**
-         * If values of the CSV column header name can contain multiple values, this attribute
-         * specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column
-         * header is multi-valued and it's delimiter is a semi-colon (\\";\\").
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * If values of the CSV column header name can contain multiple values, this attribute specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is multi-valued and it's delimiter is a semi-colon (\\";\\").
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("multiValueDelimiter")
         private String multiValueDelimiter;
 
         /**
-         * If values of the CSV column header name can contain multiple values, this attribute
-         * specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column
-         * header is multi-valued and it's delimiter is a semi-colon (\\";\\").
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * If values of the CSV column header name can contain multiple values, this attribute specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is multi-valued and it's delimiter is a semi-colon (\\";\\").
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param multiValueDelimiter the value to set
          * @return this builder
-         */
+         **/
         public Builder multiValueDelimiter(String multiValueDelimiter) {
             this.multiValueDelimiter = multiValueDelimiter;
             this.__explicitlySet__.add("multiValueDelimiter");
@@ -183,47 +228,67 @@ public final class SchemaIdcsCsvAttributeNameMappings
         }
         /**
          * This specifies the Csv Header for resolving Resource Type for this Column Header
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("csvColumnForResolvingResourceType")
         private String csvColumnForResolvingResourceType;
 
         /**
          * This specifies the Csv Header for resolving Resource Type for this Column Header
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite
-         * - required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param csvColumnForResolvingResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder csvColumnForResolvingResourceType(String csvColumnForResolvingResourceType) {
             this.csvColumnForResolvingResourceType = csvColumnForResolvingResourceType;
             this.__explicitlySet__.add("csvColumnForResolvingResourceType");
             return this;
         }
         /**
-         * This attribute gives a maps for resolving Resource Type after reading it's value from
-         * \\"csvColumnForResolvingResourceType\\" attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: complex - uniqueness: none
-         */
+         * This attribute gives a maps for resolving Resource Type after reading it's value from \\"csvColumnForResolvingResourceType\\" attribute
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resolveValueUsingResourceType")
         private java.util.List<SchemaResolveValueUsingResourceType> resolveValueUsingResourceType;
 
         /**
-         * This attribute gives a maps for resolving Resource Type after reading it's value from
-         * \\"csvColumnForResolvingResourceType\\" attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: complex - uniqueness: none
-         *
+         * This attribute gives a maps for resolving Resource Type after reading it's value from \\"csvColumnForResolvingResourceType\\" attribute
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param resolveValueUsingResourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resolveValueUsingResourceType(
                 java.util.List<SchemaResolveValueUsingResourceType> resolveValueUsingResourceType) {
             this.resolveValueUsingResourceType = resolveValueUsingResourceType;
@@ -231,31 +296,36 @@ public final class SchemaIdcsCsvAttributeNameMappings
             return this;
         }
         /**
-         * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s)
-         * of the referenced resource with the columnHeaderName(s). This attribute should be given
-         * in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than
-         * one attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: complex - uniqueness: none
-         */
+         * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of the referenced resource with the columnHeaderName(s). This attribute should be given in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "referencedResourceTypeUniqueAttributeNameMappings")
         private java.util.List<SchemaReferencedResourceTypeUniqueAttributeNameMappings>
                 referencedResourceTypeUniqueAttributeNameMappings;
 
         /**
-         * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s)
-         * of the referenced resource with the columnHeaderName(s). This attribute should be given
-         * in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than
-         * one attribute.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-         * required: false - returned: default - type: complex - uniqueness: none
-         *
+         * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of the referenced resource with the columnHeaderName(s). This attribute should be given in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
          * @param referencedResourceTypeUniqueAttributeNameMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder referencedResourceTypeUniqueAttributeNameMappings(
                 java.util.List<SchemaReferencedResourceTypeUniqueAttributeNameMappings>
                         referencedResourceTypeUniqueAttributeNameMappings) {
@@ -318,7 +388,9 @@ public final class SchemaIdcsCsvAttributeNameMappings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,186 +401,258 @@ public final class SchemaIdcsCsvAttributeNameMappings
 
     /**
      * The CSV column header name that maps to this attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnHeaderName")
     private final String columnHeaderName;
 
     /**
      * The CSV column header name that maps to this attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getColumnHeaderName() {
         return columnHeaderName;
     }
 
     /**
      * The deprecated CSV column header name that maps to this attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deprecatedColumnHeaderName")
     private final String deprecatedColumnHeaderName;
 
     /**
      * The deprecated CSV column header name that maps to this attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readOnly -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDeprecatedColumnHeaderName() {
         return deprecatedColumnHeaderName;
     }
 
     /**
-     * The attribute path that the CSV column header name maps to for complex multi-valued
-     * attributes.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * The attribute path that the CSV column header name maps to for complex multi-valued attributes.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mapsTo")
     private final String mapsTo;
 
     /**
-     * The attribute path that the CSV column header name maps to for complex multi-valued
-     * attributes.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * The attribute path that the CSV column header name maps to for complex multi-valued attributes.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMapsTo() {
         return mapsTo;
     }
 
     /**
-     * The default value to be used during import processing in case the CSV column header is not
-     * present or value is not given in the import CSV.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * The default value to be used during import processing in case the CSV column header is not present or value is not given in the import CSV.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
-     * The default value to be used during import processing in case the CSV column header is not
-     * present or value is not given in the import CSV.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * The default value to be used during import processing in case the CSV column header is not present or value is not given in the import CSV.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
 
     /**
-     * If values of the CSV column header name can contain multiple values, this attribute specifies
-     * the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is
-     * multi-valued and it's delimiter is a semi-colon (\\";\\").
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * If values of the CSV column header name can contain multiple values, this attribute specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is multi-valued and it's delimiter is a semi-colon (\\";\\").
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("multiValueDelimiter")
     private final String multiValueDelimiter;
 
     /**
-     * If values of the CSV column header name can contain multiple values, this attribute specifies
-     * the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is
-     * multi-valued and it's delimiter is a semi-colon (\\";\\").
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * If values of the CSV column header name can contain multiple values, this attribute specifies the delimiter to be used. For example, Group's \\"User Members\\" CSV column header is multi-valued and it's delimiter is a semi-colon (\\";\\").
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMultiValueDelimiter() {
         return multiValueDelimiter;
     }
 
     /**
      * This specifies the Csv Header for resolving Resource Type for this Column Header
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("csvColumnForResolvingResourceType")
     private final String csvColumnForResolvingResourceType;
 
     /**
      * This specifies the Csv Header for resolving Resource Type for this Column Header
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCsvColumnForResolvingResourceType() {
         return csvColumnForResolvingResourceType;
     }
 
     /**
-     * This attribute gives a maps for resolving Resource Type after reading it's value from
-     * \\"csvColumnForResolvingResourceType\\" attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: complex - uniqueness: none
-     */
+     * This attribute gives a maps for resolving Resource Type after reading it's value from \\"csvColumnForResolvingResourceType\\" attribute
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resolveValueUsingResourceType")
     private final java.util.List<SchemaResolveValueUsingResourceType> resolveValueUsingResourceType;
 
     /**
-     * This attribute gives a maps for resolving Resource Type after reading it's value from
-     * \\"csvColumnForResolvingResourceType\\" attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: complex - uniqueness: none
-     *
+     * This attribute gives a maps for resolving Resource Type after reading it's value from \\"csvColumnForResolvingResourceType\\" attribute
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<SchemaResolveValueUsingResourceType> getResolveValueUsingResourceType() {
         return resolveValueUsingResourceType;
     }
 
     /**
-     * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of
-     * the referenced resource with the columnHeaderName(s). This attribute should be given in the
-     * idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one
-     * attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: complex - uniqueness: none
-     */
+     * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of the referenced resource with the columnHeaderName(s). This attribute should be given in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty(
             "referencedResourceTypeUniqueAttributeNameMappings")
     private final java.util.List<SchemaReferencedResourceTypeUniqueAttributeNameMappings>
             referencedResourceTypeUniqueAttributeNameMappings;
 
     /**
-     * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of
-     * the referenced resource with the columnHeaderName(s). This attribute should be given in the
-     * idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one
-     * attribute.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - multiValued: true - mutability: readWrite -
-     * required: false - returned: default - type: complex - uniqueness: none
-     *
+     * This attribute specifies the mapping of \\"uniqueAttributeNameForDisplay\\" attributes(s) of the referenced resource with the columnHeaderName(s). This attribute should be given in the idcsCsvAttributeNameMappings when uniqueAttributeNameForDisplay contains more than one attribute.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<SchemaReferencedResourceTypeUniqueAttributeNameMappings>
             getReferencedResourceTypeUniqueAttributeNameMappings() {
         return referencedResourceTypeUniqueAttributeNameMappings;
@@ -521,7 +665,6 @@ public final class SchemaIdcsCsvAttributeNameMappings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

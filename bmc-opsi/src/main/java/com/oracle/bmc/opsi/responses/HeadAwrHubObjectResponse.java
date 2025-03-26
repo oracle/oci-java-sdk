@@ -6,18 +6,15 @@ package com.oracle.bmc.opsi.responses;
 
 import com.oracle.bmc.opsi.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      */
     private String opcClientRequestId;
 
     /**
-     * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-     * debugging.
-     *
+     * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
      * @return the value
      */
     public String getOpcClientRequestId() {
@@ -25,14 +22,15 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,7 +38,10 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -52,148 +53,157 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The user-defined metadata for the Awr Hub object. */
+    /**
+     * The user-defined metadata for the Awr Hub object.
+     */
     private java.util.Map<String, String> opcMeta;
 
     /**
      * The user-defined metadata for the Awr Hub object.
-     *
      * @return the value
      */
     public java.util.Map<String, String> getOpcMeta() {
         return opcMeta;
     }
 
-    /** The Awr Hub object size in bytes. */
+    /**
+     * The Awr Hub object size in bytes.
+     */
     private Long contentLength;
 
     /**
      * The Awr Hub object size in bytes.
-     *
      * @return the value
      */
     public Long getContentLength() {
         return contentLength;
     }
 
-    /** Content-MD5 header. */
+    /**
+     * Content-MD5 header.
+     */
     private String contentMd5;
 
     /**
      * Content-MD5 header.
-     *
      * @return the value
      */
     public String getContentMd5() {
         return contentMd5;
     }
 
-    /** */
+    /**
+     *
+     */
     private String opcMultipartMd5;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcMultipartMd5() {
         return opcMultipartMd5;
     }
 
-    /** Content-Type header. */
+    /**
+     * Content-Type header.
+     */
     private String contentType;
 
     /**
      * Content-Type header.
-     *
      * @return the value
      */
     public String getContentType() {
         return contentType;
     }
 
-    /** Content-Language header. */
+    /**
+     * Content-Language header.
+     */
     private String contentLanguage;
 
     /**
      * Content-Language header.
-     *
      * @return the value
      */
     public String getContentLanguage() {
         return contentLanguage;
     }
 
-    /** Content-Encoding header. */
+    /**
+     * Content-Encoding header.
+     */
     private String contentEncoding;
 
     /**
      * Content-Encoding header.
-     *
      * @return the value
      */
     public String getContentEncoding() {
         return contentEncoding;
     }
 
-    /** Cache-Control header. */
+    /**
+     * Cache-Control header.
+     */
     private String cacheControl;
 
     /**
      * Cache-Control header.
-     *
      * @return the value
      */
     public String getCacheControl() {
         return cacheControl;
     }
 
-    /** Content-Disposition header. */
+    /**
+     * Content-Disposition header.
+     */
     private String contentDisposition;
 
     /**
      * Content-Disposition header.
-     *
      * @return the value
      */
     public String getContentDisposition() {
         return contentDisposition;
     }
 
-    /** The Awr Hub object modification time. */
+    /**
+     * The Awr Hub object modification time.
+     */
     private java.util.Date lastModified;
 
     /**
      * The Awr Hub object modification time.
-     *
      * @return the value
      */
     public java.util.Date getLastModified() {
         return lastModified;
     }
 
-    /** The storage tier that the Awr Hub object is stored in. */
+    /**
+     * The storage tier that the Awr Hub object is stored in.
+     */
     private StorageTier storageTier;
 
     /**
      * The storage tier that the Awr Hub object is stored in.
-     *
      * @return the value
      */
     public StorageTier getStorageTier() {
         return storageTier;
     }
 
-    /** The storage tier that the Awr Hub object is stored in. */
-    public enum StorageTier implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The storage tier that the Awr Hub object is stored in.
+     **/
+    public enum StorageTier {
         Standard("STANDARD"),
         Infrequentaccess("INFREQUENTACCESS"),
         Archive("ARCHIVE"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(StorageTier.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, StorageTier> map;
@@ -201,9 +211,7 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         static {
             map = new java.util.HashMap<>();
             for (StorageTier v : StorageTier.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -221,23 +229,17 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'StorageTier', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid StorageTier: " + key);
         }
     };
 
     /**
-     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive
-     * tier.
+     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive tier.
      */
     private ArchivalState archivalState;
 
     /**
-     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive
-     * tier.
-     *
+     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive tier.
      * @return the value
      */
     public ArchivalState getArchivalState() {
@@ -245,22 +247,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive
-     * tier.
-     */
-    public enum ArchivalState implements com.oracle.bmc.http.internal.BmcEnum {
+     * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive tier.
+     **/
+    public enum ArchivalState {
         Archived("ARCHIVED"),
         Restoring("RESTORING"),
         Restored("RESTORED"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ArchivalState.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, ArchivalState> map;
@@ -268,9 +261,7 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         static {
             map = new java.util.HashMap<>();
             for (ArchivalState v : ArchivalState.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -288,31 +279,30 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ArchivalState', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid ArchivalState: " + key);
         }
     };
 
-    /** Time that the Awr Hub object is returned to the archived state. */
+    /**
+     * Time that the Awr Hub object is returned to the archived state.
+     */
     private java.util.Date timeOfArchival;
 
     /**
      * Time that the Awr Hub object is returned to the archived state.
-     *
      * @return the value
      */
     public java.util.Date getTimeOfArchival() {
         return timeOfArchival;
     }
 
-    /** VersionId of the requested Awr Hub object. */
+    /**
+     * VersionId of the requested Awr Hub object.
+     */
     private String versionId;
 
     /**
      * VersionId of the requested Awr Hub object.
-     *
      * @return the value
      */
     public String getVersionId() {
@@ -320,17 +310,18 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      */
     private boolean isNotModified;
 
     /**
-     * Flag to indicate whether or not the object was modified. If this is true, the getter for the
-     * object itself will return null. Callers should check this if they specified one of the
-     * request params that might result in a conditional response (like 'if-match'/'if-none-match').
-     *
+     * Flag to indicate whether or not the object was modified.  If this is true,
+     * the getter for the object itself will return null.  Callers should check this
+     * if they specified one of the request params that might result in a conditional
+     * response (like 'if-match'/'if-none-match').
      * @param true if the object was not modified
      */
     public boolean isNotModified() {
@@ -361,7 +352,7 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private HeadAwrHubObjectResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcClientRequestId,
             String opcRequestId,
             String etag,
@@ -401,34 +392,28 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         this.isNotModified = isNotModified;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<HeadAwrHubObjectResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          */
         private String opcClientRequestId;
 
         /**
-         * Echoes back the value passed in the opc-client-request-id header, for use by clients when
-         * debugging.
-         *
+         * Echoes back the value passed in the opc-client-request-id header, for use by clients when debugging.
          * @param opcClientRequestId the value to set
          * @return this builder
          */
@@ -438,14 +423,15 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -455,7 +441,10 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -469,12 +458,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The user-defined metadata for the Awr Hub object. */
+        /**
+         * The user-defined metadata for the Awr Hub object.
+         */
         private java.util.Map<String, String> opcMeta;
 
         /**
          * The user-defined metadata for the Awr Hub object.
-         *
          * @param opcMeta the value to set
          * @return this builder
          */
@@ -483,12 +473,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The Awr Hub object size in bytes. */
+        /**
+         * The Awr Hub object size in bytes.
+         */
         private Long contentLength;
 
         /**
          * The Awr Hub object size in bytes.
-         *
          * @param contentLength the value to set
          * @return this builder
          */
@@ -497,12 +488,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Content-MD5 header. */
+        /**
+         * Content-MD5 header.
+         */
         private String contentMd5;
 
         /**
          * Content-MD5 header.
-         *
          * @param contentMd5 the value to set
          * @return this builder
          */
@@ -511,10 +503,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcMultipartMd5;
 
         /**
+         *
          * @param opcMultipartMd5 the value to set
          * @return this builder
          */
@@ -523,12 +518,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Content-Type header. */
+        /**
+         * Content-Type header.
+         */
         private String contentType;
 
         /**
          * Content-Type header.
-         *
          * @param contentType the value to set
          * @return this builder
          */
@@ -537,12 +533,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Content-Language header. */
+        /**
+         * Content-Language header.
+         */
         private String contentLanguage;
 
         /**
          * Content-Language header.
-         *
          * @param contentLanguage the value to set
          * @return this builder
          */
@@ -551,12 +548,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Content-Encoding header. */
+        /**
+         * Content-Encoding header.
+         */
         private String contentEncoding;
 
         /**
          * Content-Encoding header.
-         *
          * @param contentEncoding the value to set
          * @return this builder
          */
@@ -565,12 +563,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Cache-Control header. */
+        /**
+         * Cache-Control header.
+         */
         private String cacheControl;
 
         /**
          * Cache-Control header.
-         *
          * @param cacheControl the value to set
          * @return this builder
          */
@@ -579,12 +578,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Content-Disposition header. */
+        /**
+         * Content-Disposition header.
+         */
         private String contentDisposition;
 
         /**
          * Content-Disposition header.
-         *
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -593,12 +593,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The Awr Hub object modification time. */
+        /**
+         * The Awr Hub object modification time.
+         */
         private java.util.Date lastModified;
 
         /**
          * The Awr Hub object modification time.
-         *
          * @param lastModified the value to set
          * @return this builder
          */
@@ -607,12 +608,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The storage tier that the Awr Hub object is stored in. */
+        /**
+         * The storage tier that the Awr Hub object is stored in.
+         */
         private StorageTier storageTier;
 
         /**
          * The storage tier that the Awr Hub object is stored in.
-         *
          * @param storageTier the value to set
          * @return this builder
          */
@@ -622,15 +624,12 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in
-         * Archive tier.
+         * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive tier.
          */
         private ArchivalState archivalState;
 
         /**
-         * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in
-         * Archive tier.
-         *
+         * Archival state of an Awr Hub object. This field is set only for Awr Hub objects in Archive tier.
          * @param archivalState the value to set
          * @return this builder
          */
@@ -639,12 +638,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** Time that the Awr Hub object is returned to the archived state. */
+        /**
+         * Time that the Awr Hub object is returned to the archived state.
+         */
         private java.util.Date timeOfArchival;
 
         /**
          * Time that the Awr Hub object is returned to the archived state.
-         *
          * @param timeOfArchival the value to set
          * @return this builder
          */
@@ -653,12 +653,13 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** VersionId of the requested Awr Hub object. */
+        /**
+         * VersionId of the requested Awr Hub object.
+         */
         private String versionId;
 
         /**
          * VersionId of the requested Awr Hub object.
-         *
          * @param versionId the value to set
          * @return this builder
          */
@@ -668,19 +669,18 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          */
         private boolean isNotModified;
 
         /**
-         * Flag to indicate whether or not the object was modified. If this is true, the getter for
-         * the object itself will return null. Callers should check this if they specified one of
-         * the request params that might result in a conditional response (like
-         * 'if-match'/'if-none-match').
-         *
+         * Flag to indicate whether or not the object was modified.  If this is true,
+         * the getter for the object itself will return null.  Callers should check this
+         * if they specified one of the request params that might result in a conditional
+         * response (like 'if-match'/'if-none-match').
          * @param true if the object was not modified
          */
         public Builder isNotModified(boolean isNotModified) {
@@ -690,10 +690,8 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(HeadAwrHubObjectResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -721,10 +719,8 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public HeadAwrHubObjectResponse build() {
             return new HeadAwrHubObjectResponse(
                     __httpStatusCode__,
@@ -752,7 +748,6 @@ public class HeadAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

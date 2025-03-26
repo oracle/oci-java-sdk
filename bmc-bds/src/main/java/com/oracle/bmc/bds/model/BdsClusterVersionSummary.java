@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Cluster version details including bds and odh version information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Cluster version details including bds and odh version information.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BdsClusterVersionSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BdsClusterVersionSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BdsClusterVersionSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"bdsVersion", "odhVersion"})
     public BdsClusterVersionSummary(String bdsVersion, String odhVersion) {
@@ -32,31 +31,33 @@ public final class BdsClusterVersionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** BDS version to be used for cluster creation */
+        /**
+         * BDS version to be used for cluster creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
         private String bdsVersion;
 
         /**
          * BDS version to be used for cluster creation
-         *
          * @param bdsVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder bdsVersion(String bdsVersion) {
             this.bdsVersion = bdsVersion;
             this.__explicitlySet__.add("bdsVersion");
             return this;
         }
-        /** ODH version to be used for cluster creation */
+        /**
+         * ODH version to be used for cluster creation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
         private String odhVersion;
 
         /**
          * ODH version to be used for cluster creation
-         *
          * @param odhVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder odhVersion(String odhVersion) {
             this.odhVersion = odhVersion;
             this.__explicitlySet__.add("odhVersion");
@@ -87,7 +88,9 @@ public final class BdsClusterVersionSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,30 @@ public final class BdsClusterVersionSummary
         return new Builder().copy(this);
     }
 
-    /** BDS version to be used for cluster creation */
+    /**
+     * BDS version to be used for cluster creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bdsVersion")
     private final String bdsVersion;
 
     /**
      * BDS version to be used for cluster creation
-     *
      * @return the value
-     */
+     **/
     public String getBdsVersion() {
         return bdsVersion;
     }
 
-    /** ODH version to be used for cluster creation */
+    /**
+     * ODH version to be used for cluster creation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
     private final String odhVersion;
 
     /**
      * ODH version to be used for cluster creation
-     *
      * @return the value
-     */
+     **/
     public String getOdhVersion() {
         return odhVersion;
     }
@@ -129,7 +134,6 @@ public final class BdsClusterVersionSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

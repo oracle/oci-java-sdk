@@ -5,24 +5,22 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents a Kafka bootstrap server with host name, optional port defaults to 9092, and an
- * optional private ip. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents a Kafka bootstrap server with host name, optional port defaults to 9092, and an optional private ip.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = KafkaBootstrapServer.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KafkaBootstrapServer
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = KafkaBootstrapServer.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KafkaBootstrapServer extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"host", "port", "privateIp"})
     public KafkaBootstrapServer(String host, Integer port, String privateIp) {
@@ -34,7 +32,10 @@ public final class KafkaBootstrapServer
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name or address of a host. */
+        /**
+         * The name or address of a host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
@@ -43,13 +44,16 @@ public final class KafkaBootstrapServer
          *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The port of an endpoint usually specified for a connection. */
+        /**
+         * The port of an endpoint usually specified for a connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -58,42 +62,39 @@ public final class KafkaBootstrapServer
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
         /**
-         * Deprecated: this field will be removed in future versions. Either specify the private IP
-         * in the connectionString or host field, or make sure the host name is resolvable in the
-         * target VCN.
-         *
-         * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the
-         * privateIp is provided, the subnetId must also be provided. In case the privateIp (and the
-         * subnetId) is not provided it is assumed the datasource is publicly accessible. In case
-         * the connection is accessible only privately, the lack of privateIp will result in not
-         * being able to access the connection.
+         * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+         * field, or make sure the host name is resolvable in the target VCN.
+         * <p>
+         * The private IP address of the connection's endpoint in the customer's VCN, typically a
+         * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+         * In case the privateIp is provided, the subnetId must also be provided.
+         * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+         * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
          *
          * @param privateIp the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIp(String privateIp) {
             this.privateIp = privateIp;
             this.__explicitlySet__.add("privateIp");
@@ -127,7 +128,9 @@ public final class KafkaBootstrapServer
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,7 +139,10 @@ public final class KafkaBootstrapServer
         return new Builder().copy(this);
     }
 
-    /** The name or address of a host. */
+    /**
+     * The name or address of a host.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
@@ -144,12 +150,15 @@ public final class KafkaBootstrapServer
      * The name or address of a host.
      *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The port of an endpoint usually specified for a connection. */
+    /**
+     * The port of an endpoint usually specified for a connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
@@ -157,40 +166,37 @@ public final class KafkaBootstrapServer
      * The port of an endpoint usually specified for a connection.
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
     private final String privateIp;
 
     /**
-     * Deprecated: this field will be removed in future versions. Either specify the private IP in
-     * the connectionString or host field, or make sure the host name is resolvable in the target
-     * VCN.
-     *
-     * <p>The private IP address of the connection's endpoint in the customer's VCN, typically a
-     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp
-     * is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is
-     * not provided it is assumed the datasource is publicly accessible. In case the connection is
-     * accessible only privately, the lack of privateIp will result in not being able to access the
-     * connection.
+     * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
+     * field, or make sure the host name is resolvable in the target VCN.
+     * <p>
+     * The private IP address of the connection's endpoint in the customer's VCN, typically a
+     * database endpoint or a big data endpoint (e.g. Kafka bootstrap server).
+     * In case the privateIp is provided, the subnetId must also be provided.
+     * In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible.
+     * In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIp() {
         return privateIp;
     }
@@ -202,7 +208,6 @@ public final class KafkaBootstrapServer
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

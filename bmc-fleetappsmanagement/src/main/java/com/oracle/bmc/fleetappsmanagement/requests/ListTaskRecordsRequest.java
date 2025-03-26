@@ -6,86 +6,110 @@ package com.oracle.bmc.fleetappsmanagement.requests;
 
 import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTaskRecordsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRecordsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTaskRecordsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTaskRecordsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The platform for the Task. */
+    /**
+     * The platform for the Task.
+     */
     private String platform;
 
-    /** The platform for the Task. */
+    /**
+     * The platform for the Task.
+     */
     public String getPlatform() {
         return platform;
     }
-    /** The type of the Task. */
+    /**
+     * The type of the Task.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.Type type;
 
-    /** The type of the Task. */
+    /**
+     * The type of the Task.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.TaskRecord.Type getType() {
         return type;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** unique TaskDetail identifier */
+    /**
+     * unique TaskDetail identifier
+     */
     private String id;
 
-    /** unique TaskDetail identifier */
+    /**
+     * unique TaskDetail identifier
+     */
     public String getId() {
         return id;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The current state of the Task. */
+    /**
+     * The current state of the Task.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState lifecycleState;
 
-    /** The current state of the Task. */
+    /**
+     * The current state of the Task.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -119,23 +143,31 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -143,15 +175,17 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTaskRecordsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -160,12 +194,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The platform for the Task. */
+        /**
+         * The platform for the Task.
+         */
         private String platform = null;
 
         /**
          * The platform for the Task.
-         *
          * @param platform the value to set
          * @return this builder instance
          */
@@ -174,12 +209,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The type of the Task. */
+        /**
+         * The type of the Task.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.Type type = null;
 
         /**
          * The type of the Task.
-         *
          * @param type the value to set
          * @return this builder instance
          */
@@ -188,12 +224,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -202,12 +239,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** unique TaskDetail identifier */
+        /**
+         * unique TaskDetail identifier
+         */
         private String id = null;
 
         /**
          * unique TaskDetail identifier
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -216,12 +254,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -231,15 +270,12 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -248,13 +284,14 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The current state of the Task. */
+        /**
+         * The current state of the Task.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.TaskRecord.LifecycleState lifecycleState =
                 null;
 
         /**
          * The current state of the Task.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -265,14 +302,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -282,12 +318,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -296,12 +333,13 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -312,19 +350,18 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -336,7 +373,6 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTaskRecordsRequest o) {
@@ -359,11 +395,10 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListTaskRecordsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTaskRecordsRequest
          */
@@ -377,8 +412,7 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListTaskRecordsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTaskRecordsRequest
@@ -397,14 +431,12 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListTaskRecordsRequest(compartmentId, platform, type, displayName, id, limit,
-            // page, lifecycleState, sortBy, sortOrder, opcRequestId);
+            // new ListTaskRecordsRequest(compartmentId, platform, type, displayName, id, limit, page, lifecycleState, sortBy, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -424,7 +456,6 @@ public class ListTaskRecordsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

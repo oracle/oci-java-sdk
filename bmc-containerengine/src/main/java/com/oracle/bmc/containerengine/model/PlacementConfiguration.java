@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The information of virtual node placement in the virtual node pool. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The information of virtual node placement in the virtual node pool.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PlacementConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PlacementConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PlacementConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"availabilityDomain", "faultDomain", "subnetId"})
     public PlacementConfiguration(
@@ -35,47 +34,52 @@ public final class PlacementConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The availability domain in which to place virtual nodes. Example: {@code Uocm:PHX-AD-1}
-         */
+         * The availability domain in which to place virtual nodes.
+         * Example: {@code Uocm:PHX-AD-1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain in which to place virtual nodes. Example: {@code Uocm:PHX-AD-1}
+         * The availability domain in which to place virtual nodes.
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The fault domain of this virtual node. */
+        /**
+         * The fault domain of this virtual node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private java.util.List<String> faultDomain;
 
         /**
          * The fault domain of this virtual node.
-         *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(java.util.List<String> faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The OCID of the subnet in which to place virtual nodes. */
+        /**
+         * The OCID of the subnet in which to place virtual nodes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet in which to place virtual nodes.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -110,7 +114,9 @@ public final class PlacementConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -119,41 +125,48 @@ public final class PlacementConfiguration
         return new Builder().copy(this);
     }
 
-    /** The availability domain in which to place virtual nodes. Example: {@code Uocm:PHX-AD-1} */
+    /**
+     * The availability domain in which to place virtual nodes.
+     * Example: {@code Uocm:PHX-AD-1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain in which to place virtual nodes. Example: {@code Uocm:PHX-AD-1}
+     * The availability domain in which to place virtual nodes.
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The fault domain of this virtual node. */
+    /**
+     * The fault domain of this virtual node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final java.util.List<String> faultDomain;
 
     /**
      * The fault domain of this virtual node.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getFaultDomain() {
         return faultDomain;
     }
 
-    /** The OCID of the subnet in which to place virtual nodes. */
+    /**
+     * The OCID of the subnet in which to place virtual nodes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet in which to place virtual nodes.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -165,7 +178,6 @@ public final class PlacementConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

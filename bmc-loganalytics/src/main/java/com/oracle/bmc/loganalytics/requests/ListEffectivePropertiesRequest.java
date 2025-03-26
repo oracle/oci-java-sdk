@@ -6,89 +6,134 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEffectivePropertiesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListEffectivePropertiesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/ListEffectivePropertiesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListEffectivePropertiesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class ListEffectivePropertiesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The agent ocid. */
+    /**
+     * The agent ocid.
+     *
+     */
     private String agentId;
 
-    /** The agent ocid. */
+    /**
+     * The agent ocid.
+     *
+     */
     public String getAgentId() {
         return agentId;
     }
-    /** The source name. */
+    /**
+     * The source name.
+     */
     private String sourceName;
 
-    /** The source name. */
+    /**
+     * The source name.
+     */
     public String getSourceName() {
         return sourceName;
     }
-    /** The include pattern flag. */
+    /**
+     * The include pattern flag.
+     *
+     */
     private Boolean isIncludePatterns;
 
-    /** The include pattern flag. */
+    /**
+     * The include pattern flag.
+     *
+     */
     public Boolean getIsIncludePatterns() {
         return isIncludePatterns;
     }
-    /** The entity ocid. */
+    /**
+     * The entity ocid.
+     *
+     */
     private String entityId;
 
-    /** The entity ocid. */
+    /**
+     * The entity ocid.
+     *
+     */
     public String getEntityId() {
         return entityId;
     }
-    /** The pattern id. */
+    /**
+     * The pattern id.
+     *
+     */
     private Integer patternId;
 
-    /** The pattern id. */
+    /**
+     * The pattern id.
+     *
+     */
     public Integer getPatternId() {
         return patternId;
     }
-    /** The property name used for filtering. */
+    /**
+     * The property name used for filtering.
+     *
+     */
     private String name;
 
-    /** The property name used for filtering. */
+    /**
+     * The property name used for filtering.
+     *
+     */
     public String getName() {
         return name;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -121,15 +166,22 @@ public class ListEffectivePropertiesRequest
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The attribute used to sort the returned properties */
+    /**
+     * The attribute used to sort the returned properties
+     */
     private SortBy sortBy;
 
-    /** The attribute used to sort the returned properties */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The attribute used to sort the returned properties
+     **/
+    public enum SortBy {
         Name("name"),
         DisplayName("displayName"),
         ;
@@ -162,14 +214,20 @@ public class ListEffectivePropertiesRequest
         }
     };
 
-    /** The attribute used to sort the returned properties */
+    /**
+     * The attribute used to sort the returned properties
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -177,10 +235,14 @@ public class ListEffectivePropertiesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListEffectivePropertiesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -194,7 +256,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The agent ocid. */
+        /**
+         * The agent ocid.
+         *
+         */
         private String agentId = null;
 
         /**
@@ -208,12 +273,13 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The source name. */
+        /**
+         * The source name.
+         */
         private String sourceName = null;
 
         /**
          * The source name.
-         *
          * @param sourceName the value to set
          * @return this builder instance
          */
@@ -222,7 +288,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The include pattern flag. */
+        /**
+         * The include pattern flag.
+         *
+         */
         private Boolean isIncludePatterns = null;
 
         /**
@@ -236,7 +305,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The entity ocid. */
+        /**
+         * The entity ocid.
+         *
+         */
         private String entityId = null;
 
         /**
@@ -250,7 +322,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The pattern id. */
+        /**
+         * The pattern id.
+         *
+         */
         private Integer patternId = null;
 
         /**
@@ -264,7 +339,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The property name used for filtering. */
+        /**
+         * The property name used for filtering.
+         *
+         */
         private String name = null;
 
         /**
@@ -278,12 +356,13 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -293,15 +372,12 @@ public class ListEffectivePropertiesRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -310,7 +386,10 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -324,12 +403,13 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The attribute used to sort the returned properties */
+        /**
+         * The attribute used to sort the returned properties
+         */
         private SortBy sortBy = null;
 
         /**
          * The attribute used to sort the returned properties
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -338,12 +418,13 @@ public class ListEffectivePropertiesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -354,19 +435,18 @@ public class ListEffectivePropertiesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -378,7 +458,6 @@ public class ListEffectivePropertiesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListEffectivePropertiesRequest o) {
@@ -402,11 +481,10 @@ public class ListEffectivePropertiesRequest
         /**
          * Build the instance of ListEffectivePropertiesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListEffectivePropertiesRequest
          */
@@ -420,8 +498,7 @@ public class ListEffectivePropertiesRequest
         /**
          * Build the instance of ListEffectivePropertiesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListEffectivePropertiesRequest
@@ -441,15 +518,12 @@ public class ListEffectivePropertiesRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListEffectivePropertiesRequest(namespaceName, agentId, sourceName,
-            // isIncludePatterns, entityId, patternId, name, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // new ListEffectivePropertiesRequest(namespaceName, agentId, sourceName, isIncludePatterns, entityId, patternId, name, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -470,7 +544,6 @@ public class ListEffectivePropertiesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

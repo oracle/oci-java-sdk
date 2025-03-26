@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplaceprivateoffer.model;
 
-/** Possible values for a package type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum PackageType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible values for a package type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum PackageType {
     ContainerImage("CONTAINER_IMAGE"),
     HelmChart("HELM_CHART"),
     ;

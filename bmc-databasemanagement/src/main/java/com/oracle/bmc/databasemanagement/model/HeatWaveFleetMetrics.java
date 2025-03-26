@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the HeatWave cluster fleet health metrics. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the HeatWave cluster fleet health metrics.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HeatWaveFleetMetrics.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HeatWaveFleetMetrics
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = HeatWaveFleetMetrics.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class HeatWaveFleetMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"startTime", "endTime", "fleetClusters", "fleetSummary"})
     public HeatWaveFleetMetrics(
@@ -38,65 +36,65 @@ public final class HeatWaveFleetMetrics
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The beginning of the time range during which metric data is retrieved. */
+        /**
+         * The beginning of the time range during which metric data is retrieved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startTime")
         private String startTime;
 
         /**
          * The beginning of the time range during which metric data is retrieved.
-         *
          * @param startTime the value to set
          * @return this builder
-         */
+         **/
         public Builder startTime(String startTime) {
             this.startTime = startTime;
             this.__explicitlySet__.add("startTime");
             return this;
         }
-        /** The end of the time range during which metric data is retrieved. */
+        /**
+         * The end of the time range during which metric data is retrieved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endTime")
         private String endTime;
 
         /**
          * The end of the time range during which metric data is retrieved.
-         *
          * @param endTime the value to set
          * @return this builder
-         */
+         **/
         public Builder endTime(String endTime) {
             this.endTime = endTime;
             this.__explicitlySet__.add("endTime");
             return this;
         }
-        /** The list of HeatWave clusters in the fleet and their usage metrics. */
+        /**
+         * The list of HeatWave clusters in the fleet and their usage metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetClusters")
         private java.util.List<HeatWaveClusterUsageMetrics> fleetClusters;
 
         /**
          * The list of HeatWave clusters in the fleet and their usage metrics.
-         *
          * @param fleetClusters the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetClusters(java.util.List<HeatWaveClusterUsageMetrics> fleetClusters) {
             this.fleetClusters = fleetClusters;
             this.__explicitlySet__.add("fleetClusters");
             return this;
         }
         /**
-         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide
-         * the aggregated usage of CPU, storage, and so on of all the clusters.
-         */
+         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetSummary")
         private java.util.List<HeatWaveFleetSummary> fleetSummary;
 
         /**
-         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide
-         * the aggregated usage of CPU, storage, and so on of all the clusters.
-         *
+         * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
          * @param fleetSummary the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetSummary(java.util.List<HeatWaveFleetSummary> fleetSummary) {
             this.fleetSummary = fleetSummary;
             this.__explicitlySet__.add("fleetSummary");
@@ -134,7 +132,9 @@ public final class HeatWaveFleetMetrics
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,58 +143,58 @@ public final class HeatWaveFleetMetrics
         return new Builder().copy(this);
     }
 
-    /** The beginning of the time range during which metric data is retrieved. */
+    /**
+     * The beginning of the time range during which metric data is retrieved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startTime")
     private final String startTime;
 
     /**
      * The beginning of the time range during which metric data is retrieved.
-     *
      * @return the value
-     */
+     **/
     public String getStartTime() {
         return startTime;
     }
 
-    /** The end of the time range during which metric data is retrieved. */
+    /**
+     * The end of the time range during which metric data is retrieved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endTime")
     private final String endTime;
 
     /**
      * The end of the time range during which metric data is retrieved.
-     *
      * @return the value
-     */
+     **/
     public String getEndTime() {
         return endTime;
     }
 
-    /** The list of HeatWave clusters in the fleet and their usage metrics. */
+    /**
+     * The list of HeatWave clusters in the fleet and their usage metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetClusters")
     private final java.util.List<HeatWaveClusterUsageMetrics> fleetClusters;
 
     /**
      * The list of HeatWave clusters in the fleet and their usage metrics.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveClusterUsageMetrics> getFleetClusters() {
         return fleetClusters;
     }
 
     /**
-     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the
-     * aggregated usage of CPU, storage, and so on of all the clusters.
-     */
+     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetSummary")
     private final java.util.List<HeatWaveFleetSummary> fleetSummary;
 
     /**
-     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the
-     * aggregated usage of CPU, storage, and so on of all the clusters.
-     *
+     * The number of HeatWave clusters in the fleet and a summary of the metrics that provide the aggregated usage of CPU, storage, and so on of all the clusters.
      * @return the value
-     */
+     **/
     public java.util.List<HeatWaveFleetSummary> getFleetSummary() {
         return fleetSummary;
     }
@@ -206,7 +206,6 @@ public final class HeatWaveFleetMetrics
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

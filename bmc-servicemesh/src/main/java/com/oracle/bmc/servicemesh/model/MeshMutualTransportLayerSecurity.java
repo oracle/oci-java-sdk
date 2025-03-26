@@ -5,23 +5,22 @@
 package com.oracle.bmc.servicemesh.model;
 
 /**
- * Sets a minimum level of mTLS authentication for all virtual services within the mesh. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+ * Sets a minimum level of mTLS authentication for all virtual services within the mesh.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MeshMutualTransportLayerSecurity.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MeshMutualTransportLayerSecurity.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MeshMutualTransportLayerSecurity
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minimum"})
     public MeshMutualTransportLayerSecurity(MutualTransportLayerSecurity.Mode minimum) {
@@ -32,21 +31,22 @@ public final class MeshMutualTransportLayerSecurity
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication
-         * mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT
-         * modes. STRICT: All virtual services within this mesh must use STRICT mode.
-         */
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
+         * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
+         * STRICT: All virtual services within this mesh must use STRICT mode.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimum")
         private MutualTransportLayerSecurity.Mode minimum;
 
         /**
-         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication
-         * mode. PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT
-         * modes. STRICT: All virtual services within this mesh must use STRICT mode.
+         * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
+         * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
+         * STRICT: All virtual services within this mesh must use STRICT mode.
          *
          * @param minimum the value to set
          * @return this builder
-         */
+         **/
         public Builder minimum(MutualTransportLayerSecurity.Mode minimum) {
             this.minimum = minimum;
             this.__explicitlySet__.add("minimum");
@@ -74,7 +74,9 @@ public final class MeshMutualTransportLayerSecurity
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -87,7 +89,8 @@ public final class MeshMutualTransportLayerSecurity
      * DISABLED: No minimum virtual services within this mesh can use any mTLS authentication mode.
      * PERMISSIVE: Virtual services within this mesh can use either PERMISSIVE or STRICT modes.
      * STRICT: All virtual services within this mesh must use STRICT mode.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimum")
     private final MutualTransportLayerSecurity.Mode minimum;
 
@@ -97,7 +100,7 @@ public final class MeshMutualTransportLayerSecurity
      * STRICT: All virtual services within this mesh must use STRICT mode.
      *
      * @return the value
-     */
+     **/
     public MutualTransportLayerSecurity.Mode getMinimum() {
         return minimum;
     }
@@ -109,7 +112,6 @@ public final class MeshMutualTransportLayerSecurity
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

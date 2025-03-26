@@ -5,25 +5,25 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * Request configuration details for the SQL monitor type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Request configuration details for the SQL monitor type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SqlMonitorConfiguration.Builder.class)
+    builder = SqlMonitorConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "configType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "configType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SqlMonitorConfiguration extends MonitorConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -44,31 +44,33 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("dnsConfiguration");
             return this;
         }
-        /** Database type. */
+        /**
+         * Database type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private DatabaseType databaseType;
 
         /**
          * Database type.
-         *
          * @param databaseType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseType(DatabaseType databaseType) {
             this.databaseType = databaseType;
             this.__explicitlySet__.add("databaseType");
             return this;
         }
-        /** SQL query to be executed. */
+        /**
+         * SQL query to be executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("query")
         private String query;
 
         /**
          * SQL query to be executed.
-         *
          * @param query the value to set
          * @return this builder
-         */
+         **/
         public Builder query(String query) {
             this.query = query;
             this.__explicitlySet__.add("query");
@@ -84,46 +86,49 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
             this.__explicitlySet__.add("databaseAuthenticationDetails");
             return this;
         }
-        /** Database role. */
+        /**
+         * Database role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseRole")
         private String databaseRole;
 
         /**
          * Database role.
-         *
          * @param databaseRole the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseRole(String databaseRole) {
             this.databaseRole = databaseRole;
             this.__explicitlySet__.add("databaseRole");
             return this;
         }
-        /** Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type. */
+        /**
+         * Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionType")
         private DatabaseConnectionType databaseConnectionType;
 
         /**
          * Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
-         *
          * @param databaseConnectionType the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseConnectionType(DatabaseConnectionType databaseConnectionType) {
             this.databaseConnectionType = databaseConnectionType;
             this.__explicitlySet__.add("databaseConnectionType");
             return this;
         }
-        /** Database connection string. */
+        /**
+         * Database connection string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
         /**
          * Database connection string.
-         *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
@@ -193,7 +198,9 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,28 +230,30 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
         this.databaseWalletDetails = databaseWalletDetails;
     }
 
-    /** Database type. */
+    /**
+     * Database type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final DatabaseType databaseType;
 
     /**
      * Database type.
-     *
      * @return the value
-     */
+     **/
     public DatabaseType getDatabaseType() {
         return databaseType;
     }
 
-    /** SQL query to be executed. */
+    /**
+     * SQL query to be executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("query")
     private final String query;
 
     /**
      * SQL query to be executed.
-     *
      * @return the value
-     */
+     **/
     public String getQuery() {
         return query;
     }
@@ -256,41 +265,44 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
         return databaseAuthenticationDetails;
     }
 
-    /** Database role. */
+    /**
+     * Database role.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseRole")
     private final String databaseRole;
 
     /**
      * Database role.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseRole() {
         return databaseRole;
     }
 
-    /** Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type. */
+    /**
+     * Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseConnectionType")
     private final DatabaseConnectionType databaseConnectionType;
 
     /**
      * Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
-     *
      * @return the value
-     */
+     **/
     public DatabaseConnectionType getDatabaseConnectionType() {
         return databaseConnectionType;
     }
 
-    /** Database connection string. */
+    /**
+     * Database connection string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
     /**
      * Database connection string.
-     *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
@@ -309,7 +321,6 @@ public final class SqlMonitorConfiguration extends MonitorConfiguration {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

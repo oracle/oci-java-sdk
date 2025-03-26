@@ -5,22 +5,19 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Benchmark test configuration detail. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * Benchmark test configuration detail.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BenchmarkDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BenchmarkDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BenchmarkDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "perfTestLength",
@@ -42,61 +39,65 @@ public final class BenchmarkDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Execution Length of Perf Test (default set to STANDARD) */
+        /**
+         * Execution Length of Perf Test (default set to STANDARD)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("perfTestLength")
         private PerfTestLength perfTestLength;
 
         /**
          * Execution Length of Perf Test (default set to STANDARD)
-         *
          * @param perfTestLength the value to set
          * @return this builder
-         */
+         **/
         public Builder perfTestLength(PerfTestLength perfTestLength) {
             this.perfTestLength = perfTestLength;
             this.__explicitlySet__.add("perfTestLength");
             return this;
         }
-        /** Control Cluster Id Information */
+        /**
+         * Control Cluster Id Information
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("controlClusterId")
         private String controlClusterId;
 
         /**
          * Control Cluster Id Information
-         *
          * @param controlClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder controlClusterId(String controlClusterId) {
             this.controlClusterId = controlClusterId;
             this.__explicitlySet__.add("controlClusterId");
             return this;
         }
-        /** Required Test Cluster Id needed to run perf test */
+        /**
+         * Required Test Cluster Id needed to run perf test
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("test1ClusterId")
         private String test1ClusterId;
 
         /**
          * Required Test Cluster Id needed to run perf test
-         *
          * @param test1ClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder test1ClusterId(String test1ClusterId) {
             this.test1ClusterId = test1ClusterId;
             this.__explicitlySet__.add("test1ClusterId");
             return this;
         }
-        /** Optional Test Cluster Id needed to run perf test */
+        /**
+         * Optional Test Cluster Id needed to run perf test
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("test2ClusterId")
         private String test2ClusterId;
 
         /**
          * Optional Test Cluster Id needed to run perf test
-         *
          * @param test2ClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder test2ClusterId(String test2ClusterId) {
             this.test2ClusterId = test2ClusterId;
             this.__explicitlySet__.add("test2ClusterId");
@@ -137,7 +138,9 @@ public final class BenchmarkDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -146,8 +149,10 @@ public final class BenchmarkDetails
         return new Builder().copy(this);
     }
 
-    /** Execution Length of Perf Test (default set to STANDARD) */
-    public enum PerfTestLength implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Execution Length of Perf Test (default set to STANDARD)
+     **/
+    public enum PerfTestLength {
         Standard("STANDARD"),
         Long("LONG"),
         ;
@@ -179,54 +184,58 @@ public final class BenchmarkDetails
             throw new IllegalArgumentException("Invalid PerfTestLength: " + key);
         }
     };
-    /** Execution Length of Perf Test (default set to STANDARD) */
+    /**
+     * Execution Length of Perf Test (default set to STANDARD)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("perfTestLength")
     private final PerfTestLength perfTestLength;
 
     /**
      * Execution Length of Perf Test (default set to STANDARD)
-     *
      * @return the value
-     */
+     **/
     public PerfTestLength getPerfTestLength() {
         return perfTestLength;
     }
 
-    /** Control Cluster Id Information */
+    /**
+     * Control Cluster Id Information
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("controlClusterId")
     private final String controlClusterId;
 
     /**
      * Control Cluster Id Information
-     *
      * @return the value
-     */
+     **/
     public String getControlClusterId() {
         return controlClusterId;
     }
 
-    /** Required Test Cluster Id needed to run perf test */
+    /**
+     * Required Test Cluster Id needed to run perf test
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("test1ClusterId")
     private final String test1ClusterId;
 
     /**
      * Required Test Cluster Id needed to run perf test
-     *
      * @return the value
-     */
+     **/
     public String getTest1ClusterId() {
         return test1ClusterId;
     }
 
-    /** Optional Test Cluster Id needed to run perf test */
+    /**
+     * Optional Test Cluster Id needed to run perf test
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("test2ClusterId")
     private final String test2ClusterId;
 
     /**
      * Optional Test Cluster Id needed to run perf test
-     *
      * @return the value
-     */
+     **/
     public String getTest2ClusterId() {
         return test2ClusterId;
     }
@@ -238,7 +247,6 @@ public final class BenchmarkDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

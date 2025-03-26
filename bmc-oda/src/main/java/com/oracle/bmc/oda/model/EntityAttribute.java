@@ -5,22 +5,19 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Attribute of an entity <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Attribute of an entity
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EntityAttribute.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EntityAttribute
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EntityAttribute extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -54,31 +51,33 @@ public final class EntityAttribute
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of an entity attribute */
+        /**
+         * The name of an entity attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of an entity attribute
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The type of an entity attribute */
+        /**
+         * The type of an entity attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private EntityAttributeType type;
 
         /**
          * The type of an entity attribute
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(EntityAttributeType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
@@ -94,76 +93,81 @@ public final class EntityAttribute
             this.__explicitlySet__.add("naturalLanguageMapping");
             return this;
         }
-        /** Is the entity attribute multi-value */
+        /**
+         * Is the entity attribute multi-value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMultiValue")
         private Boolean isMultiValue;
 
         /**
          * Is the entity attribute multi-value
-         *
          * @param isMultiValue the value to set
          * @return this builder
-         */
+         **/
         public Builder isMultiValue(Boolean isMultiValue) {
             this.isMultiValue = isMultiValue;
             this.__explicitlySet__.add("isMultiValue");
             return this;
         }
-        /** Is the entity attribute a fuzzy match */
+        /**
+         * Is the entity attribute a fuzzy match
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFuzzyMatch")
         private Boolean isFuzzyMatch;
 
         /**
          * Is the entity attribute a fuzzy match
-         *
          * @param isFuzzyMatch the value to set
          * @return this builder
-         */
+         **/
         public Builder isFuzzyMatch(Boolean isFuzzyMatch) {
             this.isFuzzyMatch = isFuzzyMatch;
             this.__explicitlySet__.add("isFuzzyMatch");
             return this;
         }
-        /** Are comparisons inverted in the entity attribute */
+        /**
+         * Are comparisons inverted in the entity attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInvertComparisons")
         private Boolean isInvertComparisons;
 
         /**
          * Are comparisons inverted in the entity attribute
-         *
          * @param isInvertComparisons the value to set
          * @return this builder
-         */
+         **/
         public Builder isInvertComparisons(Boolean isInvertComparisons) {
             this.isInvertComparisons = isInvertComparisons;
             this.__explicitlySet__.add("isInvertComparisons");
             return this;
         }
-        /** Temporal preference of an attribute */
+        /**
+         * Temporal preference of an attribute
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("temporalPreference")
         private TemporalPreference temporalPreference;
 
         /**
          * Temporal preference of an attribute
-         *
          * @param temporalPreference the value to set
          * @return this builder
-         */
+         **/
         public Builder temporalPreference(TemporalPreference temporalPreference) {
             this.temporalPreference = temporalPreference;
             this.__explicitlySet__.add("temporalPreference");
             return this;
         }
-        /** Name of referenced entity. */
+        /**
+         * Name of referenced entity.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("entityName")
         private String entityName;
 
         /**
          * Name of referenced entity.
-         *
          * @param entityName the value to set
          * @return this builder
-         */
+         **/
         public Builder entityName(String entityName) {
             this.entityName = entityName;
             this.__explicitlySet__.add("entityName");
@@ -220,7 +224,9 @@ public final class EntityAttribute
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -229,28 +235,30 @@ public final class EntityAttribute
         return new Builder().copy(this);
     }
 
-    /** The name of an entity attribute */
+    /**
+     * The name of an entity attribute
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of an entity attribute
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The type of an entity attribute */
+    /**
+     * The type of an entity attribute
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final EntityAttributeType type;
 
     /**
      * The type of an entity attribute
-     *
      * @return the value
-     */
+     **/
     public EntityAttributeType getType() {
         return type;
     }
@@ -262,67 +270,72 @@ public final class EntityAttribute
         return naturalLanguageMapping;
     }
 
-    /** Is the entity attribute multi-value */
+    /**
+     * Is the entity attribute multi-value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMultiValue")
     private final Boolean isMultiValue;
 
     /**
      * Is the entity attribute multi-value
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMultiValue() {
         return isMultiValue;
     }
 
-    /** Is the entity attribute a fuzzy match */
+    /**
+     * Is the entity attribute a fuzzy match
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFuzzyMatch")
     private final Boolean isFuzzyMatch;
 
     /**
      * Is the entity attribute a fuzzy match
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsFuzzyMatch() {
         return isFuzzyMatch;
     }
 
-    /** Are comparisons inverted in the entity attribute */
+    /**
+     * Are comparisons inverted in the entity attribute
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInvertComparisons")
     private final Boolean isInvertComparisons;
 
     /**
      * Are comparisons inverted in the entity attribute
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsInvertComparisons() {
         return isInvertComparisons;
     }
 
-    /** Temporal preference of an attribute */
+    /**
+     * Temporal preference of an attribute
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("temporalPreference")
     private final TemporalPreference temporalPreference;
 
     /**
      * Temporal preference of an attribute
-     *
      * @return the value
-     */
+     **/
     public TemporalPreference getTemporalPreference() {
         return temporalPreference;
     }
 
-    /** Name of referenced entity. */
+    /**
+     * Name of referenced entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("entityName")
     private final String entityName;
 
     /**
      * Name of referenced entity.
-     *
      * @return the value
-     */
+     **/
     public String getEntityName() {
         return entityName;
     }
@@ -334,7 +347,6 @@ public final class EntityAttribute
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

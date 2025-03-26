@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Indicates requirements for installing updates on a managed instance. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum InstallationRequirements implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Indicates requirements for installing updates on a managed instance.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum InstallationRequirements {
     EulaAcceptanceRequired("EULA_ACCEPTANCE_REQUIRED"),
     SoftwareMediaRequired("SOFTWARE_MEDIA_REQUIRED"),
     UserInteractionRequired("USER_INTERACTION_REQUIRED"),

@@ -5,21 +5,20 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * A Port Range which can be used for the running service. It uses port information. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * A Port Range which can be used for the running service. It uses port information.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PortRange.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PortRange extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PortRange extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"minimumPort", "maximumPort"})
     public PortRange(Integer minimumPort, Integer maximumPort) {
@@ -30,16 +29,17 @@ public final class PortRange extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum port in the range (inclusive), or the sole port of a single-port range. */
+        /**
+         * The minimum port in the range (inclusive), or the sole port of a single-port range.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumPort")
         private Integer minimumPort;
 
         /**
          * The minimum port in the range (inclusive), or the sole port of a single-port range.
-         *
          * @param minimumPort the value to set
          * @return this builder
-         */
+         **/
         public Builder minimumPort(Integer minimumPort) {
             this.minimumPort = minimumPort;
             this.__explicitlySet__.add("minimumPort");
@@ -47,16 +47,15 @@ public final class PortRange extends com.oracle.bmc.http.client.internal.Explici
         }
         /**
          * The maximum port in the range (inclusive), which may be absent for a single-port range.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maximumPort")
         private Integer maximumPort;
 
         /**
          * The maximum port in the range (inclusive), which may be absent for a single-port range.
-         *
          * @param maximumPort the value to set
          * @return this builder
-         */
+         **/
         public Builder maximumPort(Integer maximumPort) {
             this.maximumPort = maximumPort;
             this.__explicitlySet__.add("maximumPort");
@@ -86,7 +85,9 @@ public final class PortRange extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +96,30 @@ public final class PortRange extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The minimum port in the range (inclusive), or the sole port of a single-port range. */
+    /**
+     * The minimum port in the range (inclusive), or the sole port of a single-port range.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumPort")
     private final Integer minimumPort;
 
     /**
      * The minimum port in the range (inclusive), or the sole port of a single-port range.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinimumPort() {
         return minimumPort;
     }
 
-    /** The maximum port in the range (inclusive), which may be absent for a single-port range. */
+    /**
+     * The maximum port in the range (inclusive), which may be absent for a single-port range.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maximumPort")
     private final Integer maximumPort;
 
     /**
      * The maximum port in the range (inclusive), which may be absent for a single-port range.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaximumPort() {
         return maximumPort;
     }
@@ -128,7 +131,6 @@ public final class PortRange extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

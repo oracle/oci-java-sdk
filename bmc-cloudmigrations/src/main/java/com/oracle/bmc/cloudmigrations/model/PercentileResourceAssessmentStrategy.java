@@ -5,25 +5,25 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * The strategy based on percentile usage. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * The strategy based on percentile usage.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PercentileResourceAssessmentStrategy.Builder.class)
+    builder = PercentileResourceAssessmentStrategy.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "strategyType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "strategyType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PercentileResourceAssessmentStrategy extends ResourceAssessmentStrategy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,16 +35,17 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Percentile value */
+        /**
+         * Percentile value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentile")
         private Percentile percentile;
 
         /**
          * Percentile value
-         *
          * @param percentile the value to set
          * @return this builder
-         */
+         **/
         public Builder percentile(Percentile percentile) {
             this.percentile = percentile;
             this.__explicitlySet__.add("percentile");
@@ -52,31 +53,31 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
         }
         /**
          * The real resource usage is multiplied to this number before making any recommendation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adjustmentMultiplier")
         private Float adjustmentMultiplier;
 
         /**
          * The real resource usage is multiplied to this number before making any recommendation.
-         *
          * @param adjustmentMultiplier the value to set
          * @return this builder
-         */
+         **/
         public Builder adjustmentMultiplier(Float adjustmentMultiplier) {
             this.adjustmentMultiplier = adjustmentMultiplier;
             this.__explicitlySet__.add("adjustmentMultiplier");
             return this;
         }
-        /** The current state of the migration plan. */
+        /**
+         * The current state of the migration plan.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricTimeWindow")
         private MetricTimeWindow metricTimeWindow;
 
         /**
          * The current state of the migration plan.
-         *
          * @param metricTimeWindow the value to set
          * @return this builder
-         */
+         **/
         public Builder metricTimeWindow(MetricTimeWindow metricTimeWindow) {
             this.metricTimeWindow = metricTimeWindow;
             this.__explicitlySet__.add("metricTimeWindow");
@@ -117,7 +118,9 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -138,16 +141,18 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
         this.metricTimeWindow = metricTimeWindow;
     }
 
-    /** Percentile value */
-    public enum Percentile implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Percentile value
+     **/
+    public enum Percentile {
         P50("P50"),
         P90("P90"),
         P95("P95"),
         P99("P99"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -186,41 +191,44 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
             return UnknownEnumValue;
         }
     };
-    /** Percentile value */
+    /**
+     * Percentile value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentile")
     private final Percentile percentile;
 
     /**
      * Percentile value
-     *
      * @return the value
-     */
+     **/
     public Percentile getPercentile() {
         return percentile;
     }
 
-    /** The real resource usage is multiplied to this number before making any recommendation. */
+    /**
+     * The real resource usage is multiplied to this number before making any recommendation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adjustmentMultiplier")
     private final Float adjustmentMultiplier;
 
     /**
      * The real resource usage is multiplied to this number before making any recommendation.
-     *
      * @return the value
-     */
+     **/
     public Float getAdjustmentMultiplier() {
         return adjustmentMultiplier;
     }
 
-    /** The current state of the migration plan. */
+    /**
+     * The current state of the migration plan.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricTimeWindow")
     private final MetricTimeWindow metricTimeWindow;
 
     /**
      * The current state of the migration plan.
-     *
      * @return the value
-     */
+     **/
     public MetricTimeWindow getMetricTimeWindow() {
         return metricTimeWindow;
     }
@@ -232,7 +240,6 @@ public final class PercentileResourceAssessmentStrategy extends ResourceAssessme
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

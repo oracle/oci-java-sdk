@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * The database credentials user extension. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * The database credentials user extension.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionDbCredentialsUser.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtensionDbCredentialsUser.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtensionDbCredentialsUser
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dbUserName", "dbLoginAttempts"})
     public ExtensionDbCredentialsUser(String dbUserName, Integer dbLoginAttempts) {
@@ -34,28 +33,39 @@ public final class ExtensionDbCredentialsUser
     public static class Builder {
         /**
          * The database username.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * type: string - returned: request - caseExact: false - uniqueness: none - idcsSearchable:
-         * true
-         */
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - type: string
+         *  - returned: request
+         *  - caseExact: false
+         *  - uniqueness: none
+         *  - idcsSearchable: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
         private String dbUserName;
 
         /**
          * The database username.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-         * type: string - returned: request - caseExact: false - uniqueness: none - idcsSearchable:
-         * true
-         *
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - type: string
+         *  - returned: request
+         *  - caseExact: false
+         *  - uniqueness: none
+         *  - idcsSearchable: true
          * @param dbUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUserName(String dbUserName) {
             this.dbUserName = dbUserName;
             this.__explicitlySet__.add("dbUserName");
@@ -63,26 +73,37 @@ public final class ExtensionDbCredentialsUser
         }
         /**
          * The number of failed login attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbLoginAttempts")
         private Integer dbLoginAttempts;
 
         /**
          * The number of failed login attempts. The value is reset to 0 after a successful login.
-         *
-         * <p>*Added In:** 2102181953
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability:
-         * readOnly - required: false - returned: request - type: integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 2102181953
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: integer
+         *  - uniqueness: none
          * @param dbLoginAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder dbLoginAttempts(Integer dbLoginAttempts) {
             this.dbLoginAttempts = dbLoginAttempts;
             this.__explicitlySet__.add("dbLoginAttempts");
@@ -113,7 +134,9 @@ public final class ExtensionDbCredentialsUser
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,50 +147,74 @@ public final class ExtensionDbCredentialsUser
 
     /**
      * The database username.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * type: string - returned: request - caseExact: false - uniqueness: none - idcsSearchable: true
-     */
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - type: string
+     *  - returned: request
+     *  - caseExact: false
+     *  - uniqueness: none
+     *  - idcsSearchable: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUserName")
     private final String dbUserName;
 
     /**
      * The database username.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: false -
-     * type: string - returned: request - caseExact: false - uniqueness: none - idcsSearchable: true
-     *
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - type: string
+     *  - returned: request
+     *  - caseExact: false
+     *  - uniqueness: none
+     *  - idcsSearchable: true
      * @return the value
-     */
+     **/
     public String getDbUserName() {
         return dbUserName;
     }
 
     /**
      * The number of failed login attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbLoginAttempts")
     private final Integer dbLoginAttempts;
 
     /**
      * The number of failed login attempts. The value is reset to 0 after a successful login.
-     *
-     * <p>*Added In:** 2102181953
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: false - mutability: readOnly
-     * - required: false - returned: request - type: integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 2102181953
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getDbLoginAttempts() {
         return dbLoginAttempts;
     }
@@ -179,7 +226,6 @@ public final class ExtensionDbCredentialsUser
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

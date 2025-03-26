@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Details for the Oracle Object storage data asset type. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Details for the Oracle Object storage data asset type.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDataAssetFromObjectStorage.Builder.class)
+    builder = UpdateDataAssetFromObjectStorage.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,65 +116,65 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
             this.__explicitlySet__.add("registryMetadata");
             return this;
         }
-        /** The Oracle Object storage Region ie. us-ashburn-1 */
+        /**
+         * The Oracle Object storage Region ie. us-ashburn-1
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
         private String ociRegion;
 
         /**
          * The Oracle Object storage Region ie. us-ashburn-1
-         *
          * @param ociRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder ociRegion(String ociRegion) {
             this.ociRegion = ociRegion;
             this.__explicitlySet__.add("ociRegion");
             return this;
         }
-        /** The Oracle Object storage URL. */
+        /**
+         * The Oracle Object storage URL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * The Oracle Object storage URL.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The OCI tenancy OCID. */
+        /**
+         * The OCI tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
          * The OCI tenancy OCID.
-         *
          * @param tenancyId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyId(String tenancyId) {
             this.tenancyId = tenancyId;
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
         /**
-         * The namespace for the specified Oracle Object storage resource. You can find the
-         * namespace under Object Storage Settings in the Console.
-         */
+         * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The namespace for the specified Oracle Object storage resource. You can find the
-         * namespace under Object Storage Settings in the Console.
-         *
+         * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
@@ -268,7 +268,9 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -312,58 +314,58 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
         this.defaultConnection = defaultConnection;
     }
 
-    /** The Oracle Object storage Region ie. us-ashburn-1 */
+    /**
+     * The Oracle Object storage Region ie. us-ashburn-1
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ociRegion")
     private final String ociRegion;
 
     /**
      * The Oracle Object storage Region ie. us-ashburn-1
-     *
      * @return the value
-     */
+     **/
     public String getOciRegion() {
         return ociRegion;
     }
 
-    /** The Oracle Object storage URL. */
+    /**
+     * The Oracle Object storage URL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * The Oracle Object storage URL.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** The OCI tenancy OCID. */
+    /**
+     * The OCI tenancy OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
      * The OCI tenancy OCID.
-     *
      * @return the value
-     */
+     **/
     public String getTenancyId() {
         return tenancyId;
     }
 
     /**
-     * The namespace for the specified Oracle Object storage resource. You can find the namespace
-     * under Object Storage Settings in the Console.
-     */
+     * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The namespace for the specified Oracle Object storage resource. You can find the namespace
-     * under Object Storage Settings in the Console.
-     *
+     * The namespace for the specified Oracle Object storage resource. You can find the namespace under Object Storage Settings in the Console.
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
@@ -382,7 +384,6 @@ public final class UpdateDataAssetFromObjectStorage extends UpdateDataAssetDetai
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

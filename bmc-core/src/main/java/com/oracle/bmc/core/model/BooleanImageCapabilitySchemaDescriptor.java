@@ -5,25 +5,25 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Boolean type ImageCapabilitySchemaDescriptor <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Boolean type ImageCapabilitySchemaDescriptor
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BooleanImageCapabilitySchemaDescriptor.Builder.class)
+    builder = BooleanImageCapabilitySchemaDescriptor.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "descriptorType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "descriptorType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilitySchemaDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,16 +35,17 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
             this.__explicitlySet__.add("source");
             return this;
         }
-        /** the default value */
+        /**
+         * the default value
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private Boolean defaultValue;
 
         /**
          * the default value
-         *
          * @param defaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultValue(Boolean defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
@@ -75,7 +76,9 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,15 +93,16 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
         this.defaultValue = defaultValue;
     }
 
-    /** the default value */
+    /**
+     * the default value
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final Boolean defaultValue;
 
     /**
      * the default value
-     *
      * @return the value
-     */
+     **/
     public Boolean getDefaultValue() {
         return defaultValue;
     }
@@ -110,7 +114,6 @@ public final class BooleanImageCapabilitySchemaDescriptor extends ImageCapabilit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,13 +6,14 @@ package com.oracle.bmc.auth.exception;
 
 import com.oracle.bmc.model.BmcException;
 
-/** Authentication client exception. */
+/**
+ * Authentication client exception.
+ */
 public class AuthClientException extends BmcException {
     private static final long serialVersionUID = 1L;
 
     /**
      * Create a wrapper around an authentication client exception.
-     *
      * @param message message
      * @param cause BMC exception that indicated this is an authentication client exception
      */

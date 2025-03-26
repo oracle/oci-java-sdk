@@ -5,21 +5,19 @@
 package com.oracle.bmc.apmsynthetics.model;
 
 /**
- * The monitor result for a specific execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * The monitor result for a specific execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MonitorResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MonitorResult extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MonitorResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resultType",
@@ -47,95 +45,105 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of result. Example: HAR, Screenshot, Log or Network. */
+        /**
+         * Type of result.
+         * Example: HAR, Screenshot, Log or Network.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultType")
         private String resultType;
 
         /**
-         * Type of result. Example: HAR, Screenshot, Log or Network.
+         * Type of result.
+         * Example: HAR, Screenshot, Log or Network.
          *
          * @param resultType the value to set
          * @return this builder
-         */
+         **/
         public Builder resultType(String resultType) {
             this.resultType = resultType;
             this.__explicitlySet__.add("resultType");
             return this;
         }
-        /** Type of result content. Example: Zip or Raw file. */
+        /**
+         * Type of result content.
+         * Example: Zip or Raw file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultContentType")
         private String resultContentType;
 
         /**
-         * Type of result content. Example: Zip or Raw file.
+         * Type of result content.
+         * Example: Zip or Raw file.
          *
          * @param resultContentType the value to set
          * @return this builder
-         */
+         **/
         public Builder resultContentType(String resultContentType) {
             this.resultContentType = resultContentType;
             this.__explicitlySet__.add("resultContentType");
             return this;
         }
-        /** Monitor result data set. */
+        /**
+         * Monitor result data set.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultDataSet")
         private java.util.List<MonitorResultData> resultDataSet;
 
         /**
          * Monitor result data set.
-         *
          * @param resultDataSet the value to set
          * @return this builder
-         */
+         **/
         public Builder resultDataSet(java.util.List<MonitorResultData> resultDataSet) {
             this.resultDataSet = resultDataSet;
             this.__explicitlySet__.add("resultDataSet");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitor.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
         private String monitorId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * monitor.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
          * @param monitorId the value to set
          * @return this builder
-         */
+         **/
         public Builder monitorId(String monitorId) {
             this.monitorId = monitorId;
             this.__explicitlySet__.add("monitorId");
             return this;
         }
-        /** The name of the public or dedicated vantage point. */
+        /**
+         * The name of the public or dedicated vantage point.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vantagePoint")
         private String vantagePoint;
 
         /**
          * The name of the public or dedicated vantage point.
-         *
          * @param vantagePoint the value to set
          * @return this builder
-         */
+         **/
         public Builder vantagePoint(String vantagePoint) {
             this.vantagePoint = vantagePoint;
             this.__explicitlySet__.add("vantagePoint");
             return this;
         }
-        /** The specific point of time when the result of an execution is collected. */
+        /**
+         * The specific point of time when the result of an execution is collected.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionTime")
         private String executionTime;
 
         /**
          * The specific point of time when the result of an execution is collected.
-         *
          * @param executionTime the value to set
          * @return this builder
-         */
+         **/
         public Builder executionTime(String executionTime) {
             this.executionTime = executionTime;
             this.__explicitlySet__.add("executionTime");
@@ -184,7 +192,9 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -193,84 +203,94 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Type of result. Example: HAR, Screenshot, Log or Network. */
+    /**
+     * Type of result.
+     * Example: HAR, Screenshot, Log or Network.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")
     private final String resultType;
 
     /**
-     * Type of result. Example: HAR, Screenshot, Log or Network.
+     * Type of result.
+     * Example: HAR, Screenshot, Log or Network.
      *
      * @return the value
-     */
+     **/
     public String getResultType() {
         return resultType;
     }
 
-    /** Type of result content. Example: Zip or Raw file. */
+    /**
+     * Type of result content.
+     * Example: Zip or Raw file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultContentType")
     private final String resultContentType;
 
     /**
-     * Type of result content. Example: Zip or Raw file.
+     * Type of result content.
+     * Example: Zip or Raw file.
      *
      * @return the value
-     */
+     **/
     public String getResultContentType() {
         return resultContentType;
     }
 
-    /** Monitor result data set. */
+    /**
+     * Monitor result data set.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultDataSet")
     private final java.util.List<MonitorResultData> resultDataSet;
 
     /**
      * Monitor result data set.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<MonitorResultData> getResultDataSet() {
         return resultDataSet;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitor.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("monitorId")
     private final String monitorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * monitor.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
      * @return the value
-     */
+     **/
     public String getMonitorId() {
         return monitorId;
     }
 
-    /** The name of the public or dedicated vantage point. */
+    /**
+     * The name of the public or dedicated vantage point.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vantagePoint")
     private final String vantagePoint;
 
     /**
      * The name of the public or dedicated vantage point.
-     *
      * @return the value
-     */
+     **/
     public String getVantagePoint() {
         return vantagePoint;
     }
 
-    /** The specific point of time when the result of an execution is collected. */
+    /**
+     * The specific point of time when the result of an execution is collected.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTime")
     private final String executionTime;
 
     /**
      * The specific point of time when the result of an execution is collected.
-     *
      * @return the value
-     */
+     **/
     public String getExecutionTime() {
         return executionTime;
     }
@@ -282,7 +302,6 @@ public final class MonitorResult extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

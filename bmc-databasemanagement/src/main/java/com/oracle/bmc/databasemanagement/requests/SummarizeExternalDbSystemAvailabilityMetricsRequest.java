@@ -6,92 +6,97 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalDbSystemAvailabilityMetricsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeExternalDbSystemAvailabilityMetricsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/SummarizeExternalDbSystemAvailabilityMetricsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeExternalDbSystemAvailabilityMetricsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
     private String externalDbSystemId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * external DB system.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
      */
     public String getExternalDbSystemId() {
         return externalDbSystemId;
     }
     /**
-     * The beginning of the time range set to retrieve metric data for the DB system and its
-     * members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     * The beginning of the time range set to retrieve metric data for the DB system
+     * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     *
      */
     private String startTime;
 
     /**
-     * The beginning of the time range set to retrieve metric data for the DB system and its
-     * members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     * The beginning of the time range set to retrieve metric data for the DB system
+     * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     *
      */
     public String getStartTime() {
         return startTime;
     }
     /**
-     * The end of the time range set to retrieve metric data for the DB system and its members.
-     * Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     * The end of the time range set to retrieve metric data for the DB system
+     * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     *
      */
     private String endTime;
 
     /**
-     * The end of the time range set to retrieve metric data for the DB system and its members.
-     * Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     * The end of the time range set to retrieve metric data for the DB system
+     * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+     *
      */
     public String getEndTime() {
         return endTime;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The filter used to retrieve metrics for a specific set of component types by passing the
-     * desired component types separated by a comma. Note that, by default, the service returns
-     * metrics for all DB system component types.
+     * The filter used to retrieve metrics for a specific set of component types by passing the desired component types separated by a comma. Note that, by default, the service returns metrics for all DB system component types.
      */
     private String filterByComponentTypes;
 
     /**
-     * The filter used to retrieve metrics for a specific set of component types by passing the
-     * desired component types separated by a comma. Note that, by default, the service returns
-     * metrics for all DB system component types.
+     * The filter used to retrieve metrics for a specific set of component types by passing the desired component types separated by a comma. Note that, by default, the service returns metrics for all DB system component types.
      */
     public String getFilterByComponentTypes() {
         return filterByComponentTypes;
@@ -100,19 +105,17 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeExternalDbSystemAvailabilityMetricsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
          */
         private String externalDbSystemId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * external DB system.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external DB system.
          * @param externalDbSystemId the value to set
          * @return this builder instance
          */
@@ -122,16 +125,15 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * The beginning of the time range set to retrieve metric data for the DB system and its
-         * members. Expressed in UTC in ISO-8601 format, which is {@code
-         * yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         * The beginning of the time range set to retrieve metric data for the DB system
+         * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         *
          */
         private String startTime = null;
 
         /**
-         * The beginning of the time range set to retrieve metric data for the DB system and its
-         * members. Expressed in UTC in ISO-8601 format, which is {@code
-         * yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         * The beginning of the time range set to retrieve metric data for the DB system
+         * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
          *
          * @param startTime the value to set
          * @return this builder instance
@@ -142,14 +144,15 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * The end of the time range set to retrieve metric data for the DB system and its members.
-         * Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         * The end of the time range set to retrieve metric data for the DB system
+         * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         *
          */
         private String endTime = null;
 
         /**
-         * The end of the time range set to retrieve metric data for the DB system and its members.
-         * Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
+         * The end of the time range set to retrieve metric data for the DB system
+         * and its members. Expressed in UTC in ISO-8601 format, which is {@code yyyy-MM-dd'T'hh:mm:ss.sss'Z'}.
          *
          * @param endTime the value to set
          * @return this builder instance
@@ -159,12 +162,13 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -174,14 +178,15 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -191,12 +196,13 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -206,17 +212,12 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * The filter used to retrieve metrics for a specific set of component types by passing the
-         * desired component types separated by a comma. Note that, by default, the service returns
-         * metrics for all DB system component types.
+         * The filter used to retrieve metrics for a specific set of component types by passing the desired component types separated by a comma. Note that, by default, the service returns metrics for all DB system component types.
          */
         private String filterByComponentTypes = null;
 
         /**
-         * The filter used to retrieve metrics for a specific set of component types by passing the
-         * desired component types separated by a comma. Note that, by default, the service returns
-         * metrics for all DB system component types.
-         *
+         * The filter used to retrieve metrics for a specific set of component types by passing the desired component types separated by a comma. Note that, by default, the service returns metrics for all DB system component types.
          * @param filterByComponentTypes the value to set
          * @return this builder instance
          */
@@ -227,19 +228,18 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -251,7 +251,6 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeExternalDbSystemAvailabilityMetricsRequest o) {
@@ -268,14 +267,12 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * Build the instance of SummarizeExternalDbSystemAvailabilityMetricsRequest as configured
-         * by this builder
+         * Build the instance of SummarizeExternalDbSystemAvailabilityMetricsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeExternalDbSystemAvailabilityMetricsRequest
          */
@@ -288,11 +285,9 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
         }
 
         /**
-         * Build the instance of SummarizeExternalDbSystemAvailabilityMetricsRequest as configured
-         * by this builder
+         * Build the instance of SummarizeExternalDbSystemAvailabilityMetricsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeExternalDbSystemAvailabilityMetricsRequest
@@ -309,14 +304,12 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
             request.limit = limit;
             request.filterByComponentTypes = filterByComponentTypes;
             return request;
-            // new SummarizeExternalDbSystemAvailabilityMetricsRequest(externalDbSystemId,
-            // startTime, endTime, opcRequestId, page, limit, filterByComponentTypes);
+            // new SummarizeExternalDbSystemAvailabilityMetricsRequest(externalDbSystemId, startTime, endTime, opcRequestId, page, limit, filterByComponentTypes);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -332,7 +325,6 @@ public class SummarizeExternalDbSystemAvailabilityMetricsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

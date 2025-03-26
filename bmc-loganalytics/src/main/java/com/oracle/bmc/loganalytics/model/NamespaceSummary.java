@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * The is the namespace summary of a tenancy in Logging Analytics application <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * The is the namespace summary of a tenancy in Logging Analytics application
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NamespaceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NamespaceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NamespaceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "namespaceName",
@@ -45,76 +42,81 @@ public final class NamespaceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** This is the namespace name of a tenancy */
+        /**
+         * This is the namespace name of a tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * This is the namespace name of a tenancy
-         *
          * @param namespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /** The is the tenancy ID */
+        /**
+         * The is the tenancy ID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The is the tenancy ID
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** This indicates if the tenancy is onboarded to Logging Analytics */
+        /**
+         * This indicates if the tenancy is onboarded to Logging Analytics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
         private Boolean isOnboarded;
 
         /**
          * This indicates if the tenancy is onboarded to Logging Analytics
-         *
          * @param isOnboarded the value to set
          * @return this builder
-         */
+         **/
         public Builder isOnboarded(Boolean isOnboarded) {
             this.isOnboarded = isOnboarded;
             this.__explicitlySet__.add("isOnboarded");
             return this;
         }
-        /** This indicates if the log set feature is enabled for the tenancy */
+        /**
+         * This indicates if the log set feature is enabled for the tenancy
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
         private Boolean isLogSetEnabled;
 
         /**
          * This indicates if the log set feature is enabled for the tenancy
-         *
          * @param isLogSetEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isLogSetEnabled(Boolean isLogSetEnabled) {
             this.isLogSetEnabled = isLogSetEnabled;
             this.__explicitlySet__.add("isLogSetEnabled");
             return this;
         }
-        /** This indicates if data has ever been ingested for the tenancy in Logging Analytics */
+        /**
+         * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
         private Boolean isDataEverIngested;
 
         /**
          * This indicates if data has ever been ingested for the tenancy in Logging Analytics
-         *
          * @param isDataEverIngested the value to set
          * @return this builder
-         */
+         **/
         public Builder isDataEverIngested(Boolean isDataEverIngested) {
             this.isDataEverIngested = isDataEverIngested;
             this.__explicitlySet__.add("isDataEverIngested");
@@ -159,7 +161,9 @@ public final class NamespaceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,67 +172,72 @@ public final class NamespaceSummary
         return new Builder().copy(this);
     }
 
-    /** This is the namespace name of a tenancy */
+    /**
+     * This is the namespace name of a tenancy
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * This is the namespace name of a tenancy
-     *
      * @return the value
-     */
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /** The is the tenancy ID */
+    /**
+     * The is the tenancy ID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The is the tenancy ID
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** This indicates if the tenancy is onboarded to Logging Analytics */
+    /**
+     * This indicates if the tenancy is onboarded to Logging Analytics
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOnboarded")
     private final Boolean isOnboarded;
 
     /**
      * This indicates if the tenancy is onboarded to Logging Analytics
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsOnboarded() {
         return isOnboarded;
     }
 
-    /** This indicates if the log set feature is enabled for the tenancy */
+    /**
+     * This indicates if the log set feature is enabled for the tenancy
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLogSetEnabled")
     private final Boolean isLogSetEnabled;
 
     /**
      * This indicates if the log set feature is enabled for the tenancy
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsLogSetEnabled() {
         return isLogSetEnabled;
     }
 
-    /** This indicates if data has ever been ingested for the tenancy in Logging Analytics */
+    /**
+     * This indicates if data has ever been ingested for the tenancy in Logging Analytics
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDataEverIngested")
     private final Boolean isDataEverIngested;
 
     /**
      * This indicates if data has ever been ingested for the tenancy in Logging Analytics
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDataEverIngested() {
         return isDataEverIngested;
     }
@@ -240,7 +249,6 @@ public final class NamespaceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

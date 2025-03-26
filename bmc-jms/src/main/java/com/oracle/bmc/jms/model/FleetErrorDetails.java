@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Details of a fleet error. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Details of a fleet error.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FleetErrorDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class FleetErrorDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = FleetErrorDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class FleetErrorDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"reason", "details", "timeLastSeen"})
     public FleetErrorDetails(FleetErrorReason reason, String details, java.util.Date timeLastSeen) {
@@ -33,54 +31,57 @@ public final class FleetErrorDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The fleet error reason. */
+        /**
+         * The fleet error reason.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reason")
         private FleetErrorReason reason;
 
         /**
          * The fleet error reason.
-         *
          * @param reason the value to set
          * @return this builder
-         */
+         **/
         public Builder reason(FleetErrorReason reason) {
             this.reason = reason;
             this.__explicitlySet__.add("reason");
             return this;
         }
-        /** Optional string containing additional details. */
+        /**
+         * Optional string containing additional details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
          * Optional string containing additional details.
-         *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(String details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
         /**
-         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
-         * the specified time period provided by the filters. For example, a resource can be last
-         * reported to JMS before the start of a specified time period, if it is also reported
-         * during the time period.
-         */
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
         /**
-         * The date and time the resource was _last_ reported to JMS. This is potentially _after_
-         * the specified time period provided by the filters. For example, a resource can be last
-         * reported to JMS before the start of a specified time period, if it is also reported
-         * during the time period.
+         * The date and time the resource was _last_ reported to JMS.
+         * This is potentially _after_ the specified time period provided by the filters.
+         * For example, a resource can be last reported to JMS before the start of a specified time period,
+         * if it is also reported during the time period.
          *
          * @param timeLastSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -114,7 +115,9 @@ public final class FleetErrorDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,49 +126,52 @@ public final class FleetErrorDetails
         return new Builder().copy(this);
     }
 
-    /** The fleet error reason. */
+    /**
+     * The fleet error reason.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reason")
     private final FleetErrorReason reason;
 
     /**
      * The fleet error reason.
-     *
      * @return the value
-     */
+     **/
     public FleetErrorReason getReason() {
         return reason;
     }
 
-    /** Optional string containing additional details. */
+    /**
+     * Optional string containing additional details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
      * Optional string containing additional details.
-     *
      * @return the value
-     */
+     **/
     public String getDetails() {
         return details;
     }
 
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
-     * specified time period provided by the filters. For example, a resource can be last reported
-     * to JMS before the start of a specified time period, if it is also reported during the time
-     * period.
-     */
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
     /**
-     * The date and time the resource was _last_ reported to JMS. This is potentially _after_ the
-     * specified time period provided by the filters. For example, a resource can be last reported
-     * to JMS before the start of a specified time period, if it is also reported during the time
-     * period.
+     * The date and time the resource was _last_ reported to JMS.
+     * This is potentially _after_ the specified time period provided by the filters.
+     * For example, a resource can be last reported to JMS before the start of a specified time period,
+     * if it is also reported during the time period.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
@@ -177,7 +183,6 @@ public final class FleetErrorDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

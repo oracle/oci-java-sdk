@@ -5,30 +5,36 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Each value of this attribute describes an attribute of User that will be sent in a Security
- * Assertion Markup Language (SAML) assertion.
- *
- * <p>*Deprecated Since: 18.2.2**
- *
- * <p>*SCIM++ Properties:** - caseExact: false - idcsCompositeKey: [name] - idcsSearchable: false -
- * idcsValuePersistedInOtherAttribute: true - multiValued: true - mutability: readWrite - required:
- * false - returned: default - type: complex - uniqueness: none <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Each value of this attribute describes an attribute of User that will be sent in a Security Assertion Markup Language (SAML) assertion.
+ * <p>
+ **Deprecated Since: 18.2.2**
+ * <p>
+ **SCIM++ Properties:**
+ *  - caseExact: false
+ *  - idcsCompositeKey: [name]
+ *  - idcsSearchable: false
+ *  - idcsValuePersistedInOtherAttribute: true
+ *  - multiValued: true
+ *  - mutability: readWrite
+ *  - required: false
+ *  - returned: default
+ *  - type: complex
+ *  - uniqueness: none
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppUserAssertionAttributes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppUserAssertionAttributes.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppUserAssertionAttributes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "userStoreAttributeName", "format"})
     public AppUserAssertionAttributes(String name, String userStoreAttributeName, String format) {
@@ -41,68 +47,84 @@ public final class AppUserAssertionAttributes
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The attribute represents the name of the attribute that will be used in the Security
-         * Assertion Markup Language (SAML) assertion
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         */
+         * The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The attribute represents the name of the attribute that will be used in the Security
-         * Assertion Markup Language (SAML) assertion
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         *
+         * The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * This attribute specifies which user attribute should be used to create the value of the
-         * SAML assertion attribute. The userstore attribute can be constructed by using attributes
-         * from the Oracle Identity Cloud Service Core Users schema. <br>
-         * <b>Note</b>: Attributes from extensions to the Core User schema are not supported in
-         * v1.0.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         */
+         * This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userStoreAttributeName")
         private String userStoreAttributeName;
 
         /**
-         * This attribute specifies which user attribute should be used to create the value of the
-         * SAML assertion attribute. The userstore attribute can be constructed by using attributes
-         * from the Oracle Identity Cloud Service Core Users schema. <br>
-         * <b>Note</b>: Attributes from extensions to the Core User schema are not supported in
-         * v1.0.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: true - returned: default - type: string - uniqueness: none
-         *
+         * This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param userStoreAttributeName the value to set
          * @return this builder
-         */
+         **/
         public Builder userStoreAttributeName(String userStoreAttributeName) {
             this.userStoreAttributeName = userStoreAttributeName;
             this.__explicitlySet__.add("userStoreAttributeName");
@@ -110,28 +132,41 @@ public final class AppUserAssertionAttributes
         }
         /**
          * Indicates the format of the assertion attribute.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("format")
         private String format;
 
         /**
          * Indicates the format of the assertion attribute.
-         *
-         * <p>*Deprecated Since: 18.2.2**
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false -
-         * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **Deprecated Since: 18.2.2**
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: false
+         *  - idcsValuePersistedInOtherAttribute: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param format the value to set
          * @return this builder
-         */
+         **/
         public Builder format(String format) {
             this.format = format;
             this.__explicitlySet__.add("format");
@@ -166,7 +201,9 @@ public final class AppUserAssertionAttributes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -176,90 +213,121 @@ public final class AppUserAssertionAttributes
     }
 
     /**
-     * The attribute represents the name of the attribute that will be used in the Security
-     * Assertion Markup Language (SAML) assertion
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: default - type: string - uniqueness: none
-     */
+     * The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The attribute represents the name of the attribute that will be used in the Security
-     * Assertion Markup Language (SAML) assertion
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: default - type: string - uniqueness: none
-     *
+     * The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * This attribute specifies which user attribute should be used to create the value of the SAML
-     * assertion attribute. The userstore attribute can be constructed by using attributes from the
-     * Oracle Identity Cloud Service Core Users schema. <br>
-     * <b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: default - type: string - uniqueness: none
-     */
+     * This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userStoreAttributeName")
     private final String userStoreAttributeName;
 
     /**
-     * This attribute specifies which user attribute should be used to create the value of the SAML
-     * assertion attribute. The userstore attribute can be constructed by using attributes from the
-     * Oracle Identity Cloud Service Core Users schema. <br>
-     * <b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: true - returned: default - type: string - uniqueness: none
-     *
+     * This attribute specifies which user attribute should be used to create the value of the SAML assertion attribute. The userstore attribute can be constructed by using attributes from the Oracle Identity Cloud Service Core Users schema. <br><b>Note</b>: Attributes from extensions to the Core User schema are not supported in v1.0.
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getUserStoreAttributeName() {
         return userStoreAttributeName;
     }
 
     /**
      * Indicates the format of the assertion attribute.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("format")
     private final String format;
 
     /**
      * Indicates the format of the assertion attribute.
-     *
-     * <p>*Deprecated Since: 18.2.2**
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: false -
-     * idcsValuePersistedInOtherAttribute: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **Deprecated Since: 18.2.2**
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: false
+     *  - idcsValuePersistedInOtherAttribute: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getFormat() {
         return format;
     }
@@ -271,7 +339,6 @@ public final class AppUserAssertionAttributes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

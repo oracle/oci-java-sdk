@@ -5,23 +5,22 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Shardable cloud autonomous vm cluster summary. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Shardable cloud autonomous vm cluster summary.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ShardableCloudAutonomousVmClusterSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ShardableCloudAutonomousVmClusterSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ShardableCloudAutonomousVmClusterSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -112,125 +111,129 @@ public final class ShardableCloudAutonomousVmClusterSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Cloud autonomous vmcluster identifier */
+        /**
+         * Cloud autonomous vmcluster identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Cloud autonomous vmcluster identifier
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Cloud autonomous vmcluster compartment id */
+        /**
+         * Cloud autonomous vmcluster compartment id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Cloud autonomous vmcluster compartment id
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Lifecycle states for shardable Cloud autonomous vm cluster. */
+        /**
+         * Lifecycle states for shardable Cloud autonomous vm cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * Lifecycle states for shardable Cloud autonomous vm cluster.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Detailed message for the lifecycle state. */
+        /**
+         * Detailed message for the lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
         private String lifecycleStateDetails;
 
         /**
          * Detailed message for the lifecycle state.
-         *
          * @param lifecycleStateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             this.lifecycleStateDetails = lifecycleStateDetails;
             this.__explicitlySet__.add("lifecycleStateDetails");
             return this;
         }
-        /** Cloud autonomous vmcluster displayName */
+        /**
+         * Cloud autonomous vmcluster displayName
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Cloud autonomous vmcluster displayName
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The compute model of the Cloud Autonomous VM Cluster. */
+        /**
+         * The compute model of the Cloud Autonomous VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private String computeModel;
 
         /**
          * The compute model of the Cloud Autonomous VM Cluster.
-         *
          * @param computeModel the value to set
          * @return this builder
-         */
+         **/
         public Builder computeModel(String computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
             return this;
         }
         /**
-         * The number of Autonomous Container Databases that can be created with the currently
-         * available local storage.
-         */
+         * The number of Autonomous Container Databases that can be created with the currently available local storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
         private Integer availableContainerDatabases;
 
         /**
-         * The number of Autonomous Container Databases that can be created with the currently
-         * available local storage.
-         *
+         * The number of Autonomous Container Databases that can be created with the currently available local storage.
          * @param availableContainerDatabases the value to set
          * @return this builder
-         */
+         **/
         public Builder availableContainerDatabases(Integer availableContainerDatabases) {
             this.availableContainerDatabases = availableContainerDatabases;
             this.__explicitlySet__.add("availableContainerDatabases");
             return this;
         }
-        /** CPU cores available for allocation to Autonomous Databases. */
+        /**
+         * CPU cores available for allocation to Autonomous Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
         private Float availableCpus;
 
         /**
          * CPU cores available for allocation to Autonomous Databases.
-         *
          * @param availableCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder availableCpus(Float availableCpus) {
             this.availableCpus = availableCpus;
             this.__explicitlySet__.add("availableCpus");
@@ -238,258 +241,260 @@ public final class ShardableCloudAutonomousVmClusterSummary
         }
         /**
          * The name of the availability domain that the cloud Autonomous VM cluster is located in.
-         * The format of the availability domain is the same as returned by Cloud Autonomous VM
-         * Cluster API.
-         */
+         * The format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The name of the availability domain that the cloud Autonomous VM cluster is located in.
-         * The format of the availability domain is the same as returned by Cloud Autonomous VM
-         * Cluster API.
+         * The format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** The data disk group size allocated for Autonomous Databases, in TBs. */
+        /**
+         * The data disk group size allocated for Autonomous Databases, in TBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
         private Float autonomousDataStorageSizeInTBs;
 
         /**
          * The data disk group size allocated for Autonomous Databases, in TBs.
-         *
          * @param autonomousDataStorageSizeInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousDataStorageSizeInTBs(Float autonomousDataStorageSizeInTBs) {
             this.autonomousDataStorageSizeInTBs = autonomousDataStorageSizeInTBs;
             this.__explicitlySet__.add("autonomousDataStorageSizeInTBs");
             return this;
         }
-        /** The data disk group size available for Autonomous Databases, in TBs. */
+        /**
+         * The data disk group size available for Autonomous Databases, in TBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
         private Float availableAutonomousDataStorageSizeInTBs;
 
         /**
          * The data disk group size available for Autonomous Databases, in TBs.
-         *
          * @param availableAutonomousDataStorageSizeInTBs the value to set
          * @return this builder
-         */
+         **/
         public Builder availableAutonomousDataStorageSizeInTBs(
                 Float availableAutonomousDataStorageSizeInTBs) {
             this.availableAutonomousDataStorageSizeInTBs = availableAutonomousDataStorageSizeInTBs;
             this.__explicitlySet__.add("availableAutonomousDataStorageSizeInTBs");
             return this;
         }
-        /** Cloud Exadata Infrastructure Identifier. */
+        /**
+         * Cloud Exadata Infrastructure Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
         private String cloudExadataInfrastructureId;
 
         /**
          * Cloud Exadata Infrastructure Identifier.
-         *
          * @param cloudExadataInfrastructureId the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudExadataInfrastructureId(String cloudExadataInfrastructureId) {
             this.cloudExadataInfrastructureId = cloudExadataInfrastructureId;
             this.__explicitlySet__.add("cloudExadataInfrastructureId");
             return this;
         }
-        /** The time zone of the Cloud Autonomous VM Cluster. */
+        /**
+         * The time zone of the Cloud Autonomous VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
         private String clusterTimeZone;
 
         /**
          * The time zone of the Cloud Autonomous VM Cluster.
-         *
          * @param clusterTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterTimeZone(String clusterTimeZone) {
             this.clusterTimeZone = clusterTimeZone;
             this.__explicitlySet__.add("clusterTimeZone");
             return this;
         }
         /**
-         * The total number of Autonomous Container Databases that can be created with the allocated
-         * local storage.
-         */
+         * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
         private Integer totalContainerDatabases;
 
         /**
-         * The total number of Autonomous Container Databases that can be created with the allocated
-         * local storage.
-         *
+         * The total number of Autonomous Container Databases that can be created with the allocated local storage.
          * @param totalContainerDatabases the value to set
          * @return this builder
-         */
+         **/
         public Builder totalContainerDatabases(Integer totalContainerDatabases) {
             this.totalContainerDatabases = totalContainerDatabases;
             this.__explicitlySet__.add("totalContainerDatabases");
             return this;
         }
-        /** Cloud autonomous vmcluster subnet id */
+        /**
+         * Cloud autonomous vmcluster subnet id
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * Cloud autonomous vmcluster subnet id
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Cloud autonomous vmcluster shape */
+        /**
+         * Cloud autonomous vmcluster shape
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Cloud autonomous vmcluster shape
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Cloud autonomous vmcluster node count */
+        /**
+         * Cloud autonomous vmcluster node count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
          * Cloud autonomous vmcluster node count
-         *
          * @param nodeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder nodeCount(Integer nodeCount) {
             this.nodeCount = nodeCount;
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The Oracle license model that applies to the Oracle Autonomous Database. */
+        /**
+         * The Oracle license model that applies to the Oracle Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
         private String licenseModel;
 
         /**
          * The Oracle license model that applies to the Oracle Autonomous Database.
-         *
          * @param licenseModel the value to set
          * @return this builder
-         */
+         **/
         public Builder licenseModel(String licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-        /** The memory allocated in GBs. */
+        /**
+         * The memory allocated in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
          * The memory allocated in GBs.
-         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-        /** The amount of memory (in GBs) enabled per OCPU or ECPU. */
+        /**
+         * The amount of memory (in GBs) enabled per OCPU or ECPU.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
         private Integer memoryPerOracleComputeUnitInGBs;
 
         /**
          * The amount of memory (in GBs) enabled per OCPU or ECPU.
-         *
          * @param memoryPerOracleComputeUnitInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryPerOracleComputeUnitInGBs(Integer memoryPerOracleComputeUnitInGBs) {
             this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
             return this;
         }
-        /** The number of CPU cores on the cloud Autonomous VM cluster. */
+        /**
+         * The number of CPU cores on the cloud Autonomous VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
          * The number of CPU cores on the cloud Autonomous VM cluster.
-         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /** The number of CPU cores enabled per VM cluster node. */
+        /**
+         * The number of CPU cores enabled per VM cluster node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
         private Integer cpuCoreCountPerNode;
 
         /**
          * The number of CPU cores enabled per VM cluster node.
-         *
          * @param cpuCoreCountPerNode the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCoreCountPerNode(Integer cpuCoreCountPerNode) {
             this.cpuCoreCountPerNode = cpuCoreCountPerNode;
             this.__explicitlySet__.add("cpuCoreCountPerNode");
             return this;
         }
-        /** The number of CPU cores on the cloud Autonomous VM cluster. */
+        /**
+         * The number of CPU cores on the cloud Autonomous VM cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Float ocpuCount;
 
         /**
          * The number of CPU cores on the cloud Autonomous VM cluster.
-         *
          * @param ocpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpuCount(Float ocpuCount) {
             this.ocpuCount = ocpuCount;
             this.__explicitlySet__.add("ocpuCount");
             return this;
         }
         /**
-         * The CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
-         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
-         * level by restarting the Autonomous Container Database.
-         */
+         * The CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
         private Float reclaimableCpus;
 
         /**
-         * The CPUs that continue to be included in the count of CPUs available to the Autonomous
-         * Container Database even after one of its Autonomous Database is terminated or scaled
-         * down. You can release them to the available CPUs at its parent Autonomous VM Cluster
-         * level by restarting the Autonomous Container Database.
-         *
+         * The CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
          * @param reclaimableCpus the value to set
          * @return this builder
-         */
+         **/
         public Builder reclaimableCpus(Float reclaimableCpus) {
             this.reclaimableCpus = reclaimableCpus;
             this.__explicitlySet__.add("reclaimableCpus");
@@ -497,16 +502,15 @@ public final class ShardableCloudAutonomousVmClusterSummary
         }
         /**
          * Number of Autonomous Container Databases that can be created in the Autonomous VM Cluster
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
         private Integer provisionableAutonomousContainerDatabases;
 
         /**
          * Number of Autonomous Container Databases that can be created in the Autonomous VM Cluster
-         *
          * @param provisionableAutonomousContainerDatabases the value to set
          * @return this builder
-         */
+         **/
         public Builder provisionableAutonomousContainerDatabases(
                 Integer provisionableAutonomousContainerDatabases) {
             this.provisionableAutonomousContainerDatabases =
@@ -515,19 +519,20 @@ public final class ShardableCloudAutonomousVmClusterSummary
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -536,7 +541,8 @@ public final class ShardableCloudAutonomousVmClusterSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -546,7 +552,7 @@ public final class ShardableCloudAutonomousVmClusterSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -682,7 +688,9 @@ public final class ShardableCloudAutonomousVmClusterSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -691,34 +699,38 @@ public final class ShardableCloudAutonomousVmClusterSummary
         return new Builder().copy(this);
     }
 
-    /** Cloud autonomous vmcluster identifier */
+    /**
+     * Cloud autonomous vmcluster identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Cloud autonomous vmcluster identifier
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Cloud autonomous vmcluster compartment id */
+    /**
+     * Cloud autonomous vmcluster compartment id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Cloud autonomous vmcluster compartment id
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Lifecycle states for shardable Cloud autonomous vm cluster. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Lifecycle states for shardable Cloud autonomous vm cluster.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Failed("FAILED"),
         NeedsAttention("NEEDS_ATTENTION"),
@@ -730,8 +742,8 @@ public final class ShardableCloudAutonomousVmClusterSummary
         Unavailable("UNAVAILABLE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -770,355 +782,364 @@ public final class ShardableCloudAutonomousVmClusterSummary
             return UnknownEnumValue;
         }
     };
-    /** Lifecycle states for shardable Cloud autonomous vm cluster. */
+    /**
+     * Lifecycle states for shardable Cloud autonomous vm cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * Lifecycle states for shardable Cloud autonomous vm cluster.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Detailed message for the lifecycle state. */
+    /**
+     * Detailed message for the lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleStateDetails")
     private final String lifecycleStateDetails;
 
     /**
      * Detailed message for the lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleStateDetails() {
         return lifecycleStateDetails;
     }
 
-    /** Cloud autonomous vmcluster displayName */
+    /**
+     * Cloud autonomous vmcluster displayName
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Cloud autonomous vmcluster displayName
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The compute model of the Cloud Autonomous VM Cluster. */
+    /**
+     * The compute model of the Cloud Autonomous VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final String computeModel;
 
     /**
      * The compute model of the Cloud Autonomous VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getComputeModel() {
         return computeModel;
     }
 
     /**
-     * The number of Autonomous Container Databases that can be created with the currently available
-     * local storage.
-     */
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableContainerDatabases")
     private final Integer availableContainerDatabases;
 
     /**
-     * The number of Autonomous Container Databases that can be created with the currently available
-     * local storage.
-     *
+     * The number of Autonomous Container Databases that can be created with the currently available local storage.
      * @return the value
-     */
+     **/
     public Integer getAvailableContainerDatabases() {
         return availableContainerDatabases;
     }
 
-    /** CPU cores available for allocation to Autonomous Databases. */
+    /**
+     * CPU cores available for allocation to Autonomous Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableCpus")
     private final Float availableCpus;
 
     /**
      * CPU cores available for allocation to Autonomous Databases.
-     *
      * @return the value
-     */
+     **/
     public Float getAvailableCpus() {
         return availableCpus;
     }
 
     /**
-     * The name of the availability domain that the cloud Autonomous VM cluster is located in. The
-     * format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
-     */
+     * The name of the availability domain that the cloud Autonomous VM cluster is located in.
+     * The format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The name of the availability domain that the cloud Autonomous VM cluster is located in. The
-     * format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
+     * The name of the availability domain that the cloud Autonomous VM cluster is located in.
+     * The format of the availability domain is the same as returned by Cloud Autonomous VM Cluster API.
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
-    /** The data disk group size allocated for Autonomous Databases, in TBs. */
+    /**
+     * The data disk group size allocated for Autonomous Databases, in TBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousDataStorageSizeInTBs")
     private final Float autonomousDataStorageSizeInTBs;
 
     /**
      * The data disk group size allocated for Autonomous Databases, in TBs.
-     *
      * @return the value
-     */
+     **/
     public Float getAutonomousDataStorageSizeInTBs() {
         return autonomousDataStorageSizeInTBs;
     }
 
-    /** The data disk group size available for Autonomous Databases, in TBs. */
+    /**
+     * The data disk group size available for Autonomous Databases, in TBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableAutonomousDataStorageSizeInTBs")
     private final Float availableAutonomousDataStorageSizeInTBs;
 
     /**
      * The data disk group size available for Autonomous Databases, in TBs.
-     *
      * @return the value
-     */
+     **/
     public Float getAvailableAutonomousDataStorageSizeInTBs() {
         return availableAutonomousDataStorageSizeInTBs;
     }
 
-    /** Cloud Exadata Infrastructure Identifier. */
+    /**
+     * Cloud Exadata Infrastructure Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudExadataInfrastructureId")
     private final String cloudExadataInfrastructureId;
 
     /**
      * Cloud Exadata Infrastructure Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCloudExadataInfrastructureId() {
         return cloudExadataInfrastructureId;
     }
 
-    /** The time zone of the Cloud Autonomous VM Cluster. */
+    /**
+     * The time zone of the Cloud Autonomous VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterTimeZone")
     private final String clusterTimeZone;
 
     /**
      * The time zone of the Cloud Autonomous VM Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getClusterTimeZone() {
         return clusterTimeZone;
     }
 
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated
-     * local storage.
-     */
+     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalContainerDatabases")
     private final Integer totalContainerDatabases;
 
     /**
-     * The total number of Autonomous Container Databases that can be created with the allocated
-     * local storage.
-     *
+     * The total number of Autonomous Container Databases that can be created with the allocated local storage.
      * @return the value
-     */
+     **/
     public Integer getTotalContainerDatabases() {
         return totalContainerDatabases;
     }
 
-    /** Cloud autonomous vmcluster subnet id */
+    /**
+     * Cloud autonomous vmcluster subnet id
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * Cloud autonomous vmcluster subnet id
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** Cloud autonomous vmcluster shape */
+    /**
+     * Cloud autonomous vmcluster shape
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Cloud autonomous vmcluster shape
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** Cloud autonomous vmcluster node count */
+    /**
+     * Cloud autonomous vmcluster node count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
      * Cloud autonomous vmcluster node count
-     *
      * @return the value
-     */
+     **/
     public Integer getNodeCount() {
         return nodeCount;
     }
 
-    /** The Oracle license model that applies to the Oracle Autonomous Database. */
+    /**
+     * The Oracle license model that applies to the Oracle Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("licenseModel")
     private final String licenseModel;
 
     /**
      * The Oracle license model that applies to the Oracle Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public String getLicenseModel() {
         return licenseModel;
     }
 
-    /** The memory allocated in GBs. */
+    /**
+     * The memory allocated in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
      * The memory allocated in GBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
 
-    /** The amount of memory (in GBs) enabled per OCPU or ECPU. */
+    /**
+     * The amount of memory (in GBs) enabled per OCPU or ECPU.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryPerOracleComputeUnitInGBs")
     private final Integer memoryPerOracleComputeUnitInGBs;
 
     /**
      * The amount of memory (in GBs) enabled per OCPU or ECPU.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemoryPerOracleComputeUnitInGBs() {
         return memoryPerOracleComputeUnitInGBs;
     }
 
-    /** The number of CPU cores on the cloud Autonomous VM cluster. */
+    /**
+     * The number of CPU cores on the cloud Autonomous VM cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /** The number of CPU cores enabled per VM cluster node. */
+    /**
+     * The number of CPU cores enabled per VM cluster node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCountPerNode")
     private final Integer cpuCoreCountPerNode;
 
     /**
      * The number of CPU cores enabled per VM cluster node.
-     *
      * @return the value
-     */
+     **/
     public Integer getCpuCoreCountPerNode() {
         return cpuCoreCountPerNode;
     }
 
-    /** The number of CPU cores on the cloud Autonomous VM cluster. */
+    /**
+     * The number of CPU cores on the cloud Autonomous VM cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Float ocpuCount;
 
     /**
      * The number of CPU cores on the cloud Autonomous VM cluster.
-     *
      * @return the value
-     */
+     **/
     public Float getOcpuCount() {
         return ocpuCount;
     }
 
     /**
-     * The CPUs that continue to be included in the count of CPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
-     * You can release them to the available CPUs at its parent Autonomous VM Cluster level by
-     * restarting the Autonomous Container Database.
-     */
+     * The CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reclaimableCpus")
     private final Float reclaimableCpus;
 
     /**
-     * The CPUs that continue to be included in the count of CPUs available to the Autonomous
-     * Container Database even after one of its Autonomous Database is terminated or scaled down.
-     * You can release them to the available CPUs at its parent Autonomous VM Cluster level by
-     * restarting the Autonomous Container Database.
-     *
+     * The CPUs that continue to be included in the count of CPUs available to the Autonomous Container Database even after one of its Autonomous Database is terminated or scaled down. You can release them to the available CPUs at its parent Autonomous VM Cluster level by restarting the Autonomous Container Database.
      * @return the value
-     */
+     **/
     public Float getReclaimableCpus() {
         return reclaimableCpus;
     }
 
-    /** Number of Autonomous Container Databases that can be created in the Autonomous VM Cluster */
+    /**
+     * Number of Autonomous Container Databases that can be created in the Autonomous VM Cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisionableAutonomousContainerDatabases")
     private final Integer provisionableAutonomousContainerDatabases;
 
     /**
      * Number of Autonomous Container Databases that can be created in the Autonomous VM Cluster
-     *
      * @return the value
-     */
+     **/
     public Integer getProvisionableAutonomousContainerDatabases() {
         return provisionableAutonomousContainerDatabases;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1130,7 +1151,6 @@ public final class ShardableCloudAutonomousVmClusterSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

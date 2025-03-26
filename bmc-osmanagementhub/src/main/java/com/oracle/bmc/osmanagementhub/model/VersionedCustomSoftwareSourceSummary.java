@@ -5,25 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a versioned custom software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a versioned custom software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VersionedCustomSoftwareSourceSummary.Builder.class)
+    builder = VersionedCustomSoftwareSourceSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -190,49 +190,48 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
             return this;
         }
         /**
-         * List of vendor software sources that are used for the basis of the versioned custom
-         * software source.
-         */
+         * List of vendor software sources that are used for the basis of the versioned custom software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
         private java.util.List<Id> vendorSoftwareSources;
 
         /**
-         * List of vendor software sources that are used for the basis of the versioned custom
-         * software source.
-         *
+         * List of vendor software sources that are used for the basis of the versioned custom software source.
          * @param vendorSoftwareSources the value to set
          * @return this builder
-         */
+         **/
         public Builder vendorSoftwareSources(java.util.List<Id> vendorSoftwareSources) {
             this.vendorSoftwareSources = vendorSoftwareSources;
             this.__explicitlySet__.add("vendorSoftwareSources");
             return this;
         }
-        /** The version to assign to this custom software source. */
+        /**
+         * The version to assign to this custom software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceVersion")
         private String softwareSourceVersion;
 
         /**
          * The version to assign to this custom software source.
-         *
          * @param softwareSourceVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceVersion(String softwareSourceVersion) {
             this.softwareSourceVersion = softwareSourceVersion;
             this.__explicitlySet__.add("softwareSourceVersion");
             return this;
         }
-        /** Identifies how the versioned custom software source was created. */
+        /**
+         * Identifies how the versioned custom software source was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
         private SoftwareSourceSubType softwareSourceSubType;
 
         /**
          * Identifies how the versioned custom software source was created.
-         *
          * @param softwareSourceSubType the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceSubType(SoftwareSourceSubType softwareSourceSubType) {
             this.softwareSourceSubType = softwareSourceSubType;
             this.__explicitlySet__.add("softwareSourceSubType");
@@ -341,7 +340,9 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -398,44 +399,43 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
     }
 
     /**
-     * List of vendor software sources that are used for the basis of the versioned custom software
-     * source.
-     */
+     * List of vendor software sources that are used for the basis of the versioned custom software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vendorSoftwareSources")
     private final java.util.List<Id> vendorSoftwareSources;
 
     /**
-     * List of vendor software sources that are used for the basis of the versioned custom software
-     * source.
-     *
+     * List of vendor software sources that are used for the basis of the versioned custom software source.
      * @return the value
-     */
+     **/
     public java.util.List<Id> getVendorSoftwareSources() {
         return vendorSoftwareSources;
     }
 
-    /** The version to assign to this custom software source. */
+    /**
+     * The version to assign to this custom software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceVersion")
     private final String softwareSourceVersion;
 
     /**
      * The version to assign to this custom software source.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareSourceVersion() {
         return softwareSourceVersion;
     }
 
-    /** Identifies how the versioned custom software source was created. */
+    /**
+     * Identifies how the versioned custom software source was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceSubType")
     private final SoftwareSourceSubType softwareSourceSubType;
 
     /**
      * Identifies how the versioned custom software source was created.
-     *
      * @return the value
-     */
+     **/
     public SoftwareSourceSubType getSoftwareSourceSubType() {
         return softwareSourceSubType;
     }
@@ -447,7 +447,6 @@ public final class VersionedCustomSoftwareSourceSummary extends SoftwareSourceSu
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

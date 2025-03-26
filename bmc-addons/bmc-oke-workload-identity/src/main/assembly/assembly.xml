@@ -14,14 +14,6 @@
         <format>zip</format>
     </formats>
     <fileSets>
-        <!-- Include the README.md -->
-        <fileSet>
-            <directory>${project.basedir}</directory>
-            <outputDirectory></outputDirectory>
-            <includes>
-                <include>README.md</include>
-            </includes>
-        </fileSet>
         <!-- Include all of the Javadocs -->
         <fileSet>
             <directory>${project.build.directory}/apidocs</directory>

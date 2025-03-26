@@ -5,24 +5,24 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * An automatic capture filter that enables you to capture only those SQL statements that you want,
- * and exclude noncritical statements. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * An automatic capture filter that enables you to capture only those SQL statements
+ * that you want, and exclude noncritical statements.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AutomaticCaptureFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AutomaticCaptureFilter.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AutomaticCaptureFilter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,88 +49,91 @@ public final class AutomaticCaptureFilter
     public static class Builder {
         /**
          * The name of the automatic capture filter.
+         * <p>
+         * - AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+         * - AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+         * - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+         * - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
          *
-         * <p>- AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text. -
-         * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan
-         * management auto capture. - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan
-         * management auto capture. - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan
-         * management automatic capture.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Name name;
 
         /**
          * The name of the automatic capture filter.
-         *
-         * <p>- AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text. -
-         * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan
-         * management auto capture. - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan
-         * management auto capture. - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan
-         * management automatic capture.
+         * <p>
+         * - AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+         * - AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+         * - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+         * - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(Name name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** A list of filter values to include. */
+        /**
+         * A list of filter values to include.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valuesToInclude")
         private java.util.List<String> valuesToInclude;
 
         /**
          * A list of filter values to include.
-         *
          * @param valuesToInclude the value to set
          * @return this builder
-         */
+         **/
         public Builder valuesToInclude(java.util.List<String> valuesToInclude) {
             this.valuesToInclude = valuesToInclude;
             this.__explicitlySet__.add("valuesToInclude");
             return this;
         }
-        /** A list of filter values to exclude. */
+        /**
+         * A list of filter values to exclude.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valuesToExclude")
         private java.util.List<String> valuesToExclude;
 
         /**
          * A list of filter values to exclude.
-         *
          * @param valuesToExclude the value to set
          * @return this builder
-         */
+         **/
         public Builder valuesToExclude(java.util.List<String> valuesToExclude) {
             this.valuesToExclude = valuesToExclude;
             this.__explicitlySet__.add("valuesToExclude");
             return this;
         }
-        /** The time the filter value was last updated. */
+        /**
+         * The time the filter value was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
          * The time the filter value was last updated.
-         *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
             return this;
         }
-        /** The database user who last updated the filter value. */
+        /**
+         * The database user who last updated the filter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
         private String modifiedBy;
 
         /**
          * The database user who last updated the filter value.
-         *
          * @param modifiedBy the value to set
          * @return this builder
-         */
+         **/
         public Builder modifiedBy(String modifiedBy) {
             this.modifiedBy = modifiedBy;
             this.__explicitlySet__.add("modifiedBy");
@@ -175,7 +178,9 @@ public final class AutomaticCaptureFilter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -186,22 +191,22 @@ public final class AutomaticCaptureFilter
 
     /**
      * The name of the automatic capture filter.
+     * <p>
+     * - AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+     * - AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
      *
-     * <p>- AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text. -
-     * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan
-     * management automatic capture.
-     */
-    public enum Name implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Name {
         AutoCaptureSqlText("AUTO_CAPTURE_SQL_TEXT"),
         AutoCaptureParsingSchemaName("AUTO_CAPTURE_PARSING_SCHEMA_NAME"),
         AutoCaptureModule("AUTO_CAPTURE_MODULE"),
         AutoCaptureAction("AUTO_CAPTURE_ACTION"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -240,79 +245,82 @@ public final class AutomaticCaptureFilter
     };
     /**
      * The name of the automatic capture filter.
+     * <p>
+     * - AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+     * - AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
      *
-     * <p>- AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text. -
-     * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan
-     * management automatic capture.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Name name;
 
     /**
      * The name of the automatic capture filter.
-     *
-     * <p>- AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text. -
-     * AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan
-     * management auto capture. - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan
-     * management automatic capture.
+     * <p>
+     * - AUTO_CAPTURE_SQL_TEXT: Search pattern to apply to SQL text.
+     * - AUTO_CAPTURE_PARSING_SCHEMA_NAME: Parsing schema to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_MODULE: Module to include or exclude for SQL plan management auto capture.
+     * - AUTO_CAPTURE_ACTION: Action to include or exclude for SQL plan management automatic capture.
      *
      * @return the value
-     */
+     **/
     public Name getName() {
         return name;
     }
 
-    /** A list of filter values to include. */
+    /**
+     * A list of filter values to include.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valuesToInclude")
     private final java.util.List<String> valuesToInclude;
 
     /**
      * A list of filter values to include.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getValuesToInclude() {
         return valuesToInclude;
     }
 
-    /** A list of filter values to exclude. */
+    /**
+     * A list of filter values to exclude.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valuesToExclude")
     private final java.util.List<String> valuesToExclude;
 
     /**
      * A list of filter values to exclude.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getValuesToExclude() {
         return valuesToExclude;
     }
 
-    /** The time the filter value was last updated. */
+    /**
+     * The time the filter value was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
      * The time the filter value was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
 
-    /** The database user who last updated the filter value. */
+    /**
+     * The database user who last updated the filter value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("modifiedBy")
     private final String modifiedBy;
 
     /**
      * The database user who last updated the filter value.
-     *
      * @return the value
-     */
+     **/
     public String getModifiedBy() {
         return modifiedBy;
     }
@@ -324,7 +332,6 @@ public final class AutomaticCaptureFilter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

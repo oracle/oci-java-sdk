@@ -5,21 +5,19 @@
 package com.oracle.bmc.logging.model;
 
 /**
- * Grok pattern object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
+ * Grok pattern object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = GrokPattern.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class GrokPattern extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class GrokPattern extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "pattern",
@@ -44,88 +42,81 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Grok pattern. */
+        /**
+         * The Grok pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pattern")
         private String pattern;
 
         /**
          * The Grok pattern.
-         *
          * @param pattern the value to set
          * @return this builder
-         */
+         **/
         public Builder pattern(String pattern) {
             this.pattern = pattern;
             this.__explicitlySet__.add("pattern");
             return this;
         }
-        /** The name key to tag this Grok pattern. */
+        /**
+         * The name key to tag this Grok pattern.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name key to tag this Grok pattern.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Specify the time field for the event time. If the event doesn't have this field, the
-         * current time is used.
-         */
+         * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
         private String fieldTimeKey;
 
         /**
-         * Specify the time field for the event time. If the event doesn't have this field, the
-         * current time is used.
-         *
+         * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
          * @param fieldTimeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldTimeKey(String fieldTimeKey) {
             this.fieldTimeKey = fieldTimeKey;
             this.__explicitlySet__.add("fieldTimeKey");
             return this;
         }
         /**
-         * Process value using the specified format. This is available only when time_type is a
-         * string.
-         */
+         * Process value using the specified format. This is available only when time_type is a string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeFormat")
         private String fieldTimeFormat;
 
         /**
-         * Process value using the specified format. This is available only when time_type is a
-         * string.
-         *
+         * Process value using the specified format. This is available only when time_type is a string.
          * @param fieldTimeFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldTimeFormat(String fieldTimeFormat) {
             this.fieldTimeFormat = fieldTimeFormat;
             this.__explicitlySet__.add("fieldTimeFormat");
             return this;
         }
         /**
-         * Use the specified time zone. The time value can be parsed or formatted in the specified
-         * time zone.
-         */
+         * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeZone")
         private String fieldTimeZone;
 
         /**
-         * Use the specified time zone. The time value can be parsed or formatted in the specified
-         * time zone.
-         *
+         * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
          * @param fieldTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder fieldTimeZone(String fieldTimeZone) {
             this.fieldTimeZone = fieldTimeZone;
             this.__explicitlySet__.add("fieldTimeZone");
@@ -170,7 +161,9 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,77 +172,72 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** The Grok pattern. */
+    /**
+     * The Grok pattern.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pattern")
     private final String pattern;
 
     /**
      * The Grok pattern.
-     *
      * @return the value
-     */
+     **/
     public String getPattern() {
         return pattern;
     }
 
-    /** The name key to tag this Grok pattern. */
+    /**
+     * The name key to tag this Grok pattern.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name key to tag this Grok pattern.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * Specify the time field for the event time. If the event doesn't have this field, the current
-     * time is used.
-     */
+     * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeKey")
     private final String fieldTimeKey;
 
     /**
-     * Specify the time field for the event time. If the event doesn't have this field, the current
-     * time is used.
-     *
+     * Specify the time field for the event time. If the event doesn't have this field, the current time is used.
      * @return the value
-     */
+     **/
     public String getFieldTimeKey() {
         return fieldTimeKey;
     }
 
     /**
      * Process value using the specified format. This is available only when time_type is a string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeFormat")
     private final String fieldTimeFormat;
 
     /**
      * Process value using the specified format. This is available only when time_type is a string.
-     *
      * @return the value
-     */
+     **/
     public String getFieldTimeFormat() {
         return fieldTimeFormat;
     }
 
     /**
-     * Use the specified time zone. The time value can be parsed or formatted in the specified time
-     * zone.
-     */
+     * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fieldTimeZone")
     private final String fieldTimeZone;
 
     /**
-     * Use the specified time zone. The time value can be parsed or formatted in the specified time
-     * zone.
-     *
+     * Use the specified time zone. The time value can be parsed or formatted in the specified time zone.
      * @return the value
-     */
+     **/
     public String getFieldTimeZone() {
         return fieldTimeZone;
     }
@@ -261,7 +249,6 @@ public final class GrokPattern extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

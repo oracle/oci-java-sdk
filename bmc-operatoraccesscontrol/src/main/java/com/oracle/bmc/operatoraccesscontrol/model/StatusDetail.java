@@ -5,21 +5,19 @@
 package com.oracle.bmc.operatoraccesscontrol.model;
 
 /**
- * Detail of execution. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Detail of execution.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = StatusDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class StatusDetail extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class StatusDetail extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"statusId", "commandName", "status", "timeOfValidation"})
     public StatusDetail(
@@ -33,67 +31,67 @@ public final class StatusDetail extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** running unique number of the command executed */
+        /**
+         * running unique number of the command executed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusId")
         private Integer statusId;
 
         /**
          * running unique number of the command executed
-         *
          * @param statusId the value to set
          * @return this builder
-         */
+         **/
         public Builder statusId(Integer statusId) {
             this.statusId = statusId;
             this.__explicitlySet__.add("statusId");
             return this;
         }
-        /** Name of the process or command executed. */
+        /**
+         * Name of the process or command executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commandName")
         private String commandName;
 
         /**
          * Name of the process or command executed.
-         *
          * @param commandName the value to set
          * @return this builder
-         */
+         **/
         public Builder commandName(String commandName) {
             this.commandName = commandName;
             this.__explicitlySet__.add("commandName");
             return this;
         }
-        /** Status of the process or command executed Success or Failure. */
+        /**
+         * Status of the process or command executed Success or Failure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * Status of the process or command executed Success or Failure.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Time when the execution happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
-         */
+         * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidation")
         private java.util.Date timeOfValidation;
 
         /**
-         * Time when the execution happened in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example:
-         * '2020-05-22T21:10:29.600Z'.
+         * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
          *
          * @param timeOfValidation the value to set
          * @return this builder
-         */
+         **/
         public Builder timeOfValidation(java.util.Date timeOfValidation) {
             this.timeOfValidation = timeOfValidation;
             this.__explicitlySet__.add("timeOfValidation");
@@ -131,7 +129,9 @@ public final class StatusDetail extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -140,58 +140,60 @@ public final class StatusDetail extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** running unique number of the command executed */
+    /**
+     * running unique number of the command executed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusId")
     private final Integer statusId;
 
     /**
      * running unique number of the command executed
-     *
      * @return the value
-     */
+     **/
     public Integer getStatusId() {
         return statusId;
     }
 
-    /** Name of the process or command executed. */
+    /**
+     * Name of the process or command executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandName")
     private final String commandName;
 
     /**
      * Name of the process or command executed.
-     *
      * @return the value
-     */
+     **/
     public String getCommandName() {
         return commandName;
     }
 
-    /** Status of the process or command executed Success or Failure. */
+    /**
+     * Status of the process or command executed Success or Failure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * Status of the process or command executed Success or Failure.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
     /**
-     * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp
-     * format. Example: '2020-05-22T21:10:29.600Z'.
-     */
+     * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeOfValidation")
     private final java.util.Date timeOfValidation;
 
     /**
-     * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp
-     * format. Example: '2020-05-22T21:10:29.600Z'.
+     * Time when the execution happened in [RFC 3339](https://tools.ietf.org/html/rfc3339)timestamp format. Example: '2020-05-22T21:10:29.600Z'.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeOfValidation() {
         return timeOfValidation;
     }
@@ -203,7 +205,6 @@ public final class StatusDetail extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

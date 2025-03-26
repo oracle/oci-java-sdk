@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Result of batch detect personal identification. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Result of batch detect personal identification.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = BatchDetectLanguagePiiEntitiesResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = BatchDetectLanguagePiiEntitiesResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class BatchDetectLanguagePiiEntitiesResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"documents", "errors"})
     public BatchDetectLanguagePiiEntitiesResult(
@@ -34,31 +33,33 @@ public final class BatchDetectLanguagePiiEntitiesResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of succeeded document response. */
+        /**
+         * List of succeeded document response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<PiiEntityDocumentResult> documents;
 
         /**
          * List of succeeded document response.
-         *
          * @param documents the value to set
          * @return this builder
-         */
+         **/
         public Builder documents(java.util.List<PiiEntityDocumentResult> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
         }
-        /** List of failed document response. */
+        /**
+         * List of failed document response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<DocumentError> errors;
 
         /**
          * List of failed document response.
-         *
          * @param errors the value to set
          * @return this builder
-         */
+         **/
         public Builder errors(java.util.List<DocumentError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
@@ -89,7 +90,9 @@ public final class BatchDetectLanguagePiiEntitiesResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +101,30 @@ public final class BatchDetectLanguagePiiEntitiesResult
         return new Builder().copy(this);
     }
 
-    /** List of succeeded document response. */
+    /**
+     * List of succeeded document response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<PiiEntityDocumentResult> documents;
 
     /**
      * List of succeeded document response.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PiiEntityDocumentResult> getDocuments() {
         return documents;
     }
 
-    /** List of failed document response. */
+    /**
+     * List of failed document response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<DocumentError> errors;
 
     /**
      * List of failed document response.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentError> getErrors() {
         return errors;
     }
@@ -131,7 +136,6 @@ public final class BatchDetectLanguagePiiEntitiesResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

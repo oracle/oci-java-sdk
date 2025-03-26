@@ -6,65 +6,83 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListObjectsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListObjectsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     private String namespaceName;
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     public String getBucketName() {
         return bucketName;
     }
-    /** The string to use for matching against the start of object names in a list query. */
+    /**
+     * The string to use for matching against the start of object names in a list query.
+     */
     private String prefix;
 
-    /** The string to use for matching against the start of object names in a list query. */
+    /**
+     * The string to use for matching against the start of object names in a list query.
+     */
     public String getPrefix() {
         return prefix;
     }
-    /** Returns object names which are lexicographically greater than or equal to this parameter. */
+    /**
+     * Returns object names which are lexicographically greater than or equal to this parameter.
+     */
     private String start;
 
-    /** Returns object names which are lexicographically greater than or equal to this parameter. */
+    /**
+     * Returns object names which are lexicographically greater than or equal to this parameter.
+     */
     public String getStart() {
         return start;
     }
-    /** Returns object names which are lexicographically strictly less than this parameter. */
+    /**
+     * Returns object names which are lexicographically strictly less than this parameter.
+     */
     private String end;
 
-    /** Returns object names which are lexicographically strictly less than this parameter. */
+    /**
+     * Returns object names which are lexicographically strictly less than this parameter.
+     */
     public String getEnd() {
         return end;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public Integer getLimit() {
         return limit;
@@ -75,6 +93,7 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * Scanned objects whose names contain the delimiter have the part of their name up to the first
      * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
      * Note that only '/' is a supported delimiter character at this time.
+     *
      */
     private String delimiter;
 
@@ -84,40 +103,51 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
      * Scanned objects whose names contain the delimiter have the part of their name up to the first
      * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
      * Note that only '/' is a supported delimiter character at this time.
+     *
      */
     public String getDelimiter() {
         return delimiter;
     }
     /**
-     * Object summary by default includes only the 'name' field. Use this parameter to also include
-     * 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+     * Object summary by default includes only the 'name' field. Use this parameter to also
+     * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
      * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
-     * Specify the value of this parameter as a comma-separated, case-insensitive list of those
-     * field names. For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+     * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
      */
     private String fields;
 
     /**
-     * Object summary by default includes only the 'name' field. Use this parameter to also include
-     * 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+     * Object summary by default includes only the 'name' field. Use this parameter to also
+     * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
      * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
-     * Specify the value of this parameter as a comma-separated, case-insensitive list of those
-     * field names. For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+     * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+     *
      */
     public String getFields() {
         return fields;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcClientRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
-    /** Returns object names which are lexicographically strictly greater than this parameter. */
+    /**
+     * Returns object names which are lexicographically strictly greater than this parameter.
+     */
     private String startAfter;
 
-    /** Returns object names which are lexicographically strictly greater than this parameter. */
+    /**
+     * Returns object names which are lexicographically strictly greater than this parameter.
+     */
     public String getStartAfter() {
         return startAfter;
     }
@@ -125,15 +155,17 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListObjectsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Object Storage namespace used for the request. */
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
-         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -143,14 +175,15 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -160,12 +193,13 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The string to use for matching against the start of object names in a list query. */
+        /**
+         * The string to use for matching against the start of object names in a list query.
+         */
         private String prefix = null;
 
         /**
          * The string to use for matching against the start of object names in a list query.
-         *
          * @param prefix the value to set
          * @return this builder instance
          */
@@ -181,7 +215,6 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Returns object names which are lexicographically greater than or equal to this parameter.
-         *
          * @param start the value to set
          * @return this builder instance
          */
@@ -190,12 +223,13 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Returns object names which are lexicographically strictly less than this parameter. */
+        /**
+         * Returns object names which are lexicographically strictly less than this parameter.
+         */
         private String end = null;
 
         /**
          * Returns object names which are lexicographically strictly less than this parameter.
-         *
          * @param end the value to set
          * @return this builder instance
          */
@@ -205,16 +239,17 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -225,20 +260,21 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * When this parameter is set, only objects whose names do not contain the delimiter
-         * character (after an optionally specified prefix) are returned in the objects key of the
-         * response body. Scanned objects whose names contain the delimiter have the part of their
-         * name up to the first occurrence of the delimiter (including the optional prefix) returned
-         * as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
+         * When this parameter is set, only objects whose names do not contain the delimiter character
+         * (after an optionally specified prefix) are returned in the objects key of the response body.
+         * Scanned objects whose names contain the delimiter have the part of their name up to the first
+         * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+         * Note that only '/' is a supported delimiter character at this time.
+         *
          */
         private String delimiter = null;
 
         /**
-         * When this parameter is set, only objects whose names do not contain the delimiter
-         * character (after an optionally specified prefix) are returned in the objects key of the
-         * response body. Scanned objects whose names contain the delimiter have the part of their
-         * name up to the first occurrence of the delimiter (including the optional prefix) returned
-         * as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
+         * When this parameter is set, only objects whose names do not contain the delimiter character
+         * (after an optionally specified prefix) are returned in the objects key of the response body.
+         * Scanned objects whose names contain the delimiter have the part of their name up to the first
+         * occurrence of the delimiter (including the optional prefix) returned as a set of prefixes.
+         * Note that only '/' is a supported delimiter character at this time.
          *
          * @param delimiter the value to set
          * @return this builder instance
@@ -250,21 +286,20 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Object summary by default includes only the 'name' field. Use this parameter to also
-         * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date
-         * and time), 'timeModified' (object modification date and time), 'storageTier' and
-         * 'archivalState' fields. Specify the value of this parameter as a comma-separated,
-         * case-insensitive list of those field names. For example
-         * 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+         * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+         * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+         * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         *
          */
         private String fields = null;
 
         /**
          * Object summary by default includes only the 'name' field. Use this parameter to also
-         * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date
-         * and time), 'timeModified' (object modification date and time), 'storageTier' and
-         * 'archivalState' fields. Specify the value of this parameter as a comma-separated,
-         * case-insensitive list of those field names. For example
-         * 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
+         * include 'size' (object size in bytes), 'etag', 'md5', 'timeCreated' (object creation date and time),
+         * 'timeModified' (object modification date and time), 'storageTier' and 'archivalState' fields.
+         * Specify the value of this parameter as a comma-separated, case-insensitive list of those field names.
+         * For example 'name,etag,timeCreated,md5,timeModified,storageTier,archivalState'.
          *
          * @param fields the value to set
          * @return this builder instance
@@ -274,12 +309,13 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -295,7 +331,6 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Returns object names which are lexicographically strictly greater than this parameter.
-         *
          * @param startAfter the value to set
          * @return this builder instance
          */
@@ -306,19 +341,18 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -330,7 +364,6 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListObjectsRequest o) {
@@ -352,11 +385,10 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListObjectsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListObjectsRequest
          */
@@ -370,8 +402,7 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListObjectsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListObjectsRequest
@@ -389,14 +420,12 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcClientRequestId = opcClientRequestId;
             request.startAfter = startAfter;
             return request;
-            // new ListObjectsRequest(namespaceName, bucketName, prefix, start, end, limit,
-            // delimiter, fields, opcClientRequestId, startAfter);
+            // new ListObjectsRequest(namespaceName, bucketName, prefix, start, end, limit, delimiter, fields, opcClientRequestId, startAfter);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -415,7 +444,6 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

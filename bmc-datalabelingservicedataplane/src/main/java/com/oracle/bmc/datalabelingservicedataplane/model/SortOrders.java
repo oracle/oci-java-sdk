@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datalabelingservicedataplane.model;
 
-/** The sort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
-public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The sort orders.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211001")
+public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),
     ;

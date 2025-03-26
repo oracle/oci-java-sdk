@@ -6,50 +6,65 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteDeploymentBackupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DeleteDeploymentBackupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeleteDeploymentBackupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDeploymentBackupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class DeleteDeploymentBackupRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A unique DeploymentBackup identifier. */
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     private String deploymentBackupId;
 
-    /** A unique DeploymentBackup identifier. */
+    /**
+     * A unique DeploymentBackup identifier.
+     *
+     */
     public String getDeploymentBackupId() {
         return deploymentBackupId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     private Boolean isLockOverride;
 
-    /** Whether to override locks (if any exist). */
+    /**
+     * Whether to override locks (if any exist).
+     */
     public Boolean getIsLockOverride() {
         return isLockOverride;
     }
@@ -57,10 +72,14 @@ public class DeleteDeploymentBackupRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteDeploymentBackupRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique DeploymentBackup identifier. */
+        /**
+         * A unique DeploymentBackup identifier.
+         *
+         */
         private String deploymentBackupId = null;
 
         /**
@@ -76,17 +95,18 @@ public class DeleteDeploymentBackupRequest
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -96,7 +116,10 @@ public class DeleteDeploymentBackupRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -110,12 +133,13 @@ public class DeleteDeploymentBackupRequest
             return this;
         }
 
-        /** Whether to override locks (if any exist). */
+        /**
+         * Whether to override locks (if any exist).
+         */
         private Boolean isLockOverride = null;
 
         /**
          * Whether to override locks (if any exist).
-         *
          * @param isLockOverride the value to set
          * @return this builder instance
          */
@@ -126,19 +150,18 @@ public class DeleteDeploymentBackupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -150,7 +173,6 @@ public class DeleteDeploymentBackupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteDeploymentBackupRequest o) {
@@ -166,11 +188,10 @@ public class DeleteDeploymentBackupRequest
         /**
          * Build the instance of DeleteDeploymentBackupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteDeploymentBackupRequest
          */
@@ -184,8 +205,7 @@ public class DeleteDeploymentBackupRequest
         /**
          * Build the instance of DeleteDeploymentBackupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteDeploymentBackupRequest
@@ -197,14 +217,12 @@ public class DeleteDeploymentBackupRequest
             request.opcRequestId = opcRequestId;
             request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteDeploymentBackupRequest(deploymentBackupId, ifMatch, opcRequestId,
-            // isLockOverride);
+            // new DeleteDeploymentBackupRequest(deploymentBackupId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -217,7 +235,6 @@ public class DeleteDeploymentBackupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

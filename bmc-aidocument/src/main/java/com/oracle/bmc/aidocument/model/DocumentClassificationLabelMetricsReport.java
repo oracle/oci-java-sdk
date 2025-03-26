@@ -5,23 +5,22 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * Label Metrics report for Document Classification Model. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * Label Metrics report for Document Classification Model.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DocumentClassificationLabelMetricsReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DocumentClassificationLabelMetricsReport.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DocumentClassificationLabelMetricsReport
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"label", "meanAveragePrecision", "confidenceEntries"})
     public DocumentClassificationLabelMetricsReport(
@@ -36,46 +35,49 @@ public final class DocumentClassificationLabelMetricsReport
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Label name */
+        /**
+         * Label name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("label")
         private String label;
 
         /**
          * Label name
-         *
          * @param label the value to set
          * @return this builder
-         */
+         **/
         public Builder label(String label) {
             this.label = label;
             this.__explicitlySet__.add("label");
             return this;
         }
-        /** Mean average precision under different thresholds */
+        /**
+         * Mean average precision under different thresholds
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("meanAveragePrecision")
         private Float meanAveragePrecision;
 
         /**
          * Mean average precision under different thresholds
-         *
          * @param meanAveragePrecision the value to set
          * @return this builder
-         */
+         **/
         public Builder meanAveragePrecision(Float meanAveragePrecision) {
             this.meanAveragePrecision = meanAveragePrecision;
             this.__explicitlySet__.add("meanAveragePrecision");
             return this;
         }
-        /** List of document classification confidence report. */
+        /**
+         * List of document classification confidence report.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("confidenceEntries")
         private java.util.List<DocumentClassificationConfidenceEntry> confidenceEntries;
 
         /**
          * List of document classification confidence report.
-         *
          * @param confidenceEntries the value to set
          * @return this builder
-         */
+         **/
         public Builder confidenceEntries(
                 java.util.List<DocumentClassificationConfidenceEntry> confidenceEntries) {
             this.confidenceEntries = confidenceEntries;
@@ -111,7 +113,9 @@ public final class DocumentClassificationLabelMetricsReport
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,41 +124,44 @@ public final class DocumentClassificationLabelMetricsReport
         return new Builder().copy(this);
     }
 
-    /** Label name */
+    /**
+     * Label name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("label")
     private final String label;
 
     /**
      * Label name
-     *
      * @return the value
-     */
+     **/
     public String getLabel() {
         return label;
     }
 
-    /** Mean average precision under different thresholds */
+    /**
+     * Mean average precision under different thresholds
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("meanAveragePrecision")
     private final Float meanAveragePrecision;
 
     /**
      * Mean average precision under different thresholds
-     *
      * @return the value
-     */
+     **/
     public Float getMeanAveragePrecision() {
         return meanAveragePrecision;
     }
 
-    /** List of document classification confidence report. */
+    /**
+     * List of document classification confidence report.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("confidenceEntries")
     private final java.util.List<DocumentClassificationConfidenceEntry> confidenceEntries;
 
     /**
      * List of document classification confidence report.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DocumentClassificationConfidenceEntry> getConfidenceEntries() {
         return confidenceEntries;
     }
@@ -166,7 +173,6 @@ public final class DocumentClassificationLabelMetricsReport
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

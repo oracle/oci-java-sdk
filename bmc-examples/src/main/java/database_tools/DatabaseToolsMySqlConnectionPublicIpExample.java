@@ -49,28 +49,57 @@ import java.util.Date;
 /**
  * Use Case: Existing MySQL database with Public IP (customer-managed)
  *
- * <p>This example creates a Database Tools Connection to a MySQL database accessible by public IP.
- * Note, since this connection will be against a public IP address, a Database Tools Private
- * Endpoint Reverse Connection is not required. Exposing a database directly to the Internet is not
- * a recommended practice for security reasons. This example serves as an academic exercise of the
- * SDK and proof of concept only.
+ * This example creates a Database Tools Connection to a MySQL database
+ * accessible by public IP. Note, since this connection will be against a
+ * public IP address, a Database Tools Private Endpoint Reverse Connection
+ * is not required. Exposing a database directly to the Internet is not a
+ * recommended practice for security reasons. This example serves as an
+ * academic exercise of the SDK and proof of concept only.
  *
- * <p>Prerequisites: - An existing MySQL database on a compute node, for example - Firewall or
- * security list entries allowing TCP traffic to MySQL - An existing Vault for storage of secrets -
- * A previously configured .oci/config file with a [DEFAULT] section
+ * Prerequisites:
+ *  - An existing MySQL database on a compute node, for example
+ *  - Firewall or security list entries allowing TCP traffic to MySQL
+ *  - An existing Vault for storage of secrets
+ *  - A previously configured .oci/config file with a [DEFAULT] section
  *
- * <p>High-level Steps: 1- Locate the Vault by the provided OCID 2- Store the secret in the Vault
- * (as base64 encoded string) 3- Create a Database Tools Connection 4- Validate the connection
+ * High-level Steps:
+ *  1- Locate the Vault by the provided OCID
+ *  2- Store the secret in the Vault (as base64 encoded string)
+ *  3- Create a Database Tools Connection
+ *  4- Validate the connection
  *
- * <p>... cleanup when done (delete the temporary secret and connection)
+ *  ... cleanup when done (delete the temporary secret and connection)
  *
- * <p>Client | | +----------------------+----------+ | V | | +----------------+ | | | Database Tools
- * | | | | Service | | | +----------------+ | | | | | Database | | | Tools | | | VCN | |
- * +----------------------+----------+ | | +----------------------+----------+ | Compute | | | Node
- * | | | | | | | | | V | | --------- | | / MySQL \ | | \Public IP/ | | --------- | | |
- * +---------------------------------+
+ *                       Client
+ *                         |
+ *                         |
+ *  +----------------------+----------+
+ *  |                      V          |
+ *  |              +----------------+ |
+ *  |              | Database Tools | |
+ *  |              |    Service     | |
+ *  |              +----------------+ |
+ *  |                      |          |
+ *  | Database             |          |
+ *  | Tools                |          |
+ *  | VCN                  |          |
+ *  +----------------------+----------+
+ *                         |
+ *                         |
+ *  +----------------------+----------+
+ *  | Compute              |          |
+ *  | Node                 |          |
+ *  |                      |          |
+ *  |                      |          |
+ *  |                      V          |
+ *  |                  ---------      |
+ *  |                 /  MySQL  \     |
+ *  |                 \Public IP/     |
+ *  |                  ---------      |
+ *  |                                 |
+ *  +---------------------------------+
  *
- * <p>Note: We recommend that you activate the java assertion (-ea) when running this example.
+ *  Note: We recommend that you activate the java assertion (-ea) when running this example.
  */
 public class DatabaseToolsMySqlConnectionPublicIpExample {
     private static String compartmentId = null;
@@ -93,13 +122,13 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of a compartment where the connection should be created
-     *       <li>The OCID of a Vault created in KMS with at least one master key
-     *       <li>The Name of the User in the MySQL database, like admin
-     *       <li>The Password of the User in the MySQL database
-     *       <li>The connection string such as mysql://ipaddress:3306/
-     *     </ul>
+     * <ul>
+     *   <li>The OCID of a compartment where the connection should be created</li>
+     *   <li>The OCID of a Vault created in KMS with at least one master key</li>
+     *   <li>The Name of the User in the MySQL database, like admin</li>
+     *   <li>The Password of the User in the MySQL database</li>
+     *   <li>The connection string such as mysql://ipaddress:3306/</li>
+     * </ul>
      */
     public static void main(String[] args) throws Exception {
         System.out.println("\n\n============================================================\n");
@@ -119,10 +148,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
         dbPassword = args[3];
         connectionString = args[4];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
         provider = new ConfigFileAuthenticationDetailsProvider(ConfigFileReader.parseDefault());
 
@@ -164,10 +191,12 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Create a Database Tools connection with: - Specified compartment - Connection String supplied
-     * as argument - Database User supplied as argument - Database Password Stored in a Vault - Time
-     * generated display name
-     *
+     * Create a Database Tools connection with:
+     * - Specified compartment
+     * - Connection String supplied as argument
+     * - Database User supplied as argument
+     * - Database Password Stored in a Vault
+     * - Time generated display name
      * @return OCID of the Database Tools Connection created
      * @throws Exception
      */
@@ -204,7 +233,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
         System.out.println(
                 String.format(
                         "=== Creating connection %s using Work request: %s",
-                        connectionDisplayName, response.getOpcWorkRequestId()));
+                        connectionDisplayName,
+                        response.getOpcWorkRequestId()));
 
         waitForDatabaseToolsConnection(connectionId, LifecycleState.Active);
 
@@ -223,9 +253,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Validate a Database Tools Connection. The Validation is similar to the "Test Connection" in
-     * SQL Developer.
-     *
+     * Validate a Database Tools Connection.
+     * The Validation is similar to the "Test Connection" in SQL Developer.
      * @return true if the Connection is Valid
      */
     private static boolean validateConnection() {
@@ -263,8 +292,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Queries the cloud infrastructure for the Vault specified and caches a few of these parameters
-     * for later use.
+     * Queries the cloud infrastructure for the Vault specified and caches
+     * a few of these parameters for later use.
      */
     private static void getVaultInfo() {
         System.out.println(String.format("Retrieving the vault %s key to create secrets", vaultId));
@@ -278,7 +307,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
         System.out.println(
                 String.format(
                         "Vault %s management endpoint is %s",
-                        vaultId, vault.getManagementEndpoint()));
+                        vaultId,
+                        vault.getManagementEndpoint()));
 
         vaultCompartmentId = vault.getCompartmentId();
 
@@ -297,7 +327,6 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
 
     /**
      * Create a secret in a Vault
-     *
      * @param secretName Name of the Secret
      * @param base64Content The content of the secret as a base 64 string
      * @return the OCID of the generated secret
@@ -334,9 +363,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Delete a Secret in a Vault. Note that the secret is not actually deleted immediately, it is
-     * scheduled for deletion on a later date.
-     *
+     * Delete a Secret in a Vault.
+     * Note that the secret is not actually deleted immediately, it is scheduled for deletion on a later date.
      * @param secretId The OCID of the Secret to delete
      * @throws Exception
      */
@@ -371,7 +399,6 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
 
     /**
      * Delete The database Tools Connection for the specified connectionId
-     *
      * @param connectionId The OCID of the Database Tools to delete
      * @throws Exception
      */
@@ -387,7 +414,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
             System.out.println(
                     String.format(
                             "Deleting connection %s using Work request: %s",
-                            connectionId, response.getOpcWorkRequestId()));
+                            connectionId,
+                            response.getOpcWorkRequestId()));
 
             waitForDatabaseToolsConnection(connectionId, LifecycleState.Deleted);
             System.out.println(String.format("Connection %s state is now deleted", connectionId));
@@ -395,8 +423,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Wait for a specific Connection to get a specific state. Required for asynchronous operation.
-     *
+     * Wait for a specific Connection to get a specific state. Required for
+     * asynchronous operation.
      * @param connectionId The OCID of the database Tools Connection
      * @param targetState The LifeCycle state to reach
      * @throws Exception
@@ -407,7 +435,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
         System.out.println(
                 String.format(
                         "=== Waiting for connection %s to match state -> %s",
-                        connectionId, targetState));
+                        connectionId,
+                        targetState));
 
         DatabaseToolsWaiters waiter = databaseToolsClient.getWaiters();
         waiter.forDatabaseToolsConnection(
@@ -420,8 +449,8 @@ public class DatabaseToolsMySqlConnectionPublicIpExample {
     }
 
     /**
-     * Wait for a specific Secret to get a specific state. Required for asynchronous operation.
-     *
+     * Wait for a specific Secret to get a specific state. Required for
+     * asynchronous operation.
      * @param secretId The OCID of the Secret in a Vault
      * @param targetState The LifeCycle state to reach
      * @throws Exception

@@ -5,23 +5,21 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Inventory of JMS resources in a compartment during a specified time period. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Inventory of JMS resources in a compartment during a specified time period.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceInventory.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResourceInventory
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ResourceInventory.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResourceInventory extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "activeFleetCount",
@@ -46,76 +44,81 @@ public final class ResourceInventory
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The number of _active_ fleets. */
+        /**
+         * The number of _active_ fleets.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
         private Integer activeFleetCount;
 
         /**
          * The number of _active_ fleets.
-         *
          * @param activeFleetCount the value to set
          * @return this builder
-         */
+         **/
         public Builder activeFleetCount(Integer activeFleetCount) {
             this.activeFleetCount = activeFleetCount;
             this.__explicitlySet__.add("activeFleetCount");
             return this;
         }
-        /** The number of managed instances. */
+        /**
+         * The number of managed instances.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
         private Integer managedInstanceCount;
 
         /**
          * The number of managed instances.
-         *
          * @param managedInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder managedInstanceCount(Integer managedInstanceCount) {
             this.managedInstanceCount = managedInstanceCount;
             this.__explicitlySet__.add("managedInstanceCount");
             return this;
         }
-        /** The number of Java Runtimes. */
+        /**
+         * The number of Java Runtimes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jreCount")
         private Integer jreCount;
 
         /**
          * The number of Java Runtimes.
-         *
          * @param jreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder jreCount(Integer jreCount) {
             this.jreCount = jreCount;
             this.__explicitlySet__.add("jreCount");
             return this;
         }
-        /** The number of Java installations. */
+        /**
+         * The number of Java installations.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installationCount")
         private Integer installationCount;
 
         /**
          * The number of Java installations.
-         *
          * @param installationCount the value to set
          * @return this builder
-         */
+         **/
         public Builder installationCount(Integer installationCount) {
             this.installationCount = installationCount;
             this.__explicitlySet__.add("installationCount");
             return this;
         }
-        /** The number of applications. */
+        /**
+         * The number of applications.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationCount")
         private Integer applicationCount;
 
         /**
          * The number of applications.
-         *
          * @param applicationCount the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationCount(Integer applicationCount) {
             this.applicationCount = applicationCount;
             this.__explicitlySet__.add("applicationCount");
@@ -160,7 +163,9 @@ public final class ResourceInventory
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +174,72 @@ public final class ResourceInventory
         return new Builder().copy(this);
     }
 
-    /** The number of _active_ fleets. */
+    /**
+     * The number of _active_ fleets.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activeFleetCount")
     private final Integer activeFleetCount;
 
     /**
      * The number of _active_ fleets.
-     *
      * @return the value
-     */
+     **/
     public Integer getActiveFleetCount() {
         return activeFleetCount;
     }
 
-    /** The number of managed instances. */
+    /**
+     * The number of managed instances.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedInstanceCount")
     private final Integer managedInstanceCount;
 
     /**
      * The number of managed instances.
-     *
      * @return the value
-     */
+     **/
     public Integer getManagedInstanceCount() {
         return managedInstanceCount;
     }
 
-    /** The number of Java Runtimes. */
+    /**
+     * The number of Java Runtimes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreCount")
     private final Integer jreCount;
 
     /**
      * The number of Java Runtimes.
-     *
      * @return the value
-     */
+     **/
     public Integer getJreCount() {
         return jreCount;
     }
 
-    /** The number of Java installations. */
+    /**
+     * The number of Java installations.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installationCount")
     private final Integer installationCount;
 
     /**
      * The number of Java installations.
-     *
      * @return the value
-     */
+     **/
     public Integer getInstallationCount() {
         return installationCount;
     }
 
-    /** The number of applications. */
+    /**
+     * The number of applications.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationCount")
     private final Integer applicationCount;
 
     /**
      * The number of applications.
-     *
      * @return the value
-     */
+     **/
     public Integer getApplicationCount() {
         return applicationCount;
     }
@@ -241,7 +251,6 @@ public final class ResourceInventory
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

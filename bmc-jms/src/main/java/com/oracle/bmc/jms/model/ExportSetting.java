@@ -5,21 +5,20 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Export settings of a fleet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Export settings of a fleet.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportSetting.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExportSetting extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExportSetting extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "exportSettingKey",
@@ -65,7 +64,10 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The internal identifier of the export setting. */
+        /**
+         * The internal identifier of the export setting.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportSettingKey")
         private String exportSettingKey;
 
@@ -74,32 +76,34 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param exportSettingKey the value to set
          * @return this builder
-         */
+         **/
         public Builder exportSettingKey(String exportSettingKey) {
             this.exportSettingKey = exportSettingKey;
             this.__explicitlySet__.add("exportSettingKey");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
         private String fleetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
          *
          * @param fleetId the value to set
          * @return this builder
-         */
+         **/
         public Builder fleetId(String fleetId) {
             this.fleetId = fleetId;
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** The duration of data to be exported for fleets. */
+        /**
+         * The duration of data to be exported for fleets.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportDuration")
         private ExportDuration exportDuration;
 
@@ -108,13 +112,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param exportDuration the value to set
          * @return this builder
-         */
+         **/
         public Builder exportDuration(ExportDuration exportDuration) {
             this.exportDuration = exportDuration;
             this.__explicitlySet__.add("exportDuration");
             return this;
         }
-        /** Resource to export data associated from the fleets. */
+        /**
+         * Resource to export data associated from the fleets.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportResources")
         private ExportResources exportResources;
 
@@ -123,13 +130,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param exportResources the value to set
          * @return this builder
-         */
+         **/
         public Builder exportResources(ExportResources exportResources) {
             this.exportResources = exportResources;
             this.__explicitlySet__.add("exportResources");
             return this;
         }
-        /** Acknowledgement for cross region target bucket configuration. */
+        /**
+         * Acknowledgement for cross region target bucket configuration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCrossRegionAcknowledged")
         private Boolean isCrossRegionAcknowledged;
 
@@ -138,13 +148,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param isCrossRegionAcknowledged the value to set
          * @return this builder
-         */
+         **/
         public Builder isCrossRegionAcknowledged(Boolean isCrossRegionAcknowledged) {
             this.isCrossRegionAcknowledged = isCrossRegionAcknowledged;
             this.__explicitlySet__.add("isCrossRegionAcknowledged");
             return this;
         }
-        /** The name of the bucket where data will be exported. */
+        /**
+         * The name of the bucket where data will be exported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketName")
         private String targetBucketName;
 
@@ -153,13 +166,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param targetBucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketName(String targetBucketName) {
             this.targetBucketName = targetBucketName;
             this.__explicitlySet__.add("targetBucketName");
             return this;
         }
-        /** The namespace of the bucket where data will be exported. */
+        /**
+         * The namespace of the bucket where data will be exported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketNamespace")
         private String targetBucketNamespace;
 
@@ -168,13 +184,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param targetBucketNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketNamespace(String targetBucketNamespace) {
             this.targetBucketNamespace = targetBucketNamespace;
             this.__explicitlySet__.add("targetBucketNamespace");
             return this;
         }
-        /** The id of the region of the target bucket. */
+        /**
+         * The id of the region of the target bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
         private String targetBucketRegion;
 
@@ -183,13 +202,16 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param targetBucketRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketRegion(String targetBucketRegion) {
             this.targetBucketRegion = targetBucketRegion;
             this.__explicitlySet__.add("targetBucketRegion");
             return this;
         }
-        /** Schedule at which data will be exported. */
+        /**
+         * Schedule at which data will be exported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportFrequency")
         private ExportFrequency exportFrequency;
 
@@ -198,60 +220,59 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param exportFrequency the value to set
          * @return this builder
-         */
+         **/
         public Builder exportFrequency(ExportFrequency exportFrequency) {
             this.exportFrequency = exportFrequency;
             this.__explicitlySet__.add("exportFrequency");
             return this;
         }
-        /** ExportSetting flag to store enabled or disabled status. */
+        /**
+         * ExportSetting flag to store enabled or disabled status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * ExportSetting flag to store enabled or disabled status.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The creation date and time of the export setting (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The creation date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The creation date and time of the export setting (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The creation date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The update date and time of the export setting (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The update date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
-         * The update date and time of the export setting (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The update date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
@@ -324,7 +345,9 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -333,7 +356,10 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** The internal identifier of the export setting. */
+    /**
+     * The internal identifier of the export setting.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportSettingKey")
     private final String exportSettingKey;
 
@@ -341,29 +367,31 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * The internal identifier of the export setting.
      *
      * @return the value
-     */
+     **/
     public String getExportSettingKey() {
         return exportSettingKey;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fleetId")
     private final String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the fleet.
      *
      * @return the value
-     */
+     **/
     public String getFleetId() {
         return fleetId;
     }
 
-    /** The duration of data to be exported for fleets. */
+    /**
+     * The duration of data to be exported for fleets.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportDuration")
     private final ExportDuration exportDuration;
 
@@ -371,12 +399,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * The duration of data to be exported for fleets.
      *
      * @return the value
-     */
+     **/
     public ExportDuration getExportDuration() {
         return exportDuration;
     }
 
-    /** Resource to export data associated from the fleets. */
+    /**
+     * Resource to export data associated from the fleets.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportResources")
     private final ExportResources exportResources;
 
@@ -384,12 +415,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * Resource to export data associated from the fleets.
      *
      * @return the value
-     */
+     **/
     public ExportResources getExportResources() {
         return exportResources;
     }
 
-    /** Acknowledgement for cross region target bucket configuration. */
+    /**
+     * Acknowledgement for cross region target bucket configuration.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCrossRegionAcknowledged")
     private final Boolean isCrossRegionAcknowledged;
 
@@ -397,12 +431,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * Acknowledgement for cross region target bucket configuration.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCrossRegionAcknowledged() {
         return isCrossRegionAcknowledged;
     }
 
-    /** The name of the bucket where data will be exported. */
+    /**
+     * The name of the bucket where data will be exported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketName")
     private final String targetBucketName;
 
@@ -410,12 +447,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * The name of the bucket where data will be exported.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketName() {
         return targetBucketName;
     }
 
-    /** The namespace of the bucket where data will be exported. */
+    /**
+     * The namespace of the bucket where data will be exported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketNamespace")
     private final String targetBucketNamespace;
 
@@ -423,12 +463,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * The namespace of the bucket where data will be exported.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketNamespace() {
         return targetBucketNamespace;
     }
 
-    /** The id of the region of the target bucket. */
+    /**
+     * The id of the region of the target bucket.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
     private final String targetBucketRegion;
 
@@ -436,12 +479,15 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * The id of the region of the target bucket.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketRegion() {
         return targetBucketRegion;
     }
 
-    /** Schedule at which data will be exported. */
+    /**
+     * Schedule at which data will be exported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportFrequency")
     private final ExportFrequency exportFrequency;
 
@@ -449,54 +495,53 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
      * Schedule at which data will be exported.
      *
      * @return the value
-     */
+     **/
     public ExportFrequency getExportFrequency() {
         return exportFrequency;
     }
 
-    /** ExportSetting flag to store enabled or disabled status. */
+    /**
+     * ExportSetting flag to store enabled or disabled status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * ExportSetting flag to store enabled or disabled status.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The creation date and time of the export setting (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The creation date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The creation date and time of the export setting (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The update date and time of the export setting (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The update date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
-     * The update date and time of the export setting (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The update date and time of the export setting (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
@@ -508,7 +553,6 @@ public final class ExportSetting extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

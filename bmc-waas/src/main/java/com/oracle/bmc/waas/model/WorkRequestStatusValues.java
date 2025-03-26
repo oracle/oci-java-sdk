@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.waas.model;
 
-/** The possible status values for a work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
-public enum WorkRequestStatusValues implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The possible status values for a work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181116")
+public enum WorkRequestStatusValues {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Failed("FAILED"),

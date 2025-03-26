@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Details of resource usage by an Operations Insights Warehouse resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Details of resource usage by an Operations Insights Warehouse resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizeOperationsInsightsWarehouseResourceUsageAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SummarizeOperationsInsightsWarehouseResourceUsageAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "cpuUsed", "storageUsedInGBs", "lifecycleState"})
     public SummarizeOperationsInsightsWarehouseResourceUsageAggregation(
@@ -38,22 +37,26 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OPSI Warehouse OCID */
+        /**
+         * OPSI Warehouse OCID
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OPSI Warehouse OCID
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
+        /**
+         * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
         private Double cpuUsed;
 
@@ -62,13 +65,16 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
          *
          * @param cpuUsed the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuUsed(Double cpuUsed) {
             this.cpuUsed = cpuUsed;
             this.__explicitlySet__.add("cpuUsed");
             return this;
         }
-        /** Storage by OPSI Warehouse ADW in GB. */
+        /**
+         * Storage by OPSI Warehouse ADW in GB.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
         private Double storageUsedInGBs;
 
@@ -77,22 +83,23 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
          *
          * @param storageUsedInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder storageUsedInGBs(Double storageUsedInGBs) {
             this.storageUsedInGBs = storageUsedInGBs;
             this.__explicitlySet__.add("storageUsedInGBs");
             return this;
         }
-        /** Possible lifecycle states */
+        /**
+         * Possible lifecycle states
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OperationsInsightsWarehouseLifecycleState lifecycleState;
 
         /**
          * Possible lifecycle states
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(OperationsInsightsWarehouseLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -130,7 +137,9 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,20 +148,24 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
         return new Builder().copy(this);
     }
 
-    /** OPSI Warehouse OCID */
+    /**
+     * OPSI Warehouse OCID
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OPSI Warehouse OCID
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Number of OCPUs used by OPSI Warehouse ADW. Can be fractional. */
+    /**
+     * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuUsed")
     private final Double cpuUsed;
 
@@ -160,12 +173,15 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
      * Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
      *
      * @return the value
-     */
+     **/
     public Double getCpuUsed() {
         return cpuUsed;
     }
 
-    /** Storage by OPSI Warehouse ADW in GB. */
+    /**
+     * Storage by OPSI Warehouse ADW in GB.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageUsedInGBs")
     private final Double storageUsedInGBs;
 
@@ -173,20 +189,21 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
      * Storage by OPSI Warehouse ADW in GB.
      *
      * @return the value
-     */
+     **/
     public Double getStorageUsedInGBs() {
         return storageUsedInGBs;
     }
 
-    /** Possible lifecycle states */
+    /**
+     * Possible lifecycle states
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OperationsInsightsWarehouseLifecycleState lifecycleState;
 
     /**
      * Possible lifecycle states
-     *
      * @return the value
-     */
+     **/
     public OperationsInsightsWarehouseLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -198,7 +215,6 @@ public final class SummarizeOperationsInsightsWarehouseResourceUsageAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

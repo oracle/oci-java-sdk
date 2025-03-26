@@ -5,23 +5,23 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information about a new DatabaseRegistration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information about a new DatabaseRegistration.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDatabaseRegistrationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDatabaseRegistrationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDatabaseRegistrationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -85,7 +85,10 @@ public final class CreateDatabaseRegistrationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An object's Display Name. */
+        /**
+         * An object's Display Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
@@ -94,13 +97,16 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Metadata about this specific object. */
+        /**
+         * Metadata about this specific object.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
@@ -109,49 +115,49 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
-         * <p>Example: {@code {"bar-key": "value"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * A simple key-value pair that is applied without any predefined name, type, or scope.
-         * Exists for cross-compatibility only.
-         *
-         * <p>Example: {@code {"bar-key": "value"}}
+         * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
+         * for cross-compatibility only.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -159,27 +165,31 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
+        /**
+         * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
 
@@ -188,7 +198,7 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param fqdn the value to set
          * @return this builder
-         */
+         **/
         public Builder fqdn(String fqdn) {
             this.fqdn = fqdn;
             this.__explicitlySet__.add("fqdn");
@@ -197,7 +207,8 @@ public final class CreateDatabaseRegistrationDetails
         /**
          * The private IP address in the customer's VCN of the customer's endpoint, typically a
          * database.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
@@ -207,95 +218,96 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * target subnet of the dedicated connection.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * target subnet of the dedicated connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * database being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
          *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
-         */
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect the associated system of the given
-         * technology. This username must already exist and be available by the system/application
-         * to be connected to and must conform to the case sensitivty requirments defined in it.
+         * The username Oracle GoldenGate uses to connect the associated system of the given technology.
+         * This username must already exist and be available by the system/application to be connected to
+         * and must conform to the case sensitivty requirments defined in it.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The password Oracle GoldenGate uses to connect the associated system of the given
-         * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
-         */
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated system of the given
-         * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
-         * "passwordSecretId". This field will be removed after February 15 2026.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-        /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+        /**
+         * Connect descriptor or Easy Connect Naming method used to connect to a database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
         private String connectionString;
 
@@ -304,7 +316,7 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param connectionString the value to set
          * @return this builder
-         */
+         **/
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
@@ -312,49 +324,54 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
-         * database involves a redirection received from the SCAN listeners to the database node to
-         * connect to. By default the mode would be DIRECT.
-         */
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
         private SessionMode sessionMode;
 
         /**
          * The mode of the database connection session to be established by the data client.
-         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
-         * database involves a redirection received from the SCAN listeners to the database node to
-         * connect to. By default the mode would be DIRECT.
+         * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+         * Connection to a RAC database involves a redirection received from the SCAN listeners
+         * to the database node to connect to. By default the mode would be DIRECT.
          *
          * @param sessionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionMode(SessionMode sessionMode) {
             this.sessionMode = sessionMode;
             this.__explicitlySet__.add("sessionMode");
             return this;
         }
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
-         */
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * This attribute is expected to be base64 encoded.
+         * Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
-         * replaced by "walletSecretId". This field will be removed after February 15 2026.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * This attribute is expected to be base64 encoded.
+         * Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
          *
          * @param wallet the value to set
          * @return this builder
-         */
+         **/
         public Builder wallet(String wallet) {
             this.wallet = wallet;
             this.__explicitlySet__.add("wallet");
             return this;
         }
-        /** Credential store alias. */
+        /**
+         * Credential store alias.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
         private String aliasName;
 
@@ -363,68 +380,69 @@ public final class CreateDatabaseRegistrationDetails
          *
          * @param aliasName the value to set
          * @return this builder
-         */
+         **/
         public Builder aliasName(String aliasName) {
             this.aliasName = aliasName;
             this.__explicitlySet__.add("aliasName");
             return this;
         }
         /**
-         * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate
-         * can manage secrets. Customers must add policies to permit GoldenGate to manage secrets
-         * contained within this vault.
-         */
+         * Refers to the customer's vault OCID.
+         * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+         * to manage secrets contained within this vault.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
         /**
-         * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate
-         * can manage secrets. Customers must add policies to permit GoldenGate to manage secrets
-         * contained within this vault.
+         * Refers to the customer's vault OCID.
+         * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+         * to manage secrets contained within this vault.
          *
          * @param vaultId the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultId(String vaultId) {
             this.vaultId = vaultId;
             this.__explicitlySet__.add("vaultId");
             return this;
         }
         /**
-         * Refers to the customer's master key OCID. If provided, it references a key to manage
-         * secrets. Customers must add policies to permit GoldenGate to use this key.
-         */
+         * Refers to the customer's master key OCID.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyId")
         private String keyId;
 
         /**
-         * Refers to the customer's master key OCID. If provided, it references a key to manage
-         * secrets. Customers must add policies to permit GoldenGate to use this key.
+         * Refers to the customer's master key OCID.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          * @param keyId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyId(String keyId) {
             this.keyId = keyId;
             this.__explicitlySet__.add("keyId");
             return this;
         }
         /**
-         * The OCID of the compartment where the GoldenGate Secret will be created. If provided, it
-         * references a key to manage secrets. Customers must add policies to permit GoldenGate to
-         * use this key.
-         */
+         * The OCID of the compartment where the GoldenGate Secret will be created.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
         private String secretCompartmentId;
 
         /**
-         * The OCID of the compartment where the GoldenGate Secret will be created. If provided, it
-         * references a key to manage secrets. Customers must add policies to permit GoldenGate to
-         * use this key.
+         * The OCID of the compartment where the GoldenGate Secret will be created.
+         * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
          *
          * @param secretCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretCompartmentId(String secretCompartmentId) {
             this.secretCompartmentId = secretCompartmentId;
             this.__explicitlySet__.add("secretCompartmentId");
@@ -521,7 +539,9 @@ public final class CreateDatabaseRegistrationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -530,7 +550,10 @@ public final class CreateDatabaseRegistrationDetails
         return new Builder().copy(this);
     }
 
-    /** An object's Display Name. */
+    /**
+     * An object's Display Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
@@ -538,12 +561,15 @@ public final class CreateDatabaseRegistrationDetails
      * An object's Display Name.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Metadata about this specific object. */
+    /**
+     * Metadata about this specific object.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
@@ -551,24 +577,23 @@ public final class CreateDatabaseRegistrationDetails
      * Metadata about this specific object.
      *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -576,44 +601,49 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
      * A simple key-value pair that is applied without any predefined name, type, or scope. Exists
      * for cross-compatibility only.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Tags defined for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
+    /**
+     * A three-label Fully Qualified Domain Name (FQDN) for a resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
 
@@ -621,7 +651,7 @@ public final class CreateDatabaseRegistrationDetails
      * A three-label Fully Qualified Domain Name (FQDN) for a resource.
      *
      * @return the value
-     */
+     **/
     public String getFqdn() {
         return fqdn;
     }
@@ -629,7 +659,8 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The private IP address in the customer's VCN of the customer's endpoint, typically a
      * database.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
@@ -638,86 +669,87 @@ public final class CreateDatabaseRegistrationDetails
      * database.
      *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * target subnet of the dedicated connection.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * database being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database being referenced.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
-     */
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username Oracle GoldenGate uses to connect the associated system of the given technology.
-     * This username must already exist and be available by the system/application to be connected
-     * to and must conform to the case sensitivty requirments defined in it.
+     * This username must already exist and be available by the system/application to be connected to
+     * and must conform to the case sensitivty requirments defined in it.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
-     * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
-     */
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
-     * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
-     * will be removed after February 15 2026.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
-    /** Connect descriptor or Easy Connect Naming method used to connect to a database. */
+    /**
+     * Connect descriptor or Easy Connect Naming method used to connect to a database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionString")
     private final String connectionString;
 
@@ -725,18 +757,19 @@ public final class CreateDatabaseRegistrationDetails
      * Connect descriptor or Easy Connect Naming method used to connect to a database.
      *
      * @return the value
-     */
+     **/
     public String getConnectionString() {
         return connectionString;
     }
 
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
-     */
-    public enum SessionMode implements com.oracle.bmc.http.internal.BmcEnum {
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
+    public enum SessionMode {
         Direct("DIRECT"),
         Redirect("REDIRECT"),
         ;
@@ -769,46 +802,51 @@ public final class CreateDatabaseRegistrationDetails
         }
     };
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
-     */
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionMode")
     private final SessionMode sessionMode;
 
     /**
-     * The mode of the database connection session to be established by the data client. 'REDIRECT'
-     * - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC database
-     * involves a redirection received from the SCAN listeners to the database node to connect to.
-     * By default the mode would be DIRECT.
+     * The mode of the database connection session to be established by the data client.
+     * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database.
+     * Connection to a RAC database involves a redirection received from the SCAN listeners
+     * to the database node to connect to. By default the mode would be DIRECT.
      *
      * @return the value
-     */
+     **/
     public SessionMode getSessionMode() {
         return sessionMode;
     }
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
-     */
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * This attribute is expected to be base64 encoded.
+     * Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
     private final String wallet;
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
-     * "walletSecretId". This field will be removed after February 15 2026.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * This attribute is expected to be base64 encoded.
+     * Deprecated: This field is deprecated and replaced by "walletSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getWallet() {
         return wallet;
     }
 
-    /** Credential store alias. */
+    /**
+     * Credential store alias.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aliasName")
     private final String aliasName;
 
@@ -816,62 +854,63 @@ public final class CreateDatabaseRegistrationDetails
      * Credential store alias.
      *
      * @return the value
-     */
+     **/
     public String getAliasName() {
         return aliasName;
     }
 
     /**
-     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
-     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
-     * within this vault.
-     */
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
-     * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
-     * within this vault.
+     * Refers to the customer's vault OCID.
+     * If provided, it references a vault where GoldenGate can manage secrets. Customers must add policies to permit GoldenGate
+     * to manage secrets contained within this vault.
      *
      * @return the value
-     */
+     **/
     public String getVaultId() {
         return vaultId;
     }
 
     /**
-     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
-     * Customers must add policies to permit GoldenGate to use this key.
-     */
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyId")
     private final String keyId;
 
     /**
-     * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
-     * Customers must add policies to permit GoldenGate to use this key.
+     * Refers to the customer's master key OCID.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
-     */
+     **/
     public String getKeyId() {
         return keyId;
     }
 
     /**
-     * The OCID of the compartment where the GoldenGate Secret will be created. If provided, it
-     * references a key to manage secrets. Customers must add policies to permit GoldenGate to use
-     * this key.
-     */
+     * The OCID of the compartment where the GoldenGate Secret will be created.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
     private final String secretCompartmentId;
 
     /**
-     * The OCID of the compartment where the GoldenGate Secret will be created. If provided, it
-     * references a key to manage secrets. Customers must add policies to permit GoldenGate to use
-     * this key.
+     * The OCID of the compartment where the GoldenGate Secret will be created.
+     * If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
      *
      * @return the value
-     */
+     **/
     public String getSecretCompartmentId() {
         return secretCompartmentId;
     }
@@ -883,7 +922,6 @@ public final class CreateDatabaseRegistrationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

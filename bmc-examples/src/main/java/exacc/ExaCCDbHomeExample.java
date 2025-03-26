@@ -34,11 +34,11 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * This class provides some basic example of how to create, get a DbHome for a given VmCluster, as
- * well as list DbHomes within the given VmCluster.
- *
- * <p>Sample arguments (not comprehensive, see below for a full list): <b>--vmClusterOcid &lt;OCID
- * of a VmCluster&gt; --dbName &lt;a Db Name&gt; --dbUniqueName &lt;a DbUniqueName&gt;</b>
+ * This class provides some basic example of how to create, get a DbHome for a given VmCluster, as well as list DbHomes
+ * within the given VmCluster.
+ * <p>
+ * Sample arguments (not comprehensive, see below for a full list):
+ * <b>--vmClusterOcid &lt;OCID of a VmCluster&gt; --dbName &lt;a Db Name&gt; --dbUniqueName &lt;a DbUniqueName&gt;</b>
  */
 public class ExaCCDbHomeExample {
     private static final String CONFIG_LOCATION = "~/.oci/config";
@@ -49,7 +49,9 @@ public class ExaCCDbHomeExample {
     private static final Map<String, Opts> mappings =
             Arrays.stream(Opts.values()).collect(Collectors.toMap(Opts::getArgName, o -> o));
 
-    /** Defines the arguments for this example. */
+    /**
+     * Defines the arguments for this example.
+     */
     private enum Opts {
         VM_CLUSTER_OCID("--vmClusterOcid", "The OCID of a VmCluster.", true, null),
         DB_NAME(
@@ -116,8 +118,8 @@ public class ExaCCDbHomeExample {
      * A helper method for parsing command line arguments.
      *
      * @param argv the arguments as passed
-     * @return a mapping of argument to its value. Arguments may be missing from the map if they
-     *     were not supplied by the user and not required.
+     * @return a mapping of argument to its value. Arguments may be missing from the map if they were not supplied by
+     * the user and not required.
      */
     private static Map<Opts, String> parseOpts(String[] argv) {
         if (argv == null) {
@@ -157,7 +159,7 @@ public class ExaCCDbHomeExample {
      * Creates a DbHome for a given VmCluster
      *
      * @param vmClusterOcid the OCID of the VmCluster
-     * @param client the DatabaseClient to use
+     * @param client        the DatabaseClient to use
      * @return the OCID of the DbHome that is created
      */
     private static String create(
@@ -181,7 +183,9 @@ public class ExaCCDbHomeExample {
         System.out.println(
                 String.format(
                         "Creating DbName %s with DbUniqueName %s with DbVersion %s ...",
-                        dbName, dbUniqueName, version));
+                        dbName,
+                        dbUniqueName,
+                        version));
 
         final CreateDatabaseDetails databaseDetails =
                 CreateDatabaseDetails.builder()
@@ -220,7 +224,7 @@ public class ExaCCDbHomeExample {
      * Lists DbHomes for a given VmCluster
      *
      * @param vmClusterOcid the OCID of a given VmCluster
-     * @param client the DatabaseClient to use
+     * @param client        the DatabaseClient to use
      * @return a Collection of OCIDs of the DbHomes
      */
     private static Collection<String> list(
@@ -249,7 +253,8 @@ public class ExaCCDbHomeExample {
             throw new RuntimeException("Response from server was null.");
         } else {
             Collection<String> collection =
-                    response.getItems().stream()
+                    response.getItems()
+                            .stream()
                             .map(DbHomeSummary::getId)
                             .collect(Collectors.toList());
             collection.forEach(System.out::println);
@@ -261,7 +266,7 @@ public class ExaCCDbHomeExample {
      * Gets a DbHome
      *
      * @param dbHomeOcid the OCID of a DbHome
-     * @param client the DatabaseClient instance to be used
+     * @param client     the DatabaseClient instance to be used
      * @return the OCID of the DbHome that was fetched.
      */
     public static String get(final String dbHomeOcid, final DatabaseClient client) {
@@ -294,14 +299,13 @@ public class ExaCCDbHomeExample {
      * The entry point for this example.
      *
      * @param args The following arguments are expected and handled:
-     *     <ul>
-     *       <li>--vmClusterOcid The OCID of a given VmCluster. This argument is required.
-     *       <li>--dbName the DbName for the database to be created.
-     *       <li>--dbUniqueName the DbUniqueName for the database to be created.
-     *       <li>--dbPassword the admin password of the database to be created.
-     *       <li>--dbVersion the version the database to use.
-     *     </ul>
-     *
+     *             <ul>
+     *             <li>--vmClusterOcid The OCID of a given VmCluster. This argument is required.</li>
+     *             <li>--dbName the DbName for the database to be created.</li>
+     *             <li>--dbUniqueName the DbUniqueName for the database to be created.</li>
+     *             <li>--dbPassword the admin password of the database to be created.</li>
+     *             <li>--dbVersion the version the database to use.</li>
+     *             </ul>
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
@@ -323,10 +327,8 @@ public class ExaCCDbHomeExample {
                     argumentMap.getOrDefault(
                             Opts.DB_VERSION, Opts.DB_VERSION.getDefaultSupplier().apply(null));
 
-            // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-            // config file
-            // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes
-            // to the following
+            // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+            // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
             // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
             final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -347,7 +349,9 @@ public class ExaCCDbHomeExample {
             for (Opts opt : Opts.values()) {
                 System.out.printf(
                         "%s\t%s %n\t\t\t %s%n%n",
-                        opt.required ? "*" : "", opt.argName, opt.description);
+                        opt.required ? "*" : "",
+                        opt.argName,
+                        opt.description);
             }
             System.out.flush();
             throw e;

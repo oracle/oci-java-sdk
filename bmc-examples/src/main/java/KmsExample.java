@@ -27,12 +27,12 @@ import java.util.Map;
 /**
  * This class contains examples which cover basic KMS usage.
  *
- * <p>These examples assume you already have a Vault in ACTIVE state. If you need to create a new
- * Vault, please refer to the createVaultTest method in this class. Please keep in mind that KMS
- * does not support immediate deletion of Vaults because of the high risk; instead, you need to
- * schedule the deletion of a Vault and a retention period of 7-30 days will be enforced before the
- * Vault is deleted. During the retention period, you can cancel the deletion and the Vault will be
- * ACTIVE again. Be careful before creating a Vault to avoid unnecessary expenses.
+ * These examples assume you already have a Vault in ACTIVE state. If you need to create a new Vault, please
+ * refer to the createVaultTest method in this class. Please keep in mind that KMS does not support immediate
+ * deletion of Vaults because of the high risk; instead, you need to schedule the deletion of a Vault and a
+ * retention period of 7-30 days will be enforced before the Vault is deleted. During the retention period, you
+ * can cancel the deletion and the Vault will be ACTIVE again. Be careful before creating a Vault to avoid
+ * unnecessary expenses.
  */
 public class KmsExample {
 
@@ -66,17 +66,14 @@ public class KmsExample {
             return;
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
         // "", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed.
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -88,13 +85,13 @@ public class KmsExample {
         //      * KmsVaultClient: The client for Vault management
         //      * KmsManagementClient: The client for Key management (ControlPlane)
         //      * KmsCryptoClient: The client for data encryption and decryption (DataPlane)
-        KmsVaultClient kmsVaultClient = KmsVaultClient.builder().build(provider);
+        KmsVaultClient kmsVaultClient = new KmsVaultClient(provider);
 
         // Using the us-ashburn-1 in this example, choose a different region if needed
         kmsVaultClient.setRegion(Region.US_ASHBURN_1);
 
-        KmsManagementClient kmsManagementClient = KmsManagementClient.builder().build(provider);
-        KmsCryptoClient kmsCryptoClient = KmsCryptoClient.builder().build(provider);
+        KmsManagementClient kmsManagementClient = new KmsManagementClient(provider);
+        KmsCryptoClient kmsCryptoClient = new KmsCryptoClient(provider);
 
         // Get the details of the given Vault
         Vault vault = getVaultTest(kmsVaultClient, vaultId);
@@ -109,8 +106,7 @@ public class KmsExample {
         updateVaultTest(kmsVaultClient, vault.getId());
         listVaultsTest(kmsVaultClient, compartmentId);
         scheduleVaultDeletionTest(kmsVaultClient, vault.getId());
-        // After scheduling deletion, the Vault will stay in SCHEDULING_DELETION state shortly and
-        // then
+        // After scheduling deletion, the Vault will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the vault deletion scheduling to finish");
         System.out.println();
@@ -122,8 +118,7 @@ public class KmsExample {
                 .execute();
 
         cancelVaultDeletionTest(kmsVaultClient, vault.getId());
-        // After cancelling deletion, the Vault will stay in CANCELLING_DELETION state shortly and
-        // then
+        // After cancelling deletion, the Vault will stay in CANCELLING_DELETION state shortly and then
         // transit to ACTIVE state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the vault deletion cancelling to finish");
         System.out.println();
@@ -216,8 +211,7 @@ public class KmsExample {
                 .execute();
 
         scheduleKeyDeletionTest(kmsManagementClient, keyId);
-        // After scheduling deletion, the Key will stay in SCHEDULING_DELETION state shortly and
-        // then
+        // After scheduling deletion, the Key will stay in SCHEDULING_DELETION state shortly and then
         // transit to PENDING_DELETION state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the key deletion scheduling to finish");
         System.out.println();
@@ -229,8 +223,7 @@ public class KmsExample {
                 .execute();
 
         cancelKeyDeletionTest(kmsManagementClient, keyId);
-        // After cancelling deletion, the Key will stay in CANCELLING_DELETION state shortly and
-        // then
+        // After cancelling deletion, the Key will stay in CANCELLING_DELETION state shortly and then
         // transit to Enabled state. Wait a bit for the transition to happen.
         System.out.println("Wait a bit for the key deletion cancelling to finish");
         System.out.println();

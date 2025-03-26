@@ -5,23 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Metadata for a Digital Assistant Parameter. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Metadata for a Digital Assistant Parameter.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DigitalAssistantParameter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DigitalAssistantParameter.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DigitalAssistantParameter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -49,91 +48,97 @@ public final class DigitalAssistantParameter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Parameter name. This must be unique within the parent resource. */
+        /**
+         * The Parameter name.  This must be unique within the parent resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The Parameter name. This must be unique within the parent resource.
-         *
+         * The Parameter name.  This must be unique within the parent resource.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The display name for the Parameter. */
+        /**
+         * The display name for the Parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name for the Parameter.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A description of the Parameter. */
+        /**
+         * A description of the Parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the Parameter.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The value type. */
+        /**
+         * The value type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private ParameterType type;
 
         /**
          * The value type.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(ParameterType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The current value. The value will be interpreted based on the {@code type}. */
+        /**
+         * The current value.  The value will be interpreted based on the {@code type}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The current value. The value will be interpreted based on the {@code type}.
-         *
+         * The current value.  The value will be interpreted based on the {@code type}.
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** The Parameter's current state. */
+        /**
+         * The Parameter's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The Parameter's current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -182,7 +187,9 @@ public final class DigitalAssistantParameter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -191,80 +198,86 @@ public final class DigitalAssistantParameter
         return new Builder().copy(this);
     }
 
-    /** The Parameter name. This must be unique within the parent resource. */
+    /**
+     * The Parameter name.  This must be unique within the parent resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The Parameter name. This must be unique within the parent resource.
-     *
+     * The Parameter name.  This must be unique within the parent resource.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The display name for the Parameter. */
+    /**
+     * The display name for the Parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name for the Parameter.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A description of the Parameter. */
+    /**
+     * A description of the Parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the Parameter.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The value type. */
+    /**
+     * The value type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final ParameterType type;
 
     /**
      * The value type.
-     *
      * @return the value
-     */
+     **/
     public ParameterType getType() {
         return type;
     }
 
-    /** The current value. The value will be interpreted based on the {@code type}. */
+    /**
+     * The current value.  The value will be interpreted based on the {@code type}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The current value. The value will be interpreted based on the {@code type}.
-     *
+     * The current value.  The value will be interpreted based on the {@code type}.
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
 
-    /** The Parameter's current state. */
+    /**
+     * The Parameter's current state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The Parameter's current state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -276,7 +289,6 @@ public final class DigitalAssistantParameter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

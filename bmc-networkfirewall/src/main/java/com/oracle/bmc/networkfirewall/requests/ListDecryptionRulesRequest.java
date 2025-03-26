@@ -6,58 +6,66 @@ package com.oracle.bmc.networkfirewall.requests;
 
 import com.oracle.bmc.networkfirewall.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListDecryptionRulesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDecryptionRulesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListDecryptionRulesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDecryptionRulesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     private String networkFirewallPolicyId;
 
-    /** Unique Network Firewall Policy identifier */
+    /**
+     * Unique Network Firewall Policy identifier
+     */
     public String getNetworkFirewallPolicyId() {
         return networkFirewallPolicyId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.networkfirewall.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.networkfirewall.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -91,30 +99,42 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is
-     * descending. Default order for displayName is ascending.
+     * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** Unique priority order for Decryption Rules in the network firewall policy. */
+    /**
+     * Unique priority order for Decryption Rules in the network firewall policy.
+     */
     private Integer decryptionRulePriorityOrder;
 
-    /** Unique priority order for Decryption Rules in the network firewall policy. */
+    /**
+     * Unique priority order for Decryption Rules in the network firewall policy.
+     */
     public Integer getDecryptionRulePriorityOrder() {
         return decryptionRulePriorityOrder;
     }
@@ -122,15 +142,17 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDecryptionRulesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Network Firewall Policy identifier */
+        /**
+         * Unique Network Firewall Policy identifier
+         */
         private String networkFirewallPolicyId = null;
 
         /**
          * Unique Network Firewall Policy identifier
-         *
          * @param networkFirewallPolicyId the value to set
          * @return this builder instance
          */
@@ -139,12 +161,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -154,17 +177,12 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous
-         * response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous
-         * response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} or {@code opc-prev-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -173,12 +191,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.networkfirewall.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -188,14 +207,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for timeCreated
-         * is descending. Default order for displayName is ascending.
+         * The field to sort by. Only one sort order may be provided. Default order for timeCreated is descending. Default order for displayName is ascending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -205,12 +223,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -219,12 +238,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -233,12 +253,13 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** Unique priority order for Decryption Rules in the network firewall policy. */
+        /**
+         * Unique priority order for Decryption Rules in the network firewall policy.
+         */
         private Integer decryptionRulePriorityOrder = null;
 
         /**
          * Unique priority order for Decryption Rules in the network firewall policy.
-         *
          * @param decryptionRulePriorityOrder the value to set
          * @return this builder instance
          */
@@ -249,19 +270,18 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -273,7 +293,6 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDecryptionRulesRequest o) {
@@ -293,11 +312,10 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListDecryptionRulesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDecryptionRulesRequest
          */
@@ -311,8 +329,7 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
         /**
          * Build the instance of ListDecryptionRulesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDecryptionRulesRequest
@@ -328,14 +345,12 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
             request.displayName = displayName;
             request.decryptionRulePriorityOrder = decryptionRulePriorityOrder;
             return request;
-            // new ListDecryptionRulesRequest(networkFirewallPolicyId, limit, page, sortOrder,
-            // sortBy, opcRequestId, displayName, decryptionRulePriorityOrder);
+            // new ListDecryptionRulesRequest(networkFirewallPolicyId, limit, page, sortOrder, sortBy, opcRequestId, displayName, decryptionRulePriorityOrder);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -352,7 +367,6 @@ public class ListDecryptionRulesRequest extends com.oracle.bmc.requests.BmcReque
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

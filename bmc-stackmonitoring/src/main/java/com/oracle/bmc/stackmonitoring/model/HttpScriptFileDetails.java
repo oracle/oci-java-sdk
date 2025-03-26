@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * JavaScript file details which is used to convert http(s) response into metric data <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * JavaScript file details which is used to convert http(s) response into metric data
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HttpScriptFileDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HttpScriptFileDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HttpScriptFileDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "content"})
     public HttpScriptFileDetails(String name, String content) {
@@ -32,31 +31,33 @@ public final class HttpScriptFileDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the script file */
+        /**
+         * Name of the script file
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the script file
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Content of the JavaScript file as base64 encoded string */
+        /**
+         * Content of the JavaScript file as base64 encoded string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private String content;
 
         /**
          * Content of the JavaScript file as base64 encoded string
-         *
          * @param content the value to set
          * @return this builder
-         */
+         **/
         public Builder content(String content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -86,7 +87,9 @@ public final class HttpScriptFileDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +98,30 @@ public final class HttpScriptFileDetails
         return new Builder().copy(this);
     }
 
-    /** Name of the script file */
+    /**
+     * Name of the script file
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the script file
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Content of the JavaScript file as base64 encoded string */
+    /**
+     * Content of the JavaScript file as base64 encoded string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final String content;
 
     /**
      * Content of the JavaScript file as base64 encoded string
-     *
      * @return the value
-     */
+     **/
     public String getContent() {
         return content;
     }
@@ -128,7 +133,6 @@ public final class HttpScriptFileDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

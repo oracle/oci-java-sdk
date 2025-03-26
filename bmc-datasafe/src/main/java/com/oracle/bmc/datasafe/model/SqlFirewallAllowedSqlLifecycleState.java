@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The current state of SQL Firewall allowed SQL. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum SqlFirewallAllowedSqlLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current state of SQL Firewall allowed SQL.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum SqlFirewallAllowedSqlLifecycleState {
     Active("ACTIVE"),
     Deleted("DELETED"),
     Failed("FAILED"),

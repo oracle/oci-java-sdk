@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** Data type for fields, columns or parameters. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum ValueType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Data type for fields, columns or parameters.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum ValueType {
     Boolean("BOOLEAN"),
     String("STRING"),
     Double("DOUBLE"),

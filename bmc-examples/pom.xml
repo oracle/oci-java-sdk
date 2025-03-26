@@ -4,64 +4,21 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.61.0</version>
+    <version>2.82.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Examples</name>
-  <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure</description>
+  <description>This project contains the examples on how to use the SDK used for Oracle Cloud Infrastructure
+  </description>
   <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
   <build>
     <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.3.0</version>
-        <goals>
-          <goal>jar</goal>
-        </goals>
-        <executions>
-          <execution>
-            <id>aggregate</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-          <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
-          <excludePackageNames>*.internal.*</excludePackageNames>
-          <aggregate>true</aggregate>
-          <minmemory>2048m</minmemory>
-          <maxmemory>6144m</maxmemory>
-          <doclint>none</doclint>
-          <sourcepath>src/main/java</sourcepath>
-          <links>
-            <link>https://jax-rs-spec.java.net/nonav/2.0-rev-a/apidocs</link>
-            <link>https://jersey.java.net/apidocs/${jersey.version}/jersey</link>
-          </links>
-        </configuration>
-      </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <configuration>
           <skip>false</skip>
-          <cleanupDaemonThreads>false</cleanupDaemonThreads>
         </configuration>
       </plugin>
     </plugins>
@@ -71,14 +28,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.61.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>com.oracle.oci.sdk</groupId>
-        <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.61.0</version>
+        <version>2.82.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -94,6 +44,10 @@
       <artifactId>jackson-databind</artifactId>
     </dependency>
     <dependency>
+      <groupId>jakarta.annotation</groupId>
+      <artifactId>jakarta.annotation-api</artifactId>
+    </dependency>
+    <dependency>
       <groupId>net.jodah</groupId>
       <artifactId>failsafe</artifactId>
     </dependency>
@@ -106,20 +60,18 @@
       <artifactId>jersey-apache-connector</artifactId>
     </dependency>
     <dependency>
+      <!-- Note: replace this with a different logging backend if desired -->
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-addons-apache-configurator-jersey</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
@@ -180,10 +132,6 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-addons-resteasy-client-configurator</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-addons-aispeech-realtime</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
@@ -700,19 +648,6 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-demandsignal</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.eclipse.jetty.websocket</groupId>
-      <artifactId>websocket-server</artifactId>
-      <version>9.4.53.v20231009</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>

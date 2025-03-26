@@ -5,23 +5,21 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The details of a DR protection group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The details of a DR protection group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DrProtectionGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrProtectionGroup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = DrProtectionGroup.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrProtectionGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -81,20 +79,21 @@ public final class DrProtectionGroup
     public static class Builder {
         /**
          * The OCID of the DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -102,20 +101,21 @@ public final class DrProtectionGroup
         }
         /**
          * The OCID of the compartment containing the DR protection group.
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the DR protection group.
-         *
-         * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.compartment.oc1..uniqueID}
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -123,26 +123,30 @@ public final class DrProtectionGroup
         }
         /**
          * The display name of the DR protection group.
+         * <p>
+         * Example: {@code EBS PHX Group}
          *
-         * <p>Example: {@code EBS PHX Group}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name of the DR protection group.
-         *
-         * <p>Example: {@code EBS PHX Group}
+         * <p>
+         * Example: {@code EBS PHX Group}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The role of the DR protection group. */
+        /**
+         * The role of the DR protection group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private DrProtectionGroupRole role;
 
@@ -151,7 +155,7 @@ public final class DrProtectionGroup
          *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(DrProtectionGroupRole role) {
             this.role = role;
             this.__explicitlySet__.add("role");
@@ -159,20 +163,21 @@ public final class DrProtectionGroup
         }
         /**
          * The OCID of the peer DR protection group.
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
         /**
          * The OCID of the peer DR protection group.
-         *
-         * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+         * <p>
+         * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
          *
          * @param peerId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerId(String peerId) {
             this.peerId = peerId;
             this.__explicitlySet__.add("peerId");
@@ -180,20 +185,21 @@ public final class DrProtectionGroup
         }
         /**
          * The region of the peer DR protection group.
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
-         * <p>Example: {@code us-ashburn-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
         private String peerRegion;
 
         /**
          * The region of the peer DR protection group.
-         *
-         * <p>Example: {@code us-ashburn-1}
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
          * @param peerRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder peerRegion(String peerRegion) {
             this.peerRegion = peerRegion;
             this.__explicitlySet__.add("peerRegion");
@@ -208,7 +214,10 @@ public final class DrProtectionGroup
             this.__explicitlySet__.add("logLocation");
             return this;
         }
-        /** A list of DR protection group members. */
+        /**
+         * A list of DR protection group members.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("members")
         private java.util.List<DrProtectionGroupMember> members;
 
@@ -217,59 +226,60 @@ public final class DrProtectionGroup
          *
          * @param members the value to set
          * @return this builder
-         */
+         **/
         public Builder members(java.util.List<DrProtectionGroupMember> members) {
             this.members = members;
             this.__explicitlySet__.add("members");
             return this;
         }
         /**
-         * The date and time the DR protection group was created. An RFC3339 formatted datetime
-         * string.
+         * The date and time the DR protection group was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the DR protection group was created. An RFC3339 formatted datetime
-         * string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * The date and time the DR protection group was created. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time the DR protection group was updated. An RFC3339 formatted datetime
-         * string.
+         * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the DR protection group was updated. An RFC3339 formatted datetime
-         * string.
-         *
-         * <p>Example: {@code 2019-03-29T09:36:42Z}
+         * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
+         * <p>
+         * Example: {@code 2019-03-29T09:36:42Z}
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the DR protection group. */
+        /**
+         * The current state of the DR protection group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DrProtectionGroupLifecycleState lifecycleState;
 
@@ -278,13 +288,16 @@ public final class DrProtectionGroup
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(DrProtectionGroupLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** A message describing the DR protection group's current state in more detail. */
+        /**
+         * A message describing the DR protection group's current state in more detail.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
         private String lifeCycleDetails;
 
@@ -293,13 +306,16 @@ public final class DrProtectionGroup
          *
          * @param lifeCycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifeCycleDetails(String lifeCycleDetails) {
             this.lifeCycleDetails = lifeCycleDetails;
             this.__explicitlySet__.add("lifeCycleDetails");
             return this;
         }
-        /** The current sub-state of the DR protection group. */
+        /**
+         * The current sub-state of the DR protection group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
         private DrProtectionGroupLifecycleSubState lifecycleSubState;
 
@@ -308,30 +324,29 @@ public final class DrProtectionGroup
          *
          * @param lifecycleSubState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleSubState(DrProtectionGroupLifecycleSubState lifecycleSubState) {
             this.lifecycleSubState = lifecycleSubState;
             this.__explicitlySet__.add("lifecycleSubState");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only.
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -339,20 +354,21 @@ public final class DrProtectionGroup
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -361,20 +377,21 @@ public final class DrProtectionGroup
         }
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
          * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -463,7 +480,9 @@ public final class DrProtectionGroup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -474,62 +493,68 @@ public final class DrProtectionGroup
 
     /**
      * The OCID of the DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the DR protection group.
-     *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The OCID of the compartment containing the DR protection group.
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the DR protection group.
-     *
-     * <p>Example: {@code ocid1.compartment.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.compartment.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * The display name of the DR protection group.
+     * <p>
+     * Example: {@code EBS PHX Group}
      *
-     * <p>Example: {@code EBS PHX Group}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name of the DR protection group.
-     *
-     * <p>Example: {@code EBS PHX Group}
+     * <p>
+     * Example: {@code EBS PHX Group}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The role of the DR protection group. */
+    /**
+     * The role of the DR protection group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final DrProtectionGroupRole role;
 
@@ -537,45 +562,47 @@ public final class DrProtectionGroup
      * The role of the DR protection group.
      *
      * @return the value
-     */
+     **/
     public DrProtectionGroupRole getRole() {
         return role;
     }
 
     /**
      * The OCID of the peer DR protection group.
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
     /**
      * The OCID of the peer DR protection group.
-     *
-     * <p>Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
+     * <p>
+     * Example: {@code ocid1.drprotectiongroup.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPeerId() {
         return peerId;
     }
 
     /**
      * The region of the peer DR protection group.
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
-     * <p>Example: {@code us-ashburn-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegion")
     private final String peerRegion;
 
     /**
      * The region of the peer DR protection group.
-     *
-     * <p>Example: {@code us-ashburn-1}
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
      * @return the value
-     */
+     **/
     public String getPeerRegion() {
         return peerRegion;
     }
@@ -587,7 +614,10 @@ public final class DrProtectionGroup
         return logLocation;
     }
 
-    /** A list of DR protection group members. */
+    /**
+     * A list of DR protection group members.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("members")
     private final java.util.List<DrProtectionGroupMember> members;
 
@@ -595,50 +625,55 @@ public final class DrProtectionGroup
      * A list of DR protection group members.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DrProtectionGroupMember> getMembers() {
         return members;
     }
 
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the DR protection group was created. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The date and time the DR protection group was updated. An RFC3339 formatted datetime string.
-     *
-     * <p>Example: {@code 2019-03-29T09:36:42Z}
+     * <p>
+     * Example: {@code 2019-03-29T09:36:42Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the DR protection group. */
+    /**
+     * The current state of the DR protection group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DrProtectionGroupLifecycleState lifecycleState;
 
@@ -646,12 +681,15 @@ public final class DrProtectionGroup
      * The current state of the DR protection group.
      *
      * @return the value
-     */
+     **/
     public DrProtectionGroupLifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** A message describing the DR protection group's current state in more detail. */
+    /**
+     * A message describing the DR protection group's current state in more detail.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifeCycleDetails")
     private final String lifeCycleDetails;
 
@@ -659,12 +697,15 @@ public final class DrProtectionGroup
      * A message describing the DR protection group's current state in more detail.
      *
      * @return the value
-     */
+     **/
     public String getLifeCycleDetails() {
         return lifeCycleDetails;
     }
 
-    /** The current sub-state of the DR protection group. */
+    /**
+     * The current sub-state of the DR protection group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
     private final DrProtectionGroupLifecycleSubState lifecycleSubState;
 
@@ -672,66 +713,67 @@ public final class DrProtectionGroup
      * The current sub-state of the DR protection group.
      *
      * @return the value
-     */
+     **/
     public DrProtectionGroupLifecycleSubState getLifecycleSubState() {
         return lifecycleSubState;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
      * Usage of system tag keys. These predefined keys are scoped to namespaces.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -743,7 +785,6 @@ public final class DrProtectionGroup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

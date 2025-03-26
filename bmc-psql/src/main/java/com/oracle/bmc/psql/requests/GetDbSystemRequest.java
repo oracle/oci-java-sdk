@@ -6,38 +6,42 @@ package com.oracle.bmc.psql.requests;
 
 import com.oracle.bmc.psql.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDbSystemExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDbSystemRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/psql/GetDbSystemExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetDbSystemRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A unique identifier for the database system. */
+    /**
+     * A unique identifier for the database system.
+     */
     private String dbSystemId;
 
-    /** A unique identifier for the database system. */
+    /**
+     * A unique identifier for the database system.
+     */
     public String getDbSystemId() {
         return dbSystemId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A filter to exclude database configuration when this query parameter is set to
-     * OverrideDbConfig.
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      */
     private java.util.List<ExcludedFields> excludedFields;
 
     /**
-     * A filter to exclude database configuration when this query parameter is set to
-     * OverrideDbConfig.
-     */
-    public enum ExcludedFields implements com.oracle.bmc.http.internal.BmcEnum {
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
+     **/
+    public enum ExcludedFields {
         DbConfigurationParams("dbConfigurationParams"),
         ;
 
@@ -70,8 +74,7 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
     };
 
     /**
-     * A filter to exclude database configuration when this query parameter is set to
-     * OverrideDbConfig.
+     * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
      */
     public java.util.List<ExcludedFields> getExcludedFields() {
         return excludedFields;
@@ -80,15 +83,17 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetDbSystemRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique identifier for the database system. */
+        /**
+         * A unique identifier for the database system.
+         */
         private String dbSystemId = null;
 
         /**
          * A unique identifier for the database system.
-         *
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -97,12 +102,13 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -112,15 +118,12 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * A filter to exclude database configuration when this query parameter is set to
-         * OverrideDbConfig.
+         * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
          */
         private java.util.List<ExcludedFields> excludedFields = null;
 
         /**
-         * A filter to exclude database configuration when this query parameter is set to
-         * OverrideDbConfig.
-         *
+         * A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
          * @param excludedFields the value to set
          * @return this builder instance
          */
@@ -130,9 +133,7 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Singular setter. A filter to exclude database configuration when this query parameter is
-         * set to OverrideDbConfig.
-         *
+         * Singular setter. A filter to exclude database configuration when this query parameter is set to OverrideDbConfig.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -142,19 +143,18 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -166,7 +166,6 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetDbSystemRequest o) {
@@ -181,11 +180,10 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetDbSystemRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetDbSystemRequest
          */
@@ -199,8 +197,7 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of GetDbSystemRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetDbSystemRequest
@@ -217,7 +214,6 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -229,7 +225,6 @@ public class GetDbSystemRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

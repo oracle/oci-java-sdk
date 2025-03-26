@@ -9,31 +9,23 @@ import com.oracle.bmc.usageapi.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Usageapi where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Usageapi where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class UsageapiPaginators {
     private final Usageapi client;
 
@@ -42,12 +34,11 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listCustomTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listCustomTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListCustomTablesResponse> listCustomTablesResponseIterator(
             final ListCustomTablesRequest request) {
@@ -93,21 +84,18 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.CustomTableSummary} objects contained in responses from the
-     * listCustomTables operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.CustomTableSummary} objects
+     * contained in responses from the listCustomTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.CustomTableSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.CustomTableSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.CustomTableSummary>
             listCustomTablesRecordIterator(final ListCustomTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListCustomTablesRequest.Builder,
-                ListCustomTablesRequest,
-                ListCustomTablesResponse,
+                ListCustomTablesRequest.Builder, ListCustomTablesRequest, ListCustomTablesResponse,
                 com.oracle.bmc.usageapi.model.CustomTableSummary>(
                 new java.util.function.Supplier<ListCustomTablesRequest.Builder>() {
                     @Override
@@ -158,19 +146,16 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listEmailRecipientsGroups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listEmailRecipientsGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListEmailRecipientsGroupsResponse> listEmailRecipientsGroupsResponseIterator(
             final ListEmailRecipientsGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListEmailRecipientsGroupsRequest.Builder,
-                ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsRequest.Builder, ListEmailRecipientsGroupsRequest,
                 ListEmailRecipientsGroupsResponse>(
                 new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
                     @Override
@@ -213,22 +198,19 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects contained in responses
-     * from the listEmailRecipientsGroups operation. This iterable will fetch more data from the
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects
+     * contained in responses from the listEmailRecipientsGroups operation. This iterable will fetch more data from the
      * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>
             listEmailRecipientsGroupsRecordIterator(
                     final ListEmailRecipientsGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListEmailRecipientsGroupsRequest.Builder,
-                ListEmailRecipientsGroupsRequest,
+                ListEmailRecipientsGroupsRequest.Builder, ListEmailRecipientsGroupsRequest,
                 ListEmailRecipientsGroupsResponse,
                 com.oracle.bmc.usageapi.model.EmailRecipientsGroupSummary>(
                 new java.util.function.Supplier<ListEmailRecipientsGroupsRequest.Builder>() {
@@ -282,12 +264,11 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listQueries
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listQueries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListQueriesResponse> listQueriesResponseIterator(
             final ListQueriesRequest request) {
@@ -332,21 +313,18 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.QuerySummary} objects contained in responses from the
-     * listQueries operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.QuerySummary} objects
+     * contained in responses from the listQueries operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.QuerySummary} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.QuerySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.QuerySummary> listQueriesRecordIterator(
             final ListQueriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListQueriesRequest.Builder,
-                ListQueriesRequest,
-                ListQueriesResponse,
+                ListQueriesRequest.Builder, ListQueriesRequest, ListQueriesResponse,
                 com.oracle.bmc.usageapi.model.QuerySummary>(
                 new java.util.function.Supplier<ListQueriesRequest.Builder>() {
                     @Override
@@ -396,18 +374,16 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listScheduledRuns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listScheduledRuns operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListScheduledRunsResponse> listScheduledRunsResponseIterator(
             final ListScheduledRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListScheduledRunsRequest.Builder,
-                ListScheduledRunsRequest,
+                ListScheduledRunsRequest.Builder, ListScheduledRunsRequest,
                 ListScheduledRunsResponse>(
                 new java.util.function.Supplier<ListScheduledRunsRequest.Builder>() {
                     @Override
@@ -449,22 +425,19 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.ScheduledRunSummary} objects contained in responses from the
-     * listScheduledRuns operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.ScheduledRunSummary} objects
+     * contained in responses from the listScheduledRuns operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.ScheduledRunSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.ScheduledRunSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.ScheduledRunSummary>
             listScheduledRunsRecordIterator(final ListScheduledRunsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListScheduledRunsRequest.Builder,
-                ListScheduledRunsRequest,
-                ListScheduledRunsResponse,
-                com.oracle.bmc.usageapi.model.ScheduledRunSummary>(
+                ListScheduledRunsRequest.Builder, ListScheduledRunsRequest,
+                ListScheduledRunsResponse, com.oracle.bmc.usageapi.model.ScheduledRunSummary>(
                 new java.util.function.Supplier<ListScheduledRunsRequest.Builder>() {
                     @Override
                     public ListScheduledRunsRequest.Builder get() {
@@ -514,12 +487,11 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listSchedules
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listSchedules operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSchedulesResponse> listSchedulesResponseIterator(
             final ListSchedulesRequest request) {
@@ -564,21 +536,18 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.ScheduleSummary} objects contained in responses from the
-     * listSchedules operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.ScheduleSummary} objects
+     * contained in responses from the listSchedules operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.ScheduleSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.ScheduleSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.ScheduleSummary> listSchedulesRecordIterator(
             final ListSchedulesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSchedulesRequest.Builder,
-                ListSchedulesRequest,
-                ListSchedulesResponse,
+                ListSchedulesRequest.Builder, ListSchedulesRequest, ListSchedulesResponse,
                 com.oracle.bmc.usageapi.model.ScheduleSummary>(
                 new java.util.function.Supplier<ListSchedulesRequest.Builder>() {
                     @Override
@@ -628,21 +597,18 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listUsageCarbonEmissionsQueries operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listUsageCarbonEmissionsQueries operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListUsageCarbonEmissionsQueriesResponse>
             listUsageCarbonEmissionsQueriesResponseIterator(
                     final ListUsageCarbonEmissionsQueriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListUsageCarbonEmissionsQueriesRequest.Builder,
-                ListUsageCarbonEmissionsQueriesRequest,
-                ListUsageCarbonEmissionsQueriesResponse>(
+                ListUsageCarbonEmissionsQueriesRequest, ListUsageCarbonEmissionsQueriesResponse>(
                 new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
                     @Override
                     public ListUsageCarbonEmissionsQueriesRequest.Builder get() {
@@ -685,23 +651,20 @@ public class UsageapiPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects contained in
-     * responses from the listUsageCarbonEmissionsQueries operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects
+     * contained in responses from the listUsageCarbonEmissionsQueries operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>
             listUsageCarbonEmissionsQueriesRecordIterator(
                     final ListUsageCarbonEmissionsQueriesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListUsageCarbonEmissionsQueriesRequest.Builder,
-                ListUsageCarbonEmissionsQueriesRequest,
-                ListUsageCarbonEmissionsQueriesResponse,
+                ListUsageCarbonEmissionsQueriesRequest, ListUsageCarbonEmissionsQueriesResponse,
                 com.oracle.bmc.usageapi.model.UsageCarbonEmissionsQuerySummary>(
                 new java.util.function.Supplier<ListUsageCarbonEmissionsQueriesRequest.Builder>() {
                     @Override

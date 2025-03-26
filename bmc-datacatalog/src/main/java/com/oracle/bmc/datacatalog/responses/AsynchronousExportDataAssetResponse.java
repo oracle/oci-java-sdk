@@ -6,17 +6,18 @@ package com.oracle.bmc.datacatalog.responses;
 
 import com.oracle.bmc.datacatalog.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,13 +25,14 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned {@code AsynchronousExportDataAssetResult} instance. */
+    /**
+     * The returned AsynchronousExportDataAssetResult instance.
+     */
     private com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult
             asynchronousExportDataAssetResult;
 
     /**
-     * The returned {@code AsynchronousExportDataAssetResult} instance.
-     *
+     * The returned AsynchronousExportDataAssetResult instance.
      * @return the value
      */
     public com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult
@@ -46,7 +48,7 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
     })
     private AsynchronousExportDataAssetResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult
                     asynchronousExportDataAssetResult) {
@@ -55,34 +57,31 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
         this.asynchronousExportDataAssetResult = asynchronousExportDataAssetResult;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    AsynchronousExportDataAssetResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -92,13 +91,14 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code AsynchronousExportDataAssetResult} instance. */
+        /**
+         * The returned AsynchronousExportDataAssetResult instance.
+         */
         private com.oracle.bmc.datacatalog.model.AsynchronousExportDataAssetResult
                 asynchronousExportDataAssetResult;
 
         /**
-         * The returned {@code AsynchronousExportDataAssetResult} instance.
-         *
+         * The returned AsynchronousExportDataAssetResult instance.
          * @param asynchronousExportDataAssetResult the value to set
          * @return this builder
          */
@@ -111,10 +111,8 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(AsynchronousExportDataAssetResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -126,10 +124,8 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public AsynchronousExportDataAssetResponse build() {
             return new AsynchronousExportDataAssetResponse(
                     __httpStatusCode__, headers, opcRequestId, asynchronousExportDataAssetResult);
@@ -138,7 +134,6 @@ public class AsynchronousExportDataAssetResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

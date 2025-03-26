@@ -35,10 +35,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * This example will demo how to use CRUD API to manipulate volume's KMS key. It will do follow
- * things: 1) Create a volume with Oracle default encryption key. 2) User provide their own kms key
- * to protect the volume. 3) User delete kms key and use default encryption key to protect the
- * volume.
+ * This example will demo how to use CRUD API to manipulate volume's KMS key.
+ * It will do follow things:
+ * 1) Create a volume with Oracle default encryption key.
+ * 2) User provide their own kms key to protect the volume.
+ * 3) User delete kms key and use default encryption key to protect the volume.
  */
 public class UpdateVolumeKmsKeyIdExample {
     public static void main(String[] args) throws Exception {
@@ -49,20 +50,13 @@ public class UpdateVolumeKmsKeyIdExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // When an instance is created, a boot volume is created at the same time. User could choose
-        // to use their own kms key to encrypt the data.
-        // fill out necessary kms key information to use your own key to protect kms.  More
-        // information of volume security please refer to
-        // https://cloud.oracle.com/storage/block-volume/faq
-        // make sure you have set up proper policy for blockstorage to access the key. More
-        // information please refer to
-        // https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
+        // When an instance is created, a boot volume is created at the same time. User could choose to use their own kms key to encrypt the data.
+        // fill out necessary kms key information to use your own key to protect kms.  More information of volume security please refer to https://cloud.oracle.com/storage/block-volume/faq
+        // make sure you have set up proper policy for blockstorage to access the key. More information please refer to https://docs.oracle.com/en-us/iaas/Content/Identity/Concepts/commonpolicies.htm#services-use-key
         String kmsKeyId = "SOME VALID KEY OCID";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -70,8 +64,8 @@ public class UpdateVolumeKmsKeyIdExample {
         final ConfigFileAuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        BlockstorageClient client = BlockstorageClient.builder().build(provider);
-        IdentityClient identityClient = IdentityClient.builder().build(provider);
+        BlockstorageClient client = new BlockstorageClient(provider);
+        IdentityClient identityClient = new IdentityClient(provider);
 
         // Set up proper policy to execute
         setupPolicy(compartmentId, kmsKeyId, identityClient);
@@ -115,9 +109,7 @@ public class UpdateVolumeKmsKeyIdExample {
         System.out.println("started to update volume kms key.");
         client.updateVolumeKmsKey(updateVolumeKmsKeyRequest);
         System.out.println("checking if the volume is ready.");
-        // Data will remain the same, but now protected by the new key. Old key (if any) could be
-        // removed safely if the volume is marked as ready and if is ONLY used to protect this
-        // volume.
+        // Data will remain the same, but now protected by the new key. Old key (if any) could be removed safely if the volume is marked as ready and if is ONLY used to protect this volume.
 
         GetVolumeResponse updateKeyResponse =
                 waiter.forVolume(
@@ -156,8 +148,7 @@ public class UpdateVolumeKmsKeyIdExample {
         // Allow service blockstorage to use keys in tenancy where target.key.id = '%s'
         // Allow service blockstorage to use keys in compartment %s where target.key.id = '%s'
         // If you already have this policy set up, it's not necessary to execute this method.
-        // If you do NOT already have this policy, then the user must have the correct permissions
-        // to create policies.
+        // If you do NOT already have this policy, then the user must have the correct permissions to create policies.
         Compartment compartment =
                 identityClient
                         .getCompartment(
@@ -171,14 +162,14 @@ public class UpdateVolumeKmsKeyIdExample {
         List<String> statements = new ArrayList<>();
 
         // use this statement if the compartment is a root compartment
-        // statements.add(String.format("Allow service blockstorage to use keys in tenancy where
-        // target.key.id = '%s'", kmsKeyId));
+        // statements.add(String.format("Allow service blockstorage to use keys in tenancy where target.key.id = '%s'", kmsKeyId));
 
         // use this statement if the compartment is a subcomaprtment
         statements.add(
                 String.format(
                         "Allow service blockstorage to use keys in compartment %s where target.key.id = '%s'",
-                        compartment.getName(), kmsKeyId));
+                        compartment.getName(),
+                        kmsKeyId));
 
         CreatePolicyDetails createPolicyDetails =
                 CreatePolicyDetails.builder()
@@ -194,8 +185,8 @@ public class UpdateVolumeKmsKeyIdExample {
     private static List<AvailabilityDomain> getAvailabilityDomains(
             AuthenticationDetailsProvider provider, String compartmentId) throws Exception {
 
-        Identity identityClient =
-                IdentityClient.builder().region(Region.US_PHOENIX_1).build(provider);
+        Identity identityClient = new IdentityClient(provider);
+        identityClient.setRegion(Region.US_ASHBURN_1);
 
         ListAvailabilityDomainsResponse listAvailabilityDomainsResponse =
                 identityClient.listAvailabilityDomains(

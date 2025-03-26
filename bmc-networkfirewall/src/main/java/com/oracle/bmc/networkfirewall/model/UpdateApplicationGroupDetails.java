@@ -5,23 +5,23 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Request for updating an existing application in context to the network firewall policy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+ * Request for updating an existing application in context to the network firewall policy.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateApplicationGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateApplicationGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateApplicationGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"apps"})
     public UpdateApplicationGroupDetails(java.util.List<String> apps) {
@@ -31,16 +31,17 @@ public final class UpdateApplicationGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Collection of application names. */
+        /**
+         * Collection of application names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("apps")
         private java.util.List<String> apps;
 
         /**
          * Collection of application names.
-         *
          * @param apps the value to set
          * @return this builder
-         */
+         **/
         public Builder apps(java.util.List<String> apps) {
             this.apps = apps;
             this.__explicitlySet__.add("apps");
@@ -67,7 +68,9 @@ public final class UpdateApplicationGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +79,16 @@ public final class UpdateApplicationGroupDetails
         return new Builder().copy(this);
     }
 
-    /** Collection of application names. */
+    /**
+     * Collection of application names.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("apps")
     private final java.util.List<String> apps;
 
     /**
      * Collection of application names.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getApps() {
         return apps;
     }
@@ -96,7 +100,6 @@ public final class UpdateApplicationGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

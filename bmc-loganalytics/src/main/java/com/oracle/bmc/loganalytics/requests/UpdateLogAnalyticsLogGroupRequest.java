@@ -6,67 +6,85 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsLogGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateLogAnalyticsLogGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/UpdateLogAnalyticsLogGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateLogAnalyticsLogGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class UpdateLogAnalyticsLogGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** unique logAnalytics log group identifier */
+    /**
+     * unique logAnalytics log group identifier
+     */
     private String logAnalyticsLogGroupId;
 
-    /** unique logAnalytics log group identifier */
+    /**
+     * unique logAnalytics log group identifier
+     */
     public String getLogAnalyticsLogGroupId() {
         return logAnalyticsLogGroupId;
     }
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
             updateLogAnalyticsLogGroupDetails;
 
-    /** The information to be updated. */
+    /**
+     * The information to be updated.
+     */
     public com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
             getUpdateLogAnalyticsLogGroupDetails() {
         return updateLogAnalyticsLogGroupDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -84,10 +102,14 @@ public class UpdateLogAnalyticsLogGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateLogAnalyticsLogGroupRequest,
                     com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -101,12 +123,13 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
-        /** unique logAnalytics log group identifier */
+        /**
+         * unique logAnalytics log group identifier
+         */
         private String logAnalyticsLogGroupId = null;
 
         /**
          * unique logAnalytics log group identifier
-         *
          * @param logAnalyticsLogGroupId the value to set
          * @return this builder instance
          */
@@ -115,13 +138,14 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /**
+         * The information to be updated.
+         */
         private com.oracle.bmc.loganalytics.model.UpdateLogAnalyticsLogGroupDetails
                 updateLogAnalyticsLogGroupDetails = null;
 
         /**
          * The information to be updated.
-         *
          * @param updateLogAnalyticsLogGroupDetails the value to set
          * @return this builder instance
          */
@@ -133,18 +157,21 @@ public class UpdateLogAnalyticsLogGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -154,12 +181,13 @@ public class UpdateLogAnalyticsLogGroupRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -170,19 +198,18 @@ public class UpdateLogAnalyticsLogGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -194,7 +221,6 @@ public class UpdateLogAnalyticsLogGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateLogAnalyticsLogGroupRequest o) {
@@ -211,11 +237,10 @@ public class UpdateLogAnalyticsLogGroupRequest
         /**
          * Build the instance of UpdateLogAnalyticsLogGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateLogAnalyticsLogGroupRequest
          */
@@ -228,7 +253,6 @@ public class UpdateLogAnalyticsLogGroupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -242,8 +266,7 @@ public class UpdateLogAnalyticsLogGroupRequest
         /**
          * Build the instance of UpdateLogAnalyticsLogGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateLogAnalyticsLogGroupRequest
@@ -256,14 +279,12 @@ public class UpdateLogAnalyticsLogGroupRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateLogAnalyticsLogGroupRequest(namespaceName, logAnalyticsLogGroupId,
-            // updateLogAnalyticsLogGroupDetails, ifMatch, opcRequestId);
+            // new UpdateLogAnalyticsLogGroupRequest(namespaceName, logAnalyticsLogGroupId, updateLogAnalyticsLogGroupDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -277,7 +298,6 @@ public class UpdateLogAnalyticsLogGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

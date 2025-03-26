@@ -5,29 +5,33 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration tablespace settings valid for NON-ADB target type using auto create feature. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Migration tablespace settings valid for NON-ADB target type using auto create feature.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NonADBAutoCreateTablespaceDetails.Builder.class)
+    builder = NonADBAutoCreateTablespaceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "targetType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "targetType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** True to auto-create tablespace in the target Database. */
+        /**
+         * True to auto-create tablespace in the target Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
         private Boolean isAutoCreate;
 
@@ -36,13 +40,16 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
          *
          * @param isAutoCreate the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoCreate(Boolean isAutoCreate) {
             this.isAutoCreate = isAutoCreate;
             this.__explicitlySet__.add("isAutoCreate");
             return this;
         }
-        /** True set tablespace to big file. */
+        /**
+         * True set tablespace to big file.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
         private Boolean isBigFile;
 
@@ -51,13 +58,16 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
          *
          * @param isBigFile the value to set
          * @return this builder
-         */
+         **/
         public Builder isBigFile(Boolean isBigFile) {
             this.isBigFile = isBigFile;
             this.__explicitlySet__.add("isBigFile");
             return this;
         }
-        /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
+        /**
+         * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
         private Integer extendSizeInMBs;
 
@@ -66,13 +76,16 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
          *
          * @param extendSizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder extendSizeInMBs(Integer extendSizeInMBs) {
             this.extendSizeInMBs = extendSizeInMBs;
             this.__explicitlySet__.add("extendSizeInMBs");
             return this;
         }
-        /** Size of Oracle database blocks in KB. */
+        /**
+         * Size of Oracle database blocks in KB.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockSizeInKBs")
         private DataPumpTablespaceBlockSizesInKb blockSizeInKBs;
 
@@ -81,7 +94,7 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
          *
          * @param blockSizeInKBs the value to set
          * @return this builder
-         */
+         **/
         public Builder blockSizeInKBs(DataPumpTablespaceBlockSizesInKb blockSizeInKBs) {
             this.blockSizeInKBs = blockSizeInKBs;
             this.__explicitlySet__.add("blockSizeInKBs");
@@ -122,7 +135,9 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,7 +159,10 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
         this.blockSizeInKBs = blockSizeInKBs;
     }
 
-    /** True to auto-create tablespace in the target Database. */
+    /**
+     * True to auto-create tablespace in the target Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
     private final Boolean isAutoCreate;
 
@@ -152,12 +170,15 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
      * True to auto-create tablespace in the target Database.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoCreate() {
         return isAutoCreate;
     }
 
-    /** True set tablespace to big file. */
+    /**
+     * True set tablespace to big file.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
     private final Boolean isBigFile;
 
@@ -165,12 +186,15 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
      * True set tablespace to big file.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsBigFile() {
         return isBigFile;
     }
 
-    /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
+    /**
+     * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
     private final Integer extendSizeInMBs;
 
@@ -178,12 +202,15 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
      * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
      *
      * @return the value
-     */
+     **/
     public Integer getExtendSizeInMBs() {
         return extendSizeInMBs;
     }
 
-    /** Size of Oracle database blocks in KB. */
+    /**
+     * Size of Oracle database blocks in KB.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockSizeInKBs")
     private final DataPumpTablespaceBlockSizesInKb blockSizeInKBs;
 
@@ -191,7 +218,7 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
      * Size of Oracle database blocks in KB.
      *
      * @return the value
-     */
+     **/
     public DataPumpTablespaceBlockSizesInKb getBlockSizeInKBs() {
         return blockSizeInKBs;
     }
@@ -203,7 +230,6 @@ public final class NonADBAutoCreateTablespaceDetails extends TargetTypeTablespac
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

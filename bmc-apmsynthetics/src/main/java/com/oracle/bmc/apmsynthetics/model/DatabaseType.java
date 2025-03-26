@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** Type of database. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DatabaseType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of database.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DatabaseType {
     Oracle("ORACLE"),
     Mysql("MYSQL"),
 

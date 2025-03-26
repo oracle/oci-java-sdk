@@ -5,11 +5,13 @@
 package com.oracle.bmc.core.model;
 
 /**
- * The attachment type of a BM volume. If the attachment is in-transit encryption, the field is
- * BM_ENCRYPTION_IN_TRANSIT. Otherwise, the field is None.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum EncryptionInTransitType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The attachment type of a BM volume.
+ * If the attachment is in-transit encryption, the field is BM_ENCRYPTION_IN_TRANSIT.
+ * Otherwise, the field is None.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum EncryptionInTransitType {
     None("NONE"),
     BmEncryptionInTransit("BM_ENCRYPTION_IN_TRANSIT"),
 

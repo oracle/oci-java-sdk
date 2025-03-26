@@ -6,38 +6,46 @@ package com.oracle.bmc.loganalytics.requests;
 
 import com.oracle.bmc.loganalytics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AddSourceEventTypesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use AddSourceEventTypesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/loganalytics/AddSourceEventTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddSourceEventTypesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 public class AddSourceEventTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.loganalytics.model.EventTypeDetails> {
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     private String namespaceName;
 
-    /** The Logging Analytics namespace used for the request. */
+    /**
+     * The Logging Analytics namespace used for the request.
+     *
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
-    /** The source name. */
+    /**
+     * The source name.
+     */
     private String sourceName;
 
-    /** The source name. */
+    /**
+     * The source name.
+     */
     public String getSourceName() {
         return sourceName;
     }
     /**
-     * Details of event types to be added to the source. The specified event type string could be
-     * the fully qualified name or a prefix that matches the event type.
+     * Details of event types to be added to the source. The specified event type string could be the fully qualified name or a prefix that matches the event type.
+     *
      */
     private com.oracle.bmc.loganalytics.model.EventTypeDetails addEventTypeDetails;
 
     /**
-     * Details of event types to be added to the source. The specified event type string could be
-     * the fully qualified name or a prefix that matches the event type.
+     * Details of event types to be added to the source. The specified event type string could be the fully qualified name or a prefix that matches the event type.
+     *
      */
     public com.oracle.bmc.loganalytics.model.EventTypeDetails getAddEventTypeDetails() {
         return addEventTypeDetails;
@@ -45,33 +53,38 @@ public class AddSourceEventTypesRequest
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -89,10 +102,14 @@ public class AddSourceEventTypesRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddSourceEventTypesRequest,
                     com.oracle.bmc.loganalytics.model.EventTypeDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Logging Analytics namespace used for the request. */
+        /**
+         * The Logging Analytics namespace used for the request.
+         *
+         */
         private String namespaceName = null;
 
         /**
@@ -106,12 +123,13 @@ public class AddSourceEventTypesRequest
             return this;
         }
 
-        /** The source name. */
+        /**
+         * The source name.
+         */
         private String sourceName = null;
 
         /**
          * The source name.
-         *
          * @param sourceName the value to set
          * @return this builder instance
          */
@@ -121,14 +139,13 @@ public class AddSourceEventTypesRequest
         }
 
         /**
-         * Details of event types to be added to the source. The specified event type string could
-         * be the fully qualified name or a prefix that matches the event type.
+         * Details of event types to be added to the source. The specified event type string could be the fully qualified name or a prefix that matches the event type.
+         *
          */
         private com.oracle.bmc.loganalytics.model.EventTypeDetails addEventTypeDetails = null;
 
         /**
-         * Details of event types to be added to the source. The specified event type string could
-         * be the fully qualified name or a prefix that matches the event type.
+         * Details of event types to be added to the source. The specified event type string could be the fully qualified name or a prefix that matches the event type.
          *
          * @param addEventTypeDetails the value to set
          * @return this builder instance
@@ -141,19 +158,20 @@ public class AddSourceEventTypesRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -163,12 +181,13 @@ public class AddSourceEventTypesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -179,19 +198,18 @@ public class AddSourceEventTypesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -203,7 +221,6 @@ public class AddSourceEventTypesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AddSourceEventTypesRequest o) {
@@ -220,11 +237,10 @@ public class AddSourceEventTypesRequest
         /**
          * Build the instance of AddSourceEventTypesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AddSourceEventTypesRequest
          */
@@ -237,7 +253,6 @@ public class AddSourceEventTypesRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -250,8 +265,7 @@ public class AddSourceEventTypesRequest
         /**
          * Build the instance of AddSourceEventTypesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AddSourceEventTypesRequest
@@ -264,14 +278,12 @@ public class AddSourceEventTypesRequest
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
             return request;
-            // new AddSourceEventTypesRequest(namespaceName, sourceName, addEventTypeDetails,
-            // opcRetryToken, opcRequestId);
+            // new AddSourceEventTypesRequest(namespaceName, sourceName, addEventTypeDetails, opcRetryToken, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -285,7 +297,6 @@ public class AddSourceEventTypesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

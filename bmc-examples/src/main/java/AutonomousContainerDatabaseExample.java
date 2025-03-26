@@ -36,18 +36,17 @@ import com.oracle.bmc.waiter.MaxTimeTerminationStrategy;
 import java.io.IOException;
 
 /**
- * This class provides an example of how one can use Autonomous Container Database APIs. It will
- * first create an Autonomous Exadata Infrastructure (AEI) instance, the Exadata DB system within
- * which the Autonomous Container Database exists. It then shows how to perform each of the 5
- * Autonomous Container Database APIs. It will:
- *
+ * This class provides an example of how one can use Autonomous Container Database APIs.
+ * It will first create an Autonomous Exadata Infrastructure (AEI) instance, the Exadata DB system
+ * within which the Autonomous Container Database exists.
+ * It then shows how to perform each of the 5 Autonomous Container Database APIs. It will:
  * <ul>
- *   <li>Create an Autonomous Container Database using the AEI ID.
- *   <li>GET the Autonomous Container Database that's just created.
- *   <li>Update the displayName of this Autonomous Container Database.
- *   <li>Restart the newly updated Autonomous Container Database.
- *   <li>Delete this Autonomous Container Database.
- *   <li>Clean up the AEI intance.
+ * <li>Create an Autonomous Container Database using the AEI ID.</li>
+ * <li>GET the Autonomous Container Database that's just created.</li>
+ * <li>Update the displayName of this Autonomous Container Database.</li>
+ * <li>Restart the newly updated Autonomous Container Database.</li>
+ * <li>Delete this Autonomous Container Database.</li>
+ * <li>Clean up the AEI intance.</li>
  * </ul>
  */
 public class AutonomousContainerDatabaseExample {
@@ -56,16 +55,13 @@ public class AutonomousContainerDatabaseExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment
-     *       <li>The availability domain where the DB system and Container Database will be launched
-     *           and operated.
-     *     </ul>
-     *
+     *             <ul>
+     *             <li>The OCID of the compartment</li>
+     *             <li>The availability domain where the DB system and Container Database will be launched and operated.</li>
+     *             </ul>
      * @throws Exception
      */
     private static final String CONFIG_LOCATION = "~/.oci/config";
-
     private static final String CONFIG_PROFILE = "DEFAULT";
     private static final String shape = "Exadata.Quarter2.92";
 
@@ -79,32 +75,29 @@ public class AutonomousContainerDatabaseExample {
         final String compartmentId = args[0];
         final String availabilityDomain = args[1];
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final DatabaseClient dbClient = DatabaseClient.builder().build(provider);
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().build(provider);
+        final DatabaseClient dbClient = new DatabaseClient(provider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(provider);
 
-        // An AEI ID is required for createAutonomousContainerDatabse
+        //An AEI ID is required for createAutonomousContainerDatabse
         AutonomousExadataInfrastructure autonomousExadataInfrastructure =
                 createAEI(compartmentId, availabilityDomain, dbClient, virtualNetworkClient);
         String autonomousExadataInfrastructureId = autonomousExadataInfrastructure.getId();
 
-        // Creating an Autonomous Container Database and wait for it to reach Available state
+        //Creating an Autonomous Container Database and wait for it to reach Available state
         CreateAutonomousContainerDatabaseDetails createPodRequest =
                 createContainerDatabaseRequest(autonomousExadataInfrastructureId, compartmentId);
         AutonomousContainerDatabase pod = createContainerDatabase(dbClient, createPodRequest);
         pod = waitToBecomeAvailable(dbClient, pod.getId());
 
-        // Get Autonomous Container Database
+        //Get Autonomous Container Database
         pod =
                 dbClient.getAutonomousContainerDatabase(
                                 GetAutonomousContainerDatabaseRequest.builder()
@@ -122,13 +115,13 @@ public class AutonomousContainerDatabaseExample {
         updatedContainerDatabase =
                 waitToBecomeAvailable(dbClient, updatedContainerDatabase.getId());
 
-        // Restart Autonomous Container Datatbase and wait for it to reach Available state
+        //Restart Autonomous Container Datatbase and wait for it to reach Available state
         updatedContainerDatabase =
                 restartContainerDatabase(dbClient, updatedContainerDatabase.getId());
         updatedContainerDatabase =
                 waitToBecomeAvailable(dbClient, updatedContainerDatabase.getId());
 
-        // Delete Autonomous Container Datatbase
+        //Delete Autonomous Container Datatbase
         deleteContainerDatabase(dbClient, updatedContainerDatabase.getId());
 
         // Terminate the Autonomous Exadata Infrastructure as resource cleanup

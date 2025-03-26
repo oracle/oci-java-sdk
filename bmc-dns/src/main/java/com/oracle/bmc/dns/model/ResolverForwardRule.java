@@ -5,25 +5,25 @@
 package com.oracle.bmc.dns.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResolverForwardRule.Builder.class)
+    builder = ResolverForwardRule.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "action")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "action"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResolverForwardRule extends ResolverRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -46,7 +46,8 @@ public final class ResolverForwardRule extends ResolverRule {
         }
         /**
          * IP addresses to which queries should be forwarded. Currently limited to a single address.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("destinationAddresses")
         private java.util.List<String> destinationAddresses;
 
@@ -55,26 +56,27 @@ public final class ResolverForwardRule extends ResolverRule {
          *
          * @param destinationAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder destinationAddresses(java.util.List<String> destinationAddresses) {
             this.destinationAddresses = destinationAddresses;
             this.__explicitlySet__.add("destinationAddresses");
             return this;
         }
         /**
-         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as
-         * the forwarding interface. The endpoint must have isForwarding set to true.
-         */
+         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+         * interface. The endpoint must have isForwarding set to true.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")
         private String sourceEndpointName;
 
         /**
-         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as
-         * the forwarding interface. The endpoint must have isForwarding set to true.
+         * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+         * interface. The endpoint must have isForwarding set to true.
          *
          * @param sourceEndpointName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceEndpointName(String sourceEndpointName) {
             this.sourceEndpointName = sourceEndpointName;
             this.__explicitlySet__.add("sourceEndpointName");
@@ -115,7 +117,9 @@ public final class ResolverForwardRule extends ResolverRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -135,7 +139,10 @@ public final class ResolverForwardRule extends ResolverRule {
         this.sourceEndpointName = sourceEndpointName;
     }
 
-    /** IP addresses to which queries should be forwarded. Currently limited to a single address. */
+    /**
+     * IP addresses to which queries should be forwarded. Currently limited to a single address.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("destinationAddresses")
     private final java.util.List<String> destinationAddresses;
 
@@ -143,24 +150,25 @@ public final class ResolverForwardRule extends ResolverRule {
      * IP addresses to which queries should be forwarded. Currently limited to a single address.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDestinationAddresses() {
         return destinationAddresses;
     }
 
     /**
-     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the
-     * forwarding interface. The endpoint must have isForwarding set to true.
-     */
+     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+     * interface. The endpoint must have isForwarding set to true.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceEndpointName")
     private final String sourceEndpointName;
 
     /**
-     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the
-     * forwarding interface. The endpoint must have isForwarding set to true.
+     * Case-insensitive name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding
+     * interface. The endpoint must have isForwarding set to true.
      *
      * @return the value
-     */
+     **/
     public String getSourceEndpointName() {
         return sourceEndpointName;
     }
@@ -172,7 +180,6 @@ public final class ResolverForwardRule extends ResolverRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

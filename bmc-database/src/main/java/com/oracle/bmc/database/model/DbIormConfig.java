@@ -5,21 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The IORM configuration settings for the database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The IORM configuration settings for the database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbIormConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbIormConfig extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbIormConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"dbName", "share", "flashCacheLimit"})
     public DbIormConfig(String dbName, Integer share, String flashCacheLimit) {
@@ -33,7 +32,8 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
     public static class Builder {
         /**
          * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
@@ -42,13 +42,16 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param dbName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-        /** The relative priority of this database. */
+        /**
+         * The relative priority of this database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("share")
         private Integer share;
 
@@ -57,26 +60,25 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param share the value to set
          * @return this builder
-         */
+         **/
         public Builder share(Integer share) {
             this.share = share;
             this.__explicitlySet__.add("share");
             return this;
         }
         /**
-         * The flash cache limit for this database. This value is internally configured based on the
-         * share value assigned to the database.
-         */
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
         private String flashCacheLimit;
 
         /**
-         * The flash cache limit for this database. This value is internally configured based on the
-         * share value assigned to the database.
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
          *
          * @param flashCacheLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder flashCacheLimit(String flashCacheLimit) {
             this.flashCacheLimit = flashCacheLimit;
             this.__explicitlySet__.add("flashCacheLimit");
@@ -109,7 +111,9 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,7 +122,10 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}. */
+    /**
+     * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
@@ -126,12 +133,15 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
      * The database name. For the default {@code DbPlan}, the {@code dbName} is {@code default}.
      *
      * @return the value
-     */
+     **/
     public String getDbName() {
         return dbName;
     }
 
-    /** The relative priority of this database. */
+    /**
+     * The relative priority of this database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("share")
     private final Integer share;
 
@@ -139,24 +149,23 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
      * The relative priority of this database.
      *
      * @return the value
-     */
+     **/
     public Integer getShare() {
         return share;
     }
 
     /**
-     * The flash cache limit for this database. This value is internally configured based on the
-     * share value assigned to the database.
-     */
+     * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("flashCacheLimit")
     private final String flashCacheLimit;
 
     /**
-     * The flash cache limit for this database. This value is internally configured based on the
-     * share value assigned to the database.
+     * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
      *
      * @return the value
-     */
+     **/
     public String getFlashCacheLimit() {
         return flashCacheLimit;
     }
@@ -168,7 +177,6 @@ public final class DbIormConfig extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

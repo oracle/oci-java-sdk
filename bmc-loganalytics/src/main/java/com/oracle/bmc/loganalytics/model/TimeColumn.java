@@ -5,24 +5,24 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Time column returned when the shape of a queries results contsin a time series. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Time column returned when the shape of a queries results contsin a time series.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = TimeColumn.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TimeColumn extends AbstractColumn {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -133,7 +133,10 @@ public final class TimeColumn extends AbstractColumn {
             this.__explicitlySet__.add("internalName");
             return this;
         }
-        /** Time span between each series data point. */
+        /**
+         * Time span between each series data point.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("span")
         private String span;
 
@@ -142,26 +145,25 @@ public final class TimeColumn extends AbstractColumn {
          *
          * @param span the value to set
          * @return this builder
-         */
+         **/
         public Builder span(String span) {
             this.span = span;
             this.__explicitlySet__.add("span");
             return this;
         }
         /**
-         * List of timestamps that represent each time stamp in the entire time series even if
-         * certain intervals are filtered out of query results.
-         */
+         * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("times")
         private java.util.List<Long> times;
 
         /**
-         * List of timestamps that represent each time stamp in the entire time series even if
-         * certain intervals are filtered out of query results.
+         * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
          *
          * @param times the value to set
          * @return this builder
-         */
+         **/
         public Builder times(java.util.List<Long> times) {
             this.times = times;
             this.__explicitlySet__.add("times");
@@ -242,7 +244,9 @@ public final class TimeColumn extends AbstractColumn {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -284,7 +288,10 @@ public final class TimeColumn extends AbstractColumn {
         this.times = times;
     }
 
-    /** Time span between each series data point. */
+    /**
+     * Time span between each series data point.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("span")
     private final String span;
 
@@ -292,24 +299,23 @@ public final class TimeColumn extends AbstractColumn {
      * Time span between each series data point.
      *
      * @return the value
-     */
+     **/
     public String getSpan() {
         return span;
     }
 
     /**
-     * List of timestamps that represent each time stamp in the entire time series even if certain
-     * intervals are filtered out of query results.
-     */
+     * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("times")
     private final java.util.List<Long> times;
 
     /**
-     * List of timestamps that represent each time stamp in the entire time series even if certain
-     * intervals are filtered out of query results.
+     * List of timestamps that represent each time stamp in the entire time series even if certain intervals are filtered out of query results.
      *
      * @return the value
-     */
+     **/
     public java.util.List<Long> getTimes() {
         return times;
     }
@@ -321,7 +327,6 @@ public final class TimeColumn extends AbstractColumn {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The connector type of MySQL Database. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum MySqlConnectorType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The connector type of MySQL Database.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum MySqlConnectorType {
     Macs("MACS"),
 
     /**

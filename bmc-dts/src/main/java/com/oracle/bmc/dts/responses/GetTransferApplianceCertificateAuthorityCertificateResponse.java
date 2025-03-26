@@ -6,31 +6,42 @@ package com.oracle.bmc.dts.responses;
 
 import com.oracle.bmc.dts.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class GetTransferApplianceCertificateAuthorityCertificateResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** */
+    /**
+     *
+     */
     private String opcRequestId;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** */
+    /**
+     *
+     */
     private String etag;
 
-    /** @return the value */
+    /**
+     *
+     * @return the value
+     */
     public String getEtag() {
         return etag;
     }
 
-    /** The returned {@code TransferApplianceCertificate} instance. */
+    /**
+     * The returned TransferApplianceCertificate instance.
+     */
     private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
     /**
-     * The returned {@code TransferApplianceCertificate} instance.
-     *
+     * The returned TransferApplianceCertificate instance.
      * @return the value
      */
     public com.oracle.bmc.dts.model.TransferApplianceCertificate getTransferApplianceCertificate() {
@@ -46,7 +57,7 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
     })
     private GetTransferApplianceCertificateAuthorityCertificateResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate) {
@@ -56,29 +67,28 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
         this.transferApplianceCertificate = transferApplianceCertificate;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetTransferApplianceCertificateAuthorityCertificateResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String opcRequestId;
 
         /**
+         *
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -87,10 +97,13 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
             return this;
         }
 
-        /** */
+        /**
+         *
+         */
         private String etag;
 
         /**
+         *
          * @param etag the value to set
          * @return this builder
          */
@@ -99,12 +112,13 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
             return this;
         }
 
-        /** The returned {@code TransferApplianceCertificate} instance. */
+        /**
+         * The returned TransferApplianceCertificate instance.
+         */
         private com.oracle.bmc.dts.model.TransferApplianceCertificate transferApplianceCertificate;
 
         /**
-         * The returned {@code TransferApplianceCertificate} instance.
-         *
+         * The returned TransferApplianceCertificate instance.
          * @param transferApplianceCertificate the value to set
          * @return this builder
          */
@@ -117,10 +131,8 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetTransferApplianceCertificateAuthorityCertificateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -133,10 +145,8 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetTransferApplianceCertificateAuthorityCertificateResponse build() {
             return new GetTransferApplianceCertificateAuthorityCertificateResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, transferApplianceCertificate);
@@ -145,7 +155,6 @@ public class GetTransferApplianceCertificateAuthorityCertificateResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

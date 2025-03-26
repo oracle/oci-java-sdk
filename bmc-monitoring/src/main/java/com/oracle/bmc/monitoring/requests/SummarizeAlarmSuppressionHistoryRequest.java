@@ -6,85 +6,92 @@ package com.oracle.bmc.monitoring.requests;
 
 import com.oracle.bmc.monitoring.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeAlarmSuppressionHistoryExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * SummarizeAlarmSuppressionHistoryRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/monitoring/SummarizeAlarmSuppressionHistoryExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use SummarizeAlarmSuppressionHistoryRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public class SummarizeAlarmSuppressionHistoryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.monitoring.model.SummarizeAlarmSuppressionHistoryDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
-     * alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+     *
      */
     private String alarmId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
-     * alarm.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+     *
      */
     public String getAlarmId() {
         return alarmId;
     }
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Customer part of the request identifier token. If you need to contact Oracle about a
-     * particular request, please provide the complete request ID.
+     * Customer part of the request identifier token. If you need to contact Oracle about a particular
+     * request, please provide the complete request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Default: 1000
+     * <p>
+     * Example: 500
      *
-     * <p>Default: 1000
-     *
-     * <p>Example: 500
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+     * For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Default: 1000
+     * <p>
+     * Example: 500
      *
-     * <p>Default: 1000
-     *
-     * <p>Example: 500
      */
     public Integer getLimit() {
         return limit;
     }
-    /** summarize history details */
+    /**
+     * summarize history details
+     */
     private com.oracle.bmc.monitoring.model.SummarizeAlarmSuppressionHistoryDetails
             summarizeAlarmSuppressionHistoryDetails;
 
-    /** summarize history details */
+    /**
+     * summarize history details
+     */
     public com.oracle.bmc.monitoring.model.SummarizeAlarmSuppressionHistoryDetails
             getSummarizeAlarmSuppressionHistoryDetails() {
         return summarizeAlarmSuppressionHistoryDetails;
@@ -92,7 +99,6 @@ public class SummarizeAlarmSuppressionHistoryRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -105,18 +111,18 @@ public class SummarizeAlarmSuppressionHistoryRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     SummarizeAlarmSuppressionHistoryRequest,
                     com.oracle.bmc.monitoring.model.SummarizeAlarmSuppressionHistoryDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
-         * alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
+         *
          */
         private String alarmId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an
-         * alarm.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an alarm.
          *
          * @param alarmId the value to set
          * @return this builder instance
@@ -127,14 +133,15 @@ public class SummarizeAlarmSuppressionHistoryRequest
         }
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Customer part of the request identifier token. If you need to contact Oracle about a
-         * particular request, please provide the complete request ID.
+         * Customer part of the request identifier token. If you need to contact Oracle about a particular
+         * request, please provide the complete request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -145,16 +152,17 @@ public class SummarizeAlarmSuppressionHistoryRequest
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -165,24 +173,25 @@ public class SummarizeAlarmSuppressionHistoryRequest
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Default: 1000
+         * <p>
+         * Example: 500
          *
-         * <p>Default: 1000
-         *
-         * <p>Example: 500
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Default: 1000
-         *
-         * <p>Example: 500
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call.
+         * For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Default: 1000
+         * <p>
+         * Example: 500
          *
          * @param limit the value to set
          * @return this builder instance
@@ -192,13 +201,14 @@ public class SummarizeAlarmSuppressionHistoryRequest
             return this;
         }
 
-        /** summarize history details */
+        /**
+         * summarize history details
+         */
         private com.oracle.bmc.monitoring.model.SummarizeAlarmSuppressionHistoryDetails
                 summarizeAlarmSuppressionHistoryDetails = null;
 
         /**
          * summarize history details
-         *
          * @param summarizeAlarmSuppressionHistoryDetails the value to set
          * @return this builder instance
          */
@@ -211,19 +221,18 @@ public class SummarizeAlarmSuppressionHistoryRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -235,7 +244,6 @@ public class SummarizeAlarmSuppressionHistoryRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(SummarizeAlarmSuppressionHistoryRequest o) {
@@ -250,14 +258,12 @@ public class SummarizeAlarmSuppressionHistoryRequest
         }
 
         /**
-         * Build the instance of SummarizeAlarmSuppressionHistoryRequest as configured by this
-         * builder
+         * Build the instance of SummarizeAlarmSuppressionHistoryRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of SummarizeAlarmSuppressionHistoryRequest
          */
@@ -270,7 +276,6 @@ public class SummarizeAlarmSuppressionHistoryRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -282,11 +287,9 @@ public class SummarizeAlarmSuppressionHistoryRequest
         }
 
         /**
-         * Build the instance of SummarizeAlarmSuppressionHistoryRequest as configured by this
-         * builder
+         * Build the instance of SummarizeAlarmSuppressionHistoryRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of SummarizeAlarmSuppressionHistoryRequest
@@ -301,14 +304,12 @@ public class SummarizeAlarmSuppressionHistoryRequest
             request.summarizeAlarmSuppressionHistoryDetails =
                     summarizeAlarmSuppressionHistoryDetails;
             return request;
-            // new SummarizeAlarmSuppressionHistoryRequest(alarmId, opcRequestId, page, limit,
-            // summarizeAlarmSuppressionHistoryDetails);
+            // new SummarizeAlarmSuppressionHistoryRequest(alarmId, opcRequestId, page, limit, summarizeAlarmSuppressionHistoryDetails);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -322,7 +323,6 @@ public class SummarizeAlarmSuppressionHistoryRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

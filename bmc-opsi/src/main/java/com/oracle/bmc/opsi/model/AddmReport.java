@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * ADDM Tasks. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * ADDM Tasks.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddmReport.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AddmReport extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AddmReport extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeIntervalStart",
@@ -50,106 +48,113 @@ public final class AddmReport extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The start timestamp that was passed into the request. */
+        /**
+         * The start timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
         private java.util.Date timeIntervalStart;
 
         /**
          * The start timestamp that was passed into the request.
-         *
          * @param timeIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalStart(java.util.Date timeIntervalStart) {
             this.timeIntervalStart = timeIntervalStart;
             this.__explicitlySet__.add("timeIntervalStart");
             return this;
         }
-        /** The end timestamp that was passed into the request. */
+        /**
+         * The end timestamp that was passed into the request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
         private java.util.Date timeIntervalEnd;
 
         /**
          * The end timestamp that was passed into the request.
-         *
          * @param timeIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIntervalEnd(java.util.Date timeIntervalEnd) {
             this.timeIntervalEnd = timeIntervalEnd;
             this.__explicitlySet__.add("timeIntervalEnd");
             return this;
         }
-        /** TASK_ID in the oracle database view DBA_ADDM_TASKS */
+        /**
+         * TASK_ID in the oracle database view DBA_ADDM_TASKS
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("taskIdentifier")
         private String taskIdentifier;
 
         /**
          * TASK_ID in the oracle database view DBA_ADDM_TASKS
-         *
          * @param taskIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder taskIdentifier(String taskIdentifier) {
             this.taskIdentifier = taskIdentifier;
             this.__explicitlySet__.add("taskIdentifier");
             return this;
         }
-        /** Internal id of the database. */
+        /**
+         * Internal id of the database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseIdentifier")
         private String databaseIdentifier;
 
         /**
          * Internal id of the database.
-         *
          * @param databaseIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseIdentifier(String databaseIdentifier) {
             this.databaseIdentifier = databaseIdentifier;
             this.__explicitlySet__.add("databaseIdentifier");
             return this;
         }
-        /** AWR snapshot id. */
+        /**
+         * AWR snapshot id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalStart")
         private String snapshotIntervalStart;
 
         /**
          * AWR snapshot id.
-         *
          * @param snapshotIntervalStart the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotIntervalStart(String snapshotIntervalStart) {
             this.snapshotIntervalStart = snapshotIntervalStart;
             this.__explicitlySet__.add("snapshotIntervalStart");
             return this;
         }
-        /** AWR snapshot id. */
+        /**
+         * AWR snapshot id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalEnd")
         private String snapshotIntervalEnd;
 
         /**
          * AWR snapshot id.
-         *
          * @param snapshotIntervalEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder snapshotIntervalEnd(String snapshotIntervalEnd) {
             this.snapshotIntervalEnd = snapshotIntervalEnd;
             this.__explicitlySet__.add("snapshotIntervalEnd");
             return this;
         }
-        /** The complete ADDM report */
+        /**
+         * The complete ADDM report
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addmReport")
         private String addmReport;
 
         /**
          * The complete ADDM report
-         *
          * @param addmReport the value to set
          * @return this builder
-         */
+         **/
         public Builder addmReport(String addmReport) {
             this.addmReport = addmReport;
             this.__explicitlySet__.add("addmReport");
@@ -202,7 +207,9 @@ public final class AddmReport extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,93 +218,100 @@ public final class AddmReport extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The start timestamp that was passed into the request. */
+    /**
+     * The start timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalStart")
     private final java.util.Date timeIntervalStart;
 
     /**
      * The start timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalStart() {
         return timeIntervalStart;
     }
 
-    /** The end timestamp that was passed into the request. */
+    /**
+     * The end timestamp that was passed into the request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIntervalEnd")
     private final java.util.Date timeIntervalEnd;
 
     /**
      * The end timestamp that was passed into the request.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIntervalEnd() {
         return timeIntervalEnd;
     }
 
-    /** TASK_ID in the oracle database view DBA_ADDM_TASKS */
+    /**
+     * TASK_ID in the oracle database view DBA_ADDM_TASKS
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("taskIdentifier")
     private final String taskIdentifier;
 
     /**
      * TASK_ID in the oracle database view DBA_ADDM_TASKS
-     *
      * @return the value
-     */
+     **/
     public String getTaskIdentifier() {
         return taskIdentifier;
     }
 
-    /** Internal id of the database. */
+    /**
+     * Internal id of the database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseIdentifier")
     private final String databaseIdentifier;
 
     /**
      * Internal id of the database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseIdentifier() {
         return databaseIdentifier;
     }
 
-    /** AWR snapshot id. */
+    /**
+     * AWR snapshot id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalStart")
     private final String snapshotIntervalStart;
 
     /**
      * AWR snapshot id.
-     *
      * @return the value
-     */
+     **/
     public String getSnapshotIntervalStart() {
         return snapshotIntervalStart;
     }
 
-    /** AWR snapshot id. */
+    /**
+     * AWR snapshot id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("snapshotIntervalEnd")
     private final String snapshotIntervalEnd;
 
     /**
      * AWR snapshot id.
-     *
      * @return the value
-     */
+     **/
     public String getSnapshotIntervalEnd() {
         return snapshotIntervalEnd;
     }
 
-    /** The complete ADDM report */
+    /**
+     * The complete ADDM report
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addmReport")
     private final String addmReport;
 
     /**
      * The complete ADDM report
-     *
      * @return the value
-     */
+     **/
     public String getAddmReport() {
         return addmReport;
     }
@@ -309,7 +323,6 @@ public final class AddmReport extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

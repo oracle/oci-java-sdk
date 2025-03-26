@@ -5,24 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A compute instance shape that can be used in {@link #launchInstance(LaunchInstanceRequest)
- * launchInstance}. For more information, see [Overview of the Compute
- * Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm) and [Compute
- * Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * A compute instance shape that can be used in {@link #launchInstance(LaunchInstanceRequest) launchInstance}.
+ * For more information, see [Overview of the Compute Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm) and
+ * [Compute Shapes](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Shape.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Shape extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baselineOcpuUtilizations",
@@ -120,19 +118,18 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * For a subcore burstable VM, the supported baseline OCPU utilization for instances that
-         * use this shape.
-         */
+         * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
         private java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
 
         /**
-         * For a subcore burstable VM, the supported baseline OCPU utilization for instances that
-         * use this shape.
+         * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
          *
          * @param baselineOcpuUtilizations the value to set
          * @return this builder
-         */
+         **/
         public Builder baselineOcpuUtilizations(
                 java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations) {
             this.baselineOcpuUtilizations = baselineOcpuUtilizations;
@@ -140,21 +137,20 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline
-         * OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs
-         * chosen.
-         */
+         * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+         * baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
         private java.math.BigDecimal minTotalBaselineOcpusRequired;
 
         /**
-         * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline
-         * OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs
-         * chosen.
+         * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+         * baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
          *
          * @param minTotalBaselineOcpusRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder minTotalBaselineOcpusRequired(
                 java.math.BigDecimal minTotalBaselineOcpusRequired) {
             this.minTotalBaselineOcpusRequired = minTotalBaselineOcpusRequired;
@@ -162,25 +158,29 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * The name of the shape. You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
-         */
+         * The name of the shape. You can enumerate all available shapes by calling
+         * {@link #listShapes(ListShapesRequest) listShapes}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The name of the shape. You can enumerate all available shapes by calling {@link
-         * #listShapes(ListShapesRequest) listShapes}.
+         * The name of the shape. You can enumerate all available shapes by calling
+         * {@link #listShapes(ListShapesRequest) listShapes}.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** A short description of the shape's processor (CPU). */
+        /**
+         * A short description of the shape's processor (CPU).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
         private String processorDescription;
 
@@ -189,13 +189,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param processorDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder processorDescription(String processorDescription) {
             this.processorDescription = processorDescription;
             this.__explicitlySet__.add("processorDescription");
             return this;
         }
-        /** The default number of OCPUs available for this shape. */
+        /**
+         * The default number of OCPUs available for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
         private Float ocpus;
 
@@ -204,13 +207,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param ocpus the value to set
          * @return this builder
-         */
+         **/
         public Builder ocpus(Float ocpus) {
             this.ocpus = ocpus;
             this.__explicitlySet__.add("ocpus");
             return this;
         }
-        /** The default amount of memory available for this shape, in gigabytes. */
+        /**
+         * The default amount of memory available for this shape, in gigabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
         private Float memoryInGBs;
 
@@ -219,13 +225,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param memoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryInGBs(Float memoryInGBs) {
             this.memoryInGBs = memoryInGBs;
             this.__explicitlySet__.add("memoryInGBs");
             return this;
         }
-        /** The number of physical network interface card (NIC) ports available for this shape. */
+        /**
+         * The number of physical network interface card (NIC) ports available for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkPorts")
         private Integer networkPorts;
 
@@ -234,13 +243,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param networkPorts the value to set
          * @return this builder
-         */
+         **/
         public Builder networkPorts(Integer networkPorts) {
             this.networkPorts = networkPorts;
             this.__explicitlySet__.add("networkPorts");
             return this;
         }
-        /** The networking bandwidth available for this shape, in gigabits per second. */
+        /**
+         * The networking bandwidth available for this shape, in gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
         private Float networkingBandwidthInGbps;
 
@@ -249,13 +261,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param networkingBandwidthInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder networkingBandwidthInGbps(Float networkingBandwidthInGbps) {
             this.networkingBandwidthInGbps = networkingBandwidthInGbps;
             this.__explicitlySet__.add("networkingBandwidthInGbps");
             return this;
         }
-        /** The maximum number of VNIC attachments available for this shape. */
+        /**
+         * The maximum number of VNIC attachments available for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
         private Integer maxVnicAttachments;
 
@@ -264,13 +279,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param maxVnicAttachments the value to set
          * @return this builder
-         */
+         **/
         public Builder maxVnicAttachments(Integer maxVnicAttachments) {
             this.maxVnicAttachments = maxVnicAttachments;
             this.__explicitlySet__.add("maxVnicAttachments");
             return this;
         }
-        /** The number of GPUs available for this shape. */
+        /**
+         * The number of GPUs available for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpus")
         private Integer gpus;
 
@@ -279,7 +297,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param gpus the value to set
          * @return this builder
-         */
+         **/
         public Builder gpus(Integer gpus) {
             this.gpus = gpus;
             this.__explicitlySet__.add("gpus");
@@ -287,26 +305,30 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * A short description of the graphics processing unit (GPU) available for this shape.
+         * <p>
+         * If the shape does not have any GPUs, this field is {@code null}.
          *
-         * <p>If the shape does not have any GPUs, this field is {@code null}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
         private String gpuDescription;
 
         /**
          * A short description of the graphics processing unit (GPU) available for this shape.
-         *
-         * <p>If the shape does not have any GPUs, this field is {@code null}.
+         * <p>
+         * If the shape does not have any GPUs, this field is {@code null}.
          *
          * @param gpuDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuDescription(String gpuDescription) {
             this.gpuDescription = gpuDescription;
             this.__explicitlySet__.add("gpuDescription");
             return this;
         }
-        /** The number of local disks available for this shape. */
+        /**
+         * The number of local disks available for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
         private Integer localDisks;
 
@@ -315,7 +337,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param localDisks the value to set
          * @return this builder
-         */
+         **/
         public Builder localDisks(Integer localDisks) {
             this.localDisks = localDisks;
             this.__explicitlySet__.add("localDisks");
@@ -323,20 +345,21 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The aggregate size of the local disks available for this shape, in gigabytes.
+         * <p>
+         * If the shape does not have any local disks, this field is {@code null}.
          *
-         * <p>If the shape does not have any local disks, this field is {@code null}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
         private Float localDisksTotalSizeInGBs;
 
         /**
          * The aggregate size of the local disks available for this shape, in gigabytes.
-         *
-         * <p>If the shape does not have any local disks, this field is {@code null}.
+         * <p>
+         * If the shape does not have any local disks, this field is {@code null}.
          *
          * @param localDisksTotalSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder localDisksTotalSizeInGBs(Float localDisksTotalSizeInGBs) {
             this.localDisksTotalSizeInGBs = localDisksTotalSizeInGBs;
             this.__explicitlySet__.add("localDisksTotalSizeInGBs");
@@ -344,66 +367,72 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * A short description of the local disks available for this shape.
+         * <p>
+         * If the shape does not have any local disks, this field is {@code null}.
          *
-         * <p>If the shape does not have any local disks, this field is {@code null}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
         private String localDiskDescription;
 
         /**
          * A short description of the local disks available for this shape.
-         *
-         * <p>If the shape does not have any local disks, this field is {@code null}.
+         * <p>
+         * If the shape does not have any local disks, this field is {@code null}.
          *
          * @param localDiskDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder localDiskDescription(String localDiskDescription) {
             this.localDiskDescription = localDiskDescription;
             this.__explicitlySet__.add("localDiskDescription");
             return this;
         }
         /**
-         * The number of networking ports available for the remote direct memory access (RDMA)
-         * network between nodes in a high performance computing (HPC) cluster network. If the shape
-         * does not support cluster networks, this value is {@code 0}.
-         */
+         * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+         * a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+         * value is {@code 0}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdmaPorts")
         private Integer rdmaPorts;
 
         /**
-         * The number of networking ports available for the remote direct memory access (RDMA)
-         * network between nodes in a high performance computing (HPC) cluster network. If the shape
-         * does not support cluster networks, this value is {@code 0}.
+         * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+         * a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+         * value is {@code 0}.
          *
          * @param rdmaPorts the value to set
          * @return this builder
-         */
+         **/
         public Builder rdmaPorts(Integer rdmaPorts) {
             this.rdmaPorts = rdmaPorts;
             this.__explicitlySet__.add("rdmaPorts");
             return this;
         }
         /**
-         * The networking bandwidth available for the remote direct memory access (RDMA) network for
-         * this shape, in gigabits per second.
-         */
+         * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+         * gigabits per second.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rdmaBandwidthInGbps")
         private Integer rdmaBandwidthInGbps;
 
         /**
-         * The networking bandwidth available for the remote direct memory access (RDMA) network for
-         * this shape, in gigabits per second.
+         * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+         * gigabits per second.
          *
          * @param rdmaBandwidthInGbps the value to set
          * @return this builder
-         */
+         **/
         public Builder rdmaBandwidthInGbps(Integer rdmaBandwidthInGbps) {
             this.rdmaBandwidthInGbps = rdmaBandwidthInGbps;
             this.__explicitlySet__.add("rdmaBandwidthInGbps");
             return this;
         }
-        /** Whether live migration is supported for this shape. */
+        /**
+         * Whether live migration is supported for this shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationSupported")
         private Boolean isLiveMigrationSupported;
 
@@ -412,7 +441,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param isLiveMigrationSupported the value to set
          * @return this builder
-         */
+         **/
         public Builder isLiveMigrationSupported(Boolean isLiveMigrationSupported) {
             this.isLiveMigrationSupported = isLiveMigrationSupported;
             this.__explicitlySet__.add("isLiveMigrationSupported");
@@ -466,25 +495,27 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Whether billing continues when the instances that use this shape are in the stopped
-         * state.
-         */
+         * Whether billing continues when the instances that use this shape are in the stopped state.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBilledForStoppedInstance")
         private Boolean isBilledForStoppedInstance;
 
         /**
-         * Whether billing continues when the instances that use this shape are in the stopped
-         * state.
+         * Whether billing continues when the instances that use this shape are in the stopped state.
          *
          * @param isBilledForStoppedInstance the value to set
          * @return this builder
-         */
+         **/
         public Builder isBilledForStoppedInstance(Boolean isBilledForStoppedInstance) {
             this.isBilledForStoppedInstance = isBilledForStoppedInstance;
             this.__explicitlySet__.add("isBilledForStoppedInstance");
             return this;
         }
-        /** How instances that use this shape are charged. */
+        /**
+         * How instances that use this shape are charged.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingType")
         private BillingType billingType;
 
@@ -493,13 +524,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param billingType the value to set
          * @return this builder
-         */
+         **/
         public Builder billingType(BillingType billingType) {
             this.billingType = billingType;
             this.__explicitlySet__.add("billingType");
             return this;
         }
-        /** The list of of compartment quotas for the shape. */
+        /**
+         * The list of of compartment quotas for the shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("quotaNames")
         private java.util.List<String> quotaNames;
 
@@ -508,53 +542,49 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param quotaNames the value to set
          * @return this builder
-         */
+         **/
         public Builder quotaNames(java.util.List<String> quotaNames) {
             this.quotaNames = quotaNames;
             this.__explicitlySet__.add("quotaNames");
             return this;
         }
         /**
-         * Whether the shape supports creating subcore or burstable instances. A [burstable
-         * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
-         * is a virtual machine (VM) instance that provides a baseline level of CPU performance with
-         * the ability to burst to a higher level to support occasional spikes in usage.
-         */
+         * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+         * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+         * spikes in usage.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
         private Boolean isSubcore;
 
         /**
-         * Whether the shape supports creating subcore or burstable instances. A [burstable
-         * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
-         * is a virtual machine (VM) instance that provides a baseline level of CPU performance with
-         * the ability to burst to a higher level to support occasional spikes in usage.
+         * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+         * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+         * spikes in usage.
          *
          * @param isSubcore the value to set
          * @return this builder
-         */
+         **/
         public Builder isSubcore(Boolean isSubcore) {
             this.isSubcore = isSubcore;
             this.__explicitlySet__.add("isSubcore");
             return this;
         }
         /**
-         * Whether the shape supports creating flexible instances. A [flexible
-         * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
-         * is a shape that lets you customize the number of OCPUs and the amount of memory when
-         * launching or resizing your instance.
-         */
+         * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+         * is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
         private Boolean isFlexible;
 
         /**
-         * Whether the shape supports creating flexible instances. A [flexible
-         * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
-         * is a shape that lets you customize the number of OCPUs and the amount of memory when
-         * launching or resizing your instance.
+         * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+         * is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
          *
          * @param isFlexible the value to set
          * @return this builder
-         */
+         **/
         public Builder isFlexible(Boolean isFlexible) {
             this.isFlexible = isFlexible;
             this.__explicitlySet__.add("isFlexible");
@@ -562,39 +592,37 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The list of compatible shapes that this shape can be changed to. For more information,
-         * see [Changing the Shape of an
-         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-         */
+         * see [Changing the Shape of an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
         private java.util.List<String> resizeCompatibleShapes;
 
         /**
          * The list of compatible shapes that this shape can be changed to. For more information,
-         * see [Changing the Shape of an
-         * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+         * see [Changing the Shape of an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          *
          * @param resizeCompatibleShapes the value to set
          * @return this builder
-         */
+         **/
         public Builder resizeCompatibleShapes(java.util.List<String> resizeCompatibleShapes) {
             this.resizeCompatibleShapes = resizeCompatibleShapes;
             this.__explicitlySet__.add("resizeCompatibleShapes");
             return this;
         }
         /**
-         * The list of shapes and shape details (if applicable) that Oracle recommends that you use
-         * as an alternative to the current shape.
-         */
+         * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recommendedAlternatives")
         private java.util.List<ShapeAlternativeObject> recommendedAlternatives;
 
         /**
-         * The list of shapes and shape details (if applicable) that Oracle recommends that you use
-         * as an alternative to the current shape.
+         * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
          *
          * @param recommendedAlternatives the value to set
          * @return this builder
-         */
+         **/
         public Builder recommendedAlternatives(
                 java.util.List<ShapeAlternativeObject> recommendedAlternatives) {
             this.recommendedAlternatives = recommendedAlternatives;
@@ -736,7 +764,9 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -745,15 +775,16 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** */
-    public enum BaselineOcpuUtilizations implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum BaselineOcpuUtilizations {
         Baseline18("BASELINE_1_8"),
         Baseline12("BASELINE_1_2"),
         Baseline11("BASELINE_1_1"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -793,57 +824,61 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     };
     /**
-     * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use
-     * this shape.
-     */
+     * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baselineOcpuUtilizations")
     private final java.util.List<BaselineOcpuUtilizations> baselineOcpuUtilizations;
 
     /**
-     * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use
-     * this shape.
+     * For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<BaselineOcpuUtilizations> getBaselineOcpuUtilizations() {
         return baselineOcpuUtilizations;
     }
 
     /**
-     * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline
-     * OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
-     */
+     * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+     * baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minTotalBaselineOcpusRequired")
     private final java.math.BigDecimal minTotalBaselineOcpusRequired;
 
     /**
-     * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline
-     * OCPUs is equal to baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
+     * For a subcore burstable VM, the minimum total baseline OCPUs required. The total baseline OCPUs is equal to
+     * baselineOcpuUtilization chosen multiplied by the number of OCPUs chosen.
      *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getMinTotalBaselineOcpusRequired() {
         return minTotalBaselineOcpusRequired;
     }
 
     /**
-     * The name of the shape. You can enumerate all available shapes by calling {@link
-     * #listShapes(ListShapesRequest) listShapes}.
-     */
+     * The name of the shape. You can enumerate all available shapes by calling
+     * {@link #listShapes(ListShapesRequest) listShapes}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The name of the shape. You can enumerate all available shapes by calling {@link
-     * #listShapes(ListShapesRequest) listShapes}.
+     * The name of the shape. You can enumerate all available shapes by calling
+     * {@link #listShapes(ListShapesRequest) listShapes}.
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** A short description of the shape's processor (CPU). */
+    /**
+     * A short description of the shape's processor (CPU).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("processorDescription")
     private final String processorDescription;
 
@@ -851,12 +886,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * A short description of the shape's processor (CPU).
      *
      * @return the value
-     */
+     **/
     public String getProcessorDescription() {
         return processorDescription;
     }
 
-    /** The default number of OCPUs available for this shape. */
+    /**
+     * The default number of OCPUs available for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocpus")
     private final Float ocpus;
 
@@ -864,12 +902,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The default number of OCPUs available for this shape.
      *
      * @return the value
-     */
+     **/
     public Float getOcpus() {
         return ocpus;
     }
 
-    /** The default amount of memory available for this shape, in gigabytes. */
+    /**
+     * The default amount of memory available for this shape, in gigabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryInGBs")
     private final Float memoryInGBs;
 
@@ -877,12 +918,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The default amount of memory available for this shape, in gigabytes.
      *
      * @return the value
-     */
+     **/
     public Float getMemoryInGBs() {
         return memoryInGBs;
     }
 
-    /** The number of physical network interface card (NIC) ports available for this shape. */
+    /**
+     * The number of physical network interface card (NIC) ports available for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkPorts")
     private final Integer networkPorts;
 
@@ -890,12 +934,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The number of physical network interface card (NIC) ports available for this shape.
      *
      * @return the value
-     */
+     **/
     public Integer getNetworkPorts() {
         return networkPorts;
     }
 
-    /** The networking bandwidth available for this shape, in gigabits per second. */
+    /**
+     * The networking bandwidth available for this shape, in gigabits per second.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkingBandwidthInGbps")
     private final Float networkingBandwidthInGbps;
 
@@ -903,12 +950,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The networking bandwidth available for this shape, in gigabits per second.
      *
      * @return the value
-     */
+     **/
     public Float getNetworkingBandwidthInGbps() {
         return networkingBandwidthInGbps;
     }
 
-    /** The maximum number of VNIC attachments available for this shape. */
+    /**
+     * The maximum number of VNIC attachments available for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxVnicAttachments")
     private final Integer maxVnicAttachments;
 
@@ -916,12 +966,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The maximum number of VNIC attachments available for this shape.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxVnicAttachments() {
         return maxVnicAttachments;
     }
 
-    /** The number of GPUs available for this shape. */
+    /**
+     * The number of GPUs available for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpus")
     private final Integer gpus;
 
@@ -929,31 +982,35 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The number of GPUs available for this shape.
      *
      * @return the value
-     */
+     **/
     public Integer getGpus() {
         return gpus;
     }
 
     /**
      * A short description of the graphics processing unit (GPU) available for this shape.
+     * <p>
+     * If the shape does not have any GPUs, this field is {@code null}.
      *
-     * <p>If the shape does not have any GPUs, this field is {@code null}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuDescription")
     private final String gpuDescription;
 
     /**
      * A short description of the graphics processing unit (GPU) available for this shape.
-     *
-     * <p>If the shape does not have any GPUs, this field is {@code null}.
+     * <p>
+     * If the shape does not have any GPUs, this field is {@code null}.
      *
      * @return the value
-     */
+     **/
     public String getGpuDescription() {
         return gpuDescription;
     }
 
-    /** The number of local disks available for this shape. */
+    /**
+     * The number of local disks available for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisks")
     private final Integer localDisks;
 
@@ -961,86 +1018,93 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The number of local disks available for this shape.
      *
      * @return the value
-     */
+     **/
     public Integer getLocalDisks() {
         return localDisks;
     }
 
     /**
      * The aggregate size of the local disks available for this shape, in gigabytes.
+     * <p>
+     * If the shape does not have any local disks, this field is {@code null}.
      *
-     * <p>If the shape does not have any local disks, this field is {@code null}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDisksTotalSizeInGBs")
     private final Float localDisksTotalSizeInGBs;
 
     /**
      * The aggregate size of the local disks available for this shape, in gigabytes.
-     *
-     * <p>If the shape does not have any local disks, this field is {@code null}.
+     * <p>
+     * If the shape does not have any local disks, this field is {@code null}.
      *
      * @return the value
-     */
+     **/
     public Float getLocalDisksTotalSizeInGBs() {
         return localDisksTotalSizeInGBs;
     }
 
     /**
      * A short description of the local disks available for this shape.
+     * <p>
+     * If the shape does not have any local disks, this field is {@code null}.
      *
-     * <p>If the shape does not have any local disks, this field is {@code null}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localDiskDescription")
     private final String localDiskDescription;
 
     /**
      * A short description of the local disks available for this shape.
-     *
-     * <p>If the shape does not have any local disks, this field is {@code null}.
+     * <p>
+     * If the shape does not have any local disks, this field is {@code null}.
      *
      * @return the value
-     */
+     **/
     public String getLocalDiskDescription() {
         return localDiskDescription;
     }
 
     /**
-     * The number of networking ports available for the remote direct memory access (RDMA) network
-     * between nodes in a high performance computing (HPC) cluster network. If the shape does not
-     * support cluster networks, this value is {@code 0}.
-     */
+     * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+     * a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+     * value is {@code 0}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdmaPorts")
     private final Integer rdmaPorts;
 
     /**
-     * The number of networking ports available for the remote direct memory access (RDMA) network
-     * between nodes in a high performance computing (HPC) cluster network. If the shape does not
-     * support cluster networks, this value is {@code 0}.
+     * The number of networking ports available for the remote direct memory access (RDMA) network between nodes in
+     * a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this
+     * value is {@code 0}.
      *
      * @return the value
-     */
+     **/
     public Integer getRdmaPorts() {
         return rdmaPorts;
     }
 
     /**
-     * The networking bandwidth available for the remote direct memory access (RDMA) network for
-     * this shape, in gigabits per second.
-     */
+     * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+     * gigabits per second.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rdmaBandwidthInGbps")
     private final Integer rdmaBandwidthInGbps;
 
     /**
-     * The networking bandwidth available for the remote direct memory access (RDMA) network for
-     * this shape, in gigabits per second.
+     * The networking bandwidth available for the remote direct memory access (RDMA) network for this shape, in
+     * gigabits per second.
      *
      * @return the value
-     */
+     **/
     public Integer getRdmaBandwidthInGbps() {
         return rdmaBandwidthInGbps;
     }
 
-    /** Whether live migration is supported for this shape. */
+    /**
+     * Whether live migration is supported for this shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isLiveMigrationSupported")
     private final Boolean isLiveMigrationSupported;
 
@@ -1048,7 +1112,7 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Whether live migration is supported for this shape.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsLiveMigrationSupported() {
         return isLiveMigrationSupported;
     }
@@ -1090,7 +1154,8 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Whether billing continues when the instances that use this shape are in the stopped state.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBilledForStoppedInstance")
     private final Boolean isBilledForStoppedInstance;
 
@@ -1098,20 +1163,23 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Whether billing continues when the instances that use this shape are in the stopped state.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsBilledForStoppedInstance() {
         return isBilledForStoppedInstance;
     }
 
-    /** How instances that use this shape are charged. */
-    public enum BillingType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * How instances that use this shape are charged.
+     *
+     **/
+    public enum BillingType {
         AlwaysFree("ALWAYS_FREE"),
         LimitedFree("LIMITED_FREE"),
         Paid("PAID"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1150,7 +1218,10 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** How instances that use this shape are charged. */
+    /**
+     * How instances that use this shape are charged.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingType")
     private final BillingType billingType;
 
@@ -1158,12 +1229,15 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * How instances that use this shape are charged.
      *
      * @return the value
-     */
+     **/
     public BillingType getBillingType() {
         return billingType;
     }
 
-    /** The list of of compartment quotas for the shape. */
+    /**
+     * The list of of compartment quotas for the shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("quotaNames")
     private final java.util.List<String> quotaNames;
 
@@ -1171,85 +1245,79 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * The list of of compartment quotas for the shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getQuotaNames() {
         return quotaNames;
     }
 
     /**
-     * Whether the shape supports creating subcore or burstable instances. A [burstable
-     * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is
-     * a virtual machine (VM) instance that provides a baseline level of CPU performance with the
-     * ability to burst to a higher level to support occasional spikes in usage.
-     */
+     * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+     * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+     * spikes in usage.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSubcore")
     private final Boolean isSubcore;
 
     /**
-     * Whether the shape supports creating subcore or burstable instances. A [burstable
-     * instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm) is
-     * a virtual machine (VM) instance that provides a baseline level of CPU performance with the
-     * ability to burst to a higher level to support occasional spikes in usage.
+     * Whether the shape supports creating subcore or burstable instances. A [burstable instance](https://docs.oracle.com/iaas/Content/Compute/References/burstable-instances.htm)
+     * is a virtual machine (VM) instance that provides a baseline level of CPU performance with the ability to burst to a higher level to support occasional
+     * spikes in usage.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSubcore() {
         return isSubcore;
     }
 
     /**
-     * Whether the shape supports creating flexible instances. A [flexible
-     * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is
-     * a shape that lets you customize the number of OCPUs and the amount of memory when launching
-     * or resizing your instance.
-     */
+     * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+     * is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
     private final Boolean isFlexible;
 
     /**
-     * Whether the shape supports creating flexible instances. A [flexible
-     * shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible) is
-     * a shape that lets you customize the number of OCPUs and the amount of memory when launching
-     * or resizing your instance.
+     * Whether the shape supports creating flexible instances. A [flexible shape](https://docs.oracle.com/iaas/Content/Compute/References/computeshapes.htm#flexible)
+     * is a shape that lets you customize the number of OCPUs and the amount of memory when launching or resizing your instance.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsFlexible() {
         return isFlexible;
     }
 
     /**
-     * The list of compatible shapes that this shape can be changed to. For more information, see
-     * [Changing the Shape of an
-     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
-     */
+     * The list of compatible shapes that this shape can be changed to. For more information,
+     * see [Changing the Shape of an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resizeCompatibleShapes")
     private final java.util.List<String> resizeCompatibleShapes;
 
     /**
-     * The list of compatible shapes that this shape can be changed to. For more information, see
-     * [Changing the Shape of an
-     * Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+     * The list of compatible shapes that this shape can be changed to. For more information,
+     * see [Changing the Shape of an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getResizeCompatibleShapes() {
         return resizeCompatibleShapes;
     }
 
     /**
-     * The list of shapes and shape details (if applicable) that Oracle recommends that you use as
-     * an alternative to the current shape.
-     */
+     * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recommendedAlternatives")
     private final java.util.List<ShapeAlternativeObject> recommendedAlternatives;
 
     /**
-     * The list of shapes and shape details (if applicable) that Oracle recommends that you use as
-     * an alternative to the current shape.
+     * The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ShapeAlternativeObject> getRecommendedAlternatives() {
         return recommendedAlternatives;
     }
@@ -1261,7 +1329,6 @@ public final class Shape extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

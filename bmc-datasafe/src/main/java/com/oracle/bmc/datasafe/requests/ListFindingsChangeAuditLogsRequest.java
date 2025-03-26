@@ -6,27 +6,32 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsChangeAuditLogsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListFindingsChangeAuditLogsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListFindingsChangeAuditLogsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFindingsChangeAuditLogsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListFindingsChangeAuditLogsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the security assessment. */
+    /**
+     * The OCID of the security assessment.
+     */
     private String securityAssessmentId;
 
-    /** The OCID of the security assessment. */
+    /**
+     * The OCID of the security assessment.
+     */
     public String getSecurityAssessmentId() {
         return securityAssessmentId;
     }
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     private Severity severity;
 
-    /** A filter to return only findings of a particular risk level. */
-    public enum Severity implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only findings of a particular risk level.
+     **/
+    public enum Severity {
         High("HIGH"),
         Medium("MEDIUM"),
         Low("LOW"),
@@ -64,87 +69,87 @@ public class ListFindingsChangeAuditLogsRequest
         }
     };
 
-    /** A filter to return only findings of a particular risk level. */
+    /**
+     * A filter to return only findings of a particular risk level.
+     */
     public Severity getSeverity() {
         return severity;
     }
     /**
-     * The unique key that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
     private String findingKey;
 
     /**
-     * The unique key that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique key that identifies the finding. It is a string and unique within a security assessment.
      */
     public String getFindingKey() {
         return findingKey;
     }
     /**
-     * The unique title that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique title that identifies the finding. It is a string and unique within a security assessment.
      */
     private String findingTitle;
 
     /**
-     * The unique title that identifies the finding. It is a string and unique within a security
-     * assessment.
+     * The unique title that identifies the finding. It is a string and unique within a security assessment.
      */
     public String getFindingTitle() {
         return findingTitle;
     }
-    /** A filter to check findings whose risks were deferred by the user. */
+    /**
+     * A filter to check findings whose risks were deferred by the user.
+     */
     private Boolean isRiskDeferred;
 
-    /** A filter to check findings whose risks were deferred by the user. */
+    /**
+     * A filter to check findings whose risks were deferred by the user.
+     */
     public Boolean getIsRiskDeferred() {
         return isRiskDeferred;
     }
-    /** A filter to check which user modified the risk level of the finding. */
+    /**
+     * A filter to check which user modified the risk level of the finding.
+     */
     private String modifiedBy;
 
-    /** A filter to check which user modified the risk level of the finding. */
+    /**
+     * A filter to check which user modified the risk level of the finding.
+     */
     public String getModifiedBy() {
         return modifiedBy;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -177,21 +182,23 @@ public class ListFindingsChangeAuditLogsRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeUpdated is descending.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeUpdated is descending.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeUpdated is descending.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeUpdated is descending.
+     *
+     **/
+    public enum SortBy {
         TimeUpdated("timeUpdated"),
         ModifiedBy("modifiedBy"),
         IsRiskDeferred("isRiskDeferred"),
@@ -227,90 +234,108 @@ public class ListFindingsChangeAuditLogsRequest
     };
 
     /**
-     * The field to sort by. You can specify only one sort order(sortOrder). The default order for
-     * timeUpdated is descending.
+     * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeUpdated is descending.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter will retrieve all
-     * items for which the risk level modification by user will no longer be valid greater than the
-     * date and time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter
+     * will retrieve all items for which the risk level modification by user will
+     * no longer be valid greater than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
      *
-     * <p>*Example:** 2016-12-19T00:00:00.000Z
      */
     private java.util.Date timeValidUntilGreaterThanOrEqualTo;
 
     /**
-     * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter will retrieve all
-     * items for which the risk level modification by user will no longer be valid greater than the
-     * date and time specified, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter
+     * will retrieve all items for which the risk level modification by user will
+     * no longer be valid greater than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
      *
-     * <p>*Example:** 2016-12-19T00:00:00.000Z
      */
     public java.util.Date getTimeValidUntilGreaterThanOrEqualTo() {
         return timeValidUntilGreaterThanOrEqualTo;
     }
     /**
-     * Specifying {@code TimeValidUntilLessThanQueryParam} parameter will retrieve all items for
-     * which the risk level modification by user will be valid until less than the date and time
-     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Specifying {@code TimeValidUntilLessThanQueryParam} parameter
+     * will retrieve all items for which the risk level modification by user will
+     * be valid until less than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
      *
-     * <p>*Example:** 2016-12-19T00:00:00.000Z
      */
     private java.util.Date timeValidUntilLessThan;
 
     /**
-     * Specifying {@code TimeValidUntilLessThanQueryParam} parameter will retrieve all items for
-     * which the risk level modification by user will be valid until less than the date and time
-     * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * Specifying {@code TimeValidUntilLessThanQueryParam} parameter
+     * will retrieve all items for which the risk level modification by user will
+     * be valid until less than the date and time specified,
+     * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     **Example:** 2016-12-19T00:00:00.000Z
      *
-     * <p>*Example:** 2016-12-19T00:00:00.000Z
      */
     public java.util.Date getTimeValidUntilLessThan() {
         return timeValidUntilLessThan;
     }
     /**
-     * Search for resources that were updated after a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources
-     * updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * Search for resources that were updated after a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+     * parameter will retrieve all resources updated after the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
+     *
      */
     private java.util.Date timeUpdatedGreaterThanOrEqualTo;
 
     /**
-     * Search for resources that were updated after a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all resources
-     * updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * Search for resources that were updated after a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+     * parameter will retrieve all resources updated after the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
      * defined by RFC 3339.
+     *
      */
     public java.util.Date getTimeUpdatedGreaterThanOrEqualTo() {
         return timeUpdatedGreaterThanOrEqualTo;
     }
     /**
-     * Search for resources that were updated before a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were updated before a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+     * parameter will retrieve all resources updated before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
      */
     private java.util.Date timeUpdatedLessThan;
 
     /**
-     * Search for resources that were updated before a specific date. Specifying this parameter
-     * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-     * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined
-     * by RFC 3339.
+     * Search for resources that were updated before a specific date.
+     * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+     * parameter will retrieve all resources updated before the
+     * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+     * defined by RFC 3339.
+     *
      */
     public java.util.Date getTimeUpdatedLessThan() {
         return timeUpdatedLessThan;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -318,15 +343,17 @@ public class ListFindingsChangeAuditLogsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFindingsChangeAuditLogsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the security assessment. */
+        /**
+         * The OCID of the security assessment.
+         */
         private String securityAssessmentId = null;
 
         /**
          * The OCID of the security assessment.
-         *
          * @param securityAssessmentId the value to set
          * @return this builder instance
          */
@@ -335,12 +362,13 @@ public class ListFindingsChangeAuditLogsRequest
             return this;
         }
 
-        /** A filter to return only findings of a particular risk level. */
+        /**
+         * A filter to return only findings of a particular risk level.
+         */
         private Severity severity = null;
 
         /**
          * A filter to return only findings of a particular risk level.
-         *
          * @param severity the value to set
          * @return this builder instance
          */
@@ -350,15 +378,12 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * The unique key that identifies the finding. It is a string and unique within a security
-         * assessment.
+         * The unique key that identifies the finding. It is a string and unique within a security assessment.
          */
         private String findingKey = null;
 
         /**
-         * The unique key that identifies the finding. It is a string and unique within a security
-         * assessment.
-         *
+         * The unique key that identifies the finding. It is a string and unique within a security assessment.
          * @param findingKey the value to set
          * @return this builder instance
          */
@@ -368,15 +393,12 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * The unique title that identifies the finding. It is a string and unique within a security
-         * assessment.
+         * The unique title that identifies the finding. It is a string and unique within a security assessment.
          */
         private String findingTitle = null;
 
         /**
-         * The unique title that identifies the finding. It is a string and unique within a security
-         * assessment.
-         *
+         * The unique title that identifies the finding. It is a string and unique within a security assessment.
          * @param findingTitle the value to set
          * @return this builder instance
          */
@@ -385,12 +407,13 @@ public class ListFindingsChangeAuditLogsRequest
             return this;
         }
 
-        /** A filter to check findings whose risks were deferred by the user. */
+        /**
+         * A filter to check findings whose risks were deferred by the user.
+         */
         private Boolean isRiskDeferred = null;
 
         /**
          * A filter to check findings whose risks were deferred by the user.
-         *
          * @param isRiskDeferred the value to set
          * @return this builder instance
          */
@@ -399,12 +422,13 @@ public class ListFindingsChangeAuditLogsRequest
             return this;
         }
 
-        /** A filter to check which user modified the risk level of the finding. */
+        /**
+         * A filter to check which user modified the risk level of the finding.
+         */
         private String modifiedBy = null;
 
         /**
          * A filter to check which user modified the risk level of the finding.
-         *
          * @param modifiedBy the value to set
          * @return this builder instance
          */
@@ -414,17 +438,12 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -434,19 +453,12 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -455,12 +467,13 @@ public class ListFindingsChangeAuditLogsRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -470,14 +483,13 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for timeUpdated is descending.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeUpdated is descending.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can specify only one sort order(sortOrder). The default order
-         * for timeUpdated is descending.
+         * The field to sort by. You can specify only one sort order(sortOrder). The default order for timeUpdated is descending.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -488,22 +500,23 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter will retrieve
-         * all items for which the risk level modification by user will no longer be valid greater
-         * than the date and time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter
+         * will retrieve all items for which the risk level modification by user will
+         * no longer be valid greater than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
          *
-         * <p>*Example:** 2016-12-19T00:00:00.000Z
          */
         private java.util.Date timeValidUntilGreaterThanOrEqualTo = null;
 
         /**
-         * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter will retrieve
-         * all items for which the risk level modification by user will no longer be valid greater
-         * than the date and time specified, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>*Example:** 2016-12-19T00:00:00.000Z
+         * Specifying {@code TimeValidUntilGreaterThanOrEqualToQueryParam} parameter
+         * will retrieve all items for which the risk level modification by user will
+         * no longer be valid greater than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
          *
          * @param timeValidUntilGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -515,20 +528,23 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * Specifying {@code TimeValidUntilLessThanQueryParam} parameter will retrieve all items for
-         * which the risk level modification by user will be valid until less than the date and time
-         * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * Specifying {@code TimeValidUntilLessThanQueryParam} parameter
+         * will retrieve all items for which the risk level modification by user will
+         * be valid until less than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
          *
-         * <p>*Example:** 2016-12-19T00:00:00.000Z
          */
         private java.util.Date timeValidUntilLessThan = null;
 
         /**
-         * Specifying {@code TimeValidUntilLessThanQueryParam} parameter will retrieve all items for
-         * which the risk level modification by user will be valid until less than the date and time
-         * specified, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>*Example:** 2016-12-19T00:00:00.000Z
+         * Specifying {@code TimeValidUntilLessThanQueryParam} parameter
+         * will retrieve all items for which the risk level modification by user will
+         * be valid until less than the date and time specified,
+         * in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         **Example:** 2016-12-19T00:00:00.000Z
          *
          * @param timeValidUntilLessThan the value to set
          * @return this builder instance
@@ -539,18 +555,21 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * Search for resources that were updated after a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all
-         * resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Search for resources that were updated after a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+         * parameter will retrieve all resources updated after the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
+         *
          */
         private java.util.Date timeUpdatedGreaterThanOrEqualTo = null;
 
         /**
-         * Search for resources that were updated after a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedGreaterThanOrEqualTo} parameter will retrieve all
-         * resources updated after the specified created date, in "YYYY-MM-ddThh:mmZ" format with a
-         * Z offset, as defined by RFC 3339.
+         * Search for resources that were updated after a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedGreaterThanOrEqualTo}
+         * parameter will retrieve all resources updated after the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * defined by RFC 3339.
          *
          * @param timeUpdatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -562,17 +581,20 @@ public class ListFindingsChangeAuditLogsRequest
         }
 
         /**
-         * Search for resources that were updated before a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were updated before a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+         * parameter will retrieve all resources updated before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
+         *
          */
         private java.util.Date timeUpdatedLessThan = null;
 
         /**
-         * Search for resources that were updated before a specific date. Specifying this parameter
-         * corresponding {@code timeUpdatedLessThan} parameter will retrieve all resources updated
-         * before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
+         * Search for resources that were updated before a specific date.
+         * Specifying this parameter corresponding {@code timeUpdatedLessThan}
+         * parameter will retrieve all resources updated before the
+         * specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as
          * defined by RFC 3339.
          *
          * @param timeUpdatedLessThan the value to set
@@ -583,12 +605,13 @@ public class ListFindingsChangeAuditLogsRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -599,19 +622,18 @@ public class ListFindingsChangeAuditLogsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -623,7 +645,6 @@ public class ListFindingsChangeAuditLogsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFindingsChangeAuditLogsRequest o) {
@@ -650,11 +671,10 @@ public class ListFindingsChangeAuditLogsRequest
         /**
          * Build the instance of ListFindingsChangeAuditLogsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFindingsChangeAuditLogsRequest
          */
@@ -668,8 +688,7 @@ public class ListFindingsChangeAuditLogsRequest
         /**
          * Build the instance of ListFindingsChangeAuditLogsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFindingsChangeAuditLogsRequest
@@ -692,16 +711,12 @@ public class ListFindingsChangeAuditLogsRequest
             request.timeUpdatedLessThan = timeUpdatedLessThan;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFindingsChangeAuditLogsRequest(securityAssessmentId, severity, findingKey,
-            // findingTitle, isRiskDeferred, modifiedBy, limit, page, sortOrder, sortBy,
-            // timeValidUntilGreaterThanOrEqualTo, timeValidUntilLessThan,
-            // timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, opcRequestId);
+            // new ListFindingsChangeAuditLogsRequest(securityAssessmentId, severity, findingKey, findingTitle, isRiskDeferred, modifiedBy, limit, page, sortOrder, sortBy, timeValidUntilGreaterThanOrEqualTo, timeValidUntilLessThan, timeUpdatedGreaterThanOrEqualTo, timeUpdatedLessThan, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -725,7 +740,6 @@ public class ListFindingsChangeAuditLogsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

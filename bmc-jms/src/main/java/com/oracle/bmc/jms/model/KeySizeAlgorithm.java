@@ -5,22 +5,19 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * The algorithm object with name and key size properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * The algorithm object with name and key size properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = KeySizeAlgorithm.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class KeySizeAlgorithm
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class KeySizeAlgorithm extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "keySize"})
     public KeySizeAlgorithm(Algorithms name, Integer keySize) {
@@ -31,33 +28,37 @@ public final class KeySizeAlgorithm
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The algorithm name. */
+        /**
+         * The algorithm name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private Algorithms name;
 
         /**
          * The algorithm name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(Algorithms name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
-         */
+         * Key size for the encryption algorithm.
+         * Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keySize")
         private Integer keySize;
 
         /**
-         * Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+         * Key size for the encryption algorithm.
+         * Allowed values: 256 for EC, 2048 for DH/DSA/RSA
          *
          * @param keySize the value to set
          * @return this builder
-         */
+         **/
         public Builder keySize(Integer keySize) {
             this.keySize = keySize;
             this.__explicitlySet__.add("keySize");
@@ -87,7 +88,9 @@ public final class KeySizeAlgorithm
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +99,34 @@ public final class KeySizeAlgorithm
         return new Builder().copy(this);
     }
 
-    /** The algorithm name. */
+    /**
+     * The algorithm name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final Algorithms name;
 
     /**
      * The algorithm name.
-     *
      * @return the value
-     */
+     **/
     public Algorithms getName() {
         return name;
     }
 
-    /** Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA */
+    /**
+     * Key size for the encryption algorithm.
+     * Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keySize")
     private final Integer keySize;
 
     /**
-     * Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+     * Key size for the encryption algorithm.
+     * Allowed values: 256 for EC, 2048 for DH/DSA/RSA
      *
      * @return the value
-     */
+     **/
     public Integer getKeySize() {
         return keySize;
     }
@@ -129,7 +138,6 @@ public final class KeySizeAlgorithm
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

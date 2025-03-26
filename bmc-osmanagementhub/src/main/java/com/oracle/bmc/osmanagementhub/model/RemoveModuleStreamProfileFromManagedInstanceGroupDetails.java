@@ -5,23 +5,22 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the details for removing a module stream profile from a managed instance group. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the details for removing a module stream profile from a managed instance group.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RemoveModuleStreamProfileFromManagedInstanceGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RemoveModuleStreamProfileFromManagedInstanceGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RemoveModuleStreamProfileFromManagedInstanceGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "moduleName",
@@ -46,65 +45,65 @@ public final class RemoveModuleStreamProfileFromManagedInstanceGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the module. */
+        /**
+         * The name of the module.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
         /**
          * The name of the module.
-         *
          * @param moduleName the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-        /** The name of a stream of the specified module. */
+        /**
+         * The name of a stream of the specified module.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
         /**
          * The name of a stream of the specified module.
-         *
          * @param streamName the value to set
          * @return this builder
-         */
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-        /** The name of a profile of the specified module stream. */
+        /**
+         * The name of a profile of the specified module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
         /**
          * The name of a profile of the specified module stream.
-         *
          * @param profileName the value to set
          * @return this builder
-         */
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that provides the module stream
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * software source that provides the module stream
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
          * @param softwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -158,7 +157,9 @@ public final class RemoveModuleStreamProfileFromManagedInstanceGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -167,58 +168,58 @@ public final class RemoveModuleStreamProfileFromManagedInstanceGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the module. */
+    /**
+     * The name of the module.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
     /**
      * The name of the module.
-     *
      * @return the value
-     */
+     **/
     public String getModuleName() {
         return moduleName;
     }
 
-    /** The name of a stream of the specified module. */
+    /**
+     * The name of a stream of the specified module.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
     /**
      * The name of a stream of the specified module.
-     *
      * @return the value
-     */
+     **/
     public String getStreamName() {
         return streamName;
     }
 
-    /** The name of a profile of the specified module stream. */
+    /**
+     * The name of a profile of the specified module stream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
     /**
      * The name of a profile of the specified module stream.
-     *
      * @return the value
-     */
+     **/
     public String getProfileName() {
         return profileName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that provides the module stream
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * software source that provides the module stream
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source that provides the module stream
      * @return the value
-     */
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -237,7 +238,6 @@ public final class RemoveModuleStreamProfileFromManagedInstanceGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

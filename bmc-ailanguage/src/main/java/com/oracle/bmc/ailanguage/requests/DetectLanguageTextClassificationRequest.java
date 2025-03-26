@@ -6,36 +6,42 @@ package com.oracle.bmc.ailanguage.requests;
 
 import com.oracle.bmc.ailanguage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageTextClassificationExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * DetectLanguageTextClassificationRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ailanguage/DetectLanguageTextClassificationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DetectLanguageTextClassificationRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 public class DetectLanguageTextClassificationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails> {
 
-    /** The details to make text classification detect call. */
+    /**
+     * The details to make text classification detect call.
+     *
+     */
     private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
             detectLanguageTextClassificationDetails;
 
-    /** The details to make text classification detect call. */
+    /**
+     * The details to make text classification detect call.
+     *
+     */
     public com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
             getDetectLanguageTextClassificationDetails() {
         return detectLanguageTextClassificationDetails;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -48,10 +54,14 @@ public class DetectLanguageTextClassificationRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DetectLanguageTextClassificationRequest,
                     com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details to make text classification detect call. */
+        /**
+         * The details to make text classification detect call.
+         *
+         */
         private com.oracle.bmc.ailanguage.model.DetectLanguageTextClassificationDetails
                 detectLanguageTextClassificationDetails = null;
 
@@ -68,12 +78,13 @@ public class DetectLanguageTextClassificationRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -84,19 +95,18 @@ public class DetectLanguageTextClassificationRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -108,7 +118,6 @@ public class DetectLanguageTextClassificationRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DetectLanguageTextClassificationRequest o) {
@@ -120,14 +129,12 @@ public class DetectLanguageTextClassificationRequest
         }
 
         /**
-         * Build the instance of DetectLanguageTextClassificationRequest as configured by this
-         * builder
+         * Build the instance of DetectLanguageTextClassificationRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DetectLanguageTextClassificationRequest
          */
@@ -140,7 +147,6 @@ public class DetectLanguageTextClassificationRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -152,11 +158,9 @@ public class DetectLanguageTextClassificationRequest
         }
 
         /**
-         * Build the instance of DetectLanguageTextClassificationRequest as configured by this
-         * builder
+         * Build the instance of DetectLanguageTextClassificationRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DetectLanguageTextClassificationRequest
@@ -168,14 +172,12 @@ public class DetectLanguageTextClassificationRequest
                     detectLanguageTextClassificationDetails;
             request.opcRequestId = opcRequestId;
             return request;
-            // new DetectLanguageTextClassificationRequest(detectLanguageTextClassificationDetails,
-            // opcRequestId);
+            // new DetectLanguageTextClassificationRequest(detectLanguageTextClassificationDetails, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -186,7 +188,6 @@ public class DetectLanguageTextClassificationRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

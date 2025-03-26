@@ -5,23 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Provides the VCN overlap details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Provides the VCN overlap details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IpInventoryVcnOverlapSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = IpInventoryVcnOverlapSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IpInventoryVcnOverlapSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "overlappingVcnId",
@@ -44,64 +44,64 @@ public final class IpInventoryVcnOverlapSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN .
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overlappingVcnId")
         private String overlappingVcnId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN .
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
          * @param overlappingVcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder overlappingVcnId(String overlappingVcnId) {
             this.overlappingVcnId = overlappingVcnId;
             this.__explicitlySet__.add("overlappingVcnId");
             return this;
         }
-        /** Name of the overlapping VCN. */
+        /**
+         * Name of the overlapping VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overlappingVcnName")
         private String overlappingVcnName;
 
         /**
          * Name of the overlapping VCN.
-         *
          * @param overlappingVcnName the value to set
          * @return this builder
-         */
+         **/
         public Builder overlappingVcnName(String overlappingVcnName) {
             this.overlappingVcnName = overlappingVcnName;
             this.__explicitlySet__.add("overlappingVcnName");
             return this;
         }
-        /** The overlapping CIDR prefix. */
+        /**
+         * The overlapping CIDR prefix.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overlappingCidr")
         private String overlappingCidr;
 
         /**
          * The overlapping CIDR prefix.
-         *
          * @param overlappingCidr the value to set
          * @return this builder
-         */
+         **/
         public Builder overlappingCidr(String overlappingCidr) {
             this.overlappingCidr = overlappingCidr;
             this.__explicitlySet__.add("overlappingCidr");
             return this;
         }
-        /** CIDR prefix of the VCN. */
+        /**
+         * CIDR prefix of the VCN.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cidr")
         private String cidr;
 
         /**
          * CIDR prefix of the VCN.
-         *
          * @param cidr the value to set
          * @return this builder
-         */
+         **/
         public Builder cidr(String cidr) {
             this.cidr = cidr;
             this.__explicitlySet__.add("cidr");
@@ -142,7 +142,9 @@ public final class IpInventoryVcnOverlapSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,57 +154,57 @@ public final class IpInventoryVcnOverlapSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * .
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overlappingVcnId")
     private final String overlappingVcnId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN
-     * .
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN .
      * @return the value
-     */
+     **/
     public String getOverlappingVcnId() {
         return overlappingVcnId;
     }
 
-    /** Name of the overlapping VCN. */
+    /**
+     * Name of the overlapping VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overlappingVcnName")
     private final String overlappingVcnName;
 
     /**
      * Name of the overlapping VCN.
-     *
      * @return the value
-     */
+     **/
     public String getOverlappingVcnName() {
         return overlappingVcnName;
     }
 
-    /** The overlapping CIDR prefix. */
+    /**
+     * The overlapping CIDR prefix.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overlappingCidr")
     private final String overlappingCidr;
 
     /**
      * The overlapping CIDR prefix.
-     *
      * @return the value
-     */
+     **/
     public String getOverlappingCidr() {
         return overlappingCidr;
     }
 
-    /** CIDR prefix of the VCN. */
+    /**
+     * CIDR prefix of the VCN.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cidr")
     private final String cidr;
 
     /**
      * CIDR prefix of the VCN.
-     *
      * @return the value
-     */
+     **/
     public String getCidr() {
         return cidr;
     }
@@ -214,7 +216,6 @@ public final class IpInventoryVcnOverlapSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

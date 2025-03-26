@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * MySql Sql Stats type object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * MySql Sql Stats type object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MySqlSqlStats.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MySqlSqlStats extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "digest",
@@ -129,128 +127,140 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique SQL ID Digest for a MySql Statement. Example: {@code
-         * "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
-         */
+         * Unique SQL ID Digest for a MySql Statement.
+         * Example: {@code "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("digest")
         private String digest;
 
         /**
-         * Unique SQL ID Digest for a MySql Statement. Example: {@code
-         * "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
+         * Unique SQL ID Digest for a MySql Statement.
+         * Example: {@code "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
          *
          * @param digest the value to set
          * @return this builder
-         */
+         **/
         public Builder digest(String digest) {
             this.digest = digest;
             this.__explicitlySet__.add("digest");
             return this;
         }
-        /** Collection timestamp. Example: {@code "2020-03-31T00:00:00.000Z"} */
+        /**
+         * Collection timestamp.
+         * Example: {@code "2020-03-31T00:00:00.000Z"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * Collection timestamp. Example: {@code "2020-03-31T00:00:00.000Z"}
+         * Collection timestamp.
+         * Example: {@code "2020-03-31T00:00:00.000Z"}
          *
          * @param timeCollected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Type of statement such as select, update or delete. */
+        /**
+         * Type of statement such as select, update or delete.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commandType")
         private String commandType;
 
         /**
          * Type of statement such as select, update or delete.
-         *
          * @param commandType the value to set
          * @return this builder
-         */
+         **/
         public Builder commandType(String commandType) {
             this.commandType = commandType;
             this.__explicitlySet__.add("commandType");
             return this;
         }
-        /** Total number of SQL statements used in collection ranking calculation. */
+        /**
+         * Total number of SQL statements used in collection ranking calculation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalRows")
         private Long totalRows;
 
         /**
          * Total number of SQL statements used in collection ranking calculation.
-         *
          * @param totalRows the value to set
          * @return this builder
-         */
+         **/
         public Builder totalRows(Long totalRows) {
             this.totalRows = totalRows;
             this.__explicitlySet__.add("totalRows");
             return this;
         }
         /**
-         * Percent of SQL statements in the perf schema table relative to max or overflow count set
-         * in @@GLOBAL.performance_schema_digests_size.
-         */
+         * Percent of SQL statements in the perf schema table relative to max or overflow count set in @@GLOBAL.performance_schema_digests_size.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("perfSchemaUsedPercent")
         private Long perfSchemaUsedPercent;
 
         /**
-         * Percent of SQL statements in the perf schema table relative to max or overflow count set
-         * in @@GLOBAL.performance_schema_digests_size.
-         *
+         * Percent of SQL statements in the perf schema table relative to max or overflow count set in @@GLOBAL.performance_schema_digests_size.
          * @param perfSchemaUsedPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder perfSchemaUsedPercent(Long perfSchemaUsedPercent) {
             this.perfSchemaUsedPercent = perfSchemaUsedPercent;
             this.__explicitlySet__.add("perfSchemaUsedPercent");
             return this;
         }
-        /** Name of Database Schema. Example: {@code "performance_schema"} */
+        /**
+         * Name of Database Schema.
+         * Example: {@code "performance_schema"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
         private String schemaName;
 
         /**
-         * Name of Database Schema. Example: {@code "performance_schema"}
+         * Name of Database Schema.
+         * Example: {@code "performance_schema"}
          *
          * @param schemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder schemaName(String schemaName) {
             this.schemaName = schemaName;
             this.__explicitlySet__.add("schemaName");
             return this;
         }
-        /** The total number of times the statement has executed. */
+        /**
+         * The total number of times the statement has executed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("execCount")
         private Long execCount;
 
         /**
          * The total number of times the statement has executed.
-         *
          * @param execCount the value to set
          * @return this builder
-         */
+         **/
         public Builder execCount(Long execCount) {
             this.execCount = execCount;
             this.__explicitlySet__.add("execCount");
             return this;
         }
-        /** The total wait time (in picoseconds) of timed occurrences of the statement. */
+        /**
+         * The total wait time (in picoseconds) of timed occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalLatencyInPs")
         private Long totalLatencyInPs;
 
         /**
          * The total wait time (in picoseconds) of timed occurrences of the statement.
-         *
          * @param totalLatencyInPs the value to set
          * @return this builder
-         */
+         **/
         public Builder totalLatencyInPs(Long totalLatencyInPs) {
             this.totalLatencyInPs = totalLatencyInPs;
             this.__explicitlySet__.add("totalLatencyInPs");
@@ -258,239 +268,223 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The total time waiting (in picoseconds) for locks by timed occurrences of the statement.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lockLatencyInPs")
         private Long lockLatencyInPs;
 
         /**
          * The total time waiting (in picoseconds) for locks by timed occurrences of the statement.
-         *
          * @param lockLatencyInPs the value to set
          * @return this builder
-         */
+         **/
         public Builder lockLatencyInPs(Long lockLatencyInPs) {
             this.lockLatencyInPs = lockLatencyInPs;
             this.__explicitlySet__.add("lockLatencyInPs");
             return this;
         }
-        /** The total number of errors produced by occurrences of the statement. */
+        /**
+         * The total number of errors produced by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errCount")
         private Long errCount;
 
         /**
          * The total number of errors produced by occurrences of the statement.
-         *
          * @param errCount the value to set
          * @return this builder
-         */
+         **/
         public Builder errCount(Long errCount) {
             this.errCount = errCount;
             this.__explicitlySet__.add("errCount");
             return this;
         }
-        /** The total number of warnings produced by occurrences of the statement. */
+        /**
+         * The total number of warnings produced by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warnCount")
         private Long warnCount;
 
         /**
          * The total number of warnings produced by occurrences of the statement.
-         *
          * @param warnCount the value to set
          * @return this builder
-         */
+         **/
         public Builder warnCount(Long warnCount) {
             this.warnCount = warnCount;
             this.__explicitlySet__.add("warnCount");
             return this;
         }
-        /** The total number of rows affected by occurrences of the statement. */
+        /**
+         * The total number of rows affected by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowsAffected")
         private Long rowsAffected;
 
         /**
          * The total number of rows affected by occurrences of the statement.
-         *
          * @param rowsAffected the value to set
          * @return this builder
-         */
+         **/
         public Builder rowsAffected(Long rowsAffected) {
             this.rowsAffected = rowsAffected;
             this.__explicitlySet__.add("rowsAffected");
             return this;
         }
-        /** The total number of rows returned by occurrences of the statement. */
+        /**
+         * The total number of rows returned by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowsSent")
         private Long rowsSent;
 
         /**
          * The total number of rows returned by occurrences of the statement.
-         *
          * @param rowsSent the value to set
          * @return this builder
-         */
+         **/
         public Builder rowsSent(Long rowsSent) {
             this.rowsSent = rowsSent;
             this.__explicitlySet__.add("rowsSent");
             return this;
         }
-        /** The total number of rows read from storage engines by occurrences of the statement. */
+        /**
+         * The total number of rows read from storage engines by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowsExamined")
         private Long rowsExamined;
 
         /**
          * The total number of rows read from storage engines by occurrences of the statement.
-         *
          * @param rowsExamined the value to set
          * @return this builder
-         */
+         **/
         public Builder rowsExamined(Long rowsExamined) {
             this.rowsExamined = rowsExamined;
             this.__explicitlySet__.add("rowsExamined");
             return this;
         }
         /**
-         * The total number of internal on-disk temporary tables created by occurrences of the
-         * statement.
-         */
+         * The total number of internal on-disk temporary tables created by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tmpDiskTables")
         private Long tmpDiskTables;
 
         /**
-         * The total number of internal on-disk temporary tables created by occurrences of the
-         * statement.
-         *
+         * The total number of internal on-disk temporary tables created by occurrences of the statement.
          * @param tmpDiskTables the value to set
          * @return this builder
-         */
+         **/
         public Builder tmpDiskTables(Long tmpDiskTables) {
             this.tmpDiskTables = tmpDiskTables;
             this.__explicitlySet__.add("tmpDiskTables");
             return this;
         }
         /**
-         * The total number of internal in-memory temporary tables created by occurrences of the
-         * statement Count
-         */
+         * The total number of internal in-memory temporary tables created by occurrences of the statement Count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tmpTables")
         private Long tmpTables;
 
         /**
-         * The total number of internal in-memory temporary tables created by occurrences of the
-         * statement Count
-         *
+         * The total number of internal in-memory temporary tables created by occurrences of the statement Count
          * @param tmpTables the value to set
          * @return this builder
-         */
+         **/
         public Builder tmpTables(Long tmpTables) {
             this.tmpTables = tmpTables;
             this.__explicitlySet__.add("tmpTables");
             return this;
         }
         /**
-         * The total number of joins that perform table scans because they do not use indexes by
-         * occurrences of the statement. If this value is not 0
-         */
+         * The total number of joins that perform table scans because they do not use indexes by occurrences of the statement. If this value is not 0
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectFullJoin")
         private Long selectFullJoin;
 
         /**
-         * The total number of joins that perform table scans because they do not use indexes by
-         * occurrences of the statement. If this value is not 0
-         *
+         * The total number of joins that perform table scans because they do not use indexes by occurrences of the statement. If this value is not 0
          * @param selectFullJoin the value to set
          * @return this builder
-         */
+         **/
         public Builder selectFullJoin(Long selectFullJoin) {
             this.selectFullJoin = selectFullJoin;
             this.__explicitlySet__.add("selectFullJoin");
             return this;
         }
         /**
-         * The total number of joins that used a range search on a reference table by occurrences of
-         * the statement
-         */
+         * The total number of joins that used a range search on a reference table by occurrences of the statement
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectFullRangeJoin")
         private Long selectFullRangeJoin;
 
         /**
-         * The total number of joins that used a range search on a reference table by occurrences of
-         * the statement
-         *
+         * The total number of joins that used a range search on a reference table by occurrences of the statement
          * @param selectFullRangeJoin the value to set
          * @return this builder
-         */
+         **/
         public Builder selectFullRangeJoin(Long selectFullRangeJoin) {
             this.selectFullRangeJoin = selectFullRangeJoin;
             this.__explicitlySet__.add("selectFullRangeJoin");
             return this;
         }
         /**
-         * The total number of joins that used ranges on the first table by occurrences of the
-         * statement. This is normally not a critical issue even if the value is quite large. Count
-         */
+         * The total number of joins that used ranges on the first table by occurrences of the statement. This is normally not a critical issue even if the value is quite large. Count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectRange")
         private Long selectRange;
 
         /**
-         * The total number of joins that used ranges on the first table by occurrences of the
-         * statement. This is normally not a critical issue even if the value is quite large. Count
-         *
+         * The total number of joins that used ranges on the first table by occurrences of the statement. This is normally not a critical issue even if the value is quite large. Count
          * @param selectRange the value to set
          * @return this builder
-         */
+         **/
         public Builder selectRange(Long selectRange) {
             this.selectRange = selectRange;
             this.__explicitlySet__.add("selectRange");
             return this;
         }
         /**
-         * The total number of joins without keys that check for key usage after each row by
-         * occurrences of the statement. If this is not 0
-         */
+         * The total number of joins without keys that check for key usage after each row by occurrences of the statement. If this is not 0
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectRangeCheck")
         private Long selectRangeCheck;
 
         /**
-         * The total number of joins without keys that check for key usage after each row by
-         * occurrences of the statement. If this is not 0
-         *
+         * The total number of joins without keys that check for key usage after each row by occurrences of the statement. If this is not 0
          * @param selectRangeCheck the value to set
          * @return this builder
-         */
+         **/
         public Builder selectRangeCheck(Long selectRangeCheck) {
             this.selectRangeCheck = selectRangeCheck;
             this.__explicitlySet__.add("selectRangeCheck");
             return this;
         }
         /**
-         * The total number of joins that did a full scan of the first table by occurrences of the
-         * statement Count
-         */
+         * The total number of joins that did a full scan of the first table by occurrences of the statement Count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("selectScan")
         private Long selectScan;
 
         /**
-         * The total number of joins that did a full scan of the first table by occurrences of the
-         * statement Count
-         *
+         * The total number of joins that did a full scan of the first table by occurrences of the statement Count
          * @param selectScan the value to set
          * @return this builder
-         */
+         **/
         public Builder selectScan(Long selectScan) {
             this.selectScan = selectScan;
             this.__explicitlySet__.add("selectScan");
             return this;
         }
-        /** The total number of sort merge passes by occurrences of the statement. */
+        /**
+         * The total number of sort merge passes by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortMergePasses")
         private Long sortMergePasses;
 
         /**
          * The total number of sort merge passes by occurrences of the statement.
-         *
          * @param sortMergePasses the value to set
          * @return this builder
-         */
+         **/
         public Builder sortMergePasses(Long sortMergePasses) {
             this.sortMergePasses = sortMergePasses;
             this.__explicitlySet__.add("sortMergePasses");
@@ -498,169 +492,163 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The total number of sorts that were done using ranges by occurrences of the statement.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortRange")
         private Long sortRange;
 
         /**
          * The total number of sorts that were done using ranges by occurrences of the statement.
-         *
          * @param sortRange the value to set
          * @return this builder
-         */
+         **/
         public Builder sortRange(Long sortRange) {
             this.sortRange = sortRange;
             this.__explicitlySet__.add("sortRange");
             return this;
         }
-        /** The total number of rows sorted by occurrences of the statement. */
+        /**
+         * The total number of rows sorted by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rowsSorted")
         private Long rowsSorted;
 
         /**
          * The total number of rows sorted by occurrences of the statement.
-         *
          * @param rowsSorted the value to set
          * @return this builder
-         */
+         **/
         public Builder rowsSorted(Long rowsSorted) {
             this.rowsSorted = rowsSorted;
             this.__explicitlySet__.add("rowsSorted");
             return this;
         }
         /**
-         * The total number of sorts that were done by scanning the table by occurrences of the
-         * statement.
-         */
+         * The total number of sorts that were done by scanning the table by occurrences of the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortScan")
         private Long sortScan;
 
         /**
-         * The total number of sorts that were done by scanning the table by occurrences of the
-         * statement.
-         *
+         * The total number of sorts that were done by scanning the table by occurrences of the statement.
          * @param sortScan the value to set
          * @return this builder
-         */
+         **/
         public Builder sortScan(Long sortScan) {
             this.sortScan = sortScan;
             this.__explicitlySet__.add("sortScan");
             return this;
         }
         /**
-         * The number of occurences of the statement which performed a table scan without using an
-         * index Count
-         */
+         * The number of occurences of the statement which performed a table scan without using an index Count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("noIndexUsedCount")
         private Long noIndexUsedCount;
 
         /**
-         * The number of occurences of the statement which performed a table scan without using an
-         * index Count
-         *
+         * The number of occurences of the statement which performed a table scan without using an index Count
          * @param noIndexUsedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder noIndexUsedCount(Long noIndexUsedCount) {
             this.noIndexUsedCount = noIndexUsedCount;
             this.__explicitlySet__.add("noIndexUsedCount");
             return this;
         }
         /**
-         * The number of occurences of the statement where the server found no good index to use
-         * Count
-         */
+         * The number of occurences of the statement where the server found no good index to use Count
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("noGoodIndexUsedCount")
         private Long noGoodIndexUsedCount;
 
         /**
-         * The number of occurences of the statement where the server found no good index to use
-         * Count
-         *
+         * The number of occurences of the statement where the server found no good index to use Count
          * @param noGoodIndexUsedCount the value to set
          * @return this builder
-         */
+         **/
         public Builder noGoodIndexUsedCount(Long noGoodIndexUsedCount) {
             this.noGoodIndexUsedCount = noGoodIndexUsedCount;
             this.__explicitlySet__.add("noGoodIndexUsedCount");
             return this;
         }
-        /** The total time spent on CPU (in picoseconds) for the current thread. */
+        /**
+         * The total time spent on CPU (in picoseconds) for the current thread.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuLatencyInPs")
         private Long cpuLatencyInPs;
 
         /**
          * The total time spent on CPU (in picoseconds) for the current thread.
-         *
          * @param cpuLatencyInPs the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuLatencyInPs(Long cpuLatencyInPs) {
             this.cpuLatencyInPs = cpuLatencyInPs;
             this.__explicitlySet__.add("cpuLatencyInPs");
             return this;
         }
-        /** The maximum amount of controlled memory (in bytes) used by the statement. */
+        /**
+         * The maximum amount of controlled memory (in bytes) used by the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemoryInBytes")
         private Long maxControlledMemoryInBytes;
 
         /**
          * The maximum amount of controlled memory (in bytes) used by the statement.
-         *
          * @param maxControlledMemoryInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder maxControlledMemoryInBytes(Long maxControlledMemoryInBytes) {
             this.maxControlledMemoryInBytes = maxControlledMemoryInBytes;
             this.__explicitlySet__.add("maxControlledMemoryInBytes");
             return this;
         }
-        /** The maximum amount of memory (in bytes) used by the statement. */
+        /**
+         * The maximum amount of memory (in bytes) used by the statement.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemoryInBytes")
         private Long maxTotalMemoryInBytes;
 
         /**
          * The maximum amount of memory (in bytes) used by the statement.
-         *
          * @param maxTotalMemoryInBytes the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTotalMemoryInBytes(Long maxTotalMemoryInBytes) {
             this.maxTotalMemoryInBytes = maxTotalMemoryInBytes;
             this.__explicitlySet__.add("maxTotalMemoryInBytes");
             return this;
         }
         /**
-         * The total number of times a query was processed on the secondary engine (HEATWAVE) for
-         * occurrences of this statement Count.
-         */
+         * The total number of times a query was processed on the secondary engine (HEATWAVE) for occurrences of this statement Count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("execCountSecondary")
         private Long execCountSecondary;
 
         /**
-         * The total number of times a query was processed on the secondary engine (HEATWAVE) for
-         * occurrences of this statement Count.
-         *
+         * The total number of times a query was processed on the secondary engine (HEATWAVE) for occurrences of this statement Count.
          * @param execCountSecondary the value to set
          * @return this builder
-         */
+         **/
         public Builder execCountSecondary(Long execCountSecondary) {
             this.execCountSecondary = execCountSecondary;
             this.__explicitlySet__.add("execCountSecondary");
             return this;
         }
         /**
-         * The time at which statement was first seen. Example: {@code "2023-01-16 08:04:31.533577"}
-         */
+         * The time at which statement was first seen.
+         * Example: {@code "2023-01-16 08:04:31.533577"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
         private java.util.Date timeFirstSeen;
 
         /**
-         * The time at which statement was first seen. Example: {@code "2023-01-16 08:04:31.533577"}
+         * The time at which statement was first seen.
+         * Example: {@code "2023-01-16 08:04:31.533577"}
          *
          * @param timeFirstSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFirstSeen(java.util.Date timeFirstSeen) {
             this.timeFirstSeen = timeFirstSeen;
             this.__explicitlySet__.add("timeFirstSeen");
@@ -669,7 +657,8 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
         /**
          * The time at which statement was most recently seen for all occurrences of the statement.
          * Example: {@code "2023-01-30 02:17:08.067961"}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
         private java.util.Date timeLastSeen;
 
@@ -679,7 +668,7 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param timeLastSeen the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSeen(java.util.Date timeLastSeen) {
             this.timeLastSeen = timeLastSeen;
             this.__explicitlySet__.add("timeLastSeen");
@@ -836,7 +825,9 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -846,467 +837,465 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Unique SQL ID Digest for a MySql Statement. Example: {@code
-     * "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
-     */
+     * Unique SQL ID Digest for a MySql Statement.
+     * Example: {@code "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("digest")
     private final String digest;
 
     /**
-     * Unique SQL ID Digest for a MySql Statement. Example: {@code
-     * "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
+     * Unique SQL ID Digest for a MySql Statement.
+     * Example: {@code "c20fcea11911be36651b7ca7bd3712d4ed9ac1134cee9c6620039e1fb13b5eff"}
      *
      * @return the value
-     */
+     **/
     public String getDigest() {
         return digest;
     }
 
-    /** Collection timestamp. Example: {@code "2020-03-31T00:00:00.000Z"} */
+    /**
+     * Collection timestamp.
+     * Example: {@code "2020-03-31T00:00:00.000Z"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Collection timestamp. Example: {@code "2020-03-31T00:00:00.000Z"}
+     * Collection timestamp.
+     * Example: {@code "2020-03-31T00:00:00.000Z"}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
 
-    /** Type of statement such as select, update or delete. */
+    /**
+     * Type of statement such as select, update or delete.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commandType")
     private final String commandType;
 
     /**
      * Type of statement such as select, update or delete.
-     *
      * @return the value
-     */
+     **/
     public String getCommandType() {
         return commandType;
     }
 
-    /** Total number of SQL statements used in collection ranking calculation. */
+    /**
+     * Total number of SQL statements used in collection ranking calculation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalRows")
     private final Long totalRows;
 
     /**
      * Total number of SQL statements used in collection ranking calculation.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalRows() {
         return totalRows;
     }
 
     /**
-     * Percent of SQL statements in the perf schema table relative to max or overflow count set
-     * in @@GLOBAL.performance_schema_digests_size.
-     */
+     * Percent of SQL statements in the perf schema table relative to max or overflow count set in @@GLOBAL.performance_schema_digests_size.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("perfSchemaUsedPercent")
     private final Long perfSchemaUsedPercent;
 
     /**
-     * Percent of SQL statements in the perf schema table relative to max or overflow count set
-     * in @@GLOBAL.performance_schema_digests_size.
-     *
+     * Percent of SQL statements in the perf schema table relative to max or overflow count set in @@GLOBAL.performance_schema_digests_size.
      * @return the value
-     */
+     **/
     public Long getPerfSchemaUsedPercent() {
         return perfSchemaUsedPercent;
     }
 
-    /** Name of Database Schema. Example: {@code "performance_schema"} */
+    /**
+     * Name of Database Schema.
+     * Example: {@code "performance_schema"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemaName")
     private final String schemaName;
 
     /**
-     * Name of Database Schema. Example: {@code "performance_schema"}
+     * Name of Database Schema.
+     * Example: {@code "performance_schema"}
      *
      * @return the value
-     */
+     **/
     public String getSchemaName() {
         return schemaName;
     }
 
-    /** The total number of times the statement has executed. */
+    /**
+     * The total number of times the statement has executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("execCount")
     private final Long execCount;
 
     /**
      * The total number of times the statement has executed.
-     *
      * @return the value
-     */
+     **/
     public Long getExecCount() {
         return execCount;
     }
 
-    /** The total wait time (in picoseconds) of timed occurrences of the statement. */
+    /**
+     * The total wait time (in picoseconds) of timed occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalLatencyInPs")
     private final Long totalLatencyInPs;
 
     /**
      * The total wait time (in picoseconds) of timed occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getTotalLatencyInPs() {
         return totalLatencyInPs;
     }
 
-    /** The total time waiting (in picoseconds) for locks by timed occurrences of the statement. */
+    /**
+     * The total time waiting (in picoseconds) for locks by timed occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lockLatencyInPs")
     private final Long lockLatencyInPs;
 
     /**
      * The total time waiting (in picoseconds) for locks by timed occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getLockLatencyInPs() {
         return lockLatencyInPs;
     }
 
-    /** The total number of errors produced by occurrences of the statement. */
+    /**
+     * The total number of errors produced by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errCount")
     private final Long errCount;
 
     /**
      * The total number of errors produced by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getErrCount() {
         return errCount;
     }
 
-    /** The total number of warnings produced by occurrences of the statement. */
+    /**
+     * The total number of warnings produced by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warnCount")
     private final Long warnCount;
 
     /**
      * The total number of warnings produced by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getWarnCount() {
         return warnCount;
     }
 
-    /** The total number of rows affected by occurrences of the statement. */
+    /**
+     * The total number of rows affected by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowsAffected")
     private final Long rowsAffected;
 
     /**
      * The total number of rows affected by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getRowsAffected() {
         return rowsAffected;
     }
 
-    /** The total number of rows returned by occurrences of the statement. */
+    /**
+     * The total number of rows returned by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowsSent")
     private final Long rowsSent;
 
     /**
      * The total number of rows returned by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getRowsSent() {
         return rowsSent;
     }
 
-    /** The total number of rows read from storage engines by occurrences of the statement. */
+    /**
+     * The total number of rows read from storage engines by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowsExamined")
     private final Long rowsExamined;
 
     /**
      * The total number of rows read from storage engines by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getRowsExamined() {
         return rowsExamined;
     }
 
     /**
-     * The total number of internal on-disk temporary tables created by occurrences of the
-     * statement.
-     */
+     * The total number of internal on-disk temporary tables created by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tmpDiskTables")
     private final Long tmpDiskTables;
 
     /**
-     * The total number of internal on-disk temporary tables created by occurrences of the
-     * statement.
-     *
+     * The total number of internal on-disk temporary tables created by occurrences of the statement.
      * @return the value
-     */
+     **/
     public Long getTmpDiskTables() {
         return tmpDiskTables;
     }
 
     /**
-     * The total number of internal in-memory temporary tables created by occurrences of the
-     * statement Count
-     */
+     * The total number of internal in-memory temporary tables created by occurrences of the statement Count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tmpTables")
     private final Long tmpTables;
 
     /**
-     * The total number of internal in-memory temporary tables created by occurrences of the
-     * statement Count
-     *
+     * The total number of internal in-memory temporary tables created by occurrences of the statement Count
      * @return the value
-     */
+     **/
     public Long getTmpTables() {
         return tmpTables;
     }
 
     /**
-     * The total number of joins that perform table scans because they do not use indexes by
-     * occurrences of the statement. If this value is not 0
-     */
+     * The total number of joins that perform table scans because they do not use indexes by occurrences of the statement. If this value is not 0
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectFullJoin")
     private final Long selectFullJoin;
 
     /**
-     * The total number of joins that perform table scans because they do not use indexes by
-     * occurrences of the statement. If this value is not 0
-     *
+     * The total number of joins that perform table scans because they do not use indexes by occurrences of the statement. If this value is not 0
      * @return the value
-     */
+     **/
     public Long getSelectFullJoin() {
         return selectFullJoin;
     }
 
     /**
-     * The total number of joins that used a range search on a reference table by occurrences of the
-     * statement
-     */
+     * The total number of joins that used a range search on a reference table by occurrences of the statement
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectFullRangeJoin")
     private final Long selectFullRangeJoin;
 
     /**
-     * The total number of joins that used a range search on a reference table by occurrences of the
-     * statement
-     *
+     * The total number of joins that used a range search on a reference table by occurrences of the statement
      * @return the value
-     */
+     **/
     public Long getSelectFullRangeJoin() {
         return selectFullRangeJoin;
     }
 
     /**
-     * The total number of joins that used ranges on the first table by occurrences of the
-     * statement. This is normally not a critical issue even if the value is quite large. Count
-     */
+     * The total number of joins that used ranges on the first table by occurrences of the statement. This is normally not a critical issue even if the value is quite large. Count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectRange")
     private final Long selectRange;
 
     /**
-     * The total number of joins that used ranges on the first table by occurrences of the
-     * statement. This is normally not a critical issue even if the value is quite large. Count
-     *
+     * The total number of joins that used ranges on the first table by occurrences of the statement. This is normally not a critical issue even if the value is quite large. Count
      * @return the value
-     */
+     **/
     public Long getSelectRange() {
         return selectRange;
     }
 
     /**
-     * The total number of joins without keys that check for key usage after each row by occurrences
-     * of the statement. If this is not 0
-     */
+     * The total number of joins without keys that check for key usage after each row by occurrences of the statement. If this is not 0
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectRangeCheck")
     private final Long selectRangeCheck;
 
     /**
-     * The total number of joins without keys that check for key usage after each row by occurrences
-     * of the statement. If this is not 0
-     *
+     * The total number of joins without keys that check for key usage after each row by occurrences of the statement. If this is not 0
      * @return the value
-     */
+     **/
     public Long getSelectRangeCheck() {
         return selectRangeCheck;
     }
 
     /**
-     * The total number of joins that did a full scan of the first table by occurrences of the
-     * statement Count
-     */
+     * The total number of joins that did a full scan of the first table by occurrences of the statement Count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("selectScan")
     private final Long selectScan;
 
     /**
-     * The total number of joins that did a full scan of the first table by occurrences of the
-     * statement Count
-     *
+     * The total number of joins that did a full scan of the first table by occurrences of the statement Count
      * @return the value
-     */
+     **/
     public Long getSelectScan() {
         return selectScan;
     }
 
-    /** The total number of sort merge passes by occurrences of the statement. */
+    /**
+     * The total number of sort merge passes by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortMergePasses")
     private final Long sortMergePasses;
 
     /**
      * The total number of sort merge passes by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getSortMergePasses() {
         return sortMergePasses;
     }
 
-    /** The total number of sorts that were done using ranges by occurrences of the statement. */
+    /**
+     * The total number of sorts that were done using ranges by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortRange")
     private final Long sortRange;
 
     /**
      * The total number of sorts that were done using ranges by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getSortRange() {
         return sortRange;
     }
 
-    /** The total number of rows sorted by occurrences of the statement. */
+    /**
+     * The total number of rows sorted by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rowsSorted")
     private final Long rowsSorted;
 
     /**
      * The total number of rows sorted by occurrences of the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getRowsSorted() {
         return rowsSorted;
     }
 
     /**
-     * The total number of sorts that were done by scanning the table by occurrences of the
-     * statement.
-     */
+     * The total number of sorts that were done by scanning the table by occurrences of the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortScan")
     private final Long sortScan;
 
     /**
-     * The total number of sorts that were done by scanning the table by occurrences of the
-     * statement.
-     *
+     * The total number of sorts that were done by scanning the table by occurrences of the statement.
      * @return the value
-     */
+     **/
     public Long getSortScan() {
         return sortScan;
     }
 
     /**
-     * The number of occurences of the statement which performed a table scan without using an index
-     * Count
-     */
+     * The number of occurences of the statement which performed a table scan without using an index Count
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("noIndexUsedCount")
     private final Long noIndexUsedCount;
 
     /**
-     * The number of occurences of the statement which performed a table scan without using an index
-     * Count
-     *
+     * The number of occurences of the statement which performed a table scan without using an index Count
      * @return the value
-     */
+     **/
     public Long getNoIndexUsedCount() {
         return noIndexUsedCount;
     }
 
     /**
      * The number of occurences of the statement where the server found no good index to use Count
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("noGoodIndexUsedCount")
     private final Long noGoodIndexUsedCount;
 
     /**
      * The number of occurences of the statement where the server found no good index to use Count
-     *
      * @return the value
-     */
+     **/
     public Long getNoGoodIndexUsedCount() {
         return noGoodIndexUsedCount;
     }
 
-    /** The total time spent on CPU (in picoseconds) for the current thread. */
+    /**
+     * The total time spent on CPU (in picoseconds) for the current thread.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuLatencyInPs")
     private final Long cpuLatencyInPs;
 
     /**
      * The total time spent on CPU (in picoseconds) for the current thread.
-     *
      * @return the value
-     */
+     **/
     public Long getCpuLatencyInPs() {
         return cpuLatencyInPs;
     }
 
-    /** The maximum amount of controlled memory (in bytes) used by the statement. */
+    /**
+     * The maximum amount of controlled memory (in bytes) used by the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemoryInBytes")
     private final Long maxControlledMemoryInBytes;
 
     /**
      * The maximum amount of controlled memory (in bytes) used by the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getMaxControlledMemoryInBytes() {
         return maxControlledMemoryInBytes;
     }
 
-    /** The maximum amount of memory (in bytes) used by the statement. */
+    /**
+     * The maximum amount of memory (in bytes) used by the statement.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemoryInBytes")
     private final Long maxTotalMemoryInBytes;
 
     /**
      * The maximum amount of memory (in bytes) used by the statement.
-     *
      * @return the value
-     */
+     **/
     public Long getMaxTotalMemoryInBytes() {
         return maxTotalMemoryInBytes;
     }
 
     /**
-     * The total number of times a query was processed on the secondary engine (HEATWAVE) for
-     * occurrences of this statement Count.
-     */
+     * The total number of times a query was processed on the secondary engine (HEATWAVE) for occurrences of this statement Count.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("execCountSecondary")
     private final Long execCountSecondary;
 
     /**
-     * The total number of times a query was processed on the secondary engine (HEATWAVE) for
-     * occurrences of this statement Count.
-     *
+     * The total number of times a query was processed on the secondary engine (HEATWAVE) for occurrences of this statement Count.
      * @return the value
-     */
+     **/
     public Long getExecCountSecondary() {
         return execCountSecondary;
     }
 
-    /** The time at which statement was first seen. Example: {@code "2023-01-16 08:04:31.533577"} */
+    /**
+     * The time at which statement was first seen.
+     * Example: {@code "2023-01-16 08:04:31.533577"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstSeen")
     private final java.util.Date timeFirstSeen;
 
     /**
-     * The time at which statement was first seen. Example: {@code "2023-01-16 08:04:31.533577"}
+     * The time at which statement was first seen.
+     * Example: {@code "2023-01-16 08:04:31.533577"}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFirstSeen() {
         return timeFirstSeen;
     }
@@ -1314,7 +1303,8 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
     /**
      * The time at which statement was most recently seen for all occurrences of the statement.
      * Example: {@code "2023-01-30 02:17:08.067961"}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSeen")
     private final java.util.Date timeLastSeen;
 
@@ -1323,7 +1313,7 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
      * Example: {@code "2023-01-30 02:17:08.067961"}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSeen() {
         return timeLastSeen;
     }
@@ -1335,7 +1325,6 @@ public final class MySqlSqlStats extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

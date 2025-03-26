@@ -5,22 +5,19 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Describes volume attachment details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Describes volume attachment details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = VolumeAttachment.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VolumeAttachment
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VolumeAttachment extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isDeleteOnTermination",
@@ -45,76 +42,81 @@ public final class VolumeAttachment
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Indicates whether the EBS volume is deleted on instance termination. */
+        /**
+         * Indicates whether the EBS volume is deleted on instance termination.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDeleteOnTermination")
         private Boolean isDeleteOnTermination;
 
         /**
          * Indicates whether the EBS volume is deleted on instance termination.
-         *
          * @param isDeleteOnTermination the value to set
          * @return this builder
-         */
+         **/
         public Builder isDeleteOnTermination(Boolean isDeleteOnTermination) {
             this.isDeleteOnTermination = isDeleteOnTermination;
             this.__explicitlySet__.add("isDeleteOnTermination");
             return this;
         }
-        /** The device name. */
+        /**
+         * The device name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("device")
         private String device;
 
         /**
          * The device name.
-         *
          * @param device the value to set
          * @return this builder
-         */
+         **/
         public Builder device(String device) {
             this.device = device;
             this.__explicitlySet__.add("device");
             return this;
         }
-        /** The ID of the instance. */
+        /**
+         * The ID of the instance.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceKey")
         private String instanceKey;
 
         /**
          * The ID of the instance.
-         *
          * @param instanceKey the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceKey(String instanceKey) {
             this.instanceKey = instanceKey;
             this.__explicitlySet__.add("instanceKey");
             return this;
         }
-        /** The attachment state of the volume. */
+        /**
+         * The attachment state of the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The attachment state of the volume.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The ID of the volume. */
+        /**
+         * The ID of the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("volumeKey")
         private String volumeKey;
 
         /**
          * The ID of the volume.
-         *
          * @param volumeKey the value to set
          * @return this builder
-         */
+         **/
         public Builder volumeKey(String volumeKey) {
             this.volumeKey = volumeKey;
             this.__explicitlySet__.add("volumeKey");
@@ -159,7 +161,9 @@ public final class VolumeAttachment
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,67 +172,72 @@ public final class VolumeAttachment
         return new Builder().copy(this);
     }
 
-    /** Indicates whether the EBS volume is deleted on instance termination. */
+    /**
+     * Indicates whether the EBS volume is deleted on instance termination.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDeleteOnTermination")
     private final Boolean isDeleteOnTermination;
 
     /**
      * Indicates whether the EBS volume is deleted on instance termination.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDeleteOnTermination() {
         return isDeleteOnTermination;
     }
 
-    /** The device name. */
+    /**
+     * The device name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("device")
     private final String device;
 
     /**
      * The device name.
-     *
      * @return the value
-     */
+     **/
     public String getDevice() {
         return device;
     }
 
-    /** The ID of the instance. */
+    /**
+     * The ID of the instance.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceKey")
     private final String instanceKey;
 
     /**
      * The ID of the instance.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceKey() {
         return instanceKey;
     }
 
-    /** The attachment state of the volume. */
+    /**
+     * The attachment state of the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The attachment state of the volume.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The ID of the volume. */
+    /**
+     * The ID of the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("volumeKey")
     private final String volumeKey;
 
     /**
      * The ID of the volume.
-     *
      * @return the value
-     */
+     **/
     public String getVolumeKey() {
         return volumeKey;
     }
@@ -240,7 +249,6 @@ public final class VolumeAttachment
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Monitoring Template message format. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MessageFormat implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Monitoring Template message format.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MessageFormat {
     Raw("RAW"),
     PrettyJson("PRETTY_JSON"),
     OnsOptimized("ONS_OPTIMIZED"),

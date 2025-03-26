@@ -6,24 +6,21 @@ package com.oracle.bmc.core.model;
 
 /**
  * For a flexible shape, the number of OCPUs available for instances that use this shape.
+ * <p>
+ * If this field is null, then this shape has a fixed number of OCPUs equal to {@code ocpus}.
  *
- * <p>If this field is null, then this shape has a fixed number of OCPUs equal to {@code ocpus}.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ShapeOcpuOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ShapeOcpuOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ShapeOcpuOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"min", "max", "maxPerNumaNode"})
     public ShapeOcpuOptions(Float min, Float max, Float maxPerNumaNode) {
@@ -35,7 +32,10 @@ public final class ShapeOcpuOptions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The minimum number of OCPUs. */
+        /**
+         * The minimum number of OCPUs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("min")
         private Float min;
 
@@ -44,13 +44,16 @@ public final class ShapeOcpuOptions
          *
          * @param min the value to set
          * @return this builder
-         */
+         **/
         public Builder min(Float min) {
             this.min = min;
             this.__explicitlySet__.add("min");
             return this;
         }
-        /** The maximum number of OCPUs. */
+        /**
+         * The maximum number of OCPUs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("max")
         private Float max;
 
@@ -59,13 +62,16 @@ public final class ShapeOcpuOptions
          *
          * @param max the value to set
          * @return this builder
-         */
+         **/
         public Builder max(Float max) {
             this.max = max;
             this.__explicitlySet__.add("max");
             return this;
         }
-        /** The maximum number of cores available per NUMA node. */
+        /**
+         * The maximum number of cores available per NUMA node.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNode")
         private Float maxPerNumaNode;
 
@@ -74,7 +80,7 @@ public final class ShapeOcpuOptions
          *
          * @param maxPerNumaNode the value to set
          * @return this builder
-         */
+         **/
         public Builder maxPerNumaNode(Float maxPerNumaNode) {
             this.maxPerNumaNode = maxPerNumaNode;
             this.__explicitlySet__.add("maxPerNumaNode");
@@ -107,7 +113,9 @@ public final class ShapeOcpuOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,7 +124,10 @@ public final class ShapeOcpuOptions
         return new Builder().copy(this);
     }
 
-    /** The minimum number of OCPUs. */
+    /**
+     * The minimum number of OCPUs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("min")
     private final Float min;
 
@@ -124,12 +135,15 @@ public final class ShapeOcpuOptions
      * The minimum number of OCPUs.
      *
      * @return the value
-     */
+     **/
     public Float getMin() {
         return min;
     }
 
-    /** The maximum number of OCPUs. */
+    /**
+     * The maximum number of OCPUs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("max")
     private final Float max;
 
@@ -137,12 +151,15 @@ public final class ShapeOcpuOptions
      * The maximum number of OCPUs.
      *
      * @return the value
-     */
+     **/
     public Float getMax() {
         return max;
     }
 
-    /** The maximum number of cores available per NUMA node. */
+    /**
+     * The maximum number of cores available per NUMA node.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxPerNumaNode")
     private final Float maxPerNumaNode;
 
@@ -150,7 +167,7 @@ public final class ShapeOcpuOptions
      * The maximum number of cores available per NUMA node.
      *
      * @return the value
-     */
+     **/
     public Float getMaxPerNumaNode() {
         return maxPerNumaNode;
     }
@@ -162,7 +179,6 @@ public final class ShapeOcpuOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

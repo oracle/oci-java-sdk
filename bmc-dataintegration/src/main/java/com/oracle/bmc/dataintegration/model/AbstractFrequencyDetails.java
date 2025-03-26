@@ -5,46 +5,50 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The model that holds the frequency details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The model that holds the frequency details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType",
-        defaultImpl = AbstractFrequencyDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType",
+    defaultImpl = AbstractFrequencyDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MonthlyFrequencyDetails.class,
-            name = "MONTHLY"),
+        value = MonthlyFrequencyDetails.class,
+        name = "MONTHLY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CustomFrequencyDetails.class,
-            name = "CUSTOM"),
+        value = CustomFrequencyDetails.class,
+        name = "CUSTOM"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DailyFrequencyDetails.class,
-            name = "DAILY"),
+        value = DailyFrequencyDetails.class,
+        name = "DAILY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = WeeklyFrequencyDetails.class,
-            name = "WEEKLY"),
+        value = WeeklyFrequencyDetails.class,
+        name = "WEEKLY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MonthlyRuleFrequencyDetails.class,
-            name = "MONTHLY_RULE"),
+        value = MonthlyRuleFrequencyDetails.class,
+        name = "MONTHLY_RULE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HourlyFrequencyDetails.class,
-            name = "HOURLY")
+        value = HourlyFrequencyDetails.class,
+        name = "HOURLY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class AbstractFrequencyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class AbstractFrequencyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"frequency"})
     protected AbstractFrequencyDetails(Frequency frequency) {
@@ -52,8 +56,10 @@ public class AbstractFrequencyDetails
         this.frequency = frequency;
     }
 
-    /** the frequency of the schedule. */
-    public enum Frequency implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * the frequency of the schedule.
+     **/
+    public enum Frequency {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
@@ -61,8 +67,8 @@ public class AbstractFrequencyDetails
         Custom("CUSTOM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -101,15 +107,16 @@ public class AbstractFrequencyDetails
             return UnknownEnumValue;
         }
     };
-    /** the frequency of the schedule. */
+    /**
+     * the frequency of the schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequency")
     private final Frequency frequency;
 
     /**
      * the frequency of the schedule.
-     *
      * @return the value
-     */
+     **/
     public Frequency getFrequency() {
         return frequency;
     }
@@ -121,7 +128,6 @@ public class AbstractFrequencyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -156,8 +162,10 @@ public class AbstractFrequencyDetails
         return result;
     }
 
-    /** The type of the model */
-    public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of the model
+     **/
+    public enum ModelType {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
@@ -166,8 +174,8 @@ public class AbstractFrequencyDetails
         Custom("CUSTOM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

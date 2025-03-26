@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of an Oracle DB node discovered in an external DB system discovery run. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of an Oracle DB node discovered in an external DB system discovery run.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalDbNode.Builder.class)
+    builder = DiscoveredExternalDbNode.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalDbNode extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -90,46 +90,49 @@ public final class DiscoveredExternalDbNode extends DiscoveredExternalDbSystemCo
             this.__explicitlySet__.add("associatedComponents");
             return this;
         }
-        /** The name of the host on which the ASM instance is running. */
+        /**
+         * The name of the host on which the ASM instance is running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * The name of the host on which the ASM instance is running.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** The number of CPU cores available on the DB node. */
+        /**
+         * The number of CPU cores available on the DB node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Float cpuCoreCount;
 
         /**
          * The number of CPU cores available on the DB node.
-         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCoreCount(Float cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /** The total memory in gigabytes (GB) on the DB node. */
+        /**
+         * The total memory in gigabytes (GB) on the DB node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Float memorySizeInGBs;
 
         /**
          * The total memory in gigabytes (GB) on the DB node.
-         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySizeInGBs(Float memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
@@ -207,7 +210,9 @@ public final class DiscoveredExternalDbNode extends DiscoveredExternalDbSystemCo
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -243,41 +248,44 @@ public final class DiscoveredExternalDbNode extends DiscoveredExternalDbSystemCo
         this.connector = connector;
     }
 
-    /** The name of the host on which the ASM instance is running. */
+    /**
+     * The name of the host on which the ASM instance is running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * The name of the host on which the ASM instance is running.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** The number of CPU cores available on the DB node. */
+    /**
+     * The number of CPU cores available on the DB node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Float cpuCoreCount;
 
     /**
      * The number of CPU cores available on the DB node.
-     *
      * @return the value
-     */
+     **/
     public Float getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /** The total memory in gigabytes (GB) on the DB node. */
+    /**
+     * The total memory in gigabytes (GB) on the DB node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Float memorySizeInGBs;
 
     /**
      * The total memory in gigabytes (GB) on the DB node.
-     *
      * @return the value
-     */
+     **/
     public Float getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
@@ -296,7 +304,6 @@ public final class DiscoveredExternalDbNode extends DiscoveredExternalDbSystemCo
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

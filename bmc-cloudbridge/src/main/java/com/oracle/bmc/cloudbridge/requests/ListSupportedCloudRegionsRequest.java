@@ -6,46 +6,45 @@ package com.oracle.bmc.cloudbridge.requests;
 
 import com.oracle.bmc.cloudbridge.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListSupportedCloudRegionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListSupportedCloudRegionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListSupportedCloudRegionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSupportedCloudRegionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public class ListSupportedCloudRegionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The asset source type. */
+    /**
+     * The asset source type.
+     */
     private com.oracle.bmc.cloudbridge.model.AssetSourceType assetSourceType;
 
-    /** The asset source type. */
+    /**
+     * The asset source type.
+     */
     public com.oracle.bmc.cloudbridge.model.AssetSourceType getAssetSourceType() {
         return assetSourceType;
     }
     /**
-     * A filter to return only supported cloud regions which name contains given nameContains as
-     * sub-string.
+     * A filter to return only supported cloud regions which name contains given nameContains as sub-string.
      */
     private String nameContains;
 
     /**
-     * A filter to return only supported cloud regions which name contains given nameContains as
-     * sub-string.
+     * A filter to return only supported cloud regions which name contains given nameContains as sub-string.
      */
     public String getNameContains() {
         return nameContains;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. By default, name is in ascending
-     * order.
+     * The field to sort by. Only one sort order may be provided. By default, name is in ascending order.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. By default, name is in ascending
-     * order.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. By default, name is in ascending order.
+     *
+     **/
+    public enum SortBy {
         Name("name"),
         ;
 
@@ -78,43 +77,53 @@ public class ListSupportedCloudRegionsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. By default, name is in ascending
-     * order.
+     * The field to sort by. Only one sort order may be provided. By default, name is in ascending order.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.cloudbridge.model.SortOrders getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -122,15 +131,17 @@ public class ListSupportedCloudRegionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSupportedCloudRegionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The asset source type. */
+        /**
+         * The asset source type.
+         */
         private com.oracle.bmc.cloudbridge.model.AssetSourceType assetSourceType = null;
 
         /**
          * The asset source type.
-         *
          * @param assetSourceType the value to set
          * @return this builder instance
          */
@@ -141,15 +152,12 @@ public class ListSupportedCloudRegionsRequest
         }
 
         /**
-         * A filter to return only supported cloud regions which name contains given nameContains as
-         * sub-string.
+         * A filter to return only supported cloud regions which name contains given nameContains as sub-string.
          */
         private String nameContains = null;
 
         /**
-         * A filter to return only supported cloud regions which name contains given nameContains as
-         * sub-string.
-         *
+         * A filter to return only supported cloud regions which name contains given nameContains as sub-string.
          * @param nameContains the value to set
          * @return this builder instance
          */
@@ -159,14 +167,13 @@ public class ListSupportedCloudRegionsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. By default, name is in
-         * ascending order.
+         * The field to sort by. Only one sort order may be provided. By default, name is in ascending order.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. By default, name is in
-         * ascending order.
+         * The field to sort by. Only one sort order may be provided. By default, name is in ascending order.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -176,12 +183,13 @@ public class ListSupportedCloudRegionsRequest
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.cloudbridge.model.SortOrders sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -190,12 +198,13 @@ public class ListSupportedCloudRegionsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -205,15 +214,12 @@ public class ListSupportedCloudRegionsRequest
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
-         *
+         * A token representing the position at which to start retrieving results. This must come from the {@code opc-next-page} header field of a previous response.
          * @param page the value to set
          * @return this builder instance
          */
@@ -222,12 +228,13 @@ public class ListSupportedCloudRegionsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -238,19 +245,18 @@ public class ListSupportedCloudRegionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -262,7 +268,6 @@ public class ListSupportedCloudRegionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSupportedCloudRegionsRequest o) {
@@ -281,11 +286,10 @@ public class ListSupportedCloudRegionsRequest
         /**
          * Build the instance of ListSupportedCloudRegionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSupportedCloudRegionsRequest
          */
@@ -299,8 +303,7 @@ public class ListSupportedCloudRegionsRequest
         /**
          * Build the instance of ListSupportedCloudRegionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSupportedCloudRegionsRequest
@@ -315,14 +318,12 @@ public class ListSupportedCloudRegionsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListSupportedCloudRegionsRequest(assetSourceType, nameContains, sortBy,
-            // sortOrder, limit, page, opcRequestId);
+            // new ListSupportedCloudRegionsRequest(assetSourceType, nameContains, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -338,7 +339,6 @@ public class ListSupportedCloudRegionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.osmanagement.model;
 
 /**
- * Summary information pertaining to a module stream provided by a software source <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+ * Summary information pertaining to a module stream provided by a software source
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModuleStreamSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ModuleStreamSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ModuleStreamSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ModuleStreamSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"moduleName", "streamName", "softwareSourceId"})
     public ModuleStreamSummary(String moduleName, String streamName, String softwareSourceId) {
@@ -33,7 +31,10 @@ public final class ModuleStreamSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the module that contains the stream. */
+        /**
+         * The name of the module that contains the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
         private String moduleName;
 
@@ -42,13 +43,16 @@ public final class ModuleStreamSummary
          *
          * @param moduleName the value to set
          * @return this builder
-         */
+         **/
         public Builder moduleName(String moduleName) {
             this.moduleName = moduleName;
             this.__explicitlySet__.add("moduleName");
             return this;
         }
-        /** The name of the stream. */
+        /**
+         * The name of the stream.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("streamName")
         private String streamName;
 
@@ -57,22 +61,23 @@ public final class ModuleStreamSummary
          *
          * @param streamName the value to set
          * @return this builder
-         */
+         **/
         public Builder streamName(String streamName) {
             this.streamName = streamName;
             this.__explicitlySet__.add("streamName");
             return this;
         }
-        /** The OCID of the software source that provides this module stream. */
+        /**
+         * The OCID of the software source that provides this module stream.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
         private String softwareSourceId;
 
         /**
          * The OCID of the software source that provides this module stream.
-         *
          * @param softwareSourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareSourceId(String softwareSourceId) {
             this.softwareSourceId = softwareSourceId;
             this.__explicitlySet__.add("softwareSourceId");
@@ -107,7 +112,9 @@ public final class ModuleStreamSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,7 +123,10 @@ public final class ModuleStreamSummary
         return new Builder().copy(this);
     }
 
-    /** The name of the module that contains the stream. */
+    /**
+     * The name of the module that contains the stream.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("moduleName")
     private final String moduleName;
 
@@ -124,12 +134,15 @@ public final class ModuleStreamSummary
      * The name of the module that contains the stream.
      *
      * @return the value
-     */
+     **/
     public String getModuleName() {
         return moduleName;
     }
 
-    /** The name of the stream. */
+    /**
+     * The name of the stream.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("streamName")
     private final String streamName;
 
@@ -137,20 +150,21 @@ public final class ModuleStreamSummary
      * The name of the stream.
      *
      * @return the value
-     */
+     **/
     public String getStreamName() {
         return streamName;
     }
 
-    /** The OCID of the software source that provides this module stream. */
+    /**
+     * The OCID of the software source that provides this module stream.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareSourceId")
     private final String softwareSourceId;
 
     /**
      * The OCID of the software source that provides this module stream.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareSourceId() {
         return softwareSourceId;
     }
@@ -162,7 +176,6 @@ public final class ModuleStreamSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

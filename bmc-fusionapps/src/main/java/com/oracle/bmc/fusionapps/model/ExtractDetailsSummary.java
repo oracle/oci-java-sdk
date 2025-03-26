@@ -5,23 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Details about where the data can be extracted from and password. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Details about where the data can be extracted from and password.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtractDetailsSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExtractDetailsSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExtractDetailsSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"parUrl", "password", "timeCreated"})
     public ExtractDetailsSummary(String parUrl, String password, java.util.Date timeCreated) {
@@ -33,46 +32,49 @@ public final class ExtractDetailsSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The parUrl to extract data extract from Object Storage bucket. */
+        /**
+         * The parUrl to extract data extract from Object Storage bucket.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parUrl")
         private String parUrl;
 
         /**
          * The parUrl to extract data extract from Object Storage bucket.
-         *
          * @param parUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder parUrl(String parUrl) {
             this.parUrl = parUrl;
             this.__explicitlySet__.add("parUrl");
             return this;
         }
-        /** The password to decrypt data extract. */
+        /**
+         * The password to decrypt data extract.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password to decrypt data extract.
-         *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-        /** The time when the data extract was requested. An RFC3339 formatted datetime string */
+        /**
+         * The time when the data extract was requested. An RFC3339 formatted datetime string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time when the data extract was requested. An RFC3339 formatted datetime string
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -106,7 +108,9 @@ public final class ExtractDetailsSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +119,44 @@ public final class ExtractDetailsSummary
         return new Builder().copy(this);
     }
 
-    /** The parUrl to extract data extract from Object Storage bucket. */
+    /**
+     * The parUrl to extract data extract from Object Storage bucket.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parUrl")
     private final String parUrl;
 
     /**
      * The parUrl to extract data extract from Object Storage bucket.
-     *
      * @return the value
-     */
+     **/
     public String getParUrl() {
         return parUrl;
     }
 
-    /** The password to decrypt data extract. */
+    /**
+     * The password to decrypt data extract.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password to decrypt data extract.
-     *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
-    /** The time when the data extract was requested. An RFC3339 formatted datetime string */
+    /**
+     * The time when the data extract was requested. An RFC3339 formatted datetime string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when the data extract was requested. An RFC3339 formatted datetime string
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -161,7 +168,6 @@ public final class ExtractDetailsSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

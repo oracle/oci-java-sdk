@@ -5,24 +5,24 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * The resource configuration for a container. The resource configuration determines the amount of
- * resources allocated to the container and the maximum allowed resources for a container. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * The resource configuration for a container. The resource configuration determines
+ * the amount of resources allocated to the container and the maximum allowed resources for a container.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ContainerResourceConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ContainerResourceConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ContainerResourceConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"vcpusLimit", "memoryLimitInGBs"})
     public ContainerResourceConfig(Float vcpusLimit, Float memoryLimitInGBs) {
@@ -35,47 +35,51 @@ public final class ContainerResourceConfig
     public static class Builder {
         /**
          * The maximum amount of CPUs that can be consumed by the container's process.
+         * <p>
+         * If you do not set a value, then the process
+         * may use all available CPU resources on the container instance.
+         * <p>
+         * CPU usage is defined in terms of logical CPUs. This means that the
+         * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
-         * <p>If you do not set a value, then the process may use all available CPU resources on the
-         * container instance.
-         *
-         * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible
-         * value on an E3 ContainerInstance with 1 OCPU is 2.0.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcpusLimit")
         private Float vcpusLimit;
 
         /**
          * The maximum amount of CPUs that can be consumed by the container's process.
-         *
-         * <p>If you do not set a value, then the process may use all available CPU resources on the
-         * container instance.
-         *
-         * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible
-         * value on an E3 ContainerInstance with 1 OCPU is 2.0.
+         * <p>
+         * If you do not set a value, then the process
+         * may use all available CPU resources on the container instance.
+         * <p>
+         * CPU usage is defined in terms of logical CPUs. This means that the
+         * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
          *
          * @param vcpusLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder vcpusLimit(Float vcpusLimit) {
             this.vcpusLimit = vcpusLimit;
             this.__explicitlySet__.add("vcpusLimit");
             return this;
         }
         /**
-         * The maximum amount of memory that can be consumed by the container's process. If you do
-         * not set a value, then the process may use all available memory on the instance.
-         */
+         * The maximum amount of memory that can be consumed by the container's
+         * process. If you do not set a value, then the process
+         * may use all available memory on the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
         private Float memoryLimitInGBs;
 
         /**
-         * The maximum amount of memory that can be consumed by the container's process. If you do
-         * not set a value, then the process may use all available memory on the instance.
+         * The maximum amount of memory that can be consumed by the container's
+         * process. If you do not set a value, then the process
+         * may use all available memory on the instance.
          *
          * @param memoryLimitInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryLimitInGBs(Float memoryLimitInGBs) {
             this.memoryLimitInGBs = memoryLimitInGBs;
             this.__explicitlySet__.add("memoryLimitInGBs");
@@ -106,7 +110,9 @@ public final class ContainerResourceConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +123,48 @@ public final class ContainerResourceConfig
 
     /**
      * The maximum amount of CPUs that can be consumed by the container's process.
+     * <p>
+     * If you do not set a value, then the process
+     * may use all available CPU resources on the container instance.
+     * <p>
+     * CPU usage is defined in terms of logical CPUs. This means that the
+     * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      *
-     * <p>If you do not set a value, then the process may use all available CPU resources on the
-     * container instance.
-     *
-     * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
-     * on an E3 ContainerInstance with 1 OCPU is 2.0.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcpusLimit")
     private final Float vcpusLimit;
 
     /**
      * The maximum amount of CPUs that can be consumed by the container's process.
-     *
-     * <p>If you do not set a value, then the process may use all available CPU resources on the
-     * container instance.
-     *
-     * <p>CPU usage is defined in terms of logical CPUs. This means that the maximum possible value
-     * on an E3 ContainerInstance with 1 OCPU is 2.0.
+     * <p>
+     * If you do not set a value, then the process
+     * may use all available CPU resources on the container instance.
+     * <p>
+     * CPU usage is defined in terms of logical CPUs. This means that the
+     * maximum possible value on an E3 ContainerInstance with 1 OCPU is 2.0.
      *
      * @return the value
-     */
+     **/
     public Float getVcpusLimit() {
         return vcpusLimit;
     }
 
     /**
-     * The maximum amount of memory that can be consumed by the container's process. If you do not
-     * set a value, then the process may use all available memory on the instance.
-     */
+     * The maximum amount of memory that can be consumed by the container's
+     * process. If you do not set a value, then the process
+     * may use all available memory on the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryLimitInGBs")
     private final Float memoryLimitInGBs;
 
     /**
-     * The maximum amount of memory that can be consumed by the container's process. If you do not
-     * set a value, then the process may use all available memory on the instance.
+     * The maximum amount of memory that can be consumed by the container's
+     * process. If you do not set a value, then the process
+     * may use all available memory on the instance.
      *
      * @return the value
-     */
+     **/
     public Float getMemoryLimitInGBs() {
         return memoryLimitInGBs;
     }
@@ -166,7 +176,6 @@ public final class ContainerResourceConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

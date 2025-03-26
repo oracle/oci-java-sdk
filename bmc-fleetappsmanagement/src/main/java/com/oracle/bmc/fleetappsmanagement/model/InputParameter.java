@@ -5,22 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Input Parameters for the Task <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Input Parameters for the Task
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = InputParameter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InputParameter
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InputParameter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"stepName", "arguments"})
     public InputParameter(String stepName, java.util.List<TaskArgument> arguments) {
@@ -31,31 +28,33 @@ public final class InputParameter
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** stepName for which the input parameters are provided */
+        /**
+         * stepName for which the input parameters are provided
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
          * stepName for which the input parameters are provided
-         *
          * @param stepName the value to set
          * @return this builder
-         */
+         **/
         public Builder stepName(String stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** Arguments for the Task */
+        /**
+         * Arguments for the Task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("arguments")
         private java.util.List<TaskArgument> arguments;
 
         /**
          * Arguments for the Task
-         *
          * @param arguments the value to set
          * @return this builder
-         */
+         **/
         public Builder arguments(java.util.List<TaskArgument> arguments) {
             this.arguments = arguments;
             this.__explicitlySet__.add("arguments");
@@ -85,7 +84,9 @@ public final class InputParameter
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class InputParameter
         return new Builder().copy(this);
     }
 
-    /** stepName for which the input parameters are provided */
+    /**
+     * stepName for which the input parameters are provided
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
      * stepName for which the input parameters are provided
-     *
      * @return the value
-     */
+     **/
     public String getStepName() {
         return stepName;
     }
 
-    /** Arguments for the Task */
+    /**
+     * Arguments for the Task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("arguments")
     private final java.util.List<TaskArgument> arguments;
 
     /**
      * Arguments for the Task
-     *
      * @return the value
-     */
+     **/
     public java.util.List<TaskArgument> getArguments() {
         return arguments;
     }
@@ -127,7 +130,6 @@ public final class InputParameter
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

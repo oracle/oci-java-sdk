@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
      * status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
@@ -27,6 +28,7 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -40,7 +42,10 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -52,12 +57,13 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         return etag;
     }
 
-    /** The returned {@code Connection} instance. */
+    /**
+     * The returned Connection instance.
+     */
     private com.oracle.bmc.goldengate.model.Connection connection;
 
     /**
-     * The returned {@code Connection} instance.
-     *
+     * The returned Connection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.Connection getConnection() {
@@ -74,7 +80,7 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private CreateConnectionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
@@ -86,33 +92,31 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         this.connection = connection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateConnectionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
-         * query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to
-         * query status of the asynchronous operation.
+         * A unique Oracle-assigned identifier for an asynchronous request. You can use this to query
+         * status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -123,14 +127,15 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -140,7 +145,10 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -154,12 +162,13 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code Connection} instance. */
+        /**
+         * The returned Connection instance.
+         */
         private com.oracle.bmc.goldengate.model.Connection connection;
 
         /**
-         * The returned {@code Connection} instance.
-         *
+         * The returned Connection instance.
          * @param connection the value to set
          * @return this builder
          */
@@ -170,10 +179,8 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateConnectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -187,10 +194,8 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateConnectionResponse build() {
             return new CreateConnectionResponse(
                     __httpStatusCode__, headers, opcWorkRequestId, opcRequestId, etag, connection);
@@ -199,7 +204,6 @@ public class CreateConnectionResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

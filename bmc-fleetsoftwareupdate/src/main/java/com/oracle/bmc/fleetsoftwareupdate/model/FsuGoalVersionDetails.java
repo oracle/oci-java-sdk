@@ -5,34 +5,35 @@
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
 /**
- * Goal version or image details for the Exadata Fleet Update Cycle. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+ * Goal version or image details for the Exadata Fleet Update Cycle.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type",
-        defaultImpl = FsuGoalVersionDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type",
+    defaultImpl = FsuGoalVersionDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = VersionFsuTargetDetails.class,
-            name = "VERSION"),
+        value = VersionFsuTargetDetails.class,
+        name = "VERSION"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ImageIdFsuTargetDetails.class,
-            name = "IMAGE_ID")
+        value = ImageIdFsuTargetDetails.class,
+        name = "IMAGE_ID"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class FsuGoalVersionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class FsuGoalVersionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"homePolicy", "newHomePrefix"})
     protected FsuGoalVersionDetails(HomePolicy homePolicy, String newHomePrefix) {
@@ -42,21 +43,21 @@ public class FsuGoalVersionDetails
     }
 
     /**
-     * Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a
-     * new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All
-     * database targets in the same VMCluster or CloudVmCluster will be moved to a shared database
-     * home. If an existing home for the selected image or version is not found in the VM Cluster
-     * for a target database, then a new home will be created. If more than one existing home for
-     * the selected image is found, then the home with the least number of databases will be used.
-     * If multiple homes have the least number of databases, then a home will be selected at random.
-     */
-    public enum HomePolicy implements com.oracle.bmc.http.internal.BmcEnum {
+     * Goal home policy to use when Staging the Goal Version during patching.
+     * CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version.
+     * USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.
+     *   If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.
+     *   If more than one existing home for the selected image is found, then the home with the least number of databases will be used.
+     *   If multiple homes have the least number of databases, then a home will be selected at random.
+     *
+     **/
+    public enum HomePolicy {
         CreateNew("CREATE_NEW"),
         UseExisting("USE_EXISTING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -96,47 +97,47 @@ public class FsuGoalVersionDetails
         }
     };
     /**
-     * Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a
-     * new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All
-     * database targets in the same VMCluster or CloudVmCluster will be moved to a shared database
-     * home. If an existing home for the selected image or version is not found in the VM Cluster
-     * for a target database, then a new home will be created. If more than one existing home for
-     * the selected image is found, then the home with the least number of databases will be used.
-     * If multiple homes have the least number of databases, then a home will be selected at random.
-     */
+     * Goal home policy to use when Staging the Goal Version during patching.
+     * CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version.
+     * USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.
+     *   If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.
+     *   If more than one existing home for the selected image is found, then the home with the least number of databases will be used.
+     *   If multiple homes have the least number of databases, then a home will be selected at random.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("homePolicy")
     private final HomePolicy homePolicy;
 
     /**
-     * Goal home policy to use when Staging the Goal Version during patching. CREATE_NEW: Create a
-     * new DBHome (for Database Collections) for the specified image or version. USE_EXISTING: All
-     * database targets in the same VMCluster or CloudVmCluster will be moved to a shared database
-     * home. If an existing home for the selected image or version is not found in the VM Cluster
-     * for a target database, then a new home will be created. If more than one existing home for
-     * the selected image is found, then the home with the least number of databases will be used.
-     * If multiple homes have the least number of databases, then a home will be selected at random.
+     * Goal home policy to use when Staging the Goal Version during patching.
+     * CREATE_NEW: Create a new DBHome (for Database Collections) for the specified image or version.
+     * USE_EXISTING: All database targets in the same VMCluster or CloudVmCluster will be moved to a shared database home.
+     *   If an existing home for the selected image or version is not found in the VM Cluster for a target database, then a new home will be created.
+     *   If more than one existing home for the selected image is found, then the home with the least number of databases will be used.
+     *   If multiple homes have the least number of databases, then a home will be selected at random.
      *
      * @return the value
-     */
+     **/
     public HomePolicy getHomePolicy() {
         return homePolicy;
     }
 
     /**
-     * Prefix name used for new DB home resources created as part of the Stage Action. Format:
-     * <specified_prefix>_<timestamp> If not specified, a default OCI DB home resource will be
-     * generated for the new DB home resources created.
-     */
+     * Prefix name used for new DB home resources created as part of the Stage Action.
+     * Format: <specified_prefix>_<timestamp>
+     * If not specified, a default OCI DB home resource will be generated for the new DB home resources created.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("newHomePrefix")
     private final String newHomePrefix;
 
     /**
-     * Prefix name used for new DB home resources created as part of the Stage Action. Format:
-     * <specified_prefix>_<timestamp> If not specified, a default OCI DB home resource will be
-     * generated for the new DB home resources created.
+     * Prefix name used for new DB home resources created as part of the Stage Action.
+     * Format: <specified_prefix>_<timestamp>
+     * If not specified, a default OCI DB home resource will be generated for the new DB home resources created.
      *
      * @return the value
-     */
+     **/
     public String getNewHomePrefix() {
         return newHomePrefix;
     }
@@ -148,7 +149,6 @@ public class FsuGoalVersionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -189,14 +189,17 @@ public class FsuGoalVersionDetails
         return result;
     }
 
-    /** Type of goal target version specified */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of goal target version specified
+     *
+     **/
+    public enum Type {
         Version("VERSION"),
         ImageId("IMAGE_ID"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

@@ -6,54 +6,63 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeApplianceExportJobCompartmentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ChangeApplianceExportJobCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ChangeApplianceExportJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeApplianceExportJobCompartmentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ChangeApplianceExportJobCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails> {
 
-    /** ID of the Appliance Export Job */
+    /**
+     * ID of the Appliance Export Job
+     */
     private String applianceExportJobId;
 
-    /** ID of the Appliance Export Job */
+    /**
+     * ID of the Appliance Export Job
+     */
     public String getApplianceExportJobId() {
         return applianceExportJobId;
     }
-    /** CompartmentId of the destination compartment */
+    /**
+     * CompartmentId of the destination compartment
+     */
     private com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
             changeApplianceExportJobCompartmentDetails;
 
-    /** CompartmentId of the destination compartment */
+    /**
+     * CompartmentId of the destination compartment
+     */
     public com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
             getChangeApplianceExportJobCompartmentDetails() {
         return changeApplianceExportJobCompartmentDetails;
     }
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the object's
-     * tag matches the tag specified in the request.
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
      */
     private String ifMatch;
 
     /**
-     * The entity tag to match. Optional, if set, the update will be successful only if the object's
-     * tag matches the tag specified in the request.
+     * The entity tag to match. Optional, if set, the update will be successful only if the
+     * object's tag matches the tag specified in the request.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -64,6 +73,7 @@ public class ChangeApplianceExportJobCompartmentRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -73,6 +83,7 @@ public class ChangeApplianceExportJobCompartmentRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -80,7 +91,6 @@ public class ChangeApplianceExportJobCompartmentRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -93,15 +103,17 @@ public class ChangeApplianceExportJobCompartmentRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ChangeApplianceExportJobCompartmentRequest,
                     com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** ID of the Appliance Export Job */
+        /**
+         * ID of the Appliance Export Job
+         */
         private String applianceExportJobId = null;
 
         /**
          * ID of the Appliance Export Job
-         *
          * @param applianceExportJobId the value to set
          * @return this builder instance
          */
@@ -110,13 +122,14 @@ public class ChangeApplianceExportJobCompartmentRequest
             return this;
         }
 
-        /** CompartmentId of the destination compartment */
+        /**
+         * CompartmentId of the destination compartment
+         */
         private com.oracle.bmc.dts.model.ChangeApplianceExportJobCompartmentDetails
                 changeApplianceExportJobCompartmentDetails = null;
 
         /**
          * CompartmentId of the destination compartment
-         *
          * @param changeApplianceExportJobCompartmentDetails the value to set
          * @return this builder instance
          */
@@ -131,6 +144,7 @@ public class ChangeApplianceExportJobCompartmentRequest
         /**
          * The entity tag to match. Optional, if set, the update will be successful only if the
          * object's tag matches the tag specified in the request.
+         *
          */
         private String ifMatch = null;
 
@@ -147,14 +161,15 @@ public class ChangeApplianceExportJobCompartmentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -166,19 +181,20 @@ public class ChangeApplianceExportJobCompartmentRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -190,19 +206,18 @@ public class ChangeApplianceExportJobCompartmentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -214,7 +229,6 @@ public class ChangeApplianceExportJobCompartmentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ChangeApplianceExportJobCompartmentRequest o) {
@@ -230,14 +244,12 @@ public class ChangeApplianceExportJobCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeApplianceExportJobCompartmentRequest as configured by this
-         * builder
+         * Build the instance of ChangeApplianceExportJobCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ChangeApplianceExportJobCompartmentRequest
          */
@@ -250,7 +262,6 @@ public class ChangeApplianceExportJobCompartmentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -262,11 +273,9 @@ public class ChangeApplianceExportJobCompartmentRequest
         }
 
         /**
-         * Build the instance of ChangeApplianceExportJobCompartmentRequest as configured by this
-         * builder
+         * Build the instance of ChangeApplianceExportJobCompartmentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ChangeApplianceExportJobCompartmentRequest
@@ -281,14 +290,12 @@ public class ChangeApplianceExportJobCompartmentRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new ChangeApplianceExportJobCompartmentRequest(applianceExportJobId,
-            // changeApplianceExportJobCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
+            // new ChangeApplianceExportJobCompartmentRequest(applianceExportJobId, changeApplianceExportJobCompartmentDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -303,7 +310,6 @@ public class ChangeApplianceExportJobCompartmentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

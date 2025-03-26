@@ -5,26 +5,25 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * A protected database is an Oracle Cloud Database whose backups are managed by Oracle Database
- * Autonomous Recovery Service. Each protected database requires a recovery service subnet and a
- * protection policy to use Recovery Service as the backup destination for centralized backup and
- * recovery <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+ * A protected database is an Oracle Cloud Database whose
+ * backups are managed by Oracle Database Autonomous Recovery Service. Each protected database
+ * requires a recovery service subnet and a protection policy to use Recovery Service as
+ * the backup destination for centralized backup and recovery
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ProtectedDatabase.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ProtectedDatabase
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ProtectedDatabase.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ProtectedDatabase extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -112,317 +111,292 @@ public final class ProtectedDatabase
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the protected database. */
+        /**
+         * The OCID of the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the protected database.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The protected database name. You can change the displayName. Avoid entering confidential
-         * information.
-         */
+         * The protected database name. You can change the displayName. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The protected database name. You can change the displayName. Avoid entering confidential
-         * information.
-         *
+         * The protected database name. You can change the displayName. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment that contains the protected database. */
+        /**
+         * The OCID of the compartment that contains the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the protected database.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The dbUniqueName for the protected database in Recovery Service. You cannot change the
-         * unique name.
-         */
+         * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
-         * The dbUniqueName for the protected database in Recovery Service. You cannot change the
-         * unique name.
-         *
+         * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
         /**
-         * The virtual private catalog (VPC) user credentials that authenticates the protected
-         * database to access Recovery Service.
-         */
+         * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vpcUserName")
         private String vpcUserName;
 
         /**
-         * The virtual private catalog (VPC) user credentials that authenticates the protected
-         * database to access Recovery Service.
-         *
+         * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
          * @param vpcUserName the value to set
          * @return this builder
-         */
+         **/
         public Builder vpcUserName(String vpcUserName) {
             this.vpcUserName = vpcUserName;
             this.__explicitlySet__.add("vpcUserName");
             return this;
         }
         /**
-         * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to
-         * 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-         */
+         * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSize")
         private DatabaseSizes databaseSize;
 
         /**
-         * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to
-         * 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-         *
+         * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
          * @param databaseSize the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSize(DatabaseSizes databaseSize) {
             this.databaseSize = databaseSize;
             this.__explicitlySet__.add("databaseSize");
             return this;
         }
-        /** The OCID of the protection policy associated with the protected database. */
+        /**
+         * The OCID of the protection policy associated with the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicyId")
         private String protectionPolicyId;
 
         /**
          * The OCID of the protection policy associated with the protected database.
-         *
          * @param protectionPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionPolicyId(String protectionPolicyId) {
             this.protectionPolicyId = protectionPolicyId;
             this.__explicitlySet__.add("protectionPolicyId");
             return this;
         }
         /**
-         * An RFC3339 formatted datetime string that specifies the exact date and time for the
-         * retention lock to take effect and permanently lock the retention period defined in the
-         * policy.
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
          *
-         * <p>The retention lock feature controls whether Recovery Service strictly preserves
-         * backups for the duration defined in a policy. Retention lock is useful to enforce
-         * recovery window compliance and to prevent unintentional modifications to protected
-         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
-         * for a policy can take effect.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
         private String policyLockedDateTime;
 
         /**
-         * An RFC3339 formatted datetime string that specifies the exact date and time for the
-         * retention lock to take effect and permanently lock the retention period defined in the
-         * policy.
-         *
-         * <p>The retention lock feature controls whether Recovery Service strictly preserves
-         * backups for the duration defined in a policy. Retention lock is useful to enforce
-         * recovery window compliance and to prevent unintentional modifications to protected
-         * database backups. Recovery Service enforces a 14-day delay before the retention lock set
-         * for a policy can take effect.
+         * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+         * <p>
+         * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+         * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
          *
          * @param policyLockedDateTime the value to set
          * @return this builder
-         */
+         **/
         public Builder policyLockedDateTime(String policyLockedDateTime) {
             this.policyLockedDateTime = policyLockedDateTime;
             this.__explicitlySet__.add("policyLockedDateTime");
             return this;
         }
-        /** List of recovery service subnet resources associated with the protected database. */
+        /**
+         * List of recovery service subnet resources associated with the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryServiceSubnets")
         private java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets;
 
         /**
          * List of recovery service subnet resources associated with the protected database.
-         *
          * @param recoveryServiceSubnets the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryServiceSubnets(
                 java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets) {
             this.recoveryServiceSubnets = recoveryServiceSubnets;
             this.__explicitlySet__.add("recoveryServiceSubnets");
             return this;
         }
-        /** The OCID of the protected database. */
+        /**
+         * The OCID of the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
         private String databaseId;
 
         /**
          * The OCID of the protected database.
-         *
          * @param databaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseId(String databaseId) {
             this.databaseId = databaseId;
             this.__explicitlySet__.add("databaseId");
             return this;
         }
-        /** The size of the database in GBs, in gigabytes. */
+        /**
+         * The size of the database in GBs, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
         private Integer databaseSizeInGBs;
 
         /**
          * The size of the database in GBs, in gigabytes.
-         *
          * @param databaseSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSizeInGBs(Integer databaseSizeInGBs) {
             this.databaseSizeInGBs = databaseSizeInGBs;
             this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
         /**
-         * The percentage of data changes that exist in the database between successive incremental
-         * backups.
-         */
+         * The percentage of data changes that exist in the database between successive incremental backups.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("changeRate")
         private Double changeRate;
 
         /**
-         * The percentage of data changes that exist in the database between successive incremental
-         * backups.
-         *
+         * The percentage of data changes that exist in the database between successive incremental backups.
          * @param changeRate the value to set
          * @return this builder
-         */
+         **/
         public Builder changeRate(Double changeRate) {
             this.changeRate = changeRate;
             this.__explicitlySet__.add("changeRate");
             return this;
         }
         /**
-         * The compression ratio of the protected database. The compression ratio represents the
-         * ratio of compressed block size to expanded block size.
-         */
+         * The compression ratio of the protected database. The compression ratio represents the ratio of compressed block size to expanded block size.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compressionRatio")
         private Double compressionRatio;
 
         /**
-         * The compression ratio of the protected database. The compression ratio represents the
-         * ratio of compressed block size to expanded block size.
-         *
+         * The compression ratio of the protected database. The compression ratio represents the ratio of compressed block size to expanded block size.
          * @param compressionRatio the value to set
          * @return this builder
-         */
+         **/
         public Builder compressionRatio(Double compressionRatio) {
             this.compressionRatio = compressionRatio;
             this.__explicitlySet__.add("compressionRatio");
             return this;
         }
         /**
-         * The value TRUE indicates that the protected database is configured to use Real-time data
-         * protection, and redo-data is sent from the protected database to Recovery Service.
-         * Real-time data protection substantially reduces the window of potential data loss that
-         * exists between successive archived redo log backups. For this to be effective, additional
+         * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+         * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
          * configuration is needed on client side.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRedoLogsShipped")
         private Boolean isRedoLogsShipped;
 
         /**
-         * The value TRUE indicates that the protected database is configured to use Real-time data
-         * protection, and redo-data is sent from the protected database to Recovery Service.
-         * Real-time data protection substantially reduces the window of potential data loss that
-         * exists between successive archived redo log backups. For this to be effective, additional
+         * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+         * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
          * configuration is needed on client side.
          *
          * @param isRedoLogsShipped the value to set
          * @return this builder
-         */
+         **/
         public Builder isRedoLogsShipped(Boolean isRedoLogsShipped) {
             this.isRedoLogsShipped = isRedoLogsShipped;
             this.__explicitlySet__.add("isRedoLogsShipped");
             return this;
         }
         /**
-         * An RFC3339 formatted datetime string that indicates the created time for a protected
-         * database. For example: '2020-05-22T21:10:29.600Z'
-         */
+         * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * An RFC3339 formatted datetime string that indicates the created time for a protected
-         * database. For example: '2020-05-22T21:10:29.600Z'
+         * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * An RFC3339 formatted datetime string that indicates the last updated time for a protected
-         * database. For example: '2020-05-22T21:10:29.600Z'
-         */
+         * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * An RFC3339 formatted datetime string that indicates the last updated time for a protected
-         * database. For example: '2020-05-22T21:10:29.600Z'
+         * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the Protected Database. */
+        /**
+         * The current state of the Protected Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Protected Database.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -430,103 +404,91 @@ public final class ProtectedDatabase
         }
         /**
          * Indicates the protection status of the database.
+         * <p>
+         * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+         *  - Less than 10 seconds, if Real-time data protection is enabled
+         *  - Less than 70 minutes if Real-time data protection is disabled
+         * <p>
+         * A 'WARNING' status indicates that Recovery Service can ensure database recovery within the current recovery window - 1 day. The potential data loss exposure since the last backup is:
+         *  - Greater than 10 seconds, if Real-time data protection is enabled
+         *  - Greater than 60 minutes, if if Real-time data protection is disabled
+         * <p>
+         * An 'ALERT' status indicates that Recovery Service cannot recover the database within the current recovery window.
          *
-         * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to
-         * any point in time within the entire recovery window. The potential data loss exposure
-         * since the last backup is: - Less than 10 seconds, if Real-time data protection is enabled
-         * - Less than 70 minutes if Real-time data protection is disabled
-         *
-         * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within
-         * the current recovery window - 1 day. The potential data loss exposure since the last
-         * backup is: - Greater than 10 seconds, if Real-time data protection is enabled - Greater
-         * than 60 minutes, if if Real-time data protection is disabled
-         *
-         * <p>An 'ALERT' status indicates that Recovery Service cannot recover the database within
-         * the current recovery window.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("health")
         private Health health;
 
         /**
          * Indicates the protection status of the database.
-         *
-         * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to
-         * any point in time within the entire recovery window. The potential data loss exposure
-         * since the last backup is: - Less than 10 seconds, if Real-time data protection is enabled
-         * - Less than 70 minutes if Real-time data protection is disabled
-         *
-         * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within
-         * the current recovery window - 1 day. The potential data loss exposure since the last
-         * backup is: - Greater than 10 seconds, if Real-time data protection is enabled - Greater
-         * than 60 minutes, if if Real-time data protection is disabled
-         *
-         * <p>An 'ALERT' status indicates that Recovery Service cannot recover the database within
-         * the current recovery window.
+         * <p>
+         * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+         *  - Less than 10 seconds, if Real-time data protection is enabled
+         *  - Less than 70 minutes if Real-time data protection is disabled
+         * <p>
+         * A 'WARNING' status indicates that Recovery Service can ensure database recovery within the current recovery window - 1 day. The potential data loss exposure since the last backup is:
+         *  - Greater than 10 seconds, if Real-time data protection is enabled
+         *  - Greater than 60 minutes, if if Real-time data protection is disabled
+         * <p>
+         * An 'ALERT' status indicates that Recovery Service cannot recover the database within the current recovery window.
          *
          * @param health the value to set
          * @return this builder
-         */
+         **/
         public Builder health(Health health) {
             this.health = health;
             this.__explicitlySet__.add("health");
             return this;
         }
         /**
-         * Indicates whether the protected database is created by Recovery Service or created
-         * manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable
-         * the OCI-managed automatic backups option for a database and set Recovery Service as the
-         * backup destination, then Recovery Service creates the associated protected database
-         * resource. Set to <b>FALSE</b> for a user-defined protected database.
-         */
+         * Indicates whether the protected database is created by Recovery Service or created manually.
+         * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource.
+         * Set to <b>FALSE</b> for a user-defined protected database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReadOnlyResource")
         private Boolean isReadOnlyResource;
 
         /**
-         * Indicates whether the protected database is created by Recovery Service or created
-         * manually. Set to <b>TRUE</b> for a service-defined protected database. When you enable
-         * the OCI-managed automatic backups option for a database and set Recovery Service as the
-         * backup destination, then Recovery Service creates the associated protected database
-         * resource. Set to <b>FALSE</b> for a user-defined protected database.
+         * Indicates whether the protected database is created by Recovery Service or created manually.
+         * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource.
+         * Set to <b>FALSE</b> for a user-defined protected database.
          *
          * @param isReadOnlyResource the value to set
          * @return this builder
-         */
+         **/
         public Builder isReadOnlyResource(Boolean isReadOnlyResource) {
             this.isReadOnlyResource = isReadOnlyResource;
             this.__explicitlySet__.add("isReadOnlyResource");
             return this;
         }
         /**
-         * Detailed description about the current lifecycle state of the protected database. For
-         * example, it can be used to provide actionable information for a resource in a Failed
-         * state.
-         */
+         * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * Detailed description about the current lifecycle state of the protected database. For
-         * example, it can be used to provide actionable information for a resource in a Failed
-         * state.
-         *
+         * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** A message describing the current health of the protected database. */
+        /**
+         * A message describing the current health of the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthDetails")
         private String healthDetails;
 
         /**
          * A message describing the current health of the protected database.
-         *
          * @param healthDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder healthDetails(String healthDetails) {
             this.healthDetails = healthDetails;
             this.__explicitlySet__.add("healthDetails");
@@ -541,35 +503,37 @@ public final class ProtectedDatabase
             this.__explicitlySet__.add("metrics");
             return this;
         }
-        /** The OCID of the cloud service subscription to which the protected database is linked. */
+        /**
+         * The OCID of the cloud service subscription to which the protected database is linked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
         private String subscriptionId;
 
         /**
          * The OCID of the cloud service subscription to which the protected database is linked.
-         *
          * @param subscriptionId the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionId(String subscriptionId) {
             this.subscriptionId = subscriptionId;
             this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -577,22 +541,19 @@ public final class ProtectedDatabase
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -600,21 +561,20 @@ public final class ProtectedDatabase
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -743,7 +703,9 @@ public final class ProtectedDatabase
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -752,373 +714,342 @@ public final class ProtectedDatabase
         return new Builder().copy(this);
     }
 
-    /** The OCID of the protected database. */
+    /**
+     * The OCID of the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The protected database name. You can change the displayName. Avoid entering confidential
-     * information.
-     */
+     * The protected database name. You can change the displayName. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The protected database name. You can change the displayName. Avoid entering confidential
-     * information.
-     *
+     * The protected database name. You can change the displayName. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment that contains the protected database. */
+    /**
+     * The OCID of the compartment that contains the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique
-     * name.
-     */
+     * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
-     * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique
-     * name.
-     *
+     * The dbUniqueName for the protected database in Recovery Service. You cannot change the unique name.
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
     /**
-     * The virtual private catalog (VPC) user credentials that authenticates the protected database
-     * to access Recovery Service.
-     */
+     * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vpcUserName")
     private final String vpcUserName;
 
     /**
-     * The virtual private catalog (VPC) user credentials that authenticates the protected database
-     * to access Recovery Service.
-     *
+     * The virtual private catalog (VPC) user credentials that authenticates the protected database to access Recovery Service.
      * @return the value
-     */
+     **/
     public String getVpcUserName() {
         return vpcUserName;
     }
 
     /**
-     * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L
-     * - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-     */
+     * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSize")
     private final DatabaseSizes databaseSize;
 
     /**
-     * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L
-     * - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-     *
+     * The size of the protected database. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * @return the value
-     */
+     **/
     public DatabaseSizes getDatabaseSize() {
         return databaseSize;
     }
 
-    /** The OCID of the protection policy associated with the protected database. */
+    /**
+     * The OCID of the protection policy associated with the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicyId")
     private final String protectionPolicyId;
 
     /**
      * The OCID of the protection policy associated with the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getProtectionPolicyId() {
         return protectionPolicyId;
     }
 
     /**
-     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
-     * lock to take effect and permanently lock the retention period defined in the policy.
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
      *
-     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
-     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
-     * compliance and to prevent unintentional modifications to protected database backups. Recovery
-     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyLockedDateTime")
     private final String policyLockedDateTime;
 
     /**
-     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention
-     * lock to take effect and permanently lock the retention period defined in the policy.
-     *
-     * <p>The retention lock feature controls whether Recovery Service strictly preserves backups
-     * for the duration defined in a policy. Retention lock is useful to enforce recovery window
-     * compliance and to prevent unintentional modifications to protected database backups. Recovery
-     * Service enforces a 14-day delay before the retention lock set for a policy can take effect.
+     * An RFC3339 formatted datetime string that specifies the exact date and time for the retention lock to take effect and permanently lock the retention period defined in the policy.
+     * <p>
+     * The retention lock feature controls whether Recovery Service strictly preserves backups for the duration defined in a policy. Retention lock is useful to enforce recovery window compliance and to prevent unintentional modifications to protected database backups.
+     * Recovery Service enforces a 14-day delay before the retention lock set for a policy can take effect.
      *
      * @return the value
-     */
+     **/
     public String getPolicyLockedDateTime() {
         return policyLockedDateTime;
     }
 
-    /** List of recovery service subnet resources associated with the protected database. */
+    /**
+     * List of recovery service subnet resources associated with the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryServiceSubnets")
     private final java.util.List<RecoveryServiceSubnetDetails> recoveryServiceSubnets;
 
     /**
      * List of recovery service subnet resources associated with the protected database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RecoveryServiceSubnetDetails> getRecoveryServiceSubnets() {
         return recoveryServiceSubnets;
     }
 
-    /** The OCID of the protected database. */
+    /**
+     * The OCID of the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
     private final String databaseId;
 
     /**
      * The OCID of the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getDatabaseId() {
         return databaseId;
     }
 
-    /** The size of the database in GBs, in gigabytes. */
+    /**
+     * The size of the database in GBs, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
     private final Integer databaseSizeInGBs;
 
     /**
      * The size of the database in GBs, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getDatabaseSizeInGBs() {
         return databaseSizeInGBs;
     }
 
     /**
-     * The percentage of data changes that exist in the database between successive incremental
-     * backups.
-     */
+     * The percentage of data changes that exist in the database between successive incremental backups.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("changeRate")
     private final Double changeRate;
 
     /**
-     * The percentage of data changes that exist in the database between successive incremental
-     * backups.
-     *
+     * The percentage of data changes that exist in the database between successive incremental backups.
      * @return the value
-     */
+     **/
     public Double getChangeRate() {
         return changeRate;
     }
 
     /**
-     * The compression ratio of the protected database. The compression ratio represents the ratio
-     * of compressed block size to expanded block size.
-     */
+     * The compression ratio of the protected database. The compression ratio represents the ratio of compressed block size to expanded block size.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compressionRatio")
     private final Double compressionRatio;
 
     /**
-     * The compression ratio of the protected database. The compression ratio represents the ratio
-     * of compressed block size to expanded block size.
-     *
+     * The compression ratio of the protected database. The compression ratio represents the ratio of compressed block size to expanded block size.
      * @return the value
-     */
+     **/
     public Double getCompressionRatio() {
         return compressionRatio;
     }
 
     /**
-     * The value TRUE indicates that the protected database is configured to use Real-time data
-     * protection, and redo-data is sent from the protected database to Recovery Service. Real-time
-     * data protection substantially reduces the window of potential data loss that exists between
-     * successive archived redo log backups. For this to be effective, additional configuration is
-     * needed on client side.
-     */
+     * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+     * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
+     * configuration is needed on client side.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRedoLogsShipped")
     private final Boolean isRedoLogsShipped;
 
     /**
-     * The value TRUE indicates that the protected database is configured to use Real-time data
-     * protection, and redo-data is sent from the protected database to Recovery Service. Real-time
-     * data protection substantially reduces the window of potential data loss that exists between
-     * successive archived redo log backups. For this to be effective, additional configuration is
-     * needed on client side.
+     * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+     * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
+     * configuration is needed on client side.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRedoLogsShipped() {
         return isRedoLogsShipped;
     }
 
     /**
-     * An RFC3339 formatted datetime string that indicates the created time for a protected
-     * database. For example: '2020-05-22T21:10:29.600Z'
-     */
+     * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * An RFC3339 formatted datetime string that indicates the created time for a protected
-     * database. For example: '2020-05-22T21:10:29.600Z'
+     * An RFC3339 formatted datetime string that indicates the created time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * An RFC3339 formatted datetime string that indicates the last updated time for a protected
-     * database. For example: '2020-05-22T21:10:29.600Z'
-     */
+     * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * An RFC3339 formatted datetime string that indicates the last updated time for a protected
-     * database. For example: '2020-05-22T21:10:29.600Z'
+     * An RFC3339 formatted datetime string that indicates the last updated time for a protected database. For example: '2020-05-22T21:10:29.600Z'
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the Protected Database. */
+    /**
+     * The current state of the Protected Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Protected Database.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Indicates the protection status of the database.
+     * <p>
+     * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+     *  - Less than 10 seconds, if Real-time data protection is enabled
+     *  - Less than 70 minutes if Real-time data protection is disabled
+     * <p>
+     * A 'WARNING' status indicates that Recovery Service can ensure database recovery within the current recovery window - 1 day. The potential data loss exposure since the last backup is:
+     *  - Greater than 10 seconds, if Real-time data protection is enabled
+     *  - Greater than 60 minutes, if if Real-time data protection is disabled
+     * <p>
+     * An 'ALERT' status indicates that Recovery Service cannot recover the database within the current recovery window.
      *
-     * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any
-     * point in time within the entire recovery window. The potential data loss exposure since the
-     * last backup is: - Less than 10 seconds, if Real-time data protection is enabled - Less than
-     * 70 minutes if Real-time data protection is disabled
-     *
-     * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within the
-     * current recovery window - 1 day. The potential data loss exposure since the last backup is: -
-     * Greater than 10 seconds, if Real-time data protection is enabled - Greater than 60 minutes,
-     * if if Real-time data protection is disabled
-     *
-     * <p>An 'ALERT' status indicates that Recovery Service cannot recover the database within the
-     * current recovery window.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("health")
     private final Health health;
 
     /**
      * Indicates the protection status of the database.
-     *
-     * <p>A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any
-     * point in time within the entire recovery window. The potential data loss exposure since the
-     * last backup is: - Less than 10 seconds, if Real-time data protection is enabled - Less than
-     * 70 minutes if Real-time data protection is disabled
-     *
-     * <p>A 'WARNING' status indicates that Recovery Service can ensure database recovery within the
-     * current recovery window - 1 day. The potential data loss exposure since the last backup is: -
-     * Greater than 10 seconds, if Real-time data protection is enabled - Greater than 60 minutes,
-     * if if Real-time data protection is disabled
-     *
-     * <p>An 'ALERT' status indicates that Recovery Service cannot recover the database within the
-     * current recovery window.
+     * <p>
+     * A 'PROTECTED' status indicates that Recovery Service can ensure database recovery to any point in time within the entire recovery window. The potential data loss exposure since the last backup is:
+     *  - Less than 10 seconds, if Real-time data protection is enabled
+     *  - Less than 70 minutes if Real-time data protection is disabled
+     * <p>
+     * A 'WARNING' status indicates that Recovery Service can ensure database recovery within the current recovery window - 1 day. The potential data loss exposure since the last backup is:
+     *  - Greater than 10 seconds, if Real-time data protection is enabled
+     *  - Greater than 60 minutes, if if Real-time data protection is disabled
+     * <p>
+     * An 'ALERT' status indicates that Recovery Service cannot recover the database within the current recovery window.
      *
      * @return the value
-     */
+     **/
     public Health getHealth() {
         return health;
     }
 
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually.
-     * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed
-     * automatic backups option for a database and set Recovery Service as the backup destination,
-     * then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b>
-     * for a user-defined protected database.
-     */
+     * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource.
+     * Set to <b>FALSE</b> for a user-defined protected database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReadOnlyResource")
     private final Boolean isReadOnlyResource;
 
     /**
      * Indicates whether the protected database is created by Recovery Service or created manually.
-     * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed
-     * automatic backups option for a database and set Recovery Service as the backup destination,
-     * then Recovery Service creates the associated protected database resource. Set to <b>FALSE</b>
-     * for a user-defined protected database.
+     * Set to <b>TRUE</b> for a service-defined protected database. When you enable the OCI-managed automatic backups option for a database and set Recovery Service as the backup destination, then Recovery Service creates the associated protected database resource.
+     * Set to <b>FALSE</b> for a user-defined protected database.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsReadOnlyResource() {
         return isReadOnlyResource;
     }
 
     /**
-     * Detailed description about the current lifecycle state of the protected database. For
-     * example, it can be used to provide actionable information for a resource in a Failed state.
-     */
+     * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * Detailed description about the current lifecycle state of the protected database. For
-     * example, it can be used to provide actionable information for a resource in a Failed state.
-     *
+     * Detailed description about the current lifecycle state of the protected database. For example, it can be used to provide actionable information for a resource in a Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** A message describing the current health of the protected database. */
+    /**
+     * A message describing the current health of the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthDetails")
     private final String healthDetails;
 
     /**
      * A message describing the current health of the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getHealthDetails() {
         return healthDetails;
     }
@@ -1130,70 +1061,70 @@ public final class ProtectedDatabase
         return metrics;
     }
 
-    /** The OCID of the cloud service subscription to which the protected database is linked. */
+    /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
      * The OCID of the cloud service subscription to which the protected database is linked.
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionId() {
         return subscriptionId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -1205,7 +1136,6 @@ public final class ProtectedDatabase
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

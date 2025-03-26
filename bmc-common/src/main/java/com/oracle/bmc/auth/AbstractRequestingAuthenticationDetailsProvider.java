@@ -18,7 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/** Base class for authentication details providers that make remote requests. */
+/**
+ * Base class for authentication details providers that make remote requests.
+ */
 @InternalSdk
 public class AbstractRequestingAuthenticationDetailsProvider
         implements BasicAuthenticationDetailsProvider {
@@ -33,7 +35,6 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
     /**
      * Base class for builders.
-     *
      * @param <B> builder class
      */
     protected abstract static class Builder<B extends Builder<B>> {
@@ -44,13 +45,17 @@ public class AbstractRequestingAuthenticationDetailsProvider
         protected List<ClientConfigurator> additionalFederationClientConfigurators =
                 new ArrayList<>();
 
-        /** Configures the custom SessionKeySupplier to use. */
+        /**
+         * Configures the custom SessionKeySupplier to use.
+         */
         public B sessionKeySupplier(SessionKeySupplier sessionKeySupplier) {
             this.sessionKeySupplier = sessionKeySupplier;
             return (B) this;
         }
 
-        /** Configures the set of intermediate certificate suppliers to use, if any. */
+        /**
+         * Configures the set of intermediate certificate suppliers to use, if any.
+         */
         public B intermediateCertificateSuppliers(
                 Set<X509CertificateSupplier> intermediateCertificateSuppliers) {
             this.intermediateCertificateSuppliers = intermediateCertificateSuppliers;
@@ -58,8 +63,8 @@ public class AbstractRequestingAuthenticationDetailsProvider
         }
 
         /**
-         * Configures the ClientConfigurator to set on the REST client used by the federation
-         * client, if any.
+         * Configures the ClientConfigurator to set on the REST client used by the
+         * federation client, if any.
          */
         public B federationClientConfigurator(ClientConfigurator clientConfigurator) {
             this.federationClientConfigurator = clientConfigurator;
@@ -68,12 +73,11 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         /**
          * Add an additional client configurator to be run after the primary configurator.
-         *
          * @param additionalClientConfigurator the additional client configurator
          * @return this builder
          */
         public B additionalFederationClientConfigurator(
-                @jakarta.annotation.Nonnull ClientConfigurator additionalClientConfigurator) {
+                @javax.annotation.Nonnull ClientConfigurator additionalClientConfigurator) {
             if (additionalClientConfigurator == null) {
                 throw new NullPointerException(
                         "additionalClientConfigurator is marked non-null but is null");
@@ -109,10 +113,10 @@ public class AbstractRequestingAuthenticationDetailsProvider
     }
 
     /**
-     * Helper class to cache the private key as bytes so we don't have to parse it every time. The
-     * key only changes during calls to refresh.
-     *
-     * <p>All methods in this class that are called outside of this class should be synchronized.
+     * Helper class to cache the private key as bytes so we don't have to parse it every time.
+     * The key only changes during calls to refresh.
+     * <p>
+     * All methods in this class that are called outside of this class should be synchronized.
      */
     protected static class CachingSessionKeySupplier implements SessionKeySupplier {
         private final SessionKeySupplier delegate;
@@ -121,11 +125,24 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         protected CachingSessionKeySupplier(final SessionKeySupplier delegate) {
             this.delegate = delegate;
+            this.setPrivateKeyBytes((RSAPrivateKey) delegate.getKeyPair().getPrivate());
         }
 
         @Override
         public KeyPair getKeyPair() {
             return delegate.getKeyPair();
+        }
+
+        @Override
+        @Deprecated
+        public synchronized RSAPublicKey getPublicKey() {
+            return delegate.getPublicKey();
+        }
+
+        @Override
+        @Deprecated
+        public synchronized RSAPrivateKey getPrivateKey() {
+            return delegate.getPrivateKey();
         }
 
         @Override

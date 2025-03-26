@@ -6,84 +6,108 @@ package com.oracle.bmc.dns.requests;
 
 import com.oracle.bmc.dns.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListZonesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/ListZonesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListZonesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
 public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the compartment the resource belongs to. */
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment the resource belongs to. */
+    /**
+     * The OCID of the compartment the resource belongs to.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need
+     * to contact Oracle about a particular request, please provide
+     * the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The maximum number of items to return in a page of the collection. */
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     private Long limit;
 
-    /** The maximum number of items to return in a page of the collection. */
+    /**
+     * The maximum number of items to return in a page of the collection.
+     *
+     */
     public Long getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
     /**
-     * A case-sensitive filter for zone names. Will match any zone with a name that equals the
-     * provided value.
+     * A case-sensitive filter for zone names.
+     * Will match any zone with a name that equals the provided value.
+     *
      */
     private String name;
 
     /**
-     * A case-sensitive filter for zone names. Will match any zone with a name that equals the
-     * provided value.
+     * A case-sensitive filter for zone names.
+     * Will match any zone with a name that equals the provided value.
+     *
      */
     public String getName() {
         return name;
     }
     /**
-     * Search by zone name. Will match any zone whose name (case-insensitive) contains the provided
-     * value.
+     * Search by zone name.
+     * Will match any zone whose name (case-insensitive) contains the provided value.
+     *
      */
     private String nameContains;
 
     /**
-     * Search by zone name. Will match any zone whose name (case-insensitive) contains the provided
-     * value.
+     * Search by zone name.
+     * Will match any zone whose name (case-insensitive) contains the provided value.
+     *
      */
     public String getNameContains() {
         return nameContains;
     }
     /**
-     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}. Will match any zone whose type
-     * equals the provided value.
+     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
+     * Will match any zone whose type equals the provided value.
+     *
      */
     private ZoneType zoneType;
 
     /**
-     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}. Will match any zone whose type
-     * equals the provided value.
-     */
-    public enum ZoneType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
+     * Will match any zone whose type equals the provided value.
+     *
+     **/
+    public enum ZoneType {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
         ;
@@ -117,43 +141,52 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     };
 
     /**
-     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}. Will match any zone whose type
-     * equals the provided value.
+     * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
+     * Will match any zone whose type equals the provided value.
+     *
      */
     public ZoneType getZoneType() {
         return zoneType;
     }
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-     * resources were created on or after the indicated time.
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created on or after the indicated time.
+     *
      */
     private java.util.Date timeCreatedGreaterThanOrEqualTo;
 
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-     * resources were created on or after the indicated time.
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created on or after the indicated time.
+     *
      */
     public java.util.Date getTimeCreatedGreaterThanOrEqualTo() {
         return timeCreatedGreaterThanOrEqualTo;
     }
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-     * resources were created before the indicated time.
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created before the indicated time.
+     *
      */
     private java.util.Date timeCreatedLessThan;
 
     /**
-     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-     * resources were created before the indicated time.
+     * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+     * all returned resources were created before the indicated time.
+     *
      */
     public java.util.Date getTimeCreatedLessThan() {
         return timeCreatedLessThan;
     }
-    /** The state of a resource. */
+    /**
+     * The state of a resource.
+     */
     private LifecycleState lifecycleState;
 
-    /** The state of a resource. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The state of a resource.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
@@ -190,15 +223,21 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /** The state of a resource. */
+    /**
+     * The state of a resource.
+     */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** The field by which to sort zones. */
+    /**
+     * The field by which to sort zones.
+     */
     private SortBy sortBy;
 
-    /** The field by which to sort zones. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field by which to sort zones.
+     **/
+    public enum SortBy {
         Name("name"),
         ZoneType("zoneType"),
         TimeCreated("timeCreated"),
@@ -232,42 +271,72 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /** The field by which to sort zones. */
+    /**
+     * The field by which to sort zones.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The order to sort the resources. */
+    /**
+     * The order to sort the resources.
+     *
+     */
     private com.oracle.bmc.dns.model.SortOrder sortOrder;
 
-    /** The order to sort the resources. */
+    /**
+     * The order to sort the resources.
+     *
+     */
     public com.oracle.bmc.dns.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     private com.oracle.bmc.dns.model.Scope scope;
 
-    /** Specifies to operate only on resources that have a matching DNS scope. */
+    /**
+     * Specifies to operate only on resources that have a matching DNS scope.
+     *
+     */
     public com.oracle.bmc.dns.model.Scope getScope() {
         return scope;
     }
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     private String viewId;
 
-    /** The OCID of the view the resource is associated with. */
+    /**
+     * The OCID of the view the resource is associated with.
+     */
     public String getViewId() {
         return viewId;
     }
-    /** Search for zones that are associated with a TSIG key. */
+    /**
+     * Search for zones that are associated with a TSIG key.
+     *
+     */
     private String tsigKeyId;
 
-    /** Search for zones that are associated with a TSIG key. */
+    /**
+     * Search for zones that are associated with a TSIG key.
+     *
+     */
     public String getTsigKeyId() {
         return tsigKeyId;
     }
-    /** Search for zones that have the given {@code DnssecState}. */
+    /**
+     * Search for zones that have the given {@code DnssecState}.
+     *
+     */
     private com.oracle.bmc.dns.model.ZoneDnssecState dnssecState;
 
-    /** Search for zones that have the given {@code DnssecState}. */
+    /**
+     * Search for zones that have the given {@code DnssecState}.
+     *
+     */
     public com.oracle.bmc.dns.model.ZoneDnssecState getDnssecState() {
         return dnssecState;
     }
@@ -275,15 +344,17 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListZonesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the compartment the resource belongs to. */
+        /**
+         * The OCID of the compartment the resource belongs to.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment the resource belongs to.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -293,14 +364,17 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need
+         * to contact Oracle about a particular request, please provide
+         * the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -310,7 +384,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The maximum number of items to return in a page of the collection. */
+        /**
+         * The maximum number of items to return in a page of the collection.
+         *
+         */
         private Long limit = null;
 
         /**
@@ -324,7 +401,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -339,14 +419,15 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A case-sensitive filter for zone names. Will match any zone with a name that equals the
-         * provided value.
+         * A case-sensitive filter for zone names.
+         * Will match any zone with a name that equals the provided value.
+         *
          */
         private String name = null;
 
         /**
-         * A case-sensitive filter for zone names. Will match any zone with a name that equals the
-         * provided value.
+         * A case-sensitive filter for zone names.
+         * Will match any zone with a name that equals the provided value.
          *
          * @param name the value to set
          * @return this builder instance
@@ -357,14 +438,15 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Search by zone name. Will match any zone whose name (case-insensitive) contains the
-         * provided value.
+         * Search by zone name.
+         * Will match any zone whose name (case-insensitive) contains the provided value.
+         *
          */
         private String nameContains = null;
 
         /**
-         * Search by zone name. Will match any zone whose name (case-insensitive) contains the
-         * provided value.
+         * Search by zone name.
+         * Will match any zone whose name (case-insensitive) contains the provided value.
          *
          * @param nameContains the value to set
          * @return this builder instance
@@ -375,14 +457,15 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Search by zone type, {@code PRIMARY} or {@code SECONDARY}. Will match any zone whose type
-         * equals the provided value.
+         * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
+         * Will match any zone whose type equals the provided value.
+         *
          */
         private ZoneType zoneType = null;
 
         /**
-         * Search by zone type, {@code PRIMARY} or {@code SECONDARY}. Will match any zone whose type
-         * equals the provided value.
+         * Search by zone type, {@code PRIMARY} or {@code SECONDARY}.
+         * Will match any zone whose type equals the provided value.
          *
          * @param zoneType the value to set
          * @return this builder instance
@@ -393,14 +476,15 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-         * resources were created on or after the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created on or after the indicated time.
+         *
          */
         private java.util.Date timeCreatedGreaterThanOrEqualTo = null;
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-         * resources were created on or after the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created on or after the indicated time.
          *
          * @param timeCreatedGreaterThanOrEqualTo the value to set
          * @return this builder instance
@@ -412,14 +496,15 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-         * resources were created before the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created before the indicated time.
+         *
          */
         private java.util.Date timeCreatedLessThan = null;
 
         /**
-         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states all returned
-         * resources were created before the indicated time.
+         * An [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) timestamp that states
+         * all returned resources were created before the indicated time.
          *
          * @param timeCreatedLessThan the value to set
          * @return this builder instance
@@ -429,12 +514,13 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The state of a resource. */
+        /**
+         * The state of a resource.
+         */
         private LifecycleState lifecycleState = null;
 
         /**
          * The state of a resource.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -443,12 +529,13 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The field by which to sort zones. */
+        /**
+         * The field by which to sort zones.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field by which to sort zones.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -457,7 +544,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The order to sort the resources. */
+        /**
+         * The order to sort the resources.
+         *
+         */
         private com.oracle.bmc.dns.model.SortOrder sortOrder = null;
 
         /**
@@ -471,7 +561,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Specifies to operate only on resources that have a matching DNS scope. */
+        /**
+         * Specifies to operate only on resources that have a matching DNS scope.
+         *
+         */
         private com.oracle.bmc.dns.model.Scope scope = null;
 
         /**
@@ -485,12 +578,13 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The OCID of the view the resource is associated with. */
+        /**
+         * The OCID of the view the resource is associated with.
+         */
         private String viewId = null;
 
         /**
          * The OCID of the view the resource is associated with.
-         *
          * @param viewId the value to set
          * @return this builder instance
          */
@@ -499,7 +593,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Search for zones that are associated with a TSIG key. */
+        /**
+         * Search for zones that are associated with a TSIG key.
+         *
+         */
         private String tsigKeyId = null;
 
         /**
@@ -513,7 +610,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Search for zones that have the given {@code DnssecState}. */
+        /**
+         * Search for zones that have the given {@code DnssecState}.
+         *
+         */
         private com.oracle.bmc.dns.model.ZoneDnssecState dnssecState = null;
 
         /**
@@ -529,19 +629,18 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -553,7 +652,6 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListZonesRequest o) {
@@ -581,11 +679,10 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListZonesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListZonesRequest
          */
@@ -599,8 +696,7 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListZonesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListZonesRequest
@@ -624,15 +720,12 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.tsigKeyId = tsigKeyId;
             request.dnssecState = dnssecState;
             return request;
-            // new ListZonesRequest(compartmentId, opcRequestId, limit, page, name, nameContains,
-            // zoneType, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, lifecycleState,
-            // sortBy, sortOrder, scope, viewId, tsigKeyId, dnssecState);
+            // new ListZonesRequest(compartmentId, opcRequestId, limit, page, name, nameContains, zoneType, timeCreatedGreaterThanOrEqualTo, timeCreatedLessThan, lifecycleState, sortBy, sortOrder, scope, viewId, tsigKeyId, dnssecState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -657,7 +750,6 @@ public class ListZonesRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

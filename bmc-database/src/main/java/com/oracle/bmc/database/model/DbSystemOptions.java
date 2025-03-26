@@ -5,22 +5,19 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The DB system options. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The DB system options.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemOptions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbSystemOptions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbSystemOptions extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"storageManagement"})
     public DbSystemOptions(StorageManagement storageManagement) {
@@ -31,19 +28,22 @@ public final class DbSystemOptions
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The storage option used in DB system. ASM - Automatic storage management LVM - Logical
-         * Volume management
-         */
+         * The storage option used in DB system.
+         * ASM - Automatic storage management
+         * LVM - Logical Volume management
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
         private StorageManagement storageManagement;
 
         /**
-         * The storage option used in DB system. ASM - Automatic storage management LVM - Logical
-         * Volume management
+         * The storage option used in DB system.
+         * ASM - Automatic storage management
+         * LVM - Logical Volume management
          *
          * @param storageManagement the value to set
          * @return this builder
-         */
+         **/
         public Builder storageManagement(StorageManagement storageManagement) {
             this.storageManagement = storageManagement;
             this.__explicitlySet__.add("storageManagement");
@@ -70,7 +70,9 @@ public final class DbSystemOptions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -80,16 +82,18 @@ public final class DbSystemOptions
     }
 
     /**
-     * The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume
-     * management
-     */
-    public enum StorageManagement implements com.oracle.bmc.http.internal.BmcEnum {
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
+     **/
+    public enum StorageManagement {
         Asm("ASM"),
         Lvm("LVM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -129,18 +133,21 @@ public final class DbSystemOptions
         }
     };
     /**
-     * The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume
-     * management
-     */
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("storageManagement")
     private final StorageManagement storageManagement;
 
     /**
-     * The storage option used in DB system. ASM - Automatic storage management LVM - Logical Volume
-     * management
+     * The storage option used in DB system.
+     * ASM - Automatic storage management
+     * LVM - Logical Volume management
      *
      * @return the value
-     */
+     **/
     public StorageManagement getStorageManagement() {
         return storageManagement;
     }
@@ -152,7 +159,6 @@ public final class DbSystemOptions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

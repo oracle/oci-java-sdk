@@ -9,31 +9,23 @@ import com.oracle.bmc.delegateaccesscontrol.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of DelegateAccessControl where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of DelegateAccessControl where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class DelegateAccessControlPaginators {
     private final DelegateAccessControl client;
 
@@ -42,13 +34,11 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDelegatedResourceAccessRequestHistories operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDelegatedResourceAccessRequestHistories operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDelegatedResourceAccessRequestHistoriesResponse>
             listDelegatedResourceAccessRequestHistoriesResponseIterator(
@@ -104,15 +94,13 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestHistorySummary}
-     * objects contained in responses from the listDelegatedResourceAccessRequestHistories
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestHistorySummary} objects
+     * contained in responses from the listDelegatedResourceAccessRequestHistories operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestHistorySummary}
-     *     objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestHistorySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<
                     com.oracle.bmc.delegateaccesscontrol.model
@@ -186,13 +174,11 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDelegatedResourceAccessRequests operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDelegatedResourceAccessRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDelegatedResourceAccessRequestsResponse>
             listDelegatedResourceAccessRequestsResponseIterator(
@@ -245,15 +231,13 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestSummary} objects
-     * contained in responses from the listDelegatedResourceAccessRequests operation. This iterable
-     * will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestSummary} objects
+     * contained in responses from the listDelegatedResourceAccessRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<
                     com.oracle.bmc.delegateaccesscontrol.model
@@ -323,21 +307,18 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDelegationControlResources operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listDelegationControlResources operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDelegationControlResourcesResponse>
             listDelegationControlResourcesResponseIterator(
                     final ListDelegationControlResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListDelegationControlResourcesRequest.Builder,
-                ListDelegationControlResourcesRequest,
-                ListDelegationControlResourcesResponse>(
+                ListDelegationControlResourcesRequest, ListDelegationControlResourcesResponse>(
                 new java.util.function.Supplier<ListDelegationControlResourcesRequest.Builder>() {
                     @Override
                     public ListDelegationControlResourcesRequest.Builder get() {
@@ -380,23 +361,20 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary} objects
-     * contained in responses from the listDelegationControlResources operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary} objects
+     * contained in responses from the listDelegationControlResources operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary>
             listDelegationControlResourcesRecordIterator(
                     final ListDelegationControlResourcesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListDelegationControlResourcesRequest.Builder,
-                ListDelegationControlResourcesRequest,
-                ListDelegationControlResourcesResponse,
+                ListDelegationControlResourcesRequest, ListDelegationControlResourcesResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.DelegationControlResourceSummary>(
                 new java.util.function.Supplier<ListDelegationControlResourcesRequest.Builder>() {
                     @Override
@@ -453,19 +431,16 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDelegationControls operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDelegationControls operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDelegationControlsResponse> listDelegationControlsResponseIterator(
             final ListDelegationControlsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDelegationControlsRequest.Builder,
-                ListDelegationControlsRequest,
+                ListDelegationControlsRequest.Builder, ListDelegationControlsRequest,
                 ListDelegationControlsResponse>(
                 new java.util.function.Supplier<ListDelegationControlsRequest.Builder>() {
                     @Override
@@ -508,21 +483,18 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary} objects contained in
-     * responses from the listDelegationControls operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary} objects
+     * contained in responses from the listDelegationControls operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary>
             listDelegationControlsRecordIterator(final ListDelegationControlsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDelegationControlsRequest.Builder,
-                ListDelegationControlsRequest,
+                ListDelegationControlsRequest.Builder, ListDelegationControlsRequest,
                 ListDelegationControlsResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.DelegationControlSummary>(
                 new java.util.function.Supplier<ListDelegationControlsRequest.Builder>() {
@@ -579,20 +551,17 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listDelegationSubscriptions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listDelegationSubscriptions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListDelegationSubscriptionsResponse>
             listDelegationSubscriptionsResponseIterator(
                     final ListDelegationSubscriptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListDelegationSubscriptionsRequest.Builder,
-                ListDelegationSubscriptionsRequest,
+                ListDelegationSubscriptionsRequest.Builder, ListDelegationSubscriptionsRequest,
                 ListDelegationSubscriptionsResponse>(
                 new java.util.function.Supplier<ListDelegationSubscriptionsRequest.Builder>() {
                     @Override
@@ -635,22 +604,19 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary} objects contained
-     * in responses from the listDelegationSubscriptions operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary} objects
+     * contained in responses from the listDelegationSubscriptions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary>
             listDelegationSubscriptionsRecordIterator(
                     final ListDelegationSubscriptionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListDelegationSubscriptionsRequest.Builder,
-                ListDelegationSubscriptionsRequest,
+                ListDelegationSubscriptionsRequest.Builder, ListDelegationSubscriptionsRequest,
                 ListDelegationSubscriptionsResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscriptionSummary>(
                 new java.util.function.Supplier<ListDelegationSubscriptionsRequest.Builder>() {
@@ -707,19 +673,16 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceProviderActions operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceProviderActions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceProviderActionsResponse> listServiceProviderActionsResponseIterator(
             final ListServiceProviderActionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListServiceProviderActionsRequest.Builder,
-                ListServiceProviderActionsRequest,
+                ListServiceProviderActionsRequest.Builder, ListServiceProviderActionsRequest,
                 ListServiceProviderActionsResponse>(
                 new java.util.function.Supplier<ListServiceProviderActionsRequest.Builder>() {
                     @Override
@@ -762,22 +725,19 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary} objects contained in
-     * responses from the listServiceProviderActions operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary} objects
+     * contained in responses from the listServiceProviderActions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary>
             listServiceProviderActionsRecordIterator(
                     final ListServiceProviderActionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServiceProviderActionsRequest.Builder,
-                ListServiceProviderActionsRequest,
+                ListServiceProviderActionsRequest.Builder, ListServiceProviderActionsRequest,
                 ListServiceProviderActionsResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderActionSummary>(
                 new java.util.function.Supplier<ListServiceProviderActionsRequest.Builder>() {
@@ -834,21 +794,18 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceProviderInteractions operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceProviderInteractions operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceProviderInteractionsResponse>
             listServiceProviderInteractionsResponseIterator(
                     final ListServiceProviderInteractionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListServiceProviderInteractionsRequest.Builder,
-                ListServiceProviderInteractionsRequest,
-                ListServiceProviderInteractionsResponse>(
+                ListServiceProviderInteractionsRequest, ListServiceProviderInteractionsResponse>(
                 new java.util.function.Supplier<ListServiceProviderInteractionsRequest.Builder>() {
                     @Override
                     public ListServiceProviderInteractionsRequest.Builder get() {
@@ -891,23 +848,20 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary} objects
-     * contained in responses from the listServiceProviderInteractions operation. This iterable will
-     * fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary} objects
+     * contained in responses from the listServiceProviderInteractions operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary} objects
-     *     contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary>
             listServiceProviderInteractionsRecordIterator(
                     final ListServiceProviderInteractionsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListServiceProviderInteractionsRequest.Builder,
-                ListServiceProviderInteractionsRequest,
-                ListServiceProviderInteractionsResponse,
+                ListServiceProviderInteractionsRequest, ListServiceProviderInteractionsResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderInteractionSummary>(
                 new java.util.function.Supplier<ListServiceProviderInteractionsRequest.Builder>() {
                     @Override
@@ -964,18 +918,16 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listServiceProviders operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listServiceProviders operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListServiceProvidersResponse> listServiceProvidersResponseIterator(
             final ListServiceProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListServiceProvidersRequest.Builder,
-                ListServiceProvidersRequest,
+                ListServiceProvidersRequest.Builder, ListServiceProvidersRequest,
                 ListServiceProvidersResponse>(
                 new java.util.function.Supplier<ListServiceProvidersRequest.Builder>() {
                     @Override
@@ -1017,21 +969,18 @@ public class DelegateAccessControlPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary} objects contained in
-     * responses from the listServiceProviders operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary} objects
+     * contained in responses from the listServiceProviders operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary>
             listServiceProvidersRecordIterator(final ListServiceProvidersRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListServiceProvidersRequest.Builder,
-                ListServiceProvidersRequest,
+                ListServiceProvidersRequest.Builder, ListServiceProvidersRequest,
                 ListServiceProvidersResponse,
                 com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderSummary>(
                 new java.util.function.Supplier<ListServiceProvidersRequest.Builder>() {

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** The type of release. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum ReleaseType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of release.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum ReleaseType {
     Major("MAJOR"),
     Bundle("BUNDLE"),
     Minor("MINOR"),

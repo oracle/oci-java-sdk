@@ -5,23 +5,22 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * Information regarding cluster's credential rotation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * Information regarding cluster's credential rotation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CredentialRotationStatus.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CredentialRotationStatus.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CredentialRotationStatus
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeAutoCompletionScheduled", "status", "statusDetails"})
     public CredentialRotationStatus(
@@ -36,70 +35,67 @@ public final class CredentialRotationStatus
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The time by which retirement of old credentials should start. */
+        /**
+         * The time by which retirement of old credentials should start.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAutoCompletionScheduled")
         private java.util.Date timeAutoCompletionScheduled;
 
         /**
          * The time by which retirement of old credentials should start.
-         *
          * @param timeAutoCompletionScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAutoCompletionScheduled(java.util.Date timeAutoCompletionScheduled) {
             this.timeAutoCompletionScheduled = timeAutoCompletionScheduled;
             this.__explicitlySet__.add("timeAutoCompletionScheduled");
             return this;
         }
         /**
-         * Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials
-         * to kubernetes cluster control plane and worker nodes or retiring old credentials from
-         * kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to
-         * invoke the complete rotation action or the automcatic complete rotation action.
+         * Credential rotation status of a kubernetes cluster
+         * IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes.
+         * WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action.
          * COMPLETED: New credentials are functional on kuberentes cluster.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
-         * Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials
-         * to kubernetes cluster control plane and worker nodes or retiring old credentials from
-         * kubernetes cluster control plane and worker nodes. WAITING: Waiting for customer to
-         * invoke the complete rotation action or the automcatic complete rotation action.
+         * Credential rotation status of a kubernetes cluster
+         * IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes.
+         * WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action.
          * COMPLETED: New credentials are functional on kuberentes cluster.
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS:
-         * Credential rotation is in progress. Starting to issue new credentials to kubernetes
-         * cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are
-         * added. At this stage cluster has both old and new credentials and is awaiting old
-         * credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in
-         * progress. Starting to remove old credentials from kubernetes cluster control plane and
-         * worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
-         */
+         * Details of a kuberenetes cluster credential rotation status:
+         * ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes.
+         * NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement.
+         * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes.
+         * COMPLETED: Credential rotation is complete. Old credentials are retired.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
         private StatusDetails statusDetails;
 
         /**
-         * Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS:
-         * Credential rotation is in progress. Starting to issue new credentials to kubernetes
-         * cluster control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are
-         * added. At this stage cluster has both old and new credentials and is awaiting old
-         * credentials retirement. RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in
-         * progress. Starting to remove old credentials from kubernetes cluster control plane and
-         * worker nodes. COMPLETED: Credential rotation is complete. Old credentials are retired.
+         * Details of a kuberenetes cluster credential rotation status:
+         * ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes.
+         * NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement.
+         * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes.
+         * COMPLETED: Credential rotation is complete. Old credentials are retired.
          *
          * @param statusDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDetails(StatusDetails statusDetails) {
             this.statusDetails = statusDetails;
             this.__explicitlySet__.add("statusDetails");
@@ -134,7 +130,9 @@ public final class CredentialRotationStatus
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -143,34 +141,35 @@ public final class CredentialRotationStatus
         return new Builder().copy(this);
     }
 
-    /** The time by which retirement of old credentials should start. */
+    /**
+     * The time by which retirement of old credentials should start.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAutoCompletionScheduled")
     private final java.util.Date timeAutoCompletionScheduled;
 
     /**
      * The time by which retirement of old credentials should start.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAutoCompletionScheduled() {
         return timeAutoCompletionScheduled;
     }
 
     /**
-     * Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to
-     * kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes
-     * cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete
-     * rotation action or the automcatic complete rotation action. COMPLETED: New credentials are
-     * functional on kuberentes cluster.
-     */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+     * Credential rotation status of a kubernetes cluster
+     * IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes.
+     * WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action.
+     * COMPLETED: New credentials are functional on kuberentes cluster.
+     *
+     **/
+    public enum Status {
         InProgress("IN_PROGRESS"),
         Waiting("WAITING"),
         Completed("COMPLETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -209,46 +208,44 @@ public final class CredentialRotationStatus
         }
     };
     /**
-     * Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to
-     * kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes
-     * cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete
-     * rotation action or the automcatic complete rotation action. COMPLETED: New credentials are
-     * functional on kuberentes cluster.
-     */
+     * Credential rotation status of a kubernetes cluster
+     * IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes.
+     * WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action.
+     * COMPLETED: New credentials are functional on kuberentes cluster.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
-     * Credential rotation status of a kubernetes cluster IN_PROGRESS: Issuing new credentials to
-     * kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes
-     * cluster control plane and worker nodes. WAITING: Waiting for customer to invoke the complete
-     * rotation action or the automcatic complete rotation action. COMPLETED: New credentials are
-     * functional on kuberentes cluster.
+     * Credential rotation status of a kubernetes cluster
+     * IN_PROGRESS: Issuing new credentials to kubernetes cluster control plane and worker nodes or retiring old credentials from kubernetes cluster control plane and worker nodes.
+     * WAITING: Waiting for customer to invoke the complete rotation action or the automcatic complete rotation action.
+     * COMPLETED: New credentials are functional on kuberentes cluster.
      *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS:
-     * Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster
-     * control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this
-     * stage cluster has both old and new credentials and is awaiting old credentials retirement.
-     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove
-     * old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential
-     * rotation is complete. Old credentials are retired.
-     */
-    public enum StatusDetails implements com.oracle.bmc.http.internal.BmcEnum {
+     * Details of a kuberenetes cluster credential rotation status:
+     * ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes.
+     * NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement.
+     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes.
+     * COMPLETED: Credential rotation is complete. Old credentials are retired.
+     *
+     **/
+    public enum StatusDetails {
         IssuingNewCredentials("ISSUING_NEW_CREDENTIALS"),
         NewCredentialsIssued("NEW_CREDENTIALS_ISSUED"),
         RetiringOldCredentials("RETIRING_OLD_CREDENTIALS"),
         Completed("COMPLETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -288,28 +285,25 @@ public final class CredentialRotationStatus
         }
     };
     /**
-     * Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS:
-     * Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster
-     * control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this
-     * stage cluster has both old and new credentials and is awaiting old credentials retirement.
-     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove
-     * old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential
-     * rotation is complete. Old credentials are retired.
-     */
+     * Details of a kuberenetes cluster credential rotation status:
+     * ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes.
+     * NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement.
+     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes.
+     * COMPLETED: Credential rotation is complete. Old credentials are retired.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDetails")
     private final StatusDetails statusDetails;
 
     /**
-     * Details of a kuberenetes cluster credential rotation status: ISSUING_NEW_CREDENTIALS:
-     * Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster
-     * control plane and worker nodes. NEW_CREDENTIALS_ISSUED: New credentials are added. At this
-     * stage cluster has both old and new credentials and is awaiting old credentials retirement.
-     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove
-     * old credentials from kubernetes cluster control plane and worker nodes. COMPLETED: Credential
-     * rotation is complete. Old credentials are retired.
+     * Details of a kuberenetes cluster credential rotation status:
+     * ISSUING_NEW_CREDENTIALS: Credential rotation is in progress. Starting to issue new credentials to kubernetes cluster control plane and worker nodes.
+     * NEW_CREDENTIALS_ISSUED: New credentials are added. At this stage cluster has both old and new credentials and is awaiting old credentials retirement.
+     * RETIRING_OLD_CREDENTIALS: Retirement of old credentials is in progress. Starting to remove old credentials from kubernetes cluster control plane and worker nodes.
+     * COMPLETED: Credential rotation is complete. Old credentials are retired.
      *
      * @return the value
-     */
+     **/
     public StatusDetails getStatusDetails() {
         return statusDetails;
     }
@@ -321,7 +315,6 @@ public final class CredentialRotationStatus
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

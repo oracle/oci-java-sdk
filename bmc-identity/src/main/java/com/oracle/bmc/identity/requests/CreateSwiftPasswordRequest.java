@@ -6,27 +6,33 @@ package com.oracle.bmc.identity.requests;
 
 import com.oracle.bmc.identity.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSwiftPasswordExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateSwiftPasswordRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identity/CreateSwiftPasswordExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateSwiftPasswordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class CreateSwiftPasswordRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.identity.model.CreateSwiftPasswordDetails> {
 
-    /** Request object for creating a new swift password. */
+    /**
+     * Request object for creating a new swift password.
+     */
     private com.oracle.bmc.identity.model.CreateSwiftPasswordDetails createSwiftPasswordDetails;
 
-    /** Request object for creating a new swift password. */
+    /**
+     * Request object for creating a new swift password.
+     */
     public com.oracle.bmc.identity.model.CreateSwiftPasswordDetails
             getCreateSwiftPasswordDetails() {
         return createSwiftPasswordDetails;
     }
-    /** The OCID of the user. */
+    /**
+     * The OCID of the user.
+     */
     private String userId;
 
-    /** The OCID of the user. */
+    /**
+     * The OCID of the user.
+     */
     public String getUserId() {
         return userId;
     }
@@ -36,6 +42,7 @@ public class CreateSwiftPasswordRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     private String opcRetryToken;
 
@@ -45,6 +52,7 @@ public class CreateSwiftPasswordRequest
      * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
      * has been deleted and purged from the system, then a retry of the original creation request
      * may be rejected).
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -52,7 +60,6 @@ public class CreateSwiftPasswordRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -65,16 +72,18 @@ public class CreateSwiftPasswordRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateSwiftPasswordRequest,
                     com.oracle.bmc.identity.model.CreateSwiftPasswordDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Request object for creating a new swift password. */
+        /**
+         * Request object for creating a new swift password.
+         */
         private com.oracle.bmc.identity.model.CreateSwiftPasswordDetails
                 createSwiftPasswordDetails = null;
 
         /**
          * Request object for creating a new swift password.
-         *
          * @param createSwiftPasswordDetails the value to set
          * @return this builder instance
          */
@@ -85,12 +94,13 @@ public class CreateSwiftPasswordRequest
             return this;
         }
 
-        /** The OCID of the user. */
+        /**
+         * The OCID of the user.
+         */
         private String userId = null;
 
         /**
          * The OCID of the user.
-         *
          * @param userId the value to set
          * @return this builder instance
          */
@@ -101,19 +111,20 @@ public class CreateSwiftPasswordRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations (e.g., if a
-         * resource has been deleted and purged from the system, then a retry of the original
-         * creation request may be rejected).
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations (e.g., if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * may be rejected).
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -125,19 +136,18 @@ public class CreateSwiftPasswordRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -149,7 +159,6 @@ public class CreateSwiftPasswordRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateSwiftPasswordRequest o) {
@@ -164,11 +173,10 @@ public class CreateSwiftPasswordRequest
         /**
          * Build the instance of CreateSwiftPasswordRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateSwiftPasswordRequest
          */
@@ -181,7 +189,6 @@ public class CreateSwiftPasswordRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -194,8 +201,7 @@ public class CreateSwiftPasswordRequest
         /**
          * Build the instance of CreateSwiftPasswordRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateSwiftPasswordRequest
@@ -212,7 +218,6 @@ public class CreateSwiftPasswordRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -224,7 +229,6 @@ public class CreateSwiftPasswordRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

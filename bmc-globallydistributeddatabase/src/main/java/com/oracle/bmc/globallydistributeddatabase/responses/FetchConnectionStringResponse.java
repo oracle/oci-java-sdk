@@ -6,17 +6,18 @@ package com.oracle.bmc.globallydistributeddatabase.responses;
 
 import com.oracle.bmc.globallydistributeddatabase.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
         return etag;
     }
 
-    /** The returned {@code ConnectionString} instance. */
+    /**
+     * The returned ConnectionString instance.
+     */
     private com.oracle.bmc.globallydistributeddatabase.model.ConnectionString connectionString;
 
     /**
-     * The returned {@code ConnectionString} instance.
-     *
+     * The returned ConnectionString instance.
      * @return the value
      */
     public com.oracle.bmc.globallydistributeddatabase.model.ConnectionString getConnectionString() {
@@ -57,7 +62,7 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
     })
     private FetchConnectionStringResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.globallydistributeddatabase.model.ConnectionString connectionString) {
@@ -67,33 +72,31 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
         this.connectionString = connectionString;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<FetchConnectionStringResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
-        /** The returned {@code ConnectionString} instance. */
+        /**
+         * The returned ConnectionString instance.
+         */
         private com.oracle.bmc.globallydistributeddatabase.model.ConnectionString connectionString;
 
         /**
-         * The returned {@code ConnectionString} instance.
-         *
+         * The returned ConnectionString instance.
          * @param connectionString the value to set
          * @return this builder
          */
@@ -135,10 +142,8 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(FetchConnectionStringResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +156,8 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public FetchConnectionStringResponse build() {
             return new FetchConnectionStringResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, connectionString);
@@ -163,7 +166,6 @@ public class FetchConnectionStringResponse extends com.oracle.bmc.responses.BmcR
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

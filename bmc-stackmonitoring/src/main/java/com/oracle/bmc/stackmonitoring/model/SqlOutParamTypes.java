@@ -5,11 +5,10 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Possible out parameter types of SQL collection method. During the update, to completely remove
- * the out parameter, use the value NO_OUT_PARAM
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum SqlOutParamTypes implements com.oracle.bmc.http.internal.BmcEnum {
+ * Possible out parameter types of SQL collection method. During the update, to completely remove the out parameter, use the value NO_OUT_PARAM
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum SqlOutParamTypes {
     SqlCursor("SQL_CURSOR"),
     Array("ARRAY"),
     NoOutParam("NO_OUT_PARAM"),

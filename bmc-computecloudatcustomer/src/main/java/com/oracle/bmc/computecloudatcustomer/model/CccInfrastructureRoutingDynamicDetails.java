@@ -5,23 +5,23 @@
 package com.oracle.bmc.computecloudatcustomer.model;
 
 /**
- * Dynamic routing information for the Compute Cloud@Customer infrastructure. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
+ * Dynamic routing information for the Compute Cloud@Customer infrastructure.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CccInfrastructureRoutingDynamicDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CccInfrastructureRoutingDynamicDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CccInfrastructureRoutingDynamicDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerInformation", "oracleAsn", "bgpTopology"})
     public CccInfrastructureRoutingDynamicDetails(
@@ -36,16 +36,17 @@ public final class CccInfrastructureRoutingDynamicDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The list of peer devices in the dynamic routing configuration. */
+        /**
+         * The list of peer devices in the dynamic routing configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerInformation")
         private java.util.List<PeerInformation> peerInformation;
 
         /**
          * The list of peer devices in the dynamic routing configuration.
-         *
          * @param peerInformation the value to set
          * @return this builder
-         */
+         **/
         public Builder peerInformation(java.util.List<PeerInformation> peerInformation) {
             this.peerInformation = peerInformation;
             this.__explicitlySet__.add("peerInformation");
@@ -54,7 +55,8 @@ public final class CccInfrastructureRoutingDynamicDetails
         /**
          * The Oracle Autonomous System Number (ASN) to control routing and exchange information
          * within the dynamic routing configuration.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleAsn")
         private Integer oracleAsn;
 
@@ -64,13 +66,16 @@ public final class CccInfrastructureRoutingDynamicDetails
          *
          * @param oracleAsn the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleAsn(Integer oracleAsn) {
             this.oracleAsn = oracleAsn;
             this.__explicitlySet__.add("oracleAsn");
             return this;
         }
-        /** The topology in use for the Border Gateway Protocol (BGP) configuration. */
+        /**
+         * The topology in use for the Border Gateway Protocol (BGP) configuration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bgpTopology")
         private BgpTopology bgpTopology;
 
@@ -79,7 +84,7 @@ public final class CccInfrastructureRoutingDynamicDetails
          *
          * @param bgpTopology the value to set
          * @return this builder
-         */
+         **/
         public Builder bgpTopology(BgpTopology bgpTopology) {
             this.bgpTopology = bgpTopology;
             this.__explicitlySet__.add("bgpTopology");
@@ -114,7 +119,9 @@ public final class CccInfrastructureRoutingDynamicDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,45 +130,50 @@ public final class CccInfrastructureRoutingDynamicDetails
         return new Builder().copy(this);
     }
 
-    /** The list of peer devices in the dynamic routing configuration. */
+    /**
+     * The list of peer devices in the dynamic routing configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerInformation")
     private final java.util.List<PeerInformation> peerInformation;
 
     /**
      * The list of peer devices in the dynamic routing configuration.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PeerInformation> getPeerInformation() {
         return peerInformation;
     }
 
     /**
-     * The Oracle Autonomous System Number (ASN) to control routing and exchange information within
-     * the dynamic routing configuration.
-     */
+     * The Oracle Autonomous System Number (ASN) to control routing and exchange information
+     * within the dynamic routing configuration.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleAsn")
     private final Integer oracleAsn;
 
     /**
-     * The Oracle Autonomous System Number (ASN) to control routing and exchange information within
-     * the dynamic routing configuration.
+     * The Oracle Autonomous System Number (ASN) to control routing and exchange information
+     * within the dynamic routing configuration.
      *
      * @return the value
-     */
+     **/
     public Integer getOracleAsn() {
         return oracleAsn;
     }
 
-    /** The topology in use for the Border Gateway Protocol (BGP) configuration. */
-    public enum BgpTopology implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The topology in use for the Border Gateway Protocol (BGP) configuration.
+     *
+     **/
+    public enum BgpTopology {
         Triangle("TRIANGLE"),
         Square("SQUARE"),
         Mesh("MESH"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -200,7 +212,10 @@ public final class CccInfrastructureRoutingDynamicDetails
             return UnknownEnumValue;
         }
     };
-    /** The topology in use for the Border Gateway Protocol (BGP) configuration. */
+    /**
+     * The topology in use for the Border Gateway Protocol (BGP) configuration.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bgpTopology")
     private final BgpTopology bgpTopology;
 
@@ -208,7 +223,7 @@ public final class CccInfrastructureRoutingDynamicDetails
      * The topology in use for the Border Gateway Protocol (BGP) configuration.
      *
      * @return the value
-     */
+     **/
     public BgpTopology getBgpTopology() {
         return bgpTopology;
     }
@@ -220,7 +235,6 @@ public final class CccInfrastructureRoutingDynamicDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

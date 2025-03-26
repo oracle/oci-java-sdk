@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL Plan Line type object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * SQL Plan Line type object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlPlanLine.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlPlanLine extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -140,22 +138,30 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Version Example: {@code 1} */
+        /**
+         * Version
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
 
         /**
-         * Version Example: {@code 1}
+         * Version
+         * Example: {@code 1}
          *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Float version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Unique SQL_ID for a SQL Statement. */
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -164,560 +170,703 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-        /** Plan hash value for the SQL Execution Plan */
+        /**
+         * Plan hash value for the SQL Execution Plan
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planHash")
         private Long planHash;
 
         /**
          * Plan hash value for the SQL Execution Plan
-         *
          * @param planHash the value to set
          * @return this builder
-         */
+         **/
         public Builder planHash(Long planHash) {
             this.planHash = planHash;
             this.__explicitlySet__.add("planHash");
             return this;
         }
-        /** Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"} */
+        /**
+         * Collection time stamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"}
+         * Collection time stamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
          *
          * @param timeCollected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** Operation Example: {@code "SELECT STATEMENT"} */
+        /**
+         * Operation
+         * Example: {@code "SELECT STATEMENT"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * Operation Example: {@code "SELECT STATEMENT"}
+         * Operation
+         * Example: {@code "SELECT STATEMENT"}
          *
          * @param operation the value to set
          * @return this builder
-         */
+         **/
         public Builder operation(String operation) {
             this.operation = operation;
             this.__explicitlySet__.add("operation");
             return this;
         }
-        /** Remark Example: {@code ""} */
+        /**
+         * Remark
+         * Example: {@code ""}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("remark")
         private String remark;
 
         /**
-         * Remark Example: {@code ""}
+         * Remark
+         * Example: {@code ""}
          *
          * @param remark the value to set
          * @return this builder
-         */
+         **/
         public Builder remark(String remark) {
             this.remark = remark;
             this.__explicitlySet__.add("remark");
             return this;
         }
-        /** Options Example: {@code "RANGE SCAN"} */
+        /**
+         * Options
+         * Example: {@code "RANGE SCAN"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("options")
         private String options;
 
         /**
-         * Options Example: {@code "RANGE SCAN"}
+         * Options
+         * Example: {@code "RANGE SCAN"}
          *
          * @param options the value to set
          * @return this builder
-         */
+         **/
         public Builder options(String options) {
             this.options = options;
             this.__explicitlySet__.add("options");
             return this;
         }
-        /** Object Node Example: {@code "Q4000"} */
+        /**
+         * Object Node
+         * Example: {@code "Q4000"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
         private String objectNode;
 
         /**
-         * Object Node Example: {@code "Q4000"}
+         * Object Node
+         * Example: {@code "Q4000"}
          *
          * @param objectNode the value to set
          * @return this builder
-         */
+         **/
         public Builder objectNode(String objectNode) {
             this.objectNode = objectNode;
             this.__explicitlySet__.add("objectNode");
             return this;
         }
-        /** Object Owner Example: {@code "TENANT_A#SCHEMA"} */
+        /**
+         * Object Owner
+         * Example: {@code "TENANT_A#SCHEMA"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
         private String objectOwner;
 
         /**
-         * Object Owner Example: {@code "TENANT_A#SCHEMA"}
+         * Object Owner
+         * Example: {@code "TENANT_A#SCHEMA"}
          *
          * @param objectOwner the value to set
          * @return this builder
-         */
+         **/
         public Builder objectOwner(String objectOwner) {
             this.objectOwner = objectOwner;
             this.__explicitlySet__.add("objectOwner");
             return this;
         }
-        /** Object Name Example: {@code "PLAN_LINES_PK"} */
+        /**
+         * Object Name
+         * Example: {@code "PLAN_LINES_PK"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
-         * Object Name Example: {@code "PLAN_LINES_PK"}
+         * Object Name
+         * Example: {@code "PLAN_LINES_PK"}
          *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** Object Alias Example: {@code "PLAN_LINES@SEL$1"} */
+        /**
+         * Object Alias
+         * Example: {@code "PLAN_LINES@SEL$1"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectAlias")
         private String objectAlias;
 
         /**
-         * Object Alias Example: {@code "PLAN_LINES@SEL$1"}
+         * Object Alias
+         * Example: {@code "PLAN_LINES@SEL$1"}
          *
          * @param objectAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder objectAlias(String objectAlias) {
             this.objectAlias = objectAlias;
             this.__explicitlySet__.add("objectAlias");
             return this;
         }
-        /** Object Instance Example: {@code 37472} */
+        /**
+         * Object Instance
+         * Example: {@code 37472}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectInstance")
         private Long objectInstance;
 
         /**
-         * Object Instance Example: {@code 37472}
+         * Object Instance
+         * Example: {@code 37472}
          *
          * @param objectInstance the value to set
          * @return this builder
-         */
+         **/
         public Builder objectInstance(Long objectInstance) {
             this.objectInstance = objectInstance;
             this.__explicitlySet__.add("objectInstance");
             return this;
         }
-        /** Object Type Example: {@code "INDEX (UNIQUE)"} */
+        /**
+         * Object Type
+         * Example: {@code "INDEX (UNIQUE)"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectType")
         private String objectType;
 
         /**
-         * Object Type Example: {@code "INDEX (UNIQUE)"}
+         * Object Type
+         * Example: {@code "INDEX (UNIQUE)"}
          *
          * @param objectType the value to set
          * @return this builder
-         */
+         **/
         public Builder objectType(String objectType) {
             this.objectType = objectType;
             this.__explicitlySet__.add("objectType");
             return this;
         }
-        /** Optimizer Example: {@code "CLUSTER"} */
+        /**
+         * Optimizer
+         * Example: {@code "CLUSTER"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("optimizer")
         private String optimizer;
 
         /**
-         * Optimizer Example: {@code "CLUSTER"}
+         * Optimizer
+         * Example: {@code "CLUSTER"}
          *
          * @param optimizer the value to set
          * @return this builder
-         */
+         **/
         public Builder optimizer(String optimizer) {
             this.optimizer = optimizer;
             this.__explicitlySet__.add("optimizer");
             return this;
         }
-        /** Search Columns Example: {@code 3} */
+        /**
+         * Search Columns
+         * Example: {@code 3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchColumns")
         private Long searchColumns;
 
         /**
-         * Search Columns Example: {@code 3}
+         * Search Columns
+         * Example: {@code 3}
          *
          * @param searchColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder searchColumns(Long searchColumns) {
             this.searchColumns = searchColumns;
             this.__explicitlySet__.add("searchColumns");
             return this;
         }
-        /** Identifier Example: {@code 3} */
+        /**
+         * Identifier
+         * Example: {@code 3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("identifier")
         private Long identifier;
 
         /**
-         * Identifier Example: {@code 3}
+         * Identifier
+         * Example: {@code 3}
          *
          * @param identifier the value to set
          * @return this builder
-         */
+         **/
         public Builder identifier(Long identifier) {
             this.identifier = identifier;
             this.__explicitlySet__.add("identifier");
             return this;
         }
-        /** Parent Identifier Example: {@code 2} */
+        /**
+         * Parent Identifier
+         * Example: {@code 2}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentIdentifier")
         private Long parentIdentifier;
 
         /**
-         * Parent Identifier Example: {@code 2}
+         * Parent Identifier
+         * Example: {@code 2}
          *
          * @param parentIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder parentIdentifier(Long parentIdentifier) {
             this.parentIdentifier = parentIdentifier;
             this.__explicitlySet__.add("parentIdentifier");
             return this;
         }
-        /** Depth Example: {@code 3} */
+        /**
+         * Depth
+         * Example: {@code 3}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("depth")
         private Long depth;
 
         /**
-         * Depth Example: {@code 3}
+         * Depth
+         * Example: {@code 3}
          *
          * @param depth the value to set
          * @return this builder
-         */
+         **/
         public Builder depth(Long depth) {
             this.depth = depth;
             this.__explicitlySet__.add("depth");
             return this;
         }
-        /** Position Example: {@code 1} */
+        /**
+         * Position
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Long position;
 
         /**
-         * Position Example: {@code 1}
+         * Position
+         * Example: {@code 1}
          *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Long position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-        /** Cost Example: {@code 1} */
+        /**
+         * Cost
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cost")
         private Long cost;
 
         /**
-         * Cost Example: {@code 1}
+         * Cost
+         * Example: {@code 1}
          *
          * @param cost the value to set
          * @return this builder
-         */
+         **/
         public Builder cost(Long cost) {
             this.cost = cost;
             this.__explicitlySet__.add("cost");
             return this;
         }
-        /** Cardinality Example: {@code 1} */
+        /**
+         * Cardinality
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
         private Long cardinality;
 
         /**
-         * Cardinality Example: {@code 1}
+         * Cardinality
+         * Example: {@code 1}
          *
          * @param cardinality the value to set
          * @return this builder
-         */
+         **/
         public Builder cardinality(Long cardinality) {
             this.cardinality = cardinality;
             this.__explicitlySet__.add("cardinality");
             return this;
         }
-        /** Bytes Example: {@code 150} */
+        /**
+         * Bytes
+         * Example: {@code 150}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bytes")
         private Long bytes;
 
         /**
-         * Bytes Example: {@code 150}
+         * Bytes
+         * Example: {@code 150}
          *
          * @param bytes the value to set
          * @return this builder
-         */
+         **/
         public Builder bytes(Long bytes) {
             this.bytes = bytes;
             this.__explicitlySet__.add("bytes");
             return this;
         }
-        /** Other Example: */
+        /**
+         * Other
+         * Example:
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("other")
         private String other;
 
         /**
-         * Other Example:
+         * Other
+         * Example:
          *
          * @param other the value to set
          * @return this builder
-         */
+         **/
         public Builder other(String other) {
             this.other = other;
             this.__explicitlySet__.add("other");
             return this;
         }
-        /** Other Tag Example: {@code "PARALLEL_COMBINED_WITH_PARENT"} */
+        /**
+         * Other Tag
+         * Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
         private String otherTag;
 
         /**
-         * Other Tag Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
+         * Other Tag
+         * Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
          *
          * @param otherTag the value to set
          * @return this builder
-         */
+         **/
         public Builder otherTag(String otherTag) {
             this.otherTag = otherTag;
             this.__explicitlySet__.add("otherTag");
             return this;
         }
-        /** Partition start Example: {@code 1} */
+        /**
+         * Partition start
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
         private String partitionStart;
 
         /**
-         * Partition start Example: {@code 1}
+         * Partition start
+         * Example: {@code 1}
          *
          * @param partitionStart the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionStart(String partitionStart) {
             this.partitionStart = partitionStart;
             this.__explicitlySet__.add("partitionStart");
             return this;
         }
-        /** Partition stop Example: {@code 2} */
+        /**
+         * Partition stop
+         * Example: {@code 2}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
         private String partitionStop;
 
         /**
-         * Partition stop Example: {@code 2}
+         * Partition stop
+         * Example: {@code 2}
          *
          * @param partitionStop the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionStop(String partitionStop) {
             this.partitionStop = partitionStop;
             this.__explicitlySet__.add("partitionStop");
             return this;
         }
-        /** Partition identifier Example: {@code 8} */
+        /**
+         * Partition identifier
+         * Example: {@code 8}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partitionIdentifier")
         private Long partitionIdentifier;
 
         /**
-         * Partition identifier Example: {@code 8}
+         * Partition identifier
+         * Example: {@code 8}
          *
          * @param partitionIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder partitionIdentifier(Long partitionIdentifier) {
             this.partitionIdentifier = partitionIdentifier;
             this.__explicitlySet__.add("partitionIdentifier");
             return this;
         }
-        /** Distribution Example: {@code "QC (RANDOM)"} */
+        /**
+         * Distribution
+         * Example: {@code "QC (RANDOM)"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("distribution")
         private String distribution;
 
         /**
-         * Distribution Example: {@code "QC (RANDOM)"}
+         * Distribution
+         * Example: {@code "QC (RANDOM)"}
          *
          * @param distribution the value to set
          * @return this builder
-         */
+         **/
         public Builder distribution(String distribution) {
             this.distribution = distribution;
             this.__explicitlySet__.add("distribution");
             return this;
         }
-        /** CPU cost Example: {@code 7321} */
+        /**
+         * CPU cost
+         * Example: {@code 7321}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
         private Long cpuCost;
 
         /**
-         * CPU cost Example: {@code 7321}
+         * CPU cost
+         * Example: {@code 7321}
          *
          * @param cpuCost the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCost(Long cpuCost) {
             this.cpuCost = cpuCost;
             this.__explicitlySet__.add("cpuCost");
             return this;
         }
-        /** IO cost Example: {@code 1} */
+        /**
+         * IO cost
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
         private Long ioCost;
 
         /**
-         * IO cost Example: {@code 1}
+         * IO cost
+         * Example: {@code 1}
          *
          * @param ioCost the value to set
          * @return this builder
-         */
+         **/
         public Builder ioCost(Long ioCost) {
             this.ioCost = ioCost;
             this.__explicitlySet__.add("ioCost");
             return this;
         }
-        /** Time space Example: {@code 15614000} */
+        /**
+         * Time space
+         * Example: {@code 15614000}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
         private Long tempSpace;
 
         /**
-         * Time space Example: {@code 15614000}
+         * Time space
+         * Example: {@code 15614000}
          *
          * @param tempSpace the value to set
          * @return this builder
-         */
+         **/
         public Builder tempSpace(Long tempSpace) {
             this.tempSpace = tempSpace;
             this.__explicitlySet__.add("tempSpace");
             return this;
         }
-        /** Access predicates Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"} */
+        /**
+         * Access predicates
+         * Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
         private String accessPredicates;
 
         /**
-         * Access predicates Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
+         * Access predicates
+         * Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
          *
          * @param accessPredicates the value to set
          * @return this builder
-         */
+         **/
         public Builder accessPredicates(String accessPredicates) {
             this.accessPredicates = accessPredicates;
             this.__explicitlySet__.add("accessPredicates");
             return this;
         }
         /**
-         * Filter predicates Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR
-         * (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND
-         * SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
-         */
+         * Filter predicates
+         * Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
         private String filterPredicates;
 
         /**
-         * Filter predicates Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR
-         * (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND
-         * SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
+         * Filter predicates
+         * Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
          *
          * @param filterPredicates the value to set
          * @return this builder
-         */
+         **/
         public Builder filterPredicates(String filterPredicates) {
             this.filterPredicates = filterPredicates;
             this.__explicitlySet__.add("filterPredicates");
             return this;
         }
-        /** Projection Example: {@code "COUNT(*)[22]"} */
+        /**
+         * Projection
+         * Example: {@code "COUNT(*)[22]"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("projection")
         private String projection;
 
         /**
-         * Projection Example: {@code "COUNT(*)[22]"}
+         * Projection
+         * Example: {@code "COUNT(*)[22]"}
          *
          * @param projection the value to set
          * @return this builder
-         */
+         **/
         public Builder projection(String projection) {
             this.projection = projection;
             this.__explicitlySet__.add("projection");
             return this;
         }
-        /** Qblock Name Example: {@code "SEL$1"} */
+        /**
+         * Qblock Name
+         * Example: {@code "SEL$1"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("qblockName")
         private String qblockName;
 
         /**
-         * Qblock Name Example: {@code "SEL$1"}
+         * Qblock Name
+         * Example: {@code "SEL$1"}
          *
          * @param qblockName the value to set
          * @return this builder
-         */
+         **/
         public Builder qblockName(String qblockName) {
             this.qblockName = qblockName;
             this.__explicitlySet__.add("qblockName");
             return this;
         }
-        /** Total elapsed time Example: {@code 1.2} */
+        /**
+         * Total elapsed time
+         * Example: {@code 1.2}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("elapsedTimeInSec")
         private Float elapsedTimeInSec;
 
         /**
-         * Total elapsed time Example: {@code 1.2}
+         * Total elapsed time
+         * Example: {@code 1.2}
          *
          * @param elapsedTimeInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder elapsedTimeInSec(Float elapsedTimeInSec) {
             this.elapsedTimeInSec = elapsedTimeInSec;
             this.__explicitlySet__.add("elapsedTimeInSec");
             return this;
         }
         /**
-         * Other SQL Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info
-         * type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info
-         * type=\\"plan_hash_full\\">483892784</info><info
-         * type=\\"plan_hash\\">2709293936</info><info
-         * type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans'
-         * 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds'
-         * 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode'
-         * 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1
-         * 30001331:1 30142527:1
-         * 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\"
-         * \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
-         */
+         * Other SQL
+         * Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\" \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("otherXML")
         private String otherXML;
 
         /**
-         * Other SQL Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info
-         * type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info
-         * type=\\"plan_hash_full\\">483892784</info><info
-         * type=\\"plan_hash\\">2709293936</info><info
-         * type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans'
-         * 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds'
-         * 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode'
-         * 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1
-         * 30001331:1 30142527:1
-         * 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\"
-         * \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
+         * Other SQL
+         * Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\" \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
          *
          * @param otherXML the value to set
          * @return this builder
-         */
+         **/
         public Builder otherXML(String otherXML) {
             this.otherXML = otherXML;
             this.__explicitlySet__.add("otherXML");
@@ -890,7 +1039,9 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -899,20 +1050,28 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Version Example: {@code 1} */
+    /**
+     * Version
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Float version;
 
     /**
-     * Version Example: {@code 1}
+     * Version
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Float getVersion() {
         return version;
     }
 
-    /** Unique SQL_ID for a SQL Statement. */
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -920,486 +1079,633 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     */
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
 
-    /** Plan hash value for the SQL Execution Plan */
+    /**
+     * Plan hash value for the SQL Execution Plan
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planHash")
     private final Long planHash;
 
     /**
      * Plan hash value for the SQL Execution Plan
-     *
      * @return the value
-     */
+     **/
     public Long getPlanHash() {
         return planHash;
     }
 
-    /** Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"} */
+    /**
+     * Collection time stamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Collection time stamp Example: {@code "2020-05-06T00:00:00.000Z"}
+     * Collection time stamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
 
-    /** Operation Example: {@code "SELECT STATEMENT"} */
+    /**
+     * Operation
+     * Example: {@code "SELECT STATEMENT"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * Operation Example: {@code "SELECT STATEMENT"}
+     * Operation
+     * Example: {@code "SELECT STATEMENT"}
      *
      * @return the value
-     */
+     **/
     public String getOperation() {
         return operation;
     }
 
-    /** Remark Example: {@code ""} */
+    /**
+     * Remark
+     * Example: {@code ""}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("remark")
     private final String remark;
 
     /**
-     * Remark Example: {@code ""}
+     * Remark
+     * Example: {@code ""}
      *
      * @return the value
-     */
+     **/
     public String getRemark() {
         return remark;
     }
 
-    /** Options Example: {@code "RANGE SCAN"} */
+    /**
+     * Options
+     * Example: {@code "RANGE SCAN"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("options")
     private final String options;
 
     /**
-     * Options Example: {@code "RANGE SCAN"}
+     * Options
+     * Example: {@code "RANGE SCAN"}
      *
      * @return the value
-     */
+     **/
     public String getOptions() {
         return options;
     }
 
-    /** Object Node Example: {@code "Q4000"} */
+    /**
+     * Object Node
+     * Example: {@code "Q4000"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNode")
     private final String objectNode;
 
     /**
-     * Object Node Example: {@code "Q4000"}
+     * Object Node
+     * Example: {@code "Q4000"}
      *
      * @return the value
-     */
+     **/
     public String getObjectNode() {
         return objectNode;
     }
 
-    /** Object Owner Example: {@code "TENANT_A#SCHEMA"} */
+    /**
+     * Object Owner
+     * Example: {@code "TENANT_A#SCHEMA"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectOwner")
     private final String objectOwner;
 
     /**
-     * Object Owner Example: {@code "TENANT_A#SCHEMA"}
+     * Object Owner
+     * Example: {@code "TENANT_A#SCHEMA"}
      *
      * @return the value
-     */
+     **/
     public String getObjectOwner() {
         return objectOwner;
     }
 
-    /** Object Name Example: {@code "PLAN_LINES_PK"} */
+    /**
+     * Object Name
+     * Example: {@code "PLAN_LINES_PK"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
-     * Object Name Example: {@code "PLAN_LINES_PK"}
+     * Object Name
+     * Example: {@code "PLAN_LINES_PK"}
      *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
-    /** Object Alias Example: {@code "PLAN_LINES@SEL$1"} */
+    /**
+     * Object Alias
+     * Example: {@code "PLAN_LINES@SEL$1"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectAlias")
     private final String objectAlias;
 
     /**
-     * Object Alias Example: {@code "PLAN_LINES@SEL$1"}
+     * Object Alias
+     * Example: {@code "PLAN_LINES@SEL$1"}
      *
      * @return the value
-     */
+     **/
     public String getObjectAlias() {
         return objectAlias;
     }
 
-    /** Object Instance Example: {@code 37472} */
+    /**
+     * Object Instance
+     * Example: {@code 37472}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectInstance")
     private final Long objectInstance;
 
     /**
-     * Object Instance Example: {@code 37472}
+     * Object Instance
+     * Example: {@code 37472}
      *
      * @return the value
-     */
+     **/
     public Long getObjectInstance() {
         return objectInstance;
     }
 
-    /** Object Type Example: {@code "INDEX (UNIQUE)"} */
+    /**
+     * Object Type
+     * Example: {@code "INDEX (UNIQUE)"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectType")
     private final String objectType;
 
     /**
-     * Object Type Example: {@code "INDEX (UNIQUE)"}
+     * Object Type
+     * Example: {@code "INDEX (UNIQUE)"}
      *
      * @return the value
-     */
+     **/
     public String getObjectType() {
         return objectType;
     }
 
-    /** Optimizer Example: {@code "CLUSTER"} */
+    /**
+     * Optimizer
+     * Example: {@code "CLUSTER"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("optimizer")
     private final String optimizer;
 
     /**
-     * Optimizer Example: {@code "CLUSTER"}
+     * Optimizer
+     * Example: {@code "CLUSTER"}
      *
      * @return the value
-     */
+     **/
     public String getOptimizer() {
         return optimizer;
     }
 
-    /** Search Columns Example: {@code 3} */
+    /**
+     * Search Columns
+     * Example: {@code 3}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchColumns")
     private final Long searchColumns;
 
     /**
-     * Search Columns Example: {@code 3}
+     * Search Columns
+     * Example: {@code 3}
      *
      * @return the value
-     */
+     **/
     public Long getSearchColumns() {
         return searchColumns;
     }
 
-    /** Identifier Example: {@code 3} */
+    /**
+     * Identifier
+     * Example: {@code 3}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final Long identifier;
 
     /**
-     * Identifier Example: {@code 3}
+     * Identifier
+     * Example: {@code 3}
      *
      * @return the value
-     */
+     **/
     public Long getIdentifier() {
         return identifier;
     }
 
-    /** Parent Identifier Example: {@code 2} */
+    /**
+     * Parent Identifier
+     * Example: {@code 2}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentIdentifier")
     private final Long parentIdentifier;
 
     /**
-     * Parent Identifier Example: {@code 2}
+     * Parent Identifier
+     * Example: {@code 2}
      *
      * @return the value
-     */
+     **/
     public Long getParentIdentifier() {
         return parentIdentifier;
     }
 
-    /** Depth Example: {@code 3} */
+    /**
+     * Depth
+     * Example: {@code 3}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("depth")
     private final Long depth;
 
     /**
-     * Depth Example: {@code 3}
+     * Depth
+     * Example: {@code 3}
      *
      * @return the value
-     */
+     **/
     public Long getDepth() {
         return depth;
     }
 
-    /** Position Example: {@code 1} */
+    /**
+     * Position
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Long position;
 
     /**
-     * Position Example: {@code 1}
+     * Position
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Long getPosition() {
         return position;
     }
 
-    /** Cost Example: {@code 1} */
+    /**
+     * Cost
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cost")
     private final Long cost;
 
     /**
-     * Cost Example: {@code 1}
+     * Cost
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Long getCost() {
         return cost;
     }
 
-    /** Cardinality Example: {@code 1} */
+    /**
+     * Cardinality
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cardinality")
     private final Long cardinality;
 
     /**
-     * Cardinality Example: {@code 1}
+     * Cardinality
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Long getCardinality() {
         return cardinality;
     }
 
-    /** Bytes Example: {@code 150} */
+    /**
+     * Bytes
+     * Example: {@code 150}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bytes")
     private final Long bytes;
 
     /**
-     * Bytes Example: {@code 150}
+     * Bytes
+     * Example: {@code 150}
      *
      * @return the value
-     */
+     **/
     public Long getBytes() {
         return bytes;
     }
 
-    /** Other Example: */
+    /**
+     * Other
+     * Example:
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("other")
     private final String other;
 
     /**
-     * Other Example:
+     * Other
+     * Example:
      *
      * @return the value
-     */
+     **/
     public String getOther() {
         return other;
     }
 
-    /** Other Tag Example: {@code "PARALLEL_COMBINED_WITH_PARENT"} */
+    /**
+     * Other Tag
+     * Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherTag")
     private final String otherTag;
 
     /**
-     * Other Tag Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
+     * Other Tag
+     * Example: {@code "PARALLEL_COMBINED_WITH_PARENT"}
      *
      * @return the value
-     */
+     **/
     public String getOtherTag() {
         return otherTag;
     }
 
-    /** Partition start Example: {@code 1} */
+    /**
+     * Partition start
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStart")
     private final String partitionStart;
 
     /**
-     * Partition start Example: {@code 1}
+     * Partition start
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public String getPartitionStart() {
         return partitionStart;
     }
 
-    /** Partition stop Example: {@code 2} */
+    /**
+     * Partition stop
+     * Example: {@code 2}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionStop")
     private final String partitionStop;
 
     /**
-     * Partition stop Example: {@code 2}
+     * Partition stop
+     * Example: {@code 2}
      *
      * @return the value
-     */
+     **/
     public String getPartitionStop() {
         return partitionStop;
     }
 
-    /** Partition identifier Example: {@code 8} */
+    /**
+     * Partition identifier
+     * Example: {@code 8}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partitionIdentifier")
     private final Long partitionIdentifier;
 
     /**
-     * Partition identifier Example: {@code 8}
+     * Partition identifier
+     * Example: {@code 8}
      *
      * @return the value
-     */
+     **/
     public Long getPartitionIdentifier() {
         return partitionIdentifier;
     }
 
-    /** Distribution Example: {@code "QC (RANDOM)"} */
+    /**
+     * Distribution
+     * Example: {@code "QC (RANDOM)"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("distribution")
     private final String distribution;
 
     /**
-     * Distribution Example: {@code "QC (RANDOM)"}
+     * Distribution
+     * Example: {@code "QC (RANDOM)"}
      *
      * @return the value
-     */
+     **/
     public String getDistribution() {
         return distribution;
     }
 
-    /** CPU cost Example: {@code 7321} */
+    /**
+     * CPU cost
+     * Example: {@code 7321}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCost")
     private final Long cpuCost;
 
     /**
-     * CPU cost Example: {@code 7321}
+     * CPU cost
+     * Example: {@code 7321}
      *
      * @return the value
-     */
+     **/
     public Long getCpuCost() {
         return cpuCost;
     }
 
-    /** IO cost Example: {@code 1} */
+    /**
+     * IO cost
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ioCost")
     private final Long ioCost;
 
     /**
-     * IO cost Example: {@code 1}
+     * IO cost
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Long getIoCost() {
         return ioCost;
     }
 
-    /** Time space Example: {@code 15614000} */
+    /**
+     * Time space
+     * Example: {@code 15614000}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempSpace")
     private final Long tempSpace;
 
     /**
-     * Time space Example: {@code 15614000}
+     * Time space
+     * Example: {@code 15614000}
      *
      * @return the value
-     */
+     **/
     public Long getTempSpace() {
         return tempSpace;
     }
 
-    /** Access predicates Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"} */
+    /**
+     * Access predicates
+     * Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessPredicates")
     private final String accessPredicates;
 
     /**
-     * Access predicates Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
+     * Access predicates
+     * Example: {@code "\\"RESOURCE_ID\\"=:1 AND \\"QUERY_ID\\"=:2"}
      *
      * @return the value
-     */
+     **/
     public String getAccessPredicates() {
         return accessPredicates;
     }
 
     /**
-     * Filter predicates Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR
-     * (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
-     */
+     * Filter predicates
+     * Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filterPredicates")
     private final String filterPredicates;
 
     /**
-     * Filter predicates Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR
-     * (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
+     * Filter predicates
+     * Example: {@code "(INTERNAL_FUNCTION(\\"J\\".\\"DATABASE_ROLE\\") OR (\\"J\\".\\"DATABASE_ROLE\\" IS NULL AND SYS_CONTEXT('userenv','database_role')='PRIMARY'))"}
      *
      * @return the value
-     */
+     **/
     public String getFilterPredicates() {
         return filterPredicates;
     }
 
-    /** Projection Example: {@code "COUNT(*)[22]"} */
+    /**
+     * Projection
+     * Example: {@code "COUNT(*)[22]"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("projection")
     private final String projection;
 
     /**
-     * Projection Example: {@code "COUNT(*)[22]"}
+     * Projection
+     * Example: {@code "COUNT(*)[22]"}
      *
      * @return the value
-     */
+     **/
     public String getProjection() {
         return projection;
     }
 
-    /** Qblock Name Example: {@code "SEL$1"} */
+    /**
+     * Qblock Name
+     * Example: {@code "SEL$1"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("qblockName")
     private final String qblockName;
 
     /**
-     * Qblock Name Example: {@code "SEL$1"}
+     * Qblock Name
+     * Example: {@code "SEL$1"}
      *
      * @return the value
-     */
+     **/
     public String getQblockName() {
         return qblockName;
     }
 
-    /** Total elapsed time Example: {@code 1.2} */
+    /**
+     * Total elapsed time
+     * Example: {@code 1.2}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("elapsedTimeInSec")
     private final Float elapsedTimeInSec;
 
     /**
-     * Total elapsed time Example: {@code 1.2}
+     * Total elapsed time
+     * Example: {@code 1.2}
      *
      * @return the value
-     */
+     **/
     public Float getElapsedTimeInSec() {
         return elapsedTimeInSec;
     }
 
     /**
-     * Other SQL Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info
-     * type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info
-     * type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info
-     * type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans'
-     * 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds'
-     * 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode'
-     * 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1
-     * 30142527:1
-     * 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\"
-     * \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
-     */
+     * Other SQL
+     * Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\" \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("otherXML")
     private final String otherXML;
 
     /**
-     * Other SQL Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info
-     * type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info
-     * type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info
-     * type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans'
-     * 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds'
-     * 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode'
-     * 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1
-     * 30142527:1
-     * 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\"
-     * \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
+     * Other SQL
+     * Example: {@code "<other_xml><info type=\\"db_version\\">18.0.0.0</info><info type=\\"parse_schema\\"><![CDATA[\\"SYS\\"]]></info><info type=\\"plan_hash_full\\">483892784</info><info type=\\"plan_hash\\">2709293936</info><info type=\\"plan_hash_2\\">483892784</info><outline_data><hint><![CDATA[IGNORE_OPTIM_EMBEDDED_HINTS]]></hint><hint><![CDATA[OPTIMIZER_FEATURES_ENABLE('18.1.0')]]></hint><hint><![CDATA[DB_VERSION('18.1.0')]]></hint><hint><![CDATA[OPT_PARAM('_b_tree_bitmap_plans' 'false')]]></hint><hint><![CDATA[OPT_PARAM('_optim_peek_user_binds' 'false')]]></hint><hint><![CDATA[OPT_PARAM('result_cache_mode' 'FORCE')]]></hint><hint><![CDATA[OPT_PARAM('_fix_control' '20648883:0 27745220:1 30001331:1 30142527:1 30539126:1')]]></hint><hint><![CDATA[OUTLINE_LEAF(@\\"SEL$1\\")]]></hint><hint><![CDATA[INDEX(@\\"SEL$1\\" \\"USER$\\"@\\"SEL$1\\" \\"I_USER#\\")]]></hint></outline_data></other_xml>"}
      *
      * @return the value
-     */
+     **/
     public String getOtherXML() {
         return otherXML;
     }
@@ -1411,7 +1717,6 @@ public final class SqlPlanLine extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

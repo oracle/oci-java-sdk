@@ -6,59 +6,62 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseCharacterSetsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAutonomousDatabaseCharacterSetsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListAutonomousDatabaseCharacterSetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAutonomousDatabaseCharacterSetsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListAutonomousDatabaseCharacterSetsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default,
-     * this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     *
      */
     private Boolean isShared;
 
     /**
-     * Specifies whether this request is for an Autonomous Database Serverless instance. By default,
-     * this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     *
      */
     public Boolean getIsShared() {
         return isShared;
     }
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-     * request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     *
      */
     private Boolean isDedicated;
 
     /**
-     * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-     * request is for an Autonomous Database Dedicated instance.
+     * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+     *
      */
     public Boolean getIsDedicated() {
         return isDedicated;
     }
     /**
-     * Specifies whether this request pertains to database character sets or national character
-     * sets.
+     * Specifies whether this request pertains to database character sets or national character sets.
+     *
      */
     private CharacterSetType characterSetType;
 
     /**
-     * Specifies whether this request pertains to database character sets or national character
-     * sets.
-     */
-    public enum CharacterSetType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether this request pertains to database character sets or national character sets.
+     *
+     **/
+    public enum CharacterSetType {
         Database("DATABASE"),
         National("NATIONAL"),
         ;
@@ -92,8 +95,8 @@ public class ListAutonomousDatabaseCharacterSetsRequest
     };
 
     /**
-     * Specifies whether this request pertains to database character sets or national character
-     * sets.
+     * Specifies whether this request pertains to database character sets or national character sets.
+     *
      */
     public CharacterSetType getCharacterSetType() {
         return characterSetType;
@@ -102,10 +105,14 @@ public class ListAutonomousDatabaseCharacterSetsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAutonomousDatabaseCharacterSetsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -120,16 +127,13 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By
-         * default, this request will be for Autonomous Database on Dedicated Exadata
-         * Infrastructure.
+         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         *
          */
         private Boolean isShared = null;
 
         /**
-         * Specifies whether this request is for an Autonomous Database Serverless instance. By
-         * default, this request will be for Autonomous Database on Dedicated Exadata
-         * Infrastructure.
+         * Specifies whether this request is for an Autonomous Database Serverless instance. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
          *
          * @param isShared the value to set
          * @return this builder instance
@@ -140,14 +144,13 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-         * request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
+         *
          */
         private Boolean isDedicated = null;
 
         /**
-         * Specifies if the request is for an Autonomous Database Dedicated instance. The default
-         * request is for an Autonomous Database Dedicated instance.
+         * Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
          *
          * @param isDedicated the value to set
          * @return this builder instance
@@ -158,14 +161,13 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Specifies whether this request pertains to database character sets or national character
-         * sets.
+         * Specifies whether this request pertains to database character sets or national character sets.
+         *
          */
         private CharacterSetType characterSetType = null;
 
         /**
-         * Specifies whether this request pertains to database character sets or national character
-         * sets.
+         * Specifies whether this request pertains to database character sets or national character sets.
          *
          * @param characterSetType the value to set
          * @return this builder instance
@@ -177,19 +179,18 @@ public class ListAutonomousDatabaseCharacterSetsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -201,7 +202,6 @@ public class ListAutonomousDatabaseCharacterSetsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAutonomousDatabaseCharacterSetsRequest o) {
@@ -215,14 +215,12 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Build the instance of ListAutonomousDatabaseCharacterSetsRequest as configured by this
-         * builder
+         * Build the instance of ListAutonomousDatabaseCharacterSetsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAutonomousDatabaseCharacterSetsRequest
          */
@@ -234,11 +232,9 @@ public class ListAutonomousDatabaseCharacterSetsRequest
         }
 
         /**
-         * Build the instance of ListAutonomousDatabaseCharacterSetsRequest as configured by this
-         * builder
+         * Build the instance of ListAutonomousDatabaseCharacterSetsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAutonomousDatabaseCharacterSetsRequest
@@ -251,14 +247,12 @@ public class ListAutonomousDatabaseCharacterSetsRequest
             request.isDedicated = isDedicated;
             request.characterSetType = characterSetType;
             return request;
-            // new ListAutonomousDatabaseCharacterSetsRequest(opcRequestId, isShared, isDedicated,
-            // characterSetType);
+            // new ListAutonomousDatabaseCharacterSetsRequest(opcRequestId, isShared, isDedicated, characterSetType);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -271,7 +265,6 @@ public class ListAutonomousDatabaseCharacterSetsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

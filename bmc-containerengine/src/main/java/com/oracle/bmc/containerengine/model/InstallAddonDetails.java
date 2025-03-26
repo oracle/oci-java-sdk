@@ -5,23 +5,21 @@
 package com.oracle.bmc.containerengine.model;
 
 /**
- * The properties that define to install/enable addon on a cluster <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+ * The properties that define to install/enable addon on a cluster
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstallAddonDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InstallAddonDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InstallAddonDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InstallAddonDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "addonName",
@@ -43,67 +41,65 @@ public final class InstallAddonDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the addon. */
+        /**
+         * The name of the addon.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("addonName")
         private String addonName;
 
         /**
          * The name of the addon.
-         *
          * @param addonName the value to set
          * @return this builder
-         */
+         **/
         public Builder addonName(String addonName) {
             this.addonName = addonName;
             this.__explicitlySet__.add("addonName");
             return this;
         }
-        /** The version of addon to be installed. */
+        /**
+         * The version of addon to be installed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * The version of addon to be installed.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Addon configuration details. */
+        /**
+         * Addon configuration details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("configurations")
         private java.util.List<AddonConfiguration> configurations;
 
         /**
          * Addon configuration details.
-         *
          * @param configurations the value to set
          * @return this builder
-         */
+         **/
         public Builder configurations(java.util.List<AddonConfiguration> configurations) {
             this.configurations = configurations;
             this.__explicitlySet__.add("configurations");
             return this;
         }
         /**
-         * Whether or not to override an existing addon installation. Defaults to false. If set to
-         * true, any existing addon installation would be overridden as per new installation
-         * details.
-         */
+         * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOverrideExisting")
         private Boolean isOverrideExisting;
 
         /**
-         * Whether or not to override an existing addon installation. Defaults to false. If set to
-         * true, any existing addon installation would be overridden as per new installation
-         * details.
-         *
+         * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
          * @param isOverrideExisting the value to set
          * @return this builder
-         */
+         **/
         public Builder isOverrideExisting(Boolean isOverrideExisting) {
             this.isOverrideExisting = isOverrideExisting;
             this.__explicitlySet__.add("isOverrideExisting");
@@ -144,7 +140,9 @@ public final class InstallAddonDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -153,58 +151,58 @@ public final class InstallAddonDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the addon. */
+    /**
+     * The name of the addon.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("addonName")
     private final String addonName;
 
     /**
      * The name of the addon.
-     *
      * @return the value
-     */
+     **/
     public String getAddonName() {
         return addonName;
     }
 
-    /** The version of addon to be installed. */
+    /**
+     * The version of addon to be installed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of addon to be installed.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Addon configuration details. */
+    /**
+     * Addon configuration details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("configurations")
     private final java.util.List<AddonConfiguration> configurations;
 
     /**
      * Addon configuration details.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<AddonConfiguration> getConfigurations() {
         return configurations;
     }
 
     /**
-     * Whether or not to override an existing addon installation. Defaults to false. If set to true,
-     * any existing addon installation would be overridden as per new installation details.
-     */
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOverrideExisting")
     private final Boolean isOverrideExisting;
 
     /**
-     * Whether or not to override an existing addon installation. Defaults to false. If set to true,
-     * any existing addon installation would be overridden as per new installation details.
-     *
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true, any existing addon installation would be overridden as per new installation details.
      * @return the value
-     */
+     **/
     public Boolean getIsOverrideExisting() {
         return isOverrideExisting;
     }
@@ -216,7 +214,6 @@ public final class InstallAddonDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -18,9 +18,10 @@ import java.util.List;
 
 public class WaasAddressListExample {
 
-    /** Configuration for the example, replace these with your own values. */
+    /**
+     * Configuration for the example, replace these with your own values.
+     */
     private static final String CONFIG_LOCATION = "~/.oci/config";
-
     private static final String CONFIG_PROFILE = "DEFAULT";
     private static final String COMPARTMENT_ID = "ocid1.compartment.oc1...aaaaaa";
     private static final String TARGET_COMPARTMENT_ID = "ocid1.compartment.oc1...xxxxxx";
@@ -29,33 +30,45 @@ public class WaasAddressListExample {
      * The entry point for the example.
      *
      * @param args Arguments to provide to the example. The following arguments are expected:
-     *     <ul>
-     *       <li>The OCID of the compartment where the WAAS policy will be created.
-     *           <p><b>Note:</b> Your tenancy OCID will be read from your configuration file
-     *       <li>The web application domain that will be pointed to the CNAME of the Web Application
-     *           Firewall.
-     *       <li>The origin domain that the Web Application Firewall will forward traffic to.
-     *       <li><b>Optionally:</b> The path to the PEM encoded RSA private key used by the Web
-     *           Application Firewall to accept HTTPS traffic for your domain
-     *       <li><b>Optionally:</b> The path to the PEM encoded SSL certificate used by the Web
-     *           Application Firewall to accept HTTPS traffic for your domain
-     *     </ul>
-     *     The request flow should look like the following: User -> `domain` -> OCI Web Application
-     *     Firewall -> `origin`
+     * <ul>
+     *   <li>
+     *       The OCID of the compartment where the WAAS policy will be created.
+     *       <p>
+     *         <b>Note:</b> Your tenancy OCID will be read
+     *         from your configuration file
+     *       </p>
+     *   </li>
+     *   <li>
+     *       The web application domain that will be pointed to the CNAME of the
+     *       Web Application Firewall.
+     *   </li>
+     *   <li>
+     *       The origin domain that the Web Application Firewall will forward traffic to.
+     *   </li>
+     *   <li>
+     *       <b>Optionally:</b> The path to the PEM encoded RSA private key used by the
+     *        Web Application Firewall to accept HTTPS traffic for your domain
+     *   </li>
+     *   <li>
+     *       <b>Optionally:</b> The path to the PEM encoded SSL certificate used by the
+     *        Web Application Firewall to accept HTTPS traffic for your domain
+     *   </li>
+     * </ul>
+     *
+     * The request flow should look like the following:
+     *             User -> `domain` -> OCI Web Application Firewall -> `origin`
      */
     public static void main(String[] args) throws Exception {
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
 
         final AuthenticationDetailsProvider provider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
-        final WaasClient waasClient = WaasClient.builder().build(provider);
-        final IdentityClient identityClient = IdentityClient.builder().build(provider);
+        final WaasClient waasClient = new WaasClient(provider);
+        final IdentityClient identityClient = new IdentityClient(provider);
 
         AddressList addressList = null;
         try {
@@ -82,6 +95,7 @@ public class WaasAddressListExample {
      * @param waasClient the client used to communicate with the WAAS service
      * @param compartmentId the OCID of the compartment that owns the Address List
      * @param name text used as a displayName in the created resource
+     *
      * @return the created Address List
      */
     private static AddressList createAddressList(
@@ -158,9 +172,9 @@ public class WaasAddressListExample {
     /**
      * Changes the compartment for an existing Address List
      *
-     * @param waasClient client used to communicate with the service
-     * @param addressListId ID of the Address List to be updated
-     * @param targetCompartmentId target compartment to which the Address List will be moved
+     * @param waasClient            client used to communicate with the service
+     * @param addressListId         ID of the Address List to be updated
+     * @param targetCompartmentId   target compartment to which the Address List will be moved
      */
     private static void changeAddressListCompartment(
             WaasClient waasClient, final String addressListId, final String targetCompartmentId) {
@@ -180,8 +194,8 @@ public class WaasAddressListExample {
     /**
      * Gets Address List.
      *
-     * @param waasClient the client used to communicate with the WAAS service
-     * @param addressListId the OCID of the Address List
+     * @param waasClient     the client used to communicate with the WAAS service
+     * @param addressListId  the OCID of the Address List
      */
     private static AddressList getAddressList(WaasClient waasClient, final String addressListId) {
 

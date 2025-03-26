@@ -6,31 +6,41 @@ package com.oracle.bmc.desktops.requests;
 
 import com.oracle.bmc.desktops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDesktopRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/desktops/DeleteDesktopExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteDesktopRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220618")
 public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the desktop. */
+    /**
+     * The OCID of the desktop.
+     */
     private String desktopId;
 
-    /** The OCID of the desktop. */
+    /**
+     * The OCID of the desktop.
+     */
     public String getDesktopId() {
         return desktopId;
     }
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     private String opcRequestId;
 
-    /** The unique identifier of the request. */
+    /**
+     * The unique identifier of the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     private String ifMatch;
 
-    /** For optimistic concurrency control. */
+    /**
+     * For optimistic concurrency control.
+     */
     public String getIfMatch() {
         return ifMatch;
     }
@@ -38,15 +48,17 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     DeleteDesktopRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the desktop. */
+        /**
+         * The OCID of the desktop.
+         */
         private String desktopId = null;
 
         /**
          * The OCID of the desktop.
-         *
          * @param desktopId the value to set
          * @return this builder instance
          */
@@ -55,12 +67,13 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** The unique identifier of the request. */
+        /**
+         * The unique identifier of the request.
+         */
         private String opcRequestId = null;
 
         /**
          * The unique identifier of the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -69,12 +82,13 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
             return this;
         }
 
-        /** For optimistic concurrency control. */
+        /**
+         * For optimistic concurrency control.
+         */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control.
-         *
          * @param ifMatch the value to set
          * @return this builder instance
          */
@@ -85,19 +99,18 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -109,7 +122,6 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(DeleteDesktopRequest o) {
@@ -124,11 +136,10 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of DeleteDesktopRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of DeleteDesktopRequest
          */
@@ -142,8 +153,7 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
         /**
          * Build the instance of DeleteDesktopRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of DeleteDesktopRequest
@@ -160,7 +170,6 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -169,7 +178,6 @@ public class DeleteDesktopRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

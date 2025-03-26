@@ -6,11 +6,12 @@ package com.oracle.bmc.ospgateway.responses;
 
 import com.oracle.bmc.ospgateway.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,12 +25,13 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
         return opcRequestId;
     }
 
-    /** The returned {@code AddressRule} instance. */
+    /**
+     * The returned AddressRule instance.
+     */
     private com.oracle.bmc.ospgateway.model.AddressRule addressRule;
 
     /**
-     * The returned {@code AddressRule} instance.
-     *
+     * The returned AddressRule instance.
      * @return the value
      */
     public com.oracle.bmc.ospgateway.model.AddressRule getAddressRule() {
@@ -44,7 +46,7 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
     })
     private GetAddressRuleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.ospgateway.model.AddressRule addressRule) {
         super(__httpStatusCode__, headers);
@@ -52,20 +54,17 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
         this.addressRule = addressRule;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetAddressRuleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -73,6 +72,7 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -88,12 +88,13 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
             return this;
         }
 
-        /** The returned {@code AddressRule} instance. */
+        /**
+         * The returned AddressRule instance.
+         */
         private com.oracle.bmc.ospgateway.model.AddressRule addressRule;
 
         /**
-         * The returned {@code AddressRule} instance.
-         *
+         * The returned AddressRule instance.
          * @param addressRule the value to set
          * @return this builder
          */
@@ -104,10 +105,8 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetAddressRuleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -119,10 +118,8 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetAddressRuleResponse build() {
             return new GetAddressRuleResponse(
                     __httpStatusCode__, headers, opcRequestId, addressRule);
@@ -131,7 +128,6 @@ public class GetAddressRuleResponse extends com.oracle.bmc.responses.BmcResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

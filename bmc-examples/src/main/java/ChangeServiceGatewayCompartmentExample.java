@@ -15,14 +15,14 @@ import java.util.Collections;
 /**
  * Sample to demonstrate Service Gateway Change Compartment
  *
- * <p>This example provides steps to change service gateway compartment. In order to change
- * compartment, service gateway and VCN need to be created. These resources are also created as a
- * part of this example. Cleanup of service gateway and VCN is performed after completion of change
- * compartment operation
+ * This example provides steps to change service gateway compartment. In order to change compartment,
+ * service gateway and VCN need to be created. These resources are also created as a part of this
+ * example. Cleanup of service gateway and VCN is performed after completion of change compartment operation
  *
- * <p>This example requires the user to pass 2 arguments 1st : <SRC_COMPARTMENT_ID> source
- * compartment OCID where VCN and Service Gateway need to be created 2nd : <DEST_COMPARTMENT_ID>
- * destination compartment OCID where the Service Gateway needs to be moved to
+ *
+ * This example requires the user to pass 2 arguments
+ *      1st : <SRC_COMPARTMENT_ID> source compartment OCID where VCN and Service Gateway need to be created
+ *      2nd : <DEST_COMPARTMENT_ID> destination compartment OCID where the Service Gateway needs to be moved to
  */
 public class ChangeServiceGatewayCompartmentExample {
     // source compartment ID where the service gateway will be created and moved from
@@ -60,10 +60,8 @@ public class ChangeServiceGatewayCompartmentExample {
                     "Please provide valid src and destination compartment id");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(OCI_CONFIG_FILEPATH, OCI_CONFIG_PROFILE);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -71,8 +69,7 @@ public class ChangeServiceGatewayCompartmentExample {
         final AuthenticationDetailsProvider authProvider =
                 new ConfigFileAuthenticationDetailsProvider(configFile);
 
-        final VirtualNetworkClient virtualNetworkClient =
-                VirtualNetworkClient.builder().build(authProvider);
+        final VirtualNetworkClient virtualNetworkClient = new VirtualNetworkClient(authProvider);
 
         Vcn vcn = null;
         ServiceGateway serviceGateway = null;
@@ -112,7 +109,6 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Create VCN
-     *
      * @return
      * @throws Exception
      */
@@ -141,7 +137,6 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Delete VCN
-     *
      * @param vcn : VCN which needs to be deleted
      * @throws Exception
      */
@@ -160,15 +155,13 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Create Service Gateway
-     *
      * @param vcn : VCN in which service gateway needs to be created
      * @return
      * @throws Exception
      */
     private static ServiceGateway createServiceGateway(
             VirtualNetworkClient virtualNetworkClient, Vcn vcn) throws Exception {
-        // Please update the services field to the required value. Here its placed empty for the
-        // purpose of the automation test
+        // Please update the services field to the required value. Here its placed empty for the purpose of the automation test
         CreateServiceGatewayRequest request =
                 CreateServiceGatewayRequest.builder()
                         .createServiceGatewayDetails(
@@ -194,7 +187,6 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Delete Service Gateway
-     *
      * @param serviceGateway : service gateway which needs to be deleted
      * @throws Exception
      */
@@ -219,7 +211,6 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Get Service Gateway
-     *
      * @param serviceGateway
      * @return ServiceGateway
      * @throws Exception
@@ -235,7 +226,6 @@ public class ChangeServiceGatewayCompartmentExample {
 
     /**
      * Change Service Gateway compartment
-     *
      * @param serviceGateway
      * @throws Exception
      */

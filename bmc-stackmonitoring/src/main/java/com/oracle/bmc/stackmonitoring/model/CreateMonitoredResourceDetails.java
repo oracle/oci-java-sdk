@@ -5,24 +5,24 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * The information about new monitored resource to be created. The combination of monitored resource
- * name and type should be unique across tenancy. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * The information about new monitored resource to be created.
+ * The combination of monitored resource name and type should be unique across tenancy.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateMonitoredResourceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateMonitoredResourceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateMonitoredResourceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -83,7 +83,10 @@ public final class CreateMonitoredResourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Monitored Resource Name. */
+        /**
+         * Monitored Resource Name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -92,28 +95,32 @@ public final class CreateMonitoredResourceDetails
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Monitored resource display name. */
+        /**
+         * Monitored resource display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Monitored resource display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Monitored Resource Type. */
+        /**
+         * Monitored Resource Type.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
@@ -122,32 +129,34 @@ public final class CreateMonitoredResourceDetails
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Host name of the monitored resource. */
+        /**
+         * Host name of the monitored resource.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
@@ -156,93 +165,96 @@ public final class CreateMonitoredResourceDetails
          *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
         /**
-         * External resource is any OCI resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
-         * not a Stack Monitoring service resource. Currently supports only OCI compute instance.
-         */
+         * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only OCI compute instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * External resource is any OCI resource identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is
-         * not a Stack Monitoring service resource. Currently supports only OCI compute instance.
+         * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * which is not a Stack Monitoring service resource.
+         * Currently supports only OCI compute instance.
          *
          * @param externalId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
             return this;
         }
         /**
-         * Management Agent Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
         private String managementAgentId;
 
         /**
-         * Management Agent Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param managementAgentId the value to set
          * @return this builder
-         */
+         **/
         public Builder managementAgentId(String managementAgentId) {
             this.managementAgentId = managementAgentId;
             this.__explicitlySet__.add("managementAgentId");
             return this;
         }
         /**
-         * Time zone in the form of tz database canonical zone ID. Specifies the preference with a
-         * value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-         * America/Los_Angeles
-         */
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
         private String resourceTimeZone;
 
         /**
-         * Time zone in the form of tz database canonical zone ID. Specifies the preference with a
-         * value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-         * America/Los_Angeles
+         * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+         * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+         * For example - America/Los_Angeles
          *
          * @param resourceTimeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceTimeZone(String resourceTimeZone) {
             this.resourceTimeZone = resourceTimeZone;
             this.__explicitlySet__.add("resourceTimeZone");
             return this;
         }
         /**
-         * License edition of the monitored resource. If not provided the default license type for
-         * the compartment will be used.
-         */
+         * License edition of the monitored resource. If not provided
+         * the default license type for the compartment will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("license")
         private LicenseType license;
 
         /**
-         * License edition of the monitored resource. If not provided the default license type for
-         * the compartment will be used.
+         * License edition of the monitored resource. If not provided
+         * the default license type for the compartment will be used.
          *
          * @param license the value to set
          * @return this builder
-         */
+         **/
         public Builder license(LicenseType license) {
             this.license = license;
             this.__explicitlySet__.add("license");
             return this;
         }
-        /** List of monitored resource properties. */
+        /**
+         * List of monitored resource properties.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<MonitoredResourceProperty> properties;
 
@@ -251,7 +263,7 @@ public final class CreateMonitoredResourceDetails
          *
          * @param properties the value to set
          * @return this builder
-         */
+         **/
         public Builder properties(java.util.List<MonitoredResourceProperty> properties) {
             this.properties = properties;
             this.__explicitlySet__.add("properties");
@@ -286,24 +298,27 @@ public final class CreateMonitoredResourceDetails
         }
         /**
          * List of MonitoredResourceCredentials. This property complements the existing
-         * "credentials" property by allowing user to specify more than one credential. If both
-         * "credential" and "additionalCredentials" are specified, union of the values is used as
-         * list of credentials applicable for this resource. If any duplicate found in the combined
-         * list of "credentials" and "additionalCredentials", an error will be thrown.
-         */
+         * "credentials" property by allowing user to specify more than one credential.
+         * If both "credential" and "additionalCredentials" are specified, union of the
+         * values is used as list of credentials applicable for this resource.
+         * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+         * an error will be thrown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalCredentials")
         private java.util.List<MonitoredResourceCredential> additionalCredentials;
 
         /**
          * List of MonitoredResourceCredentials. This property complements the existing
-         * "credentials" property by allowing user to specify more than one credential. If both
-         * "credential" and "additionalCredentials" are specified, union of the values is used as
-         * list of credentials applicable for this resource. If any duplicate found in the combined
-         * list of "credentials" and "additionalCredentials", an error will be thrown.
+         * "credentials" property by allowing user to specify more than one credential.
+         * If both "credential" and "additionalCredentials" are specified, union of the
+         * values is used as list of credentials applicable for this resource.
+         * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+         * an error will be thrown.
          *
          * @param additionalCredentials the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalCredentials(
                 java.util.List<MonitoredResourceCredential> additionalCredentials) {
             this.additionalCredentials = additionalCredentials;
@@ -312,24 +327,27 @@ public final class CreateMonitoredResourceDetails
         }
         /**
          * List of MonitoredResourceAliasCredentials. This property complements the existing
-         * "aliases" property by allowing user to specify more than one credential alias. If both
-         * "aliases" and "additionalAliases" are specified, union of the values is used as list of
-         * aliases applicable for this resource. If any duplicate found in the combined list of
-         * "alias" and "additionalAliases", an error will be thrown.
-         */
+         * "aliases" property by allowing user to specify more than one credential alias.
+         * If both "aliases" and "additionalAliases" are specified, union of the
+         * values is used as list of aliases applicable for this resource.
+         * If any duplicate found in the combined list of "alias" and "additionalAliases",
+         * an error will be thrown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalAliases")
         private java.util.List<MonitoredResourceAliasCredential> additionalAliases;
 
         /**
          * List of MonitoredResourceAliasCredentials. This property complements the existing
-         * "aliases" property by allowing user to specify more than one credential alias. If both
-         * "aliases" and "additionalAliases" are specified, union of the values is used as list of
-         * aliases applicable for this resource. If any duplicate found in the combined list of
-         * "alias" and "additionalAliases", an error will be thrown.
+         * "aliases" property by allowing user to specify more than one credential alias.
+         * If both "aliases" and "additionalAliases" are specified, union of the
+         * values is used as list of aliases applicable for this resource.
+         * If any duplicate found in the combined list of "alias" and "additionalAliases",
+         * an error will be thrown.
          *
          * @param additionalAliases the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalAliases(
                 java.util.List<MonitoredResourceAliasCredential> additionalAliases) {
             this.additionalAliases = additionalAliases;
@@ -337,19 +355,20 @@ public final class CreateMonitoredResourceDetails
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -358,7 +377,8 @@ public final class CreateMonitoredResourceDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -368,7 +388,7 @@ public final class CreateMonitoredResourceDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -462,7 +482,9 @@ public final class CreateMonitoredResourceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -471,7 +493,10 @@ public final class CreateMonitoredResourceDetails
         return new Builder().copy(this);
     }
 
-    /** Monitored Resource Name. */
+    /**
+     * Monitored Resource Name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -479,25 +504,29 @@ public final class CreateMonitoredResourceDetails
      * Monitored Resource Name.
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Monitored resource display name. */
+    /**
+     * Monitored resource display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Monitored resource display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Monitored Resource Type. */
+    /**
+     * Monitored Resource Type.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
@@ -505,29 +534,31 @@ public final class CreateMonitoredResourceDetails
      * Monitored Resource Type.
      *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Host name of the monitored resource. */
+    /**
+     * Host name of the monitored resource.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
@@ -535,84 +566,87 @@ public final class CreateMonitoredResourceDetails
      * Host name of the monitored resource.
      *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
     /**
-     * External resource is any OCI resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
-     * Stack Monitoring service resource. Currently supports only OCI compute instance.
-     */
+     * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only OCI compute instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * External resource is any OCI resource identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) which is not a
-     * Stack Monitoring service resource. Currently supports only OCI compute instance.
+     * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * which is not a Stack Monitoring service resource.
+     * Currently supports only OCI compute instance.
      *
      * @return the value
-     */
+     **/
     public String getExternalId() {
         return externalId;
     }
 
     /**
-     * Management Agent Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementAgentId")
     private final String managementAgentId;
 
     /**
-     * Management Agent Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Management Agent Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getManagementAgentId() {
         return managementAgentId;
     }
 
     /**
-     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value
-     * that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
-     */
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceTimeZone")
     private final String resourceTimeZone;
 
     /**
-     * Time zone in the form of tz database canonical zone ID. Specifies the preference with a value
-     * that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example -
-     * America/Los_Angeles
+     * Time zone in the form of tz database canonical zone ID. Specifies the preference with
+     * a value that uses the IANA Time Zone Database format (x-obmcs-time-zone).
+     * For example - America/Los_Angeles
      *
      * @return the value
-     */
+     **/
     public String getResourceTimeZone() {
         return resourceTimeZone;
     }
 
     /**
-     * License edition of the monitored resource. If not provided the default license type for the
-     * compartment will be used.
-     */
+     * License edition of the monitored resource. If not provided
+     * the default license type for the compartment will be used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("license")
     private final LicenseType license;
 
     /**
-     * License edition of the monitored resource. If not provided the default license type for the
-     * compartment will be used.
+     * License edition of the monitored resource. If not provided
+     * the default license type for the compartment will be used.
      *
      * @return the value
-     */
+     **/
     public LicenseType getLicense() {
         return license;
     }
 
-    /** List of monitored resource properties. */
+    /**
+     * List of monitored resource properties.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<MonitoredResourceProperty> properties;
 
@@ -620,7 +654,7 @@ public final class CreateMonitoredResourceDetails
      * List of monitored resource properties.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceProperty> getProperties() {
         return properties;
     }
@@ -647,81 +681,89 @@ public final class CreateMonitoredResourceDetails
     }
 
     /**
-     * List of MonitoredResourceCredentials. This property complements the existing "credentials"
-     * property by allowing user to specify more than one credential. If both "credential" and
-     * "additionalCredentials" are specified, union of the values is used as list of credentials
-     * applicable for this resource. If any duplicate found in the combined list of "credentials"
-     * and "additionalCredentials", an error will be thrown.
-     */
+     * List of MonitoredResourceCredentials. This property complements the existing
+     * "credentials" property by allowing user to specify more than one credential.
+     * If both "credential" and "additionalCredentials" are specified, union of the
+     * values is used as list of credentials applicable for this resource.
+     * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+     * an error will be thrown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalCredentials")
     private final java.util.List<MonitoredResourceCredential> additionalCredentials;
 
     /**
-     * List of MonitoredResourceCredentials. This property complements the existing "credentials"
-     * property by allowing user to specify more than one credential. If both "credential" and
-     * "additionalCredentials" are specified, union of the values is used as list of credentials
-     * applicable for this resource. If any duplicate found in the combined list of "credentials"
-     * and "additionalCredentials", an error will be thrown.
+     * List of MonitoredResourceCredentials. This property complements the existing
+     * "credentials" property by allowing user to specify more than one credential.
+     * If both "credential" and "additionalCredentials" are specified, union of the
+     * values is used as list of credentials applicable for this resource.
+     * If any duplicate found in the combined list of "credentials" and "additionalCredentials",
+     * an error will be thrown.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceCredential> getAdditionalCredentials() {
         return additionalCredentials;
     }
 
     /**
-     * List of MonitoredResourceAliasCredentials. This property complements the existing "aliases"
-     * property by allowing user to specify more than one credential alias. If both "aliases" and
-     * "additionalAliases" are specified, union of the values is used as list of aliases applicable
-     * for this resource. If any duplicate found in the combined list of "alias" and
-     * "additionalAliases", an error will be thrown.
-     */
+     * List of MonitoredResourceAliasCredentials. This property complements the existing
+     * "aliases" property by allowing user to specify more than one credential alias.
+     * If both "aliases" and "additionalAliases" are specified, union of the
+     * values is used as list of aliases applicable for this resource.
+     * If any duplicate found in the combined list of "alias" and "additionalAliases",
+     * an error will be thrown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalAliases")
     private final java.util.List<MonitoredResourceAliasCredential> additionalAliases;
 
     /**
-     * List of MonitoredResourceAliasCredentials. This property complements the existing "aliases"
-     * property by allowing user to specify more than one credential alias. If both "aliases" and
-     * "additionalAliases" are specified, union of the values is used as list of aliases applicable
-     * for this resource. If any duplicate found in the combined list of "alias" and
-     * "additionalAliases", an error will be thrown.
+     * List of MonitoredResourceAliasCredentials. This property complements the existing
+     * "aliases" property by allowing user to specify more than one credential alias.
+     * If both "aliases" and "additionalAliases" are specified, union of the
+     * values is used as list of aliases applicable for this resource.
+     * If any duplicate found in the combined list of "alias" and "additionalAliases",
+     * an error will be thrown.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MonitoredResourceAliasCredential> getAdditionalAliases() {
         return additionalAliases;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -733,7 +775,6 @@ public final class CreateMonitoredResourceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

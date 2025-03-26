@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.apmsynthetics.model;
 
-/** DNS record type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DnsRecordType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * DNS record type.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DnsRecordType {
     A("A"),
     Aaaa("AAAA"),
     Any("ANY"),

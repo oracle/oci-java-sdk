@@ -6,94 +6,128 @@ package com.oracle.bmc.onesubscription.requests;
 
 import com.oracle.bmc.onesubscription.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListComputedUsagesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListComputedUsagesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/onesubscription/ListComputedUsagesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListComputedUsagesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190111")
 public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the root compartment. */
+    /**
+     * The OCID of the root compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+     *
      */
     private String subscriptionId;
 
     /**
-     * Subscription Id is an identifier associated to the service used for filter the Computed Usage
-     * in SPM.
+     * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+     *
      */
     public String getSubscriptionId() {
         return subscriptionId;
     }
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     *
      */
     private java.util.Date timeFrom;
 
     /**
-     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-     * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+     *
      */
     public java.util.Date getTimeFrom() {
         return timeFrom;
     }
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /**
+     * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+     *
+     */
     private java.util.Date timeTo;
 
-    /** Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format. */
+    /**
+     * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+     *
+     */
     public java.util.Date getTimeTo() {
         return timeTo;
     }
-    /** Product part number for subscribed service line, called parent product. */
+    /**
+     * Product part number for subscribed service line, called parent product.
+     *
+     */
     private String parentProduct;
 
-    /** Product part number for subscribed service line, called parent product. */
+    /**
+     * Product part number for subscribed service line, called parent product.
+     *
+     */
     public String getParentProduct() {
         return parentProduct;
     }
-    /** Product part number for Computed Usage . */
+    /**
+     * Product part number for Computed Usage .
+     *
+     */
     private String computedProduct;
 
-    /** Product part number for Computed Usage . */
+    /**
+     * Product part number for Computed Usage .
+     *
+     */
     public String getComputedProduct() {
         return computedProduct;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: '500'
      *
-     * <p>Example: '500'
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the 'opc-next-page' response header from the previous "List" call. */
+    /**
+     * The value of the 'opc-next-page' response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -126,15 +160,24 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+    /**
+     * The sort order to use, either ascending ('ASC') or descending ('DESC').
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         TimeOfArrival("timeOfArrival"),
         TimeMeteredOn("timeMeteredOn"),
@@ -168,19 +211,22 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -189,15 +235,17 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListComputedUsagesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the root compartment. */
+        /**
+         * The OCID of the root compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the root compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -207,14 +255,13 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
+         *
          */
         private String subscriptionId = null;
 
         /**
-         * Subscription Id is an identifier associated to the service used for filter the Computed
-         * Usage in SPM.
+         * Subscription Id is an identifier associated to the service used for filter the Computed Usage in SPM.
          *
          * @param subscriptionId the value to set
          * @return this builder instance
@@ -225,14 +272,13 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         *
          */
         private java.util.Date timeFrom = null;
 
         /**
-         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the
-         * time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
+         * Initial date to filter Computed Usage data in SPM. In the case of non aggregated data the time period between of fromDate and toDate , expressed in RFC 3339 timestamp format.
          *
          * @param timeFrom the value to set
          * @return this builder instance
@@ -244,6 +290,7 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Final date to filter Computed Usage data in SPM, expressed in RFC 3339 timestamp format.
+         *
          */
         private java.util.Date timeTo = null;
 
@@ -258,7 +305,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Product part number for subscribed service line, called parent product. */
+        /**
+         * Product part number for subscribed service line, called parent product.
+         *
+         */
         private String parentProduct = null;
 
         /**
@@ -272,7 +322,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** Product part number for Computed Usage . */
+        /**
+         * Product part number for Computed Usage .
+         *
+         */
         private String computedProduct = null;
 
         /**
@@ -288,15 +341,16 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: '500'
          *
-         * <p>Example: '500'
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         *
-         * <p>Example: '500'
+         * <p>
+         * Example: '500'
          *
          * @param limit the value to set
          * @return this builder instance
@@ -306,7 +360,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The value of the 'opc-next-page' response header from the previous "List" call. */
+        /**
+         * The value of the 'opc-next-page' response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -320,7 +377,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The sort order to use, either ascending ('ASC') or descending ('DESC'). */
+        /**
+         * The sort order to use, either ascending ('ASC') or descending ('DESC').
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -334,7 +394,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -349,14 +412,13 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -368,19 +430,18 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -392,7 +453,6 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListComputedUsagesRequest o) {
@@ -415,11 +475,10 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListComputedUsagesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListComputedUsagesRequest
          */
@@ -433,8 +492,7 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListComputedUsagesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListComputedUsagesRequest
@@ -453,14 +511,12 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListComputedUsagesRequest(compartmentId, subscriptionId, timeFrom, timeTo,
-            // parentProduct, computedProduct, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListComputedUsagesRequest(compartmentId, subscriptionId, timeFrom, timeTo, parentProduct, computedProduct, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -480,7 +536,6 @@ public class ListComputedUsagesRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

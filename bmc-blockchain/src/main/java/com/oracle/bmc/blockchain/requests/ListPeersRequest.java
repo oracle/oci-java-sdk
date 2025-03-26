@@ -6,64 +6,78 @@ package com.oracle.bmc.blockchain.requests;
 
 import com.oracle.bmc.blockchain.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListPeersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPeersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListPeersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListPeersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191010")
 public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique service identifier. */
+    /**
+     * Unique service identifier.
+     */
     private String blockchainPlatformId;
 
-    /** Unique service identifier. */
+    /**
+     * Unique service identifier.
+     */
     public String getBlockchainPlatformId() {
         return blockchainPlatformId;
     }
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Example: {@code My new
-     * resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Example: {@code My new resource}
+     *
      */
     private String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Example: {@code My new
-     * resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Example: {@code My new resource}
+     *
      */
     public String getDisplayName() {
         return displayName;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
      * server error without risk of executing that same action again. Retry tokens expire after 24
-     * hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -96,23 +110,23 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -146,24 +160,31 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     private String page;
 
-    /** The page at which to start retrieving results. */
+    /**
+     * The page at which to start retrieving results.
+     */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
@@ -171,15 +192,17 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListPeersRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique service identifier. */
+        /**
+         * Unique service identifier.
+         */
         private String blockchainPlatformId = null;
 
         /**
          * Unique service identifier.
-         *
          * @param blockchainPlatformId the value to set
          * @return this builder instance
          */
@@ -189,14 +212,15 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Example: {@code My
-         * new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Example: {@code My new resource}
+         *
          */
         private String displayName = null;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Example: {@code My
-         * new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder instance
@@ -206,12 +230,13 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -222,19 +247,20 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without risk of executing that same action again. Retry tokens expire after
-         * 24 hours, but can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * server error without risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -244,12 +270,13 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -259,16 +286,13 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -278,12 +302,13 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The page at which to start retrieving results. */
+        /**
+         * The page at which to start retrieving results.
+         */
         private String page = null;
 
         /**
          * The page at which to start retrieving results.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -292,12 +317,13 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -308,19 +334,18 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -332,7 +357,6 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListPeersRequest o) {
@@ -352,11 +376,10 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListPeersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListPeersRequest
          */
@@ -370,8 +393,7 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of ListPeersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListPeersRequest
@@ -387,14 +409,12 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListPeersRequest(blockchainPlatformId, displayName, opcRequestId, opcRetryToken,
-            // sortOrder, sortBy, page, limit);
+            // new ListPeersRequest(blockchainPlatformId, displayName, opcRequestId, opcRetryToken, sortOrder, sortBy, page, limit);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -411,7 +431,6 @@ public class ListPeersRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

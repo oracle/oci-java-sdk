@@ -6,131 +6,127 @@ package com.oracle.bmc.containerinstances.requests;
 
 import com.oracle.bmc.containerinstances.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainersExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListContainersRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/containerinstances/ListContainersExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListContainersRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment in which to list resources.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to only return resources that match the given lifecycle state. */
+    /**
+     * A filter to only return resources that match the given lifecycle state.
+     */
     private com.oracle.bmc.containerinstances.model.Container.LifecycleState lifecycleState;
 
-    /** A filter to only return resources that match the given lifecycle state. */
+    /**
+     * A filter to only return resources that match the given lifecycle state.
+     */
     public com.oracle.bmc.containerinstances.model.Container.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      */
     private String containerInstanceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * container instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
      */
     public String getContainerInstanceId() {
         return containerInstanceId;
     }
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     private String availabilityDomain;
 
     /**
      * The name of the availability domain.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
      */
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The value of the opc-next-page response header from the previous "List"
-     * call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The sort order to use (ASC) or (DESC). */
+    /**
+     * The sort order to use (ASC) or (DESC).
+     */
     private com.oracle.bmc.containerinstances.model.SortOrder sortOrder;
 
-    /** The sort order to use (ASC) or (DESC). */
+    /**
+     * The sort order to use (ASC) or (DESC).
+     */
     public com.oracle.bmc.containerinstances.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. You can provide one sort order. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If you don't specify a value,
-     * timeCreated is the default.
+     * The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. You can provide one sort order. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If you don't specify a value,
-     * timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -164,9 +160,8 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The field to sort by. You can provide one sort order. Default order for timeCreated is
-     * descending. Default order for displayName is ascending. If you don't specify a value,
-     * timeCreated is the default.
+     * The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
@@ -175,19 +170,17 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListContainersRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment in which to list resources.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -196,13 +189,14 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A filter to only return resources that match the given lifecycle state. */
+        /**
+         * A filter to only return resources that match the given lifecycle state.
+         */
         private com.oracle.bmc.containerinstances.model.Container.LifecycleState lifecycleState =
                 null;
 
         /**
          * A filter to only return resources that match the given lifecycle state.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -212,12 +206,13 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         */
         private String displayName = null;
 
         /**
          * A filter to return only resources that match the entire display name given.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -227,15 +222,12 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
          */
         private String containerInstanceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * container instance.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the container instance.
          * @param containerInstanceId the value to set
          * @return this builder instance
          */
@@ -246,15 +238,16 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * The name of the availability domain.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
          */
         private String availabilityDomain = null;
 
         /**
          * The name of the availability domain.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder instance
@@ -265,17 +258,12 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of results per page, or items to return in a paginated "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -285,17 +273,12 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the opc-next-page response header from the previous
-         * "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The value of the opc-next-page response header from the previous "List" call. For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -305,15 +288,12 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -322,12 +302,13 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The sort order to use (ASC) or (DESC). */
+        /**
+         * The sort order to use (ASC) or (DESC).
+         */
         private com.oracle.bmc.containerinstances.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use (ASC) or (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -337,16 +318,13 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort by. You can provide one sort order. Default order for timeCreated is
-         * descending. Default order for displayName is ascending. If you don't specify a value,
-         * timeCreated is the default.
+         * The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order. Default order for timeCreated is
-         * descending. Default order for displayName is ascending. If you don't specify a value,
-         * timeCreated is the default.
+         * The field to sort by. You can provide one sort order. Default order for timeCreated is descending. Default order for displayName is ascending. If you don't specify a value, timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -358,19 +336,18 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -382,7 +359,6 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListContainersRequest o) {
@@ -404,11 +380,10 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListContainersRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListContainersRequest
          */
@@ -422,8 +397,7 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListContainersRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListContainersRequest
@@ -441,15 +415,12 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListContainersRequest(compartmentId, lifecycleState, displayName,
-            // containerInstanceId, availabilityDomain, limit, page, opcRequestId, sortOrder,
-            // sortBy);
+            // new ListContainersRequest(compartmentId, lifecycleState, displayName, containerInstanceId, availabilityDomain, limit, page, opcRequestId, sortOrder, sortBy);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -468,7 +439,6 @@ public class ListContainersRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

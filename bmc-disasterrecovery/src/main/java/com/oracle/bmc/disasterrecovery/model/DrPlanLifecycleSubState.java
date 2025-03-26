@@ -5,13 +5,15 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * The secondary lifecycle states of a DR plan. Provides information in addition to the lifecycle
- * state. - NEEDS_REFRESH - The DR plan needs a refresh. - NEEDS_VERIFICATION - The DR plan needs
- * verification. - REFRESHING - The DR plan is being updated due to a plan refresh. - VERIFYING -
- * The DR plan is being updated due to a plan verification.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
-public enum DrPlanLifecycleSubState implements com.oracle.bmc.http.internal.BmcEnum {
+ * The secondary lifecycle states of a DR plan. Provides information in addition to the lifecycle state.
+ * - NEEDS_REFRESH - The DR plan needs a refresh.
+ * - NEEDS_VERIFICATION - The DR plan needs verification.
+ * - REFRESHING - The DR plan is being updated due to a plan refresh.
+ * - VERIFYING - The DR plan is being updated due to a plan verification.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+public enum DrPlanLifecycleSubState {
     NeedsRefresh("NEEDS_REFRESH"),
     NeedsVerification("NEEDS_VERIFICATION"),
     Refreshing("REFRESHING"),

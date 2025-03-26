@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.loganalytics.model;
 
-/** These are the possible statuses for recall */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
-public enum RecallStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * These are the possible statuses for recall
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+public enum RecallStatus {
     Recalled("RECALLED"),
     Pending("PENDING"),
     Failed("FAILED"),

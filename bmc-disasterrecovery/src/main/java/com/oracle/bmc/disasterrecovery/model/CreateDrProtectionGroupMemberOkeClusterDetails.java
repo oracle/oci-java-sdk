@@ -5,25 +5,25 @@
 package com.oracle.bmc.disasterrecovery.model;
 
 /**
- * Create properties for an OKE member. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Create properties for an OKE member.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDrProtectionGroupMemberOkeClusterDetails.Builder.class)
+    builder = CreateDrProtectionGroupMemberOkeClusterDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "memberType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "memberType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDrProtectionGroupMemberOkeClusterDetails
         extends CreateDrProtectionGroupMemberDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -37,48 +37,48 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
             return this;
         }
         /**
-         * The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both
-         * the primary and standby region.
+         * The OCID of the peer OKE cluster.
+         * This property applies to the OKE cluster member in both the primary and standby region.
+         * <p>
+         * Example: {@code ocid1.cluster.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.cluster.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerClusterId")
         private String peerClusterId;
 
         /**
-         * The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both
-         * the primary and standby region.
-         *
-         * <p>Example: {@code ocid1.cluster.oc1..uniqueID}
+         * The OCID of the peer OKE cluster.
+         * This property applies to the OKE cluster member in both the primary and standby region.
+         * <p>
+         * Example: {@code ocid1.cluster.oc1..uniqueID}
          *
          * @param peerClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerClusterId(String peerClusterId) {
             this.peerClusterId = peerClusterId;
             this.__explicitlySet__.add("peerClusterId");
             return this;
         }
         /**
-         * The OCID of the compute instance member that is designated as a jump host. This compute
-         * instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's
-         * Run Command feature.
+         * The OCID of the compute instance member that is designated as a jump host.
+         * This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jumpHostId")
         private String jumpHostId;
 
         /**
-         * The OCID of the compute instance member that is designated as a jump host. This compute
-         * instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's
-         * Run Command feature.
-         *
-         * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+         * The OCID of the compute instance member that is designated as a jump host.
+         * This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.
+         * <p>
+         * Example: {@code ocid1.instance.oc1..uniqueID}
          *
          * @param jumpHostId the value to set
          * @return this builder
-         */
+         **/
         public Builder jumpHostId(String jumpHostId) {
             this.jumpHostId = jumpHostId;
             this.__explicitlySet__.add("jumpHostId");
@@ -103,19 +103,20 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
             return this;
         }
         /**
-         * The list of source-to-destination load balancer mappings required for DR operations. This
-         * property applies to the OKE cluster member in primary region.
-         */
+         * The list of source-to-destination load balancer mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerMappings")
         private java.util.List<CreateOkeClusterLoadBalancerMappingDetails> loadBalancerMappings;
 
         /**
-         * The list of source-to-destination load balancer mappings required for DR operations. This
-         * property applies to the OKE cluster member in primary region.
+         * The list of source-to-destination load balancer mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
          *
          * @param loadBalancerMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder loadBalancerMappings(
                 java.util.List<CreateOkeClusterLoadBalancerMappingDetails> loadBalancerMappings) {
             this.loadBalancerMappings = loadBalancerMappings;
@@ -123,20 +124,21 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
             return this;
         }
         /**
-         * The list of source-to-destination network load balancer mappings required for DR
-         * operations. This property applies to the OKE cluster member in primary region.
-         */
+         * The list of source-to-destination network load balancer mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerMappings")
         private java.util.List<CreateOkeClusterNetworkLoadBalancerMappingDetails>
                 networkLoadBalancerMappings;
 
         /**
-         * The list of source-to-destination network load balancer mappings required for DR
-         * operations. This property applies to the OKE cluster member in primary region.
+         * The list of source-to-destination network load balancer mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
          *
          * @param networkLoadBalancerMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder networkLoadBalancerMappings(
                 java.util.List<CreateOkeClusterNetworkLoadBalancerMappingDetails>
                         networkLoadBalancerMappings) {
@@ -145,19 +147,20 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
             return this;
         }
         /**
-         * The list of source-to-destination vault mappings required for DR operations. This
-         * property applies to the OKE cluster member in primary region.
-         */
+         * The list of source-to-destination vault mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vaultMappings")
         private java.util.List<CreateOkeClusterVaultMappingDetails> vaultMappings;
 
         /**
-         * The list of source-to-destination vault mappings required for DR operations. This
-         * property applies to the OKE cluster member in primary region.
+         * The list of source-to-destination vault mappings required for DR operations.
+         * This property applies to the OKE cluster member in primary region.
          *
          * @param vaultMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder vaultMappings(
                 java.util.List<CreateOkeClusterVaultMappingDetails> vaultMappings) {
             this.vaultMappings = vaultMappings;
@@ -167,7 +170,8 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
         /**
          * The list of managed node pools with configurations for minimum and maximum node counts.
          * This property applies to the OKE cluster member in both the primary and standby region.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managedNodePoolConfigs")
         private java.util.List<CreateOkeClusterManagedNodePoolConfigurationDetails>
                 managedNodePoolConfigs;
@@ -178,7 +182,7 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
          *
          * @param managedNodePoolConfigs the value to set
          * @return this builder
-         */
+         **/
         public Builder managedNodePoolConfigs(
                 java.util.List<CreateOkeClusterManagedNodePoolConfigurationDetails>
                         managedNodePoolConfigs) {
@@ -189,7 +193,8 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
         /**
          * The list of virtual node pools with configurations for minimum and maximum node counts.
          * This property applies to the OKE cluster member in both the primary and standby region.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("virtualNodePoolConfigs")
         private java.util.List<CreateOkeClusterVirtualNodePoolConfigurationDetails>
                 virtualNodePoolConfigs;
@@ -200,7 +205,7 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
          *
          * @param virtualNodePoolConfigs the value to set
          * @return this builder
-         */
+         **/
         public Builder virtualNodePoolConfigs(
                 java.util.List<CreateOkeClusterVirtualNodePoolConfigurationDetails>
                         virtualNodePoolConfigs) {
@@ -267,7 +272,9 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -304,45 +311,45 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
     }
 
     /**
-     * The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the
-     * primary and standby region.
+     * The OCID of the peer OKE cluster.
+     * This property applies to the OKE cluster member in both the primary and standby region.
+     * <p>
+     * Example: {@code ocid1.cluster.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.cluster.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerClusterId")
     private final String peerClusterId;
 
     /**
-     * The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the
-     * primary and standby region.
-     *
-     * <p>Example: {@code ocid1.cluster.oc1..uniqueID}
+     * The OCID of the peer OKE cluster.
+     * This property applies to the OKE cluster member in both the primary and standby region.
+     * <p>
+     * Example: {@code ocid1.cluster.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getPeerClusterId() {
         return peerClusterId;
     }
 
     /**
-     * The OCID of the compute instance member that is designated as a jump host. This compute
-     * instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run
-     * Command feature.
+     * The OCID of the compute instance member that is designated as a jump host.
+     * This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jumpHostId")
     private final String jumpHostId;
 
     /**
-     * The OCID of the compute instance member that is designated as a jump host. This compute
-     * instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run
-     * Command feature.
-     *
-     * <p>Example: {@code ocid1.instance.oc1..uniqueID}
+     * The OCID of the compute instance member that is designated as a jump host.
+     * This compute instance will be used to perform DR operations on the cluster using Oracle Cloud Agent's Run Command feature.
+     * <p>
+     * Example: {@code ocid1.instance.oc1..uniqueID}
      *
      * @return the value
-     */
+     **/
     public String getJumpHostId() {
         return jumpHostId;
     }
@@ -362,18 +369,19 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
     }
 
     /**
-     * The list of source-to-destination load balancer mappings required for DR operations. This
-     * property applies to the OKE cluster member in primary region.
-     */
+     * The list of source-to-destination load balancer mappings required for DR operations.
+     * This property applies to the OKE cluster member in primary region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerMappings")
     private final java.util.List<CreateOkeClusterLoadBalancerMappingDetails> loadBalancerMappings;
 
     /**
-     * The list of source-to-destination load balancer mappings required for DR operations. This
-     * property applies to the OKE cluster member in primary region.
+     * The list of source-to-destination load balancer mappings required for DR operations.
+     * This property applies to the OKE cluster member in primary region.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOkeClusterLoadBalancerMappingDetails> getLoadBalancerMappings() {
         return loadBalancerMappings;
     }
@@ -381,7 +389,8 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
     /**
      * The list of source-to-destination network load balancer mappings required for DR operations.
      * This property applies to the OKE cluster member in primary region.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("networkLoadBalancerMappings")
     private final java.util.List<CreateOkeClusterNetworkLoadBalancerMappingDetails>
             networkLoadBalancerMappings;
@@ -391,62 +400,65 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
      * This property applies to the OKE cluster member in primary region.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOkeClusterNetworkLoadBalancerMappingDetails>
             getNetworkLoadBalancerMappings() {
         return networkLoadBalancerMappings;
     }
 
     /**
-     * The list of source-to-destination vault mappings required for DR operations. This property
-     * applies to the OKE cluster member in primary region.
-     */
+     * The list of source-to-destination vault mappings required for DR operations.
+     * This property applies to the OKE cluster member in primary region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultMappings")
     private final java.util.List<CreateOkeClusterVaultMappingDetails> vaultMappings;
 
     /**
-     * The list of source-to-destination vault mappings required for DR operations. This property
-     * applies to the OKE cluster member in primary region.
+     * The list of source-to-destination vault mappings required for DR operations.
+     * This property applies to the OKE cluster member in primary region.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOkeClusterVaultMappingDetails> getVaultMappings() {
         return vaultMappings;
     }
 
     /**
-     * The list of managed node pools with configurations for minimum and maximum node counts. This
-     * property applies to the OKE cluster member in both the primary and standby region.
-     */
+     * The list of managed node pools with configurations for minimum and maximum node counts.
+     * This property applies to the OKE cluster member in both the primary and standby region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managedNodePoolConfigs")
     private final java.util.List<CreateOkeClusterManagedNodePoolConfigurationDetails>
             managedNodePoolConfigs;
 
     /**
-     * The list of managed node pools with configurations for minimum and maximum node counts. This
-     * property applies to the OKE cluster member in both the primary and standby region.
+     * The list of managed node pools with configurations for minimum and maximum node counts.
+     * This property applies to the OKE cluster member in both the primary and standby region.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOkeClusterManagedNodePoolConfigurationDetails>
             getManagedNodePoolConfigs() {
         return managedNodePoolConfigs;
     }
 
     /**
-     * The list of virtual node pools with configurations for minimum and maximum node counts. This
-     * property applies to the OKE cluster member in both the primary and standby region.
-     */
+     * The list of virtual node pools with configurations for minimum and maximum node counts.
+     * This property applies to the OKE cluster member in both the primary and standby region.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("virtualNodePoolConfigs")
     private final java.util.List<CreateOkeClusterVirtualNodePoolConfigurationDetails>
             virtualNodePoolConfigs;
 
     /**
-     * The list of virtual node pools with configurations for minimum and maximum node counts. This
-     * property applies to the OKE cluster member in both the primary and standby region.
+     * The list of virtual node pools with configurations for minimum and maximum node counts.
+     * This property applies to the OKE cluster member in both the primary and standby region.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CreateOkeClusterVirtualNodePoolConfigurationDetails>
             getVirtualNodePoolConfigs() {
         return virtualNodePoolConfigs;
@@ -459,7 +471,6 @@ public final class CreateDrProtectionGroupMemberOkeClusterDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

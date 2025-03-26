@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
-    <version>3.61.0</version>
+    <version>2.82.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -14,68 +14,26 @@
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Object Storage Service</description>
   <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
+  <properties>
+    <maven-surefire-plugin.argLine>--illegal-access=warn
+      --add-opens=java.base/java.lang=ALL-UNNAMED
+      --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+      --add-opens=java.base/java.util=ALL-UNNAMED
+    </maven-surefire-plugin.argLine>
+  </properties>
+
+
+
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.61.0</version>
-    </dependency>
-    <dependency>
-      <groupId>com.oracle.oci.sdk</groupId>
-      <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.61.0</version>
+      <version>2.82.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>3.61.0</version>
-    </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.annotation</groupId>
-      <artifactId>jakarta.annotation-api</artifactId>
-      <version>${jakarta9.annotations.version}</version>
-    </dependency>
-    <dependency>
-      <!-- TODO: DEX-14784 - this should not use jakarta.ws.rs-api as a test dependency; rewrite tests -->
-      <groupId>jakarta.ws.rs</groupId>
-      <artifactId>jakarta.ws.rs-api</artifactId>
-      <version>${jakarta.ws.rs-api.version}</version>
-      <scope>test</scope>
-    </dependency>
-    <!-- Test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.hamcrest</groupId>
-      <artifactId>java-hamcrest</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-core</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-module-junit4</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.powermock</groupId>
-      <artifactId>powermock-api-mockito2</artifactId>
-      <scope>test</scope>
+      <version>2.82.0</version>
     </dependency>
   </dependencies>
 

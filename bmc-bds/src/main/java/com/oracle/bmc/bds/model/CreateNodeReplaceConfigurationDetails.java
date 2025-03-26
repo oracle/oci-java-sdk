@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the NodeReplaceConfiguration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the NodeReplaceConfiguration
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateNodeReplaceConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateNodeReplaceConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateNodeReplaceConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "levelTypeDetails",
@@ -56,70 +55,64 @@ public final class CreateNodeReplaceConfigurationDetails
             return this;
         }
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-         * does not have to be unique, and it may be changed. Avoid entering confidential
-         * information.
-         *
+         * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Base-64 encoded password for the cluster admin user. */
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
-         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
             return this;
         }
-        /** Type of compute instance health metric to use for node replacement */
+        /**
+         * Type of compute instance health metric to use for node replacement
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private NodeReplaceConfiguration.MetricType metricType;
 
         /**
          * Type of compute instance health metric to use for node replacement
-         *
          * @param metricType the value to set
          * @return this builder
-         */
+         **/
         public Builder metricType(NodeReplaceConfiguration.MetricType metricType) {
             this.metricType = metricType;
             this.__explicitlySet__.add("metricType");
             return this;
         }
         /**
-         * This value is the minimum period of time to wait before triggering node replacement. The
-         * value is in minutes.
-         */
+         * This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
         private Integer durationInMinutes;
 
         /**
-         * This value is the minimum period of time to wait before triggering node replacement. The
-         * value is in minutes.
-         *
+         * This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
          * @param durationInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder durationInMinutes(Integer durationInMinutes) {
             this.durationInMinutes = durationInMinutes;
             this.__explicitlySet__.add("durationInMinutes");
@@ -164,7 +157,9 @@ public final class CreateNodeReplaceConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -181,61 +176,57 @@ public final class CreateNodeReplaceConfigurationDetails
     }
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     */
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name
-     * does not have to be unique, and it may be changed. Avoid entering confidential information.
-     *
+     * A user-friendly name. Only ASCII alphanumeric characters with no spaces allowed. The name does not have to be unique, and it may be changed. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Base-64 encoded password for the cluster admin user. */
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster admin user.
-     *
      * @return the value
-     */
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
 
-    /** Type of compute instance health metric to use for node replacement */
+    /**
+     * Type of compute instance health metric to use for node replacement
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final NodeReplaceConfiguration.MetricType metricType;
 
     /**
      * Type of compute instance health metric to use for node replacement
-     *
      * @return the value
-     */
+     **/
     public NodeReplaceConfiguration.MetricType getMetricType() {
         return metricType;
     }
 
     /**
-     * This value is the minimum period of time to wait before triggering node replacement. The
-     * value is in minutes.
-     */
+     * This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("durationInMinutes")
     private final Integer durationInMinutes;
 
     /**
-     * This value is the minimum period of time to wait before triggering node replacement. The
-     * value is in minutes.
-     *
+     * This value is the minimum period of time to wait before triggering node replacement. The value is in minutes.
      * @return the value
-     */
+     **/
     public Integer getDurationInMinutes() {
         return durationInMinutes;
     }
@@ -247,7 +238,6 @@ public final class CreateNodeReplaceConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

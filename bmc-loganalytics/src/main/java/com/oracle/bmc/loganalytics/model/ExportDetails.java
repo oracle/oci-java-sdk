@@ -5,22 +5,20 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Input arguments for running a query synchronosly and streaming the results as soon as they become
- * available. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Input arguments for running a query synchronosly and streaming the results as soon as they become available.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ExportDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExportDetails extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExportDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -67,59 +65,59 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Flag to search all child compartments of the compartment Id specified in the
-         * compartmentId query parameter.
-         */
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
         private Boolean compartmentIdInSubtree;
 
         /**
-         * Flag to search all child compartments of the compartment Id specified in the
-         * compartmentId query parameter.
+         * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
          *
          * @param compartmentIdInSubtree the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             this.compartmentIdInSubtree = compartmentIdInSubtree;
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
-        /** Query to perform. */
+        /**
+         * Query to perform.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryString")
         private String queryString;
 
         /**
          * Query to perform.
-         *
          * @param queryString the value to set
          * @return this builder
-         */
+         **/
         public Builder queryString(String queryString) {
             this.queryString = queryString;
             this.__explicitlySet__.add("queryString");
             return this;
         }
-        /** Default subsystem to qualify fields with in the queryString if not specified. */
+        /**
+         * Default subsystem to qualify fields with in the queryString if not specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
         private SubSystemName subSystem;
 
@@ -128,63 +126,57 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param subSystem the value to set
          * @return this builder
-         */
+         **/
         public Builder subSystem(SubSystemName subSystem) {
             this.subSystem = subSystem;
             this.__explicitlySet__.add("subSystem");
             return this;
         }
         /**
-         * List of filters to be applied when the query executes. More than one filter per field is
-         * not permitted.
-         */
+         * List of filters to be applied when the query executes. More than one filter per field is not permitted.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scopeFilters")
         private java.util.List<ScopeFilter> scopeFilters;
 
         /**
-         * List of filters to be applied when the query executes. More than one filter per field is
-         * not permitted.
+         * List of filters to be applied when the query executes. More than one filter per field is not permitted.
          *
          * @param scopeFilters the value to set
          * @return this builder
-         */
+         **/
         public Builder scopeFilters(java.util.List<ScopeFilter> scopeFilters) {
             this.scopeFilters = scopeFilters;
             this.__explicitlySet__.add("scopeFilters");
             return this;
         }
         /**
-         * Maximum number of results retrieved from data source is determined by the specific query
-         * used and the maxTotalCount input field. If the export results can be streamed, the
-         * maximum will be 1,000,000. If the results cannot be streamed, the maximum limit is 500
-         * for queries that include the link command and 10,000 for the queries that do not include
-         * the link command.
+         * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+         * If the export results can be streamed, the maximum will be 1,000,000.
+         * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+         * and 10,000 for the queries that do not include the link command.
+         * <p>
+         * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+         * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+         * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
          *
-         * <p>Queries that include certain commands such as head, tail or stats cannot be streamed
-         * and are subject to a maximum of 10,000 results. Queries that include the sort command
-         * cannot be streamed unless the sort fields are restricted to id and/or time. The maximum
-         * number of results retrieved is the lesser of the maxTotalCount input provided and the
-         * applicable limit described above.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
         private Integer maxTotalCount;
 
         /**
-         * Maximum number of results retrieved from data source is determined by the specific query
-         * used and the maxTotalCount input field. If the export results can be streamed, the
-         * maximum will be 1,000,000. If the results cannot be streamed, the maximum limit is 500
-         * for queries that include the link command and 10,000 for the queries that do not include
-         * the link command.
-         *
-         * <p>Queries that include certain commands such as head, tail or stats cannot be streamed
-         * and are subject to a maximum of 10,000 results. Queries that include the sort command
-         * cannot be streamed unless the sort fields are restricted to id and/or time. The maximum
-         * number of results retrieved is the lesser of the maxTotalCount input provided and the
-         * applicable limit described above.
+         * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+         * If the export results can be streamed, the maximum will be 1,000,000.
+         * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+         * and 10,000 for the queries that do not include the link command.
+         * <p>
+         * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+         * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+         * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
          *
          * @param maxTotalCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTotalCount(Integer maxTotalCount) {
             this.maxTotalCount = maxTotalCount;
             this.__explicitlySet__.add("maxTotalCount");
@@ -200,83 +192,82 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Amount of time, in seconds, allowed for a query to execute. If this time expires before
-         * the query is complete, any partial results will be returned.
-         */
+         * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryTimeoutInSeconds")
         private Integer queryTimeoutInSeconds;
 
         /**
-         * Amount of time, in seconds, allowed for a query to execute. If this time expires before
-         * the query is complete, any partial results will be returned.
-         *
+         * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
          * @param queryTimeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder queryTimeoutInSeconds(Integer queryTimeoutInSeconds) {
             this.queryTimeoutInSeconds = queryTimeoutInSeconds;
             this.__explicitlySet__.add("queryTimeoutInSeconds");
             return this;
         }
-        /** Include columns in response */
+        /**
+         * Include columns in response
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeColumns")
         private Boolean shouldIncludeColumns;
 
         /**
          * Include columns in response
-         *
          * @param shouldIncludeColumns the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldIncludeColumns(Boolean shouldIncludeColumns) {
             this.shouldIncludeColumns = shouldIncludeColumns;
             this.__explicitlySet__.add("shouldIncludeColumns");
             return this;
         }
-        /** Specifies the format for the returned results. */
+        /**
+         * Specifies the format for the returned results.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
         private OutputFormat outputFormat;
 
         /**
          * Specifies the format for the returned results.
-         *
          * @param outputFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder outputFormat(OutputFormat outputFormat) {
             this.outputFormat = outputFormat;
             this.__explicitlySet__.add("outputFormat");
             return this;
         }
-        /** Localize results, including header columns, List-Of-Values and timestamp values. */
+        /**
+         * Localize results, including header columns, List-Of-Values and timestamp values.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldLocalize")
         private Boolean shouldLocalize;
 
         /**
          * Localize results, including header columns, List-Of-Values and timestamp values.
-         *
          * @param shouldLocalize the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldLocalize(Boolean shouldLocalize) {
             this.shouldLocalize = shouldLocalize;
             this.__explicitlySet__.add("shouldLocalize");
             return this;
         }
         /**
-         * Controls if query should ignore pre-calculated results if available and only use raw
-         * data.
-         */
+         * Controls if query should ignore pre-calculated results if available and only use raw data.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")
         private Boolean shouldUseAcceleration;
 
         /**
-         * Controls if query should ignore pre-calculated results if available and only use raw
-         * data.
+         * Controls if query should ignore pre-calculated results if available and only use raw data.
          *
          * @param shouldUseAcceleration the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldUseAcceleration(Boolean shouldUseAcceleration) {
             this.shouldUseAcceleration = shouldUseAcceleration;
             this.__explicitlySet__.add("shouldUseAcceleration");
@@ -349,7 +340,9 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -359,53 +352,53 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Flag to search all child compartments of the compartment Id specified in the compartmentId
-     * query parameter.
-     */
+     * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIdInSubtree")
     private final Boolean compartmentIdInSubtree;
 
     /**
-     * Flag to search all child compartments of the compartment Id specified in the compartmentId
-     * query parameter.
+     * Flag to search all child compartments of the compartment Id specified in the compartmentId query parameter.
      *
      * @return the value
-     */
+     **/
     public Boolean getCompartmentIdInSubtree() {
         return compartmentIdInSubtree;
     }
 
-    /** Query to perform. */
+    /**
+     * Query to perform.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryString")
     private final String queryString;
 
     /**
      * Query to perform.
-     *
      * @return the value
-     */
+     **/
     public String getQueryString() {
         return queryString;
     }
 
-    /** Default subsystem to qualify fields with in the queryString if not specified. */
+    /**
+     * Default subsystem to qualify fields with in the queryString if not specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subSystem")
     private final SubSystemName subSystem;
 
@@ -413,57 +406,53 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
      * Default subsystem to qualify fields with in the queryString if not specified.
      *
      * @return the value
-     */
+     **/
     public SubSystemName getSubSystem() {
         return subSystem;
     }
 
     /**
-     * List of filters to be applied when the query executes. More than one filter per field is not
-     * permitted.
-     */
+     * List of filters to be applied when the query executes. More than one filter per field is not permitted.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scopeFilters")
     private final java.util.List<ScopeFilter> scopeFilters;
 
     /**
-     * List of filters to be applied when the query executes. More than one filter per field is not
-     * permitted.
+     * List of filters to be applied when the query executes. More than one filter per field is not permitted.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ScopeFilter> getScopeFilters() {
         return scopeFilters;
     }
 
     /**
-     * Maximum number of results retrieved from data source is determined by the specific query used
-     * and the maxTotalCount input field. If the export results can be streamed, the maximum will be
-     * 1,000,000. If the results cannot be streamed, the maximum limit is 500 for queries that
-     * include the link command and 10,000 for the queries that do not include the link command.
+     * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+     * If the export results can be streamed, the maximum will be 1,000,000.
+     * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+     * and 10,000 for the queries that do not include the link command.
+     * <p>
+     * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+     * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+     * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
      *
-     * <p>Queries that include certain commands such as head, tail or stats cannot be streamed and
-     * are subject to a maximum of 10,000 results. Queries that include the sort command cannot be
-     * streamed unless the sort fields are restricted to id and/or time. The maximum number of
-     * results retrieved is the lesser of the maxTotalCount input provided and the applicable limit
-     * described above.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTotalCount")
     private final Integer maxTotalCount;
 
     /**
-     * Maximum number of results retrieved from data source is determined by the specific query used
-     * and the maxTotalCount input field. If the export results can be streamed, the maximum will be
-     * 1,000,000. If the results cannot be streamed, the maximum limit is 500 for queries that
-     * include the link command and 10,000 for the queries that do not include the link command.
-     *
-     * <p>Queries that include certain commands such as head, tail or stats cannot be streamed and
-     * are subject to a maximum of 10,000 results. Queries that include the sort command cannot be
-     * streamed unless the sort fields are restricted to id and/or time. The maximum number of
-     * results retrieved is the lesser of the maxTotalCount input provided and the applicable limit
-     * described above.
+     * Maximum number of results retrieved from data source is determined by the specific query used and the maxTotalCount input field.
+     * If the export results can be streamed, the maximum will be 1,000,000.
+     * If the results cannot be streamed, the maximum limit is 500 for queries that include the link command
+     * and 10,000 for the queries that do not include the link command.
+     * <p>
+     * Queries that include certain commands such as head, tail or stats cannot be streamed and are subject to a maximum of 10,000 results.
+     * Queries that include the sort command cannot be streamed unless the sort fields are restricted to id and/or time.
+     * The maximum number of results retrieved is the lesser of the maxTotalCount input provided and the applicable limit described above.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxTotalCount() {
         return maxTotalCount;
     }
@@ -476,37 +465,37 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Amount of time, in seconds, allowed for a query to execute. If this time expires before the
-     * query is complete, any partial results will be returned.
-     */
+     * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryTimeoutInSeconds")
     private final Integer queryTimeoutInSeconds;
 
     /**
-     * Amount of time, in seconds, allowed for a query to execute. If this time expires before the
-     * query is complete, any partial results will be returned.
-     *
+     * Amount of time, in seconds, allowed for a query to execute. If this time expires before the query is complete, any partial results will be returned.
      * @return the value
-     */
+     **/
     public Integer getQueryTimeoutInSeconds() {
         return queryTimeoutInSeconds;
     }
 
-    /** Include columns in response */
+    /**
+     * Include columns in response
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldIncludeColumns")
     private final Boolean shouldIncludeColumns;
 
     /**
      * Include columns in response
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldIncludeColumns() {
         return shouldIncludeColumns;
     }
 
-    /** Specifies the format for the returned results. */
-    public enum OutputFormat implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the format for the returned results.
+     **/
+    public enum OutputFormat {
         Csv("CSV"),
         Json("JSON"),
         ;
@@ -538,35 +527,38 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
             throw new IllegalArgumentException("Invalid OutputFormat: " + key);
         }
     };
-    /** Specifies the format for the returned results. */
+    /**
+     * Specifies the format for the returned results.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
     private final OutputFormat outputFormat;
 
     /**
      * Specifies the format for the returned results.
-     *
      * @return the value
-     */
+     **/
     public OutputFormat getOutputFormat() {
         return outputFormat;
     }
 
-    /** Localize results, including header columns, List-Of-Values and timestamp values. */
+    /**
+     * Localize results, including header columns, List-Of-Values and timestamp values.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldLocalize")
     private final Boolean shouldLocalize;
 
     /**
      * Localize results, including header columns, List-Of-Values and timestamp values.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldLocalize() {
         return shouldLocalize;
     }
 
     /**
      * Controls if query should ignore pre-calculated results if available and only use raw data.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldUseAcceleration")
     private final Boolean shouldUseAcceleration;
 
@@ -574,7 +566,7 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
      * Controls if query should ignore pre-calculated results if available and only use raw data.
      *
      * @return the value
-     */
+     **/
     public Boolean getShouldUseAcceleration() {
         return shouldUseAcceleration;
     }
@@ -586,7 +578,6 @@ public final class ExportDetails extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

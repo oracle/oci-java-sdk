@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Represents the metadata of a Amazon S3 Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Represents the metadata of a Amazon S3 Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AmazonS3Connection.Builder.class)
+    builder = AmazonS3Connection.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AmazonS3Connection extends Connection {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -198,52 +199,57 @@ public final class AmazonS3Connection extends Connection {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The Amazon S3 technology type. */
+        /**
+         * The Amazon S3 technology type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
 
         /**
          * The Amazon S3 technology type.
-         *
          * @param technologyType the value to set
          * @return this builder
-         */
+         **/
         public Builder technologyType(TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
             return this;
         }
-        /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+        /**
+         * Access key ID to access the Amazon S3 bucket.
+         * e.g.: "this-is-not-the-secret"
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
         private String accessKeyId;
 
         /**
-         * Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Access key ID to access the Amazon S3 bucket.
+         * e.g.: "this-is-not-the-secret"
          *
          * @param accessKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder accessKeyId(String accessKeyId) {
             this.accessKeyId = accessKeyId;
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
         private String secretAccessKeySecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
-         * field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
          *
          * @param secretAccessKeySecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
             this.secretAccessKeySecretId = secretAccessKeySecretId;
             this.__explicitlySet__.add("secretAccessKeySecretId");
@@ -356,7 +362,9 @@ public final class AmazonS3Connection extends Connection {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -414,13 +422,15 @@ public final class AmazonS3Connection extends Connection {
         this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
-    /** The Amazon S3 technology type. */
-    public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The Amazon S3 technology type.
+     **/
+    public enum TechnologyType {
         AmazonS3("AMAZON_S3"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -459,47 +469,52 @@ public final class AmazonS3Connection extends Connection {
             return UnknownEnumValue;
         }
     };
-    /** The Amazon S3 technology type. */
+    /**
+     * The Amazon S3 technology type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
     private final TechnologyType technologyType;
 
     /**
      * The Amazon S3 technology type.
-     *
      * @return the value
-     */
+     **/
     public TechnologyType getTechnologyType() {
         return technologyType;
     }
 
-    /** Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+    /**
+     * Access key ID to access the Amazon S3 bucket.
+     * e.g.: "this-is-not-the-secret"
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessKeyId")
     private final String accessKeyId;
 
     /**
-     * Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     * Access key ID to access the Amazon S3 bucket.
+     * e.g.: "this-is-not-the-secret"
      *
      * @return the value
-     */
+     **/
     public String getAccessKeyId() {
         return accessKeyId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
     private final String secretAccessKeySecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
-     * must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSecretAccessKeySecretId() {
         return secretAccessKeySecretId;
     }
@@ -511,7 +526,6 @@ public final class AmazonS3Connection extends Connection {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

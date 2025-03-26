@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Sort By. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MaintenanceWindowSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort By.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MaintenanceWindowSortBy {
     Name("NAME"),
     StartTime("START_TIME"),
     EndTime("END_TIME"),

@@ -5,25 +5,25 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Summary of ATP-D based sharded database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Summary of ATP-D based sharded database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DedicatedShardedDatabaseSummary.Builder.class)
+    builder = DedicatedShardedDatabaseSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dbDeploymentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dbDeploymentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -117,16 +117,17 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The Replication method for sharded database. */
+        /**
+         * The Replication method for sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
         private DedicatedShardedDatabase.ReplicationMethod replicationMethod;
 
         /**
          * The Replication method for sharded database.
-         *
          * @param replicationMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder replicationMethod(
                 DedicatedShardedDatabase.ReplicationMethod replicationMethod) {
             this.replicationMethod = replicationMethod;
@@ -134,260 +135,268 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             return this;
         }
         /**
-         * The Replication factor for RAFT replication based sharded database. Currently supported
-         * values are 3, 5 and 7.
-         */
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
         private Integer replicationFactor;
 
         /**
-         * The Replication factor for RAFT replication based sharded database. Currently supported
-         * values are 3, 5 and 7.
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
          *
          * @param replicationFactor the value to set
          * @return this builder
-         */
+         **/
         public Builder replicationFactor(Integer replicationFactor) {
             this.replicationFactor = replicationFactor;
             this.__explicitlySet__.add("replicationFactor");
             return this;
         }
         /**
-         * For RAFT replication based sharded database, the value should be atleast twice the number
-         * of shards.
-         */
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
         private Integer replicationUnit;
 
         /**
-         * For RAFT replication based sharded database, the value should be atleast twice the number
-         * of shards.
-         *
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
          * @param replicationUnit the value to set
          * @return this builder
-         */
+         **/
         public Builder replicationUnit(Integer replicationUnit) {
             this.replicationUnit = replicationUnit;
             this.__explicitlySet__.add("replicationUnit");
             return this;
         }
         /**
-         * The certificate common name used in all cloudAutonomousVmClusters for the sharded
-         * database topology. Eg. Production. All the clusters used in one sharded database topology
-         * shall have same CABundle setup. Valid characterset for clusterCertificateCommonName
-         * include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
-         */
+         * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
+         * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
+         * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterCertificateCommonName")
         private String clusterCertificateCommonName;
 
         /**
-         * The certificate common name used in all cloudAutonomousVmClusters for the sharded
-         * database topology. Eg. Production. All the clusters used in one sharded database topology
-         * shall have same CABundle setup. Valid characterset for clusterCertificateCommonName
-         * include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
+         * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
+         * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
+         * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
          *
          * @param clusterCertificateCommonName the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterCertificateCommonName(String clusterCertificateCommonName) {
             this.clusterCertificateCommonName = clusterCertificateCommonName;
             this.__explicitlySet__.add("clusterCertificateCommonName");
             return this;
         }
-        /** Possible workload types. */
+        /**
+         * Possible workload types.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
         private DbWorkload dbWorkload;
 
         /**
          * Possible workload types.
-         *
          * @param dbWorkload the value to set
          * @return this builder
-         */
+         **/
         public Builder dbWorkload(DbWorkload dbWorkload) {
             this.dbWorkload = dbWorkload;
             this.__explicitlySet__.add("dbWorkload");
             return this;
         }
-        /** Sharding Method. */
+        /**
+         * Sharding Method.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
         private ShardingMethod shardingMethod;
 
         /**
          * Sharding Method.
-         *
          * @param shardingMethod the value to set
          * @return this builder
-         */
+         **/
         public Builder shardingMethod(ShardingMethod shardingMethod) {
             this.shardingMethod = shardingMethod;
             this.__explicitlySet__.add("shardingMethod");
             return this;
         }
-        /** The character set for the sharded database. */
+        /**
+         * The character set for the sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
         private String characterSet;
 
         /**
          * The character set for the sharded database.
-         *
          * @param characterSet the value to set
          * @return this builder
-         */
+         **/
         public Builder characterSet(String characterSet) {
             this.characterSet = characterSet;
             this.__explicitlySet__.add("characterSet");
             return this;
         }
-        /** The national character set for the sharded database. */
+        /**
+         * The national character set for the sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
         private String ncharacterSet;
 
         /**
          * The national character set for the sharded database.
-         *
          * @param ncharacterSet the value to set
          * @return this builder
-         */
+         **/
         public Builder ncharacterSet(String ncharacterSet) {
             this.ncharacterSet = ncharacterSet;
             this.__explicitlySet__.add("ncharacterSet");
             return this;
         }
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
-         */
+         * The default number of unique chunks in a shardspace. The value of chunks must be
+         * greater than 2 times the size of the largest shardgroup in any shardspace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chunks")
         private Integer chunks;
 
         /**
-         * The default number of unique chunks in a shardspace. The value of chunks must be greater
-         * than 2 times the size of the largest shardgroup in any shardspace.
+         * The default number of unique chunks in a shardspace. The value of chunks must be
+         * greater than 2 times the size of the largest shardgroup in any shardspace.
          *
          * @param chunks the value to set
          * @return this builder
-         */
+         **/
         public Builder chunks(Integer chunks) {
             this.chunks = chunks;
             this.__explicitlySet__.add("chunks");
             return this;
         }
-        /** Oracle Database version of the Autonomous Container Database. */
+        /**
+         * Oracle Database version of the Autonomous Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * Oracle Database version of the Autonomous Container Database.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The listener port number for the sharded database. */
+        /**
+         * The listener port number for the sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
         private Integer listenerPort;
 
         /**
          * The listener port number for the sharded database.
-         *
          * @param listenerPort the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerPort(Integer listenerPort) {
             this.listenerPort = listenerPort;
             this.__explicitlySet__.add("listenerPort");
             return this;
         }
-        /** The TLS listener port number for sharded database. */
+        /**
+         * The TLS listener port number for sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
         private Integer listenerPortTls;
 
         /**
          * The TLS listener port number for sharded database.
-         *
          * @param listenerPortTls the value to set
          * @return this builder
-         */
+         **/
         public Builder listenerPortTls(Integer listenerPortTls) {
             this.listenerPortTls = listenerPortTls;
             this.__explicitlySet__.add("listenerPortTls");
             return this;
         }
-        /** Ons local port number. */
+        /**
+         * Ons local port number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
         private Integer onsPortLocal;
 
         /**
          * Ons local port number.
-         *
          * @param onsPortLocal the value to set
          * @return this builder
-         */
+         **/
         public Builder onsPortLocal(Integer onsPortLocal) {
             this.onsPortLocal = onsPortLocal;
             this.__explicitlySet__.add("onsPortLocal");
             return this;
         }
-        /** Ons remote port number. */
+        /**
+         * Ons remote port number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
         private Integer onsPortRemote;
 
         /**
          * Ons remote port number.
-         *
          * @param onsPortRemote the value to set
          * @return this builder
-         */
+         **/
         public Builder onsPortRemote(Integer onsPortRemote) {
             this.onsPortRemote = onsPortRemote;
             this.__explicitlySet__.add("onsPortRemote");
             return this;
         }
-        /** Name prefix for the sharded databases. */
+        /**
+         * Name prefix for the sharded databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefix")
         private String prefix;
 
         /**
          * Name prefix for the sharded databases.
-         *
          * @param prefix the value to set
          * @return this builder
-         */
+         **/
         public Builder prefix(String prefix) {
             this.prefix = prefix;
             this.__explicitlySet__.add("prefix");
             return this;
         }
-        /** Total cpu count usage for shards and catalogs of the sharded database. */
+        /**
+         * Total cpu count usage for shards and catalogs of the sharded database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCount")
         private Integer totalCpuCount;
 
         /**
          * Total cpu count usage for shards and catalogs of the sharded database.
-         *
          * @param totalCpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder totalCpuCount(Integer totalCpuCount) {
             this.totalCpuCount = totalCpuCount;
             this.__explicitlySet__.add("totalCpuCount");
             return this;
         }
-        /** The aggregarted value of dataStorageSizeInGbs for all shards and catalogs. */
+        /**
+         * The aggregarted value of dataStorageSizeInGbs for all shards and catalogs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalDataStorageSizeInGbs")
         private Double totalDataStorageSizeInGbs;
 
         /**
          * The aggregarted value of dataStorageSizeInGbs for all shards and catalogs.
-         *
          * @param totalDataStorageSizeInGbs the value to set
          * @return this builder
-         */
+         **/
         public Builder totalDataStorageSizeInGbs(Double totalDataStorageSizeInGbs) {
             this.totalDataStorageSizeInGbs = totalDataStorageSizeInGbs;
             this.__explicitlySet__.add("totalDataStorageSizeInGbs");
@@ -520,7 +529,9 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -588,82 +599,80 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
         this.totalDataStorageSizeInGbs = totalDataStorageSizeInGbs;
     }
 
-    /** The Replication method for sharded database. */
+    /**
+     * The Replication method for sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
     private final DedicatedShardedDatabase.ReplicationMethod replicationMethod;
 
     /**
      * The Replication method for sharded database.
-     *
      * @return the value
-     */
+     **/
     public DedicatedShardedDatabase.ReplicationMethod getReplicationMethod() {
         return replicationMethod;
     }
 
     /**
-     * The Replication factor for RAFT replication based sharded database. Currently supported
-     * values are 3, 5 and 7.
-     */
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
     private final Integer replicationFactor;
 
     /**
-     * The Replication factor for RAFT replication based sharded database. Currently supported
-     * values are 3, 5 and 7.
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
      *
      * @return the value
-     */
+     **/
     public Integer getReplicationFactor() {
         return replicationFactor;
     }
 
     /**
-     * For RAFT replication based sharded database, the value should be atleast twice the number of
-     * shards.
-     */
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
     private final Integer replicationUnit;
 
     /**
-     * For RAFT replication based sharded database, the value should be atleast twice the number of
-     * shards.
-     *
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
      * @return the value
-     */
+     **/
     public Integer getReplicationUnit() {
         return replicationUnit;
     }
 
     /**
-     * The certificate common name used in all cloudAutonomousVmClusters for the sharded database
-     * topology. Eg. Production. All the clusters used in one sharded database topology shall have
-     * same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or
-     * lowercase letters, numbers, hyphens, underscores, and period.
-     */
+     * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
+     * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
+     * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterCertificateCommonName")
     private final String clusterCertificateCommonName;
 
     /**
-     * The certificate common name used in all cloudAutonomousVmClusters for the sharded database
-     * topology. Eg. Production. All the clusters used in one sharded database topology shall have
-     * same CABundle setup. Valid characterset for clusterCertificateCommonName include uppercase or
-     * lowercase letters, numbers, hyphens, underscores, and period.
+     * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
+     * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
+     * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
      *
      * @return the value
-     */
+     **/
     public String getClusterCertificateCommonName() {
         return clusterCertificateCommonName;
     }
 
-    /** Possible workload types. */
-    public enum DbWorkload implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Possible workload types.
+     **/
+    public enum DbWorkload {
         Oltp("OLTP"),
         Dw("DW"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -702,27 +711,30 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             return UnknownEnumValue;
         }
     };
-    /** Possible workload types. */
+    /**
+     * Possible workload types.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbWorkload")
     private final DbWorkload dbWorkload;
 
     /**
      * Possible workload types.
-     *
      * @return the value
-     */
+     **/
     public DbWorkload getDbWorkload() {
         return dbWorkload;
     }
 
-    /** Sharding Method. */
-    public enum ShardingMethod implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sharding Method.
+     **/
+    public enum ShardingMethod {
         User("USER"),
         System("SYSTEM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -761,162 +773,174 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             return UnknownEnumValue;
         }
     };
-    /** Sharding Method. */
+    /**
+     * Sharding Method.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardingMethod")
     private final ShardingMethod shardingMethod;
 
     /**
      * Sharding Method.
-     *
      * @return the value
-     */
+     **/
     public ShardingMethod getShardingMethod() {
         return shardingMethod;
     }
 
-    /** The character set for the sharded database. */
+    /**
+     * The character set for the sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("characterSet")
     private final String characterSet;
 
     /**
      * The character set for the sharded database.
-     *
      * @return the value
-     */
+     **/
     public String getCharacterSet() {
         return characterSet;
     }
 
-    /** The national character set for the sharded database. */
+    /**
+     * The national character set for the sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ncharacterSet")
     private final String ncharacterSet;
 
     /**
      * The national character set for the sharded database.
-     *
      * @return the value
-     */
+     **/
     public String getNcharacterSet() {
         return ncharacterSet;
     }
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
-     */
+     * The default number of unique chunks in a shardspace. The value of chunks must be
+     * greater than 2 times the size of the largest shardgroup in any shardspace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chunks")
     private final Integer chunks;
 
     /**
-     * The default number of unique chunks in a shardspace. The value of chunks must be greater than
-     * 2 times the size of the largest shardgroup in any shardspace.
+     * The default number of unique chunks in a shardspace. The value of chunks must be
+     * greater than 2 times the size of the largest shardgroup in any shardspace.
      *
      * @return the value
-     */
+     **/
     public Integer getChunks() {
         return chunks;
     }
 
-    /** Oracle Database version of the Autonomous Container Database. */
+    /**
+     * Oracle Database version of the Autonomous Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * Oracle Database version of the Autonomous Container Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
-    /** The listener port number for the sharded database. */
+    /**
+     * The listener port number for the sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPort")
     private final Integer listenerPort;
 
     /**
      * The listener port number for the sharded database.
-     *
      * @return the value
-     */
+     **/
     public Integer getListenerPort() {
         return listenerPort;
     }
 
-    /** The TLS listener port number for sharded database. */
+    /**
+     * The TLS listener port number for sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("listenerPortTls")
     private final Integer listenerPortTls;
 
     /**
      * The TLS listener port number for sharded database.
-     *
      * @return the value
-     */
+     **/
     public Integer getListenerPortTls() {
         return listenerPortTls;
     }
 
-    /** Ons local port number. */
+    /**
+     * Ons local port number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortLocal")
     private final Integer onsPortLocal;
 
     /**
      * Ons local port number.
-     *
      * @return the value
-     */
+     **/
     public Integer getOnsPortLocal() {
         return onsPortLocal;
     }
 
-    /** Ons remote port number. */
+    /**
+     * Ons remote port number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("onsPortRemote")
     private final Integer onsPortRemote;
 
     /**
      * Ons remote port number.
-     *
      * @return the value
-     */
+     **/
     public Integer getOnsPortRemote() {
         return onsPortRemote;
     }
 
-    /** Name prefix for the sharded databases. */
+    /**
+     * Name prefix for the sharded databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefix")
     private final String prefix;
 
     /**
      * Name prefix for the sharded databases.
-     *
      * @return the value
-     */
+     **/
     public String getPrefix() {
         return prefix;
     }
 
-    /** Total cpu count usage for shards and catalogs of the sharded database. */
+    /**
+     * Total cpu count usage for shards and catalogs of the sharded database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCount")
     private final Integer totalCpuCount;
 
     /**
      * Total cpu count usage for shards and catalogs of the sharded database.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalCpuCount() {
         return totalCpuCount;
     }
 
-    /** The aggregarted value of dataStorageSizeInGbs for all shards and catalogs. */
+    /**
+     * The aggregarted value of dataStorageSizeInGbs for all shards and catalogs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalDataStorageSizeInGbs")
     private final Double totalDataStorageSizeInGbs;
 
     /**
      * The aggregarted value of dataStorageSizeInGbs for all shards and catalogs.
-     *
      * @return the value
-     */
+     **/
     public Double getTotalDataStorageSizeInGbs() {
         return totalDataStorageSizeInGbs;
     }
@@ -928,7 +952,6 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

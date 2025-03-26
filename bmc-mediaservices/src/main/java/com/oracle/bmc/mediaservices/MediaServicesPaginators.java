@@ -9,31 +9,23 @@ import com.oracle.bmc.mediaservices.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of MediaServices where multiple pages of data may be fetched. Two styles
- * of iteration are supported:
+ * to any list operations of MediaServices where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class MediaServicesPaginators {
     private final MediaServices client;
 
@@ -42,13 +34,11 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaAssetDistributionChannelAttachments operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaAssetDistributionChannelAttachments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaAssetDistributionChannelAttachmentsResponse>
             listMediaAssetDistributionChannelAttachmentsResponseIterator(
@@ -104,15 +94,13 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSummary} objects
-     * contained in responses from the listMediaAssetDistributionChannelAttachments operation. This
-     * iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSummary} objects
+     * contained in responses from the listMediaAssetDistributionChannelAttachments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSummary}
-     *     objects contained in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaAssetDistributionChannelAttachmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<
                     com.oracle.bmc.mediaservices.model
@@ -185,12 +173,11 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaAssets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaAssets operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaAssetsResponse> listMediaAssetsResponseIterator(
             final ListMediaAssetsRequest request) {
@@ -235,21 +222,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaAssetSummary} objects contained in responses from the
-     * listMediaAssets operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaAssetSummary} objects
+     * contained in responses from the listMediaAssets operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaAssetSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaAssetSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.MediaAssetSummary>
             listMediaAssetsRecordIterator(final ListMediaAssetsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMediaAssetsRequest.Builder,
-                ListMediaAssetsRequest,
-                ListMediaAssetsResponse,
+                ListMediaAssetsRequest.Builder, ListMediaAssetsRequest, ListMediaAssetsResponse,
                 com.oracle.bmc.mediaservices.model.MediaAssetSummary>(
                 new java.util.function.Supplier<ListMediaAssetsRequest.Builder>() {
                     @Override
@@ -299,21 +283,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaWorkflowConfigurations operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaWorkflowConfigurations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaWorkflowConfigurationsResponse>
             listMediaWorkflowConfigurationsResponseIterator(
                     final ListMediaWorkflowConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListMediaWorkflowConfigurationsRequest.Builder,
-                ListMediaWorkflowConfigurationsRequest,
-                ListMediaWorkflowConfigurationsResponse>(
+                ListMediaWorkflowConfigurationsRequest, ListMediaWorkflowConfigurationsResponse>(
                 new java.util.function.Supplier<ListMediaWorkflowConfigurationsRequest.Builder>() {
                     @Override
                     public ListMediaWorkflowConfigurationsRequest.Builder get() {
@@ -356,23 +337,20 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary} objects contained in
-     * responses from the listMediaWorkflowConfigurations operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary} objects
+     * contained in responses from the listMediaWorkflowConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary} objects contained
-     *     in responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary>
             listMediaWorkflowConfigurationsRecordIterator(
                     final ListMediaWorkflowConfigurationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMediaWorkflowConfigurationsRequest.Builder,
-                ListMediaWorkflowConfigurationsRequest,
-                ListMediaWorkflowConfigurationsResponse,
+                ListMediaWorkflowConfigurationsRequest, ListMediaWorkflowConfigurationsResponse,
                 com.oracle.bmc.mediaservices.model.MediaWorkflowConfigurationSummary>(
                 new java.util.function.Supplier<ListMediaWorkflowConfigurationsRequest.Builder>() {
                     @Override
@@ -429,19 +407,16 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaWorkflowJobs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaWorkflowJobs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaWorkflowJobsResponse> listMediaWorkflowJobsResponseIterator(
             final ListMediaWorkflowJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMediaWorkflowJobsRequest.Builder,
-                ListMediaWorkflowJobsRequest,
+                ListMediaWorkflowJobsRequest.Builder, ListMediaWorkflowJobsRequest,
                 ListMediaWorkflowJobsResponse>(
                 new java.util.function.Supplier<ListMediaWorkflowJobsRequest.Builder>() {
                     @Override
@@ -484,21 +459,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary} objects contained in responses
-     * from the listMediaWorkflowJobs operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary} objects
+     * contained in responses from the listMediaWorkflowJobs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary>
             listMediaWorkflowJobsRecordIterator(final ListMediaWorkflowJobsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMediaWorkflowJobsRequest.Builder,
-                ListMediaWorkflowJobsRequest,
+                ListMediaWorkflowJobsRequest.Builder, ListMediaWorkflowJobsRequest,
                 ListMediaWorkflowJobsResponse,
                 com.oracle.bmc.mediaservices.model.MediaWorkflowJobSummary>(
                 new java.util.function.Supplier<ListMediaWorkflowJobsRequest.Builder>() {
@@ -553,13 +525,11 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaWorkflowTaskDeclarations operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaWorkflowTaskDeclarations operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaWorkflowTaskDeclarationsResponse>
             listMediaWorkflowTaskDeclarationsResponseIterator(
@@ -612,23 +582,20 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration} objects contained in
-     * responses from the listMediaWorkflowTaskDeclarations operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration} objects
+     * contained in responses from the listMediaWorkflowTaskDeclarations operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration>
             listMediaWorkflowTaskDeclarationsRecordIterator(
                     final ListMediaWorkflowTaskDeclarationsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListMediaWorkflowTaskDeclarationsRequest.Builder,
-                ListMediaWorkflowTaskDeclarationsRequest,
-                ListMediaWorkflowTaskDeclarationsResponse,
+                ListMediaWorkflowTaskDeclarationsRequest, ListMediaWorkflowTaskDeclarationsResponse,
                 com.oracle.bmc.mediaservices.model.MediaWorkflowTaskDeclaration>(
                 new java.util.function.Supplier<
                         ListMediaWorkflowTaskDeclarationsRequest.Builder>() {
@@ -686,18 +653,16 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listMediaWorkflows operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMediaWorkflows operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMediaWorkflowsResponse> listMediaWorkflowsResponseIterator(
             final ListMediaWorkflowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListMediaWorkflowsRequest.Builder,
-                ListMediaWorkflowsRequest,
+                ListMediaWorkflowsRequest.Builder, ListMediaWorkflowsRequest,
                 ListMediaWorkflowsResponse>(
                 new java.util.function.Supplier<ListMediaWorkflowsRequest.Builder>() {
                     @Override
@@ -739,21 +704,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.MediaWorkflowSummary} objects contained in responses from
-     * the listMediaWorkflows operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowSummary} objects
+     * contained in responses from the listMediaWorkflows operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.MediaWorkflowSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.MediaWorkflowSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.MediaWorkflowSummary>
             listMediaWorkflowsRecordIterator(final ListMediaWorkflowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMediaWorkflowsRequest.Builder,
-                ListMediaWorkflowsRequest,
+                ListMediaWorkflowsRequest.Builder, ListMediaWorkflowsRequest,
                 ListMediaWorkflowsResponse,
                 com.oracle.bmc.mediaservices.model.MediaWorkflowSummary>(
                 new java.util.function.Supplier<ListMediaWorkflowsRequest.Builder>() {
@@ -805,18 +767,16 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listStreamCdnConfigs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listStreamCdnConfigs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListStreamCdnConfigsResponse> listStreamCdnConfigsResponseIterator(
             final ListStreamCdnConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListStreamCdnConfigsRequest.Builder,
-                ListStreamCdnConfigsRequest,
+                ListStreamCdnConfigsRequest.Builder, ListStreamCdnConfigsRequest,
                 ListStreamCdnConfigsResponse>(
                 new java.util.function.Supplier<ListStreamCdnConfigsRequest.Builder>() {
                     @Override
@@ -858,21 +818,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary} objects contained in responses
-     * from the listStreamCdnConfigs operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary} objects
+     * contained in responses from the listStreamCdnConfigs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary>
             listStreamCdnConfigsRecordIterator(final ListStreamCdnConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListStreamCdnConfigsRequest.Builder,
-                ListStreamCdnConfigsRequest,
+                ListStreamCdnConfigsRequest.Builder, ListStreamCdnConfigsRequest,
                 ListStreamCdnConfigsResponse,
                 com.oracle.bmc.mediaservices.model.StreamCdnConfigSummary>(
                 new java.util.function.Supplier<ListStreamCdnConfigsRequest.Builder>() {
@@ -925,21 +882,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listStreamDistributionChannels operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listStreamDistributionChannels operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListStreamDistributionChannelsResponse>
             listStreamDistributionChannelsResponseIterator(
                     final ListStreamDistributionChannelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
                 ListStreamDistributionChannelsRequest.Builder,
-                ListStreamDistributionChannelsRequest,
-                ListStreamDistributionChannelsResponse>(
+                ListStreamDistributionChannelsRequest, ListStreamDistributionChannelsResponse>(
                 new java.util.function.Supplier<ListStreamDistributionChannelsRequest.Builder>() {
                     @Override
                     public ListStreamDistributionChannelsRequest.Builder get() {
@@ -982,23 +936,20 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary} objects contained in
-     * responses from the listStreamDistributionChannels operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary} objects
+     * contained in responses from the listStreamDistributionChannels operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary>
             listStreamDistributionChannelsRecordIterator(
                     final ListStreamDistributionChannelsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListStreamDistributionChannelsRequest.Builder,
-                ListStreamDistributionChannelsRequest,
-                ListStreamDistributionChannelsResponse,
+                ListStreamDistributionChannelsRequest, ListStreamDistributionChannelsResponse,
                 com.oracle.bmc.mediaservices.model.StreamDistributionChannelSummary>(
                 new java.util.function.Supplier<ListStreamDistributionChannelsRequest.Builder>() {
                     @Override
@@ -1055,19 +1006,16 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listStreamPackagingConfigs operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listStreamPackagingConfigs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListStreamPackagingConfigsResponse> listStreamPackagingConfigsResponseIterator(
             final ListStreamPackagingConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListStreamPackagingConfigsRequest.Builder,
-                ListStreamPackagingConfigsRequest,
+                ListStreamPackagingConfigsRequest.Builder, ListStreamPackagingConfigsRequest,
                 ListStreamPackagingConfigsResponse>(
                 new java.util.function.Supplier<ListStreamPackagingConfigsRequest.Builder>() {
                     @Override
@@ -1110,22 +1058,19 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary} objects contained in
-     * responses from the listStreamPackagingConfigs operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary} objects
+     * contained in responses from the listStreamPackagingConfigs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary>
             listStreamPackagingConfigsRecordIterator(
                     final ListStreamPackagingConfigsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListStreamPackagingConfigsRequest.Builder,
-                ListStreamPackagingConfigsRequest,
+                ListStreamPackagingConfigsRequest.Builder, ListStreamPackagingConfigsRequest,
                 ListStreamPackagingConfigsResponse,
                 com.oracle.bmc.mediaservices.model.StreamPackagingConfigSummary>(
                 new java.util.function.Supplier<ListStreamPackagingConfigsRequest.Builder>() {
@@ -1181,19 +1126,16 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listSystemMediaWorkflows operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listSystemMediaWorkflows operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListSystemMediaWorkflowsResponse> listSystemMediaWorkflowsResponseIterator(
             final ListSystemMediaWorkflowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListSystemMediaWorkflowsRequest.Builder,
-                ListSystemMediaWorkflowsRequest,
+                ListSystemMediaWorkflowsRequest.Builder, ListSystemMediaWorkflowsRequest,
                 ListSystemMediaWorkflowsResponse>(
                 new java.util.function.Supplier<ListSystemMediaWorkflowsRequest.Builder>() {
                     @Override
@@ -1236,21 +1178,18 @@ public class MediaServicesPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.mediaservices.model.SystemMediaWorkflow} objects contained in responses from
-     * the listSystemMediaWorkflows operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.mediaservices.model.SystemMediaWorkflow} objects
+     * contained in responses from the listSystemMediaWorkflows operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.mediaservices.model.SystemMediaWorkflow} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.mediaservices.model.SystemMediaWorkflow} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.mediaservices.model.SystemMediaWorkflow>
             listSystemMediaWorkflowsRecordIterator(final ListSystemMediaWorkflowsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListSystemMediaWorkflowsRequest.Builder,
-                ListSystemMediaWorkflowsRequest,
+                ListSystemMediaWorkflowsRequest.Builder, ListSystemMediaWorkflowsRequest,
                 ListSystemMediaWorkflowsResponse,
                 com.oracle.bmc.mediaservices.model.SystemMediaWorkflow>(
                 new java.util.function.Supplier<ListSystemMediaWorkflowsRequest.Builder>() {

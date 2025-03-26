@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible types of criteria to use for a Exadata Fleet Update Discovery. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum DiscoveryCriteria implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible types of criteria to use for a Exadata Fleet Update Discovery.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum DiscoveryCriteria {
     SearchQuery("SEARCH_QUERY"),
     Filters("FILTERS"),
 

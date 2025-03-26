@@ -5,11 +5,12 @@
 package com.oracle.bmc.networkfirewall.model;
 
 /**
- * Types of Mapped Secrets based on the source of data for Mapped Secret. * OCI_VAULT : Mapped
- * Secrets with using data from OCI Vaults.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum MappedSecretType implements com.oracle.bmc.http.internal.BmcEnum {
+ * Types of Mapped Secrets based on the source of data for Mapped Secret.
+ * * OCI_VAULT : Mapped Secrets with using data from OCI Vaults.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum MappedSecretType {
     OciVault("OCI_VAULT"),
 
     /**

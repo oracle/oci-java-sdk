@@ -6,101 +6,106 @@ package com.oracle.bmc.osmanagementhub.requests;
 
 import com.oracle.bmc.osmanagementhub.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * GetManagedInstanceContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetManagedInstanceContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetManagedInstanceContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class GetManagedInstanceContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     private String managedInstanceId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
-    /** A filter to return only vulnerabilities matching the given types. */
+    /**
+     * A filter to return only vulnerabilities matching the given types.
+     */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
             vulnerabilityType;
 
-    /** A filter to return only vulnerabilities matching the given types. */
+    /**
+     * A filter to return only vulnerabilities matching the given types.
+     */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
             getVulnerabilityType() {
         return vulnerabilityType;
     }
     /**
      * The assigned erratum name. It's unique and not changeable.
+     * <p>
+     * Example: {@code ELSA-2020-5804}
      *
-     * <p>Example: {@code ELSA-2020-5804}
      */
     private java.util.List<String> advisoryName;
 
     /**
      * The assigned erratum name. It's unique and not changeable.
+     * <p>
+     * Example: {@code ELSA-2020-5804}
      *
-     * <p>Example: {@code ELSA-2020-5804}
      */
     public java.util.List<String> getAdvisoryName() {
         return advisoryName;
     }
-    /** A filter to return resources that may partially match the erratum advisory name given. */
+    /**
+     * A filter to return resources that may partially match the erratum advisory name given.
+     */
     private String advisoryNameContains;
 
-    /** A filter to return resources that may partially match the erratum advisory name given. */
+    /**
+     * A filter to return resources that may partially match the erratum advisory name given.
+     */
     public String getAdvisoryNameContains() {
         return advisoryNameContains;
     }
-    /** A filter to return only errata that match the given advisory types. */
+    /**
+     * A filter to return only errata that match the given advisory types.
+     */
     private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType;
 
-    /** A filter to return only errata that match the given advisory types. */
+    /**
+     * A filter to return only errata that match the given advisory types.
+     */
     public java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> getAdvisoryType() {
         return advisoryType;
     }
     /**
-     * A filter to return vulnerabilities that match the given name. For Linux instances, this
-     * refers to the advisory name. For Windows instances, this refers to the Windows update display
-     * name.
+     * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
      */
     private java.util.List<String> vulnerabilityName;
 
     /**
-     * A filter to return vulnerabilities that match the given name. For Linux instances, this
-     * refers to the advisory name. For Windows instances, this refers to the Windows update display
-     * name.
+     * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
      */
     public java.util.List<String> getVulnerabilityName() {
         return vulnerabilityName;
     }
     /**
-     * A filter to return vulnerabilities that partially match the given name. For Linux instances,
-     * this refers to the advisory name. For Windows instances, this refers to the Windows update
-     * display name.
+     * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
      */
     private String vulnerabilityNameContains;
 
     /**
-     * A filter to return vulnerabilities that partially match the given name. For Linux instances,
-     * this refers to the advisory name. For Windows instances, this refers to the Windows update
-     * display name.
+     * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
      */
     public String getVulnerabilityNameContains() {
         return vulnerabilityNameContains;
     }
-    /** The format of the report to download. Default is CSV. */
+    /**
+     * The format of the report to download. Default is CSV.
+     */
     private ReportFormat reportFormat;
 
-    /** The format of the report to download. Default is CSV. */
-    public enum ReportFormat implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The format of the report to download. Default is CSV.
+     **/
+    public enum ReportFormat {
         Csv("csv"),
         Json("json"),
         Xml("xml"),
@@ -134,19 +139,19 @@ public class GetManagedInstanceContentRequest
         }
     };
 
-    /** The format of the report to download. Default is CSV. */
+    /**
+     * The format of the report to download. Default is CSV.
+     */
     public ReportFormat getReportFormat() {
         return reportFormat;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -155,19 +160,17 @@ public class GetManagedInstanceContentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetManagedInstanceContentRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          */
         private String managedInstanceId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * managed instance.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -176,13 +179,14 @@ public class GetManagedInstanceContentRequest
             return this;
         }
 
-        /** A filter to return only vulnerabilities matching the given types. */
+        /**
+         * A filter to return only vulnerabilities matching the given types.
+         */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.VulnerabilityTypes>
                 vulnerabilityType = null;
 
         /**
          * A filter to return only vulnerabilities matching the given types.
-         *
          * @param vulnerabilityType the value to set
          * @return this builder instance
          */
@@ -195,7 +199,6 @@ public class GetManagedInstanceContentRequest
 
         /**
          * Singular setter. A filter to return only vulnerabilities matching the given types.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -205,15 +208,16 @@ public class GetManagedInstanceContentRequest
 
         /**
          * The assigned erratum name. It's unique and not changeable.
+         * <p>
+         * Example: {@code ELSA-2020-5804}
          *
-         * <p>Example: {@code ELSA-2020-5804}
          */
         private java.util.List<String> advisoryName = null;
 
         /**
          * The assigned erratum name. It's unique and not changeable.
-         *
-         * <p>Example: {@code ELSA-2020-5804}
+         * <p>
+         * Example: {@code ELSA-2020-5804}
          *
          * @param advisoryName the value to set
          * @return this builder instance
@@ -225,8 +229,8 @@ public class GetManagedInstanceContentRequest
 
         /**
          * Singular setter. The assigned erratum name. It's unique and not changeable.
-         *
-         * <p>Example: {@code ELSA-2020-5804}
+         * <p>
+         * Example: {@code ELSA-2020-5804}
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -242,7 +246,6 @@ public class GetManagedInstanceContentRequest
 
         /**
          * A filter to return resources that may partially match the erratum advisory name given.
-         *
          * @param advisoryNameContains the value to set
          * @return this builder instance
          */
@@ -251,13 +254,14 @@ public class GetManagedInstanceContentRequest
             return this;
         }
 
-        /** A filter to return only errata that match the given advisory types. */
+        /**
+         * A filter to return only errata that match the given advisory types.
+         */
         private java.util.List<com.oracle.bmc.osmanagementhub.model.AdvisoryTypes> advisoryType =
                 null;
 
         /**
          * A filter to return only errata that match the given advisory types.
-         *
          * @param advisoryType the value to set
          * @return this builder instance
          */
@@ -269,7 +273,6 @@ public class GetManagedInstanceContentRequest
 
         /**
          * Singular setter. A filter to return only errata that match the given advisory types.
-         *
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -278,17 +281,12 @@ public class GetManagedInstanceContentRequest
         }
 
         /**
-         * A filter to return vulnerabilities that match the given name. For Linux instances, this
-         * refers to the advisory name. For Windows instances, this refers to the Windows update
-         * display name.
+         * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
          */
         private java.util.List<String> vulnerabilityName = null;
 
         /**
-         * A filter to return vulnerabilities that match the given name. For Linux instances, this
-         * refers to the advisory name. For Windows instances, this refers to the Windows update
-         * display name.
-         *
+         * A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
          * @param vulnerabilityName the value to set
          * @return this builder instance
          */
@@ -298,10 +296,7 @@ public class GetManagedInstanceContentRequest
         }
 
         /**
-         * Singular setter. A filter to return vulnerabilities that match the given name. For Linux
-         * instances, this refers to the advisory name. For Windows instances, this refers to the
-         * Windows update display name.
-         *
+         * Singular setter. A filter to return vulnerabilities that match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
          * @param singularValue the singular value to set
          * @return this builder instance
          */
@@ -310,17 +305,12 @@ public class GetManagedInstanceContentRequest
         }
 
         /**
-         * A filter to return vulnerabilities that partially match the given name. For Linux
-         * instances, this refers to the advisory name. For Windows instances, this refers to the
-         * Windows update display name.
+         * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
          */
         private String vulnerabilityNameContains = null;
 
         /**
-         * A filter to return vulnerabilities that partially match the given name. For Linux
-         * instances, this refers to the advisory name. For Windows instances, this refers to the
-         * Windows update display name.
-         *
+         * A filter to return vulnerabilities that partially match the given name. For Linux instances, this refers to the advisory name. For Windows instances, this refers to the Windows update display name.
          * @param vulnerabilityNameContains the value to set
          * @return this builder instance
          */
@@ -329,12 +319,13 @@ public class GetManagedInstanceContentRequest
             return this;
         }
 
-        /** The format of the report to download. Default is CSV. */
+        /**
+         * The format of the report to download. Default is CSV.
+         */
         private ReportFormat reportFormat = null;
 
         /**
          * The format of the report to download. Default is CSV.
-         *
          * @param reportFormat the value to set
          * @return this builder instance
          */
@@ -344,15 +335,12 @@ public class GetManagedInstanceContentRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -363,19 +351,18 @@ public class GetManagedInstanceContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -387,7 +374,6 @@ public class GetManagedInstanceContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetManagedInstanceContentRequest o) {
@@ -408,11 +394,10 @@ public class GetManagedInstanceContentRequest
         /**
          * Build the instance of GetManagedInstanceContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetManagedInstanceContentRequest
          */
@@ -426,8 +411,7 @@ public class GetManagedInstanceContentRequest
         /**
          * Build the instance of GetManagedInstanceContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetManagedInstanceContentRequest
@@ -444,15 +428,12 @@ public class GetManagedInstanceContentRequest
             request.reportFormat = reportFormat;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetManagedInstanceContentRequest(managedInstanceId, vulnerabilityType,
-            // advisoryName, advisoryNameContains, advisoryType, vulnerabilityName,
-            // vulnerabilityNameContains, reportFormat, opcRequestId);
+            // new GetManagedInstanceContentRequest(managedInstanceId, vulnerabilityType, advisoryName, advisoryNameContains, advisoryType, vulnerabilityName, vulnerabilityNameContains, reportFormat, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -470,7 +451,6 @@ public class GetManagedInstanceContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

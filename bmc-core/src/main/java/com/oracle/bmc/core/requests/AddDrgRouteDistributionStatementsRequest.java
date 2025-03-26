@@ -6,39 +6,32 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * AddDrgRouteDistributionStatementsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddDrgRouteDistributionStatementsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddDrgRouteDistributionStatementsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class AddDrgRouteDistributionStatementsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route distribution.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
      */
     private String drgRouteDistributionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * route distribution.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
      */
     public String getDrgRouteDistributionId() {
         return drgRouteDistributionId;
     }
     /**
-     * Request with one or more route distribution statements to be inserted into the route
-     * distribution.
+     * Request with one or more route distribution statements to be inserted into the route distribution.
      */
     private com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
             addDrgRouteDistributionStatementsDetails;
 
     /**
-     * Request with one or more route distribution statements to be inserted into the route
-     * distribution.
+     * Request with one or more route distribution statements to be inserted into the route distribution.
      */
     public com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
             getAddDrgRouteDistributionStatementsDetails() {
@@ -47,7 +40,6 @@ public class AddDrgRouteDistributionStatementsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -60,19 +52,17 @@ public class AddDrgRouteDistributionStatementsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddDrgRouteDistributionStatementsRequest,
                     com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route distribution.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
          */
         private String drgRouteDistributionId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * route distribution.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route distribution.
          * @param drgRouteDistributionId the value to set
          * @return this builder instance
          */
@@ -82,16 +72,13 @@ public class AddDrgRouteDistributionStatementsRequest
         }
 
         /**
-         * Request with one or more route distribution statements to be inserted into the route
-         * distribution.
+         * Request with one or more route distribution statements to be inserted into the route distribution.
          */
         private com.oracle.bmc.core.model.AddDrgRouteDistributionStatementsDetails
                 addDrgRouteDistributionStatementsDetails = null;
 
         /**
-         * Request with one or more route distribution statements to be inserted into the route
-         * distribution.
-         *
+         * Request with one or more route distribution statements to be inserted into the route distribution.
          * @param addDrgRouteDistributionStatementsDetails the value to set
          * @return this builder instance
          */
@@ -105,19 +92,18 @@ public class AddDrgRouteDistributionStatementsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -129,7 +115,6 @@ public class AddDrgRouteDistributionStatementsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AddDrgRouteDistributionStatementsRequest o) {
@@ -142,14 +127,12 @@ public class AddDrgRouteDistributionStatementsRequest
         }
 
         /**
-         * Build the instance of AddDrgRouteDistributionStatementsRequest as configured by this
-         * builder
+         * Build the instance of AddDrgRouteDistributionStatementsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AddDrgRouteDistributionStatementsRequest
          */
@@ -162,7 +145,6 @@ public class AddDrgRouteDistributionStatementsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -174,11 +156,9 @@ public class AddDrgRouteDistributionStatementsRequest
         }
 
         /**
-         * Build the instance of AddDrgRouteDistributionStatementsRequest as configured by this
-         * builder
+         * Build the instance of AddDrgRouteDistributionStatementsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AddDrgRouteDistributionStatementsRequest
@@ -190,14 +170,12 @@ public class AddDrgRouteDistributionStatementsRequest
             request.addDrgRouteDistributionStatementsDetails =
                     addDrgRouteDistributionStatementsDetails;
             return request;
-            // new AddDrgRouteDistributionStatementsRequest(drgRouteDistributionId,
-            // addDrgRouteDistributionStatementsDetails);
+            // new AddDrgRouteDistributionStatementsRequest(drgRouteDistributionId, addDrgRouteDistributionStatementsDetails);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -208,7 +186,6 @@ public class AddDrgRouteDistributionStatementsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,25 +5,25 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the Exadata storage server discovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of the Exadata storage server discovery.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalStorageServerDiscoverySummary.Builder.class)
+    builder = ExternalStorageServerDiscoverySummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalStorageServerDiscoverySummary extends EntityDiscovered {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -116,76 +116,81 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
             this.__explicitlySet__.add("discoverErrorMsg");
             return this;
         }
-        /** The IP address of the Exadata storage server. */
+        /**
+         * The IP address of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The IP address of the Exadata storage server.
-         *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The make model of the Exadata storage server. */
+        /**
+         * The make model of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
         private String makeModel;
 
         /**
          * The make model of the Exadata storage server.
-         *
          * @param makeModel the value to set
          * @return this builder
-         */
+         **/
         public Builder makeModel(String makeModel) {
             this.makeModel = makeModel;
             this.__explicitlySet__.add("makeModel");
             return this;
         }
-        /** The CPU count of the Exadata storage server. */
+        /**
+         * The CPU count of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
         private Integer cpuCount;
 
         /**
          * The CPU count of the Exadata storage server.
-         *
          * @param cpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCount(Integer cpuCount) {
             this.cpuCount = cpuCount;
             this.__explicitlySet__.add("cpuCount");
             return this;
         }
-        /** The memory size in GB of the Exadata storage server. */
+        /**
+         * The memory size in GB of the Exadata storage server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
         private Double memoryGB;
 
         /**
          * The memory size in GB of the Exadata storage server.
-         *
          * @param memoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryGB(Double memoryGB) {
             this.memoryGB = memoryGB;
             this.__explicitlySet__.add("memoryGB");
             return this;
         }
-        /** The name of the Exadata storage server connector in case of rediscovery. */
+        /**
+         * The name of the Exadata storage server connector in case of rediscovery.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
         private String connectorName;
 
         /**
          * The name of the Exadata storage server connector in case of rediscovery.
-         *
          * @param connectorName the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorName(String connectorName) {
             this.connectorName = connectorName;
             this.__explicitlySet__.add("connectorName");
@@ -270,7 +275,9 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -314,67 +321,72 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
         this.connectorName = connectorName;
     }
 
-    /** The IP address of the Exadata storage server. */
+    /**
+     * The IP address of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The IP address of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The make model of the Exadata storage server. */
+    /**
+     * The make model of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("makeModel")
     private final String makeModel;
 
     /**
      * The make model of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public String getMakeModel() {
         return makeModel;
     }
 
-    /** The CPU count of the Exadata storage server. */
+    /**
+     * The CPU count of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCount")
     private final Integer cpuCount;
 
     /**
      * The CPU count of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Integer getCpuCount() {
         return cpuCount;
     }
 
-    /** The memory size in GB of the Exadata storage server. */
+    /**
+     * The memory size in GB of the Exadata storage server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryGB")
     private final Double memoryGB;
 
     /**
      * The memory size in GB of the Exadata storage server.
-     *
      * @return the value
-     */
+     **/
     public Double getMemoryGB() {
         return memoryGB;
     }
 
-    /** The name of the Exadata storage server connector in case of rediscovery. */
+    /**
+     * The name of the Exadata storage server connector in case of rediscovery.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorName")
     private final String connectorName;
 
     /**
      * The name of the Exadata storage server connector in case of rediscovery.
-     *
      * @return the value
-     */
+     **/
     public String getConnectorName() {
         return connectorName;
     }
@@ -386,7 +398,6 @@ public final class ExternalStorageServerDiscoverySummary extends EntityDiscovere
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

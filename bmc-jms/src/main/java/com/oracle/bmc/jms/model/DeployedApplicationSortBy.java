@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The field to sort deployed applications. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum DeployedApplicationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The field to sort deployed applications.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum DeployedApplicationSortBy {
     ApplicationName("applicationName"),
     ApplicationType("applicationType"),
     IsClustered("isClustered"),

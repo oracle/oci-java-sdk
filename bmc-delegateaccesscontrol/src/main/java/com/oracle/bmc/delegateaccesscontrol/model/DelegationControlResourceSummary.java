@@ -5,23 +5,22 @@
 package com.oracle.bmc.delegateaccesscontrol.model;
 
 /**
- * Details of the resources that this Delegation Control is applicable to. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+ * Details of the resources that this Delegation Control is applicable to.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DelegationControlResourceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = DelegationControlResourceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DelegationControlResourceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"id", "resourceStatus"})
     public DelegationControlResourceSummary(String id, ResourceStatus resourceStatus) {
@@ -32,31 +31,33 @@ public final class DelegationControlResourceSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the resource. */
+        /**
+         * OCID of the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * OCID of the resource.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The current status of the resource in Delegation Control. */
+        /**
+         * The current status of the resource in Delegation Control.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceStatus")
         private ResourceStatus resourceStatus;
 
         /**
          * The current status of the resource in Delegation Control.
-         *
          * @param resourceStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceStatus(ResourceStatus resourceStatus) {
             this.resourceStatus = resourceStatus;
             this.__explicitlySet__.add("resourceStatus");
@@ -87,7 +88,9 @@ public final class DelegationControlResourceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,21 +99,24 @@ public final class DelegationControlResourceSummary
         return new Builder().copy(this);
     }
 
-    /** OCID of the resource. */
+    /**
+     * OCID of the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * OCID of the resource.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The current status of the resource in Delegation Control. */
-    public enum ResourceStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current status of the resource in Delegation Control.
+     **/
+    public enum ResourceStatus {
         Created("CREATED"),
         Applying("APPLYING"),
         Applied("APPLIED"),
@@ -122,8 +128,8 @@ public final class DelegationControlResourceSummary
         DeletionFailed("DELETION_FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -162,15 +168,16 @@ public final class DelegationControlResourceSummary
             return UnknownEnumValue;
         }
     };
-    /** The current status of the resource in Delegation Control. */
+    /**
+     * The current status of the resource in Delegation Control.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceStatus")
     private final ResourceStatus resourceStatus;
 
     /**
      * The current status of the resource in Delegation Control.
-     *
      * @return the value
-     */
+     **/
     public ResourceStatus getResourceStatus() {
         return resourceStatus;
     }
@@ -182,7 +189,6 @@ public final class DelegationControlResourceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

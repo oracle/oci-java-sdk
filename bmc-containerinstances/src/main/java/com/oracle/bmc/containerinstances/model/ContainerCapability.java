@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerinstances.model;
 
-/** Additional configurable container capabilities. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
-public enum ContainerCapability implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Additional configurable container capabilities.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+public enum ContainerCapability {
     CapNetAdmin("CAP_NET_ADMIN"),
     CapNetRaw("CAP_NET_RAW"),
     ;

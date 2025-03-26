@@ -5,68 +5,71 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * Properties to configure when writing to an Oracle Database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * Properties to configure when writing to an Oracle Database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleWriteAttributes.Builder.class)
+    builder = OracleWriteAttributes.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OracleWriteAttributes extends AbstractWriteAttribute {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The batch size for writing. */
+        /**
+         * The batch size for writing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchSize")
         private Integer batchSize;
 
         /**
          * The batch size for writing.
-         *
          * @param batchSize the value to set
          * @return this builder
-         */
+         **/
         public Builder batchSize(Integer batchSize) {
             this.batchSize = batchSize;
             this.__explicitlySet__.add("batchSize");
             return this;
         }
-        /** Specifies whether to truncate. */
+        /**
+         * Specifies whether to truncate.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isTruncate")
         private Boolean isTruncate;
 
         /**
          * Specifies whether to truncate.
-         *
          * @param isTruncate the value to set
          * @return this builder
-         */
+         **/
         public Builder isTruncate(Boolean isTruncate) {
             this.isTruncate = isTruncate;
             this.__explicitlySet__.add("isTruncate");
             return this;
         }
-        /** Specifies the isolation level. */
+        /**
+         * Specifies the isolation level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isolationLevel")
         private String isolationLevel;
 
         /**
          * Specifies the isolation level.
-         *
          * @param isolationLevel the value to set
          * @return this builder
-         */
+         **/
         public Builder isolationLevel(String isolationLevel) {
             this.isolationLevel = isolationLevel;
             this.__explicitlySet__.add("isolationLevel");
@@ -100,7 +103,9 @@ public final class OracleWriteAttributes extends AbstractWriteAttribute {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,41 +122,44 @@ public final class OracleWriteAttributes extends AbstractWriteAttribute {
         this.isolationLevel = isolationLevel;
     }
 
-    /** The batch size for writing. */
+    /**
+     * The batch size for writing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchSize")
     private final Integer batchSize;
 
     /**
      * The batch size for writing.
-     *
      * @return the value
-     */
+     **/
     public Integer getBatchSize() {
         return batchSize;
     }
 
-    /** Specifies whether to truncate. */
+    /**
+     * Specifies whether to truncate.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isTruncate")
     private final Boolean isTruncate;
 
     /**
      * Specifies whether to truncate.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsTruncate() {
         return isTruncate;
     }
 
-    /** Specifies the isolation level. */
+    /**
+     * Specifies the isolation level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isolationLevel")
     private final String isolationLevel;
 
     /**
      * Specifies the isolation level.
-     *
      * @return the value
-     */
+     **/
     public String getIsolationLevel() {
         return isolationLevel;
     }
@@ -163,7 +171,6 @@ public final class OracleWriteAttributes extends AbstractWriteAttribute {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

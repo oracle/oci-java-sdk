@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.zpr.model;
 
-/** The asynchronous operation tracked by the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The asynchronous operation tracked by the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
+public enum OperationType {
     CreateZprPolicy("CREATE_ZPR_POLICY"),
     UpdateZprPolicy("UPDATE_ZPR_POLICY"),
     DeleteZprPolicy("DELETE_ZPR_POLICY"),

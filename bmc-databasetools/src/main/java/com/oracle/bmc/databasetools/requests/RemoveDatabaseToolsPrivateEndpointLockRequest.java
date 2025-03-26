@@ -6,63 +6,64 @@ package com.oracle.bmc.databasetools.requests;
 
 import com.oracle.bmc.databasetools.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsPrivateEndpointLockExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RemoveDatabaseToolsPrivateEndpointLockRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasetools/RemoveDatabaseToolsPrivateEndpointLockExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RemoveDatabaseToolsPrivateEndpointLockRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201005")
 public class RemoveDatabaseToolsPrivateEndpointLockRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasetools.model.RemoveResourceLockDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Database Tools private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     private String databaseToolsPrivateEndpointId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-     * Database Tools private endpoint.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
      */
     public String getDatabaseToolsPrivateEndpointId() {
         return databaseToolsPrivateEndpointId;
     }
-    /** RemoveResourceLockDetails body parameter */
+    /**
+     * RemoveResourceLockDetails body parameter
+     */
     private com.oracle.bmc.databasetools.model.RemoveResourceLockDetails removeResourceLockDetails;
 
-    /** RemoveResourceLockDetails body parameter */
+    /**
+     * RemoveResourceLockDetails body parameter
+     */
     public com.oracle.bmc.databasetools.model.RemoveResourceLockDetails
             getRemoveResourceLockDetails() {
         return removeResourceLockDetails;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -70,7 +71,6 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -83,19 +83,17 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RemoveDatabaseToolsPrivateEndpointLockRequest,
                     com.oracle.bmc.databasetools.model.RemoveResourceLockDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Database Tools private endpoint.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
          */
         private String databaseToolsPrivateEndpointId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * Database Tools private endpoint.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools private endpoint.
          * @param databaseToolsPrivateEndpointId the value to set
          * @return this builder instance
          */
@@ -104,13 +102,14 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
             return this;
         }
 
-        /** RemoveResourceLockDetails body parameter */
+        /**
+         * RemoveResourceLockDetails body parameter
+         */
         private com.oracle.bmc.databasetools.model.RemoveResourceLockDetails
                 removeResourceLockDetails = null;
 
         /**
          * RemoveResourceLockDetails body parameter
-         *
          * @param removeResourceLockDetails the value to set
          * @return this builder instance
          */
@@ -122,14 +121,15 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -140,18 +140,17 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous GET or POST response for that resource. The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -163,19 +162,18 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -187,7 +185,6 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RemoveDatabaseToolsPrivateEndpointLockRequest o) {
@@ -201,14 +198,12 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
         }
 
         /**
-         * Build the instance of RemoveDatabaseToolsPrivateEndpointLockRequest as configured by this
-         * builder
+         * Build the instance of RemoveDatabaseToolsPrivateEndpointLockRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RemoveDatabaseToolsPrivateEndpointLockRequest
          */
@@ -222,7 +217,6 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -233,11 +227,9 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
         }
 
         /**
-         * Build the instance of RemoveDatabaseToolsPrivateEndpointLockRequest as configured by this
-         * builder
+         * Build the instance of RemoveDatabaseToolsPrivateEndpointLockRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RemoveDatabaseToolsPrivateEndpointLockRequest
@@ -250,14 +242,12 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new RemoveDatabaseToolsPrivateEndpointLockRequest(databaseToolsPrivateEndpointId,
-            // removeResourceLockDetails, opcRequestId, ifMatch);
+            // new RemoveDatabaseToolsPrivateEndpointLockRequest(databaseToolsPrivateEndpointId, removeResourceLockDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -270,7 +260,6 @@ public class RemoveDatabaseToolsPrivateEndpointLockRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

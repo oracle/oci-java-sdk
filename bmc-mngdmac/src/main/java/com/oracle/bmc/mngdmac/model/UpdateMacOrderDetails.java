@@ -5,23 +5,22 @@
 package com.oracle.bmc.mngdmac.model;
 
 /**
- * The data to update a MacOrder. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
+ * The data to update a MacOrder.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20250320")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMacOrderDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMacOrderDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMacOrderDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -47,87 +46,92 @@ public final class UpdateMacOrderDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
-         * <p>Example: {@code My new resource}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         *
-         * <p>Example: {@code My new resource}
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         * <p>
+         * Example: {@code My new resource}
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderDescription")
         private String orderDescription;
 
         /**
-         * A user-friendly description. To provide some insight about the resource. Avoid entering
-         * confidential information.
+         * A user-friendly description. To provide some insight about the resource.
+         * Avoid entering confidential information.
          *
          * @param orderDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder orderDescription(String orderDescription) {
             this.orderDescription = orderDescription;
             this.__explicitlySet__.add("orderDescription");
             return this;
         }
-        /** Number of macs requested in this MacOrder. */
+        /**
+         * Number of macs requested in this MacOrder.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("orderSize")
         private Integer orderSize;
 
         /**
          * Number of macs requested in this MacOrder.
-         *
          * @param orderSize the value to set
          * @return this builder
-         */
+         **/
         public Builder orderSize(Integer orderSize) {
             this.orderSize = orderSize;
             this.__explicitlySet__.add("orderSize");
             return this;
         }
-        /** The shape of the Mac. */
+        /**
+         * The shape of the Mac.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private MacOrder.Shape shape;
 
         /**
          * The shape of the Mac.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(MacOrder.Shape shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The IP Range specified by the customer for this order. */
+        /**
+         * The IP Range specified by the customer for this order.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipRange")
         private String ipRange;
 
         /**
          * The IP Range specified by the customer for this order.
-         *
          * @param ipRange the value to set
          * @return this builder
-         */
+         **/
         public Builder ipRange(String ipRange) {
             this.ipRange = ipRange;
             this.__explicitlySet__.add("ipRange");
@@ -172,7 +176,9 @@ public final class UpdateMacOrderDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -182,78 +188,83 @@ public final class UpdateMacOrderDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
-     * <p>Example: {@code My new resource}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
-     * <p>Example: {@code My new resource}
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     * <p>
+     * Example: {@code My new resource}
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderDescription")
     private final String orderDescription;
 
     /**
-     * A user-friendly description. To provide some insight about the resource. Avoid entering
-     * confidential information.
+     * A user-friendly description. To provide some insight about the resource.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getOrderDescription() {
         return orderDescription;
     }
 
-    /** Number of macs requested in this MacOrder. */
+    /**
+     * Number of macs requested in this MacOrder.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("orderSize")
     private final Integer orderSize;
 
     /**
      * Number of macs requested in this MacOrder.
-     *
      * @return the value
-     */
+     **/
     public Integer getOrderSize() {
         return orderSize;
     }
 
-    /** The shape of the Mac. */
+    /**
+     * The shape of the Mac.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final MacOrder.Shape shape;
 
     /**
      * The shape of the Mac.
-     *
      * @return the value
-     */
+     **/
     public MacOrder.Shape getShape() {
         return shape;
     }
 
-    /** The IP Range specified by the customer for this order. */
+    /**
+     * The IP Range specified by the customer for this order.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipRange")
     private final String ipRange;
 
     /**
      * The IP Range specified by the customer for this order.
-     *
      * @return the value
-     */
+     **/
     public String getIpRange() {
         return ipRange;
     }
@@ -265,7 +276,6 @@ public final class UpdateMacOrderDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

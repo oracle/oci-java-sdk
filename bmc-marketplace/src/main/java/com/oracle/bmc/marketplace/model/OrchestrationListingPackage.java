@@ -5,25 +5,25 @@
 package com.oracle.bmc.marketplace.model;
 
 /**
- * A listing package for orchestration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
+ * A listing package for orchestration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OrchestrationListingPackage.Builder.class)
+    builder = OrchestrationListingPackage.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "packageType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "packageType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OrchestrationListingPackage extends ListingPackage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -98,31 +98,33 @@ public final class OrchestrationListingPackage extends ListingPackage {
             this.__explicitlySet__.add("regions");
             return this;
         }
-        /** Link to the orchestration resource. */
+        /**
+         * Link to the orchestration resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
         private String resourceLink;
 
         /**
          * Link to the orchestration resource.
-         *
          * @param resourceLink the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceLink(String resourceLink) {
             this.resourceLink = resourceLink;
             this.__explicitlySet__.add("resourceLink");
             return this;
         }
-        /** List of variables for the orchestration resource. */
+        /**
+         * List of variables for the orchestration resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("variables")
         private java.util.List<OrchestrationVariable> variables;
 
         /**
          * List of variables for the orchestration resource.
-         *
          * @param variables the value to set
          * @return this builder
-         */
+         **/
         public Builder variables(java.util.List<OrchestrationVariable> variables) {
             this.variables = variables;
             this.__explicitlySet__.add("variables");
@@ -187,7 +189,9 @@ public final class OrchestrationListingPackage extends ListingPackage {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,28 +225,30 @@ public final class OrchestrationListingPackage extends ListingPackage {
         this.variables = variables;
     }
 
-    /** Link to the orchestration resource. */
+    /**
+     * Link to the orchestration resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLink")
     private final String resourceLink;
 
     /**
      * Link to the orchestration resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourceLink() {
         return resourceLink;
     }
 
-    /** List of variables for the orchestration resource. */
+    /**
+     * List of variables for the orchestration resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
     private final java.util.List<OrchestrationVariable> variables;
 
     /**
      * List of variables for the orchestration resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OrchestrationVariable> getVariables() {
         return variables;
     }
@@ -254,7 +260,6 @@ public final class OrchestrationListingPackage extends ListingPackage {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

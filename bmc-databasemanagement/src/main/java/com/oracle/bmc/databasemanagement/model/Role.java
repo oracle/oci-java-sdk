@@ -5,11 +5,10 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The role of the database user. Indicates whether the database user is a 'NORMAL' user or 'SYSDBA'
- * user.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+ * The role of the database user. Indicates whether the database user is a 'NORMAL' user or 'SYSDBA' user.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum Role {
     Normal("NORMAL"),
     Sysdba("SYSDBA"),
     Sysdg("SYSDG"),

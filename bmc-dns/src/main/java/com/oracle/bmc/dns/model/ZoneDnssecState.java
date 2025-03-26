@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.dns.model;
 
-/** The state of DNSSEC on the zone. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
-public enum ZoneDnssecState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The state of DNSSEC on the zone.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180115")
+public enum ZoneDnssecState {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

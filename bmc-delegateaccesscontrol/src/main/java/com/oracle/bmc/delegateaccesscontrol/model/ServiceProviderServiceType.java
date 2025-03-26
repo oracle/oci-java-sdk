@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Types of service provided by the Service Provider. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum ServiceProviderServiceType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Types of service provided by the Service Provider.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum ServiceProviderServiceType {
     Troubleshooting("TROUBLESHOOTING"),
     AssistedPatching("ASSISTED_PATCHING"),
 

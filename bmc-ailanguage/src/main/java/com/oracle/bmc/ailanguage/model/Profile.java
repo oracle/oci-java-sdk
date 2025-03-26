@@ -5,21 +5,19 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Documents profile <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Documents profile
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Profile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"domain", "documentType", "speciality"})
     public Profile(String domain, String documentType, String speciality) {
@@ -32,49 +30,48 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs
-         * Healthcare or Financial etc.
-         */
+         * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs Healthcare or Financial etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domain")
         private String domain;
 
         /**
-         * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs
-         * Healthcare or Financial etc.
-         *
+         * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs Healthcare or Financial etc.
          * @param domain the value to set
          * @return this builder
-         */
+         **/
         public Builder domain(String domain) {
             this.domain = domain;
             this.__explicitlySet__.add("domain");
             return this;
         }
-        /** Document type EHR Or Utterance */
+        /**
+         * Document type EHR Or Utterance
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documentType")
         private String documentType;
 
         /**
          * Document type EHR Or Utterance
-         *
          * @param documentType the value to set
          * @return this builder
-         */
+         **/
         public Builder documentType(String documentType) {
             this.documentType = documentType;
             this.__explicitlySet__.add("documentType");
             return this;
         }
-        /** Document speciality like paediatrics, internal medicine etc. */
+        /**
+         * Document speciality like paediatrics, internal medicine etc.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("speciality")
         private String speciality;
 
         /**
          * Document speciality like paediatrics, internal medicine etc.
-         *
          * @param speciality the value to set
          * @return this builder
-         */
+         **/
         public Builder speciality(String speciality) {
             this.speciality = speciality;
             this.__explicitlySet__.add("speciality");
@@ -107,7 +104,9 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,44 +116,43 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs
-     * Healthcare or Financial etc.
-     */
+     * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs Healthcare or Financial etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domain")
     private final String domain;
 
     /**
-     * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs
-     * Healthcare or Financial etc.
-     *
+     * For PHI API this field can be PII/PHI/ALL and by default PII will be used. For other APIs Healthcare or Financial etc.
      * @return the value
-     */
+     **/
     public String getDomain() {
         return domain;
     }
 
-    /** Document type EHR Or Utterance */
+    /**
+     * Document type EHR Or Utterance
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documentType")
     private final String documentType;
 
     /**
      * Document type EHR Or Utterance
-     *
      * @return the value
-     */
+     **/
     public String getDocumentType() {
         return documentType;
     }
 
-    /** Document speciality like paediatrics, internal medicine etc. */
+    /**
+     * Document speciality like paediatrics, internal medicine etc.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("speciality")
     private final String speciality;
 
     /**
      * Document speciality like paediatrics, internal medicine etc.
-     *
      * @return the value
-     */
+     **/
     public String getSpeciality() {
         return speciality;
     }
@@ -166,7 +164,6 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

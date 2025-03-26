@@ -6,17 +6,20 @@ package com.oracle.bmc.dataintegration.responses;
 
 import com.oracle.bmc.dataintegration.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If
+     * you need to contact Oracle about a particular request,
+     * please provide the request ID.
      *
      * @return the value
      */
@@ -25,16 +28,17 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
-     * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response,
-     * then this is a partial list of RuntimePipeline. Include this value as the {@code page}
-     * parameter in a subsequent GET request to get the next batch of RuntimePipelines.
+     * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response, then this
+     * is a partial list of RuntimePipeline. Include this value as the {@code page} parameter in a subsequent
+     * GET request to get the next batch of RuntimePipelines.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response,
-     * then this is a partial list of RuntimePipeline. Include this value as the {@code page}
-     * parameter in a subsequent GET request to get the next batch of RuntimePipelines.
+     * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response, then this
+     * is a partial list of RuntimePipeline. Include this value as the {@code page} parameter in a subsequent
+     * GET request to get the next batch of RuntimePipelines.
      *
      * @return the value
      */
@@ -42,13 +46,14 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
         return opcNextPage;
     }
 
-    /** The returned {@code RuntimePipelineSummaryCollection} instance. */
+    /**
+     * The returned RuntimePipelineSummaryCollection instance.
+     */
     private com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
             runtimePipelineSummaryCollection;
 
     /**
-     * The returned {@code RuntimePipelineSummaryCollection} instance.
-     *
+     * The returned RuntimePipelineSummaryCollection instance.
      * @return the value
      */
     public com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
@@ -65,7 +70,7 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
     })
     private ListRuntimePipelinesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
@@ -76,33 +81,33 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
         this.runtimePipelineSummaryCollection = runtimePipelineSummaryCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListRuntimePipelinesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If
+         * you need to contact Oracle about a particular request,
+         * please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -113,18 +118,17 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
-         * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the
-         * response, then this is a partial list of RuntimePipeline. Include this value as the
-         * {@code page} parameter in a subsequent GET request to get the next batch of
-         * RuntimePipelines.
+         * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response, then this
+         * is a partial list of RuntimePipeline. Include this value as the {@code page} parameter in a subsequent
+         * GET request to get the next batch of RuntimePipelines.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the
-         * response, then this is a partial list of RuntimePipeline. Include this value as the
-         * {@code page} parameter in a subsequent GET request to get the next batch of
-         * RuntimePipelines.
+         * For pagination of a list of {@code RuntimePipeline}s. If this header appears in the response, then this
+         * is a partial list of RuntimePipeline. Include this value as the {@code page} parameter in a subsequent
+         * GET request to get the next batch of RuntimePipelines.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -134,13 +138,14 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code RuntimePipelineSummaryCollection} instance. */
+        /**
+         * The returned RuntimePipelineSummaryCollection instance.
+         */
         private com.oracle.bmc.dataintegration.model.RuntimePipelineSummaryCollection
                 runtimePipelineSummaryCollection;
 
         /**
-         * The returned {@code RuntimePipelineSummaryCollection} instance.
-         *
+         * The returned RuntimePipelineSummaryCollection instance.
          * @param runtimePipelineSummaryCollection the value to set
          * @return this builder
          */
@@ -153,10 +158,8 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListRuntimePipelinesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -169,10 +172,8 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListRuntimePipelinesResponse build() {
             return new ListRuntimePipelinesResponse(
                     __httpStatusCode__,
@@ -185,7 +186,6 @@ public class ListRuntimePipelinesResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

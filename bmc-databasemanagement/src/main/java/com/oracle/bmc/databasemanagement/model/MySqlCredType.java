@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The credential type for MySQL Database. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum MySqlCredType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The credential type for MySQL Database.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum MySqlCredType {
     MysqlExternalNonSslCredentials("MYSQL_EXTERNAL_NON_SSL_CREDENTIALS"),
     MysqlExternalSslCredentials("MYSQL_EXTERNAL_SSL_CREDENTIALS"),
     MysqlExternalSocketCredentials("MYSQL_EXTERNAL_SOCKET_CREDENTIALS"),

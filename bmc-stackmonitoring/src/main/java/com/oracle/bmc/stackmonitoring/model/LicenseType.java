@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** License edition. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * License edition.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum LicenseType {
     StandardEdition("STANDARD_EDITION"),
     EnterpriseEdition("ENTERPRISE_EDITION"),
     EnterpriseEditionForGpuInfrastructure("ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"),

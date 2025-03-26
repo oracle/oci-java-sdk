@@ -6,18 +6,19 @@ package com.oracle.bmc.databasemanagement.responses;
 
 import com.oracle.bmc.databasemanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class GetSqlTuningAdvisorTaskSummaryReportResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,13 +26,14 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
         return opcRequestId;
     }
 
-    /** The returned {@code SqlTuningAdvisorTaskSummaryReport} instance. */
+    /**
+     * The returned SqlTuningAdvisorTaskSummaryReport instance.
+     */
     private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
             sqlTuningAdvisorTaskSummaryReport;
 
     /**
-     * The returned {@code SqlTuningAdvisorTaskSummaryReport} instance.
-     *
+     * The returned SqlTuningAdvisorTaskSummaryReport instance.
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
@@ -47,7 +49,7 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
     })
     private GetSqlTuningAdvisorTaskSummaryReportResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                     sqlTuningAdvisorTaskSummaryReport) {
@@ -56,34 +58,31 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
         this.sqlTuningAdvisorTaskSummaryReport = sqlTuningAdvisorTaskSummaryReport;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetSqlTuningAdvisorTaskSummaryReportResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -93,13 +92,14 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
             return this;
         }
 
-        /** The returned {@code SqlTuningAdvisorTaskSummaryReport} instance. */
+        /**
+         * The returned SqlTuningAdvisorTaskSummaryReport instance.
+         */
         private com.oracle.bmc.databasemanagement.model.SqlTuningAdvisorTaskSummaryReport
                 sqlTuningAdvisorTaskSummaryReport;
 
         /**
-         * The returned {@code SqlTuningAdvisorTaskSummaryReport} instance.
-         *
+         * The returned SqlTuningAdvisorTaskSummaryReport instance.
          * @param sqlTuningAdvisorTaskSummaryReport the value to set
          * @return this builder
          */
@@ -112,10 +112,8 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetSqlTuningAdvisorTaskSummaryReportResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -127,10 +125,8 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetSqlTuningAdvisorTaskSummaryReportResponse build() {
             return new GetSqlTuningAdvisorTaskSummaryReportResponse(
                     __httpStatusCode__, headers, opcRequestId, sqlTuningAdvisorTaskSummaryReport);
@@ -139,7 +135,6 @@ public class GetSqlTuningAdvisorTaskSummaryReportResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

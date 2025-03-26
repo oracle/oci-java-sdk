@@ -6,26 +6,28 @@ package com.oracle.bmc.devops.responses;
 
 import com.oracle.bmc.devops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** Relative URL of the newly created resource. */
+    /**
+     * Relative URL of the newly created resource.
+     */
     private String location;
 
     /**
      * Relative URL of the newly created resource.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -33,15 +35,12 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
-     *
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -49,15 +48,12 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
@@ -65,29 +61,25 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
     }
 
     /**
-     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized
-     * when refName has '/'. This will be replaced by
-     * "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
      */
     private String sunset;
 
     /**
-     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized
-     * when refName has '/'. This will be replaced by
-     * "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
-     *
+     * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
      * @return the value
      */
     public String getSunset() {
         return sunset;
     }
 
-    /** The returned {@code RepositoryRef} instance. */
+    /**
+     * The returned RepositoryRef instance.
+     */
     private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
     /**
-     * The returned {@code RepositoryRef} instance.
-     *
+     * The returned RepositoryRef instance.
      * @return the value
      */
     public com.oracle.bmc.devops.model.RepositoryRef getRepositoryRef() {
@@ -106,7 +98,7 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private PutRepositoryRefResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String etag,
             String opcWorkRequestId,
@@ -122,30 +114,28 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         this.repositoryRef = repositoryRef;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<PutRepositoryRefResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** Relative URL of the newly created resource. */
+        /**
+         * Relative URL of the newly created resource.
+         */
         private String location;
 
         /**
          * Relative URL of the newly created resource.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -154,12 +144,13 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -169,15 +160,12 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
-         *
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -187,15 +175,12 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -205,17 +190,12 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get
-         * recognized when refName has '/'. This will be replaced by
-         * "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
          */
         private String sunset;
 
         /**
-         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get
-         * recognized when refName has '/'. This will be replaced by
-         * "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
-         *
+         * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by "/repositories/{repositoryId}/actions/createOrUpdateGitRef".
          * @param sunset the value to set
          * @return this builder
          */
@@ -224,12 +204,13 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code RepositoryRef} instance. */
+        /**
+         * The returned RepositoryRef instance.
+         */
         private com.oracle.bmc.devops.model.RepositoryRef repositoryRef;
 
         /**
-         * The returned {@code RepositoryRef} instance.
-         *
+         * The returned RepositoryRef instance.
          * @param repositoryRef the value to set
          * @return this builder
          */
@@ -240,10 +221,8 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(PutRepositoryRefResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -259,10 +238,8 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public PutRepositoryRefResponse build() {
             return new PutRepositoryRefResponse(
                     __httpStatusCode__,
@@ -278,7 +255,6 @@ public class PutRepositoryRefResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

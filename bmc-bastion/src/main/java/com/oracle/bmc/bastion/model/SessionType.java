@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.bastion.model;
 
-/** Possible session types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
-public enum SessionType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible session types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210331")
+public enum SessionType {
     ManagedSsh("MANAGED_SSH"),
     PortForwarding("PORT_FORWARDING"),
     DynamicPortForwarding("DYNAMIC_PORT_FORWARDING"),

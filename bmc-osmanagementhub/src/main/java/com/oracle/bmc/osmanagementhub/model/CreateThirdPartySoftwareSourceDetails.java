@@ -5,25 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides the information used to create a third-party software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides the information used to create a third-party software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateThirdPartySoftwareSourceDetails.Builder.class)
+    builder = CreateThirdPartySoftwareSourceDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateThirdPartySoftwareSourceDetails extends CreateSoftwareSourceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -72,121 +72,129 @@ public final class CreateThirdPartySoftwareSourceDetails extends CreateSoftwareS
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** The OS family for the third-party software source. */
+        /**
+         * The OS family for the third-party software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
         private OsFamily osFamily;
 
         /**
          * The OS family for the third-party software source.
-         *
          * @param osFamily the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamily(OsFamily osFamily) {
             this.osFamily = osFamily;
             this.__explicitlySet__.add("osFamily");
             return this;
         }
-        /** The architecture type supported by the third-party software source. */
+        /**
+         * The architecture type supported by the third-party software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("archType")
         private ArchType archType;
 
         /**
          * The architecture type supported by the third-party software source.
-         *
          * @param archType the value to set
          * @return this builder
-         */
+         **/
         public Builder archType(ArchType archType) {
             this.archType = archType;
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /** URL for the third-party software source. */
+        /**
+         * URL for the third-party software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
          * URL for the third-party software source.
-         *
          * @param url the value to set
          * @return this builder
-         */
+         **/
         public Builder url(String url) {
             this.url = url;
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** URI of the GPG key for this software source. */
+        /**
+         * URI of the GPG key for this software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
         private String gpgKeyUrl;
 
         /**
          * URI of the GPG key for this software source.
-         *
          * @param gpgKeyUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder gpgKeyUrl(String gpgKeyUrl) {
             this.gpgKeyUrl = gpgKeyUrl;
             this.__explicitlySet__.add("gpgKeyUrl");
             return this;
         }
-        /** Whether signature verification should be done for the software source. */
+        /**
+         * Whether signature verification should be done for the software source.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isGpgCheckEnabled")
         private Boolean isGpgCheckEnabled;
 
         /**
          * Whether signature verification should be done for the software source.
-         *
          * @param isGpgCheckEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isGpgCheckEnabled(Boolean isGpgCheckEnabled) {
             this.isGpgCheckEnabled = isGpgCheckEnabled;
             this.__explicitlySet__.add("isGpgCheckEnabled");
             return this;
         }
-        /** Whether SSL validation needs to be turned on */
+        /**
+         * Whether SSL validation needs to be turned on
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyEnabled")
         private Boolean isSslVerifyEnabled;
 
         /**
          * Whether SSL validation needs to be turned on
-         *
          * @param isSslVerifyEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isSslVerifyEnabled(Boolean isSslVerifyEnabled) {
             this.isSslVerifyEnabled = isSslVerifyEnabled;
             this.__explicitlySet__.add("isSslVerifyEnabled");
             return this;
         }
-        /** Advanced repository options for the software source */
+        /**
+         * Advanced repository options for the software source
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advancedRepoOptions")
         private String advancedRepoOptions;
 
         /**
          * Advanced repository options for the software source
-         *
          * @param advancedRepoOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder advancedRepoOptions(String advancedRepoOptions) {
             this.advancedRepoOptions = advancedRepoOptions;
             this.__explicitlySet__.add("advancedRepoOptions");
             return this;
         }
-        /** Whether this software source can be synced to a management station */
+        /**
+         * Whether this software source can be synced to a management station
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
         private Boolean isMirrorSyncAllowed;
 
         /**
          * Whether this software source can be synced to a management station
-         *
          * @param isMirrorSyncAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
             this.isMirrorSyncAllowed = isMirrorSyncAllowed;
             this.__explicitlySet__.add("isMirrorSyncAllowed");
@@ -263,7 +271,9 @@ public final class CreateThirdPartySoftwareSourceDetails extends CreateSoftwareS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -298,106 +308,114 @@ public final class CreateThirdPartySoftwareSourceDetails extends CreateSoftwareS
         this.isMirrorSyncAllowed = isMirrorSyncAllowed;
     }
 
-    /** The OS family for the third-party software source. */
+    /**
+     * The OS family for the third-party software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
      * The OS family for the third-party software source.
-     *
      * @return the value
-     */
+     **/
     public OsFamily getOsFamily() {
         return osFamily;
     }
 
-    /** The architecture type supported by the third-party software source. */
+    /**
+     * The architecture type supported by the third-party software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("archType")
     private final ArchType archType;
 
     /**
      * The architecture type supported by the third-party software source.
-     *
      * @return the value
-     */
+     **/
     public ArchType getArchType() {
         return archType;
     }
 
-    /** URL for the third-party software source. */
+    /**
+     * URL for the third-party software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
      * URL for the third-party software source.
-     *
      * @return the value
-     */
+     **/
     public String getUrl() {
         return url;
     }
 
-    /** URI of the GPG key for this software source. */
+    /**
+     * URI of the GPG key for this software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
     private final String gpgKeyUrl;
 
     /**
      * URI of the GPG key for this software source.
-     *
      * @return the value
-     */
+     **/
     public String getGpgKeyUrl() {
         return gpgKeyUrl;
     }
 
-    /** Whether signature verification should be done for the software source. */
+    /**
+     * Whether signature verification should be done for the software source.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isGpgCheckEnabled")
     private final Boolean isGpgCheckEnabled;
 
     /**
      * Whether signature verification should be done for the software source.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsGpgCheckEnabled() {
         return isGpgCheckEnabled;
     }
 
-    /** Whether SSL validation needs to be turned on */
+    /**
+     * Whether SSL validation needs to be turned on
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSslVerifyEnabled")
     private final Boolean isSslVerifyEnabled;
 
     /**
      * Whether SSL validation needs to be turned on
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSslVerifyEnabled() {
         return isSslVerifyEnabled;
     }
 
-    /** Advanced repository options for the software source */
+    /**
+     * Advanced repository options for the software source
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advancedRepoOptions")
     private final String advancedRepoOptions;
 
     /**
      * Advanced repository options for the software source
-     *
      * @return the value
-     */
+     **/
     public String getAdvancedRepoOptions() {
         return advancedRepoOptions;
     }
 
-    /** Whether this software source can be synced to a management station */
+    /**
+     * Whether this software source can be synced to a management station
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
     private final Boolean isMirrorSyncAllowed;
 
     /**
      * Whether this software source can be synced to a management station
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMirrorSyncAllowed() {
         return isMirrorSyncAllowed;
     }
@@ -409,7 +427,6 @@ public final class CreateThirdPartySoftwareSourceDetails extends CreateSoftwareS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

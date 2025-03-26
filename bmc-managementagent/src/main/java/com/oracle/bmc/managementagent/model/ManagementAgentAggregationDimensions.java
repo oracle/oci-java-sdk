@@ -5,23 +5,22 @@
 package com.oracle.bmc.managementagent.model;
 
 /**
- * The Aggregation of Management Agent Dimensions <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
+ * The Aggregation of Management Agent Dimensions
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200202")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ManagementAgentAggregationDimensions.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ManagementAgentAggregationDimensions.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ManagementAgentAggregationDimensions
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "availabilityStatus",
@@ -46,76 +45,81 @@ public final class ManagementAgentAggregationDimensions
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The availability status of managementAgent */
+        /**
+         * The availability status of managementAgent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
         private AvailabilityStatus availabilityStatus;
 
         /**
          * The availability status of managementAgent
-         *
          * @param availabilityStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityStatus(AvailabilityStatus availabilityStatus) {
             this.availabilityStatus = availabilityStatus;
             this.__explicitlySet__.add("availabilityStatus");
             return this;
         }
-        /** Platform Type */
+        /**
+         * Platform Type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("platformType")
         private PlatformTypes platformType;
 
         /**
          * Platform Type
-         *
          * @param platformType the value to set
          * @return this builder
-         */
+         **/
         public Builder platformType(PlatformTypes platformType) {
             this.platformType = platformType;
             this.__explicitlySet__.add("platformType");
             return this;
         }
-        /** Agent image version */
+        /**
+         * Agent image version
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
          * Agent image version
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(String version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Whether or not a managementAgent has at least one plugin */
+        /**
+         * Whether or not a managementAgent has at least one plugin
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hasPlugins")
         private Boolean hasPlugins;
 
         /**
          * Whether or not a managementAgent has at least one plugin
-         *
          * @param hasPlugins the value to set
          * @return this builder
-         */
+         **/
         public Builder hasPlugins(Boolean hasPlugins) {
             this.hasPlugins = hasPlugins;
             this.__explicitlySet__.add("hasPlugins");
             return this;
         }
-        /** The install type, either AGENT or GATEWAY */
+        /**
+         * The install type, either AGENT or GATEWAY
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("installType")
         private InstallTypes installType;
 
         /**
          * The install type, either AGENT or GATEWAY
-         *
          * @param installType the value to set
          * @return this builder
-         */
+         **/
         public Builder installType(InstallTypes installType) {
             this.installType = installType;
             this.__explicitlySet__.add("installType");
@@ -160,7 +164,9 @@ public final class ManagementAgentAggregationDimensions
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -169,67 +175,72 @@ public final class ManagementAgentAggregationDimensions
         return new Builder().copy(this);
     }
 
-    /** The availability status of managementAgent */
+    /**
+     * The availability status of managementAgent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityStatus")
     private final AvailabilityStatus availabilityStatus;
 
     /**
      * The availability status of managementAgent
-     *
      * @return the value
-     */
+     **/
     public AvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
 
-    /** Platform Type */
+    /**
+     * Platform Type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("platformType")
     private final PlatformTypes platformType;
 
     /**
      * Platform Type
-     *
      * @return the value
-     */
+     **/
     public PlatformTypes getPlatformType() {
         return platformType;
     }
 
-    /** Agent image version */
+    /**
+     * Agent image version
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * Agent image version
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** Whether or not a managementAgent has at least one plugin */
+    /**
+     * Whether or not a managementAgent has at least one plugin
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hasPlugins")
     private final Boolean hasPlugins;
 
     /**
      * Whether or not a managementAgent has at least one plugin
-     *
      * @return the value
-     */
+     **/
     public Boolean getHasPlugins() {
         return hasPlugins;
     }
 
-    /** The install type, either AGENT or GATEWAY */
+    /**
+     * The install type, either AGENT or GATEWAY
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("installType")
     private final InstallTypes installType;
 
     /**
      * The install type, either AGENT or GATEWAY
-     *
      * @return the value
-     */
+     **/
     public InstallTypes getInstallType() {
         return installType;
     }
@@ -241,7 +252,6 @@ public final class ManagementAgentAggregationDimensions
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

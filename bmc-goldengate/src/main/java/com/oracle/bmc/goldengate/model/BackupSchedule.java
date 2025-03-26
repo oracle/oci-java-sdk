@@ -5,22 +5,20 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * Defines the schedule of the deployment backup. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * Defines the schedule of the deployment backup.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackupSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackupSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "timeBackupScheduled",
@@ -51,7 +49,8 @@ public final class BackupSchedule
         /**
          * The start timestamp for the deployment backup schedule. The format is defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeBackupScheduled")
         private java.util.Date timeBackupScheduled;
 
@@ -61,90 +60,91 @@ public final class BackupSchedule
          *
          * @param timeBackupScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeBackupScheduled(java.util.Date timeBackupScheduled) {
             this.timeBackupScheduled = timeBackupScheduled;
             this.__explicitlySet__.add("timeBackupScheduled");
             return this;
         }
         /**
-         * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or
-         * MONTHLY.
-         */
+         * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequencyBackupScheduled")
         private FrequencyBackupScheduled frequencyBackupScheduled;
 
         /**
-         * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or
-         * MONTHLY.
+         * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
          *
          * @param frequencyBackupScheduled the value to set
          * @return this builder
-         */
+         **/
         public Builder frequencyBackupScheduled(FrequencyBackupScheduled frequencyBackupScheduled) {
             this.frequencyBackupScheduled = frequencyBackupScheduled;
             this.__explicitlySet__.add("frequencyBackupScheduled");
             return this;
         }
-        /** Name of the bucket where the object is to be uploaded in the object storage */
+        /**
+         * Name of the bucket where the object is to be uploaded in the object storage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * Name of the bucket where the object is to be uploaded in the object storage
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment being referenced.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Name of namespace that serves as a container for all of your buckets */
+        /**
+         * Name of namespace that serves as a container for all of your buckets
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * Name of namespace that serves as a container for all of your buckets
-         *
          * @param namespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /** Parameter to allow users to create backup without trails */
+        /**
+         * Parameter to allow users to create backup without trails
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
         private Boolean isMetadataOnly;
 
         /**
          * Parameter to allow users to create backup without trails
-         *
          * @param isMetadataOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder isMetadataOnly(Boolean isMetadataOnly) {
             this.isMetadataOnly = isMetadataOnly;
             this.__explicitlySet__.add("isMetadataOnly");
@@ -193,7 +193,9 @@ public final class BackupSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -205,7 +207,8 @@ public final class BackupSchedule
     /**
      * The start timestamp for the deployment backup schedule. The format is defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeBackupScheduled")
     private final java.util.Date timeBackupScheduled;
 
@@ -214,22 +217,23 @@ public final class BackupSchedule
      * [RFC3339](https://tools.ietf.org/html/rfc3339), such as {@code 2024-10-25T18:19:29.600Z}.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeBackupScheduled() {
         return timeBackupScheduled;
     }
 
     /**
      * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
-     */
-    public enum FrequencyBackupScheduled implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum FrequencyBackupScheduled {
         Daily("DAILY"),
         Weekly("WEEKLY"),
         Monthly("MONTHLY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -270,7 +274,8 @@ public final class BackupSchedule
     };
     /**
      * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyBackupScheduled")
     private final FrequencyBackupScheduled frequencyBackupScheduled;
 
@@ -278,63 +283,65 @@ public final class BackupSchedule
      * The frequency of the deployment backup schedule. Frequency can be DAILY, WEEKLY or MONTHLY.
      *
      * @return the value
-     */
+     **/
     public FrequencyBackupScheduled getFrequencyBackupScheduled() {
         return frequencyBackupScheduled;
     }
 
-    /** Name of the bucket where the object is to be uploaded in the object storage */
+    /**
+     * Name of the bucket where the object is to be uploaded in the object storage
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * Name of the bucket where the object is to be uploaded in the object storage
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Name of namespace that serves as a container for all of your buckets */
+    /**
+     * Name of namespace that serves as a container for all of your buckets
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * Name of namespace that serves as a container for all of your buckets
-     *
      * @return the value
-     */
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /** Parameter to allow users to create backup without trails */
+    /**
+     * Parameter to allow users to create backup without trails
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
     private final Boolean isMetadataOnly;
 
     /**
      * Parameter to allow users to create backup without trails
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMetadataOnly() {
         return isMetadataOnly;
     }
@@ -346,7 +353,6 @@ public final class BackupSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

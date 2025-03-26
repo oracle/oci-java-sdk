@@ -5,42 +5,40 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A connection between a DRG and CPE. This connection consists of multiple IPSec tunnels. Creating
- * this connection is one of the steps required when setting up a Site-to-Site VPN.
+ * A connection between a DRG and CPE. This connection consists of multiple IPSec
+ * tunnels. Creating this connection is one of the steps required when setting up
+ * a Site-to-Site VPN.
+ * <p>
+ **Important:**  Each tunnel in an IPSec connection can use either static routing or BGP dynamic
+ * routing (see the {@link IPSecConnectionTunnel} object's
+ * {@code routing} attribute). Originally only static routing was supported and
+ * every IPSec connection was required to have at least one static route configured.
+ * To maintain backward compatibility in the API when support for BPG dynamic routing was introduced,
+ * the API accepts an empty list of static routes if you configure both of the IPSec tunnels to use
+ * BGP dynamic routing. If you switch a tunnel's routing from {@code BGP} to {@code STATIC}, you must first
+ * ensure that the IPSec connection is configured with at least one valid CIDR block static route.
+ * Oracle uses the IPSec connection's static routes when routing a tunnel's traffic *only*
+ * if that tunnel's {@code routing} attribute = {@code STATIC}. Otherwise the static routes are ignored.
+ * <p>
+ * For more information about the workflow for setting up an IPSec connection, see
+ * [Site-to-Site VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+ * <p>
+ * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
+ * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
- * <p>*Important:** Each tunnel in an IPSec connection can use either static routing or BGP dynamic
- * routing (see the {@link IPSecConnectionTunnel} object's {@code routing} attribute). Originally
- * only static routing was supported and every IPSec connection was required to have at least one
- * static route configured. To maintain backward compatibility in the API when support for BPG
- * dynamic routing was introduced, the API accepts an empty list of static routes if you configure
- * both of the IPSec tunnels to use BGP dynamic routing. If you switch a tunnel's routing from
- * {@code BGP} to {@code STATIC}, you must first ensure that the IPSec connection is configured with
- * at least one valid CIDR block static route. Oracle uses the IPSec connection's static routes when
- * routing a tunnel's traffic *only* if that tunnel's {@code routing} attribute = {@code STATIC}.
- * Otherwise the static routes are ignored.
- *
- * <p>For more information about the workflow for setting up an IPSec connection, see [Site-to-Site
- * VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
- *
- * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
- * authorized, talk to an administrator. If you're an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IPSecConnection.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IPSecConnection
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IPSecConnection extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -90,63 +88,56 @@ public final class IPSecConnection
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the IPSec connection.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the IPSec connection.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@link Cpe} object.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
         private String cpeId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * {@link Cpe} object.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
          * @param cpeId the value to set
          * @return this builder
-         */
+         **/
         public Builder cpeId(String cpeId) {
             this.cpeId = cpeId;
             this.__explicitlySet__.add("cpeId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -154,140 +145,134 @@ public final class IPSecConnection
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          * @param drgId the value to set
          * @return this builder
-         */
+         **/
         public Builder drgId(String drgId) {
             this.drgId = drgId;
             this.__explicitlySet__.add("drgId");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         */
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The IPSec connection's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         *
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The IPSec connection's current state. */
+        /**
+         * The IPSec connection's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The IPSec connection's current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * Your identifier for your CPE device. Can be either an IP address or a hostname
-         * (specifically, the fully qualified domain name (FQDN)). The type of identifier here must
-         * correspond to the value for {@code cpeLocalIdentifierType}.
+         * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
+         * the fully qualified domain name (FQDN)). The type of identifier here must correspond
+         * to the value for {@code cpeLocalIdentifierType}.
+         * <p>
+         * If you don't provide a value when creating the IPSec connection, the {@code ipAddress} attribute
+         * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
+         * <p>
+         * For information about why you'd provide this value, see
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * <p>
+         * Example IP address: {@code 10.0.3.3}
+         * <p>
+         * Example hostname: {@code cpe.example.com}
          *
-         * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-         * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-         * cpeLocalIdentifier}.
-         *
-         * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-         *
-         * <p>Example IP address: {@code 10.0.3.3}
-         *
-         * <p>Example hostname: {@code cpe.example.com}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
         private String cpeLocalIdentifier;
 
         /**
-         * Your identifier for your CPE device. Can be either an IP address or a hostname
-         * (specifically, the fully qualified domain name (FQDN)). The type of identifier here must
-         * correspond to the value for {@code cpeLocalIdentifierType}.
-         *
-         * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-         * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-         * cpeLocalIdentifier}.
-         *
-         * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-         * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-         *
-         * <p>Example IP address: {@code 10.0.3.3}
-         *
-         * <p>Example hostname: {@code cpe.example.com}
+         * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
+         * the fully qualified domain name (FQDN)). The type of identifier here must correspond
+         * to the value for {@code cpeLocalIdentifierType}.
+         * <p>
+         * If you don't provide a value when creating the IPSec connection, the {@code ipAddress} attribute
+         * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
+         * <p>
+         * For information about why you'd provide this value, see
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * <p>
+         * Example IP address: {@code 10.0.3.3}
+         * <p>
+         * Example hostname: {@code cpe.example.com}
          *
          * @param cpeLocalIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder cpeLocalIdentifier(String cpeLocalIdentifier) {
             this.cpeLocalIdentifier = cpeLocalIdentifier;
             this.__explicitlySet__.add("cpeLocalIdentifier");
@@ -296,7 +281,8 @@ public final class IPSecConnection
         /**
          * The type of identifier for your CPE device. The value here must correspond to the value
          * for {@code cpeLocalIdentifier}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
         private CpeLocalIdentifierType cpeLocalIdentifierType;
 
@@ -306,79 +292,82 @@ public final class IPSecConnection
          *
          * @param cpeLocalIdentifierType the value to set
          * @return this builder
-         */
+         **/
         public Builder cpeLocalIdentifierType(CpeLocalIdentifierType cpeLocalIdentifierType) {
             this.cpeLocalIdentifierType = cpeLocalIdentifierType;
             this.__explicitlySet__.add("cpeLocalIdentifierType");
             return this;
         }
         /**
-         * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
+         * Static routes to the CPE. The CIDR must not be a
+         * multicast address or class E address.
+         * <p>
+         * Used for routing a given IPSec tunnel's traffic only if the tunnel
+         * is using static routing. If you configure at least one tunnel to use static routing, then
+         * you must provide at least one valid static route. If you configure both
+         * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+         * <p>
+         * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 10.0.1.0/24}
+         * <p>
+         * Example: {@code 2001:db8::/32}
          *
-         * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-         * routing. If you configure at least one tunnel to use static routing, then you must
-         * provide at least one valid static route. If you configure both tunnels to use BGP dynamic
-         * routing, you can provide an empty list for the static routes.
-         *
-         * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
-         * and government regions. See [IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         *
-         * <p>Example: {@code 10.0.1.0/24}
-         *
-         * <p>Example: {@code 2001:db8::/32}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
         private java.util.List<String> staticRoutes;
 
         /**
-         * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
-         *
-         * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-         * routing. If you configure at least one tunnel to use static routing, then you must
-         * provide at least one valid static route. If you configure both tunnels to use BGP dynamic
-         * routing, you can provide an empty list for the static routes.
-         *
-         * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial
-         * and government regions. See [IPv6
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-         *
-         * <p>Example: {@code 10.0.1.0/24}
-         *
-         * <p>Example: {@code 2001:db8::/32}
+         * Static routes to the CPE. The CIDR must not be a
+         * multicast address or class E address.
+         * <p>
+         * Used for routing a given IPSec tunnel's traffic only if the tunnel
+         * is using static routing. If you configure at least one tunnel to use static routing, then
+         * you must provide at least one valid static route. If you configure both
+         * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+         * <p>
+         * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * <p>
+         * Example: {@code 10.0.1.0/24}
+         * <p>
+         * Example: {@code 2001:db8::/32}
          *
          * @param staticRoutes the value to set
          * @return this builder
-         */
+         **/
         public Builder staticRoutes(java.util.List<String> staticRoutes) {
             this.staticRoutes = staticRoutes;
             this.__explicitlySet__.add("staticRoutes");
             return this;
         }
         /**
-         * The date and time the IPSec connection was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the IPSec connection was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The transport type used for the IPSec connection. */
+        /**
+         * The transport type used for the IPSec connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("transportType")
         private TransportType transportType;
 
@@ -387,7 +376,7 @@ public final class IPSecConnection
          *
          * @param transportType the value to set
          * @return this builder
-         */
+         **/
         public Builder transportType(TransportType transportType) {
             this.transportType = transportType;
             this.__explicitlySet__.add("transportType");
@@ -464,7 +453,9 @@ public final class IPSecConnection
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -474,144 +465,135 @@ public final class IPSecConnection
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the IPSec connection.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the IPSec connection.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@link Cpe} object.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     private final String cpeId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * {@link Cpe} object.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      * @return the value
-     */
+     **/
     public String getCpeId() {
         return cpeId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
      * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
-     *
      * @return the value
-     */
+     **/
     public String getDrgId() {
         return drgId;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     */
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The IPSec connection's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     *
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The IPSec connection's current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The IPSec connection's current state.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -650,71 +632,72 @@ public final class IPSecConnection
             return UnknownEnumValue;
         }
     };
-    /** The IPSec connection's current state. */
+    /**
+     * The IPSec connection's current state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The IPSec connection's current state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
-     * the fully qualified domain name (FQDN)). The type of identifier here must correspond to the
-     * value for {@code cpeLocalIdentifierType}.
+     * the fully qualified domain name (FQDN)). The type of identifier here must correspond
+     * to the value for {@code cpeLocalIdentifierType}.
+     * <p>
+     * If you don't provide a value when creating the IPSec connection, the {@code ipAddress} attribute
+     * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
+     * <p>
+     * For information about why you'd provide this value, see
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * <p>
+     * Example IP address: {@code 10.0.3.3}
+     * <p>
+     * Example hostname: {@code cpe.example.com}
      *
-     * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-     * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-     * cpeLocalIdentifier}.
-     *
-     * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-     *
-     * <p>Example IP address: {@code 10.0.3.3}
-     *
-     * <p>Example hostname: {@code cpe.example.com}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifier")
     private final String cpeLocalIdentifier;
 
     /**
      * Your identifier for your CPE device. Can be either an IP address or a hostname (specifically,
-     * the fully qualified domain name (FQDN)). The type of identifier here must correspond to the
-     * value for {@code cpeLocalIdentifierType}.
-     *
-     * <p>If you don't provide a value when creating the IPSec connection, the {@code ipAddress}
-     * attribute for the {@link Cpe} object specified by {@code cpeId} is used as the {@code
-     * cpeLocalIdentifier}.
-     *
-     * <p>For information about why you'd provide this value, see [If Your CPE Is Behind a NAT
-     * Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
-     *
-     * <p>Example IP address: {@code 10.0.3.3}
-     *
-     * <p>Example hostname: {@code cpe.example.com}
+     * the fully qualified domain name (FQDN)). The type of identifier here must correspond
+     * to the value for {@code cpeLocalIdentifierType}.
+     * <p>
+     * If you don't provide a value when creating the IPSec connection, the {@code ipAddress} attribute
+     * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
+     * <p>
+     * For information about why you'd provide this value, see
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * <p>
+     * Example IP address: {@code 10.0.3.3}
+     * <p>
+     * Example hostname: {@code cpe.example.com}
      *
      * @return the value
-     */
+     **/
     public String getCpeLocalIdentifier() {
         return cpeLocalIdentifier;
     }
 
     /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
-     */
-    public enum CpeLocalIdentifierType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The type of identifier for your CPE device. The value here must correspond to the value
+     * for {@code cpeLocalIdentifier}.
+     *
+     **/
+    public enum CpeLocalIdentifierType {
         IpAddress("IP_ADDRESS"),
         Hostname("HOSTNAME"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -754,92 +737,96 @@ public final class IPSecConnection
         }
     };
     /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
-     */
+     * The type of identifier for your CPE device. The value here must correspond to the value
+     * for {@code cpeLocalIdentifier}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeLocalIdentifierType")
     private final CpeLocalIdentifierType cpeLocalIdentifierType;
 
     /**
-     * The type of identifier for your CPE device. The value here must correspond to the value for
-     * {@code cpeLocalIdentifier}.
+     * The type of identifier for your CPE device. The value here must correspond to the value
+     * for {@code cpeLocalIdentifier}.
      *
      * @return the value
-     */
+     **/
     public CpeLocalIdentifierType getCpeLocalIdentifierType() {
         return cpeLocalIdentifierType;
     }
 
     /**
-     * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
+     * Static routes to the CPE. The CIDR must not be a
+     * multicast address or class E address.
+     * <p>
+     * Used for routing a given IPSec tunnel's traffic only if the tunnel
+     * is using static routing. If you configure at least one tunnel to use static routing, then
+     * you must provide at least one valid static route. If you configure both
+     * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+     * <p>
+     * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 10.0.1.0/24}
+     * <p>
+     * Example: {@code 2001:db8::/32}
      *
-     * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-     * routing. If you configure at least one tunnel to use static routing, then you must provide at
-     * least one valid static route. If you configure both tunnels to use BGP dynamic routing, you
-     * can provide an empty list for the static routes.
-     *
-     * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     *
-     * <p>Example: {@code 10.0.1.0/24}
-     *
-     * <p>Example: {@code 2001:db8::/32}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("staticRoutes")
     private final java.util.List<String> staticRoutes;
 
     /**
-     * Static routes to the CPE. The CIDR must not be a multicast address or class E address.
-     *
-     * <p>Used for routing a given IPSec tunnel's traffic only if the tunnel is using static
-     * routing. If you configure at least one tunnel to use static routing, then you must provide at
-     * least one valid static route. If you configure both tunnels to use BGP dynamic routing, you
-     * can provide an empty list for the static routes.
-     *
-     * <p>The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and
-     * government regions. See [IPv6
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
-     *
-     * <p>Example: {@code 10.0.1.0/24}
-     *
-     * <p>Example: {@code 2001:db8::/32}
+     * Static routes to the CPE. The CIDR must not be a
+     * multicast address or class E address.
+     * <p>
+     * Used for routing a given IPSec tunnel's traffic only if the tunnel
+     * is using static routing. If you configure at least one tunnel to use static routing, then
+     * you must provide at least one valid static route. If you configure both
+     * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
+     * <p>
+     * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * <p>
+     * Example: {@code 10.0.1.0/24}
+     * <p>
+     * Example: {@code 2001:db8::/32}
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getStaticRoutes() {
         return staticRoutes;
     }
 
     /**
-     * The date and time the IPSec connection was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the IPSec connection was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the IPSec connection was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The transport type used for the IPSec connection. */
-    public enum TransportType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The transport type used for the IPSec connection.
+     *
+     **/
+    public enum TransportType {
         Internet("INTERNET"),
         Fastconnect("FASTCONNECT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -878,7 +865,10 @@ public final class IPSecConnection
             return UnknownEnumValue;
         }
     };
-    /** The transport type used for the IPSec connection. */
+    /**
+     * The transport type used for the IPSec connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("transportType")
     private final TransportType transportType;
 
@@ -886,7 +876,7 @@ public final class IPSecConnection
      * The transport type used for the IPSec connection.
      *
      * @return the value
-     */
+     **/
     public TransportType getTransportType() {
         return transportType;
     }
@@ -898,7 +888,6 @@ public final class IPSecConnection
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

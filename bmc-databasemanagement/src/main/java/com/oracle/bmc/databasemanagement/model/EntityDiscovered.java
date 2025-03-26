@@ -5,42 +5,46 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the base entity discovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the base entity discovery.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "entityType",
-        defaultImpl = EntityDiscovered.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "entityType",
+    defaultImpl = EntityDiscovered.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalStorageGridDiscoverySummary.class,
-            name = "STORAGE_GRID_DISCOVER_SUMMARY"),
+        value = ExternalStorageGridDiscoverySummary.class,
+        name = "STORAGE_GRID_DISCOVER_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataInfrastructureDiscovery.class,
-            name = "INFRASTRUCTURE_DISCOVER"),
+        value = ExternalExadataInfrastructureDiscovery.class,
+        name = "INFRASTRUCTURE_DISCOVER"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalDatabaseSystemDiscoverySummary.class,
-            name = "DATABASE_SYSTEM_DISCOVER_SUMMARY"),
+        value = ExternalDatabaseSystemDiscoverySummary.class,
+        name = "DATABASE_SYSTEM_DISCOVER_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalExadataInfrastructureDiscoverySummary.class,
-            name = "INFRASTRUCTURE_DISCOVER_SUMMARY"),
+        value = ExternalExadataInfrastructureDiscoverySummary.class,
+        name = "INFRASTRUCTURE_DISCOVER_SUMMARY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExternalStorageServerDiscoverySummary.class,
-            name = "STORAGE_SERVER_DISCOVER_SUMMARY")
+        value = ExternalStorageServerDiscoverySummary.class,
+        name = "STORAGE_SERVER_DISCOVER_SUMMARY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class EntityDiscovered extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class EntityDiscovered extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -79,123 +83,112 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * entity discovered.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity discovered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * entity discovered.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity discovered.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * agent used for monitoring.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent used for monitoring.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentId")
     private final String agentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * agent used for monitoring.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent used for monitoring.
      * @return the value
-     */
+     **/
     public String getAgentId() {
         return agentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated connector.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated connector.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * associated connector.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated connector.
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** The name of the entity. */
+    /**
+     * The name of the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the entity.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The version of the entity. */
+    /**
+     * The version of the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
      * The version of the entity.
-     *
      * @return the value
-     */
+     **/
     public String getVersion() {
         return version;
     }
 
-    /** The internal identifier of the entity. */
+    /**
+     * The internal identifier of the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("internalId")
     private final String internalId;
 
     /**
      * The internal identifier of the entity.
-     *
      * @return the value
-     */
+     **/
     public String getInternalId() {
         return internalId;
     }
 
-    /** The status of the entity. */
+    /**
+     * The status of the entity.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status of the entity.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The status of the entity discovery. */
-    public enum DiscoverStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the entity discovery.
+     **/
+    public enum DiscoverStatus {
         PrevDiscovered("PREV_DISCOVERED"),
         NewDiscovered("NEW_DISCOVERED"),
         NotFound("NOT_FOUND"),
         Discovering("DISCOVERING"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(DiscoverStatus.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, DiscoverStatus> map;
@@ -203,9 +196,7 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (DiscoverStatus v : DiscoverStatus.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -223,47 +214,47 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'DiscoverStatus', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid DiscoverStatus: " + key);
         }
     };
-    /** The status of the entity discovery. */
+    /**
+     * The status of the entity discovery.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoverStatus")
     private final DiscoverStatus discoverStatus;
 
     /**
      * The status of the entity discovery.
-     *
      * @return the value
-     */
+     **/
     public DiscoverStatus getDiscoverStatus() {
         return discoverStatus;
     }
 
-    /** The error code of the discovery. */
+    /**
+     * The error code of the discovery.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoverErrorCode")
     private final String discoverErrorCode;
 
     /**
      * The error code of the discovery.
-     *
      * @return the value
-     */
+     **/
     public String getDiscoverErrorCode() {
         return discoverErrorCode;
     }
 
-    /** The error message of the discovery. */
+    /**
+     * The error message of the discovery.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoverErrorMsg")
     private final String discoverErrorMsg;
 
     /**
      * The error message of the discovery.
-     *
      * @return the value
-     */
+     **/
     public String getDiscoverErrorMsg() {
         return discoverErrorMsg;
     }
@@ -275,7 +266,6 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -344,22 +334,16 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         return result;
     }
 
-    /** The type of discovered entities. */
-    public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of discovered entities.
+     **/
+    public enum EntityType {
         StorageServerDiscoverSummary("STORAGE_SERVER_DISCOVER_SUMMARY"),
         StorageGridDiscoverSummary("STORAGE_GRID_DISCOVER_SUMMARY"),
         DatabaseSystemDiscoverSummary("DATABASE_SYSTEM_DISCOVER_SUMMARY"),
         InfrastructureDiscoverSummary("INFRASTRUCTURE_DISCOVER_SUMMARY"),
         InfrastructureDiscover("INFRASTRUCTURE_DISCOVER"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(EntityType.class);
+        ;
 
         private final String value;
         private static java.util.Map<String, EntityType> map;
@@ -367,9 +351,7 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (EntityType v : EntityType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
+                map.put(v.getValue(), v);
             }
         }
 
@@ -387,10 +369,7 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'EntityType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
+            throw new IllegalArgumentException("Invalid EntityType: " + key);
         }
     };
 }

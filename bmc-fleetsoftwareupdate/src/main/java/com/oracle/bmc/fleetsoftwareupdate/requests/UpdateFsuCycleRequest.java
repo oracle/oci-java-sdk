@@ -6,58 +6,77 @@ package com.oracle.bmc.fleetsoftwareupdate.requests;
 
 import com.oracle.bmc.fleetsoftwareupdate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCycleExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFsuCycleRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateFsuCycleRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public class UpdateFsuCycleRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetsoftwareupdate.model.UpdateFsuCycleDetails> {
 
-    /** Unique Exadata Fleet Update Cycle identifier. */
+    /**
+     * Unique Exadata Fleet Update Cycle identifier.
+     *
+     */
     private String fsuCycleId;
 
-    /** Unique Exadata Fleet Update Cycle identifier. */
+    /**
+     * Unique Exadata Fleet Update Cycle identifier.
+     *
+     */
     public String getFsuCycleId() {
         return fsuCycleId;
     }
-    /** The Exadata Fleet Update Cycle details to be updated. */
+    /**
+     * The Exadata Fleet Update Cycle details to be updated.
+     *
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.UpdateFsuCycleDetails updateFsuCycleDetails;
 
-    /** The Exadata Fleet Update Cycle details to be updated. */
+    /**
+     * The Exadata Fleet Update Cycle details to be updated.
+     *
+     */
     public com.oracle.bmc.fleetsoftwareupdate.model.UpdateFsuCycleDetails
             getUpdateFsuCycleDetails() {
         return updateFsuCycleDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -70,10 +89,14 @@ public class UpdateFsuCycleRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateFsuCycleRequest,
                     com.oracle.bmc.fleetsoftwareupdate.model.UpdateFsuCycleDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Exadata Fleet Update Cycle identifier. */
+        /**
+         * Unique Exadata Fleet Update Cycle identifier.
+         *
+         */
         private String fsuCycleId = null;
 
         /**
@@ -87,7 +110,10 @@ public class UpdateFsuCycleRequest
             return this;
         }
 
-        /** The Exadata Fleet Update Cycle details to be updated. */
+        /**
+         * The Exadata Fleet Update Cycle details to be updated.
+         *
+         */
         private com.oracle.bmc.fleetsoftwareupdate.model.UpdateFsuCycleDetails
                 updateFsuCycleDetails = null;
 
@@ -105,18 +131,21 @@ public class UpdateFsuCycleRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -126,7 +155,10 @@ public class UpdateFsuCycleRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -142,19 +174,18 @@ public class UpdateFsuCycleRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -166,7 +197,6 @@ public class UpdateFsuCycleRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateFsuCycleRequest o) {
@@ -182,11 +212,10 @@ public class UpdateFsuCycleRequest
         /**
          * Build the instance of UpdateFsuCycleRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateFsuCycleRequest
          */
@@ -199,7 +228,6 @@ public class UpdateFsuCycleRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -212,8 +240,7 @@ public class UpdateFsuCycleRequest
         /**
          * Build the instance of UpdateFsuCycleRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateFsuCycleRequest
@@ -231,7 +258,6 @@ public class UpdateFsuCycleRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,7 +270,6 @@ public class UpdateFsuCycleRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,22 +5,19 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * The stats for a queue and its dead letter queue. If channelId is specified in request field, it
- * will return channel specific stats response. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * The stats for a queue and its dead letter queue. If channelId is specified in request field, it will return channel specific stats response.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = QueueStats.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class QueueStats extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class QueueStats extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"queue", "dlq", "channelId"})
     public QueueStats(Stats queue, Stats dlq, String channelId) {
@@ -51,19 +48,16 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
-         * response.
-         */
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("channelId")
         private String channelId;
 
         /**
-         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
-         * response.
-         *
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
          * @param channelId the value to set
          * @return this builder
-         */
+         **/
         public Builder channelId(String channelId) {
             this.channelId = channelId;
             this.__explicitlySet__.add("channelId");
@@ -96,7 +90,9 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -120,18 +116,15 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
-     * response.
-     */
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("channelId")
     private final String channelId;
 
     /**
-     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
-     * response.
-     *
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats response.
      * @return the value
-     */
+     **/
     public String getChannelId() {
         return channelId;
     }
@@ -143,7 +136,6 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

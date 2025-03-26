@@ -5,22 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * The information about the Kafka service to be added. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * The information about the Kafka service to be added.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AddKafkaDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AddKafkaDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AddKafkaDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "shape",
@@ -45,31 +42,33 @@ public final class AddKafkaDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Shape of the Kafka broker node. */
+        /**
+         * Shape of the Kafka broker node.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
          * Shape of the Kafka broker node.
-         *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** Number of Kafka nodes for the cluster. */
+        /**
+         * Number of Kafka nodes for the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("numberOfKafkaNodes")
         private Integer numberOfKafkaNodes;
 
         /**
          * Number of Kafka nodes for the cluster.
-         *
          * @param numberOfKafkaNodes the value to set
          * @return this builder
-         */
+         **/
         public Builder numberOfKafkaNodes(Integer numberOfKafkaNodes) {
             this.numberOfKafkaNodes = numberOfKafkaNodes;
             this.__explicitlySet__.add("numberOfKafkaNodes");
@@ -85,34 +84,34 @@ public final class AddKafkaDetails
             return this;
         }
         /**
-         * The size of block volme in GB to be attached to the given node. All details needed for
-         * attaching the block volume are managed by the service itself.
-         */
+         * The size of block volme in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
         private Long blockVolumeSizeInGBs;
 
         /**
-         * The size of block volme in GB to be attached to the given node. All details needed for
-         * attaching the block volume are managed by the service itself.
+         * The size of block volme in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
          *
          * @param blockVolumeSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder blockVolumeSizeInGBs(Long blockVolumeSizeInGBs) {
             this.blockVolumeSizeInGBs = blockVolumeSizeInGBs;
             this.__explicitlySet__.add("blockVolumeSizeInGBs");
             return this;
         }
-        /** Base-64 encoded password for the cluster admin user. */
+        /**
+         * Base-64 encoded password for the cluster admin user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
         private String clusterAdminPassword;
 
         /**
          * Base-64 encoded password for the cluster admin user.
-         *
          * @param clusterAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterAdminPassword(String clusterAdminPassword) {
             this.clusterAdminPassword = clusterAdminPassword;
             this.__explicitlySet__.add("clusterAdminPassword");
@@ -157,7 +156,9 @@ public final class AddKafkaDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,28 +167,30 @@ public final class AddKafkaDetails
         return new Builder().copy(this);
     }
 
-    /** Shape of the Kafka broker node. */
+    /**
+     * Shape of the Kafka broker node.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
      * Shape of the Kafka broker node.
-     *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** Number of Kafka nodes for the cluster. */
+    /**
+     * Number of Kafka nodes for the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("numberOfKafkaNodes")
     private final Integer numberOfKafkaNodes;
 
     /**
      * Number of Kafka nodes for the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getNumberOfKafkaNodes() {
         return numberOfKafkaNodes;
     }
@@ -200,31 +203,31 @@ public final class AddKafkaDetails
     }
 
     /**
-     * The size of block volme in GB to be attached to the given node. All details needed for
-     * attaching the block volume are managed by the service itself.
-     */
+     * The size of block volme in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumeSizeInGBs")
     private final Long blockVolumeSizeInGBs;
 
     /**
-     * The size of block volme in GB to be attached to the given node. All details needed for
-     * attaching the block volume are managed by the service itself.
+     * The size of block volme in GB to be attached to the given node. All details needed for attaching the block volume are managed by the service itself.
      *
      * @return the value
-     */
+     **/
     public Long getBlockVolumeSizeInGBs() {
         return blockVolumeSizeInGBs;
     }
 
-    /** Base-64 encoded password for the cluster admin user. */
+    /**
+     * Base-64 encoded password for the cluster admin user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterAdminPassword")
     private final String clusterAdminPassword;
 
     /**
      * Base-64 encoded password for the cluster admin user.
-     *
      * @return the value
-     */
+     **/
     public String getClusterAdminPassword() {
         return clusterAdminPassword;
     }
@@ -236,7 +239,6 @@ public final class AddKafkaDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

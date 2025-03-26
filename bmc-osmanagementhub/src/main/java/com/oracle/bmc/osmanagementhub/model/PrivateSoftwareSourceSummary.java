@@ -5,25 +5,25 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for a private software source. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for a private software source.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PrivateSoftwareSourceSummary.Builder.class)
+    builder = PrivateSoftwareSourceSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "softwareSourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "softwareSourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PrivateSoftwareSourceSummary extends SoftwareSourceSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -189,16 +189,17 @@ public final class PrivateSoftwareSourceSummary extends SoftwareSourceSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates if this software source can be mirrored to a management station. */
+        /**
+         * Indicates if this software source can be mirrored to a management station.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
         private Boolean isMirrorSyncAllowed;
 
         /**
          * Indicates if this software source can be mirrored to a management station.
-         *
          * @param isMirrorSyncAllowed the value to set
          * @return this builder
-         */
+         **/
         public Builder isMirrorSyncAllowed(Boolean isMirrorSyncAllowed) {
             this.isMirrorSyncAllowed = isMirrorSyncAllowed;
             this.__explicitlySet__.add("isMirrorSyncAllowed");
@@ -299,7 +300,9 @@ public final class PrivateSoftwareSourceSummary extends SoftwareSourceSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -351,15 +354,16 @@ public final class PrivateSoftwareSourceSummary extends SoftwareSourceSummary {
         this.isMirrorSyncAllowed = isMirrorSyncAllowed;
     }
 
-    /** Indicates if this software source can be mirrored to a management station. */
+    /**
+     * Indicates if this software source can be mirrored to a management station.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isMirrorSyncAllowed")
     private final Boolean isMirrorSyncAllowed;
 
     /**
      * Indicates if this software source can be mirrored to a management station.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsMirrorSyncAllowed() {
         return isMirrorSyncAllowed;
     }
@@ -371,7 +375,6 @@ public final class PrivateSoftwareSourceSummary extends SoftwareSourceSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

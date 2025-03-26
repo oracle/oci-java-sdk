@@ -5,21 +5,19 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Subscription details object which extends the SubscriptionSummary <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * Subscription details object which extends the SubscriptionSummary
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Subscription.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Subscription extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Subscription extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -92,230 +90,241 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Subscription id identifier (OCID). */
+        /**
+         * Subscription id identifier (OCID).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Subscription id identifier (OCID).
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Subscription plan number. */
+        /**
+         * Subscription plan number.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionPlanNumber")
         private String subscriptionPlanNumber;
 
         /**
          * Subscription plan number.
-         *
          * @param subscriptionPlanNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionPlanNumber(String subscriptionPlanNumber) {
             this.subscriptionPlanNumber = subscriptionPlanNumber;
             this.__explicitlySet__.add("subscriptionPlanNumber");
             return this;
         }
-        /** Subscription plan type. */
+        /**
+         * Subscription plan type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("planType")
         private PlanType planType;
 
         /**
          * Subscription plan type.
-         *
          * @param planType the value to set
          * @return this builder
-         */
+         **/
         public Builder planType(PlanType planType) {
             this.planType = planType;
             this.__explicitlySet__.add("planType");
             return this;
         }
-        /** Start date of the subscription. */
+        /**
+         * Start date of the subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * Start date of the subscription.
-         *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Ship to customer account site address id. */
+        /**
+         * Ship to customer account site address id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctSiteId")
         private String shipToCustAcctSiteId;
 
         /**
          * Ship to customer account site address id.
-         *
          * @param shipToCustAcctSiteId the value to set
          * @return this builder
-         */
+         **/
         public Builder shipToCustAcctSiteId(String shipToCustAcctSiteId) {
             this.shipToCustAcctSiteId = shipToCustAcctSiteId;
             this.__explicitlySet__.add("shipToCustAcctSiteId");
             return this;
         }
-        /** Ship to customer account role. */
+        /**
+         * Ship to customer account role.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctRoleId")
         private String shipToCustAcctRoleId;
 
         /**
          * Ship to customer account role.
-         *
          * @param shipToCustAcctRoleId the value to set
          * @return this builder
-         */
+         **/
         public Builder shipToCustAcctRoleId(String shipToCustAcctRoleId) {
             this.shipToCustAcctRoleId = shipToCustAcctRoleId;
             this.__explicitlySet__.add("shipToCustAcctRoleId");
             return this;
         }
-        /** Bill to customer Account id. */
+        /**
+         * Bill to customer Account id.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billToCustAccountId")
         private String billToCustAccountId;
 
         /**
          * Bill to customer Account id.
-         *
          * @param billToCustAccountId the value to set
          * @return this builder
-         */
+         **/
         public Builder billToCustAccountId(String billToCustAccountId) {
             this.billToCustAccountId = billToCustAccountId;
             this.__explicitlySet__.add("billToCustAccountId");
             return this;
         }
-        /** Payment intension. */
+        /**
+         * Payment intension.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
         private Boolean isIntentToPay;
 
         /**
          * Payment intension.
-         *
          * @param isIntentToPay the value to set
          * @return this builder
-         */
+         **/
         public Builder isIntentToPay(Boolean isIntentToPay) {
             this.isIntentToPay = isIntentToPay;
             this.__explicitlySet__.add("isIntentToPay");
             return this;
         }
-        /** Currency code */
+        /**
+         * Currency code
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
          * Currency code
-         *
          * @param currencyCode the value to set
          * @return this builder
-         */
+         **/
         public Builder currencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             this.__explicitlySet__.add("currencyCode");
             return this;
         }
-        /** GSI Subscription external code. */
+        /**
+         * GSI Subscription external code.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gsiOrgCode")
         private String gsiOrgCode;
 
         /**
          * GSI Subscription external code.
-         *
          * @param gsiOrgCode the value to set
          * @return this builder
-         */
+         **/
         public Builder gsiOrgCode(String gsiOrgCode) {
             this.gsiOrgCode = gsiOrgCode;
             this.__explicitlySet__.add("gsiOrgCode");
             return this;
         }
-        /** Language short code (en, de, hu, etc) */
+        /**
+         * Language short code (en, de, hu, etc)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
         private String languageCode;
 
         /**
          * Language short code (en, de, hu, etc)
-         *
          * @param languageCode the value to set
          * @return this builder
-         */
+         **/
         public Builder languageCode(String languageCode) {
             this.languageCode = languageCode;
             this.__explicitlySet__.add("languageCode");
             return this;
         }
-        /** GSI organization external identifier. */
+        /**
+         * GSI organization external identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("organizationId")
         private String organizationId;
 
         /**
          * GSI organization external identifier.
-         *
          * @param organizationId the value to set
          * @return this builder
-         */
+         **/
         public Builder organizationId(String organizationId) {
             this.organizationId = organizationId;
             this.__explicitlySet__.add("organizationId");
             return this;
         }
-        /** Status of the upgrade. */
+        /**
+         * Status of the upgrade.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeState")
         private UpgradeState upgradeState;
 
         /**
          * Status of the upgrade.
-         *
          * @param upgradeState the value to set
          * @return this builder
-         */
+         **/
         public Builder upgradeState(UpgradeState upgradeState) {
             this.upgradeState = upgradeState;
             this.__explicitlySet__.add("upgradeState");
             return this;
         }
         /**
-         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure
-         * caused by interfacing Tax details- TaxError)
-         */
+         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("upgradeStateDetails")
         private UpgradeStateDetails upgradeStateDetails;
 
         /**
-         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure
-         * caused by interfacing Tax details- TaxError)
-         *
+         * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
          * @param upgradeStateDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder upgradeStateDetails(UpgradeStateDetails upgradeStateDetails) {
             this.upgradeStateDetails = upgradeStateDetails;
             this.__explicitlySet__.add("upgradeStateDetails");
             return this;
         }
-        /** Account type. */
+        /**
+         * Account type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accountType")
         private AccountType accountType;
 
         /**
          * Account type.
-         *
          * @param accountType the value to set
          * @return this builder
-         */
+         **/
         public Builder accountType(AccountType accountType) {
             this.accountType = accountType;
             this.__explicitlySet__.add("accountType");
@@ -330,16 +339,17 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("taxInfo");
             return this;
         }
-        /** Payment option list of a subscription. */
+        /**
+         * Payment option list of a subscription.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("paymentOptions")
         private java.util.List<PaymentOption> paymentOptions;
 
         /**
          * Payment option list of a subscription.
-         *
          * @param paymentOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder paymentOptions(java.util.List<PaymentOption> paymentOptions) {
             this.paymentOptions = paymentOptions;
             this.__explicitlySet__.add("paymentOptions");
@@ -363,31 +373,33 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("billingAddress");
             return this;
         }
-        /** Date of upgrade/conversion when planType changed from FREE_TIER to PAYG */
+        /**
+         * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePlanUpgrade")
         private java.util.Date timePlanUpgrade;
 
         /**
          * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-         *
          * @param timePlanUpgrade the value to set
          * @return this builder
-         */
+         **/
         public Builder timePlanUpgrade(java.util.Date timePlanUpgrade) {
             this.timePlanUpgrade = timePlanUpgrade;
             this.__explicitlySet__.add("timePlanUpgrade");
             return this;
         }
-        /** Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE */
+        /**
+         * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePersonalToCorporateConv")
         private java.util.Date timePersonalToCorporateConv;
 
         /**
          * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-         *
          * @param timePersonalToCorporateConv the value to set
          * @return this builder
-         */
+         **/
         public Builder timePersonalToCorporateConv(java.util.Date timePersonalToCorporateConv) {
             this.timePersonalToCorporateConv = timePersonalToCorporateConv;
             this.__explicitlySet__.add("timePersonalToCorporateConv");
@@ -496,7 +508,9 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -505,40 +519,44 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** Subscription id identifier (OCID). */
+    /**
+     * Subscription id identifier (OCID).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Subscription id identifier (OCID).
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Subscription plan number. */
+    /**
+     * Subscription plan number.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionPlanNumber")
     private final String subscriptionPlanNumber;
 
     /**
      * Subscription plan number.
-     *
      * @return the value
-     */
+     **/
     public String getSubscriptionPlanNumber() {
         return subscriptionPlanNumber;
     }
 
-    /** Subscription plan type. */
-    public enum PlanType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Subscription plan type.
+     **/
+    public enum PlanType {
         FreeTier("FREE_TIER"),
         Payg("PAYG"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -577,146 +595,158 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Subscription plan type. */
+    /**
+     * Subscription plan type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("planType")
     private final PlanType planType;
 
     /**
      * Subscription plan type.
-     *
      * @return the value
-     */
+     **/
     public PlanType getPlanType() {
         return planType;
     }
 
-    /** Start date of the subscription. */
+    /**
+     * Start date of the subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
      * Start date of the subscription.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Ship to customer account site address id. */
+    /**
+     * Ship to customer account site address id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctSiteId")
     private final String shipToCustAcctSiteId;
 
     /**
      * Ship to customer account site address id.
-     *
      * @return the value
-     */
+     **/
     public String getShipToCustAcctSiteId() {
         return shipToCustAcctSiteId;
     }
 
-    /** Ship to customer account role. */
+    /**
+     * Ship to customer account role.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shipToCustAcctRoleId")
     private final String shipToCustAcctRoleId;
 
     /**
      * Ship to customer account role.
-     *
      * @return the value
-     */
+     **/
     public String getShipToCustAcctRoleId() {
         return shipToCustAcctRoleId;
     }
 
-    /** Bill to customer Account id. */
+    /**
+     * Bill to customer Account id.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("billToCustAccountId")
     private final String billToCustAccountId;
 
     /**
      * Bill to customer Account id.
-     *
      * @return the value
-     */
+     **/
     public String getBillToCustAccountId() {
         return billToCustAccountId;
     }
 
-    /** Payment intension. */
+    /**
+     * Payment intension.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isIntentToPay")
     private final Boolean isIntentToPay;
 
     /**
      * Payment intension.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsIntentToPay() {
         return isIntentToPay;
     }
 
-    /** Currency code */
+    /**
+     * Currency code
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
      * Currency code
-     *
      * @return the value
-     */
+     **/
     public String getCurrencyCode() {
         return currencyCode;
     }
 
-    /** GSI Subscription external code. */
+    /**
+     * GSI Subscription external code.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gsiOrgCode")
     private final String gsiOrgCode;
 
     /**
      * GSI Subscription external code.
-     *
      * @return the value
-     */
+     **/
     public String getGsiOrgCode() {
         return gsiOrgCode;
     }
 
-    /** Language short code (en, de, hu, etc) */
+    /**
+     * Language short code (en, de, hu, etc)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("languageCode")
     private final String languageCode;
 
     /**
      * Language short code (en, de, hu, etc)
-     *
      * @return the value
-     */
+     **/
     public String getLanguageCode() {
         return languageCode;
     }
 
-    /** GSI organization external identifier. */
+    /**
+     * GSI organization external identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("organizationId")
     private final String organizationId;
 
     /**
      * GSI organization external identifier.
-     *
      * @return the value
-     */
+     **/
     public String getOrganizationId() {
         return organizationId;
     }
 
-    /** Status of the upgrade. */
-    public enum UpgradeState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Status of the upgrade.
+     **/
+    public enum UpgradeState {
         Promo("PROMO"),
         Submitted("SUBMITTED"),
         Error("ERROR"),
         Upgraded("UPGRADED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -755,30 +785,30 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Status of the upgrade. */
+    /**
+     * Status of the upgrade.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeState")
     private final UpgradeState upgradeState;
 
     /**
      * Status of the upgrade.
-     *
      * @return the value
-     */
+     **/
     public UpgradeState getUpgradeState() {
         return upgradeState;
     }
 
     /**
-     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure
-     * caused by interfacing Tax details- TaxError)
-     */
-    public enum UpgradeStateDetails implements com.oracle.bmc.http.internal.BmcEnum {
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     **/
+    public enum UpgradeStateDetails {
         TaxError("TAX_ERROR"),
         UpgradeError("UPGRADE_ERROR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -818,31 +848,30 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         }
     };
     /**
-     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure
-     * caused by interfacing Tax details- TaxError)
-     */
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("upgradeStateDetails")
     private final UpgradeStateDetails upgradeStateDetails;
 
     /**
-     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure
-     * caused by interfacing Tax details- TaxError)
-     *
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * @return the value
-     */
+     **/
     public UpgradeStateDetails getUpgradeStateDetails() {
         return upgradeStateDetails;
     }
 
-    /** Account type. */
-    public enum AccountType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Account type.
+     **/
+    public enum AccountType {
         Personal("PERSONAL"),
         Corporate("CORPORATE"),
         CorporateSubmitted("CORPORATE_SUBMITTED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -881,15 +910,16 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** Account type. */
+    /**
+     * Account type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accountType")
     private final AccountType accountType;
 
     /**
      * Account type.
-     *
      * @return the value
-     */
+     **/
     public AccountType getAccountType() {
         return accountType;
     }
@@ -901,15 +931,16 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return taxInfo;
     }
 
-    /** Payment option list of a subscription. */
+    /**
+     * Payment option list of a subscription.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("paymentOptions")
     private final java.util.List<PaymentOption> paymentOptions;
 
     /**
      * Payment option list of a subscription.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<PaymentOption> getPaymentOptions() {
         return paymentOptions;
     }
@@ -928,28 +959,30 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
         return billingAddress;
     }
 
-    /** Date of upgrade/conversion when planType changed from FREE_TIER to PAYG */
+    /**
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePlanUpgrade")
     private final java.util.Date timePlanUpgrade;
 
     /**
      * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePlanUpgrade() {
         return timePlanUpgrade;
     }
 
-    /** Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE */
+    /**
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePersonalToCorporateConv")
     private final java.util.Date timePersonalToCorporateConv;
 
     /**
      * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePersonalToCorporateConv() {
         return timePersonalToCorporateConv;
     }
@@ -961,7 +994,6 @@ public final class Subscription extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

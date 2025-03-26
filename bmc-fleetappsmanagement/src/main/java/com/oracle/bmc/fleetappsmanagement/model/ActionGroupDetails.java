@@ -5,23 +5,21 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Action Group details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Action Group details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ActionGroupDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ActionGroupDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ActionGroupDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ActionGroupDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "resourceId",
@@ -64,166 +62,189 @@ public final class ActionGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the ActionGroup resource. Ex:fleetId. */
+        /**
+         * The ID of the ActionGroup resource.
+         * Ex:fleetId.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The ID of the ActionGroup resource. Ex:fleetId.
+         * The ID of the ActionGroup resource.
+         * Ex:fleetId.
          *
          * @param resourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceId(String resourceId) {
             this.resourceId = resourceId;
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Name of the ActionGroup. */
+        /**
+         * Name of the ActionGroup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of the ActionGroup.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Type of the ActionGroup */
+        /**
+         * Type of the ActionGroup
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private LifeCycleActionGroupType type;
 
         /**
          * Type of the ActionGroup
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(LifeCycleActionGroupType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Application Type associated. Only applicable if actionGroup type is ENVIRONMENT. */
+        /**
+         * Application Type associated.
+         * Only applicable if actionGroup type is ENVIRONMENT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Application Type associated. Only applicable if actionGroup type is ENVIRONMENT.
+         * Application Type associated.
+         * Only applicable if actionGroup type is ENVIRONMENT.
          *
          * @param applicationType the value to set
          * @return this builder
-         */
+         **/
         public Builder applicationType(String applicationType) {
             this.applicationType = applicationType;
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-        /** Product associated. Only applicable if actionGroup type is PRODUCT. */
+        /**
+         * Product associated.
+         * Only applicable if actionGroup type is PRODUCT.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
 
         /**
-         * Product associated. Only applicable if actionGroup type is PRODUCT.
+         * Product associated.
+         * Only applicable if actionGroup type is PRODUCT.
          *
          * @param product the value to set
          * @return this builder
-         */
+         **/
         public Builder product(String product) {
             this.product = product;
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** LifeCycle Operation. */
+        /**
+         * LifeCycle Operation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
         private String lifecycleOperation;
 
         /**
          * LifeCycle Operation.
-         *
          * @param lifecycleOperation the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleOperation(String lifecycleOperation) {
             this.lifecycleOperation = lifecycleOperation;
             this.__explicitlySet__.add("lifecycleOperation");
             return this;
         }
-        /** Unique producer Id at Action Group Level */
+        /**
+         * Unique producer Id at Action Group Level
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("activityId")
         private String activityId;
 
         /**
          * Unique producer Id at Action Group Level
-         *
          * @param activityId the value to set
          * @return this builder
-         */
+         **/
         public Builder activityId(String activityId) {
             this.activityId = activityId;
             this.__explicitlySet__.add("activityId");
             return this;
         }
-        /** Status of the Job at Action Group Level. */
+        /**
+         * Status of the Job at Action Group Level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
          * Status of the Job at Action Group Level.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(JobStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The time the Scheduler Job started. An RFC3339 formatted datetime string. */
+        /**
+         * The time the Scheduler Job started. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * The time the Scheduler Job started. An RFC3339 formatted datetime string.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the Scheduler Job ended. An RFC3339 formatted datetime string. */
+        /**
+         * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
          * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
-         *
          * @param timeEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** OCID of the runbook. */
+        /**
+         * OCID of the runbook.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
         private String runbookId;
 
         /**
          * OCID of the runbook.
-         *
          * @param runbookId the value to set
          * @return this builder
-         */
+         **/
         public Builder runbookId(String runbookId) {
             this.runbookId = runbookId;
             this.__explicitlySet__.add("runbookId");
@@ -292,7 +313,9 @@ public final class ActionGroupDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -301,145 +324,168 @@ public final class ActionGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the ActionGroup resource. Ex:fleetId. */
+    /**
+     * The ID of the ActionGroup resource.
+     * Ex:fleetId.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The ID of the ActionGroup resource. Ex:fleetId.
+     * The ID of the ActionGroup resource.
+     * Ex:fleetId.
      *
      * @return the value
-     */
+     **/
     public String getResourceId() {
         return resourceId;
     }
 
-    /** Name of the ActionGroup. */
+    /**
+     * Name of the ActionGroup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of the ActionGroup.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Type of the ActionGroup */
+    /**
+     * Type of the ActionGroup
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final LifeCycleActionGroupType type;
 
     /**
      * Type of the ActionGroup
-     *
      * @return the value
-     */
+     **/
     public LifeCycleActionGroupType getType() {
         return type;
     }
 
-    /** Application Type associated. Only applicable if actionGroup type is ENVIRONMENT. */
+    /**
+     * Application Type associated.
+     * Only applicable if actionGroup type is ENVIRONMENT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Application Type associated. Only applicable if actionGroup type is ENVIRONMENT.
+     * Application Type associated.
+     * Only applicable if actionGroup type is ENVIRONMENT.
      *
      * @return the value
-     */
+     **/
     public String getApplicationType() {
         return applicationType;
     }
 
-    /** Product associated. Only applicable if actionGroup type is PRODUCT. */
+    /**
+     * Product associated.
+     * Only applicable if actionGroup type is PRODUCT.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("product")
     private final String product;
 
     /**
-     * Product associated. Only applicable if actionGroup type is PRODUCT.
+     * Product associated.
+     * Only applicable if actionGroup type is PRODUCT.
      *
      * @return the value
-     */
+     **/
     public String getProduct() {
         return product;
     }
 
-    /** LifeCycle Operation. */
+    /**
+     * LifeCycle Operation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
     private final String lifecycleOperation;
 
     /**
      * LifeCycle Operation.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleOperation() {
         return lifecycleOperation;
     }
 
-    /** Unique producer Id at Action Group Level */
+    /**
+     * Unique producer Id at Action Group Level
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("activityId")
     private final String activityId;
 
     /**
      * Unique producer Id at Action Group Level
-     *
      * @return the value
-     */
+     **/
     public String getActivityId() {
         return activityId;
     }
 
-    /** Status of the Job at Action Group Level. */
+    /**
+     * Status of the Job at Action Group Level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
      * Status of the Job at Action Group Level.
-     *
      * @return the value
-     */
+     **/
     public JobStatus getStatus() {
         return status;
     }
 
-    /** The time the Scheduler Job started. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Scheduler Job started. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * The time the Scheduler Job started. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** The time the Scheduler Job ended. An RFC3339 formatted datetime string. */
+    /**
+     * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
      * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnded() {
         return timeEnded;
     }
 
-    /** OCID of the runbook. */
+    /**
+     * OCID of the runbook.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
     private final String runbookId;
 
     /**
      * OCID of the runbook.
-     *
      * @return the value
-     */
+     **/
     public String getRunbookId() {
         return runbookId;
     }
@@ -451,7 +497,6 @@ public final class ActionGroupDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

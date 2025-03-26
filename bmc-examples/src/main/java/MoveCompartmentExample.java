@@ -34,10 +34,8 @@ public class MoveCompartmentExample {
         String configurationFilePath = "~/.oci/config";
         String profile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -47,7 +45,7 @@ public class MoveCompartmentExample {
 
         final String tenantId = provider.getTenantId();
         System.out.println("Tenant Id: " + tenantId);
-        final Identity identityClient = IdentityClient.builder().build(provider);
+        final Identity identityClient = new IdentityClient(provider);
 
         final Compartment cpSource =
                 ExampleCompartmentHelper.createCompartment(identityClient, tenantId, CP_SOURCE);

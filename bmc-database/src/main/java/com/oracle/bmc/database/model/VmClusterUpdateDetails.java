@@ -5,24 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details specifying which maintenance update to apply to the VM Cluster and which action is to be
- * performed by the maintenance update. Applies to Exadata Cloud@Customer instances only. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details specifying which maintenance update to apply to the VM Cluster and which action is to be performed by the maintenance update. Applies to Exadata Cloud@Customer instances only.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VmClusterUpdateDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = VmClusterUpdateDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VmClusterUpdateDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"updateId", "updateAction", "giSoftwareImageId"})
     public VmClusterUpdateDetails(
@@ -36,55 +35,48 @@ public final class VmClusterUpdateDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance update.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateId")
         private String updateId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * maintenance update.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
          * @param updateId the value to set
          * @return this builder
-         */
+         **/
         public Builder updateId(String updateId) {
             this.updateId = updateId;
             this.__explicitlySet__.add("updateId");
             return this;
         }
-        /** The update action to perform. */
+        /**
+         * The update action to perform.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
         private UpdateAction updateAction;
 
         /**
          * The update action to perform.
-         *
          * @param updateAction the value to set
          * @return this builder
-         */
+         **/
         public Builder updateAction(UpdateAction updateAction) {
             this.updateAction = updateAction;
             this.__explicitlySet__.add("updateAction");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * grid infrastructure software image. This is a database software image of the type {@code
-         * GRID_IMAGE}.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
         private String giSoftwareImageId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a
-         * grid infrastructure software image. This is a database software image of the type {@code
-         * GRID_IMAGE}.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
          * @param giSoftwareImageId the value to set
          * @return this builder
-         */
+         **/
         public Builder giSoftwareImageId(String giSoftwareImageId) {
             this.giSoftwareImageId = giSoftwareImageId;
             this.__explicitlySet__.add("giSoftwareImageId");
@@ -119,7 +111,9 @@ public final class VmClusterUpdateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,24 +123,23 @@ public final class VmClusterUpdateDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance update.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateId")
     private final String updateId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * maintenance update.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
      * @return the value
-     */
+     **/
     public String getUpdateId() {
         return updateId;
     }
 
-    /** The update action to perform. */
-    public enum UpdateAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The update action to perform.
+     **/
+    public enum UpdateAction {
         RollingApply("ROLLING_APPLY"),
         Precheck("PRECHECK"),
         Rollback("ROLLBACK"),
@@ -179,34 +172,30 @@ public final class VmClusterUpdateDetails
             throw new IllegalArgumentException("Invalid UpdateAction: " + key);
         }
     };
-    /** The update action to perform. */
+    /**
+     * The update action to perform.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("updateAction")
     private final UpdateAction updateAction;
 
     /**
      * The update action to perform.
-     *
      * @return the value
-     */
+     **/
     public UpdateAction getUpdateAction() {
         return updateAction;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
-     * infrastructure software image. This is a database software image of the type {@code
-     * GRID_IMAGE}.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("giSoftwareImageId")
     private final String giSoftwareImageId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid
-     * infrastructure software image. This is a database software image of the type {@code
-     * GRID_IMAGE}.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a grid infrastructure software image. This is a database software image of the type {@code GRID_IMAGE}.
      * @return the value
-     */
+     **/
     public String getGiSoftwareImageId() {
         return giSoftwareImageId;
     }
@@ -218,7 +207,6 @@ public final class VmClusterUpdateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

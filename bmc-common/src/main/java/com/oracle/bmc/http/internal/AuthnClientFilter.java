@@ -4,19 +4,23 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.oracle.bmc.http.client.HttpRequest;
-import com.oracle.bmc.http.client.RequestInterceptor;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.SigningStrategy;
 
-import java.util.List;
-import java.util.Locale;
+import java.io.IOException;
 import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
+import javax.annotation.Nonnull;
+import javax.annotation.Priority;
+import javax.ws.rs.Priorities;
+import javax.ws.rs.client.ClientRequestContext;
+import javax.ws.rs.client.ClientRequestFilter;
+import javax.ws.rs.core.MultivaluedMap;
 
-/** Filter that injects authentication headers into the request. */
-public class AuthnClientFilter implements RequestInterceptor {
+/**
+ * Filter that injects authentication headers into the request.
+ */
+@Priority(Priorities.AUTHENTICATION)
+public class AuthnClientFilter implements ClientRequestFilter {
 
     public static final String SIGNING_STRATEGY_PROPERTY_NAME =
             "x-obmcs-internal-signing-strategy-name";
@@ -33,31 +37,34 @@ public class AuthnClientFilter implements RequestInterceptor {
     }
 
     @Override
-    public void intercept(HttpRequest request) {
+    public void filter(@Nonnull ClientRequestContext clientRequestContext) throws IOException {
+        if (clientRequestContext == null) {
+            throw new java.lang.NullPointerException(
+                    "clientRequestContext is marked non-null but is null");
+        }
         RequestSigner chosenRequestSigner = this.defaultRequestSigner;
 
         SigningStrategy perOperationSigningStrategy =
-                (SigningStrategy) request.attribute(SIGNING_STRATEGY_PROPERTY_NAME);
+                (SigningStrategy) clientRequestContext.getProperty(SIGNING_STRATEGY_PROPERTY_NAME);
         if (perOperationSigningStrategy != null
                 && requestSigners.containsKey(perOperationSigningStrategy)) {
             chosenRequestSigner = requestSigners.get(perOperationSigningStrategy);
             // removing this property from the context, now that we have processed it
-            request.removeAttribute(SIGNING_STRATEGY_PROPERTY_NAME);
+            clientRequestContext.removeProperty(SIGNING_STRATEGY_PROPERTY_NAME);
         }
 
-        Map<String, List<String>> oldHeaders = request.headers();
+        MultivaluedMap<String, String> stringHeaders = clientRequestContext.getStringHeaders();
         Map<String, String> authHeaders =
                 chosenRequestSigner.signRequest(
-                        request.uri(), request.method().name(), oldHeaders, request.body());
+                        clientRequestContext.getUri(),
+                        clientRequestContext.getMethod(),
+                        stringHeaders,
+                        clientRequestContext.getEntity());
 
-        Set<String> oldHeaderNamesLowerCase =
-                oldHeaders.keySet().stream()
-                        .map(s -> s.toLowerCase(Locale.ROOT))
-                        .collect(Collectors.toSet());
-
+        MultivaluedMap<String, Object> headers = clientRequestContext.getHeaders();
         for (Map.Entry<String, String> e : authHeaders.entrySet()) {
-            if (!oldHeaderNamesLowerCase.contains(e.getKey().toLowerCase(Locale.ROOT))) {
-                request.header(e.getKey(), e.getValue());
+            if (!headers.containsKey(e.getKey())) {
+                headers.putSingle(e.getKey(), e.getValue());
             }
         }
     }

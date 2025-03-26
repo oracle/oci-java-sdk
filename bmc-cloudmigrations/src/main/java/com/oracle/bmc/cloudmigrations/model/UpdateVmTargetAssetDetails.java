@@ -5,25 +5,25 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * Description of the VM target asset. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * Description of the VM target asset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateVmTargetAssetDetails.Builder.class)
+    builder = UpdateVmTargetAssetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateVmTargetAssetDetails extends UpdateTargetAssetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,46 +35,49 @@ public final class UpdateVmTargetAssetDetails extends UpdateTargetAssetDetails {
             this.__explicitlySet__.add("isExcludedFromExecution");
             return this;
         }
-        /** Preferred VM shape type that you provided. */
+        /**
+         * Preferred VM shape type that you provided.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preferredShapeType")
         private VmTargetAsset.PreferredShapeType preferredShapeType;
 
         /**
          * Preferred VM shape type that you provided.
-         *
          * @param preferredShapeType the value to set
          * @return this builder
-         */
+         **/
         public Builder preferredShapeType(VmTargetAsset.PreferredShapeType preferredShapeType) {
             this.preferredShapeType = preferredShapeType;
             this.__explicitlySet__.add("preferredShapeType");
             return this;
         }
-        /** Performance of the block volumes. */
+        /**
+         * Performance of the block volumes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockVolumesPerformance")
         private Integer blockVolumesPerformance;
 
         /**
          * Performance of the block volumes.
-         *
          * @param blockVolumesPerformance the value to set
          * @return this builder
-         */
+         **/
         public Builder blockVolumesPerformance(Integer blockVolumesPerformance) {
             this.blockVolumesPerformance = blockVolumesPerformance;
             this.__explicitlySet__.add("blockVolumesPerformance");
             return this;
         }
-        /** Microsoft license for VM configuration. */
+        /**
+         * Microsoft license for VM configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("msLicense")
         private String msLicense;
 
         /**
          * Microsoft license for VM configuration.
-         *
          * @param msLicense the value to set
          * @return this builder
-         */
+         **/
         public Builder msLicense(String msLicense) {
             this.msLicense = msLicense;
             this.__explicitlySet__.add("msLicense");
@@ -128,7 +131,9 @@ public final class UpdateVmTargetAssetDetails extends UpdateTargetAssetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,41 +156,44 @@ public final class UpdateVmTargetAssetDetails extends UpdateTargetAssetDetails {
         this.userSpec = userSpec;
     }
 
-    /** Preferred VM shape type that you provided. */
+    /**
+     * Preferred VM shape type that you provided.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preferredShapeType")
     private final VmTargetAsset.PreferredShapeType preferredShapeType;
 
     /**
      * Preferred VM shape type that you provided.
-     *
      * @return the value
-     */
+     **/
     public VmTargetAsset.PreferredShapeType getPreferredShapeType() {
         return preferredShapeType;
     }
 
-    /** Performance of the block volumes. */
+    /**
+     * Performance of the block volumes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockVolumesPerformance")
     private final Integer blockVolumesPerformance;
 
     /**
      * Performance of the block volumes.
-     *
      * @return the value
-     */
+     **/
     public Integer getBlockVolumesPerformance() {
         return blockVolumesPerformance;
     }
 
-    /** Microsoft license for VM configuration. */
+    /**
+     * Microsoft license for VM configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("msLicense")
     private final String msLicense;
 
     /**
      * Microsoft license for VM configuration.
-     *
      * @return the value
-     */
+     **/
     public String getMsLicense() {
         return msLicense;
     }
@@ -204,7 +212,6 @@ public final class UpdateVmTargetAssetDetails extends UpdateTargetAssetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,21 +5,20 @@
 package com.oracle.bmc.osubusage.model;
 
 /**
- * Product description <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+ * Product description
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Product.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Product extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Product extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "partNumber",
@@ -50,7 +49,10 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product part number */
+        /**
+         * Product part number
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
         private String partNumber;
 
@@ -59,13 +61,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param partNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder partNumber(String partNumber) {
             this.partNumber = partNumber;
             this.__explicitlySet__.add("partNumber");
             return this;
         }
-        /** Product name */
+        /**
+         * Product name
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
@@ -74,13 +79,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Unit of Measure */
+        /**
+         * Unit of Measure
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
         private String unitOfMeasure;
 
@@ -89,13 +97,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param unitOfMeasure the value to set
          * @return this builder
-         */
+         **/
         public Builder unitOfMeasure(String unitOfMeasure) {
             this.unitOfMeasure = unitOfMeasure;
             this.__explicitlySet__.add("unitOfMeasure");
             return this;
         }
-        /** Product provisioning group */
+        /**
+         * Product provisioning group
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
         private String provisioningGroup;
 
@@ -104,13 +115,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param provisioningGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder provisioningGroup(String provisioningGroup) {
             this.provisioningGroup = provisioningGroup;
             this.__explicitlySet__.add("provisioningGroup");
             return this;
         }
-        /** Metered service billing category */
+        /**
+         * Metered service billing category
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
         private String billingCategory;
 
@@ -119,13 +133,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param billingCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder billingCategory(String billingCategory) {
             this.billingCategory = billingCategory;
             this.__explicitlySet__.add("billingCategory");
             return this;
         }
-        /** Product category */
+        /**
+         * Product category
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
         private String productCategory;
 
@@ -134,13 +151,16 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param productCategory the value to set
          * @return this builder
-         */
+         **/
         public Builder productCategory(String productCategory) {
             this.productCategory = productCategory;
             this.__explicitlySet__.add("productCategory");
             return this;
         }
-        /** Rate card part type of Product */
+        /**
+         * Rate card part type of Product
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
         private String ucmRateCardPartType;
 
@@ -149,7 +169,7 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param ucmRateCardPartType the value to set
          * @return this builder
-         */
+         **/
         public Builder ucmRateCardPartType(String ucmRateCardPartType) {
             this.ucmRateCardPartType = ucmRateCardPartType;
             this.__explicitlySet__.add("ucmRateCardPartType");
@@ -202,7 +222,9 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,7 +233,10 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Product part number */
+    /**
+     * Product part number
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partNumber")
     private final String partNumber;
 
@@ -219,12 +244,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Product part number
      *
      * @return the value
-     */
+     **/
     public String getPartNumber() {
         return partNumber;
     }
 
-    /** Product name */
+    /**
+     * Product name
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
@@ -232,12 +260,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Product name
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Unit of Measure */
+    /**
+     * Unit of Measure
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitOfMeasure")
     private final String unitOfMeasure;
 
@@ -245,12 +276,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Unit of Measure
      *
      * @return the value
-     */
+     **/
     public String getUnitOfMeasure() {
         return unitOfMeasure;
     }
 
-    /** Product provisioning group */
+    /**
+     * Product provisioning group
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("provisioningGroup")
     private final String provisioningGroup;
 
@@ -258,12 +292,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Product provisioning group
      *
      * @return the value
-     */
+     **/
     public String getProvisioningGroup() {
         return provisioningGroup;
     }
 
-    /** Metered service billing category */
+    /**
+     * Metered service billing category
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("billingCategory")
     private final String billingCategory;
 
@@ -271,12 +308,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Metered service billing category
      *
      * @return the value
-     */
+     **/
     public String getBillingCategory() {
         return billingCategory;
     }
 
-    /** Product category */
+    /**
+     * Product category
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("productCategory")
     private final String productCategory;
 
@@ -284,12 +324,15 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Product category
      *
      * @return the value
-     */
+     **/
     public String getProductCategory() {
         return productCategory;
     }
 
-    /** Rate card part type of Product */
+    /**
+     * Rate card part type of Product
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ucmRateCardPartType")
     private final String ucmRateCardPartType;
 
@@ -297,7 +340,7 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
      * Rate card part type of Product
      *
      * @return the value
-     */
+     **/
     public String getUcmRateCardPartType() {
         return ucmRateCardPartType;
     }
@@ -309,7 +352,6 @@ public final class Product extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

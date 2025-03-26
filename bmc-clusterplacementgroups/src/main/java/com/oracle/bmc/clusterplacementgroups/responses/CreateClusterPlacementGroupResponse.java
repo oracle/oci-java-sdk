@@ -6,37 +6,38 @@ package com.oracle.bmc.clusterplacementgroups.responses;
 
 import com.oracle.bmc.clusterplacementgroups.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * The URL for the created cluster placement group. The cluster placement group ID is generated
-     * after this request is sent.
+     * The URL for the created cluster placement group. The cluster placement group ID is generated after this request is sent.
      */
     private String location;
 
     /**
-     * The URL for the created cluster placement group. The cluster placement group ID is generated
-     * after this request is sent.
-     *
+     * The URL for the created cluster placement group. The cluster placement group ID is generated after this request is sent.
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** Same as location. */
+    /**
+     * Same as location.
+     */
     private String contentLocation;
 
     /**
      * Same as location.
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -49,14 +50,13 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its
-     * status.
+     * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
      *
      * @return the value
      */
@@ -65,14 +65,15 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -80,12 +81,13 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
         return opcRequestId;
     }
 
-    /** The returned {@code ClusterPlacementGroup} instance. */
+    /**
+     * The returned ClusterPlacementGroup instance.
+     */
     private com.oracle.bmc.clusterplacementgroups.model.ClusterPlacementGroup clusterPlacementGroup;
 
     /**
-     * The returned {@code ClusterPlacementGroup} instance.
-     *
+     * The returned ClusterPlacementGroup instance.
      * @return the value
      */
     public com.oracle.bmc.clusterplacementgroups.model.ClusterPlacementGroup
@@ -105,7 +107,7 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
     })
     private CreateClusterPlacementGroupResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String location,
             String contentLocation,
             String etag,
@@ -122,35 +124,28 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
         this.clusterPlacementGroup = clusterPlacementGroup;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateClusterPlacementGroupResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * The URL for the created cluster placement group. The cluster placement group ID is
-         * generated after this request is sent.
+         * The URL for the created cluster placement group. The cluster placement group ID is generated after this request is sent.
          */
         private String location;
 
         /**
-         * The URL for the created cluster placement group. The cluster placement group ID is
-         * generated after this request is sent.
-         *
+         * The URL for the created cluster placement group. The cluster placement group ID is generated after this request is sent.
          * @param location the value to set
          * @return this builder
          */
@@ -159,12 +154,13 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** Same as location. */
+        /**
+         * Same as location.
+         */
         private String contentLocation;
 
         /**
          * Same as location.
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -173,7 +169,10 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -188,14 +187,13 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query
-         * its status.
+         * Unique Oracle-assigned identifier for the asynchronous work. You can use this to query its status.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -206,14 +204,15 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -223,13 +222,14 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code ClusterPlacementGroup} instance. */
+        /**
+         * The returned ClusterPlacementGroup instance.
+         */
         private com.oracle.bmc.clusterplacementgroups.model.ClusterPlacementGroup
                 clusterPlacementGroup;
 
         /**
-         * The returned {@code ClusterPlacementGroup} instance.
-         *
+         * The returned ClusterPlacementGroup instance.
          * @param clusterPlacementGroup the value to set
          * @return this builder
          */
@@ -242,10 +242,8 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateClusterPlacementGroupResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -261,10 +259,8 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateClusterPlacementGroupResponse build() {
             return new CreateClusterPlacementGroupResponse(
                     __httpStatusCode__,
@@ -280,7 +276,6 @@ public class CreateClusterPlacementGroupResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

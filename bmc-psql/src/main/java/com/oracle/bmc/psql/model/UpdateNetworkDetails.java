@@ -5,23 +5,21 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Network details for the database system. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Network details for the database system.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateNetworkDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateNetworkDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UpdateNetworkDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpdateNetworkDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"nsgIds", "isReaderEndpointEnabled"})
     public UpdateNetworkDetails(java.util.List<String> nsgIds, Boolean isReaderEndpointEnabled) {
@@ -33,36 +31,32 @@ public final class UpdateNetworkDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of Network Security Group
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the database system.
-         */
+         * List of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * List of Network Security Group
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-         * with the database system.
-         *
+         * List of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
-        /** Specifies if the reader endpoint is enabled on the dbSystem. */
+        /**
+         * Specifies if the reader endpoint is enabled on the dbSystem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
         private Boolean isReaderEndpointEnabled;
 
         /**
          * Specifies if the reader endpoint is enabled on the dbSystem.
-         *
          * @param isReaderEndpointEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isReaderEndpointEnabled(Boolean isReaderEndpointEnabled) {
             this.isReaderEndpointEnabled = isReaderEndpointEnabled;
             this.__explicitlySet__.add("isReaderEndpointEnabled");
@@ -93,7 +87,9 @@ public final class UpdateNetworkDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,33 +99,29 @@ public final class UpdateNetworkDetails
     }
 
     /**
-     * List of Network Security Group
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the database system.
-     */
+     * List of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * List of Network Security Group
-     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated
-     * with the database system.
-     *
+     * List of Network Security Group [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with the database system.
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
-    /** Specifies if the reader endpoint is enabled on the dbSystem. */
+    /**
+     * Specifies if the reader endpoint is enabled on the dbSystem.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
     private final Boolean isReaderEndpointEnabled;
 
     /**
      * Specifies if the reader endpoint is enabled on the dbSystem.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsReaderEndpointEnabled() {
         return isReaderEndpointEnabled;
     }
@@ -141,7 +133,6 @@ public final class UpdateNetworkDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

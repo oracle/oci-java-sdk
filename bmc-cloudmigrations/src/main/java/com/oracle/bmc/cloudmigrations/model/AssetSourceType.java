@@ -5,11 +5,10 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * The type of asset source. Indicates external origin of the assets that are read by assigning this
- * asset source.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
-public enum AssetSourceType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The type of asset source. Indicates external origin of the assets that are read by assigning this asset source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+public enum AssetSourceType {
     Vmware("VMWARE"),
     ;
 

@@ -5,31 +5,35 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The destination bucket for data transferred from the source. For configuration instructions, see
- * [Creating a
- * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+ * The destination bucket for data transferred from the source.
+ * For configuration instructions, see
+ * [Creating a Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectStorageTargetDetails.Builder.class)
+    builder = ObjectStorageTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectStorageTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The namespace. */
+        /**
+         * The namespace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
@@ -38,36 +42,38 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
          *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The name of the bucket. Valid characters are letters (upper or lower case), numbers,
-         * hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an
-         * Object Storage namespace. Avoid entering confidential information. Example:
-         * my-new-bucket1
-         */
+         * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+         * underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+         * Avoid entering confidential information. Example: my-new-bucket1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
-         * The name of the bucket. Valid characters are letters (upper or lower case), numbers,
-         * hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an
-         * Object Storage namespace. Avoid entering confidential information. Example:
-         * my-new-bucket1
+         * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+         * underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+         * Avoid entering confidential information. Example: my-new-bucket1
          *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The prefix of the objects. Avoid entering confidential information. */
+        /**
+         * The prefix of the objects. Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
         private String objectNamePrefix;
 
@@ -76,13 +82,16 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
          *
          * @param objectNamePrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder objectNamePrefix(String objectNamePrefix) {
             this.objectNamePrefix = objectNamePrefix;
             this.__explicitlySet__.add("objectNamePrefix");
             return this;
         }
-        /** The batch rollover size in megabytes. */
+        /**
+         * The batch rollover size in megabytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
         private Integer batchRolloverSizeInMBs;
 
@@ -91,13 +100,16 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
          *
          * @param batchRolloverSizeInMBs the value to set
          * @return this builder
-         */
+         **/
         public Builder batchRolloverSizeInMBs(Integer batchRolloverSizeInMBs) {
             this.batchRolloverSizeInMBs = batchRolloverSizeInMBs;
             this.__explicitlySet__.add("batchRolloverSizeInMBs");
             return this;
         }
-        /** The batch rollover time in milliseconds. */
+        /**
+         * The batch rollover time in milliseconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
         private Integer batchRolloverTimeInMs;
 
@@ -106,7 +118,7 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
          *
          * @param batchRolloverTimeInMs the value to set
          * @return this builder
-         */
+         **/
         public Builder batchRolloverTimeInMs(Integer batchRolloverTimeInMs) {
             this.batchRolloverTimeInMs = batchRolloverTimeInMs;
             this.__explicitlySet__.add("batchRolloverTimeInMs");
@@ -151,7 +163,9 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -175,7 +189,10 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
         this.batchRolloverTimeInMs = batchRolloverTimeInMs;
     }
 
-    /** The namespace. */
+    /**
+     * The namespace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
@@ -183,31 +200,35 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
      * The namespace.
      *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens
-     * (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage
-     * namespace. Avoid entering confidential information. Example: my-new-bucket1
-     */
+     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+     * underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+     * Avoid entering confidential information. Example: my-new-bucket1
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
-     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens
-     * (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage
-     * namespace. Avoid entering confidential information. Example: my-new-bucket1
+     * The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-),
+     * underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace.
+     * Avoid entering confidential information. Example: my-new-bucket1
      *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The prefix of the objects. Avoid entering confidential information. */
+    /**
+     * The prefix of the objects. Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNamePrefix")
     private final String objectNamePrefix;
 
@@ -215,12 +236,15 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
      * The prefix of the objects. Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getObjectNamePrefix() {
         return objectNamePrefix;
     }
 
-    /** The batch rollover size in megabytes. */
+    /**
+     * The batch rollover size in megabytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverSizeInMBs")
     private final Integer batchRolloverSizeInMBs;
 
@@ -228,12 +252,15 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
      * The batch rollover size in megabytes.
      *
      * @return the value
-     */
+     **/
     public Integer getBatchRolloverSizeInMBs() {
         return batchRolloverSizeInMBs;
     }
 
-    /** The batch rollover time in milliseconds. */
+    /**
+     * The batch rollover time in milliseconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchRolloverTimeInMs")
     private final Integer batchRolloverTimeInMs;
 
@@ -241,7 +268,7 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
      * The batch rollover time in milliseconds.
      *
      * @return the value
-     */
+     **/
     public Integer getBatchRolloverTimeInMs() {
         return batchRolloverTimeInMs;
     }
@@ -253,7 +280,6 @@ public final class ObjectStorageTargetDetails extends TargetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

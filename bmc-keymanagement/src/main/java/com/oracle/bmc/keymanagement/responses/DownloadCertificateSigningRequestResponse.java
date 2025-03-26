@@ -6,15 +6,16 @@ package com.oracle.bmc.keymanagement.responses;
 
 import com.oracle.bmc.keymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class DownloadCertificateSigningRequestResponse
         extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
@@ -22,14 +23,15 @@ public class DownloadCertificateSigningRequestResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,12 +39,13 @@ public class DownloadCertificateSigningRequestResponse
         return opcRequestId;
     }
 
-    /** The returned {@code String} instance. */
+    /**
+     * The returned String instance.
+     */
     private String value;
 
     /**
-     * The returned {@code String} instance.
-     *
+     * The returned String instance.
      * @return the value
      */
     public String getValue() {
@@ -58,7 +61,7 @@ public class DownloadCertificateSigningRequestResponse
     })
     private DownloadCertificateSigningRequestResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             String value) {
@@ -68,31 +71,28 @@ public class DownloadCertificateSigningRequestResponse
         this.value = value;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    DownloadCertificateSigningRequestResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -102,14 +102,15 @@ public class DownloadCertificateSigningRequestResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -119,12 +120,13 @@ public class DownloadCertificateSigningRequestResponse
             return this;
         }
 
-        /** The returned {@code String} instance. */
+        /**
+         * The returned String instance.
+         */
         private String value;
 
         /**
-         * The returned {@code String} instance.
-         *
+         * The returned String instance.
          * @param value the value to set
          * @return this builder
          */
@@ -135,10 +137,8 @@ public class DownloadCertificateSigningRequestResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(DownloadCertificateSigningRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +151,8 @@ public class DownloadCertificateSigningRequestResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public DownloadCertificateSigningRequestResponse build() {
             return new DownloadCertificateSigningRequestResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, value);
@@ -163,7 +161,6 @@ public class DownloadCertificateSigningRequestResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

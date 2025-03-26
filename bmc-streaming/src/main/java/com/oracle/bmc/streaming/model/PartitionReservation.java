@@ -5,23 +5,22 @@
 package com.oracle.bmc.streaming.model;
 
 /**
- * Represents the state of a single partition reservation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
+ * Represents the state of a single partition reservation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PartitionReservation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PartitionReservation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PartitionReservation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PartitionReservation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "partition",
@@ -43,61 +42,65 @@ public final class PartitionReservation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The partition for which the reservation applies. */
+        /**
+         * The partition for which the reservation applies.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("partition")
         private String partition;
 
         /**
          * The partition for which the reservation applies.
-         *
          * @param partition the value to set
          * @return this builder
-         */
+         **/
         public Builder partition(String partition) {
             this.partition = partition;
             this.__explicitlySet__.add("partition");
             return this;
         }
-        /** The latest offset which has been committed for this partition. */
+        /**
+         * The latest offset which has been committed for this partition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("committedOffset")
         private Long committedOffset;
 
         /**
          * The latest offset which has been committed for this partition.
-         *
          * @param committedOffset the value to set
          * @return this builder
-         */
+         **/
         public Builder committedOffset(Long committedOffset) {
             this.committedOffset = committedOffset;
             this.__explicitlySet__.add("committedOffset");
             return this;
         }
-        /** The consumer instance which currently has the partition reserved. */
+        /**
+         * The consumer instance which currently has the partition reserved.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("reservedInstance")
         private String reservedInstance;
 
         /**
          * The consumer instance which currently has the partition reserved.
-         *
          * @param reservedInstance the value to set
          * @return this builder
-         */
+         **/
         public Builder reservedInstance(String reservedInstance) {
             this.reservedInstance = reservedInstance;
             this.__explicitlySet__.add("reservedInstance");
             return this;
         }
-        /** A timestamp when the current reservation expires. */
+        /**
+         * A timestamp when the current reservation expires.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReservedUntil")
         private java.util.Date timeReservedUntil;
 
         /**
          * A timestamp when the current reservation expires.
-         *
          * @param timeReservedUntil the value to set
          * @return this builder
-         */
+         **/
         public Builder timeReservedUntil(java.util.Date timeReservedUntil) {
             this.timeReservedUntil = timeReservedUntil;
             this.__explicitlySet__.add("timeReservedUntil");
@@ -138,7 +141,9 @@ public final class PartitionReservation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class PartitionReservation
         return new Builder().copy(this);
     }
 
-    /** The partition for which the reservation applies. */
+    /**
+     * The partition for which the reservation applies.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("partition")
     private final String partition;
 
     /**
      * The partition for which the reservation applies.
-     *
      * @return the value
-     */
+     **/
     public String getPartition() {
         return partition;
     }
 
-    /** The latest offset which has been committed for this partition. */
+    /**
+     * The latest offset which has been committed for this partition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("committedOffset")
     private final Long committedOffset;
 
     /**
      * The latest offset which has been committed for this partition.
-     *
      * @return the value
-     */
+     **/
     public Long getCommittedOffset() {
         return committedOffset;
     }
 
-    /** The consumer instance which currently has the partition reserved. */
+    /**
+     * The consumer instance which currently has the partition reserved.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("reservedInstance")
     private final String reservedInstance;
 
     /**
      * The consumer instance which currently has the partition reserved.
-     *
      * @return the value
-     */
+     **/
     public String getReservedInstance() {
         return reservedInstance;
     }
 
-    /** A timestamp when the current reservation expires. */
+    /**
+     * A timestamp when the current reservation expires.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReservedUntil")
     private final java.util.Date timeReservedUntil;
 
     /**
      * A timestamp when the current reservation expires.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeReservedUntil() {
         return timeReservedUntil;
     }
@@ -206,7 +215,6 @@ public final class PartitionReservation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

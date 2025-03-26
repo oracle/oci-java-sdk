@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.mysql.model;
 
-/** Whether to enable monitoring via the Database Management service. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public enum DatabaseManagementStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Whether to enable monitoring via the Database Management service.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+public enum DatabaseManagementStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

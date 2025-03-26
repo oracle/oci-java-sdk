@@ -5,23 +5,21 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * VMware virtual machine related properties. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * VMware virtual machine related properties.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VmwareVmProperties.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VmwareVmProperties
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VmwareVmProperties.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VmwareVmProperties extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "cluster",
@@ -64,106 +62,113 @@ public final class VmwareVmProperties
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Cluster name. */
+        /**
+         * Cluster name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cluster")
         private String cluster;
 
         /**
          * Cluster name.
-         *
          * @param cluster the value to set
          * @return this builder
-         */
+         **/
         public Builder cluster(String cluster) {
             this.cluster = cluster;
             this.__explicitlySet__.add("cluster");
             return this;
         }
-        /** Customer fields. */
+        /**
+         * Customer fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerFields")
         private java.util.List<String> customerFields;
 
         /**
          * Customer fields.
-         *
          * @param customerFields the value to set
          * @return this builder
-         */
+         **/
         public Builder customerFields(java.util.List<String> customerFields) {
             this.customerFields = customerFields;
             this.__explicitlySet__.add("customerFields");
             return this;
         }
-        /** Customer defined tags. */
+        /**
+         * Customer defined tags.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerTags")
         private java.util.List<CustomerTag> customerTags;
 
         /**
          * Customer defined tags.
-         *
          * @param customerTags the value to set
          * @return this builder
-         */
+         **/
         public Builder customerTags(java.util.List<CustomerTag> customerTags) {
             this.customerTags = customerTags;
             this.__explicitlySet__.add("customerTags");
             return this;
         }
-        /** vCenter-specific identifier of the virtual machine. */
+        /**
+         * vCenter-specific identifier of the virtual machine.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceUuid")
         private String instanceUuid;
 
         /**
          * vCenter-specific identifier of the virtual machine.
-         *
          * @param instanceUuid the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceUuid(String instanceUuid) {
             this.instanceUuid = instanceUuid;
             this.__explicitlySet__.add("instanceUuid");
             return this;
         }
-        /** Path directory of the asset. */
+        /**
+         * Path directory of the asset.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Path directory of the asset.
-         *
          * @param path the value to set
          * @return this builder
-         */
+         **/
         public Builder path(String path) {
             this.path = path;
             this.__explicitlySet__.add("path");
             return this;
         }
-        /** VMware tools status. */
+        /**
+         * VMware tools status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmwareToolsStatus")
         private String vmwareToolsStatus;
 
         /**
          * VMware tools status.
-         *
          * @param vmwareToolsStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder vmwareToolsStatus(String vmwareToolsStatus) {
             this.vmwareToolsStatus = vmwareToolsStatus;
             this.__explicitlySet__.add("vmwareToolsStatus");
             return this;
         }
-        /** Whether changed block tracking for this VM's disk is active. */
+        /**
+         * Whether changed block tracking for this VM's disk is active.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisksUuidEnabled")
         private Boolean isDisksUuidEnabled;
 
         /**
          * Whether changed block tracking for this VM's disk is active.
-         *
          * @param isDisksUuidEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisksUuidEnabled(Boolean isDisksUuidEnabled) {
             this.isDisksUuidEnabled = isDisksUuidEnabled;
             this.__explicitlySet__.add("isDisksUuidEnabled");
@@ -171,65 +176,67 @@ public final class VmwareVmProperties
         }
         /**
          * Indicates that change tracking is supported for virtual disks of this virtual machine.
-         * However, even if change tracking is supported, it might not be available for all disks of
-         * the virtual machine.
-         */
+         * However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDisksCbtEnabled")
         private Boolean isDisksCbtEnabled;
 
         /**
          * Indicates that change tracking is supported for virtual disks of this virtual machine.
-         * However, even if change tracking is supported, it might not be available for all disks of
-         * the virtual machine.
+         * However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
          *
          * @param isDisksCbtEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDisksCbtEnabled(Boolean isDisksCbtEnabled) {
             this.isDisksCbtEnabled = isDisksCbtEnabled;
             this.__explicitlySet__.add("isDisksCbtEnabled");
             return this;
         }
-        /** Fault tolerance state. */
+        /**
+         * Fault tolerance state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceState")
         private String faultToleranceState;
 
         /**
          * Fault tolerance state.
-         *
          * @param faultToleranceState the value to set
          * @return this builder
-         */
+         **/
         public Builder faultToleranceState(String faultToleranceState) {
             this.faultToleranceState = faultToleranceState;
             this.__explicitlySet__.add("faultToleranceState");
             return this;
         }
-        /** Fault tolerance bandwidth. */
+        /**
+         * Fault tolerance bandwidth.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceBandwidth")
         private Integer faultToleranceBandwidth;
 
         /**
          * Fault tolerance bandwidth.
-         *
          * @param faultToleranceBandwidth the value to set
          * @return this builder
-         */
+         **/
         public Builder faultToleranceBandwidth(Integer faultToleranceBandwidth) {
             this.faultToleranceBandwidth = faultToleranceBandwidth;
             this.__explicitlySet__.add("faultToleranceBandwidth");
             return this;
         }
-        /** Fault tolerance to secondary latency. */
+        /**
+         * Fault tolerance to secondary latency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceSecondaryLatency")
         private Integer faultToleranceSecondaryLatency;
 
         /**
          * Fault tolerance to secondary latency.
-         *
          * @param faultToleranceSecondaryLatency the value to set
          * @return this builder
-         */
+         **/
         public Builder faultToleranceSecondaryLatency(Integer faultToleranceSecondaryLatency) {
             this.faultToleranceSecondaryLatency = faultToleranceSecondaryLatency;
             this.__explicitlySet__.add("faultToleranceSecondaryLatency");
@@ -298,7 +305,9 @@ public final class VmwareVmProperties
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -307,151 +316,160 @@ public final class VmwareVmProperties
         return new Builder().copy(this);
     }
 
-    /** Cluster name. */
+    /**
+     * Cluster name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cluster")
     private final String cluster;
 
     /**
      * Cluster name.
-     *
      * @return the value
-     */
+     **/
     public String getCluster() {
         return cluster;
     }
 
-    /** Customer fields. */
+    /**
+     * Customer fields.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerFields")
     private final java.util.List<String> customerFields;
 
     /**
      * Customer fields.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCustomerFields() {
         return customerFields;
     }
 
-    /** Customer defined tags. */
+    /**
+     * Customer defined tags.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerTags")
     private final java.util.List<CustomerTag> customerTags;
 
     /**
      * Customer defined tags.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CustomerTag> getCustomerTags() {
         return customerTags;
     }
 
-    /** vCenter-specific identifier of the virtual machine. */
+    /**
+     * vCenter-specific identifier of the virtual machine.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceUuid")
     private final String instanceUuid;
 
     /**
      * vCenter-specific identifier of the virtual machine.
-     *
      * @return the value
-     */
+     **/
     public String getInstanceUuid() {
         return instanceUuid;
     }
 
-    /** Path directory of the asset. */
+    /**
+     * Path directory of the asset.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Path directory of the asset.
-     *
      * @return the value
-     */
+     **/
     public String getPath() {
         return path;
     }
 
-    /** VMware tools status. */
+    /**
+     * VMware tools status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmwareToolsStatus")
     private final String vmwareToolsStatus;
 
     /**
      * VMware tools status.
-     *
      * @return the value
-     */
+     **/
     public String getVmwareToolsStatus() {
         return vmwareToolsStatus;
     }
 
-    /** Whether changed block tracking for this VM's disk is active. */
+    /**
+     * Whether changed block tracking for this VM's disk is active.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisksUuidEnabled")
     private final Boolean isDisksUuidEnabled;
 
     /**
      * Whether changed block tracking for this VM's disk is active.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDisksUuidEnabled() {
         return isDisksUuidEnabled;
     }
 
     /**
      * Indicates that change tracking is supported for virtual disks of this virtual machine.
-     * However, even if change tracking is supported, it might not be available for all disks of the
-     * virtual machine.
-     */
+     * However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDisksCbtEnabled")
     private final Boolean isDisksCbtEnabled;
 
     /**
      * Indicates that change tracking is supported for virtual disks of this virtual machine.
-     * However, even if change tracking is supported, it might not be available for all disks of the
-     * virtual machine.
+     * However, even if change tracking is supported, it might not be available for all disks of the virtual machine.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsDisksCbtEnabled() {
         return isDisksCbtEnabled;
     }
 
-    /** Fault tolerance state. */
+    /**
+     * Fault tolerance state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceState")
     private final String faultToleranceState;
 
     /**
      * Fault tolerance state.
-     *
      * @return the value
-     */
+     **/
     public String getFaultToleranceState() {
         return faultToleranceState;
     }
 
-    /** Fault tolerance bandwidth. */
+    /**
+     * Fault tolerance bandwidth.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceBandwidth")
     private final Integer faultToleranceBandwidth;
 
     /**
      * Fault tolerance bandwidth.
-     *
      * @return the value
-     */
+     **/
     public Integer getFaultToleranceBandwidth() {
         return faultToleranceBandwidth;
     }
 
-    /** Fault tolerance to secondary latency. */
+    /**
+     * Fault tolerance to secondary latency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultToleranceSecondaryLatency")
     private final Integer faultToleranceSecondaryLatency;
 
     /**
      * Fault tolerance to secondary latency.
-     *
      * @return the value
-     */
+     **/
     public Integer getFaultToleranceSecondaryLatency() {
         return faultToleranceSecondaryLatency;
     }
@@ -463,7 +481,6 @@ public final class VmwareVmProperties
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

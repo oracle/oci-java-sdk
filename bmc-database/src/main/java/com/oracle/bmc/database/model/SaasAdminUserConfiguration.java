@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * SaaS administrative user configuration. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * SaaS administrative user configuration.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SaasAdminUserConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SaasAdminUserConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SaasAdminUserConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "password",
@@ -53,133 +52,112 @@ public final class SaasAdminUserConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A strong password for SaaS administrative user. The password must be a minimum of nine
-         * (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2)
-         * numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
-         */
+         * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * A strong password for SaaS administrative user. The password must be a minimum of nine
-         * (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2)
-         * numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
-         *
+         * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Cloud Infrastructure
-         * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Oracle Cloud Infrastructure
-         * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          * @param secretId the value to set
          * @return this builder
-         */
+         **/
         public Builder secretId(String secretId) {
             this.secretId = secretId;
             this.__explicitlySet__.add("secretId");
             return this;
         }
         /**
-         * The version of the vault secret. If no version is specified, the latest version will be
-         * used.
-         */
+         * The version of the vault secret. If no version is specified, the latest version will be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
         private Integer secretVersionNumber;
 
         /**
-         * The version of the vault secret. If no version is specified, the latest version will be
-         * used.
-         *
+         * The version of the vault secret. If no version is specified, the latest version will be used.
          * @param secretVersionNumber the value to set
          * @return this builder
-         */
+         **/
         public Builder secretVersionNumber(Integer secretVersionNumber) {
             this.secretVersionNumber = secretVersionNumber;
             this.__explicitlySet__.add("secretVersionNumber");
             return this;
         }
         /**
-         * How long, in hours, the SaaS administrative user will stay enabled. If no duration is
-         * specified, the default value 1 will be used.
-         */
+         * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private Integer duration;
 
         /**
-         * How long, in hours, the SaaS administrative user will stay enabled. If no duration is
-         * specified, the default value 1 will be used.
-         *
+         * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
          * @param duration the value to set
          * @return this builder
-         */
+         **/
         public Builder duration(Integer duration) {
             this.duration = duration;
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /** Indicates if the SaaS administrative user is enabled for the Autonomous Database. */
+        /**
+         * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The access type for the SaaS administrative user. If no access type is specified, the
-         * READ_ONLY access type is used.
-         */
+         * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessType")
         private AccessType accessType;
 
         /**
-         * The access type for the SaaS administrative user. If no access type is specified, the
-         * READ_ONLY access type is used.
-         *
+         * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
          * @param accessType the value to set
          * @return this builder
-         */
+         **/
         public Builder accessType(AccessType accessType) {
             this.accessType = accessType;
             this.__explicitlySet__.add("accessType");
             return this;
         }
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous
-         * Database.
-         */
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
         private java.util.Date timeSaasAdminUserEnabled;
 
         /**
-         * The date and time the SaaS administrative user was enabled at, for the Autonomous
-         * Database.
-         *
+         * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
          * @param timeSaasAdminUserEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSaasAdminUserEnabled(java.util.Date timeSaasAdminUserEnabled) {
             this.timeSaasAdminUserEnabled = timeSaasAdminUserEnabled;
             this.__explicitlySet__.add("timeSaasAdminUserEnabled");
@@ -232,7 +210,9 @@ public final class SaasAdminUserConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -242,93 +222,79 @@ public final class SaasAdminUserConfiguration
     }
 
     /**
-     * A strong password for SaaS administrative user. The password must be a minimum of nine (9)
-     * characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers,
-     * and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
-     */
+     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * A strong password for SaaS administrative user. The password must be a minimum of nine (9)
-     * characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers,
-     * and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
-     *
+     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \\# (hashtag), or - (dash).
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Cloud Infrastructure
-     * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretId")
     private final String secretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Oracle Cloud Infrastructure
-     * [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
      * @return the value
-     */
+     **/
     public String getSecretId() {
         return secretId;
     }
 
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("secretVersionNumber")
     private final Integer secretVersionNumber;
 
     /**
      * The version of the vault secret. If no version is specified, the latest version will be used.
-     *
      * @return the value
-     */
+     **/
     public Integer getSecretVersionNumber() {
         return secretVersionNumber;
     }
 
     /**
-     * How long, in hours, the SaaS administrative user will stay enabled. If no duration is
-     * specified, the default value 1 will be used.
-     */
+     * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final Integer duration;
 
     /**
-     * How long, in hours, the SaaS administrative user will stay enabled. If no duration is
-     * specified, the default value 1 will be used.
-     *
+     * How long, in hours, the SaaS administrative user will stay enabled. If no duration is specified, the default value 1 will be used.
      * @return the value
-     */
+     **/
     public Integer getDuration() {
         return duration;
     }
 
-    /** Indicates if the SaaS administrative user is enabled for the Autonomous Database. */
+    /**
+     * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * Indicates if the SaaS administrative user is enabled for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The access type for the SaaS administrative user. If no access type is specified, the
-     * READ_ONLY access type is used.
-     */
-    public enum AccessType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
+     **/
+    public enum AccessType {
         ReadOnly("READ_ONLY"),
         ReadWrite("READ_WRITE"),
         Admin("ADMIN"),
@@ -362,33 +328,29 @@ public final class SaasAdminUserConfiguration
         }
     };
     /**
-     * The access type for the SaaS administrative user. If no access type is specified, the
-     * READ_ONLY access type is used.
-     */
+     * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessType")
     private final AccessType accessType;
 
     /**
-     * The access type for the SaaS administrative user. If no access type is specified, the
-     * READ_ONLY access type is used.
-     *
+     * The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
      * @return the value
-     */
+     **/
     public AccessType getAccessType() {
         return accessType;
     }
 
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSaasAdminUserEnabled")
     private final java.util.Date timeSaasAdminUserEnabled;
 
     /**
      * The date and time the SaaS administrative user was enabled at, for the Autonomous Database.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSaasAdminUserEnabled() {
         return timeSaasAdminUserEnabled;
     }
@@ -400,7 +362,6 @@ public final class SaasAdminUserConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Action on existing tables, if Initial Load is true. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum InitialLoadAction implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Action on existing tables, if Initial Load is true.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum InitialLoadAction {
     Truncate("TRUNCATE"),
     Replace("REPLACE"),
     Append("APPEND"),

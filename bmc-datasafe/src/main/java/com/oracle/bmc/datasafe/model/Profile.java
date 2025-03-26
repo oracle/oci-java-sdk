@@ -5,25 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * The comprehensive information about the user profiles available on a given target. It includes
- * details such as profile name, failed login attempts, password reuse time, password verification
- * function, password verification function implementation code snippet, sessions per user, connect
- * time inactive account time, password lock time, cpu usage per session, target id, and compartment
- * id. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * The comprehensive information about the user profiles available on a given target.
+ * It includes details such as profile name, failed login attempts, password reuse time, password verification function,
+ * password verification function implementation code snippet, sessions per user, connect time inactive account time,
+ * password lock time, cpu usage per session, target id, and compartment id.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Profile.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Profile extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Profile extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "userAssessmentId",
@@ -114,246 +112,258 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the user assessment corresponding to the target under consideration. */
+        /**
+         * The OCID of the user assessment corresponding to the target under consideration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userAssessmentId")
         private String userAssessmentId;
 
         /**
          * The OCID of the user assessment corresponding to the target under consideration.
-         *
          * @param userAssessmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder userAssessmentId(String userAssessmentId) {
             this.userAssessmentId = userAssessmentId;
             this.__explicitlySet__.add("userAssessmentId");
             return this;
         }
-        /** The OCID of the compartment that contains the user assessment. */
+        /**
+         * The OCID of the compartment that contains the user assessment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment that contains the user assessment.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the target database. */
+        /**
+         * The OCID of the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * The OCID of the target database.
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The name of the profile. */
+        /**
+         * The name of the profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profileName")
         private String profileName;
 
         /**
          * The name of the profile.
-         *
          * @param profileName the value to set
          * @return this builder
-         */
+         **/
         public Builder profileName(String profileName) {
             this.profileName = profileName;
             this.__explicitlySet__.add("profileName");
             return this;
         }
-        /** The number of users that have a given profile. */
+        /**
+         * The number of users that have a given profile.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userCount")
         private Integer userCount;
 
         /**
          * The number of users that have a given profile.
-         *
          * @param userCount the value to set
          * @return this builder
-         */
+         **/
         public Builder userCount(Integer userCount) {
             this.userCount = userCount;
             this.__explicitlySet__.add("userCount");
             return this;
         }
-        /** Maximum times the user is allowed in fail login before the user account is locked. */
+        /**
+         * Maximum times the user is allowed in fail login before the user account is locked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
         private String failedLoginAttempts;
 
         /**
          * Maximum times the user is allowed in fail login before the user account is locked.
-         *
          * @param failedLoginAttempts the value to set
          * @return this builder
-         */
+         **/
         public Builder failedLoginAttempts(String failedLoginAttempts) {
             this.failedLoginAttempts = failedLoginAttempts;
             this.__explicitlySet__.add("failedLoginAttempts");
             return this;
         }
-        /** Name of the PL/SQL that can be used for password verification. */
+        /**
+         * Name of the PL/SQL that can be used for password verification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunction")
         private String passwordVerificationFunction;
 
         /**
          * Name of the PL/SQL that can be used for password verification.
-         *
          * @param passwordVerificationFunction the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVerificationFunction(String passwordVerificationFunction) {
             this.passwordVerificationFunction = passwordVerificationFunction;
             this.__explicitlySet__.add("passwordVerificationFunction");
             return this;
         }
-        /** Details about the PL/SQL that can be used for password verification. */
+        /**
+         * Details about the PL/SQL that can be used for password verification.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunctionDetails")
         private String passwordVerificationFunctionDetails;
 
         /**
          * Details about the PL/SQL that can be used for password verification.
-         *
          * @param passwordVerificationFunctionDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVerificationFunctionDetails(
                 String passwordVerificationFunctionDetails) {
             this.passwordVerificationFunctionDetails = passwordVerificationFunctionDetails;
             this.__explicitlySet__.add("passwordVerificationFunctionDetails");
             return this;
         }
-        /** Number of days the user account remains locked after failed login. */
+        /**
+         * Number of days the user account remains locked after failed login.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
         private String passwordLockTime;
 
         /**
          * Number of days the user account remains locked after failed login.
-         *
          * @param passwordLockTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordLockTime(String passwordLockTime) {
             this.passwordLockTime = passwordLockTime;
             this.__explicitlySet__.add("passwordLockTime");
             return this;
         }
-        /** Number of days the password is valid before expiry. */
+        /**
+         * Number of days the password is valid before expiry.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordLifeTime")
         private String passwordLifeTime;
 
         /**
          * Number of days the password is valid before expiry.
-         *
          * @param passwordLifeTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordLifeTime(String passwordLifeTime) {
             this.passwordLifeTime = passwordLifeTime;
             this.__explicitlySet__.add("passwordLifeTime");
             return this;
         }
-        /** Number of day after the user can use the already used password. */
+        /**
+         * Number of day after the user can use the already used password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseMax")
         private String passwordReuseMax;
 
         /**
          * Number of day after the user can use the already used password.
-         *
          * @param passwordReuseMax the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordReuseMax(String passwordReuseMax) {
             this.passwordReuseMax = passwordReuseMax;
             this.__explicitlySet__.add("passwordReuseMax");
             return this;
         }
-        /** Number of days before which a password cannot be reused. */
+        /**
+         * Number of days before which a password cannot be reused.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseTime")
         private String passwordReuseTime;
 
         /**
          * Number of days before which a password cannot be reused.
-         *
          * @param passwordReuseTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordReuseTime(String passwordReuseTime) {
             this.passwordReuseTime = passwordReuseTime;
             this.__explicitlySet__.add("passwordReuseTime");
             return this;
         }
         /**
-         * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour)
-         * to 60 days.
-         */
+         * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordRolloverTime")
         private String passwordRolloverTime;
 
         /**
-         * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour)
-         * to 60 days.
-         *
+         * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
          * @param passwordRolloverTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordRolloverTime(String passwordRolloverTime) {
             this.passwordRolloverTime = passwordRolloverTime;
             this.__explicitlySet__.add("passwordRolloverTime");
             return this;
         }
-        /** Number of grace days for user to change password. */
+        /**
+         * Number of grace days for user to change password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordGraceTime")
         private String passwordGraceTime;
 
         /**
          * Number of grace days for user to change password.
-         *
          * @param passwordGraceTime the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordGraceTime(String passwordGraceTime) {
             this.passwordGraceTime = passwordGraceTime;
             this.__explicitlySet__.add("passwordGraceTime");
             return this;
         }
-        /** Represents if the profile is created by user. */
+        /**
+         * Represents if the profile is created by user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUserCreated")
         private Boolean isUserCreated;
 
         /**
          * Represents if the profile is created by user.
-         *
          * @param isUserCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder isUserCreated(Boolean isUserCreated) {
             this.isUserCreated = isUserCreated;
             this.__explicitlySet__.add("isUserCreated");
             return this;
         }
-        /** Specify the number of concurrent sessions to which you want to limit the user. */
+        /**
+         * Specify the number of concurrent sessions to which you want to limit the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sessionsPerUser")
         private String sessionsPerUser;
 
         /**
          * Specify the number of concurrent sessions to which you want to limit the user.
-         *
          * @param sessionsPerUser the value to set
          * @return this builder
-         */
+         **/
         public Builder sessionsPerUser(String sessionsPerUser) {
             this.sessionsPerUser = sessionsPerUser;
             this.__explicitlySet__.add("sessionsPerUser");
@@ -362,7 +372,8 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         /**
          * The permitted periods of continuous inactive time during a session, expressed in minutes.
          * Long-running queries and other operations are not subject to this limit.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
         private String inactiveAccountTime;
 
@@ -372,201 +383,185 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param inactiveAccountTime the value to set
          * @return this builder
-         */
+         **/
         public Builder inactiveAccountTime(String inactiveAccountTime) {
             this.inactiveAccountTime = inactiveAccountTime;
             this.__explicitlySet__.add("inactiveAccountTime");
             return this;
         }
-        /** Specify the total elapsed time limit for a session, expressed in minutes. */
+        /**
+         * Specify the total elapsed time limit for a session, expressed in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectTime")
         private String connectTime;
 
         /**
          * Specify the total elapsed time limit for a session, expressed in minutes.
-         *
          * @param connectTime the value to set
          * @return this builder
-         */
+         **/
         public Builder connectTime(String connectTime) {
             this.connectTime = connectTime;
             this.__explicitlySet__.add("connectTime");
             return this;
         }
         /**
-         * Specify the permitted periods of continuous inactive time during a session, expressed in
-         * minutes.
-         */
+         * Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTime")
         private String idleTime;
 
         /**
-         * Specify the permitted periods of continuous inactive time during a session, expressed in
-         * minutes.
-         *
+         * Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
          * @param idleTime the value to set
          * @return this builder
-         */
+         **/
         public Builder idleTime(String idleTime) {
             this.idleTime = idleTime;
             this.__explicitlySet__.add("idleTime");
             return this;
         }
         /**
-         * Specify the total resource cost for a session, expressed in service units. Oracle
-         * Database calculates the total service units as a weighted sum of CPU_PER_SESSION,
-         * CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
-         */
+         * Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total
+         * service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compositeLimit")
         private String compositeLimit;
 
         /**
-         * Specify the total resource cost for a session, expressed in service units. Oracle
-         * Database calculates the total service units as a weighted sum of CPU_PER_SESSION,
-         * CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+         * Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total
+         * service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
          *
          * @param compositeLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder compositeLimit(String compositeLimit) {
             this.compositeLimit = compositeLimit;
             this.__explicitlySet__.add("compositeLimit");
             return this;
         }
         /**
-         * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in
-         * hundredths of seconds.
-         */
+         * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuPerCall")
         private String cpuPerCall;
 
         /**
-         * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in
-         * hundredths of seconds.
-         *
+         * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
          * @param cpuPerCall the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuPerCall(String cpuPerCall) {
             this.cpuPerCall = cpuPerCall;
             this.__explicitlySet__.add("cpuPerCall");
             return this;
         }
-        /** Specify the CPU time limit for a session, expressed in hundredth of seconds. */
+        /**
+         * Specify the CPU time limit for a session, expressed in hundredth of seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuPerSession")
         private String cpuPerSession;
 
         /**
          * Specify the CPU time limit for a session, expressed in hundredth of seconds.
-         *
          * @param cpuPerSession the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuPerSession(String cpuPerSession) {
             this.cpuPerSession = cpuPerSession;
             this.__explicitlySet__.add("cpuPerSession");
             return this;
         }
         /**
-         * Specify the permitted the number of data blocks read for a call to process a SQL
-         * statement (a parse, execute, or fetch).
-         */
+         * Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logicalReadsPerCall")
         private String logicalReadsPerCall;
 
         /**
-         * Specify the permitted the number of data blocks read for a call to process a SQL
-         * statement (a parse, execute, or fetch).
-         *
+         * Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
          * @param logicalReadsPerCall the value to set
          * @return this builder
-         */
+         **/
         public Builder logicalReadsPerCall(String logicalReadsPerCall) {
             this.logicalReadsPerCall = logicalReadsPerCall;
             this.__explicitlySet__.add("logicalReadsPerCall");
             return this;
         }
         /**
-         * Specify the permitted number of data blocks read in a session, including blocks read from
-         * memory and disk.
-         */
+         * Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logicalReadsPerSession")
         private String logicalReadsPerSession;
 
         /**
-         * Specify the permitted number of data blocks read in a session, including blocks read from
-         * memory and disk.
-         *
+         * Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
          * @param logicalReadsPerSession the value to set
          * @return this builder
-         */
+         **/
         public Builder logicalReadsPerSession(String logicalReadsPerSession) {
             this.logicalReadsPerSession = logicalReadsPerSession;
             this.__explicitlySet__.add("logicalReadsPerSession");
             return this;
         }
         /**
-         * Specify the amount of private space a session can allocate in the shared pool of the
-         * system global area (SGA), expressed in bytes.
-         */
+         * Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA),
+         * expressed in bytes.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateSga")
         private String privateSga;
 
         /**
-         * Specify the amount of private space a session can allocate in the shared pool of the
-         * system global area (SGA), expressed in bytes.
+         * Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA),
+         * expressed in bytes.
          *
          * @param privateSga the value to set
          * @return this builder
-         */
+         **/
         public Builder privateSga(String privateSga) {
             this.privateSga = privateSga;
             this.__explicitlySet__.add("privateSga");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
-         * {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -701,7 +696,9 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -710,214 +707,226 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the user assessment corresponding to the target under consideration. */
+    /**
+     * The OCID of the user assessment corresponding to the target under consideration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userAssessmentId")
     private final String userAssessmentId;
 
     /**
      * The OCID of the user assessment corresponding to the target under consideration.
-     *
      * @return the value
-     */
+     **/
     public String getUserAssessmentId() {
         return userAssessmentId;
     }
 
-    /** The OCID of the compartment that contains the user assessment. */
+    /**
+     * The OCID of the compartment that contains the user assessment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment that contains the user assessment.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The OCID of the target database. */
+    /**
+     * The OCID of the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * The OCID of the target database.
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** The name of the profile. */
+    /**
+     * The name of the profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profileName")
     private final String profileName;
 
     /**
      * The name of the profile.
-     *
      * @return the value
-     */
+     **/
     public String getProfileName() {
         return profileName;
     }
 
-    /** The number of users that have a given profile. */
+    /**
+     * The number of users that have a given profile.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userCount")
     private final Integer userCount;
 
     /**
      * The number of users that have a given profile.
-     *
      * @return the value
-     */
+     **/
     public Integer getUserCount() {
         return userCount;
     }
 
-    /** Maximum times the user is allowed in fail login before the user account is locked. */
+    /**
+     * Maximum times the user is allowed in fail login before the user account is locked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failedLoginAttempts")
     private final String failedLoginAttempts;
 
     /**
      * Maximum times the user is allowed in fail login before the user account is locked.
-     *
      * @return the value
-     */
+     **/
     public String getFailedLoginAttempts() {
         return failedLoginAttempts;
     }
 
-    /** Name of the PL/SQL that can be used for password verification. */
+    /**
+     * Name of the PL/SQL that can be used for password verification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunction")
     private final String passwordVerificationFunction;
 
     /**
      * Name of the PL/SQL that can be used for password verification.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordVerificationFunction() {
         return passwordVerificationFunction;
     }
 
-    /** Details about the PL/SQL that can be used for password verification. */
+    /**
+     * Details about the PL/SQL that can be used for password verification.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVerificationFunctionDetails")
     private final String passwordVerificationFunctionDetails;
 
     /**
      * Details about the PL/SQL that can be used for password verification.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordVerificationFunctionDetails() {
         return passwordVerificationFunctionDetails;
     }
 
-    /** Number of days the user account remains locked after failed login. */
+    /**
+     * Number of days the user account remains locked after failed login.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLockTime")
     private final String passwordLockTime;
 
     /**
      * Number of days the user account remains locked after failed login.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordLockTime() {
         return passwordLockTime;
     }
 
-    /** Number of days the password is valid before expiry. */
+    /**
+     * Number of days the password is valid before expiry.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordLifeTime")
     private final String passwordLifeTime;
 
     /**
      * Number of days the password is valid before expiry.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordLifeTime() {
         return passwordLifeTime;
     }
 
-    /** Number of day after the user can use the already used password. */
+    /**
+     * Number of day after the user can use the already used password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseMax")
     private final String passwordReuseMax;
 
     /**
      * Number of day after the user can use the already used password.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordReuseMax() {
         return passwordReuseMax;
     }
 
-    /** Number of days before which a password cannot be reused. */
+    /**
+     * Number of days before which a password cannot be reused.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordReuseTime")
     private final String passwordReuseTime;
 
     /**
      * Number of days before which a password cannot be reused.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordReuseTime() {
         return passwordReuseTime;
     }
 
     /**
-     * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60
-     * days.
-     */
+     * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordRolloverTime")
     private final String passwordRolloverTime;
 
     /**
-     * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60
-     * days.
-     *
+     * Number of days the password rollover is allowed. Minimum value can be 1/24 day (1 hour) to 60 days.
      * @return the value
-     */
+     **/
     public String getPasswordRolloverTime() {
         return passwordRolloverTime;
     }
 
-    /** Number of grace days for user to change password. */
+    /**
+     * Number of grace days for user to change password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordGraceTime")
     private final String passwordGraceTime;
 
     /**
      * Number of grace days for user to change password.
-     *
      * @return the value
-     */
+     **/
     public String getPasswordGraceTime() {
         return passwordGraceTime;
     }
 
-    /** Represents if the profile is created by user. */
+    /**
+     * Represents if the profile is created by user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUserCreated")
     private final Boolean isUserCreated;
 
     /**
      * Represents if the profile is created by user.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUserCreated() {
         return isUserCreated;
     }
 
-    /** Specify the number of concurrent sessions to which you want to limit the user. */
+    /**
+     * Specify the number of concurrent sessions to which you want to limit the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sessionsPerUser")
     private final String sessionsPerUser;
 
     /**
      * Specify the number of concurrent sessions to which you want to limit the user.
-     *
      * @return the value
-     */
+     **/
     public String getSessionsPerUser() {
         return sessionsPerUser;
     }
@@ -925,7 +934,8 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
     /**
      * The permitted periods of continuous inactive time during a session, expressed in minutes.
      * Long-running queries and other operations are not subject to this limit.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inactiveAccountTime")
     private final String inactiveAccountTime;
 
@@ -934,181 +944,165 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
      * Long-running queries and other operations are not subject to this limit.
      *
      * @return the value
-     */
+     **/
     public String getInactiveAccountTime() {
         return inactiveAccountTime;
     }
 
-    /** Specify the total elapsed time limit for a session, expressed in minutes. */
+    /**
+     * Specify the total elapsed time limit for a session, expressed in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectTime")
     private final String connectTime;
 
     /**
      * Specify the total elapsed time limit for a session, expressed in minutes.
-     *
      * @return the value
-     */
+     **/
     public String getConnectTime() {
         return connectTime;
     }
 
     /**
-     * Specify the permitted periods of continuous inactive time during a session, expressed in
-     * minutes.
-     */
+     * Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTime")
     private final String idleTime;
 
     /**
-     * Specify the permitted periods of continuous inactive time during a session, expressed in
-     * minutes.
-     *
+     * Specify the permitted periods of continuous inactive time during a  session, expressed in minutes.
      * @return the value
-     */
+     **/
     public String getIdleTime() {
         return idleTime;
     }
 
     /**
-     * Specify the total resource cost for a session, expressed in service units. Oracle Database
-     * calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME,
-     * LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
-     */
+     * Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total
+     * service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compositeLimit")
     private final String compositeLimit;
 
     /**
-     * Specify the total resource cost for a session, expressed in service units. Oracle Database
-     * calculates the total service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME,
-     * LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
+     * Specify the total resource cost for a session, expressed in service units. Oracle Database calculates the total
+     * service units as a weighted sum of CPU_PER_SESSION, CONNECT_TIME, LOGICAL_READS_PER_SESSION, and PRIVATE_SGA.
      *
      * @return the value
-     */
+     **/
     public String getCompositeLimit() {
         return compositeLimit;
     }
 
     /**
-     * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths
-     * of seconds.
-     */
+     * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuPerCall")
     private final String cpuPerCall;
 
     /**
-     * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths
-     * of seconds.
-     *
+     * Specify the CPU time limit for a call (a parse, execute, or fetch), expressed in hundredths of seconds.
      * @return the value
-     */
+     **/
     public String getCpuPerCall() {
         return cpuPerCall;
     }
 
-    /** Specify the CPU time limit for a session, expressed in hundredth of seconds. */
+    /**
+     * Specify the CPU time limit for a session, expressed in hundredth of seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuPerSession")
     private final String cpuPerSession;
 
     /**
      * Specify the CPU time limit for a session, expressed in hundredth of seconds.
-     *
      * @return the value
-     */
+     **/
     public String getCpuPerSession() {
         return cpuPerSession;
     }
 
     /**
-     * Specify the permitted the number of data blocks read for a call to process a SQL statement (a
-     * parse, execute, or fetch).
-     */
+     * Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logicalReadsPerCall")
     private final String logicalReadsPerCall;
 
     /**
-     * Specify the permitted the number of data blocks read for a call to process a SQL statement (a
-     * parse, execute, or fetch).
-     *
+     * Specify the permitted the number of data blocks read for a call to process a SQL statement (a parse, execute, or fetch).
      * @return the value
-     */
+     **/
     public String getLogicalReadsPerCall() {
         return logicalReadsPerCall;
     }
 
     /**
-     * Specify the permitted number of data blocks read in a session, including blocks read from
-     * memory and disk.
-     */
+     * Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logicalReadsPerSession")
     private final String logicalReadsPerSession;
 
     /**
-     * Specify the permitted number of data blocks read in a session, including blocks read from
-     * memory and disk.
-     *
+     * Specify the permitted number of data blocks read in a session, including blocks read from memory and disk.
      * @return the value
-     */
+     **/
     public String getLogicalReadsPerSession() {
         return logicalReadsPerSession;
     }
 
     /**
-     * Specify the amount of private space a session can allocate in the shared pool of the system
-     * global area (SGA), expressed in bytes.
-     */
+     * Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA),
+     * expressed in bytes.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateSga")
     private final String privateSga;
 
     /**
-     * Specify the amount of private space a session can allocate in the shared pool of the system
-     * global area (SGA), expressed in bytes.
+     * Specify the amount of private space a session can allocate in the shared pool of the system global area (SGA),
+     * expressed in bytes.
      *
      * @return the value
-     */
+     **/
     public String getPrivateSga() {
         return privateSga;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: {@code
-     * {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -1120,7 +1114,6 @@ public final class Profile extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

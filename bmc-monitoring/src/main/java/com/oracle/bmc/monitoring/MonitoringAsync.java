@@ -8,74 +8,72 @@ import com.oracle.bmc.monitoring.requests.*;
 import com.oracle.bmc.monitoring.responses.*;
 
 /**
- * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity,
- * and performance of your cloud resources. Endpoints vary by operation. For PostMetricData, use the
- * {@code telemetry-ingestion} endpoints; for all other operations, use the {@code telemetry}
- * endpoints. For more information, see [the Monitoring
- * documentation](https://docs.oracle.com/iaas/Content/Monitoring/home.htm).
+ * Use the Monitoring API to manage metric queries and alarms for assessing the health, capacity, and performance of your cloud resources.
+ * Endpoints vary by operation. For PostMetricData, use the {@code telemetry-ingestion} endpoints; for all other operations, use the {@code telemetry} endpoints.
+ * For more information, see
+ * [the Monitoring documentation](https://docs.oracle.com/iaas/Content/Monitoring/home.htm).
+ *
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 public interface MonitoringAsync extends AutoCloseable {
 
-    /** Rebuilds the client from scratch. Useful to refresh certificates. */
+    /**
+     * Rebuilds the client from scratch.
+     * Useful to refresh certificates.
+     */
     void refreshClient();
 
     /**
      * Sets the endpoint to call (ex, https://www.example.com).
-     *
      * @param endpoint The endpoint of the serice.
      */
     void setEndpoint(String endpoint);
 
-    /** Gets the set endpoint for REST call (ex, https://www.example.com) */
+    /**
+     * Gets the set endpoint for REST call (ex, https://www.example.com)
+     */
     String getEndpoint();
 
     /**
      * Sets the region to call (ex, Region.US_PHOENIX_1).
-     *
-     * <p>Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the
-     * endpoint. If the service is not available in this region, however, an
-     * IllegalArgumentException will be raised.
-     *
+     * <p>
+     * Note, this will call {@link #setEndpoint(String) setEndpoint} after resolving the endpoint.  If the service is not available in this region, however, an IllegalArgumentException will be raised.
      * @param region The region of the service.
      */
     void setRegion(com.oracle.bmc.Region region);
 
     /**
      * Sets the region to call (ex, 'us-phoenix-1').
-     *
-     * <p>Note, this will first try to map the region ID to a known Region and call {@link
-     * #setRegion(Region) setRegion}.
-     *
-     * <p>If no known Region could be determined, it will create an endpoint based on the default
-     * endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
+     * <p>
+     * Note, this will first try to map the region ID to a known Region and call
+     * {@link #setRegion(Region) setRegion}.
+     * <p>
+     * If no known Region could be determined, it will create an endpoint based on the
+     * default endpoint format ({@link com.oracle.bmc.Region#formatDefaultRegionEndpoint(Service, String)}
      * and then call {@link #setEndpoint(String) setEndpoint}.
-     *
      * @param regionId The public region ID.
      */
     void setRegion(String regionId);
 
     /**
-     * Determines whether realm specific endpoint should be used or not. Set
-     * realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm
-     * specific endpoint template, otherwise set it to "false"
-     *
-     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint
-     *     template
+     * Determines whether realm specific endpoint should be used or not.
+     * Set realmSpecificEndpointTemplateEnabled to "true" if the user wants to enable use of realm specific endpoint template, otherwise set it to "false"
+     * @param realmSpecificEndpointTemplateEnabled flag to enable the use of realm specific endpoint template
      */
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Moves an alarm into a different compartment within the same tenancy. For more information,
-     * see [Moving an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/change-compartment-alarm.htm).
+     * Moves an alarm into a different compartment within the same tenancy.
+     * For more information, see
+     * [Moving an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/change-compartment-alarm.htm).
+     *
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ChangeAlarmCompartmentResponse> changeAlarmCompartment(
             ChangeAlarmCompartmentRequest request,
@@ -84,22 +82,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new alarm in the specified compartment. For more information, see [Creating an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm). For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Creates a new alarm in the specified compartment.
+     * For more information, see
+     * [Creating an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAlarmResponse> createAlarm(
             CreateAlarmRequest request,
@@ -107,25 +106,24 @@ public interface MonitoringAsync extends AutoCloseable {
 
     /**
      * Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
-     * For more information, see [Adding an Alarm-wide
-     * Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm)
-     * and [Adding a Dimension-Specific Alarm
-     * Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
+     * For more information, see
+     * [Adding an Alarm-wide Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm) and
+     * [Adding a Dimension-Specific Alarm Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<CreateAlarmSuppressionResponse> createAlarmSuppression(
             CreateAlarmSuppressionRequest request,
@@ -134,47 +132,47 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes the specified alarm. For more information, see [Deleting an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm). For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Deletes the specified alarm.
+     * For more information, see
+     * [Deleting an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAlarmResponse> deleteAlarm(
             DeleteAlarmRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteAlarmRequest, DeleteAlarmResponse> handler);
 
     /**
-     * Deletes the specified alarm suppression. For more information, see [Removing an Alarm-wide
-     * Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm)
-     * and [Removing a Dimension-Specific Alarm
-     * Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm-suppression.htm).
+     * Deletes the specified alarm suppression. For more information, see
+     * [Removing an Alarm-wide Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm) and
+     * [Removing a Dimension-Specific Alarm Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm-suppression.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<DeleteAlarmSuppressionResponse> deleteAlarmSuppression(
             DeleteAlarmSuppressionRequest request,
@@ -183,44 +181,46 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified alarm. For more information, see [Getting an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm). For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Gets the specified alarm.
+     * For more information, see
+     * [Getting an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAlarmResponse> getAlarm(
             GetAlarmRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetAlarmRequest, GetAlarmResponse> handler);
 
     /**
-     * Get the history of the specified alarm. For more information, see [Getting History of an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm). For
-     * important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Get the history of the specified alarm.
+     * For more information, see
+     * [Getting History of an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-history.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAlarmHistoryResponse> getAlarmHistory(
             GetAlarmHistoryRequest request,
@@ -228,23 +228,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets the specified alarm suppression. For more information, see [Getting an Alarm-wide
-     * Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
+     * Gets the specified alarm suppression. For more information, see
+     * [Getting an Alarm-wide Suppression](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<GetAlarmSuppressionResponse> getAlarmSuppression(
             GetAlarmSuppressionRequest request,
@@ -253,23 +253,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists alarm suppressions for the specified alarm. For more information, see [Listing Alarm
-     * Suppressions](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+     * Lists alarm suppressions for the specified alarm. For more information, see
+     * [Listing Alarm Suppressions](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAlarmSuppressionsResponse> listAlarmSuppressions(
             ListAlarmSuppressionsRequest request,
@@ -278,49 +278,50 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the alarms for the specified compartment. For more information, see [Listing
-     * Alarms](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm). For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Lists the alarms for the specified compartment.
+     * For more information, see
+     * [Listing Alarms](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAlarmsResponse> listAlarms(
             ListAlarmsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListAlarmsRequest, ListAlarmsResponse> handler);
 
     /**
-     * List the status of each alarm in the specified compartment. Status is collective, across all
-     * metric streams in the alarm. To list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest, Consumer, Consumer)
-     * retrieveDimensionStates}. Optionally filter by resource or status value.
+     * List the status of each alarm in the specified compartment.
+     * Status is collective, across all metric streams in the alarm.
+     * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest, Consumer, Consumer) retrieveDimensionStates}.
+     * Optionally filter by resource or status value.
+     * <p>
+     * For more information, see
+     * [Listing Alarm Statuses](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For more information, see [Listing Alarm
-     * Statuses](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm). For
-     * important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListAlarmsStatusResponse> listAlarmsStatus(
             ListAlarmsStatusRequest request,
@@ -328,66 +329,66 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns metric definitions that match the criteria specified in the request. Compartment OCID
-     * required. For more information, see [Listing Metric
-     * Definitions](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm). For
-     * information about metrics, see [Metrics
-     * Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
-     * For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Returns metric definitions that match the criteria specified in the request. Compartment OCID required.
+     * For more information, see
+     * [Listing Metric Definitions](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-metric.htm).
+     * For information about metrics, see
+     * [Metrics Overview](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#MetricsOverview).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
-     * <p>Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<ListMetricsResponse> listMetrics(
             ListMetricsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListMetricsRequest, ListMetricsResponse> handler);
 
     /**
-     * Publishes raw metric data points to the Monitoring service. For a data point to be posted,
-     * its timestamp must be near current time (less than two hours in the past and less than 10
-     * minutes in the future).
-     *
-     * <p>For more information about publishing metrics, see [Publishing Custom
-     * Metrics](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm)
-     * and [Custom Metrics
-     * Walkthrough](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/custom-metrics-walkthrough.htm).
-     * For information about developing a metric-posting client, see [Developer
-     * Guide](https://docs.oracle.com/iaas/Content/API/Concepts/devtoolslanding.htm). For an example
-     * client, see
+     * Publishes raw metric data points to the Monitoring service.
+     * For a data point to be posted, its timestamp must be near current time (less than two hours in the past and less than 10 minutes in the future).
+     * <p>
+     * For more information about publishing metrics, see
+     * [Publishing Custom Metrics](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/publishingcustommetrics.htm)
+     * and
+     * [Custom Metrics Walkthrough](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/custom-metrics-walkthrough.htm).
+     * For information about developing a metric-posting client, see
+     * [Developer Guide](https://docs.oracle.com/iaas/Content/API/Concepts/devtoolslanding.htm).
+     * For an example client, see
      * [MonitoringMetricPostExample.java](https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/MonitoringMetricPostExample.java).
-     * For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * Per-call limits information follows.
+     * <p>
+     * Dimensions per metric group*. Maximum: 20. Minimum: 1.
+     * * Unique metric streams*. Maximum: 50.
+     * * Transactions Per Second (TPS) per-tenancy limit for this operation: 50.
+     * <p>
+     *A metric group is the combination of a given metric, metric namespace, and tenancy for the purpose of determining limits.
+     * A dimension is a qualifier provided in a metric definition.
+     * A metric stream is an individual set of aggregated data for a metric with zero or more dimension values.
+     * For more information about metric-related concepts, see
+     * [Monitoring Concepts](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
+     * <p>
+     **Note:** The endpoints for this operation differ from other Monitoring operations. Replace the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following example:
+     * <p>
+     * https://telemetry-ingestion.eu-frankfurt-1.oraclecloud.com
      *
-     * <p>Per-call limits information follows.
-     *
-     * <p>Dimensions per metric group*. Maximum: 20. Minimum: 1. * Unique metric streams*. Maximum:
-     * 50. * Transactions Per Second (TPS) per-tenancy limit for this operation: 50.
-     *
-     * <p>A metric group is the combination of a given metric, metric namespace, and tenancy for the
-     * purpose of determining limits. A dimension is a qualifier provided in a metric definition. A
-     * metric stream is an individual set of aggregated data for a metric with zero or more
-     * dimension values. For more information about metric-related concepts, see [Monitoring
-     * Concepts](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#concepts).
-     *
-     * <p>*Note:** The endpoints for this operation differ from other Monitoring operations. Replace
-     * the string `telemetry` with `telemetry-ingestion` in the endpoint, as in the following
-     * example:
-     *
-     * <p>https://telemetry-ingestion.eu-frankfurt-1.oraclecloud.com
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<PostMetricDataResponse> postMetricData(
             PostMetricDataRequest request,
@@ -395,23 +396,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes any existing suppression for the specified alarm. For more information, see [Removing
-     * Suppression from an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm).
-     * For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Removes any existing suppression for the specified alarm.
+     * For more information, see
+     * [Removing Suppression from an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RemoveAlarmSuppressionResponse> removeAlarmSuppression(
             RemoveAlarmSuppressionRequest request,
@@ -420,27 +421,26 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the current alarm status of each metric stream, where status is derived from the metric
-     * stream's last associated transition. Optionally filter by status value and one or more
-     * dimension key-value pairs.
+     * Lists the current alarm status of each metric stream, where status is derived from the metric stream's last associated transition.
+     * Optionally filter by status value and one or more dimension key-value pairs.
+     * <p>
+     * For more information, see
+     * [Listing Metric Stream Status in an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status-metric-stream.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For more information, see [Listing Metric Stream Status in an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status-metric-stream.htm).
-     *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<RetrieveDimensionStatesResponse> retrieveDimensionStates(
             RetrieveDimensionStatesRequest request,
@@ -449,25 +449,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns history of suppressions for the specified alarm, including both dimension-specific
-     * and and alarm-wide suppressions. For more information, see [Getting Suppression History for
-     * an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/summarize-alarm-suppression-history.htm).
+     * Returns history of suppressions for the specified alarm, including both dimension-specific and and alarm-wide suppressions. For more information, see
+     * [Getting Suppression History for an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/summarize-alarm-suppression-history.htm).
+     * <p>
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
-     *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeAlarmSuppressionHistoryResponse>
             summarizeAlarmSuppressionHistory(
@@ -478,21 +476,23 @@ public interface MonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Returns aggregated data that match the criteria specified in the request. Compartment OCID
-     * required. For more information, see [Querying Metric
-     * Data](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm) and
+     * Returns aggregated data that match the criteria specified in the request. Compartment OCID required.
+     * For more information, see
+     * [Querying Metric Data](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-landing.htm)
+     * and
      * [Creating a Query](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/query-metric.htm).
-     * For important limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
-     * <p>Transactions Per Second (TPS) per-tenancy limit for this operation: 10.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<SummarizeMetricsDataResponse> summarizeMetricsData(
             SummarizeMetricsDataRequest request,
@@ -501,22 +501,23 @@ public interface MonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified alarm. For more information, see [Updating an
-     * Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm.htm). For important
-     * limits information, see [Limits on
-     * Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * Updates the specified alarm.
+     * For more information, see
+     * [Updating an Alarm](https://docs.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm.htm).
+     * For important limits information, see
+     * [Limits on Monitoring](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
+     * <p>
+     * This call is subject to a Monitoring limit that applies to the total number of requests across all alarm operations.
+     * Monitoring might throttle this call to reject an otherwise valid request when the total rate of alarm operations exceeds 10 requests,
+     * or transactions, per second (TPS) for a given tenancy.
      *
-     * <p>This call is subject to a Monitoring limit that applies to the total number of requests
-     * across all alarm operations. Monitoring might throttle this call to reject an otherwise valid
-     * request when the total rate of alarm operations exceeds 10 requests, or transactions, per
-     * second (TPS) for a given tenancy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
      */
     java.util.concurrent.Future<UpdateAlarmResponse> updateAlarm(
             UpdateAlarmRequest request,

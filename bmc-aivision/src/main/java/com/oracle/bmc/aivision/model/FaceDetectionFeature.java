@@ -5,53 +5,55 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * The face detection parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * The face detection parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FaceDetectionFeature.Builder.class)
+    builder = FaceDetectionFeature.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "featureType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "featureType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FaceDetectionFeature extends ImageFeature {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The maximum number of results to return. */
+        /**
+         * The maximum number of results to return.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
         private Integer maxResults;
 
         /**
          * The maximum number of results to return.
-         *
          * @param maxResults the value to set
          * @return this builder
-         */
+         **/
         public Builder maxResults(Integer maxResults) {
             this.maxResults = maxResults;
             this.__explicitlySet__.add("maxResults");
             return this;
         }
-        /** Whether or not return face landmarks. */
+        /**
+         * Whether or not return face landmarks.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldReturnLandmarks")
         private Boolean shouldReturnLandmarks;
 
         /**
          * Whether or not return face landmarks.
-         *
          * @param shouldReturnLandmarks the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldReturnLandmarks(Boolean shouldReturnLandmarks) {
             this.shouldReturnLandmarks = shouldReturnLandmarks;
             this.__explicitlySet__.add("shouldReturnLandmarks");
@@ -82,7 +84,9 @@ public final class FaceDetectionFeature extends ImageFeature {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -98,28 +102,30 @@ public final class FaceDetectionFeature extends ImageFeature {
         this.shouldReturnLandmarks = shouldReturnLandmarks;
     }
 
-    /** The maximum number of results to return. */
+    /**
+     * The maximum number of results to return.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxResults")
     private final Integer maxResults;
 
     /**
      * The maximum number of results to return.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxResults() {
         return maxResults;
     }
 
-    /** Whether or not return face landmarks. */
+    /**
+     * Whether or not return face landmarks.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldReturnLandmarks")
     private final Boolean shouldReturnLandmarks;
 
     /**
      * Whether or not return face landmarks.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldReturnLandmarks() {
         return shouldReturnLandmarks;
     }
@@ -131,7 +137,6 @@ public final class FaceDetectionFeature extends ImageFeature {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

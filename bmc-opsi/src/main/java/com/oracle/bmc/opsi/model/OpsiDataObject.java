@@ -5,36 +5,38 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * OPSI data object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * OPSI data object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "dataObjectType",
-        defaultImpl = OpsiDataObject.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "dataObjectType",
+    defaultImpl = OpsiDataObject.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HostInsightsDataObject.class,
-            name = "HOST_INSIGHTS_DATA_OBJECT"),
+        value = HostInsightsDataObject.class,
+        name = "HOST_INSIGHTS_DATA_OBJECT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ExadataInsightsDataObject.class,
-            name = "EXADATA_INSIGHTS_DATA_OBJECT"),
+        value = ExadataInsightsDataObject.class,
+        name = "EXADATA_INSIGHTS_DATA_OBJECT"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DatabaseInsightsDataObject.class,
-            name = "DATABASE_INSIGHTS_DATA_OBJECT")
+        value = DatabaseInsightsDataObject.class,
+        name = "DATABASE_INSIGHTS_DATA_OBJECT"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class OpsiDataObject extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class OpsiDataObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "identifier",
@@ -66,120 +68,120 @@ public class OpsiDataObject extends com.oracle.bmc.http.client.internal.Explicit
         this.supportedQueryParams = supportedQueryParams;
     }
 
-    /** Unique identifier of OPSI data object. */
+    /**
+     * Unique identifier of OPSI data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("identifier")
     private final String identifier;
 
     /**
      * Unique identifier of OPSI data object.
-     *
      * @return the value
-     */
+     **/
     public String getIdentifier() {
         return identifier;
     }
 
-    /** User-friendly name of OPSI data object. */
+    /**
+     * User-friendly name of OPSI data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * User-friendly name of OPSI data object.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Description of OPSI data object. */
+    /**
+     * Description of OPSI data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Description of OPSI data object.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * Name of the data object, which can be used in data object queries just like how view names
-     * are used in a query.
-     */
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Name of the data object, which can be used in data object queries just like how view names
-     * are used in a query.
-     *
+     * Name of the data object, which can be used in data object queries just like how view names are used in a query.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Names of all the groups to which the data object belongs to. */
+    /**
+     * Names of all the groups to which the data object belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupNames")
     private final java.util.List<String> groupNames;
 
     /**
      * Names of all the groups to which the data object belongs to.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroupNames() {
         return groupNames;
     }
 
     /**
-     * Time period supported by the data object for quering data. Time period is in ISO 8601 format
-     * with respect to current time. Default is last 30 days represented by P30D. Examples: P90D
-     * (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
-     */
+     * Time period supported by the data object for quering data.
+     * Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+     * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryTimePeriod")
     private final String supportedQueryTimePeriod;
 
     /**
-     * Time period supported by the data object for quering data. Time period is in ISO 8601 format
-     * with respect to current time. Default is last 30 days represented by P30D. Examples: P90D
-     * (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
+     * Time period supported by the data object for quering data.
+     * Time period is in ISO 8601 format with respect to current time. Default is last 30 days represented by P30D.
+     * Examples: P90D (last 90 days), P4W (last 4 weeks), P2M (last 2 months), P1Y (last 12 months).
      *
      * @return the value
-     */
+     **/
     public String getSupportedQueryTimePeriod() {
         return supportedQueryTimePeriod;
     }
 
-    /** Metadata of columns in a data object. */
+    /**
+     * Metadata of columns in a data object.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("columnsMetadata")
     private final java.util.List<DataObjectColumnMetadata> columnsMetadata;
 
     /**
      * Metadata of columns in a data object.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DataObjectColumnMetadata> getColumnsMetadata() {
         return columnsMetadata;
     }
 
     /**
-     * Supported query parameters by this OPSI data object that can be configured while a data
-     * object query involving this data object is executed.
-     */
+     * Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("supportedQueryParams")
     private final java.util.List<OpsiDataObjectSupportedQueryParam> supportedQueryParams;
 
     /**
-     * Supported query parameters by this OPSI data object that can be configured while a data
-     * object query involving this data object is executed.
-     *
+     * Supported query parameters by this OPSI data object that can be configured while a data object query involving this data object is executed.
      * @return the value
-     */
+     **/
     public java.util.List<OpsiDataObjectSupportedQueryParam> getSupportedQueryParams() {
         return supportedQueryParams;
     }
@@ -191,7 +193,6 @@ public class OpsiDataObject extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

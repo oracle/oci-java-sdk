@@ -5,23 +5,23 @@
 package com.oracle.bmc.integration.model;
 
 /**
- * Details of integration instance created in cross region for disaster recovery. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
+ * Details of integration instance created in cross region for disaster recovery.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CrossRegionIntegrationInstanceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CrossRegionIntegrationInstanceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CrossRegionIntegrationInstanceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"role", "id", "region", "timeRoleChanged"})
     public CrossRegionIntegrationInstanceDetails(
@@ -35,61 +35,65 @@ public final class CrossRegionIntegrationInstanceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Role of the integration instance in the region */
+        /**
+         * Role of the integration instance in the region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("role")
         private Role role;
 
         /**
          * Role of the integration instance in the region
-         *
          * @param role the value to set
          * @return this builder
-         */
+         **/
         public Builder role(Role role) {
             this.role = role;
             this.__explicitlySet__.add("role");
             return this;
         }
-        /** Cross region integration instance identifier */
+        /**
+         * Cross region integration instance identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Cross region integration instance identifier
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Cross region where integration instance is created */
+        /**
+         * Cross region where integration instance is created
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Cross region where integration instance is created
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Time when cross region integration instance role was changed */
+        /**
+         * Time when cross region integration instance role was changed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
         private java.util.Date timeRoleChanged;
 
         /**
          * Time when cross region integration instance role was changed
-         *
          * @param timeRoleChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder timeRoleChanged(java.util.Date timeRoleChanged) {
             this.timeRoleChanged = timeRoleChanged;
             this.__explicitlySet__.add("timeRoleChanged");
@@ -127,7 +131,9 @@ public final class CrossRegionIntegrationInstanceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -136,15 +142,17 @@ public final class CrossRegionIntegrationInstanceDetails
         return new Builder().copy(this);
     }
 
-    /** Role of the integration instance in the region */
-    public enum Role implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Role of the integration instance in the region
+     **/
+    public enum Role {
         Primary("PRIMARY"),
         Secondary("SECONDARY"),
         Unknown("UNKNOWN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -181,54 +189,58 @@ public final class CrossRegionIntegrationInstanceDetails
             return UnknownEnumValue;
         }
     };
-    /** Role of the integration instance in the region */
+    /**
+     * Role of the integration instance in the region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("role")
     private final Role role;
 
     /**
      * Role of the integration instance in the region
-     *
      * @return the value
-     */
+     **/
     public Role getRole() {
         return role;
     }
 
-    /** Cross region integration instance identifier */
+    /**
+     * Cross region integration instance identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Cross region integration instance identifier
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Cross region where integration instance is created */
+    /**
+     * Cross region where integration instance is created
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Cross region where integration instance is created
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** Time when cross region integration instance role was changed */
+    /**
+     * Time when cross region integration instance role was changed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeRoleChanged")
     private final java.util.Date timeRoleChanged;
 
     /**
      * Time when cross region integration instance role was changed
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeRoleChanged() {
         return timeRoleChanged;
     }
@@ -240,7 +252,6 @@ public final class CrossRegionIntegrationInstanceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

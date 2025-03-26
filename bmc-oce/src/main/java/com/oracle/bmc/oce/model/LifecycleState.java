@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oce.model;
 
-/** Instance lifecycle state */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
-public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Instance lifecycle state
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190912")
+public enum LifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

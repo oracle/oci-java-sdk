@@ -4,5 +4,17 @@
  */
 package com.oracle.bmc.http;
 
-/** Interface implemented by classes that provide an effective ClientConfigurator */
-public interface HasEffectiveClientConfigurator {}
+/**
+ * Interface implemented by classes that provide
+ * an effective ClientConfigurator
+ */
+public interface HasEffectiveClientConfigurator {
+
+    /**
+     * Get the effective ClientConfigurator
+     *
+     * @return the effective ClientConfigurator
+     *
+     */
+    ClientConfigurator getEffectiveClientConfigurator();
+}

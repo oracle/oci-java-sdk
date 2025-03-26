@@ -6,9 +6,12 @@ package com.oracle.bmc.stackmonitoring.responses;
 
 import com.oracle.bmc.stackmonitoring.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,12 +40,13 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
         return opcRequestId;
     }
 
-    /** The returned {@code MonitoringTemplate} instance. */
+    /**
+     * The returned MonitoringTemplate instance.
+     */
     private com.oracle.bmc.stackmonitoring.model.MonitoringTemplate monitoringTemplate;
 
     /**
-     * The returned {@code MonitoringTemplate} instance.
-     *
+     * The returned MonitoringTemplate instance.
      * @return the value
      */
     public com.oracle.bmc.stackmonitoring.model.MonitoringTemplate getMonitoringTemplate() {
@@ -57,7 +62,7 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
     })
     private CreateMonitoringTemplateResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.stackmonitoring.model.MonitoringTemplate monitoringTemplate) {
@@ -67,26 +72,25 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
         this.monitoringTemplate = monitoringTemplate;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateMonitoringTemplateResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -101,14 +105,15 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -118,12 +123,13 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
             return this;
         }
 
-        /** The returned {@code MonitoringTemplate} instance. */
+        /**
+         * The returned MonitoringTemplate instance.
+         */
         private com.oracle.bmc.stackmonitoring.model.MonitoringTemplate monitoringTemplate;
 
         /**
-         * The returned {@code MonitoringTemplate} instance.
-         *
+         * The returned MonitoringTemplate instance.
          * @param monitoringTemplate the value to set
          * @return this builder
          */
@@ -135,10 +141,8 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateMonitoringTemplateResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -151,10 +155,8 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateMonitoringTemplateResponse build() {
             return new CreateMonitoringTemplateResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, monitoringTemplate);
@@ -163,7 +165,6 @@ public class CreateMonitoringTemplateResponse extends com.oracle.bmc.responses.B
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

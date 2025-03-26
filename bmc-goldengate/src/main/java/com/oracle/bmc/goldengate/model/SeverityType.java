@@ -7,9 +7,10 @@ package com.oracle.bmc.goldengate.model;
 /**
  * Message severity of GoldenGate APIs called for a step in a recipe.
  * https://docs.oracle.com/en/middleware/goldengate/core/23/oggra/rest-endpoints.html
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum SeverityType implements com.oracle.bmc.http.internal.BmcEnum {
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum SeverityType {
     Info("INFO"),
     Error("ERROR"),
     Warning("WARNING"),

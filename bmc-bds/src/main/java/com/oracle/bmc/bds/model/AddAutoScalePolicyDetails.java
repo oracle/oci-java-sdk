@@ -6,53 +6,54 @@ package com.oracle.bmc.bds.model;
 
 /**
  * Policy definition for the autoscale configuration.
- *
- * <p>An autoscaling policy is part of an autoscaling configuration. For more information, see
+ * <p>
+ * An autoscaling policy is part of an autoscaling configuration. For more information, see
  * [Autoscaling](https://docs.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-autoscale)
+ * <p>
+ * You can create following type of autoscaling policies:
+ * <p>
+ * - **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a performance metric exceeds a threshold
+ * - **MetricBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered when a performance metric exceeds a threshold
+ * - **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific times that you schedule.
+ * - **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling action is triggered at the specific times that you schedule.
+ * <p>
+ * An autoscaling configuration can have one of above supported policies.
  *
- * <p>You can create following type of autoscaling policies:
- *
- * <p>- **MetricBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered when a
- * performance metric exceeds a threshold - **MetricBasedHorizontalScalingPolicy:** Horizontal
- * autoscaling action is triggered when a performance metric exceeds a threshold -
- * **ScheduleBasedVerticalScalingPolicy:** Vertical autoscaling action is triggered at the specific
- * times that you schedule. - **ScheduleBasedHorizontalScalingPolicy:** Horizontal autoscaling
- * action is triggered at the specific times that you schedule.
- *
- * <p>An autoscaling configuration can have one of above supported policies. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "policyType",
-        defaultImpl = AddAutoScalePolicyDetails.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "policyType",
+    defaultImpl = AddAutoScalePolicyDetails.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AddMetricBasedHorizontalScalingPolicyDetails.class,
-            name = "METRIC_BASED_HORIZONTAL_SCALING_POLICY"),
+        value = AddMetricBasedHorizontalScalingPolicyDetails.class,
+        name = "METRIC_BASED_HORIZONTAL_SCALING_POLICY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AddScheduleBasedVerticalScalingPolicyDetails.class,
-            name = "SCHEDULE_BASED_VERTICAL_SCALING_POLICY"),
+        value = AddScheduleBasedVerticalScalingPolicyDetails.class,
+        name = "SCHEDULE_BASED_VERTICAL_SCALING_POLICY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AddScheduleBasedHorizontalScalingPolicyDetails.class,
-            name = "SCHEDULE_BASED_HORIZONTAL_SCALING_POLICY"),
+        value = AddScheduleBasedHorizontalScalingPolicyDetails.class,
+        name = "SCHEDULE_BASED_HORIZONTAL_SCALING_POLICY"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AddMetricBasedVerticalScalingPolicyDetails.class,
-            name = "METRIC_BASED_VERTICAL_SCALING_POLICY")
+        value = AddMetricBasedVerticalScalingPolicyDetails.class,
+        name = "METRIC_BASED_VERTICAL_SCALING_POLICY"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class AddAutoScalePolicyDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class AddAutoScalePolicyDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected AddAutoScalePolicyDetails() {
@@ -66,7 +67,6 @@ public class AddAutoScalePolicyDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

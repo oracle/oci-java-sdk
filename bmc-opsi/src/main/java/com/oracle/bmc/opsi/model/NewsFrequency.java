@@ -5,12 +5,14 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Frequency in which the news report will be sent. WEEKLY: Receive an OPSI news report every week.
- * DAILY: Receive an OPSI news report every day. HOURLY: Receive an actionable insights report every
- * hour if there are significant changes to the customer's resources.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum NewsFrequency implements com.oracle.bmc.http.internal.BmcEnum {
+ * Frequency in which the news report will be sent.
+ * WEEKLY: Receive an OPSI news report every week.
+ * DAILY: Receive an OPSI news report every day.
+ * HOURLY: Receive an actionable insights report every hour if there are significant changes to the customer's resources.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum NewsFrequency {
     Weekly("WEEKLY"),
     Daily("DAILY"),
     Hourly("HOURLY"),

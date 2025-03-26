@@ -5,23 +5,21 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Pre Crypto officer user credentials. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * Pre Crypto officer user credentials.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PreCoUserCredentials.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PreCoUserCredentials
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PreCoUserCredentials.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PreCoUserCredentials extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"username", "password"})
     public PreCoUserCredentials(String username, String password) {
@@ -32,31 +30,33 @@ public final class PreCoUserCredentials
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The pre crypto officer username, which should be chosen as a non confidential string. */
+        /**
+         * The pre crypto officer username, which should be chosen as a non confidential string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * The pre crypto officer username, which should be chosen as a non confidential string.
-         *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The base 64 encoded pre crypto officer password. */
+        /**
+         * The base 64 encoded pre crypto officer password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The base 64 encoded pre crypto officer password.
-         *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
@@ -86,7 +86,9 @@ public final class PreCoUserCredentials
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -95,28 +97,30 @@ public final class PreCoUserCredentials
         return new Builder().copy(this);
     }
 
-    /** The pre crypto officer username, which should be chosen as a non confidential string. */
+    /**
+     * The pre crypto officer username, which should be chosen as a non confidential string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The pre crypto officer username, which should be chosen as a non confidential string.
-     *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
-    /** The base 64 encoded pre crypto officer password. */
+    /**
+     * The base 64 encoded pre crypto officer password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The base 64 encoded pre crypto officer password.
-     *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
@@ -128,7 +132,6 @@ public final class PreCoUserCredentials
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

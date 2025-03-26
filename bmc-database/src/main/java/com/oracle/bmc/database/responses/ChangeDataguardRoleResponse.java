@@ -6,26 +6,28 @@ package com.oracle.bmc.database.responses;
 
 import com.oracle.bmc.database.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     */
     private String etag;
 
     /**
      * For optimistic concurrency control. See {@code if-match}.
-     *
      * @return the value
      */
     public String getEtag() {
         return etag;
     }
 
-    /** Unique Oracle-assigned identifier of the work request. */
+    /**
+     * Unique Oracle-assigned identifier of the work request.
+     */
     private String opcWorkRequestId;
 
     /**
      * Unique Oracle-assigned identifier of the work request.
-     *
      * @return the value
      */
     public String getOpcWorkRequestId() {
@@ -33,14 +35,15 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -48,12 +51,13 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** The returned {@code AutonomousContainerDatabase} instance. */
+    /**
+     * The returned AutonomousContainerDatabase instance.
+     */
     private com.oracle.bmc.database.model.AutonomousContainerDatabase autonomousContainerDatabase;
 
     /**
-     * The returned {@code AutonomousContainerDatabase} instance.
-     *
+     * The returned AutonomousContainerDatabase instance.
      * @return the value
      */
     public com.oracle.bmc.database.model.AutonomousContainerDatabase
@@ -71,7 +75,7 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
     })
     private ChangeDataguardRoleResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcWorkRequestId,
             String opcRequestId,
@@ -83,30 +87,28 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
         this.autonomousContainerDatabase = autonomousContainerDatabase;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ChangeDataguardRoleResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         */
         private String etag;
 
         /**
          * For optimistic concurrency control. See {@code if-match}.
-         *
          * @param etag the value to set
          * @return this builder
          */
@@ -115,12 +117,13 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** Unique Oracle-assigned identifier of the work request. */
+        /**
+         * Unique Oracle-assigned identifier of the work request.
+         */
         private String opcWorkRequestId;
 
         /**
          * Unique Oracle-assigned identifier of the work request.
-         *
          * @param opcWorkRequestId the value to set
          * @return this builder
          */
@@ -130,14 +133,15 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -147,13 +151,14 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code AutonomousContainerDatabase} instance. */
+        /**
+         * The returned AutonomousContainerDatabase instance.
+         */
         private com.oracle.bmc.database.model.AutonomousContainerDatabase
                 autonomousContainerDatabase;
 
         /**
-         * The returned {@code AutonomousContainerDatabase} instance.
-         *
+         * The returned AutonomousContainerDatabase instance.
          * @param autonomousContainerDatabase the value to set
          * @return this builder
          */
@@ -166,10 +171,8 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ChangeDataguardRoleResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -183,10 +186,8 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ChangeDataguardRoleResponse build() {
             return new ChangeDataguardRoleResponse(
                     __httpStatusCode__,
@@ -200,7 +201,6 @@ public class ChangeDataguardRoleResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

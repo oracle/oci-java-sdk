@@ -5,21 +5,20 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * An object with a logical shape and count of the number of nodes with that shape. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * An object with a logical shape and count of the number of nodes with that shape.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NodeCount.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NodeCount extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NodeCount extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"logicalShape", "count"})
     public NodeCount(String logicalShape, Integer count) {
@@ -30,7 +29,10 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The compute shape of the nodes that the count is for. */
+        /**
+         * The compute shape of the nodes that the count is for.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("logicalShape")
         private String logicalShape;
 
@@ -39,13 +41,16 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param logicalShape the value to set
          * @return this builder
-         */
+         **/
         public Builder logicalShape(String logicalShape) {
             this.logicalShape = logicalShape;
             this.__explicitlySet__.add("logicalShape");
             return this;
         }
-        /** The node count of this compute shape. */
+        /**
+         * The node count of this compute shape.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
@@ -54,7 +59,7 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -84,7 +89,9 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,7 +100,10 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The compute shape of the nodes that the count is for. */
+    /**
+     * The compute shape of the nodes that the count is for.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("logicalShape")
     private final String logicalShape;
 
@@ -101,12 +111,15 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
      * The compute shape of the nodes that the count is for.
      *
      * @return the value
-     */
+     **/
     public String getLogicalShape() {
         return logicalShape;
     }
 
-    /** The node count of this compute shape. */
+    /**
+     * The node count of this compute shape.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
@@ -114,7 +127,7 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
      * The node count of this compute shape.
      *
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
@@ -126,7 +139,6 @@ public final class NodeCount extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

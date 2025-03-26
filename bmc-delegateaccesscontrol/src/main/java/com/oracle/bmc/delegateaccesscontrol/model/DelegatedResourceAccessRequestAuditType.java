@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.delegateaccesscontrol.model;
 
-/** Possible audit type for Delegated Resource Access Request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
-public enum DelegatedResourceAccessRequestAuditType
-        implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible audit type for Delegated Resource Access Request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+public enum DelegatedResourceAccessRequestAuditType {
     CommandAudit("COMMAND_AUDIT"),
     CommandKeystrokeAudit("COMMAND_KEYSTROKE_AUDIT"),
 

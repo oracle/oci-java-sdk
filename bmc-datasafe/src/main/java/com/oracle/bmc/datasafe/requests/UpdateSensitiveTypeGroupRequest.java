@@ -6,52 +6,65 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveTypeGroupExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateSensitiveTypeGroupRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveTypeGroupExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateSensitiveTypeGroupRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UpdateSensitiveTypeGroupRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.datasafe.model.UpdateSensitiveTypeGroupDetails> {
 
-    /** The OCID of the sensitive type group. */
+    /**
+     * The OCID of the sensitive type group.
+     */
     private String sensitiveTypeGroupId;
 
-    /** The OCID of the sensitive type group. */
+    /**
+     * The OCID of the sensitive type group.
+     */
     public String getSensitiveTypeGroupId() {
         return sensitiveTypeGroupId;
     }
-    /** Details used to update the sensitive type group. */
+    /**
+     * Details used to update the sensitive type group.
+     */
     private com.oracle.bmc.datasafe.model.UpdateSensitiveTypeGroupDetails
             updateSensitiveTypeGroupDetails;
 
-    /** Details used to update the sensitive type group. */
+    /**
+     * Details used to update the sensitive type group.
+     */
     public com.oracle.bmc.datasafe.model.UpdateSensitiveTypeGroupDetails
             getUpdateSensitiveTypeGroupDetails() {
         return updateSensitiveTypeGroupDetails;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-     * if-match parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the if-match parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -59,7 +72,6 @@ public class UpdateSensitiveTypeGroupRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -72,15 +84,17 @@ public class UpdateSensitiveTypeGroupRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateSensitiveTypeGroupRequest,
                     com.oracle.bmc.datasafe.model.UpdateSensitiveTypeGroupDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the sensitive type group. */
+        /**
+         * The OCID of the sensitive type group.
+         */
         private String sensitiveTypeGroupId = null;
 
         /**
          * The OCID of the sensitive type group.
-         *
          * @param sensitiveTypeGroupId the value to set
          * @return this builder instance
          */
@@ -89,13 +103,14 @@ public class UpdateSensitiveTypeGroupRequest
             return this;
         }
 
-        /** Details used to update the sensitive type group. */
+        /**
+         * Details used to update the sensitive type group.
+         */
         private com.oracle.bmc.datasafe.model.UpdateSensitiveTypeGroupDetails
                 updateSensitiveTypeGroupDetails = null;
 
         /**
          * Details used to update the sensitive type group.
-         *
          * @param updateSensitiveTypeGroupDetails the value to set
          * @return this builder instance
          */
@@ -106,12 +121,13 @@ public class UpdateSensitiveTypeGroupRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -121,18 +137,21 @@ public class UpdateSensitiveTypeGroupRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * if-match parameter to the value of the etag from a previous GET or POST response for that
-         * resource. The resource will be updated or deleted only if the etag you provide matches
-         * the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the if-match parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -144,19 +163,18 @@ public class UpdateSensitiveTypeGroupRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -168,7 +186,6 @@ public class UpdateSensitiveTypeGroupRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateSensitiveTypeGroupRequest o) {
@@ -184,11 +201,10 @@ public class UpdateSensitiveTypeGroupRequest
         /**
          * Build the instance of UpdateSensitiveTypeGroupRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateSensitiveTypeGroupRequest
          */
@@ -201,7 +217,6 @@ public class UpdateSensitiveTypeGroupRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -214,8 +229,7 @@ public class UpdateSensitiveTypeGroupRequest
         /**
          * Build the instance of UpdateSensitiveTypeGroupRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateSensitiveTypeGroupRequest
@@ -227,14 +241,12 @@ public class UpdateSensitiveTypeGroupRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateSensitiveTypeGroupRequest(sensitiveTypeGroupId,
-            // updateSensitiveTypeGroupDetails, opcRequestId, ifMatch);
+            // new UpdateSensitiveTypeGroupRequest(sensitiveTypeGroupId, updateSensitiveTypeGroupDetails, opcRequestId, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -247,7 +259,6 @@ public class UpdateSensitiveTypeGroupRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

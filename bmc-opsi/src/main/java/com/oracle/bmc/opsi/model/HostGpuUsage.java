@@ -5,24 +5,24 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * GPU performance metrics <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * GPU performance metrics
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = HostGpuUsage.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostGpuUsage extends HostPerformanceMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,264 +34,273 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** GPU Identifier */
+        /**
+         * GPU Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
         private Integer gpuId;
 
         /**
          * GPU Identifier
-         *
          * @param gpuId the value to set
          * @return this builder
-         */
+         **/
         public Builder gpuId(Integer gpuId) {
             this.gpuId = gpuId;
             this.__explicitlySet__.add("gpuId");
             return this;
         }
-        /** GPU Utilization Percent */
+        /**
+         * GPU Utilization Percent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("utilization")
         private Double utilization;
 
         /**
          * GPU Utilization Percent
-         *
          * @param utilization the value to set
          * @return this builder
-         */
+         **/
         public Builder utilization(Double utilization) {
             this.utilization = utilization;
             this.__explicitlySet__.add("utilization");
             return this;
         }
-        /** GPU Memory Utilization Percent */
+        /**
+         * GPU Memory Utilization Percent
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilization")
         private Double memoryUtilization;
 
         /**
          * GPU Memory Utilization Percent
-         *
          * @param memoryUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryUtilization(Double memoryUtilization) {
             this.memoryUtilization = memoryUtilization;
             this.__explicitlySet__.add("memoryUtilization");
             return this;
         }
-        /** GPU Power Draw in Watts */
+        /**
+         * GPU Power Draw in Watts
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("powerDraw")
         private Double powerDraw;
 
         /**
          * GPU Power Draw in Watts
-         *
          * @param powerDraw the value to set
          * @return this builder
-         */
+         **/
         public Builder powerDraw(Double powerDraw) {
             this.powerDraw = powerDraw;
             this.__explicitlySet__.add("powerDraw");
             return this;
         }
-        /** GPU Temperature in Celsius */
+        /**
+         * GPU Temperature in Celsius
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("temperature")
         private Double temperature;
 
         /**
          * GPU Temperature in Celsius
-         *
          * @param temperature the value to set
          * @return this builder
-         */
+         **/
         public Builder temperature(Double temperature) {
             this.temperature = temperature;
             this.__explicitlySet__.add("temperature");
             return this;
         }
-        /** GPU Fan Utilization */
+        /**
+         * GPU Fan Utilization
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fanUtilization")
         private Double fanUtilization;
 
         /**
          * GPU Fan Utilization
-         *
          * @param fanUtilization the value to set
          * @return this builder
-         */
+         **/
         public Builder fanUtilization(Double fanUtilization) {
             this.fanUtilization = fanUtilization;
             this.__explicitlySet__.add("fanUtilization");
             return this;
         }
-        /** GPU Graphics (Shader) Clock Speed */
+        /**
+         * GPU Graphics (Shader) Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedGraphics")
         private Double clockSpeedGraphics;
 
         /**
          * GPU Graphics (Shader) Clock Speed
-         *
          * @param clockSpeedGraphics the value to set
          * @return this builder
-         */
+         **/
         public Builder clockSpeedGraphics(Double clockSpeedGraphics) {
             this.clockSpeedGraphics = clockSpeedGraphics;
             this.__explicitlySet__.add("clockSpeedGraphics");
             return this;
         }
-        /** GPU SM (Streaming Multiprocessor) Clock Speed */
+        /**
+         * GPU SM (Streaming Multiprocessor) Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedSm")
         private Double clockSpeedSm;
 
         /**
          * GPU SM (Streaming Multiprocessor) Clock Speed
-         *
          * @param clockSpeedSm the value to set
          * @return this builder
-         */
+         **/
         public Builder clockSpeedSm(Double clockSpeedSm) {
             this.clockSpeedSm = clockSpeedSm;
             this.__explicitlySet__.add("clockSpeedSm");
             return this;
         }
-        /** GPU Video Clock Speed */
+        /**
+         * GPU Video Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedVideo")
         private Double clockSpeedVideo;
 
         /**
          * GPU Video Clock Speed
-         *
          * @param clockSpeedVideo the value to set
          * @return this builder
-         */
+         **/
         public Builder clockSpeedVideo(Double clockSpeedVideo) {
             this.clockSpeedVideo = clockSpeedVideo;
             this.__explicitlySet__.add("clockSpeedVideo");
             return this;
         }
-        /** GPU Memory Clock Speed */
+        /**
+         * GPU Memory Clock Speed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedMemory")
         private Double clockSpeedMemory;
 
         /**
          * GPU Memory Clock Speed
-         *
          * @param clockSpeedMemory the value to set
          * @return this builder
-         */
+         **/
         public Builder clockSpeedMemory(Double clockSpeedMemory) {
             this.clockSpeedMemory = clockSpeedMemory;
             this.__explicitlySet__.add("clockSpeedMemory");
             return this;
         }
-        /** GPU Performance State */
+        /**
+         * GPU Performance State
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("performanceState")
         private Double performanceState;
 
         /**
          * GPU Performance State
-         *
          * @param performanceState the value to set
          * @return this builder
-         */
+         **/
         public Builder performanceState(Double performanceState) {
             this.performanceState = performanceState;
             this.__explicitlySet__.add("performanceState");
             return this;
         }
-        /** GPU ECC Single Bit Errors */
+        /**
+         * GPU ECC Single Bit Errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eccSingleBitErrors")
         private Integer eccSingleBitErrors;
 
         /**
          * GPU ECC Single Bit Errors
-         *
          * @param eccSingleBitErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder eccSingleBitErrors(Integer eccSingleBitErrors) {
             this.eccSingleBitErrors = eccSingleBitErrors;
             this.__explicitlySet__.add("eccSingleBitErrors");
             return this;
         }
-        /** GPU ECC Double Bit Errors */
+        /**
+         * GPU ECC Double Bit Errors
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("eccDoubleBitErrors")
         private Integer eccDoubleBitErrors;
 
         /**
          * GPU ECC Double Bit Errors
-         *
          * @param eccDoubleBitErrors the value to set
          * @return this builder
-         */
+         **/
         public Builder eccDoubleBitErrors(Integer eccDoubleBitErrors) {
             this.eccDoubleBitErrors = eccDoubleBitErrors;
             this.__explicitlySet__.add("eccDoubleBitErrors");
             return this;
         }
-        /** Nothing running on CPU, clocks are idle */
+        /**
+         * Nothing running on CPU, clocks are idle
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventIdle")
         private Integer clockEventIdle;
 
         /**
          * Nothing running on CPU, clocks are idle
-         *
          * @param clockEventIdle the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventIdle(Integer clockEventIdle) {
             this.clockEventIdle = clockEventIdle;
             this.__explicitlySet__.add("clockEventIdle");
             return this;
         }
         /**
-         * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp
-         * too high
-         */
+         * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too high
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventHwThermalSlowDown")
         private Integer clockEventHwThermalSlowDown;
 
         /**
-         * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp
-         * too high
-         *
+         * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too high
          * @param clockEventHwThermalSlowDown the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventHwThermalSlowDown(Integer clockEventHwThermalSlowDown) {
             this.clockEventHwThermalSlowDown = clockEventHwThermalSlowDown;
             this.__explicitlySet__.add("clockEventHwThermalSlowDown");
             return this;
         }
         /**
-         * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU
-         * is consuming too much power
-         */
+         * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is consuming too much power
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventSwPowerCap")
         private Integer clockEventSwPowerCap;
 
         /**
-         * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU
-         * is consuming too much power
-         *
+         * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is consuming too much power
          * @param clockEventSwPowerCap the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventSwPowerCap(Integer clockEventSwPowerCap) {
             this.clockEventSwPowerCap = clockEventSwPowerCap;
             this.__explicitlySet__.add("clockEventSwPowerCap");
             return this;
         }
-        /** GPU clocks are limited by applications clocks setting */
+        /**
+         * GPU clocks are limited by applications clocks setting
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventAppClockSetting")
         private Integer clockEventAppClockSetting;
 
         /**
          * GPU clocks are limited by applications clocks setting
-         *
          * @param clockEventAppClockSetting the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventAppClockSetting(Integer clockEventAppClockSetting) {
             this.clockEventAppClockSetting = clockEventAppClockSetting;
             this.__explicitlySet__.add("clockEventAppClockSetting");
@@ -299,35 +308,31 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
         }
         /**
          * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventHwPowerBreak")
         private Integer clockEventHwPowerBreak;
 
         /**
          * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-         *
          * @param clockEventHwPowerBreak the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventHwPowerBreak(Integer clockEventHwPowerBreak) {
             this.clockEventHwPowerBreak = clockEventHwPowerBreak;
             this.__explicitlySet__.add("clockEventHwPowerBreak");
             return this;
         }
         /**
-         * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU
-         * temperature is higher than Max Operating Temp
-         */
+         * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU temperature is higher than Max Operating Temp
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventSwThermalSlowdown")
         private Integer clockEventSwThermalSlowdown;
 
         /**
-         * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU
-         * temperature is higher than Max Operating Temp
-         *
+         * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU temperature is higher than Max Operating Temp
          * @param clockEventSwThermalSlowdown the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventSwThermalSlowdown(Integer clockEventSwThermalSlowdown) {
             this.clockEventSwThermalSlowdown = clockEventSwThermalSlowdown;
             this.__explicitlySet__.add("clockEventSwThermalSlowdown");
@@ -335,16 +340,15 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
         }
         /**
          * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clockEventSyncBoost")
         private Integer clockEventSyncBoost;
 
         /**
          * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-         *
          * @param clockEventSyncBoost the value to set
          * @return this builder
-         */
+         **/
         public Builder clockEventSyncBoost(Integer clockEventSyncBoost) {
             this.clockEventSyncBoost = clockEventSyncBoost;
             this.__explicitlySet__.add("clockEventSyncBoost");
@@ -453,7 +457,9 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -508,274 +514,282 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
         this.clockEventSyncBoost = clockEventSyncBoost;
     }
 
-    /** GPU Identifier */
+    /**
+     * GPU Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpuId")
     private final Integer gpuId;
 
     /**
      * GPU Identifier
-     *
      * @return the value
-     */
+     **/
     public Integer getGpuId() {
         return gpuId;
     }
 
-    /** GPU Utilization Percent */
+    /**
+     * GPU Utilization Percent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("utilization")
     private final Double utilization;
 
     /**
      * GPU Utilization Percent
-     *
      * @return the value
-     */
+     **/
     public Double getUtilization() {
         return utilization;
     }
 
-    /** GPU Memory Utilization Percent */
+    /**
+     * GPU Memory Utilization Percent
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryUtilization")
     private final Double memoryUtilization;
 
     /**
      * GPU Memory Utilization Percent
-     *
      * @return the value
-     */
+     **/
     public Double getMemoryUtilization() {
         return memoryUtilization;
     }
 
-    /** GPU Power Draw in Watts */
+    /**
+     * GPU Power Draw in Watts
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("powerDraw")
     private final Double powerDraw;
 
     /**
      * GPU Power Draw in Watts
-     *
      * @return the value
-     */
+     **/
     public Double getPowerDraw() {
         return powerDraw;
     }
 
-    /** GPU Temperature in Celsius */
+    /**
+     * GPU Temperature in Celsius
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("temperature")
     private final Double temperature;
 
     /**
      * GPU Temperature in Celsius
-     *
      * @return the value
-     */
+     **/
     public Double getTemperature() {
         return temperature;
     }
 
-    /** GPU Fan Utilization */
+    /**
+     * GPU Fan Utilization
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fanUtilization")
     private final Double fanUtilization;
 
     /**
      * GPU Fan Utilization
-     *
      * @return the value
-     */
+     **/
     public Double getFanUtilization() {
         return fanUtilization;
     }
 
-    /** GPU Graphics (Shader) Clock Speed */
+    /**
+     * GPU Graphics (Shader) Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedGraphics")
     private final Double clockSpeedGraphics;
 
     /**
      * GPU Graphics (Shader) Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getClockSpeedGraphics() {
         return clockSpeedGraphics;
     }
 
-    /** GPU SM (Streaming Multiprocessor) Clock Speed */
+    /**
+     * GPU SM (Streaming Multiprocessor) Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedSm")
     private final Double clockSpeedSm;
 
     /**
      * GPU SM (Streaming Multiprocessor) Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getClockSpeedSm() {
         return clockSpeedSm;
     }
 
-    /** GPU Video Clock Speed */
+    /**
+     * GPU Video Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedVideo")
     private final Double clockSpeedVideo;
 
     /**
      * GPU Video Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getClockSpeedVideo() {
         return clockSpeedVideo;
     }
 
-    /** GPU Memory Clock Speed */
+    /**
+     * GPU Memory Clock Speed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockSpeedMemory")
     private final Double clockSpeedMemory;
 
     /**
      * GPU Memory Clock Speed
-     *
      * @return the value
-     */
+     **/
     public Double getClockSpeedMemory() {
         return clockSpeedMemory;
     }
 
-    /** GPU Performance State */
+    /**
+     * GPU Performance State
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("performanceState")
     private final Double performanceState;
 
     /**
      * GPU Performance State
-     *
      * @return the value
-     */
+     **/
     public Double getPerformanceState() {
         return performanceState;
     }
 
-    /** GPU ECC Single Bit Errors */
+    /**
+     * GPU ECC Single Bit Errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eccSingleBitErrors")
     private final Integer eccSingleBitErrors;
 
     /**
      * GPU ECC Single Bit Errors
-     *
      * @return the value
-     */
+     **/
     public Integer getEccSingleBitErrors() {
         return eccSingleBitErrors;
     }
 
-    /** GPU ECC Double Bit Errors */
+    /**
+     * GPU ECC Double Bit Errors
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("eccDoubleBitErrors")
     private final Integer eccDoubleBitErrors;
 
     /**
      * GPU ECC Double Bit Errors
-     *
      * @return the value
-     */
+     **/
     public Integer getEccDoubleBitErrors() {
         return eccDoubleBitErrors;
     }
 
-    /** Nothing running on CPU, clocks are idle */
+    /**
+     * Nothing running on CPU, clocks are idle
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventIdle")
     private final Integer clockEventIdle;
 
     /**
      * Nothing running on CPU, clocks are idle
-     *
      * @return the value
-     */
+     **/
     public Integer getClockEventIdle() {
         return clockEventIdle;
     }
 
     /**
-     * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too
-     * high
-     */
+     * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too high
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventHwThermalSlowDown")
     private final Integer clockEventHwThermalSlowDown;
 
     /**
-     * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too
-     * high
-     *
+     * HW Thermal Slowdown (reducing the core clocks by a factor of 2 or more) is engaged. Temp too high
      * @return the value
-     */
+     **/
     public Integer getClockEventHwThermalSlowDown() {
         return clockEventHwThermalSlowDown;
     }
 
     /**
-     * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is
-     * consuming too much power
-     */
+     * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is consuming too much power
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventSwPowerCap")
     private final Integer clockEventSwPowerCap;
 
     /**
-     * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is
-     * consuming too much power
-     *
+     * SW Power Scaling algorithm is reducing the clocks below requested clocks because the GPU is consuming too much power
      * @return the value
-     */
+     **/
     public Integer getClockEventSwPowerCap() {
         return clockEventSwPowerCap;
     }
 
-    /** GPU clocks are limited by applications clocks setting */
+    /**
+     * GPU clocks are limited by applications clocks setting
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventAppClockSetting")
     private final Integer clockEventAppClockSetting;
 
     /**
      * GPU clocks are limited by applications clocks setting
-     *
      * @return the value
-     */
+     **/
     public Integer getClockEventAppClockSetting() {
         return clockEventAppClockSetting;
     }
 
-    /** HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged */
+    /**
+     * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventHwPowerBreak")
     private final Integer clockEventHwPowerBreak;
 
     /**
      * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-     *
      * @return the value
-     */
+     **/
     public Integer getClockEventHwPowerBreak() {
         return clockEventHwPowerBreak;
     }
 
     /**
-     * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU
-     * temperature is higher than Max Operating Temp
-     */
+     * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU temperature is higher than Max Operating Temp
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventSwThermalSlowdown")
     private final Integer clockEventSwThermalSlowdown;
 
     /**
-     * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU
-     * temperature is higher than Max Operating Temp
-     *
+     * SW Thermal capping algorithm is reducing clocks below requested clocks because GPU temperature is higher than Max Operating Temp
      * @return the value
-     */
+     **/
     public Integer getClockEventSwThermalSlowdown() {
         return clockEventSwThermalSlowdown;
     }
 
-    /** HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged */
+    /**
+     * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clockEventSyncBoost")
     private final Integer clockEventSyncBoost;
 
     /**
      * HW Power Brake Slowdown (reducing the core clocks by a factor of 2 or more) is engaged
-     *
      * @return the value
-     */
+     **/
     public Integer getClockEventSyncBoost() {
         return clockEventSyncBoost;
     }
@@ -787,7 +801,6 @@ public final class HostGpuUsage extends HostPerformanceMetricGroup {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

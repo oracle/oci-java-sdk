@@ -5,23 +5,23 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details to update the SQL Firewall config. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+ * Details to update the SQL Firewall config.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSqlFirewallConfigDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateSqlFirewallConfigDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateSqlFirewallConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"status", "violationLogAutoPurge", "excludeJob"})
     public UpdateSqlFirewallConfigDetails(
@@ -34,54 +34,53 @@ public final class UpdateSqlFirewallConfigDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies whether the firewall is enabled or disabled on the target database. */
+        /**
+         * Specifies whether the firewall is enabled or disabled on the target database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * Specifies whether the firewall is enabled or disabled on the target database.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
         /**
-         * Specifies whether Data Safe should automatically purge the violation logs from the
-         * database after collecting the violation logs and persisting on Data Safe.
-         */
+         * Specifies whether Data Safe should automatically purge the violation logs
+         * from the database after collecting the violation logs and persisting on Data Safe.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violationLogAutoPurge")
         private ViolationLogAutoPurge violationLogAutoPurge;
 
         /**
-         * Specifies whether Data Safe should automatically purge the violation logs from the
-         * database after collecting the violation logs and persisting on Data Safe.
+         * Specifies whether Data Safe should automatically purge the violation logs
+         * from the database after collecting the violation logs and persisting on Data Safe.
          *
          * @param violationLogAutoPurge the value to set
          * @return this builder
-         */
+         **/
         public Builder violationLogAutoPurge(ViolationLogAutoPurge violationLogAutoPurge) {
             this.violationLogAutoPurge = violationLogAutoPurge;
             this.__explicitlySet__.add("violationLogAutoPurge");
             return this;
         }
         /**
-         * Specifies whether the firewall should include or exclude the database internal job
-         * activities.
-         */
+         * Specifies whether the firewall should include or exclude the database internal job activities.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeJob")
         private ExcludeJob excludeJob;
 
         /**
-         * Specifies whether the firewall should include or exclude the database internal job
-         * activities.
-         *
+         * Specifies whether the firewall should include or exclude the database internal job activities.
          * @param excludeJob the value to set
          * @return this builder
-         */
+         **/
         public Builder excludeJob(ExcludeJob excludeJob) {
             this.excludeJob = excludeJob;
             this.__explicitlySet__.add("excludeJob");
@@ -116,7 +115,9 @@ public final class UpdateSqlFirewallConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -125,8 +126,10 @@ public final class UpdateSqlFirewallConfigDetails
         return new Builder().copy(this);
     }
 
-    /** Specifies whether the firewall is enabled or disabled on the target database. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies whether the firewall is enabled or disabled on the target database.
+     **/
+    public enum Status {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -158,24 +161,26 @@ public final class UpdateSqlFirewallConfigDetails
             throw new IllegalArgumentException("Invalid Status: " + key);
         }
     };
-    /** Specifies whether the firewall is enabled or disabled on the target database. */
+    /**
+     * Specifies whether the firewall is enabled or disabled on the target database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * Specifies whether the firewall is enabled or disabled on the target database.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
     /**
-     * Specifies whether Data Safe should automatically purge the violation logs from the database
-     * after collecting the violation logs and persisting on Data Safe.
-     */
-    public enum ViolationLogAutoPurge implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether Data Safe should automatically purge the violation logs
+     * from the database after collecting the violation logs and persisting on Data Safe.
+     *
+     **/
+    public enum ViolationLogAutoPurge {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
         ;
@@ -208,27 +213,27 @@ public final class UpdateSqlFirewallConfigDetails
         }
     };
     /**
-     * Specifies whether Data Safe should automatically purge the violation logs from the database
-     * after collecting the violation logs and persisting on Data Safe.
-     */
+     * Specifies whether Data Safe should automatically purge the violation logs
+     * from the database after collecting the violation logs and persisting on Data Safe.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violationLogAutoPurge")
     private final ViolationLogAutoPurge violationLogAutoPurge;
 
     /**
-     * Specifies whether Data Safe should automatically purge the violation logs from the database
-     * after collecting the violation logs and persisting on Data Safe.
+     * Specifies whether Data Safe should automatically purge the violation logs
+     * from the database after collecting the violation logs and persisting on Data Safe.
      *
      * @return the value
-     */
+     **/
     public ViolationLogAutoPurge getViolationLogAutoPurge() {
         return violationLogAutoPurge;
     }
 
     /**
-     * Specifies whether the firewall should include or exclude the database internal job
-     * activities.
-     */
-    public enum ExcludeJob implements com.oracle.bmc.http.internal.BmcEnum {
+     * Specifies whether the firewall should include or exclude the database internal job activities.
+     **/
+    public enum ExcludeJob {
         Excluded("EXCLUDED"),
         Included("INCLUDED"),
         ;
@@ -261,18 +266,15 @@ public final class UpdateSqlFirewallConfigDetails
         }
     };
     /**
-     * Specifies whether the firewall should include or exclude the database internal job
-     * activities.
-     */
+     * Specifies whether the firewall should include or exclude the database internal job activities.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeJob")
     private final ExcludeJob excludeJob;
 
     /**
-     * Specifies whether the firewall should include or exclude the database internal job
-     * activities.
-     *
+     * Specifies whether the firewall should include or exclude the database internal job activities.
      * @return the value
-     */
+     **/
     public ExcludeJob getExcludeJob() {
         return excludeJob;
     }
@@ -284,7 +286,6 @@ public final class UpdateSqlFirewallConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

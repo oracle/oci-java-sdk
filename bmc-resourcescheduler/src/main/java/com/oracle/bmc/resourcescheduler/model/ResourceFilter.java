@@ -5,42 +5,46 @@
 package com.oracle.bmc.resourcescheduler.model;
 
 /**
- * This is a generic filter used to decide which resources that the schedule be applied to. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+ * This is a generic filter used to decide which resources that the schedule be applied to.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "attribute",
-        defaultImpl = ResourceFilter.class)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "attribute",
+    defaultImpl = ResourceFilter.class
+)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = TimeCreatedResourceFilter.class,
-            name = "TIME_CREATED"),
+        value = TimeCreatedResourceFilter.class,
+        name = "TIME_CREATED"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ResourceTypeResourceFilter.class,
-            name = "RESOURCE_TYPE"),
+        value = ResourceTypeResourceFilter.class,
+        name = "RESOURCE_TYPE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = LifecycleStateResourceFilter.class,
-            name = "LIFECYCLE_STATE"),
+        value = LifecycleStateResourceFilter.class,
+        name = "LIFECYCLE_STATE"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CompartmentIdResourceFilter.class,
-            name = "COMPARTMENT_ID"),
+        value = CompartmentIdResourceFilter.class,
+        name = "COMPARTMENT_ID"
+    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = DefinedTagsResourceFilter.class,
-            name = "DEFINED_TAGS")
+        value = DefinedTagsResourceFilter.class,
+        name = "DEFINED_TAGS"
+    )
 })
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public class ResourceFilter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public class ResourceFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({})
     protected ResourceFilter() {
@@ -54,7 +58,6 @@ public class ResourceFilter extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */
@@ -87,8 +90,10 @@ public class ResourceFilter extends com.oracle.bmc.http.client.internal.Explicit
         return result;
     }
 
-    /** This is the resource attribute on which the threshold is defined. */
-    public enum Attribute implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * This is the resource attribute on which the threshold is defined.
+     **/
+    public enum Attribute {
         CompartmentId("COMPARTMENT_ID"),
         ResourceType("RESOURCE_TYPE"),
         DefinedTags("DEFINED_TAGS"),
@@ -96,8 +101,8 @@ public class ResourceFilter extends com.oracle.bmc.http.client.internal.Explicit
         LifecycleState("LIFECYCLE_STATE"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 

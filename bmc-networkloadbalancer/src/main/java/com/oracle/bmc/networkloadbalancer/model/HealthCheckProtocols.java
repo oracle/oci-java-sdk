@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.networkloadbalancer.model;
 
-/** Protocols supported for the health checks of the network load balancer. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
-public enum HealthCheckProtocols implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Protocols supported for the health checks of the network load balancer.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+public enum HealthCheckProtocols {
     Http("HTTP"),
     Https("HTTPS"),
     Tcp("TCP"),

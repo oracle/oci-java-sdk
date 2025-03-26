@@ -5,103 +5,91 @@
 package com.oracle.bmc.containerinstances.model;
 
 /**
- * Security context for Linux container. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
+ * Security context for Linux container.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LinuxSecurityContext.Builder.class)
+    builder = LinuxSecurityContext.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "securityContextType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "securityContextType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class LinuxSecurityContext extends SecurityContext {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The user ID (UID) to run the entrypoint process of the container. Defaults to user
-         * specified UID in container image metadata if not provided. This must be provided if
-         * runAsGroup is provided.
-         */
+         * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
         private Integer runAsUser;
 
         /**
-         * The user ID (UID) to run the entrypoint process of the container. Defaults to user
-         * specified UID in container image metadata if not provided. This must be provided if
-         * runAsGroup is provided.
+         * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
          *
          * @param runAsUser the value to set
          * @return this builder
-         */
+         **/
         public Builder runAsUser(Integer runAsUser) {
             this.runAsUser = runAsUser;
             this.__explicitlySet__.add("runAsUser");
             return this;
         }
         /**
-         * The group ID (GID) to run the entrypoint process of the container. Uses runtime default
-         * if not provided.
-         */
+         * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runAsGroup")
         private Integer runAsGroup;
 
         /**
-         * The group ID (GID) to run the entrypoint process of the container. Uses runtime default
-         * if not provided.
-         *
+         * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
          * @param runAsGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder runAsGroup(Integer runAsGroup) {
             this.runAsGroup = runAsGroup;
             this.__explicitlySet__.add("runAsGroup");
             return this;
         }
         /**
-         * Indicates if the container must run as a non-root user. If true, the service validates
-         * the container image at runtime to ensure that it is not going to run with UID 0 (root)
-         * and fails the container instance creation if the validation fails.
-         */
+         * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isNonRootUserCheckEnabled")
         private Boolean isNonRootUserCheckEnabled;
 
         /**
-         * Indicates if the container must run as a non-root user. If true, the service validates
-         * the container image at runtime to ensure that it is not going to run with UID 0 (root)
-         * and fails the container instance creation if the validation fails.
+         * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
          *
          * @param isNonRootUserCheckEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isNonRootUserCheckEnabled(Boolean isNonRootUserCheckEnabled) {
             this.isNonRootUserCheckEnabled = isNonRootUserCheckEnabled;
             this.__explicitlySet__.add("isNonRootUserCheckEnabled");
             return this;
         }
         /**
-         * Determines if the container will have a read-only root file system. Default value is
-         * false.
-         */
+         * Determines if the container will have a read-only root file system. Default value is false.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRootFileSystemReadonly")
         private Boolean isRootFileSystemReadonly;
 
         /**
-         * Determines if the container will have a read-only root file system. Default value is
-         * false.
-         *
+         * Determines if the container will have a read-only root file system. Default value is false.
          * @param isRootFileSystemReadonly the value to set
          * @return this builder
-         */
+         **/
         public Builder isRootFileSystemReadonly(Boolean isRootFileSystemReadonly) {
             this.isRootFileSystemReadonly = isRootFileSystemReadonly;
             this.__explicitlySet__.add("isRootFileSystemReadonly");
@@ -155,7 +143,9 @@ public final class LinuxSecurityContext extends SecurityContext {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -180,71 +170,61 @@ public final class LinuxSecurityContext extends SecurityContext {
     }
 
     /**
-     * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified
-     * UID in container image metadata if not provided. This must be provided if runAsGroup is
-     * provided.
-     */
+     * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runAsUser")
     private final Integer runAsUser;
 
     /**
-     * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified
-     * UID in container image metadata if not provided. This must be provided if runAsGroup is
-     * provided.
+     * The user ID (UID) to run the entrypoint process of the container. Defaults to user specified UID in container image metadata if not provided. This must be provided if runAsGroup is provided.
      *
      * @return the value
-     */
+     **/
     public Integer getRunAsUser() {
         return runAsUser;
     }
 
     /**
-     * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if
-     * not provided.
-     */
+     * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runAsGroup")
     private final Integer runAsGroup;
 
     /**
-     * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if
-     * not provided.
-     *
+     * The group ID (GID) to run the entrypoint process of the container. Uses runtime default if not provided.
      * @return the value
-     */
+     **/
     public Integer getRunAsGroup() {
         return runAsGroup;
     }
 
     /**
-     * Indicates if the container must run as a non-root user. If true, the service validates the
-     * container image at runtime to ensure that it is not going to run with UID 0 (root) and fails
-     * the container instance creation if the validation fails.
-     */
+     * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isNonRootUserCheckEnabled")
     private final Boolean isNonRootUserCheckEnabled;
 
     /**
-     * Indicates if the container must run as a non-root user. If true, the service validates the
-     * container image at runtime to ensure that it is not going to run with UID 0 (root) and fails
-     * the container instance creation if the validation fails.
+     * Indicates if the container must run as a non-root user. If true, the service validates the container image at runtime to ensure that it is not going to run with UID 0 (root) and fails the container instance creation if the validation fails.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsNonRootUserCheckEnabled() {
         return isNonRootUserCheckEnabled;
     }
 
     /**
      * Determines if the container will have a read-only root file system. Default value is false.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRootFileSystemReadonly")
     private final Boolean isRootFileSystemReadonly;
 
     /**
      * Determines if the container will have a read-only root file system. Default value is false.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsRootFileSystemReadonly() {
         return isRootFileSystemReadonly;
     }
@@ -263,7 +243,6 @@ public final class LinuxSecurityContext extends SecurityContext {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,22 +6,18 @@ package com.oracle.bmc.core.requests;
 
 import com.oracle.bmc.core.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDrgAttachmentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDrgAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDrgAttachmentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -49,59 +45,63 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         return drgId;
     }
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of results per page, or items to return in a
-     * paginated "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of results per page, or items to return in a paginated
+     * "List" call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * <p>
+     * Example: {@code 50}
      *
-     * <p>Example: {@code 50}
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     private String page;
 
     /**
-     * For list pagination. The value of the {@code opc-next-page} response header from the previous
-     * "List" call. For important details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+     * call. For important details about how pagination works, see
+     * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     *
      */
     public String getPage() {
         return page;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the
-     * DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
      */
     private String networkId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the
-     * DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
      */
     public String getNetworkId() {
         return networkId;
     }
-    /** The type for the network resource attached to the DRG. */
+    /**
+     * The type for the network resource attached to the DRG.
+     */
     private AttachmentType attachmentType;
 
-    /** The type for the network resource attached to the DRG. */
-    public enum AttachmentType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type for the network resource attached to the DRG.
+     **/
+    public enum AttachmentType {
         Vcn("VCN"),
         VirtualCircuit("VIRTUAL_CIRCUIT"),
         RemotePeeringConnection("REMOTE_PEERING_CONNECTION"),
@@ -137,53 +137,61 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
     };
 
-    /** The type for the network resource attached to the DRG. */
+    /**
+     * The type for the network resource attached to the DRG.
+     */
     public AttachmentType getAttachmentType() {
         return attachmentType;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
-     * route table assigned to the DRG attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */
     private String drgRouteTableId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG
-     * route table assigned to the DRG attachment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
      */
     public String getDrgRouteTableId() {
         return drgRouteTableId;
     }
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the given display name exactly. */
+    /**
+     * A filter to return only resources that match the given display name exactly.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     private SortBy sortBy;
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -218,28 +226,31 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
-     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort
-     * order is case sensitive.
+     * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+     * sort order is case sensitive.
+     * <p>
+     **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+     * optionally filter by availability domain if the scope of the resource type is within a
+     * single availability domain. If you call one of these "List" operations without specifying
+     * an availability domain, the resources are grouped by availability domain, then sorted.
      *
-     * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
-     * optionally filter by availability domain if the scope of the resource type is within a single
-     * availability domain. If you call one of these "List" operations without specifying an
-     * availability domain, the resources are grouped by availability domain, then sorted.
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     private SortOrder sortOrder;
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
-     */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -273,21 +284,24 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
     };
 
     /**
-     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-     * DISPLAYNAME sort order is case sensitive.
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+     * is case sensitive.
+     *
      */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle
+     * state. The value is case insensitive.
+     *
      */
     private com.oracle.bmc.core.model.DrgAttachment.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle
+     * state. The value is case insensitive.
+     *
      */
     public com.oracle.bmc.core.model.DrgAttachment.LifecycleState getLifecycleState() {
         return lifecycleState;
@@ -296,19 +310,17 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDrgAttachmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -318,15 +330,12 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          */
         private String vcnId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VCN.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN.
          * @param vcnId the value to set
          * @return this builder instance
          */
@@ -336,15 +345,12 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          */
         private String drgId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          * @param drgId the value to set
          * @return this builder instance
          */
@@ -354,20 +360,21 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
-         * <p>Example: {@code 50}
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of results per page, or items to return in a
-         * paginated "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
-         * <p>Example: {@code 50}
+         * For list pagination. The maximum number of results per page, or items to return in a paginated
+         * "List" call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * <p>
+         * Example: {@code 50}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -378,16 +385,17 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         *
          */
         private String page = null;
 
         /**
-         * For list pagination. The value of the {@code opc-next-page} response header from the
-         * previous "List" call. For important details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The value of the {@code opc-next-page} response header from the previous "List"
+         * call. For important details about how pagination works, see
+         * [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -398,17 +406,12 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to
-         * the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
          */
         private String networkId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to
-         * the DRG.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (virtual circuit, VCN, IPSec tunnel, or remote peering connection) attached to the DRG.
          * @param networkId the value to set
          * @return this builder instance
          */
@@ -417,12 +420,13 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** The type for the network resource attached to the DRG. */
+        /**
+         * The type for the network resource attached to the DRG.
+         */
         private AttachmentType attachmentType = null;
 
         /**
          * The type for the network resource attached to the DRG.
-         *
          * @param attachmentType the value to set
          * @return this builder instance
          */
@@ -432,15 +436,12 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG route table assigned to the DRG attachment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
          */
         private String drgRouteTableId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * DRG route table assigned to the DRG attachment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG route table assigned to the DRG attachment.
          * @param drgRouteTableId the value to set
          * @return this builder instance
          */
@@ -449,7 +450,10 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return only resources that match the given display name exactly. */
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -464,28 +468,27 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
          *
-         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
-         * you optionally filter by availability domain if the scope of the resource type is within
-         * a single availability domain. If you call one of these "List" operations without
-         * specifying an availability domain, the resources are grouped by availability domain, then
-         * sorted.
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order
-         * for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The
-         * DISPLAYNAME sort order is case sensitive.
-         *
-         * <p>*Note:** In general, some "List" operations (for example, {@code ListInstances}) let
-         * you optionally filter by availability domain if the scope of the resource type is within
-         * a single availability domain. If you call one of these "List" operations without
-         * specifying an availability domain, the resources are grouped by availability domain, then
-         * sorted.
+         * The field to sort by. You can provide one sort order ({@code sortOrder}). Default order for
+         * TIMECREATED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME
+         * sort order is case sensitive.
+         * <p>
+         **Note:** In general, some "List" operations (for example, {@code ListInstances}) let you
+         * optionally filter by availability domain if the scope of the resource type is within a
+         * single availability domain. If you call one of these "List" operations without specifying
+         * an availability domain, the resources are grouped by availability domain, then sorted.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -496,14 +499,15 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
+         *
          */
         private SortOrder sortOrder = null;
 
         /**
-         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The
-         * DISPLAYNAME sort order is case sensitive.
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The DISPLAYNAME sort order
+         * is case sensitive.
          *
          * @param sortOrder the value to set
          * @return this builder instance
@@ -514,14 +518,15 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
+         * A filter to return only resources that match the specified lifecycle
+         * state. The value is case insensitive.
+         *
          */
         private com.oracle.bmc.core.model.DrgAttachment.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
+         * A filter to return only resources that match the specified lifecycle
+         * state. The value is case insensitive.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -534,19 +539,18 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -558,7 +562,6 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDrgAttachmentsRequest o) {
@@ -582,11 +585,10 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListDrgAttachmentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDrgAttachmentsRequest
          */
@@ -600,8 +602,7 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
         /**
          * Build the instance of ListDrgAttachmentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDrgAttachmentsRequest
@@ -621,14 +622,12 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             return request;
-            // new ListDrgAttachmentsRequest(compartmentId, vcnId, drgId, limit, page, networkId,
-            // attachmentType, drgRouteTableId, displayName, sortBy, sortOrder, lifecycleState);
+            // new ListDrgAttachmentsRequest(compartmentId, vcnId, drgId, limit, page, networkId, attachmentType, drgRouteTableId, displayName, sortBy, sortOrder, lifecycleState);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -649,7 +648,6 @@ public class ListDrgAttachmentsRequest extends com.oracle.bmc.requests.BmcReques
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

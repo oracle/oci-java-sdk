@@ -5,23 +5,21 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Declares how two elements of object lineage are related. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Declares how two elements of object lineage are related.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = LineageRelationship.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class LineageRelationship
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = LineageRelationship.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class LineageRelationship extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"fromObjectKey", "toObjectKey", "relationshipType"})
     public LineageRelationship(String fromObjectKey, String toObjectKey, String relationshipType) {
@@ -33,46 +31,49 @@ public final class LineageRelationship
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Object key of source lineage element. */
+        /**
+         * Object key of source lineage element.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fromObjectKey")
         private String fromObjectKey;
 
         /**
          * Object key of source lineage element.
-         *
          * @param fromObjectKey the value to set
          * @return this builder
-         */
+         **/
         public Builder fromObjectKey(String fromObjectKey) {
             this.fromObjectKey = fromObjectKey;
             this.__explicitlySet__.add("fromObjectKey");
             return this;
         }
-        /** Object key of target lineage element. */
+        /**
+         * Object key of target lineage element.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toObjectKey")
         private String toObjectKey;
 
         /**
          * Object key of target lineage element.
-         *
          * @param toObjectKey the value to set
          * @return this builder
-         */
+         **/
         public Builder toObjectKey(String toObjectKey) {
             this.toObjectKey = toObjectKey;
             this.__explicitlySet__.add("toObjectKey");
             return this;
         }
-        /** Type of the relationship. */
+        /**
+         * Type of the relationship.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
         private String relationshipType;
 
         /**
          * Type of the relationship.
-         *
          * @param relationshipType the value to set
          * @return this builder
-         */
+         **/
         public Builder relationshipType(String relationshipType) {
             this.relationshipType = relationshipType;
             this.__explicitlySet__.add("relationshipType");
@@ -107,7 +108,9 @@ public final class LineageRelationship
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -116,41 +119,44 @@ public final class LineageRelationship
         return new Builder().copy(this);
     }
 
-    /** Object key of source lineage element. */
+    /**
+     * Object key of source lineage element.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fromObjectKey")
     private final String fromObjectKey;
 
     /**
      * Object key of source lineage element.
-     *
      * @return the value
-     */
+     **/
     public String getFromObjectKey() {
         return fromObjectKey;
     }
 
-    /** Object key of target lineage element. */
+    /**
+     * Object key of target lineage element.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("toObjectKey")
     private final String toObjectKey;
 
     /**
      * Object key of target lineage element.
-     *
      * @return the value
-     */
+     **/
     public String getToObjectKey() {
         return toObjectKey;
     }
 
-    /** Type of the relationship. */
+    /**
+     * Type of the relationship.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relationshipType")
     private final String relationshipType;
 
     /**
      * Type of the relationship.
-     *
      * @return the value
-     */
+     **/
     public String getRelationshipType() {
         return relationshipType;
     }
@@ -162,7 +168,6 @@ public final class LineageRelationship
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

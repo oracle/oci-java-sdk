@@ -6,17 +6,16 @@ package com.oracle.bmc.datasafe.responses;
 
 import com.oracle.bmc.datasafe.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     *
      */
     private String etag;
 
     /**
-     * For optimistic concurrency control. For more information, see [ETags for Optimistic
-     * Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+     * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
      *
      * @return the value
      */
@@ -25,14 +24,13 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,12 +38,13 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
         return opcRequestId;
     }
 
-    /** The returned {@code TargetAlertPolicyAssociation} instance. */
+    /**
+     * The returned TargetAlertPolicyAssociation instance.
+     */
     private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation targetAlertPolicyAssociation;
 
     /**
-     * The returned {@code TargetAlertPolicyAssociation} instance.
-     *
+     * The returned TargetAlertPolicyAssociation instance.
      * @return the value
      */
     public com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation
@@ -62,7 +61,7 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
     })
     private GetTargetAlertPolicyAssociationResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation
@@ -73,36 +72,29 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
         this.targetAlertPolicyAssociation = targetAlertPolicyAssociation;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetTargetAlertPolicyAssociationResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         *
          */
         private String etag;
 
         /**
-         * For optimistic concurrency control. For more information, see [ETags for Optimistic
-         * Concurrency
-         * Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
+         * For optimistic concurrency control. For more information, see [ETags for Optimistic Concurrency Control](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#eleven)
          *
          * @param etag the value to set
          * @return this builder
@@ -113,14 +105,13 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -130,13 +121,14 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
             return this;
         }
 
-        /** The returned {@code TargetAlertPolicyAssociation} instance. */
+        /**
+         * The returned TargetAlertPolicyAssociation instance.
+         */
         private com.oracle.bmc.datasafe.model.TargetAlertPolicyAssociation
                 targetAlertPolicyAssociation;
 
         /**
-         * The returned {@code TargetAlertPolicyAssociation} instance.
-         *
+         * The returned TargetAlertPolicyAssociation instance.
          * @param targetAlertPolicyAssociation the value to set
          * @return this builder
          */
@@ -149,10 +141,8 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetTargetAlertPolicyAssociationResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -165,10 +155,8 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetTargetAlertPolicyAssociationResponse build() {
             return new GetTargetAlertPolicyAssociationResponse(
                     __httpStatusCode__, headers, etag, opcRequestId, targetAlertPolicyAssociation);
@@ -177,7 +165,6 @@ public class GetTargetAlertPolicyAssociationResponse extends com.oracle.bmc.resp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

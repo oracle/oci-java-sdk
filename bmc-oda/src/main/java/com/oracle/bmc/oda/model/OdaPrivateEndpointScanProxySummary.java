@@ -5,23 +5,22 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Details pertaining to a scan proxy instance created for a scan listener FQDN/IPs <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Details pertaining to a scan proxy instance created for a scan listener FQDN/IPs
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OdaPrivateEndpointScanProxySummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OdaPrivateEndpointScanProxySummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OdaPrivateEndpointScanProxySummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -50,25 +49,27 @@ public final class OdaPrivateEndpointScanProxySummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ODA Private Endpoint Scan Proxy.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * ODA Private Endpoint Scan Proxy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Type indicating whether Scan listener is specified by its FQDN or list of IPs */
+        /**
+         * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerType")
         private OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType;
 
@@ -77,7 +78,7 @@ public final class OdaPrivateEndpointScanProxySummary
          *
          * @param scanListenerType the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerType(
                 OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType) {
             this.scanListenerType = scanListenerType;
@@ -86,7 +87,8 @@ public final class OdaPrivateEndpointScanProxySummary
         }
         /**
          * The protocol used for communication between client, scanProxy and RAC's scan listeners
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private OdaPrivateEndpointScanProxy.Protocol protocol;
 
@@ -95,60 +97,57 @@ public final class OdaPrivateEndpointScanProxySummary
          *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(OdaPrivateEndpointScanProxy.Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
         /**
-         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-         * listeners.
-         */
+         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scanListenerInfos")
         private java.util.List<ScanListenerInfo> scanListenerInfos;
 
         /**
-         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-         * listeners.
+         * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
          *
          * @param scanListenerInfos the value to set
          * @return this builder
-         */
+         **/
         public Builder scanListenerInfos(java.util.List<ScanListenerInfo> scanListenerInfos) {
             this.scanListenerInfos = scanListenerInfos;
             this.__explicitlySet__.add("scanListenerInfos");
             return this;
         }
-        /** The current state of the ODA Private Endpoint Scan Proxy. */
+        /**
+         * The current state of the ODA Private Endpoint Scan Proxy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private OdaPrivateEndpointScanProxy.LifecycleState lifecycleState;
 
         /**
          * The current state of the ODA Private Endpoint Scan Proxy.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(OdaPrivateEndpointScanProxy.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * When the resource was created. A date-time string as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         */
+         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * When the resource was created. A date-time string as described in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-         *
+         * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -197,7 +196,9 @@ public final class OdaPrivateEndpointScanProxySummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -207,23 +208,25 @@ public final class OdaPrivateEndpointScanProxySummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
-     * Private Endpoint Scan Proxy.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA
-     * Private Endpoint Scan Proxy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ODA Private Endpoint Scan Proxy.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Type indicating whether Scan listener is specified by its FQDN or list of IPs */
+    /**
+     * Type indicating whether Scan listener is specified by its FQDN or list of IPs
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerType")
     private final OdaPrivateEndpointScanProxy.ScanListenerType scanListenerType;
 
@@ -231,12 +234,15 @@ public final class OdaPrivateEndpointScanProxySummary
      * Type indicating whether Scan listener is specified by its FQDN or list of IPs
      *
      * @return the value
-     */
+     **/
     public OdaPrivateEndpointScanProxy.ScanListenerType getScanListenerType() {
         return scanListenerType;
     }
 
-    /** The protocol used for communication between client, scanProxy and RAC's scan listeners */
+    /**
+     * The protocol used for communication between client, scanProxy and RAC's scan listeners
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final OdaPrivateEndpointScanProxy.Protocol protocol;
 
@@ -244,54 +250,51 @@ public final class OdaPrivateEndpointScanProxySummary
      * The protocol used for communication between client, scanProxy and RAC's scan listeners
      *
      * @return the value
-     */
+     **/
     public OdaPrivateEndpointScanProxy.Protocol getProtocol() {
         return protocol;
     }
 
     /**
-     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-     * listeners.
-     */
+     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scanListenerInfos")
     private final java.util.List<ScanListenerInfo> scanListenerInfos;
 
     /**
-     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN
-     * listeners.
+     * The FQDN/IPs and port information of customer's Real Application Cluster (RAC)'s SCAN listeners.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ScanListenerInfo> getScanListenerInfos() {
         return scanListenerInfos;
     }
 
-    /** The current state of the ODA Private Endpoint Scan Proxy. */
+    /**
+     * The current state of the ODA Private Endpoint Scan Proxy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final OdaPrivateEndpointScanProxy.LifecycleState lifecycleState;
 
     /**
      * The current state of the ODA Private Endpoint Scan Proxy.
-     *
      * @return the value
-     */
+     **/
     public OdaPrivateEndpointScanProxy.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * When the resource was created. A date-time string as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     */
+     * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * When the resource was created. A date-time string as described in [RFC
-     * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
-     *
+     * When the resource was created. A date-time string as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -303,7 +306,6 @@ public final class OdaPrivateEndpointScanProxySummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

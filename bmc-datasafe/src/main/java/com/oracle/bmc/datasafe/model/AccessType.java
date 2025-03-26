@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The type of access a user has on a table/view. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum AccessType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of access a user has on a table/view.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum AccessType {
     Select("SELECT"),
     Update("UPDATE"),
     Insert("INSERT"),

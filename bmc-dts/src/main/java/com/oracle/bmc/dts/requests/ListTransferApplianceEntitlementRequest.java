@@ -6,45 +6,56 @@ package com.oracle.bmc.dts.requests;
 
 import com.oracle.bmc.dts.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferApplianceEntitlementExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListTransferApplianceEntitlementRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dts/ListTransferApplianceEntitlementExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListTransferApplianceEntitlementRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 public class ListTransferApplianceEntitlementRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** compartment id */
+    /**
+     * compartment id
+     */
     private String compartmentId;
 
-    /** compartment id */
+    /**
+     * compartment id
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** filtering by Transfer Appliance Entitlement id */
+    /**
+     * filtering by Transfer Appliance Entitlement id
+     */
     private String id;
 
-    /** filtering by Transfer Appliance Entitlement id */
+    /**
+     * filtering by Transfer Appliance Entitlement id
+     */
     public String getId() {
         return id;
     }
-    /** filtering by displayName */
+    /**
+     * filtering by displayName
+     */
     private String displayName;
 
-    /** filtering by displayName */
+    /**
+     * filtering by displayName
+     */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+     * a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -53,15 +64,17 @@ public class ListTransferApplianceEntitlementRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListTransferApplianceEntitlementRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** compartment id */
+        /**
+         * compartment id
+         */
         private String compartmentId = null;
 
         /**
          * compartment id
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -70,12 +83,13 @@ public class ListTransferApplianceEntitlementRequest
             return this;
         }
 
-        /** filtering by Transfer Appliance Entitlement id */
+        /**
+         * filtering by Transfer Appliance Entitlement id
+         */
         private String id = null;
 
         /**
          * filtering by Transfer Appliance Entitlement id
-         *
          * @param id the value to set
          * @return this builder instance
          */
@@ -84,12 +98,13 @@ public class ListTransferApplianceEntitlementRequest
             return this;
         }
 
-        /** filtering by displayName */
+        /**
+         * filtering by displayName
+         */
         private String displayName = null;
 
         /**
          * filtering by displayName
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -99,14 +114,15 @@ public class ListTransferApplianceEntitlementRequest
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about
+         * a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -118,19 +134,18 @@ public class ListTransferApplianceEntitlementRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -142,7 +157,6 @@ public class ListTransferApplianceEntitlementRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListTransferApplianceEntitlementRequest o) {
@@ -156,14 +170,12 @@ public class ListTransferApplianceEntitlementRequest
         }
 
         /**
-         * Build the instance of ListTransferApplianceEntitlementRequest as configured by this
-         * builder
+         * Build the instance of ListTransferApplianceEntitlementRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListTransferApplianceEntitlementRequest
          */
@@ -175,11 +187,9 @@ public class ListTransferApplianceEntitlementRequest
         }
 
         /**
-         * Build the instance of ListTransferApplianceEntitlementRequest as configured by this
-         * builder
+         * Build the instance of ListTransferApplianceEntitlementRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListTransferApplianceEntitlementRequest
@@ -192,14 +202,12 @@ public class ListTransferApplianceEntitlementRequest
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListTransferApplianceEntitlementRequest(compartmentId, id, displayName,
-            // opcRequestId);
+            // new ListTransferApplianceEntitlementRequest(compartmentId, id, displayName, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -212,7 +220,6 @@ public class ListTransferApplianceEntitlementRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

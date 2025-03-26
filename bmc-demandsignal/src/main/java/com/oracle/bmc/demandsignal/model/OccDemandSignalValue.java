@@ -5,23 +5,21 @@
 package com.oracle.bmc.demandsignal.model;
 
 /**
- * The Value of Demand Signal for particular month. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
+ * The Value of Demand Signal for particular month.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OccDemandSignalValue.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OccDemandSignalValue
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OccDemandSignalValue.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OccDemandSignalValue extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"timeExpected", "value", "comments"})
     public OccDemandSignalValue(java.util.Date timeExpected, Float value, String comments) {
@@ -33,46 +31,49 @@ public final class OccDemandSignalValue
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The date of the Demand Signal Value. */
+        /**
+         * The date of the Demand Signal Value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpected")
         private java.util.Date timeExpected;
 
         /**
          * The date of the Demand Signal Value.
-         *
          * @param timeExpected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpected(java.util.Date timeExpected) {
             this.timeExpected = timeExpected;
             this.__explicitlySet__.add("timeExpected");
             return this;
         }
-        /** The Demand Signal Value. */
+        /**
+         * The Demand Signal Value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private Float value;
 
         /**
          * The Demand Signal Value.
-         *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(Float value) {
             this.value = value;
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Space provided for users to make comments regarding the value. */
+        /**
+         * Space provided for users to make comments regarding the value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("comments")
         private String comments;
 
         /**
          * Space provided for users to make comments regarding the value.
-         *
          * @param comments the value to set
          * @return this builder
-         */
+         **/
         public Builder comments(String comments) {
             this.comments = comments;
             this.__explicitlySet__.add("comments");
@@ -106,7 +107,9 @@ public final class OccDemandSignalValue
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +118,44 @@ public final class OccDemandSignalValue
         return new Builder().copy(this);
     }
 
-    /** The date of the Demand Signal Value. */
+    /**
+     * The date of the Demand Signal Value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpected")
     private final java.util.Date timeExpected;
 
     /**
      * The date of the Demand Signal Value.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpected() {
         return timeExpected;
     }
 
-    /** The Demand Signal Value. */
+    /**
+     * The Demand Signal Value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final Float value;
 
     /**
      * The Demand Signal Value.
-     *
      * @return the value
-     */
+     **/
     public Float getValue() {
         return value;
     }
 
-    /** Space provided for users to make comments regarding the value. */
+    /**
+     * Space provided for users to make comments regarding the value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("comments")
     private final String comments;
 
     /**
      * Space provided for users to make comments regarding the value.
-     *
      * @return the value
-     */
+     **/
     public String getComments() {
         return comments;
     }
@@ -161,7 +167,6 @@ public final class OccDemandSignalValue
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

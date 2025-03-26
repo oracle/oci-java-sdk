@@ -5,23 +5,23 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for returning history of suppressions for the specified alarm. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
+ * The configuration details for returning history of suppressions for the specified alarm.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180401")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SummarizeAlarmSuppressionHistoryDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = SummarizeAlarmSuppressionHistoryDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SummarizeAlarmSuppressionHistoryDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "dimensions",
@@ -41,56 +41,56 @@ public final class SummarizeAlarmSuppressionHistoryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A filter to suppress only alarm state entries that include the set of specified dimension
-         * key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state
-         * entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId":
-         * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
-         * suppression.
+         * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs.
+         * If you specify {"availabilityDomain": "phx-ad-1"}
+         * and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"},
+         * then this alarm will be included for suppression.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
 
         /**
-         * A filter to suppress only alarm state entries that include the set of specified dimension
-         * key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state
-         * entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId":
-         * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
-         * suppression.
-         *
-         * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+         * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs.
+         * If you specify {"availabilityDomain": "phx-ad-1"}
+         * and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"},
+         * then this alarm will be included for suppression.
+         * <p>
+         * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
          *
          * @param dimensions the value to set
          * @return this builder
-         */
+         **/
         public Builder dimensions(java.util.Map<String, String> dimensions) {
             this.dimensions = dimensions;
             this.__explicitlySet__.add("dimensions");
             return this;
         }
         /**
-         * A filter to return only entries with "timeSuppressFrom" time occurring on or after the
-         * specified time.
+         * A filter to return only entries with "timeSuppressFrom" time occurring on or after the specified time.
+         * <p>
+         * The value cannot be a future time.
+         * Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
-         * <p>The value cannot be a future time. Format defined by RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFromGreaterThanOrEqualTo")
         private java.util.Date timeSuppressFromGreaterThanOrEqualTo;
 
         /**
-         * A filter to return only entries with "timeSuppressFrom" time occurring on or after the
-         * specified time.
-         *
-         * <p>The value cannot be a future time. Format defined by RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+         * A filter to return only entries with "timeSuppressFrom" time occurring on or after the specified time.
+         * <p>
+         * The value cannot be a future time.
+         * Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeSuppressFromGreaterThanOrEqualTo the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSuppressFromGreaterThanOrEqualTo(
                 java.util.Date timeSuppressFromGreaterThanOrEqualTo) {
             this.timeSuppressFromGreaterThanOrEqualTo = timeSuppressFromGreaterThanOrEqualTo;
@@ -98,27 +98,28 @@ public final class SummarizeAlarmSuppressionHistoryDetails
             return this;
         }
         /**
-         * A filter to return only entries with "timeSuppressFrom" time occurring before the
-         * specified time.
+         * A filter to return only entries with "timeSuppressFrom" time occurring before the specified time.
+         * <p>
+         * The value cannot be a future time.
+         * Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
-         * <p>The value cannot be a future time. Format defined by RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFromLessThan")
         private java.util.Date timeSuppressFromLessThan;
 
         /**
-         * A filter to return only entries with "timeSuppressFrom" time occurring before the
-         * specified time.
-         *
-         * <p>The value cannot be a future time. Format defined by RFC3339.
-         *
-         * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+         * A filter to return only entries with "timeSuppressFrom" time occurring before the specified time.
+         * <p>
+         * The value cannot be a future time.
+         * Format defined by RFC3339.
+         * <p>
+         * Example: {@code 2023-02-01T01:02:29.600Z}
          *
          * @param timeSuppressFromLessThan the value to set
          * @return this builder
-         */
+         **/
         public Builder timeSuppressFromLessThan(java.util.Date timeSuppressFromLessThan) {
             this.timeSuppressFromLessThan = timeSuppressFromLessThan;
             this.__explicitlySet__.add("timeSuppressFromLessThan");
@@ -156,7 +157,9 @@ public final class SummarizeAlarmSuppressionHistoryDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -166,78 +169,79 @@ public final class SummarizeAlarmSuppressionHistoryDetails
     }
 
     /**
-     * A filter to suppress only alarm state entries that include the set of specified dimension
-     * key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry
-     * corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId":
-     * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
-     * suppression.
+     * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs.
+     * If you specify {"availabilityDomain": "phx-ad-1"}
+     * and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"},
+     * then this alarm will be included for suppression.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
 
     /**
-     * A filter to suppress only alarm state entries that include the set of specified dimension
-     * key-value pairs. If you specify {"availabilityDomain": "phx-ad-1"} and the alarm state entry
-     * corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId":
-     * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
-     * suppression.
-     *
-     * <p>Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
+     * A filter to suppress only alarm state entries that include the set of specified dimension key-value pairs.
+     * If you specify {"availabilityDomain": "phx-ad-1"}
+     * and the alarm state entry corresponds to the set {"availabilityDomain": "phx-ad-1" and "resourceId": "ocid1.instance.region1.phx.exampleuniqueID"},
+     * then this alarm will be included for suppression.
+     * <p>
+     * Example: {@code {"resourceId": "ocid1.instance.region1.phx.exampleuniqueID"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getDimensions() {
         return dimensions;
     }
 
     /**
-     * A filter to return only entries with "timeSuppressFrom" time occurring on or after the
-     * specified time.
+     * A filter to return only entries with "timeSuppressFrom" time occurring on or after the specified time.
+     * <p>
+     * The value cannot be a future time.
+     * Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
-     * <p>The value cannot be a future time. Format defined by RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFromGreaterThanOrEqualTo")
     private final java.util.Date timeSuppressFromGreaterThanOrEqualTo;
 
     /**
-     * A filter to return only entries with "timeSuppressFrom" time occurring on or after the
-     * specified time.
-     *
-     * <p>The value cannot be a future time. Format defined by RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+     * A filter to return only entries with "timeSuppressFrom" time occurring on or after the specified time.
+     * <p>
+     * The value cannot be a future time.
+     * Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSuppressFromGreaterThanOrEqualTo() {
         return timeSuppressFromGreaterThanOrEqualTo;
     }
 
     /**
-     * A filter to return only entries with "timeSuppressFrom" time occurring before the specified
-     * time.
+     * A filter to return only entries with "timeSuppressFrom" time occurring before the specified time.
+     * <p>
+     * The value cannot be a future time.
+     * Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
-     * <p>The value cannot be a future time. Format defined by RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeSuppressFromLessThan")
     private final java.util.Date timeSuppressFromLessThan;
 
     /**
-     * A filter to return only entries with "timeSuppressFrom" time occurring before the specified
-     * time.
-     *
-     * <p>The value cannot be a future time. Format defined by RFC3339.
-     *
-     * <p>Example: {@code 2023-02-01T01:02:29.600Z}
+     * A filter to return only entries with "timeSuppressFrom" time occurring before the specified time.
+     * <p>
+     * The value cannot be a future time.
+     * Format defined by RFC3339.
+     * <p>
+     * Example: {@code 2023-02-01T01:02:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeSuppressFromLessThan() {
         return timeSuppressFromLessThan;
     }
@@ -249,7 +253,6 @@ public final class SummarizeAlarmSuppressionHistoryDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

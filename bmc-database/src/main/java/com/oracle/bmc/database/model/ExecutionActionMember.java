@@ -5,23 +5,23 @@
 package com.oracle.bmc.database.model;
 
 /**
- * The action member details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * The action member details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExecutionActionMember.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExecutionActionMember.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExecutionActionMember
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "memberOrder",
@@ -46,86 +46,99 @@ public final class ExecutionActionMember
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The priority order of the execution action member. */
+        /**
+         * The priority order of the execution action member.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memberOrder")
         private Integer memberOrder;
 
         /**
          * The priority order of the execution action member.
-         *
          * @param memberOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder memberOrder(Integer memberOrder) {
             this.memberOrder = memberOrder;
             this.__explicitlySet__.add("memberOrder");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent resource the execution action belongs to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memberId")
         private String memberId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * parent resource the execution action belongs to.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
          * @param memberId the value to set
          * @return this builder
-         */
+         **/
         public Builder memberId(String memberId) {
             this.memberId = memberId;
             this.__explicitlySet__.add("memberId");
             return this;
         }
         /**
-         * The current status of the execution action member. Valid states are SCHEDULED,
-         * IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum: -
-         * SCHEDULED - IN_PROGRESS - FAILED - CANCELED - DURATION_EXCEEDED - RESCHEDULED - SUCCEEDED
-         */
+         * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED.
+         * enum:
+         * - SCHEDULED
+         * - IN_PROGRESS
+         * - FAILED
+         * - CANCELED
+         * - DURATION_EXCEEDED
+         * - RESCHEDULED
+         * - SUCCEEDED
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
-         * The current status of the execution action member. Valid states are SCHEDULED,
-         * IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum: -
-         * SCHEDULED - IN_PROGRESS - FAILED - CANCELED - DURATION_EXCEEDED - RESCHEDULED - SUCCEEDED
+         * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED.
+         * enum:
+         * - SCHEDULED
+         * - IN_PROGRESS
+         * - FAILED
+         * - CANCELED
+         * - DURATION_EXCEEDED
+         * - RESCHEDULED
+         * - SUCCEEDED
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The estimated time of the execution action member in minutes. */
+        /**
+         * The estimated time of the execution action member in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
         private Integer estimatedTimeInMins;
 
         /**
          * The estimated time of the execution action member in minutes.
-         *
          * @param estimatedTimeInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder estimatedTimeInMins(Integer estimatedTimeInMins) {
             this.estimatedTimeInMins = estimatedTimeInMins;
             this.__explicitlySet__.add("estimatedTimeInMins");
             return this;
         }
-        /** The total time taken by corresponding resource activity in minutes. */
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
         private Integer totalTimeTakenInMins;
 
         /**
          * The total time taken by corresponding resource activity in minutes.
-         *
          * @param totalTimeTakenInMins the value to set
          * @return this builder
-         */
+         **/
         public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
             this.totalTimeTakenInMins = totalTimeTakenInMins;
             this.__explicitlySet__.add("totalTimeTakenInMins");
@@ -170,7 +183,9 @@ public final class ExecutionActionMember
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -179,77 +194,90 @@ public final class ExecutionActionMember
         return new Builder().copy(this);
     }
 
-    /** The priority order of the execution action member. */
+    /**
+     * The priority order of the execution action member.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memberOrder")
     private final Integer memberOrder;
 
     /**
      * The priority order of the execution action member.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemberOrder() {
         return memberOrder;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent resource the execution action belongs to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memberId")
     private final String memberId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * parent resource the execution action belongs to.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent resource the execution action belongs to.
      * @return the value
-     */
+     **/
     public String getMemberId() {
         return memberId;
     }
 
     /**
-     * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS,
-     * FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum: - SCHEDULED -
-     * IN_PROGRESS - FAILED - CANCELED - DURATION_EXCEEDED - RESCHEDULED - SUCCEEDED
-     */
+     * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED.
+     * enum:
+     * - SCHEDULED
+     * - IN_PROGRESS
+     * - FAILED
+     * - CANCELED
+     * - DURATION_EXCEEDED
+     * - RESCHEDULED
+     * - SUCCEEDED
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
-     * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS,
-     * FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED. enum: - SCHEDULED -
-     * IN_PROGRESS - FAILED - CANCELED - DURATION_EXCEEDED - RESCHEDULED - SUCCEEDED
+     * The current status of the execution action member. Valid states are SCHEDULED, IN_PROGRESS, FAILED, CANCELED, DURATION_EXCEEDED, RESCHEDULED and COMPLETED.
+     * enum:
+     * - SCHEDULED
+     * - IN_PROGRESS
+     * - FAILED
+     * - CANCELED
+     * - DURATION_EXCEEDED
+     * - RESCHEDULED
+     * - SUCCEEDED
      *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The estimated time of the execution action member in minutes. */
+    /**
+     * The estimated time of the execution action member in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTimeInMins")
     private final Integer estimatedTimeInMins;
 
     /**
      * The estimated time of the execution action member in minutes.
-     *
      * @return the value
-     */
+     **/
     public Integer getEstimatedTimeInMins() {
         return estimatedTimeInMins;
     }
 
-    /** The total time taken by corresponding resource activity in minutes. */
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
     private final Integer totalTimeTakenInMins;
 
     /**
      * The total time taken by corresponding resource activity in minutes.
-     *
      * @return the value
-     */
+     **/
     public Integer getTotalTimeTakenInMins() {
         return totalTimeTakenInMins;
     }
@@ -261,7 +289,6 @@ public final class ExecutionActionMember
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

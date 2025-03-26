@@ -6,21 +6,18 @@ package com.oracle.bmc.mediaservices.model;
 
 /**
  * Configurable workflows that define the series of tasks that will be used to process video files.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MediaWorkflow.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class MediaWorkflow extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -75,96 +72,95 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier that is immutable on creation. */
+        /**
+         * Unique identifier that is immutable on creation.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique identifier that is immutable on creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         */
+         * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid
-         * entering confidential information.
-         *
+         * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Compartment Identifier. */
+        /**
+         * Compartment Identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment Identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this
-         * array is unique within the array. The order of the items is preserved from the order of
-         * the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-         */
+         * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique
+         * within the array.  The order of the items is preserved from the order of the tasks array in
+         * CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
         private java.util.List<MediaWorkflowTask> tasks;
 
         /**
-         * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this
-         * array is unique within the array. The order of the items is preserved from the order of
-         * the tasks array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
+         * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique
+         * within the array.  The order of the items is preserved from the order of the tasks array in
+         * CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
          *
          * @param tasks the value to set
          * @return this builder
-         */
+         **/
         public Builder tasks(java.util.List<MediaWorkflowTask> tasks) {
             this.tasks = tasks;
             this.__explicitlySet__.add("tasks");
             return this;
         }
         /**
-         * Configurations to be applied to all the runs of this workflow. Parameters in these
-         * configurations are overridden by parameters in the MediaWorkflowConfigurations of the
-         * MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter
-         * appears in multiple configurations, the values that appear in the configuration at the
-         * highest index will be used.
-         */
+         * Configurations to be applied to all the runs of this workflow. Parameters in these configurations are
+         * overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the
+         * parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that
+         * appear in the configuration at the highest index will be used.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowConfigurationIds")
         private java.util.List<String> mediaWorkflowConfigurationIds;
 
         /**
-         * Configurations to be applied to all the runs of this workflow. Parameters in these
-         * configurations are overridden by parameters in the MediaWorkflowConfigurations of the
-         * MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter
-         * appears in multiple configurations, the values that appear in the configuration at the
-         * highest index will be used.
+         * Configurations to be applied to all the runs of this workflow. Parameters in these configurations are
+         * overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the
+         * parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that
+         * appear in the configuration at the highest index will be used.
          *
          * @param mediaWorkflowConfigurationIds the value to set
          * @return this builder
-         */
+         **/
         public Builder mediaWorkflowConfigurationIds(
                 java.util.List<String> mediaWorkflowConfigurationIds) {
             this.mediaWorkflowConfigurationIds = mediaWorkflowConfigurationIds;
@@ -172,136 +168,138 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * JSON object representing named parameters and their default values that can be referenced
-         * throughout this workflow. The values declared here can be overridden by the
-         * MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from
-         * this MediaWorkflow.
-         */
+         * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
+         * The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating
+         * MediaWorkflowJobs from this MediaWorkflow.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private java.util.Map<String, Object> parameters;
 
         /**
-         * JSON object representing named parameters and their default values that can be referenced
-         * throughout this workflow. The values declared here can be overridden by the
-         * MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from
-         * this MediaWorkflow.
+         * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
+         * The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating
+         * MediaWorkflowJobs from this MediaWorkflow.
          *
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(java.util.Map<String, Object> parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
             return this;
         }
-        /** The time when the MediaWorkflow was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The current state of the MediaWorkflow. */
+        /**
+         * The current state of the MediaWorkflow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the MediaWorkflow.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
         private String lifecyleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecyleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecyleDetails(String lifecyleDetails) {
             this.lifecyleDetails = lifecyleDetails;
             this.__explicitlySet__.add("lifecyleDetails");
             return this;
         }
-        /** The version of the MediaWorkflow. */
+        /**
+         * The version of the MediaWorkflow.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Long version;
 
         /**
          * The version of the MediaWorkflow.
-         *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Long version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -310,7 +308,8 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -320,7 +319,7 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -328,19 +327,20 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -425,7 +425,9 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -434,147 +436,149 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Unique identifier that is immutable on creation. */
+    /**
+     * Unique identifier that is immutable on creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique identifier that is immutable on creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     *
+     * Name of the Media Workflow. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Compartment Identifier. */
+    /**
+     * Compartment Identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment Identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array
-     * is unique within the array. The order of the items is preserved from the order of the tasks
-     * array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
-     */
+     * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique
+     * within the array.  The order of the items is preserved from the order of the tasks array in
+     * CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
     private final java.util.List<MediaWorkflowTask> tasks;
 
     /**
-     * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array
-     * is unique within the array. The order of the items is preserved from the order of the tasks
-     * array in CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
+     * The processing to be done in this workflow. Each key of the MediaWorkflowTasks in this array is unique
+     * within the array.  The order of the items is preserved from the order of the tasks array in
+     * CreateMediaWorkflowDetails or UpdateMediaWorkflowDetails.
      *
      * @return the value
-     */
+     **/
     public java.util.List<MediaWorkflowTask> getTasks() {
         return tasks;
     }
 
     /**
-     * Configurations to be applied to all the runs of this workflow. Parameters in these
-     * configurations are overridden by parameters in the MediaWorkflowConfigurations of the
-     * MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in
-     * multiple configurations, the values that appear in the configuration at the highest index
-     * will be used.
-     */
+     * Configurations to be applied to all the runs of this workflow. Parameters in these configurations are
+     * overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the
+     * parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that
+     * appear in the configuration at the highest index will be used.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mediaWorkflowConfigurationIds")
     private final java.util.List<String> mediaWorkflowConfigurationIds;
 
     /**
-     * Configurations to be applied to all the runs of this workflow. Parameters in these
-     * configurations are overridden by parameters in the MediaWorkflowConfigurations of the
-     * MediaWorkflowJob and the parameters of the MediaWorkflowJob. If the same parameter appears in
-     * multiple configurations, the values that appear in the configuration at the highest index
-     * will be used.
+     * Configurations to be applied to all the runs of this workflow. Parameters in these configurations are
+     * overridden by parameters in the MediaWorkflowConfigurations of the MediaWorkflowJob and the
+     * parameters of the MediaWorkflowJob. If the same parameter appears in multiple configurations, the values that
+     * appear in the configuration at the highest index will be used.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getMediaWorkflowConfigurationIds() {
         return mediaWorkflowConfigurationIds;
     }
 
     /**
-     * JSON object representing named parameters and their default values that can be referenced
-     * throughout this workflow. The values declared here can be overridden by the
-     * MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this
-     * MediaWorkflow.
-     */
+     * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
+     * The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating
+     * MediaWorkflowJobs from this MediaWorkflow.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final java.util.Map<String, Object> parameters;
 
     /**
-     * JSON object representing named parameters and their default values that can be referenced
-     * throughout this workflow. The values declared here can be overridden by the
-     * MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this
-     * MediaWorkflow.
+     * JSON object representing named parameters and their default values that can be referenced throughout this workflow.
+     * The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating
+     * MediaWorkflowJobs from this MediaWorkflow.
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Object> getParameters() {
         return parameters;
     }
 
-    /** The time when the MediaWorkflow was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time when the MediaWorkflow was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
-    /** The current state of the MediaWorkflow. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the MediaWorkflow.
+     **/
+    public enum LifecycleState {
         Active("ACTIVE"),
         NeedsAttention("NEEDS_ATTENTION"),
         Deleted("DELETED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -613,109 +617,112 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** The current state of the MediaWorkflow. */
+    /**
+     * The current state of the MediaWorkflow.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the MediaWorkflow.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecyleDetails")
     private final String lifecyleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecyleDetails() {
         return lifecyleDetails;
     }
 
-    /** The version of the MediaWorkflow. */
+    /**
+     * The version of the MediaWorkflow.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Long version;
 
     /**
      * The version of the MediaWorkflow.
-     *
      * @return the value
-     */
+     **/
     public Long getVersion() {
         return version;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -727,7 +734,6 @@ public final class MediaWorkflow extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

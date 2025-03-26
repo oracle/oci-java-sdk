@@ -5,25 +5,26 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The information to update a DB2 Connection. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The information to update a DB2 Connection.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateDb2ConnectionDetails.Builder.class)
+    builder = UpdateDb2ConnectionDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "connectionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -117,7 +118,10 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             this.__explicitlySet__.add("doesUseSecretIds");
             return this;
         }
-        /** The name of the database. */
+        /**
+         * The name of the database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
         private String databaseName;
 
@@ -126,13 +130,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          *
          * @param databaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseName(String databaseName) {
             this.databaseName = databaseName;
             this.__explicitlySet__.add("databaseName");
             return this;
         }
-        /** The name or address of a host. */
+        /**
+         * The name or address of a host.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("host")
         private String host;
 
@@ -141,13 +148,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          *
          * @param host the value to set
          * @return this builder
-         */
+         **/
         public Builder host(String host) {
             this.host = host;
             this.__explicitlySet__.add("host");
             return this;
         }
-        /** The port of an endpoint usually specified for a connection. */
+        /**
+         * The port of an endpoint usually specified for a connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
@@ -156,207 +166,207 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
          *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * The username Oracle GoldenGate uses to connect to the DB2 database. This username must
-         * already exist and be available by the DB2 to be connected to.
-         */
+         * The username Oracle GoldenGate uses to connect to the DB2 database.
+         * This username must already exist and be available by the DB2 to be connected to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The username Oracle GoldenGate uses to connect to the DB2 database. This username must
-         * already exist and be available by the DB2 to be connected to.
+         * The username Oracle GoldenGate uses to connect to the DB2 database.
+         * This username must already exist and be available by the DB2 to be connected to.
          *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
-         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
-         * after February 15 2026.
-         */
+         * The password Oracle GoldenGate uses to connect the associated DB2 database.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
-         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
-         * after February 15 2026.
+         * The password Oracle GoldenGate uses to connect the associated DB2 database.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
-         * associated DB2 database. Note: When provided, 'password' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * that Oracle GoldenGate uses to connect the associated DB2 database.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
         private String passwordSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
-         * associated DB2 database. Note: When provided, 'password' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+         * that Oracle GoldenGate uses to connect the associated DB2 database.
+         * Note: When provided, 'password' field must not be provided.
          *
          * @param passwordSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordSecretId(String passwordSecretId) {
             this.passwordSecretId = passwordSecretId;
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
-         * An array of name-value pair attribute entries. Used as additional parameters in
-         * connection string.
-         */
+         * An array of name-value pair attribute entries.
+         * Used as additional parameters in connection string.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
         private java.util.List<NameValuePair> additionalAttributes;
 
         /**
-         * An array of name-value pair attribute entries. Used as additional parameters in
-         * connection string.
+         * An array of name-value pair attribute entries.
+         * Used as additional parameters in connection string.
          *
          * @param additionalAttributes the value to set
          * @return this builder
-         */
+         **/
         public Builder additionalAttributes(java.util.List<NameValuePair> additionalAttributes) {
             this.additionalAttributes = additionalAttributes;
             this.__explicitlySet__.add("additionalAttributes");
             return this;
         }
-        /** Security protocol for the DB2 database. */
+        /**
+         * Security protocol for the DB2 database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
         private Db2Connection.SecurityProtocol securityProtocol;
 
         /**
          * Security protocol for the DB2 database.
-         *
          * @param securityProtocol the value to set
          * @return this builder
-         */
+         **/
         public Builder securityProtocol(Db2Connection.SecurityProtocol securityProtocol) {
             this.securityProtocol = securityProtocol;
             this.__explicitlySet__.add("securityProtocol");
             return this;
         }
         /**
-         * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-         */
+         * The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
         private String sslClientKeystoredb;
 
         /**
-         * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+         * The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
          *
          * @param sslClientKeystoredb the value to set
          * @return this builder
-         */
+         **/
         public Builder sslClientKeystoredb(String sslClientKeystoredb) {
             this.sslClientKeystoredb = sslClientKeystoredb;
             this.__explicitlySet__.add("sslClientKeystoredb");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the keystore file stored, which created at the client containing the server
-         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
-         * not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+         * which created at the client containing the server certificate / CA root certificate.
+         * Note: When provided, 'sslClientKeystoredb' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
         private String sslClientKeystoredbSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the keystore file stored, which created at the client containing the server
-         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
-         * not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+         * which created at the client containing the server certificate / CA root certificate.
+         * Note: When provided, 'sslClientKeystoredb' field must not be provided.
          *
          * @param sslClientKeystoredbSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslClientKeystoredbSecretId(String sslClientKeystoredbSecretId) {
             this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
             this.__explicitlySet__.add("sslClientKeystoredbSecretId");
             return this;
         }
         /**
-         * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
-         */
+         * The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
         private String sslClientKeystash;
 
         /**
-         * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file. Deprecated: This field is deprecated and replaced by
-         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+         * The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
          *
          * @param sslClientKeystash the value to set
          * @return this builder
-         */
+         **/
         public Builder sslClientKeystash(String sslClientKeystash) {
             this.sslClientKeystash = sslClientKeystash;
             this.__explicitlySet__.add("sslClientKeystash");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the keystash file is stored, which contains the encrypted password to the
-         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+         * which contains the encrypted password to the key database file.
+         * Note: When provided, 'sslClientKeystash' field must not be provided.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
         private String sslClientKeystashSecretId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Secret where the keystash file is stored, which contains the encrypted password to the
-         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+         * which contains the encrypted password to the key database file.
+         * Note: When provided, 'sslClientKeystash' field must not be provided.
          *
          * @param sslClientKeystashSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslClientKeystashSecretId(String sslClientKeystashSecretId) {
             this.sslClientKeystashSecretId = sslClientKeystashSecretId;
             this.__explicitlySet__.add("sslClientKeystashSecretId");
             return this;
         }
         /**
-         * The base64 encoded file which contains the self-signed server certificate / Certificate
-         * Authority (CA) certificate.
-         */
+         * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
         private String sslServerCertificate;
 
         /**
-         * The base64 encoded file which contains the self-signed server certificate / Certificate
-         * Authority (CA) certificate.
+         * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
          *
          * @param sslServerCertificate the value to set
          * @return this builder
-         */
+         **/
         public Builder sslServerCertificate(String sslServerCertificate) {
             this.sslServerCertificate = sslServerCertificate;
             this.__explicitlySet__.add("sslServerCertificate");
@@ -473,7 +483,9 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -533,7 +545,10 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         this.sslServerCertificate = sslServerCertificate;
     }
 
-    /** The name of the database. */
+    /**
+     * The name of the database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseName")
     private final String databaseName;
 
@@ -541,12 +556,15 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * The name of the database.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseName() {
         return databaseName;
     }
 
-    /** The name or address of a host. */
+    /**
+     * The name or address of a host.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("host")
     private final String host;
 
@@ -554,12 +572,15 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * The name or address of a host.
      *
      * @return the value
-     */
+     **/
     public String getHost() {
         return host;
     }
 
-    /** The port of an endpoint usually specified for a connection. */
+    /**
+     * The port of an endpoint usually specified for a connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
@@ -567,187 +588,187 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
      * The port of an endpoint usually specified for a connection.
      *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
-     * The username Oracle GoldenGate uses to connect to the DB2 database. This username must
-     * already exist and be available by the DB2 to be connected to.
-     */
+     * The username Oracle GoldenGate uses to connect to the DB2 database.
+     * This username must already exist and be available by the DB2 to be connected to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The username Oracle GoldenGate uses to connect to the DB2 database. This username must
-     * already exist and be available by the DB2 to be connected to.
+     * The username Oracle GoldenGate uses to connect to the DB2 database.
+     * This username must already exist and be available by the DB2 to be connected to.
      *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
-     */
+     * The password Oracle GoldenGate uses to connect the associated DB2 database.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
-     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
-     * February 15 2026.
+     * The password Oracle GoldenGate uses to connect the associated DB2 database.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
-     * DB2 database. Note: When provided, 'password' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * that Oracle GoldenGate uses to connect the associated DB2 database.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
     private final String passwordSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
-     * DB2 database. Note: When provided, 'password' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored,
+     * that Oracle GoldenGate uses to connect the associated DB2 database.
+     * Note: When provided, 'password' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getPasswordSecretId() {
         return passwordSecretId;
     }
 
     /**
-     * An array of name-value pair attribute entries. Used as additional parameters in connection
-     * string.
-     */
+     * An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("additionalAttributes")
     private final java.util.List<NameValuePair> additionalAttributes;
 
     /**
-     * An array of name-value pair attribute entries. Used as additional parameters in connection
-     * string.
+     * An array of name-value pair attribute entries.
+     * Used as additional parameters in connection string.
      *
      * @return the value
-     */
+     **/
     public java.util.List<NameValuePair> getAdditionalAttributes() {
         return additionalAttributes;
     }
 
-    /** Security protocol for the DB2 database. */
+    /**
+     * Security protocol for the DB2 database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
     private final Db2Connection.SecurityProtocol securityProtocol;
 
     /**
      * Security protocol for the DB2 database.
-     *
      * @return the value
-     */
+     **/
     public Db2Connection.SecurityProtocol getSecurityProtocol() {
         return securityProtocol;
     }
 
     /**
-     * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate. Deprecated: This field is deprecated and replaced by
-     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
-     */
+     * The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
     private final String sslClientKeystoredb;
 
     /**
-     * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate. Deprecated: This field is deprecated and replaced by
-     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
+     * The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getSslClientKeystoredb() {
         return sslClientKeystoredb;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the keystore file stored, which created at the client containing the server
-     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
-     * be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+     * which created at the client containing the server certificate / CA root certificate.
+     * Note: When provided, 'sslClientKeystoredb' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
     private final String sslClientKeystoredbSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the keystore file stored, which created at the client containing the server
-     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
-     * be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,
+     * which created at the client containing the server certificate / CA root certificate.
+     * Note: When provided, 'sslClientKeystoredb' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSslClientKeystoredbSecretId() {
         return sslClientKeystoredbSecretId;
     }
 
     /**
-     * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-     * field will be removed after February 15 2026.
-     */
+     * The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
     private final String sslClientKeystash;
 
     /**
-     * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
-     * field will be removed after February 15 2026.
+     * The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
-     */
+     **/
     public String getSslClientKeystash() {
         return sslClientKeystash;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the keystash file is stored, which contains the encrypted password to the key
-     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+     * which contains the encrypted password to the key database file.
+     * Note: When provided, 'sslClientKeystash' field must not be provided.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
     private final String sslClientKeystashSecretId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Secret where the keystash file is stored, which contains the encrypted password to the key
-     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,
+     * which contains the encrypted password to the key database file.
+     * Note: When provided, 'sslClientKeystash' field must not be provided.
      *
      * @return the value
-     */
+     **/
     public String getSslClientKeystashSecretId() {
         return sslClientKeystashSecretId;
     }
 
     /**
-     * The base64 encoded file which contains the self-signed server certificate / Certificate
-     * Authority (CA) certificate.
-     */
+     * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslServerCertificate")
     private final String sslServerCertificate;
 
     /**
-     * The base64 encoded file which contains the self-signed server certificate / Certificate
-     * Authority (CA) certificate.
+     * The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
      *
      * @return the value
-     */
+     **/
     public String getSslServerCertificate() {
         return sslServerCertificate;
     }
@@ -759,7 +780,6 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

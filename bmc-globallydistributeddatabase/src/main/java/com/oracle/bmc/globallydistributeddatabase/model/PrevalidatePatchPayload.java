@@ -5,25 +5,26 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Payload to prevalidate patch sharded database operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Payload to prevalidate patch sharded database operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PrevalidatePatchPayload.Builder.class)
+    builder = PrevalidatePatchPayload.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "operation")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "operation"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PrevalidatePatchPayload extends PrevalidatePayload {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -36,16 +37,17 @@ public final class PrevalidatePatchPayload extends PrevalidatePayload {
             this.__explicitlySet__.add("prevalidatePayload");
             return this;
         }
-        /** Sharded database identifier */
+        /**
+         * Sharded database identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shardedDatabaseId")
         private String shardedDatabaseId;
 
         /**
          * Sharded database identifier
-         *
          * @param shardedDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder shardedDatabaseId(String shardedDatabaseId) {
             this.shardedDatabaseId = shardedDatabaseId;
             this.__explicitlySet__.add("shardedDatabaseId");
@@ -76,7 +78,9 @@ public final class PrevalidatePatchPayload extends PrevalidatePayload {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,15 +104,16 @@ public final class PrevalidatePatchPayload extends PrevalidatePayload {
         return prevalidatePayload;
     }
 
-    /** Sharded database identifier */
+    /**
+     * Sharded database identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shardedDatabaseId")
     private final String shardedDatabaseId;
 
     /**
      * Sharded database identifier
-     *
      * @return the value
-     */
+     **/
     public String getShardedDatabaseId() {
         return shardedDatabaseId;
     }
@@ -120,7 +125,6 @@ public final class PrevalidatePatchPayload extends PrevalidatePayload {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

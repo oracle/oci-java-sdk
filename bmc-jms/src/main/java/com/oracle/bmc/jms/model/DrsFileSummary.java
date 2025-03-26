@@ -5,25 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * A Deployment Rule Set(DRS) is a JAR (Java ARchive) file used in Java applications to enforce
- * security and manage compatibility between different versions of Java applets and web start
- * applications
- * (https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/deployment_rules.html). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * A Deployment Rule Set(DRS) is a JAR (Java ARchive) file used in Java applications to enforce security and manage compatibility
+ * between different versions of Java applets and web start applications
+ * (https://docs.oracle.com/javase/8/docs/technotes/guides/deploy/deployment_rules.html).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DrsFileSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DrsFileSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DrsFileSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "bucketName",
@@ -54,106 +51,113 @@ public final class DrsFileSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Object Storage bucket name where the DRS file is located. */
+        /**
+         * The Object Storage bucket name where the DRS file is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * The Object Storage bucket name where the DRS file is located.
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** The namespace for Object Storage. */
+        /**
+         * The namespace for Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
          * The namespace for Object Storage.
-         *
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** The name of the DRS file in Object Store. */
+        /**
+         * The name of the DRS file in Object Store.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drsFileName")
         private String drsFileName;
 
         /**
          * The name of the DRS file in Object Store.
-         *
          * @param drsFileName the value to set
          * @return this builder
-         */
+         **/
         public Builder drsFileName(String drsFileName) {
             this.drsFileName = drsFileName;
             this.__explicitlySet__.add("drsFileName");
             return this;
         }
-        /** The unique identifier of the DRS file in Object Storage. */
+        /**
+         * The unique identifier of the DRS file in Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("drsFileKey")
         private String drsFileKey;
 
         /**
          * The unique identifier of the DRS file in Object Storage.
-         *
          * @param drsFileKey the value to set
          * @return this builder
-         */
+         **/
         public Builder drsFileKey(String drsFileKey) {
             this.drsFileKey = drsFileKey;
             this.__explicitlySet__.add("drsFileKey");
             return this;
         }
-        /** The checksum type for the DRS file in Object Storage. */
+        /**
+         * The checksum type for the DRS file in Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
         private ChecksumType checksumType;
 
         /**
          * The checksum type for the DRS file in Object Storage.
-         *
          * @param checksumType the value to set
          * @return this builder
-         */
+         **/
         public Builder checksumType(ChecksumType checksumType) {
             this.checksumType = checksumType;
             this.__explicitlySet__.add("checksumType");
             return this;
         }
-        /** The checksum value for the DRS file in Object Storage. */
+        /**
+         * The checksum value for the DRS file in Object Storage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checksumValue")
         private String checksumValue;
 
         /**
          * The checksum value for the DRS file in Object Storage.
-         *
          * @param checksumValue the value to set
          * @return this builder
-         */
+         **/
         public Builder checksumValue(String checksumValue) {
             this.checksumValue = checksumValue;
             this.__explicitlySet__.add("checksumValue");
             return this;
         }
-        /** To check if the DRS file is the detfault ones. */
+        /**
+         * To check if the DRS file is the detfault ones.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
          * To check if the DRS file is the detfault ones.
-         *
          * @param isDefault the value to set
          * @return this builder
-         */
+         **/
         public Builder isDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             this.__explicitlySet__.add("isDefault");
@@ -206,7 +210,9 @@ public final class DrsFileSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -215,65 +221,71 @@ public final class DrsFileSummary
         return new Builder().copy(this);
     }
 
-    /** The Object Storage bucket name where the DRS file is located. */
+    /**
+     * The Object Storage bucket name where the DRS file is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * The Object Storage bucket name where the DRS file is located.
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** The namespace for Object Storage. */
+    /**
+     * The namespace for Object Storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * The namespace for Object Storage.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** The name of the DRS file in Object Store. */
+    /**
+     * The name of the DRS file in Object Store.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drsFileName")
     private final String drsFileName;
 
     /**
      * The name of the DRS file in Object Store.
-     *
      * @return the value
-     */
+     **/
     public String getDrsFileName() {
         return drsFileName;
     }
 
-    /** The unique identifier of the DRS file in Object Storage. */
+    /**
+     * The unique identifier of the DRS file in Object Storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("drsFileKey")
     private final String drsFileKey;
 
     /**
      * The unique identifier of the DRS file in Object Storage.
-     *
      * @return the value
-     */
+     **/
     public String getDrsFileKey() {
         return drsFileKey;
     }
 
-    /** The checksum type for the DRS file in Object Storage. */
-    public enum ChecksumType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The checksum type for the DRS file in Object Storage.
+     **/
+    public enum ChecksumType {
         Sha256("SHA256"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -312,41 +324,44 @@ public final class DrsFileSummary
             return UnknownEnumValue;
         }
     };
-    /** The checksum type for the DRS file in Object Storage. */
+    /**
+     * The checksum type for the DRS file in Object Storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumType")
     private final ChecksumType checksumType;
 
     /**
      * The checksum type for the DRS file in Object Storage.
-     *
      * @return the value
-     */
+     **/
     public ChecksumType getChecksumType() {
         return checksumType;
     }
 
-    /** The checksum value for the DRS file in Object Storage. */
+    /**
+     * The checksum value for the DRS file in Object Storage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checksumValue")
     private final String checksumValue;
 
     /**
      * The checksum value for the DRS file in Object Storage.
-     *
      * @return the value
-     */
+     **/
     public String getChecksumValue() {
         return checksumValue;
     }
 
-    /** To check if the DRS file is the detfault ones. */
+    /**
+     * To check if the DRS file is the detfault ones.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
      * To check if the DRS file is the detfault ones.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDefault() {
         return isDefault;
     }
@@ -358,7 +373,6 @@ public final class DrsFileSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

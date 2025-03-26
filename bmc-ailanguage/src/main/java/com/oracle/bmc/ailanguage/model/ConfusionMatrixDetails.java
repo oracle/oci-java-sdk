@@ -5,23 +5,22 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * confusion matrix details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * confusion matrix details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConfusionMatrixDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConfusionMatrixDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConfusionMatrixDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"matrix"})
     public ConfusionMatrixDetails(java.util.Map<String, Double> matrix) {
@@ -31,16 +30,17 @@ public final class ConfusionMatrixDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** confusion matrix data */
+        /**
+         * confusion matrix data
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("matrix")
         private java.util.Map<String, Double> matrix;
 
         /**
          * confusion matrix data
-         *
          * @param matrix the value to set
          * @return this builder
-         */
+         **/
         public Builder matrix(java.util.Map<String, Double> matrix) {
             this.matrix = matrix;
             this.__explicitlySet__.add("matrix");
@@ -67,7 +67,9 @@ public final class ConfusionMatrixDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -76,15 +78,16 @@ public final class ConfusionMatrixDetails
         return new Builder().copy(this);
     }
 
-    /** confusion matrix data */
+    /**
+     * confusion matrix data
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("matrix")
     private final java.util.Map<String, Double> matrix;
 
     /**
      * confusion matrix data
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, Double> getMatrix() {
         return matrix;
     }
@@ -96,7 +99,6 @@ public final class ConfusionMatrixDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

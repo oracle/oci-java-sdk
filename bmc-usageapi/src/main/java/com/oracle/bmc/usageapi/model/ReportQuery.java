@@ -5,21 +5,19 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * The request of the generated Cost Analysis report. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * The request of the generated Cost Analysis report.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ReportQuery.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ReportQuery extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ReportQuery extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "tenantId",
@@ -65,84 +63,91 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Tenant ID. */
+        /**
+         * Tenant ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * Tenant ID.
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** The usage start time. */
+        /**
+         * The usage start time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
         private java.util.Date timeUsageStarted;
 
         /**
          * The usage start time.
-         *
          * @param timeUsageStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageStarted(java.util.Date timeUsageStarted) {
             this.timeUsageStarted = timeUsageStarted;
             this.__explicitlySet__.add("timeUsageStarted");
             return this;
         }
-        /** The usage end time. */
+        /**
+         * The usage end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
         private java.util.Date timeUsageEnded;
 
         /**
          * The usage end time.
-         *
          * @param timeUsageEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUsageEnded(java.util.Date timeUsageEnded) {
             this.timeUsageEnded = timeUsageEnded;
             this.__explicitlySet__.add("timeUsageEnded");
             return this;
         }
         /**
-         * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation.
-         * MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-         */
+         * The usage granularity.
+         * HOURLY - Hourly data aggregation.
+         * DAILY - Daily data aggregation.
+         * MONTHLY - Monthly data aggregation.
+         * TOTAL - Not yet supported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("granularity")
         private Granularity granularity;
 
         /**
-         * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation.
-         * MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
+         * The usage granularity.
+         * HOURLY - Hourly data aggregation.
+         * DAILY - Daily data aggregation.
+         * MONTHLY - Monthly data aggregation.
+         * TOTAL - Not yet supported.
          *
          * @param granularity the value to set
          * @return this builder
-         */
+         **/
         public Builder granularity(Granularity granularity) {
             this.granularity = granularity;
             this.__explicitlySet__.add("granularity");
             return this;
         }
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
-         */
+         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
         private Boolean isAggregateByTime;
 
         /**
-         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query
-         * time period will be added up.
-         *
+         * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
          * @param isAggregateByTime the value to set
          * @return this builder
-         */
+         **/
         public Builder isAggregateByTime(Boolean isAggregateByTime) {
             this.isAggregateByTime = isAggregateByTime;
             this.__explicitlySet__.add("isAggregateByTime");
@@ -158,46 +163,54 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
-         * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
-         * ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments
-         * and expired credit
-         */
+         * The query usage type. COST by default if it is missing.
+         * Usage - Query the usage data.
+         * Cost - Query the cost/billing data.
+         * Credit - Query the credit adjustments data.
+         * ExpiredCredit - Query the expired credits data
+         * AllCredit - Query the credit adjustments and expired credit
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("queryType")
         private QueryType queryType;
 
         /**
-         * The query usage type. COST by default if it is missing. Usage - Query the usage data.
-         * Cost - Query the cost/billing data. Credit - Query the credit adjustments data.
-         * ExpiredCredit - Query the expired credits data AllCredit - Query the credit adjustments
-         * and expired credit
+         * The query usage type. COST by default if it is missing.
+         * Usage - Query the usage data.
+         * Cost - Query the cost/billing data.
+         * Credit - Query the credit adjustments data.
+         * ExpiredCredit - Query the expired credits data
+         * AllCredit - Query the credit adjustments and expired credit
          *
          * @param queryType the value to set
          * @return this builder
-         */
+         **/
         public Builder queryType(QueryType queryType) {
             this.queryType = queryType;
             this.__explicitlySet__.add("queryType");
             return this;
         }
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
-         * "tenantName"]}
-         */
+         * Aggregate the result by.
+         * example:
+         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+         *     "resourceId", "tenantId", "tenantName"]}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private java.util.List<String> groupBy;
 
         /**
-         * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue",
-         * "service", "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath",
-         * "compartmentId", "platform", "region", "logicalAd", "resourceId", "tenantId",
-         * "tenantName"]}
+         * Aggregate the result by.
+         * example:
+         *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+         *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+         *     "resourceId", "tenantId", "tenantName"]}
          *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(java.util.List<String> groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
@@ -225,16 +238,17 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("groupByTag");
             return this;
         }
-        /** The compartment depth level. */
+        /**
+         * The compartment depth level.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
         private java.math.BigDecimal compartmentDepth;
 
         /**
          * The compartment depth level.
-         *
          * @param compartmentDepth the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentDepth(java.math.BigDecimal compartmentDepth) {
             this.compartmentDepth = compartmentDepth;
             this.__explicitlySet__.add("compartmentDepth");
@@ -250,19 +264,16 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
             return this;
         }
         /**
-         * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and
-         * timeUsageEnded.
-         */
+         * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
         private DateRangeName dateRangeName;
 
         /**
-         * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and
-         * timeUsageEnded.
-         *
+         * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
          * @param dateRangeName the value to set
          * @return this builder
-         */
+         **/
         public Builder dateRangeName(DateRangeName dateRangeName) {
             this.dateRangeName = dateRangeName;
             this.__explicitlySet__.add("dateRangeName");
@@ -335,7 +346,9 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -344,58 +357,65 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Tenant ID. */
+    /**
+     * Tenant ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * Tenant ID.
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** The usage start time. */
+    /**
+     * The usage start time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageStarted")
     private final java.util.Date timeUsageStarted;
 
     /**
      * The usage start time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageStarted() {
         return timeUsageStarted;
     }
 
-    /** The usage end time. */
+    /**
+     * The usage end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUsageEnded")
     private final java.util.Date timeUsageEnded;
 
     /**
      * The usage end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUsageEnded() {
         return timeUsageEnded;
     }
 
     /**
-     * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation.
-     * MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-     */
-    public enum Granularity implements com.oracle.bmc.http.internal.BmcEnum {
+     * The usage granularity.
+     * HOURLY - Hourly data aggregation.
+     * DAILY - Daily data aggregation.
+     * MONTHLY - Monthly data aggregation.
+     * TOTAL - Not yet supported.
+     *
+     **/
+    public enum Granularity {
         Hourly("HOURLY"),
         Daily("DAILY"),
         Monthly("MONTHLY"),
         Total("TOTAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -435,35 +455,39 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation.
-     * MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
-     */
+     * The usage granularity.
+     * HOURLY - Hourly data aggregation.
+     * DAILY - Daily data aggregation.
+     * MONTHLY - Monthly data aggregation.
+     * TOTAL - Not yet supported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("granularity")
     private final Granularity granularity;
 
     /**
-     * The usage granularity. HOURLY - Hourly data aggregation. DAILY - Daily data aggregation.
-     * MONTHLY - Monthly data aggregation. TOTAL - Not yet supported.
+     * The usage granularity.
+     * HOURLY - Hourly data aggregation.
+     * DAILY - Daily data aggregation.
+     * MONTHLY - Monthly data aggregation.
+     * TOTAL - Not yet supported.
      *
      * @return the value
-     */
+     **/
     public Granularity getGranularity() {
         return granularity;
     }
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
-     */
+     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAggregateByTime")
     private final Boolean isAggregateByTime;
 
     /**
-     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time
-     * period will be added up.
-     *
+     * Whether aggregated by time. If isAggregateByTime is true, all usage/cost over the query time period will be added up.
      * @return the value
-     */
+     **/
     public Boolean getIsAggregateByTime() {
         return isAggregateByTime;
     }
@@ -476,11 +500,15 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-     */
-    public enum QueryType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The query usage type. COST by default if it is missing.
+     * Usage - Query the usage data.
+     * Cost - Query the cost/billing data.
+     * Credit - Query the credit adjustments data.
+     * ExpiredCredit - Query the expired credits data
+     * AllCredit - Query the credit adjustments and expired credit
+     *
+     **/
+    public enum QueryType {
         Usage("USAGE"),
         Cost("COST"),
         Credit("CREDIT"),
@@ -488,8 +516,8 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         Allcredit("ALLCREDIT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -529,39 +557,51 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
-     */
+     * The query usage type. COST by default if it is missing.
+     * Usage - Query the usage data.
+     * Cost - Query the cost/billing data.
+     * Credit - Query the credit adjustments data.
+     * ExpiredCredit - Query the expired credits data
+     * AllCredit - Query the credit adjustments and expired credit
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("queryType")
     private final QueryType queryType;
 
     /**
-     * The query usage type. COST by default if it is missing. Usage - Query the usage data. Cost -
-     * Query the cost/billing data. Credit - Query the credit adjustments data. ExpiredCredit -
-     * Query the expired credits data AllCredit - Query the credit adjustments and expired credit
+     * The query usage type. COST by default if it is missing.
+     * Usage - Query the usage data.
+     * Cost - Query the cost/billing data.
+     * Credit - Query the credit adjustments data.
+     * ExpiredCredit - Query the expired credits data
+     * AllCredit - Query the credit adjustments and expired credit
      *
      * @return the value
-     */
+     **/
     public QueryType getQueryType() {
         return queryType;
     }
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
-     */
+     * Aggregate the result by.
+     * example:
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "tenantId", "tenantName"]}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final java.util.List<String> groupBy;
 
     /**
-     * Aggregate the result by. example: {@code ["tagNamespace", "tagKey", "tagValue", "service",
-     * "skuName", "skuPartNumber", "unit", "compartmentName", "compartmentPath", "compartmentId",
-     * "platform", "region", "logicalAd", "resourceId", "tenantId", "tenantName"]}
+     * Aggregate the result by.
+     * example:
+     *   {@code ["tagNamespace", "tagKey", "tagValue", "service", "skuName", "skuPartNumber", "unit",
+     *     "compartmentName", "compartmentPath", "compartmentId", "platform", "region", "logicalAd",
+     *     "resourceId", "tenantId", "tenantName"]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getGroupBy() {
         return groupBy;
     }
@@ -586,15 +626,16 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         return groupByTag;
     }
 
-    /** The compartment depth level. */
+    /**
+     * The compartment depth level.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentDepth")
     private final java.math.BigDecimal compartmentDepth;
 
     /**
      * The compartment depth level.
-     *
      * @return the value
-     */
+     **/
     public java.math.BigDecimal getCompartmentDepth() {
         return compartmentDepth;
     }
@@ -607,10 +648,9 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
     }
 
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and
-     * timeUsageEnded.
-     */
-    public enum DateRangeName implements com.oracle.bmc.http.internal.BmcEnum {
+     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
+     **/
+    public enum DateRangeName {
         LastSevenDays("LAST_SEVEN_DAYS"),
         LastTenDays("LAST_TEN_DAYS"),
         Mtd("MTD"),
@@ -623,8 +663,8 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         Custom("CUSTOM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -664,18 +704,15 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
         }
     };
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and
-     * timeUsageEnded.
-     */
+     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dateRangeName")
     private final DateRangeName dateRangeName;
 
     /**
-     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and
-     * timeUsageEnded.
-     *
+     * The UI date range, for example, LAST_THREE_MONTHS. Conflicts with timeUsageStarted and timeUsageEnded.
      * @return the value
-     */
+     **/
     public DateRangeName getDateRangeName() {
         return dateRangeName;
     }
@@ -687,7 +724,6 @@ public final class ReportQuery extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

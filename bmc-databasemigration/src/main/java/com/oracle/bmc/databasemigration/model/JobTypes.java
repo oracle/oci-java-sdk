@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Job type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum JobTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Job type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum JobTypes {
     Evaluation("EVALUATION"),
     Migration("MIGRATION"),
 

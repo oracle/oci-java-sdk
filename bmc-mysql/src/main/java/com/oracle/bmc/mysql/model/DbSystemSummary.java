@@ -5,22 +5,20 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * A summary of a DB System. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * A summary of a DB System.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbSystemSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbSystemSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbSystemSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -108,67 +106,74 @@ public final class DbSystemSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the DB System. */
+        /**
+         * The OCID of the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The OCID of the DB System.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user-friendly name for the DB System. It does not have to be unique. */
+        /**
+         * The user-friendly name for the DB System. It does not have to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the DB System. It does not have to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** User-provided data about the DB System. */
+        /**
+         * User-provided data about the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * User-provided data about the DB System.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The OCID of the compartment the DB System belongs in. */
+        /**
+         * The OCID of the compartment the DB System belongs in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment the DB System belongs in.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Specifies if the DB System is highly available. */
+        /**
+         * Specifies if the DB System is highly available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
         private Boolean isHighlyAvailable;
 
@@ -177,7 +182,7 @@ public final class DbSystemSummary
          *
          * @param isHighlyAvailable the value to set
          * @return this builder
-         */
+         **/
         public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
             this.isHighlyAvailable = isHighlyAvailable;
             this.__explicitlySet__.add("isHighlyAvailable");
@@ -192,7 +197,10 @@ public final class DbSystemSummary
             this.__explicitlySet__.add("currentPlacement");
             return this;
         }
-        /** If the DB System has a HeatWave Cluster attached. */
+        /**
+         * If the DB System has a HeatWave Cluster attached.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
         private Boolean isHeatWaveClusterAttached;
 
@@ -201,7 +209,7 @@ public final class DbSystemSummary
          *
          * @param isHeatWaveClusterAttached the value to set
          * @return this builder
-         */
+         **/
         public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
             this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
             this.__explicitlySet__.add("isHeatWaveClusterAttached");
@@ -217,72 +225,69 @@ public final class DbSystemSummary
             return this;
         }
         /**
-         * The availability domain on which to deploy the Read/Write endpoint. This defines the
-         * preferred primary instance.
+         * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
          *
-         * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-         * availability domains and the MySQL instance in that domain is promoted to the primary
-         * instance. This redirection does not affect the IP address of the DB System in any way.
-         *
-         * <p>For a standalone DB System, this defines the availability domain in which the DB
-         * System is placed.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain on which to deploy the Read/Write endpoint. This defines the
-         * preferred primary instance.
-         *
-         * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-         * availability domains and the MySQL instance in that domain is promoted to the primary
-         * instance. This redirection does not affect the IP address of the DB System in any way.
-         *
-         * <p>For a standalone DB System, this defines the availability domain in which the DB
-         * System is placed.
+         * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
+         * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the availability domain in which the DB System is placed.
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred
-         * primary instance.
-         *
-         * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-         * fault domains and the MySQL instance in that domain is promoted to the primary instance.
+         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
          * This redirection does not affect the IP address of the DB System in any way.
+         * <p>
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          *
-         * <p>For a standalone DB System, this defines the fault domain in which the DB System is
-         * placed.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
         private String faultDomain;
 
         /**
-         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred
-         * primary instance.
-         *
-         * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-         * fault domains and the MySQL instance in that domain is promoted to the primary instance.
+         * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+         * <p>
+         * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+         * and the MySQL instance in that domain is promoted to the primary instance.
          * This redirection does not affect the IP address of the DB System in any way.
-         *
-         * <p>For a standalone DB System, this defines the fault domain in which the DB System is
-         * placed.
+         * <p>
+         * For a standalone DB System, this defines the fault domain in which the DB System is placed.
          *
          * @param faultDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder faultDomain(String faultDomain) {
             this.faultDomain = faultDomain;
             this.__explicitlySet__.add("faultDomain");
             return this;
         }
-        /** The network endpoints available for this DB System. */
+        /**
+         * The network endpoints available for this DB System.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<DbSystemEndpoint> endpoints;
 
@@ -291,67 +296,71 @@ public final class DbSystemSummary
          *
          * @param endpoints the value to set
          * @return this builder
-         */
+         **/
         public Builder endpoints(java.util.List<DbSystemEndpoint> endpoints) {
             this.endpoints = endpoints;
             this.__explicitlySet__.add("endpoints");
             return this;
         }
-        /** The current state of the DB System. */
+        /**
+         * The current state of the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private DbSystem.LifecycleState lifecycleState;
 
         /**
          * The current state of the DB System.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(DbSystem.LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Name of the MySQL Version in use for the DB System. */
+        /**
+         * Name of the MySQL Version in use for the DB System.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
         private String mysqlVersion;
 
         /**
          * Name of the MySQL Version in use for the DB System.
-         *
          * @param mysqlVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder mysqlVersion(String mysqlVersion) {
             this.mysqlVersion = mysqlVersion;
             this.__explicitlySet__.add("mysqlVersion");
             return this;
         }
-        /** The date and time the DB System was created. */
+        /**
+         * The date and time the DB System was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the DB System was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the DB System was last updated. */
+        /**
+         * The time the DB System was last updated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the DB System was last updated.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
@@ -367,19 +376,20 @@ public final class DbSystemSummary
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -388,7 +398,8 @@ public final class DbSystemSummary
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -398,7 +409,7 @@ public final class DbSystemSummary
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -406,19 +417,20 @@ public final class DbSystemSummary
             return this;
         }
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -434,48 +446,55 @@ public final class DbSystemSummary
             return this;
         }
         /**
-         * The shape of the primary instances of the DB System. The shape determines resources
-         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
-         * storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the {@link
-         * #listShapes(ListShapesRequest) listShapes} operation.
-         */
+         * The shape of the primary instances of the DB System. The shape
+         * determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM
+         * (or bare metal) shapes. To get a list of shapes, use (the
+         * {@link #listShapes(ListShapesRequest) listShapes} operation.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
-         * The shape of the primary instances of the DB System. The shape determines resources
-         * allocated to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and
-         * storage for non-VM (or bare metal) shapes. To get a list of shapes, use (the {@link
-         * #listShapes(ListShapesRequest) listShapes} operation.
+         * The shape of the primary instances of the DB System. The shape
+         * determines resources allocated to a DB System - CPU cores
+         * and memory for VM shapes; CPU cores, memory and storage for non-VM
+         * (or bare metal) shapes. To get a list of shapes, use (the
+         * {@link #listShapes(ListShapesRequest) listShapes} operation.
          *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
         /**
-         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
-         * disabled, and whether to enable or disable syncing of the Binary Logs.
-         */
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+         * and whether to enable or disable syncing of the Binary Logs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
         private CrashRecoveryStatus crashRecovery;
 
         /**
-         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
-         * disabled, and whether to enable or disable syncing of the Binary Logs.
+         * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+         * and whether to enable or disable syncing of the Binary Logs.
          *
          * @param crashRecovery the value to set
          * @return this builder
-         */
+         **/
         public Builder crashRecovery(CrashRecoveryStatus crashRecovery) {
             this.crashRecovery = crashRecovery;
             this.__explicitlySet__.add("crashRecovery");
             return this;
         }
-        /** Whether to enable monitoring via the Database Management service. */
+        /**
+         * Whether to enable monitoring via the Database Management service.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
         private DatabaseManagementStatus databaseManagement;
 
@@ -484,61 +503,61 @@ public final class DbSystemSummary
          *
          * @param databaseManagement the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseManagement(DatabaseManagementStatus databaseManagement) {
             this.databaseManagement = databaseManagement;
             this.__explicitlySet__.add("databaseManagement");
             return this;
         }
         /**
-         * The database mode indicating the types of statements that are allowed to run in the DB
-         * system. This mode applies only to statements run by user connections. Replicated write
-         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
-         * running read and write statements on the DB system; - READ_ONLY: only allow running read
-         * statements on the DB system.
-         */
+         * The database mode indicating the types of statements that are allowed to run in the DB system.
+         * This mode applies only to statements run by user connections. Replicated write statements continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
         private DbSystem.DatabaseMode databaseMode;
 
         /**
-         * The database mode indicating the types of statements that are allowed to run in the DB
-         * system. This mode applies only to statements run by user connections. Replicated write
-         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
-         * running read and write statements on the DB system; - READ_ONLY: only allow running read
-         * statements on the DB system.
+         * The database mode indicating the types of statements that are allowed to run in the DB system.
+         * This mode applies only to statements run by user connections. Replicated write statements continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE: allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
          *
          * @param databaseMode the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
             this.databaseMode = databaseMode;
             this.__explicitlySet__.add("databaseMode");
             return this;
         }
         /**
-         * The access mode indicating if the database access is unrestricted (to all MySQL user
-         * accounts), or restricted (to only certain users with specific privileges): -
-         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: the access is
-         * allowed only to users with specific privileges; RESTRICTED will correspond to setting the
-         * MySQL system variable
-         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
-         * to ON.
-         */
+         * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+         * or restricted (to only certain users with specific privileges):
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access is allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
         private DbSystem.AccessMode accessMode;
 
         /**
-         * The access mode indicating if the database access is unrestricted (to all MySQL user
-         * accounts), or restricted (to only certain users with specific privileges): -
-         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: the access is
-         * allowed only to users with specific privileges; RESTRICTED will correspond to setting the
-         * MySQL system variable
-         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
-         * to ON.
+         * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+         * or restricted (to only certain users with specific privileges):
+         *  - UNRESTRICTED: the access to the database is not restricted;
+         *  - RESTRICTED: the access is allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
          *
          * @param accessMode the value to set
          * @return this builder
-         */
+         **/
         public Builder accessMode(DbSystem.AccessMode accessMode) {
             this.accessMode = accessMode;
             this.__explicitlySet__.add("accessMode");
@@ -676,7 +695,9 @@ public final class DbSystemSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -685,59 +706,66 @@ public final class DbSystemSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the DB System. */
+    /**
+     * The OCID of the DB System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The OCID of the DB System.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user-friendly name for the DB System. It does not have to be unique. */
+    /**
+     * The user-friendly name for the DB System. It does not have to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the DB System. It does not have to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** User-provided data about the DB System. */
+    /**
+     * User-provided data about the DB System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * User-provided data about the DB System.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The OCID of the compartment the DB System belongs in. */
+    /**
+     * The OCID of the compartment the DB System belongs in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment the DB System belongs in.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Specifies if the DB System is highly available. */
+    /**
+     * Specifies if the DB System is highly available.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
     private final Boolean isHighlyAvailable;
 
@@ -745,7 +773,7 @@ public final class DbSystemSummary
      * Specifies if the DB System is highly available.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHighlyAvailable() {
         return isHighlyAvailable;
     }
@@ -757,7 +785,10 @@ public final class DbSystemSummary
         return currentPlacement;
     }
 
-    /** If the DB System has a HeatWave Cluster attached. */
+    /**
+     * If the DB System has a HeatWave Cluster attached.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
     private final Boolean isHeatWaveClusterAttached;
 
@@ -765,7 +796,7 @@ public final class DbSystemSummary
      * If the DB System has a HeatWave Cluster attached.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsHeatWaveClusterAttached() {
         return isHeatWaveClusterAttached;
     }
@@ -778,68 +809,65 @@ public final class DbSystemSummary
     }
 
     /**
-     * The availability domain on which to deploy the Read/Write endpoint. This defines the
-     * preferred primary instance.
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      *
-     * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-     * availability domains and the MySQL instance in that domain is promoted to the primary
-     * instance. This redirection does not affect the IP address of the DB System in any way.
-     *
-     * <p>For a standalone DB System, this defines the availability domain in which the DB System is
-     * placed.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain on which to deploy the Read/Write endpoint. This defines the
-     * preferred primary instance.
-     *
-     * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other
-     * availability domains and the MySQL instance in that domain is promoted to the primary
-     * instance. This redirection does not affect the IP address of the DB System in any way.
-     *
-     * <p>For a standalone DB System, this defines the availability domain in which the DB System is
-     * placed.
+     * The availability domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other availability domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the availability domain in which the DB System is placed.
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred
-     * primary instance.
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      *
-     * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other fault
-     * domains and the MySQL instance in that domain is promoted to the primary instance. This
-     * redirection does not affect the IP address of the DB System in any way.
-     *
-     * <p>For a standalone DB System, this defines the fault domain in which the DB System is
-     * placed.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faultDomain")
     private final String faultDomain;
 
     /**
-     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred
-     * primary instance.
-     *
-     * <p>In a failover scenario, the Read/Write endpoint is redirected to one of the other fault
-     * domains and the MySQL instance in that domain is promoted to the primary instance. This
-     * redirection does not affect the IP address of the DB System in any way.
-     *
-     * <p>For a standalone DB System, this defines the fault domain in which the DB System is
-     * placed.
+     * The fault domain on which to deploy the Read/Write endpoint. This defines the preferred primary instance.
+     * <p>
+     * In a failover scenario, the Read/Write endpoint is redirected to one of the other fault domains
+     * and the MySQL instance in that domain is promoted to the primary instance.
+     * This redirection does not affect the IP address of the DB System in any way.
+     * <p>
+     * For a standalone DB System, this defines the fault domain in which the DB System is placed.
      *
      * @return the value
-     */
+     **/
     public String getFaultDomain() {
         return faultDomain;
     }
 
-    /** The network endpoints available for this DB System. */
+    /**
+     * The network endpoints available for this DB System.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
     private final java.util.List<DbSystemEndpoint> endpoints;
 
@@ -847,59 +875,63 @@ public final class DbSystemSummary
      * The network endpoints available for this DB System.
      *
      * @return the value
-     */
+     **/
     public java.util.List<DbSystemEndpoint> getEndpoints() {
         return endpoints;
     }
 
-    /** The current state of the DB System. */
+    /**
+     * The current state of the DB System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final DbSystem.LifecycleState lifecycleState;
 
     /**
      * The current state of the DB System.
-     *
      * @return the value
-     */
+     **/
     public DbSystem.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Name of the MySQL Version in use for the DB System. */
+    /**
+     * Name of the MySQL Version in use for the DB System.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mysqlVersion")
     private final String mysqlVersion;
 
     /**
      * Name of the MySQL Version in use for the DB System.
-     *
      * @return the value
-     */
+     **/
     public String getMysqlVersion() {
         return mysqlVersion;
     }
 
-    /** The date and time the DB System was created. */
+    /**
+     * The date and time the DB System was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the DB System was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the DB System was last updated. */
+    /**
+     * The time the DB System was last updated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the DB System was last updated.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
@@ -912,52 +944,55 @@ public final class DbSystemSummary
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -970,44 +1005,51 @@ public final class DbSystemSummary
     }
 
     /**
-     * The shape of the primary instances of the DB System. The shape determines resources allocated
-     * to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM
-     * (or bare metal) shapes. To get a list of shapes, use (the {@link
-     * #listShapes(ListShapesRequest) listShapes} operation.
-     */
+     * The shape of the primary instances of the DB System. The shape
+     * determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the
+     * {@link #listShapes(ListShapesRequest) listShapes} operation.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
-     * The shape of the primary instances of the DB System. The shape determines resources allocated
-     * to a DB System - CPU cores and memory for VM shapes; CPU cores, memory and storage for non-VM
-     * (or bare metal) shapes. To get a list of shapes, use (the {@link
-     * #listShapes(ListShapesRequest) listShapes} operation.
+     * The shape of the primary instances of the DB System. The shape
+     * determines resources allocated to a DB System - CPU cores
+     * and memory for VM shapes; CPU cores, memory and storage for non-VM
+     * (or bare metal) shapes. To get a list of shapes, use (the
+     * {@link #listShapes(ListShapesRequest) listShapes} operation.
      *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
 
     /**
-     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
-     * disabled, and whether to enable or disable syncing of the Binary Logs.
-     */
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+     * and whether to enable or disable syncing of the Binary Logs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("crashRecovery")
     private final CrashRecoveryStatus crashRecovery;
 
     /**
-     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or
-     * disabled, and whether to enable or disable syncing of the Binary Logs.
+     * Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled,
+     * and whether to enable or disable syncing of the Binary Logs.
      *
      * @return the value
-     */
+     **/
     public CrashRecoveryStatus getCrashRecovery() {
         return crashRecovery;
     }
 
-    /** Whether to enable monitoring via the Database Management service. */
+    /**
+     * Whether to enable monitoring via the Database Management service.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseManagement")
     private final DatabaseManagementStatus databaseManagement;
 
@@ -1015,57 +1057,57 @@ public final class DbSystemSummary
      * Whether to enable monitoring via the Database Management service.
      *
      * @return the value
-     */
+     **/
     public DatabaseManagementStatus getDatabaseManagement() {
         return databaseManagement;
     }
 
     /**
-     * The database mode indicating the types of statements that are allowed to run in the DB
-     * system. This mode applies only to statements run by user connections. Replicated write
-     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
-     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
-     * on the DB system.
-     */
+     * The database mode indicating the types of statements that are allowed to run in the DB system.
+     * This mode applies only to statements run by user connections. Replicated write statements continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
     private final DbSystem.DatabaseMode databaseMode;
 
     /**
-     * The database mode indicating the types of statements that are allowed to run in the DB
-     * system. This mode applies only to statements run by user connections. Replicated write
-     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
-     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
-     * on the DB system.
+     * The database mode indicating the types of statements that are allowed to run in the DB system.
+     * This mode applies only to statements run by user connections. Replicated write statements continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE: allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
      *
      * @return the value
-     */
+     **/
     public DbSystem.DatabaseMode getDatabaseMode() {
         return databaseMode;
     }
 
     /**
-     * The access mode indicating if the database access is unrestricted (to all MySQL user
-     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
-     * the access to the database is not restricted; - RESTRICTED: the access is allowed only to
-     * users with specific privileges; RESTRICTED will correspond to setting the MySQL system
-     * variable
-     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
-     * to ON.
-     */
+     * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+     * or restricted (to only certain users with specific privileges):
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access is allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
     private final DbSystem.AccessMode accessMode;
 
     /**
-     * The access mode indicating if the database access is unrestricted (to all MySQL user
-     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
-     * the access to the database is not restricted; - RESTRICTED: the access is allowed only to
-     * users with specific privileges; RESTRICTED will correspond to setting the MySQL system
-     * variable
-     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
-     * to ON.
+     * The access mode indicating if the database access is unrestricted (to all MySQL user accounts),
+     * or restricted (to only certain users with specific privileges):
+     *  - UNRESTRICTED: the access to the database is not restricted;
+     *  - RESTRICTED: the access is allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      *
      * @return the value
-     */
+     **/
     public DbSystem.AccessMode getAccessMode() {
         return accessMode;
     }
@@ -1084,7 +1126,6 @@ public final class DbSystemSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

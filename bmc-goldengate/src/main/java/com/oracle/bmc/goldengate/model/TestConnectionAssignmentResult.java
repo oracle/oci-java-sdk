@@ -5,25 +5,24 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The result of the connectivity test performed between the GoldenGate deployment and the
- * associated database / service. The 'error' property is deprecated and will not contain values in
- * the future. So, the error(s) will be returned in just the 'errors' property. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * The result of the connectivity test performed between the GoldenGate deployment and the associated database / service.
+ * The 'error' property is deprecated and will not contain values in the future. So, the error(s) will be returned in just the 'errors' property.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TestConnectionAssignmentResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TestConnectionAssignmentResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TestConnectionAssignmentResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resultType", "error", "errors"})
     public TestConnectionAssignmentResult(
@@ -38,7 +37,10 @@ public final class TestConnectionAssignmentResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the result (i.e. Success, Failure or Timeout). */
+        /**
+         * Type of the result (i.e. Success, Failure or Timeout).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resultType")
         private ResultType resultType;
 
@@ -47,7 +49,7 @@ public final class TestConnectionAssignmentResult
          *
          * @param resultType the value to set
          * @return this builder
-         */
+         **/
         public Builder resultType(ResultType resultType) {
             this.resultType = resultType;
             this.__explicitlySet__.add("resultType");
@@ -62,7 +64,10 @@ public final class TestConnectionAssignmentResult
             this.__explicitlySet__.add("error");
             return this;
         }
-        /** List of test connection assignment error objects. */
+        /**
+         * List of test connection assignment error objects.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<TestConnectionAssignmentError> errors;
 
@@ -71,7 +76,7 @@ public final class TestConnectionAssignmentResult
          *
          * @param errors the value to set
          * @return this builder
-         */
+         **/
         public Builder errors(java.util.List<TestConnectionAssignmentError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
@@ -105,7 +110,9 @@ public final class TestConnectionAssignmentResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -114,15 +121,18 @@ public final class TestConnectionAssignmentResult
         return new Builder().copy(this);
     }
 
-    /** Type of the result (i.e. Success, Failure or Timeout). */
-    public enum ResultType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the result (i.e. Success, Failure or Timeout).
+     *
+     **/
+    public enum ResultType {
         Succeeded("SUCCEEDED"),
         Failed("FAILED"),
         TimedOut("TIMED_OUT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -161,7 +171,10 @@ public final class TestConnectionAssignmentResult
             return UnknownEnumValue;
         }
     };
-    /** Type of the result (i.e. Success, Failure or Timeout). */
+    /**
+     * Type of the result (i.e. Success, Failure or Timeout).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resultType")
     private final ResultType resultType;
 
@@ -169,7 +182,7 @@ public final class TestConnectionAssignmentResult
      * Type of the result (i.e. Success, Failure or Timeout).
      *
      * @return the value
-     */
+     **/
     public ResultType getResultType() {
         return resultType;
     }
@@ -181,7 +194,10 @@ public final class TestConnectionAssignmentResult
         return error;
     }
 
-    /** List of test connection assignment error objects. */
+    /**
+     * List of test connection assignment error objects.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<TestConnectionAssignmentError> errors;
 
@@ -189,7 +205,7 @@ public final class TestConnectionAssignmentResult
      * List of test connection assignment error objects.
      *
      * @return the value
-     */
+     **/
     public java.util.List<TestConnectionAssignmentError> getErrors() {
         return errors;
     }
@@ -201,7 +217,6 @@ public final class TestConnectionAssignmentResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

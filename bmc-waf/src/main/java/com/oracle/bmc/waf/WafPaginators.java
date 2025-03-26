@@ -9,31 +9,23 @@ import com.oracle.bmc.waf.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Waf where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Waf where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 public class WafPaginators {
     private final Waf client;
 
@@ -42,19 +34,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listNetworkAddressLists operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listNetworkAddressLists operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListNetworkAddressListsResponse> listNetworkAddressListsResponseIterator(
             final ListNetworkAddressListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListNetworkAddressListsRequest.Builder,
-                ListNetworkAddressListsRequest,
+                ListNetworkAddressListsRequest.Builder, ListNetworkAddressListsRequest,
                 ListNetworkAddressListsResponse>(
                 new java.util.function.Supplier<ListNetworkAddressListsRequest.Builder>() {
                     @Override
@@ -97,21 +86,18 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.NetworkAddressListSummary} objects contained in responses from the
-     * listNetworkAddressLists operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.NetworkAddressListSummary} objects
+     * contained in responses from the listNetworkAddressLists operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.NetworkAddressListSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.NetworkAddressListSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.NetworkAddressListSummary>
             listNetworkAddressListsRecordIterator(final ListNetworkAddressListsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListNetworkAddressListsRequest.Builder,
-                ListNetworkAddressListsRequest,
+                ListNetworkAddressListsRequest.Builder, ListNetworkAddressListsRequest,
                 ListNetworkAddressListsResponse,
                 com.oracle.bmc.waf.model.NetworkAddressListSummary>(
                 new java.util.function.Supplier<ListNetworkAddressListsRequest.Builder>() {
@@ -164,19 +150,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProtectionCapabilities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listProtectionCapabilities operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProtectionCapabilitiesResponse> listProtectionCapabilitiesResponseIterator(
             final ListProtectionCapabilitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListProtectionCapabilitiesRequest.Builder,
-                ListProtectionCapabilitiesRequest,
+                ListProtectionCapabilitiesRequest.Builder, ListProtectionCapabilitiesRequest,
                 ListProtectionCapabilitiesResponse>(
                 new java.util.function.Supplier<ListProtectionCapabilitiesRequest.Builder>() {
                     @Override
@@ -219,22 +202,19 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.ProtectionCapabilitySummary} objects contained in responses from the
-     * listProtectionCapabilities operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.ProtectionCapabilitySummary} objects
+     * contained in responses from the listProtectionCapabilities operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.ProtectionCapabilitySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.ProtectionCapabilitySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.ProtectionCapabilitySummary>
             listProtectionCapabilitiesRecordIterator(
                     final ListProtectionCapabilitiesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListProtectionCapabilitiesRequest.Builder,
-                ListProtectionCapabilitiesRequest,
+                ListProtectionCapabilitiesRequest.Builder, ListProtectionCapabilitiesRequest,
                 ListProtectionCapabilitiesResponse,
                 com.oracle.bmc.waf.model.ProtectionCapabilitySummary>(
                 new java.util.function.Supplier<ListProtectionCapabilitiesRequest.Builder>() {
@@ -287,13 +267,11 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listProtectionCapabilityGroupTags operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listProtectionCapabilityGroupTags operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListProtectionCapabilityGroupTagsResponse>
             listProtectionCapabilityGroupTagsResponseIterator(
@@ -346,23 +324,20 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary} objects contained in responses
-     * from the listProtectionCapabilityGroupTags operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary} objects
+     * contained in responses from the listProtectionCapabilityGroupTags operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary>
             listProtectionCapabilityGroupTagsRecordIterator(
                     final ListProtectionCapabilityGroupTagsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
                 ListProtectionCapabilityGroupTagsRequest.Builder,
-                ListProtectionCapabilityGroupTagsRequest,
-                ListProtectionCapabilityGroupTagsResponse,
+                ListProtectionCapabilityGroupTagsRequest, ListProtectionCapabilityGroupTagsResponse,
                 com.oracle.bmc.waf.model.ProtectionCapabilityGroupTagSummary>(
                 new java.util.function.Supplier<
                         ListProtectionCapabilityGroupTagsRequest.Builder>() {
@@ -419,19 +394,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWebAppFirewallPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWebAppFirewallPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWebAppFirewallPoliciesResponse> listWebAppFirewallPoliciesResponseIterator(
             final ListWebAppFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWebAppFirewallPoliciesRequest.Builder,
-                ListWebAppFirewallPoliciesRequest,
+                ListWebAppFirewallPoliciesRequest.Builder, ListWebAppFirewallPoliciesRequest,
                 ListWebAppFirewallPoliciesResponse>(
                 new java.util.function.Supplier<ListWebAppFirewallPoliciesRequest.Builder>() {
                     @Override
@@ -474,22 +446,19 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.WebAppFirewallPolicySummary} objects contained in responses from the
-     * listWebAppFirewallPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.WebAppFirewallPolicySummary} objects
+     * contained in responses from the listWebAppFirewallPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.WebAppFirewallPolicySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.WebAppFirewallPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.WebAppFirewallPolicySummary>
             listWebAppFirewallPoliciesRecordIterator(
                     final ListWebAppFirewallPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWebAppFirewallPoliciesRequest.Builder,
-                ListWebAppFirewallPoliciesRequest,
+                ListWebAppFirewallPoliciesRequest.Builder, ListWebAppFirewallPoliciesRequest,
                 ListWebAppFirewallPoliciesResponse,
                 com.oracle.bmc.waf.model.WebAppFirewallPolicySummary>(
                 new java.util.function.Supplier<ListWebAppFirewallPoliciesRequest.Builder>() {
@@ -542,18 +511,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWebAppFirewalls operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWebAppFirewalls operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWebAppFirewallsResponse> listWebAppFirewallsResponseIterator(
             final ListWebAppFirewallsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWebAppFirewallsRequest.Builder,
-                ListWebAppFirewallsRequest,
+                ListWebAppFirewallsRequest.Builder, ListWebAppFirewallsRequest,
                 ListWebAppFirewallsResponse>(
                 new java.util.function.Supplier<ListWebAppFirewallsRequest.Builder>() {
                     @Override
@@ -595,22 +562,19 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.WebAppFirewallSummary} objects contained in responses from the
-     * listWebAppFirewalls operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.WebAppFirewallSummary} objects
+     * contained in responses from the listWebAppFirewalls operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.WebAppFirewallSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.WebAppFirewallSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.WebAppFirewallSummary>
             listWebAppFirewallsRecordIterator(final ListWebAppFirewallsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWebAppFirewallsRequest.Builder,
-                ListWebAppFirewallsRequest,
-                ListWebAppFirewallsResponse,
-                com.oracle.bmc.waf.model.WebAppFirewallSummary>(
+                ListWebAppFirewallsRequest.Builder, ListWebAppFirewallsRequest,
+                ListWebAppFirewallsResponse, com.oracle.bmc.waf.model.WebAppFirewallSummary>(
                 new java.util.function.Supplier<ListWebAppFirewallsRequest.Builder>() {
                     @Override
                     public ListWebAppFirewallsRequest.Builder get() {
@@ -660,19 +624,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -715,23 +676,19 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.WorkRequestError} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.WorkRequestError> listWorkRequestErrorsRecordIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.waf.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.waf.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -782,18 +739,16 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -835,22 +790,19 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.WorkRequestLogEntry} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.WorkRequestLogEntry> listWorkRequestLogsRecordIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.waf.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.waf.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -900,12 +852,11 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -951,21 +902,18 @@ public class WafPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.waf.model.WorkRequest} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.waf.model.WorkRequest} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.waf.model.WorkRequest} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.waf.model.WorkRequest} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.waf.model.WorkRequest> listWorkRequestsRecordIterator(
             final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.waf.model.WorkRequest>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

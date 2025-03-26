@@ -9,31 +9,23 @@ import com.oracle.bmc.servicemesh.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of ServiceMesh where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of ServiceMesh where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220615")
 public class ServiceMeshPaginators {
     private final ServiceMesh client;
 
@@ -42,18 +34,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listAccessPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listAccessPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListAccessPoliciesResponse> listAccessPoliciesResponseIterator(
             final ListAccessPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListAccessPoliciesRequest.Builder,
-                ListAccessPoliciesRequest,
+                ListAccessPoliciesRequest.Builder, ListAccessPoliciesRequest,
                 ListAccessPoliciesResponse>(
                 new java.util.function.Supplier<ListAccessPoliciesRequest.Builder>() {
                     @Override
@@ -95,22 +85,19 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.AccessPolicySummary} objects contained in responses from the
-     * listAccessPolicies operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.AccessPolicySummary} objects
+     * contained in responses from the listAccessPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.AccessPolicySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.AccessPolicySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.AccessPolicySummary>
             listAccessPoliciesRecordIterator(final ListAccessPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListAccessPoliciesRequest.Builder,
-                ListAccessPoliciesRequest,
-                ListAccessPoliciesResponse,
-                com.oracle.bmc.servicemesh.model.AccessPolicySummary>(
+                ListAccessPoliciesRequest.Builder, ListAccessPoliciesRequest,
+                ListAccessPoliciesResponse, com.oracle.bmc.servicemesh.model.AccessPolicySummary>(
                 new java.util.function.Supplier<ListAccessPoliciesRequest.Builder>() {
                     @Override
                     public ListAccessPoliciesRequest.Builder get() {
@@ -160,20 +147,17 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIngressGatewayRouteTables operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIngressGatewayRouteTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIngressGatewayRouteTablesResponse>
             listIngressGatewayRouteTablesResponseIterator(
                     final ListIngressGatewayRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIngressGatewayRouteTablesRequest.Builder,
-                ListIngressGatewayRouteTablesRequest,
+                ListIngressGatewayRouteTablesRequest.Builder, ListIngressGatewayRouteTablesRequest,
                 ListIngressGatewayRouteTablesResponse>(
                 new java.util.function.Supplier<ListIngressGatewayRouteTablesRequest.Builder>() {
                     @Override
@@ -217,22 +201,19 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary} objects contained in
-     * responses from the listIngressGatewayRouteTables operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary} objects
+     * contained in responses from the listIngressGatewayRouteTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary>
             listIngressGatewayRouteTablesRecordIterator(
                     final ListIngressGatewayRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIngressGatewayRouteTablesRequest.Builder,
-                ListIngressGatewayRouteTablesRequest,
+                ListIngressGatewayRouteTablesRequest.Builder, ListIngressGatewayRouteTablesRequest,
                 ListIngressGatewayRouteTablesResponse,
                 com.oracle.bmc.servicemesh.model.IngressGatewayRouteTableSummary>(
                 new java.util.function.Supplier<ListIngressGatewayRouteTablesRequest.Builder>() {
@@ -290,18 +271,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listIngressGateways operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listIngressGateways operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListIngressGatewaysResponse> listIngressGatewaysResponseIterator(
             final ListIngressGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListIngressGatewaysRequest.Builder,
-                ListIngressGatewaysRequest,
+                ListIngressGatewaysRequest.Builder, ListIngressGatewaysRequest,
                 ListIngressGatewaysResponse>(
                 new java.util.function.Supplier<ListIngressGatewaysRequest.Builder>() {
                     @Override
@@ -343,21 +322,18 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.IngressGatewaySummary} objects contained in responses from
-     * the listIngressGateways operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.IngressGatewaySummary} objects
+     * contained in responses from the listIngressGateways operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.IngressGatewaySummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.IngressGatewaySummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.IngressGatewaySummary>
             listIngressGatewaysRecordIterator(final ListIngressGatewaysRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListIngressGatewaysRequest.Builder,
-                ListIngressGatewaysRequest,
+                ListIngressGatewaysRequest.Builder, ListIngressGatewaysRequest,
                 ListIngressGatewaysResponse,
                 com.oracle.bmc.servicemesh.model.IngressGatewaySummary>(
                 new java.util.function.Supplier<ListIngressGatewaysRequest.Builder>() {
@@ -409,12 +385,11 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listMeshes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listMeshes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListMeshesResponse> listMeshesResponseIterator(
             final ListMeshesRequest request) {
@@ -459,21 +434,18 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.MeshSummary} objects contained in responses from the
-     * listMeshes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.MeshSummary} objects
+     * contained in responses from the listMeshes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.MeshSummary} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.MeshSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.MeshSummary> listMeshesRecordIterator(
             final ListMeshesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListMeshesRequest.Builder,
-                ListMeshesRequest,
-                ListMeshesResponse,
+                ListMeshesRequest.Builder, ListMeshesRequest, ListMeshesResponse,
                 com.oracle.bmc.servicemesh.model.MeshSummary>(
                 new java.util.function.Supplier<ListMeshesRequest.Builder>() {
                     @Override
@@ -523,19 +495,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualDeployments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualDeployments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualDeploymentsResponse> listVirtualDeploymentsResponseIterator(
             final ListVirtualDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVirtualDeploymentsRequest.Builder,
-                ListVirtualDeploymentsRequest,
+                ListVirtualDeploymentsRequest.Builder, ListVirtualDeploymentsRequest,
                 ListVirtualDeploymentsResponse>(
                 new java.util.function.Supplier<ListVirtualDeploymentsRequest.Builder>() {
                     @Override
@@ -578,21 +547,18 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary} objects contained in responses
-     * from the listVirtualDeployments operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary} objects
+     * contained in responses from the listVirtualDeployments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary>
             listVirtualDeploymentsRecordIterator(final ListVirtualDeploymentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVirtualDeploymentsRequest.Builder,
-                ListVirtualDeploymentsRequest,
+                ListVirtualDeploymentsRequest.Builder, ListVirtualDeploymentsRequest,
                 ListVirtualDeploymentsResponse,
                 com.oracle.bmc.servicemesh.model.VirtualDeploymentSummary>(
                 new java.util.function.Supplier<ListVirtualDeploymentsRequest.Builder>() {
@@ -646,20 +612,17 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualServiceRouteTables operation. This iterable will fetch more data from the server
-     * as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualServiceRouteTables operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualServiceRouteTablesResponse>
             listVirtualServiceRouteTablesResponseIterator(
                     final ListVirtualServiceRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVirtualServiceRouteTablesRequest.Builder,
-                ListVirtualServiceRouteTablesRequest,
+                ListVirtualServiceRouteTablesRequest.Builder, ListVirtualServiceRouteTablesRequest,
                 ListVirtualServiceRouteTablesResponse>(
                 new java.util.function.Supplier<ListVirtualServiceRouteTablesRequest.Builder>() {
                     @Override
@@ -703,22 +666,19 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary} objects contained in
-     * responses from the listVirtualServiceRouteTables operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary} objects
+     * contained in responses from the listVirtualServiceRouteTables operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary>
             listVirtualServiceRouteTablesRecordIterator(
                     final ListVirtualServiceRouteTablesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVirtualServiceRouteTablesRequest.Builder,
-                ListVirtualServiceRouteTablesRequest,
+                ListVirtualServiceRouteTablesRequest.Builder, ListVirtualServiceRouteTablesRequest,
                 ListVirtualServiceRouteTablesResponse,
                 com.oracle.bmc.servicemesh.model.VirtualServiceRouteTableSummary>(
                 new java.util.function.Supplier<ListVirtualServiceRouteTablesRequest.Builder>() {
@@ -776,18 +736,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVirtualServices operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVirtualServices operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVirtualServicesResponse> listVirtualServicesResponseIterator(
             final ListVirtualServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVirtualServicesRequest.Builder,
-                ListVirtualServicesRequest,
+                ListVirtualServicesRequest.Builder, ListVirtualServicesRequest,
                 ListVirtualServicesResponse>(
                 new java.util.function.Supplier<ListVirtualServicesRequest.Builder>() {
                     @Override
@@ -829,21 +787,18 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.VirtualServiceSummary} objects contained in responses from
-     * the listVirtualServices operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualServiceSummary} objects
+     * contained in responses from the listVirtualServices operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.VirtualServiceSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.VirtualServiceSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.VirtualServiceSummary>
             listVirtualServicesRecordIterator(final ListVirtualServicesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVirtualServicesRequest.Builder,
-                ListVirtualServicesRequest,
+                ListVirtualServicesRequest.Builder, ListVirtualServicesRequest,
                 ListVirtualServicesResponse,
                 com.oracle.bmc.servicemesh.model.VirtualServiceSummary>(
                 new java.util.function.Supplier<ListVirtualServicesRequest.Builder>() {
@@ -895,19 +850,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestErrors operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestErrorsResponse> listWorkRequestErrorsResponseIterator(
             final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
                 ListWorkRequestErrorsResponse>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
@@ -950,23 +902,19 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.WorkRequestError} objects contained in responses from the
-     * listWorkRequestErrors operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestError} objects
+     * contained in responses from the listWorkRequestErrors operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.WorkRequestError} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestError} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.WorkRequestError>
             listWorkRequestErrorsRecordIterator(final ListWorkRequestErrorsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestErrorsRequest.Builder,
-                ListWorkRequestErrorsRequest,
-                ListWorkRequestErrorsResponse,
-                com.oracle.bmc.servicemesh.model.WorkRequestError>(
+                ListWorkRequestErrorsRequest.Builder, ListWorkRequestErrorsRequest,
+                ListWorkRequestErrorsResponse, com.oracle.bmc.servicemesh.model.WorkRequestError>(
                 new java.util.function.Supplier<ListWorkRequestErrorsRequest.Builder>() {
                     @Override
                     public ListWorkRequestErrorsRequest.Builder get() {
@@ -1017,18 +965,16 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequestLogs operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestLogsResponse> listWorkRequestLogsResponseIterator(
             final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
                 ListWorkRequestLogsResponse>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
@@ -1070,22 +1016,19 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.WorkRequestLogEntry} objects contained in responses from the
-     * listWorkRequestLogs operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestLogEntry} objects
+     * contained in responses from the listWorkRequestLogs operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.WorkRequestLogEntry} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestLogEntry} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.WorkRequestLogEntry>
             listWorkRequestLogsRecordIterator(final ListWorkRequestLogsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestLogsRequest.Builder,
-                ListWorkRequestLogsRequest,
-                ListWorkRequestLogsResponse,
-                com.oracle.bmc.servicemesh.model.WorkRequestLogEntry>(
+                ListWorkRequestLogsRequest.Builder, ListWorkRequestLogsRequest,
+                ListWorkRequestLogsResponse, com.oracle.bmc.servicemesh.model.WorkRequestLogEntry>(
                 new java.util.function.Supplier<ListWorkRequestLogsRequest.Builder>() {
                     @Override
                     public ListWorkRequestLogsRequest.Builder get() {
@@ -1135,12 +1078,11 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listWorkRequests operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListWorkRequestsResponse> listWorkRequestsResponseIterator(
             final ListWorkRequestsRequest request) {
@@ -1186,21 +1128,18 @@ public class ServiceMeshPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.servicemesh.model.WorkRequestSummary} objects contained in responses from the
-     * listWorkRequests operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestSummary} objects
+     * contained in responses from the listWorkRequests operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.servicemesh.model.WorkRequestSummary} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.servicemesh.model.WorkRequestSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.servicemesh.model.WorkRequestSummary>
             listWorkRequestsRecordIterator(final ListWorkRequestsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListWorkRequestsRequest.Builder,
-                ListWorkRequestsRequest,
-                ListWorkRequestsResponse,
+                ListWorkRequestsRequest.Builder, ListWorkRequestsRequest, ListWorkRequestsResponse,
                 com.oracle.bmc.servicemesh.model.WorkRequestSummary>(
                 new java.util.function.Supplier<ListWorkRequestsRequest.Builder>() {
                     @Override

@@ -13,11 +13,10 @@ import java.util.Map;
 /**
  * This path provider reads the path and resource id from environment variables
  *
- * <p>Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH environment variable for the path and
+ * Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH environment variable for the path and
  * OCI_RESOURCE_PRINCIPAL_RPT_ID environment variable for the resource id,.
  *
- * <p>This path provider is used when the caller provides EnvironmentRptPathProvider as a path
- * provider to the resource principals signer
+ * This path provider is used when the caller provides EnvironmentRptPathProvider as a path provider to the resource principals signer
  */
 public class EnvironmentRptPathProvider extends AbstractTemplateRptPathProvider {
 
@@ -67,15 +66,12 @@ public class EnvironmentRptPathProvider extends AbstractTemplateRptPathProvider 
     }
 
     /**
-     * This path provider reads the path and resource id for leaf resource from environment
-     * variables
+     * This path provider reads the path and resource id for leaf resource from environment variables
      *
-     * <p>Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_LEAF_RESOURCE environment
-     * variable for the path and OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_LEAF_RESOURCE environment
-     * variable for the resource id,.
+     * Use the contents of the OCI_RESOURCE_PRINCIPAL_RPT_PATH_FOR_LEAF_RESOURCE environment variable for the path and
+     * OCI_RESOURCE_PRINCIPAL_RPT_ID_FOR_LEAF_RESOURCE environment variable for the resource id,.
      *
-     * <p>This path provider is used when the caller provides LeafResourceRptPathProvider as a path
-     * provider to the resource principals signer
+     * This path provider is used when the caller provides LeafResourceRptPathProvider as a path provider to the resource principals signer
      */
     public static class LeafResourceRptPathProvider extends EnvironmentRptPathProvider {
 

@@ -6,9 +6,12 @@ package com.oracle.bmc.capacitymanagement.responses;
 
 import com.oracle.bmc.capacitymanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -37,27 +41,25 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
     }
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      */
     private Integer retryAfter;
 
     /**
-     * A decimal number representing the number of seconds the client should wait before polling
-     * this endpoint again.
-     *
+     * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
      * @return the value
      */
     public Integer getRetryAfter() {
         return retryAfter;
     }
 
-    /** The returned {@code OccCapacityRequest} instance. */
+    /**
+     * The returned OccCapacityRequest instance.
+     */
     private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest occCapacityRequest;
 
     /**
-     * The returned {@code OccCapacityRequest} instance.
-     *
+     * The returned OccCapacityRequest instance.
      * @return the value
      */
     public com.oracle.bmc.capacitymanagement.model.OccCapacityRequest getOccCapacityRequest() {
@@ -74,7 +76,7 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
     })
     private UpdateInternalOccCapacityRequestResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
             Integer retryAfter,
@@ -86,26 +88,25 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
         this.occCapacityRequest = occCapacityRequest;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateInternalOccCapacityRequestResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -120,14 +121,15 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -138,15 +140,12 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
         }
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          */
         private Integer retryAfter;
 
         /**
-         * A decimal number representing the number of seconds the client should wait before polling
-         * this endpoint again.
-         *
+         * A decimal number representing the number of seconds the client should wait before polling this endpoint again.
          * @param retryAfter the value to set
          * @return this builder
          */
@@ -155,12 +154,13 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
             return this;
         }
 
-        /** The returned {@code OccCapacityRequest} instance. */
+        /**
+         * The returned OccCapacityRequest instance.
+         */
         private com.oracle.bmc.capacitymanagement.model.OccCapacityRequest occCapacityRequest;
 
         /**
-         * The returned {@code OccCapacityRequest} instance.
-         *
+         * The returned OccCapacityRequest instance.
          * @param occCapacityRequest the value to set
          * @return this builder
          */
@@ -172,10 +172,8 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateInternalOccCapacityRequestResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -189,10 +187,8 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateInternalOccCapacityRequestResponse build() {
             return new UpdateInternalOccCapacityRequestResponse(
                     __httpStatusCode__,
@@ -206,7 +202,6 @@ public class UpdateInternalOccCapacityRequestResponse extends com.oracle.bmc.res
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

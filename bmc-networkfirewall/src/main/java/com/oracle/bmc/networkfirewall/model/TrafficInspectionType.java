@@ -6,13 +6,13 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
+ * <p>
+ * INTRUSION_DETECTION - Intrusion Detection.
+ *   * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in {@code type}.
  *
- * <p>INTRUSION_DETECTION - Intrusion Detection. * INTRUSION_PREVENTION - Intrusion Detection and
- * Prevention. Traffic classified as potentially malicious will be rejected as described in {@code
- * type}.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum TrafficInspectionType implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum TrafficInspectionType {
     IntrusionDetection("INTRUSION_DETECTION"),
     IntrusionPrevention("INTRUSION_PREVENTION"),
 

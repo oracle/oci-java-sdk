@@ -6,64 +6,98 @@ package com.oracle.bmc.apmsynthetics.requests;
 
 import com.oracle.bmc.apmsynthetics.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorResultExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitorResultRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmsynthetics/GetMonitorResultExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetMonitorResultRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     private String apmDomainId;
 
-    /** The APM domain ID the request is intended for. */
+    /**
+     * The APM domain ID the request is intended for.
+     *
+     */
     public String getApmDomainId() {
         return apmDomainId;
     }
-    /** The OCID of the monitor. */
+    /**
+     * The OCID of the monitor.
+     */
     private String monitorId;
 
-    /** The OCID of the monitor. */
+    /**
+     * The OCID of the monitor.
+     */
     public String getMonitorId() {
         return monitorId;
     }
-    /** The vantagePoint name. */
+    /**
+     * The vantagePoint name.
+     *
+     */
     private String vantagePoint;
 
-    /** The vantagePoint name. */
+    /**
+     * The vantagePoint name.
+     *
+     */
     public String getVantagePoint() {
         return vantagePoint;
     }
-    /** The result type: har, screenshot, log, or network. */
+    /**
+     * The result type: har, screenshot, log, or network.
+     *
+     */
     private String resultType;
 
-    /** The result type: har, screenshot, log, or network. */
+    /**
+     * The result type: har, screenshot, log, or network.
+     *
+     */
     public String getResultType() {
         return resultType;
     }
-    /** The result content type: zip or raw. */
+    /**
+     * The result content type: zip or raw.
+     *
+     */
     private String resultContentType;
 
-    /** The result content type: zip or raw. */
+    /**
+     * The result content type: zip or raw.
+     *
+     */
     public String getResultContentType() {
         return resultContentType;
     }
-    /** The time the object was posted. */
+    /**
+     * The time the object was posted.
+     *
+     */
     private String executionTime;
 
-    /** The time the object was posted. */
+    /**
+     * The time the object was posted.
+     *
+     */
     public String getExecutionTime() {
         return executionTime;
     }
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique identifier for the request. If you need to contact Oracle about a particular request,
-     * please provide the request ID.
+     * Unique identifier for the request.
+     * If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -72,10 +106,14 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetMonitorResultRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The APM domain ID the request is intended for. */
+        /**
+         * The APM domain ID the request is intended for.
+         *
+         */
         private String apmDomainId = null;
 
         /**
@@ -89,12 +127,13 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The OCID of the monitor. */
+        /**
+         * The OCID of the monitor.
+         */
         private String monitorId = null;
 
         /**
          * The OCID of the monitor.
-         *
          * @param monitorId the value to set
          * @return this builder instance
          */
@@ -103,7 +142,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The vantagePoint name. */
+        /**
+         * The vantagePoint name.
+         *
+         */
         private String vantagePoint = null;
 
         /**
@@ -117,7 +159,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The result type: har, screenshot, log, or network. */
+        /**
+         * The result type: har, screenshot, log, or network.
+         *
+         */
         private String resultType = null;
 
         /**
@@ -131,7 +176,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The result content type: zip or raw. */
+        /**
+         * The result content type: zip or raw.
+         *
+         */
         private String resultContentType = null;
 
         /**
@@ -145,7 +193,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** The time the object was posted. */
+        /**
+         * The time the object was posted.
+         *
+         */
         private String executionTime = null;
 
         /**
@@ -160,14 +211,15 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
         }
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique identifier for the request. If you need to contact Oracle about a particular
-         * request, please provide the request ID.
+         * Unique identifier for the request.
+         * If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -179,19 +231,18 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -203,7 +254,6 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetMonitorResultRequest o) {
@@ -222,11 +272,10 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetMonitorResultRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetMonitorResultRequest
          */
@@ -240,8 +289,7 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
         /**
          * Build the instance of GetMonitorResultRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetMonitorResultRequest
@@ -256,14 +304,12 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
             request.executionTime = executionTime;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetMonitorResultRequest(apmDomainId, monitorId, vantagePoint, resultType,
-            // resultContentType, executionTime, opcRequestId);
+            // new GetMonitorResultRequest(apmDomainId, monitorId, vantagePoint, resultType, resultContentType, executionTime, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -279,7 +325,6 @@ public class GetMonitorResultRequest extends com.oracle.bmc.requests.BmcRequest<
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,21 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database objects to include or exclude from migration <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Database objects to include or exclude from migration
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OracleDatabaseObject.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OracleDatabaseObject
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = OracleDatabaseObject.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OracleDatabaseObject extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "owner",
@@ -43,69 +41,73 @@ public final class OracleDatabaseObject
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Owner of the object (regular expression is allowed) */
+        /**
+         * Owner of the object (regular expression is allowed)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("owner")
         private String owner;
 
         /**
          * Owner of the object (regular expression is allowed)
-         *
          * @param owner the value to set
          * @return this builder
-         */
+         **/
         public Builder owner(String owner) {
             this.owner = owner;
             this.__explicitlySet__.add("owner");
             return this;
         }
-        /** Name of the object (regular expression is allowed) */
+        /**
+         * Name of the object (regular expression is allowed)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
          * Name of the object (regular expression is allowed)
-         *
          * @param objectName the value to set
          * @return this builder
-         */
+         **/
         public Builder objectName(String objectName) {
             this.objectName = objectName;
             this.__explicitlySet__.add("objectName");
             return this;
         }
         /**
-         * Type of object to exclude. If not specified, matching owners and object names of type
-         * TABLE would be excluded.
-         */
+         * Type of object to exclude.
+         * If not specified, matching owners and object names of type TABLE would be excluded.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of object to exclude. If not specified, matching owners and object names of type
-         * TABLE would be excluded.
+         * Type of object to exclude.
+         * If not specified, matching owners and object names of type TABLE would be excluded.
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * Whether an excluded table should be omitted from replication. Only valid for database
-         * objects that have are of type TABLE and object status EXCLUDE.
-         */
+         * Whether an excluded table should be omitted from replication. Only valid for database objects
+         * that have are of type TABLE and object status EXCLUDE.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
         private Boolean isOmitExcludedTableFromReplication;
 
         /**
-         * Whether an excluded table should be omitted from replication. Only valid for database
-         * objects that have are of type TABLE and object status EXCLUDE.
+         * Whether an excluded table should be omitted from replication. Only valid for database objects
+         * that have are of type TABLE and object status EXCLUDE.
          *
          * @param isOmitExcludedTableFromReplication the value to set
          * @return this builder
-         */
+         **/
         public Builder isOmitExcludedTableFromReplication(
                 Boolean isOmitExcludedTableFromReplication) {
             this.isOmitExcludedTableFromReplication = isOmitExcludedTableFromReplication;
@@ -148,7 +150,9 @@ public final class OracleDatabaseObject
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,45 +161,48 @@ public final class OracleDatabaseObject
         return new Builder().copy(this);
     }
 
-    /** Owner of the object (regular expression is allowed) */
+    /**
+     * Owner of the object (regular expression is allowed)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("owner")
     private final String owner;
 
     /**
      * Owner of the object (regular expression is allowed)
-     *
      * @return the value
-     */
+     **/
     public String getOwner() {
         return owner;
     }
 
-    /** Name of the object (regular expression is allowed) */
+    /**
+     * Name of the object (regular expression is allowed)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
      * Name of the object (regular expression is allowed)
-     *
      * @return the value
-     */
+     **/
     public String getObjectName() {
         return objectName;
     }
 
     /**
-     * Type of object to exclude. If not specified, matching owners and object names of type TABLE
-     * would be excluded.
-     */
+     * Type of object to exclude.
+     * If not specified, matching owners and object names of type TABLE would be excluded.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of object to exclude. If not specified, matching owners and object names of type TABLE
-     * would be excluded.
+     * Type of object to exclude.
+     * If not specified, matching owners and object names of type TABLE would be excluded.
      *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
@@ -203,7 +210,8 @@ public final class OracleDatabaseObject
     /**
      * Whether an excluded table should be omitted from replication. Only valid for database objects
      * that have are of type TABLE and object status EXCLUDE.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOmitExcludedTableFromReplication")
     private final Boolean isOmitExcludedTableFromReplication;
 
@@ -212,7 +220,7 @@ public final class OracleDatabaseObject
      * that have are of type TABLE and object status EXCLUDE.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsOmitExcludedTableFromReplication() {
         return isOmitExcludedTableFromReplication;
     }
@@ -224,7 +232,6 @@ public final class OracleDatabaseObject
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

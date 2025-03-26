@@ -6,153 +6,183 @@ package com.oracle.bmc.databasemanagement.requests;
 
 import com.oracle.bmc.databasemanagement.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselinesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlPlanBaselinesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListSqlPlanBaselinesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListSqlPlanBaselinesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class ListSqlPlanBaselinesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     private String managedDatabaseId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Managed Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
      */
     public String getManagedDatabaseId() {
         return managedDatabaseId;
     }
-    /** A filter to return only SQL plan baselines that match the plan name. */
+    /**
+     * A filter to return only SQL plan baselines that match the plan name.
+     */
     private String planName;
 
-    /** A filter to return only SQL plan baselines that match the plan name. */
+    /**
+     * A filter to return only SQL plan baselines that match the plan name.
+     */
     public String getPlanName() {
         return planName;
     }
-    /** A filter to return all the SQL plan baselines for the specified SQL handle. */
+    /**
+     * A filter to return all the SQL plan baselines for the specified SQL handle.
+     */
     private String sqlHandle;
 
-    /** A filter to return all the SQL plan baselines for the specified SQL handle. */
+    /**
+     * A filter to return all the SQL plan baselines for the specified SQL handle.
+     */
     public String getSqlHandle() {
         return sqlHandle;
     }
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search
-     * is case insensitive. To run an exact or case-sensitive search, double-quote the search
-     * string. You may also use the '%' symbol as a wildcard.
+     * is case insensitive. To run an exact or case-sensitive search, double-quote the search string.
+     * You may also use the '%' symbol as a wildcard.
+     *
      */
     private String sqlText;
 
     /**
      * A filter to return all the SQL plan baselines that match the SQL text. By default, the search
-     * is case insensitive. To run an exact or case-sensitive search, double-quote the search
-     * string. You may also use the '%' symbol as a wildcard.
+     * is case insensitive. To run an exact or case-sensitive search, double-quote the search string.
+     * You may also use the '%' symbol as a wildcard.
+     *
      */
     public String getSqlText() {
         return sqlText;
     }
     /**
-     * A filter to return only SQL plan baselines that are either enabled or not enabled. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either enabled or not enabled.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isEnabled;
 
     /**
-     * A filter to return only SQL plan baselines that are either enabled or not enabled. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either enabled or not enabled.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsEnabled() {
         return isEnabled;
     }
     /**
-     * A filter to return only SQL plan baselines that are either accepted or not accepted. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either accepted or not accepted.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isAccepted;
 
     /**
-     * A filter to return only SQL plan baselines that are either accepted or not accepted. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either accepted or not accepted.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsAccepted() {
         return isAccepted;
     }
     /**
-     * A filter to return only SQL plan baselines that were either reproduced or not reproduced by
-     * the optimizer. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that were either reproduced or
+     * not reproduced by the optimizer. By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isReproduced;
 
     /**
-     * A filter to return only SQL plan baselines that were either reproduced or not reproduced by
-     * the optimizer. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that were either reproduced or
+     * not reproduced by the optimizer. By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsReproduced() {
         return isReproduced;
     }
     /**
-     * A filter to return only SQL plan baselines that are either fixed or not fixed. By default,
-     * all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either fixed or not fixed.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isFixed;
 
     /**
-     * A filter to return only SQL plan baselines that are either fixed or not fixed. By default,
-     * all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either fixed or not fixed.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsFixed() {
         return isFixed;
     }
     /**
-     * A filter to return only SQL plan baselines that are either adaptive or not adaptive. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either adaptive or not adaptive.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isAdaptive;
 
     /**
-     * A filter to return only SQL plan baselines that are either adaptive or not adaptive. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either adaptive or not adaptive.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsAdaptive() {
         return isAdaptive;
     }
-    /** A filter to return all the SQL plan baselines that match the origin. */
+    /**
+     * A filter to return all the SQL plan baselines that match the origin.
+     */
     private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineOrigin origin;
 
-    /** A filter to return all the SQL plan baselines that match the origin. */
+    /**
+     * A filter to return all the SQL plan baselines that match the origin.
+     */
     public com.oracle.bmc.databasemanagement.model.SqlPlanBaselineOrigin getOrigin() {
         return origin;
     }
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     private String page;
 
     /**
-     * The page token representing the page from where the next set of paginated results are
-     * retrieved. This is usually retrieved from a previous list call.
+     * The page token representing the page from where the next set of paginated results
+     * are retrieved. This is usually retrieved from a previous list call.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     private Integer limit;
 
-    /** The maximum number of records returned in the paginated response. */
+    /**
+     * The maximum number of records returned in the paginated response.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The option to sort the SQL plan baseline summary data. */
+    /**
+     * The option to sort the SQL plan baseline summary data.
+     */
     private SortBy sortBy;
 
-    /** The option to sort the SQL plan baseline summary data. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The option to sort the SQL plan baseline summary data.
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         TimeLastModified("timeLastModified"),
         TimeLastExecuted("timeLastExecuted"),
@@ -186,86 +216,102 @@ public class ListSqlPlanBaselinesRequest
         }
     };
 
-    /** The option to sort the SQL plan baseline summary data. */
+    /**
+     * The option to sort the SQL plan baseline summary data.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Descending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
      */
     private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder;
 
     /**
-     * The option to sort information in ascending (\u2018ASC\u2019) or descending
-     * (\u2018DESC\u2019) order. Descending order is the default order.
+     * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
      */
     public com.oracle.bmc.databasemanagement.model.SortOrders getSortOrder() {
         return sortOrder;
     }
     /**
-     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isAutoPurged;
 
     /**
-     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged. By
-     * default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsAutoPurged() {
         return isAutoPurged;
     }
     /**
-     * A filter to return only SQL plan baselines whose last execution time is after the specified
-     * value. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines whose last execution time is
+     * after the specified value. By default, all SQL plan baselines are returned.
+     *
      */
     private java.util.Date timeLastExecutedGreaterThan;
 
     /**
-     * A filter to return only SQL plan baselines whose last execution time is after the specified
-     * value. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines whose last execution time is
+     * after the specified value. By default, all SQL plan baselines are returned.
+     *
      */
     public java.util.Date getTimeLastExecutedGreaterThan() {
         return timeLastExecutedGreaterThan;
     }
     /**
-     * A filter to return only SQL plan baselines whose last execution time is before the specified
-     * value. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines whose last execution time is
+     * before the specified value. By default, all SQL plan baselines are returned.
+     *
      */
     private java.util.Date timeLastExecutedLessThan;
 
     /**
-     * A filter to return only SQL plan baselines whose last execution time is before the specified
-     * value. By default, all SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines whose last execution time is
+     * before the specified value. By default, all SQL plan baselines are returned.
+     *
      */
     public java.util.Date getTimeLastExecutedLessThan() {
         return timeLastExecutedLessThan;
     }
     /**
-     * A filter to return only SQL plan baselines that are not executed till now. By default, all
-     * SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are not executed till now.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     private Boolean isNeverExecuted;
 
     /**
-     * A filter to return only SQL plan baselines that are not executed till now. By default, all
-     * SQL plan baselines are returned.
+     * A filter to return only SQL plan baselines that are not executed till now.
+     * By default, all SQL plan baselines are returned.
+     *
      */
     public Boolean getIsNeverExecuted() {
         return isNeverExecuted;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     private String opcNamedCredentialId;
 
-    /** The OCID of the Named Credential. */
+    /**
+     * The OCID of the Named Credential.
+     */
     public String getOpcNamedCredentialId() {
         return opcNamedCredentialId;
     }
@@ -273,19 +319,17 @@ public class ListSqlPlanBaselinesRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListSqlPlanBaselinesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          */
         private String managedDatabaseId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Managed Database.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Managed Database.
          * @param managedDatabaseId the value to set
          * @return this builder instance
          */
@@ -294,12 +338,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** A filter to return only SQL plan baselines that match the plan name. */
+        /**
+         * A filter to return only SQL plan baselines that match the plan name.
+         */
         private String planName = null;
 
         /**
          * A filter to return only SQL plan baselines that match the plan name.
-         *
          * @param planName the value to set
          * @return this builder instance
          */
@@ -308,12 +353,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** A filter to return all the SQL plan baselines for the specified SQL handle. */
+        /**
+         * A filter to return all the SQL plan baselines for the specified SQL handle.
+         */
         private String sqlHandle = null;
 
         /**
          * A filter to return all the SQL plan baselines for the specified SQL handle.
-         *
          * @param sqlHandle the value to set
          * @return this builder instance
          */
@@ -323,16 +369,17 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return all the SQL plan baselines that match the SQL text. By default, the
-         * search is case insensitive. To run an exact or case-sensitive search, double-quote the
-         * search string. You may also use the '%' symbol as a wildcard.
+         * A filter to return all the SQL plan baselines that match the SQL text. By default, the search
+         * is case insensitive. To run an exact or case-sensitive search, double-quote the search string.
+         * You may also use the '%' symbol as a wildcard.
+         *
          */
         private String sqlText = null;
 
         /**
-         * A filter to return all the SQL plan baselines that match the SQL text. By default, the
-         * search is case insensitive. To run an exact or case-sensitive search, double-quote the
-         * search string. You may also use the '%' symbol as a wildcard.
+         * A filter to return all the SQL plan baselines that match the SQL text. By default, the search
+         * is case insensitive. To run an exact or case-sensitive search, double-quote the search string.
+         * You may also use the '%' symbol as a wildcard.
          *
          * @param sqlText the value to set
          * @return this builder instance
@@ -343,14 +390,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are either enabled or not enabled. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either enabled or not enabled.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isEnabled = null;
 
         /**
-         * A filter to return only SQL plan baselines that are either enabled or not enabled. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either enabled or not enabled.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isEnabled the value to set
          * @return this builder instance
@@ -361,14 +409,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are either accepted or not accepted. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either accepted or not accepted.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isAccepted = null;
 
         /**
-         * A filter to return only SQL plan baselines that are either accepted or not accepted. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either accepted or not accepted.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isAccepted the value to set
          * @return this builder instance
@@ -379,14 +428,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that were either reproduced or not reproduced
-         * by the optimizer. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that were either reproduced or
+         * not reproduced by the optimizer. By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isReproduced = null;
 
         /**
-         * A filter to return only SQL plan baselines that were either reproduced or not reproduced
-         * by the optimizer. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that were either reproduced or
+         * not reproduced by the optimizer. By default, all SQL plan baselines are returned.
          *
          * @param isReproduced the value to set
          * @return this builder instance
@@ -397,14 +447,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are either fixed or not fixed. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either fixed or not fixed.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isFixed = null;
 
         /**
-         * A filter to return only SQL plan baselines that are either fixed or not fixed. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either fixed or not fixed.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isFixed the value to set
          * @return this builder instance
@@ -415,14 +466,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are either adaptive or not adaptive. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either adaptive or not adaptive.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isAdaptive = null;
 
         /**
-         * A filter to return only SQL plan baselines that are either adaptive or not adaptive. By
-         * default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either adaptive or not adaptive.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isAdaptive the value to set
          * @return this builder instance
@@ -432,12 +484,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** A filter to return all the SQL plan baselines that match the origin. */
+        /**
+         * A filter to return all the SQL plan baselines that match the origin.
+         */
         private com.oracle.bmc.databasemanagement.model.SqlPlanBaselineOrigin origin = null;
 
         /**
          * A filter to return all the SQL plan baselines that match the origin.
-         *
          * @param origin the value to set
          * @return this builder instance
          */
@@ -448,14 +501,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
+         *
          */
         private String page = null;
 
         /**
-         * The page token representing the page from where the next set of paginated results are
-         * retrieved. This is usually retrieved from a previous list call.
+         * The page token representing the page from where the next set of paginated results
+         * are retrieved. This is usually retrieved from a previous list call.
          *
          * @param page the value to set
          * @return this builder instance
@@ -465,12 +519,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** The maximum number of records returned in the paginated response. */
+        /**
+         * The maximum number of records returned in the paginated response.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of records returned in the paginated response.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -479,12 +534,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** The option to sort the SQL plan baseline summary data. */
+        /**
+         * The option to sort the SQL plan baseline summary data.
+         */
         private SortBy sortBy = null;
 
         /**
          * The option to sort the SQL plan baseline summary data.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -494,15 +550,12 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Descending order is the default order.
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
          */
         private com.oracle.bmc.databasemanagement.model.SortOrders sortOrder = null;
 
         /**
-         * The option to sort information in ascending (\u2018ASC\u2019) or descending
-         * (\u2018DESC\u2019) order. Descending order is the default order.
-         *
+         * The option to sort information in ascending (\u2018ASC\u2019) or descending (\u2018DESC\u2019) order. Descending order is the default order.
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -512,14 +565,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are either auto-purged or not
-         * auto-purged. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isAutoPurged = null;
 
         /**
-         * A filter to return only SQL plan baselines that are either auto-purged or not
-         * auto-purged. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are either auto-purged or not auto-purged.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isAutoPurged the value to set
          * @return this builder instance
@@ -530,14 +584,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines whose last execution time is after the
-         * specified value. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines whose last execution time is
+         * after the specified value. By default, all SQL plan baselines are returned.
+         *
          */
         private java.util.Date timeLastExecutedGreaterThan = null;
 
         /**
-         * A filter to return only SQL plan baselines whose last execution time is after the
-         * specified value. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines whose last execution time is
+         * after the specified value. By default, all SQL plan baselines are returned.
          *
          * @param timeLastExecutedGreaterThan the value to set
          * @return this builder instance
@@ -548,14 +603,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines whose last execution time is before the
-         * specified value. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines whose last execution time is
+         * before the specified value. By default, all SQL plan baselines are returned.
+         *
          */
         private java.util.Date timeLastExecutedLessThan = null;
 
         /**
-         * A filter to return only SQL plan baselines whose last execution time is before the
-         * specified value. By default, all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines whose last execution time is
+         * before the specified value. By default, all SQL plan baselines are returned.
          *
          * @param timeLastExecutedLessThan the value to set
          * @return this builder instance
@@ -566,14 +622,15 @@ public class ListSqlPlanBaselinesRequest
         }
 
         /**
-         * A filter to return only SQL plan baselines that are not executed till now. By default,
-         * all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are not executed till now.
+         * By default, all SQL plan baselines are returned.
+         *
          */
         private Boolean isNeverExecuted = null;
 
         /**
-         * A filter to return only SQL plan baselines that are not executed till now. By default,
-         * all SQL plan baselines are returned.
+         * A filter to return only SQL plan baselines that are not executed till now.
+         * By default, all SQL plan baselines are returned.
          *
          * @param isNeverExecuted the value to set
          * @return this builder instance
@@ -583,12 +640,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -597,12 +655,13 @@ public class ListSqlPlanBaselinesRequest
             return this;
         }
 
-        /** The OCID of the Named Credential. */
+        /**
+         * The OCID of the Named Credential.
+         */
         private String opcNamedCredentialId = null;
 
         /**
          * The OCID of the Named Credential.
-         *
          * @param opcNamedCredentialId the value to set
          * @return this builder instance
          */
@@ -613,19 +672,18 @@ public class ListSqlPlanBaselinesRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -637,7 +695,6 @@ public class ListSqlPlanBaselinesRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListSqlPlanBaselinesRequest o) {
@@ -669,11 +726,10 @@ public class ListSqlPlanBaselinesRequest
         /**
          * Build the instance of ListSqlPlanBaselinesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListSqlPlanBaselinesRequest
          */
@@ -687,8 +743,7 @@ public class ListSqlPlanBaselinesRequest
         /**
          * Build the instance of ListSqlPlanBaselinesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListSqlPlanBaselinesRequest
@@ -716,16 +771,12 @@ public class ListSqlPlanBaselinesRequest
             request.opcRequestId = opcRequestId;
             request.opcNamedCredentialId = opcNamedCredentialId;
             return request;
-            // new ListSqlPlanBaselinesRequest(managedDatabaseId, planName, sqlHandle, sqlText,
-            // isEnabled, isAccepted, isReproduced, isFixed, isAdaptive, origin, page, limit,
-            // sortBy, sortOrder, isAutoPurged, timeLastExecutedGreaterThan,
-            // timeLastExecutedLessThan, isNeverExecuted, opcRequestId, opcNamedCredentialId);
+            // new ListSqlPlanBaselinesRequest(managedDatabaseId, planName, sqlHandle, sqlText, isEnabled, isAccepted, isReproduced, isFixed, isAdaptive, origin, page, limit, sortBy, sortOrder, isAutoPurged, timeLastExecutedGreaterThan, timeLastExecutedLessThan, isNeverExecuted, opcRequestId, opcNamedCredentialId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -754,7 +805,6 @@ public class ListSqlPlanBaselinesRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

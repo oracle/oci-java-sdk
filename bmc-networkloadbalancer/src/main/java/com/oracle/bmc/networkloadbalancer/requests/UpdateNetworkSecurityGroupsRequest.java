@@ -6,39 +6,32 @@ package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateNetworkSecurityGroupsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateNetworkSecurityGroupsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class UpdateNetworkSecurityGroupsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
     private String networkLoadBalancerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network load balancer to update.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
      */
     public String getNetworkLoadBalancerId() {
         return networkLoadBalancerId;
     }
     /**
-     * The details for updating the network security groups associated with the specified network
-     * load balancer.
+     * The details for updating the network security groups associated with the specified network load balancer.
      */
     private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails
             updateNetworkSecurityGroupsDetails;
 
     /**
-     * The details for updating the network security groups associated with the specified network
-     * load balancer.
+     * The details for updating the network security groups associated with the specified network load balancer.
      */
     public com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails
             getUpdateNetworkSecurityGroupsDetails() {
@@ -47,48 +40,56 @@ public class UpdateNetworkSecurityGroupsRequest
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     private String opcRequestId;
 
     /**
      * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
      * particular request, then provide the request identifier.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-     * server error without risk of rerunning that same action. Retry tokens expire after 24 hours
-     * but they can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so that it can be retried in case of a timeout or
-     * server error without risk of rerunning that same action. Retry tokens expire after 24 hours
-     * but they can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without risk of rerunning that same action. Retry tokens expire after 24
+     * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * current etag value of the resource.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * current etag value of the resource.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the current etag value of the resource.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
@@ -96,7 +97,6 @@ public class UpdateNetworkSecurityGroupsRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -109,19 +109,17 @@ public class UpdateNetworkSecurityGroupsRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateNetworkSecurityGroupsRequest,
                     com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer to update.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
          */
         private String networkLoadBalancerId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network load balancer to update.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
          * @param networkLoadBalancerId the value to set
          * @return this builder instance
          */
@@ -131,16 +129,13 @@ public class UpdateNetworkSecurityGroupsRequest
         }
 
         /**
-         * The details for updating the network security groups associated with the specified
-         * network load balancer.
+         * The details for updating the network security groups associated with the specified network load balancer.
          */
         private com.oracle.bmc.networkloadbalancer.model.UpdateNetworkSecurityGroupsDetails
                 updateNetworkSecurityGroupsDetails = null;
 
         /**
-         * The details for updating the network security groups associated with the specified
-         * network load balancer.
-         *
+         * The details for updating the network security groups associated with the specified network load balancer.
          * @param updateNetworkSecurityGroupsDetails the value to set
          * @return this builder instance
          */
@@ -154,6 +149,7 @@ public class UpdateNetworkSecurityGroupsRequest
         /**
          * The unique Oracle-assigned identifier for the request. If you must contact Oracle about a
          * particular request, then provide the request identifier.
+         *
          */
         private String opcRequestId = null;
 
@@ -170,20 +166,21 @@ public class UpdateNetworkSecurityGroupsRequest
         }
 
         /**
-         * A token that uniquely identifies a request so that it can be retried in case of a timeout
-         * or server error without risk of rerunning that same action. Retry tokens expire after 24
-         * hours but they can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so that it can be retried in case of a timeout
-         * or server error without risk of rerunning that same action. Retry tokens expire after 24
-         * hours but they can be invalidated before then due to conflicting operations. For example,
-         * if a resource has been deleted and purged from the system, then a retry of the original
-         * creation request might be rejected.
+         * A token that uniquely identifies a request so that it can be retried in case of a timeout or
+         * server error without risk of rerunning that same action. Retry tokens expire after 24
+         * hours but they can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -194,18 +191,21 @@ public class UpdateNetworkSecurityGroupsRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the current etag value of the resource.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the current etag value of the resource.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the current etag value of the resource.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -217,19 +217,18 @@ public class UpdateNetworkSecurityGroupsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -241,7 +240,6 @@ public class UpdateNetworkSecurityGroupsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateNetworkSecurityGroupsRequest o) {
@@ -258,11 +256,10 @@ public class UpdateNetworkSecurityGroupsRequest
         /**
          * Build the instance of UpdateNetworkSecurityGroupsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateNetworkSecurityGroupsRequest
          */
@@ -275,7 +272,6 @@ public class UpdateNetworkSecurityGroupsRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -289,8 +285,7 @@ public class UpdateNetworkSecurityGroupsRequest
         /**
          * Build the instance of UpdateNetworkSecurityGroupsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateNetworkSecurityGroupsRequest
@@ -303,14 +298,12 @@ public class UpdateNetworkSecurityGroupsRequest
             request.opcRetryToken = opcRetryToken;
             request.ifMatch = ifMatch;
             return request;
-            // new UpdateNetworkSecurityGroupsRequest(networkLoadBalancerId,
-            // updateNetworkSecurityGroupsDetails, opcRequestId, opcRetryToken, ifMatch);
+            // new UpdateNetworkSecurityGroupsRequest(networkLoadBalancerId, updateNetworkSecurityGroupsDetails, opcRequestId, opcRetryToken, ifMatch);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -324,7 +317,6 @@ public class UpdateNetworkSecurityGroupsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

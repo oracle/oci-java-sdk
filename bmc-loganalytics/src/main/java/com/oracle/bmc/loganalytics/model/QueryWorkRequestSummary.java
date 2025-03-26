@@ -5,23 +5,23 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * High level summary of query job work request. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * High level summary of query job work request.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = QueryWorkRequestSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = QueryWorkRequestSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class QueryWorkRequestSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -61,7 +61,10 @@ public final class QueryWorkRequestSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique OCID identifier to reference this query job work Request with. */
+        /**
+         * Unique OCID identifier to reference this query job work Request with.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
@@ -70,47 +73,48 @@ public final class QueryWorkRequestSummary
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID]
-         * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** When the work request started. */
+        /**
+         * When the work request started.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
          * When the work request started.
-         *
          * @param timeStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStarted(java.util.Date timeStarted) {
             this.timeStarted = timeStarted;
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** When the work request was accepted. Should match timeStarted in all cases. */
+        /**
+         * When the work request was accepted. Should match timeStarted in all cases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
         private java.util.Date timeAccepted;
 
@@ -119,58 +123,64 @@ public final class QueryWorkRequestSummary
          *
          * @param timeAccepted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeAccepted(java.util.Date timeAccepted) {
             this.timeAccepted = timeAccepted;
             this.__explicitlySet__.add("timeAccepted");
             return this;
         }
-        /** When the work request finished execution. */
+        /**
+         * When the work request finished execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
         private java.util.Date timeFinished;
 
         /**
          * When the work request finished execution.
-         *
          * @param timeFinished the value to set
          * @return this builder
-         */
+         **/
         public Builder timeFinished(java.util.Date timeFinished) {
             this.timeFinished = timeFinished;
             this.__explicitlySet__.add("timeFinished");
             return this;
         }
-        /** When the work request will expire. */
+        /**
+         * When the work request will expire.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
          * When the work request will expire.
-         *
          * @param timeExpires the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpires(java.util.Date timeExpires) {
             this.timeExpires = timeExpires;
             this.__explicitlySet__.add("timeExpires");
             return this;
         }
-        /** Current execution mode for the job. */
+        /**
+         * Current execution mode for the job.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mode")
         private JobMode mode;
 
         /**
          * Current execution mode for the job.
-         *
          * @param mode the value to set
          * @return this builder
-         */
+         **/
         public Builder mode(JobMode mode) {
             this.mode = mode;
             this.__explicitlySet__.add("mode");
             return this;
         }
-        /** Percentage progress completion of the query. */
+        /**
+         * Percentage progress completion of the query.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
         private Integer percentComplete;
 
@@ -179,13 +189,16 @@ public final class QueryWorkRequestSummary
          *
          * @param percentComplete the value to set
          * @return this builder
-         */
+         **/
         public Builder percentComplete(Integer percentComplete) {
             this.percentComplete = percentComplete;
             this.__explicitlySet__.add("percentComplete");
             return this;
         }
-        /** Work request status. */
+        /**
+         * Work request status.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private WorkRequestStatus status;
 
@@ -194,13 +207,16 @@ public final class QueryWorkRequestSummary
          *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(WorkRequestStatus status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** Asynchronous action name. */
+        /**
+         * Asynchronous action name.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationType")
         private QueryOperationType operationType;
 
@@ -209,7 +225,7 @@ public final class QueryWorkRequestSummary
          *
          * @param operationType the value to set
          * @return this builder
-         */
+         **/
         public Builder operationType(QueryOperationType operationType) {
             this.operationType = operationType;
             this.__explicitlySet__.add("operationType");
@@ -274,7 +290,9 @@ public final class QueryWorkRequestSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -283,7 +301,10 @@ public final class QueryWorkRequestSummary
         return new Builder().copy(this);
     }
 
-    /** Unique OCID identifier to reference this query job work Request with. */
+    /**
+     * Unique OCID identifier to reference this query job work Request with.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
@@ -291,42 +312,43 @@ public final class QueryWorkRequestSummary
      * Unique OCID identifier to reference this query job work Request with.
      *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID]
-     * (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     *
+     * Compartment Identifier [OCID] (https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** When the work request started. */
+    /**
+     * When the work request started.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
      * When the work request started.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStarted() {
         return timeStarted;
     }
 
-    /** When the work request was accepted. Should match timeStarted in all cases. */
+    /**
+     * When the work request was accepted. Should match timeStarted in all cases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeAccepted")
     private final java.util.Date timeAccepted;
 
@@ -334,51 +356,57 @@ public final class QueryWorkRequestSummary
      * When the work request was accepted. Should match timeStarted in all cases.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeAccepted() {
         return timeAccepted;
     }
 
-    /** When the work request finished execution. */
+    /**
+     * When the work request finished execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFinished")
     private final java.util.Date timeFinished;
 
     /**
      * When the work request finished execution.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeFinished() {
         return timeFinished;
     }
 
-    /** When the work request will expire. */
+    /**
+     * When the work request will expire.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
      * When the work request will expire.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpires() {
         return timeExpires;
     }
 
-    /** Current execution mode for the job. */
+    /**
+     * Current execution mode for the job.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mode")
     private final JobMode mode;
 
     /**
      * Current execution mode for the job.
-     *
      * @return the value
-     */
+     **/
     public JobMode getMode() {
         return mode;
     }
 
-    /** Percentage progress completion of the query. */
+    /**
+     * Percentage progress completion of the query.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("percentComplete")
     private final Integer percentComplete;
 
@@ -386,12 +414,15 @@ public final class QueryWorkRequestSummary
      * Percentage progress completion of the query.
      *
      * @return the value
-     */
+     **/
     public Integer getPercentComplete() {
         return percentComplete;
     }
 
-    /** Work request status. */
+    /**
+     * Work request status.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final WorkRequestStatus status;
 
@@ -399,12 +430,15 @@ public final class QueryWorkRequestSummary
      * Work request status.
      *
      * @return the value
-     */
+     **/
     public WorkRequestStatus getStatus() {
         return status;
     }
 
-    /** Asynchronous action name. */
+    /**
+     * Asynchronous action name.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationType")
     private final QueryOperationType operationType;
 
@@ -412,7 +446,7 @@ public final class QueryWorkRequestSummary
      * Asynchronous action name.
      *
      * @return the value
-     */
+     **/
     public QueryOperationType getOperationType() {
         return operationType;
     }
@@ -424,7 +458,6 @@ public final class QueryWorkRequestSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

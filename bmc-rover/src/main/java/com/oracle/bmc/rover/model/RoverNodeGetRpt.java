@@ -5,22 +5,19 @@
 package com.oracle.bmc.rover.model;
 
 /**
- * The resource principal token response. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
+ * The resource principal token response.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201210")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = RoverNodeGetRpt.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class RoverNodeGetRpt
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class RoverNodeGetRpt extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourcePrincipalToken", "servicePrincipalSessionToken"})
     public RoverNodeGetRpt(String resourcePrincipalToken, String servicePrincipalSessionToken) {
@@ -31,31 +28,33 @@ public final class RoverNodeGetRpt
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The resource principal token blob that contains claims about the resource. */
+        /**
+         * The resource principal token blob that contains claims about the resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
         private String resourcePrincipalToken;
 
         /**
          * The resource principal token blob that contains claims about the resource.
-         *
          * @param resourcePrincipalToken the value to set
          * @return this builder
-         */
+         **/
         public Builder resourcePrincipalToken(String resourcePrincipalToken) {
             this.resourcePrincipalToken = resourcePrincipalToken;
             this.__explicitlySet__.add("resourcePrincipalToken");
             return this;
         }
-        /** The service principal session token */
+        /**
+         * The service principal session token
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
         private String servicePrincipalSessionToken;
 
         /**
          * The service principal session token
-         *
          * @param servicePrincipalSessionToken the value to set
          * @return this builder
-         */
+         **/
         public Builder servicePrincipalSessionToken(String servicePrincipalSessionToken) {
             this.servicePrincipalSessionToken = servicePrincipalSessionToken;
             this.__explicitlySet__.add("servicePrincipalSessionToken");
@@ -87,7 +86,9 @@ public final class RoverNodeGetRpt
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -96,28 +97,30 @@ public final class RoverNodeGetRpt
         return new Builder().copy(this);
     }
 
-    /** The resource principal token blob that contains claims about the resource. */
+    /**
+     * The resource principal token blob that contains claims about the resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePrincipalToken")
     private final String resourcePrincipalToken;
 
     /**
      * The resource principal token blob that contains claims about the resource.
-     *
      * @return the value
-     */
+     **/
     public String getResourcePrincipalToken() {
         return resourcePrincipalToken;
     }
 
-    /** The service principal session token */
+    /**
+     * The service principal session token
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipalSessionToken")
     private final String servicePrincipalSessionToken;
 
     /**
      * The service principal session token
-     *
      * @return the value
-     */
+     **/
     public String getServicePrincipalSessionToken() {
         return servicePrincipalSessionToken;
     }
@@ -129,7 +132,6 @@ public final class RoverNodeGetRpt
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

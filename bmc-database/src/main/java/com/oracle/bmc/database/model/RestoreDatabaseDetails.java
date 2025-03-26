@@ -5,23 +5,22 @@
 package com.oracle.bmc.database.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = RestoreDatabaseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = RestoreDatabaseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class RestoreDatabaseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseSCN",
@@ -44,27 +43,29 @@ public final class RestoreDatabaseDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Restores using the backup with the System Change Number (SCN) specified. This field is
-         * applicable for both use cases - Restoring Container Database or Restoring specific
-         * Pluggable Database.
-         */
+         * Restores using the backup with the System Change Number (SCN) specified.
+         * This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
         private String databaseSCN;
 
         /**
-         * Restores using the backup with the System Change Number (SCN) specified. This field is
-         * applicable for both use cases - Restoring Container Database or Restoring specific
-         * Pluggable Database.
+         * Restores using the backup with the System Change Number (SCN) specified.
+         * This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
          *
          * @param databaseSCN the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSCN(String databaseSCN) {
             this.databaseSCN = databaseSCN;
             this.__explicitlySet__.add("databaseSCN");
             return this;
         }
-        /** Restores to the timestamp specified. */
+        /**
+         * Restores to the timestamp specified.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
         private java.util.Date timestamp;
 
@@ -73,13 +74,16 @@ public final class RestoreDatabaseDetails
          *
          * @param timestamp the value to set
          * @return this builder
-         */
+         **/
         public Builder timestamp(java.util.Date timestamp) {
             this.timestamp = timestamp;
             this.__explicitlySet__.add("timestamp");
             return this;
         }
-        /** Restores to the last known good state with the least possible data loss. */
+        /**
+         * Restores to the last known good state with the least possible data loss.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("latest")
         private Boolean latest;
 
@@ -88,7 +92,7 @@ public final class RestoreDatabaseDetails
          *
          * @param latest the value to set
          * @return this builder
-         */
+         **/
         public Builder latest(Boolean latest) {
             this.latest = latest;
             this.__explicitlySet__.add("latest");
@@ -96,7 +100,8 @@ public final class RestoreDatabaseDetails
         }
         /**
          * Restores only the Pluggable Database (if specified) using the inputs provided in request.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseName")
         private String pluggableDatabaseName;
 
@@ -105,7 +110,7 @@ public final class RestoreDatabaseDetails
          *
          * @param pluggableDatabaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder pluggableDatabaseName(String pluggableDatabaseName) {
             this.pluggableDatabaseName = pluggableDatabaseName;
             this.__explicitlySet__.add("pluggableDatabaseName");
@@ -146,7 +151,9 @@ public final class RestoreDatabaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -156,25 +163,27 @@ public final class RestoreDatabaseDetails
     }
 
     /**
-     * Restores using the backup with the System Change Number (SCN) specified. This field is
-     * applicable for both use cases - Restoring Container Database or Restoring specific Pluggable
-     * Database.
-     */
+     * Restores using the backup with the System Change Number (SCN) specified.
+     * This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSCN")
     private final String databaseSCN;
 
     /**
-     * Restores using the backup with the System Change Number (SCN) specified. This field is
-     * applicable for both use cases - Restoring Container Database or Restoring specific Pluggable
-     * Database.
+     * Restores using the backup with the System Change Number (SCN) specified.
+     * This field is applicable for both use cases - Restoring Container Database or Restoring specific Pluggable Database.
      *
      * @return the value
-     */
+     **/
     public String getDatabaseSCN() {
         return databaseSCN;
     }
 
-    /** Restores to the timestamp specified. */
+    /**
+     * Restores to the timestamp specified.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timestamp")
     private final java.util.Date timestamp;
 
@@ -182,12 +191,15 @@ public final class RestoreDatabaseDetails
      * Restores to the timestamp specified.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimestamp() {
         return timestamp;
     }
 
-    /** Restores to the last known good state with the least possible data loss. */
+    /**
+     * Restores to the last known good state with the least possible data loss.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("latest")
     private final Boolean latest;
 
@@ -195,12 +207,15 @@ public final class RestoreDatabaseDetails
      * Restores to the last known good state with the least possible data loss.
      *
      * @return the value
-     */
+     **/
     public Boolean getLatest() {
         return latest;
     }
 
-    /** Restores only the Pluggable Database (if specified) using the inputs provided in request. */
+    /**
+     * Restores only the Pluggable Database (if specified) using the inputs provided in request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabaseName")
     private final String pluggableDatabaseName;
 
@@ -208,7 +223,7 @@ public final class RestoreDatabaseDetails
      * Restores only the Pluggable Database (if specified) using the inputs provided in request.
      *
      * @return the value
-     */
+     **/
     public String getPluggableDatabaseName() {
         return pluggableDatabaseName;
     }
@@ -220,7 +235,6 @@ public final class RestoreDatabaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

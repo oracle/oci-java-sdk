@@ -5,22 +5,19 @@
 package com.oracle.bmc.aidocument.model;
 
 /**
- * Summary of count of samples used during model training. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
+ * Summary of count of samples used during model training.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221109")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DatasetSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DatasetSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DatasetSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "trainingSampleCount",
@@ -37,46 +34,49 @@ public final class DatasetSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Number of samples used for training the model. */
+        /**
+         * Number of samples used for training the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trainingSampleCount")
         private Integer trainingSampleCount;
 
         /**
          * Number of samples used for training the model.
-         *
          * @param trainingSampleCount the value to set
          * @return this builder
-         */
+         **/
         public Builder trainingSampleCount(Integer trainingSampleCount) {
             this.trainingSampleCount = trainingSampleCount;
             this.__explicitlySet__.add("trainingSampleCount");
             return this;
         }
-        /** Number of samples used for validating the model. */
+        /**
+         * Number of samples used for validating the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("validationSampleCount")
         private Integer validationSampleCount;
 
         /**
          * Number of samples used for validating the model.
-         *
          * @param validationSampleCount the value to set
          * @return this builder
-         */
+         **/
         public Builder validationSampleCount(Integer validationSampleCount) {
             this.validationSampleCount = validationSampleCount;
             this.__explicitlySet__.add("validationSampleCount");
             return this;
         }
-        /** Number of samples used for testing the model. */
+        /**
+         * Number of samples used for testing the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("testSampleCount")
         private Integer testSampleCount;
 
         /**
          * Number of samples used for testing the model.
-         *
          * @param testSampleCount the value to set
          * @return this builder
-         */
+         **/
         public Builder testSampleCount(Integer testSampleCount) {
             this.testSampleCount = testSampleCount;
             this.__explicitlySet__.add("testSampleCount");
@@ -113,7 +113,9 @@ public final class DatasetSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,41 +124,44 @@ public final class DatasetSummary
         return new Builder().copy(this);
     }
 
-    /** Number of samples used for training the model. */
+    /**
+     * Number of samples used for training the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trainingSampleCount")
     private final Integer trainingSampleCount;
 
     /**
      * Number of samples used for training the model.
-     *
      * @return the value
-     */
+     **/
     public Integer getTrainingSampleCount() {
         return trainingSampleCount;
     }
 
-    /** Number of samples used for validating the model. */
+    /**
+     * Number of samples used for validating the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("validationSampleCount")
     private final Integer validationSampleCount;
 
     /**
      * Number of samples used for validating the model.
-     *
      * @return the value
-     */
+     **/
     public Integer getValidationSampleCount() {
         return validationSampleCount;
     }
 
-    /** Number of samples used for testing the model. */
+    /**
+     * Number of samples used for testing the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("testSampleCount")
     private final Integer testSampleCount;
 
     /**
      * Number of samples used for testing the model.
-     *
      * @return the value
-     */
+     **/
     public Integer getTestSampleCount() {
         return testSampleCount;
     }
@@ -168,7 +173,6 @@ public final class DatasetSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

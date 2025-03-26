@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.osmanagementhub.model;
 
-/** Type of mirrored software source. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum MirrorType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of mirrored software source.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum MirrorType {
     Custom("CUSTOM"),
     Vendor("VENDOR"),
     Versioned("VERSIONED"),

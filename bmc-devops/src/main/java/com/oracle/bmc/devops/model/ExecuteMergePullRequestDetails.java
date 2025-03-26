@@ -5,72 +5,71 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * The information about the merge. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * The information about the merge.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExecuteMergePullRequestDetails.Builder.class)
+    builder = ExecuteMergePullRequestDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "actionType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "actionType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExecuteMergePullRequestDetails extends MergePullRequestDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The commit message to be shown for this pull request in the destination branch after
-         * merge is done.
-         */
+         * The commit message to be shown for this pull request in the destination branch after merge is done.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("commitMessage")
         private String commitMessage;
 
         /**
-         * The commit message to be shown for this pull request in the destination branch after
-         * merge is done.
-         *
+         * The commit message to be shown for this pull request in the destination branch after merge is done.
          * @param commitMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder commitMessage(String commitMessage) {
             this.commitMessage = commitMessage;
             this.__explicitlySet__.add("commitMessage");
             return this;
         }
-        /** the strategy of merging. */
+        /**
+         * the strategy of merging.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mergeStrategy")
         private MergeStrategy mergeStrategy;
 
         /**
          * the strategy of merging.
-         *
          * @param mergeStrategy the value to set
          * @return this builder
-         */
+         **/
         public Builder mergeStrategy(MergeStrategy mergeStrategy) {
             this.mergeStrategy = mergeStrategy;
             this.__explicitlySet__.add("mergeStrategy");
             return this;
         }
-        /** What needs to happen after the merge is done successfully. */
+        /**
+         * What needs to happen after the merge is done successfully.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("postMergeAction")
         private PostMergeAction postMergeAction;
 
         /**
          * What needs to happen after the merge is done successfully.
-         *
          * @param postMergeAction the value to set
          * @return this builder
-         */
+         **/
         public Builder postMergeAction(PostMergeAction postMergeAction) {
             this.postMergeAction = postMergeAction;
             this.__explicitlySet__.add("postMergeAction");
@@ -105,7 +104,9 @@ public final class ExecuteMergePullRequestDetails extends MergePullRequestDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,37 +125,37 @@ public final class ExecuteMergePullRequestDetails extends MergePullRequestDetail
     }
 
     /**
-     * The commit message to be shown for this pull request in the destination branch after merge is
-     * done.
-     */
+     * The commit message to be shown for this pull request in the destination branch after merge is done.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("commitMessage")
     private final String commitMessage;
 
     /**
-     * The commit message to be shown for this pull request in the destination branch after merge is
-     * done.
-     *
+     * The commit message to be shown for this pull request in the destination branch after merge is done.
      * @return the value
-     */
+     **/
     public String getCommitMessage() {
         return commitMessage;
     }
 
-    /** the strategy of merging. */
+    /**
+     * the strategy of merging.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mergeStrategy")
     private final MergeStrategy mergeStrategy;
 
     /**
      * the strategy of merging.
-     *
      * @return the value
-     */
+     **/
     public MergeStrategy getMergeStrategy() {
         return mergeStrategy;
     }
 
-    /** What needs to happen after the merge is done successfully. */
-    public enum PostMergeAction implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * What needs to happen after the merge is done successfully.
+     **/
+    public enum PostMergeAction {
         DeleteSourceBranch("DELETE_SOURCE_BRANCH"),
         KeepSourceBranch("KEEP_SOURCE_BRANCH"),
         ;
@@ -186,15 +187,16 @@ public final class ExecuteMergePullRequestDetails extends MergePullRequestDetail
             throw new IllegalArgumentException("Invalid PostMergeAction: " + key);
         }
     };
-    /** What needs to happen after the merge is done successfully. */
+    /**
+     * What needs to happen after the merge is done successfully.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("postMergeAction")
     private final PostMergeAction postMergeAction;
 
     /**
      * What needs to happen after the merge is done successfully.
-     *
      * @return the value
-     */
+     **/
     public PostMergeAction getPostMergeAction() {
         return postMergeAction;
     }
@@ -206,7 +208,6 @@ public final class ExecuteMergePullRequestDetails extends MergePullRequestDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

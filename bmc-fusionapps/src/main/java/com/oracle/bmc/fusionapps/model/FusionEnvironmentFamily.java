@@ -5,28 +5,22 @@
 package com.oracle.bmc.fusionapps.model;
 
 /**
- * Details of a Fusion environment family. An environment family is a logical grouping of
- * environments. The environment family defines a set of characteristics that are shared across the
- * environments to allow consistent management and maintenance across your production, test, and
- * development environments. For more information, see [Planning an Environment
- * Family](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
+ * Details of a Fusion environment family. An environment family is a logical grouping of environments. The environment family defines a set of characteristics that are shared across the environments to allow consistent management and maintenance across your production, test, and development environments. For more information, see [Planning an Environment Family](https://docs.oracle.com/iaas/Content/fusion-applications/plan-environment-family.htm).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FusionEnvironmentFamily.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FusionEnvironmentFamily.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FusionEnvironmentFamily
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -77,35 +71,31 @@ public final class FusionEnvironmentFamily
     public static class Builder {
         /**
          * The unique identifier (OCID) of the environment family. Can't be changed after creation.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier (OCID) of the environment family. Can't be changed after creation.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * A friendly name for the environment family. The name must contain only letters, numbers,
-         * dashes, and underscores. Can be changed later.
-         */
+         * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A friendly name for the environment family. The name must contain only letters, numbers,
-         * dashes, and underscores. Can be changed later.
-         *
+         * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -120,137 +110,133 @@ public final class FusionEnvironmentFamily
             this.__explicitlySet__.add("familyMaintenancePolicy");
             return this;
         }
-        /** The OCID of the compartment where the environment family is located. */
+        /**
+         * The OCID of the compartment where the environment family is located.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment where the environment family is located.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The list of the IDs of the applications subscriptions that are associated with the
-         * environment family.
-         */
+         * The list of the IDs of the applications subscriptions that are associated with the environment family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
         private java.util.List<String> subscriptionIds;
 
         /**
-         * The list of the IDs of the applications subscriptions that are associated with the
-         * environment family.
-         *
+         * The list of the IDs of the applications subscriptions that are associated with the environment family.
          * @param subscriptionIds the value to set
          * @return this builder
-         */
+         **/
         public Builder subscriptionIds(java.util.List<String> subscriptionIds) {
             this.subscriptionIds = subscriptionIds;
             this.__explicitlySet__.add("subscriptionIds");
             return this;
         }
-        /** When set to True, a subscription update is required for the environment family. */
+        /**
+         * When set to True, a subscription update is required for the environment family.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSubscriptionUpdateNeeded")
         private Boolean isSubscriptionUpdateNeeded;
 
         /**
          * When set to True, a subscription update is required for the environment family.
-         *
          * @param isSubscriptionUpdateNeeded the value to set
          * @return this builder
-         */
+         **/
         public Builder isSubscriptionUpdateNeeded(Boolean isSubscriptionUpdateNeeded) {
             this.isSubscriptionUpdateNeeded = isSubscriptionUpdateNeeded;
             this.__explicitlySet__.add("isSubscriptionUpdateNeeded");
             return this;
         }
         /**
-         * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime
-         * string.
-         */
+         * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime
-         * string.
-         *
+         * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The current state of the FusionEnvironmentFamily. */
+        /**
+         * The current state of the FusionEnvironmentFamily.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the FusionEnvironmentFamily.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in Failed state.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Environment Specific Guid/ System Name */
+        /**
+         * Environment Specific Guid/ System Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemName")
         private String systemName;
 
         /**
          * Environment Specific Guid/ System Name
-         *
          * @param systemName the value to set
          * @return this builder
-         */
+         **/
         public Builder systemName(String systemName) {
             this.systemName = systemName;
             this.__explicitlySet__.add("systemName");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -259,7 +245,8 @@ public final class FusionEnvironmentFamily
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -269,23 +256,24 @@ public final class FusionEnvironmentFamily
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Indicates when the family received the last subscription update */
+        /**
+         * Indicates when the family received the last subscription update
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastSubscriptionUpdate")
         private java.util.Date timeLastSubscriptionUpdate;
 
         /**
          * Indicates when the family received the last subscription update
-         *
          * @param timeLastSubscriptionUpdate the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastSubscriptionUpdate(java.util.Date timeLastSubscriptionUpdate) {
             this.timeLastSubscriptionUpdate = timeLastSubscriptionUpdate;
             this.__explicitlySet__.add("timeLastSubscriptionUpdate");
@@ -362,7 +350,9 @@ public final class FusionEnvironmentFamily
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -371,32 +361,30 @@ public final class FusionEnvironmentFamily
         return new Builder().copy(this);
     }
 
-    /** The unique identifier (OCID) of the environment family. Can't be changed after creation. */
+    /**
+     * The unique identifier (OCID) of the environment family. Can't be changed after creation.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier (OCID) of the environment family. Can't be changed after creation.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * A friendly name for the environment family. The name must contain only letters, numbers,
-     * dashes, and underscores. Can be changed later.
-     */
+     * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A friendly name for the environment family. The name must contain only letters, numbers,
-     * dashes, and underscores. Can be changed later.
-     *
+     * A friendly name for the environment family. The name must contain only letters, numbers, dashes, and underscores. Can be changed later.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -408,66 +396,66 @@ public final class FusionEnvironmentFamily
         return familyMaintenancePolicy;
     }
 
-    /** The OCID of the compartment where the environment family is located. */
+    /**
+     * The OCID of the compartment where the environment family is located.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment where the environment family is located.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The list of the IDs of the applications subscriptions that are associated with the
-     * environment family.
-     */
+     * The list of the IDs of the applications subscriptions that are associated with the environment family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionIds")
     private final java.util.List<String> subscriptionIds;
 
     /**
-     * The list of the IDs of the applications subscriptions that are associated with the
-     * environment family.
-     *
+     * The list of the IDs of the applications subscriptions that are associated with the environment family.
      * @return the value
-     */
+     **/
     public java.util.List<String> getSubscriptionIds() {
         return subscriptionIds;
     }
 
-    /** When set to True, a subscription update is required for the environment family. */
+    /**
+     * When set to True, a subscription update is required for the environment family.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSubscriptionUpdateNeeded")
     private final Boolean isSubscriptionUpdateNeeded;
 
     /**
      * When set to True, a subscription update is required for the environment family.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSubscriptionUpdateNeeded() {
         return isSubscriptionUpdateNeeded;
     }
 
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the the FusionEnvironmentFamily was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The current state of the FusionEnvironmentFamily. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the FusionEnvironmentFamily.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Updating("UPDATING"),
         Active("ACTIVE"),
@@ -476,8 +464,8 @@ public final class FusionEnvironmentFamily
         Failed("FAILED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -516,92 +504,94 @@ public final class FusionEnvironmentFamily
             return UnknownEnumValue;
         }
     };
-    /** The current state of the FusionEnvironmentFamily. */
+    /**
+     * The current state of the FusionEnvironmentFamily.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the FusionEnvironmentFamily.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in Failed state.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** Environment Specific Guid/ System Name */
+    /**
+     * Environment Specific Guid/ System Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemName")
     private final String systemName;
 
     /**
      * Environment Specific Guid/ System Name
-     *
      * @return the value
-     */
+     **/
     public String getSystemName() {
         return systemName;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** Indicates when the family received the last subscription update */
+    /**
+     * Indicates when the family received the last subscription update
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastSubscriptionUpdate")
     private final java.util.Date timeLastSubscriptionUpdate;
 
     /**
      * Indicates when the family received the last subscription update
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastSubscriptionUpdate() {
         return timeLastSubscriptionUpdate;
     }
@@ -613,7 +603,6 @@ public final class FusionEnvironmentFamily
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

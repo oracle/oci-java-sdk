@@ -6,30 +6,28 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** The returned {@code MyPendingApproval} instance. */
+    /**
+     * The returned MyPendingApproval instance.
+     */
     private com.oracle.bmc.identitydomains.model.MyPendingApproval myPendingApproval;
 
     /**
-     * The returned {@code MyPendingApproval} instance.
-     *
+     * The returned MyPendingApproval instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.MyPendingApproval getMyPendingApproval() {
@@ -44,7 +42,7 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
     })
     private GetMyPendingApprovalResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.identitydomains.model.MyPendingApproval myPendingApproval) {
         super(__httpStatusCode__, headers);
@@ -52,34 +50,28 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
         this.myPendingApproval = myPendingApproval;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetMyPendingApprovalResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -88,12 +80,13 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
-        /** The returned {@code MyPendingApproval} instance. */
+        /**
+         * The returned MyPendingApproval instance.
+         */
         private com.oracle.bmc.identitydomains.model.MyPendingApproval myPendingApproval;
 
         /**
-         * The returned {@code MyPendingApproval} instance.
-         *
+         * The returned MyPendingApproval instance.
          * @param myPendingApproval the value to set
          * @return this builder
          */
@@ -105,10 +98,8 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetMyPendingApprovalResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,10 +111,8 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetMyPendingApprovalResponse build() {
             return new GetMyPendingApprovalResponse(
                     __httpStatusCode__, headers, opcRequestId, myPendingApproval);
@@ -132,7 +121,6 @@ public class GetMyPendingApprovalResponse extends com.oracle.bmc.responses.BmcRe
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opensearch.model;
 
-/** The instance type for the cluster's data nodes. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
-public enum DataNodeHostType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The instance type for the cluster's data nodes.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+public enum DataNodeHostType {
     Flex("FLEX"),
     Bm("BM"),
 

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Possible lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MaintenanceWindowLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible lifecycle states.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MaintenanceWindowLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
     Inactive("INACTIVE"),

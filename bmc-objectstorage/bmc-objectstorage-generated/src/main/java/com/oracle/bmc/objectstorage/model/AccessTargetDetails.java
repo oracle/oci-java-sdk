@@ -5,23 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * Details of the targets that can be accessed by the private endpoint. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of the targets that can be accessed by the private endpoint.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AccessTargetDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AccessTargetDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AccessTargetDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AccessTargetDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"namespace", "compartmentId", "bucket"})
     public AccessTargetDetails(String namespace, String compartmentId, String bucket) {
@@ -34,61 +33,52 @@ public final class AccessTargetDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are
-         * allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
-         */
+         * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are
-         * allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
-         *
+         * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
         /**
-         * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If
-         * value is '*', it means all compartments in the specified namespace can be accessed. It
-         * cannot be a regex.
-         */
+         * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all compartments in the specified namespace can be accessed. It cannot be a regex.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If
-         * value is '*', it means all compartments in the specified namespace can be accessed. It
-         * cannot be a regex.
-         *
+         * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all compartments in the specified namespace can be accessed. It cannot be a regex.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are
-         * allowed. If value is '*', it means all buckets in the specified namespace and compartment
-         * can be accessed. It cannot be a regex. Example: my-new-bucket1
-         */
+         * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed. If value is '*', it means all buckets in the specified namespace and compartment can be accessed. It cannot be a regex.
+         * Example: my-new-bucket1
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucket")
         private String bucket;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are
-         * allowed. If value is '*', it means all buckets in the specified namespace and compartment
-         * can be accessed. It cannot be a regex. Example: my-new-bucket1
+         * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed. If value is '*', it means all buckets in the specified namespace and compartment can be accessed. It cannot be a regex.
+         * Example: my-new-bucket1
          *
          * @param bucket the value to set
          * @return this builder
-         */
+         **/
         public Builder bucket(String bucket) {
             this.bucket = bucket;
             this.__explicitlySet__.add("bucket");
@@ -122,7 +112,9 @@ public final class AccessTargetDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -132,56 +124,47 @@ public final class AccessTargetDetails
     }
 
     /**
-     * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are
-     * allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
-     */
+     * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
-     * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are
-     * allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
-     *
+     * The Object Storage namespace which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all namespaces can be accessed. It cannot be a regex.
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
     /**
-     * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If
-     * value is '*', it means all compartments in the specified namespace can be accessed. It cannot
-     * be a regex.
-     */
+     * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all compartments in the specified namespace can be accessed. It cannot be a regex.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If
-     * value is '*', it means all compartments in the specified namespace can be accessed. It cannot
-     * be a regex.
-     *
+     * The compartment ID which the private endpoint can access. Wildcards ('*') are allowed. If value is '*', it means all compartments in the specified namespace can be accessed. It cannot be a regex.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed.
-     * If value is '*', it means all buckets in the specified namespace and compartment can be
-     * accessed. It cannot be a regex. Example: my-new-bucket1
-     */
+     * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed. If value is '*', it means all buckets in the specified namespace and compartment can be accessed. It cannot be a regex.
+     * Example: my-new-bucket1
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucket")
     private final String bucket;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed.
-     * If value is '*', it means all buckets in the specified namespace and compartment can be
-     * accessed. It cannot be a regex. Example: my-new-bucket1
+     * The name of the bucket. Avoid entering confidential information. Wildcards ('*') are allowed. If value is '*', it means all buckets in the specified namespace and compartment can be accessed. It cannot be a regex.
+     * Example: my-new-bucket1
      *
      * @return the value
-     */
+     **/
     public String getBucket() {
         return bucket;
     }
@@ -193,7 +176,6 @@ public final class AccessTargetDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

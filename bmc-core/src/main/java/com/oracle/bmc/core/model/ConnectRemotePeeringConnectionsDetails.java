@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Information about the other remote peering connection (RPC). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Information about the other remote peering connection (RPC).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectRemotePeeringConnectionsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConnectRemotePeeringConnectionsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConnectRemotePeeringConnectionsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"peerId", "peerRegionName"})
     public ConnectRemotePeeringConnectionsDetails(String peerId, String peerRegionName) {
@@ -33,19 +32,16 @@ public final class ConnectRemotePeeringConnectionsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * RPC you want to peer with.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerId")
         private String peerId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * RPC you want to peer with.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
          * @param peerId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerId(String peerId) {
             this.peerId = peerId;
             this.__explicitlySet__.add("peerId");
@@ -53,20 +49,21 @@ public final class ConnectRemotePeeringConnectionsDetails
         }
         /**
          * The name of the region that contains the RPC you want to peer with.
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
-         * <p>Example: {@code us-ashburn-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerRegionName")
         private String peerRegionName;
 
         /**
          * The name of the region that contains the RPC you want to peer with.
-         *
-         * <p>Example: {@code us-ashburn-1}
+         * <p>
+         * Example: {@code us-ashburn-1}
          *
          * @param peerRegionName the value to set
          * @return this builder
-         */
+         **/
         public Builder peerRegionName(String peerRegionName) {
             this.peerRegionName = peerRegionName;
             this.__explicitlySet__.add("peerRegionName");
@@ -97,7 +94,9 @@ public final class ConnectRemotePeeringConnectionsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -107,37 +106,35 @@ public final class ConnectRemotePeeringConnectionsDetails
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC
-     * you want to peer with.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerId")
     private final String peerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC
-     * you want to peer with.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the RPC you want to peer with.
      * @return the value
-     */
+     **/
     public String getPeerId() {
         return peerId;
     }
 
     /**
      * The name of the region that contains the RPC you want to peer with.
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
-     * <p>Example: {@code us-ashburn-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerRegionName")
     private final String peerRegionName;
 
     /**
      * The name of the region that contains the RPC you want to peer with.
-     *
-     * <p>Example: {@code us-ashburn-1}
+     * <p>
+     * Example: {@code us-ashburn-1}
      *
      * @return the value
-     */
+     **/
     public String getPeerRegionName() {
         return peerRegionName;
     }
@@ -149,7 +146,6 @@ public final class ConnectRemotePeeringConnectionsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,12 +4,12 @@
  */
 package com.oracle.bmc.http.signing.internal;
 
-import com.oracle.bmc.http.client.pki.Pem;
-import com.oracle.bmc.http.client.pki.PemEncryptionException;
-import com.oracle.bmc.http.client.pki.PemException;
+import com.oracle.bmc.http.signing.pki.Pem;
+import com.oracle.bmc.http.signing.pki.PemEncryptionException;
+import com.oracle.bmc.http.signing.pki.PemException;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 import java.io.IOException;
 import java.io.InputStream;

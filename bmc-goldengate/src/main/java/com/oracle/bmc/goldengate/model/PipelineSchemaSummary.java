@@ -5,27 +5,25 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * List of source and target schemas of a pipeline's assigned connection. 1. If there is no explicit
- * mapping defined for the pipeline then only matched source and target schema names will be
- * returned. 2. If there are explicit mappings defined for the pipeline then along with the mapped
- * source and target schema names, the matched source and target schema names also will be returned.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+ * List of source and target schemas of a pipeline's assigned connection.
+ * 1. If there is no explicit mapping defined for the pipeline then only matched source and target schema names will be returned.
+ * 2. If there are explicit mappings defined for the pipeline then along with the mapped source and target schema names, the matched source and target schema names also will be returned.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineSchemaSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PipelineSchemaSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PipelineSchemaSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"sourceSchemaName", "targetSchemaName"})
     public PipelineSchemaSummary(String sourceSchemaName, String targetSchemaName) {
@@ -36,7 +34,10 @@ public final class PipelineSchemaSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The schema name from the database connection. */
+        /**
+         * The schema name from the database connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceSchemaName")
         private String sourceSchemaName;
 
@@ -45,13 +46,16 @@ public final class PipelineSchemaSummary
          *
          * @param sourceSchemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceSchemaName(String sourceSchemaName) {
             this.sourceSchemaName = sourceSchemaName;
             this.__explicitlySet__.add("sourceSchemaName");
             return this;
         }
-        /** The schema name from the database connection. */
+        /**
+         * The schema name from the database connection.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSchemaName")
         private String targetSchemaName;
 
@@ -60,7 +64,7 @@ public final class PipelineSchemaSummary
          *
          * @param targetSchemaName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetSchemaName(String targetSchemaName) {
             this.targetSchemaName = targetSchemaName;
             this.__explicitlySet__.add("targetSchemaName");
@@ -91,7 +95,9 @@ public final class PipelineSchemaSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,7 +106,10 @@ public final class PipelineSchemaSummary
         return new Builder().copy(this);
     }
 
-    /** The schema name from the database connection. */
+    /**
+     * The schema name from the database connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceSchemaName")
     private final String sourceSchemaName;
 
@@ -108,12 +117,15 @@ public final class PipelineSchemaSummary
      * The schema name from the database connection.
      *
      * @return the value
-     */
+     **/
     public String getSourceSchemaName() {
         return sourceSchemaName;
     }
 
-    /** The schema name from the database connection. */
+    /**
+     * The schema name from the database connection.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSchemaName")
     private final String targetSchemaName;
 
@@ -121,7 +133,7 @@ public final class PipelineSchemaSummary
      * The schema name from the database connection.
      *
      * @return the value
-     */
+     **/
     public String getTargetSchemaName() {
         return targetSchemaName;
     }
@@ -133,7 +145,6 @@ public final class PipelineSchemaSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

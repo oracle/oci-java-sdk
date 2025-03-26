@@ -10,11 +10,12 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
+import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.model.BmcException;
 
 /**
- * BmcGenericWaiter is a Waiter that provides a generic foundation to build more custom waiters for
- * specific types of calls.
+ * BmcGenericWaiter is a Waiter that provides a generic foundation to build
+ * more custom waiters for specific types of calls.
  */
 public class BmcGenericWaiter {
     private static final org.slf4j.Logger LOG =
@@ -23,7 +24,6 @@ public class BmcGenericWaiter {
 
     /**
      * Creates a new waiter with the given strategies.
-     *
      * @param terminationStrategy The termination strategy to use.
      * @param delayStrategy The delay strategy to use.
      */
@@ -35,22 +35,77 @@ public class BmcGenericWaiter {
 
     /**
      * Blocks until a specific condition is met.
+     * <p>
+     * If the <code>allow404</code> param is set to true, the waiter will
+     * return null if the request fails with a 404 exception.
      *
-     * <p>If the <code>allow404</code> param is set to true, the waiter will return null if the
-     * request fails with a 404 exception.
+     * @param requestSupplier
+     *            Supplier that provides a new request instance to fetch the
+     *            current state.
+     * @param functionCall
+     *            Function that will be invoked to fetch the current state. It
+     *            will be provided the request instance given by the
+     *            requestSupplier.
+     * @param terminationPredicate
+     *            The termination predicate that will inspect the current state
+     *            (returned response instance) to determine if it is done
+     *            waiting.
+     * @param allow404 True to allow 404 responses to be accepted (ex, for termination
+     *            conditions).
+     * @param <REQUEST>
+     *            Request object class
+     * @param <RESPONSE>
+     *            Response object class
+     * @return The last response object that was received and was accepted by
+     *         the termination predicate (or null if 404 was allowed).
+     * @throws WaitConditionFailedException
+     *             If the termination condition was not met.
      *
-     * @param requestSupplier Supplier that provides a new request instance to fetch the current
-     *     state.
-     * @param functionCall Function that will be invoked to fetch the current state. It will be
-     *     provided the request instance given by the requestSupplier.
-     * @param terminationPredicate The termination predicate that will inspect the current state
-     *     (returned response instance) to determine if it is done waiting.
-     * @param allow404 True to allow 404 responses to be accepted (ex, for termination conditions).
-     * @param <REQUEST> Request object class
-     * @param <RESPONSE> Response object class
-     * @return The last response object that was received and was accepted by the termination
-     *     predicate (or null if 404 was allowed).
-     * @throws WaitConditionFailedException If the termination condition was not met.
+     * @deprecated in favor of the method that does not use GUava
+     */
+    @Deprecated
+    public <REQUEST, RESPONSE> RESPONSE execute(
+            com.google.common /*Guava will be removed soon*/.base.Supplier<REQUEST> requestSupplier,
+            com.google.common /*Guava will be removed soon*/.base.Function<REQUEST, RESPONSE>
+                    functionCall,
+            com.google.common /*Guava will be removed soon*/.base.Predicate<RESPONSE>
+                    terminationPredicate,
+            boolean allow404)
+            throws WaitConditionFailedException {
+        return execute(
+                GuavaUtils.adaptFromGuava(requestSupplier),
+                GuavaUtils.adaptFromGuava(functionCall),
+                GuavaUtils.adaptFromGuava(terminationPredicate),
+                allow404);
+    }
+
+    /**
+     * Blocks until a specific condition is met.
+     * <p>
+     * If the <code>allow404</code> param is set to true, the waiter will
+     * return null if the request fails with a 404 exception.
+     *
+     * @param requestSupplier
+     *            Supplier that provides a new request instance to fetch the
+     *            current state.
+     * @param functionCall
+     *            Function that will be invoked to fetch the current state. It
+     *            will be provided the request instance given by the
+     *            requestSupplier.
+     * @param terminationPredicate
+     *            The termination predicate that will inspect the current state
+     *            (returned response instance) to determine if it is done
+     *            waiting.
+     * @param allow404 True to allow 404 responses to be accepted (ex, for termination
+     *            conditions).
+     * @param <REQUEST>
+     *            Request object class
+     * @param <RESPONSE>
+     *            Response object class
+     * @return The last response object that was received and was accepted by
+     *         the termination predicate (or null if 404 was allowed).
+     * @throws WaitConditionFailedException
+     *             If the termination condition was not met.
      */
     public <REQUEST, RESPONSE> RESPONSE execute(
             Supplier<REQUEST> requestSupplier,
@@ -80,20 +135,71 @@ public class BmcGenericWaiter {
     }
 
     /**
-     * Same as {@link #execute(Supplier, Function, Predicate, boolean)} except it returns a {@link
-     * Callable} that can be invoked later.
+     * Same as {@link #execute(Supplier, Function, Predicate, boolean)} except it returns
+     * a {@link Callable} that can be invoked later.
      *
-     * @param requestSupplier Supplier that provides a new request instance to fetch the current
-     *     state.
-     * @param functionCall Function that will be invoked to fetch the current state. It will be
-     *     provided the request instance given by the requestSupplier.
-     * @param terminationPredicate The termination predicate that will inspect the current state
-     *     (returned response instance) to determine if it is done waiting.
-     * @param allow404 True to allow 404 responses to be accepted (ex, for termination conditions).
-     * @param <REQUEST> Request object class
-     * @param <RESPONSE> Response object class
-     * @return The last response object that was received and was accepted by the termination
-     *     predicate (or null if 404 was allowed).
+     * @param requestSupplier
+     *            Supplier that provides a new request instance to fetch the
+     *            current state.
+     * @param functionCall
+     *            Function that will be invoked to fetch the current state. It
+     *            will be provided the request instance given by the
+     *            requestSupplier.
+     * @param terminationPredicate
+     *            The termination predicate that will inspect the current state
+     *            (returned response instance) to determine if it is done
+     *            waiting.
+     * @param allow404 True to allow 404 responses to be accepted (ex, for termination
+     *            conditions).
+     * @param <REQUEST>
+     *            Request object class
+     * @param <RESPONSE>
+     *            Response object class
+     * @return The last response object that was received and was accepted by
+     *         the termination predicate (or null if 404 was allowed).
+     * @return A new Callable instance.
+     *
+     * @deprecated in favor of the method that does not use Guava.
+     */
+    @Deprecated
+    public <REQUEST, RESPONSE> Callable<RESPONSE> toCallable(
+            final com.google.common /*Guava will be removed soon*/.base.Supplier<REQUEST>
+                    requestSupplier,
+            final com.google.common /*Guava will be removed soon*/.base.Function<REQUEST, RESPONSE>
+                    functionCall,
+            final com.google.common /*Guava will be removed soon*/.base.Predicate<RESPONSE>
+                    terminationPredicate,
+            final boolean allow404) {
+        return toCallable(
+                GuavaUtils.adaptFromGuava(requestSupplier),
+                GuavaUtils.adaptFromGuava(functionCall),
+                GuavaUtils.adaptFromGuava(terminationPredicate),
+                allow404);
+    }
+
+    /**
+     * Same as {@link #execute(Supplier, Function, Predicate, boolean)} except it returns
+     * a {@link Callable} that can be invoked later.
+     *
+     * @param requestSupplier
+     *            Supplier that provides a new request instance to fetch the
+     *            current state.
+     * @param functionCall
+     *            Function that will be invoked to fetch the current state. It
+     *            will be provided the request instance given by the
+     *            requestSupplier.
+     * @param terminationPredicate
+     *            The termination predicate that will inspect the current state
+     *            (returned response instance) to determine if it is done
+     *            waiting.
+     * @param allow404 True to allow 404 responses to be accepted (ex, for termination
+     *            conditions).
+     * @param <REQUEST>
+     *            Request object class
+     * @param <RESPONSE>
+     *            Response object class
+     * @return The last response object that was received and was accepted by
+     *         the termination predicate (or null if 404 was allowed).
      * @return A new Callable instance.
      */
     public <REQUEST, RESPONSE> Callable<RESPONSE> toCallable(
@@ -105,8 +211,8 @@ public class BmcGenericWaiter {
     }
 
     /**
-     * Exception indicating the the condition being waited on was not met before the termination
-     * condition was satisfied.
+     * Exception indicating the the condition being waited on was not met before
+     * the termination condition was satisfied.
      */
     public static final class WaitConditionFailedException extends Exception {
         private WaitConditionFailedException(String message) {

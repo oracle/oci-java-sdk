@@ -5,25 +5,25 @@
 package com.oracle.bmc.oda.model;
 
 /**
- * Properties that are required to create a skill composite entity. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+ * Properties that are required to create a skill composite entity.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateSkillCompositeEntityDetails.Builder.class)
+    builder = CreateSkillCompositeEntityDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateSkillCompositeEntityDetails extends CreateSkillEntityDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -35,31 +35,33 @@ public final class CreateSkillCompositeEntityDetails extends CreateSkillEntityDe
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** List of entity attributes. */
+        /**
+         * List of entity attributes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<EntityAttribute> attributes;
 
         /**
          * List of entity attributes.
-         *
          * @param attributes the value to set
          * @return this builder
-         */
+         **/
         public Builder attributes(java.util.List<EntityAttribute> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
-        /** List of entity actions. */
+        /**
+         * List of entity actions.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actions")
         private java.util.List<EntityAction> actions;
 
         /**
          * List of entity actions.
-         *
          * @param actions the value to set
          * @return this builder
-         */
+         **/
         public Builder actions(java.util.List<EntityAction> actions) {
             this.actions = actions;
             this.__explicitlySet__.add("actions");
@@ -106,7 +108,9 @@ public final class CreateSkillCompositeEntityDetails extends CreateSkillEntityDe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -127,28 +131,30 @@ public final class CreateSkillCompositeEntityDetails extends CreateSkillEntityDe
         this.naturalLanguageMapping = naturalLanguageMapping;
     }
 
-    /** List of entity attributes. */
+    /**
+     * List of entity attributes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<EntityAttribute> attributes;
 
     /**
      * List of entity attributes.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityAttribute> getAttributes() {
         return attributes;
     }
 
-    /** List of entity actions. */
+    /**
+     * List of entity actions.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actions")
     private final java.util.List<EntityAction> actions;
 
     /**
      * List of entity actions.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityAction> getActions() {
         return actions;
     }
@@ -167,7 +173,6 @@ public final class CreateSkillCompositeEntityDetails extends CreateSkillEntityDe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

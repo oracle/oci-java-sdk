@@ -5,22 +5,19 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * EfdRegexResult <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * EfdRegexResult
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = EfdRegexResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class EfdRegexResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class EfdRegexResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "baseFieldName",
@@ -60,31 +57,33 @@ public final class EfdRegexResult
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The base field name. */
+        /**
+         * The base field name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
         private String baseFieldName;
 
         /**
          * The base field name.
-         *
          * @param baseFieldName the value to set
          * @return this builder
-         */
+         **/
         public Builder baseFieldName(String baseFieldName) {
             this.baseFieldName = baseFieldName;
             this.__explicitlySet__.add("baseFieldName");
             return this;
         }
-        /** the unique identifier. */
+        /**
+         * the unique identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
         /**
          * the unique identifier.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -99,82 +98,90 @@ public final class EfdRegexResult
             this.__explicitlySet__.add("matchResult");
             return this;
         }
-        /** The parsed field count. */
+        /**
+         * The parsed field count.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldCount")
         private Integer parsedFieldCount;
 
         /**
          * The parsed field count.
-         *
          * @param parsedFieldCount the value to set
          * @return this builder
-         */
+         **/
         public Builder parsedFieldCount(Integer parsedFieldCount) {
             this.parsedFieldCount = parsedFieldCount;
             this.__explicitlySet__.add("parsedFieldCount");
             return this;
         }
-        /** The parsed fields. */
+        /**
+         * The parsed fields.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parsedFields")
         private java.util.Map<String, String> parsedFields;
 
         /**
          * The parsed fields.
-         *
          * @param parsedFields the value to set
          * @return this builder
-         */
+         **/
         public Builder parsedFields(java.util.Map<String, String> parsedFields) {
             this.parsedFields = parsedFields;
             this.__explicitlySet__.add("parsedFields");
             return this;
         }
-        /** The regular expression. */
+        /**
+         * The regular expression.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regex")
         private String regex;
 
         /**
          * The regular expression.
-         *
          * @param regex the value to set
          * @return this builder
-         */
+         **/
         public Builder regex(String regex) {
             this.regex = regex;
             this.__explicitlySet__.add("regex");
             return this;
         }
-        /** The status. */
+        /**
+         * The status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private String status;
 
         /**
          * The status.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(String status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The Status description. */
+        /**
+         * The Status description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
         private String statusDescription;
 
         /**
          * The Status description.
-         *
          * @param statusDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder statusDescription(String statusDescription) {
             this.statusDescription = statusDescription;
             this.__explicitlySet__.add("statusDescription");
             return this;
         }
-        /** A flag indicating whether or not the regular expression is valid. */
+        /**
+         * A flag indicating whether or not the regular expression is valid.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isValidRegexSyntax")
         private Boolean isValidRegexSyntax;
 
@@ -183,22 +190,23 @@ public final class EfdRegexResult
          *
          * @param isValidRegexSyntax the value to set
          * @return this builder
-         */
+         **/
         public Builder isValidRegexSyntax(Boolean isValidRegexSyntax) {
             this.isValidRegexSyntax = isValidRegexSyntax;
             this.__explicitlySet__.add("isValidRegexSyntax");
             return this;
         }
-        /** The list of violations (if any). */
+        /**
+         * The list of violations (if any).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("violations")
         private java.util.List<Violation> violations;
 
         /**
          * The list of violations (if any).
-         *
          * @param violations the value to set
          * @return this builder
-         */
+         **/
         public Builder violations(java.util.List<Violation> violations) {
             this.violations = violations;
             this.__explicitlySet__.add("violations");
@@ -263,7 +271,9 @@ public final class EfdRegexResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -272,28 +282,30 @@ public final class EfdRegexResult
         return new Builder().copy(this);
     }
 
-    /** The base field name. */
+    /**
+     * The base field name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("baseFieldName")
     private final String baseFieldName;
 
     /**
      * The base field name.
-     *
      * @return the value
-     */
+     **/
     public String getBaseFieldName() {
         return baseFieldName;
     }
 
-    /** the unique identifier. */
+    /**
+     * the unique identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
     /**
      * the unique identifier.
-     *
      * @return the value
-     */
+     **/
     public Long getId() {
         return id;
     }
@@ -305,72 +317,80 @@ public final class EfdRegexResult
         return matchResult;
     }
 
-    /** The parsed field count. */
+    /**
+     * The parsed field count.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFieldCount")
     private final Integer parsedFieldCount;
 
     /**
      * The parsed field count.
-     *
      * @return the value
-     */
+     **/
     public Integer getParsedFieldCount() {
         return parsedFieldCount;
     }
 
-    /** The parsed fields. */
+    /**
+     * The parsed fields.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parsedFields")
     private final java.util.Map<String, String> parsedFields;
 
     /**
      * The parsed fields.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getParsedFields() {
         return parsedFields;
     }
 
-    /** The regular expression. */
+    /**
+     * The regular expression.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regex")
     private final String regex;
 
     /**
      * The regular expression.
-     *
      * @return the value
-     */
+     **/
     public String getRegex() {
         return regex;
     }
 
-    /** The status. */
+    /**
+     * The status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final String status;
 
     /**
      * The status.
-     *
      * @return the value
-     */
+     **/
     public String getStatus() {
         return status;
     }
 
-    /** The Status description. */
+    /**
+     * The Status description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("statusDescription")
     private final String statusDescription;
 
     /**
      * The Status description.
-     *
      * @return the value
-     */
+     **/
     public String getStatusDescription() {
         return statusDescription;
     }
 
-    /** A flag indicating whether or not the regular expression is valid. */
+    /**
+     * A flag indicating whether or not the regular expression is valid.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isValidRegexSyntax")
     private final Boolean isValidRegexSyntax;
 
@@ -378,20 +398,21 @@ public final class EfdRegexResult
      * A flag indicating whether or not the regular expression is valid.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsValidRegexSyntax() {
         return isValidRegexSyntax;
     }
 
-    /** The list of violations (if any). */
+    /**
+     * The list of violations (if any).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("violations")
     private final java.util.List<Violation> violations;
 
     /**
      * The list of violations (if any).
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Violation> getViolations() {
         return violations;
     }
@@ -403,7 +424,6 @@ public final class EfdRegexResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Management Agent Configuration for a Fleet. Includes JRE scanning frequency and a list of
- * include/exclude file system paths. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Management Agent Configuration for a Fleet. Includes JRE scanning frequency and a list of include/exclude file system paths.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FleetAgentConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = FleetAgentConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FleetAgentConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "jreScanFrequencyInMinutes",
@@ -64,39 +63,37 @@ public final class FleetAgentConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE
-         * installations.)
-         */
+         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
         private Integer jreScanFrequencyInMinutes;
 
         /**
-         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE
-         * installations.)
+         * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
          *
          * @param jreScanFrequencyInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder jreScanFrequencyInMinutes(Integer jreScanFrequencyInMinutes) {
             this.jreScanFrequencyInMinutes = jreScanFrequencyInMinutes;
             this.__explicitlySet__.add("jreScanFrequencyInMinutes");
             return this;
         }
         /**
-         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should
-         * JMS process data from the Java Usage Tracker.)
-         */
+         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty(
                 "javaUsageTrackerProcessingFrequencyInMinutes")
         private Integer javaUsageTrackerProcessingFrequencyInMinutes;
 
         /**
-         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should
-         * JMS process data from the Java Usage Tracker.)
+         * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
          *
          * @param javaUsageTrackerProcessingFrequencyInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder javaUsageTrackerProcessingFrequencyInMinutes(
                 Integer javaUsageTrackerProcessingFrequencyInMinutes) {
             this.javaUsageTrackerProcessingFrequencyInMinutes =
@@ -104,7 +101,10 @@ public final class FleetAgentConfiguration
             this.__explicitlySet__.add("javaUsageTrackerProcessingFrequencyInMinutes");
             return this;
         }
-        /** The validity period in days for work requests. */
+        /**
+         * The validity period in days for work requests.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workRequestValidityPeriodInDays")
         private Integer workRequestValidityPeriodInDays;
 
@@ -113,13 +113,16 @@ public final class FleetAgentConfiguration
          *
          * @param workRequestValidityPeriodInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder workRequestValidityPeriodInDays(Integer workRequestValidityPeriodInDays) {
             this.workRequestValidityPeriodInDays = workRequestValidityPeriodInDays;
             this.__explicitlySet__.add("workRequestValidityPeriodInDays");
             return this;
         }
-        /** Agent polling interval in minutes */
+        /**
+         * Agent polling interval in minutes
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("agentPollingIntervalInMinutes")
         private Integer agentPollingIntervalInMinutes;
 
@@ -128,13 +131,16 @@ public final class FleetAgentConfiguration
          *
          * @param agentPollingIntervalInMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder agentPollingIntervalInMinutes(Integer agentPollingIntervalInMinutes) {
             this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
             this.__explicitlySet__.add("agentPollingIntervalInMinutes");
             return this;
         }
-        /** Collect JMS agent metrics on all managed instances in the fleet. */
+        /**
+         * Collect JMS agent metrics on all managed instances in the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCollectingManagedInstanceMetricsEnabled")
         private Boolean isCollectingManagedInstanceMetricsEnabled;
 
@@ -143,7 +149,7 @@ public final class FleetAgentConfiguration
          *
          * @param isCollectingManagedInstanceMetricsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCollectingManagedInstanceMetricsEnabled(
                 Boolean isCollectingManagedInstanceMetricsEnabled) {
             this.isCollectingManagedInstanceMetricsEnabled =
@@ -151,7 +157,10 @@ public final class FleetAgentConfiguration
             this.__explicitlySet__.add("isCollectingManagedInstanceMetricsEnabled");
             return this;
         }
-        /** Collect username for application invocations for all managed instances in the fleet. */
+        /**
+         * Collect username for application invocations for all managed instances in the fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCollectingUsernamesEnabled")
         private Boolean isCollectingUsernamesEnabled;
 
@@ -160,7 +169,7 @@ public final class FleetAgentConfiguration
          *
          * @param isCollectingUsernamesEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCollectingUsernamesEnabled(Boolean isCollectingUsernamesEnabled) {
             this.isCollectingUsernamesEnabled = isCollectingUsernamesEnabled;
             this.__explicitlySet__.add("isCollectingUsernamesEnabled");
@@ -194,19 +203,18 @@ public final class FleetAgentConfiguration
             return this;
         }
         /**
-         * The date and time of the last modification to the Fleet Agent Configuration (formatted
-         * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
         private java.util.Date timeLastModified;
 
         /**
-         * The date and time of the last modification to the Fleet Agent Configuration (formatted
-         * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeLastModified the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastModified(java.util.Date timeLastModified) {
             this.timeLastModified = timeLastModified;
             this.__explicitlySet__.add("timeLastModified");
@@ -273,7 +281,9 @@ public final class FleetAgentConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -283,40 +293,41 @@ public final class FleetAgentConfiguration
     }
 
     /**
-     * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE
-     * installations.)
-     */
+     * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("jreScanFrequencyInMinutes")
     private final Integer jreScanFrequencyInMinutes;
 
     /**
-     * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE
-     * installations.)
+     * The frequency (in minutes) of JRE scanning. (That is, how often should JMS scan for JRE installations.)
      *
      * @return the value
-     */
+     **/
     public Integer getJreScanFrequencyInMinutes() {
         return jreScanFrequencyInMinutes;
     }
 
     /**
-     * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS
-     * process data from the Java Usage Tracker.)
-     */
+     * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("javaUsageTrackerProcessingFrequencyInMinutes")
     private final Integer javaUsageTrackerProcessingFrequencyInMinutes;
 
     /**
-     * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS
-     * process data from the Java Usage Tracker.)
+     * The frequency (in minutes) of Java Usage Tracker processing. (That is, how often should JMS process data from the Java Usage Tracker.)
      *
      * @return the value
-     */
+     **/
     public Integer getJavaUsageTrackerProcessingFrequencyInMinutes() {
         return javaUsageTrackerProcessingFrequencyInMinutes;
     }
 
-    /** The validity period in days for work requests. */
+    /**
+     * The validity period in days for work requests.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workRequestValidityPeriodInDays")
     private final Integer workRequestValidityPeriodInDays;
 
@@ -324,12 +335,15 @@ public final class FleetAgentConfiguration
      * The validity period in days for work requests.
      *
      * @return the value
-     */
+     **/
     public Integer getWorkRequestValidityPeriodInDays() {
         return workRequestValidityPeriodInDays;
     }
 
-    /** Agent polling interval in minutes */
+    /**
+     * Agent polling interval in minutes
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("agentPollingIntervalInMinutes")
     private final Integer agentPollingIntervalInMinutes;
 
@@ -337,12 +351,15 @@ public final class FleetAgentConfiguration
      * Agent polling interval in minutes
      *
      * @return the value
-     */
+     **/
     public Integer getAgentPollingIntervalInMinutes() {
         return agentPollingIntervalInMinutes;
     }
 
-    /** Collect JMS agent metrics on all managed instances in the fleet. */
+    /**
+     * Collect JMS agent metrics on all managed instances in the fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCollectingManagedInstanceMetricsEnabled")
     private final Boolean isCollectingManagedInstanceMetricsEnabled;
 
@@ -350,12 +367,15 @@ public final class FleetAgentConfiguration
      * Collect JMS agent metrics on all managed instances in the fleet.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCollectingManagedInstanceMetricsEnabled() {
         return isCollectingManagedInstanceMetricsEnabled;
     }
 
-    /** Collect username for application invocations for all managed instances in the fleet. */
+    /**
+     * Collect username for application invocations for all managed instances in the fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCollectingUsernamesEnabled")
     private final Boolean isCollectingUsernamesEnabled;
 
@@ -363,7 +383,7 @@ public final class FleetAgentConfiguration
      * Collect username for application invocations for all managed instances in the fleet.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsCollectingUsernamesEnabled() {
         return isCollectingUsernamesEnabled;
     }
@@ -390,18 +410,17 @@ public final class FleetAgentConfiguration
     }
 
     /**
-     * The date and time of the last modification to the Fleet Agent Configuration (formatted
-     * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastModified")
     private final java.util.Date timeLastModified;
 
     /**
-     * The date and time of the last modification to the Fleet Agent Configuration (formatted
-     * according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastModified() {
         return timeLastModified;
     }
@@ -413,7 +432,6 @@ public final class FleetAgentConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datascience.model;
 
-/** The type of model deployment. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
-public enum ModelDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of model deployment.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+public enum ModelDeploymentType {
     SingleModel("SINGLE_MODEL"),
 
     /**

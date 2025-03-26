@@ -5,27 +5,27 @@
 package com.oracle.bmc.adm.model;
 
 /**
- * An external SCM configuration extends a SCM Configuration with necessary data to reach and use
- * the Source Code Management tool/platform used by a Remediation Recipe. An external SCM in ADM
- * refers to GitHub, or GitLab. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
+ * An external SCM configuration extends a SCM Configuration with necessary data to reach and use the Source Code Management tool/platform used by a Remediation Recipe.
+ * An external SCM in ADM refers to GitHub, or GitLab.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220421")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalScmConfiguration.Builder.class)
+    builder = ExternalScmConfiguration.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "scmType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "scmType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalScmConfiguration extends ScmConfiguration {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -55,77 +55,77 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
             this.__explicitlySet__.add("isAutomergeEnabled");
             return this;
         }
-        /** The type of External Source Code Management. */
+        /**
+         * The type of External Source Code Management.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalScmType")
         private ExternalScmType externalScmType;
 
         /**
          * The type of External Source Code Management.
-         *
          * @param externalScmType the value to set
          * @return this builder
-         */
+         **/
         public Builder externalScmType(ExternalScmType externalScmType) {
             this.externalScmType = externalScmType;
             this.__explicitlySet__.add("externalScmType");
             return this;
         }
         /**
-         * The repository URL for the SCM. For Non-Enterprise GitHub the expected format is
-         * https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is
-         * http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is
-         * https://gitlab.com/[groupName]/[repoName]
-         */
+         * The repository URL for the SCM.
+         * For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName]
+         * For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
         private String repositoryUrl;
 
         /**
-         * The repository URL for the SCM. For Non-Enterprise GitHub the expected format is
-         * https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is
-         * http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is
-         * https://gitlab.com/[groupName]/[repoName]
+         * The repository URL for the SCM.
+         * For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName]
+         * For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
          *
          * @param repositoryUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder repositoryUrl(String repositoryUrl) {
             this.repositoryUrl = repositoryUrl;
             this.__explicitlySet__.add("repositoryUrl");
             return this;
         }
-        /** The username for the SCM (to perform operations such as cloning or pushing via HTTP). */
+        /**
+         * The username for the SCM (to perform operations such as cloning or pushing via HTTP).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
          * The username for the SCM (to perform operations such as cloning or pushing via HTTP).
-         *
          * @param username the value to set
          * @return this builder
-         */
+         **/
         public Builder username(String username) {
             this.username = username;
             this.__explicitlySet__.add("username");
             return this;
         }
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
-         * authenticate against the SCM.
-         */
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+         * The secret provides the credentials necessary to authenticate against the SCM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("patSecretId")
         private String patSecretId;
 
         /**
-         * The Oracle Cloud Identifier
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-         * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
-         * authenticate against the SCM.
+         * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+         * The secret provides the credentials necessary to authenticate against the SCM.
          *
          * @param patSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder patSecretId(String patSecretId) {
             this.patSecretId = patSecretId;
             this.__explicitlySet__.add("patSecretId");
@@ -178,7 +178,9 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -203,14 +205,16 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
         this.patSecretId = patSecretId;
     }
 
-    /** The type of External Source Code Management. */
-    public enum ExternalScmType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of External Source Code Management.
+     **/
+    public enum ExternalScmType {
         Github("GITHUB"),
         Gitlab("GITLAB"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -249,70 +253,70 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
             return UnknownEnumValue;
         }
     };
-    /** The type of External Source Code Management. */
+    /**
+     * The type of External Source Code Management.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalScmType")
     private final ExternalScmType externalScmType;
 
     /**
      * The type of External Source Code Management.
-     *
      * @return the value
-     */
+     **/
     public ExternalScmType getExternalScmType() {
         return externalScmType;
     }
 
     /**
-     * The repository URL for the SCM. For Non-Enterprise GitHub the expected format is
-     * https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is
-     * http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is
-     * https://gitlab.com/[groupName]/[repoName]
-     */
+     * The repository URL for the SCM.
+     * For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName]
+     * For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryUrl")
     private final String repositoryUrl;
 
     /**
-     * The repository URL for the SCM. For Non-Enterprise GitHub the expected format is
-     * https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is
-     * http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is
-     * https://gitlab.com/[groupName]/[repoName]
+     * The repository URL for the SCM.
+     * For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName]
+     * For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
      *
      * @return the value
-     */
+     **/
     public String getRepositoryUrl() {
         return repositoryUrl;
     }
 
-    /** The username for the SCM (to perform operations such as cloning or pushing via HTTP). */
+    /**
+     * The username for the SCM (to perform operations such as cloning or pushing via HTTP).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
      * The username for the SCM (to perform operations such as cloning or pushing via HTTP).
-     *
      * @return the value
-     */
+     **/
     public String getUsername() {
         return username;
     }
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
-     * authenticate against the SCM.
-     */
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+     * The secret provides the credentials necessary to authenticate against the SCM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("patSecretId")
     private final String patSecretId;
 
     /**
-     * The Oracle Cloud Identifier
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the
-     * Private Access Token (PAT) Secret. The secret provides the credentials necessary to
-     * authenticate against the SCM.
+     * The Oracle Cloud Identifier ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret.
+     * The secret provides the credentials necessary to authenticate against the SCM.
      *
      * @return the value
-     */
+     **/
     public String getPatSecretId() {
         return patSecretId;
     }
@@ -324,7 +328,6 @@ public final class ExternalScmConfiguration extends ScmConfiguration {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** Level of confidence that a sighting is not a false positive. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum Confidence implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Level of confidence that a sighting is not a false positive.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum Confidence {
     Critical("CRITICAL"),
     High("HIGH"),
     Medium("MEDIUM"),

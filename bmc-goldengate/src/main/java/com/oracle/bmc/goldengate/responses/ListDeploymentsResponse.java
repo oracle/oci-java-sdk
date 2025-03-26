@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -27,6 +28,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
     /**
      * The page token represents the page to start retrieving results. This is usually retrieved
      * from a previous list call.
+     *
      */
     private String opcNextPage;
 
@@ -40,12 +42,13 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
         return opcNextPage;
     }
 
-    /** The returned {@code DeploymentCollection} instance. */
+    /**
+     * The returned DeploymentCollection instance.
+     */
     private com.oracle.bmc.goldengate.model.DeploymentCollection deploymentCollection;
 
     /**
-     * The returned {@code DeploymentCollection} instance.
-     *
+     * The returned DeploymentCollection instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.DeploymentCollection getDeploymentCollection() {
@@ -61,7 +64,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
     })
     private ListDeploymentsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.goldengate.model.DeploymentCollection deploymentCollection) {
@@ -71,33 +74,31 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
         this.deploymentCollection = deploymentCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListDeploymentsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,6 +111,7 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
         /**
          * The page token represents the page to start retrieving results. This is usually retrieved
          * from a previous list call.
+         *
          */
         private String opcNextPage;
 
@@ -125,12 +127,13 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
             return this;
         }
 
-        /** The returned {@code DeploymentCollection} instance. */
+        /**
+         * The returned DeploymentCollection instance.
+         */
         private com.oracle.bmc.goldengate.model.DeploymentCollection deploymentCollection;
 
         /**
-         * The returned {@code DeploymentCollection} instance.
-         *
+         * The returned DeploymentCollection instance.
          * @param deploymentCollection the value to set
          * @return this builder
          */
@@ -142,10 +145,8 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListDeploymentsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -158,10 +159,8 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListDeploymentsResponse build() {
             return new ListDeploymentsResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, deploymentCollection);
@@ -170,7 +169,6 @@ public class ListDeploymentsResponse extends com.oracle.bmc.responses.BmcRespons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

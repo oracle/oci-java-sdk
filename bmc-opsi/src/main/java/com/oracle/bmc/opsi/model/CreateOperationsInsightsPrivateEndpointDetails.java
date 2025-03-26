@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * The details used to create a new Operation Insights private endpoint. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * The details used to create a new Operation Insights private endpoint.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateOperationsInsightsPrivateEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateOperationsInsightsPrivateEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateOperationsInsightsPrivateEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -58,151 +57,139 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The display name for the private endpoint. It is changeable. */
+        /**
+         * The display name for the private endpoint. It is changeable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The display name for the private endpoint. It is changeable.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Private service accessed database.
-         */
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Private service accessed database.
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the Private service accessed database.
-         */
+         * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the Private service accessed database.
-         *
+         * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
         /**
-         * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Private service accessed database.
-         */
+         * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the Private service accessed database.
-         *
+         * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
         /**
-         * This flag was previously used to create a private endpoint with scan proxy. Setting this
-         * to true will now create a private endpoint with a DNS proxy causing {@code
-         * isProxyEnabled} flag to be true; this is used exclusively for full feature support for
-         * dedicated Autonomous Databases.
-         */
+         * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a
+         * DNS proxy causing {@code isProxyEnabled} flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
         private Boolean isUsedForRacDbs;
 
         /**
-         * This flag was previously used to create a private endpoint with scan proxy. Setting this
-         * to true will now create a private endpoint with a DNS proxy causing {@code
-         * isProxyEnabled} flag to be true; this is used exclusively for full feature support for
-         * dedicated Autonomous Databases.
+         * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a
+         * DNS proxy causing {@code isProxyEnabled} flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
          *
          * @param isUsedForRacDbs the value to set
          * @return this builder
-         */
+         **/
         public Builder isUsedForRacDbs(Boolean isUsedForRacDbs) {
             this.isUsedForRacDbs = isUsedForRacDbs;
             this.__explicitlySet__.add("isUsedForRacDbs");
             return this;
         }
-        /** The description of the private endpoint. */
+        /**
+         * The description of the private endpoint.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The description of the private endpoint.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups that the private endpoint belongs to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * network security groups that the private endpoint belongs to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
          *
          * @param nsgIds the value to set
          * @return this builder
-         */
+         **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -211,7 +198,8 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -221,7 +209,7 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -283,7 +271,9 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -292,151 +282,142 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** The display name for the private endpoint. It is changeable. */
+    /**
+     * The display name for the private endpoint. It is changeable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The display name for the private endpoint. It is changeable.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the Private service accessed database.
-     */
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * of the Private service accessed database.
-     *
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Private service accessed database.
-     */
+     * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Private service accessed database.
-     *
+     * The VCN [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
     /**
-     * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Private service accessed database.
-     */
+     * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Private service accessed database.
-     *
+     * The Subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
     /**
-     * This flag was previously used to create a private endpoint with scan proxy. Setting this to
-     * true will now create a private endpoint with a DNS proxy causing {@code isProxyEnabled} flag
-     * to be true; this is used exclusively for full feature support for dedicated Autonomous
-     * Databases.
-     */
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a
+     * DNS proxy causing {@code isProxyEnabled} flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
     private final Boolean isUsedForRacDbs;
 
     /**
-     * This flag was previously used to create a private endpoint with scan proxy. Setting this to
-     * true will now create a private endpoint with a DNS proxy causing {@code isProxyEnabled} flag
-     * to be true; this is used exclusively for full feature support for dedicated Autonomous
-     * Databases.
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a
+     * DNS proxy causing {@code isProxyEnabled} flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsUsedForRacDbs() {
         return isUsedForRacDbs;
     }
 
-    /** The description of the private endpoint. */
+    /**
+     * The description of the private endpoint.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The description of the private endpoint.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network security groups that the private endpoint belongs to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * network security groups that the private endpoint belongs to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -448,7 +429,6 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

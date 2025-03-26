@@ -5,21 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * SQL Text type object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * SQL Text type object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = SqlText.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SqlText extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SqlText extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "version",
@@ -50,22 +48,30 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Version Example: {@code 1} */
+        /**
+         * Version
+         * Example: {@code 1}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private Float version;
 
         /**
-         * Version Example: {@code 1}
+         * Version
+         * Example: {@code 1}
          *
          * @param version the value to set
          * @return this builder
-         */
+         **/
         public Builder version(Float version) {
             this.version = version;
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Unique SQL_ID for a SQL Statement. */
+        /**
+         * Unique SQL_ID for a SQL Statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
         private String sqlIdentifier;
 
@@ -74,90 +80,109 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
          *
          * @param sqlIdentifier the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlIdentifier(String sqlIdentifier) {
             this.sqlIdentifier = sqlIdentifier;
             this.__explicitlySet__.add("sqlIdentifier");
             return this;
         }
-        /** Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"} */
+        /**
+         * Collection timestamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
         private java.util.Date timeCollected;
 
         /**
-         * Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"}
+         * Collection timestamp
+         * Example: {@code "2020-05-06T00:00:00.000Z"}
          *
          * @param timeCollected the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCollected(java.util.Date timeCollected) {
             this.timeCollected = timeCollected;
             this.__explicitlySet__.add("timeCollected");
             return this;
         }
-        /** SQL command Example: {@code "SELECT"} */
+        /**
+         * SQL command
+         * Example: {@code "SELECT"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
         private String sqlCommand;
 
         /**
-         * SQL command Example: {@code "SELECT"}
+         * SQL command
+         * Example: {@code "SELECT"}
          *
          * @param sqlCommand the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlCommand(String sqlCommand) {
             this.sqlCommand = sqlCommand;
             this.__explicitlySet__.add("sqlCommand");
             return this;
         }
-        /** Exact matching signature Example: {@code "18067345456756876713"} */
+        /**
+         * Exact matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
         private String exactMatchingSignature;
 
         /**
-         * Exact matching signature Example: {@code "18067345456756876713"}
+         * Exact matching signature
+         * Example: {@code "18067345456756876713"}
          *
          * @param exactMatchingSignature the value to set
          * @return this builder
-         */
+         **/
         public Builder exactMatchingSignature(String exactMatchingSignature) {
             this.exactMatchingSignature = exactMatchingSignature;
             this.__explicitlySet__.add("exactMatchingSignature");
             return this;
         }
-        /** Force matching signature Example: {@code "18067345456756876713"} */
+        /**
+         * Force matching signature
+         * Example: {@code "18067345456756876713"}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
         private String forceMatchingSignature;
 
         /**
-         * Force matching signature Example: {@code "18067345456756876713"}
+         * Force matching signature
+         * Example: {@code "18067345456756876713"}
          *
          * @param forceMatchingSignature the value to set
          * @return this builder
-         */
+         **/
         public Builder forceMatchingSignature(String forceMatchingSignature) {
             this.forceMatchingSignature = forceMatchingSignature;
             this.__explicitlySet__.add("forceMatchingSignature");
             return this;
         }
         /**
-         * Full SQL Text Example: {@code "SELECT
-         * username,profile,default_tablespace,temporary_tablespace FROM dba_users"} Disclaimer: SQL
-         * text being uploaded explicitly via APIs is not masked. Any sensitive literals contained
-         * in the sqlFullText column should be masked prior to ingestion.
-         */
+         * Full SQL Text
+         * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+         * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlFullText")
         private String sqlFullText;
 
         /**
-         * Full SQL Text Example: {@code "SELECT
-         * username,profile,default_tablespace,temporary_tablespace FROM dba_users"} Disclaimer: SQL
-         * text being uploaded explicitly via APIs is not masked. Any sensitive literals contained
-         * in the sqlFullText column should be masked prior to ingestion.
+         * Full SQL Text
+         * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+         * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
          *
          * @param sqlFullText the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlFullText(String sqlFullText) {
             this.sqlFullText = sqlFullText;
             this.__explicitlySet__.add("sqlFullText");
@@ -210,7 +235,9 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -219,20 +246,28 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** Version Example: {@code 1} */
+    /**
+     * Version
+     * Example: {@code 1}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final Float version;
 
     /**
-     * Version Example: {@code 1}
+     * Version
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Float getVersion() {
         return version;
     }
 
-    /** Unique SQL_ID for a SQL Statement. */
+    /**
+     * Unique SQL_ID for a SQL Statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlIdentifier")
     private final String sqlIdentifier;
 
@@ -240,80 +275,99 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
      * Unique SQL_ID for a SQL Statement.
      *
      * @return the value
-     */
+     **/
     public String getSqlIdentifier() {
         return sqlIdentifier;
     }
 
-    /** Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"} */
+    /**
+     * Collection timestamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
     private final java.util.Date timeCollected;
 
     /**
-     * Collection timestamp Example: {@code "2020-05-06T00:00:00.000Z"}
+     * Collection timestamp
+     * Example: {@code "2020-05-06T00:00:00.000Z"}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCollected() {
         return timeCollected;
     }
 
-    /** SQL command Example: {@code "SELECT"} */
+    /**
+     * SQL command
+     * Example: {@code "SELECT"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlCommand")
     private final String sqlCommand;
 
     /**
-     * SQL command Example: {@code "SELECT"}
+     * SQL command
+     * Example: {@code "SELECT"}
      *
      * @return the value
-     */
+     **/
     public String getSqlCommand() {
         return sqlCommand;
     }
 
-    /** Exact matching signature Example: {@code "18067345456756876713"} */
+    /**
+     * Exact matching signature
+     * Example: {@code "18067345456756876713"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exactMatchingSignature")
     private final String exactMatchingSignature;
 
     /**
-     * Exact matching signature Example: {@code "18067345456756876713"}
+     * Exact matching signature
+     * Example: {@code "18067345456756876713"}
      *
      * @return the value
-     */
+     **/
     public String getExactMatchingSignature() {
         return exactMatchingSignature;
     }
 
-    /** Force matching signature Example: {@code "18067345456756876713"} */
+    /**
+     * Force matching signature
+     * Example: {@code "18067345456756876713"}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("forceMatchingSignature")
     private final String forceMatchingSignature;
 
     /**
-     * Force matching signature Example: {@code "18067345456756876713"}
+     * Force matching signature
+     * Example: {@code "18067345456756876713"}
      *
      * @return the value
-     */
+     **/
     public String getForceMatchingSignature() {
         return forceMatchingSignature;
     }
 
     /**
-     * Full SQL Text Example: {@code "SELECT
-     * username,profile,default_tablespace,temporary_tablespace FROM dba_users"} Disclaimer: SQL
-     * text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in
-     * the sqlFullText column should be masked prior to ingestion.
-     */
+     * Full SQL Text
+     * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+     * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlFullText")
     private final String sqlFullText;
 
     /**
-     * Full SQL Text Example: {@code "SELECT
-     * username,profile,default_tablespace,temporary_tablespace FROM dba_users"} Disclaimer: SQL
-     * text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in
-     * the sqlFullText column should be masked prior to ingestion.
+     * Full SQL Text
+     * Example: {@code "SELECT username,profile,default_tablespace,temporary_tablespace FROM dba_users"}
+     * Disclaimer: SQL text being uploaded explicitly via APIs is not masked. Any sensitive literals contained in the sqlFullText column should be masked prior to ingestion.
      *
      * @return the value
-     */
+     **/
     public String getSqlFullText() {
         return sqlFullText;
     }
@@ -325,7 +379,6 @@ public final class SqlText extends com.oracle.bmc.http.client.internal.Explicitl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

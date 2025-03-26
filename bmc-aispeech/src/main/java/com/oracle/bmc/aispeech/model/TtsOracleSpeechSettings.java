@@ -5,23 +5,22 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Settings to use for generating speech with a model from ORACLE family. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Settings to use for generating speech with a model from ORACLE family.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = TtsOracleSpeechSettings.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = TtsOracleSpeechSettings.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class TtsOracleSpeechSettings
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "textType",
@@ -44,80 +43,94 @@ public final class TtsOracleSpeechSettings
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The format in which the input text has been supplied i.e., Text or SSML. The supported
-         * text types are: - TEXT - SSML
-         */
+         * The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
+         * - TEXT
+         * - SSML
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textType")
         private TextType textType;
 
         /**
-         * The format in which the input text has been supplied i.e., Text or SSML. The supported
-         * text types are: - TEXT - SSML
+         * The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
+         * - TEXT
+         * - SSML
          *
          * @param textType the value to set
          * @return this builder
-         */
+         **/
         public Builder textType(TextType textType) {
             this.textType = textType;
             this.__explicitlySet__.add("textType");
             return this;
         }
         /**
-         * The sample rate of the generated audio. By default, the audio will be generated with
-         * speaker voice sample rate.
-         */
+         * The sample rate of the generated audio. By default, the audio will be generated with speaker voice sample rate.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sampleRateInHz")
         private Integer sampleRateInHz;
 
         /**
-         * The sample rate of the generated audio. By default, the audio will be generated with
-         * speaker voice sample rate.
+         * The sample rate of the generated audio. By default, the audio will be generated with speaker voice sample rate.
          *
          * @param sampleRateInHz the value to set
          * @return this builder
-         */
+         **/
         public Builder sampleRateInHz(Integer sampleRateInHz) {
             this.sampleRateInHz = sampleRateInHz;
             this.__explicitlySet__.add("sampleRateInHz");
             return this;
         }
         /**
-         * The format of audio in which the user wants the audio to be in. The supported output
-         * formats are: - MP3 - OGG - PCM - JSON
-         */
+         * The format of audio in which the user wants the audio to be in. The supported output formats are:
+         * - MP3
+         * - OGG
+         * - PCM
+         * - JSON
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
         private OutputFormat outputFormat;
 
         /**
-         * The format of audio in which the user wants the audio to be in. The supported output
-         * formats are: - MP3 - OGG - PCM - JSON
+         * The format of audio in which the user wants the audio to be in. The supported output formats are:
+         * - MP3
+         * - OGG
+         * - PCM
+         * - JSON
          *
          * @param outputFormat the value to set
          * @return this builder
-         */
+         **/
         public Builder outputFormat(OutputFormat outputFormat) {
             this.outputFormat = outputFormat;
             this.__explicitlySet__.add("outputFormat");
             return this;
         }
         /**
-         * The kind of time stamp markings the user wants for the audio. This property should be
-         * provided if outputFormat is json, otherwise it will be ignored. null value (i.e. no value
-         * is not specified) indicates no speech marking. The supported speech mark types are: -
-         * SENTENCE - WORD
-         */
+         * The kind of time stamp markings the user wants for the audio.
+         * This property should be provided if outputFormat is json, otherwise it will be ignored.
+         * null value (i.e. no value is not specified) indicates no speech marking.
+         * The supported speech mark types are:
+         * - SENTENCE
+         * - WORD
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("speechMarkTypes")
         private java.util.List<SpeechMarkTypes> speechMarkTypes;
 
         /**
-         * The kind of time stamp markings the user wants for the audio. This property should be
-         * provided if outputFormat is json, otherwise it will be ignored. null value (i.e. no value
-         * is not specified) indicates no speech marking. The supported speech mark types are: -
-         * SENTENCE - WORD
+         * The kind of time stamp markings the user wants for the audio.
+         * This property should be provided if outputFormat is json, otherwise it will be ignored.
+         * null value (i.e. no value is not specified) indicates no speech marking.
+         * The supported speech mark types are:
+         * - SENTENCE
+         * - WORD
          *
          * @param speechMarkTypes the value to set
          * @return this builder
-         */
+         **/
         public Builder speechMarkTypes(java.util.List<SpeechMarkTypes> speechMarkTypes) {
             this.speechMarkTypes = speechMarkTypes;
             this.__explicitlySet__.add("speechMarkTypes");
@@ -158,7 +171,9 @@ public final class TtsOracleSpeechSettings
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -168,10 +183,12 @@ public final class TtsOracleSpeechSettings
     }
 
     /**
-     * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
-     */
-    public enum TextType implements com.oracle.bmc.http.internal.BmcEnum {
+     * The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
+     * - TEXT
+     * - SSML
+     *
+     **/
+    public enum TextType {
         Text("TEXT"),
         Ssml("SSML"),
         ;
@@ -204,44 +221,50 @@ public final class TtsOracleSpeechSettings
         }
     };
     /**
-     * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
-     */
+     * The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
+     * - TEXT
+     * - SSML
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("textType")
     private final TextType textType;
 
     /**
-     * The format in which the input text has been supplied i.e., Text or SSML. The supported text
-     * types are: - TEXT - SSML
+     * The format in which the input text has been supplied i.e., Text or SSML. The supported text types are:
+     * - TEXT
+     * - SSML
      *
      * @return the value
-     */
+     **/
     public TextType getTextType() {
         return textType;
     }
 
     /**
-     * The sample rate of the generated audio. By default, the audio will be generated with speaker
-     * voice sample rate.
-     */
+     * The sample rate of the generated audio. By default, the audio will be generated with speaker voice sample rate.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sampleRateInHz")
     private final Integer sampleRateInHz;
 
     /**
-     * The sample rate of the generated audio. By default, the audio will be generated with speaker
-     * voice sample rate.
+     * The sample rate of the generated audio. By default, the audio will be generated with speaker voice sample rate.
      *
      * @return the value
-     */
+     **/
     public Integer getSampleRateInHz() {
         return sampleRateInHz;
     }
 
     /**
-     * The format of audio in which the user wants the audio to be in. The supported output formats
-     * are: - MP3 - OGG - PCM - JSON
-     */
-    public enum OutputFormat implements com.oracle.bmc.http.internal.BmcEnum {
+     * The format of audio in which the user wants the audio to be in. The supported output formats are:
+     * - MP3
+     * - OGG
+     * - PCM
+     * - JSON
+     *
+     **/
+    public enum OutputFormat {
         Mp3("MP3"),
         Ogg("OGG"),
         Pcm("PCM"),
@@ -276,24 +299,32 @@ public final class TtsOracleSpeechSettings
         }
     };
     /**
-     * The format of audio in which the user wants the audio to be in. The supported output formats
-     * are: - MP3 - OGG - PCM - JSON
-     */
+     * The format of audio in which the user wants the audio to be in. The supported output formats are:
+     * - MP3
+     * - OGG
+     * - PCM
+     * - JSON
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputFormat")
     private final OutputFormat outputFormat;
 
     /**
-     * The format of audio in which the user wants the audio to be in. The supported output formats
-     * are: - MP3 - OGG - PCM - JSON
+     * The format of audio in which the user wants the audio to be in. The supported output formats are:
+     * - MP3
+     * - OGG
+     * - PCM
+     * - JSON
      *
      * @return the value
-     */
+     **/
     public OutputFormat getOutputFormat() {
         return outputFormat;
     }
 
-    /** */
-    public enum SpeechMarkTypes implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum SpeechMarkTypes {
         Sentence("SENTENCE"),
         Word("WORD"),
         ;
@@ -326,22 +357,27 @@ public final class TtsOracleSpeechSettings
         }
     };
     /**
-     * The kind of time stamp markings the user wants for the audio. This property should be
-     * provided if outputFormat is json, otherwise it will be ignored. null value (i.e. no value is
-     * not specified) indicates no speech marking. The supported speech mark types are: - SENTENCE -
-     * WORD
-     */
+     * The kind of time stamp markings the user wants for the audio.
+     * This property should be provided if outputFormat is json, otherwise it will be ignored.
+     * null value (i.e. no value is not specified) indicates no speech marking.
+     * The supported speech mark types are:
+     * - SENTENCE
+     * - WORD
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("speechMarkTypes")
     private final java.util.List<SpeechMarkTypes> speechMarkTypes;
 
     /**
-     * The kind of time stamp markings the user wants for the audio. This property should be
-     * provided if outputFormat is json, otherwise it will be ignored. null value (i.e. no value is
-     * not specified) indicates no speech marking. The supported speech mark types are: - SENTENCE -
-     * WORD
+     * The kind of time stamp markings the user wants for the audio.
+     * This property should be provided if outputFormat is json, otherwise it will be ignored.
+     * null value (i.e. no value is not specified) indicates no speech marking.
+     * The supported speech mark types are:
+     * - SENTENCE
+     * - WORD
      *
      * @return the value
-     */
+     **/
     public java.util.List<SpeechMarkTypes> getSpeechMarkTypes() {
         return speechMarkTypes;
     }
@@ -353,7 +389,6 @@ public final class TtsOracleSpeechSettings
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

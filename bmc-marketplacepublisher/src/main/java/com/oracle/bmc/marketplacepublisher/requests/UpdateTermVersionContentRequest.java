@@ -6,64 +6,80 @@ package com.oracle.bmc.marketplacepublisher.requests;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateTermVersionContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTermVersionContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class UpdateTermVersionContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
-    /** term version OCID */
+    /**
+     * term version OCID
+     */
     private String termVersionId;
 
-    /** term version OCID */
+    /**
+     * term version OCID
+     */
     public String getTermVersionId() {
         return termVersionId;
     }
-    /** The term attachment to upload. */
+    /**
+     * The term attachment to upload.
+     */
     private java.io.InputStream updateTermVersionContent;
 
-    /** The term attachment to upload. */
+    /**
+     * The term attachment to upload.
+     */
     public java.io.InputStream getUpdateTermVersionContent() {
         return updateTermVersionContent;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
-    /** The name of the resource. */
+    /**
+     * The name of the resource.
+     */
     private String displayName;
 
-    /** The name of the resource. */
+    /**
+     * The name of the resource.
+     */
     public String getDisplayName() {
         return displayName;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -75,15 +91,17 @@ public class UpdateTermVersionContentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateTermVersionContentRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** term version OCID */
+        /**
+         * term version OCID
+         */
         private String termVersionId = null;
 
         /**
          * term version OCID
-         *
          * @param termVersionId the value to set
          * @return this builder instance
          */
@@ -92,12 +110,13 @@ public class UpdateTermVersionContentRequest
             return this;
         }
 
-        /** The term attachment to upload. */
+        /**
+         * The term attachment to upload.
+         */
         private java.io.InputStream updateTermVersionContent = null;
 
         /**
          * The term attachment to upload.
-         *
          * @param updateTermVersionContent the value to set
          * @return this builder instance
          */
@@ -107,18 +126,21 @@ public class UpdateTermVersionContentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -128,12 +150,13 @@ public class UpdateTermVersionContentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -142,12 +165,13 @@ public class UpdateTermVersionContentRequest
             return this;
         }
 
-        /** The name of the resource. */
+        /**
+         * The name of the resource.
+         */
         private String displayName = null;
 
         /**
          * The name of the resource.
-         *
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -158,19 +182,18 @@ public class UpdateTermVersionContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -182,7 +205,6 @@ public class UpdateTermVersionContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateTermVersionContentRequest o) {
@@ -199,11 +221,10 @@ public class UpdateTermVersionContentRequest
         /**
          * Build the instance of UpdateTermVersionContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateTermVersionContentRequest
          */
@@ -216,7 +237,6 @@ public class UpdateTermVersionContentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -229,8 +249,7 @@ public class UpdateTermVersionContentRequest
         /**
          * Build the instance of UpdateTermVersionContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateTermVersionContentRequest
@@ -243,14 +262,12 @@ public class UpdateTermVersionContentRequest
             request.opcRequestId = opcRequestId;
             request.displayName = displayName;
             return request;
-            // new UpdateTermVersionContentRequest(termVersionId, updateTermVersionContent, ifMatch,
-            // opcRequestId, displayName);
+            // new UpdateTermVersionContentRequest(termVersionId, updateTermVersionContent, ifMatch, opcRequestId, displayName);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -264,7 +281,6 @@ public class UpdateTermVersionContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

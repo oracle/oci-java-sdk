@@ -6,63 +6,66 @@ package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateEmailDomainRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailDomainExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateEmailDomainRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class UpdateEmailDomainRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.email.model.UpdateEmailDomainDetails> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * email domain.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
      */
     private String emailDomainId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-     * email domain.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
      */
     public String getEmailDomainId() {
         return emailDomainId;
     }
-    /** The new email domain attributes to apply. */
+    /**
+     * The new email domain attributes to apply.
+     */
     private com.oracle.bmc.email.model.UpdateEmailDomainDetails updateEmailDomainDetails;
 
-    /** The new email domain attributes to apply. */
+    /**
+     * The new email domain attributes to apply.
+     */
     public com.oracle.bmc.email.model.UpdateEmailDomainDetails getUpdateEmailDomainDetails() {
         return updateEmailDomainDetails;
     }
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * Used for optimistic concurrency control. In the update or delete call for a resource, set the
-     * {@code if-match} parameter to the value of the etag from a previous get, create, or update
-     * response for that resource. The resource will be updated or deleted only if the etag you
-     * provide matches the resource's current etag value.
+     * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+     * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+     * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     private String opcRequestId;
 
-    /** The request ID for tracing from the system */
+    /**
+     * The request ID for tracing from the system
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -74,19 +77,17 @@ public class UpdateEmailDomainRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateEmailDomainRequest, com.oracle.bmc.email.model.UpdateEmailDomainDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * email domain.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
          */
         private String emailDomainId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this
-         * email domain.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email domain.
          * @param emailDomainId the value to set
          * @return this builder instance
          */
@@ -95,12 +96,13 @@ public class UpdateEmailDomainRequest
             return this;
         }
 
-        /** The new email domain attributes to apply. */
+        /**
+         * The new email domain attributes to apply.
+         */
         private com.oracle.bmc.email.model.UpdateEmailDomainDetails updateEmailDomainDetails = null;
 
         /**
          * The new email domain attributes to apply.
-         *
          * @param updateEmailDomainDetails the value to set
          * @return this builder instance
          */
@@ -111,18 +113,17 @@ public class UpdateEmailDomainRequest
         }
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * Used for optimistic concurrency control. In the update or delete call for a resource, set
-         * the {@code if-match} parameter to the value of the etag from a previous get, create, or
-         * update response for that resource. The resource will be updated or deleted only if the
-         * etag you provide matches the resource's current etag value.
+         * Used for optimistic concurrency control. In the update or delete call for a resource, set the {@code if-match}
+         * parameter to the value of the etag from a previous get, create, or update response for that resource.  The resource
+         * will be updated or deleted only if the etag you provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -132,12 +133,13 @@ public class UpdateEmailDomainRequest
             return this;
         }
 
-        /** The request ID for tracing from the system */
+        /**
+         * The request ID for tracing from the system
+         */
         private String opcRequestId = null;
 
         /**
          * The request ID for tracing from the system
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -148,19 +150,18 @@ public class UpdateEmailDomainRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -172,7 +173,6 @@ public class UpdateEmailDomainRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateEmailDomainRequest o) {
@@ -188,11 +188,10 @@ public class UpdateEmailDomainRequest
         /**
          * Build the instance of UpdateEmailDomainRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateEmailDomainRequest
          */
@@ -205,7 +204,6 @@ public class UpdateEmailDomainRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -218,8 +216,7 @@ public class UpdateEmailDomainRequest
         /**
          * Build the instance of UpdateEmailDomainRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateEmailDomainRequest
@@ -231,14 +228,12 @@ public class UpdateEmailDomainRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateEmailDomainRequest(emailDomainId, updateEmailDomainDetails, ifMatch,
-            // opcRequestId);
+            // new UpdateEmailDomainRequest(emailDomainId, updateEmailDomainDetails, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -251,7 +246,6 @@ public class UpdateEmailDomainRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

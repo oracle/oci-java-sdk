@@ -5,22 +5,19 @@
 package com.oracle.bmc.cims.model;
 
 /**
- * Details about the support ticket. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
+ * Details about the support ticket.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IncidentSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IncidentSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IncidentSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "key",
@@ -69,31 +66,33 @@ public final class IncidentSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique identifier of the incident. */
+        /**
+         * Unique identifier of the incident.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
          * Unique identifier of the incident.
-         *
          * @param key the value to set
          * @return this builder
-         */
+         **/
         public Builder key(String key) {
             this.key = key;
             this.__explicitlySet__.add("key");
             return this;
         }
-        /** The OCID of the tenancy. */
+        /**
+         * The OCID of the tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the tenancy.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -136,149 +135,140 @@ public final class IncidentSummary
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
         private String userGroupId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's user
-         * group in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
          *
          * @param userGroupId the value to set
          * @return this builder
-         */
+         **/
         public Builder userGroupId(String userGroupId) {
             this.userGroupId = userGroupId;
             this.__explicitlySet__.add("userGroupId");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
         private String userGroupName;
 
         /**
-         * Technical support type ({@code TECH}) only: Name of the support request's user group in
-         * My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
          *
          * @param userGroupName the value to set
          * @return this builder
-         */
+         **/
         public Builder userGroupName(String userGroupName) {
             this.userGroupName = userGroupName;
             this.__explicitlySet__.add("userGroupName");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's
-         * primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: The identifier of the support request's primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyId")
         private String primaryContactPartyId;
 
         /**
-         * Technical support type ({@code TECH}) only: The identifier of the support request's
-         * primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The identifier of the support request's primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
          *
          * @param primaryContactPartyId the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryContactPartyId(String primaryContactPartyId) {
             this.primaryContactPartyId = primaryContactPartyId;
             this.__explicitlySet__.add("primaryContactPartyId");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: The name of the support request's primary
-         * contact in My Oracle Cloud Support portal.
-         */
+         * Technical support type ({@code TECH}) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyName")
         private String primaryContactPartyName;
 
         /**
-         * Technical support type ({@code TECH}) only: The name of the support request's primary
-         * contact in My Oracle Cloud Support portal.
+         * Technical support type ({@code TECH}) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
          *
          * @param primaryContactPartyName the value to set
          * @return this builder
-         */
+         **/
         public Builder primaryContactPartyName(String primaryContactPartyName) {
             this.primaryContactPartyName = primaryContactPartyName;
             this.__explicitlySet__.add("primaryContactPartyName");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Allows update of the support request in My
-         * Oracle Cloud Support portal, when the user has write permission to the support request's
-         * user group.
-         */
+         * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle Cloud Support portal,
+         * when the user has write permission to the support request's user group.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isWritePermitted")
         private Boolean isWritePermitted;
 
         /**
-         * Technical support type ({@code TECH}) only: Allows update of the support request in My
-         * Oracle Cloud Support portal, when the user has write permission to the support request's
-         * user group.
+         * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle Cloud Support portal,
+         * when the user has write permission to the support request's user group.
          *
          * @param isWritePermitted the value to set
          * @return this builder
-         */
+         **/
         public Builder isWritePermitted(Boolean isWritePermitted) {
             this.isWritePermitted = isWritePermitted;
             this.__explicitlySet__.add("isWritePermitted");
             return this;
         }
         /**
-         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
-         * userGroupId}) that was auto-selected for a new support request. This message appears when
-         * no user group was specified in the create request for a new technical support request.
-         */
+         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code userGroupId}) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("warnMessage")
         private String warnMessage;
 
         /**
-         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
-         * userGroupId}) that was auto-selected for a new support request. This message appears when
-         * no user group was specified in the create request for a new technical support request.
+         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code userGroupId}) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
          *
          * @param warnMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder warnMessage(String warnMessage) {
             this.warnMessage = warnMessage;
             this.__explicitlySet__.add("warnMessage");
             return this;
         }
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
-         * Increase
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
-         */
+         * The kind of support ticket (type of support request).
+         * For information about {@code ACCOUNT} support tickets, see
+         * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see
+         * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+         * For information about {@code TECH} support tickets, see
+         * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemType")
         private ProblemType problemType;
 
         /**
-         * The kind of support ticket (type of support request). For information about {@code
-         * ACCOUNT} support tickets, see [Creating a Billing Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
-         * For information about {@code LIMIT} support tickets, see [Creating a Service Limit
-         * Increase
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-         * information about {@code TECH} support tickets, see [Creating a Technical Support
-         * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+         * The kind of support ticket (type of support request).
+         * For information about {@code ACCOUNT} support tickets, see
+         * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+         * For information about {@code LIMIT} support tickets, see
+         * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+         * For information about {@code TECH} support tickets, see
+         * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
          *
          * @param problemType the value to set
          * @return this builder
-         */
+         **/
         public Builder problemType(ProblemType problemType) {
             this.problemType = problemType;
             this.__explicitlySet__.add("problemType");
@@ -355,7 +345,9 @@ public final class IncidentSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -364,28 +356,30 @@ public final class IncidentSummary
         return new Builder().copy(this);
     }
 
-    /** Unique identifier of the incident. */
+    /**
+     * Unique identifier of the incident.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
      * Unique identifier of the incident.
-     *
      * @return the value
-     */
+     **/
     public String getKey() {
         return key;
     }
 
-    /** The OCID of the tenancy. */
+    /**
+     * The OCID of the tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the tenancy.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
@@ -419,132 +413,127 @@ public final class IncidentSummary
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
     private final String userGroupId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's user
-     * group in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user group in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getUserGroupId() {
         return userGroupId;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
     private final String userGroupName;
 
     /**
-     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
-     * Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getUserGroupName() {
         return userGroupName;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's primary
-     * contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: The identifier of the support request's primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyId")
     private final String primaryContactPartyId;
 
     /**
-     * Technical support type ({@code TECH}) only: The identifier of the support request's primary
-     * contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The identifier of the support request's primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getPrimaryContactPartyId() {
         return primaryContactPartyId;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: The name of the support request's primary contact
-     * in My Oracle Cloud Support portal.
-     */
+     * Technical support type ({@code TECH}) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyName")
     private final String primaryContactPartyName;
 
     /**
-     * Technical support type ({@code TECH}) only: The name of the support request's primary contact
-     * in My Oracle Cloud Support portal.
+     * Technical support type ({@code TECH}) only: The name of the support request's primary contact in My Oracle Cloud Support portal.
      *
      * @return the value
-     */
+     **/
     public String getPrimaryContactPartyName() {
         return primaryContactPartyName;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle
-     * Cloud Support portal, when the user has write permission to the support request's user group.
-     */
+     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle Cloud Support portal,
+     * when the user has write permission to the support request's user group.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isWritePermitted")
     private final Boolean isWritePermitted;
 
     /**
-     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle
-     * Cloud Support portal, when the user has write permission to the support request's user group.
+     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle Cloud Support portal,
+     * when the user has write permission to the support request's user group.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsWritePermitted() {
         return isWritePermitted;
     }
 
     /**
-     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
-     * userGroupId}) that was auto-selected for a new support request. This message appears when no
-     * user group was specified in the create request for a new technical support request.
-     */
+     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code userGroupId}) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("warnMessage")
     private final String warnMessage;
 
     /**
-     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
-     * userGroupId}) that was auto-selected for a new support request. This message appears when no
-     * user group was specified in the create request for a new technical support request.
+     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code userGroupId}) that was auto-selected for a new support request. This message appears when no user group was specified in the create request for a new technical support request.
      *
      * @return the value
-     */
+     **/
     public String getWarnMessage() {
         return warnMessage;
     }
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
-     */
+     * The kind of support ticket (type of support request).
+     * For information about {@code ACCOUNT} support tickets, see
+     * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+     * For information about {@code LIMIT} support tickets, see
+     * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+     * For information about {@code TECH} support tickets, see
+     * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemType")
     private final ProblemType problemType;
 
     /**
-     * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
-     * support tickets, see [Creating a Billing Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm). For
-     * information about {@code LIMIT} support tickets, see [Creating a Service Limit Increase
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm). For
-     * information about {@code TECH} support tickets, see [Creating a Technical Support
-     * Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
+     * The kind of support ticket (type of support request).
+     * For information about {@code ACCOUNT} support tickets, see
+     * [Creating a Billing Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
+     * For information about {@code LIMIT} support tickets, see
+     * [Creating a Service Limit Increase Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-limit.htm).
+     * For information about {@code TECH} support tickets, see
+     * [Creating a Technical Support Request](https://docs.oracle.com/iaas/Content/GSG/support/create-incident-technical.htm).
      *
      * @return the value
-     */
+     **/
     public ProblemType getProblemType() {
         return problemType;
     }
@@ -556,7 +545,6 @@ public final class IncidentSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

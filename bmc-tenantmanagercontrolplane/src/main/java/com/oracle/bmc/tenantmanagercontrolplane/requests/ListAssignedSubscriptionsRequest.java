@@ -6,76 +6,95 @@ package com.oracle.bmc.tenantmanagercontrolplane.requests;
 
 import com.oracle.bmc.tenantmanagercontrolplane.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListAssignedSubscriptionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListAssignedSubscriptionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/tenantmanagercontrolplane/ListAssignedSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAssignedSubscriptionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
 public class ListAssignedSubscriptionsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the subscription to which the tenancy is associated. */
+    /**
+     * The ID of the subscription to which the tenancy is associated.
+     */
     private String subscriptionId;
 
-    /** The ID of the subscription to which the tenancy is associated. */
+    /**
+     * The ID of the subscription to which the tenancy is associated.
+     */
     public String getSubscriptionId() {
         return subscriptionId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder;
 
-    /** The sort order to use, whether 'asc' or 'desc'. */
+    /**
+     * The sort order to use, whether 'asc' or 'desc'.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -109,17 +128,23 @@ public class ListAssignedSubscriptionsRequest
     };
 
     /**
-     * The field to sort by. Only one sort order can be provided. * The default order for
-     * timeCreated is descending. * The default order for displayName is ascending. * If no value is
-     * specified, timeCreated is the default.
+     * The field to sort by. Only one sort order can be provided.
+     * * The default order for timeCreated is descending.
+     * * The default order for displayName is ascending.
+     * * If no value is specified, timeCreated is the default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The version of the subscription entity. */
+    /**
+     * The version of the subscription entity.
+     */
     private com.oracle.bmc.tenantmanagercontrolplane.model.EntityVersion entityVersion;
 
-    /** The version of the subscription entity. */
+    /**
+     * The version of the subscription entity.
+     */
     public com.oracle.bmc.tenantmanagercontrolplane.model.EntityVersion getEntityVersion() {
         return entityVersion;
     }
@@ -127,15 +152,17 @@ public class ListAssignedSubscriptionsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListAssignedSubscriptionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         */
         private String compartmentId = null;
 
         /**
          * The ID of the compartment in which to list resources.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -144,12 +171,13 @@ public class ListAssignedSubscriptionsRequest
             return this;
         }
 
-        /** The ID of the subscription to which the tenancy is associated. */
+        /**
+         * The ID of the subscription to which the tenancy is associated.
+         */
         private String subscriptionId = null;
 
         /**
          * The ID of the subscription to which the tenancy is associated.
-         *
          * @param subscriptionId the value to set
          * @return this builder instance
          */
@@ -158,12 +186,13 @@ public class ListAssignedSubscriptionsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -173,15 +202,12 @@ public class ListAssignedSubscriptionsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -190,12 +216,13 @@ public class ListAssignedSubscriptionsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -204,12 +231,13 @@ public class ListAssignedSubscriptionsRequest
             return this;
         }
 
-        /** The sort order to use, whether 'asc' or 'desc'. */
+        /**
+         * The sort order to use, whether 'asc' or 'desc'.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, whether 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -220,16 +248,19 @@ public class ListAssignedSubscriptionsRequest
         }
 
         /**
-         * The field to sort by. Only one sort order can be provided. * The default order for
-         * timeCreated is descending. * The default order for displayName is ascending. * If no
-         * value is specified, timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order can be provided. * The default order for
-         * timeCreated is descending. * The default order for displayName is ascending. * If no
-         * value is specified, timeCreated is the default.
+         * The field to sort by. Only one sort order can be provided.
+         * * The default order for timeCreated is descending.
+         * * The default order for displayName is ascending.
+         * * If no value is specified, timeCreated is the default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -239,12 +270,13 @@ public class ListAssignedSubscriptionsRequest
             return this;
         }
 
-        /** The version of the subscription entity. */
+        /**
+         * The version of the subscription entity.
+         */
         private com.oracle.bmc.tenantmanagercontrolplane.model.EntityVersion entityVersion = null;
 
         /**
          * The version of the subscription entity.
-         *
          * @param entityVersion the value to set
          * @return this builder instance
          */
@@ -256,19 +288,18 @@ public class ListAssignedSubscriptionsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -280,7 +311,6 @@ public class ListAssignedSubscriptionsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListAssignedSubscriptionsRequest o) {
@@ -300,11 +330,10 @@ public class ListAssignedSubscriptionsRequest
         /**
          * Build the instance of ListAssignedSubscriptionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListAssignedSubscriptionsRequest
          */
@@ -318,8 +347,7 @@ public class ListAssignedSubscriptionsRequest
         /**
          * Build the instance of ListAssignedSubscriptionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListAssignedSubscriptionsRequest
@@ -335,14 +363,12 @@ public class ListAssignedSubscriptionsRequest
             request.sortBy = sortBy;
             request.entityVersion = entityVersion;
             return request;
-            // new ListAssignedSubscriptionsRequest(compartmentId, subscriptionId, opcRequestId,
-            // page, limit, sortOrder, sortBy, entityVersion);
+            // new ListAssignedSubscriptionsRequest(compartmentId, subscriptionId, opcRequestId, page, limit, sortOrder, sortBy, entityVersion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -359,7 +385,6 @@ public class ListAssignedSubscriptionsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

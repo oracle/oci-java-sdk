@@ -5,23 +5,21 @@
 package com.oracle.bmc.core.model;
 
 /**
- * An individual FastConnect location. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * An individual FastConnect location.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CrossConnectLocation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CrossConnectLocation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = CrossConnectLocation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CrossConnectLocation extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"description", "name"})
     public CrossConnectLocation(String description, String name) {
@@ -32,16 +30,17 @@ public final class CrossConnectLocation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A description of the location. */
+        /**
+         * A description of the location.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the location.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
@@ -49,20 +48,21 @@ public final class CrossConnectLocation
         }
         /**
          * The name of the location.
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
          *
-         * <p>Example: {@code CyrusOne, Chandler, AZ}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the location.
-         *
-         * <p>Example: {@code CyrusOne, Chandler, AZ}
+         * <p>
+         * Example: {@code CyrusOne, Chandler, AZ}
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -92,7 +92,9 @@ public final class CrossConnectLocation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -101,34 +103,36 @@ public final class CrossConnectLocation
         return new Builder().copy(this);
     }
 
-    /** A description of the location. */
+    /**
+     * A description of the location.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the location.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
      * The name of the location.
+     * <p>
+     * Example: {@code CyrusOne, Chandler, AZ}
      *
-     * <p>Example: {@code CyrusOne, Chandler, AZ}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the location.
-     *
-     * <p>Example: {@code CyrusOne, Chandler, AZ}
+     * <p>
+     * Example: {@code CyrusOne, Chandler, AZ}
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
@@ -140,7 +144,6 @@ public final class CrossConnectLocation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

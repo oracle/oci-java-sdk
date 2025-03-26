@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The type of a cluster. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
-public enum ClusterType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The type of a cluster.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+public enum ClusterType {
     BasicCluster("BASIC_CLUSTER"),
     EnhancedCluster("ENHANCED_CLUSTER"),
 

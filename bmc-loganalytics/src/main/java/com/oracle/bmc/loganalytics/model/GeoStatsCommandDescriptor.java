@@ -5,26 +5,26 @@
 package com.oracle.bmc.loganalytics.model;
 
 /**
- * Command descriptor for querylanguage GEOSTATS command. This is similiar to STATS with some built
- * in functions for City, State and Country by Coordinates. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
+ * Command descriptor for querylanguage GEOSTATS command.  This is similiar to STATS with some built in functions for City, State and Country by Coordinates.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200601")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GeoStatsCommandDescriptor.Builder.class)
+    builder = GeoStatsCommandDescriptor.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "name")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "name"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -82,27 +82,27 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
             return this;
         }
         /**
-         * Indicates which coordinates to show. Either client, server, client and server or custom.
-         * If custom is specified at least one of coordinatesField, regionField or countryField is
-         * required. Defaults to client.
-         */
+         * Indicates which coordinates to show.  Either client, server, client and server or custom. If custom is specified at least one of  coordinatesField, regionField or countryField is required. Defaults to client.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("include")
         private Include include;
 
         /**
-         * Indicates which coordinates to show. Either client, server, client and server or custom.
-         * If custom is specified at least one of coordinatesField, regionField or countryField is
-         * required. Defaults to client.
+         * Indicates which coordinates to show.  Either client, server, client and server or custom. If custom is specified at least one of  coordinatesField, regionField or countryField is required. Defaults to client.
          *
          * @param include the value to set
          * @return this builder
-         */
+         **/
         public Builder include(Include include) {
             this.include = include;
             this.__explicitlySet__.add("include");
             return this;
         }
-        /** The city field to use. Only applicable when include = CUSTOM. */
+        /**
+         * The city field to use. Only applicable when include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cityField")
         private AbstractField cityField;
 
@@ -111,13 +111,16 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param cityField the value to set
          * @return this builder
-         */
+         **/
         public Builder cityField(AbstractField cityField) {
             this.cityField = cityField;
             this.__explicitlySet__.add("cityField");
             return this;
         }
-        /** The region field to use. Only applicable when include = CUSTOM. */
+        /**
+         * The region field to use. Only applicable when include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regionField")
         private AbstractField regionField;
 
@@ -126,13 +129,16 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param regionField the value to set
          * @return this builder
-         */
+         **/
         public Builder regionField(AbstractField regionField) {
             this.regionField = regionField;
             this.__explicitlySet__.add("regionField");
             return this;
         }
-        /** The country field to use. Only applicable when include = CUSTOM. */
+        /**
+         * The country field to use. Only applicable when include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("countryField")
         private AbstractField countryField;
 
@@ -141,13 +147,16 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param countryField the value to set
          * @return this builder
-         */
+         **/
         public Builder countryField(AbstractField countryField) {
             this.countryField = countryField;
             this.__explicitlySet__.add("countryField");
             return this;
         }
-        /** The continent field to use. Only applicable when include = CUSTOM. */
+        /**
+         * The continent field to use. Only applicable when include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("continentField")
         private AbstractField continentField;
 
@@ -156,13 +165,16 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param continentField the value to set
          * @return this builder
-         */
+         **/
         public Builder continentField(AbstractField continentField) {
             this.continentField = continentField;
             this.__explicitlySet__.add("continentField");
             return this;
         }
-        /** The coordinates field to use. Only applicable when include = CUSTOM. */
+        /**
+         * The coordinates field to use. Only applicable when include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("coordinatesField")
         private AbstractField coordinatesField;
 
@@ -171,41 +183,43 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
          *
          * @param coordinatesField the value to set
          * @return this builder
-         */
+         **/
         public Builder coordinatesField(AbstractField coordinatesField) {
             this.coordinatesField = coordinatesField;
             this.__explicitlySet__.add("coordinatesField");
             return this;
         }
-        /** Group by fields if specified in the query string. Required if include = CUSTOM. */
+        /**
+         * Group by fields if specified in the query string.  Required if include = CUSTOM.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
         private java.util.List<AbstractField> groupByFields;
 
         /**
-         * Group by fields if specified in the query string. Required if include = CUSTOM.
+         * Group by fields if specified in the query string.  Required if include = CUSTOM.
          *
          * @param groupByFields the value to set
          * @return this builder
-         */
+         **/
         public Builder groupByFields(java.util.List<AbstractField> groupByFields) {
             this.groupByFields = groupByFields;
             this.__explicitlySet__.add("groupByFields");
             return this;
         }
         /**
-         * Statistical functions specified in the query string. At least 1 is required for a
-         * GEOSTATS command.
-         */
+         * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS command.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functions")
         private java.util.List<FunctionField> functions;
 
         /**
-         * Statistical functions specified in the query string. At least 1 is required for a
-         * GEOSTATS command.
+         * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS command.
          *
          * @param functions the value to set
          * @return this builder
-         */
+         **/
         public Builder functions(java.util.List<FunctionField> functions) {
             this.functions = functions;
             this.__explicitlySet__.add("functions");
@@ -286,7 +300,9 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -329,19 +345,18 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
     }
 
     /**
-     * Indicates which coordinates to show. Either client, server, client and server or custom. If
-     * custom is specified at least one of coordinatesField, regionField or countryField is
-     * required. Defaults to client.
-     */
-    public enum Include implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates which coordinates to show.  Either client, server, client and server or custom. If custom is specified at least one of  coordinatesField, regionField or countryField is required. Defaults to client.
+     *
+     **/
+    public enum Include {
         Client("CLIENT"),
         Server("SERVER"),
         ClientAndServer("CLIENT_AND_SERVER"),
         Custom("CUSTOM"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -381,25 +396,25 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
         }
     };
     /**
-     * Indicates which coordinates to show. Either client, server, client and server or custom. If
-     * custom is specified at least one of coordinatesField, regionField or countryField is
-     * required. Defaults to client.
-     */
+     * Indicates which coordinates to show.  Either client, server, client and server or custom. If custom is specified at least one of  coordinatesField, regionField or countryField is required. Defaults to client.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("include")
     private final Include include;
 
     /**
-     * Indicates which coordinates to show. Either client, server, client and server or custom. If
-     * custom is specified at least one of coordinatesField, regionField or countryField is
-     * required. Defaults to client.
+     * Indicates which coordinates to show.  Either client, server, client and server or custom. If custom is specified at least one of  coordinatesField, regionField or countryField is required. Defaults to client.
      *
      * @return the value
-     */
+     **/
     public Include getInclude() {
         return include;
     }
 
-    /** The city field to use. Only applicable when include = CUSTOM. */
+    /**
+     * The city field to use. Only applicable when include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cityField")
     private final AbstractField cityField;
 
@@ -407,12 +422,15 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * The city field to use. Only applicable when include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public AbstractField getCityField() {
         return cityField;
     }
 
-    /** The region field to use. Only applicable when include = CUSTOM. */
+    /**
+     * The region field to use. Only applicable when include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regionField")
     private final AbstractField regionField;
 
@@ -420,12 +438,15 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * The region field to use. Only applicable when include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public AbstractField getRegionField() {
         return regionField;
     }
 
-    /** The country field to use. Only applicable when include = CUSTOM. */
+    /**
+     * The country field to use. Only applicable when include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("countryField")
     private final AbstractField countryField;
 
@@ -433,12 +454,15 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * The country field to use. Only applicable when include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public AbstractField getCountryField() {
         return countryField;
     }
 
-    /** The continent field to use. Only applicable when include = CUSTOM. */
+    /**
+     * The continent field to use. Only applicable when include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("continentField")
     private final AbstractField continentField;
 
@@ -446,12 +470,15 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * The continent field to use. Only applicable when include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public AbstractField getContinentField() {
         return continentField;
     }
 
-    /** The coordinates field to use. Only applicable when include = CUSTOM. */
+    /**
+     * The coordinates field to use. Only applicable when include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("coordinatesField")
     private final AbstractField coordinatesField;
 
@@ -459,37 +486,39 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
      * The coordinates field to use. Only applicable when include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public AbstractField getCoordinatesField() {
         return coordinatesField;
     }
 
-    /** Group by fields if specified in the query string. Required if include = CUSTOM. */
+    /**
+     * Group by fields if specified in the query string.  Required if include = CUSTOM.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupByFields")
     private final java.util.List<AbstractField> groupByFields;
 
     /**
-     * Group by fields if specified in the query string. Required if include = CUSTOM.
+     * Group by fields if specified in the query string.  Required if include = CUSTOM.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AbstractField> getGroupByFields() {
         return groupByFields;
     }
 
     /**
-     * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS
-     * command.
-     */
+     * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS command.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("functions")
     private final java.util.List<FunctionField> functions;
 
     /**
-     * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS
-     * command.
+     * Statistical functions specified in the query string. At least 1 is required for a GEOSTATS command.
      *
      * @return the value
-     */
+     **/
     public java.util.List<FunctionField> getFunctions() {
         return functions;
     }
@@ -501,7 +530,6 @@ public final class GeoStatsCommandDescriptor extends AbstractCommandDescriptor {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

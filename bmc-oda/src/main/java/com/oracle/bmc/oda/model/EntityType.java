@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.oda.model;
 
-/** The valid set of entity type values. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
-public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The valid set of entity type values.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190506")
+public enum EntityType {
     Composite("COMPOSITE"),
     EnumValues("ENUM_VALUES"),
     ;

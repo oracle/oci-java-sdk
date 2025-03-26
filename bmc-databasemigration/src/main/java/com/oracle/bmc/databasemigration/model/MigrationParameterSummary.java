@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration parameter response object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+ * Migration parameter response object.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MigrationParameterSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MigrationParameterSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MigrationParameterSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "databaseCombination",
@@ -71,199 +70,212 @@ public final class MigrationParameterSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The combination of source and target databases participating in a migration. Example:
-         * ORACLE means the migration is meant for migrating Oracle source and target databases.
-         */
+         * The combination of source and target databases participating in a migration.
+         * Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseCombination")
         private DatabaseCombination databaseCombination;
 
         /**
-         * The combination of source and target databases participating in a migration. Example:
-         * ORACLE means the migration is meant for migrating Oracle source and target databases.
+         * The combination of source and target databases participating in a migration.
+         * Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
          *
          * @param databaseCombination the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseCombination(DatabaseCombination databaseCombination) {
             this.databaseCombination = databaseCombination;
             this.__explicitlySet__.add("databaseCombination");
             return this;
         }
-        /** Parameter display name. */
+        /**
+         * Parameter display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Parameter display name.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Parameter documentation URL link. */
+        /**
+         * Parameter documentation URL link.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("docUrlLink")
         private String docUrlLink;
 
         /**
          * Parameter documentation URL link.
-         *
          * @param docUrlLink the value to set
          * @return this builder
-         */
+         **/
         public Builder docUrlLink(String docUrlLink) {
             this.docUrlLink = docUrlLink;
             this.__explicitlySet__.add("docUrlLink");
             return this;
         }
-        /** Parameter name description. */
+        /**
+         * Parameter name description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * Parameter name description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Parameter category name. */
+        /**
+         * Parameter category name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
         private String categoryName;
 
         /**
          * Parameter category name.
-         *
          * @param categoryName the value to set
          * @return this builder
-         */
+         **/
         public Builder categoryName(String categoryName) {
             this.categoryName = categoryName;
             this.__explicitlySet__.add("categoryName");
             return this;
         }
-        /** Parameter category display name. */
+        /**
+         * Parameter category display name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("categoryDisplayName")
         private String categoryDisplayName;
 
         /**
          * Parameter category display name.
-         *
          * @param categoryDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder categoryDisplayName(String categoryDisplayName) {
             this.categoryDisplayName = categoryDisplayName;
             this.__explicitlySet__.add("categoryDisplayName");
             return this;
         }
-        /** Migration Stage. */
+        /**
+         * Migration Stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
         private MigrationTypes migrationType;
 
         /**
          * Migration Stage.
-         *
          * @param migrationType the value to set
          * @return this builder
-         */
+         **/
         public Builder migrationType(MigrationTypes migrationType) {
             this.migrationType = migrationType;
             this.__explicitlySet__.add("migrationType");
             return this;
         }
-        /** Default value for a parameter. */
+        /**
+         * Default value for a parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
         private String defaultValue;
 
         /**
          * Default value for a parameter.
-         *
          * @param defaultValue the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultValue(String defaultValue) {
             this.defaultValue = defaultValue;
             this.__explicitlySet__.add("defaultValue");
             return this;
         }
-        /** Parameter minimum value. */
+        /**
+         * Parameter minimum value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minValue")
         private Float minValue;
 
         /**
          * Parameter minimum value.
-         *
          * @param minValue the value to set
          * @return this builder
-         */
+         **/
         public Builder minValue(Float minValue) {
             this.minValue = minValue;
             this.__explicitlySet__.add("minValue");
             return this;
         }
-        /** Parameter maximum value. */
+        /**
+         * Parameter maximum value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
         private Float maxValue;
 
         /**
          * Parameter maximum value.
-         *
          * @param maxValue the value to set
          * @return this builder
-         */
+         **/
         public Builder maxValue(Float maxValue) {
             this.maxValue = maxValue;
             this.__explicitlySet__.add("maxValue");
             return this;
         }
-        /** Hint text for parameter value. */
+        /**
+         * Hint text for parameter value.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hintText")
         private String hintText;
 
         /**
          * Hint text for parameter value.
-         *
          * @param hintText the value to set
          * @return this builder
-         */
+         **/
         public Builder hintText(String hintText) {
             this.hintText = hintText;
             this.__explicitlySet__.add("hintText");
             return this;
         }
-        /** Parameter name. */
+        /**
+         * Parameter name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Parameter name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Parameter data type. */
+        /**
+         * Parameter data type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private AdvancedParameterDataTypes dataType;
 
         /**
          * Parameter data type.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(AdvancedParameterDataTypes dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -340,7 +352,9 @@ public final class MigrationParameterSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -350,174 +364,187 @@ public final class MigrationParameterSummary
     }
 
     /**
-     * The combination of source and target databases participating in a migration. Example: ORACLE
-     * means the migration is meant for migrating Oracle source and target databases.
-     */
+     * The combination of source and target databases participating in a migration.
+     * Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseCombination")
     private final DatabaseCombination databaseCombination;
 
     /**
-     * The combination of source and target databases participating in a migration. Example: ORACLE
-     * means the migration is meant for migrating Oracle source and target databases.
+     * The combination of source and target databases participating in a migration.
+     * Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
      *
      * @return the value
-     */
+     **/
     public DatabaseCombination getDatabaseCombination() {
         return databaseCombination;
     }
 
-    /** Parameter display name. */
+    /**
+     * Parameter display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Parameter display name.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** Parameter documentation URL link. */
+    /**
+     * Parameter documentation URL link.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("docUrlLink")
     private final String docUrlLink;
 
     /**
      * Parameter documentation URL link.
-     *
      * @return the value
-     */
+     **/
     public String getDocUrlLink() {
         return docUrlLink;
     }
 
-    /** Parameter name description. */
+    /**
+     * Parameter name description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * Parameter name description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** Parameter category name. */
+    /**
+     * Parameter category name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryName")
     private final String categoryName;
 
     /**
      * Parameter category name.
-     *
      * @return the value
-     */
+     **/
     public String getCategoryName() {
         return categoryName;
     }
 
-    /** Parameter category display name. */
+    /**
+     * Parameter category display name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("categoryDisplayName")
     private final String categoryDisplayName;
 
     /**
      * Parameter category display name.
-     *
      * @return the value
-     */
+     **/
     public String getCategoryDisplayName() {
         return categoryDisplayName;
     }
 
-    /** Migration Stage. */
+    /**
+     * Migration Stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("migrationType")
     private final MigrationTypes migrationType;
 
     /**
      * Migration Stage.
-     *
      * @return the value
-     */
+     **/
     public MigrationTypes getMigrationType() {
         return migrationType;
     }
 
-    /** Default value for a parameter. */
+    /**
+     * Default value for a parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultValue")
     private final String defaultValue;
 
     /**
      * Default value for a parameter.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultValue() {
         return defaultValue;
     }
 
-    /** Parameter minimum value. */
+    /**
+     * Parameter minimum value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minValue")
     private final Float minValue;
 
     /**
      * Parameter minimum value.
-     *
      * @return the value
-     */
+     **/
     public Float getMinValue() {
         return minValue;
     }
 
-    /** Parameter maximum value. */
+    /**
+     * Parameter maximum value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxValue")
     private final Float maxValue;
 
     /**
      * Parameter maximum value.
-     *
      * @return the value
-     */
+     **/
     public Float getMaxValue() {
         return maxValue;
     }
 
-    /** Hint text for parameter value. */
+    /**
+     * Hint text for parameter value.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hintText")
     private final String hintText;
 
     /**
      * Hint text for parameter value.
-     *
      * @return the value
-     */
+     **/
     public String getHintText() {
         return hintText;
     }
 
-    /** Parameter name. */
+    /**
+     * Parameter name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Parameter name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Parameter data type. */
+    /**
+     * Parameter data type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final AdvancedParameterDataTypes dataType;
 
     /**
      * Parameter data type.
-     *
      * @return the value
-     */
+     **/
     public AdvancedParameterDataTypes getDataType() {
         return dataType;
     }
@@ -529,7 +556,6 @@ public final class MigrationParameterSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.goldengate.model;
 
-/** Possible recipe types for a pipeline. A recipe is a set of steps that run in a sequence. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
-public enum RecipeType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible recipe types for a pipeline. A recipe is a set of steps that run in a sequence.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+public enum RecipeType {
     ZeroEtl("ZERO_ETL"),
 
     /**

@@ -5,25 +5,25 @@
 package com.oracle.bmc.ospgateway.model;
 
 /**
- * Other Payment related details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
+ * Other Payment related details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20191001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OtherPaymentDetail.Builder.class)
+    builder = OtherPaymentDetail.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "paymentMethod")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "paymentMethod"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OtherPaymentDetail extends PaymentDetail {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -53,76 +53,81 @@ public final class OtherPaymentDetail extends PaymentDetail {
             this.__explicitlySet__.add("amountPaid");
             return this;
         }
-        /** Last four routing digits of the card */
+        /**
+         * Last four routing digits of the card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("echeckRouting")
         private String echeckRouting;
 
         /**
          * Last four routing digits of the card
-         *
          * @param echeckRouting the value to set
          * @return this builder
-         */
+         **/
         public Builder echeckRouting(String echeckRouting) {
             this.echeckRouting = echeckRouting;
             this.__explicitlySet__.add("echeckRouting");
             return this;
         }
-        /** Name on the echeck card */
+        /**
+         * Name on the echeck card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
         private String nameOnCard;
 
         /**
          * Name on the echeck card
-         *
          * @param nameOnCard the value to set
          * @return this builder
-         */
+         **/
         public Builder nameOnCard(String nameOnCard) {
             this.nameOnCard = nameOnCard;
             this.__explicitlySet__.add("nameOnCard");
             return this;
         }
-        /** Echeck card type */
+        /**
+         * Echeck card type
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
         private CreditCardType creditCardType;
 
         /**
          * Echeck card type
-         *
          * @param creditCardType the value to set
          * @return this builder
-         */
+         **/
         public Builder creditCardType(CreditCardType creditCardType) {
             this.creditCardType = creditCardType;
             this.__explicitlySet__.add("creditCardType");
             return this;
         }
-        /** Last four digits of the card */
+        /**
+         * Last four digits of the card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
         private String lastDigits;
 
         /**
          * Last four digits of the card
-         *
          * @param lastDigits the value to set
          * @return this builder
-         */
+         **/
         public Builder lastDigits(String lastDigits) {
             this.lastDigits = lastDigits;
             this.__explicitlySet__.add("lastDigits");
             return this;
         }
-        /** Expired date of the echeck card */
+        /**
+         * Expired date of the echeck card
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
         private java.util.Date timeExpiration;
 
         /**
          * Expired date of the echeck card
-         *
          * @param timeExpiration the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpiration(java.util.Date timeExpiration) {
             this.timeExpiration = timeExpiration;
             this.__explicitlySet__.add("timeExpiration");
@@ -179,7 +184,9 @@ public final class OtherPaymentDetail extends PaymentDetail {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -206,34 +213,38 @@ public final class OtherPaymentDetail extends PaymentDetail {
         this.timeExpiration = timeExpiration;
     }
 
-    /** Last four routing digits of the card */
+    /**
+     * Last four routing digits of the card
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("echeckRouting")
     private final String echeckRouting;
 
     /**
      * Last four routing digits of the card
-     *
      * @return the value
-     */
+     **/
     public String getEcheckRouting() {
         return echeckRouting;
     }
 
-    /** Name on the echeck card */
+    /**
+     * Name on the echeck card
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameOnCard")
     private final String nameOnCard;
 
     /**
      * Name on the echeck card
-     *
      * @return the value
-     */
+     **/
     public String getNameOnCard() {
         return nameOnCard;
     }
 
-    /** Echeck card type */
-    public enum CreditCardType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Echeck card type
+     **/
+    public enum CreditCardType {
         Visa("VISA"),
         Amex("AMEX"),
         Mastercard("MASTERCARD"),
@@ -246,8 +257,8 @@ public final class OtherPaymentDetail extends PaymentDetail {
         CorporateChecking("CORPORATE_CHECKING"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -286,41 +297,44 @@ public final class OtherPaymentDetail extends PaymentDetail {
             return UnknownEnumValue;
         }
     };
-    /** Echeck card type */
+    /**
+     * Echeck card type
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("creditCardType")
     private final CreditCardType creditCardType;
 
     /**
      * Echeck card type
-     *
      * @return the value
-     */
+     **/
     public CreditCardType getCreditCardType() {
         return creditCardType;
     }
 
-    /** Last four digits of the card */
+    /**
+     * Last four digits of the card
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lastDigits")
     private final String lastDigits;
 
     /**
      * Last four digits of the card
-     *
      * @return the value
-     */
+     **/
     public String getLastDigits() {
         return lastDigits;
     }
 
-    /** Expired date of the echeck card */
+    /**
+     * Expired date of the echeck card
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiration")
     private final java.util.Date timeExpiration;
 
     /**
      * Expired date of the echeck card
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpiration() {
         return timeExpiration;
     }
@@ -332,7 +346,6 @@ public final class OtherPaymentDetail extends PaymentDetail {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

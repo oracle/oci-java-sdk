@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Details about the IPv6 primary subnet. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details about the IPv6 primary subnet.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstancePoolPlacementPrimarySubnet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstancePoolPlacementPrimarySubnet.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstancePoolPlacementPrimarySubnet
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isAssignIpv6Ip",
@@ -43,46 +42,50 @@ public final class InstancePoolPlacementPrimarySubnet
     public static class Builder {
         /**
          * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
-         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
-         * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code
-         * ipv6SubnetCidr} is not provided then an IPv6 prefix is chosen for you.
-         */
+         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+         * ({@code ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr}
+         * is not provided then an IPv6 prefix is chosen
+         * for you.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAssignIpv6Ip")
         private Boolean isAssignIpv6Ip;
 
         /**
          * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
-         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
-         * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code
-         * ipv6SubnetCidr} is not provided then an IPv6 prefix is chosen for you.
+         * subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+         * ({@code ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr}
+         * is not provided then an IPv6 prefix is chosen
+         * for you.
          *
          * @param isAssignIpv6Ip the value to set
          * @return this builder
-         */
+         **/
         public Builder isAssignIpv6Ip(Boolean isAssignIpv6Ip) {
             this.isAssignIpv6Ip = isAssignIpv6Ip;
             this.__explicitlySet__.add("isAssignIpv6Ip");
             return this;
         }
         /**
-         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You
-         * can provide only the prefix ranges and OCI will select an available address from the
-         * range. You can optionally choose to leave the prefix range empty and instead provide the
-         * specific IPv6 address that should be used from within that range.
-         */
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+         * You can provide only the prefix ranges and OCI will select an available
+         * address from the range. You can optionally choose to leave the prefix range empty
+         * and instead provide the specific IPv6 address that should be used from within that range.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
         private java.util.List<InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails>
                 ipv6AddressIpv6SubnetCidrPairDetails;
 
         /**
-         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You
-         * can provide only the prefix ranges and OCI will select an available address from the
-         * range. You can optionally choose to leave the prefix range empty and instead provide the
-         * specific IPv6 address that should be used from within that range.
+         * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+         * You can provide only the prefix ranges and OCI will select an available
+         * address from the range. You can optionally choose to leave the prefix range empty
+         * and instead provide the specific IPv6 address that should be used from within that range.
          *
          * @param ipv6AddressIpv6SubnetCidrPairDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder ipv6AddressIpv6SubnetCidrPairDetails(
                 java.util.List<InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails>
                         ipv6AddressIpv6SubnetCidrPairDetails) {
@@ -91,19 +94,16 @@ public final class InstancePoolPlacementPrimarySubnet
             return this;
         }
         /**
-         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the secondary VNIC.
-         */
+         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * for the secondary VNIC.
-         *
+         * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -141,7 +141,9 @@ public final class InstancePoolPlacementPrimarySubnet
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -152,61 +154,62 @@ public final class InstancePoolPlacementPrimarySubnet
 
     /**
      * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
-     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
-     * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr} is
-     * not provided then an IPv6 prefix is chosen for you.
-     */
+     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+     * ({@code ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr}
+     * is not provided then an IPv6 prefix is chosen
+     * for you.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAssignIpv6Ip")
     private final Boolean isAssignIpv6Ip;
 
     /**
      * Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled
-     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix ({@code
-     * ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr} is
-     * not provided then an IPv6 prefix is chosen for you.
+     * subnet. Default: False. When provided you may optionally provide an IPv6 prefix
+     * ({@code ipv6SubnetCidr}) of your choice to assign the IPv6 address from. If {@code ipv6SubnetCidr}
+     * is not provided then an IPv6 prefix is chosen
+     * for you.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAssignIpv6Ip() {
         return isAssignIpv6Ip;
     }
 
     /**
-     * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can
-     * provide only the prefix ranges and OCI will select an available address from the range. You
-     * can optionally choose to leave the prefix range empty and instead provide the specific IPv6
-     * address that should be used from within that range.
-     */
+     * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+     * You can provide only the prefix ranges and OCI will select an available
+     * address from the range. You can optionally choose to leave the prefix range empty
+     * and instead provide the specific IPv6 address that should be used from within that range.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipv6AddressIpv6SubnetCidrPairDetails")
     private final java.util.List<InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails>
             ipv6AddressIpv6SubnetCidrPairDetails;
 
     /**
-     * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can
-     * provide only the prefix ranges and OCI will select an available address from the range. You
-     * can optionally choose to leave the prefix range empty and instead provide the specific IPv6
-     * address that should be used from within that range.
+     * A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address.
+     * You can provide only the prefix ranges and OCI will select an available
+     * address from the range. You can optionally choose to leave the prefix range empty
+     * and instead provide the specific IPv6 address that should be used from within that range.
      *
      * @return the value
-     */
+     **/
     public java.util.List<InstancePoolPlacementIpv6AddressIpv6SubnetCidrDetails>
             getIpv6AddressIpv6SubnetCidrPairDetails() {
         return ipv6AddressIpv6SubnetCidrPairDetails;
     }
 
     /**
-     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the secondary VNIC.
-     */
+     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
-     * the secondary VNIC.
-     *
+     * The subnet [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -218,7 +221,6 @@ public final class InstancePoolPlacementPrimarySubnet
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

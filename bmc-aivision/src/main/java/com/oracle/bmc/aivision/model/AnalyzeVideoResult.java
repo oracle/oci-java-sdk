@@ -5,23 +5,21 @@
 package com.oracle.bmc.aivision.model;
 
 /**
- * Video analysis results. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+ * Video analysis results.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AnalyzeVideoResult.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AnalyzeVideoResult
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AnalyzeVideoResult.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AnalyzeVideoResult extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "videoMetadata",
@@ -79,181 +77,193 @@ public final class AnalyzeVideoResult
             this.__explicitlySet__.add("videoMetadata");
             return this;
         }
-        /** Detected labels in a video. */
+        /**
+         * Detected labels in a video.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videoLabels")
         private java.util.List<VideoLabel> videoLabels;
 
         /**
          * Detected labels in a video.
-         *
          * @param videoLabels the value to set
          * @return this builder
-         */
+         **/
         public Builder videoLabels(java.util.List<VideoLabel> videoLabels) {
             this.videoLabels = videoLabels;
             this.__explicitlySet__.add("videoLabels");
             return this;
         }
-        /** Detected objects in a video. */
+        /**
+         * Detected objects in a video.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videoObjects")
         private java.util.List<VideoObject> videoObjects;
 
         /**
          * Detected objects in a video.
-         *
          * @param videoObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder videoObjects(java.util.List<VideoObject> videoObjects) {
             this.videoObjects = videoObjects;
             this.__explicitlySet__.add("videoObjects");
             return this;
         }
-        /** Tracked objects in a video. */
+        /**
+         * Tracked objects in a video.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videoTrackedObjects")
         private java.util.List<VideoTrackedObject> videoTrackedObjects;
 
         /**
          * Tracked objects in a video.
-         *
          * @param videoTrackedObjects the value to set
          * @return this builder
-         */
+         **/
         public Builder videoTrackedObjects(java.util.List<VideoTrackedObject> videoTrackedObjects) {
             this.videoTrackedObjects = videoTrackedObjects;
             this.__explicitlySet__.add("videoTrackedObjects");
             return this;
         }
-        /** Detected text in a video. */
+        /**
+         * Detected text in a video.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videoText")
         private java.util.List<VideoText> videoText;
 
         /**
          * Detected text in a video.
-         *
          * @param videoText the value to set
          * @return this builder
-         */
+         **/
         public Builder videoText(java.util.List<VideoText> videoText) {
             this.videoText = videoText;
             this.__explicitlySet__.add("videoText");
             return this;
         }
-        /** Detected faces in a video. */
+        /**
+         * Detected faces in a video.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("videoFaces")
         private java.util.List<VideoFace> videoFaces;
 
         /**
          * Detected faces in a video.
-         *
          * @param videoFaces the value to set
          * @return this builder
-         */
+         **/
         public Builder videoFaces(java.util.List<VideoFace> videoFaces) {
             this.videoFaces = videoFaces;
             this.__explicitlySet__.add("videoFaces");
             return this;
         }
-        /** The ontologyClasses of video labels. */
+        /**
+         * The ontologyClasses of video labels.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
         private java.util.List<OntologyClass> ontologyClasses;
 
         /**
          * The ontologyClasses of video labels.
-         *
          * @param ontologyClasses the value to set
          * @return this builder
-         */
+         **/
         public Builder ontologyClasses(java.util.List<OntologyClass> ontologyClasses) {
             this.ontologyClasses = ontologyClasses;
             this.__explicitlySet__.add("ontologyClasses");
             return this;
         }
-        /** Label Detection model version. */
+        /**
+         * Label Detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labelDetectionModelVersion")
         private String labelDetectionModelVersion;
 
         /**
          * Label Detection model version.
-         *
          * @param labelDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder labelDetectionModelVersion(String labelDetectionModelVersion) {
             this.labelDetectionModelVersion = labelDetectionModelVersion;
             this.__explicitlySet__.add("labelDetectionModelVersion");
             return this;
         }
-        /** Object Detection model version. */
+        /**
+         * Object Detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
         private String objectDetectionModelVersion;
 
         /**
          * Object Detection model version.
-         *
          * @param objectDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectDetectionModelVersion(String objectDetectionModelVersion) {
             this.objectDetectionModelVersion = objectDetectionModelVersion;
             this.__explicitlySet__.add("objectDetectionModelVersion");
             return this;
         }
-        /** Object Tracking model version. */
+        /**
+         * Object Tracking model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectTrackingModelVersion")
         private String objectTrackingModelVersion;
 
         /**
          * Object Tracking model version.
-         *
          * @param objectTrackingModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder objectTrackingModelVersion(String objectTrackingModelVersion) {
             this.objectTrackingModelVersion = objectTrackingModelVersion;
             this.__explicitlySet__.add("objectTrackingModelVersion");
             return this;
         }
-        /** Text Detection model version. */
+        /**
+         * Text Detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
         private String textDetectionModelVersion;
 
         /**
          * Text Detection model version.
-         *
          * @param textDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder textDetectionModelVersion(String textDetectionModelVersion) {
             this.textDetectionModelVersion = textDetectionModelVersion;
             this.__explicitlySet__.add("textDetectionModelVersion");
             return this;
         }
-        /** Face Detection model version. */
+        /**
+         * Face Detection model version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
         private String faceDetectionModelVersion;
 
         /**
          * Face Detection model version.
-         *
          * @param faceDetectionModelVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder faceDetectionModelVersion(String faceDetectionModelVersion) {
             this.faceDetectionModelVersion = faceDetectionModelVersion;
             this.__explicitlySet__.add("faceDetectionModelVersion");
             return this;
         }
-        /** Array of possible errors. */
+        /**
+         * Array of possible errors.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errors")
         private java.util.List<ProcessingError> errors;
 
         /**
          * Array of possible errors.
-         *
          * @param errors the value to set
          * @return this builder
-         */
+         **/
         public Builder errors(java.util.List<ProcessingError> errors) {
             this.errors = errors;
             this.__explicitlySet__.add("errors");
@@ -330,7 +340,9 @@ public final class AnalyzeVideoResult
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -346,158 +358,170 @@ public final class AnalyzeVideoResult
         return videoMetadata;
     }
 
-    /** Detected labels in a video. */
+    /**
+     * Detected labels in a video.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videoLabels")
     private final java.util.List<VideoLabel> videoLabels;
 
     /**
      * Detected labels in a video.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoLabel> getVideoLabels() {
         return videoLabels;
     }
 
-    /** Detected objects in a video. */
+    /**
+     * Detected objects in a video.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videoObjects")
     private final java.util.List<VideoObject> videoObjects;
 
     /**
      * Detected objects in a video.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoObject> getVideoObjects() {
         return videoObjects;
     }
 
-    /** Tracked objects in a video. */
+    /**
+     * Tracked objects in a video.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videoTrackedObjects")
     private final java.util.List<VideoTrackedObject> videoTrackedObjects;
 
     /**
      * Tracked objects in a video.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoTrackedObject> getVideoTrackedObjects() {
         return videoTrackedObjects;
     }
 
-    /** Detected text in a video. */
+    /**
+     * Detected text in a video.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videoText")
     private final java.util.List<VideoText> videoText;
 
     /**
      * Detected text in a video.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoText> getVideoText() {
         return videoText;
     }
 
-    /** Detected faces in a video. */
+    /**
+     * Detected faces in a video.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("videoFaces")
     private final java.util.List<VideoFace> videoFaces;
 
     /**
      * Detected faces in a video.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<VideoFace> getVideoFaces() {
         return videoFaces;
     }
 
-    /** The ontologyClasses of video labels. */
+    /**
+     * The ontologyClasses of video labels.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ontologyClasses")
     private final java.util.List<OntologyClass> ontologyClasses;
 
     /**
      * The ontologyClasses of video labels.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OntologyClass> getOntologyClasses() {
         return ontologyClasses;
     }
 
-    /** Label Detection model version. */
+    /**
+     * Label Detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labelDetectionModelVersion")
     private final String labelDetectionModelVersion;
 
     /**
      * Label Detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getLabelDetectionModelVersion() {
         return labelDetectionModelVersion;
     }
 
-    /** Object Detection model version. */
+    /**
+     * Object Detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectDetectionModelVersion")
     private final String objectDetectionModelVersion;
 
     /**
      * Object Detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getObjectDetectionModelVersion() {
         return objectDetectionModelVersion;
     }
 
-    /** Object Tracking model version. */
+    /**
+     * Object Tracking model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectTrackingModelVersion")
     private final String objectTrackingModelVersion;
 
     /**
      * Object Tracking model version.
-     *
      * @return the value
-     */
+     **/
     public String getObjectTrackingModelVersion() {
         return objectTrackingModelVersion;
     }
 
-    /** Text Detection model version. */
+    /**
+     * Text Detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("textDetectionModelVersion")
     private final String textDetectionModelVersion;
 
     /**
      * Text Detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getTextDetectionModelVersion() {
         return textDetectionModelVersion;
     }
 
-    /** Face Detection model version. */
+    /**
+     * Face Detection model version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("faceDetectionModelVersion")
     private final String faceDetectionModelVersion;
 
     /**
      * Face Detection model version.
-     *
      * @return the value
-     */
+     **/
     public String getFaceDetectionModelVersion() {
         return faceDetectionModelVersion;
     }
 
-    /** Array of possible errors. */
+    /**
+     * Array of possible errors.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errors")
     private final java.util.List<ProcessingError> errors;
 
     /**
      * Array of possible errors.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ProcessingError> getErrors() {
         return errors;
     }
@@ -509,7 +533,6 @@ public final class AnalyzeVideoResult
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

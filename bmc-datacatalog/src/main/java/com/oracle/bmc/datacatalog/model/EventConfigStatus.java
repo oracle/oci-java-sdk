@@ -5,12 +5,13 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Enum representing whether or not to emit an event when a relevant action (e.g. modifying a custom
- * property value) is performed by the user on this type. ENABLED - Event is emitted. DISABLED -
- * Event is not emitted.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
-public enum EventConfigStatus implements com.oracle.bmc.http.internal.BmcEnum {
+ * Enum representing whether or not to emit an event when a relevant action (e.g. modifying a custom property value) is performed by the user on this type.
+ * ENABLED - Event is emitted.
+ * DISABLED - Event is not emitted.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+public enum EventConfigStatus {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

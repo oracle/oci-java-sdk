@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Lifecycle state value of Metric Extension like ACTIVE or DELETED or NEEDS_ATTENTION */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum MetricExtensionLifeCycleStates implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Lifecycle state value of Metric Extension like ACTIVE or DELETED or NEEDS_ATTENTION
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum MetricExtensionLifeCycleStates {
     Active("ACTIVE"),
     Deleted("DELETED"),
 

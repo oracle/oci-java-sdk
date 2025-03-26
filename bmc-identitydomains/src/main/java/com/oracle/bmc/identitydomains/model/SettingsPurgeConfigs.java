@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Purge Configs for different Resource Types <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Purge Configs for different Resource Types
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SettingsPurgeConfigs.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class SettingsPurgeConfigs
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = SettingsPurgeConfigs.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class SettingsPurgeConfigs extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"resourceName", "retentionPeriod"})
     public SettingsPurgeConfigs(String resourceName, Integer retentionPeriod) {
@@ -34,26 +32,33 @@ public final class SettingsPurgeConfigs
     public static class Builder {
         /**
          * Resource Name
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: string
-         */
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Resource Name
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: string
-         *
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
@@ -61,26 +66,33 @@ public final class SettingsPurgeConfigs
         }
         /**
          * Retention Period
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: integer
-         */
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
         private Integer retentionPeriod;
 
         /**
          * Retention Period
-         *
-         * <p>*Deprecated Since: 19.1.6**
-         *
-         * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-         * returned: default - type: integer
-         *
+         * <p>
+         **Deprecated Since: 19.1.6**
+         * <p>
+         **SCIM++ Properties:**
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: integer
          * @param retentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriod(Integer retentionPeriod) {
             this.retentionPeriod = retentionPeriod;
             this.__explicitlySet__.add("retentionPeriod");
@@ -111,7 +123,9 @@ public final class SettingsPurgeConfigs
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -122,50 +136,64 @@ public final class SettingsPurgeConfigs
 
     /**
      * Resource Name
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: string
-     */
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Resource Name
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: string
-     *
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
     /**
      * Retention Period
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: integer
-     */
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
     private final Integer retentionPeriod;
 
     /**
      * Retention Period
-     *
-     * <p>*Deprecated Since: 19.1.6**
-     *
-     * <p>*SCIM++ Properties:** - multiValued: false - mutability: readWrite - required: true -
-     * returned: default - type: integer
-     *
+     * <p>
+     **Deprecated Since: 19.1.6**
+     * <p>
+     **SCIM++ Properties:**
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: integer
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriod() {
         return retentionPeriod;
     }
@@ -177,7 +205,6 @@ public final class SettingsPurgeConfigs
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

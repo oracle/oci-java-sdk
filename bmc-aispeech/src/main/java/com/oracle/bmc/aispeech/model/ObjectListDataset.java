@@ -5,68 +5,71 @@
 package com.oracle.bmc.aispeech.model;
 
 /**
- * Data source details for object storage <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
+ * Data source details for object storage
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ObjectListDataset.Builder.class)
+    builder = ObjectListDataset.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "locationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "locationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ObjectListDataset extends LocationDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Object storage bucket name */
+        /**
+         * Object storage bucket name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * Object storage bucket name
-         *
          * @param bucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder bucketName(String bucketName) {
             this.bucketName = bucketName;
             this.__explicitlySet__.add("bucketName");
             return this;
         }
-        /** Object storage namespace */
+        /**
+         * Object storage namespace
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * Object storage namespace
-         *
          * @param namespaceName the value to set
          * @return this builder
-         */
+         **/
         public Builder namespaceName(String namespaceName) {
             this.namespaceName = namespaceName;
             this.__explicitlySet__.add("namespaceName");
             return this;
         }
-        /** Array of files (minimum 1, maximum 1024) which need to be processed in the bucket */
+        /**
+         * Array of files (minimum 1, maximum 1024) which need to be processed in the bucket
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectNames")
         private java.util.List<String> objectNames;
 
         /**
          * Array of files (minimum 1, maximum 1024) which need to be processed in the bucket
-         *
          * @param objectNames the value to set
          * @return this builder
-         */
+         **/
         public Builder objectNames(java.util.List<String> objectNames) {
             this.objectNames = objectNames;
             this.__explicitlySet__.add("objectNames");
@@ -100,7 +103,9 @@ public final class ObjectListDataset extends LocationDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -118,41 +123,44 @@ public final class ObjectListDataset extends LocationDetails {
         this.objectNames = objectNames;
     }
 
-    /** Object storage bucket name */
+    /**
+     * Object storage bucket name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * Object storage bucket name
-     *
      * @return the value
-     */
+     **/
     public String getBucketName() {
         return bucketName;
     }
 
-    /** Object storage namespace */
+    /**
+     * Object storage namespace
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * Object storage namespace
-     *
      * @return the value
-     */
+     **/
     public String getNamespaceName() {
         return namespaceName;
     }
 
-    /** Array of files (minimum 1, maximum 1024) which need to be processed in the bucket */
+    /**
+     * Array of files (minimum 1, maximum 1024) which need to be processed in the bucket
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectNames")
     private final java.util.List<String> objectNames;
 
     /**
      * Array of files (minimum 1, maximum 1024) which need to be processed in the bucket
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getObjectNames() {
         return objectNames;
     }
@@ -164,7 +172,6 @@ public final class ObjectListDataset extends LocationDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

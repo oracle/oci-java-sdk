@@ -5,29 +5,33 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Patch artifact description and content details which is platform specific <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * Patch artifact description and content details which is platform specific
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PlatformSpecificArtifactDetails.Builder.class)
+    builder = PlatformSpecificArtifactDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "category")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "category"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Artifacts. */
+        /**
+         * Artifacts.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("artifacts")
         private java.util.List<PlatformSpecificArtifact> artifacts;
 
@@ -36,7 +40,7 @@ public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
          *
          * @param artifacts the value to set
          * @return this builder
-         */
+         **/
         public Builder artifacts(java.util.List<PlatformSpecificArtifact> artifacts) {
             this.artifacts = artifacts;
             this.__explicitlySet__.add("artifacts");
@@ -64,7 +68,9 @@ public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -79,7 +85,10 @@ public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
         this.artifacts = artifacts;
     }
 
-    /** Artifacts. */
+    /**
+     * Artifacts.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("artifacts")
     private final java.util.List<PlatformSpecificArtifact> artifacts;
 
@@ -87,7 +96,7 @@ public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
      * Artifacts.
      *
      * @return the value
-     */
+     **/
     public java.util.List<PlatformSpecificArtifact> getArtifacts() {
         return artifacts;
     }
@@ -99,7 +108,6 @@ public final class PlatformSpecificArtifactDetails extends ArtifactDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

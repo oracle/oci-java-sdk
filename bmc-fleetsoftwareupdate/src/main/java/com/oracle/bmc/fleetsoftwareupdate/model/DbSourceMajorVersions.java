@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Possible source major versions for a DB Exadata Fleet Update Collection. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum DbSourceMajorVersions implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible source major versions for a DB Exadata Fleet Update Collection.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum DbSourceMajorVersions {
     Db11204("DB_11204"),
     Db121("DB_121"),
     Db122("DB_122"),

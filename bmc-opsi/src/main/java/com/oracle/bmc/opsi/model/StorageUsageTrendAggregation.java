@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Usage data per filesystem. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Usage data per filesystem.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = StorageUsageTrendAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = StorageUsageTrendAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class StorageUsageTrendAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "fileSystemName",
@@ -43,61 +42,65 @@ public final class StorageUsageTrendAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of filesystem. */
+        /**
+         * Name of filesystem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemName")
         private String fileSystemName;
 
         /**
          * Name of filesystem.
-         *
          * @param fileSystemName the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSystemName(String fileSystemName) {
             this.fileSystemName = fileSystemName;
             this.__explicitlySet__.add("fileSystemName");
             return this;
         }
-        /** Mount points are specialized NTFS filesystem objects. */
+        /**
+         * Mount points are specialized NTFS filesystem objects.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("mountPoint")
         private String mountPoint;
 
         /**
          * Mount points are specialized NTFS filesystem objects.
-         *
          * @param mountPoint the value to set
          * @return this builder
-         */
+         **/
         public Builder mountPoint(String mountPoint) {
             this.mountPoint = mountPoint;
             this.__explicitlySet__.add("mountPoint");
             return this;
         }
-        /** Size of filesystem. */
+        /**
+         * Size of filesystem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("fileSystemSizeInGBs")
         private Double fileSystemSizeInGBs;
 
         /**
          * Size of filesystem.
-         *
          * @param fileSystemSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder fileSystemSizeInGBs(Double fileSystemSizeInGBs) {
             this.fileSystemSizeInGBs = fileSystemSizeInGBs;
             this.__explicitlySet__.add("fileSystemSizeInGBs");
             return this;
         }
-        /** List of usage data samples for a filesystem. */
+        /**
+         * List of usage data samples for a filesystem.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("usageData")
         private java.util.List<StorageUsageTrend> usageData;
 
         /**
          * List of usage data samples for a filesystem.
-         *
          * @param usageData the value to set
          * @return this builder
-         */
+         **/
         public Builder usageData(java.util.List<StorageUsageTrend> usageData) {
             this.usageData = usageData;
             this.__explicitlySet__.add("usageData");
@@ -138,7 +141,9 @@ public final class StorageUsageTrendAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class StorageUsageTrendAggregation
         return new Builder().copy(this);
     }
 
-    /** Name of filesystem. */
+    /**
+     * Name of filesystem.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemName")
     private final String fileSystemName;
 
     /**
      * Name of filesystem.
-     *
      * @return the value
-     */
+     **/
     public String getFileSystemName() {
         return fileSystemName;
     }
 
-    /** Mount points are specialized NTFS filesystem objects. */
+    /**
+     * Mount points are specialized NTFS filesystem objects.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("mountPoint")
     private final String mountPoint;
 
     /**
      * Mount points are specialized NTFS filesystem objects.
-     *
      * @return the value
-     */
+     **/
     public String getMountPoint() {
         return mountPoint;
     }
 
-    /** Size of filesystem. */
+    /**
+     * Size of filesystem.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("fileSystemSizeInGBs")
     private final Double fileSystemSizeInGBs;
 
     /**
      * Size of filesystem.
-     *
      * @return the value
-     */
+     **/
     public Double getFileSystemSizeInGBs() {
         return fileSystemSizeInGBs;
     }
 
-    /** List of usage data samples for a filesystem. */
+    /**
+     * List of usage data samples for a filesystem.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("usageData")
     private final java.util.List<StorageUsageTrend> usageData;
 
     /**
      * List of usage data samples for a filesystem.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<StorageUsageTrend> getUsageData() {
         return usageData;
     }
@@ -206,7 +215,6 @@ public final class StorageUsageTrendAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

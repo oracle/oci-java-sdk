@@ -5,25 +5,25 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The connection summary details for the HDFS data asset. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The connection summary details for the HDFS data asset.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionSummaryFromHdfs.Builder.class)
+    builder = ConnectionSummaryFromHdfs.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConnectionSummaryFromHdfs extends ConnectionSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,76 +144,81 @@ public final class ConnectionSummaryFromHdfs extends ConnectionSummary {
             this.__explicitlySet__.add("keyMap");
             return this;
         }
-        /** The HDFS principal. */
+        /**
+         * The HDFS principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hdfsPrincipal")
         private String hdfsPrincipal;
 
         /**
          * The HDFS principal.
-         *
          * @param hdfsPrincipal the value to set
          * @return this builder
-         */
+         **/
         public Builder hdfsPrincipal(String hdfsPrincipal) {
             this.hdfsPrincipal = hdfsPrincipal;
             this.__explicitlySet__.add("hdfsPrincipal");
             return this;
         }
-        /** The HDFS Data Node principal. */
+        /**
+         * The HDFS Data Node principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodePrincipal")
         private String dataNodePrincipal;
 
         /**
          * The HDFS Data Node principal.
-         *
          * @param dataNodePrincipal the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodePrincipal(String dataNodePrincipal) {
             this.dataNodePrincipal = dataNodePrincipal;
             this.__explicitlySet__.add("dataNodePrincipal");
             return this;
         }
-        /** The HDFS Name Node principal. */
+        /**
+         * The HDFS Name Node principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nameNodePrincipal")
         private String nameNodePrincipal;
 
         /**
          * The HDFS Name Node principal.
-         *
          * @param nameNodePrincipal the value to set
          * @return this builder
-         */
+         **/
         public Builder nameNodePrincipal(String nameNodePrincipal) {
             this.nameNodePrincipal = nameNodePrincipal;
             this.__explicitlySet__.add("nameNodePrincipal");
             return this;
         }
-        /** HDFS Realm name. */
+        /**
+         * HDFS Realm name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("realm")
         private String realm;
 
         /**
          * HDFS Realm name.
-         *
          * @param realm the value to set
          * @return this builder
-         */
+         **/
         public Builder realm(String realm) {
             this.realm = realm;
             this.__explicitlySet__.add("realm");
             return this;
         }
-        /** The HDFS Key Distribution Center. */
+        /**
+         * The HDFS Key Distribution Center.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyDistributionCenter")
         private String keyDistributionCenter;
 
         /**
          * The HDFS Key Distribution Center.
-         *
          * @param keyDistributionCenter the value to set
          * @return this builder
-         */
+         **/
         public Builder keyDistributionCenter(String keyDistributionCenter) {
             this.keyDistributionCenter = keyDistributionCenter;
             this.__explicitlySet__.add("keyDistributionCenter");
@@ -323,7 +328,9 @@ public final class ConnectionSummaryFromHdfs extends ConnectionSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -375,67 +382,72 @@ public final class ConnectionSummaryFromHdfs extends ConnectionSummary {
         this.keyTabContent = keyTabContent;
     }
 
-    /** The HDFS principal. */
+    /**
+     * The HDFS principal.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hdfsPrincipal")
     private final String hdfsPrincipal;
 
     /**
      * The HDFS principal.
-     *
      * @return the value
-     */
+     **/
     public String getHdfsPrincipal() {
         return hdfsPrincipal;
     }
 
-    /** The HDFS Data Node principal. */
+    /**
+     * The HDFS Data Node principal.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodePrincipal")
     private final String dataNodePrincipal;
 
     /**
      * The HDFS Data Node principal.
-     *
      * @return the value
-     */
+     **/
     public String getDataNodePrincipal() {
         return dataNodePrincipal;
     }
 
-    /** The HDFS Name Node principal. */
+    /**
+     * The HDFS Name Node principal.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nameNodePrincipal")
     private final String nameNodePrincipal;
 
     /**
      * The HDFS Name Node principal.
-     *
      * @return the value
-     */
+     **/
     public String getNameNodePrincipal() {
         return nameNodePrincipal;
     }
 
-    /** HDFS Realm name. */
+    /**
+     * HDFS Realm name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("realm")
     private final String realm;
 
     /**
      * HDFS Realm name.
-     *
      * @return the value
-     */
+     **/
     public String getRealm() {
         return realm;
     }
 
-    /** The HDFS Key Distribution Center. */
+    /**
+     * The HDFS Key Distribution Center.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyDistributionCenter")
     private final String keyDistributionCenter;
 
     /**
      * The HDFS Key Distribution Center.
-     *
      * @return the value
-     */
+     **/
     public String getKeyDistributionCenter() {
         return keyDistributionCenter;
     }
@@ -454,7 +466,6 @@ public final class ConnectionSummaryFromHdfs extends ConnectionSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

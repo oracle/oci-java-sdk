@@ -5,25 +5,23 @@
 package com.oracle.bmc.core.model;
 
 /**
- * Defines the backup frequency and retention period for a volume backup policy. For more
- * information, see [Policy-Based
- * Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the backup frequency and retention period for a volume backup policy. For more information,
+ * see [Policy-Based Backups](https://docs.oracle.com/iaas/Content/Block/Tasks/schedulingvolumebackups.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = VolumeBackupSchedule.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class VolumeBackupSchedule
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = VolumeBackupSchedule.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class VolumeBackupSchedule extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "backupType",
@@ -63,201 +61,213 @@ public final class VolumeBackupSchedule
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of volume backup to create. */
+        /**
+         * The type of volume backup to create.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupType")
         private BackupType backupType;
 
         /**
          * The type of volume backup to create.
-         *
          * @param backupType the value to set
          * @return this builder
-         */
+         **/
         public Builder backupType(BackupType backupType) {
             this.backupType = backupType;
             this.__explicitlySet__.add("backupType");
             return this;
         }
         /**
-         * The number of seconds that the volume backup start time should be shifted from the
-         * default interval boundaries specified by the period. The volume backup start time is the
-         * frequency start time plus the offset.
-         */
+         * The number of seconds that the volume backup start
+         * time should be shifted from the default interval boundaries specified by
+         * the period. The volume backup start time is the frequency start time plus the offset.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
         private Integer offsetSeconds;
 
         /**
-         * The number of seconds that the volume backup start time should be shifted from the
-         * default interval boundaries specified by the period. The volume backup start time is the
-         * frequency start time plus the offset.
+         * The number of seconds that the volume backup start
+         * time should be shifted from the default interval boundaries specified by
+         * the period. The volume backup start time is the frequency start time plus the offset.
          *
          * @param offsetSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder offsetSeconds(Integer offsetSeconds) {
             this.offsetSeconds = offsetSeconds;
             this.__explicitlySet__.add("offsetSeconds");
             return this;
         }
-        /** The volume backup frequency. */
+        /**
+         * The volume backup frequency.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("period")
         private Period period;
 
         /**
          * The volume backup frequency.
-         *
          * @param period the value to set
          * @return this builder
-         */
+         **/
         public Builder period(Period period) {
             this.period = period;
             this.__explicitlySet__.add("period");
             return this;
         }
         /**
-         * Indicates how the offset is defined. If value is {@code STRUCTURED}, then {@code
-         * hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used and
-         * {@code offsetSeconds} will be ignored in requests and users should ignore its value from
-         * the responses.
-         *
-         * <p>{@code hourOfDay} is applicable for periods {@code ONE_DAY}, {@code ONE_WEEK}, {@code
-         * ONE_MONTH} and {@code ONE_YEAR}.
-         *
-         * <p>{@code dayOfWeek} is applicable for period {@code ONE_WEEK}.
-         *
-         * <p>{@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
-         *
-         * <p>'month' is applicable for period 'ONE_YEAR'.
-         *
-         * <p>They will be ignored in the requests for inapplicable periods.
-         *
-         * <p>If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds} will be used for both
-         * requests and responses and the structured fields will be ignored in the requests and
-         * users should ignore their values from the responses.
-         *
-         * <p>For clients using older versions of Apis and not sending {@code offsetType} in their
+         * Indicates how the offset is defined. If value is {@code STRUCTURED},
+         * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+         * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+         * value from the responses.
+         * <p>
+         * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+         * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * {@code dayOfWeek} is applicable for period
+         * {@code ONE_WEEK}.
+         * <p>
+         * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * 'month' is applicable for period 'ONE_YEAR'.
+         * <p>
+         * They will be ignored in the requests for inapplicable periods.
+         * <p>
+         * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+         * will be used for both requests and responses and the structured fields will be
+         * ignored in the requests and users should ignore their values from the responses.
+         * <p>
+         * For clients using older versions of Apis and not sending {@code offsetType} in their
          * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
         private OffsetType offsetType;
 
         /**
-         * Indicates how the offset is defined. If value is {@code STRUCTURED}, then {@code
-         * hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used and
-         * {@code offsetSeconds} will be ignored in requests and users should ignore its value from
-         * the responses.
-         *
-         * <p>{@code hourOfDay} is applicable for periods {@code ONE_DAY}, {@code ONE_WEEK}, {@code
-         * ONE_MONTH} and {@code ONE_YEAR}.
-         *
-         * <p>{@code dayOfWeek} is applicable for period {@code ONE_WEEK}.
-         *
-         * <p>{@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
-         *
-         * <p>'month' is applicable for period 'ONE_YEAR'.
-         *
-         * <p>They will be ignored in the requests for inapplicable periods.
-         *
-         * <p>If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds} will be used for both
-         * requests and responses and the structured fields will be ignored in the requests and
-         * users should ignore their values from the responses.
-         *
-         * <p>For clients using older versions of Apis and not sending {@code offsetType} in their
+         * Indicates how the offset is defined. If value is {@code STRUCTURED},
+         * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+         * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+         * value from the responses.
+         * <p>
+         * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+         * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * {@code dayOfWeek} is applicable for period
+         * {@code ONE_WEEK}.
+         * <p>
+         * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+         * <p>
+         * 'month' is applicable for period 'ONE_YEAR'.
+         * <p>
+         * They will be ignored in the requests for inapplicable periods.
+         * <p>
+         * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+         * will be used for both requests and responses and the structured fields will be
+         * ignored in the requests and users should ignore their values from the responses.
+         * <p>
+         * For clients using older versions of Apis and not sending {@code offsetType} in their
          * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
          *
          * @param offsetType the value to set
          * @return this builder
-         */
+         **/
         public Builder offsetType(OffsetType offsetType) {
             this.offsetType = offsetType;
             this.__explicitlySet__.add("offsetType");
             return this;
         }
-        /** The hour of the day to schedule the volume backup. */
+        /**
+         * The hour of the day to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
         private Integer hourOfDay;
 
         /**
          * The hour of the day to schedule the volume backup.
-         *
          * @param hourOfDay the value to set
          * @return this builder
-         */
+         **/
         public Builder hourOfDay(Integer hourOfDay) {
             this.hourOfDay = hourOfDay;
             this.__explicitlySet__.add("hourOfDay");
             return this;
         }
-        /** The day of the week to schedule the volume backup. */
+        /**
+         * The day of the week to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
         private DayOfWeek dayOfWeek;
 
         /**
          * The day of the week to schedule the volume backup.
-         *
          * @param dayOfWeek the value to set
          * @return this builder
-         */
+         **/
         public Builder dayOfWeek(DayOfWeek dayOfWeek) {
             this.dayOfWeek = dayOfWeek;
             this.__explicitlySet__.add("dayOfWeek");
             return this;
         }
-        /** The day of the month to schedule the volume backup. */
+        /**
+         * The day of the month to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
         private Integer dayOfMonth;
 
         /**
          * The day of the month to schedule the volume backup.
-         *
          * @param dayOfMonth the value to set
          * @return this builder
-         */
+         **/
         public Builder dayOfMonth(Integer dayOfMonth) {
             this.dayOfMonth = dayOfMonth;
             this.__explicitlySet__.add("dayOfMonth");
             return this;
         }
-        /** The month of the year to schedule the volume backup. */
+        /**
+         * The month of the year to schedule the volume backup.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("month")
         private Month month;
 
         /**
          * The month of the year to schedule the volume backup.
-         *
          * @param month the value to set
          * @return this builder
-         */
+         **/
         public Builder month(Month month) {
             this.month = month;
             this.__explicitlySet__.add("month");
             return this;
         }
-        /** How long, in seconds, to keep the volume backups created by this schedule. */
+        /**
+         * How long, in seconds, to keep the volume backups created by this schedule.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
         private Integer retentionSeconds;
 
         /**
          * How long, in seconds, to keep the volume backups created by this schedule.
-         *
          * @param retentionSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionSeconds(Integer retentionSeconds) {
             this.retentionSeconds = retentionSeconds;
             this.__explicitlySet__.add("retentionSeconds");
             return this;
         }
-        /** Specifies what time zone is the schedule in */
+        /**
+         * Specifies what time zone is the schedule in
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private TimeZone timeZone;
 
         /**
          * Specifies what time zone is the schedule in
-         *
          * @param timeZone the value to set
          * @return this builder
-         */
+         **/
         public Builder timeZone(TimeZone timeZone) {
             this.timeZone = timeZone;
             this.__explicitlySet__.add("timeZone");
@@ -322,7 +332,9 @@ public final class VolumeBackupSchedule
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -331,14 +343,16 @@ public final class VolumeBackupSchedule
         return new Builder().copy(this);
     }
 
-    /** The type of volume backup to create. */
-    public enum BackupType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of volume backup to create.
+     **/
+    public enum BackupType {
         Full("FULL"),
         Incremental("INCREMENTAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -377,40 +391,44 @@ public final class VolumeBackupSchedule
             return UnknownEnumValue;
         }
     };
-    /** The type of volume backup to create. */
+    /**
+     * The type of volume backup to create.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupType")
     private final BackupType backupType;
 
     /**
      * The type of volume backup to create.
-     *
      * @return the value
-     */
+     **/
     public BackupType getBackupType() {
         return backupType;
     }
 
     /**
-     * The number of seconds that the volume backup start time should be shifted from the default
-     * interval boundaries specified by the period. The volume backup start time is the frequency
-     * start time plus the offset.
-     */
+     * The number of seconds that the volume backup start
+     * time should be shifted from the default interval boundaries specified by
+     * the period. The volume backup start time is the frequency start time plus the offset.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetSeconds")
     private final Integer offsetSeconds;
 
     /**
-     * The number of seconds that the volume backup start time should be shifted from the default
-     * interval boundaries specified by the period. The volume backup start time is the frequency
-     * start time plus the offset.
+     * The number of seconds that the volume backup start
+     * time should be shifted from the default interval boundaries specified by
+     * the period. The volume backup start time is the frequency start time plus the offset.
      *
      * @return the value
-     */
+     **/
     public Integer getOffsetSeconds() {
         return offsetSeconds;
     }
 
-    /** The volume backup frequency. */
-    public enum Period implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The volume backup frequency.
+     **/
+    public enum Period {
         OneHour("ONE_HOUR"),
         OneDay("ONE_DAY"),
         OneWeek("ONE_WEEK"),
@@ -418,8 +436,8 @@ public final class VolumeBackupSchedule
         OneYear("ONE_YEAR"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -457,50 +475,53 @@ public final class VolumeBackupSchedule
             return UnknownEnumValue;
         }
     };
-    /** The volume backup frequency. */
+    /**
+     * The volume backup frequency.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("period")
     private final Period period;
 
     /**
      * The volume backup frequency.
-     *
      * @return the value
-     */
+     **/
     public Period getPeriod() {
         return period;
     }
 
     /**
-     * Indicates how the offset is defined. If value is {@code STRUCTURED}, then {@code hourOfDay},
-     * {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used and {@code
-     * offsetSeconds} will be ignored in requests and users should ignore its value from the
-     * responses.
-     *
-     * <p>{@code hourOfDay} is applicable for periods {@code ONE_DAY}, {@code ONE_WEEK}, {@code
-     * ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>{@code dayOfWeek} is applicable for period {@code ONE_WEEK}.
-     *
-     * <p>{@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>'month' is applicable for period 'ONE_YEAR'.
-     *
-     * <p>They will be ignored in the requests for inapplicable periods.
-     *
-     * <p>If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds} will be used for both
-     * requests and responses and the structured fields will be ignored in the requests and users
-     * should ignore their values from the responses.
-     *
-     * <p>For clients using older versions of Apis and not sending {@code offsetType} in their
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+     * value from the responses.
+     * <p>
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
+     * <p>
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
      * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
-     */
-    public enum OffsetType implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum OffsetType {
         Structured("STRUCTURED"),
         NumericSeconds("NUMERIC_SECONDS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -540,77 +561,83 @@ public final class VolumeBackupSchedule
         }
     };
     /**
-     * Indicates how the offset is defined. If value is {@code STRUCTURED}, then {@code hourOfDay},
-     * {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used and {@code
-     * offsetSeconds} will be ignored in requests and users should ignore its value from the
-     * responses.
-     *
-     * <p>{@code hourOfDay} is applicable for periods {@code ONE_DAY}, {@code ONE_WEEK}, {@code
-     * ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>{@code dayOfWeek} is applicable for period {@code ONE_WEEK}.
-     *
-     * <p>{@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>'month' is applicable for period 'ONE_YEAR'.
-     *
-     * <p>They will be ignored in the requests for inapplicable periods.
-     *
-     * <p>If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds} will be used for both
-     * requests and responses and the structured fields will be ignored in the requests and users
-     * should ignore their values from the responses.
-     *
-     * <p>For clients using older versions of Apis and not sending {@code offsetType} in their
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+     * value from the responses.
+     * <p>
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
+     * <p>
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
      * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("offsetType")
     private final OffsetType offsetType;
 
     /**
-     * Indicates how the offset is defined. If value is {@code STRUCTURED}, then {@code hourOfDay},
-     * {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used and {@code
-     * offsetSeconds} will be ignored in requests and users should ignore its value from the
-     * responses.
-     *
-     * <p>{@code hourOfDay} is applicable for periods {@code ONE_DAY}, {@code ONE_WEEK}, {@code
-     * ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>{@code dayOfWeek} is applicable for period {@code ONE_WEEK}.
-     *
-     * <p>{@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
-     *
-     * <p>'month' is applicable for period 'ONE_YEAR'.
-     *
-     * <p>They will be ignored in the requests for inapplicable periods.
-     *
-     * <p>If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds} will be used for both
-     * requests and responses and the structured fields will be ignored in the requests and users
-     * should ignore their values from the responses.
-     *
-     * <p>For clients using older versions of Apis and not sending {@code offsetType} in their
+     * Indicates how the offset is defined. If value is {@code STRUCTURED},
+     * then {@code hourOfDay}, {@code dayOfWeek}, {@code dayOfMonth}, and {@code month} fields are used
+     * and {@code offsetSeconds} will be ignored in requests and users should ignore its
+     * value from the responses.
+     * <p>
+     * {@code hourOfDay} is applicable for periods {@code ONE_DAY},
+     * {@code ONE_WEEK}, {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * {@code dayOfWeek} is applicable for period
+     * {@code ONE_WEEK}.
+     * <p>
+     * {@code dayOfMonth} is applicable for periods {@code ONE_MONTH} and {@code ONE_YEAR}.
+     * <p>
+     * 'month' is applicable for period 'ONE_YEAR'.
+     * <p>
+     * They will be ignored in the requests for inapplicable periods.
+     * <p>
+     * If value is {@code NUMERIC_SECONDS}, then {@code offsetSeconds}
+     * will be used for both requests and responses and the structured fields will be
+     * ignored in the requests and users should ignore their values from the responses.
+     * <p>
+     * For clients using older versions of Apis and not sending {@code offsetType} in their
      * requests, the behaviour is just like {@code NUMERIC_SECONDS}.
      *
      * @return the value
-     */
+     **/
     public OffsetType getOffsetType() {
         return offsetType;
     }
 
-    /** The hour of the day to schedule the volume backup. */
+    /**
+     * The hour of the day to schedule the volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
     private final Integer hourOfDay;
 
     /**
      * The hour of the day to schedule the volume backup.
-     *
      * @return the value
-     */
+     **/
     public Integer getHourOfDay() {
         return hourOfDay;
     }
 
-    /** The day of the week to schedule the volume backup. */
-    public enum DayOfWeek implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The day of the week to schedule the volume backup.
+     **/
+    public enum DayOfWeek {
         Monday("MONDAY"),
         Tuesday("TUESDAY"),
         Wednesday("WEDNESDAY"),
@@ -620,8 +647,8 @@ public final class VolumeBackupSchedule
         Sunday("SUNDAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -660,34 +687,38 @@ public final class VolumeBackupSchedule
             return UnknownEnumValue;
         }
     };
-    /** The day of the week to schedule the volume backup. */
+    /**
+     * The day of the week to schedule the volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
     private final DayOfWeek dayOfWeek;
 
     /**
      * The day of the week to schedule the volume backup.
-     *
      * @return the value
-     */
+     **/
     public DayOfWeek getDayOfWeek() {
         return dayOfWeek;
     }
 
-    /** The day of the month to schedule the volume backup. */
+    /**
+     * The day of the month to schedule the volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
     private final Integer dayOfMonth;
 
     /**
      * The day of the month to schedule the volume backup.
-     *
      * @return the value
-     */
+     **/
     public Integer getDayOfMonth() {
         return dayOfMonth;
     }
 
-    /** The month of the year to schedule the volume backup. */
-    public enum Month implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The month of the year to schedule the volume backup.
+     **/
+    public enum Month {
         January("JANUARY"),
         February("FEBRUARY"),
         March("MARCH"),
@@ -702,8 +733,8 @@ public final class VolumeBackupSchedule
         December("DECEMBER"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -741,40 +772,44 @@ public final class VolumeBackupSchedule
             return UnknownEnumValue;
         }
     };
-    /** The month of the year to schedule the volume backup. */
+    /**
+     * The month of the year to schedule the volume backup.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("month")
     private final Month month;
 
     /**
      * The month of the year to schedule the volume backup.
-     *
      * @return the value
-     */
+     **/
     public Month getMonth() {
         return month;
     }
 
-    /** How long, in seconds, to keep the volume backups created by this schedule. */
+    /**
+     * How long, in seconds, to keep the volume backups created by this schedule.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionSeconds")
     private final Integer retentionSeconds;
 
     /**
      * How long, in seconds, to keep the volume backups created by this schedule.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionSeconds() {
         return retentionSeconds;
     }
 
-    /** Specifies what time zone is the schedule in */
-    public enum TimeZone implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies what time zone is the schedule in
+     **/
+    public enum TimeZone {
         Utc("UTC"),
         RegionalDataCenterTime("REGIONAL_DATA_CENTER_TIME"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -813,15 +848,16 @@ public final class VolumeBackupSchedule
             return UnknownEnumValue;
         }
     };
-    /** Specifies what time zone is the schedule in */
+    /**
+     * Specifies what time zone is the schedule in
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final TimeZone timeZone;
 
     /**
      * Specifies what time zone is the schedule in
-     *
      * @return the value
-     */
+     **/
     public TimeZone getTimeZone() {
         return timeZone;
     }
@@ -833,7 +869,6 @@ public final class VolumeBackupSchedule
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

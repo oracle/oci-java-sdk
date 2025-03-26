@@ -6,17 +6,18 @@ package com.oracle.bmc.usageapi.responses;
 
 import com.oracle.bmc.usageapi.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -26,15 +27,16 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * For pagination of a list of custom tables. If this header appears in the response, then this
-     * is a partial list of custom tables. Include this value as the {@code page} parameter in a
-     * subsequent GET request, to get the next batch of custom tables.
+     * is a partial list of custom tables. Include this value as the {@code page} parameter in a subsequent
+     * GET request, to get the next batch of custom tables.
+     *
      */
     private String opcNextPage;
 
     /**
      * For pagination of a list of custom tables. If this header appears in the response, then this
-     * is a partial list of custom tables. Include this value as the {@code page} parameter in a
-     * subsequent GET request, to get the next batch of custom tables.
+     * is a partial list of custom tables. Include this value as the {@code page} parameter in a subsequent
+     * GET request, to get the next batch of custom tables.
      *
      * @return the value
      */
@@ -42,12 +44,13 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
         return opcNextPage;
     }
 
-    /** The returned {@code CustomTableCollection} instance. */
+    /**
+     * The returned CustomTableCollection instance.
+     */
     private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
     /**
-     * The returned {@code CustomTableCollection} instance.
-     *
+     * The returned CustomTableCollection instance.
      * @return the value
      */
     public com.oracle.bmc.usageapi.model.CustomTableCollection getCustomTableCollection() {
@@ -63,7 +66,7 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
     })
     private ListCustomTablesResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection) {
@@ -73,33 +76,31 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
         this.customTableCollection = customTableCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ListCustomTablesResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -110,16 +111,17 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
         }
 
         /**
-         * For pagination of a list of custom tables. If this header appears in the response, then
-         * this is a partial list of custom tables. Include this value as the {@code page} parameter
-         * in a subsequent GET request, to get the next batch of custom tables.
+         * For pagination of a list of custom tables. If this header appears in the response, then this
+         * is a partial list of custom tables. Include this value as the {@code page} parameter in a subsequent
+         * GET request, to get the next batch of custom tables.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of custom tables. If this header appears in the response, then
-         * this is a partial list of custom tables. Include this value as the {@code page} parameter
-         * in a subsequent GET request, to get the next batch of custom tables.
+         * For pagination of a list of custom tables. If this header appears in the response, then this
+         * is a partial list of custom tables. Include this value as the {@code page} parameter in a subsequent
+         * GET request, to get the next batch of custom tables.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -129,12 +131,13 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
             return this;
         }
 
-        /** The returned {@code CustomTableCollection} instance. */
+        /**
+         * The returned CustomTableCollection instance.
+         */
         private com.oracle.bmc.usageapi.model.CustomTableCollection customTableCollection;
 
         /**
-         * The returned {@code CustomTableCollection} instance.
-         *
+         * The returned CustomTableCollection instance.
          * @param customTableCollection the value to set
          * @return this builder
          */
@@ -146,10 +149,8 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListCustomTablesResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -162,10 +163,8 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListCustomTablesResponse build() {
             return new ListCustomTablesResponse(
                     __httpStatusCode__, headers, opcRequestId, opcNextPage, customTableCollection);
@@ -174,7 +173,6 @@ public class ListCustomTablesResponse extends com.oracle.bmc.responses.BmcRespon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

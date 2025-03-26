@@ -5,13 +5,14 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The way in which this resource is affected by the work tracked in the work request. A resource
- * being created, updated, or deleted will remain in the IN_PROGRESS state until work is complete
- * for that resource at which point it will transition to CREATED, UPDATED, or DELETED,
- * respectively.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum WorkRequestResourceActionType implements com.oracle.bmc.http.internal.BmcEnum {
+ * The way in which this resource is affected by the work tracked in the work request.
+ * A resource being created, updated, or deleted will remain in the IN_PROGRESS state until
+ * work is complete for that resource at which point it will transition to CREATED, UPDATED,
+ * or DELETED, respectively.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum WorkRequestResourceActionType {
     Created("CREATED"),
     Updated("UPDATED"),
     Deleted("DELETED"),

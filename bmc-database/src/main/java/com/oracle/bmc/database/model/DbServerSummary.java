@@ -5,22 +5,20 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Details of the Db server. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Details of the Db server.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = DbServerSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class DbServerSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class DbServerSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -97,178 +95,166 @@ public final class DbServerSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Db server.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Db server.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The user-friendly name for the Db server. The name does not need to be unique. */
+        /**
+         * The user-friendly name for the Db server. The name does not need to be unique.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The user-friendly name for the Db server. The name does not need to be unique.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
         private String exadataInfrastructureId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exadata infrastructure.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
          * @param exadataInfrastructureId the value to set
          * @return this builder
-         */
+         **/
         public Builder exadataInfrastructureId(String exadataInfrastructureId) {
             this.exadataInfrastructureId = exadataInfrastructureId;
             this.__explicitlySet__.add("exadataInfrastructureId");
             return this;
         }
-        /** The number of CPU cores enabled on the Db server. */
+        /**
+         * The number of CPU cores enabled on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
         private Integer cpuCoreCount;
 
         /**
          * The number of CPU cores enabled on the Db server.
-         *
          * @param cpuCoreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder cpuCoreCount(Integer cpuCoreCount) {
             this.cpuCoreCount = cpuCoreCount;
             this.__explicitlySet__.add("cpuCoreCount");
             return this;
         }
-        /** The allocated memory in GBs on the Db server. */
+        /**
+         * The allocated memory in GBs on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
         private Integer memorySizeInGBs;
 
         /**
          * The allocated memory in GBs on the Db server.
-         *
          * @param memorySizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder memorySizeInGBs(Integer memorySizeInGBs) {
             this.memorySizeInGBs = memorySizeInGBs;
             this.__explicitlySet__.add("memorySizeInGBs");
             return this;
         }
-        /** The allocated local node storage in GBs on the Db server. */
+        /**
+         * The allocated local node storage in GBs on the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
         private Integer dbNodeStorageSizeInGBs;
 
         /**
          * The allocated local node storage in GBs on the Db server.
-         *
          * @param dbNodeStorageSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodeStorageSizeInGBs(Integer dbNodeStorageSizeInGBs) {
             this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
             this.__explicitlySet__.add("dbNodeStorageSizeInGBs");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Clusters associated with the Db server.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
         private java.util.List<String> vmClusterIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM Clusters associated with the Db server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
          *
          * @param vmClusterIds the value to set
          * @return this builder
-         */
+         **/
         public Builder vmClusterIds(java.util.List<String> vmClusterIds) {
             this.vmClusterIds = vmClusterIds;
             this.__explicitlySet__.add("vmClusterIds");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous VM Clusters associated with the Db server.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
         private java.util.List<String> autonomousVmClusterIds;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous VM Clusters associated with the Db server.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
          *
          * @param autonomousVmClusterIds the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousVmClusterIds(java.util.List<String> autonomousVmClusterIds) {
             this.autonomousVmClusterIds = autonomousVmClusterIds;
             this.__explicitlySet__.add("autonomousVmClusterIds");
             return this;
         }
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Virtual Machines associated with the Db server.
-         */
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
         private java.util.List<String> autonomousVirtualMachineIds;
 
         /**
-         * The list of
-         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Autonomous Virtual Machines associated with the Db server.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
          *
          * @param autonomousVirtualMachineIds the value to set
          * @return this builder
-         */
+         **/
         public Builder autonomousVirtualMachineIds(
                 java.util.List<String> autonomousVirtualMachineIds) {
             this.autonomousVirtualMachineIds = autonomousVirtualMachineIds;
@@ -276,128 +262,132 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Db nodes associated with the Db server.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
         private java.util.List<String> dbNodeIds;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Db nodes associated with the Db server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
          *
          * @param dbNodeIds the value to set
          * @return this builder
-         */
+         **/
         public Builder dbNodeIds(java.util.List<String> dbNodeIds) {
             this.dbNodeIds = dbNodeIds;
             this.__explicitlySet__.add("dbNodeIds");
             return this;
         }
         /**
-         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory
-         * resources available.
-         */
+         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private String shape;
 
         /**
-         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory
-         * resources available.
+         * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
          *
          * @param shape the value to set
          * @return this builder
-         */
+         **/
         public Builder shape(String shape) {
             this.shape = shape;
             this.__explicitlySet__.add("shape");
             return this;
         }
-        /** The current state of the Db server. */
+        /**
+         * The current state of the Db server.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The current state of the Db server.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** Additional information about the current lifecycle state. */
+        /**
+         * Additional information about the current lifecycle state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
          * Additional information about the current lifecycle state.
-         *
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The total number of CPU cores available. */
+        /**
+         * The total number of CPU cores available.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
         private Integer maxCpuCount;
 
         /**
          * The total number of CPU cores available.
-         *
          * @param maxCpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder maxCpuCount(Integer maxCpuCount) {
             this.maxCpuCount = maxCpuCount;
             this.__explicitlySet__.add("maxCpuCount");
             return this;
         }
-        /** The total memory available in GBs. */
+        /**
+         * The total memory available in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
         private Integer maxMemoryInGBs;
 
         /**
          * The total memory available in GBs.
-         *
          * @param maxMemoryInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxMemoryInGBs(Integer maxMemoryInGBs) {
             this.maxMemoryInGBs = maxMemoryInGBs;
             this.__explicitlySet__.add("maxMemoryInGBs");
             return this;
         }
-        /** The total local node storage available in GBs. */
+        /**
+         * The total local node storage available in GBs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
         private Integer maxDbNodeStorageInGBs;
 
         /**
          * The total local node storage available in GBs.
-         *
          * @param maxDbNodeStorageInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder maxDbNodeStorageInGBs(Integer maxDbNodeStorageInGBs) {
             this.maxDbNodeStorageInGBs = maxDbNodeStorageInGBs;
             this.__explicitlySet__.add("maxDbNodeStorageInGBs");
             return this;
         }
-        /** The date and time that the Db Server was created. */
+        /**
+         * The date and time that the Db Server was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time that the Db Server was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -413,46 +403,44 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         */
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -460,23 +448,16 @@ public final class DbServerSummary
             return this;
         }
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
-         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
-         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
-         * OCPU compute model is legacy.
-         */
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
         private ComputeModel computeModel;
 
         /**
-         * The compute model of the Autonomous Database. This is required if using the {@code
-         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
-         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
-         * OCPU compute model is legacy.
-         *
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
          * @param computeModel the value to set
          * @return this builder
-         */
+         **/
         public Builder computeModel(ComputeModel computeModel) {
             this.computeModel = computeModel;
             this.__explicitlySet__.add("computeModel");
@@ -589,7 +570,9 @@ public final class DbServerSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -599,195 +582,187 @@ public final class DbServerSummary
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
-     * server.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
-     * server.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db server.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The user-friendly name for the Db server. The name does not need to be unique. */
+    /**
+     * The user-friendly name for the Db server. The name does not need to be unique.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The user-friendly name for the Db server. The name does not need to be unique.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
     private final String exadataInfrastructureId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exadata infrastructure.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
      * @return the value
-     */
+     **/
     public String getExadataInfrastructureId() {
         return exadataInfrastructureId;
     }
 
-    /** The number of CPU cores enabled on the Db server. */
+    /**
+     * The number of CPU cores enabled on the Db server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpuCoreCount")
     private final Integer cpuCoreCount;
 
     /**
      * The number of CPU cores enabled on the Db server.
-     *
      * @return the value
-     */
+     **/
     public Integer getCpuCoreCount() {
         return cpuCoreCount;
     }
 
-    /** The allocated memory in GBs on the Db server. */
+    /**
+     * The allocated memory in GBs on the Db server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memorySizeInGBs")
     private final Integer memorySizeInGBs;
 
     /**
      * The allocated memory in GBs on the Db server.
-     *
      * @return the value
-     */
+     **/
     public Integer getMemorySizeInGBs() {
         return memorySizeInGBs;
     }
 
-    /** The allocated local node storage in GBs on the Db server. */
+    /**
+     * The allocated local node storage in GBs on the Db server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeStorageSizeInGBs")
     private final Integer dbNodeStorageSizeInGBs;
 
     /**
      * The allocated local node storage in GBs on the Db server.
-     *
      * @return the value
-     */
+     **/
     public Integer getDbNodeStorageSizeInGBs() {
         return dbNodeStorageSizeInGBs;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Clusters associated with the Db server.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vmClusterIds")
     private final java.util.List<String> vmClusterIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * Clusters associated with the Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Clusters associated with the Db server.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getVmClusterIds() {
         return vmClusterIds;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Autonomous VM Clusters associated with the Db server.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVmClusterIds")
     private final java.util.List<String> autonomousVmClusterIds;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Autonomous VM Clusters associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous VM Clusters associated with the Db server.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAutonomousVmClusterIds() {
         return autonomousVmClusterIds;
     }
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Autonomous Virtual Machines associated with the Db server.
-     */
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousVirtualMachineIds")
     private final java.util.List<String> autonomousVirtualMachineIds;
 
     /**
-     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the Autonomous Virtual Machines associated with the Db server.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Virtual Machines associated with the Db server.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getAutonomousVirtualMachineIds() {
         return autonomousVirtualMachineIds;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
-     * nodes associated with the Db server.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbNodeIds")
     private final java.util.List<String> dbNodeIds;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db
-     * nodes associated with the Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Db nodes associated with the Db server.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getDbNodeIds() {
         return dbNodeIds;
     }
 
     /**
-     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory
-     * resources available.
-     */
+     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shape")
     private final String shape;
 
     /**
-     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory
-     * resources available.
+     * The shape of the Db server. The shape determines the amount of CPU, storage, and memory resources available.
      *
      * @return the value
-     */
+     **/
     public String getShape() {
         return shape;
     }
 
-    /** The current state of the Db server. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The current state of the Db server.
+     **/
+    public enum LifecycleState {
         Creating("CREATING"),
         Available("AVAILABLE"),
         Unavailable("UNAVAILABLE"),
@@ -796,8 +771,8 @@ public final class DbServerSummary
         MaintenanceInProgress("MAINTENANCE_IN_PROGRESS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -836,80 +811,86 @@ public final class DbServerSummary
             return UnknownEnumValue;
         }
     };
-    /** The current state of the Db server. */
+    /**
+     * The current state of the Db server.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The current state of the Db server.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
-    /** Additional information about the current lifecycle state. */
+    /**
+     * Additional information about the current lifecycle state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
      * Additional information about the current lifecycle state.
-     *
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
 
-    /** The total number of CPU cores available. */
+    /**
+     * The total number of CPU cores available.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxCpuCount")
     private final Integer maxCpuCount;
 
     /**
      * The total number of CPU cores available.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxCpuCount() {
         return maxCpuCount;
     }
 
-    /** The total memory available in GBs. */
+    /**
+     * The total memory available in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxMemoryInGBs")
     private final Integer maxMemoryInGBs;
 
     /**
      * The total memory available in GBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxMemoryInGBs() {
         return maxMemoryInGBs;
     }
 
-    /** The total local node storage available in GBs. */
+    /**
+     * The total local node storage available in GBs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxDbNodeStorageInGBs")
     private final Integer maxDbNodeStorageInGBs;
 
     /**
      * The total local node storage available in GBs.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxDbNodeStorageInGBs() {
         return maxDbNodeStorageInGBs;
     }
 
-    /** The date and time that the Db Server was created. */
+    /**
+     * The date and time that the Db Server was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time that the Db Server was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -922,60 +903,55 @@ public final class DbServerSummary
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     */
-    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
         Ecpu("ECPU"),
         Ocpu("OCPU"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1015,22 +991,15 @@ public final class DbServerSummary
         }
     };
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     */
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
     private final ComputeModel computeModel;
 
     /**
-     * The compute model of the Autonomous Database. This is required if using the {@code
-     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
-     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
-     * compute model is legacy.
-     *
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
      * @return the value
-     */
+     **/
     public ComputeModel getComputeModel() {
         return computeModel;
     }
@@ -1042,7 +1011,6 @@ public final class DbServerSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

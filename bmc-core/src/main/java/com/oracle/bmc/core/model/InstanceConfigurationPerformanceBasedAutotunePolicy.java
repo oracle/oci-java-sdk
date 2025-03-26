@@ -5,28 +5,29 @@
 package com.oracle.bmc.core.model;
 
 /**
- * If a volume is being throttled at the current setting for a certain period of time, auto-tune
- * will gradually increase the volume\u2019s performance limited up to Maximum VPUs/GB. After the
- * volume has been idle at the current setting for a certain period of time, auto-tune will
- * gradually decrease the volume\u2019s performance limited down to Default/Minimum VPUs/GB. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * If a volume is being throttled at the current setting for a certain period of time, auto-tune will
+ * gradually increase the volume\u2019s performance limited up to Maximum VPUs/GB. After the volume has been idle at the
+ * current setting for a certain period of time, auto-tune will gradually decrease the volume\u2019s performance limited
+ * down to Default/Minimum VPUs/GB.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceConfigurationPerformanceBasedAutotunePolicy.Builder.class)
+    builder = InstanceConfigurationPerformanceBasedAutotunePolicy.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "autotuneType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "autotuneType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceConfigurationPerformanceBasedAutotunePolicy
         extends InstanceConfigurationAutotunePolicy {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -34,7 +35,8 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
         /**
          * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned
          * temporarily based on performance monitoring.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxVpusPerGB")
         private Long maxVpusPerGB;
 
@@ -44,7 +46,7 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
          *
          * @param maxVpusPerGB the value to set
          * @return this builder
-         */
+         **/
         public Builder maxVpusPerGB(Long maxVpusPerGB) {
             this.maxVpusPerGB = maxVpusPerGB;
             this.__explicitlySet__.add("maxVpusPerGB");
@@ -72,7 +74,9 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -90,7 +94,8 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
     /**
      * This will be the maximum VPUs/GB performance level that the volume will be auto-tuned
      * temporarily based on performance monitoring.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxVpusPerGB")
     private final Long maxVpusPerGB;
 
@@ -99,7 +104,7 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
      * temporarily based on performance monitoring.
      *
      * @return the value
-     */
+     **/
     public Long getMaxVpusPerGB() {
         return maxVpusPerGB;
     }
@@ -111,7 +116,6 @@ public final class InstanceConfigurationPerformanceBasedAutotunePolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

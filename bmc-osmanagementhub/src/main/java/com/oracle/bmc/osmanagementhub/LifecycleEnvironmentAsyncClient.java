@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.osmanagementhub;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.osmanagementhub.internal.http.*;
 import com.oracle.bmc.osmanagementhub.requests.*;
 import com.oracle.bmc.osmanagementhub.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for LifecycleEnvironment service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for LifecycleEnvironment service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements LifecycleEnvironmentAsync {
-    /** Service instance for LifecycleEnvironment. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public class LifecycleEnvironmentAsyncClient implements LifecycleEnvironmentAsync {
+    /**
+     * Service instance for LifecycleEnvironment.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("LIFECYCLEENVIRONMENT")
@@ -39,663 +36,112 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(LifecycleEnvironmentAsyncClient.class);
 
-    LifecycleEnvironmentAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<
-                    Builder, LifecycleEnvironmentAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "osmanagementhub";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public LifecycleEnvironmentAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new LifecycleEnvironmentAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AttachManagedInstancesToLifecycleStageResponse>
-            attachManagedInstancesToLifecycleStage(
-                    AttachManagedInstancesToLifecycleStageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    AttachManagedInstancesToLifecycleStageRequest,
-                                    AttachManagedInstancesToLifecycleStageResponse>
-                            handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-        Objects.requireNonNull(
-                request.getAttachManagedInstancesToLifecycleStageDetails(),
-                "attachManagedInstancesToLifecycleStageDetails is required");
-
-        return clientCall(request, AttachManagedInstancesToLifecycleStageResponse::builder)
-                .logger(LOG, "attachManagedInstancesToLifecycleStage")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "AttachManagedInstancesToLifecycleStage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/AttachManagedInstancesToLifecycleStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AttachManagedInstancesToLifecycleStageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .appendPathParam("actions")
-                .appendPathParam("attachManagedInstances")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        AttachManagedInstancesToLifecycleStageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        AttachManagedInstancesToLifecycleStageResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>
-            changeLifecycleEnvironmentCompartment(
-                    ChangeLifecycleEnvironmentCompartmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ChangeLifecycleEnvironmentCompartmentRequest,
-                                    ChangeLifecycleEnvironmentCompartmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeLifecycleEnvironmentCompartmentDetails(),
-                "changeLifecycleEnvironmentCompartmentDetails is required");
-
-        return clientCall(request, ChangeLifecycleEnvironmentCompartmentResponse::builder)
-                .logger(LOG, "changeLifecycleEnvironmentCompartment")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "ChangeLifecycleEnvironmentCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeLifecycleEnvironmentCompartmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .appendPathParam(request.getLifecycleEnvironmentId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ChangeLifecycleEnvironmentCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateLifecycleEnvironmentResponse>
-            createLifecycleEnvironment(
-                    CreateLifecycleEnvironmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    CreateLifecycleEnvironmentRequest,
-                                    CreateLifecycleEnvironmentResponse>
-                            handler) {
-        Objects.requireNonNull(
-                request.getCreateLifecycleEnvironmentDetails(),
-                "createLifecycleEnvironmentDetails is required");
-
-        return clientCall(request, CreateLifecycleEnvironmentResponse::builder)
-                .logger(LOG, "createLifecycleEnvironment")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "CreateLifecycleEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/CreateLifecycleEnvironment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateLifecycleEnvironmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
-                        CreateLifecycleEnvironmentResponse.Builder::lifecycleEnvironment)
-                .handleResponseHeaderString(
-                        "etag", CreateLifecycleEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteLifecycleEnvironmentResponse>
-            deleteLifecycleEnvironment(
-                    DeleteLifecycleEnvironmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DeleteLifecycleEnvironmentRequest,
-                                    DeleteLifecycleEnvironmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
-
-        return clientCall(request, DeleteLifecycleEnvironmentResponse::builder)
-                .logger(LOG, "deleteLifecycleEnvironment")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "DeleteLifecycleEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/DeleteLifecycleEnvironment")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteLifecycleEnvironmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .appendPathParam(request.getLifecycleEnvironmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DetachManagedInstancesFromLifecycleStageResponse>
-            detachManagedInstancesFromLifecycleStage(
-                    DetachManagedInstancesFromLifecycleStageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    DetachManagedInstancesFromLifecycleStageRequest,
-                                    DetachManagedInstancesFromLifecycleStageResponse>
-                            handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-        Objects.requireNonNull(
-                request.getDetachManagedInstancesFromLifecycleStageDetails(),
-                "detachManagedInstancesFromLifecycleStageDetails is required");
-
-        return clientCall(request, DetachManagedInstancesFromLifecycleStageResponse::builder)
-                .logger(LOG, "detachManagedInstancesFromLifecycleStage")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "DetachManagedInstancesFromLifecycleStage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/DetachManagedInstancesFromLifecycleStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DetachManagedInstancesFromLifecycleStageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .appendPathParam("actions")
-                .appendPathParam("detachManagedInstances")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        DetachManagedInstancesFromLifecycleStageResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DetachManagedInstancesFromLifecycleStageResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetLifecycleEnvironmentResponse> getLifecycleEnvironment(
-            GetLifecycleEnvironmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetLifecycleEnvironmentRequest, GetLifecycleEnvironmentResponse>
-                    handler) {
-
-        Validate.notBlank(
-                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
-
-        return clientCall(request, GetLifecycleEnvironmentResponse::builder)
-                .logger(LOG, "getLifecycleEnvironment")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "GetLifecycleEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/GetLifecycleEnvironment")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLifecycleEnvironmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .appendPathParam(request.getLifecycleEnvironmentId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
-                        GetLifecycleEnvironmentResponse.Builder::lifecycleEnvironment)
-                .handleResponseHeaderString("etag", GetLifecycleEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetLifecycleStageResponse> getLifecycleStage(
-            GetLifecycleStageRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetLifecycleStageRequest, GetLifecycleStageResponse>
-                    handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-
-        return clientCall(request, GetLifecycleStageResponse::builder)
-                .logger(LOG, "getLifecycleStage")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "GetLifecycleStage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/GetLifecycleStage")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetLifecycleStageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleStage.class,
-                        GetLifecycleStageResponse.Builder::lifecycleStage)
-                .handleResponseHeaderString("etag", GetLifecycleStageResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetLifecycleStageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListLifecycleEnvironmentsResponse> listLifecycleEnvironments(
-            ListLifecycleEnvironmentsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListLifecycleEnvironmentsRequest, ListLifecycleEnvironmentsResponse>
-                    handler) {
-
-        return clientCall(request, ListLifecycleEnvironmentsResponse::builder)
-                .logger(LOG, "listLifecycleEnvironments")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "ListLifecycleEnvironments",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ListLifecycleEnvironments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLifecycleEnvironmentsRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("lifecycleEnvironmentId", request.getLifecycleEnvironmentId())
-                .appendEnumQueryParam("archType", request.getArchType())
-                .appendEnumQueryParam("osFamily", request.getOsFamily())
-                .appendListQueryParam(
-                        "location",
-                        request.getLocation(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "locationNotEqualTo",
-                        request.getLocationNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentCollection.class,
-                        ListLifecycleEnvironmentsResponse.Builder::lifecycleEnvironmentCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLifecycleEnvironmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLifecycleEnvironmentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListLifecycleStageInstalledPackagesResponse>
-            listLifecycleStageInstalledPackages(
-                    ListLifecycleStageInstalledPackagesRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListLifecycleStageInstalledPackagesRequest,
-                                    ListLifecycleStageInstalledPackagesResponse>
-                            handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-
-        return clientCall(request, ListLifecycleStageInstalledPackagesResponse::builder)
-                .logger(LOG, "listLifecycleStageInstalledPackages")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "ListLifecycleStageInstalledPackages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStageInstalledPackages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLifecycleStageInstalledPackagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .appendPathParam("installedPackages")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.InstalledPackageCollection.class,
-                        ListLifecycleStageInstalledPackagesResponse.Builder
-                                ::installedPackageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListLifecycleStageInstalledPackagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListLifecycleStageInstalledPackagesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListLifecycleStagesResponse> listLifecycleStages(
-            ListLifecycleStagesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListLifecycleStagesRequest, ListLifecycleStagesResponse>
-                    handler) {
-
-        return clientCall(request, ListLifecycleStagesResponse::builder)
-                .logger(LOG, "listLifecycleStages")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "ListLifecycleStages",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStages")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListLifecycleStagesRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendListQueryParam(
-                        "displayName",
-                        request.getDisplayName(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("displayNameContains", request.getDisplayNameContains())
-                .appendQueryParam("lifecycleStageId", request.getLifecycleStageId())
-                .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
-                .appendEnumQueryParam("archType", request.getArchType())
-                .appendEnumQueryParam("osFamily", request.getOsFamily())
-                .appendListQueryParam(
-                        "location",
-                        request.getLocation(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendListQueryParam(
-                        "locationNotEqualTo",
-                        request.getLocationNotEqualTo(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleStageCollection.class,
-                        ListLifecycleStagesResponse.Builder::lifecycleStageCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListLifecycleStagesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListLifecycleStagesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<PromoteSoftwareSourceToLifecycleStageResponse>
-            promoteSoftwareSourceToLifecycleStage(
-                    PromoteSoftwareSourceToLifecycleStageRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    PromoteSoftwareSourceToLifecycleStageRequest,
-                                    PromoteSoftwareSourceToLifecycleStageResponse>
-                            handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-        Objects.requireNonNull(
-                request.getPromoteSoftwareSourceToLifecycleStageDetails(),
-                "promoteSoftwareSourceToLifecycleStageDetails is required");
-
-        return clientCall(request, PromoteSoftwareSourceToLifecycleStageResponse::builder)
-                .logger(LOG, "promoteSoftwareSourceToLifecycleStage")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "PromoteSoftwareSourceToLifecycleStage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/PromoteSoftwareSourceToLifecycleStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(PromoteSoftwareSourceToLifecycleStageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .appendPathParam("actions")
-                .appendPathParam("promoteSoftwareSource")
-                .appendQueryParam("softwareSourceId", request.getSoftwareSourceId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        PromoteSoftwareSourceToLifecycleStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        PromoteSoftwareSourceToLifecycleStageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RebootLifecycleStageResponse> rebootLifecycleStage(
-            RebootLifecycleStageRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RebootLifecycleStageRequest, RebootLifecycleStageResponse>
-                    handler) {
-
-        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
-        Objects.requireNonNull(
-                request.getRebootLifecycleStageDetails(),
-                "rebootLifecycleStageDetails is required");
-
-        return clientCall(request, RebootLifecycleStageResponse::builder)
-                .logger(LOG, "rebootLifecycleStage")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "RebootLifecycleStage",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RebootLifecycleStageRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleStages")
-                .appendPathParam(request.getLifecycleStageId())
-                .appendPathParam("actions")
-                .appendPathParam("reboot")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RebootLifecycleStageResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RebootLifecycleStageResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateLifecycleEnvironmentResponse>
-            updateLifecycleEnvironment(
-                    UpdateLifecycleEnvironmentRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    UpdateLifecycleEnvironmentRequest,
-                                    UpdateLifecycleEnvironmentResponse>
-                            handler) {
-
-        Validate.notBlank(
-                request.getLifecycleEnvironmentId(), "lifecycleEnvironmentId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateLifecycleEnvironmentDetails(),
-                "updateLifecycleEnvironmentDetails is required");
-
-        return clientCall(request, UpdateLifecycleEnvironmentResponse::builder)
-                .logger(LOG, "updateLifecycleEnvironment")
-                .serviceDetails(
-                        "LifecycleEnvironment",
-                        "UpdateLifecycleEnvironment",
-                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/UpdateLifecycleEnvironment")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateLifecycleEnvironmentRequest::builder)
-                .basePath("/20220901")
-                .appendPathParam("lifecycleEnvironments")
-                .appendPathParam(request.getLifecycleEnvironmentId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.osmanagementhub.model.LifecycleEnvironment.class,
-                        UpdateLifecycleEnvironmentResponse.Builder::lifecycleEnvironment)
-                .handleResponseHeaderString(
-                        "etag", UpdateLifecycleEnvironmentResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateLifecycleEnvironmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -703,26 +149,26 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -731,29 +177,29 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public LifecycleEnvironmentAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -766,14 +212,955 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public LifecycleEnvironmentAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<
+                    Builder, LifecycleEnvironmentAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public LifecycleEnvironmentAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new LifecycleEnvironmentAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachManagedInstancesToLifecycleStageResponse>
+            attachManagedInstancesToLifecycleStage(
+                    AttachManagedInstancesToLifecycleStageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachManagedInstancesToLifecycleStageRequest,
+                                    AttachManagedInstancesToLifecycleStageResponse>
+                            handler) {
+        LOG.trace("Called async attachManagedInstancesToLifecycleStage");
+        final AttachManagedInstancesToLifecycleStageRequest interceptedRequest =
+                AttachManagedInstancesToLifecycleStageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachManagedInstancesToLifecycleStageConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "AttachManagedInstancesToLifecycleStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/AttachManagedInstancesToLifecycleStage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachManagedInstancesToLifecycleStageResponse>
+                transformer =
+                        AttachManagedInstancesToLifecycleStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachManagedInstancesToLifecycleStageRequest,
+                        AttachManagedInstancesToLifecycleStageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachManagedInstancesToLifecycleStageRequest,
+                                AttachManagedInstancesToLifecycleStageResponse>,
+                        java.util.concurrent.Future<AttachManagedInstancesToLifecycleStageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getAttachManagedInstancesToLifecycleStageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachManagedInstancesToLifecycleStageRequest,
+                    AttachManagedInstancesToLifecycleStageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>
+            changeLifecycleEnvironmentCompartment(
+                    ChangeLifecycleEnvironmentCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeLifecycleEnvironmentCompartmentRequest,
+                                    ChangeLifecycleEnvironmentCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeLifecycleEnvironmentCompartment");
+        final ChangeLifecycleEnvironmentCompartmentRequest interceptedRequest =
+                ChangeLifecycleEnvironmentCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeLifecycleEnvironmentCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "ChangeLifecycleEnvironmentCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ChangeLifecycleEnvironmentCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeLifecycleEnvironmentCompartmentResponse>
+                transformer =
+                        ChangeLifecycleEnvironmentCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeLifecycleEnvironmentCompartmentRequest,
+                        ChangeLifecycleEnvironmentCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeLifecycleEnvironmentCompartmentRequest,
+                                ChangeLifecycleEnvironmentCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeLifecycleEnvironmentCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeLifecycleEnvironmentCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeLifecycleEnvironmentCompartmentRequest,
+                    ChangeLifecycleEnvironmentCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLifecycleEnvironmentResponse>
+            createLifecycleEnvironment(
+                    CreateLifecycleEnvironmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateLifecycleEnvironmentRequest,
+                                    CreateLifecycleEnvironmentResponse>
+                            handler) {
+        LOG.trace("Called async createLifecycleEnvironment");
+        final CreateLifecycleEnvironmentRequest interceptedRequest =
+                CreateLifecycleEnvironmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateLifecycleEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "CreateLifecycleEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/CreateLifecycleEnvironment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateLifecycleEnvironmentResponse>
+                transformer =
+                        CreateLifecycleEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateLifecycleEnvironmentRequest, CreateLifecycleEnvironmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateLifecycleEnvironmentRequest,
+                                CreateLifecycleEnvironmentResponse>,
+                        java.util.concurrent.Future<CreateLifecycleEnvironmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateLifecycleEnvironmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateLifecycleEnvironmentRequest, CreateLifecycleEnvironmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLifecycleEnvironmentResponse>
+            deleteLifecycleEnvironment(
+                    DeleteLifecycleEnvironmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteLifecycleEnvironmentRequest,
+                                    DeleteLifecycleEnvironmentResponse>
+                            handler) {
+        LOG.trace("Called async deleteLifecycleEnvironment");
+        final DeleteLifecycleEnvironmentRequest interceptedRequest =
+                DeleteLifecycleEnvironmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteLifecycleEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "DeleteLifecycleEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/DeleteLifecycleEnvironment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteLifecycleEnvironmentResponse>
+                transformer =
+                        DeleteLifecycleEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteLifecycleEnvironmentRequest, DeleteLifecycleEnvironmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteLifecycleEnvironmentRequest,
+                                DeleteLifecycleEnvironmentResponse>,
+                        java.util.concurrent.Future<DeleteLifecycleEnvironmentResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteLifecycleEnvironmentRequest, DeleteLifecycleEnvironmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachManagedInstancesFromLifecycleStageResponse>
+            detachManagedInstancesFromLifecycleStage(
+                    DetachManagedInstancesFromLifecycleStageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachManagedInstancesFromLifecycleStageRequest,
+                                    DetachManagedInstancesFromLifecycleStageResponse>
+                            handler) {
+        LOG.trace("Called async detachManagedInstancesFromLifecycleStage");
+        final DetachManagedInstancesFromLifecycleStageRequest interceptedRequest =
+                DetachManagedInstancesFromLifecycleStageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachManagedInstancesFromLifecycleStageConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "DetachManagedInstancesFromLifecycleStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/DetachManagedInstancesFromLifecycleStage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachManagedInstancesFromLifecycleStageResponse>
+                transformer =
+                        DetachManagedInstancesFromLifecycleStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachManagedInstancesFromLifecycleStageRequest,
+                        DetachManagedInstancesFromLifecycleStageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachManagedInstancesFromLifecycleStageRequest,
+                                DetachManagedInstancesFromLifecycleStageResponse>,
+                        java.util.concurrent.Future<
+                                DetachManagedInstancesFromLifecycleStageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDetachManagedInstancesFromLifecycleStageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachManagedInstancesFromLifecycleStageRequest,
+                    DetachManagedInstancesFromLifecycleStageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecycleEnvironmentResponse> getLifecycleEnvironment(
+            GetLifecycleEnvironmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLifecycleEnvironmentRequest, GetLifecycleEnvironmentResponse>
+                    handler) {
+        LOG.trace("Called async getLifecycleEnvironment");
+        final GetLifecycleEnvironmentRequest interceptedRequest =
+                GetLifecycleEnvironmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLifecycleEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "GetLifecycleEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/GetLifecycleEnvironment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetLifecycleEnvironmentResponse>
+                transformer =
+                        GetLifecycleEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetLifecycleEnvironmentRequest, GetLifecycleEnvironmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetLifecycleEnvironmentRequest, GetLifecycleEnvironmentResponse>,
+                        java.util.concurrent.Future<GetLifecycleEnvironmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLifecycleEnvironmentRequest, GetLifecycleEnvironmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLifecycleStageResponse> getLifecycleStage(
+            GetLifecycleStageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetLifecycleStageRequest, GetLifecycleStageResponse>
+                    handler) {
+        LOG.trace("Called async getLifecycleStage");
+        final GetLifecycleStageRequest interceptedRequest =
+                GetLifecycleStageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetLifecycleStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "GetLifecycleStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/GetLifecycleStage");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetLifecycleStageResponse>
+                transformer =
+                        GetLifecycleStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetLifecycleStageRequest, GetLifecycleStageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetLifecycleStageRequest, GetLifecycleStageResponse>,
+                        java.util.concurrent.Future<GetLifecycleStageResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetLifecycleStageRequest, GetLifecycleStageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleEnvironmentsResponse> listLifecycleEnvironments(
+            ListLifecycleEnvironmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListLifecycleEnvironmentsRequest, ListLifecycleEnvironmentsResponse>
+                    handler) {
+        LOG.trace("Called async listLifecycleEnvironments");
+        final ListLifecycleEnvironmentsRequest interceptedRequest =
+                ListLifecycleEnvironmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLifecycleEnvironmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/ListLifecycleEnvironments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListLifecycleEnvironmentsResponse>
+                transformer =
+                        ListLifecycleEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListLifecycleEnvironmentsRequest, ListLifecycleEnvironmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListLifecycleEnvironmentsRequest,
+                                ListLifecycleEnvironmentsResponse>,
+                        java.util.concurrent.Future<ListLifecycleEnvironmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListLifecycleEnvironmentsRequest, ListLifecycleEnvironmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleStageInstalledPackagesResponse>
+            listLifecycleStageInstalledPackages(
+                    ListLifecycleStageInstalledPackagesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListLifecycleStageInstalledPackagesRequest,
+                                    ListLifecycleStageInstalledPackagesResponse>
+                            handler) {
+        LOG.trace("Called async listLifecycleStageInstalledPackages");
+        final ListLifecycleStageInstalledPackagesRequest interceptedRequest =
+                ListLifecycleStageInstalledPackagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLifecycleStageInstalledPackagesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleStageInstalledPackages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStageInstalledPackages");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListLifecycleStageInstalledPackagesResponse>
+                transformer =
+                        ListLifecycleStageInstalledPackagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListLifecycleStageInstalledPackagesRequest,
+                        ListLifecycleStageInstalledPackagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListLifecycleStageInstalledPackagesRequest,
+                                ListLifecycleStageInstalledPackagesResponse>,
+                        java.util.concurrent.Future<ListLifecycleStageInstalledPackagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListLifecycleStageInstalledPackagesRequest,
+                    ListLifecycleStageInstalledPackagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLifecycleStagesResponse> listLifecycleStages(
+            ListLifecycleStagesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListLifecycleStagesRequest, ListLifecycleStagesResponse>
+                    handler) {
+        LOG.trace("Called async listLifecycleStages");
+        final ListLifecycleStagesRequest interceptedRequest =
+                ListLifecycleStagesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListLifecycleStagesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "ListLifecycleStages",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/ListLifecycleStages");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListLifecycleStagesResponse>
+                transformer =
+                        ListLifecycleStagesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListLifecycleStagesRequest, ListLifecycleStagesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListLifecycleStagesRequest, ListLifecycleStagesResponse>,
+                        java.util.concurrent.Future<ListLifecycleStagesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListLifecycleStagesRequest, ListLifecycleStagesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PromoteSoftwareSourceToLifecycleStageResponse>
+            promoteSoftwareSourceToLifecycleStage(
+                    PromoteSoftwareSourceToLifecycleStageRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PromoteSoftwareSourceToLifecycleStageRequest,
+                                    PromoteSoftwareSourceToLifecycleStageResponse>
+                            handler) {
+        LOG.trace("Called async promoteSoftwareSourceToLifecycleStage");
+        final PromoteSoftwareSourceToLifecycleStageRequest interceptedRequest =
+                PromoteSoftwareSourceToLifecycleStageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PromoteSoftwareSourceToLifecycleStageConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "PromoteSoftwareSourceToLifecycleStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/PromoteSoftwareSourceToLifecycleStage");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PromoteSoftwareSourceToLifecycleStageResponse>
+                transformer =
+                        PromoteSoftwareSourceToLifecycleStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PromoteSoftwareSourceToLifecycleStageRequest,
+                        PromoteSoftwareSourceToLifecycleStageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PromoteSoftwareSourceToLifecycleStageRequest,
+                                PromoteSoftwareSourceToLifecycleStageResponse>,
+                        java.util.concurrent.Future<PromoteSoftwareSourceToLifecycleStageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getPromoteSoftwareSourceToLifecycleStageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PromoteSoftwareSourceToLifecycleStageRequest,
+                    PromoteSoftwareSourceToLifecycleStageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RebootLifecycleStageResponse> rebootLifecycleStage(
+            RebootLifecycleStageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootLifecycleStageRequest, RebootLifecycleStageResponse>
+                    handler) {
+        LOG.trace("Called async rebootLifecycleStage");
+        final RebootLifecycleStageRequest interceptedRequest =
+                RebootLifecycleStageConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RebootLifecycleStageConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "RebootLifecycleStage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage");
+        final java.util.function.Function<javax.ws.rs.core.Response, RebootLifecycleStageResponse>
+                transformer =
+                        RebootLifecycleStageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RebootLifecycleStageRequest, RebootLifecycleStageResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RebootLifecycleStageRequest, RebootLifecycleStageResponse>,
+                        java.util.concurrent.Future<RebootLifecycleStageResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRebootLifecycleStageDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RebootLifecycleStageRequest, RebootLifecycleStageResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLifecycleEnvironmentResponse>
+            updateLifecycleEnvironment(
+                    UpdateLifecycleEnvironmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateLifecycleEnvironmentRequest,
+                                    UpdateLifecycleEnvironmentResponse>
+                            handler) {
+        LOG.trace("Called async updateLifecycleEnvironment");
+        final UpdateLifecycleEnvironmentRequest interceptedRequest =
+                UpdateLifecycleEnvironmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateLifecycleEnvironmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "LifecycleEnvironment",
+                        "UpdateLifecycleEnvironment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleEnvironment/UpdateLifecycleEnvironment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateLifecycleEnvironmentResponse>
+                transformer =
+                        UpdateLifecycleEnvironmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateLifecycleEnvironmentRequest, UpdateLifecycleEnvironmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateLifecycleEnvironmentRequest,
+                                UpdateLifecycleEnvironmentResponse>,
+                        java.util.concurrent.Future<UpdateLifecycleEnvironmentResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateLifecycleEnvironmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateLifecycleEnvironmentRequest, UpdateLifecycleEnvironmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

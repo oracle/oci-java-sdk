@@ -5,166 +5,53 @@
 package com.oracle.bmc.auth.okeworkloadidentity.internal;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import com.oracle.bmc.requests.BmcRequest;
 
 import java.util.Objects;
+import javax.annotation.concurrent.Immutable;
 
-/** @Immutable */
+@Immutable
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class GetOkeResourcePrincipalSessionTokenRequest
-        extends BmcRequest<GetOkeResourcePrincipalSessionTokenDetails> {
-    private GetOkeResourcePrincipalSessionTokenDetails getOkeResourcePrincipalSessionTokenDetails;
+public class GetOkeResourcePrincipalSessionTokenRequest {
+    private final String podKey;
 
-    public GetOkeResourcePrincipalSessionTokenDetails
-            getGetOkeResourcePrincipalSessionTokenDetails() {
-        return getOkeResourcePrincipalSessionTokenDetails;
+    @java.beans.ConstructorProperties({"podKey"})
+    public GetOkeResourcePrincipalSessionTokenRequest(String podKey) {
+        this.podKey = podKey;
     }
 
-    @Override
-    @com.oracle.bmc.InternalSdk
-    public GetOkeResourcePrincipalSessionTokenDetails getBody$() {
-        return getOkeResourcePrincipalSessionTokenDetails;
+    public String getPodKey() {
+        return this.podKey;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    GetOkeResourcePrincipalSessionTokenRequest,
-                    GetOkeResourcePrincipalSessionTokenDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
-        private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
-        private GetOkeResourcePrincipalSessionTokenDetails
-                getOkeResourcePrincipalSessionTokenDetails;
-
-        public Builder getOkeResourcePrincipalSessionTokenDetails(
-                GetOkeResourcePrincipalSessionTokenDetails
-                        getOkeResourcePrincipalSessionTokenDetails) {
-            this.getOkeResourcePrincipalSessionTokenDetails =
-                    getOkeResourcePrincipalSessionTokenDetails;
-            return this;
-        }
-
-        /**
-         * Set the invocation callback for the request to be built.
-         *
-         * @param invocationCallback the invocation callback to be set for the request
-         * @return this builder instance
-         */
-        public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
-            this.invocationCallback = invocationCallback;
-            return this;
-        }
-
-        /**
-         * Set the retry configuration for the request to be built.
-         *
-         * @param retryConfiguration the retry configuration to be used for the request
-         * @return this builder instance
-         */
-        public Builder retryConfiguration(
-                com.oracle.bmc.retrier.RetryConfiguration retryConfiguration) {
-            this.retryConfiguration = retryConfiguration;
-            return this;
-        }
-
-        /**
-         * Copy method to populate the builder with values from the given instance.
-         *
-         * @return this builder instance
-         */
-        public Builder copy(GetOkeResourcePrincipalSessionTokenRequest o) {
-            getOkeResourcePrincipalSessionTokenDetails(
-                    o.getGetOkeResourcePrincipalSessionTokenDetails());
-            invocationCallback(o.getInvocationCallback());
-            retryConfiguration(o.getRetryConfiguration());
-            return this;
-        }
-
-        public GetOkeResourcePrincipalSessionTokenRequest build() {
-            GetOkeResourcePrincipalSessionTokenRequest request = buildWithoutInvocationCallback();
-            request.setInvocationCallback(invocationCallback);
-            request.setRetryConfiguration(retryConfiguration);
-            return request;
-        }
-
-        /**
-         * Alternative setter for the body parameter.
-         *
-         * @param body the body parameter
-         * @return this builder instance
-         */
-        @com.oracle.bmc.InternalSdk
-        public Builder body$(GetOkeResourcePrincipalSessionTokenDetails body) {
-            getOkeResourcePrincipalSessionTokenDetails(body);
-            return this;
-        }
-
-        public GetOkeResourcePrincipalSessionTokenRequest buildWithoutInvocationCallback() {
-            GetOkeResourcePrincipalSessionTokenRequest request =
-                    new GetOkeResourcePrincipalSessionTokenRequest();
-            request.getOkeResourcePrincipalSessionTokenDetails =
-                    getOkeResourcePrincipalSessionTokenDetails;
-            return request;
-        }
-    }
-
-    /**
-     * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
-     * @return instance of {@link Builder} that allows you to modify request properties.
-     */
-    public Builder toBuilder() {
-        return new Builder()
-                .getOkeResourcePrincipalSessionTokenDetails(
-                        getOkeResourcePrincipalSessionTokenDetails);
-    }
-
-    /**
-     * Return a new builder for this request object.
-     *
-     * @return builder for the request object
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    @Override
-    public String toString() {
-        java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("(");
-        sb.append("super=").append(super.toString());
-        sb.append(",getOkeResourcePrincipalSessionTokenDetails=")
-                .append(String.valueOf(this.getOkeResourcePrincipalSessionTokenDetails));
-        sb.append(")");
-        return sb.toString();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(final Object o) {
+        if (o == this) {
             return true;
         }
         if (!(o instanceof GetOkeResourcePrincipalSessionTokenRequest)) {
             return false;
         }
-
-        GetOkeResourcePrincipalSessionTokenRequest other =
+        final GetOkeResourcePrincipalSessionTokenRequest other =
                 (GetOkeResourcePrincipalSessionTokenRequest) o;
-        return super.equals(o)
-                && java.util.Objects.equals(
-                        this.getOkeResourcePrincipalSessionTokenDetails,
-                        other.getOkeResourcePrincipalSessionTokenDetails);
+        if (!other.canEqual((Object) this)) {
+            return false;
+        }
+        final Object this$podKey = this.getPodKey();
+        final Object other$podKey = other.getPodKey();
+        if (!Objects.equals(this$podKey, other$podKey)) {
+            return false;
+        }
+        return true;
     }
 
-    @Override
+    protected boolean canEqual(final Object other) {
+        return other instanceof GetOkeResourcePrincipalSessionTokenRequest;
+    }
+
     public int hashCode() {
         final int PRIME = 59;
-        int result = super.hashCode();
-        result =
-                (result * PRIME)
-                        + (this.getOkeResourcePrincipalSessionTokenDetails == null
-                                ? 43
-                                : this.getOkeResourcePrincipalSessionTokenDetails.hashCode());
+        int result = 1;
+        final Object $podKey = this.getPodKey();
+        result = result * PRIME + ($podKey == null ? 43 : $podKey.hashCode());
         return result;
     }
 }

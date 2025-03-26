@@ -5,23 +5,22 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Summarizes a specific ADDM recommendation <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Summarizes a specific ADDM recommendation
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddmDbRecommendationAggregation.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddmDbRecommendationAggregation.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddmDbRecommendationAggregation
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -65,68 +64,68 @@ public final class AddmDbRecommendationAggregation
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Database insight.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Type of recommendation */
+        /**
+         * Type of recommendation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
          * Type of recommendation
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(String type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Recommendation message */
+        /**
+         * Recommendation message
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Recommendation message
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * Indicates implementation of the recommended action requires a database restart in order
-         * for it to take effect. Possible values "Y", "N" and null.
-         */
+         * Indicates implementation of the recommended action requires a database restart in order for it
+         * to take effect. Possible values "Y", "N" and null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requiresDbRestart")
         private String requiresDbRestart;
 
         /**
-         * Indicates implementation of the recommended action requires a database restart in order
-         * for it to take effect. Possible values "Y", "N" and null.
+         * Indicates implementation of the recommended action requires a database restart in order for it
+         * to take effect. Possible values "Y", "N" and null.
          *
          * @param requiresDbRestart the value to set
          * @return this builder
-         */
+         **/
         public Builder requiresDbRestart(String requiresDbRestart) {
             this.requiresDbRestart = requiresDbRestart;
             this.__explicitlySet__.add("requiresDbRestart");
@@ -135,7 +134,8 @@ public final class AddmDbRecommendationAggregation
         /**
          * Actions that can be performed to implement the recommendation (such as 'ALTER PARAMETER',
          * 'RUN SQL TUNING ADVISOR')
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("implementActions")
         private java.util.List<String> implementActions;
 
@@ -145,82 +145,87 @@ public final class AddmDbRecommendationAggregation
          *
          * @param implementActions the value to set
          * @return this builder
-         */
+         **/
         public Builder implementActions(java.util.List<String> implementActions) {
             this.implementActions = implementActions;
             this.__explicitlySet__.add("implementActions");
             return this;
         }
-        /** Recommendation message */
+        /**
+         * Recommendation message
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("rationale")
         private String rationale;
 
         /**
          * Recommendation message
-         *
          * @param rationale the value to set
          * @return this builder
-         */
+         **/
         public Builder rationale(String rationale) {
             this.rationale = rationale;
             this.__explicitlySet__.add("rationale");
             return this;
         }
-        /** Maximum estimated benefit in terms of percentage of total activity */
+        /**
+         * Maximum estimated benefit in terms of percentage of total activity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitPercent")
         private Double maxBenefitPercent;
 
         /**
          * Maximum estimated benefit in terms of percentage of total activity
-         *
          * @param maxBenefitPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder maxBenefitPercent(Double maxBenefitPercent) {
             this.maxBenefitPercent = maxBenefitPercent;
             this.__explicitlySet__.add("maxBenefitPercent");
             return this;
         }
-        /** Overall estimated benefit in terms of percentage of total activity */
+        /**
+         * Overall estimated benefit in terms of percentage of total activity
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("overallBenefitPercent")
         private Double overallBenefitPercent;
 
         /**
          * Overall estimated benefit in terms of percentage of total activity
-         *
          * @param overallBenefitPercent the value to set
          * @return this builder
-         */
+         **/
         public Builder overallBenefitPercent(Double overallBenefitPercent) {
             this.overallBenefitPercent = overallBenefitPercent;
             this.__explicitlySet__.add("overallBenefitPercent");
             return this;
         }
-        /** Maximum estimated benefit in terms of average active sessions */
+        /**
+         * Maximum estimated benefit in terms of average active sessions
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitAvgActiveSessions")
         private Double maxBenefitAvgActiveSessions;
 
         /**
          * Maximum estimated benefit in terms of average active sessions
-         *
          * @param maxBenefitAvgActiveSessions the value to set
          * @return this builder
-         */
+         **/
         public Builder maxBenefitAvgActiveSessions(Double maxBenefitAvgActiveSessions) {
             this.maxBenefitAvgActiveSessions = maxBenefitAvgActiveSessions;
             this.__explicitlySet__.add("maxBenefitAvgActiveSessions");
             return this;
         }
-        /** Number of occurrences for this recommendation */
+        /**
+         * Number of occurrences for this recommendation
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequencyCount")
         private Integer frequencyCount;
 
         /**
          * Number of occurrences for this recommendation
-         *
          * @param frequencyCount the value to set
          * @return this builder
-         */
+         **/
         public Builder frequencyCount(Integer frequencyCount) {
             this.frequencyCount = frequencyCount;
             this.__explicitlySet__.add("frequencyCount");
@@ -298,7 +303,9 @@ public final class AddmDbRecommendationAggregation
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -308,61 +315,61 @@ public final class AddmDbRecommendationAggregation
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Database insight.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database insight.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Type of recommendation */
+    /**
+     * Type of recommendation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
      * Type of recommendation
-     *
      * @return the value
-     */
+     **/
     public String getType() {
         return type;
     }
 
-    /** Recommendation message */
+    /**
+     * Recommendation message
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Recommendation message
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
     /**
-     * Indicates implementation of the recommended action requires a database restart in order for
-     * it to take effect. Possible values "Y", "N" and null.
-     */
+     * Indicates implementation of the recommended action requires a database restart in order for it
+     * to take effect. Possible values "Y", "N" and null.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requiresDbRestart")
     private final String requiresDbRestart;
 
     /**
-     * Indicates implementation of the recommended action requires a database restart in order for
-     * it to take effect. Possible values "Y", "N" and null.
+     * Indicates implementation of the recommended action requires a database restart in order for it
+     * to take effect. Possible values "Y", "N" and null.
      *
      * @return the value
-     */
+     **/
     public String getRequiresDbRestart() {
         return requiresDbRestart;
     }
@@ -370,7 +377,8 @@ public final class AddmDbRecommendationAggregation
     /**
      * Actions that can be performed to implement the recommendation (such as 'ALTER PARAMETER',
      * 'RUN SQL TUNING ADVISOR')
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("implementActions")
     private final java.util.List<String> implementActions;
 
@@ -379,72 +387,77 @@ public final class AddmDbRecommendationAggregation
      * 'RUN SQL TUNING ADVISOR')
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getImplementActions() {
         return implementActions;
     }
 
-    /** Recommendation message */
+    /**
+     * Recommendation message
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("rationale")
     private final String rationale;
 
     /**
      * Recommendation message
-     *
      * @return the value
-     */
+     **/
     public String getRationale() {
         return rationale;
     }
 
-    /** Maximum estimated benefit in terms of percentage of total activity */
+    /**
+     * Maximum estimated benefit in terms of percentage of total activity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitPercent")
     private final Double maxBenefitPercent;
 
     /**
      * Maximum estimated benefit in terms of percentage of total activity
-     *
      * @return the value
-     */
+     **/
     public Double getMaxBenefitPercent() {
         return maxBenefitPercent;
     }
 
-    /** Overall estimated benefit in terms of percentage of total activity */
+    /**
+     * Overall estimated benefit in terms of percentage of total activity
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("overallBenefitPercent")
     private final Double overallBenefitPercent;
 
     /**
      * Overall estimated benefit in terms of percentage of total activity
-     *
      * @return the value
-     */
+     **/
     public Double getOverallBenefitPercent() {
         return overallBenefitPercent;
     }
 
-    /** Maximum estimated benefit in terms of average active sessions */
+    /**
+     * Maximum estimated benefit in terms of average active sessions
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxBenefitAvgActiveSessions")
     private final Double maxBenefitAvgActiveSessions;
 
     /**
      * Maximum estimated benefit in terms of average active sessions
-     *
      * @return the value
-     */
+     **/
     public Double getMaxBenefitAvgActiveSessions() {
         return maxBenefitAvgActiveSessions;
     }
 
-    /** Number of occurrences for this recommendation */
+    /**
+     * Number of occurrences for this recommendation
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyCount")
     private final Integer frequencyCount;
 
     /**
      * Number of occurrences for this recommendation
-     *
      * @return the value
-     */
+     **/
     public Integer getFrequencyCount() {
         return frequencyCount;
     }
@@ -463,7 +476,6 @@ public final class AddmDbRecommendationAggregation
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

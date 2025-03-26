@@ -30,10 +30,8 @@ public class GetAndUpdateExadataIORMExample {
             throw new Exception("This example expects 1 argument:  A Database System OCID");
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(CONFIG_LOCATION, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();
@@ -43,7 +41,7 @@ public class GetAndUpdateExadataIORMExample {
 
         String dbSystemID = args[0];
 
-        DatabaseClient databaseClient = DatabaseClient.builder().build(provider);
+        DatabaseClient databaseClient = new DatabaseClient(provider);
 
         /*
           Exadata IORM get configuration Example...

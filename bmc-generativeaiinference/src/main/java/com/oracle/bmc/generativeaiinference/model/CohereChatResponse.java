@@ -5,193 +5,213 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The response to the chat conversation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * The response to the chat conversation.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CohereChatResponse.Builder.class)
+    builder = CohereChatResponse.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "apiFormat")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "apiFormat"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CohereChatResponse extends BaseChatResponse {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Contents of the response that the model generates. */
+        /**
+         * Contents of the response that the model generates.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
          * Contents of the response that the model generates.
-         *
          * @param text the value to set
          * @return this builder
-         */
+         **/
         public Builder text(String text) {
             this.text = text;
             this.__explicitlySet__.add("text");
             return this;
         }
         /**
-         * The list of previous messages between the user and the model. The chat history gives the
-         * model context for responding to the user's inputs.
-         */
+         * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
         private java.util.List<CohereMessage> chatHistory;
 
         /**
-         * The list of previous messages between the user and the model. The chat history gives the
-         * model context for responding to the user's inputs.
-         *
+         * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
          * @param chatHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder chatHistory(java.util.List<CohereMessage> chatHistory) {
             this.chatHistory = chatHistory;
             this.__explicitlySet__.add("chatHistory");
             return this;
         }
-        /** Inline citations for the generated response. */
+        /**
+         * Inline citations for the generated response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("citations")
         private java.util.List<Citation> citations;
 
         /**
          * Inline citations for the generated response.
-         *
          * @param citations the value to set
          * @return this builder
-         */
+         **/
         public Builder citations(java.util.List<Citation> citations) {
             this.citations = citations;
             this.__explicitlySet__.add("citations");
             return this;
         }
-        /** If set to true, a search for documents is required. */
+        /**
+         * If set to true, a search for documents is required.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSearchRequired")
         private Boolean isSearchRequired;
 
         /**
          * If set to true, a search for documents is required.
-         *
          * @param isSearchRequired the value to set
          * @return this builder
-         */
+         **/
         public Builder isSearchRequired(Boolean isSearchRequired) {
             this.isSearchRequired = isSearchRequired;
             this.__explicitlySet__.add("isSearchRequired");
             return this;
         }
-        /** Why the generation stopped. */
+        /**
+         * Why the generation stopped.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("finishReason")
         private FinishReason finishReason;
 
         /**
          * Why the generation stopped.
-         *
          * @param finishReason the value to set
          * @return this builder
-         */
+         **/
         public Builder finishReason(FinishReason finishReason) {
             this.finishReason = finishReason;
             this.__explicitlySet__.add("finishReason");
             return this;
         }
         /**
-         * If there is an error during the streaming scenario, then the {@code errorMessage}
-         * parameter contains details for the error.
-         */
+         * If there is an error during the streaming scenario, then the {@code errorMessage} parameter contains details for the error.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
         private String errorMessage;
 
         /**
-         * If there is an error during the streaming scenario, then the {@code errorMessage}
-         * parameter contains details for the error.
-         *
+         * If there is an error during the streaming scenario, then the {@code errorMessage} parameter contains details for the error.
          * @param errorMessage the value to set
          * @return this builder
-         */
+         **/
         public Builder errorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             this.__explicitlySet__.add("errorMessage");
             return this;
         }
-        /** The generated search queries. */
+        /**
+         * The generated search queries.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("searchQueries")
         private java.util.List<SearchQuery> searchQueries;
 
         /**
          * The generated search queries.
-         *
          * @param searchQueries the value to set
          * @return this builder
-         */
+         **/
         public Builder searchQueries(java.util.List<SearchQuery> searchQueries) {
             this.searchQueries = searchQueries;
             this.__explicitlySet__.add("searchQueries");
             return this;
         }
         /**
-         * The documents that the model can refer to when generating a response. Each document is a
-         * JSON string that represents the field and values of the document.
+         * The documents that the model can refer to when generating a response. Each document is a JSON string that represents the field and values of the document.
+         * <p>
+         * Example:
+         * '[
+         *   {
+         *     "id": "doc_0",
+         *     "snippet": "Emperor penguins are the tallest.",
+         *     "title": "Tall penguins"
+         *   },
+         *   {
+         *     "id": "doc_1",
+         *     "snippet": "Emperor penguins only live in Antarctica.",
+         *     "title": "Penguin habitats"
+         *   }
+         * ]'
          *
-         * <p>Example: '[ { "id": "doc_0", "snippet": "Emperor penguins are the tallest.", "title":
-         * "Tall penguins" }, { "id": "doc_1", "snippet": "Emperor penguins only live in
-         * Antarctica.", "title": "Penguin habitats" } ]'
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<Object> documents;
 
         /**
-         * The documents that the model can refer to when generating a response. Each document is a
-         * JSON string that represents the field and values of the document.
-         *
-         * <p>Example: '[ { "id": "doc_0", "snippet": "Emperor penguins are the tallest.", "title":
-         * "Tall penguins" }, { "id": "doc_1", "snippet": "Emperor penguins only live in
-         * Antarctica.", "title": "Penguin habitats" } ]'
+         * The documents that the model can refer to when generating a response. Each document is a JSON string that represents the field and values of the document.
+         * <p>
+         * Example:
+         * '[
+         *   {
+         *     "id": "doc_0",
+         *     "snippet": "Emperor penguins are the tallest.",
+         *     "title": "Tall penguins"
+         *   },
+         *   {
+         *     "id": "doc_1",
+         *     "snippet": "Emperor penguins only live in Antarctica.",
+         *     "title": "Penguin habitats"
+         *   }
+         * ]'
          *
          * @param documents the value to set
          * @return this builder
-         */
+         **/
         public Builder documents(java.util.List<Object> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
             return this;
         }
-        /** A list of tool calls generated by the model. */
+        /**
+         * A list of tool calls generated by the model.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toolCalls")
         private java.util.List<CohereToolCall> toolCalls;
 
         /**
          * A list of tool calls generated by the model.
-         *
          * @param toolCalls the value to set
          * @return this builder
-         */
+         **/
         public Builder toolCalls(java.util.List<CohereToolCall> toolCalls) {
             this.toolCalls = toolCalls;
             this.__explicitlySet__.add("toolCalls");
             return this;
         }
-        /** The full prompt that was sent to the model if isEcho is true when request. */
+        /**
+         * The full prompt that was sent to the model if isEcho is true when request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prompt")
         private String prompt;
 
         /**
          * The full prompt that was sent to the model if isEcho is true when request.
-         *
          * @param prompt the value to set
          * @return this builder
-         */
+         **/
         public Builder prompt(String prompt) {
             this.prompt = prompt;
             this.__explicitlySet__.add("prompt");
@@ -256,7 +276,9 @@ public final class CohereChatResponse extends BaseChatResponse {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -290,64 +312,66 @@ public final class CohereChatResponse extends BaseChatResponse {
         this.prompt = prompt;
     }
 
-    /** Contents of the response that the model generates. */
+    /**
+     * Contents of the response that the model generates.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
      * Contents of the response that the model generates.
-     *
      * @return the value
-     */
+     **/
     public String getText() {
         return text;
     }
 
     /**
-     * The list of previous messages between the user and the model. The chat history gives the
-     * model context for responding to the user's inputs.
-     */
+     * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
     private final java.util.List<CohereMessage> chatHistory;
 
     /**
-     * The list of previous messages between the user and the model. The chat history gives the
-     * model context for responding to the user's inputs.
-     *
+     * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
      * @return the value
-     */
+     **/
     public java.util.List<CohereMessage> getChatHistory() {
         return chatHistory;
     }
 
-    /** Inline citations for the generated response. */
+    /**
+     * Inline citations for the generated response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("citations")
     private final java.util.List<Citation> citations;
 
     /**
      * Inline citations for the generated response.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Citation> getCitations() {
         return citations;
     }
 
-    /** If set to true, a search for documents is required. */
+    /**
+     * If set to true, a search for documents is required.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSearchRequired")
     private final Boolean isSearchRequired;
 
     /**
      * If set to true, a search for documents is required.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsSearchRequired() {
         return isSearchRequired;
     }
 
-    /** Why the generation stopped. */
-    public enum FinishReason implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Why the generation stopped.
+     **/
+    public enum FinishReason {
         Complete("COMPLETE"),
         ErrorToxic("ERROR_TOXIC"),
         ErrorLimit("ERROR_LIMIT"),
@@ -356,8 +380,8 @@ public final class CohereChatResponse extends BaseChatResponse {
         MaxTokens("MAX_TOKENS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -396,96 +420,116 @@ public final class CohereChatResponse extends BaseChatResponse {
             return UnknownEnumValue;
         }
     };
-    /** Why the generation stopped. */
+    /**
+     * Why the generation stopped.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("finishReason")
     private final FinishReason finishReason;
 
     /**
      * Why the generation stopped.
-     *
      * @return the value
-     */
+     **/
     public FinishReason getFinishReason() {
         return finishReason;
     }
 
     /**
-     * If there is an error during the streaming scenario, then the {@code errorMessage} parameter
-     * contains details for the error.
-     */
+     * If there is an error during the streaming scenario, then the {@code errorMessage} parameter contains details for the error.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorMessage")
     private final String errorMessage;
 
     /**
-     * If there is an error during the streaming scenario, then the {@code errorMessage} parameter
-     * contains details for the error.
-     *
+     * If there is an error during the streaming scenario, then the {@code errorMessage} parameter contains details for the error.
      * @return the value
-     */
+     **/
     public String getErrorMessage() {
         return errorMessage;
     }
 
-    /** The generated search queries. */
+    /**
+     * The generated search queries.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("searchQueries")
     private final java.util.List<SearchQuery> searchQueries;
 
     /**
      * The generated search queries.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SearchQuery> getSearchQueries() {
         return searchQueries;
     }
 
     /**
-     * The documents that the model can refer to when generating a response. Each document is a JSON
-     * string that represents the field and values of the document.
+     * The documents that the model can refer to when generating a response. Each document is a JSON string that represents the field and values of the document.
+     * <p>
+     * Example:
+     * '[
+     *   {
+     *     "id": "doc_0",
+     *     "snippet": "Emperor penguins are the tallest.",
+     *     "title": "Tall penguins"
+     *   },
+     *   {
+     *     "id": "doc_1",
+     *     "snippet": "Emperor penguins only live in Antarctica.",
+     *     "title": "Penguin habitats"
+     *   }
+     * ]'
      *
-     * <p>Example: '[ { "id": "doc_0", "snippet": "Emperor penguins are the tallest.", "title":
-     * "Tall penguins" }, { "id": "doc_1", "snippet": "Emperor penguins only live in Antarctica.",
-     * "title": "Penguin habitats" } ]'
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<Object> documents;
 
     /**
-     * The documents that the model can refer to when generating a response. Each document is a JSON
-     * string that represents the field and values of the document.
-     *
-     * <p>Example: '[ { "id": "doc_0", "snippet": "Emperor penguins are the tallest.", "title":
-     * "Tall penguins" }, { "id": "doc_1", "snippet": "Emperor penguins only live in Antarctica.",
-     * "title": "Penguin habitats" } ]'
+     * The documents that the model can refer to when generating a response. Each document is a JSON string that represents the field and values of the document.
+     * <p>
+     * Example:
+     * '[
+     *   {
+     *     "id": "doc_0",
+     *     "snippet": "Emperor penguins are the tallest.",
+     *     "title": "Tall penguins"
+     *   },
+     *   {
+     *     "id": "doc_1",
+     *     "snippet": "Emperor penguins only live in Antarctica.",
+     *     "title": "Penguin habitats"
+     *   }
+     * ]'
      *
      * @return the value
-     */
+     **/
     public java.util.List<Object> getDocuments() {
         return documents;
     }
 
-    /** A list of tool calls generated by the model. */
+    /**
+     * A list of tool calls generated by the model.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("toolCalls")
     private final java.util.List<CohereToolCall> toolCalls;
 
     /**
      * A list of tool calls generated by the model.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CohereToolCall> getToolCalls() {
         return toolCalls;
     }
 
-    /** The full prompt that was sent to the model if isEcho is true when request. */
+    /**
+     * The full prompt that was sent to the model if isEcho is true when request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prompt")
     private final String prompt;
 
     /**
      * The full prompt that was sent to the model if isEcho is true when request.
-     *
      * @return the value
-     */
+     **/
     public String getPrompt() {
         return prompt;
     }
@@ -497,7 +541,6 @@ public final class CohereChatResponse extends BaseChatResponse {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

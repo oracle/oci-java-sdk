@@ -6,31 +6,31 @@ package com.oracle.bmc.devops.requests;
 
 import com.oracle.bmc.devops.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRefsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRefsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRefsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListRefsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     private String repositoryId;
 
-    /** Unique repository identifier. */
+    /**
+     * Unique repository identifier.
+     */
     public String getRepositoryId() {
         return repositoryId;
     }
     /**
-     * Reference type to distinguish between branch and tag. If it is not specified, all references
-     * are returned.
+     * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      */
     private RefType refType;
 
     /**
-     * Reference type to distinguish between branch and tag. If it is not specified, all references
-     * are returned.
-     */
-    public enum RefType implements com.oracle.bmc.http.internal.BmcEnum {
+     * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
+     **/
+    public enum RefType {
         Branch("BRANCH"),
         Tag("TAG"),
         ;
@@ -64,66 +64,77 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
 
     /**
-     * Reference type to distinguish between branch and tag. If it is not specified, all references
-     * are returned.
+     * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
      */
     public RefType getRefType() {
         return refType;
     }
-    /** Commit ID in a repository. */
+    /**
+     * Commit ID in a repository.
+     */
     private String commitId;
 
-    /** Commit ID in a repository. */
+    /**
+     * Commit ID in a repository.
+     */
     public String getCommitId() {
         return commitId;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** A filter to return only resources that match the given reference name. */
+    /**
+     * A filter to return only resources that match the given reference name.
+     */
     private String refName;
 
-    /** A filter to return only resources that match the given reference name. */
+    /**
+     * A filter to return only resources that match the given reference name.
+     */
     public String getRefName() {
         return refName;
     }
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     private com.oracle.bmc.devops.model.SortOrder sortOrder;
 
-    /** The sort order to use. Use either ascending or descending. */
+    /**
+     * The sort order to use. Use either ascending or descending.
+     */
     public com.oracle.bmc.devops.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for reference name
-     * is ascending. Default order for reference type is ascending. If no value is specified
-     * reference name is default.
+     * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for reference name
-     * is ascending. Default order for reference type is ascending. If no value is specified
-     * reference name is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
+     *
+     **/
+    public enum SortBy {
         RefType("refType"),
         RefName("refName"),
         ;
@@ -157,22 +168,19 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for reference name
-     * is ascending. Default order for reference type is ascending. If no value is specified
-     * reference name is default.
+     * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
      */
     public String getOpcRequestId() {
         return opcRequestId;
@@ -180,15 +188,17 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<ListRefsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique repository identifier. */
+        /**
+         * Unique repository identifier.
+         */
         private String repositoryId = null;
 
         /**
          * Unique repository identifier.
-         *
          * @param repositoryId the value to set
          * @return this builder instance
          */
@@ -198,15 +208,12 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * Reference type to distinguish between branch and tag. If it is not specified, all
-         * references are returned.
+         * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
          */
         private RefType refType = null;
 
         /**
-         * Reference type to distinguish between branch and tag. If it is not specified, all
-         * references are returned.
-         *
+         * Reference type to distinguish between branch and tag. If it is not specified, all references are returned.
          * @param refType the value to set
          * @return this builder instance
          */
@@ -215,12 +222,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** Commit ID in a repository. */
+        /**
+         * Commit ID in a repository.
+         */
         private String commitId = null;
 
         /**
          * Commit ID in a repository.
-         *
          * @param commitId the value to set
          * @return this builder instance
          */
@@ -229,12 +237,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -244,15 +253,12 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -261,12 +267,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** A filter to return only resources that match the given reference name. */
+        /**
+         * A filter to return only resources that match the given reference name.
+         */
         private String refName = null;
 
         /**
          * A filter to return only resources that match the given reference name.
-         *
          * @param refName the value to set
          * @return this builder instance
          */
@@ -275,12 +282,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             return this;
         }
 
-        /** The sort order to use. Use either ascending or descending. */
+        /**
+         * The sort order to use. Use either ascending or descending.
+         */
         private com.oracle.bmc.devops.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use. Use either ascending or descending.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -290,16 +298,13 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for reference
-         * name is ascending. Default order for reference type is ascending. If no value is
-         * specified reference name is default.
+         * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for reference
-         * name is ascending. Default order for reference type is ascending. If no value is
-         * specified reference name is default.
+         * The field to sort by. Only one sort order may be provided. Default order for reference name is ascending. Default order for reference type is ascending. If no value is specified reference name is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -310,15 +315,12 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request.  If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -329,19 +331,18 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -353,7 +354,6 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListRefsRequest o) {
@@ -374,11 +374,10 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListRefsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListRefsRequest
          */
@@ -392,8 +391,7 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
         /**
          * Build the instance of ListRefsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListRefsRequest
@@ -410,14 +408,12 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListRefsRequest(repositoryId, refType, commitId, limit, page, refName, sortOrder,
-            // sortBy, opcRequestId);
+            // new ListRefsRequest(repositoryId, refType, commitId, limit, page, refName, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -435,7 +431,6 @@ public class ListRefsRequest extends com.oracle.bmc.requests.BmcRequest<java.lan
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

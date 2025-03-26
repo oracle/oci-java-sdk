@@ -5,24 +5,23 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * A proxy field. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * A proxy field.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProxyField.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProxyField extends TypedObject {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -89,21 +88,16 @@ public final class ProxyField extends TypedObject {
             return this;
         }
         /**
-         * Deprecated - Reference to a typed object. This can be either a key value to an object
-         * within the document, a shall referenced to a {@code TypedObject}, or a full {@code
-         * TypedObject} definition.
-         */
+         * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Object scope;
 
         /**
-         * Deprecated - Reference to a typed object. This can be either a key value to an object
-         * within the document, a shall referenced to a {@code TypedObject}, or a full {@code
-         * TypedObject} definition.
-         *
+         * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(Object scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
@@ -128,19 +122,16 @@ public final class ProxyField extends TypedObject {
             return this;
         }
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You
-         * can define your own labels and use them to categorize content.
-         */
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("labels")
         private java.util.List<String> labels;
 
         /**
-         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You
-         * can define your own labels and use them to categorize content.
-         *
+         * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * @param labels the value to set
          * @return this builder
-         */
+         **/
         public Builder labels(java.util.List<String> labels) {
             this.labels = labels;
             this.__explicitlySet__.add("labels");
@@ -209,7 +200,9 @@ public final class ProxyField extends TypedObject {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -239,20 +232,15 @@ public final class ProxyField extends TypedObject {
     }
 
     /**
-     * Deprecated - Reference to a typed object. This can be either a key value to an object within
-     * the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject}
-     * definition.
-     */
+     * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Object scope;
 
     /**
-     * Deprecated - Reference to a typed object. This can be either a key value to an object within
-     * the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject}
-     * definition.
-     *
+     * Deprecated - Reference to a typed object. This can be either a key value to an object within the document, a shall referenced to a {@code TypedObject}, or a full {@code TypedObject} definition.
      * @return the value
-     */
+     **/
     public Object getScope() {
         return scope;
     }
@@ -272,18 +260,15 @@ public final class ProxyField extends TypedObject {
     }
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can
-     * define your own labels and use them to categorize content.
-     */
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("labels")
     private final java.util.List<String> labels;
 
     /**
-     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can
-     * define your own labels and use them to categorize content.
-     *
+     * Labels are keywords or labels that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * @return the value
-     */
+     **/
     public java.util.List<String> getLabels() {
         return labels;
     }
@@ -295,7 +280,6 @@ public final class ProxyField extends TypedObject {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

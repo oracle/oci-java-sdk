@@ -5,23 +5,21 @@
 package com.oracle.bmc.computeinstanceagent.model;
 
 /**
- * The command payload. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
+ * The command payload.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180530")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceAgentCommand.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class InstanceAgentCommand
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = InstanceAgentCommand.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class InstanceAgentCommand extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -59,57 +57,48 @@ public final class InstanceAgentCommand
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * command.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * command.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the command.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the command.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the command.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique. Avoid entering confidential
-         * information.
-         */
+         * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique. Avoid entering confidential
-         * information.
-         *
+         * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
@@ -118,7 +107,8 @@ public final class InstanceAgentCommand
         /**
          * The date and time the command was created, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -128,7 +118,7 @@ public final class InstanceAgentCommand
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -137,7 +127,8 @@ public final class InstanceAgentCommand
         /**
          * The date and time the command was last updated, in the format defined by
          * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
@@ -147,77 +138,75 @@ public final class InstanceAgentCommand
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Whether a request was made to cancel the command. Canceling a command is a best-effort
-         * attempt.
-         */
+         * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
         private Boolean isCanceled;
 
         /**
-         * Whether a request was made to cancel the command. Canceling a command is a best-effort
-         * attempt.
-         *
+         * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
          * @param isCanceled the value to set
          * @return this builder
-         */
+         **/
         public Builder isCanceled(Boolean isCanceled) {
             this.isCanceled = isCanceled;
             this.__explicitlySet__.add("isCanceled");
             return this;
         }
         /**
-         * The amount of time that Oracle Cloud Agent is given to run the command on the instance
-         * before timing out. The timer starts when Oracle Cloud Agent starts the command. Zero
-         * means no timeout.
-         */
+         * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+         * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
         private Integer executionTimeOutInSeconds;
 
         /**
-         * The amount of time that Oracle Cloud Agent is given to run the command on the instance
-         * before timing out. The timer starts when Oracle Cloud Agent starts the command. Zero
-         * means no timeout.
+         * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+         * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
          *
          * @param executionTimeOutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder executionTimeOutInSeconds(Integer executionTimeOutInSeconds) {
             this.executionTimeOutInSeconds = executionTimeOutInSeconds;
             this.__explicitlySet__.add("executionTimeOutInSeconds");
             return this;
         }
-        /** The target instance that the command runs on. */
+        /**
+         * The target instance that the command runs on.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private InstanceAgentCommandTarget target;
 
         /**
          * The target instance that the command runs on.
-         *
          * @param target the value to set
          * @return this builder
-         */
+         **/
         public Builder target(InstanceAgentCommandTarget target) {
             this.target = target;
             this.__explicitlySet__.add("target");
             return this;
         }
-        /** The contents of the command. */
+        /**
+         * The contents of the command.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("content")
         private InstanceAgentCommandContent content;
 
         /**
          * The contents of the command.
-         *
          * @param content the value to set
          * @return this builder
-         */
+         **/
         public Builder content(InstanceAgentCommandContent content) {
             this.content = content;
             this.__explicitlySet__.add("content");
@@ -278,7 +267,9 @@ public final class InstanceAgentCommand
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -288,50 +279,43 @@ public final class InstanceAgentCommand
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * command.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * command.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the command.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the command.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the command.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the command.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
      * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * A user-friendly name. Does not have to be unique. Avoid entering confidential information.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
@@ -339,7 +323,8 @@ public final class InstanceAgentCommand
     /**
      * The date and time the command was created, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
@@ -348,7 +333,7 @@ public final class InstanceAgentCommand
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -356,7 +341,8 @@ public final class InstanceAgentCommand
     /**
      * The date and time the command was last updated, in the format defined by
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
@@ -365,69 +351,67 @@ public final class InstanceAgentCommand
      * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Whether a request was made to cancel the command. Canceling a command is a best-effort
-     * attempt.
-     */
+     * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCanceled")
     private final Boolean isCanceled;
 
     /**
-     * Whether a request was made to cancel the command. Canceling a command is a best-effort
-     * attempt.
-     *
+     * Whether a request was made to cancel the command. Canceling a command is a best-effort attempt.
      * @return the value
-     */
+     **/
     public Boolean getIsCanceled() {
         return isCanceled;
     }
 
     /**
-     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before
-     * timing out. The timer starts when Oracle Cloud Agent starts the command. Zero means no
-     * timeout.
-     */
+     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+     * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("executionTimeOutInSeconds")
     private final Integer executionTimeOutInSeconds;
 
     /**
-     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before
-     * timing out. The timer starts when Oracle Cloud Agent starts the command. Zero means no
-     * timeout.
+     * The amount of time that Oracle Cloud Agent is given to run the command on the instance before timing
+     * out. The timer starts when Oracle Cloud Agent starts the command. Zero means no timeout.
      *
      * @return the value
-     */
+     **/
     public Integer getExecutionTimeOutInSeconds() {
         return executionTimeOutInSeconds;
     }
 
-    /** The target instance that the command runs on. */
+    /**
+     * The target instance that the command runs on.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final InstanceAgentCommandTarget target;
 
     /**
      * The target instance that the command runs on.
-     *
      * @return the value
-     */
+     **/
     public InstanceAgentCommandTarget getTarget() {
         return target;
     }
 
-    /** The contents of the command. */
+    /**
+     * The contents of the command.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("content")
     private final InstanceAgentCommandContent content;
 
     /**
      * The contents of the command.
-     *
      * @return the value
-     */
+     **/
     public InstanceAgentCommandContent getContent() {
         return content;
     }
@@ -439,7 +423,6 @@ public final class InstanceAgentCommand
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

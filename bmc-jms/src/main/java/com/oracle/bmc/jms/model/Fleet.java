@@ -6,21 +6,19 @@ package com.oracle.bmc.jms.model;
 
 /**
  * A Fleet is the primary collection with which users interact when using Java Management Service.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Fleet.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Fleet extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -85,68 +83,66 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The name of the Fleet. */
+        /**
+         * The name of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the Fleet.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The Fleet's description. */
+        /**
+         * The Fleet's description.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * The Fleet's description.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment of the Fleet.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment of the Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
@@ -154,41 +150,39 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
-         */
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
         private Integer approximateJreCount;
 
         /**
          * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
          *
          * @param approximateJreCount the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateJreCount(Integer approximateJreCount) {
             this.approximateJreCount = approximateJreCount;
             this.__explicitlySet__.add("approximateJreCount");
             return this;
         }
         /**
-         * The approximate count of all unique Java installations in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
-         */
+         * The approximate count of all unique Java installations in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
         private Integer approximateInstallationCount;
 
         /**
-         * The approximate count of all unique Java installations in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
+         * The approximate count of all unique Java installations in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
          *
          * @param approximateInstallationCount the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateInstallationCount(Integer approximateInstallationCount) {
             this.approximateInstallationCount = approximateInstallationCount;
             this.__explicitlySet__.add("approximateInstallationCount");
@@ -196,41 +190,39 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique applications in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
-         */
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
         private Integer approximateApplicationCount;
 
         /**
          * The approximate count of all unique applications in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
          *
          * @param approximateApplicationCount the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateApplicationCount(Integer approximateApplicationCount) {
             this.approximateApplicationCount = approximateApplicationCount;
             this.__explicitlySet__.add("approximateApplicationCount");
             return this;
         }
         /**
-         * The approximate count of all unique managed instances in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
-         */
+         * The approximate count of all unique managed instances in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
         private Integer approximateManagedInstanceCount;
 
         /**
-         * The approximate count of all unique managed instances in the Fleet in the past seven
-         * days. This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
+         * The approximate count of all unique managed instances in the Fleet in the past seven days.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
          *
          * @param approximateManagedInstanceCount the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
             this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             this.__explicitlySet__.add("approximateManagedInstanceCount");
@@ -238,20 +230,19 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * The approximate count of all unique Java servers in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
-         */
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
         private Integer approximateJavaServerCount;
 
         /**
          * The approximate count of all unique Java servers in the Fleet in the past seven days.
-         * This metric is provided on a best-effort manner, and isn't taken into account when
-         * computing the resource ETag.
+         * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
          *
          * @param approximateJavaServerCount the value to set
          * @return this builder
-         */
+         **/
         public Builder approximateJavaServerCount(Integer approximateJavaServerCount) {
             this.approximateJavaServerCount = approximateJavaServerCount;
             this.__explicitlySet__.add("approximateJavaServerCount");
@@ -276,25 +267,29 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
-         */
+         * Whether or not advanced features are enabled in this Fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
         private Boolean isAdvancedFeaturesEnabled;
 
         /**
-         * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
-         * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
+         * Whether or not advanced features are enabled in this Fleet.
+         * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
          *
          * @param isAdvancedFeaturesEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAdvancedFeaturesEnabled(Boolean isAdvancedFeaturesEnabled) {
             this.isAdvancedFeaturesEnabled = isAdvancedFeaturesEnabled;
             this.__explicitlySet__.add("isAdvancedFeaturesEnabled");
             return this;
         }
-        /** Whether or not export setting is enabled in this Fleet. */
+        /**
+         * Whether or not export setting is enabled in this Fleet.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
         private Boolean isExportSettingEnabled;
 
@@ -303,41 +298,41 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
          *
          * @param isExportSettingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isExportSettingEnabled(Boolean isExportSettingEnabled) {
             this.isExportSettingEnabled = isExportSettingEnabled;
             this.__explicitlySet__.add("isExportSettingEnabled");
             return this;
         }
         /**
-         * The creation date and time of the Fleet (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
+         * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The creation date and time of the Fleet (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The lifecycle state of the Fleet. */
+        /**
+         * The lifecycle state of the Fleet.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The lifecycle state of the Fleet.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -345,20 +340,19 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-         * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -366,50 +360,46 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags
-         * and Tag
-         * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-         * information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System
-         * tags can be viewed by users, but can only be created by the system.
-         *
-         * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * System tags can be viewed by users, but can only be created by the system.
+         * <p>
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -506,7 +496,9 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -516,156 +508,149 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The name of the Fleet. */
+    /**
+     * The name of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the Fleet.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The Fleet's description. */
+    /**
+     * The Fleet's description.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * The Fleet's description.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment of the Fleet.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment of the Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
-     */
+     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJreCount")
     private final Integer approximateJreCount;
 
     /**
-     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
+     * The approximate count of all unique Java Runtimes in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      *
      * @return the value
-     */
+     **/
     public Integer getApproximateJreCount() {
         return approximateJreCount;
     }
 
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and isn't taken into account when computing
-     * the resource ETag.
-     */
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateInstallationCount")
     private final Integer approximateInstallationCount;
 
     /**
      * The approximate count of all unique Java installations in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and isn't taken into account when computing
-     * the resource ETag.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      *
      * @return the value
-     */
+     **/
     public Integer getApproximateInstallationCount() {
         return approximateInstallationCount;
     }
 
     /**
-     * The approximate count of all unique applications in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
-     */
+     * The approximate count of all unique applications in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateApplicationCount")
     private final Integer approximateApplicationCount;
 
     /**
-     * The approximate count of all unique applications in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
+     * The approximate count of all unique applications in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      *
      * @return the value
-     */
+     **/
     public Integer getApproximateApplicationCount() {
         return approximateApplicationCount;
     }
 
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and isn't taken into account when computing
-     * the resource ETag.
-     */
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateManagedInstanceCount")
     private final Integer approximateManagedInstanceCount;
 
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days.
-     * This metric is provided on a best-effort manner, and isn't taken into account when computing
-     * the resource ETag.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      *
      * @return the value
-     */
+     **/
     public Integer getApproximateManagedInstanceCount() {
         return approximateManagedInstanceCount;
     }
 
     /**
-     * The approximate count of all unique Java servers in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
-     */
+     * The approximate count of all unique Java servers in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("approximateJavaServerCount")
     private final Integer approximateJavaServerCount;
 
     /**
-     * The approximate count of all unique Java servers in the Fleet in the past seven days. This
-     * metric is provided on a best-effort manner, and isn't taken into account when computing the
-     * resource ETag.
+     * The approximate count of all unique Java servers in the Fleet in the past seven days.
+     * This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      *
      * @return the value
-     */
+     **/
     public Integer getApproximateJavaServerCount() {
         return approximateJavaServerCount;
     }
@@ -685,23 +670,27 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
     }
 
     /**
-     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
-     */
+     * Whether or not advanced features are enabled in this Fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAdvancedFeaturesEnabled")
     private final Boolean isAdvancedFeaturesEnabled;
 
     /**
-     * Whether or not advanced features are enabled in this Fleet. Deprecated, use {@code
-     * /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
+     * Whether or not advanced features are enabled in this Fleet.
+     * Deprecated, use {@code /fleets/{fleetId}/advanceFeatureConfiguration} API instead.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsAdvancedFeaturesEnabled() {
         return isAdvancedFeaturesEnabled;
     }
 
-    /** Whether or not export setting is enabled in this Fleet. */
+    /**
+     * Whether or not export setting is enabled in this Fleet.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isExportSettingEnabled")
     private final Boolean isExportSettingEnabled;
 
@@ -709,100 +698,97 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
      * Whether or not export setting is enabled in this Fleet.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsExportSettingEnabled() {
         return isExportSettingEnabled;
     }
 
     /**
-     * The creation date and time of the Fleet (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
+     * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The creation date and time of the Fleet (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The creation date and time of the Fleet (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The lifecycle state of the Fleet. */
+    /**
+     * The lifecycle state of the Fleet.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The lifecycle state of the Fleet.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form
-     * Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. (See [Understanding Free-form Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag
-     * Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}. (See [Managing Tags and Tag Namespaces](https://docs.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags
-     * can be viewed by users, but can only be created by the system.
-     *
-     * <p>Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * System tags can be viewed by users, but can only be created by the system.
+     * <p>
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -814,7 +800,6 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

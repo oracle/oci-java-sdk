@@ -5,22 +5,19 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Summary of an available os patch to a cluster. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Summary of an available os patch to a cluster.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = OsPatchSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class OsPatchSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class OsPatchSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"osPatchVersion", "releaseDate"})
     public OsPatchSummary(String osPatchVersion, java.util.Date releaseDate) {
@@ -31,31 +28,33 @@ public final class OsPatchSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Patch version of the os patch. */
+        /**
+         * Patch version of the os patch.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osPatchVersion")
         private String osPatchVersion;
 
         /**
          * Patch version of the os patch.
-         *
          * @param osPatchVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder osPatchVersion(String osPatchVersion) {
             this.osPatchVersion = osPatchVersion;
             this.__explicitlySet__.add("osPatchVersion");
             return this;
         }
-        /** The time when the OS patch was released. */
+        /**
+         * The time when the OS patch was released.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
         private java.util.Date releaseDate;
 
         /**
          * The time when the OS patch was released.
-         *
          * @param releaseDate the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseDate(java.util.Date releaseDate) {
             this.releaseDate = releaseDate;
             this.__explicitlySet__.add("releaseDate");
@@ -85,7 +84,9 @@ public final class OsPatchSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class OsPatchSummary
         return new Builder().copy(this);
     }
 
-    /** Patch version of the os patch. */
+    /**
+     * Patch version of the os patch.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osPatchVersion")
     private final String osPatchVersion;
 
     /**
      * Patch version of the os patch.
-     *
      * @return the value
-     */
+     **/
     public String getOsPatchVersion() {
         return osPatchVersion;
     }
 
-    /** The time when the OS patch was released. */
+    /**
+     * The time when the OS patch was released.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseDate")
     private final java.util.Date releaseDate;
 
     /**
      * The time when the OS patch was released.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getReleaseDate() {
         return releaseDate;
     }
@@ -127,7 +130,6 @@ public final class OsPatchSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

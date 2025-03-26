@@ -9,31 +9,23 @@ import com.oracle.bmc.core.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of Blockstorage where multiple pages of data may be fetched. Two styles of
- * iteration are supported:
+ * to any list operations of Blockstorage where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class BlockstoragePaginators {
     private final Blockstorage client;
 
@@ -42,13 +34,11 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * getVolumeBackupPolicyAssetAssignment operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the getVolumeBackupPolicyAssetAssignment operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<GetVolumeBackupPolicyAssetAssignmentResponse>
             getVolumeBackupPolicyAssetAssignmentResponseIterator(
@@ -101,15 +91,13 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} objects contained in responses from
-     * the getVolumeBackupPolicyAssetAssignment operation. This iterable will fetch more data from
-     * the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} objects
+     * contained in responses from the getVolumeBackupPolicyAssetAssignment operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} objects contained in responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeBackupPolicyAssignment} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeBackupPolicyAssignment>
             getVolumeBackupPolicyAssetAssignmentRecordIterator(
@@ -172,19 +160,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBlockVolumeReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBlockVolumeReplicas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBlockVolumeReplicasResponse> listBlockVolumeReplicasResponseIterator(
             final ListBlockVolumeReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBlockVolumeReplicasRequest.Builder,
-                ListBlockVolumeReplicasRequest,
+                ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
                 ListBlockVolumeReplicasResponse>(
                 new java.util.function.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
                     @Override
@@ -227,23 +212,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.BlockVolumeReplica} objects contained in responses from the
-     * listBlockVolumeReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BlockVolumeReplica} objects
+     * contained in responses from the listBlockVolumeReplicas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.BlockVolumeReplica} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BlockVolumeReplica} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.BlockVolumeReplica>
             listBlockVolumeReplicasRecordIterator(final ListBlockVolumeReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBlockVolumeReplicasRequest.Builder,
-                ListBlockVolumeReplicasRequest,
-                ListBlockVolumeReplicasResponse,
-                com.oracle.bmc.core.model.BlockVolumeReplica>(
+                ListBlockVolumeReplicasRequest.Builder, ListBlockVolumeReplicasRequest,
+                ListBlockVolumeReplicasResponse, com.oracle.bmc.core.model.BlockVolumeReplica>(
                 new java.util.function.Supplier<ListBlockVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBlockVolumeReplicasRequest.Builder get() {
@@ -294,19 +275,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBootVolumeBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumeBackups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBootVolumeBackupsResponse> listBootVolumeBackupsResponseIterator(
             final ListBootVolumeBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBootVolumeBackupsRequest.Builder,
-                ListBootVolumeBackupsRequest,
+                ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
                 ListBootVolumeBackupsResponse>(
                 new java.util.function.Supplier<ListBootVolumeBackupsRequest.Builder>() {
                     @Override
@@ -349,23 +327,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.BootVolumeBackup} objects contained in responses from the
-     * listBootVolumeBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolumeBackup} objects
+     * contained in responses from the listBootVolumeBackups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.BootVolumeBackup} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolumeBackup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.BootVolumeBackup> listBootVolumeBackupsRecordIterator(
             final ListBootVolumeBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBootVolumeBackupsRequest.Builder,
-                ListBootVolumeBackupsRequest,
-                ListBootVolumeBackupsResponse,
-                com.oracle.bmc.core.model.BootVolumeBackup>(
+                ListBootVolumeBackupsRequest.Builder, ListBootVolumeBackupsRequest,
+                ListBootVolumeBackupsResponse, com.oracle.bmc.core.model.BootVolumeBackup>(
                 new java.util.function.Supplier<ListBootVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListBootVolumeBackupsRequest.Builder get() {
@@ -416,19 +390,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBootVolumeReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumeReplicas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBootVolumeReplicasResponse> listBootVolumeReplicasResponseIterator(
             final ListBootVolumeReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListBootVolumeReplicasRequest.Builder,
-                ListBootVolumeReplicasRequest,
+                ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
                 ListBootVolumeReplicasResponse>(
                 new java.util.function.Supplier<ListBootVolumeReplicasRequest.Builder>() {
                     @Override
@@ -471,23 +442,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.BootVolumeReplica} objects contained in responses from the
-     * listBootVolumeReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolumeReplica} objects
+     * contained in responses from the listBootVolumeReplicas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.BootVolumeReplica} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolumeReplica} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.BootVolumeReplica>
             listBootVolumeReplicasRecordIterator(final ListBootVolumeReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBootVolumeReplicasRequest.Builder,
-                ListBootVolumeReplicasRequest,
-                ListBootVolumeReplicasResponse,
-                com.oracle.bmc.core.model.BootVolumeReplica>(
+                ListBootVolumeReplicasRequest.Builder, ListBootVolumeReplicasRequest,
+                ListBootVolumeReplicasResponse, com.oracle.bmc.core.model.BootVolumeReplica>(
                 new java.util.function.Supplier<ListBootVolumeReplicasRequest.Builder>() {
                     @Override
                     public ListBootVolumeReplicasRequest.Builder get() {
@@ -538,12 +505,11 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listBootVolumes operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listBootVolumes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListBootVolumesResponse> listBootVolumesResponseIterator(
             final ListBootVolumesRequest request) {
@@ -588,21 +554,18 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.BootVolume} objects contained in responses from the listBootVolumes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.BootVolume} objects
+     * contained in responses from the listBootVolumes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.BootVolume} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.BootVolume} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.BootVolume> listBootVolumesRecordIterator(
             final ListBootVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListBootVolumesRequest.Builder,
-                ListBootVolumesRequest,
-                ListBootVolumesResponse,
+                ListBootVolumesRequest.Builder, ListBootVolumesRequest, ListBootVolumesResponse,
                 com.oracle.bmc.core.model.BootVolume>(
                 new java.util.function.Supplier<ListBootVolumesRequest.Builder>() {
                     @Override
@@ -652,19 +615,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeBackupPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeBackupPolicies operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeBackupPoliciesResponse> listVolumeBackupPoliciesResponseIterator(
             final ListVolumeBackupPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVolumeBackupPoliciesRequest.Builder,
-                ListVolumeBackupPoliciesRequest,
+                ListVolumeBackupPoliciesRequest.Builder, ListVolumeBackupPoliciesRequest,
                 ListVolumeBackupPoliciesResponse>(
                 new java.util.function.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
                     @Override
@@ -707,23 +667,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeBackupPolicy} objects contained in responses from the
-     * listVolumeBackupPolicies operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeBackupPolicy} objects
+     * contained in responses from the listVolumeBackupPolicies operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeBackupPolicy} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeBackupPolicy} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeBackupPolicy>
             listVolumeBackupPoliciesRecordIterator(final ListVolumeBackupPoliciesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeBackupPoliciesRequest.Builder,
-                ListVolumeBackupPoliciesRequest,
-                ListVolumeBackupPoliciesResponse,
-                com.oracle.bmc.core.model.VolumeBackupPolicy>(
+                ListVolumeBackupPoliciesRequest.Builder, ListVolumeBackupPoliciesRequest,
+                ListVolumeBackupPoliciesResponse, com.oracle.bmc.core.model.VolumeBackupPolicy>(
                 new java.util.function.Supplier<ListVolumeBackupPoliciesRequest.Builder>() {
                     @Override
                     public ListVolumeBackupPoliciesRequest.Builder get() {
@@ -774,18 +730,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeBackups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeBackups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeBackupsResponse> listVolumeBackupsResponseIterator(
             final ListVolumeBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVolumeBackupsRequest.Builder,
-                ListVolumeBackupsRequest,
+                ListVolumeBackupsRequest.Builder, ListVolumeBackupsRequest,
                 ListVolumeBackupsResponse>(
                 new java.util.function.Supplier<ListVolumeBackupsRequest.Builder>() {
                     @Override
@@ -827,22 +781,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeBackup} objects contained in responses from the
-     * listVolumeBackups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeBackup} objects
+     * contained in responses from the listVolumeBackups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeBackup} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeBackup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeBackup> listVolumeBackupsRecordIterator(
             final ListVolumeBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeBackupsRequest.Builder,
-                ListVolumeBackupsRequest,
-                ListVolumeBackupsResponse,
-                com.oracle.bmc.core.model.VolumeBackup>(
+                ListVolumeBackupsRequest.Builder, ListVolumeBackupsRequest,
+                ListVolumeBackupsResponse, com.oracle.bmc.core.model.VolumeBackup>(
                 new java.util.function.Supplier<ListVolumeBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeBackupsRequest.Builder get() {
@@ -892,19 +843,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeGroupBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeGroupBackups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeGroupBackupsResponse> listVolumeGroupBackupsResponseIterator(
             final ListVolumeGroupBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVolumeGroupBackupsRequest.Builder,
-                ListVolumeGroupBackupsRequest,
+                ListVolumeGroupBackupsRequest.Builder, ListVolumeGroupBackupsRequest,
                 ListVolumeGroupBackupsResponse>(
                 new java.util.function.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
                     @Override
@@ -947,23 +895,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeGroupBackup} objects contained in responses from the
-     * listVolumeGroupBackups operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeGroupBackup} objects
+     * contained in responses from the listVolumeGroupBackups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeGroupBackup} objects contained in responses received from
-     *     the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeGroupBackup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeGroupBackup>
             listVolumeGroupBackupsRecordIterator(final ListVolumeGroupBackupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeGroupBackupsRequest.Builder,
-                ListVolumeGroupBackupsRequest,
-                ListVolumeGroupBackupsResponse,
-                com.oracle.bmc.core.model.VolumeGroupBackup>(
+                ListVolumeGroupBackupsRequest.Builder, ListVolumeGroupBackupsRequest,
+                ListVolumeGroupBackupsResponse, com.oracle.bmc.core.model.VolumeGroupBackup>(
                 new java.util.function.Supplier<ListVolumeGroupBackupsRequest.Builder>() {
                     @Override
                     public ListVolumeGroupBackupsRequest.Builder get() {
@@ -1014,19 +958,16 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeGroupReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeGroupReplicas operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeGroupReplicasResponse> listVolumeGroupReplicasResponseIterator(
             final ListVolumeGroupReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListVolumeGroupReplicasRequest.Builder,
-                ListVolumeGroupReplicasRequest,
+                ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
                 ListVolumeGroupReplicasResponse>(
                 new java.util.function.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
                     @Override
@@ -1069,23 +1010,19 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeGroupReplica} objects contained in responses from the
-     * listVolumeGroupReplicas operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeGroupReplica} objects
+     * contained in responses from the listVolumeGroupReplicas operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeGroupReplica} objects contained in responses received
-     *     from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeGroupReplica} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeGroupReplica>
             listVolumeGroupReplicasRecordIterator(final ListVolumeGroupReplicasRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeGroupReplicasRequest.Builder,
-                ListVolumeGroupReplicasRequest,
-                ListVolumeGroupReplicasResponse,
-                com.oracle.bmc.core.model.VolumeGroupReplica>(
+                ListVolumeGroupReplicasRequest.Builder, ListVolumeGroupReplicasRequest,
+                ListVolumeGroupReplicasResponse, com.oracle.bmc.core.model.VolumeGroupReplica>(
                 new java.util.function.Supplier<ListVolumeGroupReplicasRequest.Builder>() {
                     @Override
                     public ListVolumeGroupReplicasRequest.Builder get() {
@@ -1136,12 +1073,11 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listVolumeGroups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumeGroups operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumeGroupsResponse> listVolumeGroupsResponseIterator(
             final ListVolumeGroupsRequest request) {
@@ -1187,21 +1123,18 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.core.model.VolumeGroup} objects contained in responses from the
-     * listVolumeGroups operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.VolumeGroup} objects
+     * contained in responses from the listVolumeGroups operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.VolumeGroup} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.VolumeGroup} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.VolumeGroup> listVolumeGroupsRecordIterator(
             final ListVolumeGroupsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumeGroupsRequest.Builder,
-                ListVolumeGroupsRequest,
-                ListVolumeGroupsResponse,
+                ListVolumeGroupsRequest.Builder, ListVolumeGroupsRequest, ListVolumeGroupsResponse,
                 com.oracle.bmc.core.model.VolumeGroup>(
                 new java.util.function.Supplier<ListVolumeGroupsRequest.Builder>() {
                     @Override
@@ -1252,12 +1185,11 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the listVolumes
-     * operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listVolumes operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListVolumesResponse> listVolumesResponseIterator(
             final ListVolumesRequest request) {
@@ -1302,21 +1234,18 @@ public class BlockstoragePaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Volume}
-     * objects contained in responses from the listVolumes operation. This iterable will fetch more
-     * data from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.Volume} objects
+     * contained in responses from the listVolumes operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.core.model.Volume} objects contained in responses received from the
-     *     service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.Volume} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.core.model.Volume> listVolumesRecordIterator(
             final ListVolumesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListVolumesRequest.Builder,
-                ListVolumesRequest,
-                ListVolumesResponse,
+                ListVolumesRequest.Builder, ListVolumesRequest, ListVolumesResponse,
                 com.oracle.bmc.core.model.Volume>(
                 new java.util.function.Supplier<ListVolumesRequest.Builder>() {
                     @Override

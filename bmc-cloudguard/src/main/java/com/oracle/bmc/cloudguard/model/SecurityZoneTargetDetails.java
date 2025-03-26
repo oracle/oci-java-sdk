@@ -5,68 +5,71 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Target details for a security zone target. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Target details for a security zone target.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = SecurityZoneTargetDetails.Builder.class)
+    builder = SecurityZoneTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "targetResourceType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "targetResourceType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class SecurityZoneTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the security zone to associate with this compartment */
+        /**
+         * The OCID of the security zone to associate with this compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
         private String securityZoneId;
 
         /**
          * The OCID of the security zone to associate with this compartment
-         *
          * @param securityZoneId the value to set
          * @return this builder
-         */
+         **/
         public Builder securityZoneId(String securityZoneId) {
             this.securityZoneId = securityZoneId;
             this.__explicitlySet__.add("securityZoneId");
             return this;
         }
-        /** The name of the security zone to associate with this compartment. */
+        /**
+         * The name of the security zone to associate with this compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("securityZoneDisplayName")
         private String securityZoneDisplayName;
 
         /**
          * The name of the security zone to associate with this compartment.
-         *
          * @param securityZoneDisplayName the value to set
          * @return this builder
-         */
+         **/
         public Builder securityZoneDisplayName(String securityZoneDisplayName) {
             this.securityZoneDisplayName = securityZoneDisplayName;
             this.__explicitlySet__.add("securityZoneDisplayName");
             return this;
         }
-        /** The list of security zone recipes to associate with this compartment */
+        /**
+         * The list of security zone recipes to associate with this compartment
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetSecurityZoneRecipes")
         private java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
 
         /**
          * The list of security zone recipes to associate with this compartment
-         *
          * @param targetSecurityZoneRecipes the value to set
          * @return this builder
-         */
+         **/
         public Builder targetSecurityZoneRecipes(
                 java.util.List<SecurityRecipe> targetSecurityZoneRecipes) {
             this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
@@ -104,7 +107,9 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,41 +129,44 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
         this.targetSecurityZoneRecipes = targetSecurityZoneRecipes;
     }
 
-    /** The OCID of the security zone to associate with this compartment */
+    /**
+     * The OCID of the security zone to associate with this compartment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneId")
     private final String securityZoneId;
 
     /**
      * The OCID of the security zone to associate with this compartment
-     *
      * @return the value
-     */
+     **/
     public String getSecurityZoneId() {
         return securityZoneId;
     }
 
-    /** The name of the security zone to associate with this compartment. */
+    /**
+     * The name of the security zone to associate with this compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("securityZoneDisplayName")
     private final String securityZoneDisplayName;
 
     /**
      * The name of the security zone to associate with this compartment.
-     *
      * @return the value
-     */
+     **/
     public String getSecurityZoneDisplayName() {
         return securityZoneDisplayName;
     }
 
-    /** The list of security zone recipes to associate with this compartment */
+    /**
+     * The list of security zone recipes to associate with this compartment
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetSecurityZoneRecipes")
     private final java.util.List<SecurityRecipe> targetSecurityZoneRecipes;
 
     /**
      * The list of security zone recipes to associate with this compartment
-     *
      * @return the value
-     */
+     **/
     public java.util.List<SecurityRecipe> getTargetSecurityZoneRecipes() {
         return targetSecurityZoneRecipes;
     }
@@ -170,7 +178,6 @@ public final class SecurityZoneTargetDetails extends TargetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.core.model;
 
-/** Indicates whether or not MACsec is enabled. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
-public enum MacsecState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Indicates whether or not MACsec is enabled.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+public enum MacsecState {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

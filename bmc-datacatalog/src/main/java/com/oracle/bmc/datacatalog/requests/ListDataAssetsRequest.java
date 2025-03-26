@@ -6,120 +6,138 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataAssetsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/ListDataAssetsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDataAssetsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     private String displayName;
 
     /**
-     * A filter to return only resources that match the entire display name given. The match is not
-     * case sensitive.
+     * A filter to return only resources that match the entire display name given. The match is not case sensitive.
      */
     public String getDisplayName() {
         return displayName;
     }
     /**
-     * A filter to return only resources that match display name pattern given. The match is not
-     * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-     * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
      */
     private String displayNameContains;
 
     /**
-     * A filter to return only resources that match display name pattern given. The match is not
-     * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-     * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+     * For Example : /folders?displayNameContains=Cu.*
+     * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+     *
      */
     public String getDisplayNameContains() {
         return displayNameContains;
     }
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState;
 
     /**
-     * A filter to return only resources that match the specified lifecycle state. The value is case
-     * insensitive.
+     * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
      */
     public com.oracle.bmc.datacatalog.model.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeCreated;
 
     /**
-     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     private java.util.Date timeUpdated;
 
     /**
-     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-     * formatted datetime string.
+     * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
      */
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
-    /** OCID of the user who created the resource. */
+    /**
+     * OCID of the user who created the resource.
+     */
     private String createdById;
 
-    /** OCID of the user who created the resource. */
+    /**
+     * OCID of the user who created the resource.
+     */
     public String getCreatedById() {
         return createdById;
     }
-    /** OCID of the user who updated the resource. */
+    /**
+     * OCID of the user who updated the resource.
+     */
     private String updatedById;
 
-    /** OCID of the user who updated the resource. */
+    /**
+     * OCID of the user who updated the resource.
+     */
     public String getUpdatedById() {
         return updatedById;
     }
-    /** Unique external identifier of this resource in the external source system. */
+    /**
+     * Unique external identifier of this resource in the external source system.
+     */
     private String externalKey;
 
-    /** Unique external identifier of this resource in the external source system. */
+    /**
+     * Unique external identifier of this resource in the external source system.
+     */
     public String getExternalKey() {
         return externalKey;
     }
-    /** The key of the object type. */
+    /**
+     * The key of the object type.
+     */
     private String typeKey;
 
-    /** The key of the object type. */
+    /**
+     * The key of the object type.
+     */
     public String getTypeKey() {
         return typeKey;
     }
-    /** Specifies the fields to return in a data asset summary response. */
+    /**
+     * Specifies the fields to return in a data asset summary response.
+     *
+     */
     private java.util.List<Fields> fields;
 
-    /** Specifies the fields to return in a data asset summary response. */
-    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the fields to return in a data asset summary response.
+     *
+     **/
+    public enum Fields {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -159,23 +177,24 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /** Specifies the fields to return in a data asset summary response. */
+    /**
+     * Specifies the fields to return in a data asset summary response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     private SortBy sortBy;
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
-     */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Displayname("DISPLAYNAME"),
         ;
@@ -209,18 +228,21 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     };
 
     /**
-     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is
-     * descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED
-     * is default.
+     * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+     *
      */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either 'asc' or 'desc'. */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -253,34 +275,42 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /** The sort order to use, either 'asc' or 'desc'. */
+    /**
+     * The sort order to use, either 'asc' or 'desc'.
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. This is usually
-     * retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -288,15 +318,17 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDataAssetsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -306,15 +338,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          */
         private String displayName = null;
 
         /**
-         * A filter to return only resources that match the entire display name given. The match is
-         * not case sensitive.
-         *
+         * A filter to return only resources that match the entire display name given. The match is not case sensitive.
          * @param displayName the value to set
          * @return this builder instance
          */
@@ -324,18 +353,17 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources that match display name pattern given. The match is not
-         * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-         * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in
-         * between.
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
+         *
          */
         private String displayNameContains = null;
 
         /**
-         * A filter to return only resources that match display name pattern given. The match is not
-         * case sensitive. For Example : /folders?displayNameContains=Cu.* The above would match all
-         * folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in
-         * between.
+         * A filter to return only resources that match display name pattern given. The match is not case sensitive.
+         * For Example : /folders?displayNameContains=Cu.*
+         * The above would match all folders with display name that starts with "Cu" or has the pattern "Cu" anywhere in between.
          *
          * @param displayNameContains the value to set
          * @return this builder instance
@@ -346,15 +374,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          */
         private com.oracle.bmc.datacatalog.model.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources that match the specified lifecycle state. The value is
-         * case insensitive.
-         *
+         * A filter to return only resources that match the specified lifecycle state. The value is case insensitive.
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -365,15 +390,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          */
         private java.util.Date timeCreated = null;
 
         /**
-         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that the resource was created. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder instance
          */
@@ -383,15 +405,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          */
         private java.util.Date timeUpdated = null;
 
         /**
-         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339)
-         * formatted datetime string.
-         *
+         * Time that the resource was updated. An [RFC3339](https://tools.ietf.org/html/rfc3339) formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder instance
          */
@@ -400,12 +419,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** OCID of the user who created the resource. */
+        /**
+         * OCID of the user who created the resource.
+         */
         private String createdById = null;
 
         /**
          * OCID of the user who created the resource.
-         *
          * @param createdById the value to set
          * @return this builder instance
          */
@@ -414,12 +434,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** OCID of the user who updated the resource. */
+        /**
+         * OCID of the user who updated the resource.
+         */
         private String updatedById = null;
 
         /**
          * OCID of the user who updated the resource.
-         *
          * @param updatedById the value to set
          * @return this builder instance
          */
@@ -428,12 +449,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Unique external identifier of this resource in the external source system. */
+        /**
+         * Unique external identifier of this resource in the external source system.
+         */
         private String externalKey = null;
 
         /**
          * Unique external identifier of this resource in the external source system.
-         *
          * @param externalKey the value to set
          * @return this builder instance
          */
@@ -442,12 +464,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The key of the object type. */
+        /**
+         * The key of the object type.
+         */
         private String typeKey = null;
 
         /**
          * The key of the object type.
-         *
          * @param typeKey the value to set
          * @return this builder instance
          */
@@ -456,7 +479,10 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** Specifies the fields to return in a data asset summary response. */
+        /**
+         * Specifies the fields to return in a data asset summary response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -481,16 +507,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
+         *
          */
         private SortBy sortBy = null;
 
         /**
-         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED
-         * is descending. Default order for DISPLAYNAME is ascending. If no value is specified
-         * TIMECREATED is default.
+         * The field to sort by. Only one sort order may be provided. Default order for TIMECREATED is descending. Default order for DISPLAYNAME is ascending. If no value is specified TIMECREATED is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -500,12 +523,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The sort order to use, either 'asc' or 'desc'. */
+        /**
+         * The sort order to use, either 'asc' or 'desc'.
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -514,12 +538,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -529,15 +554,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. This is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. This is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -546,12 +568,13 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -562,19 +585,18 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -586,7 +608,6 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDataAssetsRequest o) {
@@ -614,11 +635,10 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDataAssetsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDataAssetsRequest
          */
@@ -632,8 +652,7 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListDataAssetsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDataAssetsRequest
@@ -657,15 +676,12 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListDataAssetsRequest(catalogId, displayName, displayNameContains,
-            // lifecycleState, timeCreated, timeUpdated, createdById, updatedById, externalKey,
-            // typeKey, fields, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListDataAssetsRequest(catalogId, displayName, displayNameContains, lifecycleState, timeCreated, timeUpdated, createdById, updatedById, externalKey, typeKey, fields, sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -690,7 +706,6 @@ public class ListDataAssetsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

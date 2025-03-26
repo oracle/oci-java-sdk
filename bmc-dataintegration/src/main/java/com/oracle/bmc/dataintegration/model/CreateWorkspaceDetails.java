@@ -5,23 +5,22 @@
 package com.oracle.bmc.dataintegration.model;
 
 /**
- * The information needed to create a new workspace. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
+ * The information needed to create a new workspace.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200430")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateWorkspaceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateWorkspaceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateWorkspaceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "vcnId",
@@ -82,275 +81,282 @@ public final class CreateWorkspaceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the VCN the subnet is in. */
+        /**
+         * The OCID of the VCN the subnet is in.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
          * The OCID of the VCN the subnet is in.
-         *
          * @param vcnId the value to set
          * @return this builder
-         */
+         **/
         public Builder vcnId(String vcnId) {
             this.vcnId = vcnId;
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** The OCID of the subnet for customer connected databases. */
+        /**
+         * The OCID of the subnet for customer connected databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The OCID of the subnet for customer connected databases.
-         *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The IP of the custom DNS. */
+        /**
+         * The IP of the custom DNS.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServerIp")
         private String dnsServerIp;
 
         /**
          * The IP of the custom DNS.
-         *
          * @param dnsServerIp the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsServerIp(String dnsServerIp) {
             this.dnsServerIp = dnsServerIp;
             this.__explicitlySet__.add("dnsServerIp");
             return this;
         }
-        /** The DNS zone of the custom DNS to use to resolve names. */
+        /**
+         * The DNS zone of the custom DNS to use to resolve names.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dnsServerZone")
         private String dnsServerZone;
 
         /**
          * The DNS zone of the custom DNS to use to resolve names.
-         *
          * @param dnsServerZone the value to set
          * @return this builder
-         */
+         **/
         public Builder dnsServerZone(String dnsServerZone) {
             this.dnsServerZone = dnsServerZone;
             this.__explicitlySet__.add("dnsServerZone");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
-         */
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. See [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-         * {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** A user defined description for the workspace. */
+        /**
+         * A user defined description for the workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A user defined description for the workspace.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * A user-friendly display name for the workspace. Does not have to be unique, and can be
-         * modified. Avoid entering confidential information.
-         */
+         * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly display name for the workspace. Does not have to be unique, and can be
-         * modified. Avoid entering confidential information.
-         *
+         * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The OCID of the compartment containing the workspace. */
+        /**
+         * The OCID of the compartment containing the workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The OCID of the compartment containing the workspace.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Specifies whether the private network connection is enabled or disabled. */
+        /**
+         * Specifies whether the private network connection is enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
         private Boolean isPrivateNetworkEnabled;
 
         /**
          * Specifies whether the private network connection is enabled or disabled.
-         *
          * @param isPrivateNetworkEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isPrivateNetworkEnabled(Boolean isPrivateNetworkEnabled) {
             this.isPrivateNetworkEnabled = isPrivateNetworkEnabled;
             this.__explicitlySet__.add("isPrivateNetworkEnabled");
             return this;
         }
-        /** DCMS Data Asset Registry ID to which the workspace is associated */
+        /**
+         * DCMS Data Asset Registry ID to which the workspace is associated
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryId")
         private String registryId;
 
         /**
          * DCMS Data Asset Registry ID to which the workspace is associated
-         *
          * @param registryId the value to set
          * @return this builder
-         */
+         **/
         public Builder registryId(String registryId) {
             this.registryId = registryId;
             this.__explicitlySet__.add("registryId");
             return this;
         }
-        /** DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled */
+        /**
+         * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
 
         /**
          * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
-         *
          * @param endpointId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointId(String endpointId) {
             this.endpointId = endpointId;
             this.__explicitlySet__.add("endpointId");
             return this;
         }
-        /** DCMS Data Asset Registry display name */
+        /**
+         * DCMS Data Asset Registry display name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryName")
         private String registryName;
 
         /**
          * DCMS Data Asset Registry display name
-         *
          * @param registryName the value to set
          * @return this builder
-         */
+         **/
         public Builder registryName(String registryName) {
             this.registryName = registryName;
             this.__explicitlySet__.add("registryName");
             return this;
         }
-        /** DCMS Data Asset Registry Compartment Identifier */
+        /**
+         * DCMS Data Asset Registry Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryCompartmentId")
         private String registryCompartmentId;
 
         /**
          * DCMS Data Asset Registry Compartment Identifier
-         *
          * @param registryCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder registryCompartmentId(String registryCompartmentId) {
             this.registryCompartmentId = registryCompartmentId;
             this.__explicitlySet__.add("registryCompartmentId");
             return this;
         }
-        /** DCMS Private Endpoint Name */
+        /**
+         * DCMS Private Endpoint Name
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
         private String endpointName;
 
         /**
          * DCMS Private Endpoint Name
-         *
          * @param endpointName the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointName(String endpointName) {
             this.endpointName = endpointName;
             this.__explicitlySet__.add("endpointName");
             return this;
         }
-        /** DCMS PRivate Endpoint Compartment Identifier */
+        /**
+         * DCMS PRivate Endpoint Compartment Identifier
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("endpointCompartmentId")
         private String endpointCompartmentId;
 
         /**
          * DCMS PRivate Endpoint Compartment Identifier
-         *
          * @param endpointCompartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder endpointCompartmentId(String endpointCompartmentId) {
             this.endpointCompartmentId = endpointCompartmentId;
             this.__explicitlySet__.add("endpointCompartmentId");
             return this;
         }
-        /** Key-values pairs of workspace for storing properties on the workspace. */
+        /**
+         * Key-values pairs of workspace for storing properties on the workspace.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
         private java.util.Map<String, String> workspaceProperties;
 
         /**
          * Key-values pairs of workspace for storing properties on the workspace.
-         *
          * @param workspaceProperties the value to set
          * @return this builder
-         */
+         **/
         public Builder workspaceProperties(java.util.Map<String, String> workspaceProperties) {
             this.workspaceProperties = workspaceProperties;
             this.__explicitlySet__.add("workspaceProperties");
@@ -443,7 +449,9 @@ public final class CreateWorkspaceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -452,241 +460,248 @@ public final class CreateWorkspaceDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the VCN the subnet is in. */
+    /**
+     * The OCID of the VCN the subnet is in.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
      * The OCID of the VCN the subnet is in.
-     *
      * @return the value
-     */
+     **/
     public String getVcnId() {
         return vcnId;
     }
 
-    /** The OCID of the subnet for customer connected databases. */
+    /**
+     * The OCID of the subnet for customer connected databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The OCID of the subnet for customer connected databases.
-     *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** The IP of the custom DNS. */
+    /**
+     * The IP of the custom DNS.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServerIp")
     private final String dnsServerIp;
 
     /**
      * The IP of the custom DNS.
-     *
      * @return the value
-     */
+     **/
     public String getDnsServerIp() {
         return dnsServerIp;
     }
 
-    /** The DNS zone of the custom DNS to use to resolve names. */
+    /**
+     * The DNS zone of the custom DNS to use to resolve names.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dnsServerZone")
     private final String dnsServerZone;
 
     /**
      * The DNS zone of the custom DNS to use to resolve names.
-     *
      * @return the value
-     */
+     **/
     public String getDnsServerZone() {
         return dnsServerZone;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
-     */
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. See [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
-     * {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See
-     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** A user defined description for the workspace. */
+    /**
+     * A user defined description for the workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A user defined description for the workspace.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * A user-friendly display name for the workspace. Does not have to be unique, and can be
-     * modified. Avoid entering confidential information.
-     */
+     * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly display name for the workspace. Does not have to be unique, and can be
-     * modified. Avoid entering confidential information.
-     *
+     * A user-friendly display name for the workspace. Does not have to be unique, and can be modified. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The OCID of the compartment containing the workspace. */
+    /**
+     * The OCID of the compartment containing the workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The OCID of the compartment containing the workspace.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Specifies whether the private network connection is enabled or disabled. */
+    /**
+     * Specifies whether the private network connection is enabled or disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isPrivateNetworkEnabled")
     private final Boolean isPrivateNetworkEnabled;
 
     /**
      * Specifies whether the private network connection is enabled or disabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsPrivateNetworkEnabled() {
         return isPrivateNetworkEnabled;
     }
 
-    /** DCMS Data Asset Registry ID to which the workspace is associated */
+    /**
+     * DCMS Data Asset Registry ID to which the workspace is associated
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryId")
     private final String registryId;
 
     /**
      * DCMS Data Asset Registry ID to which the workspace is associated
-     *
      * @return the value
-     */
+     **/
     public String getRegistryId() {
         return registryId;
     }
 
-    /** DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled */
+    /**
+     * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
     private final String endpointId;
 
     /**
      * DCMS Private Endpoint ID associated with workspace if the pvt networking is enabled
-     *
      * @return the value
-     */
+     **/
     public String getEndpointId() {
         return endpointId;
     }
 
-    /** DCMS Data Asset Registry display name */
+    /**
+     * DCMS Data Asset Registry display name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryName")
     private final String registryName;
 
     /**
      * DCMS Data Asset Registry display name
-     *
      * @return the value
-     */
+     **/
     public String getRegistryName() {
         return registryName;
     }
 
-    /** DCMS Data Asset Registry Compartment Identifier */
+    /**
+     * DCMS Data Asset Registry Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryCompartmentId")
     private final String registryCompartmentId;
 
     /**
      * DCMS Data Asset Registry Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getRegistryCompartmentId() {
         return registryCompartmentId;
     }
 
-    /** DCMS Private Endpoint Name */
+    /**
+     * DCMS Private Endpoint Name
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointName")
     private final String endpointName;
 
     /**
      * DCMS Private Endpoint Name
-     *
      * @return the value
-     */
+     **/
     public String getEndpointName() {
         return endpointName;
     }
 
-    /** DCMS PRivate Endpoint Compartment Identifier */
+    /**
+     * DCMS PRivate Endpoint Compartment Identifier
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("endpointCompartmentId")
     private final String endpointCompartmentId;
 
     /**
      * DCMS PRivate Endpoint Compartment Identifier
-     *
      * @return the value
-     */
+     **/
     public String getEndpointCompartmentId() {
         return endpointCompartmentId;
     }
 
-    /** Key-values pairs of workspace for storing properties on the workspace. */
+    /**
+     * Key-values pairs of workspace for storing properties on the workspace.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workspaceProperties")
     private final java.util.Map<String, String> workspaceProperties;
 
     /**
      * Key-values pairs of workspace for storing properties on the workspace.
-     *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getWorkspaceProperties() {
         return workspaceProperties;
     }
@@ -698,7 +713,6 @@ public final class CreateWorkspaceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

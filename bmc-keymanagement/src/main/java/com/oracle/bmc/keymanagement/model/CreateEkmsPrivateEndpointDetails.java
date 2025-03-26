@@ -5,23 +5,22 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * Information needed to create EKMS private endpoint resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
+ * Information needed to create EKMS private endpoint resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateEkmsPrivateEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateEkmsPrivateEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateEkmsPrivateEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "subnetId",
@@ -55,7 +54,10 @@ public final class CreateEkmsPrivateEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of subnet in which the EKMS private endpoint is to be created */
+        /**
+         * The OCID of subnet in which the EKMS private endpoint is to be created
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
@@ -64,82 +66,89 @@ public final class CreateEkmsPrivateEndpointDetails
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** Compartment identifier. */
+        /**
+         * Compartment identifier.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment identifier.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example:
-         * {@code {"foo-namespace": {"bar-key": "value"}}}
+         * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
             return this;
         }
-        /** Display name of the EKMS private endpoint resource being created. */
+        /**
+         * Display name of the EKMS private endpoint resource being created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * Display name of the EKMS private endpoint resource being created.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** External private IP to connect to from this EKMS private endpoint */
+        /**
+         * External private IP to connect to from this EKMS private endpoint
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerIp")
         private String externalKeyManagerIp;
 
@@ -148,13 +157,16 @@ public final class CreateEkmsPrivateEndpointDetails
          *
          * @param externalKeyManagerIp the value to set
          * @return this builder
-         */
+         **/
         public Builder externalKeyManagerIp(String externalKeyManagerIp) {
             this.externalKeyManagerIp = externalKeyManagerIp;
             this.__explicitlySet__.add("externalKeyManagerIp");
             return this;
         }
-        /** CABundle to validate TLS certificate of the external key manager system in PEM format */
+        /**
+         * CABundle to validate TLS certificate of the external key manager system in PEM format
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("caBundle")
         private String caBundle;
 
@@ -163,22 +175,23 @@ public final class CreateEkmsPrivateEndpointDetails
          *
          * @param caBundle the value to set
          * @return this builder
-         */
+         **/
         public Builder caBundle(String caBundle) {
             this.caBundle = caBundle;
             this.__explicitlySet__.add("caBundle");
             return this;
         }
-        /** The port of the external key manager system */
+        /**
+         * The port of the external key manager system
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * The port of the external key manager system
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
@@ -235,7 +248,9 @@ public final class CreateEkmsPrivateEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -244,7 +259,10 @@ public final class CreateEkmsPrivateEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of subnet in which the EKMS private endpoint is to be created */
+    /**
+     * The OCID of subnet in which the EKMS private endpoint is to be created
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -252,72 +270,79 @@ public final class CreateEkmsPrivateEndpointDetails
      * The OCID of subnet in which the EKMS private endpoint is to be created
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
 
-    /** Compartment identifier. */
+    /**
+     * Compartment identifier.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment identifier.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: {@code
-     * {"foo-namespace": {"bar-key": "value"}}}
+     * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
-    /** Display name of the EKMS private endpoint resource being created. */
+    /**
+     * Display name of the EKMS private endpoint resource being created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * Display name of the EKMS private endpoint resource being created.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** External private IP to connect to from this EKMS private endpoint */
+    /**
+     * External private IP to connect to from this EKMS private endpoint
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerIp")
     private final String externalKeyManagerIp;
 
@@ -325,12 +350,15 @@ public final class CreateEkmsPrivateEndpointDetails
      * External private IP to connect to from this EKMS private endpoint
      *
      * @return the value
-     */
+     **/
     public String getExternalKeyManagerIp() {
         return externalKeyManagerIp;
     }
 
-    /** CABundle to validate TLS certificate of the external key manager system in PEM format */
+    /**
+     * CABundle to validate TLS certificate of the external key manager system in PEM format
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("caBundle")
     private final String caBundle;
 
@@ -338,20 +366,21 @@ public final class CreateEkmsPrivateEndpointDetails
      * CABundle to validate TLS certificate of the external key manager system in PEM format
      *
      * @return the value
-     */
+     **/
     public String getCaBundle() {
         return caBundle;
     }
 
-    /** The port of the external key manager system */
+    /**
+     * The port of the external key manager system
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * The port of the external key manager system
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
@@ -363,7 +392,6 @@ public final class CreateEkmsPrivateEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

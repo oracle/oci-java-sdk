@@ -5,88 +5,87 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Details for the chat request for Cohere models. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * Details for the chat request for Cohere models.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CohereChatRequest.Builder.class)
+    builder = CohereChatRequest.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "apiFormat")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "apiFormat"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CohereChatRequest extends BaseChatRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The text that the user inputs for the model to respond to. */
+        /**
+         * The text that the user inputs for the model to respond to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * The text that the user inputs for the model to respond to.
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
         /**
-         * The list of previous messages between the user and the model. The chat history gives the
-         * model context for responding to the user's inputs.
-         */
+         * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
         private java.util.List<CohereMessage> chatHistory;
 
         /**
-         * The list of previous messages between the user and the model. The chat history gives the
-         * model context for responding to the user's inputs.
-         *
+         * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
          * @param chatHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder chatHistory(java.util.List<CohereMessage> chatHistory) {
             this.chatHistory = chatHistory;
             this.__explicitlySet__.add("chatHistory");
             return this;
         }
         /**
-         * A list of relevant documents that the model can refer to for generating grounded
-         * responses to the user's requests. Some example keys that you can add to the dictionary
-         * are "text", "author", and "date". Keep the total word count of the strings in the
-         * dictionary to 300 words or less.
+         * A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+         * Some example keys that you can add to the dictionary are "text", "author", and "date". Keep the total word count of the strings in the dictionary to 300 words or less.
+         * <p>
+         * Example:
+         * {@code [
+         *   { "title": "Tall penguins", "snippet": "Emperor penguins are the tallest." },
+         *   { "title": "Penguin habitats", "snippet": "Emperor penguins only live in Antarctica." }
+         * ]}
          *
-         * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
-         * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
-         * Antarctica." } ]}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<Object> documents;
 
         /**
-         * A list of relevant documents that the model can refer to for generating grounded
-         * responses to the user's requests. Some example keys that you can add to the dictionary
-         * are "text", "author", and "date". Keep the total word count of the strings in the
-         * dictionary to 300 words or less.
-         *
-         * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
-         * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
-         * Antarctica." } ]}
+         * A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+         * Some example keys that you can add to the dictionary are "text", "author", and "date". Keep the total word count of the strings in the dictionary to 300 words or less.
+         * <p>
+         * Example:
+         * {@code [
+         *   { "title": "Tall penguins", "snippet": "Emperor penguins are the tallest." },
+         *   { "title": "Penguin habitats", "snippet": "Emperor penguins only live in Antarctica." }
+         * ]}
          *
          * @param documents the value to set
          * @return this builder
-         */
+         **/
         public Builder documents(java.util.List<Object> documents) {
             this.documents = documents;
             this.__explicitlySet__.add("documents");
@@ -102,320 +101,260 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * When set to true, the response contains only a list of generated search queries without
-         * the search results and the model will not respond to the user's message.
-         */
+         * When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isSearchQueriesOnly")
         private Boolean isSearchQueriesOnly;
 
         /**
-         * When set to true, the response contains only a list of generated search queries without
-         * the search results and the model will not respond to the user's message.
+         * When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
          *
          * @param isSearchQueriesOnly the value to set
          * @return this builder
-         */
+         **/
         public Builder isSearchQueriesOnly(Boolean isSearchQueriesOnly) {
             this.isSearchQueriesOnly = isSearchQueriesOnly;
             this.__explicitlySet__.add("isSearchQueriesOnly");
             return this;
         }
         /**
-         * If specified, the default Cohere preamble is replaced with the provided preamble. A
-         * preamble is an initial guideline message that can change the model's overall chat
-         * behavior and conversation style. Default preambles vary for different models.
+         * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+         * <p>
+         * Example: {@code You are a travel advisor. Answer with a pirate tone.}
          *
-         * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("preambleOverride")
         private String preambleOverride;
 
         /**
-         * If specified, the default Cohere preamble is replaced with the provided preamble. A
-         * preamble is an initial guideline message that can change the model's overall chat
-         * behavior and conversation style. Default preambles vary for different models.
-         *
-         * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
+         * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+         * <p>
+         * Example: {@code You are a travel advisor. Answer with a pirate tone.}
          *
          * @param preambleOverride the value to set
          * @return this builder
-         */
+         **/
         public Builder preambleOverride(String preambleOverride) {
             this.preambleOverride = preambleOverride;
             this.__explicitlySet__.add("preambleOverride");
             return this;
         }
         /**
-         * Whether to stream the partial progress of the model's response. When set to true, as
-         * tokens become available, they are sent as data-only server-sent events.
-         */
+         * Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isStream")
         private Boolean isStream;
 
         /**
-         * Whether to stream the partial progress of the model's response. When set to true, as
-         * tokens become available, they are sent as data-only server-sent events.
-         *
+         * Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
          * @param isStream the value to set
          * @return this builder
-         */
+         **/
         public Builder isStream(Boolean isStream) {
             this.isStream = isStream;
             this.__explicitlySet__.add("isStream");
             return this;
         }
-        /** The maximum number of output tokens that the model will generate for the response. */
+        /**
+         * The maximum number of output tokens that the model will generate for the response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
          * The maximum number of output tokens that the model will generate for the response.
-         *
          * @param maxTokens the value to set
          * @return this builder
-         */
+         **/
         public Builder maxTokens(Integer maxTokens) {
             this.maxTokens = maxTokens;
             this.__explicitlySet__.add("maxTokens");
             return this;
         }
         /**
-         * The maximum number of input tokens to send to the model. If not specified,
-         * max_input_tokens is the model's context length limit minus a small buffer.
-         */
+         * The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxInputTokens")
         private Integer maxInputTokens;
 
         /**
-         * The maximum number of input tokens to send to the model. If not specified,
-         * max_input_tokens is the model's context length limit minus a small buffer.
-         *
+         * The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
          * @param maxInputTokens the value to set
          * @return this builder
-         */
+         **/
         public Builder maxInputTokens(Integer maxInputTokens) {
             this.maxInputTokens = maxInputTokens;
             this.__explicitlySet__.add("maxInputTokens");
             return this;
         }
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means less
-         * random generations. Use lower numbers for tasks such as question answering or
-         * summarizing. High temperatures can generate hallucinations or factually incorrect
-         * information. Start with temperatures lower than 1.0 and increase the temperature for more
-         * creative outputs, as you regenerate the prompts to refine the outputs.
-         */
+         * A number that sets the randomness of the generated output. A lower temperature means less random generations.
+         * Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("temperature")
         private Double temperature;
 
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means less
-         * random generations. Use lower numbers for tasks such as question answering or
-         * summarizing. High temperatures can generate hallucinations or factually incorrect
-         * information. Start with temperatures lower than 1.0 and increase the temperature for more
-         * creative outputs, as you regenerate the prompts to refine the outputs.
+         * A number that sets the randomness of the generated output. A lower temperature means less random generations.
+         * Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
          *
          * @param temperature the value to set
          * @return this builder
-         */
+         **/
         public Builder temperature(Double temperature) {
             this.temperature = temperature;
             this.__explicitlySet__.add("temperature");
             return this;
         }
         /**
-         * A sampling method in which the model chooses the next token randomly from the top k most
-         * likely tokens. A higher value for k generates more random output, which makes the output
-         * text sound more natural. The default value for k is 0 which disables this method and
-         * considers all tokens. To set a number for the likely tokens, choose an integer between 1
-         * and 500.
+         * A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+         * <p>
+         * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
          *
-         * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but
-         * only the probabilities of the top 10 add up to the value of p, then only the top 10
-         * tokens are chosen.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topK")
         private Integer topK;
 
         /**
-         * A sampling method in which the model chooses the next token randomly from the top k most
-         * likely tokens. A higher value for k generates more random output, which makes the output
-         * text sound more natural. The default value for k is 0 which disables this method and
-         * considers all tokens. To set a number for the likely tokens, choose an integer between 1
-         * and 500.
-         *
-         * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but
-         * only the probabilities of the top 10 add up to the value of p, then only the top 10
-         * tokens are chosen.
+         * A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+         * <p>
+         * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
          *
          * @param topK the value to set
          * @return this builder
-         */
+         **/
         public Builder topK(Integer topK) {
             this.topK = topK;
             this.__explicitlySet__.add("topK");
             return this;
         }
         /**
-         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-         * total probability mass of p, are considered for generation at each step.
+         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+         * <p>
+         * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
          *
-         * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-         * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom
-         * 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable.
-         * If both k and p are enabled, p acts after k.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("topP")
         private Double topP;
 
         /**
-         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-         * total probability mass of p, are considered for generation at each step.
-         *
-         * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-         * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom
-         * 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable.
-         * If both k and p are enabled, p acts after k.
+         * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+         * <p>
+         * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
          *
          * @param topP the value to set
          * @return this builder
-         */
+         **/
         public Builder topP(Double topP) {
             this.topP = topP;
             this.__explicitlySet__.add("topP");
             return this;
         }
         /**
-         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
-         * promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and
-         * {@code documents} will be dropped to construct a prompt that fits within the model's
-         * context length limit. During this process the order of the documents and chat history
-         * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
-         * dropped.
-         */
+         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With {@code prompt_truncation} set to OFF, no elements will be dropped.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("promptTruncation")
         private PromptTruncation promptTruncation;
 
         /**
-         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
-         * promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and
-         * {@code documents} will be dropped to construct a prompt that fits within the model's
-         * context length limit. During this process the order of the documents and chat history
-         * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
-         * dropped.
+         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With {@code prompt_truncation} set to OFF, no elements will be dropped.
          *
          * @param promptTruncation the value to set
          * @return this builder
-         */
+         **/
         public Builder promptTruncation(PromptTruncation promptTruncation) {
             this.promptTruncation = promptTruncation;
             this.__explicitlySet__.add("promptTruncation");
             return this;
         }
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * their frequency in the generated text so far. Greater numbers encourage the model to use
-         * new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to
-         * disable.
-         */
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("frequencyPenalty")
         private Double frequencyPenalty;
 
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * their frequency in the generated text so far. Greater numbers encourage the model to use
-         * new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to
-         * disable.
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
          *
          * @param frequencyPenalty the value to set
          * @return this builder
-         */
+         **/
         public Builder frequencyPenalty(Double frequencyPenalty) {
             this.frequencyPenalty = frequencyPenalty;
             this.__explicitlySet__.add("frequencyPenalty");
             return this;
         }
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * whether they've appeared in the generated text so far. Greater numbers encourage the
-         * model to use new tokens, while lower numbers encourage the model to repeat the tokens.
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens.
+         * <p>
+         * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
          *
-         * <p>Similar to frequency penalty, a penalty is applied to previously present tokens,
-         * except that this penalty is applied equally to all tokens that have already appeared,
-         * regardless of how many times they've appeared. Set to 0 to disable.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("presencePenalty")
         private Double presencePenalty;
 
         /**
-         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-         * whether they've appeared in the generated text so far. Greater numbers encourage the
-         * model to use new tokens, while lower numbers encourage the model to repeat the tokens.
-         *
-         * <p>Similar to frequency penalty, a penalty is applied to previously present tokens,
-         * except that this penalty is applied equally to all tokens that have already appeared,
-         * regardless of how many times they've appeared. Set to 0 to disable.
+         * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens.
+         * <p>
+         * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
          *
          * @param presencePenalty the value to set
          * @return this builder
-         */
+         **/
         public Builder presencePenalty(Double presencePenalty) {
             this.presencePenalty = presencePenalty;
             this.__explicitlySet__.add("presencePenalty");
             return this;
         }
         /**
-         * If specified, the backend will make a best effort to sample tokens deterministically, so
-         * that repeated requests with the same seed and parameters yield the same result. However,
-         * determinism cannot be fully guaranteed.
-         */
+         * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("seed")
         private Integer seed;
 
         /**
-         * If specified, the backend will make a best effort to sample tokens deterministically, so
-         * that repeated requests with the same seed and parameters yield the same result. However,
-         * determinism cannot be fully guaranteed.
+         * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
          *
          * @param seed the value to set
          * @return this builder
-         */
+         **/
         public Builder seed(Integer seed) {
             this.seed = seed;
             this.__explicitlySet__.add("seed");
             return this;
         }
-        /** Returns the full prompt that was sent to the model when True. */
+        /**
+         * Returns the full prompt that was sent to the model when True.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
         private Boolean isEcho;
 
         /**
          * Returns the full prompt that was sent to the model when True.
-         *
          * @param isEcho the value to set
          * @return this builder
-         */
+         **/
         public Builder isEcho(Boolean isEcho) {
             this.isEcho = isEcho;
             this.__explicitlySet__.add("isEcho");
             return this;
         }
         /**
-         * A list of available tools (functions) that the model may suggest invoking before
-         * producing a text response.
-         */
+         * A list of available tools (functions) that the model may suggest invoking before producing a text response.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tools")
         private java.util.List<CohereTool> tools;
 
         /**
-         * A list of available tools (functions) that the model may suggest invoking before
-         * producing a text response.
-         *
+         * A list of available tools (functions) that the model may suggest invoking before producing a text response.
          * @param tools the value to set
          * @return this builder
-         */
+         **/
         public Builder tools(java.util.List<CohereTool> tools) {
             this.tools = tools;
             this.__explicitlySet__.add("tools");
@@ -423,88 +362,83 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
         /**
          * A list of results from invoking tools recommended by the model in the previous chat turn.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
         private java.util.List<CohereToolResult> toolResults;
 
         /**
          * A list of results from invoking tools recommended by the model in the previous chat turn.
-         *
          * @param toolResults the value to set
          * @return this builder
-         */
+         **/
         public Builder toolResults(java.util.List<CohereToolResult> toolResults) {
             this.toolResults = toolResults;
             this.__explicitlySet__.add("toolResults");
             return this;
         }
         /**
-         * When enabled, the model will issue (potentially multiple) tool calls in a single step,
-         * before it receives the tool responses and directly answers the user's original message.
-         */
+         * When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForceSingleStep")
         private Boolean isForceSingleStep;
 
         /**
-         * When enabled, the model will issue (potentially multiple) tool calls in a single step,
-         * before it receives the tool responses and directly answers the user's original message.
+         * When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
          *
          * @param isForceSingleStep the value to set
          * @return this builder
-         */
+         **/
         public Builder isForceSingleStep(Boolean isForceSingleStep) {
             this.isForceSingleStep = isForceSingleStep;
             this.__explicitlySet__.add("isForceSingleStep");
             return this;
         }
-        /** Stop the model generation when it reaches a stop sequence defined in this parameter. */
+        /**
+         * Stop the model generation when it reaches a stop sequence defined in this parameter.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stopSequences")
         private java.util.List<String> stopSequences;
 
         /**
          * Stop the model generation when it reaches a stop sequence defined in this parameter.
-         *
          * @param stopSequences the value to set
          * @return this builder
-         */
+         **/
         public Builder stopSequences(java.util.List<String> stopSequences) {
             this.stopSequences = stopSequences;
             this.__explicitlySet__.add("stopSequences");
             return this;
         }
         /**
-         * When enabled, the user\u2019s {@code message} will be sent to the model without any
-         * preprocessing.
-         */
+         * When enabled, the user\u2019s {@code message} will be sent to the model without any preprocessing.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRawPrompting")
         private Boolean isRawPrompting;
 
         /**
-         * When enabled, the user\u2019s {@code message} will be sent to the model without any
-         * preprocessing.
-         *
+         * When enabled, the user\u2019s {@code message} will be sent to the model without any preprocessing.
          * @param isRawPrompting the value to set
          * @return this builder
-         */
+         **/
         public Builder isRawPrompting(Boolean isRawPrompting) {
             this.isRawPrompting = isRawPrompting;
             this.__explicitlySet__.add("isRawPrompting");
             return this;
         }
         /**
-         * When FAST is selected, citations are generated at the same time as the text output and
-         * the request will be completed sooner. May result in less accurate citations.
-         */
+         * When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("citationQuality")
         private CitationQuality citationQuality;
 
         /**
-         * When FAST is selected, citations are generated at the same time as the text output and
-         * the request will be completed sooner. May result in less accurate citations.
+         * When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
          *
          * @param citationQuality the value to set
          * @return this builder
-         */
+         **/
         public Builder citationQuality(CitationQuality citationQuality) {
             this.citationQuality = citationQuality;
             this.__explicitlySet__.add("citationQuality");
@@ -621,7 +555,9 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -681,61 +617,60 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.citationQuality = citationQuality;
     }
 
-    /** The text that the user inputs for the model to respond to. */
+    /**
+     * The text that the user inputs for the model to respond to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * The text that the user inputs for the model to respond to.
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
     /**
-     * The list of previous messages between the user and the model. The chat history gives the
-     * model context for responding to the user's inputs.
-     */
+     * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
     private final java.util.List<CohereMessage> chatHistory;
 
     /**
-     * The list of previous messages between the user and the model. The chat history gives the
-     * model context for responding to the user's inputs.
-     *
+     * The list of previous messages between the user and the model. The chat history gives the model context for responding to the user's inputs.
      * @return the value
-     */
+     **/
     public java.util.List<CohereMessage> getChatHistory() {
         return chatHistory;
     }
 
     /**
-     * A list of relevant documents that the model can refer to for generating grounded responses to
-     * the user's requests. Some example keys that you can add to the dictionary are "text",
-     * "author", and "date". Keep the total word count of the strings in the dictionary to 300 words
-     * or less.
+     * A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+     * Some example keys that you can add to the dictionary are "text", "author", and "date". Keep the total word count of the strings in the dictionary to 300 words or less.
+     * <p>
+     * Example:
+     * {@code [
+     *   { "title": "Tall penguins", "snippet": "Emperor penguins are the tallest." },
+     *   { "title": "Penguin habitats", "snippet": "Emperor penguins only live in Antarctica." }
+     * ]}
      *
-     * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
-     * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
-     * Antarctica." } ]}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<Object> documents;
 
     /**
-     * A list of relevant documents that the model can refer to for generating grounded responses to
-     * the user's requests. Some example keys that you can add to the dictionary are "text",
-     * "author", and "date". Keep the total word count of the strings in the dictionary to 300 words
-     * or less.
-     *
-     * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
-     * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
-     * Antarctica." } ]}
+     * A list of relevant documents that the model can refer to for generating grounded responses to the user's requests.
+     * Some example keys that you can add to the dictionary are "text", "author", and "date". Keep the total word count of the strings in the dictionary to 300 words or less.
+     * <p>
+     * Example:
+     * {@code [
+     *   { "title": "Tall penguins", "snippet": "Emperor penguins are the tallest." },
+     *   { "title": "Penguin habitats", "snippet": "Emperor penguins only live in Antarctica." }
+     * ]}
      *
      * @return the value
-     */
+     **/
     public java.util.List<Object> getDocuments() {
         return documents;
     }
@@ -748,179 +683,146 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * When set to true, the response contains only a list of generated search queries without the
-     * search results and the model will not respond to the user's message.
-     */
+     * When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isSearchQueriesOnly")
     private final Boolean isSearchQueriesOnly;
 
     /**
-     * When set to true, the response contains only a list of generated search queries without the
-     * search results and the model will not respond to the user's message.
+     * When set to true, the response contains only a list of generated search queries without the search results and the model will not respond to the user's message.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsSearchQueriesOnly() {
         return isSearchQueriesOnly;
     }
 
     /**
-     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble
-     * is an initial guideline message that can change the model's overall chat behavior and
-     * conversation style. Default preambles vary for different models.
+     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+     * <p>
+     * Example: {@code You are a travel advisor. Answer with a pirate tone.}
      *
-     * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("preambleOverride")
     private final String preambleOverride;
 
     /**
-     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble
-     * is an initial guideline message that can change the model's overall chat behavior and
-     * conversation style. Default preambles vary for different models.
-     *
-     * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
+     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble is an initial guideline message that can change the model's overall chat behavior and conversation style. Default preambles vary for different models.
+     * <p>
+     * Example: {@code You are a travel advisor. Answer with a pirate tone.}
      *
      * @return the value
-     */
+     **/
     public String getPreambleOverride() {
         return preambleOverride;
     }
 
     /**
-     * Whether to stream the partial progress of the model's response. When set to true, as tokens
-     * become available, they are sent as data-only server-sent events.
-     */
+     * Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isStream")
     private final Boolean isStream;
 
     /**
-     * Whether to stream the partial progress of the model's response. When set to true, as tokens
-     * become available, they are sent as data-only server-sent events.
-     *
+     * Whether to stream the partial progress of the model's response. When set to true, as tokens become available, they are sent as data-only server-sent events.
      * @return the value
-     */
+     **/
     public Boolean getIsStream() {
         return isStream;
     }
 
-    /** The maximum number of output tokens that the model will generate for the response. */
+    /**
+     * The maximum number of output tokens that the model will generate for the response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
      * The maximum number of output tokens that the model will generate for the response.
-     *
      * @return the value
-     */
+     **/
     public Integer getMaxTokens() {
         return maxTokens;
     }
 
     /**
-     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens
-     * is the model's context length limit minus a small buffer.
-     */
+     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxInputTokens")
     private final Integer maxInputTokens;
 
     /**
-     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens
-     * is the model's context length limit minus a small buffer.
-     *
+     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens is the model's context length limit minus a small buffer.
      * @return the value
-     */
+     **/
     public Integer getMaxInputTokens() {
         return maxInputTokens;
     }
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means less
-     * random generations. Use lower numbers for tasks such as question answering or summarizing.
-     * High temperatures can generate hallucinations or factually incorrect information. Start with
-     * temperatures lower than 1.0 and increase the temperature for more creative outputs, as you
-     * regenerate the prompts to refine the outputs.
-     */
+     * A number that sets the randomness of the generated output. A lower temperature means less random generations.
+     * Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("temperature")
     private final Double temperature;
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means less
-     * random generations. Use lower numbers for tasks such as question answering or summarizing.
-     * High temperatures can generate hallucinations or factually incorrect information. Start with
-     * temperatures lower than 1.0 and increase the temperature for more creative outputs, as you
-     * regenerate the prompts to refine the outputs.
+     * A number that sets the randomness of the generated output. A lower temperature means less random generations.
+     * Use lower numbers for tasks such as question answering or summarizing. High temperatures can generate hallucinations or factually incorrect information. Start with temperatures lower than 1.0 and increase the temperature for more creative outputs, as you regenerate the prompts to refine the outputs.
      *
      * @return the value
-     */
+     **/
     public Double getTemperature() {
         return temperature;
     }
 
     /**
-     * A sampling method in which the model chooses the next token randomly from the top k most
-     * likely tokens. A higher value for k generates more random output, which makes the output text
-     * sound more natural. The default value for k is 0 which disables this method and considers all
-     * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+     * A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+     * <p>
+     * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
      *
-     * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the
-     * probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topK")
     private final Integer topK;
 
     /**
-     * A sampling method in which the model chooses the next token randomly from the top k most
-     * likely tokens. A higher value for k generates more random output, which makes the output text
-     * sound more natural. The default value for k is 0 which disables this method and considers all
-     * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
-     *
-     * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the
-     * probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
+     * A sampling method in which the model chooses the next token randomly from the top k most likely tokens. A higher value for k generates more random output, which makes the output text sound more natural. The default value for k is 0 which disables this method and considers all tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+     * <p>
+     * If also using top p, then the model considers only the top tokens whose probabilities add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
      *
      * @return the value
-     */
+     **/
     public Integer getTopK() {
         return topK;
     }
 
     /**
-     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-     * total probability mass of p, are considered for generation at each step.
+     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+     * <p>
+     * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
      *
-     * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-     * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25
-     * percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If
-     * both k and p are enabled, p acts after k.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("topP")
     private final Double topP;
 
     /**
-     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with
-     * total probability mass of p, are considered for generation at each step.
-     *
-     * <p>To eliminate tokens with low likelihood, assign p a minimum percentage for the next
-     * token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25
-     * percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If
-     * both k and p are enabled, p acts after k.
+     * If set to a probability 0.0 < p < 1.0, it ensures that only the most likely tokens, with total probability mass of p, are considered for generation at each step.
+     * <p>
+     * To eliminate tokens with low likelihood, assign p a minimum percentage for the next token's likelihood. For example, when p is set to 0.75, the model eliminates the bottom 25 percent for the next token. Set to 1.0 to consider all tokens and set to 0 to disable. If both k and p are enabled, p acts after k.
      *
      * @return the value
-     */
+     **/
     public Double getTopP() {
         return topP;
     }
 
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
-     * be dropped to construct a prompt that fits within the model's context length limit. During
-     * this process the order of the documents and chat history will be preserved. With {@code
-     * prompt_truncation} set to OFF, no elements will be dropped.
-     */
-    public enum PromptTruncation implements com.oracle.bmc.http.internal.BmcEnum {
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With {@code prompt_truncation} set to OFF, no elements will be dropped.
+     *
+     **/
+    public enum PromptTruncation {
         Off("OFF"),
         AutoPreserveOrder("AUTO_PRESERVE_ORDER"),
         ;
@@ -953,188 +855,164 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
     };
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
-     * be dropped to construct a prompt that fits within the model's context length limit. During
-     * this process the order of the documents and chat history will be preserved. With {@code
-     * prompt_truncation} set to OFF, no elements will be dropped.
-     */
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With {@code prompt_truncation} set to OFF, no elements will be dropped.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("promptTruncation")
     private final PromptTruncation promptTruncation;
 
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
-     * be dropped to construct a prompt that fits within the model's context length limit. During
-     * this process the order of the documents and chat history will be preserved. With {@code
-     * prompt_truncation} set to OFF, no elements will be dropped.
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will be dropped to construct a prompt that fits within the model's context length limit. During this process the order of the documents and chat history will be preserved. With {@code prompt_truncation} set to OFF, no elements will be dropped.
      *
      * @return the value
-     */
+     **/
     public PromptTruncation getPromptTruncation() {
         return promptTruncation;
     }
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their
-     * frequency in the generated text so far. Greater numbers encourage the model to use new
-     * tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
-     */
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("frequencyPenalty")
     private final Double frequencyPenalty;
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their
-     * frequency in the generated text so far. Greater numbers encourage the model to use new
-     * tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on their frequency in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens. Set to 0 to disable.
      *
      * @return the value
-     */
+     **/
     public Double getFrequencyPenalty() {
         return frequencyPenalty;
     }
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-     * whether they've appeared in the generated text so far. Greater numbers encourage the model to
-     * use new tokens, while lower numbers encourage the model to repeat the tokens.
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens.
+     * <p>
+     * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
      *
-     * <p>Similar to frequency penalty, a penalty is applied to previously present tokens, except
-     * that this penalty is applied equally to all tokens that have already appeared, regardless of
-     * how many times they've appeared. Set to 0 to disable.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("presencePenalty")
     private final Double presencePenalty;
 
     /**
-     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on
-     * whether they've appeared in the generated text so far. Greater numbers encourage the model to
-     * use new tokens, while lower numbers encourage the model to repeat the tokens.
-     *
-     * <p>Similar to frequency penalty, a penalty is applied to previously present tokens, except
-     * that this penalty is applied equally to all tokens that have already appeared, regardless of
-     * how many times they've appeared. Set to 0 to disable.
+     * To reduce repetitiveness of generated tokens, this number penalizes new tokens based on whether they've appeared in the generated text so far. Greater numbers encourage the model to use new tokens, while lower numbers encourage the model to repeat the tokens.
+     * <p>
+     * Similar to frequency penalty, a penalty is applied to previously present tokens, except that this penalty is applied equally to all tokens that have already appeared, regardless of how many times they've appeared. Set to 0 to disable.
      *
      * @return the value
-     */
+     **/
     public Double getPresencePenalty() {
         return presencePenalty;
     }
 
     /**
-     * If specified, the backend will make a best effort to sample tokens deterministically, so that
-     * repeated requests with the same seed and parameters yield the same result. However,
-     * determinism cannot be fully guaranteed.
-     */
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
     private final Integer seed;
 
     /**
-     * If specified, the backend will make a best effort to sample tokens deterministically, so that
-     * repeated requests with the same seed and parameters yield the same result. However,
-     * determinism cannot be fully guaranteed.
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
      *
      * @return the value
-     */
+     **/
     public Integer getSeed() {
         return seed;
     }
 
-    /** Returns the full prompt that was sent to the model when True. */
+    /**
+     * Returns the full prompt that was sent to the model when True.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
     private final Boolean isEcho;
 
     /**
      * Returns the full prompt that was sent to the model when True.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEcho() {
         return isEcho;
     }
 
     /**
-     * A list of available tools (functions) that the model may suggest invoking before producing a
-     * text response.
-     */
+     * A list of available tools (functions) that the model may suggest invoking before producing a text response.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tools")
     private final java.util.List<CohereTool> tools;
 
     /**
-     * A list of available tools (functions) that the model may suggest invoking before producing a
-     * text response.
-     *
+     * A list of available tools (functions) that the model may suggest invoking before producing a text response.
      * @return the value
-     */
+     **/
     public java.util.List<CohereTool> getTools() {
         return tools;
     }
 
-    /** A list of results from invoking tools recommended by the model in the previous chat turn. */
+    /**
+     * A list of results from invoking tools recommended by the model in the previous chat turn.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
     private final java.util.List<CohereToolResult> toolResults;
 
     /**
      * A list of results from invoking tools recommended by the model in the previous chat turn.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<CohereToolResult> getToolResults() {
         return toolResults;
     }
 
     /**
-     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before
-     * it receives the tool responses and directly answers the user's original message.
-     */
+     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForceSingleStep")
     private final Boolean isForceSingleStep;
 
     /**
-     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before
-     * it receives the tool responses and directly answers the user's original message.
+     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before it receives the tool responses and directly answers the user's original message.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsForceSingleStep() {
         return isForceSingleStep;
     }
 
-    /** Stop the model generation when it reaches a stop sequence defined in this parameter. */
+    /**
+     * Stop the model generation when it reaches a stop sequence defined in this parameter.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stopSequences")
     private final java.util.List<String> stopSequences;
 
     /**
      * Stop the model generation when it reaches a stop sequence defined in this parameter.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getStopSequences() {
         return stopSequences;
     }
 
     /**
-     * When enabled, the user\u2019s {@code message} will be sent to the model without any
-     * preprocessing.
-     */
+     * When enabled, the user\u2019s {@code message} will be sent to the model without any preprocessing.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRawPrompting")
     private final Boolean isRawPrompting;
 
     /**
-     * When enabled, the user\u2019s {@code message} will be sent to the model without any
-     * preprocessing.
-     *
+     * When enabled, the user\u2019s {@code message} will be sent to the model without any preprocessing.
      * @return the value
-     */
+     **/
     public Boolean getIsRawPrompting() {
         return isRawPrompting;
     }
 
     /**
-     * When FAST is selected, citations are generated at the same time as the text output and the
-     * request will be completed sooner. May result in less accurate citations.
-     */
-    public enum CitationQuality implements com.oracle.bmc.http.internal.BmcEnum {
+     * When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
+     *
+     **/
+    public enum CitationQuality {
         Accurate("ACCURATE"),
         Fast("FAST"),
         ;
@@ -1167,18 +1045,17 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
     };
     /**
-     * When FAST is selected, citations are generated at the same time as the text output and the
-     * request will be completed sooner. May result in less accurate citations.
-     */
+     * When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("citationQuality")
     private final CitationQuality citationQuality;
 
     /**
-     * When FAST is selected, citations are generated at the same time as the text output and the
-     * request will be completed sooner. May result in less accurate citations.
+     * When FAST is selected, citations are generated at the same time as the text output and the request will be completed sooner. May result in less accurate citations.
      *
      * @return the value
-     */
+     **/
     public CitationQuality getCitationQuality() {
         return citationQuality;
     }
@@ -1190,7 +1067,6 @@ public final class CohereChatRequest extends BaseChatRequest {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

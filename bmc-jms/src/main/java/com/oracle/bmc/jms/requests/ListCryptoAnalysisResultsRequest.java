@@ -6,157 +6,182 @@ package com.oracle.bmc.jms.requests;
 
 import com.oracle.bmc.jms.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListCryptoAnalysisResultsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * ListCryptoAnalysisResultsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListCryptoAnalysisResultsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCryptoAnalysisResultsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public class ListCryptoAnalysisResultsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     private String fleetId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Fleet.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
      */
     public String getFleetId() {
         return fleetId;
     }
-    /** The aggregation mode of the crypto event analysis result. */
+    /**
+     * The aggregation mode of the crypto event analysis result.
+     */
     private com.oracle.bmc.jms.model.CryptoAnalysisResultMode aggregationMode;
 
-    /** The aggregation mode of the crypto event analysis result. */
+    /**
+     * The aggregation mode of the crypto event analysis result.
+     */
     public com.oracle.bmc.jms.model.CryptoAnalysisResultMode getAggregationMode() {
         return aggregationMode;
     }
-    /** The Fleet-unique identifier of the related managed instance. */
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     private String managedInstanceId;
 
-    /** The Fleet-unique identifier of the related managed instance. */
+    /**
+     * The Fleet-unique identifier of the related managed instance.
+     */
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
     /**
-     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     private String hostName;
 
     /**
-     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * managed instance.
+     * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
      */
     public String getHostName() {
         return hostName;
     }
-    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
     private Integer nonCompliantFindingCount;
 
-    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
     public Integer getNonCompliantFindingCount() {
         return nonCompliantFindingCount;
     }
-    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
     private Integer nonCompliantFindingCountGreaterThan;
 
-    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    /**
+     * Non Compliant Finding Count of CryptoAnalysis Report.
+     */
     public Integer getNonCompliantFindingCountGreaterThan() {
         return nonCompliantFindingCountGreaterThan;
     }
-    /** FindingCount of CryptoAnalysis Report. */
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
     private Integer findingCount;
 
-    /** FindingCount of CryptoAnalysis Report. */
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
     public Integer getFindingCount() {
         return findingCount;
     }
-    /** FindingCount of CryptoAnalysis Report. */
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
     private Integer findingCountGreaterThan;
 
-    /** FindingCount of CryptoAnalysis Report. */
+    /**
+     * FindingCount of CryptoAnalysis Report.
+     */
     public Integer getFindingCountGreaterThan() {
         return findingCountGreaterThan;
     }
     /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeStart;
 
     /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeStart() {
         return timeStart;
     }
     /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     private java.util.Date timeEnd;
 
     /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     private String page;
 
     /**
-     * The page token representing the page at which to start retrieving results. The token is
-     * usually retrieved from a previous list call.
+     * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
      */
     public String getPage() {
         return page;
     }
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     private com.oracle.bmc.jms.model.SortOrder sortOrder;
 
-    /** The sort order, either 'asc' or 'desc'. */
+    /**
+     * The sort order, either 'asc' or 'desc'.
+     */
     public com.oracle.bmc.jms.model.SortOrder getSortOrder() {
         return sortOrder;
     }
     /**
-     * The field to sort crypto event analysis results. Only one sort order can be provided. Default
-     * order for _timeCreated_, and _jreVersion_ is **descending**. Default order for
-     * _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**. If no
-     * value is specified _timeCreated_ is default.
+     * The field to sort crypto event analysis results. Only one sort order can be provided.
+     * Default order for _timeCreated_, and _jreVersion_ is **descending**.
+     * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+     * If no value is specified _timeCreated_ is default.
+     *
      */
     private com.oracle.bmc.jms.model.CryptoAnalysisResultSortBy sortBy;
 
     /**
-     * The field to sort crypto event analysis results. Only one sort order can be provided. Default
-     * order for _timeCreated_, and _jreVersion_ is **descending**. Default order for
-     * _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**. If no
-     * value is specified _timeCreated_ is default.
+     * The field to sort crypto event analysis results. Only one sort order can be provided.
+     * Default order for _timeCreated_, and _jreVersion_ is **descending**.
+     * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+     * If no value is specified _timeCreated_ is default.
+     *
      */
     public com.oracle.bmc.jms.model.CryptoAnalysisResultSortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -164,19 +189,17 @@ public class ListCryptoAnalysisResultsRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCryptoAnalysisResultsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          */
         private String fleetId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Fleet.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
          * @param fleetId the value to set
          * @return this builder instance
          */
@@ -185,12 +208,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** The aggregation mode of the crypto event analysis result. */
+        /**
+         * The aggregation mode of the crypto event analysis result.
+         */
         private com.oracle.bmc.jms.model.CryptoAnalysisResultMode aggregationMode = null;
 
         /**
          * The aggregation mode of the crypto event analysis result.
-         *
          * @param aggregationMode the value to set
          * @return this builder instance
          */
@@ -200,12 +224,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** The Fleet-unique identifier of the related managed instance. */
+        /**
+         * The Fleet-unique identifier of the related managed instance.
+         */
         private String managedInstanceId = null;
 
         /**
          * The Fleet-unique identifier of the related managed instance.
-         *
          * @param managedInstanceId the value to set
          * @return this builder instance
          */
@@ -215,15 +240,12 @@ public class ListCryptoAnalysisResultsRequest
         }
 
         /**
-         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the managed instance.
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          */
         private String hostName = null;
 
         /**
-         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the managed instance.
-         *
+         * The host [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
          * @param hostName the value to set
          * @return this builder instance
          */
@@ -232,12 +254,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** Non Compliant Finding Count of CryptoAnalysis Report. */
+        /**
+         * Non Compliant Finding Count of CryptoAnalysis Report.
+         */
         private Integer nonCompliantFindingCount = null;
 
         /**
          * Non Compliant Finding Count of CryptoAnalysis Report.
-         *
          * @param nonCompliantFindingCount the value to set
          * @return this builder instance
          */
@@ -246,12 +269,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** Non Compliant Finding Count of CryptoAnalysis Report. */
+        /**
+         * Non Compliant Finding Count of CryptoAnalysis Report.
+         */
         private Integer nonCompliantFindingCountGreaterThan = null;
 
         /**
          * Non Compliant Finding Count of CryptoAnalysis Report.
-         *
          * @param nonCompliantFindingCountGreaterThan the value to set
          * @return this builder instance
          */
@@ -261,12 +285,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** FindingCount of CryptoAnalysis Report. */
+        /**
+         * FindingCount of CryptoAnalysis Report.
+         */
         private Integer findingCount = null;
 
         /**
          * FindingCount of CryptoAnalysis Report.
-         *
          * @param findingCount the value to set
          * @return this builder instance
          */
@@ -275,12 +300,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** FindingCount of CryptoAnalysis Report. */
+        /**
+         * FindingCount of CryptoAnalysis Report.
+         */
         private Integer findingCountGreaterThan = null;
 
         /**
          * FindingCount of CryptoAnalysis Report.
-         *
          * @param findingCountGreaterThan the value to set
          * @return this builder instance
          */
@@ -290,15 +316,12 @@ public class ListCryptoAnalysisResultsRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeStart = null;
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * The start of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeStart the value to set
          * @return this builder instance
          */
@@ -308,15 +331,12 @@ public class ListCryptoAnalysisResultsRequest
         }
 
         /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          */
         private java.util.Date timeEnd = null;
 
         /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
+         * The end of the time period during which resources are searched (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * @param timeEnd the value to set
          * @return this builder instance
          */
@@ -325,12 +345,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -340,15 +361,12 @@ public class ListCryptoAnalysisResultsRequest
         }
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          */
         private String page = null;
 
         /**
-         * The page token representing the page at which to start retrieving results. The token is
-         * usually retrieved from a previous list call.
-         *
+         * The page token representing the page at which to start retrieving results. The token is usually retrieved from a previous list call.
          * @param page the value to set
          * @return this builder instance
          */
@@ -357,12 +375,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** The sort order, either 'asc' or 'desc'. */
+        /**
+         * The sort order, either 'asc' or 'desc'.
+         */
         private com.oracle.bmc.jms.model.SortOrder sortOrder = null;
 
         /**
          * The sort order, either 'asc' or 'desc'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -373,17 +392,18 @@ public class ListCryptoAnalysisResultsRequest
 
         /**
          * The field to sort crypto event analysis results. Only one sort order can be provided.
-         * Default order for _timeCreated_, and _jreVersion_ is **descending**. Default order for
-         * _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**. If no
-         * value is specified _timeCreated_ is default.
+         * Default order for _timeCreated_, and _jreVersion_ is **descending**.
+         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+         * If no value is specified _timeCreated_ is default.
+         *
          */
         private com.oracle.bmc.jms.model.CryptoAnalysisResultSortBy sortBy = null;
 
         /**
          * The field to sort crypto event analysis results. Only one sort order can be provided.
-         * Default order for _timeCreated_, and _jreVersion_ is **descending**. Default order for
-         * _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**. If no
-         * value is specified _timeCreated_ is default.
+         * Default order for _timeCreated_, and _jreVersion_ is **descending**.
+         * Default order for _managedInstanceId_, _jreDistribution_, _jreVendor_ and _osName_ is **ascending**.
+         * If no value is specified _timeCreated_ is default.
          *
          * @param sortBy the value to set
          * @return this builder instance
@@ -393,12 +413,13 @@ public class ListCryptoAnalysisResultsRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -409,19 +430,18 @@ public class ListCryptoAnalysisResultsRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -433,7 +453,6 @@ public class ListCryptoAnalysisResultsRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListCryptoAnalysisResultsRequest o) {
@@ -460,11 +479,10 @@ public class ListCryptoAnalysisResultsRequest
         /**
          * Build the instance of ListCryptoAnalysisResultsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListCryptoAnalysisResultsRequest
          */
@@ -478,8 +496,7 @@ public class ListCryptoAnalysisResultsRequest
         /**
          * Build the instance of ListCryptoAnalysisResultsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCryptoAnalysisResultsRequest
@@ -502,16 +519,12 @@ public class ListCryptoAnalysisResultsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListCryptoAnalysisResultsRequest(fleetId, aggregationMode, managedInstanceId,
-            // hostName, nonCompliantFindingCount, nonCompliantFindingCountGreaterThan,
-            // findingCount, findingCountGreaterThan, timeStart, timeEnd, limit, page, sortOrder,
-            // sortBy, opcRequestId);
+            // new ListCryptoAnalysisResultsRequest(fleetId, aggregationMode, managedInstanceId, hostName, nonCompliantFindingCount, nonCompliantFindingCountGreaterThan, findingCount, findingCountGreaterThan, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -535,7 +548,6 @@ public class ListCryptoAnalysisResultsRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -20,13 +20,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class contains examples for encrypting/decrypting Streams on the client side using KMS
- * service.
+ * This class contains examples for encrypting/decrypting Streams
+ * on the client side using KMS service.
  *
- * <p>Instructions: As a pre-requisite for this example you must have a vault created in KMS with at
- * least one master key. OCI KMS has APIs that allow creating master keys or importing a previously
- * generated key, either will work. You can refer to the example at examples/kmsExample.java for an
- * example of how to create a master key.
+ * Instructions:
+ * As a pre-requisite for this example you must have a vault created in KMS with at least one master key.
+ * OCI KMS has APIs that allow creating master keys or importing a previously generated key, either will work.
+ * You can refer to the example at examples/kmsExample.java for an example of how to create a master key.
+ *
  */
 public class StreamEncryptionExample {
 
@@ -51,10 +52,8 @@ public class StreamEncryptionExample {
             return;
         }
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
         final String configurationFilePath = "~/.oci/config";
         final String profile = "DEFAULT";

@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.ocvp;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.ocvp.internal.http.*;
 import com.oracle.bmc.ocvp.requests.*;
 import com.oracle.bmc.ocvp.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for Sddc service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for Sddc service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements SddcAsync {
-    /** Service instance for Sddc. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public class SddcAsyncClient implements SddcAsync {
+    /**
+     * Service instance for Sddc.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("SDDC")
@@ -39,608 +36,112 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(SddcAsyncClient.class);
 
-    SddcAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, SddcAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "ocvp";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public SddcAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new SddcAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CancelDowngradeHcxResponse> cancelDowngradeHcx(
-            CancelDowngradeHcxRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, CancelDowngradeHcxResponse::builder)
-                .logger(LOG, "cancelDowngradeHcx")
-                .serviceDetails(
-                        "Sddc",
-                        "CancelDowngradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CancelDowngradeHcx")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CancelDowngradeHcxRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("cancelDowngradeHcx")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CancelDowngradeHcxResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CancelDowngradeHcxResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ChangeSddcCompartmentResponse> changeSddcCompartment(
-            ChangeSddcCompartmentRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-        Objects.requireNonNull(
-                request.getChangeSddcCompartmentDetails(),
-                "changeSddcCompartmentDetails is required");
-
-        return clientCall(request, ChangeSddcCompartmentResponse::builder)
-                .logger(LOG, "changeSddcCompartment")
-                .serviceDetails(
-                        "Sddc",
-                        "ChangeSddcCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/ChangeSddcCompartment")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(ChangeSddcCompartmentRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("changeCompartment")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", ChangeSddcCompartmentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateSddcResponse> createSddc(
-            CreateSddcRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<CreateSddcRequest, CreateSddcResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCreateSddcDetails(), "createSddcDetails is required");
-
-        return clientCall(request, CreateSddcResponse::builder)
-                .logger(LOG, "createSddc")
-                .serviceDetails(
-                        "Sddc",
-                        "CreateSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CreateSddc")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateSddcRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateSddcResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateSddcResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteSddcResponse> deleteSddc(
-            DeleteSddcRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, DeleteSddcResponse::builder)
-                .logger(LOG, "deleteSddc")
-                .serviceDetails(
-                        "Sddc",
-                        "DeleteSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DeleteSddc")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteSddcRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteSddcResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteSddcResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DowngradeHcxResponse> downgradeHcx(
-            DowngradeHcxRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
-                    handler) {
-        Objects.requireNonNull(request.getDowngradeHcxDetails(), "downgradeHcxDetails is required");
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, DowngradeHcxResponse::builder)
-                .logger(LOG, "downgradeHcx")
-                .serviceDetails(
-                        "Sddc",
-                        "DowngradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DowngradeHcx")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(DowngradeHcxRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("downgradeHcx")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DowngradeHcxResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", DowngradeHcxResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetSddcResponse> getSddc(
-            GetSddcRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, GetSddcResponse::builder)
-                .logger(LOG, "getSddc")
-                .serviceDetails(
-                        "Sddc",
-                        "GetSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/GetSddc")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetSddcRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(com.oracle.bmc.ocvp.model.Sddc.class, GetSddcResponse.Builder::sddc)
-                .handleResponseHeaderString("etag", GetSddcResponse.Builder::etag)
-                .handleResponseHeaderString("opc-request-id", GetSddcResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSddcsResponse> listSddcs(
-            ListSddcsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSddcsResponse::builder)
-                .logger(LOG, "listSddcs")
-                .serviceDetails(
-                        "Sddc",
-                        "ListSddcs",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SddcSummary/ListSddcs")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSddcsRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam(
-                        "computeAvailabilityDomain", request.getComputeAvailabilityDomain())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SddcCollection.class,
-                        ListSddcsResponse.Builder::sddcCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSddcsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString("opc-next-page", ListSddcsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSupportedCommitmentsResponse> listSupportedCommitments(
-            ListSupportedCommitmentsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSupportedCommitmentsResponse::builder)
-                .logger(LOG, "listSupportedCommitments")
-                .serviceDetails(
-                        "Sddc",
-                        "ListSupportedCommitments",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedCommitmentsRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("supportedCommitments")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("hostShapeName", request.getHostShapeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SupportedCommitmentSummaryCollection.class,
-                        ListSupportedCommitmentsResponse.Builder
-                                ::supportedCommitmentSummaryCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSupportedCommitmentsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSupportedCommitmentsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSupportedHostShapesResponse> listSupportedHostShapes(
-            ListSupportedHostShapesRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSupportedHostShapesResponse::builder)
-                .logger(LOG, "listSupportedHostShapes")
-                .serviceDetails(
-                        "Sddc",
-                        "ListSupportedHostShapes",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapeSummary/ListSupportedHostShapes")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedHostShapesRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("supportedHostShapes")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("name", request.getName())
-                .appendQueryParam(
-                        "isSingleHostSddcSupported", request.getIsSingleHostSddcSupported())
-                .appendQueryParam("initialHostShapeName", request.getInitialHostShapeName())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SupportedHostShapeCollection.class,
-                        ListSupportedHostShapesResponse.Builder::supportedHostShapeCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListSupportedHostShapesResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListSupportedHostShapesResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListSupportedVmwareSoftwareVersionsResponse>
-            listSupportedVmwareSoftwareVersions(
-                    ListSupportedVmwareSoftwareVersionsRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    ListSupportedVmwareSoftwareVersionsRequest,
-                                    ListSupportedVmwareSoftwareVersionsResponse>
-                            handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListSupportedVmwareSoftwareVersionsResponse::builder)
-                .logger(LOG, "listSupportedVmwareSoftwareVersions")
-                .serviceDetails(
-                        "Sddc",
-                        "ListSupportedVmwareSoftwareVersions",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListSupportedVmwareSoftwareVersionsRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("supportedVmwareSoftwareVersions")
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .appendQueryParam("version", request.getVersion())
-                .appendQueryParam("hostShapeName", request.getHostShapeName())
-                .appendQueryParam("versionToUpgrade", request.getVersionToUpgrade())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SupportedVmwareSoftwareVersionCollection.class,
-                        ListSupportedVmwareSoftwareVersionsResponse.Builder
-                                ::supportedVmwareSoftwareVersionCollection)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        ListSupportedVmwareSoftwareVersionsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page",
-                        ListSupportedVmwareSoftwareVersionsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RefreshHcxLicenseStatusResponse> refreshHcxLicenseStatus(
-            RefreshHcxLicenseStatusRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, RefreshHcxLicenseStatusResponse::builder)
-                .logger(LOG, "refreshHcxLicenseStatus")
-                .serviceDetails(
-                        "Sddc",
-                        "RefreshHcxLicenseStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RefreshHcxLicenseStatus")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RefreshHcxLicenseStatusRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("refreshHcxLicenses")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RefreshHcxLicenseStatusResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", RefreshHcxLicenseStatusResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RetrievePasswordResponse> retrievePassword(
-            RetrievePasswordRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RetrievePasswordRequest, RetrievePasswordResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-        Objects.requireNonNull(request.getType(), "type is required");
-
-        return clientCall(request, RetrievePasswordResponse::builder)
-                .logger(LOG, "retrievePassword")
-                .serviceDetails(
-                        "Sddc",
-                        "RetrievePassword",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrievePassword")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RetrievePasswordRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("retrievePassword")
-                .appendEnumQueryParam("type", request.getType())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.ocvp.model.SddcPassword.class,
-                        RetrievePasswordResponse.Builder::sddcPassword)
-                .handleResponseHeaderString("etag", RetrievePasswordResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", RetrievePasswordResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateSddcResponse> updateSddc(
-            UpdateSddcRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-        Objects.requireNonNull(request.getUpdateSddcDetails(), "updateSddcDetails is required");
-
-        return clientCall(request, UpdateSddcResponse::builder)
-                .logger(LOG, "updateSddc")
-                .serviceDetails(
-                        "Sddc",
-                        "UpdateSddc",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateSddcRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(com.oracle.bmc.ocvp.model.Sddc.class, UpdateSddcResponse.Builder::sddc)
-                .handleResponseHeaderString("etag", UpdateSddcResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateSddcResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpgradeHcxResponse> upgradeHcx(
-            UpgradeHcxRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse>
-                    handler) {
-
-        Validate.notBlank(request.getSddcId(), "sddcId must not be blank");
-
-        return clientCall(request, UpgradeHcxResponse::builder)
-                .logger(LOG, "upgradeHcx")
-                .serviceDetails(
-                        "Sddc",
-                        "UpgradeHcx",
-                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpgradeHcx")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(UpgradeHcxRequest::builder)
-                .basePath("/20230701")
-                .appendPathParam("sddcs")
-                .appendPathParam(request.getSddcId())
-                .appendPathParam("actions")
-                .appendPathParam("upgradeHcx")
-                .accept("application/json")
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpgradeHcxResponse.Builder::opcWorkRequestId)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpgradeHcxResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public SddcAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -648,26 +149,26 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -676,29 +177,29 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public SddcAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -711,14 +212,910 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public SddcAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, SddcAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public SddcAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new SddcAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDowngradeHcxResponse> cancelDowngradeHcx(
+            CancelDowngradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async cancelDowngradeHcx");
+        final CancelDowngradeHcxRequest interceptedRequest =
+                CancelDowngradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "CancelDowngradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CancelDowngradeHcx");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelDowngradeHcxResponse>
+                transformer =
+                        CancelDowngradeHcxConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>,
+                        java.util.concurrent.Future<CancelDowngradeHcxResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelDowngradeHcxRequest, CancelDowngradeHcxResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeSddcCompartmentResponse> changeSddcCompartment(
+            ChangeSddcCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeSddcCompartment");
+        final ChangeSddcCompartmentRequest interceptedRequest =
+                ChangeSddcCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeSddcCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ChangeSddcCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/ChangeSddcCompartment");
+        final java.util.function.Function<javax.ws.rs.core.Response, ChangeSddcCompartmentResponse>
+                transformer =
+                        ChangeSddcCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeSddcCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeSddcCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeSddcCompartmentRequest, ChangeSddcCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSddcResponse> createSddc(
+            CreateSddcRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateSddcRequest, CreateSddcResponse>
+                    handler) {
+        LOG.trace("Called async createSddc");
+        final CreateSddcRequest interceptedRequest = CreateSddcConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSddcConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "CreateSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/CreateSddc");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateSddcResponse>
+                transformer =
+                        CreateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateSddcRequest, CreateSddcResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSddcRequest, CreateSddcResponse>,
+                        java.util.concurrent.Future<CreateSddcResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateSddcDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSddcRequest, CreateSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSddcResponse> deleteSddc(
+            DeleteSddcRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse>
+                    handler) {
+        LOG.trace("Called async deleteSddc");
+        final DeleteSddcRequest interceptedRequest = DeleteSddcConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSddcConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "DeleteSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DeleteSddc");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteSddcResponse>
+                transformer =
+                        DeleteSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteSddcRequest, DeleteSddcResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSddcRequest, DeleteSddcResponse>,
+                        java.util.concurrent.Future<DeleteSddcResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSddcRequest, DeleteSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DowngradeHcxResponse> downgradeHcx(
+            DowngradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async downgradeHcx");
+        final DowngradeHcxRequest interceptedRequest =
+                DowngradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DowngradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "DowngradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/DowngradeHcx");
+        final java.util.function.Function<javax.ws.rs.core.Response, DowngradeHcxResponse>
+                transformer =
+                        DowngradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DowngradeHcxRequest, DowngradeHcxResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DowngradeHcxRequest, DowngradeHcxResponse>,
+                        java.util.concurrent.Future<DowngradeHcxResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDowngradeHcxDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DowngradeHcxRequest, DowngradeHcxResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSddcResponse> getSddc(
+            GetSddcRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handler) {
+        LOG.trace("Called async getSddc");
+        final GetSddcRequest interceptedRequest = GetSddcConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSddcConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "GetSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/GetSddc");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetSddcResponse> transformer =
+                GetSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetSddcRequest, GetSddcResponse>,
+                        java.util.concurrent.Future<GetSddcResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSddcRequest, GetSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSddcsResponse> listSddcs(
+            ListSddcsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse>
+                    handler) {
+        LOG.trace("Called async listSddcs");
+        final ListSddcsRequest interceptedRequest = ListSddcsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSddcsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSddcs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SddcSummary/ListSddcs");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListSddcsResponse>
+                transformer =
+                        ListSddcsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<ListSddcsRequest, ListSddcsResponse>,
+                        java.util.concurrent.Future<ListSddcsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSddcsRequest, ListSddcsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedCommitmentsResponse> listSupportedCommitments(
+            ListSupportedCommitmentsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedCommitments");
+        final ListSupportedCommitmentsRequest interceptedRequest =
+                ListSupportedCommitmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedCommitmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedCommitments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedCommitmentSummary/ListSupportedCommitments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSupportedCommitmentsResponse>
+                transformer =
+                        ListSupportedCommitmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>,
+                        java.util.concurrent.Future<ListSupportedCommitmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedCommitmentsRequest, ListSupportedCommitmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedHostShapesResponse> listSupportedHostShapes(
+            ListSupportedHostShapesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedHostShapes");
+        final ListSupportedHostShapesRequest interceptedRequest =
+                ListSupportedHostShapesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedHostShapesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedHostShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedHostShapeSummary/ListSupportedHostShapes");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSupportedHostShapesResponse>
+                transformer =
+                        ListSupportedHostShapesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>,
+                        java.util.concurrent.Future<ListSupportedHostShapesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedHostShapesRequest, ListSupportedHostShapesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListSupportedVmwareSoftwareVersionsResponse>
+            listSupportedVmwareSoftwareVersions(
+                    ListSupportedVmwareSoftwareVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSupportedVmwareSoftwareVersionsRequest,
+                                    ListSupportedVmwareSoftwareVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listSupportedVmwareSoftwareVersions");
+        final ListSupportedVmwareSoftwareVersionsRequest interceptedRequest =
+                ListSupportedVmwareSoftwareVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedVmwareSoftwareVersionsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "ListSupportedVmwareSoftwareVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/SupportedVmwareSoftwareVersionSummary/ListSupportedVmwareSoftwareVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSupportedVmwareSoftwareVersionsResponse>
+                transformer =
+                        ListSupportedVmwareSoftwareVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedVmwareSoftwareVersionsRequest,
+                        ListSupportedVmwareSoftwareVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedVmwareSoftwareVersionsRequest,
+                                ListSupportedVmwareSoftwareVersionsResponse>,
+                        java.util.concurrent.Future<ListSupportedVmwareSoftwareVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedVmwareSoftwareVersionsRequest,
+                    ListSupportedVmwareSoftwareVersionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshHcxLicenseStatusResponse> refreshHcxLicenseStatus(
+            RefreshHcxLicenseStatusRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                    handler) {
+        LOG.trace("Called async refreshHcxLicenseStatus");
+        final RefreshHcxLicenseStatusRequest interceptedRequest =
+                RefreshHcxLicenseStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshHcxLicenseStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "RefreshHcxLicenseStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RefreshHcxLicenseStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RefreshHcxLicenseStatusResponse>
+                transformer =
+                        RefreshHcxLicenseStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>,
+                        java.util.concurrent.Future<RefreshHcxLicenseStatusResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshHcxLicenseStatusRequest, RefreshHcxLicenseStatusResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RetrievePasswordResponse> retrievePassword(
+            RetrievePasswordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RetrievePasswordRequest, RetrievePasswordResponse>
+                    handler) {
+        LOG.trace("Called async retrievePassword");
+        final RetrievePasswordRequest interceptedRequest =
+                RetrievePasswordConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetrievePasswordConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "RetrievePassword",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/RetrievePassword");
+        final java.util.function.Function<javax.ws.rs.core.Response, RetrievePasswordResponse>
+                transformer =
+                        RetrievePasswordConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RetrievePasswordRequest, RetrievePasswordResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RetrievePasswordRequest, RetrievePasswordResponse>,
+                        java.util.concurrent.Future<RetrievePasswordResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RetrievePasswordRequest, RetrievePasswordResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateSddcResponse> updateSddc(
+            UpdateSddcRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse>
+                    handler) {
+        LOG.trace("Called async updateSddc");
+        final UpdateSddcRequest interceptedRequest = UpdateSddcConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateSddcConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "UpdateSddc",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpdateSddc");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateSddcResponse>
+                transformer =
+                        UpdateSddcConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateSddcRequest, UpdateSddcResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateSddcRequest, UpdateSddcResponse>,
+                        java.util.concurrent.Future<UpdateSddcResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateSddcDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateSddcRequest, UpdateSddcResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeHcxResponse> upgradeHcx(
+            UpgradeHcxRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse>
+                    handler) {
+        LOG.trace("Called async upgradeHcx");
+        final UpgradeHcxRequest interceptedRequest = UpgradeHcxConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeHcxConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Sddc",
+                        "UpgradeHcx",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vmware/20230701/Sddc/UpgradeHcx");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpgradeHcxResponse>
+                transformer =
+                        UpgradeHcxConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpgradeHcxRequest, UpgradeHcxResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeHcxRequest, UpgradeHcxResponse>,
+                        java.util.concurrent.Future<UpgradeHcxResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeHcxRequest, UpgradeHcxResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

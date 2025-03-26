@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The details of the job out-bind variable. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The details of the job out-bind variable.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JobOutBind.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class JobOutBind extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class JobOutBind extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"position", "dataType"})
     public JobOutBind(Integer position, DataType dataType) {
@@ -30,31 +28,33 @@ public final class JobOutBind extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The position of the out-bind variable. */
+        /**
+         * The position of the out-bind variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("position")
         private Integer position;
 
         /**
          * The position of the out-bind variable.
-         *
          * @param position the value to set
          * @return this builder
-         */
+         **/
         public Builder position(Integer position) {
             this.position = position;
             this.__explicitlySet__.add("position");
             return this;
         }
-        /** The datatype of the out-bind variable. */
+        /**
+         * The datatype of the out-bind variable.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataType")
         private DataType dataType;
 
         /**
          * The datatype of the out-bind variable.
-         *
          * @param dataType the value to set
          * @return this builder
-         */
+         **/
         public Builder dataType(DataType dataType) {
             this.dataType = dataType;
             this.__explicitlySet__.add("dataType");
@@ -84,7 +84,9 @@ public final class JobOutBind extends com.oracle.bmc.http.client.internal.Explic
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -93,28 +95,31 @@ public final class JobOutBind extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The position of the out-bind variable. */
+    /**
+     * The position of the out-bind variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("position")
     private final Integer position;
 
     /**
      * The position of the out-bind variable.
-     *
      * @return the value
-     */
+     **/
     public Integer getPosition() {
         return position;
     }
 
-    /** The datatype of the out-bind variable. */
-    public enum DataType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The datatype of the out-bind variable.
+     **/
+    public enum DataType {
         Number("NUMBER"),
         String("STRING"),
         Clob("CLOB"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -153,15 +158,16 @@ public final class JobOutBind extends com.oracle.bmc.http.client.internal.Explic
             return UnknownEnumValue;
         }
     };
-    /** The datatype of the out-bind variable. */
+    /**
+     * The datatype of the out-bind variable.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataType")
     private final DataType dataType;
 
     /**
      * The datatype of the out-bind variable.
-     *
      * @return the value
-     */
+     **/
     public DataType getDataType() {
         return dataType;
     }
@@ -173,7 +179,6 @@ public final class JobOutBind extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

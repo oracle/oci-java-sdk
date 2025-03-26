@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** Indicates whether Database Management is enabled or disabled. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum ManagementState implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Indicates whether Database Management is enabled or disabled.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum ManagementState {
     Enabled("ENABLED"),
     Disabled("DISABLED"),
 

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemanagement.model;
 
-/** The Database role of the Managed Database. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DbRole implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The Database role of the Managed Database.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum DbRole {
     SnapshotStandby("SNAPSHOT_STANDBY"),
     LogicalStandby("LOGICAL_STANDBY"),
     PhysicalStandby("PHYSICAL_STANDBY"),

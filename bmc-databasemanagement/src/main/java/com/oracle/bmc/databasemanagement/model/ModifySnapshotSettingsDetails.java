@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * Details to modify the AWR snapshot settings for a database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * Details to modify the AWR snapshot settings for a database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ModifySnapshotSettingsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ModifySnapshotSettingsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ModifySnapshotSettingsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"retention", "interval"})
     public ModifySnapshotSettingsDetails(Integer retention, Integer interval) {
@@ -33,38 +32,32 @@ public final class ModifySnapshotSettingsDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and
-         * null.
-         */
+         * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retention")
         private Integer retention;
 
         /**
-         * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and
-         * null.
-         *
+         * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and null.
          * @param retention the value to set
          * @return this builder
-         */
+         **/
         public Builder retention(Integer retention) {
             this.retention = retention;
             this.__explicitlySet__.add("retention");
             return this;
         }
         /**
-         * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and
-         * null.
-         */
+         * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and null.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("interval")
         private Integer interval;
 
         /**
-         * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and
-         * null.
-         *
+         * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and null.
          * @param interval the value to set
          * @return this builder
-         */
+         **/
         public Builder interval(Integer interval) {
             this.interval = interval;
             this.__explicitlySet__.add("interval");
@@ -95,7 +88,9 @@ public final class ModifySnapshotSettingsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -105,33 +100,29 @@ public final class ModifySnapshotSettingsDetails
     }
 
     /**
-     * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and
-     * null.
-     */
+     * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and null.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retention")
     private final Integer retention;
 
     /**
-     * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and
-     * null.
-     *
+     * The retention time in minutes. Acceptable values are 0, 1440 to 52596000 (inclusive), and null.
      * @return the value
-     */
+     **/
     public Integer getRetention() {
         return retention;
     }
 
     /**
      * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and null.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("interval")
     private final Integer interval;
 
     /**
      * The interval time in minutes. Acceptable values are 0, 10 to 527040 (inclusive), and null.
-     *
      * @return the value
-     */
+     **/
     public Integer getInterval() {
         return interval;
     }
@@ -143,7 +134,6 @@ public final class ModifySnapshotSettingsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

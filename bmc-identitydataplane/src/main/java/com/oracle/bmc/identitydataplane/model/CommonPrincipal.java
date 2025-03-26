@@ -5,22 +5,19 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = CommonPrincipal.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CommonPrincipal
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class CommonPrincipal extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"tenant", "user"})
     public CommonPrincipal(Tenant tenant, User user) {
@@ -31,31 +28,33 @@ public final class CommonPrincipal
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The tenant. */
+        /**
+         * The tenant.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenant")
         private Tenant tenant;
 
         /**
          * The tenant.
-         *
          * @param tenant the value to set
          * @return this builder
-         */
+         **/
         public Builder tenant(Tenant tenant) {
             this.tenant = tenant;
             this.__explicitlySet__.add("tenant");
             return this;
         }
-        /** The user. */
+        /**
+         * The user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private User user;
 
         /**
          * The user.
-         *
          * @param user the value to set
          * @return this builder
-         */
+         **/
         public Builder user(User user) {
             this.user = user;
             this.__explicitlySet__.add("user");
@@ -85,7 +84,9 @@ public final class CommonPrincipal
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -94,28 +95,30 @@ public final class CommonPrincipal
         return new Builder().copy(this);
     }
 
-    /** The tenant. */
+    /**
+     * The tenant.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenant")
     private final Tenant tenant;
 
     /**
      * The tenant.
-     *
      * @return the value
-     */
+     **/
     public Tenant getTenant() {
         return tenant;
     }
 
-    /** The user. */
+    /**
+     * The user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final User user;
 
     /**
      * The user.
-     *
      * @return the value
-     */
+     **/
     public User getUser() {
         return user;
     }
@@ -127,7 +130,6 @@ public final class CommonPrincipal
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

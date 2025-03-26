@@ -5,23 +5,22 @@
 package com.oracle.bmc.recovery.model;
 
 /**
- * Describes the parameters required to update a protected database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+ * Describes the parameters required to update a protected database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateProtectedDatabaseDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateProtectedDatabaseDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateProtectedDatabaseDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -59,108 +58,104 @@ public final class UpdateProtectedDatabaseDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The protected database name. You can change the displayName. Avoid entering confidential
-         * information.
-         */
+         * The protected database name. You can change the displayName. Avoid entering confidential information.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The protected database name. You can change the displayName. Avoid entering confidential
-         * information.
-         *
+         * The protected database name. You can change the displayName. Avoid entering confidential information.
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB,
-         * M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-         */
+         * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSize")
         private DatabaseSizes databaseSize;
 
         /**
-         * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB,
-         * M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-         *
+         * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
          * @param databaseSize the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSize(DatabaseSizes databaseSize) {
             this.databaseSize = databaseSize;
             this.__explicitlySet__.add("databaseSize");
             return this;
         }
-        /** The size of the database, in gigabytes. */
+        /**
+         * The size of the database, in gigabytes.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
         private Integer databaseSizeInGBs;
 
         /**
          * The size of the database, in gigabytes.
-         *
          * @param databaseSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder databaseSizeInGBs(Integer databaseSizeInGBs) {
             this.databaseSizeInGBs = databaseSizeInGBs;
             this.__explicitlySet__.add("databaseSizeInGBs");
             return this;
         }
         /**
-         * Password credential which can be used to connect to Protected Database. It must contain
-         * at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special
-         * characters must be underscore (_), number sign (#) or hyphen (-). The password must not
-         * contain the username "admin", regardless of casing. Password must not be same as current
-         * passsword.
-         */
+         * Password credential which can be used to connect to Protected Database.
+         * It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters.
+         * The special characters must be underscore (_), number sign (#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+         * Password must not be same as current passsword.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * Password credential which can be used to connect to Protected Database. It must contain
-         * at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special
-         * characters must be underscore (_), number sign (#) or hyphen (-). The password must not
-         * contain the username "admin", regardless of casing. Password must not be same as current
-         * passsword.
+         * Password credential which can be used to connect to Protected Database.
+         * It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters.
+         * The special characters must be underscore (_), number sign (#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+         * Password must not be same as current passsword.
          *
          * @param password the value to set
          * @return this builder
-         */
+         **/
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
             return this;
         }
-        /** The OCID of the protection policy associated with the protected database. */
+        /**
+         * The OCID of the protection policy associated with the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicyId")
         private String protectionPolicyId;
 
         /**
          * The OCID of the protection policy associated with the protected database.
-         *
          * @param protectionPolicyId the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionPolicyId(String protectionPolicyId) {
             this.protectionPolicyId = protectionPolicyId;
             this.__explicitlySet__.add("protectionPolicyId");
             return this;
         }
-        /** List of recovery service subnet resources associated with the protected database. */
+        /**
+         * List of recovery service subnet resources associated with the protected database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("recoveryServiceSubnets")
         private java.util.List<RecoveryServiceSubnetInput> recoveryServiceSubnets;
 
         /**
          * List of recovery service subnet resources associated with the protected database.
-         *
          * @param recoveryServiceSubnets the value to set
          * @return this builder
-         */
+         **/
         public Builder recoveryServiceSubnets(
                 java.util.List<RecoveryServiceSubnetInput> recoveryServiceSubnets) {
             this.recoveryServiceSubnets = recoveryServiceSubnets;
@@ -168,44 +163,42 @@ public final class UpdateProtectedDatabaseDetails
             return this;
         }
         /**
-         * The value TRUE indicates that the protected database is configured to use Real-time data
-         * protection, and redo-data is sent from the protected database to Recovery Service.
-         * Real-time data protection substantially reduces the window of potential data loss that
-         * exists between successive archived redo log backups. For this to be effective, additional
+         * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+         * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
          * configuration is needed on client side.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isRedoLogsShipped")
         private Boolean isRedoLogsShipped;
 
         /**
-         * The value TRUE indicates that the protected database is configured to use Real-time data
-         * protection, and redo-data is sent from the protected database to Recovery Service.
-         * Real-time data protection substantially reduces the window of potential data loss that
-         * exists between successive archived redo log backups. For this to be effective, additional
+         * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+         * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
          * configuration is needed on client side.
          *
          * @param isRedoLogsShipped the value to set
          * @return this builder
-         */
+         **/
         public Builder isRedoLogsShipped(Boolean isRedoLogsShipped) {
             this.isRedoLogsShipped = isRedoLogsShipped;
             this.__explicitlySet__.add("isRedoLogsShipped");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -213,22 +206,19 @@ public final class UpdateProtectedDatabaseDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-         */
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see
-         * [Resource
-         * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -290,7 +280,9 @@ public final class UpdateProtectedDatabaseDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -300,154 +292,149 @@ public final class UpdateProtectedDatabaseDetails
     }
 
     /**
-     * The protected database name. You can change the displayName. Avoid entering confidential
-     * information.
-     */
+     * The protected database name. You can change the displayName. Avoid entering confidential information.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The protected database name. You can change the displayName. Avoid entering confidential
-     * information.
-     *
+     * The protected database name. You can change the displayName. Avoid entering confidential information.
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M -
-     * 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-     */
+     * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSize")
     private final DatabaseSizes databaseSize;
 
     /**
-     * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M -
-     * 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
-     *
+     * The size of the database is allowed to be decreased. XS - Less than 5GB, S - 5GB to 50GB, M - 50GB to 500GB, L - 500GB to 1TB, XL - 1TB to 5TB, XXL - Greater than 5TB.
      * @return the value
-     */
+     **/
     public DatabaseSizes getDatabaseSize() {
         return databaseSize;
     }
 
-    /** The size of the database, in gigabytes. */
+    /**
+     * The size of the database, in gigabytes.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseSizeInGBs")
     private final Integer databaseSizeInGBs;
 
     /**
      * The size of the database, in gigabytes.
-     *
      * @return the value
-     */
+     **/
     public Integer getDatabaseSizeInGBs() {
         return databaseSizeInGBs;
     }
 
     /**
-     * Password credential which can be used to connect to Protected Database. It must contain at
-     * least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters
-     * must be underscore (_), number sign (#) or hyphen (-). The password must not contain the
-     * username "admin", regardless of casing. Password must not be same as current passsword.
-     */
+     * Password credential which can be used to connect to Protected Database.
+     * It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters.
+     * The special characters must be underscore (_), number sign (#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+     * Password must not be same as current passsword.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * Password credential which can be used to connect to Protected Database. It must contain at
-     * least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters. The special characters
-     * must be underscore (_), number sign (#) or hyphen (-). The password must not contain the
-     * username "admin", regardless of casing. Password must not be same as current passsword.
+     * Password credential which can be used to connect to Protected Database.
+     * It must contain at least 2 uppercase, 2 lowercase, 2 numeric and 2 special characters.
+     * The special characters must be underscore (_), number sign (#) or hyphen (-). The password must not contain the username "admin", regardless of casing.
+     * Password must not be same as current passsword.
      *
      * @return the value
-     */
+     **/
     public String getPassword() {
         return password;
     }
 
-    /** The OCID of the protection policy associated with the protected database. */
+    /**
+     * The OCID of the protection policy associated with the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionPolicyId")
     private final String protectionPolicyId;
 
     /**
      * The OCID of the protection policy associated with the protected database.
-     *
      * @return the value
-     */
+     **/
     public String getProtectionPolicyId() {
         return protectionPolicyId;
     }
 
-    /** List of recovery service subnet resources associated with the protected database. */
+    /**
+     * List of recovery service subnet resources associated with the protected database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("recoveryServiceSubnets")
     private final java.util.List<RecoveryServiceSubnetInput> recoveryServiceSubnets;
 
     /**
      * List of recovery service subnet resources associated with the protected database.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<RecoveryServiceSubnetInput> getRecoveryServiceSubnets() {
         return recoveryServiceSubnets;
     }
 
     /**
-     * The value TRUE indicates that the protected database is configured to use Real-time data
-     * protection, and redo-data is sent from the protected database to Recovery Service. Real-time
-     * data protection substantially reduces the window of potential data loss that exists between
-     * successive archived redo log backups. For this to be effective, additional configuration is
-     * needed on client side.
-     */
+     * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+     * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
+     * configuration is needed on client side.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isRedoLogsShipped")
     private final Boolean isRedoLogsShipped;
 
     /**
-     * The value TRUE indicates that the protected database is configured to use Real-time data
-     * protection, and redo-data is sent from the protected database to Recovery Service. Real-time
-     * data protection substantially reduces the window of potential data loss that exists between
-     * successive archived redo log backups. For this to be effective, additional configuration is
-     * needed on client side.
+     * The value TRUE indicates that the protected database is configured to use Real-time data protection, and redo-data is sent from the protected database to Recovery Service.
+     * Real-time data protection substantially reduces the window of potential data loss that exists between successive archived redo log backups. For this to be effective, additional
+     * configuration is needed on client side.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsRedoLogsShipped() {
         return isRedoLogsShipped;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource
-     * Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}. For more information, see [Resource Tags](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/resourcetags.htm)
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -459,7 +446,6 @@ public final class UpdateProtectedDatabaseDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

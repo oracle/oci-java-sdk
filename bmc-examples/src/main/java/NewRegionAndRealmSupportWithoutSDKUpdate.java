@@ -15,14 +15,13 @@ import com.oracle.bmc.identity.responses.ListRegionsResponse;
 import java.io.IOException;
 
 /**
- * This sample demonstrates how to use the SDK with new regions (and realms) without upgrading the
- * SDK.
+ * This sample demonstrates how to use the SDK with new regions (and realms) without upgrading the SDK.
  *
- * <p>When using either the {@link ConfigFileAuthenticationDetailsProvider} or the {@link
- * com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider}, register the new region
- * (and realm) before instantiating the provider. If you call the {@code setRegion} method to target
- * the new region, pass in the region object returned from prior {@link Region#register(String,
- * Realm)} method invocation.
+ * When using either the {@link ConfigFileAuthenticationDetailsProvider} or the {@link
+ * com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider}, register the new region (and realm)
+ * before instantiating the provider.
+ * If you call the {@code setRegion} method to target the new region, pass in the region object returned from prior
+ * {@link Region#register(String, Realm)} method invocation.
  */
 public class NewRegionAndRealmSupportWithoutSDKUpdate {
     public static void main(String args[]) throws IOException {
@@ -33,8 +32,7 @@ public class NewRegionAndRealmSupportWithoutSDKUpdate {
         // Create the client
         Identity identityClient = createIdentityClient();
 
-        // If the config file contains a value for region, then it will be picked up automatically
-        // by the SDK,
+        // If the config file contains a value for region, then it will be picked up automatically by the SDK,
         // else set it up manually by calling setRegion
         System.out.println("Setting region to " + fooRegion.getRegionId());
         identityClient.setRegion(fooRegion);
@@ -55,8 +53,7 @@ public class NewRegionAndRealmSupportWithoutSDKUpdate {
         // The client now makes calls to the endpoint for the new region
         listRegions(identityClient);
 
-        // If you use InstancePrincipals, register the new region (and realm) before initializing
-        // the
+        // If you use InstancePrincipals, register the new region (and realm) before initializing the
         // InstancePrincipalsAuthenticationDetailsProvider.
     }
 
@@ -64,10 +61,8 @@ public class NewRegionAndRealmSupportWithoutSDKUpdate {
         final String configurationFilePath = "~/.oci/config";
         final String configurationProfile = "DEFAULT";
 
-        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI
-        // config file
-        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to
-        // the following
+        // Configuring the AuthenticationDetailsProvider. It's assuming there is a default OCI config file
+        // "~/.oci/config", and a profile in that config with the name "DEFAULT". Make changes to the following
         // line if needed and use ConfigFileReader.parse(configurationFilePath, profile);
 
         final ConfigFileReader.ConfigFile configFile = ConfigFileReader.parseDefault();

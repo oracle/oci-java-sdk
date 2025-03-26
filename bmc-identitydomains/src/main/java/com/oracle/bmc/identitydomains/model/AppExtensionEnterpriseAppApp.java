@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * This extension defines the Enterprise App related attributes. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * This extension defines the Enterprise App related attributes.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AppExtensionEnterpriseAppApp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AppExtensionEnterpriseAppApp.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AppExtensionEnterpriseAppApp
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "appResources",
@@ -48,28 +47,39 @@ public final class AppExtensionEnterpriseAppApp
     public static class Builder {
         /**
          * A list of AppResources of this App.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("appResources")
         private java.util.List<AppAppResources> appResources;
 
         /**
          * A list of AppResources of this App.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable:
-         * true - multiValued: true - mutability: readWrite - required: false - returned: default -
-         * type: complex
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
          * @param appResources the value to set
          * @return this builder
-         */
+         **/
         public Builder appResources(java.util.List<AppAppResources> appResources) {
             this.appResources = appResources;
             this.__explicitlySet__.add("appResources");
@@ -95,28 +105,41 @@ public final class AppExtensionEnterpriseAppApp
         }
         /**
          * Allow Authz policy decision expiry time in seconds.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3600
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allowAuthzDecisionTTL")
         private Integer allowAuthzDecisionTTL;
 
         /**
          * Allow Authz policy decision expiry time in seconds.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3600
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param allowAuthzDecisionTTL the value to set
          * @return this builder
-         */
+         **/
         public Builder allowAuthzDecisionTTL(Integer allowAuthzDecisionTTL) {
             this.allowAuthzDecisionTTL = allowAuthzDecisionTTL;
             this.__explicitlySet__.add("allowAuthzDecisionTTL");
@@ -124,28 +147,41 @@ public final class AppExtensionEnterpriseAppApp
         }
         /**
          * Deny Authz policy decision expiry time in seconds.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         */
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3600
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("denyAuthzDecisionTTL")
         private Integer denyAuthzDecisionTTL;
 
         /**
          * Deny Authz policy decision expiry time in seconds.
-         *
-         * <p>*Added In:** 19.2.1
-         *
-         * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-         * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-         * integer - uniqueness: none
-         *
+         * <p>
+         **Added In:** 19.2.1
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsMaxValue: 3600
+         *  - idcsMinValue: 0
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: integer
+         *  - uniqueness: none
          * @param denyAuthzDecisionTTL the value to set
          * @return this builder
-         */
+         **/
         public Builder denyAuthzDecisionTTL(Integer denyAuthzDecisionTTL) {
             this.denyAuthzDecisionTTL = denyAuthzDecisionTTL;
             this.__explicitlySet__.add("denyAuthzDecisionTTL");
@@ -190,7 +226,9 @@ public final class AppExtensionEnterpriseAppApp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -201,27 +239,38 @@ public final class AppExtensionEnterpriseAppApp
 
     /**
      * A list of AppResources of this App.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("appResources")
     private final java.util.List<AppAppResources> appResources;
 
     /**
      * A list of AppResources of this App.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsCompositeKey: [value] - idcsSearchable: true
-     * - multiValued: true - mutability: readWrite - required: false - returned: default - type:
-     * complex
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<AppAppResources> getAppResources() {
         return appResources;
     }
@@ -242,54 +291,80 @@ public final class AppExtensionEnterpriseAppApp
 
     /**
      * Allow Authz policy decision expiry time in seconds.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3600
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allowAuthzDecisionTTL")
     private final Integer allowAuthzDecisionTTL;
 
     /**
      * Allow Authz policy decision expiry time in seconds.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3600
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getAllowAuthzDecisionTTL() {
         return allowAuthzDecisionTTL;
     }
 
     /**
      * Deny Authz policy decision expiry time in seconds.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     */
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3600
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("denyAuthzDecisionTTL")
     private final Integer denyAuthzDecisionTTL;
 
     /**
      * Deny Authz policy decision expiry time in seconds.
-     *
-     * <p>*Added In:** 19.2.1
-     *
-     * <p>*SCIM++ Properties:** - idcsMaxValue: 3600 - idcsMinValue: 0 - idcsSearchable: false -
-     * multiValued: false - mutability: readWrite - required: false - returned: default - type:
-     * integer - uniqueness: none
-     *
+     * <p>
+     **Added In:** 19.2.1
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsMaxValue: 3600
+     *  - idcsMinValue: 0
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: integer
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Integer getDenyAuthzDecisionTTL() {
         return denyAuthzDecisionTTL;
     }
@@ -301,7 +376,6 @@ public final class AppExtensionEnterpriseAppApp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

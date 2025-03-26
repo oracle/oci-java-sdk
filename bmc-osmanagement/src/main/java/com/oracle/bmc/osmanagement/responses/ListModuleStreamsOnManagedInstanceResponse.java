@@ -6,18 +6,19 @@ package com.oracle.bmc.osmanagement.responses;
 
 import com.oracle.bmc.osmanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190801")
 public class ListModuleStreamsOnManagedInstanceResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query the status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query the
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query the status of the asynchronous operation.
      *
      * @return the value
      */
@@ -26,14 +27,15 @@ public class ListModuleStreamsOnManagedInstanceResponse
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -42,16 +44,19 @@ public class ListModuleStreamsOnManagedInstanceResponse
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the {@code page} parameter for the subsequent
+     * GET request to get the next batch of items.
+     *
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this
+     * header appears in the response, then a partial list might have been
+     * returned. Include this value as the {@code page} parameter for the subsequent
+     * GET request to get the next batch of items.
      *
      * @return the value
      */
@@ -60,16 +65,13 @@ public class ListModuleStreamsOnManagedInstanceResponse
     }
 
     /**
-     * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary}
-     * instances.
+     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary instances.
      */
     private java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>
             items;
 
     /**
-     * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary}
-     * instances.
-     *
+     * A list of com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary instances.
      * @return the value
      */
     public java.util.List<com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>
@@ -87,7 +89,7 @@ public class ListModuleStreamsOnManagedInstanceResponse
     })
     private ListModuleStreamsOnManagedInstanceResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String opcNextPage,
@@ -100,34 +102,31 @@ public class ListModuleStreamsOnManagedInstanceResponse
         this.items = items;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListModuleStreamsOnManagedInstanceResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * the status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query the status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * the status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query the status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -138,14 +137,15 @@ public class ListModuleStreamsOnManagedInstanceResponse
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -156,16 +156,19 @@ public class ListModuleStreamsOnManagedInstanceResponse
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
+         *
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this
+         * header appears in the response, then a partial list might have been
+         * returned. Include this value as the {@code page} parameter for the subsequent
+         * GET request to get the next batch of items.
          *
          * @param opcNextPage the value to set
          * @return this builder
@@ -176,17 +179,14 @@ public class ListModuleStreamsOnManagedInstanceResponse
         }
 
         /**
-         * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary}
-         * instances.
+         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary instances.
          */
         private java.util.List<
                         com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary>
                 items;
 
         /**
-         * A list of {@code com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary}
-         * instances.
-         *
+         * A list of com.oracle.bmc.osmanagement.model.ModuleStreamOnManagedInstanceSummary instances.
          * @param items the value to set
          * @return this builder
          */
@@ -201,10 +201,8 @@ public class ListModuleStreamsOnManagedInstanceResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListModuleStreamsOnManagedInstanceResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -218,10 +216,8 @@ public class ListModuleStreamsOnManagedInstanceResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListModuleStreamsOnManagedInstanceResponse build() {
             return new ListModuleStreamsOnManagedInstanceResponse(
                     __httpStatusCode__,
@@ -235,7 +231,6 @@ public class ListModuleStreamsOnManagedInstanceResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

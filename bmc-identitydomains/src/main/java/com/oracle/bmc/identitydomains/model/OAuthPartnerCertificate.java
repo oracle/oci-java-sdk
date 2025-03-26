@@ -5,23 +5,22 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * OAuth Partner Certificate schema <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * OAuth Partner Certificate schema
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OAuthPartnerCertificate.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OAuthPartnerCertificate.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OAuthPartnerCertificate
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -104,37 +103,36 @@ public final class OAuthPartnerCertificate
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         */
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-         * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-         * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-         * non-reassignable identifier that does not change when the same Resource is returned in
-         * subsequent requests. The value of the id attribute is always issued by the Service
-         * Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved
-         * keyword and MUST NOT be used in the unique identifier.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: always - type: string - uniqueness:
-         * global
-         *
+         * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: always
+         *  - type: string
+         *  - uniqueness: global
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -142,61 +140,71 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ocid")
         private String ocid;
 
         /**
          * Unique OCI identifier for the SCIM Resource.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-         * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-         * global
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: immutable
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: global
          * @param ocid the value to set
          * @return this builder
-         */
+         **/
         public Builder ocid(String ocid) {
             this.ocid = ocid;
             this.__explicitlySet__.add("ocid");
             return this;
         }
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         */
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemas")
         private java.util.List<String> schemas;
 
         /**
-         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-         * supported schema version for a SCIM representation as well any schema extensions
-         * supported by that representation. Each String value must be a unique URI. This
-         * specification defines URIs for User, Group, and a standard \\"enterprise\\" extension.
-         * All representations of SCIM schema MUST include a non-zero value array with value(s) of
-         * the URIs supported by that representation. Duplicate values MUST NOT be included. Value
-         * order is not specified and MUST not impact behavior.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-         * mutability: readWrite - required: true - returned: default - type: string - uniqueness:
-         * none
-         *
+         * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: true
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param schemas the value to set
          * @return this builder
-         */
+         **/
         public Builder schemas(java.util.List<String> schemas) {
             this.schemas = schemas;
             this.__explicitlySet__.add("schemas");
@@ -230,25 +238,34 @@ public final class OAuthPartnerCertificate
             return this;
         }
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         */
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
         private java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
         /**
-         * Each value of this attribute specifies an operation that only an internal client may
-         * perform on this particular resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability:
-         * readOnly - required: false - returned: request - type: string - uniqueness: none
-         *
+         * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsPreventedOperations the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsPreventedOperations(
                 java.util.List<IdcsPreventedOperations> idcsPreventedOperations) {
             this.idcsPreventedOperations = idcsPreventedOperations;
@@ -257,51 +274,71 @@ public final class OAuthPartnerCertificate
         }
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tags> tags;
 
         /**
          * A list of tags on this resource.
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [key, value]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         *  - uniqueness: none
          * @param tags the value to set
          * @return this builder
-         */
+         **/
         public Builder tags(java.util.List<Tags> tags) {
             this.tags = tags;
             this.__explicitlySet__.add("tags");
             return this;
         }
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         */
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
         private Boolean deleteInProgress;
 
         /**
-         * A boolean flag indicating this resource in the process of being deleted. Usually set to
-         * true when synchronous deletion of the resource would take too long.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-         * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness:
-         * none
-         *
+         * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
          * @param deleteInProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder deleteInProgress(Boolean deleteInProgress) {
             this.deleteInProgress = deleteInProgress;
             this.__explicitlySet__.add("deleteInProgress");
@@ -309,24 +346,35 @@ public final class OAuthPartnerCertificate
         }
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
         private String idcsLastUpgradedInRelease;
 
         /**
          * The release number when the resource was upgraded.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: request - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param idcsLastUpgradedInRelease the value to set
          * @return this builder
-         */
+         **/
         public Builder idcsLastUpgradedInRelease(String idcsLastUpgradedInRelease) {
             this.idcsLastUpgradedInRelease = idcsLastUpgradedInRelease;
             this.__explicitlySet__.add("idcsLastUpgradedInRelease");
@@ -334,24 +382,35 @@ public final class OAuthPartnerCertificate
         }
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
         private String domainOcid;
 
         /**
          * OCI Domain Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param domainOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder domainOcid(String domainOcid) {
             this.domainOcid = domainOcid;
             this.__explicitlySet__.add("domainOcid");
@@ -359,24 +418,35 @@ public final class OAuthPartnerCertificate
         }
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
         private String compartmentOcid;
 
         /**
          * OCI Compartment Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param compartmentOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentOcid(String compartmentOcid) {
             this.compartmentOcid = compartmentOcid;
             this.__explicitlySet__.add("compartmentOcid");
@@ -384,61 +454,69 @@ public final class OAuthPartnerCertificate
         }
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
         private String tenancyOcid;
 
         /**
          * OCI Tenant Id (ocid) in which the resource lives.
-         *
-         * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false
-         * - mutability: readOnly - required: false - returned: default - type: string - uniqueness:
-         * none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param tenancyOcid the value to set
          * @return this builder
-         */
+         **/
         public Builder tenancyOcid(String tenancyOcid) {
             this.tenancyOcid = tenancyOcid;
             this.__explicitlySet__.add("tenancyOcid");
             return this;
         }
         /**
-         * An identifier for the Resource as defined by the Service Consumer. The externalId may
-         * simplify identification of the Resource between Service Consumer and Service Provider by
-         * allowing the Consumer to refer to the Resource with its own identifier, obviating the
-         * need to store a local mapping between the local identifier of the Resource and the
-         * identifier used by the Service Provider. Each Resource MAY include a non-empty externalId
-         * value. The value of the externalId attribute is always issued by the Service Consumer and
-         * can never be specified by the Service Provider. The Service Provider MUST always
-         * interpret the externalId as scoped to the Service Consumer's tenant.
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - mutability: readWrite - returned: default - uniqueness: none
-         */
+         * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalId")
         private String externalId;
 
         /**
-         * An identifier for the Resource as defined by the Service Consumer. The externalId may
-         * simplify identification of the Resource between Service Consumer and Service Provider by
-         * allowing the Consumer to refer to the Resource with its own identifier, obviating the
-         * need to store a local mapping between the local identifier of the Resource and the
-         * identifier used by the Service Provider. Each Resource MAY include a non-empty externalId
-         * value. The value of the externalId attribute is always issued by the Service Consumer and
-         * can never be specified by the Service Provider. The Service Provider MUST always
-         * interpret the externalId as scoped to the Service Consumer's tenant.
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - mutability: readWrite - returned: default - uniqueness: none
-         *
+         * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
          * @param externalId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalId(String externalId) {
             this.externalId = externalId;
             this.__explicitlySet__.add("externalId");
@@ -446,22 +524,31 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Key store name
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - returned: always - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - returned: always
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreName")
         private String keyStoreName;
 
         /**
          * Key store name
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - returned: always - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - returned: always
+         *  - uniqueness: none
          * @param keyStoreName the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreName(String keyStoreName) {
             this.keyStoreName = keyStoreName;
             this.__explicitlySet__.add("keyStoreName");
@@ -469,22 +556,31 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Map
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - returned: always - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - returned: always
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("map")
         private String map;
 
         /**
          * Map
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: false - returned: always - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: false
+         *  - returned: always
+         *  - uniqueness: none
          * @param map the value to set
          * @return this builder
-         */
+         **/
         public Builder map(String map) {
             this.map = map;
             this.__explicitlySet__.add("map");
@@ -492,22 +588,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Key store password
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - idcsSensitive: none -
-         * required: false - caseExact: true - returned: never - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - idcsSensitive: none
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: never
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
         private String keyStorePassword;
 
         /**
          * Key store password
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - idcsSensitive: none -
-         * required: false - caseExact: true - returned: never - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - idcsSensitive: none
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: never
+         *  - uniqueness: none
          * @param keyStorePassword the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStorePassword(String keyStorePassword) {
             this.keyStorePassword = keyStorePassword;
             this.__explicitlySet__.add("keyStorePassword");
@@ -515,22 +622,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Key store ID
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: never - uniqueness: none - idcsSearchable: true
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: never
+         *  - uniqueness: none
+         *  - idcsSearchable: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
         private String keyStoreId;
 
         /**
          * Key store ID
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: never - uniqueness: none - idcsSearchable: true
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: never
+         *  - uniqueness: none
+         *  - idcsSearchable: true
          * @param keyStoreId the value to set
          * @return this builder
-         */
+         **/
         public Builder keyStoreId(String keyStoreId) {
             this.keyStoreId = keyStoreId;
             this.__explicitlySet__.add("keyStoreId");
@@ -538,24 +656,35 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Certificate alias
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
-         * caseExact: false - mutability: readWrite - returned: always - uniqueness: none -
-         * idcsSearchable: true
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: true
+         *  - caseExact: false
+         *  - mutability: readWrite
+         *  - returned: always
+         *  - uniqueness: none
+         *  - idcsSearchable: true
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateAlias")
         private String certificateAlias;
 
         /**
          * Certificate alias
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true -
-         * caseExact: false - mutability: readWrite - returned: always - uniqueness: none -
-         * idcsSearchable: true
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: true
+         *  - caseExact: false
+         *  - mutability: readWrite
+         *  - returned: always
+         *  - uniqueness: none
+         *  - idcsSearchable: true
          * @param certificateAlias the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateAlias(String certificateAlias) {
             this.certificateAlias = certificateAlias;
             this.__explicitlySet__.add("certificateAlias");
@@ -563,22 +692,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * SHA-1 Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: default - idcsSearchable: true - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: default
+         *  - idcsSearchable: true
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha1Thumbprint")
         private String sha1Thumbprint;
 
         /**
          * SHA-1 Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: default - idcsSearchable: true - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: default
+         *  - idcsSearchable: true
+         *  - uniqueness: none
          * @param sha1Thumbprint the value to set
          * @return this builder
-         */
+         **/
         public Builder sha1Thumbprint(String sha1Thumbprint) {
             this.sha1Thumbprint = sha1Thumbprint;
             this.__explicitlySet__.add("sha1Thumbprint");
@@ -586,22 +726,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * SHA-256 Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: default - idcsSearchable: true - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: default
+         *  - idcsSearchable: true
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sha256Thumbprint")
         private String sha256Thumbprint;
 
         /**
          * SHA-256 Thumbprint
-         *
-         * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false -
-         * caseExact: true - returned: default - idcsSearchable: true - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: string
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - returned: default
+         *  - idcsSearchable: true
+         *  - uniqueness: none
          * @param sha256Thumbprint the value to set
          * @return this builder
-         */
+         **/
         public Builder sha256Thumbprint(String sha256Thumbprint) {
             this.sha256Thumbprint = sha256Thumbprint;
             this.__explicitlySet__.add("sha256Thumbprint");
@@ -609,22 +760,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Certificate start date
-         *
-         * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false -
-         * caseExact: true - mutability: readWrite - returned: default - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: dateTime
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certStartDate")
         private String certStartDate;
 
         /**
          * Certificate start date
-         *
-         * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false -
-         * caseExact: true - mutability: readWrite - returned: default - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: dateTime
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
          * @param certStartDate the value to set
          * @return this builder
-         */
+         **/
         public Builder certStartDate(String certStartDate) {
             this.certStartDate = certStartDate;
             this.__explicitlySet__.add("certStartDate");
@@ -632,22 +794,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Base 64Key data attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("x509Base64Certificate")
         private String x509Base64Certificate;
 
         /**
          * Base 64Key data attribute
-         *
-         * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-         * required: false - returned: default - type: string - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: string
+         *  - uniqueness: none
          * @param x509Base64Certificate the value to set
          * @return this builder
-         */
+         **/
         public Builder x509Base64Certificate(String x509Base64Certificate) {
             this.x509Base64Certificate = x509Base64Certificate;
             this.__explicitlySet__.add("x509Base64Certificate");
@@ -655,22 +828,33 @@ public final class OAuthPartnerCertificate
         }
         /**
          * Certificate end date
-         *
-         * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false -
-         * caseExact: true - mutability: readWrite - returned: default - uniqueness: none
-         */
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: dateTime
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certEndDate")
         private String certEndDate;
 
         /**
          * Certificate end date
-         *
-         * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false -
-         * caseExact: true - mutability: readWrite - returned: default - uniqueness: none
-         *
+         * <p>
+         **SCIM++ Properties:**
+         *  - type: dateTime
+         *  - multiValued: false
+         *  - required: false
+         *  - caseExact: true
+         *  - mutability: readWrite
+         *  - returned: default
+         *  - uniqueness: none
          * @param certEndDate the value to set
          * @return this builder
-         */
+         **/
         public Builder certEndDate(String certEndDate) {
             this.certEndDate = certEndDate;
             this.__explicitlySet__.add("certEndDate");
@@ -791,7 +975,9 @@ public final class OAuthPartnerCertificate
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -801,90 +987,103 @@ public final class OAuthPartnerCertificate
     }
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     */
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each
-     * representation of the Resource MUST include a non-empty id value. This identifier MUST be
-     * unique across the Service Provider's entire set of Resources. It MUST be a stable,
-     * non-reassignable identifier that does not change when the same Resource is returned in
-     * subsequent requests. The value of the id attribute is always issued by the Service Provider
-     * and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST
-     * NOT be used in the unique identifier.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: always - type: string - uniqueness: global
-     *
+     * Unique identifier for the SCIM Resource as defined by the Service Provider. Each representation of the Resource MUST include a non-empty id value. This identifier MUST be unique across the Service Provider's entire set of Resources. It MUST be a stable, non-reassignable identifier that does not change when the same Resource is returned in subsequent requests. The value of the id attribute is always issued by the Service Provider and MUST never be specified by the Service Consumer. bulkId: is a reserved keyword and MUST NOT be used in the unique identifier.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: always
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ocid")
     private final String ocid;
 
     /**
      * Unique OCI identifier for the SCIM Resource.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
-     * mutability: immutable - required: false - returned: default - type: string - uniqueness:
-     * global
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: immutable
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: global
      * @return the value
-     */
+     **/
     public String getOcid() {
         return ocid;
     }
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     */
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemas")
     private final java.util.List<String> schemas;
 
     /**
-     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the
-     * supported schema version for a SCIM representation as well any schema extensions supported by
-     * that representation. Each String value must be a unique URI. This specification defines URIs
-     * for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM
-     * schema MUST include a non-zero value array with value(s) of the URIs supported by that
-     * representation. Duplicate values MUST NOT be included. Value order is not specified and MUST
-     * not impact behavior.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: true -
-     * mutability: readWrite - required: true - returned: default - type: string - uniqueness: none
-     *
+     * REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: true
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemas() {
         return schemas;
     }
@@ -911,399 +1110,587 @@ public final class OAuthPartnerCertificate
     }
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     */
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsPreventedOperations")
     private final java.util.List<IdcsPreventedOperations> idcsPreventedOperations;
 
     /**
-     * Each value of this attribute specifies an operation that only an internal client may perform
-     * on this particular resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - multiValued: true - mutability: readOnly -
-     * required: false - returned: request - type: string - uniqueness: none
-     *
+     * Each value of this attribute specifies an operation that only an internal client may perform on this particular resource.
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<IdcsPreventedOperations> getIdcsPreventedOperations() {
         return idcsPreventedOperations;
     }
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tags> tags;
 
     /**
      * A list of tags on this resource.
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [key, value]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public java.util.List<Tags> getTags() {
         return tags;
     }
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     */
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("deleteInProgress")
     private final Boolean deleteInProgress;
 
     /**
-     * A boolean flag indicating this resource in the process of being deleted. Usually set to true
-     * when synchronous deletion of the resource would take too long.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: true - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: boolean - uniqueness: none
-     *
+     * A boolean flag indicating this resource in the process of being deleted. Usually set to true when synchronous deletion of the resource would take too long.
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public Boolean getDeleteInProgress() {
         return deleteInProgress;
     }
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idcsLastUpgradedInRelease")
     private final String idcsLastUpgradedInRelease;
 
     /**
      * The release number when the resource was upgraded.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getIdcsLastUpgradedInRelease() {
         return idcsLastUpgradedInRelease;
     }
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
     private final String domainOcid;
 
     /**
      * OCI Domain Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainOcid() {
         return domainOcid;
     }
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentOcid")
     private final String compartmentOcid;
 
     /**
      * OCI Compartment Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCompartmentOcid() {
         return compartmentOcid;
     }
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyOcid")
     private final String tenancyOcid;
 
     /**
      * OCI Tenant Id (ocid) in which the resource lives.
-     *
-     * <p>*SCIM++ Properties:** - caseExact: false - idcsSearchable: false - multiValued: false -
-     * mutability: readOnly - required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getTenancyOcid() {
         return tenancyOcid;
     }
 
     /**
-     * An identifier for the Resource as defined by the Service Consumer. The externalId may
-     * simplify identification of the Resource between Service Consumer and Service Provider by
-     * allowing the Consumer to refer to the Resource with its own identifier, obviating the need to
-     * store a local mapping between the local identifier of the Resource and the identifier used by
-     * the Service Provider. Each Resource MAY include a non-empty externalId value. The value of
-     * the externalId attribute is always issued by the Service Consumer and can never be specified
-     * by the Service Provider. The Service Provider MUST always interpret the externalId as scoped
-     * to the Service Consumer's tenant.
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - mutability: readWrite - returned: default - uniqueness: none
-     */
+     * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalId")
     private final String externalId;
 
     /**
-     * An identifier for the Resource as defined by the Service Consumer. The externalId may
-     * simplify identification of the Resource between Service Consumer and Service Provider by
-     * allowing the Consumer to refer to the Resource with its own identifier, obviating the need to
-     * store a local mapping between the local identifier of the Resource and the identifier used by
-     * the Service Provider. Each Resource MAY include a non-empty externalId value. The value of
-     * the externalId attribute is always issued by the Service Consumer and can never be specified
-     * by the Service Provider. The Service Provider MUST always interpret the externalId as scoped
-     * to the Service Consumer's tenant.
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - mutability: readWrite - returned: default - uniqueness: none
-     *
+     * An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer's tenant.
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getExternalId() {
         return externalId;
     }
 
     /**
      * Key store name
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - returned: always - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - returned: always
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreName")
     private final String keyStoreName;
 
     /**
      * Key store name
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - returned: always - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - returned: always
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getKeyStoreName() {
         return keyStoreName;
     }
 
     /**
      * Map
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - returned: always - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - returned: always
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("map")
     private final String map;
 
     /**
      * Map
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * false - returned: always - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: false
+     *  - returned: always
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getMap() {
         return map;
     }
 
     /**
      * Key store password
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - idcsSensitive: none -
-     * required: false - caseExact: true - returned: never - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - idcsSensitive: none
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: never
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
     private final String keyStorePassword;
 
     /**
      * Key store password
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - idcsSensitive: none -
-     * required: false - caseExact: true - returned: never - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - idcsSensitive: none
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: never
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getKeyStorePassword() {
         return keyStorePassword;
     }
 
     /**
      * Key store ID
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: never - uniqueness: none - idcsSearchable: true
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: never
+     *  - uniqueness: none
+     *  - idcsSearchable: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
     private final String keyStoreId;
 
     /**
      * Key store ID
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: never - uniqueness: none - idcsSearchable: true
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: never
+     *  - uniqueness: none
+     *  - idcsSearchable: true
      * @return the value
-     */
+     **/
     public String getKeyStoreId() {
         return keyStoreId;
     }
 
     /**
      * Certificate alias
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - caseExact:
-     * false - mutability: readWrite - returned: always - uniqueness: none - idcsSearchable: true
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: true
+     *  - caseExact: false
+     *  - mutability: readWrite
+     *  - returned: always
+     *  - uniqueness: none
+     *  - idcsSearchable: true
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateAlias")
     private final String certificateAlias;
 
     /**
      * Certificate alias
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: true - caseExact:
-     * false - mutability: readWrite - returned: always - uniqueness: none - idcsSearchable: true
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: true
+     *  - caseExact: false
+     *  - mutability: readWrite
+     *  - returned: always
+     *  - uniqueness: none
+     *  - idcsSearchable: true
      * @return the value
-     */
+     **/
     public String getCertificateAlias() {
         return certificateAlias;
     }
 
     /**
      * SHA-1 Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: default - idcsSearchable: true - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: default
+     *  - idcsSearchable: true
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha1Thumbprint")
     private final String sha1Thumbprint;
 
     /**
      * SHA-1 Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: default - idcsSearchable: true - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: default
+     *  - idcsSearchable: true
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getSha1Thumbprint() {
         return sha1Thumbprint;
     }
 
     /**
      * SHA-256 Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: default - idcsSearchable: true - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: default
+     *  - idcsSearchable: true
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sha256Thumbprint")
     private final String sha256Thumbprint;
 
     /**
      * SHA-256 Thumbprint
-     *
-     * <p>*SCIM++ Properties:** - type: string - multiValued: false - required: false - caseExact:
-     * true - returned: default - idcsSearchable: true - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: string
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - returned: default
+     *  - idcsSearchable: true
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getSha256Thumbprint() {
         return sha256Thumbprint;
     }
 
     /**
      * Certificate start date
-     *
-     * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false - caseExact:
-     * true - mutability: readWrite - returned: default - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: dateTime
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certStartDate")
     private final String certStartDate;
 
     /**
      * Certificate start date
-     *
-     * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false - caseExact:
-     * true - mutability: readWrite - returned: default - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: dateTime
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCertStartDate() {
         return certStartDate;
     }
 
     /**
      * Base 64Key data attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("x509Base64Certificate")
     private final String x509Base64Certificate;
 
     /**
      * Base 64Key data attribute
-     *
-     * <p>*SCIM++ Properties:** - caseExact: true - multiValued: false - mutability: readWrite -
-     * required: false - returned: default - type: string - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getX509Base64Certificate() {
         return x509Base64Certificate;
     }
 
     /**
      * Certificate end date
-     *
-     * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false - caseExact:
-     * true - mutability: readWrite - returned: default - uniqueness: none
-     */
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: dateTime
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certEndDate")
     private final String certEndDate;
 
     /**
      * Certificate end date
-     *
-     * <p>*SCIM++ Properties:** - type: dateTime - multiValued: false - required: false - caseExact:
-     * true - mutability: readWrite - returned: default - uniqueness: none
-     *
+     * <p>
+     **SCIM++ Properties:**
+     *  - type: dateTime
+     *  - multiValued: false
+     *  - required: false
+     *  - caseExact: true
+     *  - mutability: readWrite
+     *  - returned: default
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getCertEndDate() {
         return certEndDate;
     }
@@ -1315,7 +1702,6 @@ public final class OAuthPartnerCertificate
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

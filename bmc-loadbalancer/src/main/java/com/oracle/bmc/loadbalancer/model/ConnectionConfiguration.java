@@ -5,23 +5,23 @@
 package com.oracle.bmc.loadbalancer.model;
 
 /**
- * Configuration details for the connection between the client and backend servers. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ * Configuration details for the connection between the client and backend servers.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionConfiguration.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ConnectionConfiguration.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ConnectionConfiguration
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "idleTimeout",
@@ -41,33 +41,30 @@ public final class ConnectionConfiguration
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The maximum idle time, in seconds, allowed between two successive receive or two
-         * successive send operations between the client and backend servers. A send operation does
-         * not reset the timer for receive operations. A receive operation does not reset the timer
-         * for send operations.
+         * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+         * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+         * receive operation does not reset the timer for send operations.
+         * <p>
+         * For more information, see [Connection Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * <p>
+         * Example: {@code 1200}
          *
-         * <p>For more information, see [Connection
-         * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
-         *
-         * <p>Example: {@code 1200}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
         private Long idleTimeout;
 
         /**
-         * The maximum idle time, in seconds, allowed between two successive receive or two
-         * successive send operations between the client and backend servers. A send operation does
-         * not reset the timer for receive operations. A receive operation does not reset the timer
-         * for send operations.
-         *
-         * <p>For more information, see [Connection
-         * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
-         *
-         * <p>Example: {@code 1200}
+         * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+         * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+         * receive operation does not reset the timer for send operations.
+         * <p>
+         * For more information, see [Connection Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+         * <p>
+         * Example: {@code 1200}
          *
          * @param idleTimeout the value to set
          * @return this builder
-         */
+         **/
         public Builder idleTimeout(Long idleTimeout) {
             this.idleTimeout = idleTimeout;
             this.__explicitlySet__.add("idleTimeout");
@@ -75,39 +72,41 @@ public final class ConnectionConfiguration
         }
         /**
          * The backend TCP Proxy Protocol version.
+         * <p>
+         * Example: {@code 1}
          *
-         * <p>Example: {@code 1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")
         private Integer backendTcpProxyProtocolVersion;
 
         /**
          * The backend TCP Proxy Protocol version.
-         *
-         * <p>Example: {@code 1}
+         * <p>
+         * Example: {@code 1}
          *
          * @param backendTcpProxyProtocolVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder backendTcpProxyProtocolVersion(Integer backendTcpProxyProtocolVersion) {
             this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
             this.__explicitlySet__.add("backendTcpProxyProtocolVersion");
             return this;
         }
         /**
-         * An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example:
-         * ["PP2_TYPE_AUTHORITY"]
-         */
+         * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+         * Example: ["PP2_TYPE_AUTHORITY"]
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolOptions")
         private java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions;
 
         /**
-         * An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example:
-         * ["PP2_TYPE_AUTHORITY"]
+         * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+         * Example: ["PP2_TYPE_AUTHORITY"]
          *
          * @param backendTcpProxyProtocolOptions the value to set
          * @return this builder
-         */
+         **/
         public Builder backendTcpProxyProtocolOptions(
                 java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions) {
             this.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
@@ -145,7 +144,9 @@ public final class ConnectionConfiguration
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,62 +156,61 @@ public final class ConnectionConfiguration
     }
 
     /**
-     * The maximum idle time, in seconds, allowed between two successive receive or two successive
-     * send operations between the client and backend servers. A send operation does not reset the
-     * timer for receive operations. A receive operation does not reset the timer for send
-     * operations.
+     * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+     * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+     * receive operation does not reset the timer for send operations.
+     * <p>
+     * For more information, see [Connection Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * <p>
+     * Example: {@code 1200}
      *
-     * <p>For more information, see [Connection
-     * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
-     *
-     * <p>Example: {@code 1200}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("idleTimeout")
     private final Long idleTimeout;
 
     /**
-     * The maximum idle time, in seconds, allowed between two successive receive or two successive
-     * send operations between the client and backend servers. A send operation does not reset the
-     * timer for receive operations. A receive operation does not reset the timer for send
-     * operations.
-     *
-     * <p>For more information, see [Connection
-     * Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
-     *
-     * <p>Example: {@code 1200}
+     * The maximum idle time, in seconds, allowed between two successive receive or two successive send operations
+     * between the client and backend servers. A send operation does not reset the timer for receive operations. A
+     * receive operation does not reset the timer for send operations.
+     * <p>
+     * For more information, see [Connection Configuration](https://docs.oracle.com/iaas/Content/Balance/Reference/connectionreuse.htm#ConnectionConfiguration).
+     * <p>
+     * Example: {@code 1200}
      *
      * @return the value
-     */
+     **/
     public Long getIdleTimeout() {
         return idleTimeout;
     }
 
     /**
      * The backend TCP Proxy Protocol version.
+     * <p>
+     * Example: {@code 1}
      *
-     * <p>Example: {@code 1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolVersion")
     private final Integer backendTcpProxyProtocolVersion;
 
     /**
      * The backend TCP Proxy Protocol version.
-     *
-     * <p>Example: {@code 1}
+     * <p>
+     * Example: {@code 1}
      *
      * @return the value
-     */
+     **/
     public Integer getBackendTcpProxyProtocolVersion() {
         return backendTcpProxyProtocolVersion;
     }
 
-    /** */
-    public enum BackendTcpProxyProtocolOptions implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum BackendTcpProxyProtocolOptions {
         Pp2TypeAuthority("PP2_TYPE_AUTHORITY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -250,18 +250,19 @@ public final class ConnectionConfiguration
         }
     };
     /**
-     * An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example:
-     * ["PP2_TYPE_AUTHORITY"]
-     */
+     * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+     * Example: ["PP2_TYPE_AUTHORITY"]
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolOptions")
     private final java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions;
 
     /**
-     * An array that represents the PPV2 Options that can be enabled on TCP Listeners. Example:
-     * ["PP2_TYPE_AUTHORITY"]
+     * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+     * Example: ["PP2_TYPE_AUTHORITY"]
      *
      * @return the value
-     */
+     **/
     public java.util.List<BackendTcpProxyProtocolOptions> getBackendTcpProxyProtocolOptions() {
         return backendTcpProxyProtocolOptions;
     }
@@ -273,7 +274,6 @@ public final class ConnectionConfiguration
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.apigateway.model;
 
 /**
- * A JSON Web Key that represents the public key used for verifying the JWT signature. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
+ * A JSON Web Key that represents the public key used for verifying the JWT signature.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190501")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = JsonWebKey.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "format")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "format"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class JsonWebKey extends StaticPublicKey {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -34,91 +33,105 @@ public final class JsonWebKey extends StaticPublicKey {
             this.__explicitlySet__.add("kid");
             return this;
         }
-        /** The key type. */
+        /**
+         * The key type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("kty")
         private Kty kty;
 
         /**
          * The key type.
-         *
          * @param kty the value to set
          * @return this builder
-         */
+         **/
         public Builder kty(Kty kty) {
             this.kty = kty;
             this.__explicitlySet__.add("kty");
             return this;
         }
-        /** The intended use of the public key. */
+        /**
+         * The intended use of the public key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("use")
         private Use use;
 
         /**
          * The intended use of the public key.
-         *
          * @param use the value to set
          * @return this builder
-         */
+         **/
         public Builder use(Use use) {
             this.use = use;
             this.__explicitlySet__.add("use");
             return this;
         }
-        /** The operations for which this key is to be used. */
+        /**
+         * The operations for which this key is to be used.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("key_ops")
         private java.util.List<KeyOps> keyOps;
 
         /**
          * The operations for which this key is to be used.
-         *
          * @param keyOps the value to set
          * @return this builder
-         */
+         **/
         public Builder keyOps(java.util.List<KeyOps> keyOps) {
             this.keyOps = keyOps;
             this.__explicitlySet__.add("keyOps");
             return this;
         }
-        /** The algorithm intended for use with this key. */
+        /**
+         * The algorithm intended for use with this key.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("alg")
         private String alg;
 
         /**
          * The algorithm intended for use with this key.
-         *
          * @param alg the value to set
          * @return this builder
-         */
+         **/
         public Builder alg(String alg) {
             this.alg = alg;
             this.__explicitlySet__.add("alg");
             return this;
         }
-        /** The base64 url encoded modulus of the RSA public key represented by this key. */
+        /**
+         * The base64 url encoded modulus of the RSA public key represented
+         * by this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("n")
         private String n;
 
         /**
-         * The base64 url encoded modulus of the RSA public key represented by this key.
+         * The base64 url encoded modulus of the RSA public key represented
+         * by this key.
          *
          * @param n the value to set
          * @return this builder
-         */
+         **/
         public Builder n(String n) {
             this.n = n;
             this.__explicitlySet__.add("n");
             return this;
         }
-        /** The base64 url encoded exponent of the RSA public key represented by this key. */
+        /**
+         * The base64 url encoded exponent of the RSA public key represented
+         * by this key.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("e")
         private String e;
 
         /**
-         * The base64 url encoded exponent of the RSA public key represented by this key.
+         * The base64 url encoded exponent of the RSA public key represented
+         * by this key.
          *
          * @param e the value to set
          * @return this builder
-         */
+         **/
         public Builder e(String e) {
             this.e = e;
             this.__explicitlySet__.add("e");
@@ -165,7 +178,9 @@ public final class JsonWebKey extends StaticPublicKey {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -192,13 +207,15 @@ public final class JsonWebKey extends StaticPublicKey {
         this.e = e;
     }
 
-    /** The key type. */
-    public enum Kty implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The key type.
+     **/
+    public enum Kty {
         Rsa("RSA"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -234,26 +251,29 @@ public final class JsonWebKey extends StaticPublicKey {
             return UnknownEnumValue;
         }
     };
-    /** The key type. */
+    /**
+     * The key type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("kty")
     private final Kty kty;
 
     /**
      * The key type.
-     *
      * @return the value
-     */
+     **/
     public Kty getKty() {
         return kty;
     }
 
-    /** The intended use of the public key. */
-    public enum Use implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The intended use of the public key.
+     **/
+    public enum Use {
         Sig("sig"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -289,26 +309,28 @@ public final class JsonWebKey extends StaticPublicKey {
             return UnknownEnumValue;
         }
     };
-    /** The intended use of the public key. */
+    /**
+     * The intended use of the public key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("use")
     private final Use use;
 
     /**
      * The intended use of the public key.
-     *
      * @return the value
-     */
+     **/
     public Use getUse() {
         return use;
     }
 
-    /** */
-    public enum KeyOps implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     **/
+    public enum KeyOps {
         Verify("verify"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -346,54 +368,66 @@ public final class JsonWebKey extends StaticPublicKey {
             return UnknownEnumValue;
         }
     };
-    /** The operations for which this key is to be used. */
+    /**
+     * The operations for which this key is to be used.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("key_ops")
     private final java.util.List<KeyOps> keyOps;
 
     /**
      * The operations for which this key is to be used.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<KeyOps> getKeyOps() {
         return keyOps;
     }
 
-    /** The algorithm intended for use with this key. */
+    /**
+     * The algorithm intended for use with this key.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("alg")
     private final String alg;
 
     /**
      * The algorithm intended for use with this key.
-     *
      * @return the value
-     */
+     **/
     public String getAlg() {
         return alg;
     }
 
-    /** The base64 url encoded modulus of the RSA public key represented by this key. */
+    /**
+     * The base64 url encoded modulus of the RSA public key represented
+     * by this key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("n")
     private final String n;
 
     /**
-     * The base64 url encoded modulus of the RSA public key represented by this key.
+     * The base64 url encoded modulus of the RSA public key represented
+     * by this key.
      *
      * @return the value
-     */
+     **/
     public String getN() {
         return n;
     }
 
-    /** The base64 url encoded exponent of the RSA public key represented by this key. */
+    /**
+     * The base64 url encoded exponent of the RSA public key represented
+     * by this key.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("e")
     private final String e;
 
     /**
-     * The base64 url encoded exponent of the RSA public key represented by this key.
+     * The base64 url encoded exponent of the RSA public key represented
+     * by this key.
      *
      * @return the value
-     */
+     **/
     public String getE() {
         return e;
     }
@@ -405,7 +439,6 @@ public final class JsonWebKey extends StaticPublicKey {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

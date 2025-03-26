@@ -5,86 +5,91 @@
 package com.oracle.bmc.database.model;
 
 /**
- * Specifies the creation type Relocate. Additional input 'dblinkUsername{@code and
- * }dblinkUserPassword can be provided for Relocate Operation. If not provided, Backend will create
- * a temporary user to perform Relocate operation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Specifies the creation type Relocate.
+ * Additional input 'dblinkUsername{@code  and }dblinkUserPassword can be provided for Relocate Operation.
+ * If not provided, Backend will create a temporary user to perform Relocate operation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreatePluggableDatabaseFromRelocateDetails.Builder.class)
+    builder = CreatePluggableDatabaseFromRelocateDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "creationType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "creationType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreatePluggableDatabaseFromRelocateDetails
         extends CreatePluggableDatabaseCreationTypeDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the DB link user. */
+        /**
+         * The name of the DB link user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dblinkUsername")
         private String dblinkUsername;
 
         /**
          * The name of the DB link user.
-         *
          * @param dblinkUsername the value to set
          * @return this builder
-         */
+         **/
         public Builder dblinkUsername(String dblinkUsername) {
             this.dblinkUsername = dblinkUsername;
             this.__explicitlySet__.add("dblinkUsername");
             return this;
         }
-        /** The DB link user password. */
+        /**
+         * The DB link user password.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dblinkUserPassword")
         private String dblinkUserPassword;
 
         /**
          * The DB link user password.
-         *
          * @param dblinkUserPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder dblinkUserPassword(String dblinkUserPassword) {
             this.dblinkUserPassword = dblinkUserPassword;
             this.__explicitlySet__.add("dblinkUserPassword");
             return this;
         }
-        /** The OCID of the Source Pluggable Database. */
+        /**
+         * The OCID of the Source Pluggable Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseId")
         private String sourcePluggableDatabaseId;
 
         /**
          * The OCID of the Source Pluggable Database.
-         *
          * @param sourcePluggableDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder sourcePluggableDatabaseId(String sourcePluggableDatabaseId) {
             this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
             this.__explicitlySet__.add("sourcePluggableDatabaseId");
             return this;
         }
-        /** The DB system administrator password of the source Container Database. */
+        /**
+         * The DB system administrator password of the source Container Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseAdminPassword")
         private String sourceContainerDatabaseAdminPassword;
 
         /**
          * The DB system administrator password of the source Container Database.
-         *
          * @param sourceContainerDatabaseAdminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder sourceContainerDatabaseAdminPassword(
                 String sourceContainerDatabaseAdminPassword) {
             this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
@@ -127,7 +132,9 @@ public final class CreatePluggableDatabaseFromRelocateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,54 +156,58 @@ public final class CreatePluggableDatabaseFromRelocateDetails
         this.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
     }
 
-    /** The name of the DB link user. */
+    /**
+     * The name of the DB link user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dblinkUsername")
     private final String dblinkUsername;
 
     /**
      * The name of the DB link user.
-     *
      * @return the value
-     */
+     **/
     public String getDblinkUsername() {
         return dblinkUsername;
     }
 
-    /** The DB link user password. */
+    /**
+     * The DB link user password.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dblinkUserPassword")
     private final String dblinkUserPassword;
 
     /**
      * The DB link user password.
-     *
      * @return the value
-     */
+     **/
     public String getDblinkUserPassword() {
         return dblinkUserPassword;
     }
 
-    /** The OCID of the Source Pluggable Database. */
+    /**
+     * The OCID of the Source Pluggable Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourcePluggableDatabaseId")
     private final String sourcePluggableDatabaseId;
 
     /**
      * The OCID of the Source Pluggable Database.
-     *
      * @return the value
-     */
+     **/
     public String getSourcePluggableDatabaseId() {
         return sourcePluggableDatabaseId;
     }
 
-    /** The DB system administrator password of the source Container Database. */
+    /**
+     * The DB system administrator password of the source Container Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseAdminPassword")
     private final String sourceContainerDatabaseAdminPassword;
 
     /**
      * The DB system administrator password of the source Container Database.
-     *
      * @return the value
-     */
+     **/
     public String getSourceContainerDatabaseAdminPassword() {
         return sourceContainerDatabaseAdminPassword;
     }
@@ -208,7 +219,6 @@ public final class CreatePluggableDatabaseFromRelocateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

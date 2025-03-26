@@ -6,54 +6,76 @@ package com.oracle.bmc.osubsubscription.requests;
 
 import com.oracle.bmc.osubsubscription.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListCommitmentsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitmentsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osubsubscription/ListCommitmentsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListCommitmentsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210501")
 public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** This param is used to get the commitments for a particular subscribed service */
+    /**
+     * This param is used to get the commitments for a particular subscribed service
+     *
+     */
     private String subscribedServiceId;
 
-    /** This param is used to get the commitments for a particular subscribed service */
+    /**
+     * This param is used to get the commitments for a particular subscribed service
+     *
+     */
     public String getSubscribedServiceId() {
         return subscribedServiceId;
     }
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     private String compartmentId;
 
-    /** The OCID of the compartment. */
+    /**
+     * The OCID of the compartment.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: {@code 500}
      *
-     * <p>Example: {@code 500}
      */
     private Integer limit;
 
     /**
      * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+     * <p>
+     * Example: {@code 500}
      *
-     * <p>Example: {@code 500}
      */
     public Integer getLimit() {
         return limit;
     }
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     private String page;
 
-    /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+    /**
+     * The value of the {@code opc-next-page} response header from the previous "List" call.
+     *
+     */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -86,15 +108,24 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     *
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         Timestart("TIMESTART"),
         ;
@@ -127,45 +158,50 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
     };
 
-    /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+    /**
+     * The field to sort by. You can provide one sort order ({@code sortOrder}).
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+     *
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * This header is meant to be used only for internal purposes and will be ignored on any public
-     * request. The purpose of this header is to help on Gateway to API calls identification.
+     * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+     * to help on Gateway to API calls identification.
+     *
      */
     private String xOneGatewaySubscriptionId;
 
     /**
-     * This header is meant to be used only for internal purposes and will be ignored on any public
-     * request. The purpose of this header is to help on Gateway to API calls identification.
+     * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+     * to help on Gateway to API calls identification.
+     *
      */
     public String getXOneGatewaySubscriptionId() {
         return xOneGatewaySubscriptionId;
     }
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     private String xOneOriginRegion;
 
     /**
-     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-     * us-phoenix-1 etc.
+     * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+     *
      */
     public String getXOneOriginRegion() {
         return xOneOriginRegion;
@@ -174,10 +210,14 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListCommitmentsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** This param is used to get the commitments for a particular subscribed service */
+        /**
+         * This param is used to get the commitments for a particular subscribed service
+         *
+         */
         private String subscribedServiceId = null;
 
         /**
@@ -191,12 +231,13 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The OCID of the compartment. */
+        /**
+         * The OCID of the compartment.
+         */
         private String compartmentId = null;
 
         /**
          * The OCID of the compartment.
-         *
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -207,15 +248,16 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
+         * <p>
+         * Example: {@code 500}
          *
-         * <p>Example: {@code 500}
          */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return in a paginated "List" call. Default: ({@code 50})
-         *
-         * <p>Example: {@code 500}
+         * <p>
+         * Example: {@code 500}
          *
          * @param limit the value to set
          * @return this builder instance
@@ -225,7 +267,10 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The value of the {@code opc-next-page} response header from the previous "List" call. */
+        /**
+         * The value of the {@code opc-next-page} response header from the previous "List" call.
+         *
+         */
         private String page = null;
 
         /**
@@ -239,7 +284,10 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         *
+         */
         private SortOrder sortOrder = null;
 
         /**
@@ -253,7 +301,10 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The field to sort by. You can provide one sort order ({@code sortOrder}). */
+        /**
+         * The field to sort by. You can provide one sort order ({@code sortOrder}).
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -268,14 +319,13 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId = null;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder instance
@@ -286,16 +336,15 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * This header is meant to be used only for internal purposes and will be ignored on any
-         * public request. The purpose of this header is to help on Gateway to API calls
-         * identification.
+         * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+         * to help on Gateway to API calls identification.
+         *
          */
         private String xOneGatewaySubscriptionId = null;
 
         /**
-         * This header is meant to be used only for internal purposes and will be ignored on any
-         * public request. The purpose of this header is to help on Gateway to API calls
-         * identification.
+         * This header is meant to be used only for internal purposes and will be ignored on any public request. The purpose of this header is
+         * to help on Gateway to API calls identification.
          *
          * @param xOneGatewaySubscriptionId the value to set
          * @return this builder instance
@@ -306,14 +355,13 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
+         *
          */
         private String xOneOriginRegion = null;
 
         /**
-         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1,
-         * us-phoenix-1 etc.
+         * The OCI home region name in case home region is not us-ashburn-1 (IAD), e.g. ap-mumbai-1, us-phoenix-1 etc.
          *
          * @param xOneOriginRegion the value to set
          * @return this builder instance
@@ -325,19 +373,18 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -349,7 +396,6 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListCommitmentsRequest o) {
@@ -370,11 +416,10 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListCommitmentsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListCommitmentsRequest
          */
@@ -388,8 +433,7 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
         /**
          * Build the instance of ListCommitmentsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListCommitmentsRequest
@@ -406,14 +450,12 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
             request.xOneGatewaySubscriptionId = xOneGatewaySubscriptionId;
             request.xOneOriginRegion = xOneOriginRegion;
             return request;
-            // new ListCommitmentsRequest(subscribedServiceId, compartmentId, limit, page,
-            // sortOrder, sortBy, opcRequestId, xOneGatewaySubscriptionId, xOneOriginRegion);
+            // new ListCommitmentsRequest(subscribedServiceId, compartmentId, limit, page, sortOrder, sortBy, opcRequestId, xOneGatewaySubscriptionId, xOneOriginRegion);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -431,7 +473,6 @@ public class ListCommitmentsRequest extends com.oracle.bmc.requests.BmcRequest<j
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

@@ -5,23 +5,22 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Host specific certificate details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
+ * Host specific certificate details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190531")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HostSpecificCertificateDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = HostSpecificCertificateDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostSpecificCertificateDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"hostName", "certificateType", "timeExpiry"})
     public HostSpecificCertificateDetails(
@@ -34,46 +33,49 @@ public final class HostSpecificCertificateDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Name of the host. */
+        /**
+         * Name of the host.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hostName")
         private String hostName;
 
         /**
          * Name of the host.
-         *
          * @param hostName the value to set
          * @return this builder
-         */
+         **/
         public Builder hostName(String hostName) {
             this.hostName = hostName;
             this.__explicitlySet__.add("hostName");
             return this;
         }
-        /** Type of certificate self signed or CA signed */
+        /**
+         * Type of certificate self signed or CA signed
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("certificateType")
         private CertificateType certificateType;
 
         /**
          * Type of certificate self signed or CA signed
-         *
          * @param certificateType the value to set
          * @return this builder
-         */
+         **/
         public Builder certificateType(CertificateType certificateType) {
             this.certificateType = certificateType;
             this.__explicitlySet__.add("certificateType");
             return this;
         }
-        /** The time the certificate expires, shown as an RFC 3339 formatted datetime string. */
+        /**
+         * The time the certificate expires, shown as an RFC 3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiry")
         private java.util.Date timeExpiry;
 
         /**
          * The time the certificate expires, shown as an RFC 3339 formatted datetime string.
-         *
          * @param timeExpiry the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpiry(java.util.Date timeExpiry) {
             this.timeExpiry = timeExpiry;
             this.__explicitlySet__.add("timeExpiry");
@@ -108,7 +110,9 @@ public final class HostSpecificCertificateDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -117,27 +121,30 @@ public final class HostSpecificCertificateDetails
         return new Builder().copy(this);
     }
 
-    /** Name of the host. */
+    /**
+     * Name of the host.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostName")
     private final String hostName;
 
     /**
      * Name of the host.
-     *
      * @return the value
-     */
+     **/
     public String getHostName() {
         return hostName;
     }
 
-    /** Type of certificate self signed or CA signed */
-    public enum CertificateType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of certificate self signed or CA signed
+     **/
+    public enum CertificateType {
         CustomSigned("CUSTOM_SIGNED"),
         SelfSigned("SELF_SIGNED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -176,28 +183,30 @@ public final class HostSpecificCertificateDetails
             return UnknownEnumValue;
         }
     };
-    /** Type of certificate self signed or CA signed */
+    /**
+     * Type of certificate self signed or CA signed
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("certificateType")
     private final CertificateType certificateType;
 
     /**
      * Type of certificate self signed or CA signed
-     *
      * @return the value
-     */
+     **/
     public CertificateType getCertificateType() {
         return certificateType;
     }
 
-    /** The time the certificate expires, shown as an RFC 3339 formatted datetime string. */
+    /**
+     * The time the certificate expires, shown as an RFC 3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiry")
     private final java.util.Date timeExpiry;
 
     /**
      * The time the certificate expires, shown as an RFC 3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpiry() {
         return timeExpiry;
     }
@@ -209,7 +218,6 @@ public final class HostSpecificCertificateDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

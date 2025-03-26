@@ -5,21 +5,19 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of a specific user resource. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of a specific user resource.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = User.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class User extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -101,189 +99,193 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the User. */
+        /**
+         * The name of the User.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * The name of the User.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** The status of the user account. */
+        /**
+         * The status of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
 
         /**
          * The status of the user account.
-         *
          * @param status the value to set
          * @return this builder
-         */
+         **/
         public Builder status(Status status) {
             this.status = status;
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The date the account was locked, if the status of the account is LOCKED. */
+        /**
+         * The date the account was locked, if the status of the account is LOCKED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
         private java.util.Date timeLocked;
 
         /**
          * The date the account was locked, if the status of the account is LOCKED.
-         *
          * @param timeLocked the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLocked(java.util.Date timeLocked) {
             this.timeLocked = timeLocked;
             this.__explicitlySet__.add("timeLocked");
             return this;
         }
-        /** The date and time of the expiration of the user account. */
+        /**
+         * The date and time of the expiration of the user account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
         private java.util.Date timeExpiring;
 
         /**
          * The date and time of the expiration of the user account.
-         *
          * @param timeExpiring the value to set
          * @return this builder
-         */
+         **/
         public Builder timeExpiring(java.util.Date timeExpiring) {
             this.timeExpiring = timeExpiring;
             this.__explicitlySet__.add("timeExpiring");
             return this;
         }
-        /** The default tablespace for data. */
+        /**
+         * The default tablespace for data.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
         private String defaultTablespace;
 
         /**
          * The default tablespace for data.
-         *
          * @param defaultTablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultTablespace(String defaultTablespace) {
             this.defaultTablespace = defaultTablespace;
             this.__explicitlySet__.add("defaultTablespace");
             return this;
         }
         /**
-         * The name of the default tablespace for temporary tables or the name of a tablespace
-         * group.
-         */
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
         private String tempTablespace;
 
         /**
-         * The name of the default tablespace for temporary tables or the name of a tablespace
-         * group.
-         *
+         * The name of the default tablespace for temporary tables or the name of a tablespace group.
          * @param tempTablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder tempTablespace(String tempTablespace) {
             this.tempTablespace = tempTablespace;
             this.__explicitlySet__.add("tempTablespace");
             return this;
         }
-        /** The default local temporary tablespace for the user. */
+        /**
+         * The default local temporary tablespace for the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("localTempTablespace")
         private String localTempTablespace;
 
         /**
          * The default local temporary tablespace for the user.
-         *
          * @param localTempTablespace the value to set
          * @return this builder
-         */
+         **/
         public Builder localTempTablespace(String localTempTablespace) {
             this.localTempTablespace = localTempTablespace;
             this.__explicitlySet__.add("localTempTablespace");
             return this;
         }
-        /** The date and time the user was created. */
+        /**
+         * The date and time the user was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the user was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The profile name of the user. */
+        /**
+         * The profile name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("profile")
         private String profile;
 
         /**
          * The profile name of the user.
-         *
          * @param profile the value to set
          * @return this builder
-         */
+         **/
         public Builder profile(String profile) {
             this.profile = profile;
             this.__explicitlySet__.add("profile");
             return this;
         }
-        /** The initial resource consumer group for the User. */
+        /**
+         * The initial resource consumer group for the User.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
         private String consumerGroup;
 
         /**
          * The initial resource consumer group for the User.
-         *
          * @param consumerGroup the value to set
          * @return this builder
-         */
+         **/
         public Builder consumerGroup(String consumerGroup) {
             this.consumerGroup = consumerGroup;
             this.__explicitlySet__.add("consumerGroup");
             return this;
         }
-        /** The external name of the user. */
+        /**
+         * The external name of the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalName")
         private String externalName;
 
         /**
          * The external name of the user.
-         *
          * @param externalName the value to set
          * @return this builder
-         */
+         **/
         public Builder externalName(String externalName) {
             this.externalName = externalName;
             this.__explicitlySet__.add("externalName");
             return this;
         }
         /**
-         * The list of existing versions of the password hashes (also known as "verifiers") for the
-         * account.
-         */
+         * The list of existing versions of the password hashes (also known as "verifiers") for the account.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("passwordVersions")
         private String passwordVersions;
 
         /**
-         * The list of existing versions of the password hashes (also known as "verifiers") for the
-         * account.
-         *
+         * The list of existing versions of the password hashes (also known as "verifiers") for the account.
          * @param passwordVersions the value to set
          * @return this builder
-         */
+         **/
         public Builder passwordVersions(String passwordVersions) {
             this.passwordVersions = passwordVersions;
             this.__explicitlySet__.add("passwordVersions");
@@ -291,217 +293,203 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("editionsEnabled")
         private EditionsEnabled editionsEnabled;
 
         /**
          * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-         *
          * @param editionsEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder editionsEnabled(EditionsEnabled editionsEnabled) {
             this.editionsEnabled = editionsEnabled;
             this.__explicitlySet__.add("editionsEnabled");
             return this;
         }
-        /** The authentication mechanism for the user. */
+        /**
+         * The authentication mechanism for the user.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("authentication")
         private Authentication authentication;
 
         /**
          * The authentication mechanism for the user.
-         *
          * @param authentication the value to set
          * @return this builder
-         */
+         **/
         public Builder authentication(Authentication authentication) {
             this.authentication = authentication;
             this.__explicitlySet__.add("authentication");
             return this;
         }
         /**
-         * Indicates whether a user can connect directly (N) or whether the account can only be
-         * proxied (Y) by users who have proxy privileges for this account (that is, by users who
-         * have been granted the "connect through" privilege for this account).
-         */
+         * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
+         * for this account (that is, by users who have been granted the "connect through" privilege for this account).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("proxyConnect")
         private ProxyConnect proxyConnect;
 
         /**
-         * Indicates whether a user can connect directly (N) or whether the account can only be
-         * proxied (Y) by users who have proxy privileges for this account (that is, by users who
-         * have been granted the "connect through" privilege for this account).
+         * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
+         * for this account (that is, by users who have been granted the "connect through" privilege for this account).
          *
          * @param proxyConnect the value to set
          * @return this builder
-         */
+         **/
         public Builder proxyConnect(ProxyConnect proxyConnect) {
             this.proxyConnect = proxyConnect;
             this.__explicitlySet__.add("proxyConnect");
             return this;
         }
-        /** Indicates whether a given user is common(Y) or local(N). */
+        /**
+         * Indicates whether a given user is common(Y) or local(N).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("common")
         private Common common;
 
         /**
          * Indicates whether a given user is common(Y) or local(N).
-         *
          * @param common the value to set
          * @return this builder
-         */
+         **/
         public Builder common(Common common) {
             this.common = common;
             this.__explicitlySet__.add("common");
             return this;
         }
         /**
-         * The date and time of the last user login. This column is not populated when a user
-         * connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP
-         * | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
-         */
+         * The date and time of the last user login.
+         * This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
         private java.util.Date timeLastLogin;
 
         /**
-         * The date and time of the last user login. This column is not populated when a user
-         * connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP
-         * | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
+         * The date and time of the last user login.
+         * This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
          *
          * @param timeLastLogin the value to set
          * @return this builder
-         */
+         **/
         public Builder timeLastLogin(java.util.Date timeLastLogin) {
             this.timeLastLogin = timeLastLogin;
             this.__explicitlySet__.add("timeLastLogin");
             return this;
         }
         /**
-         * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such
-         * as catalog.sql or catproc.sql).
-         */
+         * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("oracleMaintained")
         private OracleMaintained oracleMaintained;
 
         /**
-         * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such
-         * as catalog.sql or catproc.sql).
-         *
+         * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
          * @param oracleMaintained the value to set
          * @return this builder
-         */
+         **/
         public Builder oracleMaintained(OracleMaintained oracleMaintained) {
             this.oracleMaintained = oracleMaintained;
             this.__explicitlySet__.add("oracleMaintained");
             return this;
         }
         /**
-         * Indicates whether the user definition is inherited from another container (YES) or not
-         * (NO).
-         */
+         * Indicates whether the user definition is inherited from another container (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inherited")
         private Inherited inherited;
 
         /**
-         * Indicates whether the user definition is inherited from another container (YES) or not
-         * (NO).
-         *
+         * Indicates whether the user definition is inherited from another container (YES) or not (NO).
          * @param inherited the value to set
          * @return this builder
-         */
+         **/
         public Builder inherited(Inherited inherited) {
             this.inherited = inherited;
             this.__explicitlySet__.add("inherited");
             return this;
         }
-        /** The default collation for the user schema. */
+        /**
+         * The default collation for the user schema.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("defaultCollation")
         private String defaultCollation;
 
         /**
          * The default collation for the user schema.
-         *
          * @param defaultCollation the value to set
          * @return this builder
-         */
+         **/
         public Builder defaultCollation(String defaultCollation) {
             this.defaultCollation = defaultCollation;
             this.__explicitlySet__.add("defaultCollation");
             return this;
         }
         /**
-         * Indicates whether the user is a common user created by an implicit application (YES) or
-         * not (NO).
-         */
+         * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("implicit")
         private Implicit implicit;
 
         /**
-         * Indicates whether the user is a common user created by an implicit application (YES) or
-         * not (NO).
-         *
+         * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
          * @param implicit the value to set
          * @return this builder
-         */
+         **/
         public Builder implicit(Implicit implicit) {
             this.implicit = implicit;
             this.__explicitlySet__.add("implicit");
             return this;
         }
         /**
-         * In a sharded database, indicates whether the user is created with shard DDL enabled (YES)
-         * or not (NO).
-         */
+         * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("allShared")
         private AllShared allShared;
 
         /**
-         * In a sharded database, indicates whether the user is created with shard DDL enabled (YES)
-         * or not (NO).
-         *
+         * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
          * @param allShared the value to set
          * @return this builder
-         */
+         **/
         public Builder allShared(AllShared allShared) {
             this.allShared = allShared;
             this.__explicitlySet__.add("allShared");
             return this;
         }
         /**
-         * In a federated sharded database, indicates whether the user is an external shard user
-         * (YES) or not (NO).
-         */
+         * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalShared")
         private ExternalShared externalShared;
 
         /**
-         * In a federated sharded database, indicates whether the user is an external shard user
-         * (YES) or not (NO).
-         *
+         * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
          * @param externalShared the value to set
          * @return this builder
-         */
+         **/
         public Builder externalShared(ExternalShared externalShared) {
             this.externalShared = externalShared;
             this.__explicitlySet__.add("externalShared");
             return this;
         }
         /**
-         * The date and time when the user password was last set. This column is populated only when
-         * the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
-         */
+         * The date and time when the user password was last set.
+         * This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
         private java.util.Date timePasswordChanged;
 
         /**
-         * The date and time when the user password was last set. This column is populated only when
-         * the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
+         * The date and time when the user password was last set.
+         * This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
          *
          * @param timePasswordChanged the value to set
          * @return this builder
-         */
+         **/
         public Builder timePasswordChanged(java.util.Date timePasswordChanged) {
             this.timePasswordChanged = timePasswordChanged;
             this.__explicitlySet__.add("timePasswordChanged");
@@ -622,7 +610,9 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -631,21 +621,24 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** The name of the User. */
+    /**
+     * The name of the User.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * The name of the User.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** The status of the user account. */
-    public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The status of the user account.
+     **/
+    public enum Status {
         Open("OPEN"),
         Expired("EXPIRED"),
         ExpiredGrace("EXPIRED_GRACE"),
@@ -663,8 +656,8 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         ExpiredAndLockedTimedAndInRol("EXPIRED_AND_LOCKED_TIMED_AND_IN_ROL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -702,163 +695,170 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** The status of the user account. */
+    /**
+     * The status of the user account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
 
     /**
      * The status of the user account.
-     *
      * @return the value
-     */
+     **/
     public Status getStatus() {
         return status;
     }
 
-    /** The date the account was locked, if the status of the account is LOCKED. */
+    /**
+     * The date the account was locked, if the status of the account is LOCKED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLocked")
     private final java.util.Date timeLocked;
 
     /**
      * The date the account was locked, if the status of the account is LOCKED.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLocked() {
         return timeLocked;
     }
 
-    /** The date and time of the expiration of the user account. */
+    /**
+     * The date and time of the expiration of the user account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpiring")
     private final java.util.Date timeExpiring;
 
     /**
      * The date and time of the expiration of the user account.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeExpiring() {
         return timeExpiring;
     }
 
-    /** The default tablespace for data. */
+    /**
+     * The default tablespace for data.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultTablespace")
     private final String defaultTablespace;
 
     /**
      * The default tablespace for data.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultTablespace() {
         return defaultTablespace;
     }
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tempTablespace")
     private final String tempTablespace;
 
     /**
      * The name of the default tablespace for temporary tables or the name of a tablespace group.
-     *
      * @return the value
-     */
+     **/
     public String getTempTablespace() {
         return tempTablespace;
     }
 
-    /** The default local temporary tablespace for the user. */
+    /**
+     * The default local temporary tablespace for the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("localTempTablespace")
     private final String localTempTablespace;
 
     /**
      * The default local temporary tablespace for the user.
-     *
      * @return the value
-     */
+     **/
     public String getLocalTempTablespace() {
         return localTempTablespace;
     }
 
-    /** The date and time the user was created. */
+    /**
+     * The date and time the user was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the user was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The profile name of the user. */
+    /**
+     * The profile name of the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("profile")
     private final String profile;
 
     /**
      * The profile name of the user.
-     *
      * @return the value
-     */
+     **/
     public String getProfile() {
         return profile;
     }
 
-    /** The initial resource consumer group for the User. */
+    /**
+     * The initial resource consumer group for the User.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("consumerGroup")
     private final String consumerGroup;
 
     /**
      * The initial resource consumer group for the User.
-     *
      * @return the value
-     */
+     **/
     public String getConsumerGroup() {
         return consumerGroup;
     }
 
-    /** The external name of the user. */
+    /**
+     * The external name of the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalName")
     private final String externalName;
 
     /**
      * The external name of the user.
-     *
      * @return the value
-     */
+     **/
     public String getExternalName() {
         return externalName;
     }
 
     /**
-     * The list of existing versions of the password hashes (also known as "verifiers") for the
-     * account.
-     */
+     * The list of existing versions of the password hashes (also known as "verifiers") for the account.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("passwordVersions")
     private final String passwordVersions;
 
     /**
-     * The list of existing versions of the password hashes (also known as "verifiers") for the
-     * account.
-     *
+     * The list of existing versions of the password hashes (also known as "verifiers") for the account.
      * @return the value
-     */
+     **/
     public String getPasswordVersions() {
         return passwordVersions;
     }
 
-    /** Indicates whether editions have been enabled for the corresponding user (Y) or not (N). */
-    public enum EditionsEnabled implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
+     **/
+    public enum EditionsEnabled {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -897,29 +897,32 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether editions have been enabled for the corresponding user (Y) or not (N). */
+    /**
+     * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("editionsEnabled")
     private final EditionsEnabled editionsEnabled;
 
     /**
      * Indicates whether editions have been enabled for the corresponding user (Y) or not (N).
-     *
      * @return the value
-     */
+     **/
     public EditionsEnabled getEditionsEnabled() {
         return editionsEnabled;
     }
 
-    /** The authentication mechanism for the user. */
-    public enum Authentication implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The authentication mechanism for the user.
+     **/
+    public enum Authentication {
         None("NONE"),
         External("EXTERNAL"),
         Global("GLOBAL"),
         Password("PASSWORD"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -958,31 +961,32 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** The authentication mechanism for the user. */
+    /**
+     * The authentication mechanism for the user.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("authentication")
     private final Authentication authentication;
 
     /**
      * The authentication mechanism for the user.
-     *
      * @return the value
-     */
+     **/
     public Authentication getAuthentication() {
         return authentication;
     }
 
     /**
-     * Indicates whether a user can connect directly (N) or whether the account can only be proxied
-     * (Y) by users who have proxy privileges for this account (that is, by users who have been
-     * granted the "connect through" privilege for this account).
-     */
-    public enum ProxyConnect implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
+     * for this account (that is, by users who have been granted the "connect through" privilege for this account).
+     *
+     **/
+    public enum ProxyConnect {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1022,32 +1026,33 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * Indicates whether a user can connect directly (N) or whether the account can only be proxied
-     * (Y) by users who have proxy privileges for this account (that is, by users who have been
-     * granted the "connect through" privilege for this account).
-     */
+     * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
+     * for this account (that is, by users who have been granted the "connect through" privilege for this account).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("proxyConnect")
     private final ProxyConnect proxyConnect;
 
     /**
-     * Indicates whether a user can connect directly (N) or whether the account can only be proxied
-     * (Y) by users who have proxy privileges for this account (that is, by users who have been
-     * granted the "connect through" privilege for this account).
+     * Indicates whether a user can connect directly (N) or whether the account can only be proxied (Y) by users who have proxy privileges
+     * for this account (that is, by users who have been granted the "connect through" privilege for this account).
      *
      * @return the value
-     */
+     **/
     public ProxyConnect getProxyConnect() {
         return proxyConnect;
     }
 
-    /** Indicates whether a given user is common(Y) or local(N). */
-    public enum Common implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Indicates whether a given user is common(Y) or local(N).
+     **/
+    public enum Common {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1085,49 +1090,48 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** Indicates whether a given user is common(Y) or local(N). */
+    /**
+     * Indicates whether a given user is common(Y) or local(N).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("common")
     private final Common common;
 
     /**
      * Indicates whether a given user is common(Y) or local(N).
-     *
      * @return the value
-     */
+     **/
     public Common getCommon() {
         return common;
     }
 
     /**
-     * The date and time of the last user login. This column is not populated when a user connects
-     * to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA |
-     * SYSDG | SYSOPER | SYSRAC | SYSKM }.
-     */
+     * The date and time of the last user login.
+     * This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastLogin")
     private final java.util.Date timeLastLogin;
 
     /**
-     * The date and time of the last user login. This column is not populated when a user connects
-     * to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA |
-     * SYSDG | SYSOPER | SYSRAC | SYSKM }.
+     * The date and time of the last user login.
+     * This column is not populated when a user connects to the database with administrative privileges, that is, AS { SYSASM | SYSBACKUP | SYSDBA | SYSDG | SYSOPER | SYSRAC | SYSKM }.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeLastLogin() {
         return timeLastLogin;
     }
 
     /**
-     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as
-     * catalog.sql or catproc.sql).
-     */
-    public enum OracleMaintained implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+     **/
+    public enum OracleMaintained {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1167,32 +1171,29 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as
-     * catalog.sql or catproc.sql).
-     */
+     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("oracleMaintained")
     private final OracleMaintained oracleMaintained;
 
     /**
-     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as
-     * catalog.sql or catproc.sql).
-     *
+     * Indicates whether the user was created and is maintained by Oracle-supplied scripts (such as catalog.sql or catproc.sql).
      * @return the value
-     */
+     **/
     public OracleMaintained getOracleMaintained() {
         return oracleMaintained;
     }
 
     /**
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
-     */
-    public enum Inherited implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Inherited {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1233,43 +1234,42 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
     };
     /**
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inherited")
     private final Inherited inherited;
 
     /**
      * Indicates whether the user definition is inherited from another container (YES) or not (NO).
-     *
      * @return the value
-     */
+     **/
     public Inherited getInherited() {
         return inherited;
     }
 
-    /** The default collation for the user schema. */
+    /**
+     * The default collation for the user schema.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("defaultCollation")
     private final String defaultCollation;
 
     /**
      * The default collation for the user schema.
-     *
      * @return the value
-     */
+     **/
     public String getDefaultCollation() {
         return defaultCollation;
     }
 
     /**
-     * Indicates whether the user is a common user created by an implicit application (YES) or not
-     * (NO).
-     */
-    public enum Implicit implements com.oracle.bmc.http.internal.BmcEnum {
+     * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
+     **/
+    public enum Implicit {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1309,33 +1309,29 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * Indicates whether the user is a common user created by an implicit application (YES) or not
-     * (NO).
-     */
+     * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("implicit")
     private final Implicit implicit;
 
     /**
-     * Indicates whether the user is a common user created by an implicit application (YES) or not
-     * (NO).
-     *
+     * Indicates whether the user is a common user created by an implicit application (YES) or not (NO).
      * @return the value
-     */
+     **/
     public Implicit getImplicit() {
         return implicit;
     }
 
     /**
-     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or
-     * not (NO).
-     */
-    public enum AllShared implements com.oracle.bmc.http.internal.BmcEnum {
+     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
+     **/
+    public enum AllShared {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1375,33 +1371,29 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or
-     * not (NO).
-     */
+     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("allShared")
     private final AllShared allShared;
 
     /**
-     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or
-     * not (NO).
-     *
+     * In a sharded database, indicates whether the user is created with shard DDL enabled (YES) or not (NO).
      * @return the value
-     */
+     **/
     public AllShared getAllShared() {
         return allShared;
     }
 
     /**
-     * In a federated sharded database, indicates whether the user is an external shard user (YES)
-     * or not (NO).
-     */
-    public enum ExternalShared implements com.oracle.bmc.http.internal.BmcEnum {
+     * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
+     **/
+    public enum ExternalShared {
         Yes("YES"),
         No("NO"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1441,35 +1433,33 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     };
     /**
-     * In a federated sharded database, indicates whether the user is an external shard user (YES)
-     * or not (NO).
-     */
+     * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalShared")
     private final ExternalShared externalShared;
 
     /**
-     * In a federated sharded database, indicates whether the user is an external shard user (YES)
-     * or not (NO).
-     *
+     * In a federated sharded database, indicates whether the user is an external shard user (YES) or not (NO).
      * @return the value
-     */
+     **/
     public ExternalShared getExternalShared() {
         return externalShared;
     }
 
     /**
-     * The date and time when the user password was last set. This column is populated only when the
-     * value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
-     */
+     * The date and time when the user password was last set.
+     * This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timePasswordChanged")
     private final java.util.Date timePasswordChanged;
 
     /**
-     * The date and time when the user password was last set. This column is populated only when the
-     * value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
+     * The date and time when the user password was last set.
+     * This column is populated only when the value of the AUTHENTICATION_TYPE column is PASSWORD. Otherwise, this column is null.
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimePasswordChanged() {
         return timePasswordChanged;
     }
@@ -1481,7 +1471,6 @@ public final class User extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

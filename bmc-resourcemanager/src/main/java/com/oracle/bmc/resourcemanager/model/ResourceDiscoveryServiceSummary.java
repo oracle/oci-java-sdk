@@ -5,25 +5,23 @@
 package com.oracle.bmc.resourcemanager.model;
 
 /**
- * A service supported for use with [Resource
- * Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
+ * A service supported for use with [Resource Discovery](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180917")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResourceDiscoveryServiceSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ResourceDiscoveryServiceSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ResourceDiscoveryServiceSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "discoveryScope"})
     public ResourceDiscoveryServiceSummary(String name, DiscoveryScope discoveryScope) {
@@ -35,44 +33,42 @@ public final class ResourceDiscoveryServiceSummary
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A supported service. Example: {@code core} For reference on service names, see the
-         * [Terraform provider
-         * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
-         */
+         * A supported service. Example: {@code core}
+         * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * A supported service. Example: {@code core} For reference on service names, see the
-         * [Terraform provider
-         * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+         * A supported service. Example: {@code core}
+         * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * The scope of the service as used with Resource Discovery. This property determines the
-         * type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code
-         * COMPARTMENT}). For example, {@code identity} is at the root compartment scope while
-         * {@code database} is at the compartment scope.
-         */
+         * The scope of the service as used with Resource Discovery.
+         * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+         * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("discoveryScope")
         private DiscoveryScope discoveryScope;
 
         /**
-         * The scope of the service as used with Resource Discovery. This property determines the
-         * type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code
-         * COMPARTMENT}). For example, {@code identity} is at the root compartment scope while
-         * {@code database} is at the compartment scope.
+         * The scope of the service as used with Resource Discovery.
+         * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+         * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
          *
          * @param discoveryScope the value to set
          * @return this builder
-         */
+         **/
         public Builder discoveryScope(DiscoveryScope discoveryScope) {
             this.discoveryScope = discoveryScope;
             this.__explicitlySet__.add("discoveryScope");
@@ -103,7 +99,9 @@ public final class ResourceDiscoveryServiceSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -113,37 +111,36 @@ public final class ResourceDiscoveryServiceSummary
     }
 
     /**
-     * A supported service. Example: {@code core} For reference on service names, see the [Terraform
-     * provider
-     * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
-     */
+     * A supported service. Example: {@code core}
+     * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * A supported service. Example: {@code core} For reference on service names, see the [Terraform
-     * provider
-     * documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
+     * A supported service. Example: {@code core}
+     * For reference on service names, see the [Terraform provider documentation](https://www.terraform.io/docs/providers/oci/guides/resource_discovery.html#services).
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * The scope of the service as used with Resource Discovery. This property determines the type
-     * of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code
-     * COMPARTMENT}). For example, {@code identity} is at the root compartment scope while {@code
-     * database} is at the compartment scope.
-     */
-    public enum DiscoveryScope implements com.oracle.bmc.http.internal.BmcEnum {
+     * The scope of the service as used with Resource Discovery.
+     * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+     * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+     *
+     **/
+    public enum DiscoveryScope {
         Tenancy("TENANCY"),
         Compartment("COMPARTMENT"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -183,22 +180,21 @@ public final class ResourceDiscoveryServiceSummary
         }
     };
     /**
-     * The scope of the service as used with Resource Discovery. This property determines the type
-     * of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code
-     * COMPARTMENT}). For example, {@code identity} is at the root compartment scope while {@code
-     * database} is at the compartment scope.
-     */
+     * The scope of the service as used with Resource Discovery.
+     * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+     * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("discoveryScope")
     private final DiscoveryScope discoveryScope;
 
     /**
-     * The scope of the service as used with Resource Discovery. This property determines the type
-     * of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code
-     * COMPARTMENT}). For example, {@code identity} is at the root compartment scope while {@code
-     * database} is at the compartment scope.
+     * The scope of the service as used with Resource Discovery.
+     * This property determines the type of compartment OCID required: root compartment ({@code TENANCY}) or not ({@code COMPARTMENT}).
+     * For example, {@code identity} is at the root compartment scope while {@code database} is at the compartment scope.
      *
      * @return the value
-     */
+     **/
     public DiscoveryScope getDiscoveryScope() {
         return discoveryScope;
     }
@@ -210,7 +206,6 @@ public final class ResourceDiscoveryServiceSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

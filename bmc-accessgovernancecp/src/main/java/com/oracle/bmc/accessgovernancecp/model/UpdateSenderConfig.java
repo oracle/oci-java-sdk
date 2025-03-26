@@ -5,23 +5,21 @@
 package com.oracle.bmc.accessgovernancecp.model;
 
 /**
- * Update to a sender information for email notifications sent by GovernanceInstance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
+ * Update to a sender information for email notifications sent by GovernanceInstance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateSenderConfig.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdateSenderConfig
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = UpdateSenderConfig.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class UpdateSenderConfig extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
@@ -43,61 +41,65 @@ public final class UpdateSenderConfig
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The sender's displayName. */
+        /**
+         * The sender's displayName.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The sender's displayName.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The sender's email. */
+        /**
+         * The sender's email.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("email")
         private String email;
 
         /**
          * The sender's email.
-         *
          * @param email the value to set
          * @return this builder
-         */
+         **/
         public Builder email(String email) {
             this.email = email;
             this.__explicitlySet__.add("email");
             return this;
         }
-        /** Whether the sender email has inbox configured to receive emails. */
+        /**
+         * Whether the sender email has inbox configured to receive emails.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isInboxConfigured")
         private Boolean isInboxConfigured;
 
         /**
          * Whether the sender email has inbox configured to receive emails.
-         *
          * @param isInboxConfigured the value to set
          * @return this builder
-         */
+         **/
         public Builder isInboxConfigured(Boolean isInboxConfigured) {
             this.isInboxConfigured = isInboxConfigured;
             this.__explicitlySet__.add("isInboxConfigured");
             return this;
         }
-        /** Whether there is a need to resend the verification email. */
+        /**
+         * Whether there is a need to resend the verification email.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isResendNotificationEmail")
         private Boolean isResendNotificationEmail;
 
         /**
          * Whether there is a need to resend the verification email.
-         *
          * @param isResendNotificationEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder isResendNotificationEmail(Boolean isResendNotificationEmail) {
             this.isResendNotificationEmail = isResendNotificationEmail;
             this.__explicitlySet__.add("isResendNotificationEmail");
@@ -138,7 +140,9 @@ public final class UpdateSenderConfig
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +151,58 @@ public final class UpdateSenderConfig
         return new Builder().copy(this);
     }
 
-    /** The sender's displayName. */
+    /**
+     * The sender's displayName.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The sender's displayName.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** The sender's email. */
+    /**
+     * The sender's email.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("email")
     private final String email;
 
     /**
      * The sender's email.
-     *
      * @return the value
-     */
+     **/
     public String getEmail() {
         return email;
     }
 
-    /** Whether the sender email has inbox configured to receive emails. */
+    /**
+     * Whether the sender email has inbox configured to receive emails.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isInboxConfigured")
     private final Boolean isInboxConfigured;
 
     /**
      * Whether the sender email has inbox configured to receive emails.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsInboxConfigured() {
         return isInboxConfigured;
     }
 
-    /** Whether there is a need to resend the verification email. */
+    /**
+     * Whether there is a need to resend the verification email.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isResendNotificationEmail")
     private final Boolean isResendNotificationEmail;
 
     /**
      * Whether there is a need to resend the verification email.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsResendNotificationEmail() {
         return isResendNotificationEmail;
     }
@@ -206,7 +214,6 @@ public final class UpdateSenderConfig
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

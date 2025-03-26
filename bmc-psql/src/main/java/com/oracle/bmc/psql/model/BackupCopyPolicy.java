@@ -5,22 +5,19 @@
 package com.oracle.bmc.psql.model;
 
 /**
- * Backup copy details <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
+ * Backup copy details
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220915")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupCopyPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackupCopyPolicy
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackupCopyPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"compartmentId", "retentionPeriod", "regions"})
     public BackupCopyPolicy(
@@ -33,46 +30,49 @@ public final class BackupCopyPolicy
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** target compartment to place a new backup */
+        /**
+         * target compartment to place a new backup
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * target compartment to place a new backup
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Retention period in days of the backup copy. */
+        /**
+         * Retention period in days of the backup copy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
         private Integer retentionPeriod;
 
         /**
          * Retention period in days of the backup copy.
-         *
          * @param retentionPeriod the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionPeriod(Integer retentionPeriod) {
             this.retentionPeriod = retentionPeriod;
             this.__explicitlySet__.add("retentionPeriod");
             return this;
         }
-        /** List of region names of the remote region */
+        /**
+         * List of region names of the remote region
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("regions")
         private java.util.List<String> regions;
 
         /**
          * List of region names of the remote region
-         *
          * @param regions the value to set
          * @return this builder
-         */
+         **/
         public Builder regions(java.util.List<String> regions) {
             this.regions = regions;
             this.__explicitlySet__.add("regions");
@@ -106,7 +106,9 @@ public final class BackupCopyPolicy
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +117,44 @@ public final class BackupCopyPolicy
         return new Builder().copy(this);
     }
 
-    /** target compartment to place a new backup */
+    /**
+     * target compartment to place a new backup
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * target compartment to place a new backup
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Retention period in days of the backup copy. */
+    /**
+     * Retention period in days of the backup copy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionPeriod")
     private final Integer retentionPeriod;
 
     /**
      * Retention period in days of the backup copy.
-     *
      * @return the value
-     */
+     **/
     public Integer getRetentionPeriod() {
         return retentionPeriod;
     }
 
-    /** List of region names of the remote region */
+    /**
+     * List of region names of the remote region
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("regions")
     private final java.util.List<String> regions;
 
     /**
      * List of region names of the remote region
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRegions() {
         return regions;
     }
@@ -161,7 +166,6 @@ public final class BackupCopyPolicy
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

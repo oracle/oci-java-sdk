@@ -6,52 +6,66 @@ package com.oracle.bmc.datacatalog.requests;
 
 import com.oracle.bmc.datacatalog.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFolderRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datacatalog/GetFolderExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use GetFolderRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     private String catalogId;
 
-    /** Unique catalog identifier. */
+    /**
+     * Unique catalog identifier.
+     */
     public String getCatalogId() {
         return catalogId;
     }
-    /** Unique data asset key. */
+    /**
+     * Unique data asset key.
+     */
     private String dataAssetKey;
 
-    /** Unique data asset key. */
+    /**
+     * Unique data asset key.
+     */
     public String getDataAssetKey() {
         return dataAssetKey;
     }
-    /** Unique folder key. */
+    /**
+     * Unique folder key.
+     */
     private String folderKey;
 
-    /** Unique folder key. */
+    /**
+     * Unique folder key.
+     */
     public String getFolderKey() {
         return folderKey;
     }
     /**
-     * Indicates whether the list of objects and their relationships to this object will be provided
-     * in the response.
+     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
      */
     private Boolean isIncludeObjectRelationships;
 
     /**
-     * Indicates whether the list of objects and their relationships to this object will be provided
-     * in the response.
+     * Indicates whether the list of objects and their relationships to this object will be provided in the response.
      */
     public Boolean getIsIncludeObjectRelationships() {
         return isIncludeObjectRelationships;
     }
-    /** Specifies the fields to return in a folder response. */
+    /**
+     * Specifies the fields to return in a folder response.
+     *
+     */
     private java.util.List<Fields> fields;
 
-    /** Specifies the fields to return in a folder response. */
-    public enum Fields implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Specifies the fields to return in a folder response.
+     *
+     **/
+    public enum Fields {
         Key("key"),
         DisplayName("displayName"),
         Description("description"),
@@ -99,14 +113,21 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
     };
 
-    /** Specifies the fields to return in a folder response. */
+    /**
+     * Specifies the fields to return in a folder response.
+     *
+     */
     public java.util.List<Fields> getFields() {
         return fields;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -114,15 +135,17 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     GetFolderRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique catalog identifier. */
+        /**
+         * Unique catalog identifier.
+         */
         private String catalogId = null;
 
         /**
          * Unique catalog identifier.
-         *
          * @param catalogId the value to set
          * @return this builder instance
          */
@@ -131,12 +154,13 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Unique data asset key. */
+        /**
+         * Unique data asset key.
+         */
         private String dataAssetKey = null;
 
         /**
          * Unique data asset key.
-         *
          * @param dataAssetKey the value to set
          * @return this builder instance
          */
@@ -145,12 +169,13 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Unique folder key. */
+        /**
+         * Unique folder key.
+         */
         private String folderKey = null;
 
         /**
          * Unique folder key.
-         *
          * @param folderKey the value to set
          * @return this builder instance
          */
@@ -160,15 +185,12 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
-         * Indicates whether the list of objects and their relationships to this object will be
-         * provided in the response.
+         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
          */
         private Boolean isIncludeObjectRelationships = null;
 
         /**
-         * Indicates whether the list of objects and their relationships to this object will be
-         * provided in the response.
-         *
+         * Indicates whether the list of objects and their relationships to this object will be provided in the response.
          * @param isIncludeObjectRelationships the value to set
          * @return this builder instance
          */
@@ -177,7 +199,10 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this;
         }
 
-        /** Specifies the fields to return in a folder response. */
+        /**
+         * Specifies the fields to return in a folder response.
+         *
+         */
         private java.util.List<Fields> fields = null;
 
         /**
@@ -201,12 +226,13 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             return this.fields(java.util.Arrays.asList(singularValue));
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -217,19 +243,18 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -241,7 +266,6 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(GetFolderRequest o) {
@@ -259,11 +283,10 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetFolderRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of GetFolderRequest
          */
@@ -277,8 +300,7 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         /**
          * Build the instance of GetFolderRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of GetFolderRequest
@@ -292,14 +314,12 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.fields = fields;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetFolderRequest(catalogId, dataAssetKey, folderKey,
-            // isIncludeObjectRelationships, fields, opcRequestId);
+            // new GetFolderRequest(catalogId, dataAssetKey, folderKey, isIncludeObjectRelationships, fields, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -314,7 +334,6 @@ public class GetFolderRequest extends com.oracle.bmc.requests.BmcRequest<java.la
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

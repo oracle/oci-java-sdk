@@ -5,21 +5,19 @@
 package com.oracle.bmc.usageapi.model;
 
 /**
- * Forecast configuration of usage/cost. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
+ * Forecast configuration of usage/cost.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Forecast.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Forecast extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Forecast extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"forecastType", "timeForecastStarted", "timeForecastEnded"})
     public Forecast(
@@ -35,51 +33,48 @@ public final class Forecast extends com.oracle.bmc.http.client.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on
-         * history data. The basis for projections is a periodic set of equivalent historical days
-         * for which the projection is being made.
-         */
+         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
         private ForecastType forecastType;
 
         /**
-         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on
-         * history data. The basis for projections is a periodic set of equivalent historical days
-         * for which the projection is being made.
-         *
+         * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
          * @param forecastType the value to set
          * @return this builder
-         */
+         **/
         public Builder forecastType(ForecastType forecastType) {
             this.forecastType = forecastType;
             this.__explicitlySet__.add("forecastType");
             return this;
         }
-        /** The forecast start time. Defaults to UTC-1 if not specified. */
+        /**
+         * The forecast start time. Defaults to UTC-1 if not specified.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
         private java.util.Date timeForecastStarted;
 
         /**
          * The forecast start time. Defaults to UTC-1 if not specified.
-         *
          * @param timeForecastStarted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeForecastStarted(java.util.Date timeForecastStarted) {
             this.timeForecastStarted = timeForecastStarted;
             this.__explicitlySet__.add("timeForecastStarted");
             return this;
         }
-        /** The forecast end time. */
+        /**
+         * The forecast end time.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeForecastEnded")
         private java.util.Date timeForecastEnded;
 
         /**
          * The forecast end time.
-         *
          * @param timeForecastEnded the value to set
          * @return this builder
-         */
+         **/
         public Builder timeForecastEnded(java.util.Date timeForecastEnded) {
             this.timeForecastEnded = timeForecastEnded;
             this.__explicitlySet__.add("timeForecastEnded");
@@ -114,7 +109,9 @@ public final class Forecast extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -124,16 +121,14 @@ public final class Forecast extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on
-     * history data. The basis for projections is a periodic set of equivalent historical days for
-     * which the projection is being made.
-     */
-    public enum ForecastType implements com.oracle.bmc.http.internal.BmcEnum {
+     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     **/
+    public enum ForecastType {
         Basic("BASIC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -173,46 +168,43 @@ public final class Forecast extends com.oracle.bmc.http.client.internal.Explicit
         }
     };
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on
-     * history data. The basis for projections is a periodic set of equivalent historical days for
-     * which the projection is being made.
-     */
+     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("forecastType")
     private final ForecastType forecastType;
 
     /**
-     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on
-     * history data. The basis for projections is a periodic set of equivalent historical days for
-     * which the projection is being made.
-     *
+     * BASIC uses the exponential smoothing (ETS) model to project future usage/costs based on history data. The basis for projections is a periodic set of equivalent historical days for which the projection is being made.
      * @return the value
-     */
+     **/
     public ForecastType getForecastType() {
         return forecastType;
     }
 
-    /** The forecast start time. Defaults to UTC-1 if not specified. */
+    /**
+     * The forecast start time. Defaults to UTC-1 if not specified.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastStarted")
     private final java.util.Date timeForecastStarted;
 
     /**
      * The forecast start time. Defaults to UTC-1 if not specified.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeForecastStarted() {
         return timeForecastStarted;
     }
 
-    /** The forecast end time. */
+    /**
+     * The forecast end time.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeForecastEnded")
     private final java.util.Date timeForecastEnded;
 
     /**
      * The forecast end time.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeForecastEnded() {
         return timeForecastEnded;
     }
@@ -224,7 +216,6 @@ public final class Forecast extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,12 +5,13 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The role of the database in DataGuard environment. The value OTHER is to temporarily handle the
- * case when Exadata side adds new value, should not be used as input when to make change to IORM
- * plan.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
-public enum DatabasePlanRoleEnum implements com.oracle.bmc.http.internal.BmcEnum {
+ * The role of the database in DataGuard environment.
+ * The value OTHER is to temporarily handle the case when Exadata side adds new value, should not be used as input
+ * when to make change to IORM plan.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+public enum DatabasePlanRoleEnum {
     Primary("PRIMARY"),
     Standby("STANDBY"),
     None("NONE"),

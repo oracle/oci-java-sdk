@@ -6,57 +6,69 @@ package com.oracle.bmc.marketplacepublisher.requests;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionIconContentExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * UpdateListingRevisionIconContentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionIconContentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateListingRevisionIconContentRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class UpdateListingRevisionIconContentRequest
         extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream> {
 
-    /** listing revision */
+    /**
+     * listing revision
+     */
     private String listingRevisionId;
 
-    /** listing revision */
+    /**
+     * listing revision
+     */
     public String getListingRevisionId() {
         return listingRevisionId;
     }
-    /** The listing revision icon to be updated. */
+    /**
+     * The listing revision icon to be updated.
+     */
     private java.io.InputStream updateListingRevisionIconContent;
 
-    /** The listing revision icon to be updated. */
+    /**
+     * The listing revision icon to be updated.
+     */
     public java.io.InputStream getUpdateListingRevisionIconContent() {
         return updateListingRevisionIconContent;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -68,15 +80,17 @@ public class UpdateListingRevisionIconContentRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     UpdateListingRevisionIconContentRequest, java.io.InputStream> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** listing revision */
+        /**
+         * listing revision
+         */
         private String listingRevisionId = null;
 
         /**
          * listing revision
-         *
          * @param listingRevisionId the value to set
          * @return this builder instance
          */
@@ -85,12 +99,13 @@ public class UpdateListingRevisionIconContentRequest
             return this;
         }
 
-        /** The listing revision icon to be updated. */
+        /**
+         * The listing revision icon to be updated.
+         */
         private java.io.InputStream updateListingRevisionIconContent = null;
 
         /**
          * The listing revision icon to be updated.
-         *
          * @param updateListingRevisionIconContent the value to set
          * @return this builder instance
          */
@@ -101,18 +116,21 @@ public class UpdateListingRevisionIconContentRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -122,12 +140,13 @@ public class UpdateListingRevisionIconContentRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -138,19 +157,18 @@ public class UpdateListingRevisionIconContentRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -162,7 +180,6 @@ public class UpdateListingRevisionIconContentRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(UpdateListingRevisionIconContentRequest o) {
@@ -176,14 +193,12 @@ public class UpdateListingRevisionIconContentRequest
         }
 
         /**
-         * Build the instance of UpdateListingRevisionIconContentRequest as configured by this
-         * builder
+         * Build the instance of UpdateListingRevisionIconContentRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of UpdateListingRevisionIconContentRequest
          */
@@ -196,7 +211,6 @@ public class UpdateListingRevisionIconContentRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -207,11 +221,9 @@ public class UpdateListingRevisionIconContentRequest
         }
 
         /**
-         * Build the instance of UpdateListingRevisionIconContentRequest as configured by this
-         * builder
+         * Build the instance of UpdateListingRevisionIconContentRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of UpdateListingRevisionIconContentRequest
@@ -224,14 +236,12 @@ public class UpdateListingRevisionIconContentRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdateListingRevisionIconContentRequest(listingRevisionId,
-            // updateListingRevisionIconContent, ifMatch, opcRequestId);
+            // new UpdateListingRevisionIconContentRequest(listingRevisionId, updateListingRevisionIconContent, ifMatch, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -244,7 +254,6 @@ public class UpdateListingRevisionIconContentRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

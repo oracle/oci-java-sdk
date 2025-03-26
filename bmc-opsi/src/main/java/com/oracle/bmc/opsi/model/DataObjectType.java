@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Type of a data object. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum DataObjectType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of a data object.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum DataObjectType {
     View("VIEW"),
     Table("TABLE"),
 

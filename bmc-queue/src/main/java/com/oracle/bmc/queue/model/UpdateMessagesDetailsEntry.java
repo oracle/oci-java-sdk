@@ -5,23 +5,22 @@
 package com.oracle.bmc.queue.model;
 
 /**
- * Object that represents a message to update in a queue. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
+ * Object that represents a message to update in a queue.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateMessagesDetailsEntry.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateMessagesDetailsEntry.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateMessagesDetailsEntry
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"receipt", "visibilityInSeconds"})
     public UpdateMessagesDetailsEntry(String receipt, Integer visibilityInSeconds) {
@@ -32,35 +31,33 @@ public final class UpdateMessagesDetailsEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The receipt of the message to update. */
+        /**
+         * The receipt of the message to update.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("receipt")
         private String receipt;
 
         /**
          * The receipt of the message to update.
-         *
          * @param receipt the value to set
          * @return this builder
-         */
+         **/
         public Builder receipt(String receipt) {
             this.receipt = receipt;
             this.__explicitlySet__.add("receipt");
             return this;
         }
         /**
-         * The new visibility of the message relative to the current time (as-per the clock of the
-         * server receiving the request).
-         */
+         * The new visibility of the message relative to the current time (as-per the clock of the server receiving the request).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
         private Integer visibilityInSeconds;
 
         /**
-         * The new visibility of the message relative to the current time (as-per the clock of the
-         * server receiving the request).
-         *
+         * The new visibility of the message relative to the current time (as-per the clock of the server receiving the request).
          * @param visibilityInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder visibilityInSeconds(Integer visibilityInSeconds) {
             this.visibilityInSeconds = visibilityInSeconds;
             this.__explicitlySet__.add("visibilityInSeconds");
@@ -91,7 +88,9 @@ public final class UpdateMessagesDetailsEntry
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -100,32 +99,30 @@ public final class UpdateMessagesDetailsEntry
         return new Builder().copy(this);
     }
 
-    /** The receipt of the message to update. */
+    /**
+     * The receipt of the message to update.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("receipt")
     private final String receipt;
 
     /**
      * The receipt of the message to update.
-     *
      * @return the value
-     */
+     **/
     public String getReceipt() {
         return receipt;
     }
 
     /**
-     * The new visibility of the message relative to the current time (as-per the clock of the
-     * server receiving the request).
-     */
+     * The new visibility of the message relative to the current time (as-per the clock of the server receiving the request).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("visibilityInSeconds")
     private final Integer visibilityInSeconds;
 
     /**
-     * The new visibility of the message relative to the current time (as-per the clock of the
-     * server receiving the request).
-     *
+     * The new visibility of the message relative to the current time (as-per the clock of the server receiving the request).
      * @return the value
-     */
+     **/
     public Integer getVisibilityInSeconds() {
         return visibilityInSeconds;
     }
@@ -137,7 +134,6 @@ public final class UpdateMessagesDetailsEntry
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

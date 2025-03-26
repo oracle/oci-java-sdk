@@ -5,72 +5,72 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Contains memory recommendation. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Contains memory recommendation.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = HostMemoryRecommendations.Builder.class)
+    builder = HostMemoryRecommendations.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "metricRecommendationName")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "metricRecommendationName"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HostMemoryRecommendations extends HostInsightHostRecommendations {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Identify unused instances based on cpu, memory and network metrics. */
+        /**
+         * Identify unused instances based on cpu, memory and network metrics.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unusedInstance")
         private UnusedInstance unusedInstance;
 
         /**
          * Identify unused instances based on cpu, memory and network metrics.
-         *
          * @param unusedInstance the value to set
          * @return this builder
-         */
+         **/
         public Builder unusedInstance(UnusedInstance unusedInstance) {
             this.unusedInstance = unusedInstance;
             this.__explicitlySet__.add("unusedInstance");
             return this;
         }
-        /** Identify if an instance is abandoned. */
+        /**
+         * Identify if an instance is abandoned.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAbandonedInstance")
         private Boolean isAbandonedInstance;
 
         /**
          * Identify if an instance is abandoned.
-         *
          * @param isAbandonedInstance the value to set
          * @return this builder
-         */
+         **/
         public Builder isAbandonedInstance(Boolean isAbandonedInstance) {
             this.isAbandonedInstance = isAbandonedInstance;
             this.__explicitlySet__.add("isAbandonedInstance");
             return this;
         }
         /**
-         * Show if OPSI recommends to change memory capacity based on Memory utilization and current
-         * shape.
-         */
+         * Show if OPSI recommends to change memory capacity based on Memory utilization and current shape.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("memoryOptimization")
         private String memoryOptimization;
 
         /**
-         * Show if OPSI recommends to change memory capacity based on Memory utilization and current
-         * shape.
-         *
+         * Show if OPSI recommends to change memory capacity based on Memory utilization and current shape.
          * @param memoryOptimization the value to set
          * @return this builder
-         */
+         **/
         public Builder memoryOptimization(String memoryOptimization) {
             this.memoryOptimization = memoryOptimization;
             this.__explicitlySet__.add("memoryOptimization");
@@ -105,7 +105,9 @@ public final class HostMemoryRecommendations extends HostInsightHostRecommendati
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -123,15 +125,17 @@ public final class HostMemoryRecommendations extends HostInsightHostRecommendati
         this.memoryOptimization = memoryOptimization;
     }
 
-    /** Identify unused instances based on cpu, memory and network metrics. */
-    public enum UnusedInstance implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Identify unused instances based on cpu, memory and network metrics.
+     **/
+    public enum UnusedInstance {
         InUse("IN_USE"),
         NotInUse("NOT_IN_USE"),
         IsNotDetermined("IS_NOT_DETERMINED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -170,45 +174,44 @@ public final class HostMemoryRecommendations extends HostInsightHostRecommendati
             return UnknownEnumValue;
         }
     };
-    /** Identify unused instances based on cpu, memory and network metrics. */
+    /**
+     * Identify unused instances based on cpu, memory and network metrics.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unusedInstance")
     private final UnusedInstance unusedInstance;
 
     /**
      * Identify unused instances based on cpu, memory and network metrics.
-     *
      * @return the value
-     */
+     **/
     public UnusedInstance getUnusedInstance() {
         return unusedInstance;
     }
 
-    /** Identify if an instance is abandoned. */
+    /**
+     * Identify if an instance is abandoned.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAbandonedInstance")
     private final Boolean isAbandonedInstance;
 
     /**
      * Identify if an instance is abandoned.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAbandonedInstance() {
         return isAbandonedInstance;
     }
 
     /**
-     * Show if OPSI recommends to change memory capacity based on Memory utilization and current
-     * shape.
-     */
+     * Show if OPSI recommends to change memory capacity based on Memory utilization and current shape.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("memoryOptimization")
     private final String memoryOptimization;
 
     /**
-     * Show if OPSI recommends to change memory capacity based on Memory utilization and current
-     * shape.
-     *
+     * Show if OPSI recommends to change memory capacity based on Memory utilization and current shape.
      * @return the value
-     */
+     **/
     public String getMemoryOptimization() {
         return memoryOptimization;
     }
@@ -220,7 +223,6 @@ public final class HostMemoryRecommendations extends HostInsightHostRecommendati
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

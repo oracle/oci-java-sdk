@@ -8,6 +8,7 @@ import com.oracle.bmc.ConfigFileReader;
 
 import org.junit.Test;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -108,6 +109,10 @@ public class SessionTokenAuthTest {
     }
 
     private void writeToSessionTokenFile(String token) throws IOException {
+        // In case the file does not exist.
+        File tokenFile = new File(TOKEN_FILE_PATH);
+        tokenFile.createNewFile();
+
         // Write to & close file.
         FileWriter writer = new FileWriter(TOKEN_FILE_PATH);
         writer.write(token);

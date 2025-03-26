@@ -6,18 +6,15 @@ package com.oracle.bmc.identitydomains.responses;
 
 import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
@@ -25,30 +22,26 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
     }
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      */
     private String opcNextPage;
 
     /**
-     * For pagination of a list of items. When paging through a list, if this header appears in the
-     * response, then a partial list might have been returned. Include this value as the {@code
-     * page} parameter for the subsequent GET request to get the next batch of items.
-     *
+     * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
      * @return the value
      */
     public String getOpcNextPage() {
         return opcNextPage;
     }
 
-    /** The returned {@code MyOAuth2ClientCredentials} instance. */
+    /**
+     * The returned MyOAuth2ClientCredentials instance.
+     */
     private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
             myOAuth2ClientCredentials;
 
     /**
-     * The returned {@code MyOAuth2ClientCredentials} instance.
-     *
+     * The returned MyOAuth2ClientCredentials instance.
      * @return the value
      */
     public com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
@@ -65,7 +58,7 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
     })
     private ListMyOAuth2ClientCredentialsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String opcNextPage,
             com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
@@ -76,35 +69,28 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
         this.myOAuth2ClientCredentials = myOAuth2ClientCredentials;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    ListMyOAuth2ClientCredentialsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, please provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -114,17 +100,12 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
         }
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
          */
         private String opcNextPage;
 
         /**
-         * For pagination of a list of items. When paging through a list, if this header appears in
-         * the response, then a partial list might have been returned. Include this value as the
-         * {@code page} parameter for the subsequent GET request to get the next batch of items.
-         *
+         * For pagination of a list of items. When paging through a list, if this header appears in the response, then a partial list might have been returned. Include this value as the {@code page} parameter for the subsequent GET request to get the next batch of items.
          * @param opcNextPage the value to set
          * @return this builder
          */
@@ -133,13 +114,14 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
             return this;
         }
 
-        /** The returned {@code MyOAuth2ClientCredentials} instance. */
+        /**
+         * The returned MyOAuth2ClientCredentials instance.
+         */
         private com.oracle.bmc.identitydomains.model.MyOAuth2ClientCredentials
                 myOAuth2ClientCredentials;
 
         /**
-         * The returned {@code MyOAuth2ClientCredentials} instance.
-         *
+         * The returned MyOAuth2ClientCredentials instance.
          * @param myOAuth2ClientCredentials the value to set
          * @return this builder
          */
@@ -152,10 +134,8 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ListMyOAuth2ClientCredentialsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -168,10 +148,8 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ListMyOAuth2ClientCredentialsResponse build() {
             return new ListMyOAuth2ClientCredentialsResponse(
                     __httpStatusCode__,
@@ -184,7 +162,6 @@ public class ListMyOAuth2ClientCredentialsResponse extends com.oracle.bmc.respon
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

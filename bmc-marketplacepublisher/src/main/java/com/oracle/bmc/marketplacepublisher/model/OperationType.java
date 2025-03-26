@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.marketplacepublisher.model;
 
-/** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
-public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible operation types.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+public enum OperationType {
     CreateOffer("CREATE_OFFER"),
     UpdateOffer("UPDATE_OFFER"),
     DeleteOffer("DELETE_OFFER"),

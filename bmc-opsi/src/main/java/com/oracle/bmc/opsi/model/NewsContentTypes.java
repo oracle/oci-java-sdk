@@ -5,22 +5,19 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Content types that the news report can handle. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Content types that the news report can handle.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = NewsContentTypes.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class NewsContentTypes
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class NewsContentTypes extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "capacityPlanningResources",
@@ -57,33 +54,35 @@ public final class NewsContentTypes
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Supported resources for capacity planning content type. */
+        /**
+         * Supported resources for capacity planning content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("capacityPlanningResources")
         private java.util.List<NewsContentTypesResource> capacityPlanningResources;
 
         /**
          * Supported resources for capacity planning content type.
-         *
          * @param capacityPlanningResources the value to set
          * @return this builder
-         */
+         **/
         public Builder capacityPlanningResources(
                 java.util.List<NewsContentTypesResource> capacityPlanningResources) {
             this.capacityPlanningResources = capacityPlanningResources;
             this.__explicitlySet__.add("capacityPlanningResources");
             return this;
         }
-        /** Supported resources for SQL insights - fleet analysis content type. */
+        /**
+         * Supported resources for SQL insights - fleet analysis content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsFleetAnalysisResources")
         private java.util.List<NewsSqlInsightsContentTypesResource>
                 sqlInsightsFleetAnalysisResources;
 
         /**
          * Supported resources for SQL insights - fleet analysis content type.
-         *
          * @param sqlInsightsFleetAnalysisResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsFleetAnalysisResources(
                 java.util.List<NewsSqlInsightsContentTypesResource>
                         sqlInsightsFleetAnalysisResources) {
@@ -91,16 +90,17 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsFleetAnalysisResources");
             return this;
         }
-        /** Supported resources for SQL insights - plan changes content type. */
+        /**
+         * Supported resources for SQL insights - plan changes content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsPlanChangesResources")
         private java.util.List<NewsSqlInsightsContentTypesResource> sqlInsightsPlanChangesResources;
 
         /**
          * Supported resources for SQL insights - plan changes content type.
-         *
          * @param sqlInsightsPlanChangesResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsPlanChangesResources(
                 java.util.List<NewsSqlInsightsContentTypesResource>
                         sqlInsightsPlanChangesResources) {
@@ -108,17 +108,18 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsPlanChangesResources");
             return this;
         }
-        /** Supported resources for SQL insights - top databases content type. */
+        /**
+         * Supported resources for SQL insights - top databases content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopDatabasesResources")
         private java.util.List<NewsSqlInsightsContentTypesResource>
                 sqlInsightsTopDatabasesResources;
 
         /**
          * Supported resources for SQL insights - top databases content type.
-         *
          * @param sqlInsightsTopDatabasesResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsTopDatabasesResources(
                 java.util.List<NewsSqlInsightsContentTypesResource>
                         sqlInsightsTopDatabasesResources) {
@@ -126,17 +127,18 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsTopDatabasesResources");
             return this;
         }
-        /** Supported resources for SQL insights - top SQL by insights content type. */
+        /**
+         * Supported resources for SQL insights - top SQL by insights content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopSqlByInsightsResources")
         private java.util.List<NewsSqlInsightsContentTypesResource>
                 sqlInsightsTopSqlByInsightsResources;
 
         /**
          * Supported resources for SQL insights - top SQL by insights content type.
-         *
          * @param sqlInsightsTopSqlByInsightsResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsTopSqlByInsightsResources(
                 java.util.List<NewsSqlInsightsContentTypesResource>
                         sqlInsightsTopSqlByInsightsResources) {
@@ -144,33 +146,35 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsTopSqlByInsightsResources");
             return this;
         }
-        /** Supported resources for SQL insights - top SQL content type. */
+        /**
+         * Supported resources for SQL insights - top SQL content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopSqlResources")
         private java.util.List<NewsSqlInsightsContentTypesResource> sqlInsightsTopSqlResources;
 
         /**
          * Supported resources for SQL insights - top SQL content type.
-         *
          * @param sqlInsightsTopSqlResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsTopSqlResources(
                 java.util.List<NewsSqlInsightsContentTypesResource> sqlInsightsTopSqlResources) {
             this.sqlInsightsTopSqlResources = sqlInsightsTopSqlResources;
             this.__explicitlySet__.add("sqlInsightsTopSqlResources");
             return this;
         }
-        /** Supported resources for SQL insights - performance degradation content type. */
+        /**
+         * Supported resources for SQL insights - performance degradation content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsPerformanceDegradationResources")
         private java.util.List<NewsSqlInsightsContentTypesResource>
                 sqlInsightsPerformanceDegradationResources;
 
         /**
          * Supported resources for SQL insights - performance degradation content type.
-         *
          * @param sqlInsightsPerformanceDegradationResources the value to set
          * @return this builder
-         */
+         **/
         public Builder sqlInsightsPerformanceDegradationResources(
                 java.util.List<NewsSqlInsightsContentTypesResource>
                         sqlInsightsPerformanceDegradationResources) {
@@ -179,16 +183,17 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsPerformanceDegradationResources");
             return this;
         }
-        /** Supported resources for actionable insights content type. */
+        /**
+         * Supported resources for actionable insights content type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("actionableInsightsResources")
         private java.util.List<ActionableInsightsContentTypesResource> actionableInsightsResources;
 
         /**
          * Supported resources for actionable insights content type.
-         *
          * @param actionableInsightsResources the value to set
          * @return this builder
-         */
+         **/
         public Builder actionableInsightsResources(
                 java.util.List<ActionableInsightsContentTypesResource>
                         actionableInsightsResources) {
@@ -250,7 +255,9 @@ public final class NewsContentTypes
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -259,117 +266,125 @@ public final class NewsContentTypes
         return new Builder().copy(this);
     }
 
-    /** Supported resources for capacity planning content type. */
+    /**
+     * Supported resources for capacity planning content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("capacityPlanningResources")
     private final java.util.List<NewsContentTypesResource> capacityPlanningResources;
 
     /**
      * Supported resources for capacity planning content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsContentTypesResource> getCapacityPlanningResources() {
         return capacityPlanningResources;
     }
 
-    /** Supported resources for SQL insights - fleet analysis content type. */
+    /**
+     * Supported resources for SQL insights - fleet analysis content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsFleetAnalysisResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource>
             sqlInsightsFleetAnalysisResources;
 
     /**
      * Supported resources for SQL insights - fleet analysis content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource>
             getSqlInsightsFleetAnalysisResources() {
         return sqlInsightsFleetAnalysisResources;
     }
 
-    /** Supported resources for SQL insights - plan changes content type. */
+    /**
+     * Supported resources for SQL insights - plan changes content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsPlanChangesResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource>
             sqlInsightsPlanChangesResources;
 
     /**
      * Supported resources for SQL insights - plan changes content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource>
             getSqlInsightsPlanChangesResources() {
         return sqlInsightsPlanChangesResources;
     }
 
-    /** Supported resources for SQL insights - top databases content type. */
+    /**
+     * Supported resources for SQL insights - top databases content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopDatabasesResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource>
             sqlInsightsTopDatabasesResources;
 
     /**
      * Supported resources for SQL insights - top databases content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource>
             getSqlInsightsTopDatabasesResources() {
         return sqlInsightsTopDatabasesResources;
     }
 
-    /** Supported resources for SQL insights - top SQL by insights content type. */
+    /**
+     * Supported resources for SQL insights - top SQL by insights content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopSqlByInsightsResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource>
             sqlInsightsTopSqlByInsightsResources;
 
     /**
      * Supported resources for SQL insights - top SQL by insights content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource>
             getSqlInsightsTopSqlByInsightsResources() {
         return sqlInsightsTopSqlByInsightsResources;
     }
 
-    /** Supported resources for SQL insights - top SQL content type. */
+    /**
+     * Supported resources for SQL insights - top SQL content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsTopSqlResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource> sqlInsightsTopSqlResources;
 
     /**
      * Supported resources for SQL insights - top SQL content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource> getSqlInsightsTopSqlResources() {
         return sqlInsightsTopSqlResources;
     }
 
-    /** Supported resources for SQL insights - performance degradation content type. */
+    /**
+     * Supported resources for SQL insights - performance degradation content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sqlInsightsPerformanceDegradationResources")
     private final java.util.List<NewsSqlInsightsContentTypesResource>
             sqlInsightsPerformanceDegradationResources;
 
     /**
      * Supported resources for SQL insights - performance degradation content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<NewsSqlInsightsContentTypesResource>
             getSqlInsightsPerformanceDegradationResources() {
         return sqlInsightsPerformanceDegradationResources;
     }
 
-    /** Supported resources for actionable insights content type. */
+    /**
+     * Supported resources for actionable insights content type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("actionableInsightsResources")
     private final java.util.List<ActionableInsightsContentTypesResource>
             actionableInsightsResources;
 
     /**
      * Supported resources for actionable insights content type.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ActionableInsightsContentTypesResource> getActionableInsightsResources() {
         return actionableInsightsResources;
     }
@@ -381,7 +396,6 @@ public final class NewsContentTypes
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Potential fields to include in the response model to summarize applications endpoints. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum SummarizeApplicationUsageFields implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Potential fields to include in the response model to summarize applications endpoints.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum SummarizeApplicationUsageFields {
     ApproximateJreCount("approximateJreCount"),
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),

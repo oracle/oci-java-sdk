@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.fleetsoftwareupdate.model;
 
-/** Fleet Sotware Update Job type. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
-public enum JobTypes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Fleet Sotware Update Job type.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+public enum JobTypes {
     Stage("STAGE"),
     Precheck("PRECHECK"),
     Apply("APPLY"),

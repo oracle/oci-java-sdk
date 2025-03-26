@@ -10,11 +10,10 @@ import com.oracle.bmc.delegateaccesscontrol.responses.*;
 /**
  * Collection of helper methods to produce {@link com.oracle.bmc.waiter.Waiter}s for different
  * resources of DelegateAccessControl.
- *
- * <p>The default configuration used is defined by {@link
- * com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
+ * <p>
+ * The default configuration used is defined by {@link com.oracle.bmc.waiter.Waiters.Waiters#DEFAULT_POLLING_WAITER}.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230801")
 public class DelegateAccessControlWaiters {
     private final java.util.concurrent.ExecutorService executorService;
     private final DelegateAccessControl client;
@@ -29,8 +28,7 @@ public class DelegateAccessControlWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -39,8 +37,7 @@ public class DelegateAccessControlWaiters {
             forDelegatedResourceAccessRequest(
                     GetDelegatedResourceAccessRequestRequest request,
                     com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
@@ -85,8 +82,7 @@ public class DelegateAccessControlWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -97,8 +93,7 @@ public class DelegateAccessControlWaiters {
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
                     com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
@@ -119,8 +114,7 @@ public class DelegateAccessControlWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetDelegatedResourceAccessRequestRequest request,
                     final com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.delegateaccesscontrol.model.DelegatedResourceAccessRequest
@@ -158,8 +152,7 @@ public class DelegateAccessControlWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDelegationControlRequest, GetDelegationControlResponse>
@@ -207,8 +200,7 @@ public class DelegateAccessControlWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetDelegationControlRequest, GetDelegationControlResponse>
@@ -235,8 +227,7 @@ public class DelegateAccessControlWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetDelegationControlRequest request,
                     final com.oracle.bmc.delegateaccesscontrol.model.DelegationControl
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.delegateaccesscontrol.model.DelegationControl.LifecycleState>
@@ -271,16 +262,15 @@ public class DelegateAccessControlWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetDelegationSubscriptionRequest, GetDelegationSubscriptionResponse>
             forDelegationSubscription(
                     GetDelegationSubscriptionRequest request,
-                    com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription.LifecycleState
-                                    ...
+                    com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
@@ -323,8 +313,7 @@ public class DelegateAccessControlWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -333,8 +322,8 @@ public class DelegateAccessControlWaiters {
                     GetDelegationSubscriptionRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription.LifecycleState
-                                    ...
+                    com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
@@ -354,8 +343,7 @@ public class DelegateAccessControlWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetDelegationSubscriptionRequest request,
                     final com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.delegateaccesscontrol.model.DelegationSubscription
@@ -392,8 +380,7 @@ public class DelegateAccessControlWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetServiceProviderRequest, GetServiceProviderResponse>
@@ -441,8 +428,7 @@ public class DelegateAccessControlWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<GetServiceProviderRequest, GetServiceProviderResponse>
@@ -468,8 +454,8 @@ public class DelegateAccessControlWaiters {
             forServiceProvider(
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetServiceProviderRequest request,
-                    final com.oracle.bmc.delegateaccesscontrol.model.ServiceProvider.LifecycleState
-                                    ...
+                    final com.oracle.bmc.delegateaccesscontrol.model.ServiceProvider
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.delegateaccesscontrol.model.ServiceProvider.LifecycleState>
@@ -504,16 +490,15 @@ public class DelegateAccessControlWaiters {
      * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
      *
      * @param request the request to send
-     * @param targetStates the desired states to wait for. If multiple states are provided then the
-     *     waiter will return once the resource reaches any of the provided states
+     * @param targetStates the desired states to wait for. If multiple states are provided then the waiter will return once the resource reaches any of the provided states
      * @return a new {@code Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
                     GetServiceProviderActionRequest, GetServiceProviderActionResponse>
             forServiceProviderAction(
                     GetServiceProviderActionRequest request,
-                    com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction.LifecycleState
-                                    ...
+                    com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one targetState must be provided");
@@ -556,8 +541,7 @@ public class DelegateAccessControlWaiters {
      * @param request the request to send
      * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
      * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
-     * @param targetStates the desired states to wait for. The waiter will return once the resource
-     *     reaches any of the provided states
+     * @param targetStates the desired states to wait for. The waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
@@ -566,8 +550,8 @@ public class DelegateAccessControlWaiters {
                     GetServiceProviderActionRequest request,
                     com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
                     com.oracle.bmc.waiter.DelayStrategy delayStrategy,
-                    com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction.LifecycleState
-                                    ...
+                    com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction
+                                    .LifecycleState...
                             targetStates) {
         com.oracle.bmc.util.internal.Validate.notEmpty(
                 targetStates, "At least one target state must be provided");
@@ -587,8 +571,7 @@ public class DelegateAccessControlWaiters {
                     com.oracle.bmc.waiter.BmcGenericWaiter waiter,
                     final GetServiceProviderActionRequest request,
                     final com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction
-                                            .LifecycleState
-                                    ...
+                                    .LifecycleState...
                             targetStates) {
         final java.util.Set<
                         com.oracle.bmc.delegateaccesscontrol.model.ServiceProviderAction

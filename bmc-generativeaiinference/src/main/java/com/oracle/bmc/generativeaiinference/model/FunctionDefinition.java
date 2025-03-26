@@ -5,80 +5,71 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * A function the model may call. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+ * A function the model may call.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FunctionDefinition.Builder.class)
+    builder = FunctionDefinition.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FunctionDefinition extends ToolDefinition {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and
-         * dashes, with a maximum length of 64.
-         */
+         * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and
-         * dashes, with a maximum length of 64.
-         *
+         * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
         /**
-         * A description of what the function does, used by the model to choose when and how to call
-         * the function.
-         */
+         * A description of what the function does, used by the model to choose when and how to call the function.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * A description of what the function does, used by the model to choose when and how to call
-         * the function.
-         *
+         * A description of what the function does, used by the model to choose when and how to call the function.
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
         /**
-         * The parameters the functions accepts, described as a JSON Schema object. Omitting
-         * parameters defines a function with an empty parameter list.
-         */
+         * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters defines a function with an empty parameter list.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("parameters")
         private Object parameters;
 
         /**
-         * The parameters the functions accepts, described as a JSON Schema object. Omitting
-         * parameters defines a function with an empty parameter list.
-         *
+         * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters defines a function with an empty parameter list.
          * @param parameters the value to set
          * @return this builder
-         */
+         **/
         public Builder parameters(Object parameters) {
             this.parameters = parameters;
             this.__explicitlySet__.add("parameters");
@@ -112,7 +103,9 @@ public final class FunctionDefinition extends ToolDefinition {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -130,52 +123,43 @@ public final class FunctionDefinition extends ToolDefinition {
     }
 
     /**
-     * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and
-     * dashes, with a maximum length of 64.
-     */
+     * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and
-     * dashes, with a maximum length of 64.
-     *
+     * The name of the function to be called. Must be a-z, A-Z, 0-9, or contain underscores and dashes, with a maximum length of 64.
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
-     * A description of what the function does, used by the model to choose when and how to call the
-     * function.
-     */
+     * A description of what the function does, used by the model to choose when and how to call the function.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * A description of what the function does, used by the model to choose when and how to call the
-     * function.
-     *
+     * A description of what the function does, used by the model to choose when and how to call the function.
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
     /**
-     * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters
-     * defines a function with an empty parameter list.
-     */
+     * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters defines a function with an empty parameter list.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("parameters")
     private final Object parameters;
 
     /**
-     * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters
-     * defines a function with an empty parameter list.
-     *
+     * The parameters the functions accepts, described as a JSON Schema object. Omitting parameters defines a function with an empty parameter list.
      * @return the value
-     */
+     **/
     public Object getParameters() {
         return parameters;
     }
@@ -187,7 +171,6 @@ public final class FunctionDefinition extends ToolDefinition {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

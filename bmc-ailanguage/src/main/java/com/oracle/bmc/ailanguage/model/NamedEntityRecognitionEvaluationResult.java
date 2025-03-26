@@ -5,25 +5,25 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Possible NER model error analysis <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Possible NER model error analysis
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = NamedEntityRecognitionEvaluationResult.Builder.class)
+    builder = NamedEntityRecognitionEvaluationResult.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "modelType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "modelType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NamedEntityRecognitionEvaluationResult extends EvaluationResultSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -46,49 +46,48 @@ public final class NamedEntityRecognitionEvaluationResult extends EvaluationResu
             return this;
         }
         /**
-         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line
-         * sequence(1 is metadata)
-         */
+         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("record")
         private String record;
 
         /**
-         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line
-         * sequence(1 is metadata)
-         *
+         * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
          * @param record the value to set
          * @return this builder
-         */
+         **/
         public Builder record(String record) {
             this.record = record;
             this.__explicitlySet__.add("record");
             return this;
         }
-        /** List of true(actual) entities in test data for NER model */
+        /**
+         * List of true(actual) entities in test data for NER model
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("trueEntities")
         private java.util.List<EntityLabelErrorAnalysis> trueEntities;
 
         /**
          * List of true(actual) entities in test data for NER model
-         *
          * @param trueEntities the value to set
          * @return this builder
-         */
+         **/
         public Builder trueEntities(java.util.List<EntityLabelErrorAnalysis> trueEntities) {
             this.trueEntities = trueEntities;
             this.__explicitlySet__.add("trueEntities");
             return this;
         }
-        /** List of true(actual) entities in test data for NER model */
+        /**
+         * List of true(actual) entities in test data for NER model
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("predictedEntities")
         private java.util.List<EntityLabelErrorAnalysis> predictedEntities;
 
         /**
          * List of true(actual) entities in test data for NER model
-         *
          * @param predictedEntities the value to set
          * @return this builder
-         */
+         **/
         public Builder predictedEntities(
                 java.util.List<EntityLabelErrorAnalysis> predictedEntities) {
             this.predictedEntities = predictedEntities;
@@ -134,7 +133,9 @@ public final class NamedEntityRecognitionEvaluationResult extends EvaluationResu
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -157,44 +158,43 @@ public final class NamedEntityRecognitionEvaluationResult extends EvaluationResu
     }
 
     /**
-     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1
-     * is metadata)
-     */
+     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("record")
     private final String record;
 
     /**
-     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1
-     * is metadata)
-     *
+     * For CSV format location is rowId(1 is header) and for JSONL location is jsonL line sequence(1 is metadata)
      * @return the value
-     */
+     **/
     public String getRecord() {
         return record;
     }
 
-    /** List of true(actual) entities in test data for NER model */
+    /**
+     * List of true(actual) entities in test data for NER model
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("trueEntities")
     private final java.util.List<EntityLabelErrorAnalysis> trueEntities;
 
     /**
      * List of true(actual) entities in test data for NER model
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityLabelErrorAnalysis> getTrueEntities() {
         return trueEntities;
     }
 
-    /** List of true(actual) entities in test data for NER model */
+    /**
+     * List of true(actual) entities in test data for NER model
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("predictedEntities")
     private final java.util.List<EntityLabelErrorAnalysis> predictedEntities;
 
     /**
      * List of true(actual) entities in test data for NER model
-     *
      * @return the value
-     */
+     **/
     public java.util.List<EntityLabelErrorAnalysis> getPredictedEntities() {
         return predictedEntities;
     }
@@ -206,7 +206,6 @@ public final class NamedEntityRecognitionEvaluationResult extends EvaluationResu
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

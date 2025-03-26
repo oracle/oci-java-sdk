@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AddResourceLockDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = AddResourceLockDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AddResourceLockDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "relatedResourceId", "message", "timeCreated"})
     public AddResourceLockDetails(
@@ -35,69 +34,71 @@ public final class AddResourceLockDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Type of the lock. */
+        /**
+         * Type of the lock.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * Type of the lock.
-         *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The id of the resource that is locking this resource. Indicates that deleting this
-         * resource will remove the lock.
-         */
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
         private String relatedResourceId;
 
         /**
-         * The id of the resource that is locking this resource. Indicates that deleting this
-         * resource will remove the lock.
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
          *
          * @param relatedResourceId the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedResourceId(String relatedResourceId) {
             this.relatedResourceId = relatedResourceId;
             this.__explicitlySet__.add("relatedResourceId");
             return this;
         }
         /**
-         * A message added by the creator of the lock. This is typically used to give an indication
-         * of why the resource is locked.
-         */
+         * A message added by the creator of the lock. This is typically used to give an
+         * indication of why the resource is locked.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * A message added by the creator of the lock. This is typically used to give an indication
-         * of why the resource is locked.
+         * A message added by the creator of the lock. This is typically used to give an
+         * indication of why the resource is locked.
          *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
             return this;
         }
-        /** When the lock was created. */
+        /**
+         * When the lock was created.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * When the lock was created.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
@@ -135,7 +136,9 @@ public final class AddResourceLockDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -144,8 +147,10 @@ public final class AddResourceLockDetails
         return new Builder().copy(this);
     }
 
-    /** Type of the lock. */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Type of the lock.
+     **/
+    public enum Type {
         Full("FULL"),
         Delete("DELETE"),
         ;
@@ -177,62 +182,64 @@ public final class AddResourceLockDetails
             throw new IllegalArgumentException("Invalid Type: " + key);
         }
     };
-    /** Type of the lock. */
+    /**
+     * Type of the lock.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * Type of the lock.
-     *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
-     * The id of the resource that is locking this resource. Indicates that deleting this resource
-     * will remove the lock.
-     */
+     * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedResourceId")
     private final String relatedResourceId;
 
     /**
-     * The id of the resource that is locking this resource. Indicates that deleting this resource
-     * will remove the lock.
+     * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
      *
      * @return the value
-     */
+     **/
     public String getRelatedResourceId() {
         return relatedResourceId;
     }
 
     /**
-     * A message added by the creator of the lock. This is typically used to give an indication of
-     * why the resource is locked.
-     */
+     * A message added by the creator of the lock. This is typically used to give an
+     * indication of why the resource is locked.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * A message added by the creator of the lock. This is typically used to give an indication of
-     * why the resource is locked.
+     * A message added by the creator of the lock. This is typically used to give an
+     * indication of why the resource is locked.
      *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
 
-    /** When the lock was created. */
+    /**
+     * When the lock was created.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * When the lock was created.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
@@ -244,7 +251,6 @@ public final class AddResourceLockDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

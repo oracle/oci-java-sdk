@@ -5,25 +5,25 @@
 package com.oracle.bmc.devops.model;
 
 /**
- * Specifies the OKE cluster deployment stage using helm charts. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+ * Specifies the OKE cluster deployment stage using helm charts.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OkeHelmChartDeployStage.Builder.class)
+    builder = OkeHelmChartDeployStage.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "deployStageType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "deployStageType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OkeHelmChartDeployStage extends DeployStage {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -154,140 +154,145 @@ public final class OkeHelmChartDeployStage extends DeployStage {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Kubernetes cluster environment OCID for deployment. */
+        /**
+         * Kubernetes cluster environment OCID for deployment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
         private String okeClusterDeployEnvironmentId;
 
         /**
          * Kubernetes cluster environment OCID for deployment.
-         *
          * @param okeClusterDeployEnvironmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder okeClusterDeployEnvironmentId(String okeClusterDeployEnvironmentId) {
             this.okeClusterDeployEnvironmentId = okeClusterDeployEnvironmentId;
             this.__explicitlySet__.add("okeClusterDeployEnvironmentId");
             return this;
         }
-        /** Helm chart artifact OCID. */
+        /**
+         * Helm chart artifact OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helmChartDeployArtifactId")
         private String helmChartDeployArtifactId;
 
         /**
          * Helm chart artifact OCID.
-         *
          * @param helmChartDeployArtifactId the value to set
          * @return this builder
-         */
+         **/
         public Builder helmChartDeployArtifactId(String helmChartDeployArtifactId) {
             this.helmChartDeployArtifactId = helmChartDeployArtifactId;
             this.__explicitlySet__.add("helmChartDeployArtifactId");
             return this;
         }
-        /** List of values.yaml file artifact OCIDs. */
+        /**
+         * List of values.yaml file artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("valuesArtifactIds")
         private java.util.List<String> valuesArtifactIds;
 
         /**
          * List of values.yaml file artifact OCIDs.
-         *
          * @param valuesArtifactIds the value to set
          * @return this builder
-         */
+         **/
         public Builder valuesArtifactIds(java.util.List<String> valuesArtifactIds) {
             this.valuesArtifactIds = valuesArtifactIds;
             this.__explicitlySet__.add("valuesArtifactIds");
             return this;
         }
-        /** Release name of the Helm chart. */
+        /**
+         * Release name of the Helm chart.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
         private String releaseName;
 
         /**
          * Release name of the Helm chart.
-         *
          * @param releaseName the value to set
          * @return this builder
-         */
+         **/
         public Builder releaseName(String releaseName) {
             this.releaseName = releaseName;
             this.__explicitlySet__.add("releaseName");
             return this;
         }
-        /** Uninstall the Helm chart release on deleting the stage. */
+        /**
+         * Uninstall the Helm chart release on deleting the stage.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUninstallOnStageDelete")
         private Boolean isUninstallOnStageDelete;
 
         /**
          * Uninstall the Helm chart release on deleting the stage.
-         *
          * @param isUninstallOnStageDelete the value to set
          * @return this builder
-         */
+         **/
         public Builder isUninstallOnStageDelete(Boolean isUninstallOnStageDelete) {
             this.isUninstallOnStageDelete = isUninstallOnStageDelete;
             this.__explicitlySet__.add("isUninstallOnStageDelete");
             return this;
         }
-        /** List of Helm command artifact OCIDs. */
+        /**
+         * List of Helm command artifact OCIDs.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("helmCommandArtifactIds")
         private java.util.List<String> helmCommandArtifactIds;
 
         /**
          * List of Helm command artifact OCIDs.
-         *
          * @param helmCommandArtifactIds the value to set
          * @return this builder
-         */
+         **/
         public Builder helmCommandArtifactIds(java.util.List<String> helmCommandArtifactIds) {
             this.helmCommandArtifactIds = helmCommandArtifactIds;
             this.__explicitlySet__.add("helmCommandArtifactIds");
             return this;
         }
-        /** The purpose of running this Helm stage */
+        /**
+         * The purpose of running this Helm stage
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("purpose")
         private Purpose purpose;
 
         /**
          * The purpose of running this Helm stage
-         *
          * @param purpose the value to set
          * @return this builder
-         */
+         **/
         public Builder purpose(Purpose purpose) {
             this.purpose = purpose;
             this.__explicitlySet__.add("purpose");
             return this;
         }
         /**
-         * Default namespace to be used for Kubernetes deployment when not specified in the
-         * manifest.
-         */
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
         private String namespace;
 
         /**
-         * Default namespace to be used for Kubernetes deployment when not specified in the
-         * manifest.
-         *
+         * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
          * @param namespace the value to set
          * @return this builder
-         */
+         **/
         public Builder namespace(String namespace) {
             this.namespace = namespace;
             this.__explicitlySet__.add("namespace");
             return this;
         }
-        /** Time to wait for execution of a helm stage. Defaults to 300 seconds. */
+        /**
+         * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
         private Integer timeoutInSeconds;
 
         /**
          * Time to wait for execution of a helm stage. Defaults to 300 seconds.
-         *
          * @param timeoutInSeconds the value to set
          * @return this builder
-         */
+         **/
         public Builder timeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             this.__explicitlySet__.add("timeoutInSeconds");
@@ -320,54 +325,49 @@ public final class OkeHelmChartDeployStage extends DeployStage {
             this.__explicitlySet__.add("setString");
             return this;
         }
-        /** Disable pre/post upgrade hooks. Set to false by default. */
+        /**
+         * Disable pre/post upgrade hooks. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("areHooksEnabled")
         private Boolean areHooksEnabled;
 
         /**
          * Disable pre/post upgrade hooks. Set to false by default.
-         *
          * @param areHooksEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder areHooksEnabled(Boolean areHooksEnabled) {
             this.areHooksEnabled = areHooksEnabled;
             this.__explicitlySet__.add("areHooksEnabled");
             return this;
         }
         /**
-         * During upgrade, reuse the values of the last release and merge overrides from the command
-         * line. Set to false by default.
-         */
+         * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldReuseValues")
         private Boolean shouldReuseValues;
 
         /**
-         * During upgrade, reuse the values of the last release and merge overrides from the command
-         * line. Set to false by default.
-         *
+         * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
          * @param shouldReuseValues the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldReuseValues(Boolean shouldReuseValues) {
             this.shouldReuseValues = shouldReuseValues;
             this.__explicitlySet__.add("shouldReuseValues");
             return this;
         }
         /**
-         * During upgrade, reset the values to the ones built into the chart. It overrides
-         * shouldReuseValues. Set to false by default.
-         */
+         * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldResetValues")
         private Boolean shouldResetValues;
 
         /**
-         * During upgrade, reset the values to the ones built into the chart. It overrides
-         * shouldReuseValues. Set to false by default.
-         *
+         * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
          * @param shouldResetValues the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldResetValues(Boolean shouldResetValues) {
             this.shouldResetValues = shouldResetValues;
             this.__explicitlySet__.add("shouldResetValues");
@@ -375,122 +375,111 @@ public final class OkeHelmChartDeployStage extends DeployStage {
         }
         /**
          * Force resource update through delete; or if required, recreate. Set to false by default.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isForceEnabled")
         private Boolean isForceEnabled;
 
         /**
          * Force resource update through delete; or if required, recreate. Set to false by default.
-         *
          * @param isForceEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isForceEnabled(Boolean isForceEnabled) {
             this.isForceEnabled = isForceEnabled;
             this.__explicitlySet__.add("isForceEnabled");
             return this;
         }
         /**
-         * Allow deletion of new resources created during when an upgrade fails. Set to false by
-         * default.
-         */
+         * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldCleanupOnFail")
         private Boolean shouldCleanupOnFail;
 
         /**
-         * Allow deletion of new resources created during when an upgrade fails. Set to false by
-         * default.
-         *
+         * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
          * @param shouldCleanupOnFail the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldCleanupOnFail(Boolean shouldCleanupOnFail) {
             this.shouldCleanupOnFail = shouldCleanupOnFail;
             this.__explicitlySet__.add("shouldCleanupOnFail");
             return this;
         }
         /**
-         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by
-         * default
-         */
+         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxHistory")
         private Integer maxHistory;
 
         /**
-         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by
-         * default
-         *
+         * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
          * @param maxHistory the value to set
          * @return this builder
-         */
+         **/
         public Builder maxHistory(Integer maxHistory) {
             this.maxHistory = maxHistory;
             this.__explicitlySet__.add("maxHistory");
             return this;
         }
         /**
-         * If set, no CRDs are installed. By default, CRDs are installed only if they are not
-         * present already. Set to false by default.
-         */
+         * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipCrds")
         private Boolean shouldSkipCrds;
 
         /**
-         * If set, no CRDs are installed. By default, CRDs are installed only if they are not
-         * present already. Set to false by default.
-         *
+         * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
          * @param shouldSkipCrds the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldSkipCrds(Boolean shouldSkipCrds) {
             this.shouldSkipCrds = shouldSkipCrds;
             this.__explicitlySet__.add("shouldSkipCrds");
             return this;
         }
-        /** If set, renders subchart notes along with the parent. Set to false by default. */
+        /**
+         * If set, renders subchart notes along with the parent. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipRenderSubchartNotes")
         private Boolean shouldSkipRenderSubchartNotes;
 
         /**
          * If set, renders subchart notes along with the parent. Set to false by default.
-         *
          * @param shouldSkipRenderSubchartNotes the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldSkipRenderSubchartNotes(Boolean shouldSkipRenderSubchartNotes) {
             this.shouldSkipRenderSubchartNotes = shouldSkipRenderSubchartNotes;
             this.__explicitlySet__.add("shouldSkipRenderSubchartNotes");
             return this;
         }
         /**
-         * Waits until all the resources are in a ready state to mark the release as successful. Set
-         * to false by default.
-         */
+         * Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shouldNotWait")
         private Boolean shouldNotWait;
 
         /**
-         * Waits until all the resources are in a ready state to mark the release as successful. Set
-         * to false by default.
-         *
+         * Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
          * @param shouldNotWait the value to set
          * @return this builder
-         */
+         **/
         public Builder shouldNotWait(Boolean shouldNotWait) {
             this.shouldNotWait = shouldNotWait;
             this.__explicitlySet__.add("shouldNotWait");
             return this;
         }
-        /** Enables helm --debug option to stream output to tf stdout. Set to false by default. */
+        /**
+         * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDebugEnabled")
         private Boolean isDebugEnabled;
 
         /**
          * Enables helm --debug option to stream output to tf stdout. Set to false by default.
-         *
          * @param isDebugEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isDebugEnabled(Boolean isDebugEnabled) {
             this.isDebugEnabled = isDebugEnabled;
             this.__explicitlySet__.add("isDebugEnabled");
@@ -659,7 +648,9 @@ public final class OkeHelmChartDeployStage extends DeployStage {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -745,92 +736,100 @@ public final class OkeHelmChartDeployStage extends DeployStage {
         this.isDebugEnabled = isDebugEnabled;
     }
 
-    /** Kubernetes cluster environment OCID for deployment. */
+    /**
+     * Kubernetes cluster environment OCID for deployment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("okeClusterDeployEnvironmentId")
     private final String okeClusterDeployEnvironmentId;
 
     /**
      * Kubernetes cluster environment OCID for deployment.
-     *
      * @return the value
-     */
+     **/
     public String getOkeClusterDeployEnvironmentId() {
         return okeClusterDeployEnvironmentId;
     }
 
-    /** Helm chart artifact OCID. */
+    /**
+     * Helm chart artifact OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helmChartDeployArtifactId")
     private final String helmChartDeployArtifactId;
 
     /**
      * Helm chart artifact OCID.
-     *
      * @return the value
-     */
+     **/
     public String getHelmChartDeployArtifactId() {
         return helmChartDeployArtifactId;
     }
 
-    /** List of values.yaml file artifact OCIDs. */
+    /**
+     * List of values.yaml file artifact OCIDs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("valuesArtifactIds")
     private final java.util.List<String> valuesArtifactIds;
 
     /**
      * List of values.yaml file artifact OCIDs.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getValuesArtifactIds() {
         return valuesArtifactIds;
     }
 
-    /** Release name of the Helm chart. */
+    /**
+     * Release name of the Helm chart.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("releaseName")
     private final String releaseName;
 
     /**
      * Release name of the Helm chart.
-     *
      * @return the value
-     */
+     **/
     public String getReleaseName() {
         return releaseName;
     }
 
-    /** Uninstall the Helm chart release on deleting the stage. */
+    /**
+     * Uninstall the Helm chart release on deleting the stage.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUninstallOnStageDelete")
     private final Boolean isUninstallOnStageDelete;
 
     /**
      * Uninstall the Helm chart release on deleting the stage.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsUninstallOnStageDelete() {
         return isUninstallOnStageDelete;
     }
 
-    /** List of Helm command artifact OCIDs. */
+    /**
+     * List of Helm command artifact OCIDs.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("helmCommandArtifactIds")
     private final java.util.List<String> helmCommandArtifactIds;
 
     /**
      * List of Helm command artifact OCIDs.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getHelmCommandArtifactIds() {
         return helmCommandArtifactIds;
     }
 
-    /** The purpose of running this Helm stage */
-    public enum Purpose implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The purpose of running this Helm stage
+     **/
+    public enum Purpose {
         ExecuteHelmUpgrade("EXECUTE_HELM_UPGRADE"),
         ExecuteHelmCommand("EXECUTE_HELM_COMMAND"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -869,43 +868,44 @@ public final class OkeHelmChartDeployStage extends DeployStage {
             return UnknownEnumValue;
         }
     };
-    /** The purpose of running this Helm stage */
+    /**
+     * The purpose of running this Helm stage
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("purpose")
     private final Purpose purpose;
 
     /**
      * The purpose of running this Helm stage
-     *
      * @return the value
-     */
+     **/
     public Purpose getPurpose() {
         return purpose;
     }
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
     private final String namespace;
 
     /**
      * Default namespace to be used for Kubernetes deployment when not specified in the manifest.
-     *
      * @return the value
-     */
+     **/
     public String getNamespace() {
         return namespace;
     }
 
-    /** Time to wait for execution of a helm stage. Defaults to 300 seconds. */
+    /**
+     * Time to wait for execution of a helm stage. Defaults to 300 seconds.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeoutInSeconds")
     private final Integer timeoutInSeconds;
 
     /**
      * Time to wait for execution of a helm stage. Defaults to 300 seconds.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimeoutInSeconds() {
         return timeoutInSeconds;
     }
@@ -931,156 +931,142 @@ public final class OkeHelmChartDeployStage extends DeployStage {
         return setString;
     }
 
-    /** Disable pre/post upgrade hooks. Set to false by default. */
+    /**
+     * Disable pre/post upgrade hooks. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("areHooksEnabled")
     private final Boolean areHooksEnabled;
 
     /**
      * Disable pre/post upgrade hooks. Set to false by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getAreHooksEnabled() {
         return areHooksEnabled;
     }
 
     /**
-     * During upgrade, reuse the values of the last release and merge overrides from the command
-     * line. Set to false by default.
-     */
+     * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldReuseValues")
     private final Boolean shouldReuseValues;
 
     /**
-     * During upgrade, reuse the values of the last release and merge overrides from the command
-     * line. Set to false by default.
-     *
+     * During upgrade, reuse the values of the last release and merge overrides from the command line. Set to false by default.
      * @return the value
-     */
+     **/
     public Boolean getShouldReuseValues() {
         return shouldReuseValues;
     }
 
     /**
-     * During upgrade, reset the values to the ones built into the chart. It overrides
-     * shouldReuseValues. Set to false by default.
-     */
+     * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldResetValues")
     private final Boolean shouldResetValues;
 
     /**
-     * During upgrade, reset the values to the ones built into the chart. It overrides
-     * shouldReuseValues. Set to false by default.
-     *
+     * During upgrade, reset the values to the ones built into the chart. It overrides shouldReuseValues. Set to false by default.
      * @return the value
-     */
+     **/
     public Boolean getShouldResetValues() {
         return shouldResetValues;
     }
 
-    /** Force resource update through delete; or if required, recreate. Set to false by default. */
+    /**
+     * Force resource update through delete; or if required, recreate. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isForceEnabled")
     private final Boolean isForceEnabled;
 
     /**
      * Force resource update through delete; or if required, recreate. Set to false by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsForceEnabled() {
         return isForceEnabled;
     }
 
     /**
-     * Allow deletion of new resources created during when an upgrade fails. Set to false by
-     * default.
-     */
+     * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldCleanupOnFail")
     private final Boolean shouldCleanupOnFail;
 
     /**
-     * Allow deletion of new resources created during when an upgrade fails. Set to false by
-     * default.
-     *
+     * Allow deletion of new resources created during when an upgrade fails. Set to false by default.
      * @return the value
-     */
+     **/
     public Boolean getShouldCleanupOnFail() {
         return shouldCleanupOnFail;
     }
 
     /**
-     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by
-     * default
-     */
+     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxHistory")
     private final Integer maxHistory;
 
     /**
-     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by
-     * default
-     *
+     * Limit the maximum number of revisions saved per release. Use 0 for no limit. Set to 10 by default
      * @return the value
-     */
+     **/
     public Integer getMaxHistory() {
         return maxHistory;
     }
 
     /**
-     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present
-     * already. Set to false by default.
-     */
+     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipCrds")
     private final Boolean shouldSkipCrds;
 
     /**
-     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present
-     * already. Set to false by default.
-     *
+     * If set, no CRDs are installed. By default, CRDs are installed only if they are not present already. Set to false by default.
      * @return the value
-     */
+     **/
     public Boolean getShouldSkipCrds() {
         return shouldSkipCrds;
     }
 
-    /** If set, renders subchart notes along with the parent. Set to false by default. */
+    /**
+     * If set, renders subchart notes along with the parent. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldSkipRenderSubchartNotes")
     private final Boolean shouldSkipRenderSubchartNotes;
 
     /**
      * If set, renders subchart notes along with the parent. Set to false by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getShouldSkipRenderSubchartNotes() {
         return shouldSkipRenderSubchartNotes;
     }
 
     /**
-     * Waits until all the resources are in a ready state to mark the release as successful. Set to
-     * false by default.
-     */
+     * Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shouldNotWait")
     private final Boolean shouldNotWait;
 
     /**
-     * Waits until all the resources are in a ready state to mark the release as successful. Set to
-     * false by default.
-     *
+     * Waits until all the resources are in a ready state to mark the release as successful. Set to false by default.
      * @return the value
-     */
+     **/
     public Boolean getShouldNotWait() {
         return shouldNotWait;
     }
 
-    /** Enables helm --debug option to stream output to tf stdout. Set to false by default. */
+    /**
+     * Enables helm --debug option to stream output to tf stdout. Set to false by default.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDebugEnabled")
     private final Boolean isDebugEnabled;
 
     /**
      * Enables helm --debug option to stream output to tf stdout. Set to false by default.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsDebugEnabled() {
         return isDebugEnabled;
     }
@@ -1092,7 +1078,6 @@ public final class OkeHelmChartDeployStage extends DeployStage {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,17 +6,16 @@ package com.oracle.bmc.fleetsoftwareupdate.responses;
 
 import com.oracle.bmc.fleetsoftwareupdate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+     *
      */
     private String opcWorkRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-     * status of the asynchronous operation.
+     * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
      *
      * @return the value
      */
@@ -25,14 +24,15 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -40,7 +40,10 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -53,14 +56,15 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
     }
 
     /**
-     * URI with information of a newly created resource. Follows RFC-2616
-     * https://datatracker.ietf.org/doc/html/rfc2616#page-135
+     * URI with information of a newly created resource.
+     * Follows RFC-2616 https://datatracker.ietf.org/doc/html/rfc2616#page-135
+     *
      */
     private String location;
 
     /**
-     * URI with information of a newly created resource. Follows RFC-2616
-     * https://datatracker.ietf.org/doc/html/rfc2616#page-135
+     * URI with information of a newly created resource.
+     * Follows RFC-2616 https://datatracker.ietf.org/doc/html/rfc2616#page-135
      *
      * @return the value
      */
@@ -68,12 +72,13 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         return location;
     }
 
-    /** The returned {@code FsuCollection} instance. */
+    /**
+     * The returned FsuCollection instance.
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection fsuCollection;
 
     /**
-     * The returned {@code FsuCollection} instance.
-     *
+     * The returned FsuCollection instance.
      * @return the value
      */
     public com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection getFsuCollection() {
@@ -91,7 +96,7 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
     })
     private CreateFsuCollectionResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcWorkRequestId,
             String opcRequestId,
             String etag,
@@ -105,33 +110,29 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         this.fsuCollection = fsuCollection;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<CreateFsuCollectionResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
+         *
          */
         private String opcWorkRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query
-         * status of the asynchronous operation.
+         * Unique Oracle-assigned identifier for the asynchronous request. You can use this to query status of the asynchronous operation.
          *
          * @param opcWorkRequestId the value to set
          * @return this builder
@@ -142,14 +143,15 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -159,7 +161,10 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -174,14 +179,15 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
         }
 
         /**
-         * URI with information of a newly created resource. Follows RFC-2616
-         * https://datatracker.ietf.org/doc/html/rfc2616#page-135
+         * URI with information of a newly created resource.
+         * Follows RFC-2616 https://datatracker.ietf.org/doc/html/rfc2616#page-135
+         *
          */
         private String location;
 
         /**
-         * URI with information of a newly created resource. Follows RFC-2616
-         * https://datatracker.ietf.org/doc/html/rfc2616#page-135
+         * URI with information of a newly created resource.
+         * Follows RFC-2616 https://datatracker.ietf.org/doc/html/rfc2616#page-135
          *
          * @param location the value to set
          * @return this builder
@@ -191,12 +197,13 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
             return this;
         }
 
-        /** The returned {@code FsuCollection} instance. */
+        /**
+         * The returned FsuCollection instance.
+         */
         private com.oracle.bmc.fleetsoftwareupdate.model.FsuCollection fsuCollection;
 
         /**
-         * The returned {@code FsuCollection} instance.
-         *
+         * The returned FsuCollection instance.
          * @param fsuCollection the value to set
          * @return this builder
          */
@@ -208,10 +215,8 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateFsuCollectionResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -226,10 +231,8 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateFsuCollectionResponse build() {
             return new CreateFsuCollectionResponse(
                     __httpStatusCode__,
@@ -244,7 +247,6 @@ public class CreateFsuCollectionResponse extends com.oracle.bmc.responses.BmcRes
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

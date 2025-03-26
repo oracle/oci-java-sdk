@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.datasafe.model;
 
-/** The format of the sensitive data model file. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
-public enum DataModelFormat implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The format of the sensitive data model file.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+public enum DataModelFormat {
     Xml("XML"),
     ;
 

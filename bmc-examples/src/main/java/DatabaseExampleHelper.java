@@ -43,9 +43,8 @@ public class DatabaseExampleHelper {
     private static Random rand = new Random();
 
     /**
-     * Protocol Numbers:
-     *
-     * @link https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
+     *  Protocol Numbers:
+     *  @link https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
      */
     public enum NetworkProtocol {
         Icmp(1),

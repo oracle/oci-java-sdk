@@ -6,69 +6,84 @@ package com.oracle.bmc.mediaservices.requests;
 
 import com.oracle.bmc.mediaservices.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamCdnConfigLockExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * AddStreamCdnConfigLockRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mediaservices/AddStreamCdnConfigLockExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddStreamCdnConfigLockRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20211101")
 public class AddStreamCdnConfigLockRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.mediaservices.model.AddLockDetails> {
 
-    /** AddResourceLockDetails body parameter */
+    /**
+     * AddResourceLockDetails body parameter
+     */
     private com.oracle.bmc.mediaservices.model.AddLockDetails addResourceLockDetails;
 
-    /** AddResourceLockDetails body parameter */
+    /**
+     * AddResourceLockDetails body parameter
+     */
     public com.oracle.bmc.mediaservices.model.AddLockDetails getAddResourceLockDetails() {
         return addResourceLockDetails;
     }
-    /** Unique StreamCdnConfig identifier. */
+    /**
+     * Unique StreamCdnConfig identifier.
+     */
     private String streamCdnConfigId;
 
-    /** Unique StreamCdnConfig identifier. */
+    /**
+     * Unique StreamCdnConfig identifier.
+     */
     public String getStreamCdnConfigId() {
         return streamCdnConfigId;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource will be updated or deleted only if the etag you provide matches the
-     * resource's current etag value.
+     * For optimistic concurrency control. In the PUT or DELETE call
+     * for a resource, set the {@code if-match} parameter to the value of the
+     * etag from a previous GET or POST response for that resource.
+     * The resource will be updated or deleted only if the etag you
+     * provide matches the resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -76,7 +91,6 @@ public class AddStreamCdnConfigLockRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -89,15 +103,17 @@ public class AddStreamCdnConfigLockRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     AddStreamCdnConfigLockRequest,
                     com.oracle.bmc.mediaservices.model.AddLockDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** AddResourceLockDetails body parameter */
+        /**
+         * AddResourceLockDetails body parameter
+         */
         private com.oracle.bmc.mediaservices.model.AddLockDetails addResourceLockDetails = null;
 
         /**
          * AddResourceLockDetails body parameter
-         *
          * @param addResourceLockDetails the value to set
          * @return this builder instance
          */
@@ -107,12 +123,13 @@ public class AddStreamCdnConfigLockRequest
             return this;
         }
 
-        /** Unique StreamCdnConfig identifier. */
+        /**
+         * Unique StreamCdnConfig identifier.
+         */
         private String streamCdnConfigId = null;
 
         /**
          * Unique StreamCdnConfig identifier.
-         *
          * @param streamCdnConfigId the value to set
          * @return this builder instance
          */
@@ -122,18 +139,21 @@ public class AddStreamCdnConfigLockRequest
         }
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
-         * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource will be updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * For optimistic concurrency control. In the PUT or DELETE call
+         * for a resource, set the {@code if-match} parameter to the value of the
+         * etag from a previous GET or POST response for that resource.
+         * The resource will be updated or deleted only if the etag you
+         * provide matches the resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -143,12 +163,13 @@ public class AddStreamCdnConfigLockRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -159,19 +180,20 @@ public class AddStreamCdnConfigLockRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -183,19 +205,18 @@ public class AddStreamCdnConfigLockRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -207,7 +228,6 @@ public class AddStreamCdnConfigLockRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(AddStreamCdnConfigLockRequest o) {
@@ -224,11 +244,10 @@ public class AddStreamCdnConfigLockRequest
         /**
          * Build the instance of AddStreamCdnConfigLockRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of AddStreamCdnConfigLockRequest
          */
@@ -241,7 +260,6 @@ public class AddStreamCdnConfigLockRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -254,8 +272,7 @@ public class AddStreamCdnConfigLockRequest
         /**
          * Build the instance of AddStreamCdnConfigLockRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of AddStreamCdnConfigLockRequest
@@ -268,14 +285,12 @@ public class AddStreamCdnConfigLockRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new AddStreamCdnConfigLockRequest(addResourceLockDetails, streamCdnConfigId, ifMatch,
-            // opcRequestId, opcRetryToken);
+            // new AddStreamCdnConfigLockRequest(addResourceLockDetails, streamCdnConfigId, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -289,7 +304,6 @@ public class AddStreamCdnConfigLockRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

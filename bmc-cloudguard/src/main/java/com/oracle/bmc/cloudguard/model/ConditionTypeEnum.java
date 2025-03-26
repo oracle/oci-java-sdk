@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.cloudguard.model;
 
-/** A condition configuration type to fetch the list of condition parameters. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
-public enum ConditionTypeEnum implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * A condition configuration type to fetch the list of condition parameters.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+public enum ConditionTypeEnum {
     ActivityCondition("ActivityCondition"),
     SecurityCondition("SecurityCondition"),
     CloudGuardCondition("CloudGuardCondition"),

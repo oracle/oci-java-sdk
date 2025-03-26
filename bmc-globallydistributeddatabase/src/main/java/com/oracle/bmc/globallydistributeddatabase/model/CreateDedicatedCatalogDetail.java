@@ -5,23 +5,22 @@
 package com.oracle.bmc.globallydistributeddatabase.model;
 
 /**
- * Details required for creation of ATP-D based catalog. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
+ * Details required for creation of ATP-D based catalog.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230301")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateDedicatedCatalogDetail.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateDedicatedCatalogDetail.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateDedicatedCatalogDetail
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "encryptionKeyDetails",
@@ -62,99 +61,97 @@ public final class CreateDedicatedCatalogDetail
             this.__explicitlySet__.add("encryptionKeyDetails");
             return this;
         }
-        /** Admin password for the catalog database. */
+        /**
+         * Admin password for the catalog database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
         private String adminPassword;
 
         /**
          * Admin password for the catalog database.
-         *
          * @param adminPassword the value to set
          * @return this builder
-         */
+         **/
         public Builder adminPassword(String adminPassword) {
             this.adminPassword = adminPassword;
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /** The compute count for the catalog database. It has to be in multiple of 2. */
+        /**
+         * The compute count for the catalog database. It has to be in multiple of 2.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
 
         /**
          * The compute count for the catalog database. It has to be in multiple of 2.
-         *
          * @param computeCount the value to set
          * @return this builder
-         */
+         **/
         public Builder computeCount(Float computeCount) {
             this.computeCount = computeCount;
             this.__explicitlySet__.add("computeCount");
             return this;
         }
-        /** The data disk group size to be allocated in GBs for the catalog database. */
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGbs")
         private Double dataStorageSizeInGbs;
 
         /**
          * The data disk group size to be allocated in GBs for the catalog database.
-         *
          * @param dataStorageSizeInGbs the value to set
          * @return this builder
-         */
+         **/
         public Builder dataStorageSizeInGbs(Double dataStorageSizeInGbs) {
             this.dataStorageSizeInGbs = dataStorageSizeInGbs;
             this.__explicitlySet__.add("dataStorageSizeInGbs");
             return this;
         }
-        /** Determines the auto-scaling mode for the catalog database. */
+        /**
+         * Determines the auto-scaling mode for the catalog database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
         private Boolean isAutoScalingEnabled;
 
         /**
          * Determines the auto-scaling mode for the catalog database.
-         *
          * @param isAutoScalingEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             this.isAutoScalingEnabled = isAutoScalingEnabled;
             this.__explicitlySet__.add("isAutoScalingEnabled");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloud Autonomous Exadata VM Cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
         private String cloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * cloud Autonomous Exadata VM Cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
          * @param cloudAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder cloudAutonomousVmClusterId(String cloudAutonomousVmClusterId) {
             this.cloudAutonomousVmClusterId = cloudAutonomousVmClusterId;
             this.__explicitlySet__.add("cloudAutonomousVmClusterId");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer cloud Autonomous Exadata VM Cluster.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
         private String peerCloudAutonomousVmClusterId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * peer cloud Autonomous Exadata VM Cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
          * @param peerCloudAutonomousVmClusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder peerCloudAutonomousVmClusterId(String peerCloudAutonomousVmClusterId) {
             this.peerCloudAutonomousVmClusterId = peerCloudAutonomousVmClusterId;
             this.__explicitlySet__.add("peerCloudAutonomousVmClusterId");
@@ -207,7 +204,9 @@ public final class CreateDedicatedCatalogDetail
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -223,88 +222,86 @@ public final class CreateDedicatedCatalogDetail
         return encryptionKeyDetails;
     }
 
-    /** Admin password for the catalog database. */
+    /**
+     * Admin password for the catalog database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("adminPassword")
     private final String adminPassword;
 
     /**
      * Admin password for the catalog database.
-     *
      * @return the value
-     */
+     **/
     public String getAdminPassword() {
         return adminPassword;
     }
 
-    /** The compute count for the catalog database. It has to be in multiple of 2. */
+    /**
+     * The compute count for the catalog database. It has to be in multiple of 2.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
 
     /**
      * The compute count for the catalog database. It has to be in multiple of 2.
-     *
      * @return the value
-     */
+     **/
     public Float getComputeCount() {
         return computeCount;
     }
 
-    /** The data disk group size to be allocated in GBs for the catalog database. */
+    /**
+     * The data disk group size to be allocated in GBs for the catalog database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGbs")
     private final Double dataStorageSizeInGbs;
 
     /**
      * The data disk group size to be allocated in GBs for the catalog database.
-     *
      * @return the value
-     */
+     **/
     public Double getDataStorageSizeInGbs() {
         return dataStorageSizeInGbs;
     }
 
-    /** Determines the auto-scaling mode for the catalog database. */
+    /**
+     * Determines the auto-scaling mode for the catalog database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoScalingEnabled")
     private final Boolean isAutoScalingEnabled;
 
     /**
      * Determines the auto-scaling mode for the catalog database.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsAutoScalingEnabled() {
         return isAutoScalingEnabled;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloud Autonomous Exadata VM Cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("cloudAutonomousVmClusterId")
     private final String cloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * cloud Autonomous Exadata VM Cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
      * @return the value
-     */
+     **/
     public String getCloudAutonomousVmClusterId() {
         return cloudAutonomousVmClusterId;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous Exadata VM Cluster.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("peerCloudAutonomousVmClusterId")
     private final String peerCloudAutonomousVmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer
-     * cloud Autonomous Exadata VM Cluster.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
      * @return the value
-     */
+     **/
     public String getPeerCloudAutonomousVmClusterId() {
         return peerCloudAutonomousVmClusterId;
     }
@@ -316,7 +313,6 @@ public final class CreateDedicatedCatalogDetail
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

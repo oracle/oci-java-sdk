@@ -9,8 +9,8 @@ import com.oracle.bmc.auth.ProvidesCustomRequestSigner;
 import com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider;
 import com.oracle.bmc.http.signing.RequestSigner;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.io.InputStream;
 import java.net.URI;
 import java.util.Collections;
@@ -19,17 +19,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Resource Principals V2 using public/private key to sign the request. This class provides the
- * authentication based on public/private key.
+ * Resource Principals V2 using public/private key to sign the request. This class provides the authentication based on
+ * public/private key.
  */
 public class OkeTenancyOnlyAuthenticationDetailsProvider
         implements BasicAuthenticationDetailsProvider,
-                RefreshableOnNotAuthenticatedProvider<String>,
-                ProvidesCustomRequestSigner {
+                RefreshableOnNotAuthenticatedProvider<String>, ProvidesCustomRequestSigner {
 
     /**
-     * Returns the keyId used to sign requests. For this provider, this is a no-op and nothing is
-     * done.
+     * Returns the keyId used to sign requests. For this provider, this is a no-op and nothing is done.
      *
      * @return always return null
      */
@@ -39,9 +37,9 @@ public class OkeTenancyOnlyAuthenticationDetailsProvider
     }
 
     /**
-     * Returns a new InputStream to the private key. This stream should be closed by the caller,
-     * implementations should return new streams each time. For this provider, this is a no-op and
-     * nothing is done.
+     * Returns a new InputStream to the private key. This stream should be
+     * closed by the caller, implementations should return new streams each
+     * time. For this provider, this is a no-op and nothing is done.
      *
      * @return always return null
      */
@@ -51,8 +49,7 @@ public class OkeTenancyOnlyAuthenticationDetailsProvider
     }
 
     /**
-     * Returns the optional pass phrase for the (encrypted) private key. For this provider, this is
-     * a no-op and nothing is done.
+     * Returns the optional pass phrase for the (encrypted) private key. For this provider, this is a no-op and nothing is done.
      *
      * @return The always return null
      * @deprecated Use getPassphraseCharacters instead
@@ -63,8 +60,7 @@ public class OkeTenancyOnlyAuthenticationDetailsProvider
     }
 
     /**
-     * Returns the optional pass phrase for the (encrypted) private key, as a character array. For
-     * this provider, this is a no-op and nothing is done.
+     * Returns the optional pass phrase for the (encrypted) private key, as a character array. For this provider, this is a no-op and nothing is done.
      *
      * @return always return null
      */
@@ -74,8 +70,7 @@ public class OkeTenancyOnlyAuthenticationDetailsProvider
     }
 
     /**
-     * Refreshes the authentication data used by the provider. For this provider, this is a no-op
-     * and nothing is done.
+     * Refreshes the authentication data used by the provider. For this provider, this is a no-op and nothing is done.
      *
      * @return always null
      */
@@ -89,7 +84,7 @@ public class OkeTenancyOnlyAuthenticationDetailsProvider
         return NoOpRequestSigner.INSTANCE;
     }
 
-    public enum NoOpRequestSigner implements RequestSigner {
+    private static enum NoOpRequestSigner implements RequestSigner {
         INSTANCE;
 
         @Override

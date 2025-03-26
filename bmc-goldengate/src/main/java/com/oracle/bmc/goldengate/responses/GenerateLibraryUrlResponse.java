@@ -6,11 +6,12 @@ package com.oracle.bmc.goldengate.responses;
 
 import com.oracle.bmc.goldengate.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please include the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,7 +25,10 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
         return etag;
     }
 
-    /** The returned {@code LibraryUrl} instance. */
+    /**
+     * The returned LibraryUrl instance.
+     */
     private com.oracle.bmc.goldengate.model.LibraryUrl libraryUrl;
 
     /**
-     * The returned {@code LibraryUrl} instance.
-     *
+     * The returned LibraryUrl instance.
      * @return the value
      */
     public com.oracle.bmc.goldengate.model.LibraryUrl getLibraryUrl() {
@@ -57,7 +62,7 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GenerateLibraryUrlResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.goldengate.model.LibraryUrl libraryUrl) {
@@ -67,33 +72,31 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
         this.libraryUrl = libraryUrl;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GenerateLibraryUrlResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about
-         * a particular request, please include the request ID.
+         * A unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
+         * particular request, please include the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -103,7 +106,10 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -117,12 +123,13 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code LibraryUrl} instance. */
+        /**
+         * The returned LibraryUrl instance.
+         */
         private com.oracle.bmc.goldengate.model.LibraryUrl libraryUrl;
 
         /**
-         * The returned {@code LibraryUrl} instance.
-         *
+         * The returned LibraryUrl instance.
          * @param libraryUrl the value to set
          * @return this builder
          */
@@ -133,10 +140,8 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GenerateLibraryUrlResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -149,10 +154,8 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GenerateLibraryUrlResponse build() {
             return new GenerateLibraryUrlResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, libraryUrl);
@@ -161,7 +164,6 @@ public class GenerateLibraryUrlResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

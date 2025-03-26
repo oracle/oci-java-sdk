@@ -6,30 +6,28 @@ package com.oracle.bmc.devops.responses;
 
 import com.oracle.bmc.devops.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210630")
 public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, provide the request ID.
-     *
+     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
      * @return the value
      */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
-    /** Content type refers to content of a file which is transferred via HTTP */
+    /**
+     * Content type refers to content of a file which is transferred via HTTP
+     */
     private String contentType;
 
     /**
      * Content type refers to content of a file which is transferred via HTTP
-     *
      * @return the value
      */
     public String getContentType() {
@@ -37,29 +35,25 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
     }
 
     /**
-     * The Content-Disposition response-header field has been proposed as a means for the origin
-     * server to suggest a default filename if the user requests that the content is saved to a
-     * file.
+     * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
      */
     private String contentDisposition;
 
     /**
-     * The Content-Disposition response-header field has been proposed as a means for the origin
-     * server to suggest a default filename if the user requests that the content is saved to a
-     * file.
-     *
+     * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
      * @return the value
      */
     public String getContentDisposition() {
         return contentDisposition;
     }
 
-    /** The returned {@code java.io.InputStream} instance. */
+    /**
+     * The returned java.io.InputStream instance.
+     */
     private java.io.InputStream inputStream;
 
     /**
-     * The returned {@code java.io.InputStream} instance.
-     *
+     * The returned java.io.InputStream instance.
      * @return the value
      */
     public java.io.InputStream getInputStream() {
@@ -76,7 +70,7 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
     })
     private GetRepositoryArchiveContentResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String contentType,
             String contentDisposition,
@@ -88,35 +82,28 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
         this.inputStream = inputStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    GetRepositoryArchiveContentResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, provide the request ID.
-         *
+         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a particular request, provide the request ID.
          * @param opcRequestId the value to set
          * @return this builder
          */
@@ -125,12 +112,13 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** Content type refers to content of a file which is transferred via HTTP */
+        /**
+         * Content type refers to content of a file which is transferred via HTTP
+         */
         private String contentType;
 
         /**
          * Content type refers to content of a file which is transferred via HTTP
-         *
          * @param contentType the value to set
          * @return this builder
          */
@@ -140,17 +128,12 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
         }
 
         /**
-         * The Content-Disposition response-header field has been proposed as a means for the origin
-         * server to suggest a default filename if the user requests that the content is saved to a
-         * file.
+         * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
          */
         private String contentDisposition;
 
         /**
-         * The Content-Disposition response-header field has been proposed as a means for the origin
-         * server to suggest a default filename if the user requests that the content is saved to a
-         * file.
-         *
+         * The Content-Disposition response-header field has been proposed as a means for the origin server to suggest a default filename if the user requests that the content is saved to a file.
          * @param contentDisposition the value to set
          * @return this builder
          */
@@ -159,12 +142,13 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
             return this;
         }
 
-        /** The returned {@code java.io.InputStream} instance. */
+        /**
+         * The returned java.io.InputStream instance.
+         */
         private java.io.InputStream inputStream;
 
         /**
-         * The returned {@code java.io.InputStream} instance.
-         *
+         * The returned java.io.InputStream instance.
          * @param inputStream the value to set
          * @return this builder
          */
@@ -175,10 +159,8 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetRepositoryArchiveContentResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -192,10 +174,8 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetRepositoryArchiveContentResponse build() {
             return new GetRepositoryArchiveContentResponse(
                     __httpStatusCode__,
@@ -209,7 +189,6 @@ public class GetRepositoryArchiveContentResponse extends com.oracle.bmc.response
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

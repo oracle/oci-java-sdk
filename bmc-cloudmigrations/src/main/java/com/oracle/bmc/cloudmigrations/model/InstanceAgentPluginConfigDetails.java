@@ -5,23 +5,22 @@
 package com.oracle.bmc.cloudmigrations.model;
 
 /**
- * The configuration of plugins associated with this instance. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
+ * The configuration of plugins associated with this instance.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220919")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = InstanceAgentPluginConfigDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = InstanceAgentPluginConfigDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class InstanceAgentPluginConfigDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"name", "desiredState"})
     public InstanceAgentPluginConfigDetails(String name, DesiredState desiredState) {
@@ -33,25 +32,24 @@ public final class InstanceAgentPluginConfigDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The plugin name. To get a list of available plugins, use the {@link
-         * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
-         * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
-         * information about the available plugins, see [Managing Plugins with Oracle Cloud
-         * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-         */
+         * The plugin name. To get a list of available plugins, use the
+         * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+         * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+         * [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The plugin name. To get a list of available plugins, use the {@link
-         * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
-         * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
-         * information about the available plugins, see [Managing Plugins with Oracle Cloud
-         * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         * The plugin name. To get a list of available plugins, use the
+         * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+         * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+         * [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
          *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
@@ -59,22 +57,23 @@ public final class InstanceAgentPluginConfigDetails
         }
         /**
          * Whether the plugin should be enabled or disabled.
-         *
-         * <p>To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+         * <p>
+         * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
          * {@code isManagementDisabled} attributes must also be set to false.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
         private DesiredState desiredState;
 
         /**
          * Whether the plugin should be enabled or disabled.
-         *
-         * <p>To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+         * <p>
+         * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
          * {@code isManagementDisabled} attributes must also be set to false.
          *
          * @param desiredState the value to set
          * @return this builder
-         */
+         **/
         public Builder desiredState(DesiredState desiredState) {
             this.desiredState = desiredState;
             this.__explicitlySet__.add("desiredState");
@@ -105,7 +104,9 @@ public final class InstanceAgentPluginConfigDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -115,41 +116,41 @@ public final class InstanceAgentPluginConfigDetails
     }
 
     /**
-     * The plugin name. To get a list of available plugins, use the {@link
-     * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
-     * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
-     * information about the available plugins, see [Managing Plugins with Oracle Cloud
-     * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
-     */
+     * The plugin name. To get a list of available plugins, use the
+     * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+     * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+     * [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The plugin name. To get a list of available plugins, use the {@link
-     * #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest)
-     * listInstanceagentAvailablePlugins} operation in the Oracle Cloud Agent API. For more
-     * information about the available plugins, see [Managing Plugins with Oracle Cloud
-     * Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * The plugin name. To get a list of available plugins, use the
+     * {@link #listInstanceagentAvailablePlugins(ListInstanceagentAvailablePluginsRequest) listInstanceagentAvailablePlugins}
+     * operation in the Oracle Cloud Agent API. For more information about the available plugins, see
+     * [Managing Plugins with Oracle Cloud Agent](https://docs.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
      *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
     /**
      * Whether the plugin should be enabled or disabled.
-     *
-     * <p>To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * <p>
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
      * {@code isManagementDisabled} attributes must also be set to false.
-     */
-    public enum DesiredState implements com.oracle.bmc.http.internal.BmcEnum {
+     *
+     **/
+    public enum DesiredState {
         Enabled("ENABLED"),
         Disabled("DISABLED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -190,21 +191,22 @@ public final class InstanceAgentPluginConfigDetails
     };
     /**
      * Whether the plugin should be enabled or disabled.
-     *
-     * <p>To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * <p>
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
      * {@code isManagementDisabled} attributes must also be set to false.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
     private final DesiredState desiredState;
 
     /**
      * Whether the plugin should be enabled or disabled.
-     *
-     * <p>To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
+     * <p>
+     * To enable the monitoring and management plugins, the {@code isMonitoringDisabled} and
      * {@code isManagementDisabled} attributes must also be set to false.
      *
      * @return the value
-     */
+     **/
     public DesiredState getDesiredState() {
         return desiredState;
     }
@@ -216,7 +218,6 @@ public final class InstanceAgentPluginConfigDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

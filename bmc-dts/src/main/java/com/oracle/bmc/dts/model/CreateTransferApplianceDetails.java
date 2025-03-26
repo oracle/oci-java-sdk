@@ -5,23 +5,22 @@
 package com.oracle.bmc.dts.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 1.0.017")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateTransferApplianceDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateTransferApplianceDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateTransferApplianceDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "customerShippingAddress",
@@ -47,16 +46,15 @@ public final class CreateTransferApplianceDetails
         }
         /**
          * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
         private Integer minimumStorageCapacityInTerabytes;
 
         /**
          * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
-         *
          * @param minimumStorageCapacityInTerabytes the value to set
          * @return this builder
-         */
+         **/
         public Builder minimumStorageCapacityInTerabytes(
                 Integer minimumStorageCapacityInTerabytes) {
             this.minimumStorageCapacityInTerabytes = minimumStorageCapacityInTerabytes;
@@ -90,7 +88,9 @@ public final class CreateTransferApplianceDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -106,15 +106,16 @@ public final class CreateTransferApplianceDetails
         return customerShippingAddress;
     }
 
-    /** Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150. */
+    /**
+     * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumStorageCapacityInTerabytes")
     private final Integer minimumStorageCapacityInTerabytes;
 
     /**
      * Minimum storage capacity of the device, in terabytes. Valid options are 50, 95 and 150.
-     *
      * @return the value
-     */
+     **/
     public Integer getMinimumStorageCapacityInTerabytes() {
         return minimumStorageCapacityInTerabytes;
     }
@@ -126,7 +127,6 @@ public final class CreateTransferApplianceDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

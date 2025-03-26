@@ -5,21 +5,20 @@
 package com.oracle.bmc.dataflow.model;
 
 /**
- * A statement object. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
+ * A statement object.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Statement.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Statement extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Statement extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -53,7 +52,10 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The statement ID. */
+        /**
+         * The statement ID.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private Long id;
 
@@ -62,28 +64,36 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(Long id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The statement code to execute. Example: {@code println(sc.version)} */
+        /**
+         * The statement code to execute.
+         * Example: {@code println(sc.version)}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("code")
         private String code;
 
         /**
-         * The statement code to execute. Example: {@code println(sc.version)}
+         * The statement code to execute.
+         * Example: {@code println(sc.version)}
          *
          * @param code the value to set
          * @return this builder
-         */
+         **/
         public Builder code(String code) {
             this.code = code;
             this.__explicitlySet__.add("code");
             return this;
         }
-        /** The current state of this statement. */
+        /**
+         * The current state of this statement.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private StatementLifecycleState lifecycleState;
 
@@ -92,7 +102,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(StatementLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -107,7 +117,10 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("output");
             return this;
         }
-        /** The execution progress. */
+        /**
+         * The execution progress.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("progress")
         private Double progress;
 
@@ -116,13 +129,16 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param progress the value to set
          * @return this builder
-         */
+         **/
         public Builder progress(Double progress) {
             this.progress = progress;
             this.__explicitlySet__.add("progress");
             return this;
         }
-        /** The ID of a run. */
+        /**
+         * The ID of a run.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("runId")
         private String runId;
 
@@ -131,49 +147,47 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param runId the value to set
          * @return this builder
-         */
+         **/
         public Builder runId(String runId) {
             this.runId = runId;
             this.__explicitlySet__.add("runId");
             return this;
         }
         /**
-         * The date and time the resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
-         */
+         * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the resource was created, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2018-04-03T21:10:29.600Z}
+         * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2018-04-03T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The date and time a statement execution was completed, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2022-05-31T21:10:29.600Z}
-         */
+         * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2022-05-31T21:10:29.600Z}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
-         * The date and time a statement execution was completed, expressed in [RFC
-         * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-         * 2022-05-31T21:10:29.600Z}
+         * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+         * Example: {@code 2022-05-31T21:10:29.600Z}
          *
          * @param timeCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
@@ -230,7 +244,9 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -239,7 +255,10 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The statement ID. */
+    /**
+     * The statement ID.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final Long id;
 
@@ -247,25 +266,33 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
      * The statement ID.
      *
      * @return the value
-     */
+     **/
     public Long getId() {
         return id;
     }
 
-    /** The statement code to execute. Example: {@code println(sc.version)} */
+    /**
+     * The statement code to execute.
+     * Example: {@code println(sc.version)}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("code")
     private final String code;
 
     /**
-     * The statement code to execute. Example: {@code println(sc.version)}
+     * The statement code to execute.
+     * Example: {@code println(sc.version)}
      *
      * @return the value
-     */
+     **/
     public String getCode() {
         return code;
     }
 
-    /** The current state of this statement. */
+    /**
+     * The current state of this statement.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final StatementLifecycleState lifecycleState;
 
@@ -273,7 +300,7 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
      * The current state of this statement.
      *
      * @return the value
-     */
+     **/
     public StatementLifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -285,7 +312,10 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
         return output;
     }
 
-    /** The execution progress. */
+    /**
+     * The execution progress.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("progress")
     private final Double progress;
 
@@ -293,12 +323,15 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
      * The execution progress.
      *
      * @return the value
-     */
+     **/
     public Double getProgress() {
         return progress;
     }
 
-    /** The ID of a run. */
+    /**
+     * The ID of a run.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("runId")
     private final String runId;
 
@@ -306,45 +339,43 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
      * The ID of a run.
      *
      * @return the value
-     */
+     **/
     public String getRunId() {
         return runId;
     }
 
     /**
-     * The date and time the resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
-     */
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the resource was created, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2018-04-03T21:10:29.600Z}
+     * The date and time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2018-04-03T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The date and time a statement execution was completed, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2022-05-31T21:10:29.600Z}
-     */
+     * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2022-05-31T21:10:29.600Z}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
-     * The date and time a statement execution was completed, expressed in [RFC
-     * 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: {@code
-     * 2022-05-31T21:10:29.600Z}
+     * The date and time a statement execution was completed, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format.
+     * Example: {@code 2022-05-31T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
@@ -356,7 +387,6 @@ public final class Statement extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

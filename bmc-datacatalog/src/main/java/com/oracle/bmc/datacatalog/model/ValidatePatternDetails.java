@@ -5,23 +5,22 @@
 package com.oracle.bmc.datacatalog.model;
 
 /**
- * Validate pattern using the expression and file list. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
+ * Validate pattern using the expression and file list.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190325")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ValidatePatternDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ValidatePatternDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ValidatePatternDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "expression",
@@ -44,67 +43,68 @@ public final class ValidatePatternDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Input string which drives the selection process, allowing for fine-grained control using
-         * qualifiers. Refer to the user documentation for details of the format and examples. A
-         * pattern cannot include both a prefix and an expression.
-         */
+         * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("expression")
         private String expression;
 
         /**
-         * Input string which drives the selection process, allowing for fine-grained control using
-         * qualifiers. Refer to the user documentation for details of the format and examples. A
-         * pattern cannot include both a prefix and an expression.
+         * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
          *
          * @param expression the value to set
          * @return this builder
-         */
+         **/
         public Builder expression(String expression) {
             this.expression = expression;
             this.__explicitlySet__.add("expression");
             return this;
         }
         /**
-         * Input string which drives the selection process. Refer to the user documentation for
-         * details of the format and examples. A pattern cannot include both a prefix and an
-         * expression.
-         */
+         * Input string which drives the selection process.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
         private String filePathPrefix;
 
         /**
-         * Input string which drives the selection process. Refer to the user documentation for
-         * details of the format and examples. A pattern cannot include both a prefix and an
-         * expression.
+         * Input string which drives the selection process.
+         * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+         * a prefix and an expression.
          *
          * @param filePathPrefix the value to set
          * @return this builder
-         */
+         **/
         public Builder filePathPrefix(String filePathPrefix) {
             this.filePathPrefix = filePathPrefix;
             this.__explicitlySet__.add("filePathPrefix");
             return this;
         }
         /**
-         * List of file paths against which the pattern can be tried, as a check. This documents,
-         * for reference purposes, some example objects a pattern is meant to work with.
+         * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+         * purposes, some example objects a pattern is meant to work with.
+         * <p>
+         * If provided with the request,this overrides the list which already exists as part of the pattern, if any.
          *
-         * <p>If provided with the request,this overrides the list which already exists as part of
-         * the pattern, if any.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
         private java.util.List<String> checkFilePathList;
 
         /**
-         * List of file paths against which the pattern can be tried, as a check. This documents,
-         * for reference purposes, some example objects a pattern is meant to work with.
-         *
-         * <p>If provided with the request,this overrides the list which already exists as part of
-         * the pattern, if any.
+         * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+         * purposes, some example objects a pattern is meant to work with.
+         * <p>
+         * If provided with the request,this overrides the list which already exists as part of the pattern, if any.
          *
          * @param checkFilePathList the value to set
          * @return this builder
-         */
+         **/
         public Builder checkFilePathList(java.util.List<String> checkFilePathList) {
             this.checkFilePathList = checkFilePathList;
             this.__explicitlySet__.add("checkFilePathList");
@@ -113,23 +113,22 @@ public final class ValidatePatternDetails
         /**
          * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails.
          * Optional, if checkFilePathList is provided.
+         * <p>
+         * If provided with the request, this overrides the value which already exists as part of the pattern, if any.
          *
-         * <p>If provided with the request, this overrides the value which already exists as part of
-         * the pattern, if any.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
         private Integer checkFailureLimit;
 
         /**
          * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails.
          * Optional, if checkFilePathList is provided.
-         *
-         * <p>If provided with the request, this overrides the value which already exists as part of
-         * the pattern, if any.
+         * <p>
+         * If provided with the request, this overrides the value which already exists as part of the pattern, if any.
          *
          * @param checkFailureLimit the value to set
          * @return this builder
-         */
+         **/
         public Builder checkFailureLimit(Integer checkFailureLimit) {
             this.checkFailureLimit = checkFailureLimit;
             this.__explicitlySet__.add("checkFailureLimit");
@@ -170,7 +169,9 @@ public final class ValidatePatternDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -180,60 +181,63 @@ public final class ValidatePatternDetails
     }
 
     /**
-     * Input string which drives the selection process, allowing for fine-grained control using
-     * qualifiers. Refer to the user documentation for details of the format and examples. A pattern
-     * cannot include both a prefix and an expression.
-     */
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("expression")
     private final String expression;
 
     /**
-     * Input string which drives the selection process, allowing for fine-grained control using
-     * qualifiers. Refer to the user documentation for details of the format and examples. A pattern
-     * cannot include both a prefix and an expression.
+     * Input string which drives the selection process, allowing for fine-grained control using qualifiers.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
      *
      * @return the value
-     */
+     **/
     public String getExpression() {
         return expression;
     }
 
     /**
-     * Input string which drives the selection process. Refer to the user documentation for details
-     * of the format and examples. A pattern cannot include both a prefix and an expression.
-     */
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filePathPrefix")
     private final String filePathPrefix;
 
     /**
-     * Input string which drives the selection process. Refer to the user documentation for details
-     * of the format and examples. A pattern cannot include both a prefix and an expression.
+     * Input string which drives the selection process.
+     * Refer to the user documentation for details of the format and examples. A pattern cannot include both
+     * a prefix and an expression.
      *
      * @return the value
-     */
+     **/
     public String getFilePathPrefix() {
         return filePathPrefix;
     }
 
     /**
-     * List of file paths against which the pattern can be tried, as a check. This documents, for
-     * reference purposes, some example objects a pattern is meant to work with.
+     * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+     * purposes, some example objects a pattern is meant to work with.
+     * <p>
+     * If provided with the request,this overrides the list which already exists as part of the pattern, if any.
      *
-     * <p>If provided with the request,this overrides the list which already exists as part of the
-     * pattern, if any.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFilePathList")
     private final java.util.List<String> checkFilePathList;
 
     /**
-     * List of file paths against which the pattern can be tried, as a check. This documents, for
-     * reference purposes, some example objects a pattern is meant to work with.
-     *
-     * <p>If provided with the request,this overrides the list which already exists as part of the
-     * pattern, if any.
+     * List of file paths against which the pattern can be tried, as a check. This documents, for reference
+     * purposes, some example objects a pattern is meant to work with.
+     * <p>
+     * If provided with the request,this overrides the list which already exists as part of the pattern, if any.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getCheckFilePathList() {
         return checkFilePathList;
     }
@@ -241,22 +245,21 @@ public final class ValidatePatternDetails
     /**
      * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails.
      * Optional, if checkFilePathList is provided.
+     * <p>
+     * If provided with the request, this overrides the value which already exists as part of the pattern, if any.
      *
-     * <p>If provided with the request, this overrides the value which already exists as part of the
-     * pattern, if any.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("checkFailureLimit")
     private final Integer checkFailureLimit;
 
     /**
      * The maximum number of UNMATCHED files, in checkFilePathList, above which the check fails.
      * Optional, if checkFilePathList is provided.
-     *
-     * <p>If provided with the request, this overrides the value which already exists as part of the
-     * pattern, if any.
+     * <p>
+     * If provided with the request, this overrides the value which already exists as part of the pattern, if any.
      *
      * @return the value
-     */
+     **/
     public Integer getCheckFailureLimit() {
         return checkFailureLimit;
     }
@@ -268,7 +271,6 @@ public final class ValidatePatternDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

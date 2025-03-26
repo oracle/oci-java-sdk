@@ -6,71 +6,88 @@ package com.oracle.bmc.goldengate.requests;
 
 import com.oracle.bmc.goldengate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RescheduleDeploymentUpgradeExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use
- * RescheduleDeploymentUpgradeRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/RescheduleDeploymentUpgradeExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use RescheduleDeploymentUpgradeRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
 public class RescheduleDeploymentUpgradeRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.goldengate.model.RescheduleDeploymentUpgradeDetails> {
 
-    /** A unique Deployment Upgrade identifier. */
+    /**
+     * A unique Deployment Upgrade identifier.
+     *
+     */
     private String deploymentUpgradeId;
 
-    /** A unique Deployment Upgrade identifier. */
+    /**
+     * A unique Deployment Upgrade identifier.
+     *
+     */
     public String getDeploymentUpgradeId() {
         return deploymentUpgradeId;
     }
-    /** Properties to reschedule DeploymentUpgrade. */
+    /**
+     * Properties to reschedule DeploymentUpgrade.
+     *
+     */
     private com.oracle.bmc.goldengate.model.RescheduleDeploymentUpgradeDetails
             rescheduleDeploymentUpgradeDetails;
 
-    /** Properties to reschedule DeploymentUpgrade. */
+    /**
+     * Properties to reschedule DeploymentUpgrade.
+     *
+     */
     public com.oracle.bmc.goldengate.model.RescheduleDeploymentUpgradeDetails
             getRescheduleDeploymentUpgradeDetails() {
         return rescheduleDeploymentUpgradeDetails;
     }
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     private String ifMatch;
 
     /**
-     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
-     * if-match} parameter to the value of the etag from a previous GET or POST response for that
-     * resource. The resource is updated or deleted only if the etag you provide matches the
+     * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
+     * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+     * resource.  The resource is updated or deleted only if the etag you provide matches the
      * resource's current etag value.
+     *
      */
     public String getIfMatch() {
         return ifMatch;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
-     * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-     * server error, without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours but can be invalidated before then due to conflicting operations. For example, if a
-     * resource was deleted and purged from the system, then a retry of the original creation
-     * request is rejected.
+     * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+     * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+     * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+     * from the system, then a retry of the original creation request is rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
@@ -78,7 +95,6 @@ public class RescheduleDeploymentUpgradeRequest
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -91,10 +107,14 @@ public class RescheduleDeploymentUpgradeRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     RescheduleDeploymentUpgradeRequest,
                     com.oracle.bmc.goldengate.model.RescheduleDeploymentUpgradeDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** A unique Deployment Upgrade identifier. */
+        /**
+         * A unique Deployment Upgrade identifier.
+         *
+         */
         private String deploymentUpgradeId = null;
 
         /**
@@ -108,7 +128,10 @@ public class RescheduleDeploymentUpgradeRequest
             return this;
         }
 
-        /** Properties to reschedule DeploymentUpgrade. */
+        /**
+         * Properties to reschedule DeploymentUpgrade.
+         *
+         */
         private com.oracle.bmc.goldengate.model.RescheduleDeploymentUpgradeDetails
                 rescheduleDeploymentUpgradeDetails = null;
 
@@ -127,17 +150,18 @@ public class RescheduleDeploymentUpgradeRequest
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
+         *
          */
         private String ifMatch = null;
 
         /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the
-         * {@code if-match} parameter to the value of the etag from a previous GET or POST response
-         * for that resource. The resource is updated or deleted only if the etag you provide
-         * matches the resource's current etag value.
+         * {@code if-match} parameter to the value of the etag from a previous GET or POST response for that
+         * resource.  The resource is updated or deleted only if the etag you provide matches the
+         * resource's current etag value.
          *
          * @param ifMatch the value to set
          * @return this builder instance
@@ -147,7 +171,10 @@ public class RescheduleDeploymentUpgradeRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -162,20 +189,19 @@ public class RescheduleDeploymentUpgradeRequest
         }
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
-         * A token that uniquely identifies a request so it can be retried, in case of a timeout or
-         * server error, without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours but can be invalidated before then due to conflicting operations. For
-         * example, if a resource was deleted and purged from the system, then a retry of the
-         * original creation request is rejected.
+         * A token that uniquely identifies a request so it can be retried, in case of a timeout or server error,
+         * without the risk of executing that same action again. Retry tokens expire after 24 hours but can be
+         * invalidated before then due to conflicting operations. For example, if a resource was deleted and purged
+         * from the system, then a retry of the original creation request is rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -187,19 +213,18 @@ public class RescheduleDeploymentUpgradeRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -211,7 +236,6 @@ public class RescheduleDeploymentUpgradeRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(RescheduleDeploymentUpgradeRequest o) {
@@ -228,11 +252,10 @@ public class RescheduleDeploymentUpgradeRequest
         /**
          * Build the instance of RescheduleDeploymentUpgradeRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of RescheduleDeploymentUpgradeRequest
          */
@@ -245,7 +268,6 @@ public class RescheduleDeploymentUpgradeRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -259,8 +281,7 @@ public class RescheduleDeploymentUpgradeRequest
         /**
          * Build the instance of RescheduleDeploymentUpgradeRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of RescheduleDeploymentUpgradeRequest
@@ -273,14 +294,12 @@ public class RescheduleDeploymentUpgradeRequest
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
             return request;
-            // new RescheduleDeploymentUpgradeRequest(deploymentUpgradeId,
-            // rescheduleDeploymentUpgradeDetails, ifMatch, opcRequestId, opcRetryToken);
+            // new RescheduleDeploymentUpgradeRequest(deploymentUpgradeId, rescheduleDeploymentUpgradeDetails, ifMatch, opcRequestId, opcRetryToken);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -294,7 +313,6 @@ public class RescheduleDeploymentUpgradeRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

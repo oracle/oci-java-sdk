@@ -5,80 +5,93 @@
 package com.oracle.bmc.sch.model;
 
 /**
- * The destination function for data transferred from the source. For configuration instructions,
- * see [Creating a
- * Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
+ * The destination function for data transferred from the source.
+ * For configuration instructions, see
+ * [Creating a Connector](https://docs.oracle.com/iaas/Content/connector-hub/create-service-connector.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200909")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = FunctionsTargetDetails.Builder.class)
+    builder = FunctionsTargetDetails.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "kind")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "kind"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class FunctionsTargetDetails extends TargetDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * function.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("functionId")
         private String functionId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * function.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
          *
          * @param functionId the value to set
          * @return this builder
-         */
+         **/
         public Builder functionId(String functionId) {
             this.functionId = functionId;
             this.__explicitlySet__.add("functionId");
             return this;
         }
-        /** The batch rollover size in kilobytes. */
+        /**
+         * The batch rollover size in kilobytes.
+         * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
         private Integer batchSizeInKbs;
 
         /**
          * The batch rollover size in kilobytes.
+         * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
          *
          * @param batchSizeInKbs the value to set
          * @return this builder
-         */
+         **/
         public Builder batchSizeInKbs(Integer batchSizeInKbs) {
             this.batchSizeInKbs = batchSizeInKbs;
             this.__explicitlySet__.add("batchSizeInKbs");
             return this;
         }
-        /** The batch rollover size in number of messages. */
+        /**
+         * The batch rollover size in number of messages.
+         * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInNum")
         private Integer batchSizeInNum;
 
         /**
          * The batch rollover size in number of messages.
+         * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
          *
          * @param batchSizeInNum the value to set
          * @return this builder
-         */
+         **/
         public Builder batchSizeInNum(Integer batchSizeInNum) {
             this.batchSizeInNum = batchSizeInNum;
             this.__explicitlySet__.add("batchSizeInNum");
             return this;
         }
-        /** The batch rollover time in seconds. */
+        /**
+         * The batch rollover time in seconds.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
         private Integer batchTimeInSec;
 
@@ -87,7 +100,7 @@ public final class FunctionsTargetDetails extends TargetDetails {
          *
          * @param batchTimeInSec the value to set
          * @return this builder
-         */
+         **/
         public Builder batchTimeInSec(Integer batchTimeInSec) {
             this.batchTimeInSec = batchTimeInSec;
             this.__explicitlySet__.add("batchTimeInSec");
@@ -128,7 +141,9 @@ public final class FunctionsTargetDetails extends TargetDetails {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -151,49 +166,61 @@ public final class FunctionsTargetDetails extends TargetDetails {
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * function.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("functionId")
     private final String functionId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * function.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      *
      * @return the value
-     */
+     **/
     public String getFunctionId() {
         return functionId;
     }
 
-    /** The batch rollover size in kilobytes. */
+    /**
+     * The batch rollover size in kilobytes.
+     * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInKbs")
     private final Integer batchSizeInKbs;
 
     /**
      * The batch rollover size in kilobytes.
+     * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
      *
      * @return the value
-     */
+     **/
     public Integer getBatchSizeInKbs() {
         return batchSizeInKbs;
     }
 
-    /** The batch rollover size in number of messages. */
+    /**
+     * The batch rollover size in number of messages.
+     * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchSizeInNum")
     private final Integer batchSizeInNum;
 
     /**
      * The batch rollover size in number of messages.
+     * Only one size option can be specified: {@code batchSizeInKbs} or {@code batchSizeInNum}.
      *
      * @return the value
-     */
+     **/
     public Integer getBatchSizeInNum() {
         return batchSizeInNum;
     }
 
-    /** The batch rollover time in seconds. */
+    /**
+     * The batch rollover time in seconds.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("batchTimeInSec")
     private final Integer batchTimeInSec;
 
@@ -201,7 +228,7 @@ public final class FunctionsTargetDetails extends TargetDetails {
      * The batch rollover time in seconds.
      *
      * @return the value
-     */
+     **/
     public Integer getBatchTimeInSec() {
         return batchTimeInSec;
     }
@@ -213,7 +240,6 @@ public final class FunctionsTargetDetails extends TargetDetails {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

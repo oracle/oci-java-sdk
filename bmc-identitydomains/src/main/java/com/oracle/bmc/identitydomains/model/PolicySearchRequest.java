@@ -5,28 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Clients MAY execute queries without passing parameters on the URL by using the HTTP POST verb
- * combined with the **.search** path extension. The inclusion of **.search** on the end of a valid
- * SCIM endpoint SHALL be used to indicate the HTTP POST verb is intended to be a query operation.
- * To create a new query result set, a SCIM client sends an HTTP POST request to the desired SCIM
- * resource endpoint (ending in **.search**). The body of the POST request MAY include any of the
- * parameters. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Clients MAY execute queries without passing parameters on the URL by using the HTTP POST verb combined with the **.search** path extension. The inclusion of **.search** on the end of a valid SCIM endpoint SHALL be used to indicate the HTTP POST verb is intended to be a query operation. To create a new query result set, a SCIM client sends an HTTP POST request to the desired SCIM resource endpoint (ending in **.search**). The body of the POST request MAY include any of the parameters.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PolicySearchRequest.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PolicySearchRequest
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = PolicySearchRequest.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PolicySearchRequest extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "schemas",
@@ -61,184 +54,128 @@ public final class PolicySearchRequest
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The schemas attribute is an array of Strings which allows introspection of the supported
-         * schema version for a SCIM representation as well any schema extensions supported by that
-         * representation. Each String value must be a unique URI. Query requests MUST be identified
-         * using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
-         */
+         * The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. Query requests MUST be identified using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("schemas")
         private java.util.List<String> schemas;
 
         /**
-         * The schemas attribute is an array of Strings which allows introspection of the supported
-         * schema version for a SCIM representation as well any schema extensions supported by that
-         * representation. Each String value must be a unique URI. Query requests MUST be identified
-         * using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
-         *
+         * The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. Query requests MUST be identified using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
          * @param schemas the value to set
          * @return this builder
-         */
+         **/
         public Builder schemas(java.util.List<String> schemas) {
             this.schemas = schemas;
             this.__explicitlySet__.add("schemas");
             return this;
         }
         /**
-         * A multi-valued list of strings indicating the names of resource attributes to return in
-         * the response overriding the set of attributes that would be returned by default.
-         * Attribute names MUST be in standard attribute notation ([Section
-         * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-         * ([additional retrieval query
-         * parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
-         */
+         * A multi-valued list of strings indicating the names of resource attributes to return in the response overriding the set of attributes that would be returned by default. Attribute names MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See ([additional retrieval query parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributes")
         private java.util.List<String> attributes;
 
         /**
-         * A multi-valued list of strings indicating the names of resource attributes to return in
-         * the response overriding the set of attributes that would be returned by default.
-         * Attribute names MUST be in standard attribute notation ([Section
-         * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-         * ([additional retrieval query
-         * parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
-         *
+         * A multi-valued list of strings indicating the names of resource attributes to return in the response overriding the set of attributes that would be returned by default. Attribute names MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See ([additional retrieval query parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
          * @param attributes the value to set
          * @return this builder
-         */
+         **/
         public Builder attributes(java.util.List<String> attributes) {
             this.attributes = attributes;
             this.__explicitlySet__.add("attributes");
             return this;
         }
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * "attributes" query parameter is also available, union of the two is fetched. Valid values
-         * : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
-         */
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If "attributes" query parameter is also available, union of the two is fetched. Valid values : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("attributeSets")
         private java.util.List<AttributeSets> attributeSets;
 
         /**
-         * A multi-valued list of strings indicating the return type of attribute definition. The
-         * specified set of attributes can be fetched by the return type of the attribute. One or
-         * more values can be given together to fetch more than one group of attributes. If
-         * "attributes" query parameter is also available, union of the two is fetched. Valid values
-         * : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
-         *
+         * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If "attributes" query parameter is also available, union of the two is fetched. Valid values : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
          * @param attributeSets the value to set
          * @return this builder
-         */
+         **/
         public Builder attributeSets(java.util.List<AttributeSets> attributeSets) {
             this.attributeSets = attributeSets;
             this.__explicitlySet__.add("attributeSets");
             return this;
         }
         /**
-         * The filter string that is used to request a subset of resources. The filter string MUST
-         * be a valid filter expression. See [Section
-         * 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
-         */
+         * The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See [Section 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("filter")
         private String filter;
 
         /**
-         * The filter string that is used to request a subset of resources. The filter string MUST
-         * be a valid filter expression. See [Section
-         * 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
-         *
+         * The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See [Section 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
          * @param filter the value to set
          * @return this builder
-         */
+         **/
         public Builder filter(String filter) {
             this.filter = filter;
             this.__explicitlySet__.add("filter");
             return this;
         }
         /**
-         * A string that indicates the attribute whose value SHALL be used to order the returned
-         * responses. The sortBy attribute MUST be in standard attribute notation ([Section
-         * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-         * [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3).
-         * OPTIONAL.
-         */
+         * A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
         private String sortBy;
 
         /**
-         * A string that indicates the attribute whose value SHALL be used to order the returned
-         * responses. The sortBy attribute MUST be in standard attribute notation ([Section
-         * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-         * [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3).
-         * OPTIONAL.
-         *
+         * A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
          * @param sortBy the value to set
          * @return this builder
-         */
+         **/
         public Builder sortBy(String sortBy) {
             this.sortBy = sortBy;
             this.__explicitlySet__.add("sortBy");
             return this;
         }
         /**
-         * A string that indicates the order in which the sortBy parameter is applied. Allowed
-         * values are "ascending" and "descending". See ([Sorting
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
-         */
+         * A string that indicates the order in which the sortBy parameter is applied. Allowed values are "ascending" and "descending". See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
         private SortOrder sortOrder;
 
         /**
-         * A string that indicates the order in which the sortBy parameter is applied. Allowed
-         * values are "ascending" and "descending". See ([Sorting
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
-         *
+         * A string that indicates the order in which the sortBy parameter is applied. Allowed values are "ascending" and "descending". See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
          * @param sortOrder the value to set
          * @return this builder
-         */
+         **/
         public Builder sortOrder(SortOrder sortOrder) {
             this.sortOrder = sortOrder;
             this.__explicitlySet__.add("sortOrder");
             return this;
         }
         /**
-         * An integer that indicates the 1-based index of the first query result. See [Pagination
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
-         */
+         * An integer that indicates the 1-based index of the first query result. See [Pagination Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("startIndex")
         private Integer startIndex;
 
         /**
-         * An integer that indicates the 1-based index of the first query result. See [Pagination
-         * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
-         *
+         * An integer that indicates the 1-based index of the first query result. See [Pagination Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
          * @param startIndex the value to set
          * @return this builder
-         */
+         **/
         public Builder startIndex(Integer startIndex) {
             this.startIndex = startIndex;
             this.__explicitlySet__.add("startIndex");
             return this;
         }
         /**
-         * An integer that indicates the desired maximum number of query results per page. 1000 is
-         * the largest value that you can use. See the Pagination section of the System for
-         * Cross-Domain Identity Management Protocol specification for more information. ([Section
-         * 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
-         */
+         * An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. ([Section 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("count")
         private Integer count;
 
         /**
-         * An integer that indicates the desired maximum number of query results per page. 1000 is
-         * the largest value that you can use. See the Pagination section of the System for
-         * Cross-Domain Identity Management Protocol specification for more information. ([Section
-         * 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
-         *
+         * An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. ([Section 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
          * @param count the value to set
          * @return this builder
-         */
+         **/
         public Builder count(Integer count) {
             this.count = count;
             this.__explicitlySet__.add("count");
@@ -295,7 +232,9 @@ public final class PolicySearchRequest
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -305,167 +244,113 @@ public final class PolicySearchRequest
     }
 
     /**
-     * The schemas attribute is an array of Strings which allows introspection of the supported
-     * schema version for a SCIM representation as well any schema extensions supported by that
-     * representation. Each String value must be a unique URI. Query requests MUST be identified
-     * using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
-     */
+     * The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. Query requests MUST be identified using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("schemas")
     private final java.util.List<String> schemas;
 
     /**
-     * The schemas attribute is an array of Strings which allows introspection of the supported
-     * schema version for a SCIM representation as well any schema extensions supported by that
-     * representation. Each String value must be a unique URI. Query requests MUST be identified
-     * using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
-     *
+     * The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. Query requests MUST be identified using the following URI: "urn:ietf:params:scim:api:messages:2.0:SearchRequest" REQUIRED.
      * @return the value
-     */
+     **/
     public java.util.List<String> getSchemas() {
         return schemas;
     }
 
     /**
-     * A multi-valued list of strings indicating the names of resource attributes to return in the
-     * response overriding the set of attributes that would be returned by default. Attribute names
-     * MUST be in standard attribute notation ([Section
-     * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-     * ([additional retrieval query
-     * parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
-     */
+     * A multi-valued list of strings indicating the names of resource attributes to return in the response overriding the set of attributes that would be returned by default. Attribute names MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See ([additional retrieval query parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributes")
     private final java.util.List<String> attributes;
 
     /**
-     * A multi-valued list of strings indicating the names of resource attributes to return in the
-     * response overriding the set of attributes that would be returned by default. Attribute names
-     * MUST be in standard attribute notation ([Section
-     * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See
-     * ([additional retrieval query
-     * parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
-     *
+     * A multi-valued list of strings indicating the names of resource attributes to return in the response overriding the set of attributes that would be returned by default. Attribute names MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See ([additional retrieval query parameters](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.9)). OPTIONAL.
      * @return the value
-     */
+     **/
     public java.util.List<String> getAttributes() {
         return attributes;
     }
 
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If "attributes"
-     * query parameter is also available, union of the two is fetched. Valid values : all, always,
-     * never, request, default. Values are case-insensitive. OPTIONAL.
-     */
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If "attributes" query parameter is also available, union of the two is fetched. Valid values : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("attributeSets")
     private final java.util.List<AttributeSets> attributeSets;
 
     /**
-     * A multi-valued list of strings indicating the return type of attribute definition. The
-     * specified set of attributes can be fetched by the return type of the attribute. One or more
-     * values can be given together to fetch more than one group of attributes. If "attributes"
-     * query parameter is also available, union of the two is fetched. Valid values : all, always,
-     * never, request, default. Values are case-insensitive. OPTIONAL.
-     *
+     * A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If "attributes" query parameter is also available, union of the two is fetched. Valid values : all, always, never, request, default. Values are case-insensitive. OPTIONAL.
      * @return the value
-     */
+     **/
     public java.util.List<AttributeSets> getAttributeSets() {
         return attributeSets;
     }
 
     /**
-     * The filter string that is used to request a subset of resources. The filter string MUST be a
-     * valid filter expression. See [Section
-     * 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
-     */
+     * The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See [Section 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("filter")
     private final String filter;
 
     /**
-     * The filter string that is used to request a subset of resources. The filter string MUST be a
-     * valid filter expression. See [Section
-     * 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
-     *
+     * The filter string that is used to request a subset of resources. The filter string MUST be a valid filter expression. See [Section 3.4.2.2](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.2). OPTIONAL.
      * @return the value
-     */
+     **/
     public String getFilter() {
         return filter;
     }
 
     /**
-     * A string that indicates the attribute whose value SHALL be used to order the returned
-     * responses. The sortBy attribute MUST be in standard attribute notation ([Section
-     * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting
-     * section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
-     */
+     * A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortBy")
     private final String sortBy;
 
     /**
-     * A string that indicates the attribute whose value SHALL be used to order the returned
-     * responses. The sortBy attribute MUST be in standard attribute notation ([Section
-     * 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting
-     * section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
-     *
+     * A string that indicates the attribute whose value SHALL be used to order the returned responses. The sortBy attribute MUST be in standard attribute notation ([Section 3.10](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.10)) form. See [Sorting section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3). OPTIONAL.
      * @return the value
-     */
+     **/
     public String getSortBy() {
         return sortBy;
     }
 
     /**
-     * A string that indicates the order in which the sortBy parameter is applied. Allowed values
-     * are "ascending" and "descending". See ([Sorting
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
-     */
+     * A string that indicates the order in which the sortBy parameter is applied. Allowed values are "ascending" and "descending". See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sortOrder")
     private final SortOrder sortOrder;
 
     /**
-     * A string that indicates the order in which the sortBy parameter is applied. Allowed values
-     * are "ascending" and "descending". See ([Sorting
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
-     *
+     * A string that indicates the order in which the sortBy parameter is applied. Allowed values are "ascending" and "descending". See ([Sorting Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.3)). OPTIONAL.
      * @return the value
-     */
+     **/
     public SortOrder getSortOrder() {
         return sortOrder;
     }
 
     /**
-     * An integer that indicates the 1-based index of the first query result. See [Pagination
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
-     */
+     * An integer that indicates the 1-based index of the first query result. See [Pagination Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("startIndex")
     private final Integer startIndex;
 
     /**
-     * An integer that indicates the 1-based index of the first query result. See [Pagination
-     * Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
-     *
+     * An integer that indicates the 1-based index of the first query result. See [Pagination Section](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4). OPTIONAL.
      * @return the value
-     */
+     **/
     public Integer getStartIndex() {
         return startIndex;
     }
 
     /**
-     * An integer that indicates the desired maximum number of query results per page. 1000 is the
-     * largest value that you can use. See the Pagination section of the System for Cross-Domain
-     * Identity Management Protocol specification for more information. ([Section
-     * 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
-     */
+     * An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. ([Section 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("count")
     private final Integer count;
 
     /**
-     * An integer that indicates the desired maximum number of query results per page. 1000 is the
-     * largest value that you can use. See the Pagination section of the System for Cross-Domain
-     * Identity Management Protocol specification for more information. ([Section
-     * 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
-     *
+     * An integer that indicates the desired maximum number of query results per page. 1000 is the largest value that you can use. See the Pagination section of the System for Cross-Domain Identity Management Protocol specification for more information. ([Section 3.4.2.4](https://tools.ietf.org/html/draft-ietf-scim-api-19#section-3.4.2.4)). OPTIONAL.
      * @return the value
-     */
+     **/
     public Integer getCount() {
         return count;
     }
@@ -477,7 +362,6 @@ public final class PolicySearchRequest
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

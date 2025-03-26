@@ -6,9 +6,12 @@ package com.oracle.bmc.generativeaiinference.responses;
 
 import com.oracle.bmc.generativeaiinference.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231130")
 public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -21,14 +24,15 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -36,39 +40,17 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code ChatResult} instance. */
+    /**
+     * The returned ChatResult instance.
+     */
     private com.oracle.bmc.generativeaiinference.model.ChatResult chatResult;
 
     /**
-     * The returned {@code ChatResult} instance.
-     *
+     * The returned ChatResult instance.
      * @return the value
      */
     public com.oracle.bmc.generativeaiinference.model.ChatResult getChatResult() {
         return chatResult;
-    }
-    /**
-     * Returns the event-stream for operations that support 'text/event-stream' media type. The
-     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-     * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-     * important to avoid the issue mentioned in the link below
-     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-     *
-     * @return the event-stream
-     */
-    private java.io.InputStream eventStream;
-
-    /**
-     * Returns the event-stream for operations that support 'text/event-stream' media type. The
-     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-     * try-with-resources or explicitly call getEventStream().close() to close the stream. This is
-     * important to avoid the issue mentioned in the link below
-     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-     *
-     * @return the event-stream
-     */
-    public java.io.InputStream getEventStream() {
-        return eventStream;
     }
 
     @java.beans.ConstructorProperties({
@@ -76,43 +58,39 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         "headers",
         "etag",
         "opcRequestId",
-        "chatResult",
-        "eventStream"
+        "chatResult"
     })
     private ChatResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String etag,
             String opcRequestId,
-            com.oracle.bmc.generativeaiinference.model.ChatResult chatResult,
-            java.io.InputStream eventStream) {
+            com.oracle.bmc.generativeaiinference.model.ChatResult chatResult) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.chatResult = chatResult;
-
-        this.eventStream = eventStream;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<ChatResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -127,14 +105,15 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -144,12 +123,13 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code ChatResult} instance. */
+        /**
+         * The returned ChatResult instance.
+         */
         private com.oracle.bmc.generativeaiinference.model.ChatResult chatResult;
 
         /**
-         * The returned {@code ChatResult} instance.
-         *
+         * The returned ChatResult instance.
          * @param chatResult the value to set
          * @return this builder
          */
@@ -160,35 +140,9 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
-         * The event-stream for operations that support 'text/event-stream' media type. The value
-         * can be null in-case a non-streamed response is returned by the server. NOTE : Use
-         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-         * important to avoid the issue mentioned in the link below
-         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-         *
-         * @return the event-stream
-         */
-        private java.io.InputStream eventStream;
-
-        /**
-         * Returns the event-stream for operations that support 'text/event-stream' media type. The
-         * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
-         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
-         * important to avoid the issue mentioned in the link below
-         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
-         *
-         * @return the event-stream
-         */
-        public Builder eventStream(java.io.InputStream eventStream) {
-            this.eventStream = eventStream;
-            return this;
-        }
-        /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(ChatResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -196,25 +150,20 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
             opcRequestId(o.getOpcRequestId());
             chatResult(o.getChatResult());
 
-            eventStream(o.getEventStream());
             return this;
         }
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public ChatResponse build() {
-            return new ChatResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, chatResult, eventStream);
+            return new ChatResponse(__httpStatusCode__, headers, etag, opcRequestId, chatResult);
         }
     }
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {
@@ -229,7 +178,6 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",chatResult=").append(String.valueOf(chatResult));
-        sb.append(",eventStream=").append(String.valueOf(eventStream));
         sb.append(")");
         return sb.toString();
     }
@@ -247,8 +195,7 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.chatResult, other.chatResult)
-                && java.util.Objects.equals(this.eventStream, other.eventStream);
+                && java.util.Objects.equals(this.chatResult, other.chatResult);
     }
 
     @Override
@@ -258,7 +205,6 @@ public class ChatResponse extends com.oracle.bmc.responses.BmcResponse {
         result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.chatResult == null ? 43 : this.chatResult.hashCode());
-        result = (result * PRIME) + (this.eventStream == null ? 43 : this.eventStream.hashCode());
         return result;
     }
 }

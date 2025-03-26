@@ -5,23 +5,22 @@
 package com.oracle.bmc.core.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateVolumeBackupPolicyAssignmentDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = CreateVolumeBackupPolicyAssignmentDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class CreateVolumeBackupPolicyAssignmentDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"assetId", "policyId", "xrcKmsKeyId"})
     public CreateVolumeBackupPolicyAssignmentDetails(
@@ -34,58 +33,57 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the volume to assign the policy to. */
+        /**
+         * The OCID of the volume to assign the policy to.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assetId")
         private String assetId;
 
         /**
          * The OCID of the volume to assign the policy to.
-         *
          * @param assetId the value to set
          * @return this builder
-         */
+         **/
         public Builder assetId(String assetId) {
             this.assetId = assetId;
             this.__explicitlySet__.add("assetId");
             return this;
         }
-        /** The OCID of the volume backup policy to assign to the volume. */
+        /**
+         * The OCID of the volume backup policy to assign to the volume.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
         /**
          * The OCID of the volume backup policy to assign to the volume.
-         *
          * @param policyId the value to set
          * @return this builder
-         */
+         **/
         public Builder policyId(String policyId) {
             this.policyId = policyId;
             this.__explicitlySet__.add("policyId");
             return this;
         }
         /**
-         * The OCID of the Vault service key which is the master encryption key for the block / boot
-         * volume cross region backups, which will be used in the destination region to encrypt the
-         * backup's encryption keys. For more information about the Vault service and encryption
-         * keys, see [Overview of Vault
-         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
          * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
         private String xrcKmsKeyId;
 
         /**
-         * The OCID of the Vault service key which is the master encryption key for the block / boot
-         * volume cross region backups, which will be used in the destination region to encrypt the
-         * backup's encryption keys. For more information about the Vault service and encryption
-         * keys, see [Overview of Vault
-         * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
          * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
          *
          * @param xrcKmsKeyId the value to set
          * @return this builder
-         */
+         **/
         public Builder xrcKmsKeyId(String xrcKmsKeyId) {
             this.xrcKmsKeyId = xrcKmsKeyId;
             this.__explicitlySet__.add("xrcKmsKeyId");
@@ -120,7 +118,9 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -129,53 +129,52 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
         return new Builder().copy(this);
     }
 
-    /** The OCID of the volume to assign the policy to. */
+    /**
+     * The OCID of the volume to assign the policy to.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assetId")
     private final String assetId;
 
     /**
      * The OCID of the volume to assign the policy to.
-     *
      * @return the value
-     */
+     **/
     public String getAssetId() {
         return assetId;
     }
 
-    /** The OCID of the volume backup policy to assign to the volume. */
+    /**
+     * The OCID of the volume backup policy to assign to the volume.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
     /**
      * The OCID of the volume backup policy to assign to the volume.
-     *
      * @return the value
-     */
+     **/
     public String getPolicyId() {
         return policyId;
     }
 
     /**
-     * The OCID of the Vault service key which is the master encryption key for the block / boot
-     * volume cross region backups, which will be used in the destination region to encrypt the
-     * backup's encryption keys. For more information about the Vault service and encryption keys,
-     * see [Overview of Vault
-     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
      * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
     private final String xrcKmsKeyId;
 
     /**
-     * The OCID of the Vault service key which is the master encryption key for the block / boot
-     * volume cross region backups, which will be used in the destination region to encrypt the
-     * backup's encryption keys. For more information about the Vault service and encryption keys,
-     * see [Overview of Vault
-     * service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * The OCID of the Vault service key which is the master encryption key for the block / boot volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
      * [Using Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
      *
      * @return the value
-     */
+     **/
     public String getXrcKmsKeyId() {
         return xrcKmsKeyId;
     }
@@ -187,7 +186,6 @@ public final class CreateVolumeBackupPolicyAssignmentDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

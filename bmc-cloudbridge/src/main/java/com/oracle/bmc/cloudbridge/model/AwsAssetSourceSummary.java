@@ -5,25 +5,25 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Summary of an AWS asset source provided in the list. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+ * Summary of an AWS asset source provided in the list.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AwsAssetSourceSummary.Builder.class)
+    builder = AwsAssetSourceSummary.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class AwsAssetSourceSummary extends AssetSourceSummary {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -144,31 +144,33 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** AWS region information, from where the resources are discovered. */
+        /**
+         * AWS region information, from where the resources are discovered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awsRegion")
         private String awsRegion;
 
         /**
          * AWS region information, from where the resources are discovered.
-         *
          * @param awsRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder awsRegion(String awsRegion) {
             this.awsRegion = awsRegion;
             this.__explicitlySet__.add("awsRegion");
             return this;
         }
-        /** The key of customer's aws account to be discovered/migrated. */
+        /**
+         * The key of customer's aws account to be discovered/migrated.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("awsAccountKey")
         private String awsAccountKey;
 
         /**
          * The key of customer's aws account to be discovered/migrated.
-         *
          * @param awsAccountKey the value to set
          * @return this builder
-         */
+         **/
         public Builder awsAccountKey(String awsAccountKey) {
             this.awsAccountKey = awsAccountKey;
             this.__explicitlySet__.add("awsAccountKey");
@@ -253,7 +255,9 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -297,28 +301,30 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
         this.awsAccountKey = awsAccountKey;
     }
 
-    /** AWS region information, from where the resources are discovered. */
+    /**
+     * AWS region information, from where the resources are discovered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("awsRegion")
     private final String awsRegion;
 
     /**
      * AWS region information, from where the resources are discovered.
-     *
      * @return the value
-     */
+     **/
     public String getAwsRegion() {
         return awsRegion;
     }
 
-    /** The key of customer's aws account to be discovered/migrated. */
+    /**
+     * The key of customer's aws account to be discovered/migrated.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("awsAccountKey")
     private final String awsAccountKey;
 
     /**
      * The key of customer's aws account to be discovered/migrated.
-     *
      * @return the value
-     */
+     **/
     public String getAwsAccountKey() {
         return awsAccountKey;
     }
@@ -330,7 +336,6 @@ public final class AwsAssetSourceSummary extends AssetSourceSummary {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

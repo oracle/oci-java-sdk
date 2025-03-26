@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.stackmonitoring.model;
 
-/** Alarm condition severity. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
-public enum AlarmConditionSeverity implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Alarm condition severity.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+public enum AlarmConditionSeverity {
     Critical("CRITICAL"),
     Warning("WARNING"),
 

@@ -6,18 +6,19 @@ package com.oracle.bmc.databasemanagement.responses;
 
 import com.oracle.bmc.databasemanagement.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public class CreateExternalMySqlDatabaseConnectorResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -25,31 +26,36 @@ public class CreateExternalMySqlDatabaseConnectorResponse
         return opcRequestId;
     }
 
-    /** Location of the resource. */
+    /**
+     * Location of the resource.
+     */
     private String location;
 
     /**
      * Location of the resource.
-     *
      * @return the value
      */
     public String getLocation() {
         return location;
     }
 
-    /** Content Location of the resource. */
+    /**
+     * Content Location of the resource.
+     */
     private String contentLocation;
 
     /**
      * Content Location of the resource.
-     *
      * @return the value
      */
     public String getContentLocation() {
         return contentLocation;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -61,13 +67,14 @@ public class CreateExternalMySqlDatabaseConnectorResponse
         return etag;
     }
 
-    /** The returned {@code ExternalMySqlDatabaseConnector} instance. */
+    /**
+     * The returned ExternalMySqlDatabaseConnector instance.
+     */
     private com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
             externalMySqlDatabaseConnector;
 
     /**
-     * The returned {@code ExternalMySqlDatabaseConnector} instance.
-     *
+     * The returned ExternalMySqlDatabaseConnector instance.
      * @return the value
      */
     public com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
@@ -86,7 +93,7 @@ public class CreateExternalMySqlDatabaseConnectorResponse
     })
     private CreateExternalMySqlDatabaseConnectorResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String location,
             String contentLocation,
@@ -101,34 +108,31 @@ public class CreateExternalMySqlDatabaseConnectorResponse
         this.externalMySqlDatabaseConnector = externalMySqlDatabaseConnector;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    CreateExternalMySqlDatabaseConnectorResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -138,12 +142,13 @@ public class CreateExternalMySqlDatabaseConnectorResponse
             return this;
         }
 
-        /** Location of the resource. */
+        /**
+         * Location of the resource.
+         */
         private String location;
 
         /**
          * Location of the resource.
-         *
          * @param location the value to set
          * @return this builder
          */
@@ -152,12 +157,13 @@ public class CreateExternalMySqlDatabaseConnectorResponse
             return this;
         }
 
-        /** Content Location of the resource. */
+        /**
+         * Content Location of the resource.
+         */
         private String contentLocation;
 
         /**
          * Content Location of the resource.
-         *
          * @param contentLocation the value to set
          * @return this builder
          */
@@ -166,7 +172,10 @@ public class CreateExternalMySqlDatabaseConnectorResponse
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -180,13 +189,14 @@ public class CreateExternalMySqlDatabaseConnectorResponse
             return this;
         }
 
-        /** The returned {@code ExternalMySqlDatabaseConnector} instance. */
+        /**
+         * The returned ExternalMySqlDatabaseConnector instance.
+         */
         private com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
                 externalMySqlDatabaseConnector;
 
         /**
-         * The returned {@code ExternalMySqlDatabaseConnector} instance.
-         *
+         * The returned ExternalMySqlDatabaseConnector instance.
          * @param externalMySqlDatabaseConnector the value to set
          * @return this builder
          */
@@ -199,10 +209,8 @@ public class CreateExternalMySqlDatabaseConnectorResponse
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(CreateExternalMySqlDatabaseConnectorResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -217,10 +225,8 @@ public class CreateExternalMySqlDatabaseConnectorResponse
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public CreateExternalMySqlDatabaseConnectorResponse build() {
             return new CreateExternalMySqlDatabaseConnectorResponse(
                     __httpStatusCode__,
@@ -235,7 +241,6 @@ public class CreateExternalMySqlDatabaseConnectorResponse
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

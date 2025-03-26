@@ -5,21 +5,19 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * The Backup policy for the DB System. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * The Backup policy for the DB System.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = BackupPolicy.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class BackupPolicy extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class BackupPolicy extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -50,16 +48,17 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** If automated backups are enabled or disabled. */
+        /**
+         * If automated backups are enabled or disabled.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
         /**
          * If automated backups are enabled or disabled.
-         *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
@@ -67,28 +66,27 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * List of policies of a DB system to schedule cross-region DB system backup copy.
+         * <p>
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and
+         * an optional parameter which specifies the retention period of the copied DB system backup in days.
+         * <p>
+         **Note:** Currently, only one policy can be specified in the list.
          *
-         * <p>The policy includes the name of the destination region to which the DB system backup
-         * will be copied, and an optional parameter which specifies the retention period of the
-         * copied DB system backup in days.
-         *
-         * <p>*Note:** Currently, only one policy can be specified in the list.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("copyPolicies")
         private java.util.List<CopyPolicy> copyPolicies;
 
         /**
          * List of policies of a DB system to schedule cross-region DB system backup copy.
-         *
-         * <p>The policy includes the name of the destination region to which the DB system backup
-         * will be copied, and an optional parameter which specifies the retention period of the
-         * copied DB system backup in days.
-         *
-         * <p>*Note:** Currently, only one policy can be specified in the list.
+         * <p>
+         * The policy includes the name of the destination region to which the DB system backup will be copied, and
+         * an optional parameter which specifies the retention period of the copied DB system backup in days.
+         * <p>
+         **Note:** Currently, only one policy can be specified in the list.
          *
          * @param copyPolicies the value to set
          * @return this builder
-         */
+         **/
         public Builder copyPolicies(java.util.List<CopyPolicy> copyPolicies) {
             this.copyPolicies = copyPolicies;
             this.__explicitlySet__.add("copyPolicies");
@@ -96,42 +94,48 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * The start of a 30-minute window of time in which daily, automated backups occur.
+         * <p>
+         * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+         * <p>
+         * If not defined, a window is selected from the following Region-based time-spans:
+         * - eu-frankfurt-1: 20:00 - 04:00 UTC
+         * - us-ashburn-1: 03:00 - 11:00 UTC
+         * - uk-london-1: 06:00 - 14:00 UTC
+         * - ap-tokyo-1: 13:00 - 21:00
+         * - us-phoenix-1: 06:00 - 14:00
          *
-         * <p>This should be in the format of the "Time" portion of an RFC3339-formatted timestamp.
-         * Any second or sub-second time data will be truncated to zero.
-         *
-         * <p>At some point in the window, the system may incur a brief service disruption as the
-         * backup is performed.
-         *
-         * <p>If not defined, a window is selected from the following Region-based time-spans: -
-         * eu-frankfurt-1: 20:00 - 04:00 UTC - us-ashburn-1: 03:00 - 11:00 UTC - uk-london-1: 06:00
-         * - 14:00 UTC - ap-tokyo-1: 13:00 - 21:00 - us-phoenix-1: 06:00 - 14:00
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
         private String windowStartTime;
 
         /**
          * The start of a 30-minute window of time in which daily, automated backups occur.
-         *
-         * <p>This should be in the format of the "Time" portion of an RFC3339-formatted timestamp.
-         * Any second or sub-second time data will be truncated to zero.
-         *
-         * <p>At some point in the window, the system may incur a brief service disruption as the
-         * backup is performed.
-         *
-         * <p>If not defined, a window is selected from the following Region-based time-spans: -
-         * eu-frankfurt-1: 20:00 - 04:00 UTC - us-ashburn-1: 03:00 - 11:00 UTC - uk-london-1: 06:00
-         * - 14:00 UTC - ap-tokyo-1: 13:00 - 21:00 - us-phoenix-1: 06:00 - 14:00
+         * <p>
+         * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+         * <p>
+         * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+         * <p>
+         * If not defined, a window is selected from the following Region-based time-spans:
+         * - eu-frankfurt-1: 20:00 - 04:00 UTC
+         * - us-ashburn-1: 03:00 - 11:00 UTC
+         * - uk-london-1: 06:00 - 14:00 UTC
+         * - ap-tokyo-1: 13:00 - 21:00
+         * - us-phoenix-1: 06:00 - 14:00
          *
          * @param windowStartTime the value to set
          * @return this builder
-         */
+         **/
         public Builder windowStartTime(String windowStartTime) {
             this.windowStartTime = windowStartTime;
             this.__explicitlySet__.add("windowStartTime");
             return this;
         }
-        /** The number of days automated backups are retained. */
+        /**
+         * The number of days automated backups are retained.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
         private Integer retentionInDays;
 
@@ -140,36 +144,33 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
          *
          * @param retentionInDays the value to set
          * @return this builder
-         */
+         **/
         public Builder retentionInDays(Integer retentionInDays) {
             this.retentionInDays = retentionInDays;
             this.__explicitlySet__.add("retentionInDays");
             return this;
         }
         /**
-         * Simple key-value pair applied without any predefined name, type or scope. Exists for
-         * cross-compatibility only.
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
-         * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by
-         * this BackupPolicy.
-         *
-         * <p>Example: {@code {"bar-key": "value"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair applied without any predefined name, type or scope. Exists for
-         * cross-compatibility only.
-         *
-         * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by
-         * this BackupPolicy.
-         *
-         * <p>Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -177,26 +178,25 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         }
         /**
          * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
-         * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by
-         * this BackupPolicy.
-         *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
          * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-         *
-         * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by
-         * this BackupPolicy.
-         *
-         * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+         * <p>
+         * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+         * <p>
+         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -259,7 +259,9 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -268,82 +270,88 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** If automated backups are enabled or disabled. */
+    /**
+     * If automated backups are enabled or disabled.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
     /**
      * If automated backups are enabled or disabled.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
      * List of policies of a DB system to schedule cross-region DB system backup copy.
+     * <p>
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and
+     * an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * <p>
+     **Note:** Currently, only one policy can be specified in the list.
      *
-     * <p>The policy includes the name of the destination region to which the DB system backup will
-     * be copied, and an optional parameter which specifies the retention period of the copied DB
-     * system backup in days.
-     *
-     * <p>*Note:** Currently, only one policy can be specified in the list.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("copyPolicies")
     private final java.util.List<CopyPolicy> copyPolicies;
 
     /**
      * List of policies of a DB system to schedule cross-region DB system backup copy.
-     *
-     * <p>The policy includes the name of the destination region to which the DB system backup will
-     * be copied, and an optional parameter which specifies the retention period of the copied DB
-     * system backup in days.
-     *
-     * <p>*Note:** Currently, only one policy can be specified in the list.
+     * <p>
+     * The policy includes the name of the destination region to which the DB system backup will be copied, and
+     * an optional parameter which specifies the retention period of the copied DB system backup in days.
+     * <p>
+     **Note:** Currently, only one policy can be specified in the list.
      *
      * @return the value
-     */
+     **/
     public java.util.List<CopyPolicy> getCopyPolicies() {
         return copyPolicies;
     }
 
     /**
      * The start of a 30-minute window of time in which daily, automated backups occur.
+     * <p>
+     * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * <p>
+     * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+     * <p>
+     * If not defined, a window is selected from the following Region-based time-spans:
+     * - eu-frankfurt-1: 20:00 - 04:00 UTC
+     * - us-ashburn-1: 03:00 - 11:00 UTC
+     * - uk-london-1: 06:00 - 14:00 UTC
+     * - ap-tokyo-1: 13:00 - 21:00
+     * - us-phoenix-1: 06:00 - 14:00
      *
-     * <p>This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any
-     * second or sub-second time data will be truncated to zero.
-     *
-     * <p>At some point in the window, the system may incur a brief service disruption as the backup
-     * is performed.
-     *
-     * <p>If not defined, a window is selected from the following Region-based time-spans: -
-     * eu-frankfurt-1: 20:00 - 04:00 UTC - us-ashburn-1: 03:00 - 11:00 UTC - uk-london-1: 06:00 -
-     * 14:00 UTC - ap-tokyo-1: 13:00 - 21:00 - us-phoenix-1: 06:00 - 14:00
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("windowStartTime")
     private final String windowStartTime;
 
     /**
      * The start of a 30-minute window of time in which daily, automated backups occur.
-     *
-     * <p>This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any
-     * second or sub-second time data will be truncated to zero.
-     *
-     * <p>At some point in the window, the system may incur a brief service disruption as the backup
-     * is performed.
-     *
-     * <p>If not defined, a window is selected from the following Region-based time-spans: -
-     * eu-frankfurt-1: 20:00 - 04:00 UTC - us-ashburn-1: 03:00 - 11:00 UTC - uk-london-1: 06:00 -
-     * 14:00 UTC - ap-tokyo-1: 13:00 - 21:00 - us-phoenix-1: 06:00 - 14:00
+     * <p>
+     * This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
+     * <p>
+     * At some point in the window, the system may incur a brief service disruption as the backup is performed.
+     * <p>
+     * If not defined, a window is selected from the following Region-based time-spans:
+     * - eu-frankfurt-1: 20:00 - 04:00 UTC
+     * - us-ashburn-1: 03:00 - 11:00 UTC
+     * - uk-london-1: 06:00 - 14:00 UTC
+     * - ap-tokyo-1: 13:00 - 21:00
+     * - us-phoenix-1: 06:00 - 14:00
      *
      * @return the value
-     */
+     **/
     public String getWindowStartTime() {
         return windowStartTime;
     }
 
-    /** The number of days automated backups are retained. */
+    /**
+     * The number of days automated backups are retained.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("retentionInDays")
     private final Integer retentionInDays;
 
@@ -351,59 +359,55 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
      * The number of days automated backups are retained.
      *
      * @return the value
-     */
+     **/
     public Integer getRetentionInDays() {
         return retentionInDays;
     }
 
     /**
-     * Simple key-value pair applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
+     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
-     * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by this
-     * BackupPolicy.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only.
-     *
-     * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by this
-     * BackupPolicy.
-     *
-     * <p>Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
-     * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by this
-     * BackupPolicy.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
      * Usage of predefined tag keys. These predefined keys are scoped to namespaces.
-     *
-     * <p>Tags defined here will be copied verbatim as tags on the Backup resource created by this
-     * BackupPolicy.
-     *
-     * <p>Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     * <p>
+     * Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+     * <p>
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
@@ -422,7 +426,6 @@ public final class BackupPolicy extends com.oracle.bmc.http.client.internal.Expl
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

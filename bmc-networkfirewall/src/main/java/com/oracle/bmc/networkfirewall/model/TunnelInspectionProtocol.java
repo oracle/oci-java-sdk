@@ -6,11 +6,12 @@ package com.oracle.bmc.networkfirewall.model;
 
 /**
  * Types of Tunnel Inspection Protocol to be applied on the traffic.
+ * <p>
+ * VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
  *
- * <p>VXLAN - VXLAN Tunnel Inspection Protocol will be applied on the traffic.
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
-public enum TunnelInspectionProtocol implements com.oracle.bmc.http.internal.BmcEnum {
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230501")
+public enum TunnelInspectionProtocol {
     Vxlan("VXLAN"),
 
     /**

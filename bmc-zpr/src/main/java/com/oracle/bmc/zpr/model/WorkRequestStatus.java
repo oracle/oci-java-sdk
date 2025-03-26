@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.zpr.model;
 
-/** The status of the work request. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
-public enum WorkRequestStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The status of the work request.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240301")
+public enum WorkRequestStatus {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
     Waiting("WAITING"),

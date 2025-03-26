@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** job mode. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum JobModeOracle implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * job mode.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum JobModeOracle {
     Full("FULL"),
     Schema("SCHEMA"),
     Table("TABLE"),

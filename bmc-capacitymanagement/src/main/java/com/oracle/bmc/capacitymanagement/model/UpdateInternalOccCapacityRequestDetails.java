@@ -5,23 +5,22 @@
 package com.oracle.bmc.capacitymanagement.model;
 
 /**
- * The details required for making an internal API update call for the capacity requests. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
+ * The details required for making an internal API update call for the capacity requests.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateInternalOccCapacityRequestDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateInternalOccCapacityRequestDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateInternalOccCapacityRequestDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"requestState", "lifecycleDetails"})
     public UpdateInternalOccCapacityRequestDetails(
@@ -33,35 +32,33 @@ public final class UpdateInternalOccCapacityRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The subset of request states available internally for updating the capacity request. */
+        /**
+         * The subset of request states available internally for updating the capacity request.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("requestState")
         private RequestState requestState;
 
         /**
          * The subset of request states available internally for updating the capacity request.
-         *
          * @param requestState the value to set
          * @return this builder
-         */
+         **/
         public Builder requestState(RequestState requestState) {
             this.requestState = requestState;
             this.__explicitlySet__.add("requestState");
             return this;
         }
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in a Failed State.
-         */
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
 
         /**
-         * A message describing the current state in more detail. For example, can be used to
-         * provide actionable information for a resource in a Failed State.
-         *
+         * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
          * @param lifecycleDetails the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleDetails(String lifecycleDetails) {
             this.lifecycleDetails = lifecycleDetails;
             this.__explicitlySet__.add("lifecycleDetails");
@@ -93,7 +90,9 @@ public final class UpdateInternalOccCapacityRequestDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -102,8 +101,10 @@ public final class UpdateInternalOccCapacityRequestDetails
         return new Builder().copy(this);
     }
 
-    /** The subset of request states available internally for updating the capacity request. */
-    public enum RequestState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The subset of request states available internally for updating the capacity request.
+     **/
+    public enum RequestState {
         Resolved("RESOLVED"),
         Rejected("REJECTED"),
         InProgress("IN_PROGRESS"),
@@ -136,32 +137,30 @@ public final class UpdateInternalOccCapacityRequestDetails
             throw new IllegalArgumentException("Invalid RequestState: " + key);
         }
     };
-    /** The subset of request states available internally for updating the capacity request. */
+    /**
+     * The subset of request states available internally for updating the capacity request.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("requestState")
     private final RequestState requestState;
 
     /**
      * The subset of request states available internally for updating the capacity request.
-     *
      * @return the value
-     */
+     **/
     public RequestState getRequestState() {
         return requestState;
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in a Failed State.
-     */
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide
-     * actionable information for a resource in a Failed State.
-     *
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed State.
      * @return the value
-     */
+     **/
     public String getLifecycleDetails() {
         return lifecycleDetails;
     }
@@ -173,7 +172,6 @@ public final class UpdateInternalOccCapacityRequestDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

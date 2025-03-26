@@ -8,7 +8,10 @@ import com.oracle.bmc.http.ClientConfigurator;
 
 import java.util.List;
 
-/** An interface that has the API to return a list of ClientConfigurators */
+/**
+ * An interface that has the API to return
+ * a list of ClientConfigurators
+ */
 public interface ProvidesClientConfigurators {
     List<ClientConfigurator> getClientConfigurators();
 }

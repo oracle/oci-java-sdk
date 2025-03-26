@@ -4,31 +4,28 @@
  */
 package com.oracle.bmc.mysql;
 
-import com.oracle.bmc.util.internal.Validate;
+import com.oracle.bmc.mysql.internal.http.*;
 import com.oracle.bmc.mysql.requests.*;
 import com.oracle.bmc.mysql.responses.*;
 
-import java.util.Objects;
-
 /**
- * Async client implementation for DbSystem service. <br>
- * There are two ways to use async client: 1. Use AsyncHandler: using AsyncHandler, if the response
- * to the call is an {@link java.io.InputStream}, like getObject Api in object storage service,
- * developers need to process the stream in AsyncHandler, and not anywhere else, because the stream
- * will be closed right after the AsyncHandler is invoked. <br>
- * 2. Use Java Future: using Java Future, developers need to close the stream after they are done
- * with the Java Future.<br>
- * Accessing the result should be done in a mutually exclusive manner, either through the Future or
- * the AsyncHandler, but not both. If the Future is used, the caller should pass in null as the
- * AsyncHandler. If the AsyncHandler is used, it is still safe to use the Future to determine
- * whether or not the request was completed via Future.isDone/isCancelled.<br>
- * Please refer to
- * https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
+ * Async client implementation for DbSystem service. <br/>
+ * There are two ways to use async client:
+ * 1. Use AsyncHandler: using AsyncHandler, if the response to the call is an {@link java.io.InputStream}, like
+ * getObject Api in object storage service, developers need to process the stream in AsyncHandler, and not anywhere else,
+ * because the stream will be closed right after the AsyncHandler is invoked. <br/>
+ * 2. Use Java Future: using Java Future, developers need to close the stream after they are done with the Java Future.<br/>
+ * Accessing the result should be done in a mutually exclusive manner, either through the Future or the AsyncHandler,
+ * but not both.  If the Future is used, the caller should pass in null as the AsyncHandler.  If the AsyncHandler
+ * is used, it is still safe to use the Future to determine whether or not the request was completed via
+ * Future.isDone/isCancelled.<br/>
+ * Please refer to https://github.com/oracle/oci-java-sdk/blob/master/bmc-examples/src/main/java/ResteasyClientWithObjectStorageExample.java
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
-public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
-        implements DbSystemAsync {
-    /** Service instance for DbSystem. */
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+public class DbSystemAsyncClient implements DbSystemAsync {
+    /**
+     * Service instance for DbSystem.
+     */
     public static final com.oracle.bmc.Service SERVICE =
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("DBSYSTEM")
@@ -39,735 +36,112 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     private static final org.slf4j.Logger LOG =
             org.slf4j.LoggerFactory.getLogger(DbSystemAsyncClient.class);
 
-    DbSystemAsyncClient(
-            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
-            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                    authenticationDetailsProvider) {
-        super(builder, authenticationDetailsProvider);
-    }
+    private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+            authenticationDetailsProvider;
+
+    private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
+            apacheConnectionClosingStrategy;
+    private final com.oracle.bmc.http.internal.RestClientFactory restClientFactory;
+    private final com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory;
+    private final java.util.Map<
+                    com.oracle.bmc.http.signing.SigningStrategy,
+                    com.oracle.bmc.http.signing.RequestSignerFactory>
+            signingStrategyRequestSignerFactories;
+    private final boolean isNonBufferingApacheClient;
+    private final com.oracle.bmc.ClientConfiguration clientConfigurationToUse;
+    private String regionId;
 
     /**
-     * Create a builder for this client.
-     *
-     * @return builder
+     * Used to synchronize any updates on the `this.client` object.
      */
-    public static Builder builder() {
-        return new Builder(SERVICE);
-    }
+    private final Object clientUpdate = new Object();
 
     /**
-     * Builder class for this client. The "authenticationDetailsProvider" is required and must be
-     * passed to the {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     * Stores the actual client object used to make the API calls.
+     * Note: This object can get refreshed periodically, hence it's important to keep any updates synchronized.
+     *       For any writes to the object, please synchronize on `this.clientUpdate`.
      */
-    public static class Builder
-            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DbSystemAsyncClient> {
-        private Builder(com.oracle.bmc.Service service) {
-            super(service);
-            final String packageName = "mysql";
-            com.oracle.bmc.internal.Alloy.throwDisabledServiceExceptionIfAppropriate(packageName);
-            requestSignerFactory =
-                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
-                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
-        }
-
-        /**
-         * Build the client.
-         *
-         * @param authenticationDetailsProvider authentication details provider
-         * @return the client
-         */
-        public DbSystemAsyncClient build(
-                @jakarta.annotation.Nonnull
-                        com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
-                                authenticationDetailsProvider) {
-            return new DbSystemAsyncClient(this, authenticationDetailsProvider);
-        }
-    }
-
-    @Override
-    public void setRegion(com.oracle.bmc.Region region) {
-        super.setRegion(region);
-    }
-
-    @Override
-    public void setRegion(String regionId) {
-        super.setRegion(regionId);
-    }
-
-    @Override
-    public java.util.concurrent.Future<AddHeatWaveClusterResponse> addHeatWaveCluster(
-            AddHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getAddHeatWaveClusterDetails(), "addHeatWaveClusterDetails is required");
-
-        return clientCall(request, AddHeatWaveClusterResponse::builder)
-                .logger(LOG, "addHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "AddHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(AddHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .appendPathParam("actions")
-                .appendPathParam("add")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mysql.model.HeatWaveCluster.class,
-                        AddHeatWaveClusterResponse.Builder::heatWaveCluster)
-                .handleResponseHeaderString("etag", AddHeatWaveClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", AddHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", AddHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<CreateDbSystemResponse> createDbSystem(
-            CreateDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            CreateDbSystemRequest, CreateDbSystemResponse>
-                    handler) {
-        Objects.requireNonNull(
-                request.getCreateDbSystemDetails(), "createDbSystemDetails is required");
-
-        return clientCall(request, CreateDbSystemResponse::builder)
-                .logger(LOG, "createDbSystem")
-                .serviceDetails("DbSystem", "CreateDbSystem", "")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(CreateDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.mysql.model.DbSystem.class,
-                        CreateDbSystemResponse.Builder::dbSystem)
-                .handleResponseHeaderString("etag", CreateDbSystemResponse.Builder::etag)
-                .handleResponseHeaderString("location", CreateDbSystemResponse.Builder::location)
-                .handleResponseHeaderString(
-                        "opc-request-id", CreateDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", CreateDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteDbSystemResponse> deleteDbSystem(
-            DeleteDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteDbSystemRequest, DeleteDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, DeleteDbSystemResponse::builder)
-                .logger(LOG, "deleteDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "DeleteDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", DeleteDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<DeleteHeatWaveClusterResponse> deleteHeatWaveCluster(
-            DeleteHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, DeleteHeatWaveClusterResponse::builder)
-                .logger(LOG, "deleteHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "DeleteHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.DELETE)
-                .requestBuilder(DeleteHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleResponseHeaderString(
-                        "opc-request-id", DeleteHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        DeleteHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
-            generateHeatWaveClusterMemoryEstimate(
-                    GenerateHeatWaveClusterMemoryEstimateRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GenerateHeatWaveClusterMemoryEstimateRequest,
-                                    GenerateHeatWaveClusterMemoryEstimateResponse>
-                            handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GenerateHeatWaveClusterMemoryEstimateResponse::builder)
-                .logger(LOG, "generateHeatWaveClusterMemoryEstimate")
-                .serviceDetails(
-                        "DbSystem",
-                        "GenerateHeatWaveClusterMemoryEstimate",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(GenerateHeatWaveClusterMemoryEstimateRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveClusterMemoryEstimate")
-                .appendPathParam("actions")
-                .appendPathParam("generate")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate.class,
-                        GenerateHeatWaveClusterMemoryEstimateResponse.Builder
-                                ::heatWaveClusterMemoryEstimate)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GenerateHeatWaveClusterMemoryEstimateResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        GenerateHeatWaveClusterMemoryEstimateResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetDbSystemResponse> getDbSystem(
-            GetDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GetDbSystemResponse::builder)
-                .logger(LOG, "getDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "GetDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-none-match", request.getIfNoneMatch())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.DbSystem.class,
-                        GetDbSystemResponse.Builder::dbSystem)
-                .handleResponseHeaderString("etag", GetDbSystemResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetDbSystemResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetHeatWaveClusterResponse> getHeatWaveCluster(
-            GetHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GetHeatWaveClusterResponse::builder)
-                .logger(LOG, "getHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "GetHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("if-none-match", request.getIfNoneMatch())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.HeatWaveCluster.class,
-                        GetHeatWaveClusterResponse.Builder::heatWaveCluster)
-                .handleResponseHeaderString("etag", GetHeatWaveClusterResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetHeatWaveClusterResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>
-            getHeatWaveClusterMemoryEstimate(
-                    GetHeatWaveClusterMemoryEstimateRequest request,
-                    final com.oracle.bmc.responses.AsyncHandler<
-                                    GetHeatWaveClusterMemoryEstimateRequest,
-                                    GetHeatWaveClusterMemoryEstimateResponse>
-                            handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, GetHeatWaveClusterMemoryEstimateResponse::builder)
-                .logger(LOG, "getHeatWaveClusterMemoryEstimate")
-                .serviceDetails(
-                        "DbSystem",
-                        "GetHeatWaveClusterMemoryEstimate",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetHeatWaveClusterMemoryEstimateRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveClusterMemoryEstimate")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBody(
-                        com.oracle.bmc.mysql.model.HeatWaveClusterMemoryEstimate.class,
-                        GetHeatWaveClusterMemoryEstimateResponse.Builder
-                                ::heatWaveClusterMemoryEstimate)
-                .handleResponseHeaderString(
-                        "opc-request-id",
-                        GetHeatWaveClusterMemoryEstimateResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
-            ListDbSystemsRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
-                    handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
-
-        return clientCall(request, ListDbSystemsResponse::builder)
-                .logger(LOG, "listDbSystems")
-                .serviceDetails(
-                        "DbSystem",
-                        "ListDbSystems",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(ListDbSystemsRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendQueryParam(
-                        "isHeatWaveClusterAttached", request.getIsHeatWaveClusterAttached())
-                .appendQueryParam("compartmentId", request.getCompartmentId())
-                .appendQueryParam("dbSystemId", request.getDbSystemId())
-                .appendQueryParam("displayName", request.getDisplayName())
-                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
-                .appendQueryParam("configurationId", request.getConfigurationId())
-                .appendQueryParam("isUpToDate", request.getIsUpToDate())
-                .appendListQueryParam(
-                        "databaseManagement",
-                        request.getDatabaseManagement(),
-                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
-                .appendEnumQueryParam("sortBy", request.getSortBy())
-                .appendEnumQueryParam("sortOrder", request.getSortOrder())
-                .appendQueryParam("limit", request.getLimit())
-                .appendQueryParam("page", request.getPage())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .handleBodyList(
-                        com.oracle.bmc.mysql.model.DbSystemSummary.class,
-                        ListDbSystemsResponse.Builder::items)
-                .handleResponseHeaderString(
-                        "opc-request-id", ListDbSystemsResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-next-page", ListDbSystemsResponse.Builder::opcNextPage)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RestartDbSystemResponse> restartDbSystem(
-            RestartDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RestartDbSystemRequest, RestartDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getRestartDbSystemDetails(), "restartDbSystemDetails is required");
-
-        return clientCall(request, RestartDbSystemResponse::builder)
-                .logger(LOG, "restartDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "RestartDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RestartDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("actions")
-                .appendPathParam("restart")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", RestartDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", RestartDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<RestartHeatWaveClusterResponse> restartHeatWaveCluster(
-            RestartHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, RestartHeatWaveClusterResponse::builder)
-                .logger(LOG, "restartHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "RestartHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(RestartHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .appendPathParam("actions")
-                .appendPathParam("restart")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", RestartHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        RestartHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
-            StartDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, StartDbSystemResponse::builder)
-                .logger(LOG, "startDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "StartDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StartDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("actions")
-                .appendPathParam("start")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", StartDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", StartDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StartHeatWaveClusterResponse> startHeatWaveCluster(
-            StartHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, StartHeatWaveClusterResponse::builder)
-                .logger(LOG, "startHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "StartHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StartHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .appendPathParam("actions")
-                .appendPathParam("start")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", StartHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        StartHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
-            StopDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(request.getStopDbSystemDetails(), "stopDbSystemDetails is required");
-
-        return clientCall(request, StopDbSystemResponse::builder)
-                .logger(LOG, "stopDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "StopDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StopDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("actions")
-                .appendPathParam("stop")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", StopDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", StopDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<StopHeatWaveClusterResponse> stopHeatWaveCluster(
-            StopHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-
-        return clientCall(request, StopHeatWaveClusterResponse::builder)
-                .logger(LOG, "stopHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "StopHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.POST)
-                .requestBuilder(StopHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .appendPathParam("actions")
-                .appendPathParam("stop")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("opc-retry-token", request.getOpcRetryToken())
-                .handleResponseHeaderString(
-                        "opc-request-id", StopHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        StopHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
-            UpdateDbSystemRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateDbSystemRequest, UpdateDbSystemResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateDbSystemDetails(), "updateDbSystemDetails is required");
-
-        return clientCall(request, UpdateDbSystemResponse::builder)
-                .logger(LOG, "updateDbSystem")
-                .serviceDetails(
-                        "DbSystem",
-                        "UpdateDbSystem",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateDbSystemRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateDbSystemResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id", UpdateDbSystemResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<UpdateHeatWaveClusterResponse> updateHeatWaveCluster(
-            UpdateHeatWaveClusterRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<
-                            UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
-                    handler) {
-
-        Validate.notBlank(request.getDbSystemId(), "dbSystemId must not be blank");
-        Objects.requireNonNull(
-                request.getUpdateHeatWaveClusterDetails(),
-                "updateHeatWaveClusterDetails is required");
-
-        return clientCall(request, UpdateHeatWaveClusterResponse::builder)
-                .logger(LOG, "updateHeatWaveCluster")
-                .serviceDetails(
-                        "DbSystem",
-                        "UpdateHeatWaveCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdateHeatWaveClusterRequest::builder)
-                .basePath("/20190415")
-                .appendPathParam("dbSystems")
-                .appendPathParam(request.getDbSystemId())
-                .appendPathParam("heatWaveCluster")
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdateHeatWaveClusterResponse.Builder::opcRequestId)
-                .handleResponseHeaderString(
-                        "opc-work-request-id",
-                        UpdateHeatWaveClusterResponse.Builder::opcWorkRequestId)
-                .callAsync(handler);
-    }
+    private volatile com.oracle.bmc.http.internal.RestClient client;
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Keeps track of the last endpoint that was assigned to the client, which in turn can be used when the client is refreshed.
+     * Note: Always synchronize on `this.clientUpdate` when reading/writing this field.
      */
-    @Deprecated
+    private volatile String overrideEndpoint = null;
+
+    /**
+     * Creates a new service instance using the given authentication provider.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     */
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider) {
-        this(builder(), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration) {
-        this(builder().configuration(configuration), authenticationDetailsProvider);
+        this(authenticationDetailsProvider, configuration, null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.BasicAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator) {
         this(
-                builder().configuration(configuration).clientConfigurator(clientConfigurator),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                        com.oracle.bmc.http.signing.SigningStrategy.STANDARD));
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
             com.oracle.bmc.http.ClientConfigurator clientConfigurator,
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                new java.util.ArrayList<com.oracle.bmc.http.ClientConfigurator>());
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -775,26 +149,26 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                additionalClientConfigurators,
+                null);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -803,29 +177,29 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
-                        .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint),
-                authenticationDetailsProvider);
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory
+                        .createDefaultRequestSignerFactories(),
+                additionalClientConfigurators,
+                endpoint);
     }
 
     /**
-     * Create a new client instance.
-     *
-     * @param authenticationDetailsProvider The authentication details (see {@link Builder#build})
-     * @param configuration {@link Builder#configuration}
-     * @param clientConfigurator {@link Builder#clientConfigurator}
-     * @param defaultRequestSignerFactory {@link Builder#requestSignerFactory}
-     * @param additionalClientConfigurators {@link Builder#additionalClientConfigurators}
-     * @param endpoint {@link Builder#endpoint}
-     * @param signingStrategyRequestSignerFactories {@link
-     *     Builder#signingStrategyRequestSignerFactories}
-     * @deprecated Use the {@link #builder() builder} instead.
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
      */
-    @Deprecated
     public DbSystemAsyncClient(
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             com.oracle.bmc.ClientConfiguration configuration,
@@ -838,14 +212,1075 @@ public class DbSystemAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
             java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
             String endpoint) {
         this(
-                builder()
-                        .configuration(configuration)
+                authenticationDetailsProvider,
+                configuration,
+                clientConfigurator,
+                defaultRequestSignerFactory,
+                signingStrategyRequestSignerFactories,
+                additionalClientConfigurators,
+                endpoint,
+                com.oracle.bmc.http.internal.RestClientFactoryBuilder.builder());
+    }
+
+    /**
+     * Creates a new service instance using the given authentication provider and client configuration.  Additionally,
+     * a Consumer can be provided that will be invoked whenever a REST Client is created to allow for additional configuration/customization.
+     * <p>
+     * This is an advanced constructor for clients that want to take control over how requests are signed.
+     * @param authenticationDetailsProvider The authentication details provider, required.
+     * @param configuration The client configuration, optional.
+     * @param clientConfigurator ClientConfigurator that will be invoked for additional configuration of a REST client, optional.
+     * @param defaultRequestSignerFactory The request signer factory used to create the request signer for this service.
+     * @param signingStrategyRequestSignerFactories The request signer factories for each signing strategy used to create the request signer
+     * @param additionalClientConfigurators Additional client configurators to be run after the primary configurator.
+     * @param endpoint Endpoint, or null to leave unset (note, may be overridden by {@code authenticationDetailsProvider})
+     * @param restClientFactoryBuilder the builder for the {@link com.oracle.bmc.http.internal.RestClientFactory}
+     */
+    public DbSystemAsyncClient(
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            com.oracle.bmc.ClientConfiguration configuration,
+            com.oracle.bmc.http.ClientConfigurator clientConfigurator,
+            com.oracle.bmc.http.signing.RequestSignerFactory defaultRequestSignerFactory,
+            java.util.Map<
+                            com.oracle.bmc.http.signing.SigningStrategy,
+                            com.oracle.bmc.http.signing.RequestSignerFactory>
+                    signingStrategyRequestSignerFactories,
+            java.util.List<com.oracle.bmc.http.ClientConfigurator> additionalClientConfigurators,
+            String endpoint,
+            com.oracle.bmc.http.internal.RestClientFactoryBuilder restClientFactoryBuilder) {
+        this.authenticationDetailsProvider = authenticationDetailsProvider;
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> authenticationDetailsConfigurators =
+                new java.util.ArrayList<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.ProvidesClientConfigurators) {
+            authenticationDetailsConfigurators.addAll(
+                    ((com.oracle.bmc.auth.ProvidesClientConfigurators)
+                                    this.authenticationDetailsProvider)
+                            .getClientConfigurators());
+        }
+        java.util.List<com.oracle.bmc.http.ClientConfigurator> allConfigurators =
+                new java.util.ArrayList<>(additionalClientConfigurators);
+        allConfigurators.addAll(authenticationDetailsConfigurators);
+        this.restClientFactory =
+                restClientFactoryBuilder
                         .clientConfigurator(clientConfigurator)
-                        .requestSignerFactory(defaultRequestSignerFactory)
-                        .additionalClientConfigurators(additionalClientConfigurators)
-                        .endpoint(endpoint)
-                        .signingStrategyRequestSignerFactories(
-                                signingStrategyRequestSignerFactories),
-                authenticationDetailsProvider);
+                        .additionalClientConfigurators(allConfigurators)
+                        .build();
+        this.isNonBufferingApacheClient =
+                com.oracle.bmc.http.ApacheUtils.isNonBufferingClientConfigurator(
+                        restClientFactory.getClientConfigurator());
+        this.apacheConnectionClosingStrategy =
+                com.oracle.bmc.http.ApacheUtils.getApacheConnectionClosingStrategy(
+                        restClientFactory.getClientConfigurator());
+        this.defaultRequestSignerFactory = defaultRequestSignerFactory;
+        this.signingStrategyRequestSignerFactories = signingStrategyRequestSignerFactories;
+        this.clientConfigurationToUse = configuration;
+
+        this.refreshClient();
+
+        if (this.authenticationDetailsProvider instanceof com.oracle.bmc.auth.RegionProvider) {
+            com.oracle.bmc.auth.RegionProvider provider =
+                    (com.oracle.bmc.auth.RegionProvider) this.authenticationDetailsProvider;
+
+            if (provider.getRegion() != null) {
+                this.regionId = provider.getRegion().getRegionId();
+                this.setRegion(provider.getRegion());
+                if (endpoint != null) {
+                    LOG.info(
+                            "Authentication details provider configured for region '{}', but endpoint specifically set to '{}'. Using endpoint setting instead of region.",
+                            provider.getRegion(),
+                            endpoint);
+                }
+            }
+        }
+        if (endpoint != null) {
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * Create a builder for this client.
+     * @return builder
+     */
+    public static Builder builder() {
+        return new Builder(SERVICE);
+    }
+
+    /**
+     * Builder class for this client. The "authenticationDetailsProvider" is required and must be passed to the
+     * {@link #build(AbstractAuthenticationDetailsProvider)} method.
+     */
+    public static class Builder
+            extends com.oracle.bmc.common.RegionalClientBuilder<Builder, DbSystemAsyncClient> {
+        private Builder(com.oracle.bmc.Service service) {
+            super(service);
+            requestSignerFactory =
+                    new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
+                            com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Build the client.
+         * @param authenticationDetailsProvider authentication details provider
+         * @return the client
+         */
+        public DbSystemAsyncClient build(
+                @javax.annotation.Nonnull
+                com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
+                        authenticationDetailsProvider) {
+            if (authenticationDetailsProvider == null) {
+                throw new NullPointerException(
+                        "authenticationDetailsProvider is marked non-null but is null");
+            }
+            return new DbSystemAsyncClient(
+                    authenticationDetailsProvider,
+                    configuration,
+                    clientConfigurator,
+                    requestSignerFactory,
+                    signingStrategyRequestSignerFactories,
+                    additionalClientConfigurators,
+                    endpoint);
+        }
+    }
+
+    com.oracle.bmc.http.internal.RestClient getClient() {
+        return client;
+    }
+
+    @Override
+    public void refreshClient() {
+        LOG.info("Refreshing client '{}'.", this.client != null ? this.client.getClass() : null);
+        com.oracle.bmc.http.signing.RequestSigner defaultRequestSigner =
+                this.defaultRequestSignerFactory.createRequestSigner(
+                        SERVICE, this.authenticationDetailsProvider);
+
+        java.util.Map<
+                        com.oracle.bmc.http.signing.SigningStrategy,
+                        com.oracle.bmc.http.signing.RequestSigner>
+                requestSigners = new java.util.HashMap<>();
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.BasicAuthenticationDetailsProvider) {
+            for (com.oracle.bmc.http.signing.SigningStrategy s :
+                    com.oracle.bmc.http.signing.SigningStrategy.values()) {
+                requestSigners.put(
+                        s,
+                        this.signingStrategyRequestSignerFactories
+                                .get(s)
+                                .createRequestSigner(SERVICE, authenticationDetailsProvider));
+            }
+        }
+
+        com.oracle.bmc.http.internal.RestClient refreshedClient =
+                this.restClientFactory.create(
+                        defaultRequestSigner,
+                        requestSigners,
+                        this.clientConfigurationToUse,
+                        this.isNonBufferingApacheClient);
+
+        synchronized (clientUpdate) {
+            if (this.overrideEndpoint != null) {
+                refreshedClient.setEndpoint(this.overrideEndpoint);
+            }
+
+            this.client = refreshedClient;
+        }
+
+        LOG.info("Refreshed client '{}'.", this.client != null ? this.client.getClass() : null);
+    }
+
+    @Override
+    public void setEndpoint(String endpoint) {
+        LOG.info("Setting endpoint to {}", endpoint);
+
+        synchronized (clientUpdate) {
+            this.overrideEndpoint = endpoint;
+            client.setEndpoint(endpoint);
+        }
+    }
+
+    @Override
+    public String getEndpoint() {
+        String endpoint = null;
+        java.net.URI uri = client.getBaseTarget().getUri();
+        if (uri != null) {
+            endpoint = uri.toString();
+        }
+        return endpoint;
+    }
+
+    @Override
+    public void setRegion(com.oracle.bmc.Region region) {
+        this.regionId = region.getRegionId();
+        java.util.Optional<String> endpoint =
+                com.oracle.bmc.internal.GuavaUtils.adaptFromGuava(region.getEndpoint(SERVICE));
+        if (endpoint.isPresent()) {
+            setEndpoint(endpoint.get());
+        } else {
+            throw new IllegalArgumentException(
+                    "Endpoint for " + SERVICE + " is not known in region " + region);
+        }
+    }
+
+    @Override
+    public void setRegion(String regionId) {
+        regionId = regionId.toLowerCase(java.util.Locale.ENGLISH);
+        this.regionId = regionId;
+        try {
+            com.oracle.bmc.Region region = com.oracle.bmc.Region.fromRegionId(regionId);
+            setRegion(region);
+        } catch (IllegalArgumentException e) {
+            LOG.info("Unknown regionId '{}', falling back to default endpoint format", regionId);
+            String endpoint = com.oracle.bmc.Region.formatDefaultRegionEndpoint(SERVICE, regionId);
+            setEndpoint(endpoint);
+        }
+    }
+
+    /**
+     * This method should be used to enable or disable the use of realm-specific endpoint template.
+     * The default value is null. To enable the use of endpoint template defined for the realm in
+     * use, set the flag to true To disable the use of endpoint template defined for the realm in
+     * use, set the flag to false
+     *
+     * @param useOfRealmSpecificEndpointTemplateEnabled This flag can be set to true or false to
+     * enable or disable the use of realm-specific endpoint template respectively
+     */
+    public synchronized void useRealmSpecificEndpointTemplate(
+            boolean useOfRealmSpecificEndpointTemplateEnabled) {
+        setEndpoint(
+                com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils
+                        .getRealmSpecificEndpointTemplate(
+                                useOfRealmSpecificEndpointTemplateEnabled, this.regionId, SERVICE));
+    }
+
+    @Override
+    public void close() {
+        client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddHeatWaveClusterResponse> addHeatWaveCluster(
+            AddHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async addHeatWaveCluster");
+        final AddHeatWaveClusterRequest interceptedRequest =
+                AddHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "AddHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/AddHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddHeatWaveClusterResponse>
+                transformer =
+                        AddHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<AddHeatWaveClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddHeatWaveClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddHeatWaveClusterRequest, AddHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateDbSystemResponse> createDbSystem(
+            CreateDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateDbSystemRequest, CreateDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async createDbSystem");
+        final CreateDbSystemRequest interceptedRequest =
+                CreateDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem", "CreateDbSystem", ib.getRequestUri().toString(), "");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateDbSystemResponse>
+                transformer =
+                        CreateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateDbSystemRequest, CreateDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateDbSystemRequest, CreateDbSystemResponse>,
+                        java.util.concurrent.Future<CreateDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateDbSystemRequest, CreateDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteDbSystemResponse> deleteDbSystem(
+            DeleteDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteDbSystemRequest, DeleteDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async deleteDbSystem");
+        final DeleteDbSystemRequest interceptedRequest =
+                DeleteDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "DeleteDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/DeleteDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteDbSystemResponse>
+                transformer =
+                        DeleteDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteDbSystemRequest, DeleteDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteDbSystemRequest, DeleteDbSystemResponse>,
+                        java.util.concurrent.Future<DeleteDbSystemResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteDbSystemRequest, DeleteDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHeatWaveClusterResponse> deleteHeatWaveCluster(
+            DeleteHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async deleteHeatWaveCluster");
+        final DeleteHeatWaveClusterRequest interceptedRequest =
+                DeleteHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "DeleteHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/DeleteHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteHeatWaveClusterResponse>
+                transformer =
+                        DeleteHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<DeleteHeatWaveClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteHeatWaveClusterRequest, DeleteHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>
+            generateHeatWaveClusterMemoryEstimate(
+                    GenerateHeatWaveClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GenerateHeatWaveClusterMemoryEstimateRequest,
+                                    GenerateHeatWaveClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async generateHeatWaveClusterMemoryEstimate");
+        final GenerateHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GenerateHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateHeatWaveClusterMemoryEstimateConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GenerateHeatWaveClusterMemoryEstimate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GenerateHeatWaveClusterMemoryEstimate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GenerateHeatWaveClusterMemoryEstimateResponse>
+                transformer =
+                        GenerateHeatWaveClusterMemoryEstimateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateHeatWaveClusterMemoryEstimateRequest,
+                        GenerateHeatWaveClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateHeatWaveClusterMemoryEstimateRequest,
+                                GenerateHeatWaveClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GenerateHeatWaveClusterMemoryEstimateResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateHeatWaveClusterMemoryEstimateRequest,
+                    GenerateHeatWaveClusterMemoryEstimateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDbSystemResponse> getDbSystem(
+            GetDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async getDbSystem");
+        final GetDbSystemRequest interceptedRequest =
+                GetDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GetDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/GetDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetDbSystemResponse>
+                transformer =
+                        GetDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetDbSystemRequest, GetDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDbSystemRequest, GetDbSystemResponse>,
+                        java.util.concurrent.Future<GetDbSystemResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDbSystemRequest, GetDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHeatWaveClusterResponse> getHeatWaveCluster(
+            GetHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async getHeatWaveCluster");
+        final GetHeatWaveClusterRequest interceptedRequest =
+                GetHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GetHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/GetHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetHeatWaveClusterResponse>
+                transformer =
+                        GetHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<GetHeatWaveClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHeatWaveClusterRequest, GetHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>
+            getHeatWaveClusterMemoryEstimate(
+                    GetHeatWaveClusterMemoryEstimateRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetHeatWaveClusterMemoryEstimateRequest,
+                                    GetHeatWaveClusterMemoryEstimateResponse>
+                            handler) {
+        LOG.trace("Called async getHeatWaveClusterMemoryEstimate");
+        final GetHeatWaveClusterMemoryEstimateRequest interceptedRequest =
+                GetHeatWaveClusterMemoryEstimateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetHeatWaveClusterMemoryEstimateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "GetHeatWaveClusterMemoryEstimate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveClusterMemoryEstimate/GetHeatWaveClusterMemoryEstimate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetHeatWaveClusterMemoryEstimateResponse>
+                transformer =
+                        GetHeatWaveClusterMemoryEstimateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetHeatWaveClusterMemoryEstimateRequest,
+                        GetHeatWaveClusterMemoryEstimateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetHeatWaveClusterMemoryEstimateRequest,
+                                GetHeatWaveClusterMemoryEstimateResponse>,
+                        java.util.concurrent.Future<GetHeatWaveClusterMemoryEstimateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetHeatWaveClusterMemoryEstimateRequest,
+                    GetHeatWaveClusterMemoryEstimateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDbSystemsResponse> listDbSystems(
+            ListDbSystemsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
+                    handler) {
+        LOG.trace("Called async listDbSystems");
+        final ListDbSystemsRequest interceptedRequest =
+                ListDbSystemsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDbSystemsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "ListDbSystems",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystemSummary/ListDbSystems");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListDbSystemsResponse>
+                transformer =
+                        ListDbSystemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListDbSystemsRequest, ListDbSystemsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDbSystemsRequest, ListDbSystemsResponse>,
+                        java.util.concurrent.Future<ListDbSystemsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDbSystemsRequest, ListDbSystemsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartDbSystemResponse> restartDbSystem(
+            RestartDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RestartDbSystemRequest, RestartDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async restartDbSystem");
+        final RestartDbSystemRequest interceptedRequest =
+                RestartDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "RestartDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/RestartDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, RestartDbSystemResponse>
+                transformer =
+                        RestartDbSystemConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RestartDbSystemRequest, RestartDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestartDbSystemRequest, RestartDbSystemResponse>,
+                        java.util.concurrent.Future<RestartDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestartDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestartDbSystemRequest, RestartDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestartHeatWaveClusterResponse> restartHeatWaveCluster(
+            RestartHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async restartHeatWaveCluster");
+        final RestartHeatWaveClusterRequest interceptedRequest =
+                RestartHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "RestartHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/RestartHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, RestartHeatWaveClusterResponse>
+                transformer =
+                        RestartHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<RestartHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestartHeatWaveClusterRequest, RestartHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartDbSystemResponse> startDbSystem(
+            StartDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async startDbSystem");
+        final StartDbSystemRequest interceptedRequest =
+                StartDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "StartDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StartDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartDbSystemResponse>
+                transformer =
+                        StartDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartDbSystemRequest, StartDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartDbSystemRequest, StartDbSystemResponse>,
+                        java.util.concurrent.Future<StartDbSystemResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartDbSystemRequest, StartDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartHeatWaveClusterResponse> startHeatWaveCluster(
+            StartHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async startHeatWaveCluster");
+        final StartHeatWaveClusterRequest interceptedRequest =
+                StartHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "StartHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StartHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartHeatWaveClusterResponse>
+                transformer =
+                        StartHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<StartHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartHeatWaveClusterRequest, StartHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopDbSystemResponse> stopDbSystem(
+            StopDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async stopDbSystem");
+        final StopDbSystemRequest interceptedRequest =
+                StopDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "StopDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/StopDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopDbSystemResponse>
+                transformer =
+                        StopDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopDbSystemRequest, StopDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopDbSystemRequest, StopDbSystemResponse>,
+                        java.util.concurrent.Future<StopDbSystemResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStopDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopDbSystemRequest, StopDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopHeatWaveClusterResponse> stopHeatWaveCluster(
+            StopHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async stopHeatWaveCluster");
+        final StopHeatWaveClusterRequest interceptedRequest =
+                StopHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "StopHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/StopHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopHeatWaveClusterResponse>
+                transformer =
+                        StopHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<StopHeatWaveClusterResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopHeatWaveClusterRequest, StopHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateDbSystemResponse> updateDbSystem(
+            UpdateDbSystemRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateDbSystemRequest, UpdateDbSystemResponse>
+                    handler) {
+        LOG.trace("Called async updateDbSystem");
+        final UpdateDbSystemRequest interceptedRequest =
+                UpdateDbSystemConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateDbSystemConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "UpdateDbSystem",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/DbSystem/UpdateDbSystem");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateDbSystemResponse>
+                transformer =
+                        UpdateDbSystemConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateDbSystemRequest, UpdateDbSystemResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateDbSystemRequest, UpdateDbSystemResponse>,
+                        java.util.concurrent.Future<UpdateDbSystemResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateDbSystemDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateDbSystemRequest, UpdateDbSystemResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHeatWaveClusterResponse> updateHeatWaveCluster(
+            UpdateHeatWaveClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateHeatWaveCluster");
+        final UpdateHeatWaveClusterRequest interceptedRequest =
+                UpdateHeatWaveClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateHeatWaveClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbSystem",
+                        "UpdateHeatWaveCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/HeatWaveCluster/UpdateHeatWaveCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateHeatWaveClusterResponse>
+                transformer =
+                        UpdateHeatWaveClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>,
+                        java.util.concurrent.Future<UpdateHeatWaveClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateHeatWaveClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateHeatWaveClusterRequest, UpdateHeatWaveClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 }

@@ -6,52 +6,59 @@ package com.oracle.bmc.aivision.requests;
 
 import com.oracle.bmc.aivision.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateDocumentJobExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDocumentJobRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aivision/CreateDocumentJobExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateDocumentJobRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220125")
 public class CreateDocumentJobRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.aivision.model.CreateDocumentJobDetails> {
 
-    /** The details of the batch document analysis. */
+    /**
+     * The details of the batch document analysis.
+     */
     private com.oracle.bmc.aivision.model.CreateDocumentJobDetails createDocumentJobDetails;
 
-    /** The details of the batch document analysis. */
+    /**
+     * The details of the batch document analysis.
+     */
     public com.oracle.bmc.aivision.model.CreateDocumentJobDetails getCreateDocumentJobDetails() {
         return createDocumentJobDetails;
     }
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     private String opcRetryToken;
 
     /**
      * A token that uniquely identifies a request so it can be retried in case of a timeout or
-     * server error without the risk of executing that same action again. Retry tokens expire after
-     * 24 hours, but can be invalidated before then due to conflicting operations. For example, if a
-     * resource has been deleted and purged from the system, then a retry of the original creation
-     * request might be rejected.
+     * server error without the risk of executing that same action again. Retry tokens expire after 24
+     * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+     * has been deleted and purged from the system, then a retry of the original creation request
+     * might be rejected.
+     *
      */
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -64,16 +71,18 @@ public class CreateDocumentJobRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     CreateDocumentJobRequest,
                     com.oracle.bmc.aivision.model.CreateDocumentJobDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The details of the batch document analysis. */
+        /**
+         * The details of the batch document analysis.
+         */
         private com.oracle.bmc.aivision.model.CreateDocumentJobDetails createDocumentJobDetails =
                 null;
 
         /**
          * The details of the batch document analysis.
-         *
          * @param createDocumentJobDetails the value to set
          * @return this builder instance
          */
@@ -85,19 +94,20 @@ public class CreateDocumentJobRequest
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
+         *
          */
         private String opcRetryToken = null;
 
         /**
          * A token that uniquely identifies a request so it can be retried in case of a timeout or
-         * server error without the risk of executing that same action again. Retry tokens expire
-         * after 24 hours, but can be invalidated before then due to conflicting operations. For
-         * example, if a resource has been deleted and purged from the system, then a retry of the
-         * original creation request might be rejected.
+         * server error without the risk of executing that same action again. Retry tokens expire after 24
+         * hours, but can be invalidated before then due to conflicting operations. For example, if a resource
+         * has been deleted and purged from the system, then a retry of the original creation request
+         * might be rejected.
          *
          * @param opcRetryToken the value to set
          * @return this builder instance
@@ -107,12 +117,13 @@ public class CreateDocumentJobRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -123,19 +134,18 @@ public class CreateDocumentJobRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -147,7 +157,6 @@ public class CreateDocumentJobRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(CreateDocumentJobRequest o) {
@@ -162,11 +171,10 @@ public class CreateDocumentJobRequest
         /**
          * Build the instance of CreateDocumentJobRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of CreateDocumentJobRequest
          */
@@ -179,7 +187,6 @@ public class CreateDocumentJobRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -192,8 +199,7 @@ public class CreateDocumentJobRequest
         /**
          * Build the instance of CreateDocumentJobRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of CreateDocumentJobRequest
@@ -210,7 +216,6 @@ public class CreateDocumentJobRequest
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -222,7 +227,6 @@ public class CreateDocumentJobRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

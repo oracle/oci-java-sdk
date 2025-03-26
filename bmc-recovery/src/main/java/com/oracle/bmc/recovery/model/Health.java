@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.recovery.model;
 
-/** The current health of the resource */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
-public enum Health implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The current health of the resource
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210216")
+public enum Health {
     Protected("PROTECTED"),
     Warning("WARNING"),
     Alert("ALERT"),

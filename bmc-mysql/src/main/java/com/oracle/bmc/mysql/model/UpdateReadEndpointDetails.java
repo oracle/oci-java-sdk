@@ -5,23 +5,23 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Read Endpoint details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Read Endpoint details.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateReadEndpointDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateReadEndpointDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateReadEndpointDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "isEnabled",
@@ -43,7 +43,10 @@ public final class UpdateReadEndpointDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Specifies if the DB System read endpoint is enabled or not. */
+        /**
+         * Specifies if the DB System read endpoint is enabled or not.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
         private Boolean isEnabled;
 
@@ -52,32 +55,33 @@ public final class UpdateReadEndpointDetails
          *
          * @param isEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isEnabled(Boolean isEnabled) {
             this.isEnabled = isEnabled;
             this.__explicitlySet__.add("isEnabled");
             return this;
         }
         /**
-         * The IP address the DB System read endpoint is configured to listen on. A private IP
-         * address of your choice to assign to the read endpoint of the DB System. Must be an
-         * available IP address within the subnet's CIDR. If you don't specify a value, Oracle
-         * automatically assigns a private IP address from the subnet. This should be a
+         * The IP address the DB System read endpoint is configured to listen on.
+         * A private IP address of your choice to assign to the read endpoint of the DB System.
+         * Must be an available IP address within the subnet's CIDR. If you don't specify a value,
+         * Oracle automatically assigns a private IP address from the subnet. This should be a
          * "dotted-quad" style IPv4 address.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("readEndpointIpAddress")
         private String readEndpointIpAddress;
 
         /**
-         * The IP address the DB System read endpoint is configured to listen on. A private IP
-         * address of your choice to assign to the read endpoint of the DB System. Must be an
-         * available IP address within the subnet's CIDR. If you don't specify a value, Oracle
-         * automatically assigns a private IP address from the subnet. This should be a
+         * The IP address the DB System read endpoint is configured to listen on.
+         * A private IP address of your choice to assign to the read endpoint of the DB System.
+         * Must be an available IP address within the subnet's CIDR. If you don't specify a value,
+         * Oracle automatically assigns a private IP address from the subnet. This should be a
          * "dotted-quad" style IPv4 address.
          *
          * @param readEndpointIpAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder readEndpointIpAddress(String readEndpointIpAddress) {
             this.readEndpointIpAddress = readEndpointIpAddress;
             this.__explicitlySet__.add("readEndpointIpAddress");
@@ -85,34 +89,36 @@ public final class UpdateReadEndpointDetails
         }
         /**
          * The hostname for the read endpoint of the DB System. Used for DNS.
+         * <p>
+         * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
+         * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+         * <p>
+         * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
          *
-         * <p>The value is the hostname portion of the primary private IP's fully qualified domain
-         * name (FQDN) (for example, "dbsystem-1" in FQDN
-         * "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-         *
-         * <p>Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("readEndpointHostnameLabel")
         private String readEndpointHostnameLabel;
 
         /**
          * The hostname for the read endpoint of the DB System. Used for DNS.
-         *
-         * <p>The value is the hostname portion of the primary private IP's fully qualified domain
-         * name (FQDN) (for example, "dbsystem-1" in FQDN
-         * "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-         *
-         * <p>Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+         * <p>
+         * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
+         * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+         * <p>
+         * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
          *
          * @param readEndpointHostnameLabel the value to set
          * @return this builder
-         */
+         **/
         public Builder readEndpointHostnameLabel(String readEndpointHostnameLabel) {
             this.readEndpointHostnameLabel = readEndpointHostnameLabel;
             this.__explicitlySet__.add("readEndpointHostnameLabel");
             return this;
         }
-        /** A list of IP addresses of read replicas that are excluded from serving read requests. */
+        /**
+         * A list of IP addresses of read replicas that are excluded from serving read requests.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeIps")
         private java.util.List<String> excludeIps;
 
@@ -121,7 +127,7 @@ public final class UpdateReadEndpointDetails
          *
          * @param excludeIps the value to set
          * @return this builder
-         */
+         **/
         public Builder excludeIps(java.util.List<String> excludeIps) {
             this.excludeIps = excludeIps;
             this.__explicitlySet__.add("excludeIps");
@@ -162,7 +168,9 @@ public final class UpdateReadEndpointDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -171,7 +179,10 @@ public final class UpdateReadEndpointDetails
         return new Builder().copy(this);
     }
 
-    /** Specifies if the DB System read endpoint is enabled or not. */
+    /**
+     * Specifies if the DB System read endpoint is enabled or not.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isEnabled")
     private final Boolean isEnabled;
 
@@ -179,58 +190,65 @@ public final class UpdateReadEndpointDetails
      * Specifies if the DB System read endpoint is enabled or not.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsEnabled() {
         return isEnabled;
     }
 
     /**
-     * The IP address the DB System read endpoint is configured to listen on. A private IP address
-     * of your choice to assign to the read endpoint of the DB System. Must be an available IP
-     * address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns
-     * a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-     */
+     * The IP address the DB System read endpoint is configured to listen on.
+     * A private IP address of your choice to assign to the read endpoint of the DB System.
+     * Must be an available IP address within the subnet's CIDR. If you don't specify a value,
+     * Oracle automatically assigns a private IP address from the subnet. This should be a
+     * "dotted-quad" style IPv4 address.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("readEndpointIpAddress")
     private final String readEndpointIpAddress;
 
     /**
-     * The IP address the DB System read endpoint is configured to listen on. A private IP address
-     * of your choice to assign to the read endpoint of the DB System. Must be an available IP
-     * address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns
-     * a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
+     * The IP address the DB System read endpoint is configured to listen on.
+     * A private IP address of your choice to assign to the read endpoint of the DB System.
+     * Must be an available IP address within the subnet's CIDR. If you don't specify a value,
+     * Oracle automatically assigns a private IP address from the subnet. This should be a
+     * "dotted-quad" style IPv4 address.
      *
      * @return the value
-     */
+     **/
     public String getReadEndpointIpAddress() {
         return readEndpointIpAddress;
     }
 
     /**
      * The hostname for the read endpoint of the DB System. Used for DNS.
+     * <p>
+     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
+     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+     * <p>
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      *
-     * <p>The value is the hostname portion of the primary private IP's fully qualified domain name
-     * (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-     *
-     * <p>Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("readEndpointHostnameLabel")
     private final String readEndpointHostnameLabel;
 
     /**
      * The hostname for the read endpoint of the DB System. Used for DNS.
-     *
-     * <p>The value is the hostname portion of the primary private IP's fully qualified domain name
-     * (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
-     *
-     * <p>Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
+     * <p>
+     * The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN)
+     * (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com").
+     * <p>
+     * Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
      *
      * @return the value
-     */
+     **/
     public String getReadEndpointHostnameLabel() {
         return readEndpointHostnameLabel;
     }
 
-    /** A list of IP addresses of read replicas that are excluded from serving read requests. */
+    /**
+     * A list of IP addresses of read replicas that are excluded from serving read requests.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeIps")
     private final java.util.List<String> excludeIps;
 
@@ -238,7 +256,7 @@ public final class UpdateReadEndpointDetails
      * A list of IP addresses of read replicas that are excluded from serving read requests.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getExcludeIps() {
         return excludeIps;
     }
@@ -250,7 +268,6 @@ public final class UpdateReadEndpointDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -6,73 +6,75 @@ package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbNodesRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListDbNodesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListDbNodesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * If provided, filters the results to the set of database versions which are supported for the
-     * DB system.
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
     private String dbSystemId;
 
     /**
-     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     * If provided, filters the results to the set of database versions which are supported for the
-     * DB system.
+     * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
      */
     public String getDbSystemId() {
         return dbSystemId;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
     private String vmClusterId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM
-     * cluster.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
      */
     public String getVmClusterId() {
         return vmClusterId;
     }
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return per page. */
+    /**
+     * The maximum number of items to return per page.
+     */
     public Integer getLimit() {
         return limit;
     }
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     private String page;
 
-    /** The pagination token to continue listing from. */
+    /**
+     * The pagination token to continue listing from.
+     */
     public String getPage() {
         return page;
     }
-    /** Sort by TIMECREATED. Default order for TIMECREATED is descending. */
+    /**
+     * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+     */
     private SortBy sortBy;
 
-    /** Sort by TIMECREATED. Default order for TIMECREATED is descending. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+     **/
+    public enum SortBy {
         Timecreated("TIMECREATED"),
         ;
 
@@ -104,15 +106,21 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /** Sort by TIMECREATED. Default order for TIMECREATED is descending. */
+    /**
+     * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -145,26 +153,30 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
     };
 
-    /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+    /**
+     * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** A filter to return only resources that match the given lifecycle state exactly. */
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState;
 
-    /** A filter to return only resources that match the given lifecycle state exactly. */
+    /**
+     * A filter to return only resources that match the given lifecycle state exactly.
+     */
     public com.oracle.bmc.database.model.DbNodeSummary.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exacc Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      */
     private String dbServerId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * Exacc Db server.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
      */
     public String getDbServerId() {
         return dbServerId;
@@ -173,19 +185,17 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListDbNodesRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         *
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -195,19 +205,12 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The DB system
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
-         * provided, filters the results to the set of database versions which are supported for the
-         * DB system.
+         * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
          */
         private String dbSystemId = null;
 
         /**
-         * The DB system
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If
-         * provided, filters the results to the set of database versions which are supported for the
-         * DB system.
-         *
+         * The DB system [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). If provided, filters the results to the set of database versions which are supported for the DB system.
          * @param dbSystemId the value to set
          * @return this builder instance
          */
@@ -217,15 +220,12 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM cluster.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          */
         private String vmClusterId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * VM cluster.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM cluster.
          * @param vmClusterId the value to set
          * @return this builder instance
          */
@@ -234,12 +234,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The maximum number of items to return per page. */
+        /**
+         * The maximum number of items to return per page.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return per page.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -248,12 +249,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The pagination token to continue listing from. */
+        /**
+         * The pagination token to continue listing from.
+         */
         private String page = null;
 
         /**
          * The pagination token to continue listing from.
-         *
          * @param page the value to set
          * @return this builder instance
          */
@@ -262,12 +264,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** Sort by TIMECREATED. Default order for TIMECREATED is descending. */
+        /**
+         * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
+         */
         private SortBy sortBy = null;
 
         /**
-         * Sort by TIMECREATED. Default order for TIMECREATED is descending.
-         *
+         * Sort by TIMECREATED.  Default order for TIMECREATED is descending.
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -276,12 +279,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
+        /**
+         * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -290,12 +294,13 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
-        /** A filter to return only resources that match the given lifecycle state exactly. */
+        /**
+         * A filter to return only resources that match the given lifecycle state exactly.
+         */
         private com.oracle.bmc.database.model.DbNodeSummary.LifecycleState lifecycleState = null;
 
         /**
          * A filter to return only resources that match the given lifecycle state exactly.
-         *
          * @param lifecycleState the value to set
          * @return this builder instance
          */
@@ -306,15 +311,12 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exacc Db server.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
          */
         private String dbServerId = null;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * Exacc Db server.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
          * @param dbServerId the value to set
          * @return this builder instance
          */
@@ -325,19 +327,18 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -349,7 +350,6 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListDbNodesRequest o) {
@@ -370,11 +370,10 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDbNodesRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListDbNodesRequest
          */
@@ -388,8 +387,7 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
         /**
          * Build the instance of ListDbNodesRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListDbNodesRequest
@@ -406,14 +404,12 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.lifecycleState = lifecycleState;
             request.dbServerId = dbServerId;
             return request;
-            // new ListDbNodesRequest(compartmentId, dbSystemId, vmClusterId, limit, page, sortBy,
-            // sortOrder, lifecycleState, dbServerId);
+            // new ListDbNodesRequest(compartmentId, dbSystemId, vmClusterId, limit, page, sortBy, sortOrder, lifecycleState, dbServerId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -431,7 +427,6 @@ public class ListDbNodesRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

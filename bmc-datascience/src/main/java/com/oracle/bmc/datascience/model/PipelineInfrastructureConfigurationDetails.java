@@ -5,23 +5,22 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * The infrastructure configuration details of a pipeline or a step. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
+ * The infrastructure configuration details of a pipeline or a step.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = PipelineInfrastructureConfigurationDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = PipelineInfrastructureConfigurationDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PipelineInfrastructureConfigurationDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "shapeName",
@@ -43,22 +42,26 @@ public final class PipelineInfrastructureConfigurationDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The shape used to launch the instance for all step runs in the pipeline. */
+        /**
+         * The shape used to launch the instance for all step runs in the pipeline.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
         private String shapeName;
 
         /**
          * The shape used to launch the instance for all step runs in the pipeline.
-         *
          * @param shapeName the value to set
          * @return this builder
-         */
+         **/
         public Builder shapeName(String shapeName) {
             this.shapeName = shapeName;
             this.__explicitlySet__.add("shapeName");
             return this;
         }
-        /** The size of the block storage volume to attach to the instance. */
+        /**
+         * The size of the block storage volume to attach to the instance.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
         private Integer blockStorageSizeInGBs;
 
@@ -67,26 +70,25 @@ public final class PipelineInfrastructureConfigurationDetails
          *
          * @param blockStorageSizeInGBs the value to set
          * @return this builder
-         */
+         **/
         public Builder blockStorageSizeInGBs(Integer blockStorageSizeInGBs) {
             this.blockStorageSizeInGBs = blockStorageSizeInGBs;
             this.__explicitlySet__.add("blockStorageSizeInGBs");
             return this;
         }
         /**
-         * The subnet to create a secondary vnic in to attach to the instance running the pipeline
-         * step.
-         */
+         * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The subnet to create a secondary vnic in to attach to the instance running the pipeline
-         * step.
+         * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
          *
          * @param subnetId the value to set
          * @return this builder
-         */
+         **/
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
@@ -136,7 +138,9 @@ public final class PipelineInfrastructureConfigurationDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -145,20 +149,24 @@ public final class PipelineInfrastructureConfigurationDetails
         return new Builder().copy(this);
     }
 
-    /** The shape used to launch the instance for all step runs in the pipeline. */
+    /**
+     * The shape used to launch the instance for all step runs in the pipeline.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("shapeName")
     private final String shapeName;
 
     /**
      * The shape used to launch the instance for all step runs in the pipeline.
-     *
      * @return the value
-     */
+     **/
     public String getShapeName() {
         return shapeName;
     }
 
-    /** The size of the block storage volume to attach to the instance. */
+    /**
+     * The size of the block storage volume to attach to the instance.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("blockStorageSizeInGBs")
     private final Integer blockStorageSizeInGBs;
 
@@ -166,14 +174,15 @@ public final class PipelineInfrastructureConfigurationDetails
      * The size of the block storage volume to attach to the instance.
      *
      * @return the value
-     */
+     **/
     public Integer getBlockStorageSizeInGBs() {
         return blockStorageSizeInGBs;
     }
 
     /**
      * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
@@ -181,7 +190,7 @@ public final class PipelineInfrastructureConfigurationDetails
      * The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
      *
      * @return the value
-     */
+     **/
     public String getSubnetId() {
         return subnetId;
     }
@@ -200,7 +209,6 @@ public final class PipelineInfrastructureConfigurationDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

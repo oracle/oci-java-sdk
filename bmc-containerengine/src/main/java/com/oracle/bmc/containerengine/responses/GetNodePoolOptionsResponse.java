@@ -6,11 +6,12 @@ package com.oracle.bmc.containerengine.responses;
 
 import com.oracle.bmc.containerengine.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
@@ -24,12 +25,13 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
         return opcRequestId;
     }
 
-    /** The returned {@code NodePoolOptions} instance. */
+    /**
+     * The returned NodePoolOptions instance.
+     */
     private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
     /**
-     * The returned {@code NodePoolOptions} instance.
-     *
+     * The returned NodePoolOptions instance.
      * @return the value
      */
     public com.oracle.bmc.containerengine.model.NodePoolOptions getNodePoolOptions() {
@@ -44,7 +46,7 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
     })
     private GetNodePoolOptionsResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions) {
         super(__httpStatusCode__, headers);
@@ -52,20 +54,17 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
         this.nodePoolOptions = nodePoolOptions;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetNodePoolOptionsResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
@@ -73,6 +72,7 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
          * particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
@@ -88,12 +88,13 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
             return this;
         }
 
-        /** The returned {@code NodePoolOptions} instance. */
+        /**
+         * The returned NodePoolOptions instance.
+         */
         private com.oracle.bmc.containerengine.model.NodePoolOptions nodePoolOptions;
 
         /**
-         * The returned {@code NodePoolOptions} instance.
-         *
+         * The returned NodePoolOptions instance.
          * @param nodePoolOptions the value to set
          * @return this builder
          */
@@ -105,10 +106,8 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(GetNodePoolOptionsResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -120,10 +119,8 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public GetNodePoolOptionsResponse build() {
             return new GetNodePoolOptionsResponse(
                     __httpStatusCode__, headers, opcRequestId, nodePoolOptions);
@@ -132,7 +129,6 @@ public class GetNodePoolOptionsResponse extends com.oracle.bmc.responses.BmcResp
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

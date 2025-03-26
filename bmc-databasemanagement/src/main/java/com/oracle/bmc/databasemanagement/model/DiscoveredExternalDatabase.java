@@ -6,25 +6,24 @@ package com.oracle.bmc.databasemanagement.model;
 
 /**
  * The details of an external Oracle Database discovered in an external DB system discovery run.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = DiscoveredExternalDatabase.Builder.class)
+    builder = DiscoveredExternalDatabase.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "componentType")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "componentType"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystemComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -92,34 +91,32 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The {@code DB_UNIQUE_NAME} of the external database. */
+        /**
+         * The {@code DB_UNIQUE_NAME} of the external database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * The {@code DB_UNIQUE_NAME} of the external database.
-         *
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
@@ -128,7 +125,8 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         /**
          * The type of Oracle Database. Indicates whether the database is a Container Database,
          * Pluggable Database, or a Non-container Database.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbType")
         private DatabaseSubType dbType;
 
@@ -138,112 +136,119 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
          *
          * @param dbType the value to set
          * @return this builder
-         */
+         **/
         public Builder dbType(DatabaseSubType dbType) {
             this.dbType = dbType;
             this.__explicitlySet__.add("dbType");
             return this;
         }
-        /** Indicates whether the Oracle Database is part of a cluster. */
+        /**
+         * Indicates whether the Oracle Database is part of a cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
         /**
          * Indicates whether the Oracle Database is part of a cluster.
-         *
          * @param isCluster the value to set
          * @return this builder
-         */
+         **/
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
             this.__explicitlySet__.add("isCluster");
             return this;
         }
-        /** The Oracle Database edition. */
+        /**
+         * The Oracle Database edition.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbEdition")
         private String dbEdition;
 
         /**
          * The Oracle Database edition.
-         *
          * @param dbEdition the value to set
          * @return this builder
-         */
+         **/
         public Builder dbEdition(String dbEdition) {
             this.dbEdition = dbEdition;
             this.__explicitlySet__.add("dbEdition");
             return this;
         }
-        /** The Oracle Database ID. */
+        /**
+         * The Oracle Database ID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
         /**
          * The Oracle Database ID.
-         *
          * @param dbId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
             return this;
         }
-        /** The database packs licensed for the external Oracle Database. */
+        /**
+         * The database packs licensed for the external Oracle Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
         private String dbPacks;
 
         /**
          * The database packs licensed for the external Oracle Database.
-         *
          * @param dbPacks the value to set
          * @return this builder
-         */
+         **/
         public Builder dbPacks(String dbPacks) {
             this.dbPacks = dbPacks;
             this.__explicitlySet__.add("dbPacks");
             return this;
         }
-        /** The role of the Oracle Database in Oracle Data Guard configuration. */
+        /**
+         * The role of the Oracle Database in Oracle Data Guard configuration.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
         private DbRole dbRole;
 
         /**
          * The role of the Oracle Database in Oracle Data Guard configuration.
-         *
          * @param dbRole the value to set
          * @return this builder
-         */
+         **/
         public Builder dbRole(DbRole dbRole) {
             this.dbRole = dbRole;
             this.__explicitlySet__.add("dbRole");
             return this;
         }
-        /** The Oracle Database version. */
+        /**
+         * The Oracle Database version.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
 
         /**
          * The Oracle Database version.
-         *
          * @param dbVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dbVersion(String dbVersion) {
             this.dbVersion = dbVersion;
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** The list of Pluggable Databases. */
+        /**
+         * The list of Pluggable Databases.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
         private java.util.List<DiscoveredExternalPluggableDatabase> pluggableDatabases;
 
         /**
          * The list of Pluggable Databases.
-         *
          * @param pluggableDatabases the value to set
          * @return this builder
-         */
+         **/
         public Builder pluggableDatabases(
                 java.util.List<DiscoveredExternalPluggableDatabase> pluggableDatabases) {
             this.pluggableDatabases = pluggableDatabases;
@@ -350,7 +355,9 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -401,31 +408,29 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The {@code DB_UNIQUE_NAME} of the external database. */
+    /**
+     * The {@code DB_UNIQUE_NAME} of the external database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * The {@code DB_UNIQUE_NAME} of the external database.
-     *
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
@@ -433,7 +438,8 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
     /**
      * The type of Oracle Database. Indicates whether the database is a Container Database,
      * Pluggable Database, or a Non-container Database.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbType")
     private final DatabaseSubType dbType;
 
@@ -442,65 +448,71 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
      * Pluggable Database, or a Non-container Database.
      *
      * @return the value
-     */
+     **/
     public DatabaseSubType getDbType() {
         return dbType;
     }
 
-    /** Indicates whether the Oracle Database is part of a cluster. */
+    /**
+     * Indicates whether the Oracle Database is part of a cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
     /**
      * Indicates whether the Oracle Database is part of a cluster.
-     *
      * @return the value
-     */
+     **/
     public Boolean getIsCluster() {
         return isCluster;
     }
 
-    /** The Oracle Database edition. */
+    /**
+     * The Oracle Database edition.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbEdition")
     private final String dbEdition;
 
     /**
      * The Oracle Database edition.
-     *
      * @return the value
-     */
+     **/
     public String getDbEdition() {
         return dbEdition;
     }
 
-    /** The Oracle Database ID. */
+    /**
+     * The Oracle Database ID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
     /**
      * The Oracle Database ID.
-     *
      * @return the value
-     */
+     **/
     public String getDbId() {
         return dbId;
     }
 
-    /** The database packs licensed for the external Oracle Database. */
+    /**
+     * The database packs licensed for the external Oracle Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbPacks")
     private final String dbPacks;
 
     /**
      * The database packs licensed for the external Oracle Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbPacks() {
         return dbPacks;
     }
 
-    /** The role of the Oracle Database in Oracle Data Guard configuration. */
-    public enum DbRole implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The role of the Oracle Database in Oracle Data Guard configuration.
+     **/
+    public enum DbRole {
         LogicalStandby("LOGICAL_STANDBY"),
         PhysicalStandby("PHYSICAL_STANDBY"),
         SnapshotStandby("SNAPSHOT_STANDBY"),
@@ -508,8 +520,8 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
         FarSync("FAR_SYNC"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -547,41 +559,44 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
             return UnknownEnumValue;
         }
     };
-    /** The role of the Oracle Database in Oracle Data Guard configuration. */
+    /**
+     * The role of the Oracle Database in Oracle Data Guard configuration.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbRole")
     private final DbRole dbRole;
 
     /**
      * The role of the Oracle Database in Oracle Data Guard configuration.
-     *
      * @return the value
-     */
+     **/
     public DbRole getDbRole() {
         return dbRole;
     }
 
-    /** The Oracle Database version. */
+    /**
+     * The Oracle Database version.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
 
     /**
      * The Oracle Database version.
-     *
      * @return the value
-     */
+     **/
     public String getDbVersion() {
         return dbVersion;
     }
 
-    /** The list of Pluggable Databases. */
+    /**
+     * The list of Pluggable Databases.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pluggableDatabases")
     private final java.util.List<DiscoveredExternalPluggableDatabase> pluggableDatabases;
 
     /**
      * The list of Pluggable Databases.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<DiscoveredExternalPluggableDatabase> getPluggableDatabases() {
         return pluggableDatabases;
     }
@@ -600,7 +615,6 @@ public final class DiscoveredExternalDatabase extends DiscoveredExternalDbSystem
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

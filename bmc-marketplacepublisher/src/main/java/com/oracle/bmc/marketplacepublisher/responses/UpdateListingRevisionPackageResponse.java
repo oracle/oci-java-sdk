@@ -6,17 +6,18 @@ package com.oracle.bmc.marketplacepublisher.responses;
 
 import com.oracle.bmc.marketplacepublisher.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
+     *
      */
     private String opcRequestId;
 
     /**
-     * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * Unique Oracle-assigned identifier for the request. If you need to contact
+     * Oracle about a particular request, please provide the request ID.
      *
      * @return the value
      */
@@ -24,7 +25,10 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
         return opcRequestId;
     }
 
-    /** For optimistic concurrency control. See {@code if-match}. */
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     */
     private String etag;
 
     /**
@@ -36,12 +40,13 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
         return etag;
     }
 
-    /** The returned {@code ListingRevisionPackage} instance. */
+    /**
+     * The returned ListingRevisionPackage instance.
+     */
     private com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage listingRevisionPackage;
 
     /**
-     * The returned {@code ListingRevisionPackage} instance.
-     *
+     * The returned ListingRevisionPackage instance.
      * @return the value
      */
     public com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
@@ -58,7 +63,7 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
     })
     private UpdateListingRevisionPackageResponse(
             int __httpStatusCode__,
-            java.util.Map<String, java.util.List<String>> headers,
+            javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
             String etag,
             com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
@@ -69,34 +74,31 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
         this.listingRevisionPackage = listingRevisionPackage;
     }
 
-    public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<
-                    UpdateListingRevisionPackageResponse> {
+    public static class Builder {
         private int __httpStatusCode__;
 
-        @Override
         public Builder __httpStatusCode__(int __httpStatusCode__) {
             this.__httpStatusCode__ = __httpStatusCode__;
             return this;
         }
 
-        private java.util.Map<String, java.util.List<String>> headers;
+        private javax.ws.rs.core.MultivaluedMap<String, String> headers;
 
-        @Override
-        public Builder headers(java.util.Map<String, java.util.List<String>> headers) {
+        public Builder headers(javax.ws.rs.core.MultivaluedMap<String, String> headers) {
             this.headers = headers;
             return this;
         }
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
+         *
          */
         private String opcRequestId;
 
         /**
-         * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * Unique Oracle-assigned identifier for the request. If you need to contact
+         * Oracle about a particular request, please provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -106,7 +108,10 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** For optimistic concurrency control. See {@code if-match}. */
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         */
         private String etag;
 
         /**
@@ -120,13 +125,14 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
             return this;
         }
 
-        /** The returned {@code ListingRevisionPackage} instance. */
+        /**
+         * The returned ListingRevisionPackage instance.
+         */
         private com.oracle.bmc.marketplacepublisher.model.ListingRevisionPackage
                 listingRevisionPackage;
 
         /**
-         * The returned {@code ListingRevisionPackage} instance.
-         *
+         * The returned ListingRevisionPackage instance.
          * @param listingRevisionPackage the value to set
          * @return this builder
          */
@@ -139,10 +145,8 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
-        @Override
         public Builder copy(UpdateListingRevisionPackageResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
@@ -155,10 +159,8 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
 
         /**
          * Build the response object.
-         *
          * @return the response object
          */
-        @Override
         public UpdateListingRevisionPackageResponse build() {
             return new UpdateListingRevisionPackageResponse(
                     __httpStatusCode__, headers, opcRequestId, etag, listingRevisionPackage);
@@ -167,7 +169,6 @@ public class UpdateListingRevisionPackageResponse extends com.oracle.bmc.respons
 
     /**
      * Return a new builder for this response object.
-     *
      * @return builder for the response object
      */
     public static Builder builder() {

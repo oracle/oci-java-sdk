@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * update cluster specs in Kiev. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * update cluster specs in Kiev.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdateClusterSpecsDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = UpdateClusterSpecsDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class UpdateClusterSpecsDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "clusterId",
@@ -55,121 +54,129 @@ public final class UpdateClusterSpecsDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the Opensearch Cluster. */
+        /**
+         * OCID of the Opensearch Cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
         private String clusterId;
 
         /**
          * OCID of the Opensearch Cluster.
-         *
          * @param clusterId the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterId(String clusterId) {
             this.clusterId = clusterId;
             this.__explicitlySet__.add("clusterId");
             return this;
         }
-        /** Updated value of OCPU's configured for master nodes of the cluster. */
+        /**
+         * Updated value of OCPU's configured for master nodes of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostOcpuCount")
         private Integer masterNodeHostOcpuCount;
 
         /**
          * Updated value of OCPU's configured for master nodes of the cluster.
-         *
          * @param masterNodeHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostOcpuCount(Integer masterNodeHostOcpuCount) {
             this.masterNodeHostOcpuCount = masterNodeHostOcpuCount;
             this.__explicitlySet__.add("masterNodeHostOcpuCount");
             return this;
         }
-        /** Updated value of memory for master nodes in the cluster (in GB). */
+        /**
+         * Updated value of memory for master nodes in the cluster (in GB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostMemoryGB")
         private Integer masterNodeHostMemoryGB;
 
         /**
          * Updated value of memory for master nodes in the cluster (in GB).
-         *
          * @param masterNodeHostMemoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder masterNodeHostMemoryGB(Integer masterNodeHostMemoryGB) {
             this.masterNodeHostMemoryGB = masterNodeHostMemoryGB;
             this.__explicitlySet__.add("masterNodeHostMemoryGB");
             return this;
         }
-        /** Updated value of OCPU's configured for data nodes of the cluster. */
+        /**
+         * Updated value of OCPU's configured for data nodes of the cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
         private Integer dataNodeHostOcpuCount;
 
         /**
          * Updated value of OCPU's configured for data nodes of the cluster.
-         *
          * @param dataNodeHostOcpuCount the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostOcpuCount(Integer dataNodeHostOcpuCount) {
             this.dataNodeHostOcpuCount = dataNodeHostOcpuCount;
             this.__explicitlySet__.add("dataNodeHostOcpuCount");
             return this;
         }
-        /** Updated value of memory for data nodes in the cluster (in GB). */
+        /**
+         * Updated value of memory for data nodes in the cluster (in GB).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostMemoryGB")
         private Integer dataNodeHostMemoryGB;
 
         /**
          * Updated value of memory for data nodes in the cluster (in GB).
-         *
          * @param dataNodeHostMemoryGB the value to set
          * @return this builder
-         */
+         **/
         public Builder dataNodeHostMemoryGB(Integer dataNodeHostMemoryGB) {
             this.dataNodeHostMemoryGB = dataNodeHostMemoryGB;
             this.__explicitlySet__.add("dataNodeHostMemoryGB");
             return this;
         }
-        /** Updated version of the software the cluster is currently running. */
+        /**
+         * Updated version of the software the cluster is currently running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private String softwareVersion;
 
         /**
          * Updated version of the software the cluster is currently running.
-         *
          * @param softwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder softwareVersion(String softwareVersion) {
             this.softwareVersion = softwareVersion;
             this.__explicitlySet__.add("softwareVersion");
             return this;
         }
-        /** Updated version of the dashboard software the cluster is currently running. */
+        /**
+         * Updated version of the dashboard software the cluster is currently running.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dashboardSoftwareVersion")
         private String dashboardSoftwareVersion;
 
         /**
          * Updated version of the dashboard software the cluster is currently running.
-         *
          * @param dashboardSoftwareVersion the value to set
          * @return this builder
-         */
+         **/
         public Builder dashboardSoftwareVersion(String dashboardSoftwareVersion) {
             this.dashboardSoftwareVersion = dashboardSoftwareVersion;
             this.__explicitlySet__.add("dashboardSoftwareVersion");
             return this;
         }
-        /** Updated Private endpoint of cluster. */
+        /**
+         * Updated Private endpoint of cluster.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterPrivateEndpoint")
         private String clusterPrivateEndpoint;
 
         /**
          * Updated Private endpoint of cluster.
-         *
          * @param clusterPrivateEndpoint the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterPrivateEndpoint(String clusterPrivateEndpoint) {
             this.clusterPrivateEndpoint = clusterPrivateEndpoint;
             this.__explicitlySet__.add("clusterPrivateEndpoint");
@@ -226,7 +233,9 @@ public final class UpdateClusterSpecsDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -235,106 +244,114 @@ public final class UpdateClusterSpecsDetails
         return new Builder().copy(this);
     }
 
-    /** OCID of the Opensearch Cluster. */
+    /**
+     * OCID of the Opensearch Cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterId")
     private final String clusterId;
 
     /**
      * OCID of the Opensearch Cluster.
-     *
      * @return the value
-     */
+     **/
     public String getClusterId() {
         return clusterId;
     }
 
-    /** Updated value of OCPU's configured for master nodes of the cluster. */
+    /**
+     * Updated value of OCPU's configured for master nodes of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostOcpuCount")
     private final Integer masterNodeHostOcpuCount;
 
     /**
      * Updated value of OCPU's configured for master nodes of the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getMasterNodeHostOcpuCount() {
         return masterNodeHostOcpuCount;
     }
 
-    /** Updated value of memory for master nodes in the cluster (in GB). */
+    /**
+     * Updated value of memory for master nodes in the cluster (in GB).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("masterNodeHostMemoryGB")
     private final Integer masterNodeHostMemoryGB;
 
     /**
      * Updated value of memory for master nodes in the cluster (in GB).
-     *
      * @return the value
-     */
+     **/
     public Integer getMasterNodeHostMemoryGB() {
         return masterNodeHostMemoryGB;
     }
 
-    /** Updated value of OCPU's configured for data nodes of the cluster. */
+    /**
+     * Updated value of OCPU's configured for data nodes of the cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostOcpuCount")
     private final Integer dataNodeHostOcpuCount;
 
     /**
      * Updated value of OCPU's configured for data nodes of the cluster.
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeHostOcpuCount() {
         return dataNodeHostOcpuCount;
     }
 
-    /** Updated value of memory for data nodes in the cluster (in GB). */
+    /**
+     * Updated value of memory for data nodes in the cluster (in GB).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataNodeHostMemoryGB")
     private final Integer dataNodeHostMemoryGB;
 
     /**
      * Updated value of memory for data nodes in the cluster (in GB).
-     *
      * @return the value
-     */
+     **/
     public Integer getDataNodeHostMemoryGB() {
         return dataNodeHostMemoryGB;
     }
 
-    /** Updated version of the software the cluster is currently running. */
+    /**
+     * Updated version of the software the cluster is currently running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final String softwareVersion;
 
     /**
      * Updated version of the software the cluster is currently running.
-     *
      * @return the value
-     */
+     **/
     public String getSoftwareVersion() {
         return softwareVersion;
     }
 
-    /** Updated version of the dashboard software the cluster is currently running. */
+    /**
+     * Updated version of the dashboard software the cluster is currently running.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dashboardSoftwareVersion")
     private final String dashboardSoftwareVersion;
 
     /**
      * Updated version of the dashboard software the cluster is currently running.
-     *
      * @return the value
-     */
+     **/
     public String getDashboardSoftwareVersion() {
         return dashboardSoftwareVersion;
     }
 
-    /** Updated Private endpoint of cluster. */
+    /**
+     * Updated Private endpoint of cluster.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterPrivateEndpoint")
     private final String clusterPrivateEndpoint;
 
     /**
      * Updated Private endpoint of cluster.
-     *
      * @return the value
-     */
+     **/
     public String getClusterPrivateEndpoint() {
         return clusterPrivateEndpoint;
     }
@@ -346,7 +363,6 @@ public final class UpdateClusterSpecsDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,19 @@
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * Provides summary information for an erratum. An erratum is an important software change which can
- * include security advisories, bug fixes, or enhancements. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * Provides summary information for an erratum. An erratum is an important software change which can include security advisories, bug fixes, or enhancements.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ErratumSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ErratumSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ErratumSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "name",
@@ -58,148 +54,149 @@ public final class ErratumSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Advisory name. */
+        /**
+         * Advisory name.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Advisory name.
-         *
          * @param name the value to set
          * @return this builder
-         */
+         **/
         public Builder name(String name) {
             this.name = name;
             this.__explicitlySet__.add("name");
             return this;
         }
-        /** Summary description of the erratum. */
+        /**
+         * Summary description of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
         private String synopsis;
 
         /**
          * Summary description of the erratum.
-         *
          * @param synopsis the value to set
          * @return this builder
-         */
+         **/
         public Builder synopsis(String synopsis) {
             this.synopsis = synopsis;
             this.__explicitlySet__.add("synopsis");
             return this;
         }
         /**
-         * The date and time the erratum was issued (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
         private java.util.Date timeIssued;
 
         /**
-         * The date and time the erratum was issued (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeIssued the value to set
          * @return this builder
-         */
+         **/
         public Builder timeIssued(java.util.Date timeIssued) {
             this.timeIssued = timeIssued;
             this.__explicitlySet__.add("timeIssued");
             return this;
         }
         /**
-         * The date and time the erratum was updated (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
-         */
+         * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the erratum was updated (in [RFC
-         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Type of the erratum. This property is deprecated and it will be removed in a future API
-         * release. Please refer to the advisoryType property instead.
-         */
+         * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("classificationType")
         private ClassificationTypes classificationType;
 
         /**
-         * Type of the erratum. This property is deprecated and it will be removed in a future API
-         * release. Please refer to the advisoryType property instead.
-         *
+         * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
          * @param classificationType the value to set
          * @return this builder
-         */
+         **/
         public Builder classificationType(ClassificationTypes classificationType) {
             this.classificationType = classificationType;
             this.__explicitlySet__.add("classificationType");
             return this;
         }
-        /** List of CVEs applicable to this erratum. */
+        /**
+         * List of CVEs applicable to this erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
         private java.util.List<String> relatedCves;
 
         /**
          * List of CVEs applicable to this erratum.
-         *
          * @param relatedCves the value to set
          * @return this builder
-         */
+         **/
         public Builder relatedCves(java.util.List<String> relatedCves) {
             this.relatedCves = relatedCves;
             this.__explicitlySet__.add("relatedCves");
             return this;
         }
-        /** List of affected OS families. */
+        /**
+         * List of affected OS families.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
         private java.util.List<OsFamily> osFamilies;
 
         /**
          * List of affected OS families.
-         *
          * @param osFamilies the value to set
          * @return this builder
-         */
+         **/
         public Builder osFamilies(java.util.List<OsFamily> osFamilies) {
             this.osFamilies = osFamilies;
             this.__explicitlySet__.add("osFamilies");
             return this;
         }
-        /** The severity advisory. Only valid for security type advisories. */
+        /**
+         * The severity advisory. Only valid for security type advisories.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advisorySeverity")
         private AdvisorySeverity advisorySeverity;
 
         /**
          * The severity advisory. Only valid for security type advisories.
-         *
          * @param advisorySeverity the value to set
          * @return this builder
-         */
+         **/
         public Builder advisorySeverity(AdvisorySeverity advisorySeverity) {
             this.advisorySeverity = advisorySeverity;
             this.__explicitlySet__.add("advisorySeverity");
             return this;
         }
-        /** The advisory type of the erratum. */
+        /**
+         * The advisory type of the erratum.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
         private AdvisoryTypes advisoryType;
 
         /**
          * The advisory type of the erratum.
-         *
          * @param advisoryType the value to set
          * @return this builder
-         */
+         **/
         public Builder advisoryType(AdvisoryTypes advisoryType) {
             this.advisoryType = advisoryType;
             this.__explicitlySet__.add("advisoryType");
@@ -260,7 +257,9 @@ public final class ErratumSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -269,131 +268,132 @@ public final class ErratumSummary
         return new Builder().copy(this);
     }
 
-    /** Advisory name. */
+    /**
+     * Advisory name.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Advisory name.
-     *
      * @return the value
-     */
+     **/
     public String getName() {
         return name;
     }
 
-    /** Summary description of the erratum. */
+    /**
+     * Summary description of the erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("synopsis")
     private final String synopsis;
 
     /**
      * Summary description of the erratum.
-     *
      * @return the value
-     */
+     **/
     public String getSynopsis() {
         return synopsis;
     }
 
     /**
-     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
-     */
+     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeIssued")
     private final java.util.Date timeIssued;
 
     /**
-     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
+     * The date and time the erratum was issued (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeIssued() {
         return timeIssued;
     }
 
     /**
-     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
-     */
+     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
-     * format).
+     * The date and time the erratum was updated (in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Type of the erratum. This property is deprecated and it will be removed in a future API
-     * release. Please refer to the advisoryType property instead.
-     */
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("classificationType")
     private final ClassificationTypes classificationType;
 
     /**
-     * Type of the erratum. This property is deprecated and it will be removed in a future API
-     * release. Please refer to the advisoryType property instead.
-     *
+     * Type of the erratum. This property is deprecated and it will be removed in a future API release. Please refer to the advisoryType property instead.
      * @return the value
-     */
+     **/
     public ClassificationTypes getClassificationType() {
         return classificationType;
     }
 
-    /** List of CVEs applicable to this erratum. */
+    /**
+     * List of CVEs applicable to this erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("relatedCves")
     private final java.util.List<String> relatedCves;
 
     /**
      * List of CVEs applicable to this erratum.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getRelatedCves() {
         return relatedCves;
     }
 
-    /** List of affected OS families. */
+    /**
+     * List of affected OS families.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamilies")
     private final java.util.List<OsFamily> osFamilies;
 
     /**
      * List of affected OS families.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OsFamily> getOsFamilies() {
         return osFamilies;
     }
 
-    /** The severity advisory. Only valid for security type advisories. */
+    /**
+     * The severity advisory. Only valid for security type advisories.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advisorySeverity")
     private final AdvisorySeverity advisorySeverity;
 
     /**
      * The severity advisory. Only valid for security type advisories.
-     *
      * @return the value
-     */
+     **/
     public AdvisorySeverity getAdvisorySeverity() {
         return advisorySeverity;
     }
 
-    /** The advisory type of the erratum. */
+    /**
+     * The advisory type of the erratum.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("advisoryType")
     private final AdvisoryTypes advisoryType;
 
     /**
      * The advisory type of the erratum.
-     *
      * @return the value
-     */
+     **/
     public AdvisoryTypes getAdvisoryType() {
         return advisoryType;
     }
@@ -405,7 +405,6 @@ public final class ErratumSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

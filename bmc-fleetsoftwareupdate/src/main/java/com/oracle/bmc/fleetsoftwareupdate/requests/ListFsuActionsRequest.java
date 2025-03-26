@@ -6,86 +6,124 @@ package com.oracle.bmc.fleetsoftwareupdate.requests;
 
 import com.oracle.bmc.fleetsoftwareupdate.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuActionsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFsuActionsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuActionsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListFsuActionsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220528")
 public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     *
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * The ID of the compartment in which to list resources.
+     *
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
     /**
-     * A filter to return only resources whose fsuCycleId matches the given
-     * fleetSoftwareUpdateCycleId.
+     * A filter to return only resources whose fsuCycleId matches the given fleetSoftwareUpdateCycleId.
+     *
      */
     private String fsuCycleId;
 
     /**
-     * A filter to return only resources whose fsuCycleId matches the given
-     * fleetSoftwareUpdateCycleId.
+     * A filter to return only resources whose fsuCycleId matches the given fleetSoftwareUpdateCycleId.
+     *
      */
     public String getFsuCycleId() {
         return fsuCycleId;
     }
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     *
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.ActionLifecycleStates lifecycleState;
 
-    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+     *
+     */
     public com.oracle.bmc.fleetsoftwareupdate.model.ActionLifecycleStates getLifecycleState() {
         return lifecycleState;
     }
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     private String displayName;
 
-    /** A filter to return only resources that match the entire display name given. */
+    /**
+     * A filter to return only resources that match the entire display name given.
+     *
+     */
     public String getDisplayName() {
         return displayName;
     }
-    /** A filter to return only resources whose type matches the given type. */
+    /**
+     * A filter to return only resources whose type matches the given type.
+     *
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.ActionTypes type;
 
-    /** A filter to return only resources whose type matches the given type. */
+    /**
+     * A filter to return only resources whose type matches the given type.
+     *
+     */
     public com.oracle.bmc.fleetsoftwareupdate.model.ActionTypes getType() {
         return type;
     }
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     private Integer limit;
 
-    /** The maximum number of items to return. */
+    /**
+     * The maximum number of items to return.
+     */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results.
+     * This must come from the {@code opc-next-page} header field of a previous response.
+     *
      */
     private String page;
 
     /**
-     * A token representing the position at which to start retrieving results. This must come from
-     * the {@code opc-next-page} header field of a previous response.
+     * A token representing the position at which to start retrieving results.
+     * This must come from the {@code opc-next-page} header field of a previous response.
+     *
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     private com.oracle.bmc.fleetsoftwareupdate.model.SortOrder sortOrder;
 
-    /** The sort order to use, either 'ASC' or 'DESC'. */
+    /**
+     * The sort order to use, either 'ASC' or 'DESC'.
+     */
     public com.oracle.bmc.fleetsoftwareupdate.model.SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** The field to sort by. Only one sort order may be provided. */
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     *
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. Only one sort order may be provided. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     *
+     **/
+    public enum SortBy {
         TimeCreated("timeCreated"),
         DisplayName("displayName"),
         ;
@@ -118,14 +156,23 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
     };
 
-    /** The field to sort by. Only one sort order may be provided. */
+    /**
+     * The field to sort by. Only one sort order may be provided.
+     *
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     private String opcRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     *
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -133,10 +180,14 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListFsuActionsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * The ID of the compartment in which to list resources.
+         *
+         */
         private String compartmentId = null;
 
         /**
@@ -151,14 +202,13 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources whose fsuCycleId matches the given
-         * fleetSoftwareUpdateCycleId.
+         * A filter to return only resources whose fsuCycleId matches the given fleetSoftwareUpdateCycleId.
+         *
          */
         private String fsuCycleId = null;
 
         /**
-         * A filter to return only resources whose fsuCycleId matches the given
-         * fleetSoftwareUpdateCycleId.
+         * A filter to return only resources whose fsuCycleId matches the given fleetSoftwareUpdateCycleId.
          *
          * @param fsuCycleId the value to set
          * @return this builder instance
@@ -170,6 +220,7 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * A filter to return only resources whose lifecycleState matches the given lifecycleState.
+         *
          */
         private com.oracle.bmc.fleetsoftwareupdate.model.ActionLifecycleStates lifecycleState =
                 null;
@@ -186,7 +237,10 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A filter to return only resources that match the entire display name given. */
+        /**
+         * A filter to return only resources that match the entire display name given.
+         *
+         */
         private String displayName = null;
 
         /**
@@ -200,7 +254,10 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A filter to return only resources whose type matches the given type. */
+        /**
+         * A filter to return only resources whose type matches the given type.
+         *
+         */
         private com.oracle.bmc.fleetsoftwareupdate.model.ActionTypes type = null;
 
         /**
@@ -214,12 +271,13 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The maximum number of items to return. */
+        /**
+         * The maximum number of items to return.
+         */
         private Integer limit = null;
 
         /**
          * The maximum number of items to return.
-         *
          * @param limit the value to set
          * @return this builder instance
          */
@@ -229,14 +287,15 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
+         *
          */
         private String page = null;
 
         /**
-         * A token representing the position at which to start retrieving results. This must come
-         * from the {@code opc-next-page} header field of a previous response.
+         * A token representing the position at which to start retrieving results.
+         * This must come from the {@code opc-next-page} header field of a previous response.
          *
          * @param page the value to set
          * @return this builder instance
@@ -246,12 +305,13 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The sort order to use, either 'ASC' or 'DESC'. */
+        /**
+         * The sort order to use, either 'ASC' or 'DESC'.
+         */
         private com.oracle.bmc.fleetsoftwareupdate.model.SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either 'ASC' or 'DESC'.
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -260,7 +320,10 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The field to sort by. Only one sort order may be provided. */
+        /**
+         * The field to sort by. Only one sort order may be provided.
+         *
+         */
         private SortBy sortBy = null;
 
         /**
@@ -274,7 +337,10 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         *
+         */
         private String opcRequestId = null;
 
         /**
@@ -290,19 +356,18 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -314,7 +379,6 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListFsuActionsRequest o) {
@@ -336,11 +400,10 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListFsuActionsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListFsuActionsRequest
          */
@@ -354,8 +417,7 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         /**
          * Build the instance of ListFsuActionsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListFsuActionsRequest
@@ -373,14 +435,12 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListFsuActionsRequest(compartmentId, fsuCycleId, lifecycleState, displayName,
-            // type, limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListFsuActionsRequest(compartmentId, fsuCycleId, lifecycleState, displayName, type, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -399,7 +459,6 @@ public class ListFsuActionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

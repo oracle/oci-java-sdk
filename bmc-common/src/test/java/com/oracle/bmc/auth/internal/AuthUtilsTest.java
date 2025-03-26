@@ -17,7 +17,7 @@ import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.Optional;
 
-import com.oracle.bmc.http.client.pki.Pem;
+import com.oracle.bmc.http.signing.pki.Pem;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
@@ -58,8 +58,7 @@ public class AuthUtilsTest {
 
     @Test
     public void testToPublicKeyFromJwk() {
-        // openssl rsa -pubin -inform PEM -text -noout <
-        // bmc-common/src/test/resources/auth_utils_test_public.pem
+        // openssl rsa -pubin -inform PEM -text -noout < bmc-common/src/test/resources/auth_utils_test_public.pem
         String modulus =
                 "d0:8a:b9:e7:27:8a:84:7e:41:8e:4f:94:52:be:\n"
                         + "77:ed:66:67:58:0c:99:04:62:cd:9b:c8:08:d0:5f:\n"

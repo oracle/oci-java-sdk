@@ -5,24 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * The summary of the Optimizer Statistics Collection, which includes the aggregated number of tasks
- * grouped by status. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * The summary of the Optimizer Statistics Collection, which includes the aggregated number of tasks grouped by status.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = OptimizerStatisticsCollectionAggregationSummary.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = OptimizerStatisticsCollectionAggregationSummary.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class OptimizerStatisticsCollectionAggregationSummary
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "groupBy",
@@ -65,136 +63,145 @@ public final class OptimizerStatisticsCollectionAggregationSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The optimizer statistics tasks grouped by type. */
+        /**
+         * The optimizer statistics tasks grouped by type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
         private OptimizerStatisticsGroupByTypes groupBy;
 
         /**
          * The optimizer statistics tasks grouped by type.
-         *
          * @param groupBy the value to set
          * @return this builder
-         */
+         **/
         public Builder groupBy(OptimizerStatisticsGroupByTypes groupBy) {
             this.groupBy = groupBy;
             this.__explicitlySet__.add("groupBy");
             return this;
         }
-        /** Indicates the start of the hour as the statistics are aggregated per hour. */
+        /**
+         * Indicates the start of the hour as the statistics are aggregated per hour.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
         private java.util.Date timeStart;
 
         /**
          * Indicates the start of the hour as the statistics are aggregated per hour.
-         *
          * @param timeStart the value to set
          * @return this builder
-         */
+         **/
         public Builder timeStart(java.util.Date timeStart) {
             this.timeStart = timeStart;
             this.__explicitlySet__.add("timeStart");
             return this;
         }
-        /** Indicates the end of the hour as the statistics are aggregated per hour. */
+        /**
+         * Indicates the end of the hour as the statistics are aggregated per hour.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
         private java.util.Date timeEnd;
 
         /**
          * Indicates the end of the hour as the statistics are aggregated per hour.
-         *
          * @param timeEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder timeEnd(java.util.Date timeEnd) {
             this.timeEnd = timeEnd;
             this.__explicitlySet__.add("timeEnd");
             return this;
         }
-        /** The number of tasks or objects for which statistics are yet to be gathered. */
+        /**
+         * The number of tasks or objects for which statistics are yet to be gathered.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("pending")
         private Integer pending;
 
         /**
          * The number of tasks or objects for which statistics are yet to be gathered.
-         *
          * @param pending the value to set
          * @return this builder
-         */
+         **/
         public Builder pending(Integer pending) {
             this.pending = pending;
             this.__explicitlySet__.add("pending");
             return this;
         }
-        /** The number of tasks or objects for which statistics gathering is in progress. */
+        /**
+         * The number of tasks or objects for which statistics gathering is in progress.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("inProgress")
         private Integer inProgress;
 
         /**
          * The number of tasks or objects for which statistics gathering is in progress.
-         *
          * @param inProgress the value to set
          * @return this builder
-         */
+         **/
         public Builder inProgress(Integer inProgress) {
             this.inProgress = inProgress;
             this.__explicitlySet__.add("inProgress");
             return this;
         }
-        /** The number of tasks or objects for which statistics gathering is completed. */
+        /**
+         * The number of tasks or objects for which statistics gathering is completed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("completed")
         private Integer completed;
 
         /**
          * The number of tasks or objects for which statistics gathering is completed.
-         *
          * @param completed the value to set
          * @return this builder
-         */
+         **/
         public Builder completed(Integer completed) {
             this.completed = completed;
             this.__explicitlySet__.add("completed");
             return this;
         }
-        /** The number of tasks or objects for which statistics gathering failed. */
+        /**
+         * The number of tasks or objects for which statistics gathering failed.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("failed")
         private Integer failed;
 
         /**
          * The number of tasks or objects for which statistics gathering failed.
-         *
          * @param failed the value to set
          * @return this builder
-         */
+         **/
         public Builder failed(Integer failed) {
             this.failed = failed;
             this.__explicitlySet__.add("failed");
             return this;
         }
-        /** The number of tasks or objects for which statistics gathering was skipped. */
+        /**
+         * The number of tasks or objects for which statistics gathering was skipped.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("skipped")
         private Integer skipped;
 
         /**
          * The number of tasks or objects for which statistics gathering was skipped.
-         *
          * @param skipped the value to set
          * @return this builder
-         */
+         **/
         public Builder skipped(Integer skipped) {
             this.skipped = skipped;
             this.__explicitlySet__.add("skipped");
             return this;
         }
-        /** The number of tasks or objects for which statistics gathering timed out. */
+        /**
+         * The number of tasks or objects for which statistics gathering timed out.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timedOut")
         private Integer timedOut;
 
         /**
          * The number of tasks or objects for which statistics gathering timed out.
-         *
          * @param timedOut the value to set
          * @return this builder
-         */
+         **/
         public Builder timedOut(Integer timedOut) {
             this.timedOut = timedOut;
             this.__explicitlySet__.add("timedOut");
@@ -202,37 +209,37 @@ public final class OptimizerStatisticsCollectionAggregationSummary
         }
         /**
          * The number of tasks or objects for which the status of statistics gathering is unknown.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("unknown")
         private Integer unknown;
 
         /**
          * The number of tasks or objects for which the status of statistics gathering is unknown.
-         *
          * @param unknown the value to set
          * @return this builder
-         */
+         **/
         public Builder unknown(Integer unknown) {
             this.unknown = unknown;
             this.__explicitlySet__.add("unknown");
             return this;
         }
         /**
-         * The total number of tasks or objects for which statistics collection is finished. This
-         * number is the sum of all the tasks or objects with various statuses: pending, inProgress,
-         * completed, failed, skipped, timedOut, and unknown.
-         */
+         * The total number of tasks or objects for which statistics collection is finished. This number is the
+         * sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped,
+         * timedOut, and unknown.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("total")
         private Integer total;
 
         /**
-         * The total number of tasks or objects for which statistics collection is finished. This
-         * number is the sum of all the tasks or objects with various statuses: pending, inProgress,
-         * completed, failed, skipped, timedOut, and unknown.
+         * The total number of tasks or objects for which statistics collection is finished. This number is the
+         * sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped,
+         * timedOut, and unknown.
          *
          * @param total the value to set
          * @return this builder
-         */
+         **/
         public Builder total(Integer total) {
             this.total = total;
             this.__explicitlySet__.add("total");
@@ -301,7 +308,9 @@ public final class OptimizerStatisticsCollectionAggregationSummary
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -310,151 +319,162 @@ public final class OptimizerStatisticsCollectionAggregationSummary
         return new Builder().copy(this);
     }
 
-    /** The optimizer statistics tasks grouped by type. */
+    /**
+     * The optimizer statistics tasks grouped by type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupBy")
     private final OptimizerStatisticsGroupByTypes groupBy;
 
     /**
      * The optimizer statistics tasks grouped by type.
-     *
      * @return the value
-     */
+     **/
     public OptimizerStatisticsGroupByTypes getGroupBy() {
         return groupBy;
     }
 
-    /** Indicates the start of the hour as the statistics are aggregated per hour. */
+    /**
+     * Indicates the start of the hour as the statistics are aggregated per hour.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
     private final java.util.Date timeStart;
 
     /**
      * Indicates the start of the hour as the statistics are aggregated per hour.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeStart() {
         return timeStart;
     }
 
-    /** Indicates the end of the hour as the statistics are aggregated per hour. */
+    /**
+     * Indicates the end of the hour as the statistics are aggregated per hour.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnd")
     private final java.util.Date timeEnd;
 
     /**
      * Indicates the end of the hour as the statistics are aggregated per hour.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeEnd() {
         return timeEnd;
     }
 
-    /** The number of tasks or objects for which statistics are yet to be gathered. */
+    /**
+     * The number of tasks or objects for which statistics are yet to be gathered.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("pending")
     private final Integer pending;
 
     /**
      * The number of tasks or objects for which statistics are yet to be gathered.
-     *
      * @return the value
-     */
+     **/
     public Integer getPending() {
         return pending;
     }
 
-    /** The number of tasks or objects for which statistics gathering is in progress. */
+    /**
+     * The number of tasks or objects for which statistics gathering is in progress.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("inProgress")
     private final Integer inProgress;
 
     /**
      * The number of tasks or objects for which statistics gathering is in progress.
-     *
      * @return the value
-     */
+     **/
     public Integer getInProgress() {
         return inProgress;
     }
 
-    /** The number of tasks or objects for which statistics gathering is completed. */
+    /**
+     * The number of tasks or objects for which statistics gathering is completed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("completed")
     private final Integer completed;
 
     /**
      * The number of tasks or objects for which statistics gathering is completed.
-     *
      * @return the value
-     */
+     **/
     public Integer getCompleted() {
         return completed;
     }
 
-    /** The number of tasks or objects for which statistics gathering failed. */
+    /**
+     * The number of tasks or objects for which statistics gathering failed.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("failed")
     private final Integer failed;
 
     /**
      * The number of tasks or objects for which statistics gathering failed.
-     *
      * @return the value
-     */
+     **/
     public Integer getFailed() {
         return failed;
     }
 
-    /** The number of tasks or objects for which statistics gathering was skipped. */
+    /**
+     * The number of tasks or objects for which statistics gathering was skipped.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("skipped")
     private final Integer skipped;
 
     /**
      * The number of tasks or objects for which statistics gathering was skipped.
-     *
      * @return the value
-     */
+     **/
     public Integer getSkipped() {
         return skipped;
     }
 
-    /** The number of tasks or objects for which statistics gathering timed out. */
+    /**
+     * The number of tasks or objects for which statistics gathering timed out.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timedOut")
     private final Integer timedOut;
 
     /**
      * The number of tasks or objects for which statistics gathering timed out.
-     *
      * @return the value
-     */
+     **/
     public Integer getTimedOut() {
         return timedOut;
     }
 
-    /** The number of tasks or objects for which the status of statistics gathering is unknown. */
+    /**
+     * The number of tasks or objects for which the status of statistics gathering is unknown.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("unknown")
     private final Integer unknown;
 
     /**
      * The number of tasks or objects for which the status of statistics gathering is unknown.
-     *
      * @return the value
-     */
+     **/
     public Integer getUnknown() {
         return unknown;
     }
 
     /**
-     * The total number of tasks or objects for which statistics collection is finished. This number
-     * is the sum of all the tasks or objects with various statuses: pending, inProgress, completed,
-     * failed, skipped, timedOut, and unknown.
-     */
+     * The total number of tasks or objects for which statistics collection is finished. This number is the
+     * sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped,
+     * timedOut, and unknown.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("total")
     private final Integer total;
 
     /**
-     * The total number of tasks or objects for which statistics collection is finished. This number
-     * is the sum of all the tasks or objects with various statuses: pending, inProgress, completed,
-     * failed, skipped, timedOut, and unknown.
+     * The total number of tasks or objects for which statistics collection is finished. This number is the
+     * sum of all the tasks or objects with various statuses: pending, inProgress, completed, failed, skipped,
+     * timedOut, and unknown.
      *
      * @return the value
-     */
+     **/
     public Integer getTotal() {
         return total;
     }
@@ -466,7 +486,6 @@ public final class OptimizerStatisticsCollectionAggregationSummary
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

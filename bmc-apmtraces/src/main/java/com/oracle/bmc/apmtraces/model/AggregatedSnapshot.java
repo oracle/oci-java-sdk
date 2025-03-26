@@ -5,23 +5,22 @@
 package com.oracle.bmc.apmtraces.model;
 
 /**
- * Aggregated snapshots of all spans. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+ * Aggregated snapshots of all spans.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = AggregatedSnapshot.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class AggregatedSnapshot
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = AggregatedSnapshot.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class AggregatedSnapshot extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"details", "aggregatedStackTraces"})
     public AggregatedSnapshot(
@@ -34,7 +33,10 @@ public final class AggregatedSnapshot
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Aggregated snapshot details. */
+        /**
+         * Aggregated snapshot details.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<SnapshotDetail> details;
 
@@ -43,13 +45,16 @@ public final class AggregatedSnapshot
          *
          * @param details the value to set
          * @return this builder
-         */
+         **/
         public Builder details(java.util.List<SnapshotDetail> details) {
             this.details = details;
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** List of aggregated stack trace. */
+        /**
+         * List of aggregated stack trace.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("aggregatedStackTraces")
         private java.util.List<AggregatedStackTrace> aggregatedStackTraces;
 
@@ -58,7 +63,7 @@ public final class AggregatedSnapshot
          *
          * @param aggregatedStackTraces the value to set
          * @return this builder
-         */
+         **/
         public Builder aggregatedStackTraces(
                 java.util.List<AggregatedStackTrace> aggregatedStackTraces) {
             this.aggregatedStackTraces = aggregatedStackTraces;
@@ -90,7 +95,9 @@ public final class AggregatedSnapshot
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -99,7 +106,10 @@ public final class AggregatedSnapshot
         return new Builder().copy(this);
     }
 
-    /** Aggregated snapshot details. */
+    /**
+     * Aggregated snapshot details.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.List<SnapshotDetail> details;
 
@@ -107,12 +117,15 @@ public final class AggregatedSnapshot
      * Aggregated snapshot details.
      *
      * @return the value
-     */
+     **/
     public java.util.List<SnapshotDetail> getDetails() {
         return details;
     }
 
-    /** List of aggregated stack trace. */
+    /**
+     * List of aggregated stack trace.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("aggregatedStackTraces")
     private final java.util.List<AggregatedStackTrace> aggregatedStackTraces;
 
@@ -120,7 +133,7 @@ public final class AggregatedSnapshot
      * List of aggregated stack trace.
      *
      * @return the value
-     */
+     **/
     public java.util.List<AggregatedStackTrace> getAggregatedStackTraces() {
         return aggregatedStackTraces;
     }
@@ -132,7 +145,6 @@ public final class AggregatedSnapshot
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

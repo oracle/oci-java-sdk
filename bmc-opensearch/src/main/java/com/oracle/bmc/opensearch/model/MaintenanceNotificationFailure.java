@@ -5,23 +5,22 @@
 package com.oracle.bmc.opensearch.model;
 
 /**
- * Failed maintenance notification for a cluster <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
+ * Failed maintenance notification for a cluster
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180828")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = MaintenanceNotificationFailure.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = MaintenanceNotificationFailure.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MaintenanceNotificationFailure
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"clusterIds", "tenantId", "errorCode", "errorDescription"})
     public MaintenanceNotificationFailure(
@@ -38,61 +37,65 @@ public final class MaintenanceNotificationFailure
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** IDs of clusters */
+        /**
+         * IDs of clusters
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("clusterIds")
         private java.util.List<String> clusterIds;
 
         /**
          * IDs of clusters
-         *
          * @param clusterIds the value to set
          * @return this builder
-         */
+         **/
         public Builder clusterIds(java.util.List<String> clusterIds) {
             this.clusterIds = clusterIds;
             this.__explicitlySet__.add("clusterIds");
             return this;
         }
-        /** Tenant ID of the cluster */
+        /**
+         * Tenant ID of the cluster
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * Tenant ID of the cluster
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** Error Code */
+        /**
+         * Error Code
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
         private String errorCode;
 
         /**
          * Error Code
-         *
          * @param errorCode the value to set
          * @return this builder
-         */
+         **/
         public Builder errorCode(String errorCode) {
             this.errorCode = errorCode;
             this.__explicitlySet__.add("errorCode");
             return this;
         }
-        /** Error Description */
+        /**
+         * Error Description
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("errorDescription")
         private String errorDescription;
 
         /**
          * Error Description
-         *
          * @param errorDescription the value to set
          * @return this builder
-         */
+         **/
         public Builder errorDescription(String errorDescription) {
             this.errorDescription = errorDescription;
             this.__explicitlySet__.add("errorDescription");
@@ -130,7 +133,9 @@ public final class MaintenanceNotificationFailure
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -139,54 +144,58 @@ public final class MaintenanceNotificationFailure
         return new Builder().copy(this);
     }
 
-    /** IDs of clusters */
+    /**
+     * IDs of clusters
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("clusterIds")
     private final java.util.List<String> clusterIds;
 
     /**
      * IDs of clusters
-     *
      * @return the value
-     */
+     **/
     public java.util.List<String> getClusterIds() {
         return clusterIds;
     }
 
-    /** Tenant ID of the cluster */
+    /**
+     * Tenant ID of the cluster
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * Tenant ID of the cluster
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** Error Code */
+    /**
+     * Error Code
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorCode")
     private final String errorCode;
 
     /**
      * Error Code
-     *
      * @return the value
-     */
+     **/
     public String getErrorCode() {
         return errorCode;
     }
 
-    /** Error Description */
+    /**
+     * Error Description
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("errorDescription")
     private final String errorDescription;
 
     /**
      * Error Description
-     *
      * @return the value
-     */
+     **/
     public String getErrorDescription() {
         return errorDescription;
     }
@@ -198,7 +207,6 @@ public final class MaintenanceNotificationFailure
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

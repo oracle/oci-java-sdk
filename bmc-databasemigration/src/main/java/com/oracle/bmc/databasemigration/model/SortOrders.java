@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** Sort orders. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
-public enum SortOrders implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Sort orders.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),
     ;

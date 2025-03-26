@@ -5,21 +5,19 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The details of the task <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+ * The details of the task
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Task.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Task extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "stepName",
@@ -44,31 +42,33 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the task step. */
+        /**
+         * The name of the task step.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
          * The name of the task step.
-         *
          * @param stepName the value to set
          * @return this builder
-         */
+         **/
         public Builder stepName(String stepName) {
             this.stepName = stepName;
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** The association type of the task */
+        /**
+         * The association type of the task
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("associationType")
         private AssociationType associationType;
 
         /**
          * The association type of the task
-         *
          * @param associationType the value to set
          * @return this builder
-         */
+         **/
         public Builder associationType(AssociationType associationType) {
             this.associationType = associationType;
             this.__explicitlySet__.add("associationType");
@@ -94,16 +94,15 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * Mapping output variables of previous tasks to the input variables of the current task.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("outputVariableMappings")
         private java.util.List<OutputVariableMapping> outputVariableMappings;
 
         /**
          * Mapping output variables of previous tasks to the input variables of the current task.
-         *
          * @param outputVariableMappings the value to set
          * @return this builder
-         */
+         **/
         public Builder outputVariableMappings(
                 java.util.List<OutputVariableMapping> outputVariableMappings) {
             this.outputVariableMappings = outputVariableMappings;
@@ -149,7 +148,9 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -158,26 +159,29 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** The name of the task step. */
+    /**
+     * The name of the task step.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
      * The name of the task step.
-     *
      * @return the value
-     */
+     **/
     public String getStepName() {
         return stepName;
     }
 
-    /** The association type of the task */
-    public enum AssociationType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The association type of the task
+     **/
+    public enum AssociationType {
         Task("TASK"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -216,15 +220,16 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** The association type of the task */
+    /**
+     * The association type of the task
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("associationType")
     private final AssociationType associationType;
 
     /**
      * The association type of the task
-     *
      * @return the value
-     */
+     **/
     public AssociationType getAssociationType() {
         return associationType;
     }
@@ -243,15 +248,16 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return stepProperties;
     }
 
-    /** Mapping output variables of previous tasks to the input variables of the current task. */
+    /**
+     * Mapping output variables of previous tasks to the input variables of the current task.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("outputVariableMappings")
     private final java.util.List<OutputVariableMapping> outputVariableMappings;
 
     /**
      * Mapping output variables of previous tasks to the input variables of the current task.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<OutputVariableMapping> getOutputVariableMappings() {
         return outputVariableMappings;
     }
@@ -263,7 +269,6 @@ public final class Task extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

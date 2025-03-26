@@ -6,9 +6,13 @@ package com.oracle.bmc.waiter;
 
 import com.oracle.bmc.waiter.WaiterConfiguration.WaitContext;
 
-/** Termination strategy that allows up to X attempts before terminating. */
+/**
+ * Termination strategy that allows up to X attempts before terminating.
+ */
 public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
-    /** The maximum number of attempts to make. */
+    /**
+     * The maximum number of attempts to make.
+     */
     private final int maxAttempts;
 
     @Override
@@ -26,7 +30,9 @@ public class MaxAttemptsTerminationStrategy implements TerminationStrategy {
         return "MaxAttemptsTerminationStrategy(maxAttempts=" + this.getMaxAttempts() + ")";
     }
 
-    /** The maximum number of attempts to make. */
+    /**
+     * The maximum number of attempts to make.
+     */
     public int getMaxAttempts() {
         return this.maxAttempts;
     }

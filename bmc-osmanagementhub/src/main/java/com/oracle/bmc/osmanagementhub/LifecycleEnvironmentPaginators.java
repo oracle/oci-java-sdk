@@ -9,31 +9,23 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Collection of helper methods that can be used to provide an {@link java.lang.Iterable} interface
- * to any list operations of LifecycleEnvironment where multiple pages of data may be fetched. Two
- * styles of iteration are supported:
+ * to any list operations of LifecycleEnvironment where multiple pages of data may be fetched.
+ * Two styles of iteration are supported:
  *
  * <ul>
- *   <li>Iterating over the Response objects returned by the list operation. These are referred to
- *       as ResponseIterators, and the methods are suffixed with ResponseIterator. For example:
- *       <i>listUsersResponseIterator</i>
- *   <li>Iterating over the resources/records being listed. These are referred to as
- *       RecordIterators, and the methods are suffixed with RecordIterator. For example:
- *       <i>listUsersRecordIterator</i>
+ *   <li>Iterating over the Response objects returned by the list operation. These are referred to as ResponseIterators, and the methods are suffixed with ResponseIterator. For example: <i>listUsersResponseIterator</i></li>
+ *   <li>Iterating over the resources/records being listed. These are referred to as RecordIterators, and the methods are suffixed with RecordIterator. For example: <i>listUsersRecordIterator</i></li>
  * </ul>
  *
- * These iterables abstract away the need to write code to manually handle pagination via looping
- * and using the page tokens. They will automatically fetch more data from the service when
- * required.
+ * These iterables abstract away the need to write code to manually handle pagination via looping and using the page tokens.
+ * They will automatically fetch more data from the service when required.
  *
- * <p>As an example, if we were using the ListUsers operation in IdentityService, then the {@link
- * java.lang.Iterable} returned by calling a ResponseIterator method would iterate over the
- * ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
- * returned by calling a RecordIterator method would iterate over the User records and we don't have
- * to deal with ListUsersResponse objects at all. In either case, pagination will be automatically
- * handled so we can iterate until there are no more responses or no more resources/records
- * available.
+ * As an example, if we were using the ListUsers operation in IdentityService, then the {@link java.lang.Iterable} returned by calling a
+ * ResponseIterator method would iterate over the ListUsersResponse objects returned by each ListUsers call, whereas the {@link java.lang.Iterable}
+ * returned by calling a RecordIterator method would iterate over the User records and we don't have to deal with ListUsersResponse objects at all.
+ * In either case, pagination will be automatically handled so we can iterate until there are no more responses or no more resources/records available.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 public class LifecycleEnvironmentPaginators {
     private final LifecycleEnvironment client;
 
@@ -42,19 +34,16 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLifecycleEnvironments operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the responses received from the listLifecycleEnvironments operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLifecycleEnvironmentsResponse> listLifecycleEnvironmentsResponseIterator(
             final ListLifecycleEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLifecycleEnvironmentsRequest.Builder,
-                ListLifecycleEnvironmentsRequest,
+                ListLifecycleEnvironmentsRequest.Builder, ListLifecycleEnvironmentsRequest,
                 ListLifecycleEnvironmentsResponse>(
                 new java.util.function.Supplier<ListLifecycleEnvironmentsRequest.Builder>() {
                     @Override
@@ -97,22 +86,19 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary} objects contained in
-     * responses from the listLifecycleEnvironments operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary} objects
+     * contained in responses from the listLifecycleEnvironments operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary>
             listLifecycleEnvironmentsRecordIterator(
                     final ListLifecycleEnvironmentsRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLifecycleEnvironmentsRequest.Builder,
-                ListLifecycleEnvironmentsRequest,
+                ListLifecycleEnvironmentsRequest.Builder, ListLifecycleEnvironmentsRequest,
                 ListLifecycleEnvironmentsResponse,
                 com.oracle.bmc.osmanagementhub.model.LifecycleEnvironmentSummary>(
                 new java.util.function.Supplier<ListLifecycleEnvironmentsRequest.Builder>() {
@@ -169,13 +155,11 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLifecycleStageInstalledPackages operation. This iterable will fetch more data from the
-     * server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listLifecycleStageInstalledPackages operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLifecycleStageInstalledPackagesResponse>
             listLifecycleStageInstalledPackagesResponseIterator(
@@ -228,15 +212,13 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.osmanagementhub.model.InstalledPackageSummary} objects contained in responses
-     * from the listLifecycleStageInstalledPackages operation. This iterable will fetch more data
-     * from the server as needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.InstalledPackageSummary} objects
+     * contained in responses from the listLifecycleStageInstalledPackages operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.osmanagementhub.model.InstalledPackageSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.InstalledPackageSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagementhub.model.InstalledPackageSummary>
             listLifecycleStageInstalledPackagesRecordIterator(
@@ -301,18 +283,16 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the responses received from the
-     * listLifecycleStages operation. This iterable will fetch more data from the server as needed.
+     * Creates a new iterable which will iterate over the responses received from the listLifecycleStages operation. This iterable
+     * will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
-     *     received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
      */
     public Iterable<ListLifecycleStagesResponse> listLifecycleStagesResponseIterator(
             final ListLifecycleStagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseIterable<
-                ListLifecycleStagesRequest.Builder,
-                ListLifecycleStagesRequest,
+                ListLifecycleStagesRequest.Builder, ListLifecycleStagesRequest,
                 ListLifecycleStagesResponse>(
                 new java.util.function.Supplier<ListLifecycleStagesRequest.Builder>() {
                     @Override
@@ -354,21 +334,18 @@ public class LifecycleEnvironmentPaginators {
     }
 
     /**
-     * Creates a new iterable which will iterate over the {@link
-     * com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary} objects contained in responses
-     * from the listLifecycleStages operation. This iterable will fetch more data from the server as
-     * needed.
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary} objects
+     * contained in responses from the listLifecycleStages operation. This iterable will fetch more data from the
+     * server as needed.
      *
      * @param request a request which can be sent to the service operation
-     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
-     *     com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary} objects contained in
-     *     responses received from the service.
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary} objects
+     * contained in responses received from the service.
      */
     public Iterable<com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary>
             listLifecycleStagesRecordIterator(final ListLifecycleStagesRequest request) {
         return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
-                ListLifecycleStagesRequest.Builder,
-                ListLifecycleStagesRequest,
+                ListLifecycleStagesRequest.Builder, ListLifecycleStagesRequest,
                 ListLifecycleStagesResponse,
                 com.oracle.bmc.osmanagementhub.model.LifecycleStageSummary>(
                 new java.util.function.Supplier<ListLifecycleStagesRequest.Builder>() {

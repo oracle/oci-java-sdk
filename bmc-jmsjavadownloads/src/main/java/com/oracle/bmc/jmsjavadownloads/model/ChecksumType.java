@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jmsjavadownloads.model;
 
-/** The algorithm used for calculating the checksum. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
-public enum ChecksumType implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The algorithm used for calculating the checksum.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230601")
+public enum ChecksumType {
     Sha256("SHA256"),
 
     /**

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.ocvp.model;
 
-/** SDDC HCX configuration. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
-public enum HcxModes implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * SDDC HCX configuration.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230701")
+public enum HcxModes {
     Disabled("DISABLED"),
     Advanced("ADVANCED"),
     Enterprise("ENTERPRISE"),

@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.opsi.model;
 
-/** Private endpoint lifecycle states. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
-public enum OperationsInsightsPrivateEndpointLifecycleState
-        implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Private endpoint lifecycle states.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
+public enum OperationsInsightsPrivateEndpointLifecycleState {
     Creating("CREATING"),
     Updating("UPDATING"),
     Active("ACTIVE"),

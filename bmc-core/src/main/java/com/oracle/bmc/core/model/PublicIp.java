@@ -5,27 +5,28 @@
 package com.oracle.bmc.core.model;
 
 /**
- * A *public IP* is a conceptual term that refers to a public IP address and related properties. The
- * {@code publicIp} object is the API representation of a public IP.
+ * A *public IP* is a conceptual term that refers to a public IP address and related properties.
+ * The {@code publicIp} object is the API representation of a public IP.
+ * <p>
+ * There are two types of public IPs:
+ * 1. Ephemeral
+ * 2. Reserved
+ * <p>
+ * For more information and comparison of the two types,
+ * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
  *
- * <p>There are two types of public IPs: 1. Ephemeral 2. Reserved
- *
- * <p>For more information and comparison of the two types, see [Public IP
- * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PublicIp.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class PublicIp extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "assignedEntityId",
@@ -81,36 +82,40 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * entity the public IP is assigned to, or in the process of being assigned to.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * being assigned to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
         private String assignedEntityId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * entity the public IP is assigned to, or in the process of being assigned to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * being assigned to.
          *
          * @param assignedEntityId the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedEntityId(String assignedEntityId) {
             this.assignedEntityId = assignedEntityId;
             this.__explicitlySet__.add("assignedEntityId");
             return this;
         }
         /**
-         * The type of entity the public IP is assigned to, or in the process of being assigned to.
-         */
+         * The type of entity the public IP is assigned to, or in the process of being
+         * assigned to.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
         private AssignedEntityType assignedEntityType;
 
         /**
-         * The type of entity the public IP is assigned to, or in the process of being assigned to.
+         * The type of entity the public IP is assigned to, or in the process of being
+         * assigned to.
          *
          * @param assignedEntityType the value to set
          * @return this builder
-         */
+         **/
         public Builder assignedEntityType(AssignedEntityType assignedEntityType) {
             this.assignedEntityType = assignedEntityType;
             this.__explicitlySet__.add("assignedEntityType");
@@ -118,76 +123,73 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The public IP's availability domain. This property is set only for ephemeral public IPs
-         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is
-         * set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private
-         * IP.
+         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+         * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
-         * <p>Example: {@code Uocm:PHX-AD-1}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
          * The public IP's availability domain. This property is set only for ephemeral public IPs
-         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is
-         * set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private
-         * IP.
-         *
-         * <p>Example: {@code Uocm:PHX-AD-1}
+         * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+         * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
+         * <p>
+         * Example: {@code Uocm:PHX-AD-1}
          *
          * @param availabilityDomain the value to set
          * @return this builder
-         */
+         **/
         public Builder availabilityDomain(String availabilityDomain) {
             this.availabilityDomain = availabilityDomain;
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the public IP. For an ephemeral public IP, this is the compartment
-         * of its assigned entity (which can be a private IP or a regional entity such as a NAT
-         * gateway). For a reserved public IP that is currently assigned, its compartment can be
-         * different from the assigned private IP's.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+         * the compartment of its assigned entity (which can be a private IP or a regional entity such
+         * as a NAT gateway). For a reserved public IP that is currently assigned,
+         * its compartment can be different from the assigned private IP's.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * compartment containing the public IP. For an ephemeral public IP, this is the compartment
-         * of its assigned entity (which can be a private IP or a regional entity such as a NAT
-         * gateway). For a reserved public IP that is currently assigned, its compartment can be
-         * different from the assigned private IP's.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+         * the compartment of its assigned entity (which can be a private IP or a regional entity such
+         * as a NAT gateway). For a reserved public IP that is currently assigned,
+         * its compartment can be different from the assigned private IP's.
          *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
         /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
-         * more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Defined tags for this resource. Each key is predefined and scoped to a
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -195,63 +197,60 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
-         */
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-         * confidential information.
+         * A user-friendly name. Does not have to be unique, and it's changeable.
+         * Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
-         * <p>Example: {@code {"Department": "Finance"}}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-         * name, type, or namespace. For more information, see [Resource
-         * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-         *
-         * <p>Example: {@code {"Department": "Finance"}}
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * <p>
+         * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
         /**
-         * The public IP's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         */
+         * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The public IP's Oracle ID
-         * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-         *
+         * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
@@ -259,35 +258,37 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * The public IP address of the {@code publicIp} object.
+         * <p>
+         * Example: {@code 203.0.113.2}
          *
-         * <p>Example: {@code 203.0.113.2}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
         private String ipAddress;
 
         /**
          * The public IP address of the {@code publicIp} object.
-         *
-         * <p>Example: {@code 203.0.113.2}
+         * <p>
+         * Example: {@code 203.0.113.2}
          *
          * @param ipAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddress(String ipAddress) {
             this.ipAddress = ipAddress;
             this.__explicitlySet__.add("ipAddress");
             return this;
         }
-        /** The public IP's current state. */
+        /**
+         * The public IP's current state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
          * The public IP's current state.
-         *
          * @param lifecycleState the value to set
          * @return this builder
-         */
+         **/
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
@@ -295,44 +296,43 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * Defines when the public IP is deleted and released back to Oracle's public IP pool.
+         * <p>
+         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+         * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+         * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+         * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+         * {@link NatGateway}, the ephemeral public IP is automatically
+         * deleted when the NAT gateway is terminated.
+         * <p>
+         * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
+         * whenever you like. It does not need to be assigned to a private IP at all times.
+         * <p>
+         * For more information and comparison of the two types,
+         * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
-         * <p>{@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An
-         * ephemeral public IP must always be assigned to an entity. If the assigned entity is a
-         * private IP, the ephemeral public IP is automatically deleted when the private IP is
-         * deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned
-         * entity is a {@link NatGateway}, the ephemeral public IP is automatically deleted when the
-         * NAT gateway is terminated.
-         *
-         * <p>{@code RESERVED}: You control the public IP's lifetime. You can delete a reserved
-         * public IP whenever you like. It does not need to be assigned to a private IP at all
-         * times.
-         *
-         * <p>For more information and comparison of the two types, see [Public IP
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
         private Lifetime lifetime;
 
         /**
          * Defines when the public IP is deleted and released back to Oracle's public IP pool.
-         *
-         * <p>{@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An
-         * ephemeral public IP must always be assigned to an entity. If the assigned entity is a
-         * private IP, the ephemeral public IP is automatically deleted when the private IP is
-         * deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned
-         * entity is a {@link NatGateway}, the ephemeral public IP is automatically deleted when the
-         * NAT gateway is terminated.
-         *
-         * <p>{@code RESERVED}: You control the public IP's lifetime. You can delete a reserved
-         * public IP whenever you like. It does not need to be assigned to a private IP at all
-         * times.
-         *
-         * <p>For more information and comparison of the two types, see [Public IP
-         * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * <p>
+         * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+         * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+         * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+         * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+         * {@link NatGateway}, the ephemeral public IP is automatically
+         * deleted when the NAT gateway is terminated.
+         * <p>
+         * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
+         * whenever you like. It does not need to be assigned to a private IP at all times.
+         * <p>
+         * For more information and comparison of the two types,
+         * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * @param lifetime the value to set
          * @return this builder
-         */
+         **/
         public Builder lifetime(Lifetime lifetime) {
             this.lifetime = lifetime;
             this.__explicitlySet__.add("lifetime");
@@ -340,30 +340,29 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * Deprecated. Use {@code assignedEntityId} instead.
-         *
-         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the private IP that the public IP is currently assigned to, or in the process of being
-         * assigned to.
-         *
-         * <p>*Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+         * <p>
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+         * process of being assigned to.
+         * <p>
+         **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
          * in the process of being assigned to one.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
         private String privateIpId;
 
         /**
          * Deprecated. Use {@code assignedEntityId} instead.
-         *
-         * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-         * the private IP that the public IP is currently assigned to, or in the process of being
-         * assigned to.
-         *
-         * <p>*Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+         * <p>
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+         * process of being assigned to.
+         * <p>
+         **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
          * in the process of being assigned to one.
          *
          * @param privateIpId the value to set
          * @return this builder
-         */
+         **/
         public Builder privateIpId(String privateIpId) {
             this.privateIpId = privateIpId;
             this.__explicitlySet__.add("privateIpId");
@@ -371,78 +370,73 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
         /**
          * Whether the public IP is regional or specific to a particular availability domain.
+         * <p>
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private
+         * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+         * assigned to a regional entity have {@code scope} = {@code REGION}.
+         * <p>
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+         * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
          *
-         * <p>{@code REGION}: The public IP exists within a region and is assigned to a regional
-         * entity (such as a {@link NatGateway}), or can be assigned to a private IP in any
-         * availability domain in the region. Reserved public IPs and ephemeral public IPs assigned
-         * to a regional entity have {@code scope} = {@code REGION}.
-         *
-         * <p>{@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of
-         * the entity it's assigned to, which is specified by the {@code availabilityDomain}
-         * property of the public IP object. Ephemeral public IPs that are assigned to private IPs
-         * have {@code scope} = {@code AVAILABILITY_DOMAIN}.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
          * Whether the public IP is regional or specific to a particular availability domain.
-         *
-         * <p>{@code REGION}: The public IP exists within a region and is assigned to a regional
-         * entity (such as a {@link NatGateway}), or can be assigned to a private IP in any
-         * availability domain in the region. Reserved public IPs and ephemeral public IPs assigned
-         * to a regional entity have {@code scope} = {@code REGION}.
-         *
-         * <p>{@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of
-         * the entity it's assigned to, which is specified by the {@code availabilityDomain}
-         * property of the public IP object. Ephemeral public IPs that are assigned to private IPs
-         * have {@code scope} = {@code AVAILABILITY_DOMAIN}.
+         * <p>
+         * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+         * (such as a {@link NatGateway}), or can be assigned to a private
+         * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+         * assigned to a regional entity have {@code scope} = {@code REGION}.
+         * <p>
+         * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+         * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+         * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
          *
          * @param scope the value to set
          * @return this builder
-         */
+         **/
         public Builder scope(Scope scope) {
             this.scope = scope;
             this.__explicitlySet__.add("scope");
             return this;
         }
         /**
-         * The date and time the public IP was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the public IP was created, in the format defined by
-         * [RFC3339](https://tools.ietf.org/html/rfc3339).
-         *
-         * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+         * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
          *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * pool object created in the current tenancy.
-         */
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
         /**
-         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-         * pool object created in the current tenancy.
-         *
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
          * @param publicIpPoolId the value to set
          * @return this builder
-         */
+         **/
         public Builder publicIpPoolId(String publicIpPoolId) {
             this.publicIpPoolId = publicIpPoolId;
             this.__explicitlySet__.add("publicIpPoolId");
@@ -527,7 +521,9 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -537,30 +533,35 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * entity the public IP is assigned to, or in the process of being assigned to.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * being assigned to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityId")
     private final String assignedEntityId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * entity the public IP is assigned to, or in the process of being assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * being assigned to.
      *
      * @return the value
-     */
+     **/
     public String getAssignedEntityId() {
         return assignedEntityId;
     }
 
-    /** The type of entity the public IP is assigned to, or in the process of being assigned to. */
-    public enum AssignedEntityType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
+    public enum AssignedEntityType {
         PrivateIp("PRIVATE_IP"),
         NatGateway("NAT_GATEWAY"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -599,166 +600,170 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The type of entity the public IP is assigned to, or in the process of being assigned to. */
+    /**
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("assignedEntityType")
     private final AssignedEntityType assignedEntityType;
 
     /**
-     * The type of entity the public IP is assigned to, or in the process of being assigned to.
+     * The type of entity the public IP is assigned to, or in the process of being
+     * assigned to.
      *
      * @return the value
-     */
+     **/
     public AssignedEntityType getAssignedEntityType() {
         return assignedEntityType;
     }
 
     /**
-     * The public IP's availability domain. This property is set only for ephemeral public IPs that
-     * are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+     * The public IP's availability domain. This property is set only for ephemeral public IPs
+     * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
      * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
-     * <p>Example: {@code Uocm:PHX-AD-1}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The public IP's availability domain. This property is set only for ephemeral public IPs that
-     * are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
+     * The public IP's availability domain. This property is set only for ephemeral public IPs
+     * that are assigned to a private IP (that is, when the {@code scope} of the public IP is set to
      * AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.
-     *
-     * <p>Example: {@code Uocm:PHX-AD-1}
+     * <p>
+     * Example: {@code Uocm:PHX-AD-1}
      *
      * @return the value
-     */
+     **/
     public String getAvailabilityDomain() {
         return availabilityDomain;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the public IP. For an ephemeral public IP, this is the compartment of
-     * its assigned entity (which can be a private IP or a regional entity such as a NAT gateway).
-     * For a reserved public IP that is currently assigned, its compartment can be different from
-     * the assigned private IP's.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+     * the compartment of its assigned entity (which can be a private IP or a regional entity such
+     * as a NAT gateway). For a reserved public IP that is currently assigned,
+     * its compartment can be different from the assigned private IP's.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * compartment containing the public IP. For an ephemeral public IP, this is the compartment of
-     * its assigned entity (which can be a private IP or a regional entity such as a NAT gateway).
-     * For a reserved public IP that is currently assigned, its compartment can be different from
-     * the assigned private IP's.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+     * the compartment of its assigned entity (which can be a private IP or a regional entity such
+     * as a NAT gateway). For a reserved public IP that is currently assigned,
+     * its compartment can be different from the assigned private IP's.
      *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
-     * information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
-     */
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
-     * <p>Example: {@code {"Department": "Finance"}}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
-     * name, type, or namespace. For more information, see [Resource
-     * Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
-     *
-     * <p>Example: {@code {"Department": "Finance"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * <p>
+     * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * The public IP's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     */
+     * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The public IP's Oracle ID
-     * ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
-     *
+     * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
     /**
      * The public IP address of the {@code publicIp} object.
+     * <p>
+     * Example: {@code 203.0.113.2}
      *
-     * <p>Example: {@code 203.0.113.2}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddress")
     private final String ipAddress;
 
     /**
      * The public IP address of the {@code publicIp} object.
-     *
-     * <p>Example: {@code 203.0.113.2}
+     * <p>
+     * Example: {@code 203.0.113.2}
      *
      * @return the value
-     */
+     **/
     public String getIpAddress() {
         return ipAddress;
     }
 
-    /** The public IP's current state. */
-    public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The public IP's current state.
+     **/
+    public enum LifecycleState {
         Provisioning("PROVISIONING"),
         Available("AVAILABLE"),
         Assigning("ASSIGNING"),
@@ -769,8 +774,8 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
         Terminated("TERMINATED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -809,42 +814,44 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The public IP's current state. */
+    /**
+     * The public IP's current state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
      * The public IP's current state.
-     *
      * @return the value
-     */
+     **/
     public LifecycleState getLifecycleState() {
         return lifecycleState;
     }
 
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
+     * <p>
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
+     * <p>
+     * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
+     * whenever you like. It does not need to be assigned to a private IP at all times.
+     * <p>
+     * For more information and comparison of the two types,
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
-     * <p>{@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An
-     * ephemeral public IP must always be assigned to an entity. If the assigned entity is a private
-     * IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the
-     * VNIC is terminated, or when the instance is terminated. If the assigned entity is a {@link
-     * NatGateway}, the ephemeral public IP is automatically deleted when the NAT gateway is
-     * terminated.
-     *
-     * <p>{@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public
-     * IP whenever you like. It does not need to be assigned to a private IP at all times.
-     *
-     * <p>For more information and comparison of the two types, see [Public IP
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-     */
-    public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Lifetime {
         Ephemeral("EPHEMERAL"),
         Reserved("RESERVED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -885,94 +892,94 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
     };
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
+     * <p>
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
+     * <p>
+     * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
+     * whenever you like. It does not need to be assigned to a private IP at all times.
+     * <p>
+     * For more information and comparison of the two types,
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
-     * <p>{@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An
-     * ephemeral public IP must always be assigned to an entity. If the assigned entity is a private
-     * IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the
-     * VNIC is terminated, or when the instance is terminated. If the assigned entity is a {@link
-     * NatGateway}, the ephemeral public IP is automatically deleted when the NAT gateway is
-     * terminated.
-     *
-     * <p>{@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public
-     * IP whenever you like. It does not need to be assigned to a private IP at all times.
-     *
-     * <p>For more information and comparison of the two types, see [Public IP
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
     private final Lifetime lifetime;
 
     /**
      * Defines when the public IP is deleted and released back to Oracle's public IP pool.
-     *
-     * <p>{@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An
-     * ephemeral public IP must always be assigned to an entity. If the assigned entity is a private
-     * IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the
-     * VNIC is terminated, or when the instance is terminated. If the assigned entity is a {@link
-     * NatGateway}, the ephemeral public IP is automatically deleted when the NAT gateway is
-     * terminated.
-     *
-     * <p>{@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public
-     * IP whenever you like. It does not need to be assigned to a private IP at all times.
-     *
-     * <p>For more information and comparison of the two types, see [Public IP
-     * Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * <p>
+     * {@code EPHEMERAL}: The lifetime is tied to the lifetime of its assigned entity. An ephemeral
+     * public IP must always be assigned to an entity. If the assigned entity is a private IP,
+     * the ephemeral public IP is automatically deleted when the private IP is deleted, when
+     * the VNIC is terminated, or when the instance is terminated. If the assigned entity is a
+     * {@link NatGateway}, the ephemeral public IP is automatically
+     * deleted when the NAT gateway is terminated.
+     * <p>
+     * {@code RESERVED}: You control the public IP's lifetime. You can delete a reserved public IP
+     * whenever you like. It does not need to be assigned to a private IP at all times.
+     * <p>
+     * For more information and comparison of the two types,
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * @return the value
-     */
+     **/
     public Lifetime getLifetime() {
         return lifetime;
     }
 
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
+     * <p>
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+     * process of being assigned to.
+     * <p>
+     **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+     * in the process of being assigned to one.
      *
-     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private IP that the public IP is currently assigned to, or in the process of being assigned
-     * to.
-     *
-     * <p>*Note:** This is {@code null} if the public IP is not assigned to a private IP, or is in
-     * the process of being assigned to one.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateIpId")
     private final String privateIpId;
 
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
-     *
-     * <p>The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
-     * private IP that the public IP is currently assigned to, or in the process of being assigned
-     * to.
-     *
-     * <p>*Note:** This is {@code null} if the public IP is not assigned to a private IP, or is in
-     * the process of being assigned to one.
+     * <p>
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+     * process of being assigned to.
+     * <p>
+     **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
+     * in the process of being assigned to one.
      *
      * @return the value
-     */
+     **/
     public String getPrivateIpId() {
         return privateIpId;
     }
 
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
+     * <p>
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
+     * <p>
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+     * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
-     * <p>{@code REGION}: The public IP exists within a region and is assigned to a regional entity
-     * (such as a {@link NatGateway}), or can be assigned to a private IP in any availability domain
-     * in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity
-     * have {@code scope} = {@code REGION}.
-     *
-     * <p>{@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the
-     * entity it's assigned to, which is specified by the {@code availabilityDomain} property of the
-     * public IP object. Ephemeral public IPs that are assigned to private IPs have {@code scope} =
-     * {@code AVAILABILITY_DOMAIN}.
-     */
-    public enum Scope implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Scope {
         Region("REGION"),
         AvailabilityDomain("AVAILABILITY_DOMAIN"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -1012,73 +1019,68 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
     };
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
+     * <p>
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
+     * <p>
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+     * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
-     * <p>{@code REGION}: The public IP exists within a region and is assigned to a regional entity
-     * (such as a {@link NatGateway}), or can be assigned to a private IP in any availability domain
-     * in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity
-     * have {@code scope} = {@code REGION}.
-     *
-     * <p>{@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the
-     * entity it's assigned to, which is specified by the {@code availabilityDomain} property of the
-     * public IP object. Ephemeral public IPs that are assigned to private IPs have {@code scope} =
-     * {@code AVAILABILITY_DOMAIN}.
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
      * Whether the public IP is regional or specific to a particular availability domain.
-     *
-     * <p>{@code REGION}: The public IP exists within a region and is assigned to a regional entity
-     * (such as a {@link NatGateway}), or can be assigned to a private IP in any availability domain
-     * in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity
-     * have {@code scope} = {@code REGION}.
-     *
-     * <p>{@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the
-     * entity it's assigned to, which is specified by the {@code availabilityDomain} property of the
-     * public IP object. Ephemeral public IPs that are assigned to private IPs have {@code scope} =
-     * {@code AVAILABILITY_DOMAIN}.
+     * <p>
+     * {@code REGION}: The public IP exists within a region and is assigned to a regional entity
+     * (such as a {@link NatGateway}), or can be assigned to a private
+     * IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs
+     * assigned to a regional entity have {@code scope} = {@code REGION}.
+     * <p>
+     * {@code AVAILABILITY_DOMAIN}: The public IP exists within the availability domain of the entity
+     * it's assigned to, which is specified by the {@code availabilityDomain} property of the public IP object.
+     * Ephemeral public IPs that are assigned to private IPs have {@code scope} = {@code AVAILABILITY_DOMAIN}.
      *
      * @return the value
-     */
+     **/
     public Scope getScope() {
         return scope;
     }
 
     /**
-     * The date and time the public IP was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the public IP was created, in the format defined by
-     * [RFC3339](https://tools.ietf.org/html/rfc3339).
-     *
-     * <p>Example: {@code 2016-08-25T21:10:29.600Z}
+     * The date and time the public IP was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
      *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool
-     * object created in the current tenancy.
-     */
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool
-     * object created in the current tenancy.
-     *
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      * @return the value
-     */
+     **/
     public String getPublicIpPoolId() {
         return publicIpPoolId;
     }
@@ -1090,7 +1092,6 @@ public final class PublicIp extends com.oracle.bmc.http.client.internal.Explicit
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,23 +5,21 @@
 package com.oracle.bmc.cloudguard.model;
 
 /**
- * Attributes for a responder execution (ResponderExecution resource). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
+ * Attributes for a responder execution (ResponderExecution resource).
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200131")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ResponderExecution.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ResponderExecution
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ResponderExecution.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ResponderExecution extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
@@ -82,226 +80,241 @@ public final class ResponderExecution
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique identifier of the responder execution */
+        /**
+         * The unique identifier of the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * The unique identifier of the responder execution
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Responder rule ID for the responder execution */
+        /**
+         * Responder rule ID for the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
         private String responderRuleId;
 
         /**
          * Responder rule ID for the responder execution
-         *
          * @param responderRuleId the value to set
          * @return this builder
-         */
+         **/
         public Builder responderRuleId(String responderRuleId) {
             this.responderRuleId = responderRuleId;
             this.__explicitlySet__.add("responderRuleId");
             return this;
         }
-        /** Responder rule type for the responder execution */
+        /**
+         * Responder rule type for the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleType")
         private ResponderType responderRuleType;
 
         /**
          * Responder rule type for the responder execution
-         *
          * @param responderRuleType the value to set
          * @return this builder
-         */
+         **/
         public Builder responderRuleType(ResponderType responderRuleType) {
             this.responderRuleType = responderRuleType;
             this.__explicitlySet__.add("responderRuleType");
             return this;
         }
-        /** Responder rule name for the responder execution */
+        /**
+         * Responder rule name for the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderRuleName")
         private String responderRuleName;
 
         /**
          * Responder rule name for the responder execution
-         *
          * @param responderRuleName the value to set
          * @return this builder
-         */
+         **/
         public Builder responderRuleName(String responderRuleName) {
             this.responderRuleName = responderRuleName;
             this.__explicitlySet__.add("responderRuleName");
             return this;
         }
-        /** Problem ID associated with the responder execution */
+        /**
+         * Problem ID associated with the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("problemId")
         private String problemId;
 
         /**
          * Problem ID associated with the responder execution
-         *
          * @param problemId the value to set
          * @return this builder
-         */
+         **/
         public Builder problemId(String problemId) {
             this.problemId = problemId;
             this.__explicitlySet__.add("problemId");
             return this;
         }
-        /** Region where the problem is found */
+        /**
+         * Region where the problem is found
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
          * Region where the problem is found
-         *
          * @param region the value to set
          * @return this builder
-         */
+         **/
         public Builder region(String region) {
             this.region = region;
             this.__explicitlySet__.add("region");
             return this;
         }
-        /** Target ID of the problem for the responder execution */
+        /**
+         * Target ID of the problem for the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
          * Target ID of the problem for the responder execution
-         *
          * @param targetId the value to set
          * @return this builder
-         */
+         **/
         public Builder targetId(String targetId) {
             this.targetId = targetId;
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** Compartment OCID of the responder execution for the problem */
+        /**
+         * Compartment OCID of the responder execution for the problem
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * Compartment OCID of the responder execution for the problem
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Resource type of the problem for the responder execution */
+        /**
+         * Resource type of the problem for the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
         private String resourceType;
 
         /**
          * Resource type of the problem for the responder execution
-         *
          * @param resourceType the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
         }
-        /** Resource name of the problem for the responder execution. */
+        /**
+         * Resource name of the problem for the responder execution.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
         private String resourceName;
 
         /**
          * Resource name of the problem for the responder execution.
-         *
          * @param resourceName the value to set
          * @return this builder
-         */
+         **/
         public Builder resourceName(String resourceName) {
             this.resourceName = resourceName;
             this.__explicitlySet__.add("resourceName");
             return this;
         }
-        /** The date and time the responder execution was created. Format defined by RFC3339. */
+        /**
+         * The date and time the responder execution was created. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The date and time the responder execution was created. Format defined by RFC3339.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The date and time the responder execution was updated. Format defined by RFC3339. */
+        /**
+         * The date and time the responder execution was updated. Format defined by RFC3339.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
         private java.util.Date timeCompleted;
 
         /**
          * The date and time the responder execution was updated. Format defined by RFC3339.
-         *
          * @param timeCompleted the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCompleted(java.util.Date timeCompleted) {
             this.timeCompleted = timeCompleted;
             this.__explicitlySet__.add("timeCompleted");
             return this;
         }
-        /** Current execution status of the responder */
+        /**
+         * Current execution status of the responder
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionStatus")
         private ResponderExecutionStates responderExecutionStatus;
 
         /**
          * Current execution status of the responder
-         *
          * @param responderExecutionStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder responderExecutionStatus(ResponderExecutionStates responderExecutionStatus) {
             this.responderExecutionStatus = responderExecutionStatus;
             this.__explicitlySet__.add("responderExecutionStatus");
             return this;
         }
-        /** Execution mode of the responder */
+        /**
+         * Execution mode of the responder
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionMode")
         private ResponderExecutionModes responderExecutionMode;
 
         /**
          * Execution mode of the responder
-         *
          * @param responderExecutionMode the value to set
          * @return this builder
-         */
+         **/
         public Builder responderExecutionMode(ResponderExecutionModes responderExecutionMode) {
             this.responderExecutionMode = responderExecutionMode;
             this.__explicitlySet__.add("responderExecutionMode");
             return this;
         }
-        /** Message about the responder execution */
+        /**
+         * Message about the responder execution
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
          * Message about the responder execution
-         *
          * @param message the value to set
          * @return this builder
-         */
+         **/
         public Builder message(String message) {
             this.message = message;
             this.__explicitlySet__.add("message");
@@ -317,16 +330,17 @@ public final class ResponderExecution
             this.__explicitlySet__.add("responderRuleExecutionDetails");
             return this;
         }
-        /** Locks associated with this resource. */
+        /**
+         * Locks associated with this resource.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
         private java.util.List<ResourceLock> locks;
 
         /**
          * Locks associated with this resource.
-         *
          * @param locks the value to set
          * @return this builder
-         */
+         **/
         public Builder locks(java.util.List<ResourceLock> locks) {
             this.locks = locks;
             this.__explicitlySet__.add("locks");
@@ -419,7 +433,9 @@ public final class ResponderExecution
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -428,197 +444,212 @@ public final class ResponderExecution
         return new Builder().copy(this);
     }
 
-    /** The unique identifier of the responder execution */
+    /**
+     * The unique identifier of the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * The unique identifier of the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** Responder rule ID for the responder execution */
+    /**
+     * Responder rule ID for the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleId")
     private final String responderRuleId;
 
     /**
      * Responder rule ID for the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getResponderRuleId() {
         return responderRuleId;
     }
 
-    /** Responder rule type for the responder execution */
+    /**
+     * Responder rule type for the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleType")
     private final ResponderType responderRuleType;
 
     /**
      * Responder rule type for the responder execution
-     *
      * @return the value
-     */
+     **/
     public ResponderType getResponderRuleType() {
         return responderRuleType;
     }
 
-    /** Responder rule name for the responder execution */
+    /**
+     * Responder rule name for the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderRuleName")
     private final String responderRuleName;
 
     /**
      * Responder rule name for the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getResponderRuleName() {
         return responderRuleName;
     }
 
-    /** Problem ID associated with the responder execution */
+    /**
+     * Problem ID associated with the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("problemId")
     private final String problemId;
 
     /**
      * Problem ID associated with the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getProblemId() {
         return problemId;
     }
 
-    /** Region where the problem is found */
+    /**
+     * Region where the problem is found
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
      * Region where the problem is found
-     *
      * @return the value
-     */
+     **/
     public String getRegion() {
         return region;
     }
 
-    /** Target ID of the problem for the responder execution */
+    /**
+     * Target ID of the problem for the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
      * Target ID of the problem for the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getTargetId() {
         return targetId;
     }
 
-    /** Compartment OCID of the responder execution for the problem */
+    /**
+     * Compartment OCID of the responder execution for the problem
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * Compartment OCID of the responder execution for the problem
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** Resource type of the problem for the responder execution */
+    /**
+     * Resource type of the problem for the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
     private final String resourceType;
 
     /**
      * Resource type of the problem for the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getResourceType() {
         return resourceType;
     }
 
-    /** Resource name of the problem for the responder execution. */
+    /**
+     * Resource name of the problem for the responder execution.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
     private final String resourceName;
 
     /**
      * Resource name of the problem for the responder execution.
-     *
      * @return the value
-     */
+     **/
     public String getResourceName() {
         return resourceName;
     }
 
-    /** The date and time the responder execution was created. Format defined by RFC3339. */
+    /**
+     * The date and time the responder execution was created. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The date and time the responder execution was created. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The date and time the responder execution was updated. Format defined by RFC3339. */
+    /**
+     * The date and time the responder execution was updated. Format defined by RFC3339.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCompleted")
     private final java.util.Date timeCompleted;
 
     /**
      * The date and time the responder execution was updated. Format defined by RFC3339.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCompleted() {
         return timeCompleted;
     }
 
-    /** Current execution status of the responder */
+    /**
+     * Current execution status of the responder
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionStatus")
     private final ResponderExecutionStates responderExecutionStatus;
 
     /**
      * Current execution status of the responder
-     *
      * @return the value
-     */
+     **/
     public ResponderExecutionStates getResponderExecutionStatus() {
         return responderExecutionStatus;
     }
 
-    /** Execution mode of the responder */
+    /**
+     * Execution mode of the responder
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("responderExecutionMode")
     private final ResponderExecutionModes responderExecutionMode;
 
     /**
      * Execution mode of the responder
-     *
      * @return the value
-     */
+     **/
     public ResponderExecutionModes getResponderExecutionMode() {
         return responderExecutionMode;
     }
 
-    /** Message about the responder execution */
+    /**
+     * Message about the responder execution
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
      * Message about the responder execution
-     *
      * @return the value
-     */
+     **/
     public String getMessage() {
         return message;
     }
@@ -630,15 +661,16 @@ public final class ResponderExecution
         return responderRuleExecutionDetails;
     }
 
-    /** Locks associated with this resource. */
+    /**
+     * Locks associated with this resource.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
     private final java.util.List<ResourceLock> locks;
 
     /**
      * Locks associated with this resource.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<ResourceLock> getLocks() {
         return locks;
     }
@@ -650,7 +682,6 @@ public final class ResponderExecution
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

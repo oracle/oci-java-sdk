@@ -6,25 +6,31 @@ package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingErrorsExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaskingErrorsRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the masking report. */
+    /**
+     * The OCID of the masking report.
+     */
     private String maskingReportId;
 
-    /** The OCID of the masking report. */
+    /**
+     * The OCID of the masking report.
+     */
     public String getMaskingReportId() {
         return maskingReportId;
     }
-    /** A filter to return only masking errors that match the specified step name. */
+    /**
+     * A filter to return only masking errors that match the specified step name.
+     */
     private StepName stepName;
 
-    /** A filter to return only masking errors that match the specified step name. */
-    public enum StepName implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * A filter to return only masking errors that match the specified step name.
+     **/
+    public enum StepName {
         ExecuteMasking("EXECUTE_MASKING"),
         PreMasking("PRE_MASKING"),
         PostMasking("POST_MASKING"),
@@ -58,15 +64,21 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** A filter to return only masking errors that match the specified step name. */
+    /**
+     * A filter to return only masking errors that match the specified step name.
+     */
     public StepName getStepName() {
         return stepName;
     }
-    /** The field to sort by. The default order will be ascending. */
+    /**
+     * The field to sort by. The default order will be ascending.
+     */
     private SortBy sortBy;
 
-    /** The field to sort by. The default order will be ascending. */
-    public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The field to sort by. The default order will be ascending.
+     **/
+    public enum SortBy {
         StepName("stepName"),
         TimeCreated("timeCreated"),
         ;
@@ -99,47 +111,43 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The field to sort by. The default order will be ascending. */
+    /**
+     * The field to sort by. The default order will be ascending.
+     */
     public SortBy getSortBy() {
         return sortBy;
     }
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private Integer limit;
 
     /**
-     * For list pagination. The maximum number of items to return per page in a paginated "List"
-     * call. For details about how pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public Integer getLimit() {
         return limit;
     }
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     private String page;
 
     /**
-     * For list pagination. The page token representing the page at which to start retrieving
-     * results. It is usually retrieved from a previous "List" call. For details about how
-     * pagination works, see [List
-     * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      */
     public String getPage() {
         return page;
     }
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     private SortOrder sortOrder;
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
-    public enum SortOrder implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     **/
+    public enum SortOrder {
         Asc("ASC"),
         Desc("DESC"),
         ;
@@ -172,14 +180,20 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         }
     };
 
-    /** The sort order to use, either ascending (ASC) or descending (DESC). */
+    /**
+     * The sort order to use, either ascending (ASC) or descending (DESC).
+     */
     public SortOrder getSortOrder() {
         return sortOrder;
     }
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     private String opcRequestId;
 
-    /** Unique identifier for the request. */
+    /**
+     * Unique identifier for the request.
+     */
     public String getOpcRequestId() {
         return opcRequestId;
     }
@@ -187,15 +201,17 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ListMaskingErrorsRequest, java.lang.Void> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the masking report. */
+        /**
+         * The OCID of the masking report.
+         */
         private String maskingReportId = null;
 
         /**
          * The OCID of the masking report.
-         *
          * @param maskingReportId the value to set
          * @return this builder instance
          */
@@ -204,12 +220,13 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** A filter to return only masking errors that match the specified step name. */
+        /**
+         * A filter to return only masking errors that match the specified step name.
+         */
         private StepName stepName = null;
 
         /**
          * A filter to return only masking errors that match the specified step name.
-         *
          * @param stepName the value to set
          * @return this builder instance
          */
@@ -218,12 +235,13 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The field to sort by. The default order will be ascending. */
+        /**
+         * The field to sort by. The default order will be ascending.
+         */
         private SortBy sortBy = null;
 
         /**
          * The field to sort by. The default order will be ascending.
-         *
          * @param sortBy the value to set
          * @return this builder instance
          */
@@ -233,17 +251,12 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private Integer limit = null;
 
         /**
-         * For list pagination. The maximum number of items to return per page in a paginated "List"
-         * call. For details about how pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The maximum number of items to return per page in a paginated "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param limit the value to set
          * @return this builder instance
          */
@@ -253,19 +266,12 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          */
         private String page = null;
 
         /**
-         * For list pagination. The page token representing the page at which to start retrieving
-         * results. It is usually retrieved from a previous "List" call. For details about how
-         * pagination works, see [List
-         * Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
-         *
+         * For list pagination. The page token representing the page at which to start retrieving results. It is usually retrieved from a previous "List" call. For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          * @param page the value to set
          * @return this builder instance
          */
@@ -274,12 +280,13 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** The sort order to use, either ascending (ASC) or descending (DESC). */
+        /**
+         * The sort order to use, either ascending (ASC) or descending (DESC).
+         */
         private SortOrder sortOrder = null;
 
         /**
          * The sort order to use, either ascending (ASC) or descending (DESC).
-         *
          * @param sortOrder the value to set
          * @return this builder instance
          */
@@ -288,12 +295,13 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Unique identifier for the request. */
+        /**
+         * Unique identifier for the request.
+         */
         private String opcRequestId = null;
 
         /**
          * Unique identifier for the request.
-         *
          * @param opcRequestId the value to set
          * @return this builder instance
          */
@@ -304,19 +312,18 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -328,7 +335,6 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ListMaskingErrorsRequest o) {
@@ -347,11 +353,10 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListMaskingErrorsRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ListMaskingErrorsRequest
          */
@@ -365,8 +370,7 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * Build the instance of ListMaskingErrorsRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ListMaskingErrorsRequest
@@ -381,14 +385,12 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
             request.sortOrder = sortOrder;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMaskingErrorsRequest(maskingReportId, stepName, sortBy, limit, page,
-            // sortOrder, opcRequestId);
+            // new ListMaskingErrorsRequest(maskingReportId, stepName, sortBy, limit, page, sortOrder, opcRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -404,7 +406,6 @@ public class ListMaskingErrorsRequest extends com.oracle.bmc.requests.BmcRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

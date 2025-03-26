@@ -4,10 +4,11 @@
  */
 package com.oracle.bmc.auth.internal;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.oracle.bmc.requests.BmcRequest;
+import javax.annotation.concurrent.Immutable;
 
-/** Class is immutable. @Immutable */
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@Immutable
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GetResourcePrincipalSessionTokenRequest {
     private final String resourcePrincipalToken;

@@ -5,21 +5,19 @@
 package com.oracle.bmc.mysql.model;
 
 /**
- * Replication filter rule for a channel. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
+ * Replication filter rule for a channel.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190415")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ChannelFilter.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ChannelFilter extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ChannelFilter extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"type", "value"})
     public ChannelFilter(Type type, String value) {
@@ -32,43 +30,45 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
     public static class Builder {
         /**
          * The type of the filter rule.
+         * <p>
+         * For details on each type, see
+         * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
          *
-         * <p>For details on each type, see [Replication Filtering
-         * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
          * The type of the filter rule.
-         *
-         * <p>For details on each type, see [Replication Filtering
-         * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+         * <p>
+         * For details on each type, see
+         * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
          *
          * @param type the value to set
          * @return this builder
-         */
+         **/
         public Builder type(Type type) {
             this.type = type;
             this.__explicitlySet__.add("type");
             return this;
         }
         /**
-         * The body of the filter rule. This can represent a database, a table, or a database pair
-         * (represented as "db1->db2"). For more information, see [Replication Filtering
-         * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-         */
+         * The body of the filter rule. This can represent a database, a table, or a database pair (represented as
+         * "db1->db2"). For more information, see
+         * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The body of the filter rule. This can represent a database, a table, or a database pair
-         * (represented as "db1->db2"). For more information, see [Replication Filtering
-         * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+         * The body of the filter rule. This can represent a database, a table, or a database pair (represented as
+         * "db1->db2"). For more information, see
+         * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
          *
          * @param value the value to set
          * @return this builder
-         */
+         **/
         public Builder value(String value) {
             this.value = value;
             this.__explicitlySet__.add("value");
@@ -98,7 +98,9 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -109,11 +111,12 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The type of the filter rule.
+     * <p>
+     * For details on each type, see
+     * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
      *
-     * <p>For details on each type, see [Replication Filtering
-     * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
-     */
-    public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
+     **/
+    public enum Type {
         ReplicateDoDb("REPLICATE_DO_DB"),
         ReplicateIgnoreDb("REPLICATE_IGNORE_DB"),
         ReplicateDoTable("REPLICATE_DO_TABLE"),
@@ -123,8 +126,8 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
         ReplicateRewriteDb("REPLICATE_REWRITE_DB"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -163,40 +166,42 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
     };
     /**
      * The type of the filter rule.
+     * <p>
+     * For details on each type, see
+     * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
      *
-     * <p>For details on each type, see [Replication Filtering
-     * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
-     */
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
      * The type of the filter rule.
-     *
-     * <p>For details on each type, see [Replication Filtering
-     * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
+     * <p>
+     * For details on each type, see
+     * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html)
      *
      * @return the value
-     */
+     **/
     public Type getType() {
         return type;
     }
 
     /**
-     * The body of the filter rule. This can represent a database, a table, or a database pair
-     * (represented as "db1->db2"). For more information, see [Replication Filtering
-     * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
-     */
+     * The body of the filter rule. This can represent a database, a table, or a database pair (represented as
+     * "db1->db2"). For more information, see
+     * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The body of the filter rule. This can represent a database, a table, or a database pair
-     * (represented as "db1->db2"). For more information, see [Replication Filtering
-     * Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
+     * The body of the filter rule. This can represent a database, a table, or a database pair (represented as
+     * "db1->db2"). For more information, see
+     * [Replication Filtering Rules](https://dev.mysql.com/doc/refman/8.0/en/replication-rules.html).
      *
      * @return the value
-     */
+     **/
     public String getValue() {
         return value;
     }
@@ -208,7 +213,6 @@ public final class ChannelFilter extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

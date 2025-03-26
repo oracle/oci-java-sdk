@@ -5,23 +5,21 @@
 package com.oracle.bmc.identitydomains.model;
 
 /**
- * Schema for Database Service Resource <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ * Schema for Database Service  Resource
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExtensionDbcsGroup.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ExtensionDbcsGroup
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ExtensionDbcsGroup.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ExtensionDbcsGroup extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "instanceLevelSchemaNames",
@@ -45,28 +43,37 @@ public final class ExtensionDbcsGroup
     public static class Builder {
         /**
          * DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [dbInstanceId, schemaName] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
-         */
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [dbInstanceId, schemaName]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchemaNames")
         private java.util.List<GroupExtInstanceLevelSchemaNames> instanceLevelSchemaNames;
 
         /**
          * DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [dbInstanceId, schemaName] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
-         *
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [dbInstanceId, schemaName]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          * @param instanceLevelSchemaNames the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceLevelSchemaNames(
                 java.util.List<GroupExtInstanceLevelSchemaNames> instanceLevelSchemaNames) {
             this.instanceLevelSchemaNames = instanceLevelSchemaNames;
@@ -75,28 +82,37 @@ public final class ExtensionDbcsGroup
         }
         /**
          * DBCS Domain-level schema-names. Each value is specific to a DB Domain.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [domainName, schemaName] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
-         */
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [domainName, schemaName]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchemaNames")
         private java.util.List<GroupExtDomainLevelSchemaNames> domainLevelSchemaNames;
 
         /**
          * DBCS Domain-level schema-names. Each value is specific to a DB Domain.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [domainName, schemaName] - idcsSearchable:
-         * true - multiValued: true - mutability: readOnly - required: false - returned: request -
-         * type: complex
-         *
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [domainName, schemaName]
+         *  - idcsSearchable: true
+         *  - multiValued: true
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: complex
          * @param domainLevelSchemaNames the value to set
          * @return this builder
-         */
+         **/
         public Builder domainLevelSchemaNames(
                 java.util.List<GroupExtDomainLevelSchemaNames> domainLevelSchemaNames) {
             this.domainLevelSchemaNames = domainLevelSchemaNames;
@@ -104,62 +120,80 @@ public final class ExtensionDbcsGroup
             return this;
         }
         /**
-         * DBCS Domain-level schema-name. This attribute refers implicitly to a value of
-         * 'domainLevelSchemaNames' for a particular DB Domain.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchema")
         private String domainLevelSchema;
 
         /**
-         * DBCS Domain-level schema-name. This attribute refers implicitly to a value of
-         * 'domainLevelSchemaNames' for a particular DB Domain.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param domainLevelSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder domainLevelSchema(String domainLevelSchema) {
             this.domainLevelSchema = domainLevelSchema;
             this.__explicitlySet__.add("domainLevelSchema");
             return this;
         }
         /**
-         * DBCS instance-level schema-name. This attribute refers implicitly to a value of
-         * 'instanceLevelSchemaNames' for a particular DB Instance.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         */
+         * DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchema")
         private String instanceLevelSchema;
 
         /**
-         * DBCS instance-level schema-name. This attribute refers implicitly to a value of
-         * 'instanceLevelSchemaNames' for a particular DB Instance.
-         *
-         * <p>*Added In:** 18.2.4
-         *
-         * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued:
-         * false - mutability: readOnly - required: false - returned: request - type: string -
-         * uniqueness: none
-         *
+         * DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+         * <p>
+         **Added In:** 18.2.4
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsSearchable: false
+         *  - idcsSensitive: none
+         *  - multiValued: false
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: request
+         *  - type: string
+         *  - uniqueness: none
          * @param instanceLevelSchema the value to set
          * @return this builder
-         */
+         **/
         public Builder instanceLevelSchema(String instanceLevelSchema) {
             this.instanceLevelSchema = instanceLevelSchema;
             this.__explicitlySet__.add("instanceLevelSchema");
@@ -200,7 +234,9 @@ public final class ExtensionDbcsGroup
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -211,108 +247,148 @@ public final class ExtensionDbcsGroup
 
     /**
      * DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [dbInstanceId, schemaName] - idcsSearchable:
-     * true - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
-     */
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [dbInstanceId, schemaName]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchemaNames")
     private final java.util.List<GroupExtInstanceLevelSchemaNames> instanceLevelSchemaNames;
 
     /**
      * DBCS instance-level schema-names. Each schema-name is specific to a DB Instance.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [dbInstanceId, schemaName] - idcsSearchable:
-     * true - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
-     *
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [dbInstanceId, schemaName]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<GroupExtInstanceLevelSchemaNames> getInstanceLevelSchemaNames() {
         return instanceLevelSchemaNames;
     }
 
     /**
      * DBCS Domain-level schema-names. Each value is specific to a DB Domain.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [domainName, schemaName] - idcsSearchable: true
-     * - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
-     */
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [domainName, schemaName]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchemaNames")
     private final java.util.List<GroupExtDomainLevelSchemaNames> domainLevelSchemaNames;
 
     /**
      * DBCS Domain-level schema-names. Each value is specific to a DB Domain.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [domainName, schemaName] - idcsSearchable: true
-     * - multiValued: true - mutability: readOnly - required: false - returned: request - type:
-     * complex
-     *
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [domainName, schemaName]
+     *  - idcsSearchable: true
+     *  - multiValued: true
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: complex
      * @return the value
-     */
+     **/
     public java.util.List<GroupExtDomainLevelSchemaNames> getDomainLevelSchemaNames() {
         return domainLevelSchemaNames;
     }
 
     /**
-     * DBCS Domain-level schema-name. This attribute refers implicitly to a value of
-     * 'domainLevelSchemaNames' for a particular DB Domain.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("domainLevelSchema")
     private final String domainLevelSchema;
 
     /**
-     * DBCS Domain-level schema-name. This attribute refers implicitly to a value of
-     * 'domainLevelSchemaNames' for a particular DB Domain.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * DBCS Domain-level schema-name.  This attribute refers implicitly to a value of 'domainLevelSchemaNames' for a particular DB Domain.
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getDomainLevelSchema() {
         return domainLevelSchema;
     }
 
     /**
-     * DBCS instance-level schema-name. This attribute refers implicitly to a value of
-     * 'instanceLevelSchemaNames' for a particular DB Instance.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     */
+     * DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceLevelSchema")
     private final String instanceLevelSchema;
 
     /**
-     * DBCS instance-level schema-name. This attribute refers implicitly to a value of
-     * 'instanceLevelSchemaNames' for a particular DB Instance.
-     *
-     * <p>*Added In:** 18.2.4
-     *
-     * <p>*SCIM++ Properties:** - idcsSearchable: false - idcsSensitive: none - multiValued: false -
-     * mutability: readOnly - required: false - returned: request - type: string - uniqueness: none
-     *
+     * DBCS instance-level schema-name. This attribute refers implicitly to a value of 'instanceLevelSchemaNames' for a particular DB Instance.
+     * <p>
+     **Added In:** 18.2.4
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsSearchable: false
+     *  - idcsSensitive: none
+     *  - multiValued: false
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: request
+     *  - type: string
+     *  - uniqueness: none
      * @return the value
-     */
+     **/
     public String getInstanceLevelSchema() {
         return instanceLevelSchema;
     }
@@ -324,7 +400,6 @@ public final class ExtensionDbcsGroup
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

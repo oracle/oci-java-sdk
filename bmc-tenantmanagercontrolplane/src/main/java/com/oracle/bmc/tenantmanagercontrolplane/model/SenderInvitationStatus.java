@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
 
-/** Possible statuses for a sender invitation. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
-public enum SenderInvitationStatus implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Possible statuses for a sender invitation.
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230401")
+public enum SenderInvitationStatus {
     Pending("PENDING"),
     Canceled("CANCELED"),
     Accepted("ACCEPTED"),

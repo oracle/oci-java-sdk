@@ -5,24 +5,22 @@
 package com.oracle.bmc.objectstorage.model;
 
 /**
- * To use any of the API operations, you must be authorized in an IAM policy. If you are not
- * authorized, talk to an administrator. If you are an administrator who needs to write policies to
- * give users access, see [Getting Started with
- * Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm). <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * To use any of the API operations, you must be authorized in an IAM policy. If you are not authorized,
+ * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ListObjects.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ListObjects extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ListObjects extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"objects", "prefixes", "nextStartWith"})
     public ListObjects(
@@ -37,7 +35,10 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** An array of object summaries. */
+        /**
+         * An array of object summaries.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("objects")
         private java.util.List<ObjectSummary> objects;
 
@@ -46,47 +47,47 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
          *
          * @param objects the value to set
          * @return this builder
-         */
+         **/
         public Builder objects(java.util.List<ObjectSummary> objects) {
             this.objects = objects;
             this.__explicitlySet__.add("objects");
             return this;
         }
         /**
-         * Prefixes that are common to the results returned by the request if the request specified
-         * a delimiter.
-         */
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
         private java.util.List<String> prefixes;
 
         /**
-         * Prefixes that are common to the results returned by the request if the request specified
-         * a delimiter.
+         * Prefixes that are common to the results returned by the request if the request specified a delimiter.
          *
          * @param prefixes the value to set
          * @return this builder
-         */
+         **/
         public Builder prefixes(java.util.List<String> prefixes) {
             this.prefixes = prefixes;
             this.__explicitlySet__.add("prefixes");
             return this;
         }
         /**
-         * The name of the object to use in the {@code start} parameter to obtain the next page of a
-         * truncated ListObjects response. Avoid entering confidential information. Example:
-         * test/object1.log
-         */
+         * The name of the object to use in the {@code start} parameter to obtain the next page of
+         * a truncated ListObjects response. Avoid entering confidential information.
+         * Example: test/object1.log
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
         private String nextStartWith;
 
         /**
-         * The name of the object to use in the {@code start} parameter to obtain the next page of a
-         * truncated ListObjects response. Avoid entering confidential information. Example:
-         * test/object1.log
+         * The name of the object to use in the {@code start} parameter to obtain the next page of
+         * a truncated ListObjects response. Avoid entering confidential information.
+         * Example: test/object1.log
          *
          * @param nextStartWith the value to set
          * @return this builder
-         */
+         **/
         public Builder nextStartWith(String nextStartWith) {
             this.nextStartWith = nextStartWith;
             this.__explicitlySet__.add("nextStartWith");
@@ -119,7 +120,9 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -128,7 +131,10 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** An array of object summaries. */
+    /**
+     * An array of object summaries.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("objects")
     private final java.util.List<ObjectSummary> objects;
 
@@ -136,43 +142,43 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
      * An array of object summaries.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ObjectSummary> getObjects() {
         return objects;
     }
 
     /**
-     * Prefixes that are common to the results returned by the request if the request specified a
-     * delimiter.
-     */
+     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("prefixes")
     private final java.util.List<String> prefixes;
 
     /**
-     * Prefixes that are common to the results returned by the request if the request specified a
-     * delimiter.
+     * Prefixes that are common to the results returned by the request if the request specified a delimiter.
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getPrefixes() {
         return prefixes;
     }
 
     /**
-     * The name of the object to use in the {@code start} parameter to obtain the next page of a
-     * truncated ListObjects response. Avoid entering confidential information. Example:
-     * test/object1.log
-     */
+     * The name of the object to use in the {@code start} parameter to obtain the next page of
+     * a truncated ListObjects response. Avoid entering confidential information.
+     * Example: test/object1.log
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("nextStartWith")
     private final String nextStartWith;
 
     /**
-     * The name of the object to use in the {@code start} parameter to obtain the next page of a
-     * truncated ListObjects response. Avoid entering confidential information. Example:
-     * test/object1.log
+     * The name of the object to use in the {@code start} parameter to obtain the next page of
+     * a truncated ListObjects response. Avoid entering confidential information.
+     * Example: test/object1.log
      *
      * @return the value
-     */
+     **/
     public String getNextStartWith() {
         return nextStartWith;
     }
@@ -184,7 +190,6 @@ public final class ListObjects extends com.oracle.bmc.http.client.internal.Expli
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

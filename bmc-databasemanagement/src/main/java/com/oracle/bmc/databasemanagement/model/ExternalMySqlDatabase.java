@@ -5,23 +5,22 @@
 package com.oracle.bmc.databasemanagement.model;
 
 /**
- * External database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
+ * External database.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ExternalMySqlDatabase.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = ExternalMySqlDatabase.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ExternalMySqlDatabase
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
@@ -43,61 +42,65 @@ public final class ExternalMySqlDatabase
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of compartment for the External MySQL Database. */
+        /**
+         * OCID of compartment for the External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * OCID of compartment for the External MySQL Database.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** OCID of External MySQL Database. */
+        /**
+         * OCID of External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
         private String externalDatabaseId;
 
         /**
          * OCID of External MySQL Database.
-         *
          * @param externalDatabaseId the value to set
          * @return this builder
-         */
+         **/
         public Builder externalDatabaseId(String externalDatabaseId) {
             this.externalDatabaseId = externalDatabaseId;
             this.__explicitlySet__.add("externalDatabaseId");
             return this;
         }
-        /** Display Name of the External MySQL Database. */
+        /**
+         * Display Name of the External MySQL Database.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbName")
         private String dbName;
 
         /**
          * Display Name of the External MySQL Database.
-         *
          * @param dbName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbName(String dbName) {
             this.dbName = dbName;
             this.__explicitlySet__.add("dbName");
             return this;
         }
-        /** Indicates database management state. */
+        /**
+         * Indicates database management state.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("managementState")
         private ManagementState managementState;
 
         /**
          * Indicates database management state.
-         *
          * @param managementState the value to set
          * @return this builder
-         */
+         **/
         public Builder managementState(ManagementState managementState) {
             this.managementState = managementState;
             this.__explicitlySet__.add("managementState");
@@ -138,7 +141,9 @@ public final class ExternalMySqlDatabase
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -147,54 +152,58 @@ public final class ExternalMySqlDatabase
         return new Builder().copy(this);
     }
 
-    /** OCID of compartment for the External MySQL Database. */
+    /**
+     * OCID of compartment for the External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * OCID of compartment for the External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** OCID of External MySQL Database. */
+    /**
+     * OCID of External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("externalDatabaseId")
     private final String externalDatabaseId;
 
     /**
      * OCID of External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getExternalDatabaseId() {
         return externalDatabaseId;
     }
 
-    /** Display Name of the External MySQL Database. */
+    /**
+     * Display Name of the External MySQL Database.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbName")
     private final String dbName;
 
     /**
      * Display Name of the External MySQL Database.
-     *
      * @return the value
-     */
+     **/
     public String getDbName() {
         return dbName;
     }
 
-    /** Indicates database management state. */
+    /**
+     * Indicates database management state.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("managementState")
     private final ManagementState managementState;
 
     /**
      * Indicates database management state.
-     *
      * @return the value
-     */
+     **/
     public ManagementState getManagementState() {
         return managementState;
     }
@@ -206,7 +215,6 @@ public final class ExternalMySqlDatabase
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

@@ -5,24 +5,23 @@
 package com.oracle.bmc.ailanguage.model;
 
 /**
- * Mask PII entities with the given masking character. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
+ * Mask PII entities with the given masking character.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221001")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = PiiEntityMask.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "mode")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "mode"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class PiiEntityMask extends PiiEntityMasking {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -43,52 +42,55 @@ public final class PiiEntityMask extends PiiEntityMasking {
             this.__explicitlySet__.add("shouldDetect");
             return this;
         }
-        /** Masking character. By default, the character is an asterisk (*) */
+        /**
+         * Masking character. By default, the character is an asterisk (*)
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maskingCharacter")
         private String maskingCharacter;
 
         /**
          * Masking character. By default, the character is an asterisk (*)
-         *
          * @param maskingCharacter the value to set
          * @return this builder
-         */
+         **/
         public Builder maskingCharacter(String maskingCharacter) {
             this.maskingCharacter = maskingCharacter;
             this.__explicitlySet__.add("maskingCharacter");
             return this;
         }
-        /** Number of characters to leave unmasked. By default, the whole entity is masked. */
+        /**
+         * Number of characters to leave unmasked. By default, the whole entity is masked.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("leaveCharactersUnmasked")
         private Integer leaveCharactersUnmasked;
 
         /**
          * Number of characters to leave unmasked. By default, the whole entity is masked.
-         *
          * @param leaveCharactersUnmasked the value to set
          * @return this builder
-         */
+         **/
         public Builder leaveCharactersUnmasked(Integer leaveCharactersUnmasked) {
             this.leaveCharactersUnmasked = leaveCharactersUnmasked;
             this.__explicitlySet__.add("leaveCharactersUnmasked");
             return this;
         }
         /**
-         * Unmask from the end. By default, the whole entity is masked. This field works in concert
-         * with leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and
-         * isUnmaskedFromEnd is true, then if the entity is India the masked entity/result is **dia.
-         */
+         * Unmask from the end. By default, the whole entity is masked. This field works in concert with
+         * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is true,
+         * then if the entity is India the masked entity/result is **dia.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isUnmaskedFromEnd")
         private Boolean isUnmaskedFromEnd;
 
         /**
-         * Unmask from the end. By default, the whole entity is masked. This field works in concert
-         * with leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and
-         * isUnmaskedFromEnd is true, then if the entity is India the masked entity/result is **dia.
+         * Unmask from the end. By default, the whole entity is masked. This field works in concert with
+         * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is true,
+         * then if the entity is India the masked entity/result is **dia.
          *
          * @param isUnmaskedFromEnd the value to set
          * @return this builder
-         */
+         **/
         public Builder isUnmaskedFromEnd(Boolean isUnmaskedFromEnd) {
             this.isUnmaskedFromEnd = isUnmaskedFromEnd;
             this.__explicitlySet__.add("isUnmaskedFromEnd");
@@ -133,7 +135,9 @@ public final class PiiEntityMask extends PiiEntityMasking {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -155,47 +159,50 @@ public final class PiiEntityMask extends PiiEntityMasking {
         this.isUnmaskedFromEnd = isUnmaskedFromEnd;
     }
 
-    /** Masking character. By default, the character is an asterisk (*) */
+    /**
+     * Masking character. By default, the character is an asterisk (*)
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maskingCharacter")
     private final String maskingCharacter;
 
     /**
      * Masking character. By default, the character is an asterisk (*)
-     *
      * @return the value
-     */
+     **/
     public String getMaskingCharacter() {
         return maskingCharacter;
     }
 
-    /** Number of characters to leave unmasked. By default, the whole entity is masked. */
+    /**
+     * Number of characters to leave unmasked. By default, the whole entity is masked.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("leaveCharactersUnmasked")
     private final Integer leaveCharactersUnmasked;
 
     /**
      * Number of characters to leave unmasked. By default, the whole entity is masked.
-     *
      * @return the value
-     */
+     **/
     public Integer getLeaveCharactersUnmasked() {
         return leaveCharactersUnmasked;
     }
 
     /**
      * Unmask from the end. By default, the whole entity is masked. This field works in concert with
-     * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is
-     * true, then if the entity is India the masked entity/result is **dia.
-     */
+     * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is true,
+     * then if the entity is India the masked entity/result is **dia.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isUnmaskedFromEnd")
     private final Boolean isUnmaskedFromEnd;
 
     /**
      * Unmask from the end. By default, the whole entity is masked. This field works in concert with
-     * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is
-     * true, then if the entity is India the masked entity/result is **dia.
+     * leaveCharactersUnmasked. For example, leaveCharactersUnmasked is 3 and isUnmaskedFromEnd is true,
+     * then if the entity is India the masked entity/result is **dia.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsUnmaskedFromEnd() {
         return isUnmaskedFromEnd;
     }
@@ -207,7 +214,6 @@ public final class PiiEntityMask extends PiiEntityMasking {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

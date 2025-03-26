@@ -5,41 +5,40 @@
 package com.oracle.bmc.vnmonitoring.model;
 
 /**
- * Defines the {@code ProtocolParameters} configuration for the
- * [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) protocol. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+ * Defines the {@code ProtocolParameters} configuration for the [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) protocol.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = IcmpTrafficProtocolParameters.Builder.class)
+    builder = IcmpTrafficProtocolParameters.Builder.class
+)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class IcmpTrafficProtocolParameters extends TrafficProtocolParameters {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
          * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
         private Integer icmpCode;
 
         /**
          * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-         *
          * @param icmpCode the value to set
          * @return this builder
-         */
+         **/
         public Builder icmpCode(Integer icmpCode) {
             this.icmpCode = icmpCode;
             this.__explicitlySet__.add("icmpCode");
@@ -47,16 +46,15 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         }
         /**
          * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-         */
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("icmpType")
         private Integer icmpType;
 
         /**
          * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-         *
          * @param icmpType the value to set
          * @return this builder
-         */
+         **/
         public Builder icmpType(Integer icmpType) {
             this.icmpType = icmpType;
             this.__explicitlySet__.add("icmpType");
@@ -87,7 +85,9 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -103,28 +103,30 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
         this.icmpType = icmpType;
     }
 
-    /** The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code. */
+    /**
+     * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("icmpCode")
     private final Integer icmpCode;
 
     /**
      * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) code.
-     *
      * @return the value
-     */
+     **/
     public Integer getIcmpCode() {
         return icmpCode;
     }
 
-    /** The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type. */
+    /**
+     * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("icmpType")
     private final Integer icmpType;
 
     /**
      * The [ICMP](https://www.iana.org/assignments/icmp-parameters/icmp-parameters.xhtml) type.
-     *
      * @return the value
-     */
+     **/
     public Integer getIcmpType() {
         return icmpType;
     }
@@ -136,7 +138,6 @@ public final class IcmpTrafficProtocolParameters extends TrafficProtocolParamete
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

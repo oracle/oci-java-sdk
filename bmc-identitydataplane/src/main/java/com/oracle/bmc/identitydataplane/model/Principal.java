@@ -5,21 +5,19 @@
 package com.oracle.bmc.identitydataplane.model;
 
 /**
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Principal.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Principal extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Principal extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"subjectId", "tenantId", "claims"})
     public Principal(String subjectId, String tenantId, java.util.List<Claim> claims) {
@@ -31,46 +29,49 @@ public final class Principal extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The user's OCID. */
+        /**
+         * The user's OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
         private String subjectId;
 
         /**
          * The user's OCID.
-         *
          * @param subjectId the value to set
          * @return this builder
-         */
+         **/
         public Builder subjectId(String subjectId) {
             this.subjectId = subjectId;
             this.__explicitlySet__.add("subjectId");
             return this;
         }
-        /** The tenancy OCID. */
+        /**
+         * The tenancy OCID.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
          * The tenancy OCID.
-         *
          * @param tenantId the value to set
          * @return this builder
-         */
+         **/
         public Builder tenantId(String tenantId) {
             this.tenantId = tenantId;
             this.__explicitlySet__.add("tenantId");
             return this;
         }
-        /** The set of claims for this principal. */
+        /**
+         * The set of claims for this principal.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("claims")
         private java.util.List<Claim> claims;
 
         /**
          * The set of claims for this principal.
-         *
          * @param claims the value to set
          * @return this builder
-         */
+         **/
         public Builder claims(java.util.List<Claim> claims) {
             this.claims = claims;
             this.__explicitlySet__.add("claims");
@@ -103,7 +104,9 @@ public final class Principal extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -112,41 +115,44 @@ public final class Principal extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** The user's OCID. */
+    /**
+     * The user's OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("subjectId")
     private final String subjectId;
 
     /**
      * The user's OCID.
-     *
      * @return the value
-     */
+     **/
     public String getSubjectId() {
         return subjectId;
     }
 
-    /** The tenancy OCID. */
+    /**
+     * The tenancy OCID.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
      * The tenancy OCID.
-     *
      * @return the value
-     */
+     **/
     public String getTenantId() {
         return tenantId;
     }
 
-    /** The set of claims for this principal. */
+    /**
+     * The set of claims for this principal.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("claims")
     private final java.util.List<Claim> claims;
 
     /**
      * The set of claims for this principal.
-     *
      * @return the value
-     */
+     **/
     public java.util.List<Claim> getClaims() {
         return claims;
     }
@@ -158,7 +164,6 @@ public final class Principal extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

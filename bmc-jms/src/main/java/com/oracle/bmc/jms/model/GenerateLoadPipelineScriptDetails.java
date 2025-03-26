@@ -5,23 +5,22 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Attributes to generate load pipeline script. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+ * Attributes to generate load pipeline script.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = GenerateLoadPipelineScriptDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    builder = GenerateLoadPipelineScriptDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class GenerateLoadPipelineScriptDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+        extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "targetBucketName",
@@ -43,7 +42,10 @@ public final class GenerateLoadPipelineScriptDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the bucket where data will be exported. */
+        /**
+         * The name of the bucket where data will be exported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketName")
         private String targetBucketName;
 
@@ -52,13 +54,16 @@ public final class GenerateLoadPipelineScriptDetails
          *
          * @param targetBucketName the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketName(String targetBucketName) {
             this.targetBucketName = targetBucketName;
             this.__explicitlySet__.add("targetBucketName");
             return this;
         }
-        /** The namespace of the bucket where data will be exported. */
+        /**
+         * The namespace of the bucket where data will be exported.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketNamespace")
         private String targetBucketNamespace;
 
@@ -67,13 +72,16 @@ public final class GenerateLoadPipelineScriptDetails
          *
          * @param targetBucketNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketNamespace(String targetBucketNamespace) {
             this.targetBucketNamespace = targetBucketNamespace;
             this.__explicitlySet__.add("targetBucketNamespace");
             return this;
         }
-        /** The id of the region of the target bucket. */
+        /**
+         * The id of the region of the target bucket.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
         private String targetBucketRegion;
 
@@ -82,7 +90,7 @@ public final class GenerateLoadPipelineScriptDetails
          *
          * @param targetBucketRegion the value to set
          * @return this builder
-         */
+         **/
         public Builder targetBucketRegion(String targetBucketRegion) {
             this.targetBucketRegion = targetBucketRegion;
             this.__explicitlySet__.add("targetBucketRegion");
@@ -90,7 +98,8 @@ public final class GenerateLoadPipelineScriptDetails
         }
         /**
          * The time internal in minutes between consecutive executions of scheduled pipeline job.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("intervalMinutes")
         private Integer intervalMinutes;
 
@@ -99,7 +108,7 @@ public final class GenerateLoadPipelineScriptDetails
          *
          * @param intervalMinutes the value to set
          * @return this builder
-         */
+         **/
         public Builder intervalMinutes(Integer intervalMinutes) {
             this.intervalMinutes = intervalMinutes;
             this.__explicitlySet__.add("intervalMinutes");
@@ -140,7 +149,9 @@ public final class GenerateLoadPipelineScriptDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -149,7 +160,10 @@ public final class GenerateLoadPipelineScriptDetails
         return new Builder().copy(this);
     }
 
-    /** The name of the bucket where data will be exported. */
+    /**
+     * The name of the bucket where data will be exported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketName")
     private final String targetBucketName;
 
@@ -157,12 +171,15 @@ public final class GenerateLoadPipelineScriptDetails
      * The name of the bucket where data will be exported.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketName() {
         return targetBucketName;
     }
 
-    /** The namespace of the bucket where data will be exported. */
+    /**
+     * The namespace of the bucket where data will be exported.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketNamespace")
     private final String targetBucketNamespace;
 
@@ -170,12 +187,15 @@ public final class GenerateLoadPipelineScriptDetails
      * The namespace of the bucket where data will be exported.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketNamespace() {
         return targetBucketNamespace;
     }
 
-    /** The id of the region of the target bucket. */
+    /**
+     * The id of the region of the target bucket.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
     private final String targetBucketRegion;
 
@@ -183,12 +203,15 @@ public final class GenerateLoadPipelineScriptDetails
      * The id of the region of the target bucket.
      *
      * @return the value
-     */
+     **/
     public String getTargetBucketRegion() {
         return targetBucketRegion;
     }
 
-    /** The time internal in minutes between consecutive executions of scheduled pipeline job. */
+    /**
+     * The time internal in minutes between consecutive executions of scheduled pipeline job.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("intervalMinutes")
     private final Integer intervalMinutes;
 
@@ -196,7 +219,7 @@ public final class GenerateLoadPipelineScriptDetails
      * The time internal in minutes between consecutive executions of scheduled pipeline job.
      *
      * @return the value
-     */
+     **/
     public Integer getIntervalMinutes() {
         return intervalMinutes;
     }
@@ -208,7 +231,6 @@ public final class GenerateLoadPipelineScriptDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

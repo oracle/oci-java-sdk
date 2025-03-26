@@ -6,73 +6,90 @@ package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a
- * href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptObjectExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use ReencryptObjectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ReencryptObjectRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ReencryptObjectRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.objectstorage.model.ReencryptObjectDetails> {
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     private String namespaceName;
 
-    /** The Object Storage namespace used for the request. */
+    /**
+     * The Object Storage namespace used for the request.
+     */
     public String getNamespaceName() {
         return namespaceName;
     }
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     private String bucketName;
 
     /**
-     * The name of the bucket. Avoid entering confidential information. Example: {@code
-     * my-new-bucket1}
+     * The name of the bucket. Avoid entering confidential information.
+     * Example: {@code my-new-bucket1}
+     *
      */
     public String getBucketName() {
         return bucketName;
     }
     /**
-     * The name of the object. Avoid entering confidential information. Example: {@code
-     * test/object1.log}
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
      */
     private String objectName;
 
     /**
-     * The name of the object. Avoid entering confidential information. Example: {@code
-     * test/object1.log}
+     * The name of the object. Avoid entering confidential information.
+     * Example: {@code test/object1.log}
+     *
      */
     public String getObjectName() {
         return objectName;
     }
-    /** Request object for re-encrypting the data encryption key associated with an object. */
+    /**
+     * Request object for re-encrypting the data encryption key associated with an object.
+     */
     private com.oracle.bmc.objectstorage.model.ReencryptObjectDetails reencryptObjectDetails;
 
-    /** Request object for re-encrypting the data encryption key associated with an object. */
+    /**
+     * Request object for re-encrypting the data encryption key associated with an object.
+     */
     public com.oracle.bmc.objectstorage.model.ReencryptObjectDetails getReencryptObjectDetails() {
         return reencryptObjectDetails;
     }
-    /** VersionId used to identify a particular version of the object */
+    /**
+     * VersionId used to identify a particular version of the object
+     */
     private String versionId;
 
-    /** VersionId used to identify a particular version of the object */
+    /**
+     * VersionId used to identify a particular version of the object
+     */
     public String getVersionId() {
         return versionId;
     }
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     private String opcClientRequestId;
 
-    /** The client request ID for tracing. */
+    /**
+     * The client request ID for tracing.
+     */
     public String getOpcClientRequestId() {
         return opcClientRequestId;
     }
 
     /**
      * Alternative accessor for the body parameter.
-     *
      * @return body parameter
      */
     @Override
@@ -85,15 +102,17 @@ public class ReencryptObjectRequest
             implements com.oracle.bmc.requests.BmcRequest.Builder<
                     ReencryptObjectRequest,
                     com.oracle.bmc.objectstorage.model.ReencryptObjectDetails> {
-        private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
+        private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Object Storage namespace used for the request. */
+        /**
+         * The Object Storage namespace used for the request.
+         */
         private String namespaceName = null;
 
         /**
          * The Object Storage namespace used for the request.
-         *
          * @param namespaceName the value to set
          * @return this builder instance
          */
@@ -103,14 +122,15 @@ public class ReencryptObjectRequest
         }
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
+         *
          */
         private String bucketName = null;
 
         /**
-         * The name of the bucket. Avoid entering confidential information. Example: {@code
-         * my-new-bucket1}
+         * The name of the bucket. Avoid entering confidential information.
+         * Example: {@code my-new-bucket1}
          *
          * @param bucketName the value to set
          * @return this builder instance
@@ -121,14 +141,15 @@ public class ReencryptObjectRequest
         }
 
         /**
-         * The name of the object. Avoid entering confidential information. Example: {@code
-         * test/object1.log}
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
+         *
          */
         private String objectName = null;
 
         /**
-         * The name of the object. Avoid entering confidential information. Example: {@code
-         * test/object1.log}
+         * The name of the object. Avoid entering confidential information.
+         * Example: {@code test/object1.log}
          *
          * @param objectName the value to set
          * @return this builder instance
@@ -138,13 +159,14 @@ public class ReencryptObjectRequest
             return this;
         }
 
-        /** Request object for re-encrypting the data encryption key associated with an object. */
+        /**
+         * Request object for re-encrypting the data encryption key associated with an object.
+         */
         private com.oracle.bmc.objectstorage.model.ReencryptObjectDetails reencryptObjectDetails =
                 null;
 
         /**
          * Request object for re-encrypting the data encryption key associated with an object.
-         *
          * @param reencryptObjectDetails the value to set
          * @return this builder instance
          */
@@ -154,12 +176,13 @@ public class ReencryptObjectRequest
             return this;
         }
 
-        /** VersionId used to identify a particular version of the object */
+        /**
+         * VersionId used to identify a particular version of the object
+         */
         private String versionId = null;
 
         /**
          * VersionId used to identify a particular version of the object
-         *
          * @param versionId the value to set
          * @return this builder instance
          */
@@ -168,12 +191,13 @@ public class ReencryptObjectRequest
             return this;
         }
 
-        /** The client request ID for tracing. */
+        /**
+         * The client request ID for tracing.
+         */
         private String opcClientRequestId = null;
 
         /**
          * The client request ID for tracing.
-         *
          * @param opcClientRequestId the value to set
          * @return this builder instance
          */
@@ -184,19 +208,18 @@ public class ReencryptObjectRequest
 
         /**
          * Set the invocation callback for the request to be built.
-         *
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
          */
         public Builder invocationCallback(
-                com.oracle.bmc.http.client.RequestInterceptor invocationCallback) {
+                com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
+                        invocationCallback) {
             this.invocationCallback = invocationCallback;
             return this;
         }
 
         /**
          * Set the retry configuration for the request to be built.
-         *
          * @param retryConfiguration the retry configuration to be used for the request
          * @return this builder instance
          */
@@ -208,7 +231,6 @@ public class ReencryptObjectRequest
 
         /**
          * Copy method to populate the builder with values from the given instance.
-         *
          * @return this builder instance
          */
         public Builder copy(ReencryptObjectRequest o) {
@@ -226,11 +248,10 @@ public class ReencryptObjectRequest
         /**
          * Build the instance of ReencryptObjectRequest as configured by this builder
          *
-         * <p>Note that this method takes calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method takes calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#buildWithoutInvocationCallback} does not.
          *
-         * <p>This is the preferred method to build an instance.
+         * This is the preferred method to build an instance.
          *
          * @return instance of ReencryptObjectRequest
          */
@@ -243,7 +264,6 @@ public class ReencryptObjectRequest
 
         /**
          * Alternative setter for the body parameter.
-         *
          * @param body the body parameter
          * @return this builder instance
          */
@@ -256,8 +276,7 @@ public class ReencryptObjectRequest
         /**
          * Build the instance of ReencryptObjectRequest as configured by this builder
          *
-         * <p>Note that this method does not take calls to {@link
-         * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
+         * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
          * while the method {@link Builder#build} does
          *
          * @return instance of ReencryptObjectRequest
@@ -271,14 +290,12 @@ public class ReencryptObjectRequest
             request.versionId = versionId;
             request.opcClientRequestId = opcClientRequestId;
             return request;
-            // new ReencryptObjectRequest(namespaceName, bucketName, objectName,
-            // reencryptObjectDetails, versionId, opcClientRequestId);
+            // new ReencryptObjectRequest(namespaceName, bucketName, objectName, reencryptObjectDetails, versionId, opcClientRequestId);
         }
     }
 
     /**
      * Return an instance of {@link Builder} that allows you to modify request properties.
-     *
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
@@ -293,7 +310,6 @@ public class ReencryptObjectRequest
 
     /**
      * Return a new builder for this request object.
-     *
      * @return builder for the request object
      */
     public static Builder builder() {

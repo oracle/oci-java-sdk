@@ -6,22 +6,19 @@ package com.oracle.bmc.loadbalancer.model;
 
 /**
  * An object that species the maximum number of connections the listed IPs can make to a listener.
- * <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170115")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = IpMaxConnections.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class IpMaxConnections
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class IpMaxConnections extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({"ipAddresses", "maxConnections"})
     public IpMaxConnections(java.util.List<String> ipAddresses, Integer maxConnections) {
@@ -33,19 +30,20 @@ public final class IpMaxConnections
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example:
-         * '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
-         */
+         * Each element in the list should be valid IPv4 or IPv6 CIDR Block address.
+         * Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
         private java.util.List<String> ipAddresses;
 
         /**
-         * Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example:
-         * '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+         * Each element in the list should be valid IPv4 or IPv6 CIDR Block address.
+         * Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
          *
          * @param ipAddresses the value to set
          * @return this builder
-         */
+         **/
         public Builder ipAddresses(java.util.List<String> ipAddresses) {
             this.ipAddresses = ipAddresses;
             this.__explicitlySet__.add("ipAddresses");
@@ -56,7 +54,8 @@ public final class IpMaxConnections
          * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
          * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
          * unlimited number of simultaneous connections to a listener.
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
         private Integer maxConnections;
 
@@ -68,7 +67,7 @@ public final class IpMaxConnections
          *
          * @param maxConnections the value to set
          * @return this builder
-         */
+         **/
         public Builder maxConnections(Integer maxConnections) {
             this.maxConnections = maxConnections;
             this.__explicitlySet__.add("maxConnections");
@@ -98,7 +97,9 @@ public final class IpMaxConnections
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -108,18 +109,19 @@ public final class IpMaxConnections
     }
 
     /**
-     * Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example:
-     * '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
-     */
+     * Each element in the list should be valid IPv4 or IPv6 CIDR Block address.
+     * Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("ipAddresses")
     private final java.util.List<String> ipAddresses;
 
     /**
-     * Each element in the list should be valid IPv4 or IPv6 CIDR Block address. Example:
-     * '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
+     * Each element in the list should be valid IPv4 or IPv6 CIDR Block address.
+     * Example: '["129.213.176.0/24", "150.136.187.0/24", "2002::1234:abcd:ffff:c0a8:101/64"]'
      *
      * @return the value
-     */
+     **/
     public java.util.List<String> getIpAddresses() {
         return ipAddresses;
     }
@@ -129,7 +131,8 @@ public final class IpMaxConnections
      * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
      * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
      * unlimited number of simultaneous connections to a listener.
-     */
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
     private final Integer maxConnections;
 
@@ -140,7 +143,7 @@ public final class IpMaxConnections
      * unlimited number of simultaneous connections to a listener.
      *
      * @return the value
-     */
+     **/
     public Integer getMaxConnections() {
         return maxConnections;
     }
@@ -152,7 +155,6 @@ public final class IpMaxConnections
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

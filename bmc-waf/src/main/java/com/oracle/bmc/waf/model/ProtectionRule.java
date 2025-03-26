@@ -5,25 +5,27 @@
 package com.oracle.bmc.waf.model;
 
 /**
- * Rule that represents Request/Response Protection. Only actions of the following types are allowed
- * to be referenced in this rule: * CHECK * RETURN_HTTP_RESPONSE <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
+ * Rule that represents Request/Response Protection.
+ * Only actions of the following types are allowed to be referenced in this rule:
+ *  * CHECK
+ *  * RETURN_HTTP_RESPONSE
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210930")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = ProtectionRule.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
-        use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
-        include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
-        property = "type")
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "type"
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ProtectionRule extends WebAppFirewallPolicyRule {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
@@ -63,23 +65,24 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
             return this;
         }
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced
-         * protection capabilities are not necessarily executed in order of appearance. Their
-         * execution order is decided at runtime for improved performance. The array cannot contain
-         * entries with the same pair of capability key and version more than once.
-         */
+         * An ordered list that references OCI-managed protection capabilities.
+         * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+         * is decided at runtime for improved performance.
+         * The array cannot contain entries with the same pair of capability key and version more than once.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protectionCapabilities")
         private java.util.List<ProtectionCapability> protectionCapabilities;
 
         /**
-         * An ordered list that references OCI-managed protection capabilities. Referenced
-         * protection capabilities are not necessarily executed in order of appearance. Their
-         * execution order is decided at runtime for improved performance. The array cannot contain
-         * entries with the same pair of capability key and version more than once.
+         * An ordered list that references OCI-managed protection capabilities.
+         * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+         * is decided at runtime for improved performance.
+         * The array cannot contain entries with the same pair of capability key and version more than once.
          *
          * @param protectionCapabilities the value to set
          * @return this builder
-         */
+         **/
         public Builder protectionCapabilities(
                 java.util.List<ProtectionCapability> protectionCapabilities) {
             this.protectionCapabilities = protectionCapabilities;
@@ -97,21 +100,22 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
             return this;
         }
         /**
-         * Enables/disables body inspection for this protection rule. Only Protection Rules in
-         * RequestProtection can have this option enabled. Response body inspection will be
-         * available at a later date.
-         */
+         * Enables/disables body inspection for this protection rule.
+         * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+         * be available at a later date.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
         private Boolean isBodyInspectionEnabled;
 
         /**
-         * Enables/disables body inspection for this protection rule. Only Protection Rules in
-         * RequestProtection can have this option enabled. Response body inspection will be
-         * available at a later date.
+         * Enables/disables body inspection for this protection rule.
+         * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+         * be available at a later date.
          *
          * @param isBodyInspectionEnabled the value to set
          * @return this builder
-         */
+         **/
         public Builder isBodyInspectionEnabled(Boolean isBodyInspectionEnabled) {
             this.isBodyInspectionEnabled = isBodyInspectionEnabled;
             this.__explicitlySet__.add("isBodyInspectionEnabled");
@@ -164,7 +168,9 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -189,22 +195,23 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
     }
 
     /**
-     * An ordered list that references OCI-managed protection capabilities. Referenced protection
-     * capabilities are not necessarily executed in order of appearance. Their execution order is
-     * decided at runtime for improved performance. The array cannot contain entries with the same
-     * pair of capability key and version more than once.
-     */
+     * An ordered list that references OCI-managed protection capabilities.
+     * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+     * is decided at runtime for improved performance.
+     * The array cannot contain entries with the same pair of capability key and version more than once.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protectionCapabilities")
     private final java.util.List<ProtectionCapability> protectionCapabilities;
 
     /**
-     * An ordered list that references OCI-managed protection capabilities. Referenced protection
-     * capabilities are not necessarily executed in order of appearance. Their execution order is
-     * decided at runtime for improved performance. The array cannot contain entries with the same
-     * pair of capability key and version more than once.
+     * An ordered list that references OCI-managed protection capabilities.
+     * Referenced protection capabilities are not necessarily executed in order of appearance. Their execution order
+     * is decided at runtime for improved performance.
+     * The array cannot contain entries with the same pair of capability key and version more than once.
      *
      * @return the value
-     */
+     **/
     public java.util.List<ProtectionCapability> getProtectionCapabilities() {
         return protectionCapabilities;
     }
@@ -217,20 +224,21 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
     }
 
     /**
-     * Enables/disables body inspection for this protection rule. Only Protection Rules in
-     * RequestProtection can have this option enabled. Response body inspection will be available at
-     * a later date.
-     */
+     * Enables/disables body inspection for this protection rule.
+     * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+     * be available at a later date.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("isBodyInspectionEnabled")
     private final Boolean isBodyInspectionEnabled;
 
     /**
-     * Enables/disables body inspection for this protection rule. Only Protection Rules in
-     * RequestProtection can have this option enabled. Response body inspection will be available at
-     * a later date.
+     * Enables/disables body inspection for this protection rule.
+     * Only Protection Rules in RequestProtection can have this option enabled. Response body inspection will
+     * be available at a later date.
      *
      * @return the value
-     */
+     **/
     public Boolean getIsBodyInspectionEnabled() {
         return isBodyInspectionEnabled;
     }
@@ -242,7 +250,6 @@ public final class ProtectionRule extends WebAppFirewallPolicyRule {
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

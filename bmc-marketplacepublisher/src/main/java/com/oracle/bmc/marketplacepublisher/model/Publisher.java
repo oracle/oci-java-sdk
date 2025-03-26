@@ -5,21 +5,19 @@
 package com.oracle.bmc.marketplacepublisher.model;
 
 /**
- * The model for a publisher details. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
+ * The model for a publisher details.
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Publisher.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class Publisher extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class Publisher extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "publisherStatus",
@@ -104,31 +102,33 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** publisher status. */
+        /**
+         * publisher status.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherStatus")
         private PublisherStatus publisherStatus;
 
         /**
          * publisher status.
-         *
          * @param publisherStatus the value to set
          * @return this builder
-         */
+         **/
         public Builder publisherStatus(PublisherStatus publisherStatus) {
             this.publisherStatus = publisherStatus;
             this.__explicitlySet__.add("publisherStatus");
             return this;
         }
-        /** The private email address of the publisher product team. */
+        /**
+         * The private email address of the publisher product team.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("notificationEmail")
         private String notificationEmail;
 
         /**
          * The private email address of the publisher product team.
-         *
          * @param notificationEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder notificationEmail(String notificationEmail) {
             this.notificationEmail = notificationEmail;
             this.__explicitlySet__.add("notificationEmail");
@@ -153,166 +153,177 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("privateOfferAccountDetails");
             return this;
         }
-        /** Unique OCID identifier for the publisher. */
+        /**
+         * Unique OCID identifier for the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
          * Unique OCID identifier for the publisher.
-         *
          * @param id the value to set
          * @return this builder
-         */
+         **/
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The root compartment of the Publisher. */
+        /**
+         * The root compartment of the Publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The root compartment of the Publisher.
-         *
          * @param compartmentId the value to set
          * @return this builder
-         */
+         **/
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The namespace for the publisher registry to persist artifacts. */
+        /**
+         * The namespace for the publisher registry to persist artifacts.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("registryNamespace")
         private String registryNamespace;
 
         /**
          * The namespace for the publisher registry to persist artifacts.
-         *
          * @param registryNamespace the value to set
          * @return this builder
-         */
+         **/
         public Builder registryNamespace(String registryNamespace) {
             this.registryNamespace = registryNamespace;
             this.__explicitlySet__.add("registryNamespace");
             return this;
         }
-        /** Unique legacy service identifier for the publisher. */
+        /**
+         * Unique legacy service identifier for the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("legacyId")
         private String legacyId;
 
         /**
          * Unique legacy service identifier for the publisher.
-         *
          * @param legacyId the value to set
          * @return this builder
-         */
+         **/
         public Builder legacyId(String legacyId) {
             this.legacyId = legacyId;
             this.__explicitlySet__.add("legacyId");
             return this;
         }
-        /** The name of the publisher. */
+        /**
+         * The name of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
          * The name of the publisher.
-         *
          * @param displayName the value to set
          * @return this builder
-         */
+         **/
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** A description of the publisher. */
+        /**
+         * A description of the publisher.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
          * A description of the publisher.
-         *
          * @param description the value to set
          * @return this builder
-         */
+         **/
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The year the publisher's company or organization was founded. */
+        /**
+         * The year the publisher's company or organization was founded.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("yearFounded")
         private Long yearFounded;
 
         /**
          * The year the publisher's company or organization was founded.
-         *
          * @param yearFounded the value to set
          * @return this builder
-         */
+         **/
         public Builder yearFounded(Long yearFounded) {
             this.yearFounded = yearFounded;
             this.__explicitlySet__.add("yearFounded");
             return this;
         }
-        /** The publisher's website. */
+        /**
+         * The publisher's website.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("websiteUrl")
         private String websiteUrl;
 
         /**
          * The publisher's website.
-         *
          * @param websiteUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder websiteUrl(String websiteUrl) {
             this.websiteUrl = websiteUrl;
             this.__explicitlySet__.add("websiteUrl");
             return this;
         }
-        /** The public email address of the publisher for customers. */
+        /**
+         * The public email address of the publisher for customers.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
         private String contactEmail;
 
         /**
          * The public email address of the publisher for customers.
-         *
          * @param contactEmail the value to set
          * @return this builder
-         */
+         **/
         public Builder contactEmail(String contactEmail) {
             this.contactEmail = contactEmail;
             this.__explicitlySet__.add("contactEmail");
             return this;
         }
-        /** The phone number of the publisher in E.164 format. */
+        /**
+         * The phone number of the publisher in E.164 format.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
         private String contactPhone;
 
         /**
          * The phone number of the publisher in E.164 format.
-         *
          * @param contactPhone the value to set
          * @return this builder
-         */
+         **/
         public Builder contactPhone(String contactPhone) {
             this.contactPhone = contactPhone;
             this.__explicitlySet__.add("contactPhone");
             return this;
         }
-        /** The address of the publisher's headquarters. */
+        /**
+         * The address of the publisher's headquarters.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("hqAddress")
         private String hqAddress;
 
         /**
          * The address of the publisher's headquarters.
-         *
          * @param hqAddress the value to set
          * @return this builder
-         */
+         **/
         public Builder hqAddress(String hqAddress) {
             this.hqAddress = hqAddress;
             this.__explicitlySet__.add("hqAddress");
@@ -327,110 +338,117 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("logo");
             return this;
         }
-        /** Publisher's Facebook URL */
+        /**
+         * Publisher's Facebook URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("facebookUrl")
         private String facebookUrl;
 
         /**
          * Publisher's Facebook URL
-         *
          * @param facebookUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder facebookUrl(String facebookUrl) {
             this.facebookUrl = facebookUrl;
             this.__explicitlySet__.add("facebookUrl");
             return this;
         }
-        /** Publisher's Twitter URL */
+        /**
+         * Publisher's Twitter URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("twitterUrl")
         private String twitterUrl;
 
         /**
          * Publisher's Twitter URL
-         *
          * @param twitterUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder twitterUrl(String twitterUrl) {
             this.twitterUrl = twitterUrl;
             this.__explicitlySet__.add("twitterUrl");
             return this;
         }
-        /** Publisher's LinkedIn URL */
+        /**
+         * Publisher's LinkedIn URL
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("linkedinUrl")
         private String linkedinUrl;
 
         /**
          * Publisher's LinkedIn URL
-         *
          * @param linkedinUrl the value to set
          * @return this builder
-         */
+         **/
         public Builder linkedinUrl(String linkedinUrl) {
             this.linkedinUrl = linkedinUrl;
             this.__explicitlySet__.add("linkedinUrl");
             return this;
         }
-        /** publisher type. */
+        /**
+         * publisher type.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("publisherType")
         private PublisherType publisherType;
 
         /**
          * publisher type.
-         *
          * @param publisherType the value to set
          * @return this builder
-         */
+         **/
         public Builder publisherType(PublisherType publisherType) {
             this.publisherType = publisherType;
             this.__explicitlySet__.add("publisherType");
             return this;
         }
-        /** The time the publisher was created. An RFC3339 formatted datetime string. */
+        /**
+         * The time the publisher was created. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
          * The time the publisher was created. An RFC3339 formatted datetime string.
-         *
          * @param timeCreated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
-        /** The time the publisher was updated. An RFC3339 formatted datetime string. */
+        /**
+         * The time the publisher was updated. An RFC3339 formatted datetime string.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
          * The time the publisher was updated. An RFC3339 formatted datetime string.
-         *
          * @param timeUpdated the value to set
          * @return this builder
-         */
+         **/
         public Builder timeUpdated(java.util.Date timeUpdated) {
             this.timeUpdated = timeUpdated;
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
-         */
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
         /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists
-         * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
+         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+         * Example: {@code {"bar-key": "value"}}
          *
          * @param freeformTags the value to set
          * @return this builder
-         */
+         **/
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
@@ -439,7 +457,8 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
          * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         */
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
@@ -449,7 +468,7 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
          *
          * @param definedTags the value to set
          * @return this builder
-         */
+         **/
         public Builder definedTags(
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
@@ -457,19 +476,20 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         */
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
         private java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
         /**
-         * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-         * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
          *
          * @param systemTags the value to set
          * @return this builder
-         */
+         **/
         public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
             this.systemTags = systemTags;
             this.__explicitlySet__.add("systemTags");
@@ -594,7 +614,9 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -603,8 +625,10 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** publisher status. */
-    public enum PublisherStatus implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * publisher status.
+     **/
+    public enum PublisherStatus {
         New("NEW"),
         Approved("APPROVED"),
         Suspended("SUSPENDED"),
@@ -613,8 +637,8 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         Contacted("CONTACTED"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -653,28 +677,30 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** publisher status. */
+    /**
+     * publisher status.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisherStatus")
     private final PublisherStatus publisherStatus;
 
     /**
      * publisher status.
-     *
      * @return the value
-     */
+     **/
     public PublisherStatus getPublisherStatus() {
         return publisherStatus;
     }
 
-    /** The private email address of the publisher product team. */
+    /**
+     * The private email address of the publisher product team.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("notificationEmail")
     private final String notificationEmail;
 
     /**
      * The private email address of the publisher product team.
-     *
      * @return the value
-     */
+     **/
     public String getNotificationEmail() {
         return notificationEmail;
     }
@@ -693,145 +719,156 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return privateOfferAccountDetails;
     }
 
-    /** Unique OCID identifier for the publisher. */
+    /**
+     * Unique OCID identifier for the publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
      * Unique OCID identifier for the publisher.
-     *
      * @return the value
-     */
+     **/
     public String getId() {
         return id;
     }
 
-    /** The root compartment of the Publisher. */
+    /**
+     * The root compartment of the Publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The root compartment of the Publisher.
-     *
      * @return the value
-     */
+     **/
     public String getCompartmentId() {
         return compartmentId;
     }
 
-    /** The namespace for the publisher registry to persist artifacts. */
+    /**
+     * The namespace for the publisher registry to persist artifacts.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("registryNamespace")
     private final String registryNamespace;
 
     /**
      * The namespace for the publisher registry to persist artifacts.
-     *
      * @return the value
-     */
+     **/
     public String getRegistryNamespace() {
         return registryNamespace;
     }
 
-    /** Unique legacy service identifier for the publisher. */
+    /**
+     * Unique legacy service identifier for the publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("legacyId")
     private final String legacyId;
 
     /**
      * Unique legacy service identifier for the publisher.
-     *
      * @return the value
-     */
+     **/
     public String getLegacyId() {
         return legacyId;
     }
 
-    /** The name of the publisher. */
+    /**
+     * The name of the publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
      * The name of the publisher.
-     *
      * @return the value
-     */
+     **/
     public String getDisplayName() {
         return displayName;
     }
 
-    /** A description of the publisher. */
+    /**
+     * A description of the publisher.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
      * A description of the publisher.
-     *
      * @return the value
-     */
+     **/
     public String getDescription() {
         return description;
     }
 
-    /** The year the publisher's company or organization was founded. */
+    /**
+     * The year the publisher's company or organization was founded.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("yearFounded")
     private final Long yearFounded;
 
     /**
      * The year the publisher's company or organization was founded.
-     *
      * @return the value
-     */
+     **/
     public Long getYearFounded() {
         return yearFounded;
     }
 
-    /** The publisher's website. */
+    /**
+     * The publisher's website.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("websiteUrl")
     private final String websiteUrl;
 
     /**
      * The publisher's website.
-     *
      * @return the value
-     */
+     **/
     public String getWebsiteUrl() {
         return websiteUrl;
     }
 
-    /** The public email address of the publisher for customers. */
+    /**
+     * The public email address of the publisher for customers.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactEmail")
     private final String contactEmail;
 
     /**
      * The public email address of the publisher for customers.
-     *
      * @return the value
-     */
+     **/
     public String getContactEmail() {
         return contactEmail;
     }
 
-    /** The phone number of the publisher in E.164 format. */
+    /**
+     * The phone number of the publisher in E.164 format.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("contactPhone")
     private final String contactPhone;
 
     /**
      * The phone number of the publisher in E.164 format.
-     *
      * @return the value
-     */
+     **/
     public String getContactPhone() {
         return contactPhone;
     }
 
-    /** The address of the publisher's headquarters. */
+    /**
+     * The address of the publisher's headquarters.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("hqAddress")
     private final String hqAddress;
 
     /**
      * The address of the publisher's headquarters.
-     *
      * @return the value
-     */
+     **/
     public String getHqAddress() {
         return hqAddress;
     }
@@ -843,53 +880,58 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
         return logo;
     }
 
-    /** Publisher's Facebook URL */
+    /**
+     * Publisher's Facebook URL
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("facebookUrl")
     private final String facebookUrl;
 
     /**
      * Publisher's Facebook URL
-     *
      * @return the value
-     */
+     **/
     public String getFacebookUrl() {
         return facebookUrl;
     }
 
-    /** Publisher's Twitter URL */
+    /**
+     * Publisher's Twitter URL
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("twitterUrl")
     private final String twitterUrl;
 
     /**
      * Publisher's Twitter URL
-     *
      * @return the value
-     */
+     **/
     public String getTwitterUrl() {
         return twitterUrl;
     }
 
-    /** Publisher's LinkedIn URL */
+    /**
+     * Publisher's LinkedIn URL
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("linkedinUrl")
     private final String linkedinUrl;
 
     /**
      * Publisher's LinkedIn URL
-     *
      * @return the value
-     */
+     **/
     public String getLinkedinUrl() {
         return linkedinUrl;
     }
 
-    /** publisher type. */
-    public enum PublisherType implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * publisher type.
+     **/
+    public enum PublisherType {
         Internal("INTERNAL"),
         External("EXTERNAL"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -928,92 +970,98 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
             return UnknownEnumValue;
         }
     };
-    /** publisher type. */
+    /**
+     * publisher type.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("publisherType")
     private final PublisherType publisherType;
 
     /**
      * publisher type.
-     *
      * @return the value
-     */
+     **/
     public PublisherType getPublisherType() {
         return publisherType;
     }
 
-    /** The time the publisher was created. An RFC3339 formatted datetime string. */
+    /**
+     * The time the publisher was created. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
      * The time the publisher was created. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
     }
 
-    /** The time the publisher was updated. An RFC3339 formatted datetime string. */
+    /**
+     * The time the publisher was updated. An RFC3339 formatted datetime string.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
      * The time the publisher was updated. An RFC3339 formatted datetime string.
-     *
      * @return the value
-     */
+     **/
     public java.util.Date getTimeUpdated() {
         return timeUpdated;
     }
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
-     */
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
-     * cross-compatibility only. Example: {@code {"bar-key": "value"}}
+     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
+     * Example: {@code {"bar-key": "value"}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
-     */
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"foo-namespace": {"bar-key": "value"}}}
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
     }
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-     */
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
     private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
 
     /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace. Example:
-     * {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
      *
      * @return the value
-     */
+     **/
     public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
         return systemTags;
     }
@@ -1025,7 +1073,6 @@ public final class Publisher extends com.oracle.bmc.http.client.internal.Explici
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

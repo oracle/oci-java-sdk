@@ -5,23 +5,22 @@
 package com.oracle.bmc.stackmonitoring.model;
 
 /**
- * Connection details for the database. <br>
- * Note: Objects should always be created or deserialized using the {@link Builder}. This model
- * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
- * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
- * set of all explicitly set fields called {@link Builder#__explicitlySet__}. The {@link
- * #hashCode()} and {@link #equals(Object)} methods are implemented to take the explicitly set
- * fields into account. The constructor, on the other hand, does not take the explicitly set fields
- * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
- * null}).
- */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
+ * Connection details for the database.
+ *
+ * <br/>
+ * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
+ * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
+ * the setter methods of the {@link Builder}, which maintain a set of all explicitly set fields called
+ * {@link #__explicitlySet__}. The {@link #hashCode()} and {@link #equals(Object)} methods are implemented to take
+ * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
+ * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210330")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ConnectionDetails.Builder.class)
-@com.fasterxml.jackson.annotation.JsonFilter(
-        com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ConnectionDetails
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+    builder = ConnectionDetails.Builder.class
+)
+@com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
+public final class ConnectionDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "protocol",
@@ -52,86 +51,92 @@ public final class ConnectionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Protocol used in DB connection string when connecting to external database service. */
+        /**
+         * Protocol used in DB connection string when connecting to external database service.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("protocol")
         private Protocol protocol;
 
         /**
          * Protocol used in DB connection string when connecting to external database service.
-         *
          * @param protocol the value to set
          * @return this builder
-         */
+         **/
         public Builder protocol(Protocol protocol) {
             this.protocol = protocol;
             this.__explicitlySet__.add("protocol");
             return this;
         }
-        /** Listener Port number used for connection requests. */
+        /**
+         * Listener Port number used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("port")
         private Integer port;
 
         /**
          * Listener Port number used for connection requests.
-         *
          * @param port the value to set
          * @return this builder
-         */
+         **/
         public Builder port(Integer port) {
             this.port = port;
             this.__explicitlySet__.add("port");
             return this;
         }
         /**
-         * Database connector Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * Database connector Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * Database connector Identifier
-         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * Database connector Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param connectorId the value to set
          * @return this builder
-         */
+         **/
         public Builder connectorId(String connectorId) {
             this.connectorId = connectorId;
             this.__explicitlySet__.add("connectorId");
             return this;
         }
-        /** Service name used for connection requests. */
+        /**
+         * Service name used for connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
         private String serviceName;
 
         /**
          * Service name used for connection requests.
-         *
          * @param serviceName the value to set
          * @return this builder
-         */
+         **/
         public Builder serviceName(String serviceName) {
             this.serviceName = serviceName;
             this.__explicitlySet__.add("serviceName");
             return this;
         }
-        /** UniqueName used for database connection requests. */
+        /**
+         * UniqueName used for database connection requests.
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
         private String dbUniqueName;
 
         /**
          * UniqueName used for database connection requests.
-         *
          * @param dbUniqueName the value to set
          * @return this builder
-         */
+         **/
         public Builder dbUniqueName(String dbUniqueName) {
             this.dbUniqueName = dbUniqueName;
             this.__explicitlySet__.add("dbUniqueName");
             return this;
         }
-        /** dbId of the database. */
+        /**
+         * dbId of the database.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbId")
         private String dbId;
 
@@ -140,26 +145,25 @@ public final class ConnectionDetails
          *
          * @param dbId the value to set
          * @return this builder
-         */
+         **/
         public Builder dbId(String dbId) {
             this.dbId = dbId;
             this.__explicitlySet__.add("dbId");
             return this;
         }
         /**
-         * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-         */
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
         private String sslSecretId;
 
         /**
-         * SSL Secret Identifier for TCPS connector in OCI
-         * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param sslSecretId the value to set
          * @return this builder
-         */
+         **/
         public Builder sslSecretId(String sslSecretId) {
             this.sslSecretId = sslSecretId;
             this.__explicitlySet__.add("sslSecretId");
@@ -212,7 +216,9 @@ public final class ConnectionDetails
         }
     }
 
-    /** Create a new builder. */
+    /**
+     * Create a new builder.
+     */
     public static Builder builder() {
         return new Builder();
     }
@@ -221,14 +227,16 @@ public final class ConnectionDetails
         return new Builder().copy(this);
     }
 
-    /** Protocol used in DB connection string when connecting to external database service. */
-    public enum Protocol implements com.oracle.bmc.http.internal.BmcEnum {
+    /**
+     * Protocol used in DB connection string when connecting to external database service.
+     **/
+    public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
 
         /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
          */
         UnknownEnumValue(null);
 
@@ -267,76 +275,82 @@ public final class ConnectionDetails
             return UnknownEnumValue;
         }
     };
-    /** Protocol used in DB connection string when connecting to external database service. */
+    /**
+     * Protocol used in DB connection string when connecting to external database service.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("protocol")
     private final Protocol protocol;
 
     /**
      * Protocol used in DB connection string when connecting to external database service.
-     *
      * @return the value
-     */
+     **/
     public Protocol getProtocol() {
         return protocol;
     }
 
-    /** Listener Port number used for connection requests. */
+    /**
+     * Listener Port number used for connection requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("port")
     private final Integer port;
 
     /**
      * Listener Port number used for connection requests.
-     *
      * @return the value
-     */
+     **/
     public Integer getPort() {
         return port;
     }
 
     /**
-     * Database connector Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * Database connector Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * Database connector Identifier
-     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Database connector Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getConnectorId() {
         return connectorId;
     }
 
-    /** Service name used for connection requests. */
+    /**
+     * Service name used for connection requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("serviceName")
     private final String serviceName;
 
     /**
      * Service name used for connection requests.
-     *
      * @return the value
-     */
+     **/
     public String getServiceName() {
         return serviceName;
     }
 
-    /** UniqueName used for database connection requests. */
+    /**
+     * UniqueName used for database connection requests.
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbUniqueName")
     private final String dbUniqueName;
 
     /**
      * UniqueName used for database connection requests.
-     *
      * @return the value
-     */
+     **/
     public String getDbUniqueName() {
         return dbUniqueName;
     }
 
-    /** dbId of the database. */
+    /**
+     * dbId of the database.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbId")
     private final String dbId;
 
@@ -344,24 +358,23 @@ public final class ConnectionDetails
      * dbId of the database.
      *
      * @return the value
-     */
+     **/
     public String getDbId() {
         return dbId;
     }
 
     /**
-     * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-     */
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("sslSecretId")
     private final String sslSecretId;
 
     /**
-     * SSL Secret Identifier for TCPS connector in OCI
-     * Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * SSL Secret Identifier for TCPS connector in OCI Vault[OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
-     */
+     **/
     public String getSslSecretId() {
         return sslSecretId;
     }
@@ -373,7 +386,6 @@ public final class ConnectionDetails
 
     /**
      * Return a string representation of the object.
-     *
      * @param includeByteArrayContents true to include the full contents of byte arrays
      * @return string representation
      */

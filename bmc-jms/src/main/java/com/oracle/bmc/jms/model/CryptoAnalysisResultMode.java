@@ -4,9 +4,12 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** The aggregation mode of the crypto analysis result. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum CryptoAnalysisResultMode implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * The aggregation mode of the crypto analysis result.
+ *
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum CryptoAnalysisResultMode {
     Jfr("JFR"),
     ManagedInstance("MANAGED_INSTANCE"),
 

@@ -4,9 +4,11 @@
  */
 package com.oracle.bmc.jms.model;
 
-/** Type of resources to export data associated */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
-public enum ExportResources implements com.oracle.bmc.http.internal.BmcEnum {
+/**
+ * Type of resources to export data associated
+ **/
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
+public enum ExportResources {
     ManagedInstance("MANAGED_INSTANCE"),
     ManagedInstancePlusJavaRuntime("MANAGED_INSTANCE_PLUS_JAVA_RUNTIME"),
     ManagedInstancePlusJavaRuntimePlusApplication(
